@@ -7,10 +7,6 @@ Aliyun SDK 2.0 aimed to provide a unified and full stack SDK solution for you to
 ### Requirements
 - framework 2.0+
 
-### License
-
-licensed under the [Apache License 2.0](https://www.apache.org/licenses/
-
 ### How to insall (如何获得SDK) ###
 We provide different installing ways for different programming language.（不同的语言有不同的下载和安装方式)：
 
