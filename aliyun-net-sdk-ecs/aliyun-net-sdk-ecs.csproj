@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{a964e2fa-c8fd-467a-b97b-e45edc54c0a8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-ecs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Ecs\Model\V20151101\QueryInstanceBySerialNumberResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsRenameInstanceResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsAuthorizeSecurityGroupRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\QueryEcsByParam4PerfResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDeleteImageRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetailInstanceResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\ResizeResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsUnMountIsoRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsMigrateEcsInstanceResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsLeaveSecurityGroupResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeMountedSnapshotsResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsCreateSecurityGroupRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsJoinSecurityGroupResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetachSnapshotRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsModifyVncPasswdRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\FindEcsByInstanceIdRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetailDiskRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\QueryEcsByParamResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsQueryAvailableNcsResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsRevokeSecurityGroupRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDeleteSnapshotRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetailSnapshotRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\FindEcsInRegionResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\QueryEcsByParam4PerfRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsQueryVncPasswdResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsCreateSecurityGroupResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsAllocateIpAddressRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\DescribeDiskMonitorDataResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsCreateSnapshotRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsUpgradeInstanceResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsQueryMountedIsoRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\ModifyNetworkValidationRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsGenerateVncUrlRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\StartRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetailSnapshotResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsReleaseDiskResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsStartInstanceResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\ResizeRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsStopInstanceResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsAttachDiskRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsCreateDiskResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsQueryAvailableIsosRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsCreateDiskRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsReplaceSystemDiskRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsStartInstanceRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\StopRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsRevokeSecurityGroupResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\DetailImageResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsRenameInstanceRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsJoinSecurityGroupRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsRestartInstanceResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeRegionsResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\QueryInstanceByInternetIpResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsQueryGroupEcsInstancesRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsResizeDiskRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeGroupsResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsQueryAvailableNcsRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetachSnapshotResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\GetActiveRegionsResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsLeaveSecurityGroupRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetailNcResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsModifyVncPasswdResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeImagesRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeSnapshotsRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsQueryMountedIsoResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\RestartRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\DescribeMonitorDataRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsAllocateIpAddressResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\StopResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\RestartResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsMigrateEcsInstanceRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeDisksResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsUnMountIsoResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsRestartInstanceRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsCreateImageResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsResetDiskResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsUpgradeInstanceRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsMountIsoRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetachDiskResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsLiveMigrateEcsInstanceResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsReleaseDiskRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\DescribeMonitorDataResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsAuthorizeSecurityGroupEgressRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\FindDiskByDiskIdRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\QueryInstanceByIntranetIpResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsRevokeSecurityGroupEgressResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\GetActiveRegionsRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsReleaseInstanceRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsAuthorizeSecurityGroupResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeInstancesRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsCreateImageRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsCreateInstanceRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetailInstanceRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDeleteSnapshotResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\DescribeDiskMonitorDataRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsReleaseIpAddressRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDeleteImageResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\QueryEcsByParamRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\StartResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeMountedSnapshotsRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeDisksRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsReleaseInstanceResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsQueryAvailableIsosResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsResetPasswdRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsReleaseIpAddressResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsAttachSnapshotResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\GetNcInfoByInstanceIdResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsAttachDiskResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsCreateSnapshotResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeSnapshotsResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\FindEcsInRegionRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeGroupsRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeImagesResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\QueryInstanceByIntranetIpRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeGroupAttributeRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\RenameResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\FindEcsByInstanceIdResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\ModifyNetworkValidationResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsCreateInstanceResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsAttachSnapshotRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsStopInstanceRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsResetDiskRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDeleteSecurityGroupResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeInstancesResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsResizeDiskResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\FindDiskByDiskIdResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\RenameRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsRevokeSecurityGroupEgressRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsAuthorizeSecurityGroupEgressResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsQueryVncPasswdRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeRegionsRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\QueryDiskByParamRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsResetPasswdResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\QueryInstanceBySerialNumberRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsMountIsoResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDeleteSecurityGroupRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetailNcRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsGenerateVncUrlResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsReplaceSystemDiskResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\QueryInstanceByInternetIpRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDescribeGroupAttributeResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetailImageRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsLiveMigrateEcsInstanceRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsQueryGroupEcsInstancesResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetailDiskResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\QueryDiskByParamResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetachDiskRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\OpsDetailImageResponse.cs" />
+	<Compile Include="Ecs\Model\V20151101\GetNcInfoByInstanceIdRequest.cs" />
+	<Compile Include="Ecs\Model\V20151101\DetailImageRequest.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsCreateImageResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsResetDiskResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\StopResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDeleteImageResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsStartInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsReplaceSystemDiskResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDescribeDisksResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDetailInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsQueryAvailableNcsResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsAuthorizeSecurityGroupResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsQueryGroupEcsInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDescribeMountedSnapshotsResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsRenameInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDeleteSecurityGroupResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\DetailImageResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDetailDiskResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsJoinSecurityGroupResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\DescribeDiskMonitorDataResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDetailNcResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDescribeGroupAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDescribeSnapshotsResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsUnMountIsoResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsGenerateVncUrlResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsRevokeSecurityGroupEgressResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\RenameResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDetachDiskResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\QueryInstanceByInternetIpResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsCreateSnapshotResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\GetNcInfoByInstanceIdResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\FindDiskByDiskIdResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\DescribeMonitorDataResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsRestartInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsReleaseDiskResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsCreateSecurityGroupResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDeleteSnapshotResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsLeaveSecurityGroupResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsMountIsoResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsAuthorizeSecurityGroupEgressResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\QueryInstanceByIntranetIpResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsAttachDiskResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\GetActiveRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\QueryInstanceBySerialNumberResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsReleaseInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\RestartResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\StartResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsLiveMigrateEcsInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDetachSnapshotResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsAllocateIpAddressResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\FindEcsByInstanceIdResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsMigrateEcsInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsQueryAvailableIsosResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsCreateDiskResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsQueryMountedIsoResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDescribeGroupsResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\QueryEcsByParam4PerfResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsRevokeSecurityGroupResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsResetPasswdResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\FindEcsInRegionResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDetailSnapshotResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\ResizeResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDescribeInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsUpgradeInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\QueryDiskByParamResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDescribeImagesResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsQueryVncPasswdResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\ModifyNetworkValidationResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsDetailImageResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsResizeDiskResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\QueryEcsByParamResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsReleaseIpAddressResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsStopInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsAttachSnapshotResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsModifyVncPasswdResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20151101\OpsCreateInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
