@@ -73,6 +73,12 @@ namespace Aliyun.Acs.Push.Model.V20150827
 
 		private string iOSExtParameters;
 
+		private string pushTime;
+
+		private string apnsEnv;
+
+		private string expireTime;
+
 		public long? AppKey
 		{
 			get
@@ -294,7 +300,7 @@ namespace Aliyun.Acs.Push.Model.V20150827
 			}
 		}
 
-		public string iOSMusic
+		public string IOSMusic
 		{
 			get
 			{
@@ -307,7 +313,7 @@ namespace Aliyun.Acs.Push.Model.V20150827
 			}
 		}
 
-		public string iOSBadge
+		public string IOSBadge
 		{
 			get
 			{
@@ -320,7 +326,7 @@ namespace Aliyun.Acs.Push.Model.V20150827
 			}
 		}
 
-		public string iOSExtParameters
+		public string IOSExtParameters
 		{
 			get
 			{
@@ -330,6 +336,45 @@ namespace Aliyun.Acs.Push.Model.V20150827
 			{
 				iOSExtParameters = value;
 				DictionaryUtil.Add(QueryParameters, "iOSExtParameters", value);
+			}
+		}
+
+		public string PushTime
+		{
+			get
+			{
+				return pushTime;
+			}
+			set	
+			{
+				pushTime = value;
+				DictionaryUtil.Add(QueryParameters, "PushTime", value);
+			}
+		}
+
+		public string ApnsEnv
+		{
+			get
+			{
+				return apnsEnv;
+			}
+			set	
+			{
+				apnsEnv = value;
+				DictionaryUtil.Add(QueryParameters, "ApnsEnv", value);
+			}
+		}
+
+		public string ExpireTime
+		{
+			get
+			{
+				return expireTime;
+			}
+			set	
+			{
+				expireTime = value;
+				DictionaryUtil.Add(QueryParameters, "ExpireTime", value);
 			}
 		}
 
