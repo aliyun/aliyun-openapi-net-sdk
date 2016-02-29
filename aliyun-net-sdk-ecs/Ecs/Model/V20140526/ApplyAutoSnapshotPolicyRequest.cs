@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string autoSnapshotPolicyId
+		public string AutoSnapshotPolicyId
 		{
 			get
 			{
