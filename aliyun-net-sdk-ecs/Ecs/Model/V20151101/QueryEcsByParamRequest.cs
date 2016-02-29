@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private int? pageSize;
 
-		public string queryEcsParam
+		public string QueryEcsParam
 		{
 			get
 			{
@@ -48,11 +48,11 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				queryEcsParam = value;
-				DictionaryUtil.Add(QueryParameters, "queryEcsParam", value);
+				DictionaryUtil.Add(QueryParameters, "QueryEcsParam", value);
 			}
 		}
 
-		public int? pageNo
+		public int? PageNo
 		{
 			get
 			{
@@ -61,11 +61,11 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				pageNo = value;
-				DictionaryUtil.Add(QueryParameters, "pageNo", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 
-		public int? pageSize
+		public int? PageSize
 		{
 			get
 			{
@@ -74,7 +74,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "pageSize", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

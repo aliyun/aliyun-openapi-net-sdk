@@ -86,7 +86,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string autoSnapshotPolicyName
+		public string AutoSnapshotPolicyName
 		{
 			get
 			{
@@ -95,11 +95,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				autoSnapshotPolicyName = value;
-				DictionaryUtil.Add(QueryParameters, "autoSnapshotPolicyName", value);
+				DictionaryUtil.Add(QueryParameters, "AutoSnapshotPolicyName", value);
 			}
 		}
 
-		public string timePoints
+		public string TimePoints
 		{
 			get
 			{
@@ -108,11 +108,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				timePoints = value;
-				DictionaryUtil.Add(QueryParameters, "timePoints", value);
+				DictionaryUtil.Add(QueryParameters, "TimePoints", value);
 			}
 		}
 
-		public string repeatWeekdays
+		public string RepeatWeekdays
 		{
 			get
 			{
@@ -121,11 +121,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				repeatWeekdays = value;
-				DictionaryUtil.Add(QueryParameters, "repeatWeekdays", value);
+				DictionaryUtil.Add(QueryParameters, "RepeatWeekdays", value);
 			}
 		}
 
-		public int? retentionDays
+		public int? RetentionDays
 		{
 			get
 			{
@@ -134,7 +134,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				retentionDays = value;
-				DictionaryUtil.Add(QueryParameters, "retentionDays", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "RetentionDays", value.ToString());
 			}
 		}
 

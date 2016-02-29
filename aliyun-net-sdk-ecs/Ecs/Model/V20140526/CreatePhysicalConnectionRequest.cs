@@ -104,7 +104,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? bandwidth
+		public int? Bandwidth
 		{
 			get
 			{
@@ -113,7 +113,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "bandwidth", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "Bandwidth", value.ToString());
 			}
 		}
 

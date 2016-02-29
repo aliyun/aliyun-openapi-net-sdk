@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private string diskDetailParam;
 
-		public string diskDetailParam
+		public string DiskDetailParam
 		{
 			get
 			{
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				diskDetailParam = value;
-				DictionaryUtil.Add(QueryParameters, "diskDetailParam", value);
+				DictionaryUtil.Add(QueryParameters, "DiskDetailParam", value);
 			}
 		}
 

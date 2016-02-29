@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private long? ecsId;
 
-		public string hostName
+		public string HostName
 		{
 			get
 			{
@@ -48,11 +48,11 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				hostName = value;
-				DictionaryUtil.Add(QueryParameters, "hostName", value);
+				DictionaryUtil.Add(QueryParameters, "HostName", value);
 			}
 		}
 
-		public long? aliUid
+		public long? AliUid
 		{
 			get
 			{
@@ -61,11 +61,11 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				aliUid = value;
-				DictionaryUtil.Add(QueryParameters, "aliUid", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "AliUid", value.ToString());
 			}
 		}
 
-		public long? ecsId
+		public long? EcsId
 		{
 			get
 			{
@@ -74,7 +74,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				ecsId = value;
-				DictionaryUtil.Add(QueryParameters, "ecsId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "EcsId", value.ToString());
 			}
 		}
 

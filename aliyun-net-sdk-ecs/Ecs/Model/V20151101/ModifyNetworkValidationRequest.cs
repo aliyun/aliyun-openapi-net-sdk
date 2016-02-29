@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private string networkValidationParam;
 
-		public string networkValidationParam
+		public string NetworkValidationParam
 		{
 			get
 			{
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				networkValidationParam = value;
-				DictionaryUtil.Add(QueryParameters, "networkValidationParam", value);
+				DictionaryUtil.Add(QueryParameters, "NetworkValidationParam", value);
 			}
 		}
 

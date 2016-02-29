@@ -91,11 +91,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				autoSnapshotPolicyId = value;
-				DictionaryUtil.Add(QueryParameters, "autoSnapshotPolicyId", value);
+				DictionaryUtil.Add(QueryParameters, "AutoSnapshotPolicyId", value);
 			}
 		}
 
-		public string diskIds
+		public string DiskIds
 		{
 			get
 			{
@@ -104,7 +104,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				diskIds = value;
-				DictionaryUtil.Add(QueryParameters, "diskIds", value);
+				DictionaryUtil.Add(QueryParameters, "DiskIds", value);
 			}
 		}
 

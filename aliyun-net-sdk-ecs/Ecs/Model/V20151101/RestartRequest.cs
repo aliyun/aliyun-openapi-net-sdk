@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private string instanceRestartParam;
 
-		public string instanceRestartParam
+		public string InstanceRestartParam
 		{
 			get
 			{
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				instanceRestartParam = value;
-				DictionaryUtil.Add(QueryParameters, "instanceRestartParam", value);
+				DictionaryUtil.Add(QueryParameters, "InstanceRestartParam", value);
 			}
 		}
 

@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private string serialNumber;
 
-		public string serialNumber
+		public string SerialNumber
 		{
 			get
 			{
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				serialNumber = value;
-				DictionaryUtil.Add(QueryParameters, "serialNumber", value);
+				DictionaryUtil.Add(QueryParameters, "SerialNumber", value);
 			}
 		}
 

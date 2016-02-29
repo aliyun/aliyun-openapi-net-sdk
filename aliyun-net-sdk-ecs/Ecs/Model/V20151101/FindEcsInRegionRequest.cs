@@ -37,7 +37,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private long? aliUid;
 
-		public string bid
+		public string Bid
 		{
 			get
 			{
@@ -46,11 +46,11 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				bid = value;
-				DictionaryUtil.Add(QueryParameters, "bid", value);
+				DictionaryUtil.Add(QueryParameters, "Bid", value);
 			}
 		}
 
-		public long? aliUid
+		public long? AliUid
 		{
 			get
 			{
@@ -59,7 +59,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				aliUid = value;
-				DictionaryUtil.Add(QueryParameters, "aliUid", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "AliUid", value.ToString());
 			}
 		}
 

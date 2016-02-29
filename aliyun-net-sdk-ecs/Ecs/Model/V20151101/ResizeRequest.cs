@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private string diskResizeParam;
 
-		public string diskResizeParam
+		public string DiskResizeParam
 		{
 			get
 			{
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				diskResizeParam = value;
-				DictionaryUtil.Add(QueryParameters, "diskResizeParam", value);
+				DictionaryUtil.Add(QueryParameters, "DiskResizeParam", value);
 			}
 		}
 

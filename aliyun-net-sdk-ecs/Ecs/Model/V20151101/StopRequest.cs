@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private string instanceStopParam;
 
-		public string instanceStopParam
+		public string InstanceStopParam
 		{
 			get
 			{
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				instanceStopParam = value;
-				DictionaryUtil.Add(QueryParameters, "instanceStopParam", value);
+				DictionaryUtil.Add(QueryParameters, "InstanceStopParam", value);
 			}
 		}
 

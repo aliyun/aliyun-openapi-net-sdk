@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private string ip;
 
-		public string ip
+		public string Ip
 		{
 			get
 			{
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				ip = value;
-				DictionaryUtil.Add(QueryParameters, "ip", value);
+				DictionaryUtil.Add(QueryParameters, "Ip", value);
 			}
 		}
 

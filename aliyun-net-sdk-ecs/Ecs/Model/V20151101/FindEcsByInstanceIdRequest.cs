@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private string instanceId;
 
-		public string instanceId
+		public string InstanceId
 		{
 			get
 			{
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "instanceId", value);
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

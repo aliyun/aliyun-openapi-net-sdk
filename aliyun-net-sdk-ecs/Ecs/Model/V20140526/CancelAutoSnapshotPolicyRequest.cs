@@ -80,7 +80,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string diskIds
+		public string DiskIds
 		{
 			get
 			{
@@ -89,7 +89,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				diskIds = value;
-				DictionaryUtil.Add(QueryParameters, "diskIds", value);
+				DictionaryUtil.Add(QueryParameters, "DiskIds", value);
 			}
 		}
 

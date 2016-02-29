@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private string describeMonitorDataParam;
 
-		public string describeMonitorDataParam
+		public string DescribeMonitorDataParam
 		{
 			get
 			{
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				describeMonitorDataParam = value;
-				DictionaryUtil.Add(QueryParameters, "describeMonitorDataParam", value);
+				DictionaryUtil.Add(QueryParameters, "DescribeMonitorDataParam", value);
 			}
 		}
 

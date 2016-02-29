@@ -80,7 +80,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string autoSnapshotPolicyId
+		public string AutoSnapshotPolicyId
 		{
 			get
 			{
@@ -89,7 +89,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				autoSnapshotPolicyId = value;
-				DictionaryUtil.Add(QueryParameters, "autoSnapshotPolicyId", value);
+				DictionaryUtil.Add(QueryParameters, "AutoSnapshotPolicyId", value);
 			}
 		}
 

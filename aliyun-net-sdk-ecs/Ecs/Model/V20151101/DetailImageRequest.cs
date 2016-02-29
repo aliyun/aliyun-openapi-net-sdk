@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 
 		private string imageDetailParam;
 
-		public string imageDetailParam
+		public string ImageDetailParam
 		{
 			get
 			{
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20151101
 			set	
 			{
 				imageDetailParam = value;
-				DictionaryUtil.Add(QueryParameters, "imageDetailParam", value);
+				DictionaryUtil.Add(QueryParameters, "ImageDetailParam", value);
 			}
 		}
 
