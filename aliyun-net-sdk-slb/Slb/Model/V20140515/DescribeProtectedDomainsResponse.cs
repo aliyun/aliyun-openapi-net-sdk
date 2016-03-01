@@ -167,58 +167,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 						ipItem = value;
 					}
 				}
-			}
-
-			public class IpItems{
-
-				private string ipItem;
-
-				public string IpItem
-				{
-					get
-					{
-						return ipItem;
-					}
-					set	
-					{
-						ipItem = value;
-					}
-				}
-			}
-
-			public class IpItems{
-
-				private string ipItem;
-
-				public string IpItem
-				{
-					get
-					{
-						return ipItem;
-					}
-					set	
-					{
-						ipItem = value;
-					}
-				}
-			}
-
-			public class IpItems{
-
-				private string ipItem;
-
-				public string IpItem
-				{
-					get
-					{
-						return ipItem;
-					}
-					set	
-					{
-						ipItem = value;
-					}
-				}
-			}
+			}			
 		}
 	}
 }

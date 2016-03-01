@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string ownerAccount;
 
-		private string namespace;
+		private string namespace_;
 
 		private string namespaceUid;
 
@@ -101,11 +101,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		{
 			get
 			{
-				return namespace;
+				return namespace_;
 			}
 			set	
 			{
-				namespace = value;
+                namespace_ = value;
 				DictionaryUtil.Add(QueryParameters, "Namespace", value);
 			}
 		}

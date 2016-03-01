@@ -240,7 +240,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public int? healthCheckInterval
+		public int? HealthCheckInterval
 		{
 			get
 			{

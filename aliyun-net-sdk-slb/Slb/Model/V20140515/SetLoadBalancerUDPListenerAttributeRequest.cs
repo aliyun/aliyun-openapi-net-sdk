@@ -234,7 +234,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string healthCheckReq
+		public string HealthCheckReq
 		{
 			get
 			{
@@ -243,11 +243,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				healthCheckReq = value;
-				DictionaryUtil.Add(QueryParameters, "healthCheckReq", value);
+                DictionaryUtil.Add(QueryParameters, "healthCheckReq", value);
 			}
 		}
 
-		public string healthCheckExp
+		public string HealthCheckExp
 		{
 			get
 			{

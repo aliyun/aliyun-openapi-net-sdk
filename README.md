@@ -1,87 +1,67 @@
-## Welcome to Aliyun SDK
+# Open API SDK for .Net developers
 
-Aliyun SDK 2.0 aimed to provide a unified and full stack SDK solution for you to build applications on aliyun.
+## Requirements
 
-(新版的阿里云SDK，提供一套统一的、全产品的阿里云API编程套件，方便开发者快速的在阿里云上搭建自己的应用。)
+- 支持 .Net Freamwork 4.5 及以上版本；
+- 下载SDK 把 aliyun-net-sdk-core.dll 和相应产品的 .dll 文件添加引用到项目中。
 
-### Requirements
-- framework 2.0+
+## Example
 
-### How to insall (如何获得SDK) ###
-We provide different installing ways for different programming language.（不同的语言有不同的下载和安装方式)：
-
-**Download Source Codes(下载源代码)**
-
-- Download Source Codes（下载C# SDK的源代码）：[https://github.com/aliyun/aliyun-openapi-net-sdk](https://github.com/aliyun/aliyun-openapi-net-sdk "https://github.com/aliyun/aliyun-openapi-net-sdk")
-
-**Installation steps(安装步骤)**
-
-- 1.从[源码下载链接](https://github.com/aliyun/aliyun-openapi-net-sdk "源码下载链接")下载相应产品C# SDK的源代码，并编译成为.dll文件；
-
-
-- 2.在你的Visual Studio项目上右键点击 -> 添加引用 -> 浏览（如果你用的是MonoDevelop，请自行按照相应导入dll的方法导入这个.dll文件）；
-
-
-- 3.选择上述的.dll文件，点击“确定”按钮，经过以上步骤，你就可以在工程中使用阿里云C# SDK了。
-	    
-
-### Initialization AliyunClient（初始化AliyunClient） ###
-
-	
-    private static string serverUrl = "<serverUrl>";//http://slb.aliyuncs.com/
-    private static string accessKeyId = "<accessKeyId>";
-    private static string accessKeySecret = "<accessKeySecret>";
-
-    private static IAliyunClient client = new DefaultAliyunClient(serverUrl, accessKeyId, accessKeySecret);
-        
-
-### A simple c# request（一个简单的API调用示例） ###
-
-	public static void CreateLoadBalancer(){
-        CreateLoadBalancerRequest request = new CreateLoadBalancerRequest();
-        request.RegionId = "<RegionId>";
-        request.AddressType = "<AddressType>";
-        request.Bandwidth = <Bandwidth>
-        request.InternetChargeType = "<InternetChargeType>";
-
-        try
-        {
-                CreateLoadBalancerResponse response = client.Execute(request);
-                if (string.IsNullOrEmpty(response.Code))
-                {
-                String loadBlancerId = response.LoadBalancerId;
-                }
-                else
-                {
-                String errorCode = response.Code;
-                String message = response.Message;
-                }
-        }
-        catch (Exception e)
-        {
-                //TODO: handle exception
-        }
+    using Aliyun.Acs.Core;
+    using Aliyun.Acs.Core.Exceptions;
+    using Aliyun.Acs.Core.Profile;
+    using Aliyun.Acs.Ecs.Model.V20140526;
+    using System;
+     
+    class Sample
+    {
+    static void Main(string[] args)
+    {
+    TestDescribeInstanceAttribute();
+    }
+     
+    private static void TestDescribeInstanceAttribute()
+    {
+     
+    IClientProfile clientProfile = DefaultProfile.GetProfile("cn-hangzhou", "<your access key id>", "<your access key secret>");
+    DefaultAcsClient client = new DefaultAcsClient(clientProfile);
+     
+    DescribeInstanceAttributeRequest request = new DescribeInstanceAttributeRequest();
+    request.InstanceId = "<your instances id>";
+    try
+    {
+    DescribeInstanceAttributeResponse response = client.GetAcsResponse(request);
+    Console.Write(response.InstanceId);
+    }
+    catch (ServerException e)
+    {
+    Console.WriteLine(e.ErrorCode);
+    Console.WriteLine(e.ErrorMessage);
+    }
+    catch (ClientException e)
+    {
+    Console.WriteLine(e.ErrorCode);
+    Console.WriteLine(e.ErrorMessage);
+    }
+    }
     }
 
+## Questions
 
-### Usage Tips (使用提示) ###
+1. 怎么判断API调用成功？
 
-- Classes retated to Aliyun SDK are under namespace Aliyun.Api.
-(与阿里云SDK相关的类都在名称空间Aliyun.Api下)
-- AliyunClient is an interface, interact with the Open API, SDK operations are done through IAliyunClient.
-(AliyunClient 是与 Open API 交互的接口，SDK 的操作都是通过 IAliyunClient 完成的；)
-- AliyunClient can be reused, it is recommended to set a globally unique AliyunClient.;
-（AliyunClient 可以复用，建议设置成应用程序全局唯一的；）
-- Users can invoke method SetTimeout to set timeout of SDK call.
-(用户可以调用 SetTimeout 方法来设置SDK调用接口的连接超时时间。)
+	通过catch异常判断API是否调用成功，当 API 的 http status>=200 且 <300 表示API调用成功；当http status>=300且<500 SDK抛ClientException；当http status >=500 SDK 抛 ServerException
 
-### Namespace (命名空间) ###
+2. IClientProfile clientProfile = DefaultProfile.GetProfile("< your request regionid >", "< your access key id >", "< your access key secret >");
 
-- Request(请求类名称空间)：Aliyun.Api.[PPP].[PPP][yyyymmdd].Request
-- Response(响应类命名空间)：Aliyun.Api.[PPP].[PPP][yyyymmdd].Response
-- [PPP] stands for uppercase acronym of product name.([PPP]为产品名称缩写大写；)
-- [yyyymmdd] stands for the version of API.([yyyymmdd]为API版本号)
-- Examples:
-Request(请求类名称空间)：Aliyun.Api.SLB.SLB20140515.Request
-Response(响应类命名空间)：Aliyun.Api.SLB.SLB20140515.Response
+	此处的regionid参数指你需要操作的region的id，例如要操作杭州region，则regionid=cn-hangzhou；默认填cn-hangzhou.
 
+
+
+## Authors && Contributors
+
+- [Ma Lijie](https://github.com/malijiefoxmail)
+
+## License
+
+licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
