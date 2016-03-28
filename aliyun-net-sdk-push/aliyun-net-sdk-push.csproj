@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{514bfdac-5c21-4656-9c38-8c6733d4be45}</ProjectGuid>
+    <ProjectGuid>{66963b5b-1bbf-4c93-9c41-e15af72d377c}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -43,12 +43,20 @@
 	<Compile Include="Push\Model\V20150827\RevertRpcRequest.cs" />
 	<Compile Include="Push\Model\V20150827\PushMessageToAndroidRequest.cs" />
 	<Compile Include="Push\Model\V20150827\PushByteMessageResponse.cs" />
+	<Compile Include="Push\Model\V20150827\ListTagsRequest.cs" />
+	<Compile Include="Push\Model\V20150827\BindTagRequest.cs" />
+	<Compile Include="Push\Model\V20150827\BindTagResponse.cs" />
+	<Compile Include="Push\Model\V20150827\UnbindTagRequest.cs" />
 	<Compile Include="Push\Model\V20150827\PushResponse.cs" />
+	<Compile Include="Push\Model\V20150827\ListTagsResponse.cs" />
 	<Compile Include="Push\Model\V20150827\BatchGetDevicesInfoRequest.cs" />
 	<Compile Include="Push\Model\V20150827\PushByteMessageRequest.cs" />
+	<Compile Include="Push\Model\V20150827\QueryTagsResponse.cs" />
+	<Compile Include="Push\Model\V20150827\QueryTagsRequest.cs" />
 	<Compile Include="Push\Model\V20150827\PushMessageToiOSResponse.cs" />
 	<Compile Include="Push\Model\V20150827\BatchGetDevicesInfoResponse.cs" />
 	<Compile Include="Push\Model\V20150827\GetDeviceInfosResponse.cs" />
+	<Compile Include="Push\Model\V20150827\UnbindTagResponse.cs" />
 	<Compile Include="Push\Model\V20150827\PushRequest.cs" />
 	<Compile Include="Push\Model\V20150827\PushMessageToiOSRequest.cs" />
 	<Compile Include="Push\Model\V20150827\PushNoticeToiOSResponse.cs" />
@@ -62,10 +70,14 @@
 	<Compile Include="Push\Transform\V20150827\GetDeviceInfosResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20150827\PushMessageToAndroidResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20150827\PushByteMessageResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20150827\UnbindTagResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20150827\PushNoticeToAndroidResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20150827\BatchGetDevicesInfoResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20150827\QueryTagsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20150827\RevertRpcResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20150827\ListTagsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20150827\PushNoticeToiOSResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20150827\BindTagResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
