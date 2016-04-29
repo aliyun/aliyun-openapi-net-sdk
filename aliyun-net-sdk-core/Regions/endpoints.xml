@@ -15,8 +15,65 @@
         	<RegionId>cn-shanghai-et2-test01</RegionId>
         	<RegionId>ap-southeast-1</RegionId>
 			<RegionId>us-east-1</RegionId>
+			<RegionId>cn-qingdao-cm9</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+               <ProductName>Msc</ProductName>
+               <DomainName>msc-inner.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Msg</ProductName>
+               <DomainName>msg-inner.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Workorder</ProductName>
+               <DomainName>workorder.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>jaq</ProductName>
+               <DomainName>jaq.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>ChargingService</ProductName>
+               <DomainName>chargingservice.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Billing</ProductName>
+               <DomainName>billing.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>HighDDos</ProductName>
+               <DomainName>yd-highddos-cn-hangzhou.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Alidns</ProductName>
+               <DomainName>alidns.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>CloudAPI</ProductName>
+               <DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+				<ProductName>AMS</ProductName>
+				<DomainName>ams.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+				<ProductName>Httpdns</ProductName>
+				<DomainName>httpdns-api.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>CmsSiteMonitor</ProductName>
+               <DomainName>sitemonitor.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Kms</ProductName>
+               <DomainName>kms.daily.alibaba.net</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Ess</ProductName>
+               <DomainName>ess.aliyuncs.com</DomainName>
+			</Product>
 			<Product>
                <ProductName>Iot</ProductName>
                <DomainName>iot.aliyuncs.com</DomainName>
@@ -204,6 +261,22 @@
 			<RegionId>cn-shenzhen</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+               <ProductName>Alidns</ProductName>
+               <DomainName>alidns.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>CmsSiteMonitor</ProductName>
+               <DomainName>sitemonitor.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Kms</ProductName>
+               <DomainName>kms.daily.alibaba.net</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Ess</ProductName>
+               <DomainName>ess.aliyuncs.com</DomainName>
+			</Product>
 			<Product>
                <ProductName>Iot</ProductName>
                <DomainName>iot.aliyuncs.com</DomainName>
@@ -395,6 +468,34 @@
         	<RegionId>cn-qingdao</RegionId>
         </RegionIds>
 	    <Products>
+			<Product>
+				<ProductName>CloudAPI</ProductName>
+				<DomainName>apigateway.cn-qingdao.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Alidns</ProductName>
+               <DomainName>alidns.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+				<ProductName>Ubsms</ProductName>
+				<DomainName>ubsms.cn-qingdao.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+				<ProductName>Ubsms-inner</ProductName>
+				<DomainName>ubsms-inner.cn-qingdao.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>CmsSiteMonitor</ProductName>
+               <DomainName>sitemonitor.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Kms</ProductName>
+               <DomainName>kms.daily.alibaba.net</DomainName>
+			</Product>
+			<Product>
+               <ProductName>Ess</ProductName>
+               <DomainName>ess.aliyuncs.com</DomainName>
+			</Product>
 			<Product>
                <ProductName>Iot</ProductName>
                <DomainName>iot.aliyuncs.com</DomainName>
