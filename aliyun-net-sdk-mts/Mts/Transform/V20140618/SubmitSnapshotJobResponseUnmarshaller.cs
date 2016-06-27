@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			snapshotJob.PipelineId = context.StringValue("SubmitSnapshotJob.SnapshotJob.PipelineId");
 			snapshotJob.State = context.StringValue("SubmitSnapshotJob.SnapshotJob.State");
 			snapshotJob.Code = context.StringValue("SubmitSnapshotJob.SnapshotJob.Code");
+			snapshotJob.Count = context.StringValue("SubmitSnapshotJob.SnapshotJob.Count");
 			snapshotJob.Message = context.StringValue("SubmitSnapshotJob.SnapshotJob.Message");
 			snapshotJob.CreationTime = context.StringValue("SubmitSnapshotJob.SnapshotJob.CreationTime");
 
@@ -49,6 +50,8 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 
 			SubmitSnapshotJobResponse.SnapshotJob_.SnapshotConfig_ snapshotConfig = new SubmitSnapshotJobResponse.SnapshotJob_.SnapshotConfig_();
 			snapshotConfig.Time = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.Time");
+			snapshotConfig.Interval = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.Interval");
+			snapshotConfig.Num = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.Num");
 
 			SubmitSnapshotJobResponse.SnapshotJob_.SnapshotConfig_.OutputFile_ outputFile = new SubmitSnapshotJobResponse.SnapshotJob_.SnapshotConfig_.OutputFile_();
 			outputFile.Bucket = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.OutputFile.Bucket");

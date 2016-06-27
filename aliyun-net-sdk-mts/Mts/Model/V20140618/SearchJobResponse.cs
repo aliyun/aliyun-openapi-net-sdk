@@ -271,6 +271,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private List<WaterMark> waterMarkList;
 
+				private List<Merge> mergeList;
+
 				private OutputFile_ outputFile;
 
 				private Properties_ properties;
@@ -284,8 +286,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				private TransConfig_ transConfig;
 
 				private MuxConfig_ muxConfig;
-
-				private TransFeatures_ transFeatures;
 
 				private Audio_ audio;
 
@@ -389,6 +389,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
+				public List<Merge> MergeList
+				{
+					get
+					{
+						return mergeList;
+					}
+					set	
+					{
+						mergeList = value;
+					}
+				}
+
 				public OutputFile_ OutputFile
 				{
 					get
@@ -470,18 +482,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						muxConfig = value;
-					}
-				}
-
-				public TransFeatures_ TransFeatures
-				{
-					get
-					{
-						return transFeatures;
-					}
-					set	
-					{
-						transFeatures = value;
 					}
 				}
 
@@ -677,6 +677,51 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							{
 								object_ = value;
 							}
+						}
+					}
+				}
+
+				public class Merge{
+
+					private string mergeURL;
+
+					private string start;
+
+					private string duration;
+
+					public string MergeURL
+					{
+						get
+						{
+							return mergeURL;
+						}
+						set	
+						{
+							mergeURL = value;
+						}
+					}
+
+					public string Start
+					{
+						get
+						{
+							return start;
+						}
+						set	
+						{
+							start = value;
+						}
+					}
+
+					public string Duration
+					{
+						get
+						{
+							return duration;
+						}
+						set	
+						{
+							duration = value;
 						}
 					}
 				}
@@ -1909,68 +1954,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								finalDelay = value;
-							}
-						}
-					}
-				}
-
-				public class TransFeatures_{
-
-					private List<Merge> mergeList;
-
-					public List<Merge> MergeList
-					{
-						get
-						{
-							return mergeList;
-						}
-						set	
-						{
-							mergeList = value;
-						}
-					}
-
-					public class Merge{
-
-						private string mergeURL;
-
-						private string start;
-
-						private string duration;
-
-						public string MergeURL
-						{
-							get
-							{
-								return mergeURL;
-							}
-							set	
-							{
-								mergeURL = value;
-							}
-						}
-
-						public string Start
-						{
-							get
-							{
-								return start;
-							}
-							set	
-							{
-								start = value;
-							}
-						}
-
-						public string Duration
-						{
-							get
-							{
-								return duration;
-							}
-							set	
-							{
-								duration = value;
 							}
 						}
 					}

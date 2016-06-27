@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string input;
 
-		private string workflowType;
+		private string name;
 
 		private string ownerAccount;
 
@@ -97,16 +97,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string WorkflowType
+		public string Name
 		{
 			get
 			{
-				return workflowType;
+				return name;
 			}
 			set	
 			{
-				workflowType = value;
-				DictionaryUtil.Add(QueryParameters, "WorkflowType", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

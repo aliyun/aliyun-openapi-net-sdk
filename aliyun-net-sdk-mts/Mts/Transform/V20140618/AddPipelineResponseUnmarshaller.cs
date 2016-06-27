@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 
 			AddPipelineResponse.Pipeline_.NotifyConfig_ notifyConfig = new AddPipelineResponse.Pipeline_.NotifyConfig_();
 			notifyConfig.Topic = context.StringValue("AddPipeline.Pipeline.NotifyConfig.Topic");
+			notifyConfig.QueueName = context.StringValue("AddPipeline.Pipeline.NotifyConfig.QueueName");
 			pipeline.NotifyConfig = notifyConfig;
 			addPipelineResponse.Pipeline = pipeline;
         

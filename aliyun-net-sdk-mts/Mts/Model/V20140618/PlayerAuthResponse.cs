@@ -24,7 +24,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class PlayerAuthResponse : AcsResponse
 	{
 
+		private string logURL;
+
 		private List<Switch> switchList;
+
+		public string LogURL
+		{
+			get
+			{
+				return logURL;
+			}
+			set	
+			{
+				logURL = value;
+			}
+		}
 
 		public List<Switch> SwitchList
 		{
@@ -45,6 +59,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			private string functionId;
 
 			private string switchId;
+
+			private string functionName;
 
 			public string State
 			{
@@ -79,6 +95,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					switchId = value;
+				}
+			}
+
+			public string FunctionName
+			{
+				get
+				{
+					return functionName;
+				}
+				set	
+				{
+					functionName = value;
 				}
 			}
 		}

@@ -128,6 +128,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string topic;
 
+				private string queueName;
+
 				public string Topic
 				{
 					get
@@ -137,6 +139,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						topic = value;
+					}
+				}
+
+				public string QueueName
+				{
+					get
+					{
+						return queueName;
+					}
+					set	
+					{
+						queueName = value;
 					}
 				}
 			}

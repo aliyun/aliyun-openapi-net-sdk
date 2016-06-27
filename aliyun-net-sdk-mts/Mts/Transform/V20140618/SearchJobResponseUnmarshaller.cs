@@ -215,20 +215,6 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				muxConfig.Gif = gif;
 				output.MuxConfig = muxConfig;
 
-				SearchJobResponse.Job.Output_.TransFeatures_ transFeatures = new SearchJobResponse.Job.Output_.TransFeatures_();
-
-				List<SearchJobResponse.Job.Output_.TransFeatures_.Merge> mergeList = new List<SearchJobResponse.Job.Output_.TransFeatures_.Merge>();
-				for (int j = 0; j < context.Length("SearchJob.JobList["+ i +"].Output.TransFeatures.MergeList.Length"); j++) {
-					SearchJobResponse.Job.Output_.TransFeatures_.Merge merge = new SearchJobResponse.Job.Output_.TransFeatures_.Merge();
-					merge.MergeURL = context.StringValue("SearchJob.JobList["+ i +"].Output.TransFeatures.MergeList["+ j +"].MergeURL");
-					merge.Start = context.StringValue("SearchJob.JobList["+ i +"].Output.TransFeatures.MergeList["+ j +"].Start");
-					merge.Duration = context.StringValue("SearchJob.JobList["+ i +"].Output.TransFeatures.MergeList["+ j +"].Duration");
-
-					mergeList.Add(merge);
-				}
-				transFeatures.MergeList = mergeList;
-				output.TransFeatures = transFeatures;
-
 				SearchJobResponse.Job.Output_.Audio_ audio = new SearchJobResponse.Job.Output_.Audio_();
 				audio.Codec = context.StringValue("SearchJob.JobList["+ i +"].Output.Audio.Codec");
 				audio.Profile = context.StringValue("SearchJob.JobList["+ i +"].Output.Audio.Profile");
@@ -285,6 +271,17 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					waterMarkList.Add(waterMark);
 				}
 				output.WaterMarkList = waterMarkList;
+
+				List<SearchJobResponse.Job.Output_.Merge> mergeList = new List<SearchJobResponse.Job.Output_.Merge>();
+				for (int j = 0; j < context.Length("SearchJob.JobList["+ i +"].Output.MergeList.Length"); j++) {
+					SearchJobResponse.Job.Output_.Merge merge = new SearchJobResponse.Job.Output_.Merge();
+					merge.MergeURL = context.StringValue("SearchJob.JobList["+ i +"].Output.MergeList["+ j +"].MergeURL");
+					merge.Start = context.StringValue("SearchJob.JobList["+ i +"].Output.MergeList["+ j +"].Start");
+					merge.Duration = context.StringValue("SearchJob.JobList["+ i +"].Output.MergeList["+ j +"].Duration");
+
+					mergeList.Add(merge);
+				}
+				output.MergeList = mergeList;
 				job.Output = output;
 
 				jobList.Add(job);

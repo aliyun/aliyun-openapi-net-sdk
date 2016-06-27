@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 
 			playerAuthResponse.HttpResponse = context.HttpResponse;
 			playerAuthResponse.RequestId = context.StringValue("PlayerAuth.RequestId");
+			playerAuthResponse.LogURL = context.StringValue("PlayerAuth.LogURL");
 
 			List<PlayerAuthResponse.Switch> switchList = new List<PlayerAuthResponse.Switch>();
 			for (int i = 0; i < context.Length("PlayerAuth.SwitchList.Length"); i++) {
@@ -38,6 +39,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				switch_.State = context.StringValue("PlayerAuth.SwitchList["+ i +"].State");
 				switch_.FunctionId = context.StringValue("PlayerAuth.SwitchList["+ i +"].FunctionId");
 				switch_.SwitchId = context.StringValue("PlayerAuth.SwitchList["+ i +"].SwitchId");
+				switch_.FunctionName = context.StringValue("PlayerAuth.SwitchList["+ i +"].FunctionName");
 
 				switchList.Add(switch_);
 			}

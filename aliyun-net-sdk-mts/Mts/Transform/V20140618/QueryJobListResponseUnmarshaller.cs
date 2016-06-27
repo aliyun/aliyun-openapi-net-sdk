@@ -218,20 +218,6 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				muxConfig.Gif = gif;
 				output.MuxConfig = muxConfig;
 
-				QueryJobListResponse.Job.Output_.TransFeatures_ transFeatures = new QueryJobListResponse.Job.Output_.TransFeatures_();
-
-				List<QueryJobListResponse.Job.Output_.TransFeatures_.Merge> mergeList = new List<QueryJobListResponse.Job.Output_.TransFeatures_.Merge>();
-				for (int j = 0; j < context.Length("QueryJobList.JobList["+ i +"].Output.TransFeatures.MergeList.Length"); j++) {
-					QueryJobListResponse.Job.Output_.TransFeatures_.Merge merge = new QueryJobListResponse.Job.Output_.TransFeatures_.Merge();
-					merge.MergeURL = context.StringValue("QueryJobList.JobList["+ i +"].Output.TransFeatures.MergeList["+ j +"].MergeURL");
-					merge.Start = context.StringValue("QueryJobList.JobList["+ i +"].Output.TransFeatures.MergeList["+ j +"].Start");
-					merge.Duration = context.StringValue("QueryJobList.JobList["+ i +"].Output.TransFeatures.MergeList["+ j +"].Duration");
-
-					mergeList.Add(merge);
-				}
-				transFeatures.MergeList = mergeList;
-				output.TransFeatures = transFeatures;
-
 				QueryJobListResponse.Job.Output_.Audio_ audio = new QueryJobListResponse.Job.Output_.Audio_();
 				audio.Codec = context.StringValue("QueryJobList.JobList["+ i +"].Output.Audio.Codec");
 				audio.Profile = context.StringValue("QueryJobList.JobList["+ i +"].Output.Audio.Profile");
@@ -288,6 +274,17 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					waterMarkList.Add(waterMark);
 				}
 				output.WaterMarkList = waterMarkList;
+
+				List<QueryJobListResponse.Job.Output_.Merge> mergeList = new List<QueryJobListResponse.Job.Output_.Merge>();
+				for (int j = 0; j < context.Length("QueryJobList.JobList["+ i +"].Output.MergeList.Length"); j++) {
+					QueryJobListResponse.Job.Output_.Merge merge = new QueryJobListResponse.Job.Output_.Merge();
+					merge.MergeURL = context.StringValue("QueryJobList.JobList["+ i +"].Output.MergeList["+ j +"].MergeURL");
+					merge.Start = context.StringValue("QueryJobList.JobList["+ i +"].Output.MergeList["+ j +"].Start");
+					merge.Duration = context.StringValue("QueryJobList.JobList["+ i +"].Output.MergeList["+ j +"].Duration");
+
+					mergeList.Add(merge);
+				}
+				output.MergeList = mergeList;
 				job.Output = output;
 
 				jobList.Add(job);

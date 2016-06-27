@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				snapshotJob.PipelineId = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].PipelineId");
 				snapshotJob.State = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].State");
 				snapshotJob.Code = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].Code");
+				snapshotJob.Count = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].Count");
 				snapshotJob.Message = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].Message");
 				snapshotJob.CreationTime = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].CreationTime");
 
@@ -57,6 +58,8 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 
 				QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig_ snapshotConfig = new QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig_();
 				snapshotConfig.Time = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.Time");
+				snapshotConfig.Interval = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.Interval");
+				snapshotConfig.Num = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.Num");
 
 				QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig_.OutputFile_ outputFile = new QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig_.OutputFile_();
 				outputFile.Bucket = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.OutputFile.Bucket");

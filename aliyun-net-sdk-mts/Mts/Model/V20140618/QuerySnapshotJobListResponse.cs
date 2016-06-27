@@ -64,6 +64,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string code;
 
+			private string count;
+
 			private string message;
 
 			private string creationTime;
@@ -129,6 +131,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					code = value;
+				}
+			}
+
+			public string Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
 				}
 			}
 
@@ -229,6 +243,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string time;
 
+				private string interval;
+
+				private string num;
+
 				private OutputFile_ outputFile;
 
 				public string Time
@@ -240,6 +258,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						time = value;
+					}
+				}
+
+				public string Interval
+				{
+					get
+					{
+						return interval;
+					}
+					set	
+					{
+						interval = value;
+					}
+				}
+
+				public string Num
+				{
+					get
+					{
+						return num;
+					}
+					set	
+					{
+						num = value;
 					}
 				}
 
