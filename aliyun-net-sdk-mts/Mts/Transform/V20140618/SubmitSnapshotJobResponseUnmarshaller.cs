@@ -52,6 +52,9 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			snapshotConfig.Time = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.Time");
 			snapshotConfig.Interval = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.Interval");
 			snapshotConfig.Num = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.Num");
+			snapshotConfig.Width = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.Width");
+			snapshotConfig.Height = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.Height");
+			snapshotConfig.FrameType = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.FrameType");
 
 			SubmitSnapshotJobResponse.SnapshotJob_.SnapshotConfig_.OutputFile_ outputFile = new SubmitSnapshotJobResponse.SnapshotJob_.SnapshotConfig_.OutputFile_();
 			outputFile.Bucket = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.OutputFile.Bucket");

@@ -60,6 +60,9 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				snapshotConfig.Time = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.Time");
 				snapshotConfig.Interval = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.Interval");
 				snapshotConfig.Num = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.Num");
+				snapshotConfig.Width = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.Width");
+				snapshotConfig.Height = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.Height");
+				snapshotConfig.FrameType = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.FrameType");
 
 				QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig_.OutputFile_ outputFile = new QuerySnapshotJobListResponse.SnapshotJob.SnapshotConfig_.OutputFile_();
 				outputFile.Bucket = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.OutputFile.Bucket");

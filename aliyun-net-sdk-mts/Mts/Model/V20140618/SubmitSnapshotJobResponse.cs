@@ -233,6 +233,12 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string num;
 
+				private string width;
+
+				private string height;
+
+				private string frameType;
+
 				private OutputFile_ outputFile;
 
 				public string Time
@@ -268,6 +274,42 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						num = value;
+					}
+				}
+
+				public string Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
+					}
+				}
+
+				public string Height
+				{
+					get
+					{
+						return height;
+					}
+					set	
+					{
+						height = value;
+					}
+				}
+
+				public string FrameType
+				{
+					get
+					{
+						return frameType;
+					}
+					set	
+					{
+						frameType = value;
 					}
 				}
 
