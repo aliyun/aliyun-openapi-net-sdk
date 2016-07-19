@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Core.Http
         public FormatType? ContentType { get; set; }
         public byte[] Content { get; set; }
         public String Encoding { get; set; }
+        public int Timeout { get; set; }
 
         public HttpRequest() { }
 

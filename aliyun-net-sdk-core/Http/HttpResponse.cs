@@ -139,7 +139,7 @@ namespace Aliyun.Acs.Core.Http
             httpWebRequest.ServicePoint.Expect100Continue = false;
             httpWebRequest.Method = request.Method.ToString();
             httpWebRequest.KeepAlive = true;
-            httpWebRequest.Timeout = _timeout;
+            httpWebRequest.Timeout = request.Timeout == 0 ? _timeout : request.Timeout;
 
             if (request.Headers.ContainsKey("Accept"))
             {
