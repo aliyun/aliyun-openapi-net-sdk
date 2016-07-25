@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Iot.Model.V20160104
 
 		private string subCallback;
 
+		private string topicList;
+
 		public List<string> Topics
 		{
 			get
@@ -79,6 +81,19 @@ namespace Aliyun.Acs.Iot.Model.V20160104
 			{
 				subCallback = value;
 				DictionaryUtil.Add(QueryParameters, "SubCallback", value);
+			}
+		}
+
+		public string TopicList
+		{
+			get
+			{
+				return topicList;
+			}
+			set	
+			{
+				topicList = value;
+				DictionaryUtil.Add(QueryParameters, "TopicList", value);
 			}
 		}
 

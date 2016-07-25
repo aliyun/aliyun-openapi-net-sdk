@@ -19,7 +19,6 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-
 namespace Aliyun.Acs.Iot.Model.V20160104
 {
 	public class SubResponse : AcsResponse

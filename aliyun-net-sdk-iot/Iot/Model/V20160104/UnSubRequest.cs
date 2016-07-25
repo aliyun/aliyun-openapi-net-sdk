@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Iot.Model.V20160104
 
 		private long? appKey;
 
+		private string topicList;
+
 		public List<string> Topics
 		{
 			get
@@ -64,6 +66,19 @@ namespace Aliyun.Acs.Iot.Model.V20160104
 			{
 				appKey = value;
 				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
+			}
+		}
+
+		public string TopicList
+		{
+			get
+			{
+				return topicList;
+			}
+			set	
+			{
+				topicList = value;
+				DictionaryUtil.Add(QueryParameters, "TopicList", value);
 			}
 		}
 
