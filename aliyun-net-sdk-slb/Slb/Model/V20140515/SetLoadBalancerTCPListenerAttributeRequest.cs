@@ -69,7 +69,17 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string synProxy;
 
+		private int? maxConnection;
+
 		private string ownerAccount;
+
+		private string access_key_id;
+
+		private string tags;
+
+		private string vServerGroup;
+
+		private string vServerGroupId;
 
 		public long? OwnerId
 		{
@@ -305,6 +315,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public int? MaxConnection
+		{
+			get
+			{
+				return maxConnection;
+			}
+			set	
+			{
+				maxConnection = value;
+				DictionaryUtil.Add(QueryParameters, "MaxConnection", value.ToString());
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -315,6 +338,58 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Access_key_id
+		{
+			get
+			{
+				return access_key_id;
+			}
+			set	
+			{
+				access_key_id = value;
+				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string VServerGroup
+		{
+			get
+			{
+				return vServerGroup;
+			}
+			set	
+			{
+				vServerGroup = value;
+				DictionaryUtil.Add(QueryParameters, "VServerGroup", value);
+			}
+		}
+
+		public string VServerGroupId
+		{
+			get
+			{
+				return vServerGroupId;
+			}
+			set	
+			{
+				vServerGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "VServerGroupId", value);
 			}
 		}
 

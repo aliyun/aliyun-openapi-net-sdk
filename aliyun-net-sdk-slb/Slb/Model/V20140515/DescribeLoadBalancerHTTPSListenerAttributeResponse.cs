@@ -66,6 +66,12 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string serverCertificateId;
 
+		private string cACertificateId;
+
+		private int? maxConnection;
+
+		private string vServerGroupId;
+
 		public int? ListenerPort
 		{
 			get
@@ -315,6 +321,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				serverCertificateId = value;
+			}
+		}
+
+		public string CACertificateId
+		{
+			get
+			{
+				return cACertificateId;
+			}
+			set	
+			{
+				cACertificateId = value;
+			}
+		}
+
+		public int? MaxConnection
+		{
+			get
+			{
+				return maxConnection;
+			}
+			set	
+			{
+				maxConnection = value;
+			}
+		}
+
+		public string VServerGroupId
+		{
+			get
+			{
+				return vServerGroupId;
+			}
+			set	
+			{
+				vServerGroupId = value;
 			}
 		}
 	}

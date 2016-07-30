@@ -59,6 +59,12 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string slaveZoneId;
 
+		private string access_key_id;
+
+		private string tags;
+
+		private string enableVpcVipFlow;
+
 		public long? OwnerId
 		{
 			get
@@ -225,6 +231,45 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				slaveZoneId = value;
 				DictionaryUtil.Add(QueryParameters, "SlaveZoneId", value);
+			}
+		}
+
+		public string Access_key_id
+		{
+			get
+			{
+				return access_key_id;
+			}
+			set	
+			{
+				access_key_id = value;
+				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string EnableVpcVipFlow
+		{
+			get
+			{
+				return enableVpcVipFlow;
+			}
+			set	
+			{
+				enableVpcVipFlow = value;
+				DictionaryUtil.Add(QueryParameters, "EnableVpcVipFlow", value);
 			}
 		}
 

@@ -64,6 +64,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string healthCheckHttpCode;
 
+		private int? maxConnection;
+
+		private string vServerGroupId;
+
 		public int? ListenerPort
 		{
 			get
@@ -301,6 +305,30 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				healthCheckHttpCode = value;
+			}
+		}
+
+		public int? MaxConnection
+		{
+			get
+			{
+				return maxConnection;
+			}
+			set	
+			{
+				maxConnection = value;
+			}
+		}
+
+		public string VServerGroupId
+		{
+			get
+			{
+				return vServerGroupId;
+			}
+			set	
+			{
+				vServerGroupId = value;
 			}
 		}
 	}

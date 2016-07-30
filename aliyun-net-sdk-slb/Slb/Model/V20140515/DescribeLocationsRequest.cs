@@ -41,9 +41,13 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string ownerAccount;
 
+		private string access_key_id;
+
 		private string namespace_;
 
 		private string namespaceUid;
+
+		private string tags;
 
 		public long? OwnerId
 		{
@@ -97,6 +101,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string Access_key_id
+		{
+			get
+			{
+				return access_key_id;
+			}
+			set	
+			{
+				access_key_id = value;
+				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+			}
+		}
+
 		public string Namespace
 		{
 			get
@@ -105,7 +122,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 			set	
 			{
-                namespace_ = value;
+				namespace_ = value;
 				DictionaryUtil.Add(QueryParameters, "Namespace", value);
 			}
 		}
@@ -120,6 +137,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				namespaceUid = value;
 				DictionaryUtil.Add(QueryParameters, "NamespaceUid", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 

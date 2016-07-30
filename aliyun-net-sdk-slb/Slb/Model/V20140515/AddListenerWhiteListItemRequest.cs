@@ -47,6 +47,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string ownerAccount;
 
+		private string access_key_id;
+
+		private string tags;
+
 		public long? OwnerId
 		{
 			get
@@ -135,6 +139,32 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Access_key_id
+		{
+			get
+			{
+				return access_key_id;
+			}
+			set	
+			{
+				access_key_id = value;
+				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 

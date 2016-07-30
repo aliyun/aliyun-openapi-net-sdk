@@ -75,9 +75,21 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string healthCheckHttpCode;
 
-		private string serverCertificateId;
+		private int? maxConnection;
 
 		private string ownerAccount;
+
+		private string access_key_id;
+
+		private string serverCertificateId;
+
+		private string cACertificateId;
+
+		private string vServerGroup;
+
+		private string vServerGroupId;
+
+		private string tags;
 
 		public long? OwnerId
 		{
@@ -352,16 +364,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string ServerCertificateId
+		public int? MaxConnection
 		{
 			get
 			{
-				return serverCertificateId;
+				return maxConnection;
 			}
 			set	
 			{
-				serverCertificateId = value;
-				DictionaryUtil.Add(QueryParameters, "ServerCertificateId", value);
+				maxConnection = value;
+				DictionaryUtil.Add(QueryParameters, "MaxConnection", value.ToString());
 			}
 		}
 
@@ -375,6 +387,84 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Access_key_id
+		{
+			get
+			{
+				return access_key_id;
+			}
+			set	
+			{
+				access_key_id = value;
+				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+			}
+		}
+
+		public string ServerCertificateId
+		{
+			get
+			{
+				return serverCertificateId;
+			}
+			set	
+			{
+				serverCertificateId = value;
+				DictionaryUtil.Add(QueryParameters, "ServerCertificateId", value);
+			}
+		}
+
+		public string CACertificateId
+		{
+			get
+			{
+				return cACertificateId;
+			}
+			set	
+			{
+				cACertificateId = value;
+				DictionaryUtil.Add(QueryParameters, "CACertificateId", value);
+			}
+		}
+
+		public string VServerGroup
+		{
+			get
+			{
+				return vServerGroup;
+			}
+			set	
+			{
+				vServerGroup = value;
+				DictionaryUtil.Add(QueryParameters, "VServerGroup", value);
+			}
+		}
+
+		public string VServerGroupId
+		{
+			get
+			{
+				return vServerGroupId;
+			}
+			set	
+			{
+				vServerGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "VServerGroupId", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 
