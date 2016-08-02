@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3e0e9233-1ae2-4d6b-bfed-90063feb357c}</ProjectGuid>
+    <ProjectGuid>{bf0c445b-5a7b-4c2f-bb84-f56fc39020d2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -39,19 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Slb\Model\V20140515\ProduceSlbInstanceResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\SetCACertificateNameResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\SetRuleRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\AddVServerGroupBackendServersRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeTagsRequest.cs" />
-	<Compile Include="Slb\Model\V20140515\CreateLoadBalancerProRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerAttributeRequest.cs" />
-	<Compile Include="Slb\Model\V20140515\ProduceSlbInstanceRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateRulesResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerHTTPListenerAttributeRequest.cs" />
-	<Compile Include="Slb\Model\V20140515\EnableVpcVipFlowRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteLoadBalancerResponse.cs" />
-	<Compile Include="Slb\Model\V20140515\DescribeServerCertificateResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteVServerGroupRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeRulesResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\UploadServerCertificateRequest.cs" />
@@ -70,7 +65,6 @@
 	<Compile Include="Slb\Model\V20140515\RemoveBackendServersRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\StartLoadBalancerListenerResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateLoadBalancerUDPListenerResponse.cs" />
-	<Compile Include="Slb\Model\V20140515\SetListenerSecurityStatusRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeVServerGroupsResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerHTTPSListenerAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerHTTPListenerAttributeResponse.cs" />
@@ -81,10 +75,8 @@
 	<Compile Include="Slb\Model\V20140515\AddListenerWhiteListItemResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerHTTPListenerAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\AddTagsRequest.cs" />
-	<Compile Include="Slb\Model\V20140515\DescribeLocationsRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\StopLoadBalancerListenerRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeZonesRequest.cs" />
-	<Compile Include="Slb\Model\V20140515\EnableVpcVipFlowResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeVServerGroupAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeCACertificatesResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteCACertificateResponse.cs" />
@@ -92,7 +84,6 @@
 	<Compile Include="Slb\Model\V20140515\DescribeListenerAccessControlAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeRulesRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeRuleAttributeRequest.cs" />
-	<Compile Include="Slb\Model\V20140515\SetListenerSecurityStatusResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerUDPListenerAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\RemoveListenerWhiteListItemResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\SetBackendServersResponse.cs" />
@@ -110,7 +101,6 @@
 	<Compile Include="Slb\Model\V20140515\DescribeVServerGroupAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\AddVServerGroupBackendServersResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerHTTPSListenerAttributeResponse.cs" />
-	<Compile Include="Slb\Model\V20140515\DescribeServerCertificateRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\SetListenerAccessControlStatusRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerStatusResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\AddListenerWhiteListItemRequest.cs" />
@@ -135,7 +125,6 @@
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerStatusRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\StopLoadBalancerListenerResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteServerCertificateRequest.cs" />
-	<Compile Include="Slb\Model\V20140515\CreateLoadBalancerProResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerUDPListenerAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateRulesRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerNameResponse.cs" />
@@ -153,16 +142,13 @@
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerTCPListenerAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateLoadBalancerTCPListenerResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerTCPListenerAttributeResponse.cs" />
-	<Compile Include="Slb\Model\V20140515\DescribeRegions4LocationRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteCACertificateRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeHealthStatusRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerUDPListenerAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateLoadBalancerHTTPListenerResponse.cs" />
-	<Compile Include="Slb\Model\V20140515\DescribeLocationsResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateLoadBalancerUDPListenerRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\ModifyLoadBalancerInternetSpecResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\UploadServerCertificateResponse.cs" />
-	<Compile Include="Slb\Model\V20140515\DescribeRegions4LocationResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteServerCertificateResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\ModifyVServerGroupBackendServersResponse.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateLoadBalancerHTTPListenerResponseUnmarshaller.cs" />
@@ -188,7 +174,6 @@
 	<Compile Include="Slb\Transform\V20140515\SetLoadBalancerHTTPSListenerAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DeleteVServerGroupResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\RemoveVServerGroupBackendServersResponseUnmarshaller.cs" />
-	<Compile Include="Slb\Transform\V20140515\DescribeServerCertificateResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeRuleAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\SetServerCertificateNameResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\AddTagsResponseUnmarshaller.cs" />
@@ -199,17 +184,13 @@
 	<Compile Include="Slb\Transform\V20140515\DescribeCACertificatesResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\StartLoadBalancerListenerResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\ModifyVServerGroupBackendServersResponseUnmarshaller.cs" />
-	<Compile Include="Slb\Transform\V20140515\DescribeRegions4LocationResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\SetLoadBalancerUDPListenerAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeRegionsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeVServerGroupAttributeResponseUnmarshaller.cs" />
-	<Compile Include="Slb\Transform\V20140515\SetListenerSecurityStatusResponseUnmarshaller.cs" />
-	<Compile Include="Slb\Transform\V20140515\CreateLoadBalancerProResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeLoadBalancerHTTPSListenerAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\SetLoadBalancerNameResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DeleteCACertificateResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\AddVServerGroupBackendServersResponseUnmarshaller.cs" />
-	<Compile Include="Slb\Transform\V20140515\EnableVpcVipFlowResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\SetLoadBalancerTCPListenerAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeLoadBalancerUDPListenerAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeRulesResponseUnmarshaller.cs" />
@@ -219,9 +200,7 @@
 	<Compile Include="Slb\Transform\V20140515\DeleteRulesResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeTagsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateLoadBalancerResponseUnmarshaller.cs" />
-	<Compile Include="Slb\Transform\V20140515\DescribeLocationsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\StopLoadBalancerListenerResponseUnmarshaller.cs" />
-	<Compile Include="Slb\Transform\V20140515\ProduceSlbInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeLoadBalancersResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateLoadBalancerUDPListenerResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\SetRuleResponseUnmarshaller.cs" />
