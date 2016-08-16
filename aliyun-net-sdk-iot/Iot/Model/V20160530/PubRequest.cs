@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Iot.Model.V20160530
 
 		private long? productKey;
 
+		private int? qos;
+
 		private string topicFullName;
 
 		private string messageContent;
@@ -49,6 +51,19 @@ namespace Aliyun.Acs.Iot.Model.V20160530
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value.ToString());
+			}
+		}
+
+		public int? Qos
+		{
+			get
+			{
+				return qos;
+			}
+			set	
+			{
+				qos = value;
+				DictionaryUtil.Add(QueryParameters, "Qos", value.ToString());
 			}
 		}
 
