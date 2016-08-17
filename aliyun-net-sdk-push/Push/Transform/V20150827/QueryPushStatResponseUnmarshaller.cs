@@ -23,26 +23,27 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Transform.V20150827
 {
-    public class GetDeviceInfosResponseUnmarshaller
+    public class QueryPushStatResponseUnmarshaller
     {
-        public static GetDeviceInfosResponse Unmarshall(UnmarshallerContext context)
+        public static QueryPushStatResponse Unmarshall(UnmarshallerContext context)
         {
-			GetDeviceInfosResponse getDeviceInfosResponse = new GetDeviceInfosResponse();
+			QueryPushStatResponse queryPushStatResponse = new QueryPushStatResponse();
 
-			getDeviceInfosResponse.HttpResponse = context.HttpResponse;
-			getDeviceInfosResponse.RequestId = context.StringValue("GetDeviceInfos.RequestId");
+			queryPushStatResponse.HttpResponse = context.HttpResponse;
+			queryPushStatResponse.RequestId = context.StringValue("QueryPushStat.RequestId");
 
-			List<GetDeviceInfosResponse.DeviceInfo> deviceInfos = new List<GetDeviceInfosResponse.DeviceInfo>();
-			for (int i = 0; i < context.Length("GetDeviceInfos.DeviceInfos.Length"); i++) {
-				GetDeviceInfosResponse.DeviceInfo deviceInfo = new GetDeviceInfosResponse.DeviceInfo();
-				deviceInfo.DeviceId = context.StringValue("GetDeviceInfos.DeviceInfos["+ i +"].DeviceId");
-				deviceInfo.IsOnline = context.BooleanValue("GetDeviceInfos.DeviceInfos["+ i +"].IsOnline");
+			List<QueryPushStatResponse.PushStat> pushStats = new List<QueryPushStatResponse.PushStat>();
+			for (int i = 0; i < context.Length("QueryPushStat.PushStats.Length"); i++) {
+				QueryPushStatResponse.PushStat pushStat = new QueryPushStatResponse.PushStat();
+				pushStat.MessageId = context.StringValue("QueryPushStat.PushStats["+ i +"].MessageId");
+				pushStat.SentCount = context.LongValue("QueryPushStat.PushStats["+ i +"].SentCount");
+				pushStat.ReceivedCount = context.LongValue("QueryPushStat.PushStats["+ i +"].ReceivedCount");
 
-				deviceInfos.Add(deviceInfo);
+				pushStats.Add(pushStat);
 			}
-			getDeviceInfosResponse.DeviceInfos = deviceInfos;
+			queryPushStatResponse.PushStats = pushStats;
         
-			return getDeviceInfosResponse;
+			return queryPushStatResponse;
         }
     }
 }

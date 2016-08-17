@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Push.Model.V20150827
 
 		private string androidActivity;
 
+		private string xiaomiActivity;
+
 		private string androidOpenUrl;
 
 		private string androidExtParameters;
@@ -232,6 +234,19 @@ namespace Aliyun.Acs.Push.Model.V20150827
 			{
 				androidActivity = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidActivity", value);
+			}
+		}
+
+		public string XiaomiActivity
+		{
+			get
+			{
+				return xiaomiActivity;
+			}
+			set	
+			{
+				xiaomiActivity = value;
+				DictionaryUtil.Add(QueryParameters, "XiaomiActivity", value);
 			}
 		}
 
