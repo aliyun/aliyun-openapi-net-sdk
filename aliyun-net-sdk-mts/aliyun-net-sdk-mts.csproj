@@ -41,7 +41,6 @@
   <ItemGroup>
 	<Compile Include="Mts\Model\V20140618\DeleteMediaRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateCategoryNameResponse.cs" />
-	<Compile Include="Mts\Model\V20140618\RegisterMediaWorkflowTypeResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\AddPipelineResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryPipelineListRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\SearchWaterMarkTemplateResponse.cs" />
@@ -66,11 +65,9 @@
 	<Compile Include="Mts\Model\V20140618\QueryAnalysisJobListRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryTemplateListRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryAnalysisJobListResponse.cs" />
-	<Compile Include="Mts\Model\V20140618\SearchJobResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryMediaInfoJobListRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryWaterMarkTemplateListRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryMediaWorkflowListRequest.cs" />
-	<Compile Include="Mts\Model\V20140618\QueryJobListByPidRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\ActivateMediaWorkflowResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\DeletePipelineResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\AddMediaRequest.cs" />
@@ -100,7 +97,6 @@
 	<Compile Include="Mts\Model\V20140618\DeleteCategoryResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryMediaListByURLResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\AddWaterMarkTemplateRequest.cs" />
-	<Compile Include="Mts\Model\V20140618\SearchJobRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryMediaWorkflowListByNameResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\AddMediaTagResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\SearchPipelineRequest.cs" />
@@ -127,7 +123,6 @@
 	<Compile Include="Mts\Model\V20140618\BindOutputBucketResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\DeleteWaterMarkTemplateResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\DeleteMediaTagResponse.cs" />
-	<Compile Include="Mts\Model\V20140618\QueryJobListByPidResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\ListMediaWorkflowExecutionsResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryMediaWorkflowExecutionListRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\DeleteCategoryRequest.cs" />
@@ -139,7 +134,6 @@
 	<Compile Include="Mts\Model\V20140618\SubmitJobsRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryJobListByFileResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryMediaListByURLRequest.cs" />
-	<Compile Include="Mts\Model\V20140618\RegisterMediaWorkflowTypeRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateMediaPublishStateRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateCategoryNameRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\SearchWaterMarkTemplateRequest.cs" />
@@ -207,7 +201,6 @@
 	<Compile Include="Mts\Transform\V20140618\ListMediaWorkflowExecutionsResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\ListJobResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\SubmitSnapshotJobResponseUnmarshaller.cs" />
-	<Compile Include="Mts\Transform\V20140618\SearchJobResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\SubmitMetaInfoJobResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\AddWaterMarkTemplateResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdateWaterMarkTemplateResponseUnmarshaller.cs" />
@@ -225,11 +218,9 @@
 	<Compile Include="Mts\Transform\V20140618\SearchMediaWorkflowResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\SearchPipelineResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdatePipelineResponseUnmarshaller.cs" />
-	<Compile Include="Mts\Transform\V20140618\QueryJobListByPidResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\DeleteMediaTagResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\DeleteCategoryResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdateMediaCoverResponseUnmarshaller.cs" />
-	<Compile Include="Mts\Transform\V20140618\RegisterMediaWorkflowTypeResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\QueryMetaInfoJobListResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\StartMediaWorkflowExecutionResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\QueryMediaWorkflowListResponseUnmarshaller.cs" />
