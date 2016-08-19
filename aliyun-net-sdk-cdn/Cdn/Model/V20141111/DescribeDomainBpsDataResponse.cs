@@ -222,36 +222,5 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 		}
-
-		public class DataModule{
-
-			private string timeStamp;
-
-			private string value_;
-
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-		}
 	}
 }

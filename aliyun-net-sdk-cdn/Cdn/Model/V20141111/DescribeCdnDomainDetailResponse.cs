@@ -64,6 +64,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string serverCertificate;
 
+			private string scope;
+
 			private List<string> sources;
 
 			public string GmtCreated
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					serverCertificate = value;
+				}
+			}
+
+			public string Scope
+			{
+				get
+				{
+					return scope;
+				}
+				set	
+				{
+					scope = value;
 				}
 			}
 

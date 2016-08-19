@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			getDomainDetailModel.Description = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Description");
 			getDomainDetailModel.ServerCertificateStatus = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.ServerCertificateStatus");
 			getDomainDetailModel.ServerCertificate = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.ServerCertificate");
+			getDomainDetailModel.Scope = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Scope");
 
 			List<string> sources = new List<string>();
 			for (int i = 0; i < context.Length("DescribeCdnDomainDetail.GetDomainDetailModel.Sources.Length"); i++) {
