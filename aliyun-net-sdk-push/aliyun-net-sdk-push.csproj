@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{00183903-c15e-47f0-9a8f-986cb2a68c01}</ProjectGuid>
+    <ProjectGuid>{ed4ecf15-b307-457b-851f-6f2600871269}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -47,10 +47,12 @@
 	<Compile Include="Push\Model\V20150827\QueryPushStatResponse.cs" />
 	<Compile Include="Push\Model\V20150827\QueryUniqueDeviceStatResponse.cs" />
 	<Compile Include="Push\Model\V20150827\PushResponse.cs" />
+	<Compile Include="Push\Model\V20150827\ListDevicePushRecordsRequest.cs" />
 	<Compile Include="Push\Model\V20150827\PushMessageToiOSResponse.cs" />
 	<Compile Include="Push\Model\V20150827\PushNoticeToiOSRequest.cs" />
 	<Compile Include="Push\Model\V20150827\PushByteMessageRequest.cs" />
 	<Compile Include="Push\Model\V20150827\PushMessageToAndroidRequest.cs" />
+	<Compile Include="Push\Model\V20150827\ListDevicePushRecordsResponse.cs" />
 	<Compile Include="Push\Model\V20150827\PushMessageToAndroidResponse.cs" />
 	<Compile Include="Push\Model\V20150827\BatchGetDevicesInfoRequest.cs" />
 	<Compile Include="Push\Model\V20150827\QueryUniqueDeviceStatRequest.cs" />
@@ -78,6 +80,7 @@
 	<Compile Include="Push\Transform\V20150827\PushResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20150827\QueryTagsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20150827\PushMessageToiOSResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20150827\ListDevicePushRecordsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20150827\GetDeviceInfosResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20150827\RevertRpcResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20150827\BatchGetDevicesInfoResponseUnmarshaller.cs" />

@@ -38,6 +38,8 @@ namespace Aliyun.Acs.Push.Transform.V20150827
 				appPushStat.Time = context.StringValue("QueryAppPushStat.AppPushStats["+ i +"].Time");
 				appPushStat.SentCount = context.LongValue("QueryAppPushStat.AppPushStats["+ i +"].SentCount");
 				appPushStat.ReceivedCount = context.LongValue("QueryAppPushStat.AppPushStats["+ i +"].ReceivedCount");
+				appPushStat.OpenedCount = context.LongValue("QueryAppPushStat.AppPushStats["+ i +"].OpenedCount");
+				appPushStat.DeletedCount = context.LongValue("QueryAppPushStat.AppPushStats["+ i +"].DeletedCount");
 
 				appPushStats.Add(appPushStat);
 			}

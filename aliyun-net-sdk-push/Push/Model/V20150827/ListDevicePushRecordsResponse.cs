@@ -21,92 +21,134 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20150827
 {
-	public class QueryAppPushStatResponse : AcsResponse
+	public class ListDevicePushRecordsResponse : AcsResponse
 	{
 
-		private List<AppPushStat> appPushStats;
+		private int? total;
 
-		public List<AppPushStat> AppPushStats
+		private int? pageSize;
+
+		private int? page;
+
+		private List<DevicePushStat> messageList;
+
+		public int? Total
 		{
 			get
 			{
-				return appPushStats;
+				return total;
 			}
 			set	
 			{
-				appPushStats = value;
+				total = value;
 			}
 		}
 
-		public class AppPushStat{
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
-			private string time;
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+			}
+		}
 
-			private long? sentCount;
+		public List<DevicePushStat> MessageList
+		{
+			get
+			{
+				return messageList;
+			}
+			set	
+			{
+				messageList = value;
+			}
+		}
 
-			private long? receivedCount;
+		public class DevicePushStat{
 
-			private long? openedCount;
+			private string messageId;
 
-			private long? deletedCount;
+			private string pushStatus;
 
-			public string Time
+			private string deviceStatusWhenPush;
+
+			private string pushTime;
+
+			private string lastModifyTime;
+
+			public string MessageId
 			{
 				get
 				{
-					return time;
+					return messageId;
 				}
 				set	
 				{
-					time = value;
+					messageId = value;
 				}
 			}
 
-			public long? SentCount
+			public string PushStatus
 			{
 				get
 				{
-					return sentCount;
+					return pushStatus;
 				}
 				set	
 				{
-					sentCount = value;
+					pushStatus = value;
 				}
 			}
 
-			public long? ReceivedCount
+			public string DeviceStatusWhenPush
 			{
 				get
 				{
-					return receivedCount;
+					return deviceStatusWhenPush;
 				}
 				set	
 				{
-					receivedCount = value;
+					deviceStatusWhenPush = value;
 				}
 			}
 
-			public long? OpenedCount
+			public string PushTime
 			{
 				get
 				{
-					return openedCount;
+					return pushTime;
 				}
 				set	
 				{
-					openedCount = value;
+					pushTime = value;
 				}
 			}
 
-			public long? DeletedCount
+			public string LastModifyTime
 			{
 				get
 				{
-					return deletedCount;
+					return lastModifyTime;
 				}
 				set	
 				{
-					deletedCount = value;
+					lastModifyTime = value;
 				}
 			}
 		}

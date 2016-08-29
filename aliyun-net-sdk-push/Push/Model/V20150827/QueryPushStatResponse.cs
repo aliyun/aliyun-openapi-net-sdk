@@ -46,6 +46,10 @@ namespace Aliyun.Acs.Push.Model.V20150827
 
 			private long? receivedCount;
 
+			private long? openedCount;
+
+			private long? deletedCount;
+
 			public string MessageId
 			{
 				get
@@ -79,6 +83,30 @@ namespace Aliyun.Acs.Push.Model.V20150827
 				set	
 				{
 					receivedCount = value;
+				}
+			}
+
+			public long? OpenedCount
+			{
+				get
+				{
+					return openedCount;
+				}
+				set	
+				{
+					openedCount = value;
+				}
+			}
+
+			public long? DeletedCount
+			{
+				get
+				{
+					return deletedCount;
+				}
+				set	
+				{
+					deletedCount = value;
 				}
 			}
 		}
