@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private float? bitRate;
 
+			private string time;
+
 			public string StreamUrl
 			{
 				get
@@ -93,6 +95,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					bitRate = value;
+				}
+			}
+
+			public string Time
+			{
+				get
+				{
+					return time;
+				}
+				set	
+				{
+					time = value;
 				}
 			}
 		}

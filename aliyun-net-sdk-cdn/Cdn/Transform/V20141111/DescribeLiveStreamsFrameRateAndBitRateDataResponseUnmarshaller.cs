@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				frameRateAndBitRateInfo.VideoFrameRate = context.FloatValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate");
 				frameRateAndBitRateInfo.AudioFrameRate = context.FloatValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate");
 				frameRateAndBitRateInfo.BitRate = context.FloatValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].BitRate");
+				frameRateAndBitRateInfo.Time = context.StringValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].Time");
 
 				frameRateAndBitRateInfos.Add(frameRateAndBitRateInfo);
 			}
