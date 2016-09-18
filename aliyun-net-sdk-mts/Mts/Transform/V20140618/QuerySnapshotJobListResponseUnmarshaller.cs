@@ -71,6 +71,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				snapshotConfig.OutputFile = outputFile;
 				snapshotJob.SnapshotConfig = snapshotConfig;
 
+				QuerySnapshotJobListResponse.SnapshotJob.MNSMessageResult_ mNSMessageResult = new QuerySnapshotJobListResponse.SnapshotJob.MNSMessageResult_();
+				mNSMessageResult.MessageId = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].MNSMessageResult.MessageId");
+				mNSMessageResult.ErrorMessage = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].MNSMessageResult.ErrorMessage");
+				mNSMessageResult.ErrorCode = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].MNSMessageResult.ErrorCode");
+				snapshotJob.MNSMessageResult = mNSMessageResult;
+
 				snapshotJobList.Add(snapshotJob);
 			}
 			querySnapshotJobListResponse.SnapshotJobList = snapshotJobList;

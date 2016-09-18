@@ -64,6 +64,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private AnalysisConfig_ analysisConfig;
 
+			private MNSMessageResult_ mNSMessageResult;
+
 			public string Id
 			{
 				get
@@ -205,6 +207,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					analysisConfig = value;
+				}
+			}
+
+			public MNSMessageResult_ MNSMessageResult
+			{
+				get
+				{
+					return mNSMessageResult;
+				}
+				set	
+				{
+					mNSMessageResult = value;
 				}
 			}
 
@@ -988,6 +1002,51 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								left = value;
 							}
 						}
+					}
+				}
+			}
+
+			public class MNSMessageResult_{
+
+				private string messageId;
+
+				private string errorMessage;
+
+				private string errorCode;
+
+				public string MessageId
+				{
+					get
+					{
+						return messageId;
+					}
+					set	
+					{
+						messageId = value;
+					}
+				}
+
+				public string ErrorMessage
+				{
+					get
+					{
+						return errorMessage;
+					}
+					set	
+					{
+						errorMessage = value;
+					}
+				}
+
+				public string ErrorCode
+				{
+					get
+					{
+						return errorCode;
+					}
+					set	
+					{
+						errorCode = value;
 					}
 				}
 			}

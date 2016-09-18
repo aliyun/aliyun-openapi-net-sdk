@@ -69,6 +69,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			analysisConfig.PropertiesControl = propertiesControl;
 			analysisJob.AnalysisConfig = analysisConfig;
 
+			SubmitAnalysisJobResponse.AnalysisJob_.MNSMessageResult_ mNSMessageResult = new SubmitAnalysisJobResponse.AnalysisJob_.MNSMessageResult_();
+			mNSMessageResult.MessageId = context.StringValue("SubmitAnalysisJob.AnalysisJob.MNSMessageResult.MessageId");
+			mNSMessageResult.ErrorMessage = context.StringValue("SubmitAnalysisJob.AnalysisJob.MNSMessageResult.ErrorMessage");
+			mNSMessageResult.ErrorCode = context.StringValue("SubmitAnalysisJob.AnalysisJob.MNSMessageResult.ErrorCode");
+			analysisJob.MNSMessageResult = mNSMessageResult;
+
 			List<SubmitAnalysisJobResponse.AnalysisJob_.Template> templateList = new List<SubmitAnalysisJobResponse.AnalysisJob_.Template>();
 			for (int i = 0; i < context.Length("SubmitAnalysisJob.AnalysisJob.TemplateList.Length"); i++) {
 				SubmitAnalysisJobResponse.AnalysisJob_.Template template = new SubmitAnalysisJobResponse.AnalysisJob_.Template();

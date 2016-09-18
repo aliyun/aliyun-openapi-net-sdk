@@ -91,6 +91,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					videoStream.Bitrate = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Bitrate");
 					videoStream.NumFrames = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NumFrames");
 					videoStream.Lang = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Lang");
+					videoStream.Rotate = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Rotate");
 
 					QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.VideoStream.NetworkCost_ networkCost = new QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.VideoStream.NetworkCost_();
 					networkCost.PreloadTime = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime");
@@ -148,6 +149,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				format.Bitrate = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Format.Bitrate");
 				properties.Format = format;
 				mediaInfoJob.Properties = properties;
+
+				QueryMediaInfoJobListResponse.MediaInfoJob.MNSMessageResult_ mNSMessageResult = new QueryMediaInfoJobListResponse.MediaInfoJob.MNSMessageResult_();
+				mNSMessageResult.MessageId = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].MNSMessageResult.MessageId");
+				mNSMessageResult.ErrorMessage = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].MNSMessageResult.ErrorMessage");
+				mNSMessageResult.ErrorCode = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].MNSMessageResult.ErrorCode");
+				mediaInfoJob.MNSMessageResult = mNSMessageResult;
 
 				mediaInfoJobList.Add(mediaInfoJob);
 			}

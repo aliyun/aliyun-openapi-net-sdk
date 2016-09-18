@@ -24,17 +24,17 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class CategoryTreeResponse : AcsResponse
 	{
 
-		private string categoryTree;
+		private string categoryTree_;
 
-		public string CategoryTree
+		public string CategoryTree_
 		{
 			get
 			{
-				return categoryTree;
+				return categoryTree_;
 			}
 			set	
 			{
-				categoryTree = value;
+				categoryTree_ = value;
 			}
 		}
 	}

@@ -763,6 +763,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 						private string lang;
 
+						private string rotate;
+
 						private NetworkCost_ networkCost;
 
 						public string Index
@@ -1026,6 +1028,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								lang = value;
+							}
+						}
+
+						public string Rotate
+						{
+							get
+							{
+								return rotate;
+							}
+							set	
+							{
+								rotate = value;
 							}
 						}
 

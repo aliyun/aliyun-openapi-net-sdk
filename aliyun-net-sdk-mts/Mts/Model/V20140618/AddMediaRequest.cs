@@ -49,6 +49,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string tags;
 
+		private string mediaWorkflowId;
+
+		private string mediaWorkflowUserData;
+
 		private long? cateId;
 
 		private string ownerAccount;
@@ -154,6 +158,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string MediaWorkflowId
+		{
+			get
+			{
+				return mediaWorkflowId;
+			}
+			set	
+			{
+				mediaWorkflowId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaWorkflowId", value);
+			}
+		}
+
+		public string MediaWorkflowUserData
+		{
+			get
+			{
+				return mediaWorkflowUserData;
+			}
+			set	
+			{
+				mediaWorkflowUserData = value;
+				DictionaryUtil.Add(QueryParameters, "MediaWorkflowUserData", value);
 			}
 		}
 

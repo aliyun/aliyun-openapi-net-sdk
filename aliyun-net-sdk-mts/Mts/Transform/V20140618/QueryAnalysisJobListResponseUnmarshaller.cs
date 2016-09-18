@@ -77,6 +77,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				analysisConfig.PropertiesControl = propertiesControl;
 				analysisJob.AnalysisConfig = analysisConfig;
 
+				QueryAnalysisJobListResponse.AnalysisJob.MNSMessageResult_ mNSMessageResult = new QueryAnalysisJobListResponse.AnalysisJob.MNSMessageResult_();
+				mNSMessageResult.MessageId = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].MNSMessageResult.MessageId");
+				mNSMessageResult.ErrorMessage = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].MNSMessageResult.ErrorMessage");
+				mNSMessageResult.ErrorCode = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].MNSMessageResult.ErrorCode");
+				analysisJob.MNSMessageResult = mNSMessageResult;
+
 				List<QueryAnalysisJobListResponse.AnalysisJob.Template> templateList = new List<QueryAnalysisJobListResponse.AnalysisJob.Template>();
 				for (int j = 0; j < context.Length("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList.Length"); j++) {
 					QueryAnalysisJobListResponse.AnalysisJob.Template template = new QueryAnalysisJobListResponse.AnalysisJob.Template();

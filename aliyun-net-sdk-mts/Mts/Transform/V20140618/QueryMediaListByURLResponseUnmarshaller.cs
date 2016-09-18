@@ -102,6 +102,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					videoStream.Bitrate = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Bitrate");
 					videoStream.NumFrames = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].NumFrames");
 					videoStream.Lang = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Lang");
+					videoStream.Rotate = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Rotate");
 
 					QueryMediaListByURLResponse.Media.MediaInfo_.Streams_.VideoStream.NetworkCost_ networkCost = new QueryMediaListByURLResponse.Media.MediaInfo_.Streams_.VideoStream.NetworkCost_();
 					networkCost.PreloadTime = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime");

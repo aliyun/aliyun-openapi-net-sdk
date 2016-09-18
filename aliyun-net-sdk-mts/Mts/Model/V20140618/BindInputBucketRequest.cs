@@ -41,8 +41,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string bucket;
 
-		private bool? sync;
-
 		private string ownerAccount;
 
 		public long? OwnerId
@@ -94,19 +92,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				bucket = value;
 				DictionaryUtil.Add(QueryParameters, "Bucket", value);
-			}
-		}
-
-		public bool? Sync
-		{
-			get
-			{
-				return sync;
-			}
-			set	
-			{
-				sync = value;
-				DictionaryUtil.Add(QueryParameters, "Sync", value.ToString());
 			}
 		}
 

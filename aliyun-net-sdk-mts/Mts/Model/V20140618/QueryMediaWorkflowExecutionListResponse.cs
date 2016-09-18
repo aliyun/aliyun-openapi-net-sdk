@@ -170,6 +170,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string endTime;
 
+				private MNSMessageResult_ mNSMessageResult;
+
 				public string Name
 				{
 					get
@@ -263,6 +265,63 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						endTime = value;
+					}
+				}
+
+				public MNSMessageResult_ MNSMessageResult
+				{
+					get
+					{
+						return mNSMessageResult;
+					}
+					set	
+					{
+						mNSMessageResult = value;
+					}
+				}
+
+				public class MNSMessageResult_{
+
+					private string messageId;
+
+					private string errorMessage;
+
+					private string errorCode;
+
+					public string MessageId
+					{
+						get
+						{
+							return messageId;
+						}
+						set	
+						{
+							messageId = value;
+						}
+					}
+
+					public string ErrorMessage
+					{
+						get
+						{
+							return errorMessage;
+						}
+						set	
+						{
+							errorMessage = value;
+						}
+					}
+
+					public string ErrorCode
+					{
+						get
+						{
+							return errorCode;
+						}
+						set	
+						{
+							errorCode = value;
+						}
 					}
 				}
 			}

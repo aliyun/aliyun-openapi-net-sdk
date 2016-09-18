@@ -285,6 +285,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				}
 				output.MergeList = mergeList;
 				job.Output = output;
+
+				SubmitJobsResponse.JobResult.Job_.MNSMessageResult_ mNSMessageResult = new SubmitJobsResponse.JobResult.Job_.MNSMessageResult_();
+				mNSMessageResult.MessageId = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.MNSMessageResult.MessageId");
+				mNSMessageResult.ErrorMessage = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.MNSMessageResult.ErrorMessage");
+				mNSMessageResult.ErrorCode = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.MNSMessageResult.ErrorCode");
+				job.MNSMessageResult = mNSMessageResult;
 				jobResult.Job = job;
 
 				jobResultList.Add(jobResult);

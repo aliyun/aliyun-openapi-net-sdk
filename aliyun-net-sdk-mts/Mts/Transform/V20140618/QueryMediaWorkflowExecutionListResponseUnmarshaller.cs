@@ -69,6 +69,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					activity.StartTime = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].StartTime");
 					activity.EndTime = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].EndTime");
 
+					QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Activity.MNSMessageResult_ mNSMessageResult = new QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Activity.MNSMessageResult_();
+					mNSMessageResult.MessageId = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.MessageId");
+					mNSMessageResult.ErrorMessage = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.ErrorMessage");
+					mNSMessageResult.ErrorCode = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.ErrorCode");
+					activity.MNSMessageResult = mNSMessageResult;
+
 					activityList.Add(activity);
 				}
 				mediaWorkflowExecution.ActivityList = activityList;

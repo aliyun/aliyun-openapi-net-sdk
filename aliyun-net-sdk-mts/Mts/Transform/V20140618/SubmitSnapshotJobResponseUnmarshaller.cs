@@ -62,6 +62,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			outputFile.Object = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.OutputFile.Object");
 			snapshotConfig.OutputFile = outputFile;
 			snapshotJob.SnapshotConfig = snapshotConfig;
+
+			SubmitSnapshotJobResponse.SnapshotJob_.MNSMessageResult_ mNSMessageResult = new SubmitSnapshotJobResponse.SnapshotJob_.MNSMessageResult_();
+			mNSMessageResult.MessageId = context.StringValue("SubmitSnapshotJob.SnapshotJob.MNSMessageResult.MessageId");
+			mNSMessageResult.ErrorMessage = context.StringValue("SubmitSnapshotJob.SnapshotJob.MNSMessageResult.ErrorMessage");
+			mNSMessageResult.ErrorCode = context.StringValue("SubmitSnapshotJob.SnapshotJob.MNSMessageResult.ErrorCode");
+			snapshotJob.MNSMessageResult = mNSMessageResult;
 			submitSnapshotJobResponse.SnapshotJob = snapshotJob;
         
 			return submitSnapshotJobResponse;

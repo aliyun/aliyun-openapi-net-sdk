@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private long? resourceOwnerId;
 
-		private string cateId;
+		private long? cateId;
 
 		private string ownerAccount;
 
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string CateId
+		public long? CateId
 		{
 			get
 			{
@@ -91,7 +91,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			set	
 			{
 				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value);
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
 			}
 		}
 
