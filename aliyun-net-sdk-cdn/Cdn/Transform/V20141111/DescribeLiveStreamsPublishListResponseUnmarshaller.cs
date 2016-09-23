@@ -38,10 +38,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				liveStreamPublishInfo.DomainName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].DomainName");
 				liveStreamPublishInfo.AppName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].AppName");
 				liveStreamPublishInfo.StreamName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StreamName");
+				liveStreamPublishInfo.StreamUrl = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StreamUrl");
 				liveStreamPublishInfo.PublishTime = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishTime");
 				liveStreamPublishInfo.StopTime = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StopTime");
 				liveStreamPublishInfo.PublishUrl = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishUrl");
 				liveStreamPublishInfo.ClientAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].ClientAddr");
+				liveStreamPublishInfo.EdgeNodeAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].EdgeNodeAddr");
 
 				publishInfo.Add(liveStreamPublishInfo);
 			}

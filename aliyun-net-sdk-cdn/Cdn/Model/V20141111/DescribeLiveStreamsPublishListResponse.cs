@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string streamName;
 
+			private string streamUrl;
+
 			private string publishTime;
 
 			private string stopTime;
@@ -53,6 +55,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			private string publishUrl;
 
 			private string clientAddr;
+
+			private string edgeNodeAddr;
 
 			public string DomainName
 			{
@@ -87,6 +91,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					streamName = value;
+				}
+			}
+
+			public string StreamUrl
+			{
+				get
+				{
+					return streamUrl;
+				}
+				set	
+				{
+					streamUrl = value;
 				}
 			}
 
@@ -135,6 +151,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					clientAddr = value;
+				}
+			}
+
+			public string EdgeNodeAddr
+			{
+				get
+				{
+					return edgeNodeAddr;
+				}
+				set	
+				{
+					edgeNodeAddr = value;
 				}
 			}
 		}
