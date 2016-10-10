@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				DescribeLiveStreamOnlineUserNumResponse.LiveStreamOnlineUserNumInfo liveStreamOnlineUserNumInfo = new DescribeLiveStreamOnlineUserNumResponse.LiveStreamOnlineUserNumInfo();
 				liveStreamOnlineUserNumInfo.StreamUrl = context.StringValue("DescribeLiveStreamOnlineUserNum.OnlineUserInfo["+ i +"].StreamUrl");
 				liveStreamOnlineUserNumInfo.UserNumber = context.LongValue("DescribeLiveStreamOnlineUserNum.OnlineUserInfo["+ i +"].UserNumber");
+				liveStreamOnlineUserNumInfo.Time = context.StringValue("DescribeLiveStreamOnlineUserNum.OnlineUserInfo["+ i +"].Time");
 
 				onlineUserInfo.Add(liveStreamOnlineUserNumInfo);
 			}

@@ -43,6 +43,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string streamName;
 
+		private string startTime;
+
+		private string endTime;
+
+		private string hlsSwitch;
+
 		public long? OwnerId
 		{
 			get
@@ -105,6 +111,45 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				streamName = value;
 				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string HlsSwitch
+		{
+			get
+			{
+				return hlsSwitch;
+			}
+			set	
+			{
+				hlsSwitch = value;
+				DictionaryUtil.Add(QueryParameters, "HlsSwitch", value);
 			}
 		}
 

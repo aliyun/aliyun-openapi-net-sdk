@@ -58,6 +58,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private long? userNumber;
 
+			private string time;
+
 			public string StreamUrl
 			{
 				get
@@ -79,6 +81,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					userNumber = value;
+				}
+			}
+
+			public string Time
+			{
+				get
+				{
+					return time;
+				}
+				set	
+				{
+					time = value;
 				}
 			}
 		}
