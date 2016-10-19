@@ -37,7 +37,6 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				ListAllMediaBucketResponse.MediaBucket mediaBucket = new ListAllMediaBucketResponse.MediaBucket();
 				mediaBucket.Bucket = context.StringValue("ListAllMediaBucket.MediaBucketList["+ i +"].Bucket");
 				mediaBucket.Type = context.StringValue("ListAllMediaBucket.MediaBucketList["+ i +"].Type");
-				mediaBucket.Sync = context.BooleanValue("ListAllMediaBucket.MediaBucketList["+ i +"].Sync");
 
 				mediaBucketList.Add(mediaBucket);
 			}

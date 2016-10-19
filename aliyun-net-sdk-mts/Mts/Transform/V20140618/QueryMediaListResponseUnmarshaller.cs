@@ -165,6 +165,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				for (int j = 0; j < context.Length("QueryMediaList.MediaList["+ i +"].PlayList.Length"); j++) {
 					QueryMediaListResponse.Media.Play play = new QueryMediaListResponse.Media.Play();
 					play.ActivityName = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].ActivityName");
+					play.MediaWorkflowId = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].MediaWorkflowId");
 					play.MediaWorkflowName = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].MediaWorkflowName");
 					play.Duration = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].Duration");
 					play.Format = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].Format");
@@ -187,6 +188,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				for (int j = 0; j < context.Length("QueryMediaList.MediaList["+ i +"].SnapshotList.Length"); j++) {
 					QueryMediaListResponse.Media.Snapshot snapshot = new QueryMediaListResponse.Media.Snapshot();
 					snapshot.Type = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].Type");
+					snapshot.MediaWorkflowId = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].MediaWorkflowId");
 					snapshot.MediaWorkflowName = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].MediaWorkflowName");
 					snapshot.ActivityName = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].ActivityName");
 					snapshot.Count = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].Count");

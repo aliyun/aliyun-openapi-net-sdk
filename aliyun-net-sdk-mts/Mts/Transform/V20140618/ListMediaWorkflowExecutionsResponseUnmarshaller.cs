@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			for (int i = 0; i < context.Length("ListMediaWorkflowExecutions.MediaWorkflowExecutionList.Length"); i++) {
 				ListMediaWorkflowExecutionsResponse.MediaWorkflowExecution mediaWorkflowExecution = new ListMediaWorkflowExecutionsResponse.MediaWorkflowExecution();
 				mediaWorkflowExecution.RunId = context.StringValue("ListMediaWorkflowExecutions.MediaWorkflowExecutionList["+ i +"].RunId");
+				mediaWorkflowExecution.MediaWorkflowId = context.StringValue("ListMediaWorkflowExecutions.MediaWorkflowExecutionList["+ i +"].MediaWorkflowId");
 				mediaWorkflowExecution.Name = context.StringValue("ListMediaWorkflowExecutions.MediaWorkflowExecutionList["+ i +"].Name");
 				mediaWorkflowExecution.State = context.StringValue("ListMediaWorkflowExecutions.MediaWorkflowExecutionList["+ i +"].State");
 				mediaWorkflowExecution.MediaId = context.StringValue("ListMediaWorkflowExecutions.MediaWorkflowExecutionList["+ i +"].MediaId");

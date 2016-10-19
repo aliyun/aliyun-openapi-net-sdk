@@ -48,8 +48,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string level;
 
-			private string mediaNum;
-
 			public string CateId
 			{
 				get
@@ -95,18 +93,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					level = value;
-				}
-			}
-
-			public string MediaNum
-			{
-				get
-				{
-					return mediaNum;
-				}
-				set	
-				{
-					mediaNum = value;
 				}
 			}
 		}

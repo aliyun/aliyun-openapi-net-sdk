@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private long? resourceOwnerId;
 
+		private string mediaWorkflowId;
+
 		private string mediaWorkflowName;
 
 		private string inputFileURL;
@@ -85,6 +87,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string MediaWorkflowId
+		{
+			get
+			{
+				return mediaWorkflowId;
+			}
+			set	
+			{
+				mediaWorkflowId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaWorkflowId", value);
 			}
 		}
 

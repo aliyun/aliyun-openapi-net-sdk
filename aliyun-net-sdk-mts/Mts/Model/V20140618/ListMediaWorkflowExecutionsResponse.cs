@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string runId;
 
+			private string mediaWorkflowId;
+
 			private string name;
 
 			private string state;
@@ -77,6 +79,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					runId = value;
+				}
+			}
+
+			public string MediaWorkflowId
+			{
+				get
+				{
+					return mediaWorkflowId;
+				}
+				set	
+				{
+					mediaWorkflowId = value;
 				}
 			}
 

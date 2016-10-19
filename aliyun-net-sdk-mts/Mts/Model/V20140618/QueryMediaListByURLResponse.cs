@@ -338,6 +338,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string activityName;
 
+				private string mediaWorkflowId;
+
 				private string mediaWorkflowName;
 
 				private string duration;
@@ -365,6 +367,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						activityName = value;
+					}
+				}
+
+				public string MediaWorkflowId
+				{
+					get
+					{
+						return mediaWorkflowId;
+					}
+					set	
+					{
+						mediaWorkflowId = value;
 					}
 				}
 
@@ -512,6 +526,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string type;
 
+				private string mediaWorkflowId;
+
 				private string mediaWorkflowName;
 
 				private string activityName;
@@ -529,6 +545,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						type = value;
+					}
+				}
+
+				public string MediaWorkflowId
+				{
+					get
+					{
+						return mediaWorkflowId;
+					}
+					set	
+					{
+						mediaWorkflowId = value;
 					}
 				}
 

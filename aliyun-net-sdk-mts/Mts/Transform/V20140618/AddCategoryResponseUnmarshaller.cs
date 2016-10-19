@@ -37,7 +37,6 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			category.CateName = context.StringValue("AddCategory.Category.CateName");
 			category.ParentId = context.StringValue("AddCategory.Category.ParentId");
 			category.Level = context.StringValue("AddCategory.Category.Level");
-			category.MediaNum = context.StringValue("AddCategory.Category.MediaNum");
 			addCategoryResponse.Category = category;
         
 			return addCategoryResponse;

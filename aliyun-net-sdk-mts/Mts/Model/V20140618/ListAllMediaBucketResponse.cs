@@ -44,8 +44,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string type;
 
-			private bool? sync;
-
 			public string Bucket
 			{
 				get
@@ -67,18 +65,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					type = value;
-				}
-			}
-
-			public bool? Sync
-			{
-				get
-				{
-					return sync;
-				}
-				set	
-				{
-					sync = value;
 				}
 			}
 		}
