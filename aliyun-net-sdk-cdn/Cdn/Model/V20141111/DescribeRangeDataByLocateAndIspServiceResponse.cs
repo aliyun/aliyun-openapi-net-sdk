@@ -16,23 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cdn.Model.V20141111;
-using System;
+using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cdn.Transform.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DeleteLiveAppSnapshotConfigResponseUnmarshaller
-    {
-        public static DeleteLiveAppSnapshotConfigResponse Unmarshall(UnmarshallerContext context)
-        {
-			DeleteLiveAppSnapshotConfigResponse deleteLiveAppSnapshotConfigResponse = new DeleteLiveAppSnapshotConfigResponse();
+	public class DescribeRangeDataByLocateAndIspServiceResponse : AcsResponse
+	{
 
-			deleteLiveAppSnapshotConfigResponse.HttpResponse = context.HttpResponse;
-			deleteLiveAppSnapshotConfigResponse.RequestId = context.StringValue("DeleteLiveAppSnapshotConfig.RequestId");
-        
-			return deleteLiveAppSnapshotConfigResponse;
-        }
-    }
+		private string jsonResult;
+
+		public string JsonResult
+		{
+			get
+			{
+				return jsonResult;
+			}
+			set	
+			{
+				jsonResult = value;
+			}
+		}
+	}
 }

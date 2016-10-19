@@ -21,92 +21,64 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLiveStreamSnapshotInfoResponse : AcsResponse
+	public class DescribeLiveStreamNumberListResponse : AcsResponse
 	{
 
-		private string nextStartTime;
+		private string domainName;
 
-		private List<LiveStreamSnapshotInfo> liveStreamSnapshotInfoList;
+		private List<StreamNumberInfo> streamNumberInfos;
 
-		public string NextStartTime
+		public string DomainName
 		{
 			get
 			{
-				return nextStartTime;
+				return domainName;
 			}
 			set	
 			{
-				nextStartTime = value;
+				domainName = value;
 			}
 		}
 
-		public List<LiveStreamSnapshotInfo> LiveStreamSnapshotInfoList
+		public List<StreamNumberInfo> StreamNumberInfos
 		{
 			get
 			{
-				return liveStreamSnapshotInfoList;
+				return streamNumberInfos;
 			}
 			set	
 			{
-				liveStreamSnapshotInfoList = value;
+				streamNumberInfos = value;
 			}
 		}
 
-		public class LiveStreamSnapshotInfo{
+		public class StreamNumberInfo{
 
-			private string ossEndpoint;
+			private int? number;
 
-			private string ossBucket;
+			private string time;
 
-			private string ossObject;
-
-			private string createTime;
-
-			public string OssEndpoint
+			public int? Number
 			{
 				get
 				{
-					return ossEndpoint;
+					return number;
 				}
 				set	
 				{
-					ossEndpoint = value;
+					number = value;
 				}
 			}
 
-			public string OssBucket
+			public string Time
 			{
 				get
 				{
-					return ossBucket;
+					return time;
 				}
 				set	
 				{
-					ossBucket = value;
-				}
-			}
-
-			public string OssObject
-			{
-				get
-				{
-					return ossObject;
-				}
-				set	
-				{
-					ossObject = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
+					time = value;
 				}
 			}
 		}

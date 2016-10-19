@@ -23,16 +23,17 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
-    public class DeleteLiveAppSnapshotConfigResponseUnmarshaller
+    public class DescribeRangeDataByLocateAndIspServiceResponseUnmarshaller
     {
-        public static DeleteLiveAppSnapshotConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRangeDataByLocateAndIspServiceResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteLiveAppSnapshotConfigResponse deleteLiveAppSnapshotConfigResponse = new DeleteLiveAppSnapshotConfigResponse();
+			DescribeRangeDataByLocateAndIspServiceResponse describeRangeDataByLocateAndIspServiceResponse = new DescribeRangeDataByLocateAndIspServiceResponse();
 
-			deleteLiveAppSnapshotConfigResponse.HttpResponse = context.HttpResponse;
-			deleteLiveAppSnapshotConfigResponse.RequestId = context.StringValue("DeleteLiveAppSnapshotConfig.RequestId");
+			describeRangeDataByLocateAndIspServiceResponse.HttpResponse = context.HttpResponse;
+			describeRangeDataByLocateAndIspServiceResponse.RequestId = context.StringValue("DescribeRangeDataByLocateAndIspService.RequestId");
+			describeRangeDataByLocateAndIspServiceResponse.JsonResult = context.StringValue("DescribeRangeDataByLocateAndIspService.JsonResult");
         
-			return deleteLiveAppSnapshotConfigResponse;
+			return describeRangeDataByLocateAndIspServiceResponse;
         }
     }
 }

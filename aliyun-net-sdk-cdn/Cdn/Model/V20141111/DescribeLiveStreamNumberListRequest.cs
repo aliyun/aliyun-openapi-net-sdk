@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DescribeLiveSnapshotConfigRequest : RpcAcsRequest<DescribeLiveSnapshotConfigResponse>
+    public class DescribeLiveStreamNumberListRequest : RpcAcsRequest<DescribeLiveStreamNumberListResponse>
     {
-        public DescribeLiveSnapshotConfigRequest()
-            : base("Cdn", "2014-11-11", "DescribeLiveSnapshotConfig")
+        public DescribeLiveStreamNumberListRequest()
+            : base("Cdn", "2014-11-11", "DescribeLiveStreamNumberList")
         {
         }
 
@@ -41,13 +41,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string appName;
 
-		private string streamName;
+		private string startTime;
 
-		private int? pageNum;
-
-		private int? pageSize;
-
-		private string order;
+		private string endTime;
 
 		public long? OwnerId
 		{
@@ -101,61 +97,35 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string StreamName
+		public string StartTime
 		{
 			get
 			{
-				return streamName;
+				return startTime;
 			}
 			set	
 			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public int? PageNum
+		public string EndTime
 		{
 			get
 			{
-				return pageNum;
+				return endTime;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Order
-		{
-			get
-			{
-				return order;
-			}
-			set	
-			{
-				order = value;
-				DictionaryUtil.Add(QueryParameters, "Order", value);
-			}
-		}
-
-        public override DescribeLiveSnapshotConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveStreamNumberListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveSnapshotConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveStreamNumberListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

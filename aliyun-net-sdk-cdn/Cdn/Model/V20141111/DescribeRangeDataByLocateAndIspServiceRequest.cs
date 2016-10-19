@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DescribeLiveSnapshotConfigRequest : RpcAcsRequest<DescribeLiveSnapshotConfigResponse>
+    public class DescribeRangeDataByLocateAndIspServiceRequest : RpcAcsRequest<DescribeRangeDataByLocateAndIspServiceResponse>
     {
-        public DescribeLiveSnapshotConfigRequest()
-            : base("Cdn", "2014-11-11", "DescribeLiveSnapshotConfig")
+        public DescribeRangeDataByLocateAndIspServiceRequest()
+            : base("Cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService")
         {
         }
 
@@ -37,17 +37,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string securityToken;
 
-		private string domainName;
+		private string domainNames;
 
-		private string appName;
+		private string locationNames;
 
-		private string streamName;
+		private string ispNames;
 
-		private int? pageNum;
+		private string startTime;
 
-		private int? pageSize;
-
-		private string order;
+		private string endTime;
 
 		public long? OwnerId
 		{
@@ -75,87 +73,74 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string DomainName
+		public string DomainNames
 		{
 			get
 			{
-				return domainName;
+				return domainNames;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				domainNames = value;
+				DictionaryUtil.Add(QueryParameters, "DomainNames", value);
 			}
 		}
 
-		public string AppName
+		public string LocationNames
 		{
 			get
 			{
-				return appName;
+				return locationNames;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				locationNames = value;
+				DictionaryUtil.Add(QueryParameters, "LocationNames", value);
 			}
 		}
 
-		public string StreamName
+		public string IspNames
 		{
 			get
 			{
-				return streamName;
+				return ispNames;
 			}
 			set	
 			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+				ispNames = value;
+				DictionaryUtil.Add(QueryParameters, "IspNames", value);
 			}
 		}
 
-		public int? PageNum
+		public string StartTime
 		{
 			get
 			{
-				return pageNum;
+				return startTime;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "startTime", value);
 			}
 		}
 
-		public int? PageSize
+		public string EndTime
 		{
 			get
 			{
-				return pageSize;
+				return endTime;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public string Order
-		{
-			get
-			{
-				return order;
-			}
-			set	
-			{
-				order = value;
-				DictionaryUtil.Add(QueryParameters, "Order", value);
-			}
-		}
-
-        public override DescribeLiveSnapshotConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeRangeDataByLocateAndIspServiceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveSnapshotConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRangeDataByLocateAndIspServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
