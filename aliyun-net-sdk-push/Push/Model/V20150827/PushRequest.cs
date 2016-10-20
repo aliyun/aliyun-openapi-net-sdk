@@ -41,19 +41,19 @@ namespace Aliyun.Acs.Push.Model.V20150827
 
 		private int? type;
 
+		private int? deviceType;
+
 		private string title;
+
+		private string body;
+
+		private string summary;
+
+		private int? timeOut;
 
 		private bool? remind;
 
 		private bool? storeOffline;
-
-		private string body;
-
-		private int? deviceType;
-
-		private int? timeOut;
-
-		private string summary;
 
 		private string androidActivity;
 
@@ -72,6 +72,14 @@ namespace Aliyun.Acs.Push.Model.V20150827
 		private string iOSMusic;
 
 		private string iOSBadge;
+
+		private string iOSTitle;
+
+		private string iOSSubtitle;
+
+		private string iOSNotificationCategory;
+
+		private bool? iOSMutableContent;
 
 		private string iOSExtParameters;
 
@@ -133,6 +141,19 @@ namespace Aliyun.Acs.Push.Model.V20150827
 			}
 		}
 
+		public int? DeviceType
+		{
+			get
+			{
+				return deviceType;
+			}
+			set	
+			{
+				deviceType = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceType", value.ToString());
+			}
+		}
+
 		public string Title
 		{
 			get
@@ -143,6 +164,45 @@ namespace Aliyun.Acs.Push.Model.V20150827
 			{
 				title = value;
 				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(QueryParameters, "Body", value);
+			}
+		}
+
+		public string Summary
+		{
+			get
+			{
+				return summary;
+			}
+			set	
+			{
+				summary = value;
+				DictionaryUtil.Add(QueryParameters, "Summary", value);
+			}
+		}
+
+		public int? TimeOut
+		{
+			get
+			{
+				return timeOut;
+			}
+			set	
+			{
+				timeOut = value;
+				DictionaryUtil.Add(QueryParameters, "TimeOut", value.ToString());
 			}
 		}
 
@@ -169,58 +229,6 @@ namespace Aliyun.Acs.Push.Model.V20150827
 			{
 				storeOffline = value;
 				DictionaryUtil.Add(QueryParameters, "StoreOffline", value.ToString());
-			}
-		}
-
-		public string Body
-		{
-			get
-			{
-				return body;
-			}
-			set	
-			{
-				body = value;
-				DictionaryUtil.Add(QueryParameters, "Body", value);
-			}
-		}
-
-		public int? DeviceType
-		{
-			get
-			{
-				return deviceType;
-			}
-			set	
-			{
-				deviceType = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceType", value.ToString());
-			}
-		}
-
-		public int? TimeOut
-		{
-			get
-			{
-				return timeOut;
-			}
-			set	
-			{
-				timeOut = value;
-				DictionaryUtil.Add(QueryParameters, "TimeOut", value.ToString());
-			}
-		}
-
-		public string Summary
-		{
-			get
-			{
-				return summary;
-			}
-			set	
-			{
-				summary = value;
-				DictionaryUtil.Add(QueryParameters, "Summary", value);
 			}
 		}
 
@@ -338,6 +346,58 @@ namespace Aliyun.Acs.Push.Model.V20150827
 			{
 				iOSBadge = value;
 				DictionaryUtil.Add(QueryParameters, "iOSBadge", value);
+			}
+		}
+
+		public string IOSTitle
+		{
+			get
+			{
+				return iOSTitle;
+			}
+			set	
+			{
+				iOSTitle = value;
+				DictionaryUtil.Add(QueryParameters, "iOSTitle", value);
+			}
+		}
+
+		public string IOSSubtitle
+		{
+			get
+			{
+				return iOSSubtitle;
+			}
+			set	
+			{
+				iOSSubtitle = value;
+				DictionaryUtil.Add(QueryParameters, "iOSSubtitle", value);
+			}
+		}
+
+		public string IOSNotificationCategory
+		{
+			get
+			{
+				return iOSNotificationCategory;
+			}
+			set	
+			{
+				iOSNotificationCategory = value;
+				DictionaryUtil.Add(QueryParameters, "iOSNotificationCategory", value);
+			}
+		}
+
+		public bool? IOSMutableContent
+		{
+			get
+			{
+				return iOSMutableContent;
+			}
+			set	
+			{
+				iOSMutableContent = value;
+				DictionaryUtil.Add(QueryParameters, "iOSMutableContent", value.ToString());
 			}
 		}
 
