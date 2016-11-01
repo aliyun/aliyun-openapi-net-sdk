@@ -51,6 +51,10 @@
                <DomainName>alidns.aliyuncs.com</DomainName>
 			</Product>
 			<Product>
+				<ProductName>Domain</ProductName>
+				<DomainName>domain.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
                <ProductName>CloudAPI</ProductName>
                <DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName>
 			</Product>
@@ -109,6 +113,10 @@
 	    	<Product>
 	            <ProductName>Dm</ProductName>
 	            <DomainName>dm.aliyuncs.com</DomainName>
+	        </Product>
+			<Product>
+	            <ProductName>Sms</ProductName>
+	            <DomainName>sms.aliyuncs.com</DomainName>
 	        </Product>
 	    	<Product>
 	            <ProductName>ROS</ProductName>
@@ -254,6 +262,10 @@
 	            <ProductName>Ess</ProductName>
 	            <DomainName>ess.aliyuncs.com</DomainName>
 	        </Product>
+	        <Product>
+	            <ProductName>YundunDdos</ProductName>
+	            <DomainName>inner-yundun-ddos.cn-hangzhou.aliyuncs.com</DomainName>
+	        </Product>
 	    </Products>
     </Endpoint>
     <Endpoint name="cn-shenzhen">
@@ -264,6 +276,10 @@
 			<Product>
                <ProductName>Alidns</ProductName>
                <DomainName>alidns.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
+				<ProductName>Domain</ProductName>
+				<DomainName>domain.aliyuncs.com</DomainName>
 			</Product>
 			<Product>
                <ProductName>CmsSiteMonitor</ProductName>
@@ -308,6 +324,10 @@
 	    	<Product>
 	            <ProductName>Dm</ProductName>
 	            <DomainName>dm.aliyuncs.com</DomainName>
+	        </Product>
+			<Product>
+	            <ProductName>Sms</ProductName>
+	            <DomainName>sms.aliyuncs.com</DomainName>
 	        </Product>
 	     	<Product>
 	            <ProductName>ROS</ProductName>
@@ -477,6 +497,10 @@
                <DomainName>alidns.aliyuncs.com</DomainName>
 			</Product>
 			<Product>
+				<ProductName>Domain</ProductName>
+				<DomainName>domain.aliyuncs.com</DomainName>
+			</Product>
+			<Product>
 				<ProductName>Ubsms</ProductName>
 				<DomainName>ubsms.cn-qingdao.aliyuncs.com</DomainName>
 			</Product>
@@ -527,6 +551,10 @@
 	    	<Product>
 	            <ProductName>Dm</ProductName>
 	            <DomainName>dm.aliyuncs.com</DomainName>
+	        </Product>
+			<Product>
+	            <ProductName>Sms</ProductName>
+	            <DomainName>sms.aliyuncs.com</DomainName>
 	        </Product>
 	    	<Product>
 	            <ProductName>ROS</ProductName>
