@@ -217,6 +217,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string remove;
 
+				private string crop;
+
+				private string pad;
+
 				private BitrateBnd_ bitrateBnd;
 
 				public string Codec
@@ -411,6 +415,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
+				public string Crop
+				{
+					get
+					{
+						return crop;
+					}
+					set	
+					{
+						crop = value;
+					}
+				}
+
+				public string Pad
+				{
+					get
+					{
+						return pad;
+					}
+					set	
+					{
+						pad = value;
+					}
+				}
+
 				public BitrateBnd_ BitrateBnd
 				{
 					get
@@ -560,6 +588,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string transMode;
 
+				private string isCheckReso;
+
+				private string isCheckResoFail;
+
+				private string isCheckVideoBitrate;
+
+				private string isCheckAudioBitrate;
+
+				private string adjDarMethod;
+
 				public string TransMode
 				{
 					get
@@ -569,6 +607,66 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						transMode = value;
+					}
+				}
+
+				public string IsCheckReso
+				{
+					get
+					{
+						return isCheckReso;
+					}
+					set	
+					{
+						isCheckReso = value;
+					}
+				}
+
+				public string IsCheckResoFail
+				{
+					get
+					{
+						return isCheckResoFail;
+					}
+					set	
+					{
+						isCheckResoFail = value;
+					}
+				}
+
+				public string IsCheckVideoBitrate
+				{
+					get
+					{
+						return isCheckVideoBitrate;
+					}
+					set	
+					{
+						isCheckVideoBitrate = value;
+					}
+				}
+
+				public string IsCheckAudioBitrate
+				{
+					get
+					{
+						return isCheckAudioBitrate;
+					}
+					set	
+					{
+						isCheckAudioBitrate = value;
+					}
+				}
+
+				public string AdjDarMethod
+				{
+					get
+					{
+						return adjDarMethod;
+					}
+					set	
+					{
+						adjDarMethod = value;
 					}
 				}
 			}

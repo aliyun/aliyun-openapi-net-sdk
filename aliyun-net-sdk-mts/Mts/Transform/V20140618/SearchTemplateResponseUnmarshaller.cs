@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				video.Degrain = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.Degrain");
 				video.Qscale = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.Qscale");
 				video.Remove = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.Remove");
+				video.Crop = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.Crop");
+				video.Pad = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.Pad");
 
 				SearchTemplateResponse.Template.Video_.BitrateBnd_ bitrateBnd = new SearchTemplateResponse.Template.Video_.BitrateBnd_();
 				bitrateBnd.Max = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.BitrateBnd.Max");
@@ -82,6 +84,11 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 
 				SearchTemplateResponse.Template.TransConfig_ transConfig = new SearchTemplateResponse.Template.TransConfig_();
 				transConfig.TransMode = context.StringValue("SearchTemplate.TemplateList["+ i +"].TransConfig.TransMode");
+				transConfig.IsCheckReso = context.StringValue("SearchTemplate.TemplateList["+ i +"].TransConfig.IsCheckReso");
+				transConfig.IsCheckResoFail = context.StringValue("SearchTemplate.TemplateList["+ i +"].TransConfig.IsCheckResoFail");
+				transConfig.IsCheckVideoBitrate = context.StringValue("SearchTemplate.TemplateList["+ i +"].TransConfig.IsCheckVideoBitrate");
+				transConfig.IsCheckAudioBitrate = context.StringValue("SearchTemplate.TemplateList["+ i +"].TransConfig.IsCheckAudioBitrate");
+				transConfig.AdjDarMethod = context.StringValue("SearchTemplate.TemplateList["+ i +"].TransConfig.AdjDarMethod");
 				template.TransConfig = transConfig;
 
 				SearchTemplateResponse.Template.MuxConfig_ muxConfig = new SearchTemplateResponse.Template.MuxConfig_();

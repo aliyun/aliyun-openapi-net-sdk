@@ -199,6 +199,11 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 
 				ListJobResponse.Job.Output_.TransConfig_ transConfig = new ListJobResponse.Job.Output_.TransConfig_();
 				transConfig.TransMode = context.StringValue("ListJob.JobList["+ i +"].Output.TransConfig.TransMode");
+				transConfig.IsCheckReso = context.StringValue("ListJob.JobList["+ i +"].Output.TransConfig.IsCheckReso");
+				transConfig.IsCheckResoFail = context.StringValue("ListJob.JobList["+ i +"].Output.TransConfig.IsCheckResoFail");
+				transConfig.IsCheckVideoBitrate = context.StringValue("ListJob.JobList["+ i +"].Output.TransConfig.IsCheckVideoBitrate");
+				transConfig.IsCheckAudioBitrate = context.StringValue("ListJob.JobList["+ i +"].Output.TransConfig.IsCheckAudioBitrate");
+				transConfig.AdjDarMethod = context.StringValue("ListJob.JobList["+ i +"].Output.TransConfig.AdjDarMethod");
 				output.TransConfig = transConfig;
 
 				ListJobResponse.Job.Output_.MuxConfig_ muxConfig = new ListJobResponse.Job.Output_.MuxConfig_();
@@ -238,6 +243,8 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				video.PixFmt = context.StringValue("ListJob.JobList["+ i +"].Output.Video.PixFmt");
 				video.Degrain = context.StringValue("ListJob.JobList["+ i +"].Output.Video.Degrain");
 				video.Qscale = context.StringValue("ListJob.JobList["+ i +"].Output.Video.Qscale");
+				video.Crop = context.StringValue("ListJob.JobList["+ i +"].Output.Video.Crop");
+				video.Pad = context.StringValue("ListJob.JobList["+ i +"].Output.Video.Pad");
 
 				ListJobResponse.Job.Output_.Video_.BitrateBnd_ bitrateBnd = new ListJobResponse.Job.Output_.Video_.BitrateBnd_();
 				bitrateBnd.Max = context.StringValue("ListJob.JobList["+ i +"].Output.Video.BitrateBnd.Max");
