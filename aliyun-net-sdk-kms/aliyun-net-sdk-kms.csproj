@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{770ce2e8-d0b0-4e5e-96f5-b9be0e56dde4}</ProjectGuid>
+    <ProjectGuid>{a8ae45c0-d0e6-431b-9e6d-6ebf048519e9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -39,30 +39,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="Kms\Model\V20160120\GenerateDataKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\CreateKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DisableKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\EnableKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\EncryptResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\EnableKeyResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\DescribeKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ScheduleKeyDeletionRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\CreateKeyRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\DecryptRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\DisableKeyResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\DecryptResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\ListKeysResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\CreateKeyRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\DisableKeyRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\GenerateDataKeyResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\DescribeKeyRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\GenerateDataKeyRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\EncryptRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\EncryptResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DecryptResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\CancelKeyDeletionRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\ListKeysResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeKeyRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\ListKeysRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\CreateKeyResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\EnableKeyRequest.cs" />
-	<Compile Include="Kms\Transform\V20160120\EncryptResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Model\V20160120\ScheduleKeyDeletionResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\GenerateDataKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\CancelKeyDeletionResponse.cs" />
+	<Compile Include="Kms\Transform\V20160120\CancelKeyDeletionResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\DescribeKeyResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\CreateKeyResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\DecryptResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\EnableKeyResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\GenerateDataKeyResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\DisableKeyResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\ListKeysResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\ScheduleKeyDeletionResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\EnableKeyResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\EncryptResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DecryptResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\GenerateDataKeyResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\CreateKeyResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DisableKeyResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

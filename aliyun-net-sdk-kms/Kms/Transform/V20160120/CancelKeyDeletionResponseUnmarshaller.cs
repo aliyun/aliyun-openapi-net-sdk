@@ -16,12 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Kms.Model.V20160120;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Kms.Model.V20160120
+namespace Aliyun.Acs.Kms.Transform.V20160120
 {
-	public class DisableKeyResponse : AcsResponse
-	{
-	}
+    public class CancelKeyDeletionResponseUnmarshaller
+    {
+        public static CancelKeyDeletionResponse Unmarshall(UnmarshallerContext context)
+        {
+			CancelKeyDeletionResponse cancelKeyDeletionResponse = new CancelKeyDeletionResponse();
+
+			cancelKeyDeletionResponse.HttpResponse = context.HttpResponse;
+			cancelKeyDeletionResponse.RequestId = context.StringValue("CancelKeyDeletion.RequestId");
+        
+			return cancelKeyDeletionResponse;
+        }
+    }
 }

@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string sTSToken;
 
+		private string encryptionContext;
+
 		public string CiphertextBlob
 		{
 			get
@@ -60,6 +62,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				sTSToken = value;
 				DictionaryUtil.Add(QueryParameters, "STSToken", value);
+			}
+		}
+
+		public string EncryptionContext
+		{
+			get
+			{
+				return encryptionContext;
+			}
+			set	
+			{
+				encryptionContext = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
 			}
 		}
 

@@ -40,13 +40,43 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		public class KeyMetadata_{
 
+			private string creationDate;
+
+			private string description;
+
 			private string keyId;
 
 			private string keyState;
 
 			private string keyUsage;
 
-			private string description;
+			private string deleteDate;
+
+			private string creator;
+
+			public string CreationDate
+			{
+				get
+				{
+					return creationDate;
+				}
+				set	
+				{
+					creationDate = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
 
 			public string KeyId
 			{
@@ -84,15 +114,27 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				}
 			}
 
-			public string Description
+			public string DeleteDate
 			{
 				get
 				{
-					return description;
+					return deleteDate;
 				}
 				set	
 				{
-					description = value;
+					deleteDate = value;
+				}
+			}
+
+			public string Creator
+			{
+				get
+				{
+					return creator;
+				}
+				set	
+				{
+					creator = value;
 				}
 			}
 		}

@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 			private string keyUsage;
 
+			private string deleteDate;
+
 			public string CreationDate
 			{
 				get
@@ -107,6 +109,18 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					keyUsage = value;
+				}
+			}
+
+			public string DeleteDate
+			{
+				get
+				{
+					return deleteDate;
+				}
+				set	
+				{
+					deleteDate = value;
 				}
 			}
 		}

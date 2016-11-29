@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			keyMetadata.KeyId = context.StringValue("CreateKey.KeyMetadata.KeyId");
 			keyMetadata.KeyState = context.StringValue("CreateKey.KeyMetadata.KeyState");
 			keyMetadata.KeyUsage = context.StringValue("CreateKey.KeyMetadata.KeyUsage");
+			keyMetadata.DeleteDate = context.StringValue("CreateKey.KeyMetadata.DeleteDate");
 			createKeyResponse.KeyMetadata = keyMetadata;
         
 			return createKeyResponse;

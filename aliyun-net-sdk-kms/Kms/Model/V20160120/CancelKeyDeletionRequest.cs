@@ -26,42 +26,27 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class CreateKeyRequest : RpcAcsRequest<CreateKeyResponse>
+    public class CancelKeyDeletionRequest : RpcAcsRequest<CancelKeyDeletionResponse>
     {
-        public CreateKeyRequest()
-            : base("Kms", "2016-01-20", "CreateKey")
+        public CancelKeyDeletionRequest()
+            : base("Kms", "2016-01-20", "CancelKeyDeletion")
         {
         }
 
-		private string description;
-
-		private string keyUsage;
+		private string keyId;
 
 		private string sTSToken;
 
-		public string Description
+		public string KeyId
 		{
 			get
 			{
-				return description;
+				return keyId;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string KeyUsage
-		{
-			get
-			{
-				return keyUsage;
-			}
-			set	
-			{
-				keyUsage = value;
-				DictionaryUtil.Add(QueryParameters, "KeyUsage", value);
+				keyId = value;
+				DictionaryUtil.Add(QueryParameters, "KeyId", value);
 			}
 		}
 
@@ -78,9 +63,9 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override CreateKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CancelKeyDeletionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CancelKeyDeletionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -33,10 +33,13 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			describeKeyResponse.RequestId = context.StringValue("DescribeKey.RequestId");
 
 			DescribeKeyResponse.KeyMetadata_ keyMetadata = new DescribeKeyResponse.KeyMetadata_();
+			keyMetadata.CreationDate = context.StringValue("DescribeKey.KeyMetadata.CreationDate");
+			keyMetadata.Description = context.StringValue("DescribeKey.KeyMetadata.Description");
 			keyMetadata.KeyId = context.StringValue("DescribeKey.KeyMetadata.KeyId");
 			keyMetadata.KeyState = context.StringValue("DescribeKey.KeyMetadata.KeyState");
 			keyMetadata.KeyUsage = context.StringValue("DescribeKey.KeyMetadata.KeyUsage");
-			keyMetadata.Description = context.StringValue("DescribeKey.KeyMetadata.Description");
+			keyMetadata.DeleteDate = context.StringValue("DescribeKey.KeyMetadata.DeleteDate");
+			keyMetadata.Creator = context.StringValue("DescribeKey.KeyMetadata.Creator");
 			describeKeyResponse.KeyMetadata = keyMetadata;
         
 			return describeKeyResponse;

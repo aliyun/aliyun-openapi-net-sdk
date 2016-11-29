@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class DisableKeyResponse : AcsResponse
+	public class CancelKeyDeletionResponse : AcsResponse
 	{
 	}
 }

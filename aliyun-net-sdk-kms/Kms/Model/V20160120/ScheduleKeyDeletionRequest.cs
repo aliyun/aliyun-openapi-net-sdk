@@ -26,42 +26,42 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class CreateKeyRequest : RpcAcsRequest<CreateKeyResponse>
+    public class ScheduleKeyDeletionRequest : RpcAcsRequest<ScheduleKeyDeletionResponse>
     {
-        public CreateKeyRequest()
-            : base("Kms", "2016-01-20", "CreateKey")
+        public ScheduleKeyDeletionRequest()
+            : base("Kms", "2016-01-20", "ScheduleKeyDeletion")
         {
         }
 
-		private string description;
+		private string keyId;
 
-		private string keyUsage;
+		private int? pendingWindowInDays;
 
 		private string sTSToken;
 
-		public string Description
+		public string KeyId
 		{
 			get
 			{
-				return description;
+				return keyId;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				keyId = value;
+				DictionaryUtil.Add(QueryParameters, "KeyId", value);
 			}
 		}
 
-		public string KeyUsage
+		public int? PendingWindowInDays
 		{
 			get
 			{
-				return keyUsage;
+				return pendingWindowInDays;
 			}
 			set	
 			{
-				keyUsage = value;
-				DictionaryUtil.Add(QueryParameters, "KeyUsage", value);
+				pendingWindowInDays = value;
+				DictionaryUtil.Add(QueryParameters, "PendingWindowInDays", value.ToString());
 			}
 		}
 
@@ -78,9 +78,9 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override CreateKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ScheduleKeyDeletionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ScheduleKeyDeletionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
