@@ -39,11 +39,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string domainName;
 
+		private string certName;
+
 		private string serverCertificateStatus;
 
 		private string serverCertificate;
 
 		private string privateKey;
+
+		private string region;
 
 		public long? OwnerId
 		{
@@ -84,6 +88,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
+		public string CertName
+		{
+			get
+			{
+				return certName;
+			}
+			set	
+			{
+				certName = value;
+				DictionaryUtil.Add(QueryParameters, "CertName", value);
+			}
+		}
+
 		public string ServerCertificateStatus
 		{
 			get
@@ -120,6 +137,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				privateKey = value;
 				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
+			}
+		}
+
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
