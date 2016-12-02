@@ -266,6 +266,10 @@
 	            <ProductName>YundunDdos</ProductName>
 	            <DomainName>inner-yundun-ddos.cn-hangzhou.aliyuncs.com</DomainName>
 	        </Product>
+	        <Product>
+	            <ProductName>live</ProductName>
+	            <DomainName>live.aliyuncs.com</DomainName>
+	        </Product>
 	    </Products>
     </Endpoint>
     <Endpoint name="cn-shenzhen">
@@ -480,6 +484,10 @@
 	        <Product>
 	            <ProductName>Ess</ProductName>
 	            <DomainName>ess.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>live</ProductName>
+	            <DomainName>live.aliyuncs.com</DomainName>
 	        </Product>
 	    </Products>
     </Endpoint>
@@ -703,6 +711,10 @@
 	        <Product>
 	            <ProductName>Ess</ProductName>
 	            <DomainName>ess.aliyuncs.com</DomainName>
+	        </Product>
+	        <Product>
+	            <ProductName>live</ProductName>
+	            <DomainName>live.aliyuncs.com</DomainName>
 	        </Product>
 	    </Products>
     </Endpoint>
