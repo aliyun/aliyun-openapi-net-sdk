@@ -2033,6 +2033,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 							private string finalDelay;
 
+							private string isCustomPalette;
+
+							private string ditherMode;
+
 							public string Loop
 							{
 								get
@@ -2054,6 +2058,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								set	
 								{
 									finalDelay = value;
+								}
+							}
+
+							public string IsCustomPalette
+							{
+								get
+								{
+									return isCustomPalette;
+								}
+								set	
+								{
+									isCustomPalette = value;
+								}
+							}
+
+							public string DitherMode
+							{
+								get
+								{
+									return ditherMode;
+								}
+								set	
+								{
+									ditherMode = value;
 								}
 							}
 						}
@@ -2181,6 +2209,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						private string crop;
 
 						private string pad;
+
+						private string maxFps;
 
 						private BitrateBnd_ bitrateBnd;
 
@@ -2385,6 +2415,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								pad = value;
+							}
+						}
+
+						public string MaxFps
+						{
+							get
+							{
+								return maxFps;
+							}
+							set	
+							{
+								maxFps = value;
 							}
 						}
 

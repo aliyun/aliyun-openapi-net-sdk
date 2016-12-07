@@ -220,6 +220,8 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				QueryJobListResponse.Job.Output_.MuxConfig_.Gif_ gif = new QueryJobListResponse.Job.Output_.MuxConfig_.Gif_();
 				gif.Loop = context.StringValue("QueryJobList.JobList["+ i +"].Output.MuxConfig.Gif.Loop");
 				gif.FinalDelay = context.StringValue("QueryJobList.JobList["+ i +"].Output.MuxConfig.Gif.FinalDelay");
+				gif.IsCustomPalette = context.StringValue("QueryJobList.JobList["+ i +"].Output.MuxConfig.Gif.IsCustomPalette");
+				gif.DitherMode = context.StringValue("QueryJobList.JobList["+ i +"].Output.MuxConfig.Gif.DitherMode");
 				muxConfig.Gif = gif;
 				output.MuxConfig = muxConfig;
 
@@ -250,6 +252,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				video.Qscale = context.StringValue("QueryJobList.JobList["+ i +"].Output.Video.Qscale");
 				video.Crop = context.StringValue("QueryJobList.JobList["+ i +"].Output.Video.Crop");
 				video.Pad = context.StringValue("QueryJobList.JobList["+ i +"].Output.Video.Pad");
+				video.MaxFps = context.StringValue("QueryJobList.JobList["+ i +"].Output.Video.MaxFps");
 
 				QueryJobListResponse.Job.Output_.Video_.BitrateBnd_ bitrateBnd = new QueryJobListResponse.Job.Output_.Video_.BitrateBnd_();
 				bitrateBnd.Max = context.StringValue("QueryJobList.JobList["+ i +"].Output.Video.BitrateBnd.Max");

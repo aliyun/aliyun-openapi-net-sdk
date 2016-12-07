@@ -60,6 +60,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			video.Remove = context.StringValue("UpdateTemplate.Template.Video.Remove");
 			video.Crop = context.StringValue("UpdateTemplate.Template.Video.Crop");
 			video.Pad = context.StringValue("UpdateTemplate.Template.Video.Pad");
+			video.MaxFps = context.StringValue("UpdateTemplate.Template.Video.MaxFps");
 
 			UpdateTemplateResponse.Template_.Video_.BitrateBnd_ bitrateBnd = new UpdateTemplateResponse.Template_.Video_.BitrateBnd_();
 			bitrateBnd.Max = context.StringValue("UpdateTemplate.Template.Video.BitrateBnd.Max");
@@ -95,6 +96,8 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			UpdateTemplateResponse.Template_.MuxConfig_.Gif_ gif = new UpdateTemplateResponse.Template_.MuxConfig_.Gif_();
 			gif.Loop = context.StringValue("UpdateTemplate.Template.MuxConfig.Gif.Loop");
 			gif.FinalDelay = context.StringValue("UpdateTemplate.Template.MuxConfig.Gif.FinalDelay");
+			gif.IsCustomPalette = context.StringValue("UpdateTemplate.Template.MuxConfig.Gif.IsCustomPalette");
+			gif.DitherMode = context.StringValue("UpdateTemplate.Template.MuxConfig.Gif.DitherMode");
 			muxConfig.Gif = gif;
 			template.MuxConfig = muxConfig;
 			updateTemplateResponse.Template = template;

@@ -215,6 +215,8 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				ListJobResponse.Job.Output_.MuxConfig_.Gif_ gif = new ListJobResponse.Job.Output_.MuxConfig_.Gif_();
 				gif.Loop = context.StringValue("ListJob.JobList["+ i +"].Output.MuxConfig.Gif.Loop");
 				gif.FinalDelay = context.StringValue("ListJob.JobList["+ i +"].Output.MuxConfig.Gif.FinalDelay");
+				gif.IsCustomPalette = context.StringValue("ListJob.JobList["+ i +"].Output.MuxConfig.Gif.IsCustomPalette");
+				gif.DitherMode = context.StringValue("ListJob.JobList["+ i +"].Output.MuxConfig.Gif.DitherMode");
 				muxConfig.Gif = gif;
 				output.MuxConfig = muxConfig;
 
@@ -245,6 +247,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				video.Qscale = context.StringValue("ListJob.JobList["+ i +"].Output.Video.Qscale");
 				video.Crop = context.StringValue("ListJob.JobList["+ i +"].Output.Video.Crop");
 				video.Pad = context.StringValue("ListJob.JobList["+ i +"].Output.Video.Pad");
+				video.MaxFps = context.StringValue("ListJob.JobList["+ i +"].Output.Video.MaxFps");
 
 				ListJobResponse.Job.Output_.Video_.BitrateBnd_ bitrateBnd = new ListJobResponse.Job.Output_.Video_.BitrateBnd_();
 				bitrateBnd.Max = context.StringValue("ListJob.JobList["+ i +"].Output.Video.BitrateBnd.Max");
