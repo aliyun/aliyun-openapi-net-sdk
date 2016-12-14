@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{550ab8a7-19e3-4bb6-809b-c273fe44961f}</ProjectGuid>
+    <ProjectGuid>{53816c6c-1c25-4456-a789-8cbbcee1addd}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -49,6 +49,7 @@
 	<Compile Include="Push\Model\V20160801\ListTinyAppsResponse.cs" />
 	<Compile Include="Push\Model\V20160801\DeleteAppResponse.cs" />
 	<Compile Include="Push\Model\V20160801\DeleteTagRequest.cs" />
+	<Compile Include="Push\Model\V20160801\CheckDeviceRequest.cs" />
 	<Compile Include="Push\Model\V20160801\ListAppsRequest.cs" />
 	<Compile Include="Push\Model\V20160801\BindAliasRequest.cs" />
 	<Compile Include="Push\Model\V20160801\QueryPushStatByAppRequest.cs" />
@@ -88,6 +89,7 @@
 	<Compile Include="Push\Model\V20160801\ModifyAppExtensionsRequest.cs" />
 	<Compile Include="Push\Model\V20160801\PushNoticeToiOSResponse.cs" />
 	<Compile Include="Push\Model\V20160801\PushMessageToiOSRequest.cs" />
+	<Compile Include="Push\Model\V20160801\CheckDeviceResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryAppPushStatResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryAliasesResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryDeviceStatRequest.cs" />
@@ -127,6 +129,7 @@
 	<Compile Include="Push\Transform\V20160801\PushResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\QueryTagsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\ListTinyAppsResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\CheckDeviceResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\QueryPushStatByAppResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\CertPreflightResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\QueryAliasResponseUnmarshaller.cs" />
