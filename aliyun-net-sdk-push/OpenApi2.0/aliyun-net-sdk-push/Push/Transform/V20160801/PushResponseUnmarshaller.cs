@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 
 			pushResponse.HttpResponse = context.HttpResponse;
 			pushResponse.RequestId = context.StringValue("Push.RequestId");
-			pushResponse.MessageId = context.LongValue("Push.MessageId");
+			pushResponse.MessageId = context.StringValue("Push.MessageId");
         
 			return pushResponse;
         }

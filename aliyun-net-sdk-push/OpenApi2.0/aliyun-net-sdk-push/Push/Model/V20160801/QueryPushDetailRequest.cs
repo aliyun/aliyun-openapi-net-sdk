@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private long? appKey;
 
-		private long? messageId;
+		private string messageId;
 
 		public long? AppKey
 		{
@@ -50,7 +50,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public long? MessageId
+		public string MessageId
 		{
 			get
 			{
@@ -59,7 +59,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			set	
 			{
 				messageId = value;
-				DictionaryUtil.Add(QueryParameters, "MessageId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "MessageId", value);
 			}
 		}
 

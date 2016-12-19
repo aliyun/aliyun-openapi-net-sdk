@@ -87,6 +87,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private int? iOSBadge;
 
+		private bool? iOSSilentNotification;
+
 		private string iOSSubtitle;
 
 		private string iOSNotificationCategory;
@@ -443,6 +445,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSBadge = value;
 				DictionaryUtil.Add(QueryParameters, "iOSBadge", value.ToString());
+			}
+		}
+
+		public bool? IOSSilentNotification
+		{
+			get
+			{
+				return iOSSilentNotification;
+			}
+			set	
+			{
+				iOSSilentNotification = value;
+				DictionaryUtil.Add(QueryParameters, "iOSSilentNotification", value.ToString());
 			}
 		}
 

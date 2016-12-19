@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 
 			pushMessageToiOSResponse.HttpResponse = context.HttpResponse;
 			pushMessageToiOSResponse.RequestId = context.StringValue("PushMessageToiOS.RequestId");
-			pushMessageToiOSResponse.MessageId = context.LongValue("PushMessageToiOS.MessageId");
+			pushMessageToiOSResponse.MessageId = context.StringValue("PushMessageToiOS.MessageId");
         
 			return pushMessageToiOSResponse;
         }

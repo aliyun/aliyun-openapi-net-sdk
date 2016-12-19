@@ -42,8 +42,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string appName;
 
-			private string platform;
-
 			private long? appKey;
 
 			public string AppName
@@ -55,18 +53,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					appName = value;
-				}
-			}
-
-			public string Platform
-			{
-				get
-				{
-					return platform;
-				}
-				set	
-				{
-					platform = value;
 				}
 			}
 

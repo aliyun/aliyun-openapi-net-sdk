@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 
 			pushMessageToAndroidResponse.HttpResponse = context.HttpResponse;
 			pushMessageToAndroidResponse.RequestId = context.StringValue("PushMessageToAndroid.RequestId");
-			pushMessageToAndroidResponse.MessageId = context.LongValue("PushMessageToAndroid.MessageId");
+			pushMessageToAndroidResponse.MessageId = context.StringValue("PushMessageToAndroid.MessageId");
         
 			return pushMessageToAndroidResponse;
         }

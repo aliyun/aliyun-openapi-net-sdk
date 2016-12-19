@@ -36,7 +36,6 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			for (int i = 0; i < context.Length("ListSummaryApps.SummaryAppInfos.Length"); i++) {
 				ListSummaryAppsResponse.SummaryAppInfo summaryAppInfo = new ListSummaryAppsResponse.SummaryAppInfo();
 				summaryAppInfo.AppName = context.StringValue("ListSummaryApps.SummaryAppInfos["+ i +"].AppName");
-				summaryAppInfo.Platform = context.StringValue("ListSummaryApps.SummaryAppInfos["+ i +"].Platform");
 				summaryAppInfo.AppKey = context.LongValue("ListSummaryApps.SummaryAppInfos["+ i +"].AppKey");
 
 				summaryAppInfos.Add(summaryAppInfo);

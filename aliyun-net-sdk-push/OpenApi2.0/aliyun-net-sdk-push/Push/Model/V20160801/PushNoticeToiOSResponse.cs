@@ -24,9 +24,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 	public class PushNoticeToiOSResponse : AcsResponse
 	{
 
-		private long? messageId;
+		private string messageId;
 
-		public long? MessageId
+		public string MessageId
 		{
 			get
 			{
