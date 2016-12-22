@@ -39,6 +39,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				DescribeDomainTopUrlVisitResponse.UrlList urlList = new DescribeDomainTopUrlVisitResponse.UrlList();
 				urlList.UrlDetail = context.StringValue("DescribeDomainTopUrlVisit.AllUrlList["+ i +"].UrlDetail");
 				urlList.VisitData = context.StringValue("DescribeDomainTopUrlVisit.AllUrlList["+ i +"].VisitData");
+				urlList.VisitProportion = context.FloatValue("DescribeDomainTopUrlVisit.AllUrlList["+ i +"].VisitProportion");
+				urlList.Flow = context.StringValue("DescribeDomainTopUrlVisit.AllUrlList["+ i +"].Flow");
+				urlList.FlowProportion = context.FloatValue("DescribeDomainTopUrlVisit.AllUrlList["+ i +"].FlowProportion");
 
 				allUrlList.Add(urlList);
 			}
@@ -49,6 +52,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				DescribeDomainTopUrlVisitResponse.UrlList urlList = new DescribeDomainTopUrlVisitResponse.UrlList();
 				urlList.UrlDetail = context.StringValue("DescribeDomainTopUrlVisit.Url200List["+ i +"].UrlDetail");
 				urlList.VisitData = context.StringValue("DescribeDomainTopUrlVisit.Url200List["+ i +"].VisitData");
+				urlList.VisitProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url200List["+ i +"].VisitProportion");
+				urlList.Flow = context.StringValue("DescribeDomainTopUrlVisit.Url200List["+ i +"].Flow");
+				urlList.FlowProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url200List["+ i +"].FlowProportion");
 
 				url200List.Add(urlList);
 			}
@@ -59,6 +65,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				DescribeDomainTopUrlVisitResponse.UrlList urlList = new DescribeDomainTopUrlVisitResponse.UrlList();
 				urlList.UrlDetail = context.StringValue("DescribeDomainTopUrlVisit.Url300List["+ i +"].UrlDetail");
 				urlList.VisitData = context.StringValue("DescribeDomainTopUrlVisit.Url300List["+ i +"].VisitData");
+				urlList.VisitProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url300List["+ i +"].VisitProportion");
+				urlList.Flow = context.StringValue("DescribeDomainTopUrlVisit.Url300List["+ i +"].Flow");
+				urlList.FlowProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url300List["+ i +"].FlowProportion");
 
 				url300List.Add(urlList);
 			}
@@ -69,6 +78,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				DescribeDomainTopUrlVisitResponse.UrlList urlList = new DescribeDomainTopUrlVisitResponse.UrlList();
 				urlList.UrlDetail = context.StringValue("DescribeDomainTopUrlVisit.Url400List["+ i +"].UrlDetail");
 				urlList.VisitData = context.StringValue("DescribeDomainTopUrlVisit.Url400List["+ i +"].VisitData");
+				urlList.VisitProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url400List["+ i +"].VisitProportion");
+				urlList.Flow = context.StringValue("DescribeDomainTopUrlVisit.Url400List["+ i +"].Flow");
+				urlList.FlowProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url400List["+ i +"].FlowProportion");
 
 				url400List.Add(urlList);
 			}
@@ -79,6 +91,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				DescribeDomainTopUrlVisitResponse.UrlList urlList = new DescribeDomainTopUrlVisitResponse.UrlList();
 				urlList.UrlDetail = context.StringValue("DescribeDomainTopUrlVisit.Url500List["+ i +"].UrlDetail");
 				urlList.VisitData = context.StringValue("DescribeDomainTopUrlVisit.Url500List["+ i +"].VisitData");
+				urlList.VisitProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url500List["+ i +"].VisitProportion");
+				urlList.Flow = context.StringValue("DescribeDomainTopUrlVisit.Url500List["+ i +"].Flow");
+				urlList.FlowProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url500List["+ i +"].FlowProportion");
 
 				url500List.Add(urlList);
 			}

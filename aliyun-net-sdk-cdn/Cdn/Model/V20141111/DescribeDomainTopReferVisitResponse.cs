@@ -72,6 +72,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string visitData;
 
+			private float? visitProportion;
+
+			private string flow;
+
+			private float? flowProportion;
+
 			public string ReferDetail
 			{
 				get
@@ -93,6 +99,42 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					visitData = value;
+				}
+			}
+
+			public float? VisitProportion
+			{
+				get
+				{
+					return visitProportion;
+				}
+				set	
+				{
+					visitProportion = value;
+				}
+			}
+
+			public string Flow
+			{
+				get
+				{
+					return flow;
+				}
+				set	
+				{
+					flow = value;
+				}
+			}
+
+			public float? FlowProportion
+			{
+				get
+				{
+					return flowProportion;
+				}
+				set	
+				{
+					flowProportion = value;
 				}
 			}
 		}

@@ -39,6 +39,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				DescribeDomainTopReferVisitResponse.ReferList referList = new DescribeDomainTopReferVisitResponse.ReferList();
 				referList.ReferDetail = context.StringValue("DescribeDomainTopReferVisit.TopReferList["+ i +"].ReferDetail");
 				referList.VisitData = context.StringValue("DescribeDomainTopReferVisit.TopReferList["+ i +"].VisitData");
+				referList.VisitProportion = context.FloatValue("DescribeDomainTopReferVisit.TopReferList["+ i +"].VisitProportion");
+				referList.Flow = context.StringValue("DescribeDomainTopReferVisit.TopReferList["+ i +"].Flow");
+				referList.FlowProportion = context.FloatValue("DescribeDomainTopReferVisit.TopReferList["+ i +"].FlowProportion");
 
 				topReferList.Add(referList);
 			}

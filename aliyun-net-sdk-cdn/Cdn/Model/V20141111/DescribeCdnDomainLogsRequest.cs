@@ -45,6 +45,10 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private long? pageNumber;
 
+		private string startTime;
+
+		private string endTime;
+
 		public long? OwnerId
 		{
 			get
@@ -120,6 +124,32 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
