@@ -23,17 +23,24 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
-    public class UpdateBatchDomainRecordsResponseUnmarshaller
+    public class DescribeDomainNsResponseUnmarshaller
     {
-        public static UpdateBatchDomainRecordsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainNsResponse Unmarshall(UnmarshallerContext context)
         {
-			UpdateBatchDomainRecordsResponse updateBatchDomainRecordsResponse = new UpdateBatchDomainRecordsResponse();
+			DescribeDomainNsResponse describeDomainNsResponse = new DescribeDomainNsResponse();
 
-			updateBatchDomainRecordsResponse.HttpResponse = context.HttpResponse;
-			updateBatchDomainRecordsResponse.RequestId = context.StringValue("UpdateBatchDomainRecords.RequestId");
-			updateBatchDomainRecordsResponse.TraceId = context.StringValue("UpdateBatchDomainRecords.TraceId");
+			describeDomainNsResponse.HttpResponse = context.HttpResponse;
+			describeDomainNsResponse.RequestId = context.StringValue("DescribeDomainNs.RequestId");
+			describeDomainNsResponse.AllAliDns = context.BooleanValue("DescribeDomainNs.AllAliDns");
+			describeDomainNsResponse.IncludeAliDns = context.BooleanValue("DescribeDomainNs.IncludeAliDns");
+
+			List<string> dnsServers = new List<string>();
+			for (int i = 0; i < context.Length("DescribeDomainNs.DnsServers.Length"); i++) {
+				dnsServers.Add(context.StringValue("DescribeDomainNs.DnsServers["+ i +"]"));
+			}
+			describeDomainNsResponse.DnsServers = dnsServers;
         
-			return updateBatchDomainRecordsResponse;
+			return describeDomainNsResponse;
         }
     }
 }

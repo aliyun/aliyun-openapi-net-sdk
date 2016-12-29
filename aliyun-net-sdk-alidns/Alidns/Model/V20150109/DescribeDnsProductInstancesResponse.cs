@@ -84,9 +84,17 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private string instanceId;
 
+			private string versionCode;
+
+			private string versionName;
+
 			private string startTime;
 
 			private string endTime;
+
+			private long? startTimestamp;
+
+			private long? endTimestamp;
 
 			private string domain;
 
@@ -116,6 +124,12 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private string overseaLine;
 
+			private long? monitorNodeCount;
+
+			private long? monitorFrequency;
+
+			private long? monitorTaskCount;
+
 			public string InstanceId
 			{
 				get
@@ -125,6 +139,30 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					instanceId = value;
+				}
+			}
+
+			public string VersionCode
+			{
+				get
+				{
+					return versionCode;
+				}
+				set	
+				{
+					versionCode = value;
+				}
+			}
+
+			public string VersionName
+			{
+				get
+				{
+					return versionName;
+				}
+				set	
+				{
+					versionName = value;
 				}
 			}
 
@@ -149,6 +187,30 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					endTime = value;
+				}
+			}
+
+			public long? StartTimestamp
+			{
+				get
+				{
+					return startTimestamp;
+				}
+				set	
+				{
+					startTimestamp = value;
+				}
+			}
+
+			public long? EndTimestamp
+			{
+				get
+				{
+					return endTimestamp;
+				}
+				set	
+				{
+					endTimestamp = value;
 				}
 			}
 
@@ -317,6 +379,42 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					overseaLine = value;
+				}
+			}
+
+			public long? MonitorNodeCount
+			{
+				get
+				{
+					return monitorNodeCount;
+				}
+				set	
+				{
+					monitorNodeCount = value;
+				}
+			}
+
+			public long? MonitorFrequency
+			{
+				get
+				{
+					return monitorFrequency;
+				}
+				set	
+				{
+					monitorFrequency = value;
+				}
+			}
+
+			public long? MonitorTaskCount
+			{
+				get
+				{
+					return monitorTaskCount;
+				}
+				set	
+				{
+					monitorTaskCount = value;
 				}
 			}
 		}

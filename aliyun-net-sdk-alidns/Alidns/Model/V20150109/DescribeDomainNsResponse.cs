@@ -16,24 +16,54 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
-using System;
+using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Alidns.Transform.V20150109
+namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-    public class UpdateBatchDomainRecordsResponseUnmarshaller
-    {
-        public static UpdateBatchDomainRecordsResponse Unmarshall(UnmarshallerContext context)
-        {
-			UpdateBatchDomainRecordsResponse updateBatchDomainRecordsResponse = new UpdateBatchDomainRecordsResponse();
+	public class DescribeDomainNsResponse : AcsResponse
+	{
 
-			updateBatchDomainRecordsResponse.HttpResponse = context.HttpResponse;
-			updateBatchDomainRecordsResponse.RequestId = context.StringValue("UpdateBatchDomainRecords.RequestId");
-			updateBatchDomainRecordsResponse.TraceId = context.StringValue("UpdateBatchDomainRecords.TraceId");
-        
-			return updateBatchDomainRecordsResponse;
-        }
-    }
+		private bool? allAliDns;
+
+		private bool? includeAliDns;
+
+		private List<string> dnsServers;
+
+		public bool? AllAliDns
+		{
+			get
+			{
+				return allAliDns;
+			}
+			set	
+			{
+				allAliDns = value;
+			}
+		}
+
+		public bool? IncludeAliDns
+		{
+			get
+			{
+				return includeAliDns;
+			}
+			set	
+			{
+				includeAliDns = value;
+			}
+		}
+
+		public List<string> DnsServers
+		{
+			get
+			{
+				return dnsServers;
+			}
+			set	
+			{
+				dnsServers = value;
+			}
+		}
+	}
 }

@@ -33,11 +33,41 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
         {
         }
 
+		private string lang;
+
+		private string userClientIp;
+
 		private long? pageNumber;
 
 		private long? pageSize;
 
 		private string versionCode;
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
 
 		public long? PageNumber
 		{

@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-    public class DescribeDNSSLBSubDomainsRequest : RpcAcsRequest<DescribeDNSSLBSubDomainsResponse>
+    public class DescribeDnsProductInstanceRequest : RpcAcsRequest<DescribeDnsProductInstanceResponse>
     {
-        public DescribeDNSSLBSubDomainsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDNSSLBSubDomains")
+        public DescribeDnsProductInstanceRequest()
+            : base("Alidns", "2015-01-09", "DescribeDnsProductInstance")
         {
         }
 
@@ -37,11 +37,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string userClientIp;
 
-		private string domainName;
-
-		private long? pageNumber;
-
-		private long? pageSize;
+		private string instanceId;
 
 		public string Lang
 		{
@@ -69,48 +65,22 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string DomainName
+		public string InstanceId
 		{
 			get
 			{
-				return domainName;
+				return instanceId;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-        public override DescribeDNSSLBSubDomainsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDnsProductInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDNSSLBSubDomainsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDnsProductInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

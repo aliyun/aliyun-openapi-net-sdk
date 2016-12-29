@@ -39,8 +39,12 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			for (int i = 0; i < context.Length("DescribeDnsProductInstances.DnsProducts.Length"); i++) {
 				DescribeDnsProductInstancesResponse.DnsProduct dnsProduct = new DescribeDnsProductInstancesResponse.DnsProduct();
 				dnsProduct.InstanceId = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].InstanceId");
+				dnsProduct.VersionCode = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].VersionCode");
+				dnsProduct.VersionName = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].VersionName");
 				dnsProduct.StartTime = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].StartTime");
 				dnsProduct.EndTime = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].EndTime");
+				dnsProduct.StartTimestamp = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].StartTimestamp");
+				dnsProduct.EndTimestamp = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].EndTimestamp");
 				dnsProduct.Domain = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].Domain");
 				dnsProduct.BindCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindCount");
 				dnsProduct.BindUsedCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindUsedCount");
@@ -55,6 +59,9 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				dnsProduct.ISPLines = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].ISPLines");
 				dnsProduct.ISPRegionLines = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].ISPRegionLines");
 				dnsProduct.OverseaLine = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].OverseaLine");
+				dnsProduct.MonitorNodeCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].MonitorNodeCount");
+				dnsProduct.MonitorFrequency = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].MonitorFrequency");
+				dnsProduct.MonitorTaskCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].MonitorTaskCount");
 
 				dnsProducts.Add(dnsProduct);
 			}

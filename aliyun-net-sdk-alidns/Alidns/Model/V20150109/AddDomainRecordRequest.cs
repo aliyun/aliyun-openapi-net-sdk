@@ -33,6 +33,10 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
         {
         }
 
+		private string lang;
+
+		private string userClientIp;
+
 		private string domainName;
 
 		private string rR;
@@ -46,6 +50,32 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private long? priority;
 
 		private string line;
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
 
 		public string DomainName
 		{
