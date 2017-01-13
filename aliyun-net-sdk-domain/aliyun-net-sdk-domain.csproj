@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{e192d633-4b34-458b-a9f1-470acca5be75}</ProjectGuid>
+    <ProjectGuid>{763febfa-d810-42a7-8a38-3272eb8150e4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -39,18 +39,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Domain\Model\V20160511\CreateOrderRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryOrderResponse.cs" />
-	<Compile Include="Domain\Model\V20160511\CheckDomainResponse.cs" />
-	<Compile Include="Domain\Model\V20160511\GetWhoisInfoResponse.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryOrderRequest.cs" />
 	<Compile Include="Domain\Model\V20160511\CheckDomainRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\GetWhoisInfoRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryContactRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryDomainBySaleIdRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryOrderResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryContactTemplateRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\CreateOrderRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\DeleteContactTemplateRequest.cs" />
 	<Compile Include="Domain\Model\V20160511\CreateOrderResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryContactResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\GetWhoisInfoResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\DeleteContactTemplateResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryDomainListResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryDomainBySaleIdResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryContactTemplateResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\SaveContactTemplateRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryOrderRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryDomainListRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\GetWhoisInfoRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\SaveContactTemplateResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\CheckDomainResponse.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryContactResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryDomainListResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\CheckDomainResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\GetWhoisInfoResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryContactTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\DeleteContactTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\SaveContactTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryDomainBySaleIdResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\QueryOrderResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\CreateOrderResponseUnmarshaller.cs" />
-	<Compile Include="Domain\Transform\V20160511\GetWhoisInfoResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
