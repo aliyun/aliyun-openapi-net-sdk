@@ -40,7 +40,7 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 				ListPushRecordsResponse.PushMessageInfo pushMessageInfo = new ListPushRecordsResponse.PushMessageInfo();
 				pushMessageInfo.AppKey = context.LongValue("ListPushRecords.PushMessageInfos["+ i +"].AppKey");
 				pushMessageInfo.AppName = context.StringValue("ListPushRecords.PushMessageInfos["+ i +"].AppName");
-				pushMessageInfo.MessageId = context.LongValue("ListPushRecords.PushMessageInfos["+ i +"].MessageId");
+				pushMessageInfo.MessageId = context.StringValue("ListPushRecords.PushMessageInfos["+ i +"].MessageId");
 				pushMessageInfo.Type = context.StringValue("ListPushRecords.PushMessageInfos["+ i +"].Type");
 				pushMessageInfo.DeviceType = context.StringValue("ListPushRecords.PushMessageInfos["+ i +"].DeviceType");
 				pushMessageInfo.PushTime = context.StringValue("ListPushRecords.PushMessageInfos["+ i +"].PushTime");

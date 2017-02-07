@@ -86,7 +86,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string appName;
 
-			private long? messageId;
+			private string messageId;
 
 			private string type;
 
@@ -122,7 +122,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public long? MessageId
+			public string MessageId
 			{
 				get
 				{
