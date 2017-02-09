@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{85f6670b-62f7-46fc-868b-7583c72556c8}</ProjectGuid>
+    <ProjectGuid>{a5e2036d-c26d-4bc9-92d1-ddb0fc68f84e}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -39,9 +39,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="Live\Model\V20161101\CreateLiveStreamRecordIndexFilesRequest.cs" />
+	<Compile Include="Live\Model\V20161101\UpdateLiveAppSnapshotConfigRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveStreamRecordIndexFilesRequest.cs" />
+	<Compile Include="Live\Model\V20161101\StopMultipleStreamMixServiceResponse.cs" />
 	<Compile Include="Live\Model\V20161101\ImagePornDetectionResponse.cs" />
+	<Compile Include="Live\Model\V20161101\AddLiveAppSnapshotConfigRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveRecordConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveStreamRecordIndexFileRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveStreamSnapshotInfoRequest.cs" />
+	<Compile Include="Live\Model\V20161101\AddMultipleStreamMixServiceRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveRecordConfigRequest.cs" />
+	<Compile Include="Live\Model\V20161101\RemoveMultipleStreamMixServiceResponse.cs" />
+	<Compile Include="Live\Model\V20161101\UpdateLiveAppSnapshotConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveStreamSnapshotInfoResponse.cs" />
 	<Compile Include="Live\Model\V20161101\ImagePornDetectionRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveSnapshotConfigRequest.cs" />
+	<Compile Include="Live\Model\V20161101\AddLiveAppRecordConfigRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DeleteLiveAppRecordConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\CreateLiveStreamRecordIndexFilesResponse.cs" />
+	<Compile Include="Live\Model\V20161101\AddLiveAppSnapshotConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DeleteLiveAppRecordConfigRequest.cs" />
+	<Compile Include="Live\Model\V20161101\AddMultipleStreamMixServiceResponse.cs" />
+	<Compile Include="Live\Model\V20161101\StartMultipleStreamMixServiceRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveStreamRecordIndexFileResponse.cs" />
+	<Compile Include="Live\Model\V20161101\StartMultipleStreamMixServiceResponse.cs" />
+	<Compile Include="Live\Model\V20161101\AddLiveAppRecordConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\StopMultipleStreamMixServiceRequest.cs" />
+	<Compile Include="Live\Model\V20161101\RemoveMultipleStreamMixServiceRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveSnapshotConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveStreamRecordContentRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DeleteLiveAppSnapshotConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveStreamRecordIndexFilesResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveStreamRecordContentResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DeleteLiveAppSnapshotConfigRequest.cs" />
+	<Compile Include="Live\Transform\V20161101\DeleteLiveAppRecordConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\CreateLiveStreamRecordIndexFilesResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\ImagePornDetectionResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveSnapshotConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\StopMultipleStreamMixServiceResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\AddLiveAppRecordConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\RemoveMultipleStreamMixServiceResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\UpdateLiveAppSnapshotConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DeleteLiveAppSnapshotConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\AddLiveAppSnapshotConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamRecordIndexFileResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamRecordContentResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamSnapshotInfoResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveRecordConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamRecordIndexFilesResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\AddMultipleStreamMixServiceResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\StartMultipleStreamMixServiceResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
