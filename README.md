@@ -1,9 +1,9 @@
-# Open API SDK for .Net developers
+# Open API SDK for .Net Core developers
 
 ## Requirements
 
-- 支持 .Net Freamwork 4.5 及以上版本；
-- 下载SDK 把 aliyun-net-sdk-core.dll 和相应产品的 .dll 文件添加引用到项目中。
+- 支持 .Net Core 1.0 及以上版本；
+- 下载SDK 把 Aliyun.Acs.Core.dll 和相应产品的 .dll 文件添加引用到项目中。
 
 ## Example
 
@@ -61,6 +61,7 @@
 ## Authors && Contributors
 
 - [Ma Lijie](https://github.com/malijiefoxmail)
+- [Allen Cai](https://github.com/VAllens)
 
 ## License
 
