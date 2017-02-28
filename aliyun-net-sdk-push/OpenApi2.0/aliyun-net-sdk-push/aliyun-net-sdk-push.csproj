@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{22bf704e-9c6e-476b-9e69-bf7d17da41bc}</ProjectGuid>
+    <ProjectGuid>{12f7664e-5e47-4d11-891f-635836487c57}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -59,6 +59,7 @@
 	<Compile Include="Push\Model\V20160801\PushNoticeToiOSRequest.cs" />
 	<Compile Include="Push\Model\V20160801\PushMessageToAndroidRequest.cs" />
 	<Compile Include="Push\Model\V20160801\CancelPushRequest.cs" />
+	<Compile Include="Push\Model\V20160801\CheckDevicesRequest.cs" />
 	<Compile Include="Push\Model\V20160801\PushMessageToAndroidResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryUniqueDeviceStatRequest.cs" />
 	<Compile Include="Push\Model\V20160801\ListSummaryAppsRequest.cs" />
@@ -66,7 +67,9 @@
 	<Compile Include="Push\Model\V20160801\QueryDeviceInfoRequest.cs" />
 	<Compile Include="Push\Model\V20160801\QueryTagsResponse.cs" />
 	<Compile Include="Push\Model\V20160801\PushNoticeToAndroidRequest.cs" />
+	<Compile Include="Push\Model\V20160801\CheckDevicesResponse.cs" />
 	<Compile Include="Push\Model\V20160801\PushNoticeToAndroidResponse.cs" />
+	<Compile Include="Push\Model\V20160801\ListPushRecordsRequest.cs" />
 	<Compile Include="Push\Model\V20160801\ClearAliasRequest.cs" />
 	<Compile Include="Push\Model\V20160801\QueryTagsRequest.cs" />
 	<Compile Include="Push\Model\V20160801\QueryPushStatByMsgRequest.cs" />
@@ -83,6 +86,7 @@
 	<Compile Include="Push\Model\V20160801\QueryPushStatRequest.cs" />
 	<Compile Include="Push\Model\V20160801\ListSummaryAppsResponse.cs" />
 	<Compile Include="Push\Model\V20160801\BindTagResponse.cs" />
+	<Compile Include="Push\Model\V20160801\ListPushRecordsResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryPushStatByMsgResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryPushDetailResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryAliasRequest.cs" />
@@ -115,7 +119,9 @@
 	<Compile Include="Push\Transform\V20160801\CancelPushResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\UnbindTagResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\BindTagResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\CheckDevicesResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\QueryDeviceStatResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\ListPushRecordsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\QueryUniqueDeviceStatResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\DeleteTagResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\ClearAliasResponseUnmarshaller.cs" />
