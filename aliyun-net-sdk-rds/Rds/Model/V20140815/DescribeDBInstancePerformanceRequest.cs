@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
+		private string ownerAccount;
+
 		private string resourceOwnerAccount;
 
 		private long? resourceOwnerId;
@@ -47,8 +49,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string endTime;
 
-		private string ownerAccount;
-
 		public long? OwnerId
 		{
 			get
@@ -59,6 +59,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -137,19 +150,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 

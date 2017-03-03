@@ -152,12 +152,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public enum StatusEnum {
-			
+public enum StatusEnum {
+
 					Running,
 					NoStart,
 					Success,
-			}
+}
 		}
 	}
 }

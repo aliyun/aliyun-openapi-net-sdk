@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string sortKey;
 
+		private string tags;
+
 		private string tag1key;
 
 		private string tag2key;
@@ -202,6 +204,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				sortKey = value;
 				DictionaryUtil.Add(QueryParameters, "SortKey", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 

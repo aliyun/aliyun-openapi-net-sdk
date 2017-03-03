@@ -152,14 +152,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public enum ImportDataTypeEnum {
-			
+public enum ImportDataTypeEnum {
+
 					Incremental,
 					Full,
-			}
+}
 
-			public enum ImportDataStatusEnum {
-			
+public enum ImportDataStatusEnum {
+
 					IncrementalImporting,
 					StopSyncing,
 					Canceled,
@@ -170,7 +170,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					Success,
 					NotStart,
 					FullExporting,
-			}
+}
 		}
 	}
 }

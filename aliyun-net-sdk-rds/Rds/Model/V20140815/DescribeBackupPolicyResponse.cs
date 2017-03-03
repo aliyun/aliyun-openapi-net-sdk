@@ -34,6 +34,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string backupLog;
 
+		private int? logBackupRetentionPeriod;
+
 		public int? BackupRetentionPeriod
 		{
 			get
@@ -91,6 +93,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				backupLog = value;
+			}
+		}
+
+		public int? LogBackupRetentionPeriod
+		{
+			get
+			{
+				return logBackupRetentionPeriod;
+			}
+			set	
+			{
+				logBackupRetentionPeriod = value;
 			}
 		}
 	}

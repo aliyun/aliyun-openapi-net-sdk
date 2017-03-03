@@ -40,8 +40,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				DescribeParameterTemplatesResponse.TemplateRecord templateRecord = new DescribeParameterTemplatesResponse.TemplateRecord();
 				templateRecord.ParameterName = context.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterName");
 				templateRecord.ParameterValue = context.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterValue");
-				templateRecord.ForceModify = context.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ForceModify");
-                templateRecord.ForceRestart = context.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ForceRestart");
+				templateRecord.ForceModify = context.EnumValue<DescribeParameterTemplatesResponse.TemplateRecord.ForceModifyEnum>("DescribeParameterTemplates.Parameters["+ i +"].ForceModify");
+				templateRecord.ForceRestart = context.EnumValue<DescribeParameterTemplatesResponse.TemplateRecord.ForceRestartEnum>("DescribeParameterTemplates.Parameters["+ i +"].ForceRestart");
 				templateRecord.CheckingCode = context.StringValue("DescribeParameterTemplates.Parameters["+ i +"].CheckingCode");
 				templateRecord.ParameterDescription = context.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterDescription");
 

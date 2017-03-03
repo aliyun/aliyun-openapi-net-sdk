@@ -166,13 +166,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public enum LogStatusEnum {
-			
+public enum LogStatusEnum {
+
 					Generating,
 					NoStart,
 					Failed,
 					Success,
-			}
+}
 		}
 	}
 }

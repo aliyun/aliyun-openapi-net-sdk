@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeBackupsResponse.TotalRecordCount = context.StringValue("DescribeBackups.TotalRecordCount");
 			describeBackupsResponse.PageNumber = context.StringValue("DescribeBackups.PageNumber");
 			describeBackupsResponse.PageRecordCount = context.StringValue("DescribeBackups.PageRecordCount");
+			describeBackupsResponse.TotalBackupSize = context.IntegerValue("DescribeBackups.TotalBackupSize");
 
 			List<DescribeBackupsResponse.Backup> items = new List<DescribeBackupsResponse.Backup>();
 			for (int i = 0; i < context.Length("DescribeBackups.Items.Length"); i++) {
@@ -47,11 +48,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				backup.BackupMode = context.EnumValue<DescribeBackupsResponse.Backup.BackupModeEnum>("DescribeBackups.Items["+ i +"].BackupMode");
 				backup.BackupMethod = context.EnumValue<DescribeBackupsResponse.Backup.BackupMethodEnum>("DescribeBackups.Items["+ i +"].BackupMethod");
 				backup.BackupDownloadURL = context.StringValue("DescribeBackups.Items["+ i +"].BackupDownloadURL");
+				backup.BackupIntranetDownloadURL = context.StringValue("DescribeBackups.Items["+ i +"].BackupIntranetDownloadURL");
 				backup.BackupLocation = context.StringValue("DescribeBackups.Items["+ i +"].BackupLocation");
 				backup.BackupExtractionStatus = context.EnumValue<DescribeBackupsResponse.Backup.BackupExtractionStatusEnum>("DescribeBackups.Items["+ i +"].BackupExtractionStatus");
 				backup.BackupScale = context.EnumValue<DescribeBackupsResponse.Backup.BackupScaleEnum>("DescribeBackups.Items["+ i +"].BackupScale");
 				backup.BackupDBNames = context.StringValue("DescribeBackups.Items["+ i +"].BackupDBNames");
+				backup.TotalBackupSize = context.LongValue("DescribeBackups.Items["+ i +"].TotalBackupSize");
 				backup.BackupSize = context.LongValue("DescribeBackups.Items["+ i +"].BackupSize");
+				backup.HostInstanceID = context.StringValue("DescribeBackups.Items["+ i +"].HostInstanceID");
+				backup.StoreStatus = context.EnumValue<DescribeBackupsResponse.Backup.StoreStatusEnum>("DescribeBackups.Items["+ i +"].StoreStatus");
 
 				items.Add(backup);
 			}

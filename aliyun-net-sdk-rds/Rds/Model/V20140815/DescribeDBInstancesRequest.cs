@@ -81,6 +81,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string tag5value;
 
+		private string tags;
+
 		private string ownerAccount;
 
 		public long? OwnerId
@@ -392,6 +394,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				tag5value = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.5.value", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 

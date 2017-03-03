@@ -30,6 +30,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageRecordCount;
 
+		private long? totalFileSize;
+
 		private List<BinLogFile> items;
 
 		public int? TotalRecordCount
@@ -68,6 +70,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public long? TotalFileSize
+		{
+			get
+			{
+				return totalFileSize;
+			}
+			set	
+			{
+				totalFileSize = value;
+			}
+		}
+
 		public List<BinLogFile> Items
 		{
 			get
@@ -90,7 +104,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string downloadLink;
 
+			private string intranetDownloadLink;
+
 			private string linkExpiredTime;
+
+			private string checksum;
+
+			private string hostInstanceID;
 
 			public long? FileSize
 			{
@@ -140,6 +160,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string IntranetDownloadLink
+			{
+				get
+				{
+					return intranetDownloadLink;
+				}
+				set	
+				{
+					intranetDownloadLink = value;
+				}
+			}
+
 			public string LinkExpiredTime
 			{
 				get
@@ -149,6 +181,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					linkExpiredTime = value;
+				}
+			}
+
+			public string Checksum
+			{
+				get
+				{
+					return checksum;
+				}
+				set	
+				{
+					checksum = value;
+				}
+			}
+
+			public string HostInstanceID
+			{
+				get
+				{
+					return hostInstanceID;
+				}
+				set	
+				{
+					hostInstanceID = value;
 				}
 			}
 		}

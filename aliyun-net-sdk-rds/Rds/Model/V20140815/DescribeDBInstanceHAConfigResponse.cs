@@ -94,7 +94,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string zoneId;
 
-			private SyncStatusEnum? syncStatus;
+			private string syncStatus;
 
 			public string NodeId
 			{
@@ -168,7 +168,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public SyncStatusEnum? SyncStatus
+			public string SyncStatus
 			{
 				get
 				{
@@ -178,12 +178,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				{
 					syncStatus = value;
 				}
-			}
-
-			public enum SyncStatusEnum {
-			
-					Available,
-					NotAvailable,
 			}
 		}
 	}

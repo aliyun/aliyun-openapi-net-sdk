@@ -63,6 +63,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.MaxIOPS = context.IntegerValue("DescribeDBInstanceAttribute.Items["+ i +"].MaxIOPS");
 				dBInstanceAttribute.MaxConnections = context.IntegerValue("DescribeDBInstanceAttribute.Items["+ i +"].MaxConnections");
 				dBInstanceAttribute.MasterInstanceId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].MasterInstanceId");
+				dBInstanceAttribute.DBInstanceCPU = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBInstanceCPU");
 				dBInstanceAttribute.IncrementSourceDBInstanceId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].IncrementSourceDBInstanceId");
 				dBInstanceAttribute.GuardDBInstanceId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].GuardDBInstanceId");
 				dBInstanceAttribute.TempDBInstanceId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].TempDBInstanceId");

@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceId;
 
+		private string tags;
+
 		private string tag1key;
 
 		private string tag2key;
@@ -142,6 +144,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 

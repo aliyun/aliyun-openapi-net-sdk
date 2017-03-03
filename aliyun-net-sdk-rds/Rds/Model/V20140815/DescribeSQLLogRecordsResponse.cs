@@ -96,6 +96,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string executeTime;
 
+			private string threadID;
+
 			public string DBName
 			{
 				get
@@ -177,6 +179,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					executeTime = value;
+				}
+			}
+
+			public string ThreadID
+			{
+				get
+				{
+					return threadID;
+				}
+				set	
+				{
+					threadID = value;
 				}
 			}
 		}

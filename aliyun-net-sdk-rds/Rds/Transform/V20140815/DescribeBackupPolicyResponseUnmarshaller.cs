@@ -36,6 +36,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeBackupPolicyResponse.PreferredBackupTime = context.StringValue("DescribeBackupPolicy.PreferredBackupTime");
 			describeBackupPolicyResponse.PreferredBackupPeriod = context.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
 			describeBackupPolicyResponse.BackupLog = context.StringValue("DescribeBackupPolicy.BackupLog");
+			describeBackupPolicyResponse.LogBackupRetentionPeriod = context.IntegerValue("DescribeBackupPolicy.LogBackupRetentionPeriod");
         
 			return describeBackupPolicyResponse;
         }

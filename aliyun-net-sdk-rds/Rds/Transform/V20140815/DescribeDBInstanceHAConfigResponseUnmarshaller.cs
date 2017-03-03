@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				nodeInfo.DataSyncTime = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].DataSyncTime");
 				nodeInfo.NodeType = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].NodeType");
 				nodeInfo.ZoneId = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].ZoneId");
-				nodeInfo.SyncStatus = context.EnumValue<DescribeDBInstanceHAConfigResponse.NodeInfo.SyncStatusEnum>("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].SyncStatus");
+				nodeInfo.SyncStatus = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].SyncStatus");
 
 				hostInstanceInfos.Add(nodeInfo);
 			}

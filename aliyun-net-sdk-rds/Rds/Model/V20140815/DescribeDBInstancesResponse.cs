@@ -404,17 +404,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public enum DBInstanceTypeEnum {
-			
+public enum DBInstanceTypeEnum {
+
 					Shared,
 					Guard,
 					Primary,
 					Readonly,
 					Temp,
-			}
+}
 
-			public enum DBInstanceStatusEnum {
-			
+public enum DBInstanceStatusEnum {
+
 					TempDBInstanceCreating,
 					Running,
 					Deleting,
@@ -430,29 +430,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					DBInstanceNetTypeChanging,
 					Importing,
 					Restoring,
-			}
+}
 
-			public enum DBInstanceNetTypeEnum {
-			
+public enum DBInstanceNetTypeEnum {
+
 					Intranet,
 					Internet,
-			}
+}
 
-			public enum ConnectionModeEnum {
-			
+public enum ConnectionModeEnum {
+
 					Standard,
 					Safe,
-			}
+}
 
-			public enum LockModeEnum {
-			
+public enum LockModeEnum {
+
 					LockByExpiration,
 					LockByRestoration,
 					LockReadInstanceByDiskQuota,
 					ManualLock,
 					LockByDiskQuota,
 					Unlock,
-			}
+}
 
 			public class ReadOnlyDBInstanceId{
 

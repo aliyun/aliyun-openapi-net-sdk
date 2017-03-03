@@ -39,8 +39,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
-
 		private string engine;
 
 		private string engineVersion;
@@ -57,6 +55,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string securityIPList;
 
+		private string clientToken;
+
 		private string payType;
 
 		private string zoneId;
@@ -72,6 +72,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string privateIpAddress;
 
 		private string ownerAccount;
+
+		private string usedTime;
+
+		private string period;
 
 		public long? OwnerId
 		{
@@ -109,19 +113,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -229,6 +220,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
 		public string PayType
 		{
 			get
@@ -330,6 +334,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string UsedTime
+		{
+			get
+			{
+				return usedTime;
+			}
+			set	
+			{
+				usedTime = value;
+				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+			}
+		}
+
+		public string Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value);
 			}
 		}
 

@@ -138,12 +138,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public enum DBStatusEnum {
-			
+public enum DBStatusEnum {
+
 					Deleting,
 					Running,
 					Creating,
-			}
+}
 
 			public class AccountPrivilegeInfo{
 

@@ -152,15 +152,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public enum ImportStatusEnum {
-			
+public enum ImportStatusEnum {
+
 					Cancelling,
 					Failed,
 					Cancelled,
 					Success,
 					Importing,
 					Pending,
-			}
+}
 		}
 	}
 }

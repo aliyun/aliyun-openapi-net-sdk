@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageNumber;
 
+		private string tags;
+
 		private string tag1key;
 
 		private string tag2key;
@@ -172,6 +174,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 

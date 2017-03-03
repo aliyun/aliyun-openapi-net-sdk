@@ -124,17 +124,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public enum AccountStatusEnum {
-			
+public enum AccountStatusEnum {
+
 					Available,
 					Unavailable,
-			}
+}
 
-			public enum AccountTypeEnum {
-			
+public enum AccountTypeEnum {
+
 					Normal,
 					Super,
-			}
+}
 
 			public class DatabasePrivilege{
 

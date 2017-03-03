@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				sQLRecord.TotalExecutionTimes = context.LongValue("DescribeSQLLogRecords.Items["+ i +"].TotalExecutionTimes");
 				sQLRecord.ReturnRowCounts = context.LongValue("DescribeSQLLogRecords.Items["+ i +"].ReturnRowCounts");
 				sQLRecord.ExecuteTime = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].ExecuteTime");
+				sQLRecord.ThreadID = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].ThreadID");
 
 				items.Add(sQLRecord);
 			}

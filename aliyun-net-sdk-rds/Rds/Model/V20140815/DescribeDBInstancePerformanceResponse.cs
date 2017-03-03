@@ -154,7 +154,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			public class PerformanceValue{
 
-				private string value;
+				private string value_;
 
 				private string date;
 
@@ -162,11 +162,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				{
 					get
 					{
-						return value;
+						return value_;
 					}
 					set	
 					{
-						value = value;
+						value_ = value;
 					}
 				}
 

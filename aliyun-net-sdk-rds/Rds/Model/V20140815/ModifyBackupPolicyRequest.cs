@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string backupLog;
 
+		private string logBackupRetentionPeriod;
+
 		private string ownerAccount;
 
 		public long? OwnerId
@@ -152,6 +154,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupLog = value;
 				DictionaryUtil.Add(QueryParameters, "BackupLog", value);
+			}
+		}
+
+		public string LogBackupRetentionPeriod
+		{
+			get
+			{
+				return logBackupRetentionPeriod;
+			}
+			set	
+			{
+				logBackupRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "LogBackupRetentionPeriod", value);
 			}
 		}
 

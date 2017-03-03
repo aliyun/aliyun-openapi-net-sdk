@@ -30,6 +30,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string pageRecordCount;
 
+		private int? totalBackupSize;
+
 		private List<Backup> items;
 
 		public string TotalRecordCount
@@ -68,6 +70,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public int? TotalBackupSize
+		{
+			get
+			{
+				return totalBackupSize;
+			}
+			set	
+			{
+				totalBackupSize = value;
+			}
+		}
+
 		public List<Backup> Items
 		{
 			get
@@ -100,6 +114,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string backupDownloadURL;
 
+			private string backupIntranetDownloadURL;
+
 			private string backupLocation;
 
 			private BackupExtractionStatusEnum? backupExtractionStatus;
@@ -108,7 +124,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string backupDBNames;
 
+			private long? totalBackupSize;
+
 			private long? backupSize;
+
+			private string hostInstanceID;
+
+			private StoreStatusEnum? storeStatus;
 
 			public string BackupId
 			{
@@ -218,6 +240,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string BackupIntranetDownloadURL
+			{
+				get
+				{
+					return backupIntranetDownloadURL;
+				}
+				set	
+				{
+					backupIntranetDownloadURL = value;
+				}
+			}
+
 			public string BackupLocation
 			{
 				get
@@ -266,6 +300,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public long? TotalBackupSize
+			{
+				get
+				{
+					return totalBackupSize;
+				}
+				set	
+				{
+					totalBackupSize = value;
+				}
+			}
+
 			public long? BackupSize
 			{
 				get
@@ -278,43 +324,74 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public enum BackupStatusEnum {
-			
+			public string HostInstanceID
+			{
+				get
+				{
+					return hostInstanceID;
+				}
+				set	
+				{
+					hostInstanceID = value;
+				}
+			}
+
+			public StoreStatusEnum? StoreStatus
+			{
+				get
+				{
+					return storeStatus;
+				}
+				set	
+				{
+					storeStatus = value;
+				}
+			}
+
+public enum BackupStatusEnum {
+
 					Failed,
 					Success,
-			}
+}
 
-			public enum BackupTypeEnum {
-			
+public enum BackupTypeEnum {
+
 					IncrementalBackup,
 					FullBackup,
-			}
+}
 
-			public enum BackupModeEnum {
-			
+public enum BackupModeEnum {
+
 					Manual,
 					Automated,
-			}
+}
 
-			public enum BackupMethodEnum {
-			
+public enum BackupMethodEnum {
+
 					Physical,
 					Logical,
-			}
+					Snapshot,
+}
 
-			public enum BackupExtractionStatusEnum {
-			
+public enum BackupExtractionStatusEnum {
+
 					Nostart,
 					Extracing,
 					Failed,
 					Success,
-			}
+}
 
-			public enum BackupScaleEnum {
-			
+public enum BackupScaleEnum {
+
 					DBInstance,
 					Database,
-			}
+}
+
+public enum StoreStatusEnum {
+
+					Enabled,
+					Disabled,
+}
 		}
 	}
 }

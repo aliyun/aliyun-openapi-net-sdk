@@ -21,128 +21,105 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeParameterTemplatesResponse : AcsResponse
-	{
+    public class DescribeParameterTemplatesResponse : AcsResponse
+    {
 
-		private string engine;
+        private string engine;
 
-		private string engineVersion;
+        private string engineVersion;
 
-		private string parameterCount;
+        private string parameterCount;
 
-		private List<TemplateRecord> parameters;
+        private List<TemplateRecord> parameters;
 
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
+        public string Engine
+        {
+            get
+            {
+                return engine;
+            }
+            set
+            {
+                engine = value;
+            }
+        }
 
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-			}
-		}
+        public string EngineVersion
+        {
+            get
+            {
+                return engineVersion;
+            }
+            set
+            {
+                engineVersion = value;
+            }
+        }
 
-		public string ParameterCount
-		{
-			get
-			{
-				return parameterCount;
-			}
-			set	
-			{
-				parameterCount = value;
-			}
-		}
+        public string ParameterCount
+        {
+            get
+            {
+                return parameterCount;
+            }
+            set
+            {
+                parameterCount = value;
+            }
+        }
 
-		public List<TemplateRecord> Parameters
-		{
-			get
-			{
-				return parameters;
-			}
-			set	
-			{
-				parameters = value;
-			}
-		}
+        public List<TemplateRecord> Parameters
+        {
+            get
+            {
+                return parameters;
+            }
+            set
+            {
+                parameters = value;
+            }
+        }
 
-		public class TemplateRecord{
+        public class TemplateRecord
+        {
 
-			private string parameterName;
+            private string parameterName;
 
-			private string parameterValue;
+            private string parameterValue;
 
-			private string forceModify;
+            private ForceModifyEnum? forceModify;
 
-            private string forceRestart;
+            private ForceRestartEnum? forceRestart;
 
-			private string checkingCode;
+            private string checkingCode;
 
-			private string parameterDescription;
+            private string parameterDescription;
 
-			public string ParameterName
-			{
-				get
-				{
-					return parameterName;
-				}
-				set	
-				{
-					parameterName = value;
-				}
-			}
+            public string ParameterName
+            {
+                get
+                {
+                    return parameterName;
+                }
+                set
+                {
+                    parameterName = value;
+                }
+            }
 
-			public string ParameterValue
-			{
-				get
-				{
-					return parameterValue;
-				}
-				set	
-				{
-					parameterValue = value;
-				}
-			}
-            
-			public string CheckingCode
-			{
-				get
-				{
-					return checkingCode;
-				}
-				set	
-				{
-					checkingCode = value;
-				}
-			}
+            public string ParameterValue
+            {
+                get
+                {
+                    return parameterValue;
+                }
+                set
+                {
+                    parameterValue = value;
+                }
+            }
 
-			public string ParameterDescription
-			{
-				get
-				{
-					return parameterDescription;
-				}
-				set	
-				{
-					parameterDescription = value;
-				}
-			}
-
-            public string ForceModify
+            public ForceModifyEnum? ForceModify
             {
                 get
                 {
@@ -154,7 +131,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
                 }
             }
 
-            public string ForceRestart
+            public ForceRestartEnum? ForceRestart
             {
                 get
                 {
@@ -165,6 +142,44 @@ namespace Aliyun.Acs.Rds.Model.V20140815
                     forceRestart = value;
                 }
             }
-		}
-	}
+
+            public string CheckingCode
+            {
+                get
+                {
+                    return checkingCode;
+                }
+                set
+                {
+                    checkingCode = value;
+                }
+            }
+
+            public string ParameterDescription
+            {
+                get
+                {
+                    return parameterDescription;
+                }
+                set
+                {
+                    parameterDescription = value;
+                }
+            }
+
+            public enum ForceModifyEnum
+            {
+
+                TRUE,
+                FALSE,
+            }
+
+            public enum ForceRestartEnum
+            {
+
+                FALSE,
+                TRUE,
+            }
+        }
+    }
 }

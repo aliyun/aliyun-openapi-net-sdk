@@ -110,11 +110,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public enum JobModeEnum {
-			
+public enum JobModeEnum {
+
 					Manual,
 					Automated,
-			}
+}
 		}
 	}
 }

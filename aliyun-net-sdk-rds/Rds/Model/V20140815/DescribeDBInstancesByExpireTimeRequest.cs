@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageNumber;
 
+		private string tags;
+
 		private string ownerAccount;
 
 		public long? OwnerId
@@ -152,6 +154,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 

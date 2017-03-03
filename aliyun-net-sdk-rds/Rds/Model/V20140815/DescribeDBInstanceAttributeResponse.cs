@@ -96,6 +96,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string masterInstanceId;
 
+			private string dBInstanceCPU;
+
 			private string incrementSourceDBInstanceId;
 
 			private string guardDBInstanceId;
@@ -454,6 +456,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string DBInstanceCPU
+			{
+				get
+				{
+					return dBInstanceCPU;
+				}
+				set	
+				{
+					dBInstanceCPU = value;
+				}
+			}
+
 			public string IncrementSourceDBInstanceId
 			{
 				get
@@ -586,22 +600,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public enum DBInstanceTypeEnum {
-			
+public enum DBInstanceTypeEnum {
+
 					Guard,
 					Primary,
 					Readonly,
 					Temp,
-			}
+}
 
-			public enum DBInstanceNetTypeEnum {
-			
+public enum DBInstanceNetTypeEnum {
+
 					Intranet,
 					Internet,
-			}
+}
 
-			public enum DBInstanceStatusEnum {
-			
+public enum DBInstanceStatusEnum {
+
 					TempDBInstanceCreating,
 					Running,
 					Deleting,
@@ -610,43 +624,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					GuardDBInstanceCreating,
 					Rebooting,
 					GuardSwitching,
-					LingSwitching,
+					SystemMaintaining,
 					Transing,
 					TransingToOthers,
 					ImportingFromOthers,
 					EngineVersionUpgrading,
+					ReadInstanceTransing,
+					LinkSwitching,
 					DBInstanceNetTypeChanging,
+					InstanceMaintaining,
 					Importing,
 					Restoring,
-			}
+}
 
-			public enum LockModeEnum {
-			
+public enum LockModeEnum {
+
 					LockByExpiration,
 					LockByRestoration,
 					LockReadInstanceByDiskQuota,
 					ManualLock,
 					LockByDiskQuota,
 					Unlock,
-			}
+}
 
-			public enum AccountTypeEnum {
-			
+public enum AccountTypeEnum {
+
 					Normal,
 					Super,
-			}
+}
 
-			public enum SupportUpgradeAccountTypeEnum {
-			
+public enum SupportUpgradeAccountTypeEnum {
+
 					Yes,
 					No,
-			}
+}
 
-			public enum ConnectionModeEnum {
-			
+public enum ConnectionModeEnum {
+
 					Standard,
 					Safe,
-			}
+}
 
 			public class ReadOnlyDBInstanceId{
 
