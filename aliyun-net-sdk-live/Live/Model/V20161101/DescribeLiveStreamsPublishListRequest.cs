@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Live.Model.V20161101
 {
-    public class AddLiveAppRecordConfigRequest : RpcAcsRequest<AddLiveAppRecordConfigResponse>
+    public class DescribeLiveStreamsPublishListRequest : RpcAcsRequest<DescribeLiveStreamsPublishListResponse>
     {
-        public AddLiveAppRecordConfigRequest()
-            : base("Live", "2016-11-01", "AddLiveAppRecordConfig")
+        public DescribeLiveStreamsPublishListRequest()
+            : base("Live", "2016-11-01", "DescribeLiveStreamsPublishList")
         {
         }
 
@@ -41,11 +41,15 @@ namespace Aliyun.Acs.Live.Model.V20161101
 
 		private string appName;
 
-		private string ossEndpoint;
+		private string streamName;
 
-		private string ossBucket;
+		private string startTime;
 
-		private List<RecordFormat> recordFormats;
+		private string endTime;
+
+		private long? pageSize;
+
+		private long? pageNumber;
 
 		public string SecurityToken
 		{
@@ -99,100 +103,74 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string OssEndpoint
+		public string StreamName
 		{
 			get
 			{
-				return ossEndpoint;
+				return streamName;
 			}
 			set	
 			{
-				ossEndpoint = value;
-				DictionaryUtil.Add(QueryParameters, "OssEndpoint", value);
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 
-		public string OssBucket
+		public string StartTime
 		{
 			get
 			{
-				return ossBucket;
+				return startTime;
 			}
 			set	
 			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public List<RecordFormat> RecordFormats
+		public string EndTime
 		{
 			get
 			{
-				return recordFormats;
+				return endTime;
 			}
-
-			set
+			set	
 			{
-				recordFormats = value;
-				for (int i = 0; i < recordFormats.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".Format", recordFormats[i].Format);
-					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".OssObjectPrefix", recordFormats[i].OssObjectPrefix);
-					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".SliceOssObjectPrefix", recordFormats[i].SliceOssObjectPrefix);
-				}
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public class RecordFormat
+		public long? PageSize
 		{
-
-			private string format;
-
-			private string ossObjectPrefix;
-
-			private string sliceOssObjectPrefix;
-
-			public string Format
+			get
 			{
-				get
-				{
-					return format;
-				}
-				set	
-				{
-					format = value;
-				}
+				return pageSize;
 			}
-
-			public string OssObjectPrefix
+			set	
 			{
-				get
-				{
-					return ossObjectPrefix;
-				}
-				set	
-				{
-					ossObjectPrefix = value;
-				}
-			}
-
-			public string SliceOssObjectPrefix
-			{
-				get
-				{
-					return sliceOssObjectPrefix;
-				}
-				set	
-				{
-					sliceOssObjectPrefix = value;
-				}
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-        public override AddLiveAppRecordConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+        public override DescribeLiveStreamsPublishListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return AddLiveAppRecordConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveStreamsPublishListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
