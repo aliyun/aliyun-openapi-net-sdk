@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Core.Http
     public class HttpResponse : HttpRequest
     {
 
-        private static int _timeout = 100000;
+        private static int _timeout = 100000; // No effect
         private static int bufferLength = 1024;
 
         public int Status { get; set; }
@@ -104,9 +104,13 @@ namespace Aliyun.Acs.Core.Http
             return bytes;
         }
 
-        public static HttpResponse GetResponse(HttpRequest request)
+        public static HttpResponse GetResponse(HttpRequest request, int? timeout=null)
         {
             HttpWebRequest httpWebRequest = GetWebRequest(request);
+            if (timeout != null)
+            {
+                httpWebRequest.Timeout = (int)timeout;
+            }
 
             HttpResponse httpResponse = new HttpResponse(httpWebRequest.RequestUri.AbsoluteUri);
             HttpWebResponse httpWebResponse = null;
@@ -116,7 +120,14 @@ namespace Aliyun.Acs.Core.Http
             }
             catch (WebException ex)
             {
-                httpWebResponse = (HttpWebResponse)ex.Response;
+                if (ex.Response != null)
+                {
+                    httpWebResponse = (HttpWebResponse)ex.Response;
+                }
+                else
+                {
+                    throw ex;
+                }
             }
 
             PasrseHttpResponse(httpResponse, httpWebResponse);

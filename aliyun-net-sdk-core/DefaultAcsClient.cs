@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Core
         private int maxRetryNumber = 3;
         private bool autoRetry = true;
         private IClientProfile clientProfile = null;
+        private int timeoutInMilliSeconds = 100000; // Default 100 Seconds
 
         public DefaultAcsClient()
         {
@@ -164,11 +165,11 @@ namespace Aliyun.Acs.Core
             }
             HttpRequest httpRequest = request.SignRequest(signer, credential, format, domain);
             int retryTimes = 1;
-            HttpResponse response = HttpResponse.GetResponse(httpRequest);
+            HttpResponse response = HttpResponse.GetResponse(httpRequest, timeoutInMilliSeconds);
             while (500 <= response.Status && autoRetry && retryTimes < maxRetryNumber)
             {
                 httpRequest = request.SignRequest(signer, credential, format, domain);
-                response = HttpResponse.GetResponse(httpRequest);
+                response = HttpResponse.GetResponse(httpRequest, timeoutInMilliSeconds);
                 retryTimes++;
             }
             return response;
@@ -211,6 +212,12 @@ namespace Aliyun.Acs.Core
         {
             get { return autoRetry; }
             set { autoRetry = value; }
+        }
+
+        public int TimeoutInMilliSeconds
+        {
+            get { return timeoutInMilliSeconds; }
+            set { timeoutInMilliSeconds = value; }
         }
 
     }
