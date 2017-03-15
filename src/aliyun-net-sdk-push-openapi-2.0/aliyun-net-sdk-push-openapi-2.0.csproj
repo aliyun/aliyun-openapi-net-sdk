@@ -12,10 +12,10 @@
     <Copyright>Copyright (c) 2017 Aliyun</Copyright>
     <PackageLicenseUrl>https://github.com/VAllens/aliyun-openapi-sdk-net-core/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://help.aliyun.com</PackageProjectUrl>
-    <PackageIconUrl>https://github.com/VAllens/aliyun-openapi-sdk-net-core/blob/master/logo.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/VAllens/aliyun-openapi-sdk-net-core/master/logo.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/VAllens/aliyun-openapi-sdk-net-core</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>aliyun,openapi,sdk</PackageTags>
+    <PackageTags>aliyun openapi sdk</PackageTags>
     <PackageReleaseNotes>https://github.com/VAllens/aliyun-openapi-sdk-net-core/releases</PackageReleaseNotes>
     <PackageId>Aliyun.Acs.Push.OpenApi2</PackageId>
   </PropertyGroup>
