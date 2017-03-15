@@ -56,7 +56,8 @@
 
 	此处的regionid参数指你需要操作的region的id，例如要操作杭州region，则regionid=cn-hangzhou；默认填cn-hangzhou.
 
-
+3. docker for linux 环境中，如何无错运行Aliyun SDK Application?
+请在Dockerfile中指定FROM microsoft/dotnet:latest, 而不是FROM microsoft/aspnetcore:latest.
 
 ## Authors && Contributors
 
