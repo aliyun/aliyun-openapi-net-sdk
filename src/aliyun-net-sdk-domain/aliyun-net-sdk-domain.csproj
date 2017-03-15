@@ -6,12 +6,12 @@
     <RootNamespace>Aliyun.Acs.Domain</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <Authors>Aliyun,Allen</Authors>
+    <Authors>Aliyun Allen</Authors>
     <Company>Aliyun</Company>
     <Description>aliyun open api sdk for .net core</Description>
     <Copyright>Copyright (c) 2017 Aliyun</Copyright>
     <PackageLicenseUrl>https://github.com/VAllens/aliyun-openapi-sdk-net-core/blob/master/LICENSE.md</PackageLicenseUrl>
-    <PackageProjectUrl>https://help.aliyun.com</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/VAllens/aliyun-openapi-sdk-net-core</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/VAllens/aliyun-openapi-sdk-net-core/master/logo.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/VAllens/aliyun-openapi-sdk-net-core</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
