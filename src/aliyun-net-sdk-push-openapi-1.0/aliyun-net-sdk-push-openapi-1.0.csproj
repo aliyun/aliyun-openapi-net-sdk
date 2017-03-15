@@ -2,8 +2,30 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.0</TargetFramework>
-    <AssemblyName>Aliyun.Acs.Push.OpenApi.1.0</AssemblyName>
+    <AssemblyName>Aliyun.Acs.Push.OpenApi</AssemblyName>
     <RootNamespace>Aliyun.Acs.Push</RootNamespace>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <Authors>Aliyun,Allen</Authors>
+    <Company>Aliyun</Company>
+    <Description>aliyun open api sdk for .net core</Description>
+    <Copyright>Copyright (c) 2017 Aliyun</Copyright>
+    <PackageLicenseUrl>https://github.com/VAllens/aliyun-openapi-sdk-net-core/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://help.aliyun.com</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/VAllens/aliyun-openapi-sdk-net-core/blob/master/logo.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/VAllens/aliyun-openapi-sdk-net-core</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>aliyun,openapi,sdk</PackageTags>
+    <PackageReleaseNotes>https://github.com/VAllens/aliyun-openapi-sdk-net-core/releases</PackageReleaseNotes>
+    <PackageId>Aliyun.Acs.Push.OpenApi</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\build\bin\Release\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\build\bin\Debug\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
