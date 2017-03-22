@@ -16,12 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Live.Model.V20161101;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.live.Model.V20161101
+namespace Aliyun.Acs.Live.Transform.V20161101
 {
-	public class ResumeLiveStreamResponse : AcsResponse
-	{
-	}
+    public class DeleteLiveRecordNotifyConfigResponseUnmarshaller
+    {
+        public static DeleteLiveRecordNotifyConfigResponse Unmarshall(UnmarshallerContext context)
+        {
+			DeleteLiveRecordNotifyConfigResponse deleteLiveRecordNotifyConfigResponse = new DeleteLiveRecordNotifyConfigResponse();
+
+			deleteLiveRecordNotifyConfigResponse.HttpResponse = context.HttpResponse;
+			deleteLiveRecordNotifyConfigResponse.RequestId = context.StringValue("DeleteLiveRecordNotifyConfig.RequestId");
+        
+			return deleteLiveRecordNotifyConfigResponse;
+        }
+    }
 }

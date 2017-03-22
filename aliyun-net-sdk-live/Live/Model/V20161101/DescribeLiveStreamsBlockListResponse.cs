@@ -24,23 +24,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamsBlockListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string domainName;
 
 		private List<string> streamUrls;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string DomainName
 		{

@@ -24,21 +24,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamTranscodeInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private List<DomainTranscodeInfo> domainTranscodeList;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public List<DomainTranscodeInfo> DomainTranscodeList
 		{

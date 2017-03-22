@@ -24,21 +24,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamsFrameRateAndBitRateDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private List<FrameRateAndBitRateInfo> frameRateAndBitRateInfos;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public List<FrameRateAndBitRateInfo> FrameRateAndBitRateInfos
 		{

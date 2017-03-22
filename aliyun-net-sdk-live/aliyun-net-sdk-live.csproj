@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{fd88ecc8-b177-4516-a861-97f538383a29}</ProjectGuid>
+    <ProjectGuid>{7d6fae92-d5b0-45e8-896e-69a6b00b5f07}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
 	<Compile Include="Live\Model\V20161101\CreateLiveStreamRecordIndexFilesRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsNotifyUrlConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsFrameRateAndBitRateDataRequest.cs" />
 	<Compile Include="Live\Model\V20161101\AddLiveStreamTranscodeResponse.cs" />
 	<Compile Include="Live\Model\V20161101\UpdateLiveAppSnapshotConfigRequest.cs" />
@@ -48,10 +49,12 @@
 	<Compile Include="Live\Model\V20161101\StopMultipleStreamMixServiceResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsBlockListRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamOnlineUserNumRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DeleteLiveStreamsNotifyUrlConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\ImagePornDetectionResponse.cs" />
 	<Compile Include="Live\Model\V20161101\AddLiveAppSnapshotConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveRecordConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamRecordIndexFileRequest.cs" />
+	<Compile Include="Live\Model\V20161101\AddLiveRecordNotifyConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamSnapshotInfoRequest.cs" />
 	<Compile Include="Live\Model\V20161101\AddMultipleStreamMixServiceRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveRecordConfigRequest.cs" />
@@ -62,6 +65,7 @@
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamSnapshotInfoResponse.cs" />
 	<Compile Include="Live\Model\V20161101\StartMixStreamsServiceRequest.cs" />
 	<Compile Include="Live\Model\V20161101\ImagePornDetectionRequest.cs" />
+	<Compile Include="Live\Model\V20161101\AddLiveRecordNotifyConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveSnapshotConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\AddLiveAppRecordConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveAppRecordConfigResponse.cs" />
@@ -71,6 +75,7 @@
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsBlockListResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveStreamTranscodeResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsOnlineListRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DeleteLiveRecordNotifyConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\AddLiveAppSnapshotConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\ResumeLiveStreamResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveAppRecordConfigRequest.cs" />
@@ -88,6 +93,9 @@
 	<Compile Include="Live\Model\V20161101\RemoveMultipleStreamMixServiceRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamTranscodeInfoResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveSnapshotConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\SetLiveStreamsNotifyUrlConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DeleteLiveStreamsNotifyUrlConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DeleteLiveRecordNotifyConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamRecordContentRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveAppSnapshotConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\ForbidLiveStreamResponse.cs" />
@@ -96,12 +104,19 @@
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsOnlineListResponse.cs" />
 	<Compile Include="Live\Model\V20161101\StopMixStreamsServiceResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsPublishListRequest.cs" />
+	<Compile Include="Live\Model\V20161101\SetLiveStreamsNotifyUrlConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsControlHistoryResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveAppSnapshotConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\AddLiveStreamTranscodeRequest.cs" />
+	<Compile Include="Live\Model\V20161101\UpdateLiveRecordNotifyConfigRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveRecordNotifyConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveRecordNotifyConfigRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsNotifyUrlConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\UpdateLiveRecordNotifyConfigResponse.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteLiveStreamTranscodeResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\ForbidLiveStreamResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteLiveAppRecordConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveRecordNotifyConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\CreateLiveStreamRecordIndexFilesResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\ImagePornDetectionResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveSnapshotConfigResponseUnmarshaller.cs" />
@@ -112,15 +127,19 @@
 	<Compile Include="Live\Transform\V20161101\AddLiveAppRecordConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\RemoveMultipleStreamMixServiceResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\AddLiveStreamTranscodeResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DeleteLiveRecordNotifyConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamsFrameRateAndBitRateDataResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\UpdateLiveAppSnapshotConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamsBlockListResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteLiveAppSnapshotConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\AddLiveRecordNotifyConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\ResumeLiveStreamResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\AddLiveAppSnapshotConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamsOnlineListResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DeleteLiveStreamsNotifyUrlConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamRecordIndexFileResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamRecordContentResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamsNotifyUrlConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamSnapshotInfoResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveRecordConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamsPublishListResponseUnmarshaller.cs" />
@@ -128,6 +147,8 @@
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamOnlineUserNumResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\StartMixStreamsServiceResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\AddMultipleStreamMixServiceResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\SetLiveStreamsNotifyUrlConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\UpdateLiveRecordNotifyConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\StartMultipleStreamMixServiceResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

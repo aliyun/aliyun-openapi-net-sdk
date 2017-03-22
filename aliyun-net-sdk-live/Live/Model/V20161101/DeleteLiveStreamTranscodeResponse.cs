@@ -23,19 +23,5 @@ namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DeleteLiveStreamTranscodeResponse : AcsResponse
 	{
-
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 	}
 }

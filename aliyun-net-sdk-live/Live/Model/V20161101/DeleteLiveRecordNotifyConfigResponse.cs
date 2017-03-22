@@ -21,66 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class StopMixStreamsServiceResponse : AcsResponse
+	public class DeleteLiveRecordNotifyConfigResponse : AcsResponse
 	{
-
-		private List<MixStreamsInfo> mixStreamsInfoList;
-
-		public List<MixStreamsInfo> MixStreamsInfoList
-		{
-			get
-			{
-				return mixStreamsInfoList;
-			}
-			set	
-			{
-				mixStreamsInfoList = value;
-			}
-		}
-
-		public class MixStreamsInfo{
-
-			private string domainName;
-
-			private string appName;
-
-			private string streamName;
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
-
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-		}
 	}
 }

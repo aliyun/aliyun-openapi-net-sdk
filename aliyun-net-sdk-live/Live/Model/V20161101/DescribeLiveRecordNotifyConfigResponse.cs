@@ -21,30 +21,30 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class StopMixStreamsServiceResponse : AcsResponse
+	public class DescribeLiveRecordNotifyConfigResponse : AcsResponse
 	{
 
-		private List<MixStreamsInfo> mixStreamsInfoList;
+		private LiveRecordNotifyConfig_ liveRecordNotifyConfig;
 
-		public List<MixStreamsInfo> MixStreamsInfoList
+		public LiveRecordNotifyConfig_ LiveRecordNotifyConfig
 		{
 			get
 			{
-				return mixStreamsInfoList;
+				return liveRecordNotifyConfig;
 			}
 			set	
 			{
-				mixStreamsInfoList = value;
+				liveRecordNotifyConfig = value;
 			}
 		}
 
-		public class MixStreamsInfo{
+		public class LiveRecordNotifyConfig_{
 
 			private string domainName;
 
-			private string appName;
+			private string notifyUrl;
 
-			private string streamName;
+			private bool? needStatusNotify;
 
 			public string DomainName
 			{
@@ -58,27 +58,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string AppName
+			public string NotifyUrl
 			{
 				get
 				{
-					return appName;
+					return notifyUrl;
 				}
 				set	
 				{
-					appName = value;
+					notifyUrl = value;
 				}
 			}
 
-			public string StreamName
+			public bool? NeedStatusNotify
 			{
 				get
 				{
-					return streamName;
+					return needStatusNotify;
 				}
 				set	
 				{
-					streamName = value;
+					needStatusNotify = value;
 				}
 			}
 		}

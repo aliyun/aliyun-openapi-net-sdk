@@ -24,21 +24,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamsControlHistoryResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private List<LiveStreamControlInfo> controlInfo;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public List<LiveStreamControlInfo> ControlInfo
 		{

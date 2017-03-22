@@ -24,21 +24,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class StartMixStreamsServiceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private List<MixStreamsInfo> mixStreamsInfoList;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public List<MixStreamsInfo> MixStreamsInfoList
 		{

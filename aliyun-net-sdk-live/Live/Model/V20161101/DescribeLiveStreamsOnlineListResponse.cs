@@ -24,21 +24,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamsOnlineListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private List<LiveStreamOnlineInfo> onlineInfo;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public List<LiveStreamOnlineInfo> OnlineInfo
 		{
