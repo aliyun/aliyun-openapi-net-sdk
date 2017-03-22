@@ -63,7 +63,6 @@
             <Product><ProductName>PTS</ProductName><DomainName>pts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Qualitycheck</ProductName><DomainName>qualitycheck.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>HighDDos</ProductName><DomainName>yd-highddos-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Rds</ProductName><DomainName>rds.aliyuncs.com</DomainName></Product>
@@ -158,7 +157,7 @@
             <Product><ProductName>Qualitycheck</ProductName><DomainName>qualitycheck.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Bss</ProductName><DomainName>bss.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hongkong.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Sts</ProductName><DomainName>sts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ace</ProductName><DomainName>ace.cn-hangzhou.aliyuncs.com</DomainName></Product>
@@ -265,7 +264,6 @@
             <Product><ProductName>Qualitycheck</ProductName><DomainName>qualitycheck.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Bss</ProductName><DomainName>bss.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ace</ProductName><DomainName>ace.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Mts</ProductName><DomainName>mts.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CF</ProductName><DomainName>cf.aliyuncs.com</DomainName></Product>
@@ -372,7 +370,7 @@
             <Product><ProductName>Qualitycheck</ProductName><DomainName>qualitycheck.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Apigateway</ProductName><DomainName>apigateway.cn-shanghai.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-shanghai.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Sts</ProductName><DomainName>sts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Vpc</ProductName><DomainName>vpc.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ace</ProductName><DomainName>ace.cn-hangzhou.aliyuncs.com</DomainName></Product>
@@ -448,7 +446,6 @@
             <Product><ProductName>PTS</ProductName><DomainName>pts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Qualitycheck</ProductName><DomainName>qualitycheck.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Sts</ProductName><DomainName>sts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ace</ProductName><DomainName>ace.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Mts</ProductName><DomainName>mts.cn-hangzhou.aliyuncs.com</DomainName></Product>
@@ -535,7 +532,6 @@
             <Product><ProductName>PTS</ProductName><DomainName>pts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Qualitycheck</ProductName><DomainName>qualitycheck.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>HighDDos</ProductName><DomainName>yd-highddos-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Rds</ProductName><DomainName>rds.aliyuncs.com</DomainName></Product>
@@ -611,7 +607,6 @@
             <Product><ProductName>PTS</ProductName><DomainName>pts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Qualitycheck</ProductName><DomainName>qualitycheck.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>HighDDos</ProductName><DomainName>yd-highddos-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Rds</ProductName><DomainName>rds.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Mts</ProductName><DomainName>mts.cn-hangzhou.aliyuncs.com</DomainName></Product>
@@ -776,7 +771,6 @@
             <Product><ProductName>PTS</ProductName><DomainName>pts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Qualitycheck</ProductName><DomainName>qualitycheck.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Sts</ProductName><DomainName>sts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Rds</ProductName><DomainName>rds.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Mts</ProductName><DomainName>mts.cn-hangzhou.aliyuncs.com</DomainName></Product>
@@ -1050,7 +1044,7 @@
             <Product><ProductName>PTS</ProductName><DomainName>pts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Apigateway</ProductName><DomainName>apigateway.cn-beijing.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-beijing.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Kms</ProductName><DomainName>kms.cn-beijing.aliyuncs.com</DomainName></Product>
             <Product><ProductName>HighDDos</ProductName><DomainName>yd-highddos-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
@@ -1126,7 +1120,6 @@
             <Product><ProductName>PTS</ProductName><DomainName>pts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Qualitycheck</ProductName><DomainName>qualitycheck.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Rds</ProductName><DomainName>rds.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Mts</ProductName><DomainName>mts.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Location-inner</ProductName><DomainName>location-inner.aliyuncs.com</DomainName></Product>
@@ -1214,7 +1207,6 @@
             <Product><ProductName>PTS</ProductName><DomainName>pts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Qualitycheck</ProductName><DomainName>qualitycheck.aliyuncs.com</DomainName></Product>
             <Product><ProductName>M-kvstore</ProductName><DomainName>m-kvstore.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Rds</ProductName><DomainName>rds.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Mts</ProductName><DomainName>mts.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CF</ProductName><DomainName>cf.aliyuncs.com</DomainName></Product>
@@ -1308,7 +1300,7 @@
             <Product><ProductName>Bss</ProductName><DomainName>bss.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ubsms</ProductName><DomainName>ubsms.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Apigateway</ProductName><DomainName>apigateway.ap-southeast-1.aliyuncs.com</DomainName></Product>
-            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.cn-hangzhou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>CloudAPI</ProductName><DomainName>apigateway.ap-southeast-1.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Sts</ProductName><DomainName>sts.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CmsSiteMonitor</ProductName><DomainName>sitemonitor.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ace</ProductName><DomainName>ace.cn-hangzhou.aliyuncs.com</DomainName></Product>
