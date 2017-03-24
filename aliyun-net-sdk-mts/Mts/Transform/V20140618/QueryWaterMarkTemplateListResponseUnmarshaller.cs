@@ -51,6 +51,18 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				waterMarkTemplate.Type = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].Type");
 				waterMarkTemplate.State = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].State");
 
+				QueryWaterMarkTemplateListResponse.WaterMarkTemplate.Timeline_ timeline = new QueryWaterMarkTemplateListResponse.WaterMarkTemplate.Timeline_();
+				timeline.Start = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].Timeline.Start");
+				timeline.Duration = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].Timeline.Duration");
+				waterMarkTemplate.Timeline = timeline;
+
+				QueryWaterMarkTemplateListResponse.WaterMarkTemplate.RatioRefer_ ratioRefer = new QueryWaterMarkTemplateListResponse.WaterMarkTemplate.RatioRefer_();
+				ratioRefer.Dx = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].RatioRefer.Dx");
+				ratioRefer.Dy = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].RatioRefer.Dy");
+				ratioRefer.Width = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].RatioRefer.Width");
+				ratioRefer.Height = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].RatioRefer.Height");
+				waterMarkTemplate.RatioRefer = ratioRefer;
+
 				waterMarkTemplateList.Add(waterMarkTemplate);
 			}
 			queryWaterMarkTemplateListResponse.WaterMarkTemplateList = waterMarkTemplateList;

@@ -42,6 +42,18 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			waterMarkTemplate.ReferPos = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.ReferPos");
 			waterMarkTemplate.Type = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Type");
 			waterMarkTemplate.State = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.State");
+
+			UpdateWaterMarkTemplateResponse.WaterMarkTemplate_.Timeline_ timeline = new UpdateWaterMarkTemplateResponse.WaterMarkTemplate_.Timeline_();
+			timeline.Start = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Timeline.Start");
+			timeline.Duration = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.Timeline.Duration");
+			waterMarkTemplate.Timeline = timeline;
+
+			UpdateWaterMarkTemplateResponse.WaterMarkTemplate_.RatioRefer_ ratioRefer = new UpdateWaterMarkTemplateResponse.WaterMarkTemplate_.RatioRefer_();
+			ratioRefer.Dx = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Dx");
+			ratioRefer.Dy = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Dy");
+			ratioRefer.Width = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Width");
+			ratioRefer.Height = context.StringValue("UpdateWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Height");
+			waterMarkTemplate.RatioRefer = ratioRefer;
 			updateWaterMarkTemplateResponse.WaterMarkTemplate = waterMarkTemplate;
         
 			return updateWaterMarkTemplateResponse;

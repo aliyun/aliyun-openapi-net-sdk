@@ -100,6 +100,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string state;
 
+			private Timeline_ timeline;
+
+			private RatioRefer_ ratioRefer;
+
 			public string Id
 			{
 				get
@@ -205,6 +209,120 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					state = value;
+				}
+			}
+
+			public Timeline_ Timeline
+			{
+				get
+				{
+					return timeline;
+				}
+				set	
+				{
+					timeline = value;
+				}
+			}
+
+			public RatioRefer_ RatioRefer
+			{
+				get
+				{
+					return ratioRefer;
+				}
+				set	
+				{
+					ratioRefer = value;
+				}
+			}
+
+			public class Timeline_{
+
+				private string start;
+
+				private string duration;
+
+				public string Start
+				{
+					get
+					{
+						return start;
+					}
+					set	
+					{
+						start = value;
+					}
+				}
+
+				public string Duration
+				{
+					get
+					{
+						return duration;
+					}
+					set	
+					{
+						duration = value;
+					}
+				}
+			}
+
+			public class RatioRefer_{
+
+				private string dx;
+
+				private string dy;
+
+				private string width;
+
+				private string height;
+
+				public string Dx
+				{
+					get
+					{
+						return dx;
+					}
+					set	
+					{
+						dx = value;
+					}
+				}
+
+				public string Dy
+				{
+					get
+					{
+						return dy;
+					}
+					set	
+					{
+						dy = value;
+					}
+				}
+
+				public string Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
+					}
+				}
+
+				public string Height
+				{
+					get
+					{
+						return height;
+					}
+					set	
+					{
+						height = value;
+					}
 				}
 			}
 		}
