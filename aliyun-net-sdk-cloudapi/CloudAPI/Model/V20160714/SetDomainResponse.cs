@@ -32,6 +32,10 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string domainBindingStatus;
 
+		private string domainLegalStatus;
+
+		private string domainRemark;
+
 		public string GroupId
 		{
 			get
@@ -77,6 +81,30 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			set	
 			{
 				domainBindingStatus = value;
+			}
+		}
+
+		public string DomainLegalStatus
+		{
+			get
+			{
+				return domainLegalStatus;
+			}
+			set	
+			{
+				domainLegalStatus = value;
+			}
+		}
+
+		public string DomainRemark
+		{
+			get
+			{
+				return domainRemark;
+			}
+			set	
+			{
+				domainRemark = value;
 			}
 		}
 	}

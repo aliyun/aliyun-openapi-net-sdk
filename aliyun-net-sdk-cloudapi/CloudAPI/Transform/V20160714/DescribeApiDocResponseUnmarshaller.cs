@@ -64,6 +64,23 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			}
 			describeApiDocResponse.ErrorCodeSamples = errorCodeSamples;
 
+			List<DescribeApiDocResponse.ResultDescription> resultDescriptions = new List<DescribeApiDocResponse.ResultDescription>();
+			for (int i = 0; i < context.Length("DescribeApiDoc.ResultDescriptions.Length"); i++) {
+				DescribeApiDocResponse.ResultDescription resultDescription = new DescribeApiDocResponse.ResultDescription();
+				resultDescription.Id = context.StringValue("DescribeApiDoc.ResultDescriptions["+ i +"].Id");
+				resultDescription.Pid = context.StringValue("DescribeApiDoc.ResultDescriptions["+ i +"].Pid");
+				resultDescription.HasChild = context.BooleanValue("DescribeApiDoc.ResultDescriptions["+ i +"].HasChild");
+				resultDescription.Key = context.StringValue("DescribeApiDoc.ResultDescriptions["+ i +"].Key");
+				resultDescription.Name = context.StringValue("DescribeApiDoc.ResultDescriptions["+ i +"].Name");
+				resultDescription.Mandatory = context.BooleanValue("DescribeApiDoc.ResultDescriptions["+ i +"].Mandatory");
+				resultDescription.Type = context.StringValue("DescribeApiDoc.ResultDescriptions["+ i +"].Type");
+				resultDescription.Description = context.StringValue("DescribeApiDoc.ResultDescriptions["+ i +"].Description");
+				resultDescription.Example = context.StringValue("DescribeApiDoc.ResultDescriptions["+ i +"].Example");
+
+				resultDescriptions.Add(resultDescription);
+			}
+			describeApiDocResponse.ResultDescriptions = resultDescriptions;
+
 			List<DescribeApiDocResponse.RequestParameter> requestParameters = new List<DescribeApiDocResponse.RequestParameter>();
 			for (int i = 0; i < context.Length("DescribeApiDoc.RequestParameters.Length"); i++) {
 				DescribeApiDocResponse.RequestParameter requestParameter = new DescribeApiDocResponse.RequestParameter();

@@ -67,6 +67,10 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string errorCodeSamples;
 
+		private string resultDescriptions;
+
+		private string openIdConnectConfig;
+
 		public string GroupId
 		{
 			get
@@ -285,6 +289,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				errorCodeSamples = value;
 				DictionaryUtil.Add(QueryParameters, "ErrorCodeSamples", value);
+			}
+		}
+
+		public string ResultDescriptions
+		{
+			get
+			{
+				return resultDescriptions;
+			}
+			set	
+			{
+				resultDescriptions = value;
+				DictionaryUtil.Add(QueryParameters, "ResultDescriptions", value);
+			}
+		}
+
+		public string OpenIdConnectConfig
+		{
+			get
+			{
+				return openIdConnectConfig;
+			}
+			set	
+			{
+				openIdConnectConfig = value;
+				DictionaryUtil.Add(QueryParameters, "OpenIdConnectConfig", value);
 			}
 		}
 

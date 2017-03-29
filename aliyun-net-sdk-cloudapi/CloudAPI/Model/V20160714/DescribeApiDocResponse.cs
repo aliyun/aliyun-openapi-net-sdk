@@ -52,6 +52,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private List<ErrorCodeSample> errorCodeSamples;
 
+		private List<ResultDescription> resultDescriptions;
+
 		private List<RequestParameter> requestParameters;
 
 		private RequestConfig_ requestConfig;
@@ -224,6 +226,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public List<ResultDescription> ResultDescriptions
+		{
+			get
+			{
+				return resultDescriptions;
+			}
+			set	
+			{
+				resultDescriptions = value;
+			}
+		}
+
 		public List<RequestParameter> RequestParameters
 		{
 			get
@@ -289,6 +303,135 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					description = value;
+				}
+			}
+		}
+
+		public class ResultDescription{
+
+			private string id;
+
+			private string pid;
+
+			private bool? hasChild;
+
+			private string key;
+
+			private string name;
+
+			private bool? mandatory;
+
+			private string type;
+
+			private string description;
+
+			private string example;
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Pid
+			{
+				get
+				{
+					return pid;
+				}
+				set	
+				{
+					pid = value;
+				}
+			}
+
+			public bool? HasChild
+			{
+				get
+				{
+					return hasChild;
+				}
+				set	
+				{
+					hasChild = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public bool? Mandatory
+			{
+				get
+				{
+					return mandatory;
+				}
+				set	
+				{
+					mandatory = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string Example
+			{
+				get
+				{
+					return example;
+				}
+				set	
+				{
+					example = value;
 				}
 			}
 		}

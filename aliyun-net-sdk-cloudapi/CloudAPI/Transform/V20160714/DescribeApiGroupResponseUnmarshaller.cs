@@ -51,10 +51,23 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				domainItem.CertificateName = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].CertificateName");
 				domainItem.DomainCNAMEStatus = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainCNAMEStatus");
 				domainItem.DomainBindingStatus = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainBindingStatus");
+				domainItem.DomainLegalStatus = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainLegalStatus");
+				domainItem.DomainRemark = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainRemark");
 
 				customDomains.Add(domainItem);
 			}
 			describeApiGroupResponse.CustomDomains = customDomains;
+
+			List<DescribeApiGroupResponse.StageInfo> stageItems = new List<DescribeApiGroupResponse.StageInfo>();
+			for (int i = 0; i < context.Length("DescribeApiGroup.StageItems.Length"); i++) {
+				DescribeApiGroupResponse.StageInfo stageInfo = new DescribeApiGroupResponse.StageInfo();
+				stageInfo.StageId = context.StringValue("DescribeApiGroup.StageItems["+ i +"].StageId");
+				stageInfo.StageName = context.StringValue("DescribeApiGroup.StageItems["+ i +"].StageName");
+				stageInfo.Description = context.StringValue("DescribeApiGroup.StageItems["+ i +"].Description");
+
+				stageItems.Add(stageInfo);
+			}
+			describeApiGroupResponse.StageItems = stageItems;
         
 			return describeApiGroupResponse;
         }

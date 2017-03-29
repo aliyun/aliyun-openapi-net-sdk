@@ -154,11 +154,11 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				get
 				{
-                    return operater;
+					return operater;
 				}
 				set	
 				{
-                    operater = value;
+					operater = value;
 				}
 			}
 

@@ -88,7 +88,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private string appName;
 
-            private string operater;
+			private string operater;
 
 			private string authorizationSource;
 
@@ -136,11 +136,11 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				get
 				{
-                    return operater;
+					return operater;
 				}
 				set	
 				{
-                    operater = value;
+					operater = value;
 				}
 			}
 

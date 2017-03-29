@@ -39,6 +39,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string apiName;
 
+		private string catalogId;
+
 		private string visibility;
 
 		private int? pageSize;
@@ -81,6 +83,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				apiName = value;
 				DictionaryUtil.Add(QueryParameters, "ApiName", value);
+			}
+		}
+
+		public string CatalogId
+		{
+			get
+			{
+				return catalogId;
+			}
+			set	
+			{
+				catalogId = value;
+				DictionaryUtil.Add(QueryParameters, "CatalogId", value);
 			}
 		}
 

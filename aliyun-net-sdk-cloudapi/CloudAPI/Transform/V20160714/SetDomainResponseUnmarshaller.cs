@@ -35,6 +35,8 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			setDomainResponse.DomainName = context.StringValue("SetDomain.DomainName");
 			setDomainResponse.SubDomain = context.StringValue("SetDomain.SubDomain");
 			setDomainResponse.DomainBindingStatus = context.StringValue("SetDomain.DomainBindingStatus");
+			setDomainResponse.DomainLegalStatus = context.StringValue("SetDomain.DomainLegalStatus");
+			setDomainResponse.DomainRemark = context.StringValue("SetDomain.DomainRemark");
         
 			return setDomainResponse;
         }

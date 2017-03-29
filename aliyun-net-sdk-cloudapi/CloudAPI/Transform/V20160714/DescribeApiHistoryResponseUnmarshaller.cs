@@ -61,7 +61,24 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			serviceConfig.ServiceHttpMethod = context.StringValue("DescribeApiHistory.ServiceConfig.ServiceHttpMethod");
 			serviceConfig.ServicePath = context.StringValue("DescribeApiHistory.ServiceConfig.ServicePath");
 			serviceConfig.ServiceTimeout = context.IntegerValue("DescribeApiHistory.ServiceConfig.ServiceTimeout");
+			serviceConfig.Mock = context.EnumValue<DescribeApiHistoryResponse.ServiceConfig_.MockEnum>("DescribeApiHistory.ServiceConfig.Mock");
+			serviceConfig.MockResult = context.StringValue("DescribeApiHistory.ServiceConfig.MockResult");
+			serviceConfig.ServiceVpcEnable = context.EnumValue<DescribeApiHistoryResponse.ServiceConfig_.ServiceVpcEnableEnum>("DescribeApiHistory.ServiceConfig.ServiceVpcEnable");
+
+			DescribeApiHistoryResponse.ServiceConfig_.VpcConfig_ vpcConfig = new DescribeApiHistoryResponse.ServiceConfig_.VpcConfig_();
+			vpcConfig.Name = context.StringValue("DescribeApiHistory.ServiceConfig.VpcConfig.Name");
+			vpcConfig.VpcId = context.StringValue("DescribeApiHistory.ServiceConfig.VpcConfig.VpcId");
+			vpcConfig.InstanceId = context.StringValue("DescribeApiHistory.ServiceConfig.VpcConfig.InstanceId");
+			vpcConfig.Port = context.IntegerValue("DescribeApiHistory.ServiceConfig.VpcConfig.Port");
+			serviceConfig.VpcConfig = vpcConfig;
 			describeApiHistoryResponse.ServiceConfig = serviceConfig;
+
+			DescribeApiHistoryResponse.OpenIdConnectConfig_ openIdConnectConfig = new DescribeApiHistoryResponse.OpenIdConnectConfig_();
+			openIdConnectConfig.OpenIdApiType = context.StringValue("DescribeApiHistory.OpenIdConnectConfig.OpenIdApiType");
+			openIdConnectConfig.IdTokenParamName = context.StringValue("DescribeApiHistory.OpenIdConnectConfig.IdTokenParamName");
+			openIdConnectConfig.PublicKeyId = context.StringValue("DescribeApiHistory.OpenIdConnectConfig.PublicKeyId");
+			openIdConnectConfig.PublicKey = context.StringValue("DescribeApiHistory.OpenIdConnectConfig.PublicKey");
+			describeApiHistoryResponse.OpenIdConnectConfig = openIdConnectConfig;
 
 			List<DescribeApiHistoryResponse.ErrorCodeSample> errorCodeSamples = new List<DescribeApiHistoryResponse.ErrorCodeSample>();
 			for (int i = 0; i < context.Length("DescribeApiHistory.ErrorCodeSamples.Length"); i++) {
@@ -73,6 +90,22 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				errorCodeSamples.Add(errorCodeSample);
 			}
 			describeApiHistoryResponse.ErrorCodeSamples = errorCodeSamples;
+
+			List<DescribeApiHistoryResponse.ResultDescription> resultDescriptions = new List<DescribeApiHistoryResponse.ResultDescription>();
+			for (int i = 0; i < context.Length("DescribeApiHistory.ResultDescriptions.Length"); i++) {
+				DescribeApiHistoryResponse.ResultDescription resultDescription = new DescribeApiHistoryResponse.ResultDescription();
+				resultDescription.Id = context.StringValue("DescribeApiHistory.ResultDescriptions["+ i +"].Id");
+				resultDescription.Pid = context.StringValue("DescribeApiHistory.ResultDescriptions["+ i +"].Pid");
+				resultDescription.HasChild = context.BooleanValue("DescribeApiHistory.ResultDescriptions["+ i +"].HasChild");
+				resultDescription.Key = context.StringValue("DescribeApiHistory.ResultDescriptions["+ i +"].Key");
+				resultDescription.Name = context.StringValue("DescribeApiHistory.ResultDescriptions["+ i +"].Name");
+				resultDescription.Mandatory = context.BooleanValue("DescribeApiHistory.ResultDescriptions["+ i +"].Mandatory");
+				resultDescription.Type = context.StringValue("DescribeApiHistory.ResultDescriptions["+ i +"].Type");
+				resultDescription.Description = context.StringValue("DescribeApiHistory.ResultDescriptions["+ i +"].Description");
+
+				resultDescriptions.Add(resultDescription);
+			}
+			describeApiHistoryResponse.ResultDescriptions = resultDescriptions;
 
 			List<DescribeApiHistoryResponse.SystemParameter> systemParameters = new List<DescribeApiHistoryResponse.SystemParameter>();
 			for (int i = 0; i < context.Length("DescribeApiHistory.SystemParameters.Length"); i++) {
@@ -86,6 +119,19 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				systemParameters.Add(systemParameter);
 			}
 			describeApiHistoryResponse.SystemParameters = systemParameters;
+
+			List<DescribeApiHistoryResponse.CustomSystemParameter> customSystemParameters = new List<DescribeApiHistoryResponse.CustomSystemParameter>();
+			for (int i = 0; i < context.Length("DescribeApiHistory.CustomSystemParameters.Length"); i++) {
+				DescribeApiHistoryResponse.CustomSystemParameter customSystemParameter = new DescribeApiHistoryResponse.CustomSystemParameter();
+				customSystemParameter.ParameterName = context.StringValue("DescribeApiHistory.CustomSystemParameters["+ i +"].ParameterName");
+				customSystemParameter.ServiceParameterName = context.StringValue("DescribeApiHistory.CustomSystemParameters["+ i +"].ServiceParameterName");
+				customSystemParameter.Location = context.StringValue("DescribeApiHistory.CustomSystemParameters["+ i +"].Location");
+				customSystemParameter.DemoValue = context.StringValue("DescribeApiHistory.CustomSystemParameters["+ i +"].DemoValue");
+				customSystemParameter.Description = context.StringValue("DescribeApiHistory.CustomSystemParameters["+ i +"].Description");
+
+				customSystemParameters.Add(customSystemParameter);
+			}
+			describeApiHistoryResponse.CustomSystemParameters = customSystemParameters;
 
 			List<DescribeApiHistoryResponse.ConstantParameter> constantParameters = new List<DescribeApiHistoryResponse.ConstantParameter>();
 			for (int i = 0; i < context.Length("DescribeApiHistory.ConstantParameters.Length"); i++) {

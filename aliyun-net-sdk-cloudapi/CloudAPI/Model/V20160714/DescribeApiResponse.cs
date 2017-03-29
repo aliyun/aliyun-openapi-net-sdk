@@ -56,7 +56,11 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private List<ErrorCodeSample> errorCodeSamples;
 
+		private List<ResultDescription> resultDescriptions;
+
 		private List<SystemParameter> systemParameters;
+
+		private List<CustomSystemParameter> customSystemParameters;
 
 		private List<ConstantParameter> constantParameters;
 
@@ -71,6 +75,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 		private RequestConfig_ requestConfig;
 
 		private ServiceConfig_ serviceConfig;
+
+		private OpenIdConnectConfig_ openIdConnectConfig;
 
 		public string RegionId
 		{
@@ -264,6 +270,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public List<ResultDescription> ResultDescriptions
+		{
+			get
+			{
+				return resultDescriptions;
+			}
+			set	
+			{
+				resultDescriptions = value;
+			}
+		}
+
 		public List<SystemParameter> SystemParameters
 		{
 			get
@@ -273,6 +291,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			set	
 			{
 				systemParameters = value;
+			}
+		}
+
+		public List<CustomSystemParameter> CustomSystemParameters
+		{
+			get
+			{
+				return customSystemParameters;
+			}
+			set	
+			{
+				customSystemParameters = value;
 			}
 		}
 
@@ -360,6 +390,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public OpenIdConnectConfig_ OpenIdConnectConfig
+		{
+			get
+			{
+				return openIdConnectConfig;
+			}
+			set	
+			{
+				openIdConnectConfig = value;
+			}
+		}
+
 		public class ErrorCodeSample{
 
 			private string code;
@@ -405,7 +447,195 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public class ResultDescription{
+
+			private string id;
+
+			private string pid;
+
+			private bool? hasChild;
+
+			private string key;
+
+			private string name;
+
+			private bool? mandatory;
+
+			private string type;
+
+			private string description;
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Pid
+			{
+				get
+				{
+					return pid;
+				}
+				set	
+				{
+					pid = value;
+				}
+			}
+
+			public bool? HasChild
+			{
+				get
+				{
+					return hasChild;
+				}
+				set	
+				{
+					hasChild = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public bool? Mandatory
+			{
+				get
+				{
+					return mandatory;
+				}
+				set	
+				{
+					mandatory = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+		}
+
 		public class SystemParameter{
+
+			private string parameterName;
+
+			private string serviceParameterName;
+
+			private string location;
+
+			private string demoValue;
+
+			private string description;
+
+			public string ParameterName
+			{
+				get
+				{
+					return parameterName;
+				}
+				set	
+				{
+					parameterName = value;
+				}
+			}
+
+			public string ServiceParameterName
+			{
+				get
+				{
+					return serviceParameterName;
+				}
+				set	
+				{
+					serviceParameterName = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
+				}
+			}
+
+			public string DemoValue
+			{
+				get
+				{
+					return demoValue;
+				}
+				set	
+				{
+					demoValue = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+		}
+
+		public class CustomSystemParameter{
 
 			private string parameterName;
 
@@ -970,6 +1200,14 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private int? serviceTimeout;
 
+			private MockEnum? mock;
+
+			private string mockResult;
+
+			private ServiceVpcEnableEnum? serviceVpcEnable;
+
+			private VpcConfig_ vpcConfig;
+
 			public string ServiceProtocol
 			{
 				get
@@ -1027,6 +1265,184 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					serviceTimeout = value;
+				}
+			}
+
+			public MockEnum? Mock
+			{
+				get
+				{
+					return mock;
+				}
+				set	
+				{
+					mock = value;
+				}
+			}
+
+			public string MockResult
+			{
+				get
+				{
+					return mockResult;
+				}
+				set	
+				{
+					mockResult = value;
+				}
+			}
+
+			public ServiceVpcEnableEnum? ServiceVpcEnable
+			{
+				get
+				{
+					return serviceVpcEnable;
+				}
+				set	
+				{
+					serviceVpcEnable = value;
+				}
+			}
+
+			public VpcConfig_ VpcConfig
+			{
+				get
+				{
+					return vpcConfig;
+				}
+				set	
+				{
+					vpcConfig = value;
+				}
+			}
+
+public enum MockEnum {
+
+					FALSE,
+					TRUE,
+}
+
+public enum ServiceVpcEnableEnum {
+
+					FALSE,
+					TRUE,
+}
+
+			public class VpcConfig_{
+
+				private string name;
+
+				private string vpcId;
+
+				private string instanceId;
+
+				private int? port;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string VpcId
+				{
+					get
+					{
+						return vpcId;
+					}
+					set	
+					{
+						vpcId = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+			}
+		}
+
+		public class OpenIdConnectConfig_{
+
+			private string openIdApiType;
+
+			private string idTokenParamName;
+
+			private string publicKeyId;
+
+			private string publicKey;
+
+			public string OpenIdApiType
+			{
+				get
+				{
+					return openIdApiType;
+				}
+				set	
+				{
+					openIdApiType = value;
+				}
+			}
+
+			public string IdTokenParamName
+			{
+				get
+				{
+					return idTokenParamName;
+				}
+				set	
+				{
+					idTokenParamName = value;
+				}
+			}
+
+			public string PublicKeyId
+			{
+				get
+				{
+					return publicKeyId;
+				}
+				set	
+				{
+					publicKeyId = value;
+				}
+			}
+
+			public string PublicKey
+			{
+				get
+				{
+					return publicKey;
+				}
+				set	
+				{
+					publicKey = value;
 				}
 			}
 		}

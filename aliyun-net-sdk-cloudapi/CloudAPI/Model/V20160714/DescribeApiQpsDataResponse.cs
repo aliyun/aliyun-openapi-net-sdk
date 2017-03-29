@@ -52,36 +52,35 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-        public class MonitorItem
-        {
+		public class MonitorItem{
 
-            private string itemTime;
+			private string itemTime;
 
-            private string itemValue;
+			private string itemValue;
 
-            public string ItemTime
-            {
-                get
-                {
-                    return itemTime;
-                }
-                set
-                {
-                    itemTime = value;
-                }
-            }
+			public string ItemTime
+			{
+				get
+				{
+					return itemTime;
+				}
+				set	
+				{
+					itemTime = value;
+				}
+			}
 
-            public string ItemValue
-            {
-                get
-                {
-                    return itemValue;
-                }
-                set
-                {
-                    itemValue = value;
-                }
-            }
-        }
+			public string ItemValue
+			{
+				get
+				{
+					return itemValue;
+				}
+				set	
+				{
+					itemValue = value;
+				}
+			}
+		}
 	}
 }

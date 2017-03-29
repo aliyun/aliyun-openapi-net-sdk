@@ -48,6 +48,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private List<DomainItem> customDomains;
 
+		private List<StageInfo> stageItems;
+
 		public string GroupId
 		{
 			get
@@ -192,6 +194,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public List<StageInfo> StageItems
+		{
+			get
+			{
+				return stageItems;
+			}
+			set	
+			{
+				stageItems = value;
+			}
+		}
+
 public enum BillingStatusEnum {
 
 			NORMAL,
@@ -215,6 +229,10 @@ public enum IllegalStatusEnum {
 			private string domainCNAMEStatus;
 
 			private string domainBindingStatus;
+
+			private string domainLegalStatus;
+
+			private string domainRemark;
 
 			public string DomainName
 			{
@@ -273,6 +291,75 @@ public enum IllegalStatusEnum {
 				set	
 				{
 					domainBindingStatus = value;
+				}
+			}
+
+			public string DomainLegalStatus
+			{
+				get
+				{
+					return domainLegalStatus;
+				}
+				set	
+				{
+					domainLegalStatus = value;
+				}
+			}
+
+			public string DomainRemark
+			{
+				get
+				{
+					return domainRemark;
+				}
+				set	
+				{
+					domainRemark = value;
+				}
+			}
+		}
+
+		public class StageInfo{
+
+			private string stageId;
+
+			private string stageName;
+
+			private string description;
+
+			public string StageId
+			{
+				get
+				{
+					return stageId;
+				}
+				set	
+				{
+					stageId = value;
+				}
+			}
+
+			public string StageName
+			{
+				get
+				{
+					return stageName;
+				}
+				set	
+				{
+					stageName = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 		}
