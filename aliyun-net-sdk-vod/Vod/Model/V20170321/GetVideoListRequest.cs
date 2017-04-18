@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vod.Model.V20170321
 {
-    public class CreateUploadVideoRequest : RpcAcsRequest<CreateUploadVideoResponse>
+    public class GetVideoListRequest : RpcAcsRequest<GetVideoListResponse>
     {
-        public CreateUploadVideoRequest()
-            : base("Vod", "2017-03-21", "CreateUploadVideo")
+        public GetVideoListRequest()
+            : base("Vod", "2017-03-21", "GetVideoList")
         {
         }
 
@@ -39,17 +39,15 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
-		private string coverURL;
+		private int? cateId;
 
-		private string description;
+		private string status;
 
-		private string fileName;
+		private int? pageNo;
 
-		private long? fileSize;
+		private int? pageSize;
 
-		private string iP;
-
-		private string title;
+		private string sortBy;
 
 		public long? OwnerId
 		{
@@ -90,87 +88,74 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
-		public string CoverURL
+		public int? CateId
 		{
 			get
 			{
-				return coverURL;
+				return cateId;
 			}
 			set	
 			{
-				coverURL = value;
-				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
 			}
 		}
 
-		public string Description
+		public string Status
 		{
 			get
 			{
-				return description;
+				return status;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
-		public string FileName
+		public int? PageNo
 		{
 			get
 			{
-				return fileName;
+				return pageNo;
 			}
 			set	
 			{
-				fileName = value;
-				DictionaryUtil.Add(QueryParameters, "FileName", value);
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 
-		public long? FileSize
+		public int? PageSize
 		{
 			get
 			{
-				return fileSize;
+				return pageSize;
 			}
 			set	
 			{
-				fileSize = value;
-				DictionaryUtil.Add(QueryParameters, "FileSize", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string IP
+		public string SortBy
 		{
 			get
 			{
-				return iP;
+				return sortBy;
 			}
 			set	
 			{
-				iP = value;
-				DictionaryUtil.Add(QueryParameters, "IP", value);
+				sortBy = value;
+				DictionaryUtil.Add(QueryParameters, "SortBy", value);
 			}
 		}
 
-		public string Title
-		{
-			get
-			{
-				return title;
-			}
-			set	
-			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
-			}
-		}
-
-        public override CreateUploadVideoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetVideoListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateUploadVideoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetVideoListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vod.Model.V20170321
 {
-    public class CreateUploadVideoRequest : RpcAcsRequest<CreateUploadVideoResponse>
+    public class GetVideoPlayAuthRequest : RpcAcsRequest<GetVideoPlayAuthResponse>
     {
-        public CreateUploadVideoRequest()
-            : base("Vod", "2017-03-21", "CreateUploadVideo")
+        public GetVideoPlayAuthRequest()
+            : base("Vod", "2017-03-21", "GetVideoPlayAuth")
         {
         }
 
@@ -39,17 +39,7 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
-		private string coverURL;
-
-		private string description;
-
-		private string fileName;
-
-		private long? fileSize;
-
-		private string iP;
-
-		private string title;
+		private string videoId;
 
 		public long? OwnerId
 		{
@@ -90,87 +80,22 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
-		public string CoverURL
+		public string VideoId
 		{
 			get
 			{
-				return coverURL;
+				return videoId;
 			}
 			set	
 			{
-				coverURL = value;
-				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
+				videoId = value;
+				DictionaryUtil.Add(QueryParameters, "VideoId", value);
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string FileName
-		{
-			get
-			{
-				return fileName;
-			}
-			set	
-			{
-				fileName = value;
-				DictionaryUtil.Add(QueryParameters, "FileName", value);
-			}
-		}
-
-		public long? FileSize
-		{
-			get
-			{
-				return fileSize;
-			}
-			set	
-			{
-				fileSize = value;
-				DictionaryUtil.Add(QueryParameters, "FileSize", value.ToString());
-			}
-		}
-
-		public string IP
-		{
-			get
-			{
-				return iP;
-			}
-			set	
-			{
-				iP = value;
-				DictionaryUtil.Add(QueryParameters, "IP", value);
-			}
-		}
-
-		public string Title
-		{
-			get
-			{
-				return title;
-			}
-			set	
-			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
-			}
-		}
-
-        public override CreateUploadVideoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetVideoPlayAuthResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateUploadVideoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetVideoPlayAuthResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
