@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string timeMerge;
 
+		private string interval;
+
 		public long? OwnerId
 		{
 			get
@@ -120,6 +122,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				timeMerge = value;
 				DictionaryUtil.Add(QueryParameters, "TimeMerge", value);
+			}
+		}
+
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

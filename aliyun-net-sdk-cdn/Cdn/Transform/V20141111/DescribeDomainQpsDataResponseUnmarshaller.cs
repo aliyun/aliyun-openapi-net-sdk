@@ -46,6 +46,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				dataModule.AccValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].AccValue");
 				dataModule.AccDomesticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].AccDomesticValue");
 				dataModule.AccOverseasValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].AccOverseasValue");
+				dataModule.DynamicValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].DynamicValue");
+				dataModule.DynamicDomesticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].DynamicDomesticValue");
+				dataModule.DynamicOverseasValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].DynamicOverseasValue");
+				dataModule.StaticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].StaticValue");
+				dataModule.StaticDomesticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].StaticDomesticValue");
+				dataModule.StaticOverseasValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].StaticOverseasValue");
 
 				qpsDataInterval.Add(dataModule);
 			}

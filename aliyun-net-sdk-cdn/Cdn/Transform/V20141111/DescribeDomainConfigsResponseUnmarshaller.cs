@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			domainConfigs.CcConfig = ccConfig;
 
 			DescribeDomainConfigsResponse.DomainConfigs_.ErrorPageConfig_ errorPageConfig = new DescribeDomainConfigsResponse.DomainConfigs_.ErrorPageConfig_();
+			errorPageConfig.ConfigId = context.StringValue("DescribeDomainConfigs.DomainConfigs.ErrorPageConfig.ConfigId");
 			errorPageConfig.ErrorCode = context.StringValue("DescribeDomainConfigs.DomainConfigs.ErrorPageConfig.ErrorCode");
 			errorPageConfig.PageType = context.StringValue("DescribeDomainConfigs.DomainConfigs.ErrorPageConfig.PageType");
 			errorPageConfig.CustomPageUrl = context.StringValue("DescribeDomainConfigs.DomainConfigs.ErrorPageConfig.CustomPageUrl");
@@ -116,6 +117,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			}
 			domainConfigs.CacheExpiredConfigs = cacheExpiredConfigs;
 
+			List<DescribeDomainConfigsResponse.DomainConfigs_.HttpErrorPageConfig> httpErrorPageConfigs = new List<DescribeDomainConfigsResponse.DomainConfigs_.HttpErrorPageConfig>();
+			for (int i = 0; i < context.Length("DescribeDomainConfigs.DomainConfigs.HttpErrorPageConfigs.Length"); i++) {
+				DescribeDomainConfigsResponse.DomainConfigs_.HttpErrorPageConfig httpErrorPageConfig = new DescribeDomainConfigsResponse.DomainConfigs_.HttpErrorPageConfig();
+				httpErrorPageConfig.ConfigId = context.StringValue("DescribeDomainConfigs.DomainConfigs.HttpErrorPageConfigs["+ i +"].ConfigId");
+				httpErrorPageConfig.ErrorCode = context.StringValue("DescribeDomainConfigs.DomainConfigs.HttpErrorPageConfigs["+ i +"].ErrorCode");
+				httpErrorPageConfig.PageUrl = context.StringValue("DescribeDomainConfigs.DomainConfigs.HttpErrorPageConfigs["+ i +"].PageUrl");
+
+				httpErrorPageConfigs.Add(httpErrorPageConfig);
+			}
+			domainConfigs.HttpErrorPageConfigs = httpErrorPageConfigs;
+
 			List<DescribeDomainConfigsResponse.DomainConfigs_.HttpHeaderConfig> httpHeaderConfigs = new List<DescribeDomainConfigsResponse.DomainConfigs_.HttpHeaderConfig>();
 			for (int i = 0; i < context.Length("DescribeDomainConfigs.DomainConfigs.HttpHeaderConfigs.Length"); i++) {
 				DescribeDomainConfigsResponse.DomainConfigs_.HttpHeaderConfig httpHeaderConfig = new DescribeDomainConfigsResponse.DomainConfigs_.HttpHeaderConfig();
@@ -127,6 +139,31 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				httpHeaderConfigs.Add(httpHeaderConfig);
 			}
 			domainConfigs.HttpHeaderConfigs = httpHeaderConfigs;
+
+			List<DescribeDomainConfigsResponse.DomainConfigs_.DynamicConfig> dynamicConfigs = new List<DescribeDomainConfigsResponse.DomainConfigs_.DynamicConfig>();
+			for (int i = 0; i < context.Length("DescribeDomainConfigs.DomainConfigs.DynamicConfigs.Length"); i++) {
+				DescribeDomainConfigsResponse.DomainConfigs_.DynamicConfig dynamicConfig = new DescribeDomainConfigsResponse.DomainConfigs_.DynamicConfig();
+				dynamicConfig.ConfigId = context.StringValue("DescribeDomainConfigs.DomainConfigs.DynamicConfigs["+ i +"].ConfigId");
+				dynamicConfig.DynamicOrigin = context.StringValue("DescribeDomainConfigs.DomainConfigs.DynamicConfigs["+ i +"].DynamicOrigin");
+				dynamicConfig.StaticType = context.StringValue("DescribeDomainConfigs.DomainConfigs.DynamicConfigs["+ i +"].StaticType");
+				dynamicConfig.StaticUri = context.StringValue("DescribeDomainConfigs.DomainConfigs.DynamicConfigs["+ i +"].StaticUri");
+				dynamicConfig.StaticPath = context.StringValue("DescribeDomainConfigs.DomainConfigs.DynamicConfigs["+ i +"].StaticPath");
+				dynamicConfig.DynamicCacheControl = context.StringValue("DescribeDomainConfigs.DomainConfigs.DynamicConfigs["+ i +"].DynamicCacheControl");
+
+				dynamicConfigs.Add(dynamicConfig);
+			}
+			domainConfigs.DynamicConfigs = dynamicConfigs;
+
+			List<DescribeDomainConfigsResponse.DomainConfigs_.ReqHeaderConfig> reqHeaderConfigs = new List<DescribeDomainConfigsResponse.DomainConfigs_.ReqHeaderConfig>();
+			for (int i = 0; i < context.Length("DescribeDomainConfigs.DomainConfigs.ReqHeaderConfigs.Length"); i++) {
+				DescribeDomainConfigsResponse.DomainConfigs_.ReqHeaderConfig reqHeaderConfig = new DescribeDomainConfigsResponse.DomainConfigs_.ReqHeaderConfig();
+				reqHeaderConfig.ConfigId = context.StringValue("DescribeDomainConfigs.DomainConfigs.ReqHeaderConfigs["+ i +"].ConfigId");
+				reqHeaderConfig.Key = context.StringValue("DescribeDomainConfigs.DomainConfigs.ReqHeaderConfigs["+ i +"].Key");
+				reqHeaderConfig.Value = context.StringValue("DescribeDomainConfigs.DomainConfigs.ReqHeaderConfigs["+ i +"].Value");
+
+				reqHeaderConfigs.Add(reqHeaderConfig);
+			}
+			domainConfigs.ReqHeaderConfigs = reqHeaderConfigs;
 			describeDomainConfigsResponse.DomainConfigs = domainConfigs;
         
 			return describeDomainConfigsResponse;

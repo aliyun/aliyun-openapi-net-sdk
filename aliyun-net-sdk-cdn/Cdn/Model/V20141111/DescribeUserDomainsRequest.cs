@@ -37,9 +37,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string securityToken;
 
-		private long? pageSize;
+		private int? pageSize;
 
-		private long? pageNumber;
+		private int? pageNumber;
 
 		private string domainName;
 
@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 		private string sources;
 
 		private string cdnType;
+
+		private bool? checkDomainShow;
 
 		public long? OwnerId
 		{
@@ -77,7 +79,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public long? PageSize
+		public int? PageSize
 		{
 			get
 			{
@@ -90,7 +92,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public long? PageNumber
+		public int? PageNumber
 		{
 			get
 			{
@@ -165,6 +167,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				cdnType = value;
 				DictionaryUtil.Add(QueryParameters, "CdnType", value);
+			}
+		}
+
+		public bool? CheckDomainShow
+		{
+			get
+			{
+				return checkDomainShow;
+			}
+			set	
+			{
+				checkDomainShow = value;
+				DictionaryUtil.Add(QueryParameters, "CheckDomainShow", value.ToString());
 			}
 		}
 

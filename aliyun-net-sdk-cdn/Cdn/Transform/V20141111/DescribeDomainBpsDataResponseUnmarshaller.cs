@@ -47,6 +47,15 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				dataModule.Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].Value");
 				dataModule.DomesticValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DomesticValue");
 				dataModule.OverseasValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].OverseasValue");
+				dataModule.DynamicValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DynamicValue");
+				dataModule.DynamicDomesticValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DynamicDomesticValue");
+				dataModule.DynamicOverseasValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DynamicOverseasValue");
+				dataModule.StaticValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].StaticValue");
+				dataModule.StaticDomesticValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].StaticDomesticValue");
+				dataModule.StaticOverseasValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].StaticOverseasValue");
+				dataModule.L2Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].L2Value");
+				dataModule.DomesticL2Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DomesticL2Value");
+				dataModule.OverseasL2Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].OverseasL2Value");
 
 				bpsDataPerInterval.Add(dataModule);
 			}

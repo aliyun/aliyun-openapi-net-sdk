@@ -64,6 +64,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string serverCertificate;
 
+			private string region;
+
 			private string scope;
 
 			private string certificateName;
@@ -211,6 +213,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					serverCertificate = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
 				}
 			}
 

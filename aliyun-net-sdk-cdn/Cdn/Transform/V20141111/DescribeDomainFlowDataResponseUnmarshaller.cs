@@ -43,6 +43,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				dataModule.Value = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].Value");
 				dataModule.DomesticValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].DomesticValue");
 				dataModule.OverseasValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].OverseasValue");
+				dataModule.DynamicValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].DynamicValue");
+				dataModule.DynamicDomesticValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].DynamicDomesticValue");
+				dataModule.DynamicOverseasValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].DynamicOverseasValue");
+				dataModule.StaticValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].StaticValue");
+				dataModule.StaticDomesticValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].StaticDomesticValue");
+				dataModule.StaticOverseasValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].StaticOverseasValue");
 
 				flowDataPerInterval.Add(dataModule);
 			}

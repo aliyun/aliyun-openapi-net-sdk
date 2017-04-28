@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string endTime;
 
+		private string interval;
+
 		public long? OwnerId
 		{
 			get
@@ -105,6 +107,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

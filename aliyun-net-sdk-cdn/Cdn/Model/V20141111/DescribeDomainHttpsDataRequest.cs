@@ -43,6 +43,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string endTime;
 
+		private string domainType;
+
+		private string timeMerge;
+
+		private string interval;
+
 		public long? OwnerId
 		{
 			get
@@ -105,6 +111,45 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string DomainType
+		{
+			get
+			{
+				return domainType;
+			}
+			set	
+			{
+				domainType = value;
+				DictionaryUtil.Add(QueryParameters, "DomainType", value);
+			}
+		}
+
+		public string TimeMerge
+		{
+			get
+			{
+				return timeMerge;
+			}
+			set	
+			{
+				timeMerge = value;
+				DictionaryUtil.Add(QueryParameters, "TimeMerge", value);
+			}
+		}
+
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

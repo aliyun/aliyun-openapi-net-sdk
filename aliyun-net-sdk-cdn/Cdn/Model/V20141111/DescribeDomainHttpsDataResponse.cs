@@ -104,6 +104,54 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private float? l1HttpsTacc;
 
+			private float? l1DyHttpsBps;
+
+			private float? l1DyHttpsInnerBps;
+
+			private float? l1DyHttpsOutBps;
+
+			private float? l1StHttpsBps;
+
+			private float? l1StHttpsInnerBps;
+
+			private float? l1StHttpsOutBps;
+
+			private float? l1DyHttpsTraf;
+
+			private float? l1DyHttpsInnerTraf;
+
+			private float? l1DyHttpsOutTraf;
+
+			private float? l1StHttpsTraf;
+
+			private float? l1StHttpsInnerTraf;
+
+			private float? l1StHttpsOutTraf;
+
+			private float? l1DyHttpsQps;
+
+			private float? l1DyHttpsInnerQps;
+
+			private float? l1DyHttpsOutQps;
+
+			private float? l1StHttpsQps;
+
+			private float? l1StHttpsInnerQps;
+
+			private float? l1StHttpsOutQps;
+
+			private float? l1DyHttpsAcc;
+
+			private float? l1DyHttpsInnerAcc;
+
+			private float? l1DyHttpsOutAcc;
+
+			private float? l1StHttpsAcc;
+
+			private float? l1StHttpsInnerAcc;
+
+			private float? l1StHttpsOutAcc;
+
 			public string Time
 			{
 				get
@@ -317,6 +365,294 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					l1HttpsTacc = value;
+				}
+			}
+
+			public float? L1DyHttpsBps
+			{
+				get
+				{
+					return l1DyHttpsBps;
+				}
+				set	
+				{
+					l1DyHttpsBps = value;
+				}
+			}
+
+			public float? L1DyHttpsInnerBps
+			{
+				get
+				{
+					return l1DyHttpsInnerBps;
+				}
+				set	
+				{
+					l1DyHttpsInnerBps = value;
+				}
+			}
+
+			public float? L1DyHttpsOutBps
+			{
+				get
+				{
+					return l1DyHttpsOutBps;
+				}
+				set	
+				{
+					l1DyHttpsOutBps = value;
+				}
+			}
+
+			public float? L1StHttpsBps
+			{
+				get
+				{
+					return l1StHttpsBps;
+				}
+				set	
+				{
+					l1StHttpsBps = value;
+				}
+			}
+
+			public float? L1StHttpsInnerBps
+			{
+				get
+				{
+					return l1StHttpsInnerBps;
+				}
+				set	
+				{
+					l1StHttpsInnerBps = value;
+				}
+			}
+
+			public float? L1StHttpsOutBps
+			{
+				get
+				{
+					return l1StHttpsOutBps;
+				}
+				set	
+				{
+					l1StHttpsOutBps = value;
+				}
+			}
+
+			public float? L1DyHttpsTraf
+			{
+				get
+				{
+					return l1DyHttpsTraf;
+				}
+				set	
+				{
+					l1DyHttpsTraf = value;
+				}
+			}
+
+			public float? L1DyHttpsInnerTraf
+			{
+				get
+				{
+					return l1DyHttpsInnerTraf;
+				}
+				set	
+				{
+					l1DyHttpsInnerTraf = value;
+				}
+			}
+
+			public float? L1DyHttpsOutTraf
+			{
+				get
+				{
+					return l1DyHttpsOutTraf;
+				}
+				set	
+				{
+					l1DyHttpsOutTraf = value;
+				}
+			}
+
+			public float? L1StHttpsTraf
+			{
+				get
+				{
+					return l1StHttpsTraf;
+				}
+				set	
+				{
+					l1StHttpsTraf = value;
+				}
+			}
+
+			public float? L1StHttpsInnerTraf
+			{
+				get
+				{
+					return l1StHttpsInnerTraf;
+				}
+				set	
+				{
+					l1StHttpsInnerTraf = value;
+				}
+			}
+
+			public float? L1StHttpsOutTraf
+			{
+				get
+				{
+					return l1StHttpsOutTraf;
+				}
+				set	
+				{
+					l1StHttpsOutTraf = value;
+				}
+			}
+
+			public float? L1DyHttpsQps
+			{
+				get
+				{
+					return l1DyHttpsQps;
+				}
+				set	
+				{
+					l1DyHttpsQps = value;
+				}
+			}
+
+			public float? L1DyHttpsInnerQps
+			{
+				get
+				{
+					return l1DyHttpsInnerQps;
+				}
+				set	
+				{
+					l1DyHttpsInnerQps = value;
+				}
+			}
+
+			public float? L1DyHttpsOutQps
+			{
+				get
+				{
+					return l1DyHttpsOutQps;
+				}
+				set	
+				{
+					l1DyHttpsOutQps = value;
+				}
+			}
+
+			public float? L1StHttpsQps
+			{
+				get
+				{
+					return l1StHttpsQps;
+				}
+				set	
+				{
+					l1StHttpsQps = value;
+				}
+			}
+
+			public float? L1StHttpsInnerQps
+			{
+				get
+				{
+					return l1StHttpsInnerQps;
+				}
+				set	
+				{
+					l1StHttpsInnerQps = value;
+				}
+			}
+
+			public float? L1StHttpsOutQps
+			{
+				get
+				{
+					return l1StHttpsOutQps;
+				}
+				set	
+				{
+					l1StHttpsOutQps = value;
+				}
+			}
+
+			public float? L1DyHttpsAcc
+			{
+				get
+				{
+					return l1DyHttpsAcc;
+				}
+				set	
+				{
+					l1DyHttpsAcc = value;
+				}
+			}
+
+			public float? L1DyHttpsInnerAcc
+			{
+				get
+				{
+					return l1DyHttpsInnerAcc;
+				}
+				set	
+				{
+					l1DyHttpsInnerAcc = value;
+				}
+			}
+
+			public float? L1DyHttpsOutAcc
+			{
+				get
+				{
+					return l1DyHttpsOutAcc;
+				}
+				set	
+				{
+					l1DyHttpsOutAcc = value;
+				}
+			}
+
+			public float? L1StHttpsAcc
+			{
+				get
+				{
+					return l1StHttpsAcc;
+				}
+				set	
+				{
+					l1StHttpsAcc = value;
+				}
+			}
+
+			public float? L1StHttpsInnerAcc
+			{
+				get
+				{
+					return l1StHttpsInnerAcc;
+				}
+				set	
+				{
+					l1StHttpsInnerAcc = value;
+				}
+			}
+
+			public float? L1StHttpsOutAcc
+			{
+				get
+				{
+					return l1StHttpsOutAcc;
+				}
+				set	
+				{
+					l1StHttpsOutAcc = value;
 				}
 			}
 		}

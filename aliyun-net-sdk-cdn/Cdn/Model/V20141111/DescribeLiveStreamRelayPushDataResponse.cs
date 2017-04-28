@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string time;
 
+			private string stream;
+
 			private float? frameRate;
 
 			private float? bitRate;
@@ -61,6 +63,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					time = value;
+				}
+			}
+
+			public string Stream
+			{
+				get
+				{
+					return stream;
+				}
+				set	
+				{
+					stream = value;
 				}
 			}
 

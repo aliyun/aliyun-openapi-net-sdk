@@ -104,6 +104,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string overseasValue;
 
+			private string dynamicValue;
+
+			private string dynamicDomesticValue;
+
+			private string dynamicOverseasValue;
+
+			private string staticValue;
+
+			private string staticDomesticValue;
+
+			private string staticOverseasValue;
+
 			public string TimeStamp
 			{
 				get
@@ -149,6 +161,78 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					overseasValue = value;
+				}
+			}
+
+			public string DynamicValue
+			{
+				get
+				{
+					return dynamicValue;
+				}
+				set	
+				{
+					dynamicValue = value;
+				}
+			}
+
+			public string DynamicDomesticValue
+			{
+				get
+				{
+					return dynamicDomesticValue;
+				}
+				set	
+				{
+					dynamicDomesticValue = value;
+				}
+			}
+
+			public string DynamicOverseasValue
+			{
+				get
+				{
+					return dynamicOverseasValue;
+				}
+				set	
+				{
+					dynamicOverseasValue = value;
+				}
+			}
+
+			public string StaticValue
+			{
+				get
+				{
+					return staticValue;
+				}
+				set	
+				{
+					staticValue = value;
+				}
+			}
+
+			public string StaticDomesticValue
+			{
+				get
+				{
+					return staticDomesticValue;
+				}
+				set	
+				{
+					staticDomesticValue = value;
+				}
+			}
+
+			public string StaticOverseasValue
+			{
+				get
+				{
+					return staticOverseasValue;
+				}
+				set	
+				{
+					staticOverseasValue = value;
 				}
 			}
 		}

@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			domainBaseDetailModel.CdnType = context.StringValue("DescribeCdnDomainBaseDetail.DomainBaseDetailModel.CdnType");
 			domainBaseDetailModel.DomainStatus = context.StringValue("DescribeCdnDomainBaseDetail.DomainBaseDetailModel.DomainStatus");
 			domainBaseDetailModel.SourceType = context.StringValue("DescribeCdnDomainBaseDetail.DomainBaseDetailModel.SourceType");
+			domainBaseDetailModel.Region = context.StringValue("DescribeCdnDomainBaseDetail.DomainBaseDetailModel.Region");
 			domainBaseDetailModel.DomainName = context.StringValue("DescribeCdnDomainBaseDetail.DomainBaseDetailModel.DomainName");
 			domainBaseDetailModel.Remark = context.StringValue("DescribeCdnDomainBaseDetail.DomainBaseDetailModel.Remark");
 			domainBaseDetailModel.GmtModified = context.StringValue("DescribeCdnDomainBaseDetail.DomainBaseDetailModel.GmtModified");

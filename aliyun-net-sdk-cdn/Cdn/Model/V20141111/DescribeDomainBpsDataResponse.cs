@@ -174,6 +174,24 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string overseasValue;
 
+			private string dynamicValue;
+
+			private string dynamicDomesticValue;
+
+			private string dynamicOverseasValue;
+
+			private string staticValue;
+
+			private string staticDomesticValue;
+
+			private string staticOverseasValue;
+
+			private string l2Value;
+
+			private string domesticL2Value;
+
+			private string overseasL2Value;
+
 			public string TimeStamp
 			{
 				get
@@ -219,6 +237,145 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					overseasValue = value;
+				}
+			}
+
+			public string DynamicValue
+			{
+				get
+				{
+					return dynamicValue;
+				}
+				set	
+				{
+					dynamicValue = value;
+				}
+			}
+
+			public string DynamicDomesticValue
+			{
+				get
+				{
+					return dynamicDomesticValue;
+				}
+				set	
+				{
+					dynamicDomesticValue = value;
+				}
+			}
+
+			public string DynamicOverseasValue
+			{
+				get
+				{
+					return dynamicOverseasValue;
+				}
+				set	
+				{
+					dynamicOverseasValue = value;
+				}
+			}
+
+			public string StaticValue
+			{
+				get
+				{
+					return staticValue;
+				}
+				set	
+				{
+					staticValue = value;
+				}
+			}
+
+			public string StaticDomesticValue
+			{
+				get
+				{
+					return staticDomesticValue;
+				}
+				set	
+				{
+					staticDomesticValue = value;
+				}
+			}
+
+			public string StaticOverseasValue
+			{
+				get
+				{
+					return staticOverseasValue;
+				}
+				set	
+				{
+					staticOverseasValue = value;
+				}
+			}
+
+			public string L2Value
+			{
+				get
+				{
+					return l2Value;
+				}
+				set	
+				{
+					l2Value = value;
+				}
+			}
+
+			public string DomesticL2Value
+			{
+				get
+				{
+					return domesticL2Value;
+				}
+				set	
+				{
+					domesticL2Value = value;
+				}
+			}
+
+			public string OverseasL2Value
+			{
+				get
+				{
+					return overseasL2Value;
+				}
+				set	
+				{
+					overseasL2Value = value;
+				}
+			}
+		}
+
+		public class DataModule{
+
+			private string timeStamp;
+
+			private string value_;
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
 				}
 			}
 		}

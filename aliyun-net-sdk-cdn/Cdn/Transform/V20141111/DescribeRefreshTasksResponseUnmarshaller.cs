@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				cDNTask.Process = context.StringValue("DescribeRefreshTasks.Tasks["+ i +"].Process");
 				cDNTask.Status = context.StringValue("DescribeRefreshTasks.Tasks["+ i +"].Status");
 				cDNTask.CreationTime = context.StringValue("DescribeRefreshTasks.Tasks["+ i +"].CreationTime");
+				cDNTask.Description = context.StringValue("DescribeRefreshTasks.Tasks["+ i +"].Description");
 
 				tasks.Add(cDNTask);
 			}

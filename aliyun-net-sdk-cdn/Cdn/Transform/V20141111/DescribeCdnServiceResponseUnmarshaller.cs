@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 
 			describeCdnServiceResponse.HttpResponse = context.HttpResponse;
 			describeCdnServiceResponse.RequestId = context.StringValue("DescribeCdnService.RequestId");
+			describeCdnServiceResponse.InstanceId = context.StringValue("DescribeCdnService.InstanceId");
 			describeCdnServiceResponse.InternetChargeType = context.StringValue("DescribeCdnService.InternetChargeType");
 			describeCdnServiceResponse.OpeningTime = context.StringValue("DescribeCdnService.OpeningTime");
 			describeCdnServiceResponse.ChangingChargeType = context.StringValue("DescribeCdnService.ChangingChargeType");
