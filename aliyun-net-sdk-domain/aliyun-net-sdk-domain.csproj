@@ -43,13 +43,19 @@
 	<Compile Include="Domain\Model\V20160511\QueryContactRequest.cs" />
 	<Compile Include="Domain\Model\V20160511\QueryDomainBySaleIdRequest.cs" />
 	<Compile Include="Domain\Model\V20160511\QueryOrderResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\WhoisProtectionResponse.cs" />
 	<Compile Include="Domain\Model\V20160511\QueryContactTemplateRequest.cs" />
 	<Compile Include="Domain\Model\V20160511\CreateOrderRequest.cs" />
 	<Compile Include="Domain\Model\V20160511\DeleteContactTemplateRequest.cs" />
 	<Compile Include="Domain\Model\V20160511\CreateOrderResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryBatchTaskListResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\WhoisProtectionRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryBatchTaskListRequest.cs" />
 	<Compile Include="Domain\Model\V20160511\QueryContactResponse.cs" />
 	<Compile Include="Domain\Model\V20160511\GetWhoisInfoResponse.cs" />
 	<Compile Include="Domain\Model\V20160511\DeleteContactTemplateResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryBatchTaskDetailListRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryBatchTaskDetailListResponse.cs" />
 	<Compile Include="Domain\Model\V20160511\QueryDomainListResponse.cs" />
 	<Compile Include="Domain\Model\V20160511\QueryDomainBySaleIdResponse.cs" />
 	<Compile Include="Domain\Model\V20160511\QueryContactTemplateResponse.cs" />
@@ -59,6 +65,7 @@
 	<Compile Include="Domain\Model\V20160511\GetWhoisInfoRequest.cs" />
 	<Compile Include="Domain\Model\V20160511\SaveContactTemplateResponse.cs" />
 	<Compile Include="Domain\Model\V20160511\CheckDomainResponse.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryBatchTaskDetailListResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\QueryContactResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\QueryDomainListResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\CheckDomainResponseUnmarshaller.cs" />
@@ -66,9 +73,11 @@
 	<Compile Include="Domain\Transform\V20160511\QueryContactTemplateResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\DeleteContactTemplateResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\SaveContactTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryBatchTaskListResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\QueryDomainBySaleIdResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\QueryOrderResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\CreateOrderResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\WhoisProtectionResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
