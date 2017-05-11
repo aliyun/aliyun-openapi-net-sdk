@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3263da4e-503f-45f3-a094-2faebf7986a6}</ProjectGuid>
+    <ProjectGuid>{fc3b79f6-892e-48ee-9583-277c9e0b58f5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -42,10 +42,14 @@
 	<Compile Include="Vod\Model\V20170321\GetVideoInfoRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetVideoPlayInfoRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\CreateUploadVideoRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\GetCDNStatisSumResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\GetOSSStatisResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\DeleteVideoResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\CreateUploadVideoResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\DeleteVideoRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\GetCDNStatisSumRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\RefreshUploadVideoRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\GetOSSStatisRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetVideoPlayAuthRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetVideoInfoResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\UpdateVideoInfoRequest.cs" />
@@ -57,8 +61,10 @@
 	<Compile Include="Vod\Model\V20170321\GetVideoListRequest.cs" />
 	<Compile Include="Vod\Transform\V20170321\UpdateVideoInfoResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\GetVideoInfoResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetOSSStatisResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\CreateUploadVideoResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\DeleteVideoResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetCDNStatisSumResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\GetVideoPlayAuthResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\GetVideoPlayInfoResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\GetVideoListResponseUnmarshaller.cs" />

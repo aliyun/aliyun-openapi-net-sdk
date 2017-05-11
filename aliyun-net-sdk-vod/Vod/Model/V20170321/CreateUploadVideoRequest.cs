@@ -51,6 +51,10 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 
 		private string title;
 
+		private int? cateId;
+
+		private string tags;
+
 		public long? OwnerId
 		{
 			get
@@ -165,6 +169,32 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				title = value;
 				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		public int? CateId
+		{
+			get
+			{
+				return cateId;
+			}
+			set	
+			{
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 
