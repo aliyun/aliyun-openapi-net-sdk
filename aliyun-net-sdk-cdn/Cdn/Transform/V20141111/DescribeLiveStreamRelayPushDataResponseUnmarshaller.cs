@@ -36,6 +36,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			for (int i = 0; i < context.Length("DescribeLiveStreamRelayPushData.RelayPushDetailModelList.Length"); i++) {
 				DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModel relayPushDetailModel = new DescribeLiveStreamRelayPushDataResponse.RelayPushDetailModel();
 				relayPushDetailModel.Time = context.StringValue("DescribeLiveStreamRelayPushData.RelayPushDetailModelList["+ i +"].Time");
+				relayPushDetailModel.Stream = context.StringValue("DescribeLiveStreamRelayPushData.RelayPushDetailModelList["+ i +"].Stream");
 				relayPushDetailModel.FrameRate = context.FloatValue("DescribeLiveStreamRelayPushData.RelayPushDetailModelList["+ i +"].FrameRate");
 				relayPushDetailModel.BitRate = context.FloatValue("DescribeLiveStreamRelayPushData.RelayPushDetailModelList["+ i +"].BitRate");
 				relayPushDetailModel.FrameLossRate = context.FloatValue("DescribeLiveStreamRelayPushData.RelayPushDetailModelList["+ i +"].FrameLossRate");

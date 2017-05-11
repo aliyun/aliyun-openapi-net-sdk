@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string sourceType;
 
+			private string region;
+
 			private string domainName;
 
 			private string remark;
@@ -103,6 +105,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					sourceType = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
 				}
 			}
 

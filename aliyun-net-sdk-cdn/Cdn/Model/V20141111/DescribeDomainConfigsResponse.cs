@@ -42,7 +42,13 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private List<CacheExpiredConfig> cacheExpiredConfigs;
 
+			private List<HttpErrorPageConfig> httpErrorPageConfigs;
+
 			private List<HttpHeaderConfig> httpHeaderConfigs;
+
+			private List<DynamicConfig> dynamicConfigs;
+
+			private List<ReqHeaderConfig> reqHeaderConfigs;
 
 			private CcConfig_ ccConfig;
 
@@ -84,6 +90,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
+			public List<HttpErrorPageConfig> HttpErrorPageConfigs
+			{
+				get
+				{
+					return httpErrorPageConfigs;
+				}
+				set	
+				{
+					httpErrorPageConfigs = value;
+				}
+			}
+
 			public List<HttpHeaderConfig> HttpHeaderConfigs
 			{
 				get
@@ -93,6 +111,30 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					httpHeaderConfigs = value;
+				}
+			}
+
+			public List<DynamicConfig> DynamicConfigs
+			{
+				get
+				{
+					return dynamicConfigs;
+				}
+				set	
+				{
+					dynamicConfigs = value;
+				}
+			}
+
+			public List<ReqHeaderConfig> ReqHeaderConfigs
+			{
+				get
+				{
+					return reqHeaderConfigs;
+				}
+				set	
+				{
+					reqHeaderConfigs = value;
 				}
 			}
 
@@ -351,6 +393,51 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
+			public class HttpErrorPageConfig{
+
+				private string configId;
+
+				private string errorCode;
+
+				private string pageUrl;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string ErrorCode
+				{
+					get
+					{
+						return errorCode;
+					}
+					set	
+					{
+						errorCode = value;
+					}
+				}
+
+				public string PageUrl
+				{
+					get
+					{
+						return pageUrl;
+					}
+					set	
+					{
+						pageUrl = value;
+					}
+				}
+			}
+
 			public class HttpHeaderConfig{
 
 				private string configId;
@@ -410,6 +497,138 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
+			public class DynamicConfig{
+
+				private string configId;
+
+				private string dynamicOrigin;
+
+				private string staticType;
+
+				private string staticUri;
+
+				private string staticPath;
+
+				private string dynamicCacheControl;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string DynamicOrigin
+				{
+					get
+					{
+						return dynamicOrigin;
+					}
+					set	
+					{
+						dynamicOrigin = value;
+					}
+				}
+
+				public string StaticType
+				{
+					get
+					{
+						return staticType;
+					}
+					set	
+					{
+						staticType = value;
+					}
+				}
+
+				public string StaticUri
+				{
+					get
+					{
+						return staticUri;
+					}
+					set	
+					{
+						staticUri = value;
+					}
+				}
+
+				public string StaticPath
+				{
+					get
+					{
+						return staticPath;
+					}
+					set	
+					{
+						staticPath = value;
+					}
+				}
+
+				public string DynamicCacheControl
+				{
+					get
+					{
+						return dynamicCacheControl;
+					}
+					set	
+					{
+						dynamicCacheControl = value;
+					}
+				}
+			}
+
+			public class ReqHeaderConfig{
+
+				private string configId;
+
+				private string key;
+
+				private string value_;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string Value
+				{
+					get
+					{
+						return value_;
+					}
+					set	
+					{
+						value_ = value;
+					}
+				}
+			}
+
 			public class CcConfig_{
 
 				private string enable;
@@ -457,11 +676,25 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			public class ErrorPageConfig_{
 
+				private string configId;
+
 				private string errorCode;
 
 				private string pageType;
 
 				private string customPageUrl;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
 
 				public string ErrorCode
 				{

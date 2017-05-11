@@ -37,13 +37,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string securityToken;
 
-		private string domainName;
-
 		private string relayDomain;
-
-		private string appName;
-
-		private string streamName;
 
 		private string startTime;
 
@@ -75,19 +69,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
 		public string RelayDomain
 		{
 			get
@@ -98,32 +79,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				relayDomain = value;
 				DictionaryUtil.Add(QueryParameters, "RelayDomain", value);
-			}
-		}
-
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 

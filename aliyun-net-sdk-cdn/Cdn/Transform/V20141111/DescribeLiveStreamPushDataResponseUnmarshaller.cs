@@ -36,6 +36,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			for (int i = 0; i < context.Length("DescribeLiveStreamPushData.PushStreamModelList.Length"); i++) {
 				DescribeLiveStreamPushDataResponse.PushStreamModel pushStreamModel = new DescribeLiveStreamPushDataResponse.PushStreamModel();
 				pushStreamModel.Time = context.StringValue("DescribeLiveStreamPushData.PushStreamModelList["+ i +"].Time");
+				pushStreamModel.Stream = context.StringValue("DescribeLiveStreamPushData.PushStreamModelList["+ i +"].Stream");
 				pushStreamModel.FrameRate = context.FloatValue("DescribeLiveStreamPushData.PushStreamModelList["+ i +"].FrameRate");
 				pushStreamModel.BitRate = context.FloatValue("DescribeLiveStreamPushData.PushStreamModelList["+ i +"].BitRate");
 				pushStreamModel.FrameLossRate = context.FloatValue("DescribeLiveStreamPushData.PushStreamModelList["+ i +"].FrameLossRate");

@@ -92,6 +92,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string creationTime;
 
+			private string description;
+
 			public string TaskId
 			{
 				get
@@ -149,6 +151,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 		}

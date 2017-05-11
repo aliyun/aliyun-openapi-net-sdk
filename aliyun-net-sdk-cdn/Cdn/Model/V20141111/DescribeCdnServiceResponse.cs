@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeCdnServiceResponse : AcsResponse
 	{
 
+		private string instanceId;
+
 		private string internetChargeType;
 
 		private string openingTime;
@@ -33,6 +35,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 		private string changingAffectTime;
 
 		private List<LockReason> operationLocks;
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+			}
+		}
 
 		public string InternetChargeType
 		{

@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 
 			describeL2VipsByDomainResponse.HttpResponse = context.HttpResponse;
 			describeL2VipsByDomainResponse.RequestId = context.StringValue("DescribeL2VipsByDomain.RequestId");
-			describeL2VipsByDomainResponse.DomainName = context.LongValue("DescribeL2VipsByDomain.DomainName");
+			describeL2VipsByDomainResponse.DomainName = context.StringValue("DescribeL2VipsByDomain.DomainName");
 
 			List<string> vips = new List<string>();
 			for (int i = 0; i < context.Length("DescribeL2VipsByDomain.Vips.Length"); i++) {

@@ -49,9 +49,11 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private int? sourcePort;
 
-		private string serverCertificate;
+		private string checkUrl;
 
-		private string privateKey;
+		private string region;
+
+		private string scope;
 
 		public long? OwnerId
 		{
@@ -157,29 +159,42 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string ServerCertificate
+		public string CheckUrl
 		{
 			get
 			{
-				return serverCertificate;
+				return checkUrl;
 			}
 			set	
 			{
-				serverCertificate = value;
-				DictionaryUtil.Add(QueryParameters, "ServerCertificate", value);
+				checkUrl = value;
+				DictionaryUtil.Add(QueryParameters, "CheckUrl", value);
 			}
 		}
 
-		public string PrivateKey
+		public string Region
 		{
 			get
 			{
-				return privateKey;
+				return region;
 			}
 			set	
 			{
-				privateKey = value;
-				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
+			}
+		}
+
+		public string Scope
+		{
+			get
+			{
+				return scope;
+			}
+			set	
+			{
+				scope = value;
+				DictionaryUtil.Add(QueryParameters, "Scope", value);
 			}
 		}
 
