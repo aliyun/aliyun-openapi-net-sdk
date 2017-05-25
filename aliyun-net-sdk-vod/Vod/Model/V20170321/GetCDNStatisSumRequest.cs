@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Vod.Model.V20170321
     public class GetCDNStatisSumRequest : RpcAcsRequest<GetCDNStatisSumResponse>
     {
         public GetCDNStatisSumRequest()
-            : base("Vod", "2017-03-21", "GetCDNStatisSum")
+            : base("vod", "2017-03-21", "GetCDNStatisSum")
         {
         }
 

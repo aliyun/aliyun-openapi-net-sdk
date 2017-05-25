@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Vod.Model.V20170321
     public class GetOSSStatisRequest : RpcAcsRequest<GetOSSStatisResponse>
     {
         public GetOSSStatisRequest()
-            : base("Vod", "2017-03-21", "GetOSSStatis")
+            : base("vod", "2017-03-21", "GetOSSStatis")
         {
         }
 
