@@ -19,7 +19,7 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.live.Model.V20161101
+namespace Aliyun.Acs.Live.Model.V20161101
 {
 	public class DescribeLiveRecordConfigResponse : AcsResponse
 	{
@@ -202,6 +202,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string sliceOssObjectPrefix;
 
+				private int? cycleDuration;
+
 				public string Format
 				{
 					get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						sliceOssObjectPrefix = value;
+					}
+				}
+
+				public int? CycleDuration
+				{
+					get
+					{
+						return cycleDuration;
+					}
+					set	
+					{
+						cycleDuration = value;
 					}
 				}
 			}

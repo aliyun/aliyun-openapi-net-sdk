@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 					recordFormat.Format = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].Format");
 					recordFormat.OssObjectPrefix = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].OssObjectPrefix");
 					recordFormat.SliceOssObjectPrefix = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].SliceOssObjectPrefix");
+					recordFormat.CycleDuration = context.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].CycleDuration");
 
 					recordFormatList.Add(recordFormat);
 				}

@@ -140,6 +140,7 @@ namespace Aliyun.Acs.Live.Model.V20161101
 					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".Format", recordFormats[i].Format);
 					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".OssObjectPrefix", recordFormats[i].OssObjectPrefix);
 					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".SliceOssObjectPrefix", recordFormats[i].SliceOssObjectPrefix);
+					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".CycleDuration", recordFormats[i].CycleDuration);
 				}
 			}
 		}
@@ -152,6 +153,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			private string ossObjectPrefix;
 
 			private string sliceOssObjectPrefix;
+
+			private int? cycleDuration;
 
 			public string Format
 			{
@@ -186,6 +189,18 @@ namespace Aliyun.Acs.Live.Model.V20161101
 				set	
 				{
 					sliceOssObjectPrefix = value;
+				}
+			}
+
+			public int? CycleDuration
+			{
+				get
+				{
+					return cycleDuration;
+				}
+				set	
+				{
+					cycleDuration = value;
 				}
 			}
 		}

@@ -19,7 +19,7 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.live.Model.V20161101
+namespace Aliyun.Acs.Live.Model.V20161101
 {
 	public class DeleteLiveAppSnapshotConfigResponse : AcsResponse
 	{
