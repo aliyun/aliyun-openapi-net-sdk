@@ -17,56 +17,42 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Kms.Transform;
-using Aliyun.Acs.Kms.Transform.V20160120;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class DisableKeyRequest : RpcAcsRequest<DisableKeyResponse>
-    {
-        public DisableKeyRequest()
-            : base("Kms", "2016-01-20", "DisableKey")
-        {
-			Protocol = ProtocolType.HTTPS;
-        }
+	public class DescribeRegionsResponse : AcsResponse
+	{
 
-		private string keyId;
+		private List<Region> regions;
 
-		private string sTSToken;
-
-		public string KeyId
+		public List<Region> Regions
 		{
 			get
 			{
-				return keyId;
+				return regions;
 			}
 			set	
 			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+				regions = value;
 			}
 		}
 
-		public string STSToken
-		{
-			get
+		public class Region{
+
+			private string regionId;
+
+			public string RegionId
 			{
-				return sTSToken;
-			}
-			set	
-			{
-				sTSToken = value;
-				DictionaryUtil.Add(QueryParameters, "STSToken", value);
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
 			}
 		}
-
-        public override DisableKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
-        {
-            return DisableKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+	}
 }

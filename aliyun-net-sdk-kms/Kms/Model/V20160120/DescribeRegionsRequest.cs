@@ -26,45 +26,15 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class CreateKeyRequest : RpcAcsRequest<CreateKeyResponse>
+    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
     {
-        public CreateKeyRequest()
-            : base("Kms", "2016-01-20", "CreateKey")
+        public DescribeRegionsRequest()
+            : base("Kms", "2016-01-20", "DescribeRegions")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string description;
-
-		private string keyUsage;
-
 		private string sTSToken;
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string KeyUsage
-		{
-			get
-			{
-				return keyUsage;
-			}
-			set	
-			{
-				keyUsage = value;
-				DictionaryUtil.Add(QueryParameters, "KeyUsage", value);
-			}
-		}
 
 		public string STSToken
 		{
@@ -79,9 +49,9 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override CreateKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeRegionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

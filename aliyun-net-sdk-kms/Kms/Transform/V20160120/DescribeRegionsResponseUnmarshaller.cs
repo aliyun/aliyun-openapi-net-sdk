@@ -23,29 +23,25 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Transform.V20160120
 {
-    public class ListKeysResponseUnmarshaller
+    public class DescribeRegionsResponseUnmarshaller
     {
-        public static ListKeysResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext context)
         {
-			ListKeysResponse listKeysResponse = new ListKeysResponse();
+			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
-			listKeysResponse.HttpResponse = context.HttpResponse;
-			listKeysResponse.TotalCount = context.IntegerValue("ListKeys.TotalCount");
-			listKeysResponse.PageNumber = context.IntegerValue("ListKeys.PageNumber");
-			listKeysResponse.PageSize = context.IntegerValue("ListKeys.PageSize");
-			listKeysResponse.RequestId = context.StringValue("ListKeys.RequestId");
+			describeRegionsResponse.HttpResponse = context.HttpResponse;
+			describeRegionsResponse.RequestId = context.StringValue("DescribeRegions.RequestId");
 
-			List<ListKeysResponse.Key> keys = new List<ListKeysResponse.Key>();
-			for (int i = 0; i < context.Length("ListKeys.Keys.Length"); i++) {
-				ListKeysResponse.Key key = new ListKeysResponse.Key();
-				key.KeyId = context.StringValue("ListKeys.Keys["+ i +"].KeyId");
-				key.KeyArn = context.StringValue("ListKeys.Keys["+ i +"].KeyArn");
+			List<DescribeRegionsResponse.Region> regions = new List<DescribeRegionsResponse.Region>();
+			for (int i = 0; i < context.Length("DescribeRegions.Regions.Length"); i++) {
+				DescribeRegionsResponse.Region region = new DescribeRegionsResponse.Region();
+				region.RegionId = context.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
 
-				keys.Add(key);
+				regions.Add(region);
 			}
-			listKeysResponse.Keys = keys;
+			describeRegionsResponse.Regions = regions;
         
-			return listKeysResponse;
+			return describeRegionsResponse;
         }
     }
 }

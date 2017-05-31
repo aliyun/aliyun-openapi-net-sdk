@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
         public DescribeKeyRequest()
             : base("Kms", "2016-01-20", "DescribeKey")
         {
+			Protocol = ProtocolType.HTTPS;
         }
 
 		private string keyId;

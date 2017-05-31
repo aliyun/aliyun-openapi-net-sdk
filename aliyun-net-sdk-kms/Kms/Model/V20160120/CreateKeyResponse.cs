@@ -52,6 +52,10 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 			private string deleteDate;
 
+			private string creator;
+
+			private string arn;
+
 			public string CreationDate
 			{
 				get
@@ -121,6 +125,30 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					deleteDate = value;
+				}
+			}
+
+			public string Creator
+			{
+				get
+				{
+					return creator;
+				}
+				set	
+				{
+					creator = value;
+				}
+			}
+
+			public string Arn
+			{
+				get
+				{
+					return arn;
+				}
+				set	
+				{
+					arn = value;
 				}
 			}
 		}

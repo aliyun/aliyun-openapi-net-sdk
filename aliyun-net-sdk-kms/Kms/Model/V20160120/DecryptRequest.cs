@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
         public DecryptRequest()
             : base("Kms", "2016-01-20", "Decrypt")
         {
+			Protocol = ProtocolType.HTTPS;
         }
 
 		private string ciphertextBlob;

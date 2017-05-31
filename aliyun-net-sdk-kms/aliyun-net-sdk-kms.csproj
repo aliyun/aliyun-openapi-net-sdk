@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{a8ae45c0-d0e6-431b-9e6d-6ebf048519e9}</ProjectGuid>
+    <ProjectGuid>{cc3aee12-584d-483e-842b-3bfea62bf9a5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -49,10 +49,12 @@
 	<Compile Include="Kms\Model\V20160120\CreateKeyRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\DecryptRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\DisableKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeRegionsResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\EncryptRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\DecryptResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\CancelKeyDeletionRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\ListKeysResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeRegionsRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\DescribeKeyResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\DescribeKeyRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\ListKeysRequest.cs" />
@@ -65,6 +67,7 @@
 	<Compile Include="Kms\Transform\V20160120\ScheduleKeyDeletionResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\EnableKeyResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\EncryptResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DescribeRegionsResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\DecryptResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\GenerateDataKeyResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\CreateKeyResponseUnmarshaller.cs" />

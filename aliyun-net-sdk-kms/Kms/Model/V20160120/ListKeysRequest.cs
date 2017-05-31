@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
         public ListKeysRequest()
             : base("Kms", "2016-01-20", "ListKeys")
         {
+			Protocol = ProtocolType.HTTPS;
         }
 
 		private int? pageNumber;

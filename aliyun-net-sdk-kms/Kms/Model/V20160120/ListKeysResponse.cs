@@ -84,6 +84,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 			private string keyId;
 
+			private string keyArn;
+
 			public string KeyId
 			{
 				get
@@ -93,6 +95,18 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					keyId = value;
+				}
+			}
+
+			public string KeyArn
+			{
+				get
+				{
+					return keyArn;
+				}
+				set	
+				{
+					keyArn = value;
 				}
 			}
 		}
