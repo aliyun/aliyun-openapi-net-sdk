@@ -50,7 +50,7 @@ namespace Aliyun.Acs.Core.Reader
             {'n','\n'},
             {'r','\r'},
             {'b','\b'},
-            {'f','\f'}  
+            {'f','\f'}
         };
 
         public Dictionary<String, String> Read(String response, String endpoint)

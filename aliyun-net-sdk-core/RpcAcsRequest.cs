@@ -53,6 +53,15 @@ namespace Aliyun.Acs.Core
             Initialize();
         }
 
+        public RpcAcsRequest(String product, String version, String action, String locationProduct)
+            : base(product)
+        {
+            Version = version;
+            ActionName = action;
+            this.LocationProduct = locationProduct;
+            Initialize();
+        }
+
         private void Initialize()
         {
             Method = MethodType.GET;

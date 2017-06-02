@@ -18,32 +18,69 @@
  */
 using Aliyun.Acs.Core.Transform;
 using System;
+using Aliyun.Acs.Core.Regions.Location.Transform;
+using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Regions.Location.Model
 {
     public class DescribeEndpointRequest : RpcAcsRequest<DescribeEndpointResponse>
     {
-	
-	    public DescribeEndpointRequest() : base("Location", "2015-06-12", "DescribeEndpoint") 
+
+        public DescribeEndpointRequest()
+            : base("Location", "2015-06-12", "DescribeEndpoints")
         {
 
-	    }
+        }
 
-	    private string service;
+        private String id;
 
-        public string GetService()
+        private String locationProduct;
+
+        private String endpointType;
+
+        public string Id
         {
-		    return this.service;
-	    }
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+                DictionaryUtil.Add(QueryParameters, "Id", value);
+            }
+        }
 
-	    public void SetService(String service) {
-		    this.service = service;
-            QueryParameters.Add("Service", service);
-	    }
-
-        public override DescribeEndpointResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public string EndpointType
         {
-            throw new NotImplementedException();
+            get
+            {
+                return endpointType;
+            }
+            set
+            {
+                endpointType = value;
+                DictionaryUtil.Add(QueryParameters, "Type", value);
+            }
+        }
+
+        public string LocationProduct
+        {
+            get
+            {
+                return locationProduct;
+            }
+            set
+            {
+                locationProduct = value;
+                DictionaryUtil.Add(QueryParameters, "ServiceCode", value);
+            }
+        }
+
+        public override DescribeEndpointResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        {
+            //return DescribeEndpointResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return null;
         }
     }
 }

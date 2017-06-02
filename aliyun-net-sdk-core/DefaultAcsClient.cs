@@ -24,6 +24,7 @@ using Aliyun.Acs.Core.Reader;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Transform;
 using System.Collections.Generic;
+using System;
 
 namespace Aliyun.Acs.Core
 {
@@ -67,6 +68,18 @@ namespace Aliyun.Acs.Core
         {
             HttpResponse httpResponse = this.DoAction(request, regionId, credential);
             return ParseAcsResponse(request, httpResponse);
+        }
+
+        public CommonResponse DoCommonAction(CommonRequest request)
+        {
+            HttpResponse httpResponse = this.DoAction(request);
+            String data = System.Text.Encoding.UTF8.GetString(httpResponse.Content);
+
+            CommonResponse response = new CommonResponse();
+            response.Data = data;
+            response.HttpResponse = httpResponse;
+
+            return response;
         }
 
         private T ParseAcsResponse<T>(AcsRequest<T> request, HttpResponse httpResponse) where T : AcsResponse
@@ -125,7 +138,7 @@ namespace Aliyun.Acs.Core
             {
                 signer = clientProfile.GetSigner();
                 format = clientProfile.GetFormat();
-                endpoints = clientProfile.GetEndpoints();
+                endpoints = clientProfile.GetEndpoints(regionId, request.Product, credential, request.LocationProduct); ;
             }
             return DoAction(request, autoRetry, this.maxRetryNumber, regionId, credential, signer, format, endpoints);
         }
@@ -138,10 +151,14 @@ namespace Aliyun.Acs.Core
                 throw new ClientException("SDK.InvalidProfile", "No active profile found.");
             }
             string regionId = profile.GetRegionId();
+            if (null != request.RegionId)
+            {
+                regionId = request.RegionId;
+            }
             Credential credential = profile.GetCredential();
             ISigner signer = profile.GetSigner();
             FormatType? format = profile.GetFormat();
-            List<Endpoint> endpoints = profile.GetEndpoints();
+            List<Endpoint> endpoints = profile.GetEndpoints(regionId, request.Product, credential, request.LocationProduct);
 
             return DoAction(request, autoRetry, maxRetryNumber, regionId, credential, signer, format, endpoints);
         }
@@ -181,7 +198,7 @@ namespace Aliyun.Acs.Core
             UnmarshallerContext context = new UnmarshallerContext();
             string body = System.Text.Encoding.UTF8.GetString(httpResponse.Content);
             context.ResponseDictionary = reader.Read(body, request.ActionName);
-            context.HttpResponse = httpResponse; ;
+            context.HttpResponse = httpResponse;
             return request.GetResponse(context);
         }
 

@@ -23,22 +23,23 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Regions.Location.Transform
 {
-    public class DescribeEndpointResponseUnmarshaller {
+    public class DescribeEndpointResponseUnmarshaller
+    {
 
-        public static DescribeEndpointResponse Unmarshall(UnmarshallerContext context) {
+        //public static DescribeEndpointResponse Unmarshall(UnmarshallerContext context) {
 
-            DescribeEndpointResponse describeEndpointResponse = new DescribeEndpointResponse();
+        //    DescribeEndpointResponse describeEndpointResponse = new DescribeEndpointResponse();
 
-		    describeEndpointResponse.RequestId = context.StringValue("DescribeEndpointResponse.RequestId");
-		    describeEndpointResponse.Endpoint = context.StringValue("DescribeEndpointResponse.Endpoint");
-    
-		    List<String> protocols = new List<String>();
-		    for (int i = 0; i < context.Length("DescribeEndpointResponse.Protocols.Length"); i++) {
-			    protocols.Add(context.StringValue("DescribeEndpointResponse.Protocols["+ i +"]"));
-		    }
-		    describeEndpointResponse.Protocols = protocols;
-	 
-	 	    return describeEndpointResponse;
-	    }
+        //    describeEndpointResponse.RequestId = context.StringValue("DescribeEndpointResponse.RequestId");
+        //    describeEndpointResponse.Endpoint = context.StringValue("DescribeEndpointResponse.Endpoint");
+
+        //    List<String> protocols = new List<String>();
+        //    for (int i = 0; i < context.Length("DescribeEndpointResponse.Protocols.Length"); i++) {
+        //        protocols.Add(context.StringValue("DescribeEndpointResponse.Protocols["+ i +"]"));
+        //    }
+        //    describeEndpointResponse.Protocols = protocols;
+
+        //    return describeEndpointResponse;
+        //}
     }
 }

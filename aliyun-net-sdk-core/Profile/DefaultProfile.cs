@@ -21,6 +21,8 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
 using System;
 using System.Collections.Generic;
+using Aliyun.Acs.Core.Regions.Location;
+using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Profile
 {
@@ -29,18 +31,22 @@ namespace Aliyun.Acs.Core.Profile
 
         private static DefaultProfile profile = null;
         private static List<Endpoint> endpoints = null;
+        private static List<Endpoint> locationEndpoints = null;
 
         private Credential credential;
         private String regionId;
         private ISigner isigner = null;
         private IEndpointsProvider iendpoints = null;
         private ICredentialProvider icredential = null;
+        private RemoteEndpointsParser remoteProvider = null;
+        private LocationConfig locationConfig = new LocationConfig();
 
         private FormatType AcceptFormat { get; set; }
 
         private DefaultProfile()
         {
             this.iendpoints = new InternalEndpointsParser();
+            this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
         }
 
         private DefaultProfile(String region, Credential creden)
@@ -48,12 +54,14 @@ namespace Aliyun.Acs.Core.Profile
             iendpoints = new InternalEndpointsParser();
             credential = creden;
             this.regionId = region;
+            this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
         }
 
         private DefaultProfile(ICredentialProvider icredential)
         {
             this.icredential = icredential;
             this.iendpoints = new InternalEndpointsParser();
+            this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
         }
 
         private DefaultProfile(String region, ICredentialProvider icredential)
@@ -61,6 +69,7 @@ namespace Aliyun.Acs.Core.Profile
             this.regionId = region;
             this.icredential = icredential;
             this.iendpoints = new InternalEndpointsParser();
+            this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
         }
 
         private DefaultProfile(ICredentialProvider icredential, String region, FormatType format)
@@ -69,6 +78,7 @@ namespace Aliyun.Acs.Core.Profile
             this.AcceptFormat = format;
             this.icredential = icredential;
             this.iendpoints = new InternalEndpointsParser();
+            this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
         }
 
         public static DefaultProfile GetProfile()
@@ -197,6 +207,152 @@ namespace Aliyun.Acs.Core.Profile
                 endpoints = iendpoints.GetEndpoints();
             }
             return endpoints;
+        }
+
+        public List<Endpoint> GetEndpoints(String regionId, String product, Credential credential, String locationProduct)
+        {
+            if (null != locationProduct)
+            { //先从locaton中找，找不到再找本地文件
+                List<Endpoint> endPoints = GetEndPointsFromLocation(regionId, product, credential, locationProduct);
+                Endpoint endpoint = FindLocationEndpointByRegionId(regionId);
+                if (null == endpoint)
+                {
+                    return GetEndPointsFromLocal();
+                }
+                else
+                {
+                    List<ProductDomain> productDomains = endpoint.ProductDomains;
+                    ProductDomain productDomain = FindProductDomain(productDomains, product);
+                    if (null == productDomain)
+                    {
+                        return GetEndPointsFromLocal();
+                    }
+                }
+
+                return endPoints;
+            }
+            //非location模式，直接从本地文件中查找
+            return GetEndPointsFromLocal();
+        }
+
+        private List<Endpoint> GetEndPointsFromLocal()
+        {
+            if (null == endpoints)
+            {
+                endpoints = iendpoints.GetEndpoints();
+            }
+
+            return endpoints;
+        }
+
+        private List<Endpoint> GetEndPointsFromLocation(String regionId, String product, Credential credential, String locationProduct)
+        {
+            if (null == locationEndpoints)
+            {
+                locationEndpoints = new List<Endpoint>();
+            }
+
+            if (CacheTime.CheckCacheIsExpire()) //定期清空缓存
+            {
+                locationEndpoints.Clear();
+
+                FillEndPointFromLocation(regionId, product, credential, locationProduct);
+            }
+            else
+            {
+                Endpoint endpoint = FindLocationEndpointByRegionId(regionId);
+                if (null == endpoint)
+                {
+                    FillEndPointFromLocation(regionId, product, credential, locationProduct);
+                }
+                else
+                {
+                    List<ProductDomain> productDomains = endpoint.ProductDomains;
+                    ProductDomain productDomain = FindProductDomain(productDomains, product);
+                    if (null == productDomain)
+                    {
+                        FillEndPointFromLocation(regionId, product, credential, locationProduct);
+                    }
+                }
+
+            }
+
+            return locationEndpoints;
+        }
+
+        private void FillEndPointFromLocation(String regionId, String product, Credential credential, String locationProduct)
+        {
+            Endpoint endpoint = remoteProvider.GetEndpoint(regionId, product, locationProduct, credential,
+                        locationConfig);
+            if (endpoint != null)
+            {
+                foreach (String region in endpoint.RegionIds)
+                {
+                    foreach (ProductDomain productDomain in endpoint.ProductDomains)
+                    {
+                        AddLocationEndpoint(endpoint.Name, region, product, productDomain.DomianName);
+                    }
+                }
+            }
+        }
+
+        public void setLocationConfig(String regionId, String product, String endpoint)
+        {
+            this.locationConfig = LocationConfig.createLocationConfig(regionId, product, endpoint);
+        }
+
+        private static void AddLocationEndpoint(String endpointName, String regionId, String product, String domain)
+        {
+            if (null == locationEndpoints)
+            {
+                locationEndpoints = new List<Endpoint>();
+            }
+            Endpoint endpoint = FindLocationEndpointByName(endpointName);
+            if (null == endpoint)
+            {
+                AddLocationEndpoint_(endpointName, regionId, product, domain);
+            }
+            else
+            {
+                UpdateEndpoint(regionId, product, domain, endpoint);
+            }
+        }
+
+        private static void AddLocationEndpoint_(String endpointName, String regionId, String product, String domain)
+        {
+            ISet<String> regions = new HashSet<String>();
+            regions.Add(regionId);
+
+            List<ProductDomain> productDomains = new List<ProductDomain>();
+            productDomains.Add(new ProductDomain(product, domain));
+            Endpoint endpoint = new Endpoint(endpointName, regions, productDomains);
+            locationEndpoints.Add(endpoint);
+        }
+
+        private static Endpoint FindLocationEndpointByName(String endpointName)
+        {
+
+            foreach (Endpoint endpoint in locationEndpoints)
+            {
+                if (endpoint.Name.Equals(endpointName))
+                {
+                    return endpoint;
+                }
+            }
+            return null;
+        }
+
+        private static Endpoint FindLocationEndpointByRegionId(String regionId)
+        {
+
+            foreach (Endpoint endpoint in locationEndpoints)
+            {
+                if (endpoint.RegionIds.Contains(regionId))
+                {
+                    return endpoint;
+                }
+            }
+            return null;
         }
     }
 }

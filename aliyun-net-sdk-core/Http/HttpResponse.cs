@@ -104,7 +104,7 @@ namespace Aliyun.Acs.Core.Http
             return bytes;
         }
 
-        public static HttpResponse GetResponse(HttpRequest request, int? timeout=null)
+        public static HttpResponse GetResponse(HttpRequest request, int? timeout = null)
         {
             HttpWebRequest httpWebRequest = GetWebRequest(request);
             if (timeout != null)

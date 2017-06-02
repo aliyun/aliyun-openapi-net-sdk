@@ -54,7 +54,7 @@ namespace Aliyun.Acs.Core.Regions
             {
                 return new ProductDomain("Location", "location.aliyuncs.com");
             }
-            return GetEndpointByLocation(regionId, product, endpoints, acsClient);
+            return null;
         }
 
         private static ProductDomain FindProductDomainByProduct(List<ProductDomain> productDomains, String product)
@@ -70,41 +70,6 @@ namespace Aliyun.Acs.Core.Regions
                     return productDomain;
                 }
             }
-            return null;
-        }
-
-        private static ProductDomain GetEndpointByLocation(String regionId, String product,
-                List<Endpoint> endpoints, IAcsClient acsClient)
-        {
-            ProductDomain productDomain = GetProductDomainByLocation(regionId, product, acsClient);
-
-            foreach (Endpoint endpoint in endpoints)
-            {
-                if (endpoint.RegionIds.Contains(regionId))
-                {
-                    endpoint.ProductDomains.Add(productDomain);
-                    return productDomain;
-                }
-            }
-
-            ISet<string> regionIds = new HashSet<String>();
-            regionIds.Add(regionId);
-            List<ProductDomain> productDomains = new List<ProductDomain>();
-            productDomains.Add(productDomain);
-
-            endpoints.Add(new Endpoint(regionId, regionIds, productDomains));
-            return productDomain;
-        }
-
-        private static ProductDomain GetProductDomainByLocation(String regionId,
-                String product, IAcsClient acsClient)
-        {
-            DescribeEndpointRequest describeEndpointRequest = new DescribeEndpointRequest();
-            describeEndpointRequest.RegionId = regionId;
-            describeEndpointRequest.SetService(product.ToLower());
-            //DescribeEndpointResponse describeEndpointResponse = acsClient.getAcsResponse(describeEndpointRequest);
-            //ProductDomain productDomain = new ProductDomain(product, describeEndpointResponse.Endpoint);
-            //return productDomain;
             return null;
         }
     }

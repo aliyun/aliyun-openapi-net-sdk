@@ -20,10 +20,13 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Regions.Location.Model
 {
-    public class DescribeEndpointResponse : AcsResponse {
+    public class DescribeEndpointResponse : AcsResponse
+    {
 
-	    public string Endpoint{get;set;}
-	    public List<string> Protocols{get;set;}
+        public string Endpoint { get; set; }
+        public string RegionId { get; set; }
+        public string RequestId { get; set; }
+        public string Product { get; set; }
 
     }
 }
