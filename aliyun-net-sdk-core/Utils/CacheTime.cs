@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Aliyun.Acs.Core.Profile;
 
 namespace Aliyun.Acs.Core.Utils
 {
@@ -16,8 +17,9 @@ namespace Aliyun.Acs.Core.Utils
             lock (syncRoot)
             {
                 TimeSpan ts = DateTime.Now - lastClearTime;
-                if (ts.TotalSeconds > 600)
+                if (600 < ts.TotalSeconds)
                 {
+                    DefaultProfile.ClearLocationEndPoints();
                     lastClearTime = DateTime.Now;
                     return true;
                 }

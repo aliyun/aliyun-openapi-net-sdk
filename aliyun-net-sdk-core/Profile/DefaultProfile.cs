@@ -212,7 +212,7 @@ namespace Aliyun.Acs.Core.Profile
         public List<Endpoint> GetEndpoints(String regionId, String product, Credential credential, String locationProduct)
         {
             if (null != locationProduct)
-            { //先从locaton中找，找不到再找本地文件
+            {   //先自动寻址，找不到再找本地配置
                 List<Endpoint> endPoints = GetEndPointsFromLocation(regionId, product, credential, locationProduct);
                 Endpoint endpoint = FindLocationEndpointByRegionId(regionId);
                 if (null == endpoint)
@@ -231,7 +231,7 @@ namespace Aliyun.Acs.Core.Profile
 
                 return endPoints;
             }
-            //非location模式，直接从本地文件中查找
+            //直接从本地配置中查找
             return GetEndPointsFromLocal();
         }
 
@@ -252,29 +252,19 @@ namespace Aliyun.Acs.Core.Profile
                 locationEndpoints = new List<Endpoint>();
             }
 
-            if (CacheTime.CheckCacheIsExpire()) //定期清空缓存
+            Endpoint endpoint = FindLocationEndpointByRegionId(regionId);
+            if (null == endpoint)
             {
-                locationEndpoints.Clear();
-
                 FillEndPointFromLocation(regionId, product, credential, locationProduct);
             }
             else
             {
-                Endpoint endpoint = FindLocationEndpointByRegionId(regionId);
-                if (null == endpoint)
+                List<ProductDomain> productDomains = endpoint.ProductDomains;
+                ProductDomain productDomain = FindProductDomain(productDomains, product);
+                if (null == productDomain)
                 {
                     FillEndPointFromLocation(regionId, product, credential, locationProduct);
                 }
-                else
-                {
-                    List<ProductDomain> productDomains = endpoint.ProductDomains;
-                    ProductDomain productDomain = FindProductDomain(productDomains, product);
-                    if (null == productDomain)
-                    {
-                        FillEndPointFromLocation(regionId, product, credential, locationProduct);
-                    }
-                }
-
             }
 
             return locationEndpoints;
@@ -353,6 +343,14 @@ namespace Aliyun.Acs.Core.Profile
                 }
             }
             return null;
+        }
+
+        public static void ClearLocationEndPoints()
+        {
+            if (null != locationEndpoints)
+            {
+                locationEndpoints.Clear();
+            }
         }
     }
 }
