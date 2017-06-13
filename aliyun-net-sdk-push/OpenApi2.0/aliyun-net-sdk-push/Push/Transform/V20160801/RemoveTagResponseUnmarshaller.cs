@@ -16,57 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Push.Model.V20160801;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Push.Model.V20160801
+namespace Aliyun.Acs.Push.Transform.V20160801
 {
-	public class CheckDevicesResponse : AcsResponse
-	{
+    public class RemoveTagResponseUnmarshaller
+    {
+        public static RemoveTagResponse Unmarshall(UnmarshallerContext context)
+        {
+			RemoveTagResponse removeTagResponse = new RemoveTagResponse();
 
-		private List<DeviceCheckInfo> deviceCheckInfos;
-
-		public List<DeviceCheckInfo> DeviceCheckInfos
-		{
-			get
-			{
-				return deviceCheckInfos;
-			}
-			set	
-			{
-				deviceCheckInfos = value;
-			}
-		}
-
-		public class DeviceCheckInfo{
-
-			private string deviceId;
-
-			private bool? available;
-
-			public string DeviceId
-			{
-				get
-				{
-					return deviceId;
-				}
-				set	
-				{
-					deviceId = value;
-				}
-			}
-
-			public bool? Available
-			{
-				get
-				{
-					return available;
-				}
-				set	
-				{
-					available = value;
-				}
-			}
-		}
-	}
+			removeTagResponse.HttpResponse = context.HttpResponse;
+			removeTagResponse.RequestId = context.StringValue("RemoveTag.RequestId");
+        
+			return removeTagResponse;
+        }
+    }
 }

@@ -17,56 +17,55 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Push.Transform;
+using Aliyun.Acs.Push.Transform.V20160801;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-	public class CheckDevicesResponse : AcsResponse
-	{
+    public class RemoveTagRequest : RpcAcsRequest<RemoveTagResponse>
+    {
+        public RemoveTagRequest()
+            : base("Push", "2016-08-01", "RemoveTag")
+        {
+        }
 
-		private List<DeviceCheckInfo> deviceCheckInfos;
+		private long? appKey;
 
-		public List<DeviceCheckInfo> DeviceCheckInfos
+		private string tagName;
+
+		public long? AppKey
 		{
 			get
 			{
-				return deviceCheckInfos;
+				return appKey;
 			}
 			set	
 			{
-				deviceCheckInfos = value;
+				appKey = value;
+				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
 			}
 		}
 
-		public class DeviceCheckInfo{
-
-			private string deviceId;
-
-			private bool? available;
-
-			public string DeviceId
+		public string TagName
+		{
+			get
 			{
-				get
-				{
-					return deviceId;
-				}
-				set	
-				{
-					deviceId = value;
-				}
+				return tagName;
 			}
-
-			public bool? Available
+			set	
 			{
-				get
-				{
-					return available;
-				}
-				set	
-				{
-					available = value;
-				}
+				tagName = value;
+				DictionaryUtil.Add(QueryParameters, "TagName", value);
 			}
 		}
-	}
+
+        public override RemoveTagResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        {
+            return RemoveTagResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12f7664e-5e47-4d11-891f-635836487c57}</ProjectGuid>
+    <ProjectGuid>{432cb559-4e09-4277-be81-dce6880516ba}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -46,7 +46,7 @@
 	<Compile Include="Push\Model\V20160801\QueryPushStatResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryUniqueDeviceStatResponse.cs" />
 	<Compile Include="Push\Model\V20160801\ListTinyAppsResponse.cs" />
-	<Compile Include="Push\Model\V20160801\DeleteTagRequest.cs" />
+	<Compile Include="Push\Model\V20160801\RemoveTagRequest.cs" />
 	<Compile Include="Push\Model\V20160801\CheckDeviceRequest.cs" />
 	<Compile Include="Push\Model\V20160801\BindAliasRequest.cs" />
 	<Compile Include="Push\Model\V20160801\QueryPushStatByAppRequest.cs" />
@@ -93,7 +93,7 @@
 	<Compile Include="Push\Model\V20160801\QueryPushStatByAppResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryDeviceStatResponse.cs" />
 	<Compile Include="Push\Model\V20160801\ListTinyAppsRequest.cs" />
-	<Compile Include="Push\Model\V20160801\DeleteTagResponse.cs" />
+	<Compile Include="Push\Model\V20160801\RemoveTagResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryAliasesRequest.cs" />
 	<Compile Include="Push\Model\V20160801\CancelPushResponse.cs" />
 	<Compile Include="Push\Model\V20160801\ListTagsRequest.cs" />
@@ -123,7 +123,7 @@
 	<Compile Include="Push\Transform\V20160801\QueryDeviceStatResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\ListPushRecordsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\QueryUniqueDeviceStatResponseUnmarshaller.cs" />
-	<Compile Include="Push\Transform\V20160801\DeleteTagResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\RemoveTagResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\ClearAliasResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\ListTagsResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />

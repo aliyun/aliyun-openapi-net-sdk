@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string body;
 
+		private string jobKey;
+
 		private string pushTime;
 
 		private string expireTime;
@@ -68,6 +70,12 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string androidXiaoMiNotifyTitle;
 
 		private string androidXiaoMiNotifyBody;
+
+		private string androidPopupActivity;
+
+		private string androidPopupTitle;
+
+		private string androidPopupBody;
 
 		private string androidMusic;
 
@@ -185,6 +193,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				body = value;
 				DictionaryUtil.Add(QueryParameters, "Body", value);
+			}
+		}
+
+		public string JobKey
+		{
+			get
+			{
+				return jobKey;
+			}
+			set
+			{
+				jobKey = value;
+				DictionaryUtil.Add(QueryParameters, "JobKey", value);
 			}
 		}
 
@@ -328,6 +349,45 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidXiaoMiNotifyBody = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidXiaoMiNotifyBody", value);
+			}
+		}
+
+		public string AndroidPopupActivity
+		{
+			get
+			{
+				return androidPopupActivity;
+			}
+			set
+			{
+				androidPopupActivity = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidPopupActivity", value);
+			}
+		}
+
+		public string AndroidPopupTitle
+		{
+			get
+			{
+				return androidPopupTitle;
+			}
+			set
+			{
+				androidPopupTitle = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidPopupTitle", value);
+			}
+		}
+
+		public string AndroidPopupBody
+		{
+			get
+			{
+				return androidPopupBody;
+			}
+			set
+			{
+				androidPopupBody = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidPopupBody", value);
 			}
 		}
 
