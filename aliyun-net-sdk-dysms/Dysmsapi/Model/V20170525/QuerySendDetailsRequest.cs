@@ -24,29 +24,29 @@ using Aliyun.Acs.Dysmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 {
-    public class SendSmsRequest : RpcAcsRequest<SendSmsResponse>
+    public class QuerySendDetailsRequest : RpcAcsRequest<QuerySendDetailsResponse>
     {
-        public SendSmsRequest()
-            : base("Dysmsapi", "2017-05-25", "SendSms")
+        public QuerySendDetailsRequest()
+            : base("Dysmsapi", "2017-05-25", "QuerySendDetails")
         {
             base.Method = new MethodType?(MethodType.POST);
         }
 
-
-        public override SendSmsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QuerySendDetailsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SendSmsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QuerySendDetailsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
+
 
         private long? ownerId;
         private string resourceOwnerAccount;
         private long? resourceOwnerId;
 
-        private string phoneNumbers;
-        private string signName;
-        private string templateCode;
-        private string templateParam;
-        private string outId;
+        private string phoneNumber;
+        private string bizId;
+        private string sendDate;
+        private long? pageSize;
+        private long? currentPage;
 
         public long? OwnerId
         {
@@ -87,69 +87,70 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
             }
         }
 
-        public string PhoneNumbers
+        public string PhoneNumber
         {
             get
             {
-                return phoneNumbers;
+                return phoneNumber;
             }
             set
             {
-                phoneNumbers = value;
-                DictionaryUtil.Add(QueryParameters, "PhoneNumbers", value);
+                phoneNumber = value;
+                DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
             }
         }
 
-        public string SignName
+        public string BizId
         {
             get
             {
-                return signName;
+                return bizId;
             }
             set
             {
-                signName = value;
-                DictionaryUtil.Add(QueryParameters, "SignName", value);
+                bizId = value;
+                DictionaryUtil.Add(QueryParameters, "BizId", value);
             }
         }
 
-        public string TemplateCode
+        public string SendDate
         {
             get
             {
-                return templateCode;
+                return sendDate;
             }
             set
             {
-                templateCode = value;
-                DictionaryUtil.Add(QueryParameters, "TemplateCode", value);
+                sendDate = value;
+                DictionaryUtil.Add(QueryParameters, "SendDate", value);
             }
         }
 
-        public string TemplateParam
+        public long? PageSize
         {
             get
             {
-                return templateParam;
+                return pageSize;
             }
             set
             {
-                templateParam = value;
-                DictionaryUtil.Add(QueryParameters, "TemplateParam", value);
+                pageSize = value;
+                DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
             }
         }
 
-        public string OutId
+        public long? CurrentPage
         {
             get
             {
-                return outId;
+                return currentPage;
             }
             set
             {
-                outId = value;
-                DictionaryUtil.Add(QueryParameters, "OutId", value);
+                currentPage = value;
+                DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
             }
         }
+
     }
 }
