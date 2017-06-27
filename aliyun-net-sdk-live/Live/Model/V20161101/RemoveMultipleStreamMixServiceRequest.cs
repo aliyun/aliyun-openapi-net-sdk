@@ -20,84 +20,58 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class RemoveMultipleStreamMixServiceRequest : RpcAcsRequest<RemoveMultipleStreamMixServiceResponse>
     {
         public RemoveMultipleStreamMixServiceRequest()
-            : base("Live", "2016-11-01", "RemoveMultipleStreamMixService")
+            : base("live", "2016-11-01", "RemoveMultipleStreamMixService")
         {
         }
 
-		private string securityToken;
-
-		private long? ownerId;
-
-		private string domainName;
-
-		private string appName;
-
-		private string streamName;
-
 		private string mixDomainName;
-
-		private string mixAppName;
 
 		private string mixStreamName;
 
-		public string SecurityToken
+		private string streamName;
+
+		private long? ownerId;
+
+		private string securityToken;
+
+		private string domainName;
+
+		private string mixAppName;
+
+		private string appName;
+
+		public string MixDomainName
 		{
 			get
 			{
-				return securityToken;
+				return mixDomainName;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				mixDomainName = value;
+				DictionaryUtil.Add(QueryParameters, "MixDomainName", value);
 			}
 		}
 
-		public long? OwnerId
+		public string MixStreamName
 		{
 			get
 			{
-				return ownerId;
+				return mixStreamName;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				mixStreamName = value;
+				DictionaryUtil.Add(QueryParameters, "MixStreamName", value);
 			}
 		}
 
@@ -114,16 +88,42 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string MixDomainName
+		public long? OwnerId
 		{
 			get
 			{
-				return mixDomainName;
+				return ownerId;
 			}
 			set	
 			{
-				mixDomainName = value;
-				DictionaryUtil.Add(QueryParameters, "MixDomainName", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -140,16 +140,16 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string MixStreamName
+		public string AppName
 		{
 			get
 			{
-				return mixStreamName;
+				return appName;
 			}
 			set	
 			{
-				mixStreamName = value;
-				DictionaryUtil.Add(QueryParameters, "MixStreamName", value);
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 

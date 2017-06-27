@@ -20,39 +20,39 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class StopMultipleStreamMixServiceRequest : RpcAcsRequest<StopMultipleStreamMixServiceResponse>
     {
         public StopMultipleStreamMixServiceRequest()
-            : base("Live", "2016-11-01", "StopMultipleStreamMixService")
+            : base("live", "2016-11-01", "StopMultipleStreamMixService")
         {
         }
 
-		private string securityToken;
+		private string streamName;
 
 		private long? ownerId;
+
+		private string securityToken;
 
 		private string domainName;
 
 		private string appName;
 
-		private string streamName;
-
-		public string SecurityToken
+		public string StreamName
 		{
 			get
 			{
-				return securityToken;
+				return streamName;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 
@@ -66,6 +66,19 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -92,19 +105,6 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 

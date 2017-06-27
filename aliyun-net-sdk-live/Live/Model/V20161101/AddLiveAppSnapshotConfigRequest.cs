@@ -20,127 +20,36 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class AddLiveAppSnapshotConfigRequest : RpcAcsRequest<AddLiveAppSnapshotConfigResponse>
     {
         public AddLiveAppSnapshotConfigRequest()
-            : base("Live", "2016-11-01", "AddLiveAppSnapshotConfig")
+            : base("live", "2016-11-01", "AddLiveAppSnapshotConfig")
         {
         }
-
-		private string securityToken;
-
-		private long? ownerId;
-
-		private string domainName;
-
-		private string appName;
-
-		private int? timeInterval;
-
-		private string ossEndpoint;
-
-		private string ossBucket;
 
 		private string overwriteOssObject;
 
 		private string sequenceOssObject;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private long? ownerId;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string securityToken;
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+		private string domainName;
 
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
+		private string ossEndpoint;
 
-		public int? TimeInterval
-		{
-			get
-			{
-				return timeInterval;
-			}
-			set	
-			{
-				timeInterval = value;
-				DictionaryUtil.Add(QueryParameters, "TimeInterval", value.ToString());
-			}
-		}
+		private string appName;
 
-		public string OssEndpoint
-		{
-			get
-			{
-				return ossEndpoint;
-			}
-			set	
-			{
-				ossEndpoint = value;
-				DictionaryUtil.Add(QueryParameters, "OssEndpoint", value);
-			}
-		}
+		private string ossBucket;
 
-		public string OssBucket
-		{
-			get
-			{
-				return ossBucket;
-			}
-			set	
-			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
-			}
-		}
+		private int? timeInterval;
 
 		public string OverwriteOssObject
 		{
@@ -165,6 +74,97 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			{
 				sequenceOssObject = value;
 				DictionaryUtil.Add(QueryParameters, "SequenceOssObject", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string OssEndpoint
+		{
+			get
+			{
+				return ossEndpoint;
+			}
+			set	
+			{
+				ossEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "OssEndpoint", value);
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string OssBucket
+		{
+			get
+			{
+				return ossBucket;
+			}
+			set	
+			{
+				ossBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+			}
+		}
+
+		public int? TimeInterval
+		{
+			get
+			{
+				return timeInterval;
+			}
+			set	
+			{
+				timeInterval = value;
+				DictionaryUtil.Add(QueryParameters, "TimeInterval", value.ToString());
 			}
 		}
 

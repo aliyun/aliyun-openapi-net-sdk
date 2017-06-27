@@ -19,7 +19,7 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveStreamOnlineUserNumResponse : AcsResponse
 	{
@@ -52,7 +52,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class LiveStreamOnlineUserNumInfo{
+		public class LiveStreamOnlineUserNumInfo
+		{
 
 			private string streamUrl;
 

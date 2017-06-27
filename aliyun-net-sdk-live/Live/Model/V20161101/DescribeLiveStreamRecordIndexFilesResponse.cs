@@ -19,7 +19,7 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveStreamRecordIndexFilesResponse : AcsResponse
 	{
@@ -108,7 +108,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class RecordIndexInfo{
+		public class RecordIndexInfo
+		{
 
 			private string recordId;
 

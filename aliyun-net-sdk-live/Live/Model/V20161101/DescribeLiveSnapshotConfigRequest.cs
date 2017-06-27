@@ -20,22 +20,26 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class DescribeLiveSnapshotConfigRequest : RpcAcsRequest<DescribeLiveSnapshotConfigResponse>
     {
         public DescribeLiveSnapshotConfigRequest()
-            : base("Live", "2016-11-01", "DescribeLiveSnapshotConfig")
+            : base("live", "2016-11-01", "DescribeLiveSnapshotConfig")
         {
         }
 
-		private string securityToken;
+		private int? pageSize;
 
 		private long? ownerId;
+
+		private string securityToken;
+
+		private string order;
 
 		private string domainName;
 
@@ -43,9 +47,31 @@ namespace Aliyun.Acs.Live.Model.V20161101
 
 		private int? pageNum;
 
-		private int? pageSize;
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
 
-		private string order;
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
 
 		public string SecurityToken
 		{
@@ -60,16 +86,16 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public long? OwnerId
+		public string Order
 		{
 			get
 			{
-				return ownerId;
+				return order;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				order = value;
+				DictionaryUtil.Add(QueryParameters, "Order", value);
 			}
 		}
 
@@ -109,32 +135,6 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Order
-		{
-			get
-			{
-				return order;
-			}
-			set	
-			{
-				order = value;
-				DictionaryUtil.Add(QueryParameters, "Order", value);
 			}
 		}
 

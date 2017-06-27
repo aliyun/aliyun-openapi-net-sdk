@@ -19,7 +19,7 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveStreamTranscodeInfoResponse : AcsResponse
 	{
@@ -38,7 +38,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class DomainTranscodeInfo{
+		public class DomainTranscodeInfo
+		{
 
 			private string transcodeApp;
 

@@ -20,125 +20,47 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class DescribeLiveStreamsPublishListRequest : RpcAcsRequest<DescribeLiveStreamsPublishListResponse>
     {
         public DescribeLiveStreamsPublishListRequest()
-            : base("Live", "2016-11-01", "DescribeLiveStreamsPublishList")
+            : base("live", "2016-11-01", "DescribeLiveStreamsPublishList")
         {
         }
 
-		private string securityToken;
-
-		private long? ownerId;
-
-		private string domainName;
-
-		private string appName;
-
-		private string streamName;
-
-		private string startTime;
-
-		private string endTime;
+		private long? pageNumber;
 
 		private long? pageSize;
 
-		private long? pageNumber;
+		private string streamName;
 
-		public string SecurityToken
+		private long? ownerId;
+
+		private string securityToken;
+
+		private string domainName;
+
+		private string endTime;
+
+		private string appName;
+
+		private string startTime;
+
+		public long? PageNumber
 		{
 			get
 			{
-				return securityToken;
+				return pageNumber;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -155,16 +77,94 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public long? PageNumber
+		public string StreamName
 		{
 			get
 			{
-				return pageNumber;
+				return streamName;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 

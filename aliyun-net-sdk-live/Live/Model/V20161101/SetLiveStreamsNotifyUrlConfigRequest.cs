@@ -20,37 +20,37 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class SetLiveStreamsNotifyUrlConfigRequest : RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse>
     {
         public SetLiveStreamsNotifyUrlConfigRequest()
-            : base("Live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig")
+            : base("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig")
         {
         }
 
-		private string securityToken;
+		private string notifyUrl;
 
 		private long? ownerId;
 
+		private string securityToken;
+
 		private string domainName;
 
-		private string notifyUrl;
-
-		public string SecurityToken
+		public string NotifyUrl
 		{
 			get
 			{
-				return securityToken;
+				return notifyUrl;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				notifyUrl = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyUrl", value);
 			}
 		}
 
@@ -67,6 +67,19 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
 		public string DomainName
 		{
 			get
@@ -77,19 +90,6 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string NotifyUrl
-		{
-			get
-			{
-				return notifyUrl;
-			}
-			set	
-			{
-				notifyUrl = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyUrl", value);
 			}
 		}
 

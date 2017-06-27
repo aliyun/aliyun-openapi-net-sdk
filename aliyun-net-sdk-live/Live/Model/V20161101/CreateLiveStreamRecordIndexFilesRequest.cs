@@ -20,88 +20,49 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class CreateLiveStreamRecordIndexFilesRequest : RpcAcsRequest<CreateLiveStreamRecordIndexFilesResponse>
     {
         public CreateLiveStreamRecordIndexFilesRequest()
-            : base("Live", "2016-11-01", "CreateLiveStreamRecordIndexFiles")
+            : base("live", "2016-11-01", "CreateLiveStreamRecordIndexFiles")
         {
         }
 
-		private string securityToken;
-
-		private long? ownerId;
-
-		private string domainName;
-
-		private string appName;
+		private string ossObject;
 
 		private string streamName;
 
-		private string ossEndpoint;
+		private long? ownerId;
 
-		private string ossBucket;
+		private string securityToken;
 
-		private string ossObject;
-
-		private string startTime;
+		private string domainName;
 
 		private string endTime;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string ossEndpoint;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string appName;
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+		private string startTime;
 
-		public string AppName
+		private string ossBucket;
+
+		public string OssObject
 		{
 			get
 			{
-				return appName;
+				return ossObject;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				ossObject = value;
+				DictionaryUtil.Add(QueryParameters, "OssObject", value);
 			}
 		}
 
@@ -118,6 +79,58 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
 		public string OssEndpoint
 		{
 			get
@@ -131,29 +144,16 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string OssBucket
+		public string AppName
 		{
 			get
 			{
-				return ossBucket;
+				return appName;
 			}
 			set	
 			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
-			}
-		}
-
-		public string OssObject
-		{
-			get
-			{
-				return ossObject;
-			}
-			set	
-			{
-				ossObject = value;
-				DictionaryUtil.Add(QueryParameters, "OssObject", value);
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -170,16 +170,16 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string EndTime
+		public string OssBucket
 		{
 			get
 			{
-				return endTime;
+				return ossBucket;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				ossBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
 			}
 		}
 

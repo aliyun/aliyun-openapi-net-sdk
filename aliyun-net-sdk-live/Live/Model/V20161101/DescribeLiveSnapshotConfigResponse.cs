@@ -19,7 +19,7 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveSnapshotConfigResponse : AcsResponse
 	{
@@ -108,7 +108,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class LiveStreamSnapshotConfig{
+		public class LiveStreamSnapshotConfig
+		{
 
 			private string domainName;
 

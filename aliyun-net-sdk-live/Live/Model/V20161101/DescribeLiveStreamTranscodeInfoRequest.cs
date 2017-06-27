@@ -20,35 +20,35 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class DescribeLiveStreamTranscodeInfoRequest : RpcAcsRequest<DescribeLiveStreamTranscodeInfoResponse>
     {
         public DescribeLiveStreamTranscodeInfoRequest()
-            : base("Live", "2016-11-01", "DescribeLiveStreamTranscodeInfo")
+            : base("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo")
         {
         }
 
-		private string securityToken;
+		private string domainTranscodeName;
 
 		private long? ownerId;
 
-		private string domainTranscodeName;
+		private string securityToken;
 
-		public string SecurityToken
+		public string DomainTranscodeName
 		{
 			get
 			{
-				return securityToken;
+				return domainTranscodeName;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				domainTranscodeName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainTranscodeName", value);
 			}
 		}
 
@@ -65,16 +65,16 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string DomainTranscodeName
+		public string SecurityToken
 		{
 			get
 			{
-				return domainTranscodeName;
+				return securityToken;
 			}
 			set	
 			{
-				domainTranscodeName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainTranscodeName", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

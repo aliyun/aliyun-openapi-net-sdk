@@ -19,7 +19,7 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveRecordConfigResponse : AcsResponse
 	{
@@ -108,7 +108,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class LiveAppRecord{
+		public class LiveAppRecord
+		{
 
 			private string domainName;
 
@@ -194,7 +195,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 				}
 			}
 
-			public class RecordFormat{
+			public class RecordFormat
+			{
 
 				private string format;
 
