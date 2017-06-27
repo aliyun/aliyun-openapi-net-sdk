@@ -23,5 +23,19 @@ namespace Aliyun.Acs.Dm.Model.V20151123
 {
 	public class BatchSendMailResponse : AcsResponse
 	{
+
+		private string envId;
+
+		public string EnvId
+		{
+			get
+			{
+				return envId;
+			}
+			set	
+			{
+				envId = value;
+			}
+		}
 	}
 }
