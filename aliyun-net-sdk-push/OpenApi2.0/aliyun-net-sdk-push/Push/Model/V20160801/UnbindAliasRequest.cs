@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string deviceId;
 
+		private bool? unbindAll;
+
 		public long? AppKey
 		{
 			get
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public bool? UnbindAll
+		{
+			get
+			{
+				return unbindAll;
+			}
+			set
+			{
+				unbindAll = value;
+				DictionaryUtil.Add(QueryParameters, "UnbindAll", value.ToString());
+			}
+		}
         public override UnbindAliasResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
             return UnbindAliasResponseUnmarshaller.Unmarshall(unmarshallerContext);
