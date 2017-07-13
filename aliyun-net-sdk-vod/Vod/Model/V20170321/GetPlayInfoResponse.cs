@@ -21,14 +21,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class GetVideoPlayInfoResponse : AcsResponse
+	public class GetPlayInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private GetVideoPlayInfo_PlayInfo playInfo;
+		private List<GetPlayInfo_PlayInfo> playInfoList;
 
-		private GetVideoPlayInfo_VideoInfo videoInfo;
+		private GetPlayInfo_VideoBase videoBase;
 
 		public string RequestId
 		{
@@ -42,132 +42,190 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public GetVideoPlayInfo_PlayInfo PlayInfo
+		public List<GetPlayInfo_PlayInfo> PlayInfoList
 		{
 			get
 			{
-				return playInfo;
+				return playInfoList;
 			}
 			set	
 			{
-				playInfo = value;
+				playInfoList = value;
 			}
 		}
 
-		public GetVideoPlayInfo_VideoInfo VideoInfo
+		public GetPlayInfo_VideoBase VideoBase
 		{
 			get
 			{
-				return videoInfo;
+				return videoBase;
 			}
 			set	
 			{
-				videoInfo = value;
+				videoBase = value;
 			}
 		}
 
-		public class GetVideoPlayInfo_PlayInfo
+		public class GetPlayInfo_PlayInfo
 		{
 
-			private string accessKeyId;
+			private long? width;
 
-			private string accessKeySecret;
+			private long? height;
 
-			private string authInfo;
+			private long? size;
 
-			private string securityToken;
+			private string playURL;
 
-			private string region;
+			private string bitrate;
 
-			private string playDomain;
+			private string definition;
 
-			public string AccessKeyId
+			private string duration;
+
+			private string format;
+
+			private string fps;
+
+			private long? encrypt;
+
+			public long? Width
 			{
 				get
 				{
-					return accessKeyId;
+					return width;
 				}
 				set	
 				{
-					accessKeyId = value;
+					width = value;
 				}
 			}
 
-			public string AccessKeySecret
+			public long? Height
 			{
 				get
 				{
-					return accessKeySecret;
+					return height;
 				}
 				set	
 				{
-					accessKeySecret = value;
+					height = value;
 				}
 			}
 
-			public string AuthInfo
+			public long? Size
 			{
 				get
 				{
-					return authInfo;
+					return size;
 				}
 				set	
 				{
-					authInfo = value;
+					size = value;
 				}
 			}
 
-			public string SecurityToken
+			public string PlayURL
 			{
 				get
 				{
-					return securityToken;
+					return playURL;
 				}
 				set	
 				{
-					securityToken = value;
+					playURL = value;
 				}
 			}
 
-			public string Region
+			public string Bitrate
 			{
 				get
 				{
-					return region;
+					return bitrate;
 				}
 				set	
 				{
-					region = value;
+					bitrate = value;
 				}
 			}
 
-			public string PlayDomain
+			public string Definition
 			{
 				get
 				{
-					return playDomain;
+					return definition;
 				}
 				set	
 				{
-					playDomain = value;
+					definition = value;
+				}
+			}
+
+			public string Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			public string Format
+			{
+				get
+				{
+					return format;
+				}
+				set	
+				{
+					format = value;
+				}
+			}
+
+			public string Fps
+			{
+				get
+				{
+					return fps;
+				}
+				set	
+				{
+					fps = value;
+				}
+			}
+
+			public long? Encrypt
+			{
+				get
+				{
+					return encrypt;
+				}
+				set	
+				{
+					encrypt = value;
 				}
 			}
 		}
 
-		public class GetVideoPlayInfo_VideoInfo
+		public class GetPlayInfo_VideoBase
 		{
 
 			private string coverURL;
 
-			private long? customerId;
-
-			private float? duration;
+			private string duration;
 
 			private string status;
 
 			private string title;
 
 			private string videoId;
+
+			private string mediaType;
+
+			private string creationTime;
 
 			public string CoverURL
 			{
@@ -181,19 +239,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public long? CustomerId
-			{
-				get
-				{
-					return customerId;
-				}
-				set	
-				{
-					customerId = value;
-				}
-			}
-
-			public float? Duration
+			public string Duration
 			{
 				get
 				{
@@ -238,6 +284,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					videoId = value;
+				}
+			}
+
+			public string MediaType
+			{
+				get
+				{
+					return mediaType;
+				}
+				set	
+				{
+					mediaType = value;
+				}
+			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
 				}
 			}
 		}

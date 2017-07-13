@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vod.Model.V20170321;
+using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Transform.V20170321
+namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetVideoPlayAuthResponseUnmarshaller
     {
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Vod.Transform.V20170321
 			getVideoPlayAuthResponse.RequestId = context.StringValue("GetVideoPlayAuth.RequestId");
 			getVideoPlayAuthResponse.PlayAuth = context.StringValue("GetVideoPlayAuth.PlayAuth");
 
-			GetVideoPlayAuthResponse.VideoMeta_ videoMeta = new GetVideoPlayAuthResponse.VideoMeta_();
+			GetVideoPlayAuthResponse.GetVideoPlayAuth_VideoMeta videoMeta = new GetVideoPlayAuthResponse.GetVideoPlayAuth_VideoMeta();
 			videoMeta.CoverURL = context.StringValue("GetVideoPlayAuth.VideoMeta.CoverURL");
 			videoMeta.Duration = context.FloatValue("GetVideoPlayAuth.VideoMeta.Duration");
 			videoMeta.Status = context.StringValue("GetVideoPlayAuth.VideoMeta.Status");

@@ -23,17 +23,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
-    public class RefreshUploadVideoResponseUnmarshaller
+    public class DeleteCategoryResponseUnmarshaller
     {
-        public static RefreshUploadVideoResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteCategoryResponse Unmarshall(UnmarshallerContext context)
         {
-			RefreshUploadVideoResponse refreshUploadVideoResponse = new RefreshUploadVideoResponse();
+			DeleteCategoryResponse deleteCategoryResponse = new DeleteCategoryResponse();
 
-			refreshUploadVideoResponse.HttpResponse = context.HttpResponse;
-			refreshUploadVideoResponse.RequestId = context.StringValue("RefreshUploadVideo.RequestId");
-			refreshUploadVideoResponse.UploadAuth = context.StringValue("RefreshUploadVideo.UploadAuth");
+			deleteCategoryResponse.HttpResponse = context.HttpResponse;
+			deleteCategoryResponse.RequestId = context.StringValue("DeleteCategory.RequestId");
         
-			return refreshUploadVideoResponse;
+			return deleteCategoryResponse;
         }
     }
 }

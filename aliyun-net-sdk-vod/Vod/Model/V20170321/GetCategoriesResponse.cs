@@ -21,14 +21,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class GetOSSStatisResponse : AcsResponse
+	public class GetCategoriesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private long? maxStorageUtilization;
+		private long? subTotal;
 
-		private List<GetOSSStatis_OSSMetric> ossStatisList;
+		private List<GetCategories_Category> subCategories;
+
+		private GetCategories_Category category;
 
 		public string RequestId
 		{
@@ -42,60 +44,101 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? MaxStorageUtilization
+		public long? SubTotal
 		{
 			get
 			{
-				return maxStorageUtilization;
+				return subTotal;
 			}
 			set	
 			{
-				maxStorageUtilization = value;
+				subTotal = value;
 			}
 		}
 
-		public List<GetOSSStatis_OSSMetric> OssStatisList
+		public List<GetCategories_Category> SubCategories
 		{
 			get
 			{
-				return ossStatisList;
+				return subCategories;
 			}
 			set	
 			{
-				ossStatisList = value;
+				subCategories = value;
 			}
 		}
 
-		public class GetOSSStatis_OSSMetric
+		public GetCategories_Category Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+			}
+		}
+
+		public class GetCategories_Category
 		{
 
-			private string statTime;
+			private long? cateId;
 
-			private long? storageUtilization;
+			private string cateName;
 
-			public string StatTime
+			private long? level;
+
+			private long? parentId;
+
+			public long? CateId
 			{
 				get
 				{
-					return statTime;
+					return cateId;
 				}
 				set	
 				{
-					statTime = value;
+					cateId = value;
 				}
 			}
 
-			public long? StorageUtilization
+			public string CateName
 			{
 				get
 				{
-					return storageUtilization;
+					return cateName;
 				}
 				set	
 				{
-					storageUtilization = value;
+					cateName = value;
+				}
+			}
+
+			public long? Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
+				}
+			}
+
+			public long? ParentId
+			{
+				get
+				{
+					return parentId;
+				}
+				set	
+				{
+					parentId = value;
 				}
 			}
 		}
+
 	}
 }

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class GetMessageCallbackResponse : AcsResponse
 	{
 
-		private MessageCallback_ messageCallback;
+		private string requestId;
 
-		public MessageCallback_ MessageCallback
+		private GetMessageCallback_MessageCallback messageCallback;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public GetMessageCallback_MessageCallback MessageCallback
 		{
 			get
 			{
@@ -38,11 +52,14 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public class MessageCallback_{
+		public class GetMessageCallback_MessageCallback
+		{
 
 			private string callbackSwitch;
 
 			private string callbackURL;
+
+			private string eventTypeList;
 
 			public string CallbackSwitch
 			{
@@ -65,6 +82,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					callbackURL = value;
+				}
+			}
+
+			public string EventTypeList
+			{
+				get
+				{
+					return eventTypeList;
+				}
+				set	
+				{
+					eventTypeList = value;
 				}
 			}
 		}

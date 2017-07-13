@@ -26,22 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetOSSStatisRequest : RpcAcsRequest<GetOSSStatisResponse>
+    public class DeleteCategoryRequest : RpcAcsRequest<DeleteCategoryResponse>
     {
-        public GetOSSStatisRequest()
-            : base("vod", "2017-03-21", "GetOSSStatis")
+        public DeleteCategoryRequest()
+            : base("vod", "2017-03-21", "DeleteCategory")
         {
         }
 
-		private string level;
+		private long? cateId;
 
 		private string accessKeyId;
 
 		private string resourceOwnerAccount;
-
-		private string endStatisTime;
-
-		private string startStatisTime;
 
 		private string action;
 
@@ -51,16 +47,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string ownerId;
 
-		public string Level
+		public long? CateId
 		{
 			get
 			{
-				return level;
+				return cateId;
 			}
 			set	
 			{
-				level = value;
-				DictionaryUtil.Add(QueryParameters, "Level", value);
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
 			}
 		}
 
@@ -87,32 +83,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string EndStatisTime
-		{
-			get
-			{
-				return endStatisTime;
-			}
-			set	
-			{
-				endStatisTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndStatisTime", value);
-			}
-		}
-
-		public string StartStatisTime
-		{
-			get
-			{
-				return startStatisTime;
-			}
-			set	
-			{
-				startStatisTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartStatisTime", value);
 			}
 		}
 
@@ -168,9 +138,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override GetOSSStatisResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteCategoryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetOSSStatisResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteCategoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

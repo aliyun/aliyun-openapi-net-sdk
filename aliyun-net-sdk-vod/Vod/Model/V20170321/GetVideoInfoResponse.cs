@@ -24,9 +24,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class GetVideoInfoResponse : AcsResponse
 	{
 
-		private Video_ video;
+		private string requestId;
 
-		public Video_ Video
+		private GetVideoInfo_Video video;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public GetVideoInfo_Video Video
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public class Video_{
+		public class GetVideoInfo_Video
+		{
 
 			private string videoId;
 
@@ -55,6 +70,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			private string description;
 
 			private string createTime;
+
+			private string creationTime;
 
 			private string modifyTime;
 
@@ -159,6 +176,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
 				}
 			}
 

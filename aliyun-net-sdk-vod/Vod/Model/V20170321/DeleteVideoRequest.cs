@@ -20,11 +20,11 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vod.Transform;
-using Aliyun.Acs.Vod.Transform.V20170321;
+using Aliyun.Acs.vod.Transform;
+using Aliyun.Acs.vod.Transform.V20170321;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Model.V20170321
+namespace Aliyun.Acs.vod.Model.V20170321
 {
     public class DeleteVideoRequest : RpcAcsRequest<DeleteVideoResponse>
     {
@@ -33,24 +33,28 @@ namespace Aliyun.Acs.Vod.Model.V20170321
         {
         }
 
-		private long? ownerId;
+		private string accessKeyId;
 
 		private string resourceOwnerAccount;
+
+		private string action;
 
 		private long? resourceOwnerId;
 
 		private string videoIds;
 
-		public long? OwnerId
+		private long? ownerId;
+
+		public string AccessKeyId
 		{
 			get
 			{
-				return ownerId;
+				return accessKeyId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -64,6 +68,19 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -90,6 +107,19 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				videoIds = value;
 				DictionaryUtil.Add(QueryParameters, "VideoIds", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

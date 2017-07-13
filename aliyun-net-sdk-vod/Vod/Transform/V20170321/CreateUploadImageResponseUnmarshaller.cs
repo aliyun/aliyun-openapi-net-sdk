@@ -23,17 +23,19 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
-    public class RefreshUploadVideoResponseUnmarshaller
+    public class CreateUploadImageResponseUnmarshaller
     {
-        public static RefreshUploadVideoResponse Unmarshall(UnmarshallerContext context)
+        public static CreateUploadImageResponse Unmarshall(UnmarshallerContext context)
         {
-			RefreshUploadVideoResponse refreshUploadVideoResponse = new RefreshUploadVideoResponse();
+			CreateUploadImageResponse createUploadImageResponse = new CreateUploadImageResponse();
 
-			refreshUploadVideoResponse.HttpResponse = context.HttpResponse;
-			refreshUploadVideoResponse.RequestId = context.StringValue("RefreshUploadVideo.RequestId");
-			refreshUploadVideoResponse.UploadAuth = context.StringValue("RefreshUploadVideo.UploadAuth");
+			createUploadImageResponse.HttpResponse = context.HttpResponse;
+			createUploadImageResponse.RequestId = context.StringValue("CreateUploadImage.RequestId");
+			createUploadImageResponse.UploadAddress = context.StringValue("CreateUploadImage.UploadAddress");
+			createUploadImageResponse.UploadAuth = context.StringValue("CreateUploadImage.UploadAuth");
+			createUploadImageResponse.ImageURL = context.StringValue("CreateUploadImage.ImageURL");
         
-			return refreshUploadVideoResponse;
+			return createUploadImageResponse;
         }
     }
 }

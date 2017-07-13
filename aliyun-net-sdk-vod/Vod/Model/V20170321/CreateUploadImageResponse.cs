@@ -16,24 +16,68 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.vod.Model.V20170321;
-using System;
+using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.vod.Transform.V20170321
+namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class RefreshUploadVideoResponseUnmarshaller
-    {
-        public static RefreshUploadVideoResponse Unmarshall(UnmarshallerContext context)
-        {
-			RefreshUploadVideoResponse refreshUploadVideoResponse = new RefreshUploadVideoResponse();
+	public class CreateUploadImageResponse : AcsResponse
+	{
 
-			refreshUploadVideoResponse.HttpResponse = context.HttpResponse;
-			refreshUploadVideoResponse.RequestId = context.StringValue("RefreshUploadVideo.RequestId");
-			refreshUploadVideoResponse.UploadAuth = context.StringValue("RefreshUploadVideo.UploadAuth");
-        
-			return refreshUploadVideoResponse;
-        }
-    }
+		private string requestId;
+
+		private string uploadAddress;
+
+		private string uploadAuth;
+
+		private string imageURL;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string UploadAddress
+		{
+			get
+			{
+				return uploadAddress;
+			}
+			set	
+			{
+				uploadAddress = value;
+			}
+		}
+
+		public string UploadAuth
+		{
+			get
+			{
+				return uploadAuth;
+			}
+			set	
+			{
+				uploadAuth = value;
+			}
+		}
+
+		public string ImageURL
+		{
+			get
+			{
+				return imageURL;
+			}
+			set	
+			{
+				imageURL = value;
+			}
+		}
+	}
 }

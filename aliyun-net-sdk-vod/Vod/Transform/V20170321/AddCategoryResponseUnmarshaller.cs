@@ -23,17 +23,23 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
-    public class RefreshUploadVideoResponseUnmarshaller
+    public class AddCategoryResponseUnmarshaller
     {
-        public static RefreshUploadVideoResponse Unmarshall(UnmarshallerContext context)
+        public static AddCategoryResponse Unmarshall(UnmarshallerContext context)
         {
-			RefreshUploadVideoResponse refreshUploadVideoResponse = new RefreshUploadVideoResponse();
+			AddCategoryResponse addCategoryResponse = new AddCategoryResponse();
 
-			refreshUploadVideoResponse.HttpResponse = context.HttpResponse;
-			refreshUploadVideoResponse.RequestId = context.StringValue("RefreshUploadVideo.RequestId");
-			refreshUploadVideoResponse.UploadAuth = context.StringValue("RefreshUploadVideo.UploadAuth");
+			addCategoryResponse.HttpResponse = context.HttpResponse;
+			addCategoryResponse.RequestId = context.StringValue("AddCategory.RequestId");
+
+			AddCategoryResponse.AddCategory_Category category = new AddCategoryResponse.AddCategory_Category();
+			category.CateId = context.LongValue("AddCategory.Category.CateId");
+			category.CateName = context.StringValue("AddCategory.Category.CateName");
+			category.ParentId = context.LongValue("AddCategory.Category.ParentId");
+			category.Level = context.LongValue("AddCategory.Category.Level");
+			addCategoryResponse.Category = category;
         
-			return refreshUploadVideoResponse;
+			return addCategoryResponse;
         }
     }
 }

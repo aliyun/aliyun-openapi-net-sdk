@@ -23,5 +23,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 {
 	public class UpdateVideoInfoResponse : AcsResponse
 	{
+
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 	}
 }

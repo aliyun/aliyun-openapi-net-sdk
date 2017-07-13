@@ -26,22 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetOSSStatisRequest : RpcAcsRequest<GetOSSStatisResponse>
+    public class UpdateCategoryRequest : RpcAcsRequest<UpdateCategoryResponse>
     {
-        public GetOSSStatisRequest()
-            : base("vod", "2017-03-21", "GetOSSStatis")
+        public UpdateCategoryRequest()
+            : base("vod", "2017-03-21", "UpdateCategory")
         {
         }
 
-		private string level;
+		private long? cateId;
 
 		private string accessKeyId;
 
 		private string resourceOwnerAccount;
-
-		private string endStatisTime;
-
-		private string startStatisTime;
 
 		private string action;
 
@@ -51,16 +47,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string ownerId;
 
-		public string Level
+		private string cateName;
+
+		public long? CateId
 		{
 			get
 			{
-				return level;
+				return cateId;
 			}
 			set	
 			{
-				level = value;
-				DictionaryUtil.Add(QueryParameters, "Level", value);
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
 			}
 		}
 
@@ -87,32 +85,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string EndStatisTime
-		{
-			get
-			{
-				return endStatisTime;
-			}
-			set	
-			{
-				endStatisTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndStatisTime", value);
-			}
-		}
-
-		public string StartStatisTime
-		{
-			get
-			{
-				return startStatisTime;
-			}
-			set	
-			{
-				startStatisTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartStatisTime", value);
 			}
 		}
 
@@ -168,9 +140,22 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override GetOSSStatisResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string CateName
+		{
+			get
+			{
+				return cateName;
+			}
+			set	
+			{
+				cateName = value;
+				DictionaryUtil.Add(QueryParameters, "CateName", value);
+			}
+		}
+
+        public override UpdateCategoryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetOSSStatisResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateCategoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

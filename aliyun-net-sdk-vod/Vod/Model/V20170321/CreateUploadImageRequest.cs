@@ -26,24 +26,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetOSSStatisRequest : RpcAcsRequest<GetOSSStatisResponse>
+    public class CreateUploadImageRequest : RpcAcsRequest<CreateUploadImageResponse>
     {
-        public GetOSSStatisRequest()
-            : base("vod", "2017-03-21", "GetOSSStatis")
+        public CreateUploadImageRequest()
+            : base("vod", "2017-03-21", "CreateUploadImage")
         {
         }
-
-		private string level;
 
 		private string accessKeyId;
 
 		private string resourceOwnerAccount;
 
-		private string endStatisTime;
-
-		private string startStatisTime;
-
 		private string action;
+
+		private string imageType;
 
 		private string resourceOwnerId;
 
@@ -51,18 +47,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string ownerId;
 
-		public string Level
-		{
-			get
-			{
-				return level;
-			}
-			set	
-			{
-				level = value;
-				DictionaryUtil.Add(QueryParameters, "Level", value);
-			}
-		}
+		private string imageExt;
 
 		public string AccessKeyId
 		{
@@ -90,32 +75,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string EndStatisTime
-		{
-			get
-			{
-				return endStatisTime;
-			}
-			set	
-			{
-				endStatisTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndStatisTime", value);
-			}
-		}
-
-		public string StartStatisTime
-		{
-			get
-			{
-				return startStatisTime;
-			}
-			set	
-			{
-				startStatisTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartStatisTime", value);
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -126,6 +85,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string ImageType
+		{
+			get
+			{
+				return imageType;
+			}
+			set	
+			{
+				imageType = value;
+				DictionaryUtil.Add(QueryParameters, "ImageType", value);
 			}
 		}
 
@@ -168,9 +140,22 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override GetOSSStatisResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string ImageExt
+		{
+			get
+			{
+				return imageExt;
+			}
+			set	
+			{
+				imageExt = value;
+				DictionaryUtil.Add(QueryParameters, "ImageExt", value);
+			}
+		}
+
+        public override CreateUploadImageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetOSSStatisResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateUploadImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

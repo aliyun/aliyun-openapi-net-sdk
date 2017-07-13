@@ -24,11 +24,25 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class GetCDNStatisSumResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private long? sumFlowDataValue;
 
 		private long? maxBpsDataValue;
 
-		private List<CDNMetric> cDNStatisList;
+		private List<GetCDNStatisSum_CDNMetric> cDNStatisList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? SumFlowDataValue
 		{
@@ -54,7 +68,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public List<CDNMetric> CDNStatisList
+		public List<GetCDNStatisSum_CDNMetric> CDNStatisList
 		{
 			get
 			{
@@ -66,7 +80,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public class CDNMetric{
+		public class GetCDNStatisSum_CDNMetric
+		{
 
 			private string statTime;
 

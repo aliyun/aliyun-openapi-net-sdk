@@ -20,11 +20,11 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vod.Transform;
-using Aliyun.Acs.Vod.Transform.V20170321;
+using Aliyun.Acs.vod.Transform;
+using Aliyun.Acs.vod.Transform.V20170321;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Model.V20170321
+namespace Aliyun.Acs.vod.Model.V20170321
 {
     public class GetCDNStatisSumRequest : RpcAcsRequest<GetCDNStatisSumResponse>
     {
@@ -33,43 +33,47 @@ namespace Aliyun.Acs.Vod.Model.V20170321
         {
         }
 
-		private string ownerId;
+		private string level;
 
-		private string resourceOwnerId;
+		private string accessKeyId;
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
+		private string endStatisTime;
 
 		private string startStatisTime;
 
-		private string endStatisTime;
+		private string action;
 
-		private string level;
+		private string resourceOwnerId;
 
-		public string OwnerId
+		private string ownerAccount;
+
+		private string ownerId;
+
+		public string Level
 		{
 			get
 			{
-				return ownerId;
+				return level;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+				level = value;
+				DictionaryUtil.Add(QueryParameters, "Level", value);
 			}
 		}
 
-		public string ResourceOwnerId
+		public string AccessKeyId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return accessKeyId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -86,16 +90,16 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
-		public string OwnerAccount
+		public string EndStatisTime
 		{
 			get
 			{
-				return ownerAccount;
+				return endStatisTime;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				endStatisTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndStatisTime", value);
 			}
 		}
 
@@ -112,29 +116,55 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
-		public string EndStatisTime
+		public string Action
 		{
 			get
 			{
-				return endStatisTime;
+				return action;
 			}
 			set	
 			{
-				endStatisTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndStatisTime", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string Level
+		public string ResourceOwnerId
 		{
 			get
 			{
-				return level;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				level = value;
-				DictionaryUtil.Add(QueryParameters, "Level", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 

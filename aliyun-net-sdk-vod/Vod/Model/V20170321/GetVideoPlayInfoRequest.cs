@@ -20,11 +20,11 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vod.Transform;
-using Aliyun.Acs.Vod.Transform.V20170321;
+using Aliyun.Acs.vod.Transform;
+using Aliyun.Acs.vod.Transform.V20170321;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Model.V20170321
+namespace Aliyun.Acs.vod.Model.V20170321
 {
     public class GetVideoPlayInfoRequest : RpcAcsRequest<GetVideoPlayInfoResponse>
     {
@@ -33,88 +33,27 @@ namespace Aliyun.Acs.Vod.Model.V20170321
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
-		private long? resourceOwnerId;
-
-		private string channel;
-
-		private long? clientTS;
-
 		private string clientVersion;
-
-		private string playSign;
 
 		private string signVersion;
 
+		private string accessKeyId;
+
+		private string resourceOwnerAccount;
+
+		private long? clientTS;
+
+		private string action;
+
+		private long? resourceOwnerId;
+
+		private long? ownerId;
+
 		private string videoId;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string channel;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Channel
-		{
-			get
-			{
-				return channel;
-			}
-			set	
-			{
-				channel = value;
-				DictionaryUtil.Add(QueryParameters, "Channel", value);
-			}
-		}
-
-		public long? ClientTS
-		{
-			get
-			{
-				return clientTS;
-			}
-			set	
-			{
-				clientTS = value;
-				DictionaryUtil.Add(QueryParameters, "ClientTS", value.ToString());
-			}
-		}
+		private string playSign;
 
 		public string ClientVersion
 		{
@@ -126,19 +65,6 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				clientVersion = value;
 				DictionaryUtil.Add(QueryParameters, "ClientVersion", value);
-			}
-		}
-
-		public string PlaySign
-		{
-			get
-			{
-				return playSign;
-			}
-			set	
-			{
-				playSign = value;
-				DictionaryUtil.Add(QueryParameters, "PlaySign", value);
 			}
 		}
 
@@ -155,6 +81,84 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public long? ClientTS
+		{
+			get
+			{
+				return clientTS;
+			}
+			set	
+			{
+				clientTS = value;
+				DictionaryUtil.Add(QueryParameters, "ClientTS", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public string VideoId
 		{
 			get
@@ -165,6 +169,32 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				videoId = value;
 				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+			}
+		}
+
+		public string Channel
+		{
+			get
+			{
+				return channel;
+			}
+			set	
+			{
+				channel = value;
+				DictionaryUtil.Add(QueryParameters, "Channel", value);
+			}
+		}
+
+		public string PlaySign
+		{
+			get
+			{
+				return playSign;
+			}
+			set	
+			{
+				playSign = value;
+				DictionaryUtil.Add(QueryParameters, "PlaySign", value);
 			}
 		}
 

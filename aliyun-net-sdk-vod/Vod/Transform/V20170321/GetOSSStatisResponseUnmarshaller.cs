@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vod.Model.V20170321;
+using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Transform.V20170321
+namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetOSSStatisResponseUnmarshaller
     {
@@ -33,15 +33,15 @@ namespace Aliyun.Acs.Vod.Transform.V20170321
 			getOSSStatisResponse.RequestId = context.StringValue("GetOSSStatis.RequestId");
 			getOSSStatisResponse.MaxStorageUtilization = context.LongValue("GetOSSStatis.MaxStorageUtilization");
 
-			List<GetOSSStatisResponse.OSSMetric> ossStatisList = new List<GetOSSStatisResponse.OSSMetric>();
+			List<GetOSSStatisResponse.GetOSSStatis_OSSMetric> getOSSStatisResponse_ossStatisList = new List<GetOSSStatisResponse.GetOSSStatis_OSSMetric>();
 			for (int i = 0; i < context.Length("GetOSSStatis.OssStatisList.Length"); i++) {
-				GetOSSStatisResponse.OSSMetric oSSMetric = new GetOSSStatisResponse.OSSMetric();
+				GetOSSStatisResponse.GetOSSStatis_OSSMetric oSSMetric = new GetOSSStatisResponse.GetOSSStatis_OSSMetric();
 				oSSMetric.StatTime = context.StringValue("GetOSSStatis.OssStatisList["+ i +"].StatTime");
 				oSSMetric.StorageUtilization = context.LongValue("GetOSSStatis.OssStatisList["+ i +"].StorageUtilization");
 
-				ossStatisList.Add(oSSMetric);
+				getOSSStatisResponse_ossStatisList.Add(oSSMetric);
 			}
-			getOSSStatisResponse.OssStatisList = ossStatisList;
+			getOSSStatisResponse.OssStatisList = getOSSStatisResponse_ossStatisList;
         
 			return getOSSStatisResponse;
         }

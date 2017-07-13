@@ -21,14 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class GetOSSStatisResponse : AcsResponse
+	public class AddCategoryResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private long? maxStorageUtilization;
-
-		private List<GetOSSStatis_OSSMetric> ossStatisList;
+		private AddCategory_Category category;
 
 		public string RequestId
 		{
@@ -42,58 +40,74 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? MaxStorageUtilization
+		public AddCategory_Category Category
 		{
 			get
 			{
-				return maxStorageUtilization;
+				return category;
 			}
 			set	
 			{
-				maxStorageUtilization = value;
+				category = value;
 			}
 		}
 
-		public List<GetOSSStatis_OSSMetric> OssStatisList
-		{
-			get
-			{
-				return ossStatisList;
-			}
-			set	
-			{
-				ossStatisList = value;
-			}
-		}
-
-		public class GetOSSStatis_OSSMetric
+		public class AddCategory_Category
 		{
 
-			private string statTime;
+			private long? cateId;
 
-			private long? storageUtilization;
+			private string cateName;
 
-			public string StatTime
+			private long? parentId;
+
+			private long? level;
+
+			public long? CateId
 			{
 				get
 				{
-					return statTime;
+					return cateId;
 				}
 				set	
 				{
-					statTime = value;
+					cateId = value;
 				}
 			}
 
-			public long? StorageUtilization
+			public string CateName
 			{
 				get
 				{
-					return storageUtilization;
+					return cateName;
 				}
 				set	
 				{
-					storageUtilization = value;
+					cateName = value;
+				}
+			}
+
+			public long? ParentId
+			{
+				get
+				{
+					return parentId;
+				}
+				set	
+				{
+					parentId = value;
+				}
+			}
+
+			public long? Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
 				}
 			}
 		}

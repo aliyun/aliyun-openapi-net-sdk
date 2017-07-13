@@ -26,41 +26,54 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetOSSStatisRequest : RpcAcsRequest<GetOSSStatisResponse>
+    public class GetCategoriesRequest : RpcAcsRequest<GetCategoriesResponse>
     {
-        public GetOSSStatisRequest()
-            : base("vod", "2017-03-21", "GetOSSStatis")
+        public GetCategoriesRequest()
+            : base("vod", "2017-03-21", "GetCategories")
         {
         }
 
-		private string level;
+		private long? pageSize;
+
+		private long? cateId;
 
 		private string accessKeyId;
 
 		private string resourceOwnerAccount;
 
-		private string endStatisTime;
-
-		private string startStatisTime;
-
 		private string action;
 
 		private string resourceOwnerId;
+
+		private long? pageNo;
 
 		private string ownerAccount;
 
 		private string ownerId;
 
-		public string Level
+		public long? PageSize
 		{
 			get
 			{
-				return level;
+				return pageSize;
 			}
 			set	
 			{
-				level = value;
-				DictionaryUtil.Add(QueryParameters, "Level", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public long? CateId
+		{
+			get
+			{
+				return cateId;
+			}
+			set	
+			{
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
 			}
 		}
 
@@ -90,32 +103,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string EndStatisTime
-		{
-			get
-			{
-				return endStatisTime;
-			}
-			set	
-			{
-				endStatisTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndStatisTime", value);
-			}
-		}
-
-		public string StartStatisTime
-		{
-			get
-			{
-				return startStatisTime;
-			}
-			set	
-			{
-				startStatisTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartStatisTime", value);
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -139,6 +126,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+			}
+		}
+
+		public long? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 
@@ -168,9 +168,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override GetOSSStatisResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetCategoriesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetOSSStatisResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetCategoriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
