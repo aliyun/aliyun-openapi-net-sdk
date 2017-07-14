@@ -1,0 +1,58 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ecs.Model.V20140526;
+using System;
+using System.Collections.Generic;
+
+namespace Aliyun.Acs.Ecs.Transform.V20140526
+{
+    public class DescribeRenewalPriceResponseUnmarshaller
+    {
+        public static DescribeRenewalPriceResponse Unmarshall(UnmarshallerContext context)
+        {
+			DescribeRenewalPriceResponse describeRenewalPriceResponse = new DescribeRenewalPriceResponse();
+
+			describeRenewalPriceResponse.HttpResponse = context.HttpResponse;
+			describeRenewalPriceResponse.RequestId = context.StringValue("DescribeRenewalPrice.RequestId");
+
+			DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo priceInfo = new DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo();
+
+			DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price price = new DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price();
+			price.OriginalPrice = context.FloatValue("DescribeRenewalPrice.PriceInfo.Price.OriginalPrice");
+			price.DiscountPrice = context.FloatValue("DescribeRenewalPrice.PriceInfo.Price.DiscountPrice");
+			price.TradePrice = context.FloatValue("DescribeRenewalPrice.PriceInfo.Price.TradePrice");
+			price.Currency = context.StringValue("DescribeRenewalPrice.PriceInfo.Price.Currency");
+			priceInfo.Price = price;
+
+			List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Rule> priceInfo_rules = new List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Rule>();
+			for (int i = 0; i < context.Length("DescribeRenewalPrice.PriceInfo.Rules.Length"); i++) {
+				DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Rule rule = new DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Rule();
+				rule.RuleId = context.LongValue("DescribeRenewalPrice.PriceInfo.Rules["+ i +"].RuleId");
+				rule.Description = context.StringValue("DescribeRenewalPrice.PriceInfo.Rules["+ i +"].Description");
+
+				priceInfo_rules.Add(rule);
+			}
+			priceInfo.Rules = priceInfo_rules;
+			describeRenewalPriceResponse.PriceInfo = priceInfo;
+        
+			return describeRenewalPriceResponse;
+        }
+    }
+}
