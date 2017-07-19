@@ -85,6 +85,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string androidExtParameters;
 
+		private bool? androidRemind;
+
 		private string iOSApnsEnv;
 
 		private bool? iOSRemind;
@@ -440,6 +442,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidExtParameters = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidExtParameters", value);
+			}
+		}
+
+		public bool? AndroidRemind
+		{
+			get
+			{
+				return androidRemind;
+			}
+			set
+			{
+				androidRemind = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidRemind", value.ToString());
 			}
 		}
 
