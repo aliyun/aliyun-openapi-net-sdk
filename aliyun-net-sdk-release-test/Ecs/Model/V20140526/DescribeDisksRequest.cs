@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? deleteAutoSnapshot;
 
+		private string resourceGroupId;
+
 		private string diskChargeType;
 
 		private string lockReason;
@@ -249,6 +251,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				deleteAutoSnapshot = value;
 				DictionaryUtil.Add(QueryParameters, "DeleteAutoSnapshot", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

@@ -70,6 +70,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instance.GPUAmount = context.IntegerValue("DescribeInstances.Instances["+ i +"].GPUAmount");
 				instance.GPUSpec = context.StringValue("DescribeInstances.Instances["+ i +"].GPUSpec");
 				instance.SpotStrategy = context.StringValue("DescribeInstances.Instances["+ i +"].SpotStrategy");
+				instance.ResourceGroupId = context.StringValue("DescribeInstances.Instances["+ i +"].ResourceGroupId");
 				instance.KeyPairName = context.StringValue("DescribeInstances.Instances["+ i +"].KeyPairName");
 
 				List<string> instance_securityGroupIds = new List<string>();

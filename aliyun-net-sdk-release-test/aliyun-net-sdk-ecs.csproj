@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8d414ea6-f237-472e-b728-58521e82975a}</ProjectGuid>
+    <ProjectGuid>{9e960b6e-ebff-4917-99da-df9f2cbd9a62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -44,6 +44,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceStatusRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceAutoRenewAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeVRoutersResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\JoinResourceGroupResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateVpcResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceVncPasswdRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ReplaceSystemDiskResponse.cs" />
@@ -153,6 +154,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeRegionsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\StopInstanceRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyHaVipAttributeRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\JoinResourceGroupRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\UnassociateHaVipRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DetachKeyPairResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\StartInstanceResponse.cs" />
@@ -529,6 +531,7 @@
 	<Compile Include="Ecs\Transform\V20140526\ReplaceSystemDiskResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeNatGatewaysResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeEipMonitorDataResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\JoinResourceGroupResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceAutoRenewAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifySecurityGroupPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateRouterInterfaceResponseUnmarshaller.cs" />

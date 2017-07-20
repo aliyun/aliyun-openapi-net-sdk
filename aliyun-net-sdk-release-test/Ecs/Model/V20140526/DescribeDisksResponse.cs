@@ -147,6 +147,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string expiredTime;
 
+			private string resourceGroupId;
+
 			private List<DescribeDisks_OperationLock> operationLocks;
 
 			private List<DescribeDisks_Tag> tags;
@@ -448,6 +450,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					expiredTime = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

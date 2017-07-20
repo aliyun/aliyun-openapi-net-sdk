@@ -161,6 +161,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string spotStrategy;
 
+			private string resourceGroupId;
+
 			private string keyPairName;
 
 			private List<DescribeInstances_LockReason> operationLocks;
@@ -560,6 +562,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					spotStrategy = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

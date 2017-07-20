@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string tag1Value;
 
+		private string resourceGroupId;
+
 		private string hostName;
 
 		private string password;
@@ -223,6 +225,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				tag1Value = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
