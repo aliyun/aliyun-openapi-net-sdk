@@ -1,16 +1,16 @@
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("aliyun-net-sdk-ecs")]
-[assembly: AssemblyDescription("Aliyun Open API SDK")]
+[assembly: AssemblyTitle(".NET Aliyun Open API SDK.")]
+[assembly: AssemblyDescription(".NET Aliyun Open API SDK.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Aliyun")]
-[assembly: AssemblyProduct("Ecs")]
-[assembly: AssemblyCopyright("Copyright (C) Alibaba Cloud Computing")]
+[assembly: AssemblyCompany("Aliyun Corporation")]
+[assembly: AssemblyProduct("aliyun-net-sdk-core")]
+[assembly: AssemblyCopyright("Copyright ©  2015 Aliyun Corporation")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("5ee7e94c-6171-47af-9cba-bc66a8be1139")]
+[assembly: Guid("baf535b6-d977-42af-9295-22109cd596cf")]
 
 // 程序集的版本信息由下面四个值组成:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // 可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyFileVersion("2.0.0.0")]
