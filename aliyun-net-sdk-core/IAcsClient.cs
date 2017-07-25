@@ -51,7 +51,5 @@ namespace Aliyun.Acs.Core
                 String regionId, Credential credential,
                 ISigner signer, FormatType? format,
                 List<Endpoint> endpoints) where T : AcsResponse;
-
-        CommonResponse DoCommonAction(CommonRequest request);
     }
 }

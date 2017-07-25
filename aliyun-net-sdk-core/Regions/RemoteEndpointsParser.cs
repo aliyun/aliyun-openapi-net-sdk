@@ -25,7 +25,7 @@ namespace Aliyun.Acs.Core.Regions
         }
 
         public Endpoint GetEndpoint(String regionId, String product, String locationProduct,
-                                    Credential credential, LocationConfig locationConfig)
+                                    Credential credential, LocationConfig locationConfig, String locationEndpointType)
         {
             if (null == locationProduct)
             {
@@ -34,7 +34,7 @@ namespace Aliyun.Acs.Core.Regions
             Endpoint endpoint = null;
 
             DescribeEndpointResponse response = describeEndpointService.DescribeEndpoint(regionId, locationProduct,
-                    credential, locationConfig);
+                    credential, locationConfig, locationEndpointType);
             if (null == response)
             {
                 return endpoint;

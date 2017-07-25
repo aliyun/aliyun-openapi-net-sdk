@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Core.Profile
         private IEndpointsProvider iendpoints = null;
         private ICredentialProvider icredential = null;
         private RemoteEndpointsParser remoteProvider = null;
-        private LocationConfig locationConfig = new LocationConfig();
+        private LocationConfig locationConfig = null;
 
         private FormatType AcceptFormat { get; set; }
 
@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Core.Profile
         {
             this.iendpoints = new InternalEndpointsParser();
             this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
+            this.locationConfig = new LocationConfig();
         }
 
         private DefaultProfile(String region, Credential creden)
@@ -55,6 +56,7 @@ namespace Aliyun.Acs.Core.Profile
             credential = creden;
             this.regionId = region;
             this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
+            this.locationConfig = new LocationConfig();
         }
 
         private DefaultProfile(ICredentialProvider icredential)
@@ -62,6 +64,7 @@ namespace Aliyun.Acs.Core.Profile
             this.icredential = icredential;
             this.iendpoints = new InternalEndpointsParser();
             this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
+            this.locationConfig = new LocationConfig();
         }
 
         private DefaultProfile(String region, ICredentialProvider icredential)
@@ -70,6 +73,7 @@ namespace Aliyun.Acs.Core.Profile
             this.icredential = icredential;
             this.iendpoints = new InternalEndpointsParser();
             this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
+            this.locationConfig = new LocationConfig();
         }
 
         private DefaultProfile(ICredentialProvider icredential, String region, FormatType format)
@@ -79,6 +83,7 @@ namespace Aliyun.Acs.Core.Profile
             this.icredential = icredential;
             this.iendpoints = new InternalEndpointsParser();
             this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
+            this.locationConfig = new LocationConfig();
         }
 
         public static DefaultProfile GetProfile()
@@ -117,6 +122,10 @@ namespace Aliyun.Acs.Core.Profile
             {
                 UpdateEndpoint(regionId, product, domain, endpoint);
             }
+
+            AddLocationEndpoint(endpointName, regionId, product, domain);
+            DateTime expireTime = DateTime.Now.AddYears(100);
+            CacheTimeHelper.AddLastClearTimePerProduct(product, expireTime);
         }
 
         private static void AddEndpoint_(String endpointName, String regionId, String product, String domain)
@@ -209,11 +218,11 @@ namespace Aliyun.Acs.Core.Profile
             return endpoints;
         }
 
-        public List<Endpoint> GetEndpoints(String regionId, String product, Credential credential, String locationProduct)
+        public List<Endpoint> GetEndpoints(String regionId, String product, Credential credential, String locationProduct, String locationEndpointType)
         {
             if (null != locationProduct)
             {   //先自动寻址，找不到再找本地配置
-                List<Endpoint> endPoints = GetEndPointsFromLocation(regionId, product, credential, locationProduct);
+                List<Endpoint> endPoints = GetEndPointsFromLocation(regionId, product, credential, locationProduct, locationEndpointType);
                 Endpoint endpoint = FindLocationEndpointByRegionId(regionId);
                 if (null == endpoint)
                 {
@@ -245,7 +254,7 @@ namespace Aliyun.Acs.Core.Profile
             return endpoints;
         }
 
-        private List<Endpoint> GetEndPointsFromLocation(String regionId, String product, Credential credential, String locationProduct)
+        private List<Endpoint> GetEndPointsFromLocation(String regionId, String product, Credential credential, String locationProduct, String locationEndpointType)
         {
             if (null == locationEndpoints)
             {
@@ -253,9 +262,9 @@ namespace Aliyun.Acs.Core.Profile
             }
 
             Endpoint endpoint = FindLocationEndpointByRegionId(regionId);
-            if (null == endpoint)
+            if (null == endpoint || CacheTimeHelper.CheckCacheIsExpire(product))
             {
-                FillEndPointFromLocation(regionId, product, credential, locationProduct);
+                FillEndPointFromLocation(regionId, product, credential, locationProduct, locationEndpointType);
             }
             else
             {
@@ -263,17 +272,17 @@ namespace Aliyun.Acs.Core.Profile
                 ProductDomain productDomain = FindProductDomain(productDomains, product);
                 if (null == productDomain)
                 {
-                    FillEndPointFromLocation(regionId, product, credential, locationProduct);
+                    FillEndPointFromLocation(regionId, product, credential, locationProduct, locationEndpointType);
                 }
             }
 
             return locationEndpoints;
         }
 
-        private void FillEndPointFromLocation(String regionId, String product, Credential credential, String locationProduct)
+        private void FillEndPointFromLocation(String regionId, String product, Credential credential, String locationProduct, String locationEndpointType)
         {
             Endpoint endpoint = remoteProvider.GetEndpoint(regionId, product, locationProduct, credential,
-                        locationConfig);
+                        locationConfig, locationEndpointType);
             if (endpoint != null)
             {
                 foreach (String region in endpoint.RegionIds)
@@ -286,7 +295,7 @@ namespace Aliyun.Acs.Core.Profile
             }
         }
 
-        public void setLocationConfig(String regionId, String product, String endpoint)
+        public void SetLocationConfig(String regionId, String product, String endpoint)
         {
             this.locationConfig = LocationConfig.createLocationConfig(regionId, product, endpoint);
         }

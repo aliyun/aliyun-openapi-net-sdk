@@ -24,8 +24,8 @@ namespace Aliyun.Acs.Core.Regions
         }
 
         public DescribeEndpointResponse DescribeEndpoint(String regionId, String locationProduct,
-                                                         Credential credential, LocationConfig locationConfig)
-        {
+                                                         Credential credential, LocationConfig locationConfig, String locationEndpointType)
+        { 
             if (isEmpty(locationProduct))
             {
                 return null;
@@ -36,7 +36,15 @@ namespace Aliyun.Acs.Core.Regions
             request.Id = regionId;
             request.RegionId = locationConfig.RegionId;
             request.LocationProduct = locationProduct;
-            request.EndpointType = DEFAULT_ENDPOINT_TYPE;
+            if (isEmpty(locationEndpointType))
+            {
+                request.EndpointType = DEFAULT_ENDPOINT_TYPE;
+            }
+            else
+            {
+                request.EndpointType = locationEndpointType;
+            }
+            
 
             ProductDomain domain = new ProductDomain(locationConfig.Product, locationConfig.Endpoint);
 
@@ -47,7 +55,7 @@ namespace Aliyun.Acs.Core.Regions
                 if (httpResponse.isSuccess())
                 {
                     String data = System.Text.Encoding.UTF8.GetString(httpResponse.Content);
-                    DescribeEndpointResponse response = getEndpointResponse(data, DEFAULT_ENDPOINT_TYPE);
+                    DescribeEndpointResponse response = getEndpointResponse(data, request.EndpointType);
                     if (null == response || isEmpty(response.Endpoint))
                     {
                         return null;
@@ -57,12 +65,12 @@ namespace Aliyun.Acs.Core.Regions
                 AcsError error = readError(httpResponse, FormatType.JSON);
                 if (500 <= httpResponse.Status)
                 {
-                    Console.WriteLine("Invoke_Error, requestId:" + error.RequestId + "; code:" + error.ErrorCode
-                            + "; Msg" + error.ErrorMessage);
+                    Console.WriteLine("Invoke_Error, requestId: " + error.RequestId + "; code: " + error.ErrorCode
+                            + "; Msg: " + error.ErrorMessage);
                     return null;
                 }
-                Console.WriteLine("Invoke_Error, requestId:" + error.RequestId + "; code:" + error.ErrorCode
-                        + "; Msg" + error.ErrorMessage);
+                Console.WriteLine("Invoke_Error, requestId: " + error.RequestId + "; code: " + error.ErrorCode
+                        + "; Msg: " + error.ErrorMessage);
                 return null;
             }
             catch (Exception e)

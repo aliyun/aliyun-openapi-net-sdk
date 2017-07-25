@@ -46,8 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcsError.cs" />
-    <Compile Include="CommonRequest.cs" />
-    <Compile Include="CommonResponse.cs" />
     <Compile Include="Regions\DescribeEndpointService.cs" />
     <Compile Include="Regions\Location\LocationConfig.cs" />
     <Compile Include="Regions\RemoteEndpointsParser.cs" />
@@ -91,7 +89,7 @@
     <Compile Include="RoaAcsRequest.cs" />
     <Compile Include="RpcAcsRequest.cs" />
     <Compile Include="Transform\UnmarshallerContext.cs" />
-    <Compile Include="Utils\CacheTime.cs" />
+    <Compile Include="Utils\CacheTimeHelper.cs" />
     <Compile Include="Utils\DictionaryUtil.cs" />
     <Compile Include="Utils\ParameterHelper.cs" />
   </ItemGroup>

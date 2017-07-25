@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Core
         public virtual String RegionId { get; set; }
         public ISignatureComposer Composer { get; set; }
         public String LocationProduct { get; set; }
+        public String LocationEndpointType { get; set; }
 
         public virtual FormatType AcceptFormat
         {

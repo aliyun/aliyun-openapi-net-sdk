@@ -70,18 +70,6 @@ namespace Aliyun.Acs.Core
             return ParseAcsResponse(request, httpResponse);
         }
 
-        public CommonResponse DoCommonAction(CommonRequest request)
-        {
-            HttpResponse httpResponse = this.DoAction(request);
-            String data = System.Text.Encoding.UTF8.GetString(httpResponse.Content);
-
-            CommonResponse response = new CommonResponse();
-            response.Data = data;
-            response.HttpResponse = httpResponse;
-
-            return response;
-        }
-
         private T ParseAcsResponse<T>(AcsRequest<T> request, HttpResponse httpResponse) where T : AcsResponse
         {
             FormatType? format = httpResponse.ContentType;
@@ -138,7 +126,7 @@ namespace Aliyun.Acs.Core
             {
                 signer = clientProfile.GetSigner();
                 format = clientProfile.GetFormat();
-                endpoints = clientProfile.GetEndpoints(regionId, request.Product, credential, request.LocationProduct); ;
+                endpoints = clientProfile.GetEndpoints(regionId, request.Product, credential, request.LocationProduct, request.LocationEndpointType); ;
             }
             return DoAction(request, autoRetry, this.maxRetryNumber, regionId, credential, signer, format, endpoints);
         }
@@ -158,7 +146,7 @@ namespace Aliyun.Acs.Core
             Credential credential = profile.GetCredential();
             ISigner signer = profile.GetSigner();
             FormatType? format = profile.GetFormat();
-            List<Endpoint> endpoints = profile.GetEndpoints(regionId, request.Product, credential, request.LocationProduct);
+            List<Endpoint> endpoints = profile.GetEndpoints(regionId, request.Product, credential, request.LocationProduct, request.LocationEndpointType);
 
             return DoAction(request, autoRetry, maxRetryNumber, regionId, credential, signer, format, endpoints);
         }

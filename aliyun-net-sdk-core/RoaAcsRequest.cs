@@ -51,12 +51,13 @@ namespace Aliyun.Acs.Core
             Initialize();
         }
 
-        public RoaAcsRequest(string product, string version, string action, string locationProduct)
+        public RoaAcsRequest(string product, string version, string action, string locationProduct, string locationEndpointType)
             : base(product)
         {
-            Version = version;
-            ActionName = action;
+            this.Version = version;
+            this.ActionName = action;
             this.LocationProduct = locationProduct;
+            this.LocationEndpointType = locationEndpointType;
             Initialize();
         }
 
