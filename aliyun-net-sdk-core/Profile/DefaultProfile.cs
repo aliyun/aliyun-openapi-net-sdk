@@ -222,11 +222,11 @@ namespace Aliyun.Acs.Core.Profile
         {
             if (null != locationProduct)
             {   //先自动寻址，找不到再找本地配置
-                List<Endpoint> endPoints = GetEndPointsFromLocation(regionId, product, credential, locationProduct, locationEndpointType);
+                List<Endpoint> endPoints = GetEndpointsFromLocation(regionId, product, credential, locationProduct, locationEndpointType);
                 Endpoint endpoint = FindLocationEndpointByRegionId(regionId);
                 if (null == endpoint)
                 {
-                    return GetEndPointsFromLocal();
+                    return GetEndpointsFromLocal();
                 }
                 else
                 {
@@ -234,17 +234,17 @@ namespace Aliyun.Acs.Core.Profile
                     ProductDomain productDomain = FindProductDomain(productDomains, product);
                     if (null == productDomain)
                     {
-                        return GetEndPointsFromLocal();
+                        return GetEndpointsFromLocal();
                     }
                 }
 
                 return endPoints;
             }
             //直接从本地配置中查找
-            return GetEndPointsFromLocal();
+            return GetEndpointsFromLocal();
         }
 
-        private List<Endpoint> GetEndPointsFromLocal()
+        private List<Endpoint> GetEndpointsFromLocal()
         {
             if (null == endpoints)
             {
@@ -254,7 +254,7 @@ namespace Aliyun.Acs.Core.Profile
             return endpoints;
         }
 
-        private List<Endpoint> GetEndPointsFromLocation(String regionId, String product, Credential credential, String locationProduct, String locationEndpointType)
+        private List<Endpoint> GetEndpointsFromLocation(String regionId, String product, Credential credential, String locationProduct, String locationEndpointType)
         {
             if (null == locationEndpoints)
             {
@@ -264,7 +264,7 @@ namespace Aliyun.Acs.Core.Profile
             Endpoint endpoint = FindLocationEndpointByRegionId(regionId);
             if (null == endpoint || CacheTimeHelper.CheckCacheIsExpire(product))
             {
-                FillEndPointFromLocation(regionId, product, credential, locationProduct, locationEndpointType);
+                FillEndpointFromLocation(regionId, product, credential, locationProduct, locationEndpointType);
             }
             else
             {
@@ -272,14 +272,14 @@ namespace Aliyun.Acs.Core.Profile
                 ProductDomain productDomain = FindProductDomain(productDomains, product);
                 if (null == productDomain)
                 {
-                    FillEndPointFromLocation(regionId, product, credential, locationProduct, locationEndpointType);
+                    FillEndpointFromLocation(regionId, product, credential, locationProduct, locationEndpointType);
                 }
             }
 
             return locationEndpoints;
         }
 
-        private void FillEndPointFromLocation(String regionId, String product, Credential credential, String locationProduct, String locationEndpointType)
+        private void FillEndpointFromLocation(String regionId, String product, Credential credential, String locationProduct, String locationEndpointType)
         {
             Endpoint endpoint = remoteProvider.GetEndpoint(regionId, product, locationProduct, credential,
                         locationConfig, locationEndpointType);
