@@ -32,7 +32,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			describeLiveStreamsNotifyUrlConfigResponse.HttpResponse = context.HttpResponse;
 			describeLiveStreamsNotifyUrlConfigResponse.RequestId = context.StringValue("DescribeLiveStreamsNotifyUrlConfig.RequestId");
 
-			DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig_ liveStreamsNotifyConfig = new DescribeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig_();
+			DescribeLiveStreamsNotifyUrlConfigResponse.DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig liveStreamsNotifyConfig = new DescribeLiveStreamsNotifyUrlConfigResponse.DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig();
 			liveStreamsNotifyConfig.DomainName = context.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.DomainName");
 			liveStreamsNotifyConfig.NotifyUrl = context.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.NotifyUrl");
 			describeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig = liveStreamsNotifyConfig;

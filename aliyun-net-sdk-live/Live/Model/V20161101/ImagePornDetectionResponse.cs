@@ -24,9 +24,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class ImagePornDetectionResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string label;
 
 		private float? rate;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Label
 		{

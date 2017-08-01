@@ -33,43 +33,34 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
-		private string streamName;
-
-		private long? ownerId;
+		private string appName;
 
 		private string securityToken;
 
 		private string domainName;
 
-		private string endTime;
+		private string action;
 
-		private string appName;
+		private string endTime;
 
 		private string startTime;
 
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
+		private long? ownerId;
 
-		public long? OwnerId
+		private string streamName;
+
+		private string accessKeyId;
+
+		public string AppName
 		{
 			get
 			{
-				return ownerId;
+				return appName;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -99,6 +90,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string EndTime
 		{
 			get
@@ -112,19 +116,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
 		public string StartTime
 		{
 			get
@@ -135,6 +126,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

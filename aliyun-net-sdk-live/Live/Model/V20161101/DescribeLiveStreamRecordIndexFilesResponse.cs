@@ -24,6 +24,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamRecordIndexFilesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNum;
 
 		private int? pageSize;
@@ -34,7 +36,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? totalPage;
 
-		private List<RecordIndexInfo> recordIndexInfoList;
+		private List<DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> recordIndexInfoList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNum
 		{
@@ -96,7 +110,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<RecordIndexInfo> RecordIndexInfoList
+		public List<DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> RecordIndexInfoList
 		{
 			get
 			{
@@ -108,7 +122,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public class RecordIndexInfo
+		public class DescribeLiveStreamRecordIndexFiles_RecordIndexInfo
 		{
 
 			private string recordId;

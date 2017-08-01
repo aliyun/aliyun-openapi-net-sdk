@@ -33,22 +33,39 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
-		private string domainTranscodeName;
+		private string securityToken;
+
+		private string action;
 
 		private long? ownerId;
 
-		private string securityToken;
+		private string domainTranscodeName;
 
-		public string DomainTranscodeName
+		private string accessKeyId;
+
+		public string SecurityToken
 		{
 			get
 			{
-				return domainTranscodeName;
+				return securityToken;
 			}
 			set	
 			{
-				domainTranscodeName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainTranscodeName", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -65,16 +82,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string SecurityToken
+		public string DomainTranscodeName
 		{
 			get
 			{
-				return securityToken;
+				return domainTranscodeName;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				domainTranscodeName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainTranscodeName", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

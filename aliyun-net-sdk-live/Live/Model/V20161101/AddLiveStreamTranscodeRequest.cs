@@ -33,15 +33,32 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
+		private string app;
+
 		private string template;
 
-		private string app;
+		private string securityToken;
 
 		private string domain;
 
+		private string action;
+
 		private long? ownerId;
 
-		private string securityToken;
+		private string accessKeyId;
+
+		public string App
+		{
+			get
+			{
+				return app;
+			}
+			set	
+			{
+				app = value;
+				DictionaryUtil.Add(QueryParameters, "App", value);
+			}
+		}
 
 		public string Template
 		{
@@ -56,16 +73,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string App
+		public string SecurityToken
 		{
 			get
 			{
-				return app;
+				return securityToken;
 			}
 			set	
 			{
-				app = value;
-				DictionaryUtil.Add(QueryParameters, "App", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -82,6 +99,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -95,16 +125,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string SecurityToken
+		public string AccessKeyId
 		{
 			get
 			{
-				return securityToken;
+				return accessKeyId;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

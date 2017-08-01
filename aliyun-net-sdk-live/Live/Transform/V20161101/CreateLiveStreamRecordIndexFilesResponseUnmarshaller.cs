@@ -32,7 +32,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			createLiveStreamRecordIndexFilesResponse.HttpResponse = context.HttpResponse;
 			createLiveStreamRecordIndexFilesResponse.RequestId = context.StringValue("CreateLiveStreamRecordIndexFiles.RequestId");
 
-			CreateLiveStreamRecordIndexFilesResponse.RecordInfo_ recordInfo = new CreateLiveStreamRecordIndexFilesResponse.RecordInfo_();
+			CreateLiveStreamRecordIndexFilesResponse.CreateLiveStreamRecordIndexFiles_RecordInfo recordInfo = new CreateLiveStreamRecordIndexFilesResponse.CreateLiveStreamRecordIndexFiles_RecordInfo();
 			recordInfo.RecordId = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordId");
 			recordInfo.RecordUrl = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordUrl");
 			recordInfo.DomainName = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.DomainName");

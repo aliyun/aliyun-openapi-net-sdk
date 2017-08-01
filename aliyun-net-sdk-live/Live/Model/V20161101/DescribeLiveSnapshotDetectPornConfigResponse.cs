@@ -24,6 +24,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveSnapshotDetectPornConfigResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNum;
 
 		private int? pageSize;
@@ -34,7 +36,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? totalPage;
 
-		private List<LiveSnapshotDetectPornConfig> liveSnapshotDetectPornConfigList;
+		private List<DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig> liveSnapshotDetectPornConfigList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNum
 		{
@@ -96,7 +110,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<LiveSnapshotDetectPornConfig> LiveSnapshotDetectPornConfigList
+		public List<DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig> LiveSnapshotDetectPornConfigList
 		{
 			get
 			{
@@ -108,7 +122,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public class LiveSnapshotDetectPornConfig
+		public class DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig
 		{
 
 			private string domainName;

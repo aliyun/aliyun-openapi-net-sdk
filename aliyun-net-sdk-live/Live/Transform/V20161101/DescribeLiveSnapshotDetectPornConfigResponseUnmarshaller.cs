@@ -37,9 +37,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			describeLiveSnapshotDetectPornConfigResponse.TotalNum = context.IntegerValue("DescribeLiveSnapshotDetectPornConfig.TotalNum");
 			describeLiveSnapshotDetectPornConfigResponse.TotalPage = context.IntegerValue("DescribeLiveSnapshotDetectPornConfig.TotalPage");
 
-			List<DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfig> liveSnapshotDetectPornConfigList = new List<DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfig>();
+			List<DescribeLiveSnapshotDetectPornConfigResponse.DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig> describeLiveSnapshotDetectPornConfigResponse_liveSnapshotDetectPornConfigList = new List<DescribeLiveSnapshotDetectPornConfigResponse.DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig>();
 			for (int i = 0; i < context.Length("DescribeLiveSnapshotDetectPornConfig.LiveSnapshotDetectPornConfigList.Length"); i++) {
-				DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfig liveSnapshotDetectPornConfig = new DescribeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfig();
+				DescribeLiveSnapshotDetectPornConfigResponse.DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig liveSnapshotDetectPornConfig = new DescribeLiveSnapshotDetectPornConfigResponse.DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig();
 				liveSnapshotDetectPornConfig.DomainName = context.StringValue("DescribeLiveSnapshotDetectPornConfig.LiveSnapshotDetectPornConfigList["+ i +"].DomainName");
 				liveSnapshotDetectPornConfig.AppName = context.StringValue("DescribeLiveSnapshotDetectPornConfig.LiveSnapshotDetectPornConfigList["+ i +"].AppName");
 				liveSnapshotDetectPornConfig.OssEndpoint = context.StringValue("DescribeLiveSnapshotDetectPornConfig.LiveSnapshotDetectPornConfigList["+ i +"].OssEndpoint");
@@ -47,9 +47,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveSnapshotDetectPornConfig.OssObject = context.StringValue("DescribeLiveSnapshotDetectPornConfig.LiveSnapshotDetectPornConfigList["+ i +"].OssObject");
 				liveSnapshotDetectPornConfig.Interval = context.IntegerValue("DescribeLiveSnapshotDetectPornConfig.LiveSnapshotDetectPornConfigList["+ i +"].Interval");
 
-				liveSnapshotDetectPornConfigList.Add(liveSnapshotDetectPornConfig);
+				describeLiveSnapshotDetectPornConfigResponse_liveSnapshotDetectPornConfigList.Add(liveSnapshotDetectPornConfig);
 			}
-			describeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList = liveSnapshotDetectPornConfigList;
+			describeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList = describeLiveSnapshotDetectPornConfigResponse_liveSnapshotDetectPornConfigList;
         
 			return describeLiveSnapshotDetectPornConfigResponse;
         }

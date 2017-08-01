@@ -33,11 +33,9 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
-		private string ossObject;
+		private string ossBucket;
 
-		private int? interval;
-
-		private long? ownerId;
+		private string appName;
 
 		private string securityToken;
 
@@ -45,46 +43,39 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string ossEndpoint;
 
-		private string appName;
+		private string action;
 
-		private string ossBucket;
+		private int? interval;
 
-		public string OssObject
+		private long? ownerId;
+
+		private string ossObject;
+
+		private string accessKeyId;
+
+		public string OssBucket
 		{
 			get
 			{
-				return ossObject;
+				return ossBucket;
 			}
 			set	
 			{
-				ossObject = value;
-				DictionaryUtil.Add(QueryParameters, "OssObject", value);
+				ossBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
 			}
 		}
 
-		public int? Interval
+		public string AppName
 		{
 			get
 			{
-				return interval;
+				return appName;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -127,29 +118,68 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AppName
+		public string Action
 		{
 			get
 			{
-				return appName;
+				return action;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string OssBucket
+		public int? Interval
 		{
 			get
 			{
-				return ossBucket;
+				return interval;
 			}
 			set	
 			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string OssObject
+		{
+			get
+			{
+				return ossObject;
+			}
+			set	
+			{
+				ossObject = value;
+				DictionaryUtil.Add(QueryParameters, "OssObject", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

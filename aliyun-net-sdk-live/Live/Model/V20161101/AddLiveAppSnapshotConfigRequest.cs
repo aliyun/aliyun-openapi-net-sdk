@@ -33,11 +33,11 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
-		private string overwriteOssObject;
+		private int? timeInterval;
 
-		private string sequenceOssObject;
+		private string ossBucket;
 
-		private long? ownerId;
+		private string appName;
 
 		private string securityToken;
 
@@ -45,48 +45,52 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string ossEndpoint;
 
-		private string appName;
+		private string action;
 
-		private string ossBucket;
+		private string sequenceOssObject;
 
-		private int? timeInterval;
+		private string overwriteOssObject;
 
-		public string OverwriteOssObject
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public int? TimeInterval
 		{
 			get
 			{
-				return overwriteOssObject;
+				return timeInterval;
 			}
 			set	
 			{
-				overwriteOssObject = value;
-				DictionaryUtil.Add(QueryParameters, "OverwriteOssObject", value);
+				timeInterval = value;
+				DictionaryUtil.Add(QueryParameters, "TimeInterval", value.ToString());
 			}
 		}
 
-		public string SequenceOssObject
+		public string OssBucket
 		{
 			get
 			{
-				return sequenceOssObject;
+				return ossBucket;
 			}
 			set	
 			{
-				sequenceOssObject = value;
-				DictionaryUtil.Add(QueryParameters, "SequenceOssObject", value);
+				ossBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
 			}
 		}
 
-		public long? OwnerId
+		public string AppName
 		{
 			get
 			{
-				return ownerId;
+				return appName;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -129,42 +133,68 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AppName
+		public string Action
 		{
 			get
 			{
-				return appName;
+				return action;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string OssBucket
+		public string SequenceOssObject
 		{
 			get
 			{
-				return ossBucket;
+				return sequenceOssObject;
 			}
 			set	
 			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+				sequenceOssObject = value;
+				DictionaryUtil.Add(QueryParameters, "SequenceOssObject", value);
 			}
 		}
 
-		public int? TimeInterval
+		public string OverwriteOssObject
 		{
 			get
 			{
-				return timeInterval;
+				return overwriteOssObject;
 			}
 			set	
 			{
-				timeInterval = value;
-				DictionaryUtil.Add(QueryParameters, "TimeInterval", value.ToString());
+				overwriteOssObject = value;
+				DictionaryUtil.Add(QueryParameters, "OverwriteOssObject", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

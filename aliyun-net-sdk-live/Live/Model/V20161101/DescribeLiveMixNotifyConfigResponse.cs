@@ -24,7 +24,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveMixNotifyConfigResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string notifyUrl;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string NotifyUrl
 		{

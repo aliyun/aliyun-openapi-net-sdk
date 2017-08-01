@@ -33,43 +33,34 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
-		private int? pageSize;
-
-		private long? ownerId;
+		private string appName;
 
 		private string securityToken;
 
-		private string order;
-
 		private string domainName;
 
-		private string appName;
+		private int? pageSize;
+
+		private string action;
+
+		private long? ownerId;
 
 		private int? pageNum;
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+		private string accessKeyId;
 
-		public long? OwnerId
+		private string order;
+
+		public string AppName
 		{
 			get
 			{
-				return ownerId;
+				return appName;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -86,19 +77,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Order
-		{
-			get
-			{
-				return order;
-			}
-			set	
-			{
-				order = value;
-				DictionaryUtil.Add(QueryParameters, "Order", value);
-			}
-		}
-
 		public string DomainName
 		{
 			get
@@ -112,16 +90,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AppName
+		public int? PageSize
 		{
 			get
 			{
-				return appName;
+				return pageSize;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -135,6 +139,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string Order
+		{
+			get
+			{
+				return order;
+			}
+			set	
+			{
+				order = value;
+				DictionaryUtil.Add(QueryParameters, "Order", value);
 			}
 		}
 

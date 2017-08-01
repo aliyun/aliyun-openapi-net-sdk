@@ -33,26 +33,56 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
-		private bool? needStatusNotify;
+		private string securityToken;
+
+		private string domainName;
+
+		private string action;
 
 		private string notifyUrl;
 
 		private long? ownerId;
 
-		private string securityToken;
+		private bool? needStatusNotify;
 
-		private string domainName;
+		private string accessKeyId;
 
-		public bool? NeedStatusNotify
+		public string SecurityToken
 		{
 			get
 			{
-				return needStatusNotify;
+				return securityToken;
 			}
 			set	
 			{
-				needStatusNotify = value;
-				DictionaryUtil.Add(QueryParameters, "NeedStatusNotify", value.ToString());
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -82,29 +112,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string SecurityToken
+		public bool? NeedStatusNotify
 		{
 			get
 			{
-				return securityToken;
+				return needStatusNotify;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				needStatusNotify = value;
+				DictionaryUtil.Add(QueryParameters, "NeedStatusNotify", value.ToString());
 			}
 		}
 
-		public string DomainName
+		public string AccessKeyId
 		{
 			get
 			{
-				return domainName;
+				return accessKeyId;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

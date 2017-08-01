@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class StopMultipleStreamMixServiceRequest : RpcAcsRequest<StopMultipleStreamMixServiceResponse>
+    public class DescribeLiveStreamBitRateDataRequest : RpcAcsRequest<DescribeLiveStreamBitRateDataResponse>
     {
-        public StopMultipleStreamMixServiceRequest()
-            : base("live", "2016-11-01", "StopMultipleStreamMixService")
+        public DescribeLiveStreamBitRateDataRequest()
+            : base("live", "2016-11-01", "DescribeLiveStreamBitRateData")
         {
         }
 
@@ -40,6 +40,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string domainName;
 
 		private string action;
+
+		private string endTime;
+
+		private string startTime;
 
 		private long? ownerId;
 
@@ -99,6 +103,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -138,9 +168,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override StopMultipleStreamMixServiceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveStreamBitRateDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return StopMultipleStreamMixServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveStreamBitRateDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveRecordNotifyConfigResponse : AcsResponse
 	{
 
-		private LiveRecordNotifyConfig_ liveRecordNotifyConfig;
+		private string requestId;
 
-		public LiveRecordNotifyConfig_ LiveRecordNotifyConfig
+		private DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig liveRecordNotifyConfig;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig LiveRecordNotifyConfig
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public class LiveRecordNotifyConfig_{
+		public class DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig
+		{
 
 			private string domainName;
 

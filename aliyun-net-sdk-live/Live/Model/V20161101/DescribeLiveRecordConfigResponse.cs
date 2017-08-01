@@ -24,6 +24,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveRecordConfigResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNum;
 
 		private int? pageSize;
@@ -34,7 +36,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? totalPage;
 
-		private List<LiveAppRecord> liveAppRecordList;
+		private List<DescribeLiveRecordConfig_LiveAppRecord> liveAppRecordList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNum
 		{
@@ -96,7 +110,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<LiveAppRecord> LiveAppRecordList
+		public List<DescribeLiveRecordConfig_LiveAppRecord> LiveAppRecordList
 		{
 			get
 			{
@@ -108,7 +122,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public class LiveAppRecord
+		public class DescribeLiveRecordConfig_LiveAppRecord
 		{
 
 			private string domainName;
@@ -121,7 +135,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string createTime;
 
-			private List<RecordFormat> recordFormatList;
+			private List<DescribeLiveRecordConfig_RecordFormat> recordFormatList;
 
 			public string DomainName
 			{
@@ -183,7 +197,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public List<RecordFormat> RecordFormatList
+			public List<DescribeLiveRecordConfig_RecordFormat> RecordFormatList
 			{
 				get
 				{
@@ -195,7 +209,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public class RecordFormat
+			public class DescribeLiveRecordConfig_RecordFormat
 			{
 
 				private string format;

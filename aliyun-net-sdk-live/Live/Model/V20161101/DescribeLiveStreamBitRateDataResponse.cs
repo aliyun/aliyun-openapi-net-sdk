@@ -21,12 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeLiveStreamTranscodeInfoResponse : AcsResponse
+	public class DescribeLiveStreamBitRateDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> domainTranscodeList;
+		private List<DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo> frameRateAndBitRateInfos;
 
 		public string RequestId
 		{
@@ -40,60 +40,88 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> DomainTranscodeList
+		public List<DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo> FrameRateAndBitRateInfos
 		{
 			get
 			{
-				return domainTranscodeList;
+				return frameRateAndBitRateInfos;
 			}
 			set	
 			{
-				domainTranscodeList = value;
+				frameRateAndBitRateInfos = value;
 			}
 		}
 
-		public class DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo
+		public class DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo
 		{
 
-			private string transcodeApp;
+			private string streamUrl;
 
-			private string transcodeName;
+			private float? videoFrameRate;
 
-			private string transcodeTemplate;
+			private float? audioFrameRate;
 
-			public string TranscodeApp
+			private float? bitRate;
+
+			private string time;
+
+			public string StreamUrl
 			{
 				get
 				{
-					return transcodeApp;
+					return streamUrl;
 				}
 				set	
 				{
-					transcodeApp = value;
+					streamUrl = value;
 				}
 			}
 
-			public string TranscodeName
+			public float? VideoFrameRate
 			{
 				get
 				{
-					return transcodeName;
+					return videoFrameRate;
 				}
 				set	
 				{
-					transcodeName = value;
+					videoFrameRate = value;
 				}
 			}
 
-			public string TranscodeTemplate
+			public float? AudioFrameRate
 			{
 				get
 				{
-					return transcodeTemplate;
+					return audioFrameRate;
 				}
 				set	
 				{
-					transcodeTemplate = value;
+					audioFrameRate = value;
+				}
+			}
+
+			public float? BitRate
+			{
+				get
+				{
+					return bitRate;
+				}
+				set	
+				{
+					bitRate = value;
+				}
+			}
+
+			public string Time
+			{
+				get
+				{
+					return time;
+				}
+				set	
+				{
+					time = value;
 				}
 			}
 		}
