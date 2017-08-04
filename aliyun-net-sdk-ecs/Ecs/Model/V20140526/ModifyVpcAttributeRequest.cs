@@ -33,45 +33,34 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string vpcName;
 
 		private long? resourceOwnerId;
 
+		private string resourceOwnerAccount;
+
 		private string vpcId;
-
-		private string description;
-
-		private string vpcName;
 
 		private string ownerAccount;
 
+		private string action;
+
+		private string description;
+
 		private string userCidr;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private long? ownerId;
 
-		public string ResourceOwnerAccount
+		public string VpcName
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return vpcName;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				vpcName = value;
+				DictionaryUtil.Add(QueryParameters, "VpcName", value);
 			}
 		}
 
@@ -88,6 +77,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string VpcId
 		{
 			get
@@ -98,32 +100,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string VpcName
-		{
-			get
-			{
-				return vpcName;
-			}
-			set	
-			{
-				vpcName = value;
-				DictionaryUtil.Add(QueryParameters, "VpcName", value);
 			}
 		}
 
@@ -140,6 +116,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
 		public string UserCidr
 		{
 			get
@@ -150,6 +152,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				userCidr = value;
 				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

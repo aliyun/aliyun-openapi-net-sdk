@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeTasksResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string regionId;
 
 		private int? totalCount;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageSize;
 
-		private List<Task> taskSet;
+		private List<DescribeTasks_Task> taskSet;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string RegionId
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Task> TaskSet
+		public List<DescribeTasks_Task> TaskSet
 		{
 			get
 			{
@@ -94,7 +108,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Task{
+		public class DescribeTasks_Task
+		{
 
 			private string taskId;
 

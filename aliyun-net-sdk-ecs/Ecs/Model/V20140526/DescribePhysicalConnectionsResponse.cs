@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribePhysicalConnectionsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNumber;
 
 		private int? pageSize;
 
 		private int? totalCount;
 
-		private List<PhysicalConnectionType> physicalConnectionSet;
+		private List<DescribePhysicalConnections_PhysicalConnectionType> physicalConnectionSet;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<PhysicalConnectionType> PhysicalConnectionSet
+		public List<DescribePhysicalConnections_PhysicalConnectionType> PhysicalConnectionSet
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class PhysicalConnectionType{
+		public class DescribePhysicalConnections_PhysicalConnectionType
+		{
 
 			private string physicalConnectionId;
 

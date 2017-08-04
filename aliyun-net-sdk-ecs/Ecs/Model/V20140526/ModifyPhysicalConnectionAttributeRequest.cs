@@ -33,72 +33,50 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string physicalConnectionId;
-
-		private string lineOperator;
-
-		private int? bandwidth;
+		private string redundantPhysicalConnectionId;
 
 		private string peerLocation;
 
-		private string portType;
-
-		private string redundantPhysicalConnectionId;
-
-		private string description;
-
-		private string name;
-
-		private string clientToken;
-
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
 
-		private string ownerAccount;
-
-		private string userCidr;
+		private string portType;
 
 		private string circuitCode;
 
-		public string PhysicalConnectionId
-		{
-			get
-			{
-				return physicalConnectionId;
-			}
-			set	
-			{
-				physicalConnectionId = value;
-				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
-			}
-		}
+		private int? bandwidth;
 
-		public string LineOperator
-		{
-			get
-			{
-				return lineOperator;
-			}
-			set	
-			{
-				lineOperator = value;
-				DictionaryUtil.Add(QueryParameters, "LineOperator", value);
-			}
-		}
+		private string clientToken;
 
-		public int? Bandwidth
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string description;
+
+		private long? ownerId;
+
+		private string lineOperator;
+
+		private string regionId;
+
+		private string physicalConnectionId;
+
+		private string name;
+
+		private string action;
+
+		private string userCidr;
+
+		public string RedundantPhysicalConnectionId
 		{
 			get
 			{
-				return bandwidth;
+				return redundantPhysicalConnectionId;
 			}
 			set	
 			{
-				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "Bandwidth", value.ToString());
+				redundantPhysicalConnectionId = value;
+				DictionaryUtil.Add(QueryParameters, "RedundantPhysicalConnectionId", value);
 			}
 		}
 
@@ -115,6 +93,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
 		public string PortType
 		{
 			get
@@ -128,42 +119,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RedundantPhysicalConnectionId
+		public string CircuitCode
 		{
 			get
 			{
-				return redundantPhysicalConnectionId;
+				return circuitCode;
 			}
 			set	
 			{
-				redundantPhysicalConnectionId = value;
-				DictionaryUtil.Add(QueryParameters, "RedundantPhysicalConnectionId", value);
+				circuitCode = value;
+				DictionaryUtil.Add(QueryParameters, "CircuitCode", value);
 			}
 		}
 
-		public string Description
+		public int? Bandwidth
 		{
 			get
 			{
-				return description;
+				return bandwidth;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				bandwidth = value;
+				DictionaryUtil.Add(QueryParameters, "bandwidth", value.ToString());
 			}
 		}
 
@@ -180,19 +158,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -203,19 +168,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -232,6 +184,97 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LineOperator
+		{
+			get
+			{
+				return lineOperator;
+			}
+			set	
+			{
+				lineOperator = value;
+				DictionaryUtil.Add(QueryParameters, "LineOperator", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string PhysicalConnectionId
+		{
+			get
+			{
+				return physicalConnectionId;
+			}
+			set	
+			{
+				physicalConnectionId = value;
+				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string UserCidr
 		{
 			get
@@ -242,19 +285,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				userCidr = value;
 				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
-			}
-		}
-
-		public string CircuitCode
-		{
-			get
-			{
-				return circuitCode;
-			}
-			set	
-			{
-				circuitCode = value;
-				DictionaryUtil.Add(QueryParameters, "CircuitCode", value);
 			}
 		}
 

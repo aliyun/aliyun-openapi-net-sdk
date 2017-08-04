@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeSecurityGroupsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string regionId;
 
 		private int? totalCount;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageSize;
 
-		private List<SecurityGroup> securityGroups;
+		private List<DescribeSecurityGroups_SecurityGroup> securityGroups;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string RegionId
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<SecurityGroup> SecurityGroups
+		public List<DescribeSecurityGroups_SecurityGroup> SecurityGroups
 		{
 			get
 			{
@@ -94,7 +108,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class SecurityGroup{
+		public class DescribeSecurityGroups_SecurityGroup
+		{
 
 			private string securityGroupId;
 
@@ -106,9 +121,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creationTime;
 
+			private int? availableInstanceAmount;
+
 			private int? ecsCount;
 
-			private List<Tag> tags;
+			private List<DescribeSecurityGroups_Tag> tags;
 
 			public string SecurityGroupId
 			{
@@ -170,6 +187,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public int? AvailableInstanceAmount
+			{
+				get
+				{
+					return availableInstanceAmount;
+				}
+				set	
+				{
+					availableInstanceAmount = value;
+				}
+			}
+
 			public int? EcsCount
 			{
 				get
@@ -182,7 +211,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<Tag> Tags
+			public List<DescribeSecurityGroups_Tag> Tags
 			{
 				get
 				{
@@ -194,7 +223,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class Tag{
+			public class DescribeSecurityGroups_Tag
+			{
 
 				private string tagKey;
 

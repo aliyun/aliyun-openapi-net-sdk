@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeAutoSnapshotPolicyResponse.RequestId = context.StringValue("DescribeAutoSnapshotPolicy.RequestId");
 			describeAutoSnapshotPolicyResponse.AutoSnapshotOccupation = context.IntegerValue("DescribeAutoSnapshotPolicy.AutoSnapshotOccupation");
 
-			DescribeAutoSnapshotPolicyResponse.AutoSnapshotPolicy_ autoSnapshotPolicy = new DescribeAutoSnapshotPolicyResponse.AutoSnapshotPolicy_();
+			DescribeAutoSnapshotPolicyResponse.DescribeAutoSnapshotPolicy_AutoSnapshotPolicy autoSnapshotPolicy = new DescribeAutoSnapshotPolicyResponse.DescribeAutoSnapshotPolicy_AutoSnapshotPolicy();
 			autoSnapshotPolicy.SystemDiskPolicyEnabled = context.StringValue("DescribeAutoSnapshotPolicy.AutoSnapshotPolicy.SystemDiskPolicyEnabled");
 			autoSnapshotPolicy.SystemDiskPolicyTimePeriod = context.StringValue("DescribeAutoSnapshotPolicy.AutoSnapshotPolicy.SystemDiskPolicyTimePeriod");
 			autoSnapshotPolicy.SystemDiskPolicyRetentionDays = context.StringValue("DescribeAutoSnapshotPolicy.AutoSnapshotPolicy.SystemDiskPolicyRetentionDays");
@@ -44,9 +44,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			autoSnapshotPolicy.DataDiskPolicyRetentionLastWeek = context.StringValue("DescribeAutoSnapshotPolicy.AutoSnapshotPolicy.DataDiskPolicyRetentionLastWeek");
 			describeAutoSnapshotPolicyResponse.AutoSnapshotPolicy = autoSnapshotPolicy;
 
-			DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus_ autoSnapshotExcutionStatus = new DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus_();
-			autoSnapshotExcutionStatus.SystemDiskExcutionStatus = context.EnumValue<DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus_.SystemDiskExcutionStatusEnum>("DescribeAutoSnapshotPolicy.AutoSnapshotExcutionStatus.SystemDiskExcutionStatus");
-			autoSnapshotExcutionStatus.DataDiskExcutionStatus = context.EnumValue<DescribeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus_.DataDiskExcutionStatusEnum>("DescribeAutoSnapshotPolicy.AutoSnapshotExcutionStatus.DataDiskExcutionStatus");
+			DescribeAutoSnapshotPolicyResponse.DescribeAutoSnapshotPolicy_AutoSnapshotExcutionStatus autoSnapshotExcutionStatus = new DescribeAutoSnapshotPolicyResponse.DescribeAutoSnapshotPolicy_AutoSnapshotExcutionStatus();
+			autoSnapshotExcutionStatus.SystemDiskExcutionStatus = context.StringValue("DescribeAutoSnapshotPolicy.AutoSnapshotExcutionStatus.SystemDiskExcutionStatus");
+			autoSnapshotExcutionStatus.DataDiskExcutionStatus = context.StringValue("DescribeAutoSnapshotPolicy.AutoSnapshotExcutionStatus.DataDiskExcutionStatus");
 			describeAutoSnapshotPolicyResponse.AutoSnapshotExcutionStatus = autoSnapshotExcutionStatus;
         
 			return describeAutoSnapshotPolicyResponse;

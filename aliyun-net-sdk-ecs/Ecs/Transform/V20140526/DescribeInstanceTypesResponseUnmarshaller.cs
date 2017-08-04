@@ -32,17 +32,22 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeInstanceTypesResponse.HttpResponse = context.HttpResponse;
 			describeInstanceTypesResponse.RequestId = context.StringValue("DescribeInstanceTypes.RequestId");
 
-			List<DescribeInstanceTypesResponse.InstanceType> instanceTypes = new List<DescribeInstanceTypesResponse.InstanceType>();
+			List<DescribeInstanceTypesResponse.DescribeInstanceTypes_InstanceType> describeInstanceTypesResponse_instanceTypes = new List<DescribeInstanceTypesResponse.DescribeInstanceTypes_InstanceType>();
 			for (int i = 0; i < context.Length("DescribeInstanceTypes.InstanceTypes.Length"); i++) {
-				DescribeInstanceTypesResponse.InstanceType instanceType = new DescribeInstanceTypesResponse.InstanceType();
+				DescribeInstanceTypesResponse.DescribeInstanceTypes_InstanceType instanceType = new DescribeInstanceTypesResponse.DescribeInstanceTypes_InstanceType();
 				instanceType.InstanceTypeId = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceTypeId");
 				instanceType.CpuCoreCount = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].CpuCoreCount");
 				instanceType.MemorySize = context.FloatValue("DescribeInstanceTypes.InstanceTypes["+ i +"].MemorySize");
 				instanceType.InstanceTypeFamily = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceTypeFamily");
+				instanceType.LocalStorageCapacity = context.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].LocalStorageCapacity");
+				instanceType.LocalStorageAmount = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].LocalStorageAmount");
+				instanceType.LocalStorageCategory = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].LocalStorageCategory");
+				instanceType.GPUAmount = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].GPUAmount");
+				instanceType.GPUSpec = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].GPUSpec");
 
-				instanceTypes.Add(instanceType);
+				describeInstanceTypesResponse_instanceTypes.Add(instanceType);
 			}
-			describeInstanceTypesResponse.InstanceTypes = instanceTypes;
+			describeInstanceTypesResponse.InstanceTypes = describeInstanceTypesResponse_instanceTypes;
         
 			return describeInstanceTypesResponse;
         }

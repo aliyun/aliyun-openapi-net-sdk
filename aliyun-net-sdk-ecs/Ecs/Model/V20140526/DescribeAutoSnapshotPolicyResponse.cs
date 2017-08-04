@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeAutoSnapshotPolicyResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? autoSnapshotOccupation;
 
-		private AutoSnapshotPolicy_ autoSnapshotPolicy;
+		private DescribeAutoSnapshotPolicy_AutoSnapshotPolicy autoSnapshotPolicy;
 
-		private AutoSnapshotExcutionStatus_ autoSnapshotExcutionStatus;
+		private DescribeAutoSnapshotPolicy_AutoSnapshotExcutionStatus autoSnapshotExcutionStatus;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? AutoSnapshotOccupation
 		{
@@ -42,7 +56,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public AutoSnapshotPolicy_ AutoSnapshotPolicy
+		public DescribeAutoSnapshotPolicy_AutoSnapshotPolicy AutoSnapshotPolicy
 		{
 			get
 			{
@@ -54,7 +68,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public AutoSnapshotExcutionStatus_ AutoSnapshotExcutionStatus
+		public DescribeAutoSnapshotPolicy_AutoSnapshotExcutionStatus AutoSnapshotExcutionStatus
 		{
 			get
 			{
@@ -66,7 +80,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class AutoSnapshotPolicy_{
+		public class DescribeAutoSnapshotPolicy_AutoSnapshotPolicy
+		{
 
 			private string systemDiskPolicyEnabled;
 
@@ -181,13 +196,14 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class AutoSnapshotExcutionStatus_{
+		public class DescribeAutoSnapshotPolicy_AutoSnapshotExcutionStatus
+		{
 
-			private SystemDiskExcutionStatusEnum? systemDiskExcutionStatus;
+			private string systemDiskExcutionStatus;
 
-			private DataDiskExcutionStatusEnum? dataDiskExcutionStatus;
+			private string dataDiskExcutionStatus;
 
-			public SystemDiskExcutionStatusEnum? SystemDiskExcutionStatus
+			public string SystemDiskExcutionStatus
 			{
 				get
 				{
@@ -199,7 +215,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public DataDiskExcutionStatusEnum? DataDiskExcutionStatus
+			public string DataDiskExcutionStatus
 			{
 				get
 				{
@@ -209,20 +225,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				{
 					dataDiskExcutionStatus = value;
 				}
-			}
-
-			public enum SystemDiskExcutionStatusEnum {
-			
-					Standby,
-					Failed,
-					Executed,
-			}
-
-			public enum DataDiskExcutionStatusEnum {
-			
-					Standby,
-					Failed,
-					Executed,
 			}
 		}
 	}

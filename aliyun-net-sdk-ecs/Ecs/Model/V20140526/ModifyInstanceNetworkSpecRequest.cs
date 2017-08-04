@@ -33,45 +33,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
 
 		private string instanceId;
 
-		private int? internetMaxBandwidthOut;
-
-		private int? internetMaxBandwidthIn;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private int? internetMaxBandwidthOut;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string action;
+
+		private long? ownerId;
+
+		private int? internetMaxBandwidthIn;
 
 		public long? ResourceOwnerId
 		{
@@ -99,29 +75,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? InternetMaxBandwidthOut
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return internetMaxBandwidthOut;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				internetMaxBandwidthOut = value;
-				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthOut", value.ToString());
-			}
-		}
-
-		public int? InternetMaxBandwidthIn
-		{
-			get
-			{
-				return internetMaxBandwidthIn;
-			}
-			set	
-			{
-				internetMaxBandwidthIn = value;
-				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthIn", value.ToString());
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -135,6 +98,58 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public int? InternetMaxBandwidthOut
+		{
+			get
+			{
+				return internetMaxBandwidthOut;
+			}
+			set	
+			{
+				internetMaxBandwidthOut = value;
+				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthOut", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? InternetMaxBandwidthIn
+		{
+			get
+			{
+				return internetMaxBandwidthIn;
+			}
+			set	
+			{
+				internetMaxBandwidthIn = value;
+				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthIn", value.ToString());
 			}
 		}
 

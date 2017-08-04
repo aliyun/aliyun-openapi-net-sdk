@@ -33,47 +33,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
 
 		private string imageId;
 
 		private string oSSBucket;
 
-		private string oSSPrefix;
+		private string resourceOwnerAccount;
 
-		private string imageFormat;
+		private string regionId;
+
+		private string oSSPrefix;
 
 		private string roleName;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string action;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private long? ownerId;
+
+		private string imageFormat;
 
 		public long? ResourceOwnerId
 		{
@@ -114,6 +92,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string OSSPrefix
 		{
 			get
@@ -127,19 +131,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ImageFormat
-		{
-			get
-			{
-				return imageFormat;
-			}
-			set	
-			{
-				imageFormat = value;
-				DictionaryUtil.Add(QueryParameters, "ImageFormat", value);
-			}
-		}
-
 		public string RoleName
 		{
 			get
@@ -150,6 +141,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				roleName = value;
 				DictionaryUtil.Add(QueryParameters, "RoleName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ImageFormat
+		{
+			get
+			{
+				return imageFormat;
+			}
+			set	
+			{
+				imageFormat = value;
+				DictionaryUtil.Add(QueryParameters, "ImageFormat", value);
 			}
 		}
 

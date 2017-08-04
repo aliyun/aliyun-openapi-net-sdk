@@ -33,53 +33,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private bool? dataDiskPolicyEnabled;
 
 		private long? resourceOwnerId;
 
-		private bool? systemDiskPolicyEnabled;
+		private int? dataDiskPolicyRetentionDays;
 
-		private int? systemDiskPolicyTimePeriod;
-
-		private int? systemDiskPolicyRetentionDays;
+		private string resourceOwnerAccount;
 
 		private bool? systemDiskPolicyRetentionLastWeek;
 
-		private bool? dataDiskPolicyEnabled;
+		private string ownerAccount;
 
-		private int? dataDiskPolicyTimePeriod;
+		private int? systemDiskPolicyTimePeriod;
 
-		private int? dataDiskPolicyRetentionDays;
+		private long? ownerId;
 
 		private bool? dataDiskPolicyRetentionLastWeek;
 
-		private string ownerAccount;
+		private int? systemDiskPolicyRetentionDays;
 
-		public long? OwnerId
+		private int? dataDiskPolicyTimePeriod;
+
+		private string action;
+
+		private bool? systemDiskPolicyEnabled;
+
+		public bool? DataDiskPolicyEnabled
 		{
 			get
 			{
-				return ownerId;
+				return dataDiskPolicyEnabled;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				dataDiskPolicyEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "DataDiskPolicyEnabled", value.ToString());
 			}
 		}
 
@@ -96,42 +85,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? SystemDiskPolicyEnabled
+		public int? DataDiskPolicyRetentionDays
 		{
 			get
 			{
-				return systemDiskPolicyEnabled;
+				return dataDiskPolicyRetentionDays;
 			}
 			set	
 			{
-				systemDiskPolicyEnabled = value;
-				DictionaryUtil.Add(QueryParameters, "SystemDiskPolicyEnabled", value.ToString());
+				dataDiskPolicyRetentionDays = value;
+				DictionaryUtil.Add(QueryParameters, "DataDiskPolicyRetentionDays", value.ToString());
 			}
 		}
 
-		public int? SystemDiskPolicyTimePeriod
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return systemDiskPolicyTimePeriod;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				systemDiskPolicyTimePeriod = value;
-				DictionaryUtil.Add(QueryParameters, "SystemDiskPolicyTimePeriod", value.ToString());
-			}
-		}
-
-		public int? SystemDiskPolicyRetentionDays
-		{
-			get
-			{
-				return systemDiskPolicyRetentionDays;
-			}
-			set	
-			{
-				systemDiskPolicyRetentionDays = value;
-				DictionaryUtil.Add(QueryParameters, "SystemDiskPolicyRetentionDays", value.ToString());
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -148,42 +124,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? DataDiskPolicyEnabled
+		public string OwnerAccount
 		{
 			get
 			{
-				return dataDiskPolicyEnabled;
+				return ownerAccount;
 			}
 			set	
 			{
-				dataDiskPolicyEnabled = value;
-				DictionaryUtil.Add(QueryParameters, "DataDiskPolicyEnabled", value.ToString());
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
-		public int? DataDiskPolicyTimePeriod
+		public int? SystemDiskPolicyTimePeriod
 		{
 			get
 			{
-				return dataDiskPolicyTimePeriod;
+				return systemDiskPolicyTimePeriod;
 			}
 			set	
 			{
-				dataDiskPolicyTimePeriod = value;
-				DictionaryUtil.Add(QueryParameters, "DataDiskPolicyTimePeriod", value.ToString());
+				systemDiskPolicyTimePeriod = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskPolicyTimePeriod", value.ToString());
 			}
 		}
 
-		public int? DataDiskPolicyRetentionDays
+		public long? OwnerId
 		{
 			get
 			{
-				return dataDiskPolicyRetentionDays;
+				return ownerId;
 			}
 			set	
 			{
-				dataDiskPolicyRetentionDays = value;
-				DictionaryUtil.Add(QueryParameters, "DataDiskPolicyRetentionDays", value.ToString());
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -200,16 +176,55 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OwnerAccount
+		public int? SystemDiskPolicyRetentionDays
 		{
 			get
 			{
-				return ownerAccount;
+				return systemDiskPolicyRetentionDays;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				systemDiskPolicyRetentionDays = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskPolicyRetentionDays", value.ToString());
+			}
+		}
+
+		public int? DataDiskPolicyTimePeriod
+		{
+			get
+			{
+				return dataDiskPolicyTimePeriod;
+			}
+			set	
+			{
+				dataDiskPolicyTimePeriod = value;
+				DictionaryUtil.Add(QueryParameters, "DataDiskPolicyTimePeriod", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public bool? SystemDiskPolicyEnabled
+		{
+			get
+			{
+				return systemDiskPolicyEnabled;
+			}
+			set	
+			{
+				systemDiskPolicyEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskPolicyEnabled", value.ToString());
 			}
 		}
 

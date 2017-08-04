@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeAutoSnapshotPolicyExResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<AutoSnapshotPolicy> autoSnapshotPolicies;
+		private List<DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy> autoSnapshotPolicies;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<AutoSnapshotPolicy> AutoSnapshotPolicies
+		public List<DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy> AutoSnapshotPolicies
 		{
 			get
 			{
@@ -80,9 +94,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class AutoSnapshotPolicy{
+		public class DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy
+		{
 
-			private int? autoSnapshotPolicyId;
+			private string autoSnapshotPolicyId;
 
 			private string regionId;
 
@@ -96,9 +111,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? diskNums;
 
+			private int? volumeNums;
+
 			private string creationTime;
 
-			public int? AutoSnapshotPolicyId
+			public string AutoSnapshotPolicyId
 			{
 				get
 				{
@@ -179,6 +196,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					diskNums = value;
+				}
+			}
+
+			public int? VolumeNums
+			{
+				get
+				{
+					return volumeNums;
+				}
+				set	
+				{
+					volumeNums = value;
 				}
 			}
 

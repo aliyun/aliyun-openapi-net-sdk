@@ -33,43 +33,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string ipAddress;
 
 		private long? resourceOwnerId;
 
 		private string instanceId;
 
-		private string ipAddress;
+		private string resourceOwnerAccount;
 
 		private string vlanId;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string action;
 
-		public string ResourceOwnerAccount
+		private long? ownerId;
+
+		public string IpAddress
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return ipAddress;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				ipAddress = value;
+				DictionaryUtil.Add(QueryParameters, "IpAddress", value);
 			}
 		}
 
@@ -99,16 +88,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string IpAddress
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return ipAddress;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				ipAddress = value;
-				DictionaryUtil.Add(QueryParameters, "IpAddress", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -135,6 +124,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

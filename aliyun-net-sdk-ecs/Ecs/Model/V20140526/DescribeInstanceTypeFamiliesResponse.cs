@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeInstanceTypeFamiliesResponse : AcsResponse
 	{
 
-		private List<InstanceTypeFamily> instanceTypeFamilies;
+		private string requestId;
 
-		public List<InstanceTypeFamily> InstanceTypeFamilies
+		private List<DescribeInstanceTypeFamilies_InstanceTypeFamily> instanceTypeFamilies;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeInstanceTypeFamilies_InstanceTypeFamily> InstanceTypeFamilies
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class InstanceTypeFamily{
+		public class DescribeInstanceTypeFamilies_InstanceTypeFamily
+		{
 
 			private string instanceTypeFamilyId;
 

@@ -33,59 +33,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
-
-		private string ownerAccount;
-
-		private string instanceId;
-
-		private string instanceType;
-
-		private int? internetMaxBandwidthOut;
-
-		private string internetChargeType;
 
 		private int? period;
 
-		private string rebootTime;
+		private string instanceId;
 
-		private string covertDiskPortable1DiskId;
+		private string clientToken;
 
-		private string covertDiskPortable2DiskId;
+		private string resourceOwnerAccount;
 
-		private string covertDiskPortable3DiskId;
+		private string ownerAccount;
 
-		private string covertDiskPortable4DiskId;
+		private string action;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -97,71 +59,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
-		public int? InternetMaxBandwidthOut
-		{
-			get
-			{
-				return internetMaxBandwidthOut;
-			}
-			set	
-			{
-				internetMaxBandwidthOut = value;
-				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthOut", value.ToString());
-			}
-		}
-
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
 			}
 		}
 
@@ -178,68 +75,81 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RebootTime
+		public string InstanceId
 		{
 			get
 			{
-				return rebootTime;
+				return instanceId;
 			}
 			set	
 			{
-				rebootTime = value;
-				DictionaryUtil.Add(QueryParameters, "RebootTime", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public string CovertDiskPortable1DiskId
+		public string ClientToken
 		{
 			get
 			{
-				return covertDiskPortable1DiskId;
+				return clientToken;
 			}
 			set	
 			{
-				covertDiskPortable1DiskId = value;
-				DictionaryUtil.Add(QueryParameters, "CovertDiskPortable.1.DiskId", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public string CovertDiskPortable2DiskId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return covertDiskPortable2DiskId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				covertDiskPortable2DiskId = value;
-				DictionaryUtil.Add(QueryParameters, "CovertDiskPortable.2.DiskId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string CovertDiskPortable3DiskId
+		public string OwnerAccount
 		{
 			get
 			{
-				return covertDiskPortable3DiskId;
+				return ownerAccount;
 			}
 			set	
 			{
-				covertDiskPortable3DiskId = value;
-				DictionaryUtil.Add(QueryParameters, "CovertDiskPortable.3.DiskId", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
-		public string CovertDiskPortable4DiskId
+		public string Action
 		{
 			get
 			{
-				return covertDiskPortable4DiskId;
+				return action;
 			}
 			set	
 			{
-				covertDiskPortable4DiskId = value;
-				DictionaryUtil.Add(QueryParameters, "CovertDiskPortable.4.DiskId", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

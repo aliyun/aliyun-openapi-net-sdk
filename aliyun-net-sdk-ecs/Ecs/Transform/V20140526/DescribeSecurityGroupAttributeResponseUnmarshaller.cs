@@ -36,26 +36,31 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeSecurityGroupAttributeResponse.Description = context.StringValue("DescribeSecurityGroupAttribute.Description");
 			describeSecurityGroupAttributeResponse.SecurityGroupName = context.StringValue("DescribeSecurityGroupAttribute.SecurityGroupName");
 			describeSecurityGroupAttributeResponse.VpcId = context.StringValue("DescribeSecurityGroupAttribute.VpcId");
+			describeSecurityGroupAttributeResponse.InnerAccessPolicy = context.StringValue("DescribeSecurityGroupAttribute.InnerAccessPolicy");
 
-			List<DescribeSecurityGroupAttributeResponse.Permission> permissions = new List<DescribeSecurityGroupAttributeResponse.Permission>();
+			List<DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_Permission> describeSecurityGroupAttributeResponse_permissions = new List<DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_Permission>();
 			for (int i = 0; i < context.Length("DescribeSecurityGroupAttribute.Permissions.Length"); i++) {
-				DescribeSecurityGroupAttributeResponse.Permission permission = new DescribeSecurityGroupAttributeResponse.Permission();
+				DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_Permission permission = new DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_Permission();
 				permission.IpProtocol = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].IpProtocol");
 				permission.PortRange = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].PortRange");
 				permission.SourceGroupId = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceGroupId");
+				permission.SourceGroupName = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceGroupName");
 				permission.SourceCidrIp = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceCidrIp");
 				permission.Policy = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Policy");
 				permission.NicType = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].NicType");
 				permission.SourceGroupOwnerAccount = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceGroupOwnerAccount");
 				permission.DestGroupId = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestGroupId");
+				permission.DestGroupName = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestGroupName");
 				permission.DestCidrIp = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestCidrIp");
 				permission.DestGroupOwnerAccount = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestGroupOwnerAccount");
 				permission.Priority = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Priority");
 				permission.Direction = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Direction");
+				permission.Description = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Description");
+				permission.CreateTime = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].CreateTime");
 
-				permissions.Add(permission);
+				describeSecurityGroupAttributeResponse_permissions.Add(permission);
 			}
-			describeSecurityGroupAttributeResponse.Permissions = permissions;
+			describeSecurityGroupAttributeResponse.Permissions = describeSecurityGroupAttributeResponse_permissions;
         
 			return describeSecurityGroupAttributeResponse;
         }

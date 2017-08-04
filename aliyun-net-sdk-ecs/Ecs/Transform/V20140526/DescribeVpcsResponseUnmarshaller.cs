@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeVpcsResponse.PageNumber = context.IntegerValue("DescribeVpcs.PageNumber");
 			describeVpcsResponse.PageSize = context.IntegerValue("DescribeVpcs.PageSize");
 
-			List<DescribeVpcsResponse.Vpc> vpcs = new List<DescribeVpcsResponse.Vpc>();
+			List<DescribeVpcsResponse.DescribeVpcs_Vpc> describeVpcsResponse_vpcs = new List<DescribeVpcsResponse.DescribeVpcs_Vpc>();
 			for (int i = 0; i < context.Length("DescribeVpcs.Vpcs.Length"); i++) {
-				DescribeVpcsResponse.Vpc vpc = new DescribeVpcsResponse.Vpc();
+				DescribeVpcsResponse.DescribeVpcs_Vpc vpc = new DescribeVpcsResponse.DescribeVpcs_Vpc();
 				vpc.VpcId = context.StringValue("DescribeVpcs.Vpcs["+ i +"].VpcId");
 				vpc.RegionId = context.StringValue("DescribeVpcs.Vpcs["+ i +"].RegionId");
 				vpc.Status = context.StringValue("DescribeVpcs.Vpcs["+ i +"].Status");
@@ -46,23 +46,23 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				vpc.CidrBlock = context.StringValue("DescribeVpcs.Vpcs["+ i +"].CidrBlock");
 				vpc.VRouterId = context.StringValue("DescribeVpcs.Vpcs["+ i +"].VRouterId");
 				vpc.Description = context.StringValue("DescribeVpcs.Vpcs["+ i +"].Description");
-				vpc.IsDefault = context.StringValue("DescribeVpcs.Vpcs["+ i +"].IsDefault");
+				vpc.IsDefault = context.BooleanValue("DescribeVpcs.Vpcs["+ i +"].IsDefault");
 
-				List<string> vSwitchIds = new List<string>();
+				List<string> vpc_vSwitchIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeVpcs.Vpcs["+ i +"].VSwitchIds.Length"); j++) {
-					vSwitchIds.Add(context.StringValue("DescribeVpcs.Vpcs["+ i +"].VSwitchIds["+ j +"]"));
+					vpc_vSwitchIds.Add(context.StringValue("DescribeVpcs.Vpcs["+ i +"].VSwitchIds["+ j +"]"));
 				}
-				vpc.VSwitchIds = vSwitchIds;
+				vpc.VSwitchIds = vpc_vSwitchIds;
 
-				List<string> userCidrs = new List<string>();
+				List<string> vpc_userCidrs = new List<string>();
 				for (int j = 0; j < context.Length("DescribeVpcs.Vpcs["+ i +"].UserCidrs.Length"); j++) {
-					userCidrs.Add(context.StringValue("DescribeVpcs.Vpcs["+ i +"].UserCidrs["+ j +"]"));
+					vpc_userCidrs.Add(context.StringValue("DescribeVpcs.Vpcs["+ i +"].UserCidrs["+ j +"]"));
 				}
-				vpc.UserCidrs = userCidrs;
+				vpc.UserCidrs = vpc_userCidrs;
 
-				vpcs.Add(vpc);
+				describeVpcsResponse_vpcs.Add(vpc);
 			}
-			describeVpcsResponse.Vpcs = vpcs;
+			describeVpcsResponse.Vpcs = describeVpcsResponse_vpcs;
         
 			return describeVpcsResponse;
         }

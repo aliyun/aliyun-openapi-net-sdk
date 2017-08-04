@@ -35,11 +35,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeTagKeysResponse.PageNumber = context.IntegerValue("DescribeTagKeys.PageNumber");
 			describeTagKeysResponse.TotalCount = context.IntegerValue("DescribeTagKeys.TotalCount");
 
-			List<string> tagKeys = new List<string>();
+			List<string> describeTagKeysResponse_tagKeys = new List<string>();
 			for (int i = 0; i < context.Length("DescribeTagKeys.TagKeys.Length"); i++) {
-				tagKeys.Add(context.StringValue("DescribeTagKeys.TagKeys["+ i +"]"));
+				describeTagKeysResponse_tagKeys.Add(context.StringValue("DescribeTagKeys.TagKeys["+ i +"]"));
 			}
-			describeTagKeysResponse.TagKeys = tagKeys;
+			describeTagKeysResponse.TagKeys = describeTagKeysResponse_tagKeys;
         
 			return describeTagKeysResponse;
         }

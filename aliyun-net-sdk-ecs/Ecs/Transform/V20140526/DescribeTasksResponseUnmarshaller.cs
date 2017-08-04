@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeTasksResponse.PageNumber = context.IntegerValue("DescribeTasks.PageNumber");
 			describeTasksResponse.PageSize = context.IntegerValue("DescribeTasks.PageSize");
 
-			List<DescribeTasksResponse.Task> taskSet = new List<DescribeTasksResponse.Task>();
+			List<DescribeTasksResponse.DescribeTasks_Task> describeTasksResponse_taskSet = new List<DescribeTasksResponse.DescribeTasks_Task>();
 			for (int i = 0; i < context.Length("DescribeTasks.TaskSet.Length"); i++) {
-				DescribeTasksResponse.Task task = new DescribeTasksResponse.Task();
+				DescribeTasksResponse.DescribeTasks_Task task = new DescribeTasksResponse.DescribeTasks_Task();
 				task.TaskId = context.StringValue("DescribeTasks.TaskSet["+ i +"].TaskId");
 				task.TaskAction = context.StringValue("DescribeTasks.TaskSet["+ i +"].TaskAction");
 				task.TaskStatus = context.StringValue("DescribeTasks.TaskSet["+ i +"].TaskStatus");
@@ -46,9 +46,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				task.CreationTime = context.StringValue("DescribeTasks.TaskSet["+ i +"].CreationTime");
 				task.FinishedTime = context.StringValue("DescribeTasks.TaskSet["+ i +"].FinishedTime");
 
-				taskSet.Add(task);
+				describeTasksResponse_taskSet.Add(task);
 			}
-			describeTasksResponse.TaskSet = taskSet;
+			describeTasksResponse.TaskSet = describeTasksResponse_taskSet;
         
 			return describeTasksResponse;
         }

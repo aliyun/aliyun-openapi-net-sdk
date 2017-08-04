@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeInstanceMonitorDataResponse : AcsResponse
 	{
 
-		private List<InstanceMonitorData> monitorData;
+		private string requestId;
 
-		public List<InstanceMonitorData> MonitorData
+		private List<DescribeInstanceMonitorData_InstanceMonitorData> monitorData;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeInstanceMonitorData_InstanceMonitorData> MonitorData
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class InstanceMonitorData{
+		public class DescribeInstanceMonitorData_InstanceMonitorData
+		{
 
 			private string instanceId;
 

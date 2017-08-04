@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeInstanceTypesResponse : AcsResponse
 	{
 
-		private List<InstanceType> instanceTypes;
+		private string requestId;
 
-		public List<InstanceType> InstanceTypes
+		private List<DescribeInstanceTypes_InstanceType> instanceTypes;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeInstanceTypes_InstanceType> InstanceTypes
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class InstanceType{
+		public class DescribeInstanceTypes_InstanceType
+		{
 
 			private string instanceTypeId;
 
@@ -47,6 +62,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private float? memorySize;
 
 			private string instanceTypeFamily;
+
+			private long? localStorageCapacity;
+
+			private int? localStorageAmount;
+
+			private string localStorageCategory;
+
+			private int? gPUAmount;
+
+			private string gPUSpec;
 
 			public string InstanceTypeId
 			{
@@ -93,6 +118,66 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					instanceTypeFamily = value;
+				}
+			}
+
+			public long? LocalStorageCapacity
+			{
+				get
+				{
+					return localStorageCapacity;
+				}
+				set	
+				{
+					localStorageCapacity = value;
+				}
+			}
+
+			public int? LocalStorageAmount
+			{
+				get
+				{
+					return localStorageAmount;
+				}
+				set	
+				{
+					localStorageAmount = value;
+				}
+			}
+
+			public string LocalStorageCategory
+			{
+				get
+				{
+					return localStorageCategory;
+				}
+				set	
+				{
+					localStorageCategory = value;
+				}
+			}
+
+			public int? GPUAmount
+			{
+				get
+				{
+					return gPUAmount;
+				}
+				set	
+				{
+					gPUAmount = value;
+				}
+			}
+
+			public string GPUSpec
+			{
+				get
+				{
+					return gPUSpec;
+				}
+				set	
+				{
+					gPUSpec = value;
 				}
 			}
 		}

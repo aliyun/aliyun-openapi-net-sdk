@@ -33,30 +33,34 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
+		private string regionId;
 
-		private string autoSnapshotPolicyName;
+		private string action;
 
 		private string timePoints;
 
-		private string repeatWeekdays;
-
 		private int? retentionDays;
 
-		public long? OwnerId
+		private long? ownerId;
+
+		private string repeatWeekdays;
+
+		private string autoSnapshotPolicyName;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -73,29 +77,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string RegionId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return regionId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "regionId", value);
 			}
 		}
 
-		public string AutoSnapshotPolicyName
+		public string Action
 		{
 			get
 			{
-				return autoSnapshotPolicyName;
+				return action;
 			}
 			set	
 			{
-				autoSnapshotPolicyName = value;
-				DictionaryUtil.Add(QueryParameters, "AutoSnapshotPolicyName", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -108,20 +112,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				timePoints = value;
-				DictionaryUtil.Add(QueryParameters, "TimePoints", value);
-			}
-		}
-
-		public string RepeatWeekdays
-		{
-			get
-			{
-				return repeatWeekdays;
-			}
-			set	
-			{
-				repeatWeekdays = value;
-				DictionaryUtil.Add(QueryParameters, "RepeatWeekdays", value);
+				DictionaryUtil.Add(QueryParameters, "timePoints", value);
 			}
 		}
 
@@ -134,7 +125,46 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				retentionDays = value;
-				DictionaryUtil.Add(QueryParameters, "RetentionDays", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "retentionDays", value.ToString());
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string RepeatWeekdays
+		{
+			get
+			{
+				return repeatWeekdays;
+			}
+			set	
+			{
+				repeatWeekdays = value;
+				DictionaryUtil.Add(QueryParameters, "repeatWeekdays", value);
+			}
+		}
+
+		public string AutoSnapshotPolicyName
+		{
+			get
+			{
+				return autoSnapshotPolicyName;
+			}
+			set	
+			{
+				autoSnapshotPolicyName = value;
+				DictionaryUtil.Add(QueryParameters, "autoSnapshotPolicyName", value);
 			}
 		}
 

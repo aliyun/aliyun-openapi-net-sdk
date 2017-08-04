@@ -33,57 +33,49 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private List<DiskDeviceMapping> diskDeviceMappings;
 
 		private long? resourceOwnerId;
 
+		private string resourceOwnerAccount;
+
+		private string regionId;
+
 		private string imageName;
-
-		private string description;
-
-		private string architecture;
-
-		private string oSType;
-
-		private string platform;
-
-		private string diskDeviceMapping1Format;
-
-		private string diskDeviceMapping1OSSBucket;
-
-		private string diskDeviceMapping1OSSObject;
-
-		private int? diskDeviceMapping1DiskImSize;
-
-		private string diskDeviceMapping1Device;
 
 		private string roleName;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string action;
 
-		public string ResourceOwnerAccount
+		private string description;
+
+		private string oSType;
+
+		private long? ownerId;
+
+		private string platform;
+
+		private string architecture;
+
+		public List<DiskDeviceMapping> DiskDeviceMappings
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return diskDeviceMappings;
 			}
-			set	
+
+			set
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				diskDeviceMappings = value;
+				for (int i = 0; i < diskDeviceMappings.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".Format", diskDeviceMappings[i].Format);
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".OSSBucket", diskDeviceMappings[i].OSSBucket);
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".OSSObject", diskDeviceMappings[i].OSSObject);
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".DiskImSize", diskDeviceMappings[i].DiskImSize);
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".DiskImageSize", diskDeviceMappings[i].DiskImageSize);
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".Device", diskDeviceMappings[i].Device);
+				}
 			}
 		}
 
@@ -100,6 +92,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string ImageName
 		{
 			get
@@ -110,6 +128,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				imageName = value;
 				DictionaryUtil.Add(QueryParameters, "ImageName", value);
+			}
+		}
+
+		public string RoleName
+		{
+			get
+			{
+				return roleName;
+			}
+			set	
+			{
+				roleName = value;
+				DictionaryUtil.Add(QueryParameters, "RoleName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -126,19 +170,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Architecture
-		{
-			get
-			{
-				return architecture;
-			}
-			set	
-			{
-				architecture = value;
-				DictionaryUtil.Add(QueryParameters, "Architecture", value);
-			}
-		}
-
 		public string OSType
 		{
 			get
@@ -149,6 +180,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				oSType = value;
 				DictionaryUtil.Add(QueryParameters, "OSType", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -165,81 +209,104 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DiskDeviceMapping1Format
+		public string Architecture
 		{
 			get
 			{
-				return diskDeviceMapping1Format;
+				return architecture;
 			}
 			set	
 			{
-				diskDeviceMapping1Format = value;
-				DictionaryUtil.Add(QueryParameters, "DiskDeviceMapping.1.Format", value);
+				architecture = value;
+				DictionaryUtil.Add(QueryParameters, "Architecture", value);
 			}
 		}
 
-		public string DiskDeviceMapping1OSSBucket
+		public class DiskDeviceMapping
 		{
-			get
-			{
-				return diskDeviceMapping1OSSBucket;
-			}
-			set	
-			{
-				diskDeviceMapping1OSSBucket = value;
-				DictionaryUtil.Add(QueryParameters, "DiskDeviceMapping.1.OSSBucket", value);
-			}
-		}
 
-		public string DiskDeviceMapping1OSSObject
-		{
-			get
-			{
-				return diskDeviceMapping1OSSObject;
-			}
-			set	
-			{
-				diskDeviceMapping1OSSObject = value;
-				DictionaryUtil.Add(QueryParameters, "DiskDeviceMapping.1.OSSObject", value);
-			}
-		}
+			private string format;
 
-		public int? DiskDeviceMapping1DiskImSize
-		{
-			get
-			{
-				return diskDeviceMapping1DiskImSize;
-			}
-			set	
-			{
-				diskDeviceMapping1DiskImSize = value;
-				DictionaryUtil.Add(QueryParameters, "DiskDeviceMapping.1.DiskImSize", value.ToString());
-			}
-		}
+			private string oSSBucket;
 
-		public string DiskDeviceMapping1Device
-		{
-			get
-			{
-				return diskDeviceMapping1Device;
-			}
-			set	
-			{
-				diskDeviceMapping1Device = value;
-				DictionaryUtil.Add(QueryParameters, "DiskDeviceMapping.1.Device", value);
-			}
-		}
+			private string oSSObject;
 
-		public string RoleName
-		{
-			get
+			private int? diskImSize;
+
+			private int? diskImageSize;
+
+			private string device;
+
+			public string Format
 			{
-				return roleName;
+				get
+				{
+					return format;
+				}
+				set	
+				{
+					format = value;
+				}
 			}
-			set	
+
+			public string OSSBucket
 			{
-				roleName = value;
-				DictionaryUtil.Add(QueryParameters, "RoleName", value);
+				get
+				{
+					return oSSBucket;
+				}
+				set	
+				{
+					oSSBucket = value;
+				}
+			}
+
+			public string OSSObject
+			{
+				get
+				{
+					return oSSObject;
+				}
+				set	
+				{
+					oSSObject = value;
+				}
+			}
+
+			public int? DiskImSize
+			{
+				get
+				{
+					return diskImSize;
+				}
+				set	
+				{
+					diskImSize = value;
+				}
+			}
+
+			public int? DiskImageSize
+			{
+				get
+				{
+					return diskImageSize;
+				}
+				set	
+				{
+					diskImageSize = value;
+				}
+			}
+
+			public string Device
+			{
+				get
+				{
+					return device;
+				}
+				set	
+				{
+					device = value;
+				}
 			}
 		}
 

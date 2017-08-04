@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeInstanceStatusResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<InstanceStatus> instanceStatuses;
+		private List<DescribeInstanceStatus_InstanceStatus> instanceStatuses;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<InstanceStatus> InstanceStatuses
+		public List<DescribeInstanceStatus_InstanceStatus> InstanceStatuses
 		{
 			get
 			{
@@ -80,11 +94,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class InstanceStatus{
+		public class DescribeInstanceStatus_InstanceStatus
+		{
 
 			private string instanceId;
 
-			private StatusEnum? status;
+			private string status;
 
 			public string InstanceId
 			{
@@ -98,7 +113,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public StatusEnum? Status
+			public string Status
 			{
 				get
 				{
@@ -108,18 +123,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				{
 					status = value;
 				}
-			}
-
-			public enum StatusEnum {
-			
-					Deleted,
-					Stopped,
-					Transferring,
-					Running,
-					Resetting,
-					Starting,
-					Stopping,
-					Pending,
 			}
 		}
 	}

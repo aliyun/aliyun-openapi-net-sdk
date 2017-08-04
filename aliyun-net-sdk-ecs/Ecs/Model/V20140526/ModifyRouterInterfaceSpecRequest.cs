@@ -33,58 +33,49 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string routerInterfaceId;
+		private long? resourceOwnerId;
 
-		private string spec;
-
-		private long? ownerId;
+		private string regionId;
 
 		private string resourceOwnerAccount;
-
-		private long? resourceOwnerId;
 
 		private string clientToken;
 
 		private string ownerAccount;
 
+		private string action;
+
 		private string userCidr;
 
-		public string RouterInterfaceId
+		private string routerInterfaceId;
+
+		private long? ownerId;
+
+		private string spec;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return routerInterfaceId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				routerInterfaceId = value;
-				DictionaryUtil.Add(QueryParameters, "RouterInterfaceId", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
-		public string Spec
+		public string RegionId
 		{
 			get
 			{
-				return spec;
+				return regionId;
 			}
 			set	
 			{
-				spec = value;
-				DictionaryUtil.Add(QueryParameters, "Spec", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -98,19 +89,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -140,6 +118,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string UserCidr
 		{
 			get
@@ -150,6 +141,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				userCidr = value;
 				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
+			}
+		}
+
+		public string RouterInterfaceId
+		{
+			get
+			{
+				return routerInterfaceId;
+			}
+			set	
+			{
+				routerInterfaceId = value;
+				DictionaryUtil.Add(QueryParameters, "RouterInterfaceId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Spec
+		{
+			get
+			{
+				return spec;
+			}
+			set	
+			{
+				spec = value;
+				DictionaryUtil.Add(QueryParameters, "Spec", value);
 			}
 		}
 

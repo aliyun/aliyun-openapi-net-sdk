@@ -35,23 +35,24 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeTagsResponse.PageNumber = context.IntegerValue("DescribeTags.PageNumber");
 			describeTagsResponse.TotalCount = context.IntegerValue("DescribeTags.TotalCount");
 
-			List<DescribeTagsResponse.Tag> tags = new List<DescribeTagsResponse.Tag>();
+			List<DescribeTagsResponse.DescribeTags_Tag> describeTagsResponse_tags = new List<DescribeTagsResponse.DescribeTags_Tag>();
 			for (int i = 0; i < context.Length("DescribeTags.Tags.Length"); i++) {
-				DescribeTagsResponse.Tag tag = new DescribeTagsResponse.Tag();
+				DescribeTagsResponse.DescribeTags_Tag tag = new DescribeTagsResponse.DescribeTags_Tag();
 				tag.TagKey = context.StringValue("DescribeTags.Tags["+ i +"].TagKey");
 				tag.TagValue = context.StringValue("DescribeTags.Tags["+ i +"].TagValue");
 
-				DescribeTagsResponse.Tag.ResourceTypeCount_ resourceTypeCount = new DescribeTagsResponse.Tag.ResourceTypeCount_();
+				DescribeTagsResponse.DescribeTags_Tag.DescribeTags_ResourceTypeCount resourceTypeCount = new DescribeTagsResponse.DescribeTags_Tag.DescribeTags_ResourceTypeCount();
 				resourceTypeCount.Instance = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Instance");
 				resourceTypeCount.Disk = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Disk");
+				resourceTypeCount.Volume = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Volume");
 				resourceTypeCount.Image = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Image");
 				resourceTypeCount.Snapshot = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Snapshot");
 				resourceTypeCount.Securitygroup = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Securitygroup");
 				tag.ResourceTypeCount = resourceTypeCount;
 
-				tags.Add(tag);
+				describeTagsResponse_tags.Add(tag);
 			}
-			describeTagsResponse.Tags = tags;
+			describeTagsResponse.Tags = describeTagsResponse_tags;
         
 			return describeTagsResponse;
         }

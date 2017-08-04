@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeSecurityGroupAttributeResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string regionId;
 
 		private string securityGroupId;
@@ -34,7 +36,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string vpcId;
 
-		private List<Permission> permissions;
+		private string innerAccessPolicy;
+
+		private List<DescribeSecurityGroupAttribute_Permission> permissions;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string RegionId
 		{
@@ -96,7 +112,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Permission> Permissions
+		public string InnerAccessPolicy
+		{
+			get
+			{
+				return innerAccessPolicy;
+			}
+			set	
+			{
+				innerAccessPolicy = value;
+			}
+		}
+
+		public List<DescribeSecurityGroupAttribute_Permission> Permissions
 		{
 			get
 			{
@@ -108,13 +136,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Permission{
+		public class DescribeSecurityGroupAttribute_Permission
+		{
 
 			private string ipProtocol;
 
 			private string portRange;
 
 			private string sourceGroupId;
+
+			private string sourceGroupName;
 
 			private string sourceCidrIp;
 
@@ -126,6 +157,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string destGroupId;
 
+			private string destGroupName;
+
 			private string destCidrIp;
 
 			private string destGroupOwnerAccount;
@@ -133,6 +166,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private string priority;
 
 			private string direction;
+
+			private string description;
+
+			private string createTime;
 
 			public string IpProtocol
 			{
@@ -167,6 +204,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					sourceGroupId = value;
+				}
+			}
+
+			public string SourceGroupName
+			{
+				get
+				{
+					return sourceGroupName;
+				}
+				set	
+				{
+					sourceGroupName = value;
 				}
 			}
 
@@ -230,6 +279,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string DestGroupName
+			{
+				get
+				{
+					return destGroupName;
+				}
+				set	
+				{
+					destGroupName = value;
+				}
+			}
+
 			public string DestCidrIp
 			{
 				get
@@ -275,6 +336,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					direction = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
 				}
 			}
 		}

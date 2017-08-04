@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeImagesResponse.PageNumber = context.IntegerValue("DescribeImages.PageNumber");
 			describeImagesResponse.PageSize = context.IntegerValue("DescribeImages.PageSize");
 
-			List<DescribeImagesResponse.Image> images = new List<DescribeImagesResponse.Image>();
+			List<DescribeImagesResponse.DescribeImages_Image> describeImagesResponse_images = new List<DescribeImagesResponse.DescribeImages_Image>();
 			for (int i = 0; i < context.Length("DescribeImages.Images.Length"); i++) {
-				DescribeImagesResponse.Image image = new DescribeImagesResponse.Image();
+				DescribeImagesResponse.DescribeImages_Image image = new DescribeImagesResponse.DescribeImages_Image();
 				image.Progress = context.StringValue("DescribeImages.Images["+ i +"].Progress");
 				image.ImageId = context.StringValue("DescribeImages.Images["+ i +"].ImageId");
 				image.ImageName = context.StringValue("DescribeImages.Images["+ i +"].ImageName");
@@ -47,8 +47,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				image.Size = context.IntegerValue("DescribeImages.Images["+ i +"].Size");
 				image.ImageOwnerAlias = context.StringValue("DescribeImages.Images["+ i +"].ImageOwnerAlias");
 				image.IsSupportIoOptimized = context.BooleanValue("DescribeImages.Images["+ i +"].IsSupportIoOptimized");
+				image.IsSupportCloudinit = context.BooleanValue("DescribeImages.Images["+ i +"].IsSupportCloudinit");
 				image.OSName = context.StringValue("DescribeImages.Images["+ i +"].OSName");
-				image.Architecture = context.EnumValue<DescribeImagesResponse.Image.ArchitectureEnum>("DescribeImages.Images["+ i +"].Architecture");
+				image.Architecture = context.StringValue("DescribeImages.Images["+ i +"].Architecture");
 				image.Status = context.StringValue("DescribeImages.Images["+ i +"].Status");
 				image.ProductCode = context.StringValue("DescribeImages.Images["+ i +"].ProductCode");
 				image.IsSubscribed = context.BooleanValue("DescribeImages.Images["+ i +"].IsSubscribed");
@@ -59,9 +60,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				image.Usage = context.StringValue("DescribeImages.Images["+ i +"].Usage");
 				image.IsCopied = context.BooleanValue("DescribeImages.Images["+ i +"].IsCopied");
 
-				List<DescribeImagesResponse.Image.DiskDeviceMapping> diskDeviceMappings = new List<DescribeImagesResponse.Image.DiskDeviceMapping>();
+				List<DescribeImagesResponse.DescribeImages_Image.DescribeImages_DiskDeviceMapping> image_diskDeviceMappings = new List<DescribeImagesResponse.DescribeImages_Image.DescribeImages_DiskDeviceMapping>();
 				for (int j = 0; j < context.Length("DescribeImages.Images["+ i +"].DiskDeviceMappings.Length"); j++) {
-					DescribeImagesResponse.Image.DiskDeviceMapping diskDeviceMapping = new DescribeImagesResponse.Image.DiskDeviceMapping();
+					DescribeImagesResponse.DescribeImages_Image.DescribeImages_DiskDeviceMapping diskDeviceMapping = new DescribeImagesResponse.DescribeImages_Image.DescribeImages_DiskDeviceMapping();
 					diskDeviceMapping.SnapshotId = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].SnapshotId");
 					diskDeviceMapping.Size = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].Size");
 					diskDeviceMapping.Device = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].Device");
@@ -69,23 +70,23 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					diskDeviceMapping.ImportOSSBucket = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].ImportOSSBucket");
 					diskDeviceMapping.ImportOSSObject = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].ImportOSSObject");
 
-					diskDeviceMappings.Add(diskDeviceMapping);
+					image_diskDeviceMappings.Add(diskDeviceMapping);
 				}
-				image.DiskDeviceMappings = diskDeviceMappings;
+				image.DiskDeviceMappings = image_diskDeviceMappings;
 
-				List<DescribeImagesResponse.Image.Tag> tags = new List<DescribeImagesResponse.Image.Tag>();
+				List<DescribeImagesResponse.DescribeImages_Image.DescribeImages_Tag> image_tags = new List<DescribeImagesResponse.DescribeImages_Image.DescribeImages_Tag>();
 				for (int j = 0; j < context.Length("DescribeImages.Images["+ i +"].Tags.Length"); j++) {
-					DescribeImagesResponse.Image.Tag tag = new DescribeImagesResponse.Image.Tag();
+					DescribeImagesResponse.DescribeImages_Image.DescribeImages_Tag tag = new DescribeImagesResponse.DescribeImages_Image.DescribeImages_Tag();
 					tag.TagKey = context.StringValue("DescribeImages.Images["+ i +"].Tags["+ j +"].TagKey");
 					tag.TagValue = context.StringValue("DescribeImages.Images["+ i +"].Tags["+ j +"].TagValue");
 
-					tags.Add(tag);
+					image_tags.Add(tag);
 				}
-				image.Tags = tags;
+				image.Tags = image_tags;
 
-				images.Add(image);
+				describeImagesResponse_images.Add(image);
 			}
-			describeImagesResponse.Images = images;
+			describeImagesResponse.Images = describeImagesResponse_images;
         
 			return describeImagesResponse;
         }

@@ -35,17 +35,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeRouteTablesResponse.PageNumber = context.IntegerValue("DescribeRouteTables.PageNumber");
 			describeRouteTablesResponse.PageSize = context.IntegerValue("DescribeRouteTables.PageSize");
 
-			List<DescribeRouteTablesResponse.RouteTable> routeTables = new List<DescribeRouteTablesResponse.RouteTable>();
+			List<DescribeRouteTablesResponse.DescribeRouteTables_RouteTable> describeRouteTablesResponse_routeTables = new List<DescribeRouteTablesResponse.DescribeRouteTables_RouteTable>();
 			for (int i = 0; i < context.Length("DescribeRouteTables.RouteTables.Length"); i++) {
-				DescribeRouteTablesResponse.RouteTable routeTable = new DescribeRouteTablesResponse.RouteTable();
+				DescribeRouteTablesResponse.DescribeRouteTables_RouteTable routeTable = new DescribeRouteTablesResponse.DescribeRouteTables_RouteTable();
 				routeTable.VRouterId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].VRouterId");
 				routeTable.RouteTableId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteTableId");
 				routeTable.RouteTableType = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteTableType");
 				routeTable.CreationTime = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].CreationTime");
 
-				List<DescribeRouteTablesResponse.RouteTable.RouteEntry> routeEntrys = new List<DescribeRouteTablesResponse.RouteTable.RouteEntry>();
+				List<DescribeRouteTablesResponse.DescribeRouteTables_RouteTable.DescribeRouteTables_RouteEntry> routeTable_routeEntrys = new List<DescribeRouteTablesResponse.DescribeRouteTables_RouteTable.DescribeRouteTables_RouteEntry>();
 				for (int j = 0; j < context.Length("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys.Length"); j++) {
-					DescribeRouteTablesResponse.RouteTable.RouteEntry routeEntry = new DescribeRouteTablesResponse.RouteTable.RouteEntry();
+					DescribeRouteTablesResponse.DescribeRouteTables_RouteTable.DescribeRouteTables_RouteEntry routeEntry = new DescribeRouteTablesResponse.DescribeRouteTables_RouteTable.DescribeRouteTables_RouteEntry();
 					routeEntry.RouteTableId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].RouteTableId");
 					routeEntry.DestinationCidrBlock = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].DestinationCidrBlock");
 					routeEntry.Type = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].Type");
@@ -53,23 +53,25 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					routeEntry.InstanceId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].InstanceId");
 					routeEntry.NextHopType = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopType");
 
-					List<DescribeRouteTablesResponse.RouteTable.RouteEntry.NextHop> nextHops = new List<DescribeRouteTablesResponse.RouteTable.RouteEntry.NextHop>();
+					List<DescribeRouteTablesResponse.DescribeRouteTables_RouteTable.DescribeRouteTables_RouteEntry.DescribeRouteTables_NextHop> routeEntry_nextHops = new List<DescribeRouteTablesResponse.DescribeRouteTables_RouteTable.DescribeRouteTables_RouteEntry.DescribeRouteTables_NextHop>();
 					for (int k = 0; k < context.Length("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops.Length"); k++) {
-						DescribeRouteTablesResponse.RouteTable.RouteEntry.NextHop nextHop = new DescribeRouteTablesResponse.RouteTable.RouteEntry.NextHop();
+						DescribeRouteTablesResponse.DescribeRouteTables_RouteTable.DescribeRouteTables_RouteEntry.DescribeRouteTables_NextHop nextHop = new DescribeRouteTablesResponse.DescribeRouteTables_RouteTable.DescribeRouteTables_RouteEntry.DescribeRouteTables_NextHop();
 						nextHop.NextHopType = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].NextHopType");
 						nextHop.NextHopId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].NextHopId");
+						nextHop.Enabled = context.IntegerValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].Enabled");
+						nextHop.Weight = context.IntegerValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].Weight");
 
-						nextHops.Add(nextHop);
+						routeEntry_nextHops.Add(nextHop);
 					}
-					routeEntry.NextHops = nextHops;
+					routeEntry.NextHops = routeEntry_nextHops;
 
-					routeEntrys.Add(routeEntry);
+					routeTable_routeEntrys.Add(routeEntry);
 				}
-				routeTable.RouteEntrys = routeEntrys;
+				routeTable.RouteEntrys = routeTable_routeEntrys;
 
-				routeTables.Add(routeTable);
+				describeRouteTablesResponse_routeTables.Add(routeTable);
 			}
-			describeRouteTablesResponse.RouteTables = routeTables;
+			describeRouteTablesResponse.RouteTables = describeRouteTablesResponse_routeTables;
         
 			return describeRouteTablesResponse;
         }

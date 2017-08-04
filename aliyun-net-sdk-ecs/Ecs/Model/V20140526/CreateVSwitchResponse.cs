@@ -24,7 +24,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateVSwitchResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string vSwitchId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string VSwitchId
 		{

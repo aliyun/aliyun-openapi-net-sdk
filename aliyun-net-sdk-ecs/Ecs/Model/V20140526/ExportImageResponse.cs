@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class ExportImageResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string taskId;
 
 		private string regionId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string TaskId
 		{

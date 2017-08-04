@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeLimitationResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string limitation;
 
-		private string value;
+		private string _value;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Limitation
 		{
@@ -40,15 +54,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Value
+		public string _Value
 		{
 			get
 			{
-				return value;
+				return _value;
 			}
 			set	
 			{
-				value = value;
+				_value = value;
 			}
 		}
 	}

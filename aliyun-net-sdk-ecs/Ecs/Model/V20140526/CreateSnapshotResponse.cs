@@ -24,7 +24,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateSnapshotResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string snapshotId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string SnapshotId
 		{

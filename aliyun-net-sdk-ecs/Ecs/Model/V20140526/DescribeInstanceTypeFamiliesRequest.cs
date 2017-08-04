@@ -33,39 +33,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string generation;
 
 		private long? resourceOwnerId;
 
+		private string resourceOwnerAccount;
+
+		private string regionId;
+
 		private string ownerAccount;
 
-		private string generation;
+		private string action;
 
-		public long? OwnerId
+		private long? ownerId;
+
+		public string Generation
 		{
 			get
 			{
-				return ownerId;
+				return generation;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				generation = value;
+				DictionaryUtil.Add(QueryParameters, "Generation", value);
 			}
 		}
 
@@ -82,6 +73,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -95,16 +112,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Generation
+		public string Action
 		{
 			get
 			{
-				return generation;
+				return action;
 			}
 			set	
 			{
-				generation = value;
-				DictionaryUtil.Add(QueryParameters, "Generation", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

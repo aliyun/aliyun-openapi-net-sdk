@@ -33,72 +33,50 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string physicalConnectionId;
-
-		private long? vbrOwnerId;
-
-		private int? vlanId;
+		private long? resourceOwnerId;
 
 		private string circuitCode;
 
-		private string localGatewayIp;
+		private int? vlanId;
+
+		private string clientToken;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string description;
+
+		private long? ownerId;
 
 		private string peerGatewayIp;
 
 		private string peeringSubnetMask;
 
-		private string description;
+		private string regionId;
+
+		private string physicalConnectionId;
 
 		private string name;
 
-		private string clientToken;
+		private string localGatewayIp;
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
-		private long? resourceOwnerId;
-
-		private string ownerAccount;
+		private string action;
 
 		private string userCidr;
 
-		public string PhysicalConnectionId
-		{
-			get
-			{
-				return physicalConnectionId;
-			}
-			set	
-			{
-				physicalConnectionId = value;
-				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
-			}
-		}
+		private long? vbrOwnerId;
 
-		public long? VbrOwnerId
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return vbrOwnerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				vbrOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "VbrOwnerId", value.ToString());
-			}
-		}
-
-		public int? VlanId
-		{
-			get
-			{
-				return vlanId;
-			}
-			set	
-			{
-				vlanId = value;
-				DictionaryUtil.Add(QueryParameters, "VlanId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -115,16 +93,81 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string LocalGatewayIp
+		public int? VlanId
 		{
 			get
 			{
-				return localGatewayIp;
+				return vlanId;
 			}
 			set	
 			{
-				localGatewayIp = value;
-				DictionaryUtil.Add(QueryParameters, "LocalGatewayIp", value);
+				vlanId = value;
+				DictionaryUtil.Add(QueryParameters, "VlanId", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -154,16 +197,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Description
+		public string RegionId
 		{
 			get
 			{
-				return description;
+				return regionId;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string PhysicalConnectionId
+		{
+			get
+			{
+				return physicalConnectionId;
+			}
+			set	
+			{
+				physicalConnectionId = value;
+				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
 			}
 		}
 
@@ -180,68 +236,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ClientToken
+		public string LocalGatewayIp
 		{
 			get
 			{
-				return clientToken;
+				return localGatewayIp;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				localGatewayIp = value;
+				DictionaryUtil.Add(QueryParameters, "LocalGatewayIp", value);
 			}
 		}
 
-		public long? OwnerId
+		public string Action
 		{
 			get
 			{
-				return ownerId;
+				return action;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -255,6 +272,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				userCidr = value;
 				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
+			}
+		}
+
+		public long? VbrOwnerId
+		{
+			get
+			{
+				return vbrOwnerId;
+			}
+			set	
+			{
+				vbrOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "VbrOwnerId", value.ToString());
 			}
 		}
 

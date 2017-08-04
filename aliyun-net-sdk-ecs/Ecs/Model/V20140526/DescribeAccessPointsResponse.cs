@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeAccessPointsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNumber;
 
 		private int? pageSize;
 
 		private int? totalCount;
 
-		private List<AccessPointType> accessPointSet;
+		private List<DescribeAccessPoints_AccessPointType> accessPointSet;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<AccessPointType> AccessPointSet
+		public List<DescribeAccessPoints_AccessPointType> AccessPointSet
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class AccessPointType{
+		public class DescribeAccessPoints_AccessPointType
+		{
 
 			private string accessPointId;
 

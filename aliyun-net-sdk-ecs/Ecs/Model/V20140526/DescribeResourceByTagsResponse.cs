@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeResourceByTagsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageSize;
 
 		private int? pageNumber;
 
 		private int? totalCount;
 
-		private List<Resource> resources;
+		private List<DescribeResourceByTags_Resource> resources;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageSize
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Resource> Resources
+		public List<DescribeResourceByTags_Resource> Resources
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Resource{
+		public class DescribeResourceByTags_Resource
+		{
 
 			private string resourceId;
 

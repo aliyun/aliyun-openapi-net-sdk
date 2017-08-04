@@ -33,39 +33,28 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string limitation;
 
 		private long? resourceOwnerId;
 
+		private string resourceOwnerAccount;
+
 		private string ownerAccount;
 
-		private string limitation;
+		private string action;
 
-		public long? OwnerId
+		private long? ownerId;
+
+		public string Limitation
 		{
 			get
 			{
-				return ownerId;
+				return limitation;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				limitation = value;
+				DictionaryUtil.Add(QueryParameters, "Limitation", value);
 			}
 		}
 
@@ -82,6 +71,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -95,16 +97,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Limitation
+		public string Action
 		{
 			get
 			{
-				return limitation;
+				return action;
 			}
 			set	
 			{
-				limitation = value;
-				DictionaryUtil.Add(QueryParameters, "Limitation", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

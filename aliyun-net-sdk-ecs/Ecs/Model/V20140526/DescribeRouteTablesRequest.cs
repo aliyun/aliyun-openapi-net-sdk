@@ -33,49 +33,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string routerType;
 
 		private long? resourceOwnerId;
 
 		private string vRouterId;
 
-		private string routeTableId;
-
-		private string routerType;
+		private string resourceOwnerAccount;
 
 		private string routerId;
 
-		private int? pageNumber;
+		private string ownerAccount;
 
 		private int? pageSize;
 
-		private string ownerAccount;
+		private string action;
 
-		public long? OwnerId
+		private long? ownerId;
+
+		private int? pageNumber;
+
+		private string routeTableId;
+
+		public string RouterType
 		{
 			get
 			{
-				return ownerId;
+				return routerType;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				routerType = value;
+				DictionaryUtil.Add(QueryParameters, "RouterType", value);
 			}
 		}
 
@@ -105,29 +94,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RouteTableId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return routeTableId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				routeTableId = value;
-				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
-			}
-		}
-
-		public string RouterType
-		{
-			get
-			{
-				return routerType;
-			}
-			set	
-			{
-				routerType = value;
-				DictionaryUtil.Add(QueryParameters, "RouterType", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -144,16 +120,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageNumber
+		public string OwnerAccount
 		{
 			get
 			{
-				return pageNumber;
+				return ownerAccount;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -170,16 +146,55 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OwnerAccount
+		public string Action
 		{
 			get
 			{
-				return ownerAccount;
+				return action;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string RouteTableId
+		{
+			get
+			{
+				return routeTableId;
+			}
+			set	
+			{
+				routeTableId = value;
+				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
 			}
 		}
 

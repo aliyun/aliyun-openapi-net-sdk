@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeInstancesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<Instance> instances;
+		private List<DescribeInstances_Instance> instances;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Instance> Instances
+		public List<DescribeInstances_Instance> Instances
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Instance{
+		public class DescribeInstances_Instance
+		{
 
 			private string instanceId;
 
@@ -89,6 +104,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private string description;
 
 			private string imageId;
+
+			private string oSName;
+
+			private string oSType;
 
 			private string regionId;
 
@@ -104,7 +123,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string hostName;
 
-			private StatusEnum? status;
+			private string status;
 
 			private string serialNumber;
 
@@ -124,25 +143,43 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string expiredTime;
 
+			private string autoReleaseTime;
+
 			private bool? ioOptimized;
 
 			private bool? deviceAvailable;
 
 			private string instanceTypeFamily;
 
-			private List<LockReason> operationLocks;
+			private long? localStorageCapacity;
 
-			private List<Tag> tags;
+			private int? localStorageAmount;
+
+			private int? gPUAmount;
+
+			private string gPUSpec;
+
+			private string spotStrategy;
+
+			private string resourceGroupId;
+
+			private string keyPairName;
+
+			private List<DescribeInstances_LockReason> operationLocks;
+
+			private List<DescribeInstances_Tag> tags;
 
 			private List<string> securityGroupIds;
+
+			private List<string> networkInterfaceIds;
 
 			private List<string> publicIpAddress;
 
 			private List<string> innerIpAddress;
 
-			private VpcAttributes_ vpcAttributes;
+			private DescribeInstances_VpcAttributes vpcAttributes;
 
-			private EipAddress_ eipAddress;
+			private DescribeInstances_EipAddress eipAddress;
 
 			public string InstanceId
 			{
@@ -189,6 +226,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					imageId = value;
+				}
+			}
+
+			public string OSName
+			{
+				get
+				{
+					return oSName;
+				}
+				set	
+				{
+					oSName = value;
+				}
+			}
+
+			public string OSType
+			{
+				get
+				{
+					return oSType;
+				}
+				set	
+				{
+					oSType = value;
 				}
 			}
 
@@ -276,7 +337,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public StatusEnum? Status
+			public string Status
 			{
 				get
 				{
@@ -396,6 +457,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string AutoReleaseTime
+			{
+				get
+				{
+					return autoReleaseTime;
+				}
+				set	
+				{
+					autoReleaseTime = value;
+				}
+			}
+
 			public bool? IoOptimized
 			{
 				get
@@ -432,7 +505,91 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<LockReason> OperationLocks
+			public long? LocalStorageCapacity
+			{
+				get
+				{
+					return localStorageCapacity;
+				}
+				set	
+				{
+					localStorageCapacity = value;
+				}
+			}
+
+			public int? LocalStorageAmount
+			{
+				get
+				{
+					return localStorageAmount;
+				}
+				set	
+				{
+					localStorageAmount = value;
+				}
+			}
+
+			public int? GPUAmount
+			{
+				get
+				{
+					return gPUAmount;
+				}
+				set	
+				{
+					gPUAmount = value;
+				}
+			}
+
+			public string GPUSpec
+			{
+				get
+				{
+					return gPUSpec;
+				}
+				set	
+				{
+					gPUSpec = value;
+				}
+			}
+
+			public string SpotStrategy
+			{
+				get
+				{
+					return spotStrategy;
+				}
+				set	
+				{
+					spotStrategy = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string KeyPairName
+			{
+				get
+				{
+					return keyPairName;
+				}
+				set	
+				{
+					keyPairName = value;
+				}
+			}
+
+			public List<DescribeInstances_LockReason> OperationLocks
 			{
 				get
 				{
@@ -444,7 +601,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<Tag> Tags
+			public List<DescribeInstances_Tag> Tags
 			{
 				get
 				{
@@ -465,6 +622,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					securityGroupIds = value;
+				}
+			}
+
+			public List<string> NetworkInterfaceIds
+			{
+				get
+				{
+					return networkInterfaceIds;
+				}
+				set	
+				{
+					networkInterfaceIds = value;
 				}
 			}
 
@@ -492,7 +661,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public VpcAttributes_ VpcAttributes
+			public DescribeInstances_VpcAttributes VpcAttributes
 			{
 				get
 				{
@@ -504,7 +673,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public EipAddress_ EipAddress
+			public DescribeInstances_EipAddress EipAddress
 			{
 				get
 				{
@@ -516,36 +685,40 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public enum StatusEnum {
-			
-					Deleted,
-					Stopped,
-					Transferring,
-					Running,
-					Resetting,
-					Starting,
-					Stopping,
-					Pending,
-			}
+			public class DescribeInstances_LockReason
+			{
 
-			public class LockReason{
+				private string lockReason;
 
-				private string lockReason_;
+				private string lockMsg;
 
-				public string LockReason_
+				public string LockReason
 				{
 					get
 					{
-						return lockReason_;
+						return lockReason;
 					}
 					set	
 					{
-						lockReason_ = value;
+						lockReason = value;
+					}
+				}
+
+				public string LockMsg
+				{
+					get
+					{
+						return lockMsg;
+					}
+					set	
+					{
+						lockMsg = value;
 					}
 				}
 			}
 
-			public class Tag{
+			public class DescribeInstances_Tag
+			{
 
 				private string tagKey;
 
@@ -576,7 +749,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class VpcAttributes_{
+			public class DescribeInstances_VpcAttributes
+			{
 
 				private string vpcId;
 
@@ -635,7 +809,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class EipAddress_{
+			public class DescribeInstances_EipAddress
+			{
 
 				private string allocationId;
 
@@ -644,6 +819,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				private int? bandwidth;
 
 				private string internetChargeType;
+
+				private bool? isSupportUnassociate;
 
 				public string AllocationId
 				{
@@ -690,6 +867,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						internetChargeType = value;
+					}
+				}
+
+				public bool? IsSupportUnassociate
+				{
+					get
+					{
+						return isSupportUnassociate;
+					}
+					set	
+					{
+						isSupportUnassociate = value;
 					}
 				}
 			}

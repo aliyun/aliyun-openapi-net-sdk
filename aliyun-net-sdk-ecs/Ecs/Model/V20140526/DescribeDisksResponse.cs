@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDisksResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<Disk> disks;
+		private List<DescribeDisks_Disk> disks;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Disk> Disks
+		public List<DescribeDisks_Disk> Disks
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Disk{
+		public class DescribeDisks_Disk
+		{
 
 			private string diskId;
 
@@ -92,9 +107,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string description;
 
-			private TypeEnum? type;
+			private string type;
 
-			private CategoryEnum? category;
+			private string category;
 
 			private int? size;
 
@@ -132,9 +147,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string expiredTime;
 
-			private List<OperationLock> operationLocks;
+			private string resourceGroupId;
 
-			private List<Tag> tags;
+			private List<DescribeDisks_OperationLock> operationLocks;
+
+			private List<DescribeDisks_Tag> tags;
 
 			public string DiskId
 			{
@@ -196,7 +213,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public TypeEnum? Type
+			public string Type
 			{
 				get
 				{
@@ -208,7 +225,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public CategoryEnum? Category
+			public string Category
 			{
 				get
 				{
@@ -436,7 +453,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<OperationLock> OperationLocks
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<DescribeDisks_OperationLock> OperationLocks
 			{
 				get
 				{
@@ -448,7 +477,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<Tag> Tags
+			public List<DescribeDisks_Tag> Tags
 			{
 				get
 				{
@@ -460,20 +489,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public enum TypeEnum {
-			
-					system,
-					data,
-			}
-
-			public enum CategoryEnum {
-			
-					ephemeral_ssd,
-					ephemeral,
-					cloud,
-			}
-
-			public class OperationLock{
+			public class DescribeDisks_OperationLock
+			{
 
 				private string lockReason;
 
@@ -490,7 +507,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class Tag{
+			public class DescribeDisks_Tag
+			{
 
 				private string tagKey;
 

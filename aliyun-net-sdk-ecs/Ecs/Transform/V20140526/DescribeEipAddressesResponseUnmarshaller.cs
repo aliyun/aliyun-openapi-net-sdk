@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeEipAddressesResponse.PageNumber = context.IntegerValue("DescribeEipAddresses.PageNumber");
 			describeEipAddressesResponse.PageSize = context.IntegerValue("DescribeEipAddresses.PageSize");
 
-			List<DescribeEipAddressesResponse.EipAddress> eipAddresses = new List<DescribeEipAddressesResponse.EipAddress>();
+			List<DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress> describeEipAddressesResponse_eipAddresses = new List<DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress>();
 			for (int i = 0; i < context.Length("DescribeEipAddresses.EipAddresses.Length"); i++) {
-				DescribeEipAddressesResponse.EipAddress eipAddress = new DescribeEipAddressesResponse.EipAddress();
+				DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress eipAddress = new DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress();
 				eipAddress.RegionId = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].RegionId");
 				eipAddress.IpAddress = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].IpAddress");
 				eipAddress.AllocationId = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].AllocationId");
@@ -47,19 +47,21 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				eipAddress.InternetChargeType = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InternetChargeType");
 				eipAddress.AllocationTime = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].AllocationTime");
 				eipAddress.InstanceType = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InstanceType");
+				eipAddress.ChargeType = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ChargeType");
+				eipAddress.ExpiredTime = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ExpiredTime");
 
-				List<DescribeEipAddressesResponse.EipAddress.LockReason> operationLocks = new List<DescribeEipAddressesResponse.EipAddress.LockReason>();
+				List<DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress.DescribeEipAddresses_LockReason> eipAddress_operationLocks = new List<DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress.DescribeEipAddresses_LockReason>();
 				for (int j = 0; j < context.Length("DescribeEipAddresses.EipAddresses["+ i +"].OperationLocks.Length"); j++) {
-					DescribeEipAddressesResponse.EipAddress.LockReason lockReason = new DescribeEipAddressesResponse.EipAddress.LockReason();
-					lockReason.LockReason_ = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].OperationLocks["+ j +"].LockReason");
+					DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress.DescribeEipAddresses_LockReason lockReason = new DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress.DescribeEipAddresses_LockReason();
+					lockReason.LockReason = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].OperationLocks["+ j +"].LockReason");
 
-					operationLocks.Add(lockReason);
+					eipAddress_operationLocks.Add(lockReason);
 				}
-				eipAddress.OperationLocks = operationLocks;
+				eipAddress.OperationLocks = eipAddress_operationLocks;
 
-				eipAddresses.Add(eipAddress);
+				describeEipAddressesResponse_eipAddresses.Add(eipAddress);
 			}
-			describeEipAddressesResponse.EipAddresses = eipAddresses;
+			describeEipAddressesResponse.EipAddresses = describeEipAddressesResponse_eipAddresses;
         
 			return describeEipAddressesResponse;
         }

@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeInstanceMonitorDataResponse.HttpResponse = context.HttpResponse;
 			describeInstanceMonitorDataResponse.RequestId = context.StringValue("DescribeInstanceMonitorData.RequestId");
 
-			List<DescribeInstanceMonitorDataResponse.InstanceMonitorData> monitorData = new List<DescribeInstanceMonitorDataResponse.InstanceMonitorData>();
+			List<DescribeInstanceMonitorDataResponse.DescribeInstanceMonitorData_InstanceMonitorData> describeInstanceMonitorDataResponse_monitorData = new List<DescribeInstanceMonitorDataResponse.DescribeInstanceMonitorData_InstanceMonitorData>();
 			for (int i = 0; i < context.Length("DescribeInstanceMonitorData.MonitorData.Length"); i++) {
-				DescribeInstanceMonitorDataResponse.InstanceMonitorData instanceMonitorData = new DescribeInstanceMonitorDataResponse.InstanceMonitorData();
+				DescribeInstanceMonitorDataResponse.DescribeInstanceMonitorData_InstanceMonitorData instanceMonitorData = new DescribeInstanceMonitorDataResponse.DescribeInstanceMonitorData_InstanceMonitorData();
 				instanceMonitorData.InstanceId = context.StringValue("DescribeInstanceMonitorData.MonitorData["+ i +"].InstanceId");
 				instanceMonitorData.CPU = context.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].CPU");
 				instanceMonitorData.IntranetRX = context.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].IntranetRX");
@@ -49,9 +49,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceMonitorData.BPSWrite = context.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].BPSWrite");
 				instanceMonitorData.TimeStamp = context.StringValue("DescribeInstanceMonitorData.MonitorData["+ i +"].TimeStamp");
 
-				monitorData.Add(instanceMonitorData);
+				describeInstanceMonitorDataResponse_monitorData.Add(instanceMonitorData);
 			}
-			describeInstanceMonitorDataResponse.MonitorData = monitorData;
+			describeInstanceMonitorDataResponse.MonitorData = describeInstanceMonitorDataResponse_monitorData;
         
 			return describeInstanceMonitorDataResponse;
         }

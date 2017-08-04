@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeEipMonitorDataResponse.HttpResponse = context.HttpResponse;
 			describeEipMonitorDataResponse.RequestId = context.StringValue("DescribeEipMonitorData.RequestId");
 
-			List<DescribeEipMonitorDataResponse.EipMonitorData> eipMonitorDatas = new List<DescribeEipMonitorDataResponse.EipMonitorData>();
+			List<DescribeEipMonitorDataResponse.DescribeEipMonitorData_EipMonitorData> describeEipMonitorDataResponse_eipMonitorDatas = new List<DescribeEipMonitorDataResponse.DescribeEipMonitorData_EipMonitorData>();
 			for (int i = 0; i < context.Length("DescribeEipMonitorData.EipMonitorDatas.Length"); i++) {
-				DescribeEipMonitorDataResponse.EipMonitorData eipMonitorData = new DescribeEipMonitorDataResponse.EipMonitorData();
+				DescribeEipMonitorDataResponse.DescribeEipMonitorData_EipMonitorData eipMonitorData = new DescribeEipMonitorDataResponse.DescribeEipMonitorData_EipMonitorData();
 				eipMonitorData.EipRX = context.IntegerValue("DescribeEipMonitorData.EipMonitorDatas["+ i +"].EipRX");
 				eipMonitorData.EipTX = context.IntegerValue("DescribeEipMonitorData.EipMonitorDatas["+ i +"].EipTX");
 				eipMonitorData.EipFlow = context.IntegerValue("DescribeEipMonitorData.EipMonitorDatas["+ i +"].EipFlow");
@@ -42,9 +42,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				eipMonitorData.EipPackets = context.IntegerValue("DescribeEipMonitorData.EipMonitorDatas["+ i +"].EipPackets");
 				eipMonitorData.TimeStamp = context.StringValue("DescribeEipMonitorData.EipMonitorDatas["+ i +"].TimeStamp");
 
-				eipMonitorDatas.Add(eipMonitorData);
+				describeEipMonitorDataResponse_eipMonitorDatas.Add(eipMonitorData);
 			}
-			describeEipMonitorDataResponse.EipMonitorDatas = eipMonitorDatas;
+			describeEipMonitorDataResponse.EipMonitorDatas = describeEipMonitorDataResponse_eipMonitorDatas;
         
 			return describeEipMonitorDataResponse;
         }

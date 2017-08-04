@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describePhysicalConnectionsResponse.PageSize = context.IntegerValue("DescribePhysicalConnections.PageSize");
 			describePhysicalConnectionsResponse.TotalCount = context.IntegerValue("DescribePhysicalConnections.TotalCount");
 
-			List<DescribePhysicalConnectionsResponse.PhysicalConnectionType> physicalConnectionSet = new List<DescribePhysicalConnectionsResponse.PhysicalConnectionType>();
+			List<DescribePhysicalConnectionsResponse.DescribePhysicalConnections_PhysicalConnectionType> describePhysicalConnectionsResponse_physicalConnectionSet = new List<DescribePhysicalConnectionsResponse.DescribePhysicalConnections_PhysicalConnectionType>();
 			for (int i = 0; i < context.Length("DescribePhysicalConnections.PhysicalConnectionSet.Length"); i++) {
-				DescribePhysicalConnectionsResponse.PhysicalConnectionType physicalConnectionType = new DescribePhysicalConnectionsResponse.PhysicalConnectionType();
+				DescribePhysicalConnectionsResponse.DescribePhysicalConnections_PhysicalConnectionType physicalConnectionType = new DescribePhysicalConnectionsResponse.DescribePhysicalConnections_PhysicalConnectionType();
 				physicalConnectionType.PhysicalConnectionId = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].PhysicalConnectionId");
 				physicalConnectionType.AccessPointId = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].AccessPointId");
 				physicalConnectionType.Type = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Type");
@@ -57,9 +57,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				physicalConnectionType.CircuitCode = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].CircuitCode");
 				physicalConnectionType.Bandwidth = context.LongValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Bandwidth");
 
-				physicalConnectionSet.Add(physicalConnectionType);
+				describePhysicalConnectionsResponse_physicalConnectionSet.Add(physicalConnectionType);
 			}
-			describePhysicalConnectionsResponse.PhysicalConnectionSet = physicalConnectionSet;
+			describePhysicalConnectionsResponse.PhysicalConnectionSet = describePhysicalConnectionsResponse_physicalConnectionSet;
         
 			return describePhysicalConnectionsResponse;
         }

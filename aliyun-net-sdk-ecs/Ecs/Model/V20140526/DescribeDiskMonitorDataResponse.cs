@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDiskMonitorDataResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
-		private List<DiskMonitorData> monitorData;
+		private List<DescribeDiskMonitorData_DiskMonitorData> monitorData;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<DiskMonitorData> MonitorData
+		public List<DescribeDiskMonitorData_DiskMonitorData> MonitorData
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class DiskMonitorData{
+		public class DescribeDiskMonitorData_DiskMonitorData
+		{
 
 			private string diskId;
 

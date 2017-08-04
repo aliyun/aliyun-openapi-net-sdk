@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeImageSharePermissionResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string regionId;
 
 		private int? totalCount;
@@ -34,9 +36,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string imageId;
 
-		private List<ShareGroup> shareGroups;
+		private List<DescribeImageSharePermission_ShareGroup> shareGroups;
 
-		private List<Account> accounts;
+		private List<DescribeImageSharePermission_Account> accounts;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string RegionId
 		{
@@ -98,7 +112,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<ShareGroup> ShareGroups
+		public List<DescribeImageSharePermission_ShareGroup> ShareGroups
 		{
 			get
 			{
@@ -110,7 +124,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Account> Accounts
+		public List<DescribeImageSharePermission_Account> Accounts
 		{
 			get
 			{
@@ -122,7 +136,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class ShareGroup{
+		public class DescribeImageSharePermission_ShareGroup
+		{
 
 			private string group;
 
@@ -139,7 +154,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Account{
+		public class DescribeImageSharePermission_Account
+		{
 
 			private string aliyunId;
 

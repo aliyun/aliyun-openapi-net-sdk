@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeImagesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string regionId;
 
 		private int? totalCount;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageSize;
 
-		private List<Image> images;
+		private List<DescribeImages_Image> images;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string RegionId
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Image> Images
+		public List<DescribeImages_Image> Images
 		{
 			get
 			{
@@ -94,7 +108,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Image{
+		public class DescribeImages_Image
+		{
 
 			private string progress;
 
@@ -112,9 +127,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? isSupportIoOptimized;
 
+			private bool? isSupportCloudinit;
+
 			private string oSName;
 
-			private ArchitectureEnum? architecture;
+			private string architecture;
 
 			private string status;
 
@@ -134,9 +151,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? isCopied;
 
-			private List<DiskDeviceMapping> diskDeviceMappings;
+			private List<DescribeImages_DiskDeviceMapping> diskDeviceMappings;
 
-			private List<Tag> tags;
+			private List<DescribeImages_Tag> tags;
 
 			public string Progress
 			{
@@ -234,6 +251,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public bool? IsSupportCloudinit
+			{
+				get
+				{
+					return isSupportCloudinit;
+				}
+				set	
+				{
+					isSupportCloudinit = value;
+				}
+			}
+
 			public string OSName
 			{
 				get
@@ -246,7 +275,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public ArchitectureEnum? Architecture
+			public string Architecture
 			{
 				get
 				{
@@ -366,7 +395,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<DiskDeviceMapping> DiskDeviceMappings
+			public List<DescribeImages_DiskDeviceMapping> DiskDeviceMappings
 			{
 				get
 				{
@@ -378,7 +407,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<Tag> Tags
+			public List<DescribeImages_Tag> Tags
 			{
 				get
 				{
@@ -390,13 +419,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public enum ArchitectureEnum {
-			
-					x86_64,
-					i386,
-			}
-
-			public class DiskDeviceMapping{
+			public class DescribeImages_DiskDeviceMapping
+			{
 
 				private string snapshotId;
 
@@ -483,7 +507,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class Tag{
+			public class DescribeImages_Tag
+			{
 
 				private string tagKey;
 

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CheckDiskEnableAutoSnapshotValidationResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string isPermitted;
 
 		private int? autoSnapshotOccupation;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string IsPermitted
 		{

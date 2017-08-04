@@ -35,13 +35,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeInstancesResponse.PageNumber = context.IntegerValue("DescribeInstances.PageNumber");
 			describeInstancesResponse.PageSize = context.IntegerValue("DescribeInstances.PageSize");
 
-			List<DescribeInstancesResponse.Instance> instances = new List<DescribeInstancesResponse.Instance>();
+			List<DescribeInstancesResponse.DescribeInstances_Instance> describeInstancesResponse_instances = new List<DescribeInstancesResponse.DescribeInstances_Instance>();
 			for (int i = 0; i < context.Length("DescribeInstances.Instances.Length"); i++) {
-				DescribeInstancesResponse.Instance instance = new DescribeInstancesResponse.Instance();
+				DescribeInstancesResponse.DescribeInstances_Instance instance = new DescribeInstancesResponse.DescribeInstances_Instance();
 				instance.InstanceId = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceId");
 				instance.InstanceName = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceName");
 				instance.Description = context.StringValue("DescribeInstances.Instances["+ i +"].Description");
 				instance.ImageId = context.StringValue("DescribeInstances.Instances["+ i +"].ImageId");
+				instance.OSName = context.StringValue("DescribeInstances.Instances["+ i +"].OSName");
+				instance.OSType = context.StringValue("DescribeInstances.Instances["+ i +"].OSType");
 				instance.RegionId = context.StringValue("DescribeInstances.Instances["+ i +"].RegionId");
 				instance.ZoneId = context.StringValue("DescribeInstances.Instances["+ i +"].ZoneId");
 				instance.ClusterId = context.StringValue("DescribeInstances.Instances["+ i +"].ClusterId");
@@ -49,7 +51,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instance.Cpu = context.IntegerValue("DescribeInstances.Instances["+ i +"].Cpu");
 				instance.Memory = context.IntegerValue("DescribeInstances.Instances["+ i +"].Memory");
 				instance.HostName = context.StringValue("DescribeInstances.Instances["+ i +"].HostName");
-				instance.Status = context.EnumValue<DescribeInstancesResponse.Instance.StatusEnum>("DescribeInstances.Instances["+ i +"].Status");
+				instance.Status = context.StringValue("DescribeInstances.Instances["+ i +"].Status");
 				instance.SerialNumber = context.StringValue("DescribeInstances.Instances["+ i +"].SerialNumber");
 				instance.InternetChargeType = context.StringValue("DescribeInstances.Instances["+ i +"].InternetChargeType");
 				instance.InternetMaxBandwidthIn = context.IntegerValue("DescribeInstances.Instances["+ i +"].InternetMaxBandwidthIn");
@@ -59,69 +61,85 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instance.InstanceNetworkType = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceNetworkType");
 				instance.InstanceChargeType = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceChargeType");
 				instance.ExpiredTime = context.StringValue("DescribeInstances.Instances["+ i +"].ExpiredTime");
+				instance.AutoReleaseTime = context.StringValue("DescribeInstances.Instances["+ i +"].AutoReleaseTime");
 				instance.IoOptimized = context.BooleanValue("DescribeInstances.Instances["+ i +"].IoOptimized");
 				instance.DeviceAvailable = context.BooleanValue("DescribeInstances.Instances["+ i +"].DeviceAvailable");
 				instance.InstanceTypeFamily = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceTypeFamily");
+				instance.LocalStorageCapacity = context.LongValue("DescribeInstances.Instances["+ i +"].LocalStorageCapacity");
+				instance.LocalStorageAmount = context.IntegerValue("DescribeInstances.Instances["+ i +"].LocalStorageAmount");
+				instance.GPUAmount = context.IntegerValue("DescribeInstances.Instances["+ i +"].GPUAmount");
+				instance.GPUSpec = context.StringValue("DescribeInstances.Instances["+ i +"].GPUSpec");
+				instance.SpotStrategy = context.StringValue("DescribeInstances.Instances["+ i +"].SpotStrategy");
+				instance.ResourceGroupId = context.StringValue("DescribeInstances.Instances["+ i +"].ResourceGroupId");
+				instance.KeyPairName = context.StringValue("DescribeInstances.Instances["+ i +"].KeyPairName");
 
-				List<string> securityGroupIds = new List<string>();
+				List<string> instance_securityGroupIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].SecurityGroupIds.Length"); j++) {
-					securityGroupIds.Add(context.StringValue("DescribeInstances.Instances["+ i +"].SecurityGroupIds["+ j +"]"));
+					instance_securityGroupIds.Add(context.StringValue("DescribeInstances.Instances["+ i +"].SecurityGroupIds["+ j +"]"));
 				}
-				instance.SecurityGroupIds = securityGroupIds;
+				instance.SecurityGroupIds = instance_securityGroupIds;
 
-				List<string> publicIpAddress = new List<string>();
+				List<string> instance_networkInterfaceIds = new List<string>();
+				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].NetworkInterfaceIds.Length"); j++) {
+					instance_networkInterfaceIds.Add(context.StringValue("DescribeInstances.Instances["+ i +"].NetworkInterfaceIds["+ j +"]"));
+				}
+				instance.NetworkInterfaceIds = instance_networkInterfaceIds;
+
+				List<string> instance_publicIpAddress = new List<string>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].PublicIpAddress.Length"); j++) {
-					publicIpAddress.Add(context.StringValue("DescribeInstances.Instances["+ i +"].PublicIpAddress["+ j +"]"));
+					instance_publicIpAddress.Add(context.StringValue("DescribeInstances.Instances["+ i +"].PublicIpAddress["+ j +"]"));
 				}
-				instance.PublicIpAddress = publicIpAddress;
+				instance.PublicIpAddress = instance_publicIpAddress;
 
-				List<string> innerIpAddress = new List<string>();
+				List<string> instance_innerIpAddress = new List<string>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].InnerIpAddress.Length"); j++) {
-					innerIpAddress.Add(context.StringValue("DescribeInstances.Instances["+ i +"].InnerIpAddress["+ j +"]"));
+					instance_innerIpAddress.Add(context.StringValue("DescribeInstances.Instances["+ i +"].InnerIpAddress["+ j +"]"));
 				}
-				instance.InnerIpAddress = innerIpAddress;
+				instance.InnerIpAddress = instance_innerIpAddress;
 
-				DescribeInstancesResponse.Instance.VpcAttributes_ vpcAttributes = new DescribeInstancesResponse.Instance.VpcAttributes_();
+				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_VpcAttributes vpcAttributes = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_VpcAttributes();
 				vpcAttributes.VpcId = context.StringValue("DescribeInstances.Instances["+ i +"].VpcAttributes.VpcId");
 				vpcAttributes.VSwitchId = context.StringValue("DescribeInstances.Instances["+ i +"].VpcAttributes.VSwitchId");
 				vpcAttributes.NatIpAddress = context.StringValue("DescribeInstances.Instances["+ i +"].VpcAttributes.NatIpAddress");
 
-				List<string> privateIpAddress = new List<string>();
+				List<string> vpcAttributes_privateIpAddress = new List<string>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].VpcAttributes.PrivateIpAddress.Length"); j++) {
-					privateIpAddress.Add(context.StringValue("DescribeInstances.Instances["+ i +"].VpcAttributes.PrivateIpAddress["+ j +"]"));
+					vpcAttributes_privateIpAddress.Add(context.StringValue("DescribeInstances.Instances["+ i +"].VpcAttributes.PrivateIpAddress["+ j +"]"));
 				}
-				vpcAttributes.PrivateIpAddress = privateIpAddress;
+				vpcAttributes.PrivateIpAddress = vpcAttributes_privateIpAddress;
 				instance.VpcAttributes = vpcAttributes;
 
-				DescribeInstancesResponse.Instance.EipAddress_ eipAddress = new DescribeInstancesResponse.Instance.EipAddress_();
+				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_EipAddress eipAddress = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_EipAddress();
 				eipAddress.AllocationId = context.StringValue("DescribeInstances.Instances["+ i +"].EipAddress.AllocationId");
 				eipAddress.IpAddress = context.StringValue("DescribeInstances.Instances["+ i +"].EipAddress.IpAddress");
 				eipAddress.Bandwidth = context.IntegerValue("DescribeInstances.Instances["+ i +"].EipAddress.Bandwidth");
 				eipAddress.InternetChargeType = context.StringValue("DescribeInstances.Instances["+ i +"].EipAddress.InternetChargeType");
+				eipAddress.IsSupportUnassociate = context.BooleanValue("DescribeInstances.Instances["+ i +"].EipAddress.IsSupportUnassociate");
 				instance.EipAddress = eipAddress;
 
-				List<DescribeInstancesResponse.Instance.LockReason> operationLocks = new List<DescribeInstancesResponse.Instance.LockReason>();
+				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_LockReason> instance_operationLocks = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_LockReason>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].OperationLocks.Length"); j++) {
-					DescribeInstancesResponse.Instance.LockReason lockReason = new DescribeInstancesResponse.Instance.LockReason();
-					lockReason.LockReason_ = context.StringValue("DescribeInstances.Instances["+ i +"].OperationLocks["+ j +"].LockReason");
+					DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_LockReason lockReason = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_LockReason();
+					lockReason.LockReason = context.StringValue("DescribeInstances.Instances["+ i +"].OperationLocks["+ j +"].LockReason");
+					lockReason.LockMsg = context.StringValue("DescribeInstances.Instances["+ i +"].OperationLocks["+ j +"].LockMsg");
 
-					operationLocks.Add(lockReason);
+					instance_operationLocks.Add(lockReason);
 				}
-				instance.OperationLocks = operationLocks;
+				instance.OperationLocks = instance_operationLocks;
 
-				List<DescribeInstancesResponse.Instance.Tag> tags = new List<DescribeInstancesResponse.Instance.Tag>();
+				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag> instance_tags = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].Tags.Length"); j++) {
-					DescribeInstancesResponse.Instance.Tag tag = new DescribeInstancesResponse.Instance.Tag();
+					DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag tag = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag();
 					tag.TagKey = context.StringValue("DescribeInstances.Instances["+ i +"].Tags["+ j +"].TagKey");
 					tag.TagValue = context.StringValue("DescribeInstances.Instances["+ i +"].Tags["+ j +"].TagValue");
 
-					tags.Add(tag);
+					instance_tags.Add(tag);
 				}
-				instance.Tags = tags;
+				instance.Tags = instance_tags;
 
-				instances.Add(instance);
+				describeInstancesResponse_instances.Add(instance);
 			}
-			describeInstancesResponse.Instances = instances;
+			describeInstancesResponse.Instances = describeInstancesResponse_instances;
         
 			return describeInstancesResponse;
         }

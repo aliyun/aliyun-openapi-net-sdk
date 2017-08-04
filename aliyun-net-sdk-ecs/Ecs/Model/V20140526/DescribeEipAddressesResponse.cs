@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeEipAddressesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<EipAddress> eipAddresses;
+		private List<DescribeEipAddresses_EipAddress> eipAddresses;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<EipAddress> EipAddresses
+		public List<DescribeEipAddresses_EipAddress> EipAddresses
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class EipAddress{
+		public class DescribeEipAddresses_EipAddress
+		{
 
 			private string regionId;
 
@@ -100,7 +115,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string instanceType;
 
-			private List<LockReason> operationLocks;
+			private string chargeType;
+
+			private string expiredTime;
+
+			private List<DescribeEipAddresses_LockReason> operationLocks;
 
 			public string RegionId
 			{
@@ -210,7 +229,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<LockReason> OperationLocks
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
+				}
+			}
+
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
+				}
+			}
+
+			public List<DescribeEipAddresses_LockReason> OperationLocks
 			{
 				get
 				{
@@ -222,19 +265,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class LockReason{
+			public class DescribeEipAddresses_LockReason
+			{
 
-				private string lockReason_;
+				private string lockReason;
 
-				public string LockReason_
+				public string LockReason
 				{
 					get
 					{
-						return lockReason_;
+						return lockReason;
 					}
 					set	
 					{
-						lockReason_ = value;
+						lockReason = value;
 					}
 				}
 			}

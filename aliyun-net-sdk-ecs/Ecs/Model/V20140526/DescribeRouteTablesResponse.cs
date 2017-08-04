@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeRouteTablesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<RouteTable> routeTables;
+		private List<DescribeRouteTables_RouteTable> routeTables;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<RouteTable> RouteTables
+		public List<DescribeRouteTables_RouteTable> RouteTables
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class RouteTable{
+		public class DescribeRouteTables_RouteTable
+		{
 
 			private string vRouterId;
 
@@ -90,7 +105,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creationTime;
 
-			private List<RouteEntry> routeEntrys;
+			private List<DescribeRouteTables_RouteEntry> routeEntrys;
 
 			public string VRouterId
 			{
@@ -140,7 +155,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<RouteEntry> RouteEntrys
+			public List<DescribeRouteTables_RouteEntry> RouteEntrys
 			{
 				get
 				{
@@ -152,7 +167,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class RouteEntry{
+			public class DescribeRouteTables_RouteEntry
+			{
 
 				private string routeTableId;
 
@@ -166,7 +182,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string nextHopType;
 
-				private List<NextHop> nextHops;
+				private List<DescribeRouteTables_NextHop> nextHops;
 
 				public string RouteTableId
 				{
@@ -240,7 +256,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public List<NextHop> NextHops
+				public List<DescribeRouteTables_NextHop> NextHops
 				{
 					get
 					{
@@ -252,11 +268,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public class NextHop{
+				public class DescribeRouteTables_NextHop
+				{
 
 					private string nextHopType;
 
 					private string nextHopId;
+
+					private int? enabled;
+
+					private int? weight;
 
 					public string NextHopType
 					{
@@ -279,6 +300,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						set	
 						{
 							nextHopId = value;
+						}
+					}
+
+					public int? Enabled
+					{
+						get
+						{
+							return enabled;
+						}
+						set	
+						{
+							enabled = value;
+						}
+					}
+
+					public int? Weight
+					{
+						get
+						{
+							return weight;
+						}
+						set	
+						{
+							weight = value;
 						}
 					}
 				}

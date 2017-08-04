@@ -33,57 +33,50 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string nicType;
 
 		private long? resourceOwnerId;
 
-		private string securityGroupId;
-
-		private string ipProtocol;
-
 		private string portRange;
 
-		private string destGroupId;
+		private string resourceOwnerAccount;
 
-		private string destGroupOwnerAccount;
-
-		private string destCidrIp;
-
-		private string policy;
-
-		private string priority;
-
-		private string nicType;
+		private string ipProtocol;
 
 		private string clientToken;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string securityGroupId;
 
-		public string ResourceOwnerAccount
+		private string destGroupId;
+
+		private long? ownerId;
+
+		private string destGroupOwnerAccount;
+
+		private string priority;
+
+		private string destCidrIp;
+
+		private long? destGroupOwnerId;
+
+		private string regionId;
+
+		private string action;
+
+		private string policy;
+
+		public string NicType
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return nicType;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				nicType = value;
+				DictionaryUtil.Add(QueryParameters, "NicType", value);
 			}
 		}
 
@@ -100,32 +93,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
-		public string IpProtocol
-		{
-			get
-			{
-				return ipProtocol;
-			}
-			set	
-			{
-				ipProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "IpProtocol", value);
-			}
-		}
-
 		public string PortRange
 		{
 			get
@@ -139,81 +106,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DestGroupId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return destGroupId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				destGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "DestGroupId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string DestGroupOwnerAccount
+		public string IpProtocol
 		{
 			get
 			{
-				return destGroupOwnerAccount;
+				return ipProtocol;
 			}
 			set	
 			{
-				destGroupOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "DestGroupOwnerAccount", value);
-			}
-		}
-
-		public string DestCidrIp
-		{
-			get
-			{
-				return destCidrIp;
-			}
-			set	
-			{
-				destCidrIp = value;
-				DictionaryUtil.Add(QueryParameters, "DestCidrIp", value);
-			}
-		}
-
-		public string Policy
-		{
-			get
-			{
-				return policy;
-			}
-			set	
-			{
-				policy = value;
-				DictionaryUtil.Add(QueryParameters, "Policy", value);
-			}
-		}
-
-		public string Priority
-		{
-			get
-			{
-				return priority;
-			}
-			set	
-			{
-				priority = value;
-				DictionaryUtil.Add(QueryParameters, "Priority", value);
-			}
-		}
-
-		public string NicType
-		{
-			get
-			{
-				return nicType;
-			}
-			set	
-			{
-				nicType = value;
-				DictionaryUtil.Add(QueryParameters, "NicType", value);
+				ipProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "IpProtocol", value);
 			}
 		}
 
@@ -240,6 +155,136 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
+		public string DestGroupId
+		{
+			get
+			{
+				return destGroupId;
+			}
+			set	
+			{
+				destGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DestGroupId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string DestGroupOwnerAccount
+		{
+			get
+			{
+				return destGroupOwnerAccount;
+			}
+			set	
+			{
+				destGroupOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "DestGroupOwnerAccount", value);
+			}
+		}
+
+		public string Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value);
+			}
+		}
+
+		public string DestCidrIp
+		{
+			get
+			{
+				return destCidrIp;
+			}
+			set	
+			{
+				destCidrIp = value;
+				DictionaryUtil.Add(QueryParameters, "DestCidrIp", value);
+			}
+		}
+
+		public long? DestGroupOwnerId
+		{
+			get
+			{
+				return destGroupOwnerId;
+			}
+			set	
+			{
+				destGroupOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "DestGroupOwnerId", value.ToString());
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Policy
+		{
+			get
+			{
+				return policy;
+			}
+			set	
+			{
+				policy = value;
+				DictionaryUtil.Add(QueryParameters, "Policy", value);
 			}
 		}
 

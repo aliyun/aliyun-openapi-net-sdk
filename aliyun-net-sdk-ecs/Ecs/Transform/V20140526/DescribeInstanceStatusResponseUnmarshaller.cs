@@ -35,15 +35,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeInstanceStatusResponse.PageNumber = context.IntegerValue("DescribeInstanceStatus.PageNumber");
 			describeInstanceStatusResponse.PageSize = context.IntegerValue("DescribeInstanceStatus.PageSize");
 
-			List<DescribeInstanceStatusResponse.InstanceStatus> instanceStatuses = new List<DescribeInstanceStatusResponse.InstanceStatus>();
+			List<DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus> describeInstanceStatusResponse_instanceStatuses = new List<DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus>();
 			for (int i = 0; i < context.Length("DescribeInstanceStatus.InstanceStatuses.Length"); i++) {
-				DescribeInstanceStatusResponse.InstanceStatus instanceStatus = new DescribeInstanceStatusResponse.InstanceStatus();
+				DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus instanceStatus = new DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus();
 				instanceStatus.InstanceId = context.StringValue("DescribeInstanceStatus.InstanceStatuses["+ i +"].InstanceId");
-				instanceStatus.Status = context.EnumValue<DescribeInstanceStatusResponse.InstanceStatus.StatusEnum>("DescribeInstanceStatus.InstanceStatuses["+ i +"].Status");
+				instanceStatus.Status = context.StringValue("DescribeInstanceStatus.InstanceStatuses["+ i +"].Status");
 
-				instanceStatuses.Add(instanceStatus);
+				describeInstanceStatusResponse_instanceStatuses.Add(instanceStatus);
 			}
-			describeInstanceStatusResponse.InstanceStatuses = instanceStatuses;
+			describeInstanceStatusResponse.InstanceStatuses = describeInstanceStatusResponse_instanceStatuses;
         
 			return describeInstanceStatusResponse;
         }

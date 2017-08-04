@@ -33,26 +33,49 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
+
+		private string password;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
-		private string diskId;
+		private bool? autoStartInstance;
 
 		private string ownerAccount;
 
-		public long? OwnerId
+		private string action;
+
+		private string diskId;
+
+		private string securityEnhancementStrategy;
+
+		private string keyPairName;
+
+		private long? ownerId;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Password
+		{
+			get
+			{
+				return password;
+			}
+			set	
+			{
+				password = value;
+				DictionaryUtil.Add(QueryParameters, "Password", value);
 			}
 		}
 
@@ -69,16 +92,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ResourceOwnerId
+		public bool? AutoStartInstance
 		{
 			get
 			{
-				return resourceOwnerId;
+				return autoStartInstance;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				autoStartInstance = value;
+				DictionaryUtil.Add(QueryParameters, "AutoStartInstance", value.ToString());
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -95,16 +144,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OwnerAccount
+		public string SecurityEnhancementStrategy
 		{
 			get
 			{
-				return ownerAccount;
+				return securityEnhancementStrategy;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				securityEnhancementStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityEnhancementStrategy", value);
+			}
+		}
+
+		public string KeyPairName
+		{
+			get
+			{
+				return keyPairName;
+			}
+			set	
+			{
+				keyPairName = value;
+				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

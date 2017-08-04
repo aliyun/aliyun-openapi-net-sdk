@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeVSwitchesResponse.PageNumber = context.IntegerValue("DescribeVSwitches.PageNumber");
 			describeVSwitchesResponse.PageSize = context.IntegerValue("DescribeVSwitches.PageSize");
 
-			List<DescribeVSwitchesResponse.VSwitch> vSwitches = new List<DescribeVSwitchesResponse.VSwitch>();
+			List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch> describeVSwitchesResponse_vSwitches = new List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch>();
 			for (int i = 0; i < context.Length("DescribeVSwitches.VSwitches.Length"); i++) {
-				DescribeVSwitchesResponse.VSwitch vSwitch = new DescribeVSwitchesResponse.VSwitch();
+				DescribeVSwitchesResponse.DescribeVSwitches_VSwitch vSwitch = new DescribeVSwitchesResponse.DescribeVSwitches_VSwitch();
 				vSwitch.VSwitchId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].VSwitchId");
 				vSwitch.VpcId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].VpcId");
 				vSwitch.Status = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Status");
@@ -47,11 +47,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				vSwitch.Description = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Description");
 				vSwitch.VSwitchName = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].VSwitchName");
 				vSwitch.CreationTime = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].CreationTime");
-				vSwitch.IsDefault = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].IsDefault");
+				vSwitch.IsDefault = context.BooleanValue("DescribeVSwitches.VSwitches["+ i +"].IsDefault");
 
-				vSwitches.Add(vSwitch);
+				describeVSwitchesResponse_vSwitches.Add(vSwitch);
 			}
-			describeVSwitchesResponse.VSwitches = vSwitches;
+			describeVSwitchesResponse.VSwitches = describeVSwitchesResponse_vSwitches;
         
 			return describeVSwitchesResponse;
         }

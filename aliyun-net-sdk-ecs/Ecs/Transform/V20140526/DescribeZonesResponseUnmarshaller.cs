@@ -32,78 +32,78 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeZonesResponse.HttpResponse = context.HttpResponse;
 			describeZonesResponse.RequestId = context.StringValue("DescribeZones.RequestId");
 
-			List<DescribeZonesResponse.Zone> zones = new List<DescribeZonesResponse.Zone>();
+			List<DescribeZonesResponse.DescribeZones_Zone> describeZonesResponse_zones = new List<DescribeZonesResponse.DescribeZones_Zone>();
 			for (int i = 0; i < context.Length("DescribeZones.Zones.Length"); i++) {
-				DescribeZonesResponse.Zone zone = new DescribeZonesResponse.Zone();
+				DescribeZonesResponse.DescribeZones_Zone zone = new DescribeZonesResponse.DescribeZones_Zone();
 				zone.ZoneId = context.StringValue("DescribeZones.Zones["+ i +"].ZoneId");
 				zone.LocalName = context.StringValue("DescribeZones.Zones["+ i +"].LocalName");
 
-				List<string> availableResourceCreation = new List<string>();
+				List<string> zone_availableResourceCreation = new List<string>();
 				for (int j = 0; j < context.Length("DescribeZones.Zones["+ i +"].AvailableResourceCreation.Length"); j++) {
-					availableResourceCreation.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResourceCreation["+ j +"]"));
+					zone_availableResourceCreation.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResourceCreation["+ j +"]"));
 				}
-				zone.AvailableResourceCreation = availableResourceCreation;
+				zone.AvailableResourceCreation = zone_availableResourceCreation;
 
-				List<string> availableDiskCategories = new List<string>();
+				List<string> zone_availableDiskCategories = new List<string>();
 				for (int j = 0; j < context.Length("DescribeZones.Zones["+ i +"].AvailableDiskCategories.Length"); j++) {
-					availableDiskCategories.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableDiskCategories["+ j +"]"));
+					zone_availableDiskCategories.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableDiskCategories["+ j +"]"));
 				}
-				zone.AvailableDiskCategories = availableDiskCategories;
+				zone.AvailableDiskCategories = zone_availableDiskCategories;
 
-				List<string> availableInstanceTypes = new List<string>();
+				List<string> zone_availableInstanceTypes = new List<string>();
 				for (int j = 0; j < context.Length("DescribeZones.Zones["+ i +"].AvailableInstanceTypes.Length"); j++) {
-					availableInstanceTypes.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableInstanceTypes["+ j +"]"));
+					zone_availableInstanceTypes.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableInstanceTypes["+ j +"]"));
 				}
-				zone.AvailableInstanceTypes = availableInstanceTypes;
+				zone.AvailableInstanceTypes = zone_availableInstanceTypes;
 
-				List<DescribeZonesResponse.Zone.ResourcesInfo> availableResources = new List<DescribeZonesResponse.Zone.ResourcesInfo>();
+				List<DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo> zone_availableResources = new List<DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo>();
 				for (int j = 0; j < context.Length("DescribeZones.Zones["+ i +"].AvailableResources.Length"); j++) {
-					DescribeZonesResponse.Zone.ResourcesInfo resourcesInfo = new DescribeZonesResponse.Zone.ResourcesInfo();
+					DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo resourcesInfo = new DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo();
 					resourcesInfo.IoOptimized = context.BooleanValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].IoOptimized");
 
-					List<string> systemDiskCategories = new List<string>();
+					List<string> resourcesInfo_systemDiskCategories = new List<string>();
 					for (int k = 0; k < context.Length("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].SystemDiskCategories.Length"); k++) {
-						systemDiskCategories.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].SystemDiskCategories["+ k +"]"));
+						resourcesInfo_systemDiskCategories.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].SystemDiskCategories["+ k +"]"));
 					}
-					resourcesInfo.SystemDiskCategories = systemDiskCategories;
+					resourcesInfo.SystemDiskCategories = resourcesInfo_systemDiskCategories;
 
-					List<string> dataDiskCategories = new List<string>();
+					List<string> resourcesInfo_dataDiskCategories = new List<string>();
 					for (int k = 0; k < context.Length("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].DataDiskCategories.Length"); k++) {
-						dataDiskCategories.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].DataDiskCategories["+ k +"]"));
+						resourcesInfo_dataDiskCategories.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].DataDiskCategories["+ k +"]"));
 					}
-					resourcesInfo.DataDiskCategories = dataDiskCategories;
+					resourcesInfo.DataDiskCategories = resourcesInfo_dataDiskCategories;
 
-					List<string> networkTypes = new List<string>();
+					List<string> resourcesInfo_networkTypes = new List<string>();
 					for (int k = 0; k < context.Length("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes.Length"); k++) {
-						networkTypes.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes["+ k +"]"));
+						resourcesInfo_networkTypes.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes["+ k +"]"));
 					}
-					resourcesInfo.NetworkTypes = networkTypes;
+					resourcesInfo.NetworkTypes = resourcesInfo_networkTypes;
 
-					List<string> instanceTypes = new List<string>();
+					List<string> resourcesInfo_instanceTypes = new List<string>();
 					for (int k = 0; k < context.Length("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceTypes.Length"); k++) {
-						instanceTypes.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceTypes["+ k +"]"));
+						resourcesInfo_instanceTypes.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceTypes["+ k +"]"));
 					}
-					resourcesInfo.InstanceTypes = instanceTypes;
+					resourcesInfo.InstanceTypes = resourcesInfo_instanceTypes;
 
-					List<string> instanceTypeFamilies = new List<string>();
+					List<string> resourcesInfo_instanceTypeFamilies = new List<string>();
 					for (int k = 0; k < context.Length("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceTypeFamilies.Length"); k++) {
-						instanceTypeFamilies.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceTypeFamilies["+ k +"]"));
+						resourcesInfo_instanceTypeFamilies.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceTypeFamilies["+ k +"]"));
 					}
-					resourcesInfo.InstanceTypeFamilies = instanceTypeFamilies;
+					resourcesInfo.InstanceTypeFamilies = resourcesInfo_instanceTypeFamilies;
 
-					List<string> instanceGenerations = new List<string>();
+					List<string> resourcesInfo_instanceGenerations = new List<string>();
 					for (int k = 0; k < context.Length("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceGenerations.Length"); k++) {
-						instanceGenerations.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceGenerations["+ k +"]"));
+						resourcesInfo_instanceGenerations.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceGenerations["+ k +"]"));
 					}
-					resourcesInfo.InstanceGenerations = instanceGenerations;
+					resourcesInfo.InstanceGenerations = resourcesInfo_instanceGenerations;
 
-					availableResources.Add(resourcesInfo);
+					zone_availableResources.Add(resourcesInfo);
 				}
-				zone.AvailableResources = availableResources;
+				zone.AvailableResources = zone_availableResources;
 
-				zones.Add(zone);
+				describeZonesResponse_zones.Add(zone);
 			}
-			describeZonesResponse.Zones = zones;
+			describeZonesResponse.Zones = describeZonesResponse_zones;
         
 			return describeZonesResponse;
         }

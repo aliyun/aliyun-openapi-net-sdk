@@ -33,38 +33,44 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
-		private string instanceId;
-
-		private string instanceType;
-
-		private int? internetMaxBandwidthOut;
-
-		private int? internetMaxBandwidthIn;
+		private string clientToken;
 
 		private string ownerAccount;
 
-		private string temporaryStartTime;
+		private int? internetMaxBandwidthOut;
 
-		private string temporaryEndTime;
+		private long? ownerId;
 
 		private int? temporaryInternetMaxBandwidthOut;
 
-		public long? OwnerId
+		private string temporaryStartTime;
+
+		private bool? async;
+
+		private string instanceId;
+
+		private string action;
+
+		private string instanceType;
+
+		private string temporaryEndTime;
+
+		private int? internetMaxBandwidthIn;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -81,68 +87,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string ClientToken
 		{
 			get
 			{
-				return resourceOwnerId;
+				return clientToken;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
-		public int? InternetMaxBandwidthOut
-		{
-			get
-			{
-				return internetMaxBandwidthOut;
-			}
-			set	
-			{
-				internetMaxBandwidthOut = value;
-				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthOut", value.ToString());
-			}
-		}
-
-		public int? InternetMaxBandwidthIn
-		{
-			get
-			{
-				return internetMaxBandwidthIn;
-			}
-			set	
-			{
-				internetMaxBandwidthIn = value;
-				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthIn", value.ToString());
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -159,6 +113,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? InternetMaxBandwidthOut
+		{
+			get
+			{
+				return internetMaxBandwidthOut;
+			}
+			set	
+			{
+				internetMaxBandwidthOut = value;
+				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthOut", value.ToString());
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? TemporaryInternetMaxBandwidthOut
+		{
+			get
+			{
+				return temporaryInternetMaxBandwidthOut;
+			}
+			set	
+			{
+				temporaryInternetMaxBandwidthOut = value;
+				DictionaryUtil.Add(QueryParameters, "Temporary.InternetMaxBandwidthOut", value.ToString());
+			}
+		}
+
 		public string TemporaryStartTime
 		{
 			get
@@ -169,6 +162,58 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				temporaryStartTime = value;
 				DictionaryUtil.Add(QueryParameters, "Temporary.StartTime", value);
+			}
+		}
+
+		public bool? Async
+		{
+			get
+			{
+				return async;
+			}
+			set	
+			{
+				async = value;
+				DictionaryUtil.Add(QueryParameters, "Async", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 
@@ -185,16 +230,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? TemporaryInternetMaxBandwidthOut
+		public int? InternetMaxBandwidthIn
 		{
 			get
 			{
-				return temporaryInternetMaxBandwidthOut;
+				return internetMaxBandwidthIn;
 			}
 			set	
 			{
-				temporaryInternetMaxBandwidthOut = value;
-				DictionaryUtil.Add(QueryParameters, "Temporary.InternetMaxBandwidthOut", value.ToString());
+				internetMaxBandwidthIn = value;
+				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthIn", value.ToString());
 			}
 		}
 

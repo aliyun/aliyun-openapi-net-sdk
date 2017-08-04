@@ -33,33 +33,37 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string addAccount1;
 
 		private long? resourceOwnerId;
 
 		private string imageId;
 
-		private string addAccount1;
-
-		private string addAccount2;
-
-		private string addAccount3;
-
-		private string addAccount4;
-
-		private string addAccount5;
-
-		private string addAccount6;
-
-		private string addAccount7;
-
-		private string addAccount8;
+		private string regionId;
 
 		private string addAccount9;
 
+		private string action;
+
+		private string addAccount8;
+
+		private string addAccount7;
+
+		private string addAccount6;
+
+		private string addAccount5;
+
 		private string addAccount10;
+
+		private string addAccount4;
+
+		private string addAccount3;
+
+		private string addAccount2;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private string removeAccount1;
 
@@ -69,6 +73,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string removeAccount4;
 
+		private long? ownerId;
+
+		private string removeAccount9;
+
 		private string removeAccount5;
 
 		private string removeAccount6;
@@ -77,35 +85,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string removeAccount8;
 
-		private string removeAccount9;
-
 		private string removeAccount10;
 
-		private string ownerAccount;
-
-		public long? OwnerId
+		public string AddAccount1
 		{
 			get
 			{
-				return ownerId;
+				return addAccount1;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				addAccount1 = value;
+				DictionaryUtil.Add(QueryParameters, "AddAccount.1", value);
 			}
 		}
 
@@ -135,107 +126,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string AddAccount1
+		public string RegionId
 		{
 			get
 			{
-				return addAccount1;
+				return regionId;
 			}
 			set	
 			{
-				addAccount1 = value;
-				DictionaryUtil.Add(QueryParameters, "AddAccount.1", value);
-			}
-		}
-
-		public string AddAccount2
-		{
-			get
-			{
-				return addAccount2;
-			}
-			set	
-			{
-				addAccount2 = value;
-				DictionaryUtil.Add(QueryParameters, "AddAccount.2", value);
-			}
-		}
-
-		public string AddAccount3
-		{
-			get
-			{
-				return addAccount3;
-			}
-			set	
-			{
-				addAccount3 = value;
-				DictionaryUtil.Add(QueryParameters, "AddAccount.3", value);
-			}
-		}
-
-		public string AddAccount4
-		{
-			get
-			{
-				return addAccount4;
-			}
-			set	
-			{
-				addAccount4 = value;
-				DictionaryUtil.Add(QueryParameters, "AddAccount.4", value);
-			}
-		}
-
-		public string AddAccount5
-		{
-			get
-			{
-				return addAccount5;
-			}
-			set	
-			{
-				addAccount5 = value;
-				DictionaryUtil.Add(QueryParameters, "AddAccount.5", value);
-			}
-		}
-
-		public string AddAccount6
-		{
-			get
-			{
-				return addAccount6;
-			}
-			set	
-			{
-				addAccount6 = value;
-				DictionaryUtil.Add(QueryParameters, "AddAccount.6", value);
-			}
-		}
-
-		public string AddAccount7
-		{
-			get
-			{
-				return addAccount7;
-			}
-			set	
-			{
-				addAccount7 = value;
-				DictionaryUtil.Add(QueryParameters, "AddAccount.7", value);
-			}
-		}
-
-		public string AddAccount8
-		{
-			get
-			{
-				return addAccount8;
-			}
-			set	
-			{
-				addAccount8 = value;
-				DictionaryUtil.Add(QueryParameters, "AddAccount.8", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -252,6 +152,71 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string AddAccount8
+		{
+			get
+			{
+				return addAccount8;
+			}
+			set	
+			{
+				addAccount8 = value;
+				DictionaryUtil.Add(QueryParameters, "AddAccount.8", value);
+			}
+		}
+
+		public string AddAccount7
+		{
+			get
+			{
+				return addAccount7;
+			}
+			set	
+			{
+				addAccount7 = value;
+				DictionaryUtil.Add(QueryParameters, "AddAccount.7", value);
+			}
+		}
+
+		public string AddAccount6
+		{
+			get
+			{
+				return addAccount6;
+			}
+			set	
+			{
+				addAccount6 = value;
+				DictionaryUtil.Add(QueryParameters, "AddAccount.6", value);
+			}
+		}
+
+		public string AddAccount5
+		{
+			get
+			{
+				return addAccount5;
+			}
+			set	
+			{
+				addAccount5 = value;
+				DictionaryUtil.Add(QueryParameters, "AddAccount.5", value);
+			}
+		}
+
 		public string AddAccount10
 		{
 			get
@@ -262,6 +227,71 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				addAccount10 = value;
 				DictionaryUtil.Add(QueryParameters, "AddAccount.10", value);
+			}
+		}
+
+		public string AddAccount4
+		{
+			get
+			{
+				return addAccount4;
+			}
+			set	
+			{
+				addAccount4 = value;
+				DictionaryUtil.Add(QueryParameters, "AddAccount.4", value);
+			}
+		}
+
+		public string AddAccount3
+		{
+			get
+			{
+				return addAccount3;
+			}
+			set	
+			{
+				addAccount3 = value;
+				DictionaryUtil.Add(QueryParameters, "AddAccount.3", value);
+			}
+		}
+
+		public string AddAccount2
+		{
+			get
+			{
+				return addAccount2;
+			}
+			set	
+			{
+				addAccount2 = value;
+				DictionaryUtil.Add(QueryParameters, "AddAccount.2", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -317,6 +347,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string RemoveAccount9
+		{
+			get
+			{
+				return removeAccount9;
+			}
+			set	
+			{
+				removeAccount9 = value;
+				DictionaryUtil.Add(QueryParameters, "RemoveAccount.9", value);
+			}
+		}
+
 		public string RemoveAccount5
 		{
 			get
@@ -369,19 +425,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RemoveAccount9
-		{
-			get
-			{
-				return removeAccount9;
-			}
-			set	
-			{
-				removeAccount9 = value;
-				DictionaryUtil.Add(QueryParameters, "RemoveAccount.9", value);
-			}
-		}
-
 		public string RemoveAccount10
 		{
 			get
@@ -392,19 +435,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				removeAccount10 = value;
 				DictionaryUtil.Add(QueryParameters, "RemoveAccount.10", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 

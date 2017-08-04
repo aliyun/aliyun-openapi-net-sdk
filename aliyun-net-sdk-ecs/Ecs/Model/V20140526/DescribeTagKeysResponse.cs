@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeTagKeysResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageSize;
 
 		private int? pageNumber;
@@ -31,6 +33,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private int? totalCount;
 
 		private List<string> tagKeys;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageSize
 		{

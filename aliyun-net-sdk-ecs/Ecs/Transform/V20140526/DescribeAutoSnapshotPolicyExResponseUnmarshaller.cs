@@ -35,21 +35,22 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeAutoSnapshotPolicyExResponse.PageNumber = context.IntegerValue("DescribeAutoSnapshotPolicyEx.PageNumber");
 			describeAutoSnapshotPolicyExResponse.PageSize = context.IntegerValue("DescribeAutoSnapshotPolicyEx.PageSize");
 
-			List<DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicy> autoSnapshotPolicies = new List<DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicy>();
+			List<DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy> describeAutoSnapshotPolicyExResponse_autoSnapshotPolicies = new List<DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy>();
 			for (int i = 0; i < context.Length("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies.Length"); i++) {
-				DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicy autoSnapshotPolicy = new DescribeAutoSnapshotPolicyExResponse.AutoSnapshotPolicy();
-				autoSnapshotPolicy.AutoSnapshotPolicyId = context.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyId");
+				DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy autoSnapshotPolicy = new DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy();
+				autoSnapshotPolicy.AutoSnapshotPolicyId = context.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyId");
 				autoSnapshotPolicy.RegionId = context.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].RegionId");
 				autoSnapshotPolicy.AutoSnapshotPolicyName = context.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyName");
 				autoSnapshotPolicy.TimePoints = context.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].TimePoints");
 				autoSnapshotPolicy.RepeatWeekdays = context.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].RepeatWeekdays");
 				autoSnapshotPolicy.RetentionDays = context.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].RetentionDays");
 				autoSnapshotPolicy.DiskNums = context.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].DiskNums");
+				autoSnapshotPolicy.VolumeNums = context.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].VolumeNums");
 				autoSnapshotPolicy.CreationTime = context.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].CreationTime");
 
-				autoSnapshotPolicies.Add(autoSnapshotPolicy);
+				describeAutoSnapshotPolicyExResponse_autoSnapshotPolicies.Add(autoSnapshotPolicy);
 			}
-			describeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies = autoSnapshotPolicies;
+			describeAutoSnapshotPolicyExResponse.AutoSnapshotPolicies = describeAutoSnapshotPolicyExResponse_autoSnapshotPolicies;
         
 			return describeAutoSnapshotPolicyExResponse;
         }

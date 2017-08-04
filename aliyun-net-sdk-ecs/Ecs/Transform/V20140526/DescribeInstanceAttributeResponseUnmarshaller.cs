@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeInstanceAttributeResponse.Cpu = context.IntegerValue("DescribeInstanceAttribute.Cpu");
 			describeInstanceAttributeResponse.Memory = context.IntegerValue("DescribeInstanceAttribute.Memory");
 			describeInstanceAttributeResponse.HostName = context.StringValue("DescribeInstanceAttribute.HostName");
-			describeInstanceAttributeResponse.Status = context.EnumValue<DescribeInstanceAttributeResponse.StatusEnum>("DescribeInstanceAttribute.Status");
+			describeInstanceAttributeResponse.Status = context.StringValue("DescribeInstanceAttribute.Status");
 			describeInstanceAttributeResponse.InternetChargeType = context.StringValue("DescribeInstanceAttribute.InternetChargeType");
 			describeInstanceAttributeResponse.InternetMaxBandwidthIn = context.IntegerValue("DescribeInstanceAttribute.InternetMaxBandwidthIn");
 			describeInstanceAttributeResponse.InternetMaxBandwidthOut = context.IntegerValue("DescribeInstanceAttribute.InternetMaxBandwidthOut");
@@ -54,51 +54,51 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeInstanceAttributeResponse.InstanceChargeType = context.StringValue("DescribeInstanceAttribute.InstanceChargeType");
 			describeInstanceAttributeResponse.ExpiredTime = context.StringValue("DescribeInstanceAttribute.ExpiredTime");
 
-			List<string> securityGroupIds = new List<string>();
+			List<string> describeInstanceAttributeResponse_securityGroupIds = new List<string>();
 			for (int i = 0; i < context.Length("DescribeInstanceAttribute.SecurityGroupIds.Length"); i++) {
-				securityGroupIds.Add(context.StringValue("DescribeInstanceAttribute.SecurityGroupIds["+ i +"]"));
+				describeInstanceAttributeResponse_securityGroupIds.Add(context.StringValue("DescribeInstanceAttribute.SecurityGroupIds["+ i +"]"));
 			}
-			describeInstanceAttributeResponse.SecurityGroupIds = securityGroupIds;
+			describeInstanceAttributeResponse.SecurityGroupIds = describeInstanceAttributeResponse_securityGroupIds;
 
-			List<string> publicIpAddress = new List<string>();
+			List<string> describeInstanceAttributeResponse_publicIpAddress = new List<string>();
 			for (int i = 0; i < context.Length("DescribeInstanceAttribute.PublicIpAddress.Length"); i++) {
-				publicIpAddress.Add(context.StringValue("DescribeInstanceAttribute.PublicIpAddress["+ i +"]"));
+				describeInstanceAttributeResponse_publicIpAddress.Add(context.StringValue("DescribeInstanceAttribute.PublicIpAddress["+ i +"]"));
 			}
-			describeInstanceAttributeResponse.PublicIpAddress = publicIpAddress;
+			describeInstanceAttributeResponse.PublicIpAddress = describeInstanceAttributeResponse_publicIpAddress;
 
-			List<string> innerIpAddress = new List<string>();
+			List<string> describeInstanceAttributeResponse_innerIpAddress = new List<string>();
 			for (int i = 0; i < context.Length("DescribeInstanceAttribute.InnerIpAddress.Length"); i++) {
-				innerIpAddress.Add(context.StringValue("DescribeInstanceAttribute.InnerIpAddress["+ i +"]"));
+				describeInstanceAttributeResponse_innerIpAddress.Add(context.StringValue("DescribeInstanceAttribute.InnerIpAddress["+ i +"]"));
 			}
-			describeInstanceAttributeResponse.InnerIpAddress = innerIpAddress;
+			describeInstanceAttributeResponse.InnerIpAddress = describeInstanceAttributeResponse_innerIpAddress;
 
-			DescribeInstanceAttributeResponse.VpcAttributes_ vpcAttributes = new DescribeInstanceAttributeResponse.VpcAttributes_();
+			DescribeInstanceAttributeResponse.DescribeInstanceAttribute_VpcAttributes vpcAttributes = new DescribeInstanceAttributeResponse.DescribeInstanceAttribute_VpcAttributes();
 			vpcAttributes.VpcId = context.StringValue("DescribeInstanceAttribute.VpcAttributes.VpcId");
 			vpcAttributes.VSwitchId = context.StringValue("DescribeInstanceAttribute.VpcAttributes.VSwitchId");
 			vpcAttributes.NatIpAddress = context.StringValue("DescribeInstanceAttribute.VpcAttributes.NatIpAddress");
 
-			List<string> privateIpAddress = new List<string>();
+			List<string> vpcAttributes_privateIpAddress = new List<string>();
 			for (int i = 0; i < context.Length("DescribeInstanceAttribute.VpcAttributes.PrivateIpAddress.Length"); i++) {
-				privateIpAddress.Add(context.StringValue("DescribeInstanceAttribute.VpcAttributes.PrivateIpAddress["+ i +"]"));
+				vpcAttributes_privateIpAddress.Add(context.StringValue("DescribeInstanceAttribute.VpcAttributes.PrivateIpAddress["+ i +"]"));
 			}
-			vpcAttributes.PrivateIpAddress = privateIpAddress;
+			vpcAttributes.PrivateIpAddress = vpcAttributes_privateIpAddress;
 			describeInstanceAttributeResponse.VpcAttributes = vpcAttributes;
 
-			DescribeInstanceAttributeResponse.EipAddress_ eipAddress = new DescribeInstanceAttributeResponse.EipAddress_();
+			DescribeInstanceAttributeResponse.DescribeInstanceAttribute_EipAddress eipAddress = new DescribeInstanceAttributeResponse.DescribeInstanceAttribute_EipAddress();
 			eipAddress.AllocationId = context.StringValue("DescribeInstanceAttribute.EipAddress.AllocationId");
 			eipAddress.IpAddress = context.StringValue("DescribeInstanceAttribute.EipAddress.IpAddress");
 			eipAddress.Bandwidth = context.IntegerValue("DescribeInstanceAttribute.EipAddress.Bandwidth");
 			eipAddress.InternetChargeType = context.StringValue("DescribeInstanceAttribute.EipAddress.InternetChargeType");
 			describeInstanceAttributeResponse.EipAddress = eipAddress;
 
-			List<DescribeInstanceAttributeResponse.LockReason> operationLocks = new List<DescribeInstanceAttributeResponse.LockReason>();
+			List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_LockReason> describeInstanceAttributeResponse_operationLocks = new List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_LockReason>();
 			for (int i = 0; i < context.Length("DescribeInstanceAttribute.OperationLocks.Length"); i++) {
-				DescribeInstanceAttributeResponse.LockReason lockReason = new DescribeInstanceAttributeResponse.LockReason();
-				lockReason.LockReason_ = context.StringValue("DescribeInstanceAttribute.OperationLocks["+ i +"].LockReason");
+				DescribeInstanceAttributeResponse.DescribeInstanceAttribute_LockReason lockReason = new DescribeInstanceAttributeResponse.DescribeInstanceAttribute_LockReason();
+				lockReason.LockReason = context.StringValue("DescribeInstanceAttribute.OperationLocks["+ i +"].LockReason");
 
-				operationLocks.Add(lockReason);
+				describeInstanceAttributeResponse_operationLocks.Add(lockReason);
 			}
-			describeInstanceAttributeResponse.OperationLocks = operationLocks;
+			describeInstanceAttributeResponse.OperationLocks = describeInstanceAttributeResponse_operationLocks;
         
 			return describeInstanceAttributeResponse;
         }

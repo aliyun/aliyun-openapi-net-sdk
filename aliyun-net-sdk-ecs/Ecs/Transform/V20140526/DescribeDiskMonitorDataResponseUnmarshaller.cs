@@ -33,9 +33,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeDiskMonitorDataResponse.RequestId = context.StringValue("DescribeDiskMonitorData.RequestId");
 			describeDiskMonitorDataResponse.TotalCount = context.IntegerValue("DescribeDiskMonitorData.TotalCount");
 
-			List<DescribeDiskMonitorDataResponse.DiskMonitorData> monitorData = new List<DescribeDiskMonitorDataResponse.DiskMonitorData>();
+			List<DescribeDiskMonitorDataResponse.DescribeDiskMonitorData_DiskMonitorData> describeDiskMonitorDataResponse_monitorData = new List<DescribeDiskMonitorDataResponse.DescribeDiskMonitorData_DiskMonitorData>();
 			for (int i = 0; i < context.Length("DescribeDiskMonitorData.MonitorData.Length"); i++) {
-				DescribeDiskMonitorDataResponse.DiskMonitorData diskMonitorData = new DescribeDiskMonitorDataResponse.DiskMonitorData();
+				DescribeDiskMonitorDataResponse.DescribeDiskMonitorData_DiskMonitorData diskMonitorData = new DescribeDiskMonitorDataResponse.DescribeDiskMonitorData_DiskMonitorData();
 				diskMonitorData.DiskId = context.StringValue("DescribeDiskMonitorData.MonitorData["+ i +"].DiskId");
 				diskMonitorData.IOPSRead = context.IntegerValue("DescribeDiskMonitorData.MonitorData["+ i +"].IOPSRead");
 				diskMonitorData.IOPSWrite = context.IntegerValue("DescribeDiskMonitorData.MonitorData["+ i +"].IOPSWrite");
@@ -45,9 +45,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				diskMonitorData.BPSTotal = context.IntegerValue("DescribeDiskMonitorData.MonitorData["+ i +"].BPSTotal");
 				diskMonitorData.TimeStamp = context.StringValue("DescribeDiskMonitorData.MonitorData["+ i +"].TimeStamp");
 
-				monitorData.Add(diskMonitorData);
+				describeDiskMonitorDataResponse_monitorData.Add(diskMonitorData);
 			}
-			describeDiskMonitorDataResponse.MonitorData = monitorData;
+			describeDiskMonitorDataResponse.MonitorData = describeDiskMonitorDataResponse_monitorData;
         
 			return describeDiskMonitorDataResponse;
         }

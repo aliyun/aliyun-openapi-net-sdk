@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CheckAutoSnapshotPolicyResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? autoSnapshotOccupation;
 
 		private string isPermittedModify;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? AutoSnapshotOccupation
 		{

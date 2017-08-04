@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeImageSupportInstanceTypesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string regionId;
 
 		private string imageId;
 
-		private List<InstanceType> instanceTypes;
+		private List<DescribeImageSupportInstanceTypes_InstanceType> instanceTypes;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string RegionId
 		{
@@ -54,7 +68,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<InstanceType> InstanceTypes
+		public List<DescribeImageSupportInstanceTypes_InstanceType> InstanceTypes
 		{
 			get
 			{
@@ -66,7 +80,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class InstanceType{
+		public class DescribeImageSupportInstanceTypes_InstanceType
+		{
 
 			private string instanceTypeId;
 

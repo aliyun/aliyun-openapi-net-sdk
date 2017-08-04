@@ -33,38 +33,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
-		private int? pageNumber;
-
-		private int? pageSize;
-
 		private string ownerAccount;
-
-		private string taskIds;
-
-		private string taskAction;
-
-		private string taskStatus;
-
-		private string startTime;
 
 		private string endTime;
 
-		public long? OwnerId
+		private string startTime;
+
+		private long? ownerId;
+
+		private string taskIds;
+
+		private int? pageNumber;
+
+		private string taskStatus;
+
+		private string regionId;
+
+		private int? pageSize;
+
+		private string action;
+
+		private string taskAction;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -81,45 +85,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -133,42 +98,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TaskIds
+		public string EndTime
 		{
 			get
 			{
-				return taskIds;
+				return endTime;
 			}
 			set	
 			{
-				taskIds = value;
-				DictionaryUtil.Add(QueryParameters, "TaskIds", value);
-			}
-		}
-
-		public string TaskAction
-		{
-			get
-			{
-				return taskAction;
-			}
-			set	
-			{
-				taskAction = value;
-				DictionaryUtil.Add(QueryParameters, "TaskAction", value);
-			}
-		}
-
-		public string TaskStatus
-		{
-			get
-			{
-				return taskStatus;
-			}
-			set	
-			{
-				taskStatus = value;
-				DictionaryUtil.Add(QueryParameters, "TaskStatus", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -185,16 +124,107 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string EndTime
+		public long? OwnerId
 		{
 			get
 			{
-				return endTime;
+				return ownerId;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string TaskIds
+		{
+			get
+			{
+				return taskIds;
+			}
+			set	
+			{
+				taskIds = value;
+				DictionaryUtil.Add(QueryParameters, "TaskIds", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string TaskStatus
+		{
+			get
+			{
+				return taskStatus;
+			}
+			set	
+			{
+				taskStatus = value;
+				DictionaryUtil.Add(QueryParameters, "TaskStatus", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string TaskAction
+		{
+			get
+			{
+				return taskAction;
+			}
+			set	
+			{
+				taskAction = value;
+				DictionaryUtil.Add(QueryParameters, "TaskAction", value);
 			}
 		}
 

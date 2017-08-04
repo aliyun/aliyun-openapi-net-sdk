@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeTagsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageSize;
 
 		private int? pageNumber;
 
 		private int? totalCount;
 
-		private List<Tag> tags;
+		private List<DescribeTags_Tag> tags;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageSize
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Tag> Tags
+		public List<DescribeTags_Tag> Tags
 		{
 			get
 			{
@@ -80,13 +94,14 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Tag{
+		public class DescribeTags_Tag
+		{
 
 			private string tagKey;
 
 			private string tagValue;
 
-			private ResourceTypeCount_ resourceTypeCount;
+			private DescribeTags_ResourceTypeCount resourceTypeCount;
 
 			public string TagKey
 			{
@@ -112,7 +127,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public ResourceTypeCount_ ResourceTypeCount
+			public DescribeTags_ResourceTypeCount ResourceTypeCount
 			{
 				get
 				{
@@ -124,11 +139,14 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class ResourceTypeCount_{
+			public class DescribeTags_ResourceTypeCount
+			{
 
 				private int? instance;
 
 				private int? disk;
+
+				private int? volume;
 
 				private int? image;
 
@@ -157,6 +175,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						disk = value;
+					}
+				}
+
+				public int? Volume
+				{
+					get
+					{
+						return volume;
+					}
+					set	
+					{
+						volume = value;
 					}
 				}
 
