@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95196aec-4c85-4234-a013-52f315c5554f}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-push</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Push\Model\V20160801\PushNoticeToiOSResponse.cs" />
+	<Compile Include="Push\Model\V20160801\ListTagsRequest.cs" />
+	<Compile Include="Push\Model\V20160801\QueryTagsRequest.cs" />
+	<Compile Include="Push\Model\V20160801\PushRequest.cs" />
+	<Compile Include="Push\Model\V20160801\ListPushRecordsResponse.cs" />
+	<Compile Include="Push\Model\V20160801\PushNoticeToiOSRequest.cs" />
+	<Compile Include="Push\Model\V20160801\QueryDeviceStatResponse.cs" />
+	<Compile Include="Push\Model\V20160801\PushMessageToAndroidResponse.cs" />
+	<Compile Include="Push\Model\V20160801\UnbindAliasRequest.cs" />
+	<Compile Include="Push\Model\V20160801\PushMessageToAndroidRequest.cs" />
+	<Compile Include="Push\Model\V20160801\UnbindAliasResponse.cs" />
+	<Compile Include="Push\Model\V20160801\CancelPushResponse.cs" />
+	<Compile Include="Push\Model\V20160801\ListSummaryAppsRequest.cs" />
+	<Compile Include="Push\Model\V20160801\CheckDeviceRequest.cs" />
+	<Compile Include="Push\Model\V20160801\QueryTagsResponse.cs" />
+	<Compile Include="Push\Model\V20160801\BindAliasRequest.cs" />
+	<Compile Include="Push\Model\V20160801\UnbindTagRequest.cs" />
+	<Compile Include="Push\Model\V20160801\CancelPushRequest.cs" />
+	<Compile Include="Push\Model\V20160801\ListSummaryAppsResponse.cs" />
+	<Compile Include="Push\Model\V20160801\PushMessageToiOSRequest.cs" />
+	<Compile Include="Push\Model\V20160801\QueryPushStatByMsgResponse.cs" />
+	<Compile Include="Push\Model\V20160801\ListPushRecordsRequest.cs" />
+	<Compile Include="Push\Model\V20160801\QueryAliasesResponse.cs" />
+	<Compile Include="Push\Model\V20160801\QueryDeviceStatRequest.cs" />
+	<Compile Include="Push\Model\V20160801\BindAliasResponse.cs" />
+	<Compile Include="Push\Model\V20160801\QueryPushDetailRequest.cs" />
+	<Compile Include="Push\Model\V20160801\CheckDevicesResponse.cs" />
+	<Compile Include="Push\Model\V20160801\QueryDeviceInfoRequest.cs" />
+	<Compile Include="Push\Model\V20160801\BindTagRequest.cs" />
+	<Compile Include="Push\Model\V20160801\BindTagResponse.cs" />
+	<Compile Include="Push\Model\V20160801\ListTagsResponse.cs" />
+	<Compile Include="Push\Model\V20160801\PushResponse.cs" />
+	<Compile Include="Push\Model\V20160801\QueryUniqueDeviceStatRequest.cs" />
+	<Compile Include="Push\Model\V20160801\RemoveTagResponse.cs" />
+	<Compile Include="Push\Model\V20160801\QueryPushDetailResponse.cs" />
+	<Compile Include="Push\Model\V20160801\PushNoticeToAndroidResponse.cs" />
+	<Compile Include="Push\Model\V20160801\QueryPushStatByAppResponse.cs" />
+	<Compile Include="Push\Model\V20160801\CheckDeviceResponse.cs" />
+	<Compile Include="Push\Model\V20160801\QueryPushStatByMsgRequest.cs" />
+	<Compile Include="Push\Model\V20160801\QueryAliasesRequest.cs" />
+	<Compile Include="Push\Model\V20160801\PushMessageToiOSResponse.cs" />
+	<Compile Include="Push\Model\V20160801\UnbindTagResponse.cs" />
+	<Compile Include="Push\Model\V20160801\QueryPushStatByAppRequest.cs" />
+	<Compile Include="Push\Model\V20160801\PushNoticeToAndroidRequest.cs" />
+	<Compile Include="Push\Model\V20160801\QueryUniqueDeviceStatResponse.cs" />
+	<Compile Include="Push\Model\V20160801\RemoveTagRequest.cs" />
+	<Compile Include="Push\Model\V20160801\QueryDeviceInfoResponse.cs" />
+	<Compile Include="Push\Model\V20160801\CheckDevicesRequest.cs" />
+	<Compile Include="Push\Transform\V20160801\QueryPushDetailResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\CancelPushResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\QueryPushStatByAppResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\PushMessageToiOSResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\PushResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\UnbindAliasResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\CheckDeviceResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\PushNoticeToiOSResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\QueryDeviceInfoResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\QueryTagsResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\ListTagsResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\QueryUniqueDeviceStatResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\BindAliasResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\RemoveTagResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\QueryDeviceStatResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\BindTagResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\QueryPushStatByMsgResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\ListSummaryAppsResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\CheckDevicesResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\UnbindTagResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\ListPushRecordsResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\QueryAliasesResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\PushNoticeToAndroidResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\PushMessageToAndroidResponseUnmarshaller.cs" />
+	<Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
