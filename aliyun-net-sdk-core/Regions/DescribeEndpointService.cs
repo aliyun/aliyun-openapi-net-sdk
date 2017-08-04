@@ -132,7 +132,7 @@ namespace Aliyun.Acs.Core.Regions
             }
             catch (Exception exp)
             {
-                throw new ClientException("SDK.UnsupportedEncoding", "Can not parse response due to un supported encoding.");
+                throw new ClientException("SDK.UnsupportedEncoding", "Can not parse response due to un supported encoding. " + exp.Message);
             }
             return stringContent;
         }

@@ -185,7 +185,15 @@ namespace Aliyun.Acs.Core
             IReader reader = ReaderFactory.CreateInstance(format);
             UnmarshallerContext context = new UnmarshallerContext();
             string body = System.Text.Encoding.UTF8.GetString(httpResponse.Content);
-            context.ResponseDictionary = reader.Read(body, request.ActionName);
+            if (request.CheckShowJsonItemName())
+            {
+                context.ResponseDictionary = reader.Read(body, request.ActionName);
+            }
+            else
+            {
+                context.ResponseDictionary = reader.ReadForHideArrayItem(body, request.ActionName);
+            }
+            
             context.HttpResponse = httpResponse;
             return request.GetResponse(context);
         }

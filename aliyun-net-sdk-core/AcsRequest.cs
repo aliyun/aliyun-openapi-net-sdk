@@ -129,5 +129,10 @@ namespace Aliyun.Acs.Core
 
         public abstract T GetResponse(UnmarshallerContext unmarshallerContext);
 
+        public virtual bool CheckShowJsonItemName()
+        {
+            return true;
+        }
+
     }
 }

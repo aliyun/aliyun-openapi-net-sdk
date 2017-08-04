@@ -1,3 +1,7 @@
+2017-08-05 Version: 1.1.5
+1, 支持Api定义showJsonItemName=false
+2, 消除编译警告
+
 2017-07-27 Version: 1.1.4
 1, 支持自动寻址，自动寻址endpoint缓存失效时间为1小时
 2, 手动调用AddEndpoint方法添加的endpoint优先级高于自动寻址

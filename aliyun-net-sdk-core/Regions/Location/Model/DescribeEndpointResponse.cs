@@ -25,7 +25,6 @@ namespace Aliyun.Acs.Core.Regions.Location.Model
 
         public string Endpoint { get; set; }
         public string RegionId { get; set; }
-        public string RequestId { get; set; }
         public string Product { get; set; }
 
     }

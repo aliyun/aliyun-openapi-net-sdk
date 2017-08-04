@@ -64,7 +64,7 @@ namespace Aliyun.Acs.Core.Regions.Location.Model
             }
         }
 
-        public string LocationProduct
+        public new string LocationProduct
         {
             get
             {
@@ -79,7 +79,6 @@ namespace Aliyun.Acs.Core.Regions.Location.Model
 
         public override DescribeEndpointResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            //return DescribeEndpointResponseUnmarshaller.Unmarshall(unmarshallerContext);
             return null;
         }
     }
