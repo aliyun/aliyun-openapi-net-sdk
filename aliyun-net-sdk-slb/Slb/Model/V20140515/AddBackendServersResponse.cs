@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class AddBackendServersResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string loadBalancerId;
 
-		private List<BackendServer> backendServers;
+		private List<AddBackendServers_BackendServer> backendServers;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string LoadBalancerId
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public List<BackendServer> BackendServers
+		public List<AddBackendServers_BackendServer> BackendServers
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class BackendServer{
+		public class AddBackendServers_BackendServer
+		{
 
 			private string serverId;
 

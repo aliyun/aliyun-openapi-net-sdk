@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeCACertificatesResponse : AcsResponse
 	{
 
-		private List<CACertificate> cACertificates;
+		private string requestId;
 
-		public List<CACertificate> CACertificates
+		private List<DescribeCACertificates_CACertificate> cACertificates;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeCACertificates_CACertificate> CACertificates
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class CACertificate{
+		public class DescribeCACertificates_CACertificate
+		{
 
 			private string regionId;
 
@@ -47,6 +62,12 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			private string cACertificateName;
 
 			private string fingerprint;
+
+			private string resourceGroupId;
+
+			private string createTime;
+
+			private long? createTimeStamp;
 
 			public string RegionId
 			{
@@ -93,6 +114,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					fingerprint = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public long? CreateTimeStamp
+			{
+				get
+				{
+					return createTimeStamp;
+				}
+				set	
+				{
+					createTimeStamp = value;
 				}
 			}
 		}

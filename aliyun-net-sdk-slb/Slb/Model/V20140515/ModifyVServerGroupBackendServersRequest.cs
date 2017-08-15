@@ -29,79 +29,33 @@ namespace Aliyun.Acs.Slb.Model.V20140515
     public class ModifyVServerGroupBackendServersRequest : RpcAcsRequest<ModifyVServerGroupBackendServersResponse>
     {
         public ModifyVServerGroupBackendServersRequest()
-            : base("Slb", "2014-05-15", "ModifyVServerGroupBackendServers")
+            : base("Slb", "2014-05-15", "ModifyVServerGroupBackendServers", "slb", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
-		private long? resourceOwnerId;
-
-		private string ownerAccount;
-
 		private string access_key_id;
-
-		private string tags;
 
 		private string vServerGroupId;
 
+		private long? resourceOwnerId;
+
 		private string oldBackendServers;
+
+		private string resourceOwnerAccount;
+
+		private string regionId;
 
 		private string newBackendServers;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string ownerAccount;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string action;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+		private long? ownerId;
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+		private string accessKeyId;
+
+		private string tags;
 
 		public string Access_key_id
 		{
@@ -113,19 +67,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				access_key_id = value;
 				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 
@@ -142,6 +83,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
 		public string OldBackendServers
 		{
 			get
@@ -155,6 +109,32 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string NewBackendServers
 		{
 			get
@@ -165,6 +145,71 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				newBackendServers = value;
 				DictionaryUtil.Add(QueryParameters, "NewBackendServers", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 

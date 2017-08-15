@@ -34,16 +34,16 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			setVServerGroupAttributeResponse.VServerGroupId = context.StringValue("SetVServerGroupAttribute.VServerGroupId");
 			setVServerGroupAttributeResponse.VServerGroupName = context.StringValue("SetVServerGroupAttribute.VServerGroupName");
 
-			List<SetVServerGroupAttributeResponse.BackendServer> backendServers = new List<SetVServerGroupAttributeResponse.BackendServer>();
+			List<SetVServerGroupAttributeResponse.SetVServerGroupAttribute_BackendServer> setVServerGroupAttributeResponse_backendServers = new List<SetVServerGroupAttributeResponse.SetVServerGroupAttribute_BackendServer>();
 			for (int i = 0; i < context.Length("SetVServerGroupAttribute.BackendServers.Length"); i++) {
-				SetVServerGroupAttributeResponse.BackendServer backendServer = new SetVServerGroupAttributeResponse.BackendServer();
+				SetVServerGroupAttributeResponse.SetVServerGroupAttribute_BackendServer backendServer = new SetVServerGroupAttributeResponse.SetVServerGroupAttribute_BackendServer();
 				backendServer.ServerId = context.StringValue("SetVServerGroupAttribute.BackendServers["+ i +"].ServerId");
 				backendServer.Port = context.IntegerValue("SetVServerGroupAttribute.BackendServers["+ i +"].Port");
 				backendServer.Weight = context.IntegerValue("SetVServerGroupAttribute.BackendServers["+ i +"].Weight");
 
-				backendServers.Add(backendServer);
+				setVServerGroupAttributeResponse_backendServers.Add(backendServer);
 			}
-			setVServerGroupAttributeResponse.BackendServers = backendServers;
+			setVServerGroupAttributeResponse.BackendServers = setVServerGroupAttributeResponse_backendServers;
         
 			return setVServerGroupAttributeResponse;
         }

@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeTagsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageSize;
 
 		private int? pageNumber;
 
 		private int? totalCount;
 
-		private List<TagSet> tagSets;
+		private List<DescribeTags_TagSet> tagSets;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageSize
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public List<TagSet> TagSets
+		public List<DescribeTags_TagSet> TagSets
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class TagSet{
+		public class DescribeTags_TagSet
+		{
 
 			private string tagKey;
 

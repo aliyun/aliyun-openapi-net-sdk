@@ -29,49 +29,55 @@ namespace Aliyun.Acs.Slb.Model.V20140515
     public class SetRuleRequest : RpcAcsRequest<SetRuleResponse>
     {
         public SetRuleRequest()
-            : base("Slb", "2014-05-15", "SetRule")
+            : base("Slb", "2014-05-15", "SetRule", "slb", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
-		private long? resourceOwnerId;
-
-		private string ownerAccount;
-
 		private string access_key_id;
-
-		private string tags;
-
-		private string ruleId;
 
 		private string vServerGroupId;
 
-		public long? OwnerId
+		private long? resourceOwnerId;
+
+		private string resourceOwnerAccount;
+
+		private string regionId;
+
+		private string ownerAccount;
+
+		private string action;
+
+		private long? ownerId;
+
+		private string ruleId;
+
+		private string accessKeyId;
+
+		private string tags;
+
+		public string Access_key_id
 		{
 			get
 			{
-				return ownerId;
+				return access_key_id;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				access_key_id = value;
+				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string VServerGroupId
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return vServerGroupId;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				vServerGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "VServerGroupId", value);
 			}
 		}
 
@@ -88,6 +94,32 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -101,29 +133,29 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Access_key_id
+		public string Action
 		{
 			get
 			{
-				return access_key_id;
+				return action;
 			}
 			set	
 			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string Tags
+		public long? OwnerId
 		{
 			get
 			{
-				return tags;
+				return ownerId;
 			}
 			set	
 			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -140,16 +172,29 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string VServerGroupId
+		public string AccessKeyId
 		{
 			get
 			{
-				return vServerGroupId;
+				return accessKeyId;
 			}
 			set	
 			{
-				vServerGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "VServerGroupId", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 

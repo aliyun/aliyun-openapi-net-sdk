@@ -29,51 +29,44 @@ namespace Aliyun.Acs.Slb.Model.V20140515
     public class CreateVServerGroupRequest : RpcAcsRequest<CreateVServerGroupResponse>
     {
         public CreateVServerGroupRequest()
-            : base("Slb", "2014-05-15", "CreateVServerGroup")
+            : base("Slb", "2014-05-15", "CreateVServerGroup", "slb", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string access_key_id;
 
 		private long? resourceOwnerId;
 
-		private string ownerAccount;
-
-		private string access_key_id;
-
-		private string tags;
-
 		private string loadBalancerId;
 
-		private string vServerGroupName;
+		private string resourceOwnerAccount;
+
+		private string regionId;
+
+		private string ownerAccount;
+
+		private string action;
+
+		private long? ownerId;
 
 		private string backendServers;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string accessKeyId;
 
-		public string ResourceOwnerAccount
+		private string tags;
+
+		private string vServerGroupName;
+
+		public string Access_key_id
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return access_key_id;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				access_key_id = value;
+				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
 			}
 		}
 
@@ -90,6 +83,45 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string LoadBalancerId
+		{
+			get
+			{
+				return loadBalancerId;
+			}
+			set	
+			{
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -103,16 +135,55 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Access_key_id
+		public string Action
 		{
 			get
 			{
-				return access_key_id;
+				return action;
 			}
 			set	
 			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string BackendServers
+		{
+			get
+			{
+				return backendServers;
+			}
+			set	
+			{
+				backendServers = value;
+				DictionaryUtil.Add(QueryParameters, "BackendServers", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -129,19 +200,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
-			}
-		}
-
 		public string VServerGroupName
 		{
 			get
@@ -152,19 +210,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				vServerGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "VServerGroupName", value);
-			}
-		}
-
-		public string BackendServers
-		{
-			get
-			{
-				return backendServers;
-			}
-			set	
-			{
-				backendServers = value;
-				DictionaryUtil.Add(QueryParameters, "BackendServers", value);
 			}
 		}
 

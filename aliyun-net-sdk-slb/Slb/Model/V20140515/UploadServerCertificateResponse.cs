@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class UploadServerCertificateResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string serverCertificateId;
 
 		private string fingerprint;
@@ -33,6 +35,30 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string regionId;
 
 		private string regionIdAlias;
+
+		private string aliCloudCertificateId;
+
+		private string aliCloudCertificateName;
+
+		private int? isAliCloudCertificate;
+
+		private string resourceGroupId;
+
+		private string createTime;
+
+		private long? createTimeStamp;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string ServerCertificateId
 		{
@@ -91,6 +117,78 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				regionIdAlias = value;
+			}
+		}
+
+		public string AliCloudCertificateId
+		{
+			get
+			{
+				return aliCloudCertificateId;
+			}
+			set	
+			{
+				aliCloudCertificateId = value;
+			}
+		}
+
+		public string AliCloudCertificateName
+		{
+			get
+			{
+				return aliCloudCertificateName;
+			}
+			set	
+			{
+				aliCloudCertificateName = value;
+			}
+		}
+
+		public int? IsAliCloudCertificate
+		{
+			get
+			{
+				return isAliCloudCertificate;
+			}
+			set	
+			{
+				isAliCloudCertificate = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+			}
+		}
+
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
+			}
+		}
+
+		public long? CreateTimeStamp
+		{
+			get
+			{
+				return createTimeStamp;
+			}
+			set	
+			{
+				createTimeStamp = value;
 			}
 		}
 	}

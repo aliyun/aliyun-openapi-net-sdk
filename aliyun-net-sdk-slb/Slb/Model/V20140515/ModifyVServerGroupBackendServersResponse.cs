@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class ModifyVServerGroupBackendServersResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string vServerGroupId;
 
-		private List<BackendServer> backendServers;
+		private List<ModifyVServerGroupBackendServers_BackendServer> backendServers;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string VServerGroupId
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public List<BackendServer> BackendServers
+		public List<ModifyVServerGroupBackendServers_BackendServer> BackendServers
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class BackendServer{
+		public class ModifyVServerGroupBackendServers_BackendServer
+		{
 
 			private string serverId;
 

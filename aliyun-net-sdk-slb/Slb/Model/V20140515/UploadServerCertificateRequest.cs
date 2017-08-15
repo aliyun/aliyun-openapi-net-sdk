@@ -29,51 +29,50 @@ namespace Aliyun.Acs.Slb.Model.V20140515
     public class UploadServerCertificateRequest : RpcAcsRequest<UploadServerCertificateResponse>
     {
         public UploadServerCertificateRequest()
-            : base("Slb", "2014-05-15", "UploadServerCertificate")
+            : base("Slb", "2014-05-15", "UploadServerCertificate", "slb", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string access_key_id;
 
 		private long? resourceOwnerId;
 
 		private string serverCertificate;
 
-		private string privateKey;
-
-		private string serverCertificateName;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string access_key_id;
+		private string aliCloudCertificateName;
+
+		private string aliCloudCertificateId;
+
+		private long? ownerId;
+
+		private string accessKeyId;
 
 		private string tags;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string privateKey;
 
-		public string ResourceOwnerAccount
+		private string resourceGroupId;
+
+		private string regionId;
+
+		private string action;
+
+		private string serverCertificateName;
+
+		public string Access_key_id
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return access_key_id;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				access_key_id = value;
+				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
 			}
 		}
 
@@ -103,29 +102,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string PrivateKey
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return privateKey;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				privateKey = value;
-				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
-			}
-		}
-
-		public string ServerCertificateName
-		{
-			get
-			{
-				return serverCertificateName;
-			}
-			set	
-			{
-				serverCertificateName = value;
-				DictionaryUtil.Add(QueryParameters, "ServerCertificateName", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -142,16 +128,55 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Access_key_id
+		public string AliCloudCertificateName
 		{
 			get
 			{
-				return access_key_id;
+				return aliCloudCertificateName;
 			}
 			set	
 			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+				aliCloudCertificateName = value;
+				DictionaryUtil.Add(QueryParameters, "AliCloudCertificateName", value);
+			}
+		}
+
+		public string AliCloudCertificateId
+		{
+			get
+			{
+				return aliCloudCertificateId;
+			}
+			set	
+			{
+				aliCloudCertificateId = value;
+				DictionaryUtil.Add(QueryParameters, "AliCloudCertificateId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -165,6 +190,71 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string PrivateKey
+		{
+			get
+			{
+				return privateKey;
+			}
+			set	
+			{
+				privateKey = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string ServerCertificateName
+		{
+			get
+			{
+				return serverCertificateName;
+			}
+			set	
+			{
+				serverCertificateName = value;
+				DictionaryUtil.Add(QueryParameters, "ServerCertificateName", value);
 			}
 		}
 

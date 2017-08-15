@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeZonesResponse : AcsResponse
 	{
 
-		private List<Zone> zones;
+		private string requestId;
 
-		public List<Zone> Zones
+		private List<DescribeZones_Zone> zones;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeZones_Zone> Zones
 		{
 			get
 			{
@@ -38,13 +52,14 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class Zone{
+		public class DescribeZones_Zone
+		{
 
 			private string zoneId;
 
 			private string localName;
 
-			private List<SlaveZone> slaveZones;
+			private List<DescribeZones_SlaveZone> slaveZones;
 
 			public string ZoneId
 			{
@@ -70,7 +85,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				}
 			}
 
-			public List<SlaveZone> SlaveZones
+			public List<DescribeZones_SlaveZone> SlaveZones
 			{
 				get
 				{
@@ -82,7 +97,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				}
 			}
 
-			public class SlaveZone{
+			public class DescribeZones_SlaveZone
+			{
 
 				private string zoneId;
 

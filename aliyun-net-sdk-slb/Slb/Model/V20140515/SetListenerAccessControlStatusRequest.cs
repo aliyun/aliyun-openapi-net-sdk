@@ -29,51 +29,44 @@ namespace Aliyun.Acs.Slb.Model.V20140515
     public class SetListenerAccessControlStatusRequest : RpcAcsRequest<SetListenerAccessControlStatusResponse>
     {
         public SetListenerAccessControlStatusRequest()
-            : base("Slb", "2014-05-15", "SetListenerAccessControlStatus")
+            : base("Slb", "2014-05-15", "SetListenerAccessControlStatus", "slb", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string access_key_id;
 
 		private long? resourceOwnerId;
 
-		private string loadBalancerId;
-
 		private int? listenerPort;
 
-		private string accessControlStatus;
+		private string loadBalancerId;
+
+		private string regionId;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string access_key_id;
+		private string action;
+
+		private string accessControlStatus;
+
+		private long? ownerId;
+
+		private string accessKeyId;
 
 		private string tags;
 
-		public long? OwnerId
+		public string Access_key_id
 		{
 			get
 			{
-				return ownerId;
+				return access_key_id;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				access_key_id = value;
+				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
 			}
 		}
 
@@ -90,19 +83,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
-			}
-		}
-
 		public int? ListenerPort
 		{
 			get
@@ -116,16 +96,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string AccessControlStatus
+		public string LoadBalancerId
 		{
 			get
 			{
-				return accessControlStatus;
+				return loadBalancerId;
 			}
 			set	
 			{
-				accessControlStatus = value;
-				DictionaryUtil.Add(QueryParameters, "AccessControlStatus", value);
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -142,16 +148,55 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Access_key_id
+		public string Action
 		{
 			get
 			{
-				return access_key_id;
+				return action;
 			}
 			set	
 			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string AccessControlStatus
+		{
+			get
+			{
+				return accessControlStatus;
+			}
+			set	
+			{
+				accessControlStatus = value;
+				DictionaryUtil.Add(QueryParameters, "AccessControlStatus", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

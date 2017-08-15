@@ -24,11 +24,31 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class UploadCACertificateResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string cACertificateId;
 
 		private string cACertificateName;
 
 		private string fingerprint;
+
+		private string resourceGroupId;
+
+		private string createTime;
+
+		private long? createTimeStamp;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string CACertificateId
 		{
@@ -63,6 +83,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				fingerprint = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+			}
+		}
+
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
+			}
+		}
+
+		public long? CreateTimeStamp
+		{
+			get
+			{
+				return createTimeStamp;
+			}
+			set	
+			{
+				createTimeStamp = value;
 			}
 		}
 	}

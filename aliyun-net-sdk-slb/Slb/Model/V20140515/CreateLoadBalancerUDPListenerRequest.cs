@@ -29,192 +29,70 @@ namespace Aliyun.Acs.Slb.Model.V20140515
     public class CreateLoadBalancerUDPListenerRequest : RpcAcsRequest<CreateLoadBalancerUDPListenerResponse>
     {
         public CreateLoadBalancerUDPListenerRequest()
-            : base("Slb", "2014-05-15", "CreateLoadBalancerUDPListener")
+            : base("Slb", "2014-05-15", "CreateLoadBalancerUDPListener", "slb", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
-		private long? resourceOwnerId;
-
-		private string loadBalancerId;
-
-		private int? listenerPort;
-
-		private int? backendServerPort;
-
-		private int? bandwidth;
-
-		private string scheduler;
-
-		private int? persistenceTimeout;
-
-		private int? healthyThreshold;
-
-		private int? unhealthyThreshold;
+		private string access_key_id;
 
 		private int? healthCheckConnectTimeout;
 
-		private int? healthCheckConnectPort;
+		private long? resourceOwnerId;
 
-		private int? healthCheckInterval;
+		private int? unhealthyThreshold;
 
-		private string healthCheckReq;
+		private int? healthyThreshold;
 
-		private string healthCheckExp;
+		private string accessKeyId;
+
+		private string scheduler;
 
 		private int? maxConnection;
 
-		private string ownerAccount;
+		private string regionId;
 
-		private string access_key_id;
+		private int? persistenceTimeout;
+
+		private string action;
 
 		private string vServerGroupId;
 
+		private int? listenerPort;
+
+		private string resourceOwnerAccount;
+
+		private int? bandwidth;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
 		private string tags;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string loadBalancerId;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string masterSlaveServerGroupId;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+		private string healthCheckReq;
 
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
-			}
-		}
+		private int? backendServerPort;
 
-		public int? ListenerPort
-		{
-			get
-			{
-				return listenerPort;
-			}
-			set	
-			{
-				listenerPort = value;
-				DictionaryUtil.Add(QueryParameters, "ListenerPort", value.ToString());
-			}
-		}
+		private int? healthCheckInterval;
 
-		public int? BackendServerPort
-		{
-			get
-			{
-				return backendServerPort;
-			}
-			set	
-			{
-				backendServerPort = value;
-				DictionaryUtil.Add(QueryParameters, "BackendServerPort", value.ToString());
-			}
-		}
+		private string healthCheckExp;
 
-		public int? Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "Bandwidth", value.ToString());
-			}
-		}
+		private int? healthCheckConnectPort;
 
-		public string Scheduler
+		public string Access_key_id
 		{
 			get
 			{
-				return scheduler;
+				return access_key_id;
 			}
 			set	
 			{
-				scheduler = value;
-				DictionaryUtil.Add(QueryParameters, "Scheduler", value);
-			}
-		}
-
-		public int? PersistenceTimeout
-		{
-			get
-			{
-				return persistenceTimeout;
-			}
-			set	
-			{
-				persistenceTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "PersistenceTimeout", value.ToString());
-			}
-		}
-
-		public int? HealthyThreshold
-		{
-			get
-			{
-				return healthyThreshold;
-			}
-			set	
-			{
-				healthyThreshold = value;
-				DictionaryUtil.Add(QueryParameters, "HealthyThreshold", value.ToString());
-			}
-		}
-
-		public int? UnhealthyThreshold
-		{
-			get
-			{
-				return unhealthyThreshold;
-			}
-			set	
-			{
-				unhealthyThreshold = value;
-				DictionaryUtil.Add(QueryParameters, "UnhealthyThreshold", value.ToString());
+				access_key_id = value;
+				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
 			}
 		}
 
@@ -231,55 +109,68 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public int? HealthCheckConnectPort
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return healthCheckConnectPort;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				healthCheckConnectPort = value;
-				DictionaryUtil.Add(QueryParameters, "HealthCheckConnectPort", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
-		public int? HealthCheckInterval
+		public int? UnhealthyThreshold
 		{
 			get
 			{
-				return healthCheckInterval;
+				return unhealthyThreshold;
 			}
 			set	
 			{
-				healthCheckInterval = value;
-				DictionaryUtil.Add(QueryParameters, "healthCheckInterval", value.ToString());
+				unhealthyThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "UnhealthyThreshold", value.ToString());
 			}
 		}
 
-		public string HealthCheckReq
+		public int? HealthyThreshold
 		{
 			get
 			{
-				return healthCheckReq;
+				return healthyThreshold;
 			}
 			set	
 			{
-				healthCheckReq = value;
-				DictionaryUtil.Add(QueryParameters, "healthCheckReq", value);
+				healthyThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "HealthyThreshold", value.ToString());
 			}
 		}
 
-		public string HealthCheckExp
+		public string AccessKeyId
 		{
 			get
 			{
-				return healthCheckExp;
+				return accessKeyId;
 			}
 			set	
 			{
-				healthCheckExp = value;
-				DictionaryUtil.Add(QueryParameters, "healthCheckExp", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string Scheduler
+		{
+			get
+			{
+				return scheduler;
+			}
+			set	
+			{
+				scheduler = value;
+				DictionaryUtil.Add(QueryParameters, "Scheduler", value);
 			}
 		}
 
@@ -296,29 +187,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string OwnerAccount
+		public string RegionId
 		{
 			get
 			{
-				return ownerAccount;
+				return regionId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
-		public string Access_key_id
+		public int? PersistenceTimeout
 		{
 			get
 			{
-				return access_key_id;
+				return persistenceTimeout;
 			}
 			set	
 			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+				persistenceTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "PersistenceTimeout", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -335,6 +239,71 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public int? ListenerPort
+		{
+			get
+			{
+				return listenerPort;
+			}
+			set	
+			{
+				listenerPort = value;
+				DictionaryUtil.Add(QueryParameters, "ListenerPort", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public int? Bandwidth
+		{
+			get
+			{
+				return bandwidth;
+			}
+			set	
+			{
+				bandwidth = value;
+				DictionaryUtil.Add(QueryParameters, "Bandwidth", value.ToString());
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public string Tags
 		{
 			get
@@ -345,6 +314,97 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string LoadBalancerId
+		{
+			get
+			{
+				return loadBalancerId;
+			}
+			set	
+			{
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+			}
+		}
+
+		public string MasterSlaveServerGroupId
+		{
+			get
+			{
+				return masterSlaveServerGroupId;
+			}
+			set	
+			{
+				masterSlaveServerGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "MasterSlaveServerGroupId", value);
+			}
+		}
+
+		public string HealthCheckReq
+		{
+			get
+			{
+				return healthCheckReq;
+			}
+			set	
+			{
+				healthCheckReq = value;
+				DictionaryUtil.Add(QueryParameters, "healthCheckReq", value);
+			}
+		}
+
+		public int? BackendServerPort
+		{
+			get
+			{
+				return backendServerPort;
+			}
+			set	
+			{
+				backendServerPort = value;
+				DictionaryUtil.Add(QueryParameters, "BackendServerPort", value.ToString());
+			}
+		}
+
+		public int? HealthCheckInterval
+		{
+			get
+			{
+				return healthCheckInterval;
+			}
+			set	
+			{
+				healthCheckInterval = value;
+				DictionaryUtil.Add(QueryParameters, "healthCheckInterval", value.ToString());
+			}
+		}
+
+		public string HealthCheckExp
+		{
+			get
+			{
+				return healthCheckExp;
+			}
+			set	
+			{
+				healthCheckExp = value;
+				DictionaryUtil.Add(QueryParameters, "healthCheckExp", value);
+			}
+		}
+
+		public int? HealthCheckConnectPort
+		{
+			get
+			{
+				return healthCheckConnectPort;
+			}
+			set	
+			{
+				healthCheckConnectPort = value;
+				DictionaryUtil.Add(QueryParameters, "HealthCheckConnectPort", value.ToString());
 			}
 		}
 

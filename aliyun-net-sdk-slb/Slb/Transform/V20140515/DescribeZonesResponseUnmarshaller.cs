@@ -32,25 +32,25 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeZonesResponse.HttpResponse = context.HttpResponse;
 			describeZonesResponse.RequestId = context.StringValue("DescribeZones.RequestId");
 
-			List<DescribeZonesResponse.Zone> zones = new List<DescribeZonesResponse.Zone>();
+			List<DescribeZonesResponse.DescribeZones_Zone> describeZonesResponse_zones = new List<DescribeZonesResponse.DescribeZones_Zone>();
 			for (int i = 0; i < context.Length("DescribeZones.Zones.Length"); i++) {
-				DescribeZonesResponse.Zone zone = new DescribeZonesResponse.Zone();
+				DescribeZonesResponse.DescribeZones_Zone zone = new DescribeZonesResponse.DescribeZones_Zone();
 				zone.ZoneId = context.StringValue("DescribeZones.Zones["+ i +"].ZoneId");
 				zone.LocalName = context.StringValue("DescribeZones.Zones["+ i +"].LocalName");
 
-				List<DescribeZonesResponse.Zone.SlaveZone> slaveZones = new List<DescribeZonesResponse.Zone.SlaveZone>();
+				List<DescribeZonesResponse.DescribeZones_Zone.DescribeZones_SlaveZone> zone_slaveZones = new List<DescribeZonesResponse.DescribeZones_Zone.DescribeZones_SlaveZone>();
 				for (int j = 0; j < context.Length("DescribeZones.Zones["+ i +"].SlaveZones.Length"); j++) {
-					DescribeZonesResponse.Zone.SlaveZone slaveZone = new DescribeZonesResponse.Zone.SlaveZone();
+					DescribeZonesResponse.DescribeZones_Zone.DescribeZones_SlaveZone slaveZone = new DescribeZonesResponse.DescribeZones_Zone.DescribeZones_SlaveZone();
 					slaveZone.ZoneId = context.StringValue("DescribeZones.Zones["+ i +"].SlaveZones["+ j +"].ZoneId");
 					slaveZone.LocalName = context.StringValue("DescribeZones.Zones["+ i +"].SlaveZones["+ j +"].LocalName");
 
-					slaveZones.Add(slaveZone);
+					zone_slaveZones.Add(slaveZone);
 				}
-				zone.SlaveZones = slaveZones;
+				zone.SlaveZones = zone_slaveZones;
 
-				zones.Add(zone);
+				describeZonesResponse_zones.Add(zone);
 			}
-			describeZonesResponse.Zones = zones;
+			describeZonesResponse.Zones = describeZonesResponse_zones;
         
 			return describeZonesResponse;
         }

@@ -24,7 +24,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeLoadBalancerAttributeResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string loadBalancerId;
+
+		private string resourceGroupId;
 
 		private string loadBalancerName;
 
@@ -46,23 +50,45 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string internetChargeType;
 
+		private long? autoReleaseTime;
+
 		private int? bandwidth;
+
+		private string loadBalancerSpec;
 
 		private string createTime;
 
 		private long? createTimeStamp;
 
+		private string endTime;
+
+		private long? endTimeStamp;
+
+		private string payType;
+
 		private string masterZoneId;
 
 		private string slaveZoneId;
 
-		private List<ListenerPortAndProtocal> listenerPortsAndProtocal;
+		private List<DescribeLoadBalancerAttribute_ListenerPortAndProtocal> listenerPortsAndProtocal;
 
-		private List<ListenerPortAndProtocol> listenerPortsAndProtocol;
+		private List<DescribeLoadBalancerAttribute_ListenerPortAndProtocol> listenerPortsAndProtocol;
 
-		private List<BackendServer> backendServers;
+		private List<DescribeLoadBalancerAttribute_BackendServer> backendServers;
 
 		private List<string> listenerPorts;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string LoadBalancerId
 		{
@@ -73,6 +99,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				loadBalancerId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 
@@ -196,6 +234,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public long? AutoReleaseTime
+		{
+			get
+			{
+				return autoReleaseTime;
+			}
+			set	
+			{
+				autoReleaseTime = value;
+			}
+		}
+
 		public int? Bandwidth
 		{
 			get
@@ -205,6 +255,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				bandwidth = value;
+			}
+		}
+
+		public string LoadBalancerSpec
+		{
+			get
+			{
+				return loadBalancerSpec;
+			}
+			set	
+			{
+				loadBalancerSpec = value;
 			}
 		}
 
@@ -232,6 +294,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public long? EndTimeStamp
+		{
+			get
+			{
+				return endTimeStamp;
+			}
+			set	
+			{
+				endTimeStamp = value;
+			}
+		}
+
+		public string PayType
+		{
+			get
+			{
+				return payType;
+			}
+			set	
+			{
+				payType = value;
+			}
+		}
+
 		public string MasterZoneId
 		{
 			get
@@ -256,7 +354,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public List<ListenerPortAndProtocal> ListenerPortsAndProtocal
+		public List<DescribeLoadBalancerAttribute_ListenerPortAndProtocal> ListenerPortsAndProtocal
 		{
 			get
 			{
@@ -268,7 +366,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public List<ListenerPortAndProtocol> ListenerPortsAndProtocol
+		public List<DescribeLoadBalancerAttribute_ListenerPortAndProtocol> ListenerPortsAndProtocol
 		{
 			get
 			{
@@ -280,7 +378,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public List<BackendServer> BackendServers
+		public List<DescribeLoadBalancerAttribute_BackendServer> BackendServers
 		{
 			get
 			{
@@ -304,7 +402,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class ListenerPortAndProtocal{
+		public class DescribeLoadBalancerAttribute_ListenerPortAndProtocal
+		{
 
 			private int? listenerPort;
 
@@ -335,7 +434,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class ListenerPortAndProtocol{
+		public class DescribeLoadBalancerAttribute_ListenerPortAndProtocol
+		{
 
 			private int? listenerPort;
 
@@ -366,7 +466,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class BackendServer{
+		public class DescribeLoadBalancerAttribute_BackendServer
+		{
 
 			private string serverId;
 

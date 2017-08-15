@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeHealthStatusResponse : AcsResponse
 	{
 
-		private List<BackendServer> backendServers;
+		private string requestId;
 
-		public List<BackendServer> BackendServers
+		private List<DescribeHealthStatus_BackendServer> backendServers;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeHealthStatus_BackendServer> BackendServers
 		{
 			get
 			{
@@ -38,11 +52,28 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class BackendServer{
+		public class DescribeHealthStatus_BackendServer
+		{
+
+			private int? listenerPort;
 
 			private string serverId;
 
+			private int? port;
+
 			private string serverHealthStatus;
+
+			public int? ListenerPort
+			{
+				get
+				{
+					return listenerPort;
+				}
+				set	
+				{
+					listenerPort = value;
+				}
+			}
 
 			public string ServerId
 			{
@@ -53,6 +84,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					serverId = value;
+				}
+			}
+
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
 				}
 			}
 

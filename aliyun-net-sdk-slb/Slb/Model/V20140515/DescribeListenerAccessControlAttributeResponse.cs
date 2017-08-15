@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeListenerAccessControlAttributeResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string accessControlStatus;
 
 		private string sourceItems;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string AccessControlStatus
 		{

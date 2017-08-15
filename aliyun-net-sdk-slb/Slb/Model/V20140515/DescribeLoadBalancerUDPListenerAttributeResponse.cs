@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeLoadBalancerUDPListenerAttributeResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? listenerPort;
 
 		private int? backendServerPort;
@@ -55,6 +57,20 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private int? maxConnection;
 
 		private string vServerGroupId;
+
+		private string masterSlaveServerGroupId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? ListenerPort
 		{
@@ -245,6 +261,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				vServerGroupId = value;
+			}
+		}
+
+		public string MasterSlaveServerGroupId
+		{
+			get
+			{
+				return masterSlaveServerGroupId;
+			}
+			set	
+			{
+				masterSlaveServerGroupId = value;
 			}
 		}
 	}

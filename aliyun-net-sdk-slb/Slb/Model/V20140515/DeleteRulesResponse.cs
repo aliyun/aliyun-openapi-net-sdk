@@ -23,5 +23,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 {
 	public class DeleteRulesResponse : AcsResponse
 	{
+
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 	}
 }

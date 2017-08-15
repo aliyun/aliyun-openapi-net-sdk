@@ -32,17 +32,20 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeCACertificatesResponse.HttpResponse = context.HttpResponse;
 			describeCACertificatesResponse.RequestId = context.StringValue("DescribeCACertificates.RequestId");
 
-			List<DescribeCACertificatesResponse.CACertificate> cACertificates = new List<DescribeCACertificatesResponse.CACertificate>();
+			List<DescribeCACertificatesResponse.DescribeCACertificates_CACertificate> describeCACertificatesResponse_cACertificates = new List<DescribeCACertificatesResponse.DescribeCACertificates_CACertificate>();
 			for (int i = 0; i < context.Length("DescribeCACertificates.CACertificates.Length"); i++) {
-				DescribeCACertificatesResponse.CACertificate cACertificate = new DescribeCACertificatesResponse.CACertificate();
+				DescribeCACertificatesResponse.DescribeCACertificates_CACertificate cACertificate = new DescribeCACertificatesResponse.DescribeCACertificates_CACertificate();
 				cACertificate.RegionId = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].RegionId");
 				cACertificate.CACertificateId = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].CACertificateId");
 				cACertificate.CACertificateName = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].CACertificateName");
 				cACertificate.Fingerprint = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].Fingerprint");
+				cACertificate.ResourceGroupId = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].ResourceGroupId");
+				cACertificate.CreateTime = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].CreateTime");
+				cACertificate.CreateTimeStamp = context.LongValue("DescribeCACertificates.CACertificates["+ i +"].CreateTimeStamp");
 
-				cACertificates.Add(cACertificate);
+				describeCACertificatesResponse_cACertificates.Add(cACertificate);
 			}
-			describeCACertificatesResponse.CACertificates = cACertificates;
+			describeCACertificatesResponse.CACertificates = describeCACertificatesResponse_cACertificates;
         
 			return describeCACertificatesResponse;
         }

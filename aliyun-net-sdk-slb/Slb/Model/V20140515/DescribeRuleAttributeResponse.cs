@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeRuleAttributeResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string ruleName;
 
 		private string loadBalancerId;
@@ -35,6 +37,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string url;
 
 		private string vServerGroupId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string RuleName
 		{

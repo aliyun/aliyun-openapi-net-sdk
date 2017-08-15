@@ -32,15 +32,17 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeHealthStatusResponse.HttpResponse = context.HttpResponse;
 			describeHealthStatusResponse.RequestId = context.StringValue("DescribeHealthStatus.RequestId");
 
-			List<DescribeHealthStatusResponse.BackendServer> backendServers = new List<DescribeHealthStatusResponse.BackendServer>();
+			List<DescribeHealthStatusResponse.DescribeHealthStatus_BackendServer> describeHealthStatusResponse_backendServers = new List<DescribeHealthStatusResponse.DescribeHealthStatus_BackendServer>();
 			for (int i = 0; i < context.Length("DescribeHealthStatus.BackendServers.Length"); i++) {
-				DescribeHealthStatusResponse.BackendServer backendServer = new DescribeHealthStatusResponse.BackendServer();
+				DescribeHealthStatusResponse.DescribeHealthStatus_BackendServer backendServer = new DescribeHealthStatusResponse.DescribeHealthStatus_BackendServer();
+				backendServer.ListenerPort = context.IntegerValue("DescribeHealthStatus.BackendServers["+ i +"].ListenerPort");
 				backendServer.ServerId = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerId");
+				backendServer.Port = context.IntegerValue("DescribeHealthStatus.BackendServers["+ i +"].Port");
 				backendServer.ServerHealthStatus = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerHealthStatus");
 
-				backendServers.Add(backendServer);
+				describeHealthStatusResponse_backendServers.Add(backendServer);
 			}
-			describeHealthStatusResponse.BackendServers = backendServers;
+			describeHealthStatusResponse.BackendServers = describeHealthStatusResponse_backendServers;
         
 			return describeHealthStatusResponse;
         }

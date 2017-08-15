@@ -33,15 +33,15 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			setBackendServersResponse.RequestId = context.StringValue("SetBackendServers.RequestId");
 			setBackendServersResponse.LoadBalancerId = context.StringValue("SetBackendServers.LoadBalancerId");
 
-			List<SetBackendServersResponse.BackendServer> backendServers = new List<SetBackendServersResponse.BackendServer>();
+			List<SetBackendServersResponse.SetBackendServers_BackendServer> setBackendServersResponse_backendServers = new List<SetBackendServersResponse.SetBackendServers_BackendServer>();
 			for (int i = 0; i < context.Length("SetBackendServers.BackendServers.Length"); i++) {
-				SetBackendServersResponse.BackendServer backendServer = new SetBackendServersResponse.BackendServer();
+				SetBackendServersResponse.SetBackendServers_BackendServer backendServer = new SetBackendServersResponse.SetBackendServers_BackendServer();
 				backendServer.ServerId = context.StringValue("SetBackendServers.BackendServers["+ i +"].ServerId");
 				backendServer.Weight = context.StringValue("SetBackendServers.BackendServers["+ i +"].Weight");
 
-				backendServers.Add(backendServer);
+				setBackendServersResponse_backendServers.Add(backendServer);
 			}
-			setBackendServersResponse.BackendServers = backendServers;
+			setBackendServersResponse.BackendServers = setBackendServersResponse_backendServers;
         
 			return setBackendServersResponse;
         }

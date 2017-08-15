@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeVServerGroupAttributeResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string vServerGroupId;
 
 		private string vServerGroupName;
 
-		private List<BackendServer> backendServers;
+		private List<DescribeVServerGroupAttribute_BackendServer> backendServers;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string VServerGroupId
 		{
@@ -54,7 +68,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public List<BackendServer> BackendServers
+		public List<DescribeVServerGroupAttribute_BackendServer> BackendServers
 		{
 			get
 			{
@@ -66,7 +80,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class BackendServer{
+		public class DescribeVServerGroupAttribute_BackendServer
+		{
 
 			private string serverId;
 

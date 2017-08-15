@@ -29,65 +29,70 @@ namespace Aliyun.Acs.Slb.Model.V20140515
     public class DescribeLoadBalancersRequest : RpcAcsRequest<DescribeLoadBalancersResponse>
     {
         public DescribeLoadBalancersRequest()
-            : base("Slb", "2014-05-15", "DescribeLoadBalancers")
+            : base("Slb", "2014-05-15", "DescribeLoadBalancers", "slb", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string access_key_id;
 
 		private long? resourceOwnerId;
 
-		private string serverId;
+		private string networkType;
 
-		private string loadBalancerId;
+		private string masterZoneId;
+
+		private int? pageNumber;
+
+		private string accessKeyId;
+
+		private string resourceGroupId;
+
+		private string loadBalancerName;
+
+		private string regionId;
+
+		private int? pageSize;
+
+		private string action;
 
 		private string addressType;
+
+		private string slaveZoneId;
+
+		private string address;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
+		private string serverId;
+
+		private string tags;
+
+		private string serverIntranetAddress;
+
+		private string vSwitchId;
+
+		private string loadBalancerId;
 
 		private string internetChargeType;
 
 		private string vpcId;
 
-		private string vSwitchId;
+		private string payType;
 
-		private string networkType;
-
-		private string address;
-
-		private string masterZoneId;
-
-		private string slaveZoneId;
-
-		private string ownerAccount;
-
-		private string access_key_id;
-
-		private string tags;
-
-		public long? OwnerId
+		public string Access_key_id
 		{
 			get
 			{
-				return ownerId;
+				return access_key_id;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				access_key_id = value;
+				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
 			}
 		}
 
@@ -104,29 +109,120 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string ServerId
+		public string NetworkType
 		{
 			get
 			{
-				return serverId;
+				return networkType;
 			}
 			set	
 			{
-				serverId = value;
-				DictionaryUtil.Add(QueryParameters, "ServerId", value);
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
 			}
 		}
 
-		public string LoadBalancerId
+		public string MasterZoneId
 		{
 			get
 			{
-				return loadBalancerId;
+				return masterZoneId;
 			}
 			set	
 			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+				masterZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "MasterZoneId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string LoadBalancerName
+		{
+			get
+			{
+				return loadBalancerName;
+			}
+			set	
+			{
+				loadBalancerName = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerName", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -140,6 +236,136 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				addressType = value;
 				DictionaryUtil.Add(QueryParameters, "AddressType", value);
+			}
+		}
+
+		public string SlaveZoneId
+		{
+			get
+			{
+				return slaveZoneId;
+			}
+			set	
+			{
+				slaveZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveZoneId", value);
+			}
+		}
+
+		public string Address
+		{
+			get
+			{
+				return address;
+			}
+			set	
+			{
+				address = value;
+				DictionaryUtil.Add(QueryParameters, "Address", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ServerId
+		{
+			get
+			{
+				return serverId;
+			}
+			set	
+			{
+				serverId = value;
+				DictionaryUtil.Add(QueryParameters, "ServerId", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string ServerIntranetAddress
+		{
+			get
+			{
+				return serverIntranetAddress;
+			}
+			set	
+			{
+				serverIntranetAddress = value;
+				DictionaryUtil.Add(QueryParameters, "ServerIntranetAddress", value);
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string LoadBalancerId
+		{
+			get
+			{
+				return loadBalancerId;
+			}
+			set	
+			{
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
 			}
 		}
 
@@ -169,107 +395,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string VSwitchId
+		public string PayType
 		{
 			get
 			{
-				return vSwitchId;
+				return payType;
 			}
 			set	
 			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
-		public string Address
-		{
-			get
-			{
-				return address;
-			}
-			set	
-			{
-				address = value;
-				DictionaryUtil.Add(QueryParameters, "Address", value);
-			}
-		}
-
-		public string MasterZoneId
-		{
-			get
-			{
-				return masterZoneId;
-			}
-			set	
-			{
-				masterZoneId = value;
-				DictionaryUtil.Add(QueryParameters, "MasterZoneId", value);
-			}
-		}
-
-		public string SlaveZoneId
-		{
-			get
-			{
-				return slaveZoneId;
-			}
-			set	
-			{
-				slaveZoneId = value;
-				DictionaryUtil.Add(QueryParameters, "SlaveZoneId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Access_key_id
-		{
-			get
-			{
-				return access_key_id;
-			}
-			set	
-			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
+				payType = value;
+				DictionaryUtil.Add(QueryParameters, "PayType", value);
 			}
 		}
 
