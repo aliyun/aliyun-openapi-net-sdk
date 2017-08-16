@@ -45,12 +45,14 @@ namespace Aliyun.Acs.Domain.Transform.V20160511
 			queryDomainBySaleIdResponse.SafetyLock = context.StringValue("QueryDomainBySaleId.SafetyLock");
 			queryDomainBySaleIdResponse.TransferLock = context.StringValue("QueryDomainBySaleId.TransferLock");
 			queryDomainBySaleIdResponse.WhoisProtected = context.BooleanValue("QueryDomainBySaleId.WhoisProtected");
+			queryDomainBySaleIdResponse.Premium = context.BooleanValue("QueryDomainBySaleId.Premium");
+			queryDomainBySaleIdResponse.Remark = context.StringValue("QueryDomainBySaleId.Remark");
 
-			List<string> dnsList = new List<string>();
+			List<string> queryDomainBySaleIdResponse_dnsList = new List<string>();
 			for (int i = 0; i < context.Length("QueryDomainBySaleId.DnsList.Length"); i++) {
-				dnsList.Add(context.StringValue("QueryDomainBySaleId.DnsList["+ i +"]"));
+				queryDomainBySaleIdResponse_dnsList.Add(context.StringValue("QueryDomainBySaleId.DnsList["+ i +"]"));
 			}
-			queryDomainBySaleIdResponse.DnsList = dnsList;
+			queryDomainBySaleIdResponse.DnsList = queryDomainBySaleIdResponse_dnsList;
         
 			return queryDomainBySaleIdResponse;
         }

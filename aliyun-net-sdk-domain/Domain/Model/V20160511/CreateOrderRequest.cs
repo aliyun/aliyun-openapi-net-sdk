@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 
 		private List<SubOrderParam> subOrderParams;
 
+		private string accessKeyId;
+
 		public List<SubOrderParam> SubOrderParams
 		{
 			get
@@ -53,6 +55,19 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 					DictionaryUtil.Add(QueryParameters,"SubOrderParam." + (i + 1) + ".Period", subOrderParams[i].Period);
 					DictionaryUtil.Add(QueryParameters,"SubOrderParam." + (i + 1) + ".DomainTemplateID", subOrderParams[i].DomainTemplateID);
 				}
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

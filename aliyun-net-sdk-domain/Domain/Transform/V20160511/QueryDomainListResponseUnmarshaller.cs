@@ -38,9 +38,9 @@ namespace Aliyun.Acs.Domain.Transform.V20160511
 			queryDomainListResponse.PrePage = context.BooleanValue("QueryDomainList.PrePage");
 			queryDomainListResponse.NextPage = context.BooleanValue("QueryDomainList.NextPage");
 
-			List<QueryDomainListResponse.Domain> data = new List<QueryDomainListResponse.Domain>();
+			List<QueryDomainListResponse.QueryDomainList_Domain> queryDomainListResponse_data = new List<QueryDomainListResponse.QueryDomainList_Domain>();
 			for (int i = 0; i < context.Length("QueryDomainList.Data.Length"); i++) {
-				QueryDomainListResponse.Domain domain = new QueryDomainListResponse.Domain();
+				QueryDomainListResponse.QueryDomainList_Domain domain = new QueryDomainListResponse.QueryDomainList_Domain();
 				domain.DomainName = context.StringValue("QueryDomainList.Data["+ i +"].DomainName");
 				domain.SaleId = context.StringValue("QueryDomainList.Data["+ i +"].SaleId");
 				domain.DeadDate = context.StringValue("QueryDomainList.Data["+ i +"].DeadDate");
@@ -49,10 +49,17 @@ namespace Aliyun.Acs.Domain.Transform.V20160511
 				domain.DomainRegType = context.StringValue("QueryDomainList.Data["+ i +"].DomainRegType");
 				domain.GroupId = context.StringValue("QueryDomainList.Data["+ i +"].GroupId");
 				domain.DomainType = context.StringValue("QueryDomainList.Data["+ i +"].DomainType");
+				domain.DomainStatus = context.StringValue("QueryDomainList.Data["+ i +"].DomainStatus");
+				domain.DeadDateStatus = context.StringValue("QueryDomainList.Data["+ i +"].DeadDateStatus");
+				domain.ProductId = context.StringValue("QueryDomainList.Data["+ i +"].ProductId");
+				domain.DeadDateLong = context.LongValue("QueryDomainList.Data["+ i +"].DeadDateLong");
+				domain.RegDateLong = context.LongValue("QueryDomainList.Data["+ i +"].RegDateLong");
+				domain.Remark = context.StringValue("QueryDomainList.Data["+ i +"].Remark");
+				domain.Premium = context.BooleanValue("QueryDomainList.Data["+ i +"].Premium");
 
-				data.Add(domain);
+				queryDomainListResponse_data.Add(domain);
 			}
-			queryDomainListResponse.Data = data;
+			queryDomainListResponse.Data = queryDomainListResponse_data;
         
 			return queryDomainListResponse;
         }

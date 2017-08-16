@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{763febfa-d810-42a7-8a38-3272eb8150e4}</ProjectGuid>
+    <ProjectGuid>{f1832ac0-c2c8-4893-9cd2-d885729e2f72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
     <AssemblyName>aliyun-net-sdk-domain</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,45 +39,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Domain\Model\V20160511\CheckDomainRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryContactRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryDomainBySaleIdRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryOrderResponse.cs" />
-	<Compile Include="Domain\Model\V20160511\WhoisProtectionResponse.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryContactTemplateRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\CreateOrderRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\DeleteContactTemplateRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\CreateOrderResponse.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryBatchTaskListResponse.cs" />
-	<Compile Include="Domain\Model\V20160511\WhoisProtectionRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryBatchTaskListRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryContactResponse.cs" />
-	<Compile Include="Domain\Model\V20160511\GetWhoisInfoResponse.cs" />
-	<Compile Include="Domain\Model\V20160511\DeleteContactTemplateResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryFailReasonListRequest.cs" />
 	<Compile Include="Domain\Model\V20160511\QueryBatchTaskDetailListRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryBatchTaskDetailListResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\SaveTaskForSubmittingDomainNameCredentialRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\DeleteContactTemplateResponse.cs" />
 	<Compile Include="Domain\Model\V20160511\QueryDomainListResponse.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryDomainBySaleIdResponse.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryContactTemplateResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\SaveContactTemplateCredentialResponse.cs" />
 	<Compile Include="Domain\Model\V20160511\SaveContactTemplateRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryOrderRequest.cs" />
-	<Compile Include="Domain\Model\V20160511\QueryDomainListRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryContactTemplateRequest.cs" />
 	<Compile Include="Domain\Model\V20160511\GetWhoisInfoRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryFailReasonListResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryBatchTaskListResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryOrderRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryBatchTaskListRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryContactTemplateResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\SaveTaskForSubmittingDomainNameCredentialByTemplateIdRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\SaveTaskForModifyingDomainDnsRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\SaveTaskForUpdatingContactByTemplateIdResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\WhoisProtectionRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\CreateOrderResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\CheckDomainRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\OSuborderDomainRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\SaveTaskForSubmittingDomainNameCredentialByTemplateIdResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\SaveTaskForSubmittingDomainNameCredentialResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryContactRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryDomainBySaleIdResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryDomainBySaleIdRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryContactResponse.cs" />
 	<Compile Include="Domain\Model\V20160511\SaveContactTemplateResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\OSuborderDomainResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\DeleteContactTemplateRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryDomainListRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\GetWhoisInfoResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\CreateOrderRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\WhoisProtectionResponse.cs" />
 	<Compile Include="Domain\Model\V20160511\CheckDomainResponse.cs" />
-	<Compile Include="Domain\Transform\V20160511\QueryBatchTaskDetailListResponseUnmarshaller.cs" />
-	<Compile Include="Domain\Transform\V20160511\QueryContactResponseUnmarshaller.cs" />
-	<Compile Include="Domain\Transform\V20160511\QueryDomainListResponseUnmarshaller.cs" />
-	<Compile Include="Domain\Transform\V20160511\CheckDomainResponseUnmarshaller.cs" />
-	<Compile Include="Domain\Transform\V20160511\GetWhoisInfoResponseUnmarshaller.cs" />
-	<Compile Include="Domain\Transform\V20160511\QueryContactTemplateResponseUnmarshaller.cs" />
-	<Compile Include="Domain\Transform\V20160511\DeleteContactTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryOrderResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\QueryBatchTaskDetailListResponse.cs" />
+	<Compile Include="Domain\Model\V20160511\SaveTaskForUpdatingContactByTemplateIdRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\SaveContactTemplateCredentialRequest.cs" />
+	<Compile Include="Domain\Model\V20160511\SaveTaskForModifyingDomainDnsResponse.cs" />
 	<Compile Include="Domain\Transform\V20160511\SaveContactTemplateResponseUnmarshaller.cs" />
-	<Compile Include="Domain\Transform\V20160511\QueryBatchTaskListResponseUnmarshaller.cs" />
-	<Compile Include="Domain\Transform\V20160511\QueryDomainBySaleIdResponseUnmarshaller.cs" />
-	<Compile Include="Domain\Transform\V20160511\QueryOrderResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\SaveTaskForSubmittingDomainNameCredentialByTemplateIdResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\CreateOrderResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\CheckDomainResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryOrderResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryDomainListResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\OSuborderDomainResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\SaveContactTemplateCredentialResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryDomainBySaleIdResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryFailReasonListResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20160511\WhoisProtectionResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryBatchTaskDetailListResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\SaveTaskForSubmittingDomainNameCredentialResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryContactResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryBatchTaskListResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\GetWhoisInfoResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\DeleteContactTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\SaveTaskForModifyingDomainDnsResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\QueryContactTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20160511\SaveTaskForUpdatingContactByTemplateIdResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

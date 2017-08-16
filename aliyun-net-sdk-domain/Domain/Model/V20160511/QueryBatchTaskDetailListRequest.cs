@@ -33,17 +33,49 @@ namespace Aliyun.Acs.Domain.Model.V20160511
         {
         }
 
-		private string userClientIp;
+		private int? taskStatus;
 
-		private string lang;
+		private string saleId;
+
+		private string userClientIp;
 
 		private string taskNo;
 
-		private int? taskStatus;
+		private string domainName;
+
+		private int? pageSize;
+
+		private string lang;
 
 		private int? pageNum;
 
-		private int? pageSize;
+		private string accessKeyId;
+
+		public int? TaskStatus
+		{
+			get
+			{
+				return taskStatus;
+			}
+			set	
+			{
+				taskStatus = value;
+				DictionaryUtil.Add(QueryParameters, "TaskStatus", value.ToString());
+			}
+		}
+
+		public string SaleId
+		{
+			get
+			{
+				return saleId;
+			}
+			set	
+			{
+				saleId = value;
+				DictionaryUtil.Add(QueryParameters, "SaleId", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -55,19 +87,6 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -84,16 +103,42 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public int? TaskStatus
+		public string DomainName
 		{
 			get
 			{
-				return taskStatus;
+				return domainName;
 			}
 			set	
 			{
-				taskStatus = value;
-				DictionaryUtil.Add(QueryParameters, "TaskStatus", value.ToString());
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -110,16 +155,16 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public int? PageSize
+		public string AccessKeyId
 		{
 			get
 			{
-				return pageSize;
+				return accessKeyId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

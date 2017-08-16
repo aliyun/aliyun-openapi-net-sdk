@@ -33,13 +33,79 @@ namespace Aliyun.Acs.Domain.Model.V20160511
         {
         }
 
+		private string cCompany;
+
+		private string auditStatus;
+
+		private bool? defaultTemplate;
+
+		private string eCompany;
+
 		private string userClientIp;
+
+		private int? pageSize;
 
 		private string lang;
 
-		private string cCompany;
+		private int? pageNum;
 
-		private string eCompany;
+		private string accessKeyId;
+
+		private long? contactTemplateId;
+
+		private string regType;
+
+		public string CCompany
+		{
+			get
+			{
+				return cCompany;
+			}
+			set	
+			{
+				cCompany = value;
+				DictionaryUtil.Add(QueryParameters, "CCompany", value);
+			}
+		}
+
+		public string AuditStatus
+		{
+			get
+			{
+				return auditStatus;
+			}
+			set	
+			{
+				auditStatus = value;
+				DictionaryUtil.Add(QueryParameters, "AuditStatus", value);
+			}
+		}
+
+		public bool? DefaultTemplate
+		{
+			get
+			{
+				return defaultTemplate;
+			}
+			set	
+			{
+				defaultTemplate = value;
+				DictionaryUtil.Add(QueryParameters, "DefaultTemplate", value.ToString());
+			}
+		}
+
+		public string ECompany
+		{
+			get
+			{
+				return eCompany;
+			}
+			set	
+			{
+				eCompany = value;
+				DictionaryUtil.Add(QueryParameters, "ECompany", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -51,6 +117,19 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -67,29 +146,55 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public string CCompany
+		public int? PageNum
 		{
 			get
 			{
-				return cCompany;
+				return pageNum;
 			}
 			set	
 			{
-				cCompany = value;
-				DictionaryUtil.Add(QueryParameters, "CCompany", value);
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
-		public string ECompany
+		public string AccessKeyId
 		{
 			get
 			{
-				return eCompany;
+				return accessKeyId;
 			}
 			set	
 			{
-				eCompany = value;
-				DictionaryUtil.Add(QueryParameters, "ECompany", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public long? ContactTemplateId
+		{
+			get
+			{
+				return contactTemplateId;
+			}
+			set	
+			{
+				contactTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "ContactTemplateId", value.ToString());
+			}
+		}
+
+		public string RegType
+		{
+			get
+			{
+				return regType;
+			}
+			set	
+			{
+				regType = value;
+				DictionaryUtil.Add(QueryParameters, "RegType", value);
 			}
 		}
 

@@ -33,116 +33,65 @@ namespace Aliyun.Acs.Domain.Model.V20160511
         {
         }
 
-		private string userClientIp;
+		private string productDomainType;
 
-		private string lang;
-
-		private string groupId;
-
-		private string startDate;
-
-		private string endDate;
-
-		private string domainName;
-
-		private string orderByType;
+		private long? regStartDate;
 
 		private string orderKeyType;
 
-		private string domainType;
+		private string groupId;
+
+		private long? deadEndDate;
+
+		private string domainName;
+
+		private string startDate;
 
 		private int? pageNum;
 
+		private string accessKeyId;
+
+		private string orderByType;
+
+		private long? regEndDate;
+
+		private string endDate;
+
+		private string domainType;
+
+		private long? deadStartDate;
+
+		private string userClientIp;
+
 		private int? pageSize;
 
-		public string UserClientIp
+		private string lang;
+
+		private string queryType;
+
+		public string ProductDomainType
 		{
 			get
 			{
-				return userClientIp;
+				return productDomainType;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				productDomainType = value;
+				DictionaryUtil.Add(QueryParameters, "ProductDomainType", value);
 			}
 		}
 
-		public string Lang
+		public long? RegStartDate
 		{
 			get
 			{
-				return lang;
+				return regStartDate;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public string StartDate
-		{
-			get
-			{
-				return startDate;
-			}
-			set	
-			{
-				startDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartDate", value);
-			}
-		}
-
-		public string EndDate
-		{
-			get
-			{
-				return endDate;
-			}
-			set	
-			{
-				endDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndDate", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string OrderByType
-		{
-			get
-			{
-				return orderByType;
-			}
-			set	
-			{
-				orderByType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderByType", value);
+				regStartDate = value;
+				DictionaryUtil.Add(QueryParameters, "RegStartDate", value.ToString());
 			}
 		}
 
@@ -159,16 +108,55 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public string DomainType
+		public string GroupId
 		{
 			get
 			{
-				return domainType;
+				return groupId;
 			}
 			set	
 			{
-				domainType = value;
-				DictionaryUtil.Add(QueryParameters, "DomainType", value);
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public long? DeadEndDate
+		{
+			get
+			{
+				return deadEndDate;
+			}
+			set	
+			{
+				deadEndDate = value;
+				DictionaryUtil.Add(QueryParameters, "DeadEndDate", value.ToString());
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string StartDate
+		{
+			get
+			{
+				return startDate;
+			}
+			set	
+			{
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
 			}
 		}
 
@@ -185,6 +173,97 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string OrderByType
+		{
+			get
+			{
+				return orderByType;
+			}
+			set	
+			{
+				orderByType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderByType", value);
+			}
+		}
+
+		public long? RegEndDate
+		{
+			get
+			{
+				return regEndDate;
+			}
+			set	
+			{
+				regEndDate = value;
+				DictionaryUtil.Add(QueryParameters, "RegEndDate", value.ToString());
+			}
+		}
+
+		public string EndDate
+		{
+			get
+			{
+				return endDate;
+			}
+			set	
+			{
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
+			}
+		}
+
+		public string DomainType
+		{
+			get
+			{
+				return domainType;
+			}
+			set	
+			{
+				domainType = value;
+				DictionaryUtil.Add(QueryParameters, "DomainType", value);
+			}
+		}
+
+		public long? DeadStartDate
+		{
+			get
+			{
+				return deadStartDate;
+			}
+			set	
+			{
+				deadStartDate = value;
+				DictionaryUtil.Add(QueryParameters, "DeadStartDate", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -195,6 +274,32 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string QueryType
+		{
+			get
+			{
+				return queryType;
+			}
+			set	
+			{
+				queryType = value;
+				DictionaryUtil.Add(QueryParameters, "QueryType", value);
 			}
 		}
 

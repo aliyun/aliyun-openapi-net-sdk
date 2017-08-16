@@ -26,63 +26,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20160511
 {
-    public class QueryBatchTaskListRequest : RpcAcsRequest<QueryBatchTaskListResponse>
+    public class OSuborderDomainRequest : RpcAcsRequest<OSuborderDomainResponse>
     {
-        public QueryBatchTaskListRequest()
-            : base("Domain", "2016-05-11", "QueryBatchTaskList")
+        public OSuborderDomainRequest()
+            : base("Domain", "2016-05-11", "OSuborderDomain")
         {
         }
 
-		private string beginCreateTime;
-
-		private string endCreateTime;
-
-		private string userClientIp;
+		private string endDate;
 
 		private int? pageSize;
 
-		private string lang;
+		private string type;
+
+		private string startDate;
 
 		private int? pageNum;
 
 		private string accessKeyId;
 
-		public string BeginCreateTime
+		public string EndDate
 		{
 			get
 			{
-				return beginCreateTime;
+				return endDate;
 			}
 			set	
 			{
-				beginCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "BeginCreateTime", value);
-			}
-		}
-
-		public string EndCreateTime
-		{
-			get
-			{
-				return endCreateTime;
-			}
-			set	
-			{
-				endCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndCreateTime", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "endDate", value);
 			}
 		}
 
@@ -95,20 +67,33 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			set	
 			{
 				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "pageSize", value.ToString());
 			}
 		}
 
-		public string Lang
+		public string Type
 		{
 			get
 			{
-				return lang;
+				return type;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "type", value);
+			}
+		}
+
+		public string StartDate
+		{
+			get
+			{
+				return startDate;
+			}
+			set	
+			{
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "startDate", value);
 			}
 		}
 
@@ -121,7 +106,7 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			set	
 			{
 				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "pageNum", value.ToString());
 			}
 		}
 
@@ -138,9 +123,9 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-        public override QueryBatchTaskListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override OSuborderDomainResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryBatchTaskListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return OSuborderDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

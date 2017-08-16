@@ -38,9 +38,9 @@ namespace Aliyun.Acs.Domain.Transform.V20160511
 			queryBatchTaskDetailListResponse.PrePage = context.BooleanValue("QueryBatchTaskDetailList.PrePage");
 			queryBatchTaskDetailListResponse.NextPage = context.BooleanValue("QueryBatchTaskDetailList.NextPage");
 
-			List<QueryBatchTaskDetailListResponse.TaskDetail> data = new List<QueryBatchTaskDetailListResponse.TaskDetail>();
+			List<QueryBatchTaskDetailListResponse.QueryBatchTaskDetailList_TaskDetail> queryBatchTaskDetailListResponse_data = new List<QueryBatchTaskDetailListResponse.QueryBatchTaskDetailList_TaskDetail>();
 			for (int i = 0; i < context.Length("QueryBatchTaskDetailList.Data.Length"); i++) {
-				QueryBatchTaskDetailListResponse.TaskDetail taskDetail = new QueryBatchTaskDetailListResponse.TaskDetail();
+				QueryBatchTaskDetailListResponse.QueryBatchTaskDetailList_TaskDetail taskDetail = new QueryBatchTaskDetailListResponse.QueryBatchTaskDetailList_TaskDetail();
 				taskDetail.TaskNo = context.StringValue("QueryBatchTaskDetailList.Data["+ i +"].TaskNo");
 				taskDetail.TaskType = context.StringValue("QueryBatchTaskDetailList.Data["+ i +"].TaskType");
 				taskDetail.DomainName = context.StringValue("QueryBatchTaskDetailList.Data["+ i +"].DomainName");
@@ -49,9 +49,9 @@ namespace Aliyun.Acs.Domain.Transform.V20160511
 				taskDetail.TryCount = context.IntegerValue("QueryBatchTaskDetailList.Data["+ i +"].TryCount");
 				taskDetail.ErrorMsg = context.StringValue("QueryBatchTaskDetailList.Data["+ i +"].ErrorMsg");
 
-				data.Add(taskDetail);
+				queryBatchTaskDetailListResponse_data.Add(taskDetail);
 			}
-			queryBatchTaskDetailListResponse.Data = data;
+			queryBatchTaskDetailListResponse.Data = queryBatchTaskDetailListResponse_data;
         
 			return queryBatchTaskDetailListResponse;
         }

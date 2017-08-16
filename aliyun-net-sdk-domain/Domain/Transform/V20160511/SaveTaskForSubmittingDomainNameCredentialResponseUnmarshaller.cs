@@ -23,24 +23,17 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Transform.V20160511
 {
-    public class CheckDomainResponseUnmarshaller
+    public class SaveTaskForSubmittingDomainNameCredentialResponseUnmarshaller
     {
-        public static CheckDomainResponse Unmarshall(UnmarshallerContext context)
+        public static SaveTaskForSubmittingDomainNameCredentialResponse Unmarshall(UnmarshallerContext context)
         {
-			CheckDomainResponse checkDomainResponse = new CheckDomainResponse();
+			SaveTaskForSubmittingDomainNameCredentialResponse saveTaskForSubmittingDomainNameCredentialResponse = new SaveTaskForSubmittingDomainNameCredentialResponse();
 
-			checkDomainResponse.HttpResponse = context.HttpResponse;
-			checkDomainResponse.RequestId = context.StringValue("CheckDomain.RequestId");
-			checkDomainResponse.Name = context.StringValue("CheckDomain.Name");
-			checkDomainResponse.Avail = context.IntegerValue("CheckDomain.Avail");
-			checkDomainResponse.Reason = context.StringValue("CheckDomain.Reason");
-			checkDomainResponse.FeeCurrency = context.StringValue("CheckDomain.FeeCurrency");
-			checkDomainResponse.FeePeriod = context.IntegerValue("CheckDomain.FeePeriod");
-			checkDomainResponse.FeeFee = context.StringValue("CheckDomain.FeeFee");
-			checkDomainResponse.RmbFee = context.StringValue("CheckDomain.RmbFee");
-			checkDomainResponse.FeeCommand = context.StringValue("CheckDomain.FeeCommand");
+			saveTaskForSubmittingDomainNameCredentialResponse.HttpResponse = context.HttpResponse;
+			saveTaskForSubmittingDomainNameCredentialResponse.RequestId = context.StringValue("SaveTaskForSubmittingDomainNameCredential.RequestId");
+			saveTaskForSubmittingDomainNameCredentialResponse.TaskNo = context.StringValue("SaveTaskForSubmittingDomainNameCredential.TaskNo");
         
-			return checkDomainResponse;
+			return saveTaskForSubmittingDomainNameCredentialResponse;
         }
     }
 }

@@ -38,9 +38,9 @@ namespace Aliyun.Acs.Domain.Transform.V20160511
 			queryBatchTaskListResponse.PrePage = context.BooleanValue("QueryBatchTaskList.PrePage");
 			queryBatchTaskListResponse.NextPage = context.BooleanValue("QueryBatchTaskList.NextPage");
 
-			List<QueryBatchTaskListResponse.TaskInfo> data = new List<QueryBatchTaskListResponse.TaskInfo>();
+			List<QueryBatchTaskListResponse.QueryBatchTaskList_TaskInfo> queryBatchTaskListResponse_data = new List<QueryBatchTaskListResponse.QueryBatchTaskList_TaskInfo>();
 			for (int i = 0; i < context.Length("QueryBatchTaskList.Data.Length"); i++) {
-				QueryBatchTaskListResponse.TaskInfo taskInfo = new QueryBatchTaskListResponse.TaskInfo();
+				QueryBatchTaskListResponse.QueryBatchTaskList_TaskInfo taskInfo = new QueryBatchTaskListResponse.QueryBatchTaskList_TaskInfo();
 				taskInfo.TaskType = context.StringValue("QueryBatchTaskList.Data["+ i +"].TaskType");
 				taskInfo.TaskNum = context.IntegerValue("QueryBatchTaskList.Data["+ i +"].TaskNum");
 				taskInfo.TaskStatus = context.StringValue("QueryBatchTaskList.Data["+ i +"].TaskStatus");
@@ -48,9 +48,9 @@ namespace Aliyun.Acs.Domain.Transform.V20160511
 				taskInfo.Clientip = context.StringValue("QueryBatchTaskList.Data["+ i +"].Clientip");
 				taskInfo.TaskNo = context.StringValue("QueryBatchTaskList.Data["+ i +"].TaskNo");
 
-				data.Add(taskInfo);
+				queryBatchTaskListResponse_data.Add(taskInfo);
 			}
-			queryBatchTaskListResponse.Data = data;
+			queryBatchTaskListResponse.Data = queryBatchTaskListResponse_data;
         
 			return queryBatchTaskListResponse;
         }

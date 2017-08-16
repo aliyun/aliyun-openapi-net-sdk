@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 
 		private string domainName;
 
+		private string accessKeyId;
+
 		public string DomainName
 		{
 			get
@@ -45,6 +47,19 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

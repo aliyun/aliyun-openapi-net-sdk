@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 	public class QueryContactResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string createDate;
 
 		private string updateDate;
@@ -61,6 +63,18 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 		private string telExt;
 
 		private string regType;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string CreateDate
 		{

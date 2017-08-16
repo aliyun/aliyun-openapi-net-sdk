@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 	public class CheckDomainResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string name;
 
 		private int? avail;
@@ -39,6 +41,18 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 		private string rmbFee;
 
 		private string feeCommand;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Name
 		{

@@ -23,24 +23,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Transform.V20160511
 {
-    public class CheckDomainResponseUnmarshaller
+    public class SaveTaskForUpdatingContactByTemplateIdResponseUnmarshaller
     {
-        public static CheckDomainResponse Unmarshall(UnmarshallerContext context)
+        public static SaveTaskForUpdatingContactByTemplateIdResponse Unmarshall(UnmarshallerContext context)
         {
-			CheckDomainResponse checkDomainResponse = new CheckDomainResponse();
+			SaveTaskForUpdatingContactByTemplateIdResponse saveTaskForUpdatingContactByTemplateIdResponse = new SaveTaskForUpdatingContactByTemplateIdResponse();
 
-			checkDomainResponse.HttpResponse = context.HttpResponse;
-			checkDomainResponse.RequestId = context.StringValue("CheckDomain.RequestId");
-			checkDomainResponse.Name = context.StringValue("CheckDomain.Name");
-			checkDomainResponse.Avail = context.IntegerValue("CheckDomain.Avail");
-			checkDomainResponse.Reason = context.StringValue("CheckDomain.Reason");
-			checkDomainResponse.FeeCurrency = context.StringValue("CheckDomain.FeeCurrency");
-			checkDomainResponse.FeePeriod = context.IntegerValue("CheckDomain.FeePeriod");
-			checkDomainResponse.FeeFee = context.StringValue("CheckDomain.FeeFee");
-			checkDomainResponse.RmbFee = context.StringValue("CheckDomain.RmbFee");
-			checkDomainResponse.FeeCommand = context.StringValue("CheckDomain.FeeCommand");
+			saveTaskForUpdatingContactByTemplateIdResponse.HttpResponse = context.HttpResponse;
+			saveTaskForUpdatingContactByTemplateIdResponse.RequestId = context.StringValue("SaveTaskForUpdatingContactByTemplateId.RequestId");
+			saveTaskForUpdatingContactByTemplateIdResponse.Success = context.BooleanValue("SaveTaskForUpdatingContactByTemplateId.Success");
+			saveTaskForUpdatingContactByTemplateIdResponse.TaskNo = context.StringValue("SaveTaskForUpdatingContactByTemplateId.TaskNo");
         
-			return checkDomainResponse;
+			return saveTaskForUpdatingContactByTemplateIdResponse;
         }
     }
 }

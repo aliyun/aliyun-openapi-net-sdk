@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 	public class QueryOrderResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string orderID;
 
 		private string userID;
@@ -40,7 +42,19 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 
 		private bool? checkType;
 
-		private List<SubOrderResult> orderProducts;
+		private List<QueryOrder_SubOrderResult> orderProducts;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string OrderID
 		{
@@ -138,7 +152,7 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public List<SubOrderResult> OrderProducts
+		public List<QueryOrder_SubOrderResult> OrderProducts
 		{
 			get
 			{
@@ -150,7 +164,8 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public class SubOrderResult{
+		public class QueryOrder_SubOrderResult
+		{
 
 			private string trackID;
 

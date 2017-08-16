@@ -21,12 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20160511
 {
-	public class WhoisProtectionResponse : AcsResponse
+	public class SaveTaskForSubmittingDomainNameCredentialResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? result;
+		private string taskNo;
 
 		public string RequestId
 		{
@@ -40,15 +40,15 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public int? Result
+		public string TaskNo
 		{
 			get
 			{
-				return result;
+				return taskNo;
 			}
 			set	
 			{
-				result = value;
+				taskNo = value;
 			}
 		}
 	}

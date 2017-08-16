@@ -24,7 +24,21 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 	public class DeleteContactTemplateResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private bool? success;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public bool? Success
 		{

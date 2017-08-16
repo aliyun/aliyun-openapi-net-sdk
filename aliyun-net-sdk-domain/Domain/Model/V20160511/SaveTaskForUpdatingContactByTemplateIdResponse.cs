@@ -21,12 +21,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20160511
 {
-	public class WhoisProtectionResponse : AcsResponse
+	public class SaveTaskForUpdatingContactByTemplateIdResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? result;
+		private bool? success;
+
+		private string taskNo;
 
 		public string RequestId
 		{
@@ -40,15 +42,27 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public int? Result
+		public bool? Success
 		{
 			get
 			{
-				return result;
+				return success;
 			}
 			set	
 			{
-				result = value;
+				success = value;
+			}
+		}
+
+		public string TaskNo
+		{
+			get
+			{
+				return taskNo;
+			}
+			set	
+			{
+				taskNo = value;
 			}
 		}
 	}

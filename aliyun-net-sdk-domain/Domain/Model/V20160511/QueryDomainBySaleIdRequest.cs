@@ -33,11 +33,26 @@ namespace Aliyun.Acs.Domain.Model.V20160511
         {
         }
 
+		private string saleId;
+
 		private string userClientIp;
 
 		private string lang;
 
-		private string saleId;
+		private string accessKeyId;
+
+		public string SaleId
+		{
+			get
+			{
+				return saleId;
+			}
+			set	
+			{
+				saleId = value;
+				DictionaryUtil.Add(QueryParameters, "SaleId", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -65,16 +80,16 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public string SaleId
+		public string AccessKeyId
 		{
 			get
 			{
-				return saleId;
+				return accessKeyId;
 			}
 			set	
 			{
-				saleId = value;
-				DictionaryUtil.Add(QueryParameters, "SaleId", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

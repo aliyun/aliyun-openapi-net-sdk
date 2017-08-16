@@ -21,12 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20160511
 {
-	public class WhoisProtectionResponse : AcsResponse
+	public class QueryFailReasonListResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? result;
+		private List<QueryFailReasonList_FailRecord> data;
 
 		public string RequestId
 		{
@@ -40,15 +40,47 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public int? Result
+		public List<QueryFailReasonList_FailRecord> Data
 		{
 			get
 			{
-				return result;
+				return data;
 			}
 			set	
 			{
-				result = value;
+				data = value;
+			}
+		}
+
+		public class QueryFailReasonList_FailRecord
+		{
+
+			private string date;
+
+			private string failReason;
+
+			public string Date
+			{
+				get
+				{
+					return date;
+				}
+				set	
+				{
+					date = value;
+				}
+			}
+
+			public string FailReason
+			{
+				get
+				{
+					return failReason;
+				}
+				set	
+				{
+					failReason = value;
+				}
 			}
 		}
 	}

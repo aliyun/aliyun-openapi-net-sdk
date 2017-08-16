@@ -91,16 +91,16 @@ namespace Aliyun.Acs.Domain.Transform.V20160511
 			getWhoisInfoResponse.CacheUpdatedDate = context.StringValue("GetWhoisInfo.CacheUpdatedDate");
 			getWhoisInfoResponse.WhoisProtected = context.StringValue("GetWhoisInfo.WhoisProtected");
 
-			List<GetWhoisInfoResponse.DomainStatus> domainStatusList = new List<GetWhoisInfoResponse.DomainStatus>();
+			List<GetWhoisInfoResponse.GetWhoisInfo_DomainStatus> getWhoisInfoResponse_domainStatusList = new List<GetWhoisInfoResponse.GetWhoisInfo_DomainStatus>();
 			for (int i = 0; i < context.Length("GetWhoisInfo.DomainStatusList.Length"); i++) {
-				GetWhoisInfoResponse.DomainStatus domainStatus = new GetWhoisInfoResponse.DomainStatus();
+				GetWhoisInfoResponse.GetWhoisInfo_DomainStatus domainStatus = new GetWhoisInfoResponse.GetWhoisInfo_DomainStatus();
 				domainStatus.Status = context.StringValue("GetWhoisInfo.DomainStatusList["+ i +"].Status");
 				domainStatus.Desc = context.StringValue("GetWhoisInfo.DomainStatusList["+ i +"].Desc");
 				domainStatus.Tip = context.StringValue("GetWhoisInfo.DomainStatusList["+ i +"].Tip");
 
-				domainStatusList.Add(domainStatus);
+				getWhoisInfoResponse_domainStatusList.Add(domainStatus);
 			}
-			getWhoisInfoResponse.DomainStatusList = domainStatusList;
+			getWhoisInfoResponse.DomainStatusList = getWhoisInfoResponse_domainStatusList;
         
 			return getWhoisInfoResponse;
         }

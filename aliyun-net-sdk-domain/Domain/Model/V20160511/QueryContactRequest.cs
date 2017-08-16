@@ -33,13 +33,28 @@ namespace Aliyun.Acs.Domain.Model.V20160511
         {
         }
 
-		private string userClientIp;
+		private string contactType;
 
-		private string lang;
+		private string userClientIp;
 
 		private string domainName;
 
-		private string contactType;
+		private string lang;
+
+		private string accessKeyId;
+
+		public string ContactType
+		{
+			get
+			{
+				return contactType;
+			}
+			set	
+			{
+				contactType = value;
+				DictionaryUtil.Add(QueryParameters, "ContactType", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -51,19 +66,6 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -80,16 +82,29 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public string ContactType
+		public string Lang
 		{
 			get
 			{
-				return contactType;
+				return lang;
 			}
 			set	
 			{
-				contactType = value;
-				DictionaryUtil.Add(QueryParameters, "ContactType", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

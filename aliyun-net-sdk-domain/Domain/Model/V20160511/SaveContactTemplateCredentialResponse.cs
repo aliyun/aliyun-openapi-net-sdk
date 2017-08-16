@@ -21,12 +21,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20160511
 {
-	public class WhoisProtectionResponse : AcsResponse
+	public class SaveContactTemplateCredentialResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private int? result;
 
 		public string RequestId
 		{
@@ -37,18 +35,6 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
 			}
 		}
 	}

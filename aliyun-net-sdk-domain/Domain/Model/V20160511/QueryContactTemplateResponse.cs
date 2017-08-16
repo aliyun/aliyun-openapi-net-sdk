@@ -24,9 +24,107 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 	public class QueryContactTemplateResponse : AcsResponse
 	{
 
-		private List<ContactTemplate> contactTemplates;
+		private string requestId;
 
-		public List<ContactTemplate> ContactTemplates
+		private int? totalItemNum;
+
+		private int? currentPageNum;
+
+		private int? totalPageNum;
+
+		private int? pageSize;
+
+		private bool? prePage;
+
+		private bool? nextPage;
+
+		private List<QueryContactTemplate_ContactTemplate> contactTemplates;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? TotalItemNum
+		{
+			get
+			{
+				return totalItemNum;
+			}
+			set	
+			{
+				totalItemNum = value;
+			}
+		}
+
+		public int? CurrentPageNum
+		{
+			get
+			{
+				return currentPageNum;
+			}
+			set	
+			{
+				currentPageNum = value;
+			}
+		}
+
+		public int? TotalPageNum
+		{
+			get
+			{
+				return totalPageNum;
+			}
+			set	
+			{
+				totalPageNum = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public bool? PrePage
+		{
+			get
+			{
+				return prePage;
+			}
+			set	
+			{
+				prePage = value;
+			}
+		}
+
+		public bool? NextPage
+		{
+			get
+			{
+				return nextPage;
+			}
+			set	
+			{
+				nextPage = value;
+			}
+		}
+
+		public List<QueryContactTemplate_ContactTemplate> ContactTemplates
 		{
 			get
 			{
@@ -38,7 +136,8 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public class ContactTemplate{
+		public class QueryContactTemplate_ContactTemplate
+		{
 
 			private long? contactTemplateId;
 

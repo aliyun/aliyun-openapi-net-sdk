@@ -33,39 +33,28 @@ namespace Aliyun.Acs.Domain.Model.V20160511
         {
         }
 
-		private string userClientIp;
-
-		private string lang;
+		private bool? whoisProtect;
 
 		private int? dataSource;
 
+		private string userClientIp;
+
 		private string dataContent;
 
-		private bool? whoisProtect;
+		private string lang;
 
-		public string UserClientIp
+		private string accessKeyId;
+
+		public bool? WhoisProtect
 		{
 			get
 			{
-				return userClientIp;
+				return whoisProtect;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				whoisProtect = value;
+				DictionaryUtil.Add(QueryParameters, "WhoisProtect", value.ToString());
 			}
 		}
 
@@ -82,6 +71,19 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
 		public string DataContent
 		{
 			get
@@ -95,16 +97,29 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public bool? WhoisProtect
+		public string Lang
 		{
 			get
 			{
-				return whoisProtect;
+				return lang;
 			}
 			set	
 			{
-				whoisProtect = value;
-				DictionaryUtil.Add(QueryParameters, "WhoisProtect", value.ToString());
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

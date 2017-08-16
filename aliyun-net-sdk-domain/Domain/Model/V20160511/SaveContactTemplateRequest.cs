@@ -33,84 +33,60 @@ namespace Aliyun.Acs.Domain.Model.V20160511
         {
         }
 
-		private string userClientIp;
-
-		private string lang;
-
-		private long? contactTemplateId;
+		private string cCompany;
 
 		private bool? defaultTemplate;
 
-		private string cCity;
+		private string telArea;
 
-		private string cCompany;
+		private string eCompany;
 
-		private string cCountry;
+		private string telMain;
 
 		private string cName;
 
 		private string cProvince;
 
-		private string cVenu;
-
 		private string eCity;
 
-		private string eCompany;
+		private string accessKeyId;
+
+		private string cCity;
+
+		private string regType;
 
 		private string eName;
 
+		private string telExt;
+
+		private string cVenu;
+
 		private string eProvince;
+
+		private string postalCode;
+
+		private string userClientIp;
+
+		private string cCountry;
+
+		private string lang;
 
 		private string eVenu;
 
 		private string email;
 
-		private string postalCode;
+		private long? contactTemplateId;
 
-		private string telArea;
-
-		private string telMain;
-
-		private string telExt;
-
-		private string regType;
-
-		public string UserClientIp
+		public string CCompany
 		{
 			get
 			{
-				return userClientIp;
+				return cCompany;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public long? ContactTemplateId
-		{
-			get
-			{
-				return contactTemplateId;
-			}
-			set	
-			{
-				contactTemplateId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactTemplateId", value.ToString());
+				cCompany = value;
+				DictionaryUtil.Add(QueryParameters, "CCompany", value);
 			}
 		}
 
@@ -127,42 +103,42 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public string CCity
+		public string TelArea
 		{
 			get
 			{
-				return cCity;
+				return telArea;
 			}
 			set	
 			{
-				cCity = value;
-				DictionaryUtil.Add(QueryParameters, "CCity", value);
+				telArea = value;
+				DictionaryUtil.Add(QueryParameters, "TelArea", value);
 			}
 		}
 
-		public string CCompany
+		public string ECompany
 		{
 			get
 			{
-				return cCompany;
+				return eCompany;
 			}
 			set	
 			{
-				cCompany = value;
-				DictionaryUtil.Add(QueryParameters, "CCompany", value);
+				eCompany = value;
+				DictionaryUtil.Add(QueryParameters, "ECompany", value);
 			}
 		}
 
-		public string CCountry
+		public string TelMain
 		{
 			get
 			{
-				return cCountry;
+				return telMain;
 			}
 			set	
 			{
-				cCountry = value;
-				DictionaryUtil.Add(QueryParameters, "CCountry", value);
+				telMain = value;
+				DictionaryUtil.Add(QueryParameters, "TelMain", value);
 			}
 		}
 
@@ -192,19 +168,6 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public string CVenu
-		{
-			get
-			{
-				return cVenu;
-			}
-			set	
-			{
-				cVenu = value;
-				DictionaryUtil.Add(QueryParameters, "CVenu", value);
-			}
-		}
-
 		public string ECity
 		{
 			get
@@ -218,16 +181,42 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public string ECompany
+		public string AccessKeyId
 		{
 			get
 			{
-				return eCompany;
+				return accessKeyId;
 			}
 			set	
 			{
-				eCompany = value;
-				DictionaryUtil.Add(QueryParameters, "ECompany", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string CCity
+		{
+			get
+			{
+				return cCity;
+			}
+			set	
+			{
+				cCity = value;
+				DictionaryUtil.Add(QueryParameters, "CCity", value);
+			}
+		}
+
+		public string RegType
+		{
+			get
+			{
+				return regType;
+			}
+			set	
+			{
+				regType = value;
+				DictionaryUtil.Add(QueryParameters, "RegType", value);
 			}
 		}
 
@@ -244,6 +233,32 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
+		public string TelExt
+		{
+			get
+			{
+				return telExt;
+			}
+			set	
+			{
+				telExt = value;
+				DictionaryUtil.Add(QueryParameters, "TelExt", value);
+			}
+		}
+
+		public string CVenu
+		{
+			get
+			{
+				return cVenu;
+			}
+			set	
+			{
+				cVenu = value;
+				DictionaryUtil.Add(QueryParameters, "CVenu", value);
+			}
+		}
+
 		public string EProvince
 		{
 			get
@@ -254,6 +269,58 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			{
 				eProvince = value;
 				DictionaryUtil.Add(QueryParameters, "EProvince", value);
+			}
+		}
+
+		public string PostalCode
+		{
+			get
+			{
+				return postalCode;
+			}
+			set	
+			{
+				postalCode = value;
+				DictionaryUtil.Add(QueryParameters, "PostalCode", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public string CCountry
+		{
+			get
+			{
+				return cCountry;
+			}
+			set	
+			{
+				cCountry = value;
+				DictionaryUtil.Add(QueryParameters, "CCountry", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -283,68 +350,16 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public string PostalCode
+		public long? ContactTemplateId
 		{
 			get
 			{
-				return postalCode;
+				return contactTemplateId;
 			}
 			set	
 			{
-				postalCode = value;
-				DictionaryUtil.Add(QueryParameters, "PostalCode", value);
-			}
-		}
-
-		public string TelArea
-		{
-			get
-			{
-				return telArea;
-			}
-			set	
-			{
-				telArea = value;
-				DictionaryUtil.Add(QueryParameters, "TelArea", value);
-			}
-		}
-
-		public string TelMain
-		{
-			get
-			{
-				return telMain;
-			}
-			set	
-			{
-				telMain = value;
-				DictionaryUtil.Add(QueryParameters, "TelMain", value);
-			}
-		}
-
-		public string TelExt
-		{
-			get
-			{
-				return telExt;
-			}
-			set	
-			{
-				telExt = value;
-				DictionaryUtil.Add(QueryParameters, "TelExt", value);
-			}
-		}
-
-		public string RegType
-		{
-			get
-			{
-				return regType;
-			}
-			set	
-			{
-				regType = value;
-				DictionaryUtil.Add(QueryParameters, "RegType", value);
+				contactTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "ContactTemplateId", value.ToString());
 			}
 		}
 

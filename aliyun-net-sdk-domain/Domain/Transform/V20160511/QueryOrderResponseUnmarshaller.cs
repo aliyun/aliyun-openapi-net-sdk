@@ -40,9 +40,9 @@ namespace Aliyun.Acs.Domain.Transform.V20160511
 			queryOrderResponse.ValidFlag = context.BooleanValue("QueryOrder.ValidFlag");
 			queryOrderResponse.CheckType = context.BooleanValue("QueryOrder.CheckType");
 
-			List<QueryOrderResponse.SubOrderResult> orderProducts = new List<QueryOrderResponse.SubOrderResult>();
+			List<QueryOrderResponse.QueryOrder_SubOrderResult> queryOrderResponse_orderProducts = new List<QueryOrderResponse.QueryOrder_SubOrderResult>();
 			for (int i = 0; i < context.Length("QueryOrder.OrderProducts.Length"); i++) {
-				QueryOrderResponse.SubOrderResult subOrderResult = new QueryOrderResponse.SubOrderResult();
+				QueryOrderResponse.QueryOrder_SubOrderResult subOrderResult = new QueryOrderResponse.QueryOrder_SubOrderResult();
 				subOrderResult.TrackID = context.StringValue("QueryOrder.OrderProducts["+ i +"].TrackID");
 				subOrderResult.OrderID = context.StringValue("QueryOrder.OrderProducts["+ i +"].OrderID");
 				subOrderResult.SaleID = context.StringValue("QueryOrder.OrderProducts["+ i +"].SaleID");
@@ -64,9 +64,9 @@ namespace Aliyun.Acs.Domain.Transform.V20160511
 				subOrderResult.Money = context.StringValue("QueryOrder.OrderProducts["+ i +"].Money");
 				subOrderResult.ParentSaleID = context.StringValue("QueryOrder.OrderProducts["+ i +"].ParentSaleID");
 
-				orderProducts.Add(subOrderResult);
+				queryOrderResponse_orderProducts.Add(subOrderResult);
 			}
-			queryOrderResponse.OrderProducts = orderProducts;
+			queryOrderResponse.OrderProducts = queryOrderResponse_orderProducts;
         
 			return queryOrderResponse;
         }

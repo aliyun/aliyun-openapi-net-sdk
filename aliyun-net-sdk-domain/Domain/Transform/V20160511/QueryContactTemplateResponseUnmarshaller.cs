@@ -31,10 +31,16 @@ namespace Aliyun.Acs.Domain.Transform.V20160511
 
 			queryContactTemplateResponse.HttpResponse = context.HttpResponse;
 			queryContactTemplateResponse.RequestId = context.StringValue("QueryContactTemplate.RequestId");
+			queryContactTemplateResponse.TotalItemNum = context.IntegerValue("QueryContactTemplate.TotalItemNum");
+			queryContactTemplateResponse.CurrentPageNum = context.IntegerValue("QueryContactTemplate.CurrentPageNum");
+			queryContactTemplateResponse.TotalPageNum = context.IntegerValue("QueryContactTemplate.TotalPageNum");
+			queryContactTemplateResponse.PageSize = context.IntegerValue("QueryContactTemplate.PageSize");
+			queryContactTemplateResponse.PrePage = context.BooleanValue("QueryContactTemplate.PrePage");
+			queryContactTemplateResponse.NextPage = context.BooleanValue("QueryContactTemplate.NextPage");
 
-			List<QueryContactTemplateResponse.ContactTemplate> contactTemplates = new List<QueryContactTemplateResponse.ContactTemplate>();
+			List<QueryContactTemplateResponse.QueryContactTemplate_ContactTemplate> queryContactTemplateResponse_contactTemplates = new List<QueryContactTemplateResponse.QueryContactTemplate_ContactTemplate>();
 			for (int i = 0; i < context.Length("QueryContactTemplate.ContactTemplates.Length"); i++) {
-				QueryContactTemplateResponse.ContactTemplate contactTemplate = new QueryContactTemplateResponse.ContactTemplate();
+				QueryContactTemplateResponse.QueryContactTemplate_ContactTemplate contactTemplate = new QueryContactTemplateResponse.QueryContactTemplate_ContactTemplate();
 				contactTemplate.ContactTemplateId = context.LongValue("QueryContactTemplate.ContactTemplates["+ i +"].ContactTemplateId");
 				contactTemplate.CreateTime = context.StringValue("QueryContactTemplate.ContactTemplates["+ i +"].CreateTime");
 				contactTemplate.UpdateTime = context.StringValue("QueryContactTemplate.ContactTemplates["+ i +"].UpdateTime");
@@ -59,9 +65,9 @@ namespace Aliyun.Acs.Domain.Transform.V20160511
 				contactTemplate.TelMain = context.StringValue("QueryContactTemplate.ContactTemplates["+ i +"].TelMain");
 				contactTemplate.TelExt = context.StringValue("QueryContactTemplate.ContactTemplates["+ i +"].TelExt");
 
-				contactTemplates.Add(contactTemplate);
+				queryContactTemplateResponse_contactTemplates.Add(contactTemplate);
 			}
-			queryContactTemplateResponse.ContactTemplates = contactTemplates;
+			queryContactTemplateResponse.ContactTemplates = queryContactTemplateResponse_contactTemplates;
         
 			return queryContactTemplateResponse;
         }

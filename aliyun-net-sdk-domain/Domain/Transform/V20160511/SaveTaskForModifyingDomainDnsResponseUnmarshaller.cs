@@ -16,40 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Domain.Model.V20160511;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Domain.Model.V20160511
+namespace Aliyun.Acs.Domain.Transform.V20160511
 {
-	public class WhoisProtectionResponse : AcsResponse
-	{
+    public class SaveTaskForModifyingDomainDnsResponseUnmarshaller
+    {
+        public static SaveTaskForModifyingDomainDnsResponse Unmarshall(UnmarshallerContext context)
+        {
+			SaveTaskForModifyingDomainDnsResponse saveTaskForModifyingDomainDnsResponse = new SaveTaskForModifyingDomainDnsResponse();
 
-		private string requestId;
-
-		private int? result;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
-			}
-		}
-	}
+			saveTaskForModifyingDomainDnsResponse.HttpResponse = context.HttpResponse;
+			saveTaskForModifyingDomainDnsResponse.RequestId = context.StringValue("SaveTaskForModifyingDomainDns.RequestId");
+			saveTaskForModifyingDomainDnsResponse.TaskNo = context.StringValue("SaveTaskForModifyingDomainDns.TaskNo");
+        
+			return saveTaskForModifyingDomainDnsResponse;
+        }
+    }
 }

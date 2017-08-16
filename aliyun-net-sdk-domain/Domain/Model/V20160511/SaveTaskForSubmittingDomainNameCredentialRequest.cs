@@ -26,50 +26,63 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20160511
 {
-    public class QueryBatchTaskListRequest : RpcAcsRequest<QueryBatchTaskListResponse>
+    public class SaveTaskForSubmittingDomainNameCredentialRequest : RpcAcsRequest<SaveTaskForSubmittingDomainNameCredentialResponse>
     {
-        public QueryBatchTaskListRequest()
-            : base("Domain", "2016-05-11", "QueryBatchTaskList")
+        public SaveTaskForSubmittingDomainNameCredentialRequest()
+            : base("Domain", "2016-05-11", "SaveTaskForSubmittingDomainNameCredential")
         {
         }
 
-		private string beginCreateTime;
+		private string credentialNo;
 
-		private string endCreateTime;
+		private string saleId;
+
+		private string credential;
 
 		private string userClientIp;
 
-		private int? pageSize;
+		private string domainName;
 
 		private string lang;
 
-		private int? pageNum;
-
 		private string accessKeyId;
 
-		public string BeginCreateTime
+		public string CredentialNo
 		{
 			get
 			{
-				return beginCreateTime;
+				return credentialNo;
 			}
 			set	
 			{
-				beginCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "BeginCreateTime", value);
+				credentialNo = value;
+				DictionaryUtil.Add(QueryParameters, "CredentialNo", value);
 			}
 		}
 
-		public string EndCreateTime
+		public string SaleId
 		{
 			get
 			{
-				return endCreateTime;
+				return saleId;
 			}
 			set	
 			{
-				endCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndCreateTime", value);
+				saleId = value;
+				DictionaryUtil.Add(QueryParameters, "SaleId", value);
+			}
+		}
+
+		public string Credential
+		{
+			get
+			{
+				return credential;
+			}
+			set	
+			{
+				credential = value;
+				DictionaryUtil.Add(QueryParameters, "Credential", value);
 			}
 		}
 
@@ -86,16 +99,16 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public int? PageSize
+		public string DomainName
 		{
 			get
 			{
-				return pageSize;
+				return domainName;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -112,19 +125,6 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -138,9 +138,9 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-        public override QueryBatchTaskListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SaveTaskForSubmittingDomainNameCredentialResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryBatchTaskListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveTaskForSubmittingDomainNameCredentialResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

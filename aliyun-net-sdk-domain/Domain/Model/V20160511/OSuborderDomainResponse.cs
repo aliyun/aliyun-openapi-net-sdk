@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20160511
 {
-	public class QueryBatchTaskListResponse : AcsResponse
+	public class OSuborderDomainResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -30,15 +30,9 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 
 		private int? currentPageNum;
 
-		private int? totalPageNum;
-
 		private int? pageSize;
 
-		private bool? prePage;
-
-		private bool? nextPage;
-
-		private List<QueryBatchTaskList_TaskInfo> data;
+		private List<OSuborderDomain__Object> data;
 
 		public string RequestId
 		{
@@ -76,18 +70,6 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public int? TotalPageNum
-		{
-			get
-			{
-				return totalPageNum;
-			}
-			set	
-			{
-				totalPageNum = value;
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -100,31 +82,7 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public bool? PrePage
-		{
-			get
-			{
-				return prePage;
-			}
-			set	
-			{
-				prePage = value;
-			}
-		}
-
-		public bool? NextPage
-		{
-			get
-			{
-				return nextPage;
-			}
-			set	
-			{
-				nextPage = value;
-			}
-		}
-
-		public List<QueryBatchTaskList_TaskInfo> Data
+		public List<OSuborderDomain__Object> Data
 		{
 			get
 			{
@@ -136,90 +94,62 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public class QueryBatchTaskList_TaskInfo
+		public class OSuborderDomain__Object
 		{
 
-			private string taskType;
+			private string commodityKey;
 
-			private int? taskNum;
+			private string commodityCode;
 
-			private string taskStatus;
+			private long? amount;
 
-			private string createTime;
+			private string settleTime;
 
-			private string clientip;
-
-			private string taskNo;
-
-			public string TaskType
+			public string CommodityKey
 			{
 				get
 				{
-					return taskType;
+					return commodityKey;
 				}
 				set	
 				{
-					taskType = value;
+					commodityKey = value;
 				}
 			}
 
-			public int? TaskNum
+			public string CommodityCode
 			{
 				get
 				{
-					return taskNum;
+					return commodityCode;
 				}
 				set	
 				{
-					taskNum = value;
+					commodityCode = value;
 				}
 			}
 
-			public string TaskStatus
+			public long? Amount
 			{
 				get
 				{
-					return taskStatus;
+					return amount;
 				}
 				set	
 				{
-					taskStatus = value;
+					amount = value;
 				}
 			}
 
-			public string CreateTime
+			public string SettleTime
 			{
 				get
 				{
-					return createTime;
+					return settleTime;
 				}
 				set	
 				{
-					createTime = value;
-				}
-			}
-
-			public string Clientip
-			{
-				get
-				{
-					return clientip;
-				}
-				set	
-				{
-					clientip = value;
-				}
-			}
-
-			public string TaskNo
-			{
-				get
-				{
-					return taskNo;
-				}
-				set	
-				{
-					taskNo = value;
+					settleTime = value;
 				}
 			}
 		}

@@ -24,7 +24,21 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 	public class CreateOrderResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string orderID;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string OrderID
 		{

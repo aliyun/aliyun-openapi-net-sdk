@@ -54,6 +54,10 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 
 		private bool? whoisProtected;
 
+		private bool? premium;
+
+		private string remark;
+
 		private List<string> dnsList;
 
 		public string UserId
@@ -233,6 +237,30 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			set	
 			{
 				whoisProtected = value;
+			}
+		}
+
+		public bool? Premium
+		{
+			get
+			{
+				return premium;
+			}
+			set	
+			{
+				premium = value;
+			}
+		}
+
+		public string Remark
+		{
+			get
+			{
+				return remark;
+			}
+			set	
+			{
+				remark = value;
 			}
 		}
 

@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 
 		private string lang;
 
+		private string accessKeyId;
+
 		private long? contactTemplateId;
 
 		public string UserClientIp
@@ -62,6 +64,19 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

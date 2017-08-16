@@ -26,50 +26,52 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20160511
 {
-    public class QueryBatchTaskListRequest : RpcAcsRequest<QueryBatchTaskListResponse>
+    public class SaveTaskForUpdatingContactByTemplateIdRequest : RpcAcsRequest<SaveTaskForUpdatingContactByTemplateIdResponse>
     {
-        public QueryBatchTaskListRequest()
-            : base("Domain", "2016-05-11", "QueryBatchTaskList")
+        public SaveTaskForUpdatingContactByTemplateIdRequest()
+            : base("Domain", "2016-05-11", "SaveTaskForUpdatingContactByTemplateId")
         {
         }
 
-		private string beginCreateTime;
+		private string saleId;
 
-		private string endCreateTime;
+		private string contactType;
 
 		private string userClientIp;
 
-		private int? pageSize;
+		private string domainName;
+
+		private bool? addTransferLock;
 
 		private string lang;
 
-		private int? pageNum;
-
 		private string accessKeyId;
 
-		public string BeginCreateTime
+		private long? contactTemplateId;
+
+		public string SaleId
 		{
 			get
 			{
-				return beginCreateTime;
+				return saleId;
 			}
 			set	
 			{
-				beginCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "BeginCreateTime", value);
+				saleId = value;
+				DictionaryUtil.Add(QueryParameters, "SaleId", value);
 			}
 		}
 
-		public string EndCreateTime
+		public string ContactType
 		{
 			get
 			{
-				return endCreateTime;
+				return contactType;
 			}
 			set	
 			{
-				endCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndCreateTime", value);
+				contactType = value;
+				DictionaryUtil.Add(QueryParameters, "ContactType", value);
 			}
 		}
 
@@ -86,16 +88,29 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public int? PageSize
+		public string DomainName
 		{
 			get
 			{
-				return pageSize;
+				return domainName;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public bool? AddTransferLock
+		{
+			get
+			{
+				return addTransferLock;
+			}
+			set	
+			{
+				addTransferLock = value;
+				DictionaryUtil.Add(QueryParameters, "AddTransferLock", value.ToString());
 			}
 		}
 
@@ -112,19 +127,6 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -138,9 +140,22 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-        public override QueryBatchTaskListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public long? ContactTemplateId
+		{
+			get
+			{
+				return contactTemplateId;
+			}
+			set	
+			{
+				contactTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "ContactTemplateId", value.ToString());
+			}
+		}
+
+        public override SaveTaskForUpdatingContactByTemplateIdResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryBatchTaskListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveTaskForUpdatingContactByTemplateIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

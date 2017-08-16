@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 	public class QueryDomainListResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalItemNum;
 
 		private int? currentPageNum;
@@ -36,7 +38,19 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 
 		private bool? nextPage;
 
-		private List<Domain> data;
+		private List<QueryDomainList_Domain> data;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalItemNum
 		{
@@ -110,7 +124,7 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public List<Domain> Data
+		public List<QueryDomainList_Domain> Data
 		{
 			get
 			{
@@ -122,7 +136,8 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public class Domain{
+		public class QueryDomainList_Domain
+		{
 
 			private string domainName;
 
@@ -139,6 +154,20 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			private string groupId;
 
 			private string domainType;
+
+			private string domainStatus;
+
+			private string deadDateStatus;
+
+			private string productId;
+
+			private long? deadDateLong;
+
+			private long? regDateLong;
+
+			private string remark;
+
+			private bool? premium;
 
 			public string DomainName
 			{
@@ -233,6 +262,90 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 				set	
 				{
 					domainType = value;
+				}
+			}
+
+			public string DomainStatus
+			{
+				get
+				{
+					return domainStatus;
+				}
+				set	
+				{
+					domainStatus = value;
+				}
+			}
+
+			public string DeadDateStatus
+			{
+				get
+				{
+					return deadDateStatus;
+				}
+				set	
+				{
+					deadDateStatus = value;
+				}
+			}
+
+			public string ProductId
+			{
+				get
+				{
+					return productId;
+				}
+				set	
+				{
+					productId = value;
+				}
+			}
+
+			public long? DeadDateLong
+			{
+				get
+				{
+					return deadDateLong;
+				}
+				set	
+				{
+					deadDateLong = value;
+				}
+			}
+
+			public long? RegDateLong
+			{
+				get
+				{
+					return regDateLong;
+				}
+				set	
+				{
+					regDateLong = value;
+				}
+			}
+
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
+				}
+			}
+
+			public bool? Premium
+			{
+				get
+				{
+					return premium;
+				}
+				set	
+				{
+					premium = value;
 				}
 			}
 		}

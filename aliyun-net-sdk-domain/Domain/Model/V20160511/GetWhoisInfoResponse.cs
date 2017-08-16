@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 	public class GetWhoisInfoResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string referralURL;
 
 		private string domainName;
@@ -142,7 +144,19 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 
 		private string whoisProtected;
 
-		private List<DomainStatus> domainStatusList;
+		private List<GetWhoisInfo_DomainStatus> domainStatusList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string ReferralURL
 		{
@@ -852,7 +866,7 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public List<DomainStatus> DomainStatusList
+		public List<GetWhoisInfo_DomainStatus> DomainStatusList
 		{
 			get
 			{
@@ -864,7 +878,8 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public class DomainStatus{
+		public class GetWhoisInfo_DomainStatus
+		{
 
 			private string status;
 

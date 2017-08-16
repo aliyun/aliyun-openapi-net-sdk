@@ -26,50 +26,48 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20160511
 {
-    public class QueryBatchTaskListRequest : RpcAcsRequest<QueryBatchTaskListResponse>
+    public class SaveContactTemplateCredentialRequest : RpcAcsRequest<SaveContactTemplateCredentialResponse>
     {
-        public QueryBatchTaskListRequest()
-            : base("Domain", "2016-05-11", "QueryBatchTaskList")
+        public SaveContactTemplateCredentialRequest()
+            : base("Domain", "2016-05-11", "SaveContactTemplateCredential")
         {
         }
 
-		private string beginCreateTime;
+		private string credentialNo;
 
-		private string endCreateTime;
+		private string credential;
 
 		private string userClientIp;
 
-		private int? pageSize;
-
 		private string lang;
-
-		private int? pageNum;
 
 		private string accessKeyId;
 
-		public string BeginCreateTime
+		private long? contactTemplateId;
+
+		public string CredentialNo
 		{
 			get
 			{
-				return beginCreateTime;
+				return credentialNo;
 			}
 			set	
 			{
-				beginCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "BeginCreateTime", value);
+				credentialNo = value;
+				DictionaryUtil.Add(QueryParameters, "CredentialNo", value);
 			}
 		}
 
-		public string EndCreateTime
+		public string Credential
 		{
 			get
 			{
-				return endCreateTime;
+				return credential;
 			}
 			set	
 			{
-				endCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndCreateTime", value);
+				credential = value;
+				DictionaryUtil.Add(QueryParameters, "Credential", value);
 			}
 		}
 
@@ -86,19 +84,6 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -109,19 +94,6 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
@@ -138,9 +110,22 @@ namespace Aliyun.Acs.Domain.Model.V20160511
 			}
 		}
 
-        public override QueryBatchTaskListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public long? ContactTemplateId
+		{
+			get
+			{
+				return contactTemplateId;
+			}
+			set	
+			{
+				contactTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "ContactTemplateId", value.ToString());
+			}
+		}
+
+        public override SaveContactTemplateCredentialResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryBatchTaskListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveContactTemplateCredentialResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
