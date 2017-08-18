@@ -1068,6 +1068,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private string postBodyDescription;
 
+			private string requestMode;
+
 			public string RequestProtocol
 			{
 				get
@@ -1127,6 +1129,20 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 					postBodyDescription = value;
 				}
 			}
+
+			public string RequestMode
+			{
+				get
+				{
+					return requestMode;
+				}
+				set	
+				{
+					requestMode = value;
+				}
+			}
+
+
 		}
 
 		public class ServiceConfig_{

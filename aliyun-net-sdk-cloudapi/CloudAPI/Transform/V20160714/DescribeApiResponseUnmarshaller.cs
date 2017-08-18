@@ -53,6 +53,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			requestConfig.RequestPath = context.StringValue("DescribeApi.RequestConfig.RequestPath");
 			requestConfig.BodyFormat = context.StringValue("DescribeApi.RequestConfig.BodyFormat");
 			requestConfig.PostBodyDescription = context.StringValue("DescribeApi.RequestConfig.PostBodyDescription");
+			requestConfig.RequestMode = context.StringValue("DescribeApi.RequestConfig.RequestMode");
 			describeApiResponse.RequestConfig = requestConfig;
 
 			DescribeApiResponse.ServiceConfig_ serviceConfig = new DescribeApiResponse.ServiceConfig_();
