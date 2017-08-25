@@ -38,7 +38,6 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				liveAppRecord.DomainName = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].DomainName");
 				liveAppRecord.StreamName = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].StreamName");
 				liveAppRecord.SourceUrl = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].SourceUrl");
-				liveAppRecord.Always = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].Always");
 				liveAppRecord.StartTime = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].StartTime");
 				liveAppRecord.EndTime = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].EndTime");
 

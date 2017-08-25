@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string domainType;
 
+		private string fixTimeGap;
+
 		private string securityToken;
 
 		private string timeMerge;
@@ -65,6 +67,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				domainType = value;
 				DictionaryUtil.Add(QueryParameters, "DomainType", value);
+			}
+		}
+
+		public string FixTimeGap
+		{
+			get
+			{
+				return fixTimeGap;
+			}
+			set	
+			{
+				fixTimeGap = value;
+				DictionaryUtil.Add(QueryParameters, "FixTimeGap", value);
 			}
 		}
 

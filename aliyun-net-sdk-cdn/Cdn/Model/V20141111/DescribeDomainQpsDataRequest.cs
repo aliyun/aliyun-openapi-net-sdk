@@ -33,21 +33,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string domainType;
-
-		private string securityToken;
+		private string fixTimeGap;
 
 		private string timeMerge;
 
 		private string domainName;
 
-		private string action;
-
 		private string endTime;
 
 		private string locationNameEn;
-
-		private string interval;
 
 		private string startTime;
 
@@ -57,29 +51,24 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string accessKeyId;
 
-		public string DomainType
-		{
-			get
-			{
-				return domainType;
-			}
-			set	
-			{
-				domainType = value;
-				DictionaryUtil.Add(QueryParameters, "DomainType", value);
-			}
-		}
+		private string domainType;
 
-		public string SecurityToken
+		private string securityToken;
+
+		private string action;
+
+		private string interval;
+
+		public string FixTimeGap
 		{
 			get
 			{
-				return securityToken;
+				return fixTimeGap;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				fixTimeGap = value;
+				DictionaryUtil.Add(QueryParameters, "FixTimeGap", value);
 			}
 		}
 
@@ -109,19 +98,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string EndTime
 		{
 			get
@@ -145,19 +121,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				locationNameEn = value;
 				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
-			}
-		}
-
-		public string Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 
@@ -210,6 +173,58 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string DomainType
+		{
+			get
+			{
+				return domainType;
+			}
+			set	
+			{
+				domainType = value;
+				DictionaryUtil.Add(QueryParameters, "DomainType", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
+		private string topLevelDomain;
+
 		private int? sourcePort;
 
 		private string resourceGroupId;
@@ -52,6 +54,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 		private long? ownerId;
 
 		private string accessKeyId;
+
+		public string TopLevelDomain
+		{
+			get
+			{
+				return topLevelDomain;
+			}
+			set	
+			{
+				topLevelDomain = value;
+				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+			}
+		}
 
 		public int? SourcePort
 		{

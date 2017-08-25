@@ -97,6 +97,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private DescribeDomainConfigs_L2OssKeyConfig l2OssKeyConfig;
 
+			private DescribeDomainConfigs_MacServiceConfig macServiceConfig;
+
 			public List<DescribeDomainConfigs_CacheExpiredConfig> CacheExpiredConfigs
 			{
 				get
@@ -346,6 +348,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					l2OssKeyConfig = value;
+				}
+			}
+
+			public DescribeDomainConfigs_MacServiceConfig MacServiceConfig
+			{
+				get
+				{
+					return macServiceConfig;
+				}
+				set	
+				{
+					macServiceConfig = value;
 				}
 			}
 
@@ -1623,6 +1637,80 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					set	
 					{
 						privateOssAuth = value;
+					}
+				}
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_MacServiceConfig
+			{
+
+				private string appList;
+
+				private string enabled;
+
+				private string processResult;
+
+				private string configId;
+
+				private string status;
+
+				public string AppList
+				{
+					get
+					{
+						return appList;
+					}
+					set	
+					{
+						appList = value;
+					}
+				}
+
+				public string Enabled
+				{
+					get
+					{
+						return enabled;
+					}
+					set	
+					{
+						enabled = value;
+					}
+				}
+
+				public string ProcessResult
+				{
+					get
+					{
+						return processResult;
+					}
+					set	
+					{
+						processResult = value;
 					}
 				}
 

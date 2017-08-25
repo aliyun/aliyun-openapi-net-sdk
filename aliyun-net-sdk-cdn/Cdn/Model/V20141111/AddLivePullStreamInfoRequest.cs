@@ -35,8 +35,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string sourceUrl;
 
-		private string always;
-
 		private string appName;
 
 		private string securityToken;
@@ -65,19 +63,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				sourceUrl = value;
 				DictionaryUtil.Add(QueryParameters, "SourceUrl", value);
-			}
-		}
-
-		public string Always
-		{
-			get
-			{
-				return always;
-			}
-			set	
-			{
-				always = value;
-				DictionaryUtil.Add(QueryParameters, "Always", value);
 			}
 		}
 

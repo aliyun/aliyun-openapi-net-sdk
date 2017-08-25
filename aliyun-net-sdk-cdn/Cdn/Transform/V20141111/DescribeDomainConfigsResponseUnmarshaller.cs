@@ -144,6 +144,14 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			l2OssKeyConfig.Status = context.StringValue("DescribeDomainConfigs.DomainConfigs.L2OssKeyConfig.Status");
 			domainConfigs.L2OssKeyConfig = l2OssKeyConfig;
 
+			DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_MacServiceConfig macServiceConfig = new DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_MacServiceConfig();
+			macServiceConfig.AppList = context.StringValue("DescribeDomainConfigs.DomainConfigs.MacServiceConfig.AppList");
+			macServiceConfig.Enabled = context.StringValue("DescribeDomainConfigs.DomainConfigs.MacServiceConfig.Enabled");
+			macServiceConfig.ProcessResult = context.StringValue("DescribeDomainConfigs.DomainConfigs.MacServiceConfig.ProcessResult");
+			macServiceConfig.ConfigId = context.StringValue("DescribeDomainConfigs.DomainConfigs.MacServiceConfig.ConfigId");
+			macServiceConfig.Status = context.StringValue("DescribeDomainConfigs.DomainConfigs.MacServiceConfig.Status");
+			domainConfigs.MacServiceConfig = macServiceConfig;
+
 			List<DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_CacheExpiredConfig> domainConfigs_cacheExpiredConfigs = new List<DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_CacheExpiredConfig>();
 			for (int i = 0; i < context.Length("DescribeDomainConfigs.DomainConfigs.CacheExpiredConfigs.Length"); i++) {
 				DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_CacheExpiredConfig cacheExpiredConfig = new DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_CacheExpiredConfig();
