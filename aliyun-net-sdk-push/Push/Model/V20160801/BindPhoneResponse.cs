@@ -21,12 +21,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-	public class PushMessageToiOSResponse : AcsResponse
+	public class BindPhoneResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string messageId;
 
 		public string RequestId
 		{
@@ -37,18 +35,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string MessageId
-		{
-			get
-			{
-				return messageId;
-			}
-			set	
-			{
-				messageId = value;
 			}
 		}
 	}

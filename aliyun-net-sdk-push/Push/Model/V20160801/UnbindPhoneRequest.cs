@@ -26,37 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-    public class QueryDeviceStatRequest : RpcAcsRequest<QueryDeviceStatResponse>
+    public class UnbindPhoneRequest : RpcAcsRequest<UnbindPhoneResponse>
     {
-        public QueryDeviceStatRequest()
-            : base("Push", "2016-08-01", "QueryDeviceStat")
+        public UnbindPhoneRequest()
+            : base("Push", "2016-08-01", "UnbindPhone")
         {
         }
 
-		private string endTime;
-
 		private long? appKey;
 
-		private string startTime;
-
-		private string deviceType;
-
-		private string queryType;
+		private string deviceId;
 
 		private string accessKeyId;
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
 
 		public long? AppKey
 		{
@@ -71,42 +52,16 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string StartTime
+		public string DeviceId
 		{
 			get
 			{
-				return startTime;
+				return deviceId;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string DeviceType
-		{
-			get
-			{
-				return deviceType;
-			}
-			set	
-			{
-				deviceType = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceType", value);
-			}
-		}
-
-		public string QueryType
-		{
-			get
-			{
-				return queryType;
-			}
-			set	
-			{
-				queryType = value;
-				DictionaryUtil.Add(QueryParameters, "QueryType", value);
+				deviceId = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
 			}
 		}
 
@@ -123,9 +78,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-        public override QueryDeviceStatResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UnbindPhoneResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceStatResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UnbindPhoneResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

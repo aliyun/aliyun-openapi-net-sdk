@@ -26,35 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-    public class QueryDeviceStatRequest : RpcAcsRequest<QueryDeviceStatResponse>
+    public class BindPhoneRequest : RpcAcsRequest<BindPhoneResponse>
     {
-        public QueryDeviceStatRequest()
-            : base("Push", "2016-08-01", "QueryDeviceStat")
+        public BindPhoneRequest()
+            : base("Push", "2016-08-01", "BindPhone")
         {
         }
 
-		private string endTime;
+		private string phoneNumber;
 
 		private long? appKey;
 
-		private string startTime;
-
-		private string deviceType;
-
-		private string queryType;
+		private string deviceId;
 
 		private string accessKeyId;
 
-		public string EndTime
+		public string PhoneNumber
 		{
 			get
 			{
-				return endTime;
+				return phoneNumber;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				phoneNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
 			}
 		}
 
@@ -71,42 +67,16 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string StartTime
+		public string DeviceId
 		{
 			get
 			{
-				return startTime;
+				return deviceId;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string DeviceType
-		{
-			get
-			{
-				return deviceType;
-			}
-			set	
-			{
-				deviceType = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceType", value);
-			}
-		}
-
-		public string QueryType
-		{
-			get
-			{
-				return queryType;
-			}
-			set	
-			{
-				queryType = value;
-				DictionaryUtil.Add(QueryParameters, "QueryType", value);
+				deviceId = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
 			}
 		}
 
@@ -123,9 +93,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-        public override QueryDeviceStatResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override BindPhoneResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceStatResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BindPhoneResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
