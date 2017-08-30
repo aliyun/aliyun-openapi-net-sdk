@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{16f311e8-76c8-4496-b365-a433005a07f2}</ProjectGuid>
+    <ProjectGuid>{9c693a8b-49d6-4b86-a2ce-443f21ef7492}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -55,6 +55,7 @@
 	<Compile Include="Cdn\Model\V20141111\ClearUserBlackListResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetRemoveQueryStringConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainOnlineUserNumberRequest.cs" />
+	<Compile Include="Cdn\Model\V20141111\SetL2OssKeyConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeUserDomainsResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetErrorPageConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainSrcBpsDataResponse.cs" />
@@ -141,6 +142,7 @@
 	<Compile Include="Cdn\Model\V20141111\SetUserBlackListRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetLocationAccessRestrictionResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLivePullStreamConfigRequest.cs" />
+	<Compile Include="Cdn\Model\V20141111\DescribeDomainPnoDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\UpdateLiveAppSnapshotConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamsFrameRateAndBitRateDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamRoomUserNumberRequest.cs" />
@@ -156,6 +158,7 @@
 	<Compile Include="Cdn\Model\V20141111\SetPageCompressConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamFrameLossRatioRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetReqHeaderConfigRequest.cs" />
+	<Compile Include="Cdn\Model\V20141111\SetL2OssKeyConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeCdnDomainDetailRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainReqHitRateDataRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetWafConfigRequest.cs" />
@@ -169,6 +172,7 @@
 	<Compile Include="Cdn\Model\V20141111\StartCdnDomainResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\ClearUserBlackListRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamRecordIndexFilesResponse.cs" />
+	<Compile Include="Cdn\Model\V20141111\DescribeDomainPnoDataRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeUserConfigsRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainFileSizeProportionDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeCdnTypesRequest.cs" />
@@ -398,6 +402,7 @@
 	<Compile Include="Cdn\Transform\V20141111\AddLiveDomainMappingResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetOptimizeConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeCdnDomainLogsResponseUnmarshaller.cs" />
+	<Compile Include="Cdn\Transform\V20141111\SetL2OssKeyConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeDomainISPDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeLiveStreamRoomUserNumberResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetUserAgentAcessRestrictionResponseUnmarshaller.cs" />
@@ -468,6 +473,7 @@
 	<Compile Include="Cdn\Transform\V20141111\DescribeDomainsUsageByDayResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeLiveRecordConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetHttpErrorPageConfigResponseUnmarshaller.cs" />
+	<Compile Include="Cdn\Transform\V20141111\DescribeDomainPnoDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\StopCdnDomainResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeTopDomainsByFlowResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetUserDomainBlackListResponseUnmarshaller.cs" />
