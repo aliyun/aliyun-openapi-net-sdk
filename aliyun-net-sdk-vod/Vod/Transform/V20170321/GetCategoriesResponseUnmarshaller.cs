@@ -33,22 +33,22 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			getCategoriesResponse.RequestId = context.StringValue("GetCategories.RequestId");
 			getCategoriesResponse.SubTotal = context.LongValue("GetCategories.SubTotal");
 
-			GetCategoriesResponse.GetCategories_Category category = new GetCategoriesResponse.GetCategories_Category();
-			category.CateId = context.LongValue("GetCategories.Category.CateId");
-			category.CateName = context.StringValue("GetCategories.Category.CateName");
-			category.Level = context.LongValue("GetCategories.Category.Level");
-			category.ParentId = context.LongValue("GetCategories.Category.ParentId");
-			getCategoriesResponse.Category = category;
+			GetCategoriesResponse.GetCategories_Category category1 = new GetCategoriesResponse.GetCategories_Category();
+			category1.CateId = context.LongValue("GetCategories.Category.CateId");
+			category1.CateName = context.StringValue("GetCategories.Category.CateName");
+			category1.Level = context.LongValue("GetCategories.Category.Level");
+			category1.ParentId = context.LongValue("GetCategories.Category.ParentId");
+			getCategoriesResponse.Category = category1;
 
 			List<GetCategoriesResponse.GetCategories_Category> getCategoriesResponse_subCategories = new List<GetCategoriesResponse.GetCategories_Category>();
 			for (int i = 0; i < context.Length("GetCategories.SubCategories.Length"); i++) {
-				GetCategoriesResponse.GetCategories_Category category1 = new GetCategoriesResponse.GetCategories_Category();
-				category1.CateId = context.LongValue("GetCategories.SubCategories["+ i +"].CateId");
-				category1.CateName = context.StringValue("GetCategories.SubCategories["+ i +"].CateName");
-				category1.Level = context.LongValue("GetCategories.SubCategories["+ i +"].Level");
-				category1.ParentId = context.LongValue("GetCategories.SubCategories["+ i +"].ParentId");
+				GetCategoriesResponse.GetCategories_Category category = new GetCategoriesResponse.GetCategories_Category();
+				category.CateId = context.LongValue("GetCategories.SubCategories["+ i +"].CateId");
+				category.CateName = context.StringValue("GetCategories.SubCategories["+ i +"].CateName");
+				category.Level = context.LongValue("GetCategories.SubCategories["+ i +"].Level");
+				category.ParentId = context.LongValue("GetCategories.SubCategories["+ i +"].ParentId");
 
-				getCategoriesResponse_subCategories.Add(category1);
+				getCategoriesResponse_subCategories.Add(category);
 			}
 			getCategoriesResponse.SubCategories = getCategoriesResponse_subCategories;
         

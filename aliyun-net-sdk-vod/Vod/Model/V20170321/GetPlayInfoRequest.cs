@@ -29,36 +29,51 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetPlayInfoRequest : RpcAcsRequest<GetPlayInfoResponse>
     {
         public GetPlayInfoRequest()
-            : base("vod", "2017-03-21", "GetPlayInfo")
+            : base("vod", "2017-03-21", "GetPlayInfo", "vod", "openAPI")
         {
         }
 
-		private string accessKeyId;
+
+		private long? resourceOwnerId;
+
+		private string formats;
 
 		private string resourceOwnerAccount;
 
 		private string action;
 
-		private long? resourceOwnerId;
+		private string videoId;
 
 		private long? ownerId;
 
 		private long? authTimeout;
 
-		private string videoId;
+		private string accessKeyId;
 
-		private string formats;
 
-		public string AccessKeyId
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return accessKeyId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Formats
+		{
+			get
+			{
+				return formats;
+			}
+			set	
+			{
+				formats = value;
+				DictionaryUtil.Add(QueryParameters, "Formats", value);
 			}
 		}
 
@@ -88,16 +103,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string VideoId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return videoId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				videoId = value;
+				DictionaryUtil.Add(QueryParameters, "VideoId", value);
 			}
 		}
 
@@ -127,29 +142,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
+		public string AccessKeyId
 		{
 			get
 			{
-				return videoId;
+				return accessKeyId;
 			}
 			set	
 			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
-			}
-		}
-
-		public string Formats
-		{
-			get
-			{
-				return formats;
-			}
-			set	
-			{
-				formats = value;
-				DictionaryUtil.Add(QueryParameters, "Formats", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

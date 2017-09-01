@@ -29,49 +29,36 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class UpdateCategoryRequest : RpcAcsRequest<UpdateCategoryResponse>
     {
         public UpdateCategoryRequest()
-            : base("vod", "2017-03-21", "UpdateCategory")
+            : base("vod", "2017-03-21", "UpdateCategory", "vod", "openAPI")
         {
         }
 
-		private long? cateId;
-
-		private string accessKeyId;
+		private string resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private string action;
-
-		private string resourceOwnerId;
+		private long? cateId;
 
 		private string ownerAccount;
 
+		private string action;
+
 		private string ownerId;
+
+		private string accessKeyId;
 
 		private string cateName;
 
-		public long? CateId
+		public string ResourceOwnerId
 		{
 			get
 			{
-				return cateId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
 			}
 		}
 
@@ -88,29 +75,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
+		public long? CateId
 		{
 			get
 			{
-				return action;
+				return cateId;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
 			}
 		}
 
@@ -127,6 +101,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string OwnerId
 		{
 			get
@@ -137,6 +124,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

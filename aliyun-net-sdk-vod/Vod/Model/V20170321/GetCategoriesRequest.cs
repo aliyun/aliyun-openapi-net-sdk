@@ -29,64 +29,38 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetCategoriesRequest : RpcAcsRequest<GetCategoriesResponse>
     {
         public GetCategoriesRequest()
-            : base("vod", "2017-03-21", "GetCategories")
+            : base("vod", "2017-03-21", "GetCategories", "vod", "openAPI")
         {
         }
 
-		private long? pageSize;
-
-		private long? cateId;
-
-		private string accessKeyId;
+		private string resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private string action;
-
-		private string resourceOwnerId;
+		private long? cateId;
 
 		private long? pageNo;
 
 		private string ownerAccount;
 
+		private long? pageSize;
+
+		private string action;
+
 		private string ownerId;
 
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+		private string accessKeyId;
 
-		public long? CateId
+		public string ResourceOwnerId
 		{
 			get
 			{
-				return cateId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
 			}
 		}
 
@@ -103,29 +77,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
+		public long? CateId
 		{
 			get
 			{
-				return action;
+				return cateId;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
 			}
 		}
 
@@ -155,6 +116,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string OwnerId
 		{
 			get
@@ -165,6 +152,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

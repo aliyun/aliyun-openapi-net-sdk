@@ -29,32 +29,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DeleteVideoRequest : RpcAcsRequest<DeleteVideoResponse>
     {
         public DeleteVideoRequest()
-            : base("vod", "2017-03-21", "DeleteVideo")
+            : base("vod", "2017-03-21", "DeleteVideo", "vod", "openAPI")
         {
         }
 
-		private string accessKeyId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
 		private string action;
 
-		private long? resourceOwnerId;
+		private long? ownerId;
 
 		private string videoIds;
 
-		private long? ownerId;
+		private string accessKeyId;
 
-		public string AccessKeyId
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return accessKeyId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -84,16 +84,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? ResourceOwnerId
+		public long? OwnerId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return ownerId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -110,16 +110,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? OwnerId
+		public string AccessKeyId
 		{
 			get
 			{
-				return ownerId;
+				return accessKeyId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

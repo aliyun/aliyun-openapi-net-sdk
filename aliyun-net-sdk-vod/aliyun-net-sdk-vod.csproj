@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{95b4a9c4-9b02-4c96-a7b5-4443d6743085}</ProjectGuid>
+    <ProjectGuid>{dcd999f7-338f-4674-9151-d010152860eb}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -39,63 +39,75 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Vod\Model\V20170321\GetVideoConfigRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\GetVideoInfoRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\CreateUploadImageRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\SubmitAIVideoPornRecogJobRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\UpdateCategoryResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\GetVideoPlayInfoRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\CreateUploadVideoRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\GetMessageCallbackRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\GetCDNStatisSumResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\SetMessageCallbackRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\GetOSSStatisResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\GetOSSStatisRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\SubmitAIVideoCoverJobRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\ListAIVideoPornRecogJobRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\SetMessageCallbackResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\GetVideoPlayAuthRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\DeleteVideoResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\GetMessageCallbackResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\GetPlayInfoRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\DeleteCategoryRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\ListAIVideoCoverJobRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\SubmitAIVideoPornRecogJobResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\GetCDNStatisSumResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\CreateUploadVideoRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\GetVideoPlayInfoResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\GetCDNStatisSumRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\AddCategoryRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\CreateUploadVideoResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\GetVideoConfigResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\GetOSSStatisResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\ListAIVideoCoverJobResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\CreateUploadVideoResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\SetMessageCallbackRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\GetVideoInfoResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\GetVideoListResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\UpdateVideoInfoResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\GetCategoriesRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\RefreshUploadVideoResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\ListAIVideoPornRecogJobResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\UpdateVideoInfoRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\SubmitAIVideoCoverJobResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\GetVideoPlayAuthResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\DeleteCategoryResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\GetMessageCallbackResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\AddCategoryResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\RefreshUploadVideoRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\GetVideoConfigRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\GetPlayInfoRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetCategoriesResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\DeleteVideoRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\GetCDNStatisSumRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\RefreshUploadVideoRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\UpdateCategoryResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\UpdateCategoryRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\GetCategoriesRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\DeleteCategoryResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\SetMessageCallbackResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\GetOSSStatisRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\GetVideoPlayAuthRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\GetVideoInfoResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\UpdateVideoInfoRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\GetVideoPlayAuthResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\UpdateVideoInfoResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\GetVideoPlayInfoResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\DeleteCategoryRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetPlayInfoResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\GetVideoListResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\AddCategoryResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\CreateUploadImageRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\RefreshUploadVideoResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\GetVideoListRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\UpdateCategoryRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\CreateUploadImageResponse.cs" />
-	<Compile Include="Vod\Transform\V20170321\UpdateVideoInfoResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\GetPlayInfoResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\GetVideoInfoResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\GetOSSStatisResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\DeleteCategoryResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\GetVideoConfigResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Model\V20170321\GetMessageCallbackRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\GetVideoInfoRequest.cs" />
 	<Compile Include="Vod\Transform\V20170321\CreateUploadVideoResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\DeleteVideoResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\GetCDNStatisSumResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\GetVideoPlayAuthResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\GetMessageCallbackResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SetMessageCallbackResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\AddCategoryResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\GetVideoPlayInfoResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\GetVideoListResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\CreateUploadImageResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetOSSStatisResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\UpdateCategoryResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\GetCategoriesResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetCDNStatisSumResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetVideoListResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetMessageCallbackResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\UpdateVideoInfoResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\DeleteCategoryResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\AddCategoryResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetVideoConfigResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetVideoPlayInfoResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\SubmitAIVideoCoverJobResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\SubmitAIVideoPornRecogJobResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\ListAIVideoCoverJobResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetPlayInfoResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\DeleteVideoResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\RefreshUploadVideoResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\CreateUploadImageResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetVideoInfoResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\ListAIVideoPornRecogJobResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetCategoriesResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetVideoPlayAuthResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

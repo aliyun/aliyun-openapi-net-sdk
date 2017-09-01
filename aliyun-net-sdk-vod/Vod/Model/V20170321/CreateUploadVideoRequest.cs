@@ -29,124 +29,50 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class CreateUploadVideoRequest : RpcAcsRequest<CreateUploadVideoResponse>
     {
         public CreateUploadVideoRequest()
-            : base("vod", "2017-03-21", "CreateUploadVideo")
+            : base("vod", "2017-03-21", "CreateUploadVideo", "vod", "openAPI")
         {
         }
 
-		private string tags;
-
-		private int? cateId;
-
-		private string accessKeyId;
-
-		private long? ownerId;
-
-		private string iP;
-
-		private long? fileSize;
-
-		private string title;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
+		private string transcodeMode;
+
+		private string iP;
+
 		private string description;
 
-		private string action;
+		private long? fileSize;
 
-		private string fileName;
+		private long? ownerId;
+
+		private string title;
+
+		private string accessKeyId;
+
+		private string tags;
 
 		private string coverURL;
 
-		private long? resourceOwnerId;
+		private string userData;
 
-		public string Tags
+		private string fileName;
+
+		private int? cateId;
+
+		private string action;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return tags;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-		public int? CateId
-		{
-			get
-			{
-				return cateId;
-			}
-			set	
-			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string IP
-		{
-			get
-			{
-				return iP;
-			}
-			set	
-			{
-				iP = value;
-				DictionaryUtil.Add(QueryParameters, "IP", value);
-			}
-		}
-
-		public long? FileSize
-		{
-			get
-			{
-				return fileSize;
-			}
-			set	
-			{
-				fileSize = value;
-				DictionaryUtil.Add(QueryParameters, "FileSize", value.ToString());
-			}
-		}
-
-		public string Title
-		{
-			get
-			{
-				return title;
-			}
-			set	
-			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -163,6 +89,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string TranscodeMode
+		{
+			get
+			{
+				return transcodeMode;
+			}
+			set	
+			{
+				transcodeMode = value;
+				DictionaryUtil.Add(QueryParameters, "TranscodeMode", value);
+			}
+		}
+
+		public string IP
+		{
+			get
+			{
+				return iP;
+			}
+			set	
+			{
+				iP = value;
+				DictionaryUtil.Add(QueryParameters, "IP", value);
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -176,29 +128,68 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
+		public long? FileSize
 		{
 			get
 			{
-				return action;
+				return fileSize;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				fileSize = value;
+				DictionaryUtil.Add(QueryParameters, "FileSize", value.ToString());
 			}
 		}
 
-		public string FileName
+		public long? OwnerId
 		{
 			get
 			{
-				return fileName;
+				return ownerId;
 			}
 			set	
 			{
-				fileName = value;
-				DictionaryUtil.Add(QueryParameters, "FileName", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Title
+		{
+			get
+			{
+				return title;
+			}
+			set	
+			{
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 
@@ -215,16 +206,55 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string UserData
 		{
 			get
 			{
-				return resourceOwnerId;
+				return userData;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public string FileName
+		{
+			get
+			{
+				return fileName;
+			}
+			set	
+			{
+				fileName = value;
+				DictionaryUtil.Add(QueryParameters, "FileName", value);
+			}
+		}
+
+		public int? CateId
+		{
+			get
+			{
+				return cateId;
+			}
+			set	
+			{
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

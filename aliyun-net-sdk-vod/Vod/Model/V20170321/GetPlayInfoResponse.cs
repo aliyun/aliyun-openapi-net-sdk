@@ -89,6 +89,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private long? encrypt;
 
+
 			public long? Width
 			{
 				get
@@ -208,6 +209,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					encrypt = value;
 				}
 			}
+
 		}
 
 		public class GetPlayInfo_VideoBase

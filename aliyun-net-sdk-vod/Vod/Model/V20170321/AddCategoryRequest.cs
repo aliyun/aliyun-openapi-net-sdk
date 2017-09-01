@@ -29,36 +29,36 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class AddCategoryRequest : RpcAcsRequest<AddCategoryResponse>
     {
         public AddCategoryRequest()
-            : base("vod", "2017-03-21", "AddCategory")
+            : base("vod", "2017-03-21", "AddCategory", "vod", "openAPI")
         {
         }
 
-		private string accessKeyId;
+		private string resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private string action;
-
-		private long? parentId;
-
-		private string resourceOwnerId;
-
 		private string ownerAccount;
+
+		private string action;
 
 		private string ownerId;
 
+		private long? parentId;
+
+		private string accessKeyId;
+
 		private string cateName;
 
-		public string AccessKeyId
+		public string ResourceOwnerId
 		{
 			get
 			{
-				return accessKeyId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
 			}
 		}
 
@@ -75,6 +75,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -85,6 +98,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
@@ -101,42 +127,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ResourceOwnerId
+		public string AccessKeyId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return accessKeyId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

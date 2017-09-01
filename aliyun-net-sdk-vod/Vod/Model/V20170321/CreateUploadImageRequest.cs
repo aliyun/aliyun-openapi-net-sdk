@@ -29,62 +29,36 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class CreateUploadImageRequest : RpcAcsRequest<CreateUploadImageResponse>
     {
         public CreateUploadImageRequest()
-            : base("vod", "2017-03-21", "CreateUploadImage")
+            : base("vod", "2017-03-21", "CreateUploadImage", "vod", "openAPI")
         {
         }
 
-		private string accessKeyId;
-
-		private string resourceOwnerAccount;
-
-		private string action;
+		private string resourceOwnerId;
 
 		private string imageType;
 
-		private string resourceOwnerId;
-
-		private string ownerAccount;
-
-		private string ownerId;
+		private string resourceOwnerAccount;
 
 		private string imageExt;
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+		private string ownerAccount;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string action;
 
-		public string Action
+		private string ownerId;
+
+		private string accessKeyId;
+
+		public string ResourceOwnerId
 		{
 			get
 			{
-				return action;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
 			}
 		}
 
@@ -101,16 +75,29 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ResourceOwnerId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return resourceOwnerId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ImageExt
+		{
+			get
+			{
+				return imageExt;
+			}
+			set	
+			{
+				imageExt = value;
+				DictionaryUtil.Add(QueryParameters, "ImageExt", value);
 			}
 		}
 
@@ -127,6 +114,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string OwnerId
 		{
 			get
@@ -140,16 +140,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ImageExt
+		public string AccessKeyId
 		{
 			get
 			{
-				return imageExt;
+				return accessKeyId;
 			}
 			set	
 			{
-				imageExt = value;
-				DictionaryUtil.Add(QueryParameters, "ImageExt", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
