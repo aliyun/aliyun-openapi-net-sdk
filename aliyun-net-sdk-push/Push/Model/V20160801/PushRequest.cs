@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private int? iOSBadge;
 
+		private bool? iOSBadgeAutoIncrement;
+
 		private string androidOpenType;
 
 		private string title;
@@ -168,6 +170,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSBadge = value;
 				DictionaryUtil.Add(QueryParameters, "iOSBadge", value.ToString());
+			}
+		}
+
+		public bool? IOSBadgeAutoIncrement
+		{
+			get
+			{
+				return iOSBadgeAutoIncrement;
+			}
+			set	
+			{
+				iOSBadgeAutoIncrement = value;
+				DictionaryUtil.Add(QueryParameters, "iOSBadgeAutoIncrement", value.ToString());
 			}
 		}
 
