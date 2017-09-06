@@ -1,3 +1,6 @@
+2017-09-06 Version: 1.1.6
+1, 修改IoT套件美西和新加坡节点的endpoint
+
 2017-08-05 Version: 1.1.5
 1, 支持Api定义showJsonItemName=false
 2, 消除编译警告
