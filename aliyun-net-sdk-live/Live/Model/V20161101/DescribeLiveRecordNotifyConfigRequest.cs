@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeLiveRecordNotifyConfigRequest : RpcAcsRequest<DescribeLiveRecordNotifyConfigResponse>
     {
         public DescribeLiveRecordNotifyConfigRequest()
-            : base("live", "2016-11-01", "DescribeLiveRecordNotifyConfig")
+            : base("live", "2016-11-01", "DescribeLiveRecordNotifyConfig", "live", "openAPI")
         {
         }
 

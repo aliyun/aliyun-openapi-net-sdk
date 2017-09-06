@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeLiveStreamsBlockListRequest : RpcAcsRequest<DescribeLiveStreamsBlockListResponse>
     {
         public DescribeLiveStreamsBlockListRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamsBlockList")
+            : base("live", "2016-11-01", "DescribeLiveStreamsBlockList", "live", "openAPI")
         {
         }
 

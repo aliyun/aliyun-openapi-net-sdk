@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DeleteLiveAppRecordConfigRequest : RpcAcsRequest<DeleteLiveAppRecordConfigResponse>
     {
         public DeleteLiveAppRecordConfigRequest()
-            : base("live", "2016-11-01", "DeleteLiveAppRecordConfig")
+            : base("live", "2016-11-01", "DeleteLiveAppRecordConfig", "live", "openAPI")
         {
         }
 

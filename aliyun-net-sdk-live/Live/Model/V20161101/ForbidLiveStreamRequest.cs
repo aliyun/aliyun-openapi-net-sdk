@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class ForbidLiveStreamRequest : RpcAcsRequest<ForbidLiveStreamResponse>
     {
         public ForbidLiveStreamRequest()
-            : base("live", "2016-11-01", "ForbidLiveStream")
+            : base("live", "2016-11-01", "ForbidLiveStream", "live", "openAPI")
         {
         }
 

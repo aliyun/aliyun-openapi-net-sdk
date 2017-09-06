@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class StartMixStreamsServiceRequest : RpcAcsRequest<StartMixStreamsServiceResponse>
     {
         public StartMixStreamsServiceRequest()
-            : base("live", "2016-11-01", "StartMixStreamsService")
+            : base("live", "2016-11-01", "StartMixStreamsService", "live", "openAPI")
         {
         }
 
