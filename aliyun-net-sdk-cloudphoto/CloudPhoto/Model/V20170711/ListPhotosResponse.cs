@@ -147,6 +147,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private long? mtime;
 
+			private long? takenAt;
+
 			public long? Id
 			{
 				get
@@ -276,6 +278,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					mtime = value;
+				}
+			}
+
+			public long? TakenAt
+			{
+				get
+				{
+					return takenAt;
+				}
+				set	
+				{
+					takenAt = value;
 				}
 			}
 		}

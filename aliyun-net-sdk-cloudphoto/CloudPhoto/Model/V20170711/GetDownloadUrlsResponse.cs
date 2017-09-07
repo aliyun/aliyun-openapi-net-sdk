@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-	public class CreatePhotoResponse : AcsResponse
+	public class GetDownloadUrlsResponse : AcsResponse
 	{
 
 		private string code;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string action;
 
-		private CreatePhoto_Photo photo;
+		private List<GetDownloadUrls_Result> results;
 
 		public string Code
 		{
@@ -82,186 +82,74 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public CreatePhoto_Photo Photo
+		public List<GetDownloadUrls_Result> Results
 		{
 			get
 			{
-				return photo;
+				return results;
 			}
 			set	
 			{
-				photo = value;
+				results = value;
 			}
 		}
 
-		public class CreatePhoto_Photo
+		public class GetDownloadUrls_Result
 		{
 
-			private long? id;
+			private string code;
 
-			private string title;
+			private string message;
 
-			private string fileId;
+			private long? photoId;
 
-			private string state;
+			private string downloadUrl;
 
-			private string md5;
-
-			private bool? isVideo;
-
-			private string remark;
-
-			private long? width;
-
-			private long? height;
-
-			private long? ctime;
-
-			private long? mtime;
-
-			private long? takenAt;
-
-			public long? Id
+			public string Code
 			{
 				get
 				{
-					return id;
+					return code;
 				}
 				set	
 				{
-					id = value;
+					code = value;
 				}
 			}
 
-			public string Title
+			public string Message
 			{
 				get
 				{
-					return title;
+					return message;
 				}
 				set	
 				{
-					title = value;
+					message = value;
 				}
 			}
 
-			public string FileId
+			public long? PhotoId
 			{
 				get
 				{
-					return fileId;
+					return photoId;
 				}
 				set	
 				{
-					fileId = value;
+					photoId = value;
 				}
 			}
 
-			public string State
+			public string DownloadUrl
 			{
 				get
 				{
-					return state;
+					return downloadUrl;
 				}
 				set	
 				{
-					state = value;
-				}
-			}
-
-			public string Md5
-			{
-				get
-				{
-					return md5;
-				}
-				set	
-				{
-					md5 = value;
-				}
-			}
-
-			public bool? IsVideo
-			{
-				get
-				{
-					return isVideo;
-				}
-				set	
-				{
-					isVideo = value;
-				}
-			}
-
-			public string Remark
-			{
-				get
-				{
-					return remark;
-				}
-				set	
-				{
-					remark = value;
-				}
-			}
-
-			public long? Width
-			{
-				get
-				{
-					return width;
-				}
-				set	
-				{
-					width = value;
-				}
-			}
-
-			public long? Height
-			{
-				get
-				{
-					return height;
-				}
-				set	
-				{
-					height = value;
-				}
-			}
-
-			public long? Ctime
-			{
-				get
-				{
-					return ctime;
-				}
-				set	
-				{
-					ctime = value;
-				}
-			}
-
-			public long? Mtime
-			{
-				get
-				{
-					return mtime;
-				}
-				set	
-				{
-					mtime = value;
-				}
-			}
-
-			public long? TakenAt
-			{
-				get
-				{
-					return takenAt;
-				}
-				set	
-				{
-					takenAt = value;
+					downloadUrl = value;
 				}
 			}
 		}
