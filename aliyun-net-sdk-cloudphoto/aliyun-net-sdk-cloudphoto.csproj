@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{c7b48f28-f264-4c47-865b-2e460e95af11}</ProjectGuid>
+    <ProjectGuid>{be333b9c-14e1-4d52-91d4-c0e3a180240a}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -45,6 +45,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\ListTagsRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\CreatePhotoStoreRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListFacesRequest.cs" />
+	<Compile Include="CloudPhoto\Model\V20170711\GetDownloadUrlsResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\CreateAlbumRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\SetFaceCoverResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\CreatePhotoRequest.cs" />
@@ -55,6 +56,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\SetMeResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\DeleteFacesResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\MoveAlbumPhotosRequest.cs" />
+	<Compile Include="CloudPhoto\Model\V20170711\GetThumbnailsRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\RemoveAlbumPhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\SearchPhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListAlbumsRequest.cs" />
@@ -100,6 +102,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\MoveFacePhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\MoveAlbumPhotosResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\InactivatePhotosRequest.cs" />
+	<Compile Include="CloudPhoto\Model\V20170711\GetThumbnailsResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\MergeFacesResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\SetAlbumCoverRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\RenameAlbumRequest.cs" />
@@ -107,6 +110,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\GetQuotaResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\GetVideoCoverRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\CreateTransactionResponse.cs" />
+	<Compile Include="CloudPhoto\Model\V20170711\GetDownloadUrlsRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListPhotoStoresResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\DeleteFacesRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\GetDownloadUrlResponse.cs" />
@@ -151,6 +155,8 @@
 	<Compile Include="CloudPhoto\Transform\V20170711\RenameAlbumResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\CreatePhotoStoreResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\RemoveFacePhotosResponseUnmarshaller.cs" />
+	<Compile Include="CloudPhoto\Transform\V20170711\GetThumbnailsResponseUnmarshaller.cs" />
+	<Compile Include="CloudPhoto\Transform\V20170711\GetDownloadUrlsResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ListPhotoStoresResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ListAlbumsResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ListMomentsResponseUnmarshaller.cs" />

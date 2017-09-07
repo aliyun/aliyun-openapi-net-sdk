@@ -51,6 +51,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 				photo.Height = context.LongValue("ListPhotos.Photos["+ i +"].Height");
 				photo.Ctime = context.LongValue("ListPhotos.Photos["+ i +"].Ctime");
 				photo.Mtime = context.LongValue("ListPhotos.Photos["+ i +"].Mtime");
+				photo.TakenAt = context.LongValue("ListPhotos.Photos["+ i +"].TakenAt");
 
 				listPhotosResponse_photos.Add(photo);
 			}
