@@ -141,6 +141,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string instanceChargeType;
 
+			private string saleCycle;
+
 			private string expiredTime;
 
 			private string autoReleaseTime;
@@ -161,9 +163,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string spotStrategy;
 
+			private float? spotPriceLimit;
+
 			private string resourceGroupId;
 
 			private string keyPairName;
+
+			private List<DescribeInstances_NetworkInterface> networkInterfaces;
 
 			private List<DescribeInstances_LockReason> operationLocks;
 
@@ -445,6 +451,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string SaleCycle
+			{
+				get
+				{
+					return saleCycle;
+				}
+				set	
+				{
+					saleCycle = value;
+				}
+			}
+
 			public string ExpiredTime
 			{
 				get
@@ -565,6 +583,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public float? SpotPriceLimit
+			{
+				get
+				{
+					return spotPriceLimit;
+				}
+				set	
+				{
+					spotPriceLimit = value;
+				}
+			}
+
 			public string ResourceGroupId
 			{
 				get
@@ -586,6 +616,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					keyPairName = value;
+				}
+			}
+
+			public List<DescribeInstances_NetworkInterface> NetworkInterfaces
+			{
+				get
+				{
+					return networkInterfaces;
+				}
+				set	
+				{
+					networkInterfaces = value;
 				}
 			}
 
@@ -682,6 +724,52 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					eipAddress = value;
+				}
+			}
+
+			public class DescribeInstances_NetworkInterface
+			{
+
+				private string networkInterfaceId;
+
+				private string macAddress;
+
+				private string primaryIpAddress;
+
+				public string NetworkInterfaceId
+				{
+					get
+					{
+						return networkInterfaceId;
+					}
+					set	
+					{
+						networkInterfaceId = value;
+					}
+				}
+
+				public string MacAddress
+				{
+					get
+					{
+						return macAddress;
+					}
+					set	
+					{
+						macAddress = value;
+					}
+				}
+
+				public string PrimaryIpAddress
+				{
+					get
+					{
+						return primaryIpAddress;
+					}
+					set	
+					{
+						primaryIpAddress = value;
+					}
 				}
 			}
 

@@ -107,6 +107,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string tag1Key;
 
+		private string eipAddresses;
+
 		private string instanceName;
 
 		private string instanceIds;
@@ -605,6 +607,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				tag1Key = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
+			}
+		}
+
+		public string EipAddresses
+		{
+			get
+			{
+				return eipAddresses;
+			}
+			set	
+			{
+				eipAddresses = value;
+				DictionaryUtil.Add(QueryParameters, "EipAddresses", value);
 			}
 		}
 

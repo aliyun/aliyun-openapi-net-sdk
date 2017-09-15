@@ -60,6 +60,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instance.CreationTime = context.StringValue("DescribeInstances.Instances["+ i +"].CreationTime");
 				instance.InstanceNetworkType = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceNetworkType");
 				instance.InstanceChargeType = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceChargeType");
+				instance.SaleCycle = context.StringValue("DescribeInstances.Instances["+ i +"].SaleCycle");
 				instance.ExpiredTime = context.StringValue("DescribeInstances.Instances["+ i +"].ExpiredTime");
 				instance.AutoReleaseTime = context.StringValue("DescribeInstances.Instances["+ i +"].AutoReleaseTime");
 				instance.IoOptimized = context.BooleanValue("DescribeInstances.Instances["+ i +"].IoOptimized");
@@ -70,6 +71,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instance.GPUAmount = context.IntegerValue("DescribeInstances.Instances["+ i +"].GPUAmount");
 				instance.GPUSpec = context.StringValue("DescribeInstances.Instances["+ i +"].GPUSpec");
 				instance.SpotStrategy = context.StringValue("DescribeInstances.Instances["+ i +"].SpotStrategy");
+				instance.SpotPriceLimit = context.FloatValue("DescribeInstances.Instances["+ i +"].SpotPriceLimit");
 				instance.ResourceGroupId = context.StringValue("DescribeInstances.Instances["+ i +"].ResourceGroupId");
 				instance.KeyPairName = context.StringValue("DescribeInstances.Instances["+ i +"].KeyPairName");
 
@@ -116,6 +118,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				eipAddress.InternetChargeType = context.StringValue("DescribeInstances.Instances["+ i +"].EipAddress.InternetChargeType");
 				eipAddress.IsSupportUnassociate = context.BooleanValue("DescribeInstances.Instances["+ i +"].EipAddress.IsSupportUnassociate");
 				instance.EipAddress = eipAddress;
+
+				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface> instance_networkInterfaces = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface>();
+				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].NetworkInterfaces.Length"); j++) {
+					DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface networkInterface = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface();
+					networkInterface.NetworkInterfaceId = context.StringValue("DescribeInstances.Instances["+ i +"].NetworkInterfaces["+ j +"].NetworkInterfaceId");
+					networkInterface.MacAddress = context.StringValue("DescribeInstances.Instances["+ i +"].NetworkInterfaces["+ j +"].MacAddress");
+					networkInterface.PrimaryIpAddress = context.StringValue("DescribeInstances.Instances["+ i +"].NetworkInterfaces["+ j +"].PrimaryIpAddress");
+
+					instance_networkInterfaces.Add(networkInterface);
+				}
+				instance.NetworkInterfaces = instance_networkInterfaces;
 
 				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_LockReason> instance_operationLocks = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_LockReason>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].OperationLocks.Length"); j++) {

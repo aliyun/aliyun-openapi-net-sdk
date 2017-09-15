@@ -149,6 +149,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string resourceGroupId;
 
+			private bool? encrypted;
+
 			private List<DescribeDisks_OperationLock> operationLocks;
 
 			private List<DescribeDisks_Tag> tags;
@@ -462,6 +464,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public bool? Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
 				}
 			}
 

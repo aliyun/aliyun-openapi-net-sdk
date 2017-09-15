@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceRenewAttribute.InstanceId = context.StringValue("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes["+ i +"].InstanceId");
 				instanceRenewAttribute.AutoRenewEnabled = context.BooleanValue("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes["+ i +"].AutoRenewEnabled");
 				instanceRenewAttribute.Duration = context.IntegerValue("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes["+ i +"].Duration");
+				instanceRenewAttribute.PeriodUnit = context.StringValue("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes["+ i +"].PeriodUnit");
 
 				describeInstanceAutoRenewAttributeResponse_instanceRenewAttributes.Add(instanceRenewAttribute);
 			}

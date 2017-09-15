@@ -1,0 +1,87 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ecs.Model.V20140526;
+using System;
+using System.Collections.Generic;
+
+namespace Aliyun.Acs.Ecs.Transform.V20140526
+{
+    public class DescribeNetworkInterfacesResponseUnmarshaller
+    {
+        public static DescribeNetworkInterfacesResponse Unmarshall(UnmarshallerContext context)
+        {
+			DescribeNetworkInterfacesResponse describeNetworkInterfacesResponse = new DescribeNetworkInterfacesResponse();
+
+			describeNetworkInterfacesResponse.HttpResponse = context.HttpResponse;
+			describeNetworkInterfacesResponse.RequestId = context.StringValue("DescribeNetworkInterfaces.RequestId");
+			describeNetworkInterfacesResponse.TotalCount = context.IntegerValue("DescribeNetworkInterfaces.TotalCount");
+			describeNetworkInterfacesResponse.PageNumber = context.IntegerValue("DescribeNetworkInterfaces.PageNumber");
+			describeNetworkInterfacesResponse.PageSize = context.IntegerValue("DescribeNetworkInterfaces.PageSize");
+
+			List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet> describeNetworkInterfacesResponse_networkInterfaceSets = new List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet>();
+			for (int i = 0; i < context.Length("DescribeNetworkInterfaces.NetworkInterfaceSets.Length"); i++) {
+				DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet networkInterfaceSet = new DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet();
+				networkInterfaceSet.NetworkInterfaceId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].NetworkInterfaceId");
+				networkInterfaceSet.Status = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Status");
+				networkInterfaceSet.Type = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Type");
+				networkInterfaceSet.VpcId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].VpcId");
+				networkInterfaceSet.VSwitchId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].VSwitchId");
+				networkInterfaceSet.ZoneId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].ZoneId");
+				networkInterfaceSet.PrivateIpAddress = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].PrivateIpAddress");
+				networkInterfaceSet.MacAddress = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].MacAddress");
+				networkInterfaceSet.NetworkInterfaceName = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].NetworkInterfaceName");
+				networkInterfaceSet.Description = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Description");
+				networkInterfaceSet.InstanceId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].InstanceId");
+				networkInterfaceSet.CreationTime = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].CreationTime");
+
+				List<string> networkInterfaceSet_securityGroupIds = new List<string>();
+				for (int j = 0; j < context.Length("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].SecurityGroupIds.Length"); j++) {
+					networkInterfaceSet_securityGroupIds.Add(context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].SecurityGroupIds["+ j +"]"));
+				}
+				networkInterfaceSet.SecurityGroupIds = networkInterfaceSet_securityGroupIds;
+
+				DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_AssociatedPublicIp associatedPublicIp = new DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_AssociatedPublicIp();
+				associatedPublicIp.PublicIpAddress = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].AssociatedPublicIp.PublicIpAddress");
+				associatedPublicIp.AllocationId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].AssociatedPublicIp.AllocationId");
+				networkInterfaceSet.AssociatedPublicIp = associatedPublicIp;
+
+				List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_PrivateIpSet> networkInterfaceSet_privateIpSets = new List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_PrivateIpSet>();
+				for (int j = 0; j < context.Length("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].PrivateIpSets.Length"); j++) {
+					DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_PrivateIpSet privateIpSet = new DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_PrivateIpSet();
+					privateIpSet.PrivateIpAddress = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].PrivateIpAddress");
+					privateIpSet.Primary = context.BooleanValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].Primary");
+
+					DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_PrivateIpSet.DescribeNetworkInterfaces_AssociatedPublicIp1 associatedPublicIp1 = new DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_PrivateIpSet.DescribeNetworkInterfaces_AssociatedPublicIp1();
+					associatedPublicIp1.PublicIpAddress = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].AssociatedPublicIp.PublicIpAddress");
+					associatedPublicIp1.AllocationId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].PrivateIpSets["+ j +"].AssociatedPublicIp.AllocationId");
+					privateIpSet.AssociatedPublicIp1 = associatedPublicIp1;
+
+					networkInterfaceSet_privateIpSets.Add(privateIpSet);
+				}
+				networkInterfaceSet.PrivateIpSets = networkInterfaceSet_privateIpSets;
+
+				describeNetworkInterfacesResponse_networkInterfaceSets.Add(networkInterfaceSet);
+			}
+			describeNetworkInterfacesResponse.NetworkInterfaceSets = describeNetworkInterfacesResponse_networkInterfaceSets;
+        
+			return describeNetworkInterfacesResponse;
+        }
+    }
+}

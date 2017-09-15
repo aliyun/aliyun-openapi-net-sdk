@@ -53,6 +53,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				volume.CreationTime = context.StringValue("DescribeVolumes.Volumes["+ i +"].CreationTime");
 				volume.VolumeChargeType = context.StringValue("DescribeVolumes.Volumes["+ i +"].VolumeChargeType");
 				volume.MountInstanceNum = context.IntegerValue("DescribeVolumes.Volumes["+ i +"].MountInstanceNum");
+				volume.Encrypted = context.BooleanValue("DescribeVolumes.Volumes["+ i +"].Encrypted");
 
 				List<DescribeVolumesResponse.DescribeVolumes_Volume.DescribeVolumes_OperationLock> volume_operationLocks = new List<DescribeVolumesResponse.DescribeVolumes_Volume.DescribeVolumes_OperationLock>();
 				for (int j = 0; j < context.Length("DescribeVolumes.Volumes["+ i +"].OperationLocks.Length"); j++) {

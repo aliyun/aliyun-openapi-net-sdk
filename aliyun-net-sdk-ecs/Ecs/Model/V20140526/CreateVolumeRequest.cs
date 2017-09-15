@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string volumeName;
 
+		private bool? volumeEncrypted;
+
 		private string tag5Key;
 
 		private string resourceOwnerAccount;
@@ -141,6 +143,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				volumeName = value;
 				DictionaryUtil.Add(QueryParameters, "VolumeName", value);
+			}
+		}
+
+		public bool? VolumeEncrypted
+		{
+			get
+			{
+				return volumeEncrypted;
+			}
+			set	
+			{
+				volumeEncrypted = value;
+				DictionaryUtil.Add(QueryParameters, "VolumeEncrypted", value.ToString());
 			}
 		}
 

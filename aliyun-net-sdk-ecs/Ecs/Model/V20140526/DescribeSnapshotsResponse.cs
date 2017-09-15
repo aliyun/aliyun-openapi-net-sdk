@@ -109,6 +109,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string sourceDiskType;
 
+			private bool? encrypted;
+
 			private string sourceDiskSize;
 
 			private string description;
@@ -192,6 +194,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					sourceDiskType = value;
+				}
+			}
+
+			public bool? Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
 				}
 			}
 

@@ -56,6 +56,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				}
 				zone.AvailableInstanceTypes = zone_availableInstanceTypes;
 
+				List<string> zone_availableVolumeCategories = new List<string>();
+				for (int j = 0; j < context.Length("DescribeZones.Zones["+ i +"].AvailableVolumeCategories.Length"); j++) {
+					zone_availableVolumeCategories.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableVolumeCategories["+ j +"]"));
+				}
+				zone.AvailableVolumeCategories = zone_availableVolumeCategories;
+
 				List<DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo> zone_availableResources = new List<DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo>();
 				for (int j = 0; j < context.Length("DescribeZones.Zones["+ i +"].AvailableResources.Length"); j++) {
 					DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo resourcesInfo = new DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo();

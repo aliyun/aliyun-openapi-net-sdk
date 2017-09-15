@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string keyPairName;
 
+		private float? spotPriceLimit;
+
 		private string tag1Value;
 
 		private string resourceGroupId;
@@ -212,6 +214,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				keyPairName = value;
 				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+			}
+		}
+
+		public float? SpotPriceLimit
+		{
+			get
+			{
+				return spotPriceLimit;
+			}
+			set	
+			{
+				spotPriceLimit = value;
+				DictionaryUtil.Add(QueryParameters, "SpotPriceLimit", value.ToString());
 			}
 		}
 
@@ -754,6 +769,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Encrypted", dataDisks[i].Encrypted);
 				}
 			}
 		}
@@ -840,6 +856,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? deleteWithInstance;
 
+			private bool? encrypted;
+
 			public int? Size
 			{
 				get
@@ -921,6 +939,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					deleteWithInstance = value;
+				}
+			}
+
+			public bool? Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
 				}
 			}
 		}

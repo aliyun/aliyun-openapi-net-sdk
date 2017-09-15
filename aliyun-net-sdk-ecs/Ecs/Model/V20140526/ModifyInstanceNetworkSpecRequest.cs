@@ -35,17 +35,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
+		private bool? autoPay;
 
 		private string resourceOwnerAccount;
+
+		private string clientToken;
 
 		private string ownerAccount;
 
 		private int? internetMaxBandwidthOut;
 
-		private string action;
+		private string endTime;
+
+		private string startTime;
 
 		private long? ownerId;
+
+		private string instanceId;
+
+		private string action;
+
+		private string networkChargeType;
 
 		private int? internetMaxBandwidthIn;
 
@@ -62,16 +72,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
+		public bool? AutoPay
 		{
 			get
 			{
-				return instanceId;
+				return autoPay;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 
@@ -85,6 +95,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -114,16 +137,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Action
+		public string EndTime
 		{
 			get
 			{
-				return action;
+				return endTime;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -137,6 +173,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string NetworkChargeType
+		{
+			get
+			{
+				return networkChargeType;
+			}
+			set	
+			{
+				networkChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkChargeType", value);
 			}
 		}
 

@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
+		private string spotStrategy;
+
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
@@ -45,7 +47,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private string instanceChargeType;
+
 		private bool? verbose;
+
+		public string SpotStrategy
+		{
+			get
+			{
+				return spotStrategy;
+			}
+			set	
+			{
+				spotStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -122,6 +139,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
 			}
 		}
 

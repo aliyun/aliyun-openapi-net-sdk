@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? duration;
 
+			private string periodUnit;
+
 			public string InstanceId
 			{
 				get
@@ -94,6 +96,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					duration = value;
+				}
+			}
+
+			public string PeriodUnit
+			{
+				get
+				{
+					return periodUnit;
+				}
+				set	
+				{
+					periodUnit = value;
 				}
 			}
 		}

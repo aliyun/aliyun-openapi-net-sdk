@@ -127,6 +127,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? mountInstanceNum;
 
+			private bool? encrypted;
+
 			private List<DescribeVolumes_OperationLock> operationLocks;
 
 			private List<DescribeVolumes_MountInstance> mountInstances;
@@ -310,6 +312,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					mountInstanceNum = value;
+				}
+			}
+
+			public bool? Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
 				}
 			}
 

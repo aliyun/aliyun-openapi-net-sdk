@@ -67,6 +67,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private List<string> availableInstanceTypes;
 
+			private List<string> availableVolumeCategories;
+
 			public string ZoneId
 			{
 				get
@@ -136,6 +138,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					availableInstanceTypes = value;
+				}
+			}
+
+			public List<string> AvailableVolumeCategories
+			{
+				get
+				{
+					return availableVolumeCategories;
+				}
+				set	
+				{
+					availableVolumeCategories = value;
 				}
 			}
 

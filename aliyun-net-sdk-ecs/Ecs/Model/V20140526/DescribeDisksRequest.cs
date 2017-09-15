@@ -103,6 +103,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceId;
 
+		private bool? encrypted;
+
 		private string tag2Value;
 
 		private string zoneId;
@@ -565,6 +567,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? Encrypted
+		{
+			get
+			{
+				return encrypted;
+			}
+			set	
+			{
+				encrypted = value;
+				DictionaryUtil.Add(QueryParameters, "Encrypted", value.ToString());
 			}
 		}
 

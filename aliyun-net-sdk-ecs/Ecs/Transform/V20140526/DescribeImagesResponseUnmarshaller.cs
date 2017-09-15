@@ -66,6 +66,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					diskDeviceMapping.SnapshotId = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].SnapshotId");
 					diskDeviceMapping.Size = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].Size");
 					diskDeviceMapping.Device = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].Device");
+					diskDeviceMapping.Type = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].Type");
 					diskDeviceMapping.Format = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].Format");
 					diskDeviceMapping.ImportOSSBucket = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].ImportOSSBucket");
 					diskDeviceMapping.ImportOSSObject = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].ImportOSSObject");

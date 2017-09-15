@@ -428,6 +428,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string device;
 
+				private string type;
+
 				private string format;
 
 				private string importOSSBucket;
@@ -467,6 +469,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						device = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
 					}
 				}
 
