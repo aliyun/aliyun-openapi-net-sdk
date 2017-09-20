@@ -34,6 +34,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 
 			SubmitAIVideoCoverJobResponse.SubmitAIVideoCoverJob_AIVideoCoverJob aIVideoCoverJob = new SubmitAIVideoCoverJobResponse.SubmitAIVideoCoverJob_AIVideoCoverJob();
 			aIVideoCoverJob.Id = context.StringValue("SubmitAIVideoCoverJob.AIVideoCoverJob.Id");
+			aIVideoCoverJob.MediaId = context.StringValue("SubmitAIVideoCoverJob.AIVideoCoverJob.MediaId");
 			aIVideoCoverJob.Status = context.StringValue("SubmitAIVideoCoverJob.AIVideoCoverJob.Status");
 			aIVideoCoverJob.Code = context.StringValue("SubmitAIVideoCoverJob.AIVideoCoverJob.Code");
 			aIVideoCoverJob.Message = context.StringValue("SubmitAIVideoCoverJob.AIVideoCoverJob.Message");

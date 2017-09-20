@@ -26,47 +26,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class UpdateVideoInfoRequest : RpcAcsRequest<UpdateVideoInfoResponse>
+    public class GetMezzanineInfoRequest : RpcAcsRequest<GetMezzanineInfoResponse>
     {
-        public UpdateVideoInfoRequest()
-            : base("vod", "2017-03-21", "UpdateVideoInfo", "vod", "openAPI")
+        public GetMezzanineInfoRequest()
+            : base("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI")
         {
         }
-
-		private string coverURL;
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private int? cateId;
-
 		private string action;
-
-		private string description;
 
 		private string videoId;
 
 		private long? ownerId;
 
-		private string title;
+		private long? authTimeout;
 
 		private string accessKeyId;
-
-		private string tags;
-
-		public string CoverURL
-		{
-			get
-			{
-				return coverURL;
-			}
-			set	
-			{
-				coverURL = value;
-				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -94,19 +73,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public int? CateId
-		{
-			get
-			{
-				return cateId;
-			}
-			set	
-			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -117,19 +83,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -159,16 +112,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Title
+		public long? AuthTimeout
 		{
 			get
 			{
-				return title;
+				return authTimeout;
 			}
 			set	
 			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
+				authTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
 			}
 		}
 
@@ -185,22 +138,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-        public override UpdateVideoInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetMezzanineInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return UpdateVideoInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetMezzanineInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

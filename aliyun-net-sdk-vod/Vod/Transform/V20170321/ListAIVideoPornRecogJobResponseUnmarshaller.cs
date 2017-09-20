@@ -42,6 +42,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			for (int i = 0; i < context.Length("ListAIVideoPornRecogJob.AIVideoPornRecogJobList.Length"); i++) {
 				ListAIVideoPornRecogJobResponse.ListAIVideoPornRecogJob_AIVideoPornRecogJob aIVideoPornRecogJob = new ListAIVideoPornRecogJobResponse.ListAIVideoPornRecogJob_AIVideoPornRecogJob();
 				aIVideoPornRecogJob.Id = context.StringValue("ListAIVideoPornRecogJob.AIVideoPornRecogJobList["+ i +"].Id");
+				aIVideoPornRecogJob.MediaId = context.StringValue("ListAIVideoPornRecogJob.AIVideoPornRecogJobList["+ i +"].MediaId");
 				aIVideoPornRecogJob.Status = context.StringValue("ListAIVideoPornRecogJob.AIVideoPornRecogJobList["+ i +"].Status");
 				aIVideoPornRecogJob.Code = context.StringValue("ListAIVideoPornRecogJob.AIVideoPornRecogJobList["+ i +"].Code");
 				aIVideoPornRecogJob.Message = context.StringValue("ListAIVideoPornRecogJob.AIVideoPornRecogJobList["+ i +"].Message");

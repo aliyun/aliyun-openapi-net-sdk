@@ -43,11 +43,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string action;
 
-		private string videoId;
-
 		private string aIVideoPornRecogConfig;
 
 		private string ownerId;
+
+		private string mediaId;
 
 		private string accessKeyId;
 
@@ -116,19 +116,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
-		{
-			get
-			{
-				return videoId;
-			}
-			set	
-			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
-			}
-		}
-
 		public string AIVideoPornRecogConfig
 		{
 			get
@@ -152,6 +139,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string MediaId
+		{
+			get
+			{
+				return mediaId;
+			}
+			set	
+			{
+				mediaId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaId", value);
 			}
 		}
 

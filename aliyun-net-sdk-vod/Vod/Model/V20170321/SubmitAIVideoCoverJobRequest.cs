@@ -33,7 +33,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
-		private string input;
+		private string userData;
 
 		private string resourceOwnerId;
 
@@ -45,20 +45,22 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string ownerId;
 
+		private string mediaId;
+
 		private string accessKeyId;
 
 		private string aIVideoCoverConfig;
 
-		public string Input
+		public string UserData
 		{
 			get
 			{
-				return input;
+				return userData;
 			}
 			set	
 			{
-				input = value;
-				DictionaryUtil.Add(QueryParameters, "Input", value);
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 
@@ -124,6 +126,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string MediaId
+		{
+			get
+			{
+				return mediaId;
+			}
+			set	
+			{
+				mediaId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaId", value);
 			}
 		}
 

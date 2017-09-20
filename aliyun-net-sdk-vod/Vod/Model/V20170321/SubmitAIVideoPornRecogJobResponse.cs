@@ -57,6 +57,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string id;
 
+			private string mediaId;
+
 			private string status;
 
 			private string code;
@@ -76,6 +78,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public string MediaId
+			{
+				get
+				{
+					return mediaId;
+				}
+				set	
+				{
+					mediaId = value;
 				}
 			}
 

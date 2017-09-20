@@ -21,12 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class GetVideoInfoResponse : AcsResponse
+	public class GetMezzanineInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private GetVideoInfo_Video video;
+		private GetMezzanineInfo_Mezzanine mezzanine;
 
 		public string RequestId
 		{
@@ -40,48 +40,44 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public GetVideoInfo_Video Video
+		public GetMezzanineInfo_Mezzanine Mezzanine
 		{
 			get
 			{
-				return video;
+				return mezzanine;
 			}
 			set	
 			{
-				video = value;
+				mezzanine = value;
 			}
 		}
 
-		public class GetVideoInfo_Video
+		public class GetMezzanineInfo_Mezzanine
 		{
 
 			private string videoId;
 
-			private string title;
-
-			private string tags;
-
-			private string status;
-
-			private long? size;
-
-			private float? duration;
-
-			private string description;
-
-			private string createTime;
+			private string bitrate;
 
 			private string creationTime;
 
-			private string modifyTime;
+			private string duration;
 
-			private string coverURL;
+			private string fps;
 
-			private int? cateId;
+			private long? height;
 
-			private string cateName;
+			private long? width;
 
-			private List<string> snapshots;
+			private long? size;
+
+			private string status;
+
+			private string fileURL;
+
+			private string fileName;
+
+			private string cRC64;
 
 			public string VideoId
 			{
@@ -95,87 +91,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Title
+			public string Bitrate
 			{
 				get
 				{
-					return title;
+					return bitrate;
 				}
 				set	
 				{
-					title = value;
-				}
-			}
-
-			public string Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public long? Size
-			{
-				get
-				{
-					return size;
-				}
-				set	
-				{
-					size = value;
-				}
-			}
-
-			public float? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
+					bitrate = value;
 				}
 			}
 
@@ -191,63 +115,111 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string ModifyTime
+			public string Duration
 			{
 				get
 				{
-					return modifyTime;
+					return duration;
 				}
 				set	
 				{
-					modifyTime = value;
+					duration = value;
 				}
 			}
 
-			public string CoverURL
+			public string Fps
 			{
 				get
 				{
-					return coverURL;
+					return fps;
 				}
 				set	
 				{
-					coverURL = value;
+					fps = value;
 				}
 			}
 
-			public int? CateId
+			public long? Height
 			{
 				get
 				{
-					return cateId;
+					return height;
 				}
 				set	
 				{
-					cateId = value;
+					height = value;
 				}
 			}
 
-			public string CateName
+			public long? Width
 			{
 				get
 				{
-					return cateName;
+					return width;
 				}
 				set	
 				{
-					cateName = value;
+					width = value;
 				}
 			}
 
-			public List<string> Snapshots
+			public long? Size
 			{
 				get
 				{
-					return snapshots;
+					return size;
 				}
 				set	
 				{
-					snapshots = value;
+					size = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string FileURL
+			{
+				get
+				{
+					return fileURL;
+				}
+				set	
+				{
+					fileURL = value;
+				}
+			}
+
+			public string FileName
+			{
+				get
+				{
+					return fileName;
+				}
+				set	
+				{
+					fileName = value;
+				}
+			}
+
+			public string CRC64
+			{
+				get
+				{
+					return cRC64;
+				}
+				set	
+				{
+					cRC64 = value;
 				}
 			}
 		}

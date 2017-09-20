@@ -32,14 +32,26 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			listAIVideoCoverJobResponse.HttpResponse = context.HttpResponse;
 			listAIVideoCoverJobResponse.RequestId = context.StringValue("ListAIVideoCoverJob.RequestId");
 
-			ListAIVideoCoverJobResponse.ListAIVideoCoverJob_AIVideoCoverJob aIVideoCoverJob = new ListAIVideoCoverJobResponse.ListAIVideoCoverJob_AIVideoCoverJob();
-			aIVideoCoverJob.Id = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJob.Id");
-			aIVideoCoverJob.Status = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJob.Status");
-			aIVideoCoverJob.Code = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJob.Code");
-			aIVideoCoverJob.Message = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJob.Message");
-			aIVideoCoverJob.CreationTime = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJob.CreationTime");
-			aIVideoCoverJob.Data = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJob.Data");
-			listAIVideoCoverJobResponse.AIVideoCoverJob = aIVideoCoverJob;
+			List<string> listAIVideoCoverJobResponse_nonExistAIVideoCoverJobIds = new List<string>();
+			for (int i = 0; i < context.Length("ListAIVideoCoverJob.NonExistAIVideoCoverJobIds.Length"); i++) {
+				listAIVideoCoverJobResponse_nonExistAIVideoCoverJobIds.Add(context.StringValue("ListAIVideoCoverJob.NonExistAIVideoCoverJobIds["+ i +"]"));
+			}
+			listAIVideoCoverJobResponse.NonExistAIVideoCoverJobIds = listAIVideoCoverJobResponse_nonExistAIVideoCoverJobIds;
+
+			List<ListAIVideoCoverJobResponse.ListAIVideoCoverJob_AIVideoCoverJob> listAIVideoCoverJobResponse_aIVideoCoverJobList = new List<ListAIVideoCoverJobResponse.ListAIVideoCoverJob_AIVideoCoverJob>();
+			for (int i = 0; i < context.Length("ListAIVideoCoverJob.AIVideoCoverJobList.Length"); i++) {
+				ListAIVideoCoverJobResponse.ListAIVideoCoverJob_AIVideoCoverJob aIVideoCoverJob = new ListAIVideoCoverJobResponse.ListAIVideoCoverJob_AIVideoCoverJob();
+				aIVideoCoverJob.Id = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJobList["+ i +"].Id");
+				aIVideoCoverJob.MediaId = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJobList["+ i +"].MediaId");
+				aIVideoCoverJob.Status = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJobList["+ i +"].Status");
+				aIVideoCoverJob.Code = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJobList["+ i +"].Code");
+				aIVideoCoverJob.Message = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJobList["+ i +"].Message");
+				aIVideoCoverJob.CreationTime = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJobList["+ i +"].CreationTime");
+				aIVideoCoverJob.Data = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJobList["+ i +"].Data");
+
+				listAIVideoCoverJobResponse_aIVideoCoverJobList.Add(aIVideoCoverJob);
+			}
+			listAIVideoCoverJobResponse.AIVideoCoverJobList = listAIVideoCoverJobResponse_aIVideoCoverJobList;
         
 			return listAIVideoCoverJobResponse;
         }

@@ -33,7 +33,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
-
 		private long? resourceOwnerId;
 
 		private string formats;
@@ -90,6 +89,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+
 		public string Action
 		{
 			get
@@ -141,6 +141,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
 			}
 		}
+
 
 		public string AccessKeyId
 		{
