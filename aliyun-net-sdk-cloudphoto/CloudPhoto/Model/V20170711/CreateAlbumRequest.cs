@@ -36,6 +36,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string albumName;
 
+		private string libraryId;
+
 		private string storeName;
 
 		private string remark;
@@ -50,6 +52,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				albumName = value;
 				DictionaryUtil.Add(QueryParameters, "AlbumName", value);
+			}
+		}
+
+		public string LibraryId
+		{
+			get
+			{
+				return libraryId;
+			}
+			set	
+			{
+				libraryId = value;
+				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
 			}
 		}
 

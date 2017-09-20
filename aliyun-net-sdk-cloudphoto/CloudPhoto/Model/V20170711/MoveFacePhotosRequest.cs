@@ -34,6 +34,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			Protocol = ProtocolType.HTTPS;
         }
 
+		private string libraryId;
+
 		private long? targetFaceId;
 
 		private List<long?> photoIds;
@@ -41,6 +43,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 		private string storeName;
 
 		private long? sourceFaceId;
+
+		public string LibraryId
+		{
+			get
+			{
+				return libraryId;
+			}
+			set	
+			{
+				libraryId = value;
+				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
+			}
+		}
 
 		public long? TargetFaceId
 		{

@@ -38,6 +38,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private long? size;
 
+		private string libraryId;
+
 		private string storeName;
 
 		private bool? force;
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				size = value;
 				DictionaryUtil.Add(QueryParameters, "Size", value.ToString());
+			}
+		}
+
+		public string LibraryId
+		{
+			get
+			{
+				return libraryId;
+			}
+			set	
+			{
+				libraryId = value;
+				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
 			}
 		}
 

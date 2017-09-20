@@ -36,6 +36,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private long? totalQuota;
 
+		private string libraryId;
+
 		private string storeName;
 
 		public long? TotalQuota
@@ -48,6 +50,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				totalQuota = value;
 				DictionaryUtil.Add(QueryParameters, "TotalQuota", value.ToString());
+			}
+		}
+
+		public string LibraryId
+		{
+			get
+			{
+				return libraryId;
+			}
+			set	
+			{
+				libraryId = value;
+				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
 			}
 		}
 

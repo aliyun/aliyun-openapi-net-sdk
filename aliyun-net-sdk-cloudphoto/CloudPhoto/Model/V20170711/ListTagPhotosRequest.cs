@@ -40,6 +40,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private long? tagId;
 
+		private string libraryId;
+
 		private string storeName;
 
 		private string state;
@@ -82,6 +84,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				tagId = value;
 				DictionaryUtil.Add(QueryParameters, "TagId", value.ToString());
+			}
+		}
+
+		public string LibraryId
+		{
+			get
+			{
+				return libraryId;
+			}
+			set	
+			{
+				libraryId = value;
+				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
 			}
 		}
 
