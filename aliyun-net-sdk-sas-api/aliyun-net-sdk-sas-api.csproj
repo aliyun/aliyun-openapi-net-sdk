@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9b067fa2-8e60-46d2-967c-1f0d48eb8694}</ProjectGuid>
+    <ProjectGuid>{9ed574c2-aad4-45a6-aae1-d2d2ee7011dd}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -42,12 +42,15 @@
 	<Compile Include="Sas_api\Model\V20170705\GetPhoneProfileResponse.cs" />
 	<Compile Include="Sas_api\Model\V20170705\GetIpProfileResponse.cs" />
 	<Compile Include="Sas_api\Model\V20170705\GetIpProfileRequest.cs" />
+	<Compile Include="Sas_api\Model\V20170705\GetAccountProfileRequest.cs" />
 	<Compile Include="Sas_api\Model\V20170705\GetPhoneProfileRequest.cs" />
 	<Compile Include="Sas_api\Model\V20170705\GetInstanceCountRequest.cs" />
 	<Compile Include="Sas_api\Model\V20170705\GetInstanceCountResponse.cs" />
+	<Compile Include="Sas_api\Model\V20170705\GetAccountProfileResponse.cs" />
 	<Compile Include="Sas_api\Transform\V20170705\GetInstanceCountResponseUnmarshaller.cs" />
 	<Compile Include="Sas_api\Transform\V20170705\GetPhoneProfileResponseUnmarshaller.cs" />
 	<Compile Include="Sas_api\Transform\V20170705\GetIpProfileResponseUnmarshaller.cs" />
+	<Compile Include="Sas_api\Transform\V20170705\GetAccountProfileResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
