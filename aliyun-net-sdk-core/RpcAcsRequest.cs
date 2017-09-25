@@ -118,7 +118,20 @@ namespace Aliyun.Acs.Core
                 String accessSecret = credential.AccessSecret;
                 imutableMap = this.Composer.RefreshSignParameters(QueryParameters, signer, accessKeyId, format);
                 imutableMap.Add("RegionId", RegionId);
-                String strToSign = this.Composer.ComposeStringToSign(Method, null, signer, imutableMap, null, null);
+
+                Dictionary<String, String> paramsToSign = new Dictionary<String, String>(imutableMap);
+                if (this.BodyParameters != null && this.BodyParameters.Count > 0)
+                {
+                    Dictionary<String, String> formParams = new Dictionary<String, String>(this.BodyParameters);
+                    string formStr = ConcatQueryString(formParams);
+                    byte[] formData = System.Text.Encoding.UTF8.GetBytes(formStr);
+                    this.SetContent(formData, "UTF-8", FormatType.FORM);
+                    foreach (var formParam in formParams)
+                    {
+                        DictionaryUtil.Add(paramsToSign, formParam.Key, formParam.Value);
+                    }
+                }
+                String strToSign = this.Composer.ComposeStringToSign(Method, null, signer, paramsToSign, null, null);
                 String signature = signer.SignString(strToSign, accessSecret + "&");
                 imutableMap.Add("Signature", signature);
             }

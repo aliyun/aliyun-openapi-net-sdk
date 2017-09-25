@@ -163,8 +163,28 @@ namespace Aliyun.Acs.Core.Http
 
             foreach (var header in request.Headers)
             {
+                if (header.Key.Equals("Content-Length"))
+                {
+                    httpWebRequest.ContentLength = long.Parse(header.Value);
+                    continue;
+                }
+                if (header.Key.Equals("Content-Type"))
+                {
+                    httpWebRequest.ContentType = header.Value;
+                    continue;
+                }
+
                 httpWebRequest.Headers.Add(header.Key, header.Value);
             }
+
+            if ((request.Method == MethodType.POST || request.Method == MethodType.PUT) && request.Content != null)
+            {
+                using (Stream stream = httpWebRequest.GetRequestStream())
+                {
+                    stream.Write(request.Content, 0, request.Content.Length);
+                }
+            }
+            
 
             return httpWebRequest;
         }

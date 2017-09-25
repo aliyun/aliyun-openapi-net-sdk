@@ -20,6 +20,7 @@ using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Utils;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -46,7 +47,7 @@ namespace Aliyun.Acs.Core
         public RoaAcsRequest(string product, string version, string action)
             : base(product)
         {
-            this.Version = version;
+            this.SetVersion(version);
             this.ActionName = action;
             Initialize();
         }
@@ -54,8 +55,8 @@ namespace Aliyun.Acs.Core
         public RoaAcsRequest(string product, string version, string action, string locationProduct, string locationEndpointType)
             : base(product)
         {
-            this.Version = version;
-            this.ActionName = action;
+            this.SetVersion(version);
+            ActionName = action;
             this.LocationProduct = locationProduct;
             this.LocationEndpointType = locationEndpointType;
             Initialize();
@@ -105,6 +106,14 @@ namespace Aliyun.Acs.Core
 
         public override HttpRequest SignRequest(ISigner signer, Credential credential, FormatType? format, ProductDomain domain)
         {
+            if (this.BodyParameters != null && this.BodyParameters.Count > 0)
+            {
+                Dictionary<String, String> formParams = new Dictionary<String, String>(this.BodyParameters);
+                string formStr = ConcatQueryString(formParams);
+                byte[] formData = System.Text.Encoding.UTF8.GetBytes(formStr);
+                this.SetContent(formData, "UTF-8", FormatType.FORM);
+            }
+
             Dictionary<string, string> imutableMap = new Dictionary<string, string>(this.Headers);
             if (null != signer && null != credential)
             {

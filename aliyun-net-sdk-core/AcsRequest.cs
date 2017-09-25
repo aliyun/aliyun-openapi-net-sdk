@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Core
         private ProtocolType protocol = ProtocolType.HTTP;
         private FormatType acceptFormat;
         private Dictionary<String, String> queryParameters = new Dictionary<String, String>();
+        private Dictionary<String, String> bodyParameters = new Dictionary<String, String>();
 
         public virtual String Product { get; set; }
         public virtual String Version { get; set; }
@@ -79,6 +80,17 @@ namespace Aliyun.Acs.Core
             }
         }
 
+        public Dictionary<String, String> BodyParameters
+        {
+            get
+            {
+                return bodyParameters;
+            }
+            set
+            {
+                bodyParameters = value;
+            }
+        }
 
         public AcsRequest(String product)
             : base(null)

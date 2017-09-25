@@ -1,3 +1,7 @@
+2017-09-25 Version: 1.1.6
+1, 修改post方式不能传输body的bug
+2, 修改ROA方式调用的相关bug
+
 2017-09-06 Version: 1.1.6
 1, 修改IoT套件美西和新加坡节点的endpoint
 

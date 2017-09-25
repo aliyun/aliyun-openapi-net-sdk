@@ -66,11 +66,12 @@ namespace Aliyun.Acs.Core.Auth
                 sortMap.Add(uriParts[1], null);
             }
             StringBuilder queryBuilder = new StringBuilder(uriParts[0]);
-            if (0 < sortMap.Count)
+            var sortedDictionary = SortDictionary(sortMap);
+            if (0 < sortedDictionary.Count)
             {
                 queryBuilder.Append("?");
             }
-            foreach (var e in sortMap)
+            foreach (var e in sortedDictionary)
             {
                 queryBuilder.Append(e.Key);
                 if (null != e.Value)
@@ -100,8 +101,11 @@ namespace Aliyun.Acs.Core.Auth
                     sortMap.Add(key, val);
                 }
             }
+
+            var sortedDictionary = SortDictionary(sortMap);
+
             StringBuilder headerBuilder = new StringBuilder();
-            foreach (var e in sortMap)
+            foreach (var e in sortedDictionary)
             {
                 headerBuilder.Append(e.Key);
                 headerBuilder.Append(':').Append(e.Value);
@@ -159,6 +163,12 @@ namespace Aliyun.Acs.Core.Auth
             if (null == composer)
                 composer = new RoaSignatureComposer();
             return composer;
+        }
+
+        private static IDictionary<string, string> SortDictionary(Dictionary<string, string> dic)
+        {
+            IDictionary<string, string> sortedDictionary = new SortedDictionary<string, string>(dic, StringComparer.Ordinal);
+            return sortedDictionary;
         }
     }
 }

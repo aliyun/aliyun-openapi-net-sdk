@@ -23,6 +23,7 @@ namespace Aliyun.Acs.Core.Http
     {
         XML,
         JSON,
+        FORM,
         RAW
     }
 }
