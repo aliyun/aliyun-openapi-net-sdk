@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeOperatorPermissionResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string privileges;
 
 		private string createdTime;
 
 		private string expiredTime;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Privileges
 		{

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeVpcZoneNosResponse : AcsResponse
 	{
 
-		private List<VpcZoneId> items;
+		private string requestId;
 
-		public List<VpcZoneId> Items
+		private List<DescribeVpcZoneNos_VpcZoneId> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeVpcZoneNos_VpcZoneId> Items
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class VpcZoneId{
+		public class DescribeVpcZoneNos_VpcZoneId
+		{
 
 			private string zoneId;
 

@@ -44,25 +44,25 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstanceNetworkDetailResponse.BackendLatency = context.StringValue("DescribeDBInstanceNetworkDetail.BackendLatency");
 			describeDBInstanceNetworkDetailResponse.NetworkErrors = context.StringValue("DescribeDBInstanceNetworkDetail.NetworkErrors");
 
-			List<DescribeDBInstanceNetworkDetailResponse.NetworkKey> networkDetail = new List<DescribeDBInstanceNetworkDetailResponse.NetworkKey>();
+			List<DescribeDBInstanceNetworkDetailResponse.DescribeDBInstanceNetworkDetail_NetworkKey> describeDBInstanceNetworkDetailResponse_networkDetail = new List<DescribeDBInstanceNetworkDetailResponse.DescribeDBInstanceNetworkDetail_NetworkKey>();
 			for (int i = 0; i < context.Length("DescribeDBInstanceNetworkDetail.NetworkDetail.Length"); i++) {
-				DescribeDBInstanceNetworkDetailResponse.NetworkKey networkKey = new DescribeDBInstanceNetworkDetailResponse.NetworkKey();
+				DescribeDBInstanceNetworkDetailResponse.DescribeDBInstanceNetworkDetail_NetworkKey networkKey = new DescribeDBInstanceNetworkDetailResponse.DescribeDBInstanceNetworkDetail_NetworkKey();
 				networkKey.Key = context.StringValue("DescribeDBInstanceNetworkDetail.NetworkDetail["+ i +"].Key");
 				networkKey.Unit = context.StringValue("DescribeDBInstanceNetworkDetail.NetworkDetail["+ i +"].Unit");
 
-				List<DescribeDBInstanceNetworkDetailResponse.NetworkKey.NetworkValue> values = new List<DescribeDBInstanceNetworkDetailResponse.NetworkKey.NetworkValue>();
+				List<DescribeDBInstanceNetworkDetailResponse.DescribeDBInstanceNetworkDetail_NetworkKey.DescribeDBInstanceNetworkDetail_NetworkValue> networkKey_values = new List<DescribeDBInstanceNetworkDetailResponse.DescribeDBInstanceNetworkDetail_NetworkKey.DescribeDBInstanceNetworkDetail_NetworkValue>();
 				for (int j = 0; j < context.Length("DescribeDBInstanceNetworkDetail.NetworkDetail["+ i +"].Values.Length"); j++) {
-					DescribeDBInstanceNetworkDetailResponse.NetworkKey.NetworkValue networkValue = new DescribeDBInstanceNetworkDetailResponse.NetworkKey.NetworkValue();
-					networkValue.Value = context.StringValue("DescribeDBInstanceNetworkDetail.NetworkDetail["+ i +"].Values["+ j +"].Value");
+					DescribeDBInstanceNetworkDetailResponse.DescribeDBInstanceNetworkDetail_NetworkKey.DescribeDBInstanceNetworkDetail_NetworkValue networkValue = new DescribeDBInstanceNetworkDetailResponse.DescribeDBInstanceNetworkDetail_NetworkKey.DescribeDBInstanceNetworkDetail_NetworkValue();
+					networkValue._Value = context.StringValue("DescribeDBInstanceNetworkDetail.NetworkDetail["+ i +"].Values["+ j +"].Value");
 					networkValue.DateTime = context.StringValue("DescribeDBInstanceNetworkDetail.NetworkDetail["+ i +"].Values["+ j +"].DateTime");
 
-					values.Add(networkValue);
+					networkKey_values.Add(networkValue);
 				}
-				networkKey.Values = values;
+				networkKey.Values = networkKey_values;
 
-				networkDetail.Add(networkKey);
+				describeDBInstanceNetworkDetailResponse_networkDetail.Add(networkKey);
 			}
-			describeDBInstanceNetworkDetailResponse.NetworkDetail = networkDetail;
+			describeDBInstanceNetworkDetailResponse.NetworkDetail = describeDBInstanceNetworkDetailResponse_networkDetail;
         
 			return describeDBInstanceNetworkDetailResponse;
         }

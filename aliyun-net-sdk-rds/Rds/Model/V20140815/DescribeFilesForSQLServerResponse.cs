@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeFilesForSQLServerResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string dBInstanceId;
 
 		private int? totalRecordCount;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageRecordCount;
 
-		private List<SQLServerUploadFile> items;
+		private List<DescribeFilesForSQLServer_SQLServerUploadFile> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DBInstanceId
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<SQLServerUploadFile> Items
+		public List<DescribeFilesForSQLServer_SQLServerUploadFile> Items
 		{
 			get
 			{
@@ -94,7 +108,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class SQLServerUploadFile{
+		public class DescribeFilesForSQLServer_SQLServerUploadFile
+		{
 
 			private string dBName;
 
@@ -114,7 +129,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string password;
 
-			private FileStatusEnum? fileStatus;
+			private string fileStatus;
 
 			private string description;
 
@@ -228,7 +243,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public FileStatusEnum? FileStatus
+			public string FileStatus
 			{
 				get
 				{
@@ -263,12 +278,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					creationTime = value;
 				}
 			}
-
-public enum FileStatusEnum {
-
-					Available,
-					Unavailable,
-}
 		}
 	}
 }

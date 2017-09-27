@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescibeImportsFromDatabaseResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalRecordCount;
 
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
-		private List<ImportResultFromDB> items;
+		private List<DescibeImportsFromDatabase_ImportResultFromDB> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalRecordCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<ImportResultFromDB> Items
+		public List<DescibeImportsFromDatabase_ImportResultFromDB> Items
 		{
 			get
 			{
@@ -80,13 +94,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class ImportResultFromDB{
+		public class DescibeImportsFromDatabase_ImportResultFromDB
+		{
 
 			private int? importId;
 
-			private ImportDataTypeEnum? importDataType;
+			private string importDataType;
 
-			private ImportDataStatusEnum? importDataStatus;
+			private string importDataStatus;
 
 			private string importDataStatusDescription;
 
@@ -104,7 +119,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public ImportDataTypeEnum? ImportDataType
+			public string ImportDataType
 			{
 				get
 				{
@@ -116,7 +131,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public ImportDataStatusEnum? ImportDataStatus
+			public string ImportDataStatus
 			{
 				get
 				{
@@ -151,26 +166,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					incrementalImportingTime = value;
 				}
 			}
-
-public enum ImportDataTypeEnum {
-
-					Incremental,
-					Full,
-}
-
-public enum ImportDataStatusEnum {
-
-					IncrementalImporting,
-					StopSyncing,
-					Canceled,
-					IncrementalWaiting,
-					Canceling,
-					Failed,
-					FullImporting,
-					Success,
-					NotStart,
-					FullExporting,
-}
 		}
 	}
 }

@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeOptimizeAdviceOnMissIndexResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string dBInstanceId;
 
 		private int? totalRecordsCount;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageRecordCount;
 
-		private List<AdviceOnMissIndex> items;
+		private List<DescribeOptimizeAdviceOnMissIndex_AdviceOnMissIndex> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DBInstanceId
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<AdviceOnMissIndex> Items
+		public List<DescribeOptimizeAdviceOnMissIndex_AdviceOnMissIndex> Items
 		{
 			get
 			{
@@ -94,7 +108,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class AdviceOnMissIndex{
+		public class DescribeOptimizeAdviceOnMissIndex_AdviceOnMissIndex
+		{
 
 			private string dBName;
 

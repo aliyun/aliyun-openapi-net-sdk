@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeTagsResponse : AcsResponse
 	{
 
-		private List<TagInfos> items;
+		private string requestId;
 
-		public List<TagInfos> Items
+		private List<DescribeTags_TagInfos> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeTags_TagInfos> Items
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class TagInfos{
+		public class DescribeTags_TagInfos
+		{
 
 			private string tagKey;
 

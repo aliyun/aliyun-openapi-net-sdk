@@ -32,16 +32,16 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeVpcZoneNosResponse.HttpResponse = context.HttpResponse;
 			describeVpcZoneNosResponse.RequestId = context.StringValue("DescribeVpcZoneNos.RequestId");
 
-			List<DescribeVpcZoneNosResponse.VpcZoneId> items = new List<DescribeVpcZoneNosResponse.VpcZoneId>();
+			List<DescribeVpcZoneNosResponse.DescribeVpcZoneNos_VpcZoneId> describeVpcZoneNosResponse_items = new List<DescribeVpcZoneNosResponse.DescribeVpcZoneNos_VpcZoneId>();
 			for (int i = 0; i < context.Length("DescribeVpcZoneNos.Items.Length"); i++) {
-				DescribeVpcZoneNosResponse.VpcZoneId vpcZoneId = new DescribeVpcZoneNosResponse.VpcZoneId();
+				DescribeVpcZoneNosResponse.DescribeVpcZoneNos_VpcZoneId vpcZoneId = new DescribeVpcZoneNosResponse.DescribeVpcZoneNos_VpcZoneId();
 				vpcZoneId.ZoneId = context.StringValue("DescribeVpcZoneNos.Items["+ i +"].ZoneId");
 				vpcZoneId.Region = context.StringValue("DescribeVpcZoneNos.Items["+ i +"].Region");
 				vpcZoneId.SubDomain = context.StringValue("DescribeVpcZoneNos.Items["+ i +"].SubDomain");
 
-				items.Add(vpcZoneId);
+				describeVpcZoneNosResponse_items.Add(vpcZoneId);
 			}
-			describeVpcZoneNosResponse.Items = items;
+			describeVpcZoneNosResponse.Items = describeVpcZoneNosResponse_items;
         
 			return describeVpcZoneNosResponse;
         }

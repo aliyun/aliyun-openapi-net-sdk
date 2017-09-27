@@ -29,30 +29,34 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class SwitchDBInstanceChargeTypeRequest : RpcAcsRequest<SwitchDBInstanceChargeTypeResponse>
     {
         public SwitchDBInstanceChargeTypeRequest()
-            : base("Rds", "2014-08-15", "SwitchDBInstanceChargeType")
+            : base("Rds", "2014-08-15", "SwitchDBInstanceChargeType", "rds", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
+		private string ownerAccount;
+
+		private string action;
 
 		private string dBInstanceId;
 
-		private string ownerAccount;
+		private long? ownerId;
 
-		public long? OwnerId
+		private string accessKeyId;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -69,16 +73,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string OwnerAccount
 		{
 			get
 			{
-				return resourceOwnerId;
+				return ownerAccount;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -95,16 +112,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
+		public long? OwnerId
 		{
 			get
 			{
-				return ownerAccount;
+				return ownerId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

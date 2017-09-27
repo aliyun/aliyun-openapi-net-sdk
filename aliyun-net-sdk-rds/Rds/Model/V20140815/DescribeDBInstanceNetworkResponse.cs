@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceNetworkResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string dBInstanceId;
 
 		private string startTime;
 
 		private string endTime;
 
-		private List<Topology> _topologys;
+		private List<DescribeDBInstanceNetwork_TopologyItem> topology;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DBInstanceId
 		{
@@ -68,19 +82,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<Topology> Topologys
+		public List<DescribeDBInstanceNetwork_TopologyItem> Topology
 		{
 			get
 			{
-				return _topologys;
+				return topology;
 			}
 			set	
 			{
-				_topologys = value;
+				topology = value;
 			}
 		}
 
-		public class Topology{
+		public class DescribeDBInstanceNetwork_TopologyItem
+		{
 
 			private string startPoint;
 

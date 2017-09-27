@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeOptimizeAdviceOnBigTableResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalRecordsCount;
 
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
-		private List<AdviceOnBigTable> items;
+		private List<DescribeOptimizeAdviceOnBigTable_AdviceOnBigTable> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalRecordsCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<AdviceOnBigTable> Items
+		public List<DescribeOptimizeAdviceOnBigTable_AdviceOnBigTable> Items
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class AdviceOnBigTable{
+		public class DescribeOptimizeAdviceOnBigTable_AdviceOnBigTable
+		{
 
 			private string dBName;
 

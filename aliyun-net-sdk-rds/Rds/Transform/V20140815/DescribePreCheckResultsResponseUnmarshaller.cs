@@ -33,17 +33,17 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describePreCheckResultsResponse.RequestId = context.StringValue("DescribePreCheckResults.RequestId");
 			describePreCheckResultsResponse.DBInstanceId = context.StringValue("DescribePreCheckResults.DBInstanceId");
 
-			List<DescribePreCheckResultsResponse.PreCheckResult> items = new List<DescribePreCheckResultsResponse.PreCheckResult>();
+			List<DescribePreCheckResultsResponse.DescribePreCheckResults_PreCheckResult> describePreCheckResultsResponse_items = new List<DescribePreCheckResultsResponse.DescribePreCheckResults_PreCheckResult>();
 			for (int i = 0; i < context.Length("DescribePreCheckResults.Items.Length"); i++) {
-				DescribePreCheckResultsResponse.PreCheckResult preCheckResult = new DescribePreCheckResultsResponse.PreCheckResult();
+				DescribePreCheckResultsResponse.DescribePreCheckResults_PreCheckResult preCheckResult = new DescribePreCheckResultsResponse.DescribePreCheckResults_PreCheckResult();
 				preCheckResult.PreCheckName = context.StringValue("DescribePreCheckResults.Items["+ i +"].PreCheckName");
-				preCheckResult.PreCheckResult_ = context.StringValue("DescribePreCheckResults.Items["+ i +"].PreCheckResult");
+				preCheckResult.PreCheckResult = context.StringValue("DescribePreCheckResults.Items["+ i +"].PreCheckResult");
 				preCheckResult.FailReasion = context.StringValue("DescribePreCheckResults.Items["+ i +"].FailReasion");
 				preCheckResult.RepairMethod = context.StringValue("DescribePreCheckResults.Items["+ i +"].RepairMethod");
 
-				items.Add(preCheckResult);
+				describePreCheckResultsResponse_items.Add(preCheckResult);
 			}
-			describePreCheckResultsResponse.Items = items;
+			describePreCheckResultsResponse.Items = describePreCheckResultsResponse_items;
         
 			return describePreCheckResultsResponse;
         }

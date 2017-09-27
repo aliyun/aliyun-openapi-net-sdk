@@ -29,42 +29,48 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CheckResourceRequest : RpcAcsRequest<CheckResourceResponse>
     {
         public CheckResourceRequest()
-            : base("Rds", "2014-08-15", "CheckResource")
+            : base("Rds", "2014-08-15", "CheckResource", "rds", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
+		private string ownerAccount;
 
-		private string engine;
-
-		private string dBInstanceId;
+		private string specifyCount;
 
 		private string engineVersion;
 
+		private long? ownerId;
+
+		private string accessKeyId;
+
 		private string dBInstanceClass;
+
+		private string engine;
+
+		private string regionId;
+
+		private string action;
 
 		private string zoneId;
 
 		private string dBInstanceUseType;
 
-		private string specifyCount;
+		private string dBInstanceId;
 
-		private string ownerAccount;
-
-		public long? OwnerId
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -81,42 +87,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string OwnerAccount
 		{
 			get
 			{
-				return resourceOwnerId;
+				return ownerAccount;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
-		public string Engine
+		public string SpecifyCount
 		{
 			get
 			{
-				return engine;
+				return specifyCount;
 			}
 			set	
 			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				specifyCount = value;
+				DictionaryUtil.Add(QueryParameters, "SpecifyCount", value);
 			}
 		}
 
@@ -133,6 +126,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
 		public string DBInstanceClass
 		{
 			get
@@ -143,6 +162,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceClass = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -172,29 +230,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SpecifyCount
+		public string DBInstanceId
 		{
 			get
 			{
-				return specifyCount;
+				return dBInstanceId;
 			}
 			set	
 			{
-				specifyCount = value;
-				DictionaryUtil.Add(QueryParameters, "SpecifyCount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

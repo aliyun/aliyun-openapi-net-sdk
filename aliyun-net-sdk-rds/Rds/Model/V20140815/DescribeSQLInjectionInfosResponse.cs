@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeSQLInjectionInfosResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string engine;
 
 		private int? totalRecordCount;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageRecordCount;
 
-		private List<SQLInjectionInfo> items;
+		private List<DescribeSQLInjectionInfos_SQLInjectionInfo> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Engine
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<SQLInjectionInfo> Items
+		public List<DescribeSQLInjectionInfos_SQLInjectionInfo> Items
 		{
 			get
 			{
@@ -94,7 +108,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class SQLInjectionInfo{
+		public class DescribeSQLInjectionInfos_SQLInjectionInfo
+		{
 
 			private string dBName;
 

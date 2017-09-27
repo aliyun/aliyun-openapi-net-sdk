@@ -32,15 +32,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDampPoliciesByCidResponse.HttpResponse = context.HttpResponse;
 			describeDampPoliciesByCidResponse.RequestId = context.StringValue("DescribeDampPoliciesByCid.RequestId");
 
-			List<DescribeDampPoliciesByCidResponse.Policy> policies = new List<DescribeDampPoliciesByCidResponse.Policy>();
+			List<DescribeDampPoliciesByCidResponse.DescribeDampPoliciesByCid_Policy> describeDampPoliciesByCidResponse_policies = new List<DescribeDampPoliciesByCidResponse.DescribeDampPoliciesByCid_Policy>();
 			for (int i = 0; i < context.Length("DescribeDampPoliciesByCid.Policies.Length"); i++) {
-				DescribeDampPoliciesByCidResponse.Policy policy = new DescribeDampPoliciesByCidResponse.Policy();
+				DescribeDampPoliciesByCidResponse.DescribeDampPoliciesByCid_Policy policy = new DescribeDampPoliciesByCidResponse.DescribeDampPoliciesByCid_Policy();
 				policy.PolicyName = context.StringValue("DescribeDampPoliciesByCid.Policies["+ i +"].PolicyName");
 				policy.Comment = context.StringValue("DescribeDampPoliciesByCid.Policies["+ i +"].Comment");
 
-				policies.Add(policy);
+				describeDampPoliciesByCidResponse_policies.Add(policy);
 			}
-			describeDampPoliciesByCidResponse.Policies = policies;
+			describeDampPoliciesByCidResponse.Policies = describeDampPoliciesByCidResponse_policies;
         
 			return describeDampPoliciesByCidResponse;
         }

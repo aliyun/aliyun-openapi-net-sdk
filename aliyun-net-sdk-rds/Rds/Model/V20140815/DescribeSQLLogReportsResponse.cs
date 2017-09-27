@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeSQLLogReportsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalRecordCount;
 
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
-		private List<Item> items;
+		private List<DescribeSQLLogReports_Item> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalRecordCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<Item> Items
+		public List<DescribeSQLLogReports_Item> Items
 		{
 			get
 			{
@@ -80,13 +94,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class Item{
+		public class DescribeSQLLogReports_Item
+		{
 
 			private string reportTime;
 
-			private List<LatencyTopNItem> latencyTopNItems;
+			private List<DescribeSQLLogReports_LatencyTopNItem> latencyTopNItems;
 
-			private List<QPSTopNItem> qPSTopNItems;
+			private List<DescribeSQLLogReports_QPSTopNItem> qPSTopNItems;
 
 			public string ReportTime
 			{
@@ -100,7 +115,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<LatencyTopNItem> LatencyTopNItems
+			public List<DescribeSQLLogReports_LatencyTopNItem> LatencyTopNItems
 			{
 				get
 				{
@@ -112,7 +127,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<QPSTopNItem> QPSTopNItems
+			public List<DescribeSQLLogReports_QPSTopNItem> QPSTopNItems
 			{
 				get
 				{
@@ -124,7 +139,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public class LatencyTopNItem{
+			public class DescribeSQLLogReports_LatencyTopNItem
+			{
 
 				private string sQLText;
 
@@ -169,7 +185,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public class QPSTopNItem{
+			public class DescribeSQLLogReports_QPSTopNItem
+			{
 
 				private string sQLText;
 

@@ -35,21 +35,22 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstancesResponse.TotalRecordCount = context.IntegerValue("DescribeDBInstances.TotalRecordCount");
 			describeDBInstancesResponse.PageRecordCount = context.IntegerValue("DescribeDBInstances.PageRecordCount");
 
-			List<DescribeDBInstancesResponse.DBInstance> items = new List<DescribeDBInstancesResponse.DBInstance>();
+			List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance> describeDBInstancesResponse_items = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance>();
 			for (int i = 0; i < context.Length("DescribeDBInstances.Items.Length"); i++) {
-				DescribeDBInstancesResponse.DBInstance dBInstance = new DescribeDBInstancesResponse.DBInstance();
+				DescribeDBInstancesResponse.DescribeDBInstances_DBInstance dBInstance = new DescribeDBInstancesResponse.DescribeDBInstances_DBInstance();
 				dBInstance.InsId = context.IntegerValue("DescribeDBInstances.Items["+ i +"].InsId");
 				dBInstance.DBInstanceId = context.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceId");
 				dBInstance.DBInstanceDescription = context.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceDescription");
 				dBInstance.PayType = context.StringValue("DescribeDBInstances.Items["+ i +"].PayType");
-				dBInstance.DBInstanceType = context.EnumValue<DescribeDBInstancesResponse.DBInstance.DBInstanceTypeEnum>("DescribeDBInstances.Items["+ i +"].DBInstanceType");
+				dBInstance.DBInstanceType = context.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceType");
 				dBInstance.RegionId = context.StringValue("DescribeDBInstances.Items["+ i +"].RegionId");
 				dBInstance.ExpireTime = context.StringValue("DescribeDBInstances.Items["+ i +"].ExpireTime");
-				dBInstance.DBInstanceStatus = context.EnumValue<DescribeDBInstancesResponse.DBInstance.DBInstanceStatusEnum>("DescribeDBInstances.Items["+ i +"].DBInstanceStatus");
+				dBInstance.DBInstanceStatus = context.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceStatus");
 				dBInstance.Engine = context.StringValue("DescribeDBInstances.Items["+ i +"].Engine");
-				dBInstance.DBInstanceNetType = context.EnumValue<DescribeDBInstancesResponse.DBInstance.DBInstanceNetTypeEnum>("DescribeDBInstances.Items["+ i +"].DBInstanceNetType");
-				dBInstance.ConnectionMode = context.EnumValue<DescribeDBInstancesResponse.DBInstance.ConnectionModeEnum>("DescribeDBInstances.Items["+ i +"].ConnectionMode");
-				dBInstance.LockMode = context.EnumValue<DescribeDBInstancesResponse.DBInstance.LockModeEnum>("DescribeDBInstances.Items["+ i +"].LockMode");
+				dBInstance.DBInstanceNetType = context.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceNetType");
+				dBInstance.ConnectionMode = context.StringValue("DescribeDBInstances.Items["+ i +"].ConnectionMode");
+				dBInstance.LockMode = context.StringValue("DescribeDBInstances.Items["+ i +"].LockMode");
+				dBInstance.DBInstanceClass = context.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceClass");
 				dBInstance.InstanceNetworkType = context.StringValue("DescribeDBInstances.Items["+ i +"].InstanceNetworkType");
 				dBInstance.LockReason = context.StringValue("DescribeDBInstances.Items["+ i +"].LockReason");
 				dBInstance.ZoneId = context.StringValue("DescribeDBInstances.Items["+ i +"].ZoneId");
@@ -60,19 +61,21 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstance.TempDBInstanceId = context.StringValue("DescribeDBInstances.Items["+ i +"].TempDBInstanceId");
 				dBInstance.MasterInstanceId = context.StringValue("DescribeDBInstances.Items["+ i +"].MasterInstanceId");
 				dBInstance.VpcId = context.StringValue("DescribeDBInstances.Items["+ i +"].VpcId");
+				dBInstance.VSwitchId = context.StringValue("DescribeDBInstances.Items["+ i +"].VSwitchId");
+				dBInstance.ResourceGroupId = context.StringValue("DescribeDBInstances.Items["+ i +"].ResourceGroupId");
 
-				List<DescribeDBInstancesResponse.DBInstance.ReadOnlyDBInstanceId> readOnlyDBInstanceIds = new List<DescribeDBInstancesResponse.DBInstance.ReadOnlyDBInstanceId>();
+				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId> dBInstance_readOnlyDBInstanceIds = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId>();
 				for (int j = 0; j < context.Length("DescribeDBInstances.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {
-					DescribeDBInstancesResponse.DBInstance.ReadOnlyDBInstanceId readOnlyDBInstanceId = new DescribeDBInstancesResponse.DBInstance.ReadOnlyDBInstanceId();
+					DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId readOnlyDBInstanceId = new DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId();
 					readOnlyDBInstanceId.DBInstanceId = context.StringValue("DescribeDBInstances.Items["+ i +"].ReadOnlyDBInstanceIds["+ j +"].DBInstanceId");
 
-					readOnlyDBInstanceIds.Add(readOnlyDBInstanceId);
+					dBInstance_readOnlyDBInstanceIds.Add(readOnlyDBInstanceId);
 				}
-				dBInstance.ReadOnlyDBInstanceIds = readOnlyDBInstanceIds;
+				dBInstance.ReadOnlyDBInstanceIds = dBInstance_readOnlyDBInstanceIds;
 
-				items.Add(dBInstance);
+				describeDBInstancesResponse_items.Add(dBInstance);
 			}
-			describeDBInstancesResponse.Items = items;
+			describeDBInstancesResponse.Items = describeDBInstancesResponse_items;
         
 			return describeDBInstancesResponse;
         }

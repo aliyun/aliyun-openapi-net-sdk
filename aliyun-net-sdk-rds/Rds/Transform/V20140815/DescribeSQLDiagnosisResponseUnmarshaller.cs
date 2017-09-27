@@ -32,11 +32,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeSQLDiagnosisResponse.HttpResponse = context.HttpResponse;
 			describeSQLDiagnosisResponse.RequestId = context.StringValue("DescribeSQLDiagnosis.RequestId");
 
-			List<string> sQLList = new List<string>();
+			List<string> describeSQLDiagnosisResponse_sQLList = new List<string>();
 			for (int i = 0; i < context.Length("DescribeSQLDiagnosis.SQLList.Length"); i++) {
-				sQLList.Add(context.StringValue("DescribeSQLDiagnosis.SQLList["+ i +"]"));
+				describeSQLDiagnosisResponse_sQLList.Add(context.StringValue("DescribeSQLDiagnosis.SQLList["+ i +"]"));
 			}
-			describeSQLDiagnosisResponse.SQLList = sQLList;
+			describeSQLDiagnosisResponse.SQLList = describeSQLDiagnosisResponse_sQLList;
         
 			return describeSQLDiagnosisResponse;
         }

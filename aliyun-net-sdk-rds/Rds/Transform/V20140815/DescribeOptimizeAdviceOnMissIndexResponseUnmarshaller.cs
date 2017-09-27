@@ -36,17 +36,17 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeOptimizeAdviceOnMissIndexResponse.PageNumber = context.IntegerValue("DescribeOptimizeAdviceOnMissIndex.PageNumber");
 			describeOptimizeAdviceOnMissIndexResponse.PageRecordCount = context.IntegerValue("DescribeOptimizeAdviceOnMissIndex.PageRecordCount");
 
-			List<DescribeOptimizeAdviceOnMissIndexResponse.AdviceOnMissIndex> items = new List<DescribeOptimizeAdviceOnMissIndexResponse.AdviceOnMissIndex>();
+			List<DescribeOptimizeAdviceOnMissIndexResponse.DescribeOptimizeAdviceOnMissIndex_AdviceOnMissIndex> describeOptimizeAdviceOnMissIndexResponse_items = new List<DescribeOptimizeAdviceOnMissIndexResponse.DescribeOptimizeAdviceOnMissIndex_AdviceOnMissIndex>();
 			for (int i = 0; i < context.Length("DescribeOptimizeAdviceOnMissIndex.Items.Length"); i++) {
-				DescribeOptimizeAdviceOnMissIndexResponse.AdviceOnMissIndex adviceOnMissIndex = new DescribeOptimizeAdviceOnMissIndexResponse.AdviceOnMissIndex();
+				DescribeOptimizeAdviceOnMissIndexResponse.DescribeOptimizeAdviceOnMissIndex_AdviceOnMissIndex adviceOnMissIndex = new DescribeOptimizeAdviceOnMissIndexResponse.DescribeOptimizeAdviceOnMissIndex_AdviceOnMissIndex();
 				adviceOnMissIndex.DBName = context.StringValue("DescribeOptimizeAdviceOnMissIndex.Items["+ i +"].DBName");
 				adviceOnMissIndex.TableName = context.StringValue("DescribeOptimizeAdviceOnMissIndex.Items["+ i +"].TableName");
 				adviceOnMissIndex.QueryColumn = context.StringValue("DescribeOptimizeAdviceOnMissIndex.Items["+ i +"].QueryColumn");
 				adviceOnMissIndex.SQLText = context.StringValue("DescribeOptimizeAdviceOnMissIndex.Items["+ i +"].SQLText");
 
-				items.Add(adviceOnMissIndex);
+				describeOptimizeAdviceOnMissIndexResponse_items.Add(adviceOnMissIndex);
 			}
-			describeOptimizeAdviceOnMissIndexResponse.Items = items;
+			describeOptimizeAdviceOnMissIndexResponse.Items = describeOptimizeAdviceOnMissIndexResponse_items;
         
 			return describeOptimizeAdviceOnMissIndexResponse;
         }

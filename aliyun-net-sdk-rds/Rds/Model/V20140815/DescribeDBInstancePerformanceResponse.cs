@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstancePerformanceResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string dBInstanceId;
 
 		private string engine;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string endTime;
 
-		private List<PerformanceKey> performanceKeys;
+		private List<DescribeDBInstancePerformance_PerformanceKey> performanceKeys;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DBInstanceId
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<PerformanceKey> PerformanceKeys
+		public List<DescribeDBInstancePerformance_PerformanceKey> PerformanceKeys
 		{
 			get
 			{
@@ -94,7 +108,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class PerformanceKey{
+		public class DescribeDBInstancePerformance_PerformanceKey
+		{
 
 			private string key;
 
@@ -102,7 +117,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string valueFormat;
 
-			private List<PerformanceValue> values;
+			private List<DescribeDBInstancePerformance_PerformanceValue> values;
 
 			public string Key
 			{
@@ -140,7 +155,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<PerformanceValue> Values
+			public List<DescribeDBInstancePerformance_PerformanceValue> Values
 			{
 				get
 				{
@@ -152,21 +167,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public class PerformanceValue{
+			public class DescribeDBInstancePerformance_PerformanceValue
+			{
 
-				private string value_;
+				private string _value;
 
 				private string date;
 
-				public string Value
+				public string _Value
 				{
 					get
 					{
-						return value_;
+						return _value;
 					}
 					set	
 					{
-						value_ = value;
+						_value = value;
 					}
 				}
 

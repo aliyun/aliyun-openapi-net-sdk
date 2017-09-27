@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeRegionsResponse : AcsResponse
 	{
 
-		private List<RDSRegion> regions;
+		private string requestId;
 
-		public List<RDSRegion> Regions
+		private List<DescribeRegions_RDSRegion> regions;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeRegions_RDSRegion> Regions
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class RDSRegion{
+		public class DescribeRegions_RDSRegion
+		{
 
 			private string regionId;
 

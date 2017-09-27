@@ -35,18 +35,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeImportsForSQLServerResponse.PageNumber = context.IntegerValue("DescribeImportsForSQLServer.PageNumber");
 			describeImportsForSQLServerResponse.SQLItemsCounts = context.IntegerValue("DescribeImportsForSQLServer.SQLItemsCounts");
 
-			List<DescribeImportsForSQLServerResponse.SQLServerImport> items = new List<DescribeImportsForSQLServerResponse.SQLServerImport>();
+			List<DescribeImportsForSQLServerResponse.DescribeImportsForSQLServer_SQLServerImport> describeImportsForSQLServerResponse_items = new List<DescribeImportsForSQLServerResponse.DescribeImportsForSQLServer_SQLServerImport>();
 			for (int i = 0; i < context.Length("DescribeImportsForSQLServer.Items.Length"); i++) {
-				DescribeImportsForSQLServerResponse.SQLServerImport sQLServerImport = new DescribeImportsForSQLServerResponse.SQLServerImport();
+				DescribeImportsForSQLServerResponse.DescribeImportsForSQLServer_SQLServerImport sQLServerImport = new DescribeImportsForSQLServerResponse.DescribeImportsForSQLServer_SQLServerImport();
 				sQLServerImport.ImportId = context.IntegerValue("DescribeImportsForSQLServer.Items["+ i +"].ImportId");
 				sQLServerImport.FileName = context.StringValue("DescribeImportsForSQLServer.Items["+ i +"].FileName");
 				sQLServerImport.DBName = context.StringValue("DescribeImportsForSQLServer.Items["+ i +"].DBName");
-				sQLServerImport.ImportStatus = context.EnumValue<DescribeImportsForSQLServerResponse.SQLServerImport.ImportStatusEnum>("DescribeImportsForSQLServer.Items["+ i +"].ImportStatus");
+				sQLServerImport.ImportStatus = context.StringValue("DescribeImportsForSQLServer.Items["+ i +"].ImportStatus");
 				sQLServerImport.StartTime = context.StringValue("DescribeImportsForSQLServer.Items["+ i +"].StartTime");
 
-				items.Add(sQLServerImport);
+				describeImportsForSQLServerResponse_items.Add(sQLServerImport);
 			}
-			describeImportsForSQLServerResponse.Items = items;
+			describeImportsForSQLServerResponse.Items = describeImportsForSQLServerResponse_items;
         
 			return describeImportsForSQLServerResponse;
         }

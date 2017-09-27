@@ -21,165 +21,165 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeParameterTemplatesResponse : AcsResponse
-    {
+	public class DescribeParameterTemplatesResponse : AcsResponse
+	{
 
-        private string engine;
+		private string requestId;
 
-        private string engineVersion;
+		private string engine;
 
-        private string parameterCount;
+		private string engineVersion;
 
-        private List<TemplateRecord> parameters;
+		private string parameterCount;
 
-        public string Engine
-        {
-            get
-            {
-                return engine;
-            }
-            set
-            {
-                engine = value;
-            }
-        }
+		private List<DescribeParameterTemplates_TemplateRecord> parameters;
 
-        public string EngineVersion
-        {
-            get
-            {
-                return engineVersion;
-            }
-            set
-            {
-                engineVersion = value;
-            }
-        }
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
-        public string ParameterCount
-        {
-            get
-            {
-                return parameterCount;
-            }
-            set
-            {
-                parameterCount = value;
-            }
-        }
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+			}
+		}
 
-        public List<TemplateRecord> Parameters
-        {
-            get
-            {
-                return parameters;
-            }
-            set
-            {
-                parameters = value;
-            }
-        }
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+			}
+		}
 
-        public class TemplateRecord
-        {
+		public string ParameterCount
+		{
+			get
+			{
+				return parameterCount;
+			}
+			set	
+			{
+				parameterCount = value;
+			}
+		}
 
-            private string parameterName;
+		public List<DescribeParameterTemplates_TemplateRecord> Parameters
+		{
+			get
+			{
+				return parameters;
+			}
+			set	
+			{
+				parameters = value;
+			}
+		}
 
-            private string parameterValue;
+		public class DescribeParameterTemplates_TemplateRecord
+		{
 
-            private ForceModifyEnum? forceModify;
+			private string parameterName;
 
-            private ForceRestartEnum? forceRestart;
+			private string parameterValue;
 
-            private string checkingCode;
+			private string forceModify;
 
-            private string parameterDescription;
+			private string forceRestart;
 
-            public string ParameterName
-            {
-                get
-                {
-                    return parameterName;
-                }
-                set
-                {
-                    parameterName = value;
-                }
-            }
+			private string checkingCode;
 
-            public string ParameterValue
-            {
-                get
-                {
-                    return parameterValue;
-                }
-                set
-                {
-                    parameterValue = value;
-                }
-            }
+			private string parameterDescription;
 
-            public ForceModifyEnum? ForceModify
-            {
-                get
-                {
-                    return forceModify;
-                }
-                set
-                {
-                    forceModify = value;
-                }
-            }
+			public string ParameterName
+			{
+				get
+				{
+					return parameterName;
+				}
+				set	
+				{
+					parameterName = value;
+				}
+			}
 
-            public ForceRestartEnum? ForceRestart
-            {
-                get
-                {
-                    return forceRestart;
-                }
-                set
-                {
-                    forceRestart = value;
-                }
-            }
+			public string ParameterValue
+			{
+				get
+				{
+					return parameterValue;
+				}
+				set	
+				{
+					parameterValue = value;
+				}
+			}
 
-            public string CheckingCode
-            {
-                get
-                {
-                    return checkingCode;
-                }
-                set
-                {
-                    checkingCode = value;
-                }
-            }
+			public string ForceModify
+			{
+				get
+				{
+					return forceModify;
+				}
+				set	
+				{
+					forceModify = value;
+				}
+			}
 
-            public string ParameterDescription
-            {
-                get
-                {
-                    return parameterDescription;
-                }
-                set
-                {
-                    parameterDescription = value;
-                }
-            }
+			public string ForceRestart
+			{
+				get
+				{
+					return forceRestart;
+				}
+				set	
+				{
+					forceRestart = value;
+				}
+			}
 
-            public enum ForceModifyEnum
-            {
+			public string CheckingCode
+			{
+				get
+				{
+					return checkingCode;
+				}
+				set	
+				{
+					checkingCode = value;
+				}
+			}
 
-                TRUE,
-                FALSE,
-            }
-
-            public enum ForceRestartEnum
-            {
-
-                FALSE,
-                TRUE,
-            }
-        }
-    }
+			public string ParameterDescription
+			{
+				get
+				{
+					return parameterDescription;
+				}
+				set	
+				{
+					parameterDescription = value;
+				}
+			}
+		}
+	}
 }

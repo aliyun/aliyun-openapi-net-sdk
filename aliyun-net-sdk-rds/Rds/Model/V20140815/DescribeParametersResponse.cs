@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeParametersResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string engine;
 
 		private string engineVersion;
 
-		private List<DBInstanceParameter> configParameters;
+		private List<DescribeParameters_DBInstanceParameter> configParameters;
 
-		private List<DBInstanceParameter> runningParameters;
+		private List<DescribeParameters_DBInstanceParameter> runningParameters;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Engine
 		{
@@ -56,7 +70,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<DBInstanceParameter> ConfigParameters
+		public List<DescribeParameters_DBInstanceParameter> ConfigParameters
 		{
 			get
 			{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<DBInstanceParameter> RunningParameters
+		public List<DescribeParameters_DBInstanceParameter> RunningParameters
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class DBInstanceParameter{
+		public class DescribeParameters_DBInstanceParameter
+		{
 
 			private string parameterName;
 
@@ -124,6 +139,5 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 		}
-        
 	}
 }

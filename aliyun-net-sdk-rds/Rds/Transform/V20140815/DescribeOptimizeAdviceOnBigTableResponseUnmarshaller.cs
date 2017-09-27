@@ -35,18 +35,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeOptimizeAdviceOnBigTableResponse.PageNumber = context.IntegerValue("DescribeOptimizeAdviceOnBigTable.PageNumber");
 			describeOptimizeAdviceOnBigTableResponse.PageRecordCount = context.IntegerValue("DescribeOptimizeAdviceOnBigTable.PageRecordCount");
 
-			List<DescribeOptimizeAdviceOnBigTableResponse.AdviceOnBigTable> items = new List<DescribeOptimizeAdviceOnBigTableResponse.AdviceOnBigTable>();
+			List<DescribeOptimizeAdviceOnBigTableResponse.DescribeOptimizeAdviceOnBigTable_AdviceOnBigTable> describeOptimizeAdviceOnBigTableResponse_items = new List<DescribeOptimizeAdviceOnBigTableResponse.DescribeOptimizeAdviceOnBigTable_AdviceOnBigTable>();
 			for (int i = 0; i < context.Length("DescribeOptimizeAdviceOnBigTable.Items.Length"); i++) {
-				DescribeOptimizeAdviceOnBigTableResponse.AdviceOnBigTable adviceOnBigTable = new DescribeOptimizeAdviceOnBigTableResponse.AdviceOnBigTable();
+				DescribeOptimizeAdviceOnBigTableResponse.DescribeOptimizeAdviceOnBigTable_AdviceOnBigTable adviceOnBigTable = new DescribeOptimizeAdviceOnBigTableResponse.DescribeOptimizeAdviceOnBigTable_AdviceOnBigTable();
 				adviceOnBigTable.DBName = context.StringValue("DescribeOptimizeAdviceOnBigTable.Items["+ i +"].DBName");
 				adviceOnBigTable.TableName = context.StringValue("DescribeOptimizeAdviceOnBigTable.Items["+ i +"].TableName");
 				adviceOnBigTable.TableSize = context.LongValue("DescribeOptimizeAdviceOnBigTable.Items["+ i +"].TableSize");
 				adviceOnBigTable.DataSize = context.LongValue("DescribeOptimizeAdviceOnBigTable.Items["+ i +"].DataSize");
 				adviceOnBigTable.IndexSize = context.LongValue("DescribeOptimizeAdviceOnBigTable.Items["+ i +"].IndexSize");
 
-				items.Add(adviceOnBigTable);
+				describeOptimizeAdviceOnBigTableResponse_items.Add(adviceOnBigTable);
 			}
-			describeOptimizeAdviceOnBigTableResponse.Items = items;
+			describeOptimizeAdviceOnBigTableResponse.Items = describeOptimizeAdviceOnBigTableResponse_items;
         
 			return describeOptimizeAdviceOnBigTableResponse;
         }

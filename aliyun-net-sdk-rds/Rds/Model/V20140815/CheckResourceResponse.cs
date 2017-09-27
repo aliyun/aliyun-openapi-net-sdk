@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class CheckResourceResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string specifyCount;
 
-		private List<Resource> resources;
+		private List<CheckResource_Resource> resources;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string SpecifyCount
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<Resource> Resources
+		public List<CheckResource_Resource> Resources
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class Resource{
+		public class CheckResource_Resource
+		{
 
 			private string dBInstanceAvailable;
 

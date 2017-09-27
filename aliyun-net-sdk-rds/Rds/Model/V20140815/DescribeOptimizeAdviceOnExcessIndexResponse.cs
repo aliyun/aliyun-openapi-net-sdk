@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeOptimizeAdviceOnExcessIndexResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalRecordsCount;
 
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
-		private List<AdviceOnExcessIndex> items;
+		private List<DescribeOptimizeAdviceOnExcessIndex_AdviceOnExcessIndex> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalRecordsCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<AdviceOnExcessIndex> Items
+		public List<DescribeOptimizeAdviceOnExcessIndex_AdviceOnExcessIndex> Items
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class AdviceOnExcessIndex{
+		public class DescribeOptimizeAdviceOnExcessIndex_AdviceOnExcessIndex
+		{
 
 			private string dBName;
 

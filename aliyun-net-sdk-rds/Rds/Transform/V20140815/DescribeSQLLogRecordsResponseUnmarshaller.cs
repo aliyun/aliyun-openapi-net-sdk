@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeSQLLogRecordsResponse.PageNumber = context.IntegerValue("DescribeSQLLogRecords.PageNumber");
 			describeSQLLogRecordsResponse.PageRecordCount = context.IntegerValue("DescribeSQLLogRecords.PageRecordCount");
 
-			List<DescribeSQLLogRecordsResponse.SQLRecord> items = new List<DescribeSQLLogRecordsResponse.SQLRecord>();
+			List<DescribeSQLLogRecordsResponse.DescribeSQLLogRecords_SQLRecord> describeSQLLogRecordsResponse_items = new List<DescribeSQLLogRecordsResponse.DescribeSQLLogRecords_SQLRecord>();
 			for (int i = 0; i < context.Length("DescribeSQLLogRecords.Items.Length"); i++) {
-				DescribeSQLLogRecordsResponse.SQLRecord sQLRecord = new DescribeSQLLogRecordsResponse.SQLRecord();
+				DescribeSQLLogRecordsResponse.DescribeSQLLogRecords_SQLRecord sQLRecord = new DescribeSQLLogRecordsResponse.DescribeSQLLogRecords_SQLRecord();
 				sQLRecord.DBName = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].DBName");
 				sQLRecord.AccountName = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].AccountName");
 				sQLRecord.HostAddress = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].HostAddress");
@@ -47,9 +47,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				sQLRecord.ExecuteTime = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].ExecuteTime");
 				sQLRecord.ThreadID = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].ThreadID");
 
-				items.Add(sQLRecord);
+				describeSQLLogRecordsResponse_items.Add(sQLRecord);
 			}
-			describeSQLLogRecordsResponse.Items = items;
+			describeSQLLogRecordsResponse.Items = describeSQLLogRecordsResponse_items;
         
 			return describeSQLLogRecordsResponse;
         }

@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeBackupPolicyResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? backupRetentionPeriod;
 
 		private string preferredNextBackupTime;
@@ -35,6 +37,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string backupLog;
 
 		private int? logBackupRetentionPeriod;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? BackupRetentionPeriod
 		{

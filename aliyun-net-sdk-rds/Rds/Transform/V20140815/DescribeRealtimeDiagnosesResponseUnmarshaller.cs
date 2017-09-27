@@ -36,17 +36,17 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeRealtimeDiagnosesResponse.PageNumber = context.IntegerValue("DescribeRealtimeDiagnoses.PageNumber");
 			describeRealtimeDiagnosesResponse.PageRecordCount = context.IntegerValue("DescribeRealtimeDiagnoses.PageRecordCount");
 
-			List<DescribeRealtimeDiagnosesResponse.RealtimeDiagnoseTasks> tasks = new List<DescribeRealtimeDiagnosesResponse.RealtimeDiagnoseTasks>();
+			List<DescribeRealtimeDiagnosesResponse.DescribeRealtimeDiagnoses_RealtimeDiagnoseTasks> describeRealtimeDiagnosesResponse_tasks = new List<DescribeRealtimeDiagnosesResponse.DescribeRealtimeDiagnoses_RealtimeDiagnoseTasks>();
 			for (int i = 0; i < context.Length("DescribeRealtimeDiagnoses.Tasks.Length"); i++) {
-				DescribeRealtimeDiagnosesResponse.RealtimeDiagnoseTasks realtimeDiagnoseTasks = new DescribeRealtimeDiagnosesResponse.RealtimeDiagnoseTasks();
+				DescribeRealtimeDiagnosesResponse.DescribeRealtimeDiagnoses_RealtimeDiagnoseTasks realtimeDiagnoseTasks = new DescribeRealtimeDiagnosesResponse.DescribeRealtimeDiagnoses_RealtimeDiagnoseTasks();
 				realtimeDiagnoseTasks.CreateTime = context.StringValue("DescribeRealtimeDiagnoses.Tasks["+ i +"].CreateTime");
 				realtimeDiagnoseTasks.TaskId = context.StringValue("DescribeRealtimeDiagnoses.Tasks["+ i +"].TaskId");
 				realtimeDiagnoseTasks.HealthScore = context.StringValue("DescribeRealtimeDiagnoses.Tasks["+ i +"].HealthScore");
-				realtimeDiagnoseTasks.Status = context.EnumValue<DescribeRealtimeDiagnosesResponse.RealtimeDiagnoseTasks.StatusEnum>("DescribeRealtimeDiagnoses.Tasks["+ i +"].Status");
+				realtimeDiagnoseTasks.Status = context.StringValue("DescribeRealtimeDiagnoses.Tasks["+ i +"].Status");
 
-				tasks.Add(realtimeDiagnoseTasks);
+				describeRealtimeDiagnosesResponse_tasks.Add(realtimeDiagnoseTasks);
 			}
-			describeRealtimeDiagnosesResponse.Tasks = tasks;
+			describeRealtimeDiagnosesResponse.Tasks = describeRealtimeDiagnosesResponse_tasks;
         
 			return describeRealtimeDiagnosesResponse;
         }

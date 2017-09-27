@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeAccountsResponse : AcsResponse
 	{
 
-		private List<DBInstanceAccount> accounts;
+		private string requestId;
 
-		public List<DBInstanceAccount> Accounts
+		private List<DescribeAccounts_DBInstanceAccount> accounts;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeAccounts_DBInstanceAccount> Accounts
 		{
 			get
 			{
@@ -38,19 +52,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class DBInstanceAccount{
+		public class DescribeAccounts_DBInstanceAccount
+		{
 
 			private string dBInstanceId;
 
 			private string accountName;
 
-			private AccountStatusEnum? accountStatus;
+			private string accountStatus;
 
-			private AccountTypeEnum? accountType;
+			private string accountType;
 
 			private string accountDescription;
 
-			private List<DatabasePrivilege> databasePrivileges;
+			private List<DescribeAccounts_DatabasePrivilege> databasePrivileges;
 
 			public string DBInstanceId
 			{
@@ -76,7 +91,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public AccountStatusEnum? AccountStatus
+			public string AccountStatus
 			{
 				get
 				{
@@ -88,7 +103,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public AccountTypeEnum? AccountType
+			public string AccountType
 			{
 				get
 				{
@@ -112,7 +127,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<DatabasePrivilege> DatabasePrivileges
+			public List<DescribeAccounts_DatabasePrivilege> DatabasePrivileges
 			{
 				get
 				{
@@ -124,19 +139,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-public enum AccountStatusEnum {
-
-					Available,
-					Unavailable,
-}
-
-public enum AccountTypeEnum {
-
-					Normal,
-					Super,
-}
-
-			public class DatabasePrivilege{
+			public class DescribeAccounts_DatabasePrivilege
+			{
 
 				private string dBName;
 

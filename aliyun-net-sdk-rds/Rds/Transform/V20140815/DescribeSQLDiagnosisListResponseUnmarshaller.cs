@@ -32,18 +32,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeSQLDiagnosisListResponse.HttpResponse = context.HttpResponse;
 			describeSQLDiagnosisListResponse.RequestId = context.StringValue("DescribeSQLDiagnosisList.RequestId");
 
-			List<DescribeSQLDiagnosisListResponse.SQLDiag> sQLDiagList = new List<DescribeSQLDiagnosisListResponse.SQLDiag>();
+			List<DescribeSQLDiagnosisListResponse.DescribeSQLDiagnosisList_SQLDiag> describeSQLDiagnosisListResponse_sQLDiagList = new List<DescribeSQLDiagnosisListResponse.DescribeSQLDiagnosisList_SQLDiag>();
 			for (int i = 0; i < context.Length("DescribeSQLDiagnosisList.SQLDiagList.Length"); i++) {
-				DescribeSQLDiagnosisListResponse.SQLDiag sQLDiag = new DescribeSQLDiagnosisListResponse.SQLDiag();
+				DescribeSQLDiagnosisListResponse.DescribeSQLDiagnosisList_SQLDiag sQLDiag = new DescribeSQLDiagnosisListResponse.DescribeSQLDiagnosisList_SQLDiag();
 				sQLDiag.SQLDiagId = context.StringValue("DescribeSQLDiagnosisList.SQLDiagList["+ i +"].SQLDiagId");
 				sQLDiag.StartTime = context.StringValue("DescribeSQLDiagnosisList.SQLDiagList["+ i +"].StartTime");
 				sQLDiag.EndTime = context.StringValue("DescribeSQLDiagnosisList.SQLDiagList["+ i +"].EndTime");
 				sQLDiag.Status = context.IntegerValue("DescribeSQLDiagnosisList.SQLDiagList["+ i +"].Status");
 				sQLDiag.Progress = context.IntegerValue("DescribeSQLDiagnosisList.SQLDiagList["+ i +"].Progress");
 
-				sQLDiagList.Add(sQLDiag);
+				describeSQLDiagnosisListResponse_sQLDiagList.Add(sQLDiag);
 			}
-			describeSQLDiagnosisListResponse.SQLDiagList = sQLDiagList;
+			describeSQLDiagnosisListResponse.SQLDiagList = describeSQLDiagnosisListResponse_sQLDiagList;
         
 			return describeSQLDiagnosisListResponse;
         }

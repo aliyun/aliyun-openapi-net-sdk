@@ -35,15 +35,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeErrorLogsResponse.PageNumber = context.IntegerValue("DescribeErrorLogs.PageNumber");
 			describeErrorLogsResponse.PageRecordCount = context.IntegerValue("DescribeErrorLogs.PageRecordCount");
 
-			List<DescribeErrorLogsResponse.ErrorLog> items = new List<DescribeErrorLogsResponse.ErrorLog>();
+			List<DescribeErrorLogsResponse.DescribeErrorLogs_ErrorLog> describeErrorLogsResponse_items = new List<DescribeErrorLogsResponse.DescribeErrorLogs_ErrorLog>();
 			for (int i = 0; i < context.Length("DescribeErrorLogs.Items.Length"); i++) {
-				DescribeErrorLogsResponse.ErrorLog errorLog = new DescribeErrorLogsResponse.ErrorLog();
+				DescribeErrorLogsResponse.DescribeErrorLogs_ErrorLog errorLog = new DescribeErrorLogsResponse.DescribeErrorLogs_ErrorLog();
 				errorLog.ErrorInfo = context.StringValue("DescribeErrorLogs.Items["+ i +"].ErrorInfo");
 				errorLog.CreateTime = context.StringValue("DescribeErrorLogs.Items["+ i +"].CreateTime");
 
-				items.Add(errorLog);
+				describeErrorLogsResponse_items.Add(errorLog);
 			}
-			describeErrorLogsResponse.Items = items;
+			describeErrorLogsResponse.Items = describeErrorLogsResponse_items;
         
 			return describeErrorLogsResponse;
         }

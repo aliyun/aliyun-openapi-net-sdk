@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceIPArrayListResponse : AcsResponse
 	{
 
-		private List<DBInstanceIPArray> items;
+		private string requestId;
 
-		public List<DBInstanceIPArray> Items
+		private List<DescribeDBInstanceIPArrayList_DBInstanceIPArray> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeDBInstanceIPArrayList_DBInstanceIPArray> Items
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class DBInstanceIPArray{
+		public class DescribeDBInstanceIPArrayList_DBInstanceIPArray
+		{
 
 			private string dBInstanceIPArrayName;
 

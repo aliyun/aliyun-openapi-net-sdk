@@ -34,35 +34,35 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeResourceDiagnosisResponse.StartTime = context.StringValue("DescribeResourceDiagnosis.StartTime");
 			describeResourceDiagnosisResponse.EndTime = context.StringValue("DescribeResourceDiagnosis.EndTime");
 
-			List<string> cPU = new List<string>();
+			List<string> describeResourceDiagnosisResponse_cPU = new List<string>();
 			for (int i = 0; i < context.Length("DescribeResourceDiagnosis.CPU.Length"); i++) {
-				cPU.Add(context.StringValue("DescribeResourceDiagnosis.CPU["+ i +"]"));
+				describeResourceDiagnosisResponse_cPU.Add(context.StringValue("DescribeResourceDiagnosis.CPU["+ i +"]"));
 			}
-			describeResourceDiagnosisResponse.CPU = cPU;
+			describeResourceDiagnosisResponse.CPU = describeResourceDiagnosisResponse_cPU;
 
-			List<string> memory = new List<string>();
+			List<string> describeResourceDiagnosisResponse_memory = new List<string>();
 			for (int i = 0; i < context.Length("DescribeResourceDiagnosis.Memory.Length"); i++) {
-				memory.Add(context.StringValue("DescribeResourceDiagnosis.Memory["+ i +"]"));
+				describeResourceDiagnosisResponse_memory.Add(context.StringValue("DescribeResourceDiagnosis.Memory["+ i +"]"));
 			}
-			describeResourceDiagnosisResponse.Memory = memory;
+			describeResourceDiagnosisResponse.Memory = describeResourceDiagnosisResponse_memory;
 
-			List<string> storage = new List<string>();
+			List<string> describeResourceDiagnosisResponse_storage = new List<string>();
 			for (int i = 0; i < context.Length("DescribeResourceDiagnosis.Storage.Length"); i++) {
-				storage.Add(context.StringValue("DescribeResourceDiagnosis.Storage["+ i +"]"));
+				describeResourceDiagnosisResponse_storage.Add(context.StringValue("DescribeResourceDiagnosis.Storage["+ i +"]"));
 			}
-			describeResourceDiagnosisResponse.Storage = storage;
+			describeResourceDiagnosisResponse.Storage = describeResourceDiagnosisResponse_storage;
 
-			List<string> iOPS = new List<string>();
+			List<string> describeResourceDiagnosisResponse_iOPS = new List<string>();
 			for (int i = 0; i < context.Length("DescribeResourceDiagnosis.IOPS.Length"); i++) {
-				iOPS.Add(context.StringValue("DescribeResourceDiagnosis.IOPS["+ i +"]"));
+				describeResourceDiagnosisResponse_iOPS.Add(context.StringValue("DescribeResourceDiagnosis.IOPS["+ i +"]"));
 			}
-			describeResourceDiagnosisResponse.IOPS = iOPS;
+			describeResourceDiagnosisResponse.IOPS = describeResourceDiagnosisResponse_iOPS;
 
-			List<string> connection = new List<string>();
+			List<string> describeResourceDiagnosisResponse_connection = new List<string>();
 			for (int i = 0; i < context.Length("DescribeResourceDiagnosis.Connection.Length"); i++) {
-				connection.Add(context.StringValue("DescribeResourceDiagnosis.Connection["+ i +"]"));
+				describeResourceDiagnosisResponse_connection.Add(context.StringValue("DescribeResourceDiagnosis.Connection["+ i +"]"));
 			}
-			describeResourceDiagnosisResponse.Connection = connection;
+			describeResourceDiagnosisResponse.Connection = describeResourceDiagnosisResponse_connection;
         
 			return describeResourceDiagnosisResponse;
         }

@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeImportsForSQLServerResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalRecordCounts;
 
 		private int? pageNumber;
 
 		private int? sQLItemsCounts;
 
-		private List<SQLServerImport> items;
+		private List<DescribeImportsForSQLServer_SQLServerImport> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalRecordCounts
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<SQLServerImport> Items
+		public List<DescribeImportsForSQLServer_SQLServerImport> Items
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class SQLServerImport{
+		public class DescribeImportsForSQLServer_SQLServerImport
+		{
 
 			private int? importId;
 
@@ -88,7 +103,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string dBName;
 
-			private ImportStatusEnum? importStatus;
+			private string importStatus;
 
 			private string startTime;
 
@@ -128,7 +143,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public ImportStatusEnum? ImportStatus
+			public string ImportStatus
 			{
 				get
 				{
@@ -151,16 +166,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					startTime = value;
 				}
 			}
-
-public enum ImportStatusEnum {
-
-					Cancelling,
-					Failed,
-					Cancelled,
-					Success,
-					Importing,
-					Pending,
-}
 		}
 	}
 }

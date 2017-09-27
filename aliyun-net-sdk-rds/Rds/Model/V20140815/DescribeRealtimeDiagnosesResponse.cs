@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeRealtimeDiagnosesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string engine;
 
 		private int? totalRecordCount;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageRecordCount;
 
-		private List<RealtimeDiagnoseTasks> tasks;
+		private List<DescribeRealtimeDiagnoses_RealtimeDiagnoseTasks> tasks;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Engine
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<RealtimeDiagnoseTasks> Tasks
+		public List<DescribeRealtimeDiagnoses_RealtimeDiagnoseTasks> Tasks
 		{
 			get
 			{
@@ -94,7 +108,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class RealtimeDiagnoseTasks{
+		public class DescribeRealtimeDiagnoses_RealtimeDiagnoseTasks
+		{
 
 			private string createTime;
 
@@ -102,7 +117,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string healthScore;
 
-			private StatusEnum? status;
+			private string status;
 
 			public string CreateTime
 			{
@@ -140,7 +155,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public StatusEnum? Status
+			public string Status
 			{
 				get
 				{
@@ -151,13 +166,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					status = value;
 				}
 			}
-
-public enum StatusEnum {
-
-					Running,
-					NoStart,
-					Success,
-}
 		}
 	}
 }

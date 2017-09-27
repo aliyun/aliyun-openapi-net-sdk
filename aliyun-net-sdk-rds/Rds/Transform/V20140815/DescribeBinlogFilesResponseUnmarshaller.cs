@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeBinlogFilesResponse.PageRecordCount = context.IntegerValue("DescribeBinlogFiles.PageRecordCount");
 			describeBinlogFilesResponse.TotalFileSize = context.LongValue("DescribeBinlogFiles.TotalFileSize");
 
-			List<DescribeBinlogFilesResponse.BinLogFile> items = new List<DescribeBinlogFilesResponse.BinLogFile>();
+			List<DescribeBinlogFilesResponse.DescribeBinlogFiles_BinLogFile> describeBinlogFilesResponse_items = new List<DescribeBinlogFilesResponse.DescribeBinlogFiles_BinLogFile>();
 			for (int i = 0; i < context.Length("DescribeBinlogFiles.Items.Length"); i++) {
-				DescribeBinlogFilesResponse.BinLogFile binLogFile = new DescribeBinlogFilesResponse.BinLogFile();
+				DescribeBinlogFilesResponse.DescribeBinlogFiles_BinLogFile binLogFile = new DescribeBinlogFilesResponse.DescribeBinlogFiles_BinLogFile();
 				binLogFile.FileSize = context.LongValue("DescribeBinlogFiles.Items["+ i +"].FileSize");
 				binLogFile.LogBeginTime = context.StringValue("DescribeBinlogFiles.Items["+ i +"].LogBeginTime");
 				binLogFile.LogEndTime = context.StringValue("DescribeBinlogFiles.Items["+ i +"].LogEndTime");
@@ -48,9 +48,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				binLogFile.Checksum = context.StringValue("DescribeBinlogFiles.Items["+ i +"].Checksum");
 				binLogFile.HostInstanceID = context.StringValue("DescribeBinlogFiles.Items["+ i +"].HostInstanceID");
 
-				items.Add(binLogFile);
+				describeBinlogFilesResponse_items.Add(binLogFile);
 			}
-			describeBinlogFilesResponse.Items = items;
+			describeBinlogFilesResponse.Items = describeBinlogFilesResponse_items;
         
 			return describeBinlogFilesResponse;
         }

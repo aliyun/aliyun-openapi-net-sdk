@@ -35,15 +35,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeAbnormalDBInstancesResponse.PageNumber = context.IntegerValue("DescribeAbnormalDBInstances.PageNumber");
 			describeAbnormalDBInstancesResponse.PageRecordCount = context.IntegerValue("DescribeAbnormalDBInstances.PageRecordCount");
 
-			List<DescribeAbnormalDBInstancesResponse.InstanceResult> items = new List<DescribeAbnormalDBInstancesResponse.InstanceResult>();
+			List<DescribeAbnormalDBInstancesResponse.DescribeAbnormalDBInstances_InstanceResult> describeAbnormalDBInstancesResponse_items = new List<DescribeAbnormalDBInstancesResponse.DescribeAbnormalDBInstances_InstanceResult>();
 			for (int i = 0; i < context.Length("DescribeAbnormalDBInstances.Items.Length"); i++) {
-				DescribeAbnormalDBInstancesResponse.InstanceResult instanceResult = new DescribeAbnormalDBInstancesResponse.InstanceResult();
+				DescribeAbnormalDBInstancesResponse.DescribeAbnormalDBInstances_InstanceResult instanceResult = new DescribeAbnormalDBInstancesResponse.DescribeAbnormalDBInstances_InstanceResult();
 				instanceResult.DBInstanceDescription = context.StringValue("DescribeAbnormalDBInstances.Items["+ i +"].DBInstanceDescription");
 				instanceResult.DBInstanceId = context.StringValue("DescribeAbnormalDBInstances.Items["+ i +"].DBInstanceId");
 
-				List<DescribeAbnormalDBInstancesResponse.InstanceResult.AbnormalItem> abnormalItems = new List<DescribeAbnormalDBInstancesResponse.InstanceResult.AbnormalItem>();
+				List<DescribeAbnormalDBInstancesResponse.DescribeAbnormalDBInstances_InstanceResult.DescribeAbnormalDBInstances_AbnormalItem> instanceResult_abnormalItems = new List<DescribeAbnormalDBInstancesResponse.DescribeAbnormalDBInstances_InstanceResult.DescribeAbnormalDBInstances_AbnormalItem>();
 				for (int j = 0; j < context.Length("DescribeAbnormalDBInstances.Items["+ i +"].AbnormalItems.Length"); j++) {
-					DescribeAbnormalDBInstancesResponse.InstanceResult.AbnormalItem abnormalItem = new DescribeAbnormalDBInstancesResponse.InstanceResult.AbnormalItem();
+					DescribeAbnormalDBInstancesResponse.DescribeAbnormalDBInstances_InstanceResult.DescribeAbnormalDBInstances_AbnormalItem abnormalItem = new DescribeAbnormalDBInstancesResponse.DescribeAbnormalDBInstances_InstanceResult.DescribeAbnormalDBInstances_AbnormalItem();
 					abnormalItem.CheckTime = context.StringValue("DescribeAbnormalDBInstances.Items["+ i +"].AbnormalItems["+ j +"].CheckTime");
 					abnormalItem.CheckItem = context.StringValue("DescribeAbnormalDBInstances.Items["+ i +"].AbnormalItems["+ j +"].CheckItem");
 					abnormalItem.AbnormalReason = context.StringValue("DescribeAbnormalDBInstances.Items["+ i +"].AbnormalItems["+ j +"].AbnormalReason");
@@ -51,19 +51,19 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 					abnormalItem.AbnormalDetail = context.StringValue("DescribeAbnormalDBInstances.Items["+ i +"].AbnormalItems["+ j +"].AbnormalDetail");
 					abnormalItem.AdviceKey = context.StringValue("DescribeAbnormalDBInstances.Items["+ i +"].AbnormalItems["+ j +"].AdviceKey");
 
-					List<string> adviseValue = new List<string>();
+					List<string> abnormalItem_adviseValue = new List<string>();
 					for (int k = 0; k < context.Length("DescribeAbnormalDBInstances.Items["+ i +"].AbnormalItems["+ j +"].AdviseValue.Length"); k++) {
-						adviseValue.Add(context.StringValue("DescribeAbnormalDBInstances.Items["+ i +"].AbnormalItems["+ j +"].AdviseValue["+ k +"]"));
+						abnormalItem_adviseValue.Add(context.StringValue("DescribeAbnormalDBInstances.Items["+ i +"].AbnormalItems["+ j +"].AdviseValue["+ k +"]"));
 					}
-					abnormalItem.AdviseValue = adviseValue;
+					abnormalItem.AdviseValue = abnormalItem_adviseValue;
 
-					abnormalItems.Add(abnormalItem);
+					instanceResult_abnormalItems.Add(abnormalItem);
 				}
-				instanceResult.AbnormalItems = abnormalItems;
+				instanceResult.AbnormalItems = instanceResult_abnormalItems;
 
-				items.Add(instanceResult);
+				describeAbnormalDBInstancesResponse_items.Add(instanceResult);
 			}
-			describeAbnormalDBInstancesResponse.Items = items;
+			describeAbnormalDBInstancesResponse.Items = describeAbnormalDBInstancesResponse_items;
         
 			return describeAbnormalDBInstancesResponse;
         }

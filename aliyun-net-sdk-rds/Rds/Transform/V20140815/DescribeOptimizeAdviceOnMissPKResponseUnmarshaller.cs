@@ -35,15 +35,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeOptimizeAdviceOnMissPKResponse.PageNumber = context.IntegerValue("DescribeOptimizeAdviceOnMissPK.PageNumber");
 			describeOptimizeAdviceOnMissPKResponse.PageRecordCount = context.IntegerValue("DescribeOptimizeAdviceOnMissPK.PageRecordCount");
 
-			List<DescribeOptimizeAdviceOnMissPKResponse.AdviceOnMissPK> items = new List<DescribeOptimizeAdviceOnMissPKResponse.AdviceOnMissPK>();
+			List<DescribeOptimizeAdviceOnMissPKResponse.DescribeOptimizeAdviceOnMissPK_AdviceOnMissPK> describeOptimizeAdviceOnMissPKResponse_items = new List<DescribeOptimizeAdviceOnMissPKResponse.DescribeOptimizeAdviceOnMissPK_AdviceOnMissPK>();
 			for (int i = 0; i < context.Length("DescribeOptimizeAdviceOnMissPK.Items.Length"); i++) {
-				DescribeOptimizeAdviceOnMissPKResponse.AdviceOnMissPK adviceOnMissPK = new DescribeOptimizeAdviceOnMissPKResponse.AdviceOnMissPK();
+				DescribeOptimizeAdviceOnMissPKResponse.DescribeOptimizeAdviceOnMissPK_AdviceOnMissPK adviceOnMissPK = new DescribeOptimizeAdviceOnMissPKResponse.DescribeOptimizeAdviceOnMissPK_AdviceOnMissPK();
 				adviceOnMissPK.DBName = context.StringValue("DescribeOptimizeAdviceOnMissPK.Items["+ i +"].DBName");
 				adviceOnMissPK.TableName = context.StringValue("DescribeOptimizeAdviceOnMissPK.Items["+ i +"].TableName");
 
-				items.Add(adviceOnMissPK);
+				describeOptimizeAdviceOnMissPKResponse_items.Add(adviceOnMissPK);
 			}
-			describeOptimizeAdviceOnMissPKResponse.Items = items;
+			describeOptimizeAdviceOnMissPKResponse.Items = describeOptimizeAdviceOnMissPKResponse_items;
         
 			return describeOptimizeAdviceOnMissPKResponse;
         }

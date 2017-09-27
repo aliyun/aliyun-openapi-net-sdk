@@ -29,40 +29,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstancesByExpireTimeRequest : RpcAcsRequest<DescribeDBInstancesByExpireTimeResponse>
     {
         public DescribeDBInstancesByExpireTimeRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime")
+            : base("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "rds", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
+		private string ownerAccount;
 
-		private string clientToken;
-
-		private string proxyId;
-
-		private int? expirePeriod;
-
-		private int? pageSize;
+		private long? ownerId;
 
 		private int? pageNumber;
 
+		private string accessKeyId;
+
 		private string tags;
 
-		private string ownerAccount;
+		private bool? expired;
 
-		public long? OwnerId
+		private string regionId;
+
+		private int? pageSize;
+
+		private string action;
+
+		private int? expirePeriod;
+
+		private string proxyId;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -79,68 +85,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string OwnerAccount
 		{
 			get
 			{
-				return resourceOwnerId;
+				return ownerAccount;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
-		public string ClientToken
+		public long? OwnerId
 		{
 			get
 			{
-				return clientToken;
+				return ownerId;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string ProxyId
-		{
-			get
-			{
-				return proxyId;
-			}
-			set	
-			{
-				proxyId = value;
-				DictionaryUtil.Add(QueryParameters, "proxyId", value);
-			}
-		}
-
-		public int? ExpirePeriod
-		{
-			get
-			{
-				return expirePeriod;
-			}
-			set	
-			{
-				expirePeriod = value;
-				DictionaryUtil.Add(QueryParameters, "ExpirePeriod", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -157,6 +124,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
 		public string Tags
 		{
 			get
@@ -170,16 +150,81 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
+		public bool? Expired
 		{
 			get
 			{
-				return ownerAccount;
+				return expired;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				expired = value;
+				DictionaryUtil.Add(QueryParameters, "Expired", value.ToString());
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public int? ExpirePeriod
+		{
+			get
+			{
+				return expirePeriod;
+			}
+			set	
+			{
+				expirePeriod = value;
+				DictionaryUtil.Add(QueryParameters, "ExpirePeriod", value.ToString());
+			}
+		}
+
+		public string ProxyId
+		{
+			get
+			{
+				return proxyId;
+			}
+			set	
+			{
+				proxyId = value;
+				DictionaryUtil.Add(QueryParameters, "proxyId", value);
 			}
 		}
 

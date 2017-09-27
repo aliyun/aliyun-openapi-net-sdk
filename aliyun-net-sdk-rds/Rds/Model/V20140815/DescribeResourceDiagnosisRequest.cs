@@ -29,15 +29,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeResourceDiagnosisRequest : RpcAcsRequest<DescribeResourceDiagnosisResponse>
     {
         public DescribeResourceDiagnosisRequest()
-            : base("Rds", "2014-08-15", "DescribeResourceDiagnosis")
+            : base("Rds", "2014-08-15", "DescribeResourceDiagnosis", "rds", "openAPI")
         {
         }
+
+		private string endTime;
 
 		private string dBInstanceId;
 
 		private string startTime;
 
-		private string endTime;
+		private string accessKeyId;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
 
 		public string DBInstanceId
 		{
@@ -65,17 +80,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EndTime
+		public string AccessKeyId
 		{
 			get
 			{
-				return endTime;
+				return accessKeyId;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
 		}
 
         public override DescribeResourceDiagnosisResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)

@@ -32,28 +32,28 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeAccountsResponse.HttpResponse = context.HttpResponse;
 			describeAccountsResponse.RequestId = context.StringValue("DescribeAccounts.RequestId");
 
-			List<DescribeAccountsResponse.DBInstanceAccount> accounts = new List<DescribeAccountsResponse.DBInstanceAccount>();
+			List<DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount> describeAccountsResponse_accounts = new List<DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount>();
 			for (int i = 0; i < context.Length("DescribeAccounts.Accounts.Length"); i++) {
-				DescribeAccountsResponse.DBInstanceAccount dBInstanceAccount = new DescribeAccountsResponse.DBInstanceAccount();
+				DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount dBInstanceAccount = new DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount();
 				dBInstanceAccount.DBInstanceId = context.StringValue("DescribeAccounts.Accounts["+ i +"].DBInstanceId");
 				dBInstanceAccount.AccountName = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountName");
-				dBInstanceAccount.AccountStatus = context.EnumValue<DescribeAccountsResponse.DBInstanceAccount.AccountStatusEnum>("DescribeAccounts.Accounts["+ i +"].AccountStatus");
-				dBInstanceAccount.AccountType = context.EnumValue<DescribeAccountsResponse.DBInstanceAccount.AccountTypeEnum>("DescribeAccounts.Accounts["+ i +"].AccountType");
+				dBInstanceAccount.AccountStatus = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountStatus");
+				dBInstanceAccount.AccountType = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountType");
 				dBInstanceAccount.AccountDescription = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountDescription");
 
-				List<DescribeAccountsResponse.DBInstanceAccount.DatabasePrivilege> databasePrivileges = new List<DescribeAccountsResponse.DBInstanceAccount.DatabasePrivilege>();
+				List<DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount.DescribeAccounts_DatabasePrivilege> dBInstanceAccount_databasePrivileges = new List<DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount.DescribeAccounts_DatabasePrivilege>();
 				for (int j = 0; j < context.Length("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {
-					DescribeAccountsResponse.DBInstanceAccount.DatabasePrivilege databasePrivilege = new DescribeAccountsResponse.DBInstanceAccount.DatabasePrivilege();
+					DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount.DescribeAccounts_DatabasePrivilege databasePrivilege = new DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount.DescribeAccounts_DatabasePrivilege();
 					databasePrivilege.DBName = context.StringValue("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges["+ j +"].DBName");
 					databasePrivilege.AccountPrivilege = context.StringValue("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilege");
 
-					databasePrivileges.Add(databasePrivilege);
+					dBInstanceAccount_databasePrivileges.Add(databasePrivilege);
 				}
-				dBInstanceAccount.DatabasePrivileges = databasePrivileges;
+				dBInstanceAccount.DatabasePrivileges = dBInstanceAccount_databasePrivileges;
 
-				accounts.Add(dBInstanceAccount);
+				describeAccountsResponse_accounts.Add(dBInstanceAccount);
 			}
-			describeAccountsResponse.Accounts = accounts;
+			describeAccountsResponse.Accounts = describeAccountsResponse_accounts;
         
 			return describeAccountsResponse;
         }

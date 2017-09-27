@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceByTagsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
 		private int? totalRecordCount;
 
-		private List<DBInstanceTag> items;
+		private List<DescribeDBInstanceByTags_DBInstanceTag> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<DBInstanceTag> Items
+		public List<DescribeDBInstanceByTags_DBInstanceTag> Items
 		{
 			get
 			{
@@ -80,11 +94,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class DBInstanceTag{
+		public class DescribeDBInstanceByTags_DBInstanceTag
+		{
 
 			private string dBInstanceId;
 
-			private List<Tag> tags;
+			private List<DescribeDBInstanceByTags_Tag> tags;
 
 			public string DBInstanceId
 			{
@@ -98,7 +113,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<Tag> Tags
+			public List<DescribeDBInstanceByTags_Tag> Tags
 			{
 				get
 				{
@@ -110,7 +125,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public class Tag{
+			public class DescribeDBInstanceByTags_Tag
+			{
 
 				private string tagKey;
 

@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDampPolicyByPolicyNameResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string policy;
 
 		private string timeRules;
@@ -33,6 +35,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string sourceRules;
 
 		private string handler;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Policy
 		{

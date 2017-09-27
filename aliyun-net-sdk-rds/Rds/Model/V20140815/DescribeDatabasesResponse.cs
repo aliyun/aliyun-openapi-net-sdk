@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDatabasesResponse : AcsResponse
 	{
 
-		private List<Database> databases;
+		private string requestId;
 
-		public List<Database> Databases
+		private List<DescribeDatabases_Database> databases;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeDatabases_Database> Databases
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class Database{
+		public class DescribeDatabases_Database
+		{
 
 			private string dBName;
 
@@ -46,13 +61,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string engine;
 
-			private DBStatusEnum? dBStatus;
+			private string dBStatus;
 
 			private string characterSetName;
 
 			private string dBDescription;
 
-			private List<AccountPrivilegeInfo> accounts;
+			private List<DescribeDatabases_AccountPrivilegeInfo> accounts;
 
 			public string DBName
 			{
@@ -90,7 +105,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public DBStatusEnum? DBStatus
+			public string DBStatus
 			{
 				get
 				{
@@ -126,7 +141,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<AccountPrivilegeInfo> Accounts
+			public List<DescribeDatabases_AccountPrivilegeInfo> Accounts
 			{
 				get
 				{
@@ -138,14 +153,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-public enum DBStatusEnum {
-
-					Deleting,
-					Running,
-					Creating,
-}
-
-			public class AccountPrivilegeInfo{
+			public class DescribeDatabases_AccountPrivilegeInfo
+			{
 
 				private string account;
 

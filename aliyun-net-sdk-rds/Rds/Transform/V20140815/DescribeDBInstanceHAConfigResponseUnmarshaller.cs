@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstanceHAConfigResponse.SyncMode = context.StringValue("DescribeDBInstanceHAConfig.SyncMode");
 			describeDBInstanceHAConfigResponse.HAMode = context.StringValue("DescribeDBInstanceHAConfig.HAMode");
 
-			List<DescribeDBInstanceHAConfigResponse.NodeInfo> hostInstanceInfos = new List<DescribeDBInstanceHAConfigResponse.NodeInfo>();
+			List<DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo> describeDBInstanceHAConfigResponse_hostInstanceInfos = new List<DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo>();
 			for (int i = 0; i < context.Length("DescribeDBInstanceHAConfig.HostInstanceInfos.Length"); i++) {
-				DescribeDBInstanceHAConfigResponse.NodeInfo nodeInfo = new DescribeDBInstanceHAConfigResponse.NodeInfo();
+				DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo nodeInfo = new DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo();
 				nodeInfo.NodeId = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].NodeId");
 				nodeInfo.RegionId = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].RegionId");
 				nodeInfo.LogSyncTime = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].LogSyncTime");
@@ -46,9 +46,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				nodeInfo.ZoneId = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].ZoneId");
 				nodeInfo.SyncStatus = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].SyncStatus");
 
-				hostInstanceInfos.Add(nodeInfo);
+				describeDBInstanceHAConfigResponse_hostInstanceInfos.Add(nodeInfo);
 			}
-			describeDBInstanceHAConfigResponse.HostInstanceInfos = hostInstanceInfos;
+			describeDBInstanceHAConfigResponse.HostInstanceInfos = describeDBInstanceHAConfigResponse_hostInstanceInfos;
         
 			return describeDBInstanceHAConfigResponse;
         }

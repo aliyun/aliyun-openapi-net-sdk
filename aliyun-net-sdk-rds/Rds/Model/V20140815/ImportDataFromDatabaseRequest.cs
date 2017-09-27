@@ -29,44 +29,61 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ImportDataFromDatabaseRequest : RpcAcsRequest<ImportDataFromDatabaseResponse>
     {
         public ImportDataFromDatabaseRequest()
-            : base("Rds", "2014-08-15", "ImportDataFromDatabase")
+            : base("Rds", "2014-08-15", "ImportDataFromDatabase", "rds", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
+
+		private string importDataType;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
+		private string isLockTable;
 
-		private string dBInstanceId;
+		private string ownerAccount;
+
+		private string sourceDatabaseDBNames;
 
 		private string sourceDatabaseIp;
+
+		private long? ownerId;
+
+		private string sourceDatabasePassword;
+
+		private string accessKeyId;
 
 		private string sourceDatabasePort;
 
 		private string sourceDatabaseUserName;
 
-		private string sourceDatabasePassword;
+		private string action;
 
-		private string importDataType;
+		private string dBInstanceId;
 
-		private string isLockTable;
-
-		private string sourceDatabaseDBNames;
-
-		private string ownerAccount;
-
-		public long? OwnerId
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ImportDataType
+		{
+			get
+			{
+				return importDataType;
+			}
+			set	
+			{
+				importDataType = value;
+				DictionaryUtil.Add(QueryParameters, "ImportDataType", value);
 			}
 		}
 
@@ -83,29 +100,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string IsLockTable
 		{
 			get
 			{
-				return resourceOwnerId;
+				return isLockTable;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				isLockTable = value;
+				DictionaryUtil.Add(QueryParameters, "IsLockTable", value);
 			}
 		}
 
-		public string DBInstanceId
+		public string OwnerAccount
 		{
 			get
 			{
-				return dBInstanceId;
+				return ownerAccount;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string SourceDatabaseDBNames
+		{
+			get
+			{
+				return sourceDatabaseDBNames;
+			}
+			set	
+			{
+				sourceDatabaseDBNames = value;
+				DictionaryUtil.Add(QueryParameters, "SourceDatabaseDBNames", value);
 			}
 		}
 
@@ -119,6 +149,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				sourceDatabaseIp = value;
 				DictionaryUtil.Add(QueryParameters, "SourceDatabaseIp", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SourceDatabasePassword
+		{
+			get
+			{
+				return sourceDatabasePassword;
+			}
+			set	
+			{
+				sourceDatabasePassword = value;
+				DictionaryUtil.Add(QueryParameters, "SourceDatabasePassword", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -148,68 +217,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SourceDatabasePassword
+		public string Action
 		{
 			get
 			{
-				return sourceDatabasePassword;
+				return action;
 			}
 			set	
 			{
-				sourceDatabasePassword = value;
-				DictionaryUtil.Add(QueryParameters, "SourceDatabasePassword", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string ImportDataType
+		public string DBInstanceId
 		{
 			get
 			{
-				return importDataType;
+				return dBInstanceId;
 			}
 			set	
 			{
-				importDataType = value;
-				DictionaryUtil.Add(QueryParameters, "ImportDataType", value);
-			}
-		}
-
-		public string IsLockTable
-		{
-			get
-			{
-				return isLockTable;
-			}
-			set	
-			{
-				isLockTable = value;
-				DictionaryUtil.Add(QueryParameters, "IsLockTable", value);
-			}
-		}
-
-		public string SourceDatabaseDBNames
-		{
-			get
-			{
-				return sourceDatabaseDBNames;
-			}
-			set	
-			{
-				sourceDatabaseDBNames = value;
-				DictionaryUtil.Add(QueryParameters, "SourceDatabaseDBNames", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

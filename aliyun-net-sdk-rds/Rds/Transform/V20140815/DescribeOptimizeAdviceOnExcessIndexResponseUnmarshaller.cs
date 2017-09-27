@@ -35,16 +35,16 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeOptimizeAdviceOnExcessIndexResponse.PageNumber = context.IntegerValue("DescribeOptimizeAdviceOnExcessIndex.PageNumber");
 			describeOptimizeAdviceOnExcessIndexResponse.PageRecordCount = context.IntegerValue("DescribeOptimizeAdviceOnExcessIndex.PageRecordCount");
 
-			List<DescribeOptimizeAdviceOnExcessIndexResponse.AdviceOnExcessIndex> items = new List<DescribeOptimizeAdviceOnExcessIndexResponse.AdviceOnExcessIndex>();
+			List<DescribeOptimizeAdviceOnExcessIndexResponse.DescribeOptimizeAdviceOnExcessIndex_AdviceOnExcessIndex> describeOptimizeAdviceOnExcessIndexResponse_items = new List<DescribeOptimizeAdviceOnExcessIndexResponse.DescribeOptimizeAdviceOnExcessIndex_AdviceOnExcessIndex>();
 			for (int i = 0; i < context.Length("DescribeOptimizeAdviceOnExcessIndex.Items.Length"); i++) {
-				DescribeOptimizeAdviceOnExcessIndexResponse.AdviceOnExcessIndex adviceOnExcessIndex = new DescribeOptimizeAdviceOnExcessIndexResponse.AdviceOnExcessIndex();
+				DescribeOptimizeAdviceOnExcessIndexResponse.DescribeOptimizeAdviceOnExcessIndex_AdviceOnExcessIndex adviceOnExcessIndex = new DescribeOptimizeAdviceOnExcessIndexResponse.DescribeOptimizeAdviceOnExcessIndex_AdviceOnExcessIndex();
 				adviceOnExcessIndex.DBName = context.StringValue("DescribeOptimizeAdviceOnExcessIndex.Items["+ i +"].DBName");
 				adviceOnExcessIndex.TableName = context.StringValue("DescribeOptimizeAdviceOnExcessIndex.Items["+ i +"].TableName");
 				adviceOnExcessIndex.IndexCount = context.LongValue("DescribeOptimizeAdviceOnExcessIndex.Items["+ i +"].IndexCount");
 
-				items.Add(adviceOnExcessIndex);
+				describeOptimizeAdviceOnExcessIndexResponse_items.Add(adviceOnExcessIndex);
 			}
-			describeOptimizeAdviceOnExcessIndexResponse.Items = items;
+			describeOptimizeAdviceOnExcessIndexResponse.Items = describeOptimizeAdviceOnExcessIndexResponse_items;
         
 			return describeOptimizeAdviceOnExcessIndexResponse;
         }

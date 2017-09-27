@@ -35,19 +35,19 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeSQLLogFilesResponse.PageNumber = context.IntegerValue("DescribeSQLLogFiles.PageNumber");
 			describeSQLLogFilesResponse.PageRecordCount = context.IntegerValue("DescribeSQLLogFiles.PageRecordCount");
 
-			List<DescribeSQLLogFilesResponse.LogFile> items = new List<DescribeSQLLogFilesResponse.LogFile>();
+			List<DescribeSQLLogFilesResponse.DescribeSQLLogFiles_LogFile> describeSQLLogFilesResponse_items = new List<DescribeSQLLogFilesResponse.DescribeSQLLogFiles_LogFile>();
 			for (int i = 0; i < context.Length("DescribeSQLLogFiles.Items.Length"); i++) {
-				DescribeSQLLogFilesResponse.LogFile logFile = new DescribeSQLLogFilesResponse.LogFile();
+				DescribeSQLLogFilesResponse.DescribeSQLLogFiles_LogFile logFile = new DescribeSQLLogFilesResponse.DescribeSQLLogFiles_LogFile();
 				logFile.FileID = context.StringValue("DescribeSQLLogFiles.Items["+ i +"].FileID");
-				logFile.LogStatus = context.EnumValue<DescribeSQLLogFilesResponse.LogFile.LogStatusEnum>("DescribeSQLLogFiles.Items["+ i +"].LogStatus");
+				logFile.LogStatus = context.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogStatus");
 				logFile.LogDownloadURL = context.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogDownloadURL");
 				logFile.LogSize = context.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogSize");
 				logFile.LogStartTime = context.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogStartTime");
 				logFile.LogEndTime = context.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogEndTime");
 
-				items.Add(logFile);
+				describeSQLLogFilesResponse_items.Add(logFile);
 			}
-			describeSQLLogFilesResponse.Items = items;
+			describeSQLLogFilesResponse.Items = describeSQLLogFilesResponse_items;
         
 			return describeSQLLogFilesResponse;
         }

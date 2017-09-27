@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeFilesForSQLServerResponse.PageNumber = context.IntegerValue("DescribeFilesForSQLServer.PageNumber");
 			describeFilesForSQLServerResponse.PageRecordCount = context.IntegerValue("DescribeFilesForSQLServer.PageRecordCount");
 
-			List<DescribeFilesForSQLServerResponse.SQLServerUploadFile> items = new List<DescribeFilesForSQLServerResponse.SQLServerUploadFile>();
+			List<DescribeFilesForSQLServerResponse.DescribeFilesForSQLServer_SQLServerUploadFile> describeFilesForSQLServerResponse_items = new List<DescribeFilesForSQLServerResponse.DescribeFilesForSQLServer_SQLServerUploadFile>();
 			for (int i = 0; i < context.Length("DescribeFilesForSQLServer.Items.Length"); i++) {
-				DescribeFilesForSQLServerResponse.SQLServerUploadFile sQLServerUploadFile = new DescribeFilesForSQLServerResponse.SQLServerUploadFile();
+				DescribeFilesForSQLServerResponse.DescribeFilesForSQLServer_SQLServerUploadFile sQLServerUploadFile = new DescribeFilesForSQLServerResponse.DescribeFilesForSQLServer_SQLServerUploadFile();
 				sQLServerUploadFile.DBName = context.StringValue("DescribeFilesForSQLServer.Items["+ i +"].DBName");
 				sQLServerUploadFile.FileName = context.StringValue("DescribeFilesForSQLServer.Items["+ i +"].FileName");
 				sQLServerUploadFile.FileSize = context.LongValue("DescribeFilesForSQLServer.Items["+ i +"].FileSize");
@@ -48,13 +48,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				sQLServerUploadFile.Intranetport = context.IntegerValue("DescribeFilesForSQLServer.Items["+ i +"].Intranetport");
 				sQLServerUploadFile.UserName = context.StringValue("DescribeFilesForSQLServer.Items["+ i +"].UserName");
 				sQLServerUploadFile.Password = context.StringValue("DescribeFilesForSQLServer.Items["+ i +"].Password");
-				sQLServerUploadFile.FileStatus = context.EnumValue<DescribeFilesForSQLServerResponse.SQLServerUploadFile.FileStatusEnum>("DescribeFilesForSQLServer.Items["+ i +"].FileStatus");
+				sQLServerUploadFile.FileStatus = context.StringValue("DescribeFilesForSQLServer.Items["+ i +"].FileStatus");
 				sQLServerUploadFile.Description = context.StringValue("DescribeFilesForSQLServer.Items["+ i +"].Description");
 				sQLServerUploadFile.CreationTime = context.StringValue("DescribeFilesForSQLServer.Items["+ i +"].CreationTime");
 
-				items.Add(sQLServerUploadFile);
+				describeFilesForSQLServerResponse_items.Add(sQLServerUploadFile);
 			}
-			describeFilesForSQLServerResponse.Items = items;
+			describeFilesForSQLServerResponse.Items = describeFilesForSQLServerResponse_items;
         
 			return describeFilesForSQLServerResponse;
         }

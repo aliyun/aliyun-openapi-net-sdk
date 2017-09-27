@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class CreateUploadPathForSQLServerResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string internetFtpServer;
 
 		private int? internetPort;
@@ -37,6 +39,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string password;
 
 		private string fileName;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string InternetFtpServer
 		{

@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeSlowLogRecordsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string engine;
 
 		private int? totalRecordCount;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageRecordCount;
 
-		private List<SQLSlowRecord> items;
+		private List<DescribeSlowLogRecords_SQLSlowRecord> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Engine
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<SQLSlowRecord> Items
+		public List<DescribeSlowLogRecords_SQLSlowRecord> Items
 		{
 			get
 			{
@@ -94,7 +108,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class SQLSlowRecord{
+		public class DescribeSlowLogRecords_SQLSlowRecord
+		{
 
 			private string hostAddress;
 

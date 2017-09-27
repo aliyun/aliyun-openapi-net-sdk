@@ -29,11 +29,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeSQLDiagnosisListRequest : RpcAcsRequest<DescribeSQLDiagnosisListResponse>
     {
         public DescribeSQLDiagnosisListRequest()
-            : base("Rds", "2014-08-15", "DescribeSQLDiagnosisList")
+            : base("Rds", "2014-08-15", "DescribeSQLDiagnosisList", "rds", "openAPI")
         {
         }
 
 		private string dBInstanceId;
+
+		private string accessKeyId;
 
 		public string DBInstanceId
 		{
@@ -46,6 +48,24 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
 		}
 
         public override DescribeSQLDiagnosisListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)

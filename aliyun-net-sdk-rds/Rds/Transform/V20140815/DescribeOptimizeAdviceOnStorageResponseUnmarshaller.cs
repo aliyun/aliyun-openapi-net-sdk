@@ -36,17 +36,17 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeOptimizeAdviceOnStorageResponse.PageNumber = context.IntegerValue("DescribeOptimizeAdviceOnStorage.PageNumber");
 			describeOptimizeAdviceOnStorageResponse.PageRecordCount = context.IntegerValue("DescribeOptimizeAdviceOnStorage.PageRecordCount");
 
-			List<DescribeOptimizeAdviceOnStorageResponse.AdviceOnStorage> items = new List<DescribeOptimizeAdviceOnStorageResponse.AdviceOnStorage>();
+			List<DescribeOptimizeAdviceOnStorageResponse.DescribeOptimizeAdviceOnStorage_AdviceOnStorage> describeOptimizeAdviceOnStorageResponse_items = new List<DescribeOptimizeAdviceOnStorageResponse.DescribeOptimizeAdviceOnStorage_AdviceOnStorage>();
 			for (int i = 0; i < context.Length("DescribeOptimizeAdviceOnStorage.Items.Length"); i++) {
-				DescribeOptimizeAdviceOnStorageResponse.AdviceOnStorage adviceOnStorage = new DescribeOptimizeAdviceOnStorageResponse.AdviceOnStorage();
+				DescribeOptimizeAdviceOnStorageResponse.DescribeOptimizeAdviceOnStorage_AdviceOnStorage adviceOnStorage = new DescribeOptimizeAdviceOnStorageResponse.DescribeOptimizeAdviceOnStorage_AdviceOnStorage();
 				adviceOnStorage.DBName = context.StringValue("DescribeOptimizeAdviceOnStorage.Items["+ i +"].DBName");
 				adviceOnStorage.TableName = context.StringValue("DescribeOptimizeAdviceOnStorage.Items["+ i +"].TableName");
 				adviceOnStorage.CurrentEngine = context.StringValue("DescribeOptimizeAdviceOnStorage.Items["+ i +"].CurrentEngine");
 				adviceOnStorage.AdviseEngine = context.StringValue("DescribeOptimizeAdviceOnStorage.Items["+ i +"].AdviseEngine");
 
-				items.Add(adviceOnStorage);
+				describeOptimizeAdviceOnStorageResponse_items.Add(adviceOnStorage);
 			}
-			describeOptimizeAdviceOnStorageResponse.Items = items;
+			describeOptimizeAdviceOnStorageResponse.Items = describeOptimizeAdviceOnStorageResponse_items;
         
 			return describeOptimizeAdviceOnStorageResponse;
         }

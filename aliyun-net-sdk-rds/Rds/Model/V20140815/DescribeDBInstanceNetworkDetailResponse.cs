@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceNetworkDetailResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string dBInstanceId;
 
 		private string startTime;
@@ -48,7 +50,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string networkErrors;
 
-		private List<NetworkKey> networkDetail;
+		private List<DescribeDBInstanceNetworkDetail_NetworkKey> networkDetail;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DBInstanceId
 		{
@@ -194,7 +208,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<NetworkKey> NetworkDetail
+		public List<DescribeDBInstanceNetworkDetail_NetworkKey> NetworkDetail
 		{
 			get
 			{
@@ -206,13 +220,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class NetworkKey{
+		public class DescribeDBInstanceNetworkDetail_NetworkKey
+		{
 
 			private string key;
 
 			private string unit;
 
-			private List<NetworkValue> values;
+			private List<DescribeDBInstanceNetworkDetail_NetworkValue> values;
 
 			public string Key
 			{
@@ -238,7 +253,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<NetworkValue> Values
+			public List<DescribeDBInstanceNetworkDetail_NetworkValue> Values
 			{
 				get
 				{
@@ -250,21 +265,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public class NetworkValue{
+			public class DescribeDBInstanceNetworkDetail_NetworkValue
+			{
 
-				private string value_;
+				private string _value;
 
 				private string dateTime;
 
-				public string Value
+				public string _Value
 				{
 					get
 					{
-						return value_;
+						return _value;
 					}
 					set	
 					{
-						value_ = value;
+						_value = value;
 					}
 				}
 

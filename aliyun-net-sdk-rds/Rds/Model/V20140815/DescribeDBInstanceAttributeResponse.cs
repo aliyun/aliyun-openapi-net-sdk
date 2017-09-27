@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceAttributeResponse : AcsResponse
 	{
 
-		private List<DBInstanceAttribute> items;
+		private string requestId;
 
-		public List<DBInstanceAttribute> Items
+		private List<DescribeDBInstanceAttribute_DBInstanceAttribute> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeDBInstanceAttribute_DBInstanceAttribute> Items
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class DBInstanceAttribute{
+		public class DescribeDBInstanceAttribute_DBInstanceAttribute
+		{
 
 			private int? insId;
 
@@ -48,7 +63,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string dBInstanceClassType;
 
-			private DBInstanceTypeEnum? dBInstanceType;
+			private string dBInstanceType;
 
 			private string regionId;
 
@@ -66,13 +81,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private int? dBInstanceStorage;
 
-			private DBInstanceNetTypeEnum? dBInstanceNetType;
+			private string dBInstanceNetType;
 
-			private DBInstanceStatusEnum? dBInstanceStatus;
+			private string dBInstanceStatus;
 
 			private string dBInstanceDescription;
 
-			private LockModeEnum? lockMode;
+			private string lockMode;
 
 			private string lockReason;
 
@@ -110,15 +125,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string instanceNetworkType;
 
-			private AccountTypeEnum? accountType;
+			private string category;
 
-			private SupportUpgradeAccountTypeEnum? supportUpgradeAccountType;
+			private string accountType;
+
+			private string supportUpgradeAccountType;
 
 			private string vpcId;
 
-			private ConnectionModeEnum? connectionMode;
+			private string vSwitchId;
 
-			private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+			private string connectionMode;
+
+			private string resourceGroupId;
+
+			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 			public int? InsId
 			{
@@ -168,7 +189,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public DBInstanceTypeEnum? DBInstanceType
+			public string DBInstanceType
 			{
 				get
 				{
@@ -276,7 +297,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public DBInstanceNetTypeEnum? DBInstanceNetType
+			public string DBInstanceNetType
 			{
 				get
 				{
@@ -288,7 +309,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public DBInstanceStatusEnum? DBInstanceStatus
+			public string DBInstanceStatus
 			{
 				get
 				{
@@ -312,7 +333,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public LockModeEnum? LockMode
+			public string LockMode
 			{
 				get
 				{
@@ -540,7 +561,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public AccountTypeEnum? AccountType
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string AccountType
 			{
 				get
 				{
@@ -552,7 +585,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public SupportUpgradeAccountTypeEnum? SupportUpgradeAccountType
+			public string SupportUpgradeAccountType
 			{
 				get
 				{
@@ -576,7 +609,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public ConnectionModeEnum? ConnectionMode
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string ConnectionMode
 			{
 				get
 				{
@@ -588,7 +633,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<ReadOnlyDBInstanceId> ReadOnlyDBInstanceIds
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> ReadOnlyDBInstanceIds
 			{
 				get
 				{
@@ -600,72 +657,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-public enum DBInstanceTypeEnum {
-
-					Guard,
-					Primary,
-					Readonly,
-					Temp,
-}
-
-public enum DBInstanceNetTypeEnum {
-
-					Intranet,
-					Internet,
-}
-
-public enum DBInstanceStatusEnum {
-
-					TempDBInstanceCreating,
-					Running,
-					Deleting,
-					DBInstanceClassChanging,
-					Creating,
-					GuardDBInstanceCreating,
-					Rebooting,
-					GuardSwitching,
-					SystemMaintaining,
-					Transing,
-					TransingToOthers,
-					ImportingFromOthers,
-					EngineVersionUpgrading,
-					ReadInstanceTransing,
-					LinkSwitching,
-					DBInstanceNetTypeChanging,
-					InstanceMaintaining,
-					Importing,
-					Restoring,
-}
-
-public enum LockModeEnum {
-
-					LockByExpiration,
-					LockByRestoration,
-					LockReadInstanceByDiskQuota,
-					ManualLock,
-					LockByDiskQuota,
-					Unlock,
-}
-
-public enum AccountTypeEnum {
-
-					Normal,
-					Super,
-}
-
-public enum SupportUpgradeAccountTypeEnum {
-
-					Yes,
-					No,
-}
-
-public enum ConnectionModeEnum {
-
-					Standard,
-					Safe,
-}
-
-			public class ReadOnlyDBInstanceId{
+			public class DescribeDBInstanceAttribute_ReadOnlyDBInstanceId
+			{
 
 				private string dBInstanceId;
 

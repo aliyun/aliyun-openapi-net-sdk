@@ -38,9 +38,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeSlowLogsResponse.PageNumber = context.IntegerValue("DescribeSlowLogs.PageNumber");
 			describeSlowLogsResponse.PageRecordCount = context.IntegerValue("DescribeSlowLogs.PageRecordCount");
 
-			List<DescribeSlowLogsResponse.SQLSlowLog> items = new List<DescribeSlowLogsResponse.SQLSlowLog>();
+			List<DescribeSlowLogsResponse.DescribeSlowLogs_SQLSlowLog> describeSlowLogsResponse_items = new List<DescribeSlowLogsResponse.DescribeSlowLogs_SQLSlowLog>();
 			for (int i = 0; i < context.Length("DescribeSlowLogs.Items.Length"); i++) {
-				DescribeSlowLogsResponse.SQLSlowLog sQLSlowLog = new DescribeSlowLogsResponse.SQLSlowLog();
+				DescribeSlowLogsResponse.DescribeSlowLogs_SQLSlowLog sQLSlowLog = new DescribeSlowLogsResponse.DescribeSlowLogs_SQLSlowLog();
 				sQLSlowLog.SlowLogId = context.LongValue("DescribeSlowLogs.Items["+ i +"].SlowLogId");
 				sQLSlowLog.SQLId = context.LongValue("DescribeSlowLogs.Items["+ i +"].SQLId");
 				sQLSlowLog.DBName = context.StringValue("DescribeSlowLogs.Items["+ i +"].DBName");
@@ -62,9 +62,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				sQLSlowLog.MaxExecutionTime = context.LongValue("DescribeSlowLogs.Items["+ i +"].MaxExecutionTime");
 				sQLSlowLog.AvgExecutionTime = context.LongValue("DescribeSlowLogs.Items["+ i +"].AvgExecutionTime");
 
-				items.Add(sQLSlowLog);
+				describeSlowLogsResponse_items.Add(sQLSlowLog);
 			}
-			describeSlowLogsResponse.Items = items;
+			describeSlowLogsResponse.Items = describeSlowLogsResponse_items;
         
 			return describeSlowLogsResponse;
         }

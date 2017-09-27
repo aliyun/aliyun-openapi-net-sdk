@@ -29,47 +29,38 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class GrantOperatorPermissionRequest : RpcAcsRequest<GrantOperatorPermissionResponse>
     {
         public GrantOperatorPermissionRequest()
-            : base("Rds", "2014-08-15", "GrantOperatorPermission")
+            : base("Rds", "2014-08-15", "GrantOperatorPermission", "rds", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string privileges;
 
 		private long? resourceOwnerId;
 
-		private string dBInstanceId;
-
-		private string expiredTime;
-
-		private string privileges;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string expiredTime;
 
-		public string ResourceOwnerAccount
+		private string action;
+
+		private string dBInstanceId;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public string Privileges
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return privileges;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				privileges = value;
+				DictionaryUtil.Add(QueryParameters, "Privileges", value);
 			}
 		}
 
@@ -86,16 +77,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return dBInstanceId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -112,29 +116,55 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Privileges
+		public string Action
 		{
 			get
 			{
-				return privileges;
+				return action;
 			}
 			set	
 			{
-				privileges = value;
-				DictionaryUtil.Add(QueryParameters, "Privileges", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string OwnerAccount
+		public string DBInstanceId
 		{
 			get
 			{
-				return ownerAccount;
+				return dBInstanceId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -29,71 +29,51 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CloneDBInstanceRequest : RpcAcsRequest<CloneDBInstanceResponse>
     {
         public CloneDBInstanceRequest()
-            : base("Rds", "2014-08-15", "CloneDBInstance")
+            : base("Rds", "2014-08-15", "CloneDBInstance", "rds", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
-
-		private string clientToken;
-
-		private string dBInstanceClass;
-
-		private int? dBInstanceStorage;
-
-		private string dBInstanceDescription;
-
-		private string payType;
-
-		private string instanceNetworkType;
-
-		private string dBInstanceId;
-
-		private string backupId;
 
 		private string restoreTime;
 
-		private string vPCId;
+		private string period;
+
+		private int? dBInstanceStorage;
+
+		private string resourceOwnerAccount;
+
+		private string clientToken;
+
+		private string backupId;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
+		private string usedTime;
+
+		private string accessKeyId;
+
+		private string dBInstanceClass;
 
 		private string vSwitchId;
 
 		private string privateIpAddress;
 
-		private string ownerAccount;
+		private string resourceGroupId;
 
-		private string usedTime;
+		private string vPCId;
 
-		private string period;
+		private string action;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string dBInstanceDescription;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string dBInstanceId;
+
+		private string payType;
+
+		private string instanceNetworkType;
 
 		public long? ResourceOwnerId
 		{
@@ -105,110 +85,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string DBInstanceClass
-		{
-			get
-			{
-				return dBInstanceClass;
-			}
-			set	
-			{
-				dBInstanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
-			}
-		}
-
-		public int? DBInstanceStorage
-		{
-			get
-			{
-				return dBInstanceStorage;
-			}
-			set	
-			{
-				dBInstanceStorage = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
-			}
-		}
-
-		public string DBInstanceDescription
-		{
-			get
-			{
-				return dBInstanceDescription;
-			}
-			set	
-			{
-				dBInstanceDescription = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
-			}
-		}
-
-		public string PayType
-		{
-			get
-			{
-				return payType;
-			}
-			set	
-			{
-				payType = value;
-				DictionaryUtil.Add(QueryParameters, "PayType", value);
-			}
-		}
-
-		public string InstanceNetworkType
-		{
-			get
-			{
-				return instanceNetworkType;
-			}
-			set	
-			{
-				instanceNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string BackupId
-		{
-			get
-			{
-				return backupId;
-			}
-			set	
-			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value);
 			}
 		}
 
@@ -225,16 +101,133 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string VPCId
+		public string Period
 		{
 			get
 			{
-				return vPCId;
+				return period;
 			}
 			set	
 			{
-				vPCId = value;
-				DictionaryUtil.Add(QueryParameters, "VPCId", value);
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value);
+			}
+		}
+
+		public int? DBInstanceStorage
+		{
+			get
+			{
+				return dBInstanceStorage;
+			}
+			set	
+			{
+				dBInstanceStorage = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string BackupId
+		{
+			get
+			{
+				return backupId;
+			}
+			set	
+			{
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string UsedTime
+		{
+			get
+			{
+				return usedTime;
+			}
+			set	
+			{
+				usedTime = value;
+				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string DBInstanceClass
+		{
+			get
+			{
+				return dBInstanceClass;
+			}
+			set	
+			{
+				dBInstanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
 			}
 		}
 
@@ -264,42 +257,94 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
+		public string ResourceGroupId
 		{
 			get
 			{
-				return ownerAccount;
+				return resourceGroupId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
-		public string UsedTime
+		public string VPCId
 		{
 			get
 			{
-				return usedTime;
+				return vPCId;
 			}
 			set	
 			{
-				usedTime = value;
-				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+				vPCId = value;
+				DictionaryUtil.Add(QueryParameters, "VPCId", value);
 			}
 		}
 
-		public string Period
+		public string Action
 		{
 			get
 			{
-				return period;
+				return action;
 			}
 			set	
 			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string DBInstanceDescription
+		{
+			get
+			{
+				return dBInstanceDescription;
+			}
+			set	
+			{
+				dBInstanceDescription = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string PayType
+		{
+			get
+			{
+				return payType;
+			}
+			set	
+			{
+				payType = value;
+				DictionaryUtil.Add(QueryParameters, "PayType", value);
+			}
+		}
+
+		public string InstanceNetworkType
+		{
+			get
+			{
+				return instanceNetworkType;
+			}
+			set	
+			{
+				instanceNetworkType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
 			}
 		}
 

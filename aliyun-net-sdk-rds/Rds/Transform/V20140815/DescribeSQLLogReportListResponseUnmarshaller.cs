@@ -35,35 +35,35 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeSQLLogReportListResponse.PageNumber = context.IntegerValue("DescribeSQLLogReportList.PageNumber");
 			describeSQLLogReportListResponse.PageRecordCount = context.IntegerValue("DescribeSQLLogReportList.PageRecordCount");
 
-			List<DescribeSQLLogReportListResponse.Item> items = new List<DescribeSQLLogReportListResponse.Item>();
+			List<DescribeSQLLogReportListResponse.DescribeSQLLogReportList_Item> describeSQLLogReportListResponse_items = new List<DescribeSQLLogReportListResponse.DescribeSQLLogReportList_Item>();
 			for (int i = 0; i < context.Length("DescribeSQLLogReportList.Items.Length"); i++) {
-				DescribeSQLLogReportListResponse.Item item = new DescribeSQLLogReportListResponse.Item();
+				DescribeSQLLogReportListResponse.DescribeSQLLogReportList_Item item = new DescribeSQLLogReportListResponse.DescribeSQLLogReportList_Item();
 				item.ReportTime = context.StringValue("DescribeSQLLogReportList.Items["+ i +"].ReportTime");
 
-				List<DescribeSQLLogReportListResponse.Item.LatencyTopNItem> latencyTopNItems = new List<DescribeSQLLogReportListResponse.Item.LatencyTopNItem>();
+				List<DescribeSQLLogReportListResponse.DescribeSQLLogReportList_Item.DescribeSQLLogReportList_LatencyTopNItem> item_latencyTopNItems = new List<DescribeSQLLogReportListResponse.DescribeSQLLogReportList_Item.DescribeSQLLogReportList_LatencyTopNItem>();
 				for (int j = 0; j < context.Length("DescribeSQLLogReportList.Items["+ i +"].LatencyTopNItems.Length"); j++) {
-					DescribeSQLLogReportListResponse.Item.LatencyTopNItem latencyTopNItem = new DescribeSQLLogReportListResponse.Item.LatencyTopNItem();
+					DescribeSQLLogReportListResponse.DescribeSQLLogReportList_Item.DescribeSQLLogReportList_LatencyTopNItem latencyTopNItem = new DescribeSQLLogReportListResponse.DescribeSQLLogReportList_Item.DescribeSQLLogReportList_LatencyTopNItem();
 					latencyTopNItem.SQLText = context.StringValue("DescribeSQLLogReportList.Items["+ i +"].LatencyTopNItems["+ j +"].SQLText");
 					latencyTopNItem.AvgLatency = context.LongValue("DescribeSQLLogReportList.Items["+ i +"].LatencyTopNItems["+ j +"].AvgLatency");
 					latencyTopNItem.SQLExecuteTimes = context.LongValue("DescribeSQLLogReportList.Items["+ i +"].LatencyTopNItems["+ j +"].SQLExecuteTimes");
 
-					latencyTopNItems.Add(latencyTopNItem);
+					item_latencyTopNItems.Add(latencyTopNItem);
 				}
-				item.LatencyTopNItems = latencyTopNItems;
+				item.LatencyTopNItems = item_latencyTopNItems;
 
-				List<DescribeSQLLogReportListResponse.Item.QPSTopNItem> qPSTopNItems = new List<DescribeSQLLogReportListResponse.Item.QPSTopNItem>();
+				List<DescribeSQLLogReportListResponse.DescribeSQLLogReportList_Item.DescribeSQLLogReportList_QPSTopNItem> item_qPSTopNItems = new List<DescribeSQLLogReportListResponse.DescribeSQLLogReportList_Item.DescribeSQLLogReportList_QPSTopNItem>();
 				for (int j = 0; j < context.Length("DescribeSQLLogReportList.Items["+ i +"].QPSTopNItems.Length"); j++) {
-					DescribeSQLLogReportListResponse.Item.QPSTopNItem qPSTopNItem = new DescribeSQLLogReportListResponse.Item.QPSTopNItem();
+					DescribeSQLLogReportListResponse.DescribeSQLLogReportList_Item.DescribeSQLLogReportList_QPSTopNItem qPSTopNItem = new DescribeSQLLogReportListResponse.DescribeSQLLogReportList_Item.DescribeSQLLogReportList_QPSTopNItem();
 					qPSTopNItem.SQLText = context.StringValue("DescribeSQLLogReportList.Items["+ i +"].QPSTopNItems["+ j +"].SQLText");
 					qPSTopNItem.SQLExecuteTimes = context.LongValue("DescribeSQLLogReportList.Items["+ i +"].QPSTopNItems["+ j +"].SQLExecuteTimes");
 
-					qPSTopNItems.Add(qPSTopNItem);
+					item_qPSTopNItems.Add(qPSTopNItem);
 				}
-				item.QPSTopNItems = qPSTopNItems;
+				item.QPSTopNItems = item_qPSTopNItems;
 
-				items.Add(item);
+				describeSQLLogReportListResponse_items.Add(item);
 			}
-			describeSQLLogReportListResponse.Items = items;
+			describeSQLLogReportListResponse.Items = describeSQLLogReportListResponse_items;
         
 			return describeSQLLogReportListResponse;
         }

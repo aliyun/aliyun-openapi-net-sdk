@@ -34,33 +34,33 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeBackupsResponse.TotalRecordCount = context.StringValue("DescribeBackups.TotalRecordCount");
 			describeBackupsResponse.PageNumber = context.StringValue("DescribeBackups.PageNumber");
 			describeBackupsResponse.PageRecordCount = context.StringValue("DescribeBackups.PageRecordCount");
-			describeBackupsResponse.TotalBackupSize = context.IntegerValue("DescribeBackups.TotalBackupSize");
+			describeBackupsResponse.TotalBackupSize = context.LongValue("DescribeBackups.TotalBackupSize");
 
-			List<DescribeBackupsResponse.Backup> items = new List<DescribeBackupsResponse.Backup>();
+			List<DescribeBackupsResponse.DescribeBackups_Backup> describeBackupsResponse_items = new List<DescribeBackupsResponse.DescribeBackups_Backup>();
 			for (int i = 0; i < context.Length("DescribeBackups.Items.Length"); i++) {
-				DescribeBackupsResponse.Backup backup = new DescribeBackupsResponse.Backup();
+				DescribeBackupsResponse.DescribeBackups_Backup backup = new DescribeBackupsResponse.DescribeBackups_Backup();
 				backup.BackupId = context.StringValue("DescribeBackups.Items["+ i +"].BackupId");
 				backup.DBInstanceId = context.StringValue("DescribeBackups.Items["+ i +"].DBInstanceId");
-				backup.BackupStatus = context.EnumValue<DescribeBackupsResponse.Backup.BackupStatusEnum>("DescribeBackups.Items["+ i +"].BackupStatus");
+				backup.BackupStatus = context.StringValue("DescribeBackups.Items["+ i +"].BackupStatus");
 				backup.BackupStartTime = context.StringValue("DescribeBackups.Items["+ i +"].BackupStartTime");
 				backup.BackupEndTime = context.StringValue("DescribeBackups.Items["+ i +"].BackupEndTime");
-				backup.BackupType = context.EnumValue<DescribeBackupsResponse.Backup.BackupTypeEnum>("DescribeBackups.Items["+ i +"].BackupType");
-				backup.BackupMode = context.EnumValue<DescribeBackupsResponse.Backup.BackupModeEnum>("DescribeBackups.Items["+ i +"].BackupMode");
-				backup.BackupMethod = context.EnumValue<DescribeBackupsResponse.Backup.BackupMethodEnum>("DescribeBackups.Items["+ i +"].BackupMethod");
+				backup.BackupType = context.StringValue("DescribeBackups.Items["+ i +"].BackupType");
+				backup.BackupMode = context.StringValue("DescribeBackups.Items["+ i +"].BackupMode");
+				backup.BackupMethod = context.StringValue("DescribeBackups.Items["+ i +"].BackupMethod");
 				backup.BackupDownloadURL = context.StringValue("DescribeBackups.Items["+ i +"].BackupDownloadURL");
 				backup.BackupIntranetDownloadURL = context.StringValue("DescribeBackups.Items["+ i +"].BackupIntranetDownloadURL");
 				backup.BackupLocation = context.StringValue("DescribeBackups.Items["+ i +"].BackupLocation");
-				backup.BackupExtractionStatus = context.EnumValue<DescribeBackupsResponse.Backup.BackupExtractionStatusEnum>("DescribeBackups.Items["+ i +"].BackupExtractionStatus");
-				backup.BackupScale = context.EnumValue<DescribeBackupsResponse.Backup.BackupScaleEnum>("DescribeBackups.Items["+ i +"].BackupScale");
+				backup.BackupExtractionStatus = context.StringValue("DescribeBackups.Items["+ i +"].BackupExtractionStatus");
+				backup.BackupScale = context.StringValue("DescribeBackups.Items["+ i +"].BackupScale");
 				backup.BackupDBNames = context.StringValue("DescribeBackups.Items["+ i +"].BackupDBNames");
 				backup.TotalBackupSize = context.LongValue("DescribeBackups.Items["+ i +"].TotalBackupSize");
 				backup.BackupSize = context.LongValue("DescribeBackups.Items["+ i +"].BackupSize");
 				backup.HostInstanceID = context.StringValue("DescribeBackups.Items["+ i +"].HostInstanceID");
-				backup.StoreStatus = context.EnumValue<DescribeBackupsResponse.Backup.StoreStatusEnum>("DescribeBackups.Items["+ i +"].StoreStatus");
+				backup.StoreStatus = context.StringValue("DescribeBackups.Items["+ i +"].StoreStatus");
 
-				items.Add(backup);
+				describeBackupsResponse_items.Add(backup);
 			}
-			describeBackupsResponse.Items = items;
+			describeBackupsResponse.Items = describeBackupsResponse_items;
         
 			return describeBackupsResponse;
         }

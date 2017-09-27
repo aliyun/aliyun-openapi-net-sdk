@@ -35,20 +35,20 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstanceNetworkResponse.StartTime = context.StringValue("DescribeDBInstanceNetwork.StartTime");
 			describeDBInstanceNetworkResponse.EndTime = context.StringValue("DescribeDBInstanceNetwork.EndTime");
 
-			List<DescribeDBInstanceNetworkResponse.Topology> topologys = new List<DescribeDBInstanceNetworkResponse.Topology>();
-			for (int i = 0; i < context.Length("DescribeDBInstanceNetwork.Topologys.Length"); i++) {
-				DescribeDBInstanceNetworkResponse.Topology topology = new DescribeDBInstanceNetworkResponse.Topology();
-				topology.StartPoint = context.StringValue("DescribeDBInstanceNetwork.Topologys["+ i +"].StartPoint");
-				topology.EndPoint = context.StringValue("DescribeDBInstanceNetwork.Topologys["+ i +"].EndPoint");
-				topology.NetworkTrafficIn = context.StringValue("DescribeDBInstanceNetwork.Topologys["+ i +"].NetworkTrafficIn");
-				topology.NetworkTrafficOut = context.StringValue("DescribeDBInstanceNetwork.Topologys["+ i +"].NetworkTrafficOut");
-				topology.NetworkLatency = context.StringValue("DescribeDBInstanceNetwork.Topologys["+ i +"].NetworkLatency");
-				topology.BackendLatency = context.StringValue("DescribeDBInstanceNetwork.Topologys["+ i +"].BackendLatency");
-				topology.NetworkErrors = context.StringValue("DescribeDBInstanceNetwork.Topologys["+ i +"].NetworkErrors");
+			List<DescribeDBInstanceNetworkResponse.DescribeDBInstanceNetwork_TopologyItem> describeDBInstanceNetworkResponse_topology = new List<DescribeDBInstanceNetworkResponse.DescribeDBInstanceNetwork_TopologyItem>();
+			for (int i = 0; i < context.Length("DescribeDBInstanceNetwork.Topology.Length"); i++) {
+				DescribeDBInstanceNetworkResponse.DescribeDBInstanceNetwork_TopologyItem topologyItem = new DescribeDBInstanceNetworkResponse.DescribeDBInstanceNetwork_TopologyItem();
+				topologyItem.StartPoint = context.StringValue("DescribeDBInstanceNetwork.Topology["+ i +"].StartPoint");
+				topologyItem.EndPoint = context.StringValue("DescribeDBInstanceNetwork.Topology["+ i +"].EndPoint");
+				topologyItem.NetworkTrafficIn = context.StringValue("DescribeDBInstanceNetwork.Topology["+ i +"].NetworkTrafficIn");
+				topologyItem.NetworkTrafficOut = context.StringValue("DescribeDBInstanceNetwork.Topology["+ i +"].NetworkTrafficOut");
+				topologyItem.NetworkLatency = context.StringValue("DescribeDBInstanceNetwork.Topology["+ i +"].NetworkLatency");
+				topologyItem.BackendLatency = context.StringValue("DescribeDBInstanceNetwork.Topology["+ i +"].BackendLatency");
+				topologyItem.NetworkErrors = context.StringValue("DescribeDBInstanceNetwork.Topology["+ i +"].NetworkErrors");
 
-				topologys.Add(topology);
+				describeDBInstanceNetworkResponse_topology.Add(topologyItem);
 			}
-			describeDBInstanceNetworkResponse.Topologys = topologys;
+			describeDBInstanceNetworkResponse.Topology = describeDBInstanceNetworkResponse_topology;
         
 			return describeDBInstanceNetworkResponse;
         }

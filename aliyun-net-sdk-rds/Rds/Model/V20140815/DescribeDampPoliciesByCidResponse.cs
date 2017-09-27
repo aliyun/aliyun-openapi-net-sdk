@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDampPoliciesByCidResponse : AcsResponse
 	{
 
-		private List<Policy> policies;
+		private string requestId;
 
-		public List<Policy> Policies
+		private List<DescribeDampPoliciesByCid_Policy> policies;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeDampPoliciesByCid_Policy> Policies
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class Policy{
+		public class DescribeDampPoliciesByCid_Policy
+		{
 
 			private string policyName;
 

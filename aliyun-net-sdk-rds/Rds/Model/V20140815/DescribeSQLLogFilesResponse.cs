@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeSQLLogFilesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalRecordCount;
 
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
-		private List<LogFile> items;
+		private List<DescribeSQLLogFiles_LogFile> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalRecordCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<LogFile> Items
+		public List<DescribeSQLLogFiles_LogFile> Items
 		{
 			get
 			{
@@ -80,11 +94,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class LogFile{
+		public class DescribeSQLLogFiles_LogFile
+		{
 
 			private string fileID;
 
-			private LogStatusEnum? logStatus;
+			private string logStatus;
 
 			private string logDownloadURL;
 
@@ -106,7 +121,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public LogStatusEnum? LogStatus
+			public string LogStatus
 			{
 				get
 				{
@@ -165,14 +180,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					logEndTime = value;
 				}
 			}
-
-public enum LogStatusEnum {
-
-					Generating,
-					NoStart,
-					Failed,
-					Success,
-}
 		}
 	}
 }

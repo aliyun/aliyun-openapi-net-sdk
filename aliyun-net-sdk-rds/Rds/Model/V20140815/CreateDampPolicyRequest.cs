@@ -29,57 +29,48 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateDampPolicyRequest : RpcAcsRequest<CreateDampPolicyResponse>
     {
         public CreateDampPolicyRequest()
-            : base("Rds", "2014-08-15", "CreateDampPolicy")
+            : base("Rds", "2014-08-15", "CreateDampPolicy", "rds", "openAPI")
         {
         }
 
-		private string securityToken;
-
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
 		private string ownerAccount;
 
-		private string dBInstanceId;
-
-		private string policyName;
+		private long? ownerId;
 
 		private int? priority;
 
-		private string handlers;
-
-		private string sourceRules;
+		private string accessKeyId;
 
 		private string timeRules;
 
 		private string actionRules;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string securityToken;
 
-		public long? OwnerId
+		private string handlers;
+
+		private string action;
+
+		private string dBInstanceId;
+
+		private string policyName;
+
+		private string sourceRules;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -96,19 +87,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -119,6 +97,110 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string TimeRules
+		{
+			get
+			{
+				return timeRules;
+			}
+			set	
+			{
+				timeRules = value;
+				DictionaryUtil.Add(QueryParameters, "TimeRules", value);
+			}
+		}
+
+		public string ActionRules
+		{
+			get
+			{
+				return actionRules;
+			}
+			set	
+			{
+				actionRules = value;
+				DictionaryUtil.Add(QueryParameters, "ActionRules", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Handlers
+		{
+			get
+			{
+				return handlers;
+			}
+			set	
+			{
+				handlers = value;
+				DictionaryUtil.Add(QueryParameters, "Handlers", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -148,32 +230,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? Priority
-		{
-			get
-			{
-				return priority;
-			}
-			set	
-			{
-				priority = value;
-				DictionaryUtil.Add(QueryParameters, "Priority", value.ToString());
-			}
-		}
-
-		public string Handlers
-		{
-			get
-			{
-				return handlers;
-			}
-			set	
-			{
-				handlers = value;
-				DictionaryUtil.Add(QueryParameters, "Handlers", value);
-			}
-		}
-
 		public string SourceRules
 		{
 			get
@@ -184,32 +240,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				sourceRules = value;
 				DictionaryUtil.Add(QueryParameters, "SourceRules", value);
-			}
-		}
-
-		public string TimeRules
-		{
-			get
-			{
-				return timeRules;
-			}
-			set	
-			{
-				timeRules = value;
-				DictionaryUtil.Add(QueryParameters, "TimeRules", value);
-			}
-		}
-
-		public string ActionRules
-		{
-			get
-			{
-				return actionRules;
-			}
-			set	
-			{
-				actionRules = value;
-				DictionaryUtil.Add(QueryParameters, "ActionRules", value);
 			}
 		}
 

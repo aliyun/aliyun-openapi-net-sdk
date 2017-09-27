@@ -32,11 +32,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDatabaseLockDiagnosisResponse.HttpResponse = context.HttpResponse;
 			describeDatabaseLockDiagnosisResponse.RequestId = context.StringValue("DescribeDatabaseLockDiagnosis.RequestId");
 
-			List<string> deadLockList = new List<string>();
+			List<string> describeDatabaseLockDiagnosisResponse_deadLockList = new List<string>();
 			for (int i = 0; i < context.Length("DescribeDatabaseLockDiagnosis.DeadLockList.Length"); i++) {
-				deadLockList.Add(context.StringValue("DescribeDatabaseLockDiagnosis.DeadLockList["+ i +"]"));
+				describeDatabaseLockDiagnosisResponse_deadLockList.Add(context.StringValue("DescribeDatabaseLockDiagnosis.DeadLockList["+ i +"]"));
 			}
-			describeDatabaseLockDiagnosisResponse.DeadLockList = deadLockList;
+			describeDatabaseLockDiagnosisResponse.DeadLockList = describeDatabaseLockDiagnosisResponse_deadLockList;
         
 			return describeDatabaseLockDiagnosisResponse;
         }

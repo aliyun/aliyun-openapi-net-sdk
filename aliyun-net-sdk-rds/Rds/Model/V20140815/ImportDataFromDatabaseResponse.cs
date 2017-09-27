@@ -24,7 +24,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class ImportDataFromDatabaseResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? importId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? ImportId
 		{

@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeAbnormalDBInstancesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalRecordCount;
 
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
-		private List<InstanceResult> items;
+		private List<DescribeAbnormalDBInstances_InstanceResult> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalRecordCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<InstanceResult> Items
+		public List<DescribeAbnormalDBInstances_InstanceResult> Items
 		{
 			get
 			{
@@ -80,13 +94,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class InstanceResult{
+		public class DescribeAbnormalDBInstances_InstanceResult
+		{
 
 			private string dBInstanceDescription;
 
 			private string dBInstanceId;
 
-			private List<AbnormalItem> abnormalItems;
+			private List<DescribeAbnormalDBInstances_AbnormalItem> abnormalItems;
 
 			public string DBInstanceDescription
 			{
@@ -112,7 +127,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<AbnormalItem> AbnormalItems
+			public List<DescribeAbnormalDBInstances_AbnormalItem> AbnormalItems
 			{
 				get
 				{
@@ -124,7 +139,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public class AbnormalItem{
+			public class DescribeAbnormalDBInstances_AbnormalItem
+			{
 
 				private string checkTime;
 

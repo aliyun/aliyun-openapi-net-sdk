@@ -29,21 +29,38 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDampPoliciesByCidRequest : RpcAcsRequest<DescribeDampPoliciesByCidResponse>
     {
         public DescribeDampPoliciesByCidRequest()
-            : base("Rds", "2014-08-15", "DescribeDampPoliciesByCid")
+            : base("Rds", "2014-08-15", "DescribeDampPoliciesByCid", "rds", "openAPI")
         {
         }
 
-		private string securityToken;
+		private long? resourceOwnerId;
 
-		private long? ownerId;
+		private string securityToken;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
 		private string ownerAccount;
 
+		private string action;
+
 		private string dBInstanceId;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
 
 		public string SecurityToken
 		{
@@ -55,19 +72,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -84,19 +88,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -110,6 +101,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string DBInstanceId
 		{
 			get
@@ -120,6 +124,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

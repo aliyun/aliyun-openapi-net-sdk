@@ -29,19 +29,60 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstanceNetworkDetailRequest : RpcAcsRequest<DescribeDBInstanceNetworkDetailResponse>
     {
         public DescribeDBInstanceNetworkDetailRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstanceNetworkDetail")
+            : base("Rds", "2014-08-15", "DescribeDBInstanceNetworkDetail", "rds", "openAPI")
         {
         }
+
+		private string endPoint;
+
+		private string startPoint;
+
+		private string endTime;
 
 		private string dBInstanceId;
 
 		private string startTime;
 
-		private string endTime;
+		private string accessKeyId;
 
-		private string startPoint;
+		public string EndPoint
+		{
+			get
+			{
+				return endPoint;
+			}
+			set	
+			{
+				endPoint = value;
+				DictionaryUtil.Add(QueryParameters, "EndPoint", value);
+			}
+		}
 
-		private string endPoint;
+		public string StartPoint
+		{
+			get
+			{
+				return startPoint;
+			}
+			set	
+			{
+				startPoint = value;
+				DictionaryUtil.Add(QueryParameters, "StartPoint", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
 
 		public string DBInstanceId
 		{
@@ -69,42 +110,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EndTime
+		public string AccessKeyId
 		{
 			get
 			{
-				return endTime;
+				return accessKeyId;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartPoint
-		{
-			get
-			{
-				return startPoint;
-			}
-			set	
-			{
-				startPoint = value;
-				DictionaryUtil.Add(QueryParameters, "StartPoint", value);
-			}
-		}
-
-		public string EndPoint
-		{
-			get
-			{
-				return endPoint;
-			}
-			set	
-			{
-				endPoint = value;
-				DictionaryUtil.Add(QueryParameters, "EndPoint", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

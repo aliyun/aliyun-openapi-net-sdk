@@ -33,16 +33,16 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			checkResourceResponse.RequestId = context.StringValue("CheckResource.RequestId");
 			checkResourceResponse.SpecifyCount = context.StringValue("CheckResource.SpecifyCount");
 
-			List<CheckResourceResponse.Resource> resources = new List<CheckResourceResponse.Resource>();
+			List<CheckResourceResponse.CheckResource_Resource> checkResourceResponse_resources = new List<CheckResourceResponse.CheckResource_Resource>();
 			for (int i = 0; i < context.Length("CheckResource.Resources.Length"); i++) {
-				CheckResourceResponse.Resource resource = new CheckResourceResponse.Resource();
+				CheckResourceResponse.CheckResource_Resource resource = new CheckResourceResponse.CheckResource_Resource();
 				resource.DBInstanceAvailable = context.StringValue("CheckResource.Resources["+ i +"].DBInstanceAvailable");
 				resource.Engine = context.StringValue("CheckResource.Resources["+ i +"].Engine");
 				resource.EngineVersion = context.StringValue("CheckResource.Resources["+ i +"].EngineVersion");
 
-				resources.Add(resource);
+				checkResourceResponse_resources.Add(resource);
 			}
-			checkResourceResponse.Resources = resources;
+			checkResourceResponse.Resources = checkResourceResponse_resources;
         
 			return checkResourceResponse;
         }

@@ -29,53 +29,44 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeBackupTasksRequest : RpcAcsRequest<DescribeBackupTasksResponse>
     {
         public DescribeBackupTasksRequest()
-            : base("Rds", "2014-08-15", "DescribeBackupTasks")
+            : base("Rds", "2014-08-15", "DescribeBackupTasks", "rds", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string backupJobId;
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
-
 		private string flag;
+
+		private string resourceOwnerAccount;
+
+		private string clientToken;
 
 		private string ownerAccount;
 
-		private string dBInstanceId;
+		private string action;
 
-		private string backupJobId;
+		private string dBInstanceId;
 
 		private string backupMode;
 
+		private long? ownerId;
+
 		private string backupJobStatus;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string accessKeyId;
 
-		public string ResourceOwnerAccount
+		public string BackupJobId
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return backupJobId;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				backupJobId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupJobId", value);
 			}
 		}
 
@@ -92,19 +83,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string Flag
 		{
 			get
@@ -115,6 +93,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				flag = value;
 				DictionaryUtil.Add(QueryParameters, "Flag", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -131,6 +135,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string DBInstanceId
 		{
 			get
@@ -141,19 +158,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string BackupJobId
-		{
-			get
-			{
-				return backupJobId;
-			}
-			set	
-			{
-				backupJobId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupJobId", value);
 			}
 		}
 
@@ -170,6 +174,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public string BackupJobStatus
 		{
 			get
@@ -180,6 +197,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupJobStatus = value;
 				DictionaryUtil.Add(QueryParameters, "BackupJobStatus", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

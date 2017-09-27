@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeResourceUsageResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string dBInstanceId;
 
 		private string engine;
@@ -39,6 +41,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? sQLSize;
 
 		private long? coldBackupSize;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DBInstanceId
 		{

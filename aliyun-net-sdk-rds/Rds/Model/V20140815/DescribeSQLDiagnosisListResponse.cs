@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeSQLDiagnosisListResponse : AcsResponse
 	{
 
-		private List<SQLDiag> sQLDiagList;
+		private string requestId;
 
-		public List<SQLDiag> SQLDiagList
+		private List<DescribeSQLDiagnosisList_SQLDiag> sQLDiagList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeSQLDiagnosisList_SQLDiag> SQLDiagList
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class SQLDiag{
+		public class DescribeSQLDiagnosisList_SQLDiag
+		{
 
 			private string sQLDiagId;
 

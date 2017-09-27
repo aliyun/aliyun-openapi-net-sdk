@@ -34,27 +34,27 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeParametersResponse.Engine = context.StringValue("DescribeParameters.Engine");
 			describeParametersResponse.EngineVersion = context.StringValue("DescribeParameters.EngineVersion");
 
-			List<DescribeParametersResponse.DBInstanceParameter> configParameters = new List<DescribeParametersResponse.DBInstanceParameter>();
+			List<DescribeParametersResponse.DescribeParameters_DBInstanceParameter> describeParametersResponse_configParameters = new List<DescribeParametersResponse.DescribeParameters_DBInstanceParameter>();
 			for (int i = 0; i < context.Length("DescribeParameters.ConfigParameters.Length"); i++) {
-				DescribeParametersResponse.DBInstanceParameter dBInstanceParameter = new DescribeParametersResponse.DBInstanceParameter();
+				DescribeParametersResponse.DescribeParameters_DBInstanceParameter dBInstanceParameter = new DescribeParametersResponse.DescribeParameters_DBInstanceParameter();
 				dBInstanceParameter.ParameterName = context.StringValue("DescribeParameters.ConfigParameters["+ i +"].ParameterName");
 				dBInstanceParameter.ParameterValue = context.StringValue("DescribeParameters.ConfigParameters["+ i +"].ParameterValue");
 				dBInstanceParameter.ParameterDescription = context.StringValue("DescribeParameters.ConfigParameters["+ i +"].ParameterDescription");
 
-				configParameters.Add(dBInstanceParameter);
+				describeParametersResponse_configParameters.Add(dBInstanceParameter);
 			}
-			describeParametersResponse.ConfigParameters = configParameters;
+			describeParametersResponse.ConfigParameters = describeParametersResponse_configParameters;
 
-			List<DescribeParametersResponse.DBInstanceParameter> runningParameters = new List<DescribeParametersResponse.DBInstanceParameter>();
+			List<DescribeParametersResponse.DescribeParameters_DBInstanceParameter> describeParametersResponse_runningParameters = new List<DescribeParametersResponse.DescribeParameters_DBInstanceParameter>();
 			for (int i = 0; i < context.Length("DescribeParameters.RunningParameters.Length"); i++) {
-				DescribeParametersResponse.DBInstanceParameter dBInstanceParameter = new DescribeParametersResponse.DBInstanceParameter();
+				DescribeParametersResponse.DescribeParameters_DBInstanceParameter dBInstanceParameter = new DescribeParametersResponse.DescribeParameters_DBInstanceParameter();
 				dBInstanceParameter.ParameterName = context.StringValue("DescribeParameters.RunningParameters["+ i +"].ParameterName");
 				dBInstanceParameter.ParameterValue = context.StringValue("DescribeParameters.RunningParameters["+ i +"].ParameterValue");
 				dBInstanceParameter.ParameterDescription = context.StringValue("DescribeParameters.RunningParameters["+ i +"].ParameterDescription");
 
-				runningParameters.Add(dBInstanceParameter);
+				describeParametersResponse_runningParameters.Add(dBInstanceParameter);
 			}
-			describeParametersResponse.RunningParameters = runningParameters;
+			describeParametersResponse.RunningParameters = describeParametersResponse_runningParameters;
         
 			return describeParametersResponse;
         }

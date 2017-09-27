@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeOptimizeAdviceOnMissPKResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalRecordsCount;
 
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
-		private List<AdviceOnMissPK> items;
+		private List<DescribeOptimizeAdviceOnMissPK_AdviceOnMissPK> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalRecordsCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<AdviceOnMissPK> Items
+		public List<DescribeOptimizeAdviceOnMissPK_AdviceOnMissPK> Items
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class AdviceOnMissPK{
+		public class DescribeOptimizeAdviceOnMissPK_AdviceOnMissPK
+		{
 
 			private string dBName;
 

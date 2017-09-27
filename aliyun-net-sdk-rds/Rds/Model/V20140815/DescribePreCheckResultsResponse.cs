@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribePreCheckResultsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string dBInstanceId;
 
-		private List<PreCheckResult> items;
+		private List<DescribePreCheckResults_PreCheckResult> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DBInstanceId
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<PreCheckResult> Items
+		public List<DescribePreCheckResults_PreCheckResult> Items
 		{
 			get
 			{
@@ -52,11 +66,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class PreCheckResult{
+		public class DescribePreCheckResults_PreCheckResult
+		{
 
 			private string preCheckName;
 
-			private string preCheckResult_;
+			private string preCheckResult;
 
 			private string failReasion;
 
@@ -74,15 +89,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string PreCheckResult_
+			public string PreCheckResult
 			{
 				get
 				{
-					return preCheckResult_;
+					return preCheckResult;
 				}
 				set	
 				{
-					preCheckResult_ = value;
+					preCheckResult = value;
 				}
 			}
 

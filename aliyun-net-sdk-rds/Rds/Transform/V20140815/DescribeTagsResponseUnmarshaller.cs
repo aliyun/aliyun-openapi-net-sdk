@@ -32,21 +32,21 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeTagsResponse.HttpResponse = context.HttpResponse;
 			describeTagsResponse.RequestId = context.StringValue("DescribeTags.RequestId");
 
-			List<DescribeTagsResponse.TagInfos> items = new List<DescribeTagsResponse.TagInfos>();
+			List<DescribeTagsResponse.DescribeTags_TagInfos> describeTagsResponse_items = new List<DescribeTagsResponse.DescribeTags_TagInfos>();
 			for (int i = 0; i < context.Length("DescribeTags.Items.Length"); i++) {
-				DescribeTagsResponse.TagInfos tagInfos = new DescribeTagsResponse.TagInfos();
+				DescribeTagsResponse.DescribeTags_TagInfos tagInfos = new DescribeTagsResponse.DescribeTags_TagInfos();
 				tagInfos.TagKey = context.StringValue("DescribeTags.Items["+ i +"].TagKey");
 				tagInfos.TagValue = context.StringValue("DescribeTags.Items["+ i +"].TagValue");
 
-				List<string> dBInstanceIds = new List<string>();
+				List<string> tagInfos_dBInstanceIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeTags.Items["+ i +"].DBInstanceIds.Length"); j++) {
-					dBInstanceIds.Add(context.StringValue("DescribeTags.Items["+ i +"].DBInstanceIds["+ j +"]"));
+					tagInfos_dBInstanceIds.Add(context.StringValue("DescribeTags.Items["+ i +"].DBInstanceIds["+ j +"]"));
 				}
-				tagInfos.DBInstanceIds = dBInstanceIds;
+				tagInfos.DBInstanceIds = tagInfos_dBInstanceIds;
 
-				items.Add(tagInfos);
+				describeTagsResponse_items.Add(tagInfos);
 			}
-			describeTagsResponse.Items = items;
+			describeTagsResponse.Items = describeTagsResponse_items;
         
 			return describeTagsResponse;
         }

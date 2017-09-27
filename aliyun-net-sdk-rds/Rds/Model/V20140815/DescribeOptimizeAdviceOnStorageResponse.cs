@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeOptimizeAdviceOnStorageResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string dBInstanceId;
 
 		private int? totalRecordsCount;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageRecordCount;
 
-		private List<AdviceOnStorage> items;
+		private List<DescribeOptimizeAdviceOnStorage_AdviceOnStorage> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DBInstanceId
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<AdviceOnStorage> Items
+		public List<DescribeOptimizeAdviceOnStorage_AdviceOnStorage> Items
 		{
 			get
 			{
@@ -94,7 +108,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class AdviceOnStorage{
+		public class DescribeOptimizeAdviceOnStorage_AdviceOnStorage
+		{
 
 			private string dBName;
 

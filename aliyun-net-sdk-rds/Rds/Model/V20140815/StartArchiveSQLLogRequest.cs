@@ -29,55 +29,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class StartArchiveSQLLogRequest : RpcAcsRequest<StartArchiveSQLLogResponse>
     {
         public StartArchiveSQLLogRequest()
-            : base("Rds", "2014-08-15", "StartArchiveSQLLog")
+            : base("Rds", "2014-08-15", "StartArchiveSQLLog", "rds", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
-
-		private string dBInstanceId;
-
-		private string queryKeywords;
-
-		private string startTime;
 
 		private string database;
 
-		private string user;
-
-		private string endTime;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string action;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string endTime;
+
+		private string dBInstanceId;
+
+		private string startTime;
+
+		private long? ownerId;
+
+		private string user;
+
+		private string queryKeywords;
+
+		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -89,45 +67,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string QueryKeywords
-		{
-			get
-			{
-				return queryKeywords;
-			}
-			set	
-			{
-				queryKeywords = value;
-				DictionaryUtil.Add(QueryParameters, "QueryKeywords", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -144,16 +83,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string User
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return user;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				user = value;
-				DictionaryUtil.Add(QueryParameters, "User", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -170,16 +135,81 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
+		public string DBInstanceId
 		{
 			get
 			{
-				return ownerAccount;
+				return dBInstanceId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string User
+		{
+			get
+			{
+				return user;
+			}
+			set	
+			{
+				user = value;
+				DictionaryUtil.Add(QueryParameters, "User", value);
+			}
+		}
+
+		public string QueryKeywords
+		{
+			get
+			{
+				return queryKeywords;
+			}
+			set	
+			{
+				queryKeywords = value;
+				DictionaryUtil.Add(QueryParameters, "QueryKeywords", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

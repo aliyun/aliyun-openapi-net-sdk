@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeResourceDiagnosisResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string startTime;
 
 		private string endTime;
@@ -37,6 +39,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private List<string> iOPS;
 
 		private List<string> connection;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string StartTime
 		{

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDiagnosticReportListResponse : AcsResponse
 	{
 
-		private List<Report> reportList;
+		private string requestId;
 
-		public List<Report> ReportList
+		private List<DescribeDiagnosticReportList_Report> reportList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeDiagnosticReportList_Report> ReportList
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class Report{
+		public class DescribeDiagnosticReportList_Report
+		{
 
 			private string diagnosticTime;
 

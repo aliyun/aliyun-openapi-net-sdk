@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeBackupTasksResponse : AcsResponse
 	{
 
-		private List<BackupJob> items;
+		private string requestId;
 
-		public List<BackupJob> Items
+		private List<DescribeBackupTasks_BackupJob> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeBackupTasks_BackupJob> Items
 		{
 			get
 			{
@@ -38,11 +52,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class BackupJob{
+		public class DescribeBackupTasks_BackupJob
+		{
 
 			private string backupProgressStatus;
 
-			private JobModeEnum? jobMode;
+			private string jobMode;
 
 			private string process;
 
@@ -62,7 +77,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public JobModeEnum? JobMode
+			public string JobMode
 			{
 				get
 				{
@@ -109,12 +124,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					backupjobId = value;
 				}
 			}
-
-public enum JobModeEnum {
-
-					Manual,
-					Automated,
-}
 		}
 	}
 }

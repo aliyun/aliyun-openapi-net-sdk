@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeSQLInjectionInfosResponse.PageNumber = context.IntegerValue("DescribeSQLInjectionInfos.PageNumber");
 			describeSQLInjectionInfosResponse.PageRecordCount = context.IntegerValue("DescribeSQLInjectionInfos.PageRecordCount");
 
-			List<DescribeSQLInjectionInfosResponse.SQLInjectionInfo> items = new List<DescribeSQLInjectionInfosResponse.SQLInjectionInfo>();
+			List<DescribeSQLInjectionInfosResponse.DescribeSQLInjectionInfos_SQLInjectionInfo> describeSQLInjectionInfosResponse_items = new List<DescribeSQLInjectionInfosResponse.DescribeSQLInjectionInfos_SQLInjectionInfo>();
 			for (int i = 0; i < context.Length("DescribeSQLInjectionInfos.Items.Length"); i++) {
-				DescribeSQLInjectionInfosResponse.SQLInjectionInfo sQLInjectionInfo = new DescribeSQLInjectionInfosResponse.SQLInjectionInfo();
+				DescribeSQLInjectionInfosResponse.DescribeSQLInjectionInfos_SQLInjectionInfo sQLInjectionInfo = new DescribeSQLInjectionInfosResponse.DescribeSQLInjectionInfos_SQLInjectionInfo();
 				sQLInjectionInfo.DBName = context.StringValue("DescribeSQLInjectionInfos.Items["+ i +"].DBName");
 				sQLInjectionInfo.SQLText = context.StringValue("DescribeSQLInjectionInfos.Items["+ i +"].SQLText");
 				sQLInjectionInfo.LatencyTime = context.StringValue("DescribeSQLInjectionInfos.Items["+ i +"].LatencyTime");
@@ -47,9 +47,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				sQLInjectionInfo.AccountName = context.StringValue("DescribeSQLInjectionInfos.Items["+ i +"].AccountName");
 				sQLInjectionInfo.EffectRowCount = context.StringValue("DescribeSQLInjectionInfos.Items["+ i +"].EffectRowCount");
 
-				items.Add(sQLInjectionInfo);
+				describeSQLInjectionInfosResponse_items.Add(sQLInjectionInfo);
 			}
-			describeSQLInjectionInfosResponse.Items = items;
+			describeSQLInjectionInfosResponse.Items = describeSQLInjectionInfosResponse_items;
         
 			return describeSQLInjectionInfosResponse;
         }

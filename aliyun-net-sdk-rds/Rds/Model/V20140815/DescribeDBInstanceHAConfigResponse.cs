@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceHAConfigResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string dBInstanceId;
 
 		private string syncMode;
 
 		private string hAMode;
 
-		private List<NodeInfo> hostInstanceInfos;
+		private List<DescribeDBInstanceHAConfig_NodeInfo> hostInstanceInfos;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DBInstanceId
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<NodeInfo> HostInstanceInfos
+		public List<DescribeDBInstanceHAConfig_NodeInfo> HostInstanceInfos
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class NodeInfo{
+		public class DescribeDBInstanceHAConfig_NodeInfo
+		{
 
 			private string nodeId;
 
