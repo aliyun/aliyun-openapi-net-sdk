@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private int? smsDelaySecs;
 
+		private int? sendSpeed;
+
 		private string androidPopupActivity;
 
 		private string iOSRemindBody;
@@ -274,6 +276,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				smsDelaySecs = value;
 				DictionaryUtil.Add(QueryParameters, "SmsDelaySecs", value.ToString());
+			}
+		}
+
+		public int? SendSpeed
+		{
+			get
+			{
+				return sendSpeed;
+			}
+			set	
+			{
+				sendSpeed = value;
+				DictionaryUtil.Add(QueryParameters, "SendSpeed", value.ToString());
 			}
 		}
 
