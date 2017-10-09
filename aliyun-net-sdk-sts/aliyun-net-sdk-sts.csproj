@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7e878bf9-1adc-4b28-8aa8-00e0e801dcdc}</ProjectGuid>
+    <ProjectGuid>{53121270-5d0a-4b76-ac56-e8dbd08c5227}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
     <AssemblyName>aliyun-net-sdk-sts</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,8 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Sts\Model\V20150401\AssumeRoleResponse.cs" />
 	<Compile Include="Sts\Model\V20150401\AssumeRoleRequest.cs" />
+	<Compile Include="Sts\Model\V20150401\GenerateSessionAccessKeyResponse.cs" />
+	<Compile Include="Sts\Model\V20150401\GetCallerIdentityRequest.cs" />
+	<Compile Include="Sts\Model\V20150401\GenerateSessionAccessKeyRequest.cs" />
+	<Compile Include="Sts\Model\V20150401\AssumeRoleResponse.cs" />
+	<Compile Include="Sts\Model\V20150401\GetCallerIdentityResponse.cs" />
+	<Compile Include="Sts\Transform\V20150401\GenerateSessionAccessKeyResponseUnmarshaller.cs" />
+	<Compile Include="Sts\Transform\V20150401\GetCallerIdentityResponseUnmarshaller.cs" />
 	<Compile Include="Sts\Transform\V20150401\AssumeRoleResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

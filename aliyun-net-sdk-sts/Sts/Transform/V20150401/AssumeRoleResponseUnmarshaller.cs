@@ -32,14 +32,14 @@ namespace Aliyun.Acs.Sts.Transform.V20150401
 			assumeRoleResponse.HttpResponse = context.HttpResponse;
 			assumeRoleResponse.RequestId = context.StringValue("AssumeRole.RequestId");
 
-			AssumeRoleResponse.Credentials_ credentials = new AssumeRoleResponse.Credentials_();
+			AssumeRoleResponse.AssumeRole_Credentials credentials = new AssumeRoleResponse.AssumeRole_Credentials();
 			credentials.SecurityToken = context.StringValue("AssumeRole.Credentials.SecurityToken");
 			credentials.AccessKeySecret = context.StringValue("AssumeRole.Credentials.AccessKeySecret");
 			credentials.AccessKeyId = context.StringValue("AssumeRole.Credentials.AccessKeyId");
 			credentials.Expiration = context.StringValue("AssumeRole.Credentials.Expiration");
 			assumeRoleResponse.Credentials = credentials;
 
-			AssumeRoleResponse.AssumedRoleUser_ assumedRoleUser = new AssumeRoleResponse.AssumedRoleUser_();
+			AssumeRoleResponse.AssumeRole_AssumedRoleUser assumedRoleUser = new AssumeRoleResponse.AssumeRole_AssumedRoleUser();
 			assumedRoleUser.Arn = context.StringValue("AssumeRole.AssumedRoleUser.Arn");
 			assumedRoleUser.AssumedRoleId = context.StringValue("AssumeRole.AssumedRoleUser.AssumedRoleId");
 			assumeRoleResponse.AssumedRoleUser = assumedRoleUser;

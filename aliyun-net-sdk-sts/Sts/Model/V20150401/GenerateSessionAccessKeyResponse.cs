@@ -21,14 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Sts.Model.V20150401
 {
-	public class AssumeRoleResponse : AcsResponse
+	public class GenerateSessionAccessKeyResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private AssumeRole_Credentials credentials;
-
-		private AssumeRole_AssumedRoleUser assumedRoleUser;
+		private GenerateSessionAccessKey_SessionAccessKey sessionAccessKey;
 
 		public string RequestId
 		{
@@ -42,74 +40,48 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public AssumeRole_Credentials Credentials
+		public GenerateSessionAccessKey_SessionAccessKey SessionAccessKey
 		{
 			get
 			{
-				return credentials;
+				return sessionAccessKey;
 			}
 			set	
 			{
-				credentials = value;
+				sessionAccessKey = value;
 			}
 		}
 
-		public AssumeRole_AssumedRoleUser AssumedRoleUser
-		{
-			get
-			{
-				return assumedRoleUser;
-			}
-			set	
-			{
-				assumedRoleUser = value;
-			}
-		}
-
-		public class AssumeRole_Credentials
+		public class GenerateSessionAccessKey_SessionAccessKey
 		{
 
-			private string securityToken;
+			private string sessionAccessKeyId;
 
-			private string accessKeySecret;
-
-			private string accessKeyId;
+			private string sessionAccessKeySecret;
 
 			private string expiration;
 
-			public string SecurityToken
+			public string SessionAccessKeyId
 			{
 				get
 				{
-					return securityToken;
+					return sessionAccessKeyId;
 				}
 				set	
 				{
-					securityToken = value;
+					sessionAccessKeyId = value;
 				}
 			}
 
-			public string AccessKeySecret
+			public string SessionAccessKeySecret
 			{
 				get
 				{
-					return accessKeySecret;
+					return sessionAccessKeySecret;
 				}
 				set	
 				{
-					accessKeySecret = value;
-				}
-			}
-
-			public string AccessKeyId
-			{
-				get
-				{
-					return accessKeyId;
-				}
-				set	
-				{
-					accessKeyId = value;
+					sessionAccessKeySecret = value;
 				}
 			}
 
@@ -122,38 +94,6 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 				set	
 				{
 					expiration = value;
-				}
-			}
-		}
-
-		public class AssumeRole_AssumedRoleUser
-		{
-
-			private string arn;
-
-			private string assumedRoleId;
-
-			public string Arn
-			{
-				get
-				{
-					return arn;
-				}
-				set	
-				{
-					arn = value;
-				}
-			}
-
-			public string AssumedRoleId
-			{
-				get
-				{
-					return assumedRoleId;
-				}
-				set	
-				{
-					assumedRoleId = value;
 				}
 			}
 		}

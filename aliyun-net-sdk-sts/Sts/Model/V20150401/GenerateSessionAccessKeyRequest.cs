@@ -26,47 +26,15 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Sts.Model.V20150401
 {
-    public class AssumeRoleRequest : RpcAcsRequest<AssumeRoleResponse>
+    public class GenerateSessionAccessKeyRequest : RpcAcsRequest<GenerateSessionAccessKeyResponse>
     {
-        public AssumeRoleRequest()
-            : base("Sts", "2015-04-01", "AssumeRole")
+        public GenerateSessionAccessKeyRequest()
+            : base("Sts", "2015-04-01", "GenerateSessionAccessKey")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string roleArn;
-
-		private string roleSessionName;
-
 		private long? durationSeconds;
-
-		private string policy;
-
-		public string RoleArn
-		{
-			get
-			{
-				return roleArn;
-			}
-			set	
-			{
-				roleArn = value;
-				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
-			}
-		}
-
-		public string RoleSessionName
-		{
-			get
-			{
-				return roleSessionName;
-			}
-			set	
-			{
-				roleSessionName = value;
-				DictionaryUtil.Add(QueryParameters, "RoleSessionName", value);
-			}
-		}
 
 		public long? DurationSeconds
 		{
@@ -81,22 +49,9 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public string Policy
-		{
-			get
-			{
-				return policy;
-			}
-			set	
-			{
-				policy = value;
-				DictionaryUtil.Add(QueryParameters, "Policy", value);
-			}
-		}
-
-        public override AssumeRoleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GenerateSessionAccessKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return AssumeRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GenerateSessionAccessKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
