@@ -69,7 +69,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class ListAIVideoPornRecogJob_AIVideoPornRecogJob
 		{
 
-			private string id;
+			private string jobId;
 
 			private string mediaId;
 
@@ -83,15 +83,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string data;
 
-			public string Id
+			public string JobId
 			{
 				get
 				{
-					return id;
+					return jobId;
 				}
 				set	
 				{
-					id = value;
+					jobId = value;
 				}
 			}
 

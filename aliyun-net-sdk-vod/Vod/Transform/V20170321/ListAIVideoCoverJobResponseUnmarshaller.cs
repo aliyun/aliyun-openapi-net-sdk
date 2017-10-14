@@ -41,7 +41,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<ListAIVideoCoverJobResponse.ListAIVideoCoverJob_AIVideoCoverJob> listAIVideoCoverJobResponse_aIVideoCoverJobList = new List<ListAIVideoCoverJobResponse.ListAIVideoCoverJob_AIVideoCoverJob>();
 			for (int i = 0; i < context.Length("ListAIVideoCoverJob.AIVideoCoverJobList.Length"); i++) {
 				ListAIVideoCoverJobResponse.ListAIVideoCoverJob_AIVideoCoverJob aIVideoCoverJob = new ListAIVideoCoverJobResponse.ListAIVideoCoverJob_AIVideoCoverJob();
-				aIVideoCoverJob.Id = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJobList["+ i +"].Id");
+				aIVideoCoverJob.JobId = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJobList["+ i +"].JobId");
 				aIVideoCoverJob.MediaId = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJobList["+ i +"].MediaId");
 				aIVideoCoverJob.Status = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJobList["+ i +"].Status");
 				aIVideoCoverJob.Code = context.StringValue("ListAIVideoCoverJob.AIVideoCoverJobList["+ i +"].Code");

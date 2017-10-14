@@ -26,51 +26,28 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetPlayInfoRequest : RpcAcsRequest<GetPlayInfoResponse>
+    public class ListAIASRJobRequest : RpcAcsRequest<ListAIASRJobResponse>
     {
-        public GetPlayInfoRequest()
-            : base("vod", "2017-03-21", "GetPlayInfo", "vod", "openAPI")
+        public ListAIASRJobRequest()
+            : base("vod", "2017-03-21", "ListAIASRJob", "vod", "openAPI")
         {
         }
 
-		private string rand;
-
-		private long? resourceOwnerId;
-
-		private string formats;
+		private string resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private string channel;
+		private string ownerAccount;
 
 		private string action;
 
-		private string videoId;
+		private string ownerId;
 
-		private string playerVersion;
-
-		private long? ownerId;
-
-		private long? authTimeout;
-
-		private string authInfo;
+		private string aIASRJobIds;
 
 		private string accessKeyId;
 
-		public string Rand
-		{
-			get
-			{
-				return rand;
-			}
-			set	
-			{
-				rand = value;
-				DictionaryUtil.Add(QueryParameters, "Rand", value);
-			}
-		}
-
-		public long? ResourceOwnerId
+		public string ResourceOwnerId
 		{
 			get
 			{
@@ -79,20 +56,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Formats
-		{
-			get
-			{
-				return formats;
-			}
-			set	
-			{
-				formats = value;
-				DictionaryUtil.Add(QueryParameters, "Formats", value);
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
 			}
 		}
 
@@ -109,16 +73,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Channel
+		public string OwnerAccount
 		{
 			get
 			{
-				return channel;
+				return ownerAccount;
 			}
 			set	
 			{
-				channel = value;
-				DictionaryUtil.Add(QueryParameters, "Channel", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -135,33 +99,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
-		{
-			get
-			{
-				return videoId;
-			}
-			set	
-			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
-			}
-		}
-
-		public string PlayerVersion
-		{
-			get
-			{
-				return playerVersion;
-			}
-			set	
-			{
-				playerVersion = value;
-				DictionaryUtil.Add(QueryParameters, "PlayerVersion", value);
-			}
-		}
-
-		public long? OwnerId
+		public string OwnerId
 		{
 			get
 			{
@@ -170,33 +108,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
-		public long? AuthTimeout
+		public string AIASRJobIds
 		{
 			get
 			{
-				return authTimeout;
+				return aIASRJobIds;
 			}
 			set	
 			{
-				authTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
-			}
-		}
-
-		public string AuthInfo
-		{
-			get
-			{
-				return authInfo;
-			}
-			set	
-			{
-				authInfo = value;
-				DictionaryUtil.Add(QueryParameters, "AuthInfo", value);
+				aIASRJobIds = value;
+				DictionaryUtil.Add(QueryParameters, "AIASRJobIds", value);
 			}
 		}
 
@@ -213,9 +138,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override GetPlayInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListAIASRJobResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetPlayInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListAIASRJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

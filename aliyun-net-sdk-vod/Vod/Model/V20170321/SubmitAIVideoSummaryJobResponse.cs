@@ -21,14 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class ListAIVideoCoverJobResponse : AcsResponse
+	public class SubmitAIVideoSummaryJobResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<ListAIVideoCoverJob_AIVideoCoverJob> aIVideoCoverJobList;
-
-		private List<string> nonExistAIVideoCoverJobIds;
+		private SubmitAIVideoSummaryJob_AIVideoSummaryJob aIVideoSummaryJob;
 
 		public string RequestId
 		{
@@ -42,31 +40,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public List<ListAIVideoCoverJob_AIVideoCoverJob> AIVideoCoverJobList
+		public SubmitAIVideoSummaryJob_AIVideoSummaryJob AIVideoSummaryJob
 		{
 			get
 			{
-				return aIVideoCoverJobList;
+				return aIVideoSummaryJob;
 			}
 			set	
 			{
-				aIVideoCoverJobList = value;
+				aIVideoSummaryJob = value;
 			}
 		}
 
-		public List<string> NonExistAIVideoCoverJobIds
-		{
-			get
-			{
-				return nonExistAIVideoCoverJobIds;
-			}
-			set	
-			{
-				nonExistAIVideoCoverJobIds = value;
-			}
-		}
-
-		public class ListAIVideoCoverJob_AIVideoCoverJob
+		public class SubmitAIVideoSummaryJob_AIVideoSummaryJob
 		{
 
 			private string jobId;

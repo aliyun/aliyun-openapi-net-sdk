@@ -93,6 +93,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string complexity;
 
+			private string streamType;
+
+			private string rand;
+
 			public long? Width
 			{
 				get
@@ -234,6 +238,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					complexity = value;
+				}
+			}
+
+			public string StreamType
+			{
+				get
+				{
+					return streamType;
+				}
+				set	
+				{
+					streamType = value;
+				}
+			}
+
+			public string Rand
+			{
+				get
+				{
+					return rand;
+				}
+				set	
+				{
+					rand = value;
 				}
 			}
 		}

@@ -33,12 +33,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			getCategoriesResponse.RequestId = context.StringValue("GetCategories.RequestId");
 			getCategoriesResponse.SubTotal = context.LongValue("GetCategories.SubTotal");
 
-			GetCategoriesResponse.GetCategories_Category category1 = new GetCategoriesResponse.GetCategories_Category();
+			GetCategoriesResponse.GetCategories_Category1 category1 = new GetCategoriesResponse.GetCategories_Category1();
 			category1.CateId = context.LongValue("GetCategories.Category.CateId");
 			category1.CateName = context.StringValue("GetCategories.Category.CateName");
 			category1.Level = context.LongValue("GetCategories.Category.Level");
 			category1.ParentId = context.LongValue("GetCategories.Category.ParentId");
-			getCategoriesResponse.Category = category1;
+			getCategoriesResponse.Category1 = category1;
 
 			List<GetCategoriesResponse.GetCategories_Category> getCategoriesResponse_subCategories = new List<GetCategoriesResponse.GetCategories_Category>();
 			for (int i = 0; i < context.Length("GetCategories.SubCategories.Length"); i++) {

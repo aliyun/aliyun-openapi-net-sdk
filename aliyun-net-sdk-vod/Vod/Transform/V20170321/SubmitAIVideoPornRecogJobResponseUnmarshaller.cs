@@ -33,7 +33,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			submitAIVideoPornRecogJobResponse.RequestId = context.StringValue("SubmitAIVideoPornRecogJob.RequestId");
 
 			SubmitAIVideoPornRecogJobResponse.SubmitAIVideoPornRecogJob_AIVideoPornRecogJob aIVideoPornRecogJob = new SubmitAIVideoPornRecogJobResponse.SubmitAIVideoPornRecogJob_AIVideoPornRecogJob();
-			aIVideoPornRecogJob.Id = context.StringValue("SubmitAIVideoPornRecogJob.AIVideoPornRecogJob.Id");
+			aIVideoPornRecogJob.JobId = context.StringValue("SubmitAIVideoPornRecogJob.AIVideoPornRecogJob.JobId");
 			aIVideoPornRecogJob.MediaId = context.StringValue("SubmitAIVideoPornRecogJob.AIVideoPornRecogJob.MediaId");
 			aIVideoPornRecogJob.Status = context.StringValue("SubmitAIVideoPornRecogJob.AIVideoPornRecogJob.Status");
 			aIVideoPornRecogJob.Code = context.StringValue("SubmitAIVideoPornRecogJob.AIVideoPornRecogJob.Code");

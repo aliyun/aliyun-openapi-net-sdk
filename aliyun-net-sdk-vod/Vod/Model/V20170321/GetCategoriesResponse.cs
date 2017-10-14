@@ -30,7 +30,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private List<GetCategories_Category> subCategories;
 
-		private GetCategories_Category category;
+		private GetCategories_Category1 category1;
 
 		public string RequestId
 		{
@@ -68,15 +68,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public GetCategories_Category Category
+		public GetCategories_Category1 Category1
 		{
 			get
 			{
-				return category;
+				return category1;
 			}
 			set	
 			{
-				category = value;
+				category1 = value;
 			}
 		}
 
@@ -140,5 +140,64 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public class GetCategories_Category1
+		{
+
+			private long? cateId;
+
+			private string cateName;
+
+			private long? level;
+
+			private long? parentId;
+
+			public long? CateId
+			{
+				get
+				{
+					return cateId;
+				}
+				set	
+				{
+					cateId = value;
+				}
+			}
+
+			public string CateName
+			{
+				get
+				{
+					return cateName;
+				}
+				set	
+				{
+					cateName = value;
+				}
+			}
+
+			public long? Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
+				}
+			}
+
+			public long? ParentId
+			{
+				get
+				{
+					return parentId;
+				}
+				set	
+				{
+					parentId = value;
+				}
+			}
+		}
 	}
 }
