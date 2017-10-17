@@ -30,4 +30,14 @@
     <OutputPath>..\..\build\bin\Debug\</OutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Regions\endpoints.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Regions\endpoints.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>
