@@ -26,49 +26,34 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-    public class CreateTransactionRequest : RpcAcsRequest<CreateTransactionResponse>
+    public class GetPublicAccessUrlsRequest : RpcAcsRequest<GetPublicAccessUrlsResponse>
     {
-        public CreateTransactionRequest()
-            : base("CloudPhoto", "2017-07-11", "CreateTransaction", "cloudphoto", "openAPI")
+        public GetPublicAccessUrlsRequest()
+            : base("CloudPhoto", "2017-07-11", "GetPublicAccessUrls", "cloudphoto", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string ext;
-
-		private long? size;
+		private string domainType;
 
 		private string libraryId;
 
+		private List<long?> photoIds;
+
 		private string storeName;
 
-		private string force;
+		private string zoomType;
 
-		private string md5;
-
-		public string Ext
+		public string DomainType
 		{
 			get
 			{
-				return ext;
+				return domainType;
 			}
 			set	
 			{
-				ext = value;
-				DictionaryUtil.Add(QueryParameters, "Ext", value);
-			}
-		}
-
-		public long? Size
-		{
-			get
-			{
-				return size;
-			}
-			set	
-			{
-				size = value;
-				DictionaryUtil.Add(QueryParameters, "Size", value.ToString());
+				domainType = value;
+				DictionaryUtil.Add(QueryParameters, "DomainType", value);
 			}
 		}
 
@@ -85,6 +70,23 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
+		public List<long?> PhotoIds
+		{
+			get
+			{
+				return photoIds;
+			}
+
+			set
+			{
+				photoIds = value;
+				for (int i = 0; i < photoIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"PhotoId." + (i + 1) , photoIds[i]);
+				}
+			}
+		}
+
 		public string StoreName
 		{
 			get
@@ -98,35 +100,27 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public string Force
+		public string ZoomType
 		{
 			get
 			{
-				return force;
+				return zoomType;
 			}
 			set	
 			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "Force", value);
+				zoomType = value;
+				DictionaryUtil.Add(QueryParameters, "ZoomType", value);
 			}
 		}
 
-		public string Md5
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return md5;
-			}
-			set	
-			{
-				md5 = value;
-				DictionaryUtil.Add(QueryParameters, "Md5", value);
-			}
+			return false;
 		}
 
-        public override CreateTransactionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetPublicAccessUrlsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateTransactionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetPublicAccessUrlsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

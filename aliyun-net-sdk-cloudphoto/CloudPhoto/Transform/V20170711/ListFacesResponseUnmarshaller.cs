@@ -65,6 +65,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 				cover.Height = context.LongValue("ListFaces.Faces["+ i +"].Cover.Height");
 				cover.Ctime = context.LongValue("ListFaces.Faces["+ i +"].Cover.Ctime");
 				cover.Mtime = context.LongValue("ListFaces.Faces["+ i +"].Cover.Mtime");
+				cover.Remark = context.StringValue("ListFaces.Faces["+ i +"].Cover.Remark");
 				face.Cover = cover;
 
 				listFacesResponse_faces.Add(face);

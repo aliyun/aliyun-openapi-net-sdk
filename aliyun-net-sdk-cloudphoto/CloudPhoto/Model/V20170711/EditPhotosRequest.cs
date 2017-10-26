@@ -26,51 +26,25 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-    public class CreateTransactionRequest : RpcAcsRequest<CreateTransactionResponse>
+    public class EditPhotosRequest : RpcAcsRequest<EditPhotosResponse>
     {
-        public CreateTransactionRequest()
-            : base("CloudPhoto", "2017-07-11", "CreateTransaction", "cloudphoto", "openAPI")
+        public EditPhotosRequest()
+            : base("CloudPhoto", "2017-07-11", "EditPhotos", "cloudphoto", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string ext;
-
-		private long? size;
-
 		private string libraryId;
+
+		private long? shareExpireTime;
+
+		private List<long?> photoIds;
 
 		private string storeName;
 
-		private string force;
+		private string remark;
 
-		private string md5;
-
-		public string Ext
-		{
-			get
-			{
-				return ext;
-			}
-			set	
-			{
-				ext = value;
-				DictionaryUtil.Add(QueryParameters, "Ext", value);
-			}
-		}
-
-		public long? Size
-		{
-			get
-			{
-				return size;
-			}
-			set	
-			{
-				size = value;
-				DictionaryUtil.Add(QueryParameters, "Size", value.ToString());
-			}
-		}
+		private string title;
 
 		public string LibraryId
 		{
@@ -82,6 +56,36 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				libraryId = value;
 				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
+			}
+		}
+
+		public long? ShareExpireTime
+		{
+			get
+			{
+				return shareExpireTime;
+			}
+			set	
+			{
+				shareExpireTime = value;
+				DictionaryUtil.Add(QueryParameters, "ShareExpireTime", value.ToString());
+			}
+		}
+
+		public List<long?> PhotoIds
+		{
+			get
+			{
+				return photoIds;
+			}
+
+			set
+			{
+				photoIds = value;
+				for (int i = 0; i < photoIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"PhotoId." + (i + 1) , photoIds[i]);
+				}
 			}
 		}
 
@@ -98,35 +102,40 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public string Force
+		public string Remark
 		{
 			get
 			{
-				return force;
+				return remark;
 			}
 			set	
 			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "Force", value);
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
 			}
 		}
 
-		public string Md5
+		public string Title
 		{
 			get
 			{
-				return md5;
+				return title;
 			}
 			set	
 			{
-				md5 = value;
-				DictionaryUtil.Add(QueryParameters, "Md5", value);
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
 			}
 		}
 
-        public override CreateTransactionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override EditPhotosResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateTransactionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EditPhotosResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

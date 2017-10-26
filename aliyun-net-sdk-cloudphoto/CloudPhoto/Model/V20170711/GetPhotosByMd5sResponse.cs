@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-	public class CreatePhotoResponse : AcsResponse
+	public class GetPhotosByMd5sResponse : AcsResponse
 	{
 
 		private string code;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string action;
 
-		private CreatePhoto_Photo photo;
+		private List<GetPhotosByMd5s_Photo> photos;
 
 		public string Code
 		{
@@ -82,19 +82,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public CreatePhoto_Photo Photo
+		public List<GetPhotosByMd5s_Photo> Photos
 		{
 			get
 			{
-				return photo;
+				return photos;
 			}
 			set	
 			{
-				photo = value;
+				photos = value;
 			}
 		}
 
-		public class CreatePhoto_Photo
+		public class GetPhotosByMd5s_Photo
 		{
 
 			private long? id;

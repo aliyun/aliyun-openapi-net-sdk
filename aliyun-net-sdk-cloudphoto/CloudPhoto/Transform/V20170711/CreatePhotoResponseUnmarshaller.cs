@@ -48,6 +48,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			photo.Ctime = context.LongValue("CreatePhoto.Photo.Ctime");
 			photo.Mtime = context.LongValue("CreatePhoto.Photo.Mtime");
 			photo.TakenAt = context.LongValue("CreatePhoto.Photo.TakenAt");
+			photo.ShareExpireTime = context.LongValue("CreatePhoto.Photo.ShareExpireTime");
 			createPhotoResponse.Photo = photo;
         
 			return createPhotoResponse;

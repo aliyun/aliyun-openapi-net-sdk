@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-	public class GetQuotaResponse : AcsResponse
+	public class ListPhotoFacesResponse : AcsResponse
 	{
 
 		private string code;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string action;
 
-		private GetQuota_Quota quota;
+		private List<ListPhotoFaces_Face> faces;
 
 		public string Code
 		{
@@ -82,88 +82,60 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public GetQuota_Quota Quota
+		public List<ListPhotoFaces_Face> Faces
 		{
 			get
 			{
-				return quota;
+				return faces;
 			}
 			set	
 			{
-				quota = value;
+				faces = value;
 			}
 		}
 
-		public class GetQuota_Quota
+		public class ListPhotoFaces_Face
 		{
 
-			private long? totalQuota;
+			private long? faceId;
 
-			private int? facesCount;
+			private string faceName;
 
-			private int? photosCount;
+			private List<string> axis;
 
-			private long? usedQuota;
-
-			private int? videosCount;
-
-			public long? TotalQuota
+			public long? FaceId
 			{
 				get
 				{
-					return totalQuota;
+					return faceId;
 				}
 				set	
 				{
-					totalQuota = value;
+					faceId = value;
 				}
 			}
 
-			public int? FacesCount
+			public string FaceName
 			{
 				get
 				{
-					return facesCount;
+					return faceName;
 				}
 				set	
 				{
-					facesCount = value;
+					faceName = value;
 				}
 			}
 
-			public int? PhotosCount
+			public List<string> Axis
 			{
 				get
 				{
-					return photosCount;
+					return axis;
 				}
 				set	
 				{
-					photosCount = value;
-				}
-			}
-
-			public long? UsedQuota
-			{
-				get
-				{
-					return usedQuota;
-				}
-				set	
-				{
-					usedQuota = value;
-				}
-			}
-
-			public int? VideosCount
-			{
-				get
-				{
-					return videosCount;
-				}
-				set	
-				{
-					videosCount = value;
+					axis = value;
 				}
 			}
 		}

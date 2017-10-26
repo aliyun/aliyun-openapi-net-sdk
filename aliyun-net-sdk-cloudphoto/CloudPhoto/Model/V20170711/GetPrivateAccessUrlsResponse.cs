@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-	public class GetQuotaResponse : AcsResponse
+	public class GetPrivateAccessUrlsResponse : AcsResponse
 	{
 
 		private string code;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string action;
 
-		private GetQuota_Quota quota;
+		private List<GetPrivateAccessUrls_Result> results;
 
 		public string Code
 		{
@@ -82,88 +82,74 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public GetQuota_Quota Quota
+		public List<GetPrivateAccessUrls_Result> Results
 		{
 			get
 			{
-				return quota;
+				return results;
 			}
 			set	
 			{
-				quota = value;
+				results = value;
 			}
 		}
 
-		public class GetQuota_Quota
+		public class GetPrivateAccessUrls_Result
 		{
 
-			private long? totalQuota;
+			private string code;
 
-			private int? facesCount;
+			private string message;
 
-			private int? photosCount;
+			private long? photoId;
 
-			private long? usedQuota;
+			private string accessUrl;
 
-			private int? videosCount;
-
-			public long? TotalQuota
+			public string Code
 			{
 				get
 				{
-					return totalQuota;
+					return code;
 				}
 				set	
 				{
-					totalQuota = value;
+					code = value;
 				}
 			}
 
-			public int? FacesCount
+			public string Message
 			{
 				get
 				{
-					return facesCount;
+					return message;
 				}
 				set	
 				{
-					facesCount = value;
+					message = value;
 				}
 			}
 
-			public int? PhotosCount
+			public long? PhotoId
 			{
 				get
 				{
-					return photosCount;
+					return photoId;
 				}
 				set	
 				{
-					photosCount = value;
+					photoId = value;
 				}
 			}
 
-			public long? UsedQuota
+			public string AccessUrl
 			{
 				get
 				{
-					return usedQuota;
+					return accessUrl;
 				}
 				set	
 				{
-					usedQuota = value;
-				}
-			}
-
-			public int? VideosCount
-			{
-				get
-				{
-					return videosCount;
-				}
-				set	
-				{
-					videosCount = value;
+					accessUrl = value;
 				}
 			}
 		}

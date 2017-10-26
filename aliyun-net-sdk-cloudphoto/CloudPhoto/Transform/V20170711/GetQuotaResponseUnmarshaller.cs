@@ -39,7 +39,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			quota.TotalQuota = context.LongValue("GetQuota.Quota.TotalQuota");
 			quota.FacesCount = context.IntegerValue("GetQuota.Quota.FacesCount");
 			quota.PhotosCount = context.IntegerValue("GetQuota.Quota.PhotosCount");
-			quota.UsedQutoa = context.LongValue("GetQuota.Quota.UsedQutoa");
+			quota.UsedQuota = context.LongValue("GetQuota.Quota.UsedQuota");
 			quota.VideosCount = context.IntegerValue("GetQuota.Quota.VideosCount");
 			getQuotaResponse.Quota = quota;
         

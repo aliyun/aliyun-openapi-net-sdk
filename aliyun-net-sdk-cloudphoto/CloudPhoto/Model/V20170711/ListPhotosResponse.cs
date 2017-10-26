@@ -149,6 +149,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private long? takenAt;
 
+			private long? shareExpireTime;
+
 			public long? Id
 			{
 				get
@@ -290,6 +292,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					takenAt = value;
+				}
+			}
+
+			public long? ShareExpireTime
+			{
+				get
+				{
+					return shareExpireTime;
+				}
+				set	
+				{
+					shareExpireTime = value;
 				}
 			}
 		}

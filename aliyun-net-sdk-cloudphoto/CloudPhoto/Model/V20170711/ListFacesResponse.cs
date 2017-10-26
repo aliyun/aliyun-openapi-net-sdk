@@ -274,6 +274,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 				private long? mtime;
 
+				private string remark;
+
 				public long? Id
 				{
 					get
@@ -391,6 +393,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 					set	
 					{
 						mtime = value;
+					}
+				}
+
+				public string Remark
+				{
+					get
+					{
+						return remark;
+					}
+					set	
+					{
+						remark = value;
 					}
 				}
 			}

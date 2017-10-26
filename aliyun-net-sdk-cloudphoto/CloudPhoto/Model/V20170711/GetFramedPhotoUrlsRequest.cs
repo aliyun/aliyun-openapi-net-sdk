@@ -26,49 +26,32 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-    public class CreateTransactionRequest : RpcAcsRequest<CreateTransactionResponse>
+    public class GetFramedPhotoUrlsRequest : RpcAcsRequest<GetFramedPhotoUrlsResponse>
     {
-        public CreateTransactionRequest()
-            : base("CloudPhoto", "2017-07-11", "CreateTransaction", "cloudphoto", "openAPI")
+        public GetFramedPhotoUrlsRequest()
+            : base("CloudPhoto", "2017-07-11", "GetFramedPhotoUrls", "cloudphoto", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string ext;
-
-		private long? size;
+		private string frameId;
 
 		private string libraryId;
 
+		private List<long?> photoIds;
+
 		private string storeName;
 
-		private string force;
-
-		private string md5;
-
-		public string Ext
+		public string FrameId
 		{
 			get
 			{
-				return ext;
+				return frameId;
 			}
 			set	
 			{
-				ext = value;
-				DictionaryUtil.Add(QueryParameters, "Ext", value);
-			}
-		}
-
-		public long? Size
-		{
-			get
-			{
-				return size;
-			}
-			set	
-			{
-				size = value;
-				DictionaryUtil.Add(QueryParameters, "Size", value.ToString());
+				frameId = value;
+				DictionaryUtil.Add(QueryParameters, "FrameId", value);
 			}
 		}
 
@@ -85,6 +68,23 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
+		public List<long?> PhotoIds
+		{
+			get
+			{
+				return photoIds;
+			}
+
+			set
+			{
+				photoIds = value;
+				for (int i = 0; i < photoIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"PhotoId." + (i + 1) , photoIds[i]);
+				}
+			}
+		}
+
 		public string StoreName
 		{
 			get
@@ -98,35 +98,9 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public string Force
-		{
-			get
-			{
-				return force;
-			}
-			set	
-			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "Force", value);
-			}
-		}
-
-		public string Md5
-		{
-			get
-			{
-				return md5;
-			}
-			set	
-			{
-				md5 = value;
-				DictionaryUtil.Add(QueryParameters, "Md5", value);
-			}
-		}
-
-        public override CreateTransactionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetFramedPhotoUrlsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateTransactionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetFramedPhotoUrlsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

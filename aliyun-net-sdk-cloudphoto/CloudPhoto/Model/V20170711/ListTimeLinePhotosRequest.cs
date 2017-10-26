@@ -26,53 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-    public class ListFacesRequest : RpcAcsRequest<ListFacesResponse>
+    public class ListTimeLinePhotosRequest : RpcAcsRequest<ListTimeLinePhotosResponse>
     {
-        public ListFacesRequest()
-            : base("CloudPhoto", "2017-07-11", "ListFaces", "cloudphoto", "openAPI")
+        public ListTimeLinePhotosRequest()
+            : base("CloudPhoto", "2017-07-11", "ListTimeLinePhotos", "cloudphoto", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
-
-		private string cursor;
-
-		private string hasFaceName;
 
 		private int? size;
 
 		private string libraryId;
 
+		private long? endTime;
+
 		private string storeName;
 
-		private string state;
+		private int? page;
+
+		private long? startTime;
+
+		private string filterBy;
 
 		private string direction;
 
-		public string Cursor
-		{
-			get
-			{
-				return cursor;
-			}
-			set	
-			{
-				cursor = value;
-				DictionaryUtil.Add(QueryParameters, "Cursor", value);
-			}
-		}
-
-		public string HasFaceName
-		{
-			get
-			{
-				return hasFaceName;
-			}
-			set	
-			{
-				hasFaceName = value;
-				DictionaryUtil.Add(QueryParameters, "HasFaceName", value);
-			}
-		}
+		private string order;
 
 		public int? Size
 		{
@@ -100,6 +78,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
 		public string StoreName
 		{
 			get
@@ -113,16 +104,42 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public string State
+		public int? Page
 		{
 			get
 			{
-				return state;
+				return page;
 			}
 			set	
 			{
-				state = value;
-				DictionaryUtil.Add(QueryParameters, "State", value);
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "Page", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string FilterBy
+		{
+			get
+			{
+				return filterBy;
+			}
+			set	
+			{
+				filterBy = value;
+				DictionaryUtil.Add(QueryParameters, "FilterBy", value);
 			}
 		}
 
@@ -139,14 +156,27 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
+		public string Order
+		{
+			get
+			{
+				return order;
+			}
+			set	
+			{
+				order = value;
+				DictionaryUtil.Add(QueryParameters, "Order", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ListFacesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListTimeLinePhotosResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListFacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTimeLinePhotosResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

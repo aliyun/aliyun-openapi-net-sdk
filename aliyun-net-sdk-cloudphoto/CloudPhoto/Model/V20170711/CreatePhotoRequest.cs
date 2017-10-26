@@ -38,6 +38,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string libraryId;
 
+		private long? shareExpireTime;
+
 		private string storeName;
 
 		private string uploadType;
@@ -45,6 +47,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 		private string remark;
 
 		private string sessionId;
+
+		private string staging;
 
 		private string fileId;
 
@@ -71,6 +75,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				libraryId = value;
 				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
+			}
+		}
+
+		public long? ShareExpireTime
+		{
+			get
+			{
+				return shareExpireTime;
+			}
+			set	
+			{
+				shareExpireTime = value;
+				DictionaryUtil.Add(QueryParameters, "ShareExpireTime", value.ToString());
 			}
 		}
 
@@ -123,6 +140,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				sessionId = value;
 				DictionaryUtil.Add(QueryParameters, "SessionId", value);
+			}
+		}
+
+		public string Staging
+		{
+			get
+			{
+				return staging;
+			}
+			set	
+			{
+				staging = value;
+				DictionaryUtil.Add(QueryParameters, "Staging", value);
 			}
 		}
 

@@ -21,18 +21,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-	public class CreatePhotoResponse : AcsResponse
+	public class ListTimeLinePhotosResponse : AcsResponse
 	{
 
 		private string code;
 
 		private string message;
 
+		private int? totalCount;
+
 		private string requestId;
 
 		private string action;
 
-		private CreatePhoto_Photo photo;
+		private List<ListTimeLinePhotos_Photo> photos;
 
 		public string Code
 		{
@@ -55,6 +57,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 
@@ -82,19 +96,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public CreatePhoto_Photo Photo
+		public List<ListTimeLinePhotos_Photo> Photos
 		{
 			get
 			{
-				return photo;
+				return photos;
 			}
 			set	
 			{
-				photo = value;
+				photos = value;
 			}
 		}
 
-		public class CreatePhoto_Photo
+		public class ListTimeLinePhotos_Photo
 		{
 
 			private long? id;
@@ -122,6 +136,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			private long? takenAt;
 
 			private long? shareExpireTime;
+
+			private long? like;
 
 			public long? Id
 			{
@@ -276,6 +292,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					shareExpireTime = value;
+				}
+			}
+
+			public long? Like
+			{
+				get
+				{
+					return like;
+				}
+				set	
+				{
+					like = value;
 				}
 			}
 		}

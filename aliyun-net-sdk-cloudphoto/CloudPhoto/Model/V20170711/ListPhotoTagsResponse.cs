@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-	public class CreatePhotoResponse : AcsResponse
+	public class ListPhotoTagsResponse : AcsResponse
 	{
 
 		private string code;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string action;
 
-		private CreatePhoto_Photo photo;
+		private List<ListPhotoTags_Tag> tags;
 
 		public string Code
 		{
@@ -82,46 +82,28 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public CreatePhoto_Photo Photo
+		public List<ListPhotoTags_Tag> Tags
 		{
 			get
 			{
-				return photo;
+				return tags;
 			}
 			set	
 			{
-				photo = value;
+				tags = value;
 			}
 		}
 
-		public class CreatePhoto_Photo
+		public class ListPhotoTags_Tag
 		{
 
 			private long? id;
 
-			private string title;
+			private bool? isSubTag;
 
-			private string fileId;
+			private string name;
 
-			private string state;
-
-			private string md5;
-
-			private bool? isVideo;
-
-			private string remark;
-
-			private long? width;
-
-			private long? height;
-
-			private long? ctime;
-
-			private long? mtime;
-
-			private long? takenAt;
-
-			private long? shareExpireTime;
+			private string parentTag;
 
 			public long? Id
 			{
@@ -135,147 +117,39 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				}
 			}
 
-			public string Title
+			public bool? IsSubTag
 			{
 				get
 				{
-					return title;
+					return isSubTag;
 				}
 				set	
 				{
-					title = value;
+					isSubTag = value;
 				}
 			}
 
-			public string FileId
+			public string Name
 			{
 				get
 				{
-					return fileId;
+					return name;
 				}
 				set	
 				{
-					fileId = value;
+					name = value;
 				}
 			}
 
-			public string State
+			public string ParentTag
 			{
 				get
 				{
-					return state;
+					return parentTag;
 				}
 				set	
 				{
-					state = value;
-				}
-			}
-
-			public string Md5
-			{
-				get
-				{
-					return md5;
-				}
-				set	
-				{
-					md5 = value;
-				}
-			}
-
-			public bool? IsVideo
-			{
-				get
-				{
-					return isVideo;
-				}
-				set	
-				{
-					isVideo = value;
-				}
-			}
-
-			public string Remark
-			{
-				get
-				{
-					return remark;
-				}
-				set	
-				{
-					remark = value;
-				}
-			}
-
-			public long? Width
-			{
-				get
-				{
-					return width;
-				}
-				set	
-				{
-					width = value;
-				}
-			}
-
-			public long? Height
-			{
-				get
-				{
-					return height;
-				}
-				set	
-				{
-					height = value;
-				}
-			}
-
-			public long? Ctime
-			{
-				get
-				{
-					return ctime;
-				}
-				set	
-				{
-					ctime = value;
-				}
-			}
-
-			public long? Mtime
-			{
-				get
-				{
-					return mtime;
-				}
-				set	
-				{
-					mtime = value;
-				}
-			}
-
-			public long? TakenAt
-			{
-				get
-				{
-					return takenAt;
-				}
-				set	
-				{
-					takenAt = value;
-				}
-			}
-
-			public long? ShareExpireTime
-			{
-				get
-				{
-					return shareExpireTime;
-				}
-				set	
-				{
-					shareExpireTime = value;
+					parentTag = value;
 				}
 			}
 		}

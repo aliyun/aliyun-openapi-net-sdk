@@ -50,6 +50,8 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 				photo.Ctime = context.LongValue("GetPhotos.Photos["+ i +"].Ctime");
 				photo.Mtime = context.LongValue("GetPhotos.Photos["+ i +"].Mtime");
 				photo.TakenAt = context.LongValue("GetPhotos.Photos["+ i +"].TakenAt");
+				photo.ShareExpireTime = context.LongValue("GetPhotos.Photos["+ i +"].ShareExpireTime");
+				photo.Like = context.LongValue("GetPhotos.Photos["+ i +"].Like");
 
 				getPhotosResponse_photos.Add(photo);
 			}

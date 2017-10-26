@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-	public class GetQuotaResponse : AcsResponse
+	public class ActivatePhotosResponse : AcsResponse
 	{
 
 		private string code;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string action;
 
-		private GetQuota_Quota quota;
+		private List<ActivatePhotos_Result> results;
 
 		public string Code
 		{
@@ -82,88 +82,60 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public GetQuota_Quota Quota
+		public List<ActivatePhotos_Result> Results
 		{
 			get
 			{
-				return quota;
+				return results;
 			}
 			set	
 			{
-				quota = value;
+				results = value;
 			}
 		}
 
-		public class GetQuota_Quota
+		public class ActivatePhotos_Result
 		{
 
-			private long? totalQuota;
+			private long? id;
 
-			private int? facesCount;
+			private string code;
 
-			private int? photosCount;
+			private string message;
 
-			private long? usedQuota;
-
-			private int? videosCount;
-
-			public long? TotalQuota
+			public long? Id
 			{
 				get
 				{
-					return totalQuota;
+					return id;
 				}
 				set	
 				{
-					totalQuota = value;
+					id = value;
 				}
 			}
 
-			public int? FacesCount
+			public string Code
 			{
 				get
 				{
-					return facesCount;
+					return code;
 				}
 				set	
 				{
-					facesCount = value;
+					code = value;
 				}
 			}
 
-			public int? PhotosCount
+			public string Message
 			{
 				get
 				{
-					return photosCount;
+					return message;
 				}
 				set	
 				{
-					photosCount = value;
-				}
-			}
-
-			public long? UsedQuota
-			{
-				get
-				{
-					return usedQuota;
-				}
-				set	
-				{
-					usedQuota = value;
-				}
-			}
-
-			public int? VideosCount
-			{
-				get
-				{
-					return videosCount;
-				}
-				set	
-				{
-					videosCount = value;
+					message = value;
 				}
 			}
 		}

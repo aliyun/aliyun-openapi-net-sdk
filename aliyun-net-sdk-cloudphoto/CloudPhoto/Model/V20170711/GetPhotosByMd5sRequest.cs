@@ -26,51 +26,21 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-    public class CreateTransactionRequest : RpcAcsRequest<CreateTransactionResponse>
+    public class GetPhotosByMd5sRequest : RpcAcsRequest<GetPhotosByMd5sResponse>
     {
-        public CreateTransactionRequest()
-            : base("CloudPhoto", "2017-07-11", "CreateTransaction", "cloudphoto", "openAPI")
+        public GetPhotosByMd5sRequest()
+            : base("CloudPhoto", "2017-07-11", "GetPhotosByMd5s", "cloudphoto", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
-
-		private string ext;
-
-		private long? size;
 
 		private string libraryId;
 
 		private string storeName;
 
-		private string force;
+		private string state;
 
-		private string md5;
-
-		public string Ext
-		{
-			get
-			{
-				return ext;
-			}
-			set	
-			{
-				ext = value;
-				DictionaryUtil.Add(QueryParameters, "Ext", value);
-			}
-		}
-
-		public long? Size
-		{
-			get
-			{
-				return size;
-			}
-			set	
-			{
-				size = value;
-				DictionaryUtil.Add(QueryParameters, "Size", value.ToString());
-			}
-		}
+		private List<string> md5s;
 
 		public string LibraryId
 		{
@@ -98,35 +68,44 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public string Force
+		public string State
 		{
 			get
 			{
-				return force;
+				return state;
 			}
 			set	
 			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "Force", value);
+				state = value;
+				DictionaryUtil.Add(QueryParameters, "State", value);
 			}
 		}
 
-		public string Md5
+		public List<string> Md5s
 		{
 			get
 			{
-				return md5;
+				return md5s;
 			}
-			set	
+
+			set
 			{
-				md5 = value;
-				DictionaryUtil.Add(QueryParameters, "Md5", value);
+				md5s = value;
+				for (int i = 0; i < md5s.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Md5." + (i + 1) , md5s[i]);
+				}
 			}
 		}
 
-        public override CreateTransactionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override GetPhotosByMd5sResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateTransactionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetPhotosByMd5sResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
