@@ -125,7 +125,7 @@ namespace Aliyun.Acs.Core.Profile
 
             AddLocationEndpoint(endpointName, regionId, product, domain);
             DateTime expireTime = DateTime.Now.AddYears(100);
-            CacheTimeHelper.AddLastClearTimePerProduct(product, expireTime);
+            CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, expireTime);
         }
 
         private static void AddEndpoint_(String endpointName, String regionId, String product, String domain)
@@ -262,9 +262,9 @@ namespace Aliyun.Acs.Core.Profile
             }
 
             Endpoint endpoint = FindLocationEndpointByRegionId(regionId);
-            if (null == endpoint || CacheTimeHelper.CheckCacheIsExpire(product))
+            if (null == endpoint || CacheTimeHelper.CheckCacheIsExpire(product, regionId))
             {
-                FillEndpointFromLocation(regionId, product, credential, locationProduct, locationEndpointType);
+                FillEndpointFromLocation(regionId, product, credential, locationProduct, locationEndpointType);               
             }
             else
             {
@@ -290,6 +290,7 @@ namespace Aliyun.Acs.Core.Profile
                     foreach (ProductDomain productDomain in endpoint.ProductDomains)
                     {
                         AddLocationEndpoint(endpoint.Name, region, product, productDomain.DomianName);
+                        CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, DateTime.Now);
                     }
                 }
             }

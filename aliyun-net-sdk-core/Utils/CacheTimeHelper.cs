@@ -11,43 +11,40 @@ namespace Aliyun.Acs.Core.Utils
         private static Dictionary<String, DateTime> lastClearTimePerProduct = new Dictionary<string, DateTime>();
         private const int ENDPOINT_CACHE_TIME = 3600; //Seconds
 
-        public static bool CheckCacheIsExpire(String product)
+        public static bool CheckCacheIsExpire(String product, String regionId)
         {
             DateTime lastClearTime;
+            String key = product + "_" + regionId;
 
-            if (lastClearTimePerProduct.ContainsKey(product))
+            if (lastClearTimePerProduct.ContainsKey(key))
             {
-                lastClearTime = lastClearTimePerProduct[product];
+                lastClearTime = lastClearTimePerProduct[key];
             }
             else
             {
                 lastClearTime = DateTime.Now;
-                lastClearTimePerProduct.Add(product, lastClearTime);
+                lastClearTimePerProduct.Add(key, lastClearTime);
             }
             
             TimeSpan ts = DateTime.Now - lastClearTime;
 
             if (ENDPOINT_CACHE_TIME < ts.TotalSeconds)
             {
-                lastClearTime = DateTime.Now;
-                if (lastClearTimePerProduct.ContainsKey(product))
-                {
-                    lastClearTimePerProduct.Remove(product);
-                }
-                lastClearTimePerProduct.Add(product, lastClearTime);
                 return true;
             }
 
             return false;
         }
 
-        public static void AddLastClearTimePerProduct(String product, DateTime lastClearTime)
+        public static void AddLastClearTimePerProduct(String product, String regionId, DateTime lastClearTime)
         {
-            if (lastClearTimePerProduct.ContainsKey(product))
+            String key = product + "_" + regionId;
+
+            if (lastClearTimePerProduct.ContainsKey(key))
             {
-                lastClearTimePerProduct.Remove(product);
+                lastClearTimePerProduct.Remove(key);
             }
-            lastClearTimePerProduct.Add(product, lastClearTime);
+            lastClearTimePerProduct.Add(key, lastClearTime);
         }
     }
 }

@@ -34,7 +34,6 @@ namespace Aliyun.Acs.Core
         private int maxRetryNumber = 3;
         private bool autoRetry = true;
         private IClientProfile clientProfile = null;
-        private int timeoutInMilliSeconds = 100000; // Default 100 Seconds
 
         public DefaultAcsClient()
         {
@@ -68,6 +67,23 @@ namespace Aliyun.Acs.Core
         {
             HttpResponse httpResponse = this.DoAction(request, regionId, credential);
             return ParseAcsResponse(request, httpResponse);
+        }
+
+        public CommonResponse GetCommonResponse(CommonRequest request)
+        {
+            HttpResponse httpResponse = this.DoAction(request.BuildRequest());
+            String data = null;
+            if (httpResponse.Content != null)
+            {
+                data = System.Text.Encoding.UTF8.GetString(httpResponse.Content);
+            }           
+
+            CommonResponse response = new CommonResponse();
+            response.Data = data;
+            response.HttpResponse = httpResponse;
+            response.HttpStatus = httpResponse.Status;
+
+            return response;
         }
 
         private T ParseAcsResponse<T>(AcsRequest<T> request, HttpResponse httpResponse) where T : AcsResponse
@@ -146,8 +162,12 @@ namespace Aliyun.Acs.Core
             Credential credential = profile.GetCredential();
             ISigner signer = profile.GetSigner();
             FormatType? format = profile.GetFormat();
-            List<Endpoint> endpoints = profile.GetEndpoints(regionId, request.Product, credential, request.LocationProduct, request.LocationEndpointType);
-
+            List<Endpoint> endpoints = null;
+            if (request.ProductDomain == null)
+            {
+                endpoints = profile.GetEndpoints(regionId, request.Product, credential, request.LocationProduct, request.LocationEndpointType);
+            }
+            
             return DoAction(request, autoRetry, maxRetryNumber, regionId, credential, signer, format, endpoints);
         }
 
@@ -163,18 +183,27 @@ namespace Aliyun.Acs.Core
             {
                 request.RegionId = regionId;
             }
-            ProductDomain domain = Endpoint.FindProductDomain(regionId, request.Product, endpoints, this);
+
+            ProductDomain domain = null;
+            if (request.ProductDomain == null)
+            {
+                domain = Endpoint.FindProductDomain(regionId, request.Product, endpoints, this);
+            }
+            else
+            {
+                domain = request.ProductDomain;
+            }          
             if (null == domain)
             {
                 throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
             }
             HttpRequest httpRequest = request.SignRequest(signer, credential, format, domain);
             int retryTimes = 1;
-            HttpResponse response = HttpResponse.GetResponse(httpRequest, timeoutInMilliSeconds);
+            HttpResponse response = HttpResponse.GetResponse(httpRequest, request.TimeoutInMilliSeconds);
             while (500 <= response.Status && autoRetry && retryTimes < maxRetryNumber)
             {
                 httpRequest = request.SignRequest(signer, credential, format, domain);
-                response = HttpResponse.GetResponse(httpRequest, timeoutInMilliSeconds);
+                response = HttpResponse.GetResponse(httpRequest, request.TimeoutInMilliSeconds);
                 retryTimes++;
             }
             return response;
@@ -225,12 +254,6 @@ namespace Aliyun.Acs.Core
         {
             get { return autoRetry; }
             set { autoRetry = value; }
-        }
-
-        public int TimeoutInMilliSeconds
-        {
-            get { return timeoutInMilliSeconds; }
-            set { timeoutInMilliSeconds = value; }
         }
 
     }

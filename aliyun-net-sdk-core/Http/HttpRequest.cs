@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Core.Http
         public FormatType? ContentType { get; set; }
         public byte[] Content { get; set; }
         public String Encoding { get; set; }
+        private int timeoutInMilliSeconds = 100000; // Default 100 Seconds
 
         public HttpRequest() { }
 
@@ -79,6 +80,12 @@ namespace Aliyun.Acs.Core.Http
 
             this.Content = content;
             this.Encoding = encoding;
+        }
+
+        public int TimeoutInMilliSeconds
+        {
+            get { return timeoutInMilliSeconds; }
+            set { timeoutInMilliSeconds = value; }
         }
     }
 }

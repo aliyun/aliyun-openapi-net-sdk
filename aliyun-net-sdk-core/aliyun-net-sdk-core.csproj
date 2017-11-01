@@ -46,6 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcsError.cs" />
+    <Compile Include="CommonRequest.cs" />
+    <Compile Include="CommonResponse.cs" />
+    <Compile Include="CommonRoaRequest.cs" />
+    <Compile Include="CommonRpcRequest.cs" />
     <Compile Include="Regions\DescribeEndpointService.cs" />
     <Compile Include="Regions\Location\LocationConfig.cs" />
     <Compile Include="Regions\RemoteEndpointsParser.cs" />

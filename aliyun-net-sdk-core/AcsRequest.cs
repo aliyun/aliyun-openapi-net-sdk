@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Core
         public ISignatureComposer Composer { get; set; }
         public String LocationProduct { get; set; }
         public String LocationEndpointType { get; set; }
+        public ProductDomain ProductDomain { get; set; }
 
         public virtual FormatType AcceptFormat
         {
@@ -96,6 +97,7 @@ namespace Aliyun.Acs.Core
             : base(null)
         {
             DictionaryUtil.Add(Headers, "x-sdk-client", "Net/2.0.0");
+            DictionaryUtil.Add(Headers, "x-sdk-invoke-type", "normal");
             Product = product;
         }
 

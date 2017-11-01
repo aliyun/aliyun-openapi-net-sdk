@@ -64,6 +64,7 @@ namespace Aliyun.Acs.Core
 
         private void Initialize()
         {
+            Method = MethodType.GET;
             this.AcceptFormat = FormatType.RAW;
             this.Composer = RoaSignatureComposer.GetComposer();
         }
@@ -129,7 +130,7 @@ namespace Aliyun.Acs.Core
             return this;
         }
 
-        protected string UriPattern
+        public string UriPattern
         {
             get { return uriPattern; }
             set { uriPattern = value; }
@@ -139,6 +140,11 @@ namespace Aliyun.Acs.Core
         {
             get { return pathParameters; }
             set { pathParameters = value; }
+        }
+
+        public void AddPathParameters(string name, string value)
+        {
+            DictionaryUtil.Add(pathParameters, name, value);
         }
     }
 }
