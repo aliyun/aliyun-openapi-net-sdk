@@ -26,28 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DescribeRefreshTasksRequest : RpcAcsRequest<DescribeRefreshTasksResponse>
+    public class BatchDescribeDomainBpsDataRequest : RpcAcsRequest<BatchDescribeDomainBpsDataResponse>
     {
-        public DescribeRefreshTasksRequest()
-            : base("Cdn", "2014-11-11", "DescribeRefreshTasks")
+        public BatchDescribeDomainBpsDataRequest()
+            : base("Cdn", "2014-11-11", "BatchDescribeDomainBpsData")
         {
         }
 
-		private string objectPath;
-
-		private string domainName;
-
-		private string endTime;
-
 		private string startTime;
-
-		private long? ownerId;
 
 		private int? pageNumber;
 
 		private string accessKeyId;
-
-		private string resourceGroupId;
 
 		private string securityToken;
 
@@ -55,50 +45,13 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string action;
 
-		private string objectType;
+		private string domainName;
 
-		private string taskId;
+		private string endTime;
 
-		private string status;
+		private long? ownerId;
 
-		public string ObjectPath
-		{
-			get
-			{
-				return objectPath;
-			}
-			set	
-			{
-				objectPath = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+		private string version;
 
 		public string StartTime
 		{
@@ -110,19 +63,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -149,19 +89,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -204,48 +131,61 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string ObjectType
+		public string DomainName
 		{
 			get
 			{
-				return objectType;
+				return domainName;
 			}
 			set	
 			{
-				objectType = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
-		public string TaskId
+		public string EndTime
 		{
 			get
 			{
-				return taskId;
+				return endTime;
 			}
 			set	
 			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public string Status
+		public long? OwnerId
 		{
 			get
 			{
-				return status;
+				return ownerId;
 			}
 			set	
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-        public override DescribeRefreshTasksResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Version
+		{
+			get
+			{
+				return version;
+			}
+			set	
+			{
+				version = value;
+				DictionaryUtil.Add(QueryParameters, "Version", value);
+			}
+		}
+
+        public override BatchDescribeDomainBpsDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRefreshTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchDescribeDomainBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

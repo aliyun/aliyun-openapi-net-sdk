@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private DescribeUserConfigs_OssLogConfig ossLogConfig;
 
+			private DescribeUserConfigs_GreenManagerConfig greenManagerConfig;
+
 			public DescribeUserConfigs_OssLogConfig OssLogConfig
 			{
 				get
@@ -66,6 +68,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					ossLogConfig = value;
+				}
+			}
+
+			public DescribeUserConfigs_GreenManagerConfig GreenManagerConfig
+			{
+				get
+				{
+					return greenManagerConfig;
+				}
+				set	
+				{
+					greenManagerConfig = value;
 				}
 			}
 
@@ -111,6 +125,38 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					set	
 					{
 						prefix = value;
+					}
+				}
+			}
+
+			public class DescribeUserConfigs_GreenManagerConfig
+			{
+
+				private string quota;
+
+				private string ratio;
+
+				public string Quota
+				{
+					get
+					{
+						return quota;
+					}
+					set	
+					{
+						quota = value;
+					}
+				}
+
+				public string Ratio
+				{
+					get
+					{
+						return ratio;
+					}
+					set	
+					{
+						ratio = value;
 					}
 				}
 			}

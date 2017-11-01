@@ -26,14 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DescribeRefreshTasksRequest : RpcAcsRequest<DescribeRefreshTasksResponse>
+    public class DescribeDomainQoSRtRequest : RpcAcsRequest<DescribeDomainQoSRtResponse>
     {
-        public DescribeRefreshTasksRequest()
-            : base("Cdn", "2014-11-11", "DescribeRefreshTasks")
+        public DescribeDomainQoSRtRequest()
+            : base("Cdn", "2014-11-11", "DescribeDomainQoSRt")
         {
         }
 
-		private string objectPath;
+		private string ip;
 
 		private string domainName;
 
@@ -43,34 +43,24 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private long? ownerId;
 
-		private int? pageNumber;
+		private string version;
 
 		private string accessKeyId;
 
-		private string resourceGroupId;
-
 		private string securityToken;
-
-		private int? pageSize;
 
 		private string action;
 
-		private string objectType;
-
-		private string taskId;
-
-		private string status;
-
-		public string ObjectPath
+		public string Ip
 		{
 			get
 			{
-				return objectPath;
+				return ip;
 			}
 			set	
 			{
-				objectPath = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
+				ip = value;
+				DictionaryUtil.Add(QueryParameters, "Ip", value);
 			}
 		}
 
@@ -126,16 +116,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public int? PageNumber
+		public string Version
 		{
 			get
 			{
-				return pageNumber;
+				return version;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				version = value;
+				DictionaryUtil.Add(QueryParameters, "Version", value);
 			}
 		}
 
@@ -152,19 +142,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -175,19 +152,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -204,48 +168,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string ObjectType
-		{
-			get
-			{
-				return objectType;
-			}
-			set	
-			{
-				objectType = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
-        public override DescribeRefreshTasksResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainQoSRtResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRefreshTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainQoSRtResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

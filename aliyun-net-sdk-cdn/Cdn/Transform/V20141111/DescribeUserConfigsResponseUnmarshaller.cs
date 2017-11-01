@@ -39,6 +39,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			ossLogConfig.Bucket = context.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Bucket");
 			ossLogConfig.Prefix = context.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Prefix");
 			configs.OssLogConfig = ossLogConfig;
+
+			DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_GreenManagerConfig greenManagerConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_GreenManagerConfig();
+			greenManagerConfig.Quota = context.StringValue("DescribeUserConfigs.Configs.GreenManagerConfig.Quota");
+			greenManagerConfig.Ratio = context.StringValue("DescribeUserConfigs.Configs.GreenManagerConfig.Ratio");
+			configs.GreenManagerConfig = greenManagerConfig;
 			describeUserConfigsResponse.Configs = configs;
         
 			return describeUserConfigsResponse;

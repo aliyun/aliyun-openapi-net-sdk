@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string domainName;
 
+		private string liveType;
+
 		private long? ownerId;
 
 		private string accessKeyId;
@@ -114,6 +116,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string LiveType
+		{
+			get
+			{
+				return liveType;
+			}
+			set	
+			{
+				liveType = value;
+				DictionaryUtil.Add(QueryParameters, "LiveType", value);
 			}
 		}
 

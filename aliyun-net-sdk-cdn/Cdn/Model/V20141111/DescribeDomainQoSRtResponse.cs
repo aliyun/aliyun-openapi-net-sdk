@@ -21,32 +21,28 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainPnoDataResponse : AcsResponse
+	public class DescribeDomainQoSRtResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string domainName;
 
 		private string startTime;
 
 		private string endTime;
 
-		private int? pageSize;
+		private string ip;
 
-		private int? pageNumber;
+		private List<DescribeDomainQoSRt_Data> content;
 
-		private string domainName;
-
-		private List<DescribeDomainPnoData_PnoDataModel> pnoDataModels;
-
-		public string RequestId
+		public string DomainName
 		{
 			get
 			{
-				return requestId;
+				return domainName;
 			}
 			set	
 			{
-				requestId = value;
+				domainName = value;
 			}
 		}
 
@@ -74,114 +70,72 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public int? PageSize
+		public string Ip
 		{
 			get
 			{
-				return pageSize;
+				return ip;
 			}
 			set	
 			{
-				pageSize = value;
+				ip = value;
 			}
 		}
 
-		public int? PageNumber
+		public List<DescribeDomainQoSRt_Data> Content
 		{
 			get
 			{
-				return pageNumber;
+				return content;
 			}
 			set	
 			{
-				pageNumber = value;
+				content = value;
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
-
-		public List<DescribeDomainPnoData_PnoDataModel> PnoDataModels
-		{
-			get
-			{
-				return pnoDataModels;
-			}
-			set	
-			{
-				pnoDataModels = value;
-			}
-		}
-
-		public class DescribeDomainPnoData_PnoDataModel
+		public class DescribeDomainQoSRt_Data
 		{
 
-			private string pno;
+			private string more5s;
 
-			private List<DescribeDomainPnoData_Detail> details;
+			private string time;
 
-			public string Pno
+			private string more3s;
+
+			public string More5s
 			{
 				get
 				{
-					return pno;
+					return more5s;
 				}
 				set	
 				{
-					pno = value;
+					more5s = value;
 				}
 			}
 
-			public List<DescribeDomainPnoData_Detail> Details
+			public string Time
 			{
 				get
 				{
-					return details;
+					return time;
 				}
 				set	
 				{
-					details = value;
+					time = value;
 				}
 			}
 
-			public class DescribeDomainPnoData_Detail
+			public string More3s
 			{
-
-				private string timeStamp;
-
-				private float? bandWidth;
-
-				public string TimeStamp
+				get
 				{
-					get
-					{
-						return timeStamp;
-					}
-					set	
-					{
-						timeStamp = value;
-					}
+					return more3s;
 				}
-
-				public float? BandWidth
+				set	
 				{
-					get
-					{
-						return bandWidth;
-					}
-					set	
-					{
-						bandWidth = value;
-					}
+					more3s = value;
 				}
 			}
 		}

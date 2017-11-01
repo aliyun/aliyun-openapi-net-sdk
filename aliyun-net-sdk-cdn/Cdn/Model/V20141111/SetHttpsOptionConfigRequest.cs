@@ -26,106 +26,24 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DescribeDomainPnoDataRequest : RpcAcsRequest<DescribeDomainPnoDataResponse>
+    public class SetHttpsOptionConfigRequest : RpcAcsRequest<SetHttpsOptionConfigResponse>
     {
-        public DescribeDomainPnoDataRequest()
-            : base("Cdn", "2014-11-11", "DescribeDomainPnoData")
+        public SetHttpsOptionConfigRequest()
+            : base("Cdn", "2014-11-11", "SetHttpsOptionConfig")
         {
         }
 
-		private string domainName;
-
-		private string endTime;
-
-		private string startTime;
-
-		private long? ownerId;
-
-		private string version;
-
-		private string accessKeyId;
-
 		private string securityToken;
+
+		private string domainName;
 
 		private string action;
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+		private string http2;
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+		private long? ownerId;
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+		private string accessKeyId;
 
 		public string SecurityToken
 		{
@@ -137,6 +55,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -153,9 +84,48 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override DescribeDomainPnoDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Http2
+		{
+			get
+			{
+				return http2;
+			}
+			set	
+			{
+				http2 = value;
+				DictionaryUtil.Add(QueryParameters, "Http2", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override SetHttpsOptionConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainPnoDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetHttpsOptionConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

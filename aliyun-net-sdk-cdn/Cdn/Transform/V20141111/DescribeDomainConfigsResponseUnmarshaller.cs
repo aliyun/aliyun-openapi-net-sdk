@@ -152,6 +152,25 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			macServiceConfig.Status = context.StringValue("DescribeDomainConfigs.DomainConfigs.MacServiceConfig.Status");
 			domainConfigs.MacServiceConfig = macServiceConfig;
 
+			DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_GreenManagerConfig greenManagerConfig = new DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_GreenManagerConfig();
+			greenManagerConfig.Enabled = context.StringValue("DescribeDomainConfigs.DomainConfigs.GreenManagerConfig.Enabled");
+			greenManagerConfig.ConfigId = context.StringValue("DescribeDomainConfigs.DomainConfigs.GreenManagerConfig.ConfigId");
+			greenManagerConfig.Status = context.StringValue("DescribeDomainConfigs.DomainConfigs.GreenManagerConfig.Status");
+			domainConfigs.GreenManagerConfig = greenManagerConfig;
+
+			DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_HttpsOptionConfig httpsOptionConfig = new DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_HttpsOptionConfig();
+			httpsOptionConfig.Http2 = context.StringValue("DescribeDomainConfigs.DomainConfigs.HttpsOptionConfig.Http2");
+			httpsOptionConfig.ConfigId = context.StringValue("DescribeDomainConfigs.DomainConfigs.HttpsOptionConfig.ConfigId");
+			httpsOptionConfig.Status = context.StringValue("DescribeDomainConfigs.DomainConfigs.HttpsOptionConfig.Status");
+			domainConfigs.HttpsOptionConfig = httpsOptionConfig;
+
+			DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_AliBusinessConfig aliBusinessConfig = new DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_AliBusinessConfig();
+			aliBusinessConfig.AliBusinessTable = context.StringValue("DescribeDomainConfigs.DomainConfigs.AliBusinessConfig.AliBusinessTable");
+			aliBusinessConfig.AliBusinessType = context.StringValue("DescribeDomainConfigs.DomainConfigs.AliBusinessConfig.AliBusinessType");
+			aliBusinessConfig.ConfigId = context.StringValue("DescribeDomainConfigs.DomainConfigs.AliBusinessConfig.ConfigId");
+			aliBusinessConfig.Status = context.StringValue("DescribeDomainConfigs.DomainConfigs.AliBusinessConfig.Status");
+			domainConfigs.AliBusinessConfig = aliBusinessConfig;
+
 			List<DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_CacheExpiredConfig> domainConfigs_cacheExpiredConfigs = new List<DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_CacheExpiredConfig>();
 			for (int i = 0; i < context.Length("DescribeDomainConfigs.DomainConfigs.CacheExpiredConfigs.Length"); i++) {
 				DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_CacheExpiredConfig cacheExpiredConfig = new DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_CacheExpiredConfig();
@@ -216,6 +235,18 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				domainConfigs_reqHeaderConfigs.Add(reqHeaderConfig);
 			}
 			domainConfigs.ReqHeaderConfigs = domainConfigs_reqHeaderConfigs;
+
+			List<DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_SetVarsConfig> domainConfigs_setVarsConfigs = new List<DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_SetVarsConfig>();
+			for (int i = 0; i < context.Length("DescribeDomainConfigs.DomainConfigs.SetVarsConfigs.Length"); i++) {
+				DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_SetVarsConfig setVarsConfig = new DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_SetVarsConfig();
+				setVarsConfig.ConfigId = context.StringValue("DescribeDomainConfigs.DomainConfigs.SetVarsConfigs["+ i +"].ConfigId");
+				setVarsConfig.VarName = context.StringValue("DescribeDomainConfigs.DomainConfigs.SetVarsConfigs["+ i +"].VarName");
+				setVarsConfig.VarValue = context.StringValue("DescribeDomainConfigs.DomainConfigs.SetVarsConfigs["+ i +"].VarValue");
+				setVarsConfig.Status = context.StringValue("DescribeDomainConfigs.DomainConfigs.SetVarsConfigs["+ i +"].Status");
+
+				domainConfigs_setVarsConfigs.Add(setVarsConfig);
+			}
+			domainConfigs.SetVarsConfigs = domainConfigs_setVarsConfigs;
 			describeDomainConfigsResponse.DomainConfigs = domainConfigs;
         
 			return describeDomainConfigsResponse;

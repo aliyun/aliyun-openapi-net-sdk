@@ -109,6 +109,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string description;
 
+			private string objectType;
+
 			public string TaskId
 			{
 				get
@@ -178,6 +180,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string ObjectType
+			{
+				get
+				{
+					return objectType;
+				}
+				set	
+				{
+					objectType = value;
 				}
 			}
 		}

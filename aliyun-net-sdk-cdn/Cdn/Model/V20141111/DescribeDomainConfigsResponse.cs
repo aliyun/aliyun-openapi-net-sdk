@@ -65,6 +65,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private List<DescribeDomainConfigs_ReqHeaderConfig> reqHeaderConfigs;
 
+			private List<DescribeDomainConfigs_SetVarsConfig> setVarsConfigs;
+
 			private DescribeDomainConfigs_CcConfig ccConfig;
 
 			private DescribeDomainConfigs_ErrorPageConfig errorPageConfig;
@@ -98,6 +100,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			private DescribeDomainConfigs_L2OssKeyConfig l2OssKeyConfig;
 
 			private DescribeDomainConfigs_MacServiceConfig macServiceConfig;
+
+			private DescribeDomainConfigs_GreenManagerConfig greenManagerConfig;
+
+			private DescribeDomainConfigs_HttpsOptionConfig httpsOptionConfig;
+
+			private DescribeDomainConfigs_AliBusinessConfig aliBusinessConfig;
 
 			public List<DescribeDomainConfigs_CacheExpiredConfig> CacheExpiredConfigs
 			{
@@ -156,6 +164,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					reqHeaderConfigs = value;
+				}
+			}
+
+			public List<DescribeDomainConfigs_SetVarsConfig> SetVarsConfigs
+			{
+				get
+				{
+					return setVarsConfigs;
+				}
+				set	
+				{
+					setVarsConfigs = value;
 				}
 			}
 
@@ -360,6 +380,42 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					macServiceConfig = value;
+				}
+			}
+
+			public DescribeDomainConfigs_GreenManagerConfig GreenManagerConfig
+			{
+				get
+				{
+					return greenManagerConfig;
+				}
+				set	
+				{
+					greenManagerConfig = value;
+				}
+			}
+
+			public DescribeDomainConfigs_HttpsOptionConfig HttpsOptionConfig
+			{
+				get
+				{
+					return httpsOptionConfig;
+				}
+				set	
+				{
+					httpsOptionConfig = value;
+				}
+			}
+
+			public DescribeDomainConfigs_AliBusinessConfig AliBusinessConfig
+			{
+				get
+				{
+					return aliBusinessConfig;
+				}
+				set	
+				{
+					aliBusinessConfig = value;
 				}
 			}
 
@@ -717,6 +773,66 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					set	
 					{
 						_value = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_SetVarsConfig
+			{
+
+				private string configId;
+
+				private string varName;
+
+				private string varValue;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string VarName
+				{
+					get
+					{
+						return varName;
+					}
+					set	
+					{
+						varName = value;
+					}
+				}
+
+				public string VarValue
+				{
+					get
+					{
+						return varValue;
+					}
+					set	
+					{
+						varValue = value;
 					}
 				}
 
@@ -1711,6 +1827,158 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					set	
 					{
 						processResult = value;
+					}
+				}
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_GreenManagerConfig
+			{
+
+				private string enabled;
+
+				private string configId;
+
+				private string status;
+
+				public string Enabled
+				{
+					get
+					{
+						return enabled;
+					}
+					set	
+					{
+						enabled = value;
+					}
+				}
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_HttpsOptionConfig
+			{
+
+				private string http2;
+
+				private string configId;
+
+				private string status;
+
+				public string Http2
+				{
+					get
+					{
+						return http2;
+					}
+					set	
+					{
+						http2 = value;
+					}
+				}
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_AliBusinessConfig
+			{
+
+				private string aliBusinessTable;
+
+				private string aliBusinessType;
+
+				private string configId;
+
+				private string status;
+
+				public string AliBusinessTable
+				{
+					get
+					{
+						return aliBusinessTable;
+					}
+					set	
+					{
+						aliBusinessTable = value;
+					}
+				}
+
+				public string AliBusinessType
+				{
+					get
+					{
+						return aliBusinessType;
+					}
+					set	
+					{
+						aliBusinessType = value;
 					}
 				}
 

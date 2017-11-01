@@ -21,26 +21,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeRefreshQuotaResponse : AcsResponse
+	public class BatchDescribeDomainBpsDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string urlQuota;
+		private int? pageNumber;
 
-		private string dirQuota;
+		private int? pageSize;
 
-		private string urlRemain;
-
-		private string dirRemain;
-
-		private string preloadQuota;
-
-		private string blockQuota;
-
-		private string preloadRemain;
-
-		private string blockRemain;
+		private List<BatchDescribeDomainBpsData_DataModule> bpsDatas;
 
 		public string RequestId
 		{
@@ -54,99 +44,85 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string UrlQuota
+		public int? PageNumber
 		{
 			get
 			{
-				return urlQuota;
+				return pageNumber;
 			}
 			set	
 			{
-				urlQuota = value;
+				pageNumber = value;
 			}
 		}
 
-		public string DirQuota
+		public int? PageSize
 		{
 			get
 			{
-				return dirQuota;
+				return pageSize;
 			}
 			set	
 			{
-				dirQuota = value;
+				pageSize = value;
 			}
 		}
 
-		public string UrlRemain
+		public List<BatchDescribeDomainBpsData_DataModule> BpsDatas
 		{
 			get
 			{
-				return urlRemain;
+				return bpsDatas;
 			}
 			set	
 			{
-				urlRemain = value;
+				bpsDatas = value;
 			}
 		}
 
-		public string DirRemain
+		public class BatchDescribeDomainBpsData_DataModule
 		{
-			get
-			{
-				return dirRemain;
-			}
-			set	
-			{
-				dirRemain = value;
-			}
-		}
 
-		public string PreloadQuota
-		{
-			get
-			{
-				return preloadQuota;
-			}
-			set	
-			{
-				preloadQuota = value;
-			}
-		}
+			private string timestamp;
 
-		public string BlockQuota
-		{
-			get
-			{
-				return blockQuota;
-			}
-			set	
-			{
-				blockQuota = value;
-			}
-		}
+			private float? l1Bps;
 
-		public string PreloadRemain
-		{
-			get
-			{
-				return preloadRemain;
-			}
-			set	
-			{
-				preloadRemain = value;
-			}
-		}
+			private string domainName;
 
-		public string BlockRemain
-		{
-			get
+			public string Timestamp
 			{
-				return blockRemain;
+				get
+				{
+					return timestamp;
+				}
+				set	
+				{
+					timestamp = value;
+				}
 			}
-			set	
+
+			public float? L1Bps
 			{
-				blockRemain = value;
+				get
+				{
+					return l1Bps;
+				}
+				set	
+				{
+					l1Bps = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
 			}
 		}
 	}
