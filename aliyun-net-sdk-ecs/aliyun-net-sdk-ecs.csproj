@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{c085bd5d-de6a-44af-9f60-4b00f541e8d5}</ProjectGuid>
+    <ProjectGuid>{9823f87e-bd7a-43c2-a57f-4748e2aa2740}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -60,6 +60,7 @@
 	<Compile Include="Ecs\Model\V20140526\StopInvocationRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyDiskAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceChargeTypeRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DeleteHpcClusterResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeVSwitchesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceNetworkSpecRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteNatGatewayRequest.cs" />
@@ -77,11 +78,13 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeVpcsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeRenewalPriceResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\ModifyHpcClusterAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeTagKeysRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyVolumeAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifySecurityGroupPolicyRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateKeyPairResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeTasksResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\CreateHpcClusterResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\RevokeSecurityGroupEgressResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceMonitorDataRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateVirtualBorderRouterResponse.cs" />
@@ -94,6 +97,7 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyVolumeAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifySecurityGroupPolicyResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateVSwitchResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\CancelAgreementResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSecurityGroupsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeNatGatewaysResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateVirtualBorderRouterRequest.cs" />
@@ -111,6 +115,7 @@
 	<Compile Include="Ecs\Model\V20140526\DetachDiskResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifySecurityGroupAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ResizeDiskResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeSpotPriceHistoryResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeTasksRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\EipNotifyPaidRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotsRequest.cs" />
@@ -132,6 +137,7 @@
 	<Compile Include="Ecs\Model\V20140526\CreateVSwitchRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeEipMonitorDataRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeVolumesResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\ConvertNatPublicIpToEipRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\RemoveTagsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeClustersRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\TerminateVirtualBorderRouterResponse.cs" />
@@ -149,6 +155,8 @@
 	<Compile Include="Ecs\Model\V20140526\AssociateEipAddressRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteCommandResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSecurityGroupsRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeHpcClustersRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotsUsageRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\AttachInstanceRamRoleResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeAccessPointsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\AssociateHaVipResponse.cs" />
@@ -175,6 +183,7 @@
 	<Compile Include="Ecs\Model\V20140526\UnassociateHaVipRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DetachKeyPairResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\StartInstanceResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\SignAgreementResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyRouterInterfaceAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeDeploymentSetTopologyResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteDiskResponse.cs" />
@@ -182,13 +191,16 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceSpecRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotPackageRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyBandwidthPackageSpecResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DeleteRecycleBinRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyForwardEntryResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ApplyAutoSnapshotPolicyRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyEipAddressAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\AllocateEipAddressRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ApplyAutoSnapshotPolicyResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\TerminateVirtualBorderRouterRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DeleteHpcClusterRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CancelCopyImageRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DeleteRecycleBinResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeImageSharePermissionResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ReInitVolumeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifySnapshotAttributeResponse.cs" />
@@ -248,6 +260,7 @@
 	<Compile Include="Ecs\Model\V20140526\DeleteInstanceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyVSwitchAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceTypesRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\ModifyHpcClusterAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateCommandResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ImportImageResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyImageSharePermissionRequest.cs" />
@@ -273,6 +286,7 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyAutoSnapshotPolicyRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeZonesResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\CreateHpcClusterRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyPhysicalConnectionAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotLinksRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeTaskAttributeRequest.cs" />
@@ -289,6 +303,7 @@
 	<Compile Include="Ecs\Model\V20140526\DeleteSnapshotRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateSnapshotResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\InvokeCommandResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\ConvertNatPublicIpToEipResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifySecurityGroupEgressRuleRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\AllocatePublicIpAddressResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\AuthorizeSecurityGroupEgressResponse.cs" />
@@ -352,8 +367,10 @@
 	<Compile Include="Ecs\Model\V20140526\AttachNetworkInterfaceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteForwardEntryResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateInstanceResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeSpotPriceHistoryRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeRouteTablesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteDiskRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\CancelAgreementRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ActivateRouterInterfaceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateNatGatewayRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CheckDiskEnableAutoSnapshotValidationResponse.cs" />
@@ -365,6 +382,7 @@
 	<Compile Include="Ecs\Model\V20140526\RevokeSecurityGroupResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyNetworkInterfaceAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceTypesResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\SignAgreementRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyVRouterAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeTagKeysResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteNatGatewayResponse.cs" />
@@ -409,6 +427,8 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceVncUrlRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyIntranetBandwidthKbResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeAccessPointsRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotsUsageResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeRecycleBinRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeletePhysicalConnectionRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\UnassociateEipAddressResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\RenewInstanceRequest.cs" />
@@ -427,6 +447,8 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyVSwitchAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ReInitDiskResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\AttachKeyPairResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeHpcClustersResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeRecycleBinResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteVpcRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyPrepayInstanceSpecRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeCommandsResponse.cs" />
@@ -525,7 +547,9 @@
 	<Compile Include="Ecs\Transform\V20140526\DeactivateRouterInterfaceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifySecurityGroupRuleResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceTypesResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeRecycleBinResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyVolumeAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\CreateHpcClusterResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteNetworkInterfaceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteVSwitchResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeTagsResponseUnmarshaller.cs" />
@@ -535,6 +559,7 @@
 	<Compile Include="Ecs\Transform\V20140526\DeleteBandwidthPackageResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeClassicLinkInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyAutoSnapshotPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DeleteRecycleBinResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\JoinSecurityGroupResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\AttachKeyPairResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\AttachClassicLinkVpcResponseUnmarshaller.cs" />
@@ -545,8 +570,10 @@
 	<Compile Include="Ecs\Transform\V20140526\UnassociateHaVipResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteAutoSnapshotPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\RollbackVolumeResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\ModifyHpcClusterAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\RenewInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteImageResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\SignAgreementResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateVSwitchResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteKeyPairsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\StopInvocationResponseUnmarshaller.cs" />
@@ -554,6 +581,7 @@
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeDisksResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyNetworkInterfaceAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeSnapshotsUsageResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyRouterInterfaceAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceVpcAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\RebootInstanceResponseUnmarshaller.cs" />
@@ -590,10 +618,12 @@
 	<Compile Include="Ecs\Transform\V20140526\ApplyAutoSnapshotPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ExportImageResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CancelTaskResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\CancelAgreementResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\AllocateEipAddressResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeForwardTableEntriesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribePriceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteRouteEntryResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\ConvertNatPublicIpToEipResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteVpcResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteNatGatewayResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateRouteEntryResponseUnmarshaller.cs" />
@@ -644,6 +674,7 @@
 	<Compile Include="Ecs\Transform\V20140526\RecoverVirtualBorderRouterResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeHaVipsResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeSpotPriceHistoryResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ReleaseEipAddressResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateVirtualBorderRouterResponseUnmarshaller.cs" />
@@ -652,9 +683,11 @@
 	<Compile Include="Ecs\Transform\V20140526\RemoveBandwidthPackageIpsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\StopInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceVncUrlResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DeleteHpcClusterResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\TerminateVirtualBorderRouterResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeTasksResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeTaskAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeHpcClustersResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeSecurityGroupReferencesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeIpRangesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeVSwitchesResponseUnmarshaller.cs" />

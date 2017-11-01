@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceMonitorData.IOPSWrite = context.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].IOPSWrite");
 				instanceMonitorData.BPSRead = context.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].BPSRead");
 				instanceMonitorData.BPSWrite = context.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].BPSWrite");
+				instanceMonitorData.CPUCreditUsage = context.FloatValue("DescribeInstanceMonitorData.MonitorData["+ i +"].CPUCreditUsage");
+				instanceMonitorData.CPUCreditBalance = context.FloatValue("DescribeInstanceMonitorData.MonitorData["+ i +"].CPUCreditBalance");
 				instanceMonitorData.TimeStamp = context.StringValue("DescribeInstanceMonitorData.MonitorData["+ i +"].TimeStamp");
 
 				describeInstanceMonitorDataResponse_monitorData.Add(instanceMonitorData);

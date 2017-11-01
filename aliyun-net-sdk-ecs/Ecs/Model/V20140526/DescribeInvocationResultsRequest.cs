@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeInvocationResultsRequest : RpcAcsRequest<DescribeInvocationResultsResponse>
     {
         public DescribeInvocationResultsRequest()
-            : base("Ecs", "2014-05-26", "DescribeInvocationResults")
+            : base("Ecs", "2014-05-26", "DescribeInvocationResults", "ecs", "openAPI")
         {
         }
 
@@ -43,15 +43,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string action;
 
-		private long? callerUid;
-
 		private string invokeId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string callerBid;
 
 		private long? ownerId;
 
@@ -122,19 +118,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? CallerUid
-		{
-			get
-			{
-				return callerUid;
-			}
-			set	
-			{
-				callerUid = value;
-				DictionaryUtil.Add(QueryParameters, "callerUid", value.ToString());
-			}
-		}
-
 		public string InvokeId
 		{
 			get
@@ -171,19 +154,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string CallerBid
-		{
-			get
-			{
-				return callerBid;
-			}
-			set	
-			{
-				callerBid = value;
-				DictionaryUtil.Add(QueryParameters, "callerBid", value);
 			}
 		}
 

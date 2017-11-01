@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeInstanceMonitorDataRequest : RpcAcsRequest<DescribeInstanceMonitorDataResponse>
     {
         public DescribeInstanceMonitorDataRequest()
-            : base("Ecs", "2014-05-26", "DescribeInstanceMonitorData")
+            : base("Ecs", "2014-05-26", "DescribeInstanceMonitorData", "ecs", "openAPI")
         {
         }
 

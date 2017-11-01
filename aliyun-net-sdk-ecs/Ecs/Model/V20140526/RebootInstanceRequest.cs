@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class RebootInstanceRequest : RpcAcsRequest<RebootInstanceResponse>
     {
         public RebootInstanceRequest()
-            : base("Ecs", "2014-05-26", "RebootInstance")
+            : base("Ecs", "2014-05-26", "RebootInstance", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteImageRequest : RpcAcsRequest<DeleteImageResponse>
     {
         public DeleteImageRequest()
-            : base("Ecs", "2014-05-26", "DeleteImage")
+            : base("Ecs", "2014-05-26", "DeleteImage", "ecs", "openAPI")
         {
         }
 

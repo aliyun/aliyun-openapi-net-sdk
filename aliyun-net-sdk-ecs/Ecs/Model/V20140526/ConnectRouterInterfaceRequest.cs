@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ConnectRouterInterfaceRequest : RpcAcsRequest<ConnectRouterInterfaceResponse>
     {
         public ConnectRouterInterfaceRequest()
-            : base("Ecs", "2014-05-26", "ConnectRouterInterface")
+            : base("Ecs", "2014-05-26", "ConnectRouterInterface", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CreateRouteEntryRequest : RpcAcsRequest<CreateRouteEntryResponse>
     {
         public CreateRouteEntryRequest()
-            : base("Ecs", "2014-05-26", "CreateRouteEntry")
+            : base("Ecs", "2014-05-26", "CreateRouteEntry", "ecs", "openAPI")
         {
         }
 

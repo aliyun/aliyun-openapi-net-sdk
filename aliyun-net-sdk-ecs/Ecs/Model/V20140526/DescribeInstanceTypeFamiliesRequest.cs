@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeInstanceTypeFamiliesRequest : RpcAcsRequest<DescribeInstanceTypeFamiliesResponse>
     {
         public DescribeInstanceTypeFamiliesRequest()
-            : base("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies")
+            : base("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies", "ecs", "openAPI")
         {
         }
 

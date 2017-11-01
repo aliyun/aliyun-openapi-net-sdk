@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ReplaceSystemDiskRequest : RpcAcsRequest<ReplaceSystemDiskResponse>
     {
         public ReplaceSystemDiskRequest()
-            : base("Ecs", "2014-05-26", "ReplaceSystemDisk")
+            : base("Ecs", "2014-05-26", "ReplaceSystemDisk", "ecs", "openAPI")
         {
         }
 

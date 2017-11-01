@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CreateKeyPairRequest : RpcAcsRequest<CreateKeyPairResponse>
     {
         public CreateKeyPairRequest()
-            : base("Ecs", "2014-05-26", "CreateKeyPair")
+            : base("Ecs", "2014-05-26", "CreateKeyPair", "ecs", "openAPI")
         {
         }
 

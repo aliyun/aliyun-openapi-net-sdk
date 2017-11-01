@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeInstanceStatusRequest : RpcAcsRequest<DescribeInstanceStatusResponse>
     {
         public DescribeInstanceStatusRequest()
-            : base("Ecs", "2014-05-26", "DescribeInstanceStatus")
+            : base("Ecs", "2014-05-26", "DescribeInstanceStatus", "ecs", "openAPI")
         {
         }
 

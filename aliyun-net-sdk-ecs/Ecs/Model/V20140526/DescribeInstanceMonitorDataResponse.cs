@@ -79,6 +79,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? bPSWrite;
 
+			private float? cPUCreditUsage;
+
+			private float? cPUCreditBalance;
+
 			private string timeStamp;
 
 			public string InstanceId
@@ -222,6 +226,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					bPSWrite = value;
+				}
+			}
+
+			public float? CPUCreditUsage
+			{
+				get
+				{
+					return cPUCreditUsage;
+				}
+				set	
+				{
+					cPUCreditUsage = value;
+				}
+			}
+
+			public float? CPUCreditBalance
+			{
+				get
+				{
+					return cPUCreditBalance;
+				}
+				set	
+				{
+					cPUCreditBalance = value;
 				}
 			}
 

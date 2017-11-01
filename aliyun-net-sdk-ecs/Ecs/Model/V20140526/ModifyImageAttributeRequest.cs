@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyImageAttributeRequest : RpcAcsRequest<ModifyImageAttributeResponse>
     {
         public ModifyImageAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyImageAttribute")
+            : base("Ecs", "2014-05-26", "ModifyImageAttribute", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteBandwidthPackageRequest : RpcAcsRequest<DeleteBandwidthPackageResponse>
     {
         public DeleteBandwidthPackageRequest()
-            : base("Ecs", "2014-05-26", "DeleteBandwidthPackage")
+            : base("Ecs", "2014-05-26", "DeleteBandwidthPackage", "ecs", "openAPI")
         {
         }
 

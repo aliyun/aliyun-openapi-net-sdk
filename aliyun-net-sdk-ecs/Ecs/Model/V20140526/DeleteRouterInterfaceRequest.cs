@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteRouterInterfaceRequest : RpcAcsRequest<DeleteRouterInterfaceResponse>
     {
         public DeleteRouterInterfaceRequest()
-            : base("Ecs", "2014-05-26", "DeleteRouterInterface")
+            : base("Ecs", "2014-05-26", "DeleteRouterInterface", "ecs", "openAPI")
         {
         }
 

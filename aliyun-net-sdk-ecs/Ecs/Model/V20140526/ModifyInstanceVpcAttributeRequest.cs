@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyInstanceVpcAttributeRequest : RpcAcsRequest<ModifyInstanceVpcAttributeResponse>
     {
         public ModifyInstanceVpcAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute")
+            : base("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute", "ecs", "openAPI")
         {
         }
 

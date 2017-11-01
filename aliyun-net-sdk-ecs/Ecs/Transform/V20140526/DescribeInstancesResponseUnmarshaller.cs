@@ -74,18 +74,14 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instance.SpotPriceLimit = context.FloatValue("DescribeInstances.Instances["+ i +"].SpotPriceLimit");
 				instance.ResourceGroupId = context.StringValue("DescribeInstances.Instances["+ i +"].ResourceGroupId");
 				instance.KeyPairName = context.StringValue("DescribeInstances.Instances["+ i +"].KeyPairName");
+				instance.Recyclable = context.BooleanValue("DescribeInstances.Instances["+ i +"].Recyclable");
+				instance.HpcClusterId = context.StringValue("DescribeInstances.Instances["+ i +"].HpcClusterId");
 
 				List<string> instance_securityGroupIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].SecurityGroupIds.Length"); j++) {
 					instance_securityGroupIds.Add(context.StringValue("DescribeInstances.Instances["+ i +"].SecurityGroupIds["+ j +"]"));
 				}
 				instance.SecurityGroupIds = instance_securityGroupIds;
-
-				List<string> instance_networkInterfaceIds = new List<string>();
-				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].NetworkInterfaceIds.Length"); j++) {
-					instance_networkInterfaceIds.Add(context.StringValue("DescribeInstances.Instances["+ i +"].NetworkInterfaceIds["+ j +"]"));
-				}
-				instance.NetworkInterfaceIds = instance_networkInterfaceIds;
 
 				List<string> instance_publicIpAddress = new List<string>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].PublicIpAddress.Length"); j++) {
@@ -98,6 +94,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					instance_innerIpAddress.Add(context.StringValue("DescribeInstances.Instances["+ i +"].InnerIpAddress["+ j +"]"));
 				}
 				instance.InnerIpAddress = instance_innerIpAddress;
+
+				List<string> instance_rdmaIpAddress = new List<string>();
+				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].RdmaIpAddress.Length"); j++) {
+					instance_rdmaIpAddress.Add(context.StringValue("DescribeInstances.Instances["+ i +"].RdmaIpAddress["+ j +"]"));
+				}
+				instance.RdmaIpAddress = instance_rdmaIpAddress;
 
 				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_VpcAttributes vpcAttributes = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_VpcAttributes();
 				vpcAttributes.VpcId = context.StringValue("DescribeInstances.Instances["+ i +"].VpcAttributes.VpcId");

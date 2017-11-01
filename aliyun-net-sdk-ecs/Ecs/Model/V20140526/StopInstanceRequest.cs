@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class StopInstanceRequest : RpcAcsRequest<StopInstanceResponse>
     {
         public StopInstanceRequest()
-            : base("Ecs", "2014-05-26", "StopInstance")
+            : base("Ecs", "2014-05-26", "StopInstance", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeIntranetAttributeKbRequest : RpcAcsRequest<DescribeIntranetAttributeKbResponse>
     {
         public DescribeIntranetAttributeKbRequest()
-            : base("Ecs", "2014-05-26", "DescribeIntranetAttributeKb")
+            : base("Ecs", "2014-05-26", "DescribeIntranetAttributeKb", "ecs", "openAPI")
         {
         }
 

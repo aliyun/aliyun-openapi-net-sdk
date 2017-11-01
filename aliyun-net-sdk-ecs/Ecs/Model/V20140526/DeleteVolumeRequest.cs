@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteVolumeRequest : RpcAcsRequest<DeleteVolumeResponse>
     {
         public DeleteVolumeRequest()
-            : base("Ecs", "2014-05-26", "DeleteVolume")
+            : base("Ecs", "2014-05-26", "DeleteVolume", "ecs", "openAPI")
         {
         }
 

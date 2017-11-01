@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeUserDataRequest : RpcAcsRequest<DescribeUserDataResponse>
     {
         public DescribeUserDataRequest()
-            : base("Ecs", "2014-05-26", "DescribeUserData")
+            : base("Ecs", "2014-05-26", "DescribeUserData", "ecs", "openAPI")
         {
         }
 

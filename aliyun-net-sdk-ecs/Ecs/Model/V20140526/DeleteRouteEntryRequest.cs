@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteRouteEntryRequest : RpcAcsRequest<DeleteRouteEntryResponse>
     {
         public DeleteRouteEntryRequest()
-            : base("Ecs", "2014-05-26", "DeleteRouteEntry")
+            : base("Ecs", "2014-05-26", "DeleteRouteEntry", "ecs", "openAPI")
         {
         }
 

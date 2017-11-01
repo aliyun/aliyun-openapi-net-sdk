@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyInstanceAutoRenewAttributeRequest : RpcAcsRequest<ModifyInstanceAutoRenewAttributeResponse>
     {
         public ModifyInstanceAutoRenewAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute")
+            : base("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute", "ecs", "openAPI")
         {
         }
 

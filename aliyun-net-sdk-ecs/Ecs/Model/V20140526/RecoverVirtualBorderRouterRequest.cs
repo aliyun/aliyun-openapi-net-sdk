@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class RecoverVirtualBorderRouterRequest : RpcAcsRequest<RecoverVirtualBorderRouterResponse>
     {
         public RecoverVirtualBorderRouterRequest()
-            : base("Ecs", "2014-05-26", "RecoverVirtualBorderRouter")
+            : base("Ecs", "2014-05-26", "RecoverVirtualBorderRouter", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyInstanceNetworkSpecRequest : RpcAcsRequest<ModifyInstanceNetworkSpecResponse>
     {
         public ModifyInstanceNetworkSpecRequest()
-            : base("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec")
+            : base("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "ecs", "openAPI")
         {
         }
 
@@ -58,6 +58,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string networkChargeType;
 
 		private int? internetMaxBandwidthIn;
+
+		private bool? allocatePublicIp;
 
 		public long? ResourceOwnerId
 		{
@@ -225,6 +227,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				internetMaxBandwidthIn = value;
 				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthIn", value.ToString());
+			}
+		}
+
+		public bool? AllocatePublicIp
+		{
+			get
+			{
+				return allocatePublicIp;
+			}
+			set	
+			{
+				allocatePublicIp = value;
+				DictionaryUtil.Add(QueryParameters, "AllocatePublicIp", value.ToString());
 			}
 		}
 

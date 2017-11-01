@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class StartInstanceRequest : RpcAcsRequest<StartInstanceResponse>
     {
         public StartInstanceRequest()
-            : base("Ecs", "2014-05-26", "StartInstance")
+            : base("Ecs", "2014-05-26", "StartInstance", "ecs", "openAPI")
         {
         }
 

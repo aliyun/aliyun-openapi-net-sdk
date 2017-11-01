@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class AllocateEipAddressRequest : RpcAcsRequest<AllocateEipAddressResponse>
     {
         public AllocateEipAddressRequest()
-            : base("Ecs", "2014-05-26", "AllocateEipAddress")
+            : base("Ecs", "2014-05-26", "AllocateEipAddress", "ecs", "openAPI")
         {
         }
 

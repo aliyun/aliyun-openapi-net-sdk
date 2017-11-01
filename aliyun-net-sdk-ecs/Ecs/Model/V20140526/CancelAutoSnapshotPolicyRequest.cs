@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CancelAutoSnapshotPolicyRequest : RpcAcsRequest<CancelAutoSnapshotPolicyResponse>
     {
         public CancelAutoSnapshotPolicyRequest()
-            : base("Ecs", "2014-05-26", "CancelAutoSnapshotPolicy")
+            : base("Ecs", "2014-05-26", "CancelAutoSnapshotPolicy", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteNatGatewayRequest : RpcAcsRequest<DeleteNatGatewayResponse>
     {
         public DeleteNatGatewayRequest()
-            : base("Ecs", "2014-05-26", "DeleteNatGateway")
+            : base("Ecs", "2014-05-26", "DeleteNatGateway", "ecs", "openAPI")
         {
         }
 

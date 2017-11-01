@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceType.LocalStorageCategory = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].LocalStorageCategory");
 				instanceType.GPUAmount = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].GPUAmount");
 				instanceType.GPUSpec = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].GPUSpec");
+				instanceType.InitialCredit = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InitialCredit");
+				instanceType.BaselineCredit = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].BaselineCredit");
 
 				describeInstanceTypesResponse_instanceTypes.Add(instanceType);
 			}

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeHaVipsRequest : RpcAcsRequest<DescribeHaVipsResponse>
     {
         public DescribeHaVipsRequest()
-            : base("Ecs", "2014-05-26", "DescribeHaVips")
+            : base("Ecs", "2014-05-26", "DescribeHaVips", "ecs", "openAPI")
         {
         }
 

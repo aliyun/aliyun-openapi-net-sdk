@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyInstanceVncPasswdRequest : RpcAcsRequest<ModifyInstanceVncPasswdResponse>
     {
         public ModifyInstanceVncPasswdRequest()
-            : base("Ecs", "2014-05-26", "ModifyInstanceVncPasswd")
+            : base("Ecs", "2014-05-26", "ModifyInstanceVncPasswd", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DetachDiskRequest : RpcAcsRequest<DetachDiskResponse>
     {
         public DetachDiskRequest()
-            : base("Ecs", "2014-05-26", "DetachDisk")
+            : base("Ecs", "2014-05-26", "DetachDisk", "ecs", "openAPI")
         {
         }
 

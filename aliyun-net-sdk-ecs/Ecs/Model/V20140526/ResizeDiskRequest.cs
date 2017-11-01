@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ResizeDiskRequest : RpcAcsRequest<ResizeDiskResponse>
     {
         public ResizeDiskRequest()
-            : base("Ecs", "2014-05-26", "ResizeDisk")
+            : base("Ecs", "2014-05-26", "ResizeDisk", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeRouterInterfacesRequest : RpcAcsRequest<DescribeRouterInterfacesResponse>
     {
         public DescribeRouterInterfacesRequest()
-            : base("Ecs", "2014-05-26", "DescribeRouterInterfaces")
+            : base("Ecs", "2014-05-26", "DescribeRouterInterfaces", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DetachVolumeRequest : RpcAcsRequest<DetachVolumeResponse>
     {
         public DetachVolumeRequest()
-            : base("Ecs", "2014-05-26", "DetachVolume")
+            : base("Ecs", "2014-05-26", "DetachVolume", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class AttachNetworkInterfaceRequest : RpcAcsRequest<AttachNetworkInterfaceResponse>
     {
         public AttachNetworkInterfaceRequest()
-            : base("Ecs", "2014-05-26", "AttachNetworkInterface")
+            : base("Ecs", "2014-05-26", "AttachNetworkInterface", "ecs", "openAPI")
         {
         }
 
@@ -39,13 +39,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string action;
 
-		private long? callerUid;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string callerBid;
 
 		private long? ownerId;
 
@@ -92,19 +88,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? CallerUid
-		{
-			get
-			{
-				return callerUid;
-			}
-			set	
-			{
-				callerUid = value;
-				DictionaryUtil.Add(QueryParameters, "callerUid", value.ToString());
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -128,19 +111,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string CallerBid
-		{
-			get
-			{
-				return callerBid;
-			}
-			set	
-			{
-				callerBid = value;
-				DictionaryUtil.Add(QueryParameters, "callerBid", value);
 			}
 		}
 

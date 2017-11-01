@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyPhysicalConnectionAttributeRequest : RpcAcsRequest<ModifyPhysicalConnectionAttributeResponse>
     {
         public ModifyPhysicalConnectionAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute")
+            : base("Ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute", "ecs", "openAPI")
         {
         }
 

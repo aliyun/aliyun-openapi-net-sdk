@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeVirtualBorderRoutersForPhysicalConnectionRequest : RpcAcsRequest<DescribeVirtualBorderRoutersForPhysicalConnectionResponse>
     {
         public DescribeVirtualBorderRoutersForPhysicalConnectionRequest()
-            : base("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection")
+            : base("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection", "ecs", "openAPI")
         {
         }
 

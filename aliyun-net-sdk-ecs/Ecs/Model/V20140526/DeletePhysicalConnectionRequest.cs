@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeletePhysicalConnectionRequest : RpcAcsRequest<DeletePhysicalConnectionResponse>
     {
         public DeletePhysicalConnectionRequest()
-            : base("Ecs", "2014-05-26", "DeletePhysicalConnection")
+            : base("Ecs", "2014-05-26", "DeletePhysicalConnection", "ecs", "openAPI")
         {
         }
 

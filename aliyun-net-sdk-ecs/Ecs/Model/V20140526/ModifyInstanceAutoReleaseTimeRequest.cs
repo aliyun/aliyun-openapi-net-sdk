@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyInstanceAutoReleaseTimeRequest : RpcAcsRequest<ModifyInstanceAutoReleaseTimeResponse>
     {
         public ModifyInstanceAutoReleaseTimeRequest()
-            : base("Ecs", "2014-05-26", "ModifyInstanceAutoReleaseTime")
+            : base("Ecs", "2014-05-26", "ModifyInstanceAutoReleaseTime", "ecs", "openAPI")
         {
         }
 

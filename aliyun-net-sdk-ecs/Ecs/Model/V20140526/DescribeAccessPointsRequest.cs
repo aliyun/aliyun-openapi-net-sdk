@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeAccessPointsRequest : RpcAcsRequest<DescribeAccessPointsResponse>
     {
         public DescribeAccessPointsRequest()
-            : base("Ecs", "2014-05-26", "DescribeAccessPoints")
+            : base("Ecs", "2014-05-26", "DescribeAccessPoints", "ecs", "openAPI")
         {
         }
 

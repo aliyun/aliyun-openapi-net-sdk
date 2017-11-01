@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyPrepayInstanceSpecRequest : RpcAcsRequest<ModifyPrepayInstanceSpecResponse>
     {
         public ModifyPrepayInstanceSpecRequest()
-            : base("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec")
+            : base("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "ecs", "openAPI")
         {
         }
 

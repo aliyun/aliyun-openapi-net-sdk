@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeForwardTableEntriesRequest : RpcAcsRequest<DescribeForwardTableEntriesResponse>
     {
         public DescribeForwardTableEntriesRequest()
-            : base("Ecs", "2014-05-26", "DescribeForwardTableEntries")
+            : base("Ecs", "2014-05-26", "DescribeForwardTableEntries", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyRouterInterfaceSpecRequest : RpcAcsRequest<ModifyRouterInterfaceSpecResponse>
     {
         public ModifyRouterInterfaceSpecRequest()
-            : base("Ecs", "2014-05-26", "ModifyRouterInterfaceSpec")
+            : base("Ecs", "2014-05-26", "ModifyRouterInterfaceSpec", "ecs", "openAPI")
         {
         }
 

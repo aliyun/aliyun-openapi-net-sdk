@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class AddTagsRequest : RpcAcsRequest<AddTagsResponse>
     {
         public AddTagsRequest()
-            : base("Ecs", "2014-05-26", "AddTags")
+            : base("Ecs", "2014-05-26", "AddTags", "ecs", "openAPI")
         {
         }
 

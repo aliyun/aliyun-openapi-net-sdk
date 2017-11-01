@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CreateVirtualBorderRouterRequest : RpcAcsRequest<CreateVirtualBorderRouterResponse>
     {
         public CreateVirtualBorderRouterRequest()
-            : base("Ecs", "2014-05-26", "CreateVirtualBorderRouter")
+            : base("Ecs", "2014-05-26", "CreateVirtualBorderRouter", "ecs", "openAPI")
         {
         }
 

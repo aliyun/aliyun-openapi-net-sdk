@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeInstanceVncUrlRequest : RpcAcsRequest<DescribeInstanceVncUrlResponse>
     {
         public DescribeInstanceVncUrlRequest()
-            : base("Ecs", "2014-05-26", "DescribeInstanceVncUrl")
+            : base("Ecs", "2014-05-26", "DescribeInstanceVncUrl", "ecs", "openAPI")
         {
         }
 

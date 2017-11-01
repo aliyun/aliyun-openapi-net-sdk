@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class AttachClassicLinkVpcRequest : RpcAcsRequest<AttachClassicLinkVpcResponse>
     {
         public AttachClassicLinkVpcRequest()
-            : base("Ecs", "2014-05-26", "AttachClassicLinkVpc")
+            : base("Ecs", "2014-05-26", "AttachClassicLinkVpc", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeImageSupportInstanceTypesRequest : RpcAcsRequest<DescribeImageSupportInstanceTypesResponse>
     {
         public DescribeImageSupportInstanceTypesRequest()
-            : base("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes")
+            : base("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "ecs", "openAPI")
         {
         }
 

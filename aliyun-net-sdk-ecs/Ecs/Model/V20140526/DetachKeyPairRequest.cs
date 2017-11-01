@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DetachKeyPairRequest : RpcAcsRequest<DetachKeyPairResponse>
     {
         public DetachKeyPairRequest()
-            : base("Ecs", "2014-05-26", "DetachKeyPair")
+            : base("Ecs", "2014-05-26", "DetachKeyPair", "ecs", "openAPI")
         {
         }
 

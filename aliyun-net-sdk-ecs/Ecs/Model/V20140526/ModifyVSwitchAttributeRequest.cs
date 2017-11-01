@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyVSwitchAttributeRequest : RpcAcsRequest<ModifyVSwitchAttributeResponse>
     {
         public ModifyVSwitchAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyVSwitchAttribute")
+            : base("Ecs", "2014-05-26", "ModifyVSwitchAttribute", "ecs", "openAPI")
         {
         }
 

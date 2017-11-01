@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CheckDiskEnableAutoSnapshotValidationRequest : RpcAcsRequest<CheckDiskEnableAutoSnapshotValidationResponse>
     {
         public CheckDiskEnableAutoSnapshotValidationRequest()
-            : base("Ecs", "2014-05-26", "CheckDiskEnableAutoSnapshotValidation")
+            : base("Ecs", "2014-05-26", "CheckDiskEnableAutoSnapshotValidation", "ecs", "openAPI")
         {
         }
 

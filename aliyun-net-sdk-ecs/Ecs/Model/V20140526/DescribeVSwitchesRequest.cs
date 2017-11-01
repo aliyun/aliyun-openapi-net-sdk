@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeVSwitchesRequest : RpcAcsRequest<DescribeVSwitchesResponse>
     {
         public DescribeVSwitchesRequest()
-            : base("Ecs", "2014-05-26", "DescribeVSwitches")
+            : base("Ecs", "2014-05-26", "DescribeVSwitches", "ecs", "openAPI")
         {
         }
 

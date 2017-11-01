@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyInstanceSpecRequest : RpcAcsRequest<ModifyInstanceSpecResponse>
     {
         public ModifyInstanceSpecRequest()
-            : base("Ecs", "2014-05-26", "ModifyInstanceSpec")
+            : base("Ecs", "2014-05-26", "ModifyInstanceSpec", "ecs", "openAPI")
         {
         }
 
@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string clientToken;
 
+		private bool? allowMigrateAcrossZone;
+
 		private string ownerAccount;
 
 		private int? internetMaxBandwidthOut;
@@ -46,6 +48,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private long? ownerId;
 
 		private int? temporaryInternetMaxBandwidthOut;
+
+		private string systemDiskCategory;
 
 		private string temporaryStartTime;
 
@@ -100,6 +104,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public bool? AllowMigrateAcrossZone
+		{
+			get
+			{
+				return allowMigrateAcrossZone;
+			}
+			set	
+			{
+				allowMigrateAcrossZone = value;
+				DictionaryUtil.Add(QueryParameters, "AllowMigrateAcrossZone", value.ToString());
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -149,6 +166,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				temporaryInternetMaxBandwidthOut = value;
 				DictionaryUtil.Add(QueryParameters, "Temporary.InternetMaxBandwidthOut", value.ToString());
+			}
+		}
+
+		public string SystemDiskCategory
+		{
+			get
+			{
+				return systemDiskCategory;
+			}
+			set	
+			{
+				systemDiskCategory = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.Category", value);
 			}
 		}
 

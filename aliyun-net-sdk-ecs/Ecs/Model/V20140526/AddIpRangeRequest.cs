@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class AddIpRangeRequest : RpcAcsRequest<AddIpRangeResponse>
     {
         public AddIpRangeRequest()
-            : base("Ecs", "2014-05-26", "AddIpRange")
+            : base("Ecs", "2014-05-26", "AddIpRange", "ecs", "openAPI")
         {
         }
 

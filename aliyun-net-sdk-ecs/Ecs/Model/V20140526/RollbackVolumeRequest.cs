@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class RollbackVolumeRequest : RpcAcsRequest<RollbackVolumeResponse>
     {
         public RollbackVolumeRequest()
-            : base("Ecs", "2014-05-26", "RollbackVolume")
+            : base("Ecs", "2014-05-26", "RollbackVolume", "ecs", "openAPI")
         {
         }
 

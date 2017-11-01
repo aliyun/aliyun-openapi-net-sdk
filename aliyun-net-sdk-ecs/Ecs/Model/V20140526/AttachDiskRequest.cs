@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class AttachDiskRequest : RpcAcsRequest<AttachDiskResponse>
     {
         public AttachDiskRequest()
-            : base("Ecs", "2014-05-26", "AttachDisk")
+            : base("Ecs", "2014-05-26", "AttachDisk", "ecs", "openAPI")
         {
         }
 

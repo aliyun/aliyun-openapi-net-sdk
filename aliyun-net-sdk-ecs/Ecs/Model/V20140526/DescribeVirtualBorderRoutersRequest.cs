@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeVirtualBorderRoutersRequest : RpcAcsRequest<DescribeVirtualBorderRoutersResponse>
     {
         public DescribeVirtualBorderRoutersRequest()
-            : base("Ecs", "2014-05-26", "DescribeVirtualBorderRouters")
+            : base("Ecs", "2014-05-26", "DescribeVirtualBorderRouters", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribePriceRequest : RpcAcsRequest<DescribePriceResponse>
     {
         public DescribePriceRequest()
-            : base("Ecs", "2014-05-26", "DescribePrice")
+            : base("Ecs", "2014-05-26", "DescribePrice", "ecs", "openAPI")
         {
         }
 

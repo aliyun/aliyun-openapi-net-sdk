@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CreateHaVipRequest : RpcAcsRequest<CreateHaVipResponse>
     {
         public CreateHaVipRequest()
-            : base("Ecs", "2014-05-26", "CreateHaVip")
+            : base("Ecs", "2014-05-26", "CreateHaVip", "ecs", "openAPI")
         {
         }
 

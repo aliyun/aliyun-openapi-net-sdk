@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeTagKeysRequest : RpcAcsRequest<DescribeTagKeysResponse>
     {
         public DescribeTagKeysRequest()
-            : base("Ecs", "2014-05-26", "DescribeTagKeys")
+            : base("Ecs", "2014-05-26", "DescribeTagKeys", "ecs", "openAPI")
         {
         }
 

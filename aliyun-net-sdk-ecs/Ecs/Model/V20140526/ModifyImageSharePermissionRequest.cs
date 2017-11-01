@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyImageSharePermissionRequest : RpcAcsRequest<ModifyImageSharePermissionResponse>
     {
         public ModifyImageSharePermissionRequest()
-            : base("Ecs", "2014-05-26", "ModifyImageSharePermission")
+            : base("Ecs", "2014-05-26", "ModifyImageSharePermission", "ecs", "openAPI")
         {
         }
 

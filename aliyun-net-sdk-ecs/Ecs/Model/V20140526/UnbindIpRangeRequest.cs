@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class UnbindIpRangeRequest : RpcAcsRequest<UnbindIpRangeResponse>
     {
         public UnbindIpRangeRequest()
-            : base("Ecs", "2014-05-26", "UnbindIpRange")
+            : base("Ecs", "2014-05-26", "UnbindIpRange", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class AttachVolumeRequest : RpcAcsRequest<AttachVolumeResponse>
     {
         public AttachVolumeRequest()
-            : base("Ecs", "2014-05-26", "AttachVolume")
+            : base("Ecs", "2014-05-26", "AttachVolume", "ecs", "openAPI")
         {
         }
 

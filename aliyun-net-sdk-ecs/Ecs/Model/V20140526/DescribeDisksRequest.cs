@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeDisksRequest : RpcAcsRequest<DescribeDisksResponse>
     {
         public DescribeDisksRequest()
-            : base("Ecs", "2014-05-26", "DescribeDisks")
+            : base("Ecs", "2014-05-26", "DescribeDisks", "ecs", "openAPI")
         {
         }
 

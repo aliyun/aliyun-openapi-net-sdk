@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteVSwitchRequest : RpcAcsRequest<DeleteVSwitchResponse>
     {
         public DeleteVSwitchRequest()
-            : base("Ecs", "2014-05-26", "DeleteVSwitch")
+            : base("Ecs", "2014-05-26", "DeleteVSwitch", "ecs", "openAPI")
         {
         }
 

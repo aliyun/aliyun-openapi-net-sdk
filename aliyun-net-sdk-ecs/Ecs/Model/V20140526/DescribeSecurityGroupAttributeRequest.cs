@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeSecurityGroupAttributeRequest : RpcAcsRequest<DescribeSecurityGroupAttributeResponse>
     {
         public DescribeSecurityGroupAttributeRequest()
-            : base("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute")
+            : base("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute", "ecs", "openAPI")
         {
         }
 

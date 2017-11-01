@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ExportImageRequest : RpcAcsRequest<ExportImageResponse>
     {
         public ExportImageRequest()
-            : base("Ecs", "2014-05-26", "ExportImage")
+            : base("Ecs", "2014-05-26", "ExportImage", "ecs", "openAPI")
         {
         }
 

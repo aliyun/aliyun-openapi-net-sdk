@@ -169,6 +169,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string keyPairName;
 
+			private bool? recyclable;
+
+			private string hpcClusterId;
+
 			private List<DescribeInstances_NetworkInterface> networkInterfaces;
 
 			private List<DescribeInstances_LockReason> operationLocks;
@@ -177,11 +181,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private List<string> securityGroupIds;
 
-			private List<string> networkInterfaceIds;
-
 			private List<string> publicIpAddress;
 
 			private List<string> innerIpAddress;
+
+			private List<string> rdmaIpAddress;
 
 			private DescribeInstances_VpcAttributes vpcAttributes;
 
@@ -619,6 +623,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public bool? Recyclable
+			{
+				get
+				{
+					return recyclable;
+				}
+				set	
+				{
+					recyclable = value;
+				}
+			}
+
+			public string HpcClusterId
+			{
+				get
+				{
+					return hpcClusterId;
+				}
+				set	
+				{
+					hpcClusterId = value;
+				}
+			}
+
 			public List<DescribeInstances_NetworkInterface> NetworkInterfaces
 			{
 				get
@@ -667,18 +695,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<string> NetworkInterfaceIds
-			{
-				get
-				{
-					return networkInterfaceIds;
-				}
-				set	
-				{
-					networkInterfaceIds = value;
-				}
-			}
-
 			public List<string> PublicIpAddress
 			{
 				get
@@ -700,6 +716,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					innerIpAddress = value;
+				}
+			}
+
+			public List<string> RdmaIpAddress
+			{
+				get
+				{
+					return rdmaIpAddress;
+				}
+				set	
+				{
+					rdmaIpAddress = value;
 				}
 			}
 

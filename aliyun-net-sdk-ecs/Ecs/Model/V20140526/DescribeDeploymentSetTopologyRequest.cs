@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeDeploymentSetTopologyRequest : RpcAcsRequest<DescribeDeploymentSetTopologyResponse>
     {
         public DescribeDeploymentSetTopologyRequest()
-            : base("Ecs", "2014-05-26", "DescribeDeploymentSetTopology")
+            : base("Ecs", "2014-05-26", "DescribeDeploymentSetTopology", "ecs", "openAPI")
         {
         }
 

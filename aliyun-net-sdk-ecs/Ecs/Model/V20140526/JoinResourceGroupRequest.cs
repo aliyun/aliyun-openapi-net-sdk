@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class JoinResourceGroupRequest : RpcAcsRequest<JoinResourceGroupResponse>
     {
         public JoinResourceGroupRequest()
-            : base("Ecs", "2014-05-26", "JoinResourceGroup")
+            : base("Ecs", "2014-05-26", "JoinResourceGroup", "ecs", "openAPI")
         {
         }
 

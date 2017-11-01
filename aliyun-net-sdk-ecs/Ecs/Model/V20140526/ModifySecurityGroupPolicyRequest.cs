@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifySecurityGroupPolicyRequest : RpcAcsRequest<ModifySecurityGroupPolicyResponse>
     {
         public ModifySecurityGroupPolicyRequest()
-            : base("Ecs", "2014-05-26", "ModifySecurityGroupPolicy")
+            : base("Ecs", "2014-05-26", "ModifySecurityGroupPolicy", "ecs", "openAPI")
         {
         }
 

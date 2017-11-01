@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class AttachInstanceRamRoleRequest : RpcAcsRequest<AttachInstanceRamRoleResponse>
     {
         public AttachInstanceRamRoleRequest()
-            : base("Ecs", "2014-05-26", "AttachInstanceRamRole")
+            : base("Ecs", "2014-05-26", "AttachInstanceRamRole", "ecs", "openAPI")
         {
         }
 

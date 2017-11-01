@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeInstancePhysicalAttributeRequest : RpcAcsRequest<DescribeInstancePhysicalAttributeResponse>
     {
         public DescribeInstancePhysicalAttributeRequest()
-            : base("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute")
+            : base("Ecs", "2014-05-26", "DescribeInstancePhysicalAttribute", "ecs", "openAPI")
         {
         }
 

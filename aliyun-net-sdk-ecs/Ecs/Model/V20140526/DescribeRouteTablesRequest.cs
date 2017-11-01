@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeRouteTablesRequest : RpcAcsRequest<DescribeRouteTablesResponse>
     {
         public DescribeRouteTablesRequest()
-            : base("Ecs", "2014-05-26", "DescribeRouteTables")
+            : base("Ecs", "2014-05-26", "DescribeRouteTables", "ecs", "openAPI")
         {
         }
 

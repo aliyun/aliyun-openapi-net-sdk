@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeImageSharePermissionRequest : RpcAcsRequest<DescribeImageSharePermissionResponse>
     {
         public DescribeImageSharePermissionRequest()
-            : base("Ecs", "2014-05-26", "DescribeImageSharePermission")
+            : base("Ecs", "2014-05-26", "DescribeImageSharePermission", "ecs", "openAPI")
         {
         }
 

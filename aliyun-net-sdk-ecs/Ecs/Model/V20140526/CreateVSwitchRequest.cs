@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CreateVSwitchRequest : RpcAcsRequest<CreateVSwitchResponse>
     {
         public CreateVSwitchRequest()
-            : base("Ecs", "2014-05-26", "CreateVSwitch")
+            : base("Ecs", "2014-05-26", "CreateVSwitch", "ecs", "openAPI")
         {
         }
 

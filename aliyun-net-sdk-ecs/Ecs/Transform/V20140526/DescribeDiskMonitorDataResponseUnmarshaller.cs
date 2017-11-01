@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				diskMonitorData.BPSRead = context.IntegerValue("DescribeDiskMonitorData.MonitorData["+ i +"].BPSRead");
 				diskMonitorData.BPSWrite = context.IntegerValue("DescribeDiskMonitorData.MonitorData["+ i +"].BPSWrite");
 				diskMonitorData.BPSTotal = context.IntegerValue("DescribeDiskMonitorData.MonitorData["+ i +"].BPSTotal");
+				diskMonitorData.LatencyRead = context.IntegerValue("DescribeDiskMonitorData.MonitorData["+ i +"].LatencyRead");
+				diskMonitorData.LatencyWrite = context.IntegerValue("DescribeDiskMonitorData.MonitorData["+ i +"].LatencyWrite");
 				diskMonitorData.TimeStamp = context.StringValue("DescribeDiskMonitorData.MonitorData["+ i +"].TimeStamp");
 
 				describeDiskMonitorDataResponse_monitorData.Add(diskMonitorData);

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyInstanceAttributeRequest : RpcAcsRequest<ModifyInstanceAttributeResponse>
     {
         public ModifyInstanceAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyInstanceAttribute")
+            : base("Ecs", "2014-05-26", "ModifyInstanceAttribute", "ecs", "openAPI")
         {
         }
 
@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string instanceName;
 
 		private string resourceOwnerAccount;
+
+		private bool? recyclable;
 
 		private string ownerAccount;
 
@@ -143,6 +145,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public bool? Recyclable
+		{
+			get
+			{
+				return recyclable;
+			}
+			set	
+			{
+				recyclable = value;
+				DictionaryUtil.Add(QueryParameters, "Recyclable", value.ToString());
 			}
 		}
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CreateAutoSnapshotPolicyRequest : RpcAcsRequest<CreateAutoSnapshotPolicyResponse>
     {
         public CreateAutoSnapshotPolicyRequest()
-            : base("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy")
+            : base("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy", "ecs", "openAPI")
         {
         }
 

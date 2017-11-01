@@ -73,6 +73,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string gPUSpec;
 
+			private int? initialCredit;
+
+			private int? baselineCredit;
+
 			public string InstanceTypeId
 			{
 				get
@@ -178,6 +182,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					gPUSpec = value;
+				}
+			}
+
+			public int? InitialCredit
+			{
+				get
+				{
+					return initialCredit;
+				}
+				set	
+				{
+					initialCredit = value;
+				}
+			}
+
+			public int? BaselineCredit
+			{
+				get
+				{
+					return baselineCredit;
+				}
+				set	
+				{
+					baselineCredit = value;
 				}
 			}
 		}

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyForwardEntryRequest : RpcAcsRequest<ModifyForwardEntryResponse>
     {
         public ModifyForwardEntryRequest()
-            : base("Ecs", "2014-05-26", "ModifyForwardEntry")
+            : base("Ecs", "2014-05-26", "ModifyForwardEntry", "ecs", "openAPI")
         {
         }
 

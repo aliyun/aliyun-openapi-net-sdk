@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class RemoveTagsRequest : RpcAcsRequest<RemoveTagsResponse>
     {
         public RemoveTagsRequest()
-            : base("Ecs", "2014-05-26", "RemoveTags")
+            : base("Ecs", "2014-05-26", "RemoveTags", "ecs", "openAPI")
         {
         }
 

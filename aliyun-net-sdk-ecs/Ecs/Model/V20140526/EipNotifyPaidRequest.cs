@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class EipNotifyPaidRequest : RpcAcsRequest<EipNotifyPaidResponse>
     {
         public EipNotifyPaidRequest()
-            : base("Ecs", "2014-05-26", "EipNotifyPaid")
+            : base("Ecs", "2014-05-26", "EipNotifyPaid", "ecs", "openAPI")
         {
         }
 

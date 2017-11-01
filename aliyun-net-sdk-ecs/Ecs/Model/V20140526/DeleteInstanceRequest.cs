@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteInstanceRequest : RpcAcsRequest<DeleteInstanceResponse>
     {
         public DeleteInstanceRequest()
-            : base("Ecs", "2014-05-26", "DeleteInstance")
+            : base("Ecs", "2014-05-26", "DeleteInstance", "ecs", "openAPI")
         {
         }
 

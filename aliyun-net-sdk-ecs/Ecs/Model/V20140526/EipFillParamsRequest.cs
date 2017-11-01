@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class EipFillParamsRequest : RpcAcsRequest<EipFillParamsResponse>
     {
         public EipFillParamsRequest()
-            : base("Ecs", "2014-05-26", "EipFillParams")
+            : base("Ecs", "2014-05-26", "EipFillParams", "ecs", "openAPI")
         {
         }
 

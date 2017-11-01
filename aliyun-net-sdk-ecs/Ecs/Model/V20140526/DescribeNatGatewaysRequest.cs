@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeNatGatewaysRequest : RpcAcsRequest<DescribeNatGatewaysResponse>
     {
         public DescribeNatGatewaysRequest()
-            : base("Ecs", "2014-05-26", "DescribeNatGateways")
+            : base("Ecs", "2014-05-26", "DescribeNatGateways", "ecs", "openAPI")
         {
         }
 

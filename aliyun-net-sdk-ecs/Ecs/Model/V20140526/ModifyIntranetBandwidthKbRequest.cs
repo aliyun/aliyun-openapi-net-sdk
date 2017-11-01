@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyIntranetBandwidthKbRequest : RpcAcsRequest<ModifyIntranetBandwidthKbResponse>
     {
         public ModifyIntranetBandwidthKbRequest()
-            : base("Ecs", "2014-05-26", "ModifyIntranetBandwidthKb")
+            : base("Ecs", "2014-05-26", "ModifyIntranetBandwidthKb", "ecs", "openAPI")
         {
         }
 

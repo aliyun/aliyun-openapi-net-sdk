@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeClassicLinkInstancesRequest : RpcAcsRequest<DescribeClassicLinkInstancesResponse>
     {
         public DescribeClassicLinkInstancesRequest()
-            : base("Ecs", "2014-05-26", "DescribeClassicLinkInstances")
+            : base("Ecs", "2014-05-26", "DescribeClassicLinkInstances", "ecs", "openAPI")
         {
         }
 

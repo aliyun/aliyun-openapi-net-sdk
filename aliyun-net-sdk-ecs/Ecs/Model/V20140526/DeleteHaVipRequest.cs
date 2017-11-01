@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteHaVipRequest : RpcAcsRequest<DeleteHaVipResponse>
     {
         public DeleteHaVipRequest()
-            : base("Ecs", "2014-05-26", "DeleteHaVip")
+            : base("Ecs", "2014-05-26", "DeleteHaVip", "ecs", "openAPI")
         {
         }
 

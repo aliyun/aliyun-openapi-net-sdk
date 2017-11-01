@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteDeploymentSetRequest : RpcAcsRequest<DeleteDeploymentSetResponse>
     {
         public DeleteDeploymentSetRequest()
-            : base("Ecs", "2014-05-26", "DeleteDeploymentSet")
+            : base("Ecs", "2014-05-26", "DeleteDeploymentSet", "ecs", "openAPI")
         {
         }
 

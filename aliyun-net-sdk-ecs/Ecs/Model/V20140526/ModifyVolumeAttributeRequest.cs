@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyVolumeAttributeRequest : RpcAcsRequest<ModifyVolumeAttributeResponse>
     {
         public ModifyVolumeAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyVolumeAttribute")
+            : base("Ecs", "2014-05-26", "ModifyVolumeAttribute", "ecs", "openAPI")
         {
         }
 

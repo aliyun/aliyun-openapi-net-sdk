@@ -83,6 +83,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? bPSTotal;
 
+			private int? latencyRead;
+
+			private int? latencyWrite;
+
 			private string timeStamp;
 
 			public string DiskId
@@ -166,6 +170,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					bPSTotal = value;
+				}
+			}
+
+			public int? LatencyRead
+			{
+				get
+				{
+					return latencyRead;
+				}
+				set	
+				{
+					latencyRead = value;
+				}
+			}
+
+			public int? LatencyWrite
+			{
+				get
+				{
+					return latencyWrite;
+				}
+				set	
+				{
+					latencyWrite = value;
 				}
 			}
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class RevokeSecurityGroupRequest : RpcAcsRequest<RevokeSecurityGroupResponse>
     {
         public RevokeSecurityGroupRequest()
-            : base("Ecs", "2014-05-26", "RevokeSecurityGroup")
+            : base("Ecs", "2014-05-26", "RevokeSecurityGroup", "ecs", "openAPI")
         {
         }
 
@@ -53,8 +53,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string action;
 
-		private long? callerUid;
-
 		private string policy;
 
 		private string portRange;
@@ -66,8 +64,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string ownerAccount;
 
 		private string sourceCidrIp;
-
-		private string callerBid;
 
 		private long? ownerId;
 
@@ -207,19 +203,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? CallerUid
-		{
-			get
-			{
-				return callerUid;
-			}
-			set	
-			{
-				callerUid = value;
-				DictionaryUtil.Add(QueryParameters, "callerUid", value.ToString());
-			}
-		}
-
 		public string Policy
 		{
 			get
@@ -295,19 +278,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				sourceCidrIp = value;
 				DictionaryUtil.Add(QueryParameters, "SourceCidrIp", value);
-			}
-		}
-
-		public string CallerBid
-		{
-			get
-			{
-				return callerBid;
-			}
-			set	
-			{
-				callerBid = value;
-				DictionaryUtil.Add(QueryParameters, "callerBid", value);
 			}
 		}
 

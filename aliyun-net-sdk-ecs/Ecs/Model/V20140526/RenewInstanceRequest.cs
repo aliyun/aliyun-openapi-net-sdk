@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class RenewInstanceRequest : RpcAcsRequest<RenewInstanceResponse>
     {
         public RenewInstanceRequest()
-            : base("Ecs", "2014-05-26", "RenewInstance")
+            : base("Ecs", "2014-05-26", "RenewInstance", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CreateDeploymentSetRequest : RpcAcsRequest<CreateDeploymentSetResponse>
     {
         public CreateDeploymentSetRequest()
-            : base("Ecs", "2014-05-26", "CreateDeploymentSet")
+            : base("Ecs", "2014-05-26", "CreateDeploymentSet", "ecs", "openAPI")
         {
         }
 

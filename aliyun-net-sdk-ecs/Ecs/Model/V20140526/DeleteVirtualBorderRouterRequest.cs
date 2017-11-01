@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteVirtualBorderRouterRequest : RpcAcsRequest<DeleteVirtualBorderRouterResponse>
     {
         public DeleteVirtualBorderRouterRequest()
-            : base("Ecs", "2014-05-26", "DeleteVirtualBorderRouter")
+            : base("Ecs", "2014-05-26", "DeleteVirtualBorderRouter", "ecs", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CreateSnapshotRequest : RpcAcsRequest<CreateSnapshotResponse>
     {
         public CreateSnapshotRequest()
-            : base("Ecs", "2014-05-26", "CreateSnapshot")
+            : base("Ecs", "2014-05-26", "CreateSnapshot", "ecs", "openAPI")
         {
         }
 
