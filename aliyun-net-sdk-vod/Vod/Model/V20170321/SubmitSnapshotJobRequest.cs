@@ -26,26 +26,36 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetVideoConfigRequest : RpcAcsRequest<GetVideoConfigResponse>
+    public class SubmitSnapshotJobRequest : RpcAcsRequest<SubmitSnapshotJobResponse>
     {
-        public GetVideoConfigRequest()
-            : base("vod", "2017-03-21", "GetVideoConfig", "vod", "openAPI")
+        public SubmitSnapshotJobRequest()
+            : base("vod", "2017-03-21", "SubmitSnapshotJob", "vod", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private long? specifiedOffsetTime;
+
 		private string resourceOwnerAccount;
+
+		private string width;
+
+		private long? count;
 
 		private string action;
 
 		private string videoId;
 
+		private long? interval;
+
 		private long? ownerId;
 
-		private string authInfo;
+		private string spriteSnapshotConfig;
 
 		private string accessKeyId;
+
+		private string height;
 
 		public long? ResourceOwnerId
 		{
@@ -60,6 +70,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public long? SpecifiedOffsetTime
+		{
+			get
+			{
+				return specifiedOffsetTime;
+			}
+			set	
+			{
+				specifiedOffsetTime = value;
+				DictionaryUtil.Add(QueryParameters, "SpecifiedOffsetTime", value.ToString());
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -70,6 +93,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string Width
+		{
+			get
+			{
+				return width;
+			}
+			set	
+			{
+				width = value;
+				DictionaryUtil.Add(QueryParameters, "Width", value);
+			}
+		}
+
+		public long? Count
+		{
+			get
+			{
+				return count;
+			}
+			set	
+			{
+				count = value;
+				DictionaryUtil.Add(QueryParameters, "Count", value.ToString());
 			}
 		}
 
@@ -99,6 +148,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public long? Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -112,16 +174,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AuthInfo
+		public string SpriteSnapshotConfig
 		{
 			get
 			{
-				return authInfo;
+				return spriteSnapshotConfig;
 			}
 			set	
 			{
-				authInfo = value;
-				DictionaryUtil.Add(QueryParameters, "AuthInfo", value);
+				spriteSnapshotConfig = value;
+				DictionaryUtil.Add(QueryParameters, "SpriteSnapshotConfig", value);
 			}
 		}
 
@@ -138,9 +200,22 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override GetVideoConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Height
+		{
+			get
+			{
+				return height;
+			}
+			set	
+			{
+				height = value;
+				DictionaryUtil.Add(QueryParameters, "Height", value);
+			}
+		}
+
+        public override SubmitSnapshotJobResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetVideoConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitSnapshotJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -59,6 +59,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				playInfo.Complexity = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Complexity");
 				playInfo.StreamType = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].StreamType");
 				playInfo.Rand = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Rand");
+				playInfo.JobId = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].JobId");
 
 				getPlayInfoResponse_playInfoList.Add(playInfo);
 			}

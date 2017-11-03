@@ -26,28 +26,47 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetVideoConfigRequest : RpcAcsRequest<GetVideoConfigResponse>
+    public class AddEditingProjectRequest : RpcAcsRequest<AddEditingProjectResponse>
     {
-        public GetVideoConfigRequest()
-            : base("vod", "2017-03-21", "GetVideoConfig", "vod", "openAPI")
+        public AddEditingProjectRequest()
+            : base("vod", "2017-03-21", "AddEditingProject", "vod", "openAPI")
         {
         }
 
-		private long? resourceOwnerId;
+		private string coverURL;
+
+		private string resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
+		private string ownerAccount;
+
 		private string action;
 
-		private string videoId;
+		private string description;
 
-		private long? ownerId;
+		private string timeline;
 
-		private string authInfo;
+		private string ownerId;
+
+		private string title;
 
 		private string accessKeyId;
 
-		public long? ResourceOwnerId
+		public string CoverURL
+		{
+			get
+			{
+				return coverURL;
+			}
+			set	
+			{
+				coverURL = value;
+				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
+			}
+		}
+
+		public string ResourceOwnerId
 		{
 			get
 			{
@@ -56,7 +75,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
 			}
 		}
 
@@ -73,6 +92,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -86,20 +118,33 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
+		public string Description
 		{
 			get
 			{
-				return videoId;
+				return description;
 			}
 			set	
 			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public long? OwnerId
+		public string Timeline
+		{
+			get
+			{
+				return timeline;
+			}
+			set	
+			{
+				timeline = value;
+				DictionaryUtil.Add(QueryParameters, "Timeline", value);
+			}
+		}
+
+		public string OwnerId
 		{
 			get
 			{
@@ -108,20 +153,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
-		public string AuthInfo
+		public string Title
 		{
 			get
 			{
-				return authInfo;
+				return title;
 			}
 			set	
 			{
-				authInfo = value;
-				DictionaryUtil.Add(QueryParameters, "AuthInfo", value);
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
 			}
 		}
 
@@ -138,9 +183,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override GetVideoConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddEditingProjectResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetVideoConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddEditingProjectResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -97,6 +97,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string rand;
 
+			private string jobId;
+
 			public long? Width
 			{
 				get
@@ -262,6 +264,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					rand = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
 				}
 			}
 		}

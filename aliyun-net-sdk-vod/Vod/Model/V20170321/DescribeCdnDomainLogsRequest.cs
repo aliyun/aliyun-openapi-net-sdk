@@ -26,30 +26,38 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetVideoPlayAuthRequest : RpcAcsRequest<GetVideoPlayAuthResponse>
+    public class DescribeCdnDomainLogsRequest : RpcAcsRequest<DescribeCdnDomainLogsResponse>
     {
-        public GetVideoPlayAuthRequest()
-            : base("vod", "2017-03-21", "GetVideoPlayAuth", "vod", "openAPI")
+        public DescribeCdnDomainLogsRequest()
+            : base("vod", "2017-03-21", "DescribeCdnDomainLogs", "vod", "openAPI")
         {
         }
 
-		private long? resourceOwnerId;
+		private string resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private string reAuthInfo;
+		private long? pageNo;
 
-		private long? authInfoTimeout;
+		private string ownerAccount;
+
+		private string domainName;
+
+		private long? pageSize;
 
 		private string action;
 
-		private string videoId;
+		private string endTime;
 
-		private long? ownerId;
+		private string startTime;
+
+		private string ownerId;
 
 		private string accessKeyId;
 
-		public long? ResourceOwnerId
+		private string logDay;
+
+		public string ResourceOwnerId
 		{
 			get
 			{
@@ -58,7 +66,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
 			}
 		}
 
@@ -75,29 +83,55 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ReAuthInfo
+		public long? PageNo
 		{
 			get
 			{
-				return reAuthInfo;
+				return pageNo;
 			}
 			set	
 			{
-				reAuthInfo = value;
-				DictionaryUtil.Add(QueryParameters, "ReAuthInfo", value);
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 
-		public long? AuthInfoTimeout
+		public string OwnerAccount
 		{
 			get
 			{
-				return authInfoTimeout;
+				return ownerAccount;
 			}
 			set	
 			{
-				authInfoTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "AuthInfoTimeout", value.ToString());
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -114,20 +148,33 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
+		public string EndTime
 		{
 			get
 			{
-				return videoId;
+				return endTime;
 			}
 			set	
 			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public long? OwnerId
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string OwnerId
 		{
 			get
 			{
@@ -136,7 +183,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
@@ -153,9 +200,22 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override GetVideoPlayAuthResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string LogDay
+		{
+			get
+			{
+				return logDay;
+			}
+			set	
+			{
+				logDay = value;
+				DictionaryUtil.Add(QueryParameters, "LogDay", value);
+			}
+		}
+
+        public override DescribeCdnDomainLogsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetVideoPlayAuthResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCdnDomainLogsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

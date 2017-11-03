@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetVideoConfigRequest : RpcAcsRequest<GetVideoConfigResponse>
+    public class DeleteStreamRequest : RpcAcsRequest<DeleteStreamResponse>
     {
-        public GetVideoConfigRequest()
-            : base("vod", "2017-03-21", "GetVideoConfig", "vod", "openAPI")
+        public DeleteStreamRequest()
+            : base("vod", "2017-03-21", "DeleteStream", "vod", "openAPI")
         {
         }
 
@@ -37,13 +37,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
+		private string jobIds;
+
 		private string action;
 
 		private string videoId;
 
 		private long? ownerId;
-
-		private string authInfo;
 
 		private string accessKeyId;
 
@@ -70,6 +70,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string JobIds
+		{
+			get
+			{
+				return jobIds;
+			}
+			set	
+			{
+				jobIds = value;
+				DictionaryUtil.Add(QueryParameters, "JobIds", value);
 			}
 		}
 
@@ -112,19 +125,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AuthInfo
-		{
-			get
-			{
-				return authInfo;
-			}
-			set	
-			{
-				authInfo = value;
-				DictionaryUtil.Add(QueryParameters, "AuthInfo", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -138,9 +138,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override GetVideoConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteStreamResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetVideoConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteStreamResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

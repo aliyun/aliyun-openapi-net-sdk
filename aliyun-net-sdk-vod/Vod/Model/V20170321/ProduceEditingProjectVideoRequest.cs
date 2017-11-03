@@ -26,12 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetVideoConfigRequest : RpcAcsRequest<GetVideoConfigResponse>
+    public class ProduceEditingProjectVideoRequest : RpcAcsRequest<ProduceEditingProjectVideoResponse>
     {
-        public GetVideoConfigRequest()
-            : base("vod", "2017-03-21", "GetVideoConfig", "vod", "openAPI")
+        public ProduceEditingProjectVideoRequest()
+            : base("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod", "openAPI")
         {
         }
+
+		private string coverURL;
 
 		private long? resourceOwnerId;
 
@@ -39,13 +41,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string action;
 
-		private string videoId;
+		private string timeline;
+
+		private string description;
 
 		private long? ownerId;
 
-		private string authInfo;
+		private string title;
+
+		private string projectId;
 
 		private string accessKeyId;
+
+		public string CoverURL
+		{
+			get
+			{
+				return coverURL;
+			}
+			set	
+			{
+				coverURL = value;
+				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -86,16 +105,29 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
+		public string Timeline
 		{
 			get
 			{
-				return videoId;
+				return timeline;
 			}
 			set	
 			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+				timeline = value;
+				DictionaryUtil.Add(QueryParameters, "Timeline", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -112,16 +144,29 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AuthInfo
+		public string Title
 		{
 			get
 			{
-				return authInfo;
+				return title;
 			}
 			set	
 			{
-				authInfo = value;
-				DictionaryUtil.Add(QueryParameters, "AuthInfo", value);
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		public string ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
 			}
 		}
 
@@ -138,9 +183,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override GetVideoConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ProduceEditingProjectVideoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetVideoConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ProduceEditingProjectVideoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
