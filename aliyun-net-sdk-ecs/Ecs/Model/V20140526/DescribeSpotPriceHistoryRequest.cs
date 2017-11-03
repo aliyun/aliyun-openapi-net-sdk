@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string endTime;
 
+		private string oSType;
+
 		private long? ownerId;
 
 		private string zoneId;
@@ -199,6 +201,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string OSType
+		{
+			get
+			{
+				return oSType;
+			}
+			set	
+			{
+				oSType = value;
+				DictionaryUtil.Add(QueryParameters, "OSType", value);
 			}
 		}
 

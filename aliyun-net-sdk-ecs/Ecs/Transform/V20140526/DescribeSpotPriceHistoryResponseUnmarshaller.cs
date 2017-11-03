@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeSpotPriceHistoryResponse.HttpResponse = context.HttpResponse;
 			describeSpotPriceHistoryResponse.RequestId = context.StringValue("DescribeSpotPriceHistory.RequestId");
 			describeSpotPriceHistoryResponse.NextOffset = context.IntegerValue("DescribeSpotPriceHistory.NextOffset");
+			describeSpotPriceHistoryResponse.Currency = context.StringValue("DescribeSpotPriceHistory.Currency");
 
 			List<DescribeSpotPriceHistoryResponse.DescribeSpotPriceHistory_SpotPriceType> describeSpotPriceHistoryResponse_spotPrices = new List<DescribeSpotPriceHistoryResponse.DescribeSpotPriceHistory_SpotPriceType>();
 			for (int i = 0; i < context.Length("DescribeSpotPriceHistory.SpotPrices.Length"); i++) {

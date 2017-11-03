@@ -75,6 +75,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string spotStrategy;
 
+		private string periodUnit;
+
 		private string instanceName;
 
 		private bool? autoRenew;
@@ -411,6 +413,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				spotStrategy = value;
 				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
+			}
+		}
+
+		public string PeriodUnit
+		{
+			get
+			{
+				return periodUnit;
+			}
+			set	
+			{
+				periodUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
 			}
 		}
 

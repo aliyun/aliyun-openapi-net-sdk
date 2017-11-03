@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? nextOffset;
 
+		private string currency;
+
 		private List<DescribeSpotPriceHistory_SpotPriceType> spotPrices;
 
 		public string RequestId
@@ -51,6 +53,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				nextOffset = value;
+			}
+		}
+
+		public string Currency
+		{
+			get
+			{
+				return currency;
+			}
+			set	
+			{
+				currency = value;
 			}
 		}
 
