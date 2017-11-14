@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class UpdateLiveSnapshotDetectPornConfigRequest : RpcAcsRequest<UpdateLiveSnapshotDetectPornConfigResponse>
     {
         public UpdateLiveSnapshotDetectPornConfigRequest()
-            : base("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig", "live", "openAPI")
+            : base("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig")
         {
         }
 
@@ -52,6 +52,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string ossObject;
 
 		private string accessKeyId;
+
+		private List<string> scenes;
 
 		public string OssBucket
 		{
@@ -180,6 +182,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public List<string> Scenes
+		{
+			get
+			{
+				return scenes;
+			}
+
+			set
+			{
+				scenes = value;
+				for (int i = 0; i < scenes.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Scene." + (i + 1) , scenes[i]);
+				}
 			}
 		}
 

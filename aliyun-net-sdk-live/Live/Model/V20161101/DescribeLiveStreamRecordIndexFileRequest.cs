@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeLiveStreamRecordIndexFileRequest : RpcAcsRequest<DescribeLiveStreamRecordIndexFileResponse>
     {
         public DescribeLiveStreamRecordIndexFileRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile", "live", "openAPI")
+            : base("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile")
         {
         }
 

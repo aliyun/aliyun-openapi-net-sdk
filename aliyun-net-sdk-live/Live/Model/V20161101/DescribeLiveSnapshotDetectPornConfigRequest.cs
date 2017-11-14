@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeLiveSnapshotDetectPornConfigRequest : RpcAcsRequest<DescribeLiveSnapshotDetectPornConfigResponse>
     {
         public DescribeLiveSnapshotDetectPornConfigRequest()
-            : base("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig", "live", "openAPI")
+            : base("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig")
         {
         }
 
