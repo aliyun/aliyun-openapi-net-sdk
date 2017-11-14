@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5ead0d6b-4fc8-459e-989b-a07225cfe0ef}</ProjectGuid>
+    <ProjectGuid>{7f613684-133d-42fa-bfde-41e28a3939bf}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -49,6 +49,7 @@
 	<Compile Include="Ess\Model\V20140828\DescribeAccountAttributesResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\CreateScalingGroupResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\CreateScalingConfigurationRequest.cs" />
+	<Compile Include="Ess\Model\V20140828\DescribeScalingActivitiesResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\DescribeScheduledTasksResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\CreateScalingConfigurationResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\RemoveInstancesResponse.cs" />
@@ -85,6 +86,7 @@
 	<Compile Include="Ess\Model\V20140828\EnableScalingGroupResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\CreateScalingRuleRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\DescribeScalingRulesResponse.cs" />
+	<Compile Include="Ess\Model\V20140828\DescribeScalingActivitiesRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\VerifyUserResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\ModifyScalingRuleResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\DescribeAlertConfigResponse.cs" />
@@ -121,6 +123,7 @@
 	<Compile Include="Ess\Transform\V20140828\DescribeScheduledTasksResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DisableScalingGroupResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DetachInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Ess\Transform\V20140828\DescribeScalingActivitiesResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DescribeCapacityHistoryResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\EnableScalingGroupResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\ExecuteScalingRuleResponseUnmarshaller.cs" />

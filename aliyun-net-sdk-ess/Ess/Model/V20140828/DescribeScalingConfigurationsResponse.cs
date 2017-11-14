@@ -129,7 +129,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private int? loadBalancerWeight;
 
+			private string userData;
+
+			private string keyPairName;
+
+			private string ramRoleName;
+
+			private string deploymentSetId;
+
+			private string securityEnhancementStrategy;
+
 			private List<DescribeScalingConfigurations_DataDisk> dataDisks;
+
+			private List<DescribeScalingConfigurations_Tag> tags;
 
 			public string ScalingConfigurationId
 			{
@@ -323,6 +335,66 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public string UserData
+			{
+				get
+				{
+					return userData;
+				}
+				set	
+				{
+					userData = value;
+				}
+			}
+
+			public string KeyPairName
+			{
+				get
+				{
+					return keyPairName;
+				}
+				set	
+				{
+					keyPairName = value;
+				}
+			}
+
+			public string RamRoleName
+			{
+				get
+				{
+					return ramRoleName;
+				}
+				set	
+				{
+					ramRoleName = value;
+				}
+			}
+
+			public string DeploymentSetId
+			{
+				get
+				{
+					return deploymentSetId;
+				}
+				set	
+				{
+					deploymentSetId = value;
+				}
+			}
+
+			public string SecurityEnhancementStrategy
+			{
+				get
+				{
+					return securityEnhancementStrategy;
+				}
+				set	
+				{
+					securityEnhancementStrategy = value;
+				}
+			}
+
 			public List<DescribeScalingConfigurations_DataDisk> DataDisks
 			{
 				get
@@ -332,6 +404,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					dataDisks = value;
+				}
+			}
+
+			public List<DescribeScalingConfigurations_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -391,6 +475,38 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 					set	
 					{
 						device = value;
+					}
+				}
+			}
+
+			public class DescribeScalingConfigurations_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

@@ -54,6 +54,11 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingConfiguration.LifecycleState = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].LifecycleState");
 				scalingConfiguration.CreationTime = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].CreationTime");
 				scalingConfiguration.LoadBalancerWeight = context.IntegerValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].LoadBalancerWeight");
+				scalingConfiguration.UserData = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].UserData");
+				scalingConfiguration.KeyPairName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].KeyPairName");
+				scalingConfiguration.RamRoleName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].RamRoleName");
+				scalingConfiguration.DeploymentSetId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DeploymentSetId");
+				scalingConfiguration.SecurityEnhancementStrategy = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SecurityEnhancementStrategy");
 
 				List<DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_DataDisk> scalingConfiguration_dataDisks = new List<DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_DataDisk>();
 				for (int j = 0; j < context.Length("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks.Length"); j++) {
@@ -66,6 +71,16 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 					scalingConfiguration_dataDisks.Add(dataDisk);
 				}
 				scalingConfiguration.DataDisks = scalingConfiguration_dataDisks;
+
+				List<DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_Tag> scalingConfiguration_tags = new List<DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_Tag>();
+				for (int j = 0; j < context.Length("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].Tags.Length"); j++) {
+					DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_Tag tag = new DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_Tag();
+					tag.Key = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].Tags["+ j +"].Value");
+
+					scalingConfiguration_tags.Add(tag);
+				}
+				scalingConfiguration.Tags = scalingConfiguration_tags;
 
 				describeScalingConfigurationsResponse_scalingConfigurations.Add(scalingConfiguration);
 			}
