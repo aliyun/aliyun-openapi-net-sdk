@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string loadBalancerId;
 
+		private bool? autoPay;
+
 		private string regionId;
 
 		private string resourceOwnerAccount;
@@ -104,6 +106,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				loadBalancerId = value;
 				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 

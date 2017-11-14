@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string networkType;
 
+		private long? orderId;
+
 		public string RequestId
 		{
 			get
@@ -133,6 +135,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				networkType = value;
+			}
+		}
+
+		public long? OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 	}

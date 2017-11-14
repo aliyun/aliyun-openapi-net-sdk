@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 
 			modifyLoadBalancerPayTypeResponse.HttpResponse = context.HttpResponse;
 			modifyLoadBalancerPayTypeResponse.RequestId = context.StringValue("ModifyLoadBalancerPayType.RequestId");
+			modifyLoadBalancerPayTypeResponse.OrderId = context.LongValue("ModifyLoadBalancerPayType.OrderId");
         
 			return modifyLoadBalancerPayTypeResponse;
         }

@@ -26,6 +26,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string requestId;
 
+		private long? orderId;
+
 		public string RequestId
 		{
 			get
@@ -35,6 +37,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public long? OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 	}

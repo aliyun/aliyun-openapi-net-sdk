@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-    public class SetLogsDownloadAttributeRequest : RpcAcsRequest<SetLogsDownloadAttributeResponse>
+    public class DescribeLoadBalancersRelatedEcsRequest : RpcAcsRequest<DescribeLoadBalancersRelatedEcsResponse>
     {
-        public SetLogsDownloadAttributeRequest()
-            : base("Slb", "2014-05-15", "SetLogsDownloadAttribute", "slb", "openAPI")
+        public DescribeLoadBalancersRelatedEcsRequest()
+            : base("Slb", "2014-05-15", "DescribeLoadBalancersRelatedEcs", "slb", "openAPI")
         {
         }
 
@@ -37,17 +37,13 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private long? resourceOwnerId;
 
-		private string logType;
+		private string loadBalancerId;
 
 		private string resourceOwnerAccount;
 
 		private string regionId;
 
-		private string roleName;
-
 		private string ownerAccount;
-
-		private string oSSBucketName;
 
 		private string action;
 
@@ -83,16 +79,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string LogType
+		public string LoadBalancerId
 		{
 			get
 			{
-				return logType;
+				return loadBalancerId;
 			}
 			set	
 			{
-				logType = value;
-				DictionaryUtil.Add(QueryParameters, "LogType", value);
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
 			}
 		}
 
@@ -122,19 +118,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string RoleName
-		{
-			get
-			{
-				return roleName;
-			}
-			set	
-			{
-				roleName = value;
-				DictionaryUtil.Add(QueryParameters, "RoleName", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -145,19 +128,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string OSSBucketName
-		{
-			get
-			{
-				return oSSBucketName;
-			}
-			set	
-			{
-				oSSBucketName = value;
-				DictionaryUtil.Add(QueryParameters, "OSSBucketName", value);
 			}
 		}
 
@@ -213,9 +183,9 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-        public override SetLogsDownloadAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeLoadBalancersRelatedEcsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SetLogsDownloadAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLoadBalancersRelatedEcsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

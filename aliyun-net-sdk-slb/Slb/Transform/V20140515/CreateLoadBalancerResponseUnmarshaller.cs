@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			createLoadBalancerResponse.VpcId = context.StringValue("CreateLoadBalancer.VpcId");
 			createLoadBalancerResponse.VSwitchId = context.StringValue("CreateLoadBalancer.VSwitchId");
 			createLoadBalancerResponse.NetworkType = context.StringValue("CreateLoadBalancer.NetworkType");
+			createLoadBalancerResponse.OrderId = context.LongValue("CreateLoadBalancer.OrderId");
         
 			return createLoadBalancerResponse;
         }

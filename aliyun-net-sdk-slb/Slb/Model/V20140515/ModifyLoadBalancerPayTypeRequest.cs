@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private long? resourceOwnerId;
 
+		private bool? autoPay;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -82,6 +84,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 

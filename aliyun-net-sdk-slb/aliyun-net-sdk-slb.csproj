@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{72948d04-fdf8-4237-b8ce-62aa235c06ac}</ProjectGuid>
+    <ProjectGuid>{fcac0af3-f5ad-450f-bb19-7726a039319e}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -102,6 +102,7 @@
 	<Compile Include="Slb\Model\V20140515\DeleteVServerGroupResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateLoadBalancerUDPListenerResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLogsDownloadAttributeRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancersRelatedEcsResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateRulesRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\ModifyLoadBalancerInternetSpecRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateLoadBalancerTCPListenerRequest.cs" />
@@ -123,6 +124,7 @@
 	<Compile Include="Slb\Model\V20140515\DescribeServerCertificatesResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateMasterSlaveServerGroupResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateMasterSlaveVServerGroupRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancersRelatedEcsRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveVServerGroupsRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteLoadBalancerListenerRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeVServerGroupAttributeRequest.cs" />
@@ -205,6 +207,7 @@
 	<Compile Include="Slb\Transform\V20140515\DescribeRuleAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateLoadBalancerHTTPListenerResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeLoadBalancerAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Slb\Transform\V20140515\DescribeLoadBalancersRelatedEcsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\SetLoadBalancerHTTPSListenerAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DeleteMasterSlaveServerGroupResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\AddListenerWhiteListItemResponseUnmarshaller.cs" />
