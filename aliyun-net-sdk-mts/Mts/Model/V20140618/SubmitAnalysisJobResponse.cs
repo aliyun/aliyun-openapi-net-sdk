@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class SubmitAnalysisJobResponse : AcsResponse
 	{
 
-		private AnalysisJob_ analysisJob;
+		private string requestId;
 
-		public AnalysisJob_ AnalysisJob
+		private SubmitAnalysisJob_AnalysisJob analysisJob;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public SubmitAnalysisJob_AnalysisJob AnalysisJob
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class AnalysisJob_{
+		public class SubmitAnalysisJob_AnalysisJob
+		{
 
 			private string id;
 
@@ -58,13 +73,13 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string priority;
 
-			private List<Template> templateList;
+			private List<SubmitAnalysisJob_Template> templateList;
 
-			private InputFile_ inputFile;
+			private SubmitAnalysisJob_InputFile inputFile;
 
-			private AnalysisConfig_ analysisConfig;
+			private SubmitAnalysisJob_AnalysisConfig analysisConfig;
 
-			private MNSMessageResult_ mNSMessageResult;
+			private SubmitAnalysisJob_MNSMessageResult mNSMessageResult;
 
 			public string Id
 			{
@@ -174,7 +189,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public List<Template> TemplateList
+			public List<SubmitAnalysisJob_Template> TemplateList
 			{
 				get
 				{
@@ -186,7 +201,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public InputFile_ InputFile
+			public SubmitAnalysisJob_InputFile InputFile
 			{
 				get
 				{
@@ -198,7 +213,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public AnalysisConfig_ AnalysisConfig
+			public SubmitAnalysisJob_AnalysisConfig AnalysisConfig
 			{
 				get
 				{
@@ -210,7 +225,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public MNSMessageResult_ MNSMessageResult
+			public SubmitAnalysisJob_MNSMessageResult MNSMessageResult
 			{
 				get
 				{
@@ -222,7 +237,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Template{
+			public class SubmitAnalysisJob_Template
+			{
 
 				private string id;
 
@@ -230,15 +246,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string state;
 
-				private Container_ container;
+				private SubmitAnalysisJob_Container container;
 
-				private Video_ video;
+				private SubmitAnalysisJob_Video video;
 
-				private Audio_ audio;
+				private SubmitAnalysisJob_Audio audio;
 
-				private TransConfig_ transConfig;
+				private SubmitAnalysisJob_TransConfig transConfig;
 
-				private MuxConfig_ muxConfig;
+				private SubmitAnalysisJob_MuxConfig muxConfig;
 
 				public string Id
 				{
@@ -276,7 +292,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Container_ Container
+				public SubmitAnalysisJob_Container Container
 				{
 					get
 					{
@@ -288,7 +304,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Video_ Video
+				public SubmitAnalysisJob_Video Video
 				{
 					get
 					{
@@ -300,7 +316,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Audio_ Audio
+				public SubmitAnalysisJob_Audio Audio
 				{
 					get
 					{
@@ -312,7 +328,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public TransConfig_ TransConfig
+				public SubmitAnalysisJob_TransConfig TransConfig
 				{
 					get
 					{
@@ -324,7 +340,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public MuxConfig_ MuxConfig
+				public SubmitAnalysisJob_MuxConfig MuxConfig
 				{
 					get
 					{
@@ -336,7 +352,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Container_{
+				public class SubmitAnalysisJob_Container
+				{
 
 					private string format;
 
@@ -353,7 +370,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Video_{
+				public class SubmitAnalysisJob_Video
+				{
 
 					private string codec;
 
@@ -385,7 +403,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private string qscale;
 
-					private BitrateBnd_ bitrateBnd;
+					private SubmitAnalysisJob_BitrateBnd bitrateBnd;
 
 					public string Codec
 					{
@@ -567,7 +585,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public BitrateBnd_ BitrateBnd
+					public SubmitAnalysisJob_BitrateBnd BitrateBnd
 					{
 						get
 						{
@@ -579,7 +597,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class BitrateBnd_{
+					public class SubmitAnalysisJob_BitrateBnd
+					{
 
 						private string max;
 
@@ -611,7 +630,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Audio_{
+				public class SubmitAnalysisJob_Audio
+				{
 
 					private string codec;
 
@@ -698,7 +718,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class TransConfig_{
+				public class SubmitAnalysisJob_TransConfig
+				{
 
 					private string transMode;
 
@@ -715,13 +736,14 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class MuxConfig_{
+				public class SubmitAnalysisJob_MuxConfig
+				{
 
-					private Segment_ segment;
+					private SubmitAnalysisJob_Segment segment;
 
-					private Gif_ gif;
+					private SubmitAnalysisJob_Gif gif;
 
-					public Segment_ Segment
+					public SubmitAnalysisJob_Segment Segment
 					{
 						get
 						{
@@ -733,7 +755,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public Gif_ Gif
+					public SubmitAnalysisJob_Gif Gif
 					{
 						get
 						{
@@ -745,7 +767,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class Segment_{
+					public class SubmitAnalysisJob_Segment
+					{
 
 						private string duration;
 
@@ -762,7 +785,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class Gif_{
+					public class SubmitAnalysisJob_Gif
+					{
 
 						private string loop;
 
@@ -795,13 +819,14 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class InputFile_{
+			public class SubmitAnalysisJob_InputFile
+			{
 
 				private string bucket;
 
 				private string location;
 
-				private string object_;
+				private string _object;
 
 				public string Bucket
 				{
@@ -827,26 +852,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Object
+				public string _Object
 				{
 					get
 					{
-						return object_;
+						return _object;
 					}
 					set	
 					{
-						object_ = value;
+						_object = value;
 					}
 				}
 			}
 
-			public class AnalysisConfig_{
+			public class SubmitAnalysisJob_AnalysisConfig
+			{
 
-				private QualityControl_ qualityControl;
+				private SubmitAnalysisJob_QualityControl qualityControl;
 
-				private PropertiesControl_ propertiesControl;
+				private SubmitAnalysisJob_PropertiesControl propertiesControl;
 
-				public QualityControl_ QualityControl
+				public SubmitAnalysisJob_QualityControl QualityControl
 				{
 					get
 					{
@@ -858,7 +884,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public PropertiesControl_ PropertiesControl
+				public SubmitAnalysisJob_PropertiesControl PropertiesControl
 				{
 					get
 					{
@@ -870,7 +896,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class QualityControl_{
+				public class SubmitAnalysisJob_QualityControl
+				{
 
 					private string rateQuality;
 
@@ -901,11 +928,12 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class PropertiesControl_{
+				public class SubmitAnalysisJob_PropertiesControl
+				{
 
 					private string deinterlace;
 
-					private Crop_ crop;
+					private SubmitAnalysisJob_Crop crop;
 
 					public string Deinterlace
 					{
@@ -919,7 +947,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public Crop_ Crop
+					public SubmitAnalysisJob_Crop Crop
 					{
 						get
 						{
@@ -931,7 +959,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class Crop_{
+					public class SubmitAnalysisJob_Crop
+					{
 
 						private string mode;
 
@@ -1006,7 +1035,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class MNSMessageResult_{
+			public class SubmitAnalysisJob_MNSMessageResult
+			{
 
 				private string messageId;
 

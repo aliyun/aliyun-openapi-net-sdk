@@ -33,62 +33,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
-		private long? resourceOwnerId;
-
 		private string input;
-
-		private string analysisConfig;
 
 		private string userData;
 
-		private string pipelineId;
+		private long? resourceOwnerId;
 
-		private string priority;
+		private string analysisConfig;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string action;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private long? ownerId;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+		private string priority;
+
+		private string accessKeyId;
+
+		private string pipelineId;
 
 		public string Input
 		{
@@ -100,19 +65,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				input = value;
 				DictionaryUtil.Add(QueryParameters, "Input", value);
-			}
-		}
-
-		public string AnalysisConfig
-		{
-			get
-			{
-				return analysisConfig;
-			}
-			set	
-			{
-				analysisConfig = value;
-				DictionaryUtil.Add(QueryParameters, "AnalysisConfig", value);
 			}
 		}
 
@@ -129,16 +81,81 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string PipelineId
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return pipelineId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				pipelineId = value;
-				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string AnalysisConfig
+		{
+			get
+			{
+				return analysisConfig;
+			}
+			set	
+			{
+				analysisConfig = value;
+				DictionaryUtil.Add(QueryParameters, "AnalysisConfig", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -155,16 +172,29 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string OwnerAccount
+		public string AccessKeyId
 		{
 			get
 			{
-				return ownerAccount;
+				return accessKeyId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string PipelineId
+		{
+			get
+			{
+				return pipelineId;
+			}
+			set	
+			{
+				pipelineId = value;
+				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
 			}
 		}
 

@@ -35,23 +35,24 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			searchPipelineResponse.PageNumber = context.LongValue("SearchPipeline.PageNumber");
 			searchPipelineResponse.PageSize = context.LongValue("SearchPipeline.PageSize");
 
-			List<SearchPipelineResponse.Pipeline> pipelineList = new List<SearchPipelineResponse.Pipeline>();
+			List<SearchPipelineResponse.SearchPipeline_Pipeline> searchPipelineResponse_pipelineList = new List<SearchPipelineResponse.SearchPipeline_Pipeline>();
 			for (int i = 0; i < context.Length("SearchPipeline.PipelineList.Length"); i++) {
-				SearchPipelineResponse.Pipeline pipeline = new SearchPipelineResponse.Pipeline();
+				SearchPipelineResponse.SearchPipeline_Pipeline pipeline = new SearchPipelineResponse.SearchPipeline_Pipeline();
 				pipeline.Id = context.StringValue("SearchPipeline.PipelineList["+ i +"].Id");
 				pipeline.Name = context.StringValue("SearchPipeline.PipelineList["+ i +"].Name");
 				pipeline.State = context.StringValue("SearchPipeline.PipelineList["+ i +"].State");
 				pipeline.Speed = context.StringValue("SearchPipeline.PipelineList["+ i +"].Speed");
+				pipeline.SpeedLevel = context.LongValue("SearchPipeline.PipelineList["+ i +"].SpeedLevel");
 				pipeline.Role = context.StringValue("SearchPipeline.PipelineList["+ i +"].Role");
 
-				SearchPipelineResponse.Pipeline.NotifyConfig_ notifyConfig = new SearchPipelineResponse.Pipeline.NotifyConfig_();
+				SearchPipelineResponse.SearchPipeline_Pipeline.SearchPipeline_NotifyConfig notifyConfig = new SearchPipelineResponse.SearchPipeline_Pipeline.SearchPipeline_NotifyConfig();
 				notifyConfig.Topic = context.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.Topic");
 				notifyConfig.QueueName = context.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.QueueName");
 				pipeline.NotifyConfig = notifyConfig;
 
-				pipelineList.Add(pipeline);
+				searchPipelineResponse_pipelineList.Add(pipeline);
 			}
-			searchPipelineResponse.PipelineList = pipelineList;
+			searchPipelineResponse.PipelineList = searchPipelineResponse_pipelineList;
         
 			return searchPipelineResponse;
         }

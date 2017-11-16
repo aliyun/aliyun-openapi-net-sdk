@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class QueryPipelineListResponse : AcsResponse
 	{
 
-		private List<Pipeline> pipelineList;
+		private string requestId;
+
+		private List<QueryPipelineList_Pipeline> pipelineList;
 
 		private List<string> nonExistPids;
 
-		public List<Pipeline> PipelineList
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<QueryPipelineList_Pipeline> PipelineList
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class Pipeline{
+		public class QueryPipelineList_Pipeline
+		{
 
 			private string id;
 
@@ -62,9 +77,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string speed;
 
+			private long? speedLevel;
+
 			private string role;
 
-			private NotifyConfig_ notifyConfig;
+			private QueryPipelineList_NotifyConfig notifyConfig;
 
 			public string Id
 			{
@@ -114,6 +131,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public long? SpeedLevel
+			{
+				get
+				{
+					return speedLevel;
+				}
+				set	
+				{
+					speedLevel = value;
+				}
+			}
+
 			public string Role
 			{
 				get
@@ -126,7 +155,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public NotifyConfig_ NotifyConfig
+			public QueryPipelineList_NotifyConfig NotifyConfig
 			{
 				get
 				{
@@ -138,7 +167,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class NotifyConfig_{
+			public class QueryPipelineList_NotifyConfig
+			{
 
 				private string topic;
 

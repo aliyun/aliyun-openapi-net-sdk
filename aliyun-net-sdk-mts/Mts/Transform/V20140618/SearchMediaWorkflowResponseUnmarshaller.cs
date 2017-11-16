@@ -35,18 +35,18 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			searchMediaWorkflowResponse.PageNumber = context.LongValue("SearchMediaWorkflow.PageNumber");
 			searchMediaWorkflowResponse.PageSize = context.LongValue("SearchMediaWorkflow.PageSize");
 
-			List<SearchMediaWorkflowResponse.MediaWorkflow> mediaWorkflowList = new List<SearchMediaWorkflowResponse.MediaWorkflow>();
+			List<SearchMediaWorkflowResponse.SearchMediaWorkflow_MediaWorkflow> searchMediaWorkflowResponse_mediaWorkflowList = new List<SearchMediaWorkflowResponse.SearchMediaWorkflow_MediaWorkflow>();
 			for (int i = 0; i < context.Length("SearchMediaWorkflow.MediaWorkflowList.Length"); i++) {
-				SearchMediaWorkflowResponse.MediaWorkflow mediaWorkflow = new SearchMediaWorkflowResponse.MediaWorkflow();
+				SearchMediaWorkflowResponse.SearchMediaWorkflow_MediaWorkflow mediaWorkflow = new SearchMediaWorkflowResponse.SearchMediaWorkflow_MediaWorkflow();
 				mediaWorkflow.MediaWorkflowId = context.StringValue("SearchMediaWorkflow.MediaWorkflowList["+ i +"].MediaWorkflowId");
 				mediaWorkflow.Name = context.StringValue("SearchMediaWorkflow.MediaWorkflowList["+ i +"].Name");
 				mediaWorkflow.Topology = context.StringValue("SearchMediaWorkflow.MediaWorkflowList["+ i +"].Topology");
 				mediaWorkflow.State = context.StringValue("SearchMediaWorkflow.MediaWorkflowList["+ i +"].State");
 				mediaWorkflow.CreationTime = context.StringValue("SearchMediaWorkflow.MediaWorkflowList["+ i +"].CreationTime");
 
-				mediaWorkflowList.Add(mediaWorkflow);
+				searchMediaWorkflowResponse_mediaWorkflowList.Add(mediaWorkflow);
 			}
-			searchMediaWorkflowResponse.MediaWorkflowList = mediaWorkflowList;
+			searchMediaWorkflowResponse.MediaWorkflowList = searchMediaWorkflowResponse_mediaWorkflowList;
         
 			return searchMediaWorkflowResponse;
         }

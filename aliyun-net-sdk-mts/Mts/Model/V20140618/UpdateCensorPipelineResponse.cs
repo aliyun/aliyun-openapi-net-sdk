@@ -21,58 +21,59 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
-	public class QueryMediaWorkflowListByNameResponse : AcsResponse
+	public class UpdateCensorPipelineResponse : AcsResponse
 	{
 
-		private List<MediaWorkflow> mediaWorkflowList;
+		private string requestId;
 
-		private List<string> nonExistMediaWorkflowNames;
+		private UpdateCensorPipeline_Pipeline pipeline;
 
-		public List<MediaWorkflow> MediaWorkflowList
+		public string RequestId
 		{
 			get
 			{
-				return mediaWorkflowList;
+				return requestId;
 			}
 			set	
 			{
-				mediaWorkflowList = value;
+				requestId = value;
 			}
 		}
 
-		public List<string> NonExistMediaWorkflowNames
+		public UpdateCensorPipeline_Pipeline Pipeline
 		{
 			get
 			{
-				return nonExistMediaWorkflowNames;
+				return pipeline;
 			}
 			set	
 			{
-				nonExistMediaWorkflowNames = value;
+				pipeline = value;
 			}
 		}
 
-		public class MediaWorkflow{
+		public class UpdateCensorPipeline_Pipeline
+		{
 
-			private string mediaWorkflowId;
+			private string id;
 
 			private string name;
 
-			private string topology;
-
 			private string state;
 
-			private string creationTime;
+			private int? priority;
 
-			public string MediaWorkflowId
+			private UpdateCensorPipeline_NotifyConfig notifyConfig;
+
+			public string Id
 			{
 				get
 				{
-					return mediaWorkflowId;
+					return id;
 				}
 				set	
 				{
-					mediaWorkflowId = value;
+					id = value;
 				}
 			}
 
@@ -88,18 +89,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string Topology
-			{
-				get
-				{
-					return topology;
-				}
-				set	
-				{
-					topology = value;
-				}
-			}
-
 			public string State
 			{
 				get
@@ -112,15 +101,59 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string CreationTime
+			public int? Priority
 			{
 				get
 				{
-					return creationTime;
+					return priority;
 				}
 				set	
 				{
-					creationTime = value;
+					priority = value;
+				}
+			}
+
+			public UpdateCensorPipeline_NotifyConfig NotifyConfig
+			{
+				get
+				{
+					return notifyConfig;
+				}
+				set	
+				{
+					notifyConfig = value;
+				}
+			}
+
+			public class UpdateCensorPipeline_NotifyConfig
+			{
+
+				private string topic;
+
+				private string queue;
+
+				public string Topic
+				{
+					get
+					{
+						return topic;
+					}
+					set	
+					{
+						topic = value;
+					}
+				}
+
+				public string Queue
+				{
+					get
+					{
+						return queue;
+					}
+					set	
+					{
+						queue = value;
+					}
 				}
 			}
 		}

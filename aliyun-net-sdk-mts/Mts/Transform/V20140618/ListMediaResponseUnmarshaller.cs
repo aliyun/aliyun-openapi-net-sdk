@@ -33,9 +33,9 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			listMediaResponse.RequestId = context.StringValue("ListMedia.RequestId");
 			listMediaResponse.NextPageToken = context.StringValue("ListMedia.NextPageToken");
 
-			List<ListMediaResponse.Media> mediaList = new List<ListMediaResponse.Media>();
+			List<ListMediaResponse.ListMedia_Media> listMediaResponse_mediaList = new List<ListMediaResponse.ListMedia_Media>();
 			for (int i = 0; i < context.Length("ListMedia.MediaList.Length"); i++) {
-				ListMediaResponse.Media media = new ListMediaResponse.Media();
+				ListMediaResponse.ListMedia_Media media = new ListMediaResponse.ListMedia_Media();
 				media.MediaId = context.StringValue("ListMedia.MediaList["+ i +"].MediaId");
 				media.Title = context.StringValue("ListMedia.MediaList["+ i +"].Title");
 				media.Description = context.StringValue("ListMedia.MediaList["+ i +"].Description");
@@ -51,26 +51,26 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				media.PublishState = context.StringValue("ListMedia.MediaList["+ i +"].PublishState");
 				media.CreationTime = context.StringValue("ListMedia.MediaList["+ i +"].CreationTime");
 
-				List<string> tags = new List<string>();
+				List<string> media_tags = new List<string>();
 				for (int j = 0; j < context.Length("ListMedia.MediaList["+ i +"].Tags.Length"); j++) {
-					tags.Add(context.StringValue("ListMedia.MediaList["+ i +"].Tags["+ j +"]"));
+					media_tags.Add(context.StringValue("ListMedia.MediaList["+ i +"].Tags["+ j +"]"));
 				}
-				media.Tags = tags;
+				media.Tags = media_tags;
 
-				List<string> runIdList = new List<string>();
+				List<string> media_runIdList = new List<string>();
 				for (int j = 0; j < context.Length("ListMedia.MediaList["+ i +"].RunIdList.Length"); j++) {
-					runIdList.Add(context.StringValue("ListMedia.MediaList["+ i +"].RunIdList["+ j +"]"));
+					media_runIdList.Add(context.StringValue("ListMedia.MediaList["+ i +"].RunIdList["+ j +"]"));
 				}
-				media.RunIdList = runIdList;
+				media.RunIdList = media_runIdList;
 
-				ListMediaResponse.Media.File_ file = new ListMediaResponse.Media.File_();
+				ListMediaResponse.ListMedia_Media.ListMedia_File file = new ListMediaResponse.ListMedia_Media.ListMedia_File();
 				file.URL = context.StringValue("ListMedia.MediaList["+ i +"].File.URL");
 				file.State = context.StringValue("ListMedia.MediaList["+ i +"].File.State");
 				media.File = file;
 
-				mediaList.Add(media);
+				listMediaResponse_mediaList.Add(media);
 			}
-			listMediaResponse.MediaList = mediaList;
+			listMediaResponse.MediaList = listMediaResponse_mediaList;
         
 			return listMediaResponse;
         }

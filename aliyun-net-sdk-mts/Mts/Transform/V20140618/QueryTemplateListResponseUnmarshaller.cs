@@ -32,24 +32,24 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			queryTemplateListResponse.HttpResponse = context.HttpResponse;
 			queryTemplateListResponse.RequestId = context.StringValue("QueryTemplateList.RequestId");
 
-			List<string> nonExistTids = new List<string>();
+			List<string> queryTemplateListResponse_nonExistTids = new List<string>();
 			for (int i = 0; i < context.Length("QueryTemplateList.NonExistTids.Length"); i++) {
-				nonExistTids.Add(context.StringValue("QueryTemplateList.NonExistTids["+ i +"]"));
+				queryTemplateListResponse_nonExistTids.Add(context.StringValue("QueryTemplateList.NonExistTids["+ i +"]"));
 			}
-			queryTemplateListResponse.NonExistTids = nonExistTids;
+			queryTemplateListResponse.NonExistTids = queryTemplateListResponse_nonExistTids;
 
-			List<QueryTemplateListResponse.Template> templateList = new List<QueryTemplateListResponse.Template>();
+			List<QueryTemplateListResponse.QueryTemplateList_Template> queryTemplateListResponse_templateList = new List<QueryTemplateListResponse.QueryTemplateList_Template>();
 			for (int i = 0; i < context.Length("QueryTemplateList.TemplateList.Length"); i++) {
-				QueryTemplateListResponse.Template template = new QueryTemplateListResponse.Template();
+				QueryTemplateListResponse.QueryTemplateList_Template template = new QueryTemplateListResponse.QueryTemplateList_Template();
 				template.Id = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Id");
 				template.Name = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Name");
 				template.State = context.StringValue("QueryTemplateList.TemplateList["+ i +"].State");
 
-				QueryTemplateListResponse.Template.Container_ container = new QueryTemplateListResponse.Template.Container_();
+				QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_Container container = new QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_Container();
 				container.Format = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Container.Format");
 				template.Container = container;
 
-				QueryTemplateListResponse.Template.Video_ video = new QueryTemplateListResponse.Template.Video_();
+				QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_Video video = new QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_Video();
 				video.Codec = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Codec");
 				video.Profile = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Profile");
 				video.Bitrate = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Bitrate");
@@ -65,43 +65,45 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				video.PixFmt = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.PixFmt");
 				video.Degrain = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Degrain");
 				video.Qscale = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Qscale");
-				video.Remove = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Remove");
+				video._Remove = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Remove");
 				video.Crop = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Crop");
 				video.Pad = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Pad");
 				video.MaxFps = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.MaxFps");
 
-				QueryTemplateListResponse.Template.Video_.BitrateBnd_ bitrateBnd = new QueryTemplateListResponse.Template.Video_.BitrateBnd_();
+				QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_Video.QueryTemplateList_BitrateBnd bitrateBnd = new QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_Video.QueryTemplateList_BitrateBnd();
 				bitrateBnd.Max = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.BitrateBnd.Max");
 				bitrateBnd.Min = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.BitrateBnd.Min");
 				video.BitrateBnd = bitrateBnd;
 				template.Video = video;
 
-				QueryTemplateListResponse.Template.Audio_ audio = new QueryTemplateListResponse.Template.Audio_();
+				QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_Audio audio = new QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_Audio();
 				audio.Codec = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Audio.Codec");
 				audio.Profile = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Audio.Profile");
 				audio.Samplerate = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Audio.Samplerate");
 				audio.Bitrate = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Audio.Bitrate");
 				audio.Channels = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Audio.Channels");
 				audio.Qscale = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Audio.Qscale");
-				audio.Remove = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Audio.Remove");
+				audio._Remove = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Audio.Remove");
 				template.Audio = audio;
 
-				QueryTemplateListResponse.Template.TransConfig_ transConfig = new QueryTemplateListResponse.Template.TransConfig_();
+				QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_TransConfig transConfig = new QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_TransConfig();
 				transConfig.TransMode = context.StringValue("QueryTemplateList.TemplateList["+ i +"].TransConfig.TransMode");
 				transConfig.IsCheckReso = context.StringValue("QueryTemplateList.TemplateList["+ i +"].TransConfig.IsCheckReso");
 				transConfig.IsCheckResoFail = context.StringValue("QueryTemplateList.TemplateList["+ i +"].TransConfig.IsCheckResoFail");
 				transConfig.IsCheckVideoBitrate = context.StringValue("QueryTemplateList.TemplateList["+ i +"].TransConfig.IsCheckVideoBitrate");
 				transConfig.IsCheckAudioBitrate = context.StringValue("QueryTemplateList.TemplateList["+ i +"].TransConfig.IsCheckAudioBitrate");
 				transConfig.AdjDarMethod = context.StringValue("QueryTemplateList.TemplateList["+ i +"].TransConfig.AdjDarMethod");
+				transConfig.IsCheckVideoBitrateFail = context.StringValue("QueryTemplateList.TemplateList["+ i +"].TransConfig.IsCheckVideoBitrateFail");
+				transConfig.IsCheckAudioBitrateFail = context.StringValue("QueryTemplateList.TemplateList["+ i +"].TransConfig.IsCheckAudioBitrateFail");
 				template.TransConfig = transConfig;
 
-				QueryTemplateListResponse.Template.MuxConfig_ muxConfig = new QueryTemplateListResponse.Template.MuxConfig_();
+				QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_MuxConfig muxConfig = new QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_MuxConfig();
 
-				QueryTemplateListResponse.Template.MuxConfig_.Segment_ segment = new QueryTemplateListResponse.Template.MuxConfig_.Segment_();
+				QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_MuxConfig.QueryTemplateList_Segment segment = new QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_MuxConfig.QueryTemplateList_Segment();
 				segment.Duration = context.StringValue("QueryTemplateList.TemplateList["+ i +"].MuxConfig.Segment.Duration");
 				muxConfig.Segment = segment;
 
-				QueryTemplateListResponse.Template.MuxConfig_.Gif_ gif = new QueryTemplateListResponse.Template.MuxConfig_.Gif_();
+				QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_MuxConfig.QueryTemplateList_Gif gif = new QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_MuxConfig.QueryTemplateList_Gif();
 				gif.Loop = context.StringValue("QueryTemplateList.TemplateList["+ i +"].MuxConfig.Gif.Loop");
 				gif.FinalDelay = context.StringValue("QueryTemplateList.TemplateList["+ i +"].MuxConfig.Gif.FinalDelay");
 				gif.IsCustomPalette = context.StringValue("QueryTemplateList.TemplateList["+ i +"].MuxConfig.Gif.IsCustomPalette");
@@ -109,9 +111,9 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				muxConfig.Gif = gif;
 				template.MuxConfig = muxConfig;
 
-				templateList.Add(template);
+				queryTemplateListResponse_templateList.Add(template);
 			}
-			queryTemplateListResponse.TemplateList = templateList;
+			queryTemplateListResponse.TemplateList = queryTemplateListResponse_templateList;
         
 			return queryTemplateListResponse;
         }

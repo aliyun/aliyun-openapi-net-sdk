@@ -32,14 +32,14 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			submitJobsResponse.HttpResponse = context.HttpResponse;
 			submitJobsResponse.RequestId = context.StringValue("SubmitJobs.RequestId");
 
-			List<SubmitJobsResponse.JobResult> jobResultList = new List<SubmitJobsResponse.JobResult>();
+			List<SubmitJobsResponse.SubmitJobs_JobResult> submitJobsResponse_jobResultList = new List<SubmitJobsResponse.SubmitJobs_JobResult>();
 			for (int i = 0; i < context.Length("SubmitJobs.JobResultList.Length"); i++) {
-				SubmitJobsResponse.JobResult jobResult = new SubmitJobsResponse.JobResult();
+				SubmitJobsResponse.SubmitJobs_JobResult jobResult = new SubmitJobsResponse.SubmitJobs_JobResult();
 				jobResult.Success = context.BooleanValue("SubmitJobs.JobResultList["+ i +"].Success");
 				jobResult.Code = context.StringValue("SubmitJobs.JobResultList["+ i +"].Code");
 				jobResult.Message = context.StringValue("SubmitJobs.JobResultList["+ i +"].Message");
 
-				SubmitJobsResponse.JobResult.Job_ job = new SubmitJobsResponse.JobResult.Job_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job job = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job();
 				job.JobId = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.JobId");
 				job.State = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.State");
 				job.Code = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Code");
@@ -47,14 +47,15 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				job.Percent = context.LongValue("SubmitJobs.JobResultList["+ i +"].Job.Percent");
 				job.PipelineId = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.PipelineId");
 				job.CreationTime = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.CreationTime");
+				job.FinishTime = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.FinishTime");
 
-				SubmitJobsResponse.JobResult.Job_.Input_ input = new SubmitJobsResponse.JobResult.Job_.Input_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Input input = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Input();
 				input.Bucket = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Input.Bucket");
 				input.Location = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Input.Location");
-				input.Object = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Input.Object");
+				input._Object = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Input.Object");
 				job.Input = input;
 
-				SubmitJobsResponse.JobResult.Job_.Output_ output = new SubmitJobsResponse.JobResult.Job_.Output_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output output = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output();
 				output.TemplateId = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TemplateId");
 				output.UserData = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.UserData");
 				output.Rotate = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Rotate");
@@ -62,14 +63,36 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				output.AudioStreamMap = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.AudioStreamMap");
 				output.DeWatermark = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.DeWatermark");
 				output.Priority = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Priority");
+				output.WaterMarkConfigUrl = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.WaterMarkConfigUrl");
+				output.MergeConfigUrl = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.MergeConfigUrl");
 
-				SubmitJobsResponse.JobResult.Job_.Output_.OutputFile_ outputFile = new SubmitJobsResponse.JobResult.Job_.Output_.OutputFile_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_DigiWaterMark digiWaterMark = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_DigiWaterMark();
+				digiWaterMark.Type = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.DigiWaterMark.Type");
+				digiWaterMark.Alpha = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.DigiWaterMark.Alpha");
+
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_DigiWaterMark.SubmitJobs_InputFile1 inputFile1 = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_DigiWaterMark.SubmitJobs_InputFile1();
+				inputFile1.Bucket = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.DigiWaterMark.InputFile.Bucket");
+				inputFile1.Location = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.DigiWaterMark.InputFile.Location");
+				inputFile1._Object = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.DigiWaterMark.InputFile.Object");
+				digiWaterMark.InputFile1 = inputFile1;
+				output.DigiWaterMark = digiWaterMark;
+
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_OutputFile outputFile = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_OutputFile();
 				outputFile.Bucket = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OutputFile.Bucket");
 				outputFile.Location = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OutputFile.Location");
-				outputFile.Object = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OutputFile.Object");
+				outputFile._Object = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OutputFile.Object");
+				outputFile.RoleArn = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OutputFile.RoleArn");
 				output.OutputFile = outputFile;
 
-				SubmitJobsResponse.JobResult.Job_.Output_.Properties_ properties = new SubmitJobsResponse.JobResult.Job_.Output_.Properties_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_M3U8NonStandardSupport m3U8NonStandardSupport = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_M3U8NonStandardSupport();
+
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_M3U8NonStandardSupport.SubmitJobs_TS tS = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_M3U8NonStandardSupport.SubmitJobs_TS();
+				tS.Md5Support = context.BooleanValue("SubmitJobs.JobResultList["+ i +"].Job.Output.M3U8NonStandardSupport.TS.Md5Support");
+				tS.SizeSupport = context.BooleanValue("SubmitJobs.JobResultList["+ i +"].Job.Output.M3U8NonStandardSupport.TS.SizeSupport");
+				m3U8NonStandardSupport.TS = tS;
+				output.M3U8NonStandardSupport = m3U8NonStandardSupport;
+
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties properties = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties();
 				properties.Width = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Width");
 				properties.Height = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Height");
 				properties.Bitrate = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Bitrate");
@@ -78,11 +101,11 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				properties.FileSize = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.FileSize");
 				properties.FileFormat = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.FileFormat");
 
-				SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_ streams = new SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams streams = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams();
 
-				List<SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.VideoStream> videoStreamList = new List<SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.VideoStream>();
+				List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_VideoStream> streams_videoStreamList = new List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_VideoStream>();
 				for (int j = 0; j < context.Length("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.VideoStreamList.Length"); j++) {
-					SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.VideoStream videoStream = new SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.VideoStream();
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_VideoStream videoStream = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_VideoStream();
 					videoStream.Index = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.VideoStreamList["+ j +"].Index");
 					videoStream.CodecName = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.VideoStreamList["+ j +"].CodecName");
 					videoStream.CodecLongName = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.VideoStreamList["+ j +"].CodecLongName");
@@ -106,19 +129,19 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					videoStream.NumFrames = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.VideoStreamList["+ j +"].NumFrames");
 					videoStream.Lang = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.VideoStreamList["+ j +"].Lang");
 
-					SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.VideoStream.NetworkCost_ networkCost = new SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.VideoStream.NetworkCost_();
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_VideoStream.SubmitJobs_NetworkCost networkCost = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_VideoStream.SubmitJobs_NetworkCost();
 					networkCost.PreloadTime = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime");
 					networkCost.CostBandwidth = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.VideoStreamList["+ j +"].NetworkCost.CostBandwidth");
 					networkCost.AvgBitrate = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.VideoStreamList["+ j +"].NetworkCost.AvgBitrate");
 					videoStream.NetworkCost = networkCost;
 
-					videoStreamList.Add(videoStream);
+					streams_videoStreamList.Add(videoStream);
 				}
-				streams.VideoStreamList = videoStreamList;
+				streams.VideoStreamList = streams_videoStreamList;
 
-				List<SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.AudioStream> audioStreamList = new List<SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.AudioStream>();
+				List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_AudioStream> streams_audioStreamList = new List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_AudioStream>();
 				for (int j = 0; j < context.Length("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.AudioStreamList.Length"); j++) {
-					SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.AudioStream audioStream = new SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.AudioStream();
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_AudioStream audioStream = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_AudioStream();
 					audioStream.Index = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.AudioStreamList["+ j +"].Index");
 					audioStream.CodecName = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.AudioStreamList["+ j +"].CodecName");
 					audioStream.CodecTimeBase = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.AudioStreamList["+ j +"].CodecTimeBase");
@@ -136,22 +159,22 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					audioStream.NumFrames = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.AudioStreamList["+ j +"].NumFrames");
 					audioStream.Lang = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.AudioStreamList["+ j +"].Lang");
 
-					audioStreamList.Add(audioStream);
+					streams_audioStreamList.Add(audioStream);
 				}
-				streams.AudioStreamList = audioStreamList;
+				streams.AudioStreamList = streams_audioStreamList;
 
-				List<SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.SubtitleStream> subtitleStreamList = new List<SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.SubtitleStream>();
+				List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_SubtitleStream> streams_subtitleStreamList = new List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_SubtitleStream>();
 				for (int j = 0; j < context.Length("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.SubtitleStreamList.Length"); j++) {
-					SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.SubtitleStream subtitleStream = new SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Streams_.SubtitleStream();
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_SubtitleStream subtitleStream = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Streams.SubmitJobs_SubtitleStream();
 					subtitleStream.Index = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.SubtitleStreamList["+ j +"].Index");
 					subtitleStream.Lang = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Streams.SubtitleStreamList["+ j +"].Lang");
 
-					subtitleStreamList.Add(subtitleStream);
+					streams_subtitleStreamList.Add(subtitleStream);
 				}
-				streams.SubtitleStreamList = subtitleStreamList;
+				streams.SubtitleStreamList = streams_subtitleStreamList;
 				properties.Streams = streams;
 
-				SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Format_ format = new SubmitJobsResponse.JobResult.Job_.Output_.Properties_.Format_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Format format = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Properties.SubmitJobs_Format();
 				format.NumStreams = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Format.NumStreams");
 				format.NumPrograms = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Format.NumPrograms");
 				format.FormatName = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Properties.Format.FormatName");
@@ -163,60 +186,64 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				properties.Format = format;
 				output.Properties = properties;
 
-				SubmitJobsResponse.JobResult.Job_.Output_.Clip_ clip = new SubmitJobsResponse.JobResult.Job_.Output_.Clip_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Clip clip = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Clip();
 
-				SubmitJobsResponse.JobResult.Job_.Output_.Clip_.TimeSpan_ timeSpan = new SubmitJobsResponse.JobResult.Job_.Output_.Clip_.TimeSpan_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Clip.SubmitJobs_TimeSpan timeSpan = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Clip.SubmitJobs_TimeSpan();
 				timeSpan.Seek = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Clip.TimeSpan.Seek");
 				timeSpan.Duration = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Clip.TimeSpan.Duration");
 				clip.TimeSpan = timeSpan;
 				output.Clip = clip;
 
-				SubmitJobsResponse.JobResult.Job_.Output_.SuperReso_ superReso = new SubmitJobsResponse.JobResult.Job_.Output_.SuperReso_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SuperReso superReso = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SuperReso();
 				superReso.IsHalfSample = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.SuperReso.IsHalfSample");
 				output.SuperReso = superReso;
 
-				SubmitJobsResponse.JobResult.Job_.Output_.SubtitleConfig_ subtitleConfig = new SubmitJobsResponse.JobResult.Job_.Output_.SubtitleConfig_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SubtitleConfig subtitleConfig = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SubtitleConfig();
 
-				List<SubmitJobsResponse.JobResult.Job_.Output_.SubtitleConfig_.Subtitle> subtitleList = new List<SubmitJobsResponse.JobResult.Job_.Output_.SubtitleConfig_.Subtitle>();
+				List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SubtitleConfig.SubmitJobs_Subtitle> subtitleConfig_subtitleList = new List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SubtitleConfig.SubmitJobs_Subtitle>();
 				for (int j = 0; j < context.Length("SubmitJobs.JobResultList["+ i +"].Job.Output.SubtitleConfig.SubtitleList.Length"); j++) {
-					SubmitJobsResponse.JobResult.Job_.Output_.SubtitleConfig_.Subtitle subtitle = new SubmitJobsResponse.JobResult.Job_.Output_.SubtitleConfig_.Subtitle();
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SubtitleConfig.SubmitJobs_Subtitle subtitle = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SubtitleConfig.SubmitJobs_Subtitle();
 					subtitle.Map = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.SubtitleConfig.SubtitleList["+ j +"].Map");
 
-					subtitleList.Add(subtitle);
+					subtitleConfig_subtitleList.Add(subtitle);
 				}
-				subtitleConfig.SubtitleList = subtitleList;
+				subtitleConfig.SubtitleList = subtitleConfig_subtitleList;
 
-				List<SubmitJobsResponse.JobResult.Job_.Output_.SubtitleConfig_.ExtSubtitle> extSubtitleList = new List<SubmitJobsResponse.JobResult.Job_.Output_.SubtitleConfig_.ExtSubtitle>();
+				List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SubtitleConfig.SubmitJobs_ExtSubtitle> subtitleConfig_extSubtitleList = new List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SubtitleConfig.SubmitJobs_ExtSubtitle>();
 				for (int j = 0; j < context.Length("SubmitJobs.JobResultList["+ i +"].Job.Output.SubtitleConfig.ExtSubtitleList.Length"); j++) {
-					SubmitJobsResponse.JobResult.Job_.Output_.SubtitleConfig_.ExtSubtitle extSubtitle = new SubmitJobsResponse.JobResult.Job_.Output_.SubtitleConfig_.ExtSubtitle();
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SubtitleConfig.SubmitJobs_ExtSubtitle extSubtitle = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SubtitleConfig.SubmitJobs_ExtSubtitle();
+					extSubtitle.FontName = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.SubtitleConfig.ExtSubtitleList["+ j +"].FontName");
+					extSubtitle.CharEnc = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.SubtitleConfig.ExtSubtitleList["+ j +"].CharEnc");
 
-					SubmitJobsResponse.JobResult.Job_.Output_.SubtitleConfig_.ExtSubtitle.Input_ extSubtitleInput_ = new SubmitJobsResponse.JobResult.Job_.Output_.SubtitleConfig_.ExtSubtitle.Input_();
-					extSubtitleInput_.Bucket = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Bucket");
-					extSubtitleInput_.Location = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Location");
-					extSubtitleInput_.Object = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Object");
-					extSubtitle.Input = extSubtitleInput_;
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SubtitleConfig.SubmitJobs_ExtSubtitle.SubmitJobs_Input2 input2 = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_SubtitleConfig.SubmitJobs_ExtSubtitle.SubmitJobs_Input2();
+					input2.Bucket = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Bucket");
+					input2.Location = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Location");
+					input2._Object = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Object");
+					extSubtitle.Input2 = input2;
 
-					extSubtitleList.Add(extSubtitle);
+					subtitleConfig_extSubtitleList.Add(extSubtitle);
 				}
-				subtitleConfig.ExtSubtitleList = extSubtitleList;
+				subtitleConfig.ExtSubtitleList = subtitleConfig_extSubtitleList;
 				output.SubtitleConfig = subtitleConfig;
 
-				SubmitJobsResponse.JobResult.Job_.Output_.TransConfig_ transConfig = new SubmitJobsResponse.JobResult.Job_.Output_.TransConfig_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_TransConfig transConfig = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_TransConfig();
 				transConfig.TransMode = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TransConfig.TransMode");
 				transConfig.IsCheckReso = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TransConfig.IsCheckReso");
 				transConfig.IsCheckResoFail = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TransConfig.IsCheckResoFail");
 				transConfig.IsCheckVideoBitrate = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TransConfig.IsCheckVideoBitrate");
 				transConfig.IsCheckAudioBitrate = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TransConfig.IsCheckAudioBitrate");
 				transConfig.AdjDarMethod = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TransConfig.AdjDarMethod");
+				transConfig.IsCheckVideoBitrateFail = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TransConfig.IsCheckVideoBitrateFail");
+				transConfig.IsCheckAudioBitrateFail = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TransConfig.IsCheckAudioBitrateFail");
 				output.TransConfig = transConfig;
 
-				SubmitJobsResponse.JobResult.Job_.Output_.MuxConfig_ muxConfig = new SubmitJobsResponse.JobResult.Job_.Output_.MuxConfig_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_MuxConfig muxConfig = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_MuxConfig();
 
-				SubmitJobsResponse.JobResult.Job_.Output_.MuxConfig_.Segment_ segment = new SubmitJobsResponse.JobResult.Job_.Output_.MuxConfig_.Segment_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_MuxConfig.SubmitJobs_Segment segment = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_MuxConfig.SubmitJobs_Segment();
 				segment.Duration = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.MuxConfig.Segment.Duration");
 				muxConfig.Segment = segment;
 
-				SubmitJobsResponse.JobResult.Job_.Output_.MuxConfig_.Gif_ gif = new SubmitJobsResponse.JobResult.Job_.Output_.MuxConfig_.Gif_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_MuxConfig.SubmitJobs_Gif gif = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_MuxConfig.SubmitJobs_Gif();
 				gif.Loop = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.MuxConfig.Gif.Loop");
 				gif.FinalDelay = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.MuxConfig.Gif.FinalDelay");
 				gif.IsCustomPalette = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.MuxConfig.Gif.IsCustomPalette");
@@ -224,16 +251,21 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				muxConfig.Gif = gif;
 				output.MuxConfig = muxConfig;
 
-				SubmitJobsResponse.JobResult.Job_.Output_.Audio_ audio = new SubmitJobsResponse.JobResult.Job_.Output_.Audio_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Audio audio = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Audio();
 				audio.Codec = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Audio.Codec");
 				audio.Profile = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Audio.Profile");
 				audio.Samplerate = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Audio.Samplerate");
 				audio.Bitrate = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Audio.Bitrate");
 				audio.Channels = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Audio.Channels");
 				audio.Qscale = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Audio.Qscale");
+
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Audio.SubmitJobs_Volume volume = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Audio.SubmitJobs_Volume();
+				volume.Level = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Audio.Volume.Level");
+				volume.Method = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Audio.Volume.Method");
+				audio.Volume = volume;
 				output.Audio = audio;
 
-				SubmitJobsResponse.JobResult.Job_.Output_.Video_ video = new SubmitJobsResponse.JobResult.Job_.Output_.Video_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Video video = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Video();
 				video.Codec = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Video.Codec");
 				video.Profile = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Video.Profile");
 				video.Bitrate = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Video.Bitrate");
@@ -253,19 +285,28 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				video.Pad = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Video.Pad");
 				video.MaxFps = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Video.MaxFps");
 
-				SubmitJobsResponse.JobResult.Job_.Output_.Video_.BitrateBnd_ bitrateBnd = new SubmitJobsResponse.JobResult.Job_.Output_.Video_.BitrateBnd_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Video.SubmitJobs_BitrateBnd bitrateBnd = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Video.SubmitJobs_BitrateBnd();
 				bitrateBnd.Max = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Video.BitrateBnd.Max");
 				bitrateBnd.Min = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Video.BitrateBnd.Min");
 				video.BitrateBnd = bitrateBnd;
 				output.Video = video;
 
-				SubmitJobsResponse.JobResult.Job_.Output_.Container_ container = new SubmitJobsResponse.JobResult.Job_.Output_.Container_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Container container = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Container();
 				container.Format = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Container.Format");
 				output.Container = container;
 
-				List<SubmitJobsResponse.JobResult.Job_.Output_.WaterMark> waterMarkList = new List<SubmitJobsResponse.JobResult.Job_.Output_.WaterMark>();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Encryption encryption = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Encryption();
+				encryption.Type = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Encryption.Type");
+				encryption.Id = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Encryption.Id");
+				encryption.Key = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Encryption.Key");
+				encryption.KeyUri = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Encryption.KeyUri");
+				encryption.KeyType = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Encryption.KeyType");
+				encryption.SkipCnt = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Encryption.SkipCnt");
+				output.Encryption = encryption;
+
+				List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_WaterMark> output_waterMarkList = new List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_WaterMark>();
 				for (int j = 0; j < context.Length("SubmitJobs.JobResultList["+ i +"].Job.Output.WaterMarkList.Length"); j++) {
-					SubmitJobsResponse.JobResult.Job_.Output_.WaterMark waterMark = new SubmitJobsResponse.JobResult.Job_.Output_.WaterMark();
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_WaterMark waterMark = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_WaterMark();
 					waterMark.WaterMarkTemplateId = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.WaterMarkList["+ j +"].WaterMarkTemplateId");
 					waterMark.Width = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.WaterMarkList["+ j +"].Width");
 					waterMark.Height = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.WaterMarkList["+ j +"].Height");
@@ -274,38 +315,66 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					waterMark.ReferPos = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.WaterMarkList["+ j +"].ReferPos");
 					waterMark.Type = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.WaterMarkList["+ j +"].Type");
 
-					SubmitJobsResponse.JobResult.Job_.Output_.WaterMark.InputFile_ inputFile = new SubmitJobsResponse.JobResult.Job_.Output_.WaterMark.InputFile_();
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_WaterMark.SubmitJobs_InputFile inputFile = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_WaterMark.SubmitJobs_InputFile();
 					inputFile.Bucket = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.WaterMarkList["+ j +"].InputFile.Bucket");
 					inputFile.Location = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.WaterMarkList["+ j +"].InputFile.Location");
-					inputFile.Object = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.WaterMarkList["+ j +"].InputFile.Object");
+					inputFile._Object = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.WaterMarkList["+ j +"].InputFile.Object");
 					waterMark.InputFile = inputFile;
 
-					waterMarkList.Add(waterMark);
+					output_waterMarkList.Add(waterMark);
 				}
-				output.WaterMarkList = waterMarkList;
+				output.WaterMarkList = output_waterMarkList;
 
-				List<SubmitJobsResponse.JobResult.Job_.Output_.Merge> mergeList = new List<SubmitJobsResponse.JobResult.Job_.Output_.Merge>();
+				List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Merge> output_mergeList = new List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Merge>();
 				for (int j = 0; j < context.Length("SubmitJobs.JobResultList["+ i +"].Job.Output.MergeList.Length"); j++) {
-					SubmitJobsResponse.JobResult.Job_.Output_.Merge merge = new SubmitJobsResponse.JobResult.Job_.Output_.Merge();
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Merge merge = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Merge();
 					merge.MergeURL = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.MergeList["+ j +"].MergeURL");
 					merge.Start = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.MergeList["+ j +"].Start");
 					merge.Duration = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.MergeList["+ j +"].Duration");
+					merge.RoleArn = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.MergeList["+ j +"].RoleArn");
 
-					mergeList.Add(merge);
+					output_mergeList.Add(merge);
 				}
-				output.MergeList = mergeList;
+				output.MergeList = output_mergeList;
+
+				List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Opening> output_openingList = new List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Opening>();
+				for (int j = 0; j < context.Length("SubmitJobs.JobResultList["+ i +"].Job.Output.OpeningList.Length"); j++) {
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Opening opening = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Opening();
+					opening.OpenUrl = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OpeningList["+ j +"].OpenUrl");
+					opening.Start = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OpeningList["+ j +"].Start");
+					opening.Width = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OpeningList["+ j +"].Width");
+					opening.Height = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OpeningList["+ j +"].Height");
+
+					output_openingList.Add(opening);
+				}
+				output.OpeningList = output_openingList;
+
+				List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_TailSlate> output_tailSlateList = new List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_TailSlate>();
+				for (int j = 0; j < context.Length("SubmitJobs.JobResultList["+ i +"].Job.Output.TailSlateList.Length"); j++) {
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_TailSlate tailSlate = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_TailSlate();
+					tailSlate.TailUrl = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TailSlateList["+ j +"].TailUrl");
+					tailSlate.Start = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TailSlateList["+ j +"].Start");
+					tailSlate.BlendDuration = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TailSlateList["+ j +"].BlendDuration");
+					tailSlate.Width = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TailSlateList["+ j +"].Width");
+					tailSlate.Height = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TailSlateList["+ j +"].Height");
+					tailSlate.IsMergeAudio = context.BooleanValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TailSlateList["+ j +"].IsMergeAudio");
+					tailSlate.BgColor = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.TailSlateList["+ j +"].BgColor");
+
+					output_tailSlateList.Add(tailSlate);
+				}
+				output.TailSlateList = output_tailSlateList;
 				job.Output = output;
 
-				SubmitJobsResponse.JobResult.Job_.MNSMessageResult_ mNSMessageResult = new SubmitJobsResponse.JobResult.Job_.MNSMessageResult_();
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_MNSMessageResult mNSMessageResult = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_MNSMessageResult();
 				mNSMessageResult.MessageId = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.MNSMessageResult.MessageId");
 				mNSMessageResult.ErrorMessage = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.MNSMessageResult.ErrorMessage");
 				mNSMessageResult.ErrorCode = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.MNSMessageResult.ErrorCode");
 				job.MNSMessageResult = mNSMessageResult;
 				jobResult.Job = job;
 
-				jobResultList.Add(jobResult);
+				submitJobsResponse_jobResultList.Add(jobResult);
 			}
-			submitJobsResponse.JobResultList = jobResultList;
+			submitJobsResponse.JobResultList = submitJobsResponse_jobResultList;
         
 			return submitJobsResponse;
         }

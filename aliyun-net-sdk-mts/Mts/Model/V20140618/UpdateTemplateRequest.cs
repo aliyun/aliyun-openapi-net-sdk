@@ -33,51 +33,42 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string container;
 
 		private long? resourceOwnerId;
 
-		private string templateId;
-
-		private string name;
-
-		private string container;
-
-		private string video;
-
-		private string audio;
-
-		private string muxConfig;
-
-		private string transConfig;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string muxConfig;
 
-		public string ResourceOwnerAccount
+		private string video;
+
+		private long? ownerId;
+
+		private string templateId;
+
+		private string accessKeyId;
+
+		private string name;
+
+		private string action;
+
+		private string transConfig;
+
+		private string audio;
+
+		public string Container
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return container;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				container = value;
+				DictionaryUtil.Add(QueryParameters, "Container", value);
 			}
 		}
 
@@ -94,68 +85,29 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string TemplateId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return templateId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				templateId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string Name
+		public string OwnerAccount
 		{
 			get
 			{
-				return name;
+				return ownerAccount;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Container
-		{
-			get
-			{
-				return container;
-			}
-			set	
-			{
-				container = value;
-				DictionaryUtil.Add(QueryParameters, "Container", value);
-			}
-		}
-
-		public string Video
-		{
-			get
-			{
-				return video;
-			}
-			set	
-			{
-				video = value;
-				DictionaryUtil.Add(QueryParameters, "Video", value);
-			}
-		}
-
-		public string Audio
-		{
-			get
-			{
-				return audio;
-			}
-			set	
-			{
-				audio = value;
-				DictionaryUtil.Add(QueryParameters, "Audio", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -172,6 +124,84 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string Video
+		{
+			get
+			{
+				return video;
+			}
+			set	
+			{
+				video = value;
+				DictionaryUtil.Add(QueryParameters, "Video", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string TransConfig
 		{
 			get
@@ -185,16 +215,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string OwnerAccount
+		public string Audio
 		{
 			get
 			{
-				return ownerAccount;
+				return audio;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				audio = value;
+				DictionaryUtil.Add(QueryParameters, "Audio", value);
 			}
 		}
 

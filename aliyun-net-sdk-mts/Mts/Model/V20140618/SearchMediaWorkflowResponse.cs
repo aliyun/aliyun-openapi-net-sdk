@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class SearchMediaWorkflowResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private long? totalCount;
 
 		private long? pageNumber;
 
 		private long? pageSize;
 
-		private List<MediaWorkflow> mediaWorkflowList;
+		private List<SearchMediaWorkflow_MediaWorkflow> mediaWorkflowList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public List<MediaWorkflow> MediaWorkflowList
+		public List<SearchMediaWorkflow_MediaWorkflow> MediaWorkflowList
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class MediaWorkflow{
+		public class SearchMediaWorkflow_MediaWorkflow
+		{
 
 			private string mediaWorkflowId;
 

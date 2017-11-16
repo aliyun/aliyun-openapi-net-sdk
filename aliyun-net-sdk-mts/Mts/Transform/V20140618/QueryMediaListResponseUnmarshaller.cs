@@ -32,15 +32,15 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			queryMediaListResponse.HttpResponse = context.HttpResponse;
 			queryMediaListResponse.RequestId = context.StringValue("QueryMediaList.RequestId");
 
-			List<string> nonExistMediaIds = new List<string>();
+			List<string> queryMediaListResponse_nonExistMediaIds = new List<string>();
 			for (int i = 0; i < context.Length("QueryMediaList.NonExistMediaIds.Length"); i++) {
-				nonExistMediaIds.Add(context.StringValue("QueryMediaList.NonExistMediaIds["+ i +"]"));
+				queryMediaListResponse_nonExistMediaIds.Add(context.StringValue("QueryMediaList.NonExistMediaIds["+ i +"]"));
 			}
-			queryMediaListResponse.NonExistMediaIds = nonExistMediaIds;
+			queryMediaListResponse.NonExistMediaIds = queryMediaListResponse_nonExistMediaIds;
 
-			List<QueryMediaListResponse.Media> mediaList = new List<QueryMediaListResponse.Media>();
+			List<QueryMediaListResponse.QueryMediaList_Media> queryMediaListResponse_mediaList = new List<QueryMediaListResponse.QueryMediaList_Media>();
 			for (int i = 0; i < context.Length("QueryMediaList.MediaList.Length"); i++) {
-				QueryMediaListResponse.Media media = new QueryMediaListResponse.Media();
+				QueryMediaListResponse.QueryMediaList_Media media = new QueryMediaListResponse.QueryMediaList_Media();
 				media.MediaId = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaId");
 				media.Title = context.StringValue("QueryMediaList.MediaList["+ i +"].Title");
 				media.Description = context.StringValue("QueryMediaList.MediaList["+ i +"].Description");
@@ -56,30 +56,30 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				media.PublishState = context.StringValue("QueryMediaList.MediaList["+ i +"].PublishState");
 				media.CreationTime = context.StringValue("QueryMediaList.MediaList["+ i +"].CreationTime");
 
-				List<string> tags = new List<string>();
+				List<string> media_tags = new List<string>();
 				for (int j = 0; j < context.Length("QueryMediaList.MediaList["+ i +"].Tags.Length"); j++) {
-					tags.Add(context.StringValue("QueryMediaList.MediaList["+ i +"].Tags["+ j +"]"));
+					media_tags.Add(context.StringValue("QueryMediaList.MediaList["+ i +"].Tags["+ j +"]"));
 				}
-				media.Tags = tags;
+				media.Tags = media_tags;
 
-				List<string> runIdList = new List<string>();
+				List<string> media_runIdList = new List<string>();
 				for (int j = 0; j < context.Length("QueryMediaList.MediaList["+ i +"].RunIdList.Length"); j++) {
-					runIdList.Add(context.StringValue("QueryMediaList.MediaList["+ i +"].RunIdList["+ j +"]"));
+					media_runIdList.Add(context.StringValue("QueryMediaList.MediaList["+ i +"].RunIdList["+ j +"]"));
 				}
-				media.RunIdList = runIdList;
+				media.RunIdList = media_runIdList;
 
-				QueryMediaListResponse.Media.File_ file = new QueryMediaListResponse.Media.File_();
+				QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_File file = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_File();
 				file.URL = context.StringValue("QueryMediaList.MediaList["+ i +"].File.URL");
 				file.State = context.StringValue("QueryMediaList.MediaList["+ i +"].File.State");
 				media.File = file;
 
-				QueryMediaListResponse.Media.MediaInfo_ mediaInfo = new QueryMediaListResponse.Media.MediaInfo_();
+				QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo mediaInfo = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo();
 
-				QueryMediaListResponse.Media.MediaInfo_.Streams_ streams = new QueryMediaListResponse.Media.MediaInfo_.Streams_();
+				QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams streams = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams();
 
-				List<QueryMediaListResponse.Media.MediaInfo_.Streams_.VideoStream> videoStreamList = new List<QueryMediaListResponse.Media.MediaInfo_.Streams_.VideoStream>();
+				List<QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_VideoStream> streams_videoStreamList = new List<QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_VideoStream>();
 				for (int j = 0; j < context.Length("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList.Length"); j++) {
-					QueryMediaListResponse.Media.MediaInfo_.Streams_.VideoStream videoStream = new QueryMediaListResponse.Media.MediaInfo_.Streams_.VideoStream();
+					QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_VideoStream videoStream = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_VideoStream();
 					videoStream.Index = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Index");
 					videoStream.CodecName = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].CodecName");
 					videoStream.CodecLongName = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].CodecLongName");
@@ -104,19 +104,19 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					videoStream.Lang = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Lang");
 					videoStream.Rotate = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].Rotate");
 
-					QueryMediaListResponse.Media.MediaInfo_.Streams_.VideoStream.NetworkCost_ networkCost = new QueryMediaListResponse.Media.MediaInfo_.Streams_.VideoStream.NetworkCost_();
+					QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_VideoStream.QueryMediaList_NetworkCost networkCost = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_VideoStream.QueryMediaList_NetworkCost();
 					networkCost.PreloadTime = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime");
 					networkCost.CostBandwidth = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].NetworkCost.CostBandwidth");
 					networkCost.AvgBitrate = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.VideoStreamList["+ j +"].NetworkCost.AvgBitrate");
 					videoStream.NetworkCost = networkCost;
 
-					videoStreamList.Add(videoStream);
+					streams_videoStreamList.Add(videoStream);
 				}
-				streams.VideoStreamList = videoStreamList;
+				streams.VideoStreamList = streams_videoStreamList;
 
-				List<QueryMediaListResponse.Media.MediaInfo_.Streams_.AudioStream> audioStreamList = new List<QueryMediaListResponse.Media.MediaInfo_.Streams_.AudioStream>();
+				List<QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_AudioStream> streams_audioStreamList = new List<QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_AudioStream>();
 				for (int j = 0; j < context.Length("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList.Length"); j++) {
-					QueryMediaListResponse.Media.MediaInfo_.Streams_.AudioStream audioStream = new QueryMediaListResponse.Media.MediaInfo_.Streams_.AudioStream();
+					QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_AudioStream audioStream = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_AudioStream();
 					audioStream.Index = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].Index");
 					audioStream.CodecName = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].CodecName");
 					audioStream.CodecTimeBase = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].CodecTimeBase");
@@ -134,22 +134,22 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					audioStream.NumFrames = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].NumFrames");
 					audioStream.Lang = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.AudioStreamList["+ j +"].Lang");
 
-					audioStreamList.Add(audioStream);
+					streams_audioStreamList.Add(audioStream);
 				}
-				streams.AudioStreamList = audioStreamList;
+				streams.AudioStreamList = streams_audioStreamList;
 
-				List<QueryMediaListResponse.Media.MediaInfo_.Streams_.SubtitleStream> subtitleStreamList = new List<QueryMediaListResponse.Media.MediaInfo_.Streams_.SubtitleStream>();
+				List<QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_SubtitleStream> streams_subtitleStreamList = new List<QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_SubtitleStream>();
 				for (int j = 0; j < context.Length("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.SubtitleStreamList.Length"); j++) {
-					QueryMediaListResponse.Media.MediaInfo_.Streams_.SubtitleStream subtitleStream = new QueryMediaListResponse.Media.MediaInfo_.Streams_.SubtitleStream();
+					QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_SubtitleStream subtitleStream = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Streams.QueryMediaList_SubtitleStream();
 					subtitleStream.Index = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.SubtitleStreamList["+ j +"].Index");
 					subtitleStream.Lang = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Streams.SubtitleStreamList["+ j +"].Lang");
 
-					subtitleStreamList.Add(subtitleStream);
+					streams_subtitleStreamList.Add(subtitleStream);
 				}
-				streams.SubtitleStreamList = subtitleStreamList;
+				streams.SubtitleStreamList = streams_subtitleStreamList;
 				mediaInfo.Streams = streams;
 
-				QueryMediaListResponse.Media.MediaInfo_.Format_ format = new QueryMediaListResponse.Media.MediaInfo_.Format_();
+				QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Format format = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_MediaInfo.QueryMediaList_Format();
 				format.NumStreams = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Format.NumStreams");
 				format.NumPrograms = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Format.NumPrograms");
 				format.FormatName = context.StringValue("QueryMediaList.MediaList["+ i +"].MediaInfo.Format.FormatName");
@@ -161,9 +161,9 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				mediaInfo.Format = format;
 				media.MediaInfo = mediaInfo;
 
-				List<QueryMediaListResponse.Media.Play> playList = new List<QueryMediaListResponse.Media.Play>();
+				List<QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Play> media_playList = new List<QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Play>();
 				for (int j = 0; j < context.Length("QueryMediaList.MediaList["+ i +"].PlayList.Length"); j++) {
-					QueryMediaListResponse.Media.Play play = new QueryMediaListResponse.Media.Play();
+					QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Play play = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Play();
 					play.ActivityName = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].ActivityName");
 					play.MediaWorkflowId = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].MediaWorkflowId");
 					play.MediaWorkflowName = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].MediaWorkflowName");
@@ -174,37 +174,38 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					play.Width = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].Width");
 					play.Height = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].Height");
 					play.Fps = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].Fps");
+					play.Encryption = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].Encryption");
 
-					QueryMediaListResponse.Media.Play.File_ playFile_ = new QueryMediaListResponse.Media.Play.File_();
-					playFile_.URL = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].File.URL");
-					playFile_.State = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].File.State");
-					play.File = playFile_;
+					QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Play.QueryMediaList_File1 file1 = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Play.QueryMediaList_File1();
+					file1.URL = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].File.URL");
+					file1.State = context.StringValue("QueryMediaList.MediaList["+ i +"].PlayList["+ j +"].File.State");
+					play.File1 = file1;
 
-					playList.Add(play);
+					media_playList.Add(play);
 				}
-				media.PlayList = playList;
+				media.PlayList = media_playList;
 
-				List<QueryMediaListResponse.Media.Snapshot> snapshotList = new List<QueryMediaListResponse.Media.Snapshot>();
+				List<QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Snapshot> media_snapshotList = new List<QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Snapshot>();
 				for (int j = 0; j < context.Length("QueryMediaList.MediaList["+ i +"].SnapshotList.Length"); j++) {
-					QueryMediaListResponse.Media.Snapshot snapshot = new QueryMediaListResponse.Media.Snapshot();
+					QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Snapshot snapshot = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Snapshot();
 					snapshot.Type = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].Type");
 					snapshot.MediaWorkflowId = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].MediaWorkflowId");
 					snapshot.MediaWorkflowName = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].MediaWorkflowName");
 					snapshot.ActivityName = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].ActivityName");
 					snapshot.Count = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].Count");
 
-					QueryMediaListResponse.Media.Snapshot.File_ snapshotFile_ = new QueryMediaListResponse.Media.Snapshot.File_();
-					snapshotFile_.URL = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].File.URL");
-					snapshotFile_.State = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].File.State");
-					snapshot.File = snapshotFile_;
+					QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Snapshot.QueryMediaList_File2 file2 = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Snapshot.QueryMediaList_File2();
+					file2.URL = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].File.URL");
+					file2.State = context.StringValue("QueryMediaList.MediaList["+ i +"].SnapshotList["+ j +"].File.State");
+					snapshot.File2 = file2;
 
-					snapshotList.Add(snapshot);
+					media_snapshotList.Add(snapshot);
 				}
-				media.SnapshotList = snapshotList;
+				media.SnapshotList = media_snapshotList;
 
-				mediaList.Add(media);
+				queryMediaListResponse_mediaList.Add(media);
 			}
-			queryMediaListResponse.MediaList = mediaList;
+			queryMediaListResponse.MediaList = queryMediaListResponse_mediaList;
         
 			return queryMediaListResponse;
         }

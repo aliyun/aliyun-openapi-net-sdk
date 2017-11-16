@@ -33,7 +33,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         {
         }
 
-		private string ownerId;
+		private string key1;
+
+		private string key2;
 
 		private string resourceOwnerId;
 
@@ -41,20 +43,35 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerAccount;
 
-		private string key1;
+		private string action;
 
-		private string key2;
+		private string ownerId;
 
-		public string OwnerId
+		private string accessKeyId;
+
+		public string Key1
 		{
 			get
 			{
-				return ownerId;
+				return key1;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+				key1 = value;
+				DictionaryUtil.Add(QueryParameters, "Key1", value);
+			}
+		}
+
+		public string Key2
+		{
+			get
+			{
+				return key2;
+			}
+			set	
+			{
+				key2 = value;
+				DictionaryUtil.Add(QueryParameters, "Key2", value);
 			}
 		}
 
@@ -97,29 +114,42 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Key1
+		public string Action
 		{
 			get
 			{
-				return key1;
+				return action;
 			}
 			set	
 			{
-				key1 = value;
-				DictionaryUtil.Add(QueryParameters, "Key1", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string Key2
+		public string OwnerId
 		{
 			get
 			{
-				return key2;
+				return ownerId;
 			}
 			set	
 			{
-				key2 = value;
-				DictionaryUtil.Add(QueryParameters, "Key2", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

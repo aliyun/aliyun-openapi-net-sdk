@@ -32,15 +32,15 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			queryAnalysisJobListResponse.HttpResponse = context.HttpResponse;
 			queryAnalysisJobListResponse.RequestId = context.StringValue("QueryAnalysisJobList.RequestId");
 
-			List<string> nonExistAnalysisJobIds = new List<string>();
+			List<string> queryAnalysisJobListResponse_nonExistAnalysisJobIds = new List<string>();
 			for (int i = 0; i < context.Length("QueryAnalysisJobList.NonExistAnalysisJobIds.Length"); i++) {
-				nonExistAnalysisJobIds.Add(context.StringValue("QueryAnalysisJobList.NonExistAnalysisJobIds["+ i +"]"));
+				queryAnalysisJobListResponse_nonExistAnalysisJobIds.Add(context.StringValue("QueryAnalysisJobList.NonExistAnalysisJobIds["+ i +"]"));
 			}
-			queryAnalysisJobListResponse.NonExistAnalysisJobIds = nonExistAnalysisJobIds;
+			queryAnalysisJobListResponse.NonExistAnalysisJobIds = queryAnalysisJobListResponse_nonExistAnalysisJobIds;
 
-			List<QueryAnalysisJobListResponse.AnalysisJob> analysisJobList = new List<QueryAnalysisJobListResponse.AnalysisJob>();
+			List<QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob> queryAnalysisJobListResponse_analysisJobList = new List<QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob>();
 			for (int i = 0; i < context.Length("QueryAnalysisJobList.AnalysisJobList.Length"); i++) {
-				QueryAnalysisJobListResponse.AnalysisJob analysisJob = new QueryAnalysisJobListResponse.AnalysisJob();
+				QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob analysisJob = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob();
 				analysisJob.Id = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].Id");
 				analysisJob.UserData = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].UserData");
 				analysisJob.State = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].State");
@@ -51,23 +51,23 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				analysisJob.PipelineId = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].PipelineId");
 				analysisJob.Priority = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].Priority");
 
-				QueryAnalysisJobListResponse.AnalysisJob.InputFile_ inputFile = new QueryAnalysisJobListResponse.AnalysisJob.InputFile_();
+				QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_InputFile inputFile = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_InputFile();
 				inputFile.Bucket = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].InputFile.Bucket");
 				inputFile.Location = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].InputFile.Location");
-				inputFile.Object = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].InputFile.Object");
+				inputFile._Object = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].InputFile.Object");
 				analysisJob.InputFile = inputFile;
 
-				QueryAnalysisJobListResponse.AnalysisJob.AnalysisConfig_ analysisConfig = new QueryAnalysisJobListResponse.AnalysisJob.AnalysisConfig_();
+				QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_AnalysisConfig analysisConfig = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_AnalysisConfig();
 
-				QueryAnalysisJobListResponse.AnalysisJob.AnalysisConfig_.QualityControl_ qualityControl = new QueryAnalysisJobListResponse.AnalysisJob.AnalysisConfig_.QualityControl_();
+				QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_AnalysisConfig.QueryAnalysisJobList_QualityControl qualityControl = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_AnalysisConfig.QueryAnalysisJobList_QualityControl();
 				qualityControl.RateQuality = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].AnalysisConfig.QualityControl.RateQuality");
 				qualityControl.MethodStreaming = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].AnalysisConfig.QualityControl.MethodStreaming");
 				analysisConfig.QualityControl = qualityControl;
 
-				QueryAnalysisJobListResponse.AnalysisJob.AnalysisConfig_.PropertiesControl_ propertiesControl = new QueryAnalysisJobListResponse.AnalysisJob.AnalysisConfig_.PropertiesControl_();
+				QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_AnalysisConfig.QueryAnalysisJobList_PropertiesControl propertiesControl = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_AnalysisConfig.QueryAnalysisJobList_PropertiesControl();
 				propertiesControl.Deinterlace = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].AnalysisConfig.PropertiesControl.Deinterlace");
 
-				QueryAnalysisJobListResponse.AnalysisJob.AnalysisConfig_.PropertiesControl_.Crop_ crop = new QueryAnalysisJobListResponse.AnalysisJob.AnalysisConfig_.PropertiesControl_.Crop_();
+				QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_AnalysisConfig.QueryAnalysisJobList_PropertiesControl.QueryAnalysisJobList_Crop crop = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_AnalysisConfig.QueryAnalysisJobList_PropertiesControl.QueryAnalysisJobList_Crop();
 				crop.Mode = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].AnalysisConfig.PropertiesControl.Crop.Mode");
 				crop.Width = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].AnalysisConfig.PropertiesControl.Crop.Width");
 				crop.Height = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].AnalysisConfig.PropertiesControl.Crop.Height");
@@ -77,24 +77,24 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				analysisConfig.PropertiesControl = propertiesControl;
 				analysisJob.AnalysisConfig = analysisConfig;
 
-				QueryAnalysisJobListResponse.AnalysisJob.MNSMessageResult_ mNSMessageResult = new QueryAnalysisJobListResponse.AnalysisJob.MNSMessageResult_();
+				QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_MNSMessageResult mNSMessageResult = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_MNSMessageResult();
 				mNSMessageResult.MessageId = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].MNSMessageResult.MessageId");
 				mNSMessageResult.ErrorMessage = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].MNSMessageResult.ErrorMessage");
 				mNSMessageResult.ErrorCode = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].MNSMessageResult.ErrorCode");
 				analysisJob.MNSMessageResult = mNSMessageResult;
 
-				List<QueryAnalysisJobListResponse.AnalysisJob.Template> templateList = new List<QueryAnalysisJobListResponse.AnalysisJob.Template>();
+				List<QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template> analysisJob_templateList = new List<QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template>();
 				for (int j = 0; j < context.Length("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList.Length"); j++) {
-					QueryAnalysisJobListResponse.AnalysisJob.Template template = new QueryAnalysisJobListResponse.AnalysisJob.Template();
+					QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template template = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template();
 					template.Id = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Id");
 					template.Name = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Name");
 					template.State = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].State");
 
-					QueryAnalysisJobListResponse.AnalysisJob.Template.Container_ container = new QueryAnalysisJobListResponse.AnalysisJob.Template.Container_();
+					QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_Container container = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_Container();
 					container.Format = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Container.Format");
 					template.Container = container;
 
-					QueryAnalysisJobListResponse.AnalysisJob.Template.Video_ video = new QueryAnalysisJobListResponse.AnalysisJob.Template.Video_();
+					QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_Video video = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_Video();
 					video.Codec = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Codec");
 					video.Profile = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Profile");
 					video.Bitrate = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Bitrate");
@@ -111,13 +111,13 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					video.Degrain = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Degrain");
 					video.Qscale = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Qscale");
 
-					QueryAnalysisJobListResponse.AnalysisJob.Template.Video_.BitrateBnd_ bitrateBnd = new QueryAnalysisJobListResponse.AnalysisJob.Template.Video_.BitrateBnd_();
+					QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_Video.QueryAnalysisJobList_BitrateBnd bitrateBnd = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_Video.QueryAnalysisJobList_BitrateBnd();
 					bitrateBnd.Max = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.BitrateBnd.Max");
 					bitrateBnd.Min = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.BitrateBnd.Min");
 					video.BitrateBnd = bitrateBnd;
 					template.Video = video;
 
-					QueryAnalysisJobListResponse.AnalysisJob.Template.Audio_ audio = new QueryAnalysisJobListResponse.AnalysisJob.Template.Audio_();
+					QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_Audio audio = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_Audio();
 					audio.Codec = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Codec");
 					audio.Profile = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Profile");
 					audio.Samplerate = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Samplerate");
@@ -126,29 +126,29 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					audio.Qscale = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Qscale");
 					template.Audio = audio;
 
-					QueryAnalysisJobListResponse.AnalysisJob.Template.TransConfig_ transConfig = new QueryAnalysisJobListResponse.AnalysisJob.Template.TransConfig_();
+					QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_TransConfig transConfig = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_TransConfig();
 					transConfig.TransMode = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].TransConfig.TransMode");
 					template.TransConfig = transConfig;
 
-					QueryAnalysisJobListResponse.AnalysisJob.Template.MuxConfig_ muxConfig = new QueryAnalysisJobListResponse.AnalysisJob.Template.MuxConfig_();
+					QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_MuxConfig muxConfig = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_MuxConfig();
 
-					QueryAnalysisJobListResponse.AnalysisJob.Template.MuxConfig_.Segment_ segment = new QueryAnalysisJobListResponse.AnalysisJob.Template.MuxConfig_.Segment_();
+					QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_MuxConfig.QueryAnalysisJobList_Segment segment = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_MuxConfig.QueryAnalysisJobList_Segment();
 					segment.Duration = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].MuxConfig.Segment.Duration");
 					muxConfig.Segment = segment;
 
-					QueryAnalysisJobListResponse.AnalysisJob.Template.MuxConfig_.Gif_ gif = new QueryAnalysisJobListResponse.AnalysisJob.Template.MuxConfig_.Gif_();
+					QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_MuxConfig.QueryAnalysisJobList_Gif gif = new QueryAnalysisJobListResponse.QueryAnalysisJobList_AnalysisJob.QueryAnalysisJobList_Template.QueryAnalysisJobList_MuxConfig.QueryAnalysisJobList_Gif();
 					gif.Loop = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].MuxConfig.Gif.Loop");
 					gif.FinalDelay = context.StringValue("QueryAnalysisJobList.AnalysisJobList["+ i +"].TemplateList["+ j +"].MuxConfig.Gif.FinalDelay");
 					muxConfig.Gif = gif;
 					template.MuxConfig = muxConfig;
 
-					templateList.Add(template);
+					analysisJob_templateList.Add(template);
 				}
-				analysisJob.TemplateList = templateList;
+				analysisJob.TemplateList = analysisJob_templateList;
 
-				analysisJobList.Add(analysisJob);
+				queryAnalysisJobListResponse_analysisJobList.Add(analysisJob);
 			}
-			queryAnalysisJobListResponse.AnalysisJobList = analysisJobList;
+			queryAnalysisJobListResponse.AnalysisJobList = queryAnalysisJobListResponse_analysisJobList;
         
 			return queryAnalysisJobListResponse;
         }

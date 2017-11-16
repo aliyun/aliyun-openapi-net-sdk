@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class QueryMediaListResponse : AcsResponse
 	{
 
-		private List<Media> mediaList;
+		private string requestId;
+
+		private List<QueryMediaList_Media> mediaList;
 
 		private List<string> nonExistMediaIds;
 
-		public List<Media> MediaList
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<QueryMediaList_Media> MediaList
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class Media{
+		public class QueryMediaList_Media
+		{
 
 			private string mediaId;
 
@@ -82,17 +97,17 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string creationTime;
 
-			private List<Play> playList;
+			private List<QueryMediaList_Play> playList;
 
-			private List<Snapshot> snapshotList;
+			private List<QueryMediaList_Snapshot> snapshotList;
 
 			private List<string> tags;
 
 			private List<string> runIdList;
 
-			private File_ file;
+			private QueryMediaList_File file;
 
-			private MediaInfo_ mediaInfo;
+			private QueryMediaList_MediaInfo mediaInfo;
 
 			public string MediaId
 			{
@@ -262,7 +277,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public List<Play> PlayList
+			public List<QueryMediaList_Play> PlayList
 			{
 				get
 				{
@@ -274,7 +289,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public List<Snapshot> SnapshotList
+			public List<QueryMediaList_Snapshot> SnapshotList
 			{
 				get
 				{
@@ -310,7 +325,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public File_ File
+			public QueryMediaList_File File
 			{
 				get
 				{
@@ -322,7 +337,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public MediaInfo_ MediaInfo
+			public QueryMediaList_MediaInfo MediaInfo
 			{
 				get
 				{
@@ -334,7 +349,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Play{
+			public class QueryMediaList_Play
+			{
 
 				private string activityName;
 
@@ -356,7 +372,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string fps;
 
-				private File_ file;
+				private string encryption;
+
+				private QueryMediaList_File1 file1;
 
 				public string ActivityName
 				{
@@ -478,19 +496,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public File_ File
+				public string Encryption
 				{
 					get
 					{
-						return file;
+						return encryption;
 					}
 					set	
 					{
-						file = value;
+						encryption = value;
 					}
 				}
 
-				public class File_{
+				public QueryMediaList_File1 File1
+				{
+					get
+					{
+						return file1;
+					}
+					set	
+					{
+						file1 = value;
+					}
+				}
+
+				public class QueryMediaList_File1
+				{
 
 					private string uRL;
 
@@ -522,7 +553,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Snapshot{
+			public class QueryMediaList_Snapshot
+			{
 
 				private string type;
 
@@ -534,7 +566,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string count;
 
-				private File_ file;
+				private QueryMediaList_File2 file2;
 
 				public string Type
 				{
@@ -596,19 +628,20 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public File_ File
+				public QueryMediaList_File2 File2
 				{
 					get
 					{
-						return file;
+						return file2;
 					}
 					set	
 					{
-						file = value;
+						file2 = value;
 					}
 				}
 
-				public class File_{
+				public class QueryMediaList_File2
+				{
 
 					private string uRL;
 
@@ -640,7 +673,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class File_{
+			public class QueryMediaList_File
+			{
 
 				private string uRL;
 
@@ -671,13 +705,14 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class MediaInfo_{
+			public class QueryMediaList_MediaInfo
+			{
 
-				private Streams_ streams;
+				private QueryMediaList_Streams streams;
 
-				private Format_ format;
+				private QueryMediaList_Format format;
 
-				public Streams_ Streams
+				public QueryMediaList_Streams Streams
 				{
 					get
 					{
@@ -689,7 +724,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Format_ Format
+				public QueryMediaList_Format Format
 				{
 					get
 					{
@@ -701,15 +736,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Streams_{
+				public class QueryMediaList_Streams
+				{
 
-					private List<VideoStream> videoStreamList;
+					private List<QueryMediaList_VideoStream> videoStreamList;
 
-					private List<AudioStream> audioStreamList;
+					private List<QueryMediaList_AudioStream> audioStreamList;
 
-					private List<SubtitleStream> subtitleStreamList;
+					private List<QueryMediaList_SubtitleStream> subtitleStreamList;
 
-					public List<VideoStream> VideoStreamList
+					public List<QueryMediaList_VideoStream> VideoStreamList
 					{
 						get
 						{
@@ -721,7 +757,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public List<AudioStream> AudioStreamList
+					public List<QueryMediaList_AudioStream> AudioStreamList
 					{
 						get
 						{
@@ -733,7 +769,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public List<SubtitleStream> SubtitleStreamList
+					public List<QueryMediaList_SubtitleStream> SubtitleStreamList
 					{
 						get
 						{
@@ -745,7 +781,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class VideoStream{
+					public class QueryMediaList_VideoStream
+					{
 
 						private string index;
 
@@ -793,7 +830,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 						private string rotate;
 
-						private NetworkCost_ networkCost;
+						private QueryMediaList_NetworkCost networkCost;
 
 						public string Index
 						{
@@ -1071,7 +1108,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public NetworkCost_ NetworkCost
+						public QueryMediaList_NetworkCost NetworkCost
 						{
 							get
 							{
@@ -1083,7 +1120,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public class NetworkCost_{
+						public class QueryMediaList_NetworkCost
+						{
 
 							private string preloadTime;
 
@@ -1129,7 +1167,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class AudioStream{
+					public class QueryMediaList_AudioStream
+					{
 
 						private string index;
 
@@ -1356,7 +1395,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class SubtitleStream{
+					public class QueryMediaList_SubtitleStream
+					{
 
 						private string index;
 
@@ -1388,7 +1428,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Format_{
+				public class QueryMediaList_Format
+				{
 
 					private string numStreams;
 

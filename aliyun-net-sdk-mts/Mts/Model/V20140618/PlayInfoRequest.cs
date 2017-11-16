@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class PlayInfoRequest : RpcAcsRequest<PlayInfoResponse>
     {
         public PlayInfoRequest()
-            : base("Mts", "2014-06-18", "PlayInfo", "mts", "openAPI")
+            : base("Mts", "2014-06-18", "PlayInfo")
         {
         }
 

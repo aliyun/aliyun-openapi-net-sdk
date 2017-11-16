@@ -32,16 +32,16 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			updateTemplateResponse.HttpResponse = context.HttpResponse;
 			updateTemplateResponse.RequestId = context.StringValue("UpdateTemplate.RequestId");
 
-			UpdateTemplateResponse.Template_ template = new UpdateTemplateResponse.Template_();
+			UpdateTemplateResponse.UpdateTemplate_Template template = new UpdateTemplateResponse.UpdateTemplate_Template();
 			template.Id = context.StringValue("UpdateTemplate.Template.Id");
 			template.Name = context.StringValue("UpdateTemplate.Template.Name");
 			template.State = context.StringValue("UpdateTemplate.Template.State");
 
-			UpdateTemplateResponse.Template_.Container_ container = new UpdateTemplateResponse.Template_.Container_();
+			UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_Container container = new UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_Container();
 			container.Format = context.StringValue("UpdateTemplate.Template.Container.Format");
 			template.Container = container;
 
-			UpdateTemplateResponse.Template_.Video_ video = new UpdateTemplateResponse.Template_.Video_();
+			UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_Video video = new UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_Video();
 			video.Codec = context.StringValue("UpdateTemplate.Template.Video.Codec");
 			video.Profile = context.StringValue("UpdateTemplate.Template.Video.Profile");
 			video.Bitrate = context.StringValue("UpdateTemplate.Template.Video.Bitrate");
@@ -57,43 +57,45 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			video.PixFmt = context.StringValue("UpdateTemplate.Template.Video.PixFmt");
 			video.Degrain = context.StringValue("UpdateTemplate.Template.Video.Degrain");
 			video.Qscale = context.StringValue("UpdateTemplate.Template.Video.Qscale");
-			video.Remove = context.StringValue("UpdateTemplate.Template.Video.Remove");
+			video._Remove = context.StringValue("UpdateTemplate.Template.Video.Remove");
 			video.Crop = context.StringValue("UpdateTemplate.Template.Video.Crop");
 			video.Pad = context.StringValue("UpdateTemplate.Template.Video.Pad");
 			video.MaxFps = context.StringValue("UpdateTemplate.Template.Video.MaxFps");
 
-			UpdateTemplateResponse.Template_.Video_.BitrateBnd_ bitrateBnd = new UpdateTemplateResponse.Template_.Video_.BitrateBnd_();
+			UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_Video.UpdateTemplate_BitrateBnd bitrateBnd = new UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_Video.UpdateTemplate_BitrateBnd();
 			bitrateBnd.Max = context.StringValue("UpdateTemplate.Template.Video.BitrateBnd.Max");
 			bitrateBnd.Min = context.StringValue("UpdateTemplate.Template.Video.BitrateBnd.Min");
 			video.BitrateBnd = bitrateBnd;
 			template.Video = video;
 
-			UpdateTemplateResponse.Template_.Audio_ audio = new UpdateTemplateResponse.Template_.Audio_();
+			UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_Audio audio = new UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_Audio();
 			audio.Codec = context.StringValue("UpdateTemplate.Template.Audio.Codec");
 			audio.Profile = context.StringValue("UpdateTemplate.Template.Audio.Profile");
 			audio.Samplerate = context.StringValue("UpdateTemplate.Template.Audio.Samplerate");
 			audio.Bitrate = context.StringValue("UpdateTemplate.Template.Audio.Bitrate");
 			audio.Channels = context.StringValue("UpdateTemplate.Template.Audio.Channels");
 			audio.Qscale = context.StringValue("UpdateTemplate.Template.Audio.Qscale");
-			audio.Remove = context.StringValue("UpdateTemplate.Template.Audio.Remove");
+			audio._Remove = context.StringValue("UpdateTemplate.Template.Audio.Remove");
 			template.Audio = audio;
 
-			UpdateTemplateResponse.Template_.TransConfig_ transConfig = new UpdateTemplateResponse.Template_.TransConfig_();
+			UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_TransConfig transConfig = new UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_TransConfig();
 			transConfig.TransMode = context.StringValue("UpdateTemplate.Template.TransConfig.TransMode");
 			transConfig.IsCheckReso = context.StringValue("UpdateTemplate.Template.TransConfig.IsCheckReso");
 			transConfig.IsCheckResoFail = context.StringValue("UpdateTemplate.Template.TransConfig.IsCheckResoFail");
 			transConfig.IsCheckVideoBitrate = context.StringValue("UpdateTemplate.Template.TransConfig.IsCheckVideoBitrate");
 			transConfig.IsCheckAudioBitrate = context.StringValue("UpdateTemplate.Template.TransConfig.IsCheckAudioBitrate");
 			transConfig.AdjDarMethod = context.StringValue("UpdateTemplate.Template.TransConfig.AdjDarMethod");
+			transConfig.IsCheckVideoBitrateFail = context.StringValue("UpdateTemplate.Template.TransConfig.IsCheckVideoBitrateFail");
+			transConfig.IsCheckAudioBitrateFail = context.StringValue("UpdateTemplate.Template.TransConfig.IsCheckAudioBitrateFail");
 			template.TransConfig = transConfig;
 
-			UpdateTemplateResponse.Template_.MuxConfig_ muxConfig = new UpdateTemplateResponse.Template_.MuxConfig_();
+			UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_MuxConfig muxConfig = new UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_MuxConfig();
 
-			UpdateTemplateResponse.Template_.MuxConfig_.Segment_ segment = new UpdateTemplateResponse.Template_.MuxConfig_.Segment_();
+			UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_MuxConfig.UpdateTemplate_Segment segment = new UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_MuxConfig.UpdateTemplate_Segment();
 			segment.Duration = context.StringValue("UpdateTemplate.Template.MuxConfig.Segment.Duration");
 			muxConfig.Segment = segment;
 
-			UpdateTemplateResponse.Template_.MuxConfig_.Gif_ gif = new UpdateTemplateResponse.Template_.MuxConfig_.Gif_();
+			UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_MuxConfig.UpdateTemplate_Gif gif = new UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_MuxConfig.UpdateTemplate_Gif();
 			gif.Loop = context.StringValue("UpdateTemplate.Template.MuxConfig.Gif.Loop");
 			gif.FinalDelay = context.StringValue("UpdateTemplate.Template.MuxConfig.Gif.FinalDelay");
 			gif.IsCustomPalette = context.StringValue("UpdateTemplate.Template.MuxConfig.Gif.IsCustomPalette");

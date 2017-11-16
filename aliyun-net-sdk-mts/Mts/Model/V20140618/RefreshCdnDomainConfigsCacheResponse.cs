@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class RefreshCdnDomainConfigsCacheResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private List<string> sucessDomains;
 
 		private List<string> failedDomains;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public List<string> SucessDomains
 		{

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class UpdatePipelineResponse : AcsResponse
 	{
 
-		private Pipeline_ pipeline;
+		private string requestId;
 
-		public Pipeline_ Pipeline
+		private UpdatePipeline_Pipeline pipeline;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public UpdatePipeline_Pipeline Pipeline
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class Pipeline_{
+		public class UpdatePipeline_Pipeline
+		{
 
 			private string id;
 
@@ -50,7 +65,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string role;
 
-			private NotifyConfig_ notifyConfig;
+			private UpdatePipeline_NotifyConfig notifyConfig;
 
 			public string Id
 			{
@@ -112,7 +127,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public NotifyConfig_ NotifyConfig
+			public UpdatePipeline_NotifyConfig NotifyConfig
 			{
 				get
 				{
@@ -124,7 +139,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class NotifyConfig_{
+			public class UpdatePipeline_NotifyConfig
+			{
 
 				private string topic;
 

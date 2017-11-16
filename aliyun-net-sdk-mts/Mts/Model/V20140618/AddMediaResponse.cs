@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class AddMediaResponse : AcsResponse
 	{
 
-		private Media_ media;
+		private string requestId;
 
-		public Media_ Media
+		private AddMedia_Media media;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public AddMedia_Media Media
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class Media_{
+		public class AddMedia_Media
+		{
 
 			private string mediaId;
 
@@ -72,7 +87,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private List<string> runIdList;
 
-			private File_ file;
+			private AddMedia_File file;
 
 			public string MediaId
 			{
@@ -266,7 +281,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public File_ File
+			public AddMedia_File File
 			{
 				get
 				{
@@ -278,7 +293,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class File_{
+			public class AddMedia_File
+			{
 
 				private string uRL;
 

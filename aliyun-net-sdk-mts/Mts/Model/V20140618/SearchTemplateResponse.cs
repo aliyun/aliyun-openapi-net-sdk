@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class SearchTemplateResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private long? totalCount;
 
 		private long? pageNumber;
 
 		private long? pageSize;
 
-		private List<Template> templateList;
+		private List<SearchTemplate_Template> templateList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public List<Template> TemplateList
+		public List<SearchTemplate_Template> TemplateList
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class Template{
+		public class SearchTemplate_Template
+		{
 
 			private string id;
 
@@ -88,15 +103,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string state;
 
-			private Container_ container;
+			private SearchTemplate_Container container;
 
-			private Video_ video;
+			private SearchTemplate_Video video;
 
-			private Audio_ audio;
+			private SearchTemplate_Audio audio;
 
-			private TransConfig_ transConfig;
+			private SearchTemplate_TransConfig transConfig;
 
-			private MuxConfig_ muxConfig;
+			private SearchTemplate_MuxConfig muxConfig;
 
 			public string Id
 			{
@@ -134,7 +149,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Container_ Container
+			public SearchTemplate_Container Container
 			{
 				get
 				{
@@ -146,7 +161,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Video_ Video
+			public SearchTemplate_Video Video
 			{
 				get
 				{
@@ -158,7 +173,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Audio_ Audio
+			public SearchTemplate_Audio Audio
 			{
 				get
 				{
@@ -170,7 +185,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public TransConfig_ TransConfig
+			public SearchTemplate_TransConfig TransConfig
 			{
 				get
 				{
@@ -182,7 +197,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public MuxConfig_ MuxConfig
+			public SearchTemplate_MuxConfig MuxConfig
 			{
 				get
 				{
@@ -194,7 +209,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Container_{
+			public class SearchTemplate_Container
+			{
 
 				private string format;
 
@@ -211,7 +227,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Video_{
+			public class SearchTemplate_Video
+			{
 
 				private string codec;
 
@@ -243,7 +260,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string qscale;
 
-				private string remove;
+				private string _remove;
 
 				private string crop;
 
@@ -251,7 +268,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string maxFps;
 
-				private BitrateBnd_ bitrateBnd;
+				private SearchTemplate_BitrateBnd bitrateBnd;
 
 				public string Codec
 				{
@@ -433,15 +450,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Remove
+				public string _Remove
 				{
 					get
 					{
-						return remove;
+						return _remove;
 					}
 					set	
 					{
-						remove = value;
+						_remove = value;
 					}
 				}
 
@@ -481,7 +498,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public BitrateBnd_ BitrateBnd
+				public SearchTemplate_BitrateBnd BitrateBnd
 				{
 					get
 					{
@@ -493,7 +510,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class BitrateBnd_{
+				public class SearchTemplate_BitrateBnd
+				{
 
 					private string max;
 
@@ -525,7 +543,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Audio_{
+			public class SearchTemplate_Audio
+			{
 
 				private string codec;
 
@@ -539,7 +558,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string qscale;
 
-				private string remove;
+				private string _remove;
 
 				public string Codec
 				{
@@ -613,20 +632,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Remove
+				public string _Remove
 				{
 					get
 					{
-						return remove;
+						return _remove;
 					}
 					set	
 					{
-						remove = value;
+						_remove = value;
 					}
 				}
 			}
 
-			public class TransConfig_{
+			public class SearchTemplate_TransConfig
+			{
 
 				private string transMode;
 
@@ -639,6 +659,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				private string isCheckAudioBitrate;
 
 				private string adjDarMethod;
+
+				private string isCheckVideoBitrateFail;
+
+				private string isCheckAudioBitrateFail;
 
 				public string TransMode
 				{
@@ -711,15 +735,40 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						adjDarMethod = value;
 					}
 				}
+
+				public string IsCheckVideoBitrateFail
+				{
+					get
+					{
+						return isCheckVideoBitrateFail;
+					}
+					set	
+					{
+						isCheckVideoBitrateFail = value;
+					}
+				}
+
+				public string IsCheckAudioBitrateFail
+				{
+					get
+					{
+						return isCheckAudioBitrateFail;
+					}
+					set	
+					{
+						isCheckAudioBitrateFail = value;
+					}
+				}
 			}
 
-			public class MuxConfig_{
+			public class SearchTemplate_MuxConfig
+			{
 
-				private Segment_ segment;
+				private SearchTemplate_Segment segment;
 
-				private Gif_ gif;
+				private SearchTemplate_Gif gif;
 
-				public Segment_ Segment
+				public SearchTemplate_Segment Segment
 				{
 					get
 					{
@@ -731,7 +780,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Gif_ Gif
+				public SearchTemplate_Gif Gif
 				{
 					get
 					{
@@ -743,7 +792,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Segment_{
+				public class SearchTemplate_Segment
+				{
 
 					private string duration;
 
@@ -760,7 +810,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Gif_{
+				public class SearchTemplate_Gif
+				{
 
 					private string loop;
 

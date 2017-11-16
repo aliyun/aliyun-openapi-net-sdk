@@ -33,17 +33,17 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			playerAuthResponse.RequestId = context.StringValue("PlayerAuth.RequestId");
 			playerAuthResponse.LogURL = context.StringValue("PlayerAuth.LogURL");
 
-			List<PlayerAuthResponse.Switch> switchList = new List<PlayerAuthResponse.Switch>();
+			List<PlayerAuthResponse.PlayerAuth__Switch> playerAuthResponse_switchList = new List<PlayerAuthResponse.PlayerAuth__Switch>();
 			for (int i = 0; i < context.Length("PlayerAuth.SwitchList.Length"); i++) {
-				PlayerAuthResponse.Switch switch_ = new PlayerAuthResponse.Switch();
-				switch_.State = context.StringValue("PlayerAuth.SwitchList["+ i +"].State");
-				switch_.FunctionId = context.StringValue("PlayerAuth.SwitchList["+ i +"].FunctionId");
-				switch_.SwitchId = context.StringValue("PlayerAuth.SwitchList["+ i +"].SwitchId");
-				switch_.FunctionName = context.StringValue("PlayerAuth.SwitchList["+ i +"].FunctionName");
+				PlayerAuthResponse.PlayerAuth__Switch _switch = new PlayerAuthResponse.PlayerAuth__Switch();
+				_switch.State = context.StringValue("PlayerAuth.SwitchList["+ i +"].State");
+				_switch.FunctionId = context.StringValue("PlayerAuth.SwitchList["+ i +"].FunctionId");
+				_switch.SwitchId = context.StringValue("PlayerAuth.SwitchList["+ i +"].SwitchId");
+				_switch.FunctionName = context.StringValue("PlayerAuth.SwitchList["+ i +"].FunctionName");
 
-				switchList.Add(switch_);
+				playerAuthResponse_switchList.Add(_switch);
 			}
-			playerAuthResponse.SwitchList = switchList;
+			playerAuthResponse.SwitchList = playerAuthResponse_switchList;
         
 			return playerAuthResponse;
         }

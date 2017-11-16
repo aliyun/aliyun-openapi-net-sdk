@@ -33,47 +33,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
-
-		private string name;
-
-		private string speed;
-
-		private string notifyConfig;
 
 		private string role;
 
+		private string resourceOwnerAccount;
+
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string name;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string action;
+
+		private string notifyConfig;
+
+		private long? ownerId;
+
+		private long? speedLevel;
+
+		private string speed;
+
+		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -85,45 +65,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Speed
-		{
-			get
-			{
-				return speed;
-			}
-			set	
-			{
-				speed = value;
-				DictionaryUtil.Add(QueryParameters, "Speed", value);
-			}
-		}
-
-		public string NotifyConfig
-		{
-			get
-			{
-				return notifyConfig;
-			}
-			set	
-			{
-				notifyConfig = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyConfig", value);
 			}
 		}
 
@@ -140,6 +81,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -150,6 +104,97 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string NotifyConfig
+		{
+			get
+			{
+				return notifyConfig;
+			}
+			set	
+			{
+				notifyConfig = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyConfig", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public long? SpeedLevel
+		{
+			get
+			{
+				return speedLevel;
+			}
+			set	
+			{
+				speedLevel = value;
+				DictionaryUtil.Add(QueryParameters, "SpeedLevel", value.ToString());
+			}
+		}
+
+		public string Speed
+		{
+			get
+			{
+				return speed;
+			}
+			set	
+			{
+				speed = value;
+				DictionaryUtil.Add(QueryParameters, "Speed", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

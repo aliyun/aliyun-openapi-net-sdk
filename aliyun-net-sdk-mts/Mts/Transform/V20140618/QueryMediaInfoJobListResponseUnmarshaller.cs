@@ -32,15 +32,15 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			queryMediaInfoJobListResponse.HttpResponse = context.HttpResponse;
 			queryMediaInfoJobListResponse.RequestId = context.StringValue("QueryMediaInfoJobList.RequestId");
 
-			List<string> nonExistMediaInfoJobIds = new List<string>();
+			List<string> queryMediaInfoJobListResponse_nonExistMediaInfoJobIds = new List<string>();
 			for (int i = 0; i < context.Length("QueryMediaInfoJobList.NonExistMediaInfoJobIds.Length"); i++) {
-				nonExistMediaInfoJobIds.Add(context.StringValue("QueryMediaInfoJobList.NonExistMediaInfoJobIds["+ i +"]"));
+				queryMediaInfoJobListResponse_nonExistMediaInfoJobIds.Add(context.StringValue("QueryMediaInfoJobList.NonExistMediaInfoJobIds["+ i +"]"));
 			}
-			queryMediaInfoJobListResponse.NonExistMediaInfoJobIds = nonExistMediaInfoJobIds;
+			queryMediaInfoJobListResponse.NonExistMediaInfoJobIds = queryMediaInfoJobListResponse_nonExistMediaInfoJobIds;
 
-			List<QueryMediaInfoJobListResponse.MediaInfoJob> mediaInfoJobList = new List<QueryMediaInfoJobListResponse.MediaInfoJob>();
+			List<QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob> queryMediaInfoJobListResponse_mediaInfoJobList = new List<QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob>();
 			for (int i = 0; i < context.Length("QueryMediaInfoJobList.MediaInfoJobList.Length"); i++) {
-				QueryMediaInfoJobListResponse.MediaInfoJob mediaInfoJob = new QueryMediaInfoJobListResponse.MediaInfoJob();
+				QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob mediaInfoJob = new QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob();
 				mediaInfoJob.JobId = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].JobId");
 				mediaInfoJob.UserData = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].UserData");
 				mediaInfoJob.PipelineId = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].PipelineId");
@@ -49,13 +49,13 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				mediaInfoJob.Message = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Message");
 				mediaInfoJob.CreationTime = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].CreationTime");
 
-				QueryMediaInfoJobListResponse.MediaInfoJob.Input_ input = new QueryMediaInfoJobListResponse.MediaInfoJob.Input_();
+				QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Input input = new QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Input();
 				input.Bucket = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Input.Bucket");
 				input.Location = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Input.Location");
-				input.Object = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Input.Object");
+				input._Object = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Input.Object");
 				mediaInfoJob.Input = input;
 
-				QueryMediaInfoJobListResponse.MediaInfoJob.Properties_ properties = new QueryMediaInfoJobListResponse.MediaInfoJob.Properties_();
+				QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties properties = new QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties();
 				properties.Width = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Width");
 				properties.Height = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Height");
 				properties.Bitrate = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Bitrate");
@@ -64,11 +64,11 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				properties.FileSize = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.FileSize");
 				properties.FileFormat = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.FileFormat");
 
-				QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_ streams = new QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_();
+				QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams streams = new QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams();
 
-				List<QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.VideoStream> videoStreamList = new List<QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.VideoStream>();
+				List<QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_VideoStream> streams_videoStreamList = new List<QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_VideoStream>();
 				for (int j = 0; j < context.Length("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList.Length"); j++) {
-					QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.VideoStream videoStream = new QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.VideoStream();
+					QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_VideoStream videoStream = new QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_VideoStream();
 					videoStream.Index = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Index");
 					videoStream.CodecName = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].CodecName");
 					videoStream.CodecLongName = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].CodecLongName");
@@ -93,19 +93,19 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					videoStream.Lang = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Lang");
 					videoStream.Rotate = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].Rotate");
 
-					QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.VideoStream.NetworkCost_ networkCost = new QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.VideoStream.NetworkCost_();
+					QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_VideoStream.QueryMediaInfoJobList_NetworkCost networkCost = new QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_VideoStream.QueryMediaInfoJobList_NetworkCost();
 					networkCost.PreloadTime = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.PreloadTime");
 					networkCost.CostBandwidth = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.CostBandwidth");
 					networkCost.AvgBitrate = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.VideoStreamList["+ j +"].NetworkCost.AvgBitrate");
 					videoStream.NetworkCost = networkCost;
 
-					videoStreamList.Add(videoStream);
+					streams_videoStreamList.Add(videoStream);
 				}
-				streams.VideoStreamList = videoStreamList;
+				streams.VideoStreamList = streams_videoStreamList;
 
-				List<QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.AudioStream> audioStreamList = new List<QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.AudioStream>();
+				List<QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_AudioStream> streams_audioStreamList = new List<QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_AudioStream>();
 				for (int j = 0; j < context.Length("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList.Length"); j++) {
-					QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.AudioStream audioStream = new QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.AudioStream();
+					QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_AudioStream audioStream = new QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_AudioStream();
 					audioStream.Index = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Index");
 					audioStream.CodecName = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecName");
 					audioStream.CodecTimeBase = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].CodecTimeBase");
@@ -123,22 +123,22 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					audioStream.NumFrames = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].NumFrames");
 					audioStream.Lang = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.AudioStreamList["+ j +"].Lang");
 
-					audioStreamList.Add(audioStream);
+					streams_audioStreamList.Add(audioStream);
 				}
-				streams.AudioStreamList = audioStreamList;
+				streams.AudioStreamList = streams_audioStreamList;
 
-				List<QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.SubtitleStream> subtitleStreamList = new List<QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.SubtitleStream>();
+				List<QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_SubtitleStream> streams_subtitleStreamList = new List<QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_SubtitleStream>();
 				for (int j = 0; j < context.Length("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList.Length"); j++) {
-					QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.SubtitleStream subtitleStream = new QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Streams_.SubtitleStream();
+					QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_SubtitleStream subtitleStream = new QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Streams.QueryMediaInfoJobList_SubtitleStream();
 					subtitleStream.Index = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].Index");
 					subtitleStream.Lang = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Streams.SubtitleStreamList["+ j +"].Lang");
 
-					subtitleStreamList.Add(subtitleStream);
+					streams_subtitleStreamList.Add(subtitleStream);
 				}
-				streams.SubtitleStreamList = subtitleStreamList;
+				streams.SubtitleStreamList = streams_subtitleStreamList;
 				properties.Streams = streams;
 
-				QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Format_ format = new QueryMediaInfoJobListResponse.MediaInfoJob.Properties_.Format_();
+				QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Format format = new QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_Properties.QueryMediaInfoJobList_Format();
 				format.NumStreams = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Format.NumStreams");
 				format.NumPrograms = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Format.NumPrograms");
 				format.FormatName = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].Properties.Format.FormatName");
@@ -150,15 +150,15 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				properties.Format = format;
 				mediaInfoJob.Properties = properties;
 
-				QueryMediaInfoJobListResponse.MediaInfoJob.MNSMessageResult_ mNSMessageResult = new QueryMediaInfoJobListResponse.MediaInfoJob.MNSMessageResult_();
+				QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_MNSMessageResult mNSMessageResult = new QueryMediaInfoJobListResponse.QueryMediaInfoJobList_MediaInfoJob.QueryMediaInfoJobList_MNSMessageResult();
 				mNSMessageResult.MessageId = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].MNSMessageResult.MessageId");
 				mNSMessageResult.ErrorMessage = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].MNSMessageResult.ErrorMessage");
 				mNSMessageResult.ErrorCode = context.StringValue("QueryMediaInfoJobList.MediaInfoJobList["+ i +"].MNSMessageResult.ErrorCode");
 				mediaInfoJob.MNSMessageResult = mNSMessageResult;
 
-				mediaInfoJobList.Add(mediaInfoJob);
+				queryMediaInfoJobListResponse_mediaInfoJobList.Add(mediaInfoJob);
 			}
-			queryMediaInfoJobListResponse.MediaInfoJobList = mediaInfoJobList;
+			queryMediaInfoJobListResponse.MediaInfoJobList = queryMediaInfoJobListResponse_mediaInfoJobList;
         
 			return queryMediaInfoJobListResponse;
         }

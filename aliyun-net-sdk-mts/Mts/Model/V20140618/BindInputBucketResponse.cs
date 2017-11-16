@@ -23,5 +23,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 {
 	public class BindInputBucketResponse : AcsResponse
 	{
+
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 	}
 }

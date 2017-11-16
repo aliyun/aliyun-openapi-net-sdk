@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			addWaterMarkTemplateResponse.HttpResponse = context.HttpResponse;
 			addWaterMarkTemplateResponse.RequestId = context.StringValue("AddWaterMarkTemplate.RequestId");
 
-			AddWaterMarkTemplateResponse.WaterMarkTemplate_ waterMarkTemplate = new AddWaterMarkTemplateResponse.WaterMarkTemplate_();
+			AddWaterMarkTemplateResponse.AddWaterMarkTemplate_WaterMarkTemplate waterMarkTemplate = new AddWaterMarkTemplateResponse.AddWaterMarkTemplate_WaterMarkTemplate();
 			waterMarkTemplate.Id = context.StringValue("AddWaterMarkTemplate.WaterMarkTemplate.Id");
 			waterMarkTemplate.Name = context.StringValue("AddWaterMarkTemplate.WaterMarkTemplate.Name");
 			waterMarkTemplate.Width = context.StringValue("AddWaterMarkTemplate.WaterMarkTemplate.Width");
@@ -43,12 +43,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			waterMarkTemplate.Type = context.StringValue("AddWaterMarkTemplate.WaterMarkTemplate.Type");
 			waterMarkTemplate.State = context.StringValue("AddWaterMarkTemplate.WaterMarkTemplate.State");
 
-			AddWaterMarkTemplateResponse.WaterMarkTemplate_.Timeline_ timeline = new AddWaterMarkTemplateResponse.WaterMarkTemplate_.Timeline_();
+			AddWaterMarkTemplateResponse.AddWaterMarkTemplate_WaterMarkTemplate.AddWaterMarkTemplate_Timeline timeline = new AddWaterMarkTemplateResponse.AddWaterMarkTemplate_WaterMarkTemplate.AddWaterMarkTemplate_Timeline();
 			timeline.Start = context.StringValue("AddWaterMarkTemplate.WaterMarkTemplate.Timeline.Start");
 			timeline.Duration = context.StringValue("AddWaterMarkTemplate.WaterMarkTemplate.Timeline.Duration");
 			waterMarkTemplate.Timeline = timeline;
 
-			AddWaterMarkTemplateResponse.WaterMarkTemplate_.RatioRefer_ ratioRefer = new AddWaterMarkTemplateResponse.WaterMarkTemplate_.RatioRefer_();
+			AddWaterMarkTemplateResponse.AddWaterMarkTemplate_WaterMarkTemplate.AddWaterMarkTemplate_RatioRefer ratioRefer = new AddWaterMarkTemplateResponse.AddWaterMarkTemplate_WaterMarkTemplate.AddWaterMarkTemplate_RatioRefer();
 			ratioRefer.Dx = context.StringValue("AddWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Dx");
 			ratioRefer.Dy = context.StringValue("AddWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Dy");
 			ratioRefer.Width = context.StringValue("AddWaterMarkTemplate.WaterMarkTemplate.RatioRefer.Width");

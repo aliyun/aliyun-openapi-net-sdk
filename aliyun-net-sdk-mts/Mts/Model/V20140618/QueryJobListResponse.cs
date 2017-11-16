@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class QueryJobListResponse : AcsResponse
 	{
 
-		private List<Job> jobList;
+		private string requestId;
+
+		private List<QueryJobList_Job> jobList;
 
 		private List<string> nonExistJobIds;
 
-		public List<Job> JobList
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<QueryJobList_Job> JobList
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class Job{
+		public class QueryJobList_Job
+		{
 
 			private string jobId;
 
@@ -68,11 +83,13 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string creationTime;
 
-			private Input_ input;
+			private string finishTime;
 
-			private Output_ output;
+			private QueryJobList_Input input;
 
-			private MNSMessageResult_ mNSMessageResult;
+			private QueryJobList_Output output;
+
+			private QueryJobList_MNSMessageResult mNSMessageResult;
 
 			public string JobId
 			{
@@ -158,7 +175,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Input_ Input
+			public string FinishTime
+			{
+				get
+				{
+					return finishTime;
+				}
+				set	
+				{
+					finishTime = value;
+				}
+			}
+
+			public QueryJobList_Input Input
 			{
 				get
 				{
@@ -170,7 +199,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Output_ Output
+			public QueryJobList_Output Output
 			{
 				get
 				{
@@ -182,7 +211,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public MNSMessageResult_ MNSMessageResult
+			public QueryJobList_MNSMessageResult MNSMessageResult
 			{
 				get
 				{
@@ -194,13 +223,14 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Input_{
+			public class QueryJobList_Input
+			{
 
 				private string bucket;
 
 				private string location;
 
-				private string object_;
+				private string _object;
 
 				public string Bucket
 				{
@@ -226,20 +256,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Object
+				public string _Object
 				{
 					get
 					{
-						return object_;
+						return _object;
 					}
 					set	
 					{
-						object_ = value;
+						_object = value;
 					}
 				}
 			}
 
-			public class Output_{
+			public class QueryJobList_Output
+			{
 
 				private string templateId;
 
@@ -255,29 +286,41 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string priority;
 
-				private List<WaterMark> waterMarkList;
+				private string waterMarkConfigUrl;
 
-				private List<Merge> mergeList;
+				private string mergeConfigUrl;
 
-				private OutputFile_ outputFile;
+				private List<QueryJobList_WaterMark> waterMarkList;
 
-				private Properties_ properties;
+				private List<QueryJobList_Merge> mergeList;
 
-				private Clip_ clip;
+				private List<QueryJobList_Opening> openingList;
 
-				private SuperReso_ superReso;
+				private List<QueryJobList_TailSlate> tailSlateList;
 
-				private SubtitleConfig_ subtitleConfig;
+				private QueryJobList_OutputFile outputFile;
 
-				private TransConfig_ transConfig;
+				private QueryJobList_M3U8NonStandardSupport m3U8NonStandardSupport;
 
-				private MuxConfig_ muxConfig;
+				private QueryJobList_Properties properties;
 
-				private Audio_ audio;
+				private QueryJobList_Clip clip;
 
-				private Video_ video;
+				private QueryJobList_SuperReso superReso;
 
-				private Container_ container;
+				private QueryJobList_SubtitleConfig subtitleConfig;
+
+				private QueryJobList_TransConfig transConfig;
+
+				private QueryJobList_MuxConfig muxConfig;
+
+				private QueryJobList_Audio audio;
+
+				private QueryJobList_Video video;
+
+				private QueryJobList_Container container;
+
+				private QueryJobList_Encryption encryption;
 
 				public string TemplateId
 				{
@@ -363,7 +406,31 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public List<WaterMark> WaterMarkList
+				public string WaterMarkConfigUrl
+				{
+					get
+					{
+						return waterMarkConfigUrl;
+					}
+					set	
+					{
+						waterMarkConfigUrl = value;
+					}
+				}
+
+				public string MergeConfigUrl
+				{
+					get
+					{
+						return mergeConfigUrl;
+					}
+					set	
+					{
+						mergeConfigUrl = value;
+					}
+				}
+
+				public List<QueryJobList_WaterMark> WaterMarkList
 				{
 					get
 					{
@@ -375,7 +442,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public List<Merge> MergeList
+				public List<QueryJobList_Merge> MergeList
 				{
 					get
 					{
@@ -387,7 +454,31 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public OutputFile_ OutputFile
+				public List<QueryJobList_Opening> OpeningList
+				{
+					get
+					{
+						return openingList;
+					}
+					set	
+					{
+						openingList = value;
+					}
+				}
+
+				public List<QueryJobList_TailSlate> TailSlateList
+				{
+					get
+					{
+						return tailSlateList;
+					}
+					set	
+					{
+						tailSlateList = value;
+					}
+				}
+
+				public QueryJobList_OutputFile OutputFile
 				{
 					get
 					{
@@ -399,7 +490,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Properties_ Properties
+				public QueryJobList_M3U8NonStandardSupport M3U8NonStandardSupport
+				{
+					get
+					{
+						return m3U8NonStandardSupport;
+					}
+					set	
+					{
+						m3U8NonStandardSupport = value;
+					}
+				}
+
+				public QueryJobList_Properties Properties
 				{
 					get
 					{
@@ -411,7 +514,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Clip_ Clip
+				public QueryJobList_Clip Clip
 				{
 					get
 					{
@@ -423,7 +526,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public SuperReso_ SuperReso
+				public QueryJobList_SuperReso SuperReso
 				{
 					get
 					{
@@ -435,7 +538,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public SubtitleConfig_ SubtitleConfig
+				public QueryJobList_SubtitleConfig SubtitleConfig
 				{
 					get
 					{
@@ -447,7 +550,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public TransConfig_ TransConfig
+				public QueryJobList_TransConfig TransConfig
 				{
 					get
 					{
@@ -459,7 +562,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public MuxConfig_ MuxConfig
+				public QueryJobList_MuxConfig MuxConfig
 				{
 					get
 					{
@@ -471,7 +574,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Audio_ Audio
+				public QueryJobList_Audio Audio
 				{
 					get
 					{
@@ -483,7 +586,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Video_ Video
+				public QueryJobList_Video Video
 				{
 					get
 					{
@@ -495,7 +598,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Container_ Container
+				public QueryJobList_Container Container
 				{
 					get
 					{
@@ -507,7 +610,20 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class WaterMark{
+				public QueryJobList_Encryption Encryption
+				{
+					get
+					{
+						return encryption;
+					}
+					set	
+					{
+						encryption = value;
+					}
+				}
+
+				public class QueryJobList_WaterMark
+				{
 
 					private string waterMarkTemplateId;
 
@@ -523,7 +639,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private string type;
 
-					private InputFile_ inputFile;
+					private QueryJobList_InputFile inputFile;
 
 					public string WaterMarkTemplateId
 					{
@@ -609,7 +725,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public InputFile_ InputFile
+					public QueryJobList_InputFile InputFile
 					{
 						get
 						{
@@ -621,13 +737,14 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class InputFile_{
+					public class QueryJobList_InputFile
+					{
 
 						private string bucket;
 
 						private string location;
 
-						private string object_;
+						private string _object;
 
 						public string Bucket
 						{
@@ -653,27 +770,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public string Object
+						public string _Object
 						{
 							get
 							{
-								return object_;
+								return _object;
 							}
 							set	
 							{
-								object_ = value;
+								_object = value;
 							}
 						}
 					}
 				}
 
-				public class Merge{
+				public class QueryJobList_Merge
+				{
 
 					private string mergeURL;
 
 					private string start;
 
 					private string duration;
+
+					private string roleArn;
 
 					public string MergeURL
 					{
@@ -710,15 +830,192 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							duration = value;
 						}
 					}
+
+					public string RoleArn
+					{
+						get
+						{
+							return roleArn;
+						}
+						set	
+						{
+							roleArn = value;
+						}
+					}
 				}
 
-				public class OutputFile_{
+				public class QueryJobList_Opening
+				{
+
+					private string openUrl;
+
+					private string start;
+
+					private string width;
+
+					private string height;
+
+					public string OpenUrl
+					{
+						get
+						{
+							return openUrl;
+						}
+						set	
+						{
+							openUrl = value;
+						}
+					}
+
+					public string Start
+					{
+						get
+						{
+							return start;
+						}
+						set	
+						{
+							start = value;
+						}
+					}
+
+					public string Width
+					{
+						get
+						{
+							return width;
+						}
+						set	
+						{
+							width = value;
+						}
+					}
+
+					public string Height
+					{
+						get
+						{
+							return height;
+						}
+						set	
+						{
+							height = value;
+						}
+					}
+				}
+
+				public class QueryJobList_TailSlate
+				{
+
+					private string tailUrl;
+
+					private string start;
+
+					private string blendDuration;
+
+					private string width;
+
+					private string height;
+
+					private bool? isMergeAudio;
+
+					private string bgColor;
+
+					public string TailUrl
+					{
+						get
+						{
+							return tailUrl;
+						}
+						set	
+						{
+							tailUrl = value;
+						}
+					}
+
+					public string Start
+					{
+						get
+						{
+							return start;
+						}
+						set	
+						{
+							start = value;
+						}
+					}
+
+					public string BlendDuration
+					{
+						get
+						{
+							return blendDuration;
+						}
+						set	
+						{
+							blendDuration = value;
+						}
+					}
+
+					public string Width
+					{
+						get
+						{
+							return width;
+						}
+						set	
+						{
+							width = value;
+						}
+					}
+
+					public string Height
+					{
+						get
+						{
+							return height;
+						}
+						set	
+						{
+							height = value;
+						}
+					}
+
+					public bool? IsMergeAudio
+					{
+						get
+						{
+							return isMergeAudio;
+						}
+						set	
+						{
+							isMergeAudio = value;
+						}
+					}
+
+					public string BgColor
+					{
+						get
+						{
+							return bgColor;
+						}
+						set	
+						{
+							bgColor = value;
+						}
+					}
+				}
+
+				public class QueryJobList_OutputFile
+				{
 
 					private string bucket;
 
 					private string location;
 
-					private string object_;
+					private string _object;
+
+					private string roleArn;
 
 					public string Bucket
 					{
@@ -744,20 +1041,83 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string Object
+					public string _Object
 					{
 						get
 						{
-							return object_;
+							return _object;
 						}
 						set	
 						{
-							object_ = value;
+							_object = value;
+						}
+					}
+
+					public string RoleArn
+					{
+						get
+						{
+							return roleArn;
+						}
+						set	
+						{
+							roleArn = value;
 						}
 					}
 				}
 
-				public class Properties_{
+				public class QueryJobList_M3U8NonStandardSupport
+				{
+
+					private QueryJobList_TS tS;
+
+					public QueryJobList_TS TS
+					{
+						get
+						{
+							return tS;
+						}
+						set	
+						{
+							tS = value;
+						}
+					}
+
+					public class QueryJobList_TS
+					{
+
+						private bool? md5Support;
+
+						private bool? sizeSupport;
+
+						public bool? Md5Support
+						{
+							get
+							{
+								return md5Support;
+							}
+							set	
+							{
+								md5Support = value;
+							}
+						}
+
+						public bool? SizeSupport
+						{
+							get
+							{
+								return sizeSupport;
+							}
+							set	
+							{
+								sizeSupport = value;
+							}
+						}
+					}
+				}
+
+				public class QueryJobList_Properties
+				{
 
 					private string width;
 
@@ -773,9 +1133,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private string fileFormat;
 
-					private Streams_ streams;
+					private List<QueryJobList_SourceLogo> sourceLogos;
 
-					private Format_ format;
+					private QueryJobList_Streams streams;
+
+					private QueryJobList_Format format;
 
 					public string Width
 					{
@@ -861,7 +1223,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public Streams_ Streams
+					public List<QueryJobList_SourceLogo> SourceLogos
+					{
+						get
+						{
+							return sourceLogos;
+						}
+						set	
+						{
+							sourceLogos = value;
+						}
+					}
+
+					public QueryJobList_Streams Streams
 					{
 						get
 						{
@@ -873,7 +1247,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public Format_ Format
+					public QueryJobList_Format Format
 					{
 						get
 						{
@@ -885,15 +1259,34 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class Streams_{
+					public class QueryJobList_SourceLogo
+					{
 
-						private List<VideoStream> videoStreamList;
+						private string source;
 
-						private List<AudioStream> audioStreamList;
+						public string Source
+						{
+							get
+							{
+								return source;
+							}
+							set	
+							{
+								source = value;
+							}
+						}
+					}
 
-						private List<SubtitleStream> subtitleStreamList;
+					public class QueryJobList_Streams
+					{
 
-						public List<VideoStream> VideoStreamList
+						private List<QueryJobList_VideoStream> videoStreamList;
+
+						private List<QueryJobList_AudioStream> audioStreamList;
+
+						private List<QueryJobList_SubtitleStream> subtitleStreamList;
+
+						public List<QueryJobList_VideoStream> VideoStreamList
 						{
 							get
 							{
@@ -905,7 +1298,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public List<AudioStream> AudioStreamList
+						public List<QueryJobList_AudioStream> AudioStreamList
 						{
 							get
 							{
@@ -917,7 +1310,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public List<SubtitleStream> SubtitleStreamList
+						public List<QueryJobList_SubtitleStream> SubtitleStreamList
 						{
 							get
 							{
@@ -929,7 +1322,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public class VideoStream{
+						public class QueryJobList_VideoStream
+						{
 
 							private string index;
 
@@ -975,7 +1369,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 							private string lang;
 
-							private NetworkCost_ networkCost;
+							private QueryJobList_NetworkCost networkCost;
 
 							public string Index
 							{
@@ -1241,7 +1635,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								}
 							}
 
-							public NetworkCost_ NetworkCost
+							public QueryJobList_NetworkCost NetworkCost
 							{
 								get
 								{
@@ -1253,7 +1647,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								}
 							}
 
-							public class NetworkCost_{
+							public class QueryJobList_NetworkCost
+							{
 
 								private string preloadTime;
 
@@ -1299,7 +1694,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public class AudioStream{
+						public class QueryJobList_AudioStream
+						{
 
 							private string index;
 
@@ -1526,7 +1922,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public class SubtitleStream{
+						public class QueryJobList_SubtitleStream
+						{
 
 							private string index;
 
@@ -1558,7 +1955,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class Format_{
+					public class QueryJobList_Format
+					{
 
 						private string numStreams;
 
@@ -1674,11 +2072,12 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Clip_{
+				public class QueryJobList_Clip
+				{
 
-					private TimeSpan_ timeSpan;
+					private QueryJobList_TimeSpan timeSpan;
 
-					public TimeSpan_ TimeSpan
+					public QueryJobList_TimeSpan TimeSpan
 					{
 						get
 						{
@@ -1690,7 +2089,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class TimeSpan_{
+					public class QueryJobList_TimeSpan
+					{
 
 						private string seek;
 
@@ -1722,7 +2122,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class SuperReso_{
+				public class QueryJobList_SuperReso
+				{
 
 					private string isHalfSample;
 
@@ -1739,13 +2140,14 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class SubtitleConfig_{
+				public class QueryJobList_SubtitleConfig
+				{
 
-					private List<Subtitle> subtitleList;
+					private List<QueryJobList_Subtitle> subtitleList;
 
-					private List<ExtSubtitle> extSubtitleList;
+					private List<QueryJobList_ExtSubtitle> extSubtitleList;
 
-					public List<Subtitle> SubtitleList
+					public List<QueryJobList_Subtitle> SubtitleList
 					{
 						get
 						{
@@ -1757,7 +2159,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public List<ExtSubtitle> ExtSubtitleList
+					public List<QueryJobList_ExtSubtitle> ExtSubtitleList
 					{
 						get
 						{
@@ -1769,7 +2171,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class Subtitle{
+					public class QueryJobList_Subtitle
+					{
 
 						private string map;
 
@@ -1786,29 +2189,59 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class ExtSubtitle{
+					public class QueryJobList_ExtSubtitle
+					{
 
-						private Input_ input;
+						private string fontName;
 
-						public Input_ Input
+						private string charEnc;
+
+						private QueryJobList_Input1 input1;
+
+						public string FontName
 						{
 							get
 							{
-								return input;
+								return fontName;
 							}
 							set	
 							{
-								input = value;
+								fontName = value;
 							}
 						}
 
-						public class Input_{
+						public string CharEnc
+						{
+							get
+							{
+								return charEnc;
+							}
+							set	
+							{
+								charEnc = value;
+							}
+						}
+
+						public QueryJobList_Input1 Input1
+						{
+							get
+							{
+								return input1;
+							}
+							set	
+							{
+								input1 = value;
+							}
+						}
+
+						public class QueryJobList_Input1
+						{
 
 							private string bucket;
 
 							private string location;
 
-							private string object_;
+							private string _object;
 
 							public string Bucket
 							{
@@ -1834,22 +2267,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								}
 							}
 
-							public string Object
+							public string _Object
 							{
 								get
 								{
-									return object_;
+									return _object;
 								}
 								set	
 								{
-									object_ = value;
+									_object = value;
 								}
 							}
 						}
 					}
 				}
 
-				public class TransConfig_{
+				public class QueryJobList_TransConfig
+				{
 
 					private string transMode;
 
@@ -1862,6 +2296,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					private string isCheckAudioBitrate;
 
 					private string adjDarMethod;
+
+					private string isCheckVideoBitrateFail;
+
+					private string isCheckAudioBitrateFail;
 
 					public string TransMode
 					{
@@ -1934,15 +2372,40 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							adjDarMethod = value;
 						}
 					}
+
+					public string IsCheckVideoBitrateFail
+					{
+						get
+						{
+							return isCheckVideoBitrateFail;
+						}
+						set	
+						{
+							isCheckVideoBitrateFail = value;
+						}
+					}
+
+					public string IsCheckAudioBitrateFail
+					{
+						get
+						{
+							return isCheckAudioBitrateFail;
+						}
+						set	
+						{
+							isCheckAudioBitrateFail = value;
+						}
+					}
 				}
 
-				public class MuxConfig_{
+				public class QueryJobList_MuxConfig
+				{
 
-					private Segment_ segment;
+					private QueryJobList_Segment segment;
 
-					private Gif_ gif;
+					private QueryJobList_Gif gif;
 
-					public Segment_ Segment
+					public QueryJobList_Segment Segment
 					{
 						get
 						{
@@ -1954,7 +2417,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public Gif_ Gif
+					public QueryJobList_Gif Gif
 					{
 						get
 						{
@@ -1966,7 +2429,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class Segment_{
+					public class QueryJobList_Segment
+					{
 
 						private string duration;
 
@@ -1983,7 +2447,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class Gif_{
+					public class QueryJobList_Gif
+					{
 
 						private string loop;
 
@@ -2043,7 +2508,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Audio_{
+				public class QueryJobList_Audio
+				{
 
 					private string codec;
 
@@ -2056,6 +2522,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					private string channels;
 
 					private string qscale;
+
+					private QueryJobList_Volume volume;
 
 					public string Codec
 					{
@@ -2128,9 +2596,54 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							qscale = value;
 						}
 					}
+
+					public QueryJobList_Volume Volume
+					{
+						get
+						{
+							return volume;
+						}
+						set	
+						{
+							volume = value;
+						}
+					}
+
+					public class QueryJobList_Volume
+					{
+
+						private string level;
+
+						private string method;
+
+						public string Level
+						{
+							get
+							{
+								return level;
+							}
+							set	
+							{
+								level = value;
+							}
+						}
+
+						public string Method
+						{
+							get
+							{
+								return method;
+							}
+							set	
+							{
+								method = value;
+							}
+						}
+					}
 				}
 
-				public class Video_{
+				public class QueryJobList_Video
+				{
 
 					private string codec;
 
@@ -2168,7 +2681,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private string maxFps;
 
-					private BitrateBnd_ bitrateBnd;
+					private QueryJobList_BitrateBnd bitrateBnd;
 
 					public string Codec
 					{
@@ -2386,7 +2899,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public BitrateBnd_ BitrateBnd
+					public QueryJobList_BitrateBnd BitrateBnd
 					{
 						get
 						{
@@ -2398,7 +2911,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class BitrateBnd_{
+					public class QueryJobList_BitrateBnd
+					{
 
 						private string max;
 
@@ -2430,7 +2944,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Container_{
+				public class QueryJobList_Container
+				{
 
 					private string format;
 
@@ -2446,9 +2961,98 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 				}
+
+				public class QueryJobList_Encryption
+				{
+
+					private string type;
+
+					private string id;
+
+					private string key;
+
+					private string keyUri;
+
+					private string keyType;
+
+					private string skipCnt;
+
+					public string Type
+					{
+						get
+						{
+							return type;
+						}
+						set	
+						{
+							type = value;
+						}
+					}
+
+					public string Id
+					{
+						get
+						{
+							return id;
+						}
+						set	
+						{
+							id = value;
+						}
+					}
+
+					public string Key
+					{
+						get
+						{
+							return key;
+						}
+						set	
+						{
+							key = value;
+						}
+					}
+
+					public string KeyUri
+					{
+						get
+						{
+							return keyUri;
+						}
+						set	
+						{
+							keyUri = value;
+						}
+					}
+
+					public string KeyType
+					{
+						get
+						{
+							return keyType;
+						}
+						set	
+						{
+							keyType = value;
+						}
+					}
+
+					public string SkipCnt
+					{
+						get
+						{
+							return skipCnt;
+						}
+						set	
+						{
+							skipCnt = value;
+						}
+					}
+				}
 			}
 
-			public class MNSMessageResult_{
+			public class QueryJobList_MNSMessageResult
+			{
 
 				private string messageId;
 

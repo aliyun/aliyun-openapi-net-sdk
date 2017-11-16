@@ -24,7 +24,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class CancelJobResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string jobId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string JobId
 		{

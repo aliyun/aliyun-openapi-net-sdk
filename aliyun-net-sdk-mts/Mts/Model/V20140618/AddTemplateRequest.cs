@@ -33,49 +33,40 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string container;
 
 		private long? resourceOwnerId;
 
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
 		private string name;
 
-		private string container;
-
-		private string video;
-
-		private string audio;
+		private string action;
 
 		private string transConfig;
 
 		private string muxConfig;
 
-		private string ownerAccount;
+		private string video;
 
-		public long? OwnerId
+		private string audio;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public string Container
 		{
 			get
 			{
-				return ownerId;
+				return container;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				container = value;
+				DictionaryUtil.Add(QueryParameters, "Container", value);
 			}
 		}
 
@@ -92,6 +83,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -105,42 +122,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Container
+		public string Action
 		{
 			get
 			{
-				return container;
+				return action;
 			}
 			set	
 			{
-				container = value;
-				DictionaryUtil.Add(QueryParameters, "Container", value);
-			}
-		}
-
-		public string Video
-		{
-			get
-			{
-				return video;
-			}
-			set	
-			{
-				video = value;
-				DictionaryUtil.Add(QueryParameters, "Video", value);
-			}
-		}
-
-		public string Audio
-		{
-			get
-			{
-				return audio;
-			}
-			set	
-			{
-				audio = value;
-				DictionaryUtil.Add(QueryParameters, "Audio", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -170,16 +161,55 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string OwnerAccount
+		public string Video
 		{
 			get
 			{
-				return ownerAccount;
+				return video;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				video = value;
+				DictionaryUtil.Add(QueryParameters, "Video", value);
+			}
+		}
+
+		public string Audio
+		{
+			get
+			{
+				return audio;
+			}
+			set	
+			{
+				audio = value;
+				DictionaryUtil.Add(QueryParameters, "Audio", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

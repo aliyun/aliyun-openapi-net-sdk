@@ -26,46 +26,37 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
-    public class QueryMediaWorkflowListByNameRequest : RpcAcsRequest<QueryMediaWorkflowListByNameResponse>
+    public class UnbindOutputBucketRequest : RpcAcsRequest<UnbindOutputBucketResponse>
     {
-        public QueryMediaWorkflowListByNameRequest()
-            : base("Mts", "2014-06-18", "QueryMediaWorkflowListByName")
+        public UnbindOutputBucketRequest()
+            : base("Mts", "2014-06-18", "UnbindOutputBucket")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string bucket;
 
 		private long? resourceOwnerId;
 
-		private string names;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string action;
 
-		public string ResourceOwnerAccount
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public string Bucket
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return bucket;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				bucket = value;
+				DictionaryUtil.Add(QueryParameters, "Bucket", value);
 			}
 		}
 
@@ -82,16 +73,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Names
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return names;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				names = value;
-				DictionaryUtil.Add(QueryParameters, "Names", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -108,9 +99,48 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-        public override QueryMediaWorkflowListByNameResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override UnbindOutputBucketResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryMediaWorkflowListByNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UnbindOutputBucketResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

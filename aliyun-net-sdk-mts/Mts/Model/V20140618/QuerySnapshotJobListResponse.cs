@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class QuerySnapshotJobListResponse : AcsResponse
 	{
 
-		private List<SnapshotJob> snapshotJobList;
+		private string requestId;
+
+		private List<QuerySnapshotJobList_SnapshotJob> snapshotJobList;
 
 		private List<string> nonExistSnapshotJobIds;
 
-		public List<SnapshotJob> SnapshotJobList
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<QuerySnapshotJobList_SnapshotJob> SnapshotJobList
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class SnapshotJob{
+		public class QuerySnapshotJobList_SnapshotJob
+		{
 
 			private string id;
 
@@ -66,15 +81,17 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string count;
 
+			private string tileCount;
+
 			private string message;
 
 			private string creationTime;
 
-			private Input_ input;
+			private QuerySnapshotJobList_Input input;
 
-			private SnapshotConfig_ snapshotConfig;
+			private QuerySnapshotJobList_SnapshotConfig snapshotConfig;
 
-			private MNSMessageResult_ mNSMessageResult;
+			private QuerySnapshotJobList_MNSMessageResult mNSMessageResult;
 
 			public string Id
 			{
@@ -148,6 +165,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public string TileCount
+			{
+				get
+				{
+					return tileCount;
+				}
+				set	
+				{
+					tileCount = value;
+				}
+			}
+
 			public string Message
 			{
 				get
@@ -172,7 +201,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Input_ Input
+			public QuerySnapshotJobList_Input Input
 			{
 				get
 				{
@@ -184,7 +213,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public SnapshotConfig_ SnapshotConfig
+			public QuerySnapshotJobList_SnapshotConfig SnapshotConfig
 			{
 				get
 				{
@@ -196,7 +225,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public MNSMessageResult_ MNSMessageResult
+			public QuerySnapshotJobList_MNSMessageResult MNSMessageResult
 			{
 				get
 				{
@@ -208,13 +237,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Input_{
+			public class QuerySnapshotJobList_Input
+			{
 
 				private string bucket;
 
 				private string location;
 
-				private string object_;
+				private string _object;
+
+				private string roleArn;
 
 				public string Bucket
 				{
@@ -240,20 +272,33 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Object
+				public string _Object
 				{
 					get
 					{
-						return object_;
+						return _object;
 					}
 					set	
 					{
-						object_ = value;
+						_object = value;
+					}
+				}
+
+				public string RoleArn
+				{
+					get
+					{
+						return roleArn;
+					}
+					set	
+					{
+						roleArn = value;
 					}
 				}
 			}
 
-			public class SnapshotConfig_{
+			public class QuerySnapshotJobList_SnapshotConfig
+			{
 
 				private string time;
 
@@ -267,7 +312,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string frameType;
 
-				private OutputFile_ outputFile;
+				private QuerySnapshotJobList_OutputFile outputFile;
+
+				private QuerySnapshotJobList_TileOutputFile tileOutputFile;
+
+				private QuerySnapshotJobList_TileOut tileOut;
 
 				public string Time
 				{
@@ -341,7 +390,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public OutputFile_ OutputFile
+				public QuerySnapshotJobList_OutputFile OutputFile
 				{
 					get
 					{
@@ -353,13 +402,40 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class OutputFile_{
+				public QuerySnapshotJobList_TileOutputFile TileOutputFile
+				{
+					get
+					{
+						return tileOutputFile;
+					}
+					set	
+					{
+						tileOutputFile = value;
+					}
+				}
+
+				public QuerySnapshotJobList_TileOut TileOut
+				{
+					get
+					{
+						return tileOut;
+					}
+					set	
+					{
+						tileOut = value;
+					}
+				}
+
+				public class QuerySnapshotJobList_OutputFile
+				{
 
 					private string bucket;
 
 					private string location;
 
-					private string object_;
+					private string _object;
+
+					private string roleArn;
 
 					public string Bucket
 					{
@@ -385,21 +461,210 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string Object
+					public string _Object
 					{
 						get
 						{
-							return object_;
+							return _object;
 						}
 						set	
 						{
-							object_ = value;
+							_object = value;
+						}
+					}
+
+					public string RoleArn
+					{
+						get
+						{
+							return roleArn;
+						}
+						set	
+						{
+							roleArn = value;
+						}
+					}
+				}
+
+				public class QuerySnapshotJobList_TileOutputFile
+				{
+
+					private string bucket;
+
+					private string location;
+
+					private string _object;
+
+					private string roleArn;
+
+					public string Bucket
+					{
+						get
+						{
+							return bucket;
+						}
+						set	
+						{
+							bucket = value;
+						}
+					}
+
+					public string Location
+					{
+						get
+						{
+							return location;
+						}
+						set	
+						{
+							location = value;
+						}
+					}
+
+					public string _Object
+					{
+						get
+						{
+							return _object;
+						}
+						set	
+						{
+							_object = value;
+						}
+					}
+
+					public string RoleArn
+					{
+						get
+						{
+							return roleArn;
+						}
+						set	
+						{
+							roleArn = value;
+						}
+					}
+				}
+
+				public class QuerySnapshotJobList_TileOut
+				{
+
+					private string lines;
+
+					private string columns;
+
+					private string cellWidth;
+
+					private string cellHeight;
+
+					private string margin;
+
+					private string padding;
+
+					private string color;
+
+					private string isKeepCellPic;
+
+					public string Lines
+					{
+						get
+						{
+							return lines;
+						}
+						set	
+						{
+							lines = value;
+						}
+					}
+
+					public string Columns
+					{
+						get
+						{
+							return columns;
+						}
+						set	
+						{
+							columns = value;
+						}
+					}
+
+					public string CellWidth
+					{
+						get
+						{
+							return cellWidth;
+						}
+						set	
+						{
+							cellWidth = value;
+						}
+					}
+
+					public string CellHeight
+					{
+						get
+						{
+							return cellHeight;
+						}
+						set	
+						{
+							cellHeight = value;
+						}
+					}
+
+					public string Margin
+					{
+						get
+						{
+							return margin;
+						}
+						set	
+						{
+							margin = value;
+						}
+					}
+
+					public string Padding
+					{
+						get
+						{
+							return padding;
+						}
+						set	
+						{
+							padding = value;
+						}
+					}
+
+					public string Color
+					{
+						get
+						{
+							return color;
+						}
+						set	
+						{
+							color = value;
+						}
+					}
+
+					public string IsKeepCellPic
+					{
+						get
+						{
+							return isKeepCellPic;
+						}
+						set	
+						{
+							isKeepCellPic = value;
 						}
 					}
 				}
 			}
 
-			public class MNSMessageResult_{
+			public class QuerySnapshotJobList_MNSMessageResult
+			{
 
 				private string messageId;
 

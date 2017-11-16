@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class QueryAnalysisJobListResponse : AcsResponse
 	{
 
-		private List<AnalysisJob> analysisJobList;
+		private string requestId;
+
+		private List<QueryAnalysisJobList_AnalysisJob> analysisJobList;
 
 		private List<string> nonExistAnalysisJobIds;
 
-		public List<AnalysisJob> AnalysisJobList
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<QueryAnalysisJobList_AnalysisJob> AnalysisJobList
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class AnalysisJob{
+		public class QueryAnalysisJobList_AnalysisJob
+		{
 
 			private string id;
 
@@ -72,13 +87,13 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string priority;
 
-			private List<Template> templateList;
+			private List<QueryAnalysisJobList_Template> templateList;
 
-			private InputFile_ inputFile;
+			private QueryAnalysisJobList_InputFile inputFile;
 
-			private AnalysisConfig_ analysisConfig;
+			private QueryAnalysisJobList_AnalysisConfig analysisConfig;
 
-			private MNSMessageResult_ mNSMessageResult;
+			private QueryAnalysisJobList_MNSMessageResult mNSMessageResult;
 
 			public string Id
 			{
@@ -188,7 +203,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public List<Template> TemplateList
+			public List<QueryAnalysisJobList_Template> TemplateList
 			{
 				get
 				{
@@ -200,7 +215,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public InputFile_ InputFile
+			public QueryAnalysisJobList_InputFile InputFile
 			{
 				get
 				{
@@ -212,7 +227,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public AnalysisConfig_ AnalysisConfig
+			public QueryAnalysisJobList_AnalysisConfig AnalysisConfig
 			{
 				get
 				{
@@ -224,7 +239,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public MNSMessageResult_ MNSMessageResult
+			public QueryAnalysisJobList_MNSMessageResult MNSMessageResult
 			{
 				get
 				{
@@ -236,7 +251,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Template{
+			public class QueryAnalysisJobList_Template
+			{
 
 				private string id;
 
@@ -244,15 +260,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string state;
 
-				private Container_ container;
+				private QueryAnalysisJobList_Container container;
 
-				private Video_ video;
+				private QueryAnalysisJobList_Video video;
 
-				private Audio_ audio;
+				private QueryAnalysisJobList_Audio audio;
 
-				private TransConfig_ transConfig;
+				private QueryAnalysisJobList_TransConfig transConfig;
 
-				private MuxConfig_ muxConfig;
+				private QueryAnalysisJobList_MuxConfig muxConfig;
 
 				public string Id
 				{
@@ -290,7 +306,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Container_ Container
+				public QueryAnalysisJobList_Container Container
 				{
 					get
 					{
@@ -302,7 +318,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Video_ Video
+				public QueryAnalysisJobList_Video Video
 				{
 					get
 					{
@@ -314,7 +330,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Audio_ Audio
+				public QueryAnalysisJobList_Audio Audio
 				{
 					get
 					{
@@ -326,7 +342,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public TransConfig_ TransConfig
+				public QueryAnalysisJobList_TransConfig TransConfig
 				{
 					get
 					{
@@ -338,7 +354,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public MuxConfig_ MuxConfig
+				public QueryAnalysisJobList_MuxConfig MuxConfig
 				{
 					get
 					{
@@ -350,7 +366,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Container_{
+				public class QueryAnalysisJobList_Container
+				{
 
 					private string format;
 
@@ -367,7 +384,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Video_{
+				public class QueryAnalysisJobList_Video
+				{
 
 					private string codec;
 
@@ -399,7 +417,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private string qscale;
 
-					private BitrateBnd_ bitrateBnd;
+					private QueryAnalysisJobList_BitrateBnd bitrateBnd;
 
 					public string Codec
 					{
@@ -581,7 +599,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public BitrateBnd_ BitrateBnd
+					public QueryAnalysisJobList_BitrateBnd BitrateBnd
 					{
 						get
 						{
@@ -593,7 +611,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class BitrateBnd_{
+					public class QueryAnalysisJobList_BitrateBnd
+					{
 
 						private string max;
 
@@ -625,7 +644,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Audio_{
+				public class QueryAnalysisJobList_Audio
+				{
 
 					private string codec;
 
@@ -712,7 +732,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class TransConfig_{
+				public class QueryAnalysisJobList_TransConfig
+				{
 
 					private string transMode;
 
@@ -729,13 +750,14 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class MuxConfig_{
+				public class QueryAnalysisJobList_MuxConfig
+				{
 
-					private Segment_ segment;
+					private QueryAnalysisJobList_Segment segment;
 
-					private Gif_ gif;
+					private QueryAnalysisJobList_Gif gif;
 
-					public Segment_ Segment
+					public QueryAnalysisJobList_Segment Segment
 					{
 						get
 						{
@@ -747,7 +769,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public Gif_ Gif
+					public QueryAnalysisJobList_Gif Gif
 					{
 						get
 						{
@@ -759,7 +781,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class Segment_{
+					public class QueryAnalysisJobList_Segment
+					{
 
 						private string duration;
 
@@ -776,7 +799,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class Gif_{
+					public class QueryAnalysisJobList_Gif
+					{
 
 						private string loop;
 
@@ -809,13 +833,14 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class InputFile_{
+			public class QueryAnalysisJobList_InputFile
+			{
 
 				private string bucket;
 
 				private string location;
 
-				private string object_;
+				private string _object;
 
 				public string Bucket
 				{
@@ -841,26 +866,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Object
+				public string _Object
 				{
 					get
 					{
-						return object_;
+						return _object;
 					}
 					set	
 					{
-						object_ = value;
+						_object = value;
 					}
 				}
 			}
 
-			public class AnalysisConfig_{
+			public class QueryAnalysisJobList_AnalysisConfig
+			{
 
-				private QualityControl_ qualityControl;
+				private QueryAnalysisJobList_QualityControl qualityControl;
 
-				private PropertiesControl_ propertiesControl;
+				private QueryAnalysisJobList_PropertiesControl propertiesControl;
 
-				public QualityControl_ QualityControl
+				public QueryAnalysisJobList_QualityControl QualityControl
 				{
 					get
 					{
@@ -872,7 +898,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public PropertiesControl_ PropertiesControl
+				public QueryAnalysisJobList_PropertiesControl PropertiesControl
 				{
 					get
 					{
@@ -884,7 +910,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class QualityControl_{
+				public class QueryAnalysisJobList_QualityControl
+				{
 
 					private string rateQuality;
 
@@ -915,11 +942,12 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class PropertiesControl_{
+				public class QueryAnalysisJobList_PropertiesControl
+				{
 
 					private string deinterlace;
 
-					private Crop_ crop;
+					private QueryAnalysisJobList_Crop crop;
 
 					public string Deinterlace
 					{
@@ -933,7 +961,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public Crop_ Crop
+					public QueryAnalysisJobList_Crop Crop
 					{
 						get
 						{
@@ -945,7 +973,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class Crop_{
+					public class QueryAnalysisJobList_Crop
+					{
 
 						private string mode;
 
@@ -1020,7 +1049,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class MNSMessageResult_{
+			public class QueryAnalysisJobList_MNSMessageResult
+			{
 
 				private string messageId;
 

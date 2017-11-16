@@ -32,17 +32,17 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			listAllCategoryResponse.HttpResponse = context.HttpResponse;
 			listAllCategoryResponse.RequestId = context.StringValue("ListAllCategory.RequestId");
 
-			List<ListAllCategoryResponse.Category> categoryList = new List<ListAllCategoryResponse.Category>();
+			List<ListAllCategoryResponse.ListAllCategory_Category> listAllCategoryResponse_categoryList = new List<ListAllCategoryResponse.ListAllCategory_Category>();
 			for (int i = 0; i < context.Length("ListAllCategory.CategoryList.Length"); i++) {
-				ListAllCategoryResponse.Category category = new ListAllCategoryResponse.Category();
+				ListAllCategoryResponse.ListAllCategory_Category category = new ListAllCategoryResponse.ListAllCategory_Category();
 				category.CateId = context.StringValue("ListAllCategory.CategoryList["+ i +"].CateId");
 				category.CateName = context.StringValue("ListAllCategory.CategoryList["+ i +"].CateName");
 				category.ParentId = context.StringValue("ListAllCategory.CategoryList["+ i +"].ParentId");
 				category.Level = context.StringValue("ListAllCategory.CategoryList["+ i +"].Level");
 
-				categoryList.Add(category);
+				listAllCategoryResponse_categoryList.Add(category);
 			}
-			listAllCategoryResponse.CategoryList = categoryList;
+			listAllCategoryResponse.CategoryList = listAllCategoryResponse_categoryList;
         
 			return listAllCategoryResponse;
         }

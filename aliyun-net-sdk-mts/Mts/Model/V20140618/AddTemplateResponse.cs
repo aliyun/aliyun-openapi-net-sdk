@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class AddTemplateResponse : AcsResponse
 	{
 
-		private Template_ template;
+		private string requestId;
 
-		public Template_ Template
+		private AddTemplate_Template template;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public AddTemplate_Template Template
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class Template_{
+		public class AddTemplate_Template
+		{
 
 			private string id;
 
@@ -46,15 +61,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string state;
 
-			private Container_ container;
+			private AddTemplate_Container container;
 
-			private Video_ video;
+			private AddTemplate_Video video;
 
-			private Audio_ audio;
+			private AddTemplate_Audio audio;
 
-			private TransConfig_ transConfig;
+			private AddTemplate_TransConfig transConfig;
 
-			private MuxConfig_ muxConfig;
+			private AddTemplate_MuxConfig muxConfig;
 
 			public string Id
 			{
@@ -92,7 +107,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Container_ Container
+			public AddTemplate_Container Container
 			{
 				get
 				{
@@ -104,7 +119,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Video_ Video
+			public AddTemplate_Video Video
 			{
 				get
 				{
@@ -116,7 +131,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Audio_ Audio
+			public AddTemplate_Audio Audio
 			{
 				get
 				{
@@ -128,7 +143,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public TransConfig_ TransConfig
+			public AddTemplate_TransConfig TransConfig
 			{
 				get
 				{
@@ -140,7 +155,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public MuxConfig_ MuxConfig
+			public AddTemplate_MuxConfig MuxConfig
 			{
 				get
 				{
@@ -152,7 +167,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Container_{
+			public class AddTemplate_Container
+			{
 
 				private string format;
 
@@ -169,7 +185,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Video_{
+			public class AddTemplate_Video
+			{
 
 				private string codec;
 
@@ -201,7 +218,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string qscale;
 
-				private string remove;
+				private string _remove;
 
 				private string crop;
 
@@ -209,7 +226,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string maxFps;
 
-				private BitrateBnd_ bitrateBnd;
+				private AddTemplate_BitrateBnd bitrateBnd;
 
 				public string Codec
 				{
@@ -391,15 +408,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Remove
+				public string _Remove
 				{
 					get
 					{
-						return remove;
+						return _remove;
 					}
 					set	
 					{
-						remove = value;
+						_remove = value;
 					}
 				}
 
@@ -439,7 +456,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public BitrateBnd_ BitrateBnd
+				public AddTemplate_BitrateBnd BitrateBnd
 				{
 					get
 					{
@@ -451,7 +468,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class BitrateBnd_{
+				public class AddTemplate_BitrateBnd
+				{
 
 					private string max;
 
@@ -483,7 +501,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Audio_{
+			public class AddTemplate_Audio
+			{
 
 				private string codec;
 
@@ -497,7 +516,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string qscale;
 
-				private string remove;
+				private string _remove;
+
+				private AddTemplate_Volume volume;
 
 				public string Codec
 				{
@@ -571,20 +592,65 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Remove
+				public string _Remove
 				{
 					get
 					{
-						return remove;
+						return _remove;
 					}
 					set	
 					{
-						remove = value;
+						_remove = value;
+					}
+				}
+
+				public AddTemplate_Volume Volume
+				{
+					get
+					{
+						return volume;
+					}
+					set	
+					{
+						volume = value;
+					}
+				}
+
+				public class AddTemplate_Volume
+				{
+
+					private string level;
+
+					private string method;
+
+					public string Level
+					{
+						get
+						{
+							return level;
+						}
+						set	
+						{
+							level = value;
+						}
+					}
+
+					public string Method
+					{
+						get
+						{
+							return method;
+						}
+						set	
+						{
+							method = value;
+						}
 					}
 				}
 			}
 
-			public class TransConfig_{
+			public class AddTemplate_TransConfig
+			{
 
 				private string transMode;
 
@@ -597,6 +663,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				private string isCheckAudioBitrate;
 
 				private string adjDarMethod;
+
+				private string isCheckVideoBitrateFail;
+
+				private string isCheckAudioBitrateFail;
 
 				public string TransMode
 				{
@@ -669,15 +739,40 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						adjDarMethod = value;
 					}
 				}
+
+				public string IsCheckVideoBitrateFail
+				{
+					get
+					{
+						return isCheckVideoBitrateFail;
+					}
+					set	
+					{
+						isCheckVideoBitrateFail = value;
+					}
+				}
+
+				public string IsCheckAudioBitrateFail
+				{
+					get
+					{
+						return isCheckAudioBitrateFail;
+					}
+					set	
+					{
+						isCheckAudioBitrateFail = value;
+					}
+				}
 			}
 
-			public class MuxConfig_{
+			public class AddTemplate_MuxConfig
+			{
 
-				private Segment_ segment;
+				private AddTemplate_Segment segment;
 
-				private Gif_ gif;
+				private AddTemplate_Gif gif;
 
-				public Segment_ Segment
+				public AddTemplate_Segment Segment
 				{
 					get
 					{
@@ -689,7 +784,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Gif_ Gif
+				public AddTemplate_Gif Gif
 				{
 					get
 					{
@@ -701,7 +796,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Segment_{
+				public class AddTemplate_Segment
+				{
 
 					private string duration;
 
@@ -718,7 +814,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Gif_{
+				public class AddTemplate_Gif
+				{
 
 					private string loop;
 

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class SubmitMediaInfoJobResponse : AcsResponse
 	{
 
-		private MediaInfoJob_ mediaInfoJob;
+		private string requestId;
 
-		public MediaInfoJob_ MediaInfoJob
+		private SubmitMediaInfoJob_MediaInfoJob mediaInfoJob;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public SubmitMediaInfoJob_MediaInfoJob MediaInfoJob
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class MediaInfoJob_{
+		public class SubmitMediaInfoJob_MediaInfoJob
+		{
 
 			private string jobId;
 
@@ -54,11 +69,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string creationTime;
 
-			private Input_ input;
+			private SubmitMediaInfoJob_Input input;
 
-			private Properties_ properties;
+			private SubmitMediaInfoJob_Properties properties;
 
-			private MNSMessageResult_ mNSMessageResult;
+			private SubmitMediaInfoJob_MNSMessageResult mNSMessageResult;
 
 			public string JobId
 			{
@@ -144,7 +159,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Input_ Input
+			public SubmitMediaInfoJob_Input Input
 			{
 				get
 				{
@@ -156,7 +171,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Properties_ Properties
+			public SubmitMediaInfoJob_Properties Properties
 			{
 				get
 				{
@@ -168,7 +183,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public MNSMessageResult_ MNSMessageResult
+			public SubmitMediaInfoJob_MNSMessageResult MNSMessageResult
 			{
 				get
 				{
@@ -180,13 +195,14 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Input_{
+			public class SubmitMediaInfoJob_Input
+			{
 
 				private string bucket;
 
 				private string location;
 
-				private string object_;
+				private string _object;
 
 				public string Bucket
 				{
@@ -212,20 +228,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Object
+				public string _Object
 				{
 					get
 					{
-						return object_;
+						return _object;
 					}
 					set	
 					{
-						object_ = value;
+						_object = value;
 					}
 				}
 			}
 
-			public class Properties_{
+			public class SubmitMediaInfoJob_Properties
+			{
 
 				private string width;
 
@@ -241,9 +258,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string fileFormat;
 
-				private Streams_ streams;
+				private SubmitMediaInfoJob_Streams streams;
 
-				private Format_ format;
+				private SubmitMediaInfoJob_Format format;
 
 				public string Width
 				{
@@ -329,7 +346,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Streams_ Streams
+				public SubmitMediaInfoJob_Streams Streams
 				{
 					get
 					{
@@ -341,7 +358,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Format_ Format
+				public SubmitMediaInfoJob_Format Format
 				{
 					get
 					{
@@ -353,15 +370,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Streams_{
+				public class SubmitMediaInfoJob_Streams
+				{
 
-					private List<VideoStream> videoStreamList;
+					private List<SubmitMediaInfoJob_VideoStream> videoStreamList;
 
-					private List<AudioStream> audioStreamList;
+					private List<SubmitMediaInfoJob_AudioStream> audioStreamList;
 
-					private List<SubtitleStream> subtitleStreamList;
+					private List<SubmitMediaInfoJob_SubtitleStream> subtitleStreamList;
 
-					public List<VideoStream> VideoStreamList
+					public List<SubmitMediaInfoJob_VideoStream> VideoStreamList
 					{
 						get
 						{
@@ -373,7 +391,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public List<AudioStream> AudioStreamList
+					public List<SubmitMediaInfoJob_AudioStream> AudioStreamList
 					{
 						get
 						{
@@ -385,7 +403,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public List<SubtitleStream> SubtitleStreamList
+					public List<SubmitMediaInfoJob_SubtitleStream> SubtitleStreamList
 					{
 						get
 						{
@@ -397,7 +415,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class VideoStream{
+					public class SubmitMediaInfoJob_VideoStream
+					{
 
 						private string index;
 
@@ -445,7 +464,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 						private string rotate;
 
-						private NetworkCost_ networkCost;
+						private SubmitMediaInfoJob_NetworkCost networkCost;
 
 						public string Index
 						{
@@ -723,7 +742,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public NetworkCost_ NetworkCost
+						public SubmitMediaInfoJob_NetworkCost NetworkCost
 						{
 							get
 							{
@@ -735,7 +754,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public class NetworkCost_{
+						public class SubmitMediaInfoJob_NetworkCost
+						{
 
 							private string preloadTime;
 
@@ -781,7 +801,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class AudioStream{
+					public class SubmitMediaInfoJob_AudioStream
+					{
 
 						private string index;
 
@@ -1008,7 +1029,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class SubtitleStream{
+					public class SubmitMediaInfoJob_SubtitleStream
+					{
 
 						private string index;
 
@@ -1040,7 +1062,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Format_{
+				public class SubmitMediaInfoJob_Format
+				{
 
 					private string numStreams;
 
@@ -1156,7 +1179,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class MNSMessageResult_{
+			public class SubmitMediaInfoJob_MNSMessageResult
+			{
 
 				private string messageId;
 

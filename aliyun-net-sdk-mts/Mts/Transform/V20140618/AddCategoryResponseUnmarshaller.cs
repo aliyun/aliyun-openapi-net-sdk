@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			addCategoryResponse.HttpResponse = context.HttpResponse;
 			addCategoryResponse.RequestId = context.StringValue("AddCategory.RequestId");
 
-			AddCategoryResponse.Category_ category = new AddCategoryResponse.Category_();
+			AddCategoryResponse.AddCategory_Category category = new AddCategoryResponse.AddCategory_Category();
 			category.CateId = context.StringValue("AddCategory.Category.CateId");
 			category.CateName = context.StringValue("AddCategory.Category.CateName");
 			category.ParentId = context.StringValue("AddCategory.Category.ParentId");

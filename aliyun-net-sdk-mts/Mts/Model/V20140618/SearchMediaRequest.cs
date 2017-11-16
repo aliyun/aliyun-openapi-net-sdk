@@ -33,44 +33,48 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
-		private string from;
-
-		private string to;
-
-		private string keyWord;
-
-		private string title;
+		private string ownerAccount;
 
 		private string description;
 
-		private string tag;
+		private long? ownerId;
 
-		private string cateId;
-
-		private string sortBy;
-
-		private long? pageSize;
+		private string title;
 
 		private long? pageNumber;
 
-		private string ownerAccount;
+		private string accessKeyId;
 
-		public long? OwnerId
+		private string cateId;
+
+		private long? pageSize;
+
+		private string action;
+
+		private string from;
+
+		private string sortBy;
+
+		private string to;
+
+		private string tag;
+
+		private string keyWord;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -87,68 +91,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string OwnerAccount
 		{
 			get
 			{
-				return resourceOwnerId;
+				return ownerAccount;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string From
-		{
-			get
-			{
-				return from;
-			}
-			set	
-			{
-				from = value;
-				DictionaryUtil.Add(QueryParameters, "From", value);
-			}
-		}
-
-		public string To
-		{
-			get
-			{
-				return to;
-			}
-			set	
-			{
-				to = value;
-				DictionaryUtil.Add(QueryParameters, "To", value);
-			}
-		}
-
-		public string KeyWord
-		{
-			get
-			{
-				return keyWord;
-			}
-			set	
-			{
-				keyWord = value;
-				DictionaryUtil.Add(QueryParameters, "KeyWord", value);
-			}
-		}
-
-		public string Title
-		{
-			get
-			{
-				return title;
-			}
-			set	
-			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -165,55 +117,29 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Tag
+		public long? OwnerId
 		{
 			get
 			{
-				return tag;
+				return ownerId;
 			}
 			set	
 			{
-				tag = value;
-				DictionaryUtil.Add(QueryParameters, "Tag", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string CateId
+		public string Title
 		{
 			get
 			{
-				return cateId;
+				return title;
 			}
 			set	
 			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value);
-			}
-		}
-
-		public string SortBy
-		{
-			get
-			{
-				return sortBy;
-			}
-			set	
-			{
-				sortBy = value;
-				DictionaryUtil.Add(QueryParameters, "SortBy", value);
-			}
-		}
-
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
 			}
 		}
 
@@ -230,16 +156,120 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string OwnerAccount
+		public string AccessKeyId
 		{
 			get
 			{
-				return ownerAccount;
+				return accessKeyId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string CateId
+		{
+			get
+			{
+				return cateId;
+			}
+			set	
+			{
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value);
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string From
+		{
+			get
+			{
+				return from;
+			}
+			set	
+			{
+				from = value;
+				DictionaryUtil.Add(QueryParameters, "From", value);
+			}
+		}
+
+		public string SortBy
+		{
+			get
+			{
+				return sortBy;
+			}
+			set	
+			{
+				sortBy = value;
+				DictionaryUtil.Add(QueryParameters, "SortBy", value);
+			}
+		}
+
+		public string To
+		{
+			get
+			{
+				return to;
+			}
+			set	
+			{
+				to = value;
+				DictionaryUtil.Add(QueryParameters, "To", value);
+			}
+		}
+
+		public string Tag
+		{
+			get
+			{
+				return tag;
+			}
+			set	
+			{
+				tag = value;
+				DictionaryUtil.Add(QueryParameters, "Tag", value);
+			}
+		}
+
+		public string KeyWord
+		{
+			get
+			{
+				return keyWord;
+			}
+			set	
+			{
+				keyWord = value;
+				DictionaryUtil.Add(QueryParameters, "KeyWord", value);
 			}
 		}
 

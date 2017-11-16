@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class SetAuthConfigResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string key1;
 
 		private string key2;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Key1
 		{
