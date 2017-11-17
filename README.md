@@ -52,7 +52,7 @@ class Sample
 
 1. 怎么判断API调用成功？
 
-	通过catch异常判断API是否调用成功，当 API 的 `http status >= 200 && http status < 300` 表示API调用成功；当`http status >= 300 && http status < 500` SDK 抛出 ClientException；当`http status >= 500` SDK 抛出 ServerException.
+	通过catch异常判断API是否调用成功，当 API 的 `http status >= 200 && http status < 300` 表示API调用成功；当`http status >= 300 && http status < 500` SDK 抛出 `ClientException`；当`http status >= 500` SDK 抛出 `ServerException`.
 
 2. `IClientProfile clientProfile = DefaultProfile.GetProfile("< your request regionid >", "< your access key id >", "< your access key secret >");`
 
