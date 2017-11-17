@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <TargetFrameworks>netcoreapp1.0;netcoreapp1.1;netcoreapp2.0</TargetFrameworks>
     <AssemblyName>Aliyun.Acs.Live</AssemblyName>
     <RootNamespace>Aliyun.Acs.Live</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
