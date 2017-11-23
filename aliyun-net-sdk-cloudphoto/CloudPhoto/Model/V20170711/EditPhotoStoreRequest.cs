@@ -26,49 +26,34 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-    public class GetPrivateAccessUrlsRequest : RpcAcsRequest<GetPrivateAccessUrlsResponse>
+    public class EditPhotoStoreRequest : RpcAcsRequest<EditPhotoStoreResponse>
     {
-        public GetPrivateAccessUrlsRequest()
-            : base("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "cloudphoto", "openAPI")
+        public EditPhotoStoreRequest()
+            : base("CloudPhoto", "2017-07-11", "EditPhotoStore", "cloudphoto", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string libraryId;
-
-		private List<long?> photoIds;
+		private string autoCleanEnabled;
 
 		private string storeName;
 
-		private string zoomType;
+		private string remark;
 
-		public string LibraryId
+		private long? defaultQuota;
+
+		private int? autoCleanDays;
+
+		public string AutoCleanEnabled
 		{
 			get
 			{
-				return libraryId;
+				return autoCleanEnabled;
 			}
 			set	
 			{
-				libraryId = value;
-				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
-			}
-		}
-
-		public List<long?> PhotoIds
-		{
-			get
-			{
-				return photoIds;
-			}
-
-			set
-			{
-				photoIds = value;
-				for (int i = 0; i < photoIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PhotoId." + (i + 1) , photoIds[i]);
-				}
+				autoCleanEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "AutoCleanEnabled", value);
 			}
 		}
 
@@ -85,16 +70,42 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public string ZoomType
+		public string Remark
 		{
 			get
 			{
-				return zoomType;
+				return remark;
 			}
 			set	
 			{
-				zoomType = value;
-				DictionaryUtil.Add(QueryParameters, "ZoomType", value);
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
+			}
+		}
+
+		public long? DefaultQuota
+		{
+			get
+			{
+				return defaultQuota;
+			}
+			set	
+			{
+				defaultQuota = value;
+				DictionaryUtil.Add(QueryParameters, "DefaultQuota", value.ToString());
+			}
+		}
+
+		public int? AutoCleanDays
+		{
+			get
+			{
+				return autoCleanDays;
+			}
+			set	
+			{
+				autoCleanDays = value;
+				DictionaryUtil.Add(QueryParameters, "AutoCleanDays", value.ToString());
 			}
 		}
 
@@ -103,9 +114,9 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			return false;
 		}
 
-        public override GetPrivateAccessUrlsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override EditPhotoStoreResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetPrivateAccessUrlsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EditPhotoStoreResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

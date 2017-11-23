@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-	public class ListPhotoStoresResponse : AcsResponse
+	public class GetLibraryResponse : AcsResponse
 	{
 
 		private string code;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string action;
 
-		private List<ListPhotoStores_PhotoStore> photoStores;
+		private GetLibrary_Library library;
 
 		public string Code
 		{
@@ -82,189 +82,151 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public List<ListPhotoStores_PhotoStore> PhotoStores
+		public GetLibrary_Library Library
 		{
 			get
 			{
-				return photoStores;
+				return library;
 			}
 			set	
 			{
-				photoStores = value;
+				library = value;
 			}
 		}
 
-		public class ListPhotoStores_PhotoStore
+		public class GetLibrary_Library
 		{
 
-			private long? id;
+			private GetLibrary_Quota quota;
 
-			private string name;
+			private GetLibrary_AutoCleanConfig autoCleanConfig;
 
-			private string remark;
-
-			private bool? autoCleanEnabled;
-
-			private int? autoCleanDays;
-
-			private long? defaultQuota;
-
-			private long? ctime;
-
-			private long? mtime;
-
-			private List<ListPhotoStores_Bucket> buckets;
-
-			public long? Id
+			public GetLibrary_Quota Quota
 			{
 				get
 				{
-					return id;
+					return quota;
 				}
 				set	
 				{
-					id = value;
+					quota = value;
 				}
 			}
 
-			public string Name
+			public GetLibrary_AutoCleanConfig AutoCleanConfig
 			{
 				get
 				{
-					return name;
+					return autoCleanConfig;
 				}
 				set	
 				{
-					name = value;
+					autoCleanConfig = value;
 				}
 			}
 
-			public string Remark
-			{
-				get
-				{
-					return remark;
-				}
-				set	
-				{
-					remark = value;
-				}
-			}
-
-			public bool? AutoCleanEnabled
-			{
-				get
-				{
-					return autoCleanEnabled;
-				}
-				set	
-				{
-					autoCleanEnabled = value;
-				}
-			}
-
-			public int? AutoCleanDays
-			{
-				get
-				{
-					return autoCleanDays;
-				}
-				set	
-				{
-					autoCleanDays = value;
-				}
-			}
-
-			public long? DefaultQuota
-			{
-				get
-				{
-					return defaultQuota;
-				}
-				set	
-				{
-					defaultQuota = value;
-				}
-			}
-
-			public long? Ctime
-			{
-				get
-				{
-					return ctime;
-				}
-				set	
-				{
-					ctime = value;
-				}
-			}
-
-			public long? Mtime
-			{
-				get
-				{
-					return mtime;
-				}
-				set	
-				{
-					mtime = value;
-				}
-			}
-
-			public List<ListPhotoStores_Bucket> Buckets
-			{
-				get
-				{
-					return buckets;
-				}
-				set	
-				{
-					buckets = value;
-				}
-			}
-
-			public class ListPhotoStores_Bucket
+			public class GetLibrary_Quota
 			{
 
-				private string name;
+				private long? totalQuota;
 
-				private string region;
+				private int? facesCount;
 
-				private string state;
+				private int? photosCount;
 
-				public string Name
+				private long? usedQuota;
+
+				private int? videosCount;
+
+				public long? TotalQuota
 				{
 					get
 					{
-						return name;
+						return totalQuota;
 					}
 					set	
 					{
-						name = value;
+						totalQuota = value;
 					}
 				}
 
-				public string Region
+				public int? FacesCount
 				{
 					get
 					{
-						return region;
+						return facesCount;
 					}
 					set	
 					{
-						region = value;
+						facesCount = value;
 					}
 				}
 
-				public string State
+				public int? PhotosCount
 				{
 					get
 					{
-						return state;
+						return photosCount;
 					}
 					set	
 					{
-						state = value;
+						photosCount = value;
+					}
+				}
+
+				public long? UsedQuota
+				{
+					get
+					{
+						return usedQuota;
+					}
+					set	
+					{
+						usedQuota = value;
+					}
+				}
+
+				public int? VideosCount
+				{
+					get
+					{
+						return videosCount;
+					}
+					set	
+					{
+						videosCount = value;
+					}
+				}
+			}
+
+			public class GetLibrary_AutoCleanConfig
+			{
+
+				private bool? autoCleanEnabled;
+
+				private int? autoCleanDays;
+
+				public bool? AutoCleanEnabled
+				{
+					get
+					{
+						return autoCleanEnabled;
+					}
+					set	
+					{
+						autoCleanEnabled = value;
+					}
+				}
+
+				public int? AutoCleanDays
+				{
+					get
+					{
+						return autoCleanDays;
+					}
+					set	
+					{
+						autoCleanDays = value;
 					}
 				}
 			}

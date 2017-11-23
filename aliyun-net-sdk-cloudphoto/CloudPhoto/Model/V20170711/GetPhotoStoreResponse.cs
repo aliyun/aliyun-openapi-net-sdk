@@ -103,6 +103,10 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private string remark;
 
+			private bool? autoCleanEnabled;
+
+			private int? autoCleanDays;
+
 			private long? defaultQuota;
 
 			private long? ctime;
@@ -144,6 +148,30 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					remark = value;
+				}
+			}
+
+			public bool? AutoCleanEnabled
+			{
+				get
+				{
+					return autoCleanEnabled;
+				}
+				set	
+				{
+					autoCleanEnabled = value;
+				}
+			}
+
+			public int? AutoCleanDays
+			{
+				get
+				{
+					return autoCleanDays;
+				}
+				set	
+				{
+					autoCleanDays = value;
 				}
 			}
 

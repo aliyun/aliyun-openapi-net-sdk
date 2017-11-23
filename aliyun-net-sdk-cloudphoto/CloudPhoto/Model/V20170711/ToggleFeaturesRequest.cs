@@ -26,48 +26,33 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-    public class GetPrivateAccessUrlsRequest : RpcAcsRequest<GetPrivateAccessUrlsResponse>
+    public class ToggleFeaturesRequest : RpcAcsRequest<ToggleFeaturesResponse>
     {
-        public GetPrivateAccessUrlsRequest()
-            : base("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "cloudphoto", "openAPI")
+        public ToggleFeaturesRequest()
+            : base("CloudPhoto", "2017-07-11", "ToggleFeatures", "cloudphoto", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string libraryId;
-
-		private List<long?> photoIds;
+		private List<string> disabledFeaturess;
 
 		private string storeName;
 
-		private string zoomType;
+		private List<string> enabledFeaturess;
 
-		public string LibraryId
+		public List<string> DisabledFeaturess
 		{
 			get
 			{
-				return libraryId;
-			}
-			set	
-			{
-				libraryId = value;
-				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
-			}
-		}
-
-		public List<long?> PhotoIds
-		{
-			get
-			{
-				return photoIds;
+				return disabledFeaturess;
 			}
 
 			set
 			{
-				photoIds = value;
-				for (int i = 0; i < photoIds.Count; i++)
+				disabledFeaturess = value;
+				for (int i = 0; i < disabledFeaturess.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"PhotoId." + (i + 1) , photoIds[i]);
+					DictionaryUtil.Add(QueryParameters,"DisabledFeatures." + (i + 1) , disabledFeaturess[i]);
 				}
 			}
 		}
@@ -85,27 +70,26 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public string ZoomType
+		public List<string> EnabledFeaturess
 		{
 			get
 			{
-				return zoomType;
+				return enabledFeaturess;
 			}
-			set	
+
+			set
 			{
-				zoomType = value;
-				DictionaryUtil.Add(QueryParameters, "ZoomType", value);
+				enabledFeaturess = value;
+				for (int i = 0; i < enabledFeaturess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"EnabledFeatures." + (i + 1) , enabledFeaturess[i]);
+				}
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override GetPrivateAccessUrlsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ToggleFeaturesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetPrivateAccessUrlsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ToggleFeaturesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

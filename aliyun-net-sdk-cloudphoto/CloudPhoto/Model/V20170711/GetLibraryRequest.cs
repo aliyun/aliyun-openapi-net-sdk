@@ -26,21 +26,17 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-    public class GetPrivateAccessUrlsRequest : RpcAcsRequest<GetPrivateAccessUrlsResponse>
+    public class GetLibraryRequest : RpcAcsRequest<GetLibraryResponse>
     {
-        public GetPrivateAccessUrlsRequest()
-            : base("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "cloudphoto", "openAPI")
+        public GetLibraryRequest()
+            : base("CloudPhoto", "2017-07-11", "GetLibrary", "cloudphoto", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
 		private string libraryId;
 
-		private List<long?> photoIds;
-
 		private string storeName;
-
-		private string zoomType;
 
 		public string LibraryId
 		{
@@ -52,23 +48,6 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				libraryId = value;
 				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
-			}
-		}
-
-		public List<long?> PhotoIds
-		{
-			get
-			{
-				return photoIds;
-			}
-
-			set
-			{
-				photoIds = value;
-				for (int i = 0; i < photoIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PhotoId." + (i + 1) , photoIds[i]);
-				}
 			}
 		}
 
@@ -85,27 +64,9 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public string ZoomType
-		{
-			get
-			{
-				return zoomType;
-			}
-			set	
-			{
-				zoomType = value;
-				DictionaryUtil.Add(QueryParameters, "ZoomType", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override GetPrivateAccessUrlsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetLibraryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetPrivateAccessUrlsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetLibraryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

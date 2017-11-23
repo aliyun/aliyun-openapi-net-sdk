@@ -149,6 +149,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private long? takenAt;
 
+			private long? inactiveTime;
+
 			private long? shareExpireTime;
 
 			public long? Id
@@ -292,6 +294,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					takenAt = value;
+				}
+			}
+
+			public long? InactiveTime
+			{
+				get
+				{
+					return inactiveTime;
+				}
+				set	
+				{
+					inactiveTime = value;
 				}
 			}
 
