@@ -26,20 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SetCasterSceneConfigRequest : RpcAcsRequest<SetCasterSceneConfigResponse>
+    public class DescribeCasterComponentsRequest : RpcAcsRequest<DescribeCasterComponentsResponse>
     {
-        public SetCasterSceneConfigRequest()
-            : base("live", "2016-11-01", "SetCasterSceneConfig")
+        public DescribeCasterComponentsRequest()
+            : base("live", "2016-11-01", "DescribeCasterComponents")
         {
         }
 
-		private List<string> componentIds;
+		private string componentId;
 
 		private string securityToken;
 
 		private string casterId;
-
-		private string sceneId;
 
 		private string action;
 
@@ -47,24 +45,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string version;
 
-		private string layoutId;
-
 		private string accessKeyId;
 
-		public List<string> ComponentIds
+		public string ComponentId
 		{
 			get
 			{
-				return componentIds;
+				return componentId;
 			}
-
-			set
+			set	
 			{
-				componentIds = value;
-				for (int i = 0; i < componentIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ComponentId." + (i + 1) , componentIds[i]);
-				}
+				componentId = value;
+				DictionaryUtil.Add(QueryParameters, "ComponentId", value);
 			}
 		}
 
@@ -91,19 +83,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				casterId = value;
 				DictionaryUtil.Add(QueryParameters, "CasterId", value);
-			}
-		}
-
-		public string SceneId
-		{
-			get
-			{
-				return sceneId;
-			}
-			set	
-			{
-				sceneId = value;
-				DictionaryUtil.Add(QueryParameters, "SceneId", value);
 			}
 		}
 
@@ -146,19 +125,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string LayoutId
-		{
-			get
-			{
-				return layoutId;
-			}
-			set	
-			{
-				layoutId = value;
-				DictionaryUtil.Add(QueryParameters, "LayoutId", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -172,9 +138,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override SetCasterSceneConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeCasterComponentsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SetCasterSceneConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCasterComponentsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

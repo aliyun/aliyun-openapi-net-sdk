@@ -33,6 +33,8 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
+		private List<string> componentIds;
+
 		private string securityToken;
 
 		private string casterId;
@@ -48,6 +50,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string layoutId;
 
 		private string accessKeyId;
+
+		public List<string> ComponentIds
+		{
+			get
+			{
+				return componentIds;
+			}
+
+			set
+			{
+				componentIds = value;
+				for (int i = 0; i < componentIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ComponentId." + (i + 1) , componentIds[i]);
+				}
+			}
+		}
 
 		public string SecurityToken
 		{
