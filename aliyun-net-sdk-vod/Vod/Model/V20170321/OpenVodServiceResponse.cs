@@ -21,18 +21,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class CreateUploadImageResponse : AcsResponse
+	public class OpenVodServiceResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string imageId;
+		private bool? success;
 
-		private string imageURL;
+		private string code;
 
-		private string uploadAddress;
-
-		private string uploadAuth;
+		private string message;
 
 		public string RequestId
 		{
@@ -46,51 +44,39 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ImageId
+		public bool? Success
 		{
 			get
 			{
-				return imageId;
+				return success;
 			}
 			set	
 			{
-				imageId = value;
+				success = value;
 			}
 		}
 
-		public string ImageURL
+		public string Code
 		{
 			get
 			{
-				return imageURL;
+				return code;
 			}
 			set	
 			{
-				imageURL = value;
+				code = value;
 			}
 		}
 
-		public string UploadAddress
+		public string Message
 		{
 			get
 			{
-				return uploadAddress;
+				return message;
 			}
 			set	
 			{
-				uploadAddress = value;
-			}
-		}
-
-		public string UploadAuth
-		{
-			get
-			{
-				return uploadAuth;
-			}
-			set	
-			{
-				uploadAuth = value;
+				message = value;
 			}
 		}
 	}

@@ -59,6 +59,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string fileName;
 
+		private string templateGroupId;
+
 		private int? cateId;
 
 		private string action;
@@ -229,6 +231,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				fileName = value;
 				DictionaryUtil.Add(QueryParameters, "FileName", value);
+			}
+		}
+
+		public string TemplateGroupId
+		{
+			get
+			{
+				return templateGroupId;
+			}
+			set	
+			{
+				templateGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
 			}
 		}
 

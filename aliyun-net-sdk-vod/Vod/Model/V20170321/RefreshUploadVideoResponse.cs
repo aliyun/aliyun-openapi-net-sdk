@@ -28,6 +28,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string uploadAuth;
 
+		private string uploadAddress;
+
 		public string RequestId
 		{
 			get
@@ -49,6 +51,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				uploadAuth = value;
+			}
+		}
+
+		public string UploadAddress
+		{
+			get
+			{
+				return uploadAddress;
+			}
+			set	
+			{
+				uploadAddress = value;
 			}
 		}
 	}

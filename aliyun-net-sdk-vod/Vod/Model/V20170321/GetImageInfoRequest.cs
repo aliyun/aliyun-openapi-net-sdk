@@ -26,32 +26,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class CreateUploadImageRequest : RpcAcsRequest<CreateUploadImageResponse>
+    public class GetImageInfoRequest : RpcAcsRequest<GetImageInfoResponse>
     {
-        public CreateUploadImageRequest()
-            : base("vod", "2017-03-21", "CreateUploadImage", "vod", "openAPI")
+        public GetImageInfoRequest()
+            : base("vod", "2017-03-21", "GetImageInfo", "vod", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string imageType;
-
-		private string originalFileName;
+		private string imageId;
 
 		private string resourceOwnerAccount;
-
-		private string imageExt;
 
 		private string action;
 
 		private long? ownerId;
 
-		private string title;
+		private long? authTimeout;
 
 		private string accessKeyId;
-
-		private string tags;
 
 		public long? ResourceOwnerId
 		{
@@ -66,29 +60,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ImageType
+		public string ImageId
 		{
 			get
 			{
-				return imageType;
+				return imageId;
 			}
 			set	
 			{
-				imageType = value;
-				DictionaryUtil.Add(QueryParameters, "ImageType", value);
-			}
-		}
-
-		public string OriginalFileName
-		{
-			get
-			{
-				return originalFileName;
-			}
-			set	
-			{
-				originalFileName = value;
-				DictionaryUtil.Add(QueryParameters, "OriginalFileName", value);
+				imageId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageId", value);
 			}
 		}
 
@@ -102,19 +83,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ImageExt
-		{
-			get
-			{
-				return imageExt;
-			}
-			set	
-			{
-				imageExt = value;
-				DictionaryUtil.Add(QueryParameters, "ImageExt", value);
 			}
 		}
 
@@ -144,16 +112,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Title
+		public long? AuthTimeout
 		{
 			get
 			{
-				return title;
+				return authTimeout;
 			}
 			set	
 			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
+				authTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
 			}
 		}
 
@@ -170,22 +138,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-        public override CreateUploadImageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetImageInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateUploadImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetImageInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

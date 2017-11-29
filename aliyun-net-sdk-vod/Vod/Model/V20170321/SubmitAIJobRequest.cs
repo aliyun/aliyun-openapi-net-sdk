@@ -26,34 +26,47 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class CreateUploadImageRequest : RpcAcsRequest<CreateUploadImageResponse>
+    public class SubmitAIJobRequest : RpcAcsRequest<SubmitAIJobResponse>
     {
-        public CreateUploadImageRequest()
-            : base("vod", "2017-03-21", "CreateUploadImage", "vod", "openAPI")
+        public SubmitAIJobRequest()
+            : base("vod", "2017-03-21", "SubmitAIJob", "vod", "openAPI")
         {
         }
 
-		private long? resourceOwnerId;
+		private string userData;
 
-		private string imageType;
+		private string resourceOwnerId;
 
-		private string originalFileName;
+		private string types;
 
 		private string resourceOwnerAccount;
 
-		private string imageExt;
+		private string ownerAccount;
 
 		private string action;
 
-		private long? ownerId;
+		private string ownerId;
 
-		private string title;
+		private string mediaId;
+
+		private string config;
 
 		private string accessKeyId;
 
-		private string tags;
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
 
-		public long? ResourceOwnerId
+		public string ResourceOwnerId
 		{
 			get
 			{
@@ -62,33 +75,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
 			}
 		}
 
-		public string ImageType
+		public string Types
 		{
 			get
 			{
-				return imageType;
+				return types;
 			}
 			set	
 			{
-				imageType = value;
-				DictionaryUtil.Add(QueryParameters, "ImageType", value);
-			}
-		}
-
-		public string OriginalFileName
-		{
-			get
-			{
-				return originalFileName;
-			}
-			set	
-			{
-				originalFileName = value;
-				DictionaryUtil.Add(QueryParameters, "OriginalFileName", value);
+				types = value;
+				DictionaryUtil.Add(QueryParameters, "Types", value);
 			}
 		}
 
@@ -105,16 +105,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ImageExt
+		public string OwnerAccount
 		{
 			get
 			{
-				return imageExt;
+				return ownerAccount;
 			}
 			set	
 			{
-				imageExt = value;
-				DictionaryUtil.Add(QueryParameters, "ImageExt", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -131,7 +131,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? OwnerId
+		public string OwnerId
 		{
 			get
 			{
@@ -140,20 +140,33 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
-		public string Title
+		public string MediaId
 		{
 			get
 			{
-				return title;
+				return mediaId;
 			}
 			set	
 			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
+				mediaId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaId", value);
+			}
+		}
+
+		public string Config
+		{
+			get
+			{
+				return config;
+			}
+			set	
+			{
+				config = value;
+				DictionaryUtil.Add(QueryParameters, "Config", value);
 			}
 		}
 
@@ -170,22 +183,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-        public override CreateUploadImageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SubmitAIJobResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateUploadImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitAIJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

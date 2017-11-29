@@ -31,6 +31,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 
 			getVideoInfoResponse.HttpResponse = context.HttpResponse;
 			getVideoInfoResponse.RequestId = context.StringValue("GetVideoInfo.RequestId");
+			getVideoInfoResponse.AI = context.StringValue("GetVideoInfo.AI");
 
 			GetVideoInfoResponse.GetVideoInfo_Video video = new GetVideoInfoResponse.GetVideoInfo_Video();
 			video.VideoId = context.StringValue("GetVideoInfo.Video.VideoId");

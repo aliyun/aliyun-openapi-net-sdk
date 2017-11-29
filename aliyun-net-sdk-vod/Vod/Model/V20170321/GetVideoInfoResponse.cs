@@ -26,6 +26,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string requestId;
 
+		private string aI;
+
 		private GetVideoInfo_Video video;
 
 		public string RequestId
@@ -37,6 +39,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string AI
+		{
+			get
+			{
+				return aI;
+			}
+			set	
+			{
+				aI = value;
 			}
 		}
 

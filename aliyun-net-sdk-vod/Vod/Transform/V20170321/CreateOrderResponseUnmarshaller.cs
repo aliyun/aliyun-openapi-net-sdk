@@ -23,20 +23,19 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
-    public class CreateUploadImageResponseUnmarshaller
+    public class CreateOrderResponseUnmarshaller
     {
-        public static CreateUploadImageResponse Unmarshall(UnmarshallerContext context)
+        public static CreateOrderResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateUploadImageResponse createUploadImageResponse = new CreateUploadImageResponse();
+			CreateOrderResponse createOrderResponse = new CreateOrderResponse();
 
-			createUploadImageResponse.HttpResponse = context.HttpResponse;
-			createUploadImageResponse.RequestId = context.StringValue("CreateUploadImage.RequestId");
-			createUploadImageResponse.ImageId = context.StringValue("CreateUploadImage.ImageId");
-			createUploadImageResponse.ImageURL = context.StringValue("CreateUploadImage.ImageURL");
-			createUploadImageResponse.UploadAddress = context.StringValue("CreateUploadImage.UploadAddress");
-			createUploadImageResponse.UploadAuth = context.StringValue("CreateUploadImage.UploadAuth");
+			createOrderResponse.HttpResponse = context.HttpResponse;
+			createOrderResponse.RequestId = context.StringValue("CreateOrder.RequestId");
+			createOrderResponse.Success = context.BooleanValue("CreateOrder.Success");
+			createOrderResponse.Code = context.StringValue("CreateOrder.Code");
+			createOrderResponse.Message = context.StringValue("CreateOrder.Message");
         
-			return createUploadImageResponse;
+			return createOrderResponse;
         }
     }
 }

@@ -41,6 +41,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string videoId;
 
+		private string resultTypes;
+
 		private long? ownerId;
 
 		private string accessKeyId;
@@ -94,6 +96,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				videoId = value;
 				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+			}
+		}
+
+		public string ResultTypes
+		{
+			get
+			{
+				return resultTypes;
+			}
+			set	
+			{
+				resultTypes = value;
+				DictionaryUtil.Add(QueryParameters, "ResultTypes", value);
 			}
 		}
 

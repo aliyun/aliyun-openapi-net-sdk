@@ -23,20 +23,19 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
-    public class CreateUploadImageResponseUnmarshaller
+    public class OpenVodServiceResponseUnmarshaller
     {
-        public static CreateUploadImageResponse Unmarshall(UnmarshallerContext context)
+        public static OpenVodServiceResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateUploadImageResponse createUploadImageResponse = new CreateUploadImageResponse();
+			OpenVodServiceResponse openVodServiceResponse = new OpenVodServiceResponse();
 
-			createUploadImageResponse.HttpResponse = context.HttpResponse;
-			createUploadImageResponse.RequestId = context.StringValue("CreateUploadImage.RequestId");
-			createUploadImageResponse.ImageId = context.StringValue("CreateUploadImage.ImageId");
-			createUploadImageResponse.ImageURL = context.StringValue("CreateUploadImage.ImageURL");
-			createUploadImageResponse.UploadAddress = context.StringValue("CreateUploadImage.UploadAddress");
-			createUploadImageResponse.UploadAuth = context.StringValue("CreateUploadImage.UploadAuth");
+			openVodServiceResponse.HttpResponse = context.HttpResponse;
+			openVodServiceResponse.RequestId = context.StringValue("OpenVodService.RequestId");
+			openVodServiceResponse.Success = context.BooleanValue("OpenVodService.Success");
+			openVodServiceResponse.Code = context.StringValue("OpenVodService.Code");
+			openVodServiceResponse.Message = context.StringValue("OpenVodService.Message");
         
-			return createUploadImageResponse;
+			return openVodServiceResponse;
         }
     }
 }
