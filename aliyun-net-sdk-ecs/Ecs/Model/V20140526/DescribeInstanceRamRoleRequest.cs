@@ -41,9 +41,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceIds;
 
+		private int? pageSize;
+
 		private string action;
 
+		private string ramRoleName;
+
 		private long? ownerId;
+
+		private int? pageNumber;
 
 		public long? ResourceOwnerId
 		{
@@ -97,6 +103,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -110,6 +129,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string RamRoleName
+		{
+			get
+			{
+				return ramRoleName;
+			}
+			set	
+			{
+				ramRoleName = value;
+				DictionaryUtil.Add(QueryParameters, "RamRoleName", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -120,6 +152,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

@@ -99,6 +99,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string tag1Key;
 
+		private List<long?> additionalAttributess;
+
 		private bool? enableShared;
 
 		private string instanceId;
@@ -541,6 +543,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				tag1Key = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
+			}
+		}
+
+		public List<long?> AdditionalAttributess
+		{
+			get
+			{
+				return additionalAttributess;
+			}
+
+			set
+			{
+				additionalAttributess = value;
+				for (int i = 0; i < additionalAttributess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"AdditionalAttributes." + (i + 1) , additionalAttributess[i]);
+				}
 			}
 		}
 

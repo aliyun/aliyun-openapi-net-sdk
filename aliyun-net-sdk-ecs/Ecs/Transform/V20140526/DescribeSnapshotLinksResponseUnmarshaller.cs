@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				snapshotLink.SnapshotLinkId = context.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SnapshotLinkId");
 				snapshotLink.RegionId = context.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].RegionId");
 				snapshotLink.InstanceId = context.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].InstanceId");
+				snapshotLink.InstanceName = context.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].InstanceName");
 				snapshotLink.SourceDiskId = context.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SourceDiskId");
 				snapshotLink.SourceDiskSize = context.IntegerValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SourceDiskSize");
 				snapshotLink.SourceDiskType = context.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SourceDiskType");

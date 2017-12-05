@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string tag1Value;
 
+		private bool? encrypted;
+
 		private string regionId;
 
 		private string tag2Value;
@@ -252,6 +254,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				tag1Value = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
+			}
+		}
+
+		public bool? Encrypted
+		{
+			get
+			{
+				return encrypted;
+			}
+			set	
+			{
+				encrypted = value;
+				DictionaryUtil.Add(QueryParameters, "Encrypted", value.ToString());
 			}
 		}
 

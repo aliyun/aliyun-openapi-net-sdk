@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? period;
 
+		private string periodUnit;
+
 		private string instanceId;
 
 		private string clientToken;
@@ -72,6 +74,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public string PeriodUnit
+		{
+			get
+			{
+				return periodUnit;
+			}
+			set	
+			{
+				periodUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
 			}
 		}
 

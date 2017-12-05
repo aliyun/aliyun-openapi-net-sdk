@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{aaef02ea-f10c-4e88-9309-27ec1f1860d5}</ProjectGuid>
+    <ProjectGuid>{e7847196-6ea8-4b32-afa1-6bbd81e2cebf}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -286,6 +286,7 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyAutoSnapshotPolicyRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeZonesResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\RunInstancesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateHpcClusterRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyPhysicalConnectionAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotLinksRequest.cs" />
@@ -431,6 +432,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeRecycleBinRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeletePhysicalConnectionRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\UnassociateEipAddressResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\RunInstancesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\RenewInstanceRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\RollbackVolumeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ReleasePublicIpAddressResponse.cs" />
@@ -505,6 +507,7 @@
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyAutoSnapshotPolicyExResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateAutoSnapshotPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\RunInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceAutoReleaseTimeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DetachKeyPairResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeVpcsResponseUnmarshaller.cs" />

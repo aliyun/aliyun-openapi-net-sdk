@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				snapshot.ProductCode = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].ProductCode");
 				snapshot.SourceDiskId = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceDiskId");
 				snapshot.SourceDiskType = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceDiskType");
+				snapshot.RetentionDays = context.IntegerValue("DescribeSnapshots.Snapshots["+ i +"].RetentionDays");
 				snapshot.Encrypted = context.BooleanValue("DescribeSnapshots.Snapshots["+ i +"].Encrypted");
 				snapshot.SourceDiskSize = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceDiskSize");
 				snapshot.Description = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Description");

@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
+		private string renewalStatus;
+
 		private string action;
 
 		private long? ownerId;
@@ -139,6 +141,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string RenewalStatus
+		{
+			get
+			{
+				return renewalStatus;
+			}
+			set	
+			{
+				renewalStatus = value;
+				DictionaryUtil.Add(QueryParameters, "RenewalStatus", value);
 			}
 		}
 

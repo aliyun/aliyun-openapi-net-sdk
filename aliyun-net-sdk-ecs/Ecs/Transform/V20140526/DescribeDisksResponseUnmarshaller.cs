@@ -65,6 +65,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				disk.ExpiredTime = context.StringValue("DescribeDisks.Disks["+ i +"].ExpiredTime");
 				disk.ResourceGroupId = context.StringValue("DescribeDisks.Disks["+ i +"].ResourceGroupId");
 				disk.Encrypted = context.BooleanValue("DescribeDisks.Disks["+ i +"].Encrypted");
+				disk.IOPS = context.IntegerValue("DescribeDisks.Disks["+ i +"].IOPS");
+				disk.IOPSRead = context.IntegerValue("DescribeDisks.Disks["+ i +"].IOPSRead");
+				disk.IOPSWrite = context.IntegerValue("DescribeDisks.Disks["+ i +"].IOPSWrite");
 
 				List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_OperationLock> disk_operationLocks = new List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_OperationLock>();
 				for (int j = 0; j < context.Length("DescribeDisks.Disks["+ i +"].OperationLocks.Length"); j++) {

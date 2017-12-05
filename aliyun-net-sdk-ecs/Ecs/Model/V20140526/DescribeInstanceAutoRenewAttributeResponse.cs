@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string periodUnit;
 
+			private string renewalStatus;
+
 			public string InstanceId
 			{
 				get
@@ -108,6 +110,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					periodUnit = value;
+				}
+			}
+
+			public string RenewalStatus
+			{
+				get
+				{
+					return renewalStatus;
+				}
+				set	
+				{
+					renewalStatus = value;
 				}
 			}
 		}

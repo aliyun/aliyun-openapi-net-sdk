@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				eipAddress.Status = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Status");
 				eipAddress.InstanceId = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InstanceId");
 				eipAddress.Bandwidth = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Bandwidth");
+				eipAddress.EipBandwidth = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].EipBandwidth");
 				eipAddress.InternetChargeType = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InternetChargeType");
 				eipAddress.AllocationTime = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].AllocationTime");
 				eipAddress.InstanceType = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InstanceType");

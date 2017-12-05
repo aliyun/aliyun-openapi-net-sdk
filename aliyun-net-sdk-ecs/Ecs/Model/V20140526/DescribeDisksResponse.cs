@@ -151,6 +151,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? encrypted;
 
+			private int? iOPS;
+
+			private int? iOPSRead;
+
+			private int? iOPSWrite;
+
 			private List<DescribeDisks_OperationLock> operationLocks;
 
 			private List<DescribeDisks_Tag> tags;
@@ -476,6 +482,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					encrypted = value;
+				}
+			}
+
+			public int? IOPS
+			{
+				get
+				{
+					return iOPS;
+				}
+				set	
+				{
+					iOPS = value;
+				}
+			}
+
+			public int? IOPSRead
+			{
+				get
+				{
+					return iOPSRead;
+				}
+				set	
+				{
+					iOPSRead = value;
+				}
+			}
+
+			public int? IOPSWrite
+			{
+				get
+				{
+					return iOPSWrite;
+				}
+				set	
+				{
+					iOPSWrite = value;
 				}
 			}
 

@@ -105,6 +105,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string message;
 
+			private List<DetachInstanceRamRole_InstanceRamRoleSet> instanceRamRoleSets;
+
 			public string InstanceId
 			{
 				get
@@ -150,6 +152,50 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					message = value;
+				}
+			}
+
+			public List<DetachInstanceRamRole_InstanceRamRoleSet> InstanceRamRoleSets
+			{
+				get
+				{
+					return instanceRamRoleSets;
+				}
+				set	
+				{
+					instanceRamRoleSets = value;
+				}
+			}
+
+			public class DetachInstanceRamRole_InstanceRamRoleSet
+			{
+
+				private string instanceId;
+
+				private string ramRoleName;
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public string RamRoleName
+				{
+					get
+					{
+						return ramRoleName;
+					}
+					set	
+					{
+						ramRoleName = value;
+					}
 				}
 			}
 		}

@@ -109,6 +109,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string bandwidth;
 
+			private string eipBandwidth;
+
 			private string internetChargeType;
 
 			private string allocationTime;
@@ -190,6 +192,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					bandwidth = value;
+				}
+			}
+
+			public string EipBandwidth
+			{
+				get
+				{
+					return eipBandwidth;
+				}
+				set	
+				{
+					eipBandwidth = value;
 				}
 			}
 

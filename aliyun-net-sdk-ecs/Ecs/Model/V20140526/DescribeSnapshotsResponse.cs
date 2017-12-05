@@ -109,6 +109,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string sourceDiskType;
 
+			private int? retentionDays;
+
 			private bool? encrypted;
 
 			private string sourceDiskSize;
@@ -194,6 +196,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					sourceDiskType = value;
+				}
+			}
+
+			public int? RetentionDays
+			{
+				get
+				{
+					return retentionDays;
+				}
+				set	
+				{
+					retentionDays = value;
 				}
 			}
 
