@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class AddCategoryRequest : RpcAcsRequest<AddCategoryResponse>
+    public class ListAIJobRequest : RpcAcsRequest<ListAIJobResponse>
     {
-        public AddCategoryRequest()
-            : base("vod", "2017-03-21", "AddCategory")
+        public ListAIJobRequest()
+            : base("vod", "2017-03-21", "ListAIJob")
         {
         }
 
@@ -39,15 +39,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string ownerAccount;
 
+		private string jobIds;
+
 		private string action;
 
 		private string ownerId;
 
-		private long? parentId;
-
 		private string accessKeyId;
-
-		private string cateName;
 
 		public string ResourceOwnerId
 		{
@@ -88,6 +86,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string JobIds
+		{
+			get
+			{
+				return jobIds;
+			}
+			set	
+			{
+				jobIds = value;
+				DictionaryUtil.Add(QueryParameters, "JobIds", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -114,19 +125,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? ParentId
-		{
-			get
-			{
-				return parentId;
-			}
-			set	
-			{
-				parentId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentId", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -140,22 +138,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string CateName
-		{
-			get
-			{
-				return cateName;
-			}
-			set	
-			{
-				cateName = value;
-				DictionaryUtil.Add(QueryParameters, "CateName", value);
-			}
-		}
-
-        public override AddCategoryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListAIJobResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return AddCategoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListAIJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

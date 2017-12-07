@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetVideoListRequest : RpcAcsRequest<GetVideoListResponse>
     {
         public GetVideoListRequest()
-            : base("vod", "2017-03-21", "GetVideoList", "vod", "openAPI")
+            : base("vod", "2017-03-21", "GetVideoList")
         {
         }
 

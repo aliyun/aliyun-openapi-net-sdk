@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DeleteCategoryRequest : RpcAcsRequest<DeleteCategoryResponse>
     {
         public DeleteCategoryRequest()
-            : base("vod", "2017-03-21", "DeleteCategory", "vod", "openAPI")
+            : base("vod", "2017-03-21", "DeleteCategory")
         {
         }
 

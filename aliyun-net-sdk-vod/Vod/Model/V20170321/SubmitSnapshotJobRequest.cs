@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class SubmitSnapshotJobRequest : RpcAcsRequest<SubmitSnapshotJobResponse>
     {
         public SubmitSnapshotJobRequest()
-            : base("vod", "2017-03-21", "SubmitSnapshotJob", "vod", "openAPI")
+            : base("vod", "2017-03-21", "SubmitSnapshotJob")
         {
         }
 

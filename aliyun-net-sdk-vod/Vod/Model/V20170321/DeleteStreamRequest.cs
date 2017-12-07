@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DeleteStreamRequest : RpcAcsRequest<DeleteStreamResponse>
     {
         public DeleteStreamRequest()
-            : base("vod", "2017-03-21", "DeleteStream", "vod", "openAPI")
+            : base("vod", "2017-03-21", "DeleteStream")
         {
         }
 

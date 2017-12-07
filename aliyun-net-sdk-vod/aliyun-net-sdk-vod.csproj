@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{323b24a1-c92f-4635-b73c-fbb5dc706505}</ProjectGuid>
+    <ProjectGuid>{bc407ca1-31c6-437e-8865-d28fded1ecfb}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -45,6 +45,7 @@
 	<Compile Include="Vod\Model\V20170321\UpdateEditingProjectRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitAIVideoPornRecogJobRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\UpdateCategoryResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\ListAIJobResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\GetVideoPlayInfoRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitAIASRJobRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\SearchEditingProjectRequest.cs" />
@@ -126,6 +127,7 @@
 	<Compile Include="Vod\Model\V20170321\DeleteCategoryRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetPlayInfoResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\GetVideoListRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\ListAIJobRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\CreateOrderRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\ListAIASRJobResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\AddEditingProjectResponse.cs" />
@@ -168,6 +170,7 @@
 	<Compile Include="Vod\Transform\V20170321\GetVideoConfigResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\DescribeCdnDomainLogsResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\GetVideoPlayInfoResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\ListAIJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\ListAIVideoCensorJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SubmitAIVideoCoverJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\OpenVodServiceResponseUnmarshaller.cs" />

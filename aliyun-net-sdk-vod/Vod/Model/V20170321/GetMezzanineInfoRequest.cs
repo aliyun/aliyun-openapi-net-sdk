@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetMezzanineInfoRequest : RpcAcsRequest<GetMezzanineInfoResponse>
     {
         public GetMezzanineInfoRequest()
-            : base("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI")
+            : base("vod", "2017-03-21", "GetMezzanineInfo")
         {
         }
 

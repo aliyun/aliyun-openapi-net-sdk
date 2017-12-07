@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class UpdateCategoryRequest : RpcAcsRequest<UpdateCategoryResponse>
     {
         public UpdateCategoryRequest()
-            : base("vod", "2017-03-21", "UpdateCategory", "vod", "openAPI")
+            : base("vod", "2017-03-21", "UpdateCategory")
         {
         }
 

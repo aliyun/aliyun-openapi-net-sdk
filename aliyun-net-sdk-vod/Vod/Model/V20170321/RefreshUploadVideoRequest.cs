@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class RefreshUploadVideoRequest : RpcAcsRequest<RefreshUploadVideoResponse>
     {
         public RefreshUploadVideoRequest()
-            : base("vod", "2017-03-21", "RefreshUploadVideo", "vod", "openAPI")
+            : base("vod", "2017-03-21", "RefreshUploadVideo")
         {
         }
 

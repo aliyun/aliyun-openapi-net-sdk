@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class OpenVodServiceRequest : RpcAcsRequest<OpenVodServiceResponse>
     {
         public OpenVodServiceRequest()
-            : base("vod", "2017-03-21", "OpenVodService", "vod", "openAPI")
+            : base("vod", "2017-03-21", "OpenVodService")
         {
         }
 
