@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				DescribeRegionsResponse.DescribeRegions_Region region = new DescribeRegionsResponse.DescribeRegions_Region();
 				region.RegionId = context.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
 				region.LocalName = context.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
+				region.Status = context.StringValue("DescribeRegions.Regions["+ i +"].Status");
 
 				describeRegionsResponse_regions.Add(region);
 			}

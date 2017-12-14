@@ -70,6 +70,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string expiredTime;
 
+		private string stoppedMode;
+
 		private List<DescribeInstanceAttribute_LockReason> operationLocks;
 
 		private List<string> securityGroupIds;
@@ -355,6 +357,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				expiredTime = value;
+			}
+		}
+
+		public string StoppedMode
+		{
+			get
+			{
+				return stoppedMode;
+			}
+			set	
+			{
+				stoppedMode = value;
 			}
 		}
 

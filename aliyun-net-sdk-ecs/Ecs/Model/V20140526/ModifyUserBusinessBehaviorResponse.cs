@@ -21,12 +21,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeRegionsResponse : AcsResponse
+	public class ModifyUserBusinessBehaviorResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private List<DescribeRegions_Region> regions;
 
 		public string RequestId
 		{
@@ -37,64 +35,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public List<DescribeRegions_Region> Regions
-		{
-			get
-			{
-				return regions;
-			}
-			set	
-			{
-				regions = value;
-			}
-		}
-
-		public class DescribeRegions_Region
-		{
-
-			private string regionId;
-
-			private string localName;
-
-			private string status;
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string LocalName
-			{
-				get
-				{
-					return localName;
-				}
-				set	
-				{
-					localName = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
 			}
 		}
 	}

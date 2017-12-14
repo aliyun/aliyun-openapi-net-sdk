@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				autoSnapshotPolicy.DiskNums = context.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].DiskNums");
 				autoSnapshotPolicy.VolumeNums = context.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].VolumeNums");
 				autoSnapshotPolicy.CreationTime = context.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].CreationTime");
+				autoSnapshotPolicy.Status = context.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].Status");
 
 				describeAutoSnapshotPolicyExResponse_autoSnapshotPolicies.Add(autoSnapshotPolicy);
 			}

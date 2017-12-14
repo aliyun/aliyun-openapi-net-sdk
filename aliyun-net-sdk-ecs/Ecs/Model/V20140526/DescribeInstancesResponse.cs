@@ -173,6 +173,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string hpcClusterId;
 
+			private string stoppedMode;
+
 			private List<DescribeInstances_NetworkInterface> networkInterfaces;
 
 			private List<DescribeInstances_LockReason> operationLocks;
@@ -644,6 +646,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					hpcClusterId = value;
+				}
+			}
+
+			public string StoppedMode
+			{
+				get
+				{
+					return stoppedMode;
+				}
+				set	
+				{
+					stoppedMode = value;
 				}
 			}
 

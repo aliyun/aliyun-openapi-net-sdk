@@ -26,26 +26,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
+    public class DescribeUserBusinessBehaviorRequest : RpcAcsRequest<DescribeUserBusinessBehaviorResponse>
     {
-        public DescribeRegionsRequest()
-            : base("Ecs", "2014-05-26", "DescribeRegions", "ecs", "openAPI")
+        public DescribeUserBusinessBehaviorRequest()
+            : base("Ecs", "2014-05-26", "DescribeUserBusinessBehavior", "ecs", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private string regionId;
+
+		private string action;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
 
-		private string instanceChargeType;
-
-		private string resourceType;
+		private string statusKey;
 
 		public long? ResourceOwnerId
 		{
@@ -57,6 +57,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -86,19 +112,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -112,35 +125,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceChargeType
+		public string StatusKey
 		{
 			get
 			{
-				return instanceChargeType;
+				return statusKey;
 			}
 			set	
 			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+				statusKey = value;
+				DictionaryUtil.Add(QueryParameters, "statusKey", value);
 			}
 		}
 
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
-
-        public override DescribeRegionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeUserBusinessBehaviorResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeUserBusinessBehaviorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

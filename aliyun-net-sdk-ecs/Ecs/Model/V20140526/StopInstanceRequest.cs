@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string action;
 
+		private string stoppedMode;
+
 		private long? ownerId;
 
 		private bool? forceStop;
@@ -124,6 +126,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string StoppedMode
+		{
+			get
+			{
+				return stoppedMode;
+			}
+			set	
+			{
+				stoppedMode = value;
+				DictionaryUtil.Add(QueryParameters, "StoppedMode", value);
 			}
 		}
 

@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
+		private bool? terminateSubscription;
+
 		private string action;
 
 		private bool? force;
@@ -96,6 +98,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public bool? TerminateSubscription
+		{
+			get
+			{
+				return terminateSubscription;
+			}
+			set	
+			{
+				terminateSubscription = value;
+				DictionaryUtil.Add(QueryParameters, "TerminateSubscription", value.ToString());
 			}
 		}
 

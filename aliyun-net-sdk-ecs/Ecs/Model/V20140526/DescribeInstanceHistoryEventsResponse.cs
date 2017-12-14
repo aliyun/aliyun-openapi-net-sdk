@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeAutoSnapshotPolicyExResponse : AcsResponse
+	public class DescribeInstanceHistoryEventsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageSize;
 
-		private List<DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy> autoSnapshotPolicies;
+		private List<DescribeInstanceHistoryEvents_InstanceSystemEventType> instanceSystemEventSet;
 
 		public string RequestId
 		{
@@ -82,158 +82,120 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy> AutoSnapshotPolicies
+		public List<DescribeInstanceHistoryEvents_InstanceSystemEventType> InstanceSystemEventSet
 		{
 			get
 			{
-				return autoSnapshotPolicies;
+				return instanceSystemEventSet;
 			}
 			set	
 			{
-				autoSnapshotPolicies = value;
+				instanceSystemEventSet = value;
 			}
 		}
 
-		public class DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy
+		public class DescribeInstanceHistoryEvents_InstanceSystemEventType
 		{
 
-			private string autoSnapshotPolicyId;
+			private string instanceId;
 
-			private string regionId;
+			private string eventId;
 
-			private string autoSnapshotPolicyName;
+			private string eventPublishTime;
 
-			private string timePoints;
+			private string notBefore;
 
-			private string repeatWeekdays;
+			private DescribeInstanceHistoryEvents_EventType eventType;
 
-			private int? retentionDays;
-
-			private int? diskNums;
-
-			private int? volumeNums;
-
-			private string creationTime;
-
-			private string status;
-
-			public string AutoSnapshotPolicyId
+			public string InstanceId
 			{
 				get
 				{
-					return autoSnapshotPolicyId;
+					return instanceId;
 				}
 				set	
 				{
-					autoSnapshotPolicyId = value;
+					instanceId = value;
 				}
 			}
 
-			public string RegionId
+			public string EventId
 			{
 				get
 				{
-					return regionId;
+					return eventId;
 				}
 				set	
 				{
-					regionId = value;
+					eventId = value;
 				}
 			}
 
-			public string AutoSnapshotPolicyName
+			public string EventPublishTime
 			{
 				get
 				{
-					return autoSnapshotPolicyName;
+					return eventPublishTime;
 				}
 				set	
 				{
-					autoSnapshotPolicyName = value;
+					eventPublishTime = value;
 				}
 			}
 
-			public string TimePoints
+			public string NotBefore
 			{
 				get
 				{
-					return timePoints;
+					return notBefore;
 				}
 				set	
 				{
-					timePoints = value;
+					notBefore = value;
 				}
 			}
 
-			public string RepeatWeekdays
+			public DescribeInstanceHistoryEvents_EventType EventType
 			{
 				get
 				{
-					return repeatWeekdays;
+					return eventType;
 				}
 				set	
 				{
-					repeatWeekdays = value;
+					eventType = value;
 				}
 			}
 
-			public int? RetentionDays
+			public class DescribeInstanceHistoryEvents_EventType
 			{
-				get
-				{
-					return retentionDays;
-				}
-				set	
-				{
-					retentionDays = value;
-				}
-			}
 
-			public int? DiskNums
-			{
-				get
-				{
-					return diskNums;
-				}
-				set	
-				{
-					diskNums = value;
-				}
-			}
+				private int? code;
 
-			public int? VolumeNums
-			{
-				get
-				{
-					return volumeNums;
-				}
-				set	
-				{
-					volumeNums = value;
-				}
-			}
+				private string name;
 
-			public string CreationTime
-			{
-				get
+				public int? Code
 				{
-					return creationTime;
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
+					}
 				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
 
-			public string Status
-			{
-				get
+				public string Name
 				{
-					return status;
-				}
-				set	
-				{
-					status = value;
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
 				}
 			}
 		}
