@@ -30,6 +30,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private int? pageSize;
 
+		private int? totalCount;
+
 		private List<BatchDescribeDomainBpsData_DataModule> bpsDatas;
 
 		public string RequestId
@@ -65,6 +67,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 

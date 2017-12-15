@@ -107,6 +107,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private DescribeDomainConfigs_AliBusinessConfig aliBusinessConfig;
 
+			private DescribeDomainConfigs_IpAllowListConfig ipAllowListConfig;
+
 			public List<DescribeDomainConfigs_CacheExpiredConfig> CacheExpiredConfigs
 			{
 				get
@@ -416,6 +418,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					aliBusinessConfig = value;
+				}
+			}
+
+			public DescribeDomainConfigs_IpAllowListConfig IpAllowListConfig
+			{
+				get
+				{
+					return ipAllowListConfig;
+				}
+				set	
+				{
+					ipAllowListConfig = value;
 				}
 			}
 
@@ -1991,6 +2005,66 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					set	
 					{
 						configId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_IpAllowListConfig
+			{
+
+				private string configId;
+
+				private string ipList;
+
+				private string ipAclXfwd;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string IpList
+				{
+					get
+					{
+						return ipList;
+					}
+					set	
+					{
+						ipList = value;
+					}
+				}
+
+				public string IpAclXfwd
+				{
+					get
+					{
+						return ipAclXfwd;
+					}
+					set	
+					{
+						ipAclXfwd = value;
 					}
 				}
 

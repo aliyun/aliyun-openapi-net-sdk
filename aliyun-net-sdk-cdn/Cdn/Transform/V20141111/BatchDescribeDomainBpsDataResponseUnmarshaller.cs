@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			batchDescribeDomainBpsDataResponse.RequestId = context.StringValue("BatchDescribeDomainBpsData.RequestId");
 			batchDescribeDomainBpsDataResponse.PageNumber = context.IntegerValue("BatchDescribeDomainBpsData.PageNumber");
 			batchDescribeDomainBpsDataResponse.PageSize = context.IntegerValue("BatchDescribeDomainBpsData.PageSize");
+			batchDescribeDomainBpsDataResponse.TotalCount = context.IntegerValue("BatchDescribeDomainBpsData.TotalCount");
 
 			List<BatchDescribeDomainBpsDataResponse.BatchDescribeDomainBpsData_DataModule> batchDescribeDomainBpsDataResponse_bpsDatas = new List<BatchDescribeDomainBpsDataResponse.BatchDescribeDomainBpsData_DataModule>();
 			for (int i = 0; i < context.Length("BatchDescribeDomainBpsData.BpsDatas.Length"); i++) {

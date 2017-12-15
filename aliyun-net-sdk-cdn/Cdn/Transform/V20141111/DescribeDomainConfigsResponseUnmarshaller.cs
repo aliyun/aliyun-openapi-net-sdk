@@ -171,6 +171,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			aliBusinessConfig.Status = context.StringValue("DescribeDomainConfigs.DomainConfigs.AliBusinessConfig.Status");
 			domainConfigs.AliBusinessConfig = aliBusinessConfig;
 
+			DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_IpAllowListConfig ipAllowListConfig = new DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_IpAllowListConfig();
+			ipAllowListConfig.ConfigId = context.StringValue("DescribeDomainConfigs.DomainConfigs.IpAllowListConfig.ConfigId");
+			ipAllowListConfig.IpList = context.StringValue("DescribeDomainConfigs.DomainConfigs.IpAllowListConfig.IpList");
+			ipAllowListConfig.IpAclXfwd = context.StringValue("DescribeDomainConfigs.DomainConfigs.IpAllowListConfig.IpAclXfwd");
+			ipAllowListConfig.Status = context.StringValue("DescribeDomainConfigs.DomainConfigs.IpAllowListConfig.Status");
+			domainConfigs.IpAllowListConfig = ipAllowListConfig;
+
 			List<DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_CacheExpiredConfig> domainConfigs_cacheExpiredConfigs = new List<DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_CacheExpiredConfig>();
 			for (int i = 0; i < context.Length("DescribeDomainConfigs.DomainConfigs.CacheExpiredConfigs.Length"); i++) {
 				DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_CacheExpiredConfig cacheExpiredConfig = new DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_CacheExpiredConfig();
