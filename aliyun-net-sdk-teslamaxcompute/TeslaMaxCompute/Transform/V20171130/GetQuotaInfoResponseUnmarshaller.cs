@@ -32,7 +32,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Transform.V20171130
 			getQuotaInfoResponse.HttpResponse = context.HttpResponse;
 			getQuotaInfoResponse.Code = context.IntegerValue("GetQuotaInfo.Code");
 			getQuotaInfoResponse.Message = context.StringValue("GetQuotaInfo.Message");
-			getQuotaInfoResponse.Request_id = context.StringValue("GetQuotaInfo.Request_id");
+			getQuotaInfoResponse.RequestId = context.StringValue("GetQuotaInfo.RequestId");
 
 			GetQuotaInfoResponse.GetQuotaInfo_Data data = new GetQuotaInfoResponse.GetQuotaInfo_Data();
 			data.Total = context.IntegerValue("GetQuotaInfo.Data.Total");
@@ -41,10 +41,10 @@ namespace Aliyun.Acs.TeslaMaxCompute.Transform.V20171130
 			for (int i = 0; i < context.Length("GetQuotaInfo.Data.Detail.Length"); i++) {
 				GetQuotaInfoResponse.GetQuotaInfo_Data.GetQuotaInfo_Instance instance = new GetQuotaInfoResponse.GetQuotaInfo_Data.GetQuotaInfo_Instance();
 				instance.Project = context.StringValue("GetQuotaInfo.Data.Detail["+ i +"].Project");
-				instance.Instanceid = context.StringValue("GetQuotaInfo.Data.Detail["+ i +"].Instanceid");
+				instance.InstanceId = context.StringValue("GetQuotaInfo.Data.Detail["+ i +"].InstanceId");
 				instance.Status = context.StringValue("GetQuotaInfo.Data.Detail["+ i +"].Status");
 				instance.UserAccount = context.StringValue("GetQuotaInfo.Data.Detail["+ i +"].UserAccount");
-				instance.ChName = context.StringValue("GetQuotaInfo.Data.Detail["+ i +"].ChName");
+				instance.NickName = context.StringValue("GetQuotaInfo.Data.Detail["+ i +"].NickName");
 				instance.Cluster = context.StringValue("GetQuotaInfo.Data.Detail["+ i +"].Cluster");
 				instance.RunTime = context.StringValue("GetQuotaInfo.Data.Detail["+ i +"].RunTime");
 

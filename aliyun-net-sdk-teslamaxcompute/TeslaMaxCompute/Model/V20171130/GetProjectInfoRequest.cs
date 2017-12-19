@@ -39,6 +39,8 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 
 		private int? pageNum;
 
+		private string status;
+
 		public int? PageSize
 		{
 			get
@@ -75,6 +77,19 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 

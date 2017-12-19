@@ -28,7 +28,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 
 		private string message;
 
-		private string request_id;
+		private string requestId;
 
 		private GetProjectInfo_Data data;
 
@@ -56,15 +56,15 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			}
 		}
 
-		public string Request_id
+		public string RequestId
 		{
 			get
 			{
-				return request_id;
+				return requestId;
 			}
 			set	
 			{
-				request_id = value;
+				requestId = value;
 			}
 		}
 
@@ -116,13 +116,13 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 
 				private string project;
 
-				private string instanceid;
+				private string instanceId;
 
 				private string status;
 
 				private string userAccount;
 
-				private string chName;
+				private string nickName;
 
 				private string cluster;
 
@@ -140,15 +140,15 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 					}
 				}
 
-				public string Instanceid
+				public string InstanceId
 				{
 					get
 					{
-						return instanceid;
+						return instanceId;
 					}
 					set	
 					{
-						instanceid = value;
+						instanceId = value;
 					}
 				}
 
@@ -176,15 +176,15 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 					}
 				}
 
-				public string ChName
+				public string NickName
 				{
 					get
 					{
-						return chName;
+						return nickName;
 					}
 					set	
 					{
-						chName = value;
+						nickName = value;
 					}
 				}
 

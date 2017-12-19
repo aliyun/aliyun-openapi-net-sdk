@@ -32,7 +32,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Transform.V20171130
 			getClusterInfoResponse.HttpResponse = context.HttpResponse;
 			getClusterInfoResponse.Code = context.IntegerValue("GetClusterInfo.Code");
 			getClusterInfoResponse.Message = context.StringValue("GetClusterInfo.Message");
-			getClusterInfoResponse.Request_id = context.StringValue("GetClusterInfo.Request_id");
+			getClusterInfoResponse.RequestId = context.StringValue("GetClusterInfo.RequestId");
 
 			GetClusterInfoResponse.GetClusterInfo_Data data = new GetClusterInfoResponse.GetClusterInfo_Data();
 			data.Total = context.IntegerValue("GetClusterInfo.Data.Total");
@@ -41,10 +41,10 @@ namespace Aliyun.Acs.TeslaMaxCompute.Transform.V20171130
 			for (int i = 0; i < context.Length("GetClusterInfo.Data.Detail.Length"); i++) {
 				GetClusterInfoResponse.GetClusterInfo_Data.GetClusterInfo_Instance instance = new GetClusterInfoResponse.GetClusterInfo_Data.GetClusterInfo_Instance();
 				instance.Project = context.StringValue("GetClusterInfo.Data.Detail["+ i +"].Project");
-				instance.Instanceid = context.StringValue("GetClusterInfo.Data.Detail["+ i +"].Instanceid");
+				instance.InstanceId = context.StringValue("GetClusterInfo.Data.Detail["+ i +"].InstanceId");
 				instance.Status = context.StringValue("GetClusterInfo.Data.Detail["+ i +"].Status");
 				instance.UserAccount = context.StringValue("GetClusterInfo.Data.Detail["+ i +"].UserAccount");
-				instance.ChName = context.StringValue("GetClusterInfo.Data.Detail["+ i +"].ChName");
+				instance.NickName = context.StringValue("GetClusterInfo.Data.Detail["+ i +"].NickName");
 				instance.Cluster = context.StringValue("GetClusterInfo.Data.Detail["+ i +"].Cluster");
 				instance.RunTime = context.StringValue("GetClusterInfo.Data.Detail["+ i +"].RunTime");
 
