@@ -26,19 +26,23 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-    public class ListTagsRequest : RpcAcsRequest<ListTagsResponse>
+    public class TagPhotoRequest : RpcAcsRequest<TagPhotoResponse>
     {
-        public ListTagsRequest()
-            : base("CloudPhoto", "2017-07-11", "ListTags", "cloudphoto", "openAPI")
+        public TagPhotoRequest()
+            : base("CloudPhoto", "2017-07-11", "TagPhoto", "cloudphoto", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
 		private string libraryId;
 
+		private List<float?> confidences;
+
 		private string storeName;
 
-		private string lang;
+		private long? photoId;
+
+		private List<string> tagKeys;
 
 		public string LibraryId
 		{
@@ -50,6 +54,23 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				libraryId = value;
 				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
+			}
+		}
+
+		public List<float?> Confidences
+		{
+			get
+			{
+				return confidences;
+			}
+
+			set
+			{
+				confidences = value;
+				for (int i = 0; i < confidences.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Confidence." + (i + 1) , confidences[i]);
+				}
 			}
 		}
 
@@ -66,27 +87,39 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public string Lang
+		public long? PhotoId
 		{
 			get
 			{
-				return lang;
+				return photoId;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				photoId = value;
+				DictionaryUtil.Add(QueryParameters, "PhotoId", value.ToString());
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public List<string> TagKeys
 		{
-			return false;
+			get
+			{
+				return tagKeys;
+			}
+
+			set
+			{
+				tagKeys = value;
+				for (int i = 0; i < tagKeys.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
+				}
+			}
 		}
 
-        public override ListTagsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override TagPhotoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TagPhotoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

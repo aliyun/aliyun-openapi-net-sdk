@@ -40,6 +40,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string storeName;
 
+		private long? inactiveTime;
+
 		public string LibraryId
 		{
 			get
@@ -80,6 +82,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				storeName = value;
 				DictionaryUtil.Add(QueryParameters, "StoreName", value);
+			}
+		}
+
+		public long? InactiveTime
+		{
+			get
+			{
+				return inactiveTime;
+			}
+			set	
+			{
+				inactiveTime = value;
+				DictionaryUtil.Add(QueryParameters, "InactiveTime", value.ToString());
 			}
 		}
 

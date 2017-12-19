@@ -40,6 +40,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string storeName;
 
+		private string lang;
+
 		public string LibraryId
 		{
 			get
@@ -76,6 +78,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				storeName = value;
 				DictionaryUtil.Add(QueryParameters, "StoreName", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

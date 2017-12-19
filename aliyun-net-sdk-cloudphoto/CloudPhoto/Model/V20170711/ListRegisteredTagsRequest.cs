@@ -26,32 +26,17 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-    public class ListTagsRequest : RpcAcsRequest<ListTagsResponse>
+    public class ListRegisteredTagsRequest : RpcAcsRequest<ListRegisteredTagsResponse>
     {
-        public ListTagsRequest()
-            : base("CloudPhoto", "2017-07-11", "ListTags", "cloudphoto", "openAPI")
+        public ListRegisteredTagsRequest()
+            : base("CloudPhoto", "2017-07-11", "ListRegisteredTags", "cloudphoto", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string libraryId;
-
 		private string storeName;
 
-		private string lang;
-
-		public string LibraryId
-		{
-			get
-			{
-				return libraryId;
-			}
-			set	
-			{
-				libraryId = value;
-				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
-			}
-		}
+		private List<string> langs;
 
 		public string StoreName
 		{
@@ -66,16 +51,20 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public string Lang
+		public List<string> Langs
 		{
 			get
 			{
-				return lang;
+				return langs;
 			}
-			set	
+
+			set
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				langs = value;
+				for (int i = 0; i < langs.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Lang." + (i + 1) , langs[i]);
+				}
 			}
 		}
 
@@ -84,9 +73,9 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			return false;
 		}
 
-        public override ListTagsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListRegisteredTagsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListRegisteredTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
