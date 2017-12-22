@@ -33,6 +33,20 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
+		private string sideOutputUrl;
+
+		private string casterId;
+
+		private string domainName;
+
+		private long? ownerId;
+
+		private string version;
+
+		private string recordConfig;
+
+		private string accessKeyId;
+
 		private string urgentMaterialId;
 
 		private string transcodeConfig;
@@ -43,19 +57,100 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string casterName;
 
-		private string casterId;
-
-		private string domainName;
-
 		private string action;
 
-		private long? ownerId;
+		private string callbackUrl;
 
-		private string version;
+		public string SideOutputUrl
+		{
+			get
+			{
+				return sideOutputUrl;
+			}
+			set	
+			{
+				sideOutputUrl = value;
+				DictionaryUtil.Add(QueryParameters, "SideOutputUrl", value);
+			}
+		}
 
-		private string recordConfig;
+		public string CasterId
+		{
+			get
+			{
+				return casterId;
+			}
+			set	
+			{
+				casterId = value;
+				DictionaryUtil.Add(QueryParameters, "CasterId", value);
+			}
+		}
 
-		private string accessKeyId;
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Version
+		{
+			get
+			{
+				return version;
+			}
+			set	
+			{
+				version = value;
+				DictionaryUtil.Add(QueryParameters, "Version", value);
+			}
+		}
+
+		public string RecordConfig
+		{
+			get
+			{
+				return recordConfig;
+			}
+			set	
+			{
+				recordConfig = value;
+				DictionaryUtil.Add(QueryParameters, "RecordConfig", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
 
 		public string UrgentMaterialId
 		{
@@ -122,32 +217,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-				DictionaryUtil.Add(QueryParameters, "CasterId", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -161,55 +230,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public long? OwnerId
+		public string CallbackUrl
 		{
 			get
 			{
-				return ownerId;
+				return callbackUrl;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
-			}
-		}
-
-		public string RecordConfig
-		{
-			get
-			{
-				return recordConfig;
-			}
-			set	
-			{
-				recordConfig = value;
-				DictionaryUtil.Add(QueryParameters, "RecordConfig", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				callbackUrl = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackUrl", value);
 			}
 		}
 

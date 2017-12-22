@@ -21,14 +21,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeCastersResponse : AcsResponse
+	public class DescribeLiveRecordVodConfigsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? total;
+		private int? pageNum;
 
-		private List<DescribeCasters_Caster> casterList;
+		private int? pageSize;
+
+		private string total;
+
+		private List<DescribeLiveRecordVodConfigs_LiveRecordVodConfig> liveRecordVodConfigs;
 
 		public string RequestId
 		{
@@ -42,7 +46,31 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? Total
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public string Total
 		{
 			get
 			{
@@ -54,86 +82,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<DescribeCasters_Caster> CasterList
+		public List<DescribeLiveRecordVodConfigs_LiveRecordVodConfig> LiveRecordVodConfigs
 		{
 			get
 			{
-				return casterList;
+				return liveRecordVodConfigs;
 			}
 			set	
 			{
-				casterList = value;
+				liveRecordVodConfigs = value;
 			}
 		}
 
-		public class DescribeCasters_Caster
+		public class DescribeLiveRecordVodConfigs_LiveRecordVodConfig
 		{
-
-			private int? status;
-
-			private int? normType;
-
-			private string casterId;
-
-			private string casterName;
 
 			private string createTime;
 
-			private string startTime;
+			private string domainName;
 
-			private int? period;
+			private string appName;
 
-			private string chargeType;
+			private string vodTranscodeGroupId;
 
-			private string casterTemplate;
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public int? NormType
-			{
-				get
-				{
-					return normType;
-				}
-				set	
-				{
-					normType = value;
-				}
-			}
-
-			public string CasterId
-			{
-				get
-				{
-					return casterId;
-				}
-				set	
-				{
-					casterId = value;
-				}
-			}
-
-			public string CasterName
-			{
-				get
-				{
-					return casterName;
-				}
-				set	
-				{
-					casterName = value;
-				}
-			}
+			private int? cycleDuration;
 
 			public string CreateTime
 			{
@@ -147,51 +119,51 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string StartTime
+			public string DomainName
 			{
 				get
 				{
-					return startTime;
+					return domainName;
 				}
 				set	
 				{
-					startTime = value;
+					domainName = value;
 				}
 			}
 
-			public int? Period
+			public string AppName
 			{
 				get
 				{
-					return period;
+					return appName;
 				}
 				set	
 				{
-					period = value;
+					appName = value;
 				}
 			}
 
-			public string ChargeType
+			public string VodTranscodeGroupId
 			{
 				get
 				{
-					return chargeType;
+					return vodTranscodeGroupId;
 				}
 				set	
 				{
-					chargeType = value;
+					vodTranscodeGroupId = value;
 				}
 			}
 
-			public string CasterTemplate
+			public int? CycleDuration
 			{
 				get
 				{
-					return casterTemplate;
+					return cycleDuration;
 				}
 				set	
 				{
-					casterTemplate = value;
+					cycleDuration = value;
 				}
 			}
 		}

@@ -36,6 +36,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			describeCasterConfigResponse.DomainName = context.StringValue("DescribeCasterConfig.DomainName");
 			describeCasterConfigResponse.Delay = context.FloatValue("DescribeCasterConfig.Delay");
 			describeCasterConfigResponse.UrgentMaterialId = context.StringValue("DescribeCasterConfig.UrgentMaterialId");
+			describeCasterConfigResponse.SideOutputUrl = context.StringValue("DescribeCasterConfig.SideOutputUrl");
+			describeCasterConfigResponse.CallbackUrl = context.StringValue("DescribeCasterConfig.CallbackUrl");
 
 			DescribeCasterConfigResponse.DescribeCasterConfig_TranscodeConfig transcodeConfig = new DescribeCasterConfigResponse.DescribeCasterConfig_TranscodeConfig();
 			transcodeConfig.CasterTemplate = context.StringValue("DescribeCasterConfig.TranscodeConfig.CasterTemplate");

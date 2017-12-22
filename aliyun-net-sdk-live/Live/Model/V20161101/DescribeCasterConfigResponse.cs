@@ -36,6 +36,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string urgentMaterialId;
 
+		private string sideOutputUrl;
+
+		private string callbackUrl;
+
 		private DescribeCasterConfig_TranscodeConfig transcodeConfig;
 
 		private DescribeCasterConfig_RecordConfig recordConfig;
@@ -109,6 +113,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				urgentMaterialId = value;
+			}
+		}
+
+		public string SideOutputUrl
+		{
+			get
+			{
+				return sideOutputUrl;
+			}
+			set	
+			{
+				sideOutputUrl = value;
+			}
+		}
+
+		public string CallbackUrl
+		{
+			get
+			{
+				return callbackUrl;
+			}
+			set	
+			{
+				callbackUrl = value;
 			}
 		}
 
