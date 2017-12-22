@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{406772c5-bedb-4a92-a5f7-f8d73a382eff}</ProjectGuid>
+    <ProjectGuid>{6ef037be-3203-468e-9966-110e3186ba92}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetClusterInfoResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20171130\GetClusterInstanceResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetClusterInfoRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetQuotaInfoResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetUserInfoResponse.cs" />
@@ -47,8 +48,10 @@
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetQuotaInfoRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetProjectInfoResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetUserInfoRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20171130\GetClusterInstanceRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetUserInfoResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetClusterInfoResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetClusterInstanceResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetProjectInfoResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetQuotaInfoResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
