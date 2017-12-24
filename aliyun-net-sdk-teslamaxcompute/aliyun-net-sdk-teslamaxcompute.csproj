@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6ef037be-3203-468e-9966-110e3186ba92}</ProjectGuid>
+    <ProjectGuid>{45aa5b20-d4ce-46b1-9f44-a6efe1c6da1d}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -41,17 +41,26 @@
   <ItemGroup>
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetClusterInfoResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetClusterInstanceResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20171130\GetUserInstanceRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetClusterInfoRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetQuotaInfoResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetUserInfoResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetProjectInfoRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20171130\GetQuotaInstanceResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetQuotaInfoRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetProjectInfoResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20171130\GetUserInstanceResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetUserInfoRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20171130\GetProjectInstanceResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20171130\GetProjectInstanceRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20171130\GetClusterInstanceRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20171130\GetQuotaInstanceRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetUserInfoResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetQuotaInstanceResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetClusterInfoResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetUserInstanceResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetClusterInstanceResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetProjectInstanceResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetProjectInfoResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20171130\GetQuotaInfoResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
