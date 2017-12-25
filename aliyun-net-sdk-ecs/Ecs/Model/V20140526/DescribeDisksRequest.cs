@@ -77,6 +77,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? enableAutoSnapshot;
 
+		private bool? dryRun;
+
 		private string tag5Key;
 
 		private string resourceOwnerAccount;
@@ -400,6 +402,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				enableAutoSnapshot = value;
 				DictionaryUtil.Add(QueryParameters, "EnableAutoSnapshot", value.ToString());
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 

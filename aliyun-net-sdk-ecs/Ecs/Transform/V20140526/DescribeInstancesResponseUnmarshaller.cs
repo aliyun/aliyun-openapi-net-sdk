@@ -58,6 +58,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instance.InternetMaxBandwidthOut = context.IntegerValue("DescribeInstances.Instances["+ i +"].InternetMaxBandwidthOut");
 				instance.VlanId = context.StringValue("DescribeInstances.Instances["+ i +"].VlanId");
 				instance.CreationTime = context.StringValue("DescribeInstances.Instances["+ i +"].CreationTime");
+				instance.StartTime = context.StringValue("DescribeInstances.Instances["+ i +"].StartTime");
 				instance.InstanceNetworkType = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceNetworkType");
 				instance.InstanceChargeType = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceChargeType");
 				instance.SaleCycle = context.StringValue("DescribeInstances.Instances["+ i +"].SaleCycle");

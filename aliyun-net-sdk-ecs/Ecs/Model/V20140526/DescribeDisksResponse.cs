@@ -151,6 +151,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? encrypted;
 
+			private int? mountInstanceNum;
+
 			private int? iOPS;
 
 			private int? iOPSRead;
@@ -158,6 +160,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private int? iOPSWrite;
 
 			private List<DescribeDisks_OperationLock> operationLocks;
+
+			private List<DescribeDisks_MountInstance> mountInstances;
 
 			private List<DescribeDisks_Tag> tags;
 
@@ -485,6 +489,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public int? MountInstanceNum
+			{
+				get
+				{
+					return mountInstanceNum;
+				}
+				set	
+				{
+					mountInstanceNum = value;
+				}
+			}
+
 			public int? IOPS
 			{
 				get
@@ -533,6 +549,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public List<DescribeDisks_MountInstance> MountInstances
+			{
+				get
+				{
+					return mountInstances;
+				}
+				set	
+				{
+					mountInstances = value;
+				}
+			}
+
 			public List<DescribeDisks_Tag> Tags
 			{
 				get
@@ -559,6 +587,52 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						lockReason = value;
+					}
+				}
+			}
+
+			public class DescribeDisks_MountInstance
+			{
+
+				private string instanceId;
+
+				private string device;
+
+				private string attachedTime;
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public string Device
+				{
+					get
+					{
+						return device;
+					}
+					set	
+					{
+						device = value;
+					}
+				}
+
+				public string AttachedTime
+				{
+					get
+					{
+						return attachedTime;
+					}
+					set	
+					{
+						attachedTime = value;
 					}
 				}
 			}

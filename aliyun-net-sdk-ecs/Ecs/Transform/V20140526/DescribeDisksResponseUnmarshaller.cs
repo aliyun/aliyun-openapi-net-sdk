@@ -65,6 +65,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				disk.ExpiredTime = context.StringValue("DescribeDisks.Disks["+ i +"].ExpiredTime");
 				disk.ResourceGroupId = context.StringValue("DescribeDisks.Disks["+ i +"].ResourceGroupId");
 				disk.Encrypted = context.BooleanValue("DescribeDisks.Disks["+ i +"].Encrypted");
+				disk.MountInstanceNum = context.IntegerValue("DescribeDisks.Disks["+ i +"].MountInstanceNum");
 				disk.IOPS = context.IntegerValue("DescribeDisks.Disks["+ i +"].IOPS");
 				disk.IOPSRead = context.IntegerValue("DescribeDisks.Disks["+ i +"].IOPSRead");
 				disk.IOPSWrite = context.IntegerValue("DescribeDisks.Disks["+ i +"].IOPSWrite");
@@ -77,6 +78,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					disk_operationLocks.Add(operationLock);
 				}
 				disk.OperationLocks = disk_operationLocks;
+
+				List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_MountInstance> disk_mountInstances = new List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_MountInstance>();
+				for (int j = 0; j < context.Length("DescribeDisks.Disks["+ i +"].MountInstances.Length"); j++) {
+					DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_MountInstance mountInstance = new DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_MountInstance();
+					mountInstance.InstanceId = context.StringValue("DescribeDisks.Disks["+ i +"].MountInstances["+ j +"].InstanceId");
+					mountInstance.Device = context.StringValue("DescribeDisks.Disks["+ i +"].MountInstances["+ j +"].Device");
+					mountInstance.AttachedTime = context.StringValue("DescribeDisks.Disks["+ i +"].MountInstances["+ j +"].AttachedTime");
+
+					disk_mountInstances.Add(mountInstance);
+				}
+				disk.MountInstances = disk_mountInstances;
 
 				List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_Tag> disk_tags = new List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_Tag>();
 				for (int j = 0; j < context.Length("DescribeDisks.Disks["+ i +"].Tags.Length"); j++) {

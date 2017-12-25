@@ -67,6 +67,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string tag3Value;
 
+		private bool? dryRun;
+
 		private string tag5Key;
 
 		private string resourceOwnerAccount;
@@ -315,6 +317,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				tag3Value = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.3.Value", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 

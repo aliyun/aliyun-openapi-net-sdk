@@ -65,6 +65,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string filter3Value;
 
+		private bool? dryRun;
+
 		private string tag5Key;
 
 		private string filter1Value;
@@ -338,6 +340,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				filter3Value = value;
 				DictionaryUtil.Add(QueryParameters, "Filter.3.Value", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
