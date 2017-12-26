@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{b729c7c3-741f-40ed-99c5-5f55e40b91c1}</ProjectGuid>
+    <ProjectGuid>{fc47f1dc-cbc5-4c2c-a6d0-92dacdd92b79}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -49,6 +49,8 @@
 	<Compile Include="Mts\Model\V20140618\QueryPipelineListResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\PlayInfoResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QuerySnapshotJobListRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\SubmitMediaDetailJobRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\ReportVideoSplitJobResultRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitJobsRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateWaterMarkTemplateResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryFacerecogJobListResponse.cs" />
@@ -57,6 +59,7 @@
 	<Compile Include="Mts\Model\V20140618\ReportTerrorismJobResultResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\SearchMediaRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\ListAllCategoryRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\RegisterMediaDetailPersonResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateCensorPipelineRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\AddAsrPipelineResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitFacerecogJobResponse.cs" />
@@ -68,6 +71,7 @@
 	<Compile Include="Mts\Model\V20140618\SubmitAsrJobRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdatePornPipelineResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateAsrPipelineRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\ReportMediaDetailJobResultResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitAsrJobResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\AddMediaWorkflowRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitEditingJobsRequest.cs" />
@@ -82,6 +86,7 @@
 	<Compile Include="Mts\Model\V20140618\UpdateTemplateRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\DeleteTemplateRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateTerrorismPipelineResponse.cs" />
+	<Compile Include="Mts\Model\V20140618\QueryMediaDetailJobListResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryCensorJobListRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\AddMediaTagResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitCoverJobRequest.cs" />
@@ -90,8 +95,12 @@
 	<Compile Include="Mts\Model\V20140618\SearchWaterMarkTemplateRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\ListPornPipelineResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateCoverPipelineRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\QueryVideoSplitJobListRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\ReportFpShotJobResultRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\AddWaterMarkTemplateRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\ListVideoSummaryPipelineResponse.cs" />
+	<Compile Include="Mts\Model\V20140618\QueryFpShotJobListResponse.cs" />
+	<Compile Include="Mts\Model\V20140618\RegisterMediaDetailScenarioResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateAsrPipelineResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryAsrPipelineListResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryPornPipelineListResponse.cs" />
@@ -102,6 +111,8 @@
 	<Compile Include="Mts\Model\V20140618\QueryCoverPipelineListRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateMediaWorkflowResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\ListMediaWorkflowExecutionsRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\ReportVideoSplitJobResultResponse.cs" />
+	<Compile Include="Mts\Model\V20140618\RegisterMediaDetailScenarioRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\BindInputBucketRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\AddTemplateRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\CancelJobRequest.cs" />
@@ -113,10 +124,12 @@
 	<Compile Include="Mts\Model\V20140618\QueryMediaWorkflowExecutionListRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitFacerecogJobRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\ListAllMediaBucketRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\SubmitVideoSplitJobResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\ActivateMediaWorkflowResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\AddAsrPipelineRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitTagJobResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryCensorPipelineListRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\QueryFpShotJobListRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateCategoryNameRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\ReportPornJobResultResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitEditingJobsResponse.cs" />
@@ -139,11 +152,14 @@
 	<Compile Include="Mts\Model\V20140618\UpdateMediaRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\AddMediaTagRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateTemplateResponse.cs" />
+	<Compile Include="Mts\Model\V20140618\SubmitMediaDetailJobResponse.cs" />
+	<Compile Include="Mts\Model\V20140618\SubmitFpShotJobResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\AddTemplateResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\AddMediaRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryAnnotationJobListResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitCensorJobResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\BindOutputBucketRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\SubmitVideoSummaryJobResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitAnnotationJobResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\PlayerAuthResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdatePornPipelineRequest.cs" />
@@ -152,6 +168,7 @@
 	<Compile Include="Mts\Model\V20140618\SubmitTerrorismJobResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\AddCensorPipelineResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\AddVideoSummaryPipelineResponse.cs" />
+	<Compile Include="Mts\Model\V20140618\QueryVideoSplitJobListResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\ReportFacerecogJobResultRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryTerrorismPipelineListResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\DeleteTemplateResponse.cs" />
@@ -170,6 +187,7 @@
 	<Compile Include="Mts\Model\V20140618\DeletePipelineResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\DeleteCategoryResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\RefreshCdnDomainConfigsCacheRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\SubmitVideoSummaryJobRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\AddVideoSummaryPipelineRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdatePipelineResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitCensorJobRequest.cs" />
@@ -182,6 +200,7 @@
 	<Compile Include="Mts\Model\V20140618\ListCensorPipelineResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateMediaPublishStateRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryAnalysisJobListResponse.cs" />
+	<Compile Include="Mts\Model\V20140618\RegisterMediaDetailPersonRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\AddCategoryResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryTemplateListResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\ReportCensorJobResultRequest.cs" />
@@ -221,6 +240,8 @@
 	<Compile Include="Mts\Model\V20140618\CategoryTreeResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\ReportTerrorismJobResultRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\DeleteCategoryRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\ReportFpShotJobResultResponse.cs" />
+	<Compile Include="Mts\Model\V20140618\ReportMediaDetailJobResultRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\DeleteWaterMarkTemplateRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateMediaResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryCoverPipelineListResponse.cs" />
@@ -240,6 +261,7 @@
 	<Compile Include="Mts\Model\V20140618\UnbindInputBucketRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\AddCoverPipelineRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\ActivateMediaWorkflowRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\SubmitFpShotJobRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateMediaCategoryResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\AddTerrorismPipelineResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\UpdateCategoryNameResponse.cs" />
@@ -258,15 +280,18 @@
 	<Compile Include="Mts\Model\V20140618\UnbindOutputBucketRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitCoverJobResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryPornJobListResponse.cs" />
+	<Compile Include="Mts\Model\V20140618\SubmitVideoSplitJobRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\ListJobResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\SubmitPornJobResponse.cs" />
 	<Compile Include="Mts\Model\V20140618\ListAsrPipelineRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryTagJobListRequest.cs" />
 	<Compile Include="Mts\Model\V20140618\QueryAuthConfigRequest.cs" />
+	<Compile Include="Mts\Model\V20140618\QueryMediaDetailJobListRequest.cs" />
 	<Compile Include="Mts\Transform\V20140618\DeleteMediaResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\SetAuthConfigResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\QueryEditingJobListResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\BindOutputBucketResponseUnmarshaller.cs" />
+	<Compile Include="Mts\Transform\V20140618\QueryFpShotJobListResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdateCoverPipelineResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdateMediaPublishStateResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\AddVideoSummaryPipelineResponseUnmarshaller.cs" />
@@ -281,6 +306,7 @@
 	<Compile Include="Mts\Transform\V20140618\ListAsrPipelineResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\QueryVideoSummaryJobListResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\AddCoverPipelineResponseUnmarshaller.cs" />
+	<Compile Include="Mts\Transform\V20140618\QueryVideoSplitJobListResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\DeleteMediaWorkflowResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\PlayerAuthResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\ListCensorPipelineResponseUnmarshaller.cs" />
@@ -307,6 +333,7 @@
 	<Compile Include="Mts\Transform\V20140618\QueryTagJobListResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdatePornPipelineResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\ListTerrorismPipelineResponseUnmarshaller.cs" />
+	<Compile Include="Mts\Transform\V20140618\SubmitMediaDetailJobResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\DeactivateMediaWorkflowResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\CategoryTreeResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdateMediaWorkflowResponseUnmarshaller.cs" />
@@ -319,13 +346,16 @@
 	<Compile Include="Mts\Transform\V20140618\AddMediaTagResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\AddPornPipelineResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\SubmitEditingJobsResponseUnmarshaller.cs" />
+	<Compile Include="Mts\Transform\V20140618\SubmitVideoSplitJobResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\DecryptKeyResponseUnmarshaller.cs" />
+	<Compile Include="Mts\Transform\V20140618\RegisterMediaDetailPersonResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\QueryCoverPipelineListResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\QueryAuthConfigResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\ReportPornJobResultResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\AddTemplateResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdateMediaCategoryResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\DeleteWaterMarkTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Mts\Transform\V20140618\QueryMediaDetailJobListResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdateCategoryNameResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\ReportAnnotationJobResultResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\QueryTerrorismJobListResponseUnmarshaller.cs" />
@@ -335,11 +365,13 @@
 	<Compile Include="Mts\Transform\V20140618\PlayInfoResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\SearchMediaWorkflowResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdateTerrorismPipelineResponseUnmarshaller.cs" />
+	<Compile Include="Mts\Transform\V20140618\SubmitVideoSummaryJobResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\ReportTagJobResultResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\ListVideoSummaryPipelineResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\AddCensorPipelineResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\SubmitMediaInfoJobResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\QueryAsrPipelineListResponseUnmarshaller.cs" />
+	<Compile Include="Mts\Transform\V20140618\RegisterMediaDetailScenarioResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdateMediaCoverResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\QueryFacerecogJobListResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\AddMediaResponseUnmarshaller.cs" />
@@ -356,16 +388,20 @@
 	<Compile Include="Mts\Transform\V20140618\SubmitSnapshotJobResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\QuerySnapshotJobListResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\AddAsrPipelineResponseUnmarshaller.cs" />
+	<Compile Include="Mts\Transform\V20140618\ReportVideoSplitJobResultResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\QueryCensorJobListResponseUnmarshaller.cs" />
+	<Compile Include="Mts\Transform\V20140618\ReportMediaDetailJobResultResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\SubmitCoverJobResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdatePipelineResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdateVideoSummaryPipelineResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\CancelJobResponseUnmarshaller.cs" />
+	<Compile Include="Mts\Transform\V20140618\ReportFpShotJobResultResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\DeleteTemplateResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\UpdateWaterMarkTemplateResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\ReportTerrorismJobResultResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\SubmitTerrorismJobResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\ListJobResponseUnmarshaller.cs" />
+	<Compile Include="Mts\Transform\V20140618\SubmitFpShotJobResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\ListPornPipelineResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\QueryCensorPipelineListResponseUnmarshaller.cs" />
 	<Compile Include="Mts\Transform\V20140618\ActivateMediaWorkflowResponseUnmarshaller.cs" />
