@@ -128,21 +128,21 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 
 				private string runTime;
 
-				private int? cpuUsed;
+				private long? cpuUsed;
 
-				private int? cpuRequest;
+				private long? cpuRequest;
 
-				private int? cpuUsedTotal;
+				private long? cpuUsedTotal;
 
 				private float? cpuUsedRatioMax;
 
 				private float? cpuUsedRatioMin;
 
-				private int? memUsed;
+				private long? memUsed;
 
-				private int? memRequest;
+				private long? memRequest;
 
-				private int? memUsedTotal;
+				private long? memUsedTotal;
 
 				private float? memUsedRatioMax;
 
@@ -151,6 +151,10 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 				private string taskType;
 
 				private string skynetId;
+
+				private string quotaName;
+
+				private int? quotaId;
 
 				public string Project
 				{
@@ -236,7 +240,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 					}
 				}
 
-				public int? CpuUsed
+				public long? CpuUsed
 				{
 					get
 					{
@@ -248,7 +252,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 					}
 				}
 
-				public int? CpuRequest
+				public long? CpuRequest
 				{
 					get
 					{
@@ -260,7 +264,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 					}
 				}
 
-				public int? CpuUsedTotal
+				public long? CpuUsedTotal
 				{
 					get
 					{
@@ -296,7 +300,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 					}
 				}
 
-				public int? MemUsed
+				public long? MemUsed
 				{
 					get
 					{
@@ -308,7 +312,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 					}
 				}
 
-				public int? MemRequest
+				public long? MemRequest
 				{
 					get
 					{
@@ -320,7 +324,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 					}
 				}
 
-				public int? MemUsedTotal
+				public long? MemUsedTotal
 				{
 					get
 					{
@@ -377,6 +381,30 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 					set	
 					{
 						skynetId = value;
+					}
+				}
+
+				public string QuotaName
+				{
+					get
+					{
+						return quotaName;
+					}
+					set	
+					{
+						quotaName = value;
+					}
+				}
+
+				public int? QuotaId
+				{
+					get
+					{
+						return quotaId;
+					}
+					set	
+					{
+						quotaId = value;
 					}
 				}
 			}

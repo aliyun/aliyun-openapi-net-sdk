@@ -47,18 +47,20 @@ namespace Aliyun.Acs.TeslaMaxCompute.Transform.V20171130
 				instance.NickName = context.StringValue("GetProjectInstance.Data.Detail["+ i +"].NickName");
 				instance.Cluster = context.StringValue("GetProjectInstance.Data.Detail["+ i +"].Cluster");
 				instance.RunTime = context.StringValue("GetProjectInstance.Data.Detail["+ i +"].RunTime");
-				instance.CpuUsed = context.IntegerValue("GetProjectInstance.Data.Detail["+ i +"].CpuUsed");
-				instance.CpuRequest = context.IntegerValue("GetProjectInstance.Data.Detail["+ i +"].CpuRequest");
-				instance.CpuUsedTotal = context.IntegerValue("GetProjectInstance.Data.Detail["+ i +"].CpuUsedTotal");
+				instance.CpuUsed = context.LongValue("GetProjectInstance.Data.Detail["+ i +"].CpuUsed");
+				instance.CpuRequest = context.LongValue("GetProjectInstance.Data.Detail["+ i +"].CpuRequest");
+				instance.CpuUsedTotal = context.LongValue("GetProjectInstance.Data.Detail["+ i +"].CpuUsedTotal");
 				instance.CpuUsedRatioMax = context.FloatValue("GetProjectInstance.Data.Detail["+ i +"].CpuUsedRatioMax");
 				instance.CpuUsedRatioMin = context.FloatValue("GetProjectInstance.Data.Detail["+ i +"].CpuUsedRatioMin");
-				instance.MemUsed = context.IntegerValue("GetProjectInstance.Data.Detail["+ i +"].MemUsed");
-				instance.MemRequest = context.IntegerValue("GetProjectInstance.Data.Detail["+ i +"].MemRequest");
-				instance.MemUsedTotal = context.IntegerValue("GetProjectInstance.Data.Detail["+ i +"].MemUsedTotal");
+				instance.MemUsed = context.LongValue("GetProjectInstance.Data.Detail["+ i +"].MemUsed");
+				instance.MemRequest = context.LongValue("GetProjectInstance.Data.Detail["+ i +"].MemRequest");
+				instance.MemUsedTotal = context.LongValue("GetProjectInstance.Data.Detail["+ i +"].MemUsedTotal");
 				instance.MemUsedRatioMax = context.FloatValue("GetProjectInstance.Data.Detail["+ i +"].MemUsedRatioMax");
 				instance.MemUsedRatioMin = context.FloatValue("GetProjectInstance.Data.Detail["+ i +"].MemUsedRatioMin");
 				instance.TaskType = context.StringValue("GetProjectInstance.Data.Detail["+ i +"].TaskType");
 				instance.SkynetId = context.StringValue("GetProjectInstance.Data.Detail["+ i +"].SkynetId");
+				instance.QuotaName = context.StringValue("GetProjectInstance.Data.Detail["+ i +"].QuotaName");
+				instance.QuotaId = context.IntegerValue("GetProjectInstance.Data.Detail["+ i +"].QuotaId");
 
 				data_detail.Add(instance);
 			}

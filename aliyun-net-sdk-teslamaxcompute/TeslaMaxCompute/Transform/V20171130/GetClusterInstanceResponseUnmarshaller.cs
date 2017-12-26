@@ -47,18 +47,20 @@ namespace Aliyun.Acs.TeslaMaxCompute.Transform.V20171130
 				instance.NickName = context.StringValue("GetClusterInstance.Data.Detail["+ i +"].NickName");
 				instance.Cluster = context.StringValue("GetClusterInstance.Data.Detail["+ i +"].Cluster");
 				instance.RunTime = context.StringValue("GetClusterInstance.Data.Detail["+ i +"].RunTime");
-				instance.CpuUsed = context.IntegerValue("GetClusterInstance.Data.Detail["+ i +"].CpuUsed");
-				instance.CpuRequest = context.IntegerValue("GetClusterInstance.Data.Detail["+ i +"].CpuRequest");
-				instance.CpuUsedTotal = context.IntegerValue("GetClusterInstance.Data.Detail["+ i +"].CpuUsedTotal");
+				instance.CpuUsed = context.LongValue("GetClusterInstance.Data.Detail["+ i +"].CpuUsed");
+				instance.CpuRequest = context.LongValue("GetClusterInstance.Data.Detail["+ i +"].CpuRequest");
+				instance.CpuUsedTotal = context.LongValue("GetClusterInstance.Data.Detail["+ i +"].CpuUsedTotal");
 				instance.CpuUsedRatioMax = context.FloatValue("GetClusterInstance.Data.Detail["+ i +"].CpuUsedRatioMax");
 				instance.CpuUsedRatioMin = context.FloatValue("GetClusterInstance.Data.Detail["+ i +"].CpuUsedRatioMin");
-				instance.MemUsed = context.IntegerValue("GetClusterInstance.Data.Detail["+ i +"].MemUsed");
-				instance.MemRequest = context.IntegerValue("GetClusterInstance.Data.Detail["+ i +"].MemRequest");
-				instance.MemUsedTotal = context.IntegerValue("GetClusterInstance.Data.Detail["+ i +"].MemUsedTotal");
+				instance.MemUsed = context.LongValue("GetClusterInstance.Data.Detail["+ i +"].MemUsed");
+				instance.MemRequest = context.LongValue("GetClusterInstance.Data.Detail["+ i +"].MemRequest");
+				instance.MemUsedTotal = context.LongValue("GetClusterInstance.Data.Detail["+ i +"].MemUsedTotal");
 				instance.MemUsedRatioMax = context.FloatValue("GetClusterInstance.Data.Detail["+ i +"].MemUsedRatioMax");
 				instance.MemUsedRatioMin = context.FloatValue("GetClusterInstance.Data.Detail["+ i +"].MemUsedRatioMin");
 				instance.TaskType = context.StringValue("GetClusterInstance.Data.Detail["+ i +"].TaskType");
 				instance.SkynetId = context.StringValue("GetClusterInstance.Data.Detail["+ i +"].SkynetId");
+				instance.QuotaName = context.StringValue("GetClusterInstance.Data.Detail["+ i +"].QuotaName");
+				instance.QuotaId = context.IntegerValue("GetClusterInstance.Data.Detail["+ i +"].QuotaId");
 
 				data_detail.Add(instance);
 			}
