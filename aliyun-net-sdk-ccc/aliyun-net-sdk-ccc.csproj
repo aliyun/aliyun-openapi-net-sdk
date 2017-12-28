@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1070537d-eb54-4b4a-a75d-89d02859353a}</ProjectGuid>
+    <ProjectGuid>{5b8aa92b-7e28-41d3-99b7-f2bcacb4663f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -41,19 +41,24 @@
   <ItemGroup>
 	<Compile Include="CCC\Model\V20170705\AddPhoneNumberResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\ModifyPhoneNumberRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListCallDetailRecordsResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\RemoveUsersRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\ListContactFlowsResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\CreateSkillGroupResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\RequestLoginInfoRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\ListUsersOfSkillGroupRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\GetServiceExtensionsRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListRecordingsResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\ListUsersResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\DownloadRecordingRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\AssignUsersRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\ListSkillGroupsResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\RemovePhoneNumberRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListRecordingsRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\RefreshTokenRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\CreateUserRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\ListRolesRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListCallDetailRecordsRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\AssignUsersResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\RefreshTokenResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\CreateSkillGroupRequest.cs" />
@@ -82,6 +87,7 @@
 	<Compile Include="CCC\Model\V20170705\ModifyPhoneNumberResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\RemovePhoneNumberResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\GetUserRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\DownloadRecordingResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\ListUsersOfSkillGroupResponse.cs" />
 	<Compile Include="CCC\Transform\V20170705\CreateUserResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ModifySkillGroupResponseUnmarshaller.cs" />
@@ -98,6 +104,9 @@
 	<Compile Include="CCC\Transform\V20170705\ModifyUserResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\GetUserResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ListUsersResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListRecordingsResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListCallDetailRecordsResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\DownloadRecordingResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\RemovePhoneNumberResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\RemoveUsersResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\GetConfigResponseUnmarshaller.cs" />
