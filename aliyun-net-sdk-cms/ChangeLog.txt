@@ -1,0 +1,4 @@
+2017-12-29 Version: 5.0.8
+1, Fixed DescribeAlarmHistory subuser access probelm.
+2, Add both api, PutSystemEvent and PutCustomMetric.
+
