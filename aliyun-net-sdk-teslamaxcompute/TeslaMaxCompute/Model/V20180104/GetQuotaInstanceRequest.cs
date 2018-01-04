@@ -21,15 +21,15 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.TeslaMaxCompute.Transform;
-using Aliyun.Acs.TeslaMaxCompute.Transform.V20171130;
+using Aliyun.Acs.TeslaMaxCompute.Transform.V20180104;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
+namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 {
-    public class GetQuotaInfoRequest : RpcAcsRequest<GetQuotaInfoResponse>
+    public class GetQuotaInstanceRequest : RpcAcsRequest<GetQuotaInstanceResponse>
     {
-        public GetQuotaInfoRequest()
-            : base("TeslaMaxCompute", "2017-11-30", "GetQuotaInfo")
+        public GetQuotaInstanceRequest()
+            : base("TeslaMaxCompute", "2018-01-04", "GetQuotaInstance")
         {
         }
 
@@ -113,9 +113,9 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			return false;
 		}
 
-        public override GetQuotaInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetQuotaInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetQuotaInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetQuotaInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

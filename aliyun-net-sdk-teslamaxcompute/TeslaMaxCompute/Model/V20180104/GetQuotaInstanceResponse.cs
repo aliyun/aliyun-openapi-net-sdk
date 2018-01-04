@@ -19,9 +19,9 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
+namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 {
-	public class GetProjectInstanceResponse : AcsResponse
+	public class GetQuotaInstanceResponse : AcsResponse
 	{
 
 		private int? code;
@@ -30,7 +30,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 
 		private string requestId;
 
-		private GetProjectInstance_Data data;
+		private GetQuotaInstance_Data data;
 
 		public int? Code
 		{
@@ -68,7 +68,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			}
 		}
 
-		public GetProjectInstance_Data Data
+		public GetQuotaInstance_Data Data
 		{
 			get
 			{
@@ -80,12 +80,12 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			}
 		}
 
-		public class GetProjectInstance_Data
+		public class GetQuotaInstance_Data
 		{
 
 			private int? total;
 
-			private List<GetProjectInstance_Instance> detail;
+			private List<GetQuotaInstance_Instance> detail;
 
 			public int? Total
 			{
@@ -99,7 +99,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 				}
 			}
 
-			public List<GetProjectInstance_Instance> Detail
+			public List<GetQuotaInstance_Instance> Detail
 			{
 				get
 				{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 				}
 			}
 
-			public class GetProjectInstance_Instance
+			public class GetQuotaInstance_Instance
 			{
 
 				private string project;

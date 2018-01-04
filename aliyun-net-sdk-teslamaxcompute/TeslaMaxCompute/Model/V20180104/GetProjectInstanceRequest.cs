@@ -21,40 +21,27 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.TeslaMaxCompute.Transform;
-using Aliyun.Acs.TeslaMaxCompute.Transform.V20171130;
+using Aliyun.Acs.TeslaMaxCompute.Transform.V20180104;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
+namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 {
-    public class GetQuotaInstanceRequest : RpcAcsRequest<GetQuotaInstanceResponse>
+    public class GetProjectInstanceRequest : RpcAcsRequest<GetProjectInstanceResponse>
     {
-        public GetQuotaInstanceRequest()
-            : base("TeslaMaxCompute", "2017-11-30", "GetQuotaInstance")
+        public GetProjectInstanceRequest()
+            : base("TeslaMaxCompute", "2018-01-04", "GetProjectInstance")
         {
         }
 
-		private string cluster;
-
 		private int? pageSize;
 
-		private string quotaId;
+		private string project;
 
 		private int? pageNum;
 
-		private string status;
+		private string region;
 
-		public string Cluster
-		{
-			get
-			{
-				return cluster;
-			}
-			set	
-			{
-				cluster = value;
-				DictionaryUtil.Add(QueryParameters, "Cluster", value);
-			}
-		}
+		private string status;
 
 		public int? PageSize
 		{
@@ -69,16 +56,16 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			}
 		}
 
-		public string QuotaId
+		public string Project
 		{
 			get
 			{
-				return quotaId;
+				return project;
 			}
 			set	
 			{
-				quotaId = value;
-				DictionaryUtil.Add(QueryParameters, "QuotaId", value);
+				project = value;
+				DictionaryUtil.Add(QueryParameters, "Project", value);
 			}
 		}
 
@@ -92,6 +79,19 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
@@ -113,9 +113,9 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			return false;
 		}
 
-        public override GetQuotaInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetProjectInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetQuotaInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetProjectInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

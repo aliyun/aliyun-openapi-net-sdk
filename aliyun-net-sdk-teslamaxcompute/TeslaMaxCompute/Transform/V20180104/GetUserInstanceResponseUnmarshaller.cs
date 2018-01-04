@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.TeslaMaxCompute.Model.V20171130;
+using Aliyun.Acs.TeslaMaxCompute.Model.V20180104;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.TeslaMaxCompute.Transform.V20171130
+namespace Aliyun.Acs.TeslaMaxCompute.Transform.V20180104
 {
     public class GetUserInstanceResponseUnmarshaller
     {

@@ -21,25 +21,27 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.TeslaMaxCompute.Transform;
-using Aliyun.Acs.TeslaMaxCompute.Transform.V20171130;
+using Aliyun.Acs.TeslaMaxCompute.Transform.V20180104;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
+namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 {
-    public class GetClusterInfoRequest : RpcAcsRequest<GetClusterInfoResponse>
+    public class GetQuotaHistoryInfoRequest : RpcAcsRequest<GetQuotaHistoryInfoResponse>
     {
-        public GetClusterInfoRequest()
-            : base("TeslaMaxCompute", "2017-11-30", "GetClusterInfo")
+        public GetQuotaHistoryInfoRequest()
+            : base("TeslaMaxCompute", "2018-01-04", "GetQuotaHistoryInfo")
         {
         }
 
 		private string cluster;
 
-		private int? pageSize;
+		private int? endTime;
 
-		private int? pageNum;
+		private int? startTime;
 
-		private string status;
+		private string region;
+
+		private string quotaName;
 
 		public string Cluster
 		{
@@ -54,42 +56,55 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			}
 		}
 
-		public int? PageSize
+		public int? EndTime
 		{
 			get
 			{
-				return pageSize;
+				return endTime;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
 			}
 		}
 
-		public int? PageNum
+		public int? StartTime
 		{
 			get
 			{
-				return pageNum;
+				return startTime;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 
-		public string Status
+		public string Region
 		{
 			get
 			{
-				return status;
+				return region;
 			}
 			set	
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
+			}
+		}
+
+		public string QuotaName
+		{
+			get
+			{
+				return quotaName;
+			}
+			set	
+			{
+				quotaName = value;
+				DictionaryUtil.Add(QueryParameters, "QuotaName", value);
 			}
 		}
 
@@ -98,9 +113,9 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			return false;
 		}
 
-        public override GetClusterInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetQuotaHistoryInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetClusterInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetQuotaHistoryInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

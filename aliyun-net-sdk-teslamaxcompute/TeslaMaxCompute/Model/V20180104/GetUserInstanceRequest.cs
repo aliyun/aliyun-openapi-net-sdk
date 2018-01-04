@@ -21,23 +21,25 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.TeslaMaxCompute.Transform;
-using Aliyun.Acs.TeslaMaxCompute.Transform.V20171130;
+using Aliyun.Acs.TeslaMaxCompute.Transform.V20180104;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
+namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 {
-    public class GetProjectInstanceRequest : RpcAcsRequest<GetProjectInstanceResponse>
+    public class GetUserInstanceRequest : RpcAcsRequest<GetUserInstanceResponse>
     {
-        public GetProjectInstanceRequest()
-            : base("TeslaMaxCompute", "2017-11-30", "GetProjectInstance")
+        public GetUserInstanceRequest()
+            : base("TeslaMaxCompute", "2018-01-04", "GetUserInstance")
         {
         }
 
 		private int? pageSize;
 
-		private string project;
-
 		private int? pageNum;
+
+		private string region;
+
+		private string user;
 
 		private string status;
 
@@ -54,19 +56,6 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			}
 		}
 
-		public string Project
-		{
-			get
-			{
-				return project;
-			}
-			set	
-			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
-			}
-		}
-
 		public int? PageNum
 		{
 			get
@@ -77,6 +66,32 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
+			}
+		}
+
+		public string User
+		{
+			get
+			{
+				return user;
+			}
+			set	
+			{
+				user = value;
+				DictionaryUtil.Add(QueryParameters, "User", value);
 			}
 		}
 
@@ -98,9 +113,9 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			return false;
 		}
 
-        public override GetProjectInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetUserInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetProjectInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetUserInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

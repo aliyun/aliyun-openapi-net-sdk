@@ -21,15 +21,15 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.TeslaMaxCompute.Transform;
-using Aliyun.Acs.TeslaMaxCompute.Transform.V20171130;
+using Aliyun.Acs.TeslaMaxCompute.Transform.V20180104;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
+namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 {
     public class GetClusterInstanceRequest : RpcAcsRequest<GetClusterInstanceResponse>
     {
         public GetClusterInstanceRequest()
-            : base("TeslaMaxCompute", "2017-11-30", "GetClusterInstance")
+            : base("TeslaMaxCompute", "2018-01-04", "GetClusterInstance")
         {
         }
 
@@ -38,6 +38,8 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 		private int? pageSize;
 
 		private int? pageNum;
+
+		private string region;
 
 		private string status;
 
@@ -77,6 +79,19 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 

@@ -21,75 +21,45 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.TeslaMaxCompute.Transform;
-using Aliyun.Acs.TeslaMaxCompute.Transform.V20171130;
+using Aliyun.Acs.TeslaMaxCompute.Transform.V20180104;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
+namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 {
-    public class GetUserInstanceRequest : RpcAcsRequest<GetUserInstanceResponse>
+    public class GetInstancesStatusCountRequest : RpcAcsRequest<GetInstancesStatusCountResponse>
     {
-        public GetUserInstanceRequest()
-            : base("TeslaMaxCompute", "2017-11-30", "GetUserInstance")
+        public GetInstancesStatusCountRequest()
+            : base("TeslaMaxCompute", "2018-01-04", "GetInstancesStatusCount")
         {
         }
 
-		private int? pageSize;
+		private string cluster;
 
-		private int? pageNum;
+		private string region;
 
-		private string user;
-
-		private string status;
-
-		public int? PageSize
+		public string Cluster
 		{
 			get
 			{
-				return pageSize;
+				return cluster;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				cluster = value;
+				DictionaryUtil.Add(QueryParameters, "Cluster", value);
 			}
 		}
 
-		public int? PageNum
+		public string Region
 		{
 			get
 			{
-				return pageNum;
+				return region;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string User
-		{
-			get
-			{
-				return user;
-			}
-			set	
-			{
-				user = value;
-				DictionaryUtil.Add(QueryParameters, "User", value);
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
@@ -98,9 +68,9 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			return false;
 		}
 
-        public override GetUserInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetInstancesStatusCountResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetUserInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetInstancesStatusCountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

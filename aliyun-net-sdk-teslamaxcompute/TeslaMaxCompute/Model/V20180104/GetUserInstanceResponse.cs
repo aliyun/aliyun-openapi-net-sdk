@@ -19,9 +19,9 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
+namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 {
-	public class GetClusterInstanceResponse : AcsResponse
+	public class GetUserInstanceResponse : AcsResponse
 	{
 
 		private int? code;
@@ -30,7 +30,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 
 		private string requestId;
 
-		private GetClusterInstance_Data data;
+		private GetUserInstance_Data data;
 
 		public int? Code
 		{
@@ -68,7 +68,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			}
 		}
 
-		public GetClusterInstance_Data Data
+		public GetUserInstance_Data Data
 		{
 			get
 			{
@@ -80,12 +80,12 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 			}
 		}
 
-		public class GetClusterInstance_Data
+		public class GetUserInstance_Data
 		{
 
 			private int? total;
 
-			private List<GetClusterInstance_Instance> detail;
+			private List<GetUserInstance_Instance> detail;
 
 			public int? Total
 			{
@@ -99,7 +99,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 				}
 			}
 
-			public List<GetClusterInstance_Instance> Detail
+			public List<GetUserInstance_Instance> Detail
 			{
 				get
 				{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20171130
 				}
 			}
 
-			public class GetClusterInstance_Instance
+			public class GetUserInstance_Instance
 			{
 
 				private string project;
