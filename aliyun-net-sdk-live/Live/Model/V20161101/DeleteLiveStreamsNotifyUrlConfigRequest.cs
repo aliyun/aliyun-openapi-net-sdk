@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DeleteLiveStreamsNotifyUrlConfigRequest : RpcAcsRequest<DeleteLiveStreamsNotifyUrlConfigResponse>
     {
         public DeleteLiveStreamsNotifyUrlConfigRequest()
-            : base("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig")
+            : base("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "live", "openAPI")
         {
         }
 

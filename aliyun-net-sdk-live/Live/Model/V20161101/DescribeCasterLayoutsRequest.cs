@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeCasterLayoutsRequest : RpcAcsRequest<DescribeCasterLayoutsResponse>
     {
         public DescribeCasterLayoutsRequest()
-            : base("live", "2016-11-01", "DescribeCasterLayouts")
+            : base("live", "2016-11-01", "DescribeCasterLayouts", "live", "openAPI")
         {
         }
 
@@ -42,6 +42,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? ownerId;
 
 		private string version;
+
+		private string layoutId;
 
 		private string accessKeyId;
 
@@ -107,6 +109,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				version = value;
 				DictionaryUtil.Add(QueryParameters, "Version", value);
+			}
+		}
+
+		public string LayoutId
+		{
+			get
+			{
+				return layoutId;
+			}
+			set	
+			{
+				layoutId = value;
+				DictionaryUtil.Add(QueryParameters, "LayoutId", value);
 			}
 		}
 

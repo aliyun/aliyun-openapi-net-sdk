@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class EffectCasterUrgentRequest : RpcAcsRequest<EffectCasterUrgentResponse>
     {
         public EffectCasterUrgentRequest()
-            : base("live", "2016-11-01", "EffectCasterUrgent")
+            : base("live", "2016-11-01", "EffectCasterUrgent", "live", "openAPI")
         {
         }
 

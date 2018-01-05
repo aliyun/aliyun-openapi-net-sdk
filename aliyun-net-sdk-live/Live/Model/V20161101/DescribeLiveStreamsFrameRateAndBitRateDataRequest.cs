@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeLiveStreamsFrameRateAndBitRateDataRequest : RpcAcsRequest<DescribeLiveStreamsFrameRateAndBitRateDataResponse>
     {
         public DescribeLiveStreamsFrameRateAndBitRateDataRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData")
+            : base("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData", "live", "openAPI")
         {
         }
 

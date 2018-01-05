@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class StopCasterRequest : RpcAcsRequest<StopCasterResponse>
     {
         public StopCasterRequest()
-            : base("live", "2016-11-01", "StopCaster")
+            : base("live", "2016-11-01", "StopCaster", "live", "openAPI")
         {
         }
 

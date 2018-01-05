@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class ModifyCasterVideoResourceRequest : RpcAcsRequest<ModifyCasterVideoResourceResponse>
     {
         public ModifyCasterVideoResourceRequest()
-            : base("live", "2016-11-01", "ModifyCasterVideoResource")
+            : base("live", "2016-11-01", "ModifyCasterVideoResource", "live", "openAPI")
         {
         }
 

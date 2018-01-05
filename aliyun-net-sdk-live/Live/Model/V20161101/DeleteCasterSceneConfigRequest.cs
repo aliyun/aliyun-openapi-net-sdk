@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeCasterStreamUrlRequest : RpcAcsRequest<DescribeCasterStreamUrlResponse>
+    public class DeleteCasterSceneConfigRequest : RpcAcsRequest<DeleteCasterSceneConfigResponse>
     {
-        public DescribeCasterStreamUrlRequest()
-            : base("live", "2016-11-01", "DescribeCasterStreamUrl", "live", "openAPI")
+        public DeleteCasterSceneConfigRequest()
+            : base("live", "2016-11-01", "DeleteCasterSceneConfig", "live", "openAPI")
         {
         }
 
@@ -37,9 +37,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string casterId;
 
+		private string sceneId;
+
 		private string action;
 
 		private long? ownerId;
+
+		private string type;
 
 		private string version;
 
@@ -71,6 +75,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string SceneId
+		{
+			get
+			{
+				return sceneId;
+			}
+			set	
+			{
+				sceneId = value;
+				DictionaryUtil.Add(QueryParameters, "SceneId", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -94,6 +111,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -123,9 +153,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override DescribeCasterStreamUrlResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteCasterSceneConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCasterStreamUrlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteCasterSceneConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

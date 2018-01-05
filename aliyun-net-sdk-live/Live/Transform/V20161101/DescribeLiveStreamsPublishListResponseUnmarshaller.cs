@@ -44,6 +44,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveStreamPublishInfo.PublishUrl = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishUrl");
 				liveStreamPublishInfo.ClientAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].ClientAddr");
 				liveStreamPublishInfo.EdgeNodeAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].EdgeNodeAddr");
+				liveStreamPublishInfo.PublishDomain = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishDomain");
 
 				describeLiveStreamsPublishListResponse_publishInfo.Add(liveStreamPublishInfo);
 			}

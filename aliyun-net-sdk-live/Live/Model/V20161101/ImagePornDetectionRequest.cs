@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class ImagePornDetectionRequest : RpcAcsRequest<ImagePornDetectionResponse>
     {
         public ImagePornDetectionRequest()
-            : base("live", "2016-11-01", "ImagePornDetection")
+            : base("live", "2016-11-01", "ImagePornDetection", "live", "openAPI")
         {
         }
 

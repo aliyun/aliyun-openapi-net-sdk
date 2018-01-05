@@ -41,6 +41,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveRecordVodConfig.CreateTime = context.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].CreateTime");
 				liveRecordVodConfig.DomainName = context.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].DomainName");
 				liveRecordVodConfig.AppName = context.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].AppName");
+				liveRecordVodConfig.StreamName = context.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].StreamName");
 				liveRecordVodConfig.VodTranscodeGroupId = context.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].VodTranscodeGroupId");
 				liveRecordVodConfig.CycleDuration = context.IntegerValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].CycleDuration");
 

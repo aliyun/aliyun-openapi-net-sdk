@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class StartCasterRequest : RpcAcsRequest<StartCasterResponse>
     {
         public StartCasterRequest()
-            : base("live", "2016-11-01", "StartCaster")
+            : base("live", "2016-11-01", "StartCaster", "live", "openAPI")
         {
         }
 

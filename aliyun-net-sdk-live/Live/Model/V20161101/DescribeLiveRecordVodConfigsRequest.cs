@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeLiveRecordVodConfigsRequest : RpcAcsRequest<DescribeLiveRecordVodConfigsResponse>
     {
         public DescribeLiveRecordVodConfigsRequest()
-            : base("live", "2016-11-01", "DescribeLiveRecordVodConfigs")
+            : base("live", "2016-11-01", "DescribeLiveRecordVodConfigs", "live", "openAPI")
         {
         }
 
@@ -48,6 +48,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? pageNum;
 
 		private string version;
+
+		private string streamName;
 
 		private string accessKeyId;
 
@@ -152,6 +154,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				version = value;
 				DictionaryUtil.Add(QueryParameters, "Version", value);
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 

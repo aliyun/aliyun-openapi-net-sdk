@@ -40,6 +40,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveStreamOnlineInfo.StreamName = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].StreamName");
 				liveStreamOnlineInfo.PublishTime = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishTime");
 				liveStreamOnlineInfo.PublishUrl = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishUrl");
+				liveStreamOnlineInfo.PublishDomain = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishDomain");
 
 				describeLiveStreamsOnlineListResponse_onlineInfo.Add(liveStreamOnlineInfo);
 			}

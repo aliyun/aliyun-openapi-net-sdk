@@ -65,6 +65,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string publishUrl;
 
+			private string publishDomain;
+
 			public string DomainName
 			{
 				get
@@ -122,6 +124,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					publishUrl = value;
+				}
+			}
+
+			public string PublishDomain
+			{
+				get
+				{
+					return publishDomain;
+				}
+				set	
+				{
+					publishDomain = value;
 				}
 			}
 		}

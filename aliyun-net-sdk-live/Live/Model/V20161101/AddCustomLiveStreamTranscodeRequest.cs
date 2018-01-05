@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class AddLiveStreamTranscodeRequest : RpcAcsRequest<AddLiveStreamTranscodeResponse>
+    public class AddCustomLiveStreamTranscodeRequest : RpcAcsRequest<AddCustomLiveStreamTranscodeResponse>
     {
-        public AddLiveStreamTranscodeRequest()
-            : base("live", "2016-11-01", "AddLiveStreamTranscode", "live", "openAPI")
+        public AddCustomLiveStreamTranscodeRequest()
+            : base("live", "2016-11-01", "AddCustomLiveStreamTranscode", "live", "openAPI")
         {
         }
 
@@ -37,15 +37,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string template;
 
-		private string securityToken;
-
-		private string domain;
-
-		private string action;
+		private int? fPS;
 
 		private long? ownerId;
 
+		private string version;
+
 		private string accessKeyId;
+
+		private string securityToken;
+
+		private string templateType;
+
+		private string domain;
+
+		private int? width;
+
+		private string action;
+
+		private int? videoBitrate;
+
+		private int? height;
 
 		public string App
 		{
@@ -73,42 +85,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string SecurityToken
+		public int? FPS
 		{
 			get
 			{
-				return securityToken;
+				return fPS;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Domain
-		{
-			get
-			{
-				return domain;
-			}
-			set	
-			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				fPS = value;
+				DictionaryUtil.Add(QueryParameters, "FPS", value.ToString());
 			}
 		}
 
@@ -125,6 +111,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string Version
+		{
+			get
+			{
+				return version;
+			}
+			set	
+			{
+				version = value;
+				DictionaryUtil.Add(QueryParameters, "Version", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -138,9 +137,100 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override AddLiveStreamTranscodeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string TemplateType
+		{
+			get
+			{
+				return templateType;
+			}
+			set	
+			{
+				templateType = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateType", value);
+			}
+		}
+
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
+			}
+		}
+
+		public int? Width
+		{
+			get
+			{
+				return width;
+			}
+			set	
+			{
+				width = value;
+				DictionaryUtil.Add(QueryParameters, "Width", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public int? VideoBitrate
+		{
+			get
+			{
+				return videoBitrate;
+			}
+			set	
+			{
+				videoBitrate = value;
+				DictionaryUtil.Add(QueryParameters, "VideoBitrate", value.ToString());
+			}
+		}
+
+		public int? Height
+		{
+			get
+			{
+				return height;
+			}
+			set	
+			{
+				height = value;
+				DictionaryUtil.Add(QueryParameters, "Height", value.ToString());
+			}
+		}
+
+        public override AddCustomLiveStreamTranscodeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return AddLiveStreamTranscodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddCustomLiveStreamTranscodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

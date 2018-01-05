@@ -103,6 +103,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string appName;
 
+			private string streamName;
+
 			private string vodTranscodeGroupId;
 
 			private int? cycleDuration;
@@ -140,6 +142,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					appName = value;
+				}
+			}
+
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
 				}
 			}
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DeleteLiveRecordVodConfigRequest : RpcAcsRequest<DeleteLiveRecordVodConfigResponse>
     {
         public DeleteLiveRecordVodConfigRequest()
-            : base("live", "2016-11-01", "DeleteLiveRecordVodConfig")
+            : base("live", "2016-11-01", "DeleteLiveRecordVodConfig", "live", "openAPI")
         {
         }
 
@@ -44,6 +44,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? ownerId;
 
 		private string version;
+
+		private string streamName;
 
 		private string accessKeyId;
 
@@ -122,6 +124,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				version = value;
 				DictionaryUtil.Add(QueryParameters, "Version", value);
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 
