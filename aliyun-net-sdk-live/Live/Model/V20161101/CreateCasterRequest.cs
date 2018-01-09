@@ -29,15 +29,15 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class CreateCasterRequest : RpcAcsRequest<CreateCasterResponse>
     {
         public CreateCasterRequest()
-            : base("live", "2016-11-01", "CreateCaster", "live", "openAPI")
+            : base("live", "2016-11-01", "CreateCaster")
         {
         }
 
 		private string casterTemplate;
 
-		private int? normType;
+		private string expireTime;
 
-		private int? period;
+		private int? normType;
 
 		private string securityToken;
 
@@ -50,6 +50,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string chargeType;
 
 		private long? ownerId;
+
+		private string purchaseTime;
 
 		private string version;
 
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string ExpireTime
+		{
+			get
+			{
+				return expireTime;
+			}
+			set	
+			{
+				expireTime = value;
+				DictionaryUtil.Add(QueryParameters, "ExpireTime", value);
+			}
+		}
+
 		public int? NormType
 		{
 			get
@@ -78,19 +93,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				normType = value;
 				DictionaryUtil.Add(QueryParameters, "NormType", value.ToString());
-			}
-		}
-
-		public int? Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
 			}
 		}
 
@@ -169,6 +171,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PurchaseTime
+		{
+			get
+			{
+				return purchaseTime;
+			}
+			set	
+			{
+				purchaseTime = value;
+				DictionaryUtil.Add(QueryParameters, "PurchaseTime", value);
 			}
 		}
 

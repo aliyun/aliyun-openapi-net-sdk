@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeLiveMixConfigRequest : RpcAcsRequest<DescribeLiveMixConfigResponse>
     {
         public DescribeLiveMixConfigRequest()
-            : base("live", "2016-11-01", "DescribeLiveMixConfig", "live", "openAPI")
+            : base("live", "2016-11-01", "DescribeLiveMixConfig")
         {
         }
 

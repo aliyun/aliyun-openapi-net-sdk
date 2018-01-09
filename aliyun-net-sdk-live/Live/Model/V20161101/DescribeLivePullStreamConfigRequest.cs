@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeLivePullStreamConfigRequest : RpcAcsRequest<DescribeLivePullStreamConfigResponse>
     {
         public DescribeLivePullStreamConfigRequest()
-            : base("live", "2016-11-01", "DescribeLivePullStreamConfig", "live", "openAPI")
+            : base("live", "2016-11-01", "DescribeLivePullStreamConfig")
         {
         }
 

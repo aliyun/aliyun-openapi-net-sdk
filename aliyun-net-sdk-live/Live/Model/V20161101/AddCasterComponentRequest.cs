@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class AddCasterComponentRequest : RpcAcsRequest<AddCasterComponentResponse>
     {
         public AddCasterComponentRequest()
-            : base("live", "2016-11-01", "AddCasterComponent", "live", "openAPI")
+            : base("live", "2016-11-01", "AddCasterComponent")
         {
         }
 

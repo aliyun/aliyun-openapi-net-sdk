@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class AddCasterLayoutRequest : RpcAcsRequest<AddCasterLayoutResponse>
     {
         public AddCasterLayoutRequest()
-            : base("live", "2016-11-01", "AddCasterLayout", "live", "openAPI")
+            : base("live", "2016-11-01", "AddCasterLayout")
         {
         }
 

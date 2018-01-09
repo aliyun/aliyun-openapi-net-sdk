@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class EffectCasterVideoResourceRequest : RpcAcsRequest<EffectCasterVideoResourceResponse>
     {
         public EffectCasterVideoResourceRequest()
-            : base("live", "2016-11-01", "EffectCasterVideoResource", "live", "openAPI")
+            : base("live", "2016-11-01", "EffectCasterVideoResource")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class UpdateLiveAppSnapshotConfigRequest : RpcAcsRequest<UpdateLiveAppSnapshotConfigResponse>
     {
         public UpdateLiveAppSnapshotConfigRequest()
-            : base("live", "2016-11-01", "UpdateLiveAppSnapshotConfig", "live", "openAPI")
+            : base("live", "2016-11-01", "UpdateLiveAppSnapshotConfig")
         {
         }
 

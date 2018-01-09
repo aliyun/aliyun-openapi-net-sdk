@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class RemoveMultipleStreamMixServiceRequest : RpcAcsRequest<RemoveMultipleStreamMixServiceResponse>
     {
         public RemoveMultipleStreamMixServiceRequest()
-            : base("live", "2016-11-01", "RemoveMultipleStreamMixService", "live", "openAPI")
+            : base("live", "2016-11-01", "RemoveMultipleStreamMixService")
         {
         }
 

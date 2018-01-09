@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class SetLiveStreamsNotifyUrlConfigRequest : RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse>
     {
         public SetLiveStreamsNotifyUrlConfigRequest()
-            : base("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live", "openAPI")
+            : base("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig")
         {
         }
 

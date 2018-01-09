@@ -81,7 +81,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string startTime;
 
-			private int? period;
+			private string purchaseTime;
+
+			private string expireTime;
 
 			private string chargeType;
 
@@ -159,15 +161,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? Period
+			public string PurchaseTime
 			{
 				get
 				{
-					return period;
+					return purchaseTime;
 				}
 				set	
 				{
-					period = value;
+					purchaseTime = value;
+				}
+			}
+
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
 				}
 			}
 

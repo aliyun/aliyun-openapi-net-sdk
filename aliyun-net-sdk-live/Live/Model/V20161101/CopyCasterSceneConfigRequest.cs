@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class CopyCasterSceneConfigRequest : RpcAcsRequest<CopyCasterSceneConfigResponse>
     {
         public CopyCasterSceneConfigRequest()
-            : base("live", "2016-11-01", "CopyCasterSceneConfig", "live", "openAPI")
+            : base("live", "2016-11-01", "CopyCasterSceneConfig")
         {
         }
 
