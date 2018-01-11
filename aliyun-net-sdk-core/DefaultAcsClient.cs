@@ -25,6 +25,8 @@ using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Transform;
 using System.Collections.Generic;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Aliyun.Acs.Core
 {
@@ -64,25 +66,45 @@ namespace Aliyun.Acs.Core
 
         public T GetAcsResponse<T>(AcsRequest<T> request) where T : AcsResponse
         {
-            HttpResponse httpResponse = this.DoAction(request);
+            return GetAcsResponse(request, CancellationToken.None).Result;
+        }
+
+        public async Task<T> GetAcsResponse<T>(AcsRequest<T> request, CancellationToken ct) where T : AcsResponse
+        {
+            HttpResponse httpResponse = await this.DoAction(request, ct);
             return ParseAcsResponse(request, httpResponse);
         }
 
         public T GetAcsResponse<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber) where T : AcsResponse
         {
-            HttpResponse httpResponse = this.DoAction(request, autoRetry, maxRetryNumber);
+            return GetAcsResponse(request, autoRetry, maxRetryNumber, CancellationToken.None).Result;
+        }
+
+        public async Task<T> GetAcsResponse<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, CancellationToken ct) where T : AcsResponse
+        {
+            var httpResponse = await this.DoAction(request, autoRetry, maxRetryNumber, ct);
             return ParseAcsResponse(request, httpResponse);
         }
 
         public T GetAcsResponse<T>(AcsRequest<T> request, IClientProfile profile) where T : AcsResponse
         {
-            HttpResponse httpResponse = this.DoAction(request, profile);
+            return GetAcsResponse(request, profile, CancellationToken.None).Result;
+        }
+
+        public async Task<T> GetAcsResponse<T>(AcsRequest<T> request, IClientProfile profile, CancellationToken ct) where T : AcsResponse
+        {
+            var httpResponse = await this.DoAction(request, profile, ct);
             return ParseAcsResponse(request, httpResponse);
         }
 
         public T GetAcsResponse<T>(AcsRequest<T> request, string regionId, Credential credential) where T : AcsResponse
         {
-            HttpResponse httpResponse = this.DoAction(request, regionId, credential);
+            return GetAcsResponse(request, regionId, credential, CancellationToken.None).Result;
+        }
+
+        public async Task<T> GetAcsResponse<T>(AcsRequest<T> request, string regionId, Credential credential, CancellationToken ct) where T : AcsResponse
+        {
+            var httpResponse = await this.DoAction(request, regionId, credential, ct);
             return ParseAcsResponse(request, httpResponse);
         }
 
@@ -109,7 +131,7 @@ namespace Aliyun.Acs.Core
 
             if (httpResponse.isSuccess())
             {
-                return ReadResponse<T>(request, httpResponse, format);
+                return ReadResponse(request, httpResponse, format);
             }
             else
             {
@@ -137,20 +159,41 @@ namespace Aliyun.Acs.Core
 
         public HttpResponse DoAction<T>(AcsRequest<T> request) where T : AcsResponse
         {
-            return DoAction(request, autoRetry, maxRetryNumber, this.clientProfile);
+            return DoAction(request, CancellationToken.None).Result;
+        }
+
+        public Task<HttpResponse> DoAction<T>(AcsRequest<T> request, CancellationToken ct) where T : AcsResponse
+        {
+            return DoAction(request, autoRetry, maxRetryNumber, this.clientProfile, ct);
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber) where T : AcsResponse
         {
-            return DoAction(request, autoRetry, maxRetryNumber, this.clientProfile);
+            return DoAction(request, autoRetry, maxRetryNumber, CancellationToken.None).Result;
+        }
+
+        public Task<HttpResponse> DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, CancellationToken ct) where T : AcsResponse
+        {
+            return DoAction(request, autoRetry, maxRetryNumber, this.clientProfile, ct);
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, IClientProfile profile) where T : AcsResponse
         {
-            return DoAction(request, this.autoRetry, this.maxRetryNumber, profile);
+            return DoAction(request, profile, CancellationToken.None).Result;
         }
 
-        public HttpResponse DoAction<T>(AcsRequest<T> request, string regionId, Credential credential) where T : AcsResponse
+        public Task<HttpResponse> DoAction<T>(AcsRequest<T> request, IClientProfile profile, CancellationToken ct) where T : AcsResponse
+        {
+            return DoAction(request, this.autoRetry, this.maxRetryNumber, profile, ct);
+        }
+
+        public HttpResponse DoAction<T>(AcsRequest<T> request, string regionId, Credential credential)
+            where T : AcsResponse
+        {
+            return DoAction(request, regionId, credential, CancellationToken.None).Result;
+        }
+
+        public Task<HttpResponse> DoAction<T>(AcsRequest<T> request, string regionId, Credential credential, CancellationToken ct) where T : AcsResponse
         {
             Signer signer = Signer.GetSigner(new LegacyCredentials(credential));
             FormatType? format = null;
@@ -166,11 +209,18 @@ namespace Aliyun.Acs.Core
                     request.LocationProduct,
                     request.LocationEndpointType);
             }
-            return DoAction(request, autoRetry, maxRetryNumber, request.RegionId, credential, signer, format, endpoints);
+            return DoAction(request, autoRetry, maxRetryNumber, request.RegionId, credential, signer, format, endpoints, ct);
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry,
-                int maxRetryNumber, IClientProfile profile) where T : AcsResponse
+            int maxRetryNumber, IClientProfile profile)
+            where T : AcsResponse
+        {
+            return DoAction(request, autoRetry, maxRetryNumber, profile, CancellationToken.None).Result;
+        }
+
+        public Task<HttpResponse> DoAction<T>(AcsRequest<T> request, bool autoRetry,
+                int maxRetryNumber, IClientProfile profile, CancellationToken ct) where T : AcsResponse
         {
             if (null == profile)
             {
@@ -193,19 +243,30 @@ namespace Aliyun.Acs.Core
                 request.LocationProduct,
                 request.LocationEndpointType);
 
-            return DoAction(request, retry, retryNumber, request.RegionId, credentials, signer, format, endpoints);
+            return DoAction(request, retry, retryNumber, request.RegionId, credentials, signer, format, endpoints, ct);
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
             Credential credential, Signer signer, FormatType? format, List<Endpoint> endpoints) where T : AcsResponse
         {
-            return DoAction(request, autoRetry, maxRetryNumber, regionId,
-                new LegacyCredentials(credential),
-                signer, format, endpoints);
+            return DoAction(request, autoRetry, maxRetryNumber, regionId, credential, signer, format, endpoints, CancellationToken.None).Result;
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
-            AlibabaCloudCredentials credentials, Signer signer, FormatType? format, List<Endpoint> endpoints) where T : AcsResponse
+            AlibabaCloudCredentials credentials, Signer signer, FormatType? format, List<Endpoint> endpoints)
+            where T : AcsResponse
+        {
+            return DoAction(request, autoRetry, maxRetryNumber, regionId, credentials, signer, format, endpoints, CancellationToken.None).Result;
+        }
+
+        public async Task<HttpResponse> DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
+            Credential credential, Signer signer, FormatType? format, List<Endpoint> endpoints, CancellationToken ct) where T : AcsResponse
+        {
+            return await DoAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer, format, endpoints, ct);
+        }
+
+        public async Task<HttpResponse> DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
+            AlibabaCloudCredentials credentials, Signer signer, FormatType? format, List<Endpoint> endpoints, CancellationToken ct) where T : AcsResponse
         {
             FormatType? requestFormatType = request.AcceptFormat;
             if (null != requestFormatType)
@@ -232,7 +293,7 @@ namespace Aliyun.Acs.Core
                 shouldRetry = autoRetry && retryTimes < maxRetryNumber;
                 HttpRequest httpRequest = request.SignRequest(signer, credentials, format, domain);
                 HttpResponse response;
-                response = HttpResponse.GetResponse(httpRequest);
+                response = await HttpResponse.GetResponse(httpRequest, ct);
                 if (response.Content == null)
                 {
                     if (shouldRetry)
