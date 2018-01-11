@@ -109,6 +109,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private long? defaultQuota;
 
+			private long? defaultTrashQuota;
+
 			private long? ctime;
 
 			private long? mtime;
@@ -184,6 +186,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					defaultQuota = value;
+				}
+			}
+
+			public long? DefaultTrashQuota
+			{
+				get
+				{
+					return defaultTrashQuota;
+				}
+				set	
+				{
+					defaultTrashQuota = value;
 				}
 			}
 

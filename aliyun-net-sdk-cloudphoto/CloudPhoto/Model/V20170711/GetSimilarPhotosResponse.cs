@@ -21,20 +21,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-	public class SearchPhotosResponse : AcsResponse
+	public class GetSimilarPhotosResponse : AcsResponse
 	{
 
 		private string code;
 
 		private string message;
 
-		private int? totalCount;
-
 		private string requestId;
 
 		private string action;
 
-		private List<SearchPhotos_Photo> photos;
+		private List<GetSimilarPhotos_Photo> photos;
 
 		public string Code
 		{
@@ -57,18 +55,6 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -96,7 +82,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public List<SearchPhotos_Photo> Photos
+		public List<GetSimilarPhotos_Photo> Photos
 		{
 			get
 			{
@@ -108,7 +94,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public class SearchPhotos_Photo
+		public class GetSimilarPhotos_Photo
 		{
 
 			private long? id;
@@ -125,6 +111,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private bool? isVideo;
 
+			private string remark;
+
 			private long? size;
 
 			private long? width;
@@ -137,7 +125,11 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private long? takenAt;
 
+			private long? inactiveTime;
+
 			private long? shareExpireTime;
+
+			private long? like;
 
 			public long? Id
 			{
@@ -223,6 +215,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				}
 			}
 
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
+				}
+			}
+
 			public long? Size
 			{
 				get
@@ -295,6 +299,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				}
 			}
 
+			public long? InactiveTime
+			{
+				get
+				{
+					return inactiveTime;
+				}
+				set	
+				{
+					inactiveTime = value;
+				}
+			}
+
 			public long? ShareExpireTime
 			{
 				get
@@ -304,6 +320,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					shareExpireTime = value;
+				}
+			}
+
+			public long? Like
+			{
+				get
+				{
+					return like;
+				}
+				set	
+				{
+					like = value;
 				}
 			}
 		}

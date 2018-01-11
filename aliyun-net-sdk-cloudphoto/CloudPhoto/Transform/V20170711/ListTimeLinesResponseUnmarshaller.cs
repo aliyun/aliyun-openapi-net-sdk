@@ -49,11 +49,13 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 					ListTimeLinesResponse.ListTimeLines_TimeLine.ListTimeLines_Photo photo = new ListTimeLinesResponse.ListTimeLines_TimeLine.ListTimeLines_Photo();
 					photo.Id = context.LongValue("ListTimeLines.TimeLines["+ i +"].Photos["+ j +"].Id");
 					photo.Title = context.StringValue("ListTimeLines.TimeLines["+ i +"].Photos["+ j +"].Title");
+					photo.Location = context.StringValue("ListTimeLines.TimeLines["+ i +"].Photos["+ j +"].Location");
 					photo.FileId = context.StringValue("ListTimeLines.TimeLines["+ i +"].Photos["+ j +"].FileId");
 					photo.State = context.StringValue("ListTimeLines.TimeLines["+ i +"].Photos["+ j +"].State");
 					photo.Md5 = context.StringValue("ListTimeLines.TimeLines["+ i +"].Photos["+ j +"].Md5");
 					photo.IsVideo = context.BooleanValue("ListTimeLines.TimeLines["+ i +"].Photos["+ j +"].IsVideo");
 					photo.Remark = context.StringValue("ListTimeLines.TimeLines["+ i +"].Photos["+ j +"].Remark");
+					photo.Size = context.LongValue("ListTimeLines.TimeLines["+ i +"].Photos["+ j +"].Size");
 					photo.Width = context.LongValue("ListTimeLines.TimeLines["+ i +"].Photos["+ j +"].Width");
 					photo.Height = context.LongValue("ListTimeLines.TimeLines["+ i +"].Photos["+ j +"].Height");
 					photo.Ctime = context.LongValue("ListTimeLines.TimeLines["+ i +"].Photos["+ j +"].Ctime");

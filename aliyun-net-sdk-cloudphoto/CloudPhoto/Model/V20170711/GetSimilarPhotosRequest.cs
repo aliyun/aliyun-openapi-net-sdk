@@ -26,49 +26,43 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-    public class EditPhotoStoreRequest : RpcAcsRequest<EditPhotoStoreResponse>
+    public class GetSimilarPhotosRequest : RpcAcsRequest<GetSimilarPhotosResponse>
     {
-        public EditPhotoStoreRequest()
-            : base("CloudPhoto", "2017-07-11", "EditPhotoStore", "cloudphoto", "openAPI")
+        public GetSimilarPhotosRequest()
+            : base("CloudPhoto", "2017-07-11", "GetSimilarPhotos", "cloudphoto", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string autoCleanEnabled;
+		private string libraryId;
 
-		private long? defaultTrashQuota;
+		private long? photoId;
 
 		private string storeName;
 
-		private string remark;
-
-		private long? defaultQuota;
-
-		private int? autoCleanDays;
-
-		public string AutoCleanEnabled
+		public string LibraryId
 		{
 			get
 			{
-				return autoCleanEnabled;
+				return libraryId;
 			}
 			set	
 			{
-				autoCleanEnabled = value;
-				DictionaryUtil.Add(QueryParameters, "AutoCleanEnabled", value);
+				libraryId = value;
+				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
 			}
 		}
 
-		public long? DefaultTrashQuota
+		public long? PhotoId
 		{
 			get
 			{
-				return defaultTrashQuota;
+				return photoId;
 			}
 			set	
 			{
-				defaultTrashQuota = value;
-				DictionaryUtil.Add(QueryParameters, "DefaultTrashQuota", value.ToString());
+				photoId = value;
+				DictionaryUtil.Add(QueryParameters, "PhotoId", value.ToString());
 			}
 		}
 
@@ -85,53 +79,14 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public string Remark
-		{
-			get
-			{
-				return remark;
-			}
-			set	
-			{
-				remark = value;
-				DictionaryUtil.Add(QueryParameters, "Remark", value);
-			}
-		}
-
-		public long? DefaultQuota
-		{
-			get
-			{
-				return defaultQuota;
-			}
-			set	
-			{
-				defaultQuota = value;
-				DictionaryUtil.Add(QueryParameters, "DefaultQuota", value.ToString());
-			}
-		}
-
-		public int? AutoCleanDays
-		{
-			get
-			{
-				return autoCleanDays;
-			}
-			set	
-			{
-				autoCleanDays = value;
-				DictionaryUtil.Add(QueryParameters, "AutoCleanDays", value.ToString());
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override EditPhotoStoreResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetSimilarPhotosResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return EditPhotoStoreResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSimilarPhotosResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

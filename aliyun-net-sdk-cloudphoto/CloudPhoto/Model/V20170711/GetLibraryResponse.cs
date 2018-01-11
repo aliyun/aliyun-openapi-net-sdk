@@ -130,6 +130,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 				private long? totalQuota;
 
+				private long? totalTrashQuota;
+
 				private int? facesCount;
 
 				private int? photosCount;
@@ -137,6 +139,10 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				private long? usedQuota;
 
 				private int? videosCount;
+
+				private long? activeSize;
+
+				private long? inactiveSize;
 
 				public long? TotalQuota
 				{
@@ -147,6 +153,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 					set	
 					{
 						totalQuota = value;
+					}
+				}
+
+				public long? TotalTrashQuota
+				{
+					get
+					{
+						return totalTrashQuota;
+					}
+					set	
+					{
+						totalTrashQuota = value;
 					}
 				}
 
@@ -195,6 +213,30 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 					set	
 					{
 						videosCount = value;
+					}
+				}
+
+				public long? ActiveSize
+				{
+					get
+					{
+						return activeSize;
+					}
+					set	
+					{
+						activeSize = value;
+					}
+				}
+
+				public long? InactiveSize
+				{
+					get
+					{
+						return inactiveSize;
+					}
+					set	
+					{
+						inactiveSize = value;
 					}
 				}
 			}

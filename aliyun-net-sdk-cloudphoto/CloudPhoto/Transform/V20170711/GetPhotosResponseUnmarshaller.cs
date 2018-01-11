@@ -41,12 +41,14 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 				photo.Id = context.LongValue("GetPhotos.Photos["+ i +"].Id");
 				photo.Title = context.StringValue("GetPhotos.Photos["+ i +"].Title");
 				photo.FileId = context.StringValue("GetPhotos.Photos["+ i +"].FileId");
+				photo.Location = context.StringValue("GetPhotos.Photos["+ i +"].Location");
 				photo.State = context.StringValue("GetPhotos.Photos["+ i +"].State");
 				photo.Md5 = context.StringValue("GetPhotos.Photos["+ i +"].Md5");
 				photo.IsVideo = context.BooleanValue("GetPhotos.Photos["+ i +"].IsVideo");
 				photo.Remark = context.StringValue("GetPhotos.Photos["+ i +"].Remark");
 				photo.Width = context.LongValue("GetPhotos.Photos["+ i +"].Width");
 				photo.Height = context.LongValue("GetPhotos.Photos["+ i +"].Height");
+				photo.Size = context.LongValue("GetPhotos.Photos["+ i +"].Size");
 				photo.Ctime = context.LongValue("GetPhotos.Photos["+ i +"].Ctime");
 				photo.Mtime = context.LongValue("GetPhotos.Photos["+ i +"].Mtime");
 				photo.TakenAt = context.LongValue("GetPhotos.Photos["+ i +"].TakenAt");

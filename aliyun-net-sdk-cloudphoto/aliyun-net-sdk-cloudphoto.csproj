@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{b4ce124d-c64f-4a60-adc7-2e1daed1d7b4}</ProjectGuid>
+    <ProjectGuid>{04644fc4-6693-49c5-91f4-cb3f164c96f1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -45,6 +45,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\ListTagsRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\CreatePhotoStoreRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListFacesRequest.cs" />
+	<Compile Include="CloudPhoto\Model\V20170711\GetSimilarPhotosResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\GetDownloadUrlsResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListTimeLinePhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\CreateAlbumRequest.cs" />
@@ -82,6 +83,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\AddAlbumPhotosResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\RemoveAlbumPhotosResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\EditPhotosRequest.cs" />
+	<Compile Include="CloudPhoto\Model\V20170711\GetSimilarPhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListFacePhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ReactivatePhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\EditPhotoStoreResponse.cs" />
@@ -96,6 +98,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\SearchPhotosResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\GetPhotoStoreResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListPhotoStoresRequest.cs" />
+	<Compile Include="CloudPhoto\Model\V20170711\RegisterPhotoRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\DeletePhotosResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\MoveFacePhotosResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\GetThumbnailResponse.cs" />
@@ -141,6 +144,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\ListPhotoTagsResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\CreateTransactionResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\GetDownloadUrlsRequest.cs" />
+	<Compile Include="CloudPhoto\Model\V20170711\RegisterPhotoResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListPhotoStoresResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\DeleteFacesRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\GetDownloadUrlResponse.cs" />
@@ -157,6 +161,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\DeletePhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\RenameFaceResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ActivatePhotosResponseUnmarshaller.cs" />
+	<Compile Include="CloudPhoto\Transform\V20170711\RegisterPhotoResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\GetLibraryResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\DeleteFacesResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\DeletePhotoStoreResponseUnmarshaller.cs" />
@@ -206,6 +211,7 @@
 	<Compile Include="CloudPhoto\Transform\V20170711\RemoveFacePhotosResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ListTimeLinesResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\GetThumbnailsResponseUnmarshaller.cs" />
+	<Compile Include="CloudPhoto\Transform\V20170711\GetSimilarPhotosResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\GetDownloadUrlsResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ListPhotoStoresResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ListAlbumsResponseUnmarshaller.cs" />

@@ -103,6 +103,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private string fileId;
 
+			private string location;
+
 			private string state;
 
 			private string md5;
@@ -114,6 +116,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			private long? width;
 
 			private long? height;
+
+			private long? size;
 
 			private long? ctime;
 
@@ -160,6 +164,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					fileId = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
 				}
 			}
 
@@ -232,6 +248,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					height = value;
+				}
+			}
+
+			public long? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
 				}
 			}
 

@@ -39,9 +39,11 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			photo.Id = context.LongValue("CreatePhoto.Photo.Id");
 			photo.Title = context.StringValue("CreatePhoto.Photo.Title");
 			photo.FileId = context.StringValue("CreatePhoto.Photo.FileId");
+			photo.Location = context.StringValue("CreatePhoto.Photo.Location");
 			photo.State = context.StringValue("CreatePhoto.Photo.State");
 			photo.Md5 = context.StringValue("CreatePhoto.Photo.Md5");
 			photo.IsVideo = context.BooleanValue("CreatePhoto.Photo.IsVideo");
+			photo.Size = context.LongValue("CreatePhoto.Photo.Size");
 			photo.Remark = context.StringValue("CreatePhoto.Photo.Remark");
 			photo.Width = context.LongValue("CreatePhoto.Photo.Width");
 			photo.Height = context.LongValue("CreatePhoto.Photo.Height");

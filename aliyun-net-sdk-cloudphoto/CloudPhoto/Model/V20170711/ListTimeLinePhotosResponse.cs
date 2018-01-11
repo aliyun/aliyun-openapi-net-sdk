@@ -117,6 +117,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private string fileId;
 
+			private string location;
+
 			private string state;
 
 			private string md5;
@@ -124,6 +126,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			private bool? isVideo;
 
 			private string remark;
+
+			private long? size;
 
 			private long? width;
 
@@ -175,6 +179,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				}
 			}
 
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
+				}
+			}
+
 			public string State
 			{
 				get
@@ -220,6 +236,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					remark = value;
+				}
+			}
+
+			public long? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
 				}
 			}
 

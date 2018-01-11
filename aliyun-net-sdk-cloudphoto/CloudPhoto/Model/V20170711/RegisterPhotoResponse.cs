@@ -21,20 +21,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-	public class SearchPhotosResponse : AcsResponse
+	public class RegisterPhotoResponse : AcsResponse
 	{
 
 		private string code;
 
 		private string message;
 
-		private int? totalCount;
-
 		private string requestId;
 
 		private string action;
 
-		private List<SearchPhotos_Photo> photos;
+		private RegisterPhoto_Photo photo;
 
 		public string Code
 		{
@@ -57,18 +55,6 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -96,28 +82,28 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public List<SearchPhotos_Photo> Photos
+		public RegisterPhoto_Photo Photo
 		{
 			get
 			{
-				return photos;
+				return photo;
 			}
 			set	
 			{
-				photos = value;
+				photo = value;
 			}
 		}
 
-		public class SearchPhotos_Photo
+		public class RegisterPhoto_Photo
 		{
 
 			private long? id;
 
 			private string title;
 
-			private string fileId;
-
 			private string location;
+
+			private string fileId;
 
 			private string state;
 
@@ -126,6 +112,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			private bool? isVideo;
 
 			private long? size;
+
+			private string remark;
 
 			private long? width;
 
@@ -163,18 +151,6 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				}
 			}
 
-			public string FileId
-			{
-				get
-				{
-					return fileId;
-				}
-				set	
-				{
-					fileId = value;
-				}
-			}
-
 			public string Location
 			{
 				get
@@ -184,6 +160,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					location = value;
+				}
+			}
+
+			public string FileId
+			{
+				get
+				{
+					return fileId;
+				}
+				set	
+				{
+					fileId = value;
 				}
 			}
 
@@ -232,6 +220,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					size = value;
+				}
+			}
+
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
 				}
 			}
 

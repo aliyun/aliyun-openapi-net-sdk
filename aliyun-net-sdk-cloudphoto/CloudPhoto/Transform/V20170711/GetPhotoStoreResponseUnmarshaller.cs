@@ -42,6 +42,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			photoStore.AutoCleanEnabled = context.BooleanValue("GetPhotoStore.PhotoStore.AutoCleanEnabled");
 			photoStore.AutoCleanDays = context.IntegerValue("GetPhotoStore.PhotoStore.AutoCleanDays");
 			photoStore.DefaultQuota = context.LongValue("GetPhotoStore.PhotoStore.DefaultQuota");
+			photoStore.DefaultTrashQuota = context.LongValue("GetPhotoStore.PhotoStore.DefaultTrashQuota");
 			photoStore.Ctime = context.LongValue("GetPhotoStore.PhotoStore.Ctime");
 			photoStore.Mtime = context.LongValue("GetPhotoStore.PhotoStore.Mtime");
 

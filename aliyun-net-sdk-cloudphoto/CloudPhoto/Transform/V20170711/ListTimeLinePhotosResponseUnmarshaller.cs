@@ -42,10 +42,12 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 				photo.Id = context.LongValue("ListTimeLinePhotos.Photos["+ i +"].Id");
 				photo.Title = context.StringValue("ListTimeLinePhotos.Photos["+ i +"].Title");
 				photo.FileId = context.StringValue("ListTimeLinePhotos.Photos["+ i +"].FileId");
+				photo.Location = context.StringValue("ListTimeLinePhotos.Photos["+ i +"].Location");
 				photo.State = context.StringValue("ListTimeLinePhotos.Photos["+ i +"].State");
 				photo.Md5 = context.StringValue("ListTimeLinePhotos.Photos["+ i +"].Md5");
 				photo.IsVideo = context.BooleanValue("ListTimeLinePhotos.Photos["+ i +"].IsVideo");
 				photo.Remark = context.StringValue("ListTimeLinePhotos.Photos["+ i +"].Remark");
+				photo.Size = context.LongValue("ListTimeLinePhotos.Photos["+ i +"].Size");
 				photo.Width = context.LongValue("ListTimeLinePhotos.Photos["+ i +"].Width");
 				photo.Height = context.LongValue("ListTimeLinePhotos.Photos["+ i +"].Height");
 				photo.Ctime = context.LongValue("ListTimeLinePhotos.Photos["+ i +"].Ctime");

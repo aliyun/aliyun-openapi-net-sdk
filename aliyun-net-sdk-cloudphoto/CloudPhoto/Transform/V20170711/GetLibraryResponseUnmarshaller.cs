@@ -39,10 +39,13 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 
 			GetLibraryResponse.GetLibrary_Library.GetLibrary_Quota quota = new GetLibraryResponse.GetLibrary_Library.GetLibrary_Quota();
 			quota.TotalQuota = context.LongValue("GetLibrary.Library.Quota.TotalQuota");
+			quota.TotalTrashQuota = context.LongValue("GetLibrary.Library.Quota.TotalTrashQuota");
 			quota.FacesCount = context.IntegerValue("GetLibrary.Library.Quota.FacesCount");
 			quota.PhotosCount = context.IntegerValue("GetLibrary.Library.Quota.PhotosCount");
 			quota.UsedQuota = context.LongValue("GetLibrary.Library.Quota.UsedQuota");
 			quota.VideosCount = context.IntegerValue("GetLibrary.Library.Quota.VideosCount");
+			quota.ActiveSize = context.LongValue("GetLibrary.Library.Quota.ActiveSize");
+			quota.InactiveSize = context.LongValue("GetLibrary.Library.Quota.InactiveSize");
 			library.Quota = quota;
 
 			GetLibraryResponse.GetLibrary_Library.GetLibrary_AutoCleanConfig autoCleanConfig = new GetLibraryResponse.GetLibrary_Library.GetLibrary_AutoCleanConfig();
