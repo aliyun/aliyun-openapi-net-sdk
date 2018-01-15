@@ -53,9 +53,9 @@ namespace Aliyun.Acs.Core.Http
             this.ContentType = format;
         }
 
-        private static async Task PasrseHttpResponse(HttpResponse httpResponse, HttpWebResponse httpWebResponse, CancellationToken ct)
+        private static async Task PasrseHttpResponseAsync(HttpResponse httpResponse, HttpWebResponse httpWebResponse, CancellationToken ct)
         {
-            httpResponse.Content = await ReadContent(httpResponse, httpWebResponse, ct);
+            httpResponse.Content = await ReadContentAsync(httpResponse, httpWebResponse, ct);
             httpResponse.Status = (int)httpWebResponse.StatusCode;
             httpResponse.Headers = new Dictionary<string, string>();
             httpResponse.Method = ParameterHelper.StringToMethodType(httpWebResponse.Method);
@@ -79,7 +79,7 @@ namespace Aliyun.Acs.Core.Http
             }
         }
 
-        public static async Task<byte[]> ReadContent(HttpResponse response, HttpWebResponse rsp, CancellationToken ct)
+        public static async Task<byte[]> ReadContentAsync(HttpResponse response, HttpWebResponse rsp, CancellationToken ct)
         {
 
             MemoryStream ms = new MemoryStream();
@@ -108,15 +108,15 @@ namespace Aliyun.Acs.Core.Http
 
         public static HttpResponse GetResponse(HttpRequest request, int? timeout = null)
         {
-            return GetResponse(request, timeout, CancellationToken.None).Result;
+            return GetResponseAsync(request, timeout, CancellationToken.None).Result;
         }
 
-        public static async Task<HttpResponse> GetResponse(HttpRequest request, CancellationToken ct)
+        public static async Task<HttpResponse> GetResponseAsync(HttpRequest request, CancellationToken ct)
         {
-            return await GetResponse(request, null, ct);
+            return await GetResponseAsync(request, null, ct);
         }
 
-        public static async Task<HttpResponse> GetResponse(HttpRequest request, int? timeout, CancellationToken ct)
+        public static async Task<HttpResponse> GetResponseAsync(HttpRequest request, int? timeout, CancellationToken ct)
         {
             HttpWebRequest httpWebRequest = GetWebRequest(request);
             if (timeout != null)
@@ -149,7 +149,7 @@ namespace Aliyun.Acs.Core.Http
                 }
             }
 
-            await PasrseHttpResponse(httpResponse, httpWebResponse, ct);
+            await PasrseHttpResponseAsync(httpResponse, httpWebResponse, ct);
             return httpResponse;
         }
 
