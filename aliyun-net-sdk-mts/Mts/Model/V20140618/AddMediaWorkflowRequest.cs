@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class AddMediaWorkflowRequest : RpcAcsRequest<AddMediaWorkflowResponse>
     {
         public AddMediaWorkflowRequest()
-            : base("Mts", "2014-06-18", "AddMediaWorkflow")
+            : base("Mts", "2014-06-18", "AddMediaWorkflow", "mts", "openAPI")
         {
         }
 
@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		private long? ownerId;
 
 		private string accessKeyId;
+
+		private string triggerMode;
 
 		public long? ResourceOwnerId
 		{
@@ -150,6 +152,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string TriggerMode
+		{
+			get
+			{
+				return triggerMode;
+			}
+			set	
+			{
+				triggerMode = value;
+				DictionaryUtil.Add(QueryParameters, "TriggerMode", value);
 			}
 		}
 

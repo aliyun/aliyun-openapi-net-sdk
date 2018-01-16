@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class SearchWaterMarkTemplateRequest : RpcAcsRequest<SearchWaterMarkTemplateResponse>
     {
         public SearchWaterMarkTemplateRequest()
-            : base("Mts", "2014-06-18", "SearchWaterMarkTemplate")
+            : base("Mts", "2014-06-18", "SearchWaterMarkTemplate", "mts", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class PlayerAuthRequest : RpcAcsRequest<PlayerAuthResponse>
     {
         public PlayerAuthRequest()
-            : base("Mts", "2014-06-18", "PlayerAuth")
+            : base("Mts", "2014-06-18", "PlayerAuth", "mts", "openAPI")
         {
         }
 

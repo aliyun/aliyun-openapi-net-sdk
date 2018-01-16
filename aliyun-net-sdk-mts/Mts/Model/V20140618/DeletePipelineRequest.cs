@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class DeletePipelineRequest : RpcAcsRequest<DeletePipelineResponse>
     {
         public DeletePipelineRequest()
-            : base("Mts", "2014-06-18", "DeletePipeline")
+            : base("Mts", "2014-06-18", "DeletePipeline", "mts", "openAPI")
         {
         }
 

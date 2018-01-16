@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class UpdatePornPipelineRequest : RpcAcsRequest<UpdatePornPipelineResponse>
     {
         public UpdatePornPipelineRequest()
-            : base("Mts", "2014-06-18", "UpdatePornPipeline")
+            : base("Mts", "2014-06-18", "UpdatePornPipeline", "mts", "openAPI")
         {
         }
 

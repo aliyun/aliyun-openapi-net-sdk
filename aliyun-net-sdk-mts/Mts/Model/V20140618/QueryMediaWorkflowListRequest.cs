@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class QueryMediaWorkflowListRequest : RpcAcsRequest<QueryMediaWorkflowListResponse>
     {
         public QueryMediaWorkflowListRequest()
-            : base("Mts", "2014-06-18", "QueryMediaWorkflowList")
+            : base("Mts", "2014-06-18", "QueryMediaWorkflowList", "mts", "openAPI")
         {
         }
 

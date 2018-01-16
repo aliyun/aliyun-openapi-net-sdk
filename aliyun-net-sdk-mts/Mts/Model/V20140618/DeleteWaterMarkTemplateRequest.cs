@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class DeleteWaterMarkTemplateRequest : RpcAcsRequest<DeleteWaterMarkTemplateResponse>
     {
         public DeleteWaterMarkTemplateRequest()
-            : base("Mts", "2014-06-18", "DeleteWaterMarkTemplate")
+            : base("Mts", "2014-06-18", "DeleteWaterMarkTemplate", "mts", "openAPI")
         {
         }
 

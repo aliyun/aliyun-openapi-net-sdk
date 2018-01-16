@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class ReportCensorJobResultRequest : RpcAcsRequest<ReportCensorJobResultResponse>
     {
         public ReportCensorJobResultRequest()
-            : base("Mts", "2014-06-18", "ReportCensorJobResult")
+            : base("Mts", "2014-06-18", "ReportCensorJobResult", "mts", "openAPI")
         {
         }
 

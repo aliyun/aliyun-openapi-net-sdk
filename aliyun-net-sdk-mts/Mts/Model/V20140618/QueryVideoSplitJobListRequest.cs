@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class QueryVideoSplitJobListRequest : RpcAcsRequest<QueryVideoSplitJobListResponse>
     {
         public QueryVideoSplitJobListRequest()
-            : base("Mts", "2014-06-18", "QueryVideoSplitJobList")
+            : base("Mts", "2014-06-18", "QueryVideoSplitJobList", "mts", "openAPI")
         {
         }
 

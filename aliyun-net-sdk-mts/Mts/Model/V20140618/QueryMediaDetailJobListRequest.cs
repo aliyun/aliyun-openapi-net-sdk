@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class QueryMediaDetailJobListRequest : RpcAcsRequest<QueryMediaDetailJobListResponse>
     {
         public QueryMediaDetailJobListRequest()
-            : base("Mts", "2014-06-18", "QueryMediaDetailJobList")
+            : base("Mts", "2014-06-18", "QueryMediaDetailJobList", "mts", "openAPI")
         {
         }
 

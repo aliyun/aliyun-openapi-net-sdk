@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				mediaWorkflow.MediaWorkflowId = context.StringValue("SearchMediaWorkflow.MediaWorkflowList["+ i +"].MediaWorkflowId");
 				mediaWorkflow.Name = context.StringValue("SearchMediaWorkflow.MediaWorkflowList["+ i +"].Name");
 				mediaWorkflow.Topology = context.StringValue("SearchMediaWorkflow.MediaWorkflowList["+ i +"].Topology");
+				mediaWorkflow.TriggerMode = context.StringValue("SearchMediaWorkflow.MediaWorkflowList["+ i +"].TriggerMode");
 				mediaWorkflow.State = context.StringValue("SearchMediaWorkflow.MediaWorkflowList["+ i +"].State");
 				mediaWorkflow.CreationTime = context.StringValue("SearchMediaWorkflow.MediaWorkflowList["+ i +"].CreationTime");
 

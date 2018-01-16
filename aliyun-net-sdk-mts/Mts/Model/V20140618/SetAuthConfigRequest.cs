@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class SetAuthConfigRequest : RpcAcsRequest<SetAuthConfigResponse>
     {
         public SetAuthConfigRequest()
-            : base("Mts", "2014-06-18", "SetAuthConfig")
+            : base("Mts", "2014-06-18", "SetAuthConfig", "mts", "openAPI")
         {
         }
 

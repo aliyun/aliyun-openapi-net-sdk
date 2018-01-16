@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class AddPipelineRequest : RpcAcsRequest<AddPipelineResponse>
     {
         public AddPipelineRequest()
-            : base("Mts", "2014-06-18", "AddPipeline")
+            : base("Mts", "2014-06-18", "AddPipeline", "mts", "openAPI")
         {
         }
 

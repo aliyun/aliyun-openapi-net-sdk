@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class CategoryTreeRequest : RpcAcsRequest<CategoryTreeResponse>
     {
         public CategoryTreeRequest()
-            : base("Mts", "2014-06-18", "CategoryTree")
+            : base("Mts", "2014-06-18", "CategoryTree", "mts", "openAPI")
         {
         }
 

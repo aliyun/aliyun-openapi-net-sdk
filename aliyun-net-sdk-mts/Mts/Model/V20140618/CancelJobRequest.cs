@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class CancelJobRequest : RpcAcsRequest<CancelJobResponse>
     {
         public CancelJobRequest()
-            : base("Mts", "2014-06-18", "CancelJob")
+            : base("Mts", "2014-06-18", "CancelJob", "mts", "openAPI")
         {
         }
 

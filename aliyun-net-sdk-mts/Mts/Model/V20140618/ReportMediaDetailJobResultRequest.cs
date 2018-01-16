@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class ReportMediaDetailJobResultRequest : RpcAcsRequest<ReportMediaDetailJobResultResponse>
     {
         public ReportMediaDetailJobResultRequest()
-            : base("Mts", "2014-06-18", "ReportMediaDetailJobResult")
+            : base("Mts", "2014-06-18", "ReportMediaDetailJobResult", "mts", "openAPI")
         {
         }
 

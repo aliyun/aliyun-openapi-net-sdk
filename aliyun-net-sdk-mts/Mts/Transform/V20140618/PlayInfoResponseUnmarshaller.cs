@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				playInfo.Plaintext = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Plaintext");
 				playInfo.Complexity = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Complexity");
 				playInfo.ActivityName = context.StringValue("PlayInfo.PlayInfoList["+ i +"].ActivityName");
+				playInfo.EncryptionType = context.StringValue("PlayInfo.PlayInfoList["+ i +"].EncryptionType");
+				playInfo.DownloadType = context.StringValue("PlayInfo.PlayInfoList["+ i +"].DownloadType");
 
 				playInfoResponse_playInfoList.Add(playInfo);
 			}

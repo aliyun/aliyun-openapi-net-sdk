@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class QueryAsrJobListRequest : RpcAcsRequest<QueryAsrJobListResponse>
     {
         public QueryAsrJobListRequest()
-            : base("Mts", "2014-06-18", "QueryAsrJobList")
+            : base("Mts", "2014-06-18", "QueryAsrJobList", "mts", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class ReportFacerecogJobResultRequest : RpcAcsRequest<ReportFacerecogJobResultResponse>
     {
         public ReportFacerecogJobResultRequest()
-            : base("Mts", "2014-06-18", "ReportFacerecogJobResult")
+            : base("Mts", "2014-06-18", "ReportFacerecogJobResult", "mts", "openAPI")
         {
         }
 

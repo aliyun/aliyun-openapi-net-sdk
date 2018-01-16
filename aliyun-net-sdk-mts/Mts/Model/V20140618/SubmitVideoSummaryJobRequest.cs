@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class SubmitVideoSummaryJobRequest : RpcAcsRequest<SubmitVideoSummaryJobResponse>
     {
         public SubmitVideoSummaryJobRequest()
-            : base("Mts", "2014-06-18", "SubmitVideoSummaryJob")
+            : base("Mts", "2014-06-18", "SubmitVideoSummaryJob", "mts", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class DecryptKeyRequest : RpcAcsRequest<DecryptKeyResponse>
     {
         public DecryptKeyRequest()
-            : base("Mts", "2014-06-18", "DecryptKey")
+            : base("Mts", "2014-06-18", "DecryptKey", "mts", "openAPI")
         {
         }
 

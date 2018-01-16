@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class RefreshCdnDomainConfigsCacheRequest : RpcAcsRequest<RefreshCdnDomainConfigsCacheResponse>
     {
         public RefreshCdnDomainConfigsCacheRequest()
-            : base("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache")
+            : base("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "mts", "openAPI")
         {
         }
 

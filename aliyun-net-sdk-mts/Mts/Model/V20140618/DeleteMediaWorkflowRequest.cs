@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class DeleteMediaWorkflowRequest : RpcAcsRequest<DeleteMediaWorkflowResponse>
     {
         public DeleteMediaWorkflowRequest()
-            : base("Mts", "2014-06-18", "DeleteMediaWorkflow")
+            : base("Mts", "2014-06-18", "DeleteMediaWorkflow", "mts", "openAPI")
         {
         }
 

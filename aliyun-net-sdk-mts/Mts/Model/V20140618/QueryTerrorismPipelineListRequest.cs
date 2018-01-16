@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class QueryTerrorismPipelineListRequest : RpcAcsRequest<QueryTerrorismPipelineListResponse>
     {
         public QueryTerrorismPipelineListRequest()
-            : base("Mts", "2014-06-18", "QueryTerrorismPipelineList")
+            : base("Mts", "2014-06-18", "QueryTerrorismPipelineList", "mts", "openAPI")
         {
         }
 

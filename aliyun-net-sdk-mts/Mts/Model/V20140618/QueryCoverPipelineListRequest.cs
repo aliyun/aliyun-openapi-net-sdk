@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class QueryCoverPipelineListRequest : RpcAcsRequest<QueryCoverPipelineListResponse>
     {
         public QueryCoverPipelineListRequest()
-            : base("Mts", "2014-06-18", "QueryCoverPipelineList")
+            : base("Mts", "2014-06-18", "QueryCoverPipelineList", "mts", "openAPI")
         {
         }
 

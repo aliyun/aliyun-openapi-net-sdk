@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class AddCategoryRequest : RpcAcsRequest<AddCategoryResponse>
     {
         public AddCategoryRequest()
-            : base("Mts", "2014-06-18", "AddCategory")
+            : base("Mts", "2014-06-18", "AddCategory", "mts", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class QueryAuthConfigRequest : RpcAcsRequest<QueryAuthConfigResponse>
     {
         public QueryAuthConfigRequest()
-            : base("Mts", "2014-06-18", "QueryAuthConfig")
+            : base("Mts", "2014-06-18", "QueryAuthConfig", "mts", "openAPI")
         {
         }
 

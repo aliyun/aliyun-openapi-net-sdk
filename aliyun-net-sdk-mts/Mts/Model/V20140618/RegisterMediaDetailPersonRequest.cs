@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class RegisterMediaDetailPersonRequest : RpcAcsRequest<RegisterMediaDetailPersonResponse>
     {
         public RegisterMediaDetailPersonRequest()
-            : base("Mts", "2014-06-18", "RegisterMediaDetailPerson")
+            : base("Mts", "2014-06-18", "RegisterMediaDetailPerson", "mts", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class RegisterMediaDetailScenarioRequest : RpcAcsRequest<RegisterMediaDetailScenarioResponse>
     {
         public RegisterMediaDetailScenarioRequest()
-            : base("Mts", "2014-06-18", "RegisterMediaDetailScenario")
+            : base("Mts", "2014-06-18", "RegisterMediaDetailScenario", "mts", "openAPI")
         {
         }
 

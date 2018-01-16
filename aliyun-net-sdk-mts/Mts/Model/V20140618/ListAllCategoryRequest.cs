@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class ListAllCategoryRequest : RpcAcsRequest<ListAllCategoryResponse>
     {
         public ListAllCategoryRequest()
-            : base("Mts", "2014-06-18", "ListAllCategory")
+            : base("Mts", "2014-06-18", "ListAllCategory", "mts", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class ReportTerrorismJobResultRequest : RpcAcsRequest<ReportTerrorismJobResultResponse>
     {
         public ReportTerrorismJobResultRequest()
-            : base("Mts", "2014-06-18", "ReportTerrorismJobResult")
+            : base("Mts", "2014-06-18", "ReportTerrorismJobResult", "mts", "openAPI")
         {
         }
 

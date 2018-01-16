@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class AddTemplateRequest : RpcAcsRequest<AddTemplateResponse>
     {
         public AddTemplateRequest()
-            : base("Mts", "2014-06-18", "AddTemplate")
+            : base("Mts", "2014-06-18", "AddTemplate", "mts", "openAPI")
         {
         }
 

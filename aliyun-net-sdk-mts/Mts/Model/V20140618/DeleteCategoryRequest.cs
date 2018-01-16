@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class DeleteCategoryRequest : RpcAcsRequest<DeleteCategoryResponse>
     {
         public DeleteCategoryRequest()
-            : base("Mts", "2014-06-18", "DeleteCategory")
+            : base("Mts", "2014-06-18", "DeleteCategory", "mts", "openAPI")
         {
         }
 

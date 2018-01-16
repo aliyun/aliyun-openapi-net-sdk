@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class SubmitMediaDetailJobRequest : RpcAcsRequest<SubmitMediaDetailJobResponse>
     {
         public SubmitMediaDetailJobRequest()
-            : base("Mts", "2014-06-18", "SubmitMediaDetailJob")
+            : base("Mts", "2014-06-18", "SubmitMediaDetailJob", "mts", "openAPI")
         {
         }
 

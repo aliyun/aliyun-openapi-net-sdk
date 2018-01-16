@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class UpdateMediaCategoryRequest : RpcAcsRequest<UpdateMediaCategoryResponse>
     {
         public UpdateMediaCategoryRequest()
-            : base("Mts", "2014-06-18", "UpdateMediaCategory")
+            : base("Mts", "2014-06-18", "UpdateMediaCategory", "mts", "openAPI")
         {
         }
 

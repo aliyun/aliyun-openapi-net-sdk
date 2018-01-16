@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class AddCensorPipelineRequest : RpcAcsRequest<AddCensorPipelineResponse>
     {
         public AddCensorPipelineRequest()
-            : base("Mts", "2014-06-18", "AddCensorPipeline")
+            : base("Mts", "2014-06-18", "AddCensorPipeline", "mts", "openAPI")
         {
         }
 

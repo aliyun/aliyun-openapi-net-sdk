@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class BindOutputBucketRequest : RpcAcsRequest<BindOutputBucketResponse>
     {
         public BindOutputBucketRequest()
-            : base("Mts", "2014-06-18", "BindOutputBucket")
+            : base("Mts", "2014-06-18", "BindOutputBucket", "mts", "openAPI")
         {
         }
 

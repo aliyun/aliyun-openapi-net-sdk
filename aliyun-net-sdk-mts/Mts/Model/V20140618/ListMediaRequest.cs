@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class ListMediaRequest : RpcAcsRequest<ListMediaResponse>
     {
         public ListMediaRequest()
-            : base("Mts", "2014-06-18", "ListMedia")
+            : base("Mts", "2014-06-18", "ListMedia", "mts", "openAPI")
         {
         }
 

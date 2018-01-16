@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class DeleteTemplateRequest : RpcAcsRequest<DeleteTemplateResponse>
     {
         public DeleteTemplateRequest()
-            : base("Mts", "2014-06-18", "DeleteTemplate")
+            : base("Mts", "2014-06-18", "DeleteTemplate", "mts", "openAPI")
         {
         }
 

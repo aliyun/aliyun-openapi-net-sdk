@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class SearchTemplateRequest : RpcAcsRequest<SearchTemplateResponse>
     {
         public SearchTemplateRequest()
-            : base("Mts", "2014-06-18", "SearchTemplate")
+            : base("Mts", "2014-06-18", "SearchTemplate", "mts", "openAPI")
         {
         }
 

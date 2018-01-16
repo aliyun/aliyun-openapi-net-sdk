@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class AddWaterMarkTemplateRequest : RpcAcsRequest<AddWaterMarkTemplateResponse>
     {
         public AddWaterMarkTemplateRequest()
-            : base("Mts", "2014-06-18", "AddWaterMarkTemplate")
+            : base("Mts", "2014-06-18", "AddWaterMarkTemplate", "mts", "openAPI")
         {
         }
 

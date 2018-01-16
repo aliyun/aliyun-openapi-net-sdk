@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class QueryCensorJobListRequest : RpcAcsRequest<QueryCensorJobListResponse>
     {
         public QueryCensorJobListRequest()
-            : base("Mts", "2014-06-18", "QueryCensorJobList")
+            : base("Mts", "2014-06-18", "QueryCensorJobList", "mts", "openAPI")
         {
         }
 

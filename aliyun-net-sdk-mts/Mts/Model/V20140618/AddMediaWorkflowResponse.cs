@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string topology;
 
+			private string triggerMode;
+
 			private string state;
 
 			private string creationTime;
@@ -98,6 +100,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					topology = value;
+				}
+			}
+
+			public string TriggerMode
+			{
+				get
+				{
+					return triggerMode;
+				}
+				set	
+				{
+					triggerMode = value;
 				}
 			}
 

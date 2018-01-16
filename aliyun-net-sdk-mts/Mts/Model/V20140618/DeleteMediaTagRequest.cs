@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class DeleteMediaTagRequest : RpcAcsRequest<DeleteMediaTagResponse>
     {
         public DeleteMediaTagRequest()
-            : base("Mts", "2014-06-18", "DeleteMediaTag")
+            : base("Mts", "2014-06-18", "DeleteMediaTag", "mts", "openAPI")
         {
         }
 

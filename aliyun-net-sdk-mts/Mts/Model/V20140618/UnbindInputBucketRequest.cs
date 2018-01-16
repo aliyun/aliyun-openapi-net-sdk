@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class UnbindInputBucketRequest : RpcAcsRequest<UnbindInputBucketResponse>
     {
         public UnbindInputBucketRequest()
-            : base("Mts", "2014-06-18", "UnbindInputBucket")
+            : base("Mts", "2014-06-18", "UnbindInputBucket", "mts", "openAPI")
         {
         }
 

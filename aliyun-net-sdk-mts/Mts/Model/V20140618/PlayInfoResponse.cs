@@ -97,6 +97,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string activityName;
 
+			private string encryptionType;
+
+			private string downloadType;
+
 			public string Url
 			{
 				get
@@ -262,6 +266,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					activityName = value;
+				}
+			}
+
+			public string EncryptionType
+			{
+				get
+				{
+					return encryptionType;
+				}
+				set	
+				{
+					encryptionType = value;
+				}
+			}
+
+			public string DownloadType
+			{
+				get
+				{
+					return downloadType;
+				}
+				set	
+				{
+					downloadType = value;
 				}
 			}
 		}
