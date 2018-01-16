@@ -35,29 +35,30 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeInvocationsResponse.PageNumber = context.LongValue("DescribeInvocations.PageNumber");
 			describeInvocationsResponse.PageSize = context.LongValue("DescribeInvocations.PageSize");
 
-			List<DescribeInvocationsResponse.DescribeInvocations_InvocationItem> describeInvocationsResponse_invocation = new List<DescribeInvocationsResponse.DescribeInvocations_InvocationItem>();
-			for (int i = 0; i < context.Length("DescribeInvocations.Invocation.Length"); i++) {
-				DescribeInvocationsResponse.DescribeInvocations_InvocationItem invocationItem = new DescribeInvocationsResponse.DescribeInvocations_InvocationItem();
-				invocationItem.InvokeId = context.StringValue("DescribeInvocations.Invocation["+ i +"].InvokeId");
-				invocationItem.CommandId = context.StringValue("DescribeInvocations.Invocation["+ i +"].CommandId");
-				invocationItem.CommandType = context.StringValue("DescribeInvocations.Invocation["+ i +"].CommandType");
-				invocationItem.CommandName = context.StringValue("DescribeInvocations.Invocation["+ i +"].CommandName");
-				invocationItem.Timed = context.BooleanValue("DescribeInvocations.Invocation["+ i +"].Timed");
-				invocationItem.InvokeStatus = context.StringValue("DescribeInvocations.Invocation["+ i +"].InvokeStatus");
+			List<DescribeInvocationsResponse.DescribeInvocations_Invocation> describeInvocationsResponse_invocations = new List<DescribeInvocationsResponse.DescribeInvocations_Invocation>();
+			for (int i = 0; i < context.Length("DescribeInvocations.Invocations.Length"); i++) {
+				DescribeInvocationsResponse.DescribeInvocations_Invocation invocation = new DescribeInvocationsResponse.DescribeInvocations_Invocation();
+				invocation.InvokeId = context.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeId");
+				invocation.CommandId = context.StringValue("DescribeInvocations.Invocations["+ i +"].CommandId");
+				invocation.CommandType = context.StringValue("DescribeInvocations.Invocations["+ i +"].CommandType");
+				invocation.CommandName = context.StringValue("DescribeInvocations.Invocations["+ i +"].CommandName");
+				invocation.Frequency = context.StringValue("DescribeInvocations.Invocations["+ i +"].Frequency");
+				invocation.Timed = context.BooleanValue("DescribeInvocations.Invocations["+ i +"].Timed");
+				invocation.InvokeStatus = context.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeStatus");
 
-				List<DescribeInvocationsResponse.DescribeInvocations_InvocationItem.DescribeInvocations_InvokeItemItem> invocationItem_invokeItem = new List<DescribeInvocationsResponse.DescribeInvocations_InvocationItem.DescribeInvocations_InvokeItemItem>();
-				for (int j = 0; j < context.Length("DescribeInvocations.Invocation["+ i +"].InvokeItem.Length"); j++) {
-					DescribeInvocationsResponse.DescribeInvocations_InvocationItem.DescribeInvocations_InvokeItemItem invokeItemItem = new DescribeInvocationsResponse.DescribeInvocations_InvocationItem.DescribeInvocations_InvokeItemItem();
-					invokeItemItem.InstanceId = context.StringValue("DescribeInvocations.Invocation["+ i +"].InvokeItem["+ j +"].InstanceId");
-					invokeItemItem.Status = context.StringValue("DescribeInvocations.Invocation["+ i +"].InvokeItem["+ j +"].Status");
+				List<DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance> invocation_invokeInstances = new List<DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance>();
+				for (int j = 0; j < context.Length("DescribeInvocations.Invocations["+ i +"].InvokeInstances.Length"); j++) {
+					DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance invokeInstance = new DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance();
+					invokeInstance.InstanceId = context.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceId");
+					invokeInstance.InstanceInvokeStatus = context.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceInvokeStatus");
 
-					invocationItem_invokeItem.Add(invokeItemItem);
+					invocation_invokeInstances.Add(invokeInstance);
 				}
-				invocationItem.InvokeItem = invocationItem_invokeItem;
+				invocation.InvokeInstances = invocation_invokeInstances;
 
-				describeInvocationsResponse_invocation.Add(invocationItem);
+				describeInvocationsResponse_invocations.Add(invocation);
 			}
-			describeInvocationsResponse.Invocation = describeInvocationsResponse_invocation;
+			describeInvocationsResponse.Invocations = describeInvocationsResponse_invocations;
         
 			return describeInvocationsResponse;
         }

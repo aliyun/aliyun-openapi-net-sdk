@@ -35,20 +35,20 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeCommandsResponse.PageNumber = context.LongValue("DescribeCommands.PageNumber");
 			describeCommandsResponse.PageSize = context.LongValue("DescribeCommands.PageSize");
 
-			List<DescribeCommandsResponse.DescribeCommands_Command> describeCommandsResponse_commandList = new List<DescribeCommandsResponse.DescribeCommands_Command>();
-			for (int i = 0; i < context.Length("DescribeCommands.CommandList.Length"); i++) {
+			List<DescribeCommandsResponse.DescribeCommands_Command> describeCommandsResponse_commands = new List<DescribeCommandsResponse.DescribeCommands_Command>();
+			for (int i = 0; i < context.Length("DescribeCommands.Commands.Length"); i++) {
 				DescribeCommandsResponse.DescribeCommands_Command command = new DescribeCommandsResponse.DescribeCommands_Command();
-				command.CommandId = context.StringValue("DescribeCommands.CommandList["+ i +"].CommandId");
-				command.Name = context.StringValue("DescribeCommands.CommandList["+ i +"].Name");
-				command.Type = context.StringValue("DescribeCommands.CommandList["+ i +"].Type");
-				command.Description = context.StringValue("DescribeCommands.CommandList["+ i +"].Description");
-				command.CommandContent = context.StringValue("DescribeCommands.CommandList["+ i +"].CommandContent");
-				command.WorkingDir = context.StringValue("DescribeCommands.CommandList["+ i +"].WorkingDir");
-				command.Timeout = context.LongValue("DescribeCommands.CommandList["+ i +"].Timeout");
+				command.CommandId = context.StringValue("DescribeCommands.Commands["+ i +"].CommandId");
+				command.Name = context.StringValue("DescribeCommands.Commands["+ i +"].Name");
+				command.Type = context.StringValue("DescribeCommands.Commands["+ i +"].Type");
+				command.Description = context.StringValue("DescribeCommands.Commands["+ i +"].Description");
+				command.CommandContent = context.StringValue("DescribeCommands.Commands["+ i +"].CommandContent");
+				command.WorkingDir = context.StringValue("DescribeCommands.Commands["+ i +"].WorkingDir");
+				command.Timeout = context.LongValue("DescribeCommands.Commands["+ i +"].Timeout");
 
-				describeCommandsResponse_commandList.Add(command);
+				describeCommandsResponse_commands.Add(command);
 			}
-			describeCommandsResponse.CommandList = describeCommandsResponse_commandList;
+			describeCommandsResponse.Commands = describeCommandsResponse_commands;
         
 			return describeCommandsResponse;
         }

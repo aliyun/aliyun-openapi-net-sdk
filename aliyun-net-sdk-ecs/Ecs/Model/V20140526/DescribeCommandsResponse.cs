@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? pageSize;
 
-		private List<DescribeCommands_Command> commandList;
+		private List<DescribeCommands_Command> commands;
 
 		public string RequestId
 		{
@@ -82,15 +82,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<DescribeCommands_Command> CommandList
+		public List<DescribeCommands_Command> Commands
 		{
 			get
 			{
-				return commandList;
+				return commands;
 			}
 			set	
 			{
-				commandList = value;
+				commands = value;
 			}
 		}
 

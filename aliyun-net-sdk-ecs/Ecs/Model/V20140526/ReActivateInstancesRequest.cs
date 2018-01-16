@@ -26,59 +26,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeImageSupportInstanceTypesRequest : RpcAcsRequest<DescribeImageSupportInstanceTypesResponse>
+    public class ReActivateInstancesRequest : RpcAcsRequest<ReActivateInstancesResponse>
     {
-        public DescribeImageSupportInstanceTypesRequest()
-            : base("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "ecs", "openAPI")
+        public ReActivateInstancesRequest()
+            : base("Ecs", "2014-05-26", "ReActivateInstances", "ecs", "openAPI")
         {
         }
 
-		private string actionType;
-
-		private List<Filter> filters;
-
 		private long? resourceOwnerId;
 
-		private string imageId;
+		private string instanceId;
 
 		private string resourceOwnerAccount;
 
 		private string regionId;
 
+		private string ownerAccount;
+
 		private string action;
 
 		private long? ownerId;
-
-		public string ActionType
-		{
-			get
-			{
-				return actionType;
-			}
-			set	
-			{
-				actionType = value;
-				DictionaryUtil.Add(QueryParameters, "ActionType", value);
-			}
-		}
-
-		public List<Filter> Filters
-		{
-			get
-			{
-				return filters;
-			}
-
-			set
-			{
-				filters = value;
-				for (int i = 0; i < filters.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value", filters[i].Value);
-				}
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -93,16 +60,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ImageId
+		public string InstanceId
 		{
 			get
 			{
-				return imageId;
+				return instanceId;
 			}
 			set	
 			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -132,6 +99,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -158,41 +138,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Filter
-		{
-
-			private string key;
-
-			private string value_;
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-		}
-
-        public override DescribeImageSupportInstanceTypesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ReActivateInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeImageSupportInstanceTypesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ReActivateInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

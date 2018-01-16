@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1b950a6f-668f-45de-9569-3aec5c44f450}</ProjectGuid>
+    <ProjectGuid>{7fd0e20a-34d3-4fcf-884a-e09004b2d33b}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -185,6 +185,7 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyRouterInterfaceAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeDeploymentSetTopologyResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteDiskResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\ReActivateInstancesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CancelCopyImageResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceSpecRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotPackageRequest.cs" />
@@ -369,6 +370,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotMonitorDataRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeImagesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\AddTagsResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\ReActivateInstancesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeCommandsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\RevokeSecurityGroupResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyNetworkInterfaceAttributeResponse.cs" />
@@ -624,6 +626,7 @@
 	<Compile Include="Ecs\Transform\V20140526\CancelAutoSnapshotPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeTagKeysResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ReplaceSystemDiskResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\ReActivateInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeNatGatewaysResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeEipMonitorDataResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\JoinResourceGroupResponseUnmarshaller.cs" />

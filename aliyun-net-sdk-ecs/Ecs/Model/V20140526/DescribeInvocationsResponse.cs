@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? pageSize;
 
-		private List<DescribeInvocations_InvocationItem> invocation;
+		private List<DescribeInvocations_Invocation> invocations;
 
 		public string RequestId
 		{
@@ -82,19 +82,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<DescribeInvocations_InvocationItem> Invocation
+		public List<DescribeInvocations_Invocation> Invocations
 		{
 			get
 			{
-				return invocation;
+				return invocations;
 			}
 			set	
 			{
-				invocation = value;
+				invocations = value;
 			}
 		}
 
-		public class DescribeInvocations_InvocationItem
+		public class DescribeInvocations_Invocation
 		{
 
 			private string invokeId;
@@ -105,11 +105,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string commandName;
 
+			private string frequency;
+
 			private bool? timed;
 
 			private string invokeStatus;
 
-			private List<DescribeInvocations_InvokeItemItem> invokeItem;
+			private List<DescribeInvocations_InvokeInstance> invokeInstances;
 
 			public string InvokeId
 			{
@@ -159,6 +161,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string Frequency
+			{
+				get
+				{
+					return frequency;
+				}
+				set	
+				{
+					frequency = value;
+				}
+			}
+
 			public bool? Timed
 			{
 				get
@@ -183,24 +197,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<DescribeInvocations_InvokeItemItem> InvokeItem
+			public List<DescribeInvocations_InvokeInstance> InvokeInstances
 			{
 				get
 				{
-					return invokeItem;
+					return invokeInstances;
 				}
 				set	
 				{
-					invokeItem = value;
+					invokeInstances = value;
 				}
 			}
 
-			public class DescribeInvocations_InvokeItemItem
+			public class DescribeInvocations_InvokeInstance
 			{
 
 				private string instanceId;
 
-				private string status;
+				private string instanceInvokeStatus;
 
 				public string InstanceId
 				{
@@ -214,15 +228,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string Status
+				public string InstanceInvokeStatus
 				{
 					get
 					{
-						return status;
+						return instanceInvokeStatus;
 					}
 					set	
 					{
-						status = value;
+						instanceInvokeStatus = value;
 					}
 				}
 			}

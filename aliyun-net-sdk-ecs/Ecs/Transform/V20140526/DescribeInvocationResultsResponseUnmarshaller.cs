@@ -33,23 +33,24 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeInvocationResultsResponse.RequestId = context.StringValue("DescribeInvocationResults.RequestId");
 
 			DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation invocation = new DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation();
-			invocation.InvokeId = context.StringValue("DescribeInvocationResults.Invocation.InvokeId");
 			invocation.PageSize = context.LongValue("DescribeInvocationResults.Invocation.PageSize");
 			invocation.PageNumber = context.LongValue("DescribeInvocationResults.Invocation.PageNumber");
 			invocation.TotalCount = context.LongValue("DescribeInvocationResults.Invocation.TotalCount");
-			invocation.Status = context.StringValue("DescribeInvocationResults.Invocation.Status");
 
-			List<DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation.DescribeInvocationResults_ResultItem> invocation_resultLists = new List<DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation.DescribeInvocationResults_ResultItem>();
-			for (int i = 0; i < context.Length("DescribeInvocationResults.Invocation.ResultLists.Length"); i++) {
-				DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation.DescribeInvocationResults_ResultItem resultItem = new DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation.DescribeInvocationResults_ResultItem();
-				resultItem.InstanceId = context.StringValue("DescribeInvocationResults.Invocation.ResultLists["+ i +"].InstanceId");
-				resultItem.FinishedTime = context.StringValue("DescribeInvocationResults.Invocation.ResultLists["+ i +"].FinishedTime");
-				resultItem.Output = context.StringValue("DescribeInvocationResults.Invocation.ResultLists["+ i +"].Output");
-				resultItem.ExitCode = context.LongValue("DescribeInvocationResults.Invocation.ResultLists["+ i +"].ExitCode");
+			List<DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation.DescribeInvocationResults_InvocationResult> invocation_invocationResults = new List<DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation.DescribeInvocationResults_InvocationResult>();
+			for (int i = 0; i < context.Length("DescribeInvocationResults.Invocation.InvocationResults.Length"); i++) {
+				DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation.DescribeInvocationResults_InvocationResult invocationResult = new DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation.DescribeInvocationResults_InvocationResult();
+				invocationResult.CommandId = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].CommandId");
+				invocationResult.InvokeId = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvokeId");
+				invocationResult.InstanceId = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InstanceId");
+				invocationResult.FinishedTime = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].FinishedTime");
+				invocationResult.Output = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].Output");
+				invocationResult.InvokeRecordStatus = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvokeRecordStatus");
+				invocationResult.ExitCode = context.LongValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].ExitCode");
 
-				invocation_resultLists.Add(resultItem);
+				invocation_invocationResults.Add(invocationResult);
 			}
-			invocation.ResultLists = invocation_resultLists;
+			invocation.InvocationResults = invocation_invocationResults;
 			describeInvocationResultsResponse.Invocation = invocation;
         
 			return describeInvocationResultsResponse;

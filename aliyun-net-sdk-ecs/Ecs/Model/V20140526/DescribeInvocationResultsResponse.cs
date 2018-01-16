@@ -55,29 +55,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeInvocationResults_Invocation
 		{
 
-			private string invokeId;
-
 			private long? pageSize;
 
 			private long? pageNumber;
 
 			private long? totalCount;
 
-			private string status;
-
-			private List<DescribeInvocationResults_ResultItem> resultLists;
-
-			public string InvokeId
-			{
-				get
-				{
-					return invokeId;
-				}
-				set	
-				{
-					invokeId = value;
-				}
-			}
+			private List<DescribeInvocationResults_InvocationResult> invocationResults;
 
 			public long? PageSize
 			{
@@ -115,32 +99,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Status
+			public List<DescribeInvocationResults_InvocationResult> InvocationResults
 			{
 				get
 				{
-					return status;
+					return invocationResults;
 				}
 				set	
 				{
-					status = value;
+					invocationResults = value;
 				}
 			}
 
-			public List<DescribeInvocationResults_ResultItem> ResultLists
+			public class DescribeInvocationResults_InvocationResult
 			{
-				get
-				{
-					return resultLists;
-				}
-				set	
-				{
-					resultLists = value;
-				}
-			}
 
-			public class DescribeInvocationResults_ResultItem
-			{
+				private string commandId;
+
+				private string invokeId;
 
 				private string instanceId;
 
@@ -148,7 +124,33 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string output;
 
+				private string invokeRecordStatus;
+
 				private long? exitCode;
+
+				public string CommandId
+				{
+					get
+					{
+						return commandId;
+					}
+					set	
+					{
+						commandId = value;
+					}
+				}
+
+				public string InvokeId
+				{
+					get
+					{
+						return invokeId;
+					}
+					set	
+					{
+						invokeId = value;
+					}
+				}
 
 				public string InstanceId
 				{
@@ -183,6 +185,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						output = value;
+					}
+				}
+
+				public string InvokeRecordStatus
+				{
+					get
+					{
+						return invokeRecordStatus;
+					}
+					set	
+					{
+						invokeRecordStatus = value;
 					}
 				}
 

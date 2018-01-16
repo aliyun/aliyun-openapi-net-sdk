@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string commandId;
+
 		private long? pageNumber;
 
 		private string regionId;
@@ -53,6 +55,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceId;
 
+		private string invokeRecordStatus;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -63,6 +67,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string CommandId
+		{
+			get
+			{
+				return commandId;
+			}
+			set	
+			{
+				commandId = value;
+				DictionaryUtil.Add(QueryParameters, "CommandId", value);
 			}
 		}
 
@@ -180,6 +197,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string InvokeRecordStatus
+		{
+			get
+			{
+				return invokeRecordStatus;
+			}
+			set	
+			{
+				invokeRecordStatus = value;
+				DictionaryUtil.Add(QueryParameters, "InvokeRecordStatus", value);
 			}
 		}
 
