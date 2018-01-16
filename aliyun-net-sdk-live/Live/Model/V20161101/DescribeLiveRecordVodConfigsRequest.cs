@@ -47,8 +47,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? pageNum;
 
-		private string version;
-
 		private string streamName;
 
 		private string accessKeyId;
@@ -141,19 +139,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
 			}
 		}
 

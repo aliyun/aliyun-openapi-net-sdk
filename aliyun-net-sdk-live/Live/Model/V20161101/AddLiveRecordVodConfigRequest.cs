@@ -45,8 +45,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private string version;
-
 		private string streamName;
 
 		private string vodTranscodeGroupId;
@@ -128,19 +126,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
 			}
 		}
 
