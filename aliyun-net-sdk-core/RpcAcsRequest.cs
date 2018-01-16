@@ -66,7 +66,7 @@ namespace Aliyun.Acs.Core
         private void Initialize()
         {
             Method = MethodType.GET;
-            AcceptFormat = FormatType.XML;
+            AcceptFormat = FormatType.JSON;
             this.Composer = RpcSignatureComposer.GetComposer();
         }
 

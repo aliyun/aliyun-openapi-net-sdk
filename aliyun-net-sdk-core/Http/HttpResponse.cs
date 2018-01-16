@@ -137,16 +137,7 @@ namespace Aliyun.Acs.Core.Http
         public static HttpWebRequest GetWebRequest(HttpRequest request)
         {
             HttpWebRequest httpWebRequest = null;
-            if (request.Url.Contains("https"))
-            {
-                ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
-                httpWebRequest = (HttpWebRequest)WebRequest.CreateDefault(new Uri(request.Url));
-            }
-            else
-            {
-                httpWebRequest = (HttpWebRequest)WebRequest.Create(request.Url);
-            }
-
+            httpWebRequest = (HttpWebRequest)WebRequest.Create(request.Url);
             httpWebRequest.ServicePoint.Expect100Continue = false;
             httpWebRequest.Method = request.Method.ToString();
             httpWebRequest.KeepAlive = true;
@@ -187,11 +178,6 @@ namespace Aliyun.Acs.Core.Http
             
 
             return httpWebRequest;
-        }
-
-        public static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
-        {
-            return true;
         }
 
         public bool isSuccess()
