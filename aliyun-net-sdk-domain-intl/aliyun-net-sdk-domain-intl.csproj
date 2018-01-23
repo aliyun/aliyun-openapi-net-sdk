@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{94631819-6c53-4e1c-9b47-4db560fc1ecb}</ProjectGuid>
+    <ProjectGuid>{15513389-940b-4c86-9e21-a4612a24d8a9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -80,6 +80,7 @@
 	<Compile Include="Domain_intl\Model\V20171218\ResendEmailVerificationResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveRegistrantProfileRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\CheckDomainRequest.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\QueryTaskDetailHistoryResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryChangeLogListRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForUpdateProhibitionLockRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForUpdateProhibitionLockResponse.cs" />
@@ -92,11 +93,14 @@
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForCreatingOrderActivateRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForModifyingDnsHostRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForUpdatingContactInfoResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\QueryTaskInfoHistoryResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForCreatingOrderRedeemResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryDomainListRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\ListEmailVerificationResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForCreatingOrderActivateRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\DeleteRegistrantProfileRequest.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\QueryTaskInfoHistoryRequest.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\QueryTaskDetailHistoryRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\ListEmailVerificationRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\VerifyEmailRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\CheckDomainResponse.cs" />
@@ -129,6 +133,7 @@
 	<Compile Include="Domain_intl\Transform\V20171218\SaveBatchTaskForTransferProhibitionLockResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveBatchTaskForUpdatingContactInfoResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForUpdateProhibitionLockResponseUnmarshaller.cs" />
+	<Compile Include="Domain_intl\Transform\V20171218\QueryTaskInfoHistoryResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForCreatingOrderActivateResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveBatchTaskForDomainNameProxyServiceResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryContactInfoResponseUnmarshaller.cs" />
@@ -142,6 +147,7 @@
 	<Compile Include="Domain_intl\Transform\V20171218\SaveBatchTaskForCreatingOrderRedeemResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForSynchronizingDnsHostResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveBatchTaskForCreatingOrderActivateResponseUnmarshaller.cs" />
+	<Compile Include="Domain_intl\Transform\V20171218\QueryTaskDetailHistoryResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryRegistrantProfilesResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForModifyingDnsHostResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
