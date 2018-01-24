@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20170301
 {
-	public class DisableActiceAlertResponse : AcsResponse
+	public class DisableActiveAlertResponse : AcsResponse
 	{
 
 		private string requestId;

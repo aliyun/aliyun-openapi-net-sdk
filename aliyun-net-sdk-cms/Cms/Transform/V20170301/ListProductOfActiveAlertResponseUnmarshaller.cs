@@ -23,20 +23,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Transform.V20170301
 {
-    public class ListProductOfActiceAlertResponseUnmarshaller
+    public class ListProductOfActiveAlertResponseUnmarshaller
     {
-        public static ListProductOfActiceAlertResponse Unmarshall(UnmarshallerContext context)
+        public static ListProductOfActiveAlertResponse Unmarshall(UnmarshallerContext context)
         {
-			ListProductOfActiceAlertResponse listProductOfActiceAlertResponse = new ListProductOfActiceAlertResponse();
+			ListProductOfActiveAlertResponse listProductOfActiveAlertResponse = new ListProductOfActiveAlertResponse();
 
-			listProductOfActiceAlertResponse.HttpResponse = context.HttpResponse;
-			listProductOfActiceAlertResponse.RequestId = context.StringValue("ListProductOfActiceAlert.RequestId");
-			listProductOfActiceAlertResponse.Success = context.BooleanValue("ListProductOfActiceAlert.Success");
-			listProductOfActiceAlertResponse.Code = context.IntegerValue("ListProductOfActiceAlert.Code");
-			listProductOfActiceAlertResponse.Message = context.StringValue("ListProductOfActiceAlert.Message");
-			listProductOfActiceAlertResponse.Datapoints = context.StringValue("ListProductOfActiceAlert.Datapoints");
+			listProductOfActiveAlertResponse.HttpResponse = context.HttpResponse;
+			listProductOfActiveAlertResponse.RequestId = context.StringValue("ListProductOfActiveAlert.RequestId");
+			listProductOfActiveAlertResponse.Success = context.BooleanValue("ListProductOfActiveAlert.Success");
+			listProductOfActiveAlertResponse.Code = context.IntegerValue("ListProductOfActiveAlert.Code");
+			listProductOfActiveAlertResponse.Message = context.StringValue("ListProductOfActiveAlert.Message");
+			listProductOfActiveAlertResponse.Datapoints = context.StringValue("ListProductOfActiveAlert.Datapoints");
         
-			return listProductOfActiceAlertResponse;
+			return listProductOfActiveAlertResponse;
         }
     }
 }

@@ -35,8 +35,6 @@ namespace Aliyun.Acs.Cms.Model.V20170301
 
 		private bool? enableInstallAgentNewECS;
 
-		private string enableActiveAlert;
-
 		private bool? autoInstall;
 
 		private long? userId;
@@ -51,19 +49,6 @@ namespace Aliyun.Acs.Cms.Model.V20170301
 			{
 				enableInstallAgentNewECS = value;
 				DictionaryUtil.Add(QueryParameters, "EnableInstallAgentNewECS", value.ToString());
-			}
-		}
-
-		public string EnableActiveAlert
-		{
-			get
-			{
-				return enableActiveAlert;
-			}
-			set	
-			{
-				enableActiveAlert = value;
-				DictionaryUtil.Add(QueryParameters, "EnableActiveAlert", value);
 			}
 		}
 

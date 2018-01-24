@@ -38,8 +38,6 @@ namespace Aliyun.Acs.Cms.Model.V20170301
 
 		private bool? enableInstallAgentNewECS;
 
-		private string enableActiveAlert;
-
 		public int? ErrorCode
 		{
 			get
@@ -121,18 +119,6 @@ namespace Aliyun.Acs.Cms.Model.V20170301
 			set	
 			{
 				enableInstallAgentNewECS = value;
-			}
-		}
-
-		public string EnableActiveAlert
-		{
-			get
-			{
-				return enableActiveAlert;
-			}
-			set	
-			{
-				enableActiveAlert = value;
 			}
 		}
 	}

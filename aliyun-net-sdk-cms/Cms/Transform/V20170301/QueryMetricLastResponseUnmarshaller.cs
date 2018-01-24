@@ -19,7 +19,7 @@
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Cms.Model.V20170301;
 using System;
-using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Aliyun.Acs.Cms.Transform.V20170301
 {
@@ -35,8 +35,9 @@ namespace Aliyun.Acs.Cms.Transform.V20170301
 			queryMetricLastResponse.Success = context.BooleanValue("QueryMetricLast.Success");
 			queryMetricLastResponse.RequestId = context.StringValue("QueryMetricLast.RequestId");
 			queryMetricLastResponse.Cursor = context.StringValue("QueryMetricLast.Cursor");
-			queryMetricLastResponse.Datapoints = context.StringValue("QueryMetricLast.Datapoints");
-			queryMetricLastResponse.Period = context.StringValue("QueryMetricLast.Period");
+            String datapoints = System.Text.Encoding.Default.GetString(context.HttpResponse.Content);
+            queryMetricLastResponse.Datapoints = Regex.Match(datapoints, @"\[.*\]").Value;
+            queryMetricLastResponse.Period = context.StringValue("QueryMetricLast.Period");
         
 			return queryMetricLastResponse;
         }

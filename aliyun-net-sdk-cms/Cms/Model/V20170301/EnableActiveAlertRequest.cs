@@ -17,81 +17,55 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cms.Transform;
+using Aliyun.Acs.Cms.Transform.V20170301;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20170301
 {
-	public class ListProductOfActiceAlertResponse : AcsResponse
-	{
+    public class EnableActiveAlertRequest : RpcAcsRequest<EnableActiveAlertResponse>
+    {
+        public EnableActiveAlertRequest()
+            : base("Cms", "2017-03-01", "EnableActiveAlert", "cms", "openAPI")
+        {
+        }
 
-		private string requestId;
+		private string product;
 
-		private bool? success;
+		private string userId;
 
-		private int? code;
-
-		private string message;
-
-		private string datapoints;
-
-		public string RequestId
+		public string Product
 		{
 			get
 			{
-				return requestId;
+				return product;
 			}
 			set	
 			{
-				requestId = value;
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
 			}
 		}
 
-		public bool? Success
+		public string UserId
 		{
 			get
 			{
-				return success;
+				return userId;
 			}
 			set	
 			{
-				success = value;
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string Datapoints
-		{
-			get
-			{
-				return datapoints;
-			}
-			set	
-			{
-				datapoints = value;
-			}
-		}
-	}
+        public override EnableActiveAlertResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        {
+            return EnableActiveAlertResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

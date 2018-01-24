@@ -17,53 +17,55 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cms.Transform;
+using Aliyun.Acs.Cms.Transform.V20170301;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20170301
 {
-	public class EnableActiceAlertResponse : AcsResponse
-	{
+    public class DisableActiveAlertRequest : RpcAcsRequest<DisableActiveAlertResponse>
+    {
+        public DisableActiveAlertRequest()
+            : base("Cms", "2017-03-01", "DisableActiveAlert", "cms", "openAPI")
+        {
+        }
 
-		private bool? success;
+		private string product;
 
-		private string code;
+		private string userId;
 
-		private string message;
-
-		public bool? Success
+		public string Product
 		{
 			get
 			{
-				return success;
+				return product;
 			}
 			set	
 			{
-				success = value;
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
 			}
 		}
 
-		public string Code
+		public string UserId
 		{
 			get
 			{
-				return code;
+				return userId;
 			}
 			set	
 			{
-				code = value;
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-	}
+        public override DisableActiveAlertResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        {
+            return DisableActiveAlertResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

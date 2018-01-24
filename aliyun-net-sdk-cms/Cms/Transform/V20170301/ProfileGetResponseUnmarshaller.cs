@@ -37,7 +37,6 @@ namespace Aliyun.Acs.Cms.Transform.V20170301
 			profileGetResponse.UserId = context.LongValue("ProfileGet.UserId");
 			profileGetResponse.AutoInstall = context.BooleanValue("ProfileGet.AutoInstall");
 			profileGetResponse.EnableInstallAgentNewECS = context.BooleanValue("ProfileGet.EnableInstallAgentNewECS");
-			profileGetResponse.EnableActiveAlert = context.StringValue("ProfileGet.EnableActiveAlert");
         
 			return profileGetResponse;
         }

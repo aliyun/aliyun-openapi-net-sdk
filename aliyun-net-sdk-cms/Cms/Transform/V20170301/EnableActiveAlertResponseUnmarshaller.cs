@@ -23,18 +23,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Transform.V20170301
 {
-    public class EnableActiceAlertResponseUnmarshaller
+    public class EnableActiveAlertResponseUnmarshaller
     {
-        public static EnableActiceAlertResponse Unmarshall(UnmarshallerContext context)
+        public static EnableActiveAlertResponse Unmarshall(UnmarshallerContext context)
         {
-			EnableActiceAlertResponse enableActiceAlertResponse = new EnableActiceAlertResponse();
+			EnableActiveAlertResponse enableActiveAlertResponse = new EnableActiveAlertResponse();
 
-			enableActiceAlertResponse.HttpResponse = context.HttpResponse;
-			enableActiceAlertResponse.Success = context.BooleanValue("EnableActiceAlert.Success");
-			enableActiceAlertResponse.Code = context.StringValue("EnableActiceAlert.Code");
-			enableActiceAlertResponse.Message = context.StringValue("EnableActiceAlert.Message");
+			enableActiveAlertResponse.HttpResponse = context.HttpResponse;
+			enableActiveAlertResponse.Success = context.BooleanValue("EnableActiveAlert.Success");
+			enableActiveAlertResponse.Code = context.StringValue("EnableActiveAlert.Code");
+			enableActiveAlertResponse.Message = context.StringValue("EnableActiveAlert.Message");
         
-			return enableActiceAlertResponse;
+			return enableActiveAlertResponse;
         }
     }
 }

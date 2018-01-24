@@ -26,29 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20170301
 {
-    public class EnableActiceAlertRequest : RpcAcsRequest<EnableActiceAlertResponse>
+    public class ListProductOfActiveAlertRequest : RpcAcsRequest<ListProductOfActiveAlertResponse>
     {
-        public EnableActiceAlertRequest()
-            : base("Cms", "2017-03-01", "EnableActiceAlert", "cms", "openAPI")
+        public ListProductOfActiveAlertRequest()
+            : base("Cms", "2017-03-01", "ListProductOfActiveAlert", "cms", "openAPI")
         {
         }
 
-		private string product;
-
 		private string userId;
-
-		public string Product
-		{
-			get
-			{
-				return product;
-			}
-			set	
-			{
-				product = value;
-				DictionaryUtil.Add(QueryParameters, "Product", value);
-			}
-		}
 
 		public string UserId
 		{
@@ -63,9 +48,9 @@ namespace Aliyun.Acs.Cms.Model.V20170301
 			}
 		}
 
-        public override EnableActiceAlertResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListProductOfActiveAlertResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return EnableActiceAlertResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListProductOfActiveAlertResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -23,19 +23,19 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Transform.V20170301
 {
-    public class DisableActiceAlertResponseUnmarshaller
+    public class DisableActiveAlertResponseUnmarshaller
     {
-        public static DisableActiceAlertResponse Unmarshall(UnmarshallerContext context)
+        public static DisableActiveAlertResponse Unmarshall(UnmarshallerContext context)
         {
-			DisableActiceAlertResponse disableActiceAlertResponse = new DisableActiceAlertResponse();
+			DisableActiveAlertResponse disableActiveAlertResponse = new DisableActiveAlertResponse();
 
-			disableActiceAlertResponse.HttpResponse = context.HttpResponse;
-			disableActiceAlertResponse.RequestId = context.StringValue("DisableActiceAlert.RequestId");
-			disableActiceAlertResponse.Success = context.BooleanValue("DisableActiceAlert.Success");
-			disableActiceAlertResponse.Code = context.StringValue("DisableActiceAlert.Code");
-			disableActiceAlertResponse.Message = context.StringValue("DisableActiceAlert.Message");
+			disableActiveAlertResponse.HttpResponse = context.HttpResponse;
+			disableActiveAlertResponse.RequestId = context.StringValue("DisableActiveAlert.RequestId");
+			disableActiveAlertResponse.Success = context.BooleanValue("DisableActiveAlert.Success");
+			disableActiveAlertResponse.Code = context.StringValue("DisableActiveAlert.Code");
+			disableActiveAlertResponse.Message = context.StringValue("DisableActiveAlert.Message");
         
-			return disableActiceAlertResponse;
+			return disableActiveAlertResponse;
         }
     }
 }

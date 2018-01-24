@@ -17,40 +17,53 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Cms.Transform;
-using Aliyun.Acs.Cms.Transform.V20170301;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20170301
 {
-    public class ListProductOfActiceAlertRequest : RpcAcsRequest<ListProductOfActiceAlertResponse>
-    {
-        public ListProductOfActiceAlertRequest()
-            : base("Cms", "2017-03-01", "ListProductOfActiceAlert", "cms", "openAPI")
-        {
-        }
+	public class EnableActiveAlertResponse : AcsResponse
+	{
 
-		private string userId;
+		private bool? success;
 
-		public string UserId
+		private string code;
+
+		private string message;
+
+		public bool? Success
 		{
 			get
 			{
-				return userId;
+				return success;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				success = value;
 			}
 		}
 
-        public override ListProductOfActiceAlertResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
-        {
-            return ListProductOfActiceAlertResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+	}
 }
