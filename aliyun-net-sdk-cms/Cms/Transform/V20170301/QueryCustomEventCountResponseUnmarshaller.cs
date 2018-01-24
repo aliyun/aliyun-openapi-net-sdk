@@ -23,22 +23,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Transform.V20170301
 {
-    public class QueryMetricListResponseUnmarshaller
+    public class QueryCustomEventCountResponseUnmarshaller
     {
-        public static QueryMetricListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryCustomEventCountResponse Unmarshall(UnmarshallerContext context)
         {
-			QueryMetricListResponse queryMetricListResponse = new QueryMetricListResponse();
+			QueryCustomEventCountResponse queryCustomEventCountResponse = new QueryCustomEventCountResponse();
 
-			queryMetricListResponse.HttpResponse = context.HttpResponse;
-			queryMetricListResponse.Code = context.StringValue("QueryMetricList.Code");
-			queryMetricListResponse.Message = context.StringValue("QueryMetricList.Message");
-			queryMetricListResponse.Success = context.BooleanValue("QueryMetricList.Success");
-			queryMetricListResponse.RequestId = context.StringValue("QueryMetricList.RequestId");
-			queryMetricListResponse.Cursor = context.StringValue("QueryMetricList.Cursor");
-			queryMetricListResponse.Datapoints = context.StringValue("QueryMetricList.Datapoints");
-			queryMetricListResponse.Period = context.StringValue("QueryMetricList.Period");
+			queryCustomEventCountResponse.HttpResponse = context.HttpResponse;
+			queryCustomEventCountResponse.Code = context.StringValue("QueryCustomEventCount.Code");
+			queryCustomEventCountResponse.Message = context.StringValue("QueryCustomEventCount.Message");
+			queryCustomEventCountResponse.Data = context.StringValue("QueryCustomEventCount.Data");
         
-			return queryMetricListResponse;
+			return queryCustomEventCountResponse;
         }
     }
 }

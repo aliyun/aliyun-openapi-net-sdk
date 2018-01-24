@@ -26,61 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20170301
 {
-    public class ProfileSetRequest : RpcAcsRequest<ProfileSetResponse>
+    public class DisableActiceAlertRequest : RpcAcsRequest<DisableActiceAlertResponse>
     {
-        public ProfileSetRequest()
-            : base("Cms", "2017-03-01", "ProfileSet", "cms", "openAPI")
+        public DisableActiceAlertRequest()
+            : base("Cms", "2017-03-01", "DisableActiceAlert", "cms", "openAPI")
         {
         }
 
-		private bool? enableInstallAgentNewECS;
+		private string product;
 
-		private string enableActiveAlert;
+		private string userId;
 
-		private bool? autoInstall;
-
-		private long? userId;
-
-		public bool? EnableInstallAgentNewECS
+		public string Product
 		{
 			get
 			{
-				return enableInstallAgentNewECS;
+				return product;
 			}
 			set	
 			{
-				enableInstallAgentNewECS = value;
-				DictionaryUtil.Add(QueryParameters, "EnableInstallAgentNewECS", value.ToString());
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
 			}
 		}
 
-		public string EnableActiveAlert
-		{
-			get
-			{
-				return enableActiveAlert;
-			}
-			set	
-			{
-				enableActiveAlert = value;
-				DictionaryUtil.Add(QueryParameters, "EnableActiveAlert", value);
-			}
-		}
-
-		public bool? AutoInstall
-		{
-			get
-			{
-				return autoInstall;
-			}
-			set	
-			{
-				autoInstall = value;
-				DictionaryUtil.Add(QueryParameters, "AutoInstall", value.ToString());
-			}
-		}
-
-		public long? UserId
+		public string UserId
 		{
 			get
 			{
@@ -89,13 +59,13 @@ namespace Aliyun.Acs.Cms.Model.V20170301
 			set	
 			{
 				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 
-        public override ProfileSetResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DisableActiceAlertResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ProfileSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DisableActiceAlertResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

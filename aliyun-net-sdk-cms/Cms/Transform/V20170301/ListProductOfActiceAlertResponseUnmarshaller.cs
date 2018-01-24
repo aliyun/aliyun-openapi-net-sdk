@@ -23,22 +23,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Transform.V20170301
 {
-    public class QueryMetricListResponseUnmarshaller
+    public class ListProductOfActiceAlertResponseUnmarshaller
     {
-        public static QueryMetricListResponse Unmarshall(UnmarshallerContext context)
+        public static ListProductOfActiceAlertResponse Unmarshall(UnmarshallerContext context)
         {
-			QueryMetricListResponse queryMetricListResponse = new QueryMetricListResponse();
+			ListProductOfActiceAlertResponse listProductOfActiceAlertResponse = new ListProductOfActiceAlertResponse();
 
-			queryMetricListResponse.HttpResponse = context.HttpResponse;
-			queryMetricListResponse.Code = context.StringValue("QueryMetricList.Code");
-			queryMetricListResponse.Message = context.StringValue("QueryMetricList.Message");
-			queryMetricListResponse.Success = context.BooleanValue("QueryMetricList.Success");
-			queryMetricListResponse.RequestId = context.StringValue("QueryMetricList.RequestId");
-			queryMetricListResponse.Cursor = context.StringValue("QueryMetricList.Cursor");
-			queryMetricListResponse.Datapoints = context.StringValue("QueryMetricList.Datapoints");
-			queryMetricListResponse.Period = context.StringValue("QueryMetricList.Period");
+			listProductOfActiceAlertResponse.HttpResponse = context.HttpResponse;
+			listProductOfActiceAlertResponse.RequestId = context.StringValue("ListProductOfActiceAlert.RequestId");
+			listProductOfActiceAlertResponse.Success = context.BooleanValue("ListProductOfActiceAlert.Success");
+			listProductOfActiceAlertResponse.Code = context.IntegerValue("ListProductOfActiceAlert.Code");
+			listProductOfActiceAlertResponse.Message = context.StringValue("ListProductOfActiceAlert.Message");
+			listProductOfActiceAlertResponse.Datapoints = context.StringValue("ListProductOfActiceAlert.Datapoints");
         
-			return queryMetricListResponse;
+			return listProductOfActiceAlertResponse;
         }
     }
 }

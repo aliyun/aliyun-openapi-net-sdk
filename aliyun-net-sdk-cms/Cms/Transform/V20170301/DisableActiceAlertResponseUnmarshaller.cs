@@ -23,22 +23,19 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Transform.V20170301
 {
-    public class QueryMetricListResponseUnmarshaller
+    public class DisableActiceAlertResponseUnmarshaller
     {
-        public static QueryMetricListResponse Unmarshall(UnmarshallerContext context)
+        public static DisableActiceAlertResponse Unmarshall(UnmarshallerContext context)
         {
-			QueryMetricListResponse queryMetricListResponse = new QueryMetricListResponse();
+			DisableActiceAlertResponse disableActiceAlertResponse = new DisableActiceAlertResponse();
 
-			queryMetricListResponse.HttpResponse = context.HttpResponse;
-			queryMetricListResponse.Code = context.StringValue("QueryMetricList.Code");
-			queryMetricListResponse.Message = context.StringValue("QueryMetricList.Message");
-			queryMetricListResponse.Success = context.BooleanValue("QueryMetricList.Success");
-			queryMetricListResponse.RequestId = context.StringValue("QueryMetricList.RequestId");
-			queryMetricListResponse.Cursor = context.StringValue("QueryMetricList.Cursor");
-			queryMetricListResponse.Datapoints = context.StringValue("QueryMetricList.Datapoints");
-			queryMetricListResponse.Period = context.StringValue("QueryMetricList.Period");
+			disableActiceAlertResponse.HttpResponse = context.HttpResponse;
+			disableActiceAlertResponse.RequestId = context.StringValue("DisableActiceAlert.RequestId");
+			disableActiceAlertResponse.Success = context.BooleanValue("DisableActiceAlert.Success");
+			disableActiceAlertResponse.Code = context.StringValue("DisableActiceAlert.Code");
+			disableActiceAlertResponse.Message = context.StringValue("DisableActiceAlert.Message");
         
-			return queryMetricListResponse;
+			return disableActiceAlertResponse;
         }
     }
 }

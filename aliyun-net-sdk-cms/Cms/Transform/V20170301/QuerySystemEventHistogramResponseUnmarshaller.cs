@@ -23,22 +23,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Transform.V20170301
 {
-    public class QueryMetricListResponseUnmarshaller
+    public class QuerySystemEventHistogramResponseUnmarshaller
     {
-        public static QueryMetricListResponse Unmarshall(UnmarshallerContext context)
+        public static QuerySystemEventHistogramResponse Unmarshall(UnmarshallerContext context)
         {
-			QueryMetricListResponse queryMetricListResponse = new QueryMetricListResponse();
+			QuerySystemEventHistogramResponse querySystemEventHistogramResponse = new QuerySystemEventHistogramResponse();
 
-			queryMetricListResponse.HttpResponse = context.HttpResponse;
-			queryMetricListResponse.Code = context.StringValue("QueryMetricList.Code");
-			queryMetricListResponse.Message = context.StringValue("QueryMetricList.Message");
-			queryMetricListResponse.Success = context.BooleanValue("QueryMetricList.Success");
-			queryMetricListResponse.RequestId = context.StringValue("QueryMetricList.RequestId");
-			queryMetricListResponse.Cursor = context.StringValue("QueryMetricList.Cursor");
-			queryMetricListResponse.Datapoints = context.StringValue("QueryMetricList.Datapoints");
-			queryMetricListResponse.Period = context.StringValue("QueryMetricList.Period");
+			querySystemEventHistogramResponse.HttpResponse = context.HttpResponse;
+			querySystemEventHistogramResponse.Code = context.StringValue("QuerySystemEventHistogram.Code");
+			querySystemEventHistogramResponse.Message = context.StringValue("QuerySystemEventHistogram.Message");
+			querySystemEventHistogramResponse.Data = context.StringValue("QuerySystemEventHistogram.Data");
         
-			return queryMetricListResponse;
+			return querySystemEventHistogramResponse;
         }
     }
 }

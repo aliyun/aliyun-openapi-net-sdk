@@ -21,48 +21,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20170301
 {
-	public class ProfileGetResponse : AcsResponse
+	public class EnableActiceAlertResponse : AcsResponse
 	{
-
-		private int? errorCode;
-
-		private string errorMessage;
 
 		private bool? success;
 
-		private string requestId;
+		private string code;
 
-		private long? userId;
-
-		private bool? autoInstall;
-
-		private bool? enableInstallAgentNewECS;
-
-		private string enableActiveAlert;
-
-		public int? ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
+		private string message;
 
 		public bool? Success
 		{
@@ -76,63 +42,27 @@ namespace Aliyun.Acs.Cms.Model.V20170301
 			}
 		}
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
-		public long? UserId
+		public string Message
 		{
 			get
 			{
-				return userId;
+				return message;
 			}
 			set	
 			{
-				userId = value;
-			}
-		}
-
-		public bool? AutoInstall
-		{
-			get
-			{
-				return autoInstall;
-			}
-			set	
-			{
-				autoInstall = value;
-			}
-		}
-
-		public bool? EnableInstallAgentNewECS
-		{
-			get
-			{
-				return enableInstallAgentNewECS;
-			}
-			set	
-			{
-				enableInstallAgentNewECS = value;
-			}
-		}
-
-		public string EnableActiveAlert
-		{
-			get
-			{
-				return enableActiveAlert;
-			}
-			set	
-			{
-				enableActiveAlert = value;
+				message = value;
 			}
 		}
 	}
