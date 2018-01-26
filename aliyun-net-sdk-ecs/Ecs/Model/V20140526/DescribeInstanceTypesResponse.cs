@@ -77,6 +77,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? baselineCredit;
 
+			private int? eniQuantity;
+
 			public string InstanceTypeId
 			{
 				get
@@ -206,6 +208,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					baselineCredit = value;
+				}
+			}
+
+			public int? EniQuantity
+			{
+				get
+				{
+					return eniQuantity;
+				}
+				set	
+				{
+					eniQuantity = value;
 				}
 			}
 		}

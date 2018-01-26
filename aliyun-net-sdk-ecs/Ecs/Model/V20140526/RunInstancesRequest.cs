@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<Tag> tags;
 
+		private bool? dryRun;
+
 		private long? ownerId;
 
 		private string vSwitchId;
@@ -209,6 +211,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 				}
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 

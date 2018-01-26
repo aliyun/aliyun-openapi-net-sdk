@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceType.GPUSpec = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].GPUSpec");
 				instanceType.InitialCredit = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InitialCredit");
 				instanceType.BaselineCredit = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].BaselineCredit");
+				instanceType.EniQuantity = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniQuantity");
 
 				describeInstanceTypesResponse_instanceTypes.Add(instanceType);
 			}

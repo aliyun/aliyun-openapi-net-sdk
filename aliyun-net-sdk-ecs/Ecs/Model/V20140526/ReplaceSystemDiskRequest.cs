@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private string platform;
+
 		private string password;
 
 		private string instanceId;
@@ -57,7 +59,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string action;
 
+		private string diskId;
+
 		private bool? useAdditionalService;
+
+		private string architecture;
 
 		public long? ResourceOwnerId
 		{
@@ -163,6 +169,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Platform
+		{
+			get
+			{
+				return platform;
+			}
+			set	
+			{
+				platform = value;
+				DictionaryUtil.Add(QueryParameters, "Platform", value);
+			}
+		}
+
 		public string Password
 		{
 			get
@@ -215,6 +234,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string DiskId
+		{
+			get
+			{
+				return diskId;
+			}
+			set	
+			{
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+			}
+		}
+
 		public bool? UseAdditionalService
 		{
 			get
@@ -225,6 +257,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				useAdditionalService = value;
 				DictionaryUtil.Add(QueryParameters, "UseAdditionalService", value.ToString());
+			}
+		}
+
+		public string Architecture
+		{
+			get
+			{
+				return architecture;
+			}
+			set	
+			{
+				architecture = value;
+				DictionaryUtil.Add(QueryParameters, "Architecture", value);
 			}
 		}
 
