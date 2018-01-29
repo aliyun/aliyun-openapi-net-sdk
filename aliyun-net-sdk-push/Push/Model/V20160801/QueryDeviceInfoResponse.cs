@@ -71,6 +71,10 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private bool? online;
 
+			private string phoneNumber;
+
+			private bool? pushEnabled;
+
 			public string DeviceId
 			{
 				get
@@ -164,6 +168,30 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					online = value;
+				}
+			}
+
+			public string PhoneNumber
+			{
+				get
+				{
+					return phoneNumber;
+				}
+				set	
+				{
+					phoneNumber = value;
+				}
+			}
+
+			public bool? PushEnabled
+			{
+				get
+				{
+					return pushEnabled;
+				}
+				set	
+				{
+					pushEnabled = value;
 				}
 			}
 		}

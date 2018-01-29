@@ -33,13 +33,13 @@ namespace Aliyun.Acs.Push.Model.V20160801
         {
         }
 
-		private string messageId;
+		private long? messageId;
 
 		private long? appKey;
 
 		private string accessKeyId;
 
-		public string MessageId
+		public long? MessageId
 		{
 			get
 			{
@@ -48,7 +48,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			set	
 			{
 				messageId = value;
-				DictionaryUtil.Add(QueryParameters, "MessageId", value);
+				DictionaryUtil.Add(QueryParameters, "MessageId", value.ToString());
 			}
 		}
 

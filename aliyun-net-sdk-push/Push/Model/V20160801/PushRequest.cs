@@ -99,6 +99,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string androidOpenUrl;
 
+		private string androidNotificationChannel;
+
 		private bool? androidRemind;
 
 		private string androidActivity;
@@ -549,6 +551,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidOpenUrl = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidOpenUrl", value);
+			}
+		}
+
+		public string AndroidNotificationChannel
+		{
+			get
+			{
+				return androidNotificationChannel;
+			}
+			set	
+			{
+				androidNotificationChannel = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationChannel", value);
 			}
 		}
 

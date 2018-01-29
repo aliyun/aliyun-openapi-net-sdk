@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			deviceInfo.Alias = context.StringValue("QueryDeviceInfo.DeviceInfo.Alias");
 			deviceInfo.LastOnlineTime = context.StringValue("QueryDeviceInfo.DeviceInfo.LastOnlineTime");
 			deviceInfo.Online = context.BooleanValue("QueryDeviceInfo.DeviceInfo.Online");
+			deviceInfo.PhoneNumber = context.StringValue("QueryDeviceInfo.DeviceInfo.PhoneNumber");
+			deviceInfo.PushEnabled = context.BooleanValue("QueryDeviceInfo.DeviceInfo.PushEnabled");
 			queryDeviceInfoResponse.DeviceInfo = deviceInfo;
         
 			return queryDeviceInfoResponse;
