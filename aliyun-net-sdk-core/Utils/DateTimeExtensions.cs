@@ -18,23 +18,15 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Aliyun.Acs.Core.Regions.Location.Model;
-using Aliyun.Acs.Core.Auth;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Regions.Location;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Reader;
-using Aliyun.Acs.Core.Exceptions;
 
-namespace Aliyun.Acs.Core.Regions
+namespace Aliyun.Acs.Core.Utils
 {
-    interface DescribeEndpointService
+    public static class DateTimeExtensions
     {
-        DescribeEndpointResponse DescribeEndpoint(String regionId, String serviceCode, String endpointType,
-                                                  Credential credential,
-                                                  LocationConfig locationConfig);
+        private static DateTime Jan1st1970 = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        public static long currentTimeMillis(this DateTime d)
+        {
+            return (long)((DateTime.UtcNow - Jan1st1970).TotalMilliseconds);
+        }
     }
 }

@@ -18,23 +18,26 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Aliyun.Acs.Core.Regions.Location.Model;
-using Aliyun.Acs.Core.Auth;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Regions.Location;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Reader;
-using Aliyun.Acs.Core.Exceptions;
 
-namespace Aliyun.Acs.Core.Regions
+namespace Aliyun.Acs.Core.Auth.Sts
 {
-    interface DescribeEndpointService
+    public class AssumeRoleResponse : AcsResponse
     {
-        DescribeEndpointResponse DescribeEndpoint(String regionId, String serviceCode, String endpointType,
-                                                  Credential credential,
-                                                  LocationConfig locationConfig);
+        public class AssumeRole_Credentials
+        {
+            public String AccessKeyId { get; set; }
+            public String AccessKeySecret { get; set; }
+            public String SecurityToken { get; set; }
+            public String Expiration { get; set; }
+        }
+
+        public class AssumeRole_AssumedRoleUser
+        {
+            public String Arn { get; set; }
+            public String AssumedRoleId { get; set; }
+        }
+
+        public AssumeRole_Credentials Credentials { get; set; }
+        public AssumeRole_AssumedRoleUser AssumedRoleUser { get; set; }
     }
 }

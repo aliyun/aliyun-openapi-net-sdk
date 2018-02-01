@@ -53,6 +53,15 @@ namespace Aliyun.Acs.Core
             Initialize();
         }
 
+        public RpcAcsRequest(String product, String version, String action, String locationProduct)
+            : base(product)
+        {
+            Version = version;
+            ActionName = action;
+            LocationProduct = locationProduct;
+            Initialize();
+        }
+
         public RpcAcsRequest(String product, String version, String action, String locationProduct, String locationEndpointType)
             : base(product)
         {
@@ -109,14 +118,24 @@ namespace Aliyun.Acs.Core
             }
         }
 
-        public override HttpRequest SignRequest(ISigner signer, Credential credential, FormatType? format, ProductDomain domain)
+        public override HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
+                                       FormatType? format, ProductDomain domain)
         {
             Dictionary<String, String> imutableMap = new Dictionary<String, String>(QueryParameters);
-            if (null != signer && null != credential)
+
+            if (null != signer && null != credentials)
             {
-                String accessKeyId = credential.AccessKeyId;
-                String accessSecret = credential.AccessSecret;
-                imutableMap = this.Composer.RefreshSignParameters(QueryParameters, signer, accessKeyId, format);
+                String accessKeyId = credentials.GetAccessKeyId();
+                String accessSecret = credentials.GetAccessKeySecret();
+                if (credentials is BasicSessionCredentials)
+                {
+                    String sessionToken = ((BasicSessionCredentials)credentials).GetSessionToken();
+                    if (null != sessionToken)
+                    {
+                        QueryParameters.Add("SecurityToken", sessionToken);
+                    }
+                }
+                imutableMap = Composer.RefreshSignParameters(QueryParameters, signer, accessKeyId, format);
                 imutableMap.Add("RegionId", RegionId);
 
                 Dictionary<String, String> paramsToSign = new Dictionary<String, String>(imutableMap);
@@ -131,13 +150,13 @@ namespace Aliyun.Acs.Core
                         DictionaryUtil.Add(paramsToSign, formParam.Key, formParam.Value);
                     }
                 }
+
                 String strToSign = this.Composer.ComposeStringToSign(Method, null, signer, paramsToSign, null, null);
                 String signature = signer.SignString(strToSign, accessSecret + "&");
                 imutableMap.Add("Signature", signature);
             }
 
-            String url = ComposeUrl(domain.DomianName, imutableMap);
-            this.Url = url;
+            Url = this.ComposeUrl(domain.DomianName, imutableMap);
             return this;
         }
 

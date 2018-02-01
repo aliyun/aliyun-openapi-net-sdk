@@ -51,7 +51,7 @@ namespace Aliyun.Acs.Core
         HttpResponse DoAction<T>(AcsRequest<T> request,
                 bool autoRetry, int maxRetryNumber,
                 String regionId, Credential credential,
-                ISigner signer, FormatType? format,
+                Signer signer, FormatType? format,
                 List<Endpoint> endpoints) where T : AcsResponse;
     }
 }

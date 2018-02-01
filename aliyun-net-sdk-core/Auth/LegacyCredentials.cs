@@ -16,25 +16,29 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+ 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Aliyun.Acs.Core.Regions.Location.Model;
-using Aliyun.Acs.Core.Auth;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Regions.Location;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Reader;
-using Aliyun.Acs.Core.Exceptions;
 
-namespace Aliyun.Acs.Core.Regions
+namespace Aliyun.Acs.Core.Auth
 {
-    interface DescribeEndpointService
+    public class LegacyCredentials : AlibabaCloudCredentials
     {
-        DescribeEndpointResponse DescribeEndpoint(String regionId, String serviceCode, String endpointType,
-                                                  Credential credential,
-                                                  LocationConfig locationConfig);
+        private readonly Credential legacyCredential;
+
+        public LegacyCredentials(Credential legacyCrendential)
+        {
+            this.legacyCredential = legacyCrendential;
+        }
+
+        public String GetAccessKeyId()
+        {
+            return legacyCredential.AccessKeyId;
+        }
+
+        public String GetAccessKeySecret()
+        {
+            return legacyCredential.AccessSecret;
+        }
+
     }
 }

@@ -46,6 +46,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcsError.cs" />
+    <Compile Include="Auth\AlibabaCloudCredentials.cs" />
+    <Compile Include="Auth\AlibabaCloudCredentialsProvider.cs" />
+    <Compile Include="Auth\BasicCredentials.cs" />
+    <Compile Include="Auth\BasicSessionCredentials.cs" />
+    <Compile Include="Auth\CredentialsBackupCompatibilityAdaptor.cs" />
+    <Compile Include="Auth\ECSMetadataServiceCredentialsFetcher.cs" />
+    <Compile Include="Auth\HmacSHA1Signer.cs" />
+    <Compile Include="Auth\InstanceProfileCredentials.cs" />
+    <Compile Include="Auth\InstanceProfileCredentialsProvider.cs" />
+    <Compile Include="Auth\KeyPairCredentials.cs" />
+    <Compile Include="Auth\LegacyCredentials.cs" />
+    <Compile Include="Auth\SHA256withRSASigner.cs" />
+    <Compile Include="Auth\Signer.cs" />
+    <Compile Include="Auth\StaticCredentialsProvider.cs" />
+    <Compile Include="Auth\STSAssumeRoleSessionCredentialsProvider.cs" />
+    <Compile Include="Auth\Sts\AssumeRoleRequest.cs" />
+    <Compile Include="Auth\Sts\AssumeRoleResponse.cs" />
+    <Compile Include="Auth\Sts\AssumeRoleResponseUnmarshaller.cs" />
+    <Compile Include="Auth\Sts\GetSessionAccessKeyRequest.cs" />
+    <Compile Include="Auth\Sts\GetSessionAccessKeyResponse.cs" />
+    <Compile Include="Auth\Sts\GetSessionAccessKeyResponseUnmarshaller.cs" />
+    <Compile Include="Regions\DescribeEndpointServiceImpl.cs" />
+    <Compile Include="Utils\DateTimeExtensions.cs" />
     <Compile Include="CommonRequest.cs" />
     <Compile Include="CommonResponse.cs" />
     <Compile Include="CommonRoaRequest.cs" />

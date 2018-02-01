@@ -21,23 +21,25 @@ using System.Collections.Generic;
 using System.Xml;
 using System.IO;
 using System.Reflection;
+using Aliyun.Acs.Core.Auth;
+using Aliyun.Acs.Core.Regions.Location;
 
 namespace Aliyun.Acs.Core.Regions
 {
-    public class InternalEndpointsParser : IEndpointsProvider
+    class InternalEndpointsParser : IEndpointsProvider
     {
+        private const String BUNDLED_ENDPOINTS_RESOURCE_PATH = "endpoints.xml";
 
-        private static String BUNDLED_ENDPOINTS_RESOURCE_PATH = "endpoints.xml";
-
-        public List<Endpoint> GetEndpoints()
+        private static List<Endpoint> ParseEndpoints(Stream stream)
         {
-            XmlDocument doc = LoadEndpointDocument();
-            List<Endpoint> endpoints = new List<Endpoint>();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(stream);
             XmlNodeList endpointNodes = doc.GetElementsByTagName("Endpoint");
+
+            List<Endpoint> endpoints = new List<Endpoint>();
             foreach (XmlNode node in endpointNodes)
             {
                 HashSet<string> regionIds = new HashSet<string>();
-
                 List<ProductDomain> products = new List<ProductDomain>();
                 XmlNodeList regionIdNodes = node.SelectSingleNode("RegionIds").SelectNodes("RegionId");
                 XmlNodeList productNodes = node.SelectSingleNode("Products").SelectNodes("Product");
@@ -45,7 +47,6 @@ namespace Aliyun.Acs.Core.Regions
                 {
                     regionIds.Add(regionIdNode.InnerText);
                 }
-
                 foreach (XmlNode productNode in productNodes)
                 {
                     ProductDomain productDomain = new ProductDomain();
@@ -55,20 +56,51 @@ namespace Aliyun.Acs.Core.Regions
                 }
                 endpoints.Add(new Endpoint(node.Attributes["name"].InnerText, regionIds, products));
             }
-
             return endpoints;
         }
 
-        private XmlDocument LoadEndpointDocument()
+        public List<Endpoint> GetEndpoints()
         {
             Type type = MethodBase.GetCurrentMethod().DeclaringType;
             string _namespace = type.Namespace;
             Assembly _assembly = Assembly.GetExecutingAssembly();
             string resourceName = _namespace + "." + BUNDLED_ENDPOINTS_RESOURCE_PATH;
             Stream stream = _assembly.GetManifestResourceStream(resourceName);
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(stream);
-            return xmlDoc;
+            return ParseEndpoints(stream);
+        }
+
+        public Endpoint GetEndpoint(string region, string product)
+        {
+            List<Endpoint> internalEndpoints = GetEndpoints();
+            foreach (Endpoint endpoint in internalEndpoints)
+            {
+                foreach (String regionId in endpoint.RegionIds)
+                {
+                    if (regionId.Equals(region))
+                    {
+                        foreach (ProductDomain productDomain in endpoint.ProductDomains)
+                        {
+                            if (productDomain.ProductName.Equals(product))
+                            {
+                                ISet<String> regionSet = new HashSet<String>();
+                                regionSet.Add(region);
+
+                                List<ProductDomain> productDomains = new List<ProductDomain>();
+                                productDomains.Add(productDomain);
+                                Endpoint resultEndpoint = new Endpoint(endpoint.Name, regionSet, productDomains);
+                                return resultEndpoint;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public Endpoint GetEndpoint(string region, string product, string serviceCode, string endpointType,
+            Credential credential, LocationConfig locationConfig)
+        {
+            throw new NotSupportedException();
         }
     }
 }

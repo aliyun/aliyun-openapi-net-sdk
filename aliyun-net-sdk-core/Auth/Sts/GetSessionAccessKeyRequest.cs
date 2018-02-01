@@ -18,66 +18,49 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Aliyun.Acs.Core.Utils;
 
-namespace Aliyun.Acs.Core.Regions.Location
+namespace Aliyun.Acs.Core.Auth.Sts
 {
-    class LocationConfig
+    class GetSessionAccessKeyRequest : RpcAcsRequest<GetSessionAccessKeyResponse>
     {
-        private String regionId = "cn-hangzhou";
-        private String product = "Location";
-        private String endpoint = "location.aliyuncs.com";
-
-        public LocationConfig() { }
-
-        public LocationConfig(String regionId, String product, String endpoint)
+        public GetSessionAccessKeyRequest()
+            : base("Sts", "2015-04-01", "GenerateSessionAccessKey")
         {
-            this.regionId = regionId;
-            this.product = product;
-            this.endpoint = endpoint;
         }
 
-        public static LocationConfig createLocationConfig(String regionId, String product, String endpoint)
-        {
-            return new LocationConfig(regionId, product, endpoint);
-        }
+        private int durationSeconds = 3600;
+        private String publicKeyId;
 
-        public String RegionId
+        public int DurationSeconds
         {
             get
             {
-                return regionId;
+                return durationSeconds;
             }
             set
             {
-                regionId = value;
+                durationSeconds = value;
+                DictionaryUtil.Add(QueryParameters, "DurationSeconds", value);
             }
         }
 
-        public String Product
+        public string PublicKeyId
         {
             get
             {
-                return product;
+                return publicKeyId;
             }
             set
             {
-                product = value;
+                publicKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "PublicKeyId", value);
             }
         }
 
-        public String Endpoint
+        public override GetSessionAccessKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            get
-            {
-                return endpoint;
-            }
-            set
-            {
-                endpoint = value;
-            }
+            return GetSessionAccessKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

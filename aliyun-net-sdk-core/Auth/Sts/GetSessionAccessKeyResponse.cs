@@ -18,23 +18,20 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Aliyun.Acs.Core.Regions.Location.Model;
-using Aliyun.Acs.Core.Auth;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Regions.Location;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Reader;
-using Aliyun.Acs.Core.Exceptions;
 
-namespace Aliyun.Acs.Core.Regions
+namespace Aliyun.Acs.Core.Auth.Sts
 {
-    interface DescribeEndpointService
+    public class GetSessionAccessKeyResponse : AcsResponse
     {
-        DescribeEndpointResponse DescribeEndpoint(String regionId, String serviceCode, String endpointType,
-                                                  Credential credential,
-                                                  LocationConfig locationConfig);
+        public class GetSessionAccessKey_SessionAccesskey
+        {
+            public String SessionAccessKeyId { get; set; }
+
+            public String SessionAccessKeySecert { get; set; }
+
+            public String Expiration { get; set; }
+        }
+
+        public GetSessionAccessKey_SessionAccesskey SessionAccesskey { get; set; }
     }
 }

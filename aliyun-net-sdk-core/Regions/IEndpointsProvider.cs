@@ -16,12 +16,17 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System.Collections.Generic;
+
+using System;
+using Aliyun.Acs.Core.Auth;
+using Aliyun.Acs.Core.Regions.Location;
 
 namespace Aliyun.Acs.Core.Regions
 {
     interface IEndpointsProvider
     {
-        List<Endpoint> GetEndpoints();
+        Endpoint GetEndpoint(String region, String product);
+        Endpoint GetEndpoint(String region, String product, String serviceCode, String endpointType, Credential credential,
+                             LocationConfig locationConfig);
     }
 }

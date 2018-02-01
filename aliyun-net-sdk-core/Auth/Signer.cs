@@ -16,21 +16,32 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Http;
+
 using System;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Auth
 {
-    public interface ISignatureComposer
+    public abstract class Signer
     {
-        Dictionary<String, String> RefreshSignParameters(Dictionary<String, String> parameters,
-            Signer signer, String accessKeyId, FormatType? format);
+        private readonly static Signer hmacSHA1Signer = new HmacSHA1Signer();
+        private readonly static Signer sha256withRSASigner = new SHA256withRSASigner();
 
-        String ComposeStringToSign(MethodType? method,
-               String uriPattern, Signer signer,
-               Dictionary<String, String> queries,
-               Dictionary<String, String> headers,
-               Dictionary<String, String> paths);
+        public abstract String SignString(String stringToSign, AlibabaCloudCredentials credentials);
+        public abstract String SignString(String stringToSign, String accessKeySecret);
+        public abstract String GetSignerName();
+        public abstract String GetSignerVersion();
+        public abstract String GetSignerType();
+
+        public static Signer GetSigner(AlibabaCloudCredentials credentials)
+        {
+            if (credentials is KeyPairCredentials)
+            {
+                return sha256withRSASigner;
+            }
+            else
+            {
+                return hmacSHA1Signer;
+            }
+        }
     }
 }

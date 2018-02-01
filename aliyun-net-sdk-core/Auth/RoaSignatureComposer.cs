@@ -31,15 +31,18 @@ namespace Aliyun.Acs.Core.Auth
         protected const string HEADER_SEPARATOR = "\n";
 
         public Dictionary<string, string> RefreshSignParameters(Dictionary<String, String> parameters,
-        ISigner signer, String accessKeyId, FormatType? format)
+                                Signer signer, String accessKeyId, FormatType? format)
         {
             Dictionary<string, string> immutableMap = new Dictionary<string, string>(parameters);
             DictionaryUtil.Add(immutableMap, "Date", ParameterHelper.GetRFC2616Date(DateTime.Now));
-            if (null == format)
-                format = FormatType.RAW;
+            if (null == format) { format = FormatType.RAW; }
             DictionaryUtil.Add(immutableMap, "Accept", ParameterHelper.FormatTypeToString(format));
-            DictionaryUtil.Add(immutableMap, "x-acs-signature-method", signer.SignerName);
-            DictionaryUtil.Add(immutableMap, "x-acs-signature-version", signer.SignerVersion);
+            DictionaryUtil.Add(immutableMap, "x-acs-signature-method", signer.GetSignerName());
+            DictionaryUtil.Add(immutableMap, "x-acs-signature-version", signer.GetSignerVersion());
+            if (signer.GetSignerType() != null)
+            {
+                DictionaryUtil.Add(immutableMap, "x-acs-signature-type", signer.GetSignerType());
+            }
             return immutableMap;
         }
 
@@ -128,7 +131,9 @@ namespace Aliyun.Acs.Core.Auth
             return result;
         }
 
-        public string ComposeStringToSign(MethodType? method, string uriPattern, ISigner signer, Dictionary<string, string> queries, Dictionary<string, string> headers, Dictionary<string, string> paths)
+        public String ComposeStringToSign(MethodType? method, String uriPattern, Signer signer,
+                                          Dictionary<string, string> queries, Dictionary<string, string> headers,
+                                         Dictionary<string, string> paths)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(method).Append(HEADER_SEPARATOR);

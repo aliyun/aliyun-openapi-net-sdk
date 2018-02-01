@@ -32,12 +32,14 @@ namespace Aliyun.Acs.Core
         private ProtocolType protocol = ProtocolType.HTTP;
         private FormatType acceptFormat;
         private Dictionary<String, String> queryParameters = new Dictionary<String, String>();
+        private Dictionary<String, String> domainParameters = new Dictionary<String, String>();
         private Dictionary<String, String> bodyParameters = new Dictionary<String, String>();
 
         public virtual String Product { get; set; }
         public virtual String Version { get; set; }
         public virtual String ActionName { get; set; }
         public virtual String RegionId { get; set; }
+        public virtual String SecurityToken { get; set; }
         public ISignatureComposer Composer { get; set; }
         public String LocationProduct { get; set; }
         public String LocationEndpointType { get; set; }
@@ -81,6 +83,18 @@ namespace Aliyun.Acs.Core
             }
         }
 
+        public Dictionary<String, String> DomainParameters
+        {
+            get
+            {
+                return domainParameters;
+            }
+            set
+            {
+                domainParameters = value;
+            }
+        }
+
         public Dictionary<String, String> BodyParameters
         {
             get
@@ -99,13 +113,6 @@ namespace Aliyun.Acs.Core
             DictionaryUtil.Add(Headers, "x-sdk-client", "Net/2.0.0");
             DictionaryUtil.Add(Headers, "x-sdk-invoke-type", "normal");
             Product = product;
-        }
-
-        public AcsRequest(String product, String version)
-            : base(null)
-        {
-            Product = product;
-            Version = version;
         }
 
         public static String ConcatQueryString(Dictionary<String, String> parameters)
@@ -136,8 +143,14 @@ namespace Aliyun.Acs.Core
             return sb.ToString();
         }
 
-        public abstract HttpRequest SignRequest(ISigner signer, Credential credential,
-                FormatType? format, ProductDomain domain);
+        public HttpRequest SignRequest(Signer signer, Credential credential,
+            FormatType? format, ProductDomain domain)
+        {
+            return SignRequest(signer, new LegacyCredentials(credential), format, domain);
+        }
+
+        public abstract HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
+            FormatType? format, ProductDomain domain);
 
         public abstract String ComposeUrl(String endpoint, Dictionary<String, String> queries);
 

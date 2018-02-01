@@ -18,23 +18,35 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Aliyun.Acs.Core.Regions.Location.Model;
-using Aliyun.Acs.Core.Auth;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Regions.Location;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Reader;
-using Aliyun.Acs.Core.Exceptions;
 
-namespace Aliyun.Acs.Core.Regions
+namespace Aliyun.Acs.Core.Auth
 {
-    interface DescribeEndpointService
+    public class KeyPairCredentials : AlibabaCloudCredentials
     {
-        DescribeEndpointResponse DescribeEndpoint(String regionId, String serviceCode, String endpointType,
-                                                  Credential credential,
-                                                  LocationConfig locationConfig);
+        private String privateKeySecret;
+        private String publicKeyId;
+
+        public KeyPairCredentials(String publicKeyId, String privateKeySecret)
+        {
+            if (publicKeyId == null || privateKeySecret == null)
+            {
+                throw new ArgumentNullException(
+                    "You must provide a valid pair of Public Key ID and Private Key Secret."
+                );
+            }
+
+            this.publicKeyId = publicKeyId;
+            this.privateKeySecret = privateKeySecret;
+        }
+
+        public String GetAccessKeyId()
+        {
+            return publicKeyId;
+        }
+
+        public String GetAccessKeySecret()
+        {
+            return privateKeySecret;
+        }
     }
 }

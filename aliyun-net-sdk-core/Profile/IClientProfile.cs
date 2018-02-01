@@ -37,8 +37,12 @@ namespace Aliyun.Acs.Core.Profile
 
         List<Endpoint> GetEndpoints();
 
-        List<Endpoint> GetEndpoints(String regionId, String product, Credential credential, String locationProduct, String locationEndpointType);
+        List<Endpoint> GetEndpoints(String regionId, String product);
 
+        List<Endpoint> GetEndpoints(String product, String regionId, String serviceCode, String endpointType);
+        
         void SetLocationConfig(String regionId, String product, String endpoint);
+
+        void SetCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider);
     }
 }

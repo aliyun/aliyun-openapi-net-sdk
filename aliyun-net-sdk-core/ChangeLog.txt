@@ -1,3 +1,7 @@
+2018-02-01 Version: 1.1.9
+1, Support The STS token access.
+2, Support no AK access on ECS.
+
 2018-01-16 Version: 1.1.8
 1, fix bug: SSL validation is disable for the whole program
 

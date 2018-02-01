@@ -47,6 +47,17 @@ namespace Aliyun.Acs.Core.Reader
                 dictionary.Add(path, element.InnerText);
                 return;
             }
+            if (element.FirstChild.NodeType == XmlNodeType.CDATA)
+            {
+                dictionary.Add(path, element.InnerText);
+                return;
+            }
+            if (element.FirstChild.NodeType == XmlNodeType.Text)
+            {
+                dictionary.Add(path, element.InnerText);
+                return;
+            }
+
             XmlNodeList listElements = element.SelectNodes(element.FirstChild.Name);
             if (listElements.Count > 1 && element.ChildNodes.Count == listElements.Count)
             {//be list
