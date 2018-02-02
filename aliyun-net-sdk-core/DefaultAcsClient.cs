@@ -71,7 +71,7 @@ namespace Aliyun.Acs.Core
 
         public async Task<T> GetAcsResponseAsync<T>(AcsRequest<T> request, CancellationToken ct) where T : AcsResponse
         {
-            HttpResponse httpResponse = await this.DoActionAsync(request, ct);
+            HttpResponse httpResponse = await this.DoActionAsync(request, ct).ConfigureAwait(false);
             return ParseAcsResponse(request, httpResponse);
         }
 
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Core
 
         public async Task<T> GetAcsResponseAsync<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, CancellationToken ct) where T : AcsResponse
         {
-            var httpResponse = await this.DoActionAsync(request, autoRetry, maxRetryNumber, ct);
+            var httpResponse = await this.DoActionAsync(request, autoRetry, maxRetryNumber, ct).ConfigureAwait(false);
             return ParseAcsResponse(request, httpResponse);
         }
 
@@ -93,7 +93,7 @@ namespace Aliyun.Acs.Core
 
         public async Task<T> GetAcsResponse<T>(AcsRequest<T> request, IClientProfile profile, CancellationToken ct) where T : AcsResponse
         {
-            var httpResponse = await this.DoActionAsync(request, profile, ct);
+            var httpResponse = await this.DoActionAsync(request, profile, ct).ConfigureAwait(false);
             return ParseAcsResponse(request, httpResponse);
         }
 
@@ -104,7 +104,7 @@ namespace Aliyun.Acs.Core
 
         public async Task<T> GetAcsResponseAsync<T>(AcsRequest<T> request, string regionId, Credential credential, CancellationToken ct) where T : AcsResponse
         {
-            var httpResponse = await this.DoActionAsync(request, regionId, credential, ct);
+            var httpResponse = await this.DoActionAsync(request, regionId, credential, ct).ConfigureAwait(false);
             return ParseAcsResponse(request, httpResponse);
         }
 
@@ -262,7 +262,7 @@ namespace Aliyun.Acs.Core
         public async Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
             Credential credential, Signer signer, FormatType? format, List<Endpoint> endpoints, CancellationToken ct) where T : AcsResponse
         {
-            return await DoActionAsync(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer, format, endpoints, ct);
+            return await DoActionAsync(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer, format, endpoints, ct).ConfigureAwait(false);
         }
 
         public async Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
@@ -293,7 +293,7 @@ namespace Aliyun.Acs.Core
                 shouldRetry = autoRetry && retryTimes < maxRetryNumber;
                 HttpRequest httpRequest = request.SignRequest(signer, credentials, format, domain);
                 HttpResponse response;
-                response = await HttpResponse.GetResponseAsync(httpRequest, ct);
+                response = await HttpResponse.GetResponseAsync(httpRequest, ct).ConfigureAwait(false);
                 if (response.Content == null)
                 {
                     if (shouldRetry)

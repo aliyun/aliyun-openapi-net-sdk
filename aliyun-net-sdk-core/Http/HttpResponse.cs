@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Core.Http
 
         private static async Task PasrseHttpResponseAsync(HttpResponse httpResponse, HttpWebResponse httpWebResponse, CancellationToken ct)
         {
-            httpResponse.Content = await ReadContentAsync(httpResponse, httpWebResponse, ct);
+            httpResponse.Content = await ReadContentAsync(httpResponse, httpWebResponse, ct).ConfigureAwait(false);
             httpResponse.Status = (int)httpWebResponse.StatusCode;
             httpResponse.Headers = new Dictionary<string, string>();
             httpResponse.Method = ParameterHelper.StringToMethodType(httpWebResponse.Method);
@@ -88,16 +88,16 @@ namespace Aliyun.Acs.Core.Http
 
             while (true)
             {
-                int length = await stream.ReadAsync(buffer, 0, bufferLength, ct);
+                int length = await stream.ReadAsync(buffer, 0, bufferLength, ct).ConfigureAwait(false);
                 if (length == 0)
                 {
                     break;
                 }
-                await ms.WriteAsync(buffer, 0, length, ct);
+                await ms.WriteAsync(buffer, 0, length, ct).ConfigureAwait(false);
             }
             ms.Seek(0, SeekOrigin.Begin);
             byte[] bytes = new byte[ms.Length];
-            await ms.ReadAsync(bytes, 0, bytes.Length, ct);
+            await ms.ReadAsync(bytes, 0, bytes.Length, ct).ConfigureAwait(false);
 
             ms.Close();
             ms.Dispose();
@@ -113,7 +113,7 @@ namespace Aliyun.Acs.Core.Http
 
         public static async Task<HttpResponse> GetResponseAsync(HttpRequest request, CancellationToken ct)
         {
-            return await GetResponseAsync(request, null, ct);
+            return await GetResponseAsync(request, null, ct).ConfigureAwait(false);
         }
 
         public static async Task<HttpResponse> GetResponseAsync(HttpRequest request, int? timeout, CancellationToken ct)
@@ -132,7 +132,7 @@ namespace Aliyun.Acs.Core.Http
                 using (ct.Register(httpWebRequest.Abort))
                 {
                     var task = Task.Factory.FromAsync(httpWebRequest.BeginGetResponse, httpWebRequest.EndGetResponse, null);
-                    httpWebResponse = (HttpWebResponse) await task;
+                    httpWebResponse = (HttpWebResponse) await task.ConfigureAwait(false);
                 }
             }
             catch (WebException ex)
@@ -149,7 +149,7 @@ namespace Aliyun.Acs.Core.Http
                 }
             }
 
-            await PasrseHttpResponseAsync(httpResponse, httpWebResponse, ct);
+            await PasrseHttpResponseAsync(httpResponse, httpWebResponse, ct).ConfigureAwait(false);
             return httpResponse;
         }
 
