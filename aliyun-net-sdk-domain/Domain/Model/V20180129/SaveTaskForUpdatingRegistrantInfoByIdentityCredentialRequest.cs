@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         public SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest()
             : base("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByIdentityCredential")
         {
+			Method = MethodType.POST;
         }
 
 		private string country;
@@ -198,7 +199,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				identityCredential = value;
-				DictionaryUtil.Add(QueryParameters, "IdentityCredential", value);
+				DictionaryUtil.Add(BodyParameters, "IdentityCredential", value);
 			}
 		}
 

@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         public RegistrantProfileRealNameVerificationRequest()
             : base("Domain", "2018-01-29", "RegistrantProfileRealNameVerification")
         {
+			Method = MethodType.POST;
         }
 
 		private string identityCredentialType;
@@ -93,7 +94,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				identityCredential = value;
-				DictionaryUtil.Add(QueryParameters, "IdentityCredential", value);
+				DictionaryUtil.Add(BodyParameters, "IdentityCredential", value);
 			}
 		}
 

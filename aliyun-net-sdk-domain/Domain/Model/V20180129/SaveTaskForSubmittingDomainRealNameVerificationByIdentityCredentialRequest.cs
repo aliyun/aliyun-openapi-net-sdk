@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         public SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest()
             : base("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential")
         {
+			Method = MethodType.POST;
         }
 
 		private string identityCredentialType;
@@ -80,7 +81,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				identityCredential = value;
-				DictionaryUtil.Add(QueryParameters, "IdentityCredential", value);
+				DictionaryUtil.Add(BodyParameters, "IdentityCredential", value);
 			}
 		}
 
