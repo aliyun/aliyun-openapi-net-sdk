@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string action;
 
+		private string instanceChargeType;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -225,6 +227,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
 			}
 		}
 

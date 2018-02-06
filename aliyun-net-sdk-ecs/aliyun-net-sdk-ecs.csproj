@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8f8f941b-6964-4f44-90d0-559aa8ca3386}</ProjectGuid>
+    <ProjectGuid>{83de6851-98ec-40d0-9986-1e612dac555c}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -260,6 +260,8 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyImageSharePermissionRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceChargeTypeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeIpRangesResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeAvailableResourceResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeBandwidthLimitationResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyCommandResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreatePhysicalConnectionRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyEipAddressAttributeRequest.cs" />
@@ -320,6 +322,7 @@
 	<Compile Include="Ecs\Model\V20140526\RenewInstanceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteVSwitchRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\AddIpRangeRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeAvailableResourceRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribePhysicalConnectionsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateAutoSnapshotPolicyResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotMonitorDataResponse.cs" />
@@ -341,6 +344,7 @@
 	<Compile Include="Ecs\Model\V20140526\DeleteVirtualBorderRouterRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeEipAddressesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyDeploymentSetAttributeResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeResourcesModificationRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceAutoRenewAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteSecurityGroupRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\EipFillParamsRequest.cs" />
@@ -366,6 +370,7 @@
 	<Compile Include="Ecs\Model\V20140526\ActivateRouterInterfaceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateNatGatewayRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CheckDiskEnableAutoSnapshotValidationResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeResourcesModificationResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyAutoSnapshotPolicyExResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotMonitorDataRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeImagesRequest.cs" />
@@ -471,6 +476,7 @@
 	<Compile Include="Ecs\Model\V20140526\EnablePhysicalConnectionRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeLimitationRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeBandwidthPackagesResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeBandwidthLimitationRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateAutoSnapshotPolicyRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\AddBandwidthPackageIpsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceTypeFamiliesResponse.cs" />
@@ -480,6 +486,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeNetworkInterfacesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateHaVipRequest.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DetachNetworkInterfaceResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeBandwidthLimitationResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribePhysicalConnectionsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteSnapshotResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyIntranetBandwidthKbResponseUnmarshaller.cs" />
@@ -630,6 +637,7 @@
 	<Compile Include="Ecs\Transform\V20140526\DescribeNatGatewaysResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeEipMonitorDataResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\JoinResourceGroupResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeAvailableResourceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceAutoRenewAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifySecurityGroupPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeRecommendInstanceTypeResponseUnmarshaller.cs" />
@@ -640,6 +648,7 @@
 	<Compile Include="Ecs\Transform\V20140526\EnablePhysicalConnectionResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\AssociateHaVipResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeSnapshotLinksResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeResourcesModificationResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyPhysicalConnectionAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CopyImageResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\StartInstanceResponseUnmarshaller.cs" />

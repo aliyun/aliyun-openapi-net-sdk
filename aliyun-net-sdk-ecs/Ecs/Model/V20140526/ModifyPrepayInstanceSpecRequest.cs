@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private string operatorType;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -180,6 +182,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string OperatorType
+		{
+			get
+			{
+				return operatorType;
+			}
+			set	
+			{
+				operatorType = value;
+				DictionaryUtil.Add(QueryParameters, "OperatorType", value);
 			}
 		}
 

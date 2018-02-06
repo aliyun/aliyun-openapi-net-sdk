@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string tag4Value;
 
+		private string actionType;
+
 		private long? resourceOwnerId;
 
 		private string imageId;
@@ -42,8 +44,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string snapshotId;
 
 		private string tag2Key;
-
-		private string filter2Value;
 
 		private string usage;
 
@@ -56,8 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string tag1Value;
 
 		private bool? isSupportIoOptimized;
-
-		private string filter1Key;
 
 		private string regionId;
 
@@ -85,17 +83,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? showExpired;
 
-		private string filter1Value;
-
 		private string oSType;
-
-		private string filter2Key;
 
 		private long? ownerId;
 
 		private string tag5Value;
 
 		private string tag1Key;
+
+		private List<Filter> filters;
 
 		private string tag2Value;
 
@@ -113,6 +109,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				tag4Value = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.4.Value", value);
+			}
+		}
+
+		public string ActionType
+		{
+			get
+			{
+				return actionType;
+			}
+			set	
+			{
+				actionType = value;
+				DictionaryUtil.Add(QueryParameters, "ActionType", value);
 			}
 		}
 
@@ -165,19 +174,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				tag2Key = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.2.Key", value);
-			}
-		}
-
-		public string Filter2Value
-		{
-			get
-			{
-				return filter2Value;
-			}
-			set	
-			{
-				filter2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.2.Value", value);
 			}
 		}
 
@@ -256,19 +252,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				isSupportIoOptimized = value;
 				DictionaryUtil.Add(QueryParameters, "IsSupportIoOptimized", value.ToString());
-			}
-		}
-
-		public string Filter1Key
-		{
-			get
-			{
-				return filter1Key;
-			}
-			set	
-			{
-				filter1Key = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.1.Key", value);
 			}
 		}
 
@@ -441,19 +424,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Filter1Value
-		{
-			get
-			{
-				return filter1Value;
-			}
-			set	
-			{
-				filter1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.1.Value", value);
-			}
-		}
-
 		public string OSType
 		{
 			get
@@ -464,19 +434,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				oSType = value;
 				DictionaryUtil.Add(QueryParameters, "OSType", value);
-			}
-		}
-
-		public string Filter2Key
-		{
-			get
-			{
-				return filter2Key;
-			}
-			set	
-			{
-				filter2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.2.Key", value);
 			}
 		}
 
@@ -519,6 +476,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<Filter> Filters
+		{
+			get
+			{
+				return filters;
+			}
+
+			set
+			{
+				filters = value;
+				for (int i = 0; i < filters.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value", filters[i].Value);
+				}
+			}
+		}
+
 		public string Tag2Value
 		{
 			get
@@ -555,6 +530,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				status = value;
 				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public class Filter
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 
