@@ -1,0 +1,50 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.aegis.Model.V20161111;
+using System;
+using System.Collections.Generic;
+
+namespace Aliyun.Acs.aegis.Transform.V20161111
+{
+    public class DescribeStrategyTargetResponseUnmarshaller
+    {
+        public static DescribeStrategyTargetResponse Unmarshall(UnmarshallerContext context)
+        {
+			DescribeStrategyTargetResponse describeStrategyTargetResponse = new DescribeStrategyTargetResponse();
+
+			describeStrategyTargetResponse.HttpResponse = context.HttpResponse;
+			describeStrategyTargetResponse.RequestId = context.StringValue("DescribeStrategyTarget.RequestId");
+			describeStrategyTargetResponse.Count = context.IntegerValue("DescribeStrategyTarget.Count");
+
+			List<DescribeStrategyTargetResponse.DescribeStrategyTarget_StringItem> describeStrategyTargetResponse_strategyTargets = new List<DescribeStrategyTargetResponse.DescribeStrategyTarget_StringItem>();
+			for (int i = 0; i < context.Length("DescribeStrategyTarget.StrategyTargets.Length"); i++) {
+				DescribeStrategyTargetResponse.DescribeStrategyTarget_StringItem stringItem = new DescribeStrategyTargetResponse.DescribeStrategyTarget_StringItem();
+				stringItem.Flag = context.StringValue("DescribeStrategyTarget.StrategyTargets["+ i +"].Flag");
+				stringItem.Target = context.StringValue("DescribeStrategyTarget.StrategyTargets["+ i +"].Target");
+				stringItem.TargetType = context.StringValue("DescribeStrategyTarget.StrategyTargets["+ i +"].TargetType");
+
+				describeStrategyTargetResponse_strategyTargets.Add(stringItem);
+			}
+			describeStrategyTargetResponse.StrategyTargets = describeStrategyTargetResponse_strategyTargets;
+        
+			return describeStrategyTargetResponse;
+        }
+    }
+}
