@@ -47,6 +47,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveSnapshotDetectPornConfig.OssObject = context.StringValue("DescribeLiveSnapshotDetectPornConfig.LiveSnapshotDetectPornConfigList["+ i +"].OssObject");
 				liveSnapshotDetectPornConfig.Interval = context.IntegerValue("DescribeLiveSnapshotDetectPornConfig.LiveSnapshotDetectPornConfigList["+ i +"].Interval");
 
+				List<string> liveSnapshotDetectPornConfig_scenes = new List<string>();
+				for (int j = 0; j < context.Length("DescribeLiveSnapshotDetectPornConfig.LiveSnapshotDetectPornConfigList["+ i +"].Scenes.Length"); j++) {
+					liveSnapshotDetectPornConfig_scenes.Add(context.StringValue("DescribeLiveSnapshotDetectPornConfig.LiveSnapshotDetectPornConfigList["+ i +"].Scenes["+ j +"]"));
+				}
+				liveSnapshotDetectPornConfig.Scenes = liveSnapshotDetectPornConfig_scenes;
+
 				describeLiveSnapshotDetectPornConfigResponse_liveSnapshotDetectPornConfigList.Add(liveSnapshotDetectPornConfig);
 			}
 			describeLiveSnapshotDetectPornConfigResponse.LiveSnapshotDetectPornConfigList = describeLiveSnapshotDetectPornConfigResponse_liveSnapshotDetectPornConfigList;

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class AddLiveAppRecordConfigRequest : RpcAcsRequest<AddLiveAppRecordConfigResponse>
     {
         public AddLiveAppRecordConfigRequest()
-            : base("live", "2016-11-01", "AddLiveAppRecordConfig")
+            : base("live", "2016-11-01", "AddLiveAppRecordConfig", "live", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeCastersRequest : RpcAcsRequest<DescribeCastersResponse>
     {
         public DescribeCastersRequest()
-            : base("live", "2016-11-01", "DescribeCasters")
+            : base("live", "2016-11-01", "DescribeCasters", "live", "openAPI")
         {
         }
 

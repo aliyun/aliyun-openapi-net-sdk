@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class StopMultipleStreamMixServiceRequest : RpcAcsRequest<StopMultipleStreamMixServiceResponse>
     {
         public StopMultipleStreamMixServiceRequest()
-            : base("live", "2016-11-01", "StopMultipleStreamMixService")
+            : base("live", "2016-11-01", "StopMultipleStreamMixService", "live", "openAPI")
         {
         }
 

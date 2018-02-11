@@ -26,30 +26,41 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveSnapshotConfigRequest : RpcAcsRequest<DescribeLiveSnapshotConfigResponse>
+    public class AddTrancodeSEIRequest : RpcAcsRequest<AddTrancodeSEIResponse>
     {
-        public DescribeLiveSnapshotConfigRequest()
-            : base("live", "2016-11-01", "DescribeLiveSnapshotConfig", "live", "openAPI")
+        public AddTrancodeSEIRequest()
+            : base("live", "2016-11-01", "AddTrancodeSEI", "live", "openAPI")
         {
         }
 
+		private int? delay;
+
 		private string appName;
 
-		private string securityToken;
+		private int? repeat;
 
 		private string domainName;
 
-		private int? pageSize;
+		private string pattern;
 
-		private string action;
+		private string text;
 
 		private long? ownerId;
 
-		private int? pageNum;
+		private string streamName;
 
-		private string accessKeyId;
-
-		private string order;
+		public int? Delay
+		{
+			get
+			{
+				return delay;
+			}
+			set	
+			{
+				delay = value;
+				DictionaryUtil.Add(QueryParameters, "Delay", value.ToString());
+			}
+		}
 
 		public string AppName
 		{
@@ -64,16 +75,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string SecurityToken
+		public int? Repeat
 		{
 			get
 			{
-				return securityToken;
+				return repeat;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				repeat = value;
+				DictionaryUtil.Add(QueryParameters, "Repeat", value.ToString());
 			}
 		}
 
@@ -90,29 +101,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? PageSize
+		public string Pattern
 		{
 			get
 			{
-				return pageSize;
+				return pattern;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				pattern = value;
+				DictionaryUtil.Add(QueryParameters, "Pattern", value);
 			}
 		}
 
-		public string Action
+		public string Text
 		{
 			get
 			{
-				return action;
+				return text;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				text = value;
+				DictionaryUtil.Add(QueryParameters, "Text", value);
 			}
 		}
 
@@ -129,48 +140,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? PageNum
+		public string StreamName
 		{
 			get
 			{
-				return pageNum;
+				return streamName;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string Order
-		{
-			get
-			{
-				return order;
-			}
-			set	
-			{
-				order = value;
-				DictionaryUtil.Add(QueryParameters, "Order", value);
-			}
-		}
-
-        public override DescribeLiveSnapshotConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddTrancodeSEIResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveSnapshotConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddTrancodeSEIResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

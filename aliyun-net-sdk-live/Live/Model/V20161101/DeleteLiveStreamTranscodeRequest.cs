@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DeleteLiveStreamTranscodeRequest : RpcAcsRequest<DeleteLiveStreamTranscodeResponse>
     {
         public DeleteLiveStreamTranscodeRequest()
-            : base("live", "2016-11-01", "DeleteLiveStreamTranscode")
+            : base("live", "2016-11-01", "DeleteLiveStreamTranscode", "live", "openAPI")
         {
         }
 

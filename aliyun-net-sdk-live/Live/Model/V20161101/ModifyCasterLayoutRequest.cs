@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class ModifyCasterLayoutRequest : RpcAcsRequest<ModifyCasterLayoutResponse>
     {
         public ModifyCasterLayoutRequest()
-            : base("live", "2016-11-01", "ModifyCasterLayout")
+            : base("live", "2016-11-01", "ModifyCasterLayout", "live", "openAPI")
         {
         }
 

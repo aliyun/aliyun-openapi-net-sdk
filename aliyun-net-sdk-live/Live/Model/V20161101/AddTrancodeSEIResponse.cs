@@ -21,12 +21,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class CreateCasterResponse : AcsResponse
+	public class AddTrancodeSEIResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string casterId;
 
 		public string RequestId
 		{
@@ -37,18 +35,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
 			}
 		}
 	}

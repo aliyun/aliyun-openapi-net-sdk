@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeLiveStreamHistoryUserNumRequest : RpcAcsRequest<DescribeLiveStreamHistoryUserNumResponse>
     {
         public DescribeLiveStreamHistoryUserNumRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamHistoryUserNum")
+            : base("live", "2016-11-01", "DescribeLiveStreamHistoryUserNum", "live", "openAPI")
         {
         }
 

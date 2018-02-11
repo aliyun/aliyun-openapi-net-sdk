@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class SetCasterSceneConfigRequest : RpcAcsRequest<SetCasterSceneConfigResponse>
     {
         public SetCasterSceneConfigRequest()
-            : base("live", "2016-11-01", "SetCasterSceneConfig")
+            : base("live", "2016-11-01", "SetCasterSceneConfig", "live", "openAPI")
         {
         }
 

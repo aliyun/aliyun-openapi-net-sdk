@@ -26,6 +26,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestId;
 
+		private int? pageNum;
+
+		private int? pageSize;
+
+		private int? totalNum;
+
+		private int? totalPage;
+
 		private List<DescribeLiveStreamsPublishList_LiveStreamPublishInfo> publishInfo;
 
 		public string RequestId
@@ -37,6 +45,54 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
+			}
+		}
+
+		public int? TotalPage
+		{
+			get
+			{
+				return totalPage;
+			}
+			set	
+			{
+				totalPage = value;
 			}
 		}
 

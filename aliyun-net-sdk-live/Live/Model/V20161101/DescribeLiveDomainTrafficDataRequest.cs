@@ -26,54 +26,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveStreamsControlHistoryRequest : RpcAcsRequest<DescribeLiveStreamsControlHistoryResponse>
+    public class DescribeLiveDomainTrafficDataRequest : RpcAcsRequest<DescribeLiveDomainTrafficDataResponse>
     {
-        public DescribeLiveStreamsControlHistoryRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamsControlHistory", "live", "openAPI")
+        public DescribeLiveDomainTrafficDataRequest()
+            : base("live", "2016-11-01", "DescribeLiveDomainTrafficData", "live", "openAPI")
         {
         }
 
-		private string appName;
-
-		private string securityToken;
-
 		private string domainName;
-
-		private string action;
 
 		private string endTime;
 
+		private string interval;
+
+		private string locationNameEn;
+
 		private string startTime;
 
+		private string ispNameEn;
+
 		private long? ownerId;
-
-		private string accessKeyId;
-
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
 
 		public string DomainName
 		{
@@ -85,19 +57,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -114,6 +73,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
+			}
+		}
+
+		public string LocationNameEn
+		{
+			get
+			{
+				return locationNameEn;
+			}
+			set	
+			{
+				locationNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
+			}
+		}
+
 		public string StartTime
 		{
 			get
@@ -124,6 +109,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string IspNameEn
+		{
+			get
+			{
+				return ispNameEn;
+			}
+			set	
+			{
+				ispNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
 			}
 		}
 
@@ -140,22 +138,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override DescribeLiveStreamsControlHistoryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveDomainTrafficDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveStreamsControlHistoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveDomainTrafficDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

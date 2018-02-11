@@ -23,17 +23,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Transform.V20161101
 {
-    public class CreateCasterResponseUnmarshaller
+    public class AddTrancodeSEIResponseUnmarshaller
     {
-        public static CreateCasterResponse Unmarshall(UnmarshallerContext context)
+        public static AddTrancodeSEIResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateCasterResponse createCasterResponse = new CreateCasterResponse();
+			AddTrancodeSEIResponse addTrancodeSEIResponse = new AddTrancodeSEIResponse();
 
-			createCasterResponse.HttpResponse = context.HttpResponse;
-			createCasterResponse.RequestId = context.StringValue("CreateCaster.RequestId");
-			createCasterResponse.CasterId = context.StringValue("CreateCaster.CasterId");
+			addTrancodeSEIResponse.HttpResponse = context.HttpResponse;
+			addTrancodeSEIResponse.RequestId = context.StringValue("AddTrancodeSEI.RequestId");
         
-			return createCasterResponse;
+			return addTrancodeSEIResponse;
         }
     }
 }

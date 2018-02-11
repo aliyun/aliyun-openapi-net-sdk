@@ -29,9 +29,11 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeLiveStreamsOnlineListRequest : RpcAcsRequest<DescribeLiveStreamsOnlineListResponse>
     {
         public DescribeLiveStreamsOnlineListRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamsOnlineList")
+            : base("live", "2016-11-01", "DescribeLiveStreamsOnlineList", "live", "openAPI")
         {
         }
+
+		private string streamType;
 
 		private string appName;
 
@@ -39,11 +41,28 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string domainName;
 
+		private int? pageSize;
+
 		private string action;
 
 		private long? ownerId;
 
+		private int? pageNum;
+
 		private string accessKeyId;
+
+		public string StreamType
+		{
+			get
+			{
+				return streamType;
+			}
+			set	
+			{
+				streamType = value;
+				DictionaryUtil.Add(QueryParameters, "StreamType", value);
+			}
+		}
 
 		public string AppName
 		{
@@ -84,6 +103,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -107,6 +139,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

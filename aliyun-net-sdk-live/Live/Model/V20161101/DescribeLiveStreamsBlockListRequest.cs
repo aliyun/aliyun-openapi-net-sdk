@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeLiveStreamsBlockListRequest : RpcAcsRequest<DescribeLiveStreamsBlockListResponse>
     {
         public DescribeLiveStreamsBlockListRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamsBlockList")
+            : base("live", "2016-11-01", "DescribeLiveStreamsBlockList", "live", "openAPI")
         {
         }
 
@@ -37,9 +37,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string domainName;
 
+		private int? pageSize;
+
 		private string action;
 
 		private long? ownerId;
+
+		private int? pageNum;
 
 		private string accessKeyId;
 
@@ -69,6 +73,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -92,6 +109,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

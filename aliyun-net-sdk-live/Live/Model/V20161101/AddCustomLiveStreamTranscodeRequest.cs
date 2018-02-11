@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class AddCustomLiveStreamTranscodeRequest : RpcAcsRequest<AddCustomLiveStreamTranscodeResponse>
     {
         public AddCustomLiveStreamTranscodeRequest()
-            : base("live", "2016-11-01", "AddCustomLiveStreamTranscode")
+            : base("live", "2016-11-01", "AddCustomLiveStreamTranscode", "live", "openAPI")
         {
         }
 

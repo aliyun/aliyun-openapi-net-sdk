@@ -39,6 +39,14 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				domainTranscodeInfo.TranscodeName = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeName");
 				domainTranscodeInfo.TranscodeTemplate = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeTemplate");
 
+				DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo.DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters customTranscodeParameters = new DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo.DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters();
+				customTranscodeParameters.VideoBitrate = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.VideoBitrate");
+				customTranscodeParameters.FPS = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.FPS");
+				customTranscodeParameters.Height = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Height");
+				customTranscodeParameters.Width = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Width");
+				customTranscodeParameters.TemplateType = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.TemplateType");
+				domainTranscodeInfo.CustomTranscodeParameters = customTranscodeParameters;
+
 				describeLiveStreamTranscodeInfoResponse_domainTranscodeList.Add(domainTranscodeInfo);
 			}
 			describeLiveStreamTranscodeInfoResponse.DomainTranscodeList = describeLiveStreamTranscodeInfoResponse_domainTranscodeList;

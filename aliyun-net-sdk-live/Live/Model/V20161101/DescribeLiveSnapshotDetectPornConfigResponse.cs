@@ -137,6 +137,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private int? interval;
 
+			private List<string> scenes;
+
 			public string DomainName
 			{
 				get
@@ -206,6 +208,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					interval = value;
+				}
+			}
+
+			public List<string> Scenes
+			{
+				get
+				{
+					return scenes;
+				}
+				set	
+				{
+					scenes = value;
 				}
 			}
 		}

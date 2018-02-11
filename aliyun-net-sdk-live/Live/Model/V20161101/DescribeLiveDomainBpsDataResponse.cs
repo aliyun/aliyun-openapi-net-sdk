@@ -21,20 +21,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeLiveStreamsOnlineListResponse : AcsResponse
+	public class DescribeLiveDomainBpsDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? pageNum;
+		private string domainName;
 
-		private int? pageSize;
+		private string startTime;
 
-		private int? totalNum;
+		private string endTime;
 
-		private int? totalPage;
+		private string dataInterval;
 
-		private List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> onlineInfo;
+		private List<DescribeLiveDomainBpsData_DataModule> bpsDataPerInterval;
 
 		public string RequestId
 		{
@@ -48,150 +48,122 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? PageNum
+		public string DomainName
 		{
 			get
 			{
-				return pageNum;
+				return domainName;
 			}
 			set	
 			{
-				pageNum = value;
+				domainName = value;
 			}
 		}
 
-		public int? PageSize
+		public string StartTime
 		{
 			get
 			{
-				return pageSize;
+				return startTime;
 			}
 			set	
 			{
-				pageSize = value;
+				startTime = value;
 			}
 		}
 
-		public int? TotalNum
+		public string EndTime
 		{
 			get
 			{
-				return totalNum;
+				return endTime;
 			}
 			set	
 			{
-				totalNum = value;
+				endTime = value;
 			}
 		}
 
-		public int? TotalPage
+		public string DataInterval
 		{
 			get
 			{
-				return totalPage;
+				return dataInterval;
 			}
 			set	
 			{
-				totalPage = value;
+				dataInterval = value;
 			}
 		}
 
-		public List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> OnlineInfo
+		public List<DescribeLiveDomainBpsData_DataModule> BpsDataPerInterval
 		{
 			get
 			{
-				return onlineInfo;
+				return bpsDataPerInterval;
 			}
 			set	
 			{
-				onlineInfo = value;
+				bpsDataPerInterval = value;
 			}
 		}
 
-		public class DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo
+		public class DescribeLiveDomainBpsData_DataModule
 		{
 
-			private string domainName;
+			private string timeStamp;
 
-			private string appName;
+			private string bpsValue;
 
-			private string streamName;
+			private string httpBpsValue;
 
-			private string publishTime;
+			private string httpsBpsValue;
 
-			private string publishUrl;
-
-			private string publishDomain;
-
-			public string DomainName
+			public string TimeStamp
 			{
 				get
 				{
-					return domainName;
+					return timeStamp;
 				}
 				set	
 				{
-					domainName = value;
+					timeStamp = value;
 				}
 			}
 
-			public string AppName
+			public string BpsValue
 			{
 				get
 				{
-					return appName;
+					return bpsValue;
 				}
 				set	
 				{
-					appName = value;
+					bpsValue = value;
 				}
 			}
 
-			public string StreamName
+			public string HttpBpsValue
 			{
 				get
 				{
-					return streamName;
+					return httpBpsValue;
 				}
 				set	
 				{
-					streamName = value;
+					httpBpsValue = value;
 				}
 			}
 
-			public string PublishTime
+			public string HttpsBpsValue
 			{
 				get
 				{
-					return publishTime;
+					return httpsBpsValue;
 				}
 				set	
 				{
-					publishTime = value;
-				}
-			}
-
-			public string PublishUrl
-			{
-				get
-				{
-					return publishUrl;
-				}
-				set	
-				{
-					publishUrl = value;
-				}
-			}
-
-			public string PublishDomain
-			{
-				get
-				{
-					return publishDomain;
-				}
-				set	
-				{
-					publishDomain = value;
+					httpsBpsValue = value;
 				}
 			}
 		}

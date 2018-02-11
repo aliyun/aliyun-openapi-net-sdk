@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DescribeLiveStreamsPublishListRequest : RpcAcsRequest<DescribeLiveStreamsPublishListResponse>
     {
         public DescribeLiveStreamsPublishListRequest()
-            : base("live", "2016-11-01", "DescribeLiveStreamsPublishList")
+            : base("live", "2016-11-01", "DescribeLiveStreamsPublishList", "live", "openAPI")
         {
         }
 
@@ -39,7 +39,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string domainName;
 
-		private long? pageSize;
+		private int? pageSize;
 
 		private string action;
 
@@ -51,7 +51,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string streamName;
 
-		private long? pageNumber;
+		private int? pageNumber;
 
 		private string accessKeyId;
 
@@ -94,7 +94,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public long? PageSize
+		public int? PageSize
 		{
 			get
 			{
@@ -172,7 +172,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public long? PageNumber
+		public int? PageNumber
 		{
 			get
 			{

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DeleteCasterVideoResourceRequest : RpcAcsRequest<DeleteCasterVideoResourceResponse>
     {
         public DeleteCasterVideoResourceRequest()
-            : base("live", "2016-11-01", "DeleteCasterVideoResource")
+            : base("live", "2016-11-01", "DeleteCasterVideoResource", "live", "openAPI")
         {
         }
 
