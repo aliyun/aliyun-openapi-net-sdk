@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60fbcf2a-9f39-4426-910a-929ec3414416}</ProjectGuid>
+    <ProjectGuid>{d1a4fe69-b83e-4c49-af7f-728ce1217259}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -111,6 +111,18 @@
 	<Compile Include="Domain\Model\V20180129\SaveBatchTaskForUpdatingContactInfoByNewContactRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\SubmitEmailVerificationRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\QueryBidRecordsRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\ReserveDomainRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\QueryAuctionsResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\QueryAuctionDetailResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\QueryAuctionsRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\QueryBidRecordsResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\ReserveDomainResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\BidDomainResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\BidDomainRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\QueryBookingDomainInfoResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\QueryBookingDomainInfoRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\QueryAuctionDetailRequest.cs" />
 	<Compile Include="Domain\Transform\V20180129\VerifyEmailResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\QueryFailReasonForRegistrantProfileRealNameVerificationResponseUnmarshaller.cs" />
@@ -147,6 +159,12 @@
 	<Compile Include="Domain\Transform\V20180129\SaveBatchTaskForCreatingOrderActivateResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\QueryTaskDetailHistoryResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\QueryRegistrantProfilesResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\QueryBidRecordsResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\QueryAuctionDetailResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\ReserveDomainResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\QueryBookingDomainInfoResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\BidDomainResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\QueryAuctionsResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 				QueryFailReasonForDomainRealNameVerificationResponse.QueryFailReasonForDomainRealNameVerification_FailRecord failRecord = new QueryFailReasonForDomainRealNameVerificationResponse.QueryFailReasonForDomainRealNameVerification_FailRecord();
 				failRecord.Date = context.StringValue("QueryFailReasonForDomainRealNameVerification.Data["+ i +"].Date");
 				failRecord.FailReason = context.StringValue("QueryFailReasonForDomainRealNameVerification.Data["+ i +"].FailReason");
+				failRecord.DomainNameVerificationStatus = context.StringValue("QueryFailReasonForDomainRealNameVerification.Data["+ i +"].DomainNameVerificationStatus");
 
 				queryFailReasonForDomainRealNameVerificationResponse_data.Add(failRecord);
 			}

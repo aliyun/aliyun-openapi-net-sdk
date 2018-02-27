@@ -19,14 +19,24 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Domain.Model.V20180129
+namespace Aliyun.Acs.Domain.Model.V20180208
 {
-	public class QueryFailReasonForDomainRealNameVerificationResponse : AcsResponse
+	public class QueryBookingDomainInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<QueryFailReasonForDomainRealNameVerification_FailRecord> data;
+		private int? auctionId;
+
+		private string partnerType;
+
+		private float? maxBid;
+
+		private float? transferInPrice;
+
+		private string currency;
+
+		private long? bookEndTime;
 
 		public string RequestId
 		{
@@ -40,61 +50,75 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public List<QueryFailReasonForDomainRealNameVerification_FailRecord> Data
+		public int? AuctionId
 		{
 			get
 			{
-				return data;
+				return auctionId;
 			}
 			set	
 			{
-				data = value;
+				auctionId = value;
 			}
 		}
 
-		public class QueryFailReasonForDomainRealNameVerification_FailRecord
+		public string PartnerType
 		{
-
-			private string date;
-
-			private string failReason;
-
-			private string domainNameVerificationStatus;
-
-			public string Date
+			get
 			{
-				get
-				{
-					return date;
-				}
-				set	
-				{
-					date = value;
-				}
+				return partnerType;
 			}
-
-			public string FailReason
+			set	
 			{
-				get
-				{
-					return failReason;
-				}
-				set	
-				{
-					failReason = value;
-				}
+				partnerType = value;
 			}
+		}
 
-			public string DomainNameVerificationStatus
+		public float? MaxBid
+		{
+			get
 			{
-				get
-				{
-					return domainNameVerificationStatus;
-				}
-				set	
-				{
-					domainNameVerificationStatus = value;
-				}
+				return maxBid;
+			}
+			set	
+			{
+				maxBid = value;
+			}
+		}
+
+		public float? TransferInPrice
+		{
+			get
+			{
+				return transferInPrice;
+			}
+			set	
+			{
+				transferInPrice = value;
+			}
+		}
+
+		public string Currency
+		{
+			get
+			{
+				return currency;
+			}
+			set	
+			{
+				currency = value;
+			}
+		}
+
+		public long? BookEndTime
+		{
+			get
+			{
+				return bookEndTime;
+			}
+			set	
+			{
+				bookEndTime = value;
 			}
 		}
 	}

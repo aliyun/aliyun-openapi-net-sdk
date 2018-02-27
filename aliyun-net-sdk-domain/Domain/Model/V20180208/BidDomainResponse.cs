@@ -19,14 +19,14 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Domain.Model.V20180129
+namespace Aliyun.Acs.Domain.Model.V20180208
 {
-	public class QueryFailReasonForDomainRealNameVerificationResponse : AcsResponse
+	public class BidDomainResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<QueryFailReasonForDomainRealNameVerification_FailRecord> data;
+		private string auctionId;
 
 		public string RequestId
 		{
@@ -40,61 +40,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public List<QueryFailReasonForDomainRealNameVerification_FailRecord> Data
+		public string AuctionId
 		{
 			get
 			{
-				return data;
+				return auctionId;
 			}
 			set	
 			{
-				data = value;
-			}
-		}
-
-		public class QueryFailReasonForDomainRealNameVerification_FailRecord
-		{
-
-			private string date;
-
-			private string failReason;
-
-			private string domainNameVerificationStatus;
-
-			public string Date
-			{
-				get
-				{
-					return date;
-				}
-				set	
-				{
-					date = value;
-				}
-			}
-
-			public string FailReason
-			{
-				get
-				{
-					return failReason;
-				}
-				set	
-				{
-					failReason = value;
-				}
-			}
-
-			public string DomainNameVerificationStatus
-			{
-				get
-				{
-					return domainNameVerificationStatus;
-				}
-				set	
-				{
-					domainNameVerificationStatus = value;
-				}
+				auctionId = value;
 			}
 		}
 	}

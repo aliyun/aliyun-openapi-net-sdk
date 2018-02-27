@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string registrantType;
 
+		private string domainNameVerificationStatus;
+
 		private List<string> dnsList;
 
 		public string UserId
@@ -275,6 +277,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				registrantType = value;
+			}
+		}
+
+		public string DomainNameVerificationStatus
+		{
+			get
+			{
+				return domainNameVerificationStatus;
+			}
+			set	
+			{
+				domainNameVerificationStatus = value;
 			}
 		}
 

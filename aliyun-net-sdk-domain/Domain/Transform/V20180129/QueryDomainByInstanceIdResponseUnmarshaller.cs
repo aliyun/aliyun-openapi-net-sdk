@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			queryDomainByInstanceIdResponse.RegistrantUpdatingStatus = context.StringValue("QueryDomainByInstanceId.RegistrantUpdatingStatus");
 			queryDomainByInstanceIdResponse.TransferOutStatus = context.StringValue("QueryDomainByInstanceId.TransferOutStatus");
 			queryDomainByInstanceIdResponse.RegistrantType = context.StringValue("QueryDomainByInstanceId.RegistrantType");
+			queryDomainByInstanceIdResponse.DomainNameVerificationStatus = context.StringValue("QueryDomainByInstanceId.DomainNameVerificationStatus");
 
 			List<string> queryDomainByInstanceIdResponse_dnsList = new List<string>();
 			for (int i = 0; i < context.Length("QueryDomainByInstanceId.DnsList.Length"); i++) {
