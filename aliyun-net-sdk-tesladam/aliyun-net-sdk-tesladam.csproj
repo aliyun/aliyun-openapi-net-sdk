@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0d0f08a5-0a01-4c7f-8924-f718b23ce751}</ProjectGuid>
+    <ProjectGuid>{14f1b266-14d9-4d14-94ee-0e6a2c0d206b}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -42,12 +42,15 @@
 	<Compile Include="TeslaDam\Model\V20180118\HostGetsResponse.cs" />
 	<Compile Include="TeslaDam\Model\V20180118\HostGetsRequest.cs" />
 	<Compile Include="TeslaDam\Model\V20180118\ActionDiskMaskResponse.cs" />
+	<Compile Include="TeslaDam\Model\V20180118\ActionResponse.cs" />
 	<Compile Include="TeslaDam\Model\V20180118\ActionDiskRmaResponse.cs" />
 	<Compile Include="TeslaDam\Model\V20180118\ActionDiskCheckResponse.cs" />
 	<Compile Include="TeslaDam\Model\V20180118\ActionDiskMaskRequest.cs" />
 	<Compile Include="TeslaDam\Model\V20180118\ActionDiskCheckRequest.cs" />
+	<Compile Include="TeslaDam\Model\V20180118\ActionRequest.cs" />
 	<Compile Include="TeslaDam\Model\V20180118\ActionDiskRmaRequest.cs" />
 	<Compile Include="TeslaDam\Transform\V20180118\ActionDiskMaskResponseUnmarshaller.cs" />
+	<Compile Include="TeslaDam\Transform\V20180118\ActionResponseUnmarshaller.cs" />
 	<Compile Include="TeslaDam\Transform\V20180118\HostGetsResponseUnmarshaller.cs" />
 	<Compile Include="TeslaDam\Transform\V20180118\ActionDiskRmaResponseUnmarshaller.cs" />
 	<Compile Include="TeslaDam\Transform\V20180118\ActionDiskCheckResponseUnmarshaller.cs" />
