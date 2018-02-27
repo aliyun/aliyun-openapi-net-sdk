@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class CreateSkillGroupRequest : RpcAcsRequest<CreateSkillGroupResponse>
     {
         public CreateSkillGroupRequest()
-            : base("CCC", "2017-07-05", "CreateSkillGroup", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "CreateSkillGroup", "CCC", "openAPI")
         {
         }
 

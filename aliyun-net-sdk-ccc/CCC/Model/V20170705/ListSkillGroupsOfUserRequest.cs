@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class ListSkillGroupsOfUserRequest : RpcAcsRequest<ListSkillGroupsOfUserResponse>
     {
         public ListSkillGroupsOfUserRequest()
-            : base("CCC", "2017-07-05", "ListSkillGroupsOfUser", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "ListSkillGroupsOfUser", "CCC", "openAPI")
         {
         }
 

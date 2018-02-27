@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class RemoveUsersRequest : RpcAcsRequest<RemoveUsersResponse>
     {
         public RemoveUsersRequest()
-            : base("CCC", "2017-07-05", "RemoveUsers", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "RemoveUsers", "CCC", "openAPI")
         {
         }
 

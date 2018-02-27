@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class RemovePhoneNumberRequest : RpcAcsRequest<RemovePhoneNumberResponse>
     {
         public RemovePhoneNumberRequest()
-            : base("CCC", "2017-07-05", "RemovePhoneNumber", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "RemovePhoneNumber", "CCC", "openAPI")
         {
         }
 

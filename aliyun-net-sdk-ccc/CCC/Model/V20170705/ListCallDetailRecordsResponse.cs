@@ -176,6 +176,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private int? duration;
 
+				private int? satisfaction;
+
 				private string contactType;
 
 				private string contactDisposition;
@@ -189,6 +191,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				private string skillGroupNames;
 
 				private string instanceId;
+
+				private string extraAttr;
 
 				private List<ListCallDetailRecords_CallDetailAgent> agents;
 
@@ -227,6 +231,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						duration = value;
+					}
+				}
+
+				public int? Satisfaction
+				{
+					get
+					{
+						return satisfaction;
+					}
+					set	
+					{
+						satisfaction = value;
 					}
 				}
 
@@ -311,6 +327,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						instanceId = value;
+					}
+				}
+
+				public string ExtraAttr
+				{
+					get
+					{
+						return extraAttr;
+					}
+					set	
+					{
+						extraAttr = value;
 					}
 				}
 

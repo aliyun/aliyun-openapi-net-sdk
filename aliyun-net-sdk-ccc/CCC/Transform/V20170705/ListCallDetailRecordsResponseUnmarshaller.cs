@@ -47,6 +47,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				callDetailRecord.ContactId = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].ContactId");
 				callDetailRecord.StartTime = context.LongValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].StartTime");
 				callDetailRecord.Duration = context.IntegerValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Duration");
+				callDetailRecord.Satisfaction = context.IntegerValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Satisfaction");
 				callDetailRecord.ContactType = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].ContactType");
 				callDetailRecord.ContactDisposition = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].ContactDisposition");
 				callDetailRecord.CallingNumber = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].CallingNumber");
@@ -54,6 +55,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				callDetailRecord.AgentNames = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].AgentNames");
 				callDetailRecord.SkillGroupNames = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].SkillGroupNames");
 				callDetailRecord.InstanceId = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].InstanceId");
+				callDetailRecord.ExtraAttr = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].ExtraAttr");
 
 				List<ListCallDetailRecordsResponse.ListCallDetailRecords_CallDetailRecords.ListCallDetailRecords_CallDetailRecord.ListCallDetailRecords_CallDetailAgent> callDetailRecord_agents = new List<ListCallDetailRecordsResponse.ListCallDetailRecords_CallDetailRecords.ListCallDetailRecords_CallDetailRecord.ListCallDetailRecords_CallDetailAgent>();
 				for (int j = 0; j < context.Length("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents.Length"); j++) {

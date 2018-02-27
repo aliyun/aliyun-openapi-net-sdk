@@ -26,35 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-    public class ModifyPhoneNumberRequest : RpcAcsRequest<ModifyPhoneNumberResponse>
+    public class ListRecordingsByContactIdRequest : RpcAcsRequest<ListRecordingsByContactIdResponse>
     {
-        public ModifyPhoneNumberRequest()
-            : base("CCC", "2017-07-05", "ModifyPhoneNumber", "CCC", "openAPI")
+        public ListRecordingsByContactIdRequest()
+            : base("CCC", "2017-07-05", "ListRecordingsByContactId", "CCC", "openAPI")
         {
         }
 
-		private string contactFlowId;
-
 		private string instanceId;
 
-		private string phoneNumberId;
-
-		private string usage;
+		private string contactId;
 
 		private string accessKeyId;
-
-		public string ContactFlowId
-		{
-			get
-			{
-				return contactFlowId;
-			}
-			set	
-			{
-				contactFlowId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactFlowId", value);
-			}
-		}
 
 		public string InstanceId
 		{
@@ -69,29 +52,16 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string PhoneNumberId
+		public string ContactId
 		{
 			get
 			{
-				return phoneNumberId;
+				return contactId;
 			}
 			set	
 			{
-				phoneNumberId = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNumberId", value);
-			}
-		}
-
-		public string Usage
-		{
-			get
-			{
-				return usage;
-			}
-			set	
-			{
-				usage = value;
-				DictionaryUtil.Add(QueryParameters, "Usage", value);
+				contactId = value;
+				DictionaryUtil.Add(QueryParameters, "ContactId", value);
 			}
 		}
 
@@ -108,9 +78,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-        public override ModifyPhoneNumberResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListRecordingsByContactIdResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyPhoneNumberResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListRecordingsByContactIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

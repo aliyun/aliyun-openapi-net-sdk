@@ -39,6 +39,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			RequestLoginInfoResponse.RequestLoginInfo_LoginInfo loginInfo = new RequestLoginInfoResponse.RequestLoginInfo_LoginInfo();
 			loginInfo.UserName = context.StringValue("RequestLoginInfo.LoginInfo.UserName");
 			loginInfo.DisplayName = context.StringValue("RequestLoginInfo.LoginInfo.DisplayName");
+			loginInfo.PhoneNumber = context.StringValue("RequestLoginInfo.LoginInfo.PhoneNumber");
 			loginInfo.Region = context.StringValue("RequestLoginInfo.LoginInfo.Region");
 			loginInfo.WebRtcUrl = context.StringValue("RequestLoginInfo.LoginInfo.WebRtcUrl");
 			loginInfo.AgentServerUrl = context.StringValue("RequestLoginInfo.LoginInfo.AgentServerUrl");

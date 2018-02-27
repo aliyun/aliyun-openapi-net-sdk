@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class RequestLoginInfoResponse : AcsResponse
+	public class ListRecordingsByContactIdResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -34,7 +34,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? httpStatusCode;
 
-		private RequestLoginInfo_LoginInfo loginInfo;
+		private List<ListRecordingsByContactId_Recording> recordings;
 
 		public string RequestId
 		{
@@ -96,158 +96,200 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public RequestLoginInfo_LoginInfo LoginInfo
+		public List<ListRecordingsByContactId_Recording> Recordings
 		{
 			get
 			{
-				return loginInfo;
+				return recordings;
 			}
 			set	
 			{
-				loginInfo = value;
+				recordings = value;
 			}
 		}
 
-		public class RequestLoginInfo_LoginInfo
+		public class ListRecordingsByContactId_Recording
 		{
 
-			private string userName;
+			private string contactId;
 
-			private string displayName;
+			private string contactType;
 
-			private string phoneNumber;
+			private string agentId;
 
-			private string region;
+			private string agentName;
 
-			private string webRtcUrl;
+			private string callingNumber;
 
-			private string agentServerUrl;
+			private string calledNumber;
 
-			private string extension;
+			private long? startTime;
 
-			private string tenantId;
+			private int? duration;
 
-			private string signature;
+			private string fileName;
 
-			private string signData;
+			private string filePath;
 
-			public string UserName
+			private string fileDescription;
+
+			private string channel;
+
+			private string instanceId;
+
+			public string ContactId
 			{
 				get
 				{
-					return userName;
+					return contactId;
 				}
 				set	
 				{
-					userName = value;
+					contactId = value;
 				}
 			}
 
-			public string DisplayName
+			public string ContactType
 			{
 				get
 				{
-					return displayName;
+					return contactType;
 				}
 				set	
 				{
-					displayName = value;
+					contactType = value;
 				}
 			}
 
-			public string PhoneNumber
+			public string AgentId
 			{
 				get
 				{
-					return phoneNumber;
+					return agentId;
 				}
 				set	
 				{
-					phoneNumber = value;
+					agentId = value;
 				}
 			}
 
-			public string Region
+			public string AgentName
 			{
 				get
 				{
-					return region;
+					return agentName;
 				}
 				set	
 				{
-					region = value;
+					agentName = value;
 				}
 			}
 
-			public string WebRtcUrl
+			public string CallingNumber
 			{
 				get
 				{
-					return webRtcUrl;
+					return callingNumber;
 				}
 				set	
 				{
-					webRtcUrl = value;
+					callingNumber = value;
 				}
 			}
 
-			public string AgentServerUrl
+			public string CalledNumber
 			{
 				get
 				{
-					return agentServerUrl;
+					return calledNumber;
 				}
 				set	
 				{
-					agentServerUrl = value;
+					calledNumber = value;
 				}
 			}
 
-			public string Extension
+			public long? StartTime
 			{
 				get
 				{
-					return extension;
+					return startTime;
 				}
 				set	
 				{
-					extension = value;
+					startTime = value;
 				}
 			}
 
-			public string TenantId
+			public int? Duration
 			{
 				get
 				{
-					return tenantId;
+					return duration;
 				}
 				set	
 				{
-					tenantId = value;
+					duration = value;
 				}
 			}
 
-			public string Signature
+			public string FileName
 			{
 				get
 				{
-					return signature;
+					return fileName;
 				}
 				set	
 				{
-					signature = value;
+					fileName = value;
 				}
 			}
 
-			public string SignData
+			public string FilePath
 			{
 				get
 				{
-					return signData;
+					return filePath;
 				}
 				set	
 				{
-					signData = value;
+					filePath = value;
+				}
+			}
+
+			public string FileDescription
+			{
+				get
+				{
+					return fileDescription;
+				}
+				set	
+				{
+					fileDescription = value;
+				}
+			}
+
+			public string Channel
+			{
+				get
+				{
+					return channel;
+				}
+				set	
+				{
+					channel = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 		}

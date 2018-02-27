@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5b8aa92b-7e28-41d3-99b7-f2bcacb4663f}</ProjectGuid>
+    <ProjectGuid>{4ada5375-ce62-4f2c-8d25-9fc01758ec00}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -57,10 +57,12 @@
 	<Compile Include="CCC\Model\V20170705\ListRecordingsRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\RefreshTokenRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\CreateUserRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListRecordingsByContactIdResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\ListRolesRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\ListCallDetailRecordsRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\AssignUsersResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\RefreshTokenResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListRecordingsByContactIdRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\CreateSkillGroupRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\ModifySkillGroupResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\ListSkillGroupsOfUserResponse.cs" />
@@ -95,6 +97,7 @@
 	<Compile Include="CCC\Transform\V20170705\AddPhoneNumberResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ListSkillGroupsResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ListContactFlowsResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListRecordingsByContactIdResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\AssignUsersResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ListRolesResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\GetServiceExtensionsResponseUnmarshaller.cs" />

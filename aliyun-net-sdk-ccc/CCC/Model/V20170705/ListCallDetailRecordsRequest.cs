@@ -29,11 +29,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class ListCallDetailRecordsRequest : RpcAcsRequest<ListCallDetailRecordsResponse>
     {
         public ListCallDetailRecordsRequest()
-            : base("CCC", "2017-07-05", "ListCallDetailRecords", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "ListCallDetailRecords", "CCC", "openAPI")
         {
         }
 
 		private string instanceId;
+
+		private string contactDisposition;
+
+		private string contactType;
 
 		private string criteria;
 
@@ -49,6 +53,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string accessKeyId;
 
+		private bool? withRecording;
+
 		public string InstanceId
 		{
 			get
@@ -59,6 +65,32 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string ContactDisposition
+		{
+			get
+			{
+				return contactDisposition;
+			}
+			set	
+			{
+				contactDisposition = value;
+				DictionaryUtil.Add(QueryParameters, "ContactDisposition", value);
+			}
+		}
+
+		public string ContactType
+		{
+			get
+			{
+				return contactType;
+			}
+			set	
+			{
+				contactType = value;
+				DictionaryUtil.Add(QueryParameters, "ContactType", value);
 			}
 		}
 
@@ -150,6 +182,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public bool? WithRecording
+		{
+			get
+			{
+				return withRecording;
+			}
+			set	
+			{
+				withRecording = value;
+				DictionaryUtil.Add(QueryParameters, "WithRecording", value.ToString());
 			}
 		}
 

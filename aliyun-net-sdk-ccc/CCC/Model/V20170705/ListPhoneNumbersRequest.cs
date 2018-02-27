@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class ListPhoneNumbersRequest : RpcAcsRequest<ListPhoneNumbersResponse>
     {
         public ListPhoneNumbersRequest()
-            : base("CCC", "2017-07-05", "ListPhoneNumbers", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "ListPhoneNumbers", "CCC", "openAPI")
         {
         }
 
