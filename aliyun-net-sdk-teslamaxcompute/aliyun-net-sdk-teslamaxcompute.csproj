@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{876c6190-bb11-4fdd-949e-2a89e5cd029a}</ProjectGuid>
+    <ProjectGuid>{fe4d5826-7329-41d9-a3e2-62137ec95f13}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -45,6 +45,8 @@
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetInstancesStatusCountRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaInstanceResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaHistoryInfoResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryTopologyResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryTopologyRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetUserInstanceResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetProjectInstanceResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetInstancesStatusCountResponse.cs" />
@@ -54,6 +56,7 @@
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetQuotaHistoryInfoResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetQuotaInstanceResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetUserInstanceResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20180104\QueryTopologyResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetClusterInstanceResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetProjectInstanceResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetInstancesStatusCountResponseUnmarshaller.cs" />
