@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{fe4d5826-7329-41d9-a3e2-62137ec95f13}</ProjectGuid>
+    <ProjectGuid>{ce4db41a-5d35-4538-97a0-ac05ac58f3e2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -42,6 +42,7 @@
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetClusterInstanceResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetUserInstanceRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaHistoryInfoRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryResourceInventoryRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetInstancesStatusCountRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaInstanceResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaHistoryInfoResponse.cs" />
@@ -51,6 +52,7 @@
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetProjectInstanceResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetInstancesStatusCountResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetProjectInstanceRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryResourceInventoryResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetClusterInstanceRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaInstanceRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetQuotaHistoryInfoResponseUnmarshaller.cs" />
@@ -58,6 +60,7 @@
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetUserInstanceResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\QueryTopologyResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetClusterInstanceResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20180104\QueryResourceInventoryResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetProjectInstanceResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetInstancesStatusCountResponseUnmarshaller.cs" />
 	<Compile Include="Properties\AssemblyInfo.cs" />

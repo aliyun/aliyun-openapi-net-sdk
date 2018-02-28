@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 {
-	public class QueryTopologyResponse : AcsResponse
+	public class QueryResourceInventoryResponse : AcsResponse
 	{
 
 		private int? code;
@@ -30,7 +30,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 
 		private string requestId;
 
-		private List<QueryTopology_ResultItem> result;
+		private QueryResourceInventory_Data data;
 
 		public int? Code
 		{
@@ -68,24 +68,24 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 			}
 		}
 
-		public List<QueryTopology_ResultItem> Result
+		public QueryResourceInventory_Data Data
 		{
 			get
 			{
-				return result;
+				return data;
 			}
 			set	
 			{
-				result = value;
+				data = value;
 			}
 		}
 
-		public class QueryTopology_ResultItem
+		public class QueryResourceInventory_Data
 		{
 
 			private string lastUpdate;
 
-			private List<QueryTopology_RegionItem> regions;
+			private List<QueryResourceInventory_Cluster> clusters;
 
 			public string LastUpdate
 			{
@@ -99,28 +99,68 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 				}
 			}
 
-			public List<QueryTopology_RegionItem> Regions
+			public List<QueryResourceInventory_Cluster> Clusters
 			{
 				get
 				{
-					return regions;
+					return clusters;
 				}
 				set	
 				{
-					regions = value;
+					clusters = value;
 				}
 			}
 
-			public class QueryTopology_RegionItem
+			public class QueryResourceInventory_Cluster
 			{
+
+				private string status;
+
+				private string cluster;
+
+				private string machineRoom;
 
 				private string region;
 
-				private string regionEnName;
+				private List<QueryResourceInventory_ResourceParameter> resourceParameters;
 
-				private string regionCnName;
+				private List<QueryResourceInventory_ResourceInventory> resourceInventories;
 
-				private List<QueryTopology_ClusterItem> clusters;
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string Cluster
+				{
+					get
+					{
+						return cluster;
+					}
+					set	
+					{
+						cluster = value;
+					}
+				}
+
+				public string MachineRoom
+				{
+					get
+					{
+						return machineRoom;
+					}
+					set	
+					{
+						machineRoom = value;
+					}
+				}
 
 				public string Region
 				{
@@ -134,140 +174,118 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 					}
 				}
 
-				public string RegionEnName
+				public List<QueryResourceInventory_ResourceParameter> ResourceParameters
 				{
 					get
 					{
-						return regionEnName;
+						return resourceParameters;
 					}
 					set	
 					{
-						regionEnName = value;
+						resourceParameters = value;
 					}
 				}
 
-				public string RegionCnName
+				public List<QueryResourceInventory_ResourceInventory> ResourceInventories
 				{
 					get
 					{
-						return regionCnName;
+						return resourceInventories;
 					}
 					set	
 					{
-						regionCnName = value;
+						resourceInventories = value;
 					}
 				}
 
-				public List<QueryTopology_ClusterItem> Clusters
+				public class QueryResourceInventory_ResourceParameter
 				{
-					get
+
+					private string paraName;
+
+					private string paraValue;
+
+					public string ParaName
 					{
-						return clusters;
+						get
+						{
+							return paraName;
+						}
+						set	
+						{
+							paraName = value;
+						}
 					}
-					set	
+
+					public string ParaValue
 					{
-						clusters = value;
+						get
+						{
+							return paraValue;
+						}
+						set	
+						{
+							paraValue = value;
+						}
 					}
 				}
 
-				public class QueryTopology_ClusterItem
+				public class QueryResourceInventory_ResourceInventory
 				{
 
-					private string cluster;
+					private long? total;
 
-					private string productLine;
+					private long? available;
 
-					private string productClass;
+					private long? used;
 
-					private string netCode;
+					private string resourceType;
 
-					private string business;
-
-					private string machineRoom;
-
-					private string netArch;
-
-					public string Cluster
+					public long? Total
 					{
 						get
 						{
-							return cluster;
+							return total;
 						}
 						set	
 						{
-							cluster = value;
+							total = value;
 						}
 					}
 
-					public string ProductLine
+					public long? Available
 					{
 						get
 						{
-							return productLine;
+							return available;
 						}
 						set	
 						{
-							productLine = value;
+							available = value;
 						}
 					}
 
-					public string ProductClass
+					public long? Used
 					{
 						get
 						{
-							return productClass;
+							return used;
 						}
 						set	
 						{
-							productClass = value;
+							used = value;
 						}
 					}
 
-					public string NetCode
+					public string ResourceType
 					{
 						get
 						{
-							return netCode;
+							return resourceType;
 						}
 						set	
 						{
-							netCode = value;
-						}
-					}
-
-					public string Business
-					{
-						get
-						{
-							return business;
-						}
-						set	
-						{
-							business = value;
-						}
-					}
-
-					public string MachineRoom
-					{
-						get
-						{
-							return machineRoom;
-						}
-						set	
-						{
-							machineRoom = value;
-						}
-					}
-
-					public string NetArch
-					{
-						get
-						{
-							return netArch;
-						}
-						set	
-						{
-							netArch = value;
+							resourceType = value;
 						}
 					}
 				}

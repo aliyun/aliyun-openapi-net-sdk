@@ -34,25 +34,40 @@ namespace Aliyun.Acs.TeslaMaxCompute.Transform.V20180104
 			queryTopologyResponse.Message = context.StringValue("QueryTopology.Message");
 			queryTopologyResponse.RequestId = context.StringValue("QueryTopology.RequestId");
 
-			QueryTopologyResponse.QueryTopology_Result result = new QueryTopologyResponse.QueryTopology_Result();
-			result.LastUpdate = context.StringValue("QueryTopology.Result.LastUpdate");
+			List<QueryTopologyResponse.QueryTopology_ResultItem> queryTopologyResponse_result = new List<QueryTopologyResponse.QueryTopology_ResultItem>();
+			for (int i = 0; i < context.Length("QueryTopology.Result.Length"); i++) {
+				QueryTopologyResponse.QueryTopology_ResultItem resultItem = new QueryTopologyResponse.QueryTopology_ResultItem();
+				resultItem.LastUpdate = context.StringValue("QueryTopology.Result["+ i +"].LastUpdate");
 
-			QueryTopologyResponse.QueryTopology_Result.QueryTopology_Regions regions = new QueryTopologyResponse.QueryTopology_Result.QueryTopology_Regions();
-			regions.Region = context.StringValue("QueryTopology.Result.Regions.Region");
-			regions.RegionEnName = context.StringValue("QueryTopology.Result.Regions.RegionEnName");
-			regions.RegionCnName = context.StringValue("QueryTopology.Result.Regions.RegionCnName");
+				List<QueryTopologyResponse.QueryTopology_ResultItem.QueryTopology_RegionItem> resultItem_regions = new List<QueryTopologyResponse.QueryTopology_ResultItem.QueryTopology_RegionItem>();
+				for (int j = 0; j < context.Length("QueryTopology.Result["+ i +"].Regions.Length"); j++) {
+					QueryTopologyResponse.QueryTopology_ResultItem.QueryTopology_RegionItem regionItem = new QueryTopologyResponse.QueryTopology_ResultItem.QueryTopology_RegionItem();
+					regionItem.Region = context.StringValue("QueryTopology.Result["+ i +"].Regions["+ j +"].Region");
+					regionItem.RegionEnName = context.StringValue("QueryTopology.Result["+ i +"].Regions["+ j +"].RegionEnName");
+					regionItem.RegionCnName = context.StringValue("QueryTopology.Result["+ i +"].Regions["+ j +"].RegionCnName");
 
-			QueryTopologyResponse.QueryTopology_Result.QueryTopology_Regions.QueryTopology_Clusters clusters = new QueryTopologyResponse.QueryTopology_Result.QueryTopology_Regions.QueryTopology_Clusters();
-			clusters.Cluster = context.StringValue("QueryTopology.Result.Regions.Clusters.Cluster");
-			clusters.ProductLine = context.StringValue("QueryTopology.Result.Regions.Clusters.ProductLine");
-			clusters.ProductClass = context.StringValue("QueryTopology.Result.Regions.Clusters.ProductClass");
-			clusters.NetCode = context.StringValue("QueryTopology.Result.Regions.Clusters.NetCode");
-			clusters.Business = context.StringValue("QueryTopology.Result.Regions.Clusters.Business");
-			clusters.MachineRoom = context.StringValue("QueryTopology.Result.Regions.Clusters.MachineRoom");
-			clusters.NetArch = context.StringValue("QueryTopology.Result.Regions.Clusters.NetArch");
-			regions.Clusters = clusters;
-			result.Regions = regions;
-			queryTopologyResponse.Result = result;
+					List<QueryTopologyResponse.QueryTopology_ResultItem.QueryTopology_RegionItem.QueryTopology_ClusterItem> regionItem_clusters = new List<QueryTopologyResponse.QueryTopology_ResultItem.QueryTopology_RegionItem.QueryTopology_ClusterItem>();
+					for (int k = 0; k < context.Length("QueryTopology.Result["+ i +"].Regions["+ j +"].Clusters.Length"); k++) {
+						QueryTopologyResponse.QueryTopology_ResultItem.QueryTopology_RegionItem.QueryTopology_ClusterItem clusterItem = new QueryTopologyResponse.QueryTopology_ResultItem.QueryTopology_RegionItem.QueryTopology_ClusterItem();
+						clusterItem.Cluster = context.StringValue("QueryTopology.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].Cluster");
+						clusterItem.ProductLine = context.StringValue("QueryTopology.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].ProductLine");
+						clusterItem.ProductClass = context.StringValue("QueryTopology.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].ProductClass");
+						clusterItem.NetCode = context.StringValue("QueryTopology.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].NetCode");
+						clusterItem.Business = context.StringValue("QueryTopology.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].Business");
+						clusterItem.MachineRoom = context.StringValue("QueryTopology.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].MachineRoom");
+						clusterItem.NetArch = context.StringValue("QueryTopology.Result["+ i +"].Regions["+ j +"].Clusters["+ k +"].NetArch");
+
+						regionItem_clusters.Add(clusterItem);
+					}
+					regionItem.Clusters = regionItem_clusters;
+
+					resultItem_regions.Add(regionItem);
+				}
+				resultItem.Regions = resultItem_regions;
+
+				queryTopologyResponse_result.Add(resultItem);
+			}
+			queryTopologyResponse.Result = queryTopologyResponse_result;
         
 			return queryTopologyResponse;
         }
