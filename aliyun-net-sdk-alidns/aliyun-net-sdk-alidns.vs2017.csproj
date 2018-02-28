@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Aliyun.Acs.Alidns</RootNamespace>
+    <Version>1.0.6</Version>
+    <Authors>Alibaba Cloud</Authors>
+    <Copyright>©2009-2018 Alibaba Cloud</Copyright>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/aliyun/aliyun-openapi-net-sdk/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/aliyun/aliyun-openapi-net-sdk</PackageProjectUrl>
+    <PackageIconUrl>https://www.alibabacloud.com/favicon.ico</PackageIconUrl>
+    <Description>Alibaba Cloud SDK for C#</Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageTags>alibaba aliyun SDK</PackageTags>
+    <PackageId>aliyun-net-sdk-alidns</PackageId>
+    <AssemblyName>aliyun-net-sdk-alidns</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2017.csproj" />
+  </ItemGroup>
+
+</Project>
