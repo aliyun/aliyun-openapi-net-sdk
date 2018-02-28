@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC92EDF7-8AE2-4030-B5D9-0056072F76DC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-cloudapi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CloudAPI\Model\V20160714\VpcRevokeAccessResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeDeployedApisRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateAppRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ModifySignatureResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiHistoryResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeTrafficControlsByApiRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteCatalogResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeHistoryApisRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeAuthorizedAppsRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeDeployedApiResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiHistoryRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveSignatureApisResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiTrafficControlsResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiTrafficControlsRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveCatalogRelationRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateApiStageVariableResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteAppResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeHistoryApisResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeVpcAccessesResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeDomainResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SdkGenerateRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetApisAuthoritiesRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteDomainCertificateRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ReactivateDomainRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SdkGenerateByGroupRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeployApiResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApisByAppResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveVpcAccessResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiTrafficDataResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ResetAppKeySecretRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteTrafficControlRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiLatencyDataRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteApiResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\AddCatalogRelationsResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeAppsResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateApiGroupResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SdkGenerateByGroupResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ModifySignatureRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ModifyTrafficControlRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiStageDetailRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiStageDetailResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeAppSecurityRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiErrorDataRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeAppAttributesRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiQpsDataResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeAppSecurityResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeTrafficControlsRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ModifyAppRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeTrafficControlsByApiResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeCatalogResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiQpsDataRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\AddCatalogRelationResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ModifyApiResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteApiGroupResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiGroupResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetAppsAuthoritiesRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveCatalogRelationsRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteCatalogRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ReactivateDomainResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeDeployedApiRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeSignaturesByApiRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveSignatureApisRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ModifyApiGroupResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateCatalogResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ClearCatalogRelationsRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeDomainsResolutionResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetTrafficControlApisRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ModifyTrafficControlResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveAppsAuthoritiesRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeSignaturesByApiResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateTrafficControlResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SwitchApiRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateApiRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribePurchasedApisRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateSignatureResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeRegionsResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveCatalogRelationResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\VpcGrantAccessRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveVpcAccessRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiErrorDataResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\VpcGrantAccessResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteAppRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteTrafficSpecialControlRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveAppsAuthoritiesResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiSignaturesResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeDeployedApisResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeVpcAccessesRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeDomainsResolutionRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApisResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\AddCatalogRelationsRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ModifyApiRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiGroupRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeSystemParametersRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateApiGroupRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateCatalogRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeployApiRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteTrafficSpecialControlResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveCatalogRelationsResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\AddCatalogRelationRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateAppResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteApiRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteSignatureRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\VpcRevokeAccessRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteSignatureResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiSignaturesRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ResetAppSecretRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiStageRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SdkGenerateByAppResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeSignaturesResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteDomainResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetAppsAuthoritiesResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ModifyCatalogResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiGroupsResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetApisAuthoritiesResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeAppsRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiLatencyDataResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteApiGroupRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SwitchApiResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeSystemParametersResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribePurchasedApiGroupsResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribePurchasedApisResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveTrafficControlApisResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateSignatureRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeCatalogsRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ModifyAppResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteDomainRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeAuthorizedAppsResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApisByTrafficControlResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeAuthorizedApisRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ResetAppKeySecretResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeRegionsRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\AddTrafficSpecialControlRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateApiResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteApiStageVariableRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveApisAuthoritiesResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetDomainCertificateRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ModifyCatalogRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetDomainCertificateResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiDocResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApisRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SdkGenerateResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetVpcAccessResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ResetAppSecretResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\VpcDescribeAccessesResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ModifyApiGroupRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeCatalogRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribePurchasedApiGroupRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetSignatureApisResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveApisAuthoritiesRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\VpcDescribeAccessesRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetDomainResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiDocRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteApiStageVariableResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetDomainRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteAllTrafficSpecialControlRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeSignaturesRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApisBySignatureResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApisByTrafficControlRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeAuthorizedApisResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\AbolishApiRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateApiStageVariableRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApisBySignatureRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeTrafficControlsResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SdkGenerateByAppRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeAppAttributesResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetVpcAccessRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\AddTrafficSpecialControlResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\AbolishApiResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteTrafficControlResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiTrafficDataRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteAllTrafficSpecialControlResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApisByAppRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribePurchasedApiGroupsRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribePurchasedApiGroupResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiGroupsRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\CreateTrafficControlRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeCatalogsResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetTrafficControlApisResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\RemoveTrafficControlApisRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\ClearCatalogRelationsResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeDomainRequest.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DeleteDomainCertificateResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\DescribeApiStageResponse.cs" />
+    <Compile Include="CloudAPI\Model\V20160714\SetSignatureApisRequest.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeAuthorizedAppsResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\VpcGrantAccessResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DeleteAllTrafficSpecialControlResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\RemoveCatalogRelationResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\VpcDescribeAccessesResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\SetDomainCertificateResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApisBySignatureResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeDomainResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\ModifySignatureResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\ResetAppKeySecretResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DeleteApiStageVariableResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeAppAttributesResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribePurchasedApiGroupResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DeleteSignatureResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\ReactivateDomainResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApisResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeDeployedApiResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiGroupResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeAppSecurityResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\AddTrafficSpecialControlResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\SetApisAuthoritiesResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DeleteApiGroupResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\CreateApiStageVariableResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeVpcAccessesResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\ModifyTrafficControlResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeSignaturesByApiResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeCatalogsResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\ModifyApiResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribePurchasedApisResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeAppsResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\SdkGenerateByAppResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeCatalogResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribePurchasedApiGroupsResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\CreateApiGroupResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeSignaturesResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DeployApiResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\RemoveVpcAccessResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiStageDetailResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\SdkGenerateResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\ModifyApiGroupResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeAuthorizedApisResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiTrafficControlsResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\CreateCatalogResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\CreateSignatureResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\SwitchApiResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\SetTrafficControlApisResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiSignaturesResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DeleteAppResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeRegionsResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApisByTrafficControlResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\ClearCatalogRelationsResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiGroupsResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\CreateApiResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\ResetAppSecretResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\SetSignatureApisResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\SetDomainResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiHistoryResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiTrafficDataResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeTrafficControlsResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\RemoveTrafficControlApisResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\AddCatalogRelationsResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DeleteApiResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApisByAppResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\RemoveApisAuthoritiesResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\AddCatalogRelationResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeSystemParametersResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeHistoryApisResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiStageResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\SetAppsAuthoritiesResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\RemoveSignatureApisResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\VpcRevokeAccessResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\AbolishApiResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeDeployedApisResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DeleteDomainResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DeleteTrafficControlResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DeleteDomainCertificateResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\RemoveCatalogRelationsResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiErrorDataResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiQpsDataResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\ModifyCatalogResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\ModifyAppResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeDomainsResolutionResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\RemoveAppsAuthoritiesResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeTrafficControlsByApiResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DeleteCatalogResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DeleteTrafficSpecialControlResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\SdkGenerateByGroupResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiLatencyDataResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\DescribeApiDocResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\CreateTrafficControlResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\CreateAppResponseUnmarshaller.cs" />
+    <Compile Include="CloudAPI\Transform\V20160714\SetVpcAccessResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

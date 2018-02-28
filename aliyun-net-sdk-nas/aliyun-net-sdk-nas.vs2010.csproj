@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{995EE4F3-2C2A-4912-8E73-0B85CDEC5BD1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-nas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NAS\Model\V20170626\DeleteAccessRuleRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\ModifyAccessRuleRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\DescribeMountTargetsRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\ModifyAccessGroupResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\DeleteMountTargetResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\DescribeRegionsResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\DescribeRegionsRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\DeleteMountTargetRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\CreateFileSystemRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\DescribeFileSystemsRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\CreateAccessRuleRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\ModifyMountTargetRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\CreateMountTargetResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\DescribeMountTargetsResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\DeleteAccessRuleResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\ModifyAccessRuleResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\CreateFileSystemResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\DeleteAccessGroupResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\DeleteFileSystemRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\ModifyMountTargetResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\DeleteAccessGroupRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\CreateAccessRuleResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\ModifyFileSystemResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\ModifyFileSystemRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\DescribeAccessGroupsResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\DeleteFileSystemResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\CreateAccessGroupResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\ModifyAccessGroupRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\DescribeAccessRulesResponse.cs" />
+    <Compile Include="NAS\Model\V20170626\CreateAccessGroupRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\DescribeAccessRulesRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\CreateMountTargetRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\DescribeAccessGroupsRequest.cs" />
+    <Compile Include="NAS\Model\V20170626\DescribeFileSystemsResponse.cs" />
+    <Compile Include="NAS\Transform\V20170626\DescribeMountTargetsResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\CreateMountTargetResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\ModifyFileSystemResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\DeleteAccessGroupResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\ModifyAccessGroupResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\DeleteMountTargetResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\DescribeAccessGroupsResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\DeleteFileSystemResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\DescribeFileSystemsResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\ModifyMountTargetResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\CreateAccessGroupResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\CreateAccessRuleResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\ModifyAccessRuleResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\DescribeRegionsResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\CreateFileSystemResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\DeleteAccessRuleResponseUnmarshaller.cs" />
+    <Compile Include="NAS\Transform\V20170626\DescribeAccessRulesResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

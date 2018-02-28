@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF60FAEC-5CB3-4897-96E8-EF3ED0FAB5D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-ram</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ram\Model\V20150501\DeletePolicyVersionRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\SetAccountAliasRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\RemoveUserFromGroupResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetPolicyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\SetSecurityPreferenceResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\SetAccountAliasResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\AddUserToGroupResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetAccountAliasResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListAccessKeysRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\AttachPolicyToRoleRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\AttachPolicyToGroupRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListGroupsResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\DeleteRoleResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\BindMFADeviceRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\UpdatePublicKeyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\CreateGroupRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\DetachPolicyFromUserRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ClearAccountAliasResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetSecurityPreferenceRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListUsersResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\CreateAccessKeyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListVirtualMFADevicesResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\AttachPolicyToRoleResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetPolicyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\AddUserToGroupRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\GetUserMFAInfoRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\UploadPublicKeyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetLoginProfileRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\CreateRoleRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\GetGroupResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\DeletePolicyVersionResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListPolicyVersionsRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\GetUserMFAInfoResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\CreatePolicyVersionRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\GetPasswordPolicyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListPoliciesForGroupResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetPublicKeyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListPoliciesResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\CreateUserRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListGroupsRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListVirtualMFADevicesRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\CreateGroupResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\UpdateGroupResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListPoliciesForUserRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\DeleteRoleRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListPoliciesRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListPoliciesForRoleResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\DeleteVirtualMFADeviceRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\DeletePolicyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\CreateLoginProfileRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListRolesRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\DetachPolicyFromGroupResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\CreateLoginProfileResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetSecurityPreferenceResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\DeleteAccessKeyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\GetRoleRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListUsersForGroupRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\DetachPolicyFromUserResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListGroupsForUserRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\DeleteVirtualMFADeviceResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\DeleteGroupResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\AttachPolicyToUserRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\UpdateRoleRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\SetDefaultPolicyVersionRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\DeletePublicKeyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\UpdateLoginProfileResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\UnbindMFADeviceResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\DeleteGroupRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\UpdateLoginProfileRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListPoliciesForUserResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\CreatePolicyVersionResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetRoleResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\SetPasswordPolicyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\DeleteUserRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\RemoveUserFromGroupRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\CreateAccessKeyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListEntitiesForPolicyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListEntitiesForPolicyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListPoliciesForRoleRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\DetachPolicyFromRoleResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetPolicyVersionResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ClearAccountAliasRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\UpdateAccessKeyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\DetachPolicyFromGroupRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\UpdateUserRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\CreatePolicyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetUserResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\DeleteLoginProfileResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListAccessKeysResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListPublicKeysRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\GetPublicKeyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListRolesResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\UploadPublicKeyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListUsersForGroupResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetPolicyVersionRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ChangePasswordResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetGroupRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\AttachPolicyToGroupResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\DeletePolicyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\UpdateGroupRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\CreateVirtualMFADeviceRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\SetSecurityPreferenceRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\ListPoliciesForGroupRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\CreateRoleResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListPublicKeysResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\DeletePublicKeyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\DeleteUserResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListGroupsForUserResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\UpdatePublicKeyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\CreateUserResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListUsersRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\DetachPolicyFromRoleRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\UpdateUserResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\UpdateAccessKeyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\DeleteLoginProfileRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\CreatePolicyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\GetAccountAliasRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\SetPasswordPolicyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\UnbindMFADeviceRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\CreateVirtualMFADeviceResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\DeleteAccessKeyResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetLoginProfileResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ChangePasswordRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\AttachPolicyToUserResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\GetUserRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\GetPasswordPolicyRequest.cs" />
+    <Compile Include="Ram\Model\V20150501\BindMFADeviceResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\SetDefaultPolicyVersionResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\UpdateRoleResponse.cs" />
+    <Compile Include="Ram\Model\V20150501\ListPolicyVersionsResponse.cs" />
+    <Compile Include="Ram\Transform\V20150501\CreateLoginProfileResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\DeletePolicyVersionResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\CreateUserResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\DeleteRoleResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ClearAccountAliasResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\SetPasswordPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\AddUserToGroupResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\GetRoleResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\GetPolicyVersionResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\UpdateRoleResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListGroupsForUserResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\GetUserMFAInfoResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\DeleteAccessKeyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListVirtualMFADevicesResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\DeletePolicyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListUsersForGroupResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListRolesResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\GetPasswordPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListPoliciesResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\UpdatePublicKeyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\DeleteUserResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\CreateGroupResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\GetPublicKeyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\AttachPolicyToGroupResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListGroupsResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListPoliciesForGroupResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\SetDefaultPolicyVersionResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\DetachPolicyFromGroupResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\CreateVirtualMFADeviceResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\UnbindMFADeviceResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\RemoveUserFromGroupResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\GetGroupResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\GetPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\UpdateGroupResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\GetUserResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\AttachPolicyToUserResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListUsersResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ChangePasswordResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\GetLoginProfileResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\DeletePublicKeyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListAccessKeysResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\DeleteLoginProfileResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\DeleteGroupResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\DetachPolicyFromRoleResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListPolicyVersionsResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\CreateAccessKeyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\DetachPolicyFromUserResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\UploadPublicKeyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\SetAccountAliasResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\GetSecurityPreferenceResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\UpdateLoginProfileResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListPoliciesForRoleResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListPoliciesForUserResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\SetSecurityPreferenceResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\UpdateUserResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\DeleteVirtualMFADeviceResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\CreateRoleResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\UpdateAccessKeyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\GetAccountAliasResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\BindMFADeviceResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\CreatePolicyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListPublicKeysResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\ListEntitiesForPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\CreatePolicyVersionResponseUnmarshaller.cs" />
+    <Compile Include="Ram\Transform\V20150501\AttachPolicyToRoleResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

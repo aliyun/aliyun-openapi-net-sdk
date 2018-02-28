@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF445550-98A6-45A8-9475-2E81B9C179E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-ons</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ons\Model\V20170918\OnsTopicCreateResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsPublishSearchRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsEmpowerListResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsWarnCreateRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryClientByClientIdRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsSubscriptionUpdateResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTrendGroupOutputTpsResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsWarnDeleteRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsSubscriptionDeleteResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsConsumerGetConnectionResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttBuyProduceResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMessagePageQueryByTopicRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsSubscriptionGetResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsConsumerGetConnectionRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttGroupIdListRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryMsgByPubInfoResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsPublishGetRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsConsumerTimeSpanRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMessagePushRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryTraceByTraceIdResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTraceQueryByMsgKeyResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsWarnCreateResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMessageGetByMsgIdResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsSubscriptionListResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsEmpowerDeleteResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicStatusRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsPublishListResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsConsumerResetOffsetRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsPublishDeleteRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsEmpowerDeleteRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicListResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttGroupIdListResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryClientByClientIdResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicUpdateRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicGetResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsSubscriptionCreateResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsPublishCreateResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMessageSendRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicSearchRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicCreateRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttBuyRefundRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryTraceByTraceIdRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsWarnDeleteResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsRegionListResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsConsumerResetOffsetResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryClientByGroupIdRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicSearchResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMessageGetByKeyResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMessagePushResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMessageSendResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicUpdateResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsEmpowerCreateRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMessageGetByMsgIdRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsPublishListRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryClientByTopicRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsConsumerTimeSpanResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsSubscriptionSearchResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsConsumerAccumulateResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicDeleteResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryHistoryOnlineRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttBuyCheckResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTraceGetResultResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttManualUpdateRuleRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsBuyOrdersProduceResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTraceQueryByMsgIdRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsConsumerStatusResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryHistoryOnlineResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMessagePageQueryByTopicResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsSubscriptionGetRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsSubscriptionUpdateRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsConsumerStatusRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsSubscriptionSearchRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTraceQueryByMsgKeyRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsEmpowerListRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsBuyOrdersProduceRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsRegionListRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsSubscriptionListRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsPublishDeleteResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryMsgTransTrendResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsPublishSearchResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttBuyProduceRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTraceQueryByMsgIdResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryMsgTransTrendRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMessageGetByKeyRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsPublishGetResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicGetRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTrendTopicInputTpsResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMessageTraceRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttBuyRefundResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsSubscriptionCreateRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTrendGroupOutputTpsRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryClientByGroupIdResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTraceGetResultRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicDeleteRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsSubscriptionDeleteRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryMsgByPubInfoRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMessageTraceResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttBuyCheckRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsPublishCreateRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttManualUpdateRuleResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicListRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTopicStatusResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsTrendTopicInputTpsRequest.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsMqttQueryClientByTopicResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsEmpowerCreateResponse.cs" />
+    <Compile Include="Ons\Model\V20170918\OnsConsumerAccumulateRequest.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsTopicGetResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMqttGroupIdListResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMqttQueryMsgTransTrendResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMqttQueryMsgByPubInfoResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsConsumerAccumulateResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsSubscriptionDeleteResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsWarnDeleteResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsPublishSearchResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsTopicListResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsSubscriptionUpdateResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMqttQueryClientByTopicResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsTraceQueryByMsgIdResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsTopicSearchResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMessagePageQueryByTopicResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMqttBuyCheckResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMessageGetByMsgIdResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsConsumerResetOffsetResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsSubscriptionGetResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsSubscriptionSearchResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsTopicStatusResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsConsumerGetConnectionResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMqttBuyRefundResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsPublishGetResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsTopicDeleteResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMessageTraceResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsTraceGetResultResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsSubscriptionCreateResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMqttBuyProduceResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMqttQueryTraceByTraceIdResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMessagePushResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsWarnCreateResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsPublishCreateResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsBuyOrdersProduceResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsConsumerStatusResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMqttQueryHistoryOnlineResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMqttQueryClientByGroupIdResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsTopicCreateResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsSubscriptionListResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsConsumerTimeSpanResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMqttQueryClientByClientIdResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsTraceQueryByMsgKeyResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsTrendGroupOutputTpsResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsTopicUpdateResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMessageGetByKeyResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsPublishDeleteResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsTrendTopicInputTpsResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsEmpowerListResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsEmpowerDeleteResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsPublishListResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMqttManualUpdateRuleResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsMessageSendResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsEmpowerCreateResponseUnmarshaller.cs" />
+    <Compile Include="Ons\Transform\V20170918\OnsRegionListResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

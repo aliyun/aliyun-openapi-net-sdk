@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4C688CBB-A022-40C7-BF23-1C8BA9B4F3E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-alidns</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alidns\Model\V20150109\AddBatchDomainRecordsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\AddBatchDomainRecordsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\AddDomainGroupRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\AddDomainGroupResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\AddDomainRecordRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\AddDomainRecordResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\AddDomainRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\AddDomainResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\ApplyForRetrievalDomainNameRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\ApplyForRetrievalDomainNameResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\ChangeDomainGroupRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\ChangeDomainGroupResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\ChangeDomainOfDnsProductRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\ChangeDomainOfDnsProductResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\CheckDomainRecordRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\CheckDomainRecordResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DeleteBatchDomainRecordsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DeleteBatchDomainRecordsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DeleteBatchDomainsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DeleteBatchDomainsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DeleteDomainGroupRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DeleteDomainGroupResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DeleteDomainRecordRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DeleteDomainRecordResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DeleteDomainRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DeleteDomainResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DeleteSubDomainRecordsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DeleteSubDomainRecordsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeBatchResultRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeBatchResultResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDnsProductInstanceRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDnsProductInstanceResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDnsProductInstancesRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDnsProductInstancesResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDNSSLBSubDomainsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDNSSLBSubDomainsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainGroupsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainGroupsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainInfoRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainInfoResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainLogsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainLogsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainNsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainNsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainRecordInfoRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainRecordInfoResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainRecordsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainRecordsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainWhoisInfoRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeDomainWhoisInfoResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeRecordLogsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeRecordLogsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeSubDomainRecordsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\DescribeSubDomainRecordsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\GetMainDomainNameRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\GetMainDomainNameResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\ModifyHichinaDomainDNSRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\ModifyHichinaDomainDNSResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\RetrievalDomainNameRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\RetrievalDomainNameResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\SetDNSSLBStatusRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\SetDNSSLBStatusResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\SetDomainRecordStatusRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\SetDomainRecordStatusResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\UpdateBatchDomainRecordsRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\UpdateBatchDomainRecordsResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\UpdateDNSSLBWeightRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\UpdateDNSSLBWeightResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\UpdateDomainGroupRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\UpdateDomainGroupResponse.cs" />
+    <Compile Include="Alidns\Model\V20150109\UpdateDomainRecordRequest.cs" />
+    <Compile Include="Alidns\Model\V20150109\UpdateDomainRecordResponse.cs" />
+    <Compile Include="Alidns\Transform\V20150109\AddBatchDomainRecordsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\AddDomainGroupResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\AddDomainRecordResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\AddDomainResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\ApplyForRetrievalDomainNameResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\ChangeDomainGroupResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\ChangeDomainOfDnsProductResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\CheckDomainRecordResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DeleteBatchDomainRecordsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DeleteBatchDomainsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DeleteDomainGroupResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DeleteDomainRecordResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DeleteDomainResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DeleteSubDomainRecordsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeBatchResultResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeDnsProductInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeDnsProductInstancesResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeDNSSLBSubDomainsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeDomainGroupsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeDomainInfoResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeDomainLogsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeDomainNsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeDomainRecordInfoResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeDomainRecordsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeDomainsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeDomainWhoisInfoResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeRecordLogsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\DescribeSubDomainRecordsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\GetMainDomainNameResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\ModifyHichinaDomainDNSResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\RetrievalDomainNameResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\SetDNSSLBStatusResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\SetDomainRecordStatusResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\UpdateBatchDomainRecordsResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\UpdateDNSSLBWeightResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\UpdateDomainGroupResponseUnmarshaller.cs" />
+    <Compile Include="Alidns\Transform\V20150109\UpdateDomainRecordResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

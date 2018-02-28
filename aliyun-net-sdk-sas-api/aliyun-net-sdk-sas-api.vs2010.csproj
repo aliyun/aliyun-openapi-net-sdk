@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43F48BBE-66CE-433E-81F9-C914C117C46E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-sas-api</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sas_api\Model\V20170705\GetSecurityEventListRequest.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetPhoneProfileResponse.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetIpProfileResponse.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetIpProfileRequest.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetApplicationAttackListResponse.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetAccountProfileRequest.cs" />
+    <Compile Include="Sas_api\Model\V20170705\RefundInstanceRequest.cs" />
+    <Compile Include="Sas_api\Model\V20170705\RefundInstanceResponse.cs" />
+    <Compile Include="Sas_api\Model\V20170705\CreateInstanceRequest.cs" />
+    <Compile Include="Sas_api\Model\V20170705\UpgradeInstanceResponse.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetPhoneProfileRequest.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetCrackListRequest.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetSecurityEventListResponse.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetThreatAnalyseListRequest.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetThreatAnalyseListResponse.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetApplicationAttackListRequest.cs" />
+    <Compile Include="Sas_api\Model\V20170705\RenewInstanceResponse.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetInstanceCountRequest.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetInstanceCountResponse.cs" />
+    <Compile Include="Sas_api\Model\V20170705\CreateInstanceResponse.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetAccountProfileResponse.cs" />
+    <Compile Include="Sas_api\Model\V20170705\RenewInstanceRequest.cs" />
+    <Compile Include="Sas_api\Model\V20170705\UpgradeInstanceRequest.cs" />
+    <Compile Include="Sas_api\Model\V20170705\GetCrackListResponse.cs" />
+    <Compile Include="Sas_api\Transform\V20170705\GetInstanceCountResponseUnmarshaller.cs" />
+    <Compile Include="Sas_api\Transform\V20170705\GetPhoneProfileResponseUnmarshaller.cs" />
+    <Compile Include="Sas_api\Transform\V20170705\GetSecurityEventListResponseUnmarshaller.cs" />
+    <Compile Include="Sas_api\Transform\V20170705\RenewInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Sas_api\Transform\V20170705\GetIpProfileResponseUnmarshaller.cs" />
+    <Compile Include="Sas_api\Transform\V20170705\GetAccountProfileResponseUnmarshaller.cs" />
+    <Compile Include="Sas_api\Transform\V20170705\GetApplicationAttackListResponseUnmarshaller.cs" />
+    <Compile Include="Sas_api\Transform\V20170705\GetCrackListResponseUnmarshaller.cs" />
+    <Compile Include="Sas_api\Transform\V20170705\RefundInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Sas_api\Transform\V20170705\GetThreatAnalyseListResponseUnmarshaller.cs" />
+    <Compile Include="Sas_api\Transform\V20170705\CreateInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Sas_api\Transform\V20170705\UpgradeInstanceResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

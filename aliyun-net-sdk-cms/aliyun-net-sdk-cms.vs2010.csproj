@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{020319A4-189C-44FD-A1A2-FD1ADCFD685D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-cms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cms\Model\V20170301\ListAlarmHistoryResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\CreateNotifyPolicyResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeProcessCreateResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\ListMyGroupCategoriesResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\DeleteMyGroupInstancesRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\ListNotifyPolicyResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\AccessKeyGetRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeProcessDeleteRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\EnableAlarmRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\UpdateAlarmResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\GetNotifyPolicyRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\AccessKeyGetResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeInstallRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\ListContactGroupResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\DeleteMyGroupsResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\ListMyGroupsResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\QueryMetricLastRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\AddMyGroupInstancesRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\ProfileSetResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\PutSystemEventResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\DescribeAlarmHistoryRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\QueryMetricListRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\ProfileSetRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\GetNotifyPolicyResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\UpdateMyGroupInstancesRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\DeleteMyGroupsRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\PutCustomMetricRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\CreateAlarmResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\ListAlarmRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\PutCustomMetricResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\CreateMyGroupsResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\QueryCustomMetricListRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\CreateAlarmRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeProcessDeleteResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\DisableAlarmResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeUninstallResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\PutSystemEventRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeListRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\ListNotifyPolicyRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeProcessCreateRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\UpdateMyGroupsRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\GetMyGroupsResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\DeleteCustomMetricRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\ListMyGroupInstancesDetailsResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\GetMyGroupsRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\ListContactGroupRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\PutMetricDataResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\DeleteNotifyPolicyResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\ListMyGroupInstancesRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeProcessesRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\UpdateMyGroupInstancesResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeUninstallRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\ListAlarmHistoryRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\DescribeAlarmHistoryResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\PutEventResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\AddMyGroupInstancesResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeListResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\ListAlarmResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\ProfileGetResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\CreateNotifyPolicyRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\EnableAlarmResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeStatusResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\UpdateAlarmRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeStatusListResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\ProfileGetRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\ListMyGroupsRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\QueryMetricListResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\PutMetricDataRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\DeleteMyGroupInstancesResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\QueryMetricLastResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\DeleteCustomMetricResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\ListMyGroupInstancesDetailsRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\DeleteAlarmResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\DisableAlarmRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeProcessesResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeStatusListRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\DeleteAlarmRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\ListMyGroupInstancesResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\PutEventRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\DeleteNotifyPolicyRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\UpdateMyGroupsResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\ListMyGroupCategoriesRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeInstallResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\QueryCustomMetricListResponse.cs" />
+    <Compile Include="Cms\Model\V20170301\CreateMyGroupsRequest.cs" />
+    <Compile Include="Cms\Model\V20170301\NodeStatusRequest.cs" />
+    <Compile Include="Cms\Transform\V20170301\CreateMyGroupsResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\ProfileSetResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\AddMyGroupInstancesResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\NodeProcessCreateResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\NodeUninstallResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\PutCustomMetricResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\ListAlarmResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\DeleteAlarmResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\NodeProcessesResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\UpdateMyGroupInstancesResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\QueryMetricLastResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\DeleteMyGroupInstancesResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\QueryCustomMetricListResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\GetMyGroupsResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\DeleteNotifyPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\PutSystemEventResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\GetNotifyPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\NodeListResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\DeleteCustomMetricResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\ListAlarmHistoryResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\QueryMetricListResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\NodeStatusListResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\ListMyGroupsResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\ProfileGetResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\PutEventResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\DescribeAlarmHistoryResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\NodeProcessDeleteResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\DisableAlarmResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\NodeInstallResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\NodeStatusResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\ListMyGroupInstancesResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\ListNotifyPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\PutMetricDataResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\ListMyGroupInstancesDetailsResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\CreateAlarmResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\ListMyGroupCategoriesResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\DeleteMyGroupsResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\CreateNotifyPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\UpdateAlarmResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\UpdateMyGroupsResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\EnableAlarmResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\AccessKeyGetResponseUnmarshaller.cs" />
+    <Compile Include="Cms\Transform\V20170301\ListContactGroupResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

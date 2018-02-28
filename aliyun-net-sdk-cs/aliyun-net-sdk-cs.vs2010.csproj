@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB45404C-017A-4F2C-A1AA-81A2CFF6D905}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-cs</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CS\Model\V20151215\DescribeClusterNodesResponse.cs" />
+    <Compile Include="CS\Model\V20151215\GetClusterProjectsResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterTokensRequest.cs" />
+    <Compile Include="CS\Model\V20151215\UpgradeClusterComponentsResponse.cs" />
+    <Compile Include="CS\Model\V20151215\ScaleClusterRequest.cs" />
+    <Compile Include="CS\Model\V20151215\RevokeClusterTokenRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DownloadClusterNodeCertsRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterServicesResponse.cs" />
+    <Compile Include="CS\Model\V20151215\GetClusterProjectsRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeAgilityTunnelAgentInfoResponse.cs" />
+    <Compile Include="CS\Model\V20151215\CreateTemplateResponse.cs" />
+    <Compile Include="CS\Model\V20151215\ScaleInClusterResponse.cs" />
+    <Compile Include="CS\Model\V20151215\ScaleClusterResponse.cs" />
+    <Compile Include="CS\Model\V20151215\AddAgilityClusterResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DownloadClusterNodeCertsResponse.cs" />
+    <Compile Include="CS\Model\V20151215\ResetClusterNodeRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterHostsResponse.cs" />
+    <Compile Include="CS\Model\V20151215\GetTriggerHookResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DeleteClusterRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeAgilityTunnelCertsRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClustersRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterCertsResponse.cs" />
+    <Compile Include="CS\Model\V20151215\CreateTemplateRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterLogsRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterServicesRequest.cs" />
+    <Compile Include="CS\Model\V20151215\CreateClusterRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterTokensResponse.cs" />
+    <Compile Include="CS\Model\V20151215\CallBackAgilityClusterResponse.cs" />
+    <Compile Include="CS\Model\V20151215\GetProjectEventsRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterScaledNodeResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeTaskInfoRequest.cs" />
+    <Compile Include="CS\Model\V20151215\CallbackClusterTokenResponse.cs" />
+    <Compile Include="CS\Model\V20151215\ModifyClusterNameResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeUserContainersResponse.cs" />
+    <Compile Include="CS\Model\V20151215\UpdateSubUserResoucesRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeTemplatesResponse.cs" />
+    <Compile Include="CS\Model\V20151215\CallbackClusterTokenRequest.cs" />
+    <Compile Include="CS\Model\V20151215\RevokeClusterTokenResponse.cs" />
+    <Compile Include="CS\Model\V20151215\GatherLogsTokenRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterNodeInfoWithInstanceRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterNodeInfoWithInstanceResponse.cs" />
+    <Compile Include="CS\Model\V20151215\GetProjectEventsResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DeleteClusterResponse.cs" />
+    <Compile Include="CS\Model\V20151215\CheckAliyunCSServiceRoleRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeAgilityTunnelCertsResponse.cs" />
+    <Compile Include="CS\Model\V20151215\AttachInstancesRequest.cs" />
+    <Compile Include="CS\Model\V20151215\UpgradeClusterComponentsRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeTemplateAttributeRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DeleteClusterNodeResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeUserContainersRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeTemplatesRequest.cs" />
+    <Compile Include="CS\Model\V20151215\CreateClusterTokenResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeImagesResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClustersResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterNodeInfoRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterCertsRequest.cs" />
+    <Compile Include="CS\Model\V20151215\CreateClusterTokenRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeServiceContainersResponse.cs" />
+    <Compile Include="CS\Model\V20151215\GatherLogsTokenResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterScaledNodeRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterNodeInfoResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterLogsResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterDetailResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterNodesRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeImagesRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeTemplateAttributeResponse.cs" />
+    <Compile Include="CS\Model\V20151215\GetTriggerHookRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeApiVersionResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterHostsRequest.cs" />
+    <Compile Include="CS\Model\V20151215\CheckAliyunCSServiceRoleResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeTaskInfoResponse.cs" />
+    <Compile Include="CS\Model\V20151215\AttachInstancesResponse.cs" />
+    <Compile Include="CS\Model\V20151215\ScaleInClusterRequest.cs" />
+    <Compile Include="CS\Model\V20151215\ResetClusterNodeResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeServiceContainersRequest.cs" />
+    <Compile Include="CS\Model\V20151215\CallBackAgilityClusterRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeApiVersionRequest.cs" />
+    <Compile Include="CS\Model\V20151215\AddAgilityClusterRequest.cs" />
+    <Compile Include="CS\Model\V20151215\ModifyClusterNameRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeClusterDetailRequest.cs" />
+    <Compile Include="CS\Model\V20151215\CreateClusterResponse.cs" />
+    <Compile Include="CS\Model\V20151215\DeleteClusterNodeRequest.cs" />
+    <Compile Include="CS\Model\V20151215\DescribeAgilityTunnelAgentInfoRequest.cs" />
+    <Compile Include="CS\Model\V20151215\UpdateSubUserResoucesResponse.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeAgilityTunnelCertsResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeApiVersionResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\ResetClusterNodeResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DownloadClusterNodeCertsResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DeleteClusterNodeResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\CreateClusterTokenResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeClustersResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeClusterScaledNodeResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeClusterServicesResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeClusterDetailResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\RevokeClusterTokenResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\CallBackAgilityClusterResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\ScaleInClusterResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeClusterNodesResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeTaskInfoResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeClusterCertsResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\UpdateSubUserResoucesResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeClusterLogsResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeAgilityTunnelAgentInfoResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\CheckAliyunCSServiceRoleResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\CallbackClusterTokenResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\GetTriggerHookResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeImagesResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeServiceContainersResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeUserContainersResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeClusterNodeInfoResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\CreateTemplateResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeClusterNodeInfoWithInstanceResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\GetClusterProjectsResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\ScaleClusterResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\AddAgilityClusterResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeClusterTokensResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\CreateClusterResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\UpgradeClusterComponentsResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeClusterHostsResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\GetProjectEventsResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DeleteClusterResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeTemplateAttributeResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\DescribeTemplatesResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\GatherLogsTokenResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\AttachInstancesResponseUnmarshaller.cs" />
+    <Compile Include="CS\Transform\V20151215\ModifyClusterNameResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

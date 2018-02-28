@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCB5CB10-B13D-4007-93AC-0C3C25017E04}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-dds</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dds\Model\V20151201\ModifyBackupPolicyResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyDBInstanceNetExpireTimeRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeBackupsRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeReplicaSetRoleResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeBackupPolicyResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyDBInstanceMaintainTimeResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifySecurityIpsResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeReplicaSetRoleRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeReplicasResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeBackupsResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\RestoreDBInstanceRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyDBInstanceSpecRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\CreateBackupRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeReplicaInitializeProgressResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeReplicaInitializeProgressRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeRegionsResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeRegionsRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeReplicaPerformanceRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\ReleaseReplicaRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\CreateShardingDBInstanceRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeAuditRecordsResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DeleteDBInstanceResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeDBInstancePerformanceResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeAuditRecordsRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeShardingNetworkAddressRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\RenewDBInstanceRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyDBInstanceDescriptionRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DeleteNodeResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeDBInstancesResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\CreateBackupResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyBackupPolicyRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\CreateDBInstanceRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\RenewDBInstanceResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeDBInstanceAttributeResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeSecurityIpsRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyDBInstanceNetworkTypeResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\ResetAccountPasswordRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeReplicaUsageResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyDBInstanceNetworkTypeRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeDBInstanceAttributeRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeAuditFilesResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyDBInstanceSpecResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeReplicaUsageRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\SampleRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\ReleaseReplicaResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeAuditFilesRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\SampleResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\CreateDBInstanceResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeAccountsRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyDBInstanceMaintainTimeRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyNodeSpecRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeAccountsResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\CreateNodeRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeSecurityIpsResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\CreateShardingDBInstanceResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeDBInstancePerformanceRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DeleteNodeRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeDBInstancesRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeShardingNetworkAddressResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeReplicasRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeBackupPolicyRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyAccountDescriptionRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\DescribeReplicaPerformanceResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\DeleteDBInstanceRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyReplicaDescriptionResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\RestartDBInstanceResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyReplicaDescriptionRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyDBInstanceDescriptionResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyNodeSpecResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\CreateNodeResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\RestoreDBInstanceResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\RestartDBInstanceRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifySecurityIpsRequest.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyAccountDescriptionResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\ModifyDBInstanceNetExpireTimeResponse.cs" />
+    <Compile Include="Dds\Model\V20151201\ResetAccountPasswordResponse.cs" />
+    <Compile Include="Dds\Transform\V20151201\RestoreDBInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeReplicaSetRoleResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\ModifyDBInstanceNetworkTypeResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\RestartDBInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\ModifyDBInstanceSpecResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeShardingNetworkAddressResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeDBInstancePerformanceResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\CreateNodeResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeReplicaInitializeProgressResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\ModifyDBInstanceNetExpireTimeResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeAccountsResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeDBInstancesResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DeleteNodeResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeReplicaPerformanceResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DeleteDBInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeReplicasResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\CreateDBInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\SampleResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\ModifySecurityIpsResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\RenewDBInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\CreateShardingDBInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\ModifyAccountDescriptionResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeAuditFilesResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\ModifyNodeSpecResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeDBInstanceAttributeResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeAuditRecordsResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\ModifyReplicaDescriptionResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\ModifyBackupPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\CreateBackupResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeRegionsResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeBackupPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\ModifyDBInstanceMaintainTimeResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\ModifyDBInstanceDescriptionResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeSecurityIpsResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeBackupsResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\ReleaseReplicaResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\ResetAccountPasswordResponseUnmarshaller.cs" />
+    <Compile Include="Dds\Transform\V20151201\DescribeReplicaUsageResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
