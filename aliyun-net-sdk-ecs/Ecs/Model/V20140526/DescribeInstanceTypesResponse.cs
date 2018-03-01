@@ -79,6 +79,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? eniQuantity;
 
+			private int? instanceBandwidthRx;
+
+			private int? instanceBandwidthTx;
+
 			public string InstanceTypeId
 			{
 				get
@@ -220,6 +224,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					eniQuantity = value;
+				}
+			}
+
+			public int? InstanceBandwidthRx
+			{
+				get
+				{
+					return instanceBandwidthRx;
+				}
+				set	
+				{
+					instanceBandwidthRx = value;
+				}
+			}
+
+			public int? InstanceBandwidthTx
+			{
+				get
+				{
+					return instanceBandwidthTx;
+				}
+				set	
+				{
+					instanceBandwidthTx = value;
 				}
 			}
 		}
