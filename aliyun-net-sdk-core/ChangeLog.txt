@@ -1,3 +1,6 @@
+2018-03-01 Version: 1.1.10
+1, Support dotnet standard 2.0
+
 2018-02-01 Version: 1.1.9
 1, Support The STS token access.
 2, Support no AK access on ECS.
