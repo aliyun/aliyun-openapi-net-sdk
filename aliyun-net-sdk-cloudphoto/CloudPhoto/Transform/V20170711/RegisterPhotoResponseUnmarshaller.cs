@@ -37,6 +37,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 
 			RegisterPhotoResponse.RegisterPhoto_Photo photo = new RegisterPhotoResponse.RegisterPhoto_Photo();
 			photo.Id = context.LongValue("RegisterPhoto.Photo.Id");
+			photo.IdStr = context.StringValue("RegisterPhoto.Photo.IdStr");
 			photo.Title = context.StringValue("RegisterPhoto.Photo.Title");
 			photo.Location = context.StringValue("RegisterPhoto.Photo.Location");
 			photo.FileId = context.StringValue("RegisterPhoto.Photo.FileId");

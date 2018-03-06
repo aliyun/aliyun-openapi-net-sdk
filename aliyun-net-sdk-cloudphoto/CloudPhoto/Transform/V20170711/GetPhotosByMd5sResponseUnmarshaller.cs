@@ -39,6 +39,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("GetPhotosByMd5s.Photos.Length"); i++) {
 				GetPhotosByMd5sResponse.GetPhotosByMd5s_Photo photo = new GetPhotosByMd5sResponse.GetPhotosByMd5s_Photo();
 				photo.Id = context.LongValue("GetPhotosByMd5s.Photos["+ i +"].Id");
+				photo.IdStr = context.StringValue("GetPhotosByMd5s.Photos["+ i +"].IdStr");
 				photo.Title = context.StringValue("GetPhotosByMd5s.Photos["+ i +"].Title");
 				photo.FileId = context.StringValue("GetPhotosByMd5s.Photos["+ i +"].FileId");
 				photo.Location = context.StringValue("GetPhotosByMd5s.Photos["+ i +"].Location");

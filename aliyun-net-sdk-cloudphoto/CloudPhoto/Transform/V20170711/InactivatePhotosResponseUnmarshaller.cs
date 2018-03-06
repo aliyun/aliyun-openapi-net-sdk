@@ -39,6 +39,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("InactivatePhotos.Results.Length"); i++) {
 				InactivatePhotosResponse.InactivatePhotos_Result result = new InactivatePhotosResponse.InactivatePhotos_Result();
 				result.Id = context.LongValue("InactivatePhotos.Results["+ i +"].Id");
+				result.IdStr = context.StringValue("InactivatePhotos.Results["+ i +"].IdStr");
 				result.Code = context.StringValue("InactivatePhotos.Results["+ i +"].Code");
 				result.Message = context.StringValue("InactivatePhotos.Results["+ i +"].Message");
 

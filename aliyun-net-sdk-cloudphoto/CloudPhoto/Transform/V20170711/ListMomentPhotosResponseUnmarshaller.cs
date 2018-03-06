@@ -41,6 +41,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("ListMomentPhotos.Results.Length"); i++) {
 				ListMomentPhotosResponse.ListMomentPhotos_Result result = new ListMomentPhotosResponse.ListMomentPhotos_Result();
 				result.PhotoId = context.LongValue("ListMomentPhotos.Results["+ i +"].PhotoId");
+				result.PhotoIdStr = context.StringValue("ListMomentPhotos.Results["+ i +"].PhotoIdStr");
 				result.State = context.StringValue("ListMomentPhotos.Results["+ i +"].State");
 
 				listMomentPhotosResponse_results.Add(result);

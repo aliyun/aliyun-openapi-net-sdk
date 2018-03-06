@@ -99,6 +99,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private long? faceId;
 
+			private string faceIdStr;
+
 			private string faceName;
 
 			private List<string> axis;
@@ -112,6 +114,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					faceId = value;
+				}
+			}
+
+			public string FaceIdStr
+			{
+				get
+				{
+					return faceIdStr;
+				}
+				set	
+				{
+					faceIdStr = value;
 				}
 			}
 

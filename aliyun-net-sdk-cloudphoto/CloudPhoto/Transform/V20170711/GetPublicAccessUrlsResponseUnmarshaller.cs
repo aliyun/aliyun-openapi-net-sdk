@@ -41,6 +41,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 				result.Code = context.StringValue("GetPublicAccessUrls.Results["+ i +"].Code");
 				result.Message = context.StringValue("GetPublicAccessUrls.Results["+ i +"].Message");
 				result.PhotoId = context.LongValue("GetPublicAccessUrls.Results["+ i +"].PhotoId");
+				result.PhotoIdStr = context.StringValue("GetPublicAccessUrls.Results["+ i +"].PhotoIdStr");
 				result.AccessUrl = context.StringValue("GetPublicAccessUrls.Results["+ i +"].AccessUrl");
 
 				getPublicAccessUrlsResponse_results.Add(result);

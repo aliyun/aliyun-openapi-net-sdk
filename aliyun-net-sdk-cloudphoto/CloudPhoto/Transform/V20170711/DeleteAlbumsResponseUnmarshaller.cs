@@ -39,6 +39,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("DeleteAlbums.Results.Length"); i++) {
 				DeleteAlbumsResponse.DeleteAlbums_Result result = new DeleteAlbumsResponse.DeleteAlbums_Result();
 				result.Id = context.LongValue("DeleteAlbums.Results["+ i +"].Id");
+				result.IdStr = context.StringValue("DeleteAlbums.Results["+ i +"].IdStr");
 				result.Code = context.StringValue("DeleteAlbums.Results["+ i +"].Code");
 				result.Message = context.StringValue("DeleteAlbums.Results["+ i +"].Message");
 

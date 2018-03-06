@@ -41,6 +41,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("ListFaces.Faces.Length"); i++) {
 				ListFacesResponse.ListFaces_Face face = new ListFacesResponse.ListFaces_Face();
 				face.Id = context.LongValue("ListFaces.Faces["+ i +"].Id");
+				face.IdStr = context.StringValue("ListFaces.Faces["+ i +"].IdStr");
 				face.Name = context.StringValue("ListFaces.Faces["+ i +"].Name");
 				face.PhotosCount = context.IntegerValue("ListFaces.Faces["+ i +"].PhotosCount");
 				face.State = context.StringValue("ListFaces.Faces["+ i +"].State");
@@ -56,6 +57,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 
 				ListFacesResponse.ListFaces_Face.ListFaces_Cover cover = new ListFacesResponse.ListFaces_Face.ListFaces_Cover();
 				cover.Id = context.LongValue("ListFaces.Faces["+ i +"].Cover.Id");
+				cover.IdStr = context.StringValue("ListFaces.Faces["+ i +"].Cover.IdStr");
 				cover.Title = context.StringValue("ListFaces.Faces["+ i +"].Cover.Title");
 				cover.FileId = context.StringValue("ListFaces.Faces["+ i +"].Cover.FileId");
 				cover.State = context.StringValue("ListFaces.Faces["+ i +"].Cover.State");

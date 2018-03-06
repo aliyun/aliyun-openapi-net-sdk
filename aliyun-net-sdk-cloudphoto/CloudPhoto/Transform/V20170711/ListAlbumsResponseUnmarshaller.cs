@@ -41,6 +41,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("ListAlbums.Albums.Length"); i++) {
 				ListAlbumsResponse.ListAlbums_Album album = new ListAlbumsResponse.ListAlbums_Album();
 				album.Id = context.LongValue("ListAlbums.Albums["+ i +"].Id");
+				album.IdStr = context.StringValue("ListAlbums.Albums["+ i +"].IdStr");
 				album.Name = context.StringValue("ListAlbums.Albums["+ i +"].Name");
 				album.State = context.StringValue("ListAlbums.Albums["+ i +"].State");
 				album.PhotosCount = context.LongValue("ListAlbums.Albums["+ i +"].PhotosCount");
@@ -49,6 +50,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 
 				ListAlbumsResponse.ListAlbums_Album.ListAlbums_Cover cover = new ListAlbumsResponse.ListAlbums_Album.ListAlbums_Cover();
 				cover.Id = context.LongValue("ListAlbums.Albums["+ i +"].Cover.Id");
+				cover.IdStr = context.StringValue("ListAlbums.Albums["+ i +"].Cover.IdStr");
 				cover.Title = context.StringValue("ListAlbums.Albums["+ i +"].Cover.Title");
 				cover.FileId = context.StringValue("ListAlbums.Albums["+ i +"].Cover.FileId");
 				cover.State = context.StringValue("ListAlbums.Albums["+ i +"].Cover.State");

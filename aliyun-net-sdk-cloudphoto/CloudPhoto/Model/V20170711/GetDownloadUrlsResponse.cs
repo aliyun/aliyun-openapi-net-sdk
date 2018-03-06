@@ -103,6 +103,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private long? photoId;
 
+			private string photoIdStr;
+
 			private string downloadUrl;
 
 			public string Code
@@ -138,6 +140,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					photoId = value;
+				}
+			}
+
+			public string PhotoIdStr
+			{
+				get
+				{
+					return photoIdStr;
+				}
+				set	
+				{
+					photoIdStr = value;
 				}
 			}
 

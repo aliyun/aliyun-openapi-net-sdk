@@ -41,6 +41,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("ListMoments.Moments.Length"); i++) {
 				ListMomentsResponse.ListMoments_Moment moment = new ListMomentsResponse.ListMoments_Moment();
 				moment.Id = context.LongValue("ListMoments.Moments["+ i +"].Id");
+				moment.IdStr = context.StringValue("ListMoments.Moments["+ i +"].IdStr");
 				moment.LocationName = context.StringValue("ListMoments.Moments["+ i +"].LocationName");
 				moment.PhotosCount = context.IntegerValue("ListMoments.Moments["+ i +"].PhotosCount");
 				moment.State = context.StringValue("ListMoments.Moments["+ i +"].State");

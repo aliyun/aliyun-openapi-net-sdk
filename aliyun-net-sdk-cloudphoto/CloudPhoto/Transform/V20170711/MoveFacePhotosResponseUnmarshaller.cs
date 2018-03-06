@@ -39,6 +39,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("MoveFacePhotos.Results.Length"); i++) {
 				MoveFacePhotosResponse.MoveFacePhotos_Result result = new MoveFacePhotosResponse.MoveFacePhotos_Result();
 				result.Id = context.LongValue("MoveFacePhotos.Results["+ i +"].Id");
+				result.IdStr = context.StringValue("MoveFacePhotos.Results["+ i +"].IdStr");
 				result.Code = context.StringValue("MoveFacePhotos.Results["+ i +"].Code");
 				result.Message = context.StringValue("MoveFacePhotos.Results["+ i +"].Message");
 

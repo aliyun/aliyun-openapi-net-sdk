@@ -37,6 +37,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 
 			CreatePhotoResponse.CreatePhoto_Photo photo = new CreatePhotoResponse.CreatePhoto_Photo();
 			photo.Id = context.LongValue("CreatePhoto.Photo.Id");
+			photo.IdStr = context.StringValue("CreatePhoto.Photo.IdStr");
 			photo.Title = context.StringValue("CreatePhoto.Photo.Title");
 			photo.FileId = context.StringValue("CreatePhoto.Photo.FileId");
 			photo.Location = context.StringValue("CreatePhoto.Photo.Location");

@@ -39,6 +39,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("ReactivatePhotos.Results.Length"); i++) {
 				ReactivatePhotosResponse.ReactivatePhotos_Result result = new ReactivatePhotosResponse.ReactivatePhotos_Result();
 				result.Id = context.LongValue("ReactivatePhotos.Results["+ i +"].Id");
+				result.IdStr = context.StringValue("ReactivatePhotos.Results["+ i +"].IdStr");
 				result.Code = context.StringValue("ReactivatePhotos.Results["+ i +"].Code");
 				result.Message = context.StringValue("ReactivatePhotos.Results["+ i +"].Message");
 

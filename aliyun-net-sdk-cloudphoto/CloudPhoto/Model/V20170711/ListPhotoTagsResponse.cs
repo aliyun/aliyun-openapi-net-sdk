@@ -99,6 +99,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private long? id;
 
+			private string idStr;
+
 			private bool? isSubTag;
 
 			private string name;
@@ -114,6 +116,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public string IdStr
+			{
+				get
+				{
+					return idStr;
+				}
+				set	
+				{
+					idStr = value;
 				}
 			}
 

@@ -40,6 +40,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("ListTimeLinePhotos.Photos.Length"); i++) {
 				ListTimeLinePhotosResponse.ListTimeLinePhotos_Photo photo = new ListTimeLinePhotosResponse.ListTimeLinePhotos_Photo();
 				photo.Id = context.LongValue("ListTimeLinePhotos.Photos["+ i +"].Id");
+				photo.IdStr = context.StringValue("ListTimeLinePhotos.Photos["+ i +"].IdStr");
 				photo.Title = context.StringValue("ListTimeLinePhotos.Photos["+ i +"].Title");
 				photo.FileId = context.StringValue("ListTimeLinePhotos.Photos["+ i +"].FileId");
 				photo.Location = context.StringValue("ListTimeLinePhotos.Photos["+ i +"].Location");

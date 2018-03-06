@@ -127,6 +127,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private long? id;
 
+			private string idStr;
+
 			private string name;
 
 			private string state;
@@ -148,6 +150,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public string IdStr
+			{
+				get
+				{
+					return idStr;
+				}
+				set	
+				{
+					idStr = value;
 				}
 			}
 
@@ -228,6 +242,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 				private long? id;
 
+				private string idStr;
+
 				private string title;
 
 				private string fileId;
@@ -257,6 +273,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 					set	
 					{
 						id = value;
+					}
+				}
+
+				public string IdStr
+				{
+					get
+					{
+						return idStr;
+					}
+					set	
+					{
+						idStr = value;
 					}
 				}
 

@@ -99,6 +99,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private long? id;
 
+			private string idStr;
+
 			private string name;
 
 			private string remark;
@@ -126,6 +128,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public string IdStr
+			{
+				get
+				{
+					return idStr;
+				}
+				set	
+				{
+					idStr = value;
 				}
 			}
 

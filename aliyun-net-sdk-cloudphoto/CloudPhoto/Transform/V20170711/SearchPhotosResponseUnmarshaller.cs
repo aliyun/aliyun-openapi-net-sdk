@@ -40,6 +40,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("SearchPhotos.Photos.Length"); i++) {
 				SearchPhotosResponse.SearchPhotos_Photo photo = new SearchPhotosResponse.SearchPhotos_Photo();
 				photo.Id = context.LongValue("SearchPhotos.Photos["+ i +"].Id");
+				photo.IdStr = context.StringValue("SearchPhotos.Photos["+ i +"].IdStr");
 				photo.Title = context.StringValue("SearchPhotos.Photos["+ i +"].Title");
 				photo.FileId = context.StringValue("SearchPhotos.Photos["+ i +"].FileId");
 				photo.Location = context.StringValue("SearchPhotos.Photos["+ i +"].Location");

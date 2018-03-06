@@ -36,9 +36,9 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string libraryId;
 
-		private List<long?> photoIds;
-
 		private string storeName;
+
+		private List<long?> photoIds;
 
 		public string LibraryId
 		{
@@ -50,6 +50,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				libraryId = value;
 				DictionaryUtil.Add(QueryParameters, "LibraryId", value);
+			}
+		}
+
+		public string StoreName
+		{
+			get
+			{
+				return storeName;
+			}
+			set	
+			{
+				storeName = value;
+				DictionaryUtil.Add(QueryParameters, "StoreName", value);
 			}
 		}
 
@@ -67,19 +80,6 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				{
 					DictionaryUtil.Add(QueryParameters,"PhotoId." + (i + 1) , photoIds[i]);
 				}
-			}
-		}
-
-		public string StoreName
-		{
-			get
-			{
-				return storeName;
-			}
-			set	
-			{
-				storeName = value;
-				DictionaryUtil.Add(QueryParameters, "StoreName", value);
 			}
 		}
 

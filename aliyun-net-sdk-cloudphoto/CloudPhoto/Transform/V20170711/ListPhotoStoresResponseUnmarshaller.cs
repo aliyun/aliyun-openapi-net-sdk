@@ -39,6 +39,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("ListPhotoStores.PhotoStores.Length"); i++) {
 				ListPhotoStoresResponse.ListPhotoStores_PhotoStore photoStore = new ListPhotoStoresResponse.ListPhotoStores_PhotoStore();
 				photoStore.Id = context.LongValue("ListPhotoStores.PhotoStores["+ i +"].Id");
+				photoStore.IdStr = context.StringValue("ListPhotoStores.PhotoStores["+ i +"].IdStr");
 				photoStore.Name = context.StringValue("ListPhotoStores.PhotoStores["+ i +"].Name");
 				photoStore.Remark = context.StringValue("ListPhotoStores.PhotoStores["+ i +"].Remark");
 				photoStore.AutoCleanEnabled = context.BooleanValue("ListPhotoStores.PhotoStores["+ i +"].AutoCleanEnabled");

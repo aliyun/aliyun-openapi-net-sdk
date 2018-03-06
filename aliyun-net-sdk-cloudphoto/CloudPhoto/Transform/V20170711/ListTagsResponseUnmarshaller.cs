@@ -39,12 +39,14 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("ListTags.Tags.Length"); i++) {
 				ListTagsResponse.ListTags_Tag tag = new ListTagsResponse.ListTags_Tag();
 				tag.Id = context.LongValue("ListTags.Tags["+ i +"].Id");
+				tag.IdStr = context.StringValue("ListTags.Tags["+ i +"].IdStr");
 				tag.Name = context.StringValue("ListTags.Tags["+ i +"].Name");
 				tag.IsSubTag = context.BooleanValue("ListTags.Tags["+ i +"].IsSubTag");
 				tag.ParentTag = context.StringValue("ListTags.Tags["+ i +"].ParentTag");
 
 				ListTagsResponse.ListTags_Tag.ListTags_Cover cover = new ListTagsResponse.ListTags_Tag.ListTags_Cover();
 				cover.Id = context.LongValue("ListTags.Tags["+ i +"].Cover.Id");
+				cover.IdStr = context.StringValue("ListTags.Tags["+ i +"].Cover.IdStr");
 				cover.Title = context.StringValue("ListTags.Tags["+ i +"].Cover.Title");
 				cover.FileId = context.StringValue("ListTags.Tags["+ i +"].Cover.FileId");
 				cover.State = context.StringValue("ListTags.Tags["+ i +"].Cover.State");

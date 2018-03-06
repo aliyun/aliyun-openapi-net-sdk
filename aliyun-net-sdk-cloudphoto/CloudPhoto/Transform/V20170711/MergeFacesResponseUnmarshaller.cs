@@ -39,6 +39,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("MergeFaces.Results.Length"); i++) {
 				MergeFacesResponse.MergeFaces_Result result = new MergeFacesResponse.MergeFaces_Result();
 				result.Id = context.LongValue("MergeFaces.Results["+ i +"].Id");
+				result.IdStr = context.StringValue("MergeFaces.Results["+ i +"].IdStr");
 				result.Code = context.StringValue("MergeFaces.Results["+ i +"].Code");
 				result.Message = context.StringValue("MergeFaces.Results["+ i +"].Message");
 

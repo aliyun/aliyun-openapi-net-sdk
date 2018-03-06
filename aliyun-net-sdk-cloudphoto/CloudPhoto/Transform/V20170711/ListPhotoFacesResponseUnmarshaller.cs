@@ -39,6 +39,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("ListPhotoFaces.Faces.Length"); i++) {
 				ListPhotoFacesResponse.ListPhotoFaces_Face face = new ListPhotoFacesResponse.ListPhotoFaces_Face();
 				face.FaceId = context.LongValue("ListPhotoFaces.Faces["+ i +"].FaceId");
+				face.FaceIdStr = context.StringValue("ListPhotoFaces.Faces["+ i +"].FaceIdStr");
 				face.FaceName = context.StringValue("ListPhotoFaces.Faces["+ i +"].FaceName");
 
 				List<string> face_axis = new List<string>();

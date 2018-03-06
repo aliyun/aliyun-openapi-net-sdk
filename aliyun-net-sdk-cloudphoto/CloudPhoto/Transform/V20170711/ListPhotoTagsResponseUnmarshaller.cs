@@ -39,6 +39,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("ListPhotoTags.Tags.Length"); i++) {
 				ListPhotoTagsResponse.ListPhotoTags_Tag tag = new ListPhotoTagsResponse.ListPhotoTags_Tag();
 				tag.Id = context.LongValue("ListPhotoTags.Tags["+ i +"].Id");
+				tag.IdStr = context.StringValue("ListPhotoTags.Tags["+ i +"].IdStr");
 				tag.IsSubTag = context.BooleanValue("ListPhotoTags.Tags["+ i +"].IsSubTag");
 				tag.Name = context.StringValue("ListPhotoTags.Tags["+ i +"].Name");
 				tag.ParentTag = context.StringValue("ListPhotoTags.Tags["+ i +"].ParentTag");

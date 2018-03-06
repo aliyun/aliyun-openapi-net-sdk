@@ -41,6 +41,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 				result.Code = context.StringValue("GetFramedPhotoUrls.Results["+ i +"].Code");
 				result.Message = context.StringValue("GetFramedPhotoUrls.Results["+ i +"].Message");
 				result.PhotoId = context.LongValue("GetFramedPhotoUrls.Results["+ i +"].PhotoId");
+				result.PhotoIdStr = context.StringValue("GetFramedPhotoUrls.Results["+ i +"].PhotoIdStr");
 				result.FramedPhotoUrl = context.StringValue("GetFramedPhotoUrls.Results["+ i +"].FramedPhotoUrl");
 
 				getFramedPhotoUrlsResponse_results.Add(result);

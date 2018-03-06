@@ -41,6 +41,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 				result.Code = context.StringValue("GetDownloadUrls.Results["+ i +"].Code");
 				result.Message = context.StringValue("GetDownloadUrls.Results["+ i +"].Message");
 				result.PhotoId = context.LongValue("GetDownloadUrls.Results["+ i +"].PhotoId");
+				result.PhotoIdStr = context.StringValue("GetDownloadUrls.Results["+ i +"].PhotoIdStr");
 				result.DownloadUrl = context.StringValue("GetDownloadUrls.Results["+ i +"].DownloadUrl");
 
 				getDownloadUrlsResponse_results.Add(result);

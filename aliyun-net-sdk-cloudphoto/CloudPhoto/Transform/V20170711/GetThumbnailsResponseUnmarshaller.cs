@@ -41,6 +41,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 				result.Code = context.StringValue("GetThumbnails.Results["+ i +"].Code");
 				result.Message = context.StringValue("GetThumbnails.Results["+ i +"].Message");
 				result.PhotoId = context.LongValue("GetThumbnails.Results["+ i +"].PhotoId");
+				result.PhotoIdStr = context.StringValue("GetThumbnails.Results["+ i +"].PhotoIdStr");
 				result.ThumbnailUrl = context.StringValue("GetThumbnails.Results["+ i +"].ThumbnailUrl");
 
 				getThumbnailsResponse_results.Add(result);

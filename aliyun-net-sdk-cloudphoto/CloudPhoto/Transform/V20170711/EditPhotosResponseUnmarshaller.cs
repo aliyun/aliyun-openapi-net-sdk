@@ -39,6 +39,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("EditPhotos.Results.Length"); i++) {
 				EditPhotosResponse.EditPhotos_Result result = new EditPhotosResponse.EditPhotos_Result();
 				result.Id = context.LongValue("EditPhotos.Results["+ i +"].Id");
+				result.IdStr = context.StringValue("EditPhotos.Results["+ i +"].IdStr");
 				result.Code = context.StringValue("EditPhotos.Results["+ i +"].Code");
 				result.Message = context.StringValue("EditPhotos.Results["+ i +"].Message");
 

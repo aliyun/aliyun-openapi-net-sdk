@@ -37,6 +37,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 
 			CreateAlbumResponse.CreateAlbum_Album album = new CreateAlbumResponse.CreateAlbum_Album();
 			album.Id = context.LongValue("CreateAlbum.Album.Id");
+			album.IdStr = context.StringValue("CreateAlbum.Album.IdStr");
 			album.Name = context.StringValue("CreateAlbum.Album.Name");
 			album.State = context.StringValue("CreateAlbum.Album.State");
 			album.Remark = context.StringValue("CreateAlbum.Album.Remark");
@@ -46,6 +47,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 
 			CreateAlbumResponse.CreateAlbum_Album.CreateAlbum_Cover cover = new CreateAlbumResponse.CreateAlbum_Album.CreateAlbum_Cover();
 			cover.Id = context.LongValue("CreateAlbum.Album.Cover.Id");
+			cover.IdStr = context.StringValue("CreateAlbum.Album.Cover.IdStr");
 			cover.Title = context.StringValue("CreateAlbum.Album.Cover.Title");
 			cover.FileId = context.StringValue("CreateAlbum.Album.Cover.FileId");
 			cover.State = context.StringValue("CreateAlbum.Album.Cover.State");
