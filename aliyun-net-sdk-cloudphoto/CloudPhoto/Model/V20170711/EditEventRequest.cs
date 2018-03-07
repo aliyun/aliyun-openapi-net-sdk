@@ -40,6 +40,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string watermarkPhotoId;
 
+		private string identity;
+
 		private string splashPhotoId;
 
 		private string libraryId;
@@ -92,6 +94,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			{
 				watermarkPhotoId = value;
 				DictionaryUtil.Add(QueryParameters, "WatermarkPhotoId", value);
+			}
+		}
+
+		public string Identity
+		{
+			get
+			{
+				return identity;
+			}
+			set	
+			{
+				identity = value;
+				DictionaryUtil.Add(QueryParameters, "Identity", value);
 			}
 		}
 
