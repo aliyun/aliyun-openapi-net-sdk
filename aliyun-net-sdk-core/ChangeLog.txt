@@ -1,3 +1,6 @@
+2018-03-12 Version: 1.1.11
+1, Update internal endpoints
+
 2018-03-01 Version: 1.1.10
 1, Support dotnet standard 2.0
 

@@ -17,12 +17,13 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Auth;
+using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
-using System;
-using System.Collections.Generic;
 using Aliyun.Acs.Core.Regions.Location;
 using Aliyun.Acs.Core.Utils;
+using System;
+using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Profile
 {
@@ -129,11 +130,6 @@ namespace Aliyun.Acs.Core.Profile
             this.locationConfig = LocationConfig.createLocationConfig(regionId, product, endpoint);
         }
 
-        public List<Endpoint> GetEndpoints()
-        {
-            throw new NotSupportedException();
-        }
-
         public List<Endpoint> GetEndpoints(String regionId, String product)
         {
             if (null == endpoints)
@@ -169,6 +165,10 @@ namespace Aliyun.Acs.Core.Profile
                     endpoints = new List<Endpoint>();
                     endpoints.Add(endpoint);
                     CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, DateTime.Now);
+                }
+                else
+                {
+                    throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
                 }
             }
             else if (Endpoint.FindProductDomain(regionId, product, endpoints) == null || CacheTimeHelper.CheckCacheIsExpire(product, regionId))

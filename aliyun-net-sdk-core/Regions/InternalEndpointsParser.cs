@@ -28,73 +28,99 @@ namespace Aliyun.Acs.Core.Regions
 {
     class InternalEndpointsParser : IEndpointsProvider
     {
+        public class Product
+        {
+            public string Code { get; set; }
+            public string LocationServiceCode { get; set; }
+            public string DocumentId { get; set; }
+            public Dictionary<string, string> RegionalEndpoints { get; set; }
+            public string GlobalEndpoint { get; set; }
+            public string RegionalEndpointPattern { get; set; }
+        }
+
         private const String BUNDLED_ENDPOINTS_RESOURCE_PATH = "endpoints.xml";
 
-        private static List<Endpoint> ParseEndpoints(Stream stream)
+        private static List<Product> ParseProducts(Stream stream)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(stream);
-            XmlNodeList endpointNodes = doc.GetElementsByTagName("Endpoint");
+            XmlNodeList productNodes = doc.GetElementsByTagName("product");
 
-            List<Endpoint> endpoints = new List<Endpoint>();
-            foreach (XmlNode node in endpointNodes)
+            List<Product> products = new List<Product>();
+            foreach (XmlNode node in productNodes)
             {
-                HashSet<string> regionIds = new HashSet<string>();
-                List<ProductDomain> products = new List<ProductDomain>();
-                XmlNodeList regionIdNodes = node.SelectSingleNode("RegionIds").SelectNodes("RegionId");
-                XmlNodeList productNodes = node.SelectSingleNode("Products").SelectNodes("Product");
-                foreach (XmlNode regionIdNode in regionIdNodes)
+                Product product = new Product();
+                product.Code = node.SelectSingleNode("code").InnerText;
+                product.LocationServiceCode = node.SelectSingleNode("location_service_code").InnerText;
+                product.DocumentId = node.SelectSingleNode("document_id").InnerText;
+
+                product.RegionalEndpoints = new Dictionary<string, string>();
+                XmlNodeList regional_endpoints = node.SelectSingleNode("regional_endpoints").SelectNodes("regional_endpoint");
+                foreach (XmlNode regionalNode in regional_endpoints)
                 {
-                    regionIds.Add(regionIdNode.InnerText);
+                    product.RegionalEndpoints.Add(regionalNode.SelectSingleNode("region_id").InnerText,
+                        regionalNode.SelectSingleNode("endpoint").InnerText);
                 }
-                foreach (XmlNode productNode in productNodes)
-                {
-                    ProductDomain productDomain = new ProductDomain();
-                    productDomain.DomianName = productNode.SelectSingleNode("DomainName").InnerText;
-                    productDomain.ProductName = productNode.SelectSingleNode("ProductName").InnerText;
-                    products.Add(productDomain);
-                }
-                endpoints.Add(new Endpoint(node.Attributes["name"].InnerText, regionIds, products));
+
+                product.GlobalEndpoint = node.SelectSingleNode("global_endpoint").InnerText;
+                product.RegionalEndpointPattern = node.SelectSingleNode("regional_endpoint_pattern").InnerText;
+                products.Add(product);
             }
-            return endpoints;
+
+            return products;
         }
 
-        public List<Endpoint> GetEndpoints()
+        public List<Product> GetProducts()
         {
             Type type = MethodBase.GetCurrentMethod().DeclaringType;
             string _namespace = type.Namespace;
             Assembly _assembly = Assembly.GetExecutingAssembly();
             string resourceName = _namespace + "." + BUNDLED_ENDPOINTS_RESOURCE_PATH;
             Stream stream = _assembly.GetManifestResourceStream(resourceName);
-            return ParseEndpoints(stream);
+            return ParseProducts(stream);
         }
 
         public Endpoint GetEndpoint(string region, string product)
         {
-            List<Endpoint> internalEndpoints = GetEndpoints();
-            foreach (Endpoint endpoint in internalEndpoints)
-            {
-                foreach (String regionId in endpoint.RegionIds)
-                {
-                    if (regionId.Equals(region))
-                    {
-                        foreach (ProductDomain productDomain in endpoint.ProductDomains)
-                        {
-                            if (productDomain.ProductName.Equals(product))
-                            {
-                                ISet<String> regionSet = new HashSet<String>();
-                                regionSet.Add(region);
+            List<Product> allProducts = GetProducts();
 
-                                List<ProductDomain> productDomains = new List<ProductDomain>();
-                                productDomains.Add(productDomain);
-                                Endpoint resultEndpoint = new Endpoint(endpoint.Name, regionSet, productDomains);
-                                return resultEndpoint;
-                            }
-                        }
-                    }
+            ISet<String> regionSet = new HashSet<String>();
+            List<ProductDomain> productDomains = new List<ProductDomain>();
+            foreach (Product p in allProducts)
+            {
+                if (!string.Equals(product, p.Code, StringComparison.InvariantCultureIgnoreCase))
+                    continue;
+
+                foreach (var e in p.RegionalEndpoints)
+                {
+                    if (!string.Equals(region, e.Key, StringComparison.InvariantCultureIgnoreCase))
+                        continue;
+
+                    regionSet.Add(region);
+
+                    ProductDomain productDomain = new ProductDomain();
+                    productDomain.ProductName = product;
+                    productDomain.DomianName = e.Value;
+                    productDomains.Add(productDomain);
                 }
+
+                if (regionSet.Count == 0)
+                {
+                    if (string.IsNullOrEmpty(p.GlobalEndpoint))
+                        return null;
+
+                    regionSet.Add(region);
+
+                    ProductDomain productDomain = new ProductDomain();
+                    productDomain.ProductName = product;
+                    productDomain.DomianName = p.GlobalEndpoint;
+                    productDomains.Add(productDomain);
+                }
+
+                break;
             }
-            return null;
+
+            return new Endpoint(region, regionSet, productDomains);
         }
 
         public Endpoint GetEndpoint(string region, string product, string serviceCode, string endpointType,
