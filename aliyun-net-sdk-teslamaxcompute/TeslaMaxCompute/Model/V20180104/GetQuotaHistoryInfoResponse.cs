@@ -122,6 +122,10 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 
 				private GetQuotaHistoryInfo_CpuUsed cpuUsed;
 
+				private GetQuotaHistoryInfo_MemMaxQuota memMaxQuota;
+
+				private GetQuotaHistoryInfo_MemMinQuota memMinQuota;
+
 				public GetQuotaHistoryInfo_CpuMaxQuota CpuMaxQuota
 				{
 					get
@@ -170,16 +174,40 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 					}
 				}
 
+				public GetQuotaHistoryInfo_MemMaxQuota MemMaxQuota
+				{
+					get
+					{
+						return memMaxQuota;
+					}
+					set	
+					{
+						memMaxQuota = value;
+					}
+				}
+
+				public GetQuotaHistoryInfo_MemMinQuota MemMinQuota
+				{
+					get
+					{
+						return memMinQuota;
+					}
+					set	
+					{
+						memMinQuota = value;
+					}
+				}
+
 				public class GetQuotaHistoryInfo_CpuMaxQuota
 				{
 
-					private int? min;
+					private float? min;
 
-					private int? max;
+					private float? max;
 
-					private int? avg;
+					private float? avg;
 
-					public int? Min
+					public float? Min
 					{
 						get
 						{
@@ -191,7 +219,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 						}
 					}
 
-					public int? Max
+					public float? Max
 					{
 						get
 						{
@@ -203,7 +231,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 						}
 					}
 
-					public int? Avg
+					public float? Avg
 					{
 						get
 						{
@@ -219,13 +247,13 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 				public class GetQuotaHistoryInfo_CpuMinQuota
 				{
 
-					private int? min;
+					private float? min;
 
-					private int? max;
+					private float? max;
 
-					private int? avg;
+					private float? avg;
 
-					public int? Min
+					public float? Min
 					{
 						get
 						{
@@ -237,7 +265,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 						}
 					}
 
-					public int? Max
+					public float? Max
 					{
 						get
 						{
@@ -249,7 +277,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 						}
 					}
 
-					public int? Avg
+					public float? Avg
 					{
 						get
 						{
@@ -265,13 +293,13 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 				public class GetQuotaHistoryInfo_MemUsed
 				{
 
-					private int? min;
+					private float? min;
 
-					private int? max;
+					private float? max;
 
-					private int? avg;
+					private float? avg;
 
-					public int? Min
+					public float? Min
 					{
 						get
 						{
@@ -283,7 +311,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 						}
 					}
 
-					public int? Max
+					public float? Max
 					{
 						get
 						{
@@ -295,7 +323,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 						}
 					}
 
-					public int? Avg
+					public float? Avg
 					{
 						get
 						{
@@ -311,13 +339,13 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 				public class GetQuotaHistoryInfo_CpuUsed
 				{
 
-					private int? min;
+					private float? min;
 
-					private int? max;
+					private float? max;
 
-					private int? avg;
+					private float? avg;
 
-					public int? Min
+					public float? Min
 					{
 						get
 						{
@@ -329,7 +357,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 						}
 					}
 
-					public int? Max
+					public float? Max
 					{
 						get
 						{
@@ -341,7 +369,99 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 						}
 					}
 
-					public int? Avg
+					public float? Avg
+					{
+						get
+						{
+							return avg;
+						}
+						set	
+						{
+							avg = value;
+						}
+					}
+				}
+
+				public class GetQuotaHistoryInfo_MemMaxQuota
+				{
+
+					private float? min;
+
+					private float? max;
+
+					private float? avg;
+
+					public float? Min
+					{
+						get
+						{
+							return min;
+						}
+						set	
+						{
+							min = value;
+						}
+					}
+
+					public float? Max
+					{
+						get
+						{
+							return max;
+						}
+						set	
+						{
+							max = value;
+						}
+					}
+
+					public float? Avg
+					{
+						get
+						{
+							return avg;
+						}
+						set	
+						{
+							avg = value;
+						}
+					}
+				}
+
+				public class GetQuotaHistoryInfo_MemMinQuota
+				{
+
+					private float? min;
+
+					private float? max;
+
+					private float? avg;
+
+					public float? Min
+					{
+						get
+						{
+							return min;
+						}
+						set	
+						{
+							min = value;
+						}
+					}
+
+					public float? Max
+					{
+						get
+						{
+							return max;
+						}
+						set	
+						{
+							max = value;
+						}
+					}
+
+					public float? Avg
 					{
 						get
 						{

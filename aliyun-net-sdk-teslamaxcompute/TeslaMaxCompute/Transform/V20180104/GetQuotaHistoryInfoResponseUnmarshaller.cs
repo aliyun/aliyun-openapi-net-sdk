@@ -42,28 +42,40 @@ namespace Aliyun.Acs.TeslaMaxCompute.Transform.V20180104
 				GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point point = new GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point();
 
 				GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point.GetQuotaHistoryInfo_CpuMaxQuota cpuMaxQuota = new GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point.GetQuotaHistoryInfo_CpuMaxQuota();
-				cpuMaxQuota.Min = context.IntegerValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuMaxQuota.Min");
-				cpuMaxQuota.Max = context.IntegerValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuMaxQuota.Max");
-				cpuMaxQuota.Avg = context.IntegerValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuMaxQuota.Avg");
+				cpuMaxQuota.Min = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuMaxQuota.Min");
+				cpuMaxQuota.Max = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuMaxQuota.Max");
+				cpuMaxQuota.Avg = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuMaxQuota.Avg");
 				point.CpuMaxQuota = cpuMaxQuota;
 
 				GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point.GetQuotaHistoryInfo_CpuMinQuota cpuMinQuota = new GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point.GetQuotaHistoryInfo_CpuMinQuota();
-				cpuMinQuota.Min = context.IntegerValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuMinQuota.Min");
-				cpuMinQuota.Max = context.IntegerValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuMinQuota.Max");
-				cpuMinQuota.Avg = context.IntegerValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuMinQuota.Avg");
+				cpuMinQuota.Min = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuMinQuota.Min");
+				cpuMinQuota.Max = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuMinQuota.Max");
+				cpuMinQuota.Avg = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuMinQuota.Avg");
 				point.CpuMinQuota = cpuMinQuota;
 
 				GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point.GetQuotaHistoryInfo_MemUsed memUsed = new GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point.GetQuotaHistoryInfo_MemUsed();
-				memUsed.Min = context.IntegerValue("GetQuotaHistoryInfo.Data["+ i +"].Point.MemUsed.Min");
-				memUsed.Max = context.IntegerValue("GetQuotaHistoryInfo.Data["+ i +"].Point.MemUsed.Max");
-				memUsed.Avg = context.IntegerValue("GetQuotaHistoryInfo.Data["+ i +"].Point.MemUsed.Avg");
+				memUsed.Min = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.MemUsed.Min");
+				memUsed.Max = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.MemUsed.Max");
+				memUsed.Avg = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.MemUsed.Avg");
 				point.MemUsed = memUsed;
 
 				GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point.GetQuotaHistoryInfo_CpuUsed cpuUsed = new GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point.GetQuotaHistoryInfo_CpuUsed();
-				cpuUsed.Min = context.IntegerValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuUsed.Min");
-				cpuUsed.Max = context.IntegerValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuUsed.Max");
-				cpuUsed.Avg = context.IntegerValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuUsed.Avg");
+				cpuUsed.Min = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuUsed.Min");
+				cpuUsed.Max = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuUsed.Max");
+				cpuUsed.Avg = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.CpuUsed.Avg");
 				point.CpuUsed = cpuUsed;
+
+				GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point.GetQuotaHistoryInfo_MemMaxQuota memMaxQuota = new GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point.GetQuotaHistoryInfo_MemMaxQuota();
+				memMaxQuota.Min = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.MemMaxQuota.Min");
+				memMaxQuota.Max = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.MemMaxQuota.Max");
+				memMaxQuota.Avg = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.MemMaxQuota.Avg");
+				point.MemMaxQuota = memMaxQuota;
+
+				GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point.GetQuotaHistoryInfo_MemMinQuota memMinQuota = new GetQuotaHistoryInfoResponse.GetQuotaHistoryInfo_DataItem.GetQuotaHistoryInfo_Point.GetQuotaHistoryInfo_MemMinQuota();
+				memMinQuota.Min = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.MemMinQuota.Min");
+				memMinQuota.Max = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.MemMinQuota.Max");
+				memMinQuota.Avg = context.FloatValue("GetQuotaHistoryInfo.Data["+ i +"].Point.MemMinQuota.Avg");
+				point.MemMinQuota = memMinQuota;
 				dataItem.Point = point;
 
 				getQuotaHistoryInfoResponse_data.Add(dataItem);
