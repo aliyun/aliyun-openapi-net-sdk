@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{b291463f-cf70-43ad-ae33-588481f716d8}</ProjectGuid>
+    <ProjectGuid>{2fb596c8-6df8-4f76-ad21-578c0c570a82}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -45,6 +45,8 @@
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaHistoryInfoRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryResourceInventoryRequest.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetInstancesStatusCountRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryCustomerSaleInfoRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryCustomerSaleInfoResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaInstanceResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaHistoryInfoResponse.cs" />
 	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryTopologyResponse.cs" />
@@ -64,6 +66,7 @@
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\QueryResourceInventoryResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetProjectInstanceResponseUnmarshaller.cs" />
 	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetInstancesStatusCountResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20180104\QueryCustomerSaleInfoResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
