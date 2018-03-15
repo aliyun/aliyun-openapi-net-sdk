@@ -138,7 +138,6 @@ namespace Aliyun.Acs.Core.Http
         {
             HttpWebRequest httpWebRequest = null;
             httpWebRequest = (HttpWebRequest)WebRequest.Create(request.Url);
-            httpWebRequest.ServicePoint.Expect100Continue = false;
             httpWebRequest.Method = request.Method.ToString();
             httpWebRequest.KeepAlive = true;
             httpWebRequest.Timeout = _timeout;
