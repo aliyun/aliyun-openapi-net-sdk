@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			describeSQLLogRecordsResponse.HttpResponse = context.HttpResponse;
 			describeSQLLogRecordsResponse.RequestId = context.StringValue("DescribeSQLLogRecords.RequestId");
-			describeSQLLogRecordsResponse.TotalRecordCount = context.IntegerValue("DescribeSQLLogRecords.TotalRecordCount");
+			describeSQLLogRecordsResponse.TotalRecordCount = context.LongValue("DescribeSQLLogRecords.TotalRecordCount");
 			describeSQLLogRecordsResponse.PageNumber = context.IntegerValue("DescribeSQLLogRecords.PageNumber");
 			describeSQLLogRecordsResponse.PageRecordCount = context.IntegerValue("DescribeSQLLogRecords.PageRecordCount");
 

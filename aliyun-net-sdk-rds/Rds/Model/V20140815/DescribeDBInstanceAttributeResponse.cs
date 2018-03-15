@@ -55,6 +55,28 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDBInstanceAttribute_DBInstanceAttribute
 		{
 
+			private string dBInstanceDiskUsed;
+
+			private string guardDBInstanceName;
+
+			private bool? canTempUpgrade;
+
+			private string tempUpgradeTimeStart;
+
+			private string tempUpgradeTimeEnd;
+
+			private string tempUpgradeRecoveryTime;
+
+			private string tempUpgradeRecoveryClass;
+
+			private int? tempUpgradeRecoveryCpu;
+
+			private int? tempUpgradeRecoveryMemory;
+
+			private string tempUpgradeRecoveryMaxIOPS;
+
+			private string tempUpgradeRecoveryMaxConnections;
+
 			private int? insId;
 
 			private string dBInstanceId;
@@ -80,6 +102,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private long? dBInstanceMemory;
 
 			private int? dBInstanceStorage;
+
+			private string vpcCloudInstanceId;
 
 			private string dBInstanceNetType;
 
@@ -117,6 +141,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string guardDBInstanceId;
 
+			private string replicateId;
+
 			private string tempDBInstanceId;
 
 			private string securityIPList;
@@ -124,6 +150,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private string zoneId;
 
 			private string instanceNetworkType;
+
+			private string advancedFeatures;
 
 			private string category;
 
@@ -140,6 +168,138 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private string resourceGroupId;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+
+			public string DBInstanceDiskUsed
+			{
+				get
+				{
+					return dBInstanceDiskUsed;
+				}
+				set	
+				{
+					dBInstanceDiskUsed = value;
+				}
+			}
+
+			public string GuardDBInstanceName
+			{
+				get
+				{
+					return guardDBInstanceName;
+				}
+				set	
+				{
+					guardDBInstanceName = value;
+				}
+			}
+
+			public bool? CanTempUpgrade
+			{
+				get
+				{
+					return canTempUpgrade;
+				}
+				set	
+				{
+					canTempUpgrade = value;
+				}
+			}
+
+			public string TempUpgradeTimeStart
+			{
+				get
+				{
+					return tempUpgradeTimeStart;
+				}
+				set	
+				{
+					tempUpgradeTimeStart = value;
+				}
+			}
+
+			public string TempUpgradeTimeEnd
+			{
+				get
+				{
+					return tempUpgradeTimeEnd;
+				}
+				set	
+				{
+					tempUpgradeTimeEnd = value;
+				}
+			}
+
+			public string TempUpgradeRecoveryTime
+			{
+				get
+				{
+					return tempUpgradeRecoveryTime;
+				}
+				set	
+				{
+					tempUpgradeRecoveryTime = value;
+				}
+			}
+
+			public string TempUpgradeRecoveryClass
+			{
+				get
+				{
+					return tempUpgradeRecoveryClass;
+				}
+				set	
+				{
+					tempUpgradeRecoveryClass = value;
+				}
+			}
+
+			public int? TempUpgradeRecoveryCpu
+			{
+				get
+				{
+					return tempUpgradeRecoveryCpu;
+				}
+				set	
+				{
+					tempUpgradeRecoveryCpu = value;
+				}
+			}
+
+			public int? TempUpgradeRecoveryMemory
+			{
+				get
+				{
+					return tempUpgradeRecoveryMemory;
+				}
+				set	
+				{
+					tempUpgradeRecoveryMemory = value;
+				}
+			}
+
+			public string TempUpgradeRecoveryMaxIOPS
+			{
+				get
+				{
+					return tempUpgradeRecoveryMaxIOPS;
+				}
+				set	
+				{
+					tempUpgradeRecoveryMaxIOPS = value;
+				}
+			}
+
+			public string TempUpgradeRecoveryMaxConnections
+			{
+				get
+				{
+					return tempUpgradeRecoveryMaxConnections;
+				}
+				set	
+				{
+					tempUpgradeRecoveryMaxConnections = value;
+				}
+			}
 
 			public int? InsId
 			{
@@ -294,6 +454,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dBInstanceStorage = value;
+				}
+			}
+
+			public string VpcCloudInstanceId
+			{
+				get
+				{
+					return vpcCloudInstanceId;
+				}
+				set	
+				{
+					vpcCloudInstanceId = value;
 				}
 			}
 
@@ -513,6 +685,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string ReplicateId
+			{
+				get
+				{
+					return replicateId;
+				}
+				set	
+				{
+					replicateId = value;
+				}
+			}
+
 			public string TempDBInstanceId
 			{
 				get
@@ -558,6 +742,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					instanceNetworkType = value;
+				}
+			}
+
+			public string AdvancedFeatures
+			{
+				get
+				{
+					return advancedFeatures;
+				}
+				set	
+				{
+					advancedFeatures = value;
 				}
 			}
 

@@ -47,15 +47,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string securityIps;
 
+		private string securityGroupId;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		private string whitelistNetworkType;
+
 		private string dBInstanceIPArrayAttribute;
 
 		private string action;
 
 		private string dBInstanceId;
-
-		private long? ownerId;
-
-		private string accessKeyId;
 
 		public string DBInstanceIPArrayName
 		{
@@ -148,6 +152,58 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string WhitelistNetworkType
+		{
+			get
+			{
+				return whitelistNetworkType;
+			}
+			set	
+			{
+				whitelistNetworkType = value;
+				DictionaryUtil.Add(QueryParameters, "WhitelistNetworkType", value);
+			}
+		}
+
 		public string DBInstanceIPArrayAttribute
 		{
 			get
@@ -184,32 +240,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

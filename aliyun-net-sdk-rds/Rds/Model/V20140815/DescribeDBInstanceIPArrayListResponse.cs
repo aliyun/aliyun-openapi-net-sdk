@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string securityIPList;
 
+			private string whitelistNetworkType;
+
 			public string DBInstanceIPArrayName
 			{
 				get
@@ -94,6 +96,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					securityIPList = value;
+				}
+			}
+
+			public string WhitelistNetworkType
+			{
+				get
+				{
+					return whitelistNetworkType;
+				}
+				set	
+				{
+					whitelistNetworkType = value;
 				}
 			}
 		}

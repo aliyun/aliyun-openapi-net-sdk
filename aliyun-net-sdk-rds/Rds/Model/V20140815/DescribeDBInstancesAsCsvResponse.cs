@@ -55,11 +55,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDBInstancesAsCsv_DBInstanceAttribute
 		{
 
-			private int? insId;
-
 			private string dBInstanceId;
-
-			private string dBInstanceName;
 
 			private string payType;
 
@@ -141,18 +137,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string tags;
 
-			public int? InsId
-			{
-				get
-				{
-					return insId;
-				}
-				set	
-				{
-					insId = value;
-				}
-			}
-
 			public string DBInstanceId
 			{
 				get
@@ -162,18 +146,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dBInstanceId = value;
-				}
-			}
-
-			public string DBInstanceName
-			{
-				get
-				{
-					return dBInstanceName;
-				}
-				set	
-				{
-					dBInstanceName = value;
 				}
 			}
 

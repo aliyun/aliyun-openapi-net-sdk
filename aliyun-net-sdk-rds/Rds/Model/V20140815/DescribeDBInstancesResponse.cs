@@ -125,6 +125,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string instanceNetworkType;
 
+			private string vpcCloudInstanceId;
+
 			private string lockReason;
 
 			private string zoneId;
@@ -144,6 +146,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private string vpcId;
 
 			private string vSwitchId;
+
+			private string replicateId;
 
 			private string resourceGroupId;
 
@@ -317,6 +321,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string VpcCloudInstanceId
+			{
+				get
+				{
+					return vpcCloudInstanceId;
+				}
+				set	
+				{
+					vpcCloudInstanceId = value;
+				}
+			}
+
 			public string LockReason
 			{
 				get
@@ -434,6 +450,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					vSwitchId = value;
+				}
+			}
+
+			public string ReplicateId
+			{
+				get
+				{
+					return replicateId;
+				}
+				set	
+				{
+					replicateId = value;
 				}
 			}
 

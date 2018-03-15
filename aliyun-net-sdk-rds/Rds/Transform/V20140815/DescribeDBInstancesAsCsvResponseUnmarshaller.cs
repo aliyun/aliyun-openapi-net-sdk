@@ -35,9 +35,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribeDBInstancesAsCsvResponse.DescribeDBInstancesAsCsv_DBInstanceAttribute> describeDBInstancesAsCsvResponse_items = new List<DescribeDBInstancesAsCsvResponse.DescribeDBInstancesAsCsv_DBInstanceAttribute>();
 			for (int i = 0; i < context.Length("DescribeDBInstancesAsCsv.Items.Length"); i++) {
 				DescribeDBInstancesAsCsvResponse.DescribeDBInstancesAsCsv_DBInstanceAttribute dBInstanceAttribute = new DescribeDBInstancesAsCsvResponse.DescribeDBInstancesAsCsv_DBInstanceAttribute();
-				dBInstanceAttribute.InsId = context.IntegerValue("DescribeDBInstancesAsCsv.Items["+ i +"].InsId");
 				dBInstanceAttribute.DBInstanceId = context.StringValue("DescribeDBInstancesAsCsv.Items["+ i +"].DBInstanceId");
-				dBInstanceAttribute.DBInstanceName = context.StringValue("DescribeDBInstancesAsCsv.Items["+ i +"].DBInstanceName");
 				dBInstanceAttribute.PayType = context.StringValue("DescribeDBInstancesAsCsv.Items["+ i +"].PayType");
 				dBInstanceAttribute.DBInstanceClassType = context.StringValue("DescribeDBInstancesAsCsv.Items["+ i +"].DBInstanceClassType");
 				dBInstanceAttribute.DBInstanceType = context.StringValue("DescribeDBInstancesAsCsv.Items["+ i +"].DBInstanceType");

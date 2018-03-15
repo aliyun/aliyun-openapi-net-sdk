@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string whitelistNetworkType;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -57,6 +59,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string WhitelistNetworkType
+		{
+			get
+			{
+				return whitelistNetworkType;
+			}
+			set	
+			{
+				whitelistNetworkType = value;
+				DictionaryUtil.Add(QueryParameters, "WhitelistNetworkType", value);
 			}
 		}
 

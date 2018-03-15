@@ -103,6 +103,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string replicaStatus;
 
+			private string replicaMode;
+
+			private string domainMode;
+
 			private List<DescribeReplicas_Items1> dBInstances;
 
 			public string ReplicaId
@@ -141,6 +145,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string ReplicaMode
+			{
+				get
+				{
+					return replicaMode;
+				}
+				set	
+				{
+					replicaMode = value;
+				}
+			}
+
+			public string DomainMode
+			{
+				get
+				{
+					return domainMode;
+				}
+				set	
+				{
+					domainMode = value;
+				}
+			}
+
 			public List<DescribeReplicas_Items1> DBInstances
 			{
 				get
@@ -159,6 +187,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				private string dBInstanceId;
 
 				private string role;
+
+				private string readWriteType;
 
 				public string DBInstanceId
 				{
@@ -181,6 +211,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						role = value;
+					}
+				}
+
+				public string ReadWriteType
+				{
+					get
+					{
+						return readWriteType;
+					}
+					set	
+					{
+						readWriteType = value;
 					}
 				}
 			}

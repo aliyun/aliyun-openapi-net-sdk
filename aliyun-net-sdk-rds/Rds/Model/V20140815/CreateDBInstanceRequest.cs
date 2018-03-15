@@ -79,6 +79,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string vPCId;
 
+		private string tunnelId;
+
 		private string zoneId;
 
 		private string payType;
@@ -381,6 +383,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				vPCId = value;
 				DictionaryUtil.Add(QueryParameters, "VPCId", value);
+			}
+		}
+
+		public string TunnelId
+		{
+			get
+			{
+				return tunnelId;
+			}
+			set	
+			{
+				tunnelId = value;
+				DictionaryUtil.Add(QueryParameters, "TunnelId", value);
 			}
 		}
 

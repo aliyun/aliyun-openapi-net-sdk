@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private int? storagePeriod;
+
 		private string resourceOwnerAccount;
 
 		private string clientToken;
@@ -61,6 +63,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? StoragePeriod
+		{
+			get
+			{
+				return storagePeriod;
+			}
+			set	
+			{
+				storagePeriod = value;
+				DictionaryUtil.Add(QueryParameters, "StoragePeriod", value.ToString());
 			}
 		}
 

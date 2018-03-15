@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeSQLCollectorPolicyResponse.HttpResponse = context.HttpResponse;
 			describeSQLCollectorPolicyResponse.RequestId = context.StringValue("DescribeSQLCollectorPolicy.RequestId");
 			describeSQLCollectorPolicyResponse.SQLCollectorStatus = context.StringValue("DescribeSQLCollectorPolicy.SQLCollectorStatus");
+			describeSQLCollectorPolicyResponse.StoragePeriod = context.IntegerValue("DescribeSQLCollectorPolicy.StoragePeriod");
         
 			return describeSQLCollectorPolicyResponse;
         }

@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstance.LockMode = context.StringValue("DescribeDBInstances.Items["+ i +"].LockMode");
 				dBInstance.DBInstanceClass = context.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceClass");
 				dBInstance.InstanceNetworkType = context.StringValue("DescribeDBInstances.Items["+ i +"].InstanceNetworkType");
+				dBInstance.VpcCloudInstanceId = context.StringValue("DescribeDBInstances.Items["+ i +"].VpcCloudInstanceId");
 				dBInstance.LockReason = context.StringValue("DescribeDBInstances.Items["+ i +"].LockReason");
 				dBInstance.ZoneId = context.StringValue("DescribeDBInstances.Items["+ i +"].ZoneId");
 				dBInstance.MutriORsignle = context.BooleanValue("DescribeDBInstances.Items["+ i +"].MutriORsignle");
@@ -62,6 +63,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstance.MasterInstanceId = context.StringValue("DescribeDBInstances.Items["+ i +"].MasterInstanceId");
 				dBInstance.VpcId = context.StringValue("DescribeDBInstances.Items["+ i +"].VpcId");
 				dBInstance.VSwitchId = context.StringValue("DescribeDBInstances.Items["+ i +"].VSwitchId");
+				dBInstance.ReplicateId = context.StringValue("DescribeDBInstances.Items["+ i +"].ReplicateId");
 				dBInstance.ResourceGroupId = context.StringValue("DescribeDBInstances.Items["+ i +"].ResourceGroupId");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId> dBInstance_readOnlyDBInstanceIds = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId>();

@@ -26,7 +26,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private int? totalRecordCount;
+		private long? totalRecordCount;
 
 		private int? pageNumber;
 
@@ -46,7 +46,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? TotalRecordCount
+		public long? TotalRecordCount
 		{
 			get
 			{

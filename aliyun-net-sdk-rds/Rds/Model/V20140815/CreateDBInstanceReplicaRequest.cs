@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string connectionMode;
 
+		private string domainMode;
+
 		private string replicaDescription;
 
 		private long? resourceOwnerId;
@@ -79,6 +81,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string sourceDBInstanceId;
 
+		private string replicaMode;
+
 		private string vPCId;
 
 		private string zoneId;
@@ -97,6 +101,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				connectionMode = value;
 				DictionaryUtil.Add(QueryParameters, "ConnectionMode", value);
+			}
+		}
+
+		public string DomainMode
+		{
+			get
+			{
+				return domainMode;
+			}
+			set	
+			{
+				domainMode = value;
+				DictionaryUtil.Add(QueryParameters, "DomainMode", value);
 			}
 		}
 
@@ -383,6 +400,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				sourceDBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "SourceDBInstanceId", value);
+			}
+		}
+
+		public string ReplicaMode
+		{
+			get
+			{
+				return replicaMode;
+			}
+			set	
+			{
+				replicaMode = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaMode", value);
 			}
 		}
 

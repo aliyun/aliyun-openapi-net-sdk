@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string sQLCollectorStatus;
 
+		private int? storagePeriod;
+
 		public string RequestId
 		{
 			get
@@ -49,6 +51,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				sQLCollectorStatus = value;
+			}
+		}
+
+		public int? StoragePeriod
+		{
+			get
+			{
+				return storagePeriod;
+			}
+			set	
+			{
+				storagePeriod = value;
 			}
 		}
 	}

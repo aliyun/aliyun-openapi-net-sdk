@@ -33,9 +33,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
+		private string vSwitchId;
+
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
+
+		private string effectiveTime;
 
 		private string ownerAccount;
 
@@ -48,6 +52,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? ownerId;
 
 		private string accessKeyId;
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -72,6 +89,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string EffectiveTime
+		{
+			get
+			{
+				return effectiveTime;
+			}
+			set	
+			{
+				effectiveTime = value;
+				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
 			}
 		}
 
