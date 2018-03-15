@@ -31,6 +31,5 @@ namespace Aliyun.Acs.Core
 
         public int HttpStatus { get; set; }
 
-        public HttpResponse HttpResponse { get; set; }
     }
 }

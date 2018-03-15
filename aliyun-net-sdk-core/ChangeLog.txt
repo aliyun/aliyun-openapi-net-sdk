@@ -1,3 +1,6 @@
+2018-03-15 Version: 1.1.12
+1, compatible .net core
+
 2018-03-12 Version: 1.1.11
 1, Update internal endpoints
 
