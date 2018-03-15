@@ -45,8 +45,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string tags;
 
 		private int? duration;
@@ -136,19 +134,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

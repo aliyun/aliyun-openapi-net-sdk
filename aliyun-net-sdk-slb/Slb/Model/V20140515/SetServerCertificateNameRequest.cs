@@ -51,8 +51,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string serverCertificateName;
 
-		private string accessKeyId;
-
 		private string tags;
 
 		public string Access_key_id
@@ -169,19 +167,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				serverCertificateName = value;
 				DictionaryUtil.Add(QueryParameters, "ServerCertificateName", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

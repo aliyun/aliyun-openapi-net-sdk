@@ -45,8 +45,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? healthyThreshold;
 
-		private string accessKeyId;
-
 		private string scheduler;
 
 		private int? establishedTimeout;
@@ -164,19 +162,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				healthyThreshold = value;
 				DictionaryUtil.Add(QueryParameters, "HealthyThreshold", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

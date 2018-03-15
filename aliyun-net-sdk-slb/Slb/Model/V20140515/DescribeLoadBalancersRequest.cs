@@ -37,19 +37,39 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private long? resourceOwnerId;
 
+		private string address;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
 		private string networkType;
+
+		private long? ownerId;
+
+		private string serverId;
 
 		private string masterZoneId;
 
 		private int? pageNumber;
 
-		private string accessKeyId;
+		private string tags;
+
+		private string serverIntranetAddress;
+
+		private string vSwitchId;
 
 		private string resourceGroupId;
 
 		private string loadBalancerName;
 
+		private string loadBalancerId;
+
 		private string regionId;
+
+		private string internetChargeType;
+
+		private string vpcId;
 
 		private int? pageSize;
 
@@ -58,28 +78,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string addressType;
 
 		private string slaveZoneId;
-
-		private string address;
-
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private long? ownerId;
-
-		private string serverId;
-
-		private string tags;
-
-		private string serverIntranetAddress;
-
-		private string vSwitchId;
-
-		private string loadBalancerId;
-
-		private string internetChargeType;
-
-		private string vpcId;
 
 		private string payType;
 
@@ -109,6 +107,45 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string Address
+		{
+			get
+			{
+				return address;
+			}
+			set	
+			{
+				address = value;
+				DictionaryUtil.Add(QueryParameters, "Address", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public string NetworkType
 		{
 			get
@@ -119,6 +156,32 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				networkType = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ServerId
+		{
+			get
+			{
+				return serverId;
+			}
+			set	
+			{
+				serverId = value;
+				DictionaryUtil.Add(QueryParameters, "ServerId", value);
 			}
 		}
 
@@ -148,16 +211,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string AccessKeyId
+		public string Tags
 		{
 			get
 			{
-				return accessKeyId;
+				return tags;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string ServerIntranetAddress
+		{
+			get
+			{
+				return serverIntranetAddress;
+			}
+			set	
+			{
+				serverIntranetAddress = value;
+				DictionaryUtil.Add(QueryParameters, "ServerIntranetAddress", value);
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
@@ -187,6 +276,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string LoadBalancerId
+		{
+			get
+			{
+				return loadBalancerId;
+			}
+			set	
+			{
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+			}
+		}
+
 		public string RegionId
 		{
 			get
@@ -197,6 +299,32 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				regionId = value;
 				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string InternetChargeType
+		{
+			get
+			{
+				return internetChargeType;
+			}
+			set	
+			{
+				internetChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 
@@ -249,149 +377,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				slaveZoneId = value;
 				DictionaryUtil.Add(QueryParameters, "SlaveZoneId", value);
-			}
-		}
-
-		public string Address
-		{
-			get
-			{
-				return address;
-			}
-			set	
-			{
-				address = value;
-				DictionaryUtil.Add(QueryParameters, "Address", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ServerId
-		{
-			get
-			{
-				return serverId;
-			}
-			set	
-			{
-				serverId = value;
-				DictionaryUtil.Add(QueryParameters, "ServerId", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-		public string ServerIntranetAddress
-		{
-			get
-			{
-				return serverIntranetAddress;
-			}
-			set	
-			{
-				serverIntranetAddress = value;
-				DictionaryUtil.Add(QueryParameters, "ServerIntranetAddress", value);
-			}
-		}
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
-			}
-		}
-
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 

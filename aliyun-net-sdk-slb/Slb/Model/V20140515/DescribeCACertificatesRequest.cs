@@ -51,8 +51,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string cACertificateId;
 
-		private string accessKeyId;
-
 		public string Access_key_id
 		{
 			get
@@ -167,19 +165,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				cACertificateId = value;
 				DictionaryUtil.Add(QueryParameters, "CACertificateId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -37,9 +37,17 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private long? resourceOwnerId;
 
+		private string loadBalancerId;
+
 		private string resourceOwnerAccount;
 
+		private string regionId;
+
 		private string ownerAccount;
+
+		private int? pageSize;
+
+		private string action;
 
 		private bool? distinctKey;
 
@@ -47,17 +55,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? pageNumber;
 
-		private string accessKeyId;
-
 		private string tags;
-
-		private string loadBalancerId;
-
-		private string regionId;
-
-		private int? pageSize;
-
-		private string action;
 
 		public string Access_key_id
 		{
@@ -85,6 +83,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string LoadBalancerId
+		{
+			get
+			{
+				return loadBalancerId;
+			}
+			set	
+			{
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -98,6 +109,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -108,6 +132,32 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -150,19 +200,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Tags
 		{
 			get
@@ -173,58 +210,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

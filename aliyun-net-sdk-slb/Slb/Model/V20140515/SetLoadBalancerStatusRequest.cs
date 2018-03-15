@@ -51,8 +51,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string loadBalancerStatus;
 
-		private string accessKeyId;
-
 		private string tags;
 
 		public string Access_key_id
@@ -169,19 +167,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				loadBalancerStatus = value;
 				DictionaryUtil.Add(QueryParameters, "LoadBalancerStatus", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
