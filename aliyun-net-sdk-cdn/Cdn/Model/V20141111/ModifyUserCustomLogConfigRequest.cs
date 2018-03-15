@@ -26,110 +26,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class SetReqAuthConfigRequest : RpcAcsRequest<SetReqAuthConfigResponse>
+    public class ModifyUserCustomLogConfigRequest : RpcAcsRequest<ModifyUserCustomLogConfigResponse>
     {
-        public SetReqAuthConfigRequest()
-            : base("Cdn", "2014-11-11", "SetReqAuthConfig")
+        public ModifyUserCustomLogConfigRequest()
+            : base("Cdn", "2014-11-11", "ModifyUserCustomLogConfig")
         {
         }
 
-		private string key1;
-
-		private string key2;
-
-		private string authRemoteDesc;
-
-		private string securityToken;
-
-		private string domainName;
-
-		private string action;
-
 		private long? ownerId;
 
-		private string timeOut;
+		private string version;
 
 		private string accessKeyId;
 
-		private string authType;
+		private string securityToken;
 
-		public string Key1
-		{
-			get
-			{
-				return key1;
-			}
-			set	
-			{
-				key1 = value;
-				DictionaryUtil.Add(QueryParameters, "Key1", value);
-			}
-		}
+		private string configId;
 
-		public string Key2
-		{
-			get
-			{
-				return key2;
-			}
-			set	
-			{
-				key2 = value;
-				DictionaryUtil.Add(QueryParameters, "Key2", value);
-			}
-		}
+		private string action;
 
-		public string AuthRemoteDesc
-		{
-			get
-			{
-				return authRemoteDesc;
-			}
-			set	
-			{
-				authRemoteDesc = value;
-				DictionaryUtil.Add(QueryParameters, "AuthRemoteDesc", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+		private string tag;
 
 		public long? OwnerId
 		{
@@ -144,16 +60,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string TimeOut
+		public string Version
 		{
 			get
 			{
-				return timeOut;
+				return version;
 			}
 			set	
 			{
-				timeOut = value;
-				DictionaryUtil.Add(QueryParameters, "TimeOut", value);
+				version = value;
+				DictionaryUtil.Add(QueryParameters, "Version", value);
 			}
 		}
 
@@ -170,22 +86,61 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string AuthType
+		public string SecurityToken
 		{
 			get
 			{
-				return authType;
+				return securityToken;
 			}
 			set	
 			{
-				authType = value;
-				DictionaryUtil.Add(QueryParameters, "AuthType", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-        public override SetReqAuthConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string ConfigId
+		{
+			get
+			{
+				return configId;
+			}
+			set	
+			{
+				configId = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Tag
+		{
+			get
+			{
+				return tag;
+			}
+			set	
+			{
+				tag = value;
+				DictionaryUtil.Add(QueryParameters, "Tag", value);
+			}
+		}
+
+        public override ModifyUserCustomLogConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SetReqAuthConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyUserCustomLogConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainSrcBpsDataResponse.HttpResponse = context.HttpResponse;
 			describeDomainSrcBpsDataResponse.RequestId = context.StringValue("DescribeDomainSrcBpsData.RequestId");
 			describeDomainSrcBpsDataResponse.DomainName = context.StringValue("DescribeDomainSrcBpsData.DomainName");
-			describeDomainSrcBpsDataResponse.DataInterval = context.StringValue("DescribeDomainSrcBpsData.DataInterval");
 			describeDomainSrcBpsDataResponse.StartTime = context.StringValue("DescribeDomainSrcBpsData.StartTime");
 			describeDomainSrcBpsDataResponse.EndTime = context.StringValue("DescribeDomainSrcBpsData.EndTime");
+			describeDomainSrcBpsDataResponse.DataInterval = context.StringValue("DescribeDomainSrcBpsData.DataInterval");
 
 			List<DescribeDomainSrcBpsDataResponse.DescribeDomainSrcBpsData_DataModule> describeDomainSrcBpsDataResponse_srcBpsDataPerInterval = new List<DescribeDomainSrcBpsDataResponse.DescribeDomainSrcBpsData_DataModule>();
 			for (int i = 0; i < context.Length("DescribeDomainSrcBpsData.SrcBpsDataPerInterval.Length"); i++) {

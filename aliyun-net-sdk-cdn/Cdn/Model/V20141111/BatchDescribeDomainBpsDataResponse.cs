@@ -101,6 +101,10 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private float? l1Bps;
 
+			private float? l1InnerBps;
+
+			private float? l1OutBps;
+
 			private string domainName;
 
 			public string Timestamp
@@ -124,6 +128,30 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					l1Bps = value;
+				}
+			}
+
+			public float? L1InnerBps
+			{
+				get
+				{
+					return l1InnerBps;
+				}
+				set	
+				{
+					l1InnerBps = value;
+				}
+			}
+
+			public float? L1OutBps
+			{
+				get
+				{
+					return l1OutBps;
+				}
+				set	
+				{
+					l1OutBps = value;
 				}
 			}
 

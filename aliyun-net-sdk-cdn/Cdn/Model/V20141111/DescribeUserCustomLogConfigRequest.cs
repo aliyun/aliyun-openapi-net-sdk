@@ -26,63 +26,33 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class BatchDescribeDomainBpsDataRequest : RpcAcsRequest<BatchDescribeDomainBpsDataResponse>
+    public class DescribeUserCustomLogConfigRequest : RpcAcsRequest<DescribeUserCustomLogConfigResponse>
     {
-        public BatchDescribeDomainBpsDataRequest()
-            : base("Cdn", "2014-11-11", "BatchDescribeDomainBpsData")
+        public DescribeUserCustomLogConfigRequest()
+            : base("Cdn", "2014-11-11", "DescribeUserCustomLogConfig")
         {
         }
 
-		private string startTime;
-
-		private int? pageNumber;
-
-		private int? pageSize;
+		private string securityToken;
 
 		private string action;
 
-		private string domainName;
-
-		private string endTime;
-
 		private long? ownerId;
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+		private string version;
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
+		private string accessKeyId;
 
-		public int? PageSize
+		public string SecurityToken
 		{
 			get
 			{
-				return pageSize;
+				return securityToken;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -99,32 +69,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -138,9 +82,35 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override BatchDescribeDomainBpsDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Version
+		{
+			get
+			{
+				return version;
+			}
+			set	
+			{
+				version = value;
+				DictionaryUtil.Add(QueryParameters, "Version", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override DescribeUserCustomLogConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return BatchDescribeDomainBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeUserCustomLogConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

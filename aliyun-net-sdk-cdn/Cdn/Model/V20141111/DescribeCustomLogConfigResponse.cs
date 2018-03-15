@@ -21,20 +21,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainSrcBpsDataResponse : AcsResponse
+	public class DescribeCustomLogConfigResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string domainName;
+		private string remark;
 
-		private string startTime;
+		private string sample;
 
-		private string endTime;
-
-		private string dataInterval;
-
-		private List<DescribeDomainSrcBpsData_DataModule> srcBpsDataPerInterval;
+		private string tag;
 
 		public string RequestId
 		{
@@ -48,95 +44,39 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string DomainName
+		public string Remark
 		{
 			get
 			{
-				return domainName;
+				return remark;
 			}
 			set	
 			{
-				domainName = value;
+				remark = value;
 			}
 		}
 
-		public string StartTime
+		public string Sample
 		{
 			get
 			{
-				return startTime;
+				return sample;
 			}
 			set	
 			{
-				startTime = value;
+				sample = value;
 			}
 		}
 
-		public string EndTime
+		public string Tag
 		{
 			get
 			{
-				return endTime;
+				return tag;
 			}
 			set	
 			{
-				endTime = value;
-			}
-		}
-
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
-
-		public List<DescribeDomainSrcBpsData_DataModule> SrcBpsDataPerInterval
-		{
-			get
-			{
-				return srcBpsDataPerInterval;
-			}
-			set	
-			{
-				srcBpsDataPerInterval = value;
-			}
-		}
-
-		public class DescribeDomainSrcBpsData_DataModule
-		{
-
-			private string timeStamp;
-
-			private string _value;
-
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
-
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
+				tag = value;
 			}
 		}
 	}

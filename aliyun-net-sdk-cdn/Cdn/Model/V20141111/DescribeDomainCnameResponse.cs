@@ -21,20 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainSrcBpsDataResponse : AcsResponse
+	public class DescribeDomainCnameResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string domainName;
-
-		private string startTime;
-
-		private string endTime;
-
-		private string dataInterval;
-
-		private List<DescribeDomainSrcBpsData_DataModule> srcBpsDataPerInterval;
+		private List<DescribeDomainCname_Data> cnameDatas;
 
 		public string RequestId
 		{
@@ -48,94 +40,60 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string DomainName
+		public List<DescribeDomainCname_Data> CnameDatas
 		{
 			get
 			{
-				return domainName;
+				return cnameDatas;
 			}
 			set	
 			{
-				domainName = value;
+				cnameDatas = value;
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
-
-		public List<DescribeDomainSrcBpsData_DataModule> SrcBpsDataPerInterval
-		{
-			get
-			{
-				return srcBpsDataPerInterval;
-			}
-			set	
-			{
-				srcBpsDataPerInterval = value;
-			}
-		}
-
-		public class DescribeDomainSrcBpsData_DataModule
+		public class DescribeDomainCname_Data
 		{
 
-			private string timeStamp;
+			private string domain;
 
-			private string _value;
+			private string cname;
 
-			public string TimeStamp
+			private int? status;
+
+			public string Domain
 			{
 				get
 				{
-					return timeStamp;
+					return domain;
 				}
 				set	
 				{
-					timeStamp = value;
+					domain = value;
 				}
 			}
 
-			public string _Value
+			public string Cname
 			{
 				get
 				{
-					return _value;
+					return cname;
 				}
 				set	
 				{
-					_value = value;
+					cname = value;
+				}
+			}
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

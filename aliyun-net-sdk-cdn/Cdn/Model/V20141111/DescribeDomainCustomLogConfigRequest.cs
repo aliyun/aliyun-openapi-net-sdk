@@ -26,54 +26,24 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class SetReqHeaderConfigRequest : RpcAcsRequest<SetReqHeaderConfigResponse>
+    public class DescribeDomainCustomLogConfigRequest : RpcAcsRequest<DescribeDomainCustomLogConfigResponse>
     {
-        public SetReqHeaderConfigRequest()
-            : base("Cdn", "2014-11-11", "SetReqHeaderConfig")
+        public DescribeDomainCustomLogConfigRequest()
+            : base("Cdn", "2014-11-11", "DescribeDomainCustomLogConfig")
         {
         }
 
-		private string securityToken;
-
-		private long? configId;
-
 		private string domainName;
-
-		private string action;
 
 		private long? ownerId;
 
-		private string _value;
-
-		private string key;
+		private string version;
 
 		private string accessKeyId;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string securityToken;
 
-		public long? ConfigId
-		{
-			get
-			{
-				return configId;
-			}
-			set	
-			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
-			}
-		}
+		private string action;
 
 		public string DomainName
 		{
@@ -85,19 +55,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -114,29 +71,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string _Value
+		public string Version
 		{
 			get
 			{
-				return _value;
+				return version;
 			}
 			set	
 			{
-				_value = value;
-				DictionaryUtil.Add(QueryParameters, "Value", value);
-			}
-		}
-
-		public string Key
-		{
-			get
-			{
-				return key;
-			}
-			set	
-			{
-				key = value;
-				DictionaryUtil.Add(QueryParameters, "Key", value);
+				version = value;
+				DictionaryUtil.Add(QueryParameters, "Version", value);
 			}
 		}
 
@@ -153,9 +97,35 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override SetReqHeaderConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+        public override DescribeDomainCustomLogConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SetReqHeaderConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainCustomLogConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

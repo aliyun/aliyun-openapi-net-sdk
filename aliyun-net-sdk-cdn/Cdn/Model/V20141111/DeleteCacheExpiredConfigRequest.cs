@@ -26,63 +26,63 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DescribeDomainSrcFlowDataRequest : RpcAcsRequest<DescribeDomainSrcFlowDataResponse>
+    public class DeleteCacheExpiredConfigRequest : RpcAcsRequest<DeleteCacheExpiredConfigResponse>
     {
-        public DescribeDomainSrcFlowDataRequest()
-            : base("Cdn", "2014-11-11", "DescribeDomainSrcFlowData")
+        public DeleteCacheExpiredConfigRequest()
+            : base("Cdn", "2014-11-11", "DeleteCacheExpiredConfig")
         {
         }
 
-		private string startTime;
+		private string cacheType;
 
-		private string fixTimeGap;
+		private string securityToken;
 
-		private string timeMerge;
+		private string configID;
 
 		private string domainName;
 
-		private string endTime;
+		private string action;
 
 		private long? ownerId;
 
-		private string interval;
+		private string accessKeyId;
 
-		public string StartTime
+		public string CacheType
 		{
 			get
 			{
-				return startTime;
+				return cacheType;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				cacheType = value;
+				DictionaryUtil.Add(QueryParameters, "CacheType", value);
 			}
 		}
 
-		public string FixTimeGap
+		public string SecurityToken
 		{
 			get
 			{
-				return fixTimeGap;
+				return securityToken;
 			}
 			set	
 			{
-				fixTimeGap = value;
-				DictionaryUtil.Add(QueryParameters, "FixTimeGap", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public string TimeMerge
+		public string ConfigID
 		{
 			get
 			{
-				return timeMerge;
+				return configID;
 			}
 			set	
 			{
-				timeMerge = value;
-				DictionaryUtil.Add(QueryParameters, "TimeMerge", value);
+				configID = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigID", value);
 			}
 		}
 
@@ -99,16 +99,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string EndTime
+		public string Action
 		{
 			get
 			{
-				return endTime;
+				return action;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -125,22 +125,22 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Interval
+		public string AccessKeyId
 		{
 			get
 			{
-				return interval;
+				return accessKeyId;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
-        public override DescribeDomainSrcFlowDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteCacheExpiredConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainSrcFlowDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteCacheExpiredConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

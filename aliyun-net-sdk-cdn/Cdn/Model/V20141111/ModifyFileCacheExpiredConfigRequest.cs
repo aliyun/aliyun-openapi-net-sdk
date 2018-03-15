@@ -26,76 +26,54 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class BatchDescribeDomainBpsDataRequest : RpcAcsRequest<BatchDescribeDomainBpsDataResponse>
+    public class ModifyFileCacheExpiredConfigRequest : RpcAcsRequest<ModifyFileCacheExpiredConfigResponse>
     {
-        public BatchDescribeDomainBpsDataRequest()
-            : base("Cdn", "2014-11-11", "BatchDescribeDomainBpsData")
+        public ModifyFileCacheExpiredConfigRequest()
+            : base("Cdn", "2014-11-11", "ModifyFileCacheExpiredConfig")
         {
         }
 
-		private string startTime;
+		private string securityToken;
 
-		private int? pageNumber;
-
-		private int? pageSize;
-
-		private string action;
+		private string configID;
 
 		private string domainName;
 
-		private string endTime;
+		private string action;
+
+		private string weight;
+
+		private string cacheContent;
 
 		private long? ownerId;
 
-		public string StartTime
+		private string tTL;
+
+		private string accessKeyId;
+
+		public string SecurityToken
 		{
 			get
 			{
-				return startTime;
+				return securityToken;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public int? PageNumber
+		public string ConfigID
 		{
 			get
 			{
-				return pageNumber;
+				return configID;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				configID = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigID", value);
 			}
 		}
 
@@ -112,16 +90,42 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string EndTime
+		public string Action
 		{
 			get
 			{
-				return endTime;
+				return action;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Weight
+		{
+			get
+			{
+				return weight;
+			}
+			set	
+			{
+				weight = value;
+				DictionaryUtil.Add(QueryParameters, "Weight", value);
+			}
+		}
+
+		public string CacheContent
+		{
+			get
+			{
+				return cacheContent;
+			}
+			set	
+			{
+				cacheContent = value;
+				DictionaryUtil.Add(QueryParameters, "CacheContent", value);
 			}
 		}
 
@@ -138,9 +142,35 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override BatchDescribeDomainBpsDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string TTL
+		{
+			get
+			{
+				return tTL;
+			}
+			set	
+			{
+				tTL = value;
+				DictionaryUtil.Add(QueryParameters, "TTL", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override ModifyFileCacheExpiredConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return BatchDescribeDomainBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyFileCacheExpiredConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

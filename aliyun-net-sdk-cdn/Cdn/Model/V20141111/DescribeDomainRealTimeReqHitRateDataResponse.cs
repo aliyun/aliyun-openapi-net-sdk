@@ -21,20 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainSrcBpsDataResponse : AcsResponse
+	public class DescribeDomainRealTimeReqHitRateDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string domainName;
-
-		private string startTime;
-
-		private string endTime;
-
-		private string dataInterval;
-
-		private List<DescribeDomainSrcBpsData_DataModule> srcBpsDataPerInterval;
+		private List<DescribeDomainRealTimeReqHitRateData_ReqHitRateDataModel> data;
 
 		public string RequestId
 		{
@@ -48,72 +40,36 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string DomainName
+		public List<DescribeDomainRealTimeReqHitRateData_ReqHitRateDataModel> Data
 		{
 			get
 			{
-				return domainName;
+				return data;
 			}
 			set	
 			{
-				domainName = value;
+				data = value;
 			}
 		}
 
-		public string StartTime
+		public class DescribeDomainRealTimeReqHitRateData_ReqHitRateDataModel
 		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
-
-		public List<DescribeDomainSrcBpsData_DataModule> SrcBpsDataPerInterval
-		{
-			get
-			{
-				return srcBpsDataPerInterval;
-			}
-			set	
-			{
-				srcBpsDataPerInterval = value;
-			}
-		}
-
-		public class DescribeDomainSrcBpsData_DataModule
-		{
+			private float? reqHitRate;
 
 			private string timeStamp;
 
-			private string _value;
+			public float? ReqHitRate
+			{
+				get
+				{
+					return reqHitRate;
+				}
+				set	
+				{
+					reqHitRate = value;
+				}
+			}
 
 			public string TimeStamp
 			{
@@ -124,18 +80,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					timeStamp = value;
-				}
-			}
-
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
 				}
 			}
 		}

@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				BatchDescribeDomainBpsDataResponse.BatchDescribeDomainBpsData_DataModule dataModule = new BatchDescribeDomainBpsDataResponse.BatchDescribeDomainBpsData_DataModule();
 				dataModule.Timestamp = context.StringValue("BatchDescribeDomainBpsData.BpsDatas["+ i +"].Timestamp");
 				dataModule.L1Bps = context.FloatValue("BatchDescribeDomainBpsData.BpsDatas["+ i +"].L1Bps");
+				dataModule.L1InnerBps = context.FloatValue("BatchDescribeDomainBpsData.BpsDatas["+ i +"].L1InnerBps");
+				dataModule.L1OutBps = context.FloatValue("BatchDescribeDomainBpsData.BpsDatas["+ i +"].L1OutBps");
 				dataModule.DomainName = context.StringValue("BatchDescribeDomainBpsData.BpsDatas["+ i +"].DomainName");
 
 				batchDescribeDomainBpsDataResponse_bpsDatas.Add(dataModule);

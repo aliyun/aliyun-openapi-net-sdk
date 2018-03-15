@@ -33,25 +33,32 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string fixTimeGap;
+		private string startTime;
 
-		private string securityToken;
+		private string fixTimeGap;
 
 		private string timeMerge;
 
 		private string domainName;
 
-		private string action;
-
 		private string endTime;
-
-		private string interval;
-
-		private string startTime;
 
 		private long? ownerId;
 
-		private string accessKeyId;
+		private string interval;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
 
 		public string FixTimeGap
 		{
@@ -63,19 +70,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				fixTimeGap = value;
 				DictionaryUtil.Add(QueryParameters, "FixTimeGap", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -105,19 +99,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string EndTime
 		{
 			get
@@ -128,32 +109,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -170,16 +125,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string AccessKeyId
+		public string Interval
 		{
 			get
 			{
-				return accessKeyId;
+				return interval;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

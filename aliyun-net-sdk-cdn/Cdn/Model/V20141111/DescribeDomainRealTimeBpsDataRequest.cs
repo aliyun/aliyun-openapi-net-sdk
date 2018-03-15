@@ -26,18 +26,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DescribeDomainSrcFlowDataRequest : RpcAcsRequest<DescribeDomainSrcFlowDataResponse>
+    public class DescribeDomainRealTimeBpsDataRequest : RpcAcsRequest<DescribeDomainRealTimeBpsDataResponse>
     {
-        public DescribeDomainSrcFlowDataRequest()
-            : base("Cdn", "2014-11-11", "DescribeDomainSrcFlowData")
+        public DescribeDomainRealTimeBpsDataRequest()
+            : base("Cdn", "2014-11-11", "DescribeDomainRealTimeBpsData")
         {
         }
 
+		private string locationNameEn;
+
+		private string ispNameEn;
+
 		private string startTime;
 
-		private string fixTimeGap;
-
-		private string timeMerge;
+		private string action;
 
 		private string domainName;
 
@@ -45,7 +47,31 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private long? ownerId;
 
-		private string interval;
+		public string LocationNameEn
+		{
+			get
+			{
+				return locationNameEn;
+			}
+			set	
+			{
+				locationNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
+			}
+		}
+
+		public string IspNameEn
+		{
+			get
+			{
+				return ispNameEn;
+			}
+			set	
+			{
+				ispNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
+			}
+		}
 
 		public string StartTime
 		{
@@ -60,29 +86,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string FixTimeGap
+		public string Action
 		{
 			get
 			{
-				return fixTimeGap;
+				return action;
 			}
 			set	
 			{
-				fixTimeGap = value;
-				DictionaryUtil.Add(QueryParameters, "FixTimeGap", value);
-			}
-		}
-
-		public string TimeMerge
-		{
-			get
-			{
-				return timeMerge;
-			}
-			set	
-			{
-				timeMerge = value;
-				DictionaryUtil.Add(QueryParameters, "TimeMerge", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -125,22 +138,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
-			}
-		}
-
-        public override DescribeDomainSrcFlowDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainRealTimeBpsDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainSrcFlowDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainRealTimeBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

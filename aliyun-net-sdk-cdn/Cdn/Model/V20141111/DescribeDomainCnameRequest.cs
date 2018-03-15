@@ -26,65 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DescribeDomainSrcFlowDataRequest : RpcAcsRequest<DescribeDomainSrcFlowDataResponse>
+    public class DescribeDomainCnameRequest : RpcAcsRequest<DescribeDomainCnameResponse>
     {
-        public DescribeDomainSrcFlowDataRequest()
-            : base("Cdn", "2014-11-11", "DescribeDomainSrcFlowData")
+        public DescribeDomainCnameRequest()
+            : base("Cdn", "2014-11-11", "DescribeDomainCname")
         {
         }
 
-		private string startTime;
-
-		private string fixTimeGap;
-
-		private string timeMerge;
-
 		private string domainName;
-
-		private string endTime;
 
 		private long? ownerId;
 
-		private string interval;
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string FixTimeGap
-		{
-			get
-			{
-				return fixTimeGap;
-			}
-			set	
-			{
-				fixTimeGap = value;
-				DictionaryUtil.Add(QueryParameters, "FixTimeGap", value);
-			}
-		}
-
-		public string TimeMerge
-		{
-			get
-			{
-				return timeMerge;
-			}
-			set	
-			{
-				timeMerge = value;
-				DictionaryUtil.Add(QueryParameters, "TimeMerge", value);
-			}
-		}
+		private string action;
 
 		public string DomainName
 		{
@@ -96,19 +49,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -125,22 +65,22 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Interval
+		public string Action
 		{
 			get
 			{
-				return interval;
+				return action;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-        public override DescribeDomainSrcFlowDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainCnameResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainSrcFlowDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainCnameResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
