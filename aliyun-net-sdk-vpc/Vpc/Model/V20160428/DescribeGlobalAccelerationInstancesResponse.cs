@@ -111,6 +111,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string chargeType;
 
+			private string bandwidthType;
+
 			private string accelerationLocation;
 
 			private string serviceLocation;
@@ -126,6 +128,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private List<DescribeGlobalAccelerationInstances_LockReason> operationLocks;
 
 			private List<DescribeGlobalAccelerationInstances_BackendServer> backendServers;
+
+			private List<DescribeGlobalAccelerationInstances_PublicIpAddress> publicIpAddresses;
 
 			public string RegionId
 			{
@@ -208,6 +212,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					chargeType = value;
+				}
+			}
+
+			public string BandwidthType
+			{
+				get
+				{
+					return bandwidthType;
+				}
+				set	
+				{
+					bandwidthType = value;
 				}
 			}
 
@@ -307,6 +323,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public List<DescribeGlobalAccelerationInstances_PublicIpAddress> PublicIpAddresses
+			{
+				get
+				{
+					return publicIpAddresses;
+				}
+				set	
+				{
+					publicIpAddresses = value;
+				}
+			}
+
 			public class DescribeGlobalAccelerationInstances_LockReason
 			{
 
@@ -381,6 +409,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						serverType = value;
+					}
+				}
+			}
+
+			public class DescribeGlobalAccelerationInstances_PublicIpAddress
+			{
+
+				private string allocationId;
+
+				private string ipAddress;
+
+				public string AllocationId
+				{
+					get
+					{
+						return allocationId;
+					}
+					set	
+					{
+						allocationId = value;
+					}
+				}
+
+				public string IpAddress
+				{
+					get
+					{
+						return ipAddress;
+					}
+					set	
+					{
+						ipAddress = value;
 					}
 				}
 			}

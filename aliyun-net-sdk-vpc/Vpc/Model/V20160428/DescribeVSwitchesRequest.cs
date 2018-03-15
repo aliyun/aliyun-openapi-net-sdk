@@ -49,7 +49,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string vpcId;
 
-		private string name;
+		private string vSwitchName;
 
 		private int? pageSize;
 
@@ -163,16 +163,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Name
+		public string VSwitchName
 		{
 			get
 			{
-				return name;
+				return vSwitchName;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				vSwitchName = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchName", value);
 			}
 		}
 

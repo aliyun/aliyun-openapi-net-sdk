@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
+		private string bandwidthType;
+
 		private string resourceOwnerAccount;
 
 		private string serviceLocation;
@@ -84,6 +86,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string BandwidthType
+		{
+			get
+			{
+				return bandwidthType;
+			}
+			set	
+			{
+				bandwidthType = value;
+				DictionaryUtil.Add(QueryParameters, "BandwidthType", value);
 			}
 		}
 

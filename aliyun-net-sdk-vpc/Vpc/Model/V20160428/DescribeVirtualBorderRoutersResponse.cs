@@ -139,6 +139,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private List<DescribeVirtualBorderRouters_AssociatedPhysicalConnection> associatedPhysicalConnections;
 
+			private List<DescribeVirtualBorderRouters_AssociatedCen> associatedCens;
+
 			public string VbrId
 			{
 				get
@@ -391,6 +393,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public List<DescribeVirtualBorderRouters_AssociatedCen> AssociatedCens
+			{
+				get
+				{
+					return associatedCens;
+				}
+				set	
+				{
+					associatedCens = value;
+				}
+			}
+
 			public class DescribeVirtualBorderRouters_AssociatedPhysicalConnection
 			{
 
@@ -531,6 +545,52 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						vlanId = value;
+					}
+				}
+			}
+
+			public class DescribeVirtualBorderRouters_AssociatedCen
+			{
+
+				private string cenId;
+
+				private long? cenOwnerId;
+
+				private string cenStatus;
+
+				public string CenId
+				{
+					get
+					{
+						return cenId;
+					}
+					set	
+					{
+						cenId = value;
+					}
+				}
+
+				public long? CenOwnerId
+				{
+					get
+					{
+						return cenOwnerId;
+					}
+					set	
+					{
+						cenOwnerId = value;
+					}
+				}
+
+				public string CenStatus
+				{
+					get
+					{
+						return cenStatus;
+					}
+					set	
+					{
+						cenStatus = value;
 					}
 				}
 			}

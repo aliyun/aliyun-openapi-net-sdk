@@ -47,8 +47,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string description;
 
-		private string userCidr;
-
 		private long? ownerId;
 
 		public string VpcName
@@ -139,19 +137,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string UserCidr
-		{
-			get
-			{
-				return userCidr;
-			}
-			set	
-			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
 			}
 		}
 

@@ -46,6 +46,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private bool? classicLinkEnabled;
 
+		private string resourceGroupId;
+
+		private List<DescribeVpcAttribute_AssociatedCen> associatedCens;
+
 		private List<DescribeVpcAttribute_CloudResourceSetType> cloudResources;
 
 		private List<string> vSwitchIds;
@@ -184,6 +188,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+			}
+		}
+
+		public List<DescribeVpcAttribute_AssociatedCen> AssociatedCens
+		{
+			get
+			{
+				return associatedCens;
+			}
+			set	
+			{
+				associatedCens = value;
+			}
+		}
+
 		public List<DescribeVpcAttribute_CloudResourceSetType> CloudResources
 		{
 			get
@@ -217,6 +245,52 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				userCidrs = value;
+			}
+		}
+
+		public class DescribeVpcAttribute_AssociatedCen
+		{
+
+			private string cenId;
+
+			private long? cenOwnerId;
+
+			private string cenStatus;
+
+			public string CenId
+			{
+				get
+				{
+					return cenId;
+				}
+				set	
+				{
+					cenId = value;
+				}
+			}
+
+			public long? CenOwnerId
+			{
+				get
+				{
+					return cenOwnerId;
+				}
+				set	
+				{
+					cenOwnerId = value;
+				}
+			}
+
+			public string CenStatus
+			{
+				get
+				{
+					return cenStatus;
+				}
+				set	
+				{
+					cenStatus = value;
+				}
 			}
 		}
 

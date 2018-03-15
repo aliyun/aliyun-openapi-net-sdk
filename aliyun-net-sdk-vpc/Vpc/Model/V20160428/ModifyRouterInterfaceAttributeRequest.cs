@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string resourceOwnerAccount;
 
+		private bool? deleteHealthCheckIp;
+
 		private string description;
 
 		private string healthCheckTargetIp;
@@ -97,6 +99,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public bool? DeleteHealthCheckIp
+		{
+			get
+			{
+				return deleteHealthCheckIp;
+			}
+			set	
+			{
+				deleteHealthCheckIp = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteHealthCheckIp", value.ToString());
 			}
 		}
 

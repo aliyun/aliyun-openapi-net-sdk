@@ -182,6 +182,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 				private string nextHopType;
 
+				private string nextHopRegionId;
+
 				private List<DescribeRouteTables_NextHop> nextHops;
 
 				public string RouteTableId
@@ -256,6 +258,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
+				public string NextHopRegionId
+				{
+					get
+					{
+						return nextHopRegionId;
+					}
+					set	
+					{
+						nextHopRegionId = value;
+					}
+				}
+
 				public List<DescribeRouteTables_NextHop> NextHops
 				{
 					get
@@ -278,6 +292,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					private int? enabled;
 
 					private int? weight;
+
+					private string nextHopRegionId;
 
 					public string NextHopType
 					{
@@ -324,6 +340,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 						set	
 						{
 							weight = value;
+						}
+					}
+
+					public string NextHopRegionId
+					{
+						get
+						{
+							return nextHopRegionId;
+						}
+						set	
+						{
+							nextHopRegionId = value;
 						}
 					}
 				}

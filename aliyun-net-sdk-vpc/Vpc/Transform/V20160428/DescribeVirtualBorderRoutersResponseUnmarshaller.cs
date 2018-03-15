@@ -77,6 +77,17 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				}
 				virtualBorderRouterType.AssociatedPhysicalConnections = virtualBorderRouterType_associatedPhysicalConnections;
 
+				List<DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType.DescribeVirtualBorderRouters_AssociatedCen> virtualBorderRouterType_associatedCens = new List<DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType.DescribeVirtualBorderRouters_AssociatedCen>();
+				for (int j = 0; j < context.Length("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedCens.Length"); j++) {
+					DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType.DescribeVirtualBorderRouters_AssociatedCen associatedCen = new DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType.DescribeVirtualBorderRouters_AssociatedCen();
+					associatedCen.CenId = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedCens["+ j +"].CenId");
+					associatedCen.CenOwnerId = context.LongValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedCens["+ j +"].CenOwnerId");
+					associatedCen.CenStatus = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedCens["+ j +"].CenStatus");
+
+					virtualBorderRouterType_associatedCens.Add(associatedCen);
+				}
+				virtualBorderRouterType.AssociatedCens = virtualBorderRouterType_associatedCens;
+
 				describeVirtualBorderRoutersResponse_virtualBorderRouterSet.Add(virtualBorderRouterType);
 			}
 			describeVirtualBorderRoutersResponse.VirtualBorderRouterSet = describeVirtualBorderRoutersResponse_virtualBorderRouterSet;

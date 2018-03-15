@@ -71,8 +71,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string deviceName;
 
-		private string userCidr;
-
 		public string AccessPointId
 		{
 			get
@@ -317,19 +315,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				deviceName = value;
 				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-		public string UserCidr
-		{
-			get
-			{
-				return userCidr;
-			}
-			set	
-			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
 			}
 		}
 

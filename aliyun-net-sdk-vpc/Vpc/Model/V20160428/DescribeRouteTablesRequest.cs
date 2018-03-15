@@ -33,21 +33,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
-		private string routerType;
-
 		private long? resourceOwnerId;
 
 		private string vRouterId;
 
 		private string resourceOwnerAccount;
 
-		private string routerId;
-
 		private string ownerAccount;
-
-		private int? pageSize;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -55,20 +47,17 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private int? pageNumber;
 
-		private string routeTableId;
+		private string routerType;
 
-		public string RouterType
-		{
-			get
-			{
-				return routerType;
-			}
-			set	
-			{
-				routerType = value;
-				DictionaryUtil.Add(QueryParameters, "RouterType", value);
-			}
-		}
+		private string routeTableName;
+
+		private string routerId;
+
+		private int? pageSize;
+
+		private string action;
+
+		private string routeTableId;
 
 		public long? ResourceOwnerId
 		{
@@ -109,19 +98,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RouterId
-		{
-			get
-			{
-				return routerId;
-			}
-			set	
-			{
-				routerId = value;
-				DictionaryUtil.Add(QueryParameters, "RouterId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -132,32 +108,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -197,6 +147,71 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string RouterType
+		{
+			get
+			{
+				return routerType;
+			}
+			set	
+			{
+				routerType = value;
+				DictionaryUtil.Add(QueryParameters, "RouterType", value);
+			}
+		}
+
+		public string RouteTableName
+		{
+			get
+			{
+				return routeTableName;
+			}
+			set	
+			{
+				routeTableName = value;
+				DictionaryUtil.Add(QueryParameters, "RouteTableName", value);
+			}
+		}
+
+		public string RouterId
+		{
+			get
+			{
+				return routerId;
+			}
+			set	
+			{
+				routerId = value;
+				DictionaryUtil.Add(QueryParameters, "RouterId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

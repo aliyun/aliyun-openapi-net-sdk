@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string routeTableId;
 
+		private string resourceGroupId;
+
 		public string RequestId
 		{
 			get
@@ -77,6 +79,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				routeTableId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 	}

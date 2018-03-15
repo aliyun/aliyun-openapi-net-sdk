@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 					routeEntry.Status = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].Status");
 					routeEntry.InstanceId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].InstanceId");
 					routeEntry.NextHopType = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopType");
+					routeEntry.NextHopRegionId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopRegionId");
 
 					List<DescribeRouteTablesResponse.DescribeRouteTables_RouteTable.DescribeRouteTables_RouteEntry.DescribeRouteTables_NextHop> routeEntry_nextHops = new List<DescribeRouteTablesResponse.DescribeRouteTables_RouteTable.DescribeRouteTables_RouteEntry.DescribeRouteTables_NextHop>();
 					for (int k = 0; k < context.Length("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops.Length"); k++) {
@@ -60,6 +61,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 						nextHop.NextHopId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].NextHopId");
 						nextHop.Enabled = context.IntegerValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].Enabled");
 						nextHop.Weight = context.IntegerValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].Weight");
+						nextHop.NextHopRegionId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHops["+ k +"].NextHopRegionId");
 
 						routeEntry_nextHops.Add(nextHop);
 					}

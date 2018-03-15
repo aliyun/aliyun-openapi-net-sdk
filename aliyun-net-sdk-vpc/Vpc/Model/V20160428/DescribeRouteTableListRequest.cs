@@ -37,8 +37,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string resourceOwnerAccount;
 
-		private string bandwidth;
-
 		private string ownerAccount;
 
 		private long? ownerId;
@@ -46,8 +44,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private int? pageNumber;
 
 		private string routerType;
-
-		private string kbpsBandwidth;
 
 		private string routeTableName;
 
@@ -57,13 +53,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string vpcId;
 
-		private long? resourceUid;
-
 		private int? pageSize;
 
 		private string action;
-
-		private string resourceBid;
 
 		private string routeTableId;
 
@@ -90,19 +82,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "Bandwidth", value);
 			}
 		}
 
@@ -158,19 +137,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string KbpsBandwidth
-		{
-			get
-			{
-				return kbpsBandwidth;
-			}
-			set	
-			{
-				kbpsBandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "KbpsBandwidth", value);
-			}
-		}
-
 		public string RouteTableName
 		{
 			get
@@ -223,19 +189,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public long? ResourceUid
-		{
-			get
-			{
-				return resourceUid;
-			}
-			set	
-			{
-				resourceUid = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceUid", value.ToString());
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -259,19 +212,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ResourceBid
-		{
-			get
-			{
-				return resourceBid;
-			}
-			set	
-			{
-				resourceBid = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceBid", value);
 			}
 		}
 

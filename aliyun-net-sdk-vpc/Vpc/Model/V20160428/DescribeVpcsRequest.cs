@@ -33,6 +33,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
+		private string vpcName;
+
+		private string resourceGroupId;
+
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
@@ -43,8 +47,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ownerAccount;
 
-		private string name;
-
 		private int? pageSize;
 
 		private string action;
@@ -54,6 +56,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private long? ownerId;
 
 		private int? pageNumber;
+
+		public string VpcName
+		{
+			get
+			{
+				return vpcName;
+			}
+			set	
+			{
+				vpcName = value;
+				DictionaryUtil.Add(QueryParameters, "VpcName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -117,19 +145,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

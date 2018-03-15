@@ -109,11 +109,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string bandwidth;
 
+			private string eipBandwidth;
+
 			private string internetChargeType;
 
 			private string allocationTime;
 
 			private string instanceType;
+
+			private string instanceRegionId;
 
 			private string chargeType;
 
@@ -125,7 +129,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string bandwidthPackageId;
 
+			private string bandwidthPackageType;
+
+			private string resourceGroupId;
+
 			private List<DescribeEipAddresses_LockReason> operationLocks;
+
+			private List<string> availableRegions;
 
 			public string RegionId
 			{
@@ -199,6 +209,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string EipBandwidth
+			{
+				get
+				{
+					return eipBandwidth;
+				}
+				set	
+				{
+					eipBandwidth = value;
+				}
+			}
+
 			public string InternetChargeType
 			{
 				get
@@ -232,6 +254,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					instanceType = value;
+				}
+			}
+
+			public string InstanceRegionId
+			{
+				get
+				{
+					return instanceRegionId;
+				}
+				set	
+				{
+					instanceRegionId = value;
 				}
 			}
 
@@ -295,6 +329,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string BandwidthPackageType
+			{
+				get
+				{
+					return bandwidthPackageType;
+				}
+				set	
+				{
+					bandwidthPackageType = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			public List<DescribeEipAddresses_LockReason> OperationLocks
 			{
 				get
@@ -304,6 +362,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					operationLocks = value;
+				}
+			}
+
+			public List<string> AvailableRegions
+			{
+				get
+				{
+					return availableRegions;
+				}
+				set	
+				{
+					availableRegions = value;
 				}
 			}
 

@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				globalAccelerationInstance.Bandwidth = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].Bandwidth");
 				globalAccelerationInstance.InternetChargeType = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].InternetChargeType");
 				globalAccelerationInstance.ChargeType = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].ChargeType");
+				globalAccelerationInstance.BandwidthType = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].BandwidthType");
 				globalAccelerationInstance.AccelerationLocation = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].AccelerationLocation");
 				globalAccelerationInstance.ServiceLocation = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].ServiceLocation");
 				globalAccelerationInstance.Name = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].Name");
@@ -72,6 +73,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 					globalAccelerationInstance_backendServers.Add(backendServer);
 				}
 				globalAccelerationInstance.BackendServers = globalAccelerationInstance_backendServers;
+
+				List<DescribeGlobalAccelerationInstancesResponse.DescribeGlobalAccelerationInstances_GlobalAccelerationInstance.DescribeGlobalAccelerationInstances_PublicIpAddress> globalAccelerationInstance_publicIpAddresses = new List<DescribeGlobalAccelerationInstancesResponse.DescribeGlobalAccelerationInstances_GlobalAccelerationInstance.DescribeGlobalAccelerationInstances_PublicIpAddress>();
+				for (int j = 0; j < context.Length("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].PublicIpAddresses.Length"); j++) {
+					DescribeGlobalAccelerationInstancesResponse.DescribeGlobalAccelerationInstances_GlobalAccelerationInstance.DescribeGlobalAccelerationInstances_PublicIpAddress publicIpAddress = new DescribeGlobalAccelerationInstancesResponse.DescribeGlobalAccelerationInstances_GlobalAccelerationInstance.DescribeGlobalAccelerationInstances_PublicIpAddress();
+					publicIpAddress.AllocationId = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].PublicIpAddresses["+ j +"].AllocationId");
+					publicIpAddress.IpAddress = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].PublicIpAddresses["+ j +"].IpAddress");
+
+					globalAccelerationInstance_publicIpAddresses.Add(publicIpAddress);
+				}
+				globalAccelerationInstance.PublicIpAddresses = globalAccelerationInstance_publicIpAddresses;
 
 				describeGlobalAccelerationInstancesResponse_globalAccelerationInstances.Add(globalAccelerationInstance);
 			}

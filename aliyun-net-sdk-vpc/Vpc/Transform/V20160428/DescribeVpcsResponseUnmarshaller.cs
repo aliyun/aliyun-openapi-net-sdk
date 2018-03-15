@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vpc.VRouterId = context.StringValue("DescribeVpcs.Vpcs["+ i +"].VRouterId");
 				vpc.Description = context.StringValue("DescribeVpcs.Vpcs["+ i +"].Description");
 				vpc.IsDefault = context.BooleanValue("DescribeVpcs.Vpcs["+ i +"].IsDefault");
+				vpc.ResourceGroupId = context.StringValue("DescribeVpcs.Vpcs["+ i +"].ResourceGroupId");
 
 				List<string> vpc_vSwitchIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeVpcs.Vpcs["+ i +"].VSwitchIds.Length"); j++) {

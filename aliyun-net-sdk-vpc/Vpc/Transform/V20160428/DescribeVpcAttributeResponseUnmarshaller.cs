@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describeVpcAttributeResponse.Description = context.StringValue("DescribeVpcAttribute.Description");
 			describeVpcAttributeResponse.IsDefault = context.BooleanValue("DescribeVpcAttribute.IsDefault");
 			describeVpcAttributeResponse.ClassicLinkEnabled = context.BooleanValue("DescribeVpcAttribute.ClassicLinkEnabled");
+			describeVpcAttributeResponse.ResourceGroupId = context.StringValue("DescribeVpcAttribute.ResourceGroupId");
 
 			List<string> describeVpcAttributeResponse_vSwitchIds = new List<string>();
 			for (int i = 0; i < context.Length("DescribeVpcAttribute.VSwitchIds.Length"); i++) {
@@ -53,6 +54,17 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				describeVpcAttributeResponse_userCidrs.Add(context.StringValue("DescribeVpcAttribute.UserCidrs["+ i +"]"));
 			}
 			describeVpcAttributeResponse.UserCidrs = describeVpcAttributeResponse_userCidrs;
+
+			List<DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen> describeVpcAttributeResponse_associatedCens = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen>();
+			for (int i = 0; i < context.Length("DescribeVpcAttribute.AssociatedCens.Length"); i++) {
+				DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen associatedCen = new DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen();
+				associatedCen.CenId = context.StringValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenId");
+				associatedCen.CenOwnerId = context.LongValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenOwnerId");
+				associatedCen.CenStatus = context.StringValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenStatus");
+
+				describeVpcAttributeResponse_associatedCens.Add(associatedCen);
+			}
+			describeVpcAttributeResponse.AssociatedCens = describeVpcAttributeResponse_associatedCens;
 
 			List<DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType> describeVpcAttributeResponse_cloudResources = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType>();
 			for (int i = 0; i < context.Length("DescribeVpcAttribute.CloudResources.Length"); i++) {

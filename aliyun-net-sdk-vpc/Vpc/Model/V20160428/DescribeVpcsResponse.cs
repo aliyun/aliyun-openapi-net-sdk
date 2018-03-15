@@ -115,6 +115,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private bool? isDefault;
 
+			private string resourceGroupId;
+
 			private List<string> vSwitchIds;
 
 			private List<string> userCidrs;
@@ -228,6 +230,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					isDefault = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

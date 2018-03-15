@@ -49,8 +49,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string action;
 
-		private string userCidr;
-
 		private long? ownerId;
 
 		private int? pageNumber;
@@ -164,19 +162,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string UserCidr
-		{
-			get
-			{
-				return userCidr;
-			}
-			set	
-			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
 			}
 		}
 

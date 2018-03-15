@@ -121,6 +121,12 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string chargeType;
 
+			private string ipsecVpn;
+
+			private string sslVpn;
+
+			private long? sslMaxConnections;
+
 			public string VpnGatewayId
 			{
 				get
@@ -262,6 +268,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					chargeType = value;
+				}
+			}
+
+			public string IpsecVpn
+			{
+				get
+				{
+					return ipsecVpn;
+				}
+				set	
+				{
+					ipsecVpn = value;
+				}
+			}
+
+			public string SslVpn
+			{
+				get
+				{
+					return sslVpn;
+				}
+				set	
+				{
+					sslVpn = value;
+				}
+			}
+
+			public long? SslMaxConnections
+			{
+				get
+				{
+					return sslMaxConnections;
+				}
+				set	
+				{
+					sslMaxConnections = value;
 				}
 			}
 		}

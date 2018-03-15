@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string vpcName;
 
+		private string resourceGroupId;
+
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
@@ -65,6 +67,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				vpcName = value;
 				DictionaryUtil.Add(QueryParameters, "VpcName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

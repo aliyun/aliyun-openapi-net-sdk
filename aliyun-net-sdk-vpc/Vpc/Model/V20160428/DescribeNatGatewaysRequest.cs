@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string vpcId;
 
+		private string name;
+
 		private int? pageSize;
 
 		private string action;
@@ -115,6 +117,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

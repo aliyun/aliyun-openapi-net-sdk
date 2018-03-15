@@ -50,6 +50,9 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vpnGateway.Status = context.StringValue("DescribeVpnGateways.VpnGateways["+ i +"].Status");
 				vpnGateway.BusinessStatus = context.StringValue("DescribeVpnGateways.VpnGateways["+ i +"].BusinessStatus");
 				vpnGateway.ChargeType = context.StringValue("DescribeVpnGateways.VpnGateways["+ i +"].ChargeType");
+				vpnGateway.IpsecVpn = context.StringValue("DescribeVpnGateways.VpnGateways["+ i +"].IpsecVpn");
+				vpnGateway.SslVpn = context.StringValue("DescribeVpnGateways.VpnGateways["+ i +"].SslVpn");
+				vpnGateway.SslMaxConnections = context.LongValue("DescribeVpnGateways.VpnGateways["+ i +"].SslMaxConnections");
 
 				describeVpnGatewaysResponse_vpnGateways.Add(vpnGateway);
 			}

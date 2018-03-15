@@ -65,8 +65,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string action;
 
-		private string userCidr;
-
 		public string RedundantPhysicalConnectionId
 		{
 			get
@@ -272,19 +270,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string UserCidr
-		{
-			get
-			{
-				return userCidr;
-			}
-			set	
-			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
 			}
 		}
 
