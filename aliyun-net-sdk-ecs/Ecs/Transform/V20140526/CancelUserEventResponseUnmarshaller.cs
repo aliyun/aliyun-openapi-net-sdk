@@ -23,16 +23,17 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
-    public class ReInitVolumeResponseUnmarshaller
+    public class CancelUserEventResponseUnmarshaller
     {
-        public static ReInitVolumeResponse Unmarshall(UnmarshallerContext context)
+        public static CancelUserEventResponse Unmarshall(UnmarshallerContext context)
         {
-			ReInitVolumeResponse reInitVolumeResponse = new ReInitVolumeResponse();
+			CancelUserEventResponse cancelUserEventResponse = new CancelUserEventResponse();
 
-			reInitVolumeResponse.HttpResponse = context.HttpResponse;
-			reInitVolumeResponse.RequestId = context.StringValue("ReInitVolume.RequestId");
+			cancelUserEventResponse.HttpResponse = context.HttpResponse;
+			cancelUserEventResponse.RequestId = context.StringValue("CancelUserEvent.RequestId");
+			cancelUserEventResponse.EventId = context.StringValue("CancelUserEvent.EventId");
         
-			return reInitVolumeResponse;
+			return cancelUserEventResponse;
         }
     }
 }

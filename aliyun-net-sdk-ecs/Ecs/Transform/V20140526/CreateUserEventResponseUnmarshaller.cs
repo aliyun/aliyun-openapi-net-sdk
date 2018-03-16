@@ -16,26 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ecs.Model.V20140526;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Ecs.Model.V20140526
+namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
-	public class ReInitVolumeResponse : AcsResponse
-	{
+    public class CreateUserEventResponseUnmarshaller
+    {
+        public static CreateUserEventResponse Unmarshall(UnmarshallerContext context)
+        {
+			CreateUserEventResponse createUserEventResponse = new CreateUserEventResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			createUserEventResponse.HttpResponse = context.HttpResponse;
+			createUserEventResponse.RequestId = context.StringValue("CreateUserEvent.RequestId");
+			createUserEventResponse.EventId = context.StringValue("CreateUserEvent.EventId");
+        
+			return createUserEventResponse;
+        }
+    }
 }

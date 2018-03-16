@@ -16,23 +16,40 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ecs.Model.V20140526;
-using System;
+using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Ecs.Transform.V20140526
+namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DetachVolumeResponseUnmarshaller
-    {
-        public static DetachVolumeResponse Unmarshall(UnmarshallerContext context)
-        {
-			DetachVolumeResponse detachVolumeResponse = new DetachVolumeResponse();
+	public class CancelUserEventResponse : AcsResponse
+	{
 
-			detachVolumeResponse.HttpResponse = context.HttpResponse;
-			detachVolumeResponse.RequestId = context.StringValue("DetachVolume.RequestId");
-        
-			return detachVolumeResponse;
-        }
-    }
+		private string requestId;
+
+		private string eventId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string EventId
+		{
+			get
+			{
+				return eventId;
+			}
+			set	
+			{
+				eventId = value;
+			}
+		}
+	}
 }

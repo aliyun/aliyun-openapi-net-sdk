@@ -26,30 +26,43 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class ModifyVolumeAttributeRequest : RpcAcsRequest<ModifyVolumeAttributeResponse>
+    public class ModifyUserEventAttributeRequest : RpcAcsRequest<ModifyUserEventAttributeResponse>
     {
-        public ModifyVolumeAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyVolumeAttribute", "ecs", "openAPI")
+        public ModifyUserEventAttributeRequest()
+            : base("Ecs", "2014-05-26", "ModifyUserEventAttribute", "ecs", "openAPI")
         {
         }
 
+		private string eventId;
+
 		private long? resourceOwnerId;
-
-		private string volumeName;
-
-		private string resourceOwnerAccount;
 
 		private string regionId;
 
-		private string ownerAccount;
-
-		private string volumeId;
-
 		private string action;
 
-		private string description;
+		private string resourceId;
+
+		private string resourceOwnerAccount;
+
+		private string newPlanTime;
 
 		private long? ownerId;
+
+		private string newExpireTime;
+
+		public string EventId
+		{
+			get
+			{
+				return eventId;
+			}
+			set	
+			{
+				eventId = value;
+				DictionaryUtil.Add(QueryParameters, "EventId", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -61,32 +74,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string VolumeName
-		{
-			get
-			{
-				return volumeName;
-			}
-			set	
-			{
-				volumeName = value;
-				DictionaryUtil.Add(QueryParameters, "VolumeName", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -103,32 +90,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string VolumeId
-		{
-			get
-			{
-				return volumeId;
-			}
-			set	
-			{
-				volumeId = value;
-				DictionaryUtil.Add(QueryParameters, "VolumeId", value);
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -142,16 +103,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Description
+		public string ResourceId
 		{
 			get
 			{
-				return description;
+				return resourceId;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				resourceId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string NewPlanTime
+		{
+			get
+			{
+				return newPlanTime;
+			}
+			set	
+			{
+				newPlanTime = value;
+				DictionaryUtil.Add(QueryParameters, "NewPlanTime", value);
 			}
 		}
 
@@ -168,9 +155,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override ModifyVolumeAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string NewExpireTime
+		{
+			get
+			{
+				return newExpireTime;
+			}
+			set	
+			{
+				newExpireTime = value;
+				DictionaryUtil.Add(QueryParameters, "NewExpireTime", value);
+			}
+		}
+
+        public override ModifyUserEventAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyVolumeAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyUserEventAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -21,12 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateVolumeResponse : AcsResponse
+	public class CreateUserEventResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string volumeId;
+		private string eventId;
 
 		public string RequestId
 		{
@@ -40,15 +40,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string VolumeId
+		public string EventId
 		{
 			get
 			{
-				return volumeId;
+				return eventId;
 			}
 			set	
 			{
-				volumeId = value;
+				eventId = value;
 			}
 		}
 	}
