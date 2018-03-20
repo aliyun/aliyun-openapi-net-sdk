@@ -42,6 +42,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 				ListFacePhotosResponse.ListFacePhotos_Result result = new ListFacePhotosResponse.ListFacePhotos_Result();
 				result.PhotoId = context.LongValue("ListFacePhotos.Results["+ i +"].PhotoId");
 				result.PhotoIdStr = context.StringValue("ListFacePhotos.Results["+ i +"].PhotoIdStr");
+				result.Mtime = context.LongValue("ListFacePhotos.Results["+ i +"].Mtime");
 				result.State = context.StringValue("ListFacePhotos.Results["+ i +"].State");
 
 				listFacePhotosResponse_results.Add(result);

@@ -21,14 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-	public class ListAlbumPhotosResponse : AcsResponse
+	public class FetchAlbumTagPhotosResponse : AcsResponse
 	{
 
 		private string code;
 
 		private string message;
-
-		private string nextCursor;
 
 		private int? totalCount;
 
@@ -36,7 +34,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string action;
 
-		private List<ListAlbumPhotos_Result> results;
+		private List<FetchAlbumTagPhotos_Result> results;
 
 		public string Code
 		{
@@ -59,18 +57,6 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public string NextCursor
-		{
-			get
-			{
-				return nextCursor;
-			}
-			set	
-			{
-				nextCursor = value;
 			}
 		}
 
@@ -110,7 +96,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public List<ListAlbumPhotos_Result> Results
+		public List<FetchAlbumTagPhotos_Result> Results
 		{
 			get
 			{
@@ -122,7 +108,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public class ListAlbumPhotos_Result
+		public class FetchAlbumTagPhotos_Result
 		{
 
 			private long? photoId;

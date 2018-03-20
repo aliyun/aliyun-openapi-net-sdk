@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{f3b116c5-9417-42a9-9d25-cc089e6ac9cb}</ProjectGuid>
+    <ProjectGuid>{6d218a79-8143-4b87-96c6-d83299e38abe}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -46,6 +46,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\DeleteEventResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListTagsRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\CreateEventRequest.cs" />
+	<Compile Include="CloudPhoto\Model\V20170711\FetchAlbumTagPhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\CreatePhotoStoreRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListFacesRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\GetSimilarPhotosResponse.cs" />
@@ -170,6 +171,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\GetPrivateAccessUrlsResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\RegisterTagRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\SetAlbumCoverResponse.cs" />
+	<Compile Include="CloudPhoto\Model\V20170711\FetchAlbumTagPhotosResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListPhotosResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\DeletePhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\RenameFaceResponseUnmarshaller.cs" />
@@ -202,6 +204,7 @@
 	<Compile Include="CloudPhoto\Transform\V20170711\CreateTransactionResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ListPhotoTagsResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ListMomentPhotosResponseUnmarshaller.cs" />
+	<Compile Include="CloudPhoto\Transform\V20170711\FetchAlbumTagPhotosResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\GetAlbumsByNamesResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\MergeFacesResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ListTagPhotosResponseUnmarshaller.cs" />

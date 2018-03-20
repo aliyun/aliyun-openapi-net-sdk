@@ -129,6 +129,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private string photoIdStr;
 
+			private long? mtime;
+
 			private string state;
 
 			public long? PhotoId
@@ -152,6 +154,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					photoIdStr = value;
+				}
+			}
+
+			public long? Mtime
+			{
+				get
+				{
+					return mtime;
+				}
+				set	
+				{
+					mtime = value;
 				}
 			}
 

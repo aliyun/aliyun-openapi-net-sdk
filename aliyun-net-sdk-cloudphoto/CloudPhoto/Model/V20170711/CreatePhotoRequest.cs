@@ -34,6 +34,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			Protocol = ProtocolType.HTTPS;
         }
 
+		private long? takenAt;
+
 		private string photoTitle;
 
 		private string libraryId;
@@ -51,6 +53,19 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 		private string staging;
 
 		private string fileId;
+
+		public long? TakenAt
+		{
+			get
+			{
+				return takenAt;
+			}
+			set	
+			{
+				takenAt = value;
+				DictionaryUtil.Add(QueryParameters, "TakenAt", value.ToString());
+			}
+		}
 
 		public string PhotoTitle
 		{
