@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceType.EniQuantity = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniQuantity");
 				instanceType.InstanceBandwidthRx = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceBandwidthRx");
 				instanceType.InstanceBandwidthTx = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceBandwidthTx");
+				instanceType.InstancePpsRx = context.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstancePpsRx");
+				instanceType.InstancePpsTx = context.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstancePpsTx");
 
 				describeInstanceTypesResponse_instanceTypes.Add(instanceType);
 			}

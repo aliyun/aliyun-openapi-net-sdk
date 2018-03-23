@@ -23,18 +23,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
-    public class CreateRouterInterfaceResponseUnmarshaller
+    public class ResizeVolumeResponseUnmarshaller
     {
-        public static CreateRouterInterfaceResponse Unmarshall(UnmarshallerContext context)
+        public static ResizeVolumeResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateRouterInterfaceResponse createRouterInterfaceResponse = new CreateRouterInterfaceResponse();
+			ResizeVolumeResponse resizeVolumeResponse = new ResizeVolumeResponse();
 
-			createRouterInterfaceResponse.HttpResponse = context.HttpResponse;
-			createRouterInterfaceResponse.RequestId = context.StringValue("CreateRouterInterface.RequestId");
-			createRouterInterfaceResponse.RouterInterfaceId = context.StringValue("CreateRouterInterface.RouterInterfaceId");
-			createRouterInterfaceResponse.OrderId = context.LongValue("CreateRouterInterface.OrderId");
+			resizeVolumeResponse.HttpResponse = context.HttpResponse;
+			resizeVolumeResponse.RequestId = context.StringValue("ResizeVolume.RequestId");
         
-			return createRouterInterfaceResponse;
+			return resizeVolumeResponse;
         }
     }
 }

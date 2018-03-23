@@ -45,25 +45,37 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string clientToken;
 
+		private string healthCheckTargetIp;
+
+		private string description;
+
+		private string spec;
+
+		private string regionId;
+
+		private string action;
+
+		private string userCidr;
+
+		private string oppositeInterfaceId;
+
+		private string instanceChargeType;
+
+		private int? period;
+
+		private bool? autoPay;
+
 		private string resourceOwnerAccount;
 
 		private string oppositeRegionId;
 
 		private string ownerAccount;
 
-		private string healthCheckTargetIp;
-
-		private string description;
-
 		private long? ownerId;
-
-		private string spec;
 
 		private string oppositeInterfaceOwnerId;
 
 		private string routerType;
-
-		private string regionId;
 
 		private string healthCheckSourceIp;
 
@@ -73,11 +85,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string name;
 
-		private string action;
-
-		private string userCidr;
-
-		private string oppositeInterfaceId;
+		private string pricingCycle;
 
 		public string AccessPointId
 		{
@@ -157,6 +165,136 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string HealthCheckTargetIp
+		{
+			get
+			{
+				return healthCheckTargetIp;
+			}
+			set	
+			{
+				healthCheckTargetIp = value;
+				DictionaryUtil.Add(QueryParameters, "HealthCheckTargetIp", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string Spec
+		{
+			get
+			{
+				return spec;
+			}
+			set	
+			{
+				spec = value;
+				DictionaryUtil.Add(QueryParameters, "Spec", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string UserCidr
+		{
+			get
+			{
+				return userCidr;
+			}
+			set	
+			{
+				userCidr = value;
+				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
+			}
+		}
+
+		public string OppositeInterfaceId
+		{
+			get
+			{
+				return oppositeInterfaceId;
+			}
+			set	
+			{
+				oppositeInterfaceId = value;
+				DictionaryUtil.Add(QueryParameters, "OppositeInterfaceId", value);
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+			}
+		}
+
+		public int? Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -196,32 +334,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string HealthCheckTargetIp
-		{
-			get
-			{
-				return healthCheckTargetIp;
-			}
-			set	
-			{
-				healthCheckTargetIp = value;
-				DictionaryUtil.Add(QueryParameters, "HealthCheckTargetIp", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -232,19 +344,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Spec
-		{
-			get
-			{
-				return spec;
-			}
-			set	
-			{
-				spec = value;
-				DictionaryUtil.Add(QueryParameters, "Spec", value);
 			}
 		}
 
@@ -271,19 +370,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				routerType = value;
 				DictionaryUtil.Add(QueryParameters, "RouterType", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -339,42 +425,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Action
+		public string PricingCycle
 		{
 			get
 			{
-				return action;
+				return pricingCycle;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string UserCidr
-		{
-			get
-			{
-				return userCidr;
-			}
-			set	
-			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
-			}
-		}
-
-		public string OppositeInterfaceId
-		{
-			get
-			{
-				return oppositeInterfaceId;
-			}
-			set	
-			{
-				oppositeInterfaceId = value;
-				DictionaryUtil.Add(QueryParameters, "OppositeInterfaceId", value);
+				pricingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
 			}
 		}
 

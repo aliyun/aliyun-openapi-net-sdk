@@ -83,6 +83,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? instanceBandwidthTx;
 
+			private long? instancePpsRx;
+
+			private long? instancePpsTx;
+
 			public string InstanceTypeId
 			{
 				get
@@ -248,6 +252,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					instanceBandwidthTx = value;
+				}
+			}
+
+			public long? InstancePpsRx
+			{
+				get
+				{
+					return instancePpsRx;
+				}
+				set	
+				{
+					instancePpsRx = value;
+				}
+			}
+
+			public long? InstancePpsTx
+			{
+				get
+				{
+					return instancePpsTx;
+				}
+				set	
+				{
+					instancePpsTx = value;
 				}
 			}
 		}

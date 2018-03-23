@@ -21,14 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateRouterInterfaceResponse : AcsResponse
+	public class CreateVolumeResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string routerInterfaceId;
-
-		private long? orderId;
+		private string volumeId;
 
 		public string RequestId
 		{
@@ -42,27 +40,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RouterInterfaceId
+		public string VolumeId
 		{
 			get
 			{
-				return routerInterfaceId;
+				return volumeId;
 			}
 			set	
 			{
-				routerInterfaceId = value;
-			}
-		}
-
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
+				volumeId = value;
 			}
 		}
 	}
