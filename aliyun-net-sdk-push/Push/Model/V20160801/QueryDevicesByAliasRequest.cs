@@ -26,29 +26,29 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-    public class QueryPushDetailRequest : RpcAcsRequest<QueryPushDetailResponse>
+    public class QueryDevicesByAliasRequest : RpcAcsRequest<QueryDevicesByAliasResponse>
     {
-        public QueryPushDetailRequest()
-            : base("Push", "2016-08-01", "QueryPushDetail")
+        public QueryDevicesByAliasRequest()
+            : base("Push", "2016-08-01", "QueryDevicesByAlias")
         {
         }
 
-		private string messageId;
+		private string alias;
 
 		private long? appKey;
 
 		private string accessKeyId;
 
-		public string MessageId
+		public string Alias
 		{
 			get
 			{
-				return messageId;
+				return alias;
 			}
 			set	
 			{
-				messageId = value;
-				DictionaryUtil.Add(QueryParameters, "MessageId", value);
+				alias = value;
+				DictionaryUtil.Add(QueryParameters, "Alias", value);
 			}
 		}
 
@@ -78,9 +78,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-        public override QueryPushDetailResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryDevicesByAliasResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryPushDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDevicesByAliasResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

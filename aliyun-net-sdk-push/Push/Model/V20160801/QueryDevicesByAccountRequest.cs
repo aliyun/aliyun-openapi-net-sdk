@@ -26,31 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-    public class QueryPushStatByMsgRequest : RpcAcsRequest<QueryPushStatByMsgResponse>
+    public class QueryDevicesByAccountRequest : RpcAcsRequest<QueryDevicesByAccountResponse>
     {
-        public QueryPushStatByMsgRequest()
-            : base("Push", "2016-08-01", "QueryPushStatByMsg")
+        public QueryDevicesByAccountRequest()
+            : base("Push", "2016-08-01", "QueryDevicesByAccount")
         {
         }
 
-		private long? messageId;
-
 		private long? appKey;
 
-		private string accessKeyId;
+		private string account;
 
-		public long? MessageId
-		{
-			get
-			{
-				return messageId;
-			}
-			set	
-			{
-				messageId = value;
-				DictionaryUtil.Add(QueryParameters, "MessageId", value.ToString());
-			}
-		}
+		private string accessKeyId;
 
 		public long? AppKey
 		{
@@ -62,6 +49,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				appKey = value;
 				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
+			}
+		}
+
+		public string Account
+		{
+			get
+			{
+				return account;
+			}
+			set	
+			{
+				account = value;
+				DictionaryUtil.Add(QueryParameters, "Account", value);
 			}
 		}
 
@@ -78,9 +78,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-        public override QueryPushStatByMsgResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryDevicesByAccountResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryPushStatByMsgResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDevicesByAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

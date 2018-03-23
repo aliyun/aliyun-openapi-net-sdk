@@ -26,29 +26,50 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-    public class QueryPushStatByMsgRequest : RpcAcsRequest<QueryPushStatByMsgResponse>
+    public class QueryPushListRequest : RpcAcsRequest<QueryPushListResponse>
     {
-        public QueryPushStatByMsgRequest()
-            : base("Push", "2016-08-01", "QueryPushStatByMsg")
+        public QueryPushListRequest()
+            : base("Push", "2016-08-01", "QueryPushList")
         {
         }
 
-		private long? messageId;
+		private int? pageSize;
+
+		private string endTime;
 
 		private long? appKey;
 
+		private string startTime;
+
+		private int? page;
+
+		private string pushType;
+
 		private string accessKeyId;
 
-		public long? MessageId
+		public int? PageSize
 		{
 			get
 			{
-				return messageId;
+				return pageSize;
 			}
 			set	
 			{
-				messageId = value;
-				DictionaryUtil.Add(QueryParameters, "MessageId", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -65,6 +86,45 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "Page", value.ToString());
+			}
+		}
+
+		public string PushType
+		{
+			get
+			{
+				return pushType;
+			}
+			set	
+			{
+				pushType = value;
+				DictionaryUtil.Add(QueryParameters, "PushType", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -78,9 +138,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-        public override QueryPushStatByMsgResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryPushListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryPushStatByMsgResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryPushListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

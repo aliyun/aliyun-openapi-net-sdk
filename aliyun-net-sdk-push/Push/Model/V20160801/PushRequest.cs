@@ -63,8 +63,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string iOSRemindBody;
 
-		private string batchNumber;
-
 		private string iOSExtParameters;
 
 		private string androidNotifyType;
@@ -317,19 +315,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSRemindBody = value;
 				DictionaryUtil.Add(QueryParameters, "iOSRemindBody", value);
-			}
-		}
-
-		public string BatchNumber
-		{
-			get
-			{
-				return batchNumber;
-			}
-			set	
-			{
-				batchNumber = value;
-				DictionaryUtil.Add(QueryParameters, "BatchNumber", value);
 			}
 		}
 
