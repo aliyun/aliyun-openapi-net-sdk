@@ -109,6 +109,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private int? cycleDuration;
 
+			private string autoCompose;
+
+			private string composeVodTranscodeGroupId;
+
 			public string CreateTime
 			{
 				get
@@ -178,6 +182,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					cycleDuration = value;
+				}
+			}
+
+			public string AutoCompose
+			{
+				get
+				{
+					return autoCompose;
+				}
+				set	
+				{
+					autoCompose = value;
+				}
+			}
+
+			public string ComposeVodTranscodeGroupId
+			{
+				get
+				{
+					return composeVodTranscodeGroupId;
+				}
+				set	
+				{
+					composeVodTranscodeGroupId = value;
 				}
 			}
 		}

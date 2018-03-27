@@ -40,6 +40,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string callbackUrl;
 
+		private string programName;
+
+		private int? programEffect;
+
 		private DescribeCasterConfig_TranscodeConfig transcodeConfig;
 
 		private DescribeCasterConfig_RecordConfig recordConfig;
@@ -137,6 +141,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				callbackUrl = value;
+			}
+		}
+
+		public string ProgramName
+		{
+			get
+			{
+				return programName;
+			}
+			set	
+			{
+				programName = value;
+			}
+		}
+
+		public int? ProgramEffect
+		{
+			get
+			{
+				return programEffect;
+			}
+			set	
+			{
+				programEffect = value;
 			}
 		}
 

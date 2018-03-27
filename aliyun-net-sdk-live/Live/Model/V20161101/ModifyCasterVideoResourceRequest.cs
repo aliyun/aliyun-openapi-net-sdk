@@ -35,13 +35,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string resourceId;
 
-		private string liveStreamUrl;
+		private int? beginOffset;
 
-		private string securityToken;
+		private string vodUrl;
+
+		private string liveStreamUrl;
 
 		private string casterId;
 
 		private string action;
+
+		private int? endOffset;
 
 		private string resourceName;
 
@@ -50,10 +54,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? ownerId;
 
 		private string materialId;
-
-		private string version;
-
-		private string accessKeyId;
 
 		public string ResourceId
 		{
@@ -68,6 +68,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public int? BeginOffset
+		{
+			get
+			{
+				return beginOffset;
+			}
+			set	
+			{
+				beginOffset = value;
+				DictionaryUtil.Add(QueryParameters, "BeginOffset", value.ToString());
+			}
+		}
+
+		public string VodUrl
+		{
+			get
+			{
+				return vodUrl;
+			}
+			set	
+			{
+				vodUrl = value;
+				DictionaryUtil.Add(QueryParameters, "VodUrl", value);
+			}
+		}
+
 		public string LiveStreamUrl
 		{
 			get
@@ -78,19 +104,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				liveStreamUrl = value;
 				DictionaryUtil.Add(QueryParameters, "LiveStreamUrl", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -117,6 +130,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public int? EndOffset
+		{
+			get
+			{
+				return endOffset;
+			}
+			set	
+			{
+				endOffset = value;
+				DictionaryUtil.Add(QueryParameters, "EndOffset", value.ToString());
 			}
 		}
 
@@ -169,32 +195,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				materialId = value;
 				DictionaryUtil.Add(QueryParameters, "MaterialId", value);
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

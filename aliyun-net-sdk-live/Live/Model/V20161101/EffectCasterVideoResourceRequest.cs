@@ -35,8 +35,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string resourceId;
 
-		private string securityToken;
-
 		private string casterId;
 
 		private string sceneId;
@@ -44,10 +42,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string action;
 
 		private long? ownerId;
-
-		private string version;
-
-		private string accessKeyId;
 
 		public string ResourceId
 		{
@@ -59,19 +53,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				resourceId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -124,32 +105,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

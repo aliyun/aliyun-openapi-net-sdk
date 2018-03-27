@@ -39,21 +39,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string domainName;
 
+		private int? programEffect;
+
+		private string programName;
+
 		private long? ownerId;
 
-		private string version;
-
 		private string recordConfig;
-
-		private string accessKeyId;
 
 		private string urgentMaterialId;
 
 		private string transcodeConfig;
 
 		private float? delay;
-
-		private string securityToken;
 
 		private string casterName;
 
@@ -100,6 +98,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public int? ProgramEffect
+		{
+			get
+			{
+				return programEffect;
+			}
+			set	
+			{
+				programEffect = value;
+				DictionaryUtil.Add(QueryParameters, "ProgramEffect", value.ToString());
+			}
+		}
+
+		public string ProgramName
+		{
+			get
+			{
+				return programName;
+			}
+			set	
+			{
+				programName = value;
+				DictionaryUtil.Add(QueryParameters, "ProgramName", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -113,19 +137,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
-			}
-		}
-
 		public string RecordConfig
 		{
 			get
@@ -136,19 +147,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				recordConfig = value;
 				DictionaryUtil.Add(QueryParameters, "RecordConfig", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -188,19 +186,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				delay = value;
 				DictionaryUtil.Add(QueryParameters, "Delay", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

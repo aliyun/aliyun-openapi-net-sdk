@@ -42,9 +42,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord liveAppRecord = new DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord();
 				liveAppRecord.DomainName = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].DomainName");
 				liveAppRecord.AppName = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].AppName");
+				liveAppRecord.StreamName = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].StreamName");
 				liveAppRecord.OssEndpoint = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssEndpoint");
 				liveAppRecord.OssBucket = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssBucket");
 				liveAppRecord.CreateTime = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].CreateTime");
+				liveAppRecord.StartTime = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].StartTime");
+				liveAppRecord.EndTime = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].EndTime");
+				liveAppRecord.OnDemond = context.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OnDemond");
 
 				List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat> liveAppRecord_recordFormatList = new List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat>();
 				for (int j = 0; j < context.Length("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList.Length"); j++) {

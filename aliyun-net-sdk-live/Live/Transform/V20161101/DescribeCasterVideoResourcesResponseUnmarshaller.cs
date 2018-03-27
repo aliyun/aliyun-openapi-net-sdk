@@ -42,6 +42,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				videoResource.LocationId = context.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].LocationId");
 				videoResource.LiveStreamUrl = context.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].LiveStreamUrl");
 				videoResource.RepeatNum = context.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].RepeatNum");
+				videoResource.VodUrl = context.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].VodUrl");
+				videoResource.BeginOffset = context.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].BeginOffset");
+				videoResource.EndOffset = context.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].EndOffset");
 
 				describeCasterVideoResourcesResponse_videoResources.Add(videoResource);
 			}

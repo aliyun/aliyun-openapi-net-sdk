@@ -35,6 +35,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string domainName;
 
+		private string action;
+
 		private string endTime;
 
 		private string interval;
@@ -57,6 +59,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -35,17 +35,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string componentId;
 
-		private string securityToken;
-
 		private string casterId;
 
 		private string action;
 
 		private long? ownerId;
-
-		private string version;
-
-		private string accessKeyId;
 
 		public string ComponentId
 		{
@@ -57,19 +51,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				componentId = value;
 				DictionaryUtil.Add(QueryParameters, "ComponentId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -109,32 +90,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

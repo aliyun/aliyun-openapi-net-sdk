@@ -81,6 +81,12 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private int? repeatNum;
 
+			private string vodUrl;
+
+			private int? beginOffset;
+
+			private int? endOffset;
+
 			public string MaterialId
 			{
 				get
@@ -150,6 +156,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					repeatNum = value;
+				}
+			}
+
+			public string VodUrl
+			{
+				get
+				{
+					return vodUrl;
+				}
+				set	
+				{
+					vodUrl = value;
+				}
+			}
+
+			public int? BeginOffset
+			{
+				get
+				{
+					return beginOffset;
+				}
+				set	
+				{
+					beginOffset = value;
+				}
+			}
+
+			public int? EndOffset
+			{
+				get
+				{
+					return endOffset;
+				}
+				set	
+				{
+					endOffset = value;
 				}
 			}
 		}

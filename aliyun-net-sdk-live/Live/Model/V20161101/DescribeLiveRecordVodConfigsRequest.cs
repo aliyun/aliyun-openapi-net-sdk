@@ -35,8 +35,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string appName;
 
-		private string securityToken;
-
 		private string domainName;
 
 		private long? pageSize;
@@ -49,8 +47,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string streamName;
 
-		private string accessKeyId;
-
 		public string AppName
 		{
 			get
@@ -61,19 +57,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -152,19 +135,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				streamName = value;
 				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

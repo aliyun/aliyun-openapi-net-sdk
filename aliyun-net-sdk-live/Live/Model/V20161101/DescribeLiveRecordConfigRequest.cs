@@ -47,6 +47,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? pageNum;
 
+		private string streamName;
+
 		private string accessKeyId;
 
 		private string order;
@@ -139,6 +141,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 

@@ -35,7 +35,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string appName;
 
-		private string securityToken;
+		private string autoCompose;
 
 		private string domainName;
 
@@ -45,11 +45,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
+		private string composeVodTranscodeGroupId;
+
 		private string streamName;
 
 		private string vodTranscodeGroupId;
-
-		private string accessKeyId;
 
 		public string AppName
 		{
@@ -64,16 +64,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string SecurityToken
+		public string AutoCompose
 		{
 			get
 			{
-				return securityToken;
+				return autoCompose;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				autoCompose = value;
+				DictionaryUtil.Add(QueryParameters, "AutoCompose", value);
 			}
 		}
 
@@ -129,6 +129,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string ComposeVodTranscodeGroupId
+		{
+			get
+			{
+				return composeVodTranscodeGroupId;
+			}
+			set	
+			{
+				composeVodTranscodeGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ComposeVodTranscodeGroupId", value);
+			}
+		}
+
 		public string StreamName
 		{
 			get
@@ -152,19 +165,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				vodTranscodeGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "VodTranscodeGroupId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

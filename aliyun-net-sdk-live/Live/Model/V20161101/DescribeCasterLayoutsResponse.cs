@@ -148,6 +148,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string positionRefer;
 
+				private int? fixedDelayDuration;
+
 				private List<string> positionNormalizeds;
 
 				public float? HeightNormalized
@@ -186,6 +188,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				public int? FixedDelayDuration
+				{
+					get
+					{
+						return fixedDelayDuration;
+					}
+					set	
+					{
+						fixedDelayDuration = value;
+					}
+				}
+
 				public List<string> PositionNormalizeds
 				{
 					get
@@ -205,6 +219,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 				private float? volumeRate;
 
 				private string validChannel;
+
+				private int? fixedDelayDuration;
 
 				public float? VolumeRate
 				{
@@ -227,6 +243,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						validChannel = value;
+					}
+				}
+
+				public int? FixedDelayDuration
+				{
+					get
+					{
+						return fixedDelayDuration;
+					}
+					set	
+					{
+						fixedDelayDuration = value;
 					}
 				}
 			}

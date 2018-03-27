@@ -85,6 +85,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private DescribeCasterComponents_ImageLayerContent imageLayerContent;
 
+			private DescribeCasterComponents_CaptionLayerContent captionLayerContent;
+
 			public string ComponentId
 			{
 				get
@@ -178,6 +180,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					imageLayerContent = value;
+				}
+			}
+
+			public DescribeCasterComponents_CaptionLayerContent CaptionLayerContent
+			{
+				get
+				{
+					return captionLayerContent;
+				}
+				set	
+				{
+					captionLayerContent = value;
 				}
 			}
 
@@ -343,6 +357,122 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						materialId = value;
+					}
+				}
+			}
+
+			public class DescribeCasterComponents_CaptionLayerContent
+			{
+
+				private string locationId;
+
+				private int? ptsOffset;
+
+				private int? wordsCount;
+
+				private string color;
+
+				private string fontName;
+
+				private float? sizeNormalized;
+
+				private float? borderWidthNormalized;
+
+				private string borderColor;
+
+				public string LocationId
+				{
+					get
+					{
+						return locationId;
+					}
+					set	
+					{
+						locationId = value;
+					}
+				}
+
+				public int? PtsOffset
+				{
+					get
+					{
+						return ptsOffset;
+					}
+					set	
+					{
+						ptsOffset = value;
+					}
+				}
+
+				public int? WordsCount
+				{
+					get
+					{
+						return wordsCount;
+					}
+					set	
+					{
+						wordsCount = value;
+					}
+				}
+
+				public string Color
+				{
+					get
+					{
+						return color;
+					}
+					set	
+					{
+						color = value;
+					}
+				}
+
+				public string FontName
+				{
+					get
+					{
+						return fontName;
+					}
+					set	
+					{
+						fontName = value;
+					}
+				}
+
+				public float? SizeNormalized
+				{
+					get
+					{
+						return sizeNormalized;
+					}
+					set	
+					{
+						sizeNormalized = value;
+					}
+				}
+
+				public float? BorderWidthNormalized
+				{
+					get
+					{
+						return borderWidthNormalized;
+					}
+					set	
+					{
+						borderWidthNormalized = value;
+					}
+				}
+
+				public string BorderColor
+				{
+					get
+					{
+						return borderColor;
+					}
+					set	
+					{
+						borderColor = value;
 					}
 				}
 			}

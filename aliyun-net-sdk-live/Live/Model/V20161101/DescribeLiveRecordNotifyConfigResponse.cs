@@ -59,6 +59,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string notifyUrl;
 
+			private string onDemandUrl;
+
 			private bool? needStatusNotify;
 
 			public string DomainName
@@ -82,6 +84,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					notifyUrl = value;
+				}
+			}
+
+			public string OnDemandUrl
+			{
+				get
+				{
+					return onDemandUrl;
+				}
+				set	
+				{
+					onDemandUrl = value;
 				}
 			}
 

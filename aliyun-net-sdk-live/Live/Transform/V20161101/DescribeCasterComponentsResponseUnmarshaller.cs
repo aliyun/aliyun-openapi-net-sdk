@@ -67,6 +67,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				imageLayerContent.MaterialId = context.StringValue("DescribeCasterComponents.Components["+ i +"].ImageLayerContent.MaterialId");
 				component.ImageLayerContent = imageLayerContent;
 
+				DescribeCasterComponentsResponse.DescribeCasterComponents_Component.DescribeCasterComponents_CaptionLayerContent captionLayerContent = new DescribeCasterComponentsResponse.DescribeCasterComponents_Component.DescribeCasterComponents_CaptionLayerContent();
+				captionLayerContent.LocationId = context.StringValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.LocationId");
+				captionLayerContent.PtsOffset = context.IntegerValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.PtsOffset");
+				captionLayerContent.WordsCount = context.IntegerValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.WordsCount");
+				captionLayerContent.Color = context.StringValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.Color");
+				captionLayerContent.FontName = context.StringValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.FontName");
+				captionLayerContent.SizeNormalized = context.FloatValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.SizeNormalized");
+				captionLayerContent.BorderWidthNormalized = context.FloatValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.BorderWidthNormalized");
+				captionLayerContent.BorderColor = context.StringValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.BorderColor");
+				component.CaptionLayerContent = captionLayerContent;
+
 				describeCasterComponentsResponse_components.Add(component);
 			}
 			describeCasterComponentsResponse.Components = describeCasterComponentsResponse_components;

@@ -35,27 +35,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string componentId;
 
+		private string componentType;
+
 		private string imageLayerContent;
 
 		private string casterId;
 
+		private string effect;
+
 		private string componentLayer;
+
+		private string captionLayerContent;
+
+		private string action;
 
 		private string componentName;
 
 		private long? ownerId;
-
-		private string version;
-
-		private string accessKeyId;
-
-		private string componentType;
-
-		private string securityToken;
-
-		private string effect;
-
-		private string action;
 
 		private string textLayerContent;
 
@@ -69,6 +65,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				componentId = value;
 				DictionaryUtil.Add(QueryParameters, "ComponentId", value);
+			}
+		}
+
+		public string ComponentType
+		{
+			get
+			{
+				return componentType;
+			}
+			set	
+			{
+				componentType = value;
+				DictionaryUtil.Add(QueryParameters, "ComponentType", value);
 			}
 		}
 
@@ -98,6 +107,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string Effect
+		{
+			get
+			{
+				return effect;
+			}
+			set	
+			{
+				effect = value;
+				DictionaryUtil.Add(QueryParameters, "Effect", value);
+			}
+		}
+
 		public string ComponentLayer
 		{
 			get
@@ -108,6 +130,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				componentLayer = value;
 				DictionaryUtil.Add(QueryParameters, "ComponentLayer", value);
+			}
+		}
+
+		public string CaptionLayerContent
+		{
+			get
+			{
+				return captionLayerContent;
+			}
+			set	
+			{
+				captionLayerContent = value;
+				DictionaryUtil.Add(QueryParameters, "CaptionLayerContent", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -134,84 +182,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string ComponentType
-		{
-			get
-			{
-				return componentType;
-			}
-			set	
-			{
-				componentType = value;
-				DictionaryUtil.Add(QueryParameters, "ComponentType", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Effect
-		{
-			get
-			{
-				return effect;
-			}
-			set	
-			{
-				effect = value;
-				DictionaryUtil.Add(QueryParameters, "Effect", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

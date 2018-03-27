@@ -56,6 +56,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 					videoLayer.HeightNormalized = context.FloatValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].HeightNormalized");
 					videoLayer.WidthNormalized = context.FloatValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].WidthNormalized");
 					videoLayer.PositionRefer = context.StringValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].PositionRefer");
+					videoLayer.FixedDelayDuration = context.IntegerValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].FixedDelayDuration");
 
 					List<string> videoLayer_positionNormalizeds = new List<string>();
 					for (int k = 0; k < context.Length("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].PositionNormalizeds.Length"); k++) {
@@ -72,6 +73,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 					DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout.DescribeCasterLayouts_AudioLayer audioLayer = new DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout.DescribeCasterLayouts_AudioLayer();
 					audioLayer.VolumeRate = context.FloatValue("DescribeCasterLayouts.Layouts["+ i +"].AudioLayers["+ j +"].VolumeRate");
 					audioLayer.ValidChannel = context.StringValue("DescribeCasterLayouts.Layouts["+ i +"].AudioLayers["+ j +"].ValidChannel");
+					audioLayer.FixedDelayDuration = context.IntegerValue("DescribeCasterLayouts.Layouts["+ i +"].AudioLayers["+ j +"].FixedDelayDuration");
 
 					layout_audioLayers.Add(audioLayer);
 				}

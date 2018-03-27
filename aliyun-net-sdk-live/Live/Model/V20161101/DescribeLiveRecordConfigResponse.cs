@@ -129,11 +129,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string appName;
 
+			private string streamName;
+
 			private string ossEndpoint;
 
 			private string ossBucket;
 
 			private string createTime;
+
+			private string startTime;
+
+			private string endTime;
+
+			private int? onDemond;
 
 			private List<DescribeLiveRecordConfig_RecordFormat> recordFormatList;
 
@@ -158,6 +166,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					appName = value;
+				}
+			}
+
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
 				}
 			}
 
@@ -194,6 +214,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public int? OnDemond
+			{
+				get
+				{
+					return onDemond;
+				}
+				set	
+				{
+					onDemond = value;
 				}
 			}
 

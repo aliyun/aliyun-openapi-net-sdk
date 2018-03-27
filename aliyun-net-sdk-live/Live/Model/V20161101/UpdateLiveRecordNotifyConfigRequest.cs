@@ -33,6 +33,8 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
+		private string onDemandUrl;
+
 		private string securityToken;
 
 		private string domainName;
@@ -46,6 +48,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private bool? needStatusNotify;
 
 		private string accessKeyId;
+
+		public string OnDemandUrl
+		{
+			get
+			{
+				return onDemandUrl;
+			}
+			set	
+			{
+				onDemandUrl = value;
+				DictionaryUtil.Add(QueryParameters, "OnDemandUrl", value);
+			}
+		}
 
 		public string SecurityToken
 		{

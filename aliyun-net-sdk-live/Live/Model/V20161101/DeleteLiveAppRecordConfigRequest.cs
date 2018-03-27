@@ -43,6 +43,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
+		private string streamName;
+
 		private string accessKeyId;
 
 		public string AppName
@@ -107,6 +109,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 
