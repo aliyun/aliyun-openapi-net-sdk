@@ -41,6 +41,10 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 
 		private int? pageNum;
 
+		private string region;
+
+		private string quotaName;
+
 		private string status;
 
 		public string Cluster
@@ -92,6 +96,32 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
+			}
+		}
+
+		public string QuotaName
+		{
+			get
+			{
+				return quotaName;
+			}
+			set	
+			{
+				quotaName = value;
+				DictionaryUtil.Add(QueryParameters, "QuotaName", value);
 			}
 		}
 
