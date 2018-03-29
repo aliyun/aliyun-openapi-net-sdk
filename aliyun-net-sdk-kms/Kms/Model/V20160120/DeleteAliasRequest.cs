@@ -26,28 +26,28 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class DescribeKeyRequest : RpcAcsRequest<DescribeKeyResponse>
+    public class DeleteAliasRequest : RpcAcsRequest<DeleteAliasResponse>
     {
-        public DescribeKeyRequest()
-            : base("Kms", "2016-01-20", "DescribeKey", "kms", "openAPI")
+        public DeleteAliasRequest()
+            : base("Kms", "2016-01-20", "DeleteAlias", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string keyId;
+		private string aliasName;
 
 		private string sTSToken;
 
-		public string KeyId
+		public string AliasName
 		{
 			get
 			{
-				return keyId;
+				return aliasName;
 			}
 			set	
 			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+				aliasName = value;
+				DictionaryUtil.Add(QueryParameters, "AliasName", value);
 			}
 		}
 
@@ -64,9 +64,9 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override DescribeKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteAliasResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteAliasResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

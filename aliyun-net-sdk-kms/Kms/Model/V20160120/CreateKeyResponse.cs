@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class CreateKeyResponse : AcsResponse
 	{
 
-		private KeyMetadata_ keyMetadata;
+		private string requestId;
 
-		public KeyMetadata_ KeyMetadata
+		private CreateKey_KeyMetadata keyMetadata;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public CreateKey_KeyMetadata KeyMetadata
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public class KeyMetadata_{
+		public class CreateKey_KeyMetadata
+		{
 
 			private string creationDate;
 
@@ -55,6 +70,10 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			private string creator;
 
 			private string arn;
+
+			private string origin;
+
+			private string materialExpireTime;
 
 			public string CreationDate
 			{
@@ -149,6 +168,30 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					arn = value;
+				}
+			}
+
+			public string Origin
+			{
+				get
+				{
+					return origin;
+				}
+				set	
+				{
+					origin = value;
+				}
+			}
+
+			public string MaterialExpireTime
+			{
+				get
+				{
+					return materialExpireTime;
+				}
+				set	
+				{
+					materialExpireTime = value;
 				}
 			}
 		}

@@ -26,17 +26,34 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class DescribeKeyRequest : RpcAcsRequest<DescribeKeyResponse>
+    public class ListAliasesByKeyIdRequest : RpcAcsRequest<ListAliasesByKeyIdResponse>
     {
-        public DescribeKeyRequest()
-            : base("Kms", "2016-01-20", "DescribeKey", "kms", "openAPI")
+        public ListAliasesByKeyIdRequest()
+            : base("Kms", "2016-01-20", "ListAliasesByKeyId", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
+		private int? pageSize;
+
 		private string keyId;
 
 		private string sTSToken;
+
+		private int? pageNumber;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
 
 		public string KeyId
 		{
@@ -64,9 +81,22 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override DescribeKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+        public override ListAliasesByKeyIdResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListAliasesByKeyIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

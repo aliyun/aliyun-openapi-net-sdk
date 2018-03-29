@@ -29,29 +29,16 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class ScheduleKeyDeletionRequest : RpcAcsRequest<ScheduleKeyDeletionResponse>
     {
         public ScheduleKeyDeletionRequest()
-            : base("Kms", "2016-01-20", "ScheduleKeyDeletion")
+            : base("Kms", "2016-01-20", "ScheduleKeyDeletion", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string keyId;
-
 		private int? pendingWindowInDays;
 
-		private string sTSToken;
+		private string keyId;
 
-		public string KeyId
-		{
-			get
-			{
-				return keyId;
-			}
-			set	
-			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
-			}
-		}
+		private string sTSToken;
 
 		public int? PendingWindowInDays
 		{
@@ -63,6 +50,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				pendingWindowInDays = value;
 				DictionaryUtil.Add(QueryParameters, "PendingWindowInDays", value.ToString());
+			}
+		}
+
+		public string KeyId
+		{
+			get
+			{
+				return keyId;
+			}
+			set	
+			{
+				keyId = value;
+				DictionaryUtil.Add(QueryParameters, "KeyId", value);
 			}
 		}
 

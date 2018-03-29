@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class DescribeKeyRequest : RpcAcsRequest<DescribeKeyResponse>
+    public class DeleteKeyMaterialRequest : RpcAcsRequest<DeleteKeyMaterialResponse>
     {
-        public DescribeKeyRequest()
-            : base("Kms", "2016-01-20", "DescribeKey", "kms", "openAPI")
+        public DeleteKeyMaterialRequest()
+            : base("Kms", "2016-01-20", "DeleteKeyMaterial", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -64,9 +64,9 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override DescribeKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteKeyMaterialResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteKeyMaterialResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

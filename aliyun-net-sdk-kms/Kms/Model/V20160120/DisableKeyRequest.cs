@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class DisableKeyRequest : RpcAcsRequest<DisableKeyResponse>
     {
         public DisableKeyRequest()
-            : base("Kms", "2016-01-20", "DisableKey")
+            : base("Kms", "2016-01-20", "DisableKey", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }

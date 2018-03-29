@@ -17,26 +17,22 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Kms.Transform;
-using Aliyun.Acs.Kms.Transform.V20160120;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class DescribeKeyRequest : RpcAcsRequest<DescribeKeyResponse>
-    {
-        public DescribeKeyRequest()
-            : base("Kms", "2016-01-20", "DescribeKey", "kms", "openAPI")
-        {
-			Protocol = ProtocolType.HTTPS;
-        }
+	public class GetParametersForImportResponse : AcsResponse
+	{
 
 		private string keyId;
 
-		private string sTSToken;
+		private string requestId;
+
+		private string importToken;
+
+		private string publicKey;
+
+		private string tokenExpireTime;
 
 		public string KeyId
 		{
@@ -47,26 +43,55 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
 			}
 		}
 
-		public string STSToken
+		public string RequestId
 		{
 			get
 			{
-				return sTSToken;
+				return requestId;
 			}
 			set	
 			{
-				sTSToken = value;
-				DictionaryUtil.Add(QueryParameters, "STSToken", value);
+				requestId = value;
 			}
 		}
 
-        public override DescribeKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
-        {
-            return DescribeKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+		public string ImportToken
+		{
+			get
+			{
+				return importToken;
+			}
+			set	
+			{
+				importToken = value;
+			}
+		}
+
+		public string PublicKey
+		{
+			get
+			{
+				return publicKey;
+			}
+			set	
+			{
+				publicKey = value;
+			}
+		}
+
+		public string TokenExpireTime
+		{
+			get
+			{
+				return tokenExpireTime;
+			}
+			set	
+			{
+				tokenExpireTime = value;
+			}
+		}
+	}
 }

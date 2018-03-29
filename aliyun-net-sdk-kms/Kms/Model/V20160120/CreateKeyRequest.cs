@@ -29,29 +29,18 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class CreateKeyRequest : RpcAcsRequest<CreateKeyResponse>
     {
         public CreateKeyRequest()
-            : base("Kms", "2016-01-20", "CreateKey")
+            : base("Kms", "2016-01-20", "CreateKey", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string description;
-
 		private string keyUsage;
 
-		private string sTSToken;
+		private string origin;
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+		private string description;
+
+		private string sTSToken;
 
 		public string KeyUsage
 		{
@@ -63,6 +52,32 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				keyUsage = value;
 				DictionaryUtil.Add(QueryParameters, "KeyUsage", value);
+			}
+		}
+
+		public string Origin
+		{
+			get
+			{
+				return origin;
+			}
+			set	
+			{
+				origin = value;
+				DictionaryUtil.Add(QueryParameters, "Origin", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 

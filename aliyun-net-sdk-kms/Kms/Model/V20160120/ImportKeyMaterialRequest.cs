@@ -26,17 +26,62 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class DescribeKeyRequest : RpcAcsRequest<DescribeKeyResponse>
+    public class ImportKeyMaterialRequest : RpcAcsRequest<ImportKeyMaterialResponse>
     {
-        public DescribeKeyRequest()
-            : base("Kms", "2016-01-20", "DescribeKey", "kms", "openAPI")
+        public ImportKeyMaterialRequest()
+            : base("Kms", "2016-01-20", "ImportKeyMaterial", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
+		private string importToken;
+
+		private string encryptedKeyMaterial;
+
+		private long? keyMaterialExpireUnix;
+
 		private string keyId;
 
 		private string sTSToken;
+
+		public string ImportToken
+		{
+			get
+			{
+				return importToken;
+			}
+			set	
+			{
+				importToken = value;
+				DictionaryUtil.Add(QueryParameters, "ImportToken", value);
+			}
+		}
+
+		public string EncryptedKeyMaterial
+		{
+			get
+			{
+				return encryptedKeyMaterial;
+			}
+			set	
+			{
+				encryptedKeyMaterial = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptedKeyMaterial", value);
+			}
+		}
+
+		public long? KeyMaterialExpireUnix
+		{
+			get
+			{
+				return keyMaterialExpireUnix;
+			}
+			set	
+			{
+				keyMaterialExpireUnix = value;
+				DictionaryUtil.Add(QueryParameters, "KeyMaterialExpireUnix", value.ToString());
+			}
+		}
 
 		public string KeyId
 		{
@@ -64,9 +109,9 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override DescribeKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ImportKeyMaterialResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ImportKeyMaterialResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

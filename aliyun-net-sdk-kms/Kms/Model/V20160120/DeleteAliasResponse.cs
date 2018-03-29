@@ -21,38 +21,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class DecryptResponse : AcsResponse
+	public class DeleteAliasResponse : AcsResponse
 	{
 
-		private string plaintext;
-
-		private string keyId;
-
 		private string requestId;
-
-		public string Plaintext
-		{
-			get
-			{
-				return plaintext;
-			}
-			set	
-			{
-				plaintext = value;
-			}
-		}
-
-		public string KeyId
-		{
-			get
-			{
-				return keyId;
-			}
-			set	
-			{
-				keyId = value;
-			}
-		}
 
 		public string RequestId
 		{

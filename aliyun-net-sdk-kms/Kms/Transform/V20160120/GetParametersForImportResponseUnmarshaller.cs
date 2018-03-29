@@ -23,16 +23,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Transform.V20160120
 {
-    public class CancelKeyDeletionResponseUnmarshaller
+    public class GetParametersForImportResponseUnmarshaller
     {
-        public static CancelKeyDeletionResponse Unmarshall(UnmarshallerContext context)
+        public static GetParametersForImportResponse Unmarshall(UnmarshallerContext context)
         {
-			CancelKeyDeletionResponse cancelKeyDeletionResponse = new CancelKeyDeletionResponse();
+			GetParametersForImportResponse getParametersForImportResponse = new GetParametersForImportResponse();
 
-			cancelKeyDeletionResponse.HttpResponse = context.HttpResponse;
-			cancelKeyDeletionResponse.RequestId = context.StringValue("CancelKeyDeletion.RequestId");
+			getParametersForImportResponse.HttpResponse = context.HttpResponse;
+			getParametersForImportResponse.KeyId = context.StringValue("GetParametersForImport.KeyId");
+			getParametersForImportResponse.RequestId = context.StringValue("GetParametersForImport.RequestId");
+			getParametersForImportResponse.ImportToken = context.StringValue("GetParametersForImport.ImportToken");
+			getParametersForImportResponse.PublicKey = context.StringValue("GetParametersForImport.PublicKey");
+			getParametersForImportResponse.TokenExpireTime = context.StringValue("GetParametersForImport.TokenExpireTime");
         
-			return cancelKeyDeletionResponse;
+			return getParametersForImportResponse;
         }
     }
 }

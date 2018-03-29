@@ -16,54 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Kms.Model.V20160120;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Kms.Model.V20160120
+namespace Aliyun.Acs.Kms.Transform.V20160120
 {
-	public class DecryptResponse : AcsResponse
-	{
+    public class ImportKeyMaterialResponseUnmarshaller
+    {
+        public static ImportKeyMaterialResponse Unmarshall(UnmarshallerContext context)
+        {
+			ImportKeyMaterialResponse importKeyMaterialResponse = new ImportKeyMaterialResponse();
 
-		private string plaintext;
-
-		private string keyId;
-
-		private string requestId;
-
-		public string Plaintext
-		{
-			get
-			{
-				return plaintext;
-			}
-			set	
-			{
-				plaintext = value;
-			}
-		}
-
-		public string KeyId
-		{
-			get
-			{
-				return keyId;
-			}
-			set	
-			{
-				keyId = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			importKeyMaterialResponse.HttpResponse = context.HttpResponse;
+			importKeyMaterialResponse.RequestId = context.StringValue("ImportKeyMaterial.RequestId");
+        
+			return importKeyMaterialResponse;
+        }
+    }
 }

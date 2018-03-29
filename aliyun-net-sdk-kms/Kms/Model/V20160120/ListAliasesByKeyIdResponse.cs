@@ -21,36 +21,52 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class DecryptResponse : AcsResponse
+	public class ListAliasesByKeyIdResponse : AcsResponse
 	{
 
-		private string plaintext;
+		private int? totalCount;
 
-		private string keyId;
+		private int? pageNumber;
+
+		private int? pageSize;
 
 		private string requestId;
 
-		public string Plaintext
+		private List<ListAliasesByKeyId_Alias> aliases;
+
+		public int? TotalCount
 		{
 			get
 			{
-				return plaintext;
+				return totalCount;
 			}
 			set	
 			{
-				plaintext = value;
+				totalCount = value;
 			}
 		}
 
-		public string KeyId
+		public int? PageNumber
 		{
 			get
 			{
-				return keyId;
+				return pageNumber;
 			}
 			set	
 			{
-				keyId = value;
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 
@@ -63,6 +79,64 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public List<ListAliasesByKeyId_Alias> Aliases
+		{
+			get
+			{
+				return aliases;
+			}
+			set	
+			{
+				aliases = value;
+			}
+		}
+
+		public class ListAliasesByKeyId_Alias
+		{
+
+			private string keyId;
+
+			private string aliasName;
+
+			private string aliasArn;
+
+			public string KeyId
+			{
+				get
+				{
+					return keyId;
+				}
+				set	
+				{
+					keyId = value;
+				}
+			}
+
+			public string AliasName
+			{
+				get
+				{
+					return aliasName;
+				}
+				set	
+				{
+					aliasName = value;
+				}
+			}
+
+			public string AliasArn
+			{
+				get
+				{
+					return aliasArn;
+				}
+				set	
+				{
+					aliasArn = value;
+				}
 			}
 		}
 	}

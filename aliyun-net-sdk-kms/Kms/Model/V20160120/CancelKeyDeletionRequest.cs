@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class CancelKeyDeletionRequest : RpcAcsRequest<CancelKeyDeletionResponse>
     {
         public CancelKeyDeletionRequest()
-            : base("Kms", "2016-01-20", "CancelKeyDeletion")
+            : base("Kms", "2016-01-20", "CancelKeyDeletion", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }

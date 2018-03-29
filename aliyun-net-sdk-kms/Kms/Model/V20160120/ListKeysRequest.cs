@@ -29,29 +29,16 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class ListKeysRequest : RpcAcsRequest<ListKeysResponse>
     {
         public ListKeysRequest()
-            : base("Kms", "2016-01-20", "ListKeys")
+            : base("Kms", "2016-01-20", "ListKeys", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
-
-		private int? pageNumber;
 
 		private int? pageSize;
 
 		private string sTSToken;
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
+		private int? pageNumber;
 
 		public int? PageSize
 		{
@@ -76,6 +63,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				sTSToken = value;
 				DictionaryUtil.Add(QueryParameters, "STSToken", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

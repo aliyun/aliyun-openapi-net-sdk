@@ -30,7 +30,9 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private int? pageSize;
 
-		private List<Key> keys;
+		private string requestId;
+
+		private List<ListKeys_Key> keys;
 
 		public int? TotalCount
 		{
@@ -68,7 +70,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public List<Key> Keys
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<ListKeys_Key> Keys
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public class Key{
+		public class ListKeys_Key
+		{
 
 			private string keyId;
 
