@@ -79,6 +79,11 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
         public override FetchLibrariesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
             return FetchLibrariesResponseUnmarshaller.Unmarshall(unmarshallerContext);

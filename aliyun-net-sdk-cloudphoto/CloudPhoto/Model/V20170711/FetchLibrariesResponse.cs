@@ -34,7 +34,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string action;
 
-		private List<string> library;
+		private List<FetchLibraries_Library> libraries;
 
 		public string Code
 		{
@@ -96,15 +96,33 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public List<string> Library
+		public List<FetchLibraries_Library> Libraries
 		{
 			get
 			{
-				return library;
+				return libraries;
 			}
 			set	
 			{
-				library = value;
+				libraries = value;
+			}
+		}
+
+		public class FetchLibraries_Library
+		{
+
+			private string libraryId;
+
+			public string LibraryId
+			{
+				get
+				{
+					return libraryId;
+				}
+				set	
+				{
+					libraryId = value;
+				}
 			}
 		}
 	}

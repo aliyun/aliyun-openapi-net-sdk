@@ -36,11 +36,14 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			fetchLibrariesResponse.RequestId = context.StringValue("FetchLibraries.RequestId");
 			fetchLibrariesResponse.Action = context.StringValue("FetchLibraries.Action");
 
-			List<string> fetchLibrariesResponse_library = new List<string>();
-			for (int i = 0; i < context.Length("FetchLibraries.Library.Length"); i++) {
-				fetchLibrariesResponse_library.Add(context.StringValue("FetchLibraries.Library["+ i +"]"));
+			List<FetchLibrariesResponse.FetchLibraries_Library> fetchLibrariesResponse_libraries = new List<FetchLibrariesResponse.FetchLibraries_Library>();
+			for (int i = 0; i < context.Length("FetchLibraries.Libraries.Length"); i++) {
+				FetchLibrariesResponse.FetchLibraries_Library library = new FetchLibrariesResponse.FetchLibraries_Library();
+				library.LibraryId = context.StringValue("FetchLibraries.Libraries["+ i +"].LibraryId");
+
+				fetchLibrariesResponse_libraries.Add(library);
 			}
-			fetchLibrariesResponse.Library = fetchLibrariesResponse_library;
+			fetchLibrariesResponse.Libraries = fetchLibrariesResponse_libraries;
         
 			return fetchLibrariesResponse;
         }
