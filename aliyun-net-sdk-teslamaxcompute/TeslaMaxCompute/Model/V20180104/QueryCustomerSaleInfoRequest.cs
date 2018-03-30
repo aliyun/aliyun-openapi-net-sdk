@@ -33,18 +33,18 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
         {
         }
 
-		private string region;
+		private string regionName;
 
-		public string Region
+		public string RegionName
 		{
 			get
 			{
-				return region;
+				return regionName;
 			}
 			set	
 			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
+				regionName = value;
+				DictionaryUtil.Add(QueryParameters, "RegionName", value);
 			}
 		}
 
