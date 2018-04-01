@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetPlayInfoRequest : RpcAcsRequest<GetPlayInfoResponse>
     {
         public GetPlayInfoRequest()
-            : base("vod", "2017-03-21", "GetPlayInfo")
+            : base("vod", "2017-03-21", "GetPlayInfo", "vod", "openAPI")
         {
         }
 
@@ -48,8 +48,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string playerVersion;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		private string rand;
 
@@ -164,19 +162,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

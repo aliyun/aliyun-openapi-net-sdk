@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DeleteVideoRequest : RpcAcsRequest<DeleteVideoResponse>
     {
         public DeleteVideoRequest()
-            : base("vod", "2017-03-21", "DeleteVideo")
+            : base("vod", "2017-03-21", "DeleteVideo", "vod", "openAPI")
         {
         }
 
@@ -42,8 +42,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private long? ownerId;
 
 		private string videoIds;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -107,19 +105,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				videoIds = value;
 				DictionaryUtil.Add(QueryParameters, "VideoIds", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

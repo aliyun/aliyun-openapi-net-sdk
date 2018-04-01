@@ -16,26 +16,58 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.vod.Model.V20170321;
-using System;
+using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.vod.Transform.V20170321
+namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class CreateOrderResponseUnmarshaller
-    {
-        public static CreateOrderResponse Unmarshall(UnmarshallerContext context)
-        {
-			CreateOrderResponse createOrderResponse = new CreateOrderResponse();
+	public class SubmitTranscodeJobsResponse : AcsResponse
+	{
 
-			createOrderResponse.HttpResponse = context.HttpResponse;
-			createOrderResponse.RequestId = context.StringValue("CreateOrder.RequestId");
-			createOrderResponse.Success = context.BooleanValue("CreateOrder.Success");
-			createOrderResponse.Code = context.StringValue("CreateOrder.Code");
-			createOrderResponse.Message = context.StringValue("CreateOrder.Message");
-        
-			return createOrderResponse;
-        }
-    }
+		private string requestId;
+
+		private List<SubmitTranscodeJobs_TranscodeJob> transcodeJobs;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<SubmitTranscodeJobs_TranscodeJob> TranscodeJobs
+		{
+			get
+			{
+				return transcodeJobs;
+			}
+			set	
+			{
+				transcodeJobs = value;
+			}
+		}
+
+		public class SubmitTranscodeJobs_TranscodeJob
+		{
+
+			private string jobId;
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
+				}
+			}
+		}
+	}
 }

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class AddCategoryRequest : RpcAcsRequest<AddCategoryResponse>
     {
         public AddCategoryRequest()
-            : base("vod", "2017-03-21", "AddCategory")
+            : base("vod", "2017-03-21", "AddCategory", "vod", "openAPI")
         {
         }
 
@@ -37,15 +37,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
-
 		private string action;
 
 		private string ownerId;
 
 		private long? parentId;
-
-		private string accessKeyId;
 
 		private string cateName;
 
@@ -72,19 +68,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -124,19 +107,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				parentId = value;
 				DictionaryUtil.Add(QueryParameters, "ParentId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

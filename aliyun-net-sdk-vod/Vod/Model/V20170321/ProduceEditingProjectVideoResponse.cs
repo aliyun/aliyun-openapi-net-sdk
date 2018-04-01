@@ -28,6 +28,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string mediaId;
 
+		private string projectId;
+
 		public string RequestId
 		{
 			get
@@ -49,6 +51,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				mediaId = value;
+			}
+		}
+
+		public string ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
 			}
 		}
 	}

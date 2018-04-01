@@ -32,6 +32,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			produceEditingProjectVideoResponse.HttpResponse = context.HttpResponse;
 			produceEditingProjectVideoResponse.RequestId = context.StringValue("ProduceEditingProjectVideo.RequestId");
 			produceEditingProjectVideoResponse.MediaId = context.StringValue("ProduceEditingProjectVideo.MediaId");
+			produceEditingProjectVideoResponse.ProjectId = context.StringValue("ProduceEditingProjectVideo.ProjectId");
         
 			return produceEditingProjectVideoResponse;
         }

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class UpdateVideoInfoRequest : RpcAcsRequest<UpdateVideoInfoResponse>
     {
         public UpdateVideoInfoRequest()
-            : base("vod", "2017-03-21", "UpdateVideoInfo")
+            : base("vod", "2017-03-21", "UpdateVideoInfo", "vod", "openAPI")
         {
         }
 
@@ -39,7 +39,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
-		private int? cateId;
+		private long? cateId;
 
 		private string action;
 
@@ -50,8 +50,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private long? ownerId;
 
 		private string title;
-
-		private string accessKeyId;
 
 		private string tags;
 
@@ -94,7 +92,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public int? CateId
+		public long? CateId
 		{
 			get
 			{
@@ -169,19 +167,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				title = value;
 				DictionaryUtil.Add(QueryParameters, "Title", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

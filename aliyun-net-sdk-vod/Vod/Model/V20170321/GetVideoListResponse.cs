@@ -91,7 +91,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string coverURL;
 
-			private int? cateId;
+			private long? cateId;
 
 			private string cateName;
 
@@ -229,7 +229,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public int? CateId
+			public long? CateId
 			{
 				get
 				{

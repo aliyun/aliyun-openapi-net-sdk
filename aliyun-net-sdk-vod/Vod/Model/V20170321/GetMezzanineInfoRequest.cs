@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetMezzanineInfoRequest : RpcAcsRequest<GetMezzanineInfoResponse>
     {
         public GetMezzanineInfoRequest()
-            : base("vod", "2017-03-21", "GetMezzanineInfo")
+            : base("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI")
         {
         }
 
@@ -41,11 +41,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string videoId;
 
+		private bool? previewSegment;
+
 		private long? ownerId;
 
 		private long? authTimeout;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -99,6 +99,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public bool? PreviewSegment
+		{
+			get
+			{
+				return previewSegment;
+			}
+			set	
+			{
+				previewSegment = value;
+				DictionaryUtil.Add(QueryParameters, "PreviewSegment", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -122,19 +135,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				authTimeout = value;
 				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

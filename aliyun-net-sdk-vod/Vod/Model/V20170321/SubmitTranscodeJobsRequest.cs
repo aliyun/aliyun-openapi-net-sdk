@@ -26,26 +26,32 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class CreateOrderRequest : RpcAcsRequest<CreateOrderResponse>
+    public class SubmitTranscodeJobsRequest : RpcAcsRequest<SubmitTranscodeJobsResponse>
     {
-        public CreateOrderRequest()
-            : base("vod", "2017-03-21", "CreateOrder")
+        public SubmitTranscodeJobsRequest()
+            : base("vod", "2017-03-21", "SubmitTranscodeJobs", "vod", "openAPI")
         {
         }
 
-		private string resourceOwnerId;
+		private long? resourceOwnerId;
+
+		private string templateGroupId;
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
-
 		private string action;
 
-		private string ownerId;
+		private string videoId;
+
+		private long? ownerId;
+
+		private string encryptConfig;
 
 		private string accessKeyId;
 
-		public string ResourceOwnerId
+		private string pipelineId;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
@@ -54,7 +60,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string TemplateGroupId
+		{
+			get
+			{
+				return templateGroupId;
+			}
+			set	
+			{
+				templateGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
 			}
 		}
 
@@ -71,19 +90,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -97,7 +103,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string OwnerId
+		public string VideoId
+		{
+			get
+			{
+				return videoId;
+			}
+			set	
+			{
+				videoId = value;
+				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+			}
+		}
+
+		public long? OwnerId
 		{
 			get
 			{
@@ -106,7 +125,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string EncryptConfig
+		{
+			get
+			{
+				return encryptConfig;
+			}
+			set	
+			{
+				encryptConfig = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptConfig", value);
 			}
 		}
 
@@ -123,9 +155,22 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override CreateOrderResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string PipelineId
+		{
+			get
+			{
+				return pipelineId;
+			}
+			set	
+			{
+				pipelineId = value;
+				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+        public override SubmitTranscodeJobsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateOrderResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitTranscodeJobsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetVideoPlayAuthRequest : RpcAcsRequest<GetVideoPlayAuthResponse>
     {
         public GetVideoPlayAuthRequest()
-            : base("vod", "2017-03-21", "GetVideoPlayAuth")
+            : base("vod", "2017-03-21", "GetVideoPlayAuth", "vod", "openAPI")
         {
         }
 
@@ -46,8 +46,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string videoId;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -137,19 +135,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

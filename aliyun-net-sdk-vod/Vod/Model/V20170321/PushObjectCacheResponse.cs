@@ -21,16 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class CreateOrderResponse : AcsResponse
+	public class PushObjectCacheResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private bool? success;
-
-		private string code;
-
-		private string message;
+		private string pushTaskId;
 
 		public string RequestId
 		{
@@ -44,39 +40,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public bool? Success
+		public string PushTaskId
 		{
 			get
 			{
-				return success;
+				return pushTaskId;
 			}
 			set	
 			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
+				pushTaskId = value;
 			}
 		}
 	}

@@ -29,13 +29,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class ProduceEditingProjectVideoRequest : RpcAcsRequest<ProduceEditingProjectVideoResponse>
     {
         public ProduceEditingProjectVideoRequest()
-            : base("vod", "2017-03-21", "ProduceEditingProjectVideo")
+            : base("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod", "openAPI")
         {
         }
 
 		private string coverURL;
 
 		private long? resourceOwnerId;
+
+		private string mediaMetadata;
 
 		private string resourceOwnerAccount;
 
@@ -44,6 +46,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string timeline;
 
 		private string description;
+
+		private string produceConfig;
 
 		private long? ownerId;
 
@@ -76,6 +80,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string MediaMetadata
+		{
+			get
+			{
+				return mediaMetadata;
+			}
+			set	
+			{
+				mediaMetadata = value;
+				DictionaryUtil.Add(QueryParameters, "MediaMetadata", value);
 			}
 		}
 
@@ -128,6 +145,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string ProduceConfig
+		{
+			get
+			{
+				return produceConfig;
+			}
+			set	
+			{
+				produceConfig = value;
+				DictionaryUtil.Add(QueryParameters, "ProduceConfig", value);
 			}
 		}
 

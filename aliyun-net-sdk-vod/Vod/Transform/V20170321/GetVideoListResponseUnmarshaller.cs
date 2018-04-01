@@ -47,7 +47,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.CreationTime = context.StringValue("GetVideoList.VideoList["+ i +"].CreationTime");
 				video.ModifyTime = context.StringValue("GetVideoList.VideoList["+ i +"].ModifyTime");
 				video.CoverURL = context.StringValue("GetVideoList.VideoList["+ i +"].CoverURL");
-				video.CateId = context.IntegerValue("GetVideoList.VideoList["+ i +"].CateId");
+				video.CateId = context.LongValue("GetVideoList.VideoList["+ i +"].CateId");
 				video.CateName = context.StringValue("GetVideoList.VideoList["+ i +"].CateName");
 
 				List<string> video_snapshots = new List<string>();

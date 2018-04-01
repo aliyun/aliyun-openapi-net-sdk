@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetVideoListRequest : RpcAcsRequest<GetVideoListResponse>
     {
         public GetVideoListRequest()
-            : base("vod", "2017-03-21", "GetVideoList")
+            : base("vod", "2017-03-21", "GetVideoList", "vod", "openAPI")
         {
         }
 
@@ -37,11 +37,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
-		private int? cateId;
+		private long? cateId;
 
-		private int? pageNo;
+		private long? pageNo;
 
-		private int? pageSize;
+		private long? pageSize;
 
 		private string action;
 
@@ -52,8 +52,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string startTime;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		private string status;
 
@@ -83,7 +81,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public int? CateId
+		public long? CateId
 		{
 			get
 			{
@@ -96,7 +94,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public int? PageNo
+		public long? PageNo
 		{
 			get
 			{
@@ -109,7 +107,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public int? PageSize
+		public long? PageSize
 		{
 			get
 			{
@@ -184,19 +182,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
