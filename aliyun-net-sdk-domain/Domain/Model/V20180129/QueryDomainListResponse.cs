@@ -159,6 +159,16 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private bool? premium;
 
+			private string domainAuditStatus;
+
+			private string expirationDateStatus;
+
+			private string registrantType;
+
+			private string domainGroupId;
+
+			private string remark;
+
 			public string DomainName
 			{
 				get
@@ -276,6 +286,66 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					premium = value;
+				}
+			}
+
+			public string DomainAuditStatus
+			{
+				get
+				{
+					return domainAuditStatus;
+				}
+				set	
+				{
+					domainAuditStatus = value;
+				}
+			}
+
+			public string ExpirationDateStatus
+			{
+				get
+				{
+					return expirationDateStatus;
+				}
+				set	
+				{
+					expirationDateStatus = value;
+				}
+			}
+
+			public string RegistrantType
+			{
+				get
+				{
+					return registrantType;
+				}
+				set	
+				{
+					registrantType = value;
+				}
+			}
+
+			public string DomainGroupId
+			{
+				get
+				{
+					return domainGroupId;
+				}
+				set	
+				{
+					domainGroupId = value;
+				}
+			}
+
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
 				}
 			}
 		}

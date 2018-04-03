@@ -153,6 +153,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private int? taskStatusCode;
 
+			private string taskTypeDescription;
+
 			public string TaskType
 			{
 				get
@@ -234,6 +236,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					taskStatusCode = value;
+				}
+			}
+
+			public string TaskTypeDescription
+			{
+				get
+				{
+					return taskTypeDescription;
+				}
+				set	
+				{
+					taskTypeDescription = value;
 				}
 			}
 		}

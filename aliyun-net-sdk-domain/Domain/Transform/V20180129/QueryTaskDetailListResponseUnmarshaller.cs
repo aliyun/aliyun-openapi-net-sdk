@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 				taskDetail.TryCount = context.IntegerValue("QueryTaskDetailList.Data["+ i +"].TryCount");
 				taskDetail.ErrorMsg = context.StringValue("QueryTaskDetailList.Data["+ i +"].ErrorMsg");
 				taskDetail.TaskStatusCode = context.IntegerValue("QueryTaskDetailList.Data["+ i +"].TaskStatusCode");
+				taskDetail.TaskResult = context.StringValue("QueryTaskDetailList.Data["+ i +"].TaskResult");
+				taskDetail.TaskTypeDescription = context.StringValue("QueryTaskDetailList.Data["+ i +"].TaskTypeDescription");
 
 				queryTaskDetailListResponse_data.Add(taskDetail);
 			}

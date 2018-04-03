@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			currentPageCursor.TaskNo = context.StringValue("QueryTaskInfoHistory.CurrentPageCursor.TaskNo");
 			currentPageCursor.CreateTimeLong = context.LongValue("QueryTaskInfoHistory.CurrentPageCursor.CreateTimeLong");
 			currentPageCursor.TaskStatusCode = context.IntegerValue("QueryTaskInfoHistory.CurrentPageCursor.TaskStatusCode");
+			currentPageCursor.TaskTypeDescription = context.StringValue("QueryTaskInfoHistory.CurrentPageCursor.TaskTypeDescription");
 			queryTaskInfoHistoryResponse.CurrentPageCursor = currentPageCursor;
 
 			QueryTaskInfoHistoryResponse.QueryTaskInfoHistory_NextPageCursor nextPageCursor = new QueryTaskInfoHistoryResponse.QueryTaskInfoHistory_NextPageCursor();
@@ -53,6 +54,7 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			nextPageCursor.TaskNo = context.StringValue("QueryTaskInfoHistory.NextPageCursor.TaskNo");
 			nextPageCursor.CreateTimeLong = context.LongValue("QueryTaskInfoHistory.NextPageCursor.CreateTimeLong");
 			nextPageCursor.TaskStatusCode = context.IntegerValue("QueryTaskInfoHistory.NextPageCursor.TaskStatusCode");
+			nextPageCursor.TaskTypeDescription = context.StringValue("QueryTaskInfoHistory.NextPageCursor.TaskTypeDescription");
 			queryTaskInfoHistoryResponse.NextPageCursor = nextPageCursor;
 
 			QueryTaskInfoHistoryResponse.QueryTaskInfoHistory_PrePageCursor prePageCursor = new QueryTaskInfoHistoryResponse.QueryTaskInfoHistory_PrePageCursor();
@@ -64,6 +66,7 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			prePageCursor.TaskNo = context.StringValue("QueryTaskInfoHistory.PrePageCursor.TaskNo");
 			prePageCursor.CreateTimeLong = context.LongValue("QueryTaskInfoHistory.PrePageCursor.CreateTimeLong");
 			prePageCursor.TaskStatusCode = context.IntegerValue("QueryTaskInfoHistory.PrePageCursor.TaskStatusCode");
+			prePageCursor.TaskTypeDescription = context.StringValue("QueryTaskInfoHistory.PrePageCursor.TaskTypeDescription");
 			queryTaskInfoHistoryResponse.PrePageCursor = prePageCursor;
 
 			List<QueryTaskInfoHistoryResponse.QueryTaskInfoHistory_TaskInfoHistory> queryTaskInfoHistoryResponse_objects = new List<QueryTaskInfoHistoryResponse.QueryTaskInfoHistory_TaskInfoHistory>();
@@ -77,6 +80,7 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 				taskInfoHistory.TaskNo = context.StringValue("QueryTaskInfoHistory.Objects["+ i +"].TaskNo");
 				taskInfoHistory.CreateTimeLong = context.LongValue("QueryTaskInfoHistory.Objects["+ i +"].CreateTimeLong");
 				taskInfoHistory.TaskStatusCode = context.IntegerValue("QueryTaskInfoHistory.Objects["+ i +"].TaskStatusCode");
+				taskInfoHistory.TaskTypeDescription = context.StringValue("QueryTaskInfoHistory.Objects["+ i +"].TaskTypeDescription");
 
 				queryTaskInfoHistoryResponse_objects.Add(taskInfoHistory);
 			}

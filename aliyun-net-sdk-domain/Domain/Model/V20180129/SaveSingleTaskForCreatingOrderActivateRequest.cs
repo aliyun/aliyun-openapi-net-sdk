@@ -81,9 +81,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string registrantOrganization;
 
-		private string userClientIp;
-
 		private bool? enableDomainProxy;
+
+		private string userClientIp;
 
 		private string registrantName;
 
@@ -399,19 +399,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
 		public bool? EnableDomainProxy
 		{
 			get
@@ -422,6 +409,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				enableDomainProxy = value;
 				DictionaryUtil.Add(QueryParameters, "EnableDomainProxy", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

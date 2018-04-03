@@ -51,6 +51,11 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 				domain.ExpirationDateLong = context.LongValue("QueryDomainList.Data["+ i +"].ExpirationDateLong");
 				domain.RegistrationDateLong = context.LongValue("QueryDomainList.Data["+ i +"].RegistrationDateLong");
 				domain.Premium = context.BooleanValue("QueryDomainList.Data["+ i +"].Premium");
+				domain.DomainAuditStatus = context.StringValue("QueryDomainList.Data["+ i +"].DomainAuditStatus");
+				domain.ExpirationDateStatus = context.StringValue("QueryDomainList.Data["+ i +"].ExpirationDateStatus");
+				domain.RegistrantType = context.StringValue("QueryDomainList.Data["+ i +"].RegistrantType");
+				domain.DomainGroupId = context.StringValue("QueryDomainList.Data["+ i +"].DomainGroupId");
+				domain.Remark = context.StringValue("QueryDomainList.Data["+ i +"].Remark");
 
 				queryDomainListResponse_data.Add(domain);
 			}
