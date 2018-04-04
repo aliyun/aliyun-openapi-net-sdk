@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 				taskInfo.CreateTime = context.StringValue("QueryTaskList.Data["+ i +"].CreateTime");
 				taskInfo.Clientip = context.StringValue("QueryTaskList.Data["+ i +"].Clientip");
 				taskInfo.TaskNo = context.StringValue("QueryTaskList.Data["+ i +"].TaskNo");
+				taskInfo.TaskTypeDescription = context.StringValue("QueryTaskList.Data["+ i +"].TaskTypeDescription");
+				taskInfo.TaskStatusCode = context.IntegerValue("QueryTaskList.Data["+ i +"].TaskStatusCode");
 
 				queryTaskListResponse_data.Add(taskInfo);
 			}

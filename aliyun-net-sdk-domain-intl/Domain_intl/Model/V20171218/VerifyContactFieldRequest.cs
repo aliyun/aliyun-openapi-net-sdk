@@ -26,36 +26,22 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-    public class SaveSingleTaskForCreatingOrderActivateRequest : RpcAcsRequest<SaveSingleTaskForCreatingOrderActivateResponse>
+    public class VerifyContactFieldRequest : RpcAcsRequest<VerifyContactFieldResponse>
     {
-        public SaveSingleTaskForCreatingOrderActivateRequest()
-            : base("Domain_intl", "2017-12-18", "SaveSingleTaskForCreatingOrderActivate", "domain", "openAPI")
+        public VerifyContactFieldRequest()
+            : base("Domain_intl", "2017-12-18", "VerifyContactField", "domain", "openAPI")
         {
         }
 
 		private string country;
 
-		private int? subscriptionDuration;
-
 		private string address;
-
-		private bool? permitPremiumActivation;
 
 		private string telArea;
 
 		private string city;
 
-		private string dns2;
-
-		private string dns1;
-
-		private string domainName;
-
-		private long? registrantProfileId;
-
 		private string telephone;
-
-		private bool? aliyunDns;
 
 		private string registrantOrganization;
 
@@ -66,8 +52,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 		private string postalCode;
 
 		private string userClientIp;
-
-		private bool? enableDomainProxy;
 
 		private string lang;
 
@@ -88,19 +72,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public int? SubscriptionDuration
-		{
-			get
-			{
-				return subscriptionDuration;
-			}
-			set	
-			{
-				subscriptionDuration = value;
-				DictionaryUtil.Add(QueryParameters, "SubscriptionDuration", value.ToString());
-			}
-		}
-
 		public string Address
 		{
 			get
@@ -111,19 +82,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				address = value;
 				DictionaryUtil.Add(QueryParameters, "Address", value);
-			}
-		}
-
-		public bool? PermitPremiumActivation
-		{
-			get
-			{
-				return permitPremiumActivation;
-			}
-			set	
-			{
-				permitPremiumActivation = value;
-				DictionaryUtil.Add(QueryParameters, "PermitPremiumActivation", value.ToString());
 			}
 		}
 
@@ -153,58 +111,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string Dns2
-		{
-			get
-			{
-				return dns2;
-			}
-			set	
-			{
-				dns2 = value;
-				DictionaryUtil.Add(QueryParameters, "Dns2", value);
-			}
-		}
-
-		public string Dns1
-		{
-			get
-			{
-				return dns1;
-			}
-			set	
-			{
-				dns1 = value;
-				DictionaryUtil.Add(QueryParameters, "Dns1", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public long? RegistrantProfileId
-		{
-			get
-			{
-				return registrantProfileId;
-			}
-			set	
-			{
-				registrantProfileId = value;
-				DictionaryUtil.Add(QueryParameters, "RegistrantProfileId", value.ToString());
-			}
-		}
-
 		public string Telephone
 		{
 			get
@@ -215,19 +121,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				telephone = value;
 				DictionaryUtil.Add(QueryParameters, "Telephone", value);
-			}
-		}
-
-		public bool? AliyunDns
-		{
-			get
-			{
-				return aliyunDns;
-			}
-			set	
-			{
-				aliyunDns = value;
-				DictionaryUtil.Add(QueryParameters, "AliyunDns", value.ToString());
 			}
 		}
 
@@ -296,19 +189,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public bool? EnableDomainProxy
-		{
-			get
-			{
-				return enableDomainProxy;
-			}
-			set	
-			{
-				enableDomainProxy = value;
-				DictionaryUtil.Add(QueryParameters, "EnableDomainProxy", value.ToString());
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -348,14 +228,9 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override SaveSingleTaskForCreatingOrderActivateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override VerifyContactFieldResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SaveSingleTaskForCreatingOrderActivateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return VerifyContactFieldResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

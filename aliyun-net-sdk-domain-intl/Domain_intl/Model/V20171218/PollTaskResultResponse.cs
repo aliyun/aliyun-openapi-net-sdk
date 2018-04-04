@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-	public class QueryTaskDetailListResponse : AcsResponse
+	public class PollTaskResultResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -38,7 +38,7 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private bool? nextPage;
 
-		private List<QueryTaskDetailList_TaskDetail> data;
+		private List<PollTaskResult_TaskDetail> data;
 
 		public string RequestId
 		{
@@ -124,7 +124,7 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public List<QueryTaskDetailList_TaskDetail> Data
+		public List<PollTaskResult_TaskDetail> Data
 		{
 			get
 			{
@@ -136,7 +136,7 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public class QueryTaskDetailList_TaskDetail
+		public class PollTaskResult_TaskDetail
 		{
 
 			private string taskNo;

@@ -26,36 +26,28 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-    public class SaveSingleTaskForCreatingOrderActivateRequest : RpcAcsRequest<SaveSingleTaskForCreatingOrderActivateResponse>
+    public class SaveBatchTaskForUpdatingContactInfoByNewContactRequest : RpcAcsRequest<SaveBatchTaskForUpdatingContactInfoByNewContactResponse>
     {
-        public SaveSingleTaskForCreatingOrderActivateRequest()
-            : base("Domain_intl", "2017-12-18", "SaveSingleTaskForCreatingOrderActivate", "domain", "openAPI")
+        public SaveBatchTaskForUpdatingContactInfoByNewContactRequest()
+            : base("Domain_intl", "2017-12-18", "SaveBatchTaskForUpdatingContactInfoByNewContact", "domain", "openAPI")
         {
         }
 
 		private string country;
 
-		private int? subscriptionDuration;
-
 		private string address;
-
-		private bool? permitPremiumActivation;
 
 		private string telArea;
 
+		private string contactType;
+
 		private string city;
 
-		private string dns2;
-
-		private string dns1;
-
-		private string domainName;
-
-		private long? registrantProfileId;
+		private List<string> domainNames;
 
 		private string telephone;
 
-		private bool? aliyunDns;
+		private bool? transferOutProhibited;
 
 		private string registrantOrganization;
 
@@ -66,8 +58,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 		private string postalCode;
 
 		private string userClientIp;
-
-		private bool? enableDomainProxy;
 
 		private string lang;
 
@@ -88,19 +78,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public int? SubscriptionDuration
-		{
-			get
-			{
-				return subscriptionDuration;
-			}
-			set	
-			{
-				subscriptionDuration = value;
-				DictionaryUtil.Add(QueryParameters, "SubscriptionDuration", value.ToString());
-			}
-		}
-
 		public string Address
 		{
 			get
@@ -111,19 +88,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				address = value;
 				DictionaryUtil.Add(QueryParameters, "Address", value);
-			}
-		}
-
-		public bool? PermitPremiumActivation
-		{
-			get
-			{
-				return permitPremiumActivation;
-			}
-			set	
-			{
-				permitPremiumActivation = value;
-				DictionaryUtil.Add(QueryParameters, "PermitPremiumActivation", value.ToString());
 			}
 		}
 
@@ -140,6 +104,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
+		public string ContactType
+		{
+			get
+			{
+				return contactType;
+			}
+			set	
+			{
+				contactType = value;
+				DictionaryUtil.Add(QueryParameters, "ContactType", value);
+			}
+		}
+
 		public string City
 		{
 			get
@@ -153,55 +130,20 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string Dns2
+		public List<string> DomainNames
 		{
 			get
 			{
-				return dns2;
+				return domainNames;
 			}
-			set	
-			{
-				dns2 = value;
-				DictionaryUtil.Add(QueryParameters, "Dns2", value);
-			}
-		}
 
-		public string Dns1
-		{
-			get
+			set
 			{
-				return dns1;
-			}
-			set	
-			{
-				dns1 = value;
-				DictionaryUtil.Add(QueryParameters, "Dns1", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public long? RegistrantProfileId
-		{
-			get
-			{
-				return registrantProfileId;
-			}
-			set	
-			{
-				registrantProfileId = value;
-				DictionaryUtil.Add(QueryParameters, "RegistrantProfileId", value.ToString());
+				domainNames = value;
+				for (int i = 0; i < domainNames.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DomainName." + (i + 1) , domainNames[i]);
+				}
 			}
 		}
 
@@ -218,16 +160,16 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public bool? AliyunDns
+		public bool? TransferOutProhibited
 		{
 			get
 			{
-				return aliyunDns;
+				return transferOutProhibited;
 			}
 			set	
 			{
-				aliyunDns = value;
-				DictionaryUtil.Add(QueryParameters, "AliyunDns", value.ToString());
+				transferOutProhibited = value;
+				DictionaryUtil.Add(QueryParameters, "TransferOutProhibited", value.ToString());
 			}
 		}
 
@@ -296,19 +238,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public bool? EnableDomainProxy
-		{
-			get
-			{
-				return enableDomainProxy;
-			}
-			set	
-			{
-				enableDomainProxy = value;
-				DictionaryUtil.Add(QueryParameters, "EnableDomainProxy", value.ToString());
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -348,14 +277,9 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override SaveSingleTaskForCreatingOrderActivateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SaveBatchTaskForUpdatingContactInfoByNewContactResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SaveSingleTaskForCreatingOrderActivateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveBatchTaskForUpdatingContactInfoByNewContactResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

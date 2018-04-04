@@ -56,6 +56,20 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".RegistrantProfileId", orderActivateParams[i].RegistrantProfileId);
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".EnableDomainProxy", orderActivateParams[i].EnableDomainProxy);
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".PermitPremiumActivation", orderActivateParams[i].PermitPremiumActivation);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".AliyunDns", orderActivateParams[i].AliyunDns);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Dns1", orderActivateParams[i].Dns1);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Dns2", orderActivateParams[i].Dns2);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Country", orderActivateParams[i].Country);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".City", orderActivateParams[i].City);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".RegistrantOrganization", orderActivateParams[i].RegistrantOrganization);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".RegistrantName", orderActivateParams[i].RegistrantName);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Province", orderActivateParams[i].Province);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Address", orderActivateParams[i].Address);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Email", orderActivateParams[i].Email);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".PostalCode", orderActivateParams[i].PostalCode);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".TelArea", orderActivateParams[i].TelArea);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Telephone", orderActivateParams[i].Telephone);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".TelExt", orderActivateParams[i].TelExt);
 				}
 			}
 		}
@@ -98,6 +112,34 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			private bool? enableDomainProxy;
 
 			private bool? permitPremiumActivation;
+
+			private bool? aliyunDns;
+
+			private string dns1;
+
+			private string dns2;
+
+			private string country;
+
+			private string city;
+
+			private string registrantOrganization;
+
+			private string registrantName;
+
+			private string province;
+
+			private string address;
+
+			private string email;
+
+			private string postalCode;
+
+			private string telArea;
+
+			private string telephone;
+
+			private string telExt;
 
 			public string DomainName
 			{
@@ -156,6 +198,174 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				set	
 				{
 					permitPremiumActivation = value;
+				}
+			}
+
+			public bool? AliyunDns
+			{
+				get
+				{
+					return aliyunDns;
+				}
+				set	
+				{
+					aliyunDns = value;
+				}
+			}
+
+			public string Dns1
+			{
+				get
+				{
+					return dns1;
+				}
+				set	
+				{
+					dns1 = value;
+				}
+			}
+
+			public string Dns2
+			{
+				get
+				{
+					return dns2;
+				}
+				set	
+				{
+					dns2 = value;
+				}
+			}
+
+			public string Country
+			{
+				get
+				{
+					return country;
+				}
+				set	
+				{
+					country = value;
+				}
+			}
+
+			public string City
+			{
+				get
+				{
+					return city;
+				}
+				set	
+				{
+					city = value;
+				}
+			}
+
+			public string RegistrantOrganization
+			{
+				get
+				{
+					return registrantOrganization;
+				}
+				set	
+				{
+					registrantOrganization = value;
+				}
+			}
+
+			public string RegistrantName
+			{
+				get
+				{
+					return registrantName;
+				}
+				set	
+				{
+					registrantName = value;
+				}
+			}
+
+			public string Province
+			{
+				get
+				{
+					return province;
+				}
+				set	
+				{
+					province = value;
+				}
+			}
+
+			public string Address
+			{
+				get
+				{
+					return address;
+				}
+				set	
+				{
+					address = value;
+				}
+			}
+
+			public string Email
+			{
+				get
+				{
+					return email;
+				}
+				set	
+				{
+					email = value;
+				}
+			}
+
+			public string PostalCode
+			{
+				get
+				{
+					return postalCode;
+				}
+				set	
+				{
+					postalCode = value;
+				}
+			}
+
+			public string TelArea
+			{
+				get
+				{
+					return telArea;
+				}
+				set	
+				{
+					telArea = value;
+				}
+			}
+
+			public string Telephone
+			{
+				get
+				{
+					return telephone;
+				}
+				set	
+				{
+					telephone = value;
+				}
+			}
+
+			public string TelExt
+			{
+				get
+				{
+					return telExt;
+				}
+				set	
+				{
+					telExt = value;
 				}
 			}
 		}

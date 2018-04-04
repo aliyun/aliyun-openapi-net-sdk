@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 			currentPageCursor.CreateTime = context.StringValue("QueryTaskDetailHistory.CurrentPageCursor.CreateTime");
 			currentPageCursor.TryCount = context.IntegerValue("QueryTaskDetailHistory.CurrentPageCursor.TryCount");
 			currentPageCursor.ErrorMsg = context.StringValue("QueryTaskDetailHistory.CurrentPageCursor.ErrorMsg");
+			currentPageCursor.TaskStatusCode = context.IntegerValue("QueryTaskDetailHistory.CurrentPageCursor.TaskStatusCode");
+			currentPageCursor.TaskTypeDescription = context.StringValue("QueryTaskDetailHistory.CurrentPageCursor.TaskTypeDescription");
 			queryTaskDetailHistoryResponse.CurrentPageCursor = currentPageCursor;
 
 			QueryTaskDetailHistoryResponse.QueryTaskDetailHistory_NextPageCursor nextPageCursor = new QueryTaskDetailHistoryResponse.QueryTaskDetailHistory_NextPageCursor();
@@ -57,6 +59,8 @@ namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 			nextPageCursor.CreateTime = context.StringValue("QueryTaskDetailHistory.NextPageCursor.CreateTime");
 			nextPageCursor.TryCount = context.IntegerValue("QueryTaskDetailHistory.NextPageCursor.TryCount");
 			nextPageCursor.ErrorMsg = context.StringValue("QueryTaskDetailHistory.NextPageCursor.ErrorMsg");
+			nextPageCursor.TaskStatusCode = context.IntegerValue("QueryTaskDetailHistory.NextPageCursor.TaskStatusCode");
+			nextPageCursor.TaskTypeDescription = context.StringValue("QueryTaskDetailHistory.NextPageCursor.TaskTypeDescription");
 			queryTaskDetailHistoryResponse.NextPageCursor = nextPageCursor;
 
 			QueryTaskDetailHistoryResponse.QueryTaskDetailHistory_PrePageCursor prePageCursor = new QueryTaskDetailHistoryResponse.QueryTaskDetailHistory_PrePageCursor();
@@ -70,6 +74,8 @@ namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 			prePageCursor.CreateTime = context.StringValue("QueryTaskDetailHistory.PrePageCursor.CreateTime");
 			prePageCursor.TryCount = context.IntegerValue("QueryTaskDetailHistory.PrePageCursor.TryCount");
 			prePageCursor.ErrorMsg = context.StringValue("QueryTaskDetailHistory.PrePageCursor.ErrorMsg");
+			prePageCursor.TaskStatusCode = context.IntegerValue("QueryTaskDetailHistory.PrePageCursor.TaskStatusCode");
+			prePageCursor.TaskTypeDescription = context.StringValue("QueryTaskDetailHistory.PrePageCursor.TaskTypeDescription");
 			queryTaskDetailHistoryResponse.PrePageCursor = prePageCursor;
 
 			List<QueryTaskDetailHistoryResponse.QueryTaskDetailHistory_TaskDetailHistory> queryTaskDetailHistoryResponse_objects = new List<QueryTaskDetailHistoryResponse.QueryTaskDetailHistory_TaskDetailHistory>();
@@ -85,6 +91,8 @@ namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 				taskDetailHistory.CreateTime = context.StringValue("QueryTaskDetailHistory.Objects["+ i +"].CreateTime");
 				taskDetailHistory.TryCount = context.IntegerValue("QueryTaskDetailHistory.Objects["+ i +"].TryCount");
 				taskDetailHistory.ErrorMsg = context.StringValue("QueryTaskDetailHistory.Objects["+ i +"].ErrorMsg");
+				taskDetailHistory.TaskStatusCode = context.IntegerValue("QueryTaskDetailHistory.Objects["+ i +"].TaskStatusCode");
+				taskDetailHistory.TaskTypeDescription = context.StringValue("QueryTaskDetailHistory.Objects["+ i +"].TaskTypeDescription");
 
 				queryTaskDetailHistoryResponse_objects.Add(taskDetailHistory);
 			}

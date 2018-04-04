@@ -131,6 +131,10 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 			private string errorMsg;
 
+			private int? taskStatusCode;
+
+			private string taskTypeDescription;
+
 			public string TaskNo
 			{
 				get
@@ -248,6 +252,30 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				set	
 				{
 					errorMsg = value;
+				}
+			}
+
+			public int? TaskStatusCode
+			{
+				get
+				{
+					return taskStatusCode;
+				}
+				set	
+				{
+					taskStatusCode = value;
+				}
+			}
+
+			public string TaskTypeDescription
+			{
+				get
+				{
+					return taskTypeDescription;
+				}
+				set	
+				{
+					taskTypeDescription = value;
 				}
 			}
 		}
@@ -275,6 +303,10 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 			private string errorMsg;
 
+			private int? taskStatusCode;
+
+			private string taskTypeDescription;
+
 			public string TaskNo
 			{
 				get
@@ -392,6 +424,30 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				set	
 				{
 					errorMsg = value;
+				}
+			}
+
+			public int? TaskStatusCode
+			{
+				get
+				{
+					return taskStatusCode;
+				}
+				set	
+				{
+					taskStatusCode = value;
+				}
+			}
+
+			public string TaskTypeDescription
+			{
+				get
+				{
+					return taskTypeDescription;
+				}
+				set	
+				{
+					taskTypeDescription = value;
 				}
 			}
 		}
@@ -419,6 +475,10 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 			private string errorMsg;
 
+			private int? taskStatusCode;
+
+			private string taskTypeDescription;
+
 			public string TaskNo
 			{
 				get
@@ -536,6 +596,30 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				set	
 				{
 					errorMsg = value;
+				}
+			}
+
+			public int? TaskStatusCode
+			{
+				get
+				{
+					return taskStatusCode;
+				}
+				set	
+				{
+					taskStatusCode = value;
+				}
+			}
+
+			public string TaskTypeDescription
+			{
+				get
+				{
+					return taskTypeDescription;
+				}
+				set	
+				{
+					taskTypeDescription = value;
 				}
 			}
 		}
@@ -563,6 +647,10 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 			private string errorMsg;
 
+			private int? taskStatusCode;
+
+			private string taskTypeDescription;
+
 			public string TaskNo
 			{
 				get
@@ -680,6 +768,30 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				set	
 				{
 					errorMsg = value;
+				}
+			}
+
+			public int? TaskStatusCode
+			{
+				get
+				{
+					return taskStatusCode;
+				}
+				set	
+				{
+					taskStatusCode = value;
+				}
+			}
+
+			public string TaskTypeDescription
+			{
+				get
+				{
+					return taskTypeDescription;
+				}
+				set	
+				{
+					taskTypeDescription = value;
 				}
 			}
 		}

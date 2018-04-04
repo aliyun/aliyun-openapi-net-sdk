@@ -51,6 +51,9 @@ namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 				taskDetail.CreateTime = context.StringValue("QueryTaskDetailList.Data["+ i +"].CreateTime");
 				taskDetail.TryCount = context.IntegerValue("QueryTaskDetailList.Data["+ i +"].TryCount");
 				taskDetail.ErrorMsg = context.StringValue("QueryTaskDetailList.Data["+ i +"].ErrorMsg");
+				taskDetail.TaskStatusCode = context.IntegerValue("QueryTaskDetailList.Data["+ i +"].TaskStatusCode");
+				taskDetail.TaskResult = context.StringValue("QueryTaskDetailList.Data["+ i +"].TaskResult");
+				taskDetail.TaskTypeDescription = context.StringValue("QueryTaskDetailList.Data["+ i +"].TaskTypeDescription");
 
 				queryTaskDetailListResponse_data.Add(taskDetail);
 			}
