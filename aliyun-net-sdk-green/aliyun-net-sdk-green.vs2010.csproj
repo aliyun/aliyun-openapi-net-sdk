@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{952c3d30-67b3-47ef-986a-fb9645bb8d02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-green</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Green\Model\V20170825\VideoAsyncScanRequest.cs" />
+	<Compile Include="Green\Model\V20170825\TextScanRequest.cs" />
+	<Compile Include="Green\Model\V20170825\VideoFeedbackResponse.cs" />
+	<Compile Include="Green\Model\V20170825\VoiceAsyncScanResultsResponse.cs" />
+	<Compile Include="Green\Model\V20170825\DeleteFacesResponse.cs" />
+	<Compile Include="Green\Model\V20170825\TextFeedbackResponse.cs" />
+	<Compile Include="Green\Model\V20170825\GetGroupsResponse.cs" />
+	<Compile Include="Green\Model\V20170825\ImageSyncScanResponse.cs" />
+	<Compile Include="Green\Model\V20170825\ImageScanFeedbackRequest.cs" />
+	<Compile Include="Green\Model\V20170825\FileAsyncScanResponse.cs" />
+	<Compile Include="Green\Model\V20170825\VoiceAsyncScanRequest.cs" />
+	<Compile Include="Green\Model\V20170825\SearchResponse.cs" />
+	<Compile Include="Green\Model\V20170825\VideoAsyncScanResultsResponse.cs" />
+	<Compile Include="Green\Model\V20170825\ImageSyncScanRequest.cs" />
+	<Compile Include="Green\Model\V20170825\SetPersonResponse.cs" />
+	<Compile Include="Green\Model\V20170825\ImageAsyncScanResultsRequest.cs" />
+	<Compile Include="Green\Model\V20170825\TextFeedbackRequest.cs" />
+	<Compile Include="Green\Model\V20170825\VoiceAsyncScanResponse.cs" />
+	<Compile Include="Green\Model\V20170825\ImageScanFeedbackResponse.cs" />
+	<Compile Include="Green\Model\V20170825\AddGroupsResponse.cs" />
+	<Compile Include="Green\Model\V20170825\AddFacesResponse.cs" />
+	<Compile Include="Green\Model\V20170825\GetPersonResponse.cs" />
+	<Compile Include="Green\Model\V20170825\VideoAsyncScanResponse.cs" />
+	<Compile Include="Green\Model\V20170825\VoiceAsyncScanResultsRequest.cs" />
+	<Compile Include="Green\Model\V20170825\GetPersonsResponse.cs" />
+	<Compile Include="Green\Model\V20170825\GetPersonsRequest.cs" />
+	<Compile Include="Green\Model\V20170825\ImageAsyncScanResponse.cs" />
+	<Compile Include="Green\Model\V20170825\SetPersonRequest.cs" />
+	<Compile Include="Green\Model\V20170825\AddFacesRequest.cs" />
+	<Compile Include="Green\Model\V20170825\GetPersonRequest.cs" />
+	<Compile Include="Green\Model\V20170825\GetFacesResponse.cs" />
+	<Compile Include="Green\Model\V20170825\DeleteGroupsResponse.cs" />
+	<Compile Include="Green\Model\V20170825\VideoAsyncScanResultsRequest.cs" />
+	<Compile Include="Green\Model\V20170825\AddGroupsRequest.cs" />
+	<Compile Include="Green\Model\V20170825\GetFacesRequest.cs" />
+	<Compile Include="Green\Model\V20170825\VideoFeedbackRequest.cs" />
+	<Compile Include="Green\Model\V20170825\FileAsyncScanResultsResponse.cs" />
+	<Compile Include="Green\Model\V20170825\TextScanResponse.cs" />
+	<Compile Include="Green\Model\V20170825\AddPersonResponse.cs" />
+	<Compile Include="Green\Model\V20170825\SearchRequest.cs" />
+	<Compile Include="Green\Model\V20170825\DeleteGroupsRequest.cs" />
+	<Compile Include="Green\Model\V20170825\ImageAsyncScanResultsResponse.cs" />
+	<Compile Include="Green\Model\V20170825\DeleteFacesRequest.cs" />
+	<Compile Include="Green\Model\V20170825\AddPersonRequest.cs" />
+	<Compile Include="Green\Model\V20170825\GetGroupsRequest.cs" />
+	<Compile Include="Green\Model\V20170825\DeletePersonRequest.cs" />
+	<Compile Include="Green\Model\V20170825\DeletePersonResponse.cs" />
+	<Compile Include="Green\Model\V20170825\ImageAsyncScanRequest.cs" />
+	<Compile Include="Green\Model\V20170825\FileAsyncScanResultsRequest.cs" />
+	<Compile Include="Green\Model\V20170825\FileAsyncScanRequest.cs" />
+	<Compile Include="Green\Transform\V20170825\GetGroupsResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\GetPersonsResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\AddFacesResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\DeleteFacesResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\FileAsyncScanResultsResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\SetPersonResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\TextScanResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\ImageScanFeedbackResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\VoiceAsyncScanResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\ImageAsyncScanResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\VideoAsyncScanResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\ImageSyncScanResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\TextFeedbackResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\DeletePersonResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\GetFacesResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\VideoAsyncScanResultsResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\SearchResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\FileAsyncScanResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\ImageAsyncScanResultsResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\VideoFeedbackResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\AddPersonResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\DeleteGroupsResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\VoiceAsyncScanResultsResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\GetPersonResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20170825\AddGroupsResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
