@@ -34,9 +34,9 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string projectName;
-
 		private string approveLevel;
+
+		private string projectName;
 
 		private bool? showDelService;
 
@@ -45,19 +45,6 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 		private string alias;
 
 		private string serviceName;
-
-		public string ProjectName
-		{
-			get
-			{
-				return projectName;
-			}
-			set	
-			{
-				projectName = value;
-				DictionaryUtil.Add(QueryParameters, "projectName", value);
-			}
-		}
 
 		public string ApproveLevel
 		{
@@ -69,6 +56,19 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			{
 				approveLevel = value;
 				DictionaryUtil.Add(QueryParameters, "approveLevel", value);
+			}
+		}
+
+		public string ProjectName
+		{
+			get
+			{
+				return projectName;
+			}
+			set	
+			{
+				projectName = value;
+				DictionaryUtil.Add(QueryParameters, "projectName", value);
 			}
 		}
 

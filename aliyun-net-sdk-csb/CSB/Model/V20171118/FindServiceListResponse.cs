@@ -182,6 +182,8 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 				private string userId;
 
+				private string casTargets;
+
 				public string Alias
 				{
 					get
@@ -419,6 +421,18 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 					set	
 					{
 						userId = value;
+					}
+				}
+
+				public string CasTargets
+				{
+					get
+					{
+						return casTargets;
+					}
+					set	
+					{
+						casTargets = value;
 					}
 				}
 			}

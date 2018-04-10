@@ -40,9 +40,9 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 		private string serviceName;
 
-		private int? pageNum;
-
 		private long? serviceId;
+
+		private int? pageNum;
 
 		private bool? onlyPending;
 
@@ -85,19 +85,6 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
 		public long? ServiceId
 		{
 			get
@@ -108,6 +95,19 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			{
 				serviceId = value;
 				DictionaryUtil.Add(QueryParameters, "ServiceId", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

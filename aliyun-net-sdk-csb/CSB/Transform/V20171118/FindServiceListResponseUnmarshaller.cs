@@ -62,6 +62,7 @@ namespace Aliyun.Acs.CSB.Transform.V20171118
 				service.StatisticName = context.StringValue("FindServiceList.Data.ServiceList["+ i +"].StatisticName");
 				service.Status = context.IntegerValue("FindServiceList.Data.ServiceList["+ i +"].Status");
 				service.UserId = context.StringValue("FindServiceList.Data.ServiceList["+ i +"].UserId");
+				service.CasTargets = context.StringValue("FindServiceList.Data.ServiceList["+ i +"].CasTargets");
 
 				data_serviceList.Add(service);
 			}

@@ -36,9 +36,9 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 		private string projectName;
 
-		private bool? showDelService;
-
 		private int? casShowType;
+
+		private bool? showDelService;
 
 		private long? csbId;
 
@@ -61,19 +61,6 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public bool? ShowDelService
-		{
-			get
-			{
-				return showDelService;
-			}
-			set	
-			{
-				showDelService = value;
-				DictionaryUtil.Add(QueryParameters, "ShowDelService", value.ToString());
-			}
-		}
-
 		public int? CasShowType
 		{
 			get
@@ -84,6 +71,19 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			{
 				casShowType = value;
 				DictionaryUtil.Add(QueryParameters, "CasShowType", value.ToString());
+			}
+		}
+
+		public bool? ShowDelService
+		{
+			get
+			{
+				return showDelService;
+			}
+			set	
+			{
+				showDelService = value;
+				DictionaryUtil.Add(QueryParameters, "ShowDelService", value.ToString());
 			}
 		}
 
