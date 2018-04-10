@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string hpcClusterId;
+
 		private string securityEnhancementStrategy;
 
 		private string keyPairName;
@@ -66,6 +68,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private int? internetMaxBandwidthIn;
 
 		private string imageId;
+
+		private string spotInterruptionBehavior;
 
 		private string clientToken;
 
@@ -115,6 +119,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string HpcClusterId
+		{
+			get
+			{
+				return hpcClusterId;
+			}
+			set	
+			{
+				hpcClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "HpcClusterId", value);
 			}
 		}
 
@@ -328,6 +345,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public string SpotInterruptionBehavior
+		{
+			get
+			{
+				return spotInterruptionBehavior;
+			}
+			set	
+			{
+				spotInterruptionBehavior = value;
+				DictionaryUtil.Add(QueryParameters, "SpotInterruptionBehavior", value);
 			}
 		}
 

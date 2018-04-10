@@ -21,18 +21,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeEventsResponse : AcsResponse
+	public class DescribeNetworkInterfacePermissionsResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private int? totalCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private int? totalCount;
-
-		private List<DescribeEvents__Event> events;
+		private List<DescribeNetworkInterfacePermissions_NetworkInterfacePermission> networkInterfacePermissions;
 
 		public string RequestId
 		{
@@ -43,6 +43,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 
@@ -70,142 +82,102 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? TotalCount
+		public List<DescribeNetworkInterfacePermissions_NetworkInterfacePermission> NetworkInterfacePermissions
 		{
 			get
 			{
-				return totalCount;
+				return networkInterfacePermissions;
 			}
 			set	
 			{
-				totalCount = value;
+				networkInterfacePermissions = value;
 			}
 		}
 
-		public List<DescribeEvents__Event> Events
-		{
-			get
-			{
-				return events;
-			}
-			set	
-			{
-				events = value;
-			}
-		}
-
-		public class DescribeEvents__Event
+		public class DescribeNetworkInterfacePermissions_NetworkInterfacePermission
 		{
 
-			private string resourceId;
+			private long? accountId;
 
-			private string eventType;
+			private string serviceName;
 
-			private string eventCategory;
+			private string networkInterfaceId;
 
-			private string status;
+			private string networkInterfacePermissionId;
 
-			private string supportModify;
+			private string permission;
 
-			private string planTime;
+			private string permissionState;
 
-			private string expireTime;
-
-			private string eventId;
-
-			public string ResourceId
+			public long? AccountId
 			{
 				get
 				{
-					return resourceId;
+					return accountId;
 				}
 				set	
 				{
-					resourceId = value;
+					accountId = value;
 				}
 			}
 
-			public string EventType
+			public string ServiceName
 			{
 				get
 				{
-					return eventType;
+					return serviceName;
 				}
 				set	
 				{
-					eventType = value;
+					serviceName = value;
 				}
 			}
 
-			public string EventCategory
+			public string NetworkInterfaceId
 			{
 				get
 				{
-					return eventCategory;
+					return networkInterfaceId;
 				}
 				set	
 				{
-					eventCategory = value;
+					networkInterfaceId = value;
 				}
 			}
 
-			public string Status
+			public string NetworkInterfacePermissionId
 			{
 				get
 				{
-					return status;
+					return networkInterfacePermissionId;
 				}
 				set	
 				{
-					status = value;
+					networkInterfacePermissionId = value;
 				}
 			}
 
-			public string SupportModify
+			public string Permission
 			{
 				get
 				{
-					return supportModify;
+					return permission;
 				}
 				set	
 				{
-					supportModify = value;
+					permission = value;
 				}
 			}
 
-			public string PlanTime
+			public string PermissionState
 			{
 				get
 				{
-					return planTime;
+					return permissionState;
 				}
 				set	
 				{
-					planTime = value;
-				}
-			}
-
-			public string ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
-				}
-			}
-
-			public string EventId
-			{
-				get
-				{
-					return eventId;
-				}
-				set	
-				{
-					eventId = value;
+					permissionState = value;
 				}
 			}
 		}

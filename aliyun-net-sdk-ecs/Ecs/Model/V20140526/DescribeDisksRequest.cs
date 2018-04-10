@@ -101,7 +101,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string tag1Key;
 
-		private List<long?> additionalAttributess;
+		private List<string> additionalAttributess;
 
 		private bool? enableShared;
 
@@ -561,7 +561,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<long?> AdditionalAttributess
+		public List<string> AdditionalAttributess
 		{
 			get
 			{

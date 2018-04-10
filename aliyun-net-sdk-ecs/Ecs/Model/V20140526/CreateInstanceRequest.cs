@@ -99,6 +99,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string vlanId;
 
+		private string spotInterruptionBehavior;
+
 		private string ioOptimized;
 
 		private string securityGroupId;
@@ -571,6 +573,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				vlanId = value;
 				DictionaryUtil.Add(QueryParameters, "VlanId", value);
+			}
+		}
+
+		public string SpotInterruptionBehavior
+		{
+			get
+			{
+				return spotInterruptionBehavior;
+			}
+			set	
+			{
+				spotInterruptionBehavior = value;
+				DictionaryUtil.Add(QueryParameters, "SpotInterruptionBehavior", value);
 			}
 		}
 

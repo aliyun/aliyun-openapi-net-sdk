@@ -31,25 +31,25 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			describeEventsResponse.HttpResponse = context.HttpResponse;
 			describeEventsResponse.RequestId = context.StringValue("DescribeEvents.RequestId");
-			describeEventsResponse.PageNo = context.IntegerValue("DescribeEvents.PageNo");
+			describeEventsResponse.PageNumber = context.IntegerValue("DescribeEvents.PageNumber");
 			describeEventsResponse.PageSize = context.IntegerValue("DescribeEvents.PageSize");
-			describeEventsResponse.Total = context.IntegerValue("DescribeEvents.Total");
+			describeEventsResponse.TotalCount = context.IntegerValue("DescribeEvents.TotalCount");
 
-			List<DescribeEventsResponse.DescribeEvents_Events> describeEventsResponse_data = new List<DescribeEventsResponse.DescribeEvents_Events>();
-			for (int i = 0; i < context.Length("DescribeEvents.Data.Length"); i++) {
-				DescribeEventsResponse.DescribeEvents_Events events = new DescribeEventsResponse.DescribeEvents_Events();
-				events.ResourceId = context.StringValue("DescribeEvents.Data["+ i +"].ResourceId");
-				events.EventType = context.StringValue("DescribeEvents.Data["+ i +"].EventType");
-				events.EventCategory = context.StringValue("DescribeEvents.Data["+ i +"].EventCategory");
-				events.Status = context.StringValue("DescribeEvents.Data["+ i +"].Status");
-				events.SupportModify = context.StringValue("DescribeEvents.Data["+ i +"].SupportModify");
-				events.PlanTime = context.StringValue("DescribeEvents.Data["+ i +"].PlanTime");
-				events.ExpireTime = context.StringValue("DescribeEvents.Data["+ i +"].ExpireTime");
-				events.EventId = context.StringValue("DescribeEvents.Data["+ i +"].EventId");
+			List<DescribeEventsResponse.DescribeEvents__Event> describeEventsResponse_events = new List<DescribeEventsResponse.DescribeEvents__Event>();
+			for (int i = 0; i < context.Length("DescribeEvents.Events.Length"); i++) {
+				DescribeEventsResponse.DescribeEvents__Event _event = new DescribeEventsResponse.DescribeEvents__Event();
+				_event.ResourceId = context.StringValue("DescribeEvents.Events["+ i +"].ResourceId");
+				_event.EventType = context.StringValue("DescribeEvents.Events["+ i +"].EventType");
+				_event.EventCategory = context.StringValue("DescribeEvents.Events["+ i +"].EventCategory");
+				_event.Status = context.StringValue("DescribeEvents.Events["+ i +"].Status");
+				_event.SupportModify = context.StringValue("DescribeEvents.Events["+ i +"].SupportModify");
+				_event.PlanTime = context.StringValue("DescribeEvents.Events["+ i +"].PlanTime");
+				_event.ExpireTime = context.StringValue("DescribeEvents.Events["+ i +"].ExpireTime");
+				_event.EventId = context.StringValue("DescribeEvents.Events["+ i +"].EventId");
 
-				describeEventsResponse_data.Add(events);
+				describeEventsResponse_events.Add(_event);
 			}
-			describeEventsResponse.Data = describeEventsResponse_data;
+			describeEventsResponse.Events = describeEventsResponse_events;
         
 			return describeEventsResponse;
         }
