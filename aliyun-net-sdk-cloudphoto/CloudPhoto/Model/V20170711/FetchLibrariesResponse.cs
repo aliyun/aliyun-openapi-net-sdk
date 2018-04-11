@@ -113,6 +113,8 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 			private string libraryId;
 
+			private long? ctime;
+
 			public string LibraryId
 			{
 				get
@@ -122,6 +124,18 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				set	
 				{
 					libraryId = value;
+				}
+			}
+
+			public long? Ctime
+			{
+				get
+				{
+					return ctime;
+				}
+				set	
+				{
+					ctime = value;
 				}
 			}
 		}

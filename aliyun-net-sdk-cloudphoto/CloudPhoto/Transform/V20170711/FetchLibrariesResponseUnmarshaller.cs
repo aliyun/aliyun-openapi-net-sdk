@@ -40,6 +40,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			for (int i = 0; i < context.Length("FetchLibraries.Libraries.Length"); i++) {
 				FetchLibrariesResponse.FetchLibraries_Library library = new FetchLibrariesResponse.FetchLibraries_Library();
 				library.LibraryId = context.StringValue("FetchLibraries.Libraries["+ i +"].LibraryId");
+				library.Ctime = context.LongValue("FetchLibraries.Libraries["+ i +"].Ctime");
 
 				fetchLibrariesResponse_libraries.Add(library);
 			}

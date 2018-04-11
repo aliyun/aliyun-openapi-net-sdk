@@ -97,9 +97,23 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 		public class GetLibrary_Library
 		{
 
+			private long? ctime;
+
 			private GetLibrary_Quota quota;
 
 			private GetLibrary_AutoCleanConfig autoCleanConfig;
+
+			public long? Ctime
+			{
+				get
+				{
+					return ctime;
+				}
+				set	
+				{
+					ctime = value;
+				}
+			}
 
 			public GetLibrary_Quota Quota
 			{

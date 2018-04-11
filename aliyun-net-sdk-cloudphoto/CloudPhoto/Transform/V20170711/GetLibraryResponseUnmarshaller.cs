@@ -36,6 +36,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 			getLibraryResponse.Action = context.StringValue("GetLibrary.Action");
 
 			GetLibraryResponse.GetLibrary_Library library = new GetLibraryResponse.GetLibrary_Library();
+			library.Ctime = context.LongValue("GetLibrary.Library.Ctime");
 
 			GetLibraryResponse.GetLibrary_Library.GetLibrary_Quota quota = new GetLibraryResponse.GetLibrary_Library.GetLibrary_Quota();
 			quota.TotalQuota = context.LongValue("GetLibrary.Library.Quota.TotalQuota");
