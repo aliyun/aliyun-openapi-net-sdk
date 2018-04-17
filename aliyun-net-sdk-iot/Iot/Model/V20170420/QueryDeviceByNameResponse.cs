@@ -95,6 +95,8 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 
 			private string deviceType;
 
+			private string clientIp;
+
 			private string gmtCreate;
 
 			private string gmtModified;
@@ -168,6 +170,18 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 				set	
 				{
 					deviceType = value;
+				}
+			}
+
+			public string ClientIp
+			{
+				get
+				{
+					return clientIp;
+				}
+				set	
+				{
+					clientIp = value;
 				}
 			}
 

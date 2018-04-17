@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			deviceInfo.DeviceStatus = context.StringValue("QueryDeviceByName.DeviceInfo.DeviceStatus");
 			deviceInfo.DeviceName = context.StringValue("QueryDeviceByName.DeviceInfo.DeviceName");
 			deviceInfo.DeviceType = context.StringValue("QueryDeviceByName.DeviceInfo.DeviceType");
+			deviceInfo.ClientIp = context.StringValue("QueryDeviceByName.DeviceInfo.ClientIp");
 			deviceInfo.GmtCreate = context.StringValue("QueryDeviceByName.DeviceInfo.GmtCreate");
 			deviceInfo.GmtModified = context.StringValue("QueryDeviceByName.DeviceInfo.GmtModified");
 			queryDeviceByNameResponse.DeviceInfo = deviceInfo;

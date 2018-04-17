@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{22B11093-7301-437C-846E-F06FCE9F9F72}</ProjectGuid>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{41c62f52-f85a-4988-9e23-bade0ac97525}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -39,64 +40,187 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Iot\Model\V20170420\UpdateDeviceShadowRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\ApplyDeviceWithNamesRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\QueryDevicePropRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\GetDeviceShadowRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\BatchGetDeviceStateRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\QueryDeviceResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\DeleteDevicePropResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\SaveDevicePropResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\PubBroadcastResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\UpdateProductRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\UpdateDeviceShadowResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\QueryPageByApplyIdResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\RRpcRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\PubResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\UpdateProductResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\QueryApplyStatusResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\PubBroadcastRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\QueryDeviceByNameResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\RegistDeviceRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\CreateProductRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\ApplyDeviceWithNamesResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\SaveDevicePropRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\QueryDeviceRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\BatchGetDeviceStateResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\QueryPageByApplyIdRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\QueryDevicePropResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\QueryDeviceByNameRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\RegistDeviceResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\CreateProductResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\GetDeviceShadowResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\RRpcResponse.cs" />
-    <Compile Include="Iot\Model\V20170420\DeleteDevicePropRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\PubRequest.cs" />
-    <Compile Include="Iot\Model\V20170420\QueryApplyStatusRequest.cs" />
-    <Compile Include="Iot\Transform\V20170420\DeleteDevicePropResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\RegistDeviceResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\GetDeviceShadowResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\PubResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\QueryPageByApplyIdResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\QueryDeviceResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\QueryDevicePropResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\RRpcResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\PubBroadcastResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\BatchGetDeviceStateResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\CreateProductResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\QueryDeviceByNameResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\QueryApplyStatusResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\UpdateProductResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\SaveDevicePropResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\UpdateDeviceShadowResponseUnmarshaller.cs" />
-    <Compile Include="Iot\Transform\V20170420\ApplyDeviceWithNamesResponseUnmarshaller.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
+	<Compile Include="Iot\Model\V20180120\BatchCheckDeviceNamesRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDeviceEventDataRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDevicePropertyDataRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDeviceStatisticsResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\BatchRegisterDeviceWithApplyIdResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\GetThingTopoRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDevicePropertyDataResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDeviceDetailResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryProductResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\InvokeThingServiceResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryProductRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\NotifyAddThingTopoRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryBatchRegisterDeviceStatusResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\SetDevicePropertyResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryBatchRegisterDeviceStatusRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\BatchRegisterDeviceWithApplyIdRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\GetDeviceStatusResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryProductListRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDeviceStatisticsRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\RegisterDeviceResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDeviceDetailRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDeviceEventDataResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\DisableThingResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\EnableThingResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDevicePropertyStatusRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\InvokeThingServiceRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\RemoveThingTopoResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\RemoveThingTopoRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\GetDeviceStatusRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\GetThingTopoResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\BatchRegisterDeviceResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDeviceServiceDataResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\SetDevicePropertyRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\DisableThingRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\EnableThingRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\BatchRegisterDeviceRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\DeleteDeviceRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\NotifyAddThingTopoResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\DeleteDeviceResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryProductListResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDevicePropertyStatusResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDeviceServiceDataRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\BatchCheckDeviceNamesResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\RegisterDeviceRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\StopRuleResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\UpdateDeviceShadowRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\ApplyDeviceWithNamesRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\UpdateProductTopicResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryTopicRouteTableResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\DeleteRuleResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\CreateTopicRouteTableRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryTopicRouteTableRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\CreateRuleRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryTopicReverseRouteTableRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\StopRuleRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryDevicePropRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\GetDeviceShadowRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\UpdateProductTopicRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\CreateProductTopicResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\CreateTopicRouteTableResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\BatchGetDeviceStateRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryDeviceResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\DeleteDevicePropResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\SaveDevicePropResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\CreateProductTopicRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\PubBroadcastResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\UpdateProductRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\UpdateDeviceShadowResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\ListRuleResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryPageByApplyIdResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\UpdateRuleActionRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\GetRuleActionRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\DeleteRuleRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\RRpcRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\UpdateRuleActionResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryProductTopicResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\PubResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\CreateRuleResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\UpdateProductResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\DeleteTopicRouteTableResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\DeleteRuleActionRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\DeleteRuleActionResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryApplyStatusResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\DeleteProductTopicResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\PubBroadcastRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\ListRuleActionsRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryDeviceByNameResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\UpdateRuleRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\DeleteTopicRouteTableRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\DeleteProductTopicRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\CreateRuleActionRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\GetRuleRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\StartRuleRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\ListRuleRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryProductTopicRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\RegistDeviceRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\GetRuleResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\CreateProductRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\ApplyDeviceWithNamesResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\SaveDevicePropRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\ListRuleActionsResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\UpdateRuleResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryDeviceRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\BatchGetDeviceStateResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryPageByApplyIdRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryDevicePropResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryDeviceByNameRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\StartRuleResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\RegistDeviceResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\CreateProductResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\GetDeviceShadowResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\CreateRuleActionResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\RRpcResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\GetRuleActionResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\DeleteDevicePropRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\PubRequest.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryTopicReverseRouteTableResponse.cs" />
+	<Compile Include="Iot\Model\V20170420\QueryApplyStatusRequest.cs" />
+	<Compile Include="Iot\Transform\V20180120\DeleteDeviceResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\BatchRegisterDeviceResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\DisableThingResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\SetDevicePropertyResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryBatchRegisterDeviceStatusResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\BatchCheckDeviceNamesResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\NotifyAddThingTopoResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\RegisterDeviceResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\InvokeThingServiceResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryDevicePropertyDataResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\GetThingTopoResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryDeviceStatisticsResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\EnableThingResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryDeviceServiceDataResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryProductResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryProductListResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\GetDeviceStatusResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryDevicePropertyStatusResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryDeviceDetailResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryDeviceEventDataResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\BatchRegisterDeviceWithApplyIdResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\RemoveThingTopoResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\DeleteDevicePropResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\RegistDeviceResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\GetDeviceShadowResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\GetRuleResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\GetRuleActionResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\CreateProductTopicResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\UpdateRuleResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\UpdateProductTopicResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\PubResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\CreateTopicRouteTableResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\QueryPageByApplyIdResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\CreateRuleActionResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\QueryDeviceResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\CreateRuleResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\ListRuleActionsResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\DeleteRuleResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\StopRuleResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\DeleteProductTopicResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\UpdateRuleActionResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\QueryDevicePropResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\RRpcResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\QueryTopicReverseRouteTableResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\PubBroadcastResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\DeleteTopicRouteTableResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\BatchGetDeviceStateResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\CreateProductResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\DeleteRuleActionResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\QueryDeviceByNameResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\QueryTopicRouteTableResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\StartRuleResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\QueryApplyStatusResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\UpdateProductResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\ListRuleResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\QueryProductTopicResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\SaveDevicePropResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\UpdateDeviceShadowResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20170420\ApplyDeviceWithNamesResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
-      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
       <Name>aliyun-net-sdk-core.vs2010</Name>
     </ProjectReference>
   </ItemGroup>

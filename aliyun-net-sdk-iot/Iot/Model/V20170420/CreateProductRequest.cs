@@ -35,13 +35,19 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 
 		private long? catId;
 
+		private int? nodeType;
+
 		private string regionId;
+
+		private bool? id2;
 
 		private string name;
 
 		private string extProps;
 
 		private string securityPolicy;
+
+		private int? payType;
 
 		private string accessKeyId;
 
@@ -60,6 +66,19 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 			}
 		}
 
+		public int? NodeType
+		{
+			get
+			{
+				return nodeType;
+			}
+			set	
+			{
+				nodeType = value;
+				DictionaryUtil.Add(QueryParameters, "NodeType", value.ToString());
+			}
+		}
+
 		public string RegionId
 		{
 			get
@@ -70,6 +89,19 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 			{
 				regionId = value;
 				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public bool? Id2
+		{
+			get
+			{
+				return id2;
+			}
+			set	
+			{
+				id2 = value;
+				DictionaryUtil.Add(QueryParameters, "Id2", value.ToString());
 			}
 		}
 
@@ -109,6 +141,19 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 			{
 				securityPolicy = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityPolicy", value);
+			}
+		}
+
+		public int? PayType
+		{
+			get
+			{
+				return payType;
+			}
+			set	
+			{
+				payType = value;
+				DictionaryUtil.Add(QueryParameters, "PayType", value.ToString());
 			}
 		}
 

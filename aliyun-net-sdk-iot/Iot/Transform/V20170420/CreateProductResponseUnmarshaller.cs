@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			CreateProductResponse.CreateProduct_ProductInfo productInfo = new CreateProductResponse.CreateProduct_ProductInfo();
 			productInfo.ProductKey = context.StringValue("CreateProduct.ProductInfo.ProductKey");
 			productInfo.ProductName = context.StringValue("CreateProduct.ProductInfo.ProductName");
+			productInfo.NodeType = context.IntegerValue("CreateProduct.ProductInfo.NodeType");
 			productInfo.CatId = context.LongValue("CreateProduct.ProductInfo.CatId");
 			productInfo.CreateUserId = context.LongValue("CreateProduct.ProductInfo.CreateUserId");
 			productInfo.ProductDesc = context.StringValue("CreateProduct.ProductInfo.ProductDesc");
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			productInfo.GmtCreate = context.StringValue("CreateProduct.ProductInfo.GmtCreate");
 			productInfo.GmtModified = context.StringValue("CreateProduct.ProductInfo.GmtModified");
 			productInfo.ProductSecret = context.StringValue("CreateProduct.ProductInfo.ProductSecret");
+			productInfo.Id2 = context.BooleanValue("CreateProduct.ProductInfo.Id2");
 			createProductResponse.ProductInfo = productInfo;
         
 			return createProductResponse;

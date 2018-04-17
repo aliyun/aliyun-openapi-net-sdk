@@ -87,6 +87,8 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 
 			private string productName;
 
+			private int? nodeType;
+
 			private long? catId;
 
 			private long? createUserId;
@@ -102,6 +104,8 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 			private string gmtModified;
 
 			private string productSecret;
+
+			private bool? id2;
 
 			public string ProductKey
 			{
@@ -124,6 +128,18 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 				set	
 				{
 					productName = value;
+				}
+			}
+
+			public int? NodeType
+			{
+				get
+				{
+					return nodeType;
+				}
+				set	
+				{
+					nodeType = value;
 				}
 			}
 
@@ -220,6 +236,18 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 				set	
 				{
 					productSecret = value;
+				}
+			}
+
+			public bool? Id2
+			{
+				get
+				{
+					return id2;
+				}
+				set	
+				{
+					id2 = value;
 				}
 			}
 		}

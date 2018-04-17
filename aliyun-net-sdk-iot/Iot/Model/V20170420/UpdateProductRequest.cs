@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 
 		private long? catId;
 
+		private int? nodeType;
+
 		private string productName;
 
 		private string extProps;
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 			{
 				catId = value;
 				DictionaryUtil.Add(QueryParameters, "CatId", value.ToString());
+			}
+		}
+
+		public int? NodeType
+		{
+			get
+			{
+				return nodeType;
+			}
+			set	
+			{
+				nodeType = value;
+				DictionaryUtil.Add(QueryParameters, "NodeType", value.ToString());
 			}
 		}
 
