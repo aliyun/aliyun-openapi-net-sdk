@@ -21,14 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
-	public class ListAlbumsResponse : AcsResponse
+	public class FetchMomentPhotosResponse : AcsResponse
 	{
 
 		private string code;
 
 		private string message;
-
-		private string nextCursor;
 
 		private int? totalCount;
 
@@ -36,7 +34,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 
 		private string action;
 
-		private List<ListAlbums_Album> albums;
+		private List<FetchMomentPhotos_Photo> photos;
 
 		public string Code
 		{
@@ -59,18 +57,6 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public string NextCursor
-		{
-			get
-			{
-				return nextCursor;
-			}
-			set	
-			{
-				nextCursor = value;
 			}
 		}
 
@@ -110,38 +96,54 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-		public List<ListAlbums_Album> Albums
+		public List<FetchMomentPhotos_Photo> Photos
 		{
 			get
 			{
-				return albums;
+				return photos;
 			}
 			set	
 			{
-				albums = value;
+				photos = value;
 			}
 		}
 
-		public class ListAlbums_Album
+		public class FetchMomentPhotos_Photo
 		{
 
 			private long? id;
 
 			private string idStr;
 
-			private string name;
+			private string title;
+
+			private string fileId;
+
+			private string location;
 
 			private string state;
 
+			private string md5;
+
+			private bool? isVideo;
+
 			private string remark;
 
-			private long? photosCount;
+			private long? size;
+
+			private long? width;
+
+			private long? height;
 
 			private long? ctime;
 
 			private long? mtime;
 
-			private ListAlbums_Cover cover;
+			private long? takenAt;
+
+			private long? inactiveTime;
+
+			private long? shareExpireTime;
 
 			public long? Id
 			{
@@ -167,15 +169,39 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				}
 			}
 
-			public string Name
+			public string Title
 			{
 				get
 				{
-					return name;
+					return title;
 				}
 				set	
 				{
-					name = value;
+					title = value;
+				}
+			}
+
+			public string FileId
+			{
+				get
+				{
+					return fileId;
+				}
+				set	
+				{
+					fileId = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
 				}
 			}
 
@@ -191,6 +217,30 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				}
 			}
 
+			public string Md5
+			{
+				get
+				{
+					return md5;
+				}
+				set	
+				{
+					md5 = value;
+				}
+			}
+
+			public bool? IsVideo
+			{
+				get
+				{
+					return isVideo;
+				}
+				set	
+				{
+					isVideo = value;
+				}
+			}
+
 			public string Remark
 			{
 				get
@@ -203,15 +253,39 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				}
 			}
 
-			public long? PhotosCount
+			public long? Size
 			{
 				get
 				{
-					return photosCount;
+					return size;
 				}
 				set	
 				{
-					photosCount = value;
+					size = value;
+				}
+			}
+
+			public long? Width
+			{
+				get
+				{
+					return width;
+				}
+				set	
+				{
+					width = value;
+				}
+			}
+
+			public long? Height
+			{
+				get
+				{
+					return height;
+				}
+				set	
+				{
+					height = value;
 				}
 			}
 
@@ -239,187 +313,39 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 				}
 			}
 
-			public ListAlbums_Cover Cover
+			public long? TakenAt
 			{
 				get
 				{
-					return cover;
+					return takenAt;
 				}
 				set	
 				{
-					cover = value;
+					takenAt = value;
 				}
 			}
 
-			public class ListAlbums_Cover
+			public long? InactiveTime
 			{
-
-				private long? id;
-
-				private string idStr;
-
-				private string title;
-
-				private string fileId;
-
-				private string state;
-
-				private string md5;
-
-				private bool? isVideo;
-
-				private string remark;
-
-				private long? width;
-
-				private long? height;
-
-				private long? ctime;
-
-				private long? mtime;
-
-				public long? Id
+				get
 				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
+					return inactiveTime;
 				}
-
-				public string IdStr
+				set	
 				{
-					get
-					{
-						return idStr;
-					}
-					set	
-					{
-						idStr = value;
-					}
+					inactiveTime = value;
 				}
+			}
 
-				public string Title
+			public long? ShareExpireTime
+			{
+				get
 				{
-					get
-					{
-						return title;
-					}
-					set	
-					{
-						title = value;
-					}
+					return shareExpireTime;
 				}
-
-				public string FileId
+				set	
 				{
-					get
-					{
-						return fileId;
-					}
-					set	
-					{
-						fileId = value;
-					}
-				}
-
-				public string State
-				{
-					get
-					{
-						return state;
-					}
-					set	
-					{
-						state = value;
-					}
-				}
-
-				public string Md5
-				{
-					get
-					{
-						return md5;
-					}
-					set	
-					{
-						md5 = value;
-					}
-				}
-
-				public bool? IsVideo
-				{
-					get
-					{
-						return isVideo;
-					}
-					set	
-					{
-						isVideo = value;
-					}
-				}
-
-				public string Remark
-				{
-					get
-					{
-						return remark;
-					}
-					set	
-					{
-						remark = value;
-					}
-				}
-
-				public long? Width
-				{
-					get
-					{
-						return width;
-					}
-					set	
-					{
-						width = value;
-					}
-				}
-
-				public long? Height
-				{
-					get
-					{
-						return height;
-					}
-					set	
-					{
-						height = value;
-					}
-				}
-
-				public long? Ctime
-				{
-					get
-					{
-						return ctime;
-					}
-					set	
-					{
-						ctime = value;
-					}
-				}
-
-				public long? Mtime
-				{
-					get
-					{
-						return mtime;
-					}
-					set	
-					{
-						mtime = value;
-					}
+					shareExpireTime = value;
 				}
 			}
 		}

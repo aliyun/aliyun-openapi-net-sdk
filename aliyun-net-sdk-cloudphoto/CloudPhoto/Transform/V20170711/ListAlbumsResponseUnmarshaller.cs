@@ -44,6 +44,7 @@ namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 				album.IdStr = context.StringValue("ListAlbums.Albums["+ i +"].IdStr");
 				album.Name = context.StringValue("ListAlbums.Albums["+ i +"].Name");
 				album.State = context.StringValue("ListAlbums.Albums["+ i +"].State");
+				album.Remark = context.StringValue("ListAlbums.Albums["+ i +"].Remark");
 				album.PhotosCount = context.LongValue("ListAlbums.Albums["+ i +"].PhotosCount");
 				album.Ctime = context.LongValue("ListAlbums.Albums["+ i +"].Ctime");
 				album.Mtime = context.LongValue("ListAlbums.Albums["+ i +"].Mtime");
