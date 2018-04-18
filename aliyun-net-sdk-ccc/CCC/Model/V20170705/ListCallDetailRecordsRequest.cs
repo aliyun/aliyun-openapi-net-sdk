@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class ListCallDetailRecordsRequest : RpcAcsRequest<ListCallDetailRecordsResponse>
     {
         public ListCallDetailRecordsRequest()
-            : base("CCC", "2017-07-05", "ListCallDetailRecords", "CCC", "openAPI")
+            : base("CCC", "2017-07-05", "ListCallDetailRecords", "ccc", "openAPI")
         {
         }
 
@@ -44,6 +44,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string phoneNumber;
 
 		private int? pageSize;
+
+		private string orderBy;
 
 		private long? startTime;
 
@@ -130,6 +132,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string OrderBy
+		{
+			get
+			{
+				return orderBy;
+			}
+			set	
+			{
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
 			}
 		}
 

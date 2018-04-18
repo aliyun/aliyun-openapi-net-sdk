@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4ADA5375-CE62-4F2C-8D25-9FC01758EC00}</ProjectGuid>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9a00d494-c5dc-4aca-b7fa-4707973984bd}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -39,93 +40,129 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CCC\Model\V20170705\AddPhoneNumberResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ModifyPhoneNumberRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ListCallDetailRecordsResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\RemoveUsersRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ListContactFlowsResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\CreateSkillGroupResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\RequestLoginInfoRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ListUsersOfSkillGroupRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\GetServiceExtensionsRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ListRecordingsResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ListUsersResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\DownloadRecordingRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\AssignUsersRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ListSkillGroupsResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\RemovePhoneNumberRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ListRecordingsRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\RefreshTokenRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\CreateUserRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ListRecordingsByContactIdResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ListRolesRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ListCallDetailRecordsRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\AssignUsersResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\RefreshTokenResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ListRecordingsByContactIdRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\CreateSkillGroupRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ModifySkillGroupResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ListSkillGroupsOfUserResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\GetConfigResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\GetServiceExtensionsResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ListPhoneNumbersResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ListSkillGroupsOfUserRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\RequestLoginInfoResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\GetUserResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ListPhoneNumbersRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\DeleteSkillGroupRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\RemoveUsersResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ListRolesResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ModifyUserRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\AddPhoneNumberRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ModifySkillGroupRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\GetConfigRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ListContactFlowsRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\DeleteSkillGroupResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\CreateUserResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ListUsersRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ModifyUserResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ListSkillGroupsRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\ModifyPhoneNumberResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\RemovePhoneNumberResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\GetUserRequest.cs" />
-    <Compile Include="CCC\Model\V20170705\DownloadRecordingResponse.cs" />
-    <Compile Include="CCC\Model\V20170705\ListUsersOfSkillGroupResponse.cs" />
-    <Compile Include="CCC\Transform\V20170705\CreateUserResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ModifySkillGroupResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ListSkillGroupsOfUserResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\AddPhoneNumberResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ListSkillGroupsResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ListContactFlowsResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ListRecordingsByContactIdResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\AssignUsersResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ListRolesResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\GetServiceExtensionsResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\RefreshTokenResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ListPhoneNumbersResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\RequestLoginInfoResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ModifyUserResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\GetUserResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ListUsersResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ListRecordingsResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ListCallDetailRecordsResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\DownloadRecordingResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\RemovePhoneNumberResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\RemoveUsersResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\GetConfigResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\CreateSkillGroupResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\DeleteSkillGroupResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ModifyPhoneNumberResponseUnmarshaller.cs" />
-    <Compile Include="CCC\Transform\V20170705\ListUsersOfSkillGroupResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Model\V20170705\AddPhoneNumberResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ModifyPhoneNumberRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListCallDetailRecordsResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\RemoveUsersRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListContactFlowsResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\CreateSkillGroupResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\RequestLoginInfoRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\CreateJobGroupRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListUsersOfSkillGroupRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\GetServiceExtensionsRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListRecordingsResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\PickLocalNumberResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListUsersResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\DownloadRecordingRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\AssignUsersRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListSkillGroupsResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\RemovePhoneNumberRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListRecordingsRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\GetJobRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\RefreshTokenRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\DialogueRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListJobStatusResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\CreateUserRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListScenariosResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListConfigResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListRecordingsByContactIdResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListRolesRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListCallDetailRecordsRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListScenariosRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\AssignUsersResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\CreateScenarioRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\GetJobResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\RefreshTokenResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListRecordingsByContactIdRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\CreateSkillGroupRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ModifySkillGroupResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListSkillGroupsOfUserResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\GetConfigResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\GetNumberRegionInfoRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\GetNumberRegionInfoResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\StartJobResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\GetServiceExtensionsResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListPhoneNumbersResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\GetJobStatusByCallIdRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListRealTimeAgentRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListSkillGroupsOfUserRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\GetJobStatusByCallIdResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListJobGroupsResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\RequestLoginInfoResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\GetUserResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListJobStatusRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListPhoneNumbersRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\DeleteSkillGroupRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\RemoveUsersResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListRolesResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ModifyUserRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\AddPhoneNumberRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ModifySkillGroupRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\GetConfigRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\StartJobRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\CreateScenarioResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListContactFlowsRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\DeleteSkillGroupResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\CreateUserResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListUsersRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\PickLocalNumberRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ModifyUserResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListSkillGroupsRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ListRealTimeAgentResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\DialogueResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListJobGroupsRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ModifyPhoneNumberResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\RemovePhoneNumberResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\GetUserRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\DownloadRecordingResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListConfigRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\CreateJobGroupResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\ListUsersOfSkillGroupResponse.cs" />
+	<Compile Include="CCC\Transform\V20170705\GetJobResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\CreateUserResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ModifySkillGroupResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\GetNumberRegionInfoResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListSkillGroupsOfUserResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\AddPhoneNumberResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\GetJobStatusByCallIdResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListSkillGroupsResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListJobStatusResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListContactFlowsResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListRecordingsByContactIdResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\AssignUsersResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListRolesResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\DialogueResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\GetServiceExtensionsResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\RefreshTokenResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListPhoneNumbersResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\RequestLoginInfoResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\StartJobResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ModifyUserResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\GetUserResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListUsersResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListRecordingsResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListCallDetailRecordsResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\DownloadRecordingResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\RemovePhoneNumberResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\PickLocalNumberResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\CreateScenarioResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListConfigResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\CreateJobGroupResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListScenariosResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\RemoveUsersResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\GetConfigResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\CreateSkillGroupResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\DeleteSkillGroupResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ModifyPhoneNumberResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListJobGroupsResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListRealTimeAgentResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ListUsersOfSkillGroupResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
       <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
       <Name>aliyun-net-sdk-core.vs2010</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

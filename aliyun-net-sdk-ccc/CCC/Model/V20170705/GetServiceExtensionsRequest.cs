@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class GetServiceExtensionsRequest : RpcAcsRequest<GetServiceExtensionsResponse>
     {
         public GetServiceExtensionsRequest()
-            : base("CCC", "2017-07-05", "GetServiceExtensions", "CCC", "openAPI")
+            : base("CCC", "2017-07-05", "GetServiceExtensions", "ccc", "openAPI")
         {
         }
 

@@ -196,6 +196,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private string instanceId;
 
+				private int? satisfaction;
+
 				public string ContactId
 				{
 					get
@@ -349,6 +351,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						instanceId = value;
+					}
+				}
+
+				public int? Satisfaction
+				{
+					get
+					{
+						return satisfaction;
+					}
+					set	
+					{
+						satisfaction = value;
 					}
 				}
 			}

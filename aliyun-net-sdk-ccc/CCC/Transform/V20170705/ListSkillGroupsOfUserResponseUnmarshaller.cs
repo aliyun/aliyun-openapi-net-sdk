@@ -60,6 +60,8 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 					phoneNumber.AllowOutbound = context.BooleanValue("ListSkillGroupsOfUser.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].AllowOutbound");
 					phoneNumber.Usage = context.StringValue("ListSkillGroupsOfUser.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Usage");
 					phoneNumber.Trunks = context.IntegerValue("ListSkillGroupsOfUser.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Trunks");
+					phoneNumber.Province = context.StringValue("ListSkillGroupsOfUser.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].Province");
+					phoneNumber.City = context.StringValue("ListSkillGroupsOfUser.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers["+ j +"].City");
 
 					skill_outboundPhoneNumbers.Add(phoneNumber);
 				}

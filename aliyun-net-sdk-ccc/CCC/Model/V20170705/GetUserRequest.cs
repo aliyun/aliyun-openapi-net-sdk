@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class GetUserRequest : RpcAcsRequest<GetUserResponse>
     {
         public GetUserRequest()
-            : base("CCC", "2017-07-05", "GetUser", "CCC", "openAPI")
+            : base("CCC", "2017-07-05", "GetUser", "ccc", "openAPI")
         {
         }
 

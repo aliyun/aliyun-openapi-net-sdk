@@ -57,6 +57,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				recording.FileDescription = context.StringValue("ListRecordings.Recordings.List["+ i +"].FileDescription");
 				recording.Channel = context.StringValue("ListRecordings.Recordings.List["+ i +"].Channel");
 				recording.InstanceId = context.StringValue("ListRecordings.Recordings.List["+ i +"].InstanceId");
+				recording.Satisfaction = context.IntegerValue("ListRecordings.Recordings.List["+ i +"].Satisfaction");
 
 				recordings_list.Add(recording);
 			}

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class ListRecordingsByContactIdRequest : RpcAcsRequest<ListRecordingsByContactIdResponse>
     {
         public ListRecordingsByContactIdRequest()
-            : base("CCC", "2017-07-05", "ListRecordingsByContactId", "CCC", "openAPI")
+            : base("CCC", "2017-07-05", "ListRecordingsByContactId", "ccc", "openAPI")
         {
         }
 

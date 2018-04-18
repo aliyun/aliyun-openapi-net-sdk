@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class DeleteSkillGroupRequest : RpcAcsRequest<DeleteSkillGroupResponse>
     {
         public DeleteSkillGroupRequest()
-            : base("CCC", "2017-07-05", "DeleteSkillGroup", "CCC", "openAPI")
+            : base("CCC", "2017-07-05", "DeleteSkillGroup", "ccc", "openAPI")
         {
         }
 
