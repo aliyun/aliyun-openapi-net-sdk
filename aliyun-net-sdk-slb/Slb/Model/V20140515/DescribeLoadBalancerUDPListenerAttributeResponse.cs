@@ -60,6 +60,14 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string masterSlaveServerGroupId;
 
+		private string aclId;
+
+		private string aclType;
+
+		private string aclStatus;
+
+		private string vpcIds;
+
 		public string RequestId
 		{
 			get
@@ -273,6 +281,54 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				masterSlaveServerGroupId = value;
+			}
+		}
+
+		public string AclId
+		{
+			get
+			{
+				return aclId;
+			}
+			set	
+			{
+				aclId = value;
+			}
+		}
+
+		public string AclType
+		{
+			get
+			{
+				return aclType;
+			}
+			set	
+			{
+				aclType = value;
+			}
+		}
+
+		public string AclStatus
+		{
+			get
+			{
+				return aclStatus;
+			}
+			set	
+			{
+				aclStatus = value;
+			}
+		}
+
+		public string VpcIds
+		{
+			get
+			{
+				return vpcIds;
+			}
+			set	
+			{
+				vpcIds = value;
 			}
 		}
 	}

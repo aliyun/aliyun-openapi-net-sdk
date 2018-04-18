@@ -40,6 +40,9 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				backendServer.ServerId = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].ServerId");
 				backendServer.Port = context.IntegerValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Port");
 				backendServer.Weight = context.IntegerValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Weight");
+				backendServer.Type = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Type");
+				backendServer.ServerIp = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].ServerIp");
+				backendServer.VpcId = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].VpcId");
 
 				describeVServerGroupAttributeResponse_backendServers.Add(backendServer);
 			}

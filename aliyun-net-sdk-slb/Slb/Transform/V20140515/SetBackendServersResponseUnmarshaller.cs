@@ -38,6 +38,9 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				SetBackendServersResponse.SetBackendServers_BackendServer backendServer = new SetBackendServersResponse.SetBackendServers_BackendServer();
 				backendServer.ServerId = context.StringValue("SetBackendServers.BackendServers["+ i +"].ServerId");
 				backendServer.Weight = context.StringValue("SetBackendServers.BackendServers["+ i +"].Weight");
+				backendServer.ServerIp = context.StringValue("SetBackendServers.BackendServers["+ i +"].ServerIp");
+				backendServer.VpcId = context.StringValue("SetBackendServers.BackendServers["+ i +"].VpcId");
+				backendServer.Type = context.StringValue("SetBackendServers.BackendServers["+ i +"].Type");
 
 				setBackendServersResponse_backendServers.Add(backendServer);
 			}

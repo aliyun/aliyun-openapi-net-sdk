@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? healthCheckTimeout;
 
+		private string listenerForward;
+
 		private string xForwardedFor;
 
 		private string healthCheckURI;
@@ -47,9 +49,15 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? healthyThreshold;
 
+		private string aclStatus;
+
 		private string scheduler;
 
+		private string aclType;
+
 		private string healthCheck;
+
+		private int? forwardPort;
 
 		private int? maxConnection;
 
@@ -61,7 +69,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string stickySessionType;
 
+		private string vpcIds;
+
 		private string vServerGroupId;
+
+		private string aclId;
 
 		private int? listenerPort;
 
@@ -138,6 +150,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string ListenerForward
+		{
+			get
+			{
+				return listenerForward;
+			}
+			set	
+			{
+				listenerForward = value;
+				DictionaryUtil.Add(QueryParameters, "ListenerForward", value);
+			}
+		}
+
 		public string XForwardedFor
 		{
 			get
@@ -190,6 +215,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string AclStatus
+		{
+			get
+			{
+				return aclStatus;
+			}
+			set	
+			{
+				aclStatus = value;
+				DictionaryUtil.Add(QueryParameters, "AclStatus", value);
+			}
+		}
+
 		public string Scheduler
 		{
 			get
@@ -203,6 +241,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string AclType
+		{
+			get
+			{
+				return aclType;
+			}
+			set	
+			{
+				aclType = value;
+				DictionaryUtil.Add(QueryParameters, "AclType", value);
+			}
+		}
+
 		public string HealthCheck
 		{
 			get
@@ -213,6 +264,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				healthCheck = value;
 				DictionaryUtil.Add(QueryParameters, "HealthCheck", value);
+			}
+		}
+
+		public int? ForwardPort
+		{
+			get
+			{
+				return forwardPort;
+			}
+			set	
+			{
+				forwardPort = value;
+				DictionaryUtil.Add(QueryParameters, "ForwardPort", value.ToString());
 			}
 		}
 
@@ -281,6 +345,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string VpcIds
+		{
+			get
+			{
+				return vpcIds;
+			}
+			set	
+			{
+				vpcIds = value;
+				DictionaryUtil.Add(QueryParameters, "VpcIds", value);
+			}
+		}
+
 		public string VServerGroupId
 		{
 			get
@@ -291,6 +368,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				vServerGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "VServerGroupId", value);
+			}
+		}
+
+		public string AclId
+		{
+			get
+			{
+				return aclId;
+			}
+			set	
+			{
+				aclId = value;
+				DictionaryUtil.Add(QueryParameters, "AclId", value);
 			}
 		}
 

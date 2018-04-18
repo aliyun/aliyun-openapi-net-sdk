@@ -91,6 +91,12 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private int? isBackup;
 
+			private string type;
+
+			private string serverIp;
+
+			private string vpcId;
+
 			public string ServerId
 			{
 				get
@@ -136,6 +142,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					isBackup = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public string ServerIp
+			{
+				get
+				{
+					return serverIp;
+				}
+				set	
+				{
+					serverIp = value;
+				}
+			}
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
 				}
 			}
 		}

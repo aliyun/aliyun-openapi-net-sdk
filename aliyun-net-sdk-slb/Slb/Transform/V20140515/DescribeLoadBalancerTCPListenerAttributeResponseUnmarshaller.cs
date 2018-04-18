@@ -52,6 +52,10 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerTCPListenerAttributeResponse.MaxConnection = context.IntegerValue("DescribeLoadBalancerTCPListenerAttribute.MaxConnection");
 			describeLoadBalancerTCPListenerAttributeResponse.VServerGroupId = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.VServerGroupId");
 			describeLoadBalancerTCPListenerAttributeResponse.MasterSlaveServerGroupId = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.MasterSlaveServerGroupId");
+			describeLoadBalancerTCPListenerAttributeResponse.AclId = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.AclId");
+			describeLoadBalancerTCPListenerAttributeResponse.AclType = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.AclType");
+			describeLoadBalancerTCPListenerAttributeResponse.AclStatus = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.AclStatus");
+			describeLoadBalancerTCPListenerAttributeResponse.VpcIds = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.VpcIds");
         
 			return describeLoadBalancerTCPListenerAttributeResponse;
         }

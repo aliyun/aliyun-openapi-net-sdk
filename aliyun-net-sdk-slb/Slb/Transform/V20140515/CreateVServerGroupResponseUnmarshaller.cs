@@ -39,6 +39,9 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				backendServer.ServerId = context.StringValue("CreateVServerGroup.BackendServers["+ i +"].ServerId");
 				backendServer.Port = context.IntegerValue("CreateVServerGroup.BackendServers["+ i +"].Port");
 				backendServer.Weight = context.IntegerValue("CreateVServerGroup.BackendServers["+ i +"].Weight");
+				backendServer.Type = context.StringValue("CreateVServerGroup.BackendServers["+ i +"].Type");
+				backendServer.ServerIp = context.StringValue("CreateVServerGroup.BackendServers["+ i +"].ServerIp");
+				backendServer.VpcId = context.StringValue("CreateVServerGroup.BackendServers["+ i +"].VpcId");
 
 				createVServerGroupResponse_backendServers.Add(backendServer);
 			}

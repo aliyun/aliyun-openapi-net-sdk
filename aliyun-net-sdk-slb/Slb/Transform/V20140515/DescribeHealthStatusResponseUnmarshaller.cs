@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				backendServer.ServerId = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerId");
 				backendServer.Port = context.IntegerValue("DescribeHealthStatus.BackendServers["+ i +"].Port");
 				backendServer.ServerHealthStatus = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerHealthStatus");
+				backendServer.ServerIp = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerIp");
+				backendServer.Type = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].Type");
 
 				describeHealthStatusResponse_backendServers.Add(backendServer);
 			}

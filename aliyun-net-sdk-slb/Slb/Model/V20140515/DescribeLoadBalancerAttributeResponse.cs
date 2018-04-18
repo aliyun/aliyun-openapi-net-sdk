@@ -441,6 +441,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string listenerProtocol;
 
+			private string listenerForward;
+
+			private int? forwardPort;
+
 			public int? ListenerPort
 			{
 				get
@@ -464,6 +468,30 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 					listenerProtocol = value;
 				}
 			}
+
+			public string ListenerForward
+			{
+				get
+				{
+					return listenerForward;
+				}
+				set	
+				{
+					listenerForward = value;
+				}
+			}
+
+			public int? ForwardPort
+			{
+				get
+				{
+					return forwardPort;
+				}
+				set	
+				{
+					forwardPort = value;
+				}
+			}
 		}
 
 		public class DescribeLoadBalancerAttribute_BackendServer
@@ -472,6 +500,12 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			private string serverId;
 
 			private int? weight;
+
+			private string type;
+
+			private string serverIp;
+
+			private string vpcId;
 
 			public string ServerId
 			{
@@ -494,6 +528,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					weight = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public string ServerIp
+			{
+				get
+				{
+					return serverIp;
+				}
+				set	
+				{
+					serverIp = value;
+				}
+			}
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
 				}
 			}
 		}

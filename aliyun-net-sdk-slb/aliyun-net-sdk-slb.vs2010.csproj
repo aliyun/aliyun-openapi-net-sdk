@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{467fd35d-5c1c-478a-8596-d13ca2eff7db}</ProjectGuid>
+    <ProjectGuid>{173c5fe8-3ebc-4253-8bb6-ea0c37386548}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -51,6 +51,7 @@
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerTCPListenerAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\SetVServerGroupAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteMasterSlaveServerGroupRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\DescribeAccessControlListAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteVServerGroupRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveVServerGroupsResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerAttributeRequest.cs" />
@@ -64,6 +65,7 @@
 	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveVServerGroupAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerStatusResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\UploadCACertificateRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\SetAccessControlListAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeHealthStatusRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveVServerGroupAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\RemoveTagsResponse.cs" />
@@ -73,6 +75,7 @@
 	<Compile Include="Slb\Model\V20140515\DescribeVServerGroupsResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerAutoReleaseTimeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\StartLoadBalancerListenerRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\DeleteAccessControlListRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeServerCertificatesRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteRulesRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\AddListenerWhiteListItemResponse.cs" />
@@ -88,12 +91,14 @@
 	<Compile Include="Slb\Model\V20140515\CreateLoadBalancerRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\AddVServerGroupBackendServersResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeRuleAttributeRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\DescribeAccessControlListsResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeListenerAccessControlAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerTCPListenerAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\StopLoadBalancerListenerRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\SetRuleRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerTCPListenerAttributeRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\CreateAccessControlListRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteVServerGroupResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateLoadBalancerUDPListenerResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancersRelatedEcsResponse.cs" />
@@ -131,7 +136,9 @@
 	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveServerGroupAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerUDPListenerAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteMasterSlaveVServerGroupRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\SetAccessControlListAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeHealthStatusResponse.cs" />
+	<Compile Include="Slb\Model\V20140515\RemoveAccessControlListEntryResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\UploadCACertificateResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeCACertificatesRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeTagsRequest.cs" />
@@ -148,6 +155,7 @@
 	<Compile Include="Slb\Model\V20140515\CreateLoadBalancerUDPListenerRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\StopLoadBalancerListenerResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateVServerGroupRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\RemoveAccessControlListEntryRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveServerGroupsResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerHTTPSListenerAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\StartLoadBalancerListenerResponse.cs" />
@@ -156,8 +164,10 @@
 	<Compile Include="Slb\Model\V20140515\AddTagsResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeCACertificatesResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\SetLoadBalancerHTTPListenerAttributeResponse.cs" />
+	<Compile Include="Slb\Model\V20140515\DeleteAccessControlListResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\AddTagsRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeVServerGroupAttributeResponse.cs" />
+	<Compile Include="Slb\Model\V20140515\DescribeAccessControlListsRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\SetServerCertificateNameRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateRulesResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\SetRuleResponse.cs" />
@@ -168,16 +178,20 @@
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerHTTPListenerAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteLoadBalancerListenerResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateVServerGroupResponse.cs" />
+	<Compile Include="Slb\Model\V20140515\AddAccessControlListEntryRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\ModifyVServerGroupBackendServersRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerTCPListenerAttributeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteRulesResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeListenerAccessControlAttributeRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\AddAccessControlListEntryResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\RemoveListenerWhiteListItemResponse.cs" />
+	<Compile Include="Slb\Model\V20140515\CreateAccessControlListResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteMasterSlaveVServerGroupResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerAutoReleaseTimeRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\ModifyLoadBalancerInternetSpecResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\UploadServerCertificateRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\MoveResourceGroupRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\DescribeAccessControlListAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\RemoveBackendServersRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeLoadBalancerAutoReleaseTimeResponse.cs" />
 	<Compile Include="Slb\Transform\V20140515\MoveResourceGroupResponseUnmarshaller.cs" />
@@ -200,6 +214,7 @@
 	<Compile Include="Slb\Transform\V20140515\AddBackendServersResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\SetCACertificateNameResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\StopLoadBalancerListenerResponseUnmarshaller.cs" />
+	<Compile Include="Slb\Transform\V20140515\AddAccessControlListEntryResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeTagsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateLoadBalancerTCPListenerResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\RemoveListenerWhiteListItemResponseUnmarshaller.cs" />
@@ -212,9 +227,12 @@
 	<Compile Include="Slb\Transform\V20140515\DescribeLoadBalancerAutoReleaseTimeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DeleteMasterSlaveVServerGroupResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeMasterSlaveServerGroupsResponseUnmarshaller.cs" />
+	<Compile Include="Slb\Transform\V20140515\CreateAccessControlListResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\SetLoadBalancerHTTPListenerAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\SetLoadBalancerUDPListenerAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DeleteLoadBalancerListenerResponseUnmarshaller.cs" />
+	<Compile Include="Slb\Transform\V20140515\SetAccessControlListAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Slb\Transform\V20140515\DescribeAccessControlListsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeZonesResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DeleteCACertificateResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeLoadBalancersResponseUnmarshaller.cs" />
@@ -231,13 +249,16 @@
 	<Compile Include="Slb\Transform\V20140515\RemoveBackendServersResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeMasterSlaveVServerGroupAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateLoadBalancerUDPListenerResponseUnmarshaller.cs" />
+	<Compile Include="Slb\Transform\V20140515\DescribeAccessControlListAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\SetLoadBalancerNameResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\SetServerCertificateNameResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateLoadBalancerResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeRegionsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateVServerGroupResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeCACertificatesResponseUnmarshaller.cs" />
+	<Compile Include="Slb\Transform\V20140515\RemoveAccessControlListEntryResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeRulesResponseUnmarshaller.cs" />
+	<Compile Include="Slb\Transform\V20140515\DeleteAccessControlListResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeVServerGroupAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeMasterSlaveVServerGroupsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateRulesResponseUnmarshaller.cs" />

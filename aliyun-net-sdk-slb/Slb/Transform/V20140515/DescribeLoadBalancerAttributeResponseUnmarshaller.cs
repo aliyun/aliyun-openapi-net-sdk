@@ -75,6 +75,8 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				DescribeLoadBalancerAttributeResponse.DescribeLoadBalancerAttribute_ListenerPortAndProtocol listenerPortAndProtocol = new DescribeLoadBalancerAttributeResponse.DescribeLoadBalancerAttribute_ListenerPortAndProtocol();
 				listenerPortAndProtocol.ListenerPort = context.IntegerValue("DescribeLoadBalancerAttribute.ListenerPortsAndProtocol["+ i +"].ListenerPort");
 				listenerPortAndProtocol.ListenerProtocol = context.StringValue("DescribeLoadBalancerAttribute.ListenerPortsAndProtocol["+ i +"].ListenerProtocol");
+				listenerPortAndProtocol.ListenerForward = context.StringValue("DescribeLoadBalancerAttribute.ListenerPortsAndProtocol["+ i +"].ListenerForward");
+				listenerPortAndProtocol.ForwardPort = context.IntegerValue("DescribeLoadBalancerAttribute.ListenerPortsAndProtocol["+ i +"].ForwardPort");
 
 				describeLoadBalancerAttributeResponse_listenerPortsAndProtocol.Add(listenerPortAndProtocol);
 			}
@@ -85,6 +87,9 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				DescribeLoadBalancerAttributeResponse.DescribeLoadBalancerAttribute_BackendServer backendServer = new DescribeLoadBalancerAttributeResponse.DescribeLoadBalancerAttribute_BackendServer();
 				backendServer.ServerId = context.StringValue("DescribeLoadBalancerAttribute.BackendServers["+ i +"].ServerId");
 				backendServer.Weight = context.IntegerValue("DescribeLoadBalancerAttribute.BackendServers["+ i +"].Weight");
+				backendServer.Type = context.StringValue("DescribeLoadBalancerAttribute.BackendServers["+ i +"].Type");
+				backendServer.ServerIp = context.StringValue("DescribeLoadBalancerAttribute.BackendServers["+ i +"].ServerIp");
+				backendServer.VpcId = context.StringValue("DescribeLoadBalancerAttribute.BackendServers["+ i +"].VpcId");
 
 				describeLoadBalancerAttributeResponse_backendServers.Add(backendServer);
 			}

@@ -78,6 +78,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string xForwardedFor_proto;
 
+		private string aclId;
+
+		private string aclType;
+
+		private string aclStatus;
+
+		private string vpcIds;
+
+		private string listenerForward;
+
+		private int? forwardPort;
+
 		public string RequestId
 		{
 			get
@@ -399,6 +411,78 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				xForwardedFor_proto = value;
+			}
+		}
+
+		public string AclId
+		{
+			get
+			{
+				return aclId;
+			}
+			set	
+			{
+				aclId = value;
+			}
+		}
+
+		public string AclType
+		{
+			get
+			{
+				return aclType;
+			}
+			set	
+			{
+				aclType = value;
+			}
+		}
+
+		public string AclStatus
+		{
+			get
+			{
+				return aclStatus;
+			}
+			set	
+			{
+				aclStatus = value;
+			}
+		}
+
+		public string VpcIds
+		{
+			get
+			{
+				return vpcIds;
+			}
+			set	
+			{
+				vpcIds = value;
+			}
+		}
+
+		public string ListenerForward
+		{
+			get
+			{
+				return listenerForward;
+			}
+			set	
+			{
+				listenerForward = value;
+			}
+		}
+
+		public int? ForwardPort
+		{
+			get
+			{
+				return forwardPort;
+			}
+			set	
+			{
+				forwardPort = value;
 			}
 		}
 	}

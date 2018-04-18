@@ -57,6 +57,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPListenerAttributeResponse.XForwardedFor_SLBIP = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.XForwardedFor_SLBIP");
 			describeLoadBalancerHTTPListenerAttributeResponse.XForwardedFor_SLBID = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.XForwardedFor_SLBID");
 			describeLoadBalancerHTTPListenerAttributeResponse.XForwardedFor_proto = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.XForwardedFor_proto");
+			describeLoadBalancerHTTPListenerAttributeResponse.AclId = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.AclId");
+			describeLoadBalancerHTTPListenerAttributeResponse.AclType = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.AclType");
+			describeLoadBalancerHTTPListenerAttributeResponse.AclStatus = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.AclStatus");
+			describeLoadBalancerHTTPListenerAttributeResponse.VpcIds = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.VpcIds");
+			describeLoadBalancerHTTPListenerAttributeResponse.ListenerForward = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.ListenerForward");
+			describeLoadBalancerHTTPListenerAttributeResponse.ForwardPort = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.ForwardPort");
         
 			return describeLoadBalancerHTTPListenerAttributeResponse;
         }

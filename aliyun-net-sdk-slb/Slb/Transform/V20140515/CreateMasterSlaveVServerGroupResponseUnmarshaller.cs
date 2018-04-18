@@ -40,6 +40,9 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				masterSlaveBackendServer.Port = context.IntegerValue("CreateMasterSlaveVServerGroup.MasterSlaveBackendServers["+ i +"].Port");
 				masterSlaveBackendServer.Weight = context.IntegerValue("CreateMasterSlaveVServerGroup.MasterSlaveBackendServers["+ i +"].Weight");
 				masterSlaveBackendServer.IsBackup = context.IntegerValue("CreateMasterSlaveVServerGroup.MasterSlaveBackendServers["+ i +"].IsBackup");
+				masterSlaveBackendServer.Type = context.StringValue("CreateMasterSlaveVServerGroup.MasterSlaveBackendServers["+ i +"].Type");
+				masterSlaveBackendServer.ServerIp = context.StringValue("CreateMasterSlaveVServerGroup.MasterSlaveBackendServers["+ i +"].ServerIp");
+				masterSlaveBackendServer.VpcId = context.StringValue("CreateMasterSlaveVServerGroup.MasterSlaveBackendServers["+ i +"].VpcId");
 
 				createMasterSlaveVServerGroupResponse_masterSlaveBackendServers.Add(masterSlaveBackendServer);
 			}

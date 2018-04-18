@@ -63,6 +63,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string serverHealthStatus;
 
+			private string serverIp;
+
+			private string type;
+
 			public int? ListenerPort
 			{
 				get
@@ -108,6 +112,30 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					serverHealthStatus = value;
+				}
+			}
+
+			public string ServerIp
+			{
+				get
+				{
+					return serverIp;
+				}
+				set	
+				{
+					serverIp = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}

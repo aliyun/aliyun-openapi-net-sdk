@@ -45,7 +45,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? healthyThreshold;
 
+		private string aclStatus;
+
 		private string scheduler;
+
+		private string aclType;
 
 		private string masterSlaveServerGroup;
 
@@ -59,7 +63,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string action;
 
+		private string vpcIds;
+
 		private string vServerGroupId;
+
+		private string aclId;
 
 		private int? listenerPort;
 
@@ -169,6 +177,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string AclStatus
+		{
+			get
+			{
+				return aclStatus;
+			}
+			set	
+			{
+				aclStatus = value;
+				DictionaryUtil.Add(QueryParameters, "AclStatus", value);
+			}
+		}
+
 		public string Scheduler
 		{
 			get
@@ -179,6 +200,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				scheduler = value;
 				DictionaryUtil.Add(QueryParameters, "Scheduler", value);
+			}
+		}
+
+		public string AclType
+		{
+			get
+			{
+				return aclType;
+			}
+			set	
+			{
+				aclType = value;
+				DictionaryUtil.Add(QueryParameters, "AclType", value);
 			}
 		}
 
@@ -260,6 +294,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string VpcIds
+		{
+			get
+			{
+				return vpcIds;
+			}
+			set	
+			{
+				vpcIds = value;
+				DictionaryUtil.Add(QueryParameters, "VpcIds", value);
+			}
+		}
+
 		public string VServerGroupId
 		{
 			get
@@ -270,6 +317,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				vServerGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "VServerGroupId", value);
+			}
+		}
+
+		public string AclId
+		{
+			get
+			{
+				return aclId;
+			}
+			set	
+			{
+				aclId = value;
+				DictionaryUtil.Add(QueryParameters, "AclId", value);
 			}
 		}
 

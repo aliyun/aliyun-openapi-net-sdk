@@ -39,6 +39,9 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				backendServer.ServerId = context.StringValue("RemoveVServerGroupBackendServers.BackendServers["+ i +"].ServerId");
 				backendServer.Port = context.IntegerValue("RemoveVServerGroupBackendServers.BackendServers["+ i +"].Port");
 				backendServer.Weight = context.IntegerValue("RemoveVServerGroupBackendServers.BackendServers["+ i +"].Weight");
+				backendServer.Type = context.StringValue("RemoveVServerGroupBackendServers.BackendServers["+ i +"].Type");
+				backendServer.ServerIp = context.StringValue("RemoveVServerGroupBackendServers.BackendServers["+ i +"].ServerIp");
+				backendServer.VpcId = context.StringValue("RemoveVServerGroupBackendServers.BackendServers["+ i +"].VpcId");
 
 				removeVServerGroupBackendServersResponse_backendServers.Add(backendServer);
 			}
