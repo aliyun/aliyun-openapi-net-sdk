@@ -90,6 +90,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? forwardPort;
 
+		private int? requestTimeout;
+
+		private int? idleTimeout;
+
 		public string RequestId
 		{
 			get
@@ -483,6 +487,30 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				forwardPort = value;
+			}
+		}
+
+		public int? RequestTimeout
+		{
+			get
+			{
+				return requestTimeout;
+			}
+			set	
+			{
+				requestTimeout = value;
+			}
+		}
+
+		public int? IdleTimeout
+		{
+			get
+			{
+				return idleTimeout;
+			}
+			set	
+			{
+				idleTimeout = value;
 			}
 		}
 	}

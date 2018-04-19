@@ -99,7 +99,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string aclEntryIP;
 
-			private int? aclEntryComment;
+			private string aclEntryComment;
 
 			public string AclEntryIP
 			{
@@ -113,7 +113,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				}
 			}
 
-			public int? AclEntryComment
+			public string AclEntryComment
 			{
 				get
 				{

@@ -83,6 +83,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string healthCheckDomain;
 
+		private int? requestTimeout;
+
 		private string ownerAccount;
 
 		private string gzip;
@@ -94,6 +96,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string cACertificateId;
 
 		private string tags;
+
+		private int? idleTimeout;
 
 		private string loadBalancerId;
 
@@ -436,6 +440,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public int? RequestTimeout
+		{
+			get
+			{
+				return requestTimeout;
+			}
+			set	
+			{
+				requestTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "RequestTimeout", value.ToString());
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -511,6 +528,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public int? IdleTimeout
+		{
+			get
+			{
+				return idleTimeout;
+			}
+			set	
+			{
+				idleTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "IdleTimeout", value.ToString());
 			}
 		}
 

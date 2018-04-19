@@ -38,7 +38,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			for (int i = 0; i < context.Length("DescribeAccessControlListAttribute.AclEntrys.Length"); i++) {
 				DescribeAccessControlListAttributeResponse.DescribeAccessControlListAttribute_AclEntry aclEntry = new DescribeAccessControlListAttributeResponse.DescribeAccessControlListAttribute_AclEntry();
 				aclEntry.AclEntryIP = context.StringValue("DescribeAccessControlListAttribute.AclEntrys["+ i +"].AclEntryIP");
-				aclEntry.AclEntryComment = context.IntegerValue("DescribeAccessControlListAttribute.AclEntrys["+ i +"].AclEntryComment");
+				aclEntry.AclEntryComment = context.StringValue("DescribeAccessControlListAttribute.AclEntrys["+ i +"].AclEntryComment");
 
 				describeAccessControlListAttributeResponse_aclEntrys.Add(aclEntry);
 			}

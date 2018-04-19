@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPListenerAttributeResponse.VpcIds = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.VpcIds");
 			describeLoadBalancerHTTPListenerAttributeResponse.ListenerForward = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.ListenerForward");
 			describeLoadBalancerHTTPListenerAttributeResponse.ForwardPort = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.ForwardPort");
+			describeLoadBalancerHTTPListenerAttributeResponse.RequestTimeout = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.RequestTimeout");
+			describeLoadBalancerHTTPListenerAttributeResponse.IdleTimeout = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.IdleTimeout");
         
 			return describeLoadBalancerHTTPListenerAttributeResponse;
         }

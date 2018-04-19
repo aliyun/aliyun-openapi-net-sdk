@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPSListenerAttributeResponse.AclType = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.AclType");
 			describeLoadBalancerHTTPSListenerAttributeResponse.AclStatus = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.AclStatus");
 			describeLoadBalancerHTTPSListenerAttributeResponse.VpcIds = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.VpcIds");
+			describeLoadBalancerHTTPSListenerAttributeResponse.RequestTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.RequestTimeout");
+			describeLoadBalancerHTTPSListenerAttributeResponse.IdleTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.IdleTimeout");
         
 			return describeLoadBalancerHTTPSListenerAttributeResponse;
         }
