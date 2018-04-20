@@ -135,6 +135,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 			private string contactGroups;
 
+			private string instanceName;
+
 			public string Id
 			{
 				get
@@ -276,6 +278,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					contactGroups = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
 				}
 			}
 		}

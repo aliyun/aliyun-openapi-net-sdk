@@ -149,6 +149,10 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 			private string type;
 
+			private long? gmtModified;
+
+			private long? gmtCreate;
+
 			private List<ListMyGroups_ContactGroup> contactGroups;
 
 			public long? GroupId
@@ -208,6 +212,30 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public long? GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public long? GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
 				}
 			}
 

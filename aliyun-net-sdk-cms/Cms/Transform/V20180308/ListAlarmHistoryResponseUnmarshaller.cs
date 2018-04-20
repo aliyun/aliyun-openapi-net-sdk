@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 				alarmHistory.State = context.StringValue("ListAlarmHistory.AlarmHistoryList["+ i +"].State");
 				alarmHistory.Status = context.IntegerValue("ListAlarmHistory.AlarmHistoryList["+ i +"].Status");
 				alarmHistory.ContactGroups = context.StringValue("ListAlarmHistory.AlarmHistoryList["+ i +"].ContactGroups");
+				alarmHistory.InstanceName = context.StringValue("ListAlarmHistory.AlarmHistoryList["+ i +"].InstanceName");
 
 				listAlarmHistoryResponse_alarmHistoryList.Add(alarmHistory);
 			}

@@ -147,6 +147,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 			private string webhooks;
 
+			private string instanceName;
+
 			private List<string> contactGroups;
 
 			private List<string> contacts;
@@ -370,6 +372,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					webhooks = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
 				}
 			}
 

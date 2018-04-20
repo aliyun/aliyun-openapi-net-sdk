@@ -57,6 +57,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 				alarmHistory.Status = context.IntegerValue("DescribeAlarmHistory.AlarmHistoryList["+ i +"].Status");
 				alarmHistory.UserId = context.StringValue("DescribeAlarmHistory.AlarmHistoryList["+ i +"].UserId");
 				alarmHistory.Webhooks = context.StringValue("DescribeAlarmHistory.AlarmHistoryList["+ i +"].Webhooks");
+				alarmHistory.InstanceName = context.StringValue("DescribeAlarmHistory.AlarmHistoryList["+ i +"].InstanceName");
 
 				List<string> alarmHistory_contactGroups = new List<string>();
 				for (int j = 0; j < context.Length("DescribeAlarmHistory.AlarmHistoryList["+ i +"].ContactGroups.Length"); j++) {
