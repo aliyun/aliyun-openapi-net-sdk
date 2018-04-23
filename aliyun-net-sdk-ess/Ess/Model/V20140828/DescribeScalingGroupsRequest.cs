@@ -45,6 +45,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scalingGroupId15;
 
+		private string action;
+
+		private long? ownerId;
+
 		private int? pageNumber;
 
 		private string accessKeyId;
@@ -52,8 +56,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string regionId;
 
 		private int? pageSize;
-
-		private string action;
 
 		private string scalingGroupName20;
 
@@ -69,9 +71,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
+		private string scalingGroupName;
 
-		private long? ownerId;
+		private string ownerAccount;
 
 		private string scalingGroupName1;
 
@@ -207,6 +209,32 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -256,19 +284,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -363,6 +378,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string ScalingGroupName
+		{
+			get
+			{
+				return scalingGroupName;
+			}
+			set	
+			{
+				scalingGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingGroupName", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -373,19 +401,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

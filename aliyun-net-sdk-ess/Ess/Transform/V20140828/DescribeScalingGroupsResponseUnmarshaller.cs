@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingGroup.RemovingCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].RemovingCapacity");
 				scalingGroup.ScalingGroupName = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].ScalingGroupName");
 				scalingGroup.ActiveCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].ActiveCapacity");
+				scalingGroup.StandbyCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].StandbyCapacity");
 				scalingGroup.ActiveScalingConfigurationId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].ActiveScalingConfigurationId");
 				scalingGroup.ScalingGroupId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].ScalingGroupId");
 				scalingGroup.RegionId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].RegionId");
@@ -51,8 +52,15 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingGroup.MinSize = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].MinSize");
 				scalingGroup.LifecycleState = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].LifecycleState");
 				scalingGroup.CreationTime = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].CreationTime");
+				scalingGroup.ModificationTime = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].ModificationTime");
 				scalingGroup.VpcId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].VpcId");
 				scalingGroup.VSwitchId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].VSwitchId");
+
+				List<string> scalingGroup_vSwitchIds = new List<string>();
+				for (int j = 0; j < context.Length("DescribeScalingGroups.ScalingGroups["+ i +"].VSwitchIds.Length"); j++) {
+					scalingGroup_vSwitchIds.Add(context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].VSwitchIds["+ j +"]"));
+				}
+				scalingGroup.VSwitchIds = scalingGroup_vSwitchIds;
 
 				List<string> scalingGroup_removalPolicies = new List<string>();
 				for (int j = 0; j < context.Length("DescribeScalingGroups.ScalingGroups["+ i +"].RemovalPolicies.Length"); j++) {

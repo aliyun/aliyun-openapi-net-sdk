@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scalingGroupName;
 
+		private List<string> vSwitchIds;
+
 		private string ownerAccount;
 
 		private int? minSize;
@@ -112,6 +114,23 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scalingGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingGroupName", value);
+			}
+		}
+
+		public List<string> VSwitchIds
+		{
+			get
+			{
+				return vSwitchIds;
+			}
+
+			set
+			{
+				vSwitchIds = value;
+				for (int i = 0; i < vSwitchIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"VSwitchIds." + (i + 1) , vSwitchIds[i]);
+				}
 			}
 		}
 

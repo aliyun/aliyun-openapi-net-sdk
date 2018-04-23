@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string dataDisk2Device;
 
+		private List<string> instanceTypes;
+
 		private string ioOptimized;
 
 		private string securityGroupId;
@@ -56,6 +58,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string securityEnhancementStrategy;
 
 		private string keyPairName;
+
+		private List<string> spotPriceLimits;
 
 		private string systemDiskCategory;
 
@@ -95,11 +99,15 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string dataDisk2DeleteWithInstance;
 
+		private string spotStrategy;
+
 		private string dataDisk1Category;
 
 		private string dataDisk3DeleteWithInstance;
 
 		private int? loadBalancerWeight;
+
+		private string instanceName;
 
 		private int? systemDiskSize;
 
@@ -208,6 +216,23 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public List<string> InstanceTypes
+		{
+			get
+			{
+				return instanceTypes;
+			}
+
+			set
+			{
+				instanceTypes = value;
+				for (int i = 0; i < instanceTypes.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceTypes." + (i + 1) , instanceTypes[i]);
+				}
+			}
+		}
+
 		public string IoOptimized
 		{
 			get
@@ -270,6 +295,23 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				keyPairName = value;
 				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+			}
+		}
+
+		public List<string> SpotPriceLimits
+		{
+			get
+			{
+				return spotPriceLimits;
+			}
+
+			set
+			{
+				spotPriceLimits = value;
+				for (int i = 0; i < spotPriceLimits.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SpotPriceLimit." + (i + 1) , spotPriceLimits[i]);
+				}
 			}
 		}
 
@@ -520,6 +562,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string SpotStrategy
+		{
+			get
+			{
+				return spotStrategy;
+			}
+			set	
+			{
+				spotStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
+			}
+		}
+
 		public string DataDisk1Category
 		{
 			get
@@ -556,6 +611,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				loadBalancerWeight = value;
 				DictionaryUtil.Add(QueryParameters, "LoadBalancerWeight", value.ToString());
+			}
+		}
+
+		public string InstanceName
+		{
+			get
+			{
+				return instanceName;
+			}
+			set	
+			{
+				instanceName = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
 			}
 		}
 

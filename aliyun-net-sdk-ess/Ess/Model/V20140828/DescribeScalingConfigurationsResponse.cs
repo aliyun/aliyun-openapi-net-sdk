@@ -103,6 +103,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string scalingGroupId;
 
+			private string instanceName;
+
 			private string imageId;
 
 			private string instanceType;
@@ -139,9 +141,15 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string securityEnhancementStrategy;
 
+			private string spotStrategy;
+
 			private List<DescribeScalingConfigurations_DataDisk> dataDisks;
 
 			private List<DescribeScalingConfigurations_Tag> tags;
+
+			private List<DescribeScalingConfigurations_SpotPriceModel> spotPriceLimit;
+
+			private List<string> instanceTypes;
 
 			public string ScalingConfigurationId
 			{
@@ -176,6 +184,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					scalingGroupId = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
 				}
 			}
 
@@ -395,6 +415,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public string SpotStrategy
+			{
+				get
+				{
+					return spotStrategy;
+				}
+				set	
+				{
+					spotStrategy = value;
+				}
+			}
+
 			public List<DescribeScalingConfigurations_DataDisk> DataDisks
 			{
 				get
@@ -416,6 +448,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					tags = value;
+				}
+			}
+
+			public List<DescribeScalingConfigurations_SpotPriceModel> SpotPriceLimit
+			{
+				get
+				{
+					return spotPriceLimit;
+				}
+				set	
+				{
+					spotPriceLimit = value;
+				}
+			}
+
+			public List<string> InstanceTypes
+			{
+				get
+				{
+					return instanceTypes;
+				}
+				set	
+				{
+					instanceTypes = value;
 				}
 			}
 
@@ -507,6 +563,38 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 					set	
 					{
 						_value = value;
+					}
+				}
+			}
+
+			public class DescribeScalingConfigurations_SpotPriceModel
+			{
+
+				private string instanceType;
+
+				private float? priceLimit;
+
+				public string InstanceType
+				{
+					get
+					{
+						return instanceType;
+					}
+					set	
+					{
+						instanceType = value;
+					}
+				}
+
+				public float? PriceLimit
+				{
+					get
+					{
+						return priceLimit;
+					}
+					set	
+					{
+						priceLimit = value;
 					}
 				}
 			}

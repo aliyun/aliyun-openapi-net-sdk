@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingConfiguration.ScalingConfigurationId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ScalingConfigurationId");
 				scalingConfiguration.ScalingConfigurationName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ScalingConfigurationName");
 				scalingConfiguration.ScalingGroupId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ScalingGroupId");
+				scalingConfiguration.InstanceName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceName");
 				scalingConfiguration.ImageId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ImageId");
 				scalingConfiguration.InstanceType = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceType");
 				scalingConfiguration.InstanceGeneration = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceGeneration");
@@ -59,6 +60,13 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingConfiguration.RamRoleName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].RamRoleName");
 				scalingConfiguration.DeploymentSetId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DeploymentSetId");
 				scalingConfiguration.SecurityEnhancementStrategy = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SecurityEnhancementStrategy");
+				scalingConfiguration.SpotStrategy = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SpotStrategy");
+
+				List<string> scalingConfiguration_instanceTypes = new List<string>();
+				for (int j = 0; j < context.Length("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceTypes.Length"); j++) {
+					scalingConfiguration_instanceTypes.Add(context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceTypes["+ j +"]"));
+				}
+				scalingConfiguration.InstanceTypes = scalingConfiguration_instanceTypes;
 
 				List<DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_DataDisk> scalingConfiguration_dataDisks = new List<DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_DataDisk>();
 				for (int j = 0; j < context.Length("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks.Length"); j++) {
@@ -81,6 +89,16 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 					scalingConfiguration_tags.Add(tag);
 				}
 				scalingConfiguration.Tags = scalingConfiguration_tags;
+
+				List<DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_SpotPriceModel> scalingConfiguration_spotPriceLimit = new List<DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_SpotPriceModel>();
+				for (int j = 0; j < context.Length("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SpotPriceLimit.Length"); j++) {
+					DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_SpotPriceModel spotPriceModel = new DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_SpotPriceModel();
+					spotPriceModel.InstanceType = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SpotPriceLimit["+ j +"].InstanceType");
+					spotPriceModel.PriceLimit = context.FloatValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SpotPriceLimit["+ j +"].PriceLimit");
+
+					scalingConfiguration_spotPriceLimit.Add(spotPriceModel);
+				}
+				scalingConfiguration.SpotPriceLimit = scalingConfiguration_spotPriceLimit;
 
 				describeScalingConfigurationsResponse_scalingConfigurations.Add(scalingConfiguration);
 			}
