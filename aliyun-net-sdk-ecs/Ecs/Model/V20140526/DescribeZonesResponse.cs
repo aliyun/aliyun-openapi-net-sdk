@@ -69,6 +69,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private List<string> availableVolumeCategories;
 
+			private List<string> availableDedicatedHostTypes;
+
+			private List<string> dedicatedHostGenerations;
+
 			public string ZoneId
 			{
 				get
@@ -150,6 +154,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					availableVolumeCategories = value;
+				}
+			}
+
+			public List<string> AvailableDedicatedHostTypes
+			{
+				get
+				{
+					return availableDedicatedHostTypes;
+				}
+				set	
+				{
+					availableDedicatedHostTypes = value;
+				}
+			}
+
+			public List<string> DedicatedHostGenerations
+			{
+				get
+				{
+					return dedicatedHostGenerations;
+				}
+				set	
+				{
+					dedicatedHostGenerations = value;
 				}
 			}
 

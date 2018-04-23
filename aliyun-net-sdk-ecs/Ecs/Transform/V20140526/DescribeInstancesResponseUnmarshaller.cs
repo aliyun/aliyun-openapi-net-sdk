@@ -123,6 +123,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				eipAddress.IsSupportUnassociate = context.BooleanValue("DescribeInstances.Instances["+ i +"].EipAddress.IsSupportUnassociate");
 				instance.EipAddress = eipAddress;
 
+				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_DedicatedHostAttribute dedicatedHostAttribute = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_DedicatedHostAttribute();
+				dedicatedHostAttribute.DedicatedHostId = context.StringValue("DescribeInstances.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostId");
+				dedicatedHostAttribute.DedicatedHostName = context.StringValue("DescribeInstances.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostName");
+				instance.DedicatedHostAttribute = dedicatedHostAttribute;
+
 				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface> instance_networkInterfaces = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].NetworkInterfaces.Length"); j++) {
 					DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface networkInterface = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface();

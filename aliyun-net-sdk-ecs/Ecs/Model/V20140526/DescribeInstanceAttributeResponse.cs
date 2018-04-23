@@ -84,6 +84,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private DescribeInstanceAttribute_EipAddress eipAddress;
 
+		private DescribeInstanceAttribute_DedicatedHostAttribute dedicatedHostAttribute;
+
 		public string RequestId
 		{
 			get
@@ -444,6 +446,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public DescribeInstanceAttribute_DedicatedHostAttribute DedicatedHostAttribute
+		{
+			get
+			{
+				return dedicatedHostAttribute;
+			}
+			set	
+			{
+				dedicatedHostAttribute = value;
+			}
+		}
+
 		public class DescribeInstanceAttribute_LockReason
 		{
 
@@ -578,6 +592,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					internetChargeType = value;
+				}
+			}
+		}
+
+		public class DescribeInstanceAttribute_DedicatedHostAttribute
+		{
+
+			private string dedicatedHostId;
+
+			private string dedicatedHostName;
+
+			public string DedicatedHostId
+			{
+				get
+				{
+					return dedicatedHostId;
+				}
+				set	
+				{
+					dedicatedHostId = value;
+				}
+			}
+
+			public string DedicatedHostName
+			{
+				get
+				{
+					return dedicatedHostName;
+				}
+				set	
+				{
+					dedicatedHostName = value;
 				}
 			}
 		}

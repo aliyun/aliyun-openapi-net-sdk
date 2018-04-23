@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9c8fc24a-b51e-4285-8c52-8bd00b005045}</ProjectGuid>
+    <ProjectGuid>{ba782f0a-e071-4955-b793-e1fa134b5938}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -183,6 +183,7 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyAutoSnapshotPolicyExRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateRouteEntryRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\AssociateHaVipRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\AssignPrivateIpAddressesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateNetworkInterfaceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CancelTaskResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeAutoSnapshotPolicyResponse.cs" />
@@ -269,6 +270,7 @@
 	<Compile Include="Ecs\Model\V20140526\UnassociateEipAddressRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyImageAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ActivateRouterInterfaceRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\UnassignPrivateIpAddressesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteDeploymentSetResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\TerminatePhysicalConnectionResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteVirtualBorderRouterResponse.cs" />
@@ -385,6 +387,7 @@
 	<Compile Include="Ecs\Model\V20140526\BindIpRangeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ResizeDiskRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateVolumeResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\AssignPrivateIpAddressesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CancelUserEventRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSecurityGroupAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateDiskResponse.cs" />
@@ -431,6 +434,7 @@
 	<Compile Include="Ecs\Model\V20140526\JoinSecurityGroupResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceHistoryEventsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceAutoReleaseTimeResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\UnassignPrivateIpAddressesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifySecurityGroupRuleResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\GetInstanceScreenshotResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\RevokeSecurityGroupEgressRequest.cs" />
@@ -612,6 +616,7 @@
 	<Compile Include="Ecs\Transform\V20140526\ModifyAutoSnapshotPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteRecycleBinResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\JoinSecurityGroupResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\AssignPrivateIpAddressesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\AttachKeyPairResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\AttachClassicLinkVpcResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ActivateRouterInterfaceResponseUnmarshaller.cs" />
@@ -760,6 +765,7 @@
 	<Compile Include="Ecs\Transform\V20140526\ModifyDiskAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeAutoSnapshotPolicyExResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeCommandsResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\UnassignPrivateIpAddressesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateVpcResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeSnapshotMonitorDataResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteForwardEntryResponseUnmarshaller.cs" />

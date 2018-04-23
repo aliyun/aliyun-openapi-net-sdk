@@ -195,6 +195,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private DescribeInstances_EipAddress eipAddress;
 
+			private DescribeInstances_DedicatedHostAttribute dedicatedHostAttribute;
+
 			public string InstanceId
 			{
 				get
@@ -783,6 +785,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public DescribeInstances_DedicatedHostAttribute DedicatedHostAttribute
+			{
+				get
+				{
+					return dedicatedHostAttribute;
+				}
+				set	
+				{
+					dedicatedHostAttribute = value;
+				}
+			}
+
 			public class DescribeInstances_NetworkInterface
 			{
 
@@ -1023,6 +1037,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						isSupportUnassociate = value;
+					}
+				}
+			}
+
+			public class DescribeInstances_DedicatedHostAttribute
+			{
+
+				private string dedicatedHostId;
+
+				private string dedicatedHostName;
+
+				public string DedicatedHostId
+				{
+					get
+					{
+						return dedicatedHostId;
+					}
+					set	
+					{
+						dedicatedHostId = value;
+					}
+				}
+
+				public string DedicatedHostName
+				{
+					get
+					{
+						return dedicatedHostName;
+					}
+					set	
+					{
+						dedicatedHostName = value;
 					}
 				}
 			}

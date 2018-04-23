@@ -103,6 +103,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string autoReleaseTime;
 
+		private string dedicatedHostId;
+
 		private List<DataDisk> dataDisks;
 
 		private string systemDiskSize;
@@ -574,6 +576,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				autoReleaseTime = value;
 				DictionaryUtil.Add(QueryParameters, "AutoReleaseTime", value);
+			}
+		}
+
+		public string DedicatedHostId
+		{
+			get
+			{
+				return dedicatedHostId;
+			}
+			set	
+			{
+				dedicatedHostId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
 			}
 		}
 

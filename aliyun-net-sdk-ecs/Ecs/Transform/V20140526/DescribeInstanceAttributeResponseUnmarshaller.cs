@@ -92,6 +92,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			eipAddress.InternetChargeType = context.StringValue("DescribeInstanceAttribute.EipAddress.InternetChargeType");
 			describeInstanceAttributeResponse.EipAddress = eipAddress;
 
+			DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DedicatedHostAttribute dedicatedHostAttribute = new DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DedicatedHostAttribute();
+			dedicatedHostAttribute.DedicatedHostId = context.StringValue("DescribeInstanceAttribute.DedicatedHostAttribute.DedicatedHostId");
+			dedicatedHostAttribute.DedicatedHostName = context.StringValue("DescribeInstanceAttribute.DedicatedHostAttribute.DedicatedHostName");
+			describeInstanceAttributeResponse.DedicatedHostAttribute = dedicatedHostAttribute;
+
 			List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_LockReason> describeInstanceAttributeResponse_operationLocks = new List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_LockReason>();
 			for (int i = 0; i < context.Length("DescribeInstanceAttribute.OperationLocks.Length"); i++) {
 				DescribeInstanceAttributeResponse.DescribeInstanceAttribute_LockReason lockReason = new DescribeInstanceAttributeResponse.DescribeInstanceAttribute_LockReason();

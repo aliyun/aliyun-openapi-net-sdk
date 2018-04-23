@@ -62,6 +62,18 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				}
 				zone.AvailableVolumeCategories = zone_availableVolumeCategories;
 
+				List<string> zone_availableDedicatedHostTypes = new List<string>();
+				for (int j = 0; j < context.Length("DescribeZones.Zones["+ i +"].AvailableDedicatedHostTypes.Length"); j++) {
+					zone_availableDedicatedHostTypes.Add(context.StringValue("DescribeZones.Zones["+ i +"].AvailableDedicatedHostTypes["+ j +"]"));
+				}
+				zone.AvailableDedicatedHostTypes = zone_availableDedicatedHostTypes;
+
+				List<string> zone_dedicatedHostGenerations = new List<string>();
+				for (int j = 0; j < context.Length("DescribeZones.Zones["+ i +"].DedicatedHostGenerations.Length"); j++) {
+					zone_dedicatedHostGenerations.Add(context.StringValue("DescribeZones.Zones["+ i +"].DedicatedHostGenerations["+ j +"]"));
+				}
+				zone.DedicatedHostGenerations = zone_dedicatedHostGenerations;
+
 				List<DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo> zone_availableResources = new List<DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo>();
 				for (int j = 0; j < context.Length("DescribeZones.Zones["+ i +"].AvailableResources.Length"); j++) {
 					DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo resourcesInfo = new DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo();

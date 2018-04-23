@@ -133,6 +133,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ramRoleName;
 
+		private string dedicatedHostId;
+
 		private string clusterId;
 
 		private List<DataDisk> dataDisks;
@@ -794,6 +796,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ramRoleName = value;
 				DictionaryUtil.Add(QueryParameters, "RamRoleName", value);
+			}
+		}
+
+		public string DedicatedHostId
+		{
+			get
+			{
+				return dedicatedHostId;
+			}
+			set	
+			{
+				dedicatedHostId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
 			}
 		}
 

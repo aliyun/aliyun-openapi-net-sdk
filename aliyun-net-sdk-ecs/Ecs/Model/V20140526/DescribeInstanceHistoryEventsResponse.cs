@@ -105,7 +105,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string notBefore;
 
+			private string eventFinishTime;
+
 			private DescribeInstanceHistoryEvents_EventType eventType;
+
+			private DescribeInstanceHistoryEvents_EventCycleStatus eventCycleStatus;
 
 			public string InstanceId
 			{
@@ -155,6 +159,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string EventFinishTime
+			{
+				get
+				{
+					return eventFinishTime;
+				}
+				set	
+				{
+					eventFinishTime = value;
+				}
+			}
+
 			public DescribeInstanceHistoryEvents_EventType EventType
 			{
 				get
@@ -167,7 +183,51 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public DescribeInstanceHistoryEvents_EventCycleStatus EventCycleStatus
+			{
+				get
+				{
+					return eventCycleStatus;
+				}
+				set	
+				{
+					eventCycleStatus = value;
+				}
+			}
+
 			public class DescribeInstanceHistoryEvents_EventType
+			{
+
+				private int? code;
+
+				private string name;
+
+				public int? Code
+				{
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+			}
+
+			public class DescribeInstanceHistoryEvents_EventCycleStatus
 			{
 
 				private int? code;

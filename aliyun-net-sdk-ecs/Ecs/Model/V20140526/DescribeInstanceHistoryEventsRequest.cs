@@ -47,7 +47,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string action;
 
+		private List<string> instanceEventCycleStatuss;
+
 		private string eventPublishTimeEnd;
+
+		private List<string> instanceEventTypes;
 
 		private string resourceOwnerAccount;
 
@@ -160,6 +164,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<string> InstanceEventCycleStatuss
+		{
+			get
+			{
+				return instanceEventCycleStatuss;
+			}
+
+			set
+			{
+				instanceEventCycleStatuss = value;
+				for (int i = 0; i < instanceEventCycleStatuss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceEventCycleStatus." + (i + 1) , instanceEventCycleStatuss[i]);
+				}
+			}
+		}
+
 		public string EventPublishTimeEnd
 		{
 			get
@@ -170,6 +191,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				eventPublishTimeEnd = value;
 				DictionaryUtil.Add(QueryParameters, "EventPublishTime.End", value);
+			}
+		}
+
+		public List<string> InstanceEventTypes
+		{
+			get
+			{
+				return instanceEventTypes;
+			}
+
+			set
+			{
+				instanceEventTypes = value;
+				for (int i = 0; i < instanceEventTypes.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceEventType." + (i + 1) , instanceEventTypes[i]);
+				}
 			}
 		}
 
