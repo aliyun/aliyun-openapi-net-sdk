@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{52efb92e-1cd9-4607-bae5-77c9af7d1bbf}</ProjectGuid>
+    <ProjectGuid>{36a2ed8a-7430-445e-95e9-b5fedfdb8b17}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -93,6 +93,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\EditEventRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\GetSimilarPhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListFacePhotosRequest.cs" />
+	<Compile Include="CloudPhoto\Model\V20170711\FetchPhotosResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ReactivatePhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\EditPhotoStoreResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ListTagPhotosResponse.cs" />
@@ -143,6 +144,7 @@
 	<Compile Include="CloudPhoto\Model\V20170711\ListPhotoTagsRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\MergeFacesResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\ActivatePhotosRequest.cs" />
+	<Compile Include="CloudPhoto\Model\V20170711\FetchPhotosRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\SetAlbumCoverRequest.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\EditPhotosResponse.cs" />
 	<Compile Include="CloudPhoto\Model\V20170711\LikePhotoResponse.cs" />
@@ -242,6 +244,7 @@
 	<Compile Include="CloudPhoto\Transform\V20170711\GetDownloadUrlsResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ListPhotoStoresResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ListAlbumsResponseUnmarshaller.cs" />
+	<Compile Include="CloudPhoto\Transform\V20170711\FetchPhotosResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\EditEventResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\ListMomentsResponseUnmarshaller.cs" />
 	<Compile Include="CloudPhoto\Transform\V20170711\GetFramedPhotoUrlsResponseUnmarshaller.cs" />
