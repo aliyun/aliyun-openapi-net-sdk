@@ -43,9 +43,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? pageSize;
 
-		private long? startTime;
-
 		private long? stopTime;
+
+		private long? startTime;
 
 		private int? pageNumber;
 
@@ -116,19 +116,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
-
 		public long? StopTime
 		{
 			get
@@ -139,6 +126,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				stopTime = value;
 				DictionaryUtil.Add(QueryParameters, "StopTime", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 

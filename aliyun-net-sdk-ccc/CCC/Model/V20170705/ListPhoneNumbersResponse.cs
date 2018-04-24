@@ -129,6 +129,10 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 			private int? trunks;
 
+			private string province;
+
+			private string city;
+
 			private ListPhoneNumbers_ContactFlow contactFlow;
 
 			public string PhoneNumberId
@@ -236,6 +240,30 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				set	
 				{
 					trunks = value;
+				}
+			}
+
+			public string Province
+			{
+				get
+				{
+					return province;
+				}
+				set	
+				{
+					province = value;
+				}
+			}
+
+			public string City
+			{
+				get
+				{
+					return city;
+				}
+				set	
+				{
+					city = value;
 				}
 			}
 

@@ -48,6 +48,8 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				phoneNumber.AllowOutbound = context.BooleanValue("ListPhoneNumbers.PhoneNumbers["+ i +"].AllowOutbound");
 				phoneNumber.Usage = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].Usage");
 				phoneNumber.Trunks = context.IntegerValue("ListPhoneNumbers.PhoneNumbers["+ i +"].Trunks");
+				phoneNumber.Province = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].Province");
+				phoneNumber.City = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].City");
 
 				ListPhoneNumbersResponse.ListPhoneNumbers_PhoneNumber.ListPhoneNumbers_ContactFlow contactFlow = new ListPhoneNumbersResponse.ListPhoneNumbers_PhoneNumber.ListPhoneNumbers_ContactFlow();
 				contactFlow.ContactFlowId = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].ContactFlow.ContactFlowId");
