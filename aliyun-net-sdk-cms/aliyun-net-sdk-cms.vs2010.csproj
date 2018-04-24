@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{10ccfa50-d5a7-4879-aa82-994ed7009734}</ProjectGuid>
+    <ProjectGuid>{9f1f4c01-0339-4ce4-8c1a-1ccdd9ef30cc}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -102,6 +102,7 @@
 	<Compile Include="Cms\Model\V20180308\ListContactGroupRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\PutMetricDataResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\DeleteNotifyPolicyResponse.cs" />
+	<Compile Include="Cms\Model\V20180308\UpdateMyGroupMembersRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\ListMyGroupInstancesRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\NodeProcessesRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\ListActiveAlertRuleResponse.cs" />
@@ -155,6 +156,7 @@
 	<Compile Include="Cms\Model\V20180308\TaskConfigCreateResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\UpdateMyGroupsResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\ListMyGroupCategoriesRequest.cs" />
+	<Compile Include="Cms\Model\V20180308\UpdateMyGroupMembersResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\NodeInstallResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\QueryCustomMetricListResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\CreateMyGroupsRequest.cs" />
@@ -165,6 +167,7 @@
 	<Compile Include="Cms\Transform\V20180308\AddMyGroupInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\NodeProcessCreateResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\TaskConfigDeleteResponseUnmarshaller.cs" />
+	<Compile Include="Cms\Transform\V20180308\UpdateMyGroupMembersResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\TaskConfigModifyResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\DisableActiveAlertResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\NodeUninstallResponseUnmarshaller.cs" />
