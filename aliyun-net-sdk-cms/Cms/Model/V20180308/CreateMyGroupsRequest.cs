@@ -35,9 +35,11 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string contactGroups;
 
-		private long? serviceId;
+		private string options;
 
 		private string type;
+
+		private long? serviceId;
 
 		private string groupName;
 
@@ -56,16 +58,16 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public long? ServiceId
+		public string Options
 		{
 			get
 			{
-				return serviceId;
+				return options;
 			}
 			set	
 			{
-				serviceId = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceId", value.ToString());
+				options = value;
+				DictionaryUtil.Add(QueryParameters, "Options", value);
 			}
 		}
 
@@ -79,6 +81,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public long? ServiceId
+		{
+			get
+			{
+				return serviceId;
+			}
+			set	
+			{
+				serviceId = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceId", value.ToString());
 			}
 		}
 
