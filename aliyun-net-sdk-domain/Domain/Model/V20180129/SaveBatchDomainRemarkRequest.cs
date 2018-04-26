@@ -26,44 +26,42 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainGroupListRequest : RpcAcsRequest<QueryDomainGroupListResponse>
+    public class SaveBatchDomainRemarkRequest : RpcAcsRequest<SaveBatchDomainRemarkResponse>
     {
-        public QueryDomainGroupListRequest()
-            : base("Domain", "2018-01-29", "QueryDomainGroupList")
+        public SaveBatchDomainRemarkRequest()
+            : base("Domain", "2018-01-29", "SaveBatchDomainRemark")
         {
         }
 
-		private string userClientIp;
+		private string instanceIds;
 
-		private string domainGroupName;
+		private string remark;
 
 		private string lang;
 
-		private bool? showDeletingGroup;
-
-		public string UserClientIp
+		public string InstanceIds
 		{
 			get
 			{
-				return userClientIp;
+				return instanceIds;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				instanceIds = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
 			}
 		}
 
-		public string DomainGroupName
+		public string Remark
 		{
 			get
 			{
-				return domainGroupName;
+				return remark;
 			}
 			set	
 			{
-				domainGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainGroupName", value);
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
 			}
 		}
 
@@ -80,22 +78,14 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? ShowDeletingGroup
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return showDeletingGroup;
-			}
-			set	
-			{
-				showDeletingGroup = value;
-				DictionaryUtil.Add(QueryParameters, "ShowDeletingGroup", value.ToString());
-			}
+			return false;
 		}
 
-        public override QueryDomainGroupListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SaveBatchDomainRemarkResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainGroupListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveBatchDomainRemarkResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

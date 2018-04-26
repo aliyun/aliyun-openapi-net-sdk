@@ -26,46 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainGroupListRequest : RpcAcsRequest<QueryDomainGroupListResponse>
+    public class QueryDomainSuffixRequest : RpcAcsRequest<QueryDomainSuffixResponse>
     {
-        public QueryDomainGroupListRequest()
-            : base("Domain", "2018-01-29", "QueryDomainGroupList")
+        public QueryDomainSuffixRequest()
+            : base("Domain", "2018-01-29", "QueryDomainSuffix")
         {
         }
 
-		private string userClientIp;
-
-		private string domainGroupName;
-
 		private string lang;
-
-		private bool? showDeletingGroup;
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public string DomainGroupName
-		{
-			get
-			{
-				return domainGroupName;
-			}
-			set	
-			{
-				domainGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainGroupName", value);
-			}
-		}
 
 		public string Lang
 		{
@@ -80,22 +48,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? ShowDeletingGroup
-		{
-			get
-			{
-				return showDeletingGroup;
-			}
-			set	
-			{
-				showDeletingGroup = value;
-				DictionaryUtil.Add(QueryParameters, "ShowDeletingGroup", value.ToString());
-			}
-		}
-
-        public override QueryDomainGroupListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryDomainSuffixResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainGroupListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDomainSuffixResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

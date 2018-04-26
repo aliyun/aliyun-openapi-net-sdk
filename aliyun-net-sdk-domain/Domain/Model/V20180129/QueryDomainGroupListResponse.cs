@@ -26,7 +26,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string requestId;
 
-		private List<QueryDomainGroupList_Domain> data;
+		private List<QueryDomainGroupList_DomainGroup> data;
 
 		public string RequestId
 		{
@@ -40,7 +40,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public List<QueryDomainGroupList_Domain> Data
+		public List<QueryDomainGroupList_DomainGroup> Data
 		{
 			get
 			{
@@ -52,7 +52,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public class QueryDomainGroupList_Domain
+		public class QueryDomainGroupList_DomainGroup
 		{
 
 			private string domainGroupId;
@@ -64,6 +64,10 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			private string creationDate;
 
 			private string modificationDate;
+
+			private string domainGroupStatus;
+
+			private bool? beingDeleted;
 
 			public string DomainGroupId
 			{
@@ -122,6 +126,30 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					modificationDate = value;
+				}
+			}
+
+			public string DomainGroupStatus
+			{
+				get
+				{
+					return domainGroupStatus;
+				}
+				set	
+				{
+					domainGroupStatus = value;
+				}
+			}
+
+			public bool? BeingDeleted
+			{
+				get
+				{
+					return beingDeleted;
+				}
+				set	
+				{
+					beingDeleted = value;
 				}
 			}
 		}

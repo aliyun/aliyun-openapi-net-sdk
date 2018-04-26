@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-	public class QueryDomainListResponse : AcsResponse
+	public class QueryAdvancedDomainListResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -38,7 +38,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private bool? nextPage;
 
-		private List<QueryDomainList_Domain> data;
+		private List<QueryAdvancedDomainList_Domain> data;
 
 		public string RequestId
 		{
@@ -124,7 +124,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public List<QueryDomainList_Domain> Data
+		public List<QueryAdvancedDomainList_Domain> Data
 		{
 			get
 			{
@@ -136,7 +136,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public class QueryDomainList_Domain
+		public class QueryAdvancedDomainList_Domain
 		{
 
 			private string domainName;

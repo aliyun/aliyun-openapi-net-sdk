@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string orderByType;
 
+		private string domainGroupId;
+
 		private long? endRegistrationDate;
 
 		private string userClientIp;
@@ -147,6 +149,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				orderByType = value;
 				DictionaryUtil.Add(QueryParameters, "OrderByType", value);
+			}
+		}
+
+		public string DomainGroupId
+		{
+			get
+			{
+				return domainGroupId;
+			}
+			set	
+			{
+				domainGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DomainGroupId", value);
 			}
 		}
 

@@ -26,20 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainGroupListRequest : RpcAcsRequest<QueryDomainGroupListResponse>
+    public class DeleteDomainGroupRequest : RpcAcsRequest<DeleteDomainGroupResponse>
     {
-        public QueryDomainGroupListRequest()
-            : base("Domain", "2018-01-29", "QueryDomainGroupList")
+        public DeleteDomainGroupRequest()
+            : base("Domain", "2018-01-29", "DeleteDomainGroup")
         {
         }
 
 		private string userClientIp;
 
-		private string domainGroupName;
-
 		private string lang;
 
-		private bool? showDeletingGroup;
+		private long? domainGroupId;
 
 		public string UserClientIp
 		{
@@ -51,19 +49,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public string DomainGroupName
-		{
-			get
-			{
-				return domainGroupName;
-			}
-			set	
-			{
-				domainGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainGroupName", value);
 			}
 		}
 
@@ -80,22 +65,22 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? ShowDeletingGroup
+		public long? DomainGroupId
 		{
 			get
 			{
-				return showDeletingGroup;
+				return domainGroupId;
 			}
 			set	
 			{
-				showDeletingGroup = value;
-				DictionaryUtil.Add(QueryParameters, "ShowDeletingGroup", value.ToString());
+				domainGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DomainGroupId", value.ToString());
 			}
 		}
 
-        public override QueryDomainGroupListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteDomainGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainGroupListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDomainGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

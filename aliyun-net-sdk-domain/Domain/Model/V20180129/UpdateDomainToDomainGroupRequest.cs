@@ -26,20 +26,40 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainGroupListRequest : RpcAcsRequest<QueryDomainGroupListResponse>
+    public class UpdateDomainToDomainGroupRequest : RpcAcsRequest<UpdateDomainToDomainGroupResponse>
     {
-        public QueryDomainGroupListRequest()
-            : base("Domain", "2018-01-29", "QueryDomainGroupList")
+        public UpdateDomainToDomainGroupRequest()
+            : base("Domain", "2018-01-29", "UpdateDomainToDomainGroup")
         {
+			Method = MethodType.POST;
         }
+
+		private int? dataSource;
 
 		private string userClientIp;
 
-		private string domainGroupName;
+		private string fileToUpload;
+
+		private List<string> domainNames;
+
+		private bool? replace;
 
 		private string lang;
 
-		private bool? showDeletingGroup;
+		private long? domainGroupId;
+
+		public int? DataSource
+		{
+			get
+			{
+				return dataSource;
+			}
+			set	
+			{
+				dataSource = value;
+				DictionaryUtil.Add(QueryParameters, "DataSource", value.ToString());
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -54,16 +74,46 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string DomainGroupName
+		public string FileToUpload
 		{
 			get
 			{
-				return domainGroupName;
+				return fileToUpload;
 			}
 			set	
 			{
-				domainGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainGroupName", value);
+				fileToUpload = value;
+				DictionaryUtil.Add(BodyParameters, "FileToUpload", value);
+			}
+		}
+
+		public List<string> DomainNames
+		{
+			get
+			{
+				return domainNames;
+			}
+
+			set
+			{
+				domainNames = value;
+				for (int i = 0; i < domainNames.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DomainName." + (i + 1) , domainNames[i]);
+				}
+			}
+		}
+
+		public bool? Replace
+		{
+			get
+			{
+				return replace;
+			}
+			set	
+			{
+				replace = value;
+				DictionaryUtil.Add(QueryParameters, "Replace", value.ToString());
 			}
 		}
 
@@ -80,22 +130,22 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? ShowDeletingGroup
+		public long? DomainGroupId
 		{
 			get
 			{
-				return showDeletingGroup;
+				return domainGroupId;
 			}
 			set	
 			{
-				showDeletingGroup = value;
-				DictionaryUtil.Add(QueryParameters, "ShowDeletingGroup", value.ToString());
+				domainGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DomainGroupId", value.ToString());
 			}
 		}
 
-        public override QueryDomainGroupListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateDomainToDomainGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainGroupListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateDomainToDomainGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

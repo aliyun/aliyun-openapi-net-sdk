@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 				domain.RegistrantType = context.StringValue("QueryDomainList.Data["+ i +"].RegistrantType");
 				domain.DomainGroupId = context.StringValue("QueryDomainList.Data["+ i +"].DomainGroupId");
 				domain.Remark = context.StringValue("QueryDomainList.Data["+ i +"].Remark");
+				domain.DomainGroupName = context.StringValue("QueryDomainList.Data["+ i +"].DomainGroupName");
+				domain.ExpirationCurrDateDiff = context.IntegerValue("QueryDomainList.Data["+ i +"].ExpirationCurrDateDiff");
 
 				queryDomainListResponse_data.Add(domain);
 			}

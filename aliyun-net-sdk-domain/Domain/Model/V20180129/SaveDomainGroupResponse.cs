@@ -17,40 +17,50 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain.Transform;
-using Aliyun.Acs.Domain.Transform.V20180129;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainGroupListRequest : RpcAcsRequest<QueryDomainGroupListResponse>
-    {
-        public QueryDomainGroupListRequest()
-            : base("Domain", "2018-01-29", "QueryDomainGroupList")
-        {
-        }
+	public class SaveDomainGroupResponse : AcsResponse
+	{
 
-		private string userClientIp;
+		private string requestId;
+
+		private long? domainGroupId;
 
 		private string domainGroupName;
 
-		private string lang;
+		private int? totalNumber;
 
-		private bool? showDeletingGroup;
+		private string creationDate;
 
-		public string UserClientIp
+		private string modificationDate;
+
+		private string domainGroupStatus;
+
+		private bool? beingDeleted;
+
+		public string RequestId
 		{
 			get
 			{
-				return userClientIp;
+				return requestId;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				requestId = value;
+			}
+		}
+
+		public long? DomainGroupId
+		{
+			get
+			{
+				return domainGroupId;
+			}
+			set	
+			{
+				domainGroupId = value;
 			}
 		}
 
@@ -63,39 +73,67 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				domainGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainGroupName", value);
 			}
 		}
 
-		public string Lang
+		public int? TotalNumber
 		{
 			get
 			{
-				return lang;
+				return totalNumber;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				totalNumber = value;
 			}
 		}
 
-		public bool? ShowDeletingGroup
+		public string CreationDate
 		{
 			get
 			{
-				return showDeletingGroup;
+				return creationDate;
 			}
 			set	
 			{
-				showDeletingGroup = value;
-				DictionaryUtil.Add(QueryParameters, "ShowDeletingGroup", value.ToString());
+				creationDate = value;
 			}
 		}
 
-        public override QueryDomainGroupListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
-        {
-            return QueryDomainGroupListResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+		public string ModificationDate
+		{
+			get
+			{
+				return modificationDate;
+			}
+			set	
+			{
+				modificationDate = value;
+			}
+		}
+
+		public string DomainGroupStatus
+		{
+			get
+			{
+				return domainGroupStatus;
+			}
+			set	
+			{
+				domainGroupStatus = value;
+			}
+		}
+
+		public bool? BeingDeleted
+		{
+			get
+			{
+				return beingDeleted;
+			}
+			set	
+			{
+				beingDeleted = value;
+			}
+		}
+	}
 }

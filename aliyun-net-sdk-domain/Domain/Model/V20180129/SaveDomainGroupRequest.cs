@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainGroupListRequest : RpcAcsRequest<QueryDomainGroupListResponse>
+    public class SaveDomainGroupRequest : RpcAcsRequest<SaveDomainGroupResponse>
     {
-        public QueryDomainGroupListRequest()
-            : base("Domain", "2018-01-29", "QueryDomainGroupList")
+        public SaveDomainGroupRequest()
+            : base("Domain", "2018-01-29", "SaveDomainGroup")
         {
         }
 
@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string lang;
 
-		private bool? showDeletingGroup;
+		private long? domainGroupId;
 
 		public string UserClientIp
 		{
@@ -80,22 +80,22 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? ShowDeletingGroup
+		public long? DomainGroupId
 		{
 			get
 			{
-				return showDeletingGroup;
+				return domainGroupId;
 			}
 			set	
 			{
-				showDeletingGroup = value;
-				DictionaryUtil.Add(QueryParameters, "ShowDeletingGroup", value.ToString());
+				domainGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DomainGroupId", value.ToString());
 			}
 		}
 
-        public override QueryDomainGroupListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SaveDomainGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainGroupListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveDomainGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
