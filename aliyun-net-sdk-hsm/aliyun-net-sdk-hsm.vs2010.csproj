@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{40d14fd0-f90a-43a1-a2b2-9370642647d0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-hsm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Hsm\Model\V20180111\ReleaseInstanceRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\CreateInstanceRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\ModifyInstanceResponse.cs" />
+	<Compile Include="Hsm\Model\V20180111\DescribeRegionsResponse.cs" />
+	<Compile Include="Hsm\Model\V20180111\ConfigWhiteListResponse.cs" />
+	<Compile Include="Hsm\Model\V20180111\ConfigNetworkResponse.cs" />
+	<Compile Include="Hsm\Model\V20180111\DescribeRegionsRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\ModifyInstanceRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\DescribeInstancesRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\RenewInstanceResponse.cs" />
+	<Compile Include="Hsm\Model\V20180111\CreateInstanceResponse.cs" />
+	<Compile Include="Hsm\Model\V20180111\ConfigNetworkRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\ReleaseInstanceResponse.cs" />
+	<Compile Include="Hsm\Model\V20180111\ConfigWhiteListRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\RenewInstanceRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\DescribeInstancesResponse.cs" />
+	<Compile Include="Hsm\Transform\V20180111\ModifyInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Hsm\Transform\V20180111\ConfigNetworkResponseUnmarshaller.cs" />
+	<Compile Include="Hsm\Transform\V20180111\RenewInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Hsm\Transform\V20180111\ReleaseInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Hsm\Transform\V20180111\ConfigWhiteListResponseUnmarshaller.cs" />
+	<Compile Include="Hsm\Transform\V20180111\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Hsm\Transform\V20180111\DescribeInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Hsm\Transform\V20180111\CreateInstanceResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
