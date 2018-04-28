@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string instanceIds;
 
+		private string instanceRegionId;
+
 		private int? pageSize;
 
 		private string keyWord;
@@ -72,6 +74,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				instanceIds = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
+			}
+		}
+
+		public string InstanceRegionId
+		{
+			get
+			{
+				return instanceRegionId;
+			}
+			set	
+			{
+				instanceRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceRegionId", value);
 			}
 		}
 
