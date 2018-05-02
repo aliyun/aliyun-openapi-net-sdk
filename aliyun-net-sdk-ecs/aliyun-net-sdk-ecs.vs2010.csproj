@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ba782f0a-e071-4955-b793-e1fa134b5938}</ProjectGuid>
+    <ProjectGuid>{c5440751-ec97-4e93-9767-ad6b32ffe373}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -94,6 +94,7 @@
 	<Compile Include="Ecs\Model\V20140526\CreateHpcClusterResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeEventDetailRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\RevokeSecurityGroupEgressResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\InstallCloudAssistantRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceMonitorDataRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateVirtualBorderRouterResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DetachInstanceRamRoleRequest.cs" />
@@ -234,6 +235,7 @@
 	<Compile Include="Ecs\Model\V20140526\DeletePhysicalConnectionResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\EipNotifyPaidResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\AttachKeyPairRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeCloudAssistantStatusRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyVRouterAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstancePhysicalAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\LeaveSecurityGroupResponse.cs" />
@@ -270,6 +272,7 @@
 	<Compile Include="Ecs\Model\V20140526\UnassociateEipAddressRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyImageAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ActivateRouterInterfaceRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\InstallCloudAssistantResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\UnassignPrivateIpAddressesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteDeploymentSetResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\TerminatePhysicalConnectionResponse.cs" />
@@ -402,6 +405,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeSpotPriceHistoryRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeRouteTablesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteDiskRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeCloudAssistantStatusResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CancelAgreementRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ActivateRouterInterfaceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateNatGatewayRequest.cs" />
@@ -546,6 +550,7 @@
 	<Compile Include="Ecs\Transform\V20140526\DescribeInvocationsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceVncPasswdResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\BindIpRangeResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeCloudAssistantStatusResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\AddBandwidthPackageIpsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstancePhysicalAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeClustersResponseUnmarshaller.cs" />
@@ -726,6 +731,7 @@
 	<Compile Include="Ecs\Transform\V20140526\ReleasePublicIpAddressResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeDeploymentSetTopologyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CheckAutoSnapshotPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\InstallCloudAssistantResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\AssociateEipAddressResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyVpcAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\AllocatePublicIpAddressResponseUnmarshaller.cs" />

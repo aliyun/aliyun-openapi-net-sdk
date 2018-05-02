@@ -83,6 +83,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private float? cPUCreditBalance;
 
+			private float? cPUAdvanceCreditBalance;
+
+			private float? cPUNotpaidSurplusCreditUsage;
+
 			private string timeStamp;
 
 			public string InstanceId
@@ -250,6 +254,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					cPUCreditBalance = value;
+				}
+			}
+
+			public float? CPUAdvanceCreditBalance
+			{
+				get
+				{
+					return cPUAdvanceCreditBalance;
+				}
+				set	
+				{
+					cPUAdvanceCreditBalance = value;
+				}
+			}
+
+			public float? CPUNotpaidSurplusCreditUsage
+			{
+				get
+				{
+					return cPUNotpaidSurplusCreditUsage;
+				}
+				set	
+				{
+					cPUNotpaidSurplusCreditUsage = value;
 				}
 			}
 
