@@ -1,35 +1,69 @@
-# Alibaba Cloud SDK for C#
+# Alibaba Cloud C# Software Development Kit
+[中文文档](./README_zh.md)
 
-欢迎使用阿里云开发者工具套件（SDK），适用于阿里云的 C# SDK 让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
+The Alibaba Cloud C# Software Development Kit (SDK) allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
 
-## 环境准备
+This document introduces how to install and use Alibaba Cloud C# SDK.
 
-1. 阿里云 C# SDK 适用于 .NET Framework 4.0 及以上版本。
-2. 要使用阿里云 C# SDK，您需要一个云账号以及一对 Access Key ID 和 Access Key Secret。请在阿里云控制台中的 [AccessKey 管理页面]([https://usercenter.console.aliyun.com/#/manage/ak](https://usercenter.console.aliyun.com/#/manage/ak))上创建和查看您的 Access Key，或者联系您的系统管理员。
-3. 要使用阿里云 SDK 访问某个产品的 API，您需要事先在[阿里云控制台](https://home.console.aliyun.com/new#/)中开通这个产品。
+If you have any problem while using Java SDK, please join the **DingTalk group: 11771185 (the official SDK customer service group of Alibaba Cloud)** for consultation.
 
+## Prerequisites
 
-## SDK 获取和安装
+- To use Alibaba Cloud C# SDK, you must have an Alibaba Cloud account and an AccessKey.
 
-进入[阿里云 C# SDK](https://develop.aliyun.com/tools/sdk#/dotnet)页面，查看已发布的阿里云产品 SDK 模块列表。
+	The AccessKey is required when initializing the client. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey]([https://usercenter.console.aliyun.com/#/manage/ak](https://usercenter.console.aliyun.com/#/manage/ak)).
 
-> **注意：** 部分阿里云产品的 SDK 未收录到这个列表中，例如对象存储（OSS），表格存储（Table Store），请前往这些产品的详情页获取相应的 SDK。
+	>**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
 
-要成功地调用一个产品的 SDK，您至少需要首先安装 `SDK 核心库`。例如，对云服务器 SDK 的调用，您需要获取和安装 2 个 SDK，分别是`SDK 核心库`和`云服务器`的 SDK。
+- To use Alibaba Cloud Java SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
 
-您可以通过 NuGet 程序包管理器来安装：
+- The Alibaba Cloud C# SDK is requires .NET Framework 4.0 or later.
 
-* 打开您的 `Visual Studio` 选择`文件->新建->项目`菜单，在弹出的新建项目对话框中选择`控制台应用(.NET Framework)`，然后点击**确定**按钮。
+## Install C# SDK
 
-* 在`解决方案资源管理器面板`中右击您的项目选择`管理 NuGet 程序包`菜单，在打开的 NuGet 管理面板中点击`浏览`选项卡输入 `aliyun-net-sdk`，在下方列表中将显示由 `Alibaba Cloud` 发布的各产品模块，选择您期望的模块点击**安装**即可。
+You must install the SDK core library for any SDK you use. For example, to call the ECS SDK, you must install both the ECS SDK and the SDK core library.
 
-## 开始调用
+Install the Alibaba Cloud C# SDK using one of the following methods:
 
-以下这个代码示例向您展示了调用阿里云 SDK 的 3 个主要步骤：
+- Add DLL reference
 
-1. 创建 DefaultAcsClient 实例并初始化；
-2. 创建 API 请求并设置参数；
-3. 发起请求并处理返回。
+	1. Download the DLL package from [.NET SDK](https://develop.aliyun.com/tools/sdk#/dotnet********).
+
+	2. Right click your project in the **Solution Explorer** of Visual Studio and click **Reference**.
+
+	3. In the displayed menu, click **Add Reference**.
+
+	4. In the displayed dialog box, click **Browse**. Then select the downloaded DLL file and click **Confirm**.
+
+- Add project reference
+
+	1. Run the following command to clone the SDK source codes from GitHub.
+
+	```
+	git clone https://github.com/aliyun/aliyun-openapi-net-sdk.git
+	```
+
+	There are many folders prefixed with`aliyun-net-openapi-`in the cloned directory. Each folder contains `\\*.csproj` file, which is the project file**. For example, there is an `aliyun-net-sdk-ecs.csproj` file under the `aliyun-net-openapi-ecs` subfolder.
+
+	2. In Visual Studio, right click your solution.
+
+	3. Click **Add > Existing Project**.
+
+	4. In the displayed dialogue box, select the project file, for example, `aliyun-net-sdk-ecs.csproj`, and click then **Open**.
+
+	5. Right click your project and click **Reference > Add Reference**.
+
+	6. In the displayed dialog box, click the **Project ** tab, select the opened project and click **Confirm**.
+
+## Initiate a call
+
+The following code example shows the three main steps to use the Alibaba Cloud C# SDK:
+
+- Create and initialize a DefaultAcsClient instance.
+
+- Create a request and set parameters.
+
+- Initiate the request and handle the response.
 
 ```
 using Aliyun.Acs.Core;
@@ -41,7 +75,7 @@ class TestProgram
 {
     static void Main(string[] args)
     {
-        // 构建一个 Client，用于发起请求
+        // Create a client used for initiating a request
         IClientProfile profile = DefaultProfile.GetProfile(
             "<your-region-id>",
             "<your-access-key-id>",
@@ -50,11 +84,11 @@ class TestProgram
 
         try
         {
-            // 构造请求
+            // Create the request
             DescribeInstancesRequest request = new DescribeInstancesRequest();
             request.PageSize = 10;
 
-            // 发起请求，并得到 Response
+            // Initiate the request and get the response
             DescribeInstancesResponse response = client.GetAcsResponse(request);
             System.Console.WriteLine(response.TotalCount);
         }
@@ -69,13 +103,3 @@ class TestProgram
     }
 }
 ```
-
-在创建 DefaultAcsClient 实例并初始化时，您需要填写 3 个参数：`Region ID`、`Access Key ID` 和 `Access Key Secret`。`Access Key ID` 和 `Access Key Secret` 可以从控制台获得；而 `Region ID` 可以从[地域列表](https://help.aliyun.com/document_detail/40654.html)中获得。
-
-## API参考
-
-要知道您想访问的产品提供的 API 以及它们的参数，请参考开放了 API 的[产品列表](https://develop.aliyun.com/tools/openapilist)。
-
-## 开放授权
-
-源码基于 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) 许可协议开放授权
