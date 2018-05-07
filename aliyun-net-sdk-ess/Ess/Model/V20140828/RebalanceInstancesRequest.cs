@@ -26,20 +26,39 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
-    public class DescribeAccountAttributesRequest : RpcAcsRequest<DescribeAccountAttributesResponse>
+    public class RebalanceInstancesRequest : RpcAcsRequest<RebalanceInstancesResponse>
     {
-        public DescribeAccountAttributesRequest()
-            : base("Ess", "2014-08-28", "DescribeAccountAttributes", "ess", "openAPI")
+        public RebalanceInstancesRequest()
+            : base("Ess", "2014-08-28", "RebalanceInstances", "ess", "openAPI")
         {
         }
 
+		private long? resourceOwnerId;
+
 		private string resourceOwnerAccount;
+
+		private string scalingGroupId;
+
+		private string ownerAccount;
 
 		private string action;
 
 		private long? ownerId;
 
 		private string accessKeyId;
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
 
 		public string ResourceOwnerAccount
 		{
@@ -51,6 +70,32 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ScalingGroupId
+		{
+			get
+			{
+				return scalingGroupId;
+			}
+			set	
+			{
+				scalingGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -93,9 +138,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override DescribeAccountAttributesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RebalanceInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAccountAttributesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RebalanceInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

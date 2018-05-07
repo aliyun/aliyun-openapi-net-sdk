@@ -111,6 +111,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private int? standbyCapacity;
 
+			private int? protectedCapacity;
+
 			private string activeScalingConfigurationId;
 
 			private string scalingGroupId;
@@ -130,6 +132,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			private string vpcId;
 
 			private string vSwitchId;
+
+			private string multiAZPolicy;
 
 			private List<string> vSwitchIds;
 
@@ -220,6 +224,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					standbyCapacity = value;
+				}
+			}
+
+			public int? ProtectedCapacity
+			{
+				get
+				{
+					return protectedCapacity;
+				}
+				set	
+				{
+					protectedCapacity = value;
 				}
 			}
 
@@ -340,6 +356,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					vSwitchId = value;
+				}
+			}
+
+			public string MultiAZPolicy
+			{
+				get
+				{
+					return multiAZPolicy;
+				}
+				set	
+				{
+					multiAZPolicy = value;
 				}
 			}
 

@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingGroup.ScalingGroupName = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].ScalingGroupName");
 				scalingGroup.ActiveCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].ActiveCapacity");
 				scalingGroup.StandbyCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].StandbyCapacity");
+				scalingGroup.ProtectedCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].ProtectedCapacity");
 				scalingGroup.ActiveScalingConfigurationId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].ActiveScalingConfigurationId");
 				scalingGroup.ScalingGroupId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].ScalingGroupId");
 				scalingGroup.RegionId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].RegionId");
@@ -55,6 +56,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingGroup.ModificationTime = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].ModificationTime");
 				scalingGroup.VpcId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].VpcId");
 				scalingGroup.VSwitchId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].VSwitchId");
+				scalingGroup.MultiAZPolicy = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].MultiAZPolicy");
 
 				List<string> scalingGroup_vSwitchIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeScalingGroups.ScalingGroups["+ i +"].VSwitchIds.Length"); j++) {

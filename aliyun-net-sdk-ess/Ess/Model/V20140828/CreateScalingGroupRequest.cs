@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         {
         }
 
+		private string multiAZPolicy;
+
 		private string dBInstanceIds;
 
 		private string loadBalancerIds;
@@ -64,6 +66,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string removalPolicy1;
 
 		private string removalPolicy2;
+
+		public string MultiAZPolicy
+		{
+			get
+			{
+				return multiAZPolicy;
+			}
+			set	
+			{
+				multiAZPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "MultiAZPolicy", value);
+			}
+		}
 
 		public string DBInstanceIds
 		{
