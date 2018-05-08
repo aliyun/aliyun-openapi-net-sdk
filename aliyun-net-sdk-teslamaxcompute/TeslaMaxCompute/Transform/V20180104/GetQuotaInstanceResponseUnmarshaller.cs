@@ -61,6 +61,10 @@ namespace Aliyun.Acs.TeslaMaxCompute.Transform.V20180104
 				instance.SkynetId = context.StringValue("GetQuotaInstance.Data.Detail["+ i +"].SkynetId");
 				instance.QuotaName = context.StringValue("GetQuotaInstance.Data.Detail["+ i +"].QuotaName");
 				instance.QuotaId = context.IntegerValue("GetQuotaInstance.Data.Detail["+ i +"].QuotaId");
+				instance.User = context.StringValue("GetQuotaInstance.Data.Detail["+ i +"].User");
+				instance.IsRealOwner = context.StringValue("GetQuotaInstance.Data.Detail["+ i +"].IsRealOwner");
+				instance.ProjectOwner = context.StringValue("GetQuotaInstance.Data.Detail["+ i +"].ProjectOwner");
+				instance.CollectTime = context.StringValue("GetQuotaInstance.Data.Detail["+ i +"].CollectTime");
 
 				data_detail.Add(instance);
 			}

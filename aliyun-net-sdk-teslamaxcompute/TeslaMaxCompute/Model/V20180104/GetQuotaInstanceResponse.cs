@@ -156,6 +156,14 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 
 				private int? quotaId;
 
+				private string user;
+
+				private string isRealOwner;
+
+				private string projectOwner;
+
+				private string collectTime;
+
 				public string Project
 				{
 					get
@@ -405,6 +413,54 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 					set	
 					{
 						quotaId = value;
+					}
+				}
+
+				public string User
+				{
+					get
+					{
+						return user;
+					}
+					set	
+					{
+						user = value;
+					}
+				}
+
+				public string IsRealOwner
+				{
+					get
+					{
+						return isRealOwner;
+					}
+					set	
+					{
+						isRealOwner = value;
+					}
+				}
+
+				public string ProjectOwner
+				{
+					get
+					{
+						return projectOwner;
+					}
+					set	
+					{
+						projectOwner = value;
+					}
+				}
+
+				public string CollectTime
+				{
+					get
+					{
+						return collectTime;
+					}
+					set	
+					{
+						collectTime = value;
 					}
 				}
 			}
