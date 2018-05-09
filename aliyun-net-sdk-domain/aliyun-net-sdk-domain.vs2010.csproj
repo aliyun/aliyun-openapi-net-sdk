@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{c3c15514-2eed-4586-a348-9a3d3f929c27}</ProjectGuid>
+    <ProjectGuid>{57b6c6cc-1257-4fca-b6b8-2596009ea31f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -184,20 +184,36 @@
 	<Compile Include="Domain\Model\V20180129\SaveSingleTaskForTransferProhibitionLockRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\SubmitEmailVerificationRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\UpdateDomainToDomainGroupResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\RecordDemandRequest.cs" />
 	<Compile Include="Domain\Model\V20180208\QueryBidRecordsRequest.cs" />
 	<Compile Include="Domain\Model\V20180208\ReserveDomainRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\QueryBrokerDemandRecordRequest.cs" />
 	<Compile Include="Domain\Model\V20180208\QueryAuctionsResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\FinishDemandRequest.cs" />
 	<Compile Include="Domain\Model\V20180208\QueryAuctionDetailResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\FailDemandResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\QueryBrokerDemandRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\AcceptDemandResponse.cs" />
 	<Compile Include="Domain\Model\V20180208\GetReserveDomainUrlRequest.cs" />
 	<Compile Include="Domain\Model\V20180208\QueryAuctionsRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\QueryBrokerDemandRecordResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\QueryBrokerDemandResponse.cs" />
 	<Compile Include="Domain\Model\V20180208\QueryBidRecordsResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\RequestPayDemandRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\AcceptDemandRequest.cs" />
 	<Compile Include="Domain\Model\V20180208\ReserveDomainResponse.cs" />
 	<Compile Include="Domain\Model\V20180208\BidDomainResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\RefuseDemandRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\FailDemandRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\RefuseDemandResponse.cs" />
+	<Compile Include="Domain\Model\V20180208\RecordDemandResponse.cs" />
 	<Compile Include="Domain\Model\V20180208\BidDomainRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\FinishDemandResponse.cs" />
 	<Compile Include="Domain\Model\V20180208\QueryBookingDomainInfoResponse.cs" />
 	<Compile Include="Domain\Model\V20180208\QueryBookingDomainInfoRequest.cs" />
 	<Compile Include="Domain\Model\V20180208\GetReserveDomainUrlResponse.cs" />
 	<Compile Include="Domain\Model\V20180208\QueryAuctionDetailRequest.cs" />
+	<Compile Include="Domain\Model\V20180208\RequestPayDemandResponse.cs" />
 	<Compile Include="Domain\Transform\V20180129\SaveSingleTaskForCreatingOrderTransferResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\VerifyEmailResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialResponseUnmarshaller.cs" />
@@ -270,13 +286,21 @@
 	<Compile Include="Domain\Transform\V20180129\SaveSingleTaskForApprovingTransferOutResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\SaveSingleTaskForModifyingDnsHostResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\QueryDomainGroupListResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\AcceptDemandResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180208\GetReserveDomainUrlResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180208\QueryBidRecordsResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\RecordDemandResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\FinishDemandResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180208\QueryAuctionDetailResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180208\ReserveDomainResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\QueryBrokerDemandResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\FailDemandResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\RequestPayDemandResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180208\QueryBookingDomainInfoResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180208\BidDomainResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\QueryBrokerDemandRecordResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180208\QueryAuctionsResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180208\RefuseDemandResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
