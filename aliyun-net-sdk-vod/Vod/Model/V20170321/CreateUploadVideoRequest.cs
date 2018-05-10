@@ -51,6 +51,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string tags;
 
+		private string storageLocation;
+
 		private string coverURL;
 
 		private string userData;
@@ -177,6 +179,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string StorageLocation
+		{
+			get
+			{
+				return storageLocation;
+			}
+			set	
+			{
+				storageLocation = value;
+				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
 			}
 		}
 

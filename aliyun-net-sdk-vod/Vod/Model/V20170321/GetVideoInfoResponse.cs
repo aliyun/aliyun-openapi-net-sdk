@@ -95,6 +95,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string cateName;
 
+			private string preprocessStatus;
+
 			private List<string> snapshots;
 
 			public string VideoId
@@ -250,6 +252,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					cateName = value;
+				}
+			}
+
+			public string PreprocessStatus
+			{
+				get
+				{
+					return preprocessStatus;
+				}
+				set	
+				{
+					preprocessStatus = value;
 				}
 			}
 

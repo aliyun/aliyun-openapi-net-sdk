@@ -54,6 +54,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.Description = context.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Description");
 				video.CustomerId = context.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CustomerId");
 				video.CreateTime = context.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CreateTime");
+				video.CreationTime = context.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CreationTime");
 				video.ModifyTime = context.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.ModifyTime");
 				video.CoverURL = context.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CoverURL");
 				video.CateId = context.IntegerValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CateId");

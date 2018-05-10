@@ -418,6 +418,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string createTime;
 
+				private string creationTime;
+
 				private string modifyTime;
 
 				private string coverURL;
@@ -549,6 +551,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						createTime = value;
+					}
+				}
+
+				public string CreationTime
+				{
+					get
+					{
+						return creationTime;
+					}
+					set	
+					{
+						creationTime = value;
 					}
 				}
 

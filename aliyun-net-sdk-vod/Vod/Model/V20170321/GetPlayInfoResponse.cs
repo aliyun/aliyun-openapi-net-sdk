@@ -99,6 +99,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string jobId;
 
+			private string preprocessStatus;
+
 			public long? Width
 			{
 				get
@@ -276,6 +278,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					jobId = value;
+				}
+			}
+
+			public string PreprocessStatus
+			{
+				get
+				{
+					return preprocessStatus;
+				}
+				set	
+				{
+					preprocessStatus = value;
 				}
 			}
 		}

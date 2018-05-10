@@ -45,6 +45,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			mezzanine.FileURL = context.StringValue("GetMezzanineInfo.Mezzanine.FileURL");
 			mezzanine.FileName = context.StringValue("GetMezzanineInfo.Mezzanine.FileName");
 			mezzanine.CRC64 = context.StringValue("GetMezzanineInfo.Mezzanine.CRC64");
+			mezzanine.PreprocessStatus = context.StringValue("GetMezzanineInfo.Mezzanine.PreprocessStatus");
 			getMezzanineInfoResponse.Mezzanine = mezzanine;
         
 			return getMezzanineInfoResponse;

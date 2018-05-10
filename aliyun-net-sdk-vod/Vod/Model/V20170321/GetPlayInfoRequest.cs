@@ -55,6 +55,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string action;
 
+		private string outputType;
+
 		private string definition;
 
 		private long? authTimeout;
@@ -201,6 +203,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string OutputType
+		{
+			get
+			{
+				return outputType;
+			}
+			set	
+			{
+				outputType = value;
+				DictionaryUtil.Add(QueryParameters, "OutputType", value);
 			}
 		}
 

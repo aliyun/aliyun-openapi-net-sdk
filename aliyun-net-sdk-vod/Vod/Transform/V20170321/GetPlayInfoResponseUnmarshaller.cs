@@ -60,6 +60,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				playInfo.StreamType = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].StreamType");
 				playInfo.Rand = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Rand");
 				playInfo.JobId = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].JobId");
+				playInfo.PreprocessStatus = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].PreprocessStatus");
 
 				getPlayInfoResponse_playInfoList.Add(playInfo);
 			}

@@ -79,6 +79,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string cRC64;
 
+			private string preprocessStatus;
+
 			public string VideoId
 			{
 				get
@@ -220,6 +222,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					cRC64 = value;
+				}
+			}
+
+			public string PreprocessStatus
+			{
+				get
+				{
+					return preprocessStatus;
+				}
+				set	
+				{
+					preprocessStatus = value;
 				}
 			}
 		}
