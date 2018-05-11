@@ -646,6 +646,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 				private string configId;
 
+				private string enable;
+
 				private string dynamicOrigin;
 
 				private string staticType;
@@ -667,6 +669,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					set	
 					{
 						configId = value;
+					}
+				}
+
+				public string Enable
+				{
+					get
+					{
+						return enable;
+					}
+					set	
+					{
+						enable = value;
 					}
 				}
 

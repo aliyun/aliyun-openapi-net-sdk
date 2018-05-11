@@ -26,24 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class SetDomainServerCertificateRequest : RpcAcsRequest<SetDomainServerCertificateResponse>
+    public class DescribeCdnDomainConfigsRequest : RpcAcsRequest<DescribeCdnDomainConfigsResponse>
     {
-        public SetDomainServerCertificateRequest()
-            : base("Cdn", "2014-11-11", "SetDomainServerCertificate")
+        public DescribeCdnDomainConfigsRequest()
+            : base("Cdn", "2014-11-11", "DescribeCdnDomainConfigs")
         {
         }
 
-		private string privateKey;
-
-		private string serverCertificateStatus;
-
-		private string serverCertificate;
+		private string functionNames;
 
 		private string securityToken;
-
-		private string certType;
-
-		private string certName;
 
 		private string domainName;
 
@@ -51,46 +43,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private long? ownerId;
 
-		private string region;
-
 		private string accessKeyId;
 
-		public string PrivateKey
+		public string FunctionNames
 		{
 			get
 			{
-				return privateKey;
+				return functionNames;
 			}
 			set	
 			{
-				privateKey = value;
-				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
-			}
-		}
-
-		public string ServerCertificateStatus
-		{
-			get
-			{
-				return serverCertificateStatus;
-			}
-			set	
-			{
-				serverCertificateStatus = value;
-				DictionaryUtil.Add(QueryParameters, "ServerCertificateStatus", value);
-			}
-		}
-
-		public string ServerCertificate
-		{
-			get
-			{
-				return serverCertificate;
-			}
-			set	
-			{
-				serverCertificate = value;
-				DictionaryUtil.Add(QueryParameters, "ServerCertificate", value);
+				functionNames = value;
+				DictionaryUtil.Add(QueryParameters, "FunctionNames", value);
 			}
 		}
 
@@ -104,32 +68,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string CertType
-		{
-			get
-			{
-				return certType;
-			}
-			set	
-			{
-				certType = value;
-				DictionaryUtil.Add(QueryParameters, "CertType", value);
-			}
-		}
-
-		public string CertName
-		{
-			get
-			{
-				return certName;
-			}
-			set	
-			{
-				certName = value;
-				DictionaryUtil.Add(QueryParameters, "CertName", value);
 			}
 		}
 
@@ -172,19 +110,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -198,9 +123,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override SetDomainServerCertificateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeCdnDomainConfigsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SetDomainServerCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCdnDomainConfigsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -220,6 +220,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			for (int i = 0; i < context.Length("DescribeDomainConfigs.DomainConfigs.DynamicConfigs.Length"); i++) {
 				DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_DynamicConfig dynamicConfig = new DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_DynamicConfig();
 				dynamicConfig.ConfigId = context.StringValue("DescribeDomainConfigs.DomainConfigs.DynamicConfigs["+ i +"].ConfigId");
+				dynamicConfig.Enable = context.StringValue("DescribeDomainConfigs.DomainConfigs.DynamicConfigs["+ i +"].Enable");
 				dynamicConfig.DynamicOrigin = context.StringValue("DescribeDomainConfigs.DomainConfigs.DynamicConfigs["+ i +"].DynamicOrigin");
 				dynamicConfig.StaticType = context.StringValue("DescribeDomainConfigs.DomainConfigs.DynamicConfigs["+ i +"].StaticType");
 				dynamicConfig.StaticUri = context.StringValue("DescribeDomainConfigs.DomainConfigs.DynamicConfigs["+ i +"].StaticUri");

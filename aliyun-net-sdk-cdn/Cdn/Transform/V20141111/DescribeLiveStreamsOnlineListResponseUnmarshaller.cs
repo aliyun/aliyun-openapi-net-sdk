@@ -31,6 +31,10 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 
 			describeLiveStreamsOnlineListResponse.HttpResponse = context.HttpResponse;
 			describeLiveStreamsOnlineListResponse.RequestId = context.StringValue("DescribeLiveStreamsOnlineList.RequestId");
+			describeLiveStreamsOnlineListResponse.PageNum = context.IntegerValue("DescribeLiveStreamsOnlineList.PageNum");
+			describeLiveStreamsOnlineListResponse.PageSize = context.IntegerValue("DescribeLiveStreamsOnlineList.PageSize");
+			describeLiveStreamsOnlineListResponse.TotalNum = context.IntegerValue("DescribeLiveStreamsOnlineList.TotalNum");
+			describeLiveStreamsOnlineListResponse.TotalPage = context.IntegerValue("DescribeLiveStreamsOnlineList.TotalPage");
 
 			List<DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> describeLiveStreamsOnlineListResponse_onlineInfo = new List<DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamsOnlineList.OnlineInfo.Length"); i++) {

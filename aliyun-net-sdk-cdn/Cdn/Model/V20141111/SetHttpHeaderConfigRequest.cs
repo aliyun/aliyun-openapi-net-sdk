@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string securityToken;
 
+		private long? configId;
+
 		private string domainName;
 
 		private string action;
@@ -70,6 +72,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public long? ConfigId
+		{
+			get
+			{
+				return configId;
+			}
+			set	
+			{
+				configId = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
 			}
 		}
 

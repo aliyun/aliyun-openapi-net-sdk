@@ -26,39 +26,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DescribeDomainSrcFlowDataRequest : RpcAcsRequest<DescribeDomainSrcFlowDataResponse>
+    public class UpdateFCTriggerRequest : RpcAcsRequest<UpdateFCTriggerResponse>
     {
-        public DescribeDomainSrcFlowDataRequest()
-            : base("Cdn", "2014-11-11", "DescribeDomainSrcFlowData")
+        public UpdateFCTriggerRequest()
+            : base("Cdn", "2014-11-11", "UpdateFCTrigger")
         {
         }
 
-		private string startTime;
+		private string notes;
 
 		private string action;
 
-		private string fixTimeGap;
+		private string triggerARN;
 
-		private string timeMerge;
-
-		private string domainName;
-
-		private string endTime;
+		private string sourceARN;
 
 		private long? ownerId;
 
-		private string interval;
+		private string roleARN;
 
-		public string StartTime
+		public string Notes
 		{
 			get
 			{
-				return startTime;
+				return notes;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				notes = value;
+				DictionaryUtil.Add(QueryParameters, "Notes", value);
 			}
 		}
 
@@ -75,55 +71,29 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string FixTimeGap
+		public string TriggerARN
 		{
 			get
 			{
-				return fixTimeGap;
+				return triggerARN;
 			}
 			set	
 			{
-				fixTimeGap = value;
-				DictionaryUtil.Add(QueryParameters, "FixTimeGap", value);
+				triggerARN = value;
+				DictionaryUtil.Add(QueryParameters, "TriggerARN", value);
 			}
 		}
 
-		public string TimeMerge
+		public string SourceARN
 		{
 			get
 			{
-				return timeMerge;
+				return sourceARN;
 			}
 			set	
 			{
-				timeMerge = value;
-				DictionaryUtil.Add(QueryParameters, "TimeMerge", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				sourceARN = value;
+				DictionaryUtil.Add(QueryParameters, "SourceARN", value);
 			}
 		}
 
@@ -140,22 +110,22 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Interval
+		public string RoleARN
 		{
 			get
 			{
-				return interval;
+				return roleARN;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
+				roleARN = value;
+				DictionaryUtil.Add(QueryParameters, "RoleARN", value);
 			}
 		}
 
-        public override DescribeDomainSrcFlowDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateFCTriggerResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainSrcFlowDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateFCTriggerResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

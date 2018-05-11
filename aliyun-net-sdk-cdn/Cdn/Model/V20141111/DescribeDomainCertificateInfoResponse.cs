@@ -21,20 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLiveStreamsOnlineListResponse : AcsResponse
+	public class DescribeDomainCertificateInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? pageNum;
-
-		private int? pageSize;
-
-		private int? totalNum;
-
-		private int? totalPage;
-
-		private List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> onlineInfo;
+		private List<DescribeDomainCertificateInfo_CertInfo> certInfos;
 
 		public string RequestId
 		{
@@ -48,78 +40,38 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public int? PageNum
+		public List<DescribeDomainCertificateInfo_CertInfo> CertInfos
 		{
 			get
 			{
-				return pageNum;
+				return certInfos;
 			}
 			set	
 			{
-				pageNum = value;
+				certInfos = value;
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
-
-		public int? TotalPage
-		{
-			get
-			{
-				return totalPage;
-			}
-			set	
-			{
-				totalPage = value;
-			}
-		}
-
-		public List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> OnlineInfo
-		{
-			get
-			{
-				return onlineInfo;
-			}
-			set	
-			{
-				onlineInfo = value;
-			}
-		}
-
-		public class DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo
+		public class DescribeDomainCertificateInfo_CertInfo
 		{
 
 			private string domainName;
 
-			private string appName;
+			private string certName;
 
-			private string streamName;
+			private string certDomainName;
 
-			private string publishTime;
+			private string certExpireTime;
 
-			private string publishUrl;
+			private string certLife;
+
+			private string certOrg;
+
+			private string certType;
+
+			private string serverCertificateStatus;
+
+			private string status;
 
 			public string DomainName
 			{
@@ -133,51 +85,99 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string AppName
+			public string CertName
 			{
 				get
 				{
-					return appName;
+					return certName;
 				}
 				set	
 				{
-					appName = value;
+					certName = value;
 				}
 			}
 
-			public string StreamName
+			public string CertDomainName
 			{
 				get
 				{
-					return streamName;
+					return certDomainName;
 				}
 				set	
 				{
-					streamName = value;
+					certDomainName = value;
 				}
 			}
 
-			public string PublishTime
+			public string CertExpireTime
 			{
 				get
 				{
-					return publishTime;
+					return certExpireTime;
 				}
 				set	
 				{
-					publishTime = value;
+					certExpireTime = value;
 				}
 			}
 
-			public string PublishUrl
+			public string CertLife
 			{
 				get
 				{
-					return publishUrl;
+					return certLife;
 				}
 				set	
 				{
-					publishUrl = value;
+					certLife = value;
+				}
+			}
+
+			public string CertOrg
+			{
+				get
+				{
+					return certOrg;
+				}
+				set	
+				{
+					certOrg = value;
+				}
+			}
+
+			public string CertType
+			{
+				get
+				{
+					return certType;
+				}
+				set	
+				{
+					certType = value;
+				}
+			}
+
+			public string ServerCertificateStatus
+			{
+				get
+				{
+					return serverCertificateStatus;
+				}
+				set	
+				{
+					serverCertificateStatus = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

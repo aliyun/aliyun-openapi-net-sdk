@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string startTime;
 
+		private string action;
+
 		private string fixTimeGap;
 
 		private string timeMerge;
@@ -57,6 +59,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
