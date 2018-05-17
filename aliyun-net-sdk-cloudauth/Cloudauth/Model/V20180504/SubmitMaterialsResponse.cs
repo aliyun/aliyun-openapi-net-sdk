@@ -19,9 +19,9 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20171117
+namespace Aliyun.Acs.Cloudauth.Model.V20180504
 {
-	public class GetStatusResponse : AcsResponse
+	public class SubmitMaterialsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20171117
 
 		private string message;
 
-		private GetStatus_Data data;
+		private SubmitMaterials_Data data;
 
 		public string RequestId
 		{
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20171117
 			}
 		}
 
-		public GetStatus_Data Data
+		public SubmitMaterials_Data Data
 		{
 			get
 			{
@@ -94,62 +94,66 @@ namespace Aliyun.Acs.Cloudauth.Model.V20171117
 			}
 		}
 
-		public class GetStatus_Data
+		public class SubmitMaterials_Data
 		{
 
-			private int? statusCode;
+			private SubmitMaterials_VerifyStatus verifyStatus;
 
-			private float? trustedScore;
-
-			private float? similarityScore;
-
-			private string auditConclusions;
-
-			public int? StatusCode
+			public SubmitMaterials_VerifyStatus VerifyStatus
 			{
 				get
 				{
-					return statusCode;
+					return verifyStatus;
 				}
 				set	
 				{
-					statusCode = value;
+					verifyStatus = value;
 				}
 			}
 
-			public float? TrustedScore
+			public class SubmitMaterials_VerifyStatus
 			{
-				get
-				{
-					return trustedScore;
-				}
-				set	
-				{
-					trustedScore = value;
-				}
-			}
 
-			public float? SimilarityScore
-			{
-				get
-				{
-					return similarityScore;
-				}
-				set	
-				{
-					similarityScore = value;
-				}
-			}
+				private int? statusCode;
 
-			public string AuditConclusions
-			{
-				get
+				private float? trustedScore;
+
+				private float? similarityScore;
+
+				public int? StatusCode
 				{
-					return auditConclusions;
+					get
+					{
+						return statusCode;
+					}
+					set	
+					{
+						statusCode = value;
+					}
 				}
-				set	
+
+				public float? TrustedScore
 				{
-					auditConclusions = value;
+					get
+					{
+						return trustedScore;
+					}
+					set	
+					{
+						trustedScore = value;
+					}
+				}
+
+				public float? SimilarityScore
+				{
+					get
+					{
+						return similarityScore;
+					}
+					set	
+					{
+						similarityScore = value;
+					}
 				}
 			}
 		}

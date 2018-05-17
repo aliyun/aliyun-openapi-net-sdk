@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cloudauth.Model.V20171117;
+using Aliyun.Acs.Cloudauth.Model.V20180504;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Transform.V20171117
+namespace Aliyun.Acs.Cloudauth.Transform.V20180504
 {
     public class CompareFacesResponseUnmarshaller
     {

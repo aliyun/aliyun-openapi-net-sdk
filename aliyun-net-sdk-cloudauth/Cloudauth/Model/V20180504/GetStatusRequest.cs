@@ -21,24 +21,26 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20171117;
+using Aliyun.Acs.Cloudauth.Transform.V20180504;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20171117
+namespace Aliyun.Acs.Cloudauth.Model.V20180504
 {
-    public class SubmitMaterialsRequest : RpcAcsRequest<SubmitMaterialsResponse>
+    public class GetStatusRequest : RpcAcsRequest<GetStatusResponse>
     {
-        public SubmitMaterialsRequest()
-            : base("Cloudauth", "2017-11-17", "SubmitMaterials", "cloudauth", "openAPI")
+        public GetStatusRequest()
+            : base("Cloudauth", "2018-05-04", "GetStatus", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
 		private long? resourceOwnerId;
 
-		private List<Material> materials;
+		private string biz;
 
-		private string verifyToken;
+		private string sourceIp;
+
+		private string ticketId;
 
 		public long? ResourceOwnerId
 		{
@@ -53,72 +55,48 @@ namespace Aliyun.Acs.Cloudauth.Model.V20171117
 			}
 		}
 
-		public List<Material> Materials
+		public string Biz
 		{
 			get
 			{
-				return materials;
-			}
-
-			set
-			{
-				materials = value;
-				for (int i = 0; i < materials.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Material." + (i + 1) + ".MaterialType", materials[i].MaterialType);
-					DictionaryUtil.Add(QueryParameters,"Material." + (i + 1) + ".Value", materials[i].Value);
-				}
-			}
-		}
-
-		public string VerifyToken
-		{
-			get
-			{
-				return verifyToken;
+				return biz;
 			}
 			set	
 			{
-				verifyToken = value;
-				DictionaryUtil.Add(QueryParameters, "VerifyToken", value);
+				biz = value;
+				DictionaryUtil.Add(QueryParameters, "Biz", value);
 			}
 		}
 
-		public class Material
+		public string SourceIp
 		{
-
-			private string materialType;
-
-			private string value_;
-
-			public string MaterialType
+			get
 			{
-				get
-				{
-					return materialType;
-				}
-				set	
-				{
-					materialType = value;
-				}
+				return sourceIp;
 			}
-
-			public string Value
+			set	
 			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
-        public override SubmitMaterialsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string TicketId
+		{
+			get
+			{
+				return ticketId;
+			}
+			set	
+			{
+				ticketId = value;
+				DictionaryUtil.Add(QueryParameters, "TicketId", value);
+			}
+		}
+
+        public override GetStatusResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SubmitMaterialsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

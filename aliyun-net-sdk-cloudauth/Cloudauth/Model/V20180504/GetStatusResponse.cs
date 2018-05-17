@@ -19,9 +19,9 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20171117
+namespace Aliyun.Acs.Cloudauth.Model.V20180504
 {
-	public class CompareFacesResponse : AcsResponse
+	public class GetStatusResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20171117
 
 		private string message;
 
-		private CompareFaces_Data data;
+		private GetStatus_Data data;
 
 		public string RequestId
 		{
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20171117
 			}
 		}
 
-		public CompareFaces_Data Data
+		public GetStatus_Data Data
 		{
 			get
 			{
@@ -94,12 +94,40 @@ namespace Aliyun.Acs.Cloudauth.Model.V20171117
 			}
 		}
 
-		public class CompareFaces_Data
+		public class GetStatus_Data
 		{
+
+			private int? statusCode;
+
+			private float? trustedScore;
 
 			private float? similarityScore;
 
-			private string confidenceThresholds;
+			private string auditConclusions;
+
+			public int? StatusCode
+			{
+				get
+				{
+					return statusCode;
+				}
+				set	
+				{
+					statusCode = value;
+				}
+			}
+
+			public float? TrustedScore
+			{
+				get
+				{
+					return trustedScore;
+				}
+				set	
+				{
+					trustedScore = value;
+				}
+			}
 
 			public float? SimilarityScore
 			{
@@ -113,15 +141,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20171117
 				}
 			}
 
-			public string ConfidenceThresholds
+			public string AuditConclusions
 			{
 				get
 				{
-					return confidenceThresholds;
+					return auditConclusions;
 				}
 				set	
 				{
-					confidenceThresholds = value;
+					auditConclusions = value;
 				}
 			}
 		}

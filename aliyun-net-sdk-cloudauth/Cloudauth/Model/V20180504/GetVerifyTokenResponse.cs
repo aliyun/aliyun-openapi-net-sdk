@@ -19,7 +19,7 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20171117
+namespace Aliyun.Acs.Cloudauth.Model.V20180504
 {
 	public class GetVerifyTokenResponse : AcsResponse
 	{

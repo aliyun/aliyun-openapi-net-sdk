@@ -21,24 +21,43 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20171117;
+using Aliyun.Acs.Cloudauth.Transform.V20180504;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20171117
+namespace Aliyun.Acs.Cloudauth.Model.V20180504
 {
-    public class GetMaterialsRequest : RpcAcsRequest<GetMaterialsResponse>
+    public class GetVerifyTokenRequest : RpcAcsRequest<GetVerifyTokenResponse>
     {
-        public GetMaterialsRequest()
-            : base("Cloudauth", "2017-11-17", "GetMaterials", "cloudauth", "openAPI")
+        public GetVerifyTokenRequest()
+            : base("Cloudauth", "2018-05-04", "GetVerifyToken", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
+
+		private string userData;
 
 		private long? resourceOwnerId;
 
 		private string biz;
 
+		private string sourceIp;
+
+		private string binding;
+
 		private string ticketId;
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -66,6 +85,32 @@ namespace Aliyun.Acs.Cloudauth.Model.V20171117
 			}
 		}
 
+		public string SourceIp
+		{
+			get
+			{
+				return sourceIp;
+			}
+			set	
+			{
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+			}
+		}
+
+		public string Binding
+		{
+			get
+			{
+				return binding;
+			}
+			set	
+			{
+				binding = value;
+				DictionaryUtil.Add(QueryParameters, "Binding", value);
+			}
+		}
+
 		public string TicketId
 		{
 			get
@@ -79,9 +124,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20171117
 			}
 		}
 
-        public override GetMaterialsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetVerifyTokenResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetMaterialsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetVerifyTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

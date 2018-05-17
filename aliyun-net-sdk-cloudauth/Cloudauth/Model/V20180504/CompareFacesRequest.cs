@@ -21,39 +21,41 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20171117;
+using Aliyun.Acs.Cloudauth.Transform.V20180504;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20171117
+namespace Aliyun.Acs.Cloudauth.Model.V20180504
 {
-    public class GetVerifyTokenRequest : RpcAcsRequest<GetVerifyTokenResponse>
+    public class CompareFacesRequest : RpcAcsRequest<CompareFacesResponse>
     {
-        public GetVerifyTokenRequest()
-            : base("Cloudauth", "2017-11-17", "GetVerifyToken", "cloudauth", "openAPI")
+        public CompareFacesRequest()
+            : base("Cloudauth", "2018-05-04", "CompareFaces", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string userData;
+		private string sourceImageType;
 
 		private long? resourceOwnerId;
 
-		private string biz;
+		private string sourceIp;
 
-		private string binding;
+		private string targetImageType;
 
-		private string ticketId;
+		private string sourceImageValue;
 
-		public string UserData
+		private string targetImageValue;
+
+		public string SourceImageType
 		{
 			get
 			{
-				return userData;
+				return sourceImageType;
 			}
 			set	
 			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
+				sourceImageType = value;
+				DictionaryUtil.Add(QueryParameters, "SourceImageType", value);
 			}
 		}
 
@@ -70,48 +72,61 @@ namespace Aliyun.Acs.Cloudauth.Model.V20171117
 			}
 		}
 
-		public string Biz
+		public string SourceIp
 		{
 			get
 			{
-				return biz;
+				return sourceIp;
 			}
 			set	
 			{
-				biz = value;
-				DictionaryUtil.Add(QueryParameters, "Biz", value);
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
-		public string Binding
+		public string TargetImageType
 		{
 			get
 			{
-				return binding;
+				return targetImageType;
 			}
 			set	
 			{
-				binding = value;
-				DictionaryUtil.Add(QueryParameters, "Binding", value);
+				targetImageType = value;
+				DictionaryUtil.Add(QueryParameters, "TargetImageType", value);
 			}
 		}
 
-		public string TicketId
+		public string SourceImageValue
 		{
 			get
 			{
-				return ticketId;
+				return sourceImageValue;
 			}
 			set	
 			{
-				ticketId = value;
-				DictionaryUtil.Add(QueryParameters, "TicketId", value);
+				sourceImageValue = value;
+				DictionaryUtil.Add(QueryParameters, "SourceImageValue", value);
 			}
 		}
 
-        public override GetVerifyTokenResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string TargetImageValue
+		{
+			get
+			{
+				return targetImageValue;
+			}
+			set	
+			{
+				targetImageValue = value;
+				DictionaryUtil.Add(QueryParameters, "TargetImageValue", value);
+			}
+		}
+
+        public override CompareFacesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetVerifyTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CompareFacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

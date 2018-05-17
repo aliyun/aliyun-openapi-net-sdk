@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{70C8E9C8-D90A-4DEF-864E-A844317A0BC7}</ProjectGuid>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{fb20fdc8-529e-4eaf-89e8-ab9fa1ca39b6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -39,28 +40,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cloudauth\Model\V20171117\SubmitMaterialsResponse.cs" />
-    <Compile Include="Cloudauth\Model\V20171117\CompareFacesRequest.cs" />
-    <Compile Include="Cloudauth\Model\V20171117\GetMaterialsRequest.cs" />
-    <Compile Include="Cloudauth\Model\V20171117\GetVerifyTokenRequest.cs" />
-    <Compile Include="Cloudauth\Model\V20171117\CompareFacesResponse.cs" />
-    <Compile Include="Cloudauth\Model\V20171117\SubmitMaterialsRequest.cs" />
-    <Compile Include="Cloudauth\Model\V20171117\GetStatusResponse.cs" />
-    <Compile Include="Cloudauth\Model\V20171117\GetVerifyTokenResponse.cs" />
-    <Compile Include="Cloudauth\Model\V20171117\GetStatusRequest.cs" />
-    <Compile Include="Cloudauth\Model\V20171117\GetMaterialsResponse.cs" />
-    <Compile Include="Cloudauth\Transform\V20171117\SubmitMaterialsResponseUnmarshaller.cs" />
-    <Compile Include="Cloudauth\Transform\V20171117\CompareFacesResponseUnmarshaller.cs" />
-    <Compile Include="Cloudauth\Transform\V20171117\GetStatusResponseUnmarshaller.cs" />
-    <Compile Include="Cloudauth\Transform\V20171117\GetMaterialsResponseUnmarshaller.cs" />
-    <Compile Include="Cloudauth\Transform\V20171117\GetVerifyTokenResponseUnmarshaller.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
+	<Compile Include="Cloudauth\Model\V20180504\SubmitMaterialsResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180504\CompareFacesRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180504\GetMaterialsRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180504\GetVerifyTokenRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180504\CompareFacesResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180504\SubmitMaterialsRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180504\GetStatusResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180504\GetVerifyTokenResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180504\GetStatusRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180504\GetMaterialsResponse.cs" />
+	<Compile Include="Cloudauth\Transform\V20180504\SubmitMaterialsResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180504\CompareFacesResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180504\GetStatusResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180504\GetMaterialsResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180504\GetVerifyTokenResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
-      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
       <Name>aliyun-net-sdk-core.vs2010</Name>
     </ProjectReference>
   </ItemGroup>
