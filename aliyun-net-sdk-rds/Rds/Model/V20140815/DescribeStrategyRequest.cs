@@ -26,30 +26,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAccountsRequest : RpcAcsRequest<DescribeAccountsResponse>
+    public class DescribeStrategyRequest : RpcAcsRequest<DescribeStrategyResponse>
     {
-        public DescribeAccountsRequest()
-            : base("Rds", "2014-08-15", "DescribeAccounts", "rds", "openAPI")
+        public DescribeStrategyRequest()
+            : base("Rds", "2014-08-15", "DescribeStrategy", "rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string accountName;
+		private string securityToken;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private int? pageSize;
+		private string replicaId;
 
 		private string action;
 
-		private string dBInstanceId;
-
 		private long? ownerId;
-
-		private int? pageNumber;
 
 		private string accessKeyId;
 
@@ -66,16 +62,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccountName
+		public string SecurityToken
 		{
 			get
 			{
-				return accountName;
+				return securityToken;
 			}
 			set	
 			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -105,16 +101,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageSize
+		public string ReplicaId
 		{
 			get
 			{
-				return pageSize;
+				return replicaId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				replicaId = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
 			}
 		}
 
@@ -131,19 +127,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -154,19 +137,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -183,9 +153,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeAccountsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeStrategyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAccountsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeStrategyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

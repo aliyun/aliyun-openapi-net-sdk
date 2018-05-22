@@ -21,24 +21,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateUploadPathForSQLServerResponse : AcsResponse
+	public class DescribeStrategyResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string internetFtpServer;
+		private string replicaId;
 
-		private int? internetPort;
+		private string recoveryMode;
 
-		private string intranetFtpserver;
-
-		private int? intranetport;
-
-		private string userName;
-
-		private string password;
-
-		private string fileName;
+		private string verificationMode;
 
 		public string RequestId
 		{
@@ -52,87 +44,39 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string InternetFtpServer
+		public string ReplicaId
 		{
 			get
 			{
-				return internetFtpServer;
+				return replicaId;
 			}
 			set	
 			{
-				internetFtpServer = value;
+				replicaId = value;
 			}
 		}
 
-		public int? InternetPort
+		public string RecoveryMode
 		{
 			get
 			{
-				return internetPort;
+				return recoveryMode;
 			}
 			set	
 			{
-				internetPort = value;
+				recoveryMode = value;
 			}
 		}
 
-		public string IntranetFtpserver
+		public string VerificationMode
 		{
 			get
 			{
-				return intranetFtpserver;
+				return verificationMode;
 			}
 			set	
 			{
-				intranetFtpserver = value;
-			}
-		}
-
-		public int? Intranetport
-		{
-			get
-			{
-				return intranetport;
-			}
-			set	
-			{
-				intranetport = value;
-			}
-		}
-
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-			}
-		}
-
-		public string Password
-		{
-			get
-			{
-				return password;
-			}
-			set	
-			{
-				password = value;
-			}
-		}
-
-		public string FileName
-		{
-			get
-			{
-				return fileName;
-			}
-			set	
-			{
-				fileName = value;
+				verificationMode = value;
 			}
 		}
 	}

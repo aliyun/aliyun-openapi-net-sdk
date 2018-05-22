@@ -23,21 +23,19 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CreateMigrateTaskResponseUnmarshaller
+    public class DescribeStrategyResponseUnmarshaller
     {
-        public static CreateMigrateTaskResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeStrategyResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateMigrateTaskResponse createMigrateTaskResponse = new CreateMigrateTaskResponse();
+			DescribeStrategyResponse describeStrategyResponse = new DescribeStrategyResponse();
 
-			createMigrateTaskResponse.HttpResponse = context.HttpResponse;
-			createMigrateTaskResponse.RequestId = context.StringValue("CreateMigrateTask.RequestId");
-			createMigrateTaskResponse.DBInstanceId = context.StringValue("CreateMigrateTask.DBInstanceId");
-			createMigrateTaskResponse.TaskId = context.StringValue("CreateMigrateTask.TaskId");
-			createMigrateTaskResponse.DBName = context.StringValue("CreateMigrateTask.DBName");
-			createMigrateTaskResponse.MigrateTaskId = context.StringValue("CreateMigrateTask.MigrateTaskId");
-			createMigrateTaskResponse.BackupMode = context.StringValue("CreateMigrateTask.BackupMode");
+			describeStrategyResponse.HttpResponse = context.HttpResponse;
+			describeStrategyResponse.RequestId = context.StringValue("DescribeStrategy.RequestId");
+			describeStrategyResponse.ReplicaId = context.StringValue("DescribeStrategy.ReplicaId");
+			describeStrategyResponse.RecoveryMode = context.StringValue("DescribeStrategy.RecoveryMode");
+			describeStrategyResponse.VerificationMode = context.StringValue("DescribeStrategy.VerificationMode");
         
-			return createMigrateTaskResponse;
+			return describeStrategyResponse;
         }
     }
 }

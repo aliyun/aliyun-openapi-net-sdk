@@ -26,34 +26,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeImportsForSQLServerRequest : RpcAcsRequest<DescribeImportsForSQLServerResponse>
+    public class ModifyDBInstanceProxyConfigurationRequest : RpcAcsRequest<ModifyDBInstanceProxyConfigurationResponse>
     {
-        public DescribeImportsForSQLServerRequest()
-            : base("Rds", "2014-08-15", "DescribeImportsForSQLServer", "rds", "openAPI")
+        public ModifyDBInstanceProxyConfigurationRequest()
+            : base("Rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration", "rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private int? importId;
-
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
+		private string proxyConfigurationKey;
 
-		private int? pageSize;
+		private string proxyConfigurationValue;
 
 		private string action;
 
-		private string endTime;
-
 		private string dBInstanceId;
 
-		private string startTime;
-
 		private long? ownerId;
-
-		private int? pageNumber;
 
 		private string accessKeyId;
 
@@ -70,19 +62,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? ImportId
-		{
-			get
-			{
-				return importId;
-			}
-			set	
-			{
-				importId = value;
-				DictionaryUtil.Add(QueryParameters, "ImportId", value.ToString());
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -96,29 +75,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
+		public string ProxyConfigurationKey
 		{
 			get
 			{
-				return ownerAccount;
+				return proxyConfigurationKey;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				proxyConfigurationKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyConfigurationKey", value);
 			}
 		}
 
-		public int? PageSize
+		public string ProxyConfigurationValue
 		{
 			get
 			{
-				return pageSize;
+				return proxyConfigurationValue;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				proxyConfigurationValue = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyConfigurationValue", value);
 			}
 		}
 
@@ -135,19 +114,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -158,19 +124,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -187,19 +140,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -213,9 +153,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeImportsForSQLServerResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyDBInstanceProxyConfigurationResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeImportsForSQLServerResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBInstanceProxyConfigurationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

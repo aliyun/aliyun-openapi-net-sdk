@@ -26,32 +26,41 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAccountsRequest : RpcAcsRequest<DescribeAccountsResponse>
+    public class UpgradeDBInstanceKernelVersionRequest : RpcAcsRequest<UpgradeDBInstanceKernelVersionResponse>
     {
-        public DescribeAccountsRequest()
-            : base("Rds", "2014-08-15", "DescribeAccounts", "rds", "openAPI")
+        public UpgradeDBInstanceKernelVersionRequest()
+            : base("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds", "openAPI")
         {
         }
 
+		private string switchTimeMode;
+
 		private long? resourceOwnerId;
 
-		private string accountName;
-
 		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private int? pageSize;
 
 		private string action;
 
 		private string dBInstanceId;
 
+		private string switchTime;
+
 		private long? ownerId;
 
-		private int? pageNumber;
-
 		private string accessKeyId;
+
+		public string SwitchTimeMode
+		{
+			get
+			{
+				return switchTimeMode;
+			}
+			set	
+			{
+				switchTimeMode = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTimeMode", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -66,19 +75,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccountName
-		{
-			get
-			{
-				return accountName;
-			}
-			set	
-			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -89,32 +85,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -144,6 +114,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string SwitchTime
+		{
+			get
+			{
+				return switchTime;
+			}
+			set	
+			{
+				switchTime = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -154,19 +137,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -183,9 +153,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeAccountsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpgradeDBInstanceKernelVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAccountsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpgradeDBInstanceKernelVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -21,20 +21,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateMigrateTaskResponse : AcsResponse
+	public class DescribeCloudDBAServiceResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string dBInstanceId;
+		private string listData;
 
-		private string taskId;
-
-		private string dBName;
-
-		private string migrateTaskId;
-
-		private string backupMode;
+		private string attrData;
 
 		public string RequestId
 		{
@@ -48,63 +42,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string ListData
 		{
 			get
 			{
-				return dBInstanceId;
+				return listData;
 			}
 			set	
 			{
-				dBInstanceId = value;
+				listData = value;
 			}
 		}
 
-		public string TaskId
+		public string AttrData
 		{
 			get
 			{
-				return taskId;
+				return attrData;
 			}
 			set	
 			{
-				taskId = value;
-			}
-		}
-
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-			}
-		}
-
-		public string MigrateTaskId
-		{
-			get
-			{
-				return migrateTaskId;
-			}
-			set	
-			{
-				migrateTaskId = value;
-			}
-		}
-
-		public string BackupMode
-		{
-			get
-			{
-				return backupMode;
-			}
-			set	
-			{
-				backupMode = value;
+				attrData = value;
 			}
 		}
 	}

@@ -23,21 +23,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CreateMigrateTaskResponseUnmarshaller
+    public class ModifyReplicaVerificationModeResponseUnmarshaller
     {
-        public static CreateMigrateTaskResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyReplicaVerificationModeResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateMigrateTaskResponse createMigrateTaskResponse = new CreateMigrateTaskResponse();
+			ModifyReplicaVerificationModeResponse modifyReplicaVerificationModeResponse = new ModifyReplicaVerificationModeResponse();
 
-			createMigrateTaskResponse.HttpResponse = context.HttpResponse;
-			createMigrateTaskResponse.RequestId = context.StringValue("CreateMigrateTask.RequestId");
-			createMigrateTaskResponse.DBInstanceId = context.StringValue("CreateMigrateTask.DBInstanceId");
-			createMigrateTaskResponse.TaskId = context.StringValue("CreateMigrateTask.TaskId");
-			createMigrateTaskResponse.DBName = context.StringValue("CreateMigrateTask.DBName");
-			createMigrateTaskResponse.MigrateTaskId = context.StringValue("CreateMigrateTask.MigrateTaskId");
-			createMigrateTaskResponse.BackupMode = context.StringValue("CreateMigrateTask.BackupMode");
+			modifyReplicaVerificationModeResponse.HttpResponse = context.HttpResponse;
+			modifyReplicaVerificationModeResponse.RequestId = context.StringValue("ModifyReplicaVerificationMode.RequestId");
         
-			return createMigrateTaskResponse;
+			return modifyReplicaVerificationModeResponse;
         }
     }
 }

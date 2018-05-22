@@ -26,32 +26,36 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAccountsRequest : RpcAcsRequest<DescribeAccountsResponse>
+    public class DescribeReplicaConflictInfoRequest : RpcAcsRequest<DescribeReplicaConflictInfoResponse>
     {
-        public DescribeAccountsRequest()
-            : base("Rds", "2014-08-15", "DescribeAccounts", "rds", "openAPI")
+        public DescribeReplicaConflictInfoRequest()
+            : base("Rds", "2014-08-15", "DescribeReplicaConflictInfo", "rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string accountName;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private int? pageSize;
+		private string endTime;
 
-		private string action;
-
-		private string dBInstanceId;
+		private string startTime;
 
 		private long? ownerId;
 
 		private int? pageNumber;
 
 		private string accessKeyId;
+
+		private string securityToken;
+
+		private string replicaId;
+
+		private int? pageSize;
+
+		private string action;
 
 		public long? ResourceOwnerId
 		{
@@ -63,19 +67,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string AccountName
-		{
-			get
-			{
-				return accountName;
-			}
-			set	
-			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
@@ -105,42 +96,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageSize
+		public string EndTime
 		{
 			get
 			{
-				return pageSize;
+				return endTime;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public string Action
+		public string StartTime
 		{
 			get
 			{
-				return action;
+				return startTime;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -183,9 +161,66 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeAccountsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string ReplicaId
+		{
+			get
+			{
+				return replicaId;
+			}
+			set	
+			{
+				replicaId = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeReplicaConflictInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAccountsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeReplicaConflictInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

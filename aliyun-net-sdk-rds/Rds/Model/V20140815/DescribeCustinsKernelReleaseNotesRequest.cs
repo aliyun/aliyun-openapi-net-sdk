@@ -26,30 +26,22 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAccountsRequest : RpcAcsRequest<DescribeAccountsResponse>
+    public class DescribeCustinsKernelReleaseNotesRequest : RpcAcsRequest<DescribeCustinsKernelReleaseNotesResponse>
     {
-        public DescribeAccountsRequest()
-            : base("Rds", "2014-08-15", "DescribeAccounts", "rds", "openAPI")
+        public DescribeCustinsKernelReleaseNotesRequest()
+            : base("Rds", "2014-08-15", "DescribeCustinsKernelReleaseNotes", "rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string accountName;
-
 		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private int? pageSize;
 
 		private string action;
 
 		private string dBInstanceId;
 
 		private long? ownerId;
-
-		private int? pageNumber;
 
 		private string accessKeyId;
 
@@ -66,19 +58,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccountName
-		{
-			get
-			{
-				return accountName;
-			}
-			set	
-			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -89,32 +68,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -157,19 +110,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -183,9 +123,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeAccountsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeCustinsKernelReleaseNotesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAccountsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCustinsKernelReleaseNotesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

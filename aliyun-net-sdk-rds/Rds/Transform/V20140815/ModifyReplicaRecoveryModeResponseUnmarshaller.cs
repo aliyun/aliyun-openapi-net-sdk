@@ -23,21 +23,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CreateMigrateTaskResponseUnmarshaller
+    public class ModifyReplicaRecoveryModeResponseUnmarshaller
     {
-        public static CreateMigrateTaskResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyReplicaRecoveryModeResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateMigrateTaskResponse createMigrateTaskResponse = new CreateMigrateTaskResponse();
+			ModifyReplicaRecoveryModeResponse modifyReplicaRecoveryModeResponse = new ModifyReplicaRecoveryModeResponse();
 
-			createMigrateTaskResponse.HttpResponse = context.HttpResponse;
-			createMigrateTaskResponse.RequestId = context.StringValue("CreateMigrateTask.RequestId");
-			createMigrateTaskResponse.DBInstanceId = context.StringValue("CreateMigrateTask.DBInstanceId");
-			createMigrateTaskResponse.TaskId = context.StringValue("CreateMigrateTask.TaskId");
-			createMigrateTaskResponse.DBName = context.StringValue("CreateMigrateTask.DBName");
-			createMigrateTaskResponse.MigrateTaskId = context.StringValue("CreateMigrateTask.MigrateTaskId");
-			createMigrateTaskResponse.BackupMode = context.StringValue("CreateMigrateTask.BackupMode");
+			modifyReplicaRecoveryModeResponse.HttpResponse = context.HttpResponse;
+			modifyReplicaRecoveryModeResponse.RequestId = context.StringValue("ModifyReplicaRecoveryMode.RequestId");
         
-			return createMigrateTaskResponse;
+			return modifyReplicaRecoveryModeResponse;
         }
     }
 }

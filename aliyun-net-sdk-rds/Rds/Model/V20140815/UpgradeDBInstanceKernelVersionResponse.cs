@@ -21,20 +21,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateMigrateTaskResponse : AcsResponse
+	public class UpgradeDBInstanceKernelVersionResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string dBInstanceId;
+		private string dBInstanceName;
 
 		private string taskId;
 
-		private string dBName;
-
-		private string migrateTaskId;
-
-		private string backupMode;
+		private string targetMinorVersion;
 
 		public string RequestId
 		{
@@ -48,15 +44,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string DBInstanceName
 		{
 			get
 			{
-				return dBInstanceId;
+				return dBInstanceName;
 			}
 			set	
 			{
-				dBInstanceId = value;
+				dBInstanceName = value;
 			}
 		}
 
@@ -72,39 +68,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBName
+		public string TargetMinorVersion
 		{
 			get
 			{
-				return dBName;
+				return targetMinorVersion;
 			}
 			set	
 			{
-				dBName = value;
-			}
-		}
-
-		public string MigrateTaskId
-		{
-			get
-			{
-				return migrateTaskId;
-			}
-			set	
-			{
-				migrateTaskId = value;
-			}
-		}
-
-		public string BackupMode
-		{
-			get
-			{
-				return backupMode;
-			}
-			set	
-			{
-				backupMode = value;
+				targetMinorVersion = value;
 			}
 		}
 	}

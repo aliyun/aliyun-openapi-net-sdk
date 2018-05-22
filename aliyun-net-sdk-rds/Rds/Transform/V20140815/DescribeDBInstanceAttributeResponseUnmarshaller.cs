@@ -83,10 +83,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.SecurityIPList = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].SecurityIPList");
 				dBInstanceAttribute.ZoneId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].ZoneId");
 				dBInstanceAttribute.InstanceNetworkType = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].InstanceNetworkType");
+				dBInstanceAttribute.DBInstanceStorageType = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBInstanceStorageType");
 				dBInstanceAttribute.AdvancedFeatures = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].AdvancedFeatures");
 				dBInstanceAttribute.Category = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Category");
 				dBInstanceAttribute.AccountType = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].AccountType");
 				dBInstanceAttribute.SupportUpgradeAccountType = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].SupportUpgradeAccountType");
+				dBInstanceAttribute.SupportCreateSuperAccount = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].SupportCreateSuperAccount");
 				dBInstanceAttribute.VpcId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].VpcId");
 				dBInstanceAttribute.VSwitchId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].VSwitchId");
 				dBInstanceAttribute.ConnectionMode = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].ConnectionMode");

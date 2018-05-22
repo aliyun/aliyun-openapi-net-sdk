@@ -26,30 +26,30 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAccountsRequest : RpcAcsRequest<DescribeAccountsResponse>
+    public class DescribeStaticVerificationListRequest : RpcAcsRequest<DescribeStaticVerificationListResponse>
     {
-        public DescribeAccountsRequest()
-            : base("Rds", "2014-08-15", "DescribeAccounts", "rds", "openAPI")
+        public DescribeStaticVerificationListRequest()
+            : base("Rds", "2014-08-15", "DescribeStaticVerificationList", "rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string accountName;
+		private string securityToken;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private int? pageSize;
+		private string replicaId;
+
+		private string destinationInstanceId;
 
 		private string action;
 
-		private string dBInstanceId;
+		private string sourceInstanceId;
 
 		private long? ownerId;
-
-		private int? pageNumber;
 
 		private string accessKeyId;
 
@@ -66,16 +66,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccountName
+		public string SecurityToken
 		{
 			get
 			{
-				return accountName;
+				return securityToken;
 			}
 			set	
 			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -105,16 +105,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageSize
+		public string ReplicaId
 		{
 			get
 			{
-				return pageSize;
+				return replicaId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				replicaId = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
+			}
+		}
+
+		public string DestinationInstanceId
+		{
+			get
+			{
+				return destinationInstanceId;
+			}
+			set	
+			{
+				destinationInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationInstanceId", value);
 			}
 		}
 
@@ -131,16 +144,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string SourceInstanceId
 		{
 			get
 			{
-				return dBInstanceId;
+				return sourceInstanceId;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				sourceInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "SourceInstanceId", value);
 			}
 		}
 
@@ -157,19 +170,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -183,9 +183,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeAccountsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeStaticVerificationListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAccountsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeStaticVerificationListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

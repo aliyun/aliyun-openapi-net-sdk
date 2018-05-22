@@ -40,12 +40,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAccount.AccountStatus = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountStatus");
 				dBInstanceAccount.AccountType = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountType");
 				dBInstanceAccount.AccountDescription = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountDescription");
+				dBInstanceAccount.PrivExceeded = context.StringValue("DescribeAccounts.Accounts["+ i +"].PrivExceeded");
 
 				List<DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount.DescribeAccounts_DatabasePrivilege> dBInstanceAccount_databasePrivileges = new List<DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount.DescribeAccounts_DatabasePrivilege>();
 				for (int j = 0; j < context.Length("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {
 					DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount.DescribeAccounts_DatabasePrivilege databasePrivilege = new DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount.DescribeAccounts_DatabasePrivilege();
 					databasePrivilege.DBName = context.StringValue("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges["+ j +"].DBName");
 					databasePrivilege.AccountPrivilege = context.StringValue("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilege");
+					databasePrivilege.AccountPrivilegeDetail = context.StringValue("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilegeDetail");
 
 					dBInstanceAccount_databasePrivileges.Add(databasePrivilege);
 				}

@@ -160,6 +160,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string accountPrivilege;
 
+				private string accountPrivilegeDetail;
+
 				public string Account
 				{
 					get
@@ -181,6 +183,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						accountPrivilege = value;
+					}
+				}
+
+				public string AccountPrivilegeDetail
+				{
+					get
+					{
+						return accountPrivilegeDetail;
+					}
+					set	
+					{
+						accountPrivilegeDetail = value;
 					}
 				}
 			}

@@ -65,6 +65,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string accountDescription;
 
+			private string privExceeded;
+
 			private List<DescribeAccounts_DatabasePrivilege> databasePrivileges;
 
 			public string DBInstanceId
@@ -127,6 +129,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string PrivExceeded
+			{
+				get
+				{
+					return privExceeded;
+				}
+				set	
+				{
+					privExceeded = value;
+				}
+			}
+
 			public List<DescribeAccounts_DatabasePrivilege> DatabasePrivileges
 			{
 				get
@@ -145,6 +159,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				private string dBName;
 
 				private string accountPrivilege;
+
+				private string accountPrivilegeDetail;
 
 				public string DBName
 				{
@@ -167,6 +183,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						accountPrivilege = value;
+					}
+				}
+
+				public string AccountPrivilegeDetail
+				{
+					get
+					{
+						return accountPrivilegeDetail;
+					}
+					set	
+					{
+						accountPrivilegeDetail = value;
 					}
 				}
 			}

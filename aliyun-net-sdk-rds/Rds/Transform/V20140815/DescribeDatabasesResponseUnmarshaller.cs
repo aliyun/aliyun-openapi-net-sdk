@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 					DescribeDatabasesResponse.DescribeDatabases_Database.DescribeDatabases_AccountPrivilegeInfo accountPrivilegeInfo = new DescribeDatabasesResponse.DescribeDatabases_Database.DescribeDatabases_AccountPrivilegeInfo();
 					accountPrivilegeInfo.Account = context.StringValue("DescribeDatabases.Databases["+ i +"].Accounts["+ j +"].Account");
 					accountPrivilegeInfo.AccountPrivilege = context.StringValue("DescribeDatabases.Databases["+ i +"].Accounts["+ j +"].AccountPrivilege");
+					accountPrivilegeInfo.AccountPrivilegeDetail = context.StringValue("DescribeDatabases.Databases["+ i +"].Accounts["+ j +"].AccountPrivilegeDetail");
 
 					database_accounts.Add(accountPrivilegeInfo);
 				}

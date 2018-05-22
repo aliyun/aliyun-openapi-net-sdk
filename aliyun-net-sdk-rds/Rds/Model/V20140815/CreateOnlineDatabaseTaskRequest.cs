@@ -26,30 +26,32 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAccountsRequest : RpcAcsRequest<DescribeAccountsResponse>
+    public class CreateOnlineDatabaseTaskRequest : RpcAcsRequest<CreateOnlineDatabaseTaskResponse>
     {
-        public DescribeAccountsRequest()
-            : base("Rds", "2014-08-15", "DescribeAccounts", "rds", "openAPI")
+        public CreateOnlineDatabaseTaskRequest()
+            : base("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string accountName;
+		private string migrateTaskId;
+
+		private string dBName;
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
+		private string clientToken;
 
-		private int? pageSize;
+		private string ownerAccount;
 
 		private string action;
 
 		private string dBInstanceId;
 
-		private long? ownerId;
+		private string checkDBMode;
 
-		private int? pageNumber;
+		private long? ownerId;
 
 		private string accessKeyId;
 
@@ -66,16 +68,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccountName
+		public string MigrateTaskId
 		{
 			get
 			{
-				return accountName;
+				return migrateTaskId;
 			}
 			set	
 			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+				migrateTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "MigrateTaskId", value);
+			}
+		}
+
+		public string DBName
+		{
+			get
+			{
+				return dBName;
+			}
+			set	
+			{
+				dBName = value;
+				DictionaryUtil.Add(QueryParameters, "DBName", value);
 			}
 		}
 
@@ -92,6 +107,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -102,19 +130,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -144,6 +159,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string CheckDBMode
+		{
+			get
+			{
+				return checkDBMode;
+			}
+			set	
+			{
+				checkDBMode = value;
+				DictionaryUtil.Add(QueryParameters, "CheckDBMode", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -154,19 +182,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -183,9 +198,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeAccountsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateOnlineDatabaseTaskResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAccountsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateOnlineDatabaseTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

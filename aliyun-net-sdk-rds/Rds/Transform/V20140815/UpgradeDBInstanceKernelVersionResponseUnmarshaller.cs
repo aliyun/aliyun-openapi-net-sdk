@@ -23,21 +23,19 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CreateMigrateTaskResponseUnmarshaller
+    public class UpgradeDBInstanceKernelVersionResponseUnmarshaller
     {
-        public static CreateMigrateTaskResponse Unmarshall(UnmarshallerContext context)
+        public static UpgradeDBInstanceKernelVersionResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateMigrateTaskResponse createMigrateTaskResponse = new CreateMigrateTaskResponse();
+			UpgradeDBInstanceKernelVersionResponse upgradeDBInstanceKernelVersionResponse = new UpgradeDBInstanceKernelVersionResponse();
 
-			createMigrateTaskResponse.HttpResponse = context.HttpResponse;
-			createMigrateTaskResponse.RequestId = context.StringValue("CreateMigrateTask.RequestId");
-			createMigrateTaskResponse.DBInstanceId = context.StringValue("CreateMigrateTask.DBInstanceId");
-			createMigrateTaskResponse.TaskId = context.StringValue("CreateMigrateTask.TaskId");
-			createMigrateTaskResponse.DBName = context.StringValue("CreateMigrateTask.DBName");
-			createMigrateTaskResponse.MigrateTaskId = context.StringValue("CreateMigrateTask.MigrateTaskId");
-			createMigrateTaskResponse.BackupMode = context.StringValue("CreateMigrateTask.BackupMode");
+			upgradeDBInstanceKernelVersionResponse.HttpResponse = context.HttpResponse;
+			upgradeDBInstanceKernelVersionResponse.RequestId = context.StringValue("UpgradeDBInstanceKernelVersion.RequestId");
+			upgradeDBInstanceKernelVersionResponse.DBInstanceName = context.StringValue("UpgradeDBInstanceKernelVersion.DBInstanceName");
+			upgradeDBInstanceKernelVersionResponse.TaskId = context.StringValue("UpgradeDBInstanceKernelVersion.TaskId");
+			upgradeDBInstanceKernelVersionResponse.TargetMinorVersion = context.StringValue("UpgradeDBInstanceKernelVersion.TargetMinorVersion");
         
-			return createMigrateTaskResponse;
+			return upgradeDBInstanceKernelVersionResponse;
         }
     }
 }

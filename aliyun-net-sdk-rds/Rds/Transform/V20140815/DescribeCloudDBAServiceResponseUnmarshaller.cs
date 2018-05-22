@@ -23,21 +23,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CreateMigrateTaskResponseUnmarshaller
+    public class DescribeCloudDBAServiceResponseUnmarshaller
     {
-        public static CreateMigrateTaskResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCloudDBAServiceResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateMigrateTaskResponse createMigrateTaskResponse = new CreateMigrateTaskResponse();
+			DescribeCloudDBAServiceResponse describeCloudDBAServiceResponse = new DescribeCloudDBAServiceResponse();
 
-			createMigrateTaskResponse.HttpResponse = context.HttpResponse;
-			createMigrateTaskResponse.RequestId = context.StringValue("CreateMigrateTask.RequestId");
-			createMigrateTaskResponse.DBInstanceId = context.StringValue("CreateMigrateTask.DBInstanceId");
-			createMigrateTaskResponse.TaskId = context.StringValue("CreateMigrateTask.TaskId");
-			createMigrateTaskResponse.DBName = context.StringValue("CreateMigrateTask.DBName");
-			createMigrateTaskResponse.MigrateTaskId = context.StringValue("CreateMigrateTask.MigrateTaskId");
-			createMigrateTaskResponse.BackupMode = context.StringValue("CreateMigrateTask.BackupMode");
+			describeCloudDBAServiceResponse.HttpResponse = context.HttpResponse;
+			describeCloudDBAServiceResponse.RequestId = context.StringValue("DescribeCloudDBAService.RequestId");
+			describeCloudDBAServiceResponse.ListData = context.StringValue("DescribeCloudDBAService.ListData");
+			describeCloudDBAServiceResponse.AttrData = context.StringValue("DescribeCloudDBAService.AttrData");
         
-			return createMigrateTaskResponse;
+			return describeCloudDBAServiceResponse;
         }
     }
 }

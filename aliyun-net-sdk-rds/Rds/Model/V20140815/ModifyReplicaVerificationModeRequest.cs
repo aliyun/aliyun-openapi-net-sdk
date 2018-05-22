@@ -26,32 +26,28 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeFilesForSQLServerRequest : RpcAcsRequest<DescribeFilesForSQLServerResponse>
+    public class ModifyReplicaVerificationModeRequest : RpcAcsRequest<ModifyReplicaVerificationModeResponse>
     {
-        public DescribeFilesForSQLServerRequest()
-            : base("Rds", "2014-08-15", "DescribeFilesForSQLServer", "rds", "openAPI")
+        public ModifyReplicaVerificationModeRequest()
+            : base("Rds", "2014-08-15", "ModifyReplicaVerificationMode", "rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private string verificationMode;
+
+		private string securityToken;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private int? pageSize;
+		private string replicaId;
 
 		private string action;
 
-		private string endTime;
-
-		private string dBInstanceId;
-
-		private string startTime;
-
 		private long? ownerId;
-
-		private int? pageNumber;
 
 		private string accessKeyId;
 
@@ -65,6 +61,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string VerificationMode
+		{
+			get
+			{
+				return verificationMode;
+			}
+			set	
+			{
+				verificationMode = value;
+				DictionaryUtil.Add(QueryParameters, "VerificationMode", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -94,16 +116,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageSize
+		public string ReplicaId
 		{
 			get
 			{
-				return pageSize;
+				return replicaId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				replicaId = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
 			}
 		}
 
@@ -120,45 +142,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -169,19 +152,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -198,9 +168,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeFilesForSQLServerResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ModifyReplicaVerificationModeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeFilesForSQLServerResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyReplicaVerificationModeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

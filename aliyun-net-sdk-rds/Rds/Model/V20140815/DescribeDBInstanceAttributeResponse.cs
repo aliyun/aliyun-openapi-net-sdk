@@ -151,6 +151,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string instanceNetworkType;
 
+			private string dBInstanceStorageType;
+
 			private string advancedFeatures;
 
 			private string category;
@@ -158,6 +160,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private string accountType;
 
 			private string supportUpgradeAccountType;
+
+			private string supportCreateSuperAccount;
 
 			private string vpcId;
 
@@ -745,6 +749,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string DBInstanceStorageType
+			{
+				get
+				{
+					return dBInstanceStorageType;
+				}
+				set	
+				{
+					dBInstanceStorageType = value;
+				}
+			}
+
 			public string AdvancedFeatures
 			{
 				get
@@ -790,6 +806,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					supportUpgradeAccountType = value;
+				}
+			}
+
+			public string SupportCreateSuperAccount
+			{
+				get
+				{
+					return supportCreateSuperAccount;
+				}
+				set	
+				{
+					supportCreateSuperAccount = value;
 				}
 			}
 

@@ -21,16 +21,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeOssDownloadsResponse : AcsResponse
+	public class DescribeVerificationListResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string dBInstanceId;
+		private string replicaId;
 
-		private string migrateTaskId;
+		private int? pagNumber;
 
-		private List<DescribeOssDownloads_OssDownload> items;
+		private int? pageRecordCount;
+
+		private int? totalRecordCount;
+
+		private List<DescribeVerificationList_ItemsItem> items;
 
 		public string RequestId
 		{
@@ -44,31 +48,55 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string ReplicaId
 		{
 			get
 			{
-				return dBInstanceId;
+				return replicaId;
 			}
 			set	
 			{
-				dBInstanceId = value;
+				replicaId = value;
 			}
 		}
 
-		public string MigrateTaskId
+		public int? PagNumber
 		{
 			get
 			{
-				return migrateTaskId;
+				return pagNumber;
 			}
 			set	
 			{
-				migrateTaskId = value;
+				pagNumber = value;
 			}
 		}
 
-		public List<DescribeOssDownloads_OssDownload> Items
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
+
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		public List<DescribeVerificationList_ItemsItem> Items
 		{
 			get
 			{
@@ -80,118 +108,118 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class DescribeOssDownloads_OssDownload
+		public class DescribeVerificationList_ItemsItem
 		{
 
-			private string fileName;
+			private string instanceIdA;
 
-			private string createTime;
+			private string instanceIdB;
 
-			private string endTime;
+			private string key;
 
-			private string backupMode;
+			private string keyType;
 
-			private string fileSize;
+			private string inconsistentType;
 
-			private string status;
+			private string occurTime;
 
-			private string isAvailable;
+			private string schema;
 
-			private string description;
+			private string inconsistentFields;
 
-			public string FileName
+			public string InstanceIdA
 			{
 				get
 				{
-					return fileName;
+					return instanceIdA;
 				}
 				set	
 				{
-					fileName = value;
+					instanceIdA = value;
 				}
 			}
 
-			public string CreateTime
+			public string InstanceIdB
 			{
 				get
 				{
-					return createTime;
+					return instanceIdB;
 				}
 				set	
 				{
-					createTime = value;
+					instanceIdB = value;
 				}
 			}
 
-			public string EndTime
+			public string Key
 			{
 				get
 				{
-					return endTime;
+					return key;
 				}
 				set	
 				{
-					endTime = value;
+					key = value;
 				}
 			}
 
-			public string BackupMode
+			public string KeyType
 			{
 				get
 				{
-					return backupMode;
+					return keyType;
 				}
 				set	
 				{
-					backupMode = value;
+					keyType = value;
 				}
 			}
 
-			public string FileSize
+			public string InconsistentType
 			{
 				get
 				{
-					return fileSize;
+					return inconsistentType;
 				}
 				set	
 				{
-					fileSize = value;
+					inconsistentType = value;
 				}
 			}
 
-			public string Status
+			public string OccurTime
 			{
 				get
 				{
-					return status;
+					return occurTime;
 				}
 				set	
 				{
-					status = value;
+					occurTime = value;
 				}
 			}
 
-			public string IsAvailable
+			public string Schema
 			{
 				get
 				{
-					return isAvailable;
+					return schema;
 				}
 				set	
 				{
-					isAvailable = value;
+					schema = value;
 				}
 			}
 
-			public string Description
+			public string InconsistentFields
 			{
 				get
 				{
-					return description;
+					return inconsistentFields;
 				}
 				set	
 				{
-					description = value;
+					inconsistentFields = value;
 				}
 			}
 		}

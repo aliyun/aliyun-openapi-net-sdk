@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				DescribeOssDownloadsResponse.DescribeOssDownloads_OssDownload ossDownload = new DescribeOssDownloadsResponse.DescribeOssDownloads_OssDownload();
 				ossDownload.FileName = context.StringValue("DescribeOssDownloads.Items["+ i +"].FileName");
 				ossDownload.CreateTime = context.StringValue("DescribeOssDownloads.Items["+ i +"].CreateTime");
+				ossDownload.EndTime = context.StringValue("DescribeOssDownloads.Items["+ i +"].EndTime");
 				ossDownload.BackupMode = context.StringValue("DescribeOssDownloads.Items["+ i +"].BackupMode");
 				ossDownload.FileSize = context.StringValue("DescribeOssDownloads.Items["+ i +"].FileSize");
 				ossDownload.Status = context.StringValue("DescribeOssDownloads.Items["+ i +"].Status");

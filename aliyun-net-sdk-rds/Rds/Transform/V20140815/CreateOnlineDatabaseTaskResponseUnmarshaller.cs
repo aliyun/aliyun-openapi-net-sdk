@@ -23,21 +23,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CreateMigrateTaskResponseUnmarshaller
+    public class CreateOnlineDatabaseTaskResponseUnmarshaller
     {
-        public static CreateMigrateTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateOnlineDatabaseTaskResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateMigrateTaskResponse createMigrateTaskResponse = new CreateMigrateTaskResponse();
+			CreateOnlineDatabaseTaskResponse createOnlineDatabaseTaskResponse = new CreateOnlineDatabaseTaskResponse();
 
-			createMigrateTaskResponse.HttpResponse = context.HttpResponse;
-			createMigrateTaskResponse.RequestId = context.StringValue("CreateMigrateTask.RequestId");
-			createMigrateTaskResponse.DBInstanceId = context.StringValue("CreateMigrateTask.DBInstanceId");
-			createMigrateTaskResponse.TaskId = context.StringValue("CreateMigrateTask.TaskId");
-			createMigrateTaskResponse.DBName = context.StringValue("CreateMigrateTask.DBName");
-			createMigrateTaskResponse.MigrateTaskId = context.StringValue("CreateMigrateTask.MigrateTaskId");
-			createMigrateTaskResponse.BackupMode = context.StringValue("CreateMigrateTask.BackupMode");
+			createOnlineDatabaseTaskResponse.HttpResponse = context.HttpResponse;
+			createOnlineDatabaseTaskResponse.RequestId = context.StringValue("CreateOnlineDatabaseTask.RequestId");
         
-			return createMigrateTaskResponse;
+			return createOnlineDatabaseTaskResponse;
         }
     }
 }

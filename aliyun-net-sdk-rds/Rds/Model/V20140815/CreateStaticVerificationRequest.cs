@@ -26,24 +26,28 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class CreateUploadPathForSQLServerRequest : RpcAcsRequest<CreateUploadPathForSQLServerResponse>
+    public class CreateStaticVerificationRequest : RpcAcsRequest<CreateStaticVerificationResponse>
     {
-        public CreateUploadPathForSQLServerRequest()
-            : base("Rds", "2014-08-15", "CreateUploadPathForSQLServer", "rds", "openAPI")
+        public CreateStaticVerificationRequest()
+            : base("Rds", "2014-08-15", "CreateStaticVerification", "rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string dBName;
+		private string securityToken;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private string replicaId;
+
+		private string destinationInstanceId;
+
 		private string action;
 
-		private string dBInstanceId;
+		private string sourceInstanceId;
 
 		private long? ownerId;
 
@@ -62,16 +66,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBName
+		public string SecurityToken
 		{
 			get
 			{
-				return dBName;
+				return securityToken;
 			}
 			set	
 			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -101,6 +105,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ReplicaId
+		{
+			get
+			{
+				return replicaId;
+			}
+			set	
+			{
+				replicaId = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
+			}
+		}
+
+		public string DestinationInstanceId
+		{
+			get
+			{
+				return destinationInstanceId;
+			}
+			set	
+			{
+				destinationInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationInstanceId", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -114,16 +144,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string SourceInstanceId
 		{
 			get
 			{
-				return dBInstanceId;
+				return sourceInstanceId;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				sourceInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "SourceInstanceId", value);
 			}
 		}
 
@@ -153,9 +183,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override CreateUploadPathForSQLServerResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateStaticVerificationResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateUploadPathForSQLServerResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateStaticVerificationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

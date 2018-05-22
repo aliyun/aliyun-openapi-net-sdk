@@ -57,6 +57,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceDescription;
 
+		private string dBInstanceStorageType;
+
+		private string businessInfo;
+
 		private string dBInstanceNetType;
 
 		private string period;
@@ -240,6 +244,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceDescription = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
+			}
+		}
+
+		public string DBInstanceStorageType
+		{
+			get
+			{
+				return dBInstanceStorageType;
+			}
+			set	
+			{
+				dBInstanceStorageType = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
+			}
+		}
+
+		public string BusinessInfo
+		{
+			get
+			{
+				return businessInfo;
+			}
+			set	
+			{
+				businessInfo = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
 			}
 		}
 
