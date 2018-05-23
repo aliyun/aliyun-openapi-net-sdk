@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{78EC69D8-FBC1-4A80-A484-C0D686426C69}</ProjectGuid>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3677fd13-8fab-4037-bd9d-354134016358}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -39,121 +40,133 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EHPC\Model\V20170714\DescribeClusterRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListNodesNoPagingResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\RerunJobsRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListClustersRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ModifyClusterAttributesResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListImagesResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListNodesRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListUsersResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\GetAutoScaleConfigResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ModifyUserPasswordsResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ModifyClusterAttributesRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListRegionsRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListJobTemplatesRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\SetJobUserRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ResetNodesRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\DeleteClusterRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ModifyUserPasswordsRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\StopJobsRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListVolumesResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListPreferredEcsTypesResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListPreferredEcsTypesRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\CreateClusterRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\SetJobUserResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\RerunJobsResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\AddUsersResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListImagesRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\AddUsersRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListJobTemplatesResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\DescribeClusterResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\DeleteJobTemplatesRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListJobsRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\DeleteUsersRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\AddNodesResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListNodesResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\DeleteJobsResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListCurrentClientVersionRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListSoftwaresRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListCurrentClientVersionResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\DeleteClusterResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\UpgradeClientResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListCustomImagesRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListClusterLogsResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListClusterLogsRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\SubmitJobResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\StopJobsResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ModifyUserGroupsRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\CreateJobTemplateRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListSoftwaresResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\EditJobTemplateResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListVolumesRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListRegionsResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\SubmitJobRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListCustomImagesResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\DeleteJobTemplatesResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\DeleteJobsRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListUsersRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\AddNodesRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\DeleteUsersResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\CreateJobTemplateResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\DeleteNodesRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\SetAutoScaleConfigResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\DeleteNodesResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListClustersResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ModifyUserGroupsResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListNodesNoPagingRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\SetAutoScaleConfigRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\UpgradeClientRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\ResetNodesResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\CreateClusterResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\ListJobsResponse.cs" />
-    <Compile Include="EHPC\Model\V20170714\EditJobTemplateRequest.cs" />
-    <Compile Include="EHPC\Model\V20170714\GetAutoScaleConfigRequest.cs" />
-    <Compile Include="EHPC\Transform\V20170714\RerunJobsResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ModifyUserPasswordsResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListImagesResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\DeleteJobsResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\UpgradeClientResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListNodesNoPagingResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListSoftwaresResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\SetAutoScaleConfigResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\GetAutoScaleConfigResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListJobsResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListPreferredEcsTypesResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListCurrentClientVersionResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ModifyUserGroupsResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\AddUsersResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\AddNodesResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListJobTemplatesResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListNodesResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\CreateJobTemplateResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListUsersResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\DeleteNodesResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ResetNodesResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ModifyClusterAttributesResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\SetJobUserResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\DeleteJobTemplatesResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\DeleteUsersResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\EditJobTemplateResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListClustersResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\CreateClusterResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\SubmitJobResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListClusterLogsResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\DeleteClusterResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListRegionsResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\StopJobsResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListCustomImagesResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\DescribeClusterResponseUnmarshaller.cs" />
-    <Compile Include="EHPC\Transform\V20170714\ListVolumesResponseUnmarshaller.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
+	<Compile Include="EHPC\Model\V20180412\StopNodesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\DescribeClusterRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListNodesNoPagingResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\RerunJobsRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListClustersRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ModifyClusterAttributesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListImagesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\RecoverClusterRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListNodesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListUsersResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\GetAutoScaleConfigResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ModifyUserPasswordsResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ModifyClusterAttributesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\StartClusterRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListRegionsRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListJobTemplatesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\SetJobUserRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ResetNodesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\DeleteClusterRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ModifyUserPasswordsRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\StopJobsRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListVolumesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListPreferredEcsTypesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListPreferredEcsTypesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\CreateClusterRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\SetJobUserResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\RerunJobsResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\AddUsersResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListImagesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\AddUsersRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListJobTemplatesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\DescribeClusterResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\DeleteJobTemplatesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListJobsRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\DeleteUsersRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\AddNodesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListNodesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\DeleteJobsResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\StartClusterResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListCurrentClientVersionRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListSoftwaresRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListCurrentClientVersionResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\DeleteClusterResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\UpgradeClientResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListCustomImagesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListClusterLogsResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListClusterLogsRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\StopClusterResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\SubmitJobResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\StopJobsResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ModifyUserGroupsRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\StartNodesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\CreateJobTemplateRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListSoftwaresResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\EditJobTemplateResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListVolumesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\StopNodesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListRegionsResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\StartNodesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\SubmitJobRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListCustomImagesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\DeleteJobTemplatesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\DeleteJobsRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListUsersRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\AddNodesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\DeleteUsersResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\CreateJobTemplateResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\DeleteNodesRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\StopClusterRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\SetAutoScaleConfigResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\DeleteNodesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListClustersResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ModifyUserGroupsResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListNodesNoPagingRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\SetAutoScaleConfigRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\UpgradeClientRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ResetNodesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\RecoverClusterResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\CreateClusterResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListJobsResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\EditJobTemplateRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\GetAutoScaleConfigRequest.cs" />
+	<Compile Include="EHPC\Transform\V20180412\RerunJobsResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ModifyUserPasswordsResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\StopNodesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListImagesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\DeleteJobsResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\StopClusterResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\UpgradeClientResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListNodesNoPagingResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\StartNodesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListSoftwaresResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\SetAutoScaleConfigResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\GetAutoScaleConfigResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListJobsResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\RecoverClusterResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListPreferredEcsTypesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListCurrentClientVersionResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ModifyUserGroupsResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\AddUsersResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\AddNodesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListJobTemplatesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListNodesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\CreateJobTemplateResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListUsersResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\DeleteNodesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ResetNodesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ModifyClusterAttributesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\SetJobUserResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\DeleteJobTemplatesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\DeleteUsersResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\EditJobTemplateResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListClustersResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\CreateClusterResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\SubmitJobResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListClusterLogsResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\StartClusterResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\DeleteClusterResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListRegionsResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\StopJobsResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListCustomImagesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\DescribeClusterResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListVolumesResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
-      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
       <Name>aliyun-net-sdk-core.vs2010</Name>
     </ProjectReference>
   </ItemGroup>
