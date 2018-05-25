@@ -35,11 +35,11 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string cursor;
 
-		private string callby_cms_owner;
-
 		private long? resourceOwnerId;
 
 		private string period;
+
+		private string metric;
 
 		private string length;
 
@@ -53,10 +53,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string accessKeyId;
 
-		private string metric;
-
-		private string page;
-
 		private string dimensions;
 
 		public string Cursor
@@ -69,19 +65,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				cursor = value;
 				DictionaryUtil.Add(QueryParameters, "Cursor", value);
-			}
-		}
-
-		public string Callby_cms_owner
-		{
-			get
-			{
-				return callby_cms_owner;
-			}
-			set	
-			{
-				callby_cms_owner = value;
-				DictionaryUtil.Add(QueryParameters, "callby_cms_owner", value);
 			}
 		}
 
@@ -108,6 +91,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value);
+			}
+		}
+
+		public string Metric
+		{
+			get
+			{
+				return metric;
+			}
+			set	
+			{
+				metric = value;
+				DictionaryUtil.Add(QueryParameters, "Metric", value);
 			}
 		}
 
@@ -186,32 +182,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string Metric
-		{
-			get
-			{
-				return metric;
-			}
-			set	
-			{
-				metric = value;
-				DictionaryUtil.Add(QueryParameters, "Metric", value);
-			}
-		}
-
-		public string Page
-		{
-			get
-			{
-				return page;
-			}
-			set	
-			{
-				page = value;
-				DictionaryUtil.Add(QueryParameters, "Page", value);
 			}
 		}
 

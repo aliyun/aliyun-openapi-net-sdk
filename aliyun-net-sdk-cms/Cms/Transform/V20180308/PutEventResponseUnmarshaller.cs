@@ -30,6 +30,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 			PutEventResponse putEventResponse = new PutEventResponse();
 
 			putEventResponse.HttpResponse = context.HttpResponse;
+			putEventResponse.RequestId = context.StringValue("PutEvent.RequestId");
 			putEventResponse.Code = context.StringValue("PutEvent.Code");
 			putEventResponse.Message = context.StringValue("PutEvent.Message");
 			putEventResponse.Data = context.StringValue("PutEvent.Data");

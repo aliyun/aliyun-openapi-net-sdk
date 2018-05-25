@@ -33,6 +33,36 @@ namespace Aliyun.Acs.Cms.Model.V20180308
         {
         }
 
+		private string city;
+
+		private string isp;
+
+		public string City
+		{
+			get
+			{
+				return city;
+			}
+			set	
+			{
+				city = value;
+				DictionaryUtil.Add(QueryParameters, "City", value);
+			}
+		}
+
+		public string Isp
+		{
+			get
+			{
+				return isp;
+			}
+			set	
+			{
+				isp = value;
+				DictionaryUtil.Add(QueryParameters, "Isp", value);
+			}
+		}
+
         public override DescribeISPAreaCityResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
             return DescribeISPAreaCityResponseUnmarshaller.Unmarshall(unmarshallerContext);

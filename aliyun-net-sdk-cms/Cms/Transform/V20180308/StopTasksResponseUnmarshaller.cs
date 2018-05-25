@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 			stopTasksResponse.Message = context.StringValue("StopTasks.Message");
 			stopTasksResponse.Success = context.StringValue("StopTasks.Success");
 			stopTasksResponse.RequestId = context.StringValue("StopTasks.RequestId");
+			stopTasksResponse.Data = context.StringValue("StopTasks.Data");
         
 			return stopTasksResponse;
         }

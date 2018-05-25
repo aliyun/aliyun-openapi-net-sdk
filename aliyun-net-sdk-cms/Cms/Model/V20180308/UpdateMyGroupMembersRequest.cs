@@ -33,9 +33,24 @@ namespace Aliyun.Acs.Cms.Model.V20180308
         {
         }
 
+		private string readers;
+
 		private long? groupId;
 
 		private string masters;
+
+		public string Readers
+		{
+			get
+			{
+				return readers;
+			}
+			set	
+			{
+				readers = value;
+				DictionaryUtil.Add(QueryParameters, "Readers", value);
+			}
+		}
 
 		public long? GroupId
 		{

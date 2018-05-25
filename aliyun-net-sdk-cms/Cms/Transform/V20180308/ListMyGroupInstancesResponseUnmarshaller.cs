@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 				resource.RegionId = context.StringValue("ListMyGroupInstances.Resources["+ i +"].RegionId");
 				resource.InstanceId = context.StringValue("ListMyGroupInstances.Resources["+ i +"].InstanceId");
 				resource.Category = context.StringValue("ListMyGroupInstances.Resources["+ i +"].Category");
+				resource.InstanceName = context.StringValue("ListMyGroupInstances.Resources["+ i +"].InstanceName");
 
 				listMyGroupInstancesResponse_resources.Add(resource);
 			}

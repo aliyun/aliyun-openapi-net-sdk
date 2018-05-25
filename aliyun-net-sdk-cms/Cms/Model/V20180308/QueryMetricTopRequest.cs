@@ -33,11 +33,11 @@ namespace Aliyun.Acs.Cms.Model.V20180308
         {
         }
 
-		private string callby_cms_owner;
+		private long? resourceOwnerId;
 
 		private string period;
 
-		private long? resourceOwnerId;
+		private string metric;
 
 		private string length;
 
@@ -51,24 +51,22 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string startTime;
 
+		private string dimensions;
+
 		private string orderDesc;
 
 		private string accessKeyId;
 
-		private string metric;
-
-		private string dimensions;
-
-		public string Callby_cms_owner
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return callby_cms_owner;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				callby_cms_owner = value;
-				DictionaryUtil.Add(QueryParameters, "callby_cms_owner", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -85,16 +83,16 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string Metric
 		{
 			get
 			{
-				return resourceOwnerId;
+				return metric;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				metric = value;
+				DictionaryUtil.Add(QueryParameters, "Metric", value);
 			}
 		}
 
@@ -176,6 +174,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
+		public string Dimensions
+		{
+			get
+			{
+				return dimensions;
+			}
+			set	
+			{
+				dimensions = value;
+				DictionaryUtil.Add(QueryParameters, "Dimensions", value);
+			}
+		}
+
 		public string OrderDesc
 		{
 			get
@@ -199,32 +210,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string Metric
-		{
-			get
-			{
-				return metric;
-			}
-			set	
-			{
-				metric = value;
-				DictionaryUtil.Add(QueryParameters, "Metric", value);
-			}
-		}
-
-		public string Dimensions
-		{
-			get
-			{
-				return dimensions;
-			}
-			set	
-			{
-				dimensions = value;
-				DictionaryUtil.Add(QueryParameters, "Dimensions", value);
 			}
 		}
 

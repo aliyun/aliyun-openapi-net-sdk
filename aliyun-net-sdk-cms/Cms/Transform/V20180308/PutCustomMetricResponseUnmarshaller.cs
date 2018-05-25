@@ -30,6 +30,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 			PutCustomMetricResponse putCustomMetricResponse = new PutCustomMetricResponse();
 
 			putCustomMetricResponse.HttpResponse = context.HttpResponse;
+			putCustomMetricResponse.RequestId = context.StringValue("PutCustomMetric.RequestId");
 			putCustomMetricResponse.Code = context.StringValue("PutCustomMetric.Code");
 			putCustomMetricResponse.Message = context.StringValue("PutCustomMetric.Message");
 			putCustomMetricResponse.Data = context.StringValue("PutCustomMetric.Data");

@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 			modifyTaskResponse.Message = context.StringValue("ModifyTask.Message");
 			modifyTaskResponse.Success = context.StringValue("ModifyTask.Success");
 			modifyTaskResponse.RequestId = context.StringValue("ModifyTask.RequestId");
+			modifyTaskResponse.Data = context.StringValue("ModifyTask.Data");
         
 			return modifyTaskResponse;
         }

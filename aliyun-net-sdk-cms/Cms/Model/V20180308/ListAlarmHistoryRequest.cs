@@ -35,8 +35,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string cursor;
 
-		private string callby_cms_owner;
-
 		private int? size;
 
 		private string endTime;
@@ -57,19 +55,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				cursor = value;
 				DictionaryUtil.Add(QueryParameters, "Cursor", value);
-			}
-		}
-
-		public string Callby_cms_owner
-		{
-			get
-			{
-				return callby_cms_owner;
-			}
-			set	
-			{
-				callby_cms_owner = value;
-				DictionaryUtil.Add(QueryParameters, "callby_cms_owner", value);
 			}
 		}
 

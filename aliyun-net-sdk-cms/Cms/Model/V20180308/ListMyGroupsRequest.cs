@@ -39,9 +39,9 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private int? pageSize;
 
-		private string keyword;
-
 		private string type;
+
+		private string keyword;
 
 		private string groupName;
 
@@ -88,19 +88,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public string Keyword
-		{
-			get
-			{
-				return keyword;
-			}
-			set	
-			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
-			}
-		}
-
 		public string Type
 		{
 			get
@@ -111,6 +98,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string Keyword
+		{
+			get
+			{
+				return keyword;
+			}
+			set	
+			{
+				keyword = value;
+				DictionaryUtil.Add(QueryParameters, "Keyword", value);
 			}
 		}
 

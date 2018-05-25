@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string requestId;
 
+		private string data;
+
 		public string Code
 		{
 			get
@@ -77,6 +79,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
 			}
 		}
 	}

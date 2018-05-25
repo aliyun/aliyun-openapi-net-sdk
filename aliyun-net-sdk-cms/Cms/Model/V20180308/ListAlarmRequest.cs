@@ -35,8 +35,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private bool? isEnable;
 
-		private string callby_cms_owner;
-
 		private string name;
 
 		private string _namespace;
@@ -61,19 +59,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				isEnable = value;
 				DictionaryUtil.Add(QueryParameters, "IsEnable", value.ToString());
-			}
-		}
-
-		public string Callby_cms_owner
-		{
-			get
-			{
-				return callby_cms_owner;
-			}
-			set	
-			{
-				callby_cms_owner = value;
-				DictionaryUtil.Add(QueryParameters, "callby_cms_owner", value);
 			}
 		}
 

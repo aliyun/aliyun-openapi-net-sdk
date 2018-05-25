@@ -37,9 +37,9 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string options;
 
-		private string type;
-
 		private long? serviceId;
+
+		private string type;
 
 		private string groupName;
 
@@ -71,19 +71,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
 		public long? ServiceId
 		{
 			get
@@ -94,6 +81,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				serviceId = value;
 				DictionaryUtil.Add(QueryParameters, "ServiceId", value.ToString());
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 

@@ -33,8 +33,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
         {
         }
 
-		private string callby_cms_owner;
-
 		private int? period;
 
 		private string webhook;
@@ -47,9 +45,9 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private int? startTime;
 
-		private string name;
-
 		private string _namespace;
+
+		private string name;
 
 		private int? evaluationCount;
 
@@ -64,19 +62,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		private string dimensions;
 
 		private string statistics;
-
-		public string Callby_cms_owner
-		{
-			get
-			{
-				return callby_cms_owner;
-			}
-			set	
-			{
-				callby_cms_owner = value;
-				DictionaryUtil.Add(QueryParameters, "callby_cms_owner", value);
-			}
-		}
 
 		public int? Period
 		{
@@ -156,19 +141,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public string _Namespace
 		{
 			get
@@ -179,6 +151,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				_namespace = value;
 				DictionaryUtil.Add(QueryParameters, "Namespace", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

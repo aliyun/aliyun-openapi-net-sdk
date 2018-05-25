@@ -33,8 +33,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
         {
         }
 
-		private string callby_cms_owner;
-
 		private long? resourceOwnerId;
 
 		private string period;
@@ -54,19 +52,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		private string accessKeyId;
 
 		private string dimensions;
-
-		public string Callby_cms_owner
-		{
-			get
-			{
-				return callby_cms_owner;
-			}
-			set	
-			{
-				callby_cms_owner = value;
-				DictionaryUtil.Add(QueryParameters, "callby_cms_owner", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{

@@ -149,6 +149,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 			private string category;
 
+			private string instanceName;
+
 			public long? Id
 			{
 				get
@@ -206,6 +208,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					category = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
 				}
 			}
 		}

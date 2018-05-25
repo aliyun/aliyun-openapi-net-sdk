@@ -35,11 +35,15 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private bool? total;
 
+		private string instanceIds;
+
 		private long? groupId;
 
 		private int? pageSize;
 
 		private string category;
+
+		private string keyword;
 
 		private int? pageNumber;
 
@@ -53,6 +57,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				total = value;
 				DictionaryUtil.Add(QueryParameters, "Total", value.ToString());
+			}
+		}
+
+		public string InstanceIds
+		{
+			get
+			{
+				return instanceIds;
+			}
+			set	
+			{
+				instanceIds = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
 			}
 		}
 
@@ -92,6 +109,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				category = value;
 				DictionaryUtil.Add(QueryParameters, "Category", value);
+			}
+		}
+
+		public string Keyword
+		{
+			get
+			{
+				return keyword;
+			}
+			set	
+			{
+				keyword = value;
+				DictionaryUtil.Add(QueryParameters, "Keyword", value);
 			}
 		}
 

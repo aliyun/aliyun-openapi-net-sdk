@@ -33,52 +33,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
         {
         }
 
-		private string reportProject;
-
 		private string taskType;
 
 		private string address;
-
-		private string alertName;
-
-		private string ip;
-
-		private string agentGroup;
-
-		private string taskName;
-
-		private string endTime;
-
-		private string taskState;
-
-		private string clientIds;
-
-		private string alertInfo;
-
-		private string agentType;
 
 		private string ispCity;
 
 		private string options;
 
+		private string taskName;
+
 		private string interval;
 
 		private string alertRule;
-
-		private string taskId;
-
-		public string ReportProject
-		{
-			get
-			{
-				return reportProject;
-			}
-			set	
-			{
-				reportProject = value;
-				DictionaryUtil.Add(QueryParameters, "ReportProject", value);
-			}
-		}
 
 		public string TaskType
 		{
@@ -103,123 +70,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				address = value;
 				DictionaryUtil.Add(QueryParameters, "Address", value);
-			}
-		}
-
-		public string AlertName
-		{
-			get
-			{
-				return alertName;
-			}
-			set	
-			{
-				alertName = value;
-				DictionaryUtil.Add(QueryParameters, "AlertName", value);
-			}
-		}
-
-		public string Ip
-		{
-			get
-			{
-				return ip;
-			}
-			set	
-			{
-				ip = value;
-				DictionaryUtil.Add(QueryParameters, "Ip", value);
-			}
-		}
-
-		public string AgentGroup
-		{
-			get
-			{
-				return agentGroup;
-			}
-			set	
-			{
-				agentGroup = value;
-				DictionaryUtil.Add(QueryParameters, "AgentGroup", value);
-			}
-		}
-
-		public string TaskName
-		{
-			get
-			{
-				return taskName;
-			}
-			set	
-			{
-				taskName = value;
-				DictionaryUtil.Add(QueryParameters, "TaskName", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string TaskState
-		{
-			get
-			{
-				return taskState;
-			}
-			set	
-			{
-				taskState = value;
-				DictionaryUtil.Add(QueryParameters, "TaskState", value);
-			}
-		}
-
-		public string ClientIds
-		{
-			get
-			{
-				return clientIds;
-			}
-			set	
-			{
-				clientIds = value;
-				DictionaryUtil.Add(QueryParameters, "ClientIds", value);
-			}
-		}
-
-		public string AlertInfo
-		{
-			get
-			{
-				return alertInfo;
-			}
-			set	
-			{
-				alertInfo = value;
-				DictionaryUtil.Add(QueryParameters, "AlertInfo", value);
-			}
-		}
-
-		public string AgentType
-		{
-			get
-			{
-				return agentType;
-			}
-			set	
-			{
-				agentType = value;
-				DictionaryUtil.Add(QueryParameters, "AgentType", value);
 			}
 		}
 
@@ -249,6 +99,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
+		public string TaskName
+		{
+			get
+			{
+				return taskName;
+			}
+			set	
+			{
+				taskName = value;
+				DictionaryUtil.Add(QueryParameters, "TaskName", value);
+			}
+		}
+
 		public string Interval
 		{
 			get
@@ -272,19 +135,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				alertRule = value;
 				DictionaryUtil.Add(QueryParameters, "AlertRule", value);
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 

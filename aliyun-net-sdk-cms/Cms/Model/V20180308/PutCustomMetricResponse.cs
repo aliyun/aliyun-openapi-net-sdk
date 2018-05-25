@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 	public class PutCustomMetricResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string code;
 
 		private string message;
 
 		private string data;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Code
 		{

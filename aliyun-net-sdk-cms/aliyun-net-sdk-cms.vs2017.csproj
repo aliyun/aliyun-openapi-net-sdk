@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Aliyun.Acs.Cms</RootNamespace>
-    <Version>6.0.5</Version>
+    <Version>6.0.6</Version>
     <Authors>Alibaba Cloud</Authors>
     <Copyright>©2009-2018 Alibaba Cloud</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>

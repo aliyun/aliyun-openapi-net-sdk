@@ -43,8 +43,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string dimension;
 
-		private string uUID;
-
 		private string accessKeyId;
 
 		private string md5;
@@ -111,19 +109,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				dimension = value;
 				DictionaryUtil.Add(QueryParameters, "Dimension", value);
-			}
-		}
-
-		public string UUID
-		{
-			get
-			{
-				return uUID;
-			}
-			set	
-			{
-				uUID = value;
-				DictionaryUtil.Add(QueryParameters, "UUID", value);
 			}
 		}
 

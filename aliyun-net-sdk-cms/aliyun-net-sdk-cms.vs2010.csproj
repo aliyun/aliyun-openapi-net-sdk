@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{e719e243-0f78-4c2e-a337-1b504d830d0c}</ProjectGuid>
+    <ProjectGuid>{9412731f-b229-455f-b0e0-707f904630bf}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -109,7 +109,6 @@
 	<Compile Include="Cms\Model\V20180308\QueryMetricTopRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\TaskConfigDeleteRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\ListContactGroupRequest.cs" />
-	<Compile Include="Cms\Model\V20180308\PutMetricDataResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\DeleteNotifyPolicyResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\UpdateMyGroupMembersRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\ListMyGroupInstancesRequest.cs" />
@@ -141,7 +140,6 @@
 	<Compile Include="Cms\Model\V20180308\QuerySystemEventDetailResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\TaskConfigListRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\QueryMetricListResponse.cs" />
-	<Compile Include="Cms\Model\V20180308\PutMetricDataRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\DeleteMyGroupInstancesResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\QueryMetricLastResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\QuerySystemEventCountResponse.cs" />
@@ -231,7 +229,6 @@
 	<Compile Include="Cms\Transform\V20180308\ListMyGroupInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\ListNotifyPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\EnableActiveAlertResponseUnmarshaller.cs" />
-	<Compile Include="Cms\Transform\V20180308\PutMetricDataResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\ListMyGroupInstancesDetailsResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\QueryMetricDataResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\CreateAlarmResponseUnmarshaller.cs" />
