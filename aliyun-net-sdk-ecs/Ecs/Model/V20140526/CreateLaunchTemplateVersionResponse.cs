@@ -21,10 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class ModifyVolumeAttributeResponse : AcsResponse
+	public class CreateLaunchTemplateVersionResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private long? launchTemplateVersionNumber;
 
 		public string RequestId
 		{
@@ -35,6 +37,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public long? LaunchTemplateVersionNumber
+		{
+			get
+			{
+				return launchTemplateVersionNumber;
+			}
+			set	
+			{
+				launchTemplateVersionNumber = value;
 			}
 		}
 	}

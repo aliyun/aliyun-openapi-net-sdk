@@ -21,12 +21,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateVolumeResponse : AcsResponse
+	public class DeleteLaunchTemplateResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string volumeId;
 
 		public string RequestId
 		{
@@ -37,18 +35,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string VolumeId
-		{
-			get
-			{
-				return volumeId;
-			}
-			set	
-			{
-				volumeId = value;
 			}
 		}
 	}

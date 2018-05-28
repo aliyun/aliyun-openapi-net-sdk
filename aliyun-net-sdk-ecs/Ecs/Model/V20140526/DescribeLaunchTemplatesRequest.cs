@@ -26,41 +26,47 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class ModifyUserEventAttributeRequest : RpcAcsRequest<ModifyUserEventAttributeResponse>
+    public class DescribeLaunchTemplatesRequest : RpcAcsRequest<DescribeLaunchTemplatesResponse>
     {
-        public ModifyUserEventAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyUserEventAttribute", "ecs", "openAPI")
+        public DescribeLaunchTemplatesRequest()
+            : base("Ecs", "2014-05-26", "DescribeLaunchTemplates", "ecs", "openAPI")
         {
         }
 
-		private string eventId;
+		private List<string> launchTemplateNames;
 
 		private long? resourceOwnerId;
 
+		private int? pageNumber;
+
 		private string regionId;
+
+		private int? pageSize;
 
 		private string action;
 
-		private string resourceId;
+		private List<string> launchTemplateIds;
 
 		private string resourceOwnerAccount;
 
-		private string newPlanTime;
+		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string newExpireTime;
-
-		public string EventId
+		public List<string> LaunchTemplateNames
 		{
 			get
 			{
-				return eventId;
+				return launchTemplateNames;
 			}
-			set	
+
+			set
 			{
-				eventId = value;
-				DictionaryUtil.Add(QueryParameters, "EventId", value);
+				launchTemplateNames = value;
+				for (int i = 0; i < launchTemplateNames.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"LaunchTemplateName." + (i + 1) , launchTemplateNames[i]);
+				}
 			}
 		}
 
@@ -77,6 +83,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
 		public string RegionId
 		{
 			get
@@ -87,6 +106,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				regionId = value;
 				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -103,16 +135,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceId
+		public List<string> LaunchTemplateIds
 		{
 			get
 			{
-				return resourceId;
+				return launchTemplateIds;
 			}
-			set	
+
+			set
 			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+				launchTemplateIds = value;
+				for (int i = 0; i < launchTemplateIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"LaunchTemplateId." + (i + 1) , launchTemplateIds[i]);
+				}
 			}
 		}
 
@@ -129,16 +165,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string NewPlanTime
+		public string OwnerAccount
 		{
 			get
 			{
-				return newPlanTime;
+				return ownerAccount;
 			}
 			set	
 			{
-				newPlanTime = value;
-				DictionaryUtil.Add(QueryParameters, "NewPlanTime", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -155,22 +191,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string NewExpireTime
-		{
-			get
-			{
-				return newExpireTime;
-			}
-			set	
-			{
-				newExpireTime = value;
-				DictionaryUtil.Add(QueryParameters, "NewExpireTime", value);
-			}
-		}
-
-        public override ModifyUserEventAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeLaunchTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyUserEventAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLaunchTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

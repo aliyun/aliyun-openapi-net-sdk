@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class ResizeVolumeResponse : AcsResponse
+	public class DeleteLaunchTemplateVersionResponse : AcsResponse
 	{
 
 		private string requestId;

@@ -16,23 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ecs.Model.V20140526;
-using System;
+using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Ecs.Transform.V20140526
+namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class RollbackVolumeResponseUnmarshaller
-    {
-        public static RollbackVolumeResponse Unmarshall(UnmarshallerContext context)
-        {
-			RollbackVolumeResponse rollbackVolumeResponse = new RollbackVolumeResponse();
+	public class ModifyLaunchTemplateDefaultVersionResponse : AcsResponse
+	{
 
-			rollbackVolumeResponse.HttpResponse = context.HttpResponse;
-			rollbackVolumeResponse.RequestId = context.StringValue("RollbackVolume.RequestId");
-        
-			return rollbackVolumeResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

@@ -26,12 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class CreateUserEventRequest : RpcAcsRequest<CreateUserEventResponse>
+    public class ModifyLaunchTemplateDefaultVersionRequest : RpcAcsRequest<ModifyLaunchTemplateDefaultVersionResponse>
     {
-        public CreateUserEventRequest()
-            : base("Ecs", "2014-05-26", "CreateUserEvent", "ecs", "openAPI")
+        public ModifyLaunchTemplateDefaultVersionRequest()
+            : base("Ecs", "2014-05-26", "ModifyLaunchTemplateDefaultVersion", "ecs", "openAPI")
         {
         }
+
+		private string launchTemplateName;
 
 		private long? resourceOwnerId;
 
@@ -39,17 +41,28 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string action;
 
-		private string planTime;
-
-		private string expireTime;
-
-		private string resourceId;
+		private string launchTemplateId;
 
 		private string resourceOwnerAccount;
 
+		private string ownerAccount;
+
 		private long? ownerId;
 
-		private string eventType;
+		private long? defaultVersionNumber;
+
+		public string LaunchTemplateName
+		{
+			get
+			{
+				return launchTemplateName;
+			}
+			set	
+			{
+				launchTemplateName = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateName", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -90,42 +103,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string PlanTime
+		public string LaunchTemplateId
 		{
 			get
 			{
-				return planTime;
+				return launchTemplateId;
 			}
 			set	
 			{
-				planTime = value;
-				DictionaryUtil.Add(QueryParameters, "PlanTime", value);
-			}
-		}
-
-		public string ExpireTime
-		{
-			get
-			{
-				return expireTime;
-			}
-			set	
-			{
-				expireTime = value;
-				DictionaryUtil.Add(QueryParameters, "ExpireTime", value);
-			}
-		}
-
-		public string ResourceId
-		{
-			get
-			{
-				return resourceId;
-			}
-			set	
-			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+				launchTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
 			}
 		}
 
@@ -142,6 +129,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -155,22 +155,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string EventType
+		public long? DefaultVersionNumber
 		{
 			get
 			{
-				return eventType;
+				return defaultVersionNumber;
 			}
 			set	
 			{
-				eventType = value;
-				DictionaryUtil.Add(QueryParameters, "EventType", value);
+				defaultVersionNumber = value;
+				DictionaryUtil.Add(QueryParameters, "DefaultVersionNumber", value.ToString());
 			}
 		}
 
-        public override CreateUserEventResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyLaunchTemplateDefaultVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateUserEventResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyLaunchTemplateDefaultVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

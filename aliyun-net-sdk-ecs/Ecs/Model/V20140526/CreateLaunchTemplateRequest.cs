@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class RunInstancesRequest : RpcAcsRequest<RunInstancesResponse>
+    public class CreateLaunchTemplateRequest : RpcAcsRequest<CreateLaunchTemplateResponse>
     {
-        public RunInstancesRequest()
-            : base("Ecs", "2014-05-26", "RunInstances", "ecs", "openAPI")
+        public CreateLaunchTemplateRequest()
+            : base("Ecs", "2014-05-26", "CreateLaunchTemplate", "ecs", "openAPI")
         {
         }
 
@@ -37,25 +37,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string hpcClusterId;
-
 		private string securityEnhancementStrategy;
+
+		private string networkType;
 
 		private string keyPairName;
 
 		private float? spotPriceLimit;
 
+		private string imageOwnerAlias;
+
+		private string resourceGroupId;
+
 		private string hostName;
 
-		private string password;
+		private int? systemDiskIops;
 
 		private string action;
 
 		private List<Tag> tags;
 
-		private bool? dryRun;
-
-		private string launchTemplateId;
+		private int? period;
 
 		private long? ownerId;
 
@@ -71,11 +73,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? internetMaxBandwidthIn;
 
+		private string versionDescription;
+
 		private string imageId;
-
-		private string spotInterruptionBehavior;
-
-		private string clientToken;
 
 		private string ioOptimized;
 
@@ -93,9 +93,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceType;
 
-		private List<NetworkInterface> networkInterfaces;
+		private string instanceChargeType;
 
-		private int? amount;
+		private bool? enableVmOsConfig;
+
+		private List<NetworkInterface> networkInterfaces;
 
 		private string resourceOwnerAccount;
 
@@ -107,13 +109,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string autoReleaseTime;
 
-		private string dedicatedHostId;
+		private int? spotDuration;
 
 		private List<DataDisk> dataDisks;
 
-		private long? launchTemplateVersion;
+		private int? systemDiskSize;
 
-		private string systemDiskSize;
+		private string vpcId;
 
 		private string systemDiskDescription;
 
@@ -143,19 +145,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string HpcClusterId
-		{
-			get
-			{
-				return hpcClusterId;
-			}
-			set	
-			{
-				hpcClusterId = value;
-				DictionaryUtil.Add(QueryParameters, "HpcClusterId", value);
-			}
-		}
-
 		public string SecurityEnhancementStrategy
 		{
 			get
@@ -166,6 +155,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				securityEnhancementStrategy = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityEnhancementStrategy", value);
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
 			}
 		}
 
@@ -195,6 +197,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ImageOwnerAlias
+		{
+			get
+			{
+				return imageOwnerAlias;
+			}
+			set	
+			{
+				imageOwnerAlias = value;
+				DictionaryUtil.Add(QueryParameters, "ImageOwnerAlias", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public string HostName
 		{
 			get
@@ -208,16 +236,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Password
+		public int? SystemDiskIops
 		{
 			get
 			{
-				return password;
+				return systemDiskIops;
 			}
 			set	
 			{
-				password = value;
-				DictionaryUtil.Add(QueryParameters, "Password", value);
+				systemDiskIops = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.Iops", value.ToString());
 			}
 		}
 
@@ -252,29 +280,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? DryRun
+		public int? Period
 		{
 			get
 			{
-				return dryRun;
+				return period;
 			}
 			set	
 			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
-			}
-		}
-
-		public string LaunchTemplateId
-		{
-			get
-			{
-				return launchTemplateId;
-			}
-			set	
-			{
-				launchTemplateId = value;
-				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
 			}
 		}
 
@@ -369,6 +384,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string VersionDescription
+		{
+			get
+			{
+				return versionDescription;
+			}
+			set	
+			{
+				versionDescription = value;
+				DictionaryUtil.Add(QueryParameters, "VersionDescription", value);
+			}
+		}
+
 		public string ImageId
 		{
 			get
@@ -379,32 +407,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
-
-		public string SpotInterruptionBehavior
-		{
-			get
-			{
-				return spotInterruptionBehavior;
-			}
-			set	
-			{
-				spotInterruptionBehavior = value;
-				DictionaryUtil.Add(QueryParameters, "SpotInterruptionBehavior", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -512,6 +514,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+			}
+		}
+
+		public bool? EnableVmOsConfig
+		{
+			get
+			{
+				return enableVmOsConfig;
+			}
+			set	
+			{
+				enableVmOsConfig = value;
+				DictionaryUtil.Add(QueryParameters, "EnableVmOsConfig", value.ToString());
+			}
+		}
+
 		public List<NetworkInterface> NetworkInterfaces
 		{
 			get
@@ -530,19 +558,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".NetworkInterfaceName", networkInterfaces[i].NetworkInterfaceName);
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".Description", networkInterfaces[i].Description);
 				}
-			}
-		}
-
-		public int? Amount
-		{
-			get
-			{
-				return amount;
-			}
-			set	
-			{
-				amount = value;
-				DictionaryUtil.Add(QueryParameters, "Amount", value.ToString());
 			}
 		}
 
@@ -611,16 +626,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DedicatedHostId
+		public int? SpotDuration
 		{
 			get
 			{
-				return dedicatedHostId;
+				return spotDuration;
 			}
 			set	
 			{
-				dedicatedHostId = value;
-				DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
+				spotDuration = value;
+				DictionaryUtil.Add(QueryParameters, "SpotDuration", value.ToString());
 			}
 		}
 
@@ -642,26 +657,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Encrypted", dataDisks[i].Encrypted);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DiskName", dataDisks[i].DiskName);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
 				}
 			}
 		}
 
-		public long? LaunchTemplateVersion
-		{
-			get
-			{
-				return launchTemplateVersion;
-			}
-			set	
-			{
-				launchTemplateVersion = value;
-				DictionaryUtil.Add(QueryParameters, "LaunchTemplateVersion", value.ToString());
-			}
-		}
-
-		public string SystemDiskSize
+		public int? SystemDiskSize
 		{
 			get
 			{
@@ -670,7 +671,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				systemDiskSize = value;
-				DictionaryUtil.Add(QueryParameters, "SystemDisk.Size", value);
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.Size", value.ToString());
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 
@@ -808,8 +822,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string description;
 
-			private string device;
-
 			private bool? deleteWithInstance;
 
 			public int? Size
@@ -884,18 +896,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Device
-			{
-				get
-				{
-					return device;
-				}
-				set	
-				{
-					device = value;
-				}
-			}
-
 			public bool? DeleteWithInstance
 			{
 				get
@@ -909,9 +909,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override RunInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateLaunchTemplateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return RunInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateLaunchTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

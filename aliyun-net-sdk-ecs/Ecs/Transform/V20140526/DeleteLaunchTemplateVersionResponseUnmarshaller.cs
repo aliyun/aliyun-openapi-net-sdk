@@ -16,40 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ecs.Model.V20140526;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Ecs.Model.V20140526
+namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
-	public class CreateUserEventResponse : AcsResponse
-	{
+    public class DeleteLaunchTemplateVersionResponseUnmarshaller
+    {
+        public static DeleteLaunchTemplateVersionResponse Unmarshall(UnmarshallerContext context)
+        {
+			DeleteLaunchTemplateVersionResponse deleteLaunchTemplateVersionResponse = new DeleteLaunchTemplateVersionResponse();
 
-		private string requestId;
-
-		private string eventId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string EventId
-		{
-			get
-			{
-				return eventId;
-			}
-			set	
-			{
-				eventId = value;
-			}
-		}
-	}
+			deleteLaunchTemplateVersionResponse.HttpResponse = context.HttpResponse;
+			deleteLaunchTemplateVersionResponse.RequestId = context.StringValue("DeleteLaunchTemplateVersion.RequestId");
+        
+			return deleteLaunchTemplateVersionResponse;
+        }
+    }
 }

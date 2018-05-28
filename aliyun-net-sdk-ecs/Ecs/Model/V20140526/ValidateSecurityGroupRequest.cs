@@ -26,37 +26,51 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class CancelUserEventRequest : RpcAcsRequest<CancelUserEventResponse>
+    public class ValidateSecurityGroupRequest : RpcAcsRequest<ValidateSecurityGroupResponse>
     {
-        public CancelUserEventRequest()
-            : base("Ecs", "2014-05-26", "CancelUserEvent", "ecs", "openAPI")
+        public ValidateSecurityGroupRequest()
+            : base("Ecs", "2014-05-26", "ValidateSecurityGroup", "ecs", "openAPI")
         {
         }
 
-		private string eventId;
+		private string nicType;
 
 		private long? resourceOwnerId;
+
+		private int? sourcePort;
+
+		private string sourceIp;
 
 		private string regionId;
 
 		private string action;
 
-		private string resourceId;
+		private string direction;
+
+		private string destIp;
 
 		private string resourceOwnerAccount;
 
+		private string ipProtocol;
+
+		private string ownerAccount;
+
 		private long? ownerId;
 
-		public string EventId
+		private string instanceId;
+
+		private int? destPort;
+
+		public string NicType
 		{
 			get
 			{
-				return eventId;
+				return nicType;
 			}
 			set	
 			{
-				eventId = value;
-				DictionaryUtil.Add(QueryParameters, "EventId", value);
+				nicType = value;
+				DictionaryUtil.Add(QueryParameters, "NicType", value);
 			}
 		}
 
@@ -70,6 +84,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? SourcePort
+		{
+			get
+			{
+				return sourcePort;
+			}
+			set	
+			{
+				sourcePort = value;
+				DictionaryUtil.Add(QueryParameters, "SourcePort", value.ToString());
+			}
+		}
+
+		public string SourceIp
+		{
+			get
+			{
+				return sourceIp;
+			}
+			set	
+			{
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
@@ -99,16 +139,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceId
+		public string Direction
 		{
 			get
 			{
-				return resourceId;
+				return direction;
 			}
 			set	
 			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+				direction = value;
+				DictionaryUtil.Add(QueryParameters, "Direction", value);
+			}
+		}
+
+		public string DestIp
+		{
+			get
+			{
+				return destIp;
+			}
+			set	
+			{
+				destIp = value;
+				DictionaryUtil.Add(QueryParameters, "DestIp", value);
 			}
 		}
 
@@ -125,6 +178,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string IpProtocol
+		{
+			get
+			{
+				return ipProtocol;
+			}
+			set	
+			{
+				ipProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "IpProtocol", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -138,9 +217,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override CancelUserEventResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public int? DestPort
+		{
+			get
+			{
+				return destPort;
+			}
+			set	
+			{
+				destPort = value;
+				DictionaryUtil.Add(QueryParameters, "DestPort", value.ToString());
+			}
+		}
+
+        public override ValidateSecurityGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CancelUserEventResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ValidateSecurityGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

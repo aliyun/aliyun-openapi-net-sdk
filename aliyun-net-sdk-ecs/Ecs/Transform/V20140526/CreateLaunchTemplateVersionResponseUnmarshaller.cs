@@ -23,16 +23,17 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
-    public class DeleteVolumeResponseUnmarshaller
+    public class CreateLaunchTemplateVersionResponseUnmarshaller
     {
-        public static DeleteVolumeResponse Unmarshall(UnmarshallerContext context)
+        public static CreateLaunchTemplateVersionResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteVolumeResponse deleteVolumeResponse = new DeleteVolumeResponse();
+			CreateLaunchTemplateVersionResponse createLaunchTemplateVersionResponse = new CreateLaunchTemplateVersionResponse();
 
-			deleteVolumeResponse.HttpResponse = context.HttpResponse;
-			deleteVolumeResponse.RequestId = context.StringValue("DeleteVolume.RequestId");
+			createLaunchTemplateVersionResponse.HttpResponse = context.HttpResponse;
+			createLaunchTemplateVersionResponse.RequestId = context.StringValue("CreateLaunchTemplateVersion.RequestId");
+			createLaunchTemplateVersionResponse.LaunchTemplateVersionNumber = context.LongValue("CreateLaunchTemplateVersion.LaunchTemplateVersionNumber");
         
-			return deleteVolumeResponse;
+			return createLaunchTemplateVersionResponse;
         }
     }
 }

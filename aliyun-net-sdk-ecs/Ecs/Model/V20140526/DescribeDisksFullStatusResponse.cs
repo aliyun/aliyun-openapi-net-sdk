@@ -160,6 +160,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string eventTime;
 
+				private string eventEndTime;
+
 				private DescribeDisksFullStatus_EventType eventType;
 
 				public string EventId
@@ -183,6 +185,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						eventTime = value;
+					}
+				}
+
+				public string EventEndTime
+				{
+					get
+					{
+						return eventEndTime;
+					}
+					set	
+					{
+						eventEndTime = value;
 					}
 				}
 

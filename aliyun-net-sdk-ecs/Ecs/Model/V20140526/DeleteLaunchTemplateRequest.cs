@@ -26,30 +26,41 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class ModifyVolumeAttributeRequest : RpcAcsRequest<ModifyVolumeAttributeResponse>
+    public class DeleteLaunchTemplateRequest : RpcAcsRequest<DeleteLaunchTemplateResponse>
     {
-        public ModifyVolumeAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyVolumeAttribute", "ecs", "openAPI")
+        public DeleteLaunchTemplateRequest()
+            : base("Ecs", "2014-05-26", "DeleteLaunchTemplate", "ecs", "openAPI")
         {
         }
 
+		private string launchTemplateName;
+
 		private long? resourceOwnerId;
-
-		private string volumeName;
-
-		private string resourceOwnerAccount;
 
 		private string regionId;
 
-		private string ownerAccount;
-
-		private string volumeId;
-
 		private string action;
 
-		private string description;
+		private string launchTemplateId;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private long? ownerId;
+
+		public string LaunchTemplateName
+		{
+			get
+			{
+				return launchTemplateName;
+			}
+			set	
+			{
+				launchTemplateName = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateName", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -61,32 +72,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string VolumeName
-		{
-			get
-			{
-				return volumeName;
-			}
-			set	
-			{
-				volumeName = value;
-				DictionaryUtil.Add(QueryParameters, "VolumeName", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -103,32 +88,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string VolumeId
-		{
-			get
-			{
-				return volumeId;
-			}
-			set	
-			{
-				volumeId = value;
-				DictionaryUtil.Add(QueryParameters, "VolumeId", value);
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -142,16 +101,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Description
+		public string LaunchTemplateId
 		{
 			get
 			{
-				return description;
+				return launchTemplateId;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				launchTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -168,9 +153,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override ModifyVolumeAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteLaunchTemplateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyVolumeAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteLaunchTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
