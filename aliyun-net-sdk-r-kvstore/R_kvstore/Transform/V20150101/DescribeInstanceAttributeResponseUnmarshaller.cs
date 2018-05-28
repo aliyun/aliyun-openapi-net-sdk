@@ -68,6 +68,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.ArchitectureType = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ArchitectureType");
 				dBInstanceAttribute.NodeType1 = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].NodeType");
 				dBInstanceAttribute.PackageType = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].PackageType");
+				dBInstanceAttribute.ReplacateId = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ReplacateId");
+				dBInstanceAttribute.EngineVersion2 = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].EngineVersion");
 
 				describeInstanceAttributeResponse_instances.Add(dBInstanceAttribute);
 			}

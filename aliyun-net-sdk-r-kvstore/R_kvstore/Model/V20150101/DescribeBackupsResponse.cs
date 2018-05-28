@@ -117,6 +117,12 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private long? backupSize;
 
+			private string engineVersion;
+
+			private string nodeInstanceId;
+
+			private string backupIntranetDownloadURL;
+
 			public int? BackupId
 			{
 				get
@@ -234,6 +240,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					backupSize = value;
+				}
+			}
+
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
+				}
+			}
+
+			public string NodeInstanceId
+			{
+				get
+				{
+					return nodeInstanceId;
+				}
+				set	
+				{
+					nodeInstanceId = value;
+				}
+			}
+
+			public string BackupIntranetDownloadURL
+			{
+				get
+				{
+					return backupIntranetDownloadURL;
+				}
+				set	
+				{
+					backupIntranetDownloadURL = value;
 				}
 			}
 		}

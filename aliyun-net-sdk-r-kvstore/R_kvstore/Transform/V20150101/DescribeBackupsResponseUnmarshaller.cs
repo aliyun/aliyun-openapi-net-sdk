@@ -48,6 +48,9 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				backup.BackupMethod = context.StringValue("DescribeBackups.Backups["+ i +"].BackupMethod");
 				backup.BackupDownloadURL = context.StringValue("DescribeBackups.Backups["+ i +"].BackupDownloadURL");
 				backup.BackupSize = context.LongValue("DescribeBackups.Backups["+ i +"].BackupSize");
+				backup.EngineVersion = context.StringValue("DescribeBackups.Backups["+ i +"].EngineVersion");
+				backup.NodeInstanceId = context.StringValue("DescribeBackups.Backups["+ i +"].NodeInstanceId");
+				backup.BackupIntranetDownloadURL = context.StringValue("DescribeBackups.Backups["+ i +"].BackupIntranetDownloadURL");
 
 				describeBackupsResponse_backups.Add(backup);
 			}

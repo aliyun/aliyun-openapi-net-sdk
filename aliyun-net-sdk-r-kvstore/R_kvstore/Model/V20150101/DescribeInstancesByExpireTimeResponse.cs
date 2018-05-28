@@ -21,12 +21,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-	public class DescribeInstanceAttributeResponse : AcsResponse
+	public class DescribeInstancesByExpireTimeResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeInstanceAttribute_DBInstanceAttribute> instances;
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private int? totalCount;
+
+		private List<DescribeInstancesByExpireTime_KVStoreInstance> instances;
 
 		public string RequestId
 		{
@@ -40,7 +46,43 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public List<DescribeInstanceAttribute_DBInstanceAttribute> Instances
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public List<DescribeInstancesByExpireTime_KVStoreInstance> Instances
 		{
 			get
 			{
@@ -52,8 +94,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public class DescribeInstanceAttribute_DBInstanceAttribute
+		public class DescribeInstancesByExpireTime_KVStoreInstance
 		{
+
+			private string replacateId;
 
 			private string instanceId;
 
@@ -62,6 +106,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private string connectionDomain;
 
 			private long? port;
+
+			private string userName;
 
 			private string instanceStatus;
 
@@ -83,8 +129,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string chargeType;
 
-			private string nodeType;
-
 			private string networkType;
 
 			private string vpcId;
@@ -101,29 +145,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private bool? isRds;
 
-			private string engine;
-
-			private string engineVersion;
-
-			private string maintainStartTime;
-
-			private string maintainEndTime;
-
-			private string availabilityValue;
-
-			private string securityIPList;
-
 			private string instanceType;
 
 			private string architectureType;
 
-			private string nodeType1;
+			private string nodeType;
 
 			private string packageType;
 
-			private string replacateId;
+			private string engineVersion;
 
-			private string engineVersion2;
+			public string ReplacateId
+			{
+				get
+				{
+					return replacateId;
+				}
+				set	
+				{
+					replacateId = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -170,6 +212,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					port = value;
+				}
+			}
+
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
 				}
 			}
 
@@ -293,18 +347,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string NodeType
-			{
-				get
-				{
-					return nodeType;
-				}
-				set	
-				{
-					nodeType = value;
-				}
-			}
-
 			public string NetworkType
 			{
 				get
@@ -401,78 +443,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
-				}
-			}
-
-			public string MaintainStartTime
-			{
-				get
-				{
-					return maintainStartTime;
-				}
-				set	
-				{
-					maintainStartTime = value;
-				}
-			}
-
-			public string MaintainEndTime
-			{
-				get
-				{
-					return maintainEndTime;
-				}
-				set	
-				{
-					maintainEndTime = value;
-				}
-			}
-
-			public string AvailabilityValue
-			{
-				get
-				{
-					return availabilityValue;
-				}
-				set	
-				{
-					availabilityValue = value;
-				}
-			}
-
-			public string SecurityIPList
-			{
-				get
-				{
-					return securityIPList;
-				}
-				set	
-				{
-					securityIPList = value;
-				}
-			}
-
 			public string InstanceType
 			{
 				get
@@ -497,15 +467,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string NodeType1
+			public string NodeType
 			{
 				get
 				{
-					return nodeType1;
+					return nodeType;
 				}
 				set	
 				{
-					nodeType1 = value;
+					nodeType = value;
 				}
 			}
 
@@ -521,27 +491,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string ReplacateId
+			public string EngineVersion
 			{
 				get
 				{
-					return replacateId;
+					return engineVersion;
 				}
 				set	
 				{
-					replacateId = value;
-				}
-			}
-
-			public string EngineVersion2
-			{
-				get
-				{
-					return engineVersion2;
-				}
-				set	
-				{
-					engineVersion2 = value;
+					engineVersion = value;
 				}
 			}
 		}

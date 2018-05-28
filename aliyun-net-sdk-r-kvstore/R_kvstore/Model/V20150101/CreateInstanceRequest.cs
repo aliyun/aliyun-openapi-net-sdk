@@ -41,6 +41,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string networkType;
 
+		private string engineVersion;
+
 		private string instanceClass;
 
 		private string accessKeyId;
@@ -132,6 +134,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				networkType = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
 			}
 		}
 

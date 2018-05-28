@@ -26,24 +26,22 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
+    public class DescribeVerificationListRequest : RpcAcsRequest<DescribeVerificationListResponse>
     {
-        public DescribeInstancesRequest()
-            : base("R_kvstore", "2015-01-01", "DescribeInstances", "redisa", "openAPI")
+        public DescribeVerificationListRequest()
+            : base("R_kvstore", "2015-01-01", "DescribeVerificationList", "redisa", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string instanceStatus;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string searchKey;
+		private string endTime;
 
-		private string networkType;
+		private string startTime;
 
 		private long? ownerId;
 
@@ -51,21 +49,13 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string accessKeyId;
 
-		private string vSwitchId;
-
 		private string securityToken;
 
-		private string instanceIds;
-
-		private string vpcId;
+		private string replicaId;
 
 		private int? pageSize;
 
 		private string action;
-
-		private string instanceType;
-
-		private string chargeType;
 
 		public long? ResourceOwnerId
 		{
@@ -77,19 +67,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceStatus
-		{
-			get
-			{
-				return instanceStatus;
-			}
-			set	
-			{
-				instanceStatus = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceStatus", value);
 			}
 		}
 
@@ -119,29 +96,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string SearchKey
+		public string EndTime
 		{
 			get
 			{
-				return searchKey;
+				return endTime;
 			}
 			set	
 			{
-				searchKey = value;
-				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public string NetworkType
+		public string StartTime
 		{
 			get
 			{
-				return networkType;
+				return startTime;
 			}
 			set	
 			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -184,19 +161,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -210,29 +174,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceIds
+		public string ReplicaId
 		{
 			get
 			{
-				return instanceIds;
+				return replicaId;
 			}
 			set	
 			{
-				instanceIds = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+				replicaId = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
 			}
 		}
 
@@ -262,35 +213,14 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceType
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
+			return false;
 		}
 
-		public string ChargeType
-		{
-			get
-			{
-				return chargeType;
-			}
-			set	
-			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
-			}
-		}
-
-        public override DescribeInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeVerificationListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVerificationListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

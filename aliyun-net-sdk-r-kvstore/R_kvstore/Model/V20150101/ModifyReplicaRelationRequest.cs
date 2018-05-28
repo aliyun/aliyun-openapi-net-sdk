@@ -26,38 +26,28 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeHistoryMonitorValuesRequest : RpcAcsRequest<DescribeHistoryMonitorValuesResponse>
+    public class ModifyReplicaRelationRequest : RpcAcsRequest<ModifyReplicaRelationResponse>
     {
-        public DescribeHistoryMonitorValuesRequest()
-            : base("R_kvstore", "2015-01-01", "DescribeHistoryMonitorValues", "redisa", "openAPI")
+        public ModifyReplicaRelationRequest()
+            : base("R_kvstore", "2015-01-01", "ModifyReplicaRelation", "redisa", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private string securityToken;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string endTime;
+		private string replicaId;
 
-		private string startTime;
+		private string action;
 
 		private long? ownerId;
 
 		private string accessKeyId;
-
-		private string instanceId;
-
-		private string securityToken;
-
-		private string intervalForHistory;
-
-		private string action;
-
-		private string nodeId;
-
-		private string monitorKeys;
 
 		public long? ResourceOwnerId
 		{
@@ -69,6 +59,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -98,29 +101,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EndTime
+		public string ReplicaId
 		{
 			get
 			{
-				return endTime;
+				return replicaId;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				replicaId = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
 			}
 		}
 
-		public string StartTime
+		public string Action
 		{
 			get
 			{
-				return startTime;
+				return action;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -150,87 +153,14 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
+			return false;
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string IntervalForHistory
-		{
-			get
-			{
-				return intervalForHistory;
-			}
-			set	
-			{
-				intervalForHistory = value;
-				DictionaryUtil.Add(QueryParameters, "IntervalForHistory", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string NodeId
-		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
-			}
-		}
-
-		public string MonitorKeys
-		{
-			get
-			{
-				return monitorKeys;
-			}
-			set	
-			{
-				monitorKeys = value;
-				DictionaryUtil.Add(QueryParameters, "MonitorKeys", value);
-			}
-		}
-
-        public override DescribeHistoryMonitorValuesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyReplicaRelationResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeHistoryMonitorValuesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyReplicaRelationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

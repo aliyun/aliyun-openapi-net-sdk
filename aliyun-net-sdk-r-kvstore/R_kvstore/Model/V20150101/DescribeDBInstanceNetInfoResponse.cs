@@ -81,6 +81,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string dBInstanceNetType;
 
+			private string iPType;
+
 			private string expiredTime;
 
 			private string upgradeable;
@@ -154,6 +156,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					dBInstanceNetType = value;
+				}
+			}
+
+			public string IPType
+			{
+				get
+				{
+					return iPType;
+				}
+				set	
+				{
+					iPType = value;
 				}
 			}
 

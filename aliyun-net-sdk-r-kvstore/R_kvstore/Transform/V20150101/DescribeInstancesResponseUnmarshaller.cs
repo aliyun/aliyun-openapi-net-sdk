@@ -38,6 +38,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance> describeInstancesResponse_instances = new List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance>();
 			for (int i = 0; i < context.Length("DescribeInstances.Instances.Length"); i++) {
 				DescribeInstancesResponse.DescribeInstances_KVStoreInstance kVStoreInstance = new DescribeInstancesResponse.DescribeInstances_KVStoreInstance();
+				kVStoreInstance.ReplacateId = context.StringValue("DescribeInstances.Instances["+ i +"].ReplacateId");
 				kVStoreInstance.InstanceId = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceId");
 				kVStoreInstance.InstanceName = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceName");
 				kVStoreInstance.ConnectionDomain = context.StringValue("DescribeInstances.Instances["+ i +"].ConnectionDomain");
@@ -65,6 +66,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.ArchitectureType = context.StringValue("DescribeInstances.Instances["+ i +"].ArchitectureType");
 				kVStoreInstance.NodeType = context.StringValue("DescribeInstances.Instances["+ i +"].NodeType");
 				kVStoreInstance.PackageType = context.StringValue("DescribeInstances.Instances["+ i +"].PackageType");
+				kVStoreInstance.EngineVersion = context.StringValue("DescribeInstances.Instances["+ i +"].EngineVersion");
 
 				describeInstancesResponse_instances.Add(kVStoreInstance);
 			}

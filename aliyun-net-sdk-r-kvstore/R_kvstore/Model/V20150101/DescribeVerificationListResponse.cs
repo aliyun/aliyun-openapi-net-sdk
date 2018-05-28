@@ -21,18 +21,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-	public class DescribeReplicasResponse : AcsResponse
+	public class DescribeVerificationListResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string pageNumber;
+		private string replicaId;
 
-		private int? totalRecordCount;
+		private int? pagNumber;
 
 		private int? pageRecordCount;
 
-		private List<DescribeReplicas_Items> replicas;
+		private int? totalRecordCount;
+
+		private List<DescribeVerificationList_ItemsItem> items;
 
 		public string RequestId
 		{
@@ -46,27 +48,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string PageNumber
+		public string ReplicaId
 		{
 			get
 			{
-				return pageNumber;
+				return replicaId;
 			}
 			set	
 			{
-				pageNumber = value;
+				replicaId = value;
 			}
 		}
 
-		public int? TotalRecordCount
+		public int? PagNumber
 		{
 			get
 			{
-				return totalRecordCount;
+				return pagNumber;
 			}
 			set	
 			{
-				totalRecordCount = value;
+				pagNumber = value;
 			}
 		}
 
@@ -82,148 +84,142 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public List<DescribeReplicas_Items> Replicas
+		public int? TotalRecordCount
 		{
 			get
 			{
-				return replicas;
+				return totalRecordCount;
 			}
 			set	
 			{
-				replicas = value;
+				totalRecordCount = value;
 			}
 		}
 
-		public class DescribeReplicas_Items
+		public List<DescribeVerificationList_ItemsItem> Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+			}
+		}
+
+		public class DescribeVerificationList_ItemsItem
 		{
 
-			private string replicaId;
+			private string instanceIdA;
 
-			private string replicaDescription;
+			private string instanceIdB;
 
-			private string replicaStatus;
+			private string key;
 
-			private string replicaMode;
+			private string keyType;
 
-			private string domainMode;
+			private string inconsistentType;
 
-			private List<DescribeReplicas_Items1> dBInstances;
+			private string occurTime;
 
-			public string ReplicaId
+			private string schema;
+
+			private string inconsistentFields;
+
+			public string InstanceIdA
 			{
 				get
 				{
-					return replicaId;
+					return instanceIdA;
 				}
 				set	
 				{
-					replicaId = value;
+					instanceIdA = value;
 				}
 			}
 
-			public string ReplicaDescription
+			public string InstanceIdB
 			{
 				get
 				{
-					return replicaDescription;
+					return instanceIdB;
 				}
 				set	
 				{
-					replicaDescription = value;
+					instanceIdB = value;
 				}
 			}
 
-			public string ReplicaStatus
+			public string Key
 			{
 				get
 				{
-					return replicaStatus;
+					return key;
 				}
 				set	
 				{
-					replicaStatus = value;
+					key = value;
 				}
 			}
 
-			public string ReplicaMode
+			public string KeyType
 			{
 				get
 				{
-					return replicaMode;
+					return keyType;
 				}
 				set	
 				{
-					replicaMode = value;
+					keyType = value;
 				}
 			}
 
-			public string DomainMode
+			public string InconsistentType
 			{
 				get
 				{
-					return domainMode;
+					return inconsistentType;
 				}
 				set	
 				{
-					domainMode = value;
+					inconsistentType = value;
 				}
 			}
 
-			public List<DescribeReplicas_Items1> DBInstances
+			public string OccurTime
 			{
 				get
 				{
-					return dBInstances;
+					return occurTime;
 				}
 				set	
 				{
-					dBInstances = value;
+					occurTime = value;
 				}
 			}
 
-			public class DescribeReplicas_Items1
+			public string Schema
 			{
-
-				private string dBInstanceId;
-
-				private string role;
-
-				private string readWriteType;
-
-				public string DBInstanceId
+				get
 				{
-					get
-					{
-						return dBInstanceId;
-					}
-					set	
-					{
-						dBInstanceId = value;
-					}
+					return schema;
 				}
-
-				public string Role
+				set	
 				{
-					get
-					{
-						return role;
-					}
-					set	
-					{
-						role = value;
-					}
+					schema = value;
 				}
+			}
 
-				public string ReadWriteType
+			public string InconsistentFields
+			{
+				get
 				{
-					get
-					{
-						return readWriteType;
-					}
-					set	
-					{
-						readWriteType = value;
-					}
+					return inconsistentFields;
+				}
+				set	
+				{
+					inconsistentFields = value;
 				}
 			}
 		}

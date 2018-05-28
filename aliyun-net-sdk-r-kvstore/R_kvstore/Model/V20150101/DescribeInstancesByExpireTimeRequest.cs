@@ -26,24 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
+    public class DescribeInstancesByExpireTimeRequest : RpcAcsRequest<DescribeInstancesByExpireTimeResponse>
     {
-        public DescribeInstancesRequest()
-            : base("R_kvstore", "2015-01-01", "DescribeInstances", "redisa", "openAPI")
+        public DescribeInstancesByExpireTimeRequest()
+            : base("R_kvstore", "2015-01-01", "DescribeInstancesByExpireTime", "redisa", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string instanceStatus;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string searchKey;
-
-		private string networkType;
 
 		private long? ownerId;
 
@@ -51,13 +45,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string accessKeyId;
 
-		private string vSwitchId;
-
 		private string securityToken;
 
-		private string instanceIds;
-
-		private string vpcId;
+		private bool? hasExpiredRes;
 
 		private int? pageSize;
 
@@ -65,7 +55,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceType;
 
-		private string chargeType;
+		private int? expirePeriod;
 
 		public long? ResourceOwnerId
 		{
@@ -77,19 +67,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceStatus
-		{
-			get
-			{
-				return instanceStatus;
-			}
-			set	
-			{
-				instanceStatus = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceStatus", value);
 			}
 		}
 
@@ -116,32 +93,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string SearchKey
-		{
-			get
-			{
-				return searchKey;
-			}
-			set	
-			{
-				searchKey = value;
-				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
-			}
-		}
-
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
 			}
 		}
 
@@ -184,19 +135,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -210,29 +148,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceIds
+		public bool? HasExpiredRes
 		{
 			get
 			{
-				return instanceIds;
+				return hasExpiredRes;
 			}
 			set	
 			{
-				instanceIds = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+				hasExpiredRes = value;
+				DictionaryUtil.Add(QueryParameters, "HasExpiredRes", value.ToString());
 			}
 		}
 
@@ -275,22 +200,22 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ChargeType
+		public int? ExpirePeriod
 		{
 			get
 			{
-				return chargeType;
+				return expirePeriod;
 			}
 			set	
 			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+				expirePeriod = value;
+				DictionaryUtil.Add(QueryParameters, "ExpirePeriod", value.ToString());
 			}
 		}
 
-        public override DescribeInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeInstancesByExpireTimeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeInstancesByExpireTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Aliyun.Acs.R_kvstore</RootNamespace>
-    <Version>1.0.0</Version>
+    <Version>2.0.2</Version>
     <Authors>Alibaba Cloud</Authors>
     <Copyright>©2009-2018 Alibaba Cloud</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -12,7 +12,7 @@
     <PackageIconUrl>https://www.alibabacloud.com/favicon.ico</PackageIconUrl>
     <Description>Alibaba Cloud SDK for C#</Description>
     <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageTags>alibaba aliyun SDK</PackageTags>
+    <PackageTags>alibaba aliyun SDK R-kvstore</PackageTags>
     <AssemblyName>aliyun-net-sdk-r-kvstore</AssemblyName>
   </PropertyGroup>
 

@@ -97,6 +97,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeInstances_KVStoreInstance
 		{
 
+			private string replacateId;
+
 			private string instanceId;
 
 			private string instanceName;
@@ -150,6 +152,20 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private string nodeType;
 
 			private string packageType;
+
+			private string engineVersion;
+
+			public string ReplacateId
+			{
+				get
+				{
+					return replacateId;
+				}
+				set	
+				{
+					replacateId = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -472,6 +488,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					packageType = value;
+				}
+			}
+
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
 				}
 			}
 		}
