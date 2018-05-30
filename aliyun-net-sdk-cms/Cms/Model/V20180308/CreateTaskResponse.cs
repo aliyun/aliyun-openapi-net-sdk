@@ -34,6 +34,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string data;
 
+		private string alertRule;
+
 		public string Code
 		{
 			get
@@ -91,6 +93,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public string AlertRule
+		{
+			get
+			{
+				return alertRule;
+			}
+			set	
+			{
+				alertRule = value;
 			}
 		}
 	}

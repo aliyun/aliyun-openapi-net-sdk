@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 			deleteTasksResponse.Message = context.StringValue("DeleteTasks.Message");
 			deleteTasksResponse.Success = context.StringValue("DeleteTasks.Success");
 			deleteTasksResponse.RequestId = context.StringValue("DeleteTasks.RequestId");
+			deleteTasksResponse.Data = context.StringValue("DeleteTasks.Data");
         
 			return deleteTasksResponse;
         }

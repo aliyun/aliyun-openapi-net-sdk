@@ -33,7 +33,22 @@ namespace Aliyun.Acs.Cms.Model.V20180308
         {
         }
 
+		private int? isDeleteAlarms;
+
 		private string taskIds;
+
+		public int? IsDeleteAlarms
+		{
+			get
+			{
+				return isDeleteAlarms;
+			}
+			set	
+			{
+				isDeleteAlarms = value;
+				DictionaryUtil.Add(QueryParameters, "IsDeleteAlarms", value.ToString());
+			}
+		}
 
 		public string TaskIds
 		{

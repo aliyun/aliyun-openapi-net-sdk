@@ -21,20 +21,46 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
-	public class DeleteTasksResponse : AcsResponse
+	public class GetContactsResponse : AcsResponse
 	{
-
-		private string code;
-
-		private string message;
-
-		private string success;
 
 		private string requestId;
 
-		private string data;
+		private bool? success;
 
-		public string Code
+		private int? code;
+
+		private string message;
+
+		private int? httpStatusCode;
+
+		private GetContacts_Datapoints datapoints;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public int? Code
 		{
 			get
 			{
@@ -58,39 +84,59 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public string Success
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return success;
+				return httpStatusCode;
 			}
 			set	
 			{
-				success = value;
+				httpStatusCode = value;
 			}
 		}
 
-		public string RequestId
+		public GetContacts_Datapoints Datapoints
 		{
 			get
 			{
-				return requestId;
+				return datapoints;
 			}
 			set	
 			{
-				requestId = value;
+				datapoints = value;
 			}
 		}
 
-		public string Data
+		public class GetContacts_Datapoints
 		{
-			get
+
+			private string name;
+
+			private List<string> contacts;
+
+			public string Name
 			{
-				return data;
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
 			}
-			set	
+
+			public List<string> Contacts
 			{
-				data = value;
+				get
+				{
+					return contacts;
+				}
+				set	
+				{
+					contacts = value;
+				}
 			}
 		}
 	}

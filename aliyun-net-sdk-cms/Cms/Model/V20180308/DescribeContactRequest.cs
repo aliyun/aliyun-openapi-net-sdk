@@ -17,81 +17,40 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cms.Transform;
+using Aliyun.Acs.Cms.Transform.V20180308;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
-	public class DeleteTasksResponse : AcsResponse
-	{
+    public class DescribeContactRequest : RpcAcsRequest<DescribeContactResponse>
+    {
+        public DescribeContactRequest()
+            : base("Cms", "2018-03-08", "DescribeContact", "cms", "openAPI")
+        {
+        }
 
-		private string code;
+		private string contactName;
 
-		private string message;
-
-		private string success;
-
-		private string requestId;
-
-		private string data;
-
-		public string Code
+		public string ContactName
 		{
 			get
 			{
-				return code;
+				return contactName;
 			}
 			set	
 			{
-				code = value;
+				contactName = value;
+				DictionaryUtil.Add(QueryParameters, "ContactName", value);
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
-	}
+        public override DescribeContactResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        {
+            return DescribeContactResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }
