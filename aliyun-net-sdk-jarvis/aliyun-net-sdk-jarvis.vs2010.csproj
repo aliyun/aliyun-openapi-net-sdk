@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{c580c36f-783c-4dcd-bd21-9c4d5556428a}</ProjectGuid>
+    <ProjectGuid>{36657e45-cffe-47cf-98eb-7eb044eed5cf}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -49,6 +49,7 @@
 	<Compile Include="Jarvis\Model\V20180206\ModifyUidWhiteListAutoShareResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\CreateAccessWhiteListGroupRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeCpmcPunishListResponse.cs" />
+	<Compile Include="Jarvis\Model\V20180206\DescribePunishListRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeResetRecordQueryCountResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\ModifyUidWhiteListAutoShareRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeAccessWhitelistEcsListRequest.cs" />
@@ -59,15 +60,22 @@
 	<Compile Include="Jarvis\Model\V20180206\CreateCpmcPunishFeedBackResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DeleteAccessWhiteListGroupRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeResetRecordQueryCountRequest.cs" />
+	<Compile Include="Jarvis\Model\V20180206\DescribeDdosDefenseInfoRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\CreateUidWhiteListGroupRequest.cs" />
+	<Compile Include="Jarvis\Model\V20180206\DescribeDdosDefenseInfoResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\ModifyAccessWhiteListAutoShareResponse.cs" />
+	<Compile Include="Jarvis\Model\V20180206\DescribePhoneInfoResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeAccessWhiteListGroupRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\CreateCpmcPunishFeedBackRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DeleteAccessWhiteListGroupResponse.cs" />
+	<Compile Include="Jarvis\Model\V20180206\DescribePhoneInfoRequest.cs" />
+	<Compile Include="Jarvis\Model\V20180206\DescribePunishListResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeUidGcLevelResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeAccessWhitelistEcsListResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeResetRecordListResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeAccessWhiteListGroupResponse.cs" />
+	<Compile Include="Jarvis\Model\V20180206\DescribeRiskListDetailRequest.cs" />
+	<Compile Include="Jarvis\Model\V20180206\DescribeRiskListDetailResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\CreateUidWhiteListGroupResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeUidWhiteListGroupRequest.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\ModifyAccessWhiteListAutoShareResponseUnmarshaller.cs" />
@@ -76,12 +84,16 @@
 	<Compile Include="Jarvis\Transform\V20180206\DescribeUidWhiteListGroupResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DescribeAccessWhitelistEcsListResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DescribeCpmcPunishListResponseUnmarshaller.cs" />
+	<Compile Include="Jarvis\Transform\V20180206\DescribePunishListResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DeleteUidWhiteListGroupResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\CreateCpmcPunishFeedBackResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DescribeUidGcLevelResponseUnmarshaller.cs" />
+	<Compile Include="Jarvis\Transform\V20180206\DescribePhoneInfoResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DescribeResetRecordQueryCountResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DeleteAccessWhiteListGroupResponseUnmarshaller.cs" />
+	<Compile Include="Jarvis\Transform\V20180206\DescribeDdosDefenseInfoResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DescribeAccessWhiteListGroupResponseUnmarshaller.cs" />
+	<Compile Include="Jarvis\Transform\V20180206\DescribeRiskListDetailResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DescribeResetRecordListResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DescribeRiskTrendResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\ModifyUidWhiteListAutoShareResponseUnmarshaller.cs" />
