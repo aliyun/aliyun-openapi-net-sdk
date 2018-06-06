@@ -37,17 +37,17 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 
 		private string sourceIp;
 
-		private string pageSize;
+		private int? pageSize;
 
 		private string queryProduct;
 
-		private string currentPage;
+		private int? currentPage;
 
 		private string riskDescribe;
 
 		private string lang;
 
-		private string srcUid;
+		private long? srcUid;
 
 		private string sourceCode;
 
@@ -81,7 +81,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			}
 		}
 
-		public string PageSize
+		public int? PageSize
 		{
 			get
 			{
@@ -90,7 +90,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			set	
 			{
 				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "pageSize", value);
+				DictionaryUtil.Add(QueryParameters, "pageSize", value.ToString());
 			}
 		}
 
@@ -107,7 +107,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			}
 		}
 
-		public string CurrentPage
+		public int? CurrentPage
 		{
 			get
 			{
@@ -116,7 +116,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			set	
 			{
 				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "currentPage", value);
+				DictionaryUtil.Add(QueryParameters, "currentPage", value.ToString());
 			}
 		}
 
@@ -146,7 +146,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			}
 		}
 
-		public string SrcUid
+		public long? SrcUid
 		{
 			get
 			{
@@ -155,7 +155,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			set	
 			{
 				srcUid = value;
-				DictionaryUtil.Add(QueryParameters, "srcUid", value);
+				DictionaryUtil.Add(QueryParameters, "srcUid", value.ToString());
 			}
 		}
 

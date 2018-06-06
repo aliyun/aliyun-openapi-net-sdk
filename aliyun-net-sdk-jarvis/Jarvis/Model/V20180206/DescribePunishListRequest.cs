@@ -45,7 +45,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 
 		private string lang;
 
-		private string srcUid;
+		private long? srcUid;
 
 		private string sourceCode;
 
@@ -127,7 +127,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			}
 		}
 
-		public string SrcUid
+		public long? SrcUid
 		{
 			get
 			{
@@ -136,7 +136,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			set	
 			{
 				srcUid = value;
-				DictionaryUtil.Add(QueryParameters, "srcUid", value);
+				DictionaryUtil.Add(QueryParameters, "srcUid", value.ToString());
 			}
 		}
 
