@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2b98c8e2-7cd3-424d-af9a-2ad1610a08c3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-scdn</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainHitRateDataResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnServiceRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\UpdateScdnDomainResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainHttpCodeDataResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\BatchDeleteScdnDomainConfigsResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\UpdateScdnDomainRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DeleteScdnDomainResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainHitRateDataRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainTrafficDataResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\CheckScdnServiceRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnRefreshTasksRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\SetScdnDomainCertificateRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\StopScdnDomainRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\RefreshScdnObjectCachesRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainOriginBpsDataRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnUserQuotaRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnRefreshQuotaResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnCertificateListResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainLogRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\AddScdnDomainRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnUserQuotaResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainQpsDataRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainConfigsResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainCertificateInfoRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainConfigsRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\AddScdnDomainResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainQpsDataResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnRefreshTasksResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnServiceResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnCertificateDetailResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnRefreshQuotaRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnUserDomainsRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnUserDomainsResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainOriginTrafficDataResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\StartScdnDomainResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnCertificateListRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainDetailRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainHttpCodeDataRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\CheckScdnServiceResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainDetailResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainBpsDataRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\SetScdnDomainCertificateResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainCnameRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnCertificateDetailRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DeleteScdnDomainRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainCnameResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\RefreshScdnObjectCachesResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainLogResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\PreloadScdnObjectCachesResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\PreloadScdnObjectCachesRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\BatchDeleteScdnDomainConfigsRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\StopScdnDomainResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainOriginBpsDataResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainBpsDataResponse.cs" />
+	<Compile Include="Scdn\Model\V20171115\StartScdnDomainRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainOriginTrafficDataRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainTrafficDataRequest.cs" />
+	<Compile Include="Scdn\Model\V20171115\DescribeScdnDomainCertificateInfoResponse.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnDomainQpsDataResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\StartScdnDomainResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnDomainTrafficDataResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\StopScdnDomainResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DeleteScdnDomainResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnDomainConfigsResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\PreloadScdnObjectCachesResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\BatchDeleteScdnDomainConfigsResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnDomainHitRateDataResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnDomainDetailResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnDomainOriginTrafficDataResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnUserQuotaResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\SetScdnDomainCertificateResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnDomainLogResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnServiceResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnRefreshQuotaResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnDomainBpsDataResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnCertificateListResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\RefreshScdnObjectCachesResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\UpdateScdnDomainResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnDomainHttpCodeDataResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnDomainCertificateInfoResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnCertificateDetailResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnRefreshTasksResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\CheckScdnServiceResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\AddScdnDomainResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnDomainOriginBpsDataResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnUserDomainsResponseUnmarshaller.cs" />
+	<Compile Include="Scdn\Transform\V20171115\DescribeScdnDomainCnameResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
