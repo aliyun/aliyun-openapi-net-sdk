@@ -131,6 +131,12 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string publishDomain;
 
+			private string publishType;
+
+			private string transcoded;
+
+			private string transcodeId;
+
 			public string DomainName
 			{
 				get
@@ -248,6 +254,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					publishDomain = value;
+				}
+			}
+
+			public string PublishType
+			{
+				get
+				{
+					return publishType;
+				}
+				set	
+				{
+					publishType = value;
+				}
+			}
+
+			public string Transcoded
+			{
+				get
+				{
+					return transcoded;
+				}
+				set	
+				{
+					transcoded = value;
+				}
+			}
+
+			public string TranscodeId
+			{
+				get
+				{
+					return transcodeId;
+				}
+				set	
+				{
+					transcodeId = value;
 				}
 			}
 		}

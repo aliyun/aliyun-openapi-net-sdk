@@ -53,6 +53,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string accessKeyId;
 
+		private string order;
+
 		public string AppName
 		{
 			get
@@ -180,6 +182,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string Order
+		{
+			get
+			{
+				return order;
+			}
+			set	
+			{
+				order = value;
+				DictionaryUtil.Add(QueryParameters, "Order", value);
 			}
 		}
 

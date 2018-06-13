@@ -45,9 +45,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string action;
 
+		private string endTime;
+
+		private string startTime;
+
 		private long? ownerId;
 
 		private int? pageNum;
+
+		private string queryType;
 
 		private string accessKeyId;
 
@@ -129,6 +135,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -152,6 +184,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string QueryType
+		{
+			get
+			{
+				return queryType;
+			}
+			set	
+			{
+				queryType = value;
+				DictionaryUtil.Add(QueryParameters, "QueryType", value);
 			}
 		}
 

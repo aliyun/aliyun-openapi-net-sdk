@@ -142,6 +142,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeCasterLayouts_VideoLayer
 			{
 
+				private string fillMode;
+
 				private float? heightNormalized;
 
 				private float? widthNormalized;
@@ -151,6 +153,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				private int? fixedDelayDuration;
 
 				private List<string> positionNormalizeds;
+
+				public string FillMode
+				{
+					get
+					{
+						return fillMode;
+					}
+					set	
+					{
+						fillMode = value;
+					}
+				}
 
 				public float? HeightNormalized
 				{

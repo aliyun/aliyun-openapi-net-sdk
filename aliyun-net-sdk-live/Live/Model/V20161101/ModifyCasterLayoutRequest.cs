@@ -97,6 +97,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				videoLayers = value;
 				for (int i = 0; i < videoLayers.Count; i++)
 				{
+					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".FillMode", videoLayers[i].FillMode);
 					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".HeightNormalized", videoLayers[i].HeightNormalized);
 					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".WidthNormalized", videoLayers[i].WidthNormalized);
 					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".PositionRefer", videoLayers[i].PositionRefer);
@@ -227,6 +228,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class VideoLayer
 		{
 
+			private string fillMode;
+
 			private float? heightNormalized;
 
 			private float? widthNormalized;
@@ -236,6 +239,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			private List<float?> positionNormalizeds;
 
 			private int? fixedDelayDuration;
+
+			public string FillMode
+			{
+				get
+				{
+					return fillMode;
+				}
+				set	
+				{
+					fillMode = value;
+				}
+			}
 
 			public float? HeightNormalized
 			{

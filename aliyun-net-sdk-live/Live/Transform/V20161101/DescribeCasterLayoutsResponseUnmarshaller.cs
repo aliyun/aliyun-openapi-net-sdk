@@ -53,6 +53,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				List<DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout.DescribeCasterLayouts_VideoLayer> layout_videoLayers = new List<DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout.DescribeCasterLayouts_VideoLayer>();
 				for (int j = 0; j < context.Length("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers.Length"); j++) {
 					DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout.DescribeCasterLayouts_VideoLayer videoLayer = new DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout.DescribeCasterLayouts_VideoLayer();
+					videoLayer.FillMode = context.StringValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].FillMode");
 					videoLayer.HeightNormalized = context.FloatValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].HeightNormalized");
 					videoLayer.WidthNormalized = context.FloatValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].WidthNormalized");
 					videoLayer.PositionRefer = context.StringValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].PositionRefer");
