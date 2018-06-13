@@ -33,72 +33,21 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         {
         }
 
-		private string instanceId10;
-
 		private long? resourceOwnerId;
 
-		private string instanceId12;
-
-		private string instanceId11;
-
-		private string scalingGroupId;
-
-		private string accessKeyId;
-
-		private string action;
-
-		private string instanceId20;
-
-		private string instanceId1;
-
-		private string instanceId3;
+		private List<string> instanceIds;
 
 		private string resourceOwnerAccount;
 
-		private string instanceId2;
-
-		private string instanceId5;
-
-		private string instanceId4;
+		private string scalingGroupId;
 
 		private string ownerAccount;
 
-		private string instanceId7;
-
-		private string instanceId6;
-
-		private string instanceId9;
-
-		private string instanceId8;
+		private string action;
 
 		private long? ownerId;
 
-		private string instanceId18;
-
-		private string instanceId17;
-
-		private string instanceId19;
-
-		private string instanceId14;
-
-		private string instanceId13;
-
-		private string instanceId16;
-
-		private string instanceId15;
-
-		public string InstanceId10
-		{
-			get
-			{
-				return instanceId10;
-			}
-			set	
-			{
-				instanceId10 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.10", value);
-			}
-		}
+		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -113,107 +62,20 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string InstanceId12
+		public List<string> InstanceIds
 		{
 			get
 			{
-				return instanceId12;
+				return instanceIds;
 			}
-			set	
-			{
-				instanceId12 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.12", value);
-			}
-		}
 
-		public string InstanceId11
-		{
-			get
+			set
 			{
-				return instanceId11;
-			}
-			set	
-			{
-				instanceId11 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.11", value);
-			}
-		}
-
-		public string ScalingGroupId
-		{
-			get
-			{
-				return scalingGroupId;
-			}
-			set	
-			{
-				scalingGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string InstanceId20
-		{
-			get
-			{
-				return instanceId20;
-			}
-			set	
-			{
-				instanceId20 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.20", value);
-			}
-		}
-
-		public string InstanceId1
-		{
-			get
-			{
-				return instanceId1;
-			}
-			set	
-			{
-				instanceId1 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.1", value);
-			}
-		}
-
-		public string InstanceId3
-		{
-			get
-			{
-				return instanceId3;
-			}
-			set	
-			{
-				instanceId3 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.3", value);
+				instanceIds = value;
+				for (int i = 0; i < instanceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
+				}
 			}
 		}
 
@@ -230,42 +92,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string InstanceId2
+		public string ScalingGroupId
 		{
 			get
 			{
-				return instanceId2;
+				return scalingGroupId;
 			}
 			set	
 			{
-				instanceId2 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.2", value);
-			}
-		}
-
-		public string InstanceId5
-		{
-			get
-			{
-				return instanceId5;
-			}
-			set	
-			{
-				instanceId5 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.5", value);
-			}
-		}
-
-		public string InstanceId4
-		{
-			get
-			{
-				return instanceId4;
-			}
-			set	
-			{
-				instanceId4 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.4", value);
+				scalingGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
 			}
 		}
 
@@ -282,55 +118,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string InstanceId7
+		public string Action
 		{
 			get
 			{
-				return instanceId7;
+				return action;
 			}
 			set	
 			{
-				instanceId7 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.7", value);
-			}
-		}
-
-		public string InstanceId6
-		{
-			get
-			{
-				return instanceId6;
-			}
-			set	
-			{
-				instanceId6 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.6", value);
-			}
-		}
-
-		public string InstanceId9
-		{
-			get
-			{
-				return instanceId9;
-			}
-			set	
-			{
-				instanceId9 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.9", value);
-			}
-		}
-
-		public string InstanceId8
-		{
-			get
-			{
-				return instanceId8;
-			}
-			set	
-			{
-				instanceId8 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.8", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -347,94 +144,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string InstanceId18
+		public string AccessKeyId
 		{
 			get
 			{
-				return instanceId18;
+				return accessKeyId;
 			}
 			set	
 			{
-				instanceId18 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.18", value);
-			}
-		}
-
-		public string InstanceId17
-		{
-			get
-			{
-				return instanceId17;
-			}
-			set	
-			{
-				instanceId17 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.17", value);
-			}
-		}
-
-		public string InstanceId19
-		{
-			get
-			{
-				return instanceId19;
-			}
-			set	
-			{
-				instanceId19 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.19", value);
-			}
-		}
-
-		public string InstanceId14
-		{
-			get
-			{
-				return instanceId14;
-			}
-			set	
-			{
-				instanceId14 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.14", value);
-			}
-		}
-
-		public string InstanceId13
-		{
-			get
-			{
-				return instanceId13;
-			}
-			set	
-			{
-				instanceId13 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.13", value);
-			}
-		}
-
-		public string InstanceId16
-		{
-			get
-			{
-				return instanceId16;
-			}
-			set	
-			{
-				instanceId16 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.16", value);
-			}
-		}
-
-		public string InstanceId15
-		{
-			get
-			{
-				return instanceId15;
-			}
-			set	
-			{
-				instanceId15 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.15", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -135,6 +135,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string multiAZPolicy;
 
+			private string healthCheckType;
+
 			private List<string> vSwitchIds;
 
 			private List<string> removalPolicies;
@@ -368,6 +370,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					multiAZPolicy = value;
+				}
+			}
+
+			public string HealthCheckType
+			{
+				get
+				{
+					return healthCheckType;
+				}
+				set	
+				{
+					healthCheckType = value;
 				}
 			}
 

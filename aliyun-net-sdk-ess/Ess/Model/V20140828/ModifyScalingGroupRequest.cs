@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private long? resourceOwnerId;
 
+		private string healthCheckType;
+
 		private string resourceOwnerAccount;
 
 		private string scalingGroupName;
@@ -71,6 +73,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string HealthCheckType
+		{
+			get
+			{
+				return healthCheckType;
+			}
+			set	
+			{
+				healthCheckType = value;
+				DictionaryUtil.Add(QueryParameters, "HealthCheckType", value);
 			}
 		}
 

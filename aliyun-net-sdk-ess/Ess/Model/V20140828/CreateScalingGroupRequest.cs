@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string loadBalancerIds;
 
+		private string healthCheckType;
+
 		private string resourceOwnerAccount;
 
 		private string scalingGroupName;
@@ -60,6 +62,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string action;
 
 		private int? maxSize;
+
+		private List<LifecycleHook> lifecycleHooks;
 
 		private int? defaultCooldown;
 
@@ -103,6 +107,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				loadBalancerIds = value;
 				DictionaryUtil.Add(QueryParameters, "LoadBalancerIds", value);
+			}
+		}
+
+		public string HealthCheckType
+		{
+			get
+			{
+				return healthCheckType;
+			}
+			set	
+			{
+				healthCheckType = value;
+				DictionaryUtil.Add(QueryParameters, "HealthCheckType", value);
 			}
 		}
 
@@ -253,6 +270,28 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public List<LifecycleHook> LifecycleHooks
+		{
+			get
+			{
+				return lifecycleHooks;
+			}
+
+			set
+			{
+				lifecycleHooks = value;
+				for (int i = 0; i < lifecycleHooks.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".LifecycleHookName", lifecycleHooks[i].LifecycleHookName);
+					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".LifecycleTransition", lifecycleHooks[i].LifecycleTransition);
+					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".DefaultResult", lifecycleHooks[i].DefaultResult);
+					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".HeartbeatTimeout", lifecycleHooks[i].HeartbeatTimeout);
+					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".NotificationMetadata", lifecycleHooks[i].NotificationMetadata);
+					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".NotificationArn", lifecycleHooks[i].NotificationArn);
+				}
+			}
+		}
+
 		public int? DefaultCooldown
 		{
 			get
@@ -289,6 +328,94 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				removalPolicy2 = value;
 				DictionaryUtil.Add(QueryParameters, "RemovalPolicy.2", value);
+			}
+		}
+
+		public class LifecycleHook
+		{
+
+			private string lifecycleHookName;
+
+			private string lifecycleTransition;
+
+			private string defaultResult;
+
+			private int? heartbeatTimeout;
+
+			private string notificationMetadata;
+
+			private string notificationArn;
+
+			public string LifecycleHookName
+			{
+				get
+				{
+					return lifecycleHookName;
+				}
+				set	
+				{
+					lifecycleHookName = value;
+				}
+			}
+
+			public string LifecycleTransition
+			{
+				get
+				{
+					return lifecycleTransition;
+				}
+				set	
+				{
+					lifecycleTransition = value;
+				}
+			}
+
+			public string DefaultResult
+			{
+				get
+				{
+					return defaultResult;
+				}
+				set	
+				{
+					defaultResult = value;
+				}
+			}
+
+			public int? HeartbeatTimeout
+			{
+				get
+				{
+					return heartbeatTimeout;
+				}
+				set	
+				{
+					heartbeatTimeout = value;
+				}
+			}
+
+			public string NotificationMetadata
+			{
+				get
+				{
+					return notificationMetadata;
+				}
+				set	
+				{
+					notificationMetadata = value;
+				}
+			}
+
+			public string NotificationArn
+			{
+				get
+				{
+					return notificationArn;
+				}
+				set	
+				{
+					notificationArn = value;
+				}
 			}
 		}
 
