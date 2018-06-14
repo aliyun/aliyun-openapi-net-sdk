@@ -125,6 +125,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string sourceStorageType;
 
+			private int? remainTime;
+
 			private List<DescribeSnapshots_Tag> tags;
 
 			public string SnapshotId
@@ -292,6 +294,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					sourceStorageType = value;
+				}
+			}
+
+			public int? RemainTime
+			{
+				get
+				{
+					return remainTime;
+				}
+				set	
+				{
+					remainTime = value;
 				}
 			}
 

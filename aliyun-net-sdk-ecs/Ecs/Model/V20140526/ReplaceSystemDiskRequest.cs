@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceId;
 
+		private bool? passwordInherit;
+
 		private int? systemDiskSize;
 
 		private string action;
@@ -205,6 +207,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? PasswordInherit
+		{
+			get
+			{
+				return passwordInherit;
+			}
+			set	
+			{
+				passwordInherit = value;
+				DictionaryUtil.Add(QueryParameters, "PasswordInherit", value.ToString());
 			}
 		}
 

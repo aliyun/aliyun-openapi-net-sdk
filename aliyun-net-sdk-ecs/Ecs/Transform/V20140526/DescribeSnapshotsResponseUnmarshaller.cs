@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				snapshot.Status = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Status");
 				snapshot.Usage = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Usage");
 				snapshot.SourceStorageType = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceStorageType");
+				snapshot.RemainTime = context.IntegerValue("DescribeSnapshots.Snapshots["+ i +"].RemainTime");
 
 				List<DescribeSnapshotsResponse.DescribeSnapshots_Snapshot.DescribeSnapshots_Tag> snapshot_tags = new List<DescribeSnapshotsResponse.DescribeSnapshots_Snapshot.DescribeSnapshots_Tag>();
 				for (int j = 0; j < context.Length("DescribeSnapshots.Snapshots["+ i +"].Tags.Length"); j++) {

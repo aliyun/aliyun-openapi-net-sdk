@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private float? spotPriceLimit;
 
+		private string resourceGroupId;
+
 		private string hostName;
 
 		private string password;
@@ -88,6 +90,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string systemDiskCategory;
 
 		private string userData;
+
+		private bool? passwordInherit;
 
 		private string regionId;
 
@@ -192,6 +196,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				spotPriceLimit = value;
 				DictionaryUtil.Add(QueryParameters, "SpotPriceLimit", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -483,6 +500,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				userData = value;
 				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public bool? PasswordInherit
+		{
+			get
+			{
+				return passwordInherit;
+			}
+			set	
+			{
+				passwordInherit = value;
+				DictionaryUtil.Add(QueryParameters, "PasswordInherit", value.ToString());
 			}
 		}
 
