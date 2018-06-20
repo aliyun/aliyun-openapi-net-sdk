@@ -107,6 +107,8 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 
 			private List<DescribeRiskListDetail_RdsWhitelistRiskItem> rdsWhitelistRisk;
 
+			private List<string> instanceList;
+
 			public int? RiskId
 			{
 				get
@@ -248,6 +250,18 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 				set	
 				{
 					rdsWhitelistRisk = value;
+				}
+			}
+
+			public List<string> InstanceList
+			{
+				get
+				{
+					return instanceList;
+				}
+				set	
+				{
+					instanceList = value;
 				}
 			}
 

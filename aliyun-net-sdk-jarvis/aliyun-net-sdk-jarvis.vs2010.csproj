@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{061bb74b-ae9b-48b3-9121-27d7b3026696}</ProjectGuid>
+    <ProjectGuid>{50728c61-90f0-4a9b-a0b6-2acd99e1c5ac}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -53,6 +53,7 @@
 	<Compile Include="Jarvis\Model\V20180206\DescribeResetRecordQueryCountResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\ModifyUidWhiteListAutoShareRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeAccessWhitelistEcsListRequest.cs" />
+	<Compile Include="Jarvis\Model\V20180206\DescribeAccessWhiteListSlbListRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeRiskTrendRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeRiskTrendResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\CreateAccessWhiteListGroupResponse.cs" />
@@ -62,6 +63,8 @@
 	<Compile Include="Jarvis\Model\V20180206\DescribeResetRecordQueryCountRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeDdosDefenseInfoRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\CreateUidWhiteListGroupRequest.cs" />
+	<Compile Include="Jarvis\Model\V20180206\DescribeAccessWhiteListEipListRequest.cs" />
+	<Compile Include="Jarvis\Model\V20180206\DescribeAccessWhiteListSlbListResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeDdosDefenseInfoResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\ModifyAccessWhiteListAutoShareResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribePhoneInfoResponse.cs" />
@@ -71,6 +74,7 @@
 	<Compile Include="Jarvis\Model\V20180206\DescribePhoneInfoRequest.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribePunishListResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeUidGcLevelResponse.cs" />
+	<Compile Include="Jarvis\Model\V20180206\DescribeAccessWhiteListEipListResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeAccessWhitelistEcsListResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeResetRecordListResponse.cs" />
 	<Compile Include="Jarvis\Model\V20180206\DescribeAccessWhiteListGroupResponse.cs" />
@@ -91,7 +95,9 @@
 	<Compile Include="Jarvis\Transform\V20180206\DescribePhoneInfoResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DescribeResetRecordQueryCountResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DeleteAccessWhiteListGroupResponseUnmarshaller.cs" />
+	<Compile Include="Jarvis\Transform\V20180206\DescribeAccessWhiteListSlbListResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DescribeDdosDefenseInfoResponseUnmarshaller.cs" />
+	<Compile Include="Jarvis\Transform\V20180206\DescribeAccessWhiteListEipListResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DescribeAccessWhiteListGroupResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DescribeRiskListDetailResponseUnmarshaller.cs" />
 	<Compile Include="Jarvis\Transform\V20180206\DescribeResetRecordListResponseUnmarshaller.cs" />

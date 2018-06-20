@@ -53,6 +53,12 @@ namespace Aliyun.Acs.jarvis.Transform.V20180206
 				data.Status = context.StringValue("DescribeRiskListDetail.DataList["+ i +"].Status");
 				data.IgnoreTime = context.StringValue("DescribeRiskListDetail.DataList["+ i +"].IgnoreTime");
 
+				List<string> data_instanceList = new List<string>();
+				for (int j = 0; j < context.Length("DescribeRiskListDetail.DataList["+ i +"].InstanceList.Length"); j++) {
+					data_instanceList.Add(context.StringValue("DescribeRiskListDetail.DataList["+ i +"].InstanceList["+ j +"]"));
+				}
+				data.InstanceList = data_instanceList;
+
 				List<DescribeRiskListDetailResponse.DescribeRiskListDetail_Data.DescribeRiskListDetail_EcsSecGroupRiskItem> data_ecsSecGroupRisk = new List<DescribeRiskListDetailResponse.DescribeRiskListDetail_Data.DescribeRiskListDetail_EcsSecGroupRiskItem>();
 				for (int j = 0; j < context.Length("DescribeRiskListDetail.DataList["+ i +"].EcsSecGroupRisk.Length"); j++) {
 					DescribeRiskListDetailResponse.DescribeRiskListDetail_Data.DescribeRiskListDetail_EcsSecGroupRiskItem ecsSecGroupRiskItem = new DescribeRiskListDetailResponse.DescribeRiskListDetail_Data.DescribeRiskListDetail_EcsSecGroupRiskItem();
