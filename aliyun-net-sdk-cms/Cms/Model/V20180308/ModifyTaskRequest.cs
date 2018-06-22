@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string ispCity;
 
+		private string alertIds;
+
 		private string options;
 
 		private string taskName;
@@ -70,6 +72,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				ispCity = value;
 				DictionaryUtil.Add(QueryParameters, "IspCity", value);
+			}
+		}
+
+		public string AlertIds
+		{
+			get
+			{
+				return alertIds;
+			}
+			set	
+			{
+				alertIds = value;
+				DictionaryUtil.Add(QueryParameters, "AlertIds", value);
 			}
 		}
 

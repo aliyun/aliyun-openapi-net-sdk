@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 				resource.Type = context.StringValue("ListMyGroups.Resources["+ i +"].Type");
 				resource.GmtModified = context.LongValue("ListMyGroups.Resources["+ i +"].GmtModified");
 				resource.GmtCreate = context.LongValue("ListMyGroups.Resources["+ i +"].GmtCreate");
+				resource.BindUrl = context.StringValue("ListMyGroups.Resources["+ i +"].BindUrl");
 
 				List<ListMyGroupsResponse.ListMyGroups_Resource.ListMyGroups_ContactGroup> resource_contactGroups = new List<ListMyGroupsResponse.ListMyGroups_Resource.ListMyGroups_ContactGroup>();
 				for (int j = 0; j < context.Length("ListMyGroups.Resources["+ i +"].ContactGroups.Length"); j++) {

@@ -33,11 +33,13 @@ namespace Aliyun.Acs.Cms.Model.V20180308
         {
         }
 
-		private string taskType;
-
 		private string address;
 
+		private string taskType;
+
 		private string ispCity;
+
+		private string alertIds;
 
 		private string options;
 
@@ -46,19 +48,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		private string interval;
 
 		private string alertRule;
-
-		public string TaskType
-		{
-			get
-			{
-				return taskType;
-			}
-			set	
-			{
-				taskType = value;
-				DictionaryUtil.Add(QueryParameters, "TaskType", value);
-			}
-		}
 
 		public string Address
 		{
@@ -73,6 +62,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
+		public string TaskType
+		{
+			get
+			{
+				return taskType;
+			}
+			set	
+			{
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
+			}
+		}
+
 		public string IspCity
 		{
 			get
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				ispCity = value;
 				DictionaryUtil.Add(QueryParameters, "IspCity", value);
+			}
+		}
+
+		public string AlertIds
+		{
+			get
+			{
+				return alertIds;
+			}
+			set	
+			{
+				alertIds = value;
+				DictionaryUtil.Add(QueryParameters, "AlertIds", value);
 			}
 		}
 

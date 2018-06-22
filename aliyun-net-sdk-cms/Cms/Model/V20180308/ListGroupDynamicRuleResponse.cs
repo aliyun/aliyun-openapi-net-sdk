@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
-	public class ListMyGroupsResponse : AcsResponse
+	public class ListGroupDynamicRuleResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -38,7 +38,7 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private int? total;
 
-		private List<ListMyGroups_Resource> resources;
+		private List<ListGroupDynamicRule_ResourceItem> resource;
 
 		public string RequestId
 		{
@@ -124,38 +124,28 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public List<ListMyGroups_Resource> Resources
+		public List<ListGroupDynamicRule_ResourceItem> Resource
 		{
 			get
 			{
-				return resources;
+				return resource;
 			}
 			set	
 			{
-				resources = value;
+				resource = value;
 			}
 		}
 
-		public class ListMyGroups_Resource
+		public class ListGroupDynamicRule_ResourceItem
 		{
 
 			private long? groupId;
 
-			private string groupName;
+			private string category;
 
-			private string serviceId;
+			private string filterRelation;
 
-			private string bindUrls;
-
-			private string type;
-
-			private long? gmtModified;
-
-			private long? gmtCreate;
-
-			private string bindUrl;
-
-			private List<ListMyGroups_ContactGroup> contactGroups;
+			private List<ListGroupDynamicRule_Filter> filters;
 
 			public long? GroupId
 			{
@@ -169,106 +159,62 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				}
 			}
 
-			public string GroupName
+			public string Category
 			{
 				get
 				{
-					return groupName;
+					return category;
 				}
 				set	
 				{
-					groupName = value;
+					category = value;
 				}
 			}
 
-			public string ServiceId
+			public string FilterRelation
 			{
 				get
 				{
-					return serviceId;
+					return filterRelation;
 				}
 				set	
 				{
-					serviceId = value;
+					filterRelation = value;
 				}
 			}
 
-			public string BindUrls
+			public List<ListGroupDynamicRule_Filter> Filters
 			{
 				get
 				{
-					return bindUrls;
+					return filters;
 				}
 				set	
 				{
-					bindUrls = value;
+					filters = value;
 				}
 			}
 
-			public string Type
+			public class ListGroupDynamicRule_Filter
 			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
 
-			public long? GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
-
-			public long? GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
-
-			public string BindUrl
-			{
-				get
-				{
-					return bindUrl;
-				}
-				set	
-				{
-					bindUrl = value;
-				}
-			}
-
-			public List<ListMyGroups_ContactGroup> ContactGroups
-			{
-				get
-				{
-					return contactGroups;
-				}
-				set	
-				{
-					contactGroups = value;
-				}
-			}
-
-			public class ListMyGroups_ContactGroup
-			{
+				private string function;
 
 				private string name;
+
+				private string _value;
+
+				public string Function
+				{
+					get
+					{
+						return function;
+					}
+					set	
+					{
+						function = value;
+					}
+				}
 
 				public string Name
 				{
@@ -279,6 +225,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

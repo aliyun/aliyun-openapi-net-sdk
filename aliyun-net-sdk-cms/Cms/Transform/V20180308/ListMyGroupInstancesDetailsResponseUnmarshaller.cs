@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 				resource.Desc = context.StringValue("ListMyGroupInstancesDetails.Resources["+ i +"].Desc");
 				resource.NetworkType = context.StringValue("ListMyGroupInstancesDetails.Resources["+ i +"].NetworkType");
 				resource.Category = context.StringValue("ListMyGroupInstancesDetails.Resources["+ i +"].Category");
+				resource.Dimension = context.StringValue("ListMyGroupInstancesDetails.Resources["+ i +"].Dimension");
 
 				ListMyGroupInstancesDetailsResponse.ListMyGroupInstancesDetails_Resource.ListMyGroupInstancesDetails_Region region = new ListMyGroupInstancesDetailsResponse.ListMyGroupInstancesDetails_Resource.ListMyGroupInstancesDetails_Region();
 				region.RegionId = context.StringValue("ListMyGroupInstancesDetails.Resources["+ i +"].Region.RegionId");

@@ -26,44 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
-    public class DeleteMyGroupInstancesRequest : RpcAcsRequest<DeleteMyGroupInstancesResponse>
+    public class DeleteGroupDynamicRuleRequest : RpcAcsRequest<DeleteGroupDynamicRuleResponse>
     {
-        public DeleteMyGroupInstancesRequest()
-            : base("Cms", "2018-03-08", "DeleteMyGroupInstances", "cms", "openAPI")
+        public DeleteGroupDynamicRuleRequest()
+            : base("Cms", "2018-03-08", "DeleteGroupDynamicRule", "cms", "openAPI")
         {
         }
 
-		private string instanceIds;
-
-		private string instanceIdList;
-
 		private long? groupId;
 
-		public string InstanceIds
-		{
-			get
-			{
-				return instanceIds;
-			}
-			set	
-			{
-				instanceIds = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
-			}
-		}
-
-		public string InstanceIdList
-		{
-			get
-			{
-				return instanceIdList;
-			}
-			set	
-			{
-				instanceIdList = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceIdList", value);
-			}
-		}
+		private string category;
 
 		public long? GroupId
 		{
@@ -78,9 +50,22 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-        public override DeleteMyGroupInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
+			}
+		}
+
+        public override DeleteGroupDynamicRuleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DeleteMyGroupInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteGroupDynamicRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

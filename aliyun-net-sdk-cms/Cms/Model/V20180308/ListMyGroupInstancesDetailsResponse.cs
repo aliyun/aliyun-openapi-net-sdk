@@ -151,6 +151,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 			private string category;
 
+			private string dimension;
+
 			private List<ListMyGroupInstancesDetails_Tag> tags;
 
 			private ListMyGroupInstancesDetails_Region region;
@@ -226,6 +228,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					category = value;
+				}
+			}
+
+			public string Dimension
+			{
+				get
+				{
+					return dimension;
+				}
+				set	
+				{
+					dimension = value;
 				}
 			}
 

@@ -26,44 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
-    public class DeleteMyGroupInstancesRequest : RpcAcsRequest<DeleteMyGroupInstancesResponse>
+    public class ListGroupDynamicRuleRequest : RpcAcsRequest<ListGroupDynamicRuleResponse>
     {
-        public DeleteMyGroupInstancesRequest()
-            : base("Cms", "2018-03-08", "DeleteMyGroupInstances", "cms", "openAPI")
+        public ListGroupDynamicRuleRequest()
+            : base("Cms", "2018-03-08", "ListGroupDynamicRule", "cms", "openAPI")
         {
         }
 
-		private string instanceIds;
-
-		private string instanceIdList;
-
 		private long? groupId;
-
-		public string InstanceIds
-		{
-			get
-			{
-				return instanceIds;
-			}
-			set	
-			{
-				instanceIds = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
-			}
-		}
-
-		public string InstanceIdList
-		{
-			get
-			{
-				return instanceIdList;
-			}
-			set	
-			{
-				instanceIdList = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceIdList", value);
-			}
-		}
 
 		public long? GroupId
 		{
@@ -78,9 +48,9 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-        public override DeleteMyGroupInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListGroupDynamicRuleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DeleteMyGroupInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListGroupDynamicRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
