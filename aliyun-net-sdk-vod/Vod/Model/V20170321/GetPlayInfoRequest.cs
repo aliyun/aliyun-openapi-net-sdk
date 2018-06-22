@@ -49,6 +49,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? ownerId;
 
+		private string resultType;
+
 		private string rand;
 
 		private string reAuthInfo;
@@ -164,6 +166,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ResultType
+		{
+			get
+			{
+				return resultType;
+			}
+			set	
+			{
+				resultType = value;
+				DictionaryUtil.Add(QueryParameters, "ResultType", value);
 			}
 		}
 

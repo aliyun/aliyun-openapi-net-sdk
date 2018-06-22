@@ -40,6 +40,15 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			videoBase.VideoId = context.StringValue("GetPlayInfo.VideoBase.VideoId");
 			videoBase.MediaType = context.StringValue("GetPlayInfo.VideoBase.MediaType");
 			videoBase.CreationTime = context.StringValue("GetPlayInfo.VideoBase.CreationTime");
+
+			List<GetPlayInfoResponse.GetPlayInfo_VideoBase.GetPlayInfo_Thumbnail> videoBase_thumbnailList = new List<GetPlayInfoResponse.GetPlayInfo_VideoBase.GetPlayInfo_Thumbnail>();
+			for (int i = 0; i < context.Length("GetPlayInfo.VideoBase.ThumbnailList.Length"); i++) {
+				GetPlayInfoResponse.GetPlayInfo_VideoBase.GetPlayInfo_Thumbnail thumbnail = new GetPlayInfoResponse.GetPlayInfo_VideoBase.GetPlayInfo_Thumbnail();
+				thumbnail.URL = context.StringValue("GetPlayInfo.VideoBase.ThumbnailList["+ i +"].URL");
+
+				videoBase_thumbnailList.Add(thumbnail);
+			}
+			videoBase.ThumbnailList = videoBase_thumbnailList;
 			getPlayInfoResponse.VideoBase = videoBase;
 
 			List<GetPlayInfoResponse.GetPlayInfo_PlayInfo> getPlayInfoResponse_playInfoList = new List<GetPlayInfoResponse.GetPlayInfo_PlayInfo>();
@@ -61,6 +70,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				playInfo.Rand = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Rand");
 				playInfo.JobId = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].JobId");
 				playInfo.PreprocessStatus = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].PreprocessStatus");
+				playInfo.WatermarkId = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].WatermarkId");
 
 				getPlayInfoResponse_playInfoList.Add(playInfo);
 			}
