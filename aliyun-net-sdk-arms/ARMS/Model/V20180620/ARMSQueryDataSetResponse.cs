@@ -16,23 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.ARMS.Model.V20161125;
-using System;
+using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.ARMS.Transform.V20161125
+namespace Aliyun.Acs.ARMS.Model.V20180620
 {
-    public class ARMSQueryDataSetResponseUnmarshaller
-    {
-        public static ARMSQueryDataSetResponse Unmarshall(UnmarshallerContext context)
-        {
-			ARMSQueryDataSetResponse aRMSQueryDataSetResponse = new ARMSQueryDataSetResponse();
+	public class ARMSQueryDataSetResponse : AcsResponse
+	{
 
-			aRMSQueryDataSetResponse.HttpResponse = context.HttpResponse;
-			aRMSQueryDataSetResponse.Data = context.StringValue("ARMSQueryDataSet.Data");
-        
-			return aRMSQueryDataSetResponse;
-        }
-    }
+		private string data;
+
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+	}
 }

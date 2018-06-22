@@ -21,15 +21,15 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.ARMS.Transform;
-using Aliyun.Acs.ARMS.Transform.V20161125;
+using Aliyun.Acs.ARMS.Transform.V20180620;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.ARMS.Model.V20161125
+namespace Aliyun.Acs.ARMS.Model.V20180620
 {
-    public class WhereInDimQueryRequest : RpcAcsRequest<WhereInDimQueryResponse>
+    public class ARMSQueryDataSetRequest : RpcAcsRequest<ARMSQueryDataSetResponse>
     {
-        public WhereInDimQueryRequest()
-            : base("ARMS", "2016-11-25", "WhereInDimQuery")
+        public ARMSQueryDataSetRequest()
+            : base("ARMS", "2018-06-20", "ARMSQueryDataSet")
         {
         }
 
@@ -39,9 +39,11 @@ namespace Aliyun.Acs.ARMS.Model.V20161125
 
 		private bool? reduceTail;
 
+		private string accessKeyId;
+
 		private long? maxTime;
 
-		private string whereInKey;
+		private List<OptionalDims> optionalDimss;
 
 		private List<string> measuress;
 
@@ -49,13 +51,17 @@ namespace Aliyun.Acs.ARMS.Model.V20161125
 
 		private bool? isDrillDown;
 
+		private bool? hungryMode;
+
+		private string securityToken;
+
 		private string orderByKey;
 
 		private int? limit;
 
-		private long? datasetId;
+		private List<RequiredDims> requiredDimss;
 
-		private List<string> whereInValuess;
+		private long? datasetId;
 
 		private List<Dimensions> dimensionss;
 
@@ -98,6 +104,19 @@ namespace Aliyun.Acs.ARMS.Model.V20161125
 			}
 		}
 
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
 		public long? MaxTime
 		{
 			get
@@ -111,16 +130,22 @@ namespace Aliyun.Acs.ARMS.Model.V20161125
 			}
 		}
 
-		public string WhereInKey
+		public List<OptionalDims> OptionalDimss
 		{
 			get
 			{
-				return whereInKey;
+				return optionalDimss;
 			}
-			set	
+
+			set
 			{
-				whereInKey = value;
-				DictionaryUtil.Add(QueryParameters, "WhereInKey", value);
+				optionalDimss = value;
+				for (int i = 0; i < optionalDimss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"OptionalDims." + (i + 1) + ".Key", optionalDimss[i].Key);
+					DictionaryUtil.Add(QueryParameters,"OptionalDims." + (i + 1) + ".Value", optionalDimss[i].Value);
+					DictionaryUtil.Add(QueryParameters,"OptionalDims." + (i + 1) + ".Type", optionalDimss[i].Type);
+				}
 			}
 		}
 
@@ -167,6 +192,32 @@ namespace Aliyun.Acs.ARMS.Model.V20161125
 			}
 		}
 
+		public bool? HungryMode
+		{
+			get
+			{
+				return hungryMode;
+			}
+			set	
+			{
+				hungryMode = value;
+				DictionaryUtil.Add(QueryParameters, "HungryMode", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
 		public string OrderByKey
 		{
 			get
@@ -193,6 +244,25 @@ namespace Aliyun.Acs.ARMS.Model.V20161125
 			}
 		}
 
+		public List<RequiredDims> RequiredDimss
+		{
+			get
+			{
+				return requiredDimss;
+			}
+
+			set
+			{
+				requiredDimss = value;
+				for (int i = 0; i < requiredDimss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"RequiredDims." + (i + 1) + ".Key", requiredDimss[i].Key);
+					DictionaryUtil.Add(QueryParameters,"RequiredDims." + (i + 1) + ".Value", requiredDimss[i].Value);
+					DictionaryUtil.Add(QueryParameters,"RequiredDims." + (i + 1) + ".Type", requiredDimss[i].Type);
+				}
+			}
+		}
+
 		public long? DatasetId
 		{
 			get
@@ -203,23 +273,6 @@ namespace Aliyun.Acs.ARMS.Model.V20161125
 			{
 				datasetId = value;
 				DictionaryUtil.Add(QueryParameters, "DatasetId", value.ToString());
-			}
-		}
-
-		public List<string> WhereInValuess
-		{
-			get
-			{
-				return whereInValuess;
-			}
-
-			set
-			{
-				whereInValuess = value;
-				for (int i = 0; i < whereInValuess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"WhereInValues." + (i + 1) , whereInValuess[i]);
-				}
 			}
 		}
 
@@ -238,6 +291,98 @@ namespace Aliyun.Acs.ARMS.Model.V20161125
 					DictionaryUtil.Add(QueryParameters,"Dimensions." + (i + 1) + ".Key", dimensionss[i].Key);
 					DictionaryUtil.Add(QueryParameters,"Dimensions." + (i + 1) + ".Value", dimensionss[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Dimensions." + (i + 1) + ".Type", dimensionss[i].Type);
+				}
+			}
+		}
+
+		public class OptionalDims
+		{
+
+			private string key;
+
+			private string value_;
+
+			private string type;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+		}
+
+		public class RequiredDims
+		{
+
+			private string key;
+
+			private string value_;
+
+			private string type;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}
@@ -288,9 +433,9 @@ namespace Aliyun.Acs.ARMS.Model.V20161125
 			}
 		}
 
-        public override WhereInDimQueryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ARMSQueryDataSetResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return WhereInDimQueryResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ARMSQueryDataSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

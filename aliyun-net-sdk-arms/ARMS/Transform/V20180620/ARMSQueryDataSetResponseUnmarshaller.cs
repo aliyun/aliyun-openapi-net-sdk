@@ -17,22 +17,22 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.ARMS.Model.V20161125;
+using Aliyun.Acs.ARMS.Model.V20180620;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.ARMS.Transform.V20161125
+namespace Aliyun.Acs.ARMS.Transform.V20180620
 {
-    public class WhereInDimQueryResponseUnmarshaller
+    public class ARMSQueryDataSetResponseUnmarshaller
     {
-        public static WhereInDimQueryResponse Unmarshall(UnmarshallerContext context)
+        public static ARMSQueryDataSetResponse Unmarshall(UnmarshallerContext context)
         {
-			WhereInDimQueryResponse whereInDimQueryResponse = new WhereInDimQueryResponse();
+			ARMSQueryDataSetResponse aRMSQueryDataSetResponse = new ARMSQueryDataSetResponse();
 
-			whereInDimQueryResponse.HttpResponse = context.HttpResponse;
-			whereInDimQueryResponse.Data = context.StringValue("WhereInDimQuery.Data");
+			aRMSQueryDataSetResponse.HttpResponse = context.HttpResponse;
+			aRMSQueryDataSetResponse.Data = context.StringValue("ARMSQueryDataSet.Data");
         
-			return whereInDimQueryResponse;
+			return aRMSQueryDataSetResponse;
         }
     }
 }
