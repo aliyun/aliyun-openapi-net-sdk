@@ -1,0 +1,50 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.rtc.Model.V20180111;
+using System;
+using System.Collections.Generic;
+
+namespace Aliyun.Acs.rtc.Transform.V20180111
+{
+    public class MuteAudioAllResponseUnmarshaller
+    {
+        public static MuteAudioAllResponse Unmarshall(UnmarshallerContext context)
+        {
+			MuteAudioAllResponse muteAudioAllResponse = new MuteAudioAllResponse();
+
+			muteAudioAllResponse.HttpResponse = context.HttpResponse;
+			muteAudioAllResponse.RequestId = context.StringValue("MuteAudioAll.RequestId");
+			muteAudioAllResponse.ConferenceId = context.StringValue("MuteAudioAll.ConferenceId");
+
+			List<MuteAudioAllResponse.MuteAudioAll_Participant> muteAudioAllResponse_participants = new List<MuteAudioAllResponse.MuteAudioAll_Participant>();
+			for (int i = 0; i < context.Length("MuteAudioAll.Participants.Length"); i++) {
+				MuteAudioAllResponse.MuteAudioAll_Participant participant = new MuteAudioAllResponse.MuteAudioAll_Participant();
+				participant.Id = context.StringValue("MuteAudioAll.Participants["+ i +"].Id");
+				participant.Code = context.StringValue("MuteAudioAll.Participants["+ i +"].Code");
+				participant.Message = context.StringValue("MuteAudioAll.Participants["+ i +"].Message");
+
+				muteAudioAllResponse_participants.Add(participant);
+			}
+			muteAudioAllResponse.Participants = muteAudioAllResponse_participants;
+        
+			return muteAudioAllResponse;
+        }
+    }
+}

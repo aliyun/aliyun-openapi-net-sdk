@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6a70689c-8253-4d0d-a569-93893c1553b5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-rtc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Rtc\Model\V20180111\CreateChannelResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\ModifyAppResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\UnmuteAudioResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\RemoveParticipantsResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\ModifyConferenceRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\StartAppResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeRecordListRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\MuteAudioAllRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\ModifyConferenceResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeRecordDetailResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\MuteAudioAllResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\MuteAudioResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\MuteAudioRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\DeleteChannelRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeRecordListResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\UpdateChannelResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeStatisRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeRealTimeRecordListRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeRecordDetailRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeRealTimeRecordListResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeRealTimeRecordDetailResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeConferenceAuthInfoRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeAppsRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeAppsResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\UnmuteAudioAllRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeStatisResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\CreateConferenceRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\ModifyAppRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\StartAppRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\UpdateChannelRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\DeleteChannelResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\DeleteConferenceResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\CreateConferenceResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\RemoveParticipantsRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeRealTimeRecordDetailRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\StopAppRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\DeleteConferenceRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\CreateChannelRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\UnmuteAudioRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\DescribeConferenceAuthInfoResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\StopAppResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\UnmuteAudioAllResponse.cs" />
+	<Compile Include="Rtc\Transform\V20180111\StartAppResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\UnmuteAudioAllResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\DescribeRealTimeRecordDetailResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\ModifyConferenceResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\CreateChannelResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\CreateConferenceResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\ModifyAppResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\DescribeStatisResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\DescribeConferenceAuthInfoResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\StopAppResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\MuteAudioResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\DeleteConferenceResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\UpdateChannelResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\DescribeRecordListResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\DescribeAppsResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\DeleteChannelResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\MuteAudioAllResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\UnmuteAudioResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\DescribeRecordDetailResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\DescribeRealTimeRecordListResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\RemoveParticipantsResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
