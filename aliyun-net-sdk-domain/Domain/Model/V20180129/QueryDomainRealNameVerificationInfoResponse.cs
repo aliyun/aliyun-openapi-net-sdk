@@ -21,22 +21,22 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-	public class QueryRegistrantProfileRealNameVerificationInfoResponse : AcsResponse
+	public class QueryDomainRealNameVerificationInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private string submissionDate;
 
-		private string modificationDate;
-
 		private string identityCredential;
-
-		private long? registrantProfileId;
 
 		private string identityCredentialNo;
 
 		private string identityCredentialType;
+
+		private string domainName;
+
+		private string instanceId;
 
 		private string identityCredentialUrl;
 
@@ -64,18 +64,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string ModificationDate
-		{
-			get
-			{
-				return modificationDate;
-			}
-			set	
-			{
-				modificationDate = value;
-			}
-		}
-
 		public string IdentityCredential
 		{
 			get
@@ -85,18 +73,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				identityCredential = value;
-			}
-		}
-
-		public long? RegistrantProfileId
-		{
-			get
-			{
-				return registrantProfileId;
-			}
-			set	
-			{
-				registrantProfileId = value;
 			}
 		}
 
@@ -121,6 +97,30 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				identityCredentialType = value;
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
 			}
 		}
 

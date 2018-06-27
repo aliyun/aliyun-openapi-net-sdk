@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			queryRegistrantProfileRealNameVerificationInfoResponse.RegistrantProfileId = context.LongValue("QueryRegistrantProfileRealNameVerificationInfo.RegistrantProfileId");
 			queryRegistrantProfileRealNameVerificationInfoResponse.IdentityCredentialNo = context.StringValue("QueryRegistrantProfileRealNameVerificationInfo.IdentityCredentialNo");
 			queryRegistrantProfileRealNameVerificationInfoResponse.IdentityCredentialType = context.StringValue("QueryRegistrantProfileRealNameVerificationInfo.IdentityCredentialType");
+			queryRegistrantProfileRealNameVerificationInfoResponse.IdentityCredentialUrl = context.StringValue("QueryRegistrantProfileRealNameVerificationInfo.IdentityCredentialUrl");
         
 			return queryRegistrantProfileRealNameVerificationInfoResponse;
         }

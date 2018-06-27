@@ -64,6 +64,14 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string requestId;
 
+		private string zhRegistrantOrganization;
+
+		private string zhRegistrantName;
+
+		private long? registrationDateLong;
+
+		private long? expirationDateLong;
+
 		private List<string> dnsList;
 
 		public string UserId
@@ -303,6 +311,54 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ZhRegistrantOrganization
+		{
+			get
+			{
+				return zhRegistrantOrganization;
+			}
+			set	
+			{
+				zhRegistrantOrganization = value;
+			}
+		}
+
+		public string ZhRegistrantName
+		{
+			get
+			{
+				return zhRegistrantName;
+			}
+			set	
+			{
+				zhRegistrantName = value;
+			}
+		}
+
+		public long? RegistrationDateLong
+		{
+			get
+			{
+				return registrationDateLong;
+			}
+			set	
+			{
+				registrationDateLong = value;
+			}
+		}
+
+		public long? ExpirationDateLong
+		{
+			get
+			{
+				return expirationDateLong;
+			}
+			set	
+			{
+				expirationDateLong = value;
 			}
 		}
 

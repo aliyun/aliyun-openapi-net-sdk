@@ -21,24 +21,30 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-	public class QueryRegistrantProfileRealNameVerificationInfoResponse : AcsResponse
+	public class QueryEmailVerificationResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string submissionDate;
+		private string gmtCreate;
 
-		private string modificationDate;
+		private string gmtModified;
 
-		private string identityCredential;
+		private string email;
 
-		private long? registrantProfileId;
+		private string userId;
 
-		private string identityCredentialNo;
+		private string emailVerificationNo;
 
-		private string identityCredentialType;
+		private string tokenSendTime;
 
-		private string identityCredentialUrl;
+		private int? verificationStatus;
+
+		private string verificationTime;
+
+		private string sendIp;
+
+		private string confirmIp;
 
 		public string RequestId
 		{
@@ -52,87 +58,123 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string SubmissionDate
+		public string GmtCreate
 		{
 			get
 			{
-				return submissionDate;
+				return gmtCreate;
 			}
 			set	
 			{
-				submissionDate = value;
+				gmtCreate = value;
 			}
 		}
 
-		public string ModificationDate
+		public string GmtModified
 		{
 			get
 			{
-				return modificationDate;
+				return gmtModified;
 			}
 			set	
 			{
-				modificationDate = value;
+				gmtModified = value;
 			}
 		}
 
-		public string IdentityCredential
+		public string Email
 		{
 			get
 			{
-				return identityCredential;
+				return email;
 			}
 			set	
 			{
-				identityCredential = value;
+				email = value;
 			}
 		}
 
-		public long? RegistrantProfileId
+		public string UserId
 		{
 			get
 			{
-				return registrantProfileId;
+				return userId;
 			}
 			set	
 			{
-				registrantProfileId = value;
+				userId = value;
 			}
 		}
 
-		public string IdentityCredentialNo
+		public string EmailVerificationNo
 		{
 			get
 			{
-				return identityCredentialNo;
+				return emailVerificationNo;
 			}
 			set	
 			{
-				identityCredentialNo = value;
+				emailVerificationNo = value;
 			}
 		}
 
-		public string IdentityCredentialType
+		public string TokenSendTime
 		{
 			get
 			{
-				return identityCredentialType;
+				return tokenSendTime;
 			}
 			set	
 			{
-				identityCredentialType = value;
+				tokenSendTime = value;
 			}
 		}
 
-		public string IdentityCredentialUrl
+		public int? VerificationStatus
 		{
 			get
 			{
-				return identityCredentialUrl;
+				return verificationStatus;
 			}
 			set	
 			{
-				identityCredentialUrl = value;
+				verificationStatus = value;
+			}
+		}
+
+		public string VerificationTime
+		{
+			get
+			{
+				return verificationTime;
+			}
+			set	
+			{
+				verificationTime = value;
+			}
+		}
+
+		public string SendIp
+		{
+			get
+			{
+				return sendIp;
+			}
+			set	
+			{
+				sendIp = value;
+			}
+		}
+
+		public string ConfirmIp
+		{
+			get
+			{
+				return confirmIp;
+			}
+			set	
+			{
+				confirmIp = value;
 			}
 		}
 	}
