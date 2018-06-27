@@ -55,6 +55,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<Tag> tags;
 
+		private int? autoRenewPeriod;
+
+		private int? period;
+
 		private bool? dryRun;
 
 		private string launchTemplateId;
@@ -65,7 +69,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string spotStrategy;
 
+		private string periodUnit;
+
 		private string instanceName;
+
+		private bool? autoRenew;
 
 		private string internetChargeType;
 
@@ -96,6 +104,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string regionId;
 
 		private string instanceType;
+
+		private string instanceChargeType;
 
 		private List<NetworkInterface> networkInterfaces;
 
@@ -269,6 +279,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? AutoRenewPeriod
+		{
+			get
+			{
+				return autoRenewPeriod;
+			}
+			set	
+			{
+				autoRenewPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenewPeriod", value.ToString());
+			}
+		}
+
+		public int? Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
 		public bool? DryRun
 		{
 			get
@@ -334,6 +370,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string PeriodUnit
+		{
+			get
+			{
+				return periodUnit;
+			}
+			set	
+			{
+				periodUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
+			}
+		}
+
 		public string InstanceName
 		{
 			get
@@ -344,6 +393,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceName = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
+			}
+		}
+
+		public bool? AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value.ToString());
 			}
 		}
 
@@ -539,6 +601,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
 			}
 		}
 

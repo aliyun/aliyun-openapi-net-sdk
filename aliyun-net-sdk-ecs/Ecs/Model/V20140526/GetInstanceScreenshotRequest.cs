@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceOwnerAccount;
 
-		private bool? wakeup;
+		private bool? wakeUp;
 
 		private string ownerAccount;
 
@@ -101,16 +101,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? Wakeup
+		public bool? WakeUp
 		{
 			get
 			{
-				return wakeup;
+				return wakeUp;
 			}
 			set	
 			{
-				wakeup = value;
-				DictionaryUtil.Add(QueryParameters, "Wakeup", value.ToString());
+				wakeUp = value;
+				DictionaryUtil.Add(QueryParameters, "WakeUp", value.ToString());
 			}
 		}
 

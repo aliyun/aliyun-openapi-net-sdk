@@ -79,6 +79,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string tag2Value;
 
+		private string vpcId;
+
 		private string tag4Key;
 
 		private string primaryIpAddress;
@@ -381,6 +383,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				tag2Value = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.2.Value", value);
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 
