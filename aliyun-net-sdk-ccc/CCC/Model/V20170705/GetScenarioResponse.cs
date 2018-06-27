@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class ListScenariosResponse : AcsResponse
+	public class GetScenarioResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -34,7 +34,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? httpStatusCode;
 
-		private List<ListScenarios_Scenario> scenarios;
+		private GetScenario_Scenario scenario;
 
 		public string RequestId
 		{
@@ -96,19 +96,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<ListScenarios_Scenario> Scenarios
+		public GetScenario_Scenario Scenario
 		{
 			get
 			{
-				return scenarios;
+				return scenario;
 			}
 			set	
 			{
-				scenarios = value;
+				scenario = value;
 			}
 		}
 
-		public class ListScenarios_Scenario
+		public class GetScenario_Scenario
 		{
 
 			private string id;
@@ -121,11 +121,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 			private bool? isTemplate;
 
-			private List<ListScenarios_Survey> surveys;
+			private List<GetScenario_Survey> surveys;
 
-			private List<ListScenarios_KeyValuePair> variables;
+			private List<GetScenario_KeyValuePair> variables;
 
-			private ListScenarios_Strategy strategy;
+			private GetScenario_Strategy strategy;
 
 			public string Id
 			{
@@ -187,7 +187,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public List<ListScenarios_Survey> Surveys
+			public List<GetScenario_Survey> Surveys
 			{
 				get
 				{
@@ -199,7 +199,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public List<ListScenarios_KeyValuePair> Variables
+			public List<GetScenario_KeyValuePair> Variables
 			{
 				get
 				{
@@ -211,7 +211,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public ListScenarios_Strategy Strategy
+			public GetScenario_Strategy Strategy
 			{
 				get
 				{
@@ -223,7 +223,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public class ListScenarios_Survey
+			public class GetScenario_Survey
 			{
 
 				private string id;
@@ -238,7 +238,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private string beebotId;
 
-				private List<ListScenarios_IntentNode> intents;
+				private List<GetScenario_IntentNode> intents;
 
 				public string Id
 				{
@@ -312,7 +312,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public List<ListScenarios_IntentNode> Intents
+				public List<GetScenario_IntentNode> Intents
 				{
 					get
 					{
@@ -324,7 +324,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public class ListScenarios_IntentNode
+				public class GetScenario_IntentNode
 				{
 
 					private string nodeId;
@@ -357,7 +357,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public class ListScenarios_KeyValuePair
+			public class GetScenario_KeyValuePair
 			{
 
 				private string key;
@@ -389,7 +389,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public class ListScenarios_Strategy
+			public class GetScenario_Strategy
 			{
 
 				private string id;
@@ -418,7 +418,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private bool? isTemplate;
 
-				private List<ListScenarios_TimeFrame> workingTime;
+				private List<GetScenario_TimeFrame> workingTime;
 
 				private List<string> repeatDays;
 
@@ -578,7 +578,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public List<ListScenarios_TimeFrame> WorkingTime
+				public List<GetScenario_TimeFrame> WorkingTime
 				{
 					get
 					{
@@ -602,7 +602,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public class ListScenarios_TimeFrame
+				public class GetScenario_TimeFrame
 				{
 
 					private string beginTime;

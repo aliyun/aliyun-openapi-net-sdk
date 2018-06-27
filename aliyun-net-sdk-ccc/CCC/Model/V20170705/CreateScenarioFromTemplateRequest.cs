@@ -26,24 +26,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-    public class CreateScenarioRequest : RpcAcsRequest<CreateScenarioResponse>
+    public class CreateScenarioFromTemplateRequest : RpcAcsRequest<CreateScenarioFromTemplateResponse>
     {
-        public CreateScenarioRequest()
-            : base("CCC", "2017-07-05", "CreateScenario", "ccc", "openAPI")
+        public CreateScenarioFromTemplateRequest()
+            : base("CCC", "2017-07-05", "CreateScenarioFromTemplate", "ccc", "openAPI")
         {
         }
 
+		private string variables;
+
 		private string instanceId;
-
-		private List<string> surveysJsons;
-
-		private string strategyJson;
 
 		private string name;
 
 		private string description;
 
-		private string type;
+		private string templateId;
+
+		public string Variables
+		{
+			get
+			{
+				return variables;
+			}
+			set	
+			{
+				variables = value;
+				DictionaryUtil.Add(QueryParameters, "Variables", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -55,36 +66,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public List<string> SurveysJsons
-		{
-			get
-			{
-				return surveysJsons;
-			}
-
-			set
-			{
-				surveysJsons = value;
-				for (int i = 0; i < surveysJsons.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SurveysJson." + (i + 1) , surveysJsons[i]);
-				}
-			}
-		}
-
-		public string StrategyJson
-		{
-			get
-			{
-				return strategyJson;
-			}
-			set	
-			{
-				strategyJson = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
 			}
 		}
 
@@ -114,16 +95,16 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string Type
+		public string TemplateId
 		{
 			get
 			{
-				return type;
+				return templateId;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
 			}
 		}
 
@@ -132,9 +113,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			return false;
 		}
 
-        public override CreateScenarioResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateScenarioFromTemplateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateScenarioResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateScenarioFromTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

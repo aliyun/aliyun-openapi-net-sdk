@@ -44,9 +44,9 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			List<ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup> jobGroups_list = new List<ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup>();
 			for (int i = 0; i < context.Length("ListJobGroups.JobGroups.List.Length"); i++) {
 				ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup jobGroup = new ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup();
-				jobGroup.JobGroupId = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].JobGroupId");
-				jobGroup.JobGroupName = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].JobGroupName");
-				jobGroup.JobGroupDescription = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].JobGroupDescription");
+				jobGroup.Id = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Id");
+				jobGroup.Name = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Name");
+				jobGroup.Description = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Description");
 				jobGroup.ScenarioId = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].ScenarioId");
 				jobGroup.JobFilePath = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].JobFilePath");
 				jobGroup.CreationTime = context.LongValue("ListJobGroups.JobGroups.List["+ i +"].CreationTime");
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				jobGroup.CallingNumbers = jobGroup_callingNumbers;
 
 				ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Strategy strategy = new ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Strategy();
-				strategy.StrategyId = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.StrategyId");
-				strategy.StrategyName = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.StrategyName");
-				strategy.StrategyDescription = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.StrategyDescription");
+				strategy.Id = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.Id");
+				strategy.Name = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.Name");
+				strategy.Description = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.Description");
 				strategy.Type = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.Type");
 				strategy.StartTime = context.LongValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.StartTime");
 				strategy.EndTime = context.LongValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.EndTime");
@@ -81,8 +81,8 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				List<ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Strategy.ListJobGroups_TimeFrame> strategy_workingTime = new List<ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Strategy.ListJobGroups_TimeFrame>();
 				for (int j = 0; j < context.Length("ListJobGroups.JobGroups.List["+ i +"].Strategy.WorkingTime.Length"); j++) {
 					ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Strategy.ListJobGroups_TimeFrame timeFrame = new ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Strategy.ListJobGroups_TimeFrame();
-					timeFrame.From = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.WorkingTime["+ j +"].From");
-					timeFrame.To = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.WorkingTime["+ j +"].To");
+					timeFrame.BeginTime = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.WorkingTime["+ j +"].BeginTime");
+					timeFrame.EndTime = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Strategy.WorkingTime["+ j +"].EndTime");
 
 					strategy_workingTime.Add(timeFrame);
 				}

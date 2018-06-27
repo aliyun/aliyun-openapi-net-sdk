@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class ListScenariosResponse : AcsResponse
+	public class CreateBatchJobsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -34,7 +34,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? httpStatusCode;
 
-		private List<ListScenarios_Scenario> scenarios;
+		private CreateBatchJobs_JobGroup jobGroup;
 
 		public string RequestId
 		{
@@ -96,122 +96,122 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<ListScenarios_Scenario> Scenarios
+		public CreateBatchJobs_JobGroup JobGroup
 		{
 			get
 			{
-				return scenarios;
+				return jobGroup;
 			}
 			set	
 			{
-				scenarios = value;
+				jobGroup = value;
 			}
 		}
 
-		public class ListScenarios_Scenario
+		public class CreateBatchJobs_JobGroup
 		{
 
-			private string id;
+			private string jobGroupId;
 
-			private string name;
+			private string jobGroupName;
 
-			private string description;
+			private string jobGroupDescription;
 
-			private string type;
+			private string scenarioId;
 
-			private bool? isTemplate;
+			private string jobFilePath;
 
-			private List<ListScenarios_Survey> surveys;
+			private long? creationTime;
 
-			private List<ListScenarios_KeyValuePair> variables;
+			private List<string> callingNumbers;
 
-			private ListScenarios_Strategy strategy;
+			private CreateBatchJobs_Strategy strategy;
 
-			public string Id
+			public string JobGroupId
 			{
 				get
 				{
-					return id;
+					return jobGroupId;
 				}
 				set	
 				{
-					id = value;
+					jobGroupId = value;
 				}
 			}
 
-			public string Name
+			public string JobGroupName
 			{
 				get
 				{
-					return name;
+					return jobGroupName;
 				}
 				set	
 				{
-					name = value;
+					jobGroupName = value;
 				}
 			}
 
-			public string Description
+			public string JobGroupDescription
 			{
 				get
 				{
-					return description;
+					return jobGroupDescription;
 				}
 				set	
 				{
-					description = value;
+					jobGroupDescription = value;
 				}
 			}
 
-			public string Type
+			public string ScenarioId
 			{
 				get
 				{
-					return type;
+					return scenarioId;
 				}
 				set	
 				{
-					type = value;
+					scenarioId = value;
 				}
 			}
 
-			public bool? IsTemplate
+			public string JobFilePath
 			{
 				get
 				{
-					return isTemplate;
+					return jobFilePath;
 				}
 				set	
 				{
-					isTemplate = value;
+					jobFilePath = value;
 				}
 			}
 
-			public List<ListScenarios_Survey> Surveys
+			public long? CreationTime
 			{
 				get
 				{
-					return surveys;
+					return creationTime;
 				}
 				set	
 				{
-					surveys = value;
+					creationTime = value;
 				}
 			}
 
-			public List<ListScenarios_KeyValuePair> Variables
+			public List<string> CallingNumbers
 			{
 				get
 				{
-					return variables;
+					return callingNumbers;
 				}
 				set	
 				{
-					variables = value;
+					callingNumbers = value;
 				}
 			}
 
-			public ListScenarios_Strategy Strategy
+			public CreateBatchJobs_Strategy Strategy
 			{
 				get
 				{
@@ -223,180 +223,14 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public class ListScenarios_Survey
+			public class CreateBatchJobs_Strategy
 			{
 
-				private string id;
+				private string strategyId;
 
-				private string name;
+				private string strategyName;
 
-				private string description;
-
-				private string role;
-
-				private int? round;
-
-				private string beebotId;
-
-				private List<ListScenarios_IntentNode> intents;
-
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string Role
-				{
-					get
-					{
-						return role;
-					}
-					set	
-					{
-						role = value;
-					}
-				}
-
-				public int? Round
-				{
-					get
-					{
-						return round;
-					}
-					set	
-					{
-						round = value;
-					}
-				}
-
-				public string BeebotId
-				{
-					get
-					{
-						return beebotId;
-					}
-					set	
-					{
-						beebotId = value;
-					}
-				}
-
-				public List<ListScenarios_IntentNode> Intents
-				{
-					get
-					{
-						return intents;
-					}
-					set	
-					{
-						intents = value;
-					}
-				}
-
-				public class ListScenarios_IntentNode
-				{
-
-					private string nodeId;
-
-					private string intentId;
-
-					public string NodeId
-					{
-						get
-						{
-							return nodeId;
-						}
-						set	
-						{
-							nodeId = value;
-						}
-					}
-
-					public string IntentId
-					{
-						get
-						{
-							return intentId;
-						}
-						set	
-						{
-							intentId = value;
-						}
-					}
-				}
-			}
-
-			public class ListScenarios_KeyValuePair
-			{
-
-				private string key;
-
-				private string _value;
-
-				public string Key
-				{
-					get
-					{
-						return key;
-					}
-					set	
-					{
-						key = value;
-					}
-				}
-
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
-			}
-
-			public class ListScenarios_Strategy
-			{
-
-				private string id;
-
-				private string name;
-
-				private string description;
+				private string strategyDescription;
 
 				private string type;
 
@@ -418,43 +252,43 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private bool? isTemplate;
 
-				private List<ListScenarios_TimeFrame> workingTime;
+				private List<CreateBatchJobs_TimeFrame> workingTime;
 
 				private List<string> repeatDays;
 
-				public string Id
+				public string StrategyId
 				{
 					get
 					{
-						return id;
+						return strategyId;
 					}
 					set	
 					{
-						id = value;
+						strategyId = value;
 					}
 				}
 
-				public string Name
+				public string StrategyName
 				{
 					get
 					{
-						return name;
+						return strategyName;
 					}
 					set	
 					{
-						name = value;
+						strategyName = value;
 					}
 				}
 
-				public string Description
+				public string StrategyDescription
 				{
 					get
 					{
-						return description;
+						return strategyDescription;
 					}
 					set	
 					{
-						description = value;
+						strategyDescription = value;
 					}
 				}
 
@@ -578,7 +412,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public List<ListScenarios_TimeFrame> WorkingTime
+				public List<CreateBatchJobs_TimeFrame> WorkingTime
 				{
 					get
 					{
@@ -602,7 +436,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public class ListScenarios_TimeFrame
+				public class CreateBatchJobs_TimeFrame
 				{
 
 					private string beginTime;

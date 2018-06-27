@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class ListScenariosResponse : AcsResponse
+	public class GetJobGroupResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -34,7 +34,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? httpStatusCode;
 
-		private List<ListScenarios_Scenario> scenarios;
+		private GetJobGroup_JobGroup jobGroup;
 
 		public string RequestId
 		{
@@ -96,19 +96,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<ListScenarios_Scenario> Scenarios
+		public GetJobGroup_JobGroup JobGroup
 		{
 			get
 			{
-				return scenarios;
+				return jobGroup;
 			}
 			set	
 			{
-				scenarios = value;
+				jobGroup = value;
 			}
 		}
 
-		public class ListScenarios_Scenario
+		public class GetJobGroup_JobGroup
 		{
 
 			private string id;
@@ -117,15 +117,17 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 			private string description;
 
-			private string type;
+			private string scenarioId;
 
-			private bool? isTemplate;
+			private string jobFilePath;
 
-			private List<ListScenarios_Survey> surveys;
+			private long? creationTime;
 
-			private List<ListScenarios_KeyValuePair> variables;
+			private List<string> callingNumbers;
 
-			private ListScenarios_Strategy strategy;
+			private GetJobGroup_Strategy strategy;
+
+			private GetJobGroup_Progress progress;
 
 			public string Id
 			{
@@ -163,55 +165,55 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public string Type
+			public string ScenarioId
 			{
 				get
 				{
-					return type;
+					return scenarioId;
 				}
 				set	
 				{
-					type = value;
+					scenarioId = value;
 				}
 			}
 
-			public bool? IsTemplate
+			public string JobFilePath
 			{
 				get
 				{
-					return isTemplate;
+					return jobFilePath;
 				}
 				set	
 				{
-					isTemplate = value;
+					jobFilePath = value;
 				}
 			}
 
-			public List<ListScenarios_Survey> Surveys
+			public long? CreationTime
 			{
 				get
 				{
-					return surveys;
+					return creationTime;
 				}
 				set	
 				{
-					surveys = value;
+					creationTime = value;
 				}
 			}
 
-			public List<ListScenarios_KeyValuePair> Variables
+			public List<string> CallingNumbers
 			{
 				get
 				{
-					return variables;
+					return callingNumbers;
 				}
 				set	
 				{
-					variables = value;
+					callingNumbers = value;
 				}
 			}
 
-			public ListScenarios_Strategy Strategy
+			public GetJobGroup_Strategy Strategy
 			{
 				get
 				{
@@ -223,173 +225,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public class ListScenarios_Survey
+			public GetJobGroup_Progress Progress
 			{
-
-				private string id;
-
-				private string name;
-
-				private string description;
-
-				private string role;
-
-				private int? round;
-
-				private string beebotId;
-
-				private List<ListScenarios_IntentNode> intents;
-
-				public string Id
+				get
 				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
+					return progress;
 				}
-
-				public string Name
+				set	
 				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string Role
-				{
-					get
-					{
-						return role;
-					}
-					set	
-					{
-						role = value;
-					}
-				}
-
-				public int? Round
-				{
-					get
-					{
-						return round;
-					}
-					set	
-					{
-						round = value;
-					}
-				}
-
-				public string BeebotId
-				{
-					get
-					{
-						return beebotId;
-					}
-					set	
-					{
-						beebotId = value;
-					}
-				}
-
-				public List<ListScenarios_IntentNode> Intents
-				{
-					get
-					{
-						return intents;
-					}
-					set	
-					{
-						intents = value;
-					}
-				}
-
-				public class ListScenarios_IntentNode
-				{
-
-					private string nodeId;
-
-					private string intentId;
-
-					public string NodeId
-					{
-						get
-						{
-							return nodeId;
-						}
-						set	
-						{
-							nodeId = value;
-						}
-					}
-
-					public string IntentId
-					{
-						get
-						{
-							return intentId;
-						}
-						set	
-						{
-							intentId = value;
-						}
-					}
+					progress = value;
 				}
 			}
 
-			public class ListScenarios_KeyValuePair
-			{
-
-				private string key;
-
-				private string _value;
-
-				public string Key
-				{
-					get
-					{
-						return key;
-					}
-					set	
-					{
-						key = value;
-					}
-				}
-
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
-			}
-
-			public class ListScenarios_Strategy
+			public class GetJobGroup_Strategy
 			{
 
 				private string id;
@@ -418,7 +266,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private bool? isTemplate;
 
-				private List<ListScenarios_TimeFrame> workingTime;
+				private List<GetJobGroup_TimeFrame> workingTime;
 
 				private List<string> repeatDays;
 
@@ -578,7 +426,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public List<ListScenarios_TimeFrame> WorkingTime
+				public List<GetJobGroup_TimeFrame> WorkingTime
 				{
 					get
 					{
@@ -602,7 +450,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public class ListScenarios_TimeFrame
+				public class GetJobGroup_TimeFrame
 				{
 
 					private string beginTime;
@@ -630,6 +478,140 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 						set	
 						{
 							endTime = value;
+						}
+					}
+				}
+			}
+
+			public class GetJobGroup_Progress
+			{
+
+				private int? totalJobs;
+
+				private string status;
+
+				private int? totalNotAnswered;
+
+				private int? totalCompleted;
+
+				private long? startTime;
+
+				private int? duration;
+
+				private List<GetJobGroup_KeyValuePair> categories;
+
+				public int? TotalJobs
+				{
+					get
+					{
+						return totalJobs;
+					}
+					set	
+					{
+						totalJobs = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public int? TotalNotAnswered
+				{
+					get
+					{
+						return totalNotAnswered;
+					}
+					set	
+					{
+						totalNotAnswered = value;
+					}
+				}
+
+				public int? TotalCompleted
+				{
+					get
+					{
+						return totalCompleted;
+					}
+					set	
+					{
+						totalCompleted = value;
+					}
+				}
+
+				public long? StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
+				public int? Duration
+				{
+					get
+					{
+						return duration;
+					}
+					set	
+					{
+						duration = value;
+					}
+				}
+
+				public List<GetJobGroup_KeyValuePair> Categories
+				{
+					get
+					{
+						return categories;
+					}
+					set	
+					{
+						categories = value;
+					}
+				}
+
+				public class GetJobGroup_KeyValuePair
+				{
+
+					private string key;
+
+					private string _value;
+
+					public string Key
+					{
+						get
+						{
+							return key;
+						}
+						set	
+						{
+							key = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
 						}
 					}
 				}

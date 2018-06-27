@@ -26,24 +26,41 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-    public class CreateScenarioRequest : RpcAcsRequest<CreateScenarioResponse>
+    public class AssignJobsRequest : RpcAcsRequest<AssignJobsResponse>
     {
-        public CreateScenarioRequest()
-            : base("CCC", "2017-07-05", "CreateScenario", "ccc", "openAPI")
+        public AssignJobsRequest()
+            : base("CCC", "2017-07-05", "AssignJobs", "ccc", "openAPI")
         {
         }
 
+		private List<string> callingNumbers;
+
 		private string instanceId;
 
-		private List<string> surveysJsons;
+		private string groupId;
 
 		private string strategyJson;
 
-		private string name;
+		private string scenarioId;
 
-		private string description;
+		private List<string> jobsJsons;
 
-		private string type;
+		public List<string> CallingNumbers
+		{
+			get
+			{
+				return callingNumbers;
+			}
+
+			set
+			{
+				callingNumbers = value;
+				for (int i = 0; i < callingNumbers.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
+				}
+			}
+		}
 
 		public string InstanceId
 		{
@@ -58,20 +75,16 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<string> SurveysJsons
+		public string GroupId
 		{
 			get
 			{
-				return surveysJsons;
+				return groupId;
 			}
-
-			set
+			set	
 			{
-				surveysJsons = value;
-				for (int i = 0; i < surveysJsons.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SurveysJson." + (i + 1) , surveysJsons[i]);
-				}
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -88,42 +101,33 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string Name
+		public string ScenarioId
 		{
 			get
 			{
-				return name;
+				return scenarioId;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				scenarioId = value;
+				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
 			}
 		}
 
-		public string Description
+		public List<string> JobsJsons
 		{
 			get
 			{
-				return description;
+				return jobsJsons;
 			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
 
-		public string Type
-		{
-			get
+			set
 			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				jobsJsons = value;
+				for (int i = 0; i < jobsJsons.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"JobsJson." + (i + 1) , jobsJsons[i]);
+				}
 			}
 		}
 
@@ -132,9 +136,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			return false;
 		}
 
-        public override CreateScenarioResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AssignJobsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateScenarioResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AssignJobsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

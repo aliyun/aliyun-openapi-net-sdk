@@ -170,11 +170,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			public class ListJobGroups_JobGroup
 			{
 
-				private string jobGroupId;
+				private string id;
 
-				private string jobGroupName;
+				private string name;
 
-				private string jobGroupDescription;
+				private string description;
 
 				private string scenarioId;
 
@@ -188,39 +188,39 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private ListJobGroups_Progress progress;
 
-				public string JobGroupId
+				public string Id
 				{
 					get
 					{
-						return jobGroupId;
+						return id;
 					}
 					set	
 					{
-						jobGroupId = value;
+						id = value;
 					}
 				}
 
-				public string JobGroupName
+				public string Name
 				{
 					get
 					{
-						return jobGroupName;
+						return name;
 					}
 					set	
 					{
-						jobGroupName = value;
+						name = value;
 					}
 				}
 
-				public string JobGroupDescription
+				public string Description
 				{
 					get
 					{
-						return jobGroupDescription;
+						return description;
 					}
 					set	
 					{
-						jobGroupDescription = value;
+						description = value;
 					}
 				}
 
@@ -299,11 +299,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				public class ListJobGroups_Strategy
 				{
 
-					private string strategyId;
+					private string id;
 
-					private string strategyName;
+					private string name;
 
-					private string strategyDescription;
+					private string description;
 
 					private string type;
 
@@ -329,39 +329,39 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 					private List<string> repeatDays;
 
-					public string StrategyId
+					public string Id
 					{
 						get
 						{
-							return strategyId;
+							return id;
 						}
 						set	
 						{
-							strategyId = value;
+							id = value;
 						}
 					}
 
-					public string StrategyName
+					public string Name
 					{
 						get
 						{
-							return strategyName;
+							return name;
 						}
 						set	
 						{
-							strategyName = value;
+							name = value;
 						}
 					}
 
-					public string StrategyDescription
+					public string Description
 					{
 						get
 						{
-							return strategyDescription;
+							return description;
 						}
 						set	
 						{
-							strategyDescription = value;
+							description = value;
 						}
 					}
 
@@ -512,31 +512,31 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					public class ListJobGroups_TimeFrame
 					{
 
-						private string from;
+						private string beginTime;
 
-						private string to;
+						private string endTime;
 
-						public string From
+						public string BeginTime
 						{
 							get
 							{
-								return from;
+								return beginTime;
 							}
 							set	
 							{
-								from = value;
+								beginTime = value;
 							}
 						}
 
-						public string To
+						public string EndTime
 						{
 							get
 							{
-								return to;
+								return endTime;
 							}
 							set	
 							{
-								to = value;
+								endTime = value;
 							}
 						}
 					}

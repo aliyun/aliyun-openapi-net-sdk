@@ -39,16 +39,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			List<ListScenariosResponse.ListScenarios_Scenario> listScenariosResponse_scenarios = new List<ListScenariosResponse.ListScenarios_Scenario>();
 			for (int i = 0; i < context.Length("ListScenarios.Scenarios.Length"); i++) {
 				ListScenariosResponse.ListScenarios_Scenario scenario = new ListScenariosResponse.ListScenarios_Scenario();
-				scenario.ScenarioId = context.StringValue("ListScenarios.Scenarios["+ i +"].ScenarioId");
-				scenario.ScenarioName = context.StringValue("ListScenarios.Scenarios["+ i +"].ScenarioName");
-				scenario.ScenarioDescription = context.StringValue("ListScenarios.Scenarios["+ i +"].ScenarioDescription");
+				scenario.Id = context.StringValue("ListScenarios.Scenarios["+ i +"].Id");
+				scenario.Name = context.StringValue("ListScenarios.Scenarios["+ i +"].Name");
+				scenario.Description = context.StringValue("ListScenarios.Scenarios["+ i +"].Description");
 				scenario.Type = context.StringValue("ListScenarios.Scenarios["+ i +"].Type");
 				scenario.IsTemplate = context.BooleanValue("ListScenarios.Scenarios["+ i +"].IsTemplate");
 
 				ListScenariosResponse.ListScenarios_Scenario.ListScenarios_Strategy strategy = new ListScenariosResponse.ListScenarios_Scenario.ListScenarios_Strategy();
-				strategy.StrategyId = context.StringValue("ListScenarios.Scenarios["+ i +"].Strategy.StrategyId");
-				strategy.StrategyName = context.StringValue("ListScenarios.Scenarios["+ i +"].Strategy.StrategyName");
-				strategy.StrategyDescription = context.StringValue("ListScenarios.Scenarios["+ i +"].Strategy.StrategyDescription");
+				strategy.Id = context.StringValue("ListScenarios.Scenarios["+ i +"].Strategy.Id");
+				strategy.Name = context.StringValue("ListScenarios.Scenarios["+ i +"].Strategy.Name");
+				strategy.Description = context.StringValue("ListScenarios.Scenarios["+ i +"].Strategy.Description");
 				strategy.Type = context.StringValue("ListScenarios.Scenarios["+ i +"].Strategy.Type");
 				strategy.StartTime = context.LongValue("ListScenarios.Scenarios["+ i +"].Strategy.StartTime");
 				strategy.EndTime = context.LongValue("ListScenarios.Scenarios["+ i +"].Strategy.EndTime");
@@ -80,9 +80,9 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				List<ListScenariosResponse.ListScenarios_Scenario.ListScenarios_Survey> scenario_surveys = new List<ListScenariosResponse.ListScenarios_Scenario.ListScenarios_Survey>();
 				for (int j = 0; j < context.Length("ListScenarios.Scenarios["+ i +"].Surveys.Length"); j++) {
 					ListScenariosResponse.ListScenarios_Scenario.ListScenarios_Survey survey = new ListScenariosResponse.ListScenarios_Scenario.ListScenarios_Survey();
-					survey.SurveyId = context.StringValue("ListScenarios.Scenarios["+ i +"].Surveys["+ j +"].SurveyId");
-					survey.SurveyName = context.StringValue("ListScenarios.Scenarios["+ i +"].Surveys["+ j +"].SurveyName");
-					survey.SurveyDescription = context.StringValue("ListScenarios.Scenarios["+ i +"].Surveys["+ j +"].SurveyDescription");
+					survey.Id = context.StringValue("ListScenarios.Scenarios["+ i +"].Surveys["+ j +"].Id");
+					survey.Name = context.StringValue("ListScenarios.Scenarios["+ i +"].Surveys["+ j +"].Name");
+					survey.Description = context.StringValue("ListScenarios.Scenarios["+ i +"].Surveys["+ j +"].Description");
 					survey.Role = context.StringValue("ListScenarios.Scenarios["+ i +"].Surveys["+ j +"].Role");
 					survey.Round = context.IntegerValue("ListScenarios.Scenarios["+ i +"].Surveys["+ j +"].Round");
 					survey.BeebotId = context.StringValue("ListScenarios.Scenarios["+ i +"].Surveys["+ j +"].BeebotId");

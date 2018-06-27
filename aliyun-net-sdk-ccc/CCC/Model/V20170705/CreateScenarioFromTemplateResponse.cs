@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class ListScenariosResponse : AcsResponse
+	public class CreateScenarioFromTemplateResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -34,7 +34,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? httpStatusCode;
 
-		private List<ListScenarios_Scenario> scenarios;
+		private CreateScenarioFromTemplate_Scenario scenario;
 
 		public string RequestId
 		{
@@ -96,70 +96,70 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<ListScenarios_Scenario> Scenarios
+		public CreateScenarioFromTemplate_Scenario Scenario
 		{
 			get
 			{
-				return scenarios;
+				return scenario;
 			}
 			set	
 			{
-				scenarios = value;
+				scenario = value;
 			}
 		}
 
-		public class ListScenarios_Scenario
+		public class CreateScenarioFromTemplate_Scenario
 		{
 
-			private string id;
+			private string scenarioId;
 
-			private string name;
+			private string scenarioName;
 
-			private string description;
+			private string scenarioDescription;
 
 			private string type;
 
 			private bool? isTemplate;
 
-			private List<ListScenarios_Survey> surveys;
+			private List<CreateScenarioFromTemplate_Survey> surveys;
 
-			private List<ListScenarios_KeyValuePair> variables;
+			private List<CreateScenarioFromTemplate_KeyValuePair> variables;
 
-			private ListScenarios_Strategy strategy;
+			private CreateScenarioFromTemplate_Strategy strategy;
 
-			public string Id
+			public string ScenarioId
 			{
 				get
 				{
-					return id;
+					return scenarioId;
 				}
 				set	
 				{
-					id = value;
+					scenarioId = value;
 				}
 			}
 
-			public string Name
+			public string ScenarioName
 			{
 				get
 				{
-					return name;
+					return scenarioName;
 				}
 				set	
 				{
-					name = value;
+					scenarioName = value;
 				}
 			}
 
-			public string Description
+			public string ScenarioDescription
 			{
 				get
 				{
-					return description;
+					return scenarioDescription;
 				}
 				set	
 				{
-					description = value;
+					scenarioDescription = value;
 				}
 			}
 
@@ -187,7 +187,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public List<ListScenarios_Survey> Surveys
+			public List<CreateScenarioFromTemplate_Survey> Surveys
 			{
 				get
 				{
@@ -199,7 +199,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public List<ListScenarios_KeyValuePair> Variables
+			public List<CreateScenarioFromTemplate_KeyValuePair> Variables
 			{
 				get
 				{
@@ -211,7 +211,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public ListScenarios_Strategy Strategy
+			public CreateScenarioFromTemplate_Strategy Strategy
 			{
 				get
 				{
@@ -223,14 +223,14 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public class ListScenarios_Survey
+			public class CreateScenarioFromTemplate_Survey
 			{
 
-				private string id;
+				private string surveyId;
 
-				private string name;
+				private string surveyName;
 
-				private string description;
+				private string surveyDescription;
 
 				private string role;
 
@@ -238,41 +238,41 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private string beebotId;
 
-				private List<ListScenarios_IntentNode> intents;
+				private List<CreateScenarioFromTemplate_IntentNode> intents;
 
-				public string Id
+				public string SurveyId
 				{
 					get
 					{
-						return id;
+						return surveyId;
 					}
 					set	
 					{
-						id = value;
+						surveyId = value;
 					}
 				}
 
-				public string Name
+				public string SurveyName
 				{
 					get
 					{
-						return name;
+						return surveyName;
 					}
 					set	
 					{
-						name = value;
+						surveyName = value;
 					}
 				}
 
-				public string Description
+				public string SurveyDescription
 				{
 					get
 					{
-						return description;
+						return surveyDescription;
 					}
 					set	
 					{
-						description = value;
+						surveyDescription = value;
 					}
 				}
 
@@ -312,7 +312,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public List<ListScenarios_IntentNode> Intents
+				public List<CreateScenarioFromTemplate_IntentNode> Intents
 				{
 					get
 					{
@@ -324,7 +324,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public class ListScenarios_IntentNode
+				public class CreateScenarioFromTemplate_IntentNode
 				{
 
 					private string nodeId;
@@ -357,7 +357,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public class ListScenarios_KeyValuePair
+			public class CreateScenarioFromTemplate_KeyValuePair
 			{
 
 				private string key;
@@ -389,14 +389,14 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public class ListScenarios_Strategy
+			public class CreateScenarioFromTemplate_Strategy
 			{
 
-				private string id;
+				private string strategyId;
 
-				private string name;
+				private string strategyName;
 
-				private string description;
+				private string strategyDescription;
 
 				private string type;
 
@@ -418,43 +418,43 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private bool? isTemplate;
 
-				private List<ListScenarios_TimeFrame> workingTime;
+				private List<CreateScenarioFromTemplate_TimeFrame> workingTime;
 
 				private List<string> repeatDays;
 
-				public string Id
+				public string StrategyId
 				{
 					get
 					{
-						return id;
+						return strategyId;
 					}
 					set	
 					{
-						id = value;
+						strategyId = value;
 					}
 				}
 
-				public string Name
+				public string StrategyName
 				{
 					get
 					{
-						return name;
+						return strategyName;
 					}
 					set	
 					{
-						name = value;
+						strategyName = value;
 					}
 				}
 
-				public string Description
+				public string StrategyDescription
 				{
 					get
 					{
-						return description;
+						return strategyDescription;
 					}
 					set	
 					{
-						description = value;
+						strategyDescription = value;
 					}
 				}
 
@@ -578,7 +578,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public List<ListScenarios_TimeFrame> WorkingTime
+				public List<CreateScenarioFromTemplate_TimeFrame> WorkingTime
 				{
 					get
 					{
@@ -602,7 +602,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public class ListScenarios_TimeFrame
+				public class CreateScenarioFromTemplate_TimeFrame
 				{
 
 					private string beginTime;

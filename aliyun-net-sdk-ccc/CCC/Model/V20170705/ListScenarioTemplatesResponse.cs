@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class ListScenariosResponse : AcsResponse
+	public class ListScenarioTemplatesResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -34,7 +34,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? httpStatusCode;
 
-		private List<ListScenarios_Scenario> scenarios;
+		private List<ListScenarioTemplates_Scenario> scenarioTemplates;
 
 		public string RequestId
 		{
@@ -96,19 +96,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<ListScenarios_Scenario> Scenarios
+		public List<ListScenarioTemplates_Scenario> ScenarioTemplates
 		{
 			get
 			{
-				return scenarios;
+				return scenarioTemplates;
 			}
 			set	
 			{
-				scenarios = value;
+				scenarioTemplates = value;
 			}
 		}
 
-		public class ListScenarios_Scenario
+		public class ListScenarioTemplates_Scenario
 		{
 
 			private string id;
@@ -121,11 +121,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 			private bool? isTemplate;
 
-			private List<ListScenarios_Survey> surveys;
+			private List<ListScenarioTemplates_Survey> surveys;
 
-			private List<ListScenarios_KeyValuePair> variables;
-
-			private ListScenarios_Strategy strategy;
+			private List<ListScenarioTemplates_KeyValuePair> variables;
 
 			public string Id
 			{
@@ -187,7 +185,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public List<ListScenarios_Survey> Surveys
+			public List<ListScenarioTemplates_Survey> Surveys
 			{
 				get
 				{
@@ -199,7 +197,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public List<ListScenarios_KeyValuePair> Variables
+			public List<ListScenarioTemplates_KeyValuePair> Variables
 			{
 				get
 				{
@@ -211,19 +209,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
-			public ListScenarios_Strategy Strategy
-			{
-				get
-				{
-					return strategy;
-				}
-				set	
-				{
-					strategy = value;
-				}
-			}
-
-			public class ListScenarios_Survey
+			public class ListScenarioTemplates_Survey
 			{
 
 				private string id;
@@ -238,7 +224,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private string beebotId;
 
-				private List<ListScenarios_IntentNode> intents;
+				private string globalQuestions;
+
+				private List<ListScenarioTemplates_IntentNode> intents;
+
+				private ListScenarioTemplates_Flow flow;
 
 				public string Id
 				{
@@ -312,7 +302,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public List<ListScenarios_IntentNode> Intents
+				public string GlobalQuestions
+				{
+					get
+					{
+						return globalQuestions;
+					}
+					set	
+					{
+						globalQuestions = value;
+					}
+				}
+
+				public List<ListScenarioTemplates_IntentNode> Intents
 				{
 					get
 					{
@@ -324,7 +326,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public class ListScenarios_IntentNode
+				public ListScenarioTemplates_Flow Flow
+				{
+					get
+					{
+						return flow;
+					}
+					set	
+					{
+						flow = value;
+					}
+				}
+
+				public class ListScenarioTemplates_IntentNode
 				{
 
 					private string nodeId;
@@ -355,9 +369,55 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 						}
 					}
 				}
+
+				public class ListScenarioTemplates_Flow
+				{
+
+					private string flowId;
+
+					private bool? isPublished;
+
+					private string flowJson;
+
+					public string FlowId
+					{
+						get
+						{
+							return flowId;
+						}
+						set	
+						{
+							flowId = value;
+						}
+					}
+
+					public bool? IsPublished
+					{
+						get
+						{
+							return isPublished;
+						}
+						set	
+						{
+							isPublished = value;
+						}
+					}
+
+					public string FlowJson
+					{
+						get
+						{
+							return flowJson;
+						}
+						set	
+						{
+							flowJson = value;
+						}
+					}
+				}
 			}
 
-			public class ListScenarios_KeyValuePair
+			public class ListScenarioTemplates_KeyValuePair
 			{
 
 				private string key;
@@ -385,252 +445,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						_value = value;
-					}
-				}
-			}
-
-			public class ListScenarios_Strategy
-			{
-
-				private string id;
-
-				private string name;
-
-				private string description;
-
-				private string type;
-
-				private long? startTime;
-
-				private long? endTime;
-
-				private string repeatBy;
-
-				private int? maxAttemptsPerDay;
-
-				private int? minAttemptInterval;
-
-				private string customized;
-
-				private string routingStrategy;
-
-				private string followUpStrategy;
-
-				private bool? isTemplate;
-
-				private List<ListScenarios_TimeFrame> workingTime;
-
-				private List<string> repeatDays;
-
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
-
-				public long? StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public long? EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
-					}
-				}
-
-				public string RepeatBy
-				{
-					get
-					{
-						return repeatBy;
-					}
-					set	
-					{
-						repeatBy = value;
-					}
-				}
-
-				public int? MaxAttemptsPerDay
-				{
-					get
-					{
-						return maxAttemptsPerDay;
-					}
-					set	
-					{
-						maxAttemptsPerDay = value;
-					}
-				}
-
-				public int? MinAttemptInterval
-				{
-					get
-					{
-						return minAttemptInterval;
-					}
-					set	
-					{
-						minAttemptInterval = value;
-					}
-				}
-
-				public string Customized
-				{
-					get
-					{
-						return customized;
-					}
-					set	
-					{
-						customized = value;
-					}
-				}
-
-				public string RoutingStrategy
-				{
-					get
-					{
-						return routingStrategy;
-					}
-					set	
-					{
-						routingStrategy = value;
-					}
-				}
-
-				public string FollowUpStrategy
-				{
-					get
-					{
-						return followUpStrategy;
-					}
-					set	
-					{
-						followUpStrategy = value;
-					}
-				}
-
-				public bool? IsTemplate
-				{
-					get
-					{
-						return isTemplate;
-					}
-					set	
-					{
-						isTemplate = value;
-					}
-				}
-
-				public List<ListScenarios_TimeFrame> WorkingTime
-				{
-					get
-					{
-						return workingTime;
-					}
-					set	
-					{
-						workingTime = value;
-					}
-				}
-
-				public List<string> RepeatDays
-				{
-					get
-					{
-						return repeatDays;
-					}
-					set	
-					{
-						repeatDays = value;
-					}
-				}
-
-				public class ListScenarios_TimeFrame
-				{
-
-					private string beginTime;
-
-					private string endTime;
-
-					public string BeginTime
-					{
-						get
-						{
-							return beginTime;
-						}
-						set	
-						{
-							beginTime = value;
-						}
-					}
-
-					public string EndTime
-					{
-						get
-						{
-							return endTime;
-						}
-						set	
-						{
-							endTime = value;
-						}
 					}
 				}
 			}

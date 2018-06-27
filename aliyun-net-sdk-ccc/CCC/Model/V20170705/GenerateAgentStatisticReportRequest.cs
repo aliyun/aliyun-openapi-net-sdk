@@ -26,24 +26,39 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-    public class CreateScenarioRequest : RpcAcsRequest<CreateScenarioResponse>
+    public class GenerateAgentStatisticReportRequest : RpcAcsRequest<GenerateAgentStatisticReportResponse>
     {
-        public CreateScenarioRequest()
-            : base("CCC", "2017-07-05", "CreateScenario", "ccc", "openAPI")
+        public GenerateAgentStatisticReportRequest()
+            : base("CCC", "2017-07-05", "GenerateAgentStatisticReport", "ccc", "openAPI")
         {
         }
 
+		private string agentId;
+
 		private string instanceId;
 
-		private List<string> surveysJsons;
+		private string endDate;
 
-		private string strategyJson;
+		private int? pageSize;
 
-		private string name;
+		private string startDate;
 
-		private string description;
+		private int? pageNumber;
 
-		private string type;
+		private string accessKeyId;
+
+		public string AgentId
+		{
+			get
+			{
+				return agentId;
+			}
+			set	
+			{
+				agentId = value;
+				DictionaryUtil.Add(QueryParameters, "AgentId", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -58,83 +73,74 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<string> SurveysJsons
+		public string EndDate
 		{
 			get
 			{
-				return surveysJsons;
-			}
-
-			set
-			{
-				surveysJsons = value;
-				for (int i = 0; i < surveysJsons.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SurveysJson." + (i + 1) , surveysJsons[i]);
-				}
-			}
-		}
-
-		public string StrategyJson
-		{
-			get
-			{
-				return strategyJson;
+				return endDate;
 			}
 			set	
 			{
-				strategyJson = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
 			}
 		}
 
-		public string Name
+		public int? PageSize
 		{
 			get
 			{
-				return name;
+				return pageSize;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string Description
+		public string StartDate
 		{
 			get
 			{
-				return description;
+				return startDate;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
 			}
 		}
 
-		public string Type
+		public int? PageNumber
 		{
 			get
 			{
-				return type;
+				return pageNumber;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string AccessKeyId
 		{
-			return false;
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
 		}
 
-        public override CreateScenarioResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GenerateAgentStatisticReportResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateScenarioResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GenerateAgentStatisticReportResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

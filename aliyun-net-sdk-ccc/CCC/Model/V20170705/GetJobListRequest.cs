@@ -26,24 +26,24 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-    public class CreateScenarioRequest : RpcAcsRequest<CreateScenarioResponse>
+    public class GetJobListRequest : RpcAcsRequest<GetJobListResponse>
     {
-        public CreateScenarioRequest()
-            : base("CCC", "2017-07-05", "CreateScenario", "ccc", "openAPI")
+        public GetJobListRequest()
+            : base("CCC", "2017-07-05", "GetJobList", "ccc", "openAPI")
         {
         }
 
 		private string instanceId;
 
-		private List<string> surveysJsons;
+		private string jobGroupId;
 
-		private string strategyJson;
+		private int? pageSize;
 
-		private string name;
+		private int? pageNumber;
 
-		private string description;
+		private int? status;
 
-		private string type;
+		private bool? queryAll;
 
 		public string InstanceId
 		{
@@ -58,72 +58,68 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<string> SurveysJsons
+		public string JobGroupId
 		{
 			get
 			{
-				return surveysJsons;
-			}
-
-			set
-			{
-				surveysJsons = value;
-				for (int i = 0; i < surveysJsons.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SurveysJson." + (i + 1) , surveysJsons[i]);
-				}
-			}
-		}
-
-		public string StrategyJson
-		{
-			get
-			{
-				return strategyJson;
+				return jobGroupId;
 			}
 			set	
 			{
-				strategyJson = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
+				jobGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
 			}
 		}
 
-		public string Name
+		public int? PageSize
 		{
 			get
 			{
-				return name;
+				return pageSize;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string Description
+		public int? PageNumber
 		{
 			get
 			{
-				return description;
+				return pageNumber;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string Type
+		public int? Status
 		{
 			get
 			{
-				return type;
+				return status;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
+			}
+		}
+
+		public bool? QueryAll
+		{
+			get
+			{
+				return queryAll;
+			}
+			set	
+			{
+				queryAll = value;
+				DictionaryUtil.Add(QueryParameters, "QueryAll", value.ToString());
 			}
 		}
 
@@ -132,9 +128,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			return false;
 		}
 
-        public override CreateScenarioResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetJobListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateScenarioResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetJobListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
