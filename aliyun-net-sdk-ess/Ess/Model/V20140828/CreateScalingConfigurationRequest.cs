@@ -59,7 +59,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string keyPairName;
 
-		private List<string> spotPriceLimits;
+		private List<SpotPriceLimit> spotPriceLimits;
 
 		private string systemDiskCategory;
 
@@ -69,7 +69,11 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string dataDisk4Category;
 
+		private string hostName;
+
 		private string dataDisk2SnapshotId;
+
+		private bool? passwordInherit;
 
 		private int? dataDisk4Size;
 
@@ -298,7 +302,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public List<string> SpotPriceLimits
+		public List<SpotPriceLimit> SpotPriceLimits
 		{
 			get
 			{
@@ -310,7 +314,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				spotPriceLimits = value;
 				for (int i = 0; i < spotPriceLimits.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"SpotPriceLimit." + (i + 1) , spotPriceLimits[i]);
+					DictionaryUtil.Add(QueryParameters,"SpotPriceLimit." + (i + 1) + ".InstanceType", spotPriceLimits[i].InstanceType);
+					DictionaryUtil.Add(QueryParameters,"SpotPriceLimit." + (i + 1) + ".PriceLimit", spotPriceLimits[i].PriceLimit);
 				}
 			}
 		}
@@ -367,6 +372,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string HostName
+		{
+			get
+			{
+				return hostName;
+			}
+			set	
+			{
+				hostName = value;
+				DictionaryUtil.Add(QueryParameters, "HostName", value);
+			}
+		}
+
 		public string DataDisk2SnapshotId
 		{
 			get
@@ -377,6 +395,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				dataDisk2SnapshotId = value;
 				DictionaryUtil.Add(QueryParameters, "DataDisk.2.SnapshotId", value);
+			}
+		}
+
+		public bool? PasswordInherit
+		{
+			get
+			{
+				return passwordInherit;
+			}
+			set	
+			{
+				passwordInherit = value;
+				DictionaryUtil.Add(QueryParameters, "PasswordInherit", value.ToString());
 			}
 		}
 
@@ -728,6 +759,38 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				dataDisk1DeleteWithInstance = value;
 				DictionaryUtil.Add(QueryParameters, "DataDisk.1.DeleteWithInstance", value);
+			}
+		}
+
+		public class SpotPriceLimit
+		{
+
+			private string instanceType;
+
+			private float? priceLimit;
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			public float? PriceLimit
+			{
+				get
+				{
+					return priceLimit;
+				}
+				set	
+				{
+					priceLimit = value;
+				}
 			}
 		}
 

@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingConfiguration.ScalingGroupId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ScalingGroupId");
 				scalingConfiguration.InstanceName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceName");
 				scalingConfiguration.ImageId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ImageId");
+				scalingConfiguration.HostName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].HostName");
 				scalingConfiguration.InstanceType = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceType");
 				scalingConfiguration.InstanceGeneration = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceGeneration");
 				scalingConfiguration.SecurityGroupId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SecurityGroupId");
@@ -61,6 +62,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingConfiguration.DeploymentSetId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DeploymentSetId");
 				scalingConfiguration.SecurityEnhancementStrategy = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SecurityEnhancementStrategy");
 				scalingConfiguration.SpotStrategy = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SpotStrategy");
+				scalingConfiguration.PasswordInherit = context.BooleanValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].PasswordInherit");
 
 				List<string> scalingConfiguration_instanceTypes = new List<string>();
 				for (int j = 0; j < context.Length("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceTypes.Length"); j++) {

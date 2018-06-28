@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				DescribeScalingGroupsResponse.DescribeScalingGroups_ScalingGroup scalingGroup = new DescribeScalingGroupsResponse.DescribeScalingGroups_ScalingGroup();
 				scalingGroup.DefaultCooldown = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].DefaultCooldown");
 				scalingGroup.MaxSize = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].MaxSize");
+				scalingGroup.PendingWaitCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].PendingWaitCapacity");
+				scalingGroup.RemovingWaitCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].RemovingWaitCapacity");
 				scalingGroup.PendingCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].PendingCapacity");
 				scalingGroup.RemovingCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].RemovingCapacity");
 				scalingGroup.ScalingGroupName = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].ScalingGroupName");

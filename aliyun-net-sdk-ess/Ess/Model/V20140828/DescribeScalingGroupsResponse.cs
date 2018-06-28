@@ -101,6 +101,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private int? maxSize;
 
+			private int? pendingWaitCapacity;
+
+			private int? removingWaitCapacity;
+
 			private int? pendingCapacity;
 
 			private int? removingCapacity;
@@ -166,6 +170,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					maxSize = value;
+				}
+			}
+
+			public int? PendingWaitCapacity
+			{
+				get
+				{
+					return pendingWaitCapacity;
+				}
+				set	
+				{
+					pendingWaitCapacity = value;
+				}
+			}
+
+			public int? RemovingWaitCapacity
+			{
+				get
+				{
+					return removingWaitCapacity;
+				}
+				set	
+				{
+					removingWaitCapacity = value;
 				}
 			}
 

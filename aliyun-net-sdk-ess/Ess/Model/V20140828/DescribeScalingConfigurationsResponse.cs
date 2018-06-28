@@ -107,6 +107,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string imageId;
 
+			private string hostName;
+
 			private string instanceType;
 
 			private string instanceGeneration;
@@ -142,6 +144,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			private string securityEnhancementStrategy;
 
 			private string spotStrategy;
+
+			private bool? passwordInherit;
 
 			private List<DescribeScalingConfigurations_DataDisk> dataDisks;
 
@@ -208,6 +212,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					imageId = value;
+				}
+			}
+
+			public string HostName
+			{
+				get
+				{
+					return hostName;
+				}
+				set	
+				{
+					hostName = value;
 				}
 			}
 
@@ -424,6 +440,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					spotStrategy = value;
+				}
+			}
+
+			public bool? PasswordInherit
+			{
+				get
+				{
+					return passwordInherit;
+				}
+				set	
+				{
+					passwordInherit = value;
 				}
 			}
 

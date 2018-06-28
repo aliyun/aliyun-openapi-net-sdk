@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 	public class DescribeCapacityHistoryResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageNumber;
@@ -31,6 +33,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private int? pageSize;
 
 		private List<DescribeCapacityHistory_CapacityHistoryModel> capacityHistoryItems;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{

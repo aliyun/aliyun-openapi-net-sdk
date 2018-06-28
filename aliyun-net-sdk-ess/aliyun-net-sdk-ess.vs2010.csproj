@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{fe439cdf-f0e8-498a-bd0f-6b9c5cc6abd6}</ProjectGuid>
+    <ProjectGuid>{5d40335b-8f12-4e4e-9689-a4b48b514e50}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -74,6 +74,7 @@
 	<Compile Include="Ess\Model\V20140828\DescribeRegionsRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\DescribeNotificationTypesResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\DeleteScheduledTaskResponse.cs" />
+	<Compile Include="Ess\Model\V20140828\ModifyScalingConfigurationResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\ModifyScalingGroupRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\DeleteScalingRuleRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\CreateLifecycleHookResponse.cs" />
@@ -135,6 +136,7 @@
 	<Compile Include="Ess\Model\V20140828\DeleteLifecycleHookResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\CreateScalingRuleResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\DescribeLimitationRequest.cs" />
+	<Compile Include="Ess\Model\V20140828\ModifyScalingConfigurationRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\DisableScalingGroupResponse.cs" />
 	<Compile Include="Ess\Transform\V20140828\CreateLifecycleHookResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DeleteScalingRuleResponseUnmarshaller.cs" />
@@ -148,6 +150,7 @@
 	<Compile Include="Ess\Transform\V20140828\DescribeScalingActivityDetailResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\ModifyNotificationConfigurationResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DeleteNotificationConfigurationResponseUnmarshaller.cs" />
+	<Compile Include="Ess\Transform\V20140828\ModifyScalingConfigurationResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DescribeAccountAttributesResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\CreateScalingGroupResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\ExitStandbyResponseUnmarshaller.cs" />

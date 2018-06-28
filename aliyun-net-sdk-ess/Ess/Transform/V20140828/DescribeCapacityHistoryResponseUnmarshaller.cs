@@ -30,6 +30,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 			DescribeCapacityHistoryResponse describeCapacityHistoryResponse = new DescribeCapacityHistoryResponse();
 
 			describeCapacityHistoryResponse.HttpResponse = context.HttpResponse;
+			describeCapacityHistoryResponse.RequestId = context.StringValue("DescribeCapacityHistory.RequestId");
 			describeCapacityHistoryResponse.TotalCount = context.IntegerValue("DescribeCapacityHistory.TotalCount");
 			describeCapacityHistoryResponse.PageNumber = context.IntegerValue("DescribeCapacityHistory.PageNumber");
 			describeCapacityHistoryResponse.PageSize = context.IntegerValue("DescribeCapacityHistory.PageSize");
