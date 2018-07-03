@@ -42,8 +42,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			video.Duration = context.FloatValue("GetVideoInfo.Video.Duration");
 			video.Description = context.StringValue("GetVideoInfo.Video.Description");
 			video.CreateTime = context.StringValue("GetVideoInfo.Video.CreateTime");
-			video.CreationTime = context.StringValue("GetVideoInfo.Video.CreationTime");
 			video.ModifyTime = context.StringValue("GetVideoInfo.Video.ModifyTime");
+			video.ModificationTime = context.StringValue("GetVideoInfo.Video.ModificationTime");
+			video.CreationTime = context.StringValue("GetVideoInfo.Video.CreationTime");
 			video.CoverURL = context.StringValue("GetVideoInfo.Video.CoverURL");
 			video.CateId = context.LongValue("GetVideoInfo.Video.CateId");
 			video.CateName = context.StringValue("GetVideoInfo.Video.CateName");
@@ -54,6 +55,15 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video_snapshots.Add(context.StringValue("GetVideoInfo.Video.Snapshots["+ i +"]"));
 			}
 			video.Snapshots = video_snapshots;
+
+			List<GetVideoInfoResponse.GetVideoInfo_Video.GetVideoInfo_Thumbnail> video_thumbnailList = new List<GetVideoInfoResponse.GetVideoInfo_Video.GetVideoInfo_Thumbnail>();
+			for (int i = 0; i < context.Length("GetVideoInfo.Video.ThumbnailList.Length"); i++) {
+				GetVideoInfoResponse.GetVideoInfo_Video.GetVideoInfo_Thumbnail thumbnail = new GetVideoInfoResponse.GetVideoInfo_Video.GetVideoInfo_Thumbnail();
+				thumbnail.URL = context.StringValue("GetVideoInfo.Video.ThumbnailList["+ i +"].URL");
+
+				video_thumbnailList.Add(thumbnail);
+			}
+			video.ThumbnailList = video_thumbnailList;
 			getVideoInfoResponse.Video = video;
         
 			return getVideoInfoResponse;

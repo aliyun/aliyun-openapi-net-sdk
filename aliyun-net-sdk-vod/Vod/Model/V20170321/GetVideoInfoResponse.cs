@@ -85,9 +85,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string createTime;
 
-			private string creationTime;
-
 			private string modifyTime;
+
+			private string modificationTime;
+
+			private string creationTime;
 
 			private string coverURL;
 
@@ -96,6 +98,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			private string cateName;
 
 			private string preprocessStatus;
+
+			private List<GetVideoInfo_Thumbnail> thumbnailList;
 
 			private List<string> snapshots;
 
@@ -195,18 +199,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
 			public string ModifyTime
 			{
 				get
@@ -216,6 +208,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					modifyTime = value;
+				}
+			}
+
+			public string ModificationTime
+			{
+				get
+				{
+					return modificationTime;
+				}
+				set	
+				{
+					modificationTime = value;
+				}
+			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
 				}
 			}
 
@@ -267,6 +283,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public List<GetVideoInfo_Thumbnail> ThumbnailList
+			{
+				get
+				{
+					return thumbnailList;
+				}
+				set	
+				{
+					thumbnailList = value;
+				}
+			}
+
 			public List<string> Snapshots
 			{
 				get
@@ -276,6 +304,24 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					snapshots = value;
+				}
+			}
+
+			public class GetVideoInfo_Thumbnail
+			{
+
+				private string uRL;
+
+				public string URL
+				{
+					get
+					{
+						return uRL;
+					}
+					set	
+					{
+						uRL = value;
+					}
 				}
 			}
 		}

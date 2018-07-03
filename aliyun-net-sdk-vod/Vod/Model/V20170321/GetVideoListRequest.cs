@@ -39,9 +39,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? cateId;
 
-		private long? pageNo;
+		private int? pageNo;
 
-		private long? pageSize;
+		private int? pageSize;
 
 		private string action;
 
@@ -94,7 +94,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? PageNo
+		public int? PageNo
 		{
 			get
 			{
@@ -107,7 +107,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? PageSize
+		public int? PageSize
 		{
 			get
 			{
