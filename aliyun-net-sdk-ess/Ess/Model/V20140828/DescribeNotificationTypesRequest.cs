@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DescribeNotificationTypesRequest : RpcAcsRequest<DescribeNotificationTypesResponse>
     {
         public DescribeNotificationTypesRequest()
-            : base("Ess", "2014-08-28", "DescribeNotificationTypes", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "DescribeNotificationTypes", "ESS", "openAPI")
         {
         }
 

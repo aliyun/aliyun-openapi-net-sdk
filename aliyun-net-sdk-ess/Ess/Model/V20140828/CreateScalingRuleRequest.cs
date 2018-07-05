@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class CreateScalingRuleRequest : RpcAcsRequest<CreateScalingRuleResponse>
     {
         public CreateScalingRuleRequest()
-            : base("Ess", "2014-08-28", "CreateScalingRule", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "CreateScalingRule", "ESS", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class CreateScalingGroupRequest : RpcAcsRequest<CreateScalingGroupResponse>
     {
         public CreateScalingGroupRequest()
-            : base("Ess", "2014-08-28", "CreateScalingGroup", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "CreateScalingGroup", "ESS", "openAPI")
         {
         }
 
@@ -149,7 +149,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public List<string> VSwitchIds
+		public List<string> VSwitchIdss
 		{
 			get
 			{

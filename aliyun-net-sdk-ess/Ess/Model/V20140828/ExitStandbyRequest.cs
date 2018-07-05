@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class ExitStandbyRequest : RpcAcsRequest<ExitStandbyResponse>
     {
         public ExitStandbyRequest()
-            : base("Ess", "2014-08-28", "ExitStandby", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "ExitStandby", "ESS", "openAPI")
         {
         }
 

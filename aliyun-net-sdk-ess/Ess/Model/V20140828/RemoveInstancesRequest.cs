@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class RemoveInstancesRequest : RpcAcsRequest<RemoveInstancesResponse>
     {
         public RemoveInstancesRequest()
-            : base("Ess", "2014-08-28", "RemoveInstances", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "RemoveInstances", "ESS", "openAPI")
         {
         }
 

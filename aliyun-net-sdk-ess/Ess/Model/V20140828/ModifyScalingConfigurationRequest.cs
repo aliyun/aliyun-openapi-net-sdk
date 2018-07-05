@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class ModifyScalingConfigurationRequest : RpcAcsRequest<ModifyScalingConfigurationResponse>
     {
         public ModifyScalingConfigurationRequest()
-            : base("Ess", "2014-08-28", "ModifyScalingConfiguration", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "ModifyScalingConfiguration", "ESS", "openAPI")
         {
         }
 
@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string ownerAccount;
 
-		private List<string> instanceTypess;
+		private List<string> instanceTypes;
 
 		private int? internetMaxBandwidthOut;
 
@@ -114,19 +114,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public List<string> InstanceTypess
+		public List<string> InstanceTypes
 		{
 			get
 			{
-				return instanceTypess;
+				return instanceTypes;
 			}
 
 			set
 			{
-				instanceTypess = value;
-				for (int i = 0; i < instanceTypess.Count; i++)
+				instanceTypes = value;
+				for (int i = 0; i < instanceTypes.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"InstanceTypes." + (i + 1) , instanceTypess[i]);
+					DictionaryUtil.Add(QueryParameters,"InstanceTypes." + (i + 1) , instanceTypes[i]);
 				}
 			}
 		}

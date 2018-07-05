@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class CompleteLifecycleActionRequest : RpcAcsRequest<CompleteLifecycleActionResponse>
     {
         public CompleteLifecycleActionRequest()
-            : base("Ess", "2014-08-28", "CompleteLifecycleAction", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "CompleteLifecycleAction", "ESS", "openAPI")
         {
         }
 
