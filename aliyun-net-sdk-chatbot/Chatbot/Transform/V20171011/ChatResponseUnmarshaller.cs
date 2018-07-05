@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
 					recommend.KnowledgeId = context.StringValue("Chat.Messages["+ i +"].Recommends["+ j +"].KnowledgeId");
 					recommend.Title = context.StringValue("Chat.Messages["+ i +"].Recommends["+ j +"].Title");
 					recommend.AnswerSource = context.StringValue("Chat.Messages["+ i +"].Recommends["+ j +"].AnswerSource");
+					recommend.Summary = context.StringValue("Chat.Messages["+ i +"].Recommends["+ j +"].Summary");
+					recommend.Content = context.StringValue("Chat.Messages["+ i +"].Recommends["+ j +"].Content");
 
 					message_recommends.Add(recommend);
 				}

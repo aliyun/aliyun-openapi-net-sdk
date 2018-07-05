@@ -162,6 +162,10 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 
 				private string answerSource;
 
+				private string summary;
+
+				private string content;
+
 				public string KnowledgeId
 				{
 					get
@@ -195,6 +199,30 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 					set	
 					{
 						answerSource = value;
+					}
+				}
+
+				public string Summary
+				{
+					get
+					{
+						return summary;
+					}
+					set	
+					{
+						summary = value;
+					}
+				}
+
+				public string Content
+				{
+					get
+					{
+						return content;
+					}
+					set	
+					{
+						content = value;
 					}
 				}
 			}

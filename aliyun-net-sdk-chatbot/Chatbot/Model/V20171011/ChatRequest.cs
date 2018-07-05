@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 
 		private string action;
 
+		private List<string> perspectives;
+
 		private string sessionId;
 
 		private string tag;
@@ -113,6 +115,23 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public List<string> Perspectives
+		{
+			get
+			{
+				return perspectives;
+			}
+
+			set
+			{
+				perspectives = value;
+				for (int i = 0; i < perspectives.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Perspective." + (i + 1) , perspectives[i]);
+				}
 			}
 		}
 
