@@ -23,20 +23,23 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Transform.V20180308
 {
-    public class NodeProcessCreateResponseUnmarshaller
+    public class DescribeEventRuleResponseUnmarshaller
     {
-        public static NodeProcessCreateResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeEventRuleResponse Unmarshall(UnmarshallerContext context)
         {
-			NodeProcessCreateResponse nodeProcessCreateResponse = new NodeProcessCreateResponse();
+			DescribeEventRuleResponse describeEventRuleResponse = new DescribeEventRuleResponse();
 
-			nodeProcessCreateResponse.HttpResponse = context.HttpResponse;
-			nodeProcessCreateResponse.ErrorCode = context.IntegerValue("NodeProcessCreate.ErrorCode");
-			nodeProcessCreateResponse.ErrorMessage = context.StringValue("NodeProcessCreate.ErrorMessage");
-			nodeProcessCreateResponse.Success = context.BooleanValue("NodeProcessCreate.Success");
-			nodeProcessCreateResponse.RequestId = context.StringValue("NodeProcessCreate.RequestId");
-			nodeProcessCreateResponse.Id = context.LongValue("NodeProcessCreate.Id");
+			describeEventRuleResponse.HttpResponse = context.HttpResponse;
+			describeEventRuleResponse.Success = context.BooleanValue("DescribeEventRule.Success");
+			describeEventRuleResponse.Code = context.StringValue("DescribeEventRule.Code");
+			describeEventRuleResponse.Message = context.StringValue("DescribeEventRule.Message");
+			describeEventRuleResponse.RequestId = context.StringValue("DescribeEventRule.RequestId");
+
+			DescribeEventRuleResponse.DescribeEventRule_Result result = new DescribeEventRuleResponse.DescribeEventRule_Result();
+			result.EventPattern = context.StringValue("DescribeEventRule.Result.EventPattern");
+			describeEventRuleResponse.Result = result;
         
-			return nodeProcessCreateResponse;
+			return describeEventRuleResponse;
         }
     }
 }

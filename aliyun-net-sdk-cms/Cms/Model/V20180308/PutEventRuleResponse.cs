@@ -21,42 +21,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
-	public class NodeProcessCreateResponse : AcsResponse
+	public class PutEventRuleResponse : AcsResponse
 	{
-
-		private int? errorCode;
-
-		private string errorMessage;
 
 		private bool? success;
 
+		private string code;
+
+		private string message;
+
 		private string requestId;
 
-		private long? id;
-
-		public int? ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
+		private string data;
 
 		public bool? Success
 		{
@@ -67,6 +43,30 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -82,15 +82,15 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public long? Id
+		public string Data
 		{
 			get
 			{
-				return id;
+				return data;
 			}
 			set	
 			{
-				id = value;
+				data = value;
 			}
 		}
 	}

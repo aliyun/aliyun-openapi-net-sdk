@@ -179,6 +179,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 			private string networkType;
 
+			private string instanceTypeFamily;
+
 			public string InstanceId
 			{
 				get
@@ -332,6 +334,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					networkType = value;
+				}
+			}
+
+			public string InstanceTypeFamily
+			{
+				get
+				{
+					return instanceTypeFamily;
+				}
+				set	
+				{
+					instanceTypeFamily = value;
 				}
 			}
 		}

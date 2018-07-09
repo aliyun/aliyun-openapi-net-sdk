@@ -55,6 +55,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 				node.AliyunHost = context.BooleanValue("NodeList.Nodes["+ i +"].AliyunHost");
 				node.NatIp = context.StringValue("NodeList.Nodes["+ i +"].NatIp");
 				node.NetworkType = context.StringValue("NodeList.Nodes["+ i +"].NetworkType");
+				node.InstanceTypeFamily = context.StringValue("NodeList.Nodes["+ i +"].InstanceTypeFamily");
 
 				nodeListResponse_nodes.Add(node);
 			}

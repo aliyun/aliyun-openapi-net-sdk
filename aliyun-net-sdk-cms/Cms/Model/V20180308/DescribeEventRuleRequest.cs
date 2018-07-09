@@ -17,81 +17,40 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cms.Transform;
+using Aliyun.Acs.Cms.Transform.V20180308;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
-	public class NodeProcessCreateResponse : AcsResponse
-	{
+    public class DescribeEventRuleRequest : RpcAcsRequest<DescribeEventRuleResponse>
+    {
+        public DescribeEventRuleRequest()
+            : base("Cms", "2018-03-08", "DescribeEventRule", "cms", "openAPI")
+        {
+        }
 
-		private int? errorCode;
+		private string ruleName;
 
-		private string errorMessage;
-
-		private bool? success;
-
-		private string requestId;
-
-		private long? id;
-
-		public int? ErrorCode
+		public string RuleName
 		{
 			get
 			{
-				return errorCode;
+				return ruleName;
 			}
 			set	
 			{
-				errorCode = value;
+				ruleName = value;
+				DictionaryUtil.Add(QueryParameters, "RuleName", value);
 			}
 		}
 
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public long? Id
-		{
-			get
-			{
-				return id;
-			}
-			set	
-			{
-				id = value;
-			}
-		}
-	}
+        public override DescribeEventRuleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        {
+            return DescribeEventRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

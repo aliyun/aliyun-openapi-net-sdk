@@ -23,20 +23,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Transform.V20180308
 {
-    public class NodeProcessCreateResponseUnmarshaller
+    public class PutEventRuleResponseUnmarshaller
     {
-        public static NodeProcessCreateResponse Unmarshall(UnmarshallerContext context)
+        public static PutEventRuleResponse Unmarshall(UnmarshallerContext context)
         {
-			NodeProcessCreateResponse nodeProcessCreateResponse = new NodeProcessCreateResponse();
+			PutEventRuleResponse putEventRuleResponse = new PutEventRuleResponse();
 
-			nodeProcessCreateResponse.HttpResponse = context.HttpResponse;
-			nodeProcessCreateResponse.ErrorCode = context.IntegerValue("NodeProcessCreate.ErrorCode");
-			nodeProcessCreateResponse.ErrorMessage = context.StringValue("NodeProcessCreate.ErrorMessage");
-			nodeProcessCreateResponse.Success = context.BooleanValue("NodeProcessCreate.Success");
-			nodeProcessCreateResponse.RequestId = context.StringValue("NodeProcessCreate.RequestId");
-			nodeProcessCreateResponse.Id = context.LongValue("NodeProcessCreate.Id");
+			putEventRuleResponse.HttpResponse = context.HttpResponse;
+			putEventRuleResponse.Success = context.BooleanValue("PutEventRule.Success");
+			putEventRuleResponse.Code = context.StringValue("PutEventRule.Code");
+			putEventRuleResponse.Message = context.StringValue("PutEventRule.Message");
+			putEventRuleResponse.RequestId = context.StringValue("PutEventRule.RequestId");
+			putEventRuleResponse.Data = context.StringValue("PutEventRule.Data");
         
-			return nodeProcessCreateResponse;
+			return putEventRuleResponse;
         }
     }
 }
