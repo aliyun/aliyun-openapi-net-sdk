@@ -21,16 +21,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class RefreshUploadVideoResponse : AcsResponse
+	public class CreateAuditResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string uploadAuth;
-
-		private string uploadAddress;
-
-		private string videoId;
 
 		public string RequestId
 		{
@@ -41,42 +35,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string UploadAuth
-		{
-			get
-			{
-				return uploadAuth;
-			}
-			set	
-			{
-				uploadAuth = value;
-			}
-		}
-
-		public string UploadAddress
-		{
-			get
-			{
-				return uploadAddress;
-			}
-			set	
-			{
-				uploadAddress = value;
-			}
-		}
-
-		public string VideoId
-		{
-			get
-			{
-				return videoId;
-			}
-			set	
-			{
-				videoId = value;
 			}
 		}
 	}

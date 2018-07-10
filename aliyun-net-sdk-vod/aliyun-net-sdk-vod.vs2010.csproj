@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7262674b-be36-4786-b79c-950f62266f32}</ProjectGuid>
+    <ProjectGuid>{481f8647-59ca-4f14-83b1-54811a721736}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -52,8 +52,10 @@
 	<Compile Include="Vod\Model\V20170321\SearchEditingProjectRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\CreateAuditResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\GetOSSStatisRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\SearchMediaResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitSnapshotJobResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitAIJobResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\SearchMediaRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitAIVideoCoverJobRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitAIVideoCensorJobResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\ListAIVideoPornRecogJobRequest.cs" />
@@ -69,12 +71,14 @@
 	<Compile Include="Vod\Model\V20170321\ListAIVideoCoverJobRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\DescribePlayUserAvgRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetAuditResultResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\UpdateVideoInfosRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\DescribeDomainFlowDataRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\RefreshObjectCachesRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetMezzanineInfoResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\AddEditingProjectRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\OpenVodServiceRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\DescribeRefreshQuotaRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\GetVideoInfosResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\DeleteEditingProjectResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitAIVideoPornRecogJobResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\GetCDNStatisSumResponse.cs" />
@@ -125,6 +129,7 @@
 	<Compile Include="Vod\Model\V20170321\GetVideoPlayAuthResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\DeleteCategoryResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\GetMessageCallbackResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\UpdateVideoInfosResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitPreprocessJobsResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitSnapshotJobRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetImageInfoRequest.cs" />
@@ -167,12 +172,12 @@
 	<Compile Include="Vod\Model\V20170321\GetEditingProjectRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetMessageCallbackRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\ListSnapshotsRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\EditVideoIndexFileResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\SetEditingProjectMaterialsResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\ListAIVideoCategoryJobRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\DescribeRefreshTasksRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetAuditHistoryRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetVideoInfoRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\GetVideoInfosRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitAIVideoCensorJobRequest.cs" />
 	<Compile Include="Vod\Transform\V20170321\SearchEditingProjectResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\UpdateEditingProjectResponseUnmarshaller.cs" />
@@ -180,6 +185,7 @@
 	<Compile Include="Vod\Transform\V20170321\GetImageInfoResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\DescribeRefreshQuotaResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\CreateUploadVideoResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\SearchMediaResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\DeleteStreamResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\GetEditingProjectMaterialsResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SetMessageCallbackResponseUnmarshaller.cs" />
@@ -214,6 +220,7 @@
 	<Compile Include="Vod\Transform\V20170321\SubmitPreprocessJobsResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SubmitAIVideoCoverJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\OpenVodServiceResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\UpdateVideoInfosResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\GetMezzanineInfoResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SubmitAIVideoPornRecogJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\DescribePlayUserAvgResponseUnmarshaller.cs" />
@@ -235,11 +242,11 @@
 	<Compile Include="Vod\Transform\V20170321\GetAuditHistoryResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\GetCategoriesResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\GetVideoPlayAuthResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\EditVideoIndexFileResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SubmitAIVideoCensorJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SubmitAIVideoTerrorismRecogJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\ListAIVideoCategoryJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\ListAIVideoTerrorismRecogJobResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\GetVideoInfosResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\AddEditingProjectResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>

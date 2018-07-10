@@ -26,50 +26,46 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetMezzanineInfoRequest : RpcAcsRequest<GetMezzanineInfoResponse>
+    public class GetAuditHistoryRequest : RpcAcsRequest<GetAuditHistoryResponse>
     {
-        public GetMezzanineInfoRequest()
-            : base("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI")
+        public GetAuditHistoryRequest()
+            : base("vod", "2017-03-21", "GetAuditHistory", "vod", "openAPI")
         {
         }
 
-		private long? resourceOwnerId;
+		private long? pageNo;
 
-		private string resourceOwnerAccount;
+		private long? pageSize;
 
 		private string action;
 
 		private string videoId;
 
-		private bool? previewSegment;
+		private string sortBy;
 
-		private long? ownerId;
-
-		private long? authTimeout;
-
-		public long? ResourceOwnerId
+		public long? PageNo
 		{
 			get
 			{
-				return resourceOwnerId;
+				return pageNo;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public long? PageSize
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return pageSize;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -99,42 +95,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public bool? PreviewSegment
+		public string SortBy
 		{
 			get
 			{
-				return previewSegment;
+				return sortBy;
 			}
 			set	
 			{
-				previewSegment = value;
-				DictionaryUtil.Add(QueryParameters, "PreviewSegment", value.ToString());
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public long? AuthTimeout
-		{
-			get
-			{
-				return authTimeout;
-			}
-			set	
-			{
-				authTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
+				sortBy = value;
+				DictionaryUtil.Add(QueryParameters, "SortBy", value);
 			}
 		}
 
@@ -143,9 +113,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override GetMezzanineInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetAuditHistoryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetMezzanineInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetAuditHistoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

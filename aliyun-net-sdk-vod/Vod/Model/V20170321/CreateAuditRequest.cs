@@ -17,67 +17,55 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.vod.Transform;
+using Aliyun.Acs.vod.Transform.V20170321;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class RefreshUploadVideoResponse : AcsResponse
-	{
+    public class CreateAuditRequest : RpcAcsRequest<CreateAuditResponse>
+    {
+        public CreateAuditRequest()
+            : base("vod", "2017-03-21", "CreateAudit", "vod", "openAPI")
+        {
+        }
 
-		private string requestId;
+		private string auditContent;
 
-		private string uploadAuth;
+		private string action;
 
-		private string uploadAddress;
-
-		private string videoId;
-
-		public string RequestId
+		public string AuditContent
 		{
 			get
 			{
-				return requestId;
+				return auditContent;
 			}
 			set	
 			{
-				requestId = value;
+				auditContent = value;
+				DictionaryUtil.Add(QueryParameters, "AuditContent", value);
 			}
 		}
 
-		public string UploadAuth
+		public string Action
 		{
 			get
 			{
-				return uploadAuth;
+				return action;
 			}
 			set	
 			{
-				uploadAuth = value;
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string UploadAddress
-		{
-			get
-			{
-				return uploadAddress;
-			}
-			set	
-			{
-				uploadAddress = value;
-			}
-		}
-
-		public string VideoId
-		{
-			get
-			{
-				return videoId;
-			}
-			set	
-			{
-				videoId = value;
-			}
-		}
-	}
+        public override CreateAuditResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        {
+            return CreateAuditResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

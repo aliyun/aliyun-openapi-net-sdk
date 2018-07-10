@@ -21,16 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class RefreshUploadVideoResponse : AcsResponse
+	public class GetAuditResultResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string uploadAuth;
-
-		private string uploadAddress;
-
-		private string videoId;
+		private GetAuditResult_AIAuditResult aIAuditResult;
 
 		public string RequestId
 		{
@@ -44,39 +40,61 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string UploadAuth
+		public GetAuditResult_AIAuditResult AIAuditResult
 		{
 			get
 			{
-				return uploadAuth;
+				return aIAuditResult;
 			}
 			set	
 			{
-				uploadAuth = value;
+				aIAuditResult = value;
 			}
 		}
 
-		public string UploadAddress
+		public class GetAuditResult_AIAuditResult
 		{
-			get
-			{
-				return uploadAddress;
-			}
-			set	
-			{
-				uploadAddress = value;
-			}
-		}
 
-		public string VideoId
-		{
-			get
+			private string label;
+
+			private string terrorismResult;
+
+			private string pornResult;
+
+			public string Label
 			{
-				return videoId;
+				get
+				{
+					return label;
+				}
+				set	
+				{
+					label = value;
+				}
 			}
-			set	
+
+			public string TerrorismResult
 			{
-				videoId = value;
+				get
+				{
+					return terrorismResult;
+				}
+				set	
+				{
+					terrorismResult = value;
+				}
+			}
+
+			public string PornResult
+			{
+				get
+				{
+					return pornResult;
+				}
+				set	
+				{
+					pornResult = value;
+				}
 			}
 		}
 	}

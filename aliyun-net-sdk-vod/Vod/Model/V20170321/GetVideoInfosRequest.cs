@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetMezzanineInfoRequest : RpcAcsRequest<GetMezzanineInfoResponse>
+    public class GetVideoInfosRequest : RpcAcsRequest<GetVideoInfosResponse>
     {
-        public GetMezzanineInfoRequest()
-            : base("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI")
+        public GetVideoInfosRequest()
+            : base("vod", "2017-03-21", "GetVideoInfos", "vod", "openAPI")
         {
         }
 
@@ -39,13 +39,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string action;
 
-		private string videoId;
-
-		private bool? previewSegment;
-
 		private long? ownerId;
 
-		private long? authTimeout;
+		private string videoIds;
 
 		public long? ResourceOwnerId
 		{
@@ -86,32 +82,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
-		{
-			get
-			{
-				return videoId;
-			}
-			set	
-			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
-			}
-		}
-
-		public bool? PreviewSegment
-		{
-			get
-			{
-				return previewSegment;
-			}
-			set	
-			{
-				previewSegment = value;
-				DictionaryUtil.Add(QueryParameters, "PreviewSegment", value.ToString());
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -125,16 +95,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? AuthTimeout
+		public string VideoIds
 		{
 			get
 			{
-				return authTimeout;
+				return videoIds;
 			}
 			set	
 			{
-				authTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
+				videoIds = value;
+				DictionaryUtil.Add(QueryParameters, "VideoIds", value);
 			}
 		}
 
@@ -143,9 +113,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override GetMezzanineInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetVideoInfosResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetMezzanineInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetVideoInfosResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

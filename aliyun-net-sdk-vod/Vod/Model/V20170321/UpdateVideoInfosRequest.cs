@@ -26,26 +26,22 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetMezzanineInfoRequest : RpcAcsRequest<GetMezzanineInfoResponse>
+    public class UpdateVideoInfosRequest : RpcAcsRequest<UpdateVideoInfosResponse>
     {
-        public GetMezzanineInfoRequest()
-            : base("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI")
+        public UpdateVideoInfosRequest()
+            : base("vod", "2017-03-21", "UpdateVideoInfos", "vod", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private string updateContent;
+
 		private string resourceOwnerAccount;
 
 		private string action;
 
-		private string videoId;
-
-		private bool? previewSegment;
-
 		private long? ownerId;
-
-		private long? authTimeout;
 
 		public long? ResourceOwnerId
 		{
@@ -57,6 +53,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string UpdateContent
+		{
+			get
+			{
+				return updateContent;
+			}
+			set	
+			{
+				updateContent = value;
+				DictionaryUtil.Add(QueryParameters, "UpdateContent", value);
 			}
 		}
 
@@ -86,32 +95,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
-		{
-			get
-			{
-				return videoId;
-			}
-			set	
-			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
-			}
-		}
-
-		public bool? PreviewSegment
-		{
-			get
-			{
-				return previewSegment;
-			}
-			set	
-			{
-				previewSegment = value;
-				DictionaryUtil.Add(QueryParameters, "PreviewSegment", value.ToString());
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -125,27 +108,14 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? AuthTimeout
-		{
-			get
-			{
-				return authTimeout;
-			}
-			set	
-			{
-				authTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetMezzanineInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateVideoInfosResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetMezzanineInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateVideoInfosResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

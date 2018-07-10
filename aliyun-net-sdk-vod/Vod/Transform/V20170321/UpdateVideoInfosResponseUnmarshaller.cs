@@ -23,19 +23,22 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
-    public class RefreshUploadVideoResponseUnmarshaller
+    public class UpdateVideoInfosResponseUnmarshaller
     {
-        public static RefreshUploadVideoResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateVideoInfosResponse Unmarshall(UnmarshallerContext context)
         {
-			RefreshUploadVideoResponse refreshUploadVideoResponse = new RefreshUploadVideoResponse();
+			UpdateVideoInfosResponse updateVideoInfosResponse = new UpdateVideoInfosResponse();
 
-			refreshUploadVideoResponse.HttpResponse = context.HttpResponse;
-			refreshUploadVideoResponse.RequestId = context.StringValue("RefreshUploadVideo.RequestId");
-			refreshUploadVideoResponse.UploadAuth = context.StringValue("RefreshUploadVideo.UploadAuth");
-			refreshUploadVideoResponse.UploadAddress = context.StringValue("RefreshUploadVideo.UploadAddress");
-			refreshUploadVideoResponse.VideoId = context.StringValue("RefreshUploadVideo.VideoId");
+			updateVideoInfosResponse.HttpResponse = context.HttpResponse;
+			updateVideoInfosResponse.RequestId = context.StringValue("UpdateVideoInfos.RequestId");
+
+			List<string> updateVideoInfosResponse_nonExistVideoIds = new List<string>();
+			for (int i = 0; i < context.Length("UpdateVideoInfos.NonExistVideoIds.Length"); i++) {
+				updateVideoInfosResponse_nonExistVideoIds.Add(context.StringValue("UpdateVideoInfos.NonExistVideoIds["+ i +"]"));
+			}
+			updateVideoInfosResponse.NonExistVideoIds = updateVideoInfosResponse_nonExistVideoIds;
         
-			return refreshUploadVideoResponse;
+			return updateVideoInfosResponse;
         }
     }
 }

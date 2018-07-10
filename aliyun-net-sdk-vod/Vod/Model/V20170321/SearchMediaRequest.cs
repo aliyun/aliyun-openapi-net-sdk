@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetMezzanineInfoRequest : RpcAcsRequest<GetMezzanineInfoResponse>
+    public class SearchMediaRequest : RpcAcsRequest<SearchMediaResponse>
     {
-        public GetMezzanineInfoRequest()
-            : base("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI")
+        public SearchMediaRequest()
+            : base("vod", "2017-03-21", "SearchMedia", "vod", "openAPI")
         {
         }
 
@@ -37,15 +37,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
+		private int? pageNo;
+
+		private string match;
+
+		private int? pageSize;
+
 		private string action;
 
-		private string videoId;
-
-		private bool? previewSegment;
+		private string sortBy;
 
 		private long? ownerId;
 
-		private long? authTimeout;
+		private string fields;
+
+		private string mediaType;
+
+		private string scrollToken;
 
 		public long? ResourceOwnerId
 		{
@@ -73,6 +81,45 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public int? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+			}
+		}
+
+		public string Match
+		{
+			get
+			{
+				return match;
+			}
+			set	
+			{
+				match = value;
+				DictionaryUtil.Add(QueryParameters, "Match", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -86,29 +133,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
+		public string SortBy
 		{
 			get
 			{
-				return videoId;
+				return sortBy;
 			}
 			set	
 			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
-			}
-		}
-
-		public bool? PreviewSegment
-		{
-			get
-			{
-				return previewSegment;
-			}
-			set	
-			{
-				previewSegment = value;
-				DictionaryUtil.Add(QueryParameters, "PreviewSegment", value.ToString());
+				sortBy = value;
+				DictionaryUtil.Add(QueryParameters, "SortBy", value);
 			}
 		}
 
@@ -125,16 +159,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? AuthTimeout
+		public string Fields
 		{
 			get
 			{
-				return authTimeout;
+				return fields;
 			}
 			set	
 			{
-				authTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
+				fields = value;
+				DictionaryUtil.Add(QueryParameters, "Fields", value);
+			}
+		}
+
+		public string MediaType
+		{
+			get
+			{
+				return mediaType;
+			}
+			set	
+			{
+				mediaType = value;
+				DictionaryUtil.Add(QueryParameters, "MediaType", value);
+			}
+		}
+
+		public string ScrollToken
+		{
+			get
+			{
+				return scrollToken;
+			}
+			set	
+			{
+				scrollToken = value;
+				DictionaryUtil.Add(QueryParameters, "ScrollToken", value);
 			}
 		}
 
@@ -143,9 +203,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override GetMezzanineInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SearchMediaResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetMezzanineInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SearchMediaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -23,19 +23,22 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
-    public class RefreshUploadVideoResponseUnmarshaller
+    public class GetAuditResultResponseUnmarshaller
     {
-        public static RefreshUploadVideoResponse Unmarshall(UnmarshallerContext context)
+        public static GetAuditResultResponse Unmarshall(UnmarshallerContext context)
         {
-			RefreshUploadVideoResponse refreshUploadVideoResponse = new RefreshUploadVideoResponse();
+			GetAuditResultResponse getAuditResultResponse = new GetAuditResultResponse();
 
-			refreshUploadVideoResponse.HttpResponse = context.HttpResponse;
-			refreshUploadVideoResponse.RequestId = context.StringValue("RefreshUploadVideo.RequestId");
-			refreshUploadVideoResponse.UploadAuth = context.StringValue("RefreshUploadVideo.UploadAuth");
-			refreshUploadVideoResponse.UploadAddress = context.StringValue("RefreshUploadVideo.UploadAddress");
-			refreshUploadVideoResponse.VideoId = context.StringValue("RefreshUploadVideo.VideoId");
+			getAuditResultResponse.HttpResponse = context.HttpResponse;
+			getAuditResultResponse.RequestId = context.StringValue("GetAuditResult.RequestId");
+
+			GetAuditResultResponse.GetAuditResult_AIAuditResult aIAuditResult = new GetAuditResultResponse.GetAuditResult_AIAuditResult();
+			aIAuditResult.Label = context.StringValue("GetAuditResult.AIAuditResult.Label");
+			aIAuditResult.TerrorismResult = context.StringValue("GetAuditResult.AIAuditResult.TerrorismResult");
+			aIAuditResult.PornResult = context.StringValue("GetAuditResult.AIAuditResult.PornResult");
+			getAuditResultResponse.AIAuditResult = aIAuditResult;
         
-			return refreshUploadVideoResponse;
+			return getAuditResultResponse;
         }
     }
 }

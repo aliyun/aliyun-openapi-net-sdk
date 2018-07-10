@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetMezzanineInfoRequest : RpcAcsRequest<GetMezzanineInfoResponse>
+    public class ListSnapshotsRequest : RpcAcsRequest<ListSnapshotsResponse>
     {
-        public GetMezzanineInfoRequest()
-            : base("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI")
+        public ListSnapshotsRequest()
+            : base("vod", "2017-03-21", "ListSnapshots", "vod", "openAPI")
         {
         }
 
@@ -37,15 +37,21 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
+		private string snapshotType;
+
+		private string pageNo;
+
+		private string pageSize;
+
 		private string action;
 
 		private string videoId;
 
-		private bool? previewSegment;
-
 		private long? ownerId;
 
-		private long? authTimeout;
+		private string authTimeout;
+
+		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -70,6 +76,45 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string SnapshotType
+		{
+			get
+			{
+				return snapshotType;
+			}
+			set	
+			{
+				snapshotType = value;
+				DictionaryUtil.Add(QueryParameters, "SnapshotType", value);
+			}
+		}
+
+		public string PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value);
+			}
+		}
+
+		public string PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
 			}
 		}
 
@@ -99,19 +144,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public bool? PreviewSegment
-		{
-			get
-			{
-				return previewSegment;
-			}
-			set	
-			{
-				previewSegment = value;
-				DictionaryUtil.Add(QueryParameters, "PreviewSegment", value.ToString());
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -125,7 +157,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? AuthTimeout
+		public string AuthTimeout
 		{
 			get
 			{
@@ -134,18 +166,26 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				authTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string AccessKeyId
 		{
-			return false;
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
 		}
 
-        public override GetMezzanineInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListSnapshotsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetMezzanineInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListSnapshotsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -46,6 +46,59 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			mezzanine.FileName = context.StringValue("GetMezzanineInfo.Mezzanine.FileName");
 			mezzanine.CRC64 = context.StringValue("GetMezzanineInfo.Mezzanine.CRC64");
 			mezzanine.PreprocessStatus = context.StringValue("GetMezzanineInfo.Mezzanine.PreprocessStatus");
+
+			List<GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_AudioStream> mezzanine_audioStreamList = new List<GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_AudioStream>();
+			for (int i = 0; i < context.Length("GetMezzanineInfo.Mezzanine.AudioStreamList.Length"); i++) {
+				GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_AudioStream audioStream = new GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_AudioStream();
+				audioStream.Index = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].Index");
+				audioStream.CodecName = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].CodecName");
+				audioStream.CodecLongName = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].CodecLongName");
+				audioStream.CodecTimeBase = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].CodecTimeBase");
+				audioStream.CodecTagString = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].CodecTagString");
+				audioStream.CodecTag = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].CodecTag");
+				audioStream.SampleFmt = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].SampleFmt");
+				audioStream.SampleRate = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].SampleRate");
+				audioStream.Channels = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].Channels");
+				audioStream.ChannelLayout = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].ChannelLayout");
+				audioStream.Timebase = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].Timebase");
+				audioStream.StartTime = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].StartTime");
+				audioStream.Duration = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].Duration");
+				audioStream.Bitrate = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].Bitrate");
+				audioStream.NumFrames = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].NumFrames");
+				audioStream.Lang = context.StringValue("GetMezzanineInfo.Mezzanine.AudioStreamList["+ i +"].Lang");
+
+				mezzanine_audioStreamList.Add(audioStream);
+			}
+			mezzanine.AudioStreamList = mezzanine_audioStreamList;
+
+			List<GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_VideoStream> mezzanine_videoStreamList = new List<GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_VideoStream>();
+			for (int i = 0; i < context.Length("GetMezzanineInfo.Mezzanine.VideoStreamList.Length"); i++) {
+				GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_VideoStream videoStream = new GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_VideoStream();
+				videoStream.Index = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Index");
+				videoStream.CodecName = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].CodecName");
+				videoStream.CodecLongName = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].CodecLongName");
+				videoStream.Profile = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Profile");
+				videoStream.CodecTimeBase = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].CodecTimeBase");
+				videoStream.CodecTagString = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].CodecTagString");
+				videoStream.CodecTag = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].CodecTag");
+				videoStream.Width = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Width");
+				videoStream.Height = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Height");
+				videoStream.HasBFrames = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].HasBFrames");
+				videoStream.Sar = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Sar");
+				videoStream.Dar = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Dar");
+				videoStream.PixFmt = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].PixFmt");
+				videoStream.Level = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Level");
+				videoStream.Fps = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Fps");
+				videoStream.AvgFPS = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].AvgFPS");
+				videoStream.Timebase = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Timebase");
+				videoStream.StartTime = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].StartTime");
+				videoStream.Duration = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Duration");
+				videoStream.NumFrames = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].NumFrames");
+				videoStream.Lang = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Lang");
+
+				mezzanine_videoStreamList.Add(videoStream);
+			}
+			mezzanine.VideoStreamList = mezzanine_videoStreamList;
 			getMezzanineInfoResponse.Mezzanine = mezzanine;
         
 			return getMezzanineInfoResponse;
