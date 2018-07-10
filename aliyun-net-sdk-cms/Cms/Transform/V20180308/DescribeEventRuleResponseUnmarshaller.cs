@@ -36,7 +36,33 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 			describeEventRuleResponse.RequestId = context.StringValue("DescribeEventRule.RequestId");
 
 			DescribeEventRuleResponse.DescribeEventRule_Result result = new DescribeEventRuleResponse.DescribeEventRule_Result();
-			result.EventPattern = context.StringValue("DescribeEventRule.Result.EventPattern");
+			result.Description = context.StringValue("DescribeEventRule.Result.Description");
+			result.Name = context.StringValue("DescribeEventRule.Result.Name");
+			result.EventType = context.StringValue("DescribeEventRule.Result.EventType");
+			result.GroupId = context.StringValue("DescribeEventRule.Result.GroupId");
+			result.State = context.StringValue("DescribeEventRule.Result.State");
+
+			DescribeEventRuleResponse.DescribeEventRule_Result.DescribeEventRule_EventPattern eventPattern = new DescribeEventRuleResponse.DescribeEventRule_Result.DescribeEventRule_EventPattern();
+			eventPattern.Product = context.StringValue("DescribeEventRule.Result.EventPattern.Product");
+
+			List<string> eventPattern_nameList = new List<string>();
+			for (int i = 0; i < context.Length("DescribeEventRule.Result.EventPattern.NameList.Length"); i++) {
+				eventPattern_nameList.Add(context.StringValue("DescribeEventRule.Result.EventPattern.NameList["+ i +"]"));
+			}
+			eventPattern.NameList = eventPattern_nameList;
+
+			List<string> eventPattern_statusList = new List<string>();
+			for (int i = 0; i < context.Length("DescribeEventRule.Result.EventPattern.StatusList.Length"); i++) {
+				eventPattern_statusList.Add(context.StringValue("DescribeEventRule.Result.EventPattern.StatusList["+ i +"]"));
+			}
+			eventPattern.StatusList = eventPattern_statusList;
+
+			List<string> eventPattern_levelList = new List<string>();
+			for (int i = 0; i < context.Length("DescribeEventRule.Result.EventPattern.LevelList.Length"); i++) {
+				eventPattern_levelList.Add(context.StringValue("DescribeEventRule.Result.EventPattern.LevelList["+ i +"]"));
+			}
+			eventPattern.LevelList = eventPattern_levelList;
+			result.EventPattern = eventPattern;
 			describeEventRuleResponse.Result = result;
         
 			return describeEventRuleResponse;

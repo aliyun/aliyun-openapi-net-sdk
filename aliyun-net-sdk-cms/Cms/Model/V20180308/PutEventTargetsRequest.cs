@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
         {
         }
 
+		private List<WebhookParameters> webhookParameterss;
+
 		private List<ContactParameters> contactParameterss;
 
 		private List<FcParameters> fcParameterss;
@@ -40,6 +42,26 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		private string ruleName;
 
 		private List<MnsParameters> mnsParameterss;
+
+		public List<WebhookParameters> WebhookParameterss
+		{
+			get
+			{
+				return webhookParameterss;
+			}
+
+			set
+			{
+				webhookParameterss = value;
+				for (int i = 0; i < webhookParameterss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"WebhookParameters." + (i + 1) + ".Id", webhookParameterss[i].Id);
+					DictionaryUtil.Add(QueryParameters,"WebhookParameters." + (i + 1) + ".Protocol", webhookParameterss[i].Protocol);
+					DictionaryUtil.Add(QueryParameters,"WebhookParameters." + (i + 1) + ".Url", webhookParameterss[i].Url);
+					DictionaryUtil.Add(QueryParameters,"WebhookParameters." + (i + 1) + ".Method", webhookParameterss[i].Method);
+				}
+			}
+		}
 
 		public List<ContactParameters> ContactParameterss
 		{
@@ -108,6 +130,66 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 					DictionaryUtil.Add(QueryParameters,"MnsParameters." + (i + 1) + ".Id", mnsParameterss[i].Id);
 					DictionaryUtil.Add(QueryParameters,"MnsParameters." + (i + 1) + ".Region", mnsParameterss[i].Region);
 					DictionaryUtil.Add(QueryParameters,"MnsParameters." + (i + 1) + ".Queue", mnsParameterss[i].Queue);
+				}
+			}
+		}
+
+		public class WebhookParameters
+		{
+
+			private string id;
+
+			private string protocol;
+
+			private string url;
+
+			private string method;
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Protocol
+			{
+				get
+				{
+					return protocol;
+				}
+				set	
+				{
+					protocol = value;
+				}
+			}
+
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
+				}
+			}
+
+			public string Method
+			{
+				get
+				{
+					return method;
+				}
+				set	
+				{
+					method = value;
 				}
 			}
 		}

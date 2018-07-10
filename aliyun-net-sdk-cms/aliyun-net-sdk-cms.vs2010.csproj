@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{bef4b4ab-bb9c-492a-96a9-70c49e1ff1aa}</ProjectGuid>
+    <ProjectGuid>{11202fec-6ea4-4d00-aeb8-54c32f8ffbfc}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -57,6 +57,7 @@
 	<Compile Include="Cms\Model\V20180308\EnableAlarmRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\UpdateAlarmResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\GetNotifyPolicyRequest.cs" />
+	<Compile Include="Cms\Model\V20180308\DeleteEventRuleRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\AccessKeyGetResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\NodeInstallRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\DescribeTasksResponse.cs" />
@@ -77,6 +78,7 @@
 	<Compile Include="Cms\Model\V20180308\DescribeAlarmHistoryRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\QueryMetricListRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\ProfileSetRequest.cs" />
+	<Compile Include="Cms\Model\V20180308\DeleteEventTargetsResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\GetNotifyPolicyResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\DescribeEventRuleRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\UpdateMyGroupInstancesRequest.cs" />
@@ -94,6 +96,7 @@
 	<Compile Include="Cms\Model\V20180308\CreateAlarmRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\ListProductOfActiveAlertResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\NodeProcessDeleteResponse.cs" />
+	<Compile Include="Cms\Model\V20180308\ListEventRulesRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\DisableAlarmResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\QuerySystemEventDetailRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\QuerySystemEventHistogramResponse.cs" />
@@ -114,7 +117,9 @@
 	<Compile Include="Cms\Model\V20180308\GetMyGroupsRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\StartTasksResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\QueryMetricTopRequest.cs" />
+	<Compile Include="Cms\Model\V20180308\ListEventRulesResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\TaskConfigDeleteRequest.cs" />
+	<Compile Include="Cms\Model\V20180308\DisableEventRuleResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\ListContactGroupRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\PutGroupDynamicRuleResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\DeleteNotifyPolicyResponse.cs" />
@@ -141,6 +146,7 @@
 	<Compile Include="Cms\Model\V20180308\NodeListResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\ListAlarmResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\DescribeEventRuleResponse.cs" />
+	<Compile Include="Cms\Model\V20180308\DisableEventRuleRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\ProfileGetResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\CreateNotifyPolicyRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\EnableAlarmResponse.cs" />
@@ -156,6 +162,7 @@
 	<Compile Include="Cms\Model\V20180308\TaskConfigListRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\QueryMetricListResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\DeleteMyGroupInstancesResponse.cs" />
+	<Compile Include="Cms\Model\V20180308\DeleteEventTargetsRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\GetContactsRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\QueryMetricLastResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\QuerySystemEventCountResponse.cs" />
@@ -164,6 +171,7 @@
 	<Compile Include="Cms\Model\V20180308\DescribeTaskDetailRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\ListMyGroupInstancesDetailsRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\EnableActiveAlertRequest.cs" />
+	<Compile Include="Cms\Model\V20180308\EnableEventRuleRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\DeleteAlarmResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\QueryMetricTopResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\DeleteGroupDynamicRuleResponse.cs" />
@@ -181,6 +189,7 @@
 	<Compile Include="Cms\Model\V20180308\PutEventRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\DeleteNotifyPolicyRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\TaskConfigDeleteResponse.cs" />
+	<Compile Include="Cms\Model\V20180308\DeleteEventRuleResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\ListGroupDynamicRuleResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\TaskConfigEnableRequest.cs" />
 	<Compile Include="Cms\Model\V20180308\ListActiveAlertRuleRequest.cs" />
@@ -190,6 +199,7 @@
 	<Compile Include="Cms\Model\V20180308\DescribeTaskDetailResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\UpdateMyGroupsResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\ListMyGroupCategoriesRequest.cs" />
+	<Compile Include="Cms\Model\V20180308\EnableEventRuleResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\UpdateMyGroupMembersResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\NodeInstallResponse.cs" />
 	<Compile Include="Cms\Model\V20180308\QueryCustomMetricListResponse.cs" />
@@ -208,6 +218,7 @@
 	<Compile Include="Cms\Transform\V20180308\NodeUninstallResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\PutCustomMetricResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\ListAlarmResponseUnmarshaller.cs" />
+	<Compile Include="Cms\Transform\V20180308\DeleteEventRuleResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\TaskConfigUnhealthyResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\QueryCustomEventCountResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\DeleteAlarmResponseUnmarshaller.cs" />
@@ -230,6 +241,7 @@
 	<Compile Include="Cms\Transform\V20180308\TaskConfigListResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\QueryMetricListResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\ListActiveAlertRuleResponseUnmarshaller.cs" />
+	<Compile Include="Cms\Transform\V20180308\DisableEventRuleResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\NodeStatusListResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\ApplyTemplateResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\DeleteTasksResponseUnmarshaller.cs" />
@@ -245,6 +257,7 @@
 	<Compile Include="Cms\Transform\V20180308\QuerySystemEventHistogramResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\ListProductOfActiveAlertResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\DescribeAlarmHistoryResponseUnmarshaller.cs" />
+	<Compile Include="Cms\Transform\V20180308\DeleteEventTargetsResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\QueryMetricTopResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\NodeProcessDeleteResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\DisableAlarmResponseUnmarshaller.cs" />
@@ -253,6 +266,7 @@
 	<Compile Include="Cms\Transform\V20180308\NodeStatusResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\DescribeContactResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\ListMyGroupInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Cms\Transform\V20180308\EnableEventRuleResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\ListNotifyPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\EnableActiveAlertResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\ListMyGroupInstancesDetailsResponseUnmarshaller.cs" />
@@ -271,6 +285,7 @@
 	<Compile Include="Cms\Transform\V20180308\UpdateAlarmResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\UpdateMyGroupsResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\DescribeTasksResponseUnmarshaller.cs" />
+	<Compile Include="Cms\Transform\V20180308\ListEventRulesResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\EnableAlarmResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\AccessKeyGetResponseUnmarshaller.cs" />
 	<Compile Include="Cms\Transform\V20180308\ListContactGroupResponseUnmarshaller.cs" />

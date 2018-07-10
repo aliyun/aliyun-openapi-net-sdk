@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
-	public class DescribeEventRuleResponse : AcsResponse
+	public class ListEventRulesResponse : AcsResponse
 	{
 
 		private bool? success;
@@ -32,7 +32,13 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string requestId;
 
-		private DescribeEventRule_Result result;
+		private int? total;
+
+		private int? currentPage;
+
+		private string nextToken;
+
+		private List<ListEventRules_EventRule> datapoints;
 
 		public bool? Success
 		{
@@ -82,44 +88,68 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public DescribeEventRule_Result Result
+		public int? Total
 		{
 			get
 			{
-				return result;
+				return total;
 			}
 			set	
 			{
-				result = value;
+				total = value;
 			}
 		}
 
-		public class DescribeEventRule_Result
+		public int? CurrentPage
 		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
-			private string description;
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
+
+		public List<ListEventRules_EventRule> Datapoints
+		{
+			get
+			{
+				return datapoints;
+			}
+			set	
+			{
+				datapoints = value;
+			}
+		}
+
+		public class ListEventRules_EventRule
+		{
 
 			private string name;
 
-			private string eventType;
-
 			private string groupId;
+
+			private string eventType;
 
 			private string state;
 
-			private DescribeEventRule_EventPattern eventPattern;
+			private string description;
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+			private List<ListEventRules_EventPatternItem> eventPattern;
 
 			public string Name
 			{
@@ -130,18 +160,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					name = value;
-				}
-			}
-
-			public string EventType
-			{
-				get
-				{
-					return eventType;
-				}
-				set	
-				{
-					eventType = value;
 				}
 			}
 
@@ -157,6 +175,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				}
 			}
 
+			public string EventType
+			{
+				get
+				{
+					return eventType;
+				}
+				set	
+				{
+					eventType = value;
+				}
+			}
+
 			public string State
 			{
 				get
@@ -169,7 +199,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				}
 			}
 
-			public DescribeEventRule_EventPattern EventPattern
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public List<ListEventRules_EventPatternItem> EventPattern
 			{
 				get
 				{
@@ -181,7 +223,7 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				}
 			}
 
-			public class DescribeEventRule_EventPattern
+			public class ListEventRules_EventPatternItem
 			{
 
 				private string product;
