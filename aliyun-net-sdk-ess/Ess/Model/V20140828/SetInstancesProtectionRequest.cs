@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class SetInstancesProtectionRequest : RpcAcsRequest<SetInstancesProtectionResponse>
     {
         public SetInstancesProtectionRequest()
-            : base("Ess", "2014-08-28", "SetInstancesProtection", "ESS", "openAPI")
+            : base("Ess", "2014-08-28", "SetInstancesProtection", "ess", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
     {
         public DescribeRegionsRequest()
-            : base("Ess", "2014-08-28", "DescribeRegions", "ESS", "openAPI")
+            : base("Ess", "2014-08-28", "DescribeRegions", "ess", "openAPI")
         {
         }
 

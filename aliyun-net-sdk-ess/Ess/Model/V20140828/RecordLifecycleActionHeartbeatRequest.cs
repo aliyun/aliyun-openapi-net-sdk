@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class RecordLifecycleActionHeartbeatRequest : RpcAcsRequest<RecordLifecycleActionHeartbeatResponse>
     {
         public RecordLifecycleActionHeartbeatRequest()
-            : base("Ess", "2014-08-28", "RecordLifecycleActionHeartbeat", "ESS", "openAPI")
+            : base("Ess", "2014-08-28", "RecordLifecycleActionHeartbeat", "ess", "openAPI")
         {
         }
 

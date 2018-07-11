@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DeleteScalingConfigurationRequest : RpcAcsRequest<DeleteScalingConfigurationResponse>
     {
         public DeleteScalingConfigurationRequest()
-            : base("Ess", "2014-08-28", "DeleteScalingConfiguration", "ESS", "openAPI")
+            : base("Ess", "2014-08-28", "DeleteScalingConfiguration", "ess", "openAPI")
         {
         }
 

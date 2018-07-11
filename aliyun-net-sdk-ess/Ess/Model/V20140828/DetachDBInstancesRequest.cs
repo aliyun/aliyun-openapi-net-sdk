@@ -26,45 +26,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
-    public class DescribeLifecycleHooksRequest : RpcAcsRequest<DescribeLifecycleHooksResponse>
+    public class DetachDBInstancesRequest : RpcAcsRequest<DetachDBInstancesResponse>
     {
-        public DescribeLifecycleHooksRequest()
-            : base("Ess", "2014-08-28", "DescribeLifecycleHooks", "ess", "openAPI")
+        public DetachDBInstancesRequest()
+            : base("Ess", "2014-08-28", "DetachDBInstances", "ess", "openAPI")
         {
         }
-
-		private string lifecycleHookName;
 
 		private string resourceOwnerAccount;
 
 		private string scalingGroupId;
 
-		private List<string> lifecycleHookIds;
-
-		private string ownerAccount;
-
-		private int? pageSize;
-
 		private string action;
+
+		private List<string> dBInstances;
+
+		private bool? forceDetach;
 
 		private long? ownerId;
 
-		private int? pageNumber;
-
 		private string accessKeyId;
-
-		public string LifecycleHookName
-		{
-			get
-			{
-				return lifecycleHookName;
-			}
-			set	
-			{
-				lifecycleHookName = value;
-				DictionaryUtil.Add(QueryParameters, "LifecycleHookName", value);
-			}
-		}
 
 		public string ResourceOwnerAccount
 		{
@@ -92,49 +73,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public List<string> LifecycleHookIds
-		{
-			get
-			{
-				return lifecycleHookIds;
-			}
-
-			set
-			{
-				lifecycleHookIds = value;
-				for (int i = 0; i < lifecycleHookIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"LifecycleHookId." + (i + 1) , lifecycleHookIds[i]);
-				}
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -145,6 +83,36 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public List<string> DBInstances
+		{
+			get
+			{
+				return dBInstances;
+			}
+
+			set
+			{
+				dBInstances = value;
+				for (int i = 0; i < dBInstances.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DBInstance." + (i + 1) , dBInstances[i]);
+				}
+			}
+		}
+
+		public bool? ForceDetach
+		{
+			get
+			{
+				return forceDetach;
+			}
+			set	
+			{
+				forceDetach = value;
+				DictionaryUtil.Add(QueryParameters, "ForceDetach", value.ToString());
 			}
 		}
 
@@ -161,19 +129,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -187,9 +142,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override DescribeLifecycleHooksResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DetachDBInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLifecycleHooksResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DetachDBInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

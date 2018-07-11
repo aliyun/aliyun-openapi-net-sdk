@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class CreateScheduledTaskRequest : RpcAcsRequest<CreateScheduledTaskResponse>
     {
         public CreateScheduledTaskRequest()
-            : base("Ess", "2014-08-28", "CreateScheduledTask", "ESS", "openAPI")
+            : base("Ess", "2014-08-28", "CreateScheduledTask", "ess", "openAPI")
         {
         }
 

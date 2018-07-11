@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DeleteNotificationConfigurationRequest : RpcAcsRequest<DeleteNotificationConfigurationResponse>
     {
         public DeleteNotificationConfigurationRequest()
-            : base("Ess", "2014-08-28", "DeleteNotificationConfiguration", "ESS", "openAPI")
+            : base("Ess", "2014-08-28", "DeleteNotificationConfiguration", "ess", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class RebalanceInstancesRequest : RpcAcsRequest<RebalanceInstancesResponse>
     {
         public RebalanceInstancesRequest()
-            : base("Ess", "2014-08-28", "RebalanceInstances", "ESS", "openAPI")
+            : base("Ess", "2014-08-28", "RebalanceInstances", "ess", "openAPI")
         {
         }
 

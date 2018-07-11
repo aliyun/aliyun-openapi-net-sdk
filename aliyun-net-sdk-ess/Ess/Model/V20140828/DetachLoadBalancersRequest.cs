@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DetachLoadBalancersRequest : RpcAcsRequest<DetachLoadBalancersResponse>
     {
         public DetachLoadBalancersRequest()
-            : base("Ess", "2014-08-28", "DetachLoadBalancers", "ESS", "openAPI")
+            : base("Ess", "2014-08-28", "DetachLoadBalancers", "ess", "openAPI")
         {
         }
 
