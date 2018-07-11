@@ -19,7 +19,7 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180504
+namespace Aliyun.Acs.Cloudauth.Model.V20180703
 {
 	public class GetVerifyTokenResponse : AcsResponse
 	{
@@ -97,9 +97,23 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180504
 		public class GetVerifyToken_Data
 		{
 
+			private string cloudauthPageUrl;
+
 			private GetVerifyToken_VerifyToken verifyToken;
 
 			private GetVerifyToken_StsToken stsToken;
+
+			public string CloudauthPageUrl
+			{
+				get
+				{
+					return cloudauthPageUrl;
+				}
+				set	
+				{
+					cloudauthPageUrl = value;
+				}
+			}
 
 			public GetVerifyToken_VerifyToken VerifyToken
 			{

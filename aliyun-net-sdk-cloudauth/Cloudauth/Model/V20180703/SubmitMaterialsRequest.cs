@@ -21,15 +21,15 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20180504;
+using Aliyun.Acs.Cloudauth.Transform.V20180703;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180504
+namespace Aliyun.Acs.Cloudauth.Model.V20180703
 {
     public class SubmitMaterialsRequest : RpcAcsRequest<SubmitMaterialsResponse>
     {
         public SubmitMaterialsRequest()
-            : base("Cloudauth", "2018-05-04", "SubmitMaterials", "cloudauth", "openAPI")
+            : base("Cloudauth", "2018-07-03", "SubmitMaterials", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }

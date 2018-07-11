@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cloudauth.Model.V20180504;
+using Aliyun.Acs.Cloudauth.Model.V20180703;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Transform.V20180504
+namespace Aliyun.Acs.Cloudauth.Transform.V20180703
 {
     public class GetVerifyTokenResponseUnmarshaller
     {
@@ -36,6 +36,7 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180504
 			getVerifyTokenResponse.Message = context.StringValue("GetVerifyToken.Message");
 
 			GetVerifyTokenResponse.GetVerifyToken_Data data = new GetVerifyTokenResponse.GetVerifyToken_Data();
+			data.CloudauthPageUrl = context.StringValue("GetVerifyToken.Data.CloudauthPageUrl");
 
 			GetVerifyTokenResponse.GetVerifyToken_Data.GetVerifyToken_VerifyToken verifyToken = new GetVerifyTokenResponse.GetVerifyToken_Data.GetVerifyToken_VerifyToken();
 			verifyToken.Token = context.StringValue("GetVerifyToken.Data.VerifyToken.Token");

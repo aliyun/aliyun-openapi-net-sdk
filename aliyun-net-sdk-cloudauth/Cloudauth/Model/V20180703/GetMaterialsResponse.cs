@@ -19,7 +19,7 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180504
+namespace Aliyun.Acs.Cloudauth.Model.V20180703
 {
 	public class GetMaterialsResponse : AcsResponse
 	{
@@ -103,8 +103,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180504
 
 			private string idCardType;
 
-			private string idCardStartDate;
-
 			private string idCardExpiry;
 
 			private string address;
@@ -116,8 +114,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180504
 			private string idCardBackPic;
 
 			private string facePic;
-
-			private string ethnicGroup;
 
 			public string Name
 			{
@@ -152,18 +148,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180504
 				set	
 				{
 					idCardType = value;
-				}
-			}
-
-			public string IdCardStartDate
-			{
-				get
-				{
-					return idCardStartDate;
-				}
-				set	
-				{
-					idCardStartDate = value;
 				}
 			}
 
@@ -236,18 +220,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180504
 				set	
 				{
 					facePic = value;
-				}
-			}
-
-			public string EthnicGroup
-			{
-				get
-				{
-					return ethnicGroup;
-				}
-				set	
-				{
-					ethnicGroup = value;
 				}
 			}
 		}
