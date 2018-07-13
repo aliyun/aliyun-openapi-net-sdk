@@ -33,8 +33,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private bool? releaseInstance;
-
 		private string action;
 
 		private string clusterId;
@@ -42,19 +40,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private List<User> users;
 
 		private string accessKeyId;
-
-		public bool? ReleaseInstance
-		{
-			get
-			{
-				return releaseInstance;
-			}
-			set	
-			{
-				releaseInstance = value;
-				DictionaryUtil.Add(QueryParameters, "ReleaseInstance", value.ToString());
-			}
-		}
 
 		public string Action
 		{

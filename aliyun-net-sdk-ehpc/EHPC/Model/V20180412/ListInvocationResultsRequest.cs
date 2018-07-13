@@ -26,33 +26,56 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class ListJobTemplatesRequest : RpcAcsRequest<ListJobTemplatesResponse>
+    public class ListInvocationResultsRequest : RpcAcsRequest<ListInvocationResultsResponse>
     {
-        public ListJobTemplatesRequest()
-            : base("EHPC", "2018-04-12", "ListJobTemplates", "ehs", "openAPI")
+        public ListInvocationResultsRequest()
+            : base("EHPC", "2018-04-12", "ListInvocationResults", "ehs", "openAPI")
         {
         }
 
-		private string name;
+		private List<Instance> instances;
+
+		private string invokeRecordStatus;
 
 		private int? pageSize;
 
 		private string action;
 
+		private string clusterId;
+
+		private string commandId;
+
 		private int? pageNumber;
 
 		private string accessKeyId;
 
-		public string Name
+		public List<Instance> Instances
 		{
 			get
 			{
-				return name;
+				return instances;
+			}
+
+			set
+			{
+				instances = value;
+				for (int i = 0; i < instances.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Instance." + (i + 1) + ".Id", instances[i].Id);
+				}
+			}
+		}
+
+		public string InvokeRecordStatus
+		{
+			get
+			{
+				return invokeRecordStatus;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				invokeRecordStatus = value;
+				DictionaryUtil.Add(QueryParameters, "InvokeRecordStatus", value);
 			}
 		}
 
@@ -82,6 +105,32 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string CommandId
+		{
+			get
+			{
+				return commandId;
+			}
+			set	
+			{
+				commandId = value;
+				DictionaryUtil.Add(QueryParameters, "CommandId", value);
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -108,9 +157,27 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override ListJobTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public class Instance
+		{
+
+			private string id;
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+		}
+
+        public override ListInvocationResultsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListJobTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListInvocationResultsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -26,48 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class ListJobTemplatesRequest : RpcAcsRequest<ListJobTemplatesResponse>
+    public class DescribeAutoScaleConfigRequest : RpcAcsRequest<DescribeAutoScaleConfigResponse>
     {
-        public ListJobTemplatesRequest()
-            : base("EHPC", "2018-04-12", "ListJobTemplates", "ehs", "openAPI")
+        public DescribeAutoScaleConfigRequest()
+            : base("EHPC", "2018-04-12", "DescribeAutoScaleConfig", "ehs", "openAPI")
         {
         }
 
-		private string name;
-
-		private int? pageSize;
-
 		private string action;
 
-		private int? pageNumber;
+		private string clusterId;
 
 		private string accessKeyId;
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
 
 		public string Action
 		{
@@ -82,16 +52,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public int? PageNumber
+		public string ClusterId
 		{
 			get
 			{
-				return pageNumber;
+				return clusterId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 
@@ -108,9 +78,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override ListJobTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeAutoScaleConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListJobTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAutoScaleConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

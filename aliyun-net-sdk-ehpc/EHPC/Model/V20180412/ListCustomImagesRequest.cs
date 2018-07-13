@@ -33,8 +33,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private string regionId;
-
 		private string action;
 
 		private string baseOsTag;
@@ -42,19 +40,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string accessKeyId;
 
 		private string imageOwnerAlias;
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
 
 		public string Action
 		{

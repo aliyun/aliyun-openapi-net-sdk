@@ -26,46 +26,33 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class ListJobTemplatesRequest : RpcAcsRequest<ListJobTemplatesResponse>
+    public class DeleteContainerAppsRequest : RpcAcsRequest<DeleteContainerAppsResponse>
     {
-        public ListJobTemplatesRequest()
-            : base("EHPC", "2018-04-12", "ListJobTemplates", "ehs", "openAPI")
+        public DeleteContainerAppsRequest()
+            : base("EHPC", "2018-04-12", "DeleteContainerApps", "ehs", "openAPI")
         {
         }
 
-		private string name;
-
-		private int? pageSize;
+		private List<ContainerApp> containerApps;
 
 		private string action;
 
-		private int? pageNumber;
-
 		private string accessKeyId;
 
-		public string Name
+		public List<ContainerApp> ContainerApps
 		{
 			get
 			{
-				return name;
+				return containerApps;
 			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
 
-		public int? PageSize
-		{
-			get
+			set
 			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				containerApps = value;
+				for (int i = 0; i < containerApps.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ContainerApp." + (i + 1) + ".Id", containerApps[i].Id);
+				}
 			}
 		}
 
@@ -82,19 +69,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -108,9 +82,27 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override ListJobTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public class ContainerApp
+		{
+
+			private string id;
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+		}
+
+        public override DeleteContainerAppsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListJobTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteContainerAppsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

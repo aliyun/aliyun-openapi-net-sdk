@@ -26,14 +26,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class ListJobTemplatesRequest : RpcAcsRequest<ListJobTemplatesResponse>
+    public class ListContainerAppsRequest : RpcAcsRequest<ListContainerAppsResponse>
     {
-        public ListJobTemplatesRequest()
-            : base("EHPC", "2018-04-12", "ListJobTemplates", "ehs", "openAPI")
+        public ListContainerAppsRequest()
+            : base("EHPC", "2018-04-12", "ListContainerApps", "ehs", "openAPI")
         {
         }
-
-		private string name;
 
 		private int? pageSize;
 
@@ -42,19 +40,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private int? pageNumber;
 
 		private string accessKeyId;
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
 
 		public int? PageSize
 		{
@@ -108,9 +93,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override ListJobTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListContainerAppsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListJobTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListContainerAppsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

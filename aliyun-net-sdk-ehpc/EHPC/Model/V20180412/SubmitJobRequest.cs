@@ -39,6 +39,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string runasUserPassword;
 
+		private string postCmdLine;
+
 		private string runasUser;
 
 		private string clusterId;
@@ -53,13 +55,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string arrayRequest;
 
+		private string unzipCmd;
+
 		private string packagePath;
+
+		private string inputFileUrl;
 
 		private string name;
 
 		private string action;
 
 		private string stdoutRedirectPath;
+
+		private string containerId;
 
 		public string StderrRedirectPath
 		{
@@ -97,6 +105,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				runasUserPassword = value;
 				DictionaryUtil.Add(QueryParameters, "RunasUserPassword", value);
+			}
+		}
+
+		public string PostCmdLine
+		{
+			get
+			{
+				return postCmdLine;
+			}
+			set	
+			{
+				postCmdLine = value;
+				DictionaryUtil.Add(QueryParameters, "PostCmdLine", value);
 			}
 		}
 
@@ -191,6 +212,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string UnzipCmd
+		{
+			get
+			{
+				return unzipCmd;
+			}
+			set	
+			{
+				unzipCmd = value;
+				DictionaryUtil.Add(QueryParameters, "UnzipCmd", value);
+			}
+		}
+
 		public string PackagePath
 		{
 			get
@@ -201,6 +235,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				packagePath = value;
 				DictionaryUtil.Add(QueryParameters, "PackagePath", value);
+			}
+		}
+
+		public string InputFileUrl
+		{
+			get
+			{
+				return inputFileUrl;
+			}
+			set	
+			{
+				inputFileUrl = value;
+				DictionaryUtil.Add(QueryParameters, "InputFileUrl", value);
 			}
 		}
 
@@ -240,6 +287,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				stdoutRedirectPath = value;
 				DictionaryUtil.Add(QueryParameters, "StdoutRedirectPath", value);
+			}
+		}
+
+		public string ContainerId
+		{
+			get
+			{
+				return containerId;
+			}
+			set	
+			{
+				containerId = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerId", value);
 			}
 		}
 

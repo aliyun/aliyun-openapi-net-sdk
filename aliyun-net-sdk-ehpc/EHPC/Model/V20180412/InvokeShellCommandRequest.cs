@@ -26,46 +26,54 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class ListJobTemplatesRequest : RpcAcsRequest<ListJobTemplatesResponse>
+    public class InvokeShellCommandRequest : RpcAcsRequest<InvokeShellCommandResponse>
     {
-        public ListJobTemplatesRequest()
-            : base("EHPC", "2018-04-12", "ListJobTemplates", "ehs", "openAPI")
+        public InvokeShellCommandRequest()
+            : base("EHPC", "2018-04-12", "InvokeShellCommand", "ehs", "openAPI")
         {
         }
 
-		private string name;
+		private List<Instance> instances;
 
-		private int? pageSize;
+		private string workingDir;
 
 		private string action;
 
-		private int? pageNumber;
+		private string clusterId;
+
+		private string command;
+
+		private int? timeout;
 
 		private string accessKeyId;
 
-		public string Name
+		public List<Instance> Instances
 		{
 			get
 			{
-				return name;
+				return instances;
 			}
-			set	
+
+			set
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				instances = value;
+				for (int i = 0; i < instances.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Instance." + (i + 1) + ".Id", instances[i].Id);
+				}
 			}
 		}
 
-		public int? PageSize
+		public string WorkingDir
 		{
 			get
 			{
-				return pageSize;
+				return workingDir;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				workingDir = value;
+				DictionaryUtil.Add(QueryParameters, "WorkingDir", value);
 			}
 		}
 
@@ -82,16 +90,42 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public int? PageNumber
+		public string ClusterId
 		{
 			get
 			{
-				return pageNumber;
+				return clusterId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string Command
+		{
+			get
+			{
+				return command;
+			}
+			set	
+			{
+				command = value;
+				DictionaryUtil.Add(QueryParameters, "Command", value);
+			}
+		}
+
+		public int? Timeout
+		{
+			get
+			{
+				return timeout;
+			}
+			set	
+			{
+				timeout = value;
+				DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
 			}
 		}
 
@@ -108,9 +142,27 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override ListJobTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public class Instance
+		{
+
+			private string id;
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+		}
+
+        public override InvokeShellCommandResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListJobTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return InvokeShellCommandResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -119,6 +119,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string imageId;
 
+			private string location;
+
 			private List<string> roles;
 
 			private ListNodes_TotalResources totalResources;
@@ -254,6 +256,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					imageId = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
 				}
 			}
 

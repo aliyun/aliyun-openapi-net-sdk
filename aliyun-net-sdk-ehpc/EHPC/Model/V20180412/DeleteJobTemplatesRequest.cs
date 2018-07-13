@@ -33,26 +33,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private string regionId;
-
 		private string templates;
 
 		private string action;
 
 		private string accessKeyId;
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
 
 		public string Templates
 		{

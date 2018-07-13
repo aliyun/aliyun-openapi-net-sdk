@@ -26,35 +26,24 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class ListJobTemplatesRequest : RpcAcsRequest<ListJobTemplatesResponse>
+    public class ListCommandsRequest : RpcAcsRequest<ListCommandsResponse>
     {
-        public ListJobTemplatesRequest()
-            : base("EHPC", "2018-04-12", "ListJobTemplates", "ehs", "openAPI")
+        public ListCommandsRequest()
+            : base("EHPC", "2018-04-12", "ListCommands", "ehs", "openAPI")
         {
         }
-
-		private string name;
 
 		private int? pageSize;
 
 		private string action;
 
+		private string clusterId;
+
+		private string commandId;
+
 		private int? pageNumber;
 
 		private string accessKeyId;
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
 
 		public int? PageSize
 		{
@@ -79,6 +68,32 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string CommandId
+		{
+			get
+			{
+				return commandId;
+			}
+			set	
+			{
+				commandId = value;
+				DictionaryUtil.Add(QueryParameters, "CommandId", value);
 			}
 		}
 
@@ -108,9 +123,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override ListJobTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListCommandsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListJobTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListCommandsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

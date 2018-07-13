@@ -53,8 +53,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string packagePath;
 
-		private string regionId;
-
 		private string name;
 
 		private string action;
@@ -188,19 +186,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				packagePath = value;
 				DictionaryUtil.Add(QueryParameters, "PackagePath", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 

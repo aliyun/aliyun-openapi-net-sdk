@@ -54,6 +54,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				clusterInfoSimple.CreateTime = context.StringValue("ListClusters.Clusters["+ i +"].CreateTime");
 				clusterInfoSimple.ImageOwnerAlias = context.StringValue("ListClusters.Clusters["+ i +"].ImageOwnerAlias");
 				clusterInfoSimple.ImageId = context.StringValue("ListClusters.Clusters["+ i +"].ImageId");
+				clusterInfoSimple.Location = context.StringValue("ListClusters.Clusters["+ i +"].Location");
 
 				ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_Managers managers = new ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_Managers();
 				managers.Total = context.IntegerValue("ListClusters.Clusters["+ i +"].Managers.Total");

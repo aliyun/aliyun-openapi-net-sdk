@@ -57,6 +57,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string action;
 
+		private string instanceType;
+
 		private string computeSpotPriceLimit;
 
 		public int? AutoRenewPeriod
@@ -212,6 +214,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 

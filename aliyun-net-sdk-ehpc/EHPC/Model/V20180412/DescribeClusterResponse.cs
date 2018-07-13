@@ -75,6 +75,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string securityGroupId;
 
+			private string vpcId;
+
 			private string vSwitchId;
 
 			private string volumeType;
@@ -102,6 +104,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			private string imageOwnerAlias;
 
 			private string imageId;
+
+			private string location;
 
 			private List<DescribeCluster_ApplicationInfo> applications;
 
@@ -224,6 +228,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					securityGroupId = value;
+				}
+			}
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
 				}
 			}
 
@@ -392,6 +408,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					imageId = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
 				}
 			}
 

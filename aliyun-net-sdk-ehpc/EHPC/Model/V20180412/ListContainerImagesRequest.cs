@@ -26,33 +26,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class ListJobTemplatesRequest : RpcAcsRequest<ListJobTemplatesResponse>
+    public class ListContainerImagesRequest : RpcAcsRequest<ListContainerImagesResponse>
     {
-        public ListJobTemplatesRequest()
-            : base("EHPC", "2018-04-12", "ListJobTemplates", "ehs", "openAPI")
+        public ListContainerImagesRequest()
+            : base("EHPC", "2018-04-12", "ListContainerImages", "ehs", "openAPI")
         {
         }
 
-		private string name;
+		private string containerType;
 
 		private int? pageSize;
 
 		private string action;
 
+		private string clusterId;
+
 		private int? pageNumber;
 
 		private string accessKeyId;
 
-		public string Name
+		public string ContainerType
 		{
 			get
 			{
-				return name;
+				return containerType;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				containerType = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerType", value);
 			}
 		}
 
@@ -82,6 +84,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -108,9 +123,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override ListJobTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListContainerImagesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListJobTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListContainerImagesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

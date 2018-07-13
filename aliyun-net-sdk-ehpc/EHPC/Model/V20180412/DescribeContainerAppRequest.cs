@@ -26,48 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class ListJobTemplatesRequest : RpcAcsRequest<ListJobTemplatesResponse>
+    public class DescribeContainerAppRequest : RpcAcsRequest<DescribeContainerAppResponse>
     {
-        public ListJobTemplatesRequest()
-            : base("EHPC", "2018-04-12", "ListJobTemplates", "ehs", "openAPI")
+        public DescribeContainerAppRequest()
+            : base("EHPC", "2018-04-12", "DescribeContainerApp", "ehs", "openAPI")
         {
         }
 
-		private string name;
-
-		private int? pageSize;
-
 		private string action;
 
-		private int? pageNumber;
+		private string containerId;
 
 		private string accessKeyId;
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
 
 		public string Action
 		{
@@ -82,16 +52,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public int? PageNumber
+		public string ContainerId
 		{
 			get
 			{
-				return pageNumber;
+				return containerId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				containerId = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerId", value);
 			}
 		}
 
@@ -108,9 +78,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override ListJobTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeContainerAppResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListJobTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeContainerAppResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

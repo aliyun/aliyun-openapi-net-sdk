@@ -43,6 +43,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 			clusterInfo.SchedulerType = context.StringValue("DescribeCluster.ClusterInfo.SchedulerType");
 			clusterInfo.CreateTime = context.StringValue("DescribeCluster.ClusterInfo.CreateTime");
 			clusterInfo.SecurityGroupId = context.StringValue("DescribeCluster.ClusterInfo.SecurityGroupId");
+			clusterInfo.VpcId = context.StringValue("DescribeCluster.ClusterInfo.VpcId");
 			clusterInfo.VSwitchId = context.StringValue("DescribeCluster.ClusterInfo.VSwitchId");
 			clusterInfo.VolumeType = context.StringValue("DescribeCluster.ClusterInfo.VolumeType");
 			clusterInfo.VolumeId = context.StringValue("DescribeCluster.ClusterInfo.VolumeId");
@@ -57,6 +58,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 			clusterInfo.ClientVersion = context.StringValue("DescribeCluster.ClusterInfo.ClientVersion");
 			clusterInfo.ImageOwnerAlias = context.StringValue("DescribeCluster.ClusterInfo.ImageOwnerAlias");
 			clusterInfo.ImageId = context.StringValue("DescribeCluster.ClusterInfo.ImageId");
+			clusterInfo.Location = context.StringValue("DescribeCluster.ClusterInfo.Location");
 
 			DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_EcsInfo ecsInfo = new DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_EcsInfo();
 
