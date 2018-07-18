@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
+		private string queryTimeFormat;
+
 		private string ownerAccount;
 
 		private string endTime;
@@ -95,6 +97,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string QueryTimeFormat
+		{
+			get
+			{
+				return queryTimeFormat;
+			}
+			set	
+			{
+				queryTimeFormat = value;
+				DictionaryUtil.Add(QueryParameters, "QueryTimeFormat", value);
 			}
 		}
 

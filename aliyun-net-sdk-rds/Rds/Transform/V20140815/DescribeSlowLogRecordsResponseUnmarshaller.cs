@@ -42,7 +42,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				sQLSlowRecord.HostAddress = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].HostAddress");
 				sQLSlowRecord.DBName = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
 				sQLSlowRecord.SQLText = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].SQLText");
-				sQLSlowRecord.QueryTimes = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueryTimes");
+				sQLSlowRecord.QueryTimes = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].QueryTimes");
 				sQLSlowRecord.LockTimes = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].LockTimes");
 				sQLSlowRecord.ParseRowCounts = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].ParseRowCounts");
 				sQLSlowRecord.ReturnRowCounts = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");

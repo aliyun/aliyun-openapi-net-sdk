@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string expired;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -72,6 +74,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Expired
+		{
+			get
+			{
+				return expired;
+			}
+			set	
+			{
+				expired = value;
+				DictionaryUtil.Add(QueryParameters, "Expired", value);
 			}
 		}
 

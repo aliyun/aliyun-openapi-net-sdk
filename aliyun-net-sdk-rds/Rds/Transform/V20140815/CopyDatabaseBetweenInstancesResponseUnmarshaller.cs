@@ -23,21 +23,17 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class ModifyBackupPolicyResponseUnmarshaller
+    public class CopyDatabaseBetweenInstancesResponseUnmarshaller
     {
-        public static ModifyBackupPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static CopyDatabaseBetweenInstancesResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyBackupPolicyResponse modifyBackupPolicyResponse = new ModifyBackupPolicyResponse();
+			CopyDatabaseBetweenInstancesResponse copyDatabaseBetweenInstancesResponse = new CopyDatabaseBetweenInstancesResponse();
 
-			modifyBackupPolicyResponse.HttpResponse = context.HttpResponse;
-			modifyBackupPolicyResponse.RequestId = context.StringValue("ModifyBackupPolicy.RequestId");
-			modifyBackupPolicyResponse.DBInstanceID = context.StringValue("ModifyBackupPolicy.DBInstanceID");
-			modifyBackupPolicyResponse.EnableBackupLog = context.StringValue("ModifyBackupPolicy.EnableBackupLog");
-			modifyBackupPolicyResponse.LocalLogRetentionHours = context.IntegerValue("ModifyBackupPolicy.LocalLogRetentionHours");
-			modifyBackupPolicyResponse.LocalLogRetentionSpace = context.StringValue("ModifyBackupPolicy.LocalLogRetentionSpace");
-			modifyBackupPolicyResponse.HighSpaceUsageProtection = context.StringValue("ModifyBackupPolicy.HighSpaceUsageProtection");
+			copyDatabaseBetweenInstancesResponse.HttpResponse = context.HttpResponse;
+			copyDatabaseBetweenInstancesResponse.RequestId = context.StringValue("CopyDatabaseBetweenInstances.RequestId");
+			copyDatabaseBetweenInstancesResponse.DBInstanceId = context.StringValue("CopyDatabaseBetweenInstances.DBInstanceId");
         
-			return modifyBackupPolicyResponse;
+			return copyDatabaseBetweenInstancesResponse;
         }
     }
 }

@@ -26,55 +26,40 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ModifySecurityIpsRequest : RpcAcsRequest<ModifySecurityIpsResponse>
+    public class CopyDatabaseBetweenInstancesRequest : RpcAcsRequest<CopyDatabaseBetweenInstancesResponse>
     {
-        public ModifySecurityIpsRequest()
-            : base("Rds", "2014-08-15", "ModifySecurityIps", "rds", "openAPI")
+        public CopyDatabaseBetweenInstancesRequest()
+            : base("Rds", "2014-08-15", "CopyDatabaseBetweenInstances", "rds", "openAPI")
         {
         }
 
-		private string dBInstanceIPArrayName;
-
 		private long? resourceOwnerId;
 
-		private string modifyMode;
+		private string restoreTime;
 
 		private string resourceOwnerAccount;
 
 		private string clientToken;
 
+		private string backupId;
+
 		private string ownerAccount;
-
-		private string securityIps;
-
-		private string securityGroupId;
 
 		private long? ownerId;
 
 		private string accessKeyId;
 
-		private string whitelistNetType;
+		private string dbNames;
 
-		private string dBInstanceIPArrayAttribute;
+		private string resourceGroupId;
 
-		private string securityIPType;
+		private string targetDBInstanceId;
 
 		private string action;
 
 		private string dBInstanceId;
 
-		public string DBInstanceIPArrayName
-		{
-			get
-			{
-				return dBInstanceIPArrayName;
-			}
-			set	
-			{
-				dBInstanceIPArrayName = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayName", value);
-			}
-		}
+		private string payType;
 
 		public long? ResourceOwnerId
 		{
@@ -89,16 +74,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ModifyMode
+		public string RestoreTime
 		{
 			get
 			{
-				return modifyMode;
+				return restoreTime;
 			}
 			set	
 			{
-				modifyMode = value;
-				DictionaryUtil.Add(QueryParameters, "ModifyMode", value);
+				restoreTime = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
 			}
 		}
 
@@ -128,6 +113,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string BackupId
+		{
+			get
+			{
+				return backupId;
+			}
+			set	
+			{
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -138,32 +136,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string SecurityIps
-		{
-			get
-			{
-				return securityIps;
-			}
-			set	
-			{
-				securityIps = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityIps", value);
-			}
-		}
-
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
 			}
 		}
 
@@ -193,42 +165,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string WhitelistNetType
+		public string DbNames
 		{
 			get
 			{
-				return whitelistNetType;
+				return dbNames;
 			}
 			set	
 			{
-				whitelistNetType = value;
-				DictionaryUtil.Add(QueryParameters, "WhitelistNetType", value);
+				dbNames = value;
+				DictionaryUtil.Add(QueryParameters, "DbNames", value);
 			}
 		}
 
-		public string DBInstanceIPArrayAttribute
+		public string ResourceGroupId
 		{
 			get
 			{
-				return dBInstanceIPArrayAttribute;
+				return resourceGroupId;
 			}
 			set	
 			{
-				dBInstanceIPArrayAttribute = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayAttribute", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
-		public string SecurityIPType
+		public string TargetDBInstanceId
 		{
 			get
 			{
-				return securityIPType;
+				return targetDBInstanceId;
 			}
 			set	
 			{
-				securityIPType = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityIPType", value);
+				targetDBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetDBInstanceId", value);
 			}
 		}
 
@@ -258,9 +230,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override ModifySecurityIpsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string PayType
+		{
+			get
+			{
+				return payType;
+			}
+			set	
+			{
+				payType = value;
+				DictionaryUtil.Add(QueryParameters, "PayType", value);
+			}
+		}
+
+        public override CopyDatabaseBetweenInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifySecurityIpsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CopyDatabaseBetweenInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

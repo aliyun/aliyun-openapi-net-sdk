@@ -143,6 +143,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private long? sQLId;
 
+			private string sQLIdStr;
+
 			private string dBName;
 
 			private string sQLText;
@@ -200,6 +202,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					sQLId = value;
+				}
+			}
+
+			public string SQLIdStr
+			{
+				get
+				{
+					return sQLIdStr;
+				}
+				set	
+				{
+					sQLIdStr = value;
 				}
 			}
 

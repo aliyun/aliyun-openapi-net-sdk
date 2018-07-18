@@ -21,12 +21,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateBackupResponse : AcsResponse
+	public class DestroyDBInstanceResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string backupJobId;
 
 		public string RequestId
 		{
@@ -37,18 +35,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string BackupJobId
-		{
-			get
-			{
-				return backupJobId;
-			}
-			set	
-			{
-				backupJobId = value;
 			}
 		}
 	}

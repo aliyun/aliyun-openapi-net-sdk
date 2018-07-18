@@ -26,18 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeBackupPolicyRequest : RpcAcsRequest<DescribeBackupPolicyResponse>
+    public class ModifyReadonlyInstanceDelayReplicationTimeRequest : RpcAcsRequest<ModifyReadonlyInstanceDelayReplicationTimeResponse>
     {
-        public DescribeBackupPolicyRequest()
-            : base("Rds", "2014-08-15", "DescribeBackupPolicy", "rds", "openAPI")
+        public ModifyReadonlyInstanceDelayReplicationTimeRequest()
+            : base("Rds", "2014-08-15", "ModifyReadonlyInstanceDelayReplicationTime", "rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string readSQLReplicationTime;
 
-		private string ownerAccount;
+		private string resourceOwnerAccount;
 
 		private string action;
 
@@ -46,8 +46,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? ownerId;
 
 		private string accessKeyId;
-
-		private string backupPolicyMode;
 
 		public long? ResourceOwnerId
 		{
@@ -62,6 +60,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ReadSQLReplicationTime
+		{
+			get
+			{
+				return readSQLReplicationTime;
+			}
+			set	
+			{
+				readSQLReplicationTime = value;
+				DictionaryUtil.Add(QueryParameters, "ReadSQLReplicationTime", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -72,19 +83,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -140,22 +138,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupPolicyMode
-		{
-			get
-			{
-				return backupPolicyMode;
-			}
-			set	
-			{
-				backupPolicyMode = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPolicyMode", value);
-			}
-		}
-
-        public override DescribeBackupPolicyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyReadonlyInstanceDelayReplicationTimeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBackupPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyReadonlyInstanceDelayReplicationTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

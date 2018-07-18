@@ -190,6 +190,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string readWriteType;
 
+				private string instanceNetworkType;
+
+				private string dBInstanceDescription;
+
+				private string dBInstanceStatus;
+
+				private string engine;
+
+				private string regionId;
+
 				public string DBInstanceId
 				{
 					get
@@ -223,6 +233,66 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						readWriteType = value;
+					}
+				}
+
+				public string InstanceNetworkType
+				{
+					get
+					{
+						return instanceNetworkType;
+					}
+					set	
+					{
+						instanceNetworkType = value;
+					}
+				}
+
+				public string DBInstanceDescription
+				{
+					get
+					{
+						return dBInstanceDescription;
+					}
+					set	
+					{
+						dBInstanceDescription = value;
+					}
+				}
+
+				public string DBInstanceStatus
+				{
+					get
+					{
+						return dBInstanceStatus;
+					}
+					set	
+					{
+						dBInstanceStatus = value;
+					}
+				}
+
+				public string Engine
+				{
+					get
+					{
+						return engine;
+					}
+					set	
+					{
+						engine = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
 					}
 				}
 			}

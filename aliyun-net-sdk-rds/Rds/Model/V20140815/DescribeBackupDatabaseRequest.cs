@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeBackupPolicyRequest : RpcAcsRequest<DescribeBackupPolicyResponse>
+    public class DescribeBackupDatabaseRequest : RpcAcsRequest<DescribeBackupDatabaseResponse>
     {
-        public DescribeBackupPolicyRequest()
-            : base("Rds", "2014-08-15", "DescribeBackupPolicy", "rds", "openAPI")
+        public DescribeBackupDatabaseRequest()
+            : base("Rds", "2014-08-15", "DescribeBackupDatabase", "rds", "openAPI")
         {
         }
 
@@ -37,7 +37,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
+		private string backupId;
 
 		private string action;
 
@@ -46,8 +46,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? ownerId;
 
 		private string accessKeyId;
-
-		private string backupPolicyMode;
 
 		public long? ResourceOwnerId
 		{
@@ -75,16 +73,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
+		public string BackupId
 		{
 			get
 			{
-				return ownerAccount;
+				return backupId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
 			}
 		}
 
@@ -140,22 +138,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupPolicyMode
-		{
-			get
-			{
-				return backupPolicyMode;
-			}
-			set	
-			{
-				backupPolicyMode = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPolicyMode", value);
-			}
-		}
-
-        public override DescribeBackupPolicyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeBackupDatabaseResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBackupPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeBackupDatabaseResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

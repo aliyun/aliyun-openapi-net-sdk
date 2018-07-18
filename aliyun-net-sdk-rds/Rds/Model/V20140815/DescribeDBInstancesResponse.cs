@@ -111,6 +111,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string expireTime;
 
+			private string destroyTime;
+
 			private string dBInstanceStatus;
 
 			private string engine;
@@ -120,6 +122,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private string connectionMode;
 
 			private string lockMode;
+
+			private string category;
+
+			private string dBInstanceStorageType;
 
 			private string dBInstanceClass;
 
@@ -237,6 +243,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string DestroyTime
+			{
+				get
+				{
+					return destroyTime;
+				}
+				set	
+				{
+					destroyTime = value;
+				}
+			}
+
 			public string DBInstanceStatus
 			{
 				get
@@ -294,6 +312,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					lockMode = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string DBInstanceStorageType
+			{
+				get
+				{
+					return dBInstanceStorageType;
+				}
+				set	
+				{
+					dBInstanceStorageType = value;
 				}
 			}
 

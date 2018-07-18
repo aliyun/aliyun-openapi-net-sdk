@@ -21,12 +21,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateBackupResponse : AcsResponse
+	public class DescribeDBInstanceProxyConfigurationResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string backupJobId;
+		private string transparentSwitchConfiguration;
+
+		private string persistentConnectionsConfiguration;
+
+		private string attacksProtectionConfiguration;
 
 		public string RequestId
 		{
@@ -40,15 +44,39 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupJobId
+		public string TransparentSwitchConfiguration
 		{
 			get
 			{
-				return backupJobId;
+				return transparentSwitchConfiguration;
 			}
 			set	
 			{
-				backupJobId = value;
+				transparentSwitchConfiguration = value;
+			}
+		}
+
+		public string PersistentConnectionsConfiguration
+		{
+			get
+			{
+				return persistentConnectionsConfiguration;
+			}
+			set	
+			{
+				persistentConnectionsConfiguration = value;
+			}
+		}
+
+		public string AttacksProtectionConfiguration
+		{
+			get
+			{
+				return attacksProtectionConfiguration;
+			}
+			set	
+			{
+				attacksProtectionConfiguration = value;
 			}
 		}
 	}

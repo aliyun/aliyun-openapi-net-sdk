@@ -23,21 +23,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class ModifyBackupPolicyResponseUnmarshaller
+    public class CheckDBInstancesResponseUnmarshaller
     {
-        public static ModifyBackupPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static CheckDBInstancesResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyBackupPolicyResponse modifyBackupPolicyResponse = new ModifyBackupPolicyResponse();
+			CheckDBInstancesResponse checkDBInstancesResponse = new CheckDBInstancesResponse();
 
-			modifyBackupPolicyResponse.HttpResponse = context.HttpResponse;
-			modifyBackupPolicyResponse.RequestId = context.StringValue("ModifyBackupPolicy.RequestId");
-			modifyBackupPolicyResponse.DBInstanceID = context.StringValue("ModifyBackupPolicy.DBInstanceID");
-			modifyBackupPolicyResponse.EnableBackupLog = context.StringValue("ModifyBackupPolicy.EnableBackupLog");
-			modifyBackupPolicyResponse.LocalLogRetentionHours = context.IntegerValue("ModifyBackupPolicy.LocalLogRetentionHours");
-			modifyBackupPolicyResponse.LocalLogRetentionSpace = context.StringValue("ModifyBackupPolicy.LocalLogRetentionSpace");
-			modifyBackupPolicyResponse.HighSpaceUsageProtection = context.StringValue("ModifyBackupPolicy.HighSpaceUsageProtection");
+			checkDBInstancesResponse.HttpResponse = context.HttpResponse;
+			checkDBInstancesResponse.RequestId = context.StringValue("CheckDBInstances.RequestId");
+			checkDBInstancesResponse.DBInstanceId = context.StringValue("CheckDBInstances.DBInstanceId");
+			checkDBInstancesResponse.DBInstanceStatus = context.StringValue("CheckDBInstances.DBInstanceStatus");
         
-			return modifyBackupPolicyResponse;
+			return checkDBInstancesResponse;
         }
     }
 }

@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDBInstanceAttribute_DBInstanceAttribute
 		{
 
+			private string iPType;
+
 			private string dBInstanceDiskUsed;
 
 			private string guardDBInstanceName;
@@ -169,9 +171,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string connectionMode;
 
+			private string currentKernelVersion;
+
+			private string latestKernelVersion;
+
 			private string resourceGroupId;
 
+			private string readonlyInstanceSQLDelayedTime;
+
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+
+			public string IPType
+			{
+				get
+				{
+					return iPType;
+				}
+				set	
+				{
+					iPType = value;
+				}
+			}
 
 			public string DBInstanceDiskUsed
 			{
@@ -857,6 +877,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string CurrentKernelVersion
+			{
+				get
+				{
+					return currentKernelVersion;
+				}
+				set	
+				{
+					currentKernelVersion = value;
+				}
+			}
+
+			public string LatestKernelVersion
+			{
+				get
+				{
+					return latestKernelVersion;
+				}
+				set	
+				{
+					latestKernelVersion = value;
+				}
+			}
+
 			public string ResourceGroupId
 			{
 				get
@@ -866,6 +910,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string ReadonlyInstanceSQLDelayedTime
+			{
+				get
+				{
+					return readonlyInstanceSQLDelayedTime;
+				}
+				set	
+				{
+					readonlyInstanceSQLDelayedTime = value;
 				}
 			}
 

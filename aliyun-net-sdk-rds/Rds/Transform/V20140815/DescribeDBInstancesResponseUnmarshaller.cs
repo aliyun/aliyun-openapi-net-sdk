@@ -45,11 +45,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstance.DBInstanceType = context.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceType");
 				dBInstance.RegionId = context.StringValue("DescribeDBInstances.Items["+ i +"].RegionId");
 				dBInstance.ExpireTime = context.StringValue("DescribeDBInstances.Items["+ i +"].ExpireTime");
+				dBInstance.DestroyTime = context.StringValue("DescribeDBInstances.Items["+ i +"].DestroyTime");
 				dBInstance.DBInstanceStatus = context.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceStatus");
 				dBInstance.Engine = context.StringValue("DescribeDBInstances.Items["+ i +"].Engine");
 				dBInstance.DBInstanceNetType = context.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceNetType");
 				dBInstance.ConnectionMode = context.StringValue("DescribeDBInstances.Items["+ i +"].ConnectionMode");
 				dBInstance.LockMode = context.StringValue("DescribeDBInstances.Items["+ i +"].LockMode");
+				dBInstance.Category = context.StringValue("DescribeDBInstances.Items["+ i +"].Category");
+				dBInstance.DBInstanceStorageType = context.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceStorageType");
 				dBInstance.DBInstanceClass = context.StringValue("DescribeDBInstances.Items["+ i +"].DBInstanceClass");
 				dBInstance.InstanceNetworkType = context.StringValue("DescribeDBInstances.Items["+ i +"].InstanceNetworkType");
 				dBInstance.VpcCloudInstanceId = context.StringValue("DescribeDBInstances.Items["+ i +"].VpcCloudInstanceId");

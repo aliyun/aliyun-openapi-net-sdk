@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute> describeDBInstanceAttributeResponse_items = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute>();
 			for (int i = 0; i < context.Length("DescribeDBInstanceAttribute.Items.Length"); i++) {
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute dBInstanceAttribute = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute();
+				dBInstanceAttribute.IPType = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].IPType");
 				dBInstanceAttribute.DBInstanceDiskUsed = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBInstanceDiskUsed");
 				dBInstanceAttribute.GuardDBInstanceName = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].GuardDBInstanceName");
 				dBInstanceAttribute.CanTempUpgrade = context.BooleanValue("DescribeDBInstanceAttribute.Items["+ i +"].CanTempUpgrade");
@@ -92,7 +93,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.VpcId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].VpcId");
 				dBInstanceAttribute.VSwitchId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].VSwitchId");
 				dBInstanceAttribute.ConnectionMode = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].ConnectionMode");
+				dBInstanceAttribute.CurrentKernelVersion = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].CurrentKernelVersion");
+				dBInstanceAttribute.LatestKernelVersion = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].LatestKernelVersion");
 				dBInstanceAttribute.ResourceGroupId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].ResourceGroupId");
+				dBInstanceAttribute.ReadonlyInstanceSQLDelayedTime = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].ReadonlyInstanceSQLDelayedTime");
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> dBInstanceAttribute_readOnlyDBInstanceIds = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_ReadOnlyDBInstanceId>();
 				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

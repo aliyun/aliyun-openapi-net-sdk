@@ -21,12 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateBackupResponse : AcsResponse
+	public class DescribeBackupDatabaseResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string backupJobId;
+		private string databaseNames;
 
 		public string RequestId
 		{
@@ -40,15 +40,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupJobId
+		public string DatabaseNames
 		{
 			get
 			{
-				return backupJobId;
+				return databaseNames;
 			}
 			set	
 			{
-				backupJobId = value;
+				databaseNames = value;
 			}
 		}
 	}

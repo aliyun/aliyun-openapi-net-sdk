@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string backupStrategy;
+
 		private string dBName;
 
 		private string resourceOwnerAccount;
@@ -76,6 +78,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string BackupStrategy
+		{
+			get
+			{
+				return backupStrategy;
+			}
+			set	
+			{
+				backupStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "BackupStrategy", value);
 			}
 		}
 

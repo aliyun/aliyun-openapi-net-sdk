@@ -26,18 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeBackupPolicyRequest : RpcAcsRequest<DescribeBackupPolicyResponse>
+    public class CheckDBInstancesRequest : RpcAcsRequest<CheckDBInstancesResponse>
     {
-        public DescribeBackupPolicyRequest()
-            : base("Rds", "2014-08-15", "DescribeBackupPolicy", "rds", "openAPI")
+        public CheckDBInstancesRequest()
+            : base("Rds", "2014-08-15", "CheckDBInstances", "rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
-
-		private string ownerAccount;
 
 		private string action;
 
@@ -46,8 +44,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? ownerId;
 
 		private string accessKeyId;
-
-		private string backupPolicyMode;
 
 		public long? ResourceOwnerId
 		{
@@ -72,19 +68,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -140,22 +123,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupPolicyMode
-		{
-			get
-			{
-				return backupPolicyMode;
-			}
-			set	
-			{
-				backupPolicyMode = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPolicyMode", value);
-			}
-		}
-
-        public override DescribeBackupPolicyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CheckDBInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBackupPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckDBInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

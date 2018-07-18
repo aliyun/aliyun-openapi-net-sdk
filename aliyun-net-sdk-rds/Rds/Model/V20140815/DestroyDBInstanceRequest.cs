@@ -26,16 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeBackupPolicyRequest : RpcAcsRequest<DescribeBackupPolicyResponse>
+    public class DestroyDBInstanceRequest : RpcAcsRequest<DestroyDBInstanceResponse>
     {
-        public DescribeBackupPolicyRequest()
-            : base("Rds", "2014-08-15", "DescribeBackupPolicy", "rds", "openAPI")
+        public DestroyDBInstanceRequest()
+            : base("Rds", "2014-08-15", "DestroyDBInstance", "rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
+
+		private string clientToken;
 
 		private string ownerAccount;
 
@@ -46,8 +48,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? ownerId;
 
 		private string accessKeyId;
-
-		private string backupPolicyMode;
 
 		public long? ResourceOwnerId
 		{
@@ -72,6 +72,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -140,22 +153,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupPolicyMode
-		{
-			get
-			{
-				return backupPolicyMode;
-			}
-			set	
-			{
-				backupPolicyMode = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPolicyMode", value);
-			}
-		}
-
-        public override DescribeBackupPolicyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DestroyDBInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBackupPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DestroyDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

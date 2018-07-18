@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class CloneDBInstanceRequest : RpcAcsRequest<CloneDBInstanceResponse>
+    public class RecoveryDBInstanceRequest : RpcAcsRequest<RecoveryDBInstanceResponse>
     {
-        public CloneDBInstanceRequest()
-            : base("Rds", "2014-08-15", "CloneDBInstance", "rds", "openAPI")
+        public RecoveryDBInstanceRequest()
+            : base("Rds", "2014-08-15", "RecoveryDBInstance", "rds", "openAPI")
         {
         }
 
@@ -65,13 +65,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceGroupId;
 
-		private string regionId;
+		private string targetDBInstanceId;
 
 		private string vPCId;
 
 		private string action;
-
-		private string zoneId;
 
 		private string dBInstanceDescription;
 
@@ -289,16 +287,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string RegionId
+		public string TargetDBInstanceId
 		{
 			get
 			{
-				return regionId;
+				return targetDBInstanceId;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				targetDBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetDBInstanceId", value);
 			}
 		}
 
@@ -325,19 +323,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
@@ -393,9 +378,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override CloneDBInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RecoveryDBInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CloneDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RecoveryDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

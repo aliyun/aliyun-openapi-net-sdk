@@ -23,21 +23,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class ModifyBackupPolicyResponseUnmarshaller
+    public class DestroyDBInstanceResponseUnmarshaller
     {
-        public static ModifyBackupPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static DestroyDBInstanceResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyBackupPolicyResponse modifyBackupPolicyResponse = new ModifyBackupPolicyResponse();
+			DestroyDBInstanceResponse destroyDBInstanceResponse = new DestroyDBInstanceResponse();
 
-			modifyBackupPolicyResponse.HttpResponse = context.HttpResponse;
-			modifyBackupPolicyResponse.RequestId = context.StringValue("ModifyBackupPolicy.RequestId");
-			modifyBackupPolicyResponse.DBInstanceID = context.StringValue("ModifyBackupPolicy.DBInstanceID");
-			modifyBackupPolicyResponse.EnableBackupLog = context.StringValue("ModifyBackupPolicy.EnableBackupLog");
-			modifyBackupPolicyResponse.LocalLogRetentionHours = context.IntegerValue("ModifyBackupPolicy.LocalLogRetentionHours");
-			modifyBackupPolicyResponse.LocalLogRetentionSpace = context.StringValue("ModifyBackupPolicy.LocalLogRetentionSpace");
-			modifyBackupPolicyResponse.HighSpaceUsageProtection = context.StringValue("ModifyBackupPolicy.HighSpaceUsageProtection");
+			destroyDBInstanceResponse.HttpResponse = context.HttpResponse;
+			destroyDBInstanceResponse.RequestId = context.StringValue("DestroyDBInstance.RequestId");
         
-			return modifyBackupPolicyResponse;
+			return destroyDBInstanceResponse;
         }
     }
 }

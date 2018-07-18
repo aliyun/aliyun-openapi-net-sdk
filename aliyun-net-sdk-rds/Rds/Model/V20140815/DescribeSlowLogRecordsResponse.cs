@@ -117,7 +117,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string sQLText;
 
-			private long? queryTimes;
+			private string queryTimes;
 
 			private long? lockTimes;
 
@@ -163,7 +163,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public long? QueryTimes
+			public string QueryTimes
 			{
 				get
 				{

@@ -23,21 +23,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class ModifyBackupPolicyResponseUnmarshaller
+    public class RecoveryDBInstanceResponseUnmarshaller
     {
-        public static ModifyBackupPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static RecoveryDBInstanceResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyBackupPolicyResponse modifyBackupPolicyResponse = new ModifyBackupPolicyResponse();
+			RecoveryDBInstanceResponse recoveryDBInstanceResponse = new RecoveryDBInstanceResponse();
 
-			modifyBackupPolicyResponse.HttpResponse = context.HttpResponse;
-			modifyBackupPolicyResponse.RequestId = context.StringValue("ModifyBackupPolicy.RequestId");
-			modifyBackupPolicyResponse.DBInstanceID = context.StringValue("ModifyBackupPolicy.DBInstanceID");
-			modifyBackupPolicyResponse.EnableBackupLog = context.StringValue("ModifyBackupPolicy.EnableBackupLog");
-			modifyBackupPolicyResponse.LocalLogRetentionHours = context.IntegerValue("ModifyBackupPolicy.LocalLogRetentionHours");
-			modifyBackupPolicyResponse.LocalLogRetentionSpace = context.StringValue("ModifyBackupPolicy.LocalLogRetentionSpace");
-			modifyBackupPolicyResponse.HighSpaceUsageProtection = context.StringValue("ModifyBackupPolicy.HighSpaceUsageProtection");
+			recoveryDBInstanceResponse.HttpResponse = context.HttpResponse;
+			recoveryDBInstanceResponse.RequestId = context.StringValue("RecoveryDBInstance.RequestId");
+			recoveryDBInstanceResponse.DBInstanceId = context.StringValue("RecoveryDBInstance.DBInstanceId");
+			recoveryDBInstanceResponse.OrderId = context.StringValue("RecoveryDBInstance.OrderId");
         
-			return modifyBackupPolicyResponse;
+			return recoveryDBInstanceResponse;
         }
     }
 }

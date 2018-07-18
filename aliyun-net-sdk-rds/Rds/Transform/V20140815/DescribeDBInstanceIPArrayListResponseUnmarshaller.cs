@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray dBInstanceIPArray = new DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray();
 				dBInstanceIPArray.DBInstanceIPArrayName = context.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].DBInstanceIPArrayName");
 				dBInstanceIPArray.DBInstanceIPArrayAttribute = context.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].DBInstanceIPArrayAttribute");
+				dBInstanceIPArray.SecurityIPType = context.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].SecurityIPType");
 				dBInstanceIPArray.SecurityIPList = context.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].SecurityIPList");
 				dBInstanceIPArray.WhitelistNetworkType = context.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].WhitelistNetworkType");
 

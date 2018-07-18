@@ -50,6 +50,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 					items1.DBInstanceId = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceId");
 					items1.Role = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].Role");
 					items1.ReadWriteType = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].ReadWriteType");
+					items1.InstanceNetworkType = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].InstanceNetworkType");
+					items1.DBInstanceDescription = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceDescription");
+					items1.DBInstanceStatus = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceStatus");
+					items1.Engine = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].Engine");
+					items1.RegionId = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].RegionId");
 
 					items_dBInstances.Add(items1);
 				}

@@ -47,11 +47,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string tag3key;
 
+		private string engineVersion;
+
 		private int? pageNumber;
 
 		private string accessKeyId;
 
 		private string tag1value;
+
+		private string expired;
 
 		private string engine;
 
@@ -81,6 +85,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceType;
 
+		private string dBInstanceClass;
+
 		private string tags;
 
 		private string vSwitchId;
@@ -91,7 +97,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string tag2value;
 
+		private string zoneId;
+
 		private string tag4key;
+
+		private string payType;
 
 		private string instanceNetworkType;
 
@@ -186,6 +196,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -222,6 +245,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				tag1value = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.1.value", value);
+			}
+		}
+
+		public string Expired
+		{
+			get
+			{
+				return expired;
+			}
+			set	
+			{
+				expired = value;
+				DictionaryUtil.Add(QueryParameters, "Expired", value);
 			}
 		}
 
@@ -407,6 +443,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string DBInstanceClass
+		{
+			get
+			{
+				return dBInstanceClass;
+			}
+			set	
+			{
+				dBInstanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
+			}
+		}
+
 		public string Tags
 		{
 			get
@@ -472,6 +521,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
 		public string Tag4key
 		{
 			get
@@ -482,6 +544,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				tag4key = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.4.key", value);
+			}
+		}
+
+		public string PayType
+		{
+			get
+			{
+				return payType;
+			}
+			set	
+			{
+				payType = value;
+				DictionaryUtil.Add(QueryParameters, "PayType", value);
 			}
 		}
 

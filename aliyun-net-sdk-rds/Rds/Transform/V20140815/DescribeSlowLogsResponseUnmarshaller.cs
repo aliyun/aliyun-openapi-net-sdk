@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				DescribeSlowLogsResponse.DescribeSlowLogs_SQLSlowLog sQLSlowLog = new DescribeSlowLogsResponse.DescribeSlowLogs_SQLSlowLog();
 				sQLSlowLog.SlowLogId = context.LongValue("DescribeSlowLogs.Items["+ i +"].SlowLogId");
 				sQLSlowLog.SQLId = context.LongValue("DescribeSlowLogs.Items["+ i +"].SQLId");
+				sQLSlowLog.SQLIdStr = context.StringValue("DescribeSlowLogs.Items["+ i +"].SQLIdStr");
 				sQLSlowLog.DBName = context.StringValue("DescribeSlowLogs.Items["+ i +"].DBName");
 				sQLSlowLog.SQLText = context.StringValue("DescribeSlowLogs.Items["+ i +"].SQLText");
 				sQLSlowLog.MySQLTotalExecutionCounts = context.LongValue("DescribeSlowLogs.Items["+ i +"].MySQLTotalExecutionCounts");
