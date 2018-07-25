@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{c0318907-8e56-44f2-90bb-ac2daa519370}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-imm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Imm\Model\V20170906\CreateOfficeConversionTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteFaceByUrlRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\IndexTagResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\IndexFaceResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeletePornBatchDetectJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateFaceJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteTagByUrlResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetPhotoProcessTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetPornBatchDetectJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateFaceSetResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreatePornBatchDetectJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateTagJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetFaceSetDetailRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GroupFacesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListFaceJobsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetProjectRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListOfficeConversionTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListTagSetsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GroupFacesResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateTagJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteProjectResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetFaceSetResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateOfficeConversionTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetFaceDetailResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListFaceSetsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectTagResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteTagByNameRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetFaceJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteFaceJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteTagByUrlRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListTagJobsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DescribeRegionsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DescribeRegionsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetTagSetRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListPhotoProcessTasksRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteProjectRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListFaceGroupsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetOfficeConversionTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\PhotoProcessRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\PutProjectResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteTagJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateFaceJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListTagPhotosResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetFaceSetDetailResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteTagByNameResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\IndexTagRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListTagNamesResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetTagSetResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListOfficeConversionTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteFaceByIdResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListProjectsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetFaceJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateFaceSetRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteTagJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetOfficeConversionTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\PhotoProcessResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateFaceGroupByIdRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListFaceGroupPhotosResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteOfficeConversionTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteFaceByIdRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetFaceDetailRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListFaceSetsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListTagSetsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateTagSetResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListProjectsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetTagJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeletePhotoProcessTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListTagPhotosRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeletePornBatchDetectJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListPhotoProcessTasksResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListTagJobsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ConvertOfficeFormatResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateTagSetRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetFaceSetRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteFaceByUrlResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\IndexFaceRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteTagSetResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeletePhotoProcessTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ConvertOfficeFormatRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteFaceSetRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateFaceGroupByIdResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListPornBatchDetectJobsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectFaceResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteFaceJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListTagNamesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteOfficeConversionTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListFaceJobsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreatePornBatchDetectJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteTagSetRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetTagJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListFaceGroupPhotosRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectTagRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectFaceRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListPornBatchDetectJobsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetPornBatchDetectJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetPhotoProcessTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetProjectResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListFaceGroupsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteFaceSetResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\PutProjectRequest.cs" />
+	<Compile Include="Imm\Transform\V20170906\PhotoProcessResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeleteFaceByIdResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeleteTagSetResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeleteFaceSetResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GetPhotoProcessTaskResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\UpdateFaceGroupByIdResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ListTagJobsResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\CreateFaceSetResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeleteTagByNameResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GetFaceSetResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeleteOfficeConversionTaskResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GetProjectResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GetOfficeConversionTaskResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GetTagJobResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GetFaceJobResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeleteTagByUrlResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\CreateTagJobResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ListTagSetsResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GetFaceDetailResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\PutProjectResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ListFaceSetsResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeleteFaceJobResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GroupFacesResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\IndexFaceResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ListPhotoProcessTasksResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DetectTagResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GetTagSetResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\CreatePornBatchDetectJobResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeletePhotoProcessTaskResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeleteProjectResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ListTagPhotosResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\CreateOfficeConversionTaskResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\IndexTagResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ListProjectsResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeletePornBatchDetectJobResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\CreateFaceJobResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeleteFaceByUrlResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GetPornBatchDetectJobResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\CreateTagSetResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DetectFaceResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GetFaceSetDetailResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ListPornBatchDetectJobsResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeleteTagJobResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ListOfficeConversionTaskResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ListFaceJobsResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ConvertOfficeFormatResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ListFaceGroupPhotosResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ListTagNamesResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\ListFaceGroupsResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
