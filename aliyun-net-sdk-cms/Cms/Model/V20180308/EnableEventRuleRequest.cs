@@ -33,7 +33,26 @@ namespace Aliyun.Acs.Cms.Model.V20180308
         {
         }
 
+		private List<string> ruleNamess;
+
 		private string ruleName;
+
+		public List<string> RuleNamess
+		{
+			get
+			{
+				return ruleNamess;
+			}
+
+			set
+			{
+				ruleNamess = value;
+				for (int i = 0; i < ruleNamess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"RuleNames." + (i + 1) , ruleNamess[i]);
+				}
+			}
+		}
 
 		public string RuleName
 		{

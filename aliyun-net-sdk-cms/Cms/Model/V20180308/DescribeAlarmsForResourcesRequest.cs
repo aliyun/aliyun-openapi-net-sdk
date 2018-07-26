@@ -26,20 +26,41 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
-    public class ListEventRulesRequest : RpcAcsRequest<ListEventRulesResponse>
+    public class DescribeAlarmsForResourcesRequest : RpcAcsRequest<DescribeAlarmsForResourcesResponse>
     {
-        public ListEventRulesRequest()
-            : base("Cms", "2018-03-08", "ListEventRules", "cms", "openAPI")
+        public DescribeAlarmsForResourcesRequest()
+            : base("Cms", "2018-03-08", "DescribeAlarmsForResources", "cms", "openAPI")
         {
         }
 
+		private bool? enableState;
+
 		private string groupId;
+
+		private string _namespace;
 
 		private string pageSize;
 
-		private string namePrefix;
+		private string alertState;
 
 		private string page;
+
+		private string metricName;
+
+		private string dimensions;
+
+		public bool? EnableState
+		{
+			get
+			{
+				return enableState;
+			}
+			set	
+			{
+				enableState = value;
+				DictionaryUtil.Add(QueryParameters, "EnableState", value.ToString());
+			}
+		}
 
 		public string GroupId
 		{
@@ -51,6 +72,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+				DictionaryUtil.Add(QueryParameters, "Namespace", value);
 			}
 		}
 
@@ -67,16 +101,16 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public string NamePrefix
+		public string AlertState
 		{
 			get
 			{
-				return namePrefix;
+				return alertState;
 			}
 			set	
 			{
-				namePrefix = value;
-				DictionaryUtil.Add(QueryParameters, "NamePrefix", value);
+				alertState = value;
+				DictionaryUtil.Add(QueryParameters, "AlertState", value);
 			}
 		}
 
@@ -93,9 +127,35 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-        public override ListEventRulesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string MetricName
+		{
+			get
+			{
+				return metricName;
+			}
+			set	
+			{
+				metricName = value;
+				DictionaryUtil.Add(QueryParameters, "MetricName", value);
+			}
+		}
+
+		public string Dimensions
+		{
+			get
+			{
+				return dimensions;
+			}
+			set	
+			{
+				dimensions = value;
+				DictionaryUtil.Add(QueryParameters, "Dimensions", value);
+			}
+		}
+
+        public override DescribeAlarmsForResourcesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListEventRulesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAlarmsForResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

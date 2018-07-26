@@ -45,9 +45,9 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private long? userId;
 
-		private int? pageNumber;
-
 		private string serialNumbers;
+
+		private int? pageNumber;
 
 		private string status;
 
@@ -129,19 +129,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string SerialNumbers
 		{
 			get
@@ -152,6 +139,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				serialNumbers = value;
 				DictionaryUtil.Add(QueryParameters, "SerialNumbers", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

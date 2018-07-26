@@ -21,28 +21,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
-	public class EnableActiveAlertResponse : AcsResponse
+	public class SendDryRunSystemEventResponse : AcsResponse
 	{
-
-		private bool? success;
 
 		private string code;
 
 		private string message;
 
+		private string data;
+
 		private string requestId;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private string success;
 
 		public string Code
 		{
@@ -68,6 +58,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
 		public string RequestId
 		{
 			get
@@ -77,6 +79,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

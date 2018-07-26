@@ -26,20 +26,33 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
-    public class ListEventRulesRequest : RpcAcsRequest<ListEventRulesResponse>
+    public class SendDryRunSystemEventRequest : RpcAcsRequest<SendDryRunSystemEventResponse>
     {
-        public ListEventRulesRequest()
-            : base("Cms", "2018-03-08", "ListEventRules", "cms", "openAPI")
+        public SendDryRunSystemEventRequest()
+            : base("Cms", "2018-03-08", "SendDryRunSystemEvent", "cms", "openAPI")
         {
         }
 
+		private string product;
+
 		private string groupId;
 
-		private string pageSize;
+		private string eventName;
 
-		private string namePrefix;
+		private string eventContent;
 
-		private string page;
+		public string Product
+		{
+			get
+			{
+				return product;
+			}
+			set	
+			{
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -54,48 +67,35 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public string PageSize
+		public string EventName
 		{
 			get
 			{
-				return pageSize;
+				return eventName;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value);
+				eventName = value;
+				DictionaryUtil.Add(QueryParameters, "EventName", value);
 			}
 		}
 
-		public string NamePrefix
+		public string EventContent
 		{
 			get
 			{
-				return namePrefix;
+				return eventContent;
 			}
 			set	
 			{
-				namePrefix = value;
-				DictionaryUtil.Add(QueryParameters, "NamePrefix", value);
+				eventContent = value;
+				DictionaryUtil.Add(QueryParameters, "EventContent", value);
 			}
 		}
 
-		public string Page
-		{
-			get
-			{
-				return page;
-			}
-			set	
-			{
-				page = value;
-				DictionaryUtil.Add(QueryParameters, "Page", value);
-			}
-		}
-
-        public override ListEventRulesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SendDryRunSystemEventResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListEventRulesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SendDryRunSystemEventResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -23,19 +23,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Transform.V20180308
 {
-    public class EnableActiveAlertResponseUnmarshaller
+    public class SendDryRunSystemEventResponseUnmarshaller
     {
-        public static EnableActiveAlertResponse Unmarshall(UnmarshallerContext context)
+        public static SendDryRunSystemEventResponse Unmarshall(UnmarshallerContext context)
         {
-			EnableActiveAlertResponse enableActiveAlertResponse = new EnableActiveAlertResponse();
+			SendDryRunSystemEventResponse sendDryRunSystemEventResponse = new SendDryRunSystemEventResponse();
 
-			enableActiveAlertResponse.HttpResponse = context.HttpResponse;
-			enableActiveAlertResponse.Success = context.BooleanValue("EnableActiveAlert.Success");
-			enableActiveAlertResponse.Code = context.StringValue("EnableActiveAlert.Code");
-			enableActiveAlertResponse.Message = context.StringValue("EnableActiveAlert.Message");
-			enableActiveAlertResponse.RequestId = context.StringValue("EnableActiveAlert.RequestId");
+			sendDryRunSystemEventResponse.HttpResponse = context.HttpResponse;
+			sendDryRunSystemEventResponse.Code = context.StringValue("SendDryRunSystemEvent.Code");
+			sendDryRunSystemEventResponse.Message = context.StringValue("SendDryRunSystemEvent.Message");
+			sendDryRunSystemEventResponse.Data = context.StringValue("SendDryRunSystemEvent.Data");
+			sendDryRunSystemEventResponse.RequestId = context.StringValue("SendDryRunSystemEvent.RequestId");
+			sendDryRunSystemEventResponse.Success = context.StringValue("SendDryRunSystemEvent.Success");
         
-			return enableActiveAlertResponse;
+			return sendDryRunSystemEventResponse;
         }
     }
 }

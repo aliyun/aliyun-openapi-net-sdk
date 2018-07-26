@@ -33,9 +33,9 @@ namespace Aliyun.Acs.Cms.Model.V20180308
         {
         }
 
-		private long? resourceOwnerId;
-
 		private string period;
+
+		private long? resourceOwnerId;
 
 		private string metric;
 
@@ -57,19 +57,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string accessKeyId;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
 		public string Period
 		{
 			get
@@ -80,6 +67,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value);
+			}
+		}
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 

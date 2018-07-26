@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
-	public class EnableActiveAlertResponse : AcsResponse
+	public class PutMetricAlarmResponse : AcsResponse
 	{
 
 		private bool? success;
@@ -31,6 +31,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		private string message;
 
 		private string requestId;
+
+		private string datapoints;
 
 		public bool? Success
 		{
@@ -77,6 +79,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Datapoints
+		{
+			get
+			{
+				return datapoints;
+			}
+			set	
+			{
+				datapoints = value;
 			}
 		}
 	}
