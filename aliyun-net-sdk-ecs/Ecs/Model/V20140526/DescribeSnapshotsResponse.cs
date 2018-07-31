@@ -127,6 +127,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? remainTime;
 
+			private string resourceGroupId;
+
 			private List<DescribeSnapshots_Tag> tags;
 
 			public string SnapshotId
@@ -306,6 +308,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					remainTime = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

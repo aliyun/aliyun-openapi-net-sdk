@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceType.InstanceBandwidthTx = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceBandwidthTx");
 				instanceType.InstancePpsRx = context.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstancePpsRx");
 				instanceType.InstancePpsTx = context.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstancePpsTx");
+				instanceType.InstanceFamilyLevel = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceFamilyLevel");
 
 				describeInstanceTypesResponse_instanceTypes.Add(instanceType);
 			}

@@ -39,6 +39,28 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			price.DiscountPrice = context.FloatValue("DescribeRenewalPrice.PriceInfo.Price.DiscountPrice");
 			price.TradePrice = context.FloatValue("DescribeRenewalPrice.PriceInfo.Price.TradePrice");
 			price.Currency = context.StringValue("DescribeRenewalPrice.PriceInfo.Price.Currency");
+
+			List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel> price_detailInfos = new List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel>();
+			for (int i = 0; i < context.Length("DescribeRenewalPrice.PriceInfo.Price.DetailInfos.Length"); i++) {
+				DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel resourcePriceModel = new DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel();
+				resourcePriceModel.Resource = context.StringValue("DescribeRenewalPrice.PriceInfo.Price.DetailInfos["+ i +"].Resource");
+				resourcePriceModel.OriginalPrice = context.FloatValue("DescribeRenewalPrice.PriceInfo.Price.DetailInfos["+ i +"].OriginalPrice");
+				resourcePriceModel.DiscountPrice = context.FloatValue("DescribeRenewalPrice.PriceInfo.Price.DetailInfos["+ i +"].DiscountPrice");
+				resourcePriceModel.TradePrice = context.FloatValue("DescribeRenewalPrice.PriceInfo.Price.DetailInfos["+ i +"].TradePrice");
+
+				List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel.DescribeRenewalPrice_Rule1> resourcePriceModel_subRules = new List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel.DescribeRenewalPrice_Rule1>();
+				for (int j = 0; j < context.Length("DescribeRenewalPrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules.Length"); j++) {
+					DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel.DescribeRenewalPrice_Rule1 rule1 = new DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel.DescribeRenewalPrice_Rule1();
+					rule1.RuleId = context.LongValue("DescribeRenewalPrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId");
+					rule1.Description = context.StringValue("DescribeRenewalPrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].Description");
+
+					resourcePriceModel_subRules.Add(rule1);
+				}
+				resourcePriceModel.SubRules = resourcePriceModel_subRules;
+
+				price_detailInfos.Add(resourcePriceModel);
+			}
+			price.DetailInfos = price_detailInfos;
 			priceInfo.Price = price;
 
 			List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Rule> priceInfo_rules = new List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Rule>();

@@ -45,6 +45,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				launchTemplateSet.DefaultVersionNumber = context.LongValue("DescribeLaunchTemplates.LaunchTemplateSets["+ i +"].DefaultVersionNumber");
 				launchTemplateSet.LatestVersionNumber = context.LongValue("DescribeLaunchTemplates.LaunchTemplateSets["+ i +"].LatestVersionNumber");
 				launchTemplateSet.CreatedBy = context.StringValue("DescribeLaunchTemplates.LaunchTemplateSets["+ i +"].CreatedBy");
+				launchTemplateSet.ResourceGroupId = context.StringValue("DescribeLaunchTemplates.LaunchTemplateSets["+ i +"].ResourceGroupId");
+
+				List<DescribeLaunchTemplatesResponse.DescribeLaunchTemplates_LaunchTemplateSet.DescribeLaunchTemplates_Tag> launchTemplateSet_tags = new List<DescribeLaunchTemplatesResponse.DescribeLaunchTemplates_LaunchTemplateSet.DescribeLaunchTemplates_Tag>();
+				for (int j = 0; j < context.Length("DescribeLaunchTemplates.LaunchTemplateSets["+ i +"].Tags.Length"); j++) {
+					DescribeLaunchTemplatesResponse.DescribeLaunchTemplates_LaunchTemplateSet.DescribeLaunchTemplates_Tag tag = new DescribeLaunchTemplatesResponse.DescribeLaunchTemplates_LaunchTemplateSet.DescribeLaunchTemplates_Tag();
+					tag.TagKey = context.StringValue("DescribeLaunchTemplates.LaunchTemplateSets["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = context.StringValue("DescribeLaunchTemplates.LaunchTemplateSets["+ i +"].Tags["+ j +"].TagValue");
+
+					launchTemplateSet_tags.Add(tag);
+				}
+				launchTemplateSet.Tags = launchTemplateSet_tags;
 
 				describeLaunchTemplatesResponse_launchTemplateSets.Add(launchTemplateSet);
 			}

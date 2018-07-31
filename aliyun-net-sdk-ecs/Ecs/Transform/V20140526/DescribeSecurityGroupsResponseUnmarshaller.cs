@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				securityGroup.CreationTime = context.StringValue("DescribeSecurityGroups.SecurityGroups["+ i +"].CreationTime");
 				securityGroup.AvailableInstanceAmount = context.IntegerValue("DescribeSecurityGroups.SecurityGroups["+ i +"].AvailableInstanceAmount");
 				securityGroup.EcsCount = context.IntegerValue("DescribeSecurityGroups.SecurityGroups["+ i +"].EcsCount");
+				securityGroup.ResourceGroupId = context.StringValue("DescribeSecurityGroups.SecurityGroups["+ i +"].ResourceGroupId");
 
 				List<DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup.DescribeSecurityGroups_Tag> securityGroup_tags = new List<DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup.DescribeSecurityGroups_Tag>();
 				for (int j = 0; j < context.Length("DescribeSecurityGroups.SecurityGroups["+ i +"].Tags.Length"); j++) {

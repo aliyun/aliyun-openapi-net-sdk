@@ -35,6 +35,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private int? memory;
+
+		private int? cores;
+
 		private string regionId;
 
 		private bool? migrateAcrossZone;
@@ -65,6 +69,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? Memory
+		{
+			get
+			{
+				return memory;
+			}
+			set	
+			{
+				memory = value;
+				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
+			}
+		}
+
+		public int? Cores
+		{
+			get
+			{
+				return cores;
+			}
+			set	
+			{
+				cores = value;
+				DictionaryUtil.Add(QueryParameters, "Cores", value.ToString());
 			}
 		}
 

@@ -39,6 +39,28 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			price.DiscountPrice = context.FloatValue("DescribePrice.PriceInfo.Price.DiscountPrice");
 			price.TradePrice = context.FloatValue("DescribePrice.PriceInfo.Price.TradePrice");
 			price.Currency = context.StringValue("DescribePrice.PriceInfo.Price.Currency");
+
+			List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel> price_detailInfos = new List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel>();
+			for (int i = 0; i < context.Length("DescribePrice.PriceInfo.Price.DetailInfos.Length"); i++) {
+				DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel resourcePriceModel = new DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel();
+				resourcePriceModel.Resource = context.StringValue("DescribePrice.PriceInfo.Price.DetailInfos["+ i +"].Resource");
+				resourcePriceModel.OriginalPrice = context.FloatValue("DescribePrice.PriceInfo.Price.DetailInfos["+ i +"].OriginalPrice");
+				resourcePriceModel.DiscountPrice = context.FloatValue("DescribePrice.PriceInfo.Price.DetailInfos["+ i +"].DiscountPrice");
+				resourcePriceModel.TradePrice = context.FloatValue("DescribePrice.PriceInfo.Price.DetailInfos["+ i +"].TradePrice");
+
+				List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel.DescribePrice_Rule1> resourcePriceModel_subRules = new List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel.DescribePrice_Rule1>();
+				for (int j = 0; j < context.Length("DescribePrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules.Length"); j++) {
+					DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel.DescribePrice_Rule1 rule1 = new DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel.DescribePrice_Rule1();
+					rule1.RuleId = context.LongValue("DescribePrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId");
+					rule1.Description = context.StringValue("DescribePrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].Description");
+
+					resourcePriceModel_subRules.Add(rule1);
+				}
+				resourcePriceModel.SubRules = resourcePriceModel_subRules;
+
+				price_detailInfos.Add(resourcePriceModel);
+			}
+			price.DetailInfos = price_detailInfos;
 			priceInfo.Price = price;
 
 			List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Rule> priceInfo_rules = new List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Rule>();

@@ -48,6 +48,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				resourceTypeCount.Image = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Image");
 				resourceTypeCount.Snapshot = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Snapshot");
 				resourceTypeCount.Securitygroup = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Securitygroup");
+				resourceTypeCount.LaunchTemplate = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.LaunchTemplate");
+				resourceTypeCount.Eni = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Eni");
+				resourceTypeCount.Ddh = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Ddh");
+				resourceTypeCount.KeyPair = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.KeyPair");
 				tag.ResourceTypeCount = resourceTypeCount;
 
 				describeTagsResponse_tags.Add(tag);

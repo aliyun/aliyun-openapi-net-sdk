@@ -121,7 +121,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creationTime;
 
+			private string resourceGroupId;
+
 			private List<DescribeNetworkInterfaces_PrivateIpSet> privateIpSets;
+
+			private List<DescribeNetworkInterfaces_Tag> tags;
 
 			private List<string> securityGroupIds;
 
@@ -271,6 +275,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			public List<DescribeNetworkInterfaces_PrivateIpSet> PrivateIpSets
 			{
 				get
@@ -280,6 +296,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					privateIpSets = value;
+				}
+			}
+
+			public List<DescribeNetworkInterfaces_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -381,6 +409,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						{
 							allocationId = value;
 						}
+					}
+				}
+			}
+
+			public class DescribeNetworkInterfaces_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
 					}
 				}
 			}

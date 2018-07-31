@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private bool? uniqueSuffix;
+
 		private string hpcClusterId;
 
 		private string securityEnhancementStrategy;
@@ -154,6 +156,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? UniqueSuffix
+		{
+			get
+			{
+				return uniqueSuffix;
+			}
+			set	
+			{
+				uniqueSuffix = value;
+				DictionaryUtil.Add(QueryParameters, "UniqueSuffix", value.ToString());
 			}
 		}
 

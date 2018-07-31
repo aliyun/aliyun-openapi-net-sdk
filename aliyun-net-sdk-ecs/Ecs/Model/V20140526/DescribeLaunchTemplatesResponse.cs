@@ -111,6 +111,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string createdBy;
 
+			private string resourceGroupId;
+
+			private List<DescribeLaunchTemplates_Tag> tags;
+
 			public string CreateTime
 			{
 				get
@@ -192,6 +196,62 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					createdBy = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<DescribeLaunchTemplates_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeLaunchTemplates_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
 				}
 			}
 		}

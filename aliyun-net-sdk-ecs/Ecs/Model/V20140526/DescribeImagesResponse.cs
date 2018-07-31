@@ -151,6 +151,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? isCopied;
 
+			private string resourceGroupId;
+
 			private List<DescribeImages_DiskDeviceMapping> diskDeviceMappings;
 
 			private List<DescribeImages_Tag> tags;
@@ -392,6 +394,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					isCopied = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

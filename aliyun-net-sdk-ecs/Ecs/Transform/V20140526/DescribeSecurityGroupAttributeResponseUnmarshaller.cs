@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_Permission permission = new DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_Permission();
 				permission.IpProtocol = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].IpProtocol");
 				permission.PortRange = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].PortRange");
+				permission.SourcePortRange = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourcePortRange");
 				permission.SourceGroupId = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceGroupId");
 				permission.SourceGroupName = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceGroupName");
 				permission.SourceCidrIp = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceCidrIp");

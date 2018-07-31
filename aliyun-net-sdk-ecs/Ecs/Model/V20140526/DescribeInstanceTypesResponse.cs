@@ -87,6 +87,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private long? instancePpsTx;
 
+			private string instanceFamilyLevel;
+
 			public string InstanceTypeId
 			{
 				get
@@ -276,6 +278,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					instancePpsTx = value;
+				}
+			}
+
+			public string InstanceFamilyLevel
+			{
+				get
+				{
+					return instanceFamilyLevel;
+				}
+				set	
+				{
+					instanceFamilyLevel = value;
 				}
 			}
 		}

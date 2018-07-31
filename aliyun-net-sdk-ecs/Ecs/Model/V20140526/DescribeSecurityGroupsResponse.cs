@@ -125,6 +125,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? ecsCount;
 
+			private string resourceGroupId;
+
 			private List<DescribeSecurityGroups_Tag> tags;
 
 			public string SecurityGroupId
@@ -208,6 +210,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					ecsCount = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

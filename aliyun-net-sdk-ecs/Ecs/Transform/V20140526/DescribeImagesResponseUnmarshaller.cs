@@ -59,6 +59,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				image.Platform = context.StringValue("DescribeImages.Images["+ i +"].Platform");
 				image.Usage = context.StringValue("DescribeImages.Images["+ i +"].Usage");
 				image.IsCopied = context.BooleanValue("DescribeImages.Images["+ i +"].IsCopied");
+				image.ResourceGroupId = context.StringValue("DescribeImages.Images["+ i +"].ResourceGroupId");
 
 				List<DescribeImagesResponse.DescribeImages_Image.DescribeImages_DiskDeviceMapping> image_diskDeviceMappings = new List<DescribeImagesResponse.DescribeImages_Image.DescribeImages_DiskDeviceMapping>();
 				for (int j = 0; j < context.Length("DescribeImages.Images["+ i +"].DiskDeviceMappings.Length"); j++) {

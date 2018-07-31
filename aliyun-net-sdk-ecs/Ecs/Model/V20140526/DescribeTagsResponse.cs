@@ -154,6 +154,14 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private int? securitygroup;
 
+				private int? launchTemplate;
+
+				private int? eni;
+
+				private int? ddh;
+
+				private int? keyPair;
+
 				public int? Instance
 				{
 					get
@@ -223,6 +231,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						securitygroup = value;
+					}
+				}
+
+				public int? LaunchTemplate
+				{
+					get
+					{
+						return launchTemplate;
+					}
+					set	
+					{
+						launchTemplate = value;
+					}
+				}
+
+				public int? Eni
+				{
+					get
+					{
+						return eni;
+					}
+					set	
+					{
+						eni = value;
+					}
+				}
+
+				public int? Ddh
+				{
+					get
+					{
+						return ddh;
+					}
+					set	
+					{
+						ddh = value;
+					}
+				}
+
+				public int? KeyPair
+				{
+					get
+					{
+						return keyPair;
+					}
+					set	
+					{
+						keyPair = value;
 					}
 				}
 			}

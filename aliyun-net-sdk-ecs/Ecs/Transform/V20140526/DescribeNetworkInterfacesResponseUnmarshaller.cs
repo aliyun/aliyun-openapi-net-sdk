@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				networkInterfaceSet.Description = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Description");
 				networkInterfaceSet.InstanceId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].InstanceId");
 				networkInterfaceSet.CreationTime = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].CreationTime");
+				networkInterfaceSet.ResourceGroupId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].ResourceGroupId");
 
 				List<string> networkInterfaceSet_securityGroupIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].SecurityGroupIds.Length"); j++) {
@@ -76,6 +77,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					networkInterfaceSet_privateIpSets.Add(privateIpSet);
 				}
 				networkInterfaceSet.PrivateIpSets = networkInterfaceSet_privateIpSets;
+
+				List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Tag> networkInterfaceSet_tags = new List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Tag>();
+				for (int j = 0; j < context.Length("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Tags.Length"); j++) {
+					DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Tag tag = new DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Tag();
+					tag.TagKey = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Tags["+ j +"].TagValue");
+
+					networkInterfaceSet_tags.Add(tag);
+				}
+				networkInterfaceSet.Tags = networkInterfaceSet_tags;
 
 				describeNetworkInterfacesResponse_networkInterfaceSets.Add(networkInterfaceSet);
 			}

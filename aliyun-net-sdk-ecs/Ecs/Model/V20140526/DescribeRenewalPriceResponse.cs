@@ -126,6 +126,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string currency;
 
+				private List<DescribeRenewalPrice_ResourcePriceModel> detailInfos;
+
 				public float? OriginalPrice
 				{
 					get
@@ -171,6 +173,124 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						currency = value;
+					}
+				}
+
+				public List<DescribeRenewalPrice_ResourcePriceModel> DetailInfos
+				{
+					get
+					{
+						return detailInfos;
+					}
+					set	
+					{
+						detailInfos = value;
+					}
+				}
+
+				public class DescribeRenewalPrice_ResourcePriceModel
+				{
+
+					private string resource;
+
+					private float? originalPrice;
+
+					private float? discountPrice;
+
+					private float? tradePrice;
+
+					private List<DescribeRenewalPrice_Rule1> subRules;
+
+					public string Resource
+					{
+						get
+						{
+							return resource;
+						}
+						set	
+						{
+							resource = value;
+						}
+					}
+
+					public float? OriginalPrice
+					{
+						get
+						{
+							return originalPrice;
+						}
+						set	
+						{
+							originalPrice = value;
+						}
+					}
+
+					public float? DiscountPrice
+					{
+						get
+						{
+							return discountPrice;
+						}
+						set	
+						{
+							discountPrice = value;
+						}
+					}
+
+					public float? TradePrice
+					{
+						get
+						{
+							return tradePrice;
+						}
+						set	
+						{
+							tradePrice = value;
+						}
+					}
+
+					public List<DescribeRenewalPrice_Rule1> SubRules
+					{
+						get
+						{
+							return subRules;
+						}
+						set	
+						{
+							subRules = value;
+						}
+					}
+
+					public class DescribeRenewalPrice_Rule1
+					{
+
+						private long? ruleId;
+
+						private string description;
+
+						public long? RuleId
+						{
+							get
+							{
+								return ruleId;
+							}
+							set	
+							{
+								ruleId = value;
+							}
+						}
+
+						public string Description
+						{
+							get
+							{
+								return description;
+							}
+							set	
+							{
+								description = value;
+							}
+						}
 					}
 				}
 			}

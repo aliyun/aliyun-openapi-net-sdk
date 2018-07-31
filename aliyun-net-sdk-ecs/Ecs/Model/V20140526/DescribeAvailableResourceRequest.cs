@@ -35,9 +35,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private int? memory;
+
 		private string ioOptimized;
 
 		private string dataDiskCategory;
+
+		private int? cores;
 
 		private string regionId;
 
@@ -78,6 +82,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? Memory
+		{
+			get
+			{
+				return memory;
+			}
+			set	
+			{
+				memory = value;
+				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
+			}
+		}
+
 		public string IoOptimized
 		{
 			get
@@ -101,6 +118,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dataDiskCategory = value;
 				DictionaryUtil.Add(QueryParameters, "DataDiskCategory", value);
+			}
+		}
+
+		public int? Cores
+		{
+			get
+			{
+				return cores;
+			}
+			set	
+			{
+				cores = value;
+				DictionaryUtil.Add(QueryParameters, "Cores", value.ToString());
 			}
 		}
 

@@ -31,6 +31,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			describeInstanceAutoRenewAttributeResponse.HttpResponse = context.HttpResponse;
 			describeInstanceAutoRenewAttributeResponse.RequestId = context.StringValue("DescribeInstanceAutoRenewAttribute.RequestId");
+			describeInstanceAutoRenewAttributeResponse.PageNumber = context.IntegerValue("DescribeInstanceAutoRenewAttribute.PageNumber");
+			describeInstanceAutoRenewAttributeResponse.PageSize = context.IntegerValue("DescribeInstanceAutoRenewAttribute.PageSize");
+			describeInstanceAutoRenewAttributeResponse.TotalCount = context.IntegerValue("DescribeInstanceAutoRenewAttribute.TotalCount");
 
 			List<DescribeInstanceAutoRenewAttributeResponse.DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute> describeInstanceAutoRenewAttributeResponse_instanceRenewAttributes = new List<DescribeInstanceAutoRenewAttributeResponse.DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute>();
 			for (int i = 0; i < context.Length("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes.Length"); i++) {

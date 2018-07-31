@@ -143,6 +143,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string portRange;
 
+			private string sourcePortRange;
+
 			private string sourceGroupId;
 
 			private string sourceGroupName;
@@ -192,6 +194,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					portRange = value;
+				}
+			}
+
+			public string SourcePortRange
+			{
+				get
+				{
+					return sourcePortRange;
+				}
+				set	
+				{
+					sourcePortRange = value;
 				}
 			}
 

@@ -101,6 +101,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string keyPairFingerPrint;
 
+			private string resourceGroupId;
+
+			private List<DescribeKeyPairs_Tag> tags;
+
 			public string KeyPairName
 			{
 				get
@@ -122,6 +126,62 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					keyPairFingerPrint = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<DescribeKeyPairs_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeKeyPairs_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
 				}
 			}
 		}
