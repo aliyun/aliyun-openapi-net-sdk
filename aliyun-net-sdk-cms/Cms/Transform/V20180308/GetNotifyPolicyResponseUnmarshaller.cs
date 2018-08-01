@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 			getNotifyPolicyResponse.Code = context.StringValue("GetNotifyPolicy.Code");
 			getNotifyPolicyResponse.Message = context.StringValue("GetNotifyPolicy.Message");
 			getNotifyPolicyResponse.Success = context.StringValue("GetNotifyPolicy.Success");
-			getNotifyPolicyResponse.TraceId = context.StringValue("GetNotifyPolicy.TraceId");
+			getNotifyPolicyResponse.RequestId = context.StringValue("GetNotifyPolicy.RequestId");
 
 			GetNotifyPolicyResponse.GetNotifyPolicy_Result result = new GetNotifyPolicyResponse.GetNotifyPolicy_Result();
 			result.AlertName = context.StringValue("GetNotifyPolicy.Result.AlertName");
@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 			result.Id = context.StringValue("GetNotifyPolicy.Result.Id");
 			result.StartTime = context.LongValue("GetNotifyPolicy.Result.StartTime");
 			result.EndTime = context.LongValue("GetNotifyPolicy.Result.EndTime");
+			result.GroupId = context.StringValue("GetNotifyPolicy.Result.GroupId");
 			getNotifyPolicyResponse.Result = result;
         
 			return getNotifyPolicyResponse;

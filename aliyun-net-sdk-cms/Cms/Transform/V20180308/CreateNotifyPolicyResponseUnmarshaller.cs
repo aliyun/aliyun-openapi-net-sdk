@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 			createNotifyPolicyResponse.Code = context.StringValue("CreateNotifyPolicy.Code");
 			createNotifyPolicyResponse.Message = context.StringValue("CreateNotifyPolicy.Message");
 			createNotifyPolicyResponse.Success = context.StringValue("CreateNotifyPolicy.Success");
-			createNotifyPolicyResponse.TraceId = context.StringValue("CreateNotifyPolicy.TraceId");
+			createNotifyPolicyResponse.RequestId = context.StringValue("CreateNotifyPolicy.RequestId");
 			createNotifyPolicyResponse.Result = context.IntegerValue("CreateNotifyPolicy.Result");
         
 			return createNotifyPolicyResponse;

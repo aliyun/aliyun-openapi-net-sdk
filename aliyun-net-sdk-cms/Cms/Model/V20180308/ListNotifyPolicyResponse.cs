@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string success;
 
-		private string traceId;
+		private string requestId;
 
 		private int? total;
 
@@ -72,15 +72,15 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public string TraceId
+		public string RequestId
 		{
 			get
 			{
-				return traceId;
+				return requestId;
 			}
 			set	
 			{
-				traceId = value;
+				requestId = value;
 			}
 		}
 
@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			private long? startTime;
 
 			private long? endTime;
+
+			private string groupId;
 
 			public string AlertName
 			{
@@ -192,6 +194,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					endTime = value;
+				}
+			}
+
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
 				}
 			}
 		}

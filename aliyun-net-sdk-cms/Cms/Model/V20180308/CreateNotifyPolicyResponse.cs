@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string success;
 
-		private string traceId;
+		private string requestId;
 
 		private int? result;
 
@@ -70,15 +70,15 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public string TraceId
+		public string RequestId
 		{
 			get
 			{
-				return traceId;
+				return requestId;
 			}
 			set	
 			{
-				traceId = value;
+				requestId = value;
 			}
 		}
 

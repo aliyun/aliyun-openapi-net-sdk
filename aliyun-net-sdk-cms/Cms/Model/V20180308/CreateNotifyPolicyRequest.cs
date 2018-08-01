@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string alertName;
 
+		private string groupId;
+
 		private long? endTime;
 
 		private long? startTime;
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				alertName = value;
 				DictionaryUtil.Add(QueryParameters, "AlertName", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 

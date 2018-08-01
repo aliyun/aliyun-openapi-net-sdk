@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 			listNotifyPolicyResponse.Code = context.StringValue("ListNotifyPolicy.Code");
 			listNotifyPolicyResponse.Message = context.StringValue("ListNotifyPolicy.Message");
 			listNotifyPolicyResponse.Success = context.StringValue("ListNotifyPolicy.Success");
-			listNotifyPolicyResponse.TraceId = context.StringValue("ListNotifyPolicy.TraceId");
+			listNotifyPolicyResponse.RequestId = context.StringValue("ListNotifyPolicy.RequestId");
 			listNotifyPolicyResponse.Total = context.IntegerValue("ListNotifyPolicy.Total");
 
 			List<ListNotifyPolicyResponse.ListNotifyPolicy_NotifyPolicy> listNotifyPolicyResponse_notifyPolicyList = new List<ListNotifyPolicyResponse.ListNotifyPolicy_NotifyPolicy>();
@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 				notifyPolicy.Id = context.StringValue("ListNotifyPolicy.NotifyPolicyList["+ i +"].Id");
 				notifyPolicy.StartTime = context.LongValue("ListNotifyPolicy.NotifyPolicyList["+ i +"].StartTime");
 				notifyPolicy.EndTime = context.LongValue("ListNotifyPolicy.NotifyPolicyList["+ i +"].EndTime");
+				notifyPolicy.GroupId = context.StringValue("ListNotifyPolicy.NotifyPolicyList["+ i +"].GroupId");
 
 				listNotifyPolicyResponse_notifyPolicyList.Add(notifyPolicy);
 			}

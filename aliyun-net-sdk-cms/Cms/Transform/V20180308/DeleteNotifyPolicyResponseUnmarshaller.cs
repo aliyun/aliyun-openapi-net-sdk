@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 			deleteNotifyPolicyResponse.Code = context.StringValue("DeleteNotifyPolicy.Code");
 			deleteNotifyPolicyResponse.Message = context.StringValue("DeleteNotifyPolicy.Message");
 			deleteNotifyPolicyResponse.Success = context.StringValue("DeleteNotifyPolicy.Success");
-			deleteNotifyPolicyResponse.TraceId = context.StringValue("DeleteNotifyPolicy.TraceId");
+			deleteNotifyPolicyResponse.RequestId = context.StringValue("DeleteNotifyPolicy.RequestId");
 			deleteNotifyPolicyResponse.Result = context.IntegerValue("DeleteNotifyPolicy.Result");
         
 			return deleteNotifyPolicyResponse;
