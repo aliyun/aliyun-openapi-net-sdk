@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4284270b-bbe5-4cb5-a4d8-af291d07a7bc}</ProjectGuid>
+    <ProjectGuid>{798e03c7-d6bd-4a29-87b2-8518008de6be}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -81,6 +81,7 @@
 	<Compile Include="CCC\Model\V20170705\ListJobStatusResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\CreateUserRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\GetJobTemplateDownloadParamsRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\DeleteJobGroupRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\LaunchAppraiseRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\ListScenariosResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\ListConfigResponse.cs" />
@@ -92,12 +93,14 @@
 	<Compile Include="CCC\Model\V20170705\ListUnreachableContactsRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\ListPrivilegesOfUserRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\ListScenariosRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\GetConversationDetailByContactIdResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\AssignUsersResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\GetJobListResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\DeleteSurveyRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\CreateScenarioRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\ListUnreachableContactsResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\ModifySurveyRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ModifyScenarioResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\CancelPredictiveJobsRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\AssignJobsRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\GetJobResponse.cs" />
@@ -142,6 +145,7 @@
 	<Compile Include="CCC\Model\V20170705\PublishSurveyResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\ListRolesResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\ModifyUserRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\ModifyScenarioRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\CreateSurveyRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\AddPhoneNumberRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\ListJobsByGroupRequest.cs" />
@@ -161,6 +165,7 @@
 	<Compile Include="CCC\Model\V20170705\ListUsersRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\CreateSurveyResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\StartBack2BackCallRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\DeleteJobGroupResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\PickLocalNumberRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\CancelJobsRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\DownloadUnreachableContactsResponse.cs" />
@@ -177,6 +182,7 @@
 	<Compile Include="CCC\Model\V20170705\ListRealTimeAgentResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\DialogueResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\ListJobGroupsRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\GetConversationDetailByContactIdRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\StartBack2BackCallResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\ModifyPhoneNumberResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\CreateBatchJobsResponse.cs" />
@@ -210,6 +216,7 @@
 	<Compile Include="CCC\Transform\V20170705\ListSkillGroupsResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\SubmitBatchJobsResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\GetJobDataUploadParamsResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\GetConversationDetailByContactIdResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ListJobStatusResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ListContactFlowsResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ListRecordingsByContactIdResponseUnmarshaller.cs" />
@@ -220,6 +227,7 @@
 	<Compile Include="CCC\Transform\V20170705\ModifySurveyResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ListBasicStatisticsReportSubItemsResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\DialogueResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\DeleteJobGroupResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\GetServiceExtensionsResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\RefreshTokenResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\TwoPartiesCallResponseUnmarshaller.cs" />
@@ -264,6 +272,7 @@
 	<Compile Include="CCC\Transform\V20170705\GetJobTemplateDownloadParamsResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ListUsersOfSkillGroupResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\EncryptResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\ModifyScenarioResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\GetAgentDataResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
