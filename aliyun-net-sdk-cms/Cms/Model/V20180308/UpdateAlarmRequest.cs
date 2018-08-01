@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string webhook;
 
+		private bool? dryRun;
+
 		private string contactGroups;
 
 		private int? endTime;
@@ -82,6 +84,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				webhook = value;
 				DictionaryUtil.Add(QueryParameters, "Webhook", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 

@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string webhook;
 
+		private bool? dryRun;
+
 		private string contactGroups;
 
 		private int? endTime;
@@ -45,9 +47,9 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private int? startTime;
 
-		private string _namespace;
-
 		private string name;
+
+		private string _namespace;
 
 		private int? evaluationCount;
 
@@ -86,6 +88,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				webhook = value;
 				DictionaryUtil.Add(QueryParameters, "Webhook", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -141,19 +156,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public string _Namespace
-		{
-			get
-			{
-				return _namespace;
-			}
-			set	
-			{
-				_namespace = value;
-				DictionaryUtil.Add(QueryParameters, "Namespace", value);
-			}
-		}
-
 		public string Name
 		{
 			get
@@ -164,6 +166,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+				DictionaryUtil.Add(QueryParameters, "Namespace", value);
 			}
 		}
 
