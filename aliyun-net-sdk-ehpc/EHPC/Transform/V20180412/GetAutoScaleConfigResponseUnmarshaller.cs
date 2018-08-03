@@ -44,6 +44,8 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 			getAutoScaleConfigResponse.GrowRatio = context.IntegerValue("GetAutoScaleConfig.GrowRatio");
 			getAutoScaleConfigResponse.MaxNodesInCluster = context.IntegerValue("GetAutoScaleConfig.MaxNodesInCluster");
 			getAutoScaleConfigResponse.ExcludeNodes = context.StringValue("GetAutoScaleConfig.ExcludeNodes");
+			getAutoScaleConfigResponse.SpotStrategy = context.StringValue("GetAutoScaleConfig.SpotStrategy");
+			getAutoScaleConfigResponse.SpotPriceLimit = context.StringValue("GetAutoScaleConfig.SpotPriceLimit");
         
 			return getAutoScaleConfigResponse;
         }

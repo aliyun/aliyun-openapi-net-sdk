@@ -109,6 +109,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private List<DescribeCluster_ApplicationInfo> applications;
 
+			private List<DescribeCluster_PostInstallScriptInfo> postInstallScripts;
+
 			private DescribeCluster_EcsInfo ecsInfo;
 
 			public string Id
@@ -435,6 +437,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				}
 			}
 
+			public List<DescribeCluster_PostInstallScriptInfo> PostInstallScripts
+			{
+				get
+				{
+					return postInstallScripts;
+				}
+				set	
+				{
+					postInstallScripts = value;
+				}
+			}
+
 			public DescribeCluster_EcsInfo EcsInfo
 			{
 				get
@@ -489,6 +503,38 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					set	
 					{
 						version = value;
+					}
+				}
+			}
+
+			public class DescribeCluster_PostInstallScriptInfo
+			{
+
+				private string url;
+
+				private string args;
+
+				public string Url
+				{
+					get
+					{
+						return url;
+					}
+					set	
+					{
+						url = value;
+					}
+				}
+
+				public string Args
+				{
+					get
+					{
+						return args;
+					}
+					set	
+					{
+						args = value;
 					}
 				}
 			}

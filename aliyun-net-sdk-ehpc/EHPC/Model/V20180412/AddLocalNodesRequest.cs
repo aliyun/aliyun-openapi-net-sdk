@@ -26,14 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class GetHybridClusterConfigRequest : RpcAcsRequest<GetHybridClusterConfigResponse>
+    public class AddLocalNodesRequest : RpcAcsRequest<AddLocalNodesResponse>
     {
-        public GetHybridClusterConfigRequest()
-            : base("EHPC", "2018-04-12", "GetHybridClusterConfig", "ehs", "openAPI")
+        public AddLocalNodesRequest()
+            : base("EHPC", "2018-04-12", "AddLocalNodes", "ehs", "openAPI")
         {
         }
 
-		private string node;
+		private string nodes;
 
 		private string action;
 
@@ -41,16 +41,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string accessKeyId;
 
-		public string Node
+		public string Nodes
 		{
 			get
 			{
-				return node;
+				return nodes;
 			}
 			set	
 			{
-				node = value;
-				DictionaryUtil.Add(QueryParameters, "Node", value);
+				nodes = value;
+				DictionaryUtil.Add(QueryParameters, "Nodes", value);
 			}
 		}
 
@@ -93,9 +93,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override GetHybridClusterConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddLocalNodesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetHybridClusterConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddLocalNodesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

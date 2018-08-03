@@ -33,12 +33,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private string volumeProtocol;
-
-		private string osTag;
-
-		private string remoteDirectory;
-
 		private string ehpcVersion;
 
 		private string securityGroupId;
@@ -51,13 +45,29 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string ecsOrderComputeInstanceType;
 
-		private string accessKeyId;
+		private string onPremiseVolumeRemotePath;
 
-		private string vSwitchId;
+		private string accessKeyId;
 
 		private string volumeType;
 
 		private string password;
+
+		private string onPremiseVolumeMountPoint;
+
+		private string action;
+
+		private string onPremiseVolumeProtocol;
+
+		private string volumeProtocol;
+
+		private string onPremiseVolumeLocalPath;
+
+		private string osTag;
+
+		private string remoteDirectory;
+
+		private string vSwitchId;
 
 		private string nodes;
 
@@ -73,50 +83,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string volumeMountpoint;
 
-		private string action;
-
 		private string zoneId;
 
 		private string location;
-
-		public string VolumeProtocol
-		{
-			get
-			{
-				return volumeProtocol;
-			}
-			set	
-			{
-				volumeProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "VolumeProtocol", value);
-			}
-		}
-
-		public string OsTag
-		{
-			get
-			{
-				return osTag;
-			}
-			set	
-			{
-				osTag = value;
-				DictionaryUtil.Add(QueryParameters, "OsTag", value);
-			}
-		}
-
-		public string RemoteDirectory
-		{
-			get
-			{
-				return remoteDirectory;
-			}
-			set	
-			{
-				remoteDirectory = value;
-				DictionaryUtil.Add(QueryParameters, "RemoteDirectory", value);
-			}
-		}
 
 		public string EhpcVersion
 		{
@@ -196,6 +165,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string OnPremiseVolumeRemotePath
+		{
+			get
+			{
+				return onPremiseVolumeRemotePath;
+			}
+			set	
+			{
+				onPremiseVolumeRemotePath = value;
+				DictionaryUtil.Add(QueryParameters, "OnPremiseVolumeRemotePath", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -206,19 +188,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
@@ -245,6 +214,110 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				password = value;
 				DictionaryUtil.Add(QueryParameters, "Password", value);
+			}
+		}
+
+		public string OnPremiseVolumeMountPoint
+		{
+			get
+			{
+				return onPremiseVolumeMountPoint;
+			}
+			set	
+			{
+				onPremiseVolumeMountPoint = value;
+				DictionaryUtil.Add(QueryParameters, "OnPremiseVolumeMountPoint", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string OnPremiseVolumeProtocol
+		{
+			get
+			{
+				return onPremiseVolumeProtocol;
+			}
+			set	
+			{
+				onPremiseVolumeProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "OnPremiseVolumeProtocol", value);
+			}
+		}
+
+		public string VolumeProtocol
+		{
+			get
+			{
+				return volumeProtocol;
+			}
+			set	
+			{
+				volumeProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "VolumeProtocol", value);
+			}
+		}
+
+		public string OnPremiseVolumeLocalPath
+		{
+			get
+			{
+				return onPremiseVolumeLocalPath;
+			}
+			set	
+			{
+				onPremiseVolumeLocalPath = value;
+				DictionaryUtil.Add(QueryParameters, "OnPremiseVolumeLocalPath", value);
+			}
+		}
+
+		public string OsTag
+		{
+			get
+			{
+				return osTag;
+			}
+			set	
+			{
+				osTag = value;
+				DictionaryUtil.Add(QueryParameters, "OsTag", value);
+			}
+		}
+
+		public string RemoteDirectory
+		{
+			get
+			{
+				return remoteDirectory;
+			}
+			set	
+			{
+				remoteDirectory = value;
+				DictionaryUtil.Add(QueryParameters, "RemoteDirectory", value);
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
@@ -340,19 +413,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				volumeMountpoint = value;
 				DictionaryUtil.Add(QueryParameters, "VolumeMountpoint", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

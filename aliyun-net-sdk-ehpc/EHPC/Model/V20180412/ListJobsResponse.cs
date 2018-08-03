@@ -103,6 +103,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string owner;
 
+			private string nodeList;
+
 			private int? priority;
 
 			private string state;
@@ -158,6 +160,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					owner = value;
+				}
+			}
+
+			public string NodeList
+			{
+				get
+				{
+					return nodeList;
+				}
+				set	
+				{
+					nodeList = value;
 				}
 			}
 

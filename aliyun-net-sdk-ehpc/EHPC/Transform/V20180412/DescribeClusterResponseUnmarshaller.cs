@@ -88,6 +88,16 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				clusterInfo_applications.Add(applicationInfo);
 			}
 			clusterInfo.Applications = clusterInfo_applications;
+
+			List<DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_PostInstallScriptInfo> clusterInfo_postInstallScripts = new List<DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_PostInstallScriptInfo>();
+			for (int i = 0; i < context.Length("DescribeCluster.ClusterInfo.PostInstallScripts.Length"); i++) {
+				DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_PostInstallScriptInfo postInstallScriptInfo = new DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_PostInstallScriptInfo();
+				postInstallScriptInfo.Url = context.StringValue("DescribeCluster.ClusterInfo.PostInstallScripts["+ i +"].Url");
+				postInstallScriptInfo.Args = context.StringValue("DescribeCluster.ClusterInfo.PostInstallScripts["+ i +"].Args");
+
+				clusterInfo_postInstallScripts.Add(postInstallScriptInfo);
+			}
+			clusterInfo.PostInstallScripts = clusterInfo_postInstallScripts;
 			describeClusterResponse.ClusterInfo = clusterInfo;
         
 			return describeClusterResponse;

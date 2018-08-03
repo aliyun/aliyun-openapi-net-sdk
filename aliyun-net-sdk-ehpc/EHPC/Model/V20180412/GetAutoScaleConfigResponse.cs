@@ -52,6 +52,10 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string excludeNodes;
 
+		private string spotStrategy;
+
+		private string spotPriceLimit;
+
 		public string RequestId
 		{
 			get
@@ -217,6 +221,30 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			set	
 			{
 				excludeNodes = value;
+			}
+		}
+
+		public string SpotStrategy
+		{
+			get
+			{
+				return spotStrategy;
+			}
+			set	
+			{
+				spotStrategy = value;
+			}
+		}
+
+		public string SpotPriceLimit
+		{
+			get
+			{
+				return spotPriceLimit;
+			}
+			set	
+			{
+				spotPriceLimit = value;
 			}
 		}
 	}

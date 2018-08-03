@@ -41,9 +41,13 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private bool? enableAutoGrow;
 
+		private string spotPriceLimit;
+
 		private bool? enableAutoShrink;
 
 		private string accessKeyId;
+
+		private string spotStrategy;
 
 		private int? maxNodesInCluster;
 
@@ -111,6 +115,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string SpotPriceLimit
+		{
+			get
+			{
+				return spotPriceLimit;
+			}
+			set	
+			{
+				spotPriceLimit = value;
+				DictionaryUtil.Add(QueryParameters, "SpotPriceLimit", value);
+			}
+		}
+
 		public bool? EnableAutoShrink
 		{
 			get
@@ -134,6 +151,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string SpotStrategy
+		{
+			get
+			{
+				return spotStrategy;
+			}
+			set	
+			{
+				spotStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
 			}
 		}
 

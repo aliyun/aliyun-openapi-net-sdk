@@ -26,31 +26,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class GetHybridClusterConfigRequest : RpcAcsRequest<GetHybridClusterConfigResponse>
+    public class DeleteImageRequest : RpcAcsRequest<DeleteImageResponse>
     {
-        public GetHybridClusterConfigRequest()
-            : base("EHPC", "2018-04-12", "GetHybridClusterConfig", "ehs", "openAPI")
+        public DeleteImageRequest()
+            : base("EHPC", "2018-04-12", "DeleteImage", "ehs", "openAPI")
         {
         }
 
-		private string node;
+		private string containerType;
 
 		private string action;
 
 		private string clusterId;
 
+		private string repository;
+
+		private string imageTag;
+
 		private string accessKeyId;
 
-		public string Node
+		public string ContainerType
 		{
 			get
 			{
-				return node;
+				return containerType;
 			}
 			set	
 			{
-				node = value;
-				DictionaryUtil.Add(QueryParameters, "Node", value);
+				containerType = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerType", value);
 			}
 		}
 
@@ -80,6 +84,32 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string Repository
+		{
+			get
+			{
+				return repository;
+			}
+			set	
+			{
+				repository = value;
+				DictionaryUtil.Add(QueryParameters, "Repository", value);
+			}
+		}
+
+		public string ImageTag
+		{
+			get
+			{
+				return imageTag;
+			}
+			set	
+			{
+				imageTag = value;
+				DictionaryUtil.Add(QueryParameters, "ImageTag", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -93,9 +123,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override GetHybridClusterConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteImageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetHybridClusterConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -97,6 +97,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string ecsChargeType;
 
+		private string inputFileUrl;
+
 		private string vpcId;
 
 		private bool? haEnable;
@@ -535,6 +537,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				ecsChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "EcsChargeType", value);
+			}
+		}
+
+		public string InputFileUrl
+		{
+			get
+			{
+				return inputFileUrl;
+			}
+			set	
+			{
+				inputFileUrl = value;
+				DictionaryUtil.Add(QueryParameters, "InputFileUrl", value);
 			}
 		}
 

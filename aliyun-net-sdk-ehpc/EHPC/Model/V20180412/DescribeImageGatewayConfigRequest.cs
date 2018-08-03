@@ -26,33 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class GetHybridClusterConfigRequest : RpcAcsRequest<GetHybridClusterConfigResponse>
+    public class DescribeImageGatewayConfigRequest : RpcAcsRequest<DescribeImageGatewayConfigResponse>
     {
-        public GetHybridClusterConfigRequest()
-            : base("EHPC", "2018-04-12", "GetHybridClusterConfig", "ehs", "openAPI")
+        public DescribeImageGatewayConfigRequest()
+            : base("EHPC", "2018-04-12", "DescribeImageGatewayConfig", "ehs", "openAPI")
         {
         }
-
-		private string node;
 
 		private string action;
 
 		private string clusterId;
 
 		private string accessKeyId;
-
-		public string Node
-		{
-			get
-			{
-				return node;
-			}
-			set	
-			{
-				node = value;
-				DictionaryUtil.Add(QueryParameters, "Node", value);
-			}
-		}
 
 		public string Action
 		{
@@ -93,9 +78,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override GetHybridClusterConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeImageGatewayConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetHybridClusterConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeImageGatewayConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
