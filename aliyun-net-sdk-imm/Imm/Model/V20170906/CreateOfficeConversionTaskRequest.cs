@@ -73,6 +73,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string srcUri;
 
+		private string tgtFilePages;
+
 		private string tgtUri;
 
 		public string ImageSpec
@@ -332,6 +334,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				srcUri = value;
 				DictionaryUtil.Add(QueryParameters, "SrcUri", value);
+			}
+		}
+
+		public string TgtFilePages
+		{
+			get
+			{
+				return tgtFilePages;
+			}
+			set	
+			{
+				tgtFilePages = value;
+				DictionaryUtil.Add(QueryParameters, "TgtFilePages", value);
 			}
 		}
 
