@@ -31,7 +31,8 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 
 			createSessionResponse.HttpResponse = context.HttpResponse;
 			createSessionResponse.RequestId = context.StringValue("CreateSession.RequestId");
-			createSessionResponse.Session = context.StringValue("CreateSession.Session");
+			createSessionResponse.SessionId = context.StringValue("CreateSession.SessionId");
+			createSessionResponse.Ticket = context.StringValue("CreateSession.Ticket");
         
 			return createSessionResponse;
         }

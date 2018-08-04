@@ -36,6 +36,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			mediaInfoJob.JobId = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.JobId");
 			mediaInfoJob.UserData = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.UserData");
 			mediaInfoJob.PipelineId = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.PipelineId");
+			mediaInfoJob.Async = context.BooleanValue("SubmitMediaInfoJob.MediaInfoJob.Async");
 			mediaInfoJob.State = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.State");
 			mediaInfoJob.Code = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.Code");
 			mediaInfoJob.Message = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.Message");
@@ -123,6 +124,14 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			for (int i = 0; i < context.Length("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.SubtitleStreamList.Length"); i++) {
 				SubmitMediaInfoJobResponse.SubmitMediaInfoJob_MediaInfoJob.SubmitMediaInfoJob_Properties.SubmitMediaInfoJob_Streams.SubmitMediaInfoJob_SubtitleStream subtitleStream = new SubmitMediaInfoJobResponse.SubmitMediaInfoJob_MediaInfoJob.SubmitMediaInfoJob_Properties.SubmitMediaInfoJob_Streams.SubmitMediaInfoJob_SubtitleStream();
 				subtitleStream.Index = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].Index");
+				subtitleStream.CodecName = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].CodecName");
+				subtitleStream.CodecTimeBase = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].CodecTimeBase");
+				subtitleStream.CodecLongName = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].CodecLongName");
+				subtitleStream.CodecTagString = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].CodecTagString");
+				subtitleStream.CodecTag = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].CodecTag");
+				subtitleStream.Timebase = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].Timebase");
+				subtitleStream.StartTime = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].StartTime");
+				subtitleStream.Duration = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].Duration");
 				subtitleStream.Lang = context.StringValue("SubmitMediaInfoJob.MediaInfoJob.Properties.Streams.SubtitleStreamList["+ i +"].Lang");
 
 				streams_subtitleStreamList.Add(subtitleStream);

@@ -246,6 +246,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private List<QueryVideoSummaryJobList_VideoSummary> videoSummaryList;
 
+				private QueryVideoSummaryJobList_OutputFile outputFile;
+
 				public List<QueryVideoSummaryJobList_VideoSummary> VideoSummaryList
 				{
 					get
@@ -255,6 +257,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						videoSummaryList = value;
+					}
+				}
+
+				public QueryVideoSummaryJobList_OutputFile OutputFile
+				{
+					get
+					{
+						return outputFile;
+					}
+					set	
+					{
+						outputFile = value;
 					}
 				}
 
@@ -286,6 +300,52 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							endTime = value;
+						}
+					}
+				}
+
+				public class QueryVideoSummaryJobList_OutputFile
+				{
+
+					private string bucket;
+
+					private string location;
+
+					private string _object;
+
+					public string Bucket
+					{
+						get
+						{
+							return bucket;
+						}
+						set	
+						{
+							bucket = value;
+						}
+					}
+
+					public string Location
+					{
+						get
+						{
+							return location;
+						}
+						set	
+						{
+							location = value;
+						}
+					}
+
+					public string _Object
+					{
+						get
+						{
+							return _object;
+						}
+						set	
+						{
+							_object = value;
 						}
 					}
 				}

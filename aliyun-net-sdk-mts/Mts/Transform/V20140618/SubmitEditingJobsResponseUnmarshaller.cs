@@ -310,6 +310,10 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				timelineConfigVideo.Height = context.StringValue("SubmitEditingJobs.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.Height");
 				timelineConfigVideo.BgColor = context.StringValue("SubmitEditingJobs.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.BgColor");
 				timelineConfigVideo.Fps = context.StringValue("SubmitEditingJobs.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.Fps");
+				timelineConfigVideo.RenderRatio = context.StringValue("SubmitEditingJobs.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.RenderRatio");
+				timelineConfigVideo.ReclosePrec = context.StringValue("SubmitEditingJobs.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.ReclosePrec");
+				timelineConfigVideo.IsGpuData = context.StringValue("SubmitEditingJobs.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.IsGpuData");
+				timelineConfigVideo.IsOneTrackData = context.StringValue("SubmitEditingJobs.JobResultList["+ i +"].Job.EditingConfig.Editing.Timeline.TimelineConfig.TimelineConfigVideo.IsOneTrackData");
 				timelineConfig.TimelineConfigVideo = timelineConfigVideo;
 
 				SubmitEditingJobsResponse.SubmitEditingJobs_JobResult.SubmitEditingJobs_Job.SubmitEditingJobs_EditingConfig.SubmitEditingJobs_Editing.SubmitEditingJobs_Timeline.SubmitEditingJobs_TimelineConfig.SubmitEditingJobs_TimelineConfigAudio timelineConfigAudio = new SubmitEditingJobsResponse.SubmitEditingJobs_JobResult.SubmitEditingJobs_Job.SubmitEditingJobs_EditingConfig.SubmitEditingJobs_Editing.SubmitEditingJobs_Timeline.SubmitEditingJobs_TimelineConfig.SubmitEditingJobs_TimelineConfigAudio();

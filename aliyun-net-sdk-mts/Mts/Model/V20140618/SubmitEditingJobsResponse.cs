@@ -3507,6 +3507,14 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 									private string fps;
 
+									private string renderRatio;
+
+									private string reclosePrec;
+
+									private string isGpuData;
+
+									private string isOneTrackData;
+
 									public string Width
 									{
 										get
@@ -3552,6 +3560,54 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 										set	
 										{
 											fps = value;
+										}
+									}
+
+									public string RenderRatio
+									{
+										get
+										{
+											return renderRatio;
+										}
+										set	
+										{
+											renderRatio = value;
+										}
+									}
+
+									public string ReclosePrec
+									{
+										get
+										{
+											return reclosePrec;
+										}
+										set	
+										{
+											reclosePrec = value;
+										}
+									}
+
+									public string IsGpuData
+									{
+										get
+										{
+											return isGpuData;
+										}
+										set	
+										{
+											isGpuData = value;
+										}
+									}
+
+									public string IsOneTrackData
+									{
+										get
+										{
+											return isOneTrackData;
+										}
+										set	
+										{
+											isOneTrackData = value;
 										}
 									}
 								}

@@ -41,9 +41,13 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string description;
 
+		private string overrideParams;
+
 		private long? ownerId;
 
 		private string title;
+
+		private bool? inputUnbind;
 
 		private string accessKeyId;
 
@@ -113,6 +117,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string OverrideParams
+		{
+			get
+			{
+				return overrideParams;
+			}
+			set	
+			{
+				overrideParams = value;
+				DictionaryUtil.Add(QueryParameters, "OverrideParams", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -136,6 +153,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				title = value;
 				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		public bool? InputUnbind
+		{
+			get
+			{
+				return inputUnbind;
+			}
+			set	
+			{
+				inputUnbind = value;
+				DictionaryUtil.Add(QueryParameters, "InputUnbind", value.ToString());
 			}
 		}
 

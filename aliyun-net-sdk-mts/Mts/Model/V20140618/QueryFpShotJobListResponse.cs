@@ -83,6 +83,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string creationTime;
 
+			private string finishTime;
+
 			private QueryFpShotJobList_InputFile inputFile;
 
 			private QueryFpShotJobList_FpShotResult fpShotResult;
@@ -168,6 +170,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string FinishTime
+			{
+				get
+				{
+					return finishTime;
+				}
+				set	
+				{
+					finishTime = value;
 				}
 			}
 

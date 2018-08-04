@@ -26,7 +26,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string requestId;
 
-		private string session;
+		private string sessionId;
+
+		private string ticket;
 
 		public string RequestId
 		{
@@ -40,15 +42,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Session
+		public string SessionId
 		{
 			get
 			{
-				return session;
+				return sessionId;
 			}
 			set	
 			{
-				session = value;
+				sessionId = value;
+			}
+		}
+
+		public string Ticket
+		{
+			get
+			{
+				return ticket;
+			}
+			set	
+			{
+				ticket = value;
 			}
 		}
 	}

@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			media.Height = context.StringValue("UpdateMedia.Media.Height");
 			media.Fps = context.StringValue("UpdateMedia.Media.Fps");
 			media.PublishState = context.StringValue("UpdateMedia.Media.PublishState");
+			media.CensorState = context.StringValue("UpdateMedia.Media.CensorState");
 			media.CreationTime = context.StringValue("UpdateMedia.Media.CreationTime");
 
 			List<string> media_tags = new List<string>();

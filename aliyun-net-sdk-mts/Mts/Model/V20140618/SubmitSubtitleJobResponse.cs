@@ -21,12 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
-	public class UpdateVideoSummaryPipelineResponse : AcsResponse
+	public class SubmitSubtitleJobResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private UpdateVideoSummaryPipeline_Pipeline pipeline;
+		private SubmitSubtitleJob_SubtitleJob subtitleJob;
 
 		public string RequestId
 		{
@@ -40,52 +40,76 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public UpdateVideoSummaryPipeline_Pipeline Pipeline
+		public SubmitSubtitleJob_SubtitleJob SubtitleJob
 		{
 			get
 			{
-				return pipeline;
+				return subtitleJob;
 			}
 			set	
 			{
-				pipeline = value;
+				subtitleJob = value;
 			}
 		}
 
-		public class UpdateVideoSummaryPipeline_Pipeline
+		public class SubmitSubtitleJob_SubtitleJob
 		{
 
-			private string id;
+			private string jobId;
 
-			private string name;
+			private string inputConfig;
+
+			private string inputConfig1;
+
+			private string userData;
 
 			private string state;
 
-			private int? priority;
-
-			private UpdateVideoSummaryPipeline_NotifyConfig notifyConfig;
-
-			public string Id
+			public string JobId
 			{
 				get
 				{
-					return id;
+					return jobId;
 				}
 				set	
 				{
-					id = value;
+					jobId = value;
 				}
 			}
 
-			public string Name
+			public string InputConfig
 			{
 				get
 				{
-					return name;
+					return inputConfig;
 				}
 				set	
 				{
-					name = value;
+					inputConfig = value;
+				}
+			}
+
+			public string InputConfig1
+			{
+				get
+				{
+					return inputConfig1;
+				}
+				set	
+				{
+					inputConfig1 = value;
+				}
+			}
+
+			public string UserData
+			{
+				get
+				{
+					return userData;
+				}
+				set	
+				{
+					userData = value;
 				}
 			}
 
@@ -98,62 +122,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					state = value;
-				}
-			}
-
-			public int? Priority
-			{
-				get
-				{
-					return priority;
-				}
-				set	
-				{
-					priority = value;
-				}
-			}
-
-			public UpdateVideoSummaryPipeline_NotifyConfig NotifyConfig
-			{
-				get
-				{
-					return notifyConfig;
-				}
-				set	
-				{
-					notifyConfig = value;
-				}
-			}
-
-			public class UpdateVideoSummaryPipeline_NotifyConfig
-			{
-
-				private string topic;
-
-				private string queueName;
-
-				public string Topic
-				{
-					get
-					{
-						return topic;
-					}
-					set	
-					{
-						topic = value;
-					}
-				}
-
-				public string QueueName
-				{
-					get
-					{
-						return queueName;
-					}
-					set	
-					{
-						queueName = value;
-					}
 				}
 			}
 		}

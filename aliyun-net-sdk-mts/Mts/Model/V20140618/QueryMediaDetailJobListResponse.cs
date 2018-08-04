@@ -409,6 +409,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private List<QueryMediaDetailJobList_FrameTagInfo> frameTagInfos;
 
+					private List<QueryMediaDetailJobList_Custom> customs;
+
 					private List<string> frameTags;
 
 					public string ImageUrl
@@ -492,6 +494,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							frameTagInfos = value;
+						}
+					}
+
+					public List<QueryMediaDetailJobList_Custom> Customs
+					{
+						get
+						{
+							return customs;
+						}
+						set	
+						{
+							customs = value;
 						}
 					}
 
@@ -687,6 +701,140 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								category = value;
+							}
+						}
+					}
+
+					public class QueryMediaDetailJobList_Custom
+					{
+
+						private string name;
+
+						private List<QueryMediaDetailJobList_Clip> clips;
+
+						public string Name
+						{
+							get
+							{
+								return name;
+							}
+							set	
+							{
+								name = value;
+							}
+						}
+
+						public List<QueryMediaDetailJobList_Clip> Clips
+						{
+							get
+							{
+								return clips;
+							}
+							set	
+							{
+								clips = value;
+							}
+						}
+
+						public class QueryMediaDetailJobList_Clip
+						{
+
+							private string minScore;
+
+							private string maxScore;
+
+							private string avgScore;
+
+							private string startTarget;
+
+							private string endTarget;
+
+							private string startTime;
+
+							private string endTime;
+
+							public string MinScore
+							{
+								get
+								{
+									return minScore;
+								}
+								set	
+								{
+									minScore = value;
+								}
+							}
+
+							public string MaxScore
+							{
+								get
+								{
+									return maxScore;
+								}
+								set	
+								{
+									maxScore = value;
+								}
+							}
+
+							public string AvgScore
+							{
+								get
+								{
+									return avgScore;
+								}
+								set	
+								{
+									avgScore = value;
+								}
+							}
+
+							public string StartTarget
+							{
+								get
+								{
+									return startTarget;
+								}
+								set	
+								{
+									startTarget = value;
+								}
+							}
+
+							public string EndTarget
+							{
+								get
+								{
+									return endTarget;
+								}
+								set	
+								{
+									endTarget = value;
+								}
+							}
+
+							public string StartTime
+							{
+								get
+								{
+									return startTime;
+								}
+								set	
+								{
+									startTime = value;
+								}
+							}
+
+							public string EndTime
+							{
+								get
+								{
+									return endTime;
+								}
+								set	
+								{
+									endTime = value;
+								}
 							}
 						}
 					}

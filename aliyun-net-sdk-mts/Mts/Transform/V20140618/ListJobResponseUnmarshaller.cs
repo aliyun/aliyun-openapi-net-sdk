@@ -200,11 +200,11 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					extSubtitle.FontName = context.StringValue("ListJob.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].FontName");
 					extSubtitle.CharEnc = context.StringValue("ListJob.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].CharEnc");
 
-					ListJobResponse.ListJob_Job.ListJob_Output.ListJob_SubtitleConfig.ListJob_ExtSubtitle.ListJob_Input3 input3 = new ListJobResponse.ListJob_Job.ListJob_Output.ListJob_SubtitleConfig.ListJob_ExtSubtitle.ListJob_Input3();
-					input3.Bucket = context.StringValue("ListJob.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Bucket");
-					input3.Location = context.StringValue("ListJob.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Location");
-					input3._Object = context.StringValue("ListJob.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Object");
-					extSubtitle.Input3 = input3;
+					ListJobResponse.ListJob_Job.ListJob_Output.ListJob_SubtitleConfig.ListJob_ExtSubtitle.ListJob_Input1 input1 = new ListJobResponse.ListJob_Job.ListJob_Output.ListJob_SubtitleConfig.ListJob_ExtSubtitle.ListJob_Input1();
+					input1.Bucket = context.StringValue("ListJob.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Bucket");
+					input1.Location = context.StringValue("ListJob.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Location");
+					input1._Object = context.StringValue("ListJob.JobList["+ i +"].Output.SubtitleConfig.ExtSubtitleList["+ j +"].Input.Object");
+					extSubtitle.Input1 = input1;
 
 					subtitleConfig_extSubtitleList.Add(extSubtitle);
 				}
@@ -234,6 +234,10 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				gif.IsCustomPalette = context.StringValue("ListJob.JobList["+ i +"].Output.MuxConfig.Gif.IsCustomPalette");
 				gif.DitherMode = context.StringValue("ListJob.JobList["+ i +"].Output.MuxConfig.Gif.DitherMode");
 				muxConfig.Gif = gif;
+
+				ListJobResponse.ListJob_Job.ListJob_Output.ListJob_MuxConfig.ListJob_Webp webp = new ListJobResponse.ListJob_Job.ListJob_Output.ListJob_MuxConfig.ListJob_Webp();
+				webp.Loop = context.StringValue("ListJob.JobList["+ i +"].Output.MuxConfig.Webp.Loop");
+				muxConfig.Webp = webp;
 				output.MuxConfig = muxConfig;
 
 				ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Audio audio = new ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Audio();
@@ -269,6 +273,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				video.Crop = context.StringValue("ListJob.JobList["+ i +"].Output.Video.Crop");
 				video.Pad = context.StringValue("ListJob.JobList["+ i +"].Output.Video.Pad");
 				video.MaxFps = context.StringValue("ListJob.JobList["+ i +"].Output.Video.MaxFps");
+				video.ResoPriority = context.StringValue("ListJob.JobList["+ i +"].Output.Video.ResoPriority");
 
 				ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Video.ListJob_BitrateBnd bitrateBnd = new ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Video.ListJob_BitrateBnd();
 				bitrateBnd.Max = context.StringValue("ListJob.JobList["+ i +"].Output.Video.BitrateBnd.Max");
@@ -322,32 +327,50 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				}
 				output.MergeList = output_mergeList;
 
-				List<ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Merge1> output_openingList = new List<ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Merge1>();
+				List<ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Opening> output_openingList = new List<ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Opening>();
 				for (int j = 0; j < context.Length("ListJob.JobList["+ i +"].Output.OpeningList.Length"); j++) {
-					ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Merge1 merge1 = new ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Merge1();
-					merge1.OpenUrl = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].OpenUrl");
-					merge1.Start = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].Start");
-					merge1.Width = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].Width");
-					merge1.Height = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].Height");
+					ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Opening opening = new ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Opening();
+					opening.OpenUrl = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].OpenUrl");
+					opening.Start = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].Start");
+					opening.Width = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].Width");
+					opening.Height = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].Height");
 
-					output_openingList.Add(merge1);
+					output_openingList.Add(opening);
 				}
 				output.OpeningList = output_openingList;
 
-				List<ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Merge2> output_tailSlateList = new List<ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Merge2>();
+				List<ListJobResponse.ListJob_Job.ListJob_Output.ListJob_TailSlate> output_tailSlateList = new List<ListJobResponse.ListJob_Job.ListJob_Output.ListJob_TailSlate>();
 				for (int j = 0; j < context.Length("ListJob.JobList["+ i +"].Output.TailSlateList.Length"); j++) {
-					ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Merge2 merge2 = new ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Merge2();
-					merge2.TailUrl = context.StringValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].TailUrl");
-					merge2.Start = context.StringValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].Start");
-					merge2.BlendDuration = context.StringValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].BlendDuration");
-					merge2.Width = context.StringValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].Width");
-					merge2.Height = context.StringValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].Height");
-					merge2.IsMergeAudio = context.BooleanValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].IsMergeAudio");
-					merge2.BgColor = context.StringValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].BgColor");
+					ListJobResponse.ListJob_Job.ListJob_Output.ListJob_TailSlate tailSlate = new ListJobResponse.ListJob_Job.ListJob_Output.ListJob_TailSlate();
+					tailSlate.TailUrl = context.StringValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].TailUrl");
+					tailSlate.Start = context.StringValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].Start");
+					tailSlate.BlendDuration = context.StringValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].BlendDuration");
+					tailSlate.Width = context.StringValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].Width");
+					tailSlate.Height = context.StringValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].Height");
+					tailSlate.IsMergeAudio = context.BooleanValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].IsMergeAudio");
+					tailSlate.BgColor = context.StringValue("ListJob.JobList["+ i +"].Output.TailSlateList["+ j +"].BgColor");
 
-					output_tailSlateList.Add(merge2);
+					output_tailSlateList.Add(tailSlate);
 				}
 				output.TailSlateList = output_tailSlateList;
+
+				List<ListJobResponse.ListJob_Job.ListJob_Output.ListJob_OutSubtitle> output_outSubtitleList = new List<ListJobResponse.ListJob_Job.ListJob_Output.ListJob_OutSubtitle>();
+				for (int j = 0; j < context.Length("ListJob.JobList["+ i +"].Output.OutSubtitleList.Length"); j++) {
+					ListJobResponse.ListJob_Job.ListJob_Output.ListJob_OutSubtitle outSubtitle = new ListJobResponse.ListJob_Job.ListJob_Output.ListJob_OutSubtitle();
+					outSubtitle.Map = context.StringValue("ListJob.JobList["+ i +"].Output.OutSubtitleList["+ j +"].Map");
+					outSubtitle.Success = context.BooleanValue("ListJob.JobList["+ i +"].Output.OutSubtitleList["+ j +"].Success");
+					outSubtitle.Message = context.StringValue("ListJob.JobList["+ i +"].Output.OutSubtitleList["+ j +"].Message");
+
+					ListJobResponse.ListJob_Job.ListJob_Output.ListJob_OutSubtitle.ListJob_OutSubtitleFile outSubtitleFile = new ListJobResponse.ListJob_Job.ListJob_Output.ListJob_OutSubtitle.ListJob_OutSubtitleFile();
+					outSubtitleFile.Bucket = context.StringValue("ListJob.JobList["+ i +"].Output.OutSubtitleList["+ j +"].OutSubtitleFile.Bucket");
+					outSubtitleFile.Location = context.StringValue("ListJob.JobList["+ i +"].Output.OutSubtitleList["+ j +"].OutSubtitleFile.Location");
+					outSubtitleFile._Object = context.StringValue("ListJob.JobList["+ i +"].Output.OutSubtitleList["+ j +"].OutSubtitleFile.Object");
+					outSubtitleFile.RoleArn = context.StringValue("ListJob.JobList["+ i +"].Output.OutSubtitleList["+ j +"].OutSubtitleFile.RoleArn");
+					outSubtitle.OutSubtitleFile = outSubtitleFile;
+
+					output_outSubtitleList.Add(outSubtitle);
+				}
+				output.OutSubtitleList = output_outSubtitleList;
 				job.Output = output;
 
 				ListJobResponse.ListJob_Job.ListJob_MNSMessageResult mNSMessageResult = new ListJobResponse.ListJob_Job.ListJob_MNSMessageResult();

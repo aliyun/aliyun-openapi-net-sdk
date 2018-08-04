@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string action;
 
+		private string personLib;
+
 		private long? ownerId;
 
 		private string category;
@@ -113,6 +115,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string PersonLib
+		{
+			get
+			{
+				return personLib;
+			}
+			set	
+			{
+				personLib = value;
+				DictionaryUtil.Add(QueryParameters, "PersonLib", value);
 			}
 		}
 

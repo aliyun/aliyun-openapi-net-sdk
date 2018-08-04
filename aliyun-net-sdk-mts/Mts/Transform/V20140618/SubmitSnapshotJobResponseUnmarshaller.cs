@@ -81,6 +81,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			tileOut.Padding = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.TileOut.Padding");
 			tileOut.Color = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.TileOut.Color");
 			tileOut.IsKeepCellPic = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.TileOut.IsKeepCellPic");
+			tileOut.CellSelStep = context.StringValue("SubmitSnapshotJob.SnapshotJob.SnapshotConfig.TileOut.CellSelStep");
 			snapshotConfig.TileOut = tileOut;
 			snapshotJob.SnapshotConfig = snapshotConfig;
 

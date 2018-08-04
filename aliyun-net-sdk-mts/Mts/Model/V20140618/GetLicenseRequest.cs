@@ -43,7 +43,13 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string action;
 
+		private string header;
+
 		private string ownerId;
+
+		private string mediaId;
+
+		private string type;
 
 		private string licenseUrl;
 
@@ -114,6 +120,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string Header
+		{
+			get
+			{
+				return header;
+			}
+			set	
+			{
+				header = value;
+				DictionaryUtil.Add(QueryParameters, "Header", value);
+			}
+		}
+
 		public string OwnerId
 		{
 			get
@@ -124,6 +143,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string MediaId
+		{
+			get
+			{
+				return mediaId;
+			}
+			set	
+			{
+				mediaId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaId", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 

@@ -565,6 +565,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private string isKeepCellPic;
 
+					private string cellSelStep;
+
 					public string Lines
 					{
 						get
@@ -658,6 +660,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							isKeepCellPic = value;
+						}
+					}
+
+					public string CellSelStep
+					{
+						get
+						{
+							return cellSelStep;
+						}
+						set	
+						{
+							cellSelStep = value;
 						}
 					}
 				}

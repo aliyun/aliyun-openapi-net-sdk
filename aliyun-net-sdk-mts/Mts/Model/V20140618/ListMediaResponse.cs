@@ -95,6 +95,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string publishState;
 
+			private string censorState;
+
 			private string creationTime;
 
 			private List<string> tags;
@@ -256,6 +258,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					publishState = value;
+				}
+			}
+
+			public string CensorState
+			{
+				get
+				{
+					return censorState;
+				}
+				set	
+				{
+					censorState = value;
 				}
 			}
 

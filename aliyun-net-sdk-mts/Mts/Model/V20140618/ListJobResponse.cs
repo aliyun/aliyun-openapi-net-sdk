@@ -294,9 +294,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private List<ListJob_Merge> mergeList;
 
-				private List<ListJob_Merge1> openingList;
+				private List<ListJob_Opening> openingList;
 
-				private List<ListJob_Merge2> tailSlateList;
+				private List<ListJob_TailSlate> tailSlateList;
+
+				private List<ListJob_OutSubtitle> outSubtitleList;
 
 				private ListJob_OutputFile outputFile;
 
@@ -454,7 +456,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public List<ListJob_Merge1> OpeningList
+				public List<ListJob_Opening> OpeningList
 				{
 					get
 					{
@@ -466,7 +468,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public List<ListJob_Merge2> TailSlateList
+				public List<ListJob_TailSlate> TailSlateList
 				{
 					get
 					{
@@ -475,6 +477,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						tailSlateList = value;
+					}
+				}
+
+				public List<ListJob_OutSubtitle> OutSubtitleList
+				{
+					get
+					{
+						return outSubtitleList;
+					}
+					set	
+					{
+						outSubtitleList = value;
 					}
 				}
 
@@ -844,7 +858,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class ListJob_Merge1
+				public class ListJob_Opening
 				{
 
 					private string openUrl;
@@ -904,7 +918,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class ListJob_Merge2
+				public class ListJob_TailSlate
 				{
 
 					private string tailUrl;
@@ -1002,6 +1016,126 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							bgColor = value;
+						}
+					}
+				}
+
+				public class ListJob_OutSubtitle
+				{
+
+					private string map;
+
+					private bool? success;
+
+					private string message;
+
+					private ListJob_OutSubtitleFile outSubtitleFile;
+
+					public string Map
+					{
+						get
+						{
+							return map;
+						}
+						set	
+						{
+							map = value;
+						}
+					}
+
+					public bool? Success
+					{
+						get
+						{
+							return success;
+						}
+						set	
+						{
+							success = value;
+						}
+					}
+
+					public string Message
+					{
+						get
+						{
+							return message;
+						}
+						set	
+						{
+							message = value;
+						}
+					}
+
+					public ListJob_OutSubtitleFile OutSubtitleFile
+					{
+						get
+						{
+							return outSubtitleFile;
+						}
+						set	
+						{
+							outSubtitleFile = value;
+						}
+					}
+
+					public class ListJob_OutSubtitleFile
+					{
+
+						private string bucket;
+
+						private string location;
+
+						private string _object;
+
+						private string roleArn;
+
+						public string Bucket
+						{
+							get
+							{
+								return bucket;
+							}
+							set	
+							{
+								bucket = value;
+							}
+						}
+
+						public string Location
+						{
+							get
+							{
+								return location;
+							}
+							set	
+							{
+								location = value;
+							}
+						}
+
+						public string _Object
+						{
+							get
+							{
+								return _object;
+							}
+							set	
+							{
+								_object = value;
+							}
+						}
+
+						public string RoleArn
+						{
+							get
+							{
+								return roleArn;
+							}
+							set	
+							{
+								roleArn = value;
+							}
 						}
 					}
 				}
@@ -2164,7 +2298,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 						private string charEnc;
 
-						private ListJob_Input3 input3;
+						private ListJob_Input1 input1;
 
 						public string FontName
 						{
@@ -2190,19 +2324,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public ListJob_Input3 Input3
+						public ListJob_Input1 Input1
 						{
 							get
 							{
-								return input3;
+								return input1;
 							}
 							set	
 							{
-								input3 = value;
+								input1 = value;
 							}
 						}
 
-						public class ListJob_Input3
+						public class ListJob_Input1
 						{
 
 							private string bucket;
@@ -2373,6 +2507,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private ListJob_Gif gif;
 
+					private ListJob_Webp webp;
+
 					public ListJob_Segment Segment
 					{
 						get
@@ -2394,6 +2530,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							gif = value;
+						}
+					}
+
+					public ListJob_Webp Webp
+					{
+						get
+						{
+							return webp;
+						}
+						set	
+						{
+							webp = value;
 						}
 					}
 
@@ -2471,6 +2619,24 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								ditherMode = value;
+							}
+						}
+					}
+
+					public class ListJob_Webp
+					{
+
+						private string loop;
+
+						public string Loop
+						{
+							get
+							{
+								return loop;
+							}
+							set	
+							{
+								loop = value;
 							}
 						}
 					}
@@ -2648,6 +2814,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					private string pad;
 
 					private string maxFps;
+
+					private string resoPriority;
 
 					private ListJob_BitrateBnd bitrateBnd;
 
@@ -2864,6 +3032,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							maxFps = value;
+						}
+					}
+
+					public string ResoPriority
+					{
+						get
+						{
+							return resoPriority;
+						}
+						set	
+						{
+							resoPriority = value;
 						}
 					}
 

@@ -54,6 +54,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				media.Height = context.StringValue("QueryMediaList.MediaList["+ i +"].Height");
 				media.Fps = context.StringValue("QueryMediaList.MediaList["+ i +"].Fps");
 				media.PublishState = context.StringValue("QueryMediaList.MediaList["+ i +"].PublishState");
+				media.CensorState = context.StringValue("QueryMediaList.MediaList["+ i +"].CensorState");
 				media.CreationTime = context.StringValue("QueryMediaList.MediaList["+ i +"].CreationTime");
 
 				List<string> media_tags = new List<string>();
@@ -202,6 +203,23 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					media_snapshotList.Add(snapshot);
 				}
 				media.SnapshotList = media_snapshotList;
+
+				List<QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Summary> media_summaryList = new List<QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Summary>();
+				for (int j = 0; j < context.Length("QueryMediaList.MediaList["+ i +"].SummaryList.Length"); j++) {
+					QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Summary summary = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Summary();
+					summary.Type = context.StringValue("QueryMediaList.MediaList["+ i +"].SummaryList["+ j +"].Type");
+					summary.MediaWorkflowId = context.StringValue("QueryMediaList.MediaList["+ i +"].SummaryList["+ j +"].MediaWorkflowId");
+					summary.MediaWorkflowName = context.StringValue("QueryMediaList.MediaList["+ i +"].SummaryList["+ j +"].MediaWorkflowName");
+					summary.ActivityName = context.StringValue("QueryMediaList.MediaList["+ i +"].SummaryList["+ j +"].ActivityName");
+
+					QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Summary.QueryMediaList_File3 file3 = new QueryMediaListResponse.QueryMediaList_Media.QueryMediaList_Summary.QueryMediaList_File3();
+					file3.URL = context.StringValue("QueryMediaList.MediaList["+ i +"].SummaryList["+ j +"].File.URL");
+					file3.State = context.StringValue("QueryMediaList.MediaList["+ i +"].SummaryList["+ j +"].File.State");
+					summary.File3 = file3;
+
+					media_summaryList.Add(summary);
+				}
+				media.SummaryList = media_summaryList;
 
 				queryMediaListResponse_mediaList.Add(media);
 			}

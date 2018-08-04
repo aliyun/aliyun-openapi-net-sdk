@@ -57,6 +57,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 
 				QueryVideoSummaryJobListResponse.QueryVideoSummaryJobList_Job.QueryVideoSummaryJobList_VideoSummaryResult videoSummaryResult = new QueryVideoSummaryJobListResponse.QueryVideoSummaryJobList_Job.QueryVideoSummaryJobList_VideoSummaryResult();
 
+				QueryVideoSummaryJobListResponse.QueryVideoSummaryJobList_Job.QueryVideoSummaryJobList_VideoSummaryResult.QueryVideoSummaryJobList_OutputFile outputFile = new QueryVideoSummaryJobListResponse.QueryVideoSummaryJobList_Job.QueryVideoSummaryJobList_VideoSummaryResult.QueryVideoSummaryJobList_OutputFile();
+				outputFile.Bucket = context.StringValue("QueryVideoSummaryJobList.JobList["+ i +"].VideoSummaryResult.OutputFile.Bucket");
+				outputFile.Location = context.StringValue("QueryVideoSummaryJobList.JobList["+ i +"].VideoSummaryResult.OutputFile.Location");
+				outputFile._Object = context.StringValue("QueryVideoSummaryJobList.JobList["+ i +"].VideoSummaryResult.OutputFile.Object");
+				videoSummaryResult.OutputFile = outputFile;
+
 				List<QueryVideoSummaryJobListResponse.QueryVideoSummaryJobList_Job.QueryVideoSummaryJobList_VideoSummaryResult.QueryVideoSummaryJobList_VideoSummary> videoSummaryResult_videoSummaryList = new List<QueryVideoSummaryJobListResponse.QueryVideoSummaryJobList_Job.QueryVideoSummaryJobList_VideoSummaryResult.QueryVideoSummaryJobList_VideoSummary>();
 				for (int j = 0; j < context.Length("QueryVideoSummaryJobList.JobList["+ i +"].VideoSummaryResult.VideoSummaryList.Length"); j++) {
 					QueryVideoSummaryJobListResponse.QueryVideoSummaryJobList_Job.QueryVideoSummaryJobList_VideoSummaryResult.QueryVideoSummaryJobList_VideoSummary videoSummary = new QueryVideoSummaryJobListResponse.QueryVideoSummaryJobList_Job.QueryVideoSummaryJobList_VideoSummaryResult.QueryVideoSummaryJobList_VideoSummary();

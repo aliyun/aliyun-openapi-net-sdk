@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string hlsUriToken;
 
+		private string terminal;
+
 		private string ownerId;
 
 		private string mediaId;
@@ -134,6 +136,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				hlsUriToken = value;
 				DictionaryUtil.Add(QueryParameters, "HlsUriToken", value);
+			}
+		}
+
+		public string Terminal
+		{
+			get
+			{
+				return terminal;
+			}
+			set	
+			{
+				terminal = value;
+				DictionaryUtil.Add(QueryParameters, "Terminal", value);
 			}
 		}
 

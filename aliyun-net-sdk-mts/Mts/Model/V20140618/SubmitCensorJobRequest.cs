@@ -33,19 +33,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         {
         }
 
-		private string input;
-
-		private string userData;
-
 		private long? resourceOwnerId;
+
+		private string coverImages;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string action;
+		private string description;
 
 		private long? ownerId;
+
+		private string title;
 
 		private string censorConfig;
 
@@ -53,31 +53,13 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string pipelineId;
 
-		public string Input
-		{
-			get
-			{
-				return input;
-			}
-			set	
-			{
-				input = value;
-				DictionaryUtil.Add(QueryParameters, "Input", value);
-			}
-		}
+		private string input;
 
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
+		private string userData;
+
+		private string action;
+
+		private string barrages;
 
 		public long? ResourceOwnerId
 		{
@@ -89,6 +71,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string CoverImages
+		{
+			get
+			{
+				return coverImages;
+			}
+			set	
+			{
+				coverImages = value;
+				DictionaryUtil.Add(QueryParameters, "CoverImages", value);
 			}
 		}
 
@@ -118,16 +113,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Action
+		public string Description
 		{
 			get
 			{
-				return action;
+				return description;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -141,6 +136,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Title
+		{
+			get
+			{
+				return title;
+			}
+			set	
+			{
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
 			}
 		}
 
@@ -180,6 +188,58 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Barrages
+		{
+			get
+			{
+				return barrages;
+			}
+			set	
+			{
+				barrages = value;
+				DictionaryUtil.Add(QueryParameters, "Barrages", value);
 			}
 		}
 

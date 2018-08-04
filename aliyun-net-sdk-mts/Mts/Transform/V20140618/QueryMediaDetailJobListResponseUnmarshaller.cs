@@ -132,6 +132,30 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					}
 					mediaDetailRecgResult.FrameTagInfos = mediaDetailRecgResult_frameTagInfos;
 
+					List<QueryMediaDetailJobListResponse.QueryMediaDetailJobList_Job.QueryMediaDetailJobList_MediaDetailResult.QueryMediaDetailJobList_MediaDetailRecgResult.QueryMediaDetailJobList_Custom> mediaDetailRecgResult_customs = new List<QueryMediaDetailJobListResponse.QueryMediaDetailJobList_Job.QueryMediaDetailJobList_MediaDetailResult.QueryMediaDetailJobList_MediaDetailRecgResult.QueryMediaDetailJobList_Custom>();
+					for (int k = 0; k < context.Length("QueryMediaDetailJobList.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs.Length"); k++) {
+						QueryMediaDetailJobListResponse.QueryMediaDetailJobList_Job.QueryMediaDetailJobList_MediaDetailResult.QueryMediaDetailJobList_MediaDetailRecgResult.QueryMediaDetailJobList_Custom custom = new QueryMediaDetailJobListResponse.QueryMediaDetailJobList_Job.QueryMediaDetailJobList_MediaDetailResult.QueryMediaDetailJobList_MediaDetailRecgResult.QueryMediaDetailJobList_Custom();
+						custom.Name = context.StringValue("QueryMediaDetailJobList.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Name");
+
+						List<QueryMediaDetailJobListResponse.QueryMediaDetailJobList_Job.QueryMediaDetailJobList_MediaDetailResult.QueryMediaDetailJobList_MediaDetailRecgResult.QueryMediaDetailJobList_Custom.QueryMediaDetailJobList_Clip> custom_clips = new List<QueryMediaDetailJobListResponse.QueryMediaDetailJobList_Job.QueryMediaDetailJobList_MediaDetailResult.QueryMediaDetailJobList_MediaDetailRecgResult.QueryMediaDetailJobList_Custom.QueryMediaDetailJobList_Clip>();
+						for (int l = 0; l < context.Length("QueryMediaDetailJobList.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips.Length"); l++) {
+							QueryMediaDetailJobListResponse.QueryMediaDetailJobList_Job.QueryMediaDetailJobList_MediaDetailResult.QueryMediaDetailJobList_MediaDetailRecgResult.QueryMediaDetailJobList_Custom.QueryMediaDetailJobList_Clip clip = new QueryMediaDetailJobListResponse.QueryMediaDetailJobList_Job.QueryMediaDetailJobList_MediaDetailResult.QueryMediaDetailJobList_MediaDetailRecgResult.QueryMediaDetailJobList_Custom.QueryMediaDetailJobList_Clip();
+							clip.MinScore = context.StringValue("QueryMediaDetailJobList.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].MinScore");
+							clip.MaxScore = context.StringValue("QueryMediaDetailJobList.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].MaxScore");
+							clip.AvgScore = context.StringValue("QueryMediaDetailJobList.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].AvgScore");
+							clip.StartTarget = context.StringValue("QueryMediaDetailJobList.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].StartTarget");
+							clip.EndTarget = context.StringValue("QueryMediaDetailJobList.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].EndTarget");
+							clip.StartTime = context.StringValue("QueryMediaDetailJobList.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].StartTime");
+							clip.EndTime = context.StringValue("QueryMediaDetailJobList.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].EndTime");
+
+							custom_clips.Add(clip);
+						}
+						custom.Clips = custom_clips;
+
+						mediaDetailRecgResult_customs.Add(custom);
+					}
+					mediaDetailRecgResult.Customs = mediaDetailRecgResult_customs;
+
 					mediaDetailResult_mediaDetailRecgResults.Add(mediaDetailRecgResult);
 				}
 				mediaDetailResult.MediaDetailRecgResults = mediaDetailResult_mediaDetailRecgResults;

@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private long? resourceOwnerId;
 
+		private bool? includeSummaryList;
+
 		private string resourceOwnerAccount;
 
 		private bool? includeSnapshotList;
@@ -63,6 +65,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? IncludeSummaryList
+		{
+			get
+			{
+				return includeSummaryList;
+			}
+			set	
+			{
+				includeSummaryList = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeSummaryList", value.ToString());
 			}
 		}
 

@@ -89,6 +89,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				tileOut.Padding = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.Padding");
 				tileOut.Color = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.Color");
 				tileOut.IsKeepCellPic = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.IsKeepCellPic");
+				tileOut.CellSelStep = context.StringValue("QuerySnapshotJobList.SnapshotJobList["+ i +"].SnapshotConfig.TileOut.CellSelStep");
 				snapshotConfig.TileOut = tileOut;
 				snapshotJob.SnapshotConfig = snapshotConfig;
 

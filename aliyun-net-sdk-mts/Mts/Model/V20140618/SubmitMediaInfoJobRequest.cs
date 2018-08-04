@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string userData;
 
+		private bool? async;
+
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
@@ -74,6 +76,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				userData = value;
 				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public bool? Async
+		{
+			get
+			{
+				return async;
+			}
+			set	
+			{
+				async = value;
+				DictionaryUtil.Add(QueryParameters, "Async", value.ToString());
 			}
 		}
 

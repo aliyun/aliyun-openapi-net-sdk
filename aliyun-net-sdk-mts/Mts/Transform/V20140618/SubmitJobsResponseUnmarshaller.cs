@@ -249,6 +249,10 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				gif.IsCustomPalette = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.MuxConfig.Gif.IsCustomPalette");
 				gif.DitherMode = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.MuxConfig.Gif.DitherMode");
 				muxConfig.Gif = gif;
+
+				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_MuxConfig.SubmitJobs_Webp webp = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_MuxConfig.SubmitJobs_Webp();
+				webp.Loop = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.MuxConfig.Webp.Loop");
+				muxConfig.Webp = webp;
 				output.MuxConfig = muxConfig;
 
 				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Audio audio = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Audio();
@@ -284,6 +288,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				video.Crop = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Video.Crop");
 				video.Pad = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Video.Pad");
 				video.MaxFps = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Video.MaxFps");
+				video.ResoPriority = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Video.ResoPriority");
 
 				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Video.SubmitJobs_BitrateBnd bitrateBnd = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Video.SubmitJobs_BitrateBnd();
 				bitrateBnd.Max = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.Video.BitrateBnd.Max");
@@ -363,6 +368,24 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					output_tailSlateList.Add(tailSlate);
 				}
 				output.TailSlateList = output_tailSlateList;
+
+				List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_OutSubtitle> output_outSubtitleList = new List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_OutSubtitle>();
+				for (int j = 0; j < context.Length("SubmitJobs.JobResultList["+ i +"].Job.Output.OutSubtitleList.Length"); j++) {
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_OutSubtitle outSubtitle = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_OutSubtitle();
+					outSubtitle.Map = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OutSubtitleList["+ j +"].Map");
+					outSubtitle.Success = context.BooleanValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OutSubtitleList["+ j +"].Success");
+					outSubtitle.Message = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OutSubtitleList["+ j +"].Message");
+
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_OutSubtitle.SubmitJobs_OutSubtitleFile outSubtitleFile = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_OutSubtitle.SubmitJobs_OutSubtitleFile();
+					outSubtitleFile.Bucket = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OutSubtitleList["+ j +"].OutSubtitleFile.Bucket");
+					outSubtitleFile.Location = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OutSubtitleList["+ j +"].OutSubtitleFile.Location");
+					outSubtitleFile._Object = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OutSubtitleList["+ j +"].OutSubtitleFile.Object");
+					outSubtitleFile.RoleArn = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OutSubtitleList["+ j +"].OutSubtitleFile.RoleArn");
+					outSubtitle.OutSubtitleFile = outSubtitleFile;
+
+					output_outSubtitleList.Add(outSubtitle);
+				}
+				output.OutSubtitleList = output_outSubtitleList;
 				job.Output = output;
 
 				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_MNSMessageResult mNSMessageResult = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_MNSMessageResult();

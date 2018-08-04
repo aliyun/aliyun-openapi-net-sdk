@@ -248,6 +248,10 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				gif.IsCustomPalette = context.StringValue("QueryJobList.JobList["+ i +"].Output.MuxConfig.Gif.IsCustomPalette");
 				gif.DitherMode = context.StringValue("QueryJobList.JobList["+ i +"].Output.MuxConfig.Gif.DitherMode");
 				muxConfig.Gif = gif;
+
+				QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_MuxConfig.QueryJobList_Webp webp = new QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_MuxConfig.QueryJobList_Webp();
+				webp.Loop = context.StringValue("QueryJobList.JobList["+ i +"].Output.MuxConfig.Webp.Loop");
+				muxConfig.Webp = webp;
 				output.MuxConfig = muxConfig;
 
 				QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_Audio audio = new QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_Audio();
@@ -283,6 +287,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				video.Crop = context.StringValue("QueryJobList.JobList["+ i +"].Output.Video.Crop");
 				video.Pad = context.StringValue("QueryJobList.JobList["+ i +"].Output.Video.Pad");
 				video.MaxFps = context.StringValue("QueryJobList.JobList["+ i +"].Output.Video.MaxFps");
+				video.ResoPriority = context.StringValue("QueryJobList.JobList["+ i +"].Output.Video.ResoPriority");
 
 				QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_Video.QueryJobList_BitrateBnd bitrateBnd = new QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_Video.QueryJobList_BitrateBnd();
 				bitrateBnd.Max = context.StringValue("QueryJobList.JobList["+ i +"].Output.Video.BitrateBnd.Max");
@@ -362,6 +367,24 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					output_tailSlateList.Add(tailSlate);
 				}
 				output.TailSlateList = output_tailSlateList;
+
+				List<QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_OutSubtitle> output_outSubtitleList = new List<QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_OutSubtitle>();
+				for (int j = 0; j < context.Length("QueryJobList.JobList["+ i +"].Output.OutSubtitleList.Length"); j++) {
+					QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_OutSubtitle outSubtitle = new QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_OutSubtitle();
+					outSubtitle.Map = context.StringValue("QueryJobList.JobList["+ i +"].Output.OutSubtitleList["+ j +"].Map");
+					outSubtitle.Success = context.BooleanValue("QueryJobList.JobList["+ i +"].Output.OutSubtitleList["+ j +"].Success");
+					outSubtitle.Message = context.StringValue("QueryJobList.JobList["+ i +"].Output.OutSubtitleList["+ j +"].Message");
+
+					QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_OutSubtitle.QueryJobList_OutSubtitleFile outSubtitleFile = new QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_OutSubtitle.QueryJobList_OutSubtitleFile();
+					outSubtitleFile.Bucket = context.StringValue("QueryJobList.JobList["+ i +"].Output.OutSubtitleList["+ j +"].OutSubtitleFile.Bucket");
+					outSubtitleFile.Location = context.StringValue("QueryJobList.JobList["+ i +"].Output.OutSubtitleList["+ j +"].OutSubtitleFile.Location");
+					outSubtitleFile._Object = context.StringValue("QueryJobList.JobList["+ i +"].Output.OutSubtitleList["+ j +"].OutSubtitleFile.Object");
+					outSubtitleFile.RoleArn = context.StringValue("QueryJobList.JobList["+ i +"].Output.OutSubtitleList["+ j +"].OutSubtitleFile.RoleArn");
+					outSubtitle.OutSubtitleFile = outSubtitleFile;
+
+					output_outSubtitleList.Add(outSubtitle);
+				}
+				output.OutSubtitleList = output_outSubtitleList;
 				job.Output = output;
 
 				QueryJobListResponse.QueryJobList_Job.QueryJobList_MNSMessageResult mNSMessageResult = new QueryJobListResponse.QueryJobList_Job.QueryJobList_MNSMessageResult();

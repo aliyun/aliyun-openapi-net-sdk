@@ -54,6 +54,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				media.Height = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].Height");
 				media.Fps = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].Fps");
 				media.PublishState = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].PublishState");
+				media.CensorState = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].CensorState");
 				media.CreationTime = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].CreationTime");
 
 				List<string> media_tags = new List<string>();
@@ -202,6 +203,23 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					media_snapshotList.Add(snapshot);
 				}
 				media.SnapshotList = media_snapshotList;
+
+				List<QueryMediaListByURLResponse.QueryMediaListByURL_Media.QueryMediaListByURL_Summary> media_summaryList = new List<QueryMediaListByURLResponse.QueryMediaListByURL_Media.QueryMediaListByURL_Summary>();
+				for (int j = 0; j < context.Length("QueryMediaListByURL.MediaList["+ i +"].SummaryList.Length"); j++) {
+					QueryMediaListByURLResponse.QueryMediaListByURL_Media.QueryMediaListByURL_Summary summary = new QueryMediaListByURLResponse.QueryMediaListByURL_Media.QueryMediaListByURL_Summary();
+					summary.Type = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].SummaryList["+ j +"].Type");
+					summary.MediaWorkflowId = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].SummaryList["+ j +"].MediaWorkflowId");
+					summary.MediaWorkflowName = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].SummaryList["+ j +"].MediaWorkflowName");
+					summary.ActivityName = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].SummaryList["+ j +"].ActivityName");
+
+					QueryMediaListByURLResponse.QueryMediaListByURL_Media.QueryMediaListByURL_Summary.QueryMediaListByURL_File3 file3 = new QueryMediaListByURLResponse.QueryMediaListByURL_Media.QueryMediaListByURL_Summary.QueryMediaListByURL_File3();
+					file3.URL = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].SummaryList["+ j +"].File.URL");
+					file3.State = context.StringValue("QueryMediaListByURL.MediaList["+ i +"].SummaryList["+ j +"].File.State");
+					summary.File3 = file3;
+
+					media_summaryList.Add(summary);
+				}
+				media.SummaryList = media_summaryList;
 
 				queryMediaListByURLResponse_mediaList.Add(media);
 			}

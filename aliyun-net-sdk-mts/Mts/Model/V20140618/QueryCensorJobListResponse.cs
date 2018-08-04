@@ -83,6 +83,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string creationTime;
 
+			private string titleCensorResult;
+
+			private string descCensorResult;
+
+			private string barrageCensorResult;
+
+			private string resultSaveObject;
+
+			private List<QueryCensorJobList_ImageCensorResult> imageCensorResults;
+
 			private QueryCensorJobList_Input input;
 
 			private QueryCensorJobList_CensorConfig censorConfig;
@@ -175,6 +185,66 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public string TitleCensorResult
+			{
+				get
+				{
+					return titleCensorResult;
+				}
+				set	
+				{
+					titleCensorResult = value;
+				}
+			}
+
+			public string DescCensorResult
+			{
+				get
+				{
+					return descCensorResult;
+				}
+				set	
+				{
+					descCensorResult = value;
+				}
+			}
+
+			public string BarrageCensorResult
+			{
+				get
+				{
+					return barrageCensorResult;
+				}
+				set	
+				{
+					barrageCensorResult = value;
+				}
+			}
+
+			public string ResultSaveObject
+			{
+				get
+				{
+					return resultSaveObject;
+				}
+				set	
+				{
+					resultSaveObject = value;
+				}
+			}
+
+			public List<QueryCensorJobList_ImageCensorResult> ImageCensorResults
+			{
+				get
+				{
+					return imageCensorResults;
+				}
+				set	
+				{
+					imageCensorResults = value;
+				}
+			}
+
 			public QueryCensorJobList_Input Input
 			{
 				get
@@ -220,6 +290,66 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					censorTerrorismResult = value;
+				}
+			}
+
+			public class QueryCensorJobList_ImageCensorResult
+			{
+
+				private string imageLocation;
+
+				private string imageBucket;
+
+				private string imageObject;
+
+				private string result;
+
+				public string ImageLocation
+				{
+					get
+					{
+						return imageLocation;
+					}
+					set	
+					{
+						imageLocation = value;
+					}
+				}
+
+				public string ImageBucket
+				{
+					get
+					{
+						return imageBucket;
+					}
+					set	
+					{
+						imageBucket = value;
+					}
+				}
+
+				public string ImageObject
+				{
+					get
+					{
+						return imageObject;
+					}
+					set	
+					{
+						imageObject = value;
+					}
+				}
+
+				public string Result
+				{
+					get
+					{
+						return result;
+					}
+					set	
+					{
+						result = value;
+					}
 				}
 			}
 
@@ -276,6 +406,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string bizType;
 
+				private string saveType;
+
+				private string scenes;
+
 				private QueryCensorJobList_OutputFile outputFile;
 
 				public string Interval
@@ -299,6 +433,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						bizType = value;
+					}
+				}
+
+				public string SaveType
+				{
+					get
+					{
+						return saveType;
+					}
+					set	
+					{
+						saveType = value;
+					}
+				}
+
+				public string Scenes
+				{
+					get
+					{
+						return scenes;
+					}
+					set	
+					{
+						scenes = value;
 					}
 				}
 

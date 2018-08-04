@@ -48,6 +48,10 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				censorJob.Code = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].Code");
 				censorJob.Message = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].Message");
 				censorJob.CreationTime = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].CreationTime");
+				censorJob.TitleCensorResult = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].TitleCensorResult");
+				censorJob.DescCensorResult = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].DescCensorResult");
+				censorJob.BarrageCensorResult = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].BarrageCensorResult");
+				censorJob.ResultSaveObject = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].ResultSaveObject");
 
 				QueryCensorJobListResponse.QueryCensorJobList_CensorJob.QueryCensorJobList_Input input = new QueryCensorJobListResponse.QueryCensorJobList_CensorJob.QueryCensorJobList_Input();
 				input.Bucket = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].Input.Bucket");
@@ -58,6 +62,8 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				QueryCensorJobListResponse.QueryCensorJobList_CensorJob.QueryCensorJobList_CensorConfig censorConfig = new QueryCensorJobListResponse.QueryCensorJobList_CensorJob.QueryCensorJobList_CensorConfig();
 				censorConfig.Interval = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].CensorConfig.Interval");
 				censorConfig.BizType = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].CensorConfig.BizType");
+				censorConfig.SaveType = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].CensorConfig.SaveType");
+				censorConfig.Scenes = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].CensorConfig.Scenes");
 
 				QueryCensorJobListResponse.QueryCensorJobList_CensorJob.QueryCensorJobList_CensorConfig.QueryCensorJobList_OutputFile outputFile = new QueryCensorJobListResponse.QueryCensorJobList_CensorJob.QueryCensorJobList_CensorConfig.QueryCensorJobList_OutputFile();
 				outputFile.Bucket = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].CensorConfig.OutputFile.Bucket");
@@ -125,6 +131,18 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				}
 				censorTerrorismResult.TerrorismTopList = censorTerrorismResult_terrorismTopList;
 				censorJob.CensorTerrorismResult = censorTerrorismResult;
+
+				List<QueryCensorJobListResponse.QueryCensorJobList_CensorJob.QueryCensorJobList_ImageCensorResult> censorJob_imageCensorResults = new List<QueryCensorJobListResponse.QueryCensorJobList_CensorJob.QueryCensorJobList_ImageCensorResult>();
+				for (int j = 0; j < context.Length("QueryCensorJobList.CensorJobList["+ i +"].ImageCensorResults.Length"); j++) {
+					QueryCensorJobListResponse.QueryCensorJobList_CensorJob.QueryCensorJobList_ImageCensorResult imageCensorResult = new QueryCensorJobListResponse.QueryCensorJobList_CensorJob.QueryCensorJobList_ImageCensorResult();
+					imageCensorResult.ImageLocation = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].ImageCensorResults["+ j +"].ImageLocation");
+					imageCensorResult.ImageBucket = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].ImageCensorResults["+ j +"].ImageBucket");
+					imageCensorResult.ImageObject = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].ImageCensorResults["+ j +"].ImageObject");
+					imageCensorResult.Result = context.StringValue("QueryCensorJobList.CensorJobList["+ i +"].ImageCensorResults["+ j +"].Result");
+
+					censorJob_imageCensorResults.Add(imageCensorResult);
+				}
+				censorJob.ImageCensorResults = censorJob_imageCensorResults;
 
 				queryCensorJobListResponse_censorJobList.Add(censorJob);
 			}

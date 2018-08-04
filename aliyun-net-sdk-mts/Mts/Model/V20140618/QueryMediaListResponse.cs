@@ -95,11 +95,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string publishState;
 
+			private string censorState;
+
 			private string creationTime;
 
 			private List<QueryMediaList_Play> playList;
 
 			private List<QueryMediaList_Snapshot> snapshotList;
+
+			private List<QueryMediaList_Summary> summaryList;
 
 			private List<string> tags;
 
@@ -265,6 +269,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public string CensorState
+			{
+				get
+				{
+					return censorState;
+				}
+				set	
+				{
+					censorState = value;
+				}
+			}
+
 			public string CreationTime
 			{
 				get
@@ -298,6 +314,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					snapshotList = value;
+				}
+			}
+
+			public List<QueryMediaList_Summary> SummaryList
+			{
+				get
+				{
+					return summaryList;
+				}
+				set	
+				{
+					summaryList = value;
 				}
 			}
 
@@ -641,6 +669,112 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 
 				public class QueryMediaList_File2
+				{
+
+					private string uRL;
+
+					private string state;
+
+					public string URL
+					{
+						get
+						{
+							return uRL;
+						}
+						set	
+						{
+							uRL = value;
+						}
+					}
+
+					public string State
+					{
+						get
+						{
+							return state;
+						}
+						set	
+						{
+							state = value;
+						}
+					}
+				}
+			}
+
+			public class QueryMediaList_Summary
+			{
+
+				private string type;
+
+				private string mediaWorkflowId;
+
+				private string mediaWorkflowName;
+
+				private string activityName;
+
+				private QueryMediaList_File3 file3;
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string MediaWorkflowId
+				{
+					get
+					{
+						return mediaWorkflowId;
+					}
+					set	
+					{
+						mediaWorkflowId = value;
+					}
+				}
+
+				public string MediaWorkflowName
+				{
+					get
+					{
+						return mediaWorkflowName;
+					}
+					set	
+					{
+						mediaWorkflowName = value;
+					}
+				}
+
+				public string ActivityName
+				{
+					get
+					{
+						return activityName;
+					}
+					set	
+					{
+						activityName = value;
+					}
+				}
+
+				public QueryMediaList_File3 File3
+				{
+					get
+					{
+						return file3;
+					}
+					set	
+					{
+						file3 = value;
+					}
+				}
+
+				public class QueryMediaList_File3
 				{
 
 					private string uRL;

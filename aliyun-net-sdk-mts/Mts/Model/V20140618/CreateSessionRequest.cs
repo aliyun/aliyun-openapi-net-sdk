@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerId;
 
+		private string mediaId;
+
 		private string accessKeyId;
 
 		public string ResourceOwnerId
@@ -137,6 +139,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string MediaId
+		{
+			get
+			{
+				return mediaId;
+			}
+			set	
+			{
+				mediaId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaId", value);
 			}
 		}
 

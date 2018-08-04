@@ -21,14 +21,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
-	public class QueryVideoSummaryPipelineListResponse : AcsResponse
+	public class QuerySubtitleJobListResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<QueryVideoSummaryPipelineList_Pipeline> pipelineList;
+		private List<QuerySubtitleJobList_Job> jobList;
 
-		private List<string> nonExistIds;
+		private List<string> nonExistJobIds;
 
 		public string RequestId
 		{
@@ -42,64 +42,90 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public List<QueryVideoSummaryPipelineList_Pipeline> PipelineList
+		public List<QuerySubtitleJobList_Job> JobList
 		{
 			get
 			{
-				return pipelineList;
+				return jobList;
 			}
 			set	
 			{
-				pipelineList = value;
+				jobList = value;
 			}
 		}
 
-		public List<string> NonExistIds
+		public List<string> NonExistJobIds
 		{
 			get
 			{
-				return nonExistIds;
+				return nonExistJobIds;
 			}
 			set	
 			{
-				nonExistIds = value;
+				nonExistJobIds = value;
 			}
 		}
 
-		public class QueryVideoSummaryPipelineList_Pipeline
+		public class QuerySubtitleJobList_Job
 		{
 
-			private string id;
+			private string jobId;
 
-			private string name;
+			private string inputConfig;
+
+			private string outputConfig;
+
+			private string userData;
 
 			private string state;
 
-			private string priority;
+			private QuerySubtitleJobList_MNSMessageResult mNSMessageResult;
 
-			private QueryVideoSummaryPipelineList_NotifyConfig notifyConfig;
-
-			public string Id
+			public string JobId
 			{
 				get
 				{
-					return id;
+					return jobId;
 				}
 				set	
 				{
-					id = value;
+					jobId = value;
 				}
 			}
 
-			public string Name
+			public string InputConfig
 			{
 				get
 				{
-					return name;
+					return inputConfig;
 				}
 				set	
 				{
-					name = value;
+					inputConfig = value;
+				}
+			}
+
+			public string OutputConfig
+			{
+				get
+				{
+					return outputConfig;
+				}
+				set	
+				{
+					outputConfig = value;
+				}
+			}
+
+			public string UserData
+			{
+				get
+				{
+					return userData;
+				}
+				set	
+				{
+					userData = value;
 				}
 			}
 
@@ -115,58 +141,60 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public string Priority
+			public QuerySubtitleJobList_MNSMessageResult MNSMessageResult
 			{
 				get
 				{
-					return priority;
+					return mNSMessageResult;
 				}
 				set	
 				{
-					priority = value;
+					mNSMessageResult = value;
 				}
 			}
 
-			public QueryVideoSummaryPipelineList_NotifyConfig NotifyConfig
-			{
-				get
-				{
-					return notifyConfig;
-				}
-				set	
-				{
-					notifyConfig = value;
-				}
-			}
-
-			public class QueryVideoSummaryPipelineList_NotifyConfig
+			public class QuerySubtitleJobList_MNSMessageResult
 			{
 
-				private string topic;
+				private string messageId;
 
-				private string queueName;
+				private string errorMessage;
 
-				public string Topic
+				private string errorCode;
+
+				public string MessageId
 				{
 					get
 					{
-						return topic;
+						return messageId;
 					}
 					set	
 					{
-						topic = value;
+						messageId = value;
 					}
 				}
 
-				public string QueueName
+				public string ErrorMessage
 				{
 					get
 					{
-						return queueName;
+						return errorMessage;
 					}
 					set	
 					{
-						queueName = value;
+						errorMessage = value;
+					}
+				}
+
+				public string ErrorCode
+				{
+					get
+					{
+						return errorCode;
+					}
+					set	
+					{
+						errorCode = value;
 					}
 				}
 			}

@@ -26,30 +26,58 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
-    public class ListVideoSummaryPipelineRequest : RpcAcsRequest<ListVideoSummaryPipelineResponse>
+    public class SubmitVideoGifJobRequest : RpcAcsRequest<SubmitVideoGifJobResponse>
     {
-        public ListVideoSummaryPipelineRequest()
-            : base("Mts", "2014-06-18", "ListVideoSummaryPipeline", "mts", "openAPI")
+        public SubmitVideoGifJobRequest()
+            : base("Mts", "2014-06-18", "SubmitVideoGifJob", "mts", "openAPI")
         {
         }
+
+		private string input;
+
+		private string userData;
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
+		private string videoGifConfig;
 
-		private long? pageSize;
+		private string ownerAccount;
 
 		private string action;
 
-		private string state;
-
 		private long? ownerId;
 
-		private long? pageNumber;
-
 		private string accessKeyId;
+
+		private string pipelineId;
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -77,6 +105,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string VideoGifConfig
+		{
+			get
+			{
+				return videoGifConfig;
+			}
+			set	
+			{
+				videoGifConfig = value;
+				DictionaryUtil.Add(QueryParameters, "VideoGifConfig", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -87,19 +128,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -116,19 +144,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string State
-		{
-			get
-			{
-				return state;
-			}
-			set	
-			{
-				state = value;
-				DictionaryUtil.Add(QueryParameters, "State", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -139,19 +154,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -168,9 +170,22 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-        public override ListVideoSummaryPipelineResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string PipelineId
+		{
+			get
+			{
+				return pipelineId;
+			}
+			set	
+			{
+				pipelineId = value;
+				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+        public override SubmitVideoGifJobResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListVideoSummaryPipelineResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitVideoGifJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

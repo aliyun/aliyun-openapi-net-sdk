@@ -26,12 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
-    public class AddVideoSummaryPipelineRequest : RpcAcsRequest<AddVideoSummaryPipelineResponse>
+    public class SubmitImageQualityJobRequest : RpcAcsRequest<SubmitImageQualityJobResponse>
     {
-        public AddVideoSummaryPipelineRequest()
-            : base("Mts", "2014-06-18", "AddVideoSummaryPipeline", "mts", "openAPI")
+        public SubmitImageQualityJobRequest()
+            : base("Mts", "2014-06-18", "SubmitImageQualityJob", "mts", "openAPI")
         {
         }
+
+		private string input;
+
+		private string userData;
 
 		private long? resourceOwnerId;
 
@@ -39,17 +43,39 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerAccount;
 
-		private string name;
-
 		private string action;
-
-		private string notifyConfig;
 
 		private long? ownerId;
 
-		private int? priority;
-
 		private string accessKeyId;
+
+		private string pipelineId;
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -90,19 +116,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -113,19 +126,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string NotifyConfig
-		{
-			get
-			{
-				return notifyConfig;
-			}
-			set	
-			{
-				notifyConfig = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyConfig", value);
 			}
 		}
 
@@ -142,19 +142,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public int? Priority
-		{
-			get
-			{
-				return priority;
-			}
-			set	
-			{
-				priority = value;
-				DictionaryUtil.Add(QueryParameters, "Priority", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -168,9 +155,22 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-        public override AddVideoSummaryPipelineResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string PipelineId
+		{
+			get
+			{
+				return pipelineId;
+			}
+			set	
+			{
+				pipelineId = value;
+				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+        public override SubmitImageQualityJobResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return AddVideoSummaryPipelineResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitImageQualityJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

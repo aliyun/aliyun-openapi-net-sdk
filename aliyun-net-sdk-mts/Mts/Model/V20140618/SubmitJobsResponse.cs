@@ -343,6 +343,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private List<SubmitJobs_TailSlate> tailSlateList;
 
+					private List<SubmitJobs_OutSubtitle> outSubtitleList;
+
 					private SubmitJobs_DigiWaterMark digiWaterMark;
 
 					private SubmitJobs_OutputFile outputFile;
@@ -522,6 +524,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							tailSlateList = value;
+						}
+					}
+
+					public List<SubmitJobs_OutSubtitle> OutSubtitleList
+					{
+						get
+						{
+							return outSubtitleList;
+						}
+						set	
+						{
+							outSubtitleList = value;
 						}
 					}
 
@@ -1061,6 +1075,126 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								bgColor = value;
+							}
+						}
+					}
+
+					public class SubmitJobs_OutSubtitle
+					{
+
+						private string map;
+
+						private bool? success;
+
+						private string message;
+
+						private SubmitJobs_OutSubtitleFile outSubtitleFile;
+
+						public string Map
+						{
+							get
+							{
+								return map;
+							}
+							set	
+							{
+								map = value;
+							}
+						}
+
+						public bool? Success
+						{
+							get
+							{
+								return success;
+							}
+							set	
+							{
+								success = value;
+							}
+						}
+
+						public string Message
+						{
+							get
+							{
+								return message;
+							}
+							set	
+							{
+								message = value;
+							}
+						}
+
+						public SubmitJobs_OutSubtitleFile OutSubtitleFile
+						{
+							get
+							{
+								return outSubtitleFile;
+							}
+							set	
+							{
+								outSubtitleFile = value;
+							}
+						}
+
+						public class SubmitJobs_OutSubtitleFile
+						{
+
+							private string bucket;
+
+							private string location;
+
+							private string _object;
+
+							private string roleArn;
+
+							public string Bucket
+							{
+								get
+								{
+									return bucket;
+								}
+								set	
+								{
+									bucket = value;
+								}
+							}
+
+							public string Location
+							{
+								get
+								{
+									return location;
+								}
+								set	
+								{
+									location = value;
+								}
+							}
+
+							public string _Object
+							{
+								get
+								{
+									return _object;
+								}
+								set	
+								{
+									_object = value;
+								}
+							}
+
+							public string RoleArn
+							{
+								get
+								{
+									return roleArn;
+								}
+								set	
+								{
+									roleArn = value;
+								}
 							}
 						}
 					}
@@ -2524,6 +2658,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 						private SubmitJobs_Gif gif;
 
+						private SubmitJobs_Webp webp;
+
 						public SubmitJobs_Segment Segment
 						{
 							get
@@ -2545,6 +2681,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								gif = value;
+							}
+						}
+
+						public SubmitJobs_Webp Webp
+						{
+							get
+							{
+								return webp;
+							}
+							set	
+							{
+								webp = value;
 							}
 						}
 
@@ -2622,6 +2770,24 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								set	
 								{
 									ditherMode = value;
+								}
+							}
+						}
+
+						public class SubmitJobs_Webp
+						{
+
+							private string loop;
+
+							public string Loop
+							{
+								get
+								{
+									return loop;
+								}
+								set	
+								{
+									loop = value;
 								}
 							}
 						}
@@ -2799,6 +2965,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						private string pad;
 
 						private string maxFps;
+
+						private string resoPriority;
 
 						private SubmitJobs_BitrateBnd bitrateBnd;
 
@@ -3015,6 +3183,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								maxFps = value;
+							}
+						}
+
+						public string ResoPriority
+						{
+							get
+							{
+								return resoPriority;
+							}
+							set	
+							{
+								resoPriority = value;
 							}
 						}
 

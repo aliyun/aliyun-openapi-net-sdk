@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
-    public class QueryVideoSummaryPipelineListRequest : RpcAcsRequest<QueryVideoSummaryPipelineListResponse>
+    public class QuerySubtitleJobListRequest : RpcAcsRequest<QuerySubtitleJobListResponse>
     {
-        public QueryVideoSummaryPipelineListRequest()
-            : base("Mts", "2014-06-18", "QueryVideoSummaryPipelineList", "mts", "openAPI")
+        public QuerySubtitleJobListRequest()
+            : base("Mts", "2014-06-18", "QuerySubtitleJobList", "mts", "openAPI")
         {
         }
 
@@ -37,7 +37,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string resourceOwnerAccount;
 
-		private string pipelineIds;
+		private string jobIds;
 
 		private string ownerAccount;
 
@@ -73,16 +73,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string PipelineIds
+		public string JobIds
 		{
 			get
 			{
-				return pipelineIds;
+				return jobIds;
 			}
 			set	
 			{
-				pipelineIds = value;
-				DictionaryUtil.Add(QueryParameters, "PipelineIds", value);
+				jobIds = value;
+				DictionaryUtil.Add(QueryParameters, "JobIds", value);
 			}
 		}
 
@@ -138,9 +138,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-        public override QueryVideoSummaryPipelineListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QuerySubtitleJobListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryVideoSummaryPipelineListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QuerySubtitleJobListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				fpShotJob.Code = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].Code");
 				fpShotJob.Message = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].Message");
 				fpShotJob.CreationTime = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].CreationTime");
+				fpShotJob.FinishTime = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].FinishTime");
 
 				QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_InputFile inputFile = new QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_InputFile();
 				inputFile.Bucket = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].InputFile.Bucket");

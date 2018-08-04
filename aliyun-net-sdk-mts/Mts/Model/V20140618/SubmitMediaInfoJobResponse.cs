@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string pipelineId;
 
+			private bool? async;
+
 			private string state;
 
 			private string code;
@@ -108,6 +110,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					pipelineId = value;
+				}
+			}
+
+			public bool? Async
+			{
+				get
+				{
+					return async;
+				}
+				set	
+				{
+					async = value;
 				}
 			}
 
@@ -1034,6 +1048,22 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 						private string index;
 
+						private string codecName;
+
+						private string codecTimeBase;
+
+						private string codecLongName;
+
+						private string codecTagString;
+
+						private string codecTag;
+
+						private string timebase;
+
+						private string startTime;
+
+						private string duration;
+
 						private string lang;
 
 						public string Index
@@ -1045,6 +1075,102 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								index = value;
+							}
+						}
+
+						public string CodecName
+						{
+							get
+							{
+								return codecName;
+							}
+							set	
+							{
+								codecName = value;
+							}
+						}
+
+						public string CodecTimeBase
+						{
+							get
+							{
+								return codecTimeBase;
+							}
+							set	
+							{
+								codecTimeBase = value;
+							}
+						}
+
+						public string CodecLongName
+						{
+							get
+							{
+								return codecLongName;
+							}
+							set	
+							{
+								codecLongName = value;
+							}
+						}
+
+						public string CodecTagString
+						{
+							get
+							{
+								return codecTagString;
+							}
+							set	
+							{
+								codecTagString = value;
+							}
+						}
+
+						public string CodecTag
+						{
+							get
+							{
+								return codecTag;
+							}
+							set	
+							{
+								codecTag = value;
+							}
+						}
+
+						public string Timebase
+						{
+							get
+							{
+								return timebase;
+							}
+							set	
+							{
+								timebase = value;
+							}
+						}
+
+						public string StartTime
+						{
+							get
+							{
+								return startTime;
+							}
+							set	
+							{
+								startTime = value;
+							}
+						}
+
+						public string Duration
+						{
+							get
+							{
+								return duration;
+							}
+							set	
+							{
+								duration = value;
 							}
 						}
 
