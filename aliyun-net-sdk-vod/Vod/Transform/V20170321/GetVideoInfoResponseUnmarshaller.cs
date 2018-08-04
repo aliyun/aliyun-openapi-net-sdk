@@ -48,7 +48,11 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			video.CoverURL = context.StringValue("GetVideoInfo.Video.CoverURL");
 			video.CateId = context.LongValue("GetVideoInfo.Video.CateId");
 			video.CateName = context.StringValue("GetVideoInfo.Video.CateName");
+			video.DownloadSwitch = context.StringValue("GetVideoInfo.Video.DownloadSwitch");
+			video.TemplateGroupId = context.StringValue("GetVideoInfo.Video.TemplateGroupId");
 			video.PreprocessStatus = context.StringValue("GetVideoInfo.Video.PreprocessStatus");
+			video.StorageLocation = context.StringValue("GetVideoInfo.Video.StorageLocation");
+			video.RegionId = context.StringValue("GetVideoInfo.Video.RegionId");
 
 			List<string> video_snapshots = new List<string>();
 			for (int i = 0; i < context.Length("GetVideoInfo.Video.Snapshots.Length"); i++) {

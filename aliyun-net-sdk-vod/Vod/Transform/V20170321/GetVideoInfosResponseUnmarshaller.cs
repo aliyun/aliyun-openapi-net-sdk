@@ -53,12 +53,26 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.CoverURL = context.StringValue("GetVideoInfos.VideoList["+ i +"].CoverURL");
 				video.CateId = context.LongValue("GetVideoInfos.VideoList["+ i +"].CateId");
 				video.CateName = context.StringValue("GetVideoInfos.VideoList["+ i +"].CateName");
+				video.DownloadSwitch = context.StringValue("GetVideoInfos.VideoList["+ i +"].DownloadSwitch");
+				video.TemplateGroupId = context.StringValue("GetVideoInfos.VideoList["+ i +"].TemplateGroupId");
+				video.PreprocessStatus = context.StringValue("GetVideoInfos.VideoList["+ i +"].PreprocessStatus");
+				video.StorageLocation = context.StringValue("GetVideoInfos.VideoList["+ i +"].StorageLocation");
+				video.RegionId = context.StringValue("GetVideoInfos.VideoList["+ i +"].RegionId");
 
 				List<string> video_snapshots = new List<string>();
 				for (int j = 0; j < context.Length("GetVideoInfos.VideoList["+ i +"].Snapshots.Length"); j++) {
 					video_snapshots.Add(context.StringValue("GetVideoInfos.VideoList["+ i +"].Snapshots["+ j +"]"));
 				}
 				video.Snapshots = video_snapshots;
+
+				List<GetVideoInfosResponse.GetVideoInfos_Video.GetVideoInfos_Thumbnail> video_thumbnailList = new List<GetVideoInfosResponse.GetVideoInfos_Video.GetVideoInfos_Thumbnail>();
+				for (int j = 0; j < context.Length("GetVideoInfos.VideoList["+ i +"].ThumbnailList.Length"); j++) {
+					GetVideoInfosResponse.GetVideoInfos_Video.GetVideoInfos_Thumbnail thumbnail = new GetVideoInfosResponse.GetVideoInfos_Video.GetVideoInfos_Thumbnail();
+					thumbnail.URL = context.StringValue("GetVideoInfos.VideoList["+ i +"].ThumbnailList["+ j +"].URL");
+
+					video_thumbnailList.Add(thumbnail);
+				}
+				video.ThumbnailList = video_thumbnailList;
 
 				getVideoInfosResponse_videoList.Add(video);
 			}

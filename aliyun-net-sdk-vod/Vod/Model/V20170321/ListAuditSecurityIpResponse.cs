@@ -21,12 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class GetMessageCallbackResponse : AcsResponse
+	public class ListAuditSecurityIpResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private GetMessageCallback_MessageCallback messageCallback;
+		private List<ListAuditSecurityIp_SecurityIp> securityIpList;
 
 		public string RequestId
 		{
@@ -40,102 +40,74 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public GetMessageCallback_MessageCallback MessageCallback
+		public List<ListAuditSecurityIp_SecurityIp> SecurityIpList
 		{
 			get
 			{
-				return messageCallback;
+				return securityIpList;
 			}
 			set	
 			{
-				messageCallback = value;
+				securityIpList = value;
 			}
 		}
 
-		public class GetMessageCallback_MessageCallback
+		public class ListAuditSecurityIp_SecurityIp
 		{
 
-			private string callbackType;
+			private string securityGroupName;
 
-			private string callbackSwitch;
+			private string ips;
 
-			private string callbackURL;
+			private string creationTime;
 
-			private string eventTypeList;
+			private string modifyTime;
 
-			private string authSwitch;
-
-			private string authKey;
-
-			public string CallbackType
+			public string SecurityGroupName
 			{
 				get
 				{
-					return callbackType;
+					return securityGroupName;
 				}
 				set	
 				{
-					callbackType = value;
+					securityGroupName = value;
 				}
 			}
 
-			public string CallbackSwitch
+			public string Ips
 			{
 				get
 				{
-					return callbackSwitch;
+					return ips;
 				}
 				set	
 				{
-					callbackSwitch = value;
+					ips = value;
 				}
 			}
 
-			public string CallbackURL
+			public string CreationTime
 			{
 				get
 				{
-					return callbackURL;
+					return creationTime;
 				}
 				set	
 				{
-					callbackURL = value;
+					creationTime = value;
 				}
 			}
 
-			public string EventTypeList
+			public string ModifyTime
 			{
 				get
 				{
-					return eventTypeList;
+					return modifyTime;
 				}
 				set	
 				{
-					eventTypeList = value;
-				}
-			}
-
-			public string AuthSwitch
-			{
-				get
-				{
-					return authSwitch;
-				}
-				set	
-				{
-					authSwitch = value;
-				}
-			}
-
-			public string AuthKey
-			{
-				get
-				{
-					return authKey;
-				}
-				set	
-				{
-					authKey = value;
+					modifyTime = value;
 				}
 			}
 		}

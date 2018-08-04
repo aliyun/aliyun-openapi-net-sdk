@@ -32,7 +32,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			getAuditHistoryResponse.HttpResponse = context.HttpResponse;
 			getAuditHistoryResponse.RequestId = context.StringValue("GetAuditHistory.RequestId");
 			getAuditHistoryResponse.Status = context.StringValue("GetAuditHistory.Status");
-			getAuditHistoryResponse.Total = context.StringValue("GetAuditHistory.Total");
+			getAuditHistoryResponse.Total = context.LongValue("GetAuditHistory.Total");
 
 			List<GetAuditHistoryResponse.GetAuditHistory_History> getAuditHistoryResponse_histories = new List<GetAuditHistoryResponse.GetAuditHistory_History>();
 			for (int i = 0; i < context.Length("GetAuditHistory.Histories.Length"); i++) {
@@ -41,6 +41,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				history.Status = context.StringValue("GetAuditHistory.Histories["+ i +"].Status");
 				history.Reason = context.StringValue("GetAuditHistory.Histories["+ i +"].Reason");
 				history.Comment = context.StringValue("GetAuditHistory.Histories["+ i +"].Comment");
+				history.Auditor = context.StringValue("GetAuditHistory.Histories["+ i +"].Auditor");
 
 				getAuditHistoryResponse_histories.Add(history);
 			}

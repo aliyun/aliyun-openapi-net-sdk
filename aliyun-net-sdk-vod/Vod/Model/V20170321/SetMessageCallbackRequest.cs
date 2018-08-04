@@ -35,6 +35,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string callbackType;
 
+		private string authKey;
+
 		private string resourceOwnerId;
 
 		private string callbackSwitch;
@@ -46,6 +48,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string eventTypeList;
 
 		private string action;
+
+		private string authSwitch;
 
 		private string callbackURL;
 
@@ -63,6 +67,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				callbackType = value;
 				DictionaryUtil.Add(QueryParameters, "CallbackType", value);
+			}
+		}
+
+		public string AuthKey
+		{
+			get
+			{
+				return authKey;
+			}
+			set	
+			{
+				authKey = value;
+				DictionaryUtil.Add(QueryParameters, "AuthKey", value);
 			}
 		}
 
@@ -141,6 +158,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string AuthSwitch
+		{
+			get
+			{
+				return authSwitch;
+			}
+			set	
+			{
+				authSwitch = value;
+				DictionaryUtil.Add(QueryParameters, "AuthSwitch", value);
 			}
 		}
 

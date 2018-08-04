@@ -39,7 +39,6 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				SearchMediaResponse.SearchMedia_Media media = new SearchMediaResponse.SearchMedia_Media();
 				media.MediaType = context.StringValue("SearchMedia.MediaList["+ i +"].MediaType");
 				media.CreationTime = context.StringValue("SearchMedia.MediaList["+ i +"].CreationTime");
-				media.MediaType1 = context.StringValue("SearchMedia.MediaList["+ i +"].MediaType");
 				media.MediaId = context.StringValue("SearchMedia.MediaList["+ i +"].MediaId");
 
 				SearchMediaResponse.SearchMedia_Media.SearchMedia_Video video = new SearchMediaResponse.SearchMedia_Media.SearchMedia_Video();
@@ -52,7 +51,6 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.Size = context.LongValue("SearchMedia.MediaList["+ i +"].Video.Size");
 				video.Duration = context.FloatValue("SearchMedia.MediaList["+ i +"].Video.Duration");
 				video.Description = context.StringValue("SearchMedia.MediaList["+ i +"].Video.Description");
-				video.CustomerId = context.LongValue("SearchMedia.MediaList["+ i +"].Video.CustomerId");
 				video.ModificationTime = context.StringValue("SearchMedia.MediaList["+ i +"].Video.ModificationTime");
 				video.CreationTime = context.StringValue("SearchMedia.MediaList["+ i +"].Video.CreationTime");
 				video.CoverURL = context.StringValue("SearchMedia.MediaList["+ i +"].Video.CoverURL");
@@ -62,6 +60,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.PreprocessStatus = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PreprocessStatus");
 				video.StorageLocation = context.StringValue("SearchMedia.MediaList["+ i +"].Video.StorageLocation");
 				video.RegionId = context.StringValue("SearchMedia.MediaList["+ i +"].Video.RegionId");
+				video.TranscodeMode = context.StringValue("SearchMedia.MediaList["+ i +"].Video.TranscodeMode");
 
 				List<string> video_snapshots = new List<string>();
 				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].Video.Snapshots.Length"); j++) {
@@ -75,6 +74,39 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				}
 				video.SpriteSnapshots = video_spriteSnapshots;
 				media.Video = video;
+
+				SearchMediaResponse.SearchMedia_Media.SearchMedia_Audio audio = new SearchMediaResponse.SearchMedia_Media.SearchMedia_Audio();
+				audio.AudioId = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.AudioId");
+				audio.MediaSource = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.MediaSource");
+				audio.Title = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.Title");
+				audio.Tags = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.Tags");
+				audio.Status = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.Status");
+				audio.Size = context.LongValue("SearchMedia.MediaList["+ i +"].Audio.Size");
+				audio.Duration = context.FloatValue("SearchMedia.MediaList["+ i +"].Audio.Duration");
+				audio.Description = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.Description");
+				audio.ModificationTime = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.ModificationTime");
+				audio.CreationTime = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.CreationTime");
+				audio.CoverURL = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.CoverURL");
+				audio.CateId = context.LongValue("SearchMedia.MediaList["+ i +"].Audio.CateId");
+				audio.CateName = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.CateName");
+				audio.DownloadSwitch = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.DownloadSwitch");
+				audio.PreprocessStatus = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PreprocessStatus");
+				audio.StorageLocation = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.StorageLocation");
+				audio.RegionId = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.RegionId");
+				audio.TranscodeMode = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.TranscodeMode");
+
+				List<string> audio_snapshots2 = new List<string>();
+				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].Audio.Snapshots.Length"); j++) {
+					audio_snapshots2.Add(context.StringValue("SearchMedia.MediaList["+ i +"].Audio.Snapshots["+ j +"]"));
+				}
+				audio.Snapshots2 = audio_snapshots2;
+
+				List<string> audio_spriteSnapshots3 = new List<string>();
+				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].Audio.SpriteSnapshots.Length"); j++) {
+					audio_spriteSnapshots3.Add(context.StringValue("SearchMedia.MediaList["+ i +"].Audio.SpriteSnapshots["+ j +"]"));
+				}
+				audio.SpriteSnapshots3 = audio_spriteSnapshots3;
+				media.Audio = audio;
 
 				searchMediaResponse_mediaList.Add(media);
 			}

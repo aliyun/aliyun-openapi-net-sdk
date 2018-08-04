@@ -21,12 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class GetMessageCallbackResponse : AcsResponse
+	public class UploadMediaByURLResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private GetMessageCallback_MessageCallback messageCallback;
+		private List<UploadMediaByURL_UploadJob> uploadJobs;
 
 		public string RequestId
 		{
@@ -40,102 +40,46 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public GetMessageCallback_MessageCallback MessageCallback
+		public List<UploadMediaByURL_UploadJob> UploadJobs
 		{
 			get
 			{
-				return messageCallback;
+				return uploadJobs;
 			}
 			set	
 			{
-				messageCallback = value;
+				uploadJobs = value;
 			}
 		}
 
-		public class GetMessageCallback_MessageCallback
+		public class UploadMediaByURL_UploadJob
 		{
 
-			private string callbackType;
+			private string jobId;
 
-			private string callbackSwitch;
+			private string sourceURL;
 
-			private string callbackURL;
-
-			private string eventTypeList;
-
-			private string authSwitch;
-
-			private string authKey;
-
-			public string CallbackType
+			public string JobId
 			{
 				get
 				{
-					return callbackType;
+					return jobId;
 				}
 				set	
 				{
-					callbackType = value;
+					jobId = value;
 				}
 			}
 
-			public string CallbackSwitch
+			public string SourceURL
 			{
 				get
 				{
-					return callbackSwitch;
+					return sourceURL;
 				}
 				set	
 				{
-					callbackSwitch = value;
-				}
-			}
-
-			public string CallbackURL
-			{
-				get
-				{
-					return callbackURL;
-				}
-				set	
-				{
-					callbackURL = value;
-				}
-			}
-
-			public string EventTypeList
-			{
-				get
-				{
-					return eventTypeList;
-				}
-				set	
-				{
-					eventTypeList = value;
-				}
-			}
-
-			public string AuthSwitch
-			{
-				get
-				{
-					return authSwitch;
-				}
-				set	
-				{
-					authSwitch = value;
-				}
-			}
-
-			public string AuthKey
-			{
-				get
-				{
-					return authKey;
-				}
-				set	
-				{
-					authKey = value;
+					sourceURL = value;
 				}
 			}
 		}

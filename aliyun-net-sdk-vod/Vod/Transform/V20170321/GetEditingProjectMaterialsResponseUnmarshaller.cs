@@ -48,6 +48,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				material.CateId = context.IntegerValue("GetEditingProjectMaterials.MaterialList["+ i +"].CateId");
 				material.CateName = context.StringValue("GetEditingProjectMaterials.MaterialList["+ i +"].CateName");
 				material.Source = context.StringValue("GetEditingProjectMaterials.MaterialList["+ i +"].Source");
+				material.SpriteConfig = context.StringValue("GetEditingProjectMaterials.MaterialList["+ i +"].SpriteConfig");
 
 				List<string> material_snapshots = new List<string>();
 				for (int j = 0; j < context.Length("GetEditingProjectMaterials.MaterialList["+ i +"].Snapshots.Length"); j++) {

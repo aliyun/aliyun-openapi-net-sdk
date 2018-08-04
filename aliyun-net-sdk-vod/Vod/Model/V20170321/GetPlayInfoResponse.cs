@@ -103,6 +103,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string watermarkId;
 
+			private string status;
+
 			public long? Width
 			{
 				get
@@ -306,10 +308,24 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					watermarkId = value;
 				}
 			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 		}
 
 		public class GetPlayInfo_VideoBase
 		{
+
+			private string outputType;
 
 			private string coverURL;
 
@@ -325,7 +341,21 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string creationTime;
 
+			private string transcodeMode;
+
 			private List<GetPlayInfo_Thumbnail> thumbnailList;
+
+			public string OutputType
+			{
+				get
+				{
+					return outputType;
+				}
+				set	
+				{
+					outputType = value;
+				}
+			}
 
 			public string CoverURL
 			{
@@ -408,6 +438,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string TranscodeMode
+			{
+				get
+				{
+					return transcodeMode;
+				}
+				set	
+				{
+					transcodeMode = value;
 				}
 			}
 

@@ -45,6 +45,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string action;
 
+		private string sortBy;
+
 		private string ownerId;
 
 		public string ResourceOwnerId
@@ -122,6 +124,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string SortBy
+		{
+			get
+			{
+				return sortBy;
+			}
+			set	
+			{
+				sortBy = value;
+				DictionaryUtil.Add(QueryParameters, "SortBy", value);
 			}
 		}
 

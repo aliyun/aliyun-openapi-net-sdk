@@ -33,9 +33,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			getMessageCallbackResponse.RequestId = context.StringValue("GetMessageCallback.RequestId");
 
 			GetMessageCallbackResponse.GetMessageCallback_MessageCallback messageCallback = new GetMessageCallbackResponse.GetMessageCallback_MessageCallback();
+			messageCallback.CallbackType = context.StringValue("GetMessageCallback.MessageCallback.CallbackType");
 			messageCallback.CallbackSwitch = context.StringValue("GetMessageCallback.MessageCallback.CallbackSwitch");
 			messageCallback.CallbackURL = context.StringValue("GetMessageCallback.MessageCallback.CallbackURL");
 			messageCallback.EventTypeList = context.StringValue("GetMessageCallback.MessageCallback.EventTypeList");
+			messageCallback.AuthSwitch = context.StringValue("GetMessageCallback.MessageCallback.AuthSwitch");
+			messageCallback.AuthKey = context.StringValue("GetMessageCallback.MessageCallback.AuthKey");
 			getMessageCallbackResponse.MessageCallback = messageCallback;
         
 			return getMessageCallbackResponse;

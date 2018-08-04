@@ -39,6 +39,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private int? pageNo;
 
+		private string searchType;
+
 		private string match;
 
 		private int? pageSize;
@@ -50,8 +52,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private long? ownerId;
 
 		private string fields;
-
-		private string mediaType;
 
 		private string scrollToken;
 
@@ -91,6 +91,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				pageNo = value;
 				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+			}
+		}
+
+		public string SearchType
+		{
+			get
+			{
+				return searchType;
+			}
+			set	
+			{
+				searchType = value;
+				DictionaryUtil.Add(QueryParameters, "SearchType", value);
 			}
 		}
 
@@ -169,19 +182,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				fields = value;
 				DictionaryUtil.Add(QueryParameters, "Fields", value);
-			}
-		}
-
-		public string MediaType
-		{
-			get
-			{
-				return mediaType;
-			}
-			set	
-			{
-				mediaType = value;
-				DictionaryUtil.Add(QueryParameters, "MediaType", value);
 			}
 		}
 

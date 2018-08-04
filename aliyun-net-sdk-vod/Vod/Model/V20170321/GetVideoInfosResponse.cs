@@ -93,6 +93,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string cateName;
 
+			private string downloadSwitch;
+
+			private string templateGroupId;
+
+			private string preprocessStatus;
+
+			private string storageLocation;
+
+			private string regionId;
+
+			private List<GetVideoInfos_Thumbnail> thumbnailList;
+
 			private List<string> snapshots;
 
 			public string VideoId
@@ -239,6 +251,78 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string DownloadSwitch
+			{
+				get
+				{
+					return downloadSwitch;
+				}
+				set	
+				{
+					downloadSwitch = value;
+				}
+			}
+
+			public string TemplateGroupId
+			{
+				get
+				{
+					return templateGroupId;
+				}
+				set	
+				{
+					templateGroupId = value;
+				}
+			}
+
+			public string PreprocessStatus
+			{
+				get
+				{
+					return preprocessStatus;
+				}
+				set	
+				{
+					preprocessStatus = value;
+				}
+			}
+
+			public string StorageLocation
+			{
+				get
+				{
+					return storageLocation;
+				}
+				set	
+				{
+					storageLocation = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public List<GetVideoInfos_Thumbnail> ThumbnailList
+			{
+				get
+				{
+					return thumbnailList;
+				}
+				set	
+				{
+					thumbnailList = value;
+				}
+			}
+
 			public List<string> Snapshots
 			{
 				get
@@ -248,6 +332,24 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					snapshots = value;
+				}
+			}
+
+			public class GetVideoInfos_Thumbnail
+			{
+
+				private string uRL;
+
+				public string URL
+				{
+					get
+					{
+						return uRL;
+					}
+					set	
+					{
+						uRL = value;
+					}
 				}
 			}
 		}

@@ -28,7 +28,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string status;
 
-		private string total;
+		private long? total;
 
 		private List<GetAuditHistory_History> histories;
 
@@ -56,7 +56,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Total
+		public long? Total
 		{
 			get
 			{
@@ -90,6 +90,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			private string reason;
 
 			private string comment;
+
+			private string auditor;
 
 			public string CreationTime
 			{
@@ -136,6 +138,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					comment = value;
+				}
+			}
+
+			public string Auditor
+			{
+				get
+				{
+					return auditor;
+				}
+				set	
+				{
+					auditor = value;
 				}
 			}
 		}

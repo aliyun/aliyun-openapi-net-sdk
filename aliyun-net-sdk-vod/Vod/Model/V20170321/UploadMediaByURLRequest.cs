@@ -26,24 +26,32 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetVideoConfigRequest : RpcAcsRequest<GetVideoConfigResponse>
+    public class UploadMediaByURLRequest : RpcAcsRequest<UploadMediaByURLResponse>
     {
-        public GetVideoConfigRequest()
-            : base("vod", "2017-03-21", "GetVideoConfig", "vod", "openAPI")
+        public UploadMediaByURLRequest()
+            : base("vod", "2017-03-21", "UploadMediaByURL", "vod", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private string templateGroupId;
+
+		private string uploadMetadatas;
+
 		private string resourceOwnerAccount;
+
+		private string uploadURLs;
 
 		private string action;
 
-		private string videoId;
+		private string messageCallback;
 
 		private long? ownerId;
 
-		private string authInfo;
+		private string priority;
+
+		private string storageLocation;
 
 		public long? ResourceOwnerId
 		{
@@ -55,6 +63,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string TemplateGroupId
+		{
+			get
+			{
+				return templateGroupId;
+			}
+			set	
+			{
+				templateGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
+			}
+		}
+
+		public string UploadMetadatas
+		{
+			get
+			{
+				return uploadMetadatas;
+			}
+			set	
+			{
+				uploadMetadatas = value;
+				DictionaryUtil.Add(QueryParameters, "UploadMetadatas", value);
 			}
 		}
 
@@ -71,6 +105,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string UploadURLs
+		{
+			get
+			{
+				return uploadURLs;
+			}
+			set	
+			{
+				uploadURLs = value;
+				DictionaryUtil.Add(QueryParameters, "UploadURLs", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -84,16 +131,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
+		public string MessageCallback
 		{
 			get
 			{
-				return videoId;
+				return messageCallback;
 			}
 			set	
 			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+				messageCallback = value;
+				DictionaryUtil.Add(QueryParameters, "MessageCallback", value);
 			}
 		}
 
@@ -110,22 +157,35 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AuthInfo
+		public string Priority
 		{
 			get
 			{
-				return authInfo;
+				return priority;
 			}
 			set	
 			{
-				authInfo = value;
-				DictionaryUtil.Add(QueryParameters, "AuthInfo", value);
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value);
 			}
 		}
 
-        public override GetVideoConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string StorageLocation
+		{
+			get
+			{
+				return storageLocation;
+			}
+			set	
+			{
+				storageLocation = value;
+				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
+			}
+		}
+
+        public override UploadMediaByURLResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetVideoConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UploadMediaByURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

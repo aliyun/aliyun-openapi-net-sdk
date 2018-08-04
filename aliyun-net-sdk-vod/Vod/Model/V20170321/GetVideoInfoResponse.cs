@@ -97,7 +97,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string cateName;
 
+			private string downloadSwitch;
+
+			private string templateGroupId;
+
 			private string preprocessStatus;
+
+			private string storageLocation;
+
+			private string regionId;
 
 			private List<GetVideoInfo_Thumbnail> thumbnailList;
 
@@ -271,6 +279,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string DownloadSwitch
+			{
+				get
+				{
+					return downloadSwitch;
+				}
+				set	
+				{
+					downloadSwitch = value;
+				}
+			}
+
+			public string TemplateGroupId
+			{
+				get
+				{
+					return templateGroupId;
+				}
+				set	
+				{
+					templateGroupId = value;
+				}
+			}
+
 			public string PreprocessStatus
 			{
 				get
@@ -280,6 +312,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					preprocessStatus = value;
+				}
+			}
+
+			public string StorageLocation
+			{
+				get
+				{
+					return storageLocation;
+				}
+				set	
+				{
+					storageLocation = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 

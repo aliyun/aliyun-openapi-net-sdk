@@ -26,48 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetVideoConfigRequest : RpcAcsRequest<GetVideoConfigResponse>
+    public class SetAuditSecurityIpRequest : RpcAcsRequest<SetAuditSecurityIpResponse>
     {
-        public GetVideoConfigRequest()
-            : base("vod", "2017-03-21", "GetVideoConfig", "vod", "openAPI")
+        public SetAuditSecurityIpRequest()
+            : base("vod", "2017-03-21", "SetAuditSecurityIp", "vod", "openAPI")
         {
         }
 
-		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
+		private string operateMode;
 
 		private string action;
 
-		private string videoId;
+		private string securityGroupName;
 
-		private long? ownerId;
+		private string ips;
 
-		private string authInfo;
-
-		public long? ResourceOwnerId
+		public string OperateMode
 		{
 			get
 			{
-				return resourceOwnerId;
+				return operateMode;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				operateMode = value;
+				DictionaryUtil.Add(QueryParameters, "OperateMode", value);
 			}
 		}
 
@@ -84,48 +67,35 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
+		public string SecurityGroupName
 		{
 			get
 			{
-				return videoId;
+				return securityGroupName;
 			}
 			set	
 			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+				securityGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupName", value);
 			}
 		}
 
-		public long? OwnerId
+		public string Ips
 		{
 			get
 			{
-				return ownerId;
+				return ips;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				ips = value;
+				DictionaryUtil.Add(QueryParameters, "Ips", value);
 			}
 		}
 
-		public string AuthInfo
-		{
-			get
-			{
-				return authInfo;
-			}
-			set	
-			{
-				authInfo = value;
-				DictionaryUtil.Add(QueryParameters, "AuthInfo", value);
-			}
-		}
-
-        public override GetVideoConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SetAuditSecurityIpResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetVideoConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetAuditSecurityIpResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
