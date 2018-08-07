@@ -30,6 +30,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
+		private string code;
+
+		private SetDeviceProperty_Data data;
+
 		public string RequestId
 		{
 			get
@@ -63,6 +67,48 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public SetDeviceProperty_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class SetDeviceProperty_Data
+		{
+
+			private string messageId;
+
+			public string MessageId
+			{
+				get
+				{
+					return messageId;
+				}
+				set	
+				{
+					messageId = value;
+				}
 			}
 		}
 	}

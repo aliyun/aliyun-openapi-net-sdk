@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			getDeviceShadowResponse.HttpResponse = context.HttpResponse;
 			getDeviceShadowResponse.RequestId = context.StringValue("GetDeviceShadow.RequestId");
 			getDeviceShadowResponse.Success = context.BooleanValue("GetDeviceShadow.Success");
+			getDeviceShadowResponse.Code = context.StringValue("GetDeviceShadow.Code");
 			getDeviceShadowResponse.ErrorMessage = context.StringValue("GetDeviceShadow.ErrorMessage");
 			getDeviceShadowResponse.ShadowMessage = context.StringValue("GetDeviceShadow.ShadowMessage");
         

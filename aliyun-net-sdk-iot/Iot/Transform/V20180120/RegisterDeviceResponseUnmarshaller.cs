@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			registerDeviceResponse.HttpResponse = context.HttpResponse;
 			registerDeviceResponse.RequestId = context.StringValue("RegisterDevice.RequestId");
 			registerDeviceResponse.Success = context.BooleanValue("RegisterDevice.Success");
+			registerDeviceResponse.Code = context.StringValue("RegisterDevice.Code");
 			registerDeviceResponse.ErrorMessage = context.StringValue("RegisterDevice.ErrorMessage");
 
 			RegisterDeviceResponse.RegisterDevice_Data data = new RegisterDeviceResponse.RegisterDevice_Data();

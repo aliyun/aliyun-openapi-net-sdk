@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			deleteRuleActionResponse.HttpResponse = context.HttpResponse;
 			deleteRuleActionResponse.RequestId = context.StringValue("DeleteRuleAction.RequestId");
 			deleteRuleActionResponse.Success = context.BooleanValue("DeleteRuleAction.Success");
+			deleteRuleActionResponse.Code = context.StringValue("DeleteRuleAction.Code");
 			deleteRuleActionResponse.ErrorMessage = context.StringValue("DeleteRuleAction.ErrorMessage");
         
 			return deleteRuleActionResponse;

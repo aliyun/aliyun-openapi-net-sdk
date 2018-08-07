@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			pubResponse.HttpResponse = context.HttpResponse;
 			pubResponse.RequestId = context.StringValue("Pub.RequestId");
 			pubResponse.Success = context.BooleanValue("Pub.Success");
+			pubResponse.Code = context.StringValue("Pub.Code");
 			pubResponse.ErrorMessage = context.StringValue("Pub.ErrorMessage");
 			pubResponse.MessageId = context.StringValue("Pub.MessageId");
         

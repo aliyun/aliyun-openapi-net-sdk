@@ -33,6 +33,11 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			notifyAddThingTopoResponse.RequestId = context.StringValue("NotifyAddThingTopo.RequestId");
 			notifyAddThingTopoResponse.Success = context.BooleanValue("NotifyAddThingTopo.Success");
 			notifyAddThingTopoResponse.ErrorMessage = context.StringValue("NotifyAddThingTopo.ErrorMessage");
+			notifyAddThingTopoResponse.Code = context.StringValue("NotifyAddThingTopo.Code");
+
+			NotifyAddThingTopoResponse.NotifyAddThingTopo_Data data = new NotifyAddThingTopoResponse.NotifyAddThingTopo_Data();
+			data.MessageId = context.StringValue("NotifyAddThingTopo.Data.MessageId");
+			notifyAddThingTopoResponse.Data = data;
         
 			return notifyAddThingTopoResponse;
         }

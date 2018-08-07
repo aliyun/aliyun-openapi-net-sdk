@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private bool? success;
 
+		private string code;
+
 		private string errorMessage;
 
 		private QueryProduct_Data data;
@@ -53,6 +55,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -83,7 +97,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		public class QueryProduct_Data
 		{
 
-			private string gmtCreate;
+			private long? gmtCreate;
 
 			private int? dataFormat;
 
@@ -97,7 +111,17 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string productName;
 
-			public string GmtCreate
+			private string productSecret;
+
+			private string categoryName;
+
+			private string categoryKey;
+
+			private string aliyunCommodityCode;
+
+			private bool? id2;
+
+			public long? GmtCreate
 			{
 				get
 				{
@@ -178,6 +202,66 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					productName = value;
+				}
+			}
+
+			public string ProductSecret
+			{
+				get
+				{
+					return productSecret;
+				}
+				set	
+				{
+					productSecret = value;
+				}
+			}
+
+			public string CategoryName
+			{
+				get
+				{
+					return categoryName;
+				}
+				set	
+				{
+					categoryName = value;
+				}
+			}
+
+			public string CategoryKey
+			{
+				get
+				{
+					return categoryKey;
+				}
+				set	
+				{
+					categoryKey = value;
+				}
+			}
+
+			public string AliyunCommodityCode
+			{
+				get
+				{
+					return aliyunCommodityCode;
+				}
+				set	
+				{
+					aliyunCommodityCode = value;
+				}
+			}
+
+			public bool? Id2
+			{
+				get
+				{
+					return id2;
+				}
+				set	
+				{
+					id2 = value;
 				}
 			}
 		}

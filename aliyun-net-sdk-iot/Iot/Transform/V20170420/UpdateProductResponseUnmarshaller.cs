@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			updateProductResponse.HttpResponse = context.HttpResponse;
 			updateProductResponse.RequestId = context.StringValue("UpdateProduct.RequestId");
 			updateProductResponse.Success = context.BooleanValue("UpdateProduct.Success");
+			updateProductResponse.Code = context.StringValue("UpdateProduct.Code");
 			updateProductResponse.ErrorMessage = context.StringValue("UpdateProduct.ErrorMessage");
         
 			return updateProductResponse;

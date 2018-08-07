@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			applyDeviceWithNamesResponse.HttpResponse = context.HttpResponse;
 			applyDeviceWithNamesResponse.RequestId = context.StringValue("ApplyDeviceWithNames.RequestId");
 			applyDeviceWithNamesResponse.Success = context.BooleanValue("ApplyDeviceWithNames.Success");
+			applyDeviceWithNamesResponse.Code = context.StringValue("ApplyDeviceWithNames.Code");
 			applyDeviceWithNamesResponse.ErrorMessage = context.StringValue("ApplyDeviceWithNames.ErrorMessage");
 			applyDeviceWithNamesResponse.ApplyId = context.LongValue("ApplyDeviceWithNames.ApplyId");
         

@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private bool? success;
 
+		private string code;
+
 		private string errorMessage;
 
 		private QueryProductList_Data data;
@@ -53,6 +55,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -156,7 +170,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			public class QueryProductList_ProductInfo
 			{
 
-				private string gmtCreate;
+				private long? gmtCreate;
 
 				private int? dataFormat;
 
@@ -170,7 +184,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 				private string productName;
 
-				public string GmtCreate
+				public long? GmtCreate
 				{
 					get
 					{

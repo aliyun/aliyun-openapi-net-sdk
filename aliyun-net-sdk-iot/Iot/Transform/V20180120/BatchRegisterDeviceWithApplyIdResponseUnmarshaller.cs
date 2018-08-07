@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			batchRegisterDeviceWithApplyIdResponse.HttpResponse = context.HttpResponse;
 			batchRegisterDeviceWithApplyIdResponse.RequestId = context.StringValue("BatchRegisterDeviceWithApplyId.RequestId");
 			batchRegisterDeviceWithApplyIdResponse.Success = context.BooleanValue("BatchRegisterDeviceWithApplyId.Success");
+			batchRegisterDeviceWithApplyIdResponse.Code = context.StringValue("BatchRegisterDeviceWithApplyId.Code");
 			batchRegisterDeviceWithApplyIdResponse.ErrorMessage = context.StringValue("BatchRegisterDeviceWithApplyId.ErrorMessage");
 
 			BatchRegisterDeviceWithApplyIdResponse.BatchRegisterDeviceWithApplyId_Data data = new BatchRegisterDeviceWithApplyIdResponse.BatchRegisterDeviceWithApplyId_Data();

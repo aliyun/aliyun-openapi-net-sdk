@@ -30,6 +30,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
+		private string code;
+
 		private InvokeThingService_Data data;
 
 		public string RequestId
@@ -68,6 +70,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
 		public InvokeThingService_Data Data
 		{
 			get
@@ -85,6 +99,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string result;
 
+			private string messageId;
+
 			public string Result
 			{
 				get
@@ -94,6 +110,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					result = value;
+				}
+			}
+
+			public string MessageId
+			{
+				get
+				{
+					return messageId;
+				}
+				set	
+				{
+					messageId = value;
 				}
 			}
 		}

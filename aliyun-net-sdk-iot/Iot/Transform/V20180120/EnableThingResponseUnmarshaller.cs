@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			enableThingResponse.HttpResponse = context.HttpResponse;
 			enableThingResponse.RequestId = context.StringValue("EnableThing.RequestId");
 			enableThingResponse.Success = context.BooleanValue("EnableThing.Success");
+			enableThingResponse.Code = context.StringValue("EnableThing.Code");
 			enableThingResponse.ErrorMessage = context.StringValue("EnableThing.ErrorMessage");
         
 			return enableThingResponse;

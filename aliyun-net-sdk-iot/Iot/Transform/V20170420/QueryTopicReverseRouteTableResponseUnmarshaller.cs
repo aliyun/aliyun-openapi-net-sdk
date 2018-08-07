@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			queryTopicReverseRouteTableResponse.HttpResponse = context.HttpResponse;
 			queryTopicReverseRouteTableResponse.RequestId = context.StringValue("QueryTopicReverseRouteTable.RequestId");
 			queryTopicReverseRouteTableResponse.Success = context.BooleanValue("QueryTopicReverseRouteTable.Success");
+			queryTopicReverseRouteTableResponse.Code = context.StringValue("QueryTopicReverseRouteTable.Code");
 			queryTopicReverseRouteTableResponse.ErrorMessage = context.StringValue("QueryTopicReverseRouteTable.ErrorMessage");
 
 			List<string> queryTopicReverseRouteTableResponse_srcTopics = new List<string>();

@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			queryTopicRouteTableResponse.HttpResponse = context.HttpResponse;
 			queryTopicRouteTableResponse.RequestId = context.StringValue("QueryTopicRouteTable.RequestId");
 			queryTopicRouteTableResponse.Success = context.BooleanValue("QueryTopicRouteTable.Success");
+			queryTopicRouteTableResponse.Code = context.StringValue("QueryTopicRouteTable.Code");
 			queryTopicRouteTableResponse.ErrorMessage = context.StringValue("QueryTopicRouteTable.ErrorMessage");
 
 			List<string> queryTopicRouteTableResponse_dstTopics = new List<string>();

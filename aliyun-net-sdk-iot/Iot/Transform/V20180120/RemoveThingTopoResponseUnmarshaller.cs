@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			removeThingTopoResponse.HttpResponse = context.HttpResponse;
 			removeThingTopoResponse.RequestId = context.StringValue("RemoveThingTopo.RequestId");
 			removeThingTopoResponse.Success = context.BooleanValue("RemoveThingTopo.Success");
+			removeThingTopoResponse.Code = context.StringValue("RemoveThingTopo.Code");
 			removeThingTopoResponse.ErrorMessage = context.StringValue("RemoveThingTopo.ErrorMessage");
 			removeThingTopoResponse.Data = context.BooleanValue("RemoveThingTopo.Data");
         

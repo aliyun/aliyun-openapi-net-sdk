@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			createProductResponse.HttpResponse = context.HttpResponse;
 			createProductResponse.RequestId = context.StringValue("CreateProduct.RequestId");
 			createProductResponse.Success = context.BooleanValue("CreateProduct.Success");
+			createProductResponse.Code = context.StringValue("CreateProduct.Code");
 			createProductResponse.ErrorMessage = context.StringValue("CreateProduct.ErrorMessage");
 
 			CreateProductResponse.CreateProduct_ProductInfo productInfo = new CreateProductResponse.CreateProduct_ProductInfo();

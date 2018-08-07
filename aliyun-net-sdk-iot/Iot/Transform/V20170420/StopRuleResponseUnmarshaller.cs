@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			stopRuleResponse.HttpResponse = context.HttpResponse;
 			stopRuleResponse.RequestId = context.StringValue("StopRule.RequestId");
 			stopRuleResponse.Success = context.BooleanValue("StopRule.Success");
+			stopRuleResponse.Code = context.StringValue("StopRule.Code");
 			stopRuleResponse.ErrorMessage = context.StringValue("StopRule.ErrorMessage");
         
 			return stopRuleResponse;

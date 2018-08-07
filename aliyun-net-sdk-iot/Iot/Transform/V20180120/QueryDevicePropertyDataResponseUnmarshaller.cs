@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			queryDevicePropertyDataResponse.HttpResponse = context.HttpResponse;
 			queryDevicePropertyDataResponse.RequestId = context.StringValue("QueryDevicePropertyData.RequestId");
 			queryDevicePropertyDataResponse.Success = context.BooleanValue("QueryDevicePropertyData.Success");
+			queryDevicePropertyDataResponse.Code = context.StringValue("QueryDevicePropertyData.Code");
 			queryDevicePropertyDataResponse.ErrorMessage = context.StringValue("QueryDevicePropertyData.ErrorMessage");
 
 			QueryDevicePropertyDataResponse.QueryDevicePropertyData_Data data = new QueryDevicePropertyDataResponse.QueryDevicePropertyData_Data();

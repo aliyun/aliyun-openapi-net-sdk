@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			queryApplyStatusResponse.HttpResponse = context.HttpResponse;
 			queryApplyStatusResponse.RequestId = context.StringValue("QueryApplyStatus.RequestId");
 			queryApplyStatusResponse.Success = context.BooleanValue("QueryApplyStatus.Success");
+			queryApplyStatusResponse.Code = context.StringValue("QueryApplyStatus.Code");
 			queryApplyStatusResponse.ErrorMessage = context.StringValue("QueryApplyStatus.ErrorMessage");
 			queryApplyStatusResponse.Finish = context.BooleanValue("QueryApplyStatus.Finish");
         

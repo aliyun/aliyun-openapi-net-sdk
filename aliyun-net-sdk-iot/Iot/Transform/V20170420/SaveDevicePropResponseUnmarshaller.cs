@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			saveDevicePropResponse.HttpResponse = context.HttpResponse;
 			saveDevicePropResponse.RequestId = context.StringValue("SaveDeviceProp.RequestId");
 			saveDevicePropResponse.Success = context.BooleanValue("SaveDeviceProp.Success");
+			saveDevicePropResponse.Code = context.StringValue("SaveDeviceProp.Code");
 			saveDevicePropResponse.ErrorMessage = context.StringValue("SaveDeviceProp.ErrorMessage");
         
 			return saveDevicePropResponse;

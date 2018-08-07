@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			deleteTopicRouteTableResponse.HttpResponse = context.HttpResponse;
 			deleteTopicRouteTableResponse.RequestId = context.StringValue("DeleteTopicRouteTable.RequestId");
 			deleteTopicRouteTableResponse.Success = context.BooleanValue("DeleteTopicRouteTable.Success");
+			deleteTopicRouteTableResponse.Code = context.StringValue("DeleteTopicRouteTable.Code");
 			deleteTopicRouteTableResponse.IsAllSucceed = context.BooleanValue("DeleteTopicRouteTable.IsAllSucceed");
 			deleteTopicRouteTableResponse.ErrorMessage = context.StringValue("DeleteTopicRouteTable.ErrorMessage");
 

@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private bool? success;
 
+		private string code;
+
 		private string errorMessage;
 
 		private QueryDeviceEventData_Data data;
@@ -53,6 +55,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 

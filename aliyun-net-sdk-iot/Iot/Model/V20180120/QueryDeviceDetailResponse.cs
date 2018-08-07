@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private bool? success;
 
+		private string code;
+
 		private string errorMessage;
 
 		private QueryDeviceDetail_Data data;
@@ -53,6 +55,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -97,9 +111,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string gmtCreate;
 
+			private string utcCreate;
+
 			private string gmtActive;
 
+			private string utcActive;
+
 			private string gmtOnline;
+
+			private string utcOnline;
 
 			private string status;
 
@@ -193,6 +213,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
+			public string UtcCreate
+			{
+				get
+				{
+					return utcCreate;
+				}
+				set	
+				{
+					utcCreate = value;
+				}
+			}
+
 			public string GmtActive
 			{
 				get
@@ -205,6 +237,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
+			public string UtcActive
+			{
+				get
+				{
+					return utcActive;
+				}
+				set	
+				{
+					utcActive = value;
+				}
+			}
+
 			public string GmtOnline
 			{
 				get
@@ -214,6 +258,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					gmtOnline = value;
+				}
+			}
+
+			public string UtcOnline
+			{
+				get
+				{
+					return utcOnline;
+				}
+				set	
+				{
+					utcOnline = value;
 				}
 			}
 

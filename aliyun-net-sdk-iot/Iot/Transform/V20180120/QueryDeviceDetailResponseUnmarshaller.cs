@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			queryDeviceDetailResponse.HttpResponse = context.HttpResponse;
 			queryDeviceDetailResponse.RequestId = context.StringValue("QueryDeviceDetail.RequestId");
 			queryDeviceDetailResponse.Success = context.BooleanValue("QueryDeviceDetail.Success");
+			queryDeviceDetailResponse.Code = context.StringValue("QueryDeviceDetail.Code");
 			queryDeviceDetailResponse.ErrorMessage = context.StringValue("QueryDeviceDetail.ErrorMessage");
 
 			QueryDeviceDetailResponse.QueryDeviceDetail_Data data = new QueryDeviceDetailResponse.QueryDeviceDetail_Data();
@@ -42,8 +43,11 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.DeviceSecret = context.StringValue("QueryDeviceDetail.Data.DeviceSecret");
 			data.FirmwareVersion = context.StringValue("QueryDeviceDetail.Data.FirmwareVersion");
 			data.GmtCreate = context.StringValue("QueryDeviceDetail.Data.GmtCreate");
+			data.UtcCreate = context.StringValue("QueryDeviceDetail.Data.UtcCreate");
 			data.GmtActive = context.StringValue("QueryDeviceDetail.Data.GmtActive");
+			data.UtcActive = context.StringValue("QueryDeviceDetail.Data.UtcActive");
 			data.GmtOnline = context.StringValue("QueryDeviceDetail.Data.GmtOnline");
+			data.UtcOnline = context.StringValue("QueryDeviceDetail.Data.UtcOnline");
 			data.Status = context.StringValue("QueryDeviceDetail.Data.Status");
 			data.IpAddress = context.StringValue("QueryDeviceDetail.Data.IpAddress");
 			data.NodeType = context.IntegerValue("QueryDeviceDetail.Data.NodeType");

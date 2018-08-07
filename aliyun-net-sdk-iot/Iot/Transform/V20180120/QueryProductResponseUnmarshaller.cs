@@ -32,16 +32,22 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			queryProductResponse.HttpResponse = context.HttpResponse;
 			queryProductResponse.RequestId = context.StringValue("QueryProduct.RequestId");
 			queryProductResponse.Success = context.BooleanValue("QueryProduct.Success");
+			queryProductResponse.Code = context.StringValue("QueryProduct.Code");
 			queryProductResponse.ErrorMessage = context.StringValue("QueryProduct.ErrorMessage");
 
 			QueryProductResponse.QueryProduct_Data data = new QueryProductResponse.QueryProduct_Data();
-			data.GmtCreate = context.StringValue("QueryProduct.Data.GmtCreate");
+			data.GmtCreate = context.LongValue("QueryProduct.Data.GmtCreate");
 			data.DataFormat = context.IntegerValue("QueryProduct.Data.DataFormat");
 			data.Description = context.StringValue("QueryProduct.Data.Description");
 			data.DeviceCount = context.IntegerValue("QueryProduct.Data.DeviceCount");
 			data.NodeType = context.IntegerValue("QueryProduct.Data.NodeType");
 			data.ProductKey = context.StringValue("QueryProduct.Data.ProductKey");
 			data.ProductName = context.StringValue("QueryProduct.Data.ProductName");
+			data.ProductSecret = context.StringValue("QueryProduct.Data.ProductSecret");
+			data.CategoryName = context.StringValue("QueryProduct.Data.CategoryName");
+			data.CategoryKey = context.StringValue("QueryProduct.Data.CategoryKey");
+			data.AliyunCommodityCode = context.StringValue("QueryProduct.Data.AliyunCommodityCode");
+			data.Id2 = context.BooleanValue("QueryProduct.Data.Id2");
 			queryProductResponse.Data = data;
         
 			return queryProductResponse;

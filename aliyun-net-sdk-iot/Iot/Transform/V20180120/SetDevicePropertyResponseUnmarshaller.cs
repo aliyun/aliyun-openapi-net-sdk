@@ -33,6 +33,11 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			setDevicePropertyResponse.RequestId = context.StringValue("SetDeviceProperty.RequestId");
 			setDevicePropertyResponse.Success = context.BooleanValue("SetDeviceProperty.Success");
 			setDevicePropertyResponse.ErrorMessage = context.StringValue("SetDeviceProperty.ErrorMessage");
+			setDevicePropertyResponse.Code = context.StringValue("SetDeviceProperty.Code");
+
+			SetDevicePropertyResponse.SetDeviceProperty_Data data = new SetDevicePropertyResponse.SetDeviceProperty_Data();
+			data.MessageId = context.StringValue("SetDeviceProperty.Data.MessageId");
+			setDevicePropertyResponse.Data = data;
         
 			return setDevicePropertyResponse;
         }

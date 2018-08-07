@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			createTopicRouteTableResponse.HttpResponse = context.HttpResponse;
 			createTopicRouteTableResponse.RequestId = context.StringValue("CreateTopicRouteTable.RequestId");
 			createTopicRouteTableResponse.Success = context.BooleanValue("CreateTopicRouteTable.Success");
+			createTopicRouteTableResponse.Code = context.StringValue("CreateTopicRouteTable.Code");
 			createTopicRouteTableResponse.IsAllSucceed = context.BooleanValue("CreateTopicRouteTable.IsAllSucceed");
 			createTopicRouteTableResponse.ErrorMessage = context.StringValue("CreateTopicRouteTable.ErrorMessage");
 

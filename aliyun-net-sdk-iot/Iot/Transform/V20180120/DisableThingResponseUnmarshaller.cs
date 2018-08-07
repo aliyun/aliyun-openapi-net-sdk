@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			disableThingResponse.HttpResponse = context.HttpResponse;
 			disableThingResponse.RequestId = context.StringValue("DisableThing.RequestId");
 			disableThingResponse.Success = context.BooleanValue("DisableThing.Success");
+			disableThingResponse.Code = context.StringValue("DisableThing.Code");
 			disableThingResponse.ErrorMessage = context.StringValue("DisableThing.ErrorMessage");
         
 			return disableThingResponse;

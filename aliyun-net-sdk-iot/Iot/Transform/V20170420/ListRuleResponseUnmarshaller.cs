@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			listRuleResponse.HttpResponse = context.HttpResponse;
 			listRuleResponse.RequestId = context.StringValue("ListRule.RequestId");
 			listRuleResponse.Success = context.BooleanValue("ListRule.Success");
+			listRuleResponse.Code = context.StringValue("ListRule.Code");
 			listRuleResponse.ErrorMessage = context.StringValue("ListRule.ErrorMessage");
 			listRuleResponse.PageSize = context.IntegerValue("ListRule.PageSize");
 			listRuleResponse.Page = context.IntegerValue("ListRule.Page");

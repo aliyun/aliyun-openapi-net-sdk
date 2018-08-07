@@ -30,6 +30,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
+		private string code;
+
+		private NotifyAddThingTopo_Data data;
+
 		public string RequestId
 		{
 			get
@@ -63,6 +67,48 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public NotifyAddThingTopo_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class NotifyAddThingTopo_Data
+		{
+
+			private string messageId;
+
+			public string MessageId
+			{
+				get
+				{
+					return messageId;
+				}
+				set	
+				{
+					messageId = value;
+				}
 			}
 		}
 	}

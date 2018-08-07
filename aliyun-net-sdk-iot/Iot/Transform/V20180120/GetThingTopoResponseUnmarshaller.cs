@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			getThingTopoResponse.HttpResponse = context.HttpResponse;
 			getThingTopoResponse.RequestId = context.StringValue("GetThingTopo.RequestId");
 			getThingTopoResponse.Success = context.BooleanValue("GetThingTopo.Success");
+			getThingTopoResponse.Code = context.StringValue("GetThingTopo.Code");
 			getThingTopoResponse.ErrorMessage = context.StringValue("GetThingTopo.ErrorMessage");
 
 			GetThingTopoResponse.GetThingTopo_Data data = new GetThingTopoResponse.GetThingTopo_Data();

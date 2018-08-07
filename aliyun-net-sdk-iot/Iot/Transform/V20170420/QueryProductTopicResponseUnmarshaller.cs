@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			queryProductTopicResponse.HttpResponse = context.HttpResponse;
 			queryProductTopicResponse.RequestId = context.StringValue("QueryProductTopic.RequestId");
 			queryProductTopicResponse.Success = context.BooleanValue("QueryProductTopic.Success");
+			queryProductTopicResponse.Code = context.StringValue("QueryProductTopic.Code");
 			queryProductTopicResponse.ErrorMessage = context.StringValue("QueryProductTopic.ErrorMessage");
 
 			List<QueryProductTopicResponse.QueryProductTopic_ProductTopicInfo> queryProductTopicResponse_data = new List<QueryProductTopicResponse.QueryProductTopic_ProductTopicInfo>();

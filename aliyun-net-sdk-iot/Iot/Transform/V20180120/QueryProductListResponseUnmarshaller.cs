@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			queryProductListResponse.HttpResponse = context.HttpResponse;
 			queryProductListResponse.RequestId = context.StringValue("QueryProductList.RequestId");
 			queryProductListResponse.Success = context.BooleanValue("QueryProductList.Success");
+			queryProductListResponse.Code = context.StringValue("QueryProductList.Code");
 			queryProductListResponse.ErrorMessage = context.StringValue("QueryProductList.ErrorMessage");
 
 			QueryProductListResponse.QueryProductList_Data data = new QueryProductListResponse.QueryProductList_Data();
@@ -43,7 +44,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			List<QueryProductListResponse.QueryProductList_Data.QueryProductList_ProductInfo> data_list = new List<QueryProductListResponse.QueryProductList_Data.QueryProductList_ProductInfo>();
 			for (int i = 0; i < context.Length("QueryProductList.Data.List.Length"); i++) {
 				QueryProductListResponse.QueryProductList_Data.QueryProductList_ProductInfo productInfo = new QueryProductListResponse.QueryProductList_Data.QueryProductList_ProductInfo();
-				productInfo.GmtCreate = context.StringValue("QueryProductList.Data.List["+ i +"].GmtCreate");
+				productInfo.GmtCreate = context.LongValue("QueryProductList.Data.List["+ i +"].GmtCreate");
 				productInfo.DataFormat = context.IntegerValue("QueryProductList.Data.List["+ i +"].DataFormat");
 				productInfo.Description = context.StringValue("QueryProductList.Data.List["+ i +"].Description");
 				productInfo.DeviceCount = context.IntegerValue("QueryProductList.Data.List["+ i +"].DeviceCount");

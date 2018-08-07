@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			deleteDeviceResponse.HttpResponse = context.HttpResponse;
 			deleteDeviceResponse.RequestId = context.StringValue("DeleteDevice.RequestId");
 			deleteDeviceResponse.Success = context.BooleanValue("DeleteDevice.Success");
+			deleteDeviceResponse.Code = context.StringValue("DeleteDevice.Code");
 			deleteDeviceResponse.ErrorMessage = context.StringValue("DeleteDevice.ErrorMessage");
         
 			return deleteDeviceResponse;

@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			startRuleResponse.HttpResponse = context.HttpResponse;
 			startRuleResponse.RequestId = context.StringValue("StartRule.RequestId");
 			startRuleResponse.Success = context.BooleanValue("StartRule.Success");
+			startRuleResponse.Code = context.StringValue("StartRule.Code");
 			startRuleResponse.ErrorMessage = context.StringValue("StartRule.ErrorMessage");
         
 			return startRuleResponse;

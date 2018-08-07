@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			getDeviceStatusResponse.HttpResponse = context.HttpResponse;
 			getDeviceStatusResponse.RequestId = context.StringValue("GetDeviceStatus.RequestId");
 			getDeviceStatusResponse.Success = context.BooleanValue("GetDeviceStatus.Success");
+			getDeviceStatusResponse.Code = context.StringValue("GetDeviceStatus.Code");
 			getDeviceStatusResponse.ErrorMessage = context.StringValue("GetDeviceStatus.ErrorMessage");
 
 			GetDeviceStatusResponse.GetDeviceStatus_Data data = new GetDeviceStatusResponse.GetDeviceStatus_Data();

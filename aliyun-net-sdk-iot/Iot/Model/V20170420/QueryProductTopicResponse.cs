@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 
 		private bool? success;
 
+		private string code;
+
 		private string errorMessage;
 
 		private List<QueryProductTopic_ProductTopicInfo> data;
@@ -53,6 +55,18 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{41c62f52-f85a-4988-9e23-bade0ac97525}</ProjectGuid>
+    <ProjectGuid>{676e7df5-23c8-4976-acdc-6daf6281337a}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -59,12 +59,14 @@
 	<Compile Include="Iot\Model\V20180120\GetDeviceStatusResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryProductListRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceStatisticsRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\GetGatewayBySubDeviceRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\RegisterDeviceResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceDetailRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceEventDataResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\DisableThingResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\EnableThingResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDevicePropertyStatusRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\GetGatewayBySubDeviceResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\InvokeThingServiceRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\RemoveThingTopoResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\RemoveThingTopoRequest.cs" />
@@ -162,6 +164,7 @@
 	<Compile Include="Iot\Transform\V20180120\BatchRegisterDeviceResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\DisableThingResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\SetDevicePropertyResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\GetGatewayBySubDeviceResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryBatchRegisterDeviceStatusResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\BatchCheckDeviceNamesResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\NotifyAddThingTopoResponseUnmarshaller.cs" />

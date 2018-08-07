@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			rRpcResponse.HttpResponse = context.HttpResponse;
 			rRpcResponse.RequestId = context.StringValue("RRpc.RequestId");
 			rRpcResponse.Success = context.BooleanValue("RRpc.Success");
+			rRpcResponse.Code = context.StringValue("RRpc.Code");
 			rRpcResponse.ErrorMessage = context.StringValue("RRpc.ErrorMessage");
 			rRpcResponse.RrpcCode = context.StringValue("RRpc.RrpcCode");
 			rRpcResponse.PayloadBase64Byte = context.StringValue("RRpc.PayloadBase64Byte");

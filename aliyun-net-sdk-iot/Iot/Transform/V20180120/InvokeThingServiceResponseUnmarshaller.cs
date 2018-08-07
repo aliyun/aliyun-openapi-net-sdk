@@ -33,9 +33,11 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			invokeThingServiceResponse.RequestId = context.StringValue("InvokeThingService.RequestId");
 			invokeThingServiceResponse.Success = context.BooleanValue("InvokeThingService.Success");
 			invokeThingServiceResponse.ErrorMessage = context.StringValue("InvokeThingService.ErrorMessage");
+			invokeThingServiceResponse.Code = context.StringValue("InvokeThingService.Code");
 
 			InvokeThingServiceResponse.InvokeThingService_Data data = new InvokeThingServiceResponse.InvokeThingService_Data();
 			data.Result = context.StringValue("InvokeThingService.Data.Result");
+			data.MessageId = context.StringValue("InvokeThingService.Data.MessageId");
 			invokeThingServiceResponse.Data = data;
         
 			return invokeThingServiceResponse;

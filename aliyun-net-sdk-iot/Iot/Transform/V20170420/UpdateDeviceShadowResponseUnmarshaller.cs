@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Iot.Transform.V20170420
 			updateDeviceShadowResponse.HttpResponse = context.HttpResponse;
 			updateDeviceShadowResponse.RequestId = context.StringValue("UpdateDeviceShadow.RequestId");
 			updateDeviceShadowResponse.Success = context.BooleanValue("UpdateDeviceShadow.Success");
+			updateDeviceShadowResponse.Code = context.StringValue("UpdateDeviceShadow.Code");
 			updateDeviceShadowResponse.ErrorMessage = context.StringValue("UpdateDeviceShadow.ErrorMessage");
         
 			return updateDeviceShadowResponse;

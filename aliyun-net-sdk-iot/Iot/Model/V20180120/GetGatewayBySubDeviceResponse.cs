@@ -19,9 +19,9 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Iot.Model.V20170420
+namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class GetRuleResponse : AcsResponse
+	public class GetGatewayBySubDeviceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 
 		private string errorMessage;
 
-		private GetRule_RuleInfo ruleInfo;
+		private GetGatewayBySubDevice_Data data;
 
 		public string RequestId
 		{
@@ -82,104 +82,182 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 			}
 		}
 
-		public GetRule_RuleInfo RuleInfo
+		public GetGatewayBySubDevice_Data Data
 		{
 			get
 			{
-				return ruleInfo;
+				return data;
 			}
 			set	
 			{
-				ruleInfo = value;
+				data = value;
 			}
 		}
 
-		public class GetRule_RuleInfo
+		public class GetGatewayBySubDevice_Data
 		{
-
-			private long? id;
-
-			private string select;
-
-			private string topic;
-
-			private string shortTopic;
-
-			private string _where;
-
-			private string status;
-
-			private long? createUserId;
 
 			private string productKey;
 
-			private string name;
+			private string productName;
 
-			private string ruleDesc;
+			private string deviceSecret;
 
-			private string created;
+			private string deviceName;
 
-			private string dataType;
+			private string firmwareVersion;
 
-			private string modified;
+			private string gmtCreate;
 
-			public long? Id
+			private string utcCreate;
+
+			private string gmtActive;
+
+			private string utcActive;
+
+			private string gmtOnline;
+
+			private string utcOnline;
+
+			private string status;
+
+			private string ipAddress;
+
+			private string nodeType;
+
+			private string region;
+
+			private string iotId;
+
+			public string ProductKey
 			{
 				get
 				{
-					return id;
+					return productKey;
 				}
 				set	
 				{
-					id = value;
+					productKey = value;
 				}
 			}
 
-			public string Select
+			public string ProductName
 			{
 				get
 				{
-					return select;
+					return productName;
 				}
 				set	
 				{
-					select = value;
+					productName = value;
 				}
 			}
 
-			public string Topic
+			public string DeviceSecret
 			{
 				get
 				{
-					return topic;
+					return deviceSecret;
 				}
 				set	
 				{
-					topic = value;
+					deviceSecret = value;
 				}
 			}
 
-			public string ShortTopic
+			public string DeviceName
 			{
 				get
 				{
-					return shortTopic;
+					return deviceName;
 				}
 				set	
 				{
-					shortTopic = value;
+					deviceName = value;
 				}
 			}
 
-			public string _Where
+			public string FirmwareVersion
 			{
 				get
 				{
-					return _where;
+					return firmwareVersion;
 				}
 				set	
 				{
-					_where = value;
+					firmwareVersion = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public string UtcCreate
+			{
+				get
+				{
+					return utcCreate;
+				}
+				set	
+				{
+					utcCreate = value;
+				}
+			}
+
+			public string GmtActive
+			{
+				get
+				{
+					return gmtActive;
+				}
+				set	
+				{
+					gmtActive = value;
+				}
+			}
+
+			public string UtcActive
+			{
+				get
+				{
+					return utcActive;
+				}
+				set	
+				{
+					utcActive = value;
+				}
+			}
+
+			public string GmtOnline
+			{
+				get
+				{
+					return gmtOnline;
+				}
+				set	
+				{
+					gmtOnline = value;
+				}
+			}
+
+			public string UtcOnline
+			{
+				get
+				{
+					return utcOnline;
+				}
+				set	
+				{
+					utcOnline = value;
 				}
 			}
 
@@ -195,87 +273,51 @@ namespace Aliyun.Acs.Iot.Model.V20170420
 				}
 			}
 
-			public long? CreateUserId
+			public string IpAddress
 			{
 				get
 				{
-					return createUserId;
+					return ipAddress;
 				}
 				set	
 				{
-					createUserId = value;
+					ipAddress = value;
 				}
 			}
 
-			public string ProductKey
+			public string NodeType
 			{
 				get
 				{
-					return productKey;
+					return nodeType;
 				}
 				set	
 				{
-					productKey = value;
+					nodeType = value;
 				}
 			}
 
-			public string Name
+			public string Region
 			{
 				get
 				{
-					return name;
+					return region;
 				}
 				set	
 				{
-					name = value;
+					region = value;
 				}
 			}
 
-			public string RuleDesc
+			public string IotId
 			{
 				get
 				{
-					return ruleDesc;
+					return iotId;
 				}
 				set	
 				{
-					ruleDesc = value;
-				}
-			}
-
-			public string Created
-			{
-				get
-				{
-					return created;
-				}
-				set	
-				{
-					created = value;
-				}
-			}
-
-			public string DataType
-			{
-				get
-				{
-					return dataType;
-				}
-				set	
-				{
-					dataType = value;
-				}
-			}
-
-			public string Modified
-			{
-				get
-				{
-					return modified;
-				}
-				set	
-				{
-					modified = value;
+					iotId = value;
 				}
 			}
 		}
