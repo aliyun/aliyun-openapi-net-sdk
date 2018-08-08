@@ -33,11 +33,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string accessKeyId;
-
 		private string waitUrl;
-
-		private string securityToken;
 
 		private string action;
 
@@ -55,21 +51,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private long? ownerId;
 
-		private string version;
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string WaitUrl
 		{
 			get
@@ -80,19 +61,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				waitUrl = value;
 				DictionaryUtil.Add(QueryParameters, "WaitUrl", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -197,19 +165,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
 			}
 		}
 

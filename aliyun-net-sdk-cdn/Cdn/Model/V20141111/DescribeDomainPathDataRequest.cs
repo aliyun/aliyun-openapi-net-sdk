@@ -37,11 +37,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private int? pageNumber;
 
-		private string accessKeyId;
-
 		private string path;
-
-		private string securityToken;
 
 		private int? pageSize;
 
@@ -52,8 +48,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 		private string endTime;
 
 		private long? ownerId;
-
-		private string version;
 
 		public string StartTime
 		{
@@ -81,19 +75,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Path
 		{
 			get
@@ -104,19 +85,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				path = value;
 				DictionaryUtil.Add(QueryParameters, "Path", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -182,19 +150,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
 			}
 		}
 

@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				notes = value;
-				DictionaryUtil.Add(QueryParameters, "Notes", value);
+				DictionaryUtil.Add(BodyParameters, "Notes", value);
 			}
 		}
 
@@ -71,7 +71,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				eventMetaVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EventMetaVersion", value);
+				DictionaryUtil.Add(BodyParameters, "EventMetaVersion", value);
 			}
 		}
 
@@ -110,7 +110,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				sourceARN = value;
-				DictionaryUtil.Add(QueryParameters, "SourceARN", value);
+				DictionaryUtil.Add(BodyParameters, "SourceARN", value);
 			}
 		}
 
@@ -136,7 +136,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				roleARN = value;
-				DictionaryUtil.Add(QueryParameters, "RoleARN", value);
+				DictionaryUtil.Add(BodyParameters, "RoleARN", value);
 			}
 		}
 
@@ -149,7 +149,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				eventMetaName = value;
-				DictionaryUtil.Add(QueryParameters, "EventMetaName", value);
+				DictionaryUtil.Add(BodyParameters, "EventMetaName", value);
 			}
 		}
 

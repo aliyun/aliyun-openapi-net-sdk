@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainPathDataResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string domainName;
 
 		private string startTime;
@@ -39,6 +41,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 		private int? totalCount;
 
 		private List<DescribeDomainPathData_UsageData> pathDataPerInterval;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{

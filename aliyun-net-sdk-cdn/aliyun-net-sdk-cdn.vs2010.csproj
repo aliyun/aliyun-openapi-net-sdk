@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8983aab6-934d-48f6-a0fa-9d471a05c989}</ProjectGuid>
+    <ProjectGuid>{4a8ab08b-04a6-47a1-963d-7aa68c7791c3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -55,7 +55,6 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainPathDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DeleteLiveStreamTranscodeResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\BatchDescribeDomainBpsDataResponse.cs" />
-	<Compile Include="Cdn\Model\V20141111\ClearUserBlackListResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetRemoveQueryStringConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainOnlineUserNumberRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainCustomLogConfigRequest.cs" />
@@ -85,7 +84,6 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainsBySourceResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamPushDataRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainHttpsDataRequest.cs" />
-	<Compile Include="Cdn\Model\V20141111\ClearUserDomainBlackListResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeIpInfoRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainBpsDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainBpsDataByTimeStampResponse.cs" />
@@ -103,13 +101,11 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamsControlHistoryResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\RefreshObjectCachesRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeUserVipsByDomainRequest.cs" />
-	<Compile Include="Cdn\Model\V20141111\GetUserDomainBlackListRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveRecordConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\ModifyHttpHeaderConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainFileSizeProportionDataRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamNumberListRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainTopReferVisitRequest.cs" />
-	<Compile Include="Cdn\Model\V20141111\GetUserDomainBlackListResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamOnlineUserNumByDomainResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeCdnTypesResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainCustomLogConfigResponse.cs" />
@@ -160,7 +156,6 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamRecordContentRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\ModifyCdnServiceResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainAverageResponseTimeResponse.cs" />
-	<Compile Include="Cdn\Model\V20141111\SetUserBlackListRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetLocationAccessRestrictionResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLivePullStreamConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\UpdateLiveAppSnapshotConfigRequest.cs" />
@@ -195,7 +190,6 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamRelayPushDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamDomainAppInfoRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\StartCdnDomainResponse.cs" />
-	<Compile Include="Cdn\Model\V20141111\ClearUserBlackListRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamRecordIndexFilesResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeUserConfigsRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeCustomLogConfigRequest.cs" />
@@ -229,7 +223,6 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveSnapshotConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DeleteLiveDomainMappingResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DeleteLiveStreamTranscodeRequest.cs" />
-	<Compile Include="Cdn\Model\V20141111\ClearUserDomainBlackListRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamOnlineUserNumRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\ModifyDomainCustomLogConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeRefreshTasksResponse.cs" />
@@ -308,7 +301,6 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamLimitInfoRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeCdnRegionAndIspResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\UpdateLiveAppSnapshotConfigResponse.cs" />
-	<Compile Include="Cdn\Model\V20141111\SetUserDomainBlackListResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\PushObjectCacheRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\ModifyUserCustomLogConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\ForbidLiveStreamResponse.cs" />
@@ -326,7 +318,6 @@
 	<Compile Include="Cdn\Model\V20141111\SetVideoSeekConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamRoomUserNumberResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\ListDomainsByLogConfigIdResponse.cs" />
-	<Compile Include="Cdn\Model\V20141111\SetUserBlackListResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeUserCustomLogConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainUvDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetDomainServerCertificateResponse.cs" />
@@ -361,7 +352,6 @@
 	<Compile Include="Cdn\Model\V20141111\SetOssLogConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\OpenCdnServiceRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamDomainAppInfoResponse.cs" />
-	<Compile Include="Cdn\Model\V20141111\SetUserDomainBlackListRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DeleteLiveAppRecordConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamRelayPushErrorsRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeOneMinuteDataResponse.cs" />
@@ -464,7 +454,6 @@
 	<Compile Include="Cdn\Transform\V20141111\DescribeCdnServiceResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetRefererConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetIpAllowListConfigResponseUnmarshaller.cs" />
-	<Compile Include="Cdn\Transform\V20141111\ClearUserBlackListResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeLiveStreamFrameAndBitRateByDomainResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeFCTriggerResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeUserCustomerLabelsResponseUnmarshaller.cs" />
@@ -481,11 +470,9 @@
 	<Compile Include="Cdn\Transform\V20141111\SetUserAgentAcessRestrictionResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeLiveStreamPushDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeOneMinuteDataResponseUnmarshaller.cs" />
-	<Compile Include="Cdn\Transform\V20141111\GetUserDomainBlackListResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetReqAuthConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeDomainHttpCodeDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\AddFCTriggerResponseUnmarshaller.cs" />
-	<Compile Include="Cdn\Transform\V20141111\SetUserBlackListResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeLiveStreamRelayPushErrorsResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetRangeConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeLiveAppRecordConfigResponseUnmarshaller.cs" />
@@ -494,7 +481,6 @@
 	<Compile Include="Cdn\Transform\V20141111\DescribeDomainPathDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeDomainUpstreamBpsOfEdgeResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeLiveSnapshotConfigResponseUnmarshaller.cs" />
-	<Compile Include="Cdn\Transform\V20141111\ClearUserDomainBlackListResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DeleteLiveAppRecordConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DeleteLiveAppSnapshotConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetRemoteReqAuthConfigResponseUnmarshaller.cs" />
@@ -561,7 +547,6 @@
 	<Compile Include="Cdn\Transform\V20141111\SetFileTypeForceTtlCodeConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\StopCdnDomainResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeTopDomainsByFlowResponseUnmarshaller.cs" />
-	<Compile Include="Cdn\Transform\V20141111\SetUserDomainBlackListResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

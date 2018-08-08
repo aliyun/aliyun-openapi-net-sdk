@@ -73,6 +73,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string status;
 
+			private string serverCertificate;
+
+			private string certUpdateTime;
+
+			private string certStartTime;
+
+			private string certCommonName;
+
+			private string domainCnameStatus;
+
 			public string DomainName
 			{
 				get
@@ -178,6 +188,66 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string ServerCertificate
+			{
+				get
+				{
+					return serverCertificate;
+				}
+				set	
+				{
+					serverCertificate = value;
+				}
+			}
+
+			public string CertUpdateTime
+			{
+				get
+				{
+					return certUpdateTime;
+				}
+				set	
+				{
+					certUpdateTime = value;
+				}
+			}
+
+			public string CertStartTime
+			{
+				get
+				{
+					return certStartTime;
+				}
+				set	
+				{
+					certStartTime = value;
+				}
+			}
+
+			public string CertCommonName
+			{
+				get
+				{
+					return certCommonName;
+				}
+				set	
+				{
+					certCommonName = value;
+				}
+			}
+
+			public string DomainCnameStatus
+			{
+				get
+				{
+					return domainCnameStatus;
+				}
+				set	
+				{
+					domainCnameStatus = value;
 				}
 			}
 		}

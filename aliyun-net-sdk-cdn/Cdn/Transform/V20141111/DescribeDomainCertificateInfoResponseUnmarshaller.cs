@@ -44,6 +44,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				certInfo.CertType = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertType");
 				certInfo.ServerCertificateStatus = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].ServerCertificateStatus");
 				certInfo.Status = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].Status");
+				certInfo.ServerCertificate = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].ServerCertificate");
+				certInfo.CertUpdateTime = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertUpdateTime");
+				certInfo.CertStartTime = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertStartTime");
+				certInfo.CertCommonName = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertCommonName");
+				certInfo.DomainCnameStatus = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].DomainCnameStatus");
 
 				describeDomainCertificateInfoResponse_certInfos.Add(certInfo);
 			}

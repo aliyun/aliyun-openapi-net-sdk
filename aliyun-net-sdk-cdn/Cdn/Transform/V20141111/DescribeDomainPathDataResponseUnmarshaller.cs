@@ -30,6 +30,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			DescribeDomainPathDataResponse describeDomainPathDataResponse = new DescribeDomainPathDataResponse();
 
 			describeDomainPathDataResponse.HttpResponse = context.HttpResponse;
+			describeDomainPathDataResponse.RequestId = context.StringValue("DescribeDomainPathData.RequestId");
 			describeDomainPathDataResponse.DomainName = context.StringValue("DescribeDomainPathData.DomainName");
 			describeDomainPathDataResponse.StartTime = context.StringValue("DescribeDomainPathData.StartTime");
 			describeDomainPathDataResponse.EndTime = context.StringValue("DescribeDomainPathData.EndTime");
