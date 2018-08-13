@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8c335a6f-a813-48ce-a33c-1947230caa05}</ProjectGuid>
+    <ProjectGuid>{eb8f1cb9-56e7-4a04-aa93-cd0b1333807f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
 	<Compile Include="LinkFace\Model\V20180720\DeleteFaceRequest.cs" />
+	<Compile Include="LinkFace\Model\V20180720\SearchFaceResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\QuerySyncPicScheduleResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\CreateGroupRequest.cs" />
 	<Compile Include="LinkFace\Model\V20180720\QueryLicensesRequest.cs" />
@@ -51,6 +52,7 @@
 	<Compile Include="LinkFace\Model\V20180720\UpdateFaceRequest.cs" />
 	<Compile Include="LinkFace\Model\V20180720\UpdateFaceResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\QueryAuthenticationResponse.cs" />
+	<Compile Include="LinkFace\Model\V20180720\SearchFaceRequest.cs" />
 	<Compile Include="LinkFace\Model\V20180720\CreateGroupResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\QuerySyncPicScheduleRequest.cs" />
 	<Compile Include="LinkFace\Model\V20180720\QueryAllGroupsResponse.cs" />
@@ -84,6 +86,7 @@
 	<Compile Include="LinkFace\Transform\V20180720\QueryAddUserInfoResponseUnmarshaller.cs" />
 	<Compile Include="LinkFace\Transform\V20180720\QueryAuthenticationResponseUnmarshaller.cs" />
 	<Compile Include="LinkFace\Transform\V20180720\QueryGroupUsersResponseUnmarshaller.cs" />
+	<Compile Include="LinkFace\Transform\V20180720\SearchFaceResponseUnmarshaller.cs" />
 	<Compile Include="LinkFace\Transform\V20180720\LinkFaceResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>

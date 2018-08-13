@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.LinkFace.Model.V20180720
 {
-	public class QueryFaceResponse : AcsResponse
+	public class SearchFaceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 
 		private bool? success;
 
-		private QueryFace_Data data;
+		private SearchFace_Data data;
 
 		public string RequestId
 		{
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 			}
 		}
 
-		public QueryFace_Data Data
+		public SearchFace_Data Data
 		{
 			get
 			{
@@ -94,93 +94,51 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 			}
 		}
 
-		public class QueryFace_Data
+		public class SearchFace_Data
 		{
 
-			private List<QueryFace_UserFaceMetasItem> userFaceMetas;
+			private List<SearchFace_TopUserItemItem> topUserItem;
 
-			private List<string> groupIds;
-
-			public List<QueryFace_UserFaceMetasItem> UserFaceMetas
+			public List<SearchFace_TopUserItemItem> TopUserItem
 			{
 				get
 				{
-					return userFaceMetas;
+					return topUserItem;
 				}
 				set	
 				{
-					userFaceMetas = value;
+					topUserItem = value;
 				}
 			}
 
-			public List<string> GroupIds
-			{
-				get
-				{
-					return groupIds;
-				}
-				set	
-				{
-					groupIds = value;
-				}
-			}
-
-			public class QueryFace_UserFaceMetasItem
+			public class SearchFace_TopUserItemItem
 			{
 
-				private string clientTag;
+				private string userId;
 
-				private int? index;
+				private float? score;
 
-				private string faceUrl;
-
-				private string userInfo;
-
-				public string ClientTag
+				public string UserId
 				{
 					get
 					{
-						return clientTag;
+						return userId;
 					}
 					set	
 					{
-						clientTag = value;
+						userId = value;
 					}
 				}
 
-				public int? Index
+				public float? Score
 				{
 					get
 					{
-						return index;
+						return score;
 					}
 					set	
 					{
-						index = value;
-					}
-				}
-
-				public string FaceUrl
-				{
-					get
-					{
-						return faceUrl;
-					}
-					set	
-					{
-						faceUrl = value;
-					}
-				}
-
-				public string UserInfo
-				{
-					get
-					{
-						return userInfo;
-					}
-					set	
-					{
-						userInfo = value;
+						score = value;
 					}
 				}
 			}

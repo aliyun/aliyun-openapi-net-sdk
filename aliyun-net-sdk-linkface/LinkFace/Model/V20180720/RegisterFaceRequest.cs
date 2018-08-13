@@ -41,6 +41,8 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 
 		private string userId;
 
+		private string userInfo;
+
 		public string Image
 		{
 			get
@@ -77,6 +79,19 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 			{
 				userId = value;
 				DictionaryUtil.Add(BodyParameters, "UserId", value);
+			}
+		}
+
+		public string UserInfo
+		{
+			get
+			{
+				return userInfo;
+			}
+			set	
+			{
+				userInfo = value;
+				DictionaryUtil.Add(BodyParameters, "UserInfo", value);
 			}
 		}
 

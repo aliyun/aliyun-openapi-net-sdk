@@ -49,6 +49,7 @@ namespace Aliyun.Acs.LinkFace.Transform.V20180720
 				userFaceMetasItem.ClientTag = context.StringValue("QueryFace.Data.UserFaceMetas["+ i +"].ClientTag");
 				userFaceMetasItem.Index = context.IntegerValue("QueryFace.Data.UserFaceMetas["+ i +"].Index");
 				userFaceMetasItem.FaceUrl = context.StringValue("QueryFace.Data.UserFaceMetas["+ i +"].FaceUrl");
+				userFaceMetasItem.UserInfo = context.StringValue("QueryFace.Data.UserFaceMetas["+ i +"].UserInfo");
 
 				data_userFaceMetas.Add(userFaceMetasItem);
 			}

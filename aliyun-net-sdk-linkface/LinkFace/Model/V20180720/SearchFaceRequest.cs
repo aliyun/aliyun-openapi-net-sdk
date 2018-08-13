@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.LinkFace.Model.V20180720
 {
-    public class UpdateFaceRequest : RpcAcsRequest<UpdateFaceResponse>
+    public class SearchFaceRequest : RpcAcsRequest<SearchFaceResponse>
     {
-        public UpdateFaceRequest()
-            : base("LinkFace", "2018-07-20", "UpdateFace")
+        public SearchFaceRequest()
+            : base("LinkFace", "2018-07-20", "SearchFace")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
@@ -37,9 +37,7 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 
 		private string image;
 
-		private string userId;
-
-		private string userInfo;
+		private string groupId;
 
 		public string Image
 		{
@@ -54,29 +52,16 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 			}
 		}
 
-		public string UserId
+		public string GroupId
 		{
 			get
 			{
-				return userId;
+				return groupId;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
-			}
-		}
-
-		public string UserInfo
-		{
-			get
-			{
-				return userInfo;
-			}
-			set	
-			{
-				userInfo = value;
-				DictionaryUtil.Add(BodyParameters, "UserInfo", value);
+				groupId = value;
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
 			}
 		}
 
@@ -85,9 +70,9 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 			return false;
 		}
 
-        public override UpdateFaceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SearchFaceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return UpdateFaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SearchFaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
