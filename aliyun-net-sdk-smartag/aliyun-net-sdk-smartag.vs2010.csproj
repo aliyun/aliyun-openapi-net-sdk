@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{bcc5db6a-62ff-45f9-af99-37802b632b69}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-smartag</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Smartag\Model\V20180313\CreateDedicatedLineBackupRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\ModifySmartAccessGatewayRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\GetCloudConnectNetworkUseLimitRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\DescribeSmartAccessGatewayVersionsRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\DescribeSmartAccessGatewayHaRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\UpdateSmartAccessGatewayVersionResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\CreateCloudConnectNetworkRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\RebootSmartAccessGatewayResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\GetSmartAccessGatewayUseLimitRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\ModifySmartAccessGatewayResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\SwitchCloudBoxHaStateResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\DescribeRegionsResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\DescribeRegionsRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\ModifyCloudConnectNetworkResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\DeleteDedicatedLineBackupRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\DescribeSmartAccessGatewayVersionsResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\DescribeSmartAccessGatewayHaResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\CreateSmartAccessGatewayResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\UnbindSmartAccessGatewayResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\CreateSmartAccessGatewayRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\UpdateSmartAccessGatewayVersionRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\DescribeSmartAccessGatewaysRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\DescribeCloudConnectNetworksResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\DeleteDedicatedLineBackupResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\DeleteCloudConnectNetworkRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\ActivateSmartAccessGatewayRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\BindSmartAccessGatewayResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\DescribeSmartAccessGatewaysResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\UnlockSmartAccessGatewayResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\UnbindSmartAccessGatewayRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\UnlockSmartAccessGatewayRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\ModifyCloudConnectNetworkRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\CreateDedicatedLineBackupResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\GetCloudConnectNetworkUseLimitResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\ActivateSmartAccessGatewayResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\DescribeCloudConnectNetworksRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\SwitchCloudBoxHaStateRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\BindSmartAccessGatewayRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\CreateCloudConnectNetworkResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\GetSmartAccessGatewayUseLimitResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\RebootSmartAccessGatewayRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\DeleteCloudConnectNetworkResponse.cs" />
+	<Compile Include="Smartag\Transform\V20180313\DeleteDedicatedLineBackupResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\ActivateSmartAccessGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\UnlockSmartAccessGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\CreateCloudConnectNetworkResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\RebootSmartAccessGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\DescribeSmartAccessGatewayVersionsResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\ModifyCloudConnectNetworkResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\GetCloudConnectNetworkUseLimitResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\UnbindSmartAccessGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\UpdateSmartAccessGatewayVersionResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\GetSmartAccessGatewayUseLimitResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\BindSmartAccessGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\ModifySmartAccessGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\SwitchCloudBoxHaStateResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\DescribeSmartAccessGatewaysResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\CreateDedicatedLineBackupResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\DescribeSmartAccessGatewayHaResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\DeleteCloudConnectNetworkResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\CreateSmartAccessGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\DescribeCloudConnectNetworksResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
