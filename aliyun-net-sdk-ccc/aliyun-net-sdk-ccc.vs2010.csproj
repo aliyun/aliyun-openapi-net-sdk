@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{798e03c7-d6bd-4a29-87b2-8518008de6be}</ProjectGuid>
+    <ProjectGuid>{84607351-44c5-4a65-8ad3-dbfc08d8c4dd}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -118,6 +118,7 @@
 	<Compile Include="CCC\Model\V20170705\GetNumberRegionInfoRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\GetNumberRegionInfoResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\StartJobResponse.cs" />
+	<Compile Include="CCC\Model\V20170705\LaunchShortMessageAppraiseResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\GetServiceExtensionsResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\ListPhoneNumbersResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\PublishSurveyRequest.cs" />
@@ -168,6 +169,7 @@
 	<Compile Include="CCC\Model\V20170705\DeleteJobGroupResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\PickLocalNumberRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\CancelJobsRequest.cs" />
+	<Compile Include="CCC\Model\V20170705\LaunchShortMessageAppraiseRequest.cs" />
 	<Compile Include="CCC\Model\V20170705\DownloadUnreachableContactsResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\CancelPredictiveJobsResponse.cs" />
 	<Compile Include="CCC\Model\V20170705\GetConversationListResponse.cs" />
@@ -259,6 +261,7 @@
 	<Compile Include="CCC\Transform\V20170705\CreateSkillGroupResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\DeleteSurveyResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ListSurveysResponseUnmarshaller.cs" />
+	<Compile Include="CCC\Transform\V20170705\LaunchShortMessageAppraiseResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\DeleteSkillGroupResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ModifyPhoneNumberResponseUnmarshaller.cs" />
 	<Compile Include="CCC\Transform\V20170705\ListUnreachableContactsResponseUnmarshaller.cs" />
