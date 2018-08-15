@@ -19,9 +19,9 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180703
+namespace Aliyun.Acs.Cloudauth.Model.V20180807
 {
-	public class SubmitMaterialsResponse : AcsResponse
+	public class CompareFacesResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180703
 
 		private string message;
 
-		private SubmitMaterials_Data data;
+		private CompareFaces_Data data;
 
 		public string RequestId
 		{
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180703
 			}
 		}
 
-		public SubmitMaterials_Data Data
+		public CompareFaces_Data Data
 		{
 			get
 			{
@@ -94,66 +94,34 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180703
 			}
 		}
 
-		public class SubmitMaterials_Data
+		public class CompareFaces_Data
 		{
 
-			private SubmitMaterials_VerifyStatus verifyStatus;
+			private float? similarityScore;
 
-			public SubmitMaterials_VerifyStatus VerifyStatus
+			private string confidenceThresholds;
+
+			public float? SimilarityScore
 			{
 				get
 				{
-					return verifyStatus;
+					return similarityScore;
 				}
 				set	
 				{
-					verifyStatus = value;
+					similarityScore = value;
 				}
 			}
 
-			public class SubmitMaterials_VerifyStatus
+			public string ConfidenceThresholds
 			{
-
-				private int? statusCode;
-
-				private float? trustedScore;
-
-				private float? similarityScore;
-
-				public int? StatusCode
+				get
 				{
-					get
-					{
-						return statusCode;
-					}
-					set	
-					{
-						statusCode = value;
-					}
+					return confidenceThresholds;
 				}
-
-				public float? TrustedScore
+				set	
 				{
-					get
-					{
-						return trustedScore;
-					}
-					set	
-					{
-						trustedScore = value;
-					}
-				}
-
-				public float? SimilarityScore
-				{
-					get
-					{
-						return similarityScore;
-					}
-					set	
-					{
-						similarityScore = value;
-					}
+					confidenceThresholds = value;
 				}
 			}
 		}

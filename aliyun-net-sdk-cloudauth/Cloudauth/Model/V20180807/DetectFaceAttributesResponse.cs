@@ -19,7 +19,7 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180703
+namespace Aliyun.Acs.Cloudauth.Model.V20180807
 {
 	public class DetectFaceAttributesResponse : AcsResponse
 	{

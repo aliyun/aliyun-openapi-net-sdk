@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cloudauth.Model.V20180703;
+using Aliyun.Acs.Cloudauth.Model.V20180807;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Transform.V20180703
+namespace Aliyun.Acs.Cloudauth.Transform.V20180807
 {
     public class GetMaterialsResponseUnmarshaller
     {
@@ -39,12 +39,14 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180703
 			data.Name = context.StringValue("GetMaterials.Data.Name");
 			data.IdentificationNumber = context.StringValue("GetMaterials.Data.IdentificationNumber");
 			data.IdCardType = context.StringValue("GetMaterials.Data.IdCardType");
+			data.IdCardStartDate = context.StringValue("GetMaterials.Data.IdCardStartDate");
 			data.IdCardExpiry = context.StringValue("GetMaterials.Data.IdCardExpiry");
 			data.Address = context.StringValue("GetMaterials.Data.Address");
 			data.Sex = context.StringValue("GetMaterials.Data.Sex");
 			data.IdCardFrontPic = context.StringValue("GetMaterials.Data.IdCardFrontPic");
 			data.IdCardBackPic = context.StringValue("GetMaterials.Data.IdCardBackPic");
 			data.FacePic = context.StringValue("GetMaterials.Data.FacePic");
+			data.EthnicGroup = context.StringValue("GetMaterials.Data.EthnicGroup");
 			getMaterialsResponse.Data = data;
         
 			return getMaterialsResponse;

@@ -21,15 +21,15 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20180703;
+using Aliyun.Acs.Cloudauth.Transform.V20180807;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180703
+namespace Aliyun.Acs.Cloudauth.Model.V20180807
 {
     public class GetVerifyTokenRequest : RpcAcsRequest<GetVerifyTokenResponse>
     {
         public GetVerifyTokenRequest()
-            : base("Cloudauth", "2018-07-03", "GetVerifyToken", "cloudauth", "openAPI")
+            : base("Cloudauth", "2018-08-07", "GetVerifyToken", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180703
 		private string sourceIp;
 
 		private string binding;
+
+		private string verifyConfigs;
 
 		private string ticketId;
 
@@ -108,6 +110,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180703
 			{
 				binding = value;
 				DictionaryUtil.Add(QueryParameters, "Binding", value);
+			}
+		}
+
+		public string VerifyConfigs
+		{
+			get
+			{
+				return verifyConfigs;
+			}
+			set	
+			{
+				verifyConfigs = value;
+				DictionaryUtil.Add(QueryParameters, "VerifyConfigs", value);
 			}
 		}
 

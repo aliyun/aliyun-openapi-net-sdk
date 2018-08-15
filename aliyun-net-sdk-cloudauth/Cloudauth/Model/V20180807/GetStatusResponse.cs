@@ -19,9 +19,9 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180703
+namespace Aliyun.Acs.Cloudauth.Model.V20180807
 {
-	public class GetMaterialsResponse : AcsResponse
+	public class GetStatusResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180703
 
 		private string message;
 
-		private GetMaterials_Data data;
+		private GetStatus_Data data;
 
 		public string RequestId
 		{
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180703
 			}
 		}
 
-		public GetMaterials_Data Data
+		public GetStatus_Data Data
 		{
 			get
 			{
@@ -94,132 +94,62 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180703
 			}
 		}
 
-		public class GetMaterials_Data
+		public class GetStatus_Data
 		{
 
-			private string name;
+			private int? statusCode;
 
-			private string identificationNumber;
+			private float? trustedScore;
 
-			private string idCardType;
+			private float? similarityScore;
 
-			private string idCardExpiry;
+			private string auditConclusions;
 
-			private string address;
-
-			private string sex;
-
-			private string idCardFrontPic;
-
-			private string idCardBackPic;
-
-			private string facePic;
-
-			public string Name
+			public int? StatusCode
 			{
 				get
 				{
-					return name;
+					return statusCode;
 				}
 				set	
 				{
-					name = value;
+					statusCode = value;
 				}
 			}
 
-			public string IdentificationNumber
+			public float? TrustedScore
 			{
 				get
 				{
-					return identificationNumber;
+					return trustedScore;
 				}
 				set	
 				{
-					identificationNumber = value;
+					trustedScore = value;
 				}
 			}
 
-			public string IdCardType
+			public float? SimilarityScore
 			{
 				get
 				{
-					return idCardType;
+					return similarityScore;
 				}
 				set	
 				{
-					idCardType = value;
+					similarityScore = value;
 				}
 			}
 
-			public string IdCardExpiry
+			public string AuditConclusions
 			{
 				get
 				{
-					return idCardExpiry;
+					return auditConclusions;
 				}
 				set	
 				{
-					idCardExpiry = value;
-				}
-			}
-
-			public string Address
-			{
-				get
-				{
-					return address;
-				}
-				set	
-				{
-					address = value;
-				}
-			}
-
-			public string Sex
-			{
-				get
-				{
-					return sex;
-				}
-				set	
-				{
-					sex = value;
-				}
-			}
-
-			public string IdCardFrontPic
-			{
-				get
-				{
-					return idCardFrontPic;
-				}
-				set	
-				{
-					idCardFrontPic = value;
-				}
-			}
-
-			public string IdCardBackPic
-			{
-				get
-				{
-					return idCardBackPic;
-				}
-				set	
-				{
-					idCardBackPic = value;
-				}
-			}
-
-			public string FacePic
-			{
-				get
-				{
-					return facePic;
-				}
-				set	
-				{
-					facePic = value;
+					auditConclusions = value;
 				}
 			}
 		}

@@ -21,15 +21,15 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20180703;
+using Aliyun.Acs.Cloudauth.Transform.V20180807;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180703
+namespace Aliyun.Acs.Cloudauth.Model.V20180807
 {
     public class DetectFaceAttributesRequest : RpcAcsRequest<DetectFaceAttributesResponse>
     {
         public DetectFaceAttributesRequest()
-            : base("Cloudauth", "2018-07-03", "DetectFaceAttributes", "cloudauth", "openAPI")
+            : base("Cloudauth", "2018-08-07", "DetectFaceAttributes", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
