@@ -16,25 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.live.Model.V20161101;
-using System;
+using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.live.Transform.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class ImagePornDetectionResponseUnmarshaller
-    {
-        public static ImagePornDetectionResponse Unmarshall(UnmarshallerContext context)
-        {
-			ImagePornDetectionResponse imagePornDetectionResponse = new ImagePornDetectionResponse();
+	public class AddLiveDomainResponse : AcsResponse
+	{
 
-			imagePornDetectionResponse.HttpResponse = context.HttpResponse;
-			imagePornDetectionResponse.RequestId = context.StringValue("ImagePornDetection.RequestId");
-			imagePornDetectionResponse.Label = context.StringValue("ImagePornDetection.Label");
-			imagePornDetectionResponse.Rate = context.FloatValue("ImagePornDetection.Rate");
-        
-			return imagePornDetectionResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

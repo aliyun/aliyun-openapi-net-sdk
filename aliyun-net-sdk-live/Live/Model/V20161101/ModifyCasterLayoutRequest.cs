@@ -78,9 +78,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 				audioLayers = value;
 				for (int i = 0; i < audioLayers.Count; i++)
 				{
+					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".FixedDelayDuration", audioLayers[i].FixedDelayDuration);
 					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".VolumeRate", audioLayers[i].VolumeRate);
 					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".ValidChannel", audioLayers[i].ValidChannel);
-					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".FixedDelayDuration", audioLayers[i].FixedDelayDuration);
 				}
 			}
 		}
@@ -98,14 +98,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 				for (int i = 0; i < videoLayers.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".FillMode", videoLayers[i].FillMode);
-					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".HeightNormalized", videoLayers[i].HeightNormalized);
 					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".WidthNormalized", videoLayers[i].WidthNormalized);
+					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".FixedDelayDuration", videoLayers[i].FixedDelayDuration);
 					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".PositionRefer", videoLayers[i].PositionRefer);
 					for (int j = 0; j < videoLayers[i].PositionNormalizeds.Count; j++)
 					{
 						DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".PositionNormalized." +(j + 1), videoLayers[i].PositionNormalizeds[j]);
 					}
-					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".FixedDelayDuration", videoLayers[i].FixedDelayDuration);
+					DictionaryUtil.Add(QueryParameters,"VideoLayer." + (i + 1) + ".HeightNormalized", videoLayers[i].HeightNormalized);
 				}
 			}
 		}
@@ -182,11 +182,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class AudioLayer
 		{
 
+			private int? fixedDelayDuration;
+
 			private float? volumeRate;
 
 			private string validChannel;
 
-			private int? fixedDelayDuration;
+			public int? FixedDelayDuration
+			{
+				get
+				{
+					return fixedDelayDuration;
+				}
+				set	
+				{
+					fixedDelayDuration = value;
+				}
+			}
 
 			public float? VolumeRate
 			{
@@ -211,18 +223,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					validChannel = value;
 				}
 			}
-
-			public int? FixedDelayDuration
-			{
-				get
-				{
-					return fixedDelayDuration;
-				}
-				set	
-				{
-					fixedDelayDuration = value;
-				}
-			}
 		}
 
 		public class VideoLayer
@@ -230,15 +230,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string fillMode;
 
-			private float? heightNormalized;
-
 			private float? widthNormalized;
+
+			private int? fixedDelayDuration;
 
 			private string positionRefer;
 
 			private List<float?> positionNormalizeds;
 
-			private int? fixedDelayDuration;
+			private float? heightNormalized;
 
 			public string FillMode
 			{
@@ -252,18 +252,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public float? HeightNormalized
-			{
-				get
-				{
-					return heightNormalized;
-				}
-				set	
-				{
-					heightNormalized = value;
-				}
-			}
-
 			public float? WidthNormalized
 			{
 				get
@@ -273,6 +261,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					widthNormalized = value;
+				}
+			}
+
+			public int? FixedDelayDuration
+			{
+				get
+				{
+					return fixedDelayDuration;
+				}
+				set	
+				{
+					fixedDelayDuration = value;
 				}
 			}
 
@@ -300,15 +300,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? FixedDelayDuration
+			public float? HeightNormalized
 			{
 				get
 				{
-					return fixedDelayDuration;
+					return heightNormalized;
 				}
 				set	
 				{
-					fixedDelayDuration = value;
+					heightNormalized = value;
 				}
 			}
 		}

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{b5ce6280-9fdb-47bd-a670-8caeeb8a0878}</ProjectGuid>
+    <ProjectGuid>{0549a00c-29b9-4338-aea2-ec640459b8c7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -50,10 +50,8 @@
 	<Compile Include="Live\Model\V20161101\DeleteCasterRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveStreamTranscodeResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteCasterEpisodeGroupResponse.cs" />
-	<Compile Include="Live\Model\V20161101\ImagePornDetectionResponse.cs" />
 	<Compile Include="Live\Model\V20161101\AddLivePullStreamInfoConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeCasterStreamUrlRequest.cs" />
-	<Compile Include="Live\Model\V20161101\ImagePornDetectionRequest.cs" />
 	<Compile Include="Live\Model\V20161101\AddCasterProgramResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeCasterVideoResourcesRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveDetectNotifyConfigRequest.cs" />
@@ -66,12 +64,14 @@
 	<Compile Include="Live\Model\V20161101\AddCasterLayoutResponse.cs" />
 	<Compile Include="Live\Model\V20161101\EffectCasterUrgentRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteCasterLayoutResponse.cs" />
+	<Compile Include="Live\Model\V20161101\AddLiveDomainRequest.cs" />
 	<Compile Include="Live\Model\V20161101\RemoveMultipleStreamMixServiceResponse.cs" />
 	<Compile Include="Live\Model\V20161101\AddCasterComponentRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveDetectNotifyConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveSnapshotDetectPornConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteCasterSceneConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeCasterConfigRequest.cs" />
+	<Compile Include="Live\Model\V20161101\StopLiveDomainResponse.cs" />
 	<Compile Include="Live\Model\V20161101\AddCasterEpisodeResponse.cs" />
 	<Compile Include="Live\Model\V20161101\UpdateLiveRecordNotifyConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveSnapshotDetectPornConfigRequest.cs" />
@@ -83,17 +83,22 @@
 	<Compile Include="Live\Model\V20161101\DescribeCastersResponse.cs" />
 	<Compile Include="Live\Model\V20161101\UpdateCasterSceneConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsControlHistoryResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveCertificateListResponse.cs" />
+	<Compile Include="Live\Model\V20161101\BatchSetLiveDomainConfigsResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveRecordConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\StartCasterSceneRequest.cs" />
 	<Compile Include="Live\Model\V20161101\RealTimeRecordCommandRequest.cs" />
 	<Compile Include="Live\Model\V20161101\AddTrancodeSEIRequest.cs" />
 	<Compile Include="Live\Model\V20161101\UpdateLiveSnapshotDetectPornConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DeleteLiveSpecificConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveStreamsNotifyUrlConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveDomainConfigsRequest.cs" />
 	<Compile Include="Live\Model\V20161101\AddCasterVideoResourceRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeCasterRtcInfoRequest.cs" />
 	<Compile Include="Live\Model\V20161101\AddLiveAppRecordConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveRecordNotifyConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\UpdateLiveMixNotifyConfigRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeHlsLiveStreamRealTimeBpsDataResponse.cs" />
 	<Compile Include="Live\Model\V20161101\ResumeLiveStreamRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveMixConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveDomainRecordDataResponse.cs" />
@@ -102,6 +107,7 @@
 	<Compile Include="Live\Model\V20161101\AddLiveMixNotifyConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\StopCasterResponse.cs" />
 	<Compile Include="Live\Model\V20161101\AddLiveStreamTranscodeRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveDomainConfigsResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveSnapshotConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeCastersRequest.cs" />
 	<Compile Include="Live\Model\V20161101\UpdateLiveDetectNotifyConfigResponse.cs" />
@@ -115,8 +121,10 @@
 	<Compile Include="Live\Model\V20161101\ModifyCasterComponentResponse.cs" />
 	<Compile Include="Live\Model\V20161101\AddLiveDetectNotifyConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamRecordContentRequest.cs" />
+	<Compile Include="Live\Model\V20161101\BatchDeleteLiveDomainConfigsRequest.cs" />
 	<Compile Include="Live\Model\V20161101\CopyCasterResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLivePullStreamConfigRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveStreamCountResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveDomainTranscodeDataResponse.cs" />
 	<Compile Include="Live\Model\V20161101\UpdateLiveAppSnapshotConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\RealTimeRecordCommandResponse.cs" />
@@ -129,9 +137,13 @@
 	<Compile Include="Live\Model\V20161101\AddLiveMixConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeCasterScenesResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveRecordNotifyConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\StopLiveDomainRequest.cs" />
 	<Compile Include="Live\Model\V20161101\StartCasterResponse.cs" />
 	<Compile Include="Live\Model\V20161101\AddLiveRecordVodConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\StopCasterRequest.cs" />
+	<Compile Include="Live\Model\V20161101\StartLiveDomainResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveCertificateDetailRequest.cs" />
+	<Compile Include="Live\Model\V20161101\SetLiveDomainCertificateRequest.cs" />
 	<Compile Include="Live\Model\V20161101\AddLiveSnapshotDetectPornConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamRecordIndexFilesResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamTranscodeInfoResponse.cs" />
@@ -140,6 +152,8 @@
 	<Compile Include="Live\Model\V20161101\DeleteLiveStreamsNotifyUrlConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\ForbidLiveStreamRequest.cs" />
 	<Compile Include="Live\Model\V20161101\UpdateLiveMixNotifyConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveDomainDetailResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveStreamCountRequest.cs" />
 	<Compile Include="Live\Model\V20161101\AddCasterComponentResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveMixNotifyConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\ModifyCasterProgramResponse.cs" />
@@ -157,7 +171,10 @@
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamOnlineUserNumRequest.cs" />
 	<Compile Include="Live\Model\V20161101\AddCasterEpisodeRequest.cs" />
 	<Compile Include="Live\Model\V20161101\StartMultipleStreamMixServiceRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DeleteLiveSpecificConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\StartLiveDomainRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLivePullStreamInfoConfigRequest.cs" />
+	<Compile Include="Live\Model\V20161101\AddLiveDomainResponse.cs" />
 	<Compile Include="Live\Model\V20161101\SetCasterSceneConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\StartCasterSceneResponse.cs" />
 	<Compile Include="Live\Model\V20161101\ModifyCasterEpisodeResponse.cs" />
@@ -170,8 +187,10 @@
 	<Compile Include="Live\Model\V20161101\StopMultipleStreamMixServiceResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveRecordVodConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\CreateCasterResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DeleteLiveDomainRequest.cs" />
 	<Compile Include="Live\Model\V20161101\ModifyCasterVideoResourceRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamRecordContentResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveCertificateListRequest.cs" />
 	<Compile Include="Live\Model\V20161101\SetLiveStreamsNotifyUrlConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeCasterProgramResponse.cs" />
 	<Compile Include="Live\Model\V20161101\StopMixStreamsServiceResponse.cs" />
@@ -183,10 +202,12 @@
 	<Compile Include="Live\Model\V20161101\AddCasterEpisodeGroupResponse.cs" />
 	<Compile Include="Live\Model\V20161101\AddCasterVideoResourceResponse.cs" />
 	<Compile Include="Live\Model\V20161101\StartMixStreamsServiceResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveUserDomainsResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsPublishListResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamBitRateDataResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveRecordNotifyConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamTranscodeInfoRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeHlsLiveStreamRealTimeBpsDataRequest.cs" />
 	<Compile Include="Live\Model\V20161101\StartMultipleStreamMixServiceResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteCasterEpisodeRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeCasterStreamUrlResponse.cs" />
@@ -198,6 +219,7 @@
 	<Compile Include="Live\Model\V20161101\StartCasterRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveSnapshotDetectPornConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveDomainSnapshotDataResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DeleteLiveDomainResponse.cs" />
 	<Compile Include="Live\Model\V20161101\CreateLiveStreamRecordIndexFilesRequest.cs" />
 	<Compile Include="Live\Model\V20161101\CopyCasterSceneConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveMixNotifyConfigRequest.cs" />
@@ -207,12 +229,14 @@
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamBitRateDataRequest.cs" />
 	<Compile Include="Live\Model\V20161101\StopMultipleStreamMixServiceRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeCasterProgramRequest.cs" />
+	<Compile Include="Live\Model\V20161101\BatchDeleteLiveDomainConfigsResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLivePullStreamConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\ModifyCasterComponentRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsNotifyUrlConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLivePullStreamInfoConfigResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsPublishListRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveRecordNotifyConfigResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveCertificateDetailResponse.cs" />
 	<Compile Include="Live\Model\V20161101\UpdateLiveDetectNotifyConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveDomainSnapshotDataRequest.cs" />
 	<Compile Include="Live\Model\V20161101\SetCasterConfigResponse.cs" />
@@ -223,6 +247,7 @@
 	<Compile Include="Live\Model\V20161101\DescribeCasterScenesRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteCasterLayoutRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteCasterComponentRequest.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveDomainDetailRequest.cs" />
 	<Compile Include="Live\Model\V20161101\AddCustomLiveStreamTranscodeResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamHistoryUserNumResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamsOnlineListResponse.cs" />
@@ -230,10 +255,12 @@
 	<Compile Include="Live\Model\V20161101\DescribeLiveDomainRecordDataRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteCasterResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteCasterComponentResponse.cs" />
+	<Compile Include="Live\Model\V20161101\SetLiveDomainCertificateResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveStreamSnapshotInfoResponse.cs" />
 	<Compile Include="Live\Model\V20161101\AddCasterEpisodeGroupContentResponse.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveMixNotifyConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveRecordVodConfigsRequest.cs" />
+	<Compile Include="Live\Model\V20161101\BatchSetLiveDomainConfigsRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeCasterComponentsRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DescribeLiveMixConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteCasterProgramRequest.cs" />
@@ -252,11 +279,15 @@
 	<Compile Include="Live\Model\V20161101\AddLiveStreamTranscodeResponse.cs" />
 	<Compile Include="Live\Model\V20161101\EffectCasterUrgentResponse.cs" />
 	<Compile Include="Live\Model\V20161101\AddTrancodeSEIResponse.cs" />
+	<Compile Include="Live\Model\V20161101\DescribeLiveUserDomainsRequest.cs" />
 	<Compile Include="Live\Model\V20161101\DeleteLiveMixConfigRequest.cs" />
 	<Compile Include="Live\Model\V20161101\ModifyCasterProgramRequest.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveCertificateListResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\AddLiveMixConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamTranscodeInfoResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\AddLiveAppSnapshotConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DeleteLiveDomainResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\StopLiveDomainResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamsOnlineListResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\AddCasterEpisodeGroupContentResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\ForbidLiveStreamResponseUnmarshaller.cs" />
@@ -268,6 +299,7 @@
 	<Compile Include="Live\Transform\V20161101\DescribeLivePullStreamConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteCasterComponentResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeCasterProgramResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamCountResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteCasterEpisodeGroupResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteLiveMixConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteLiveStreamsNotifyUrlConfigResponseUnmarshaller.cs" />
@@ -280,13 +312,14 @@
 	<Compile Include="Live\Transform\V20161101\AddCasterLayoutResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteCasterLayoutResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamRecordContentResponseUnmarshaller.cs" />
-	<Compile Include="Live\Transform\V20161101\ImagePornDetectionResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamsControlHistoryResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\UpdateCasterSceneConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\SetLiveDomainCertificateResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\SetLiveStreamsNotifyUrlConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\AddLiveStreamTranscodeResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\CopyCasterResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\AddTrancodeSEIResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeHlsLiveStreamRealTimeBpsDataResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveMixConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\AddLiveRecordNotifyConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteLiveMixNotifyConfigResponseUnmarshaller.cs" />
@@ -298,6 +331,7 @@
 	<Compile Include="Live\Transform\V20161101\EffectCasterUrgentResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeCasterRtcInfoResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveDomainRecordDataResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveCertificateDetailResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\StopMultipleStreamMixServiceResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\UpdateLiveMixNotifyConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\AddLivePullStreamInfoConfigResponseUnmarshaller.cs" />
@@ -309,15 +343,18 @@
 	<Compile Include="Live\Transform\V20161101\ModifyCasterProgramResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveDetectNotifyConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\RealTimeRecordCommandResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\StartLiveDomainResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteCasterResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\UpdateLiveSnapshotDetectPornConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteLiveDetectNotifyConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\AddLiveDomainResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\ModifyCasterComponentResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeCastersResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamRecordIndexFilesResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeCasterScenesResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveSnapshotConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteLiveAppRecordConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveUserDomainsResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\AddLiveRecordVodConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteLivePullStreamInfoConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeCasterStreamUrlResponseUnmarshaller.cs" />
@@ -343,9 +380,12 @@
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamsNotifyUrlConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveSnapshotDetectPornConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveStreamBitRateDataResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\BatchDeleteLiveDomainConfigsResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveRecordNotifyConfigResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveDomainDetailResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteLiveRecordVodConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeCasterVideoResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\BatchSetLiveDomainConfigsResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\UpdateLiveAppSnapshotConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DeleteLiveRecordNotifyConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeCasterConfigResponseUnmarshaller.cs" />
@@ -360,6 +400,8 @@
 	<Compile Include="Live\Transform\V20161101\StopMixStreamsServiceResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveRecordConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\DescribeLiveRecordVodConfigsResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DescribeLiveDomainConfigsResponseUnmarshaller.cs" />
+	<Compile Include="Live\Transform\V20161101\DeleteLiveSpecificConfigResponseUnmarshaller.cs" />
 	<Compile Include="Live\Transform\V20161101\StartCasterResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>

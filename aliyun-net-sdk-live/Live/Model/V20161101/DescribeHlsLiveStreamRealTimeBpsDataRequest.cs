@@ -26,46 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class ImagePornDetectionRequest : RpcAcsRequest<ImagePornDetectionResponse>
+    public class DescribeHlsLiveStreamRealTimeBpsDataRequest : RpcAcsRequest<DescribeHlsLiveStreamRealTimeBpsDataResponse>
     {
-        public ImagePornDetectionRequest()
-            : base("live", "2016-11-01", "ImagePornDetection", "live", "openAPI")
+        public DescribeHlsLiveStreamRealTimeBpsDataRequest()
+            : base("live", "2016-11-01", "DescribeHlsLiveStreamRealTimeBpsData", "live", "openAPI")
         {
         }
 
-		private string securityToken;
-
-		private string imageUrl;
+		private string domainName;
 
 		private string action;
 
+		private string time;
+
 		private long? ownerId;
 
-		private string accessKeyId;
-
-		public string SecurityToken
+		public string DomainName
 		{
 			get
 			{
-				return securityToken;
+				return domainName;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string ImageUrl
-		{
-			get
-			{
-				return imageUrl;
-			}
-			set	
-			{
-				imageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "ImageUrl", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -82,6 +67,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string Time
+		{
+			get
+			{
+				return time;
+			}
+			set	
+			{
+				time = value;
+				DictionaryUtil.Add(QueryParameters, "Time", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -95,22 +93,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AccessKeyId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
+			return false;
 		}
 
-        public override ImagePornDetectionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeHlsLiveStreamRealTimeBpsDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ImagePornDetectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeHlsLiveStreamRealTimeBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

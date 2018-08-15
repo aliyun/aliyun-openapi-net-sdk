@@ -37,17 +37,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string template;
 
+		private int? profile;
+
 		private int? fPS;
+
+		private string gop;
 
 		private long? ownerId;
 
-		private string version;
-
-		private string accessKeyId;
-
-		private string securityToken;
-
 		private string templateType;
+
+		private int? audioBitrate;
 
 		private string domain;
 
@@ -85,6 +85,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public int? Profile
+		{
+			get
+			{
+				return profile;
+			}
+			set	
+			{
+				profile = value;
+				DictionaryUtil.Add(QueryParameters, "Profile", value.ToString());
+			}
+		}
+
 		public int? FPS
 		{
 			get
@@ -95,6 +108,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				fPS = value;
 				DictionaryUtil.Add(QueryParameters, "FPS", value.ToString());
+			}
+		}
+
+		public string Gop
+		{
+			get
+			{
+				return gop;
+			}
+			set	
+			{
+				gop = value;
+				DictionaryUtil.Add(QueryParameters, "Gop", value);
 			}
 		}
 
@@ -111,45 +137,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
 		public string TemplateType
 		{
 			get
@@ -160,6 +147,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				templateType = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateType", value);
+			}
+		}
+
+		public int? AudioBitrate
+		{
+			get
+			{
+				return audioBitrate;
+			}
+			set	
+			{
+				audioBitrate = value;
+				DictionaryUtil.Add(QueryParameters, "AudioBitrate", value.ToString());
 			}
 		}
 

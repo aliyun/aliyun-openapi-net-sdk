@@ -76,8 +76,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 				items = value;
 				for (int i = 0; i < items.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Item." + (i + 1) + ".ItemName", items[i].ItemName);
 					DictionaryUtil.Add(QueryParameters,"Item." + (i + 1) + ".VodUrl", items[i].VodUrl);
+					DictionaryUtil.Add(QueryParameters,"Item." + (i + 1) + ".ItemName", items[i].ItemName);
 				}
 			}
 		}
@@ -176,21 +176,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class Item
 		{
 
-			private string itemName;
-
 			private string vodUrl;
 
-			public string ItemName
-			{
-				get
-				{
-					return itemName;
-				}
-				set	
-				{
-					itemName = value;
-				}
-			}
+			private string itemName;
 
 			public string VodUrl
 			{
@@ -201,6 +189,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					vodUrl = value;
+				}
+			}
+
+			public string ItemName
+			{
+				get
+				{
+					return itemName;
+				}
+				set	
+				{
+					itemName = value;
 				}
 			}
 		}

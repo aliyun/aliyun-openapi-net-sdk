@@ -21,14 +21,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class ImagePornDetectionResponse : AcsResponse
+	public class DeleteLiveDomainResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string label;
-
-		private float? rate;
 
 		public string RequestId
 		{
@@ -39,30 +35,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Label
-		{
-			get
-			{
-				return label;
-			}
-			set	
-			{
-				label = value;
-			}
-		}
-
-		public float? Rate
-		{
-			get
-			{
-				return rate;
-			}
-			set	
-			{
-				rate = value;
 			}
 		}
 	}
