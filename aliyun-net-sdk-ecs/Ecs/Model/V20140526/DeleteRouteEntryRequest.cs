@@ -154,8 +154,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				nextHopLists = value;
 				for (int i = 0; i < nextHopLists.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopType", nextHopLists[i].NextHopType);
 					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopId", nextHopLists[i].NextHopId);
+					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopType", nextHopLists[i].NextHopType);
 				}
 			}
 		}
@@ -176,21 +176,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class NextHopList
 		{
 
-			private string nextHopType;
-
 			private string nextHopId;
 
-			public string NextHopType
-			{
-				get
-				{
-					return nextHopType;
-				}
-				set	
-				{
-					nextHopType = value;
-				}
-			}
+			private string nextHopType;
 
 			public string NextHopId
 			{
@@ -201,6 +189,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					nextHopId = value;
+				}
+			}
+
+			public string NextHopType
+			{
+				get
+				{
+					return nextHopType;
+				}
+				set	
+				{
+					nextHopType = value;
 				}
 			}
 		}

@@ -33,21 +33,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string tag4Value;
-
 		private long? resourceOwnerId;
 
-		private string tag2Key;
-
 		private string securityGroupId;
-
-		private string tag3Key;
 
 		private string type;
 
 		private int? pageNumber;
-
-		private string tag1Value;
 
 		private string resourceGroupId;
 
@@ -57,11 +49,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string action;
 
-		private string tag3Value;
+		private List<Tag> tags;
 
 		private string networkInterfaceName;
-
-		private string tag5Key;
 
 		private string resourceOwnerAccount;
 
@@ -69,36 +59,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private string tag5Value;
-
-		private string tag1Key;
-
 		private string vSwitchId;
 
 		private string instanceId;
 
-		private string tag2Value;
-
 		private string vpcId;
-
-		private string tag4Key;
 
 		private string primaryIpAddress;
 
 		private List<string> networkInterfaceIds;
-
-		public string Tag4Value
-		{
-			get
-			{
-				return tag4Value;
-			}
-			set	
-			{
-				tag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Value", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -113,19 +82,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag2Key
-		{
-			get
-			{
-				return tag2Key;
-			}
-			set	
-			{
-				tag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Key", value);
-			}
-		}
-
 		public string SecurityGroupId
 		{
 			get
@@ -136,19 +92,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				securityGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
-		public string Tag3Key
-		{
-			get
-			{
-				return tag3Key;
-			}
-			set	
-			{
-				tag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Key", value);
 			}
 		}
 
@@ -175,19 +118,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string Tag1Value
-		{
-			get
-			{
-				return tag1Value;
-			}
-			set	
-			{
-				tag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
 			}
 		}
 
@@ -243,16 +173,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag3Value
+		public List<Tag> Tags
 		{
 			get
 			{
-				return tag3Value;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				tag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Value", value);
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+				}
 			}
 		}
 
@@ -266,19 +201,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				networkInterfaceName = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkInterfaceName", value);
-			}
-		}
-
-		public string Tag5Key
-		{
-			get
-			{
-				return tag5Key;
-			}
-			set	
-			{
-				tag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Key", value);
 			}
 		}
 
@@ -321,32 +243,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag5Value
-		{
-			get
-			{
-				return tag5Value;
-			}
-			set	
-			{
-				tag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Value", value);
-			}
-		}
-
-		public string Tag1Key
-		{
-			get
-			{
-				return tag1Key;
-			}
-			set	
-			{
-				tag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
-			}
-		}
-
 		public string VSwitchId
 		{
 			get
@@ -373,19 +269,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag2Value
-		{
-			get
-			{
-				return tag2Value;
-			}
-			set	
-			{
-				tag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Value", value);
-			}
-		}
-
 		public string VpcId
 		{
 			get
@@ -396,19 +279,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
-		public string Tag4Key
-		{
-			get
-			{
-				return tag4Key;
-			}
-			set	
-			{
-				tag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Key", value);
 			}
 		}
 
@@ -438,6 +308,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				for (int i = 0; i < networkInterfaceIds.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"NetworkInterfaceId." + (i + 1) , networkInterfaceIds[i]);
+				}
+			}
+		}
+
+		public class Tag
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
 				}
 			}
 		}

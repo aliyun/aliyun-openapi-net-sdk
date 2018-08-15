@@ -33,29 +33,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string templateTag1Value;
-
 		private List<string> launchTemplateNames;
 
 		private long? resourceOwnerId;
 
-		private string templateTag4Key;
-
 		private int? pageNumber;
 
-		private string templateTag3Key;
-
 		private string regionId;
-
-		private string templateTag5Value;
 
 		private int? pageSize;
 
 		private string action;
 
-		private string templateTag3Value;
-
-		private string templateTag2Key;
+		private List<TemplateTag> templateTags;
 
 		private List<string> launchTemplateIds;
 
@@ -65,28 +55,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string templateResourceGroupId;
 
-		private string templateTag2Value;
-
 		private long? ownerId;
-
-		private string templateTag4Value;
-
-		private string templateTag5Key;
-
-		private string templateTag1Key;
-
-		public string TemplateTag1Value
-		{
-			get
-			{
-				return templateTag1Value;
-			}
-			set	
-			{
-				templateTag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.1.Value", value);
-			}
-		}
 
 		public List<string> LaunchTemplateNames
 		{
@@ -118,19 +87,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TemplateTag4Key
-		{
-			get
-			{
-				return templateTag4Key;
-			}
-			set	
-			{
-				templateTag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.4.Key", value);
-			}
-		}
-
 		public int? PageNumber
 		{
 			get
@@ -144,19 +100,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TemplateTag3Key
-		{
-			get
-			{
-				return templateTag3Key;
-			}
-			set	
-			{
-				templateTag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.3.Key", value);
-			}
-		}
-
 		public string RegionId
 		{
 			get
@@ -167,19 +110,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				regionId = value;
 				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string TemplateTag5Value
-		{
-			get
-			{
-				return templateTag5Value;
-			}
-			set	
-			{
-				templateTag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.5.Value", value);
 			}
 		}
 
@@ -209,29 +139,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TemplateTag3Value
+		public List<TemplateTag> TemplateTags
 		{
 			get
 			{
-				return templateTag3Value;
+				return templateTags;
 			}
-			set	
-			{
-				templateTag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.3.Value", value);
-			}
-		}
 
-		public string TemplateTag2Key
-		{
-			get
+			set
 			{
-				return templateTag2Key;
-			}
-			set	
-			{
-				templateTag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.2.Key", value);
+				templateTags = value;
+				for (int i = 0; i < templateTags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Key", templateTags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Value", templateTags[i].Value);
+				}
 			}
 		}
 
@@ -291,19 +213,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TemplateTag2Value
-		{
-			get
-			{
-				return templateTag2Value;
-			}
-			set	
-			{
-				templateTag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.2.Value", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -317,42 +226,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TemplateTag4Value
+		public class TemplateTag
 		{
-			get
-			{
-				return templateTag4Value;
-			}
-			set	
-			{
-				templateTag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.4.Value", value);
-			}
-		}
 
-		public string TemplateTag5Key
-		{
-			get
-			{
-				return templateTag5Key;
-			}
-			set	
-			{
-				templateTag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.5.Key", value);
-			}
-		}
+			private string key;
 
-		public string TemplateTag1Key
-		{
-			get
+			private string value_;
+
+			public string Key
 			{
-				return templateTag1Key;
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
-			set	
+
+			public string Value
 			{
-				templateTag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.1.Key", value);
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 

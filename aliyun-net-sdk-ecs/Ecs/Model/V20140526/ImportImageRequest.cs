@@ -69,12 +69,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				diskDeviceMappings = value;
 				for (int i = 0; i < diskDeviceMappings.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".Format", diskDeviceMappings[i].Format);
 					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".OSSBucket", diskDeviceMappings[i].OSSBucket);
-					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".OSSObject", diskDeviceMappings[i].OSSObject);
 					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".DiskImSize", diskDeviceMappings[i].DiskImSize);
-					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".DiskImageSize", diskDeviceMappings[i].DiskImageSize);
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".Format", diskDeviceMappings[i].Format);
 					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".Device", diskDeviceMappings[i].Device);
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".OSSObject", diskDeviceMappings[i].OSSObject);
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".DiskImageSize", diskDeviceMappings[i].DiskImageSize);
 				}
 			}
 		}
@@ -225,29 +225,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DiskDeviceMapping
 		{
 
-			private string format;
-
 			private string oSSBucket;
-
-			private string oSSObject;
 
 			private int? diskImSize;
 
-			private int? diskImageSize;
+			private string format;
 
 			private string device;
 
-			public string Format
-			{
-				get
-				{
-					return format;
-				}
-				set	
-				{
-					format = value;
-				}
-			}
+			private string oSSObject;
+
+			private int? diskImageSize;
 
 			public string OSSBucket
 			{
@@ -258,18 +246,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					oSSBucket = value;
-				}
-			}
-
-			public string OSSObject
-			{
-				get
-				{
-					return oSSObject;
-				}
-				set	
-				{
-					oSSObject = value;
 				}
 			}
 
@@ -285,15 +261,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? DiskImageSize
+			public string Format
 			{
 				get
 				{
-					return diskImageSize;
+					return format;
 				}
 				set	
 				{
-					diskImageSize = value;
+					format = value;
 				}
 			}
 
@@ -306,6 +282,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					device = value;
+				}
+			}
+
+			public string OSSObject
+			{
+				get
+				{
+					return oSSObject;
+				}
+				set	
+				{
+					oSSObject = value;
+				}
+			}
+
+			public int? DiskImageSize
+			{
+				get
+				{
+					return diskImageSize;
+				}
+				set	
+				{
+					diskImageSize = value;
 				}
 			}
 		}

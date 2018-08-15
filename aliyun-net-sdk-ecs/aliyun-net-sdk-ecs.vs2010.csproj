@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{50536193-02c9-484d-a580-f7ed1e3f7060}</ProjectGuid>
+    <ProjectGuid>{9e985699-85b2-4e69-a635-2ee8be980439}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -82,6 +82,7 @@
 	<Compile Include="Ecs\Model\V20140526\DeleteHaVipResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CancelPhysicalConnectionRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceAttributeRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeAccountAttributesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeVpcsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeRenewalPriceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyHpcClusterAttributeResponse.cs" />
@@ -233,6 +234,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeImageSupportInstanceTypesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeRouteTablesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeletePhysicalConnectionResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeEniMonitorDataResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\EipNotifyPaidResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\AttachKeyPairRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeCloudAssistantStatusRequest.cs" />
@@ -256,6 +258,7 @@
 	<Compile Include="Ecs\Model\V20140526\CheckAutoSnapshotPolicyRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeIntranetAttributeKbResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeRenewalPriceRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeAccountAttributesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeEipAddressesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteImageRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateForwardEntryRequest.cs" />
@@ -275,6 +278,7 @@
 	<Compile Include="Ecs\Model\V20140526\TerminatePhysicalConnectionResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteVirtualBorderRouterResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateVpcRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeEniMonitorDataRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteInstanceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyVSwitchAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceTypesRequest.cs" />
@@ -565,6 +569,7 @@
 	<Compile Include="Ecs\Transform\V20140526\CreateKeyPairResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeDeploymentSetsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateLaunchTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeAccountAttributesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ValidateSecurityGroupResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeNetworkInterfacesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ResizeDiskResponseUnmarshaller.cs" />
@@ -609,6 +614,7 @@
 	<Compile Include="Ecs\Transform\V20140526\CreateImageResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteBandwidthPackageResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeClassicLinkInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeEniMonitorDataResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyAutoSnapshotPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteRecycleBinResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\JoinSecurityGroupResponseUnmarshaller.cs" />

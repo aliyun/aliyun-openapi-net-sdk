@@ -74,8 +74,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				filters = value;
 				for (int i = 0; i < filters.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
 					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value", filters[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
 				}
 			}
 		}
@@ -161,21 +161,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class Filter
 		{
 
-			private string key;
-
 			private string value_;
 
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
+			private string key;
 
 			public string Value
 			{
@@ -186,6 +174,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

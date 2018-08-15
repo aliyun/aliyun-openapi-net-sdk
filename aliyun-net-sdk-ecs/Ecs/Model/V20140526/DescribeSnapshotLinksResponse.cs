@@ -107,6 +107,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string sourceDiskId;
 
+			private string sourceDiskName;
+
 			private int? sourceDiskSize;
 
 			private string sourceDiskType;
@@ -172,6 +174,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					sourceDiskId = value;
+				}
+			}
+
+			public string SourceDiskName
+			{
+				get
+				{
+					return sourceDiskName;
+				}
+				set	
+				{
+					sourceDiskName = value;
 				}
 			}
 

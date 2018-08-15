@@ -33,13 +33,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string tag4Value;
-
 		private string innerIpAddresses;
 
 		private long? resourceOwnerId;
 
-		private string tag2Key;
+		private string imageId;
 
 		private string privateIpAddresses;
 
@@ -47,11 +45,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string filter2Value;
 
-		private string tag3Key;
+		private string filter4Value;
+
+		private bool? ioOptimized;
+
+		private string securityGroupId;
 
 		private string keyPairName;
 
-		private string tag1Value;
+		private string filter4Key;
+
+		private int? pageNumber;
 
 		private string resourceGroupId;
 
@@ -59,61 +63,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string filter1Key;
 
-		private bool? deviceAvailable;
-
-		private string action;
-
-		private string filter3Value;
-
-		private bool? dryRun;
-
-		private string tag5Key;
-
-		private string filter1Value;
-
-		private long? ownerId;
-
-		private string vSwitchId;
-
-		private string instanceName;
-
-		private string instanceIds;
-
-		private string internetChargeType;
-
-		private string zoneId;
-
-		private string tag4Key;
-
-		private string instanceNetworkType;
-
-		private string status;
-
-		private string imageId;
-
-		private string filter4Value;
-
-		private bool? ioOptimized;
-
-		private string securityGroupId;
-
-		private string filter4Key;
-
-		private int? pageNumber;
-
 		private string regionId;
 
 		private string rdmaIpAddresses;
 
+		private bool? deviceAvailable;
+
 		private int? pageSize;
+
+		private string action;
 
 		private string publicIpAddresses;
 
 		private string instanceType;
 
+		private List<Tag> tags;
+
 		private string instanceChargeType;
 
-		private string tag3Value;
+		private string filter3Value;
+
+		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
@@ -121,32 +91,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceTypeFamily;
 
+		private string filter1Value;
+
 		private string filter2Key;
 
-		private string tag5Value;
+		private long? ownerId;
 
-		private string tag1Key;
+		private string vSwitchId;
 
 		private string eipAddresses;
 
+		private string instanceName;
+
+		private string instanceIds;
+
+		private string internetChargeType;
+
 		private string vpcId;
 
-		private string tag2Value;
+		private string zoneId;
 
 		private string filter3Key;
 
-		public string Tag4Value
-		{
-			get
-			{
-				return tag4Value;
-			}
-			set	
-			{
-				tag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Value", value);
-			}
-		}
+		private string instanceNetworkType;
+
+		private string status;
 
 		public string InnerIpAddresses
 		{
@@ -174,16 +143,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag2Key
+		public string ImageId
 		{
 			get
 			{
-				return tag2Key;
+				return imageId;
 			}
 			set	
 			{
-				tag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Key", value);
+				imageId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageId", value);
 			}
 		}
 
@@ -226,16 +195,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag3Key
+		public string Filter4Value
 		{
 			get
 			{
-				return tag3Key;
+				return filter4Value;
 			}
 			set	
 			{
-				tag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Key", value);
+				filter4Value = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.4.Value", value);
+			}
+		}
+
+		public bool? IoOptimized
+		{
+			get
+			{
+				return ioOptimized;
+			}
+			set	
+			{
+				ioOptimized = value;
+				DictionaryUtil.Add(QueryParameters, "IoOptimized", value.ToString());
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
 			}
 		}
 
@@ -252,16 +247,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag1Value
+		public string Filter4Key
 		{
 			get
 			{
-				return tag1Value;
+				return filter4Key;
 			}
 			set	
 			{
-				tag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
+				filter4Key = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.4.Key", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -304,279 +312,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? DeviceAvailable
-		{
-			get
-			{
-				return deviceAvailable;
-			}
-			set	
-			{
-				deviceAvailable = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceAvailable", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string Filter3Value
-		{
-			get
-			{
-				return filter3Value;
-			}
-			set	
-			{
-				filter3Value = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.3.Value", value);
-			}
-		}
-
-		public bool? DryRun
-		{
-			get
-			{
-				return dryRun;
-			}
-			set	
-			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
-			}
-		}
-
-		public string Tag5Key
-		{
-			get
-			{
-				return tag5Key;
-			}
-			set	
-			{
-				tag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Key", value);
-			}
-		}
-
-		public string Filter1Value
-		{
-			get
-			{
-				return filter1Value;
-			}
-			set	
-			{
-				filter1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.1.Value", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
-		public string InstanceName
-		{
-			get
-			{
-				return instanceName;
-			}
-			set	
-			{
-				instanceName = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
-			}
-		}
-
-		public string InstanceIds
-		{
-			get
-			{
-				return instanceIds;
-			}
-			set	
-			{
-				instanceIds = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
-			}
-		}
-
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string Tag4Key
-		{
-			get
-			{
-				return tag4Key;
-			}
-			set	
-			{
-				tag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Key", value);
-			}
-		}
-
-		public string InstanceNetworkType
-		{
-			get
-			{
-				return instanceNetworkType;
-			}
-			set	
-			{
-				instanceNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
-
-		public string Filter4Value
-		{
-			get
-			{
-				return filter4Value;
-			}
-			set	
-			{
-				filter4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.4.Value", value);
-			}
-		}
-
-		public bool? IoOptimized
-		{
-			get
-			{
-				return ioOptimized;
-			}
-			set	
-			{
-				ioOptimized = value;
-				DictionaryUtil.Add(QueryParameters, "IoOptimized", value.ToString());
-			}
-		}
-
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
-		public string Filter4Key
-		{
-			get
-			{
-				return filter4Key;
-			}
-			set	
-			{
-				filter4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.4.Key", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string RegionId
 		{
 			get
@@ -603,6 +338,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public bool? DeviceAvailable
+		{
+			get
+			{
+				return deviceAvailable;
+			}
+			set	
+			{
+				deviceAvailable = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceAvailable", value.ToString());
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -613,6 +361,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -642,6 +403,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
 		public string InstanceChargeType
 		{
 			get
@@ -655,16 +434,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag3Value
+		public string Filter3Value
 		{
 			get
 			{
-				return tag3Value;
+				return filter3Value;
 			}
 			set	
 			{
-				tag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Value", value);
+				filter3Value = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.3.Value", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -707,6 +499,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Filter1Value
+		{
+			get
+			{
+				return filter1Value;
+			}
+			set	
+			{
+				filter1Value = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.1.Value", value);
+			}
+		}
+
 		public string Filter2Key
 		{
 			get
@@ -720,29 +525,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag5Value
+		public long? OwnerId
 		{
 			get
 			{
-				return tag5Value;
+				return ownerId;
 			}
 			set	
 			{
-				tag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Value", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string Tag1Key
+		public string VSwitchId
 		{
 			get
 			{
-				return tag1Key;
+				return vSwitchId;
 			}
 			set	
 			{
-				tag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
@@ -759,6 +564,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string InstanceName
+		{
+			get
+			{
+				return instanceName;
+			}
+			set	
+			{
+				instanceName = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
+			}
+		}
+
+		public string InstanceIds
+		{
+			get
+			{
+				return instanceIds;
+			}
+			set	
+			{
+				instanceIds = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
+			}
+		}
+
+		public string InternetChargeType
+		{
+			get
+			{
+				return internetChargeType;
+			}
+			set	
+			{
+				internetChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
+			}
+		}
+
 		public string VpcId
 		{
 			get
@@ -772,16 +616,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag2Value
+		public string ZoneId
 		{
 			get
 			{
-				return tag2Value;
+				return zoneId;
 			}
 			set	
 			{
-				tag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Value", value);
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
@@ -795,6 +639,64 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				filter3Key = value;
 				DictionaryUtil.Add(QueryParameters, "Filter.3.Key", value);
+			}
+		}
+
+		public string InstanceNetworkType
+		{
+			get
+			{
+				return instanceNetworkType;
+			}
+			set	
+			{
+				instanceNetworkType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

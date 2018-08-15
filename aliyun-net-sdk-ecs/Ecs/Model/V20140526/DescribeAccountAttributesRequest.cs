@@ -26,28 +26,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class RemoveTagsRequest : RpcAcsRequest<RemoveTagsResponse>
+    public class DescribeAccountAttributesRequest : RpcAcsRequest<DescribeAccountAttributesResponse>
     {
-        public RemoveTagsRequest()
-            : base("Ecs", "2014-05-26", "RemoveTags", "ecs", "openAPI")
+        public DescribeAccountAttributesRequest()
+            : base("Ecs", "2014-05-26", "DescribeAccountAttributes", "ecs", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceId;
-
-		private string resourceOwnerAccount;
+		private List<string> attributeNames;
 
 		private string regionId;
 
 		private string action;
 
-		private List<Tag> tags;
+		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string resourceType;
+		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -62,29 +60,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceId
+		public List<string> AttributeNames
 		{
 			get
 			{
-				return resourceId;
+				return attributeNames;
 			}
-			set	
-			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
 
-		public string ResourceOwnerAccount
-		{
-			get
+			set
 			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				attributeNames = value;
+				for (int i = 0; i < attributeNames.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"AttributeName." + (i + 1) , attributeNames[i]);
+				}
 			}
 		}
 
@@ -114,21 +103,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Tag> Tags
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return tags;
+				return resourceOwnerAccount;
 			}
-
-			set
+			set	
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -145,54 +129,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceType
+		public string ZoneId
 		{
 			get
 			{
-				return resourceType;
+				return zoneId;
 			}
 			set	
 			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
-		public class Tag
-		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-		}
-
-        public override RemoveTagsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeAccountAttributesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return RemoveTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAccountAttributesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

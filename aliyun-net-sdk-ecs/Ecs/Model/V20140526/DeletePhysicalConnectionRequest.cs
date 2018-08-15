@@ -47,8 +47,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string action;
 
-		private string userCidr;
-
 		private long? ownerId;
 
 		public long? ResourceOwnerId
@@ -139,19 +137,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string UserCidr
-		{
-			get
-			{
-				return userCidr;
-			}
-			set	
-			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
 			}
 		}
 

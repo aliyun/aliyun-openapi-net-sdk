@@ -39,9 +39,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceOwnerAccount;
 
+		private string regionId;
+
 		private string vpcId;
 
 		private string ownerAccount;
+
+		private string cidrBlock;
 
 		private string action;
 
@@ -90,6 +94,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string VpcId
 		{
 			get
@@ -113,6 +130,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string CidrBlock
+		{
+			get
+			{
+				return cidrBlock;
+			}
+			set	
+			{
+				cidrBlock = value;
+				DictionaryUtil.Add(QueryParameters, "CidrBlock", value);
 			}
 		}
 

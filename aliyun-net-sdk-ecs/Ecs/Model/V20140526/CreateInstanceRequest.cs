@@ -33,23 +33,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string tag4Value;
-
 		private long? resourceOwnerId;
 
-		private string tag2Key;
-
 		private string hpcClusterId;
-
-		private string tag3Key;
 
 		private string securityEnhancementStrategy;
 
 		private string keyPairName;
 
 		private float? spotPriceLimit;
-
-		private string tag1Value;
 
 		private string resourceGroupId;
 
@@ -59,6 +51,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string action;
 
+		private List<Tag> tags;
+
 		private int? autoRenewPeriod;
 
 		private string nodeControllerId;
@@ -66,8 +60,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private int? period;
 
 		private bool? dryRun;
-
-		private string tag5Key;
 
 		private long? ownerId;
 
@@ -86,8 +78,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string internetChargeType;
 
 		private string zoneId;
-
-		private string tag4Key;
 
 		private int? internetMaxBandwidthIn;
 
@@ -121,8 +111,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceChargeType;
 
-		private string tag3Value;
-
 		private string deploymentSetId;
 
 		private string innerIpAddress;
@@ -141,28 +129,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<DataDisk> dataDisks;
 
-		private string tag5Value;
-
-		private string tag1Key;
-
 		private int? systemDiskSize;
 
-		private string tag2Value;
-
 		private string systemDiskDescription;
-
-		public string Tag4Value
-		{
-			get
-			{
-				return tag4Value;
-			}
-			set	
-			{
-				tag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Value", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -177,19 +146,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag2Key
-		{
-			get
-			{
-				return tag2Key;
-			}
-			set	
-			{
-				tag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Key", value);
-			}
-		}
-
 		public string HpcClusterId
 		{
 			get
@@ -200,19 +156,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				hpcClusterId = value;
 				DictionaryUtil.Add(QueryParameters, "HpcClusterId", value);
-			}
-		}
-
-		public string Tag3Key
-		{
-			get
-			{
-				return tag3Key;
-			}
-			set	
-			{
-				tag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Key", value);
 			}
 		}
 
@@ -252,19 +195,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				spotPriceLimit = value;
 				DictionaryUtil.Add(QueryParameters, "SpotPriceLimit", value.ToString());
-			}
-		}
-
-		public string Tag1Value
-		{
-			get
-			{
-				return tag1Value;
-			}
-			set	
-			{
-				tag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
 			}
 		}
 
@@ -320,6 +250,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
 		public int? AutoRenewPeriod
 		{
 			get
@@ -369,19 +317,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dryRun = value;
 				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
-			}
-		}
-
-		public string Tag5Key
-		{
-			get
-			{
-				return tag5Key;
-			}
-			set	
-			{
-				tag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Key", value);
 			}
 		}
 
@@ -499,19 +434,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string Tag4Key
-		{
-			get
-			{
-				return tag4Key;
-			}
-			set	
-			{
-				tag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Key", value);
 			}
 		}
 
@@ -723,19 +645,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag3Value
-		{
-			get
-			{
-				return tag3Value;
-			}
-			set	
-			{
-				tag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Value", value);
-			}
-		}
-
 		public string DeploymentSetId
 		{
 			get
@@ -852,41 +761,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				dataDisks = value;
 				for (int i = 0; i < dataDisks.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".SnapshotId", dataDisks[i].SnapshotId);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DiskName", dataDisks[i].DiskName);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".SnapshotId", dataDisks[i].SnapshotId);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Encrypted", dataDisks[i].Encrypted);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Encrypted", dataDisks[i].Encrypted);
 				}
-			}
-		}
-
-		public string Tag5Value
-		{
-			get
-			{
-				return tag5Value;
-			}
-			set	
-			{
-				tag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Value", value);
-			}
-		}
-
-		public string Tag1Key
-		{
-			get
-			{
-				return tag1Key;
-			}
-			set	
-			{
-				tag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
 			}
 		}
 
@@ -903,19 +786,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag2Value
-		{
-			get
-			{
-				return tag2Value;
-			}
-			set	
-			{
-				tag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Value", value);
-			}
-		}
-
 		public string SystemDiskDescription
 		{
 			get
@@ -929,34 +799,66 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+		}
+
 		public class DataDisk
 		{
 
-			private int? size;
+			private string diskName;
 
 			private string snapshotId;
 
-			private string category;
+			private int? size;
 
-			private string diskName;
+			private bool? encrypted;
 
 			private string description;
+
+			private string category;
 
 			private string device;
 
 			private bool? deleteWithInstance;
 
-			private bool? encrypted;
-
-			public int? Size
+			public string DiskName
 			{
 				get
 				{
-					return size;
+					return diskName;
 				}
 				set	
 				{
-					size = value;
+					diskName = value;
 				}
 			}
 
@@ -972,27 +874,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Category
+			public int? Size
 			{
 				get
 				{
-					return category;
+					return size;
 				}
 				set	
 				{
-					category = value;
+					size = value;
 				}
 			}
 
-			public string DiskName
+			public bool? Encrypted
 			{
 				get
 				{
-					return diskName;
+					return encrypted;
 				}
 				set	
 				{
-					diskName = value;
+					encrypted = value;
 				}
 			}
 
@@ -1005,6 +907,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
 				}
 			}
 
@@ -1029,18 +943,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					deleteWithInstance = value;
-				}
-			}
-
-			public bool? Encrypted
-			{
-				get
-				{
-					return encrypted;
-				}
-				set	
-				{
-					encrypted = value;
 				}
 			}
 		}

@@ -26,41 +26,34 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class CreateKeyPairRequest : RpcAcsRequest<CreateKeyPairResponse>
+    public class DescribeEniMonitorDataRequest : RpcAcsRequest<DescribeEniMonitorDataResponse>
     {
-        public CreateKeyPairRequest()
-            : base("Ecs", "2014-05-26", "CreateKeyPair", "ecs", "openAPI")
+        public DescribeEniMonitorDataRequest()
+            : base("Ecs", "2014-05-26", "DescribeEniMonitorData", "ecs", "openAPI")
         {
         }
 
-		private string resourceGroupId;
-
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string startTime;
 
 		private string regionId;
 
 		private string action;
 
-		private string keyPairName;
+		private int? period;
 
-		private List<Tag> tags;
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string endTime;
 
 		private long? ownerId;
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
+		private string instanceId;
+
+		private string eniId;
 
 		public long? ResourceOwnerId
 		{
@@ -75,16 +68,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string StartTime
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return startTime;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -114,34 +107,55 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string KeyPairName
+		public int? Period
 		{
 			get
 			{
-				return keyPairName;
+				return period;
 			}
 			set	
 			{
-				keyPairName = value;
-				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
 			}
 		}
 
-		public List<Tag> Tags
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return tags;
+				return resourceOwnerAccount;
 			}
-
-			set
+			set	
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -158,41 +172,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Tag
+		public string InstanceId
 		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
+			get
 			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
+				return instanceId;
 			}
-
-			public string Key
+			set	
 			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-        public override CreateKeyPairResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string EniId
+		{
+			get
+			{
+				return eniId;
+			}
+			set	
+			{
+				eniId = value;
+				DictionaryUtil.Add(QueryParameters, "EniId", value);
+			}
+		}
+
+        public override DescribeEniMonitorDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateKeyPairResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeEniMonitorDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

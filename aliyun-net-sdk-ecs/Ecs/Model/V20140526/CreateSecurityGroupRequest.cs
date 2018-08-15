@@ -33,58 +33,40 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string tag4Value;
+		private string resourceGroupId;
 
 		private long? resourceOwnerId;
 
-		private string tag2Key;
-
-		private string tag5Key;
-
 		private string resourceOwnerAccount;
+
+		private string regionId;
 
 		private string clientToken;
 
+		private string vpcId;
+
 		private string ownerAccount;
+
+		private string action;
 
 		private string description;
 
-		private string tag3Key;
+		private List<Tag> tags;
 
 		private long? ownerId;
 
 		private string securityGroupName;
 
-		private string tag5Value;
-
-		private string tag1Key;
-
-		private string tag1Value;
-
-		private string resourceGroupId;
-
-		private string regionId;
-
-		private string vpcId;
-
-		private string tag2Value;
-
-		private string action;
-
-		private string tag4Key;
-
-		private string tag3Value;
-
-		public string Tag4Value
+		public string ResourceGroupId
 		{
 			get
 			{
-				return tag4Value;
+				return resourceGroupId;
 			}
 			set	
 			{
-				tag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Value", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -101,32 +83,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag2Key
-		{
-			get
-			{
-				return tag2Key;
-			}
-			set	
-			{
-				tag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Key", value);
-			}
-		}
-
-		public string Tag5Key
-		{
-			get
-			{
-				return tag5Key;
-			}
-			set	
-			{
-				tag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Key", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -137,6 +93,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -153,6 +122,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -163,6 +145,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -179,16 +174,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag3Key
+		public List<Tag> Tags
 		{
 			get
 			{
-				return tag3Key;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				tag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Key", value);
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 
@@ -218,133 +218,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag5Value
+		public class Tag
 		{
-			get
-			{
-				return tag5Value;
-			}
-			set	
-			{
-				tag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Value", value);
-			}
-		}
 
-		public string Tag1Key
-		{
-			get
-			{
-				return tag1Key;
-			}
-			set	
-			{
-				tag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
-			}
-		}
+			private string value_;
 
-		public string Tag1Value
-		{
-			get
-			{
-				return tag1Value;
-			}
-			set	
-			{
-				tag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
-			}
-		}
+			private string key;
 
-		public string ResourceGroupId
-		{
-			get
+			public string Value
 			{
-				return resourceGroupId;
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
 
-		public string RegionId
-		{
-			get
+			public string Key
 			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
-		public string Tag2Value
-		{
-			get
-			{
-				return tag2Value;
-			}
-			set	
-			{
-				tag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Value", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string Tag4Key
-		{
-			get
-			{
-				return tag4Key;
-			}
-			set	
-			{
-				tag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Key", value);
-			}
-		}
-
-		public string Tag3Value
-		{
-			get
-			{
-				return tag3Value;
-			}
-			set	
-			{
-				tag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Value", value);
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

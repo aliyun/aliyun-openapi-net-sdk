@@ -33,72 +33,41 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string tag4Value;
-
 		private long? resourceOwnerId;
-
-		private string tag2Key;
-
-		private bool? fuzzyQuery;
-
-		private string securityGroupId;
-
-		private string tag3Key;
-
-		private bool? isQueryEcsCount;
-
-		private string networkType;
-
-		private string securityGroupName;
-
-		private int? pageNumber;
-
-		private string tag1Value;
-
-		private string resourceGroupId;
-
-		private string regionId;
-
-		private int? pageSize;
-
-		private string action;
-
-		private string tag3Value;
 
 		private bool? dryRun;
 
-		private string tag5Key;
+		private bool? fuzzyQuery;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private string securityGroupId;
+
+		private bool? isQueryEcsCount;
+
+		private string networkType;
+
 		private long? ownerId;
 
 		private string securityGroupIds;
 
-		private string tag5Value;
+		private string securityGroupName;
 
-		private string tag1Key;
+		private int? pageNumber;
+
+		private string resourceGroupId;
+
+		private string regionId;
 
 		private string vpcId;
 
-		private string tag2Value;
+		private int? pageSize;
 
-		private string tag4Key;
+		private string action;
 
-		public string Tag4Value
-		{
-			get
-			{
-				return tag4Value;
-			}
-			set	
-			{
-				tag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Value", value);
-			}
-		}
+		private List<Tag> tags;
 
 		public long? ResourceOwnerId
 		{
@@ -110,188 +79,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Tag2Key
-		{
-			get
-			{
-				return tag2Key;
-			}
-			set	
-			{
-				tag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Key", value);
-			}
-		}
-
-		public bool? FuzzyQuery
-		{
-			get
-			{
-				return fuzzyQuery;
-			}
-			set	
-			{
-				fuzzyQuery = value;
-				DictionaryUtil.Add(QueryParameters, "FuzzyQuery", value.ToString());
-			}
-		}
-
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
-		public string Tag3Key
-		{
-			get
-			{
-				return tag3Key;
-			}
-			set	
-			{
-				tag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Key", value);
-			}
-		}
-
-		public bool? IsQueryEcsCount
-		{
-			get
-			{
-				return isQueryEcsCount;
-			}
-			set	
-			{
-				isQueryEcsCount = value;
-				DictionaryUtil.Add(QueryParameters, "IsQueryEcsCount", value.ToString());
-			}
-		}
-
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
-		public string SecurityGroupName
-		{
-			get
-			{
-				return securityGroupName;
-			}
-			set	
-			{
-				securityGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupName", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string Tag1Value
-		{
-			get
-			{
-				return tag1Value;
-			}
-			set	
-			{
-				tag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string Tag3Value
-		{
-			get
-			{
-				return tag3Value;
-			}
-			set	
-			{
-				tag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Value", value);
 			}
 		}
 
@@ -308,16 +95,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag5Key
+		public bool? FuzzyQuery
 		{
 			get
 			{
-				return tag5Key;
+				return fuzzyQuery;
 			}
 			set	
 			{
-				tag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Key", value);
+				fuzzyQuery = value;
+				DictionaryUtil.Add(QueryParameters, "FuzzyQuery", value.ToString());
 			}
 		}
 
@@ -347,6 +134,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
+		public bool? IsQueryEcsCount
+		{
+			get
+			{
+				return isQueryEcsCount;
+			}
+			set	
+			{
+				isQueryEcsCount = value;
+				DictionaryUtil.Add(QueryParameters, "IsQueryEcsCount", value.ToString());
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -373,29 +199,55 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag5Value
+		public string SecurityGroupName
 		{
 			get
 			{
-				return tag5Value;
+				return securityGroupName;
 			}
 			set	
 			{
-				tag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Value", value);
+				securityGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupName", value);
 			}
 		}
 
-		public string Tag1Key
+		public int? PageNumber
 		{
 			get
 			{
-				return tag1Key;
+				return pageNumber;
 			}
 			set	
 			{
-				tag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -412,29 +264,79 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag2Value
+		public int? PageSize
 		{
 			get
 			{
-				return tag2Value;
+				return pageSize;
 			}
 			set	
 			{
-				tag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Value", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string Tag4Key
+		public string Action
 		{
 			get
 			{
-				return tag4Key;
+				return action;
 			}
 			set	
 			{
-				tag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Key", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

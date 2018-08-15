@@ -37,8 +37,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string templateTag4Key;
-
 		private string securityEnhancementStrategy;
 
 		private string networkType;
@@ -51,23 +49,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceGroupId;
 
-		private string templateTag3Key;
-
 		private string hostName;
 
 		private int? systemDiskIops;
 
 		private string action;
 
-		private string templateTag3Value;
+		private List<TemplateTag> templateTags;
 
 		private List<Tag> tags;
 
 		private int? period;
 
 		private string templateResourceGroupId;
-
-		private string templateTag2Value;
 
 		private long? ownerId;
 
@@ -79,15 +73,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string internetChargeType;
 
-		private string templateTag5Key;
-
 		private string zoneId;
 
 		private int? internetMaxBandwidthIn;
 
 		private string versionDescription;
-
-		private string templateTag1Value;
 
 		private string imageId;
 
@@ -105,8 +95,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string regionId;
 
-		private string templateTag5Value;
-
 		private string instanceType;
 
 		private string instanceChargeType;
@@ -114,8 +102,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private bool? enableVmOsConfig;
 
 		private List<NetworkInterface> networkInterfaces;
-
-		private string templateTag2Key;
 
 		private string resourceOwnerAccount;
 
@@ -131,13 +117,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<DataDisk> dataDisks;
 
-		private string templateTag4Value;
-
 		private int? systemDiskSize;
 
 		private string vpcId;
-
-		private string templateTag1Key;
 
 		private string systemDiskDescription;
 
@@ -164,19 +146,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string TemplateTag4Key
-		{
-			get
-			{
-				return templateTag4Key;
-			}
-			set	
-			{
-				templateTag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.4.Key", value);
 			}
 		}
 
@@ -258,19 +227,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TemplateTag3Key
-		{
-			get
-			{
-				return templateTag3Key;
-			}
-			set	
-			{
-				templateTag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.3.Key", value);
-			}
-		}
-
 		public string HostName
 		{
 			get
@@ -310,16 +266,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TemplateTag3Value
+		public List<TemplateTag> TemplateTags
 		{
 			get
 			{
-				return templateTag3Value;
+				return templateTags;
 			}
-			set	
+
+			set
 			{
-				templateTag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.3.Value", value);
+				templateTags = value;
+				for (int i = 0; i < templateTags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Key", templateTags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Value", templateTags[i].Value);
+				}
 			}
 		}
 
@@ -364,19 +325,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				templateResourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateResourceGroupId", value);
-			}
-		}
-
-		public string TemplateTag2Value
-		{
-			get
-			{
-				return templateTag2Value;
-			}
-			set	
-			{
-				templateTag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.2.Value", value);
 			}
 		}
 
@@ -445,19 +393,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TemplateTag5Key
-		{
-			get
-			{
-				return templateTag5Key;
-			}
-			set	
-			{
-				templateTag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.5.Key", value);
-			}
-		}
-
 		public string ZoneId
 		{
 			get
@@ -494,19 +429,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				versionDescription = value;
 				DictionaryUtil.Add(QueryParameters, "VersionDescription", value);
-			}
-		}
-
-		public string TemplateTag1Value
-		{
-			get
-			{
-				return templateTag1Value;
-			}
-			set	
-			{
-				templateTag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.1.Value", value);
 			}
 		}
 
@@ -614,19 +536,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TemplateTag5Value
-		{
-			get
-			{
-				return templateTag5Value;
-			}
-			set	
-			{
-				templateTag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.5.Value", value);
-			}
-		}
-
 		public string InstanceType
 		{
 			get
@@ -684,19 +593,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".NetworkInterfaceName", networkInterfaces[i].NetworkInterfaceName);
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".Description", networkInterfaces[i].Description);
 				}
-			}
-		}
-
-		public string TemplateTag2Key
-		{
-			get
-			{
-				return templateTag2Key;
-			}
-			set	
-			{
-				templateTag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.2.Key", value);
 			}
 		}
 
@@ -801,19 +697,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TemplateTag4Value
-		{
-			get
-			{
-				return templateTag4Value;
-			}
-			set	
-			{
-				templateTag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.4.Value", value);
-			}
-		}
-
 		public int? SystemDiskSize
 		{
 			get
@@ -840,19 +723,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TemplateTag1Key
-		{
-			get
-			{
-				return templateTag1Key;
-			}
-			set	
-			{
-				templateTag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateTag.1.Key", value);
-			}
-		}
-
 		public string SystemDiskDescription
 		{
 			get
@@ -863,6 +733,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				systemDiskDescription = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDisk.Description", value);
+			}
+		}
+
+		public class TemplateTag
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 

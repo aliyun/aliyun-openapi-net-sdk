@@ -33,56 +33,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string tag4Value;
+		private string resourceGroupId;
 
 		private long? resourceOwnerId;
 
-		private string tag2Key;
-
-		private string tag5Key;
-
 		private string resourceOwnerAccount;
-
-		private string keyPairFingerPrint;
-
-		private string tag3Key;
-
-		private string keyPairName;
-
-		private long? ownerId;
-
-		private string tag5Value;
-
-		private int? pageNumber;
-
-		private string tag1Key;
-
-		private string tag1Value;
-
-		private string resourceGroupId;
 
 		private string regionId;
 
-		private string tag2Value;
+		private string keyPairFingerPrint;
 
 		private int? pageSize;
 
 		private string action;
 
-		private string tag4Key;
+		private string keyPairName;
 
-		private string tag3Value;
+		private List<Tag> tags;
 
-		public string Tag4Value
+		private long? ownerId;
+
+		private int? pageNumber;
+
+		public string ResourceGroupId
 		{
 			get
 			{
-				return tag4Value;
+				return resourceGroupId;
 			}
 			set	
 			{
-				tag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Value", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -99,32 +81,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag2Key
-		{
-			get
-			{
-				return tag2Key;
-			}
-			set	
-			{
-				tag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Key", value);
-			}
-		}
-
-		public string Tag5Key
-		{
-			get
-			{
-				return tag5Key;
-			}
-			set	
-			{
-				tag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Key", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -135,123 +91,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string KeyPairFingerPrint
-		{
-			get
-			{
-				return keyPairFingerPrint;
-			}
-			set	
-			{
-				keyPairFingerPrint = value;
-				DictionaryUtil.Add(QueryParameters, "KeyPairFingerPrint", value);
-			}
-		}
-
-		public string Tag3Key
-		{
-			get
-			{
-				return tag3Key;
-			}
-			set	
-			{
-				tag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Key", value);
-			}
-		}
-
-		public string KeyPairName
-		{
-			get
-			{
-				return keyPairName;
-			}
-			set	
-			{
-				keyPairName = value;
-				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Tag5Value
-		{
-			get
-			{
-				return tag5Value;
-			}
-			set	
-			{
-				tag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Value", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string Tag1Key
-		{
-			get
-			{
-				return tag1Key;
-			}
-			set	
-			{
-				tag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
-			}
-		}
-
-		public string Tag1Value
-		{
-			get
-			{
-				return tag1Value;
-			}
-			set	
-			{
-				tag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -268,16 +107,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag2Value
+		public string KeyPairFingerPrint
 		{
 			get
 			{
-				return tag2Value;
+				return keyPairFingerPrint;
 			}
 			set	
 			{
-				tag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Value", value);
+				keyPairFingerPrint = value;
+				DictionaryUtil.Add(QueryParameters, "KeyPairFingerPrint", value);
 			}
 		}
 
@@ -307,29 +146,92 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag4Key
+		public string KeyPairName
 		{
 			get
 			{
-				return tag4Key;
+				return keyPairName;
 			}
 			set	
 			{
-				tag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Key", value);
+				keyPairName = value;
+				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
 			}
 		}
 
-		public string Tag3Value
+		public List<Tag> Tags
 		{
 			get
 			{
-				return tag3Value;
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
 			}
 			set	
 			{
-				tag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Value", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

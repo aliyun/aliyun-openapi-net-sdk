@@ -197,9 +197,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				bandwidthPackages = value;
 				for (int i = 0; i < bandwidthPackages.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".IpCount", bandwidthPackages[i].IpCount);
 					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Bandwidth", bandwidthPackages[i].Bandwidth);
 					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Zone", bandwidthPackages[i].Zone);
+					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".IpCount", bandwidthPackages[i].IpCount);
 				}
 			}
 		}
@@ -207,23 +207,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class BandwidthPackage
 		{
 
-			private int? ipCount;
-
 			private int? bandwidth;
 
 			private string zone;
 
-			public int? IpCount
-			{
-				get
-				{
-					return ipCount;
-				}
-				set	
-				{
-					ipCount = value;
-				}
-			}
+			private int? ipCount;
 
 			public int? Bandwidth
 			{
@@ -246,6 +234,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					zone = value;
+				}
+			}
+
+			public int? IpCount
+			{
+				get
+				{
+					return ipCount;
+				}
+				set	
+				{
+					ipCount = value;
 				}
 			}
 		}
