@@ -46,6 +46,9 @@ namespace Aliyun.Acs.LinkFace.Transform.V20180720
 				dataItem.IotId = context.StringValue("QueryAuthentication.Data["+ i +"].IotId");
 				dataItem.BeginTime = context.StringValue("QueryAuthentication.Data["+ i +"].BeginTime");
 				dataItem.ExpiredTime = context.StringValue("QueryAuthentication.Data["+ i +"].ExpiredTime");
+				dataItem.ApkPubkey = context.StringValue("QueryAuthentication.Data["+ i +"].ApkPubkey");
+				dataItem.PackageName = context.StringValue("QueryAuthentication.Data["+ i +"].PackageName");
+				dataItem.ClientId = context.StringValue("QueryAuthentication.Data["+ i +"].ClientId");
 
 				queryAuthenticationResponse_data.Add(dataItem);
 			}

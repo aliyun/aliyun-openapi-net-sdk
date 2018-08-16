@@ -161,6 +161,12 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 
 			private string expiredTime;
 
+			private string apkPubkey;
+
+			private string packageName;
+
+			private string clientId;
+
 			public int? LicenseType
 			{
 				get
@@ -206,6 +212,42 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 				set	
 				{
 					expiredTime = value;
+				}
+			}
+
+			public string ApkPubkey
+			{
+				get
+				{
+					return apkPubkey;
+				}
+				set	
+				{
+					apkPubkey = value;
+				}
+			}
+
+			public string PackageName
+			{
+				get
+				{
+					return packageName;
+				}
+				set	
+				{
+					packageName = value;
+				}
+			}
+
+			public string ClientId
+			{
+				get
+				{
+					return clientId;
+				}
+				set	
+				{
+					clientId = value;
 				}
 			}
 		}
