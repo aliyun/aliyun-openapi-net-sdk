@@ -29,29 +29,45 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class ModifyScalingConfigurationRequest : RpcAcsRequest<ModifyScalingConfigurationResponse>
     {
         public ModifyScalingConfigurationRequest()
-            : base("Ess", "2014-08-28", "ModifyScalingConfiguration", "ESS", "openAPI")
+            : base("Ess", "2014-08-28", "ModifyScalingConfiguration", "ess", "openAPI")
         {
         }
 
 		private string imageId;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
+		private string ioOptimized;
 
 		private List<string> instanceTypes;
 
 		private int? internetMaxBandwidthOut;
 
-		private string ramRoleName;
-
 		private string keyPairName;
 
-		private long? ownerId;
+		private List<SpotPriceLimit> spotPriceLimits;
 
 		private string systemDiskCategory;
 
 		private string accessKeyId;
+
+		private string userData;
+
+		private string hostName;
+
+		private bool? passwordInherit;
+
+		private string imageName;
+
+		private string action;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string ramRoleName;
+
+		private long? ownerId;
+
+		private List<DataDisk> dataDisks;
 
 		private string scalingConfigurationName;
 
@@ -59,21 +75,15 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scalingConfigurationId;
 
-		private string userData;
-
-		private string hostName;
+		private string spotStrategy;
 
 		private string instanceName;
 
 		private int? loadBalancerWeight;
 
-		private bool? passwordInherit;
-
 		private int? systemDiskSize;
 
 		private string internetChargeType;
-
-		private string action;
 
 		public string ImageId
 		{
@@ -88,29 +98,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string IoOptimized
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return ioOptimized;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				ioOptimized = value;
+				DictionaryUtil.Add(QueryParameters, "IoOptimized", value);
 			}
 		}
 
@@ -144,19 +141,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string RamRoleName
-		{
-			get
-			{
-				return ramRoleName;
-			}
-			set	
-			{
-				ramRoleName = value;
-				DictionaryUtil.Add(QueryParameters, "RamRoleName", value);
-			}
-		}
-
 		public string KeyPairName
 		{
 			get
@@ -170,16 +154,21 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public long? OwnerId
+		public List<SpotPriceLimit> SpotPriceLimits
 		{
 			get
 			{
-				return ownerId;
+				return spotPriceLimits;
 			}
-			set	
+
+			set
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				spotPriceLimits = value;
+				for (int i = 0; i < spotPriceLimits.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SpotPriceLimit." + (i + 1) + ".InstanceType", spotPriceLimits[i].InstanceType);
+					DictionaryUtil.Add(QueryParameters,"SpotPriceLimit." + (i + 1) + ".PriceLimit", spotPriceLimits[i].PriceLimit);
+				}
 			}
 		}
 
@@ -206,6 +195,144 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public string HostName
+		{
+			get
+			{
+				return hostName;
+			}
+			set	
+			{
+				hostName = value;
+				DictionaryUtil.Add(QueryParameters, "HostName", value);
+			}
+		}
+
+		public bool? PasswordInherit
+		{
+			get
+			{
+				return passwordInherit;
+			}
+			set	
+			{
+				passwordInherit = value;
+				DictionaryUtil.Add(QueryParameters, "PasswordInherit", value.ToString());
+			}
+		}
+
+		public string ImageName
+		{
+			get
+			{
+				return imageName;
+			}
+			set	
+			{
+				imageName = value;
+				DictionaryUtil.Add(QueryParameters, "ImageName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string RamRoleName
+		{
+			get
+			{
+				return ramRoleName;
+			}
+			set	
+			{
+				ramRoleName = value;
+				DictionaryUtil.Add(QueryParameters, "RamRoleName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public List<DataDisk> DataDisks
+		{
+			get
+			{
+				return dataDisks;
+			}
+
+			set
+			{
+				dataDisks = value;
+				for (int i = 0; i < dataDisks.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".SnapshotId", dataDisks[i].SnapshotId);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
+				}
 			}
 		}
 
@@ -248,29 +375,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string UserData
+		public string SpotStrategy
 		{
 			get
 			{
-				return userData;
+				return spotStrategy;
 			}
 			set	
 			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
-
-		public string HostName
-		{
-			get
-			{
-				return hostName;
-			}
-			set	
-			{
-				hostName = value;
-				DictionaryUtil.Add(QueryParameters, "HostName", value);
+				spotStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
 			}
 		}
 
@@ -300,19 +414,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public bool? PasswordInherit
-		{
-			get
-			{
-				return passwordInherit;
-			}
-			set	
-			{
-				passwordInherit = value;
-				DictionaryUtil.Add(QueryParameters, "PasswordInherit", value.ToString());
-			}
-		}
-
 		public int? SystemDiskSize
 		{
 			get
@@ -339,16 +440,109 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string Action
+		public class SpotPriceLimit
 		{
-			get
+
+			private string instanceType;
+
+			private float? priceLimit;
+
+			public string InstanceType
 			{
-				return action;
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
 			}
-			set	
+
+			public float? PriceLimit
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				get
+				{
+					return priceLimit;
+				}
+				set	
+				{
+					priceLimit = value;
+				}
+			}
+		}
+
+		public class DataDisk
+		{
+
+			private string snapshotId;
+
+			private int? size;
+
+			private string category;
+
+			private string device;
+
+			private bool? deleteWithInstance;
+
+			public string SnapshotId
+			{
+				get
+				{
+					return snapshotId;
+				}
+				set	
+				{
+					snapshotId = value;
+				}
+			}
+
+			public int? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string Device
+			{
+				get
+				{
+					return device;
+				}
+				set	
+				{
+					device = value;
+				}
+			}
+
+			public bool? DeleteWithInstance
+			{
+				get
+				{
+					return deleteWithInstance;
+				}
+				set	
+				{
+					deleteWithInstance = value;
+				}
 			}
 		}
 

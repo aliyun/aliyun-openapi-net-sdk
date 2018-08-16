@@ -29,23 +29,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class CreateScalingConfigurationRequest : RpcAcsRequest<CreateScalingConfigurationResponse>
     {
         public CreateScalingConfigurationRequest()
-            : base("Ess", "2014-08-28", "CreateScalingConfiguration", "ESS", "openAPI")
+            : base("Ess", "2014-08-28", "CreateScalingConfiguration", "ess", "openAPI")
         {
         }
 
-		private int? dataDisk3Size;
-
 		private string imageId;
 
-		private string dataDisk1SnapshotId;
-
-		private string dataDisk3Category;
-
-		private string dataDisk1Device;
-
 		private string scalingGroupId;
-
-		private string dataDisk2Device;
 
 		private List<string> instanceTypes;
 
@@ -67,47 +57,31 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string userData;
 
-		private string dataDisk4Category;
-
 		private string hostName;
-
-		private string dataDisk2SnapshotId;
 
 		private bool? passwordInherit;
 
-		private int? dataDisk4Size;
+		private string imageName;
 
 		private string action;
 
 		private string instanceType;
 
-		private string dataDisk2Category;
-
-		private int? dataDisk1Size;
-
-		private string dataDisk3SnapshotId;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private int? dataDisk2Size;
 
 		private string ramRoleName;
 
 		private long? ownerId;
 
+		private List<DataDisk> dataDisks;
+
 		private string scalingConfigurationName;
 
 		private string tags;
 
-		private string dataDisk2DeleteWithInstance;
-
 		private string spotStrategy;
-
-		private string dataDisk1Category;
-
-		private string dataDisk3DeleteWithInstance;
 
 		private int? loadBalancerWeight;
 
@@ -115,32 +89,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? systemDiskSize;
 
-		private string dataDisk4SnapshotId;
-
-		private string dataDisk4Device;
-
 		private string internetChargeType;
 
-		private string dataDisk3Device;
-
-		private string dataDisk4DeleteWithInstance;
-
 		private int? internetMaxBandwidthIn;
-
-		private string dataDisk1DeleteWithInstance;
-
-		public int? DataDisk3Size
-		{
-			get
-			{
-				return dataDisk3Size;
-			}
-			set	
-			{
-				dataDisk3Size = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.3.Size", value.ToString());
-			}
-		}
 
 		public string ImageId
 		{
@@ -155,45 +106,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string DataDisk1SnapshotId
-		{
-			get
-			{
-				return dataDisk1SnapshotId;
-			}
-			set	
-			{
-				dataDisk1SnapshotId = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.1.SnapshotId", value);
-			}
-		}
-
-		public string DataDisk3Category
-		{
-			get
-			{
-				return dataDisk3Category;
-			}
-			set	
-			{
-				dataDisk3Category = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.3.Category", value);
-			}
-		}
-
-		public string DataDisk1Device
-		{
-			get
-			{
-				return dataDisk1Device;
-			}
-			set	
-			{
-				dataDisk1Device = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.1.Device", value);
-			}
-		}
-
 		public string ScalingGroupId
 		{
 			get
@@ -204,19 +116,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scalingGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
-			}
-		}
-
-		public string DataDisk2Device
-		{
-			get
-			{
-				return dataDisk2Device;
-			}
-			set	
-			{
-				dataDisk2Device = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.2.Device", value);
 			}
 		}
 
@@ -359,19 +258,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string DataDisk4Category
-		{
-			get
-			{
-				return dataDisk4Category;
-			}
-			set	
-			{
-				dataDisk4Category = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.4.Category", value);
-			}
-		}
-
 		public string HostName
 		{
 			get
@@ -382,19 +268,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				hostName = value;
 				DictionaryUtil.Add(QueryParameters, "HostName", value);
-			}
-		}
-
-		public string DataDisk2SnapshotId
-		{
-			get
-			{
-				return dataDisk2SnapshotId;
-			}
-			set	
-			{
-				dataDisk2SnapshotId = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.2.SnapshotId", value);
 			}
 		}
 
@@ -411,16 +284,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public int? DataDisk4Size
+		public string ImageName
 		{
 			get
 			{
-				return dataDisk4Size;
+				return imageName;
 			}
 			set	
 			{
-				dataDisk4Size = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.4.Size", value.ToString());
+				imageName = value;
+				DictionaryUtil.Add(QueryParameters, "ImageName", value);
 			}
 		}
 
@@ -450,45 +323,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string DataDisk2Category
-		{
-			get
-			{
-				return dataDisk2Category;
-			}
-			set	
-			{
-				dataDisk2Category = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.2.Category", value);
-			}
-		}
-
-		public int? DataDisk1Size
-		{
-			get
-			{
-				return dataDisk1Size;
-			}
-			set	
-			{
-				dataDisk1Size = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.1.Size", value.ToString());
-			}
-		}
-
-		public string DataDisk3SnapshotId
-		{
-			get
-			{
-				return dataDisk3SnapshotId;
-			}
-			set	
-			{
-				dataDisk3SnapshotId = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.3.SnapshotId", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -512,19 +346,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? DataDisk2Size
-		{
-			get
-			{
-				return dataDisk2Size;
-			}
-			set	
-			{
-				dataDisk2Size = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.2.Size", value.ToString());
 			}
 		}
 
@@ -554,6 +375,27 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public List<DataDisk> DataDisks
+		{
+			get
+			{
+				return dataDisks;
+			}
+
+			set
+			{
+				dataDisks = value;
+				for (int i = 0; i < dataDisks.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".SnapshotId", dataDisks[i].SnapshotId);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
+				}
+			}
+		}
+
 		public string ScalingConfigurationName
 		{
 			get
@@ -580,19 +422,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string DataDisk2DeleteWithInstance
-		{
-			get
-			{
-				return dataDisk2DeleteWithInstance;
-			}
-			set	
-			{
-				dataDisk2DeleteWithInstance = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.2.DeleteWithInstance", value);
-			}
-		}
-
 		public string SpotStrategy
 		{
 			get
@@ -603,32 +432,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				spotStrategy = value;
 				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
-			}
-		}
-
-		public string DataDisk1Category
-		{
-			get
-			{
-				return dataDisk1Category;
-			}
-			set	
-			{
-				dataDisk1Category = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.1.Category", value);
-			}
-		}
-
-		public string DataDisk3DeleteWithInstance
-		{
-			get
-			{
-				return dataDisk3DeleteWithInstance;
-			}
-			set	
-			{
-				dataDisk3DeleteWithInstance = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.3.DeleteWithInstance", value);
 			}
 		}
 
@@ -671,32 +474,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string DataDisk4SnapshotId
-		{
-			get
-			{
-				return dataDisk4SnapshotId;
-			}
-			set	
-			{
-				dataDisk4SnapshotId = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.4.SnapshotId", value);
-			}
-		}
-
-		public string DataDisk4Device
-		{
-			get
-			{
-				return dataDisk4Device;
-			}
-			set	
-			{
-				dataDisk4Device = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.4.Device", value);
-			}
-		}
-
 		public string InternetChargeType
 		{
 			get
@@ -710,32 +487,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string DataDisk3Device
-		{
-			get
-			{
-				return dataDisk3Device;
-			}
-			set	
-			{
-				dataDisk3Device = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.3.Device", value);
-			}
-		}
-
-		public string DataDisk4DeleteWithInstance
-		{
-			get
-			{
-				return dataDisk4DeleteWithInstance;
-			}
-			set	
-			{
-				dataDisk4DeleteWithInstance = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.4.DeleteWithInstance", value);
-			}
-		}
-
 		public int? InternetMaxBandwidthIn
 		{
 			get
@@ -746,19 +497,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				internetMaxBandwidthIn = value;
 				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthIn", value.ToString());
-			}
-		}
-
-		public string DataDisk1DeleteWithInstance
-		{
-			get
-			{
-				return dataDisk1DeleteWithInstance;
-			}
-			set	
-			{
-				dataDisk1DeleteWithInstance = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.1.DeleteWithInstance", value);
 			}
 		}
 
@@ -790,6 +528,80 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					priceLimit = value;
+				}
+			}
+		}
+
+		public class DataDisk
+		{
+
+			private string snapshotId;
+
+			private int? size;
+
+			private string category;
+
+			private string device;
+
+			private bool? deleteWithInstance;
+
+			public string SnapshotId
+			{
+				get
+				{
+					return snapshotId;
+				}
+				set	
+				{
+					snapshotId = value;
+				}
+			}
+
+			public int? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string Device
+			{
+				get
+				{
+					return device;
+				}
+				set	
+				{
+					device = value;
+				}
+			}
+
+			public bool? DeleteWithInstance
+			{
+				get
+				{
+					return deleteWithInstance;
+				}
+				set	
+				{
+					deleteWithInstance = value;
 				}
 			}
 		}

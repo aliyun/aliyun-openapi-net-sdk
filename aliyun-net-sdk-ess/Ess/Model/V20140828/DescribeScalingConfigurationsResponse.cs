@@ -107,6 +107,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string imageId;
 
+			private string imageName;
+
 			private string hostName;
 
 			private string instanceType;
@@ -212,6 +214,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					imageId = value;
+				}
+			}
+
+			public string ImageName
+			{
+				get
+				{
+					return imageName;
+				}
+				set	
+				{
+					imageName = value;
 				}
 			}
 
@@ -514,6 +528,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 				private string device;
 
+				private bool? deleteWithInstance;
+
 				public int? Size
 				{
 					get
@@ -559,6 +575,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 					set	
 					{
 						device = value;
+					}
+				}
+
+				public bool? DeleteWithInstance
+				{
+					get
+					{
+						return deleteWithInstance;
+					}
+					set	
+					{
+						deleteWithInstance = value;
 					}
 				}
 			}

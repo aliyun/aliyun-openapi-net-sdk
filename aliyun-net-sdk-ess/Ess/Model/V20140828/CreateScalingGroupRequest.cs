@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class CreateScalingGroupRequest : RpcAcsRequest<CreateScalingGroupResponse>
     {
         public CreateScalingGroupRequest()
-            : base("Ess", "2014-08-28", "CreateScalingGroup", "ESS", "openAPI")
+            : base("Ess", "2014-08-28", "CreateScalingGroup", "ess", "openAPI")
         {
         }
 
@@ -149,7 +149,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public List<string> VSwitchIdss
+		public List<string> VSwitchIds
 		{
 			get
 			{
@@ -282,12 +282,12 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				lifecycleHooks = value;
 				for (int i = 0; i < lifecycleHooks.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".LifecycleHookName", lifecycleHooks[i].LifecycleHookName);
-					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".LifecycleTransition", lifecycleHooks[i].LifecycleTransition);
 					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".DefaultResult", lifecycleHooks[i].DefaultResult);
+					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".LifecycleHookName", lifecycleHooks[i].LifecycleHookName);
 					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".HeartbeatTimeout", lifecycleHooks[i].HeartbeatTimeout);
-					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".NotificationMetadata", lifecycleHooks[i].NotificationMetadata);
 					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".NotificationArn", lifecycleHooks[i].NotificationArn);
+					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".NotificationMetadata", lifecycleHooks[i].NotificationMetadata);
+					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".LifecycleTransition", lifecycleHooks[i].LifecycleTransition);
 				}
 			}
 		}
@@ -334,41 +334,17 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		public class LifecycleHook
 		{
 
-			private string lifecycleHookName;
-
-			private string lifecycleTransition;
-
 			private string defaultResult;
+
+			private string lifecycleHookName;
 
 			private int? heartbeatTimeout;
 
-			private string notificationMetadata;
-
 			private string notificationArn;
 
-			public string LifecycleHookName
-			{
-				get
-				{
-					return lifecycleHookName;
-				}
-				set	
-				{
-					lifecycleHookName = value;
-				}
-			}
+			private string notificationMetadata;
 
-			public string LifecycleTransition
-			{
-				get
-				{
-					return lifecycleTransition;
-				}
-				set	
-				{
-					lifecycleTransition = value;
-				}
-			}
+			private string lifecycleTransition;
 
 			public string DefaultResult
 			{
@@ -379,6 +355,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					defaultResult = value;
+				}
+			}
+
+			public string LifecycleHookName
+			{
+				get
+				{
+					return lifecycleHookName;
+				}
+				set	
+				{
+					lifecycleHookName = value;
 				}
 			}
 
@@ -394,6 +382,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public string NotificationArn
+			{
+				get
+				{
+					return notificationArn;
+				}
+				set	
+				{
+					notificationArn = value;
+				}
+			}
+
 			public string NotificationMetadata
 			{
 				get
@@ -406,15 +406,15 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
-			public string NotificationArn
+			public string LifecycleTransition
 			{
 				get
 				{
-					return notificationArn;
+					return lifecycleTransition;
 				}
 				set	
 				{
-					notificationArn = value;
+					lifecycleTransition = value;
 				}
 			}
 		}

@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingConfiguration.ScalingGroupId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ScalingGroupId");
 				scalingConfiguration.InstanceName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceName");
 				scalingConfiguration.ImageId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ImageId");
+				scalingConfiguration.ImageName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ImageName");
 				scalingConfiguration.HostName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].HostName");
 				scalingConfiguration.InstanceType = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceType");
 				scalingConfiguration.InstanceGeneration = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceGeneration");
@@ -77,6 +78,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 					dataDisk.Category = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Category");
 					dataDisk.SnapshotId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].SnapshotId");
 					dataDisk.Device = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Device");
+					dataDisk.DeleteWithInstance = context.BooleanValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].DeleteWithInstance");
 
 					scalingConfiguration_dataDisks.Add(dataDisk);
 				}
