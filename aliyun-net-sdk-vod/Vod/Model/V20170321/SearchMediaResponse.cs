@@ -490,9 +490,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string transcodeMode;
 
-				private List<string> snapshots2;
+				private List<string> snapshots1;
 
-				private List<string> spriteSnapshots3;
+				private List<string> spriteSnapshots2;
 
 				public string AudioId
 				{
@@ -710,27 +710,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public List<string> Snapshots2
+				public List<string> Snapshots1
 				{
 					get
 					{
-						return snapshots2;
+						return snapshots1;
 					}
 					set	
 					{
-						snapshots2 = value;
+						snapshots1 = value;
 					}
 				}
 
-				public List<string> SpriteSnapshots3
+				public List<string> SpriteSnapshots2
 				{
 					get
 					{
-						return spriteSnapshots3;
+						return spriteSnapshots2;
 					}
 					set	
 					{
-						spriteSnapshots3 = value;
+						spriteSnapshots2 = value;
 					}
 				}
 			}

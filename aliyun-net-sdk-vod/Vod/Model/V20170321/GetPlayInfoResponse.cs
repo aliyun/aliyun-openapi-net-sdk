@@ -105,6 +105,12 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string status;
 
+			private string creationTime;
+
+			private string modificationTime;
+
+			private string encryptType;
+
 			public long? Width
 			{
 				get
@@ -320,12 +326,46 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					status = value;
 				}
 			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
+
+			public string ModificationTime
+			{
+				get
+				{
+					return modificationTime;
+				}
+				set	
+				{
+					modificationTime = value;
+				}
+			}
+
+			public string EncryptType
+			{
+				get
+				{
+					return encryptType;
+				}
+				set	
+				{
+					encryptType = value;
+				}
+			}
 		}
 
 		public class GetPlayInfo_VideoBase
 		{
-
-			private string outputType;
 
 			private string coverURL;
 
@@ -344,18 +384,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			private string transcodeMode;
 
 			private List<GetPlayInfo_Thumbnail> thumbnailList;
-
-			public string OutputType
-			{
-				get
-				{
-					return outputType;
-				}
-				set	
-				{
-					outputType = value;
-				}
-			}
 
 			public string CoverURL
 			{

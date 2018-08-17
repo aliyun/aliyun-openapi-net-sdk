@@ -95,17 +95,17 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				audio.RegionId = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.RegionId");
 				audio.TranscodeMode = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.TranscodeMode");
 
-				List<string> audio_snapshots2 = new List<string>();
+				List<string> audio_snapshots1 = new List<string>();
 				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].Audio.Snapshots.Length"); j++) {
-					audio_snapshots2.Add(context.StringValue("SearchMedia.MediaList["+ i +"].Audio.Snapshots["+ j +"]"));
+					audio_snapshots1.Add(context.StringValue("SearchMedia.MediaList["+ i +"].Audio.Snapshots["+ j +"]"));
 				}
-				audio.Snapshots2 = audio_snapshots2;
+				audio.Snapshots1 = audio_snapshots1;
 
-				List<string> audio_spriteSnapshots3 = new List<string>();
+				List<string> audio_spriteSnapshots2 = new List<string>();
 				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].Audio.SpriteSnapshots.Length"); j++) {
-					audio_spriteSnapshots3.Add(context.StringValue("SearchMedia.MediaList["+ i +"].Audio.SpriteSnapshots["+ j +"]"));
+					audio_spriteSnapshots2.Add(context.StringValue("SearchMedia.MediaList["+ i +"].Audio.SpriteSnapshots["+ j +"]"));
 				}
-				audio.SpriteSnapshots3 = audio_spriteSnapshots3;
+				audio.SpriteSnapshots2 = audio_spriteSnapshots2;
 				media.Audio = audio;
 
 				searchMediaResponse_mediaList.Add(media);

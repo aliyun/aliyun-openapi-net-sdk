@@ -81,6 +81,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string preprocessStatus;
 
+			private string outputType;
+
 			private List<GetMezzanineInfo_AudioStream> audioStreamList;
 
 			private List<GetMezzanineInfo_VideoStream> videoStreamList;
@@ -238,6 +240,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					preprocessStatus = value;
+				}
+			}
+
+			public string OutputType
+			{
+				get
+				{
+					return outputType;
+				}
+				set	
+				{
+					outputType = value;
 				}
 			}
 

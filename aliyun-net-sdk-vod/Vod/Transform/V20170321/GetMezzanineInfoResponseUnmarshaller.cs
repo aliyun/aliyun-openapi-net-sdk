@@ -46,6 +46,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			mezzanine.FileName = context.StringValue("GetMezzanineInfo.Mezzanine.FileName");
 			mezzanine.CRC64 = context.StringValue("GetMezzanineInfo.Mezzanine.CRC64");
 			mezzanine.PreprocessStatus = context.StringValue("GetMezzanineInfo.Mezzanine.PreprocessStatus");
+			mezzanine.OutputType = context.StringValue("GetMezzanineInfo.Mezzanine.OutputType");
 
 			List<GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_AudioStream> mezzanine_audioStreamList = new List<GetMezzanineInfoResponse.GetMezzanineInfo_Mezzanine.GetMezzanineInfo_AudioStream>();
 			for (int i = 0; i < context.Length("GetMezzanineInfo.Mezzanine.AudioStreamList.Length"); i++) {

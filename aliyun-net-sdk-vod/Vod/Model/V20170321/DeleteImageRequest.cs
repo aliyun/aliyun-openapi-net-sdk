@@ -26,30 +26,32 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetMezzanineInfoRequest : RpcAcsRequest<GetMezzanineInfoResponse>
+    public class DeleteImageRequest : RpcAcsRequest<DeleteImageResponse>
     {
-        public GetMezzanineInfoRequest()
-            : base("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI")
+        public DeleteImageRequest()
+            : base("vod", "2017-03-21", "DeleteImage", "vod", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private string imageType;
+
 		private string resourceOwnerAccount;
+
+		private string imageURLs;
 
 		private string action;
 
 		private string videoId;
 
-		private bool? previewSegment;
-
-		private string outputType;
-
-		private string additionType;
-
 		private long? ownerId;
 
-		private long? authTimeout;
+		private string deleteImageType;
+
+		private string imageIds;
+
+		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -64,6 +66,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string ImageType
+		{
+			get
+			{
+				return imageType;
+			}
+			set	
+			{
+				imageType = value;
+				DictionaryUtil.Add(QueryParameters, "ImageType", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -74,6 +89,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ImageURLs
+		{
+			get
+			{
+				return imageURLs;
+			}
+			set	
+			{
+				imageURLs = value;
+				DictionaryUtil.Add(QueryParameters, "ImageURLs", value);
 			}
 		}
 
@@ -103,45 +131,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public bool? PreviewSegment
-		{
-			get
-			{
-				return previewSegment;
-			}
-			set	
-			{
-				previewSegment = value;
-				DictionaryUtil.Add(QueryParameters, "PreviewSegment", value.ToString());
-			}
-		}
-
-		public string OutputType
-		{
-			get
-			{
-				return outputType;
-			}
-			set	
-			{
-				outputType = value;
-				DictionaryUtil.Add(QueryParameters, "OutputType", value);
-			}
-		}
-
-		public string AdditionType
-		{
-			get
-			{
-				return additionType;
-			}
-			set	
-			{
-				additionType = value;
-				DictionaryUtil.Add(QueryParameters, "AdditionType", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -155,27 +144,48 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? AuthTimeout
+		public string DeleteImageType
 		{
 			get
 			{
-				return authTimeout;
+				return deleteImageType;
 			}
 			set	
 			{
-				authTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
+				deleteImageType = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteImageType", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string ImageIds
 		{
-			return false;
+			get
+			{
+				return imageIds;
+			}
+			set	
+			{
+				imageIds = value;
+				DictionaryUtil.Add(QueryParameters, "ImageIds", value);
+			}
 		}
 
-        public override GetMezzanineInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override DeleteImageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetMezzanineInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

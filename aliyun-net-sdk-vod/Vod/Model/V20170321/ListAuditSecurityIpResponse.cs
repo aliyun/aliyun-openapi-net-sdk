@@ -61,7 +61,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string creationTime;
 
-			private string modifyTime;
+			private string modificationTime;
 
 			public string SecurityGroupName
 			{
@@ -99,15 +99,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string ModifyTime
+			public string ModificationTime
 			{
 				get
 				{
-					return modifyTime;
+					return modificationTime;
 				}
 				set	
 				{
-					modifyTime = value;
+					modificationTime = value;
 				}
 			}
 		}

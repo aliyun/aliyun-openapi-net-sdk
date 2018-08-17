@@ -38,7 +38,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				securityIp.SecurityGroupName = context.StringValue("ListAuditSecurityIp.SecurityIpList["+ i +"].SecurityGroupName");
 				securityIp.Ips = context.StringValue("ListAuditSecurityIp.SecurityIpList["+ i +"].Ips");
 				securityIp.CreationTime = context.StringValue("ListAuditSecurityIp.SecurityIpList["+ i +"].CreationTime");
-				securityIp.ModifyTime = context.StringValue("ListAuditSecurityIp.SecurityIpList["+ i +"].ModifyTime");
+				securityIp.ModificationTime = context.StringValue("ListAuditSecurityIp.SecurityIpList["+ i +"].ModificationTime");
 
 				listAuditSecurityIpResponse_securityIpList.Add(securityIp);
 			}
