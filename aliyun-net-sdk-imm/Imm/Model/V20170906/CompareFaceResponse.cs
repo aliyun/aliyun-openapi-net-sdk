@@ -21,14 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class ListFaceSetsResponse : AcsResponse
+	public class CompareFaceResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string nextMarker;
-
-		private List<ListFaceSets_SetsItem> sets;
+		private List<CompareFace_CompareResultItem> compareResult;
 
 		public string RequestId
 		{
@@ -42,114 +40,124 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string NextMarker
+		public List<CompareFace_CompareResultItem> CompareResult
 		{
 			get
 			{
-				return nextMarker;
+				return compareResult;
 			}
 			set	
 			{
-				nextMarker = value;
+				compareResult = value;
 			}
 		}
 
-		public List<ListFaceSets_SetsItem> Sets
-		{
-			get
-			{
-				return sets;
-			}
-			set	
-			{
-				sets = value;
-			}
-		}
-
-		public class ListFaceSets_SetsItem
+		public class CompareFace_CompareResultItem
 		{
 
-			private string setId;
+			private float? similarity;
 
-			private string status;
+			private CompareFace_FaceA faceA;
 
-			private long? photos;
+			private CompareFace_FaceB faceB;
 
-			private string createTime;
-
-			private string modifyTime;
-
-			private long? faces;
-
-			public string SetId
+			public float? Similarity
 			{
 				get
 				{
-					return setId;
+					return similarity;
 				}
 				set	
 				{
-					setId = value;
+					similarity = value;
 				}
 			}
 
-			public string Status
+			public CompareFace_FaceA FaceA
 			{
 				get
 				{
-					return status;
+					return faceA;
 				}
 				set	
 				{
-					status = value;
+					faceA = value;
 				}
 			}
 
-			public long? Photos
+			public CompareFace_FaceB FaceB
 			{
 				get
 				{
-					return photos;
+					return faceB;
 				}
 				set	
 				{
-					photos = value;
+					faceB = value;
 				}
 			}
 
-			public string CreateTime
+			public class CompareFace_FaceA
 			{
-				get
+
+				private string imageUrl;
+
+				private List<string> axis;
+
+				public string ImageUrl
 				{
-					return createTime;
+					get
+					{
+						return imageUrl;
+					}
+					set	
+					{
+						imageUrl = value;
+					}
 				}
-				set	
+
+				public List<string> Axis
 				{
-					createTime = value;
+					get
+					{
+						return axis;
+					}
+					set	
+					{
+						axis = value;
+					}
 				}
 			}
 
-			public string ModifyTime
+			public class CompareFace_FaceB
 			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
 
-			public long? Faces
-			{
-				get
+				private string imageUrl;
+
+				private List<string> axis1;
+
+				public string ImageUrl
 				{
-					return faces;
+					get
+					{
+						return imageUrl;
+					}
+					set	
+					{
+						imageUrl = value;
+					}
 				}
-				set	
+
+				public List<string> Axis1
 				{
-					faces = value;
+					get
+					{
+						return axis1;
+					}
+					set	
+					{
+						axis1 = value;
+					}
 				}
 			}
 		}

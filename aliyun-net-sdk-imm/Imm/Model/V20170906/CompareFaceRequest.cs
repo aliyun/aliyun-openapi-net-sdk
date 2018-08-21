@@ -26,16 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class DetectTagRequest : RpcAcsRequest<DetectTagResponse>
+    public class CompareFaceRequest : RpcAcsRequest<CompareFaceResponse>
     {
-        public DetectTagRequest()
-            : base("imm", "2017-09-06", "DetectTag", "imm", "openAPI")
+        public CompareFaceRequest()
+            : base("imm", "2017-09-06", "CompareFace", "imm", "openAPI")
         {
         }
 
-		private string srcUris;
+		private string srcUriB;
 
-		private string modelId;
+		private string srcUriA;
 
 		private string action;
 
@@ -43,29 +43,29 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string accessKeyId;
 
-		public string SrcUris
+		public string SrcUriB
 		{
 			get
 			{
-				return srcUris;
+				return srcUriB;
 			}
 			set	
 			{
-				srcUris = value;
-				DictionaryUtil.Add(QueryParameters, "SrcUris", value);
+				srcUriB = value;
+				DictionaryUtil.Add(QueryParameters, "SrcUriB", value);
 			}
 		}
 
-		public string ModelId
+		public string SrcUriA
 		{
 			get
 			{
-				return modelId;
+				return srcUriA;
 			}
 			set	
 			{
-				modelId = value;
-				DictionaryUtil.Add(QueryParameters, "ModelId", value);
+				srcUriA = value;
+				DictionaryUtil.Add(QueryParameters, "SrcUriA", value);
 			}
 		}
 
@@ -113,9 +113,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override DetectTagResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CompareFaceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DetectTagResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CompareFaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

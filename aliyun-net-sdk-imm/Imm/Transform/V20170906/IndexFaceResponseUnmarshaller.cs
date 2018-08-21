@@ -97,7 +97,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 					IndexFaceResponse.IndexFace_SuccessDetailsItem.IndexFace_FacesItem.IndexFace_FaceAttribute.IndexFace_Blur blur = new IndexFaceResponse.IndexFace_SuccessDetailsItem.IndexFace_FacesItem.IndexFace_FaceAttribute.IndexFace_Blur();
 
 					IndexFaceResponse.IndexFace_SuccessDetailsItem.IndexFace_FacesItem.IndexFace_FaceAttribute.IndexFace_Blur.IndexFace_Blurness blurness = new IndexFaceResponse.IndexFace_SuccessDetailsItem.IndexFace_FacesItem.IndexFace_FaceAttribute.IndexFace_Blur.IndexFace_Blurness();
-					blurness.Balue = context.FloatValue("IndexFace.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.Blur.Blurness.Balue");
+					blurness._Value = context.FloatValue("IndexFace.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.Blur.Blurness.Value");
 					blurness.Threshold = context.FloatValue("IndexFace.SuccessDetails["+ i +"].Faces["+ j +"].FaceAttribute.Blur.Blurness.Threshold");
 					blur.Blurness = blurness;
 					faceAttribute.Blur = blur;

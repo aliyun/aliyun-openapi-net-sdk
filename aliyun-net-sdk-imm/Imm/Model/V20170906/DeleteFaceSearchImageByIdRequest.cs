@@ -39,6 +39,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string project;
 
+		private string srcUri;
+
 		private string groupName;
 
 		private string user;
@@ -81,6 +83,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string SrcUri
+		{
+			get
+			{
+				return srcUri;
+			}
+			set	
+			{
+				srcUri = value;
+				DictionaryUtil.Add(QueryParameters, "SrcUri", value);
 			}
 		}
 

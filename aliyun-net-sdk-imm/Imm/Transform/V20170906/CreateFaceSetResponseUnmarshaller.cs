@@ -36,6 +36,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			createFaceSetResponse.Photos = context.LongValue("CreateFaceSet.Photos");
 			createFaceSetResponse.CreateTime = context.StringValue("CreateFaceSet.CreateTime");
 			createFaceSetResponse.ModifyTime = context.StringValue("CreateFaceSet.ModifyTime");
+			createFaceSetResponse.Faces = context.LongValue("CreateFaceSet.Faces");
         
 			return createFaceSetResponse;
         }

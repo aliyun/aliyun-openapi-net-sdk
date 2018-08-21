@@ -36,6 +36,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string modifyTime;
 
+		private long? faces;
+
 		public string RequestId
 		{
 			get
@@ -105,6 +107,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				modifyTime = value;
+			}
+		}
+
+		public long? Faces
+		{
+			get
+			{
+				return faces;
+			}
+			set	
+			{
+				faces = value;
 			}
 		}
 	}

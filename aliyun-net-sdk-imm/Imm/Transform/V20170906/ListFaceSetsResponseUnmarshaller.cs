@@ -41,6 +41,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				setsItem.Photos = context.LongValue("ListFaceSets.Sets["+ i +"].Photos");
 				setsItem.CreateTime = context.StringValue("ListFaceSets.Sets["+ i +"].CreateTime");
 				setsItem.ModifyTime = context.StringValue("ListFaceSets.Sets["+ i +"].ModifyTime");
+				setsItem.Faces = context.LongValue("ListFaceSets.Sets["+ i +"].Faces");
 
 				listFaceSetsResponse_sets.Add(setsItem);
 			}

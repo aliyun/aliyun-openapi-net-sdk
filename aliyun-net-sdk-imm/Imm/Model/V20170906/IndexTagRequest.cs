@@ -35,6 +35,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string srcUris;
 
+		private string modelId;
+
 		private string action;
 
 		private string project;
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				srcUris = value;
 				DictionaryUtil.Add(QueryParameters, "SrcUris", value);
+			}
+		}
+
+		public string ModelId
+		{
+			get
+			{
+				return modelId;
+			}
+			set	
+			{
+				modelId = value;
+				DictionaryUtil.Add(QueryParameters, "ModelId", value);
 			}
 		}
 

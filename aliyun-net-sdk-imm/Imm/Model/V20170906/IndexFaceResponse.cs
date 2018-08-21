@@ -641,19 +641,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						public class IndexFace_Blurness
 						{
 
-							private float? balue;
+							private float? _value;
 
 							private float? threshold;
 
-							public float? Balue
+							public float? _Value
 							{
 								get
 								{
-									return balue;
+									return _value;
 								}
 								set	
 								{
-									balue = value;
+									_value = value;
 								}
 							}
 

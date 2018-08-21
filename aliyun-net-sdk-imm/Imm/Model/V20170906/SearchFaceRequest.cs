@@ -26,46 +26,39 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class DetectTagRequest : RpcAcsRequest<DetectTagResponse>
+    public class SearchFaceRequest : RpcAcsRequest<SearchFaceResponse>
     {
-        public DetectTagRequest()
-            : base("imm", "2017-09-06", "DetectTag", "imm", "openAPI")
+        public SearchFaceRequest()
+            : base("imm", "2017-09-06", "SearchFace", "imm", "openAPI")
         {
         }
 
-		private string srcUris;
-
-		private string modelId;
+		private int? resultNum;
 
 		private string action;
 
 		private string project;
 
+		private string searchThresholdLevel;
+
+		private string srcUri;
+
+		private bool? isThreshold;
+
+		private string groupName;
+
 		private string accessKeyId;
 
-		public string SrcUris
+		public int? ResultNum
 		{
 			get
 			{
-				return srcUris;
+				return resultNum;
 			}
 			set	
 			{
-				srcUris = value;
-				DictionaryUtil.Add(QueryParameters, "SrcUris", value);
-			}
-		}
-
-		public string ModelId
-		{
-			get
-			{
-				return modelId;
-			}
-			set	
-			{
-				modelId = value;
-				DictionaryUtil.Add(QueryParameters, "ModelId", value);
+				resultNum = value;
+				DictionaryUtil.Add(QueryParameters, "ResultNum", value.ToString());
 			}
 		}
 
@@ -95,6 +88,58 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string SearchThresholdLevel
+		{
+			get
+			{
+				return searchThresholdLevel;
+			}
+			set	
+			{
+				searchThresholdLevel = value;
+				DictionaryUtil.Add(QueryParameters, "SearchThresholdLevel", value);
+			}
+		}
+
+		public string SrcUri
+		{
+			get
+			{
+				return srcUri;
+			}
+			set	
+			{
+				srcUri = value;
+				DictionaryUtil.Add(QueryParameters, "SrcUri", value);
+			}
+		}
+
+		public bool? IsThreshold
+		{
+			get
+			{
+				return isThreshold;
+			}
+			set	
+			{
+				isThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "IsThreshold", value.ToString());
+			}
+		}
+
+		public string GroupName
+		{
+			get
+			{
+				return groupName;
+			}
+			set	
+			{
+				groupName = value;
+				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -113,9 +158,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override DetectTagResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SearchFaceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DetectTagResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SearchFaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
