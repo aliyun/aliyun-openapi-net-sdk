@@ -125,6 +125,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string dedicatedHostId;
 
+		private string creditSpecification;
+
 		private List<DataDisk> dataDisks;
 
 		private long? launchTemplateVersion;
@@ -741,6 +743,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dedicatedHostId = value;
 				DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
+			}
+		}
+
+		public string CreditSpecification
+		{
+			get
+			{
+				return creditSpecification;
+			}
+			set	
+			{
+				creditSpecification = value;
+				DictionaryUtil.Add(QueryParameters, "CreditSpecification", value);
 			}
 		}
 

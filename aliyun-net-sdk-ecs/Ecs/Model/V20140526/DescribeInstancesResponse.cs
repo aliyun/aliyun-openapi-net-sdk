@@ -177,6 +177,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string stoppedMode;
 
+			private string creditSpecification;
+
 			private List<DescribeInstances_NetworkInterface> networkInterfaces;
 
 			private List<DescribeInstances_LockReason> operationLocks;
@@ -674,6 +676,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					stoppedMode = value;
+				}
+			}
+
+			public string CreditSpecification
+			{
+				get
+				{
+					return creditSpecification;
+				}
+				set	
+				{
+					creditSpecification = value;
 				}
 			}
 

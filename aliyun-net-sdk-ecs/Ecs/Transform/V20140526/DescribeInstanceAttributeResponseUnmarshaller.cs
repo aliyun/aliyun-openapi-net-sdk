@@ -54,6 +54,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeInstanceAttributeResponse.InstanceChargeType = context.StringValue("DescribeInstanceAttribute.InstanceChargeType");
 			describeInstanceAttributeResponse.ExpiredTime = context.StringValue("DescribeInstanceAttribute.ExpiredTime");
 			describeInstanceAttributeResponse.StoppedMode = context.StringValue("DescribeInstanceAttribute.StoppedMode");
+			describeInstanceAttributeResponse.CreditSpecification = context.StringValue("DescribeInstanceAttribute.CreditSpecification");
 
 			List<string> describeInstanceAttributeResponse_securityGroupIds = new List<string>();
 			for (int i = 0; i < context.Length("DescribeInstanceAttribute.SecurityGroupIds.Length"); i++) {

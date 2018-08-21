@@ -72,6 +72,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string stoppedMode;
 
+		private string creditSpecification;
+
 		private List<DescribeInstanceAttribute_LockReason> operationLocks;
 
 		private List<string> securityGroupIds;
@@ -371,6 +373,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				stoppedMode = value;
+			}
+		}
+
+		public string CreditSpecification
+		{
+			get
+			{
+				return creditSpecification;
+			}
+			set	
+			{
+				creditSpecification = value;
 			}
 		}
 

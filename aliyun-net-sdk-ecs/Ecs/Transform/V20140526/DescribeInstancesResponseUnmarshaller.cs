@@ -78,6 +78,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instance.Recyclable = context.BooleanValue("DescribeInstances.Instances["+ i +"].Recyclable");
 				instance.HpcClusterId = context.StringValue("DescribeInstances.Instances["+ i +"].HpcClusterId");
 				instance.StoppedMode = context.StringValue("DescribeInstances.Instances["+ i +"].StoppedMode");
+				instance.CreditSpecification = context.StringValue("DescribeInstances.Instances["+ i +"].CreditSpecification");
 
 				List<string> instance_securityGroupIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].SecurityGroupIds.Length"); j++) {

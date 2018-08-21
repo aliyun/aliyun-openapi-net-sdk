@@ -127,6 +127,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string clusterId;
 
+		private string creditSpecification;
+
 		private List<DataDisk> dataDisks;
 
 		private int? systemDiskSize;
@@ -746,6 +748,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string CreditSpecification
+		{
+			get
+			{
+				return creditSpecification;
+			}
+			set	
+			{
+				creditSpecification = value;
+				DictionaryUtil.Add(QueryParameters, "CreditSpecification", value);
 			}
 		}
 

@@ -288,7 +288,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string resourceGroupId;
 
-				private bool? securityEnhancementStrategy;
+				private string securityEnhancementStrategy;
 
 				private List<DescribeLaunchTemplateVersions_DataDisk> dataDisks;
 
@@ -668,7 +668,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public bool? SecurityEnhancementStrategy
+				public string SecurityEnhancementStrategy
 				{
 					get
 					{
