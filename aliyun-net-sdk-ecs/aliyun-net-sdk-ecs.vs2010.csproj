@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{f4278759-5ff0-441e-b14e-4a965551b682}</ProjectGuid>
+    <ProjectGuid>{b2a32792-72cc-4cfd-9f84-6d2eb519c9f8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -99,6 +99,7 @@
 	<Compile Include="Ecs\Model\V20140526\DetachInstanceRamRoleRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceRamRoleResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\AuthorizeSecurityGroupRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\CreateSimulatedSystemEventsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSecurityGroupAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotLinksResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstancePhysicalAttributeResponse.cs" />
@@ -150,6 +151,7 @@
 	<Compile Include="Ecs\Model\V20140526\DeleteNetworkInterfacePermissionResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ConvertNatPublicIpToEipRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\RemoveTagsResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\CreateSimulatedSystemEventsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeClustersRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\TerminateVirtualBorderRouterResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeTagsResponse.cs" />
@@ -181,6 +183,7 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyDiskAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeRegionsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteLaunchTemplateRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\CancelSimulatedSystemEventsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeNewProjectEipMonitorDataResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyAutoSnapshotPolicyExRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateRouteEntryRequest.cs" />
@@ -426,6 +429,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeRecommendInstanceTypeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInvocationResultsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeVirtualBorderRoutersResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\CancelSimulatedSystemEventsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\RecoverVirtualBorderRouterRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribePhysicalConnectionsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\UnbindIpRangeResponse.cs" />
@@ -556,6 +560,7 @@
 	<Compile Include="Ecs\Transform\V20140526\RunInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyLaunchTemplateDefaultVersionResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceAutoReleaseTimeResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\CreateSimulatedSystemEventsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DetachKeyPairResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeVpcsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateDeploymentSetResponseUnmarshaller.cs" />
@@ -647,6 +652,7 @@
 	<Compile Include="Ecs\Transform\V20140526\RebootInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstancesFullStatusResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateSnapshotResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\CancelSimulatedSystemEventsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeResourceByTagsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeEventDetailResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\TerminatePhysicalConnectionResponseUnmarshaller.cs" />
