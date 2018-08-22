@@ -44,6 +44,9 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.StorageEngine = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].StorageEngine");
 				dBInstance.DBInstanceClass = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceClass");
 				dBInstance.DBInstanceStorage = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceStorage");
+				dBInstance.ReplacateId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplacateId");
+				dBInstance.VPCId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].VPCId");
+				dBInstance.VSwitchId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].VSwitchId");
 				dBInstance.DBInstanceStatus = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceStatus");
 				dBInstance.LockMode = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].LockMode");
 				dBInstance.ChargeType = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ChargeType");
@@ -55,6 +58,10 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.MaintainEndTime = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaintainEndTime");
 				dBInstance.DBInstanceType = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceType");
 				dBInstance.LastDowngradeTime = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].LastDowngradeTime");
+				dBInstance.ReplicationFactor = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicationFactor");
+				dBInstance.MaxIOPS = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaxIOPS");
+				dBInstance.MaxConnections = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaxConnections");
+				dBInstance.CurrentKernelVersion = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].CurrentKernelVersion");
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_MongosAttribute> dBInstance_mongosList = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_MongosAttribute>();
 				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList.Length"); j++) {
@@ -63,6 +70,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					mongosAttribute.NodeDescription = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].NodeDescription");
 					mongosAttribute.NodeClass = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].NodeClass");
 					mongosAttribute.ConnectSting = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].ConnectSting");
+					mongosAttribute.MaxIOPS = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].MaxIOPS");
+					mongosAttribute.MaxConnections = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].MaxConnections");
 					mongosAttribute.Port = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].Port");
 
 					dBInstance_mongosList.Add(mongosAttribute);
@@ -76,6 +85,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					shardAttribute.NodeDescription = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].NodeDescription");
 					shardAttribute.NodeClass = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].NodeClass");
 					shardAttribute.NodeStorage = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].NodeStorage");
+					shardAttribute.MaxIOPS = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].MaxIOPS");
+					shardAttribute.MaxConnections = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].MaxConnections");
 
 					dBInstance_shardList.Add(shardAttribute);
 				}

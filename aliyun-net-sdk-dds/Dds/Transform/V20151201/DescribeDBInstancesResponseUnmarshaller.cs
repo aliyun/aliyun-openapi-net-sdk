@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.ExpireTime = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].ExpireTime");
 				dBInstance.DBInstanceType = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceType");
 				dBInstance.LastDowngradeTime = context.IntegerValue("DescribeDBInstances.DBInstances["+ i +"].LastDowngradeTime");
+				dBInstance.ReplicationFactor = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].ReplicationFactor");
+				dBInstance.DestroyTime = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].DestroyTime");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_MongosAttribute> dBInstance_mongosList = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_MongosAttribute>();
 				for (int j = 0; j < context.Length("DescribeDBInstances.DBInstances["+ i +"].MongosList.Length"); j++) {

@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         {
         }
 
+		private string backupMethod;
+
 		private long? resourceOwnerId;
 
 		private string securityToken;
@@ -48,6 +50,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private long? ownerId;
 
 		private string accessKeyId;
+
+		public string BackupMethod
+		{
+			get
+			{
+				return backupMethod;
+			}
+			set	
+			{
+				backupMethod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupMethod", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{

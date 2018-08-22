@@ -129,6 +129,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private int? lastDowngradeTime;
 
+			private string replicationFactor;
+
+			private string destroyTime;
+
 			private List<DescribeDBInstances_MongosAttribute> mongosList;
 
 			private List<DescribeDBInstances_ShardAttribute> shardList;
@@ -322,6 +326,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					lastDowngradeTime = value;
+				}
+			}
+
+			public string ReplicationFactor
+			{
+				get
+				{
+					return replicationFactor;
+				}
+				set	
+				{
+					replicationFactor = value;
+				}
+			}
+
+			public string DestroyTime
+			{
+				get
+				{
+					return destroyTime;
+				}
+				set	
+				{
+					destroyTime = value;
 				}
 			}
 

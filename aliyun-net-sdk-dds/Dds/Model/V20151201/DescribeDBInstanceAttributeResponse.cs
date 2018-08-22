@@ -73,6 +73,12 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private int? dBInstanceStorage;
 
+			private string replacateId;
+
+			private string vPCId;
+
+			private string vSwitchId;
+
 			private string dBInstanceStatus;
 
 			private string lockMode;
@@ -94,6 +100,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			private string dBInstanceType;
 
 			private int? lastDowngradeTime;
+
+			private string replicationFactor;
+
+			private int? maxIOPS;
+
+			private int? maxConnections;
+
+			private string currentKernelVersion;
 
 			private List<DescribeDBInstanceAttribute_MongosAttribute> mongosList;
 
@@ -204,6 +218,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					dBInstanceStorage = value;
+				}
+			}
+
+			public string ReplacateId
+			{
+				get
+				{
+					return replacateId;
+				}
+				set	
+				{
+					replacateId = value;
+				}
+			}
+
+			public string VPCId
+			{
+				get
+				{
+					return vPCId;
+				}
+				set	
+				{
+					vPCId = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
 				}
 			}
 
@@ -339,6 +389,54 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string ReplicationFactor
+			{
+				get
+				{
+					return replicationFactor;
+				}
+				set	
+				{
+					replicationFactor = value;
+				}
+			}
+
+			public int? MaxIOPS
+			{
+				get
+				{
+					return maxIOPS;
+				}
+				set	
+				{
+					maxIOPS = value;
+				}
+			}
+
+			public int? MaxConnections
+			{
+				get
+				{
+					return maxConnections;
+				}
+				set	
+				{
+					maxConnections = value;
+				}
+			}
+
+			public string CurrentKernelVersion
+			{
+				get
+				{
+					return currentKernelVersion;
+				}
+				set	
+				{
+					currentKernelVersion = value;
+				}
+			}
+
 			public List<DescribeDBInstanceAttribute_MongosAttribute> MongosList
 			{
 				get
@@ -373,6 +471,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				private string nodeClass;
 
 				private string connectSting;
+
+				private int? maxIOPS;
+
+				private int? maxConnections;
 
 				private int? port;
 
@@ -424,6 +526,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					}
 				}
 
+				public int? MaxIOPS
+				{
+					get
+					{
+						return maxIOPS;
+					}
+					set	
+					{
+						maxIOPS = value;
+					}
+				}
+
+				public int? MaxConnections
+				{
+					get
+					{
+						return maxConnections;
+					}
+					set	
+					{
+						maxConnections = value;
+					}
+				}
+
 				public int? Port
 				{
 					get
@@ -447,6 +573,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				private string nodeClass;
 
 				private int? nodeStorage;
+
+				private int? maxIOPS;
+
+				private int? maxConnections;
 
 				public string NodeId
 				{
@@ -493,6 +623,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						nodeStorage = value;
+					}
+				}
+
+				public int? MaxIOPS
+				{
+					get
+					{
+						return maxIOPS;
+					}
+					set	
+					{
+						maxIOPS = value;
+					}
+				}
+
+				public int? MaxConnections
+				{
+					get
+					{
+						return maxConnections;
+					}
+					set	
+					{
+						maxConnections = value;
 					}
 				}
 			}

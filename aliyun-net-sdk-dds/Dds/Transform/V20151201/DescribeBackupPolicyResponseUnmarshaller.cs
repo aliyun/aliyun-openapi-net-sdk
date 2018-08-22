@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			describeBackupPolicyResponse.BackupRetentionPeriod = context.StringValue("DescribeBackupPolicy.BackupRetentionPeriod");
 			describeBackupPolicyResponse.PreferredBackupTime = context.StringValue("DescribeBackupPolicy.PreferredBackupTime");
 			describeBackupPolicyResponse.PreferredBackupPeriod = context.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
+			describeBackupPolicyResponse.PreferredNextBackupTime = context.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
         
 			return describeBackupPolicyResponse;
         }

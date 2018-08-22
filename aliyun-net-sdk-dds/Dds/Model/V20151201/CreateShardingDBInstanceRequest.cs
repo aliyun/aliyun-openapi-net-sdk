@@ -77,6 +77,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string accountPassword;
 
+		private string autoRenew;
+
 		private string vpcId;
 
 		private string zoneId;
@@ -147,8 +149,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				replicaSets = value;
 				for (int i = 0; i < replicaSets.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (i + 1) + ".Class", replicaSets[i].Class);
 					DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (i + 1) + ".Storage", replicaSets[i].Storage);
+					DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (i + 1) + ".Class", replicaSets[i].Class);
 				}
 			}
 		}
@@ -308,8 +310,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				configServers = value;
 				for (int i = 0; i < configServers.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"ConfigServer." + (i + 1) + ".Class", configServers[i].Class);
 					DictionaryUtil.Add(QueryParameters,"ConfigServer." + (i + 1) + ".Storage", configServers[i].Storage);
+					DictionaryUtil.Add(QueryParameters,"ConfigServer." + (i + 1) + ".Class", configServers[i].Class);
 				}
 			}
 		}
@@ -383,6 +385,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
+			}
+		}
+
 		public string VpcId
 		{
 			get
@@ -425,21 +440,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class ReplicaSet
 		{
 
-			private string class_;
-
 			private int? storage;
 
-			public string Class
-			{
-				get
-				{
-					return class_;
-				}
-				set	
-				{
-					class_ = value;
-				}
-			}
+			private string class_;
 
 			public int? Storage
 			{
@@ -450,6 +453,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					storage = value;
+				}
+			}
+
+			public string Class
+			{
+				get
+				{
+					return class_;
+				}
+				set	
+				{
+					class_ = value;
 				}
 			}
 		}
@@ -457,21 +472,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class ConfigServer
 		{
 
-			private string class_;
-
 			private int? storage;
 
-			public string Class
-			{
-				get
-				{
-					return class_;
-				}
-				set	
-				{
-					class_ = value;
-				}
-			}
+			private string class_;
 
 			public int? Storage
 			{
@@ -482,6 +485,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					storage = value;
+				}
+			}
+
+			public string Class
+			{
+				get
+				{
+					return class_;
+				}
+				set	
+				{
+					class_ = value;
 				}
 			}
 		}

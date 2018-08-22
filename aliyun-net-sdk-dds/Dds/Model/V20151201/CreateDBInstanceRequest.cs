@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string networkType;
 
+		private string replicationFactor;
+
 		private string accessKeyId;
 
 		private string storageEngine;
@@ -80,6 +82,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string vSwitchId;
 
 		private string accountPassword;
+
+		private string autoRenew;
 
 		private string vpcId;
 
@@ -162,6 +166,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				networkType = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
+		public string ReplicationFactor
+		{
+			get
+			{
+				return replicationFactor;
+			}
+			set	
+			{
+				replicationFactor = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicationFactor", value);
 			}
 		}
 
@@ -396,6 +413,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				accountPassword = value;
 				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
+			}
+		}
+
+		public string AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
 			}
 		}
 

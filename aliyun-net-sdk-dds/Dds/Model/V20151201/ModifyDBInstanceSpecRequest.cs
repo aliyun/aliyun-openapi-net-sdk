@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string securityToken;
 
+		private string effectiveTime;
+
 		private string action;
 
 		private string dBInstanceId;
@@ -203,6 +205,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string EffectiveTime
+		{
+			get
+			{
+				return effectiveTime;
+			}
+			set	
+			{
+				effectiveTime = value;
+				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
 			}
 		}
 

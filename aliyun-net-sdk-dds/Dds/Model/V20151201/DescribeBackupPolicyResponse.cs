@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string preferredBackupPeriod;
 
+		private string preferredNextBackupTime;
+
 		public string RequestId
 		{
 			get
@@ -77,6 +79,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				preferredBackupPeriod = value;
+			}
+		}
+
+		public string PreferredNextBackupTime
+		{
+			get
+			{
+				return preferredNextBackupTime;
+			}
+			set	
+			{
+				preferredNextBackupTime = value;
 			}
 		}
 	}

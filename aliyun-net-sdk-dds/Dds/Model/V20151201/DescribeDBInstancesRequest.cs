@@ -45,9 +45,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? pageNumber;
 
+		private string replicationFactor;
+
 		private string accessKeyId;
 
 		private string dBInstanceType;
+
+		private string expired;
 
 		private string securityToken;
 
@@ -135,6 +139,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string ReplicationFactor
+		{
+			get
+			{
+				return replicationFactor;
+			}
+			set	
+			{
+				replicationFactor = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicationFactor", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -158,6 +175,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceType = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceType", value);
+			}
+		}
+
+		public string Expired
+		{
+			get
+			{
+				return expired;
+			}
+			set	
+			{
+				expired = value;
+				DictionaryUtil.Add(QueryParameters, "Expired", value);
 			}
 		}
 

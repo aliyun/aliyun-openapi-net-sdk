@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string resourceOwnerAccount;
 
+		private bool? attachDbInstanceData;
+
 		private string ownerAccount;
 
 		private string replicaId;
@@ -89,6 +91,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public bool? AttachDbInstanceData
+		{
+			get
+			{
+				return attachDbInstanceData;
+			}
+			set	
+			{
+				attachDbInstanceData = value;
+				DictionaryUtil.Add(QueryParameters, "AttachDbInstanceData", value.ToString());
 			}
 		}
 

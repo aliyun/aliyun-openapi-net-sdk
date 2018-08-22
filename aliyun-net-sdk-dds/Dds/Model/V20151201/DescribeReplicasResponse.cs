@@ -103,6 +103,12 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string replicaStatus;
 
+			private string replicationClusterStatus;
+
+			private string replicaMode;
+
+			private string domainMode;
+
 			private List<DescribeReplicas_Items1> dBInstances;
 
 			public string ReplicaId
@@ -141,6 +147,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string ReplicationClusterStatus
+			{
+				get
+				{
+					return replicationClusterStatus;
+				}
+				set	
+				{
+					replicationClusterStatus = value;
+				}
+			}
+
+			public string ReplicaMode
+			{
+				get
+				{
+					return replicaMode;
+				}
+				set	
+				{
+					replicaMode = value;
+				}
+			}
+
+			public string DomainMode
+			{
+				get
+				{
+					return domainMode;
+				}
+				set	
+				{
+					domainMode = value;
+				}
+			}
+
 			public List<DescribeReplicas_Items1> DBInstances
 			{
 				get
@@ -159,6 +201,20 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				private string dBInstanceId;
 
 				private string role;
+
+				private string readWriteType;
+
+				private string instanceNetworkType;
+
+				private string dBInstanceDescription;
+
+				private string dBInstanceStatus;
+
+				private string engine;
+
+				private string regionId;
+
+				private string zoneId;
 
 				public string DBInstanceId
 				{
@@ -181,6 +237,90 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						role = value;
+					}
+				}
+
+				public string ReadWriteType
+				{
+					get
+					{
+						return readWriteType;
+					}
+					set	
+					{
+						readWriteType = value;
+					}
+				}
+
+				public string InstanceNetworkType
+				{
+					get
+					{
+						return instanceNetworkType;
+					}
+					set	
+					{
+						instanceNetworkType = value;
+					}
+				}
+
+				public string DBInstanceDescription
+				{
+					get
+					{
+						return dBInstanceDescription;
+					}
+					set	
+					{
+						dBInstanceDescription = value;
+					}
+				}
+
+				public string DBInstanceStatus
+				{
+					get
+					{
+						return dBInstanceStatus;
+					}
+					set	
+					{
+						dBInstanceStatus = value;
+					}
+				}
+
+				public string Engine
+				{
+					get
+					{
+						return engine;
+					}
+					set	
+					{
+						engine = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				public string ZoneId
+				{
+					get
+					{
+						return zoneId;
+					}
+					set	
+					{
+						zoneId = value;
 					}
 				}
 			}
