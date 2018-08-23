@@ -71,6 +71,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string spotStrategy;
 
+		private string privateIpAddress;
+
 		private string periodUnit;
 
 		private string instanceName;
@@ -384,6 +386,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				spotStrategy = value;
 				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
+			}
+		}
+
+		public string PrivateIpAddress
+		{
+			get
+			{
+				return privateIpAddress;
+			}
+			set	
+			{
+				privateIpAddress = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
 			}
 		}
 
