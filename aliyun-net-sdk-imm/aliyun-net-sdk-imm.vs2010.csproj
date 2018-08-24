@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{96c701b5-d4ee-4295-96fa-114b5b92ae6c}</ProjectGuid>
+    <ProjectGuid>{3096b6a7-2381-4e11-a031-24aec7c82b34}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -60,6 +60,7 @@
 	<Compile Include="Imm\Model\V20170906\CreateTagJobResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetFaceSetDetailRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GroupFacesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectQRCodesRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceJobsResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetProjectRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteFaceSearchUserResponse.cs" />
@@ -98,6 +99,7 @@
 	<Compile Include="Imm\Model\V20170906\RegistFaceRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateFaceJobResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListTagPhotosResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectQRCodesResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetFaceSetDetailResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteTagByNameResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\IndexTagRequest.cs" />
@@ -222,6 +224,7 @@
 	<Compile Include="Imm\Transform\V20170906\ListFaceJobsResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\ConvertOfficeFormatResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\ListFaceGroupPhotosResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DetectQRCodesResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\SearchFaceResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\ListTagNamesResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\ListFaceSearchGroupImagesResponseUnmarshaller.cs" />
