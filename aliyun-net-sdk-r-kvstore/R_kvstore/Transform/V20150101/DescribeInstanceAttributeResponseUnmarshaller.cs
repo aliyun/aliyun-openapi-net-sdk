@@ -68,8 +68,11 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.ArchitectureType = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ArchitectureType");
 				dBInstanceAttribute.NodeType1 = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].NodeType");
 				dBInstanceAttribute.PackageType = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].PackageType");
-				dBInstanceAttribute.ReplacateId = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ReplacateId");
-				dBInstanceAttribute.EngineVersion2 = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].EngineVersion");
+				dBInstanceAttribute.ReplicaId = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ReplicaId");
+				dBInstanceAttribute.VpcAuthMode = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].VpcAuthMode");
+				dBInstanceAttribute.VpcAuthMode2 = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].VpcAuthMode");
+				dBInstanceAttribute.ReplicationMode = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ReplicationMode");
+				dBInstanceAttribute.LuaStatus = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].LuaStatus");
 
 				describeInstanceAttributeResponse_instances.Add(dBInstanceAttribute);
 			}

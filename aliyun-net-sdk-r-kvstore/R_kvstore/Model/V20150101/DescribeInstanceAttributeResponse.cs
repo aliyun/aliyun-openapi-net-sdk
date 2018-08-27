@@ -121,9 +121,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string packageType;
 
-			private string replacateId;
+			private string replicaId;
 
-			private string engineVersion2;
+			private string vpcAuthMode;
+
+			private string vpcAuthMode2;
+
+			private string replicationMode;
+
+			private string luaStatus;
 
 			public string InstanceId
 			{
@@ -521,27 +527,63 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string ReplacateId
+			public string ReplicaId
 			{
 				get
 				{
-					return replacateId;
+					return replicaId;
 				}
 				set	
 				{
-					replacateId = value;
+					replicaId = value;
 				}
 			}
 
-			public string EngineVersion2
+			public string VpcAuthMode
 			{
 				get
 				{
-					return engineVersion2;
+					return vpcAuthMode;
 				}
 				set	
 				{
-					engineVersion2 = value;
+					vpcAuthMode = value;
+				}
+			}
+
+			public string VpcAuthMode2
+			{
+				get
+				{
+					return vpcAuthMode2;
+				}
+				set	
+				{
+					vpcAuthMode2 = value;
+				}
+			}
+
+			public string ReplicationMode
+			{
+				get
+				{
+					return replicationMode;
+				}
+				set	
+				{
+					replicationMode = value;
+				}
+			}
+
+			public string LuaStatus
+			{
+				get
+				{
+					return luaStatus;
+				}
+				set	
+				{
+					luaStatus = value;
 				}
 			}
 		}

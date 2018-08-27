@@ -67,6 +67,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.NodeType = context.StringValue("DescribeInstances.Instances["+ i +"].NodeType");
 				kVStoreInstance.PackageType = context.StringValue("DescribeInstances.Instances["+ i +"].PackageType");
 				kVStoreInstance.EngineVersion = context.StringValue("DescribeInstances.Instances["+ i +"].EngineVersion");
+				kVStoreInstance.DestroyTime = context.StringValue("DescribeInstances.Instances["+ i +"].DestroyTime");
 
 				describeInstancesResponse_instances.Add(kVStoreInstance);
 			}

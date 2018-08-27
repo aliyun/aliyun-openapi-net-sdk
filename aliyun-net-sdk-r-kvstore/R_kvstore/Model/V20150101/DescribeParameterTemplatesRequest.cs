@@ -26,45 +26,32 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceMinorVersionRequest : RpcAcsRequest<ModifyInstanceMinorVersionResponse>
+    public class DescribeParameterTemplatesRequest : RpcAcsRequest<DescribeParameterTemplatesResponse>
     {
-        public ModifyInstanceMinorVersionRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
+        public DescribeParameterTemplatesRequest()
+            : base("R_kvstore", "2015-01-01", "DescribeParameterTemplates", "redisa", "openAPI")
         {
         }
 
-		private string executeMode;
-
 		private long? resourceOwnerId;
-
-		private string instanceId;
 
 		private string securityToken;
 
 		private string resourceOwnerAccount;
 
-		private string minorversion;
+		private string engine;
 
 		private string ownerAccount;
 
 		private string action;
 
+		private string engineVersion;
+
 		private long? ownerId;
 
-		private string accessKeyId;
+		private string characterType;
 
-		public string ExecuteMode
-		{
-			get
-			{
-				return executeMode;
-			}
-			set	
-			{
-				executeMode = value;
-				DictionaryUtil.Add(QueryParameters, "ExecuteMode", value);
-			}
-		}
+		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -76,19 +63,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -118,16 +92,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Minorversion
+		public string Engine
 		{
 			get
 			{
-				return minorversion;
+				return engine;
 			}
 			set	
 			{
-				minorversion = value;
-				DictionaryUtil.Add(QueryParameters, "Minorversion", value);
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 
@@ -157,6 +131,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -167,6 +154,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string CharacterType
+		{
+			get
+			{
+				return characterType;
+			}
+			set	
+			{
+				characterType = value;
+				DictionaryUtil.Add(QueryParameters, "CharacterType", value);
 			}
 		}
 
@@ -183,9 +183,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceMinorVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeParameterTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceMinorVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeParameterTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

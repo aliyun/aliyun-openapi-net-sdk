@@ -155,6 +155,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string engineVersion;
 
+			private string destroyTime;
+
 			public string ReplacateId
 			{
 				get
@@ -500,6 +502,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					engineVersion = value;
+				}
+			}
+
+			public string DestroyTime
+			{
+				get
+				{
+					return destroyTime;
+				}
+				set	
+				{
+					destroyTime = value;
 				}
 			}
 		}

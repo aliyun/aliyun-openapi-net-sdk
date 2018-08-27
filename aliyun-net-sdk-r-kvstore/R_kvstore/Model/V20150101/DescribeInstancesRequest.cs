@@ -53,6 +53,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string vSwitchId;
 
+		private string expired;
+
 		private string securityToken;
 
 		private string instanceIds;
@@ -194,6 +196,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string Expired
+		{
+			get
+			{
+				return expired;
+			}
+			set	
+			{
+				expired = value;
+				DictionaryUtil.Add(QueryParameters, "Expired", value);
 			}
 		}
 

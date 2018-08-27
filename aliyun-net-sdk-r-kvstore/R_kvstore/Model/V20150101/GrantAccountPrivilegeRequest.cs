@@ -26,24 +26,22 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceMinorVersionRequest : RpcAcsRequest<ModifyInstanceMinorVersionResponse>
+    public class GrantAccountPrivilegeRequest : RpcAcsRequest<GrantAccountPrivilegeResponse>
     {
-        public ModifyInstanceMinorVersionRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
+        public GrantAccountPrivilegeRequest()
+            : base("R_kvstore", "2015-01-01", "GrantAccountPrivilege", "redisa", "openAPI")
         {
         }
-
-		private string executeMode;
 
 		private long? resourceOwnerId;
 
 		private string instanceId;
 
+		private string accountName;
+
 		private string securityToken;
 
 		private string resourceOwnerAccount;
-
-		private string minorversion;
 
 		private string ownerAccount;
 
@@ -53,18 +51,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string accessKeyId;
 
-		public string ExecuteMode
-		{
-			get
-			{
-				return executeMode;
-			}
-			set	
-			{
-				executeMode = value;
-				DictionaryUtil.Add(QueryParameters, "ExecuteMode", value);
-			}
-		}
+		private string accountPrivilege;
 
 		public long? ResourceOwnerId
 		{
@@ -92,6 +79,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string AccountName
+		{
+			get
+			{
+				return accountName;
+			}
+			set	
+			{
+				accountName = value;
+				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+			}
+		}
+
 		public string SecurityToken
 		{
 			get
@@ -115,19 +115,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string Minorversion
-		{
-			get
-			{
-				return minorversion;
-			}
-			set	
-			{
-				minorversion = value;
-				DictionaryUtil.Add(QueryParameters, "Minorversion", value);
 			}
 		}
 
@@ -183,9 +170,22 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceMinorVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string AccountPrivilege
+		{
+			get
+			{
+				return accountPrivilege;
+			}
+			set	
+			{
+				accountPrivilege = value;
+				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
+			}
+		}
+
+        public override GrantAccountPrivilegeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceMinorVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GrantAccountPrivilegeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

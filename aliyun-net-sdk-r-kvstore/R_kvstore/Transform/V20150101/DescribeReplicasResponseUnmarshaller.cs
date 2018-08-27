@@ -41,6 +41,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				items.ReplicaId = context.StringValue("DescribeReplicas.Replicas["+ i +"].ReplicaId");
 				items.ReplicaDescription = context.StringValue("DescribeReplicas.Replicas["+ i +"].ReplicaDescription");
 				items.ReplicaStatus = context.StringValue("DescribeReplicas.Replicas["+ i +"].ReplicaStatus");
+				items.ReplicationClusterStatus = context.StringValue("DescribeReplicas.Replicas["+ i +"].ReplicationClusterStatus");
 				items.ReplicaMode = context.StringValue("DescribeReplicas.Replicas["+ i +"].ReplicaMode");
 				items.DomainMode = context.StringValue("DescribeReplicas.Replicas["+ i +"].DomainMode");
 
@@ -50,6 +51,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 					items1.DBInstanceId = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceId");
 					items1.Role = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].Role");
 					items1.ReadWriteType = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].ReadWriteType");
+					items1.InstanceNetworkType = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].InstanceNetworkType");
+					items1.DBInstanceDescription = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceDescription");
+					items1.DBInstanceStatus = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].DBInstanceStatus");
+					items1.Engine = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].Engine");
+					items1.RegionId = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].RegionId");
+					items1.ZoneId = context.StringValue("DescribeReplicas.Replicas["+ i +"].DBInstances["+ j +"].ZoneId");
 
 					items_dBInstances.Add(items1);
 				}

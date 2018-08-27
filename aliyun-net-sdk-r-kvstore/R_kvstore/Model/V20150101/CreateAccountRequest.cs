@@ -26,42 +26,36 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceSpecRequest : RpcAcsRequest<ModifyInstanceSpecResponse>
+    public class CreateAccountRequest : RpcAcsRequest<CreateAccountResponse>
     {
-        public ModifyInstanceSpecRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceSpec", "redisa", "openAPI")
+        public CreateAccountRequest()
+            : base("R_kvstore", "2015-01-01", "CreateAccount", "redisa", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private bool? autoPay;
-
-		private string fromApp;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string couponNo;
+		private string accountType;
 
 		private long? ownerId;
 
-		private string instanceClass;
+		private string accountDescription;
 
 		private string accessKeyId;
 
+		private string accountPassword;
+
 		private string instanceId;
+
+		private string accountName;
 
 		private string securityToken;
 
-		private string effectiveTime;
-
 		private string action;
-
-		private bool? forceUpgrade;
-
-		private string businessInfo;
 
 		public long? ResourceOwnerId
 		{
@@ -73,32 +67,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public bool? AutoPay
-		{
-			get
-			{
-				return autoPay;
-			}
-			set	
-			{
-				autoPay = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
-			}
-		}
-
-		public string FromApp
-		{
-			get
-			{
-				return fromApp;
-			}
-			set	
-			{
-				fromApp = value;
-				DictionaryUtil.Add(QueryParameters, "FromApp", value);
 			}
 		}
 
@@ -128,16 +96,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string CouponNo
+		public string AccountType
 		{
 			get
 			{
-				return couponNo;
+				return accountType;
 			}
 			set	
 			{
-				couponNo = value;
-				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
+				accountType = value;
+				DictionaryUtil.Add(QueryParameters, "AccountType", value);
 			}
 		}
 
@@ -154,16 +122,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceClass
+		public string AccountDescription
 		{
 			get
 			{
-				return instanceClass;
+				return accountDescription;
 			}
 			set	
 			{
-				instanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
+				accountDescription = value;
+				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
 			}
 		}
 
@@ -180,6 +148,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string AccountPassword
+		{
+			get
+			{
+				return accountPassword;
+			}
+			set	
+			{
+				accountPassword = value;
+				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
+			}
+		}
+
 		public string InstanceId
 		{
 			get
@@ -190,6 +171,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string AccountName
+		{
+			get
+			{
+				return accountName;
+			}
+			set	
+			{
+				accountName = value;
+				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
@@ -206,19 +200,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EffectiveTime
-		{
-			get
-			{
-				return effectiveTime;
-			}
-			set	
-			{
-				effectiveTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -232,35 +213,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public bool? ForceUpgrade
-		{
-			get
-			{
-				return forceUpgrade;
-			}
-			set	
-			{
-				forceUpgrade = value;
-				DictionaryUtil.Add(QueryParameters, "ForceUpgrade", value.ToString());
-			}
-		}
-
-		public string BusinessInfo
-		{
-			get
-			{
-				return businessInfo;
-			}
-			set	
-			{
-				businessInfo = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
-			}
-		}
-
-        public override ModifyInstanceSpecResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateAccountResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

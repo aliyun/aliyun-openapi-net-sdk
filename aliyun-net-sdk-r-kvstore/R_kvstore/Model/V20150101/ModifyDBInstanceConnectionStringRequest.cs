@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeReplicasRequest : RpcAcsRequest<DescribeReplicasResponse>
+    public class ModifyDBInstanceConnectionStringRequest : RpcAcsRequest<ModifyDBInstanceConnectionStringResponse>
     {
-        public DescribeReplicasRequest()
-            : base("R_kvstore", "2015-01-01", "DescribeReplicas", "redisa", "openAPI")
+        public ModifyDBInstanceConnectionStringRequest()
+            : base("R_kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "redisa", "openAPI")
         {
         }
 
@@ -39,19 +39,17 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string resourceOwnerAccount;
 
-		private bool? attachDbInstanceData;
-
 		private string ownerAccount;
-
-		private string replicaId;
-
-		private int? pageSize;
 
 		private string action;
 
+		private string dBInstanceId;
+
+		private string newConnectionString;
+
 		private long? ownerId;
 
-		private int? pageNumber;
+		private string currentConnectionString;
 
 		private string accessKeyId;
 
@@ -94,19 +92,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public bool? AttachDbInstanceData
-		{
-			get
-			{
-				return attachDbInstanceData;
-			}
-			set	
-			{
-				attachDbInstanceData = value;
-				DictionaryUtil.Add(QueryParameters, "AttachDbInstanceData", value.ToString());
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -117,32 +102,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string ReplicaId
-		{
-			get
-			{
-				return replicaId;
-			}
-			set	
-			{
-				replicaId = value;
-				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -159,6 +118,32 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string NewConnectionString
+		{
+			get
+			{
+				return newConnectionString;
+			}
+			set	
+			{
+				newConnectionString = value;
+				DictionaryUtil.Add(QueryParameters, "newConnectionString", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -172,16 +157,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? PageNumber
+		public string CurrentConnectionString
 		{
 			get
 			{
-				return pageNumber;
+				return currentConnectionString;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				currentConnectionString = value;
+				DictionaryUtil.Add(QueryParameters, "currentConnectionString", value);
 			}
 		}
 
@@ -198,14 +183,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DescribeReplicasResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyDBInstanceConnectionStringResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeReplicasResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBInstanceConnectionStringResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
