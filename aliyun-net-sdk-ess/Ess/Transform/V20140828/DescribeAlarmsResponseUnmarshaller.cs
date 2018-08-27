@@ -43,7 +43,6 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				alarm.Description = context.StringValue("DescribeAlarms.AlarmList["+ i +"].Description");
 				alarm.MetricType = context.StringValue("DescribeAlarms.AlarmList["+ i +"].MetricType");
 				alarm.MetricName = context.StringValue("DescribeAlarms.AlarmList["+ i +"].MetricName");
-				alarm.Dimensions = context.StringValue("DescribeAlarms.AlarmList["+ i +"].Dimensions");
 				alarm.Period = context.IntegerValue("DescribeAlarms.AlarmList["+ i +"].Period");
 				alarm.Statistics = context.StringValue("DescribeAlarms.AlarmList["+ i +"].Statistics");
 				alarm.ComparisonOperator = context.StringValue("DescribeAlarms.AlarmList["+ i +"].ComparisonOperator");
@@ -58,6 +57,16 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 					alarm_alarmActions.Add(context.StringValue("DescribeAlarms.AlarmList["+ i +"].AlarmActions["+ j +"]"));
 				}
 				alarm.AlarmActions = alarm_alarmActions;
+
+				List<DescribeAlarmsResponse.DescribeAlarms_Alarm.DescribeAlarms_Dimension> alarm_dimensions = new List<DescribeAlarmsResponse.DescribeAlarms_Alarm.DescribeAlarms_Dimension>();
+				for (int j = 0; j < context.Length("DescribeAlarms.AlarmList["+ i +"].Dimensions.Length"); j++) {
+					DescribeAlarmsResponse.DescribeAlarms_Alarm.DescribeAlarms_Dimension dimension = new DescribeAlarmsResponse.DescribeAlarms_Alarm.DescribeAlarms_Dimension();
+					dimension.DimensionKey = context.StringValue("DescribeAlarms.AlarmList["+ i +"].Dimensions["+ j +"].DimensionKey");
+					dimension.DimensionValue = context.StringValue("DescribeAlarms.AlarmList["+ i +"].Dimensions["+ j +"].DimensionValue");
+
+					alarm_dimensions.Add(dimension);
+				}
+				alarm.Dimensions = alarm_dimensions;
 
 				describeAlarmsResponse_alarmList.Add(alarm);
 			}

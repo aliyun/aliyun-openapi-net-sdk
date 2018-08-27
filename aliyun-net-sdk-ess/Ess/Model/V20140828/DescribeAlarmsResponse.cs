@@ -107,8 +107,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string metricName;
 
-			private string dimensions;
-
 			private int? period;
 
 			private string statistics;
@@ -124,6 +122,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			private string scalingGroupId;
 
 			private bool? enable;
+
+			private List<DescribeAlarms_Dimension> dimensions;
 
 			private List<string> alarmActions;
 
@@ -184,18 +184,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					metricName = value;
-				}
-			}
-
-			public string Dimensions
-			{
-				get
-				{
-					return dimensions;
-				}
-				set	
-				{
-					dimensions = value;
 				}
 			}
 
@@ -295,6 +283,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public List<DescribeAlarms_Dimension> Dimensions
+			{
+				get
+				{
+					return dimensions;
+				}
+				set	
+				{
+					dimensions = value;
+				}
+			}
+
 			public List<string> AlarmActions
 			{
 				get
@@ -304,6 +304,38 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					alarmActions = value;
+				}
+			}
+
+			public class DescribeAlarms_Dimension
+			{
+
+				private string dimensionKey;
+
+				private string dimensionValue;
+
+				public string DimensionKey
+				{
+					get
+					{
+						return dimensionKey;
+					}
+					set	
+					{
+						dimensionKey = value;
+					}
+				}
+
+				public string DimensionValue
+				{
+					get
+					{
+						return dimensionValue;
+					}
+					set	
+					{
+						dimensionValue = value;
+					}
 				}
 			}
 		}

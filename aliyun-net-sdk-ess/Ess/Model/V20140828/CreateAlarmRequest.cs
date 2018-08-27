@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scalingGroupId;
 
-		private string groupId;
+		private int? groupId;
 
 		private string description;
 
@@ -53,8 +53,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string accessKeyId;
 
-		private string comparisionOperator;
-
 		private string regionId;
 
 		private string name;
@@ -64,6 +62,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private int? evaluationCount;
 
 		private string metricName;
+
+		private string comparisonOperator;
 
 		private List<Dimension> dimensions;
 
@@ -121,7 +121,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string GroupId
+		public int? GroupId
 		{
 			get
 			{
@@ -130,7 +130,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			set	
 			{
 				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
 			}
 		}
 
@@ -203,19 +203,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string ComparisionOperator
-		{
-			get
-			{
-				return comparisionOperator;
-			}
-			set	
-			{
-				comparisionOperator = value;
-				DictionaryUtil.Add(QueryParameters, "ComparisionOperator", value);
-			}
-		}
-
 		public string RegionId
 		{
 			get
@@ -278,6 +265,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				metricName = value;
 				DictionaryUtil.Add(QueryParameters, "MetricName", value);
+			}
+		}
+
+		public string ComparisonOperator
+		{
+			get
+			{
+				return comparisonOperator;
+			}
+			set	
+			{
+				comparisonOperator = value;
+				DictionaryUtil.Add(QueryParameters, "ComparisonOperator", value);
 			}
 		}
 
