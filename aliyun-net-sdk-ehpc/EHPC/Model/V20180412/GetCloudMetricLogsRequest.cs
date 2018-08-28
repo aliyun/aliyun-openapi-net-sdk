@@ -39,8 +39,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string metricCategories;
 
-		private int? line;
-
 		private string metricScope;
 
 		private string action;
@@ -93,19 +91,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				metricCategories = value;
 				DictionaryUtil.Add(QueryParameters, "MetricCategories", value);
-			}
-		}
-
-		public int? Line
-		{
-			get
-			{
-				return line;
-			}
-			set	
-			{
-				line = value;
-				DictionaryUtil.Add(QueryParameters, "Line", value.ToString());
 			}
 		}
 

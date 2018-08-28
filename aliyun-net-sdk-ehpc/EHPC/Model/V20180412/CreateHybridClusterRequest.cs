@@ -63,6 +63,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string onPremiseVolumeLocalPath;
 
+		private string clientVersion;
+
 		private string osTag;
 
 		private string remoteDirectory;
@@ -279,6 +281,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				onPremiseVolumeLocalPath = value;
 				DictionaryUtil.Add(QueryParameters, "OnPremiseVolumeLocalPath", value);
+			}
+		}
+
+		public string ClientVersion
+		{
+			get
+			{
+				return clientVersion;
+			}
+			set	
+			{
+				clientVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ClientVersion", value);
 			}
 		}
 

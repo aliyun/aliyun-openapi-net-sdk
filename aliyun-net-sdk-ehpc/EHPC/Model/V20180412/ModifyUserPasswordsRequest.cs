@@ -79,8 +79,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				users = value;
 				for (int i = 0; i < users.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"User." + (i + 1) + ".Name", users[i].Name);
 					DictionaryUtil.Add(QueryParameters,"User." + (i + 1) + ".Password", users[i].Password);
+					DictionaryUtil.Add(QueryParameters,"User." + (i + 1) + ".Name", users[i].Name);
 				}
 			}
 		}
@@ -101,21 +101,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		public class User
 		{
 
-			private string name;
-
 			private string password;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string name;
 
 			public string Password
 			{
@@ -126,6 +114,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					password = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 		}

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4c712e34-3ed5-4725-ba38-14092991cc3a}</ProjectGuid>
+    <ProjectGuid>{d1fa128f-9fd8-4bb4-a4eb-76a27bcccd24}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -48,6 +48,7 @@
 	<Compile Include="EHPC\Model\V20180412\ListClustersRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListInvocationStatusRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ModifyClusterAttributesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\RunCloudMetricProfilingResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListImagesResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\RecoverClusterRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListNodesRequest.cs" />
@@ -71,6 +72,7 @@
 	<Compile Include="EHPC\Model\V20180412\DeleteContainerAppsResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListPreferredEcsTypesRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\CreateClusterRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\RunCloudMetricProfilingRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\SetJobUserResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListInvocationResultsRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListContainerImagesResponse.cs" />
@@ -103,6 +105,7 @@
 	<Compile Include="EHPC\Model\V20180412\ListCustomImagesRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\AddLocalNodesResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\DeleteContainerAppsRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListCloudMetricProfilingsRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListClusterLogsResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListClusterLogsRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\StopClusterResponse.cs" />
@@ -122,6 +125,7 @@
 	<Compile Include="EHPC\Model\V20180412\StartNodesRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\SubmitJobRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListCommandsRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\GetCloudMetricProfilingResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListCustomImagesResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\PullImageRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\AddLocalNodesRequest.cs" />
@@ -129,6 +133,7 @@
 	<Compile Include="EHPC\Model\V20180412\DeleteJobTemplatesResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\DeleteJobsRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListUsersRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\GetCloudMetricProfilingRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\AddNodesRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\DeleteUsersResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\CreateJobTemplateResponse.cs" />
@@ -149,6 +154,7 @@
 	<Compile Include="EHPC\Model\V20180412\ModifyUserGroupsResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\DescribeImageGatewayConfigRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListNodesNoPagingRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListCloudMetricProfilingsResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\SetAutoScaleConfigRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\UpgradeClientRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ResetNodesResponse.cs" />
@@ -166,6 +172,7 @@
 	<Compile Include="EHPC\Transform\V20180412\ModifyUserPasswordsResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\StopNodesResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\PullImageResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\GetCloudMetricProfilingResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\DescribeImageResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\DescribeContainerAppResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ListImagesResponseUnmarshaller.cs" />
@@ -178,12 +185,14 @@
 	<Compile Include="EHPC\Transform\V20180412\ListNodesNoPagingResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\StartNodesResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ListSoftwaresResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\RunCloudMetricProfilingResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\SetAutoScaleConfigResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\DeleteContainerAppsResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\GetAutoScaleConfigResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\CreateHybridClusterResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ListJobsResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\RecoverClusterResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListCloudMetricProfilingsResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ListPreferredEcsTypesResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ListCurrentClientVersionResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ModifyUserGroupsResponseUnmarshaller.cs" />

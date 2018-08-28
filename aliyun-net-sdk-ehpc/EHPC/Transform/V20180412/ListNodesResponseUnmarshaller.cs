@@ -40,7 +40,9 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				ListNodesResponse.ListNodes_NodeInfo nodeInfo = new ListNodesResponse.ListNodes_NodeInfo();
 				nodeInfo.Id = context.StringValue("ListNodes.Nodes["+ i +"].Id");
 				nodeInfo.RegionId = context.StringValue("ListNodes.Nodes["+ i +"].RegionId");
+				nodeInfo.HostName = context.StringValue("ListNodes.Nodes["+ i +"].HostName");
 				nodeInfo.Status = context.StringValue("ListNodes.Nodes["+ i +"].Status");
+				nodeInfo.Version = context.StringValue("ListNodes.Nodes["+ i +"].Version");
 				nodeInfo.CreatedByEhpc = context.BooleanValue("ListNodes.Nodes["+ i +"].CreatedByEhpc");
 				nodeInfo.AddTime = context.StringValue("ListNodes.Nodes["+ i +"].AddTime");
 				nodeInfo.Expired = context.BooleanValue("ListNodes.Nodes["+ i +"].Expired");

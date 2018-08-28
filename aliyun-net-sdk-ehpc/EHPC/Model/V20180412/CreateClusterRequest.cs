@@ -77,6 +77,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string volumeProtocol;
 
+		private string clientVersion;
+
 		private string osTag;
 
 		private string remoteDirectory;
@@ -401,6 +403,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string ClientVersion
+		{
+			get
+			{
+				return clientVersion;
+			}
+			set	
+			{
+				clientVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ClientVersion", value);
+			}
+		}
+
 		public string OsTag
 		{
 			get
@@ -465,8 +480,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				postInstallScripts = value;
 				for (int i = 0; i < postInstallScripts.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"PostInstallScript." + (i + 1) + ".Url", postInstallScripts[i].Url);
 					DictionaryUtil.Add(QueryParameters,"PostInstallScript." + (i + 1) + ".Args", postInstallScripts[i].Args);
+					DictionaryUtil.Add(QueryParameters,"PostInstallScript." + (i + 1) + ".Url", postInstallScripts[i].Url);
 				}
 			}
 		}
@@ -660,21 +675,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		public class PostInstallScript
 		{
 
-			private string url;
-
 			private string args;
 
-			public string Url
-			{
-				get
-				{
-					return url;
-				}
-				set	
-				{
-					url = value;
-				}
-			}
+			private string url;
 
 			public string Args
 			{
@@ -685,6 +688,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					args = value;
+				}
+			}
+
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
 				}
 			}
 		}

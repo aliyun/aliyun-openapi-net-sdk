@@ -39,8 +39,10 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 			for (int i = 0; i < context.Length("ListNodesNoPaging.Nodes.Length"); i++) {
 				ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo nodeInfo = new ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo();
 				nodeInfo.Id = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].Id");
+				nodeInfo.HostName = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].HostName");
 				nodeInfo.RegionId = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].RegionId");
 				nodeInfo.Status = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].Status");
+				nodeInfo.Version = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].Version");
 				nodeInfo.CreatedByEhpc = context.BooleanValue("ListNodesNoPaging.Nodes["+ i +"].CreatedByEhpc");
 				nodeInfo.AddTime = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].AddTime");
 				nodeInfo.Expired = context.BooleanValue("ListNodesNoPaging.Nodes["+ i +"].Expired");

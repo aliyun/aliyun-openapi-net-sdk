@@ -99,9 +99,13 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string id;
 
+			private string hostName;
+
 			private string regionId;
 
 			private string status;
+
+			private string version;
 
 			private bool? createdByEhpc;
 
@@ -137,6 +141,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				}
 			}
 
+			public string HostName
+			{
+				get
+				{
+					return hostName;
+				}
+				set	
+				{
+					hostName = value;
+				}
+			}
+
 			public string RegionId
 			{
 				get
@@ -158,6 +174,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
 				}
 			}
 

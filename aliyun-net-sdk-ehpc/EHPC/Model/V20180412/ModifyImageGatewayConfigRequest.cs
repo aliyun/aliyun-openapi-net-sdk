@@ -93,8 +93,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				repos = value;
 				for (int i = 0; i < repos.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Repo." + (i + 1) + ".Location", repos[i].Location);
 					DictionaryUtil.Add(QueryParameters,"Repo." + (i + 1) + ".Auth", repos[i].Auth);
+					DictionaryUtil.Add(QueryParameters,"Repo." + (i + 1) + ".Location", repos[i].Location);
 					DictionaryUtil.Add(QueryParameters,"Repo." + (i + 1) + ".URL", repos[i].URL);
 				}
 			}
@@ -207,23 +207,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		public class Repo
 		{
 
-			private string location;
-
 			private string auth;
 
-			private string uRL;
+			private string location;
 
-			public string Location
-			{
-				get
-				{
-					return location;
-				}
-				set	
-				{
-					location = value;
-				}
-			}
+			private string uRL;
 
 			public string Auth
 			{
@@ -234,6 +222,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					auth = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
 				}
 			}
 

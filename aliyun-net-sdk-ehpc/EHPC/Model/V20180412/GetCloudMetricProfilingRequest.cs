@@ -26,20 +26,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class AddUsersRequest : RpcAcsRequest<AddUsersResponse>
+    public class GetCloudMetricProfilingRequest : RpcAcsRequest<GetCloudMetricProfilingResponse>
     {
-        public AddUsersRequest()
-            : base("EHPC", "2018-04-12", "AddUsers", "ehs", "openAPI")
+        public GetCloudMetricProfilingRequest()
+            : base("EHPC", "2018-04-12", "GetCloudMetricProfiling", "ehs", "openAPI")
         {
         }
 
+		private string regionId;
+
 		private string action;
+
+		private string profilingId;
 
 		private string clusterId;
 
-		private List<User> users;
-
 		private string accessKeyId;
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
 
 		public string Action
 		{
@@ -51,6 +66,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string ProfilingId
+		{
+			get
+			{
+				return profilingId;
+			}
+			set	
+			{
+				profilingId = value;
+				DictionaryUtil.Add(QueryParameters, "ProfilingId", value);
 			}
 		}
 
@@ -67,25 +95,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public List<User> Users
-		{
-			get
-			{
-				return users;
-			}
-
-			set
-			{
-				users = value;
-				for (int i = 0; i < users.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"User." + (i + 1) + ".Password", users[i].Password);
-					DictionaryUtil.Add(QueryParameters,"User." + (i + 1) + ".Name", users[i].Name);
-					DictionaryUtil.Add(QueryParameters,"User." + (i + 1) + ".Group", users[i].Group);
-				}
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -99,55 +108,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public class User
-		{
-
-			private string password;
-
-			private string name;
-
-			private string group;
-
-			public string Password
-			{
-				get
-				{
-					return password;
-				}
-				set	
-				{
-					password = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Group
-			{
-				get
-				{
-					return group;
-				}
-				set	
-				{
-					group = value;
-				}
-			}
-		}
-
-        public override AddUsersResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetCloudMetricProfilingResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return AddUsersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetCloudMetricProfilingResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
