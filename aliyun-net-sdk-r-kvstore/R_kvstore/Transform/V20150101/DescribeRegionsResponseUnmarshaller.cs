@@ -38,6 +38,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreRegion.RegionId = context.StringValue("DescribeRegions.RegionIds["+ i +"].RegionId");
 				kVStoreRegion.ZoneIds = context.StringValue("DescribeRegions.RegionIds["+ i +"].ZoneIds");
 				kVStoreRegion.LocalName = context.StringValue("DescribeRegions.RegionIds["+ i +"].LocalName");
+				kVStoreRegion.RegionEndpoint = context.StringValue("DescribeRegions.RegionIds["+ i +"].RegionEndpoint");
+				kVStoreRegion.ZoneIdList = context.StringValue("DescribeRegions.RegionIds["+ i +"].ZoneIdList");
 
 				describeRegionsResponse_regionIds.Add(kVStoreRegion);
 			}
