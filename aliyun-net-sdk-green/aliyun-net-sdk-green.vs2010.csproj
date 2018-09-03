@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7b546f39-3aee-4506-817f-35939ba52069}</ProjectGuid>
+    <ProjectGuid>{6d3040dc-9601-4dfb-8e23-edf06e0c31c3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -46,26 +46,38 @@
 	<Compile Include="Green\Model\V20180509\VideoSyncScanResponse.cs" />
 	<Compile Include="Green\Model\V20180509\VideoFeedbackResponse.cs" />
 	<Compile Include="Green\Model\V20180509\VoiceAsyncScanResultsResponse.cs" />
+	<Compile Include="Green\Model\V20180509\VoiceIdentityStartRegisterResponse.cs" />
+	<Compile Include="Green\Model\V20180509\GetAddVideoDnaResultsResponse.cs" />
+	<Compile Include="Green\Model\V20180509\AddVideoDnaRequest.cs" />
 	<Compile Include="Green\Model\V20180509\DeleteFacesResponse.cs" />
 	<Compile Include="Green\Model\V20180509\TextFeedbackResponse.cs" />
 	<Compile Include="Green\Model\V20180509\GetGroupsResponse.cs" />
 	<Compile Include="Green\Model\V20180509\ImageSyncScanResponse.cs" />
+	<Compile Include="Green\Model\V20180509\GetAddVideoDnaResultsRequest.cs" />
 	<Compile Include="Green\Model\V20180509\ImageScanFeedbackRequest.cs" />
+	<Compile Include="Green\Model\V20180509\VoiceCancelScanResponse.cs" />
+	<Compile Include="Green\Model\V20180509\UploadCredentialsResponse.cs" />
 	<Compile Include="Green\Model\V20180509\FileAsyncScanResponse.cs" />
 	<Compile Include="Green\Model\V20180509\VoiceAsyncScanRequest.cs" />
 	<Compile Include="Green\Model\V20180509\VideoAsyncScanResultsResponse.cs" />
 	<Compile Include="Green\Model\V20180509\SearchPersonRequest.cs" />
+	<Compile Include="Green\Model\V20180509\DeleteVideoDnaResponse.cs" />
 	<Compile Include="Green\Model\V20180509\ImageSyncScanRequest.cs" />
 	<Compile Include="Green\Model\V20180509\SetPersonResponse.cs" />
 	<Compile Include="Green\Model\V20180509\ImageAsyncScanResultsRequest.cs" />
+	<Compile Include="Green\Model\V20180509\VoiceIdentityCheckResponse.cs" />
 	<Compile Include="Green\Model\V20180509\TextFeedbackRequest.cs" />
+	<Compile Include="Green\Model\V20180509\VoiceIdentityRegisterRequest.cs" />
 	<Compile Include="Green\Model\V20180509\VoiceAsyncScanResponse.cs" />
 	<Compile Include="Green\Model\V20180509\ImageScanFeedbackResponse.cs" />
 	<Compile Include="Green\Model\V20180509\AddGroupsResponse.cs" />
 	<Compile Include="Green\Model\V20180509\AddFacesResponse.cs" />
 	<Compile Include="Green\Model\V20180509\GetPersonResponse.cs" />
+	<Compile Include="Green\Model\V20180509\VoiceIdentityStartCheckRequest.cs" />
 	<Compile Include="Green\Model\V20180509\AddSimilarityImageRequest.cs" />
 	<Compile Include="Green\Model\V20180509\VideoAsyncScanResponse.cs" />
+	<Compile Include="Green\Model\V20180509\UploadCredentialsRequest.cs" />
+	<Compile Include="Green\Model\V20180509\DeleteVideoDnaRequest.cs" />
 	<Compile Include="Green\Model\V20180509\VoiceAsyncScanResultsRequest.cs" />
 	<Compile Include="Green\Model\V20180509\GetPersonsResponse.cs" />
 	<Compile Include="Green\Model\V20180509\GetPersonsRequest.cs" />
@@ -74,19 +86,30 @@
 	<Compile Include="Green\Model\V20180509\AddFacesRequest.cs" />
 	<Compile Include="Green\Model\V20180509\GetPersonRequest.cs" />
 	<Compile Include="Green\Model\V20180509\GetFacesResponse.cs" />
+	<Compile Include="Green\Model\V20180509\VoiceIdentityStartCheckResponse.cs" />
 	<Compile Include="Green\Model\V20180509\DeleteGroupsResponse.cs" />
 	<Compile Include="Green\Model\V20180509\VideoAsyncScanResultsRequest.cs" />
 	<Compile Include="Green\Model\V20180509\AddGroupsRequest.cs" />
 	<Compile Include="Green\Model\V20180509\GetFacesRequest.cs" />
 	<Compile Include="Green\Model\V20180509\VideoFeedbackRequest.cs" />
+	<Compile Include="Green\Model\V20180509\AddVideoDnaResponse.cs" />
 	<Compile Include="Green\Model\V20180509\FileAsyncScanResultsResponse.cs" />
 	<Compile Include="Green\Model\V20180509\SearchPersonResponse.cs" />
+	<Compile Include="Green\Model\V20180509\VoiceIdentityUnregisterRequest.cs" />
+	<Compile Include="Green\Model\V20180509\AddVideoDnaGroupResponse.cs" />
 	<Compile Include="Green\Model\V20180509\TextScanResponse.cs" />
+	<Compile Include="Green\Model\V20180509\VoiceIdentityCheckRequest.cs" />
 	<Compile Include="Green\Model\V20180509\AddPersonResponse.cs" />
+	<Compile Include="Green\Model\V20180509\VoiceIdentityStartRegisterRequest.cs" />
+	<Compile Include="Green\Model\V20180509\VoiceCancelScanRequest.cs" />
+	<Compile Include="Green\Model\V20180509\DeleteVideoDnaGroupResponse.cs" />
+	<Compile Include="Green\Model\V20180509\DeleteVideoDnaGroupRequest.cs" />
 	<Compile Include="Green\Model\V20180509\VideoSyncScanRequest.cs" />
+	<Compile Include="Green\Model\V20180509\AddVideoDnaGroupRequest.cs" />
 	<Compile Include="Green\Model\V20180509\DeleteGroupsRequest.cs" />
 	<Compile Include="Green\Model\V20180509\ImageAsyncScanResultsResponse.cs" />
 	<Compile Include="Green\Model\V20180509\DeleteFacesRequest.cs" />
+	<Compile Include="Green\Model\V20180509\VoiceIdentityUnregisterResponse.cs" />
 	<Compile Include="Green\Model\V20180509\AddPersonRequest.cs" />
 	<Compile Include="Green\Model\V20180509\GetGroupsRequest.cs" />
 	<Compile Include="Green\Model\V20180509\DeletePersonRequest.cs" />
@@ -96,30 +119,43 @@
 	<Compile Include="Green\Model\V20180509\DeleteSimilarityImageRequest.cs" />
 	<Compile Include="Green\Model\V20180509\FileAsyncScanResultsRequest.cs" />
 	<Compile Include="Green\Model\V20180509\FileAsyncScanRequest.cs" />
+	<Compile Include="Green\Model\V20180509\VoiceIdentityRegisterResponse.cs" />
 	<Compile Include="Green\Transform\V20180509\GetGroupsResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\GetPersonsResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\AddFacesResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20180509\UploadCredentialsResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20180509\AddVideoDnaResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\DeleteFacesResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\AddSimilarityImageResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\FileAsyncScanResultsResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20180509\DeleteVideoDnaResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\SetPersonResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20180509\VoiceIdentityStartCheckResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\TextScanResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\ImageScanFeedbackResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20180509\VoiceIdentityUnregisterResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20180509\GetAddVideoDnaResultsResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20180509\AddVideoDnaGroupResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\VoiceAsyncScanResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\ImageAsyncScanResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20180509\VoiceIdentityStartRegisterResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\VideoAsyncScanResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\SearchPersonResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\ImageSyncScanResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20180509\DeleteVideoDnaGroupResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\TextFeedbackResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\DeletePersonResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\GetFacesResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20180509\VoiceIdentityRegisterResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\VideoAsyncScanResultsResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20180509\VoiceIdentityCheckResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\FileAsyncScanResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\ImageAsyncScanResultsResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\VideoFeedbackResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\DeleteSimilarityImageResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\AddPersonResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\DeleteGroupsResponseUnmarshaller.cs" />
+	<Compile Include="Green\Transform\V20180509\VoiceCancelScanResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\VoiceAsyncScanResultsResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\GetPersonResponseUnmarshaller.cs" />
 	<Compile Include="Green\Transform\V20180509\AddGroupsResponseUnmarshaller.cs" />
