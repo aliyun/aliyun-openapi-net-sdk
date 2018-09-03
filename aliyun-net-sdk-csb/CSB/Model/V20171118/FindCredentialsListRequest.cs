@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class FindCredentialsListRequest : RpcAcsRequest<FindCredentialsListResponse>
     {
         public FindCredentialsListRequest()
-            : base("CSB", "2017-11-18", "FindCredentialsList", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "FindCredentialsList")
         {
 			Protocol = ProtocolType.HTTPS;
         }

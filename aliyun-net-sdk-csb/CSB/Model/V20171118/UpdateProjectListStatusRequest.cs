@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class UpdateProjectListStatusRequest : RpcAcsRequest<UpdateProjectListStatusResponse>
     {
         public UpdateProjectListStatusRequest()
-            : base("CSB", "2017-11-18", "UpdateProjectListStatus", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "UpdateProjectListStatus")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

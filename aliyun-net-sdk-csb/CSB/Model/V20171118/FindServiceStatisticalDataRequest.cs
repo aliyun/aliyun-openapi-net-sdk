@@ -26,30 +26,21 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CSB.Model.V20171118
 {
-    public class GetProjectRequest : RpcAcsRequest<GetProjectResponse>
+    public class FindServiceStatisticalDataRequest : RpcAcsRequest<FindServiceStatisticalDataResponse>
     {
-        public GetProjectRequest()
-            : base("CSB", "2017-11-18", "GetProject")
+        public FindServiceStatisticalDataRequest()
+            : base("CSB", "2017-11-18", "FindServiceStatisticalData")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string projectName;
-
 		private long? csbId;
 
-		public string ProjectName
-		{
-			get
-			{
-				return projectName;
-			}
-			set	
-			{
-				projectName = value;
-				DictionaryUtil.Add(QueryParameters, "ProjectName", value);
-			}
-		}
+		private long? endTime;
+
+		private string serviceName;
+
+		private long? startTime;
 
 		public long? CsbId
 		{
@@ -64,14 +55,53 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public string ServiceName
+		{
+			get
+			{
+				return serviceName;
+			}
+			set	
+			{
+				serviceName = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetProjectResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override FindServiceStatisticalDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetProjectResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FindServiceStatisticalDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

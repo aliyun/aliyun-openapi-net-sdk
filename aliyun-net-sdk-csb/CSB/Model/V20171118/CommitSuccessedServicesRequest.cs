@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class CommitSuccessedServicesRequest : RpcAcsRequest<CommitSuccessedServicesResponse>
     {
         public CommitSuccessedServicesRequest()
-            : base("CSB", "2017-11-18", "CommitSuccessedServices", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "CommitSuccessedServices")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

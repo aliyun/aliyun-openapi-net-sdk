@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class DeleteProjectRequest : RpcAcsRequest<DeleteProjectResponse>
     {
         public DeleteProjectRequest()
-            : base("CSB", "2017-11-18", "DeleteProject", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "DeleteProject")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

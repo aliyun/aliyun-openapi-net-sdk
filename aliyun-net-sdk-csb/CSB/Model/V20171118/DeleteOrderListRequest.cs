@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class DeleteOrderListRequest : RpcAcsRequest<DeleteOrderListResponse>
     {
         public DeleteOrderListRequest()
-            : base("CSB", "2017-11-18", "DeleteOrderList", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "DeleteOrderList")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

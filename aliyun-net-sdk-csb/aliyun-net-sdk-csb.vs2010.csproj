@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{448bb70a-b43d-474c-87fe-c2c03b223154}</ProjectGuid>
+    <ProjectGuid>{94a4d607-3f13-4c35-b304-453bfcc85095}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -54,8 +54,10 @@
 	<Compile Include="CSB\Model\V20171118\DeleteCredentialsListRequest.cs" />
 	<Compile Include="CSB\Model\V20171118\DeleteUnionCasServiceRequest.cs" />
 	<Compile Include="CSB\Model\V20171118\GetInstanceRequest.cs" />
+	<Compile Include="CSB\Model\V20171118\FindServiceStatisticalDataResponse.cs" />
 	<Compile Include="CSB\Model\V20171118\CreateServiceResponse.cs" />
 	<Compile Include="CSB\Model\V20171118\PublishCasServiceRequest.cs" />
+	<Compile Include="CSB\Model\V20171118\FindServiceStatisticalDataRequest.cs" />
 	<Compile Include="CSB\Model\V20171118\DeleteProjectResponse.cs" />
 	<Compile Include="CSB\Model\V20171118\ReplaceCredentialRequest.cs" />
 	<Compile Include="CSB\Model\V20171118\DeleteProjectListResponse.cs" />
@@ -134,6 +136,7 @@
 	<Compile Include="CSB\Transform\V20171118\FindServiceListResponseUnmarshaller.cs" />
 	<Compile Include="CSB\Transform\V20171118\UpdateProjectResponseUnmarshaller.cs" />
 	<Compile Include="CSB\Transform\V20171118\GetInstanceResponseUnmarshaller.cs" />
+	<Compile Include="CSB\Transform\V20171118\FindServiceStatisticalDataResponseUnmarshaller.cs" />
 	<Compile Include="CSB\Transform\V20171118\ApproveOrderListResponseUnmarshaller.cs" />
 	<Compile Include="CSB\Transform\V20171118\GetOrderResponseUnmarshaller.cs" />
 	<Compile Include="CSB\Transform\V20171118\FindProjectListResponseUnmarshaller.cs" />

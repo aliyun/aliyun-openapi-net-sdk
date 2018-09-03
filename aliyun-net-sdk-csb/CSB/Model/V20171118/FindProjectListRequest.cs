@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class FindProjectListRequest : RpcAcsRequest<FindProjectListResponse>
     {
         public FindProjectListRequest()
-            : base("CSB", "2017-11-18", "FindProjectList", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "FindProjectList")
         {
 			Protocol = ProtocolType.HTTPS;
         }

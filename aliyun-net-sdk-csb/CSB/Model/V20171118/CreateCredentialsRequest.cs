@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class CreateCredentialsRequest : RpcAcsRequest<CreateCredentialsResponse>
     {
         public CreateCredentialsRequest()
-            : base("CSB", "2017-11-18", "CreateCredentials", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "CreateCredentials")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

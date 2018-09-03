@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class UpdateOrderRequest : RpcAcsRequest<UpdateOrderResponse>
     {
         public UpdateOrderRequest()
-            : base("CSB", "2017-11-18", "UpdateOrder", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "UpdateOrder")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

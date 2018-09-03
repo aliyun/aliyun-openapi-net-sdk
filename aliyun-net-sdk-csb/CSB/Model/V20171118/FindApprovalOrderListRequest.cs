@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class FindApprovalOrderListRequest : RpcAcsRequest<FindApprovalOrderListResponse>
     {
         public FindApprovalOrderListRequest()
-            : base("CSB", "2017-11-18", "FindApprovalOrderList", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "FindApprovalOrderList")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -40,9 +40,9 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 		private string serviceName;
 
-		private long? serviceId;
-
 		private int? pageNum;
+
+		private long? serviceId;
 
 		private bool? onlyPending;
 
@@ -85,19 +85,6 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public long? ServiceId
-		{
-			get
-			{
-				return serviceId;
-			}
-			set	
-			{
-				serviceId = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceId", value.ToString());
-			}
-		}
-
 		public int? PageNum
 		{
 			get
@@ -108,6 +95,19 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public long? ServiceId
+		{
+			get
+			{
+				return serviceId;
+			}
+			set	
+			{
+				serviceId = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceId", value.ToString());
 			}
 		}
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class GetInstanceRequest : RpcAcsRequest<GetInstanceResponse>
     {
         public GetInstanceRequest()
-            : base("CSB", "2017-11-18", "GetInstance", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "GetInstance")
         {
         }
 

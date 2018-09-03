@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class ApproveOrderListRequest : RpcAcsRequest<ApproveOrderListResponse>
     {
         public ApproveOrderListRequest()
-            : base("CSB", "2017-11-18", "ApproveOrderList", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "ApproveOrderList")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

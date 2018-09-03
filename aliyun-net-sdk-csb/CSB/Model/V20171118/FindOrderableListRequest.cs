@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class FindOrderableListRequest : RpcAcsRequest<FindOrderableListResponse>
     {
         public FindOrderableListRequest()
-            : base("CSB", "2017-11-18", "FindOrderableList", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "FindOrderableList")
         {
 			Protocol = ProtocolType.HTTPS;
         }

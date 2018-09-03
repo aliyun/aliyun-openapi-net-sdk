@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class ReplaceCredentialRequest : RpcAcsRequest<ReplaceCredentialResponse>
     {
         public ReplaceCredentialRequest()
-            : base("CSB", "2017-11-18", "ReplaceCredential", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "ReplaceCredential")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

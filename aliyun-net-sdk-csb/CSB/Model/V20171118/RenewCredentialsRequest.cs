@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class RenewCredentialsRequest : RpcAcsRequest<RenewCredentialsResponse>
     {
         public RenewCredentialsRequest()
-            : base("CSB", "2017-11-18", "RenewCredentials", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "RenewCredentials")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

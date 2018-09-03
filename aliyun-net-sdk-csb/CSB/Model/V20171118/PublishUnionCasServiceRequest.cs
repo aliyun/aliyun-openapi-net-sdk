@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class PublishUnionCasServiceRequest : RpcAcsRequest<PublishUnionCasServiceResponse>
     {
         public PublishUnionCasServiceRequest()
-            : base("CSB", "2017-11-18", "PublishUnionCasService", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "PublishUnionCasService")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

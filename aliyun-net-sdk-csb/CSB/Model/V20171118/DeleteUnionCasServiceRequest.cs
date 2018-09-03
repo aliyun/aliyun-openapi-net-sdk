@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class DeleteUnionCasServiceRequest : RpcAcsRequest<DeleteUnionCasServiceResponse>
     {
         public DeleteUnionCasServiceRequest()
-            : base("CSB", "2017-11-18", "DeleteUnionCasService", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "DeleteUnionCasService")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

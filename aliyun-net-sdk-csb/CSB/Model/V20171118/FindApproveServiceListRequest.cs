@@ -29,14 +29,14 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class FindApproveServiceListRequest : RpcAcsRequest<FindApproveServiceListResponse>
     {
         public FindApproveServiceListRequest()
-            : base("CSB", "2017-11-18", "FindApproveServiceList", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "FindApproveServiceList")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string approveLevel;
-
 		private string projectName;
+
+		private string approveLevel;
 
 		private bool? showDelService;
 
@@ -45,19 +45,6 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 		private string alias;
 
 		private string serviceName;
-
-		public string ApproveLevel
-		{
-			get
-			{
-				return approveLevel;
-			}
-			set	
-			{
-				approveLevel = value;
-				DictionaryUtil.Add(QueryParameters, "approveLevel", value);
-			}
-		}
 
 		public string ProjectName
 		{
@@ -68,7 +55,20 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			set	
 			{
 				projectName = value;
-				DictionaryUtil.Add(QueryParameters, "projectName", value);
+				DictionaryUtil.Add(QueryParameters, "ProjectName", value);
+			}
+		}
+
+		public string ApproveLevel
+		{
+			get
+			{
+				return approveLevel;
+			}
+			set	
+			{
+				approveLevel = value;
+				DictionaryUtil.Add(QueryParameters, "ApproveLevel", value);
 			}
 		}
 
@@ -81,7 +81,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			set	
 			{
 				showDelService = value;
-				DictionaryUtil.Add(QueryParameters, "showDelService", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "ShowDelService", value.ToString());
 			}
 		}
 
@@ -94,7 +94,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			set	
 			{
 				csbId = value;
-				DictionaryUtil.Add(QueryParameters, "csbId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "CsbId", value.ToString());
 			}
 		}
 
@@ -107,7 +107,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			set	
 			{
 				alias = value;
-				DictionaryUtil.Add(QueryParameters, "alias", value);
+				DictionaryUtil.Add(QueryParameters, "Alias", value);
 			}
 		}
 
@@ -120,7 +120,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			set	
 			{
 				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "serviceName", value);
+				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
 			}
 		}
 

@@ -29,16 +29,16 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class FindServiceListRequest : RpcAcsRequest<FindServiceListResponse>
     {
         public FindServiceListRequest()
-            : base("CSB", "2017-11-18", "FindServiceList", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "FindServiceList")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
 		private string projectName;
 
-		private int? casShowType;
-
 		private bool? showDelService;
+
+		private int? casShowType;
 
 		private long? csbId;
 
@@ -61,19 +61,6 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public int? CasShowType
-		{
-			get
-			{
-				return casShowType;
-			}
-			set	
-			{
-				casShowType = value;
-				DictionaryUtil.Add(QueryParameters, "CasShowType", value.ToString());
-			}
-		}
-
 		public bool? ShowDelService
 		{
 			get
@@ -84,6 +71,19 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			{
 				showDelService = value;
 				DictionaryUtil.Add(QueryParameters, "ShowDelService", value.ToString());
+			}
+		}
+
+		public int? CasShowType
+		{
+			get
+			{
+				return casShowType;
+			}
+			set	
+			{
+				casShowType = value;
+				DictionaryUtil.Add(QueryParameters, "CasShowType", value.ToString());
 			}
 		}
 

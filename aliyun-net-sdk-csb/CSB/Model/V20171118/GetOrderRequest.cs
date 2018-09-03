@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class GetOrderRequest : RpcAcsRequest<GetOrderResponse>
     {
         public GetOrderRequest()
-            : base("CSB", "2017-11-18", "GetOrder", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "GetOrder")
         {
 			Protocol = ProtocolType.HTTPS;
         }

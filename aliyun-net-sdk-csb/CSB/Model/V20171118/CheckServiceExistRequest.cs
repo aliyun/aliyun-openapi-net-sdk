@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class CheckServiceExistRequest : RpcAcsRequest<CheckServiceExistResponse>
     {
         public CheckServiceExistRequest()
-            : base("CSB", "2017-11-18", "CheckServiceExist", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "CheckServiceExist")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class CreateProjectRequest : RpcAcsRequest<CreateProjectResponse>
     {
         public CreateProjectRequest()
-            : base("CSB", "2017-11-18", "CreateProject", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "CreateProject")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

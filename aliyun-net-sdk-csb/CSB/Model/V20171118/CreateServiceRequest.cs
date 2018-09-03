@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
     public class CreateServiceRequest : RpcAcsRequest<CreateServiceResponse>
     {
         public CreateServiceRequest()
-            : base("CSB", "2017-11-18", "CreateService", "CSB", "openAPI")
+            : base("CSB", "2017-11-18", "CreateService")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
