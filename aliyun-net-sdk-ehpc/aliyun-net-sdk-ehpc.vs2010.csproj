@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{d1fa128f-9fd8-4bb4-a4eb-76a27bcccd24}</ProjectGuid>
+    <ProjectGuid>{f122d886-3596-4a5f-bdbb-b2599e80d3bf}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="EHPC\Model\V20180412\DescribeImagePriceRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\GetHybridClusterConfigResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\StopNodesRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\DescribeClusterRequest.cs" />
@@ -76,6 +77,7 @@
 	<Compile Include="EHPC\Model\V20180412\SetJobUserResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListInvocationResultsRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListContainerImagesResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\DescribeImagePriceResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\RerunJobsResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ModifyImageGatewayConfigRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\AddUsersResponse.cs" />
@@ -119,6 +121,7 @@
 	<Compile Include="EHPC\Model\V20180412\EditJobTemplateResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListVolumesRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\CreateHybridClusterResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\DescribePriceRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\StopNodesResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\PullImageResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListRegionsResponse.cs" />
@@ -159,6 +162,7 @@
 	<Compile Include="EHPC\Model\V20180412\UpgradeClientRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ResetNodesResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\RecoverClusterResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\DescribePriceResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ModifyContainerAppAttributesResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ModifyContainerAppAttributesRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\CreateClusterResponse.cs" />
@@ -182,6 +186,7 @@
 	<Compile Include="EHPC\Transform\V20180412\UpgradeClientResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\DescribeAutoScaleConfigResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\DescribeImageGatewayConfigResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\DescribeImagePriceResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ListNodesNoPagingResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\StartNodesResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ListSoftwaresResponseUnmarshaller.cs" />
@@ -212,6 +217,7 @@
 	<Compile Include="EHPC\Transform\V20180412\SetJobUserResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\DeleteJobTemplatesResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\DeleteUsersResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\DescribePriceResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ListCommandsResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\EditJobTemplateResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ListInvocationStatusResponseUnmarshaller.cs" />
