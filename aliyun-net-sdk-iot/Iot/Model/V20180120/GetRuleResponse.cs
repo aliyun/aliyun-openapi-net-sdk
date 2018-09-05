@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryProductResponse : AcsResponse
+	public class GetRuleResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QueryProduct_Data data;
+		private GetRule_RuleInfo ruleInfo;
 
 		public string RequestId
 		{
@@ -82,104 +82,134 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QueryProduct_Data Data
+		public GetRule_RuleInfo RuleInfo
 		{
 			get
 			{
-				return data;
+				return ruleInfo;
 			}
 			set	
 			{
-				data = value;
+				ruleInfo = value;
 			}
 		}
 
-		public class QueryProduct_Data
+		public class GetRule_RuleInfo
 		{
 
-			private long? gmtCreate;
+			private long? id;
 
-			private int? dataFormat;
+			private string select;
 
-			private string description;
+			private string topic;
 
-			private int? deviceCount;
+			private string shortTopic;
 
-			private int? nodeType;
+			private string _where;
+
+			private string status;
+
+			private long? createUserId;
 
 			private string productKey;
 
-			private string productName;
+			private string name;
 
-			private string productSecret;
+			private string ruleDesc;
 
-			private string categoryName;
+			private string dataType;
 
-			private string categoryKey;
+			private string created;
 
-			private string aliyunCommodityCode;
+			private string utcCreated;
 
-			private bool? id2;
+			private string modified;
 
-			private string protocolType;
+			private string utcModified;
 
-			public long? GmtCreate
+			private int? topicType;
+
+			public long? Id
 			{
 				get
 				{
-					return gmtCreate;
+					return id;
 				}
 				set	
 				{
-					gmtCreate = value;
+					id = value;
 				}
 			}
 
-			public int? DataFormat
+			public string Select
 			{
 				get
 				{
-					return dataFormat;
+					return select;
 				}
 				set	
 				{
-					dataFormat = value;
+					select = value;
 				}
 			}
 
-			public string Description
+			public string Topic
 			{
 				get
 				{
-					return description;
+					return topic;
 				}
 				set	
 				{
-					description = value;
+					topic = value;
 				}
 			}
 
-			public int? DeviceCount
+			public string ShortTopic
 			{
 				get
 				{
-					return deviceCount;
+					return shortTopic;
 				}
 				set	
 				{
-					deviceCount = value;
+					shortTopic = value;
 				}
 			}
 
-			public int? NodeType
+			public string _Where
 			{
 				get
 				{
-					return nodeType;
+					return _where;
 				}
 				set	
 				{
-					nodeType = value;
+					_where = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public long? CreateUserId
+			{
+				get
+				{
+					return createUserId;
+				}
+				set	
+				{
+					createUserId = value;
 				}
 			}
 
@@ -195,87 +225,99 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public string ProductName
+			public string Name
 			{
 				get
 				{
-					return productName;
+					return name;
 				}
 				set	
 				{
-					productName = value;
+					name = value;
 				}
 			}
 
-			public string ProductSecret
+			public string RuleDesc
 			{
 				get
 				{
-					return productSecret;
+					return ruleDesc;
 				}
 				set	
 				{
-					productSecret = value;
+					ruleDesc = value;
 				}
 			}
 
-			public string CategoryName
+			public string DataType
 			{
 				get
 				{
-					return categoryName;
+					return dataType;
 				}
 				set	
 				{
-					categoryName = value;
+					dataType = value;
 				}
 			}
 
-			public string CategoryKey
+			public string Created
 			{
 				get
 				{
-					return categoryKey;
+					return created;
 				}
 				set	
 				{
-					categoryKey = value;
+					created = value;
 				}
 			}
 
-			public string AliyunCommodityCode
+			public string UtcCreated
 			{
 				get
 				{
-					return aliyunCommodityCode;
+					return utcCreated;
 				}
 				set	
 				{
-					aliyunCommodityCode = value;
+					utcCreated = value;
 				}
 			}
 
-			public bool? Id2
+			public string Modified
 			{
 				get
 				{
-					return id2;
+					return modified;
 				}
 				set	
 				{
-					id2 = value;
+					modified = value;
 				}
 			}
 
-			public string ProtocolType
+			public string UtcModified
 			{
 				get
 				{
-					return protocolType;
+					return utcModified;
 				}
 				set	
 				{
-					protocolType = value;
+					utcModified = value;
+				}
+			}
+
+			public int? TopicType
+			{
+				get
+				{
+					return topicType;
+				}
+				set	
+				{
+					topicType = value;
 				}
 			}
 		}

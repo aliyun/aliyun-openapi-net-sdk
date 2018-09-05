@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryProductResponse : AcsResponse
+	public class CreateProductResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QueryProduct_Data data;
+		private string productKey;
+
+		private CreateProduct_Data data;
 
 		public string RequestId
 		{
@@ -82,7 +84,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QueryProduct_Data Data
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+			}
+		}
+
+		public CreateProduct_Data Data
 		{
 			get
 			{
@@ -94,16 +108,12 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QueryProduct_Data
+		public class CreateProduct_Data
 		{
-
-			private long? gmtCreate;
 
 			private int? dataFormat;
 
 			private string description;
-
-			private int? deviceCount;
 
 			private int? nodeType;
 
@@ -111,29 +121,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string productName;
 
-			private string productSecret;
-
-			private string categoryName;
-
-			private string categoryKey;
-
 			private string aliyunCommodityCode;
 
 			private bool? id2;
 
 			private string protocolType;
-
-			public long? GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
 
 			public int? DataFormat
 			{
@@ -156,18 +148,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					description = value;
-				}
-			}
-
-			public int? DeviceCount
-			{
-				get
-				{
-					return deviceCount;
-				}
-				set	
-				{
-					deviceCount = value;
 				}
 			}
 
@@ -204,42 +184,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					productName = value;
-				}
-			}
-
-			public string ProductSecret
-			{
-				get
-				{
-					return productSecret;
-				}
-				set	
-				{
-					productSecret = value;
-				}
-			}
-
-			public string CategoryName
-			{
-				get
-				{
-					return categoryName;
-				}
-				set	
-				{
-					categoryName = value;
-				}
-			}
-
-			public string CategoryKey
-			{
-				get
-				{
-					return categoryKey;
-				}
-				set	
-				{
-					categoryKey = value;
 				}
 			}
 

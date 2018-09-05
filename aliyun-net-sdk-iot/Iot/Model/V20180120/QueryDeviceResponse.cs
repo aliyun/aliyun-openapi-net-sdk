@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryProductResponse : AcsResponse
+	public class QueryDeviceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QueryProduct_Data data;
+		private int? total;
+
+		private int? pageSize;
+
+		private int? pageCount;
+
+		private int? page;
+
+		private List<QueryDevice_DeviceInfo> data;
 
 		public string RequestId
 		{
@@ -82,7 +90,55 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QueryProduct_Data Data
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? PageCount
+		{
+			get
+			{
+				return pageCount;
+			}
+			set	
+			{
+				pageCount = value;
+			}
+		}
+
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+			}
+		}
+
+		public List<QueryDevice_DeviceInfo> Data
 		{
 			get
 			{
@@ -94,92 +150,46 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QueryProduct_Data
+		public class QueryDevice_DeviceInfo
 		{
 
-			private long? gmtCreate;
+			private string deviceId;
 
-			private int? dataFormat;
-
-			private string description;
-
-			private int? deviceCount;
-
-			private int? nodeType;
+			private string deviceSecret;
 
 			private string productKey;
 
-			private string productName;
+			private string deviceStatus;
 
-			private string productSecret;
+			private string deviceName;
 
-			private string categoryName;
+			private string deviceType;
 
-			private string categoryKey;
+			private string gmtCreate;
 
-			private string aliyunCommodityCode;
+			private string gmtModified;
 
-			private bool? id2;
-
-			private string protocolType;
-
-			public long? GmtCreate
+			public string DeviceId
 			{
 				get
 				{
-					return gmtCreate;
+					return deviceId;
 				}
 				set	
 				{
-					gmtCreate = value;
+					deviceId = value;
 				}
 			}
 
-			public int? DataFormat
+			public string DeviceSecret
 			{
 				get
 				{
-					return dataFormat;
+					return deviceSecret;
 				}
 				set	
 				{
-					dataFormat = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public int? DeviceCount
-			{
-				get
-				{
-					return deviceCount;
-				}
-				set	
-				{
-					deviceCount = value;
-				}
-			}
-
-			public int? NodeType
-			{
-				get
-				{
-					return nodeType;
-				}
-				set	
-				{
-					nodeType = value;
+					deviceSecret = value;
 				}
 			}
 
@@ -195,87 +205,63 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public string ProductName
+			public string DeviceStatus
 			{
 				get
 				{
-					return productName;
+					return deviceStatus;
 				}
 				set	
 				{
-					productName = value;
+					deviceStatus = value;
 				}
 			}
 
-			public string ProductSecret
+			public string DeviceName
 			{
 				get
 				{
-					return productSecret;
+					return deviceName;
 				}
 				set	
 				{
-					productSecret = value;
+					deviceName = value;
 				}
 			}
 
-			public string CategoryName
+			public string DeviceType
 			{
 				get
 				{
-					return categoryName;
+					return deviceType;
 				}
 				set	
 				{
-					categoryName = value;
+					deviceType = value;
 				}
 			}
 
-			public string CategoryKey
+			public string GmtCreate
 			{
 				get
 				{
-					return categoryKey;
+					return gmtCreate;
 				}
 				set	
 				{
-					categoryKey = value;
+					gmtCreate = value;
 				}
 			}
 
-			public string AliyunCommodityCode
+			public string GmtModified
 			{
 				get
 				{
-					return aliyunCommodityCode;
+					return gmtModified;
 				}
 				set	
 				{
-					aliyunCommodityCode = value;
-				}
-			}
-
-			public bool? Id2
-			{
-				get
-				{
-					return id2;
-				}
-				set	
-				{
-					id2 = value;
-				}
-			}
-
-			public string ProtocolType
-			{
-				get
-				{
-					return protocolType;
-				}
-				set	
-				{
-					protocolType = value;
+					gmtModified = value;
 				}
 			}
 		}

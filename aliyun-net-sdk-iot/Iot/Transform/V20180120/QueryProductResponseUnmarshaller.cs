@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.CategoryKey = context.StringValue("QueryProduct.Data.CategoryKey");
 			data.AliyunCommodityCode = context.StringValue("QueryProduct.Data.AliyunCommodityCode");
 			data.Id2 = context.BooleanValue("QueryProduct.Data.Id2");
+			data.ProtocolType = context.StringValue("QueryProduct.Data.ProtocolType");
 			queryProductResponse.Data = data;
         
 			return queryProductResponse;

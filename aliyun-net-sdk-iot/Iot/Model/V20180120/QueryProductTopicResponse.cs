@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryProductResponse : AcsResponse
+	public class QueryProductTopicResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QueryProduct_Data data;
+		private List<QueryProductTopic_ProductTopicInfo> data;
 
 		public string RequestId
 		{
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QueryProduct_Data Data
+		public List<QueryProductTopic_ProductTopicInfo> Data
 		{
 			get
 			{
@@ -94,94 +94,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QueryProduct_Data
+		public class QueryProductTopic_ProductTopicInfo
 		{
-
-			private long? gmtCreate;
-
-			private int? dataFormat;
-
-			private string description;
-
-			private int? deviceCount;
-
-			private int? nodeType;
 
 			private string productKey;
 
-			private string productName;
+			private string topicShortName;
 
-			private string productSecret;
+			private string operation;
 
-			private string categoryName;
+			private string desc;
 
-			private string categoryKey;
-
-			private string aliyunCommodityCode;
-
-			private bool? id2;
-
-			private string protocolType;
-
-			public long? GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
-
-			public int? DataFormat
-			{
-				get
-				{
-					return dataFormat;
-				}
-				set	
-				{
-					dataFormat = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public int? DeviceCount
-			{
-				get
-				{
-					return deviceCount;
-				}
-				set	
-				{
-					deviceCount = value;
-				}
-			}
-
-			public int? NodeType
-			{
-				get
-				{
-					return nodeType;
-				}
-				set	
-				{
-					nodeType = value;
-				}
-			}
+			private string id;
 
 			public string ProductKey
 			{
@@ -195,87 +119,51 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public string ProductName
+			public string TopicShortName
 			{
 				get
 				{
-					return productName;
+					return topicShortName;
 				}
 				set	
 				{
-					productName = value;
+					topicShortName = value;
 				}
 			}
 
-			public string ProductSecret
+			public string Operation
 			{
 				get
 				{
-					return productSecret;
+					return operation;
 				}
 				set	
 				{
-					productSecret = value;
+					operation = value;
 				}
 			}
 
-			public string CategoryName
+			public string Desc
 			{
 				get
 				{
-					return categoryName;
+					return desc;
 				}
 				set	
 				{
-					categoryName = value;
+					desc = value;
 				}
 			}
 
-			public string CategoryKey
+			public string Id
 			{
 				get
 				{
-					return categoryKey;
+					return id;
 				}
 				set	
 				{
-					categoryKey = value;
-				}
-			}
-
-			public string AliyunCommodityCode
-			{
-				get
-				{
-					return aliyunCommodityCode;
-				}
-				set	
-				{
-					aliyunCommodityCode = value;
-				}
-			}
-
-			public bool? Id2
-			{
-				get
-				{
-					return id2;
-				}
-				set	
-				{
-					id2 = value;
-				}
-			}
-
-			public string ProtocolType
-			{
-				get
-				{
-					return protocolType;
-				}
-				set	
-				{
-					protocolType = value;
+					id = value;
 				}
 			}
 		}
