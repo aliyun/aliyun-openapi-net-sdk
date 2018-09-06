@@ -35,6 +35,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string destinationDBInstanceId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string DestinationDBInstanceId
+		{
+			get
+			{
+				return destinationDBInstanceId;
+			}
+			set	
+			{
+				destinationDBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationDBInstanceId", value);
 			}
 		}
 

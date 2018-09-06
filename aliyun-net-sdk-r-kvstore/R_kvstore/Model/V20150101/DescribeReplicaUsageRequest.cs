@@ -37,6 +37,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string sourceDBInstanceId;
 
+		private string destinationDBInstanceId;
+
 		private string securityToken;
 
 		private string resourceOwnerAccount;
@@ -74,6 +76,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				sourceDBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "SourceDBInstanceId", value);
+			}
+		}
+
+		public string DestinationDBInstanceId
+		{
+			get
+			{
+				return destinationDBInstanceId;
+			}
+			set	
+			{
+				destinationDBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationDBInstanceId", value);
 			}
 		}
 

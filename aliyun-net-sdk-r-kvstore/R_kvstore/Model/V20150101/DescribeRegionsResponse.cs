@@ -63,7 +63,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string regionEndpoint;
 
-			private string zoneIdList;
+			private List<string> zoneIdList;
 
 			public string RegionId
 			{
@@ -113,7 +113,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string ZoneIdList
+			public List<string> ZoneIdList
 			{
 				get
 				{

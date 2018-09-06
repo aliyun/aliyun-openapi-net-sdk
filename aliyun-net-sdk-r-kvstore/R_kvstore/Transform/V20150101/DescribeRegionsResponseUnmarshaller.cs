@@ -39,7 +39,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreRegion.ZoneIds = context.StringValue("DescribeRegions.RegionIds["+ i +"].ZoneIds");
 				kVStoreRegion.LocalName = context.StringValue("DescribeRegions.RegionIds["+ i +"].LocalName");
 				kVStoreRegion.RegionEndpoint = context.StringValue("DescribeRegions.RegionIds["+ i +"].RegionEndpoint");
-				kVStoreRegion.ZoneIdList = context.StringValue("DescribeRegions.RegionIds["+ i +"].ZoneIdList");
+
+				List<string> kVStoreRegion_zoneIdList = new List<string>();
+				for (int j = 0; j < context.Length("DescribeRegions.RegionIds["+ i +"].ZoneIdList.Length"); j++) {
+					kVStoreRegion_zoneIdList.Add(context.StringValue("DescribeRegions.RegionIds["+ i +"].ZoneIdList["+ j +"]"));
+				}
+				kVStoreRegion.ZoneIdList = kVStoreRegion_zoneIdList;
 
 				describeRegionsResponse_regionIds.Add(kVStoreRegion);
 			}
