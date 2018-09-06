@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string healthCheckType;
 
+		private string launchTemplateId;
+
 		private string resourceOwnerAccount;
 
 		private string scalingGroupName;
@@ -50,6 +52,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private int? minSize;
 
 		private long? ownerId;
+
+		private string launchTemplateVersion;
 
 		private string accessKeyId;
 
@@ -86,6 +90,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				healthCheckType = value;
 				DictionaryUtil.Add(QueryParameters, "HealthCheckType", value);
+			}
+		}
+
+		public string LaunchTemplateId
+		{
+			get
+			{
+				return launchTemplateId;
+			}
+			set	
+			{
+				launchTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
 			}
 		}
 
@@ -177,6 +194,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LaunchTemplateVersion
+		{
+			get
+			{
+				return launchTemplateVersion;
+			}
+			set	
+			{
+				launchTemplateVersion = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateVersion", value);
 			}
 		}
 

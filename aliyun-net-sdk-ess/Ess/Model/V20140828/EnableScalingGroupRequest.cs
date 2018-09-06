@@ -33,8 +33,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         {
         }
 
-		private string instanceId10;
-
 		private int? loadBalancerWeight6;
 
 		private int? loadBalancerWeight11;
@@ -45,11 +43,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private long? resourceOwnerId;
 
-		private string instanceId12;
-
 		private int? loadBalancerWeight8;
-
-		private string instanceId11;
 
 		private int? loadBalancerWeight9;
 
@@ -63,8 +57,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? loadBalancerWeight16;
 
-		private string scalingGroupId;
-
 		private int? loadBalancerWeight4;
 
 		private int? loadBalancerWeight13;
@@ -77,11 +69,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? loadBalancerWeight1;
 
-		private string accessKeyId;
-
 		private string action;
-
-		private string instanceId20;
 
 		private string instanceId1;
 
@@ -89,15 +77,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string instanceId3;
 
-		private string resourceOwnerAccount;
+		private string launchTemplateId;
 
 		private string instanceId2;
 
 		private string instanceId5;
 
 		private string instanceId4;
-
-		private string ownerAccount;
 
 		private string instanceId7;
 
@@ -109,17 +95,35 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private long? ownerId;
 
-		private string instanceId18;
-
 		private int? loadBalancerWeight19;
-
-		private string instanceId17;
 
 		private int? loadBalancerWeight17;
 
-		private string instanceId19;
-
 		private int? loadBalancerWeight18;
+
+		private string instanceId10;
+
+		private string instanceId12;
+
+		private string instanceId11;
+
+		private string scalingGroupId;
+
+		private string accessKeyId;
+
+		private string instanceId20;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string launchTemplateVersion;
+
+		private string instanceId18;
+
+		private string instanceId17;
+
+		private string instanceId19;
 
 		private string instanceId14;
 
@@ -128,19 +132,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string instanceId16;
 
 		private string instanceId15;
-
-		public string InstanceId10
-		{
-			get
-			{
-				return instanceId10;
-			}
-			set	
-			{
-				instanceId10 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.10", value);
-			}
-		}
 
 		public int? LoadBalancerWeight6
 		{
@@ -207,19 +198,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string InstanceId12
-		{
-			get
-			{
-				return instanceId12;
-			}
-			set	
-			{
-				instanceId12 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.12", value);
-			}
-		}
-
 		public int? LoadBalancerWeight8
 		{
 			get
@@ -230,19 +208,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				loadBalancerWeight8 = value;
 				DictionaryUtil.Add(QueryParameters, "LoadBalancerWeight.8", value.ToString());
-			}
-		}
-
-		public string InstanceId11
-		{
-			get
-			{
-				return instanceId11;
-			}
-			set	
-			{
-				instanceId11 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.11", value);
 			}
 		}
 
@@ -324,19 +289,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string ScalingGroupId
-		{
-			get
-			{
-				return scalingGroupId;
-			}
-			set	
-			{
-				scalingGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
-			}
-		}
-
 		public int? LoadBalancerWeight4
 		{
 			get
@@ -415,19 +367,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -438,19 +377,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string InstanceId20
-		{
-			get
-			{
-				return instanceId20;
-			}
-			set	
-			{
-				instanceId20 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.20", value);
 			}
 		}
 
@@ -493,16 +419,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string LaunchTemplateId
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return launchTemplateId;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				launchTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
 			}
 		}
 
@@ -542,19 +468,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				instanceId4 = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId.4", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -623,19 +536,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string InstanceId18
-		{
-			get
-			{
-				return instanceId18;
-			}
-			set	
-			{
-				instanceId18 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.18", value);
-			}
-		}
-
 		public int? LoadBalancerWeight19
 		{
 			get
@@ -646,19 +546,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				loadBalancerWeight19 = value;
 				DictionaryUtil.Add(QueryParameters, "LoadBalancerWeight.19", value.ToString());
-			}
-		}
-
-		public string InstanceId17
-		{
-			get
-			{
-				return instanceId17;
-			}
-			set	
-			{
-				instanceId17 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.17", value);
 			}
 		}
 
@@ -675,19 +562,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string InstanceId19
-		{
-			get
-			{
-				return instanceId19;
-			}
-			set	
-			{
-				instanceId19 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.19", value);
-			}
-		}
-
 		public int? LoadBalancerWeight18
 		{
 			get
@@ -698,6 +572,162 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				loadBalancerWeight18 = value;
 				DictionaryUtil.Add(QueryParameters, "LoadBalancerWeight.18", value.ToString());
+			}
+		}
+
+		public string InstanceId10
+		{
+			get
+			{
+				return instanceId10;
+			}
+			set	
+			{
+				instanceId10 = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId.10", value);
+			}
+		}
+
+		public string InstanceId12
+		{
+			get
+			{
+				return instanceId12;
+			}
+			set	
+			{
+				instanceId12 = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId.12", value);
+			}
+		}
+
+		public string InstanceId11
+		{
+			get
+			{
+				return instanceId11;
+			}
+			set	
+			{
+				instanceId11 = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId.11", value);
+			}
+		}
+
+		public string ScalingGroupId
+		{
+			get
+			{
+				return scalingGroupId;
+			}
+			set	
+			{
+				scalingGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string InstanceId20
+		{
+			get
+			{
+				return instanceId20;
+			}
+			set	
+			{
+				instanceId20 = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId.20", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string LaunchTemplateVersion
+		{
+			get
+			{
+				return launchTemplateVersion;
+			}
+			set	
+			{
+				launchTemplateVersion = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateVersion", value);
+			}
+		}
+
+		public string InstanceId18
+		{
+			get
+			{
+				return instanceId18;
+			}
+			set	
+			{
+				instanceId18 = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId.18", value);
+			}
+		}
+
+		public string InstanceId17
+		{
+			get
+			{
+				return instanceId17;
+			}
+			set	
+			{
+				instanceId17 = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId.17", value);
+			}
+		}
+
+		public string InstanceId19
+		{
+			get
+			{
+				return instanceId19;
+			}
+			set	
+			{
+				instanceId19 = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId.19", value);
 			}
 		}
 

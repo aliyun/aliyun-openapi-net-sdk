@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string dBInstanceIds;
 
+		private string launchTemplateId;
+
 		private string loadBalancerIds;
 
 		private string healthCheckType;
@@ -52,6 +54,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private int? minSize;
 
 		private long? ownerId;
+
+		private string launchTemplateVersion;
 
 		private string accessKeyId;
 
@@ -94,6 +98,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				dBInstanceIds = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceIds", value);
+			}
+		}
+
+		public string LaunchTemplateId
+		{
+			get
+			{
+				return launchTemplateId;
+			}
+			set	
+			{
+				launchTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
 			}
 		}
 
@@ -202,6 +219,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LaunchTemplateVersion
+		{
+			get
+			{
+				return launchTemplateVersion;
+			}
+			set	
+			{
+				launchTemplateVersion = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateVersion", value);
 			}
 		}
 

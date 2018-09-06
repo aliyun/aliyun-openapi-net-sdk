@@ -119,6 +119,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string activeScalingConfigurationId;
 
+			private string launchTemplateId;
+
+			private string launchTemplateVersion;
+
 			private string scalingGroupId;
 
 			private string regionId;
@@ -278,6 +282,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					activeScalingConfigurationId = value;
+				}
+			}
+
+			public string LaunchTemplateId
+			{
+				get
+				{
+					return launchTemplateId;
+				}
+				set	
+				{
+					launchTemplateId = value;
+				}
+			}
+
+			public string LaunchTemplateVersion
+			{
+				get
+				{
+					return launchTemplateVersion;
+				}
+				set	
+				{
+					launchTemplateVersion = value;
 				}
 			}
 

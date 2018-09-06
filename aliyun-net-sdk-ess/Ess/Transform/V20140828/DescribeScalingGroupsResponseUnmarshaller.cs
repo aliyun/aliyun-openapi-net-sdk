@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingGroup.StandbyCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].StandbyCapacity");
 				scalingGroup.ProtectedCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].ProtectedCapacity");
 				scalingGroup.ActiveScalingConfigurationId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].ActiveScalingConfigurationId");
+				scalingGroup.LaunchTemplateId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].LaunchTemplateId");
+				scalingGroup.LaunchTemplateVersion = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].LaunchTemplateVersion");
 				scalingGroup.ScalingGroupId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].ScalingGroupId");
 				scalingGroup.RegionId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].RegionId");
 				scalingGroup.TotalCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].TotalCapacity");
