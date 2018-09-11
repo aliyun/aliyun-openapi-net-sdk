@@ -36,10 +36,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			for (int i = 0; i < context.Length("DescribeBackupTasks.Items.Length"); i++) {
 				DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob backupJob = new DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob();
 				backupJob.BackupProgressStatus = context.StringValue("DescribeBackupTasks.Items["+ i +"].BackupProgressStatus");
+				backupJob.BackupStatus = context.StringValue("DescribeBackupTasks.Items["+ i +"].BackupStatus");
 				backupJob.JobMode = context.StringValue("DescribeBackupTasks.Items["+ i +"].JobMode");
 				backupJob.Process = context.StringValue("DescribeBackupTasks.Items["+ i +"].Process");
 				backupJob.TaskAction = context.StringValue("DescribeBackupTasks.Items["+ i +"].TaskAction");
-				backupJob.BackupjobId = context.StringValue("DescribeBackupTasks.Items["+ i +"].BackupjobId");
+				backupJob.BackupJobId = context.StringValue("DescribeBackupTasks.Items["+ i +"].BackupJobId");
 
 				describeBackupTasksResponse_items.Add(backupJob);
 			}

@@ -179,6 +179,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string readonlyInstanceSQLDelayedTime;
 
+			private string securityIPMode;
+
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 			public string IPType
@@ -922,6 +924,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					readonlyInstanceSQLDelayedTime = value;
+				}
+			}
+
+			public string SecurityIPMode
+			{
+				get
+				{
+					return securityIPMode;
+				}
+				set	
+				{
+					securityIPMode = value;
 				}
 			}
 

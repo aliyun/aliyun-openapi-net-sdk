@@ -57,13 +57,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string backupProgressStatus;
 
+			private string backupStatus;
+
 			private string jobMode;
 
 			private string process;
 
 			private string taskAction;
 
-			private string backupjobId;
+			private string backupJobId;
 
 			public string BackupProgressStatus
 			{
@@ -74,6 +76,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					backupProgressStatus = value;
+				}
+			}
+
+			public string BackupStatus
+			{
+				get
+				{
+					return backupStatus;
+				}
+				set	
+				{
+					backupStatus = value;
 				}
 			}
 
@@ -113,15 +127,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string BackupjobId
+			public string BackupJobId
 			{
 				get
 				{
-					return backupjobId;
+					return backupJobId;
 				}
 				set	
 				{
-					backupjobId = value;
+					backupJobId = value;
 				}
 			}
 		}

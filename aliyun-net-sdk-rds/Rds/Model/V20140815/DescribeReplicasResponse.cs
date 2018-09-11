@@ -103,6 +103,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string replicaStatus;
 
+			private string replicationClusterStatus;
+
 			private string replicaMode;
 
 			private string domainMode;
@@ -142,6 +144,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					replicaStatus = value;
+				}
+			}
+
+			public string ReplicationClusterStatus
+			{
+				get
+				{
+					return replicationClusterStatus;
+				}
+				set	
+				{
+					replicationClusterStatus = value;
 				}
 			}
 
@@ -199,6 +213,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				private string engine;
 
 				private string regionId;
+
+				private string zoneId;
 
 				public string DBInstanceId
 				{
@@ -293,6 +309,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						regionId = value;
+					}
+				}
+
+				public string ZoneId
+				{
+					get
+					{
+						return zoneId;
+					}
+					set	
+					{
+						zoneId = value;
 					}
 				}
 			}

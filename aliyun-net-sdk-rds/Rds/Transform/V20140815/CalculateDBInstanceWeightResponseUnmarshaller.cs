@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				CalculateDBInstanceWeightResponse.CalculateDBInstanceWeight_DBInstanceWeight dBInstanceWeight = new CalculateDBInstanceWeightResponse.CalculateDBInstanceWeight_DBInstanceWeight();
 				dBInstanceWeight.DBInstanceId = context.StringValue("CalculateDBInstanceWeight.Items["+ i +"].DBInstanceId");
 				dBInstanceWeight.DBInstanceType = context.StringValue("CalculateDBInstanceWeight.Items["+ i +"].DBInstanceType");
+				dBInstanceWeight.ReadonlyInstanceSQLDelayedTime = context.StringValue("CalculateDBInstanceWeight.Items["+ i +"].ReadonlyInstanceSQLDelayedTime");
 				dBInstanceWeight.Availability = context.StringValue("CalculateDBInstanceWeight.Items["+ i +"].Availability");
 				dBInstanceWeight.Weight = context.StringValue("CalculateDBInstanceWeight.Items["+ i +"].Weight");
 

@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string highSpaceUsageProtection;
 
+		private string logBackupFrequency;
+
 		private DescribeBackupPolicy_DuplicationLocation duplicationLocation;
 
 		public string RequestId
@@ -205,6 +207,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				highSpaceUsageProtection = value;
+			}
+		}
+
+		public string LogBackupFrequency
+		{
+			get
+			{
+				return logBackupFrequency;
+			}
+			set	
+			{
+				logBackupFrequency = value;
 			}
 		}
 

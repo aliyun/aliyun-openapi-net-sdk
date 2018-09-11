@@ -33,11 +33,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private string switchTimeMode;
-
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
+
+		private string upgradeTime;
 
 		private string action;
 
@@ -48,19 +48,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? ownerId;
 
 		private string accessKeyId;
-
-		public string SwitchTimeMode
-		{
-			get
-			{
-				return switchTimeMode;
-			}
-			set	
-			{
-				switchTimeMode = value;
-				DictionaryUtil.Add(QueryParameters, "SwitchTimeMode", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -85,6 +72,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string UpgradeTime
+		{
+			get
+			{
+				return upgradeTime;
+			}
+			set	
+			{
+				upgradeTime = value;
+				DictionaryUtil.Add(QueryParameters, "UpgradeTime", value);
 			}
 		}
 

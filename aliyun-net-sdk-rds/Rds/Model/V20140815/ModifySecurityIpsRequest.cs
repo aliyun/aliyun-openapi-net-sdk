@@ -53,7 +53,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string accessKeyId;
 
-		private string whitelistNetType;
+		private string whitelistNetworkType;
 
 		private string dBInstanceIPArrayAttribute;
 
@@ -193,16 +193,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string WhitelistNetType
+		public string WhitelistNetworkType
 		{
 			get
 			{
-				return whitelistNetType;
+				return whitelistNetworkType;
 			}
 			set	
 			{
-				whitelistNetType = value;
-				DictionaryUtil.Add(QueryParameters, "WhitelistNetType", value);
+				whitelistNetworkType = value;
+				DictionaryUtil.Add(QueryParameters, "WhitelistNetworkType", value);
 			}
 		}
 

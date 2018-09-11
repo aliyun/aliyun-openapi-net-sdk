@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
+		private string syncUserPrivilege;
+
 		private string accessKeyId;
 
 		private string dbNames;
@@ -149,6 +151,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SyncUserPrivilege
+		{
+			get
+			{
+				return syncUserPrivilege;
+			}
+			set	
+			{
+				syncUserPrivilege = value;
+				DictionaryUtil.Add(QueryParameters, "SyncUserPrivilege", value);
 			}
 		}
 

@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string dBInstanceType;
 
+			private string readonlyInstanceSQLDelayedTime;
+
 			private string availability;
 
 			private string weight;
@@ -84,6 +86,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dBInstanceType = value;
+				}
+			}
+
+			public string ReadonlyInstanceSQLDelayedTime
+			{
+				get
+				{
+					return readonlyInstanceSQLDelayedTime;
+				}
+				set	
+				{
+					readonlyInstanceSQLDelayedTime = value;
 				}
 			}
 

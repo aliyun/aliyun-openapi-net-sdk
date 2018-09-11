@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string ownerAccount;
 
+		private string logBackupFrequency;
+
 		private string backupLog;
 
 		private string localLogRetentionSpace;
@@ -135,6 +137,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string LogBackupFrequency
+		{
+			get
+			{
+				return logBackupFrequency;
+			}
+			set	
+			{
+				logBackupFrequency = value;
+				DictionaryUtil.Add(QueryParameters, "LogBackupFrequency", value);
 			}
 		}
 

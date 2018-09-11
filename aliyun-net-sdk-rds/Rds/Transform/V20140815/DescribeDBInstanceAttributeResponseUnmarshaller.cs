@@ -97,6 +97,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.LatestKernelVersion = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].LatestKernelVersion");
 				dBInstanceAttribute.ResourceGroupId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].ResourceGroupId");
 				dBInstanceAttribute.ReadonlyInstanceSQLDelayedTime = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].ReadonlyInstanceSQLDelayedTime");
+				dBInstanceAttribute.SecurityIPMode = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].SecurityIPMode");
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> dBInstanceAttribute_readOnlyDBInstanceIds = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_ReadOnlyDBInstanceId>();
 				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {
