@@ -31,8 +31,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			checkDBInstancesResponse.HttpResponse = context.HttpResponse;
 			checkDBInstancesResponse.RequestId = context.StringValue("CheckDBInstances.RequestId");
-			checkDBInstancesResponse.DBInstanceId = context.StringValue("CheckDBInstances.DBInstanceId");
-			checkDBInstancesResponse.DBInstanceStatus = context.StringValue("CheckDBInstances.DBInstanceStatus");
+			checkDBInstancesResponse.IsExistInstance = context.BooleanValue("CheckDBInstances.IsExistInstance");
         
 			return checkDBInstancesResponse;
         }

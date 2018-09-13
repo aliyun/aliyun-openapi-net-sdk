@@ -26,9 +26,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private string dBInstanceId;
-
-		private string dBInstanceStatus;
+		private bool? isExistInstance;
 
 		public string RequestId
 		{
@@ -42,27 +40,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public bool? IsExistInstance
 		{
 			get
 			{
-				return dBInstanceId;
+				return isExistInstance;
 			}
 			set	
 			{
-				dBInstanceId = value;
-			}
-		}
-
-		public string DBInstanceStatus
-		{
-			get
-			{
-				return dBInstanceStatus;
-			}
-			set	
-			{
-				dBInstanceStatus = value;
+				isExistInstance = value;
 			}
 		}
 	}
