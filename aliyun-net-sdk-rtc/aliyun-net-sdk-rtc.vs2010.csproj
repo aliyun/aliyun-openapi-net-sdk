@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{31b90305-30a0-443d-ab92-ad9b78fa5549}</ProjectGuid>
+    <ProjectGuid>{6126594f-f546-4595-b173-da0b4fc13541}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -45,6 +45,7 @@
 	<Compile Include="Rtc\Model\V20180111\UnmuteAudioResponse.cs" />
 	<Compile Include="Rtc\Model\V20180111\RemoveParticipantsResponse.cs" />
 	<Compile Include="Rtc\Model\V20180111\ModifyConferenceRequest.cs" />
+	<Compile Include="Rtc\Model\V20180111\CreateChannelTokenResponse.cs" />
 	<Compile Include="Rtc\Model\V20180111\StartAppResponse.cs" />
 	<Compile Include="Rtc\Model\V20180111\DescribeRecordListRequest.cs" />
 	<Compile Include="Rtc\Model\V20180111\MuteAudioAllRequest.cs" />
@@ -52,6 +53,7 @@
 	<Compile Include="Rtc\Model\V20180111\DescribeRecordDetailResponse.cs" />
 	<Compile Include="Rtc\Model\V20180111\MuteAudioAllResponse.cs" />
 	<Compile Include="Rtc\Model\V20180111\MuteAudioResponse.cs" />
+	<Compile Include="Rtc\Model\V20180111\CreateChannelTokenRequest.cs" />
 	<Compile Include="Rtc\Model\V20180111\RemoveTerminalsRequest.cs" />
 	<Compile Include="Rtc\Model\V20180111\MuteAudioRequest.cs" />
 	<Compile Include="Rtc\Model\V20180111\DeleteChannelRequest.cs" />
@@ -105,6 +107,7 @@
 	<Compile Include="Rtc\Transform\V20180111\UnmuteAudioResponseUnmarshaller.cs" />
 	<Compile Include="Rtc\Transform\V20180111\DescribeRecordDetailResponseUnmarshaller.cs" />
 	<Compile Include="Rtc\Transform\V20180111\DescribeRealTimeRecordListResponseUnmarshaller.cs" />
+	<Compile Include="Rtc\Transform\V20180111\CreateChannelTokenResponseUnmarshaller.cs" />
 	<Compile Include="Rtc\Transform\V20180111\RemoveParticipantsResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
