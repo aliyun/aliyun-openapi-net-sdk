@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{c3824034-42c3-41e6-95c3-90fabb070ca8}</ProjectGuid>
+    <ProjectGuid>{676511ff-e235-4578-ab34-4d9c8ac00c91}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -58,7 +58,6 @@
 	<Compile Include="Rds\Model\V20140815\ModifyDBInstanceNetworkExpireTimeRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateDiagnosticReportResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeSqlLogTimeDistributionResponse.cs" />
-	<Compile Include="Rds\Model\V20140815\CheckDBInstancesResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\StartSqlLogDumpRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeBackupsRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyReplicaVerificationModeRequest.cs" />
@@ -94,6 +93,7 @@
 	<Compile Include="Rds\Model\V20140815\ModifyDBInstanceSSLRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\QueryOssBucketsRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeOptimizeAdviceOnStorageResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\CheckInstanceExsitResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\MigrateSecurityIPModeResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyDampPolicyRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\CopyDatabaseBetweenInstancesResponse.cs" />
@@ -105,11 +105,11 @@
 	<Compile Include="Rds\Model\V20140815\DescribeTasksRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeReplicasResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeAbnormalDBInstancesResponse.cs" />
-	<Compile Include="Rds\Model\V20140815\CheckDBInstancesRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DeleteDatabaseResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyDBInstanceHAConfigRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateDBInstanceReplicaRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeBackupSetsForSecurityResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\CheckInstanceExistRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\AllocateInstancePublicConnectionRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeBackupsResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescibeImportsFromDatabaseRequest.cs" />
@@ -198,6 +198,7 @@
 	<Compile Include="Rds\Model\V20140815\DescribeDBInstancePerformanceResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeBackupTasksResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\RecoveryDBInstanceRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\CheckInstanceExistResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateOnlineDatabaseTaskResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeMigrateTasksForSQLServerResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeSQLDiagnosisListResponse.cs" />
@@ -368,6 +369,7 @@
 	<Compile Include="Rds\Model\V20140815\CheckResourceRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeSecurityGroupConfigurationResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyAccountDescriptionRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\CheckInstanceExsitRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeReplicaPerformanceResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeDBInstanceSSLRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyDBInstanceConnectionStringRequest.cs" />
@@ -455,7 +457,6 @@
 	<Compile Include="Rds\Transform\V20140815\DescribeDBInstanceUserResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ReleaseReadWriteSplittingConnectionResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyDBInstanceProxyConfigurationResponseUnmarshaller.cs" />
-	<Compile Include="Rds\Transform\V20140815\CheckDBInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DeleteBackupResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CancelImportResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeDBInstanceProxyConfigurationResponseUnmarshaller.cs" />
@@ -486,6 +487,7 @@
 	<Compile Include="Rds\Transform\V20140815\StartSqlLogDumpResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeBackupSetsForSecurityResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeDBInstancePerformanceResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\CheckInstanceExistResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeDBInstanceNetInfoResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeBackupsForSecurityResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeSQLReportsResponseUnmarshaller.cs" />
@@ -593,6 +595,7 @@
 	<Compile Include="Rds\Transform\V20140815\SwitchDBInstanceVpcResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeDBInstanceMonitorResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeSlowLogRecordsResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\CheckInstanceExsitResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\UpgradeDBInstanceEngineVersionResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeResourceUsageResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeSQLLogRecordsListResponseUnmarshaller.cs" />

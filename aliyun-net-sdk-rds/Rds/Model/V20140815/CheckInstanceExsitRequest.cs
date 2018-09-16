@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class CheckDBInstancesRequest : RpcAcsRequest<CheckDBInstancesResponse>
+    public class CheckInstanceExsitRequest : RpcAcsRequest<CheckInstanceExsitResponse>
     {
-        public CheckDBInstancesRequest()
-            : base("Rds", "2014-08-15", "CheckDBInstances", "rds", "openAPI")
+        public CheckInstanceExsitRequest()
+            : base("Rds", "2014-08-15", "CheckInstanceExsit", "rds", "openAPI")
         {
         }
 
@@ -123,9 +123,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override CheckDBInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CheckInstanceExsitResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CheckDBInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckInstanceExsitResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

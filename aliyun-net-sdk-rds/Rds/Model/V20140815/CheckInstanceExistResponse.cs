@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CheckDBInstancesResponse : AcsResponse
+	public class CheckInstanceExistResponse : AcsResponse
 	{
 
 		private string requestId;

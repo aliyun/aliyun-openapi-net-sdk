@@ -23,17 +23,17 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CheckDBInstancesResponseUnmarshaller
+    public class CheckInstanceExistResponseUnmarshaller
     {
-        public static CheckDBInstancesResponse Unmarshall(UnmarshallerContext context)
+        public static CheckInstanceExistResponse Unmarshall(UnmarshallerContext context)
         {
-			CheckDBInstancesResponse checkDBInstancesResponse = new CheckDBInstancesResponse();
+			CheckInstanceExistResponse checkInstanceExistResponse = new CheckInstanceExistResponse();
 
-			checkDBInstancesResponse.HttpResponse = context.HttpResponse;
-			checkDBInstancesResponse.RequestId = context.StringValue("CheckDBInstances.RequestId");
-			checkDBInstancesResponse.IsExistInstance = context.BooleanValue("CheckDBInstances.IsExistInstance");
+			checkInstanceExistResponse.HttpResponse = context.HttpResponse;
+			checkInstanceExistResponse.RequestId = context.StringValue("CheckInstanceExist.RequestId");
+			checkInstanceExistResponse.IsExistInstance = context.BooleanValue("CheckInstanceExist.IsExistInstance");
         
-			return checkDBInstancesResponse;
+			return checkInstanceExistResponse;
         }
     }
 }
