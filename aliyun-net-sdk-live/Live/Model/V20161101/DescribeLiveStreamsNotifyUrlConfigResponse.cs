@@ -59,6 +59,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string notifyUrl;
 
+			private string authType;
+
+			private string authKey;
+
 			public string DomainName
 			{
 				get
@@ -80,6 +84,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					notifyUrl = value;
+				}
+			}
+
+			public string AuthType
+			{
+				get
+				{
+					return authType;
+				}
+				set	
+				{
+					authType = value;
+				}
+			}
+
+			public string AuthKey
+			{
+				get
+				{
+					return authKey;
+				}
+				set	
+				{
+					authKey = value;
 				}
 			}
 		}

@@ -45,6 +45,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				videoResource.VodUrl = context.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].VodUrl");
 				videoResource.BeginOffset = context.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].BeginOffset");
 				videoResource.EndOffset = context.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].EndOffset");
+				videoResource.PtsCallbackInterval = context.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].PtsCallbackInterval");
 
 				describeCasterVideoResourcesResponse_videoResources.Add(videoResource);
 			}

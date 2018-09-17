@@ -43,6 +43,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string pattern;
 
+		private string action;
+
 		private string text;
 
 		private long? ownerId;
@@ -111,6 +113,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pattern = value;
 				DictionaryUtil.Add(QueryParameters, "Pattern", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

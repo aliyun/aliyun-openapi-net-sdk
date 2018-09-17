@@ -44,6 +44,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? programEffect;
 
+		private int? channelEnable;
+
 		private DescribeCasterConfig_TranscodeConfig transcodeConfig;
 
 		private DescribeCasterConfig_RecordConfig recordConfig;
@@ -165,6 +167,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				programEffect = value;
+			}
+		}
+
+		public int? ChannelEnable
+		{
+			get
+			{
+				return channelEnable;
+			}
+			set	
+			{
+				channelEnable = value;
 			}
 		}
 

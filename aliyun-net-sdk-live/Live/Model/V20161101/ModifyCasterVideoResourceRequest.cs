@@ -35,25 +35,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string resourceId;
 
-		private int? beginOffset;
-
 		private string vodUrl;
-
-		private string liveStreamUrl;
 
 		private string casterId;
 
-		private string action;
-
 		private int? endOffset;
-
-		private string resourceName;
-
-		private int? repeatNum;
 
 		private long? ownerId;
 
 		private string materialId;
+
+		private int? beginOffset;
+
+		private string liveStreamUrl;
+
+		private int? ptsCallbackInterval;
+
+		private string action;
+
+		private string resourceName;
+
+		private int? repeatNum;
 
 		public string ResourceId
 		{
@@ -65,19 +67,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				resourceId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
-
-		public int? BeginOffset
-		{
-			get
-			{
-				return beginOffset;
-			}
-			set	
-			{
-				beginOffset = value;
-				DictionaryUtil.Add(QueryParameters, "BeginOffset", value.ToString());
 			}
 		}
 
@@ -94,19 +83,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string LiveStreamUrl
-		{
-			get
-			{
-				return liveStreamUrl;
-			}
-			set	
-			{
-				liveStreamUrl = value;
-				DictionaryUtil.Add(QueryParameters, "LiveStreamUrl", value);
-			}
-		}
-
 		public string CasterId
 		{
 			get
@@ -120,19 +96,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public int? EndOffset
 		{
 			get
@@ -143,32 +106,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				endOffset = value;
 				DictionaryUtil.Add(QueryParameters, "EndOffset", value.ToString());
-			}
-		}
-
-		public string ResourceName
-		{
-			get
-			{
-				return resourceName;
-			}
-			set	
-			{
-				resourceName = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceName", value);
-			}
-		}
-
-		public int? RepeatNum
-		{
-			get
-			{
-				return repeatNum;
-			}
-			set	
-			{
-				repeatNum = value;
-				DictionaryUtil.Add(QueryParameters, "RepeatNum", value.ToString());
 			}
 		}
 
@@ -195,6 +132,84 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				materialId = value;
 				DictionaryUtil.Add(QueryParameters, "MaterialId", value);
+			}
+		}
+
+		public int? BeginOffset
+		{
+			get
+			{
+				return beginOffset;
+			}
+			set	
+			{
+				beginOffset = value;
+				DictionaryUtil.Add(QueryParameters, "BeginOffset", value.ToString());
+			}
+		}
+
+		public string LiveStreamUrl
+		{
+			get
+			{
+				return liveStreamUrl;
+			}
+			set	
+			{
+				liveStreamUrl = value;
+				DictionaryUtil.Add(QueryParameters, "LiveStreamUrl", value);
+			}
+		}
+
+		public int? PtsCallbackInterval
+		{
+			get
+			{
+				return ptsCallbackInterval;
+			}
+			set	
+			{
+				ptsCallbackInterval = value;
+				DictionaryUtil.Add(QueryParameters, "PtsCallbackInterval", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string ResourceName
+		{
+			get
+			{
+				return resourceName;
+			}
+			set	
+			{
+				resourceName = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceName", value);
+			}
+		}
+
+		public int? RepeatNum
+		{
+			get
+			{
+				return repeatNum;
+			}
+			set	
+			{
+				repeatNum = value;
+				DictionaryUtil.Add(QueryParameters, "RepeatNum", value.ToString());
 			}
 		}
 

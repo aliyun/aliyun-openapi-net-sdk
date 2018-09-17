@@ -33,28 +33,11 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
-		private string securityToken;
-
 		private string domainName;
-
-		private string action;
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string action;
 
 		public string DomainName
 		{
@@ -66,19 +49,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -95,16 +65,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AccessKeyId
+		public string Action
 		{
 			get
 			{
-				return accessKeyId;
+				return action;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

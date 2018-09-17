@@ -87,6 +87,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private int? endOffset;
 
+			private int? ptsCallbackInterval;
+
 			public string MaterialId
 			{
 				get
@@ -192,6 +194,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					endOffset = value;
+				}
+			}
+
+			public int? PtsCallbackInterval
+			{
+				get
+				{
+					return ptsCallbackInterval;
+				}
+				set	
+				{
+					ptsCallbackInterval = value;
 				}
 			}
 		}

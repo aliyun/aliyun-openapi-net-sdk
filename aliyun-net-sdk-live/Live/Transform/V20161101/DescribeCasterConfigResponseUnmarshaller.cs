@@ -40,6 +40,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			describeCasterConfigResponse.CallbackUrl = context.StringValue("DescribeCasterConfig.CallbackUrl");
 			describeCasterConfigResponse.ProgramName = context.StringValue("DescribeCasterConfig.ProgramName");
 			describeCasterConfigResponse.ProgramEffect = context.IntegerValue("DescribeCasterConfig.ProgramEffect");
+			describeCasterConfigResponse.ChannelEnable = context.IntegerValue("DescribeCasterConfig.ChannelEnable");
 
 			DescribeCasterConfigResponse.DescribeCasterConfig_TranscodeConfig transcodeConfig = new DescribeCasterConfigResponse.DescribeCasterConfig_TranscodeConfig();
 			transcodeConfig.CasterTemplate = context.StringValue("DescribeCasterConfig.TranscodeConfig.CasterTemplate");

@@ -39,17 +39,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string endTime;
 
+		private string orderBy;
+
 		private string startTime;
 
 		private long? ownerId;
 
 		private int? pageNumber;
 
-		private string accessKeyId;
-
 		private string appName;
-
-		private string securityToken;
 
 		private int? pageSize;
 
@@ -98,6 +96,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string OrderBy
+		{
+			get
+			{
+				return orderBy;
+			}
+			set	
+			{
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
+			}
+		}
+
 		public string StartTime
 		{
 			get
@@ -137,19 +148,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string AppName
 		{
 			get
@@ -160,19 +158,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

@@ -37,6 +37,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string casterId;
 
+		private int? channelEnable;
+
 		private string domainName;
 
 		private int? programEffect;
@@ -82,6 +84,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				casterId = value;
 				DictionaryUtil.Add(QueryParameters, "CasterId", value);
+			}
+		}
+
+		public int? ChannelEnable
+		{
+			get
+			{
+				return channelEnable;
+			}
+			set	
+			{
+				channelEnable = value;
+				DictionaryUtil.Add(QueryParameters, "ChannelEnable", value.ToString());
 			}
 		}
 

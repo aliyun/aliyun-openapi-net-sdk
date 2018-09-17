@@ -46,6 +46,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				caster.ExpireTime = context.StringValue("DescribeCasters.CasterList["+ i +"].ExpireTime");
 				caster.ChargeType = context.StringValue("DescribeCasters.CasterList["+ i +"].ChargeType");
 				caster.CasterTemplate = context.StringValue("DescribeCasters.CasterList["+ i +"].CasterTemplate");
+				caster.ChannelEnable = context.IntegerValue("DescribeCasters.CasterList["+ i +"].ChannelEnable");
 
 				describeCastersResponse_casterList.Add(caster);
 			}

@@ -33,6 +33,8 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
+		private string topLevelDomain;
+
 		private string securityToken;
 
 		private string ownerAccount;
@@ -52,6 +54,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string accessKeyId;
 
 		private string liveDomainType;
+
+		public string TopLevelDomain
+		{
+			get
+			{
+				return topLevelDomain;
+			}
+			set	
+			{
+				topLevelDomain = value;
+				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+			}
+		}
 
 		public string SecurityToken
 		{

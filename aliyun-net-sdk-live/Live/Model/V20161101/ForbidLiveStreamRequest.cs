@@ -33,36 +33,23 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
-		private string resumeTime;
-
 		private string appName;
 
-		private string securityToken;
+		private string action;
+
+		private string streamName;
+
+		private string controlStreamAction;
+
+		private string resumeTime;
 
 		private string liveStreamType;
 
 		private string domainName;
 
-		private string action;
-
 		private long? ownerId;
 
-		private string streamName;
-
-		private string accessKeyId;
-
-		public string ResumeTime
-		{
-			get
-			{
-				return resumeTime;
-			}
-			set	
-			{
-				resumeTime = value;
-				DictionaryUtil.Add(QueryParameters, "ResumeTime", value);
-			}
-		}
+		private string oneshot;
 
 		public string AppName
 		{
@@ -77,16 +64,55 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string SecurityToken
+		public string Action
 		{
 			get
 			{
-				return securityToken;
+				return action;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string ControlStreamAction
+		{
+			get
+			{
+				return controlStreamAction;
+			}
+			set	
+			{
+				controlStreamAction = value;
+				DictionaryUtil.Add(QueryParameters, "ControlStreamAction", value);
+			}
+		}
+
+		public string ResumeTime
+		{
+			get
+			{
+				return resumeTime;
+			}
+			set	
+			{
+				resumeTime = value;
+				DictionaryUtil.Add(QueryParameters, "ResumeTime", value);
 			}
 		}
 
@@ -116,19 +142,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -142,29 +155,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string StreamName
+		public string Oneshot
 		{
 			get
 			{
-				return streamName;
+				return oneshot;
 			}
 			set	
 			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				oneshot = value;
+				DictionaryUtil.Add(QueryParameters, "Oneshot", value);
 			}
 		}
 

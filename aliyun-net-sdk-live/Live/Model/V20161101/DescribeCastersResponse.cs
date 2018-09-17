@@ -89,6 +89,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string casterTemplate;
 
+			private int? channelEnable;
+
 			public int? Status
 			{
 				get
@@ -206,6 +208,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					casterTemplate = value;
+				}
+			}
+
+			public int? ChannelEnable
+			{
+				get
+				{
+					return channelEnable;
+				}
+				set	
+				{
+					channelEnable = value;
 				}
 			}
 		}
