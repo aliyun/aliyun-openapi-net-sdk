@@ -64,9 +64,9 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				orderRenewParams = value;
 				for (int i = 0; i < orderRenewParams.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (i + 1) + ".DomainName", orderRenewParams[i].DomainName);
-					DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (i + 1) + ".CurrentExpirationDate", orderRenewParams[i].CurrentExpirationDate);
 					DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (i + 1) + ".SubscriptionDuration", orderRenewParams[i].SubscriptionDuration);
+					DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (i + 1) + ".CurrentExpirationDate", orderRenewParams[i].CurrentExpirationDate);
+					DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (i + 1) + ".DomainName", orderRenewParams[i].DomainName);
 				}
 			}
 		}
@@ -87,21 +87,21 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 		public class OrderRenewParam
 		{
 
-			private string domainName;
+			private int? subscriptionDuration;
 
 			private long? currentExpirationDate;
 
-			private int? subscriptionDuration;
+			private string domainName;
 
-			public string DomainName
+			public int? SubscriptionDuration
 			{
 				get
 				{
-					return domainName;
+					return subscriptionDuration;
 				}
 				set	
 				{
-					domainName = value;
+					subscriptionDuration = value;
 				}
 			}
 
@@ -117,15 +117,15 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				}
 			}
 
-			public int? SubscriptionDuration
+			public string DomainName
 			{
 				get
 				{
-					return subscriptionDuration;
+					return domainName;
 				}
 				set	
 				{
-					subscriptionDuration = value;
+					domainName = value;
 				}
 			}
 		}

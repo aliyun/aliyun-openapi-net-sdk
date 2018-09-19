@@ -26,63 +26,44 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-    public class SaveSingleTaskForModifyingDnsHostRequest : RpcAcsRequest<SaveSingleTaskForModifyingDnsHostResponse>
+    public class SaveSingleTaskForAssociatingEnsRequest : RpcAcsRequest<SaveSingleTaskForAssociatingEnsResponse>
     {
-        public SaveSingleTaskForModifyingDnsHostRequest()
-            : base("Domain_intl", "2017-12-18", "SaveSingleTaskForModifyingDnsHost", "domain", "openAPI")
+        public SaveSingleTaskForAssociatingEnsRequest()
+            : base("Domain_intl", "2017-12-18", "SaveSingleTaskForAssociatingEns", "domain", "openAPI")
         {
         }
 
-		private string instanceId;
+		private string address;
 
-		private List<string> ips;
-
-		private string dnsName;
+		private string domainName;
 
 		private string userClientIp;
 
 		private string lang;
 
-		public string InstanceId
+		public string Address
 		{
 			get
 			{
-				return instanceId;
+				return address;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				address = value;
+				DictionaryUtil.Add(QueryParameters, "Address", value);
 			}
 		}
 
-		public List<string> Ips
+		public string DomainName
 		{
 			get
 			{
-				return ips;
-			}
-
-			set
-			{
-				ips = value;
-				for (int i = 0; i < ips.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Ip." + (i + 1) , ips[i]);
-				}
-			}
-		}
-
-		public string DnsName
-		{
-			get
-			{
-				return dnsName;
+				return domainName;
 			}
 			set	
 			{
-				dnsName = value;
-				DictionaryUtil.Add(QueryParameters, "DnsName", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -112,14 +93,9 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override SaveSingleTaskForModifyingDnsHostResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SaveSingleTaskForAssociatingEnsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SaveSingleTaskForModifyingDnsHostResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveSingleTaskForAssociatingEnsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

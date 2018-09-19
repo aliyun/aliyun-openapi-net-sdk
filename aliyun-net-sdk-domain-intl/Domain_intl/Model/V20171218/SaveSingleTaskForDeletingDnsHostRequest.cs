@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-    public class SaveSingleTaskForModifyingDnsHostRequest : RpcAcsRequest<SaveSingleTaskForModifyingDnsHostResponse>
+    public class SaveSingleTaskForDeletingDnsHostRequest : RpcAcsRequest<SaveSingleTaskForDeletingDnsHostResponse>
     {
-        public SaveSingleTaskForModifyingDnsHostRequest()
-            : base("Domain_intl", "2017-12-18", "SaveSingleTaskForModifyingDnsHost", "domain", "openAPI")
+        public SaveSingleTaskForDeletingDnsHostRequest()
+            : base("Domain_intl", "2017-12-18", "SaveSingleTaskForDeletingDnsHost", "domain", "openAPI")
         {
         }
 
@@ -117,9 +117,9 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			return false;
 		}
 
-        public override SaveSingleTaskForModifyingDnsHostResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SaveSingleTaskForDeletingDnsHostResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SaveSingleTaskForModifyingDnsHostResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveSingleTaskForDeletingDnsHostResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

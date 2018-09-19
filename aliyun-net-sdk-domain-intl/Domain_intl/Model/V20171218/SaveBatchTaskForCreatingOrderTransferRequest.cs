@@ -51,10 +51,10 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				orderTransferParams = value;
 				for (int i = 0; i < orderTransferParams.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".DomainName", orderTransferParams[i].DomainName);
-					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".AuthorizationCode", orderTransferParams[i].AuthorizationCode);
-					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".RegistrantProfileId", orderTransferParams[i].RegistrantProfileId);
 					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".PermitPremiumTransfer", orderTransferParams[i].PermitPremiumTransfer);
+					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".AuthorizationCode", orderTransferParams[i].AuthorizationCode);
+					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".DomainName", orderTransferParams[i].DomainName);
+					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".RegistrantProfileId", orderTransferParams[i].RegistrantProfileId);
 				}
 			}
 		}
@@ -88,23 +88,23 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 		public class OrderTransferParam
 		{
 
-			private string domainName;
+			private bool? permitPremiumTransfer;
 
 			private string authorizationCode;
 
+			private string domainName;
+
 			private long? registrantProfileId;
 
-			private bool? permitPremiumTransfer;
-
-			public string DomainName
+			public bool? PermitPremiumTransfer
 			{
 				get
 				{
-					return domainName;
+					return permitPremiumTransfer;
 				}
 				set	
 				{
-					domainName = value;
+					permitPremiumTransfer = value;
 				}
 			}
 
@@ -120,6 +120,18 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				}
 			}
 
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
 			public long? RegistrantProfileId
 			{
 				get
@@ -129,18 +141,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				set	
 				{
 					registrantProfileId = value;
-				}
-			}
-
-			public bool? PermitPremiumTransfer
-			{
-				get
-				{
-					return permitPremiumTransfer;
-				}
-				set	
-				{
-					permitPremiumTransfer = value;
 				}
 			}
 		}

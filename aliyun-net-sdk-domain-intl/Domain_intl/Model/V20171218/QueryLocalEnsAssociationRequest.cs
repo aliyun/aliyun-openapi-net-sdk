@@ -26,65 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-    public class SaveSingleTaskForModifyingDnsHostRequest : RpcAcsRequest<SaveSingleTaskForModifyingDnsHostResponse>
+    public class QueryLocalEnsAssociationRequest : RpcAcsRequest<QueryLocalEnsAssociationResponse>
     {
-        public SaveSingleTaskForModifyingDnsHostRequest()
-            : base("Domain_intl", "2017-12-18", "SaveSingleTaskForModifyingDnsHost", "domain", "openAPI")
+        public QueryLocalEnsAssociationRequest()
+            : base("Domain_intl", "2017-12-18", "QueryLocalEnsAssociation", "domain", "openAPI")
         {
         }
 
-		private string instanceId;
-
-		private List<string> ips;
-
-		private string dnsName;
-
 		private string userClientIp;
 
+		private string domainName;
+
 		private string lang;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public List<string> Ips
-		{
-			get
-			{
-				return ips;
-			}
-
-			set
-			{
-				ips = value;
-				for (int i = 0; i < ips.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Ip." + (i + 1) , ips[i]);
-				}
-			}
-		}
-
-		public string DnsName
-		{
-			get
-			{
-				return dnsName;
-			}
-			set	
-			{
-				dnsName = value;
-				DictionaryUtil.Add(QueryParameters, "DnsName", value);
-			}
-		}
 
 		public string UserClientIp
 		{
@@ -96,6 +49,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -112,14 +78,9 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override SaveSingleTaskForModifyingDnsHostResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryLocalEnsAssociationResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SaveSingleTaskForModifyingDnsHostResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryLocalEnsAssociationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

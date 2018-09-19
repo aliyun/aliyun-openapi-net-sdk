@@ -35,6 +35,10 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string domainName;
 
+		private string userClientIp;
+
+		private string lang;
+
 		public string DomainName
 		{
 			get
@@ -45,6 +49,32 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

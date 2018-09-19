@@ -51,8 +51,8 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				orderRedeemParams = value;
 				for (int i = 0; i < orderRedeemParams.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"OrderRedeemParam." + (i + 1) + ".DomainName", orderRedeemParams[i].DomainName);
 					DictionaryUtil.Add(QueryParameters,"OrderRedeemParam." + (i + 1) + ".CurrentExpirationDate", orderRedeemParams[i].CurrentExpirationDate);
+					DictionaryUtil.Add(QueryParameters,"OrderRedeemParam." + (i + 1) + ".DomainName", orderRedeemParams[i].DomainName);
 				}
 			}
 		}
@@ -86,21 +86,9 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 		public class OrderRedeemParam
 		{
 
-			private string domainName;
-
 			private long? currentExpirationDate;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string domainName;
 
 			public long? CurrentExpirationDate
 			{
@@ -111,6 +99,18 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				set	
 				{
 					currentExpirationDate = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

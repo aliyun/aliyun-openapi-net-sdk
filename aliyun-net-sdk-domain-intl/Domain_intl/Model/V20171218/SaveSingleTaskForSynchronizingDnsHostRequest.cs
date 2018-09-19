@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string instanceId;
 
+		private string userClientIp;
+
 		private string lang;
 
 		public string InstanceId
@@ -47,6 +49,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
