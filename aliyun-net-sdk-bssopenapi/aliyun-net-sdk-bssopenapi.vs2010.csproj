@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{a3a44e91-573d-45d3-ae16-17f937b65b8b}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-bssopenapi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="BssOpenApi\Model\V20171214\QueryMonthlyInstanceConsumptionRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryPrepaidCardsResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\UnsubscribeExportToOSSRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QuerySettlementBillResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\GetPayAsYouGoPriceResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryMonthlyBillResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\UnsubscribeExportToOSSResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\CreateInstanceRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\SubscribeDetailRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryCashCouponsRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\GetSubscriptionPriceRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountBalanceRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountBalanceResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\SubscribeDetailResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\ModifyInstanceResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\DescribePricingModuleRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryMonthlyBillRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\SubscribeExportToOSSResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryPriceListResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryOrdersRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\ModifyInstanceRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryProductListRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\GetOrderDetailResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\DescribeResourcePackageProductRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryAvailableInstancesRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryResourcePackageInstancesRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QuerySettlementBillRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\GetOrderDetailRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\CreateResourcePackageResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryCashCouponsResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\SubscribeExportToOSSRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryInstanceGaapCostResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryOrdersResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryMonthlyInstanceConsumptionResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\SetRenewalResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\RenewInstanceResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryInstanceGaapCostRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\DescribeResourcePackageProductResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\DescribePricingModuleResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\GetSubscriptionPriceResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\GetPayAsYouGoPriceRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\CreateInstanceResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\CreateResourcePackageRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\GetResourcePackagePriceResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\SetRenewalRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryAvailableInstancesResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryProductListResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryPriceListRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\RenewInstanceRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\GetResourcePackagePriceRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryResourcePackageInstancesResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryPrepaidCardsRequest.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryPrepaidCardsResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\GetOrderDetailResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\DescribePricingModuleResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryOrdersResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryCashCouponsResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\SubscribeExportToOSSResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\ModifyInstanceResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\GetResourcePackagePriceResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryInstanceGaapCostResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryAccountBalanceResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\SubscribeDetailResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\RenewInstanceResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\GetSubscriptionPriceResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\UnsubscribeExportToOSSResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\DescribeResourcePackageProductResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryPriceListResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryAvailableInstancesResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\SetRenewalResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\GetPayAsYouGoPriceResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryProductListResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryMonthlyBillResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\CreateResourcePackageResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\CreateInstanceResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QuerySettlementBillResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryMonthlyInstanceConsumptionResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryResourcePackageInstancesResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
