@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cloudauth.Model.V20180807;
+using Aliyun.Acs.Cloudauth.Model.V20180916;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Transform.V20180807
+namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 {
     public class GetVerifyTokenResponseUnmarshaller
     {

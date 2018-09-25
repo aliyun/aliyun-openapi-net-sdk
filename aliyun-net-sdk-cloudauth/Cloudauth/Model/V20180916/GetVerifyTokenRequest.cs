@@ -21,18 +21,20 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20180807;
+using Aliyun.Acs.Cloudauth.Transform.V20180916;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180807
+namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
-    public class GetStatusRequest : RpcAcsRequest<GetStatusResponse>
+    public class GetVerifyTokenRequest : RpcAcsRequest<GetVerifyTokenResponse>
     {
-        public GetStatusRequest()
-            : base("Cloudauth", "2018-08-07", "GetStatus", "cloudauth", "openAPI")
+        public GetVerifyTokenRequest()
+            : base("Cloudauth", "2018-09-16", "GetVerifyToken", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
+
+		private string userData;
 
 		private long? resourceOwnerId;
 
@@ -40,7 +42,24 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 
 		private string sourceIp;
 
+		private string binding;
+
+		private string verifyConfigs;
+
 		private string ticketId;
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -81,6 +100,32 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 			}
 		}
 
+		public string Binding
+		{
+			get
+			{
+				return binding;
+			}
+			set	
+			{
+				binding = value;
+				DictionaryUtil.Add(BodyParameters, "Binding", value);
+			}
+		}
+
+		public string VerifyConfigs
+		{
+			get
+			{
+				return verifyConfigs;
+			}
+			set	
+			{
+				verifyConfigs = value;
+				DictionaryUtil.Add(QueryParameters, "VerifyConfigs", value);
+			}
+		}
+
 		public string TicketId
 		{
 			get
@@ -94,9 +139,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 			}
 		}
 
-        public override GetStatusResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetVerifyTokenResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetVerifyTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

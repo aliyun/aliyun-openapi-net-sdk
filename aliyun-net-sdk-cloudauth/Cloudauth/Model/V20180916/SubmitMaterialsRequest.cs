@@ -21,43 +21,27 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20180807;
+using Aliyun.Acs.Cloudauth.Transform.V20180916;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180807
+namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
-    public class CompareFacesRequest : RpcAcsRequest<CompareFacesResponse>
+    public class SubmitMaterialsRequest : RpcAcsRequest<SubmitMaterialsResponse>
     {
-        public CompareFacesRequest()
-            : base("Cloudauth", "2018-08-07", "CompareFaces", "cloudauth", "openAPI")
+        public SubmitMaterialsRequest()
+            : base("Cloudauth", "2018-09-16", "SubmitMaterials", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
-
-		private string sourceImageType;
 
 		private long? resourceOwnerId;
 
 		private string sourceIp;
 
-		private string targetImageType;
+		private List<Material> materials;
 
-		private string sourceImageValue;
-
-		private string targetImageValue;
-
-		public string SourceImageType
-		{
-			get
-			{
-				return sourceImageType;
-			}
-			set	
-			{
-				sourceImageType = value;
-				DictionaryUtil.Add(QueryParameters, "SourceImageType", value);
-			}
-		}
+		private string verifyToken;
 
 		public long? ResourceOwnerId
 		{
@@ -85,48 +69,72 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 			}
 		}
 
-		public string TargetImageType
+		public List<Material> Materials
 		{
 			get
 			{
-				return targetImageType;
+				return materials;
 			}
-			set	
+
+			set
 			{
-				targetImageType = value;
-				DictionaryUtil.Add(QueryParameters, "TargetImageType", value);
+				materials = value;
+				for (int i = 0; i < materials.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"Material." + (i + 1) + ".MaterialType", materials[i].MaterialType);
+					DictionaryUtil.Add(BodyParameters,"Material." + (i + 1) + ".Value", materials[i].Value);
+				}
 			}
 		}
 
-		public string SourceImageValue
+		public string VerifyToken
 		{
 			get
 			{
-				return sourceImageValue;
+				return verifyToken;
 			}
 			set	
 			{
-				sourceImageValue = value;
-				DictionaryUtil.Add(QueryParameters, "SourceImageValue", value);
+				verifyToken = value;
+				DictionaryUtil.Add(BodyParameters, "VerifyToken", value);
 			}
 		}
 
-		public string TargetImageValue
+		public class Material
 		{
-			get
+
+			private string materialType;
+
+			private string value_;
+
+			public string MaterialType
 			{
-				return targetImageValue;
+				get
+				{
+					return materialType;
+				}
+				set	
+				{
+					materialType = value;
+				}
 			}
-			set	
+
+			public string Value
 			{
-				targetImageValue = value;
-				DictionaryUtil.Add(QueryParameters, "TargetImageValue", value);
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 
-        public override CompareFacesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SubmitMaterialsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CompareFacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitMaterialsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -19,9 +19,9 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180807
+namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
-	public class SubmitMaterialsResponse : AcsResponse
+	public class GetStatusResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 
 		private string message;
 
-		private SubmitMaterials_Data data;
+		private GetStatus_Data data;
 
 		public string RequestId
 		{
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 			}
 		}
 
-		public SubmitMaterials_Data Data
+		public GetStatus_Data Data
 		{
 			get
 			{
@@ -94,66 +94,62 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 			}
 		}
 
-		public class SubmitMaterials_Data
+		public class GetStatus_Data
 		{
 
-			private SubmitMaterials_VerifyStatus verifyStatus;
+			private int? statusCode;
 
-			public SubmitMaterials_VerifyStatus VerifyStatus
+			private float? trustedScore;
+
+			private float? similarityScore;
+
+			private string auditConclusions;
+
+			public int? StatusCode
 			{
 				get
 				{
-					return verifyStatus;
+					return statusCode;
 				}
 				set	
 				{
-					verifyStatus = value;
+					statusCode = value;
 				}
 			}
 
-			public class SubmitMaterials_VerifyStatus
+			public float? TrustedScore
 			{
-
-				private int? statusCode;
-
-				private float? trustedScore;
-
-				private float? similarityScore;
-
-				public int? StatusCode
+				get
 				{
-					get
-					{
-						return statusCode;
-					}
-					set	
-					{
-						statusCode = value;
-					}
+					return trustedScore;
 				}
-
-				public float? TrustedScore
+				set	
 				{
-					get
-					{
-						return trustedScore;
-					}
-					set	
-					{
-						trustedScore = value;
-					}
+					trustedScore = value;
 				}
+			}
 
-				public float? SimilarityScore
+			public float? SimilarityScore
+			{
+				get
 				{
-					get
-					{
-						return similarityScore;
-					}
-					set	
-					{
-						similarityScore = value;
-					}
+					return similarityScore;
+				}
+				set	
+				{
+					similarityScore = value;
+				}
+			}
+
+			public string AuditConclusions
+			{
+				get
+				{
+					return auditConclusions;
+				}
+				set	
+				{
+					auditConclusions = value;
 				}
 			}
 		}

@@ -21,17 +21,18 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20180807;
+using Aliyun.Acs.Cloudauth.Transform.V20180916;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180807
+namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
     public class DetectFaceAttributesRequest : RpcAcsRequest<DetectFaceAttributesResponse>
     {
         public DetectFaceAttributesRequest()
-            : base("Cloudauth", "2018-08-07", "DetectFaceAttributes", "cloudauth", "openAPI")
+            : base("Cloudauth", "2018-09-16", "DetectFaceAttributes", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
 
 		private int? maxNumPhotosPerCategory;
@@ -59,7 +60,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 			set	
 			{
 				maxNumPhotosPerCategory = value;
-				DictionaryUtil.Add(QueryParameters, "MaxNumPhotosPerCategory", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "MaxNumPhotosPerCategory", value.ToString());
 			}
 		}
 
@@ -72,7 +73,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 			set	
 			{
 				maxFaceNum = value;
-				DictionaryUtil.Add(QueryParameters, "MaxFaceNum", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "MaxFaceNum", value.ToString());
 			}
 		}
 
@@ -111,7 +112,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 			set	
 			{
 				retAttributes = value;
-				DictionaryUtil.Add(QueryParameters, "RetAttributes", value);
+				DictionaryUtil.Add(BodyParameters, "RetAttributes", value);
 			}
 		}
 
@@ -124,7 +125,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 			set	
 			{
 				materialValue = value;
-				DictionaryUtil.Add(QueryParameters, "MaterialValue", value);
+				DictionaryUtil.Add(BodyParameters, "MaterialValue", value);
 			}
 		}
 
@@ -137,7 +138,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 			set	
 			{
 				dontSaveDB = value;
-				DictionaryUtil.Add(QueryParameters, "DontSaveDB", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "DontSaveDB", value.ToString());
 			}
 		}
 
@@ -150,7 +151,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 			set	
 			{
 				clientTag = value;
-				DictionaryUtil.Add(QueryParameters, "ClientTag", value);
+				DictionaryUtil.Add(BodyParameters, "ClientTag", value);
 			}
 		}
 

@@ -21,15 +21,15 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20180807;
+using Aliyun.Acs.Cloudauth.Transform.V20180916;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180807
+namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
-    public class GetMaterialsRequest : RpcAcsRequest<GetMaterialsResponse>
+    public class GetStatusRequest : RpcAcsRequest<GetStatusResponse>
     {
-        public GetMaterialsRequest()
-            : base("Cloudauth", "2018-08-07", "GetMaterials", "cloudauth", "openAPI")
+        public GetStatusRequest()
+            : base("Cloudauth", "2018-09-16", "GetStatus", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -94,9 +94,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180807
 			}
 		}
 
-        public override GetMaterialsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetStatusResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetMaterialsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
