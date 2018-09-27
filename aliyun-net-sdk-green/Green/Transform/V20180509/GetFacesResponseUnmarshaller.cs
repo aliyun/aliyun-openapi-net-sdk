@@ -30,6 +30,7 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 			GetFacesResponse getFacesResponse = new GetFacesResponse();
 
 			getFacesResponse.HttpResponse = context.HttpResponse;
+			getFacesResponse.RequestId = context.StringValue("GetFaces.RequestId");
         
 			return getFacesResponse;
         }

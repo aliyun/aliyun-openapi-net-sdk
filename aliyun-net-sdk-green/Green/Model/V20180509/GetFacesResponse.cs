@@ -23,5 +23,19 @@ namespace Aliyun.Acs.Green.Model.V20180509
 {
 	public class GetFacesResponse : AcsResponse
 	{
+
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 	}
 }

@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Green.Model.V20180509
         public GetFacesRequest()
             : base("Green", "2018-05-09", "GetFaces", "green", "openAPI")
         {
-			UriPattern = "/green/sface/getFaces";
+			UriPattern = "/green/sface/faces";
 			Method = MethodType.POST;
         }
 
