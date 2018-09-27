@@ -45,7 +45,19 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 			getAutoScaleConfigResponse.MaxNodesInCluster = context.IntegerValue("GetAutoScaleConfig.MaxNodesInCluster");
 			getAutoScaleConfigResponse.ExcludeNodes = context.StringValue("GetAutoScaleConfig.ExcludeNodes");
 			getAutoScaleConfigResponse.SpotStrategy = context.StringValue("GetAutoScaleConfig.SpotStrategy");
-			getAutoScaleConfigResponse.SpotPriceLimit = context.StringValue("GetAutoScaleConfig.SpotPriceLimit");
+			getAutoScaleConfigResponse.SpotPriceLimit = context.FloatValue("GetAutoScaleConfig.SpotPriceLimit");
+
+			List<GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo> getAutoScaleConfigResponse_queues = new List<GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo>();
+			for (int i = 0; i < context.Length("GetAutoScaleConfig.Queues.Length"); i++) {
+				GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo queueInfo = new GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo();
+				queueInfo.QueueName = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].QueueName");
+				queueInfo.InstanceType = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].InstanceType");
+				queueInfo.SpotStrategy = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].SpotStrategy");
+				queueInfo.SpotPriceLimit = context.FloatValue("GetAutoScaleConfig.Queues["+ i +"].SpotPriceLimit");
+
+				getAutoScaleConfigResponse_queues.Add(queueInfo);
+			}
+			getAutoScaleConfigResponse.Queues = getAutoScaleConfigResponse_queues;
         
 			return getAutoScaleConfigResponse;
         }

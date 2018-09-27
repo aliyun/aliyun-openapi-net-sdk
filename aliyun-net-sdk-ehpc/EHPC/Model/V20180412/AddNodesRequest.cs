@@ -45,6 +45,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string computeSpotStrategy;
 
+		private string jobQueue;
+
 		private string accessKeyId;
 
 		private string imageOwnerAlias;
@@ -136,6 +138,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				computeSpotStrategy = value;
 				DictionaryUtil.Add(QueryParameters, "ComputeSpotStrategy", value);
+			}
+		}
+
+		public string JobQueue
+		{
+			get
+			{
+				return jobQueue;
+			}
+			set	
+			{
+				jobQueue = value;
+				DictionaryUtil.Add(QueryParameters, "JobQueue", value);
 			}
 		}
 

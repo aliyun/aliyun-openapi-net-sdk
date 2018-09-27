@@ -51,6 +51,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string commandLine;
 
+		private string jobQueue;
+
 		private string accessKeyId;
 
 		private string arrayRequest;
@@ -183,6 +185,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				commandLine = value;
 				DictionaryUtil.Add(QueryParameters, "CommandLine", value);
+			}
+		}
+
+		public string JobQueue
+		{
+			get
+			{
+				return jobQueue;
+			}
+			set	
+			{
+				jobQueue = value;
+				DictionaryUtil.Add(QueryParameters, "JobQueue", value);
 			}
 		}
 

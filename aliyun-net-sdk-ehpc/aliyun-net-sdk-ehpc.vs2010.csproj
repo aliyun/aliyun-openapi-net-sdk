@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{f122d886-3596-4a5f-bdbb-b2599e80d3bf}</ProjectGuid>
+    <ProjectGuid>{328e6912-fce2-43af-826d-729b0dbde392}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -114,6 +114,7 @@
 	<Compile Include="EHPC\Model\V20180412\SubmitJobResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\DescribeContainerAppResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\StopJobsResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListQueuesResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ModifyUserGroupsRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\StartNodesResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\CreateJobTemplateRequest.cs" />
@@ -135,6 +136,7 @@
 	<Compile Include="EHPC\Model\V20180412\GetCloudMetricLogsRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\DeleteJobTemplatesResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\DeleteJobsRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\ListQueuesRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListUsersRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\GetCloudMetricProfilingRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\AddNodesRequest.cs" />
@@ -211,6 +213,7 @@
 	<Compile Include="EHPC\Transform\V20180412\CreateJobTemplateResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ListUsersResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\DeleteNodesResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\ListQueuesResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ResetNodesResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ModifyClusterAttributesResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\GetHybridClusterConfigResponseUnmarshaller.cs" />

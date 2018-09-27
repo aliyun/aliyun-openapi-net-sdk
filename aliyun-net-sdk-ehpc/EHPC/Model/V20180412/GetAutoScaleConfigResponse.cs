@@ -54,7 +54,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string spotStrategy;
 
-		private string spotPriceLimit;
+		private float? spotPriceLimit;
+
+		private List<GetAutoScaleConfig_QueueInfo> queues;
 
 		public string RequestId
 		{
@@ -236,7 +238,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string SpotPriceLimit
+		public float? SpotPriceLimit
 		{
 			get
 			{
@@ -245,6 +247,78 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			set	
 			{
 				spotPriceLimit = value;
+			}
+		}
+
+		public List<GetAutoScaleConfig_QueueInfo> Queues
+		{
+			get
+			{
+				return queues;
+			}
+			set	
+			{
+				queues = value;
+			}
+		}
+
+		public class GetAutoScaleConfig_QueueInfo
+		{
+
+			private string queueName;
+
+			private string instanceType;
+
+			private string spotStrategy;
+
+			private float? spotPriceLimit;
+
+			public string QueueName
+			{
+				get
+				{
+					return queueName;
+				}
+				set	
+				{
+					queueName = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			public string SpotStrategy
+			{
+				get
+				{
+					return spotStrategy;
+				}
+				set	
+				{
+					spotStrategy = value;
+				}
+			}
+
+			public float? SpotPriceLimit
+			{
+				get
+				{
+					return spotPriceLimit;
+				}
+				set	
+				{
+					spotPriceLimit = value;
+				}
 			}
 		}
 	}

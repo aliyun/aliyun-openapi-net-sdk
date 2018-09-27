@@ -53,6 +53,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string ecsOrderComputeInstanceType;
 
+		private string jobQueue;
+
 		private string accessKeyId;
 
 		private string imageOwnerAlias;
@@ -244,6 +246,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				ecsOrderComputeInstanceType = value;
 				DictionaryUtil.Add(QueryParameters, "EcsOrder.Compute.InstanceType", value);
+			}
+		}
+
+		public string JobQueue
+		{
+			get
+			{
+				return jobQueue;
+			}
+			set	
+			{
+				jobQueue = value;
+				DictionaryUtil.Add(QueryParameters, "JobQueue", value);
 			}
 		}
 

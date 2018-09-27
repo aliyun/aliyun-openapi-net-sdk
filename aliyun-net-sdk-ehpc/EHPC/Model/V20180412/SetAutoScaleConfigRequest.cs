@@ -41,7 +41,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private bool? enableAutoGrow;
 
-		private string spotPriceLimit;
+		private float? spotPriceLimit;
 
 		private bool? enableAutoShrink;
 
@@ -54,6 +54,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string excludeNodes;
 
 		private int? shrinkIntervalInMinutes;
+
+		private List<Queues> queuess;
 
 		private string action;
 
@@ -115,7 +117,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string SpotPriceLimit
+		public float? SpotPriceLimit
 		{
 			get
 			{
@@ -124,7 +126,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			set	
 			{
 				spotPriceLimit = value;
-				DictionaryUtil.Add(QueryParameters, "SpotPriceLimit", value);
+				DictionaryUtil.Add(QueryParameters, "SpotPriceLimit", value.ToString());
 			}
 		}
 
@@ -206,6 +208,26 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public List<Queues> Queuess
+		{
+			get
+			{
+				return queuess;
+			}
+
+			set
+			{
+				queuess = value;
+				for (int i = 0; i < queuess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SpotStrategy", queuess[i].SpotStrategy);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".QueueName", queuess[i].QueueName);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".InstanceType", queuess[i].InstanceType);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SpotPriceLimit", queuess[i].SpotPriceLimit);
+				}
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -255,6 +277,66 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				growRatio = value;
 				DictionaryUtil.Add(QueryParameters, "GrowRatio", value.ToString());
+			}
+		}
+
+		public class Queues
+		{
+
+			private string spotStrategy;
+
+			private string queueName;
+
+			private string instanceType;
+
+			private float? spotPriceLimit;
+
+			public string SpotStrategy
+			{
+				get
+				{
+					return spotStrategy;
+				}
+				set	
+				{
+					spotStrategy = value;
+				}
+			}
+
+			public string QueueName
+			{
+				get
+				{
+					return queueName;
+				}
+				set	
+				{
+					queueName = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			public float? SpotPriceLimit
+			{
+				get
+				{
+					return spotPriceLimit;
+				}
+				set	
+				{
+					spotPriceLimit = value;
+				}
 			}
 		}
 
