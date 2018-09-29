@@ -39,10 +39,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private string ispNameEn;
 
-		private string accessKeyId;
-
-		private string securityToken;
-
 		private string action;
 
 		private string domainName;
@@ -50,8 +46,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		private string endTime;
 
 		private long? ownerId;
-
-		private string version;
 
 		private string interval;
 
@@ -91,32 +85,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				ispNameEn = value;
 				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -169,19 +137,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-				DictionaryUtil.Add(QueryParameters, "Version", value);
 			}
 		}
 

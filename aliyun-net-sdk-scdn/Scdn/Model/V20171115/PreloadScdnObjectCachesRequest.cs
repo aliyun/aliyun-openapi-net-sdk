@@ -33,6 +33,8 @@ namespace Aliyun.Acs.scdn.Model.V20171115
         {
         }
 
+		private string area;
+
 		private string securityToken;
 
 		private string objectPath;
@@ -42,6 +44,19 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		private long? ownerId;
 
 		private string accessKeyId;
+
+		public string Area
+		{
+			get
+			{
+				return area;
+			}
+			set	
+			{
+				area = value;
+				DictionaryUtil.Add(QueryParameters, "Area", value);
+			}
+		}
 
 		public string SecurityToken
 		{

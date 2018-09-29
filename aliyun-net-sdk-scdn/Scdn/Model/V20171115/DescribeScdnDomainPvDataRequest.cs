@@ -26,48 +26,37 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class DescribeScdnDomainOriginBpsDataRequest : RpcAcsRequest<DescribeScdnDomainOriginBpsDataResponse>
+    public class DescribeScdnDomainPvDataRequest : RpcAcsRequest<DescribeScdnDomainPvDataResponse>
     {
-        public DescribeScdnDomainOriginBpsDataRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainOriginBpsData")
+        public DescribeScdnDomainPvDataRequest()
+            : base("scdn", "2017-11-15", "DescribeScdnDomainPvData")
         {
         }
 
-		private string startTime;
-
-		private string action;
+		private string securityToken;
 
 		private string domainName;
 
+		private string action;
+
 		private string endTime;
+
+		private string startTime;
 
 		private long? ownerId;
 
-		private string interval;
+		private string accessKeyId;
 
-		public string StartTime
+		public string SecurityToken
 		{
 			get
 			{
-				return startTime;
+				return securityToken;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -84,6 +73,19 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string EndTime
 		{
 			get
@@ -94,6 +96,19 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -110,22 +125,22 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string Interval
+		public string AccessKeyId
 		{
 			get
 			{
-				return interval;
+				return accessKeyId;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
-        public override DescribeScdnDomainOriginBpsDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeScdnDomainPvDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeScdnDomainOriginBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeScdnDomainPvDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

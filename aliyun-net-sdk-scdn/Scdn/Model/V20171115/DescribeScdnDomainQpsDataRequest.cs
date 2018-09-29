@@ -39,6 +39,8 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private string ispNameEn;
 
+		private string action;
+
 		private string domainName;
 
 		private string endTime;
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				ispNameEn = value;
 				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

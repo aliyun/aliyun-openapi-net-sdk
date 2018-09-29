@@ -26,35 +26,46 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class DescribeScdnDomainOriginBpsDataRequest : RpcAcsRequest<DescribeScdnDomainOriginBpsDataResponse>
+    public class DescribeScdnIpInfoRequest : RpcAcsRequest<DescribeScdnIpInfoResponse>
     {
-        public DescribeScdnDomainOriginBpsDataRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainOriginBpsData")
+        public DescribeScdnIpInfoRequest()
+            : base("scdn", "2017-11-15", "DescribeScdnIpInfo")
         {
         }
 
-		private string startTime;
+		private string securityToken;
+
+		private string iP;
 
 		private string action;
 
-		private string domainName;
-
-		private string endTime;
-
 		private long? ownerId;
 
-		private string interval;
+		private string accessKeyId;
 
-		public string StartTime
+		public string SecurityToken
 		{
 			get
 			{
-				return startTime;
+				return securityToken;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string IP
+		{
+			get
+			{
+				return iP;
+			}
+			set	
+			{
+				iP = value;
+				DictionaryUtil.Add(QueryParameters, "IP", value);
 			}
 		}
 
@@ -71,32 +82,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -110,22 +95,22 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string Interval
+		public string AccessKeyId
 		{
 			get
 			{
-				return interval;
+				return accessKeyId;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
-        public override DescribeScdnDomainOriginBpsDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeScdnIpInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeScdnDomainOriginBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeScdnIpInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

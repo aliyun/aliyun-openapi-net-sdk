@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class DescribeScdnDomainOriginBpsDataRequest : RpcAcsRequest<DescribeScdnDomainOriginBpsDataResponse>
+    public class DescribeScdnDomainIspDataRequest : RpcAcsRequest<DescribeScdnDomainIspDataResponse>
     {
-        public DescribeScdnDomainOriginBpsDataRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainOriginBpsData")
+        public DescribeScdnDomainIspDataRequest()
+            : base("scdn", "2017-11-15", "DescribeScdnDomainIspData")
         {
         }
 
@@ -42,8 +42,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		private string endTime;
 
 		private long? ownerId;
-
-		private string interval;
 
 		public string StartTime
 		{
@@ -110,22 +108,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
-			}
-		}
-
-        public override DescribeScdnDomainOriginBpsDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeScdnDomainIspDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeScdnDomainOriginBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeScdnDomainIspDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
