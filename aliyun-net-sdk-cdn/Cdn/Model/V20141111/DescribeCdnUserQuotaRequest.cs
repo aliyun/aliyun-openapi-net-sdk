@@ -26,42 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class ListDomainsByLogConfigIdRequest : RpcAcsRequest<ListDomainsByLogConfigIdResponse>
+    public class DescribeCdnUserQuotaRequest : RpcAcsRequest<DescribeCdnUserQuotaResponse>
     {
-        public ListDomainsByLogConfigIdRequest()
-            : base("Cdn", "2014-11-11", "ListDomainsByLogConfigId")
+        public DescribeCdnUserQuotaRequest()
+            : base("Cdn", "2014-11-11", "DescribeCdnUserQuota")
         {
         }
 
-		private long? ownerId;
-
-		private string configId;
+		private string securityToken;
 
 		private string action;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private long? ownerId;
 
-		public string ConfigId
+		private string accessKeyId;
+
+		public string SecurityToken
 		{
 			get
 			{
-				return configId;
+				return securityToken;
 			}
 			set	
 			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -78,9 +67,35 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override ListDomainsByLogConfigIdResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override DescribeCdnUserQuotaResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListDomainsByLogConfigIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCdnUserQuotaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

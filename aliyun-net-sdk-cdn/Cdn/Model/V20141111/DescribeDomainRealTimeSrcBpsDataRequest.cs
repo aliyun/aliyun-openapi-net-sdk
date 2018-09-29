@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DescribeDomainRealTimeReqHitRateDataRequest : RpcAcsRequest<DescribeDomainRealTimeReqHitRateDataResponse>
+    public class DescribeDomainRealTimeSrcBpsDataRequest : RpcAcsRequest<DescribeDomainRealTimeSrcBpsDataResponse>
     {
-        public DescribeDomainRealTimeReqHitRateDataRequest()
-            : base("Cdn", "2014-11-11", "DescribeDomainRealTimeReqHitRateData")
+        public DescribeDomainRealTimeSrcBpsDataRequest()
+            : base("Cdn", "2014-11-11", "DescribeDomainRealTimeSrcBpsData")
         {
         }
 
@@ -108,9 +108,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override DescribeDomainRealTimeReqHitRateDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainRealTimeSrcBpsDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainRealTimeReqHitRateDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainRealTimeSrcBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

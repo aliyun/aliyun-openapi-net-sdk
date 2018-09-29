@@ -26,14 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DescribeDomainRealTimeReqHitRateDataRequest : RpcAcsRequest<DescribeDomainRealTimeReqHitRateDataResponse>
+    public class DescribeDomainRealTimeHttpCodeDataRequest : RpcAcsRequest<DescribeDomainRealTimeHttpCodeDataResponse>
     {
-        public DescribeDomainRealTimeReqHitRateDataRequest()
-            : base("Cdn", "2014-11-11", "DescribeDomainRealTimeReqHitRateData")
+        public DescribeDomainRealTimeHttpCodeDataRequest()
+            : base("Cdn", "2014-11-11", "DescribeDomainRealTimeHttpCodeData")
         {
         }
 
+		private string locationNameEn;
+
 		private string startTime;
+
+		private string ispNameEn;
 
 		private string action;
 
@@ -42,6 +46,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 		private string endTime;
 
 		private long? ownerId;
+
+		public string LocationNameEn
+		{
+			get
+			{
+				return locationNameEn;
+			}
+			set	
+			{
+				locationNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
+			}
+		}
 
 		public string StartTime
 		{
@@ -53,6 +70,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string IspNameEn
+		{
+			get
+			{
+				return ispNameEn;
+			}
+			set	
+			{
+				ispNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
 			}
 		}
 
@@ -108,9 +138,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override DescribeDomainRealTimeReqHitRateDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainRealTimeHttpCodeDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainRealTimeReqHitRateDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainRealTimeHttpCodeDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

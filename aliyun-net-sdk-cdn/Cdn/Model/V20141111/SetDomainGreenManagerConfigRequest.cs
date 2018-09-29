@@ -26,42 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class ListDomainsByLogConfigIdRequest : RpcAcsRequest<ListDomainsByLogConfigIdResponse>
+    public class SetDomainGreenManagerConfigRequest : RpcAcsRequest<SetDomainGreenManagerConfigResponse>
     {
-        public ListDomainsByLogConfigIdRequest()
-            : base("Cdn", "2014-11-11", "ListDomainsByLogConfigId")
+        public SetDomainGreenManagerConfigRequest()
+            : base("Cdn", "2014-11-11", "SetDomainGreenManagerConfig")
         {
         }
 
-		private long? ownerId;
-
-		private string configId;
+		private string enable;
 
 		private string action;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string domainName;
 
-		public string ConfigId
+		private long? ownerId;
+
+		public string Enable
 		{
 			get
 			{
-				return configId;
+				return enable;
 			}
 			set	
 			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
+				enable = value;
+				DictionaryUtil.Add(QueryParameters, "Enable", value);
 			}
 		}
 
@@ -78,9 +67,35 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override ListDomainsByLogConfigIdResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+        public override SetDomainGreenManagerConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListDomainsByLogConfigIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetDomainGreenManagerConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

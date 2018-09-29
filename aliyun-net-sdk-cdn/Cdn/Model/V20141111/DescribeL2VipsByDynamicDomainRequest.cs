@@ -26,18 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class ListDomainsByLogConfigIdRequest : RpcAcsRequest<ListDomainsByLogConfigIdResponse>
+    public class DescribeL2VipsByDynamicDomainRequest : RpcAcsRequest<DescribeL2VipsByDynamicDomainResponse>
     {
-        public ListDomainsByLogConfigIdRequest()
-            : base("Cdn", "2014-11-11", "ListDomainsByLogConfigId")
+        public DescribeL2VipsByDynamicDomainRequest()
+            : base("Cdn", "2014-11-11", "DescribeL2VipsByDynamicDomain")
         {
         }
 
+		private string domainName;
+
 		private long? ownerId;
 
-		private string configId;
-
 		private string action;
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
 
 		public long? OwnerId
 		{
@@ -49,19 +62,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ConfigId
-		{
-			get
-			{
-				return configId;
-			}
-			set	
-			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
 			}
 		}
 
@@ -78,9 +78,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override ListDomainsByLogConfigIdResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeL2VipsByDynamicDomainResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListDomainsByLogConfigIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeL2VipsByDynamicDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
