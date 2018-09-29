@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{10402714-5111-439e-9424-cfd509fc5d83}</ProjectGuid>
+    <ProjectGuid>{21ade870-0f19-42fc-ad88-17cb15c5dfe7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -42,18 +42,22 @@
   <ItemGroup>
 	<Compile Include="Dcdn\Model\V20180115\SetDcdnDomainCertificateRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainLogResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainCertificateInfoResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DeleteDcdnDomainRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainCnameResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnUserResourcePackageRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainConfigsRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnRefreshTasksRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainIspDataRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\StartDcdnDomainRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DeleteDcdnDomainResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainConfigsResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnTopDomainsByFlowResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainOriginBpsDataResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainHitRateDataResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\UpdateDcdnDomainRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnCertificateListRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainIspDataResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainOriginTrafficDataRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainBpsDataRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainLogRequest.cs" />
@@ -65,10 +69,14 @@
 	<Compile Include="Dcdn\Model\V20180115\BatchDeleteDcdnDomainConfigsRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\UpdateDcdnDomainResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\RefreshDcdnObjectCachesRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainRegionDataResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainQpsDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnTopDomainsByFlowRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnRefreshQuotaRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnCertificateListResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnUserQuotaResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnServiceResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnUserQuotaRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\BatchDeleteDcdnDomainConfigsResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\StopDcdnDomainRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\RefreshDcdnObjectCachesResponse.cs" />
@@ -79,6 +87,7 @@
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainHttpCodeDataResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainCnameRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnCertificateDetailRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainCertificateInfoRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainTrafficDataResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeUserDcdnStatusResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainTrafficDataRequest.cs" />
@@ -86,6 +95,7 @@
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainOriginTrafficDataResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnCertificateDetailResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\StopDcdnDomainResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainRegionDataRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\AddDcdnDomainRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainQpsDataResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainDetailResponse.cs" />
@@ -103,6 +113,7 @@
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainHitRateDataResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainDetailResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\DeleteDcdnDomainResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnUserQuotaResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnRefreshQuotaResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainOriginBpsDataResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainQpsDataResponseUnmarshaller.cs" />
@@ -110,6 +121,7 @@
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainHttpCodeDataResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\AddDcdnDomainResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\PreloadDcdnObjectCachesResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainCertificateInfoResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnCertificateDetailResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\StartDcdnDomainResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\RefreshDcdnObjectCachesResponseUnmarshaller.cs" />
@@ -124,6 +136,9 @@
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnUserDomainsResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnUserResourcePackageResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\BatchDeleteDcdnDomainConfigsResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainRegionDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnTopDomainsByFlowResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainIspDataResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

@@ -36,6 +36,9 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 			describeDcdnServiceResponse.OpeningTime = context.StringValue("DescribeDcdnService.OpeningTime");
 			describeDcdnServiceResponse.ChangingChargeType = context.StringValue("DescribeDcdnService.ChangingChargeType");
 			describeDcdnServiceResponse.ChangingAffectTime = context.StringValue("DescribeDcdnService.ChangingAffectTime");
+			describeDcdnServiceResponse.WebsocketChangingType = context.StringValue("DescribeDcdnService.WebsocketChangingType");
+			describeDcdnServiceResponse.WebsocketType = context.StringValue("DescribeDcdnService.WebsocketType");
+			describeDcdnServiceResponse.WebsocketChangingTime = context.StringValue("DescribeDcdnService.WebsocketChangingTime");
 
 			List<DescribeDcdnServiceResponse.DescribeDcdnService_LockReason> describeDcdnServiceResponse_operationLocks = new List<DescribeDcdnServiceResponse.DescribeDcdnService_LockReason>();
 			for (int i = 0; i < context.Length("DescribeDcdnService.OperationLocks.Length"); i++) {

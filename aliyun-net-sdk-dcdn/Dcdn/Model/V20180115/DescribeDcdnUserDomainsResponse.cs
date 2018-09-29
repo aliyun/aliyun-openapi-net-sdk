@@ -262,6 +262,8 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 				private string priority;
 
+				private string weight;
+
 				public string Type
 				{
 					get
@@ -307,6 +309,18 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 					set	
 					{
 						priority = value;
+					}
+				}
+
+				public string Weight
+				{
+					get
+					{
+						return weight;
+					}
+					set	
+					{
+						weight = value;
 					}
 				}
 			}

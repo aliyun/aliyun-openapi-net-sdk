@@ -26,61 +26,29 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class RefreshDcdnObjectCachesRequest : RpcAcsRequest<RefreshDcdnObjectCachesResponse>
+    public class DescribeDcdnDomainCertificateInfoRequest : RpcAcsRequest<DescribeDcdnDomainCertificateInfoResponse>
     {
-        public RefreshDcdnObjectCachesRequest()
-            : base("dcdn", "2018-01-15", "RefreshDcdnObjectCaches")
+        public DescribeDcdnDomainCertificateInfoRequest()
+            : base("dcdn", "2018-01-15", "DescribeDcdnDomainCertificateInfo")
         {
         }
 
-		private string securityToken;
-
-		private string objectPath;
-
-		private string action;
+		private string domainName;
 
 		private long? ownerId;
 
-		private string objectType;
+		private string action;
 
-		private string accessKeyId;
-
-		public string SecurityToken
+		public string DomainName
 		{
 			get
 			{
-				return securityToken;
+				return domainName;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string ObjectPath
-		{
-			get
-			{
-				return objectPath;
-			}
-			set	
-			{
-				objectPath = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -97,35 +65,22 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string ObjectType
+		public string Action
 		{
 			get
 			{
-				return objectType;
+				return action;
 			}
 			set	
 			{
-				objectType = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override RefreshDcdnObjectCachesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDcdnDomainCertificateInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return RefreshDcdnObjectCachesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDcdnDomainCertificateInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

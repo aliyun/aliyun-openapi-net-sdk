@@ -29,7 +29,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
     public class DescribeDcdnUserDomainsRequest : RpcAcsRequest<DescribeDcdnUserDomainsResponse>
     {
         public DescribeDcdnUserDomainsRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnUserDomains", "dcdn", "openAPI")
+            : base("dcdn", "2018-01-15", "DescribeDcdnUserDomains")
         {
         }
 

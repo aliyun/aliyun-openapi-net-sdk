@@ -56,6 +56,7 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 					source.Content = context.StringValue("DescribeDcdnUserDomains.Domains["+ i +"].Sources["+ j +"].Content");
 					source.Port = context.IntegerValue("DescribeDcdnUserDomains.Domains["+ i +"].Sources["+ j +"].Port");
 					source.Priority = context.StringValue("DescribeDcdnUserDomains.Domains["+ i +"].Sources["+ j +"].Priority");
+					source.Weight = context.StringValue("DescribeDcdnUserDomains.Domains["+ i +"].Sources["+ j +"].Weight");
 
 					pageData_sources.Add(source);
 				}

@@ -21,28 +21,28 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-	public class DescribeDcdnServiceResponse : AcsResponse
+	public class DescribeDcdnUserQuotaResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string instanceId;
+		private int? domainQuota;
 
-		private string internetChargeType;
+		private int? refreshUrlQuota;
 
-		private string openingTime;
+		private int? refreshDirQuota;
 
-		private string changingChargeType;
+		private int? refreshUrlRemain;
 
-		private string changingAffectTime;
+		private int? refreshDirRemain;
 
-		private string websocketChangingType;
+		private int? preloadQuota;
 
-		private string websocketType;
+		private int? preloadRemain;
 
-		private string websocketChangingTime;
+		private int? blockQuota;
 
-		private List<DescribeDcdnService_LockReason> operationLocks;
+		private int? blockRemain;
 
 		public string RequestId
 		{
@@ -56,129 +56,111 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string InstanceId
+		public int? DomainQuota
 		{
 			get
 			{
-				return instanceId;
+				return domainQuota;
 			}
 			set	
 			{
-				instanceId = value;
+				domainQuota = value;
 			}
 		}
 
-		public string InternetChargeType
+		public int? RefreshUrlQuota
 		{
 			get
 			{
-				return internetChargeType;
+				return refreshUrlQuota;
 			}
 			set	
 			{
-				internetChargeType = value;
+				refreshUrlQuota = value;
 			}
 		}
 
-		public string OpeningTime
+		public int? RefreshDirQuota
 		{
 			get
 			{
-				return openingTime;
+				return refreshDirQuota;
 			}
 			set	
 			{
-				openingTime = value;
+				refreshDirQuota = value;
 			}
 		}
 
-		public string ChangingChargeType
+		public int? RefreshUrlRemain
 		{
 			get
 			{
-				return changingChargeType;
+				return refreshUrlRemain;
 			}
 			set	
 			{
-				changingChargeType = value;
+				refreshUrlRemain = value;
 			}
 		}
 
-		public string ChangingAffectTime
+		public int? RefreshDirRemain
 		{
 			get
 			{
-				return changingAffectTime;
+				return refreshDirRemain;
 			}
 			set	
 			{
-				changingAffectTime = value;
+				refreshDirRemain = value;
 			}
 		}
 
-		public string WebsocketChangingType
+		public int? PreloadQuota
 		{
 			get
 			{
-				return websocketChangingType;
+				return preloadQuota;
 			}
 			set	
 			{
-				websocketChangingType = value;
+				preloadQuota = value;
 			}
 		}
 
-		public string WebsocketType
+		public int? PreloadRemain
 		{
 			get
 			{
-				return websocketType;
+				return preloadRemain;
 			}
 			set	
 			{
-				websocketType = value;
+				preloadRemain = value;
 			}
 		}
 
-		public string WebsocketChangingTime
+		public int? BlockQuota
 		{
 			get
 			{
-				return websocketChangingTime;
+				return blockQuota;
 			}
 			set	
 			{
-				websocketChangingTime = value;
+				blockQuota = value;
 			}
 		}
 
-		public List<DescribeDcdnService_LockReason> OperationLocks
+		public int? BlockRemain
 		{
 			get
 			{
-				return operationLocks;
+				return blockRemain;
 			}
 			set	
 			{
-				operationLocks = value;
-			}
-		}
-
-		public class DescribeDcdnService_LockReason
-		{
-
-			private string lockReason;
-
-			public string LockReason
-			{
-				get
-				{
-					return lockReason;
-				}
-				set	
-				{
-					lockReason = value;
-				}
+				blockRemain = value;
 			}
 		}
 	}

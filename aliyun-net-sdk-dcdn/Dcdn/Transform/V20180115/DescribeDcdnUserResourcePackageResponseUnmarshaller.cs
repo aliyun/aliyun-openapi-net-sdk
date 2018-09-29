@@ -41,6 +41,8 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 				resourcePackageInfo.DisplayName = context.StringValue("DescribeDcdnUserResourcePackage.ResourcePackageInfos["+ i +"].DisplayName");
 				resourcePackageInfo.InstanceId = context.StringValue("DescribeDcdnUserResourcePackage.ResourcePackageInfos["+ i +"].InstanceId");
 				resourcePackageInfo.Status = context.StringValue("DescribeDcdnUserResourcePackage.ResourcePackageInfos["+ i +"].Status");
+				resourcePackageInfo.StartTime = context.StringValue("DescribeDcdnUserResourcePackage.ResourcePackageInfos["+ i +"].StartTime");
+				resourcePackageInfo.EndTime = context.StringValue("DescribeDcdnUserResourcePackage.ResourcePackageInfos["+ i +"].EndTime");
 
 				describeDcdnUserResourcePackageResponse_resourcePackageInfos.Add(resourcePackageInfo);
 			}

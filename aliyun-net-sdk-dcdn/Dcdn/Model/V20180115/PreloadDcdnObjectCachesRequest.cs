@@ -29,9 +29,11 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
     public class PreloadDcdnObjectCachesRequest : RpcAcsRequest<PreloadDcdnObjectCachesResponse>
     {
         public PreloadDcdnObjectCachesRequest()
-            : base("dcdn", "2018-01-15", "PreloadDcdnObjectCaches", "dcdn", "openAPI")
+            : base("dcdn", "2018-01-15", "PreloadDcdnObjectCaches")
         {
         }
+
+		private string area;
 
 		private string securityToken;
 
@@ -42,6 +44,19 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 		private long? ownerId;
 
 		private string accessKeyId;
+
+		public string Area
+		{
+			get
+			{
+				return area;
+			}
+			set	
+			{
+				area = value;
+				DictionaryUtil.Add(QueryParameters, "Area", value);
+			}
+		}
 
 		public string SecurityToken
 		{

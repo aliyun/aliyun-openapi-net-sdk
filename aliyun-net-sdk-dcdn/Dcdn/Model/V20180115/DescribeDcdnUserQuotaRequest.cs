@@ -26,34 +26,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class SetDcdnDomainCertificateRequest : RpcAcsRequest<SetDcdnDomainCertificateResponse>
+    public class DescribeDcdnUserQuotaRequest : RpcAcsRequest<DescribeDcdnUserQuotaResponse>
     {
-        public SetDcdnDomainCertificateRequest()
-            : base("dcdn", "2018-01-15", "SetDcdnDomainCertificate")
+        public DescribeDcdnUserQuotaRequest()
+            : base("dcdn", "2018-01-15", "DescribeDcdnUserQuota")
         {
         }
 
 		private string securityToken;
 
-		private string certType;
-
-		private string sSLPub;
-
-		private string certName;
-
-		private string sSLProtocol;
-
-		private string domainName;
-
 		private string action;
 
 		private long? ownerId;
 
-		private string region;
-
 		private string accessKeyId;
-
-		private string sSLPri;
 
 		public string SecurityToken
 		{
@@ -65,71 +51,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string CertType
-		{
-			get
-			{
-				return certType;
-			}
-			set	
-			{
-				certType = value;
-				DictionaryUtil.Add(QueryParameters, "CertType", value);
-			}
-		}
-
-		public string SSLPub
-		{
-			get
-			{
-				return sSLPub;
-			}
-			set	
-			{
-				sSLPub = value;
-				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
-			}
-		}
-
-		public string CertName
-		{
-			get
-			{
-				return certName;
-			}
-			set	
-			{
-				certName = value;
-				DictionaryUtil.Add(QueryParameters, "CertName", value);
-			}
-		}
-
-		public string SSLProtocol
-		{
-			get
-			{
-				return sSLProtocol;
-			}
-			set	
-			{
-				sSLProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "SSLProtocol", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -159,19 +80,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -185,22 +93,9 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string SSLPri
-		{
-			get
-			{
-				return sSLPri;
-			}
-			set	
-			{
-				sSLPri = value;
-				DictionaryUtil.Add(QueryParameters, "SSLPri", value);
-			}
-		}
-
-        public override SetDcdnDomainCertificateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDcdnUserQuotaResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SetDcdnDomainCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDcdnUserQuotaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

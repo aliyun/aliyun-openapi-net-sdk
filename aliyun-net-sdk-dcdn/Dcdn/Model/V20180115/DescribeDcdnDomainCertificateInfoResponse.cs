@@ -21,12 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-	public class DescribeDcdnUserResourcePackageResponse : AcsResponse
+	public class DescribeDcdnDomainCertificateInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeDcdnUserResourcePackage_ResourcePackageInfo> resourcePackageInfos;
+		private List<DescribeDcdnDomainCertificateInfo_CertInfo> certInfos;
 
 		public string RequestId
 		{
@@ -40,94 +40,134 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public List<DescribeDcdnUserResourcePackage_ResourcePackageInfo> ResourcePackageInfos
+		public List<DescribeDcdnDomainCertificateInfo_CertInfo> CertInfos
 		{
 			get
 			{
-				return resourcePackageInfos;
+				return certInfos;
 			}
 			set	
 			{
-				resourcePackageInfos = value;
+				certInfos = value;
 			}
 		}
 
-		public class DescribeDcdnUserResourcePackage_ResourcePackageInfo
+		public class DescribeDcdnDomainCertificateInfo_CertInfo
 		{
 
-			private string currCapacity;
+			private string domainName;
 
-			private string initCapacity;
+			private string certName;
 
-			private string commodityCode;
+			private string certDomainName;
 
-			private string displayName;
+			private string certExpireTime;
 
-			private string instanceId;
+			private string certLife;
+
+			private string certOrg;
+
+			private string certType;
+
+			private string sSLProtocol;
 
 			private string status;
 
-			private string startTime;
+			private string sSLPub;
 
-			private string endTime;
-
-			public string CurrCapacity
+			public string DomainName
 			{
 				get
 				{
-					return currCapacity;
+					return domainName;
 				}
 				set	
 				{
-					currCapacity = value;
+					domainName = value;
 				}
 			}
 
-			public string InitCapacity
+			public string CertName
 			{
 				get
 				{
-					return initCapacity;
+					return certName;
 				}
 				set	
 				{
-					initCapacity = value;
+					certName = value;
 				}
 			}
 
-			public string CommodityCode
+			public string CertDomainName
 			{
 				get
 				{
-					return commodityCode;
+					return certDomainName;
 				}
 				set	
 				{
-					commodityCode = value;
+					certDomainName = value;
 				}
 			}
 
-			public string DisplayName
+			public string CertExpireTime
 			{
 				get
 				{
-					return displayName;
+					return certExpireTime;
 				}
 				set	
 				{
-					displayName = value;
+					certExpireTime = value;
 				}
 			}
 
-			public string InstanceId
+			public string CertLife
 			{
 				get
 				{
-					return instanceId;
+					return certLife;
 				}
 				set	
 				{
-					instanceId = value;
+					certLife = value;
+				}
+			}
+
+			public string CertOrg
+			{
+				get
+				{
+					return certOrg;
+				}
+				set	
+				{
+					certOrg = value;
+				}
+			}
+
+			public string CertType
+			{
+				get
+				{
+					return certType;
+				}
+				set	
+				{
+					certType = value;
+				}
+			}
+
+			public string SSLProtocol
+			{
+				get
+				{
+					return sSLProtocol;
+				}
+				set	
+				{
+					sSLProtocol = value;
 				}
 			}
 
@@ -143,27 +183,15 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 				}
 			}
 
-			public string StartTime
+			public string SSLPub
 			{
 				get
 				{
-					return startTime;
+					return sSLPub;
 				}
 				set	
 				{
-					startTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
+					sSLPub = value;
 				}
 			}
 		}
