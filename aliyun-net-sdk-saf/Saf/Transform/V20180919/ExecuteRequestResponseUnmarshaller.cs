@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.saf.Model.V20170331;
+using Aliyun.Acs.saf.Model.V20180919;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.saf.Transform.V20170331
+namespace Aliyun.Acs.saf.Transform.V20180919
 {
     public class ExecuteRequestResponseUnmarshaller
     {
@@ -30,10 +30,15 @@ namespace Aliyun.Acs.saf.Transform.V20170331
 			ExecuteRequestResponse executeRequestResponse = new ExecuteRequestResponse();
 
 			executeRequestResponse.HttpResponse = context.HttpResponse;
-			executeRequestResponse.Code = context.IntegerValue("ExecuteRequest.Code");
-			executeRequestResponse.Data = context.StringValue("ExecuteRequest.Data");
-			executeRequestResponse.Message = context.StringValue("ExecuteRequest.Message");
 			executeRequestResponse.RequestId = context.StringValue("ExecuteRequest.RequestId");
+			executeRequestResponse.Code = context.IntegerValue("ExecuteRequest.Code");
+			executeRequestResponse.Message = context.StringValue("ExecuteRequest.Message");
+
+			ExecuteRequestResponse.ExecuteRequest_Data data = new ExecuteRequestResponse.ExecuteRequest_Data();
+			data.Tags = context.StringValue("ExecuteRequest.Data.Tags");
+			data.Score = context.StringValue("ExecuteRequest.Data.Score");
+			data.Extend = context.StringValue("ExecuteRequest.Data.Extend");
+			executeRequestResponse.Data = data;
         
 			return executeRequestResponse;
         }

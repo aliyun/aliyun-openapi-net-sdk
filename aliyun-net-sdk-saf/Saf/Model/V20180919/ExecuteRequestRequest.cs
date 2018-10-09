@@ -21,15 +21,15 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.saf.Transform;
-using Aliyun.Acs.saf.Transform.V20170331;
+using Aliyun.Acs.saf.Transform.V20180919;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.saf.Model.V20170331
+namespace Aliyun.Acs.saf.Model.V20180919
 {
     public class ExecuteRequestRequest : RpcAcsRequest<ExecuteRequestResponse>
     {
         public ExecuteRequestRequest()
-            : base("saf", "2017-03-31", "ExecuteRequest")
+            : base("saf", "2018-09-19", "ExecuteRequest", "saf", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -62,11 +62,6 @@ namespace Aliyun.Acs.saf.Model.V20170331
 				service = value;
 				DictionaryUtil.Add(QueryParameters, "Service", value);
 			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
 		}
 
         public override ExecuteRequestResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)

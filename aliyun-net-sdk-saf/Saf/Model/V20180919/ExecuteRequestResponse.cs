@@ -19,18 +19,30 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.saf.Model.V20170331
+namespace Aliyun.Acs.saf.Model.V20180919
 {
 	public class ExecuteRequestResponse : AcsResponse
 	{
 
-		private int? code;
+		private string requestId;
 
-		private string data;
+		private int? code;
 
 		private string message;
 
-		private string requestId;
+		private ExecuteRequest_Data data;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? Code
 		{
@@ -41,18 +53,6 @@ namespace Aliyun.Acs.saf.Model.V20170331
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public string Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
 			}
 		}
 
@@ -68,15 +68,61 @@ namespace Aliyun.Acs.saf.Model.V20170331
 			}
 		}
 
-		public string RequestId
+		public ExecuteRequest_Data Data
 		{
 			get
 			{
-				return requestId;
+				return data;
 			}
 			set	
 			{
-				requestId = value;
+				data = value;
+			}
+		}
+
+		public class ExecuteRequest_Data
+		{
+
+			private string tags;
+
+			private string score;
+
+			private string extend;
+
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public string Score
+			{
+				get
+				{
+					return score;
+				}
+				set	
+				{
+					score = value;
+				}
+			}
+
+			public string Extend
+			{
+				get
+				{
+					return extend;
+				}
+				set	
+				{
+					extend = value;
+				}
 			}
 		}
 	}
