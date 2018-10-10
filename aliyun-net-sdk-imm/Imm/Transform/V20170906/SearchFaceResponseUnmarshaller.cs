@@ -31,12 +31,11 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 
 			searchFaceResponse.HttpResponse = context.HttpResponse;
 			searchFaceResponse.RequestId = context.StringValue("SearchFace.RequestId");
-			searchFaceResponse.ImageUrl = context.StringValue("SearchFace.ImageUrl");
+			searchFaceResponse.ImageUri = context.StringValue("SearchFace.ImageUri");
 			searchFaceResponse.GroupName = context.StringValue("SearchFace.GroupName");
 			searchFaceResponse.Glasses = context.IntegerValue("SearchFace.Glasses");
 			searchFaceResponse.Hat = context.IntegerValue("SearchFace.Hat");
 			searchFaceResponse.Score = context.FloatValue("SearchFace.Score");
-			searchFaceResponse.Hat1 = context.IntegerValue("SearchFace.Hat");
 
 			List<string> searchFaceResponse_axis = new List<string>();
 			for (int i = 0; i < context.Length("SearchFace.Axis.Length"); i++) {
@@ -51,15 +50,15 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				resultFacesItem.User = context.StringValue("SearchFace.ResultFaces["+ i +"].User");
 				resultFacesItem.ImageId = context.StringValue("SearchFace.ResultFaces["+ i +"].ImageId");
 				resultFacesItem.Score = context.FloatValue("SearchFace.ResultFaces["+ i +"].Score");
-				resultFacesItem.ImageUrl = context.StringValue("SearchFace.ResultFaces["+ i +"].ImageUrl");
+				resultFacesItem.ImageUri = context.StringValue("SearchFace.ResultFaces["+ i +"].ImageUri");
 				resultFacesItem.Glasses = context.IntegerValue("SearchFace.ResultFaces["+ i +"].Glasses");
 				resultFacesItem.Hat = context.IntegerValue("SearchFace.ResultFaces["+ i +"].Hat");
 
-				List<string> resultFacesItem_axis2 = new List<string>();
+				List<string> resultFacesItem_axis1 = new List<string>();
 				for (int j = 0; j < context.Length("SearchFace.ResultFaces["+ i +"].Axis.Length"); j++) {
-					resultFacesItem_axis2.Add(context.StringValue("SearchFace.ResultFaces["+ i +"].Axis["+ j +"]"));
+					resultFacesItem_axis1.Add(context.StringValue("SearchFace.ResultFaces["+ i +"].Axis["+ j +"]"));
 				}
-				resultFacesItem.Axis2 = resultFacesItem_axis2;
+				resultFacesItem.Axis1 = resultFacesItem_axis1;
 
 				searchFaceResponse_resultFaces.Add(resultFacesItem);
 			}

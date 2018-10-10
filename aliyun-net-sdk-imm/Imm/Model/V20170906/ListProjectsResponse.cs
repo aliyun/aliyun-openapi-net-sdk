@@ -83,9 +83,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private string type;
 
-			private List<ListProjects_EnginesItem> engines;
-
-			private List<ListProjects_IndexersItem> indexers;
+			private string billingType;
 
 			public string Project
 			{
@@ -171,91 +169,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public List<ListProjects_EnginesItem> Engines
+			public string BillingType
 			{
 				get
 				{
-					return engines;
+					return billingType;
 				}
 				set	
 				{
-					engines = value;
-				}
-			}
-
-			public List<ListProjects_IndexersItem> Indexers
-			{
-				get
-				{
-					return indexers;
-				}
-				set	
-				{
-					indexers = value;
-				}
-			}
-
-			public class ListProjects_EnginesItem
-			{
-
-				private string name;
-
-				private long? jobTtl;
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public long? JobTtl
-				{
-					get
-					{
-						return jobTtl;
-					}
-					set	
-					{
-						jobTtl = value;
-					}
-				}
-			}
-
-			public class ListProjects_IndexersItem
-			{
-
-				private string name;
-
-				private string status;
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
+					billingType = value;
 				}
 			}
 		}

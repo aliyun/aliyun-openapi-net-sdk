@@ -38,26 +38,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getProjectResponse.ModifyTime = context.StringValue("GetProject.ModifyTime");
 			getProjectResponse.Type = context.StringValue("GetProject.Type");
 			getProjectResponse.CU = context.IntegerValue("GetProject.CU");
-
-			List<GetProjectResponse.GetProject_IndexersItem> getProjectResponse_indexers = new List<GetProjectResponse.GetProject_IndexersItem>();
-			for (int i = 0; i < context.Length("GetProject.Indexers.Length"); i++) {
-				GetProjectResponse.GetProject_IndexersItem indexersItem = new GetProjectResponse.GetProject_IndexersItem();
-				indexersItem.Name = context.StringValue("GetProject.Indexers["+ i +"].Name");
-				indexersItem.Status = context.StringValue("GetProject.Indexers["+ i +"].Status");
-
-				getProjectResponse_indexers.Add(indexersItem);
-			}
-			getProjectResponse.Indexers = getProjectResponse_indexers;
-
-			List<GetProjectResponse.GetProject_EnginesItem> getProjectResponse_engines = new List<GetProjectResponse.GetProject_EnginesItem>();
-			for (int i = 0; i < context.Length("GetProject.Engines.Length"); i++) {
-				GetProjectResponse.GetProject_EnginesItem enginesItem = new GetProjectResponse.GetProject_EnginesItem();
-				enginesItem.Name = context.StringValue("GetProject.Engines["+ i +"].Name");
-				enginesItem.JobTtl = context.LongValue("GetProject.Engines["+ i +"].JobTtl");
-
-				getProjectResponse_engines.Add(enginesItem);
-			}
-			getProjectResponse.Engines = getProjectResponse_engines;
+			getProjectResponse.BillingType = context.StringValue("GetProject.BillingType");
         
 			return getProjectResponse;
         }

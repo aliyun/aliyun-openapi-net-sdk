@@ -37,26 +37,8 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			putProjectResponse.ServiceRole = context.StringValue("PutProject.ServiceRole");
 			putProjectResponse.CU = context.IntegerValue("PutProject.CU");
 			putProjectResponse.Type = context.StringValue("PutProject.Type");
-
-			List<PutProjectResponse.PutProject_EnginesItem> putProjectResponse_engines = new List<PutProjectResponse.PutProject_EnginesItem>();
-			for (int i = 0; i < context.Length("PutProject.Engines.Length"); i++) {
-				PutProjectResponse.PutProject_EnginesItem enginesItem = new PutProjectResponse.PutProject_EnginesItem();
-				enginesItem.Name = context.StringValue("PutProject.Engines["+ i +"].Name");
-				enginesItem.JobTtl = context.LongValue("PutProject.Engines["+ i +"].JobTtl");
-
-				putProjectResponse_engines.Add(enginesItem);
-			}
-			putProjectResponse.Engines = putProjectResponse_engines;
-
-			List<PutProjectResponse.PutProject_IndexersItem> putProjectResponse_indexers = new List<PutProjectResponse.PutProject_IndexersItem>();
-			for (int i = 0; i < context.Length("PutProject.Indexers.Length"); i++) {
-				PutProjectResponse.PutProject_IndexersItem indexersItem = new PutProjectResponse.PutProject_IndexersItem();
-				indexersItem.Name = context.StringValue("PutProject.Indexers["+ i +"].Name");
-				indexersItem.Status = context.StringValue("PutProject.Indexers["+ i +"].Status");
-
-				putProjectResponse_indexers.Add(indexersItem);
-			}
-			putProjectResponse.Indexers = putProjectResponse_indexers;
+			putProjectResponse.Endpoint = context.StringValue("PutProject.Endpoint");
+			putProjectResponse.BillingType = context.StringValue("PutProject.BillingType");
         
 			return putProjectResponse;
         }

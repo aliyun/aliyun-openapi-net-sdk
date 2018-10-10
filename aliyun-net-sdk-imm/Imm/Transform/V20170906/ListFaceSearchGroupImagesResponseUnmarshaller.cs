@@ -40,7 +40,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				ListFaceSearchGroupImagesResponse.ListFaceSearchGroupImages_ImagesItem imagesItem = new ListFaceSearchGroupImagesResponse.ListFaceSearchGroupImages_ImagesItem();
 				imagesItem.User = context.StringValue("ListFaceSearchGroupImages.Images["+ i +"].User");
 				imagesItem.ImageId = context.StringValue("ListFaceSearchGroupImages.Images["+ i +"].ImageId");
-				imagesItem.ImageUrl = context.StringValue("ListFaceSearchGroupImages.Images["+ i +"].ImageUrl");
+				imagesItem.ImageUri = context.StringValue("ListFaceSearchGroupImages.Images["+ i +"].ImageUri");
 				imagesItem.ImageMd5 = context.StringValue("ListFaceSearchGroupImages.Images["+ i +"].ImageMd5");
 				imagesItem.Roll = context.FloatValue("ListFaceSearchGroupImages.Images["+ i +"].Roll");
 				imagesItem.FaceId = context.StringValue("ListFaceSearchGroupImages.Images["+ i +"].FaceId");

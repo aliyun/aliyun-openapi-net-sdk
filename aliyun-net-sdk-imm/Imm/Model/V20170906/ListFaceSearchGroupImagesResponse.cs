@@ -101,7 +101,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private string imageId;
 
-			private string imageUrl;
+			private string imageUri;
 
 			private string imageMd5;
 
@@ -149,15 +149,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public string ImageUrl
+			public string ImageUri
 			{
 				get
 				{
-					return imageUrl;
+					return imageUri;
 				}
 				set	
 				{
-					imageUrl = value;
+					imageUri = value;
 				}
 			}
 

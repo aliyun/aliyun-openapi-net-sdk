@@ -36,14 +36,22 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			for (int i = 0; i < context.Length("DetectQRCodes.SuccessDetails.Length"); i++) {
 				DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem successDetailsItem = new DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem();
 				successDetailsItem.SrcUri = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].SrcUri");
-				successDetailsItem.Result = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].Result");
 
-				DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesRectangle qRCodesRectangle = new DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesRectangle();
-				qRCodesRectangle.Left = context.IntegerValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodesRectangle.Left");
-				qRCodesRectangle.Top = context.IntegerValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodesRectangle.Top");
-				qRCodesRectangle.Width = context.IntegerValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodesRectangle.Width");
-				qRCodesRectangle.Height = context.IntegerValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodesRectangle.Height");
-				successDetailsItem.QRCodesRectangle = qRCodesRectangle;
+				List<DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesItem> successDetailsItem_qRCodes = new List<DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesItem>();
+				for (int j = 0; j < context.Length("DetectQRCodes.SuccessDetails["+ i +"].QRCodes.Length"); j++) {
+					DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesItem qRCodesItem = new DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesItem();
+					qRCodesItem.Content = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].Content");
+
+					DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesItem.DetectQRCodes_QRCodesRectangle qRCodesRectangle = new DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesItem.DetectQRCodes_QRCodesRectangle();
+					qRCodesRectangle.Left = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Left");
+					qRCodesRectangle.Top = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Top");
+					qRCodesRectangle.Width = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Width");
+					qRCodesRectangle.Height = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Height");
+					qRCodesItem.QRCodesRectangle = qRCodesRectangle;
+
+					successDetailsItem_qRCodes.Add(qRCodesItem);
+				}
+				successDetailsItem.QRCodes = successDetailsItem_qRCodes;
 
 				detectQRCodesResponse_successDetails.Add(successDetailsItem);
 			}
@@ -53,7 +61,8 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			for (int i = 0; i < context.Length("DetectQRCodes.FailDetails.Length"); i++) {
 				DetectQRCodesResponse.DetectQRCodes_FailDetailsItem failDetailsItem = new DetectQRCodesResponse.DetectQRCodes_FailDetailsItem();
 				failDetailsItem.SrcUri = context.StringValue("DetectQRCodes.FailDetails["+ i +"].SrcUri");
-				failDetailsItem.Reason = context.StringValue("DetectQRCodes.FailDetails["+ i +"].Reason");
+				failDetailsItem.ErrorCode = context.StringValue("DetectQRCodes.FailDetails["+ i +"].ErrorCode");
+				failDetailsItem.ErrorMessage = context.StringValue("DetectQRCodes.FailDetails["+ i +"].ErrorMessage");
 
 				detectQRCodesResponse_failDetails.Add(failDetailsItem);
 			}

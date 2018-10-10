@@ -26,50 +26,33 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class PutProjectRequest : RpcAcsRequest<PutProjectResponse>
+    public class UpdateProjectRequest : RpcAcsRequest<UpdateProjectResponse>
     {
-        public PutProjectRequest()
-            : base("imm", "2017-09-06", "PutProject", "imm", "openAPI")
+        public UpdateProjectRequest()
+            : base("imm", "2017-09-06", "UpdateProject", "imm", "openAPI")
         {
         }
 
-		private int? cU;
-
-		private string serviceRole;
+		private string newServiceRole;
 
 		private string action;
 
 		private string project;
 
-		private string billingType;
-
-		private string type;
-
 		private string accessKeyId;
 
-		public int? CU
-		{
-			get
-			{
-				return cU;
-			}
-			set	
-			{
-				cU = value;
-				DictionaryUtil.Add(QueryParameters, "CU", value.ToString());
-			}
-		}
+		private int? newCU;
 
-		public string ServiceRole
+		public string NewServiceRole
 		{
 			get
 			{
-				return serviceRole;
+				return newServiceRole;
 			}
 			set	
 			{
-				serviceRole = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceRole", value);
+				newServiceRole = value;
+				DictionaryUtil.Add(QueryParameters, "NewServiceRole", value);
 			}
 		}
 
@@ -99,32 +82,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string BillingType
-		{
-			get
-			{
-				return billingType;
-			}
-			set	
-			{
-				billingType = value;
-				DictionaryUtil.Add(QueryParameters, "BillingType", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -138,14 +95,27 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public int? NewCU
+		{
+			get
+			{
+				return newCU;
+			}
+			set	
+			{
+				newCU = value;
+				DictionaryUtil.Add(QueryParameters, "NewCU", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override PutProjectResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateProjectResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return PutProjectResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateProjectResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

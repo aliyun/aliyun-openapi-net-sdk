@@ -100,19 +100,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			public class CompareFace_FaceA
 			{
 
-				private string imageUrl;
+				private string imageUri;
 
 				private List<string> axis;
 
-				public string ImageUrl
+				public string ImageUri
 				{
 					get
 					{
-						return imageUrl;
+						return imageUri;
 					}
 					set	
 					{
-						imageUrl = value;
+						imageUri = value;
 					}
 				}
 
@@ -132,19 +132,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			public class CompareFace_FaceB
 			{
 
-				private string imageUrl;
+				private string imageUri;
 
 				private List<string> axis1;
 
-				public string ImageUrl
+				public string ImageUri
 				{
 					get
 					{
-						return imageUrl;
+						return imageUri;
 					}
 					set	
 					{
-						imageUrl = value;
+						imageUri = value;
 					}
 				}
 

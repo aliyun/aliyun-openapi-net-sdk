@@ -21,26 +21,22 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class GetProjectResponse : AcsResponse
+	public class UpdateProjectResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private string project;
 
-		private string serviceRole;
-
-		private string endpoint;
-
 		private string createTime;
 
 		private string modifyTime;
 
-		private string type;
+		private string serviceRole;
 
 		private int? cU;
 
-		private string billingType;
+		private string type;
 
 		public string RequestId
 		{
@@ -63,30 +59,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				project = value;
-			}
-		}
-
-		public string ServiceRole
-		{
-			get
-			{
-				return serviceRole;
-			}
-			set	
-			{
-				serviceRole = value;
-			}
-		}
-
-		public string Endpoint
-		{
-			get
-			{
-				return endpoint;
-			}
-			set	
-			{
-				endpoint = value;
 			}
 		}
 
@@ -114,15 +86,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Type
+		public string ServiceRole
 		{
 			get
 			{
-				return type;
+				return serviceRole;
 			}
 			set	
 			{
-				type = value;
+				serviceRole = value;
 			}
 		}
 
@@ -138,15 +110,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string BillingType
+		public string Type
 		{
 			get
 			{
-				return billingType;
+				return type;
 			}
 			set	
 			{
-				billingType = value;
+				type = value;
 			}
 		}
 	}

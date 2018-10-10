@@ -36,7 +36,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getFaceSearchImageResponse.Gender = context.StringValue("GetFaceSearchImage.Gender");
 			getFaceSearchImageResponse.Age = context.IntegerValue("GetFaceSearchImage.Age");
 			getFaceSearchImageResponse.Pitch = context.FloatValue("GetFaceSearchImage.Pitch");
-			getFaceSearchImageResponse.ImageUrl = context.FloatValue("GetFaceSearchImage.ImageUrl");
+			getFaceSearchImageResponse.ImageUri = context.StringValue("GetFaceSearchImage.ImageUri");
 			getFaceSearchImageResponse.ImageMd5 = context.StringValue("GetFaceSearchImage.ImageMd5");
 			getFaceSearchImageResponse.Roll = context.FloatValue("GetFaceSearchImage.Roll");
 			getFaceSearchImageResponse.FaceId = context.StringValue("GetFaceSearchImage.FaceId");

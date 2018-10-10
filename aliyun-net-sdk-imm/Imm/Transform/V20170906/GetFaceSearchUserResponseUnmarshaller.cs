@@ -32,7 +32,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getFaceSearchUserResponse.HttpResponse = context.HttpResponse;
 			getFaceSearchUserResponse.RequestId = context.StringValue("GetFaceSearchUser.RequestId");
 			getFaceSearchUserResponse.GroupName = context.StringValue("GetFaceSearchUser.GroupName");
-			getFaceSearchUserResponse.Count = context.StringValue("GetFaceSearchUser.Count");
+			getFaceSearchUserResponse.Count = context.IntegerValue("GetFaceSearchUser.Count");
 			getFaceSearchUserResponse.Status = context.StringValue("GetFaceSearchUser.Status");
 			getFaceSearchUserResponse.CreateTime = context.StringValue("GetFaceSearchUser.CreateTime");
 			getFaceSearchUserResponse.ModifyTime = context.StringValue("GetFaceSearchUser.ModifyTime");

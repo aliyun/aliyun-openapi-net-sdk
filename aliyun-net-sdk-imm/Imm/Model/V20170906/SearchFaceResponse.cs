@@ -26,7 +26,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string requestId;
 
-		private string imageUrl;
+		private string imageUri;
 
 		private string groupName;
 
@@ -35,8 +35,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private int? hat;
 
 		private float? score;
-
-		private int? hat1;
 
 		private List<SearchFace_ResultFacesItem> resultFaces;
 
@@ -54,15 +52,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string ImageUrl
+		public string ImageUri
 		{
 			get
 			{
-				return imageUrl;
+				return imageUri;
 			}
 			set	
 			{
-				imageUrl = value;
+				imageUri = value;
 			}
 		}
 
@@ -114,18 +112,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public int? Hat1
-		{
-			get
-			{
-				return hat1;
-			}
-			set	
-			{
-				hat1 = value;
-			}
-		}
-
 		public List<SearchFace_ResultFacesItem> ResultFaces
 		{
 			get
@@ -161,13 +147,13 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private float? score;
 
-			private string imageUrl;
+			private string imageUri;
 
 			private int? glasses;
 
 			private int? hat;
 
-			private List<string> axis2;
+			private List<string> axis1;
 
 			public string GroupId
 			{
@@ -217,15 +203,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public string ImageUrl
+			public string ImageUri
 			{
 				get
 				{
-					return imageUrl;
+					return imageUri;
 				}
 				set	
 				{
-					imageUrl = value;
+					imageUri = value;
 				}
 			}
 
@@ -253,15 +239,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public List<string> Axis2
+			public List<string> Axis1
 			{
 				get
 				{
-					return axis2;
+					return axis1;
 				}
 				set	
 				{
-					axis2 = value;
+					axis1 = value;
 				}
 			}
 		}

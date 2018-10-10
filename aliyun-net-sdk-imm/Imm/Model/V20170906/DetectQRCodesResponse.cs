@@ -71,9 +71,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private string srcUri;
 
-			private string result;
-
-			private DetectQRCodes_QRCodesRectangle qRCodesRectangle;
+			private List<DetectQRCodes_QRCodesItem> qRCodes;
 
 			public string SrcUri
 			{
@@ -87,86 +85,106 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public string Result
+			public List<DetectQRCodes_QRCodesItem> QRCodes
 			{
 				get
 				{
-					return result;
+					return qRCodes;
 				}
 				set	
 				{
-					result = value;
+					qRCodes = value;
 				}
 			}
 
-			public DetectQRCodes_QRCodesRectangle QRCodesRectangle
-			{
-				get
-				{
-					return qRCodesRectangle;
-				}
-				set	
-				{
-					qRCodesRectangle = value;
-				}
-			}
-
-			public class DetectQRCodes_QRCodesRectangle
+			public class DetectQRCodes_QRCodesItem
 			{
 
-				private int? left;
+				private string content;
 
-				private int? top;
+				private DetectQRCodes_QRCodesRectangle qRCodesRectangle;
 
-				private int? width;
-
-				private int? height;
-
-				public int? Left
+				public string Content
 				{
 					get
 					{
-						return left;
+						return content;
 					}
 					set	
 					{
-						left = value;
+						content = value;
 					}
 				}
 
-				public int? Top
+				public DetectQRCodes_QRCodesRectangle QRCodesRectangle
 				{
 					get
 					{
-						return top;
+						return qRCodesRectangle;
 					}
 					set	
 					{
-						top = value;
+						qRCodesRectangle = value;
 					}
 				}
 
-				public int? Width
+				public class DetectQRCodes_QRCodesRectangle
 				{
-					get
-					{
-						return width;
-					}
-					set	
-					{
-						width = value;
-					}
-				}
 
-				public int? Height
-				{
-					get
+					private string left;
+
+					private string top;
+
+					private string width;
+
+					private string height;
+
+					public string Left
 					{
-						return height;
+						get
+						{
+							return left;
+						}
+						set	
+						{
+							left = value;
+						}
 					}
-					set	
+
+					public string Top
 					{
-						height = value;
+						get
+						{
+							return top;
+						}
+						set	
+						{
+							top = value;
+						}
+					}
+
+					public string Width
+					{
+						get
+						{
+							return width;
+						}
+						set	
+						{
+							width = value;
+						}
+					}
+
+					public string Height
+					{
+						get
+						{
+							return height;
+						}
+						set	
+						{
+							height = value;
+						}
 					}
 				}
 			}
@@ -177,7 +195,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private string srcUri;
 
-			private string reason;
+			private string errorCode;
+
+			private string errorMessage;
 
 			public string SrcUri
 			{
@@ -191,15 +211,27 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public string Reason
+			public string ErrorCode
 			{
 				get
 				{
-					return reason;
+					return errorCode;
 				}
 				set	
 				{
-					reason = value;
+					errorCode = value;
+				}
+			}
+
+			public string ErrorMessage
+			{
+				get
+				{
+					return errorMessage;
+				}
+				set	
+				{
+					errorMessage = value;
 				}
 			}
 		}

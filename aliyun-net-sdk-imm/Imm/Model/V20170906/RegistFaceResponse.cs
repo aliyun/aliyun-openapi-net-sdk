@@ -28,7 +28,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string groupId;
 
-		private string imageUrl;
+		private string imageUri;
 
 		private string imageMd5;
 
@@ -42,7 +42,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string faceId;
 
-		private string yaw;
+		private float? yaw;
 
 		private float? quality;
 
@@ -82,15 +82,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string ImageUrl
+		public string ImageUri
 		{
 			get
 			{
-				return imageUrl;
+				return imageUri;
 			}
 			set	
 			{
-				imageUrl = value;
+				imageUri = value;
 			}
 		}
 
@@ -166,7 +166,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Yaw
+		public float? Yaw
 		{
 			get
 			{

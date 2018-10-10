@@ -23,22 +23,22 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Transform.V20170906
 {
-    public class GetFaceSearchGroupResponseUnmarshaller
+    public class UpdateProjectResponseUnmarshaller
     {
-        public static GetFaceSearchGroupResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateProjectResponse Unmarshall(UnmarshallerContext context)
         {
-			GetFaceSearchGroupResponse getFaceSearchGroupResponse = new GetFaceSearchGroupResponse();
+			UpdateProjectResponse updateProjectResponse = new UpdateProjectResponse();
 
-			getFaceSearchGroupResponse.HttpResponse = context.HttpResponse;
-			getFaceSearchGroupResponse.RequestId = context.StringValue("GetFaceSearchGroup.RequestId");
-			getFaceSearchGroupResponse.GroupName = context.StringValue("GetFaceSearchGroup.GroupName");
-			getFaceSearchGroupResponse.Count = context.IntegerValue("GetFaceSearchGroup.Count");
-			getFaceSearchGroupResponse.Status = context.StringValue("GetFaceSearchGroup.Status");
-			getFaceSearchGroupResponse.CreateTime = context.StringValue("GetFaceSearchGroup.CreateTime");
-			getFaceSearchGroupResponse.ModifyTime = context.StringValue("GetFaceSearchGroup.ModifyTime");
-			getFaceSearchGroupResponse.GroupId = context.StringValue("GetFaceSearchGroup.GroupId");
+			updateProjectResponse.HttpResponse = context.HttpResponse;
+			updateProjectResponse.RequestId = context.StringValue("UpdateProject.RequestId");
+			updateProjectResponse.Project = context.StringValue("UpdateProject.Project");
+			updateProjectResponse.CreateTime = context.StringValue("UpdateProject.CreateTime");
+			updateProjectResponse.ModifyTime = context.StringValue("UpdateProject.ModifyTime");
+			updateProjectResponse.ServiceRole = context.StringValue("UpdateProject.ServiceRole");
+			updateProjectResponse.CU = context.IntegerValue("UpdateProject.CU");
+			updateProjectResponse.Type = context.StringValue("UpdateProject.Type");
         
-			return getFaceSearchGroupResponse;
+			return updateProjectResponse;
         }
     }
 }

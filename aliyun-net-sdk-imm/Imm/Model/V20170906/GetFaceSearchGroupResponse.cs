@@ -28,7 +28,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string groupName;
 
-		private string count;
+		private int? count;
 
 		private string status;
 
@@ -62,7 +62,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Count
+		public int? Count
 		{
 			get
 			{

@@ -32,14 +32,14 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			registFaceResponse.HttpResponse = context.HttpResponse;
 			registFaceResponse.RequestId = context.StringValue("RegistFace.RequestId");
 			registFaceResponse.GroupId = context.StringValue("RegistFace.GroupId");
-			registFaceResponse.ImageUrl = context.StringValue("RegistFace.ImageUrl");
+			registFaceResponse.ImageUri = context.StringValue("RegistFace.ImageUri");
 			registFaceResponse.ImageMd5 = context.StringValue("RegistFace.ImageMd5");
 			registFaceResponse.ImageId = context.StringValue("RegistFace.ImageId");
 			registFaceResponse.GroupName = context.StringValue("RegistFace.GroupName");
 			registFaceResponse.User = context.StringValue("RegistFace.User");
 			registFaceResponse.Roll = context.FloatValue("RegistFace.Roll");
 			registFaceResponse.FaceId = context.StringValue("RegistFace.FaceId");
-			registFaceResponse.Yaw = context.StringValue("RegistFace.Yaw");
+			registFaceResponse.Yaw = context.FloatValue("RegistFace.Yaw");
 			registFaceResponse.Quality = context.FloatValue("RegistFace.Quality");
 			registFaceResponse.Glasses = context.IntegerValue("RegistFace.Glasses");
 			registFaceResponse.Hat = context.IntegerValue("RegistFace.Hat");

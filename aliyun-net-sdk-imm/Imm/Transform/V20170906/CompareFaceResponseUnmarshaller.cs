@@ -38,7 +38,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				compareResultItem.Similarity = context.FloatValue("CompareFace.CompareResult["+ i +"].Similarity");
 
 				CompareFaceResponse.CompareFace_CompareResultItem.CompareFace_FaceA faceA = new CompareFaceResponse.CompareFace_CompareResultItem.CompareFace_FaceA();
-				faceA.ImageUrl = context.StringValue("CompareFace.CompareResult["+ i +"].FaceA.ImageUrl");
+				faceA.ImageUri = context.StringValue("CompareFace.CompareResult["+ i +"].FaceA.ImageUri");
 
 				List<string> faceA_axis = new List<string>();
 				for (int j = 0; j < context.Length("CompareFace.CompareResult["+ i +"].FaceA.Axis.Length"); j++) {
@@ -48,7 +48,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				compareResultItem.FaceA = faceA;
 
 				CompareFaceResponse.CompareFace_CompareResultItem.CompareFace_FaceB faceB = new CompareFaceResponse.CompareFace_CompareResultItem.CompareFace_FaceB();
-				faceB.ImageUrl = context.StringValue("CompareFace.CompareResult["+ i +"].FaceB.ImageUrl");
+				faceB.ImageUri = context.StringValue("CompareFace.CompareResult["+ i +"].FaceB.ImageUri");
 
 				List<string> faceB_axis1 = new List<string>();
 				for (int j = 0; j < context.Length("CompareFace.CompareResult["+ i +"].FaceB.Axis.Length"); j++) {

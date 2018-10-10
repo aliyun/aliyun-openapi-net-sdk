@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3096b6a7-2381-4e11-a031-24aec7c82b34}</ProjectGuid>
+    <ProjectGuid>{3b96647d-dec1-4714-9076-a208b7095fc3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -143,6 +143,7 @@
 	<Compile Include="Imm\Model\V20170906\DeleteFaceSetRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GetFaceSearchGroupResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\UpdateFaceGroupByIdResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateProjectRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceSearchGroupImagesRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\ListPornBatchDetectJobsRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteFaceSearchGroupResponse.cs" />
@@ -155,6 +156,7 @@
 	<Compile Include="Imm\Model\V20170906\CreatePornBatchDetectJobRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteTagSetRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GetTagJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateProjectResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CompareFaceResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceGroupPhotosRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectTagRequest.cs" />
@@ -186,6 +188,7 @@
 	<Compile Include="Imm\Transform\V20170906\RegistFaceResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DeleteTagByUrlResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateTagJobResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\UpdateProjectResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\ListTagSetsResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetFaceDetailResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DeleteFaceSearchImageByIdResponseUnmarshaller.cs" />

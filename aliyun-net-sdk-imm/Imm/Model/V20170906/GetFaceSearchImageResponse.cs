@@ -36,7 +36,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private float? pitch;
 
-		private float? imageUrl;
+		private string imageUri;
 
 		private string imageMd5;
 
@@ -130,15 +130,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public float? ImageUrl
+		public string ImageUri
 		{
 			get
 			{
-				return imageUrl;
+				return imageUri;
 			}
 			set	
 			{
-				imageUrl = value;
+				imageUri = value;
 			}
 		}
 
