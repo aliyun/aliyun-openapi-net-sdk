@@ -33,9 +33,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			getAuditResultResponse.RequestId = context.StringValue("GetAuditResult.RequestId");
 
 			GetAuditResultResponse.GetAuditResult_AIAuditResult aIAuditResult = new GetAuditResultResponse.GetAuditResult_AIAuditResult();
+			aIAuditResult.AbnormalModules = context.StringValue("GetAuditResult.AIAuditResult.AbnormalModules");
 			aIAuditResult.Label = context.StringValue("GetAuditResult.AIAuditResult.Label");
-			aIAuditResult.TerrorismResult = context.StringValue("GetAuditResult.AIAuditResult.TerrorismResult");
 			aIAuditResult.PornResult = context.StringValue("GetAuditResult.AIAuditResult.PornResult");
+			aIAuditResult.TerrorismResult = context.StringValue("GetAuditResult.AIAuditResult.TerrorismResult");
+			aIAuditResult.TitleResult = context.StringValue("GetAuditResult.AIAuditResult.TitleResult");
+			aIAuditResult.CoverResult = context.StringValue("GetAuditResult.AIAuditResult.CoverResult");
 			getAuditResultResponse.AIAuditResult = aIAuditResult;
         
 			return getAuditResultResponse;

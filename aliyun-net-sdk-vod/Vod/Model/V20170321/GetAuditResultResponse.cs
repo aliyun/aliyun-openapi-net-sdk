@@ -55,11 +55,29 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetAuditResult_AIAuditResult
 		{
 
+			private string abnormalModules;
+
 			private string label;
+
+			private string pornResult;
 
 			private string terrorismResult;
 
-			private string pornResult;
+			private string titleResult;
+
+			private string coverResult;
+
+			public string AbnormalModules
+			{
+				get
+				{
+					return abnormalModules;
+				}
+				set	
+				{
+					abnormalModules = value;
+				}
+			}
 
 			public string Label
 			{
@@ -70,6 +88,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					label = value;
+				}
+			}
+
+			public string PornResult
+			{
+				get
+				{
+					return pornResult;
+				}
+				set	
+				{
+					pornResult = value;
 				}
 			}
 
@@ -85,15 +115,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string PornResult
+			public string TitleResult
 			{
 				get
 				{
-					return pornResult;
+					return titleResult;
 				}
 				set	
 				{
-					pornResult = value;
+					titleResult = value;
+				}
+			}
+
+			public string CoverResult
+			{
+				get
+				{
+					return coverResult;
+				}
+				set	
+				{
+					coverResult = value;
 				}
 			}
 		}

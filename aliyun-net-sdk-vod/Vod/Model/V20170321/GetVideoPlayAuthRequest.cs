@@ -39,6 +39,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string reAuthInfo;
 
+		private string playConfig;
+
 		private long? authInfoTimeout;
 
 		private string action;
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				reAuthInfo = value;
 				DictionaryUtil.Add(QueryParameters, "ReAuthInfo", value);
+			}
+		}
+
+		public string PlayConfig
+		{
+			get
+			{
+				return playConfig;
+			}
+			set	
+			{
+				playConfig = value;
+				DictionaryUtil.Add(QueryParameters, "PlayConfig", value);
 			}
 		}
 

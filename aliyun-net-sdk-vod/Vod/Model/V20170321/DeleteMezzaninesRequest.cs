@@ -26,30 +26,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetAuditResultRequest : RpcAcsRequest<GetAuditResultResponse>
+    public class DeleteMezzaninesRequest : RpcAcsRequest<DeleteMezzaninesResponse>
     {
-        public GetAuditResultRequest()
-            : base("vod", "2017-03-21", "GetAuditResult", "vod", "openAPI")
+        public DeleteMezzaninesRequest()
+            : base("vod", "2017-03-21", "DeleteMezzanines", "vod", "openAPI")
         {
         }
 
-		private string resourceOwnerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
-
 		private string action;
 
-		private string videoId;
+		private bool? force;
 
-		private string ownerId;
+		private long? ownerId;
 
-		private string mediaId;
+		private string videoIds;
 
-		private string accessKeyId;
-
-		public string ResourceOwnerId
+		public long? ResourceOwnerId
 		{
 			get
 			{
@@ -58,7 +54,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -75,19 +71,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -101,20 +84,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
+		public bool? Force
 		{
 			get
 			{
-				return videoId;
+				return force;
 			}
 			set	
 			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+				force = value;
+				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
 			}
 		}
 
-		public string OwnerId
+		public long? OwnerId
 		{
 			get
 			{
@@ -123,33 +106,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string MediaId
+		public string VideoIds
 		{
 			get
 			{
-				return mediaId;
+				return videoIds;
 			}
 			set	
 			{
-				mediaId = value;
-				DictionaryUtil.Add(QueryParameters, "MediaId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				videoIds = value;
+				DictionaryUtil.Add(QueryParameters, "VideoIds", value);
 			}
 		}
 
@@ -158,9 +128,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override GetAuditResultResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteMezzaninesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return GetAuditResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteMezzaninesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

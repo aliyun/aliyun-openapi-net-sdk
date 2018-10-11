@@ -367,6 +367,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetPlayInfo_VideoBase
 		{
 
+			private string outputType;
+
 			private string coverURL;
 
 			private string duration;
@@ -384,6 +386,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			private string transcodeMode;
 
 			private List<GetPlayInfo_Thumbnail> thumbnailList;
+
+			public string OutputType
+			{
+				get
+				{
+					return outputType;
+				}
+				set	
+				{
+					outputType = value;
+				}
+			}
 
 			public string CoverURL
 			{

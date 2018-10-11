@@ -33,6 +33,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			getPlayInfoResponse.RequestId = context.StringValue("GetPlayInfo.RequestId");
 
 			GetPlayInfoResponse.GetPlayInfo_VideoBase videoBase = new GetPlayInfoResponse.GetPlayInfo_VideoBase();
+			videoBase.OutputType = context.StringValue("GetPlayInfo.VideoBase.OutputType");
 			videoBase.CoverURL = context.StringValue("GetPlayInfo.VideoBase.CoverURL");
 			videoBase.Duration = context.StringValue("GetPlayInfo.VideoBase.Duration");
 			videoBase.Status = context.StringValue("GetPlayInfo.VideoBase.Status");
