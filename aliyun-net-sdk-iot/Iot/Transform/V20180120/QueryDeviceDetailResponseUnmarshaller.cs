@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.IpAddress = context.StringValue("QueryDeviceDetail.Data.IpAddress");
 			data.NodeType = context.IntegerValue("QueryDeviceDetail.Data.NodeType");
 			data.Region = context.StringValue("QueryDeviceDetail.Data.Region");
+			data.Owner = context.BooleanValue("QueryDeviceDetail.Data.Owner");
 			queryDeviceDetailResponse.Data = data;
         
 			return queryDeviceDetailResponse;

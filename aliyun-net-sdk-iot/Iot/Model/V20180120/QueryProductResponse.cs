@@ -123,6 +123,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string protocolType;
 
+			private string productStatus;
+
+			private bool? owner;
+
 			public long? GmtCreate
 			{
 				get
@@ -276,6 +280,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					protocolType = value;
+				}
+			}
+
+			public string ProductStatus
+			{
+				get
+				{
+					return productStatus;
+				}
+				set	
+				{
+					productStatus = value;
+				}
+			}
+
+			public bool? Owner
+			{
+				get
+				{
+					return owner;
+				}
+				set	
+				{
+					owner = value;
 				}
 			}
 		}

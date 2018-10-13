@@ -129,6 +129,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string region;
 
+			private bool? owner;
+
 			public string IotId
 			{
 				get
@@ -318,6 +320,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					region = value;
+				}
+			}
+
+			public bool? Owner
+			{
+				get
+				{
+					return owner;
+				}
+				set	
+				{
+					owner = value;
 				}
 			}
 		}
