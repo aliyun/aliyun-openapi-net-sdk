@@ -19,12 +19,14 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.ARMS.Model.V20180620
+namespace Aliyun.Acs.ARMS.Model.V20181015
 {
-	public class ARMSQueryDataSetResponse : AcsResponse
+	public class MetricQueryResponse : AcsResponse
 	{
 
 		private string data;
+
+		private string requestId;
 
 		public string Data
 		{
@@ -35,6 +37,18 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

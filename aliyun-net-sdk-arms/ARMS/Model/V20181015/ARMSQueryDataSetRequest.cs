@@ -21,15 +21,15 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.ARMS.Transform;
-using Aliyun.Acs.ARMS.Transform.V20180620;
+using Aliyun.Acs.ARMS.Transform.V20181015;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.ARMS.Model.V20180620
+namespace Aliyun.Acs.ARMS.Model.V20181015
 {
     public class ARMSQueryDataSetRequest : RpcAcsRequest<ARMSQueryDataSetResponse>
     {
         public ARMSQueryDataSetRequest()
-            : base("ARMS", "2018-06-20", "ARMSQueryDataSet")
+            : base("ARMS", "2018-10-15", "ARMSQueryDataSet")
         {
         }
 
@@ -39,9 +39,9 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 
 		private bool? reduceTail;
 
-		private string accessKeyId;
-
 		private long? maxTime;
+
+		private string accessKeyId;
 
 		private List<OptionalDims> optionalDimss;
 
@@ -104,19 +104,6 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public long? MaxTime
 		{
 			get
@@ -127,6 +114,19 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 			{
 				maxTime = value;
 				DictionaryUtil.Add(QueryParameters, "MaxTime", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -142,9 +142,9 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 				optionalDimss = value;
 				for (int i = 0; i < optionalDimss.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"OptionalDims." + (i + 1) + ".Key", optionalDimss[i].Key);
-					DictionaryUtil.Add(QueryParameters,"OptionalDims." + (i + 1) + ".Value", optionalDimss[i].Value);
 					DictionaryUtil.Add(QueryParameters,"OptionalDims." + (i + 1) + ".Type", optionalDimss[i].Type);
+					DictionaryUtil.Add(QueryParameters,"OptionalDims." + (i + 1) + ".Value", optionalDimss[i].Value);
+					DictionaryUtil.Add(QueryParameters,"OptionalDims." + (i + 1) + ".Key", optionalDimss[i].Key);
 				}
 			}
 		}
@@ -256,9 +256,9 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 				requiredDimss = value;
 				for (int i = 0; i < requiredDimss.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"RequiredDims." + (i + 1) + ".Key", requiredDimss[i].Key);
-					DictionaryUtil.Add(QueryParameters,"RequiredDims." + (i + 1) + ".Value", requiredDimss[i].Value);
 					DictionaryUtil.Add(QueryParameters,"RequiredDims." + (i + 1) + ".Type", requiredDimss[i].Type);
+					DictionaryUtil.Add(QueryParameters,"RequiredDims." + (i + 1) + ".Value", requiredDimss[i].Value);
+					DictionaryUtil.Add(QueryParameters,"RequiredDims." + (i + 1) + ".Key", requiredDimss[i].Key);
 				}
 			}
 		}
@@ -288,9 +288,9 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 				dimensionss = value;
 				for (int i = 0; i < dimensionss.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Dimensions." + (i + 1) + ".Key", dimensionss[i].Key);
-					DictionaryUtil.Add(QueryParameters,"Dimensions." + (i + 1) + ".Value", dimensionss[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Dimensions." + (i + 1) + ".Type", dimensionss[i].Type);
+					DictionaryUtil.Add(QueryParameters,"Dimensions." + (i + 1) + ".Value", dimensionss[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Dimensions." + (i + 1) + ".Key", dimensionss[i].Key);
 				}
 			}
 		}
@@ -298,21 +298,21 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 		public class OptionalDims
 		{
 
-			private string key;
+			private string type;
 
 			private string value_;
 
-			private string type;
+			private string key;
 
-			public string Key
+			public string Type
 			{
 				get
 				{
-					return key;
+					return type;
 				}
 				set	
 				{
-					key = value;
+					type = value;
 				}
 			}
 
@@ -328,15 +328,15 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 				}
 			}
 
-			public string Type
+			public string Key
 			{
 				get
 				{
-					return type;
+					return key;
 				}
 				set	
 				{
-					type = value;
+					key = value;
 				}
 			}
 		}
@@ -344,21 +344,21 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 		public class RequiredDims
 		{
 
-			private string key;
+			private string type;
 
 			private string value_;
 
-			private string type;
+			private string key;
 
-			public string Key
+			public string Type
 			{
 				get
 				{
-					return key;
+					return type;
 				}
 				set	
 				{
-					key = value;
+					type = value;
 				}
 			}
 
@@ -374,15 +374,15 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 				}
 			}
 
-			public string Type
+			public string Key
 			{
 				get
 				{
-					return type;
+					return key;
 				}
 				set	
 				{
-					type = value;
+					key = value;
 				}
 			}
 		}
@@ -390,21 +390,21 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 		public class Dimensions
 		{
 
-			private string key;
+			private string type;
 
 			private string value_;
 
-			private string type;
+			private string key;
 
-			public string Key
+			public string Type
 			{
 				get
 				{
-					return key;
+					return type;
 				}
 				set	
 				{
-					key = value;
+					type = value;
 				}
 			}
 
@@ -420,15 +420,15 @@ namespace Aliyun.Acs.ARMS.Model.V20180620
 				}
 			}
 
-			public string Type
+			public string Key
 			{
 				get
 				{
-					return type;
+					return key;
 				}
 				set	
 				{
-					type = value;
+					key = value;
 				}
 			}
 		}

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{bb3d7413-37fd-4db0-be76-1221e6feacaf}</ProjectGuid>
+    <ProjectGuid>{f51dfa10-f4c3-4e30-8cea-0d3bf5b7b5b9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="ARMS\Model\V20180620\ARMSQueryDataSetRequest.cs" />
-	<Compile Include="ARMS\Model\V20180620\ARMSQueryDataSetResponse.cs" />
-	<Compile Include="ARMS\Transform\V20180620\ARMSQueryDataSetResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Model\V20181015\MetricQueryResponse.cs" />
+	<Compile Include="ARMS\Model\V20181015\ARMSQueryDataSetRequest.cs" />
+	<Compile Include="ARMS\Model\V20181015\ARMSQueryDataSetResponse.cs" />
+	<Compile Include="ARMS\Model\V20181015\MetricQueryRequest.cs" />
+	<Compile Include="ARMS\Transform\V20181015\ARMSQueryDataSetResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20181015\MetricQueryResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
