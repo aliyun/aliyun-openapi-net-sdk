@@ -1,6 +1,9 @@
 2018-10-16 Version: 2.2.0
 1, This version add MetricQuery interface to support retcode and apm metric query.
 
+2018-10-16 Version: 2.2.0
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
 2018-06-22 Version: 2.1.0
 1, Support ram-user and sts.
 2, Format message code.
