@@ -99,6 +99,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string diskId;
 
+			private string instanceId;
+
+			private string device;
+
 			private List<DescribeDisksFullStatus_DiskEventType> diskEventSet;
 
 			private DescribeDisksFullStatus_Status status;
@@ -114,6 +118,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					diskId = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string Device
+			{
+				get
+				{
+					return device;
+				}
+				set	
+				{
+					device = value;
 				}
 			}
 

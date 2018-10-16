@@ -26,26 +26,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class ModifyImageSharePermissionRequest : RpcAcsRequest<ModifyImageSharePermissionResponse>
+    public class DescribeInstanceTopologyRequest : RpcAcsRequest<DescribeInstanceTopologyResponse>
     {
-        public ModifyImageSharePermissionRequest()
-            : base("Ecs", "2014-05-26", "ModifyImageSharePermission", "ecs", "openAPI")
+        public DescribeInstanceTopologyRequest()
+            : base("Ecs", "2014-05-26", "DescribeInstanceTopology", "ecs", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string imageId;
-
-		private List<string> addAccounts;
-
 		private string resourceOwnerAccount;
 
 		private string regionId;
 
-		private List<string> removeAccounts;
-
-		private string ownerAccount;
+		private string instanceIds;
 
 		private string action;
 
@@ -61,36 +55,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
-
-		public List<string> AddAccounts
-		{
-			get
-			{
-				return addAccounts;
-			}
-
-			set
-			{
-				addAccounts = value;
-				for (int i = 0; i < addAccounts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AddAccount." + (i + 1) , addAccounts[i]);
-				}
 			}
 		}
 
@@ -120,33 +84,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> RemoveAccounts
+		public string InstanceIds
 		{
 			get
 			{
-				return removeAccounts;
-			}
-
-			set
-			{
-				removeAccounts = value;
-				for (int i = 0; i < removeAccounts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RemoveAccount." + (i + 1) , removeAccounts[i]);
-				}
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
+				return instanceIds;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				instanceIds = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
 			}
 		}
 
@@ -176,9 +123,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override ModifyImageSharePermissionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeInstanceTopologyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyImageSharePermissionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeInstanceTopologyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

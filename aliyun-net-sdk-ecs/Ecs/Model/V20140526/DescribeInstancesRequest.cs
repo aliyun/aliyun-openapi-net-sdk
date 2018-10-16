@@ -93,6 +93,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string filter1Value;
 
+		private bool? needSaleCycle;
+
 		private string filter2Key;
 
 		private long? ownerId;
@@ -509,6 +511,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				filter1Value = value;
 				DictionaryUtil.Add(QueryParameters, "Filter.1.Value", value);
+			}
+		}
+
+		public bool? NeedSaleCycle
+		{
+			get
+			{
+				return needSaleCycle;
+			}
+			set	
+			{
+				needSaleCycle = value;
+				DictionaryUtil.Add(QueryParameters, "NeedSaleCycle", value.ToString());
 			}
 		}
 

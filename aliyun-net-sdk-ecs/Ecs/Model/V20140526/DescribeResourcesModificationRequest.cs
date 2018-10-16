@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private int? memory;
+		private float? memory;
 
 		private int? cores;
 
@@ -72,7 +72,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? Memory
+		public float? Memory
 		{
 			get
 			{

@@ -49,13 +49,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string regionId;
 
+		private string onUnableToRedeployFailedInstance;
+
 		private string granularity;
 
 		private string domain;
 
 		private string action;
-
-		private string zoneId;
 
 		private string strategy;
 
@@ -163,6 +163,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string OnUnableToRedeployFailedInstance
+		{
+			get
+			{
+				return onUnableToRedeployFailedInstance;
+			}
+			set	
+			{
+				onUnableToRedeployFailedInstance = value;
+				DictionaryUtil.Add(QueryParameters, "OnUnableToRedeployFailedInstance", value);
+			}
+		}
+
 		public string Granularity
 		{
 			get
@@ -199,19 +212,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 

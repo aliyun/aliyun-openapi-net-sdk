@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			for (int i = 0; i < context.Length("DescribeDisksFullStatus.DiskFullStatusSet.Length"); i++) {
 				DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType diskFullStatusType = new DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType();
 				diskFullStatusType.DiskId = context.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskId");
+				diskFullStatusType.InstanceId = context.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].InstanceId");
+				diskFullStatusType.Device = context.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].Device");
 
 				DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_Status status = new DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_Status();
 				status.Code = context.IntegerValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].Status.Code");

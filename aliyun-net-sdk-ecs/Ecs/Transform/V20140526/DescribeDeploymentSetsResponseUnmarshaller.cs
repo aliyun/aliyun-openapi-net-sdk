@@ -43,10 +43,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				deploymentSet.DeploymentSetDescription = context.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].DeploymentSetDescription");
 				deploymentSet.DeploymentSetName = context.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].DeploymentSetName");
 				deploymentSet.Strategy = context.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Strategy");
+				deploymentSet.DeploymentStrategy = context.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].DeploymentStrategy");
 				deploymentSet.Domain = context.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Domain");
 				deploymentSet.Granularity = context.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Granularity");
 				deploymentSet.InstanceAmount = context.IntegerValue("DescribeDeploymentSets.DeploymentSets["+ i +"].InstanceAmount");
 				deploymentSet.CreationTime = context.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].CreationTime");
+
+				List<string> deploymentSet_instanceIds = new List<string>();
+				for (int j = 0; j < context.Length("DescribeDeploymentSets.DeploymentSets["+ i +"].InstanceIds.Length"); j++) {
+					deploymentSet_instanceIds.Add(context.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].InstanceIds["+ j +"]"));
+				}
+				deploymentSet.InstanceIds = deploymentSet_instanceIds;
 
 				describeDeploymentSetsResponse_deploymentSets.Add(deploymentSet);
 			}

@@ -123,6 +123,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string hostName;
 
+			private string deploymentSetId;
+
 			private string status;
 
 			private string serialNumber;
@@ -352,6 +354,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					hostName = value;
+				}
+			}
+
+			public string DeploymentSetId
+			{
+				get
+				{
+					return deploymentSetId;
+				}
+				set	
+				{
+					deploymentSetId = value;
 				}
 			}
 

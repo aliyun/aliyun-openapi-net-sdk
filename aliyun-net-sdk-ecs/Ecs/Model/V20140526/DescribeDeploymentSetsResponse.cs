@@ -119,6 +119,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string strategy;
 
+			private string deploymentStrategy;
+
 			private string domain;
 
 			private string granularity;
@@ -126,6 +128,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private int? instanceAmount;
 
 			private string creationTime;
+
+			private List<string> instanceIds;
 
 			public string DeploymentSetId
 			{
@@ -175,6 +179,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string DeploymentStrategy
+			{
+				get
+				{
+					return deploymentStrategy;
+				}
+				set	
+				{
+					deploymentStrategy = value;
+				}
+			}
+
 			public string Domain
 			{
 				get
@@ -220,6 +236,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public List<string> InstanceIds
+			{
+				get
+				{
+					return instanceIds;
+				}
+				set	
+				{
+					instanceIds = value;
 				}
 			}
 		}

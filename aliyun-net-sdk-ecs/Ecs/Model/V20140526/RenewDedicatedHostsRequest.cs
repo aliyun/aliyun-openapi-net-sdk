@@ -26,30 +26,45 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class ModifyImageSharePermissionRequest : RpcAcsRequest<ModifyImageSharePermissionResponse>
+    public class RenewDedicatedHostsRequest : RpcAcsRequest<RenewDedicatedHostsResponse>
     {
-        public ModifyImageSharePermissionRequest()
-            : base("Ecs", "2014-05-26", "ModifyImageSharePermission", "ecs", "openAPI")
+        public RenewDedicatedHostsRequest()
+            : base("Ecs", "2014-05-26", "RenewDedicatedHosts", "ecs", "openAPI")
         {
         }
 
+		private string dedicatedHostIds;
+
 		private long? resourceOwnerId;
 
-		private string imageId;
-
-		private List<string> addAccounts;
-
-		private string resourceOwnerAccount;
+		private string clientToken;
 
 		private string regionId;
 
-		private List<string> removeAccounts;
+		private string action;
+
+		private int? period;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
+
+		private string periodUnit;
+
+		public string DedicatedHostIds
+		{
+			get
+			{
+				return dedicatedHostIds;
+			}
+			set	
+			{
+				dedicatedHostIds = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostIds", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -64,46 +79,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ImageId
+		public string ClientToken
 		{
 			get
 			{
-				return imageId;
+				return clientToken;
 			}
 			set	
 			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
-
-		public List<string> AddAccounts
-		{
-			get
-			{
-				return addAccounts;
-			}
-
-			set
-			{
-				addAccounts = value;
-				for (int i = 0; i < addAccounts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AddAccount." + (i + 1) , addAccounts[i]);
-				}
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -120,20 +105,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> RemoveAccounts
+		public string Action
 		{
 			get
 			{
-				return removeAccounts;
+				return action;
 			}
-
-			set
+			set	
 			{
-				removeAccounts = value;
-				for (int i = 0; i < removeAccounts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RemoveAccount." + (i + 1) , removeAccounts[i]);
-				}
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public int? Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -150,19 +157,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -176,9 +170,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override ModifyImageSharePermissionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string PeriodUnit
+		{
+			get
+			{
+				return periodUnit;
+			}
+			set	
+			{
+				periodUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
+			}
+		}
+
+        public override RenewDedicatedHostsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyImageSharePermissionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RenewDedicatedHostsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

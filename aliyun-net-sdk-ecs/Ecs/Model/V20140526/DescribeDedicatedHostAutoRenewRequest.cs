@@ -26,30 +26,39 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class ModifyImageSharePermissionRequest : RpcAcsRequest<ModifyImageSharePermissionResponse>
+    public class DescribeDedicatedHostAutoRenewRequest : RpcAcsRequest<DescribeDedicatedHostAutoRenewResponse>
     {
-        public ModifyImageSharePermissionRequest()
-            : base("Ecs", "2014-05-26", "ModifyImageSharePermission", "ecs", "openAPI")
+        public DescribeDedicatedHostAutoRenewRequest()
+            : base("Ecs", "2014-05-26", "DescribeDedicatedHostAutoRenew", "ecs", "openAPI")
         {
         }
 
+		private string dedicatedHostIds;
+
 		private long? resourceOwnerId;
-
-		private string imageId;
-
-		private List<string> addAccounts;
 
 		private string resourceOwnerAccount;
 
 		private string regionId;
-
-		private List<string> removeAccounts;
 
 		private string ownerAccount;
 
 		private string action;
 
 		private long? ownerId;
+
+		public string DedicatedHostIds
+		{
+			get
+			{
+				return dedicatedHostIds;
+			}
+			set	
+			{
+				dedicatedHostIds = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostIds", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -61,36 +70,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
-
-		public List<string> AddAccounts
-		{
-			get
-			{
-				return addAccounts;
-			}
-
-			set
-			{
-				addAccounts = value;
-				for (int i = 0; i < addAccounts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AddAccount." + (i + 1) , addAccounts[i]);
-				}
 			}
 		}
 
@@ -117,23 +96,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				regionId = value;
 				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public List<string> RemoveAccounts
-		{
-			get
-			{
-				return removeAccounts;
-			}
-
-			set
-			{
-				removeAccounts = value;
-				for (int i = 0; i < removeAccounts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RemoveAccount." + (i + 1) , removeAccounts[i]);
-				}
 			}
 		}
 
@@ -176,9 +138,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override ModifyImageSharePermissionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDedicatedHostAutoRenewResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyImageSharePermissionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDedicatedHostAutoRenewResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

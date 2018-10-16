@@ -26,34 +26,24 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeAvailableResourceRequest : RpcAcsRequest<DescribeAvailableResourceResponse>
+    public class ModifyDedicatedHostAttributeRequest : RpcAcsRequest<ModifyDedicatedHostAttributeResponse>
     {
-        public DescribeAvailableResourceRequest()
-            : base("Ecs", "2014-05-26", "DescribeAvailableResource", "ecs", "openAPI")
+        public ModifyDedicatedHostAttributeRequest()
+            : base("Ecs", "2014-05-26", "ModifyDedicatedHostAttribute", "ecs", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private float? memory;
-
-		private string ioOptimized;
-
-		private string dataDiskCategory;
-
-		private int? cores;
+		private string description;
 
 		private string regionId;
 
-		private string systemDiskCategory;
+		private string actionOnMaintenance;
 
 		private string action;
 
-		private string instanceType;
-
-		private string networkCategory;
-
-		private string instanceChargeType;
+		private string dedicatedHostName;
 
 		private string resourceOwnerAccount;
 
@@ -63,13 +53,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private string resourceType;
+		private int? networkAttributesSlbUdpTimeout;
 
-		private string spotStrategy;
-
-		private string destinationResource;
-
-		private string zoneId;
+		private int? networkAttributesUdpTimeout;
 
 		public long? ResourceOwnerId
 		{
@@ -84,55 +70,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public float? Memory
+		public string Description
 		{
 			get
 			{
-				return memory;
+				return description;
 			}
 			set	
 			{
-				memory = value;
-				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
-			}
-		}
-
-		public string IoOptimized
-		{
-			get
-			{
-				return ioOptimized;
-			}
-			set	
-			{
-				ioOptimized = value;
-				DictionaryUtil.Add(QueryParameters, "IoOptimized", value);
-			}
-		}
-
-		public string DataDiskCategory
-		{
-			get
-			{
-				return dataDiskCategory;
-			}
-			set	
-			{
-				dataDiskCategory = value;
-				DictionaryUtil.Add(QueryParameters, "DataDiskCategory", value);
-			}
-		}
-
-		public int? Cores
-		{
-			get
-			{
-				return cores;
-			}
-			set	
-			{
-				cores = value;
-				DictionaryUtil.Add(QueryParameters, "Cores", value.ToString());
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -149,16 +96,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string SystemDiskCategory
+		public string ActionOnMaintenance
 		{
 			get
 			{
-				return systemDiskCategory;
+				return actionOnMaintenance;
 			}
 			set	
 			{
-				systemDiskCategory = value;
-				DictionaryUtil.Add(QueryParameters, "SystemDiskCategory", value);
+				actionOnMaintenance = value;
+				DictionaryUtil.Add(QueryParameters, "ActionOnMaintenance", value);
 			}
 		}
 
@@ -175,42 +122,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceType
+		public string DedicatedHostName
 		{
 			get
 			{
-				return instanceType;
+				return dedicatedHostName;
 			}
 			set	
 			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
-		public string NetworkCategory
-		{
-			get
-			{
-				return networkCategory;
-			}
-			set	
-			{
-				networkCategory = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkCategory", value);
-			}
-		}
-
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+				dedicatedHostName = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostName", value);
 			}
 		}
 
@@ -266,61 +187,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceType
+		public int? NetworkAttributesSlbUdpTimeout
 		{
 			get
 			{
-				return resourceType;
+				return networkAttributesSlbUdpTimeout;
 			}
 			set	
 			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+				networkAttributesSlbUdpTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkAttributes.SlbUdpTimeout", value.ToString());
 			}
 		}
 
-		public string SpotStrategy
+		public int? NetworkAttributesUdpTimeout
 		{
 			get
 			{
-				return spotStrategy;
+				return networkAttributesUdpTimeout;
 			}
 			set	
 			{
-				spotStrategy = value;
-				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
+				networkAttributesUdpTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkAttributes.UdpTimeout", value.ToString());
 			}
 		}
 
-		public string DestinationResource
-		{
-			get
-			{
-				return destinationResource;
-			}
-			set	
-			{
-				destinationResource = value;
-				DictionaryUtil.Add(QueryParameters, "DestinationResource", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-        public override DescribeAvailableResourceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyDedicatedHostAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAvailableResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDedicatedHostAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

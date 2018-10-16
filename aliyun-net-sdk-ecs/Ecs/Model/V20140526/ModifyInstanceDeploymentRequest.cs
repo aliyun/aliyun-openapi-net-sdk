@@ -26,30 +26,32 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class ModifyImageSharePermissionRequest : RpcAcsRequest<ModifyImageSharePermissionResponse>
+    public class ModifyInstanceDeploymentRequest : RpcAcsRequest<ModifyInstanceDeploymentResponse>
     {
-        public ModifyImageSharePermissionRequest()
-            : base("Ecs", "2014-05-26", "ModifyImageSharePermission", "ecs", "openAPI")
+        public ModifyInstanceDeploymentRequest()
+            : base("Ecs", "2014-05-26", "ModifyInstanceDeployment", "ecs", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string imageId;
-
-		private List<string> addAccounts;
-
-		private string resourceOwnerAccount;
-
 		private string regionId;
-
-		private List<string> removeAccounts;
-
-		private string ownerAccount;
 
 		private string action;
 
+		private string deploymentSetId;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string dedicatedHostId;
+
 		private long? ownerId;
+
+		private string instanceId;
+
+		private bool? force;
 
 		public long? ResourceOwnerId
 		{
@@ -61,49 +63,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
-
-		public List<string> AddAccounts
-		{
-			get
-			{
-				return addAccounts;
-			}
-
-			set
-			{
-				addAccounts = value;
-				for (int i = 0; i < addAccounts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AddAccount." + (i + 1) , addAccounts[i]);
-				}
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -120,20 +79,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> RemoveAccounts
+		public string Action
 		{
 			get
 			{
-				return removeAccounts;
+				return action;
 			}
-
-			set
+			set	
 			{
-				removeAccounts = value;
-				for (int i = 0; i < removeAccounts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RemoveAccount." + (i + 1) , removeAccounts[i]);
-				}
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string DeploymentSetId
+		{
+			get
+			{
+				return deploymentSetId;
+			}
+			set	
+			{
+				deploymentSetId = value;
+				DictionaryUtil.Add(QueryParameters, "DeploymentSetId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -150,16 +131,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Action
+		public string DedicatedHostId
 		{
 			get
 			{
-				return action;
+				return dedicatedHostId;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				dedicatedHostId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
 			}
 		}
 
@@ -176,9 +157,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override ModifyImageSharePermissionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? Force
+		{
+			get
+			{
+				return force;
+			}
+			set	
+			{
+				force = value;
+				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
+			}
+		}
+
+        public override ModifyInstanceDeploymentResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyImageSharePermissionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyInstanceDeploymentResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
