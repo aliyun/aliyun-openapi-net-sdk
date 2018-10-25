@@ -17,55 +17,71 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain.Transform;
-using Aliyun.Acs.Domain.Transform.V20180129;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainSuffixRequest : RpcAcsRequest<QueryDomainSuffixResponse>
-    {
-        public QueryDomainSuffixRequest()
-            : base("Domain", "2018-01-29", "QueryDomainSuffix")
-        {
-        }
+	public class QueryFailingReasonListForQualificationResponse : AcsResponse
+	{
 
-		private string userClientIp;
+		private string requestId;
 
-		private string lang;
+		private List<QueryFailingReasonListForQualification_FailRecord> data;
 
-		public string UserClientIp
+		public string RequestId
 		{
 			get
 			{
-				return userClientIp;
+				return requestId;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				requestId = value;
 			}
 		}
 
-		public string Lang
+		public List<QueryFailingReasonListForQualification_FailRecord> Data
 		{
 			get
 			{
-				return lang;
+				return data;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				data = value;
 			}
 		}
 
-        public override QueryDomainSuffixResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
-        {
-            return QueryDomainSuffixResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+		public class QueryFailingReasonListForQualification_FailRecord
+		{
+
+			private string date;
+
+			private string failReason;
+
+			public string Date
+			{
+				get
+				{
+					return date;
+				}
+				set	
+				{
+					date = value;
+				}
+			}
+
+			public string FailReason
+			{
+				get
+				{
+					return failReason;
+				}
+				set	
+				{
+					failReason = value;
+				}
+			}
+		}
+	}
 }

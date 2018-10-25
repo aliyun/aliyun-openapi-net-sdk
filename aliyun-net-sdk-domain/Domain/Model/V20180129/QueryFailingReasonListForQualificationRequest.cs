@@ -26,16 +26,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainSuffixRequest : RpcAcsRequest<QueryDomainSuffixResponse>
+    public class QueryFailingReasonListForQualificationRequest : RpcAcsRequest<QueryFailingReasonListForQualificationResponse>
     {
-        public QueryDomainSuffixRequest()
-            : base("Domain", "2018-01-29", "QueryDomainSuffix")
+        public QueryFailingReasonListForQualificationRequest()
+            : base("Domain", "2018-01-29", "QueryFailingReasonListForQualification")
         {
         }
 
+		private string instanceId;
+
 		private string userClientIp;
 
+		private int? limit;
+
 		private string lang;
+
+		private string qualificationType;
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -47,6 +66,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public int? Limit
+		{
+			get
+			{
+				return limit;
+			}
+			set	
+			{
+				limit = value;
+				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
 			}
 		}
 
@@ -63,9 +95,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-        public override QueryDomainSuffixResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string QualificationType
+		{
+			get
+			{
+				return qualificationType;
+			}
+			set	
+			{
+				qualificationType = value;
+				DictionaryUtil.Add(QueryParameters, "QualificationType", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override QueryFailingReasonListForQualificationResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainSuffixResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryFailingReasonListForQualificationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

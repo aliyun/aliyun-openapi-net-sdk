@@ -33,9 +33,24 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
+		private string userClientIp;
+
 		private string lang;
 
 		private string email;
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
 
 		public string Lang
 		{

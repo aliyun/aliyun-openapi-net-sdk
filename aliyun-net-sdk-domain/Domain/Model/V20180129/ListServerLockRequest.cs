@@ -26,52 +26,97 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class ListEmailVerificationRequest : RpcAcsRequest<ListEmailVerificationResponse>
+    public class ListServerLockRequest : RpcAcsRequest<ListServerLockResponse>
     {
-        public ListEmailVerificationRequest()
-            : base("Domain", "2018-01-29", "ListEmailVerification")
+        public ListServerLockRequest()
+            : base("Domain", "2018-01-29", "ListServerLock")
         {
         }
 
-		private long? beginCreateTime;
+		private string lockProductId;
 
-		private long? endCreateTime;
+		private long? endStartDate;
+
+		private int? serverLockStatus;
+
+		private long? startExpireDate;
+
+		private string domainName;
 
 		private int? pageSize;
 
 		private string userClientIp;
 
-		private string lang;
+		private long? endExpireDate;
 
 		private int? pageNum;
 
-		private string email;
+		private string lang;
 
-		private int? verificationStatus;
+		private long? beginStartDate;
 
-		public long? BeginCreateTime
+		public string LockProductId
 		{
 			get
 			{
-				return beginCreateTime;
+				return lockProductId;
 			}
 			set	
 			{
-				beginCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "BeginCreateTime", value.ToString());
+				lockProductId = value;
+				DictionaryUtil.Add(QueryParameters, "LockProductId", value);
 			}
 		}
 
-		public long? EndCreateTime
+		public long? EndStartDate
 		{
 			get
 			{
-				return endCreateTime;
+				return endStartDate;
 			}
 			set	
 			{
-				endCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndCreateTime", value.ToString());
+				endStartDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndStartDate", value.ToString());
+			}
+		}
+
+		public int? ServerLockStatus
+		{
+			get
+			{
+				return serverLockStatus;
+			}
+			set	
+			{
+				serverLockStatus = value;
+				DictionaryUtil.Add(QueryParameters, "ServerLockStatus", value.ToString());
+			}
+		}
+
+		public long? StartExpireDate
+		{
+			get
+			{
+				return startExpireDate;
+			}
+			set	
+			{
+				startExpireDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartExpireDate", value.ToString());
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -101,16 +146,16 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string Lang
+		public long? EndExpireDate
 		{
 			get
 			{
-				return lang;
+				return endExpireDate;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				endExpireDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndExpireDate", value.ToString());
 			}
 		}
 
@@ -127,29 +172,29 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string Email
+		public string Lang
 		{
 			get
 			{
-				return email;
+				return lang;
 			}
 			set	
 			{
-				email = value;
-				DictionaryUtil.Add(QueryParameters, "Email", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
-		public int? VerificationStatus
+		public long? BeginStartDate
 		{
 			get
 			{
-				return verificationStatus;
+				return beginStartDate;
 			}
 			set	
 			{
-				verificationStatus = value;
-				DictionaryUtil.Add(QueryParameters, "VerificationStatus", value.ToString());
+				beginStartDate = value;
+				DictionaryUtil.Add(QueryParameters, "BeginStartDate", value.ToString());
 			}
 		}
 
@@ -158,9 +203,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			return false;
 		}
 
-        public override ListEmailVerificationResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListServerLockResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListEmailVerificationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListServerLockResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -26,16 +26,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainSuffixRequest : RpcAcsRequest<QueryDomainSuffixResponse>
+    public class CancelQualificationVerificationRequest : RpcAcsRequest<CancelQualificationVerificationResponse>
     {
-        public QueryDomainSuffixRequest()
-            : base("Domain", "2018-01-29", "QueryDomainSuffix")
+        public CancelQualificationVerificationRequest()
+            : base("Domain", "2018-01-29", "CancelQualificationVerification")
         {
         }
+
+		private string instanceId;
 
 		private string userClientIp;
 
 		private string lang;
+
+		private string accessKeyId;
+
+		private string qualificationType;
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -63,9 +82,40 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-        public override QueryDomainSuffixResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string QualificationType
+		{
+			get
+			{
+				return qualificationType;
+			}
+			set	
+			{
+				qualificationType = value;
+				DictionaryUtil.Add(QueryParameters, "QualificationType", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CancelQualificationVerificationResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainSuffixResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CancelQualificationVerificationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

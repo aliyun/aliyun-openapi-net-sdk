@@ -26,16 +26,46 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainSuffixRequest : RpcAcsRequest<QueryDomainSuffixResponse>
+    public class CheckProcessingServerLockApplyRequest : RpcAcsRequest<CheckProcessingServerLockApplyResponse>
     {
-        public QueryDomainSuffixRequest()
-            : base("Domain", "2018-01-29", "QueryDomainSuffix")
+        public CheckProcessingServerLockApplyRequest()
+            : base("Domain", "2018-01-29", "CheckProcessingServerLockApply")
         {
         }
+
+		private int? feePeriod;
+
+		private string domainName;
 
 		private string userClientIp;
 
 		private string lang;
+
+		public int? FeePeriod
+		{
+			get
+			{
+				return feePeriod;
+			}
+			set	
+			{
+				feePeriod = value;
+				DictionaryUtil.Add(QueryParameters, "FeePeriod", value.ToString());
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -63,9 +93,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-        public override QueryDomainSuffixResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CheckProcessingServerLockApplyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainSuffixResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckProcessingServerLockApplyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

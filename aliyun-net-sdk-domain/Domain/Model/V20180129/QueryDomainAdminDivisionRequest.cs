@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainSuffixRequest : RpcAcsRequest<QueryDomainSuffixResponse>
+    public class QueryDomainAdminDivisionRequest : RpcAcsRequest<QueryDomainAdminDivisionResponse>
     {
-        public QueryDomainSuffixRequest()
-            : base("Domain", "2018-01-29", "QueryDomainSuffix")
+        public QueryDomainAdminDivisionRequest()
+            : base("Domain", "2018-01-29", "QueryDomainAdminDivision")
         {
         }
 
@@ -63,9 +63,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-        public override QueryDomainSuffixResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryDomainAdminDivisionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainSuffixResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDomainAdminDivisionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

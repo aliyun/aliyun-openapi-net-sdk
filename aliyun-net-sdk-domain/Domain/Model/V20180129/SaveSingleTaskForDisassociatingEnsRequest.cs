@@ -26,14 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainSuffixRequest : RpcAcsRequest<QueryDomainSuffixResponse>
+    public class SaveSingleTaskForDisassociatingEnsRequest : RpcAcsRequest<SaveSingleTaskForDisassociatingEnsResponse>
     {
-        public QueryDomainSuffixRequest()
-            : base("Domain", "2018-01-29", "QueryDomainSuffix")
+        public SaveSingleTaskForDisassociatingEnsRequest()
+            : base("Domain", "2018-01-29", "SaveSingleTaskForDisassociatingEns")
         {
         }
 
 		private string userClientIp;
+
+		private string domainName;
 
 		private string lang;
 
@@ -50,6 +52,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
 		public string Lang
 		{
 			get
@@ -63,9 +78,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-        public override QueryDomainSuffixResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SaveSingleTaskForDisassociatingEnsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainSuffixResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveSingleTaskForDisassociatingEnsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

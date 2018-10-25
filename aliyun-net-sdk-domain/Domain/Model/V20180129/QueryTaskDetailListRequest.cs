@@ -37,11 +37,11 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string instanceId;
 
-		private string userClientIp;
-
 		private string taskNo;
 
 		private string domainName;
+
+		private string userClientIp;
 
 		private int? pageSize;
 
@@ -75,19 +75,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
 		public string TaskNo
 		{
 			get
@@ -111,6 +98,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

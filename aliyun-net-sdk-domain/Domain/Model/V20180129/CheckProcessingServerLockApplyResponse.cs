@@ -17,55 +17,39 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain.Transform;
-using Aliyun.Acs.Domain.Transform.V20180129;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainSuffixRequest : RpcAcsRequest<QueryDomainSuffixResponse>
-    {
-        public QueryDomainSuffixRequest()
-            : base("Domain", "2018-01-29", "QueryDomainSuffix")
-        {
-        }
+	public class CheckProcessingServerLockApplyResponse : AcsResponse
+	{
 
-		private string userClientIp;
+		private string requestId;
 
-		private string lang;
+		private bool? exists;
 
-		public string UserClientIp
+		public string RequestId
 		{
 			get
 			{
-				return userClientIp;
+				return requestId;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				requestId = value;
 			}
 		}
 
-		public string Lang
+		public bool? Exists
 		{
 			get
 			{
-				return lang;
+				return exists;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				exists = value;
 			}
 		}
-
-        public override QueryDomainSuffixResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
-        {
-            return QueryDomainSuffixResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+	}
 }

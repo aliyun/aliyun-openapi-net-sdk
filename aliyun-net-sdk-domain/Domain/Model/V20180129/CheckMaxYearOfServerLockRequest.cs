@@ -26,16 +26,33 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainSuffixRequest : RpcAcsRequest<QueryDomainSuffixResponse>
+    public class CheckMaxYearOfServerLockRequest : RpcAcsRequest<CheckMaxYearOfServerLockResponse>
     {
-        public QueryDomainSuffixRequest()
-            : base("Domain", "2018-01-29", "QueryDomainSuffix")
+        public CheckMaxYearOfServerLockRequest()
+            : base("Domain", "2018-01-29", "CheckMaxYearOfServerLock")
         {
         }
 
+		private string domainName;
+
 		private string userClientIp;
 
+		private string checkAction;
+
 		private string lang;
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -47,6 +64,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public string CheckAction
+		{
+			get
+			{
+				return checkAction;
+			}
+			set	
+			{
+				checkAction = value;
+				DictionaryUtil.Add(QueryParameters, "CheckAction", value);
 			}
 		}
 
@@ -63,9 +93,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-        public override QueryDomainSuffixResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CheckMaxYearOfServerLockResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainSuffixResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckMaxYearOfServerLockResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

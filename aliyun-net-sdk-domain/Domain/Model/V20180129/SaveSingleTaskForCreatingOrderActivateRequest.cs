@@ -77,6 +77,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string telephone;
 
+		private bool? trademarkDomainActivation;
+
 		private string zhProvince;
 
 		private string registrantOrganization;
@@ -370,6 +372,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				telephone = value;
 				DictionaryUtil.Add(QueryParameters, "Telephone", value);
+			}
+		}
+
+		public bool? TrademarkDomainActivation
+		{
+			get
+			{
+				return trademarkDomainActivation;
+			}
+			set	
+			{
+				trademarkDomainActivation = value;
+				DictionaryUtil.Add(QueryParameters, "TrademarkDomainActivation", value.ToString());
 			}
 		}
 

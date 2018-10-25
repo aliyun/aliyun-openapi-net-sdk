@@ -39,7 +39,11 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string domainName;
 
+		private string userClientIp;
+
 		private string feeCommand;
+
+		private string lang;
 
 		public string FeeCurrency
 		{
@@ -80,6 +84,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
 		public string FeeCommand
 		{
 			get
@@ -90,6 +107,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				feeCommand = value;
 				DictionaryUtil.Add(QueryParameters, "FeeCommand", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

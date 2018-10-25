@@ -26,16 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainSuffixRequest : RpcAcsRequest<QueryDomainSuffixResponse>
+    public class CheckDomainSunriseClaimRequest : RpcAcsRequest<CheckDomainSunriseClaimResponse>
     {
-        public QueryDomainSuffixRequest()
-            : base("Domain", "2018-01-29", "QueryDomainSuffix")
+        public CheckDomainSunriseClaimRequest()
+            : base("Domain", "2018-01-29", "CheckDomainSunriseClaim")
         {
         }
+
+		private string domainName;
 
 		private string userClientIp;
 
 		private string lang;
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -63,9 +78,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-        public override QueryDomainSuffixResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CheckDomainSunriseClaimResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainSuffixResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckDomainSunriseClaimResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

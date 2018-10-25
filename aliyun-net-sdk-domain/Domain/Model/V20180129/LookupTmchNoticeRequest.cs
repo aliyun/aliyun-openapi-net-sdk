@@ -26,16 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainSuffixRequest : RpcAcsRequest<QueryDomainSuffixResponse>
+    public class LookupTmchNoticeRequest : RpcAcsRequest<LookupTmchNoticeResponse>
     {
-        public QueryDomainSuffixRequest()
-            : base("Domain", "2018-01-29", "QueryDomainSuffix")
+        public LookupTmchNoticeRequest()
+            : base("Domain", "2018-01-29", "LookupTmchNotice")
         {
         }
+
+		private string claimKey;
 
 		private string userClientIp;
 
 		private string lang;
+
+		public string ClaimKey
+		{
+			get
+			{
+				return claimKey;
+			}
+			set	
+			{
+				claimKey = value;
+				DictionaryUtil.Add(QueryParameters, "ClaimKey", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -63,9 +78,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-        public override QueryDomainSuffixResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override LookupTmchNoticeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainSuffixResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return LookupTmchNoticeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

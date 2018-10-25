@@ -26,16 +26,33 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class QueryDomainSuffixRequest : RpcAcsRequest<QueryDomainSuffixResponse>
+    public class SaveSingleTaskForAssociatingEnsRequest : RpcAcsRequest<SaveSingleTaskForAssociatingEnsResponse>
     {
-        public QueryDomainSuffixRequest()
-            : base("Domain", "2018-01-29", "QueryDomainSuffix")
+        public SaveSingleTaskForAssociatingEnsRequest()
+            : base("Domain", "2018-01-29", "SaveSingleTaskForAssociatingEns")
         {
         }
 
+		private string address;
+
 		private string userClientIp;
 
+		private string domainName;
+
 		private string lang;
+
+		public string Address
+		{
+			get
+			{
+				return address;
+			}
+			set	
+			{
+				address = value;
+				DictionaryUtil.Add(QueryParameters, "Address", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -47,6 +64,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -63,9 +93,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-        public override QueryDomainSuffixResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SaveSingleTaskForAssociatingEnsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryDomainSuffixResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveSingleTaskForAssociatingEnsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
