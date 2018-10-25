@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7cdc02ba-a5fb-435c-9a99-058eb2e9e073}</ProjectGuid>
+    <ProjectGuid>{11dd823c-9e54-49db-9617-5897d19525ba}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -93,10 +93,13 @@
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForModifyingDomainDnsRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForDomainNameProxyServiceRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForApprovingTransferOutRequest.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\LookupTmchNoticeRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\VerifyEmailResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForModifyingDnsHostResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryDnsHostRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryLocalEnsAssociationResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\CheckDomainSunriseClaimResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\CheckDomainSunriseClaimRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForCancelingTransferOutResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForUpdatingContactInfoByNewContactResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForCancelingTransferOutRequest.cs" />
@@ -117,6 +120,7 @@
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForCreatingOrderRenewRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\CheckTransferInFeasibilityResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForUpdatingContactInfoResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\LookupTmchNoticeResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForCreatingOrderRenewResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryTaskListRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForCreatingOrderRenewResponse.cs" />
@@ -203,12 +207,14 @@
 	<Compile Include="Domain_intl\Transform\V20171218\TransferInResendMailTokenResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryContactInfoResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForCancelingTransferInResponseUnmarshaller.cs" />
+	<Compile Include="Domain_intl\Transform\V20171218\CheckDomainSunriseClaimResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\TransferInReenterTransferAuthorizationCodeResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\ResendEmailVerificationResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveBatchTaskForUpdatingContactInfoByNewContactResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryTaskListResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryTransferInListResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryDomainByInstanceIdResponseUnmarshaller.cs" />
+	<Compile Include="Domain_intl\Transform\V20171218\LookupTmchNoticeResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForCreatingOrderRenewResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\ConfirmTransferInEmailResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\DeleteRegistrantProfileResponseUnmarshaller.cs" />

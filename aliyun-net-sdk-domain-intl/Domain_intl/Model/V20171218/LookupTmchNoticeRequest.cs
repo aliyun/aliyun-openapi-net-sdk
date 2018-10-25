@@ -26,61 +26,29 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-    public class CheckDomainRequest : RpcAcsRequest<CheckDomainResponse>
+    public class LookupTmchNoticeRequest : RpcAcsRequest<LookupTmchNoticeResponse>
     {
-        public CheckDomainRequest()
-            : base("Domain_intl", "2017-12-18", "CheckDomain", "domain", "openAPI")
+        public LookupTmchNoticeRequest()
+            : base("Domain_intl", "2017-12-18", "LookupTmchNotice", "domain", "openAPI")
         {
         }
 
-		private string feeCurrency;
-
-		private int? feePeriod;
-
-		private string domainName;
+		private string claimKey;
 
 		private string userClientIp;
 
-		private string feeCommand;
-
 		private string lang;
 
-		public string FeeCurrency
+		public string ClaimKey
 		{
 			get
 			{
-				return feeCurrency;
+				return claimKey;
 			}
 			set	
 			{
-				feeCurrency = value;
-				DictionaryUtil.Add(QueryParameters, "FeeCurrency", value);
-			}
-		}
-
-		public int? FeePeriod
-		{
-			get
-			{
-				return feePeriod;
-			}
-			set	
-			{
-				feePeriod = value;
-				DictionaryUtil.Add(QueryParameters, "FeePeriod", value.ToString());
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				claimKey = value;
+				DictionaryUtil.Add(QueryParameters, "ClaimKey", value);
 			}
 		}
 
@@ -97,19 +65,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string FeeCommand
-		{
-			get
-			{
-				return feeCommand;
-			}
-			set	
-			{
-				feeCommand = value;
-				DictionaryUtil.Add(QueryParameters, "FeeCommand", value);
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -123,9 +78,9 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-        public override CheckDomainResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override LookupTmchNoticeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CheckDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return LookupTmchNoticeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -23,21 +23,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 {
-    public class CheckDomainResponseUnmarshaller
+    public class CheckDomainSunriseClaimResponseUnmarshaller
     {
-        public static CheckDomainResponse Unmarshall(UnmarshallerContext context)
+        public static CheckDomainSunriseClaimResponse Unmarshall(UnmarshallerContext context)
         {
-			CheckDomainResponse checkDomainResponse = new CheckDomainResponse();
+			CheckDomainSunriseClaimResponse checkDomainSunriseClaimResponse = new CheckDomainSunriseClaimResponse();
 
-			checkDomainResponse.HttpResponse = context.HttpResponse;
-			checkDomainResponse.RequestId = context.StringValue("CheckDomain.RequestId");
-			checkDomainResponse.DomainName = context.StringValue("CheckDomain.DomainName");
-			checkDomainResponse.Avail = context.StringValue("CheckDomain.Avail");
-			checkDomainResponse.Premium = context.StringValue("CheckDomain.Premium");
-			checkDomainResponse.Reason = context.StringValue("CheckDomain.Reason");
-			checkDomainResponse.Price = context.LongValue("CheckDomain.Price");
+			checkDomainSunriseClaimResponse.HttpResponse = context.HttpResponse;
+			checkDomainSunriseClaimResponse.RequestId = context.StringValue("CheckDomainSunriseClaim.RequestId");
+			checkDomainSunriseClaimResponse.Result = context.IntegerValue("CheckDomainSunriseClaim.Result");
+			checkDomainSunriseClaimResponse.ClaimKey = context.StringValue("CheckDomainSunriseClaim.ClaimKey");
         
-			return checkDomainResponse;
+			return checkDomainSunriseClaimResponse;
         }
     }
 }

@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string telephone;
 
+		private bool? trademarkDomainActivation;
+
 		private bool? aliyunDns;
 
 		private string registrantOrganization;
@@ -215,6 +217,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				telephone = value;
 				DictionaryUtil.Add(QueryParameters, "Telephone", value);
+			}
+		}
+
+		public bool? TrademarkDomainActivation
+		{
+			get
+			{
+				return trademarkDomainActivation;
+			}
+			set	
+			{
+				trademarkDomainActivation = value;
+				DictionaryUtil.Add(QueryParameters, "TrademarkDomainActivation", value.ToString());
 			}
 		}
 

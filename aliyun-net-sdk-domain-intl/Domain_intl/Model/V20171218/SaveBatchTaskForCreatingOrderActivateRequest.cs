@@ -62,6 +62,7 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".DomainName", orderActivateParams[i].DomainName);
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".RegistrantProfileId", orderActivateParams[i].RegistrantProfileId);
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Telephone", orderActivateParams[i].Telephone);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".TrademarkDomainActivation", orderActivateParams[i].TrademarkDomainActivation);
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".AliyunDns", orderActivateParams[i].AliyunDns);
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".RegistrantOrganization", orderActivateParams[i].RegistrantOrganization);
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".TelExt", orderActivateParams[i].TelExt);
@@ -124,6 +125,8 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			private long? registrantProfileId;
 
 			private string telephone;
+
+			private bool? trademarkDomainActivation;
 
 			private bool? aliyunDns;
 
@@ -270,6 +273,18 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				set	
 				{
 					telephone = value;
+				}
+			}
+
+			public bool? TrademarkDomainActivation
+			{
+				get
+				{
+					return trademarkDomainActivation;
+				}
+				set	
+				{
+					trademarkDomainActivation = value;
 				}
 			}
 

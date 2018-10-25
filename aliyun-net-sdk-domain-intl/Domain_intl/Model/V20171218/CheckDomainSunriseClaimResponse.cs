@@ -21,20 +21,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-	public class CheckDomainResponse : AcsResponse
+	public class CheckDomainSunriseClaimResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string domainName;
+		private int? result;
 
-		private string avail;
-
-		private string premium;
-
-		private string reason;
-
-		private long? price;
+		private string claimKey;
 
 		public string RequestId
 		{
@@ -48,63 +42,27 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string DomainName
+		public int? Result
 		{
 			get
 			{
-				return domainName;
+				return result;
 			}
 			set	
 			{
-				domainName = value;
+				result = value;
 			}
 		}
 
-		public string Avail
+		public string ClaimKey
 		{
 			get
 			{
-				return avail;
+				return claimKey;
 			}
 			set	
 			{
-				avail = value;
-			}
-		}
-
-		public string Premium
-		{
-			get
-			{
-				return premium;
-			}
-			set	
-			{
-				premium = value;
-			}
-		}
-
-		public string Reason
-		{
-			get
-			{
-				return reason;
-			}
-			set	
-			{
-				reason = value;
-			}
-		}
-
-		public long? Price
-		{
-			get
-			{
-				return price;
-			}
-			set	
-			{
-				price = value;
+				claimKey = value;
 			}
 		}
 	}

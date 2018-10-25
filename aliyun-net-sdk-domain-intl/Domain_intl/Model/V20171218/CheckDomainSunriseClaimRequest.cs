@@ -26,50 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-    public class CheckDomainRequest : RpcAcsRequest<CheckDomainResponse>
+    public class CheckDomainSunriseClaimRequest : RpcAcsRequest<CheckDomainSunriseClaimResponse>
     {
-        public CheckDomainRequest()
-            : base("Domain_intl", "2017-12-18", "CheckDomain", "domain", "openAPI")
+        public CheckDomainSunriseClaimRequest()
+            : base("Domain_intl", "2017-12-18", "CheckDomainSunriseClaim", "domain", "openAPI")
         {
         }
-
-		private string feeCurrency;
-
-		private int? feePeriod;
 
 		private string domainName;
 
 		private string userClientIp;
 
-		private string feeCommand;
-
 		private string lang;
-
-		public string FeeCurrency
-		{
-			get
-			{
-				return feeCurrency;
-			}
-			set	
-			{
-				feeCurrency = value;
-				DictionaryUtil.Add(QueryParameters, "FeeCurrency", value);
-			}
-		}
-
-		public int? FeePeriod
-		{
-			get
-			{
-				return feePeriod;
-			}
-			set	
-			{
-				feePeriod = value;
-				DictionaryUtil.Add(QueryParameters, "FeePeriod", value.ToString());
-			}
-		}
 
 		public string DomainName
 		{
@@ -97,19 +65,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string FeeCommand
-		{
-			get
-			{
-				return feeCommand;
-			}
-			set	
-			{
-				feeCommand = value;
-				DictionaryUtil.Add(QueryParameters, "FeeCommand", value);
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -123,9 +78,9 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-        public override CheckDomainResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CheckDomainSunriseClaimResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CheckDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckDomainSunriseClaimResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
