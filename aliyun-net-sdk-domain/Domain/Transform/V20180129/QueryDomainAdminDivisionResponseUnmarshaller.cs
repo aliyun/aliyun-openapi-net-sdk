@@ -31,12 +31,6 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 
 			queryDomainAdminDivisionResponse.HttpResponse = context.HttpResponse;
 			queryDomainAdminDivisionResponse.RequestId = context.StringValue("QueryDomainAdminDivision.RequestId");
-			queryDomainAdminDivisionResponse.TotalItemNum = context.IntegerValue("QueryDomainAdminDivision.TotalItemNum");
-			queryDomainAdminDivisionResponse.CurrentPageNum = context.IntegerValue("QueryDomainAdminDivision.CurrentPageNum");
-			queryDomainAdminDivisionResponse.TotalPageNum = context.IntegerValue("QueryDomainAdminDivision.TotalPageNum");
-			queryDomainAdminDivisionResponse.PageSize = context.IntegerValue("QueryDomainAdminDivision.PageSize");
-			queryDomainAdminDivisionResponse.PrePage = context.BooleanValue("QueryDomainAdminDivision.PrePage");
-			queryDomainAdminDivisionResponse.NextPage = context.BooleanValue("QueryDomainAdminDivision.NextPage");
 
 			List<QueryDomainAdminDivisionResponse.QueryDomainAdminDivision_AdminDivision> queryDomainAdminDivisionResponse_adminDivisions = new List<QueryDomainAdminDivisionResponse.QueryDomainAdminDivision_AdminDivision>();
 			for (int i = 0; i < context.Length("QueryDomainAdminDivision.AdminDivisions.Length"); i++) {
