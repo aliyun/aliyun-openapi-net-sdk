@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 
 				private float? similarityScore;
 
+				private string auditConclusions;
+
 				public int? StatusCode
 				{
 					get
@@ -153,6 +155,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 					set	
 					{
 						similarityScore = value;
+					}
+				}
+
+				public string AuditConclusions
+				{
+					get
+					{
+						return auditConclusions;
+					}
+					set	
+					{
+						auditConclusions = value;
 					}
 				}
 			}
