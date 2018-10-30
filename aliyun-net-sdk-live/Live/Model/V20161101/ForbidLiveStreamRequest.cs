@@ -33,75 +33,23 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
-		private string appName;
-
-		private string action;
-
-		private string streamName;
-
-		private string controlStreamAction;
-
 		private string resumeTime;
+
+		private string appName;
 
 		private string liveStreamType;
 
 		private string domainName;
 
+		private string action;
+
 		private long? ownerId;
 
 		private string oneshot;
 
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
+		private string streamName;
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
-
-		public string ControlStreamAction
-		{
-			get
-			{
-				return controlStreamAction;
-			}
-			set	
-			{
-				controlStreamAction = value;
-				DictionaryUtil.Add(QueryParameters, "ControlStreamAction", value);
-			}
-		}
+		private string controlStreamAction;
 
 		public string ResumeTime
 		{
@@ -113,6 +61,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				resumeTime = value;
 				DictionaryUtil.Add(QueryParameters, "ResumeTime", value);
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -142,6 +103,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -165,6 +139,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				oneshot = value;
 				DictionaryUtil.Add(QueryParameters, "Oneshot", value);
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string ControlStreamAction
+		{
+			get
+			{
+				return controlStreamAction;
+			}
+			set	
+			{
+				controlStreamAction = value;
+				DictionaryUtil.Add(QueryParameters, "ControlStreamAction", value);
 			}
 		}
 

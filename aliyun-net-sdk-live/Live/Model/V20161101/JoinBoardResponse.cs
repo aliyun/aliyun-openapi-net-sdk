@@ -32,6 +32,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string topicId;
 
+		private string keepaliveTopic;
+
+		private int? keepaliveInterval;
+
 		public string RequestId
 		{
 			get
@@ -77,6 +81,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				topicId = value;
+			}
+		}
+
+		public string KeepaliveTopic
+		{
+			get
+			{
+				return keepaliveTopic;
+			}
+			set	
+			{
+				keepaliveTopic = value;
+			}
+		}
+
+		public int? KeepaliveInterval
+		{
+			get
+			{
+				return keepaliveInterval;
+			}
+			set	
+			{
+				keepaliveInterval = value;
 			}
 		}
 	}

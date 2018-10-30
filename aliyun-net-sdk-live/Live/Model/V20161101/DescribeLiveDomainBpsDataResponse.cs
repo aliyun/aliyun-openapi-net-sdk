@@ -21,16 +21,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeRoomListResponse : AcsResponse
+	public class DescribeLiveDomainBpsDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? totalNum;
+		private string domainName;
 
-		private int? totalPage;
+		private string startTime;
 
-		private List<DescribeRoomList_Room> roomList;
+		private string endTime;
+
+		private string dataInterval;
+
+		private List<DescribeLiveDomainBpsData_DataModule> bpsDataPerInterval;
 
 		public string RequestId
 		{
@@ -44,112 +48,122 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalNum
+		public string DomainName
 		{
 			get
 			{
-				return totalNum;
+				return domainName;
 			}
 			set	
 			{
-				totalNum = value;
+				domainName = value;
 			}
 		}
 
-		public int? TotalPage
+		public string StartTime
 		{
 			get
 			{
-				return totalPage;
+				return startTime;
 			}
 			set	
 			{
-				totalPage = value;
+				startTime = value;
 			}
 		}
 
-		public List<DescribeRoomList_Room> RoomList
+		public string EndTime
 		{
 			get
 			{
-				return roomList;
+				return endTime;
 			}
 			set	
 			{
-				roomList = value;
+				endTime = value;
 			}
 		}
 
-		public class DescribeRoomList_Room
+		public string DataInterval
+		{
+			get
+			{
+				return dataInterval;
+			}
+			set	
+			{
+				dataInterval = value;
+			}
+		}
+
+		public List<DescribeLiveDomainBpsData_DataModule> BpsDataPerInterval
+		{
+			get
+			{
+				return bpsDataPerInterval;
+			}
+			set	
+			{
+				bpsDataPerInterval = value;
+			}
+		}
+
+		public class DescribeLiveDomainBpsData_DataModule
 		{
 
-			private string roomId;
+			private string timeStamp;
 
-			private string anchorId;
+			private string bpsValue;
 
-			private int? roomStatus;
+			private string httpBpsValue;
 
-			private string forbidStream;
+			private string httpsBpsValue;
 
-			private string createTime;
-
-			public string RoomId
+			public string TimeStamp
 			{
 				get
 				{
-					return roomId;
+					return timeStamp;
 				}
 				set	
 				{
-					roomId = value;
+					timeStamp = value;
 				}
 			}
 
-			public string AnchorId
+			public string BpsValue
 			{
 				get
 				{
-					return anchorId;
+					return bpsValue;
 				}
 				set	
 				{
-					anchorId = value;
+					bpsValue = value;
 				}
 			}
 
-			public int? RoomStatus
+			public string HttpBpsValue
 			{
 				get
 				{
-					return roomStatus;
+					return httpBpsValue;
 				}
 				set	
 				{
-					roomStatus = value;
+					httpBpsValue = value;
 				}
 			}
 
-			public string ForbidStream
+			public string HttpsBpsValue
 			{
 				get
 				{
-					return forbidStream;
+					return httpsBpsValue;
 				}
 				set	
 				{
-					forbidStream = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
+					httpsBpsValue = value;
 				}
 			}
 		}

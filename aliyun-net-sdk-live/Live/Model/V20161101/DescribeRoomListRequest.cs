@@ -33,6 +33,10 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
+		private string startTime;
+
+		private string anchorId;
+
 		private int? pageNum;
 
 		private int? roomStatus;
@@ -43,9 +47,39 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string order;
 
+		private string endTime;
+
 		private long? ownerId;
 
+		private string roomId;
+
 		private string appId;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string AnchorId
+		{
+			get
+			{
+				return anchorId;
+			}
+			set	
+			{
+				anchorId = value;
+				DictionaryUtil.Add(QueryParameters, "AnchorId", value);
+			}
+		}
 
 		public int? PageNum
 		{
@@ -112,6 +146,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -122,6 +169,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string RoomId
+		{
+			get
+			{
+				return roomId;
+			}
+			set	
+			{
+				roomId = value;
+				DictionaryUtil.Add(QueryParameters, "RoomId", value);
 			}
 		}
 

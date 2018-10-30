@@ -45,6 +45,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
+		private string interval;
+
 		public string StartTime
 		{
 			get
@@ -120,6 +122,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

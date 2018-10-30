@@ -21,16 +21,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeRoomListResponse : AcsResponse
+	public class DescribeLiveDomainTrafficDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? totalNum;
+		private string domainName;
 
-		private int? totalPage;
+		private string startTime;
 
-		private List<DescribeRoomList_Room> roomList;
+		private string endTime;
+
+		private string dataInterval;
+
+		private List<DescribeLiveDomainTrafficData_DataModule> trafficDataPerInterval;
 
 		public string RequestId
 		{
@@ -44,112 +48,122 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalNum
+		public string DomainName
 		{
 			get
 			{
-				return totalNum;
+				return domainName;
 			}
 			set	
 			{
-				totalNum = value;
+				domainName = value;
 			}
 		}
 
-		public int? TotalPage
+		public string StartTime
 		{
 			get
 			{
-				return totalPage;
+				return startTime;
 			}
 			set	
 			{
-				totalPage = value;
+				startTime = value;
 			}
 		}
 
-		public List<DescribeRoomList_Room> RoomList
+		public string EndTime
 		{
 			get
 			{
-				return roomList;
+				return endTime;
 			}
 			set	
 			{
-				roomList = value;
+				endTime = value;
 			}
 		}
 
-		public class DescribeRoomList_Room
+		public string DataInterval
+		{
+			get
+			{
+				return dataInterval;
+			}
+			set	
+			{
+				dataInterval = value;
+			}
+		}
+
+		public List<DescribeLiveDomainTrafficData_DataModule> TrafficDataPerInterval
+		{
+			get
+			{
+				return trafficDataPerInterval;
+			}
+			set	
+			{
+				trafficDataPerInterval = value;
+			}
+		}
+
+		public class DescribeLiveDomainTrafficData_DataModule
 		{
 
-			private string roomId;
+			private string timeStamp;
 
-			private string anchorId;
+			private string trafficValue;
 
-			private int? roomStatus;
+			private string httpTrafficValue;
 
-			private string forbidStream;
+			private string httpsTrafficValue;
 
-			private string createTime;
-
-			public string RoomId
+			public string TimeStamp
 			{
 				get
 				{
-					return roomId;
+					return timeStamp;
 				}
 				set	
 				{
-					roomId = value;
+					timeStamp = value;
 				}
 			}
 
-			public string AnchorId
+			public string TrafficValue
 			{
 				get
 				{
-					return anchorId;
+					return trafficValue;
 				}
 				set	
 				{
-					anchorId = value;
+					trafficValue = value;
 				}
 			}
 
-			public int? RoomStatus
+			public string HttpTrafficValue
 			{
 				get
 				{
-					return roomStatus;
+					return httpTrafficValue;
 				}
 				set	
 				{
-					roomStatus = value;
+					httpTrafficValue = value;
 				}
 			}
 
-			public string ForbidStream
+			public string HttpsTrafficValue
 			{
 				get
 				{
-					return forbidStream;
+					return httpsTrafficValue;
 				}
 				set	
 				{
-					forbidStream = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
+					httpsTrafficValue = value;
 				}
 			}
 		}

@@ -40,6 +40,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				room.RoomId = context.StringValue("DescribeRoomList.RoomList["+ i +"].RoomId");
 				room.AnchorId = context.StringValue("DescribeRoomList.RoomList["+ i +"].AnchorId");
 				room.RoomStatus = context.IntegerValue("DescribeRoomList.RoomList["+ i +"].RoomStatus");
+				room.ForbidStream = context.StringValue("DescribeRoomList.RoomList["+ i +"].ForbidStream");
 				room.CreateTime = context.StringValue("DescribeRoomList.RoomList["+ i +"].CreateTime");
 
 				describeRoomListResponse_roomList.Add(room);

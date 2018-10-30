@@ -34,6 +34,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			joinBoardResponse.Token = context.StringValue("JoinBoard.Token");
 			joinBoardResponse.BoardId = context.StringValue("JoinBoard.BoardId");
 			joinBoardResponse.TopicId = context.StringValue("JoinBoard.TopicId");
+			joinBoardResponse.KeepaliveTopic = context.StringValue("JoinBoard.KeepaliveTopic");
+			joinBoardResponse.KeepaliveInterval = context.IntegerValue("JoinBoard.KeepaliveInterval");
         
 			return joinBoardResponse;
         }
