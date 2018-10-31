@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4ee5f542-3dc2-4b08-91f7-5f16562242cb}</ProjectGuid>
+    <ProjectGuid>{b814f0b8-3c66-4e3f-be40-c78599bcf6d8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -346,6 +346,7 @@
 	<Compile Include="Cdn\Model\V20180510\DescribeFCTriggerRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeCdnCertificateDetailRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\SetVideoSeekConfigRequest.cs" />
+	<Compile Include="Cdn\Model\V20180510\SetWaitingRoomConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeRangeDataByLocateAndIspServiceRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeRangeDataByLocateAndIspServiceResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeTopDomainsByFlowResponse.cs" />
@@ -494,6 +495,7 @@
 	<Compile Include="Cdn\Model\V20180510\SetPageCompressConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\SetForwardSchemeConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\BatchDeleteCdnDomainConfigResponse.cs" />
+	<Compile Include="Cdn\Model\V20180510\SetWaitingRoomConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeRefreshTasksRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\SetReqAuthConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainRealTimeHttpCodeDataRequest.cs" />
@@ -656,6 +658,7 @@
 	<Compile Include="Cdn\Transform\V20180510\DescribeCustomLogConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\ModifyCdnServiceResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeDomainAverageResponseTimeResponseUnmarshaller.cs" />
+	<Compile Include="Cdn\Transform\V20180510\SetWaitingRoomConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeDomainRegionDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeDomainTrafficDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeUserDomainsResponseUnmarshaller.cs" />
