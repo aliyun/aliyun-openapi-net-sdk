@@ -138,7 +138,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "startTime", value);
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
