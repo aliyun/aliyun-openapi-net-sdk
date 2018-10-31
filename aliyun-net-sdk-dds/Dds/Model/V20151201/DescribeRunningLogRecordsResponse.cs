@@ -21,14 +21,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-	public class DescribeReplicaSetRoleResponse : AcsResponse
+	public class DescribeRunningLogRecordsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string dBInstanceId;
+		private string engine;
 
-		private List<DescribeReplicaSetRole_ReplicaSet> replicaSets;
+		private int? totalRecordCount;
+
+		private int? pageNumber;
+
+		private int? pageRecordCount;
+
+		private List<DescribeRunningLogRecords_LogRecords> items;
 
 		public string RequestId
 		{
@@ -42,114 +48,136 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string DBInstanceId
+		public string Engine
 		{
 			get
 			{
-				return dBInstanceId;
+				return engine;
 			}
 			set	
 			{
-				dBInstanceId = value;
+				engine = value;
 			}
 		}
 
-		public List<DescribeReplicaSetRole_ReplicaSet> ReplicaSets
+		public int? TotalRecordCount
 		{
 			get
 			{
-				return replicaSets;
+				return totalRecordCount;
 			}
 			set	
 			{
-				replicaSets = value;
+				totalRecordCount = value;
 			}
 		}
 
-		public class DescribeReplicaSetRole_ReplicaSet
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
+
+		public List<DescribeRunningLogRecords_LogRecords> Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+			}
+		}
+
+		public class DescribeRunningLogRecords_LogRecords
 		{
 
-			private string replicaSetRole;
+			private int? id;
 
-			private string roleId;
+			private string createTime;
 
-			private string connectionDomain;
+			private string category;
 
-			private string connectionPort;
+			private string connInfo;
 
-			private string expiredTime;
+			private long? content;
 
-			private string networkType;
-
-			public string ReplicaSetRole
+			public int? Id
 			{
 				get
 				{
-					return replicaSetRole;
+					return id;
 				}
 				set	
 				{
-					replicaSetRole = value;
+					id = value;
 				}
 			}
 
-			public string RoleId
+			public string CreateTime
 			{
 				get
 				{
-					return roleId;
+					return createTime;
 				}
 				set	
 				{
-					roleId = value;
+					createTime = value;
 				}
 			}
 
-			public string ConnectionDomain
+			public string Category
 			{
 				get
 				{
-					return connectionDomain;
+					return category;
 				}
 				set	
 				{
-					connectionDomain = value;
+					category = value;
 				}
 			}
 
-			public string ConnectionPort
+			public string ConnInfo
 			{
 				get
 				{
-					return connectionPort;
+					return connInfo;
 				}
 				set	
 				{
-					connectionPort = value;
+					connInfo = value;
 				}
 			}
 
-			public string ExpiredTime
+			public long? Content
 			{
 				get
 				{
-					return expiredTime;
+					return content;
 				}
 				set	
 				{
-					expiredTime = value;
-				}
-			}
-
-			public string NetworkType
-			{
-				get
-				{
-					return networkType;
-				}
-				set	
-				{
-					networkType = value;
+					content = value;
 				}
 			}
 		}

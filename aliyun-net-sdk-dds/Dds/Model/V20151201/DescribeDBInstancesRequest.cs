@@ -33,9 +33,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         {
         }
 
-		private long? resourceOwnerId;
+		private string expireTime;
 
-		private string dBInstanceIds;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
@@ -51,15 +51,36 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceType;
 
+		private string dBInstanceClass;
+
 		private string expired;
 
 		private string securityToken;
 
-		private string engine;
-
 		private int? pageSize;
 
 		private string action;
+
+		private string zoneId;
+
+		private string dBInstanceId;
+
+		private string dBInstanceDescription;
+
+		private string dBInstanceStatus;
+
+		public string ExpireTime
+		{
+			get
+			{
+				return expireTime;
+			}
+			set	
+			{
+				expireTime = value;
+				DictionaryUtil.Add(QueryParameters, "ExpireTime", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -71,19 +92,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string DBInstanceIds
-		{
-			get
-			{
-				return dBInstanceIds;
-			}
-			set	
-			{
-				dBInstanceIds = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIds", value);
 			}
 		}
 
@@ -178,6 +186,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string DBInstanceClass
+		{
+			get
+			{
+				return dBInstanceClass;
+			}
+			set	
+			{
+				dBInstanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
+			}
+		}
+
 		public string Expired
 		{
 			get
@@ -204,19 +225,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -240,6 +248,58 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string DBInstanceDescription
+		{
+			get
+			{
+				return dBInstanceDescription;
+			}
+			set	
+			{
+				dBInstanceDescription = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
+			}
+		}
+
+		public string DBInstanceStatus
+		{
+			get
+			{
+				return dBInstanceStatus;
+			}
+			set	
+			{
+				dBInstanceStatus = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStatus", value);
 			}
 		}
 

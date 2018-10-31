@@ -26,40 +26,30 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeBackupsRequest : RpcAcsRequest<DescribeBackupsResponse>
+    public class ModifyActiveOperationTaskRequest : RpcAcsRequest<ModifyActiveOperationTaskResponse>
     {
-        public DescribeBackupsRequest()
-            : base("Dds", "2015-12-01", "DescribeBackups", "dds", "openAPI")
+        public ModifyActiveOperationTaskRequest()
+            : base("Dds", "2015-12-01", "ModifyActiveOperationTask", "dds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private string securityToken;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string backupId;
+		private string action;
 
-		private string endTime;
+		private string ids;
 
-		private string startTime;
+		private string switchTime;
 
 		private long? ownerId;
 
-		private int? pageNumber;
-
 		private string accessKeyId;
-
-		private string securityToken;
-
-		private int? pageSize;
-
-		private string action;
-
-		private string dBInstanceId;
-
-		private string nodeId;
 
 		public long? ResourceOwnerId
 		{
@@ -71,6 +61,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -100,42 +103,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string BackupId
+		public string Action
 		{
 			get
 			{
-				return backupId;
+				return action;
 			}
 			set	
 			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string EndTime
+		public string Ids
 		{
 			get
 			{
-				return endTime;
+				return ids;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				ids = value;
+				DictionaryUtil.Add(QueryParameters, "Ids", value);
 			}
 		}
 
-		public string StartTime
+		public string SwitchTime
 		{
 			get
 			{
-				return startTime;
+				return switchTime;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				switchTime = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
 			}
 		}
 
@@ -152,19 +155,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -178,74 +168,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string NodeId
-		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
-			}
-		}
-
-        public override DescribeBackupsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyActiveOperationTaskResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBackupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyActiveOperationTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

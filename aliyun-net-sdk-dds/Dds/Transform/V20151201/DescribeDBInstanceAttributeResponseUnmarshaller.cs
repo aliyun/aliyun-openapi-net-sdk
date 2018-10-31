@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.ReplacateId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplacateId");
 				dBInstance.VPCId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].VPCId");
 				dBInstance.VSwitchId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].VSwitchId");
+				dBInstance.VPCCloudInstanceIds = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].VPCCloudInstanceIds");
 				dBInstance.DBInstanceStatus = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceStatus");
 				dBInstance.LockMode = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].LockMode");
 				dBInstance.ChargeType = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ChargeType");
@@ -73,6 +74,9 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					mongosAttribute.MaxIOPS = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].MaxIOPS");
 					mongosAttribute.MaxConnections = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].MaxConnections");
 					mongosAttribute.Port = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].Port");
+					mongosAttribute.VpcCloudInstanceId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].VpcCloudInstanceId");
+					mongosAttribute.VPCId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].VPCId");
+					mongosAttribute.VSwitchId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList["+ j +"].VSwitchId");
 
 					dBInstance_mongosList.Add(mongosAttribute);
 				}
@@ -91,6 +95,21 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					dBInstance_shardList.Add(shardAttribute);
 				}
 				dBInstance.ShardList = dBInstance_shardList;
+
+				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet> dBInstance_replicaSets = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet>();
+				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets.Length"); j++) {
+					DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet replicaSet = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet();
+					replicaSet.ReplicaSetRole = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets["+ j +"].ReplicaSetRole");
+					replicaSet.ConnectionDomain = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets["+ j +"].ConnectionDomain");
+					replicaSet.ConnectionPort = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets["+ j +"].ConnectionPort");
+					replicaSet.VPCCloudInstanceId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets["+ j +"].VPCCloudInstanceId");
+					replicaSet.VPCId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets["+ j +"].VPCId");
+					replicaSet.VSwitchId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets["+ j +"].VSwitchId");
+					replicaSet.NetworkType = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets["+ j +"].NetworkType");
+
+					dBInstance_replicaSets.Add(replicaSet);
+				}
+				dBInstance.ReplicaSets = dBInstance_replicaSets;
 
 				describeDBInstanceAttributeResponse_dBInstances.Add(dBInstance);
 			}

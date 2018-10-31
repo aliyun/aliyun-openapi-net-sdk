@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? ownerId;
 
+		private string replicationFactor;
+
 		private string accessKeyId;
 
 		private string dBInstanceClass;
@@ -166,6 +168,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ReplicationFactor
+		{
+			get
+			{
+				return replicationFactor;
+			}
+			set	
+			{
+				replicationFactor = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicationFactor", value);
 			}
 		}
 

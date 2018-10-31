@@ -26,24 +26,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeBackupsRequest : RpcAcsRequest<DescribeBackupsResponse>
+    public class DescribeActiveOperationTaskRequest : RpcAcsRequest<DescribeActiveOperationTaskResponse>
     {
-        public DescribeBackupsRequest()
-            : base("Dds", "2015-12-01", "DescribeBackups", "dds", "openAPI")
+        public DescribeActiveOperationTaskRequest()
+            : base("Dds", "2015-12-01", "DescribeActiveOperationTask", "dds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private string taskType;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string backupId;
-
-		private string endTime;
-
-		private string startTime;
 
 		private long? ownerId;
 
@@ -51,15 +47,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string accessKeyId;
 
+		private int? isHistory;
+
 		private string securityToken;
 
 		private int? pageSize;
 
 		private string action;
 
-		private string dBInstanceId;
-
-		private string nodeId;
+		private string region;
 
 		public long? ResourceOwnerId
 		{
@@ -71,6 +67,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string TaskType
+		{
+			get
+			{
+				return taskType;
+			}
+			set	
+			{
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
 			}
 		}
 
@@ -97,45 +106,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string BackupId
-		{
-			get
-			{
-				return backupId;
-			}
-			set	
-			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -178,6 +148,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public int? IsHistory
+		{
+			get
+			{
+				return isHistory;
+			}
+			set	
+			{
+				isHistory = value;
+				DictionaryUtil.Add(QueryParameters, "IsHistory", value.ToString());
+			}
+		}
+
 		public string SecurityToken
 		{
 			get
@@ -217,35 +200,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string DBInstanceId
+		public string Region
 		{
 			get
 			{
-				return dBInstanceId;
+				return region;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
-		public string NodeId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
-			}
+			return false;
 		}
 
-        public override DescribeBackupsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeActiveOperationTaskResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBackupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

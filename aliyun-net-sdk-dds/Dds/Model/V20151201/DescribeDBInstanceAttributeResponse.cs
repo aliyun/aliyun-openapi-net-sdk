@@ -79,6 +79,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string vSwitchId;
 
+			private string vPCCloudInstanceIds;
+
 			private string dBInstanceStatus;
 
 			private string lockMode;
@@ -112,6 +114,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			private List<DescribeDBInstanceAttribute_MongosAttribute> mongosList;
 
 			private List<DescribeDBInstanceAttribute_ShardAttribute> shardList;
+
+			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
 			public string DBInstanceId
 			{
@@ -254,6 +258,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					vSwitchId = value;
+				}
+			}
+
+			public string VPCCloudInstanceIds
+			{
+				get
+				{
+					return vPCCloudInstanceIds;
+				}
+				set	
+				{
+					vPCCloudInstanceIds = value;
 				}
 			}
 
@@ -461,6 +477,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public List<DescribeDBInstanceAttribute_ReplicaSet> ReplicaSets
+			{
+				get
+				{
+					return replicaSets;
+				}
+				set	
+				{
+					replicaSets = value;
+				}
+			}
+
 			public class DescribeDBInstanceAttribute_MongosAttribute
 			{
 
@@ -477,6 +505,12 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				private int? maxConnections;
 
 				private int? port;
+
+				private string vpcCloudInstanceId;
+
+				private string vPCId;
+
+				private string vSwitchId;
 
 				public string NodeId
 				{
@@ -559,6 +593,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						port = value;
+					}
+				}
+
+				public string VpcCloudInstanceId
+				{
+					get
+					{
+						return vpcCloudInstanceId;
+					}
+					set	
+					{
+						vpcCloudInstanceId = value;
+					}
+				}
+
+				public string VPCId
+				{
+					get
+					{
+						return vPCId;
+					}
+					set	
+					{
+						vPCId = value;
+					}
+				}
+
+				public string VSwitchId
+				{
+					get
+					{
+						return vSwitchId;
+					}
+					set	
+					{
+						vSwitchId = value;
 					}
 				}
 			}
@@ -647,6 +717,108 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						maxConnections = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstanceAttribute_ReplicaSet
+			{
+
+				private string replicaSetRole;
+
+				private string connectionDomain;
+
+				private string connectionPort;
+
+				private string vPCCloudInstanceId;
+
+				private string vPCId;
+
+				private string vSwitchId;
+
+				private string networkType;
+
+				public string ReplicaSetRole
+				{
+					get
+					{
+						return replicaSetRole;
+					}
+					set	
+					{
+						replicaSetRole = value;
+					}
+				}
+
+				public string ConnectionDomain
+				{
+					get
+					{
+						return connectionDomain;
+					}
+					set	
+					{
+						connectionDomain = value;
+					}
+				}
+
+				public string ConnectionPort
+				{
+					get
+					{
+						return connectionPort;
+					}
+					set	
+					{
+						connectionPort = value;
+					}
+				}
+
+				public string VPCCloudInstanceId
+				{
+					get
+					{
+						return vPCCloudInstanceId;
+					}
+					set	
+					{
+						vPCCloudInstanceId = value;
+					}
+				}
+
+				public string VPCId
+				{
+					get
+					{
+						return vPCId;
+					}
+					set	
+					{
+						vPCId = value;
+					}
+				}
+
+				public string VSwitchId
+				{
+					get
+					{
+						return vSwitchId;
+					}
+					set	
+					{
+						vSwitchId = value;
+					}
+				}
+
+				public string NetworkType
+				{
+					get
+					{
+						return networkType;
+					}
+					set	
+					{
+						networkType = value;
 					}
 				}
 			}

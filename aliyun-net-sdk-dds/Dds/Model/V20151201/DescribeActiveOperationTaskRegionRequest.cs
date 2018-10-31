@@ -26,26 +26,24 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeReplicaUsageRequest : RpcAcsRequest<DescribeReplicaUsageResponse>
+    public class DescribeActiveOperationTaskRegionRequest : RpcAcsRequest<DescribeActiveOperationTaskRegionResponse>
     {
-        public DescribeReplicaUsageRequest()
-            : base("Dds", "2015-12-01", "DescribeReplicaUsage", "dds", "openAPI")
+        public DescribeActiveOperationTaskRegionRequest()
+            : base("Dds", "2015-12-01", "DescribeActiveOperationTaskRegion", "dds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string sourceDBInstanceId;
+		private int? isHistory;
 
-		private string destinationDBInstanceId;
+		private string taskType;
 
 		private string securityToken;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string replicaId;
 
 		private string action;
 
@@ -66,29 +64,29 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SourceDBInstanceId
+		public int? IsHistory
 		{
 			get
 			{
-				return sourceDBInstanceId;
+				return isHistory;
 			}
 			set	
 			{
-				sourceDBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "SourceDBInstanceId", value);
+				isHistory = value;
+				DictionaryUtil.Add(QueryParameters, "IsHistory", value.ToString());
 			}
 		}
 
-		public string DestinationDBInstanceId
+		public string TaskType
 		{
 			get
 			{
-				return destinationDBInstanceId;
+				return taskType;
 			}
 			set	
 			{
-				destinationDBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DestinationDBInstanceId", value);
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
 			}
 		}
 
@@ -128,19 +126,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string ReplicaId
-		{
-			get
-			{
-				return replicaId;
-			}
-			set	
-			{
-				replicaId = value;
-				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
 			}
 		}
 
@@ -188,9 +173,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			return false;
 		}
 
-        public override DescribeReplicaUsageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeActiveOperationTaskRegionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeReplicaUsageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTaskRegionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

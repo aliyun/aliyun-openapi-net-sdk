@@ -26,20 +26,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeBackupsRequest : RpcAcsRequest<DescribeBackupsResponse>
+    public class DescribeRunningLogRecordsRequest : RpcAcsRequest<DescribeRunningLogRecordsResponse>
     {
-        public DescribeBackupsRequest()
-            : base("Dds", "2015-12-01", "DescribeBackups", "dds", "openAPI")
+        public DescribeRunningLogRecordsRequest()
+            : base("Dds", "2015-12-01", "DescribeRunningLogRecords", "dds", "openAPI")
         {
         }
+
+		private long? sQLId;
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string backupId;
 
 		private string endTime;
 
@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string accessKeyId;
 
+		private string dBName;
+
 		private string securityToken;
 
 		private int? pageSize;
@@ -59,7 +61,22 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceId;
 
+		private string roleType;
+
 		private string nodeId;
+
+		public long? SQLId
+		{
+			get
+			{
+				return sQLId;
+			}
+			set	
+			{
+				sQLId = value;
+				DictionaryUtil.Add(QueryParameters, "SQLId", value.ToString());
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -97,19 +114,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string BackupId
-		{
-			get
-			{
-				return backupId;
-			}
-			set	
-			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value);
 			}
 		}
 
@@ -178,6 +182,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string DBName
+		{
+			get
+			{
+				return dBName;
+			}
+			set	
+			{
+				dBName = value;
+				DictionaryUtil.Add(QueryParameters, "DBName", value);
+			}
+		}
+
 		public string SecurityToken
 		{
 			get
@@ -230,6 +247,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string RoleType
+		{
+			get
+			{
+				return roleType;
+			}
+			set	
+			{
+				roleType = value;
+				DictionaryUtil.Add(QueryParameters, "RoleType", value);
+			}
+		}
+
 		public string NodeId
 		{
 			get
@@ -243,9 +273,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DescribeBackupsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeRunningLogRecordsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBackupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRunningLogRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

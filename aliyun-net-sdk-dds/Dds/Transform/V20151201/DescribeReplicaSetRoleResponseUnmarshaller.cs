@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			for (int i = 0; i < context.Length("DescribeReplicaSetRole.ReplicaSets.Length"); i++) {
 				DescribeReplicaSetRoleResponse.DescribeReplicaSetRole_ReplicaSet replicaSet = new DescribeReplicaSetRoleResponse.DescribeReplicaSetRole_ReplicaSet();
 				replicaSet.ReplicaSetRole = context.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].ReplicaSetRole");
+				replicaSet.RoleId = context.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].RoleId");
 				replicaSet.ConnectionDomain = context.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].ConnectionDomain");
 				replicaSet.ConnectionPort = context.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].ConnectionPort");
 				replicaSet.ExpiredTime = context.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].ExpiredTime");

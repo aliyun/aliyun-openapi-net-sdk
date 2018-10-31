@@ -26,40 +26,45 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeDBInstancePerformanceRequest : RpcAcsRequest<DescribeDBInstancePerformanceResponse>
+    public class DescribeReplicationGroupRequest : RpcAcsRequest<DescribeReplicationGroupResponse>
     {
-        public DescribeDBInstancePerformanceRequest()
-            : base("Dds", "2015-12-01", "DescribeDBInstancePerformance", "dds", "openAPI")
+        public DescribeReplicationGroupRequest()
+            : base("Dds", "2015-12-01", "DescribeReplicationGroup", "dds", "openAPI")
         {
         }
 
+		private string destinationInstanceIds;
+
 		private long? resourceOwnerId;
+
+		private string securityToken;
 
 		private string resourceOwnerAccount;
 
-		private string roleId;
+		private string replicationGroupId;
 
 		private string ownerAccount;
 
-		private string endTime;
+		private string action;
 
-		private string startTime;
+		private string sourceInstanceId;
 
 		private long? ownerId;
 
 		private string accessKeyId;
 
-		private string replicaSetRole;
-
-		private string securityToken;
-
-		private string action;
-
-		private string dBInstanceId;
-
-		private string nodeId;
-
-		private string key;
+		public string DestinationInstanceIds
+		{
+			get
+			{
+				return destinationInstanceIds;
+			}
+			set	
+			{
+				destinationInstanceIds = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationInstanceIds", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -71,6 +76,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -87,16 +105,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string RoleId
+		public string ReplicationGroupId
 		{
 			get
 			{
-				return roleId;
+				return replicationGroupId;
 			}
 			set	
 			{
-				roleId = value;
-				DictionaryUtil.Add(QueryParameters, "RoleId", value);
+				replicationGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicationGroupId", value);
 			}
 		}
 
@@ -113,29 +131,29 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string EndTime
+		public string Action
 		{
 			get
 			{
-				return endTime;
+				return action;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string StartTime
+		public string SourceInstanceId
 		{
 			get
 			{
-				return startTime;
+				return sourceInstanceId;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				sourceInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "SourceInstanceId", value);
 			}
 		}
 
@@ -165,87 +183,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string ReplicaSetRole
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return replicaSetRole;
-			}
-			set	
-			{
-				replicaSetRole = value;
-				DictionaryUtil.Add(QueryParameters, "ReplicaSetRole", value);
-			}
+			return false;
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string NodeId
-		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
-			}
-		}
-
-		public string Key
-		{
-			get
-			{
-				return key;
-			}
-			set	
-			{
-				key = value;
-				DictionaryUtil.Add(QueryParameters, "Key", value);
-			}
-		}
-
-        public override DescribeDBInstancePerformanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeReplicationGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDBInstancePerformanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeReplicationGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

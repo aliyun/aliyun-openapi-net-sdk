@@ -26,26 +26,22 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeReplicaUsageRequest : RpcAcsRequest<DescribeReplicaUsageResponse>
+    public class DescribeActiveOperationTaskTypeRequest : RpcAcsRequest<DescribeActiveOperationTaskTypeResponse>
     {
-        public DescribeReplicaUsageRequest()
-            : base("Dds", "2015-12-01", "DescribeReplicaUsage", "dds", "openAPI")
+        public DescribeActiveOperationTaskTypeRequest()
+            : base("Dds", "2015-12-01", "DescribeActiveOperationTaskType", "dds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string sourceDBInstanceId;
-
-		private string destinationDBInstanceId;
+		private int? isHistory;
 
 		private string securityToken;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string replicaId;
 
 		private string action;
 
@@ -66,29 +62,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SourceDBInstanceId
+		public int? IsHistory
 		{
 			get
 			{
-				return sourceDBInstanceId;
+				return isHistory;
 			}
 			set	
 			{
-				sourceDBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "SourceDBInstanceId", value);
-			}
-		}
-
-		public string DestinationDBInstanceId
-		{
-			get
-			{
-				return destinationDBInstanceId;
-			}
-			set	
-			{
-				destinationDBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DestinationDBInstanceId", value);
+				isHistory = value;
+				DictionaryUtil.Add(QueryParameters, "IsHistory", value.ToString());
 			}
 		}
 
@@ -128,19 +111,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string ReplicaId
-		{
-			get
-			{
-				return replicaId;
-			}
-			set	
-			{
-				replicaId = value;
-				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
 			}
 		}
 
@@ -188,9 +158,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			return false;
 		}
 
-        public override DescribeReplicaUsageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeActiveOperationTaskTypeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeReplicaUsageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTaskTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

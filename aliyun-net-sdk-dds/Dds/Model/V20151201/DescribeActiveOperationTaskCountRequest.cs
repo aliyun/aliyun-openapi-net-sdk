@@ -26,38 +26,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeReplicaPerformanceRequest : RpcAcsRequest<DescribeReplicaPerformanceResponse>
+    public class DescribeActiveOperationTaskCountRequest : RpcAcsRequest<DescribeActiveOperationTaskCountResponse>
     {
-        public DescribeReplicaPerformanceRequest()
-            : base("Dds", "2015-12-01", "DescribeReplicaPerformance", "dds", "openAPI")
+        public DescribeActiveOperationTaskCountRequest()
+            : base("Dds", "2015-12-01", "DescribeActiveOperationTaskCount", "dds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string destinationDBInstanceId;
+		private string securityToken;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string endTime;
-
-		private string startTime;
+		private string action;
 
 		private long? ownerId;
 
 		private string accessKeyId;
-
-		private string sourceDBInstanceId;
-
-		private string securityToken;
-
-		private string replicaId;
-
-		private string action;
-
-		private string key;
 
 		public long? ResourceOwnerId
 		{
@@ -72,16 +60,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string DestinationDBInstanceId
+		public string SecurityToken
 		{
 			get
 			{
-				return destinationDBInstanceId;
+				return securityToken;
 			}
 			set	
 			{
-				destinationDBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DestinationDBInstanceId", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -111,29 +99,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string EndTime
+		public string Action
 		{
 			get
 			{
-				return endTime;
+				return action;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -163,79 +138,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SourceDBInstanceId
-		{
-			get
-			{
-				return sourceDBInstanceId;
-			}
-			set	
-			{
-				sourceDBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "SourceDBInstanceId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string ReplicaId
-		{
-			get
-			{
-				return replicaId;
-			}
-			set	
-			{
-				replicaId = value;
-				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string Key
-		{
-			get
-			{
-				return key;
-			}
-			set	
-			{
-				key = value;
-				DictionaryUtil.Add(QueryParameters, "Key", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeReplicaPerformanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeActiveOperationTaskCountResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeReplicaPerformanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTaskCountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
