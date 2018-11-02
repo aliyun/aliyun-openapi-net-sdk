@@ -167,6 +167,10 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 
 			private string clientId;
 
+			private string productKey;
+
+			private string deviceName;
+
 			public int? LicenseType
 			{
 				get
@@ -248,6 +252,30 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 				set	
 				{
 					clientId = value;
+				}
+			}
+
+			public string ProductKey
+			{
+				get
+				{
+					return productKey;
+				}
+				set	
+				{
+					productKey = value;
+				}
+			}
+
+			public string DeviceName
+			{
+				get
+				{
+					return deviceName;
+				}
+				set	
+				{
+					deviceName = value;
 				}
 			}
 		}

@@ -49,6 +49,8 @@ namespace Aliyun.Acs.LinkFace.Transform.V20180720
 				dataItem.ApkPubkey = context.StringValue("QueryAuthentication.Data["+ i +"].ApkPubkey");
 				dataItem.PackageName = context.StringValue("QueryAuthentication.Data["+ i +"].PackageName");
 				dataItem.ClientId = context.StringValue("QueryAuthentication.Data["+ i +"].ClientId");
+				dataItem.ProductKey = context.StringValue("QueryAuthentication.Data["+ i +"].ProductKey");
+				dataItem.DeviceName = context.StringValue("QueryAuthentication.Data["+ i +"].DeviceName");
 
 				queryAuthenticationResponse_data.Add(dataItem);
 			}

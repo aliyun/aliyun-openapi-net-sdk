@@ -39,6 +39,10 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 
 		private string groupId;
 
+		private string deviceName;
+
+		private string productKey;
+
 		public string IotId
 		{
 			get
@@ -62,6 +66,32 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 			{
 				groupId = value;
 				DictionaryUtil.Add(BodyParameters, "GroupId", value);
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(BodyParameters, "ProductKey", value);
 			}
 		}
 

@@ -43,6 +43,10 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 
 		private int? currentPage;
 
+		private string deviceName;
+
+		private string productKey;
+
 		public int? LicenseType
 		{
 			get
@@ -92,6 +96,32 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 			{
 				currentPage = value;
 				DictionaryUtil.Add(BodyParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(BodyParameters, "ProductKey", value);
 			}
 		}
 
