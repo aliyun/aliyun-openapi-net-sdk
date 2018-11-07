@@ -26,35 +26,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.rtc.Model.V20180111
 {
-    public class UpdateChannelRequest : RpcAcsRequest<UpdateChannelResponse>
+    public class DeleteTemplateRequest : RpcAcsRequest<DeleteTemplateResponse>
     {
-        public UpdateChannelRequest()
-            : base("rtc", "2018-01-11", "UpdateChannel", "rtc", "openAPI")
+        public DeleteTemplateRequest()
+            : base("rtc", "2018-01-11", "DeleteTemplate", "rtc", "openAPI")
         {
         }
 
-		private string action;
-
 		private long? ownerId;
 
-		private string nonce;
+		private long? templateId;
 
 		private string appId;
 
-		private string channelId;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+		private string action;
 
 		public long? OwnerId
 		{
@@ -69,16 +54,16 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public string Nonce
+		public long? TemplateId
 		{
 			get
 			{
-				return nonce;
+				return templateId;
 			}
 			set	
 			{
-				nonce = value;
-				DictionaryUtil.Add(QueryParameters, "Nonce", value);
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
 			}
 		}
 
@@ -95,22 +80,22 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public string ChannelId
+		public string Action
 		{
 			get
 			{
-				return channelId;
+				return action;
 			}
 			set	
 			{
-				channelId = value;
-				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-        public override UpdateChannelResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteTemplateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return UpdateChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

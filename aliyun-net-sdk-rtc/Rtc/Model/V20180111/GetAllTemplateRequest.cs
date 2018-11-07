@@ -26,35 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.rtc.Model.V20180111
 {
-    public class UpdateChannelRequest : RpcAcsRequest<UpdateChannelResponse>
+    public class GetAllTemplateRequest : RpcAcsRequest<GetAllTemplateResponse>
     {
-        public UpdateChannelRequest()
-            : base("rtc", "2018-01-11", "UpdateChannel", "rtc", "openAPI")
+        public GetAllTemplateRequest()
+            : base("rtc", "2018-01-11", "GetAllTemplate", "rtc", "openAPI")
         {
         }
 
-		private string action;
-
 		private long? ownerId;
-
-		private string nonce;
 
 		private string appId;
 
-		private string channelId;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+		private string action;
 
 		public long? OwnerId
 		{
@@ -66,19 +49,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Nonce
-		{
-			get
-			{
-				return nonce;
-			}
-			set	
-			{
-				nonce = value;
-				DictionaryUtil.Add(QueryParameters, "Nonce", value);
 			}
 		}
 
@@ -95,22 +65,22 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public string ChannelId
+		public string Action
 		{
 			get
 			{
-				return channelId;
+				return action;
 			}
 			set	
 			{
-				channelId = value;
-				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-        public override UpdateChannelResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetAllTemplateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return UpdateChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetAllTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

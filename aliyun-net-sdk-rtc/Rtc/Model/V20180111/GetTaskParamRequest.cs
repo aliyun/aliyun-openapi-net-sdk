@@ -26,35 +26,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.rtc.Model.V20180111
 {
-    public class UpdateChannelRequest : RpcAcsRequest<UpdateChannelResponse>
+    public class GetTaskParamRequest : RpcAcsRequest<GetTaskParamResponse>
     {
-        public UpdateChannelRequest()
-            : base("rtc", "2018-01-11", "UpdateChannel", "rtc", "openAPI")
+        public GetTaskParamRequest()
+            : base("rtc", "2018-01-11", "GetTaskParam", "rtc", "openAPI")
         {
         }
 
-		private string action;
-
 		private long? ownerId;
-
-		private string nonce;
 
 		private string appId;
 
-		private string channelId;
+		private string action;
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+		private long? taskId;
 
 		public long? OwnerId
 		{
@@ -66,19 +51,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Nonce
-		{
-			get
-			{
-				return nonce;
-			}
-			set	
-			{
-				nonce = value;
-				DictionaryUtil.Add(QueryParameters, "Nonce", value);
 			}
 		}
 
@@ -95,22 +67,35 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public string ChannelId
+		public string Action
 		{
 			get
 			{
-				return channelId;
+				return action;
 			}
 			set	
 			{
-				channelId = value;
-				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-        public override UpdateChannelResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public long? TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
+			}
+		}
+
+        public override GetTaskParamResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return UpdateChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetTaskParamResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

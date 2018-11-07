@@ -26,22 +26,58 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.rtc.Model.V20180111
 {
-    public class UpdateChannelRequest : RpcAcsRequest<UpdateChannelResponse>
+    public class StartTaskRequest : RpcAcsRequest<StartTaskResponse>
     {
-        public UpdateChannelRequest()
-            : base("rtc", "2018-01-11", "UpdateChannel", "rtc", "openAPI")
+        public StartTaskRequest()
+            : base("rtc", "2018-01-11", "StartTask", "rtc", "openAPI")
         {
         }
+
+		private List<MixPanes> mixPaness;
+
+		private string idempotentId;
 
 		private string action;
 
 		private long? ownerId;
 
-		private string nonce;
+		private long? templateId;
 
 		private string appId;
 
 		private string channelId;
+
+		public List<MixPanes> MixPaness
+		{
+			get
+			{
+				return mixPaness;
+			}
+
+			set
+			{
+				mixPaness = value;
+				for (int i = 0; i < mixPaness.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"MixPanes." + (i + 1) + ".PaneId", mixPaness[i].PaneId);
+					DictionaryUtil.Add(QueryParameters,"MixPanes." + (i + 1) + ".UserId", mixPaness[i].UserId);
+					DictionaryUtil.Add(QueryParameters,"MixPanes." + (i + 1) + ".SourceType", mixPaness[i].SourceType);
+				}
+			}
+		}
+
+		public string IdempotentId
+		{
+			get
+			{
+				return idempotentId;
+			}
+			set	
+			{
+				idempotentId = value;
+				DictionaryUtil.Add(QueryParameters, "IdempotentId", value);
+			}
+		}
 
 		public string Action
 		{
@@ -69,16 +105,16 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public string Nonce
+		public long? TemplateId
 		{
 			get
 			{
-				return nonce;
+				return templateId;
 			}
 			set	
 			{
-				nonce = value;
-				DictionaryUtil.Add(QueryParameters, "Nonce", value);
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
 			}
 		}
 
@@ -108,9 +144,55 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-        public override UpdateChannelResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public class MixPanes
+		{
+
+			private int? paneId;
+
+			private string userId;
+
+			private string sourceType;
+
+			public int? PaneId
+			{
+				get
+				{
+					return paneId;
+				}
+				set	
+				{
+					paneId = value;
+				}
+			}
+
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
+			public string SourceType
+			{
+				get
+				{
+					return sourceType;
+				}
+				set	
+				{
+					sourceType = value;
+				}
+			}
+		}
+
+        public override StartTaskResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return UpdateChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StartTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

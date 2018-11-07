@@ -26,22 +26,45 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.rtc.Model.V20180111
 {
-    public class UpdateChannelRequest : RpcAcsRequest<UpdateChannelResponse>
+    public class UpdateTaskParamRequest : RpcAcsRequest<UpdateTaskParamResponse>
     {
-        public UpdateChannelRequest()
-            : base("rtc", "2018-01-11", "UpdateChannel", "rtc", "openAPI")
+        public UpdateTaskParamRequest()
+            : base("rtc", "2018-01-11", "UpdateTaskParam", "rtc", "openAPI")
         {
         }
 
+		private List<MixPanes> mixPaness;
+
 		private string action;
+
+		private long? taskId;
 
 		private long? ownerId;
 
-		private string nonce;
+		private long? templateId;
 
 		private string appId;
 
 		private string channelId;
+
+		public List<MixPanes> MixPaness
+		{
+			get
+			{
+				return mixPaness;
+			}
+
+			set
+			{
+				mixPaness = value;
+				for (int i = 0; i < mixPaness.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"MixPanes." + (i + 1) + ".PaneId", mixPaness[i].PaneId);
+					DictionaryUtil.Add(QueryParameters,"MixPanes." + (i + 1) + ".UserId", mixPaness[i].UserId);
+					DictionaryUtil.Add(QueryParameters,"MixPanes." + (i + 1) + ".SourceType", mixPaness[i].SourceType);
+				}
+			}
+		}
 
 		public string Action
 		{
@@ -53,6 +76,19 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
 			}
 		}
 
@@ -69,16 +105,16 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public string Nonce
+		public long? TemplateId
 		{
 			get
 			{
-				return nonce;
+				return templateId;
 			}
 			set	
 			{
-				nonce = value;
-				DictionaryUtil.Add(QueryParameters, "Nonce", value);
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
 			}
 		}
 
@@ -108,9 +144,55 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-        public override UpdateChannelResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public class MixPanes
+		{
+
+			private int? paneId;
+
+			private string userId;
+
+			private string sourceType;
+
+			public int? PaneId
+			{
+				get
+				{
+					return paneId;
+				}
+				set	
+				{
+					paneId = value;
+				}
+			}
+
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
+			public string SourceType
+			{
+				get
+				{
+					return sourceType;
+				}
+				set	
+				{
+					sourceType = value;
+				}
+			}
+		}
+
+        public override UpdateTaskParamResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return UpdateChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateTaskParamResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
