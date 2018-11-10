@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string roleARN;
 
+		private string functionARN;
+
 		public string Notes
 		{
 			get
@@ -120,6 +122,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				roleARN = value;
 				DictionaryUtil.Add(BodyParameters, "RoleARN", value);
+			}
+		}
+
+		public string FunctionARN
+		{
+			get
+			{
+				return functionARN;
+			}
+			set	
+			{
+				functionARN = value;
+				DictionaryUtil.Add(BodyParameters, "FunctionARN", value);
 			}
 		}
 

@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainQpsDataResponse.HttpResponse = context.HttpResponse;
 			describeDomainQpsDataResponse.RequestId = context.StringValue("DescribeDomainQpsData.RequestId");
 			describeDomainQpsDataResponse.DomainName = context.StringValue("DescribeDomainQpsData.DomainName");
-			describeDomainQpsDataResponse.DataInterval = context.StringValue("DescribeDomainQpsData.DataInterval");
 			describeDomainQpsDataResponse.StartTime = context.StringValue("DescribeDomainQpsData.StartTime");
 			describeDomainQpsDataResponse.EndTime = context.StringValue("DescribeDomainQpsData.EndTime");
+			describeDomainQpsDataResponse.DataInterval = context.StringValue("DescribeDomainQpsData.DataInterval");
 
 			List<DescribeDomainQpsDataResponse.DescribeDomainQpsData_DataModule> describeDomainQpsDataResponse_qpsDataInterval = new List<DescribeDomainQpsDataResponse.DescribeDomainQpsData_DataModule>();
 			for (int i = 0; i < context.Length("DescribeDomainQpsData.QpsDataInterval.Length"); i++) {
