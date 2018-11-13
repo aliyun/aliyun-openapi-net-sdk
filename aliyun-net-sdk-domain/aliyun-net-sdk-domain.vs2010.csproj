@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{10518520-d2cc-4249-ac27-7bcc1e95bcf4}</ProjectGuid>
+    <ProjectGuid>{27dd1666-207f-4eff-930a-0463d56d2f5f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -80,10 +80,12 @@
 	<Compile Include="Domain\Model\V20180129\EmailVerifiedRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\SaveBatchTaskForUpdateProhibitionLockResponse.cs" />
 	<Compile Include="Domain\Model\V20180129\QueryTransferInByInstanceIdRequest.cs" />
+	<Compile Include="Domain\Model\V20180129\FuzzyMatchDomainSensitiveWordRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\SaveSingleTaskForCreatingOrderRedeemRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\QueryTaskListResponse.cs" />
 	<Compile Include="Domain\Model\V20180129\QueryFailingReasonListForQualificationRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\DeleteRegistrantProfileResponse.cs" />
+	<Compile Include="Domain\Model\V20180129\BatchFuzzyMatchDomainSensitiveWordResponse.cs" />
 	<Compile Include="Domain\Model\V20180129\VerifyContactFieldResponse.cs" />
 	<Compile Include="Domain\Model\V20180129\QueryDomainSuffixRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\QueryDomainSuffixResponse.cs" />
@@ -183,6 +185,7 @@
 	<Compile Include="Domain\Model\V20180129\PollTaskResultResponse.cs" />
 	<Compile Include="Domain\Model\V20180129\CancelQualificationVerificationRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\SaveDomainGroupResponse.cs" />
+	<Compile Include="Domain\Model\V20180129\BatchFuzzyMatchDomainSensitiveWordRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\QueryDomainRealNameVerificationInfoResponse.cs" />
 	<Compile Include="Domain\Model\V20180129\QueryEmailVerificationResponse.cs" />
 	<Compile Include="Domain\Model\V20180129\DeleteRegistrantProfileRequest.cs" />
@@ -206,6 +209,7 @@
 	<Compile Include="Domain\Model\V20180129\SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\QueryTaskDetailListResponse.cs" />
 	<Compile Include="Domain\Model\V20180129\UpdateDomainToDomainGroupRequest.cs" />
+	<Compile Include="Domain\Model\V20180129\FuzzyMatchDomainSensitiveWordResponse.cs" />
 	<Compile Include="Domain\Model\V20180129\VerifyContactFieldRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\PollTaskResultRequest.cs" />
 	<Compile Include="Domain\Model\V20180129\SaveTaskForSubmittingDomainDeleteResponse.cs" />
@@ -260,6 +264,7 @@
 	<Compile Include="Domain\Transform\V20180129\SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\SaveSingleTaskForUpdatingContactInfoResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\QueryQualificationDetailResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180129\FuzzyMatchDomainSensitiveWordResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\QueryFailReasonForRegistrantProfileRealNameVerificationResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\SaveSingleTaskForTransferProhibitionLockResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\QueryDomainSuffixResponseUnmarshaller.cs" />
@@ -346,6 +351,7 @@
 	<Compile Include="Domain\Transform\V20180129\SaveSingleTaskForApprovingTransferOutResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\SaveSingleTaskForModifyingDnsHostResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180129\QueryDomainGroupListResponseUnmarshaller.cs" />
+	<Compile Include="Domain\Transform\V20180129\BatchFuzzyMatchDomainSensitiveWordResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180208\AcceptDemandResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180208\GetReserveDomainUrlResponseUnmarshaller.cs" />
 	<Compile Include="Domain\Transform\V20180208\QueryBidRecordsResponseUnmarshaller.cs" />

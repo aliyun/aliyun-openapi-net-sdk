@@ -36,6 +36,7 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			checkDomainResponse.Premium = context.StringValue("CheckDomain.Premium");
 			checkDomainResponse.Reason = context.StringValue("CheckDomain.Reason");
 			checkDomainResponse.Price = context.LongValue("CheckDomain.Price");
+			checkDomainResponse.DynamicCheck = context.BooleanValue("CheckDomain.DynamicCheck");
         
 			return checkDomainResponse;
         }
