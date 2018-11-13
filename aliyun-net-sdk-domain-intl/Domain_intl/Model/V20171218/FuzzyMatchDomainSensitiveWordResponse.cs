@@ -21,22 +21,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-	public class CheckDomainResponse : AcsResponse
+	public class FuzzyMatchDomainSensitiveWordResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string domainName;
+		private string keyword;
 
-		private string avail;
+		private bool? exist;
 
-		private string premium;
-
-		private string reason;
-
-		private long? price;
-
-		private bool? dynamicCheck;
+		private List<FuzzyMatchDomainSensitiveWord_MatchedSensitiveWord> matchedSentiveWords;
 
 		public string RequestId
 		{
@@ -50,75 +44,57 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string DomainName
+		public string Keyword
 		{
 			get
 			{
-				return domainName;
+				return keyword;
 			}
 			set	
 			{
-				domainName = value;
+				keyword = value;
 			}
 		}
 
-		public string Avail
+		public bool? Exist
 		{
 			get
 			{
-				return avail;
+				return exist;
 			}
 			set	
 			{
-				avail = value;
+				exist = value;
 			}
 		}
 
-		public string Premium
+		public List<FuzzyMatchDomainSensitiveWord_MatchedSensitiveWord> MatchedSentiveWords
 		{
 			get
 			{
-				return premium;
+				return matchedSentiveWords;
 			}
 			set	
 			{
-				premium = value;
+				matchedSentiveWords = value;
 			}
 		}
 
-		public string Reason
+		public class FuzzyMatchDomainSensitiveWord_MatchedSensitiveWord
 		{
-			get
-			{
-				return reason;
-			}
-			set	
-			{
-				reason = value;
-			}
-		}
 
-		public long? Price
-		{
-			get
-			{
-				return price;
-			}
-			set	
-			{
-				price = value;
-			}
-		}
+			private string word;
 
-		public bool? DynamicCheck
-		{
-			get
+			public string Word
 			{
-				return dynamicCheck;
-			}
-			set	
-			{
-				dynamicCheck = value;
+				get
+				{
+					return word;
+				}
+				set	
+				{
+					word = value;
+				}
 			}
 		}
 	}

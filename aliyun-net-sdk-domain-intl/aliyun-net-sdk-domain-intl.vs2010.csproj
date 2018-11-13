@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8eaee673-f994-4668-a242-8bd5de410171}</ProjectGuid>
+    <ProjectGuid>{8363d832-9493-4293-8a3a-0f7c7e7ccf18}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -66,9 +66,11 @@
 	<Compile Include="Domain_intl\Model\V20171218\EmailVerifiedRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForUpdateProhibitionLockResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryTransferInByInstanceIdRequest.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\FuzzyMatchDomainSensitiveWordRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForCreatingOrderRedeemRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryTaskListResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\DeleteRegistrantProfileResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\BatchFuzzyMatchDomainSensitiveWordResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\VerifyContactFieldResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForTransferProhibitionLockResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryRegistrantProfilesResponse.cs" />
@@ -141,6 +143,7 @@
 	<Compile Include="Domain_intl\Model\V20171218\TransferInReenterTransferAuthorizationCodeRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForDisassociatingEnsRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\PollTaskResultResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\BatchFuzzyMatchDomainSensitiveWordRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\DeleteRegistrantProfileRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\TransferInReenterTransferAuthorizationCodeResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForApprovingTransferOutResponse.cs" />
@@ -153,6 +156,7 @@
 	<Compile Include="Domain_intl\Model\V20171218\CheckDomainResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\ResendEmailVerificationRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryTaskDetailListResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\FuzzyMatchDomainSensitiveWordResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\VerifyContactFieldRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\PollTaskResultRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveTaskForSubmittingDomainDeleteResponse.cs" />
@@ -171,6 +175,7 @@
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForCreatingOrderTransferResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\VerifyEmailResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForUpdatingContactInfoResponseUnmarshaller.cs" />
+	<Compile Include="Domain_intl\Transform\V20171218\FuzzyMatchDomainSensitiveWordResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForTransferProhibitionLockResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForQueryingTransferAuthorizationCodeResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryLocalEnsAssociationResponseUnmarshaller.cs" />
@@ -232,6 +237,7 @@
 	<Compile Include="Domain_intl\Transform\V20171218\QueryRegistrantProfilesResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForApprovingTransferOutResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForModifyingDnsHostResponseUnmarshaller.cs" />
+	<Compile Include="Domain_intl\Transform\V20171218\BatchFuzzyMatchDomainSensitiveWordResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
