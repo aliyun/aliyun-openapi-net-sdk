@@ -52,6 +52,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				nodeInfo.ImageOwnerAlias = context.StringValue("ListNodes.Nodes["+ i +"].ImageOwnerAlias");
 				nodeInfo.ImageId = context.StringValue("ListNodes.Nodes["+ i +"].ImageId");
 				nodeInfo.Location = context.StringValue("ListNodes.Nodes["+ i +"].Location");
+				nodeInfo.CreateMode = context.StringValue("ListNodes.Nodes["+ i +"].CreateMode");
 
 				List<string> nodeInfo_roles = new List<string>();
 				for (int j = 0; j < context.Length("ListNodes.Nodes["+ i +"].Roles.Length"); j++) {

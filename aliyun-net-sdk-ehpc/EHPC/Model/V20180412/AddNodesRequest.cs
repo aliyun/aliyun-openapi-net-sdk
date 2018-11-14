@@ -57,6 +57,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string ecsChargeType;
 
+		private string createMode;
+
 		private string action;
 
 		private string instanceType;
@@ -216,6 +218,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				ecsChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "EcsChargeType", value);
+			}
+		}
+
+		public string CreateMode
+		{
+			get
+			{
+				return createMode;
+			}
+			set	
+			{
+				createMode = value;
+				DictionaryUtil.Add(QueryParameters, "CreateMode", value);
 			}
 		}
 

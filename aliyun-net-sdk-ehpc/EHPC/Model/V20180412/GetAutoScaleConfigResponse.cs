@@ -273,6 +273,10 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private float? spotPriceLimit;
 
+			private bool? enableAutoGrow;
+
+			private bool? enableAutoShrink;
+
 			public string QueueName
 			{
 				get
@@ -318,6 +322,30 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					spotPriceLimit = value;
+				}
+			}
+
+			public bool? EnableAutoGrow
+			{
+				get
+				{
+					return enableAutoGrow;
+				}
+				set	
+				{
+					enableAutoGrow = value;
+				}
+			}
+
+			public bool? EnableAutoShrink
+			{
+				get
+				{
+					return enableAutoShrink;
+				}
+				set	
+				{
+					enableAutoShrink = value;
 				}
 			}
 		}

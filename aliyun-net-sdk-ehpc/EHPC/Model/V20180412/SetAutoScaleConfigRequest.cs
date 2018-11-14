@@ -223,7 +223,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SpotStrategy", queuess[i].SpotStrategy);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".QueueName", queuess[i].QueueName);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".InstanceType", queuess[i].InstanceType);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".EnableAutoGrow", queuess[i].EnableAutoGrow);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SpotPriceLimit", queuess[i].SpotPriceLimit);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".EnableAutoShrink", queuess[i].EnableAutoShrink);
 				}
 			}
 		}
@@ -289,7 +291,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string instanceType;
 
+			private bool? enableAutoGrow;
+
 			private float? spotPriceLimit;
+
+			private bool? enableAutoShrink;
 
 			public string SpotStrategy
 			{
@@ -327,6 +333,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				}
 			}
 
+			public bool? EnableAutoGrow
+			{
+				get
+				{
+					return enableAutoGrow;
+				}
+				set	
+				{
+					enableAutoGrow = value;
+				}
+			}
+
 			public float? SpotPriceLimit
 			{
 				get
@@ -336,6 +354,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					spotPriceLimit = value;
+				}
+			}
+
+			public bool? EnableAutoShrink
+			{
+				get
+				{
+					return enableAutoShrink;
+				}
+				set	
+				{
+					enableAutoShrink = value;
 				}
 			}
 		}

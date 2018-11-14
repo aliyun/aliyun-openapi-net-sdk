@@ -54,6 +54,8 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				queueInfo.InstanceType = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].InstanceType");
 				queueInfo.SpotStrategy = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].SpotStrategy");
 				queueInfo.SpotPriceLimit = context.FloatValue("GetAutoScaleConfig.Queues["+ i +"].SpotPriceLimit");
+				queueInfo.EnableAutoGrow = context.BooleanValue("GetAutoScaleConfig.Queues["+ i +"].EnableAutoGrow");
+				queueInfo.EnableAutoShrink = context.BooleanValue("GetAutoScaleConfig.Queues["+ i +"].EnableAutoShrink");
 
 				getAutoScaleConfigResponse_queues.Add(queueInfo);
 			}

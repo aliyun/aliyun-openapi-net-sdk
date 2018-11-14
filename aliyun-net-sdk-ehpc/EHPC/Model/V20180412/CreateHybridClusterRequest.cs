@@ -47,6 +47,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string onPremiseVolumeRemotePath;
 
+		private string jobQueue;
+
 		private string accessKeyId;
 
 		private string volumeType;
@@ -68,6 +70,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string osTag;
 
 		private string remoteDirectory;
+
+		private List<PostInstallScript> postInstallScripts;
 
 		private string vSwitchId;
 
@@ -177,6 +181,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				onPremiseVolumeRemotePath = value;
 				DictionaryUtil.Add(QueryParameters, "OnPremiseVolumeRemotePath", value);
+			}
+		}
+
+		public string JobQueue
+		{
+			get
+			{
+				return jobQueue;
+			}
+			set	
+			{
+				jobQueue = value;
+				DictionaryUtil.Add(QueryParameters, "JobQueue", value);
 			}
 		}
 
@@ -323,6 +340,24 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public List<PostInstallScript> PostInstallScripts
+		{
+			get
+			{
+				return postInstallScripts;
+			}
+
+			set
+			{
+				postInstallScripts = value;
+				for (int i = 0; i < postInstallScripts.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"PostInstallScript." + (i + 1) + ".Args", postInstallScripts[i].Args);
+					DictionaryUtil.Add(QueryParameters,"PostInstallScript." + (i + 1) + ".Url", postInstallScripts[i].Url);
+				}
+			}
+		}
+
 		public string VSwitchId
 		{
 			get
@@ -454,6 +489,38 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				location = value;
 				DictionaryUtil.Add(QueryParameters, "Location", value);
+			}
+		}
+
+		public class PostInstallScript
+		{
+
+			private string args;
+
+			private string url;
+
+			public string Args
+			{
+				get
+				{
+					return args;
+				}
+				set	
+				{
+					args = value;
+				}
+			}
+
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
+				}
 			}
 		}
 

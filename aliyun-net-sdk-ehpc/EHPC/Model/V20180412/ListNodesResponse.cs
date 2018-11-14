@@ -125,6 +125,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string location;
 
+			private string createMode;
+
 			private List<string> roles;
 
 			private ListNodes_TotalResources totalResources;
@@ -296,6 +298,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					location = value;
+				}
+			}
+
+			public string CreateMode
+			{
+				get
+				{
+					return createMode;
+				}
+				set	
+				{
+					createMode = value;
 				}
 			}
 
