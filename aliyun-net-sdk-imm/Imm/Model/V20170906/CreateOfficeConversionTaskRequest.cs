@@ -47,6 +47,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private long? endPage;
 
+		private string idempotentToken;
+
 		private string tgtFileSuffix;
 
 		private string accessKeyId;
@@ -165,6 +167,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				endPage = value;
 				DictionaryUtil.Add(QueryParameters, "EndPage", value.ToString());
+			}
+		}
+
+		public string IdempotentToken
+		{
+			get
+			{
+				return idempotentToken;
+			}
+			set	
+			{
+				idempotentToken = value;
+				DictionaryUtil.Add(QueryParameters, "IdempotentToken", value);
 			}
 		}
 

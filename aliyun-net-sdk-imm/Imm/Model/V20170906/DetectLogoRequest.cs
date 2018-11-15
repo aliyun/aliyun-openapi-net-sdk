@@ -26,54 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class FaceRegistRequest : RpcAcsRequest<FaceRegistResponse>
+    public class DetectLogoRequest : RpcAcsRequest<DetectLogoResponse>
     {
-        public FaceRegistRequest()
-            : base("imm", "2017-09-06", "FaceRegist", "imm", "openAPI")
+        public DetectLogoRequest()
+            : base("imm", "2017-09-06", "DetectLogo", "imm", "openAPI")
         {
         }
 
-		private bool? chooseBiggestFace;
-
-		private bool? isQualityLimit;
+		private string srcUris;
 
 		private string action;
 
 		private string project;
 
-		private string srcUri;
-
-		private string registerCheckLevel;
-
-		private string groupName;
-
-		private string user;
-
 		private string accessKeyId;
 
-		public bool? ChooseBiggestFace
+		public string SrcUris
 		{
 			get
 			{
-				return chooseBiggestFace;
+				return srcUris;
 			}
 			set	
 			{
-				chooseBiggestFace = value;
-				DictionaryUtil.Add(QueryParameters, "ChooseBiggestFace", value.ToString());
-			}
-		}
-
-		public bool? IsQualityLimit
-		{
-			get
-			{
-				return isQualityLimit;
-			}
-			set	
-			{
-				isQualityLimit = value;
-				DictionaryUtil.Add(QueryParameters, "IsQualityLimit", value.ToString());
+				srcUris = value;
+				DictionaryUtil.Add(QueryParameters, "SrcUris", value);
 			}
 		}
 
@@ -103,58 +80,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string SrcUri
-		{
-			get
-			{
-				return srcUri;
-			}
-			set	
-			{
-				srcUri = value;
-				DictionaryUtil.Add(QueryParameters, "SrcUri", value);
-			}
-		}
-
-		public string RegisterCheckLevel
-		{
-			get
-			{
-				return registerCheckLevel;
-			}
-			set	
-			{
-				registerCheckLevel = value;
-				DictionaryUtil.Add(QueryParameters, "RegisterCheckLevel", value);
-			}
-		}
-
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
-
-		public string User
-		{
-			get
-			{
-				return user;
-			}
-			set	
-			{
-				user = value;
-				DictionaryUtil.Add(QueryParameters, "User", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -173,9 +98,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override FaceRegistResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DetectLogoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return FaceRegistResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DetectLogoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

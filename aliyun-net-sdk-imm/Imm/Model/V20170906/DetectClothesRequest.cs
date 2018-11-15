@@ -26,16 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class FaceCompareRequest : RpcAcsRequest<FaceCompareResponse>
+    public class DetectClothesRequest : RpcAcsRequest<DetectClothesResponse>
     {
-        public FaceCompareRequest()
-            : base("imm", "2017-09-06", "FaceCompare", "imm", "openAPI")
+        public DetectClothesRequest()
+            : base("imm", "2017-09-06", "DetectClothes", "imm", "openAPI")
         {
         }
 
-		private string srcUriB;
-
-		private string srcUriA;
+		private string srcUris;
 
 		private string action;
 
@@ -43,29 +41,16 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string accessKeyId;
 
-		public string SrcUriB
+		public string SrcUris
 		{
 			get
 			{
-				return srcUriB;
+				return srcUris;
 			}
 			set	
 			{
-				srcUriB = value;
-				DictionaryUtil.Add(QueryParameters, "SrcUriB", value);
-			}
-		}
-
-		public string SrcUriA
-		{
-			get
-			{
-				return srcUriA;
-			}
-			set	
-			{
-				srcUriA = value;
-				DictionaryUtil.Add(QueryParameters, "SrcUriA", value);
+				srcUris = value;
+				DictionaryUtil.Add(QueryParameters, "SrcUris", value);
 			}
 		}
 
@@ -113,9 +98,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override FaceCompareResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DetectClothesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return FaceCompareResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DetectClothesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
