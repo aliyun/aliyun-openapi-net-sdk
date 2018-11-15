@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				vSwitch.VSwitchName = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].VSwitchName");
 				vSwitch.CreationTime = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].CreationTime");
 				vSwitch.IsDefault = context.BooleanValue("DescribeVSwitches.VSwitches["+ i +"].IsDefault");
+				vSwitch.ResourceGroupId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].ResourceGroupId");
 
 				describeVSwitchesResponse_vSwitches.Add(vSwitch);
 			}

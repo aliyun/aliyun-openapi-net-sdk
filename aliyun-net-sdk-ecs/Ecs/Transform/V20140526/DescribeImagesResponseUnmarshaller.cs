@@ -71,6 +71,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					diskDeviceMapping.Format = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].Format");
 					diskDeviceMapping.ImportOSSBucket = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].ImportOSSBucket");
 					diskDeviceMapping.ImportOSSObject = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].ImportOSSObject");
+					diskDeviceMapping.Progress = context.StringValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].Progress");
+					diskDeviceMapping.RemainTime = context.IntegerValue("DescribeImages.Images["+ i +"].DiskDeviceMappings["+ j +"].RemainTime");
 
 					image_diskDeviceMappings.Add(diskDeviceMapping);
 				}

@@ -151,6 +151,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string sourceCidrIp;
 
+			private string ipv6SourceCidrIp;
+
 			private string policy;
 
 			private string nicType;
@@ -162,6 +164,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private string destGroupName;
 
 			private string destCidrIp;
+
+			private string ipv6DestCidrIp;
 
 			private string destGroupOwnerAccount;
 
@@ -245,6 +249,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string Ipv6SourceCidrIp
+			{
+				get
+				{
+					return ipv6SourceCidrIp;
+				}
+				set	
+				{
+					ipv6SourceCidrIp = value;
+				}
+			}
+
 			public string Policy
 			{
 				get
@@ -314,6 +330,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					destCidrIp = value;
+				}
+			}
+
+			public string Ipv6DestCidrIp
+			{
+				get
+				{
+					return ipv6DestCidrIp;
+				}
+				set	
+				{
+					ipv6DestCidrIp = value;
 				}
 			}
 

@@ -78,6 +78,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				}
 				networkInterfaceSet.PrivateIpSets = networkInterfaceSet_privateIpSets;
 
+				List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Ipv6Set> networkInterfaceSet_ipv6Sets = new List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Ipv6Set>();
+				for (int j = 0; j < context.Length("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Ipv6Sets.Length"); j++) {
+					DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Ipv6Set ipv6Set = new DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Ipv6Set();
+					ipv6Set.Ipv6Address = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Ipv6Sets["+ j +"].Ipv6Address");
+
+					networkInterfaceSet_ipv6Sets.Add(ipv6Set);
+				}
+				networkInterfaceSet.Ipv6Sets = networkInterfaceSet_ipv6Sets;
+
 				List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Tag> networkInterfaceSet_tags = new List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Tag>();
 				for (int j = 0; j < context.Length("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Tags.Length"); j++) {
 					DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Tag tag = new DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Tag();

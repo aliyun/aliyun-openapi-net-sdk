@@ -117,6 +117,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? isDefault;
 
+			private string resourceGroupId;
+
 			public string VSwitchId
 			{
 				get
@@ -234,6 +236,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					isDefault = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 		}

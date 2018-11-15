@@ -49,6 +49,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string action;
 
+		private string ipv6DestCidrIp;
+
+		private string ipv6SourceCidrIp;
+
 		private string policy;
 
 		private string portRange;
@@ -174,6 +178,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Ipv6DestCidrIp
+		{
+			get
+			{
+				return ipv6DestCidrIp;
+			}
+			set	
+			{
+				ipv6DestCidrIp = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6DestCidrIp", value);
+			}
+		}
+
+		public string Ipv6SourceCidrIp
+		{
+			get
+			{
+				return ipv6SourceCidrIp;
+			}
+			set	
+			{
+				ipv6SourceCidrIp = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6SourceCidrIp", value);
 			}
 		}
 

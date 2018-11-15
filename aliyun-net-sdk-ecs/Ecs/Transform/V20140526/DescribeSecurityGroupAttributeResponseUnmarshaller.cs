@@ -47,12 +47,14 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				permission.SourceGroupId = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceGroupId");
 				permission.SourceGroupName = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceGroupName");
 				permission.SourceCidrIp = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceCidrIp");
+				permission.Ipv6SourceCidrIp = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Ipv6SourceCidrIp");
 				permission.Policy = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Policy");
 				permission.NicType = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].NicType");
 				permission.SourceGroupOwnerAccount = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceGroupOwnerAccount");
 				permission.DestGroupId = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestGroupId");
 				permission.DestGroupName = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestGroupName");
 				permission.DestCidrIp = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestCidrIp");
+				permission.Ipv6DestCidrIp = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Ipv6DestCidrIp");
 				permission.DestGroupOwnerAccount = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestGroupOwnerAccount");
 				permission.Priority = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Priority");
 				permission.Direction = context.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Direction");

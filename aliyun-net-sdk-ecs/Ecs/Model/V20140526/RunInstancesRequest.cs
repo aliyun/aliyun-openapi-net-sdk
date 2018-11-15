@@ -65,6 +65,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string launchTemplateId;
 
+		private int? ipv6AddressCount;
+
 		private long? ownerId;
 
 		private string vSwitchId;
@@ -82,6 +84,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string internetChargeType;
 
 		private string zoneId;
+
+		private List<string> ipv6Addresss;
 
 		private int? internetMaxBandwidthIn;
 
@@ -352,6 +356,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? Ipv6AddressCount
+		{
+			get
+			{
+				return ipv6AddressCount;
+			}
+			set	
+			{
+				ipv6AddressCount = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6AddressCount", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -466,6 +483,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public List<string> Ipv6Addresss
+		{
+			get
+			{
+				return ipv6Addresss;
+			}
+
+			set
+			{
+				ipv6Addresss = value;
+				for (int i = 0; i < ipv6Addresss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Ipv6Address." + (i + 1) , ipv6Addresss[i]);
+				}
 			}
 		}
 

@@ -125,6 +125,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private List<DescribeNetworkInterfaces_PrivateIpSet> privateIpSets;
 
+			private List<DescribeNetworkInterfaces_Ipv6Set> ipv6Sets;
+
 			private List<DescribeNetworkInterfaces_Tag> tags;
 
 			private List<string> securityGroupIds;
@@ -299,6 +301,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public List<DescribeNetworkInterfaces_Ipv6Set> Ipv6Sets
+			{
+				get
+				{
+					return ipv6Sets;
+				}
+				set	
+				{
+					ipv6Sets = value;
+				}
+			}
+
 			public List<DescribeNetworkInterfaces_Tag> Tags
 			{
 				get
@@ -409,6 +423,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						{
 							allocationId = value;
 						}
+					}
+				}
+			}
+
+			public class DescribeNetworkInterfaces_Ipv6Set
+			{
+
+				private string ipv6Address;
+
+				public string Ipv6Address
+				{
+					get
+					{
+						return ipv6Address;
+					}
+					set	
+					{
+						ipv6Address = value;
 					}
 				}
 			}

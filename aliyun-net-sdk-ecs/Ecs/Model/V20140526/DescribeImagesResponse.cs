@@ -450,6 +450,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string importOSSObject;
 
+				private string progress;
+
+				private int? remainTime;
+
 				public string SnapshotId
 				{
 					get
@@ -531,6 +535,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						importOSSObject = value;
+					}
+				}
+
+				public string Progress
+				{
+					get
+					{
+						return progress;
+					}
+					set	
+					{
+						progress = value;
+					}
+				}
+
+				public int? RemainTime
+				{
+					get
+					{
+						return remainTime;
+					}
+					set	
+					{
+						remainTime = value;
 					}
 				}
 			}
