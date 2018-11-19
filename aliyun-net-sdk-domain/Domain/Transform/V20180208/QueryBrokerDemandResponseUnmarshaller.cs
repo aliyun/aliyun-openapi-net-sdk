@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 				demand.PayPrice = context.FloatValue("QueryBrokerDemand.Data["+ i +"].PayPrice");
 				demand.PayTime = context.LongValue("QueryBrokerDemand.Data["+ i +"].PayTime");
 				demand.ProduceType = context.IntegerValue("QueryBrokerDemand.Data["+ i +"].ProduceType");
+				demand.BargainSellerPrice = context.FloatValue("QueryBrokerDemand.Data["+ i +"].BargainSellerPrice");
+				demand.BargainSellerMobile = context.StringValue("QueryBrokerDemand.Data["+ i +"].BargainSellerMobile");
 
 				queryBrokerDemandResponse_data.Add(demand);
 			}

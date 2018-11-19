@@ -133,6 +133,10 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 
 			private int? produceType;
 
+			private float? bargainSellerPrice;
+
+			private string bargainSellerMobile;
+
 			public string BizId
 			{
 				get
@@ -262,6 +266,30 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 				set	
 				{
 					produceType = value;
+				}
+			}
+
+			public float? BargainSellerPrice
+			{
+				get
+				{
+					return bargainSellerPrice;
+				}
+				set	
+				{
+					bargainSellerPrice = value;
+				}
+			}
+
+			public string BargainSellerMobile
+			{
+				get
+				{
+					return bargainSellerMobile;
+				}
+				set	
+				{
+					bargainSellerMobile = value;
 				}
 			}
 		}
