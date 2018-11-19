@@ -41,9 +41,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? renewPeriod;
 
-		private string renewalStatus;
-
 		private List<Parameter> parameters;
+
+		private string renewalStatus;
 
 		private long? ownerId;
 
@@ -101,19 +101,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string RenewalStatus
-		{
-			get
-			{
-				return renewalStatus;
-			}
-			set	
-			{
-				renewalStatus = value;
-				DictionaryUtil.Add(QueryParameters, "RenewalStatus", value);
-			}
-		}
-
 		public List<Parameter> Parameters
 		{
 			get
@@ -129,6 +116,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					DictionaryUtil.Add(QueryParameters,"Parameter." + (i + 1) + ".Code", parameters[i].Code);
 					DictionaryUtil.Add(QueryParameters,"Parameter." + (i + 1) + ".Value", parameters[i].Value);
 				}
+			}
+		}
+
+		public string RenewalStatus
+		{
+			get
+			{
+				return renewalStatus;
+			}
+			set	
+			{
+				renewalStatus = value;
+				DictionaryUtil.Add(QueryParameters, "RenewalStatus", value);
 			}
 		}
 

@@ -62,6 +62,18 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				attribute.Name = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Name");
 				attribute.Unit = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Unit");
 
+				List<DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute.DescribePricingModule_AttributeValue> attribute_values = new List<DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute.DescribePricingModule_AttributeValue>();
+				for (int j = 0; j < context.Length("DescribePricingModule.Data.AttributeList["+ i +"].Values.Length"); j++) {
+					DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute.DescribePricingModule_AttributeValue attributeValue = new DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute.DescribePricingModule_AttributeValue();
+					attributeValue.Type = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Type");
+					attributeValue.Name = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Name");
+					attributeValue._Value = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Value");
+					attributeValue.Remark = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Remark");
+
+					attribute_values.Add(attributeValue);
+				}
+				attribute.Values = attribute_values;
+
 				data_attributeList.Add(attribute);
 			}
 			data.AttributeList = data_attributeList;

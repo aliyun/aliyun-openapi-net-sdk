@@ -47,11 +47,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private long? ownerId;
 
+		private string createTimeEnd;
+
 		private string productType;
 
 		private string orderType;
-
-		private string createTimeEnd;
 
 		public string ProductCode
 		{
@@ -144,6 +144,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string CreateTimeEnd
+		{
+			get
+			{
+				return createTimeEnd;
+			}
+			set	
+			{
+				createTimeEnd = value;
+				DictionaryUtil.Add(QueryParameters, "CreateTimeEnd", value);
+			}
+		}
+
 		public string ProductType
 		{
 			get
@@ -167,19 +180,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				orderType = value;
 				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
-
-		public string CreateTimeEnd
-		{
-			get
-			{
-				return createTimeEnd;
-			}
-			set	
-			{
-				createTimeEnd = value;
-				DictionaryUtil.Add(QueryParameters, "CreateTimeEnd", value);
 			}
 		}
 

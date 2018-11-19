@@ -26,50 +26,33 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QueryMonthlyInstanceConsumptionRequest : RpcAcsRequest<QueryMonthlyInstanceConsumptionResponse>
+    public class QueryRedeemRequest : RpcAcsRequest<QueryRedeemResponse>
     {
-        public QueryMonthlyInstanceConsumptionRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryMonthlyInstanceConsumption")
+        public QueryRedeemRequest()
+            : base("BssOpenApi", "2017-12-14", "QueryRedeem")
         {
         }
 
-		private string productCode;
-
-		private string subscriptionType;
+		private string expiryTimeEnd;
 
 		private int? pageSize;
 
-		private string billingCycle;
-
-		private long? ownerId;
+		private string expiryTimeStart;
 
 		private int? pageNum;
 
-		private string productType;
+		private bool? effectiveOrNot;
 
-		public string ProductCode
+		public string ExpiryTimeEnd
 		{
 			get
 			{
-				return productCode;
+				return expiryTimeEnd;
 			}
 			set	
 			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
-			}
-		}
-
-		public string SubscriptionType
-		{
-			get
-			{
-				return subscriptionType;
-			}
-			set	
-			{
-				subscriptionType = value;
-				DictionaryUtil.Add(QueryParameters, "SubscriptionType", value);
+				expiryTimeEnd = value;
+				DictionaryUtil.Add(QueryParameters, "ExpiryTimeEnd", value);
 			}
 		}
 
@@ -86,29 +69,16 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string BillingCycle
+		public string ExpiryTimeStart
 		{
 			get
 			{
-				return billingCycle;
+				return expiryTimeStart;
 			}
 			set	
 			{
-				billingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				expiryTimeStart = value;
+				DictionaryUtil.Add(QueryParameters, "ExpiryTimeStart", value);
 			}
 		}
 
@@ -125,22 +95,22 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string ProductType
+		public bool? EffectiveOrNot
 		{
 			get
 			{
-				return productType;
+				return effectiveOrNot;
 			}
 			set	
 			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+				effectiveOrNot = value;
+				DictionaryUtil.Add(QueryParameters, "EffectiveOrNot", value.ToString());
 			}
 		}
 
-        public override QueryMonthlyInstanceConsumptionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryRedeemResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryMonthlyInstanceConsumptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryRedeemResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -26,26 +26,37 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QueryMonthlyInstanceConsumptionRequest : RpcAcsRequest<QueryMonthlyInstanceConsumptionResponse>
+    public class ConvertChargeTypeRequest : RpcAcsRequest<ConvertChargeTypeResponse>
     {
-        public QueryMonthlyInstanceConsumptionRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryMonthlyInstanceConsumption")
+        public ConvertChargeTypeRequest()
+            : base("BssOpenApi", "2017-12-14", "ConvertChargeType")
         {
         }
 
+		private int? period;
+
 		private string productCode;
+
+		private string instanceId;
 
 		private string subscriptionType;
 
-		private int? pageSize;
-
-		private string billingCycle;
-
 		private long? ownerId;
 
-		private int? pageNum;
-
 		private string productType;
+
+		public int? Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
 
 		public string ProductCode
 		{
@@ -57,6 +68,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				productCode = value;
 				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -73,32 +97,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string BillingCycle
-		{
-			get
-			{
-				return billingCycle;
-			}
-			set	
-			{
-				billingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -109,19 +107,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
@@ -138,9 +123,14 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-        public override QueryMonthlyInstanceConsumptionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ConvertChargeTypeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryMonthlyInstanceConsumptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ConvertChargeTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

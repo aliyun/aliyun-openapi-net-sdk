@@ -51,9 +51,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string region;
 
-		private string productType;
-
 		private string orderType;
+
+		private string productType;
 
 		public int? ServicePeriodQuantity
 		{
@@ -179,19 +179,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string ProductType
-		{
-			get
-			{
-				return productType;
-			}
-			set	
-			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
-			}
-		}
-
 		public string OrderType
 		{
 			get
@@ -202,6 +189,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				orderType = value;
 				DictionaryUtil.Add(QueryParameters, "OrderType", value);
+			}
+		}
+
+		public string ProductType
+		{
+			get
+			{
+				return productType;
+			}
+			set	
+			{
+				productType = value;
+				DictionaryUtil.Add(QueryParameters, "ProductType", value);
 			}
 		}
 

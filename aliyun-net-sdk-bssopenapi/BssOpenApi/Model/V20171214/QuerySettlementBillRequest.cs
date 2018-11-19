@@ -35,6 +35,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string productCode;
 
+		private bool? isHideZeroCharge;
+
 		private string subscriptionType;
 
 		private int? pageSize;
@@ -63,6 +65,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				productCode = value;
 				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+			}
+		}
+
+		public bool? IsHideZeroCharge
+		{
+			get
+			{
+				return isHideZeroCharge;
+			}
+			set	
+			{
+				isHideZeroCharge = value;
+				DictionaryUtil.Add(QueryParameters, "IsHideZeroCharge", value.ToString());
 			}
 		}
 

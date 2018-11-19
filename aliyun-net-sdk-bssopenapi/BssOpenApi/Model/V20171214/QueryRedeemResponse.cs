@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-	public class DescribePricingModuleResponse : AcsResponse
+	public class QueryRedeemResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string message;
 
-		private DescribePricingModule_Data data;
+		private QueryRedeem_Data data;
 
 		public string RequestId
 		{
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public DescribePricingModule_Data Data
+		public QueryRedeem_Data Data
 		{
 			get
 			{
@@ -94,227 +94,205 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public class DescribePricingModule_Data
+		public class QueryRedeem_Data
 		{
 
-			private List<DescribePricingModule_Module> moduleList;
+			private long? pageNum;
 
-			private List<DescribePricingModule_Attribute> attributeList;
+			private long? pageSize;
 
-			public List<DescribePricingModule_Module> ModuleList
+			private long? totalCount;
+
+			private List<QueryRedeem_RedeemItem> redeem;
+
+			public long? PageNum
 			{
 				get
 				{
-					return moduleList;
+					return pageNum;
 				}
 				set	
 				{
-					moduleList = value;
+					pageNum = value;
 				}
 			}
 
-			public List<DescribePricingModule_Attribute> AttributeList
+			public long? PageSize
 			{
 				get
 				{
-					return attributeList;
+					return pageSize;
 				}
 				set	
 				{
-					attributeList = value;
+					pageSize = value;
 				}
 			}
 
-			public class DescribePricingModule_Module
+			public long? TotalCount
 			{
-
-				private string moduleCode;
-
-				private string moduleName;
-
-				private string priceType;
-
-				private string currency;
-
-				private List<string> configList;
-
-				public string ModuleCode
+				get
 				{
-					get
-					{
-						return moduleCode;
-					}
-					set	
-					{
-						moduleCode = value;
-					}
+					return totalCount;
 				}
-
-				public string ModuleName
+				set	
 				{
-					get
-					{
-						return moduleName;
-					}
-					set	
-					{
-						moduleName = value;
-					}
-				}
-
-				public string PriceType
-				{
-					get
-					{
-						return priceType;
-					}
-					set	
-					{
-						priceType = value;
-					}
-				}
-
-				public string Currency
-				{
-					get
-					{
-						return currency;
-					}
-					set	
-					{
-						currency = value;
-					}
-				}
-
-				public List<string> ConfigList
-				{
-					get
-					{
-						return configList;
-					}
-					set	
-					{
-						configList = value;
-					}
+					totalCount = value;
 				}
 			}
 
-			public class DescribePricingModule_Attribute
+			public List<QueryRedeem_RedeemItem> Redeem
+			{
+				get
+				{
+					return redeem;
+				}
+				set	
+				{
+					redeem = value;
+				}
+			}
+
+			public class QueryRedeem_RedeemItem
 			{
 
-				private string code;
+				private string redeemId;
 
-				private string name;
+				private string redeemNo;
 
-				private string unit;
+				private string status;
 
-				private List<DescribePricingModule_AttributeValue> values;
+				private string grantedTime;
 
-				public string Code
+				private string effectiveTime;
+
+				private string expiryTime;
+
+				private string nominalValue;
+
+				private string balance;
+
+				private string applicableProducts;
+
+				private string specification;
+
+				public string RedeemId
 				{
 					get
 					{
-						return code;
+						return redeemId;
 					}
 					set	
 					{
-						code = value;
+						redeemId = value;
 					}
 				}
 
-				public string Name
+				public string RedeemNo
 				{
 					get
 					{
-						return name;
+						return redeemNo;
 					}
 					set	
 					{
-						name = value;
+						redeemNo = value;
 					}
 				}
 
-				public string Unit
+				public string Status
 				{
 					get
 					{
-						return unit;
+						return status;
 					}
 					set	
 					{
-						unit = value;
+						status = value;
 					}
 				}
 
-				public List<DescribePricingModule_AttributeValue> Values
+				public string GrantedTime
 				{
 					get
 					{
-						return values;
+						return grantedTime;
 					}
 					set	
 					{
-						values = value;
+						grantedTime = value;
 					}
 				}
 
-				public class DescribePricingModule_AttributeValue
+				public string EffectiveTime
 				{
-
-					private string type;
-
-					private string name;
-
-					private string _value;
-
-					private string remark;
-
-					public string Type
+					get
 					{
-						get
-						{
-							return type;
-						}
-						set	
-						{
-							type = value;
-						}
+						return effectiveTime;
 					}
-
-					public string Name
+					set	
 					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
+						effectiveTime = value;
 					}
+				}
 
-					public string _Value
+				public string ExpiryTime
+				{
+					get
 					{
-						get
-						{
-							return _value;
-						}
-						set	
-						{
-							_value = value;
-						}
+						return expiryTime;
 					}
-
-					public string Remark
+					set	
 					{
-						get
-						{
-							return remark;
-						}
-						set	
-						{
-							remark = value;
-						}
+						expiryTime = value;
+					}
+				}
+
+				public string NominalValue
+				{
+					get
+					{
+						return nominalValue;
+					}
+					set	
+					{
+						nominalValue = value;
+					}
+				}
+
+				public string Balance
+				{
+					get
+					{
+						return balance;
+					}
+					set	
+					{
+						balance = value;
+					}
+				}
+
+				public string ApplicableProducts
+				{
+					get
+					{
+						return applicableProducts;
+					}
+					set	
+					{
+						applicableProducts = value;
+					}
+				}
+
+				public string Specification
+				{
+					get
+					{
+						return specification;
+					}
+					set	
+					{
+						specification = value;
 					}
 				}
 			}
