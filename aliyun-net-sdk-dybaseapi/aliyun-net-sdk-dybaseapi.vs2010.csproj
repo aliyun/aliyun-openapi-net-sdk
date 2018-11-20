@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4f428e8b-b3b3-4c8e-9e5e-e78c7b5be6d5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-dybaseapi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Dybaseapi\Model\V20170525\QueryTokenForMnsQueueRequest.cs" />
+	<Compile Include="Dybaseapi\Model\V20170525\QueryTokenForMnsQueueResponse.cs" />
+	<Compile Include="Dybaseapi\Transform\V20170525\QueryTokenForMnsQueueResponseUnmarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\IMNS.cs" />
+	<Compile Include="Dybaseapi\MNS\IQueue.cs" />
+	<Compile Include="Dybaseapi\MNS\MNSClient.cs" />
+	<Compile Include="Dybaseapi\MNS\MNSConfig.cs" />
+	<Compile Include="Dybaseapi\MNS\MNSErrorCode.cs" />
+	<Compile Include="Dybaseapi\MNS\MNSException.cs" />
+	<Compile Include="Dybaseapi\MNS\Queue.cs" />
+	<Compile Include="Dybaseapi\MNS\Internal\ResponseValidationHandler.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\BatchDeleteFailException.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\BatchDeleteMessageRequest.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\BatchDeleteMessageResponse.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\BatchReceiveMessageRequest.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\BatchReceiveMessageResponse.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\DeleteMessageRequest.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\DeleteMessageResponse.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\InvalidArgumentException.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\MD5ValidateException.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\MNSRequest.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\Message.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\MessageNotExistException.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\QueueNotExistException.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\ReceiptHandleErrorException.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\ReceiveMessageRequest.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\ReceiveMessageResponse.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\SimpleMNSRequest.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\Internal\MarshallTransformations\BatchDeleteMessageRequestMarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\Internal\MarshallTransformations\BatchDeleteMessageResponseUnmarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\Internal\MarshallTransformations\BatchReceiveMessageRequestMarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\Internal\MarshallTransformations\BatchReceiveMessageResponseUnmarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\Internal\MarshallTransformations\DeleteMessageRequestMarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\Internal\MarshallTransformations\DeleteMessageResponseUnmarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\Internal\MarshallTransformations\ErrorResponseUnmarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\Internal\MarshallTransformations\ReceiveMessageRequestMarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Model\Internal\MarshallTransformations\ReceiveMessageResponseUnmarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\AliyunServiceClient.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\AliyunServiceException.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\ClientConfig.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Enumerations.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\ServiceCredentials.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\WebServiceResponse.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\DefaultRequest.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\ErrorResponse.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\IRequest.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\WebServiceRequest.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Auth\IServiceSigner.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Auth\MNSSigner.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Transform\HttpWebRequestResponseData.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Transform\IMarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Transform\IResponseUnmarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Transform\IUnmarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Transform\IWebResponseData.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Transform\RequestMarshallException.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Transform\ResponseUnmarshallException.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Transform\ResponseUnmarshallers.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Transform\UnmarshallerContext.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Transform\XmlMarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Transform\XmlUnmarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Util\Extensions.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Internal\Util\Metrics.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\Contexts.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\HttpErrorResponseException.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\IPiplelineHandler.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\PipelineHandler.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\RuntimeAsyncResult.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\RuntimePipeline.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\ErrorHandler\ErrorHandler.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\ErrorHandler\ExceptionHandler.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\ErrorHandler\HttpErrorResponseExceptionHandler.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\ErrorHandler\IExceptionHandler.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\ErrorHandler\WebExceptionHandler.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\Handlers\CredentialsRetriever.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\Handlers\GenericHandler.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\Handlers\Marshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\Handlers\MetricsHandler.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\Handlers\Signer.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\Handlers\Unmarshaller.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\HttpHandler\HttpHandler.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\HttpHandler\HttpWebRequestFactory.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\HttpHandler\IHttpRequestFactory.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\RetryHandler\DefaultRetryPolicy.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\RetryHandler\RetryHandler.cs" />
+	<Compile Include="Dybaseapi\MNS\Runtime\Pipeline\RetryHandler\RetryPolicy.cs" />
+	<Compile Include="Dybaseapi\MNS\Util\AliyunSDKUtils.cs" />
+	<Compile Include="Dybaseapi\MNS\Util\CryptoUtil.cs" />
+	<Compile Include="Dybaseapi\MNS\Util\HttpHeader.cs" />
+	<Compile Include="Dybaseapi\MNS\Util\MNSConstants.cs" />
+	<Compile Include="Dybaseapi\MNS\Util\TypeWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
