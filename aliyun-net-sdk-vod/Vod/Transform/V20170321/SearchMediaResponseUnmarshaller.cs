@@ -108,6 +108,23 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				audio.SpriteSnapshots2 = audio_spriteSnapshots2;
 				media.Audio = audio;
 
+				SearchMediaResponse.SearchMedia_Media.SearchMedia_Image image = new SearchMediaResponse.SearchMedia_Media.SearchMedia_Image();
+				image.Title = context.StringValue("SearchMedia.MediaList["+ i +"].Image.Title");
+				image.ImageId = context.StringValue("SearchMedia.MediaList["+ i +"].Image.ImageId");
+				image.CateId = context.LongValue("SearchMedia.MediaList["+ i +"].Image.CateId");
+				image.CateName = context.StringValue("SearchMedia.MediaList["+ i +"].Image.CateName");
+				image.Ext = context.StringValue("SearchMedia.MediaList["+ i +"].Image.Ext");
+				image.CreationTime = context.StringValue("SearchMedia.MediaList["+ i +"].Image.CreationTime");
+				image.ModificationTime = context.StringValue("SearchMedia.MediaList["+ i +"].Image.ModificationTime");
+				image.Tags = context.StringValue("SearchMedia.MediaList["+ i +"].Image.Tags");
+				image.Type = context.StringValue("SearchMedia.MediaList["+ i +"].Image.Type");
+				image.URL = context.StringValue("SearchMedia.MediaList["+ i +"].Image.URL");
+				image.Status = context.StringValue("SearchMedia.MediaList["+ i +"].Image.Status");
+				image.Description = context.StringValue("SearchMedia.MediaList["+ i +"].Image.Description");
+				image.StorageLocation = context.StringValue("SearchMedia.MediaList["+ i +"].Image.StorageLocation");
+				image.RegionId = context.StringValue("SearchMedia.MediaList["+ i +"].Image.RegionId");
+				media.Image = image;
+
 				searchMediaResponse_mediaList.Add(media);
 			}
 			searchMediaResponse.MediaList = searchMediaResponse_mediaList;

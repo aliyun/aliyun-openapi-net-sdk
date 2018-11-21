@@ -26,32 +26,37 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class SubmitTranscodeJobsRequest : RpcAcsRequest<SubmitTranscodeJobsResponse>
+    public class DeleteWatermarkRequest : RpcAcsRequest<DeleteWatermarkResponse>
     {
-        public SubmitTranscodeJobsRequest()
-            : base("vod", "2017-03-21", "SubmitTranscodeJobs", "vod", "openAPI")
+        public DeleteWatermarkRequest()
+            : base("vod", "2017-03-21", "DeleteWatermark", "vod", "openAPI")
         {
         }
 
-		private long? resourceOwnerId;
+		private string watermarkId;
 
-		private string templateGroupId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
 		private string action;
 
-		private string videoId;
-
-		private string overrideParams;
-
 		private long? ownerId;
-
-		private string encryptConfig;
 
 		private string accessKeyId;
 
-		private string pipelineId;
+		public string WatermarkId
+		{
+			get
+			{
+				return watermarkId;
+			}
+			set	
+			{
+				watermarkId = value;
+				DictionaryUtil.Add(QueryParameters, "WatermarkId", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -63,19 +68,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string TemplateGroupId
-		{
-			get
-			{
-				return templateGroupId;
-			}
-			set	
-			{
-				templateGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
 			}
 		}
 
@@ -105,32 +97,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
-		{
-			get
-			{
-				return videoId;
-			}
-			set	
-			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
-			}
-		}
-
-		public string OverrideParams
-		{
-			get
-			{
-				return overrideParams;
-			}
-			set	
-			{
-				overrideParams = value;
-				DictionaryUtil.Add(QueryParameters, "OverrideParams", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -141,19 +107,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string EncryptConfig
-		{
-			get
-			{
-				return encryptConfig;
-			}
-			set	
-			{
-				encryptConfig = value;
-				DictionaryUtil.Add(QueryParameters, "EncryptConfig", value);
 			}
 		}
 
@@ -170,22 +123,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string PipelineId
-		{
-			get
-			{
-				return pipelineId;
-			}
-			set	
-			{
-				pipelineId = value;
-				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
-			}
-		}
-
-        public override SubmitTranscodeJobsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteWatermarkResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SubmitTranscodeJobsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteWatermarkResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

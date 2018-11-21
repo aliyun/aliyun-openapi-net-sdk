@@ -97,6 +97,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string cateName;
 
+			private string storageLocation;
+
 			private List<string> snapshots;
 
 			public string VideoId
@@ -264,6 +266,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					cateName = value;
+				}
+			}
+
+			public string StorageLocation
+			{
+				get
+				{
+					return storageLocation;
+				}
+				set	
+				{
+					storageLocation = value;
 				}
 			}
 

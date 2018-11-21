@@ -50,6 +50,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.CoverURL = context.StringValue("GetVideoList.VideoList["+ i +"].CoverURL");
 				video.CateId = context.LongValue("GetVideoList.VideoList["+ i +"].CateId");
 				video.CateName = context.StringValue("GetVideoList.VideoList["+ i +"].CateName");
+				video.StorageLocation = context.StringValue("GetVideoList.VideoList["+ i +"].StorageLocation");
 
 				List<string> video_snapshots = new List<string>();
 				for (int j = 0; j < context.Length("GetVideoList.VideoList["+ i +"].Snapshots.Length"); j++) {

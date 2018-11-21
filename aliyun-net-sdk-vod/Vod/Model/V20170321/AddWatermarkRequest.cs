@@ -26,32 +26,30 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class UploadMediaByURLRequest : RpcAcsRequest<UploadMediaByURLResponse>
+    public class AddWatermarkRequest : RpcAcsRequest<AddWatermarkResponse>
     {
-        public UploadMediaByURLRequest()
-            : base("vod", "2017-03-21", "UploadMediaByURL", "vod", "openAPI")
+        public AddWatermarkRequest()
+            : base("vod", "2017-03-21", "AddWatermark", "vod", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string templateGroupId;
-
-		private string uploadMetadatas;
-
 		private string resourceOwnerAccount;
 
-		private string uploadURLs;
+		private string name;
 
 		private string action;
 
-		private string messageCallback;
+		private string fileUrl;
 
 		private long? ownerId;
 
-		private string priority;
+		private string type;
 
-		private string storageLocation;
+		private string watermarkConfig;
+
+		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -63,32 +61,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string TemplateGroupId
-		{
-			get
-			{
-				return templateGroupId;
-			}
-			set	
-			{
-				templateGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
-			}
-		}
-
-		public string UploadMetadatas
-		{
-			get
-			{
-				return uploadMetadatas;
-			}
-			set	
-			{
-				uploadMetadatas = value;
-				DictionaryUtil.Add(QueryParameters, "UploadMetadatas", value);
 			}
 		}
 
@@ -105,16 +77,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string UploadURLs
+		public string Name
 		{
 			get
 			{
-				return uploadURLs;
+				return name;
 			}
 			set	
 			{
-				uploadURLs = value;
-				DictionaryUtil.Add(QueryParameters, "UploadURLs", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -131,16 +103,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string MessageCallback
+		public string FileUrl
 		{
 			get
 			{
-				return messageCallback;
+				return fileUrl;
 			}
 			set	
 			{
-				messageCallback = value;
-				DictionaryUtil.Add(QueryParameters, "MessageCallback", value);
+				fileUrl = value;
+				DictionaryUtil.Add(QueryParameters, "FileUrl", value);
 			}
 		}
 
@@ -157,40 +129,48 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Priority
+		public string Type
 		{
 			get
 			{
-				return priority;
+				return type;
 			}
 			set	
 			{
-				priority = value;
-				DictionaryUtil.Add(QueryParameters, "Priority", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
-		public string StorageLocation
+		public string WatermarkConfig
 		{
 			get
 			{
-				return storageLocation;
+				return watermarkConfig;
 			}
 			set	
 			{
-				storageLocation = value;
-				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
+				watermarkConfig = value;
+				DictionaryUtil.Add(QueryParameters, "WatermarkConfig", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string AccessKeyId
 		{
-			return false;
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
 		}
 
-        public override UploadMediaByURLResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddWatermarkResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return UploadMediaByURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddWatermarkResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

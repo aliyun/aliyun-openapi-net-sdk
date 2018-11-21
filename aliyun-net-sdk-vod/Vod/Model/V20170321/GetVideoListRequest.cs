@@ -55,6 +55,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string status;
 
+		private string storageLocation;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -195,6 +197,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				status = value;
 				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public string StorageLocation
+		{
+			get
+			{
+				return storageLocation;
+			}
+			set	
+			{
+				storageLocation = value;
+				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
 			}
 		}
 

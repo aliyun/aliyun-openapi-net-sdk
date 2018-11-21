@@ -26,32 +26,43 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class UploadMediaByURLRequest : RpcAcsRequest<UploadMediaByURLResponse>
+    public class RegisterMediaRequest : RpcAcsRequest<RegisterMediaResponse>
     {
-        public UploadMediaByURLRequest()
-            : base("vod", "2017-03-21", "UploadMediaByURL", "vod", "openAPI")
+        public RegisterMediaRequest()
+            : base("vod", "2017-03-21", "RegisterMedia", "vod", "openAPI")
         {
         }
+
+		private string userData;
 
 		private long? resourceOwnerId;
 
 		private string templateGroupId;
 
-		private string uploadMetadatas;
-
 		private string resourceOwnerAccount;
-
-		private string uploadURLs;
 
 		private string action;
 
-		private string messageCallback;
-
 		private long? ownerId;
 
-		private string priority;
+		private string registerMetadatas;
 
-		private string storageLocation;
+		private string workFlowId;
+
+		private string accessKeyId;
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -79,19 +90,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string UploadMetadatas
-		{
-			get
-			{
-				return uploadMetadatas;
-			}
-			set	
-			{
-				uploadMetadatas = value;
-				DictionaryUtil.Add(QueryParameters, "UploadMetadatas", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -102,19 +100,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string UploadURLs
-		{
-			get
-			{
-				return uploadURLs;
-			}
-			set	
-			{
-				uploadURLs = value;
-				DictionaryUtil.Add(QueryParameters, "UploadURLs", value);
 			}
 		}
 
@@ -131,19 +116,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string MessageCallback
-		{
-			get
-			{
-				return messageCallback;
-			}
-			set	
-			{
-				messageCallback = value;
-				DictionaryUtil.Add(QueryParameters, "MessageCallback", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -157,29 +129,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Priority
+		public string RegisterMetadatas
 		{
 			get
 			{
-				return priority;
+				return registerMetadatas;
 			}
 			set	
 			{
-				priority = value;
-				DictionaryUtil.Add(QueryParameters, "Priority", value);
+				registerMetadatas = value;
+				DictionaryUtil.Add(QueryParameters, "RegisterMetadatas", value);
 			}
 		}
 
-		public string StorageLocation
+		public string WorkFlowId
 		{
 			get
 			{
-				return storageLocation;
+				return workFlowId;
 			}
 			set	
 			{
-				storageLocation = value;
-				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
+				workFlowId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkFlowId", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -188,9 +173,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override UploadMediaByURLResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RegisterMediaResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return UploadMediaByURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RegisterMediaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

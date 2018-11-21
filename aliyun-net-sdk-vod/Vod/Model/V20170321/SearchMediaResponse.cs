@@ -93,6 +93,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private SearchMedia_Audio audio;
 
+			private SearchMedia_Image image;
+
 			public string MediaType
 			{
 				get
@@ -150,6 +152,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					audio = value;
+				}
+			}
+
+			public SearchMedia_Image Image
+			{
+				get
+				{
+					return image;
+				}
+				set	
+				{
+					image = value;
 				}
 			}
 
@@ -731,6 +745,206 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						spriteSnapshots2 = value;
+					}
+				}
+			}
+
+			public class SearchMedia_Image
+			{
+
+				private string title;
+
+				private string imageId;
+
+				private long? cateId;
+
+				private string cateName;
+
+				private string ext;
+
+				private string creationTime;
+
+				private string modificationTime;
+
+				private string tags;
+
+				private string type;
+
+				private string uRL;
+
+				private string status;
+
+				private string description;
+
+				private string storageLocation;
+
+				private string regionId;
+
+				public string Title
+				{
+					get
+					{
+						return title;
+					}
+					set	
+					{
+						title = value;
+					}
+				}
+
+				public string ImageId
+				{
+					get
+					{
+						return imageId;
+					}
+					set	
+					{
+						imageId = value;
+					}
+				}
+
+				public long? CateId
+				{
+					get
+					{
+						return cateId;
+					}
+					set	
+					{
+						cateId = value;
+					}
+				}
+
+				public string CateName
+				{
+					get
+					{
+						return cateName;
+					}
+					set	
+					{
+						cateName = value;
+					}
+				}
+
+				public string Ext
+				{
+					get
+					{
+						return ext;
+					}
+					set	
+					{
+						ext = value;
+					}
+				}
+
+				public string CreationTime
+				{
+					get
+					{
+						return creationTime;
+					}
+					set	
+					{
+						creationTime = value;
+					}
+				}
+
+				public string ModificationTime
+				{
+					get
+					{
+						return modificationTime;
+					}
+					set	
+					{
+						modificationTime = value;
+					}
+				}
+
+				public string Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string URL
+				{
+					get
+					{
+						return uRL;
+					}
+					set	
+					{
+						uRL = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string StorageLocation
+				{
+					get
+					{
+						return storageLocation;
+					}
+					set	
+					{
+						storageLocation = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
 					}
 				}
 			}
