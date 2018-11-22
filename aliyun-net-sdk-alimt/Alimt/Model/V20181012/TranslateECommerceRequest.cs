@@ -41,6 +41,8 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 
 		private string targetLanguage;
 
+		private string scene;
+
 		public string SourceLanguage
 		{
 			get
@@ -90,6 +92,19 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			{
 				targetLanguage = value;
 				DictionaryUtil.Add(BodyParameters, "TargetLanguage", value);
+			}
+		}
+
+		public string Scene
+		{
+			get
+			{
+				return scene;
+			}
+			set	
+			{
+				scene = value;
+				DictionaryUtil.Add(BodyParameters, "Scene", value);
 			}
 		}
 
