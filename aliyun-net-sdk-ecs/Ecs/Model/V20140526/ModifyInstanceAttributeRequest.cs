@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private bool? deletionProtection;
+
 		private string userData;
 
 		private string password;
@@ -147,6 +149,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? DeletionProtection
+		{
+			get
+			{
+				return deletionProtection;
+			}
+			set	
+			{
+				deletionProtection = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionProtection", value.ToString());
 			}
 		}
 

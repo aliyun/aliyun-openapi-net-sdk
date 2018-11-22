@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private float? spotPriceLimit;
 
+		private bool? deletionProtection;
+
 		private string resourceGroupId;
 
 		private string hostName;
@@ -197,6 +199,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				spotPriceLimit = value;
 				DictionaryUtil.Add(QueryParameters, "SpotPriceLimit", value.ToString());
+			}
+		}
+
+		public bool? DeletionProtection
+		{
+			get
+			{
+				return deletionProtection;
+			}
+			set	
+			{
+				deletionProtection = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionProtection", value.ToString());
 			}
 		}
 

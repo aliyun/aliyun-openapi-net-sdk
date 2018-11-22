@@ -181,6 +181,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creditSpecification;
 
+			private bool? deletionProtection;
+
 			private List<DescribeInstances_NetworkInterface> networkInterfaces;
 
 			private List<DescribeInstances_LockReason> operationLocks;
@@ -702,6 +704,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					creditSpecification = value;
+				}
+			}
+
+			public bool? DeletionProtection
+			{
+				get
+				{
+					return deletionProtection;
+				}
+				set	
+				{
+					deletionProtection = value;
 				}
 			}
 
