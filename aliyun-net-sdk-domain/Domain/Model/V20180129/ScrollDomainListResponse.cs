@@ -21,24 +21,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-	public class QueryAdvancedDomainListResponse : AcsResponse
+	public class ScrollDomainListResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private int? totalItemNum;
 
-		private int? currentPageNum;
-
-		private int? totalPageNum;
-
 		private int? pageSize;
 
-		private bool? prePage;
+		private string scrollId;
 
-		private bool? nextPage;
-
-		private List<QueryAdvancedDomainList_Domain> data;
+		private List<ScrollDomainList_Domain> data;
 
 		public string RequestId
 		{
@@ -64,30 +58,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public int? CurrentPageNum
-		{
-			get
-			{
-				return currentPageNum;
-			}
-			set	
-			{
-				currentPageNum = value;
-			}
-		}
-
-		public int? TotalPageNum
-		{
-			get
-			{
-				return totalPageNum;
-			}
-			set	
-			{
-				totalPageNum = value;
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -100,31 +70,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? PrePage
+		public string ScrollId
 		{
 			get
 			{
-				return prePage;
+				return scrollId;
 			}
 			set	
 			{
-				prePage = value;
+				scrollId = value;
 			}
 		}
 
-		public bool? NextPage
-		{
-			get
-			{
-				return nextPage;
-			}
-			set	
-			{
-				nextPage = value;
-			}
-		}
-
-		public List<QueryAdvancedDomainList_Domain> Data
+		public List<ScrollDomainList_Domain> Data
 		{
 			get
 			{
@@ -136,7 +94,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public class QueryAdvancedDomainList_Domain
+		public class ScrollDomainList_Domain
 		{
 
 			private string domainName;

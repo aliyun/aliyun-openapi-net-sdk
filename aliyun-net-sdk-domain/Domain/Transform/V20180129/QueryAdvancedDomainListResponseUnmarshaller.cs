@@ -58,6 +58,15 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 				domain.Remark = context.StringValue("QueryAdvancedDomainList.Data["+ i +"].Remark");
 				domain.DomainGroupName = context.StringValue("QueryAdvancedDomainList.Data["+ i +"].DomainGroupName");
 				domain.ExpirationCurrDateDiff = context.IntegerValue("QueryAdvancedDomainList.Data["+ i +"].ExpirationCurrDateDiff");
+				domain.Email = context.StringValue("QueryAdvancedDomainList.Data["+ i +"].Email");
+				domain.ZhRegistrantOrganization = context.StringValue("QueryAdvancedDomainList.Data["+ i +"].ZhRegistrantOrganization");
+				domain.RegistrantOrganization = context.StringValue("QueryAdvancedDomainList.Data["+ i +"].RegistrantOrganization");
+
+				List<string> domain_dnsList = new List<string>();
+				for (int j = 0; j < context.Length("QueryAdvancedDomainList.Data["+ i +"].DnsList.Length"); j++) {
+					domain_dnsList.Add(context.StringValue("QueryAdvancedDomainList.Data["+ i +"].DnsList["+ j +"]"));
+				}
+				domain.DnsList = domain_dnsList;
 
 				queryAdvancedDomainListResponse_data.Add(domain);
 			}

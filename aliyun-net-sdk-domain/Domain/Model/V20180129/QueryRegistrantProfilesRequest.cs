@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private bool? defaultRegistrantProfile;
 
+		private string email;
+
 		private string zhRegistrantOrganization;
 
 		public string RegistrantOrganization
@@ -167,6 +169,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				defaultRegistrantProfile = value;
 				DictionaryUtil.Add(QueryParameters, "DefaultRegistrantProfile", value.ToString());
+			}
+		}
+
+		public string Email
+		{
+			get
+			{
+				return email;
+			}
+			set	
+			{
+				email = value;
+				DictionaryUtil.Add(QueryParameters, "Email", value);
 			}
 		}
 
