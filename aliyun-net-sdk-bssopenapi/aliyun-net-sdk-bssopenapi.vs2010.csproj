@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{57cad506-a083-486a-a30d-d8393ee59fa8}</ProjectGuid>
+    <ProjectGuid>{f9e58e3f-265a-4f83-b169-8229d2e73a7a}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
