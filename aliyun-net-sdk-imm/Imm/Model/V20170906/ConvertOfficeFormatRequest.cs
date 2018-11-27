@@ -33,21 +33,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string imageSpec;
-
 		private string srcType;
 
 		private string modelId;
 
 		private string project;
 
-		private string externalID;
-
 		private long? maxSheetRow;
 
 		private long? maxSheetCount;
 
 		private long? endPage;
+
+		private string tgtFileSuffix;
 
 		private string accessKeyId;
 
@@ -61,24 +59,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string tgtType;
 
+		private bool? fitToPagesWide;
+
+		private string tgtFilePrefix;
+
 		private string action;
+
+		private bool? fitToPagesTall;
 
 		private string srcUri;
 
-		private string tgtUri;
+		private string tgtFilePages;
 
-		public string ImageSpec
-		{
-			get
-			{
-				return imageSpec;
-			}
-			set	
-			{
-				imageSpec = value;
-				DictionaryUtil.Add(QueryParameters, "ImageSpec", value);
-			}
-		}
+		private string tgtUri;
 
 		public string SrcType
 		{
@@ -119,19 +112,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string ExternalID
-		{
-			get
-			{
-				return externalID;
-			}
-			set	
-			{
-				externalID = value;
-				DictionaryUtil.Add(QueryParameters, "ExternalID", value);
-			}
-		}
-
 		public long? MaxSheetRow
 		{
 			get
@@ -168,6 +148,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				endPage = value;
 				DictionaryUtil.Add(QueryParameters, "EndPage", value.ToString());
+			}
+		}
+
+		public string TgtFileSuffix
+		{
+			get
+			{
+				return tgtFileSuffix;
+			}
+			set	
+			{
+				tgtFileSuffix = value;
+				DictionaryUtil.Add(QueryParameters, "TgtFileSuffix", value);
 			}
 		}
 
@@ -249,6 +242,32 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public bool? FitToPagesWide
+		{
+			get
+			{
+				return fitToPagesWide;
+			}
+			set	
+			{
+				fitToPagesWide = value;
+				DictionaryUtil.Add(QueryParameters, "FitToPagesWide", value.ToString());
+			}
+		}
+
+		public string TgtFilePrefix
+		{
+			get
+			{
+				return tgtFilePrefix;
+			}
+			set	
+			{
+				tgtFilePrefix = value;
+				DictionaryUtil.Add(QueryParameters, "TgtFilePrefix", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -262,6 +281,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public bool? FitToPagesTall
+		{
+			get
+			{
+				return fitToPagesTall;
+			}
+			set	
+			{
+				fitToPagesTall = value;
+				DictionaryUtil.Add(QueryParameters, "FitToPagesTall", value.ToString());
+			}
+		}
+
 		public string SrcUri
 		{
 			get
@@ -272,6 +304,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				srcUri = value;
 				DictionaryUtil.Add(QueryParameters, "SrcUri", value);
+			}
+		}
+
+		public string TgtFilePages
+		{
+			get
+			{
+				return tgtFilePages;
+			}
+			set	
+			{
+				tgtFilePages = value;
+				DictionaryUtil.Add(QueryParameters, "TgtFilePages", value);
 			}
 		}
 
