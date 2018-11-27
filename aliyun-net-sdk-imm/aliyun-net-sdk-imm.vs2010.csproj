@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0adfb256-a14c-46cf-8bb2-de048fd172aa}</ProjectGuid>
+    <ProjectGuid>{87fb8280-5a1a-44e9-8fbc-51c1511dc300}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -50,11 +50,14 @@
 	<Compile Include="Imm\Model\V20170906\CreateFaceJobRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceSearchGroupsRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteTagByUrlResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateDocIndexMetaRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GetPhotoProcessTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteDocIndexResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceSearchGroupUsersRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteFaceSearchImageByIdRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GetFaceSearchImageRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\SearchFaceResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\SearchDocIndexResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetPornBatchDetectJobRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateFaceSetResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CreatePornBatchDetectJobResponse.cs" />
@@ -62,6 +65,7 @@
 	<Compile Include="Imm\Model\V20170906\GetFaceSetDetailRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GroupFacesRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectQRCodesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetDocIndexTaskResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceJobsResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetProjectRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteFaceSearchUserResponse.cs" />
@@ -103,6 +107,7 @@
 	<Compile Include="Imm\Model\V20170906\DetectQRCodesResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetFaceSetDetailResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteTagByNameResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetDocIndexRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\IndexTagRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GetFaceSearchUserResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListTagNamesResponse.cs" />
@@ -151,12 +156,17 @@
 	<Compile Include="Imm\Model\V20170906\ListPornBatchDetectJobsRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteFaceSearchGroupResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectFaceResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateDocIndexTaskRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceSearchGroupImagesResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteDocIndexRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteFaceJobResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListTagNamesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateDocIndexMetaResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetDocIndexTaskRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteOfficeConversionTaskRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectClothesRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceJobsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateDocIndexTaskResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CreatePornBatchDetectJobRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteTagSetRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GetTagJobRequest.cs" />
@@ -164,12 +174,14 @@
 	<Compile Include="Imm\Model\V20170906\CompareFaceResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceGroupPhotosRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectTagRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\SearchDocIndexRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectFaceRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\ListPornBatchDetectJobsResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetPornBatchDetectJobResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetPhotoProcessTaskResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetProjectResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceGroupsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetDocIndexResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteFaceSetResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\PutProjectRequest.cs" />
 	<Compile Include="Imm\Transform\V20170906\PhotoProcessResponseUnmarshaller.cs" />
@@ -191,6 +203,7 @@
 	<Compile Include="Imm\Transform\V20170906\GetTagJobResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetFaceJobResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\RegistFaceResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GetDocIndexResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DeleteTagByUrlResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateTagJobResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\UpdateProjectResponseUnmarshaller.cs" />
@@ -204,6 +217,7 @@
 	<Compile Include="Imm\Transform\V20170906\GroupFacesResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\IndexFaceResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetFaceSearchImageResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\UpdateDocIndexMetaResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\ListPhotoProcessTasksResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DetectTagResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetTagSetResponseUnmarshaller.cs" />
@@ -217,10 +231,13 @@
 	<Compile Include="Imm\Transform\V20170906\DeleteFaceSearchGroupResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DeletePornBatchDetectJobResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateFaceJobResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\GetDocIndexTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetFaceSearchUserResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\SearchDocIndexResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DeleteFaceByUrlResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetPornBatchDetectJobResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateTagSetResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\CreateDocIndexTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DetectFaceResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetFaceSetDetailResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DetectLogoResponseUnmarshaller.cs" />
@@ -228,6 +245,7 @@
 	<Compile Include="Imm\Transform\V20170906\DeleteTagJobResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CompareFaceResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\ListFaceSearchGroupUsersResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\DeleteDocIndexResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DescribeRegionsResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\ListOfficeConversionTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\ListFaceJobsResponseUnmarshaller.cs" />
