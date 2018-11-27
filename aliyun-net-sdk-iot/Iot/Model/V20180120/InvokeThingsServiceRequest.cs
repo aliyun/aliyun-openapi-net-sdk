@@ -26,59 +26,76 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateRuleActionRequest : RpcAcsRequest<CreateRuleActionResponse>
+    public class InvokeThingsServiceRequest : RpcAcsRequest<InvokeThingsServiceResponse>
     {
-        public CreateRuleActionRequest()
-            : base("Iot", "2018-01-20", "CreateRuleAction")
+        public InvokeThingsServiceRequest()
+            : base("Iot", "2018-01-20", "InvokeThingsService")
         {
         }
 
-		private string configuration;
+		private string args;
 
-		private long? ruleId;
+		private string identifier;
 
-		private string type;
+		private List<string> deviceNames;
+
+		private string productKey;
 
 		private string accessKeyId;
 
-		private bool? errorActionFlag;
-
-		public string Configuration
+		public string Args
 		{
 			get
 			{
-				return configuration;
+				return args;
 			}
 			set	
 			{
-				configuration = value;
-				DictionaryUtil.Add(QueryParameters, "Configuration", value);
+				args = value;
+				DictionaryUtil.Add(QueryParameters, "Args", value);
 			}
 		}
 
-		public long? RuleId
+		public string Identifier
 		{
 			get
 			{
-				return ruleId;
+				return identifier;
 			}
 			set	
 			{
-				ruleId = value;
-				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
+				identifier = value;
+				DictionaryUtil.Add(QueryParameters, "Identifier", value);
 			}
 		}
 
-		public string Type
+		public List<string> DeviceNames
 		{
 			get
 			{
-				return type;
+				return deviceNames;
+			}
+
+			set
+			{
+				deviceNames = value;
+				for (int i = 0; i < deviceNames.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DeviceName." + (i + 1) , deviceNames[i]);
+				}
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
@@ -95,22 +112,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public bool? ErrorActionFlag
-		{
-			get
-			{
-				return errorActionFlag;
-			}
-			set	
-			{
-				errorActionFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ErrorActionFlag", value.ToString());
-			}
-		}
-
-        public override CreateRuleActionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override InvokeThingsServiceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateRuleActionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return InvokeThingsServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -21,18 +21,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class GetRuleActionResponse : AcsResponse
+	public class SetDevicesPropertyResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
 		private string errorMessage;
 
-		private GetRuleAction_RuleActionInfo ruleActionInfo;
+		private string code;
 
 		public string RequestId
 		{
@@ -58,18 +56,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string ErrorMessage
 		{
 			get
@@ -82,89 +68,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public GetRuleAction_RuleActionInfo RuleActionInfo
+		public string Code
 		{
 			get
 			{
-				return ruleActionInfo;
+				return code;
 			}
 			set	
 			{
-				ruleActionInfo = value;
-			}
-		}
-
-		public class GetRuleAction_RuleActionInfo
-		{
-
-			private long? id;
-
-			private long? ruleId;
-
-			private string type;
-
-			private string configuration;
-
-			private bool? errorActionFlag;
-
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public long? RuleId
-			{
-				get
-				{
-					return ruleId;
-				}
-				set	
-				{
-					ruleId = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public string Configuration
-			{
-				get
-				{
-					return configuration;
-				}
-				set	
-				{
-					configuration = value;
-				}
-			}
-
-			public bool? ErrorActionFlag
-			{
-				get
-				{
-					return errorActionFlag;
-				}
-				set	
-				{
-					errorActionFlag = value;
-				}
+				code = value;
 			}
 		}
 	}

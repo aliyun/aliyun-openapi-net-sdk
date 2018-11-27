@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			ruleActionInfo.RuleId = context.LongValue("GetRuleAction.RuleActionInfo.RuleId");
 			ruleActionInfo.Type = context.StringValue("GetRuleAction.RuleActionInfo.Type");
 			ruleActionInfo.Configuration = context.StringValue("GetRuleAction.RuleActionInfo.Configuration");
+			ruleActionInfo.ErrorActionFlag = context.BooleanValue("GetRuleAction.RuleActionInfo.ErrorActionFlag");
 			getRuleActionResponse.RuleActionInfo = ruleActionInfo;
         
 			return getRuleActionResponse;

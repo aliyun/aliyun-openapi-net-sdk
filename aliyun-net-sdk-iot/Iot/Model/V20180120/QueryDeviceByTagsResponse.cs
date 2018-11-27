@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class GetRuleActionResponse : AcsResponse
+	public class QueryDeviceByTagsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private GetRuleAction_RuleActionInfo ruleActionInfo;
+		private int? page;
+
+		private int? pageSize;
+
+		private int? pageCount;
+
+		private int? total;
+
+		private List<QueryDeviceByTags_SimpleDeviceInfo> data;
 
 		public string RequestId
 		{
@@ -82,88 +90,122 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public GetRuleAction_RuleActionInfo RuleActionInfo
+		public int? Page
 		{
 			get
 			{
-				return ruleActionInfo;
+				return page;
 			}
 			set	
 			{
-				ruleActionInfo = value;
+				page = value;
 			}
 		}
 
-		public class GetRuleAction_RuleActionInfo
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? PageCount
+		{
+			get
+			{
+				return pageCount;
+			}
+			set	
+			{
+				pageCount = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
+			}
+		}
+
+		public List<QueryDeviceByTags_SimpleDeviceInfo> Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class QueryDeviceByTags_SimpleDeviceInfo
 		{
 
-			private long? id;
+			private string productName;
 
-			private long? ruleId;
+			private string productKey;
 
-			private string type;
+			private string deviceName;
 
-			private string configuration;
+			private string iotId;
 
-			private bool? errorActionFlag;
-
-			public long? Id
+			public string ProductName
 			{
 				get
 				{
-					return id;
+					return productName;
 				}
 				set	
 				{
-					id = value;
+					productName = value;
 				}
 			}
 
-			public long? RuleId
+			public string ProductKey
 			{
 				get
 				{
-					return ruleId;
+					return productKey;
 				}
 				set	
 				{
-					ruleId = value;
+					productKey = value;
 				}
 			}
 
-			public string Type
+			public string DeviceName
 			{
 				get
 				{
-					return type;
+					return deviceName;
 				}
 				set	
 				{
-					type = value;
+					deviceName = value;
 				}
 			}
 
-			public string Configuration
+			public string IotId
 			{
 				get
 				{
-					return configuration;
+					return iotId;
 				}
 				set	
 				{
-					configuration = value;
-				}
-			}
-
-			public bool? ErrorActionFlag
-			{
-				get
-				{
-					return errorActionFlag;
-				}
-				set	
-				{
-					errorActionFlag = value;
+					iotId = value;
 				}
 			}
 		}

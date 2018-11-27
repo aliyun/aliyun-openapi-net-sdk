@@ -26,59 +26,62 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateRuleActionRequest : RpcAcsRequest<CreateRuleActionResponse>
+    public class QueryDeviceByTagsRequest : RpcAcsRequest<QueryDeviceByTagsResponse>
     {
-        public CreateRuleActionRequest()
-            : base("Iot", "2018-01-20", "CreateRuleAction")
+        public QueryDeviceByTagsRequest()
+            : base("Iot", "2018-01-20", "QueryDeviceByTags")
         {
         }
 
-		private string configuration;
+		private int? pageSize;
 
-		private long? ruleId;
+		private int? currentPage;
 
-		private string type;
+		private List<Tag> tags;
 
 		private string accessKeyId;
 
-		private bool? errorActionFlag;
-
-		public string Configuration
+		public int? PageSize
 		{
 			get
 			{
-				return configuration;
+				return pageSize;
 			}
 			set	
 			{
-				configuration = value;
-				DictionaryUtil.Add(QueryParameters, "Configuration", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public long? RuleId
+		public int? CurrentPage
 		{
 			get
 			{
-				return ruleId;
+				return currentPage;
 			}
 			set	
 			{
-				ruleId = value;
-				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
-		public string Type
+		public List<Tag> Tags
 		{
 			get
 			{
-				return type;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".TagValue", tags[i].TagValue);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".TagKey", tags[i].TagKey);
+				}
 			}
 		}
 
@@ -95,22 +98,41 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public bool? ErrorActionFlag
+		public class Tag
 		{
-			get
+
+			private string tagValue;
+
+			private string tagKey;
+
+			public string TagValue
 			{
-				return errorActionFlag;
+				get
+				{
+					return tagValue;
+				}
+				set	
+				{
+					tagValue = value;
+				}
 			}
-			set	
+
+			public string TagKey
 			{
-				errorActionFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ErrorActionFlag", value.ToString());
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
+				}
 			}
 		}
 
-        public override CreateRuleActionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryDeviceByTagsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateRuleActionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDeviceByTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

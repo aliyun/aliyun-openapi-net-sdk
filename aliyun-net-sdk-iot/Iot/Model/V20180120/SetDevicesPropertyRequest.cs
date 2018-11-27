@@ -26,59 +26,61 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateRuleActionRequest : RpcAcsRequest<CreateRuleActionResponse>
+    public class SetDevicesPropertyRequest : RpcAcsRequest<SetDevicesPropertyResponse>
     {
-        public CreateRuleActionRequest()
-            : base("Iot", "2018-01-20", "CreateRuleAction")
+        public SetDevicesPropertyRequest()
+            : base("Iot", "2018-01-20", "SetDevicesProperty")
         {
         }
 
-		private string configuration;
+		private List<string> deviceNames;
 
-		private long? ruleId;
+		private string productKey;
 
-		private string type;
+		private string items;
 
 		private string accessKeyId;
 
-		private bool? errorActionFlag;
-
-		public string Configuration
+		public List<string> DeviceNames
 		{
 			get
 			{
-				return configuration;
+				return deviceNames;
 			}
-			set	
+
+			set
 			{
-				configuration = value;
-				DictionaryUtil.Add(QueryParameters, "Configuration", value);
+				deviceNames = value;
+				for (int i = 0; i < deviceNames.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DeviceName." + (i + 1) , deviceNames[i]);
+				}
 			}
 		}
 
-		public long? RuleId
+		public string ProductKey
 		{
 			get
 			{
-				return ruleId;
+				return productKey;
 			}
 			set	
 			{
-				ruleId = value;
-				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-		public string Type
+		public string Items
 		{
 			get
 			{
-				return type;
+				return items;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				items = value;
+				DictionaryUtil.Add(QueryParameters, "Items", value);
 			}
 		}
 
@@ -95,22 +97,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public bool? ErrorActionFlag
-		{
-			get
-			{
-				return errorActionFlag;
-			}
-			set	
-			{
-				errorActionFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ErrorActionFlag", value.ToString());
-			}
-		}
-
-        public override CreateRuleActionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SetDevicesPropertyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateRuleActionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetDevicesPropertyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

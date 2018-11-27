@@ -26,59 +26,42 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateRuleActionRequest : RpcAcsRequest<CreateRuleActionResponse>
+    public class SetDeviceGroupTagsRequest : RpcAcsRequest<SetDeviceGroupTagsResponse>
     {
-        public CreateRuleActionRequest()
-            : base("Iot", "2018-01-20", "CreateRuleAction")
+        public SetDeviceGroupTagsRequest()
+            : base("Iot", "2018-01-20", "SetDeviceGroupTags")
         {
         }
 
-		private string configuration;
+		private string tagString;
 
-		private long? ruleId;
-
-		private string type;
+		private string groupId;
 
 		private string accessKeyId;
 
-		private bool? errorActionFlag;
-
-		public string Configuration
+		public string TagString
 		{
 			get
 			{
-				return configuration;
+				return tagString;
 			}
 			set	
 			{
-				configuration = value;
-				DictionaryUtil.Add(QueryParameters, "Configuration", value);
+				tagString = value;
+				DictionaryUtil.Add(QueryParameters, "TagString", value);
 			}
 		}
 
-		public long? RuleId
+		public string GroupId
 		{
 			get
 			{
-				return ruleId;
+				return groupId;
 			}
 			set	
 			{
-				ruleId = value;
-				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -95,22 +78,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public bool? ErrorActionFlag
-		{
-			get
-			{
-				return errorActionFlag;
-			}
-			set	
-			{
-				errorActionFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ErrorActionFlag", value.ToString());
-			}
-		}
-
-        public override CreateRuleActionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SetDeviceGroupTagsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return CreateRuleActionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetDeviceGroupTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
