@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				routeTable.RouteTableId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteTableId");
 				routeTable.RouteTableType = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteTableType");
 				routeTable.CreationTime = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].CreationTime");
+				routeTable.ResourceGroupId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].ResourceGroupId");
 
 				List<DescribeRouteTablesResponse.DescribeRouteTables_RouteTable.DescribeRouteTables_RouteEntry> routeTable_routeEntrys = new List<DescribeRouteTablesResponse.DescribeRouteTables_RouteTable.DescribeRouteTables_RouteEntry>();
 				for (int j = 0; j < context.Length("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys.Length"); j++) {
