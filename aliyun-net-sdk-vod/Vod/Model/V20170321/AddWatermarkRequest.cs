@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class AddWatermarkRequest : RpcAcsRequest<AddWatermarkResponse>
     {
         public AddWatermarkRequest()
-            : base("vod", "2017-03-21", "AddWatermark", "vod", "openAPI")
+            : base("vod", "2017-03-21", "AddWatermark")
         {
         }
 

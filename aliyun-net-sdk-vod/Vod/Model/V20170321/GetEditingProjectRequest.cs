@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetEditingProjectRequest : RpcAcsRequest<GetEditingProjectResponse>
     {
         public GetEditingProjectRequest()
-            : base("vod", "2017-03-21", "GetEditingProject", "vod", "openAPI")
+            : base("vod", "2017-03-21", "GetEditingProject")
         {
         }
 

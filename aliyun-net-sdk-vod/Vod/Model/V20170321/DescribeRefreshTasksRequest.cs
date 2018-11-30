@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DescribeRefreshTasksRequest : RpcAcsRequest<DescribeRefreshTasksResponse>
     {
         public DescribeRefreshTasksRequest()
-            : base("vod", "2017-03-21", "DescribeRefreshTasks", "vod", "openAPI")
+            : base("vod", "2017-03-21", "DescribeRefreshTasks")
         {
         }
 

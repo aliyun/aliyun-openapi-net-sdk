@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DeleteMezzaninesRequest : RpcAcsRequest<DeleteMezzaninesResponse>
     {
         public DeleteMezzaninesRequest()
-            : base("vod", "2017-03-21", "DeleteMezzanines", "vod", "openAPI")
+            : base("vod", "2017-03-21", "DeleteMezzanines")
         {
         }
 

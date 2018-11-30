@@ -29,31 +29,33 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class SubmitSnapshotJobRequest : RpcAcsRequest<SubmitSnapshotJobResponse>
     {
         public SubmitSnapshotJobRequest()
-            : base("vod", "2017-03-21", "SubmitSnapshotJob", "vod", "openAPI")
+            : base("vod", "2017-03-21", "SubmitSnapshotJob")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private long? specifiedOffsetTime;
-
 		private string resourceOwnerAccount;
-
-		private string width;
 
 		private long? count;
 
-		private string action;
-
 		private string videoId;
-
-		private long? interval;
 
 		private long? ownerId;
 
+		private string accessKeyId;
+
+		private long? specifiedOffsetTime;
+
+		private string width;
+
+		private string action;
+
+		private long? interval;
+
 		private string spriteSnapshotConfig;
 
-		private string accessKeyId;
+		private string snapshotTemplateId;
 
 		private string height;
 
@@ -70,19 +72,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? SpecifiedOffsetTime
-		{
-			get
-			{
-				return specifiedOffsetTime;
-			}
-			set	
-			{
-				specifiedOffsetTime = value;
-				DictionaryUtil.Add(QueryParameters, "SpecifiedOffsetTime", value.ToString());
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -93,19 +82,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string Width
-		{
-			get
-			{
-				return width;
-			}
-			set	
-			{
-				width = value;
-				DictionaryUtil.Add(QueryParameters, "Width", value);
 			}
 		}
 
@@ -122,19 +98,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string VideoId
 		{
 			get
@@ -145,19 +108,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				videoId = value;
 				DictionaryUtil.Add(QueryParameters, "VideoId", value);
-			}
-		}
-
-		public long? Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
 			}
 		}
 
@@ -174,6 +124,71 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public long? SpecifiedOffsetTime
+		{
+			get
+			{
+				return specifiedOffsetTime;
+			}
+			set	
+			{
+				specifiedOffsetTime = value;
+				DictionaryUtil.Add(QueryParameters, "SpecifiedOffsetTime", value.ToString());
+			}
+		}
+
+		public string Width
+		{
+			get
+			{
+				return width;
+			}
+			set	
+			{
+				width = value;
+				DictionaryUtil.Add(QueryParameters, "Width", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
+			}
+		}
+
 		public string SpriteSnapshotConfig
 		{
 			get
@@ -187,16 +202,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AccessKeyId
+		public string SnapshotTemplateId
 		{
 			get
 			{
-				return accessKeyId;
+				return snapshotTemplateId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				snapshotTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "SnapshotTemplateId", value);
 			}
 		}
 

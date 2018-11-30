@@ -39,9 +39,17 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			imageInfo.ImageType = context.StringValue("GetImageInfo.ImageInfo.ImageType");
 			imageInfo.Tags = context.StringValue("GetImageInfo.ImageInfo.Tags");
 			imageInfo.URL = context.StringValue("GetImageInfo.ImageInfo.URL");
+			imageInfo.CateId = context.LongValue("GetImageInfo.ImageInfo.CateId");
+			imageInfo.CateName = context.StringValue("GetImageInfo.ImageInfo.CateName");
+			imageInfo.Description = context.StringValue("GetImageInfo.ImageInfo.Description");
+			imageInfo.StorageLocation = context.StringValue("GetImageInfo.ImageInfo.StorageLocation");
 
 			GetImageInfoResponse.GetImageInfo_ImageInfo.GetImageInfo_Mezzanine mezzanine = new GetImageInfoResponse.GetImageInfo_ImageInfo.GetImageInfo_Mezzanine();
 			mezzanine.OriginalFileName = context.StringValue("GetImageInfo.ImageInfo.Mezzanine.OriginalFileName");
+			mezzanine.FileSize = context.StringValue("GetImageInfo.ImageInfo.Mezzanine.FileSize");
+			mezzanine.Width = context.IntegerValue("GetImageInfo.ImageInfo.Mezzanine.Width");
+			mezzanine.Height = context.IntegerValue("GetImageInfo.ImageInfo.Mezzanine.Height");
+			mezzanine.FileURL = context.StringValue("GetImageInfo.ImageInfo.Mezzanine.FileURL");
 			imageInfo.Mezzanine = mezzanine;
 			getImageInfoResponse.ImageInfo = imageInfo;
         

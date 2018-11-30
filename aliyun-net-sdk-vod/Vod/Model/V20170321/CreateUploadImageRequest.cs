@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class CreateUploadImageRequest : RpcAcsRequest<CreateUploadImageResponse>
     {
         public CreateUploadImageRequest()
-            : base("vod", "2017-03-21", "CreateUploadImage", "vod", "openAPI")
+            : base("vod", "2017-03-21", "CreateUploadImage")
         {
         }
 
@@ -42,6 +42,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string resourceOwnerAccount;
 
 		private string imageExt;
+
+		private long? cateId;
 
 		private string action;
 
@@ -117,6 +119,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				imageExt = value;
 				DictionaryUtil.Add(QueryParameters, "ImageExt", value);
+			}
+		}
+
+		public long? CateId
+		{
+			get
+			{
+				return cateId;
+			}
+			set	
+			{
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
 			}
 		}
 
@@ -196,6 +211,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				storageLocation = value;
 				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
 			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
 		}
 
         public override CreateUploadImageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DescribeDomainBpsDataRequest : RpcAcsRequest<DescribeDomainBpsDataResponse>
     {
         public DescribeDomainBpsDataRequest()
-            : base("vod", "2017-03-21", "DescribeDomainBpsData", "vod", "openAPI")
+            : base("vod", "2017-03-21", "DescribeDomainBpsData")
         {
         }
 

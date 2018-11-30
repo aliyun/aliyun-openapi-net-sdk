@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class SearchMediaRequest : RpcAcsRequest<SearchMediaResponse>
     {
         public SearchMediaRequest()
-            : base("vod", "2017-03-21", "SearchMedia", "vod", "openAPI")
+            : base("vod", "2017-03-21", "SearchMedia")
         {
         }
 

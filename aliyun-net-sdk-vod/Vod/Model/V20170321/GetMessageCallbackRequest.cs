@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetMessageCallbackRequest : RpcAcsRequest<GetMessageCallbackResponse>
     {
         public GetMessageCallbackRequest()
-            : base("vod", "2017-03-21", "GetMessageCallback", "vod", "openAPI")
+            : base("vod", "2017-03-21", "GetMessageCallback")
         {
         }
 

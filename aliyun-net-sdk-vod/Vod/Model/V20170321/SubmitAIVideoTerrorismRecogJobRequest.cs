@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class SubmitAIVideoTerrorismRecogJobRequest : RpcAcsRequest<SubmitAIVideoTerrorismRecogJobResponse>
     {
         public SubmitAIVideoTerrorismRecogJobRequest()
-            : base("vod", "2017-03-21", "SubmitAIVideoTerrorismRecogJob", "vod", "openAPI")
+            : base("vod", "2017-03-21", "SubmitAIVideoTerrorismRecogJob")
         {
         }
 

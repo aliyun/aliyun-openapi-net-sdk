@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DescribePlayUserAvgRequest : RpcAcsRequest<DescribePlayUserAvgResponse>
     {
         public DescribePlayUserAvgRequest()
-            : base("vod", "2017-03-21", "DescribePlayUserAvg", "vod", "openAPI")
+            : base("vod", "2017-03-21", "DescribePlayUserAvg")
         {
         }
 

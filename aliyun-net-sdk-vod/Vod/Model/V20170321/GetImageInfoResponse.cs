@@ -67,6 +67,14 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string uRL;
 
+			private long? cateId;
+
+			private string cateName;
+
+			private string description;
+
+			private string storageLocation;
+
 			private GetImageInfo_Mezzanine mezzanine;
 
 			public string ImageId
@@ -141,6 +149,54 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public long? CateId
+			{
+				get
+				{
+					return cateId;
+				}
+				set	
+				{
+					cateId = value;
+				}
+			}
+
+			public string CateName
+			{
+				get
+				{
+					return cateName;
+				}
+				set	
+				{
+					cateName = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string StorageLocation
+			{
+				get
+				{
+					return storageLocation;
+				}
+				set	
+				{
+					storageLocation = value;
+				}
+			}
+
 			public GetImageInfo_Mezzanine Mezzanine
 			{
 				get
@@ -158,6 +214,14 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string originalFileName;
 
+				private string fileSize;
+
+				private int? width;
+
+				private int? height;
+
+				private string fileURL;
+
 				public string OriginalFileName
 				{
 					get
@@ -167,6 +231,54 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						originalFileName = value;
+					}
+				}
+
+				public string FileSize
+				{
+					get
+					{
+						return fileSize;
+					}
+					set	
+					{
+						fileSize = value;
+					}
+				}
+
+				public int? Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
+					}
+				}
+
+				public int? Height
+				{
+					get
+					{
+						return height;
+					}
+					set	
+					{
+						height = value;
+					}
+				}
+
+				public string FileURL
+				{
+					get
+					{
+						return fileURL;
+					}
+					set	
+					{
+						fileURL = value;
 					}
 				}
 			}

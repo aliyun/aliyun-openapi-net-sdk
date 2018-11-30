@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetAuditResultRequest : RpcAcsRequest<GetAuditResultResponse>
     {
         public GetAuditResultRequest()
-            : base("vod", "2017-03-21", "GetAuditResult", "vod", "openAPI")
+            : base("vod", "2017-03-21", "GetAuditResult")
         {
         }
 
