@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<DescribeUserUsageDataExportTaskResponse.DescribeUserUsageDataExportTask_UsageDataPerPage.DescribeUserUsageDataExportTask_DataItem> usageDataPerPage_data = new List<DescribeUserUsageDataExportTaskResponse.DescribeUserUsageDataExportTask_UsageDataPerPage.DescribeUserUsageDataExportTask_DataItem>();
 			for (int i = 0; i < context.Length("DescribeUserUsageDataExportTask.UsageDataPerPage.Data.Length"); i++) {
 				DescribeUserUsageDataExportTaskResponse.DescribeUserUsageDataExportTask_UsageDataPerPage.DescribeUserUsageDataExportTask_DataItem dataItem = new DescribeUserUsageDataExportTaskResponse.DescribeUserUsageDataExportTask_UsageDataPerPage.DescribeUserUsageDataExportTask_DataItem();
+				dataItem.TaskName = context.StringValue("DescribeUserUsageDataExportTask.UsageDataPerPage.Data["+ i +"].TaskName");
+				dataItem.TaskId = context.StringValue("DescribeUserUsageDataExportTask.UsageDataPerPage.Data["+ i +"].TaskId");
 				dataItem.CreateTime = context.StringValue("DescribeUserUsageDataExportTask.UsageDataPerPage.Data["+ i +"].CreateTime");
 				dataItem.UpdateTime = context.StringValue("DescribeUserUsageDataExportTask.UsageDataPerPage.Data["+ i +"].UpdateTime");
 				dataItem.Status = context.StringValue("DescribeUserUsageDataExportTask.UsageDataPerPage.Data["+ i +"].Status");

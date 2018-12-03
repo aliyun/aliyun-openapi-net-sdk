@@ -28,11 +28,11 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string domainName;
 
-		private long? monitorInterval;
-
 		private string startTime;
 
 		private string endTime;
+
+		private string monitorInterval;
 
 		private List<DescribeCdnMonitorData_CDNMonitorData> monitorDatas;
 
@@ -60,18 +60,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public long? MonitorInterval
-		{
-			get
-			{
-				return monitorInterval;
-			}
-			set	
-			{
-				monitorInterval = value;
-			}
-		}
-
 		public string StartTime
 		{
 			get
@@ -96,6 +84,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
+		public string MonitorInterval
+		{
+			get
+			{
+				return monitorInterval;
+			}
+			set	
+			{
+				monitorInterval = value;
+			}
+		}
+
 		public List<DescribeCdnMonitorData_CDNMonitorData> MonitorDatas
 		{
 			get
@@ -113,13 +113,13 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string timeStamp;
 
-			private string queryPerSecond;
-
 			private string bytesPerSecond;
 
-			private string bytesHitRate;
+			private string queryPerSecond;
 
 			private string requestHitRate;
+
+			private string bytesHitRate;
 
 			private string averageObjectSize;
 
@@ -135,18 +135,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string QueryPerSecond
-			{
-				get
-				{
-					return queryPerSecond;
-				}
-				set	
-				{
-					queryPerSecond = value;
-				}
-			}
-
 			public string BytesPerSecond
 			{
 				get
@@ -159,15 +147,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string BytesHitRate
+			public string QueryPerSecond
 			{
 				get
 				{
-					return bytesHitRate;
+					return queryPerSecond;
 				}
 				set	
 				{
-					bytesHitRate = value;
+					queryPerSecond = value;
 				}
 			}
 
@@ -180,6 +168,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					requestHitRate = value;
+				}
+			}
+
+			public string BytesHitRate
+			{
+				get
+				{
+					return bytesHitRate;
+				}
+				set	
+				{
+					bytesHitRate = value;
 				}
 			}
 

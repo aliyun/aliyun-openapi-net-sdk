@@ -123,15 +123,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string bps;
 
-			private string byteHitRate;
-
 			private string qps;
 
-			private string reqErrRate;
+			private string avgResponseRate;
+
+			private string byteHitRate;
 
 			private string reqHitRate;
 
-			private string avgResponseRate;
+			private string reqErrRate;
 
 			private string totalBytes;
 
@@ -211,18 +211,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string ByteHitRate
-			{
-				get
-				{
-					return byteHitRate;
-				}
-				set	
-				{
-					byteHitRate = value;
-				}
-			}
-
 			public string Qps
 			{
 				get
@@ -235,15 +223,27 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string ReqErrRate
+			public string AvgResponseRate
 			{
 				get
 				{
-					return reqErrRate;
+					return avgResponseRate;
 				}
 				set	
 				{
-					reqErrRate = value;
+					avgResponseRate = value;
+				}
+			}
+
+			public string ByteHitRate
+			{
+				get
+				{
+					return byteHitRate;
+				}
+				set	
+				{
+					byteHitRate = value;
 				}
 			}
 
@@ -259,15 +259,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string AvgResponseRate
+			public string ReqErrRate
 			{
 				get
 				{
-					return avgResponseRate;
+					return reqErrRate;
 				}
 				set	
 				{
-					avgResponseRate = value;
+					reqErrRate = value;
 				}
 			}
 

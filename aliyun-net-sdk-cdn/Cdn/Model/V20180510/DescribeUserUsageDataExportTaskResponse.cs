@@ -114,6 +114,10 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			public class DescribeUserUsageDataExportTask_DataItem
 			{
 
+				private string taskName;
+
+				private string taskId;
+
 				private string createTime;
 
 				private string updateTime;
@@ -123,6 +127,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				private string downloadUrl;
 
 				private DescribeUserUsageDataExportTask_TaskConfig taskConfig;
+
+				public string TaskName
+				{
+					get
+					{
+						return taskName;
+					}
+					set	
+					{
+						taskName = value;
+					}
+				}
+
+				public string TaskId
+				{
+					get
+					{
+						return taskId;
+					}
+					set	
+					{
+						taskId = value;
+					}
+				}
 
 				public string CreateTime
 				{

@@ -45,11 +45,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				iSPProportionData.AvgObjectSize = context.StringValue("DescribeDomainISPData.Value["+ i +"].AvgObjectSize");
 				iSPProportionData.AvgResponseTime = context.StringValue("DescribeDomainISPData.Value["+ i +"].AvgResponseTime");
 				iSPProportionData.Bps = context.StringValue("DescribeDomainISPData.Value["+ i +"].Bps");
-				iSPProportionData.ByteHitRate = context.StringValue("DescribeDomainISPData.Value["+ i +"].ByteHitRate");
 				iSPProportionData.Qps = context.StringValue("DescribeDomainISPData.Value["+ i +"].Qps");
-				iSPProportionData.ReqErrRate = context.StringValue("DescribeDomainISPData.Value["+ i +"].ReqErrRate");
-				iSPProportionData.ReqHitRate = context.StringValue("DescribeDomainISPData.Value["+ i +"].ReqHitRate");
 				iSPProportionData.AvgResponseRate = context.StringValue("DescribeDomainISPData.Value["+ i +"].AvgResponseRate");
+				iSPProportionData.ReqErrRate = context.StringValue("DescribeDomainISPData.Value["+ i +"].ReqErrRate");
 				iSPProportionData.TotalBytes = context.StringValue("DescribeDomainISPData.Value["+ i +"].TotalBytes");
 				iSPProportionData.BytesProportion = context.StringValue("DescribeDomainISPData.Value["+ i +"].BytesProportion");
 				iSPProportionData.TotalQuery = context.StringValue("DescribeDomainISPData.Value["+ i +"].TotalQuery");

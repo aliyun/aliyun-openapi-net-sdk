@@ -17,22 +17,22 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cdn.Model.V20141111;
+using Aliyun.Acs.Cdn.Model.V20180510;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cdn.Transform.V20141111
+namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
-    public class SetDomainGreenManagerConfigResponseUnmarshaller
+    public class BatchSetCdnDomainConfigResponseUnmarshaller
     {
-        public static SetDomainGreenManagerConfigResponse Unmarshall(UnmarshallerContext context)
+        public static BatchSetCdnDomainConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			SetDomainGreenManagerConfigResponse setDomainGreenManagerConfigResponse = new SetDomainGreenManagerConfigResponse();
+			BatchSetCdnDomainConfigResponse batchSetCdnDomainConfigResponse = new BatchSetCdnDomainConfigResponse();
 
-			setDomainGreenManagerConfigResponse.HttpResponse = context.HttpResponse;
-			setDomainGreenManagerConfigResponse.RequestId = context.StringValue("SetDomainGreenManagerConfig.RequestId");
+			batchSetCdnDomainConfigResponse.HttpResponse = context.HttpResponse;
+			batchSetCdnDomainConfigResponse.RequestId = context.StringValue("BatchSetCdnDomainConfig.RequestId");
         
-			return setDomainGreenManagerConfigResponse;
+			return batchSetCdnDomainConfigResponse;
         }
     }
 }

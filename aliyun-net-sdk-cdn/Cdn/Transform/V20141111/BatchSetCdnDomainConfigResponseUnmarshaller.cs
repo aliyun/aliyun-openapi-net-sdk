@@ -16,26 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Cdn.Model.V20141111;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
-	public class SetDomainGreenManagerConfigResponse : AcsResponse
-	{
+    public class BatchSetCdnDomainConfigResponseUnmarshaller
+    {
+        public static BatchSetCdnDomainConfigResponse Unmarshall(UnmarshallerContext context)
+        {
+			BatchSetCdnDomainConfigResponse batchSetCdnDomainConfigResponse = new BatchSetCdnDomainConfigResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			batchSetCdnDomainConfigResponse.HttpResponse = context.HttpResponse;
+			batchSetCdnDomainConfigResponse.RequestId = context.StringValue("BatchSetCdnDomainConfig.RequestId");
+        
+			return batchSetCdnDomainConfigResponse;
+        }
+    }
 }

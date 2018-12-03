@@ -28,11 +28,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string domainName;
 
-		private string dataInterval;
-
 		private string startTime;
 
 		private string endTime;
+
+		private string locationNameEn;
+
+		private string ispNameEn;
+
+		private string locationName;
+
+		private string ispName;
+
+		private string dataInterval;
 
 		private List<DescribeDomainAverageResponseTime_DataModule> avgRTPerInterval;
 
@@ -60,18 +68,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
-
 		public string StartTime
 		{
 			get
@@ -93,6 +89,66 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				endTime = value;
+			}
+		}
+
+		public string LocationNameEn
+		{
+			get
+			{
+				return locationNameEn;
+			}
+			set	
+			{
+				locationNameEn = value;
+			}
+		}
+
+		public string IspNameEn
+		{
+			get
+			{
+				return ispNameEn;
+			}
+			set	
+			{
+				ispNameEn = value;
+			}
+		}
+
+		public string LocationName
+		{
+			get
+			{
+				return locationName;
+			}
+			set	
+			{
+				locationName = value;
+			}
+		}
+
+		public string IspName
+		{
+			get
+			{
+				return ispName;
+			}
+			set	
+			{
+				ispName = value;
+			}
+		}
+
+		public string DataInterval
+		{
+			get
+			{
+				return dataInterval;
+			}
+			set	
+			{
+				dataInterval = value;
 			}
 		}
 

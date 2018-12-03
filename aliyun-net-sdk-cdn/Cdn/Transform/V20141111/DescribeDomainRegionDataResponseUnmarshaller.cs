@@ -45,11 +45,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				regionProportionData.AvgObjectSize = context.StringValue("DescribeDomainRegionData.Value["+ i +"].AvgObjectSize");
 				regionProportionData.AvgResponseTime = context.StringValue("DescribeDomainRegionData.Value["+ i +"].AvgResponseTime");
 				regionProportionData.Bps = context.StringValue("DescribeDomainRegionData.Value["+ i +"].Bps");
-				regionProportionData.ByteHitRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].ByteHitRate");
 				regionProportionData.Qps = context.StringValue("DescribeDomainRegionData.Value["+ i +"].Qps");
-				regionProportionData.ReqErrRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].ReqErrRate");
-				regionProportionData.ReqHitRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].ReqHitRate");
 				regionProportionData.AvgResponseRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].AvgResponseRate");
+				regionProportionData.ByteHitRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].ByteHitRate");
+				regionProportionData.ReqHitRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].ReqHitRate");
+				regionProportionData.ReqErrRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].ReqErrRate");
 				regionProportionData.TotalBytes = context.StringValue("DescribeDomainRegionData.Value["+ i +"].TotalBytes");
 				regionProportionData.BytesProportion = context.StringValue("DescribeDomainRegionData.Value["+ i +"].BytesProportion");
 				regionProportionData.TotalQuery = context.StringValue("DescribeDomainRegionData.Value["+ i +"].TotalQuery");

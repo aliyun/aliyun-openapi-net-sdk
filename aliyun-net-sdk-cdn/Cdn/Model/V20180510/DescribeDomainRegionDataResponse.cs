@@ -127,6 +127,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 			private string avgResponseRate;
 
+			private string reqErrRate;
+
 			private string totalBytes;
 
 			private string bytesProportion;
@@ -226,6 +228,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					avgResponseRate = value;
+				}
+			}
+
+			public string ReqErrRate
+			{
+				get
+				{
+					return reqErrRate;
+				}
+				set	
+				{
+					reqErrRate = value;
 				}
 			}
 

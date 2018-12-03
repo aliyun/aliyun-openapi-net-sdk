@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainHttpCodeDataResponse.HttpResponse = context.HttpResponse;
 			describeDomainHttpCodeDataResponse.RequestId = context.StringValue("DescribeDomainHttpCodeData.RequestId");
 			describeDomainHttpCodeDataResponse.DomainName = context.StringValue("DescribeDomainHttpCodeData.DomainName");
-			describeDomainHttpCodeDataResponse.DataInterval = context.StringValue("DescribeDomainHttpCodeData.DataInterval");
 			describeDomainHttpCodeDataResponse.StartTime = context.StringValue("DescribeDomainHttpCodeData.StartTime");
 			describeDomainHttpCodeDataResponse.EndTime = context.StringValue("DescribeDomainHttpCodeData.EndTime");
+			describeDomainHttpCodeDataResponse.DataInterval = context.StringValue("DescribeDomainHttpCodeData.DataInterval");
 
 			List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData> describeDomainHttpCodeDataResponse_httpCodeData = new List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData>();
 			for (int i = 0; i < context.Length("DescribeDomainHttpCodeData.HttpCodeData.Length"); i++) {

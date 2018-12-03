@@ -32,9 +32,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			describeDomainAverageResponseTimeResponse.HttpResponse = context.HttpResponse;
 			describeDomainAverageResponseTimeResponse.RequestId = context.StringValue("DescribeDomainAverageResponseTime.RequestId");
 			describeDomainAverageResponseTimeResponse.DomainName = context.StringValue("DescribeDomainAverageResponseTime.DomainName");
-			describeDomainAverageResponseTimeResponse.DataInterval = context.StringValue("DescribeDomainAverageResponseTime.DataInterval");
 			describeDomainAverageResponseTimeResponse.StartTime = context.StringValue("DescribeDomainAverageResponseTime.StartTime");
 			describeDomainAverageResponseTimeResponse.EndTime = context.StringValue("DescribeDomainAverageResponseTime.EndTime");
+			describeDomainAverageResponseTimeResponse.LocationNameEn = context.StringValue("DescribeDomainAverageResponseTime.LocationNameEn");
+			describeDomainAverageResponseTimeResponse.IspNameEn = context.StringValue("DescribeDomainAverageResponseTime.IspNameEn");
+			describeDomainAverageResponseTimeResponse.LocationName = context.StringValue("DescribeDomainAverageResponseTime.LocationName");
+			describeDomainAverageResponseTimeResponse.IspName = context.StringValue("DescribeDomainAverageResponseTime.IspName");
+			describeDomainAverageResponseTimeResponse.DataInterval = context.StringValue("DescribeDomainAverageResponseTime.DataInterval");
 
 			List<DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule> describeDomainAverageResponseTimeResponse_avgRTPerInterval = new List<DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule>();
 			for (int i = 0; i < context.Length("DescribeDomainAverageResponseTime.AvgRTPerInterval.Length"); i++) {

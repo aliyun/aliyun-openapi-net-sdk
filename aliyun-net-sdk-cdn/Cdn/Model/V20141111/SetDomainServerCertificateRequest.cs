@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string privateKey;
 
+		private string forceSet;
+
 		private string serverCertificateStatus;
 
 		private string serverCertificate;
@@ -65,6 +67,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				privateKey = value;
 				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
+			}
+		}
+
+		public string ForceSet
+		{
+			get
+			{
+				return forceSet;
+			}
+			set	
+			{
+				forceSet = value;
+				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
 			}
 		}
 

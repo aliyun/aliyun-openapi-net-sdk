@@ -28,11 +28,11 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string domainName;
 
-		private string dataInterval;
-
 		private string startTime;
 
 		private string endTime;
+
+		private string dataInterval;
 
 		private List<DescribeDomainHttpCodeData_UsageData> httpCodeData;
 
@@ -60,18 +60,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
-
 		public string StartTime
 		{
 			get
@@ -93,6 +81,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				endTime = value;
+			}
+		}
+
+		public string DataInterval
+		{
+			get
+			{
+				return dataInterval;
+			}
+			set	
+			{
+				dataInterval = value;
 			}
 		}
 

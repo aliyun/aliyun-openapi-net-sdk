@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9d22aa54-10f0-4e97-9d9d-4ea64059bc8d}</ProjectGuid>
+    <ProjectGuid>{1315691e-98b8-4d34-b878-7cfe07374c43}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -94,7 +94,6 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainTopReferVisitRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainCustomLogConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DeleteCdnDomainRequest.cs" />
-	<Compile Include="Cdn\Model\V20141111\SetDomainGreenManagerConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeRefreshQuotaRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeFCTriggerRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetVideoSeekConfigRequest.cs" />
@@ -124,7 +123,6 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamRecordContentRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\ModifyCdnServiceResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainAverageResponseTimeResponse.cs" />
-	<Compile Include="Cdn\Model\V20141111\SetDomainGreenManagerConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLivePullStreamConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\UpdateLiveAppSnapshotConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamsFrameRateAndBitRateDataResponse.cs" />
@@ -193,6 +191,7 @@
 	<Compile Include="Cdn\Model\V20141111\AddLiveDomainMappingRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeFCTriggerResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetIgnoreQueryStringConfigRequest.cs" />
+	<Compile Include="Cdn\Model\V20141111\BatchSetCdnDomainConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\StopCdnDomainRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainsBySourceRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetRefererConfigResponse.cs" />
@@ -251,6 +250,7 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamBitRateDataRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetHttpHeaderConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeCdnUserQuotaRequest.cs" />
+	<Compile Include="Cdn\Model\V20141111\BatchSetCdnDomainConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLivePullStreamConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainRegionDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamsPublishListRequest.cs" />
@@ -421,6 +421,7 @@
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainISPDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeFCTriggerResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\SetIgnoreQueryStringConfigRequest.cs" />
+	<Compile Include="Cdn\Model\V20180510\BatchSetCdnDomainConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\StopCdnDomainRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainsBySourceRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\SetRefererConfigResponse.cs" />
@@ -470,6 +471,7 @@
 	<Compile Include="Cdn\Model\V20180510\SetDomainServerCertificateResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\SetHttpHeaderConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeCdnUserQuotaRequest.cs" />
+	<Compile Include="Cdn\Model\V20180510\BatchSetCdnDomainConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainRegionDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainTrafficDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\BatchAddCdnDomainRequest.cs" />
@@ -518,6 +520,7 @@
 	<Compile Include="Cdn\Transform\V20141111\DescribeLiveStreamsBlockListResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeRefreshQuotaResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetHttpHeaderConfigResponseUnmarshaller.cs" />
+	<Compile Include="Cdn\Transform\V20141111\BatchSetCdnDomainConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeDomainTopUrlVisitResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetForwardSchemeConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeLivePullStreamConfigResponseUnmarshaller.cs" />
@@ -525,7 +528,6 @@
 	<Compile Include="Cdn\Transform\V20141111\DescribeUserConfigsResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeDomainQpsDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\ResumeLiveStreamResponseUnmarshaller.cs" />
-	<Compile Include="Cdn\Transform\V20141111\SetDomainGreenManagerConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\StartCdnDomainResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DeleteLiveDomainMappingResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeL2VipsByDynamicDomainResponseUnmarshaller.cs" />
@@ -641,6 +643,7 @@
 	<Compile Include="Cdn\Transform\V20180510\DescribeRefreshQuotaResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeDomainSrcHttpCodeDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\SetHttpHeaderConfigResponseUnmarshaller.cs" />
+	<Compile Include="Cdn\Transform\V20180510\BatchSetCdnDomainConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeRealtimeDeliveryAccResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeDomainTopUrlVisitResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\SetForwardSchemeConfigResponseUnmarshaller.cs" />

@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string action;
 
+		private string product;
+
 		private string endTime;
 
 		private long? ownerId;
@@ -79,6 +81,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Product
+		{
+			get
+			{
+				return product;
+			}
+			set	
+			{
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
 			}
 		}
 
