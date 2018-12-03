@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-	public class DescribeScdnDomainIspDataResponse : AcsResponse
+	public class DescribeScdnDomainRegionDataResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -34,7 +34,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private string endTime;
 
-		private List<DescribeScdnDomainIspData_ISPProportionData> _value;
+		private List<DescribeScdnDomainRegionData_RegionProportionData> _value;
 
 		public string RequestId
 		{
@@ -96,7 +96,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public List<DescribeScdnDomainIspData_ISPProportionData> _Value
+		public List<DescribeScdnDomainRegionData_RegionProportionData> _Value
 		{
 			get
 			{
@@ -108,14 +108,14 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public class DescribeScdnDomainIspData_ISPProportionData
+		public class DescribeScdnDomainRegionData_RegionProportionData
 		{
 
-			private string iSP;
+			private string region;
 
 			private string proportion;
 
-			private string ispEname;
+			private string regionEname;
 
 			private string avgObjectSize;
 
@@ -135,15 +135,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 			private string totalQuery;
 
-			public string ISP
+			public string Region
 			{
 				get
 				{
-					return iSP;
+					return region;
 				}
 				set	
 				{
-					iSP = value;
+					region = value;
 				}
 			}
 
@@ -159,15 +159,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
-			public string IspEname
+			public string RegionEname
 			{
 				get
 				{
-					return ispEname;
+					return regionEname;
 				}
 				set	
 				{
-					ispEname = value;
+					regionEname = value;
 				}
 			}
 

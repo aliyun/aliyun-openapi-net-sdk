@@ -26,24 +26,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class SetScdnDomainCertificateRequest : RpcAcsRequest<SetScdnDomainCertificateResponse>
+    public class BatchUpdateScdnDomainRequest : RpcAcsRequest<BatchUpdateScdnDomainResponse>
     {
-        public SetScdnDomainCertificateRequest()
-            : base("scdn", "2017-11-15", "SetScdnDomainCertificate")
+        public BatchUpdateScdnDomainRequest()
+            : base("scdn", "2017-11-15", "BatchUpdateScdnDomain")
         {
         }
 
-		private string forceSet;
+		private string topLevelDomain;
+
+		private string resourceGroupId;
+
+		private string sources;
 
 		private string securityToken;
-
-		private string certType;
-
-		private string sSLPub;
-
-		private string certName;
-
-		private string sSLProtocol;
 
 		private string domainName;
 
@@ -51,22 +47,44 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private long? ownerId;
 
-		private string region;
-
 		private string accessKeyId;
 
-		private string sSLPri;
-
-		public string ForceSet
+		public string TopLevelDomain
 		{
 			get
 			{
-				return forceSet;
+				return topLevelDomain;
 			}
 			set	
 			{
-				forceSet = value;
-				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
+				topLevelDomain = value;
+				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string Sources
+		{
+			get
+			{
+				return sources;
+			}
+			set	
+			{
+				sources = value;
+				DictionaryUtil.Add(QueryParameters, "Sources", value);
 			}
 		}
 
@@ -80,58 +98,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string CertType
-		{
-			get
-			{
-				return certType;
-			}
-			set	
-			{
-				certType = value;
-				DictionaryUtil.Add(QueryParameters, "CertType", value);
-			}
-		}
-
-		public string SSLPub
-		{
-			get
-			{
-				return sSLPub;
-			}
-			set	
-			{
-				sSLPub = value;
-				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
-			}
-		}
-
-		public string CertName
-		{
-			get
-			{
-				return certName;
-			}
-			set	
-			{
-				certName = value;
-				DictionaryUtil.Add(QueryParameters, "CertName", value);
-			}
-		}
-
-		public string SSLProtocol
-		{
-			get
-			{
-				return sSLProtocol;
-			}
-			set	
-			{
-				sSLProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "SSLProtocol", value);
 			}
 		}
 
@@ -174,19 +140,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -200,22 +153,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string SSLPri
-		{
-			get
-			{
-				return sSLPri;
-			}
-			set	
-			{
-				sSLPri = value;
-				DictionaryUtil.Add(QueryParameters, "SSLPri", value);
-			}
-		}
-
-        public override SetScdnDomainCertificateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override BatchUpdateScdnDomainResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SetScdnDomainCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchUpdateScdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

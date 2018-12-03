@@ -26,18 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class SetScdnDomainCertificateRequest : RpcAcsRequest<SetScdnDomainCertificateResponse>
+    public class SetDomainServerCertificateRequest : RpcAcsRequest<SetDomainServerCertificateResponse>
     {
-        public SetScdnDomainCertificateRequest()
-            : base("scdn", "2017-11-15", "SetScdnDomainCertificate")
+        public SetDomainServerCertificateRequest()
+            : base("scdn", "2017-11-15", "SetDomainServerCertificate")
         {
         }
 
-		private string forceSet;
-
 		private string securityToken;
-
-		private string certType;
 
 		private string sSLPub;
 
@@ -57,19 +53,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private string sSLPri;
 
-		public string ForceSet
-		{
-			get
-			{
-				return forceSet;
-			}
-			set	
-			{
-				forceSet = value;
-				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -80,19 +63,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string CertType
-		{
-			get
-			{
-				return certType;
-			}
-			set	
-			{
-				certType = value;
-				DictionaryUtil.Add(QueryParameters, "CertType", value);
 			}
 		}
 
@@ -213,9 +183,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-        public override SetScdnDomainCertificateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SetDomainServerCertificateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SetScdnDomainCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetDomainServerCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
