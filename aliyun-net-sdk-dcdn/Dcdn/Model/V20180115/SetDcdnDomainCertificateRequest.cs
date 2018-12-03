@@ -33,6 +33,8 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
         {
         }
 
+		private string forceSet;
+
 		private string securityToken;
 
 		private string certType;
@@ -54,6 +56,19 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 		private string accessKeyId;
 
 		private string sSLPri;
+
+		public string ForceSet
+		{
+			get
+			{
+				return forceSet;
+			}
+			set	
+			{
+				forceSet = value;
+				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
+			}
+		}
 
 		public string SecurityToken
 		{

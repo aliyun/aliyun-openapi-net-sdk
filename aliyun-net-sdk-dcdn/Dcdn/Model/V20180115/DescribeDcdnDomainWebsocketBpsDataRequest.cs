@@ -26,24 +26,45 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class DescribeDcdnTopDomainsByFlowRequest : RpcAcsRequest<DescribeDcdnTopDomainsByFlowResponse>
+    public class DescribeDcdnDomainWebsocketBpsDataRequest : RpcAcsRequest<DescribeDcdnDomainWebsocketBpsDataResponse>
     {
-        public DescribeDcdnTopDomainsByFlowRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnTopDomainsByFlow")
+        public DescribeDcdnDomainWebsocketBpsDataRequest()
+            : base("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketBpsData")
         {
         }
 
+		private string locationNameEn;
+
 		private string startTime;
 
-		private long? limit;
+		private string ispNameEn;
 
 		private string action;
 
-		private string product;
+		private string fixTimeGap;
+
+		private string timeMerge;
+
+		private string domainName;
 
 		private string endTime;
 
 		private long? ownerId;
+
+		private string interval;
+
+		public string LocationNameEn
+		{
+			get
+			{
+				return locationNameEn;
+			}
+			set	
+			{
+				locationNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
+			}
+		}
 
 		public string StartTime
 		{
@@ -58,16 +79,16 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public long? Limit
+		public string IspNameEn
 		{
 			get
 			{
-				return limit;
+				return ispNameEn;
 			}
 			set	
 			{
-				limit = value;
-				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
+				ispNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
 			}
 		}
 
@@ -84,16 +105,42 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string Product
+		public string FixTimeGap
 		{
 			get
 			{
-				return product;
+				return fixTimeGap;
 			}
 			set	
 			{
-				product = value;
-				DictionaryUtil.Add(QueryParameters, "Product", value);
+				fixTimeGap = value;
+				DictionaryUtil.Add(QueryParameters, "FixTimeGap", value);
+			}
+		}
+
+		public string TimeMerge
+		{
+			get
+			{
+				return timeMerge;
+			}
+			set	
+			{
+				timeMerge = value;
+				DictionaryUtil.Add(QueryParameters, "TimeMerge", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -123,9 +170,22 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-        public override DescribeDcdnTopDomainsByFlowResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
+			}
+		}
+
+        public override DescribeDcdnDomainWebsocketBpsDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDcdnTopDomainsByFlowResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDcdnDomainWebsocketBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

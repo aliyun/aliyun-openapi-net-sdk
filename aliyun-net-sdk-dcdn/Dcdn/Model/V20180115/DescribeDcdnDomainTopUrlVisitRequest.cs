@@ -26,48 +26,50 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class DescribeDcdnTopDomainsByFlowRequest : RpcAcsRequest<DescribeDcdnTopDomainsByFlowResponse>
+    public class DescribeDcdnDomainTopUrlVisitRequest : RpcAcsRequest<DescribeDcdnDomainTopUrlVisitResponse>
     {
-        public DescribeDcdnTopDomainsByFlowRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnTopDomainsByFlow")
+        public DescribeDcdnDomainTopUrlVisitRequest()
+            : base("dcdn", "2018-01-15", "DescribeDcdnDomainTopUrlVisit")
         {
         }
 
-		private string startTime;
+		private string securityToken;
 
-		private long? limit;
+		private string domainName;
 
 		private string action;
 
-		private string product;
+		private string sortBy;
 
-		private string endTime;
+		private string startTime;
 
 		private long? ownerId;
 
-		public string StartTime
+		private string accessKeyId;
+
+		public string SecurityToken
 		{
 			get
 			{
-				return startTime;
+				return securityToken;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public long? Limit
+		public string DomainName
 		{
 			get
 			{
-				return limit;
+				return domainName;
 			}
 			set	
 			{
-				limit = value;
-				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -84,29 +86,29 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string Product
+		public string SortBy
 		{
 			get
 			{
-				return product;
+				return sortBy;
 			}
 			set	
 			{
-				product = value;
-				DictionaryUtil.Add(QueryParameters, "Product", value);
+				sortBy = value;
+				DictionaryUtil.Add(QueryParameters, "SortBy", value);
 			}
 		}
 
-		public string EndTime
+		public string StartTime
 		{
 			get
 			{
-				return endTime;
+				return startTime;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -123,9 +125,22 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-        public override DescribeDcdnTopDomainsByFlowResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override DescribeDcdnDomainTopUrlVisitResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDcdnTopDomainsByFlowResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDcdnDomainTopUrlVisitResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

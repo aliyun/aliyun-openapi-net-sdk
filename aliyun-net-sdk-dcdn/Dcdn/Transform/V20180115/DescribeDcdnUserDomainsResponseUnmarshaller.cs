@@ -34,7 +34,6 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 			describeDcdnUserDomainsResponse.PageNumber = context.LongValue("DescribeDcdnUserDomains.PageNumber");
 			describeDcdnUserDomainsResponse.PageSize = context.LongValue("DescribeDcdnUserDomains.PageSize");
 			describeDcdnUserDomainsResponse.TotalCount = context.LongValue("DescribeDcdnUserDomains.TotalCount");
-			describeDcdnUserDomainsResponse.OnlineCount = context.LongValue("DescribeDcdnUserDomains.OnlineCount");
 
 			List<DescribeDcdnUserDomainsResponse.DescribeDcdnUserDomains_PageData> describeDcdnUserDomainsResponse_domains = new List<DescribeDcdnUserDomainsResponse.DescribeDcdnUserDomains_PageData>();
 			for (int i = 0; i < context.Length("DescribeDcdnUserDomains.Domains.Length"); i++) {

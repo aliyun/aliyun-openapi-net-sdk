@@ -32,8 +32,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 		private long? totalCount;
 
-		private long? onlineCount;
-
 		private List<DescribeDcdnUserDomains_PageData> domains;
 
 		public string RequestId
@@ -81,18 +79,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			set	
 			{
 				totalCount = value;
-			}
-		}
-
-		public long? OnlineCount
-		{
-			get
-			{
-				return onlineCount;
-			}
-			set	
-			{
-				onlineCount = value;
 			}
 		}
 
