@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DescribeLifecycleHooksRequest : RpcAcsRequest<DescribeLifecycleHooksResponse>
     {
         public DescribeLifecycleHooksRequest()
-            : base("Ess", "2014-08-28", "DescribeLifecycleHooks", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "DescribeLifecycleHooks")
         {
         }
 

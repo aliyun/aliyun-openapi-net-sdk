@@ -113,6 +113,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string creationType;
 
+			private string launchTemplateId;
+
+			private string launchTemplateVersion;
+
 			public string InstanceId
 			{
 				get
@@ -206,6 +210,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					creationType = value;
+				}
+			}
+
+			public string LaunchTemplateId
+			{
+				get
+				{
+					return launchTemplateId;
+				}
+				set	
+				{
+					launchTemplateId = value;
+				}
+			}
+
+			public string LaunchTemplateVersion
+			{
+				get
+				{
+					return launchTemplateVersion;
+				}
+				set	
+				{
+					launchTemplateVersion = value;
 				}
 			}
 		}

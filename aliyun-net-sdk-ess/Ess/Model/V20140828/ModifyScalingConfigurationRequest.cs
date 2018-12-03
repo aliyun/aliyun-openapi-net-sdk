@@ -29,17 +29,21 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class ModifyScalingConfigurationRequest : RpcAcsRequest<ModifyScalingConfigurationResponse>
     {
         public ModifyScalingConfigurationRequest()
-            : base("Ess", "2014-08-28", "ModifyScalingConfiguration", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "ModifyScalingConfiguration")
         {
         }
 
 		private string imageId;
+
+		private int? memory;
 
 		private string ioOptimized;
 
 		private List<string> instanceTypes;
 
 		private int? internetMaxBandwidthOut;
+
+		private string securityGroupId;
 
 		private string keyPairName;
 
@@ -59,9 +63,15 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string action;
 
+		private bool? _override;
+
+		private string deploymentSetId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
+
+		private int? cpu;
 
 		private string ramRoleName;
 
@@ -95,6 +105,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public int? Memory
+		{
+			get
+			{
+				return memory;
+			}
+			set	
+			{
+				memory = value;
+				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
 			}
 		}
 
@@ -138,6 +161,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				internetMaxBandwidthOut = value;
 				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthOut", value.ToString());
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
 			}
 		}
 
@@ -263,6 +299,32 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public bool? _Override
+		{
+			get
+			{
+				return _override;
+			}
+			set	
+			{
+				_override = value;
+				DictionaryUtil.Add(QueryParameters, "Override", value.ToString());
+			}
+		}
+
+		public string DeploymentSetId
+		{
+			get
+			{
+				return deploymentSetId;
+			}
+			set	
+			{
+				deploymentSetId = value;
+				DictionaryUtil.Add(QueryParameters, "DeploymentSetId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -286,6 +348,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public int? Cpu
+		{
+			get
+			{
+				return cpu;
+			}
+			set	
+			{
+				cpu = value;
+				DictionaryUtil.Add(QueryParameters, "Cpu", value.ToString());
 			}
 		}
 

@@ -29,11 +29,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class CreateScalingConfigurationRequest : RpcAcsRequest<CreateScalingConfigurationResponse>
     {
         public CreateScalingConfigurationRequest()
-            : base("Ess", "2014-08-28", "CreateScalingConfiguration", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "CreateScalingConfiguration")
         {
         }
 
 		private string imageId;
+
+		private int? memory;
 
 		private string scalingGroupId;
 
@@ -59,6 +61,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string hostName;
 
+		private string password;
+
 		private bool? passwordInherit;
 
 		private string imageName;
@@ -67,9 +71,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string instanceType;
 
+		private string deploymentSetId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
+
+		private int? cpu;
 
 		private string ramRoleName;
 
@@ -103,6 +111,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public int? Memory
+		{
+			get
+			{
+				return memory;
+			}
+			set	
+			{
+				memory = value;
+				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
 			}
 		}
 
@@ -271,6 +292,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string Password
+		{
+			get
+			{
+				return password;
+			}
+			set	
+			{
+				password = value;
+				DictionaryUtil.Add(QueryParameters, "Password", value);
+			}
+		}
+
 		public bool? PasswordInherit
 		{
 			get
@@ -323,6 +357,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string DeploymentSetId
+		{
+			get
+			{
+				return deploymentSetId;
+			}
+			set	
+			{
+				deploymentSetId = value;
+				DictionaryUtil.Add(QueryParameters, "DeploymentSetId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -346,6 +393,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public int? Cpu
+		{
+			get
+			{
+				return cpu;
+			}
+			set	
+			{
+				cpu = value;
+				DictionaryUtil.Add(QueryParameters, "Cpu", value.ToString());
 			}
 		}
 

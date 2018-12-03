@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class EnableAlarmRequest : RpcAcsRequest<EnableAlarmResponse>
     {
         public EnableAlarmRequest()
-            : base("Ess", "2014-08-28", "EnableAlarm", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "EnableAlarm")
         {
         }
 

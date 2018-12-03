@@ -145,6 +145,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string healthCheckType;
 
+			private string scalingPolicy;
+
+			private int? stoppedCapacity;
+
 			private List<string> vSwitchIds;
 
 			private List<string> removalPolicies;
@@ -438,6 +442,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					healthCheckType = value;
+				}
+			}
+
+			public string ScalingPolicy
+			{
+				get
+				{
+					return scalingPolicy;
+				}
+				set	
+				{
+					scalingPolicy = value;
+				}
+			}
+
+			public int? StoppedCapacity
+			{
+				get
+				{
+					return stoppedCapacity;
+				}
+				set	
+				{
+					stoppedCapacity = value;
 				}
 			}
 

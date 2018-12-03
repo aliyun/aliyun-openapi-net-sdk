@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class CreateScalingGroupRequest : RpcAcsRequest<CreateScalingGroupResponse>
     {
         public CreateScalingGroupRequest()
-            : base("Ess", "2014-08-28", "CreateScalingGroup", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "CreateScalingGroup")
         {
         }
 
@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private long? ownerId;
 
 		private string launchTemplateVersion;
+
+		private string scalingPolicy;
 
 		private string accessKeyId;
 
@@ -232,6 +234,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				launchTemplateVersion = value;
 				DictionaryUtil.Add(QueryParameters, "LaunchTemplateVersion", value);
+			}
+		}
+
+		public string ScalingPolicy
+		{
+			get
+			{
+				return scalingPolicy;
+			}
+			set	
+			{
+				scalingPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingPolicy", value);
 			}
 		}
 

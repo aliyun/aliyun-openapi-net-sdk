@@ -62,6 +62,8 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingGroup.VSwitchId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].VSwitchId");
 				scalingGroup.MultiAZPolicy = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].MultiAZPolicy");
 				scalingGroup.HealthCheckType = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].HealthCheckType");
+				scalingGroup.ScalingPolicy = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].ScalingPolicy");
+				scalingGroup.StoppedCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].StoppedCapacity");
 
 				List<string> scalingGroup_vSwitchIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeScalingGroups.ScalingGroups["+ i +"].VSwitchIds.Length"); j++) {

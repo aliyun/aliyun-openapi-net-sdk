@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DescribeAlarmsRequest : RpcAcsRequest<DescribeAlarmsResponse>
     {
         public DescribeAlarmsRequest()
-            : base("Ess", "2014-08-28", "DescribeAlarms", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "DescribeAlarms")
         {
         }
 

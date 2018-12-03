@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingConfiguration.ImageName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ImageName");
 				scalingConfiguration.HostName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].HostName");
 				scalingConfiguration.InstanceType = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceType");
+				scalingConfiguration.Cpu = context.IntegerValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].Cpu");
+				scalingConfiguration.Memory = context.IntegerValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].Memory");
 				scalingConfiguration.InstanceGeneration = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceGeneration");
 				scalingConfiguration.SecurityGroupId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SecurityGroupId");
 				scalingConfiguration.IoOptimized = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].IoOptimized");

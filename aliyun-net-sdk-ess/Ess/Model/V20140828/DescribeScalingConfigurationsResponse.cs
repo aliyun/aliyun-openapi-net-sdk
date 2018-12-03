@@ -113,6 +113,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string instanceType;
 
+			private int? cpu;
+
+			private int? memory;
+
 			private string instanceGeneration;
 
 			private string securityGroupId;
@@ -250,6 +254,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					instanceType = value;
+				}
+			}
+
+			public int? Cpu
+			{
+				get
+				{
+					return cpu;
+				}
+				set	
+				{
+					cpu = value;
+				}
+			}
+
+			public int? Memory
+			{
+				get
+				{
+					return memory;
+				}
+				set	
+				{
+					memory = value;
 				}
 			}
 

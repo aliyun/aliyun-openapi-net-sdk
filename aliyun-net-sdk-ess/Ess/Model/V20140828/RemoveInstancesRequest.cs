@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class RemoveInstancesRequest : RpcAcsRequest<RemoveInstancesResponse>
     {
         public RemoveInstancesRequest()
-            : base("Ess", "2014-08-28", "RemoveInstances", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "RemoveInstances")
         {
         }
 
@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string instanceId20;
 
 		private string instanceId1;
+
+		private string removePolicy;
 
 		private string instanceId3;
 
@@ -201,6 +203,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				instanceId1 = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId.1", value);
+			}
+		}
+
+		public string RemovePolicy
+		{
+			get
+			{
+				return removePolicy;
+			}
+			set	
+			{
+				removePolicy = value;
+				DictionaryUtil.Add(QueryParameters, "RemovePolicy", value);
 			}
 		}
 

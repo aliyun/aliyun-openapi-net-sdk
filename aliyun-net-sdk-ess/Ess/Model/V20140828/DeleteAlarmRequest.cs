@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DeleteAlarmRequest : RpcAcsRequest<DeleteAlarmResponse>
     {
         public DeleteAlarmRequest()
-            : base("Ess", "2014-08-28", "DeleteAlarm", "ess", "openAPI")
+            : base("Ess", "2014-08-28", "DeleteAlarm")
         {
         }
 
