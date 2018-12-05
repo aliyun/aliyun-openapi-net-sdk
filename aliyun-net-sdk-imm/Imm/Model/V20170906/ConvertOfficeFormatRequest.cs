@@ -47,6 +47,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string tgtFileSuffix;
 
+		private bool? pdfVector;
+
 		private string accessKeyId;
 
 		private bool? sheetOnePage;
@@ -161,6 +163,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				tgtFileSuffix = value;
 				DictionaryUtil.Add(QueryParameters, "TgtFileSuffix", value);
+			}
+		}
+
+		public bool? PdfVector
+		{
+			get
+			{
+				return pdfVector;
+			}
+			set	
+			{
+				pdfVector = value;
+				DictionaryUtil.Add(QueryParameters, "PdfVector", value.ToString());
 			}
 		}
 

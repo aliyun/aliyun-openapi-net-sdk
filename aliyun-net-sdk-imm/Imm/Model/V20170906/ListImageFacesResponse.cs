@@ -21,12 +21,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class DescribeRegionsResponse : AcsResponse
+	public class ListImageFacesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private DescribeRegions_Regions regions;
+		private string nextMarker;
+
+		private List<ListImageFaces_FacesItem> faces;
 
 		public string RequestId
 		{
@@ -40,64 +42,72 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public DescribeRegions_Regions Regions
+		public string NextMarker
 		{
 			get
 			{
-				return regions;
+				return nextMarker;
 			}
 			set	
 			{
-				regions = value;
+				nextMarker = value;
 			}
 		}
 
-		public class DescribeRegions_Regions
+		public List<ListImageFaces_FacesItem> Faces
+		{
+			get
+			{
+				return faces;
+			}
+			set	
+			{
+				faces = value;
+			}
+		}
+
+		public class ListImageFaces_FacesItem
 		{
 
-			private List<DescribeRegions_RegionItem> region;
+			private string groupId;
 
-			public List<DescribeRegions_RegionItem> Region
+			private string faceId;
+
+			private string unGroupReason;
+
+			public string GroupId
 			{
 				get
 				{
-					return region;
+					return groupId;
 				}
 				set	
 				{
-					region = value;
+					groupId = value;
 				}
 			}
 
-			public class DescribeRegions_RegionItem
+			public string FaceId
 			{
-
-				private string regionId;
-
-				private List<string> projectTypes;
-
-				public string RegionId
+				get
 				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
+					return faceId;
 				}
-
-				public List<string> ProjectTypes
+				set	
 				{
-					get
-					{
-						return projectTypes;
-					}
-					set	
-					{
-						projectTypes = value;
-					}
+					faceId = value;
+				}
+			}
+
+			public string UnGroupReason
+			{
+				get
+				{
+					return unGroupReason;
+				}
+				set	
+				{
+					unGroupReason = value;
 				}
 			}
 		}

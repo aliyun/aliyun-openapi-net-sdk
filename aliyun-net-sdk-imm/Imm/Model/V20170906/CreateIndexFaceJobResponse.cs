@@ -21,12 +21,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class DescribeRegionsResponse : AcsResponse
+	public class CreateIndexFaceJobResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private DescribeRegions_Regions regions;
+		private string jobId;
+
+		private string jobType;
 
 		public string RequestId
 		{
@@ -40,65 +42,27 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public DescribeRegions_Regions Regions
+		public string JobId
 		{
 			get
 			{
-				return regions;
+				return jobId;
 			}
 			set	
 			{
-				regions = value;
+				jobId = value;
 			}
 		}
 
-		public class DescribeRegions_Regions
+		public string JobType
 		{
-
-			private List<DescribeRegions_RegionItem> region;
-
-			public List<DescribeRegions_RegionItem> Region
+			get
 			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
+				return jobType;
 			}
-
-			public class DescribeRegions_RegionItem
+			set	
 			{
-
-				private string regionId;
-
-				private List<string> projectTypes;
-
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
-
-				public List<string> ProjectTypes
-				{
-					get
-					{
-						return projectTypes;
-					}
-					set	
-					{
-						projectTypes = value;
-					}
-				}
+				jobType = value;
 			}
 		}
 	}

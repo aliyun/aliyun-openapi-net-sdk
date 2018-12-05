@@ -35,33 +35,17 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string srcType;
 
-		private string notifyTopicName;
-
-		private string modelId;
-
 		private string project;
-
-		private long? maxSheetRow;
-
-		private long? maxSheetCount;
-
-		private long? endPage;
 
 		private string idempotentToken;
 
-		private string tgtFileSuffix;
+		private bool? pdfVector;
 
 		private string accessKeyId;
-
-		private bool? sheetOnePage;
 
 		private string password;
 
 		private long? startPage;
-
-		private long? maxSheetCol;
-
-		private string tgtType;
 
 		private string notifyEndpoint;
 
@@ -70,6 +54,24 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string tgtFilePrefix;
 
 		private string action;
+
+		private string notifyTopicName;
+
+		private string modelId;
+
+		private long? maxSheetRow;
+
+		private long? maxSheetCount;
+
+		private long? endPage;
+
+		private string tgtFileSuffix;
+
+		private bool? sheetOnePage;
+
+		private long? maxSheetCol;
+
+		private string tgtType;
 
 		private bool? fitToPagesTall;
 
@@ -92,32 +94,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string NotifyTopicName
-		{
-			get
-			{
-				return notifyTopicName;
-			}
-			set	
-			{
-				notifyTopicName = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
-			}
-		}
-
-		public string ModelId
-		{
-			get
-			{
-				return modelId;
-			}
-			set	
-			{
-				modelId = value;
-				DictionaryUtil.Add(QueryParameters, "ModelId", value);
-			}
-		}
-
 		public string Project
 		{
 			get
@@ -128,45 +104,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
-			}
-		}
-
-		public long? MaxSheetRow
-		{
-			get
-			{
-				return maxSheetRow;
-			}
-			set	
-			{
-				maxSheetRow = value;
-				DictionaryUtil.Add(QueryParameters, "MaxSheetRow", value.ToString());
-			}
-		}
-
-		public long? MaxSheetCount
-		{
-			get
-			{
-				return maxSheetCount;
-			}
-			set	
-			{
-				maxSheetCount = value;
-				DictionaryUtil.Add(QueryParameters, "MaxSheetCount", value.ToString());
-			}
-		}
-
-		public long? EndPage
-		{
-			get
-			{
-				return endPage;
-			}
-			set	
-			{
-				endPage = value;
-				DictionaryUtil.Add(QueryParameters, "EndPage", value.ToString());
 			}
 		}
 
@@ -183,16 +120,16 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string TgtFileSuffix
+		public bool? PdfVector
 		{
 			get
 			{
-				return tgtFileSuffix;
+				return pdfVector;
 			}
 			set	
 			{
-				tgtFileSuffix = value;
-				DictionaryUtil.Add(QueryParameters, "TgtFileSuffix", value);
+				pdfVector = value;
+				DictionaryUtil.Add(QueryParameters, "PdfVector", value.ToString());
 			}
 		}
 
@@ -206,19 +143,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public bool? SheetOnePage
-		{
-			get
-			{
-				return sheetOnePage;
-			}
-			set	
-			{
-				sheetOnePage = value;
-				DictionaryUtil.Add(QueryParameters, "SheetOnePage", value.ToString());
 			}
 		}
 
@@ -245,32 +169,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				startPage = value;
 				DictionaryUtil.Add(QueryParameters, "StartPage", value.ToString());
-			}
-		}
-
-		public long? MaxSheetCol
-		{
-			get
-			{
-				return maxSheetCol;
-			}
-			set	
-			{
-				maxSheetCol = value;
-				DictionaryUtil.Add(QueryParameters, "MaxSheetCol", value.ToString());
-			}
-		}
-
-		public string TgtType
-		{
-			get
-			{
-				return tgtType;
-			}
-			set	
-			{
-				tgtType = value;
-				DictionaryUtil.Add(QueryParameters, "TgtType", value);
 			}
 		}
 
@@ -323,6 +221,123 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string NotifyTopicName
+		{
+			get
+			{
+				return notifyTopicName;
+			}
+			set	
+			{
+				notifyTopicName = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
+			}
+		}
+
+		public string ModelId
+		{
+			get
+			{
+				return modelId;
+			}
+			set	
+			{
+				modelId = value;
+				DictionaryUtil.Add(QueryParameters, "ModelId", value);
+			}
+		}
+
+		public long? MaxSheetRow
+		{
+			get
+			{
+				return maxSheetRow;
+			}
+			set	
+			{
+				maxSheetRow = value;
+				DictionaryUtil.Add(QueryParameters, "MaxSheetRow", value.ToString());
+			}
+		}
+
+		public long? MaxSheetCount
+		{
+			get
+			{
+				return maxSheetCount;
+			}
+			set	
+			{
+				maxSheetCount = value;
+				DictionaryUtil.Add(QueryParameters, "MaxSheetCount", value.ToString());
+			}
+		}
+
+		public long? EndPage
+		{
+			get
+			{
+				return endPage;
+			}
+			set	
+			{
+				endPage = value;
+				DictionaryUtil.Add(QueryParameters, "EndPage", value.ToString());
+			}
+		}
+
+		public string TgtFileSuffix
+		{
+			get
+			{
+				return tgtFileSuffix;
+			}
+			set	
+			{
+				tgtFileSuffix = value;
+				DictionaryUtil.Add(QueryParameters, "TgtFileSuffix", value);
+			}
+		}
+
+		public bool? SheetOnePage
+		{
+			get
+			{
+				return sheetOnePage;
+			}
+			set	
+			{
+				sheetOnePage = value;
+				DictionaryUtil.Add(QueryParameters, "SheetOnePage", value.ToString());
+			}
+		}
+
+		public long? MaxSheetCol
+		{
+			get
+			{
+				return maxSheetCol;
+			}
+			set	
+			{
+				maxSheetCol = value;
+				DictionaryUtil.Add(QueryParameters, "MaxSheetCol", value.ToString());
+			}
+		}
+
+		public string TgtType
+		{
+			get
+			{
+				return tgtType;
+			}
+			set	
+			{
+				tgtType = value;
+				DictionaryUtil.Add(QueryParameters, "TgtType", value);
 			}
 		}
 

@@ -21,12 +21,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class DescribeRegionsResponse : AcsResponse
+	public class DeleteImageJobResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private DescribeRegions_Regions regions;
 
 		public string RequestId
 		{
@@ -37,68 +35,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public DescribeRegions_Regions Regions
-		{
-			get
-			{
-				return regions;
-			}
-			set	
-			{
-				regions = value;
-			}
-		}
-
-		public class DescribeRegions_Regions
-		{
-
-			private List<DescribeRegions_RegionItem> region;
-
-			public List<DescribeRegions_RegionItem> Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
-
-			public class DescribeRegions_RegionItem
-			{
-
-				private string regionId;
-
-				private List<string> projectTypes;
-
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
-
-				public List<string> ProjectTypes
-				{
-					get
-					{
-						return projectTypes;
-					}
-					set	
-					{
-						projectTypes = value;
-					}
-				}
 			}
 		}
 	}
