@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4fe2c989-26c0-4f4a-b942-8eef4c545384}</ProjectGuid>
+    <ProjectGuid>{48e2f8a4-2c5c-44b6-a2a6-485f7164103f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -138,6 +138,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeVirtualBorderRoutersForPhysicalConnectionRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeVpcsResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeInstanceTopologyResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstancesFullStatusRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteDeploymentSetRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateLaunchTemplateRequest.cs" />
@@ -378,6 +379,7 @@
 	<Compile Include="Ecs\Model\V20140526\ResetDiskResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CancelAutoSnapshotPolicyRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceAutoRenewAttributeResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeInstanceTopologyRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteVirtualBorderRouterRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeEipAddressesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\AllocateDedicatedHostsResponse.cs" />
@@ -654,6 +656,7 @@
 	<Compile Include="Ecs\Transform\V20140526\LeaveSecurityGroupResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyHaVipAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyCommandResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceTopologyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceTypeFamiliesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyForwardEntryResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\AttachInstanceRamRoleResponseUnmarshaller.cs" />
