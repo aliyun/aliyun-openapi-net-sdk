@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeDomainUsageDataResponse : AcsResponse
+	public class DescribeLiveDomainRealTimeBpsDataResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,13 +32,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string endTime;
 
-		private string field;
-
-		private string area;
-
 		private string dataInterval;
 
-		private List<DescribeDomainUsageData_DataModule> usageDataPerInterval;
+		private List<DescribeLiveDomainRealTimeBpsData_DataModule> realTimeBpsDataPerInterval;
 
 		public string RequestId
 		{
@@ -88,30 +84,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Field
-		{
-			get
-			{
-				return field;
-			}
-			set	
-			{
-				field = value;
-			}
-		}
-
-		public string Area
-		{
-			get
-			{
-				return area;
-			}
-			set	
-			{
-				area = value;
-			}
-		}
-
 		public string DataInterval
 		{
 			get
@@ -124,19 +96,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<DescribeDomainUsageData_DataModule> UsageDataPerInterval
+		public List<DescribeLiveDomainRealTimeBpsData_DataModule> RealTimeBpsDataPerInterval
 		{
 			get
 			{
-				return usageDataPerInterval;
+				return realTimeBpsDataPerInterval;
 			}
 			set	
 			{
-				usageDataPerInterval = value;
+				realTimeBpsDataPerInterval = value;
 			}
 		}
 
-		public class DescribeDomainUsageData_DataModule
+		public class DescribeLiveDomainRealTimeBpsData_DataModule
 		{
 
 			private string timeStamp;

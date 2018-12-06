@@ -39,6 +39,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				channel.ChannelId = context.StringValue("DescribeCasterChannels.Channels["+ i +"].ChannelId");
 				channel.ResourceId = context.StringValue("DescribeCasterChannels.Channels["+ i +"].ResourceId");
 				channel.StreamUrl = context.StringValue("DescribeCasterChannels.Channels["+ i +"].StreamUrl");
+				channel.RtmpUrl = context.StringValue("DescribeCasterChannels.Channels["+ i +"].RtmpUrl");
 
 				describeCasterChannelsResponse_channels.Add(channel);
 			}

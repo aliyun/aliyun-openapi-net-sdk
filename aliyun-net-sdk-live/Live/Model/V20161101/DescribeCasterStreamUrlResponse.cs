@@ -87,6 +87,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string streamUrl;
 
+			private string rtmpUrl;
+
 			private int? outputType;
 
 			private List<DescribeCasterStreamUrl_StreamInfo> streamInfos;
@@ -112,6 +114,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					streamUrl = value;
+				}
+			}
+
+			public string RtmpUrl
+			{
+				get
+				{
+					return rtmpUrl;
+				}
+				set	
+				{
+					rtmpUrl = value;
 				}
 			}
 

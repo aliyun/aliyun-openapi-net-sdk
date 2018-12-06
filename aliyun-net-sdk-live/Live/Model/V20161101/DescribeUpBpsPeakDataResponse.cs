@@ -21,14 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeCasterChannelsResponse : AcsResponse
+	public class DescribeUpBpsPeakDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? total;
-
-		private List<DescribeCasterChannels_Channel> channels;
+		private List<DescribeUpBpsPeakData_DescribeUpPeakTraffic> describeUpPeakTraffics;
 
 		public string RequestId
 		{
@@ -42,86 +40,74 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? Total
+		public List<DescribeUpBpsPeakData_DescribeUpPeakTraffic> DescribeUpPeakTraffics
 		{
 			get
 			{
-				return total;
+				return describeUpPeakTraffics;
 			}
 			set	
 			{
-				total = value;
+				describeUpPeakTraffics = value;
 			}
 		}
 
-		public List<DescribeCasterChannels_Channel> Channels
-		{
-			get
-			{
-				return channels;
-			}
-			set	
-			{
-				channels = value;
-			}
-		}
-
-		public class DescribeCasterChannels_Channel
+		public class DescribeUpBpsPeakData_DescribeUpPeakTraffic
 		{
 
-			private string channelId;
+			private string peakTime;
 
-			private string resourceId;
+			private string queryTime;
 
-			private string streamUrl;
+			private string statName;
 
-			private string rtmpUrl;
+			private string bandWidth;
 
-			public string ChannelId
+			public string PeakTime
 			{
 				get
 				{
-					return channelId;
+					return peakTime;
 				}
 				set	
 				{
-					channelId = value;
+					peakTime = value;
 				}
 			}
 
-			public string ResourceId
+			public string QueryTime
 			{
 				get
 				{
-					return resourceId;
+					return queryTime;
 				}
 				set	
 				{
-					resourceId = value;
+					queryTime = value;
 				}
 			}
 
-			public string StreamUrl
+			public string StatName
 			{
 				get
 				{
-					return streamUrl;
+					return statName;
 				}
 				set	
 				{
-					streamUrl = value;
+					statName = value;
 				}
 			}
 
-			public string RtmpUrl
+			public string BandWidth
 			{
 				get
 				{
-					return rtmpUrl;
+					return bandWidth;
 				}
 				set	
 				{
-					rtmpUrl = value;
+					bandWidth = value;
 				}
 			}
 		}

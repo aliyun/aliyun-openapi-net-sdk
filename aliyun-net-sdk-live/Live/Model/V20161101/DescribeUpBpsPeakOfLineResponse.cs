@@ -21,14 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeCasterChannelsResponse : AcsResponse
+	public class DescribeUpBpsPeakOfLineResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? total;
-
-		private List<DescribeCasterChannels_Channel> channels;
+		private List<DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine> describeUpBpsPeakOfLines;
 
 		public string RequestId
 		{
@@ -42,86 +40,74 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? Total
+		public List<DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine> DescribeUpBpsPeakOfLines
 		{
 			get
 			{
-				return total;
+				return describeUpBpsPeakOfLines;
 			}
 			set	
 			{
-				total = value;
+				describeUpBpsPeakOfLines = value;
 			}
 		}
 
-		public List<DescribeCasterChannels_Channel> Channels
-		{
-			get
-			{
-				return channels;
-			}
-			set	
-			{
-				channels = value;
-			}
-		}
-
-		public class DescribeCasterChannels_Channel
+		public class DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine
 		{
 
-			private string channelId;
+			private float? bandWidth;
 
-			private string resourceId;
+			private string peakTime;
 
-			private string streamUrl;
+			private string queryTime;
 
-			private string rtmpUrl;
+			private string statName;
 
-			public string ChannelId
+			public float? BandWidth
 			{
 				get
 				{
-					return channelId;
+					return bandWidth;
 				}
 				set	
 				{
-					channelId = value;
+					bandWidth = value;
 				}
 			}
 
-			public string ResourceId
+			public string PeakTime
 			{
 				get
 				{
-					return resourceId;
+					return peakTime;
 				}
 				set	
 				{
-					resourceId = value;
+					peakTime = value;
 				}
 			}
 
-			public string StreamUrl
+			public string QueryTime
 			{
 				get
 				{
-					return streamUrl;
+					return queryTime;
 				}
 				set	
 				{
-					streamUrl = value;
+					queryTime = value;
 				}
 			}
 
-			public string RtmpUrl
+			public string StatName
 			{
 				get
 				{
-					return rtmpUrl;
+					return statName;
 				}
 				set	
 				{
-					rtmpUrl = value;
+					statName = value;
 				}
 			}
 		}

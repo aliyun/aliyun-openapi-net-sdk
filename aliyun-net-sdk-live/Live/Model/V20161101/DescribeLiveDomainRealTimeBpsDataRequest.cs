@@ -26,18 +26,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeDomainUsageDataRequest : RpcAcsRequest<DescribeDomainUsageDataResponse>
+    public class DescribeLiveDomainRealTimeBpsDataRequest : RpcAcsRequest<DescribeLiveDomainRealTimeBpsDataResponse>
     {
-        public DescribeDomainUsageDataRequest()
-            : base("live", "2016-11-01", "DescribeDomainUsageData", "live", "openAPI")
+        public DescribeLiveDomainRealTimeBpsDataRequest()
+            : base("live", "2016-11-01", "DescribeLiveDomainRealTimeBpsData", "live", "openAPI")
         {
         }
+
+		private string locationNameEn;
+
+		private string ispNameEn;
 
 		private string startTime;
 
 		private string action;
-
-		private string area;
 
 		private string domainName;
 
@@ -45,7 +47,31 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private string interval;
+		public string LocationNameEn
+		{
+			get
+			{
+				return locationNameEn;
+			}
+			set	
+			{
+				locationNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
+			}
+		}
+
+		public string IspNameEn
+		{
+			get
+			{
+				return ispNameEn;
+			}
+			set	
+			{
+				ispNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
+			}
+		}
 
 		public string StartTime
 		{
@@ -70,19 +96,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string Area
-		{
-			get
-			{
-				return area;
-			}
-			set	
-			{
-				area = value;
-				DictionaryUtil.Add(QueryParameters, "Area", value);
 			}
 		}
 
@@ -125,22 +138,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
-			}
-		}
-
-        public override DescribeDomainUsageDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveDomainRealTimeBpsDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainUsageDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveDomainRealTimeBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

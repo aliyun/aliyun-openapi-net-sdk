@@ -21,14 +21,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeCasterChannelsResponse : AcsResponse
+	public class DescribeLiveDomainRealTimeTrafficDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? total;
+		private string domainName;
 
-		private List<DescribeCasterChannels_Channel> channels;
+		private string startTime;
+
+		private string endTime;
+
+		private string dataInterval;
+
+		private List<DescribeLiveDomainRealTimeTrafficData_DataModule> realTimeTrafficDataPerInterval;
 
 		public string RequestId
 		{
@@ -42,86 +48,94 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? Total
+		public string DomainName
 		{
 			get
 			{
-				return total;
+				return domainName;
 			}
 			set	
 			{
-				total = value;
+				domainName = value;
 			}
 		}
 
-		public List<DescribeCasterChannels_Channel> Channels
+		public string StartTime
 		{
 			get
 			{
-				return channels;
+				return startTime;
 			}
 			set	
 			{
-				channels = value;
+				startTime = value;
 			}
 		}
 
-		public class DescribeCasterChannels_Channel
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string DataInterval
+		{
+			get
+			{
+				return dataInterval;
+			}
+			set	
+			{
+				dataInterval = value;
+			}
+		}
+
+		public List<DescribeLiveDomainRealTimeTrafficData_DataModule> RealTimeTrafficDataPerInterval
+		{
+			get
+			{
+				return realTimeTrafficDataPerInterval;
+			}
+			set	
+			{
+				realTimeTrafficDataPerInterval = value;
+			}
+		}
+
+		public class DescribeLiveDomainRealTimeTrafficData_DataModule
 		{
 
-			private string channelId;
+			private string timeStamp;
 
-			private string resourceId;
+			private string _value;
 
-			private string streamUrl;
-
-			private string rtmpUrl;
-
-			public string ChannelId
+			public string TimeStamp
 			{
 				get
 				{
-					return channelId;
+					return timeStamp;
 				}
 				set	
 				{
-					channelId = value;
+					timeStamp = value;
 				}
 			}
 
-			public string ResourceId
+			public string _Value
 			{
 				get
 				{
-					return resourceId;
+					return _value;
 				}
 				set	
 				{
-					resourceId = value;
-				}
-			}
-
-			public string StreamUrl
-			{
-				get
-				{
-					return streamUrl;
-				}
-				set	
-				{
-					streamUrl = value;
-				}
-			}
-
-			public string RtmpUrl
-			{
-				get
-				{
-					return rtmpUrl;
-				}
-				set	
-				{
-					rtmpUrl = value;
+					_value = value;
 				}
 			}
 		}

@@ -21,14 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeCasterChannelsResponse : AcsResponse
+	public class DescribeUpPeakPublishStreamDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? total;
-
-		private List<DescribeCasterChannels_Channel> channels;
+		private List<DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData> describeUpPeakPublishStreamDatas;
 
 		public string RequestId
 		{
@@ -42,86 +40,88 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? Total
+		public List<DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData> DescribeUpPeakPublishStreamDatas
 		{
 			get
 			{
-				return total;
+				return describeUpPeakPublishStreamDatas;
 			}
 			set	
 			{
-				total = value;
+				describeUpPeakPublishStreamDatas = value;
 			}
 		}
 
-		public List<DescribeCasterChannels_Channel> Channels
-		{
-			get
-			{
-				return channels;
-			}
-			set	
-			{
-				channels = value;
-			}
-		}
-
-		public class DescribeCasterChannels_Channel
+		public class DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData
 		{
 
-			private string channelId;
+			private int? publishStreamNum;
 
-			private string resourceId;
+			private string peakTime;
 
-			private string streamUrl;
+			private string queryTime;
 
-			private string rtmpUrl;
+			private string statName;
 
-			public string ChannelId
+			private string bandWidth;
+
+			public int? PublishStreamNum
 			{
 				get
 				{
-					return channelId;
+					return publishStreamNum;
 				}
 				set	
 				{
-					channelId = value;
+					publishStreamNum = value;
 				}
 			}
 
-			public string ResourceId
+			public string PeakTime
 			{
 				get
 				{
-					return resourceId;
+					return peakTime;
 				}
 				set	
 				{
-					resourceId = value;
+					peakTime = value;
 				}
 			}
 
-			public string StreamUrl
+			public string QueryTime
 			{
 				get
 				{
-					return streamUrl;
+					return queryTime;
 				}
 				set	
 				{
-					streamUrl = value;
+					queryTime = value;
 				}
 			}
 
-			public string RtmpUrl
+			public string StatName
 			{
 				get
 				{
-					return rtmpUrl;
+					return statName;
 				}
 				set	
 				{
-					rtmpUrl = value;
+					statName = value;
+				}
+			}
+
+			public string BandWidth
+			{
+				get
+				{
+					return bandWidth;
+				}
+				set	
+				{
+					bandWidth = value;
 				}
 			}
 		}
