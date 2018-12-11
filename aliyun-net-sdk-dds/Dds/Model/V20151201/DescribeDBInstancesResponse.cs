@@ -127,7 +127,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string dBInstanceType;
 
-			private int? lastDowngradeTime;
+			private string lastDowngradeTime;
 
 			private string replicationFactor;
 
@@ -317,7 +317,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public int? LastDowngradeTime
+			public string LastDowngradeTime
 			{
 				get
 				{

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8ad7f1ec-32da-4193-8fe7-f0fc6ba2c463}</ProjectGuid>
+    <ProjectGuid>{f5d028bd-74c9-4bdd-a76d-c0873d3edb83}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -52,6 +52,8 @@
 	<Compile Include="Dds\Model\V20151201\DescribeKernelReleaseNotesRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeReplicaSetRoleResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyReplicaVerificationModeRequest.cs" />
+	<Compile Include="Dds\Model\V20151201\DescribeInstanceAutoRenewalAttributeRequest.cs" />
+	<Compile Include="Dds\Model\V20151201\DescribeRenewalPriceResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\EvaluateFailOverSwitchRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeVerificationListRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeBackupPolicyResponse.cs" />
@@ -91,8 +93,10 @@
 	<Compile Include="Dds\Model\V20151201\CreateStaticVerificationRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeRdsVpcsRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeAuditRecordsResponse.cs" />
+	<Compile Include="Dds\Model\V20151201\ModifyInstanceAutoRenewalAttributeResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\SwithcDBInstanceHAResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyReplicaVerificationModeResponse.cs" />
+	<Compile Include="Dds\Model\V20151201\MigrateToOtherZoneResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\DeleteDBInstanceResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyAuditLogFilterResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\ReleasePublicNetworkAddressRequest.cs" />
@@ -110,9 +114,11 @@
 	<Compile Include="Dds\Model\V20151201\RenewDBInstanceRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\ReleasePublicNetworkAddressResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyDBInstanceDescriptionRequest.cs" />
+	<Compile Include="Dds\Model\V20151201\DescribeAvailableEngineVersionResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\DeleteNodeResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyAuditLogFilterRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeParametersResponse.cs" />
+	<Compile Include="Dds\Model\V20151201\DescribeRenewalPriceRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeDBInstancesResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\CreateBackupResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyBackupPolicyRequest.cs" />
@@ -138,6 +144,7 @@
 	<Compile Include="Dds\Model\V20151201\ModifyAuditPolicyResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyDBInstanceSpecResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeActiveOperationTaskCountResponse.cs" />
+	<Compile Include="Dds\Model\V20151201\DescribeInstanceAutoRenewalAttributeResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeKernelReleaseNotesResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeReplicaUsageRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\SampleRequest.cs" />
@@ -148,6 +155,7 @@
 	<Compile Include="Dds\Model\V20151201\DescribeAccountsRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyDBInstanceMaintainTimeRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeActiveOperationTaskTypeRequest.cs" />
+	<Compile Include="Dds\Model\V20151201\DescribeAvailableEngineVersionRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyReplicaRecoveryModeResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyNodeSpecRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeAccountsResponse.cs" />
@@ -180,6 +188,7 @@
 	<Compile Include="Dds\Model\V20151201\DescribeDBInstanceSSLRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyDBInstanceConnectionStringRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeStaticVerificationListRequest.cs" />
+	<Compile Include="Dds\Model\V20151201\MigrateToOtherZoneRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeAuditPolicyRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DeleteDBInstanceRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyParametersRequest.cs" />
@@ -209,6 +218,7 @@
 	<Compile Include="Dds\Model\V20151201\ModifyDBInstanceNetExpireTimeResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\ModifyGuardDomainModeResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeParameterTemplatesResponse.cs" />
+	<Compile Include="Dds\Model\V20151201\ModifyInstanceAutoRenewalAttributeRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\DescribeRunningLogRecordsRequest.cs" />
 	<Compile Include="Dds\Model\V20151201\ResetAccountPasswordResponse.cs" />
 	<Compile Include="Dds\Model\V20151201\UpgradeDBInstanceEngineVersionResponse.cs" />
@@ -219,6 +229,7 @@
 	<Compile Include="Dds\Transform\V20151201\DescribeReplicaConflictInfoResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\DescribeIndexRecommendationResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\ModifyDBInstanceNetworkTypeResponseUnmarshaller.cs" />
+	<Compile Include="Dds\Transform\V20151201\DescribeInstanceAutoRenewalAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\RestartDBInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\ModifyDBInstanceSpecResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\ModifyDBInstanceMonitorResponseUnmarshaller.cs" />
@@ -237,6 +248,8 @@
 	<Compile Include="Dds\Transform\V20151201\DescribeStrategyResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\DescribeRunningLogRecordsResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\ModifyActiveOperationTaskResponseUnmarshaller.cs" />
+	<Compile Include="Dds\Transform\V20151201\DescribeAvailableEngineVersionResponseUnmarshaller.cs" />
+	<Compile Include="Dds\Transform\V20151201\ModifyInstanceAutoRenewalAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\DescribeReplicaPerformanceResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\DeleteDBInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\DescribeParameterModificationHistoryResponseUnmarshaller.cs" />
@@ -278,12 +291,14 @@
 	<Compile Include="Dds\Transform\V20151201\UpgradeDBInstanceEngineVersionResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\DescribeActiveOperationTaskRegionResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\DescribeErrorLogRecordsResponseUnmarshaller.cs" />
+	<Compile Include="Dds\Transform\V20151201\DescribeRenewalPriceResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\ModifyReplicaDescriptionResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\DescribeParameterTemplatesResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\DescribeAvaliableTimeRangeResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\ModifyBackupPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\CreateBackupResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Dds\Transform\V20151201\MigrateToOtherZoneResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\DescribeBackupPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\ModifyDBInstanceMaintainTimeResponseUnmarshaller.cs" />
 	<Compile Include="Dds\Transform\V20151201\DescribeReplicationGroupResponseUnmarshaller.cs" />

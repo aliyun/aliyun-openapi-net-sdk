@@ -53,7 +53,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.CreationTime = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].CreationTime");
 				dBInstance.ExpireTime = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].ExpireTime");
 				dBInstance.DBInstanceType = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceType");
-				dBInstance.LastDowngradeTime = context.IntegerValue("DescribeDBInstances.DBInstances["+ i +"].LastDowngradeTime");
+				dBInstance.LastDowngradeTime = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].LastDowngradeTime");
 				dBInstance.ReplicationFactor = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].ReplicationFactor");
 				dBInstance.DestroyTime = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].DestroyTime");
 

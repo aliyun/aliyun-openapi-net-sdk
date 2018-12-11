@@ -41,6 +41,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string ownerAccount;
 
+		private string engineVersion;
+
+		private string networkType;
+
 		private long? ownerId;
 
 		private int? pageNumber;
@@ -53,9 +57,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceClass;
 
-		private string expired;
+		private string vSwitchId;
 
 		private string securityToken;
+
+		private string engine;
+
+		private string vpcId;
 
 		private int? pageSize;
 
@@ -68,6 +76,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string dBInstanceDescription;
 
 		private string dBInstanceStatus;
+
+		private string chargeType;
 
 		public string ExpireTime
 		{
@@ -118,6 +128,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
 			}
 		}
 
@@ -199,16 +235,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string Expired
+		public string VSwitchId
 		{
 			get
 			{
-				return expired;
+				return vSwitchId;
 			}
 			set	
 			{
-				expired = value;
-				DictionaryUtil.Add(QueryParameters, "Expired", value);
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
@@ -222,6 +258,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 
@@ -300,6 +362,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceStatus = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceStatus", value);
+			}
+		}
+
+		public string ChargeType
+		{
+			get
+			{
+				return chargeType;
+			}
+			set	
+			{
+				chargeType = value;
+				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
 			}
 		}
 
