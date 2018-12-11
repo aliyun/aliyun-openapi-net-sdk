@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstanceProxyConfigurationRequest : RpcAcsRequest<DescribeDBInstanceProxyConfigurationResponse>
     {
         public DescribeDBInstanceProxyConfigurationRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstanceProxyConfiguration", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstanceProxyConfiguration", "Rds", "openAPI")
         {
         }
 

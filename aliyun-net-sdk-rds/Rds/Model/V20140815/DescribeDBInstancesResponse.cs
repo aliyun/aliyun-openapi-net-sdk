@@ -157,7 +157,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string resourceGroupId;
 
+			private string dispenseMode;
+
+			private string masterRegion;
+
 			private List<DescribeDBInstances_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+
+			private List<DescribeDBInstances_SlaveRegion> slaveRegions;
 
 			public int? InsId
 			{
@@ -519,6 +525,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string DispenseMode
+			{
+				get
+				{
+					return dispenseMode;
+				}
+				set	
+				{
+					dispenseMode = value;
+				}
+			}
+
+			public string MasterRegion
+			{
+				get
+				{
+					return masterRegion;
+				}
+				set	
+				{
+					masterRegion = value;
+				}
+			}
+
 			public List<DescribeDBInstances_ReadOnlyDBInstanceId> ReadOnlyDBInstanceIds
 			{
 				get
@@ -528,6 +558,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					readOnlyDBInstanceIds = value;
+				}
+			}
+
+			public List<DescribeDBInstances_SlaveRegion> SlaveRegions
+			{
+				get
+				{
+					return slaveRegions;
+				}
+				set	
+				{
+					slaveRegions = value;
 				}
 			}
 
@@ -545,6 +587,24 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						dBInstanceId = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstances_SlaveRegion
+			{
+
+				private string regionId;
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
 					}
 				}
 			}

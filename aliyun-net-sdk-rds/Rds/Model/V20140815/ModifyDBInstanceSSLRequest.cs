@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBInstanceSSLRequest : RpcAcsRequest<ModifyDBInstanceSSLResponse>
     {
         public ModifyDBInstanceSSLRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceSSL", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceSSL", "Rds", "openAPI")
         {
         }
 

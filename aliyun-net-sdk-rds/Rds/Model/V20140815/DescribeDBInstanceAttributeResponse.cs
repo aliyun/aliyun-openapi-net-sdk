@@ -181,7 +181,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string securityIPMode;
 
+			private string timeZone;
+
+			private string collation;
+
+			private string dispenseMode;
+
+			private string masterRegion;
+
+			private List<DescribeDBInstanceAttribute_SlaveRegion> slaveRegions;
+
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+
+			private DescribeDBInstanceAttribute_Extra extra;
 
 			public string IPType
 			{
@@ -939,6 +951,66 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string TimeZone
+			{
+				get
+				{
+					return timeZone;
+				}
+				set	
+				{
+					timeZone = value;
+				}
+			}
+
+			public string Collation
+			{
+				get
+				{
+					return collation;
+				}
+				set	
+				{
+					collation = value;
+				}
+			}
+
+			public string DispenseMode
+			{
+				get
+				{
+					return dispenseMode;
+				}
+				set	
+				{
+					dispenseMode = value;
+				}
+			}
+
+			public string MasterRegion
+			{
+				get
+				{
+					return masterRegion;
+				}
+				set	
+				{
+					masterRegion = value;
+				}
+			}
+
+			public List<DescribeDBInstanceAttribute_SlaveRegion> SlaveRegions
+			{
+				get
+				{
+					return slaveRegions;
+				}
+				set	
+				{
+					slaveRegions = value;
+				}
+			}
+
 			public List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> ReadOnlyDBInstanceIds
 			{
 				get
@@ -951,12 +1023,102 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public DescribeDBInstanceAttribute_Extra Extra
+			{
+				get
+				{
+					return extra;
+				}
+				set	
+				{
+					extra = value;
+				}
+			}
+
+			public class DescribeDBInstanceAttribute_SlaveRegion
+			{
+
+				private string regionId;
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+			}
+
 			public class DescribeDBInstanceAttribute_ReadOnlyDBInstanceId
 			{
 
 				private string dBInstanceId;
 
 				public string DBInstanceId
+				{
+					get
+					{
+						return dBInstanceId;
+					}
+					set	
+					{
+						dBInstanceId = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstanceAttribute_Extra
+			{
+
+				private string replicaGroupID;
+
+				private string replicaGroupStatus;
+
+				private string activeReplicaDBInstanceID;
+
+				private List<string> dBInstanceId;
+
+				public string ReplicaGroupID
+				{
+					get
+					{
+						return replicaGroupID;
+					}
+					set	
+					{
+						replicaGroupID = value;
+					}
+				}
+
+				public string ReplicaGroupStatus
+				{
+					get
+					{
+						return replicaGroupStatus;
+					}
+					set	
+					{
+						replicaGroupStatus = value;
+					}
+				}
+
+				public string ActiveReplicaDBInstanceID
+				{
+					get
+					{
+						return activeReplicaDBInstanceID;
+					}
+					set	
+					{
+						activeReplicaDBInstanceID = value;
+					}
+				}
+
+				public List<string> DBInstanceId
 				{
 					get
 					{

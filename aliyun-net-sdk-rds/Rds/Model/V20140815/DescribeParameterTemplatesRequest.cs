@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeParameterTemplatesRequest : RpcAcsRequest<DescribeParameterTemplatesResponse>
     {
         public DescribeParameterTemplatesRequest()
-            : base("Rds", "2014-08-15", "DescribeParameterTemplates", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeParameterTemplates", "Rds", "openAPI")
         {
         }
 
@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string engineVersion;
 
 		private long? ownerId;
+
+		private string category;
 
 		private string accessKeyId;
 
@@ -152,6 +154,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

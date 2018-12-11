@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyCollationTimeZoneRequest : RpcAcsRequest<ModifyCollationTimeZoneResponse>
     {
         public ModifyCollationTimeZoneRequest()
-            : base("Rds", "2014-08-15", "ModifyCollationTimeZone", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyCollationTimeZone", "Rds", "openAPI")
         {
         }
 

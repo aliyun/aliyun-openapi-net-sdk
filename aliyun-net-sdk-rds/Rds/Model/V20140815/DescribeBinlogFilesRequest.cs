@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeBinlogFilesRequest : RpcAcsRequest<DescribeBinlogFilesResponse>
     {
         public DescribeBinlogFilesRequest()
-            : base("Rds", "2014-08-15", "DescribeBinlogFiles", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeBinlogFiles", "Rds", "openAPI")
         {
         }
 

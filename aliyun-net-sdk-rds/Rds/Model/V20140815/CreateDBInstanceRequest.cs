@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateDBInstanceRequest : RpcAcsRequest<CreateDBInstanceResponse>
     {
         public CreateDBInstanceRequest()
-            : base("Rds", "2014-08-15", "CreateDBInstance", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateDBInstance", "Rds", "openAPI")
         {
         }
 

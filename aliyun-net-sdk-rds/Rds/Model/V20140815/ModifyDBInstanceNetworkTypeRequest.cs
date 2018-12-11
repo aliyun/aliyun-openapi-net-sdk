@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBInstanceNetworkTypeRequest : RpcAcsRequest<ModifyDBInstanceNetworkTypeResponse>
     {
         public ModifyDBInstanceNetworkTypeRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceNetworkType", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceNetworkType", "Rds", "openAPI")
         {
         }
 

@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string endTime;
 
+		private string dBInstanceId;
+
 		private int? totalRecordCount;
 
 		private int? pageNumber;
@@ -85,6 +87,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				endTime = value;
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
 			}
 		}
 

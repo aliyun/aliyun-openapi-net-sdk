@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeSQLLogReportListRequest : RpcAcsRequest<DescribeSQLLogReportListResponse>
     {
         public DescribeSQLLogReportListRequest()
-            : base("Rds", "2014-08-15", "DescribeSQLLogReportList", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeSQLLogReportList", "Rds", "openAPI")
         {
         }
 

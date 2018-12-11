@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ResetAccountPasswordRequest : RpcAcsRequest<ResetAccountPasswordResponse>
     {
         public ResetAccountPasswordRequest()
-            : base("Rds", "2014-08-15", "ResetAccountPassword", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ResetAccountPassword", "Rds", "openAPI")
         {
         }
 

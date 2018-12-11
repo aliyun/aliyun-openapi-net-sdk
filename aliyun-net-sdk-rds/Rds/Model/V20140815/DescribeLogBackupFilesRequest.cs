@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeLogBackupFilesRequest : RpcAcsRequest<DescribeLogBackupFilesResponse>
     {
         public DescribeLogBackupFilesRequest()
-            : base("Rds", "2014-08-15", "DescribeLogBackupFiles", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeLogBackupFiles", "Rds", "openAPI")
         {
         }
 

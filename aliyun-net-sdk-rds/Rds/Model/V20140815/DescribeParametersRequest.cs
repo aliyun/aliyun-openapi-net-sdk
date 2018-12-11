@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeParametersRequest : RpcAcsRequest<DescribeParametersResponse>
     {
         public DescribeParametersRequest()
-            : base("Rds", "2014-08-15", "DescribeParameters", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeParameters", "Rds", "openAPI")
         {
         }
 

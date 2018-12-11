@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateOnlineDatabaseTaskRequest : RpcAcsRequest<CreateOnlineDatabaseTaskResponse>
     {
         public CreateOnlineDatabaseTaskRequest()
-            : base("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "Rds", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeSlowLogRecordsRequest : RpcAcsRequest<DescribeSlowLogRecordsResponse>
     {
         public DescribeSlowLogRecordsRequest()
-            : base("Rds", "2014-08-15", "DescribeSlowLogRecords", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeSlowLogRecords", "Rds", "openAPI")
         {
         }
 
@@ -38,8 +38,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
-
-		private string queryTimeFormat;
 
 		private string ownerAccount;
 
@@ -97,19 +95,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string QueryTimeFormat
-		{
-			get
-			{
-				return queryTimeFormat;
-			}
-			set	
-			{
-				queryTimeFormat = value;
-				DictionaryUtil.Add(QueryParameters, "QueryTimeFormat", value);
 			}
 		}
 

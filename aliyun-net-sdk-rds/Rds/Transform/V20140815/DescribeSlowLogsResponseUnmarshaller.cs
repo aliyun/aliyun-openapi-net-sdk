@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeSlowLogsResponse.Engine = context.StringValue("DescribeSlowLogs.Engine");
 			describeSlowLogsResponse.StartTime = context.StringValue("DescribeSlowLogs.StartTime");
 			describeSlowLogsResponse.EndTime = context.StringValue("DescribeSlowLogs.EndTime");
+			describeSlowLogsResponse.DBInstanceId = context.StringValue("DescribeSlowLogs.DBInstanceId");
 			describeSlowLogsResponse.TotalRecordCount = context.IntegerValue("DescribeSlowLogs.TotalRecordCount");
 			describeSlowLogsResponse.PageNumber = context.IntegerValue("DescribeSlowLogs.PageNumber");
 			describeSlowLogsResponse.PageRecordCount = context.IntegerValue("DescribeSlowLogs.PageRecordCount");

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class MigrateToOtherZoneRequest : RpcAcsRequest<MigrateToOtherZoneResponse>
     {
         public MigrateToOtherZoneRequest()
-            : base("Rds", "2014-08-15", "MigrateToOtherZone", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "MigrateToOtherZone", "Rds", "openAPI")
         {
         }
 

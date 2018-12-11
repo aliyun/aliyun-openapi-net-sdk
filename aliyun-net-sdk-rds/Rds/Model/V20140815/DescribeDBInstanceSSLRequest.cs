@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstanceSSLRequest : RpcAcsRequest<DescribeDBInstanceSSLResponse>
     {
         public DescribeDBInstanceSSLRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstanceSSL", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstanceSSL", "Rds", "openAPI")
         {
         }
 

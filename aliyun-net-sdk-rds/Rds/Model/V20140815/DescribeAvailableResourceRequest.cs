@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeAvailableResourceRequest : RpcAcsRequest<DescribeAvailableResourceResponse>
     {
         public DescribeAvailableResourceRequest()
-            : base("Rds", "2014-08-15", "DescribeAvailableResource", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeAvailableResource", "Rds", "openAPI")
         {
         }
 

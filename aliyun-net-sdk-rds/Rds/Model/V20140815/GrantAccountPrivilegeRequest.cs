@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class GrantAccountPrivilegeRequest : RpcAcsRequest<GrantAccountPrivilegeResponse>
     {
         public GrantAccountPrivilegeRequest()
-            : base("Rds", "2014-08-15", "GrantAccountPrivilege", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "GrantAccountPrivilege", "Rds", "openAPI")
         {
         }
 

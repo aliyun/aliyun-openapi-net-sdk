@@ -26,6 +26,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		private string dBInstanceId;
+
 		private string engine;
 
 		private int? totalRecordCount;
@@ -45,6 +47,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
 			}
 		}
 
@@ -117,7 +131,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string sQLText;
 
-			private string queryTimes;
+			private long? queryTimes;
 
 			private long? lockTimes;
 
@@ -163,7 +177,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string QueryTimes
+			public long? QueryTimes
 			{
 				get
 				{

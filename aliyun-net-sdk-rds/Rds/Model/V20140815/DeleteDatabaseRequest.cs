@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DeleteDatabaseRequest : RpcAcsRequest<DeleteDatabaseResponse>
     {
         public DeleteDatabaseRequest()
-            : base("Rds", "2014-08-15", "DeleteDatabase", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DeleteDatabase", "Rds", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeSecurityGroupConfigurationRequest : RpcAcsRequest<DescribeSecurityGroupConfigurationResponse>
     {
         public DescribeSecurityGroupConfigurationRequest()
-            : base("Rds", "2014-08-15", "DescribeSecurityGroupConfiguration", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeSecurityGroupConfiguration", "Rds", "openAPI")
         {
         }
 

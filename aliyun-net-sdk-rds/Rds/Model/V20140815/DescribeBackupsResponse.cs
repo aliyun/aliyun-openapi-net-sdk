@@ -147,6 +147,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string storeStatus;
 
+			private string consistentTime;
+
 			public string BackupId
 			{
 				get
@@ -360,6 +362,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					storeStatus = value;
+				}
+			}
+
+			public string ConsistentTime
+			{
+				get
+				{
+					return consistentTime;
+				}
+				set	
+				{
+					consistentTime = value;
 				}
 			}
 		}

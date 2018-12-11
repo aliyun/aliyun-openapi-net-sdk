@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstancesRequest : RpcAcsRequest<DescribeDBInstancesResponse>
     {
         public DescribeDBInstancesRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstances", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstances", "Rds", "openAPI")
         {
         }
 
@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string accessKeyId;
 
 		private string tag1value;
+
+		private string resourceGroupId;
 
 		private string expired;
 
@@ -245,6 +247,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				tag1value = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.1.value", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

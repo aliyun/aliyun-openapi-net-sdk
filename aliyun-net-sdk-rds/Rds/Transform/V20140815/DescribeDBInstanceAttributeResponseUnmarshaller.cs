@@ -98,6 +98,31 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.ResourceGroupId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].ResourceGroupId");
 				dBInstanceAttribute.ReadonlyInstanceSQLDelayedTime = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].ReadonlyInstanceSQLDelayedTime");
 				dBInstanceAttribute.SecurityIPMode = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].SecurityIPMode");
+				dBInstanceAttribute.TimeZone = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].TimeZone");
+				dBInstanceAttribute.Collation = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Collation");
+				dBInstanceAttribute.DispenseMode = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DispenseMode");
+				dBInstanceAttribute.MasterRegion = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].MasterRegion");
+
+				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra extra = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra();
+				extra.ReplicaGroupID = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupID");
+				extra.ReplicaGroupStatus = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupStatus");
+				extra.ActiveReplicaDBInstanceID = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ActiveReplicaDBInstanceID");
+
+				List<string> extra_dBInstanceId = new List<string>();
+				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.Items["+ i +"].Extra.DBInstanceId.Length"); j++) {
+					extra_dBInstanceId.Add(context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.DBInstanceId["+ j +"]"));
+				}
+				extra.DBInstanceId = extra_dBInstanceId;
+				dBInstanceAttribute.Extra = extra;
+
+				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveRegion> dBInstanceAttribute_slaveRegions = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveRegion>();
+				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.Items["+ i +"].SlaveRegions.Length"); j++) {
+					DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveRegion slaveRegion = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveRegion();
+					slaveRegion.RegionId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].SlaveRegions["+ j +"].RegionId");
+
+					dBInstanceAttribute_slaveRegions.Add(slaveRegion);
+				}
+				dBInstanceAttribute.SlaveRegions = dBInstanceAttribute_slaveRegions;
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> dBInstanceAttribute_readOnlyDBInstanceIds = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_ReadOnlyDBInstanceId>();
 				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

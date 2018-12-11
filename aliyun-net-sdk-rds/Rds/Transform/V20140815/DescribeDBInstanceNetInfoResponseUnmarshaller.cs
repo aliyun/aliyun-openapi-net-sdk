@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstanceNetInfoResponse.HttpResponse = context.HttpResponse;
 			describeDBInstanceNetInfoResponse.RequestId = context.StringValue("DescribeDBInstanceNetInfo.RequestId");
 			describeDBInstanceNetInfoResponse.InstanceNetworkType = context.StringValue("DescribeDBInstanceNetInfo.InstanceNetworkType");
+			describeDBInstanceNetInfoResponse.SecurityIPMode = context.StringValue("DescribeDBInstanceNetInfo.SecurityIPMode");
 
 			List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo> describeDBInstanceNetInfoResponse_dBInstanceNetInfos = new List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo>();
 			for (int i = 0; i < context.Length("DescribeDBInstanceNetInfo.DBInstanceNetInfos.Length"); i++) {

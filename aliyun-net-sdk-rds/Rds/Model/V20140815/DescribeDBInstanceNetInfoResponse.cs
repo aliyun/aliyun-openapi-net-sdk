@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string instanceNetworkType;
 
+		private string securityIPMode;
+
 		private List<DescribeDBInstanceNetInfo_DBInstanceNetInfo> dBInstanceNetInfos;
 
 		public string RequestId
@@ -51,6 +53,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				instanceNetworkType = value;
+			}
+		}
+
+		public string SecurityIPMode
+		{
+			get
+			{
+				return securityIPMode;
+			}
+			set	
+			{
+				securityIPMode = value;
 			}
 		}
 

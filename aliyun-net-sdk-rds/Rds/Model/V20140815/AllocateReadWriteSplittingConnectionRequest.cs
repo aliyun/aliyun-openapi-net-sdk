@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class AllocateReadWriteSplittingConnectionRequest : RpcAcsRequest<AllocateReadWriteSplittingConnectionResponse>
     {
         public AllocateReadWriteSplittingConnectionRequest()
-            : base("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection", "Rds", "openAPI")
         {
         }
 
