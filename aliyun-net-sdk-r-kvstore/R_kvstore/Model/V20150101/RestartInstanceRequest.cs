@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceMinorVersionRequest : RpcAcsRequest<ModifyInstanceMinorVersionResponse>
+    public class RestartInstanceRequest : RpcAcsRequest<RestartInstanceResponse>
     {
-        public ModifyInstanceMinorVersionRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
+        public RestartInstanceRequest()
+            : base("R_kvstore", "2015-01-01", "RestartInstance", "redisa", "openAPI")
         {
         }
 
@@ -41,15 +41,13 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string resourceOwnerAccount;
 
-		private string minorversion;
+		private string effectiveTime;
 
 		private string ownerAccount;
 
 		private string action;
 
 		private long? ownerId;
-
-		private string effectTime;
 
 		private string accessKeyId;
 
@@ -105,16 +103,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Minorversion
+		public string EffectiveTime
 		{
 			get
 			{
-				return minorversion;
+				return effectiveTime;
 			}
 			set	
 			{
-				minorversion = value;
-				DictionaryUtil.Add(QueryParameters, "Minorversion", value);
+				effectiveTime = value;
+				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
 			}
 		}
 
@@ -157,19 +155,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EffectTime
-		{
-			get
-			{
-				return effectTime;
-			}
-			set	
-			{
-				effectTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectTime", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -183,9 +168,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceMinorVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RestartInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceMinorVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RestartInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

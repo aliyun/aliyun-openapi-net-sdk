@@ -21,16 +21,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-	public class ModifyInstanceSpecPreCheckResponse : AcsResponse
+	public class DescribeErrorLogRecordsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private bool? isAllowModify;
+		private string engine;
 
-		private string disableCommands;
+		private int? totalRecordCount;
 
-		private ModifyInstanceSpecPreCheck_PreCheckResult preCheckResult;
+		private int? pageNumber;
+
+		private int? pageRecordCount;
+
+		private List<DescribeErrorLogRecords_LogRecords> items;
 
 		public string RequestId
 		{
@@ -44,98 +48,136 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public bool? IsAllowModify
+		public string Engine
 		{
 			get
 			{
-				return isAllowModify;
+				return engine;
 			}
 			set	
 			{
-				isAllowModify = value;
+				engine = value;
 			}
 		}
 
-		public string DisableCommands
+		public int? TotalRecordCount
 		{
 			get
 			{
-				return disableCommands;
+				return totalRecordCount;
 			}
 			set	
 			{
-				disableCommands = value;
+				totalRecordCount = value;
 			}
 		}
 
-		public ModifyInstanceSpecPreCheck_PreCheckResult PreCheckResult
+		public int? PageNumber
 		{
 			get
 			{
-				return preCheckResult;
+				return pageNumber;
 			}
 			set	
 			{
-				preCheckResult = value;
+				pageNumber = value;
 			}
 		}
 
-		public class ModifyInstanceSpecPreCheck_PreCheckResult
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
+
+		public List<DescribeErrorLogRecords_LogRecords> Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+			}
+		}
+
+		public class DescribeErrorLogRecords_LogRecords
 		{
 
-			private string usedMemorySize;
+			private int? id;
 
-			private string allowModify;
+			private string createTime;
 
-			private string code;
+			private string category;
 
-			private string message;
+			private string connInfo;
 
-			public string UsedMemorySize
+			private long? content;
+
+			public int? Id
 			{
 				get
 				{
-					return usedMemorySize;
+					return id;
 				}
 				set	
 				{
-					usedMemorySize = value;
+					id = value;
 				}
 			}
 
-			public string AllowModify
+			public string CreateTime
 			{
 				get
 				{
-					return allowModify;
+					return createTime;
 				}
 				set	
 				{
-					allowModify = value;
+					createTime = value;
 				}
 			}
 
-			public string Code
+			public string Category
 			{
 				get
 				{
-					return code;
+					return category;
 				}
 				set	
 				{
-					code = value;
+					category = value;
 				}
 			}
 
-			public string Message
+			public string ConnInfo
 			{
 				get
 				{
-					return message;
+					return connInfo;
 				}
 				set	
 				{
-					message = value;
+					connInfo = value;
+				}
+			}
+
+			public long? Content
+			{
+				get
+				{
+					return content;
+				}
+				set	
+				{
+					content = value;
 				}
 			}
 		}

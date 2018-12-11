@@ -33,6 +33,13 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			modifyInstanceSpecPreCheckResponse.RequestId = context.StringValue("ModifyInstanceSpecPreCheck.RequestId");
 			modifyInstanceSpecPreCheckResponse.IsAllowModify = context.BooleanValue("ModifyInstanceSpecPreCheck.IsAllowModify");
 			modifyInstanceSpecPreCheckResponse.DisableCommands = context.StringValue("ModifyInstanceSpecPreCheck.DisableCommands");
+
+			ModifyInstanceSpecPreCheckResponse.ModifyInstanceSpecPreCheck_PreCheckResult preCheckResult = new ModifyInstanceSpecPreCheckResponse.ModifyInstanceSpecPreCheck_PreCheckResult();
+			preCheckResult.UsedMemorySize = context.StringValue("ModifyInstanceSpecPreCheck.PreCheckResult.UsedMemorySize");
+			preCheckResult.AllowModify = context.StringValue("ModifyInstanceSpecPreCheck.PreCheckResult.AllowModify");
+			preCheckResult.Code = context.StringValue("ModifyInstanceSpecPreCheck.PreCheckResult.Code");
+			preCheckResult.Message = context.StringValue("ModifyInstanceSpecPreCheck.PreCheckResult.Message");
+			modifyInstanceSpecPreCheckResponse.PreCheckResult = preCheckResult;
         
 			return modifyInstanceSpecPreCheckResponse;
         }

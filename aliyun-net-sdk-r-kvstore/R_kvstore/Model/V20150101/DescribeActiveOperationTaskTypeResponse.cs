@@ -21,16 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-	public class ModifyInstanceSpecPreCheckResponse : AcsResponse
+	public class DescribeActiveOperationTaskTypeResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private bool? isAllowModify;
-
-		private string disableCommands;
-
-		private ModifyInstanceSpecPreCheck_PreCheckResult preCheckResult;
+		private List<DescribeActiveOperationTaskType_Items> typeList;
 
 		public string RequestId
 		{
@@ -44,98 +40,46 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public bool? IsAllowModify
+		public List<DescribeActiveOperationTaskType_Items> TypeList
 		{
 			get
 			{
-				return isAllowModify;
+				return typeList;
 			}
 			set	
 			{
-				isAllowModify = value;
+				typeList = value;
 			}
 		}
 
-		public string DisableCommands
-		{
-			get
-			{
-				return disableCommands;
-			}
-			set	
-			{
-				disableCommands = value;
-			}
-		}
-
-		public ModifyInstanceSpecPreCheck_PreCheckResult PreCheckResult
-		{
-			get
-			{
-				return preCheckResult;
-			}
-			set	
-			{
-				preCheckResult = value;
-			}
-		}
-
-		public class ModifyInstanceSpecPreCheck_PreCheckResult
+		public class DescribeActiveOperationTaskType_Items
 		{
 
-			private string usedMemorySize;
+			private string taskType;
 
-			private string allowModify;
+			private int? count;
 
-			private string code;
-
-			private string message;
-
-			public string UsedMemorySize
+			public string TaskType
 			{
 				get
 				{
-					return usedMemorySize;
+					return taskType;
 				}
 				set	
 				{
-					usedMemorySize = value;
+					taskType = value;
 				}
 			}
 
-			public string AllowModify
+			public int? Count
 			{
 				get
 				{
-					return allowModify;
+					return count;
 				}
 				set	
 				{
-					allowModify = value;
-				}
-			}
-
-			public string Code
-			{
-				get
-				{
-					return code;
-				}
-				set	
-				{
-					code = value;
-				}
-			}
-
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
+					count = value;
 				}
 			}
 		}

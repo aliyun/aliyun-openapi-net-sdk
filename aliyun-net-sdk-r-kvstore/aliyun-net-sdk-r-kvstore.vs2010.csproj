@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{d671b197-b5a3-425d-a007-693576c029d6}</ProjectGuid>
+    <ProjectGuid>{8e0314c6-47f4-4ecd-aae9-879d4212b3c4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -45,11 +45,15 @@
 	<Compile Include="R_kvstore\Model\V20150101\DestroyInstanceRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\FlushInstanceRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\SetSnapshotSettingsRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeActiveOperationTaskResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceMajorVersionResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\RestoreSnapshotRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeBackupsRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceNetExpireTimeResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\UnlinkReplicaInstanceResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyReplicaVerificationModeRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeInstanceAttributeRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeInstanceAutoRenewalAttributeRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\EvaluateFailOverSwitchRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\RenewMultiInstanceRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeMonthlyServiceStatusRequest.cs" />
@@ -63,6 +67,7 @@
 	<Compile Include="R_kvstore\Model\V20150101\DescribeDBInstanceNetInfoResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\TransformToPrePaidRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\SwitchNetworkRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeErrorLogRecordsResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifySecurityIpsResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\QueryTaskRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceSSLRequest.cs" />
@@ -72,12 +77,14 @@
 	<Compile Include="R_kvstore\Model\V20150101\DescribeMonitorItemsRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeSnapshotsRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeReplicasResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeActiveOperationTaskRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyCertificationResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DeleteSnapshotSettingsRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\CreateInstanceRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeBackupsResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeCertificationResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeMonthlyServiceStatusDetailRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeActiveOperationTaskCountRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\RestoreInstanceRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\CreateBackupRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\QueryTaskResponse.cs" />
@@ -89,7 +96,9 @@
 	<Compile Include="R_kvstore\Model\V20150101\ModifyReplicaRelationRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\CreateTempInstanceRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeRegionsResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeRunningLogRecordsResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeRegionsRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\ModifyActiveOperationTaskRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeReplicaPerformanceRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceMaintainTimeRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\SwitchTempInstanceRequest.cs" />
@@ -98,17 +107,24 @@
 	<Compile Include="R_kvstore\Model\V20150101\ReleaseReplicaRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\CreateStaticVerificationRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeRdsVpcsRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeAuditRecordsResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceAutoRenewalAttributeResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyReplicaVerificationModeResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeReplicaConflictInfoResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyReplicaRecoveryModeRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeActiveOperationTaskTypeResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeParameterModificationHistoryRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceSpecResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeActiveOperationTaskRegionRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeAuditRecordsRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\TransformToPrePaidResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\UnlinkReplicaInstanceRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeInstancesRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeParametersResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\CreateBackupResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyBackupPolicyRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeInstanceAttributeResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceVpcAuthModeResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DeleteSnapshotResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceAttributeResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeMonthlyServiceStatusDetailResponse.cs" />
@@ -136,8 +152,10 @@
 	<Compile Include="R_kvstore\Model\V20150101\ResetAccountResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeInstancesByExpireTimeResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeDBInstanceNetInfoRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeActiveOperationTaskCountResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DeleteSnapshotRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\CreateSnapshotResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeInstanceAutoRenewalAttributeResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeReplicaUsageRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ResetAccountRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ReleaseReplicaResponse.cs" />
@@ -147,11 +165,13 @@
 	<Compile Include="R_kvstore\Model\V20150101\DescribeInstancesByExpireTimeRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\RenewInstanceResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeHistoryMonitorValuesResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeActiveOperationTaskTypeRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeHistoryMonitorValuesRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyReplicaRecoveryModeResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\SwitchTempInstanceResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeAccountsResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeSecurityIpsResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\ModifyActiveOperationTaskResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\RestoreSnapshotResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\GetSnapshotSettingsResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceConfigRequest.cs" />
@@ -163,12 +183,16 @@
 	<Compile Include="R_kvstore\Model\V20150101\DescribeCertificationRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\GetSnapshotSettingsRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeParameterTemplatesRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeActiveOperationTaskRegionResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceMajorVersionRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeParameterModificationHistoryResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\VerifyPasswordResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\RevokeAccountPrivilegeResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeReplicaConflictInfoRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\CreateInstanceResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeReplicasRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\RestartInstanceRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeErrorLogRecordsRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeStaticVerificationListResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeBackupPolicyRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceNetExpireTimeRequest.cs" />
@@ -178,6 +202,7 @@
 	<Compile Include="R_kvstore\Model\V20150101\CreateTempInstanceResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeLogicInstanceTopologyRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeStaticVerificationListRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\RestartInstanceResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyReplicaRelationResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeStrategyRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeRdsVpcsResponse.cs" />
@@ -191,21 +216,28 @@
 	<Compile Include="R_kvstore\Model\V20150101\EvaluateFailOverSwitchResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyGuardDomainModeRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeInstancesResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeSlowLogRecordsResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifySecurityIpsRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeSnapshotsResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyAccountDescriptionResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DeleteInstanceRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceSSLResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeSlowLogRecordsRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceMaintainTimeResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeTempInstanceResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ModifyGuardDomainModeResponse.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DescribeParameterTemplatesResponse.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceVpcAuthModeRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\ModifyInstanceAutoRenewalAttributeRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\DeleteTempInstanceRequest.cs" />
+	<Compile Include="R_kvstore\Model\V20150101\DescribeRunningLogRecordsRequest.cs" />
 	<Compile Include="R_kvstore\Model\V20150101\ResetAccountPasswordResponse.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\RestartInstanceResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DeleteSnapshotResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeInstanceSSLResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\ModifyGuardDomainModeResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeReplicaConflictInfoResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\DescribeInstanceAutoRenewalAttributeResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\CreateAccountResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\SetSnapshotSettingsResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\ModifyInstanceSSLResponseUnmarshaller.cs" />
@@ -218,22 +250,29 @@
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeDBInstanceNetInfoResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeReplicaInitializeProgressResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeRdsVSwitchsResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\ModifyInstanceVpcAuthModeResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\ModifyReplicaVerificationModeResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeAccountsResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\GrantAccountPrivilegeResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\ResetAccountResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeStrategyResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\DescribeRunningLogRecordsResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DeleteSnapshotSettingsResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeInstancesByExpireTimeResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\CreateTempInstanceResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\ModifyActiveOperationTaskResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\ModifyInstanceMajorVersionResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\SwitchNetworkResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\ModifyInstanceAutoRenewalAttributeResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\RestoreInstanceResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\RenewMultiInstanceResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeReplicaPerformanceResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeMonitorItemsResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\GetSnapshotSettingsResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeParameterModificationHistoryResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\DescribeActiveOperationTaskCountResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\FlushInstanceResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\DescribeActiveOperationTaskResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DestroyInstanceResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeReplicasResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\RevokeAccountPrivilegeResponseUnmarshaller.cs" />
@@ -249,8 +288,10 @@
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeHistoryMonitorValuesResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeParametersResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\ModifySecurityIpsResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\DescribeActiveOperationTaskTypeResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeSnapshotsResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\ModifyAccountDescriptionResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\UnlinkReplicaInstanceResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\TransformToPrePaidResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeCertificationResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\ModifyInstanceSpecPreCheckResponseUnmarshaller.cs" />
@@ -258,6 +299,10 @@
 	<Compile Include="R_kvstore\Transform\V20150101\ModifyReplicaModeResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeTempInstanceResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeVerificationListResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\DescribeSlowLogRecordsResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\DescribeAuditRecordsResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\DescribeActiveOperationTaskRegionResponseUnmarshaller.cs" />
+	<Compile Include="R_kvstore\Transform\V20150101\DescribeErrorLogRecordsResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\ModifyReplicaDescriptionResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeParameterTemplatesResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeInstanceConfigResponseUnmarshaller.cs" />

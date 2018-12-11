@@ -26,32 +26,47 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceMinorVersionRequest : RpcAcsRequest<ModifyInstanceMinorVersionResponse>
+    public class ModifyInstanceAutoRenewalAttributeRequest : RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse>
     {
-        public ModifyInstanceMinorVersionRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
+        public ModifyInstanceAutoRenewalAttributeRequest()
+            : base("R_kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa", "openAPI")
         {
         }
 
+		private string duration;
+
 		private long? resourceOwnerId;
 
-		private string instanceId;
-
-		private string securityToken;
+		private string autoRenew;
 
 		private string resourceOwnerAccount;
 
-		private string minorversion;
+		private string regionId;
+
+		private string clientToken;
 
 		private string ownerAccount;
 
 		private string action;
 
+		private string dBInstanceId;
+
 		private long? ownerId;
 
-		private string effectTime;
-
 		private string accessKeyId;
+
+		public string Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
+				DictionaryUtil.Add(QueryParameters, "Duration", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -66,29 +81,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceId
+		public string AutoRenew
 		{
 			get
 			{
-				return instanceId;
+				return autoRenew;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
 			}
 		}
 
@@ -105,16 +107,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Minorversion
+		public string RegionId
 		{
 			get
 			{
-				return minorversion;
+				return regionId;
 			}
 			set	
 			{
-				minorversion = value;
-				DictionaryUtil.Add(QueryParameters, "Minorversion", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -144,6 +159,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -154,19 +182,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string EffectTime
-		{
-			get
-			{
-				return effectTime;
-			}
-			set	
-			{
-				effectTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectTime", value);
 			}
 		}
 
@@ -183,9 +198,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceMinorVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyInstanceAutoRenewalAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceMinorVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyInstanceAutoRenewalAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

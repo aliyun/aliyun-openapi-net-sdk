@@ -26,32 +26,36 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceMinorVersionRequest : RpcAcsRequest<ModifyInstanceMinorVersionResponse>
+    public class DescribeInstanceAutoRenewalAttributeRequest : RpcAcsRequest<DescribeInstanceAutoRenewalAttributeResponse>
     {
-        public ModifyInstanceMinorVersionRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
+        public DescribeInstanceAutoRenewalAttributeRequest()
+            : base("R_kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute", "redisa", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
-
-		private string securityToken;
-
 		private string resourceOwnerAccount;
 
-		private string minorversion;
+		private string clientToken;
+
+		private string regionId;
 
 		private string ownerAccount;
 
+		private int? pageSize;
+
 		private string action;
+
+		private string dBInstanceId;
 
 		private long? ownerId;
 
-		private string effectTime;
+		private int? pageNumber;
 
 		private string accessKeyId;
+
+		private string proxyId;
 
 		public long? ResourceOwnerId
 		{
@@ -63,32 +67,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -105,16 +83,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Minorversion
+		public string ClientToken
 		{
 			get
 			{
-				return minorversion;
+				return clientToken;
 			}
 			set	
 			{
-				minorversion = value;
-				DictionaryUtil.Add(QueryParameters, "Minorversion", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -131,6 +122,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -141,6 +145,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -157,16 +174,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EffectTime
+		public int? PageNumber
 		{
 			get
 			{
-				return effectTime;
+				return pageNumber;
 			}
 			set	
 			{
-				effectTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectTime", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -183,9 +200,22 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceMinorVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string ProxyId
+		{
+			get
+			{
+				return proxyId;
+			}
+			set	
+			{
+				proxyId = value;
+				DictionaryUtil.Add(QueryParameters, "proxyId", value);
+			}
+		}
+
+        public override DescribeInstanceAutoRenewalAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceMinorVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeInstanceAutoRenewalAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

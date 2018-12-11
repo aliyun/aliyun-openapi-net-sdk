@@ -41,6 +41,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.ReplacateId = context.StringValue("DescribeInstances.Instances["+ i +"].ReplacateId");
 				kVStoreInstance.InstanceId = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceId");
 				kVStoreInstance.InstanceName = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceName");
+				kVStoreInstance.SearchKey = context.StringValue("DescribeInstances.Instances["+ i +"].SearchKey");
 				kVStoreInstance.ConnectionDomain = context.StringValue("DescribeInstances.Instances["+ i +"].ConnectionDomain");
 				kVStoreInstance.Port = context.LongValue("DescribeInstances.Instances["+ i +"].Port");
 				kVStoreInstance.UserName = context.StringValue("DescribeInstances.Instances["+ i +"].UserName");
@@ -68,6 +69,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.PackageType = context.StringValue("DescribeInstances.Instances["+ i +"].PackageType");
 				kVStoreInstance.EngineVersion = context.StringValue("DescribeInstances.Instances["+ i +"].EngineVersion");
 				kVStoreInstance.DestroyTime = context.StringValue("DescribeInstances.Instances["+ i +"].DestroyTime");
+				kVStoreInstance.ConnectionMode = context.StringValue("DescribeInstances.Instances["+ i +"].ConnectionMode");
 
 				describeInstancesResponse_instances.Add(kVStoreInstance);
 			}

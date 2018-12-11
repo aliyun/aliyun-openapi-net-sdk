@@ -47,6 +47,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string accessKeyId;
 
+		private string accountPrivilege;
+
 		private string accountPassword;
 
 		private string instanceId;
@@ -145,6 +147,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string AccountPrivilege
+		{
+			get
+			{
+				return accountPrivilege;
+			}
+			set	
+			{
+				accountPrivilege = value;
+				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
 			}
 		}
 

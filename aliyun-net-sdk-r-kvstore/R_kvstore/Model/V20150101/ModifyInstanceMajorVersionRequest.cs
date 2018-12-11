@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceMinorVersionRequest : RpcAcsRequest<ModifyInstanceMinorVersionResponse>
+    public class ModifyInstanceMajorVersionRequest : RpcAcsRequest<ModifyInstanceMajorVersionResponse>
     {
-        public ModifyInstanceMinorVersionRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
+        public ModifyInstanceMajorVersionRequest()
+            : base("R_kvstore", "2015-01-01", "ModifyInstanceMajorVersion", "redisa", "openAPI")
         {
         }
 
@@ -37,11 +37,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceId;
 
+		private string majorVersion;
+
 		private string securityToken;
 
 		private string resourceOwnerAccount;
-
-		private string minorversion;
 
 		private string ownerAccount;
 
@@ -79,6 +79,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string MajorVersion
+		{
+			get
+			{
+				return majorVersion;
+			}
+			set	
+			{
+				majorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "MajorVersion", value);
+			}
+		}
+
 		public string SecurityToken
 		{
 			get
@@ -102,19 +115,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string Minorversion
-		{
-			get
-			{
-				return minorversion;
-			}
-			set	
-			{
-				minorversion = value;
-				DictionaryUtil.Add(QueryParameters, "Minorversion", value);
 			}
 		}
 
@@ -183,9 +183,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceMinorVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyInstanceMajorVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceMinorVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyInstanceMajorVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

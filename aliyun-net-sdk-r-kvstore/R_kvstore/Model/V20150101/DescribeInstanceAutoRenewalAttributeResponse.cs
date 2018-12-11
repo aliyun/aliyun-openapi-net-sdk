@@ -21,16 +21,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-	public class ModifyInstanceSpecPreCheckResponse : AcsResponse
+	public class DescribeInstanceAutoRenewalAttributeResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private bool? isAllowModify;
+		private int? pageNumber;
 
-		private string disableCommands;
+		private int? totalRecordCount;
 
-		private ModifyInstanceSpecPreCheck_PreCheckResult preCheckResult;
+		private int? pageRecordCount;
+
+		private List<DescribeInstanceAutoRenewalAttribute_Item> items;
 
 		public string RequestId
 		{
@@ -44,98 +46,124 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public bool? IsAllowModify
+		public int? PageNumber
 		{
 			get
 			{
-				return isAllowModify;
+				return pageNumber;
 			}
 			set	
 			{
-				isAllowModify = value;
+				pageNumber = value;
 			}
 		}
 
-		public string DisableCommands
+		public int? TotalRecordCount
 		{
 			get
 			{
-				return disableCommands;
+				return totalRecordCount;
 			}
 			set	
 			{
-				disableCommands = value;
+				totalRecordCount = value;
 			}
 		}
 
-		public ModifyInstanceSpecPreCheck_PreCheckResult PreCheckResult
+		public int? PageRecordCount
 		{
 			get
 			{
-				return preCheckResult;
+				return pageRecordCount;
 			}
 			set	
 			{
-				preCheckResult = value;
+				pageRecordCount = value;
 			}
 		}
 
-		public class ModifyInstanceSpecPreCheck_PreCheckResult
+		public List<DescribeInstanceAutoRenewalAttribute_Item> Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+			}
+		}
+
+		public class DescribeInstanceAutoRenewalAttribute_Item
 		{
 
-			private string usedMemorySize;
+			private string dBInstanceId;
 
-			private string allowModify;
+			private string regionId;
 
-			private string code;
+			private int? duration;
 
-			private string message;
+			private string status;
 
-			public string UsedMemorySize
+			private string autoRenew;
+
+			public string DBInstanceId
 			{
 				get
 				{
-					return usedMemorySize;
+					return dBInstanceId;
 				}
 				set	
 				{
-					usedMemorySize = value;
+					dBInstanceId = value;
 				}
 			}
 
-			public string AllowModify
+			public string RegionId
 			{
 				get
 				{
-					return allowModify;
+					return regionId;
 				}
 				set	
 				{
-					allowModify = value;
+					regionId = value;
 				}
 			}
 
-			public string Code
+			public int? Duration
 			{
 				get
 				{
-					return code;
+					return duration;
 				}
 				set	
 				{
-					code = value;
+					duration = value;
 				}
 			}
 
-			public string Message
+			public string Status
 			{
 				get
 				{
-					return message;
+					return status;
 				}
 				set	
 				{
-					message = value;
+					status = value;
+				}
+			}
+
+			public string AutoRenew
+			{
+				get
+				{
+					return autoRenew;
+				}
+				set	
+				{
+					autoRenew = value;
 				}
 			}
 		}

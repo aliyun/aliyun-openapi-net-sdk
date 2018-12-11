@@ -26,56 +26,36 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
+    public class DescribeActiveOperationTaskRequest : RpcAcsRequest<DescribeActiveOperationTaskResponse>
     {
-        public DescribeInstancesRequest()
-            : base("R_kvstore", "2015-01-01", "DescribeInstances", "redisa", "openAPI")
+        public DescribeActiveOperationTaskRequest()
+            : base("R_kvstore", "2015-01-01", "DescribeActiveOperationTask", "redisa", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string instanceStatus;
+		private string taskType;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string searchKey;
-
-		private string networkType;
-
-		private string engineVersion;
-
 		private long? ownerId;
-
-		private string instanceClass;
 
 		private int? pageNumber;
 
 		private string accessKeyId;
 
-		private string vSwitchId;
-
-		private string expired;
+		private int? isHistory;
 
 		private string securityToken;
-
-		private string instanceIds;
-
-		private string architectureType;
-
-		private string vpcId;
 
 		private int? pageSize;
 
 		private string action;
 
-		private string instanceType;
-
-		private string zoneId;
-
-		private string chargeType;
+		private string region;
 
 		public long? ResourceOwnerId
 		{
@@ -90,16 +70,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceStatus
+		public string TaskType
 		{
 			get
 			{
-				return instanceStatus;
+				return taskType;
 			}
 			set	
 			{
-				instanceStatus = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceStatus", value);
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
 			}
 		}
 
@@ -129,45 +109,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string SearchKey
-		{
-			get
-			{
-				return searchKey;
-			}
-			set	
-			{
-				searchKey = value;
-				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
-			}
-		}
-
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -178,19 +119,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceClass
-		{
-			get
-			{
-				return instanceClass;
-			}
-			set	
-			{
-				instanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
 			}
 		}
 
@@ -220,29 +148,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string VSwitchId
+		public int? IsHistory
 		{
 			get
 			{
-				return vSwitchId;
+				return isHistory;
 			}
 			set	
 			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
-		public string Expired
-		{
-			get
-			{
-				return expired;
-			}
-			set	
-			{
-				expired = value;
-				DictionaryUtil.Add(QueryParameters, "Expired", value);
+				isHistory = value;
+				DictionaryUtil.Add(QueryParameters, "IsHistory", value.ToString());
 			}
 		}
 
@@ -256,45 +171,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string InstanceIds
-		{
-			get
-			{
-				return instanceIds;
-			}
-			set	
-			{
-				instanceIds = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
-			}
-		}
-
-		public string ArchitectureType
-		{
-			get
-			{
-				return architectureType;
-			}
-			set	
-			{
-				architectureType = value;
-				DictionaryUtil.Add(QueryParameters, "ArchitectureType", value);
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 
@@ -324,48 +200,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceType
+		public string Region
 		{
 			get
 			{
-				return instanceType;
+				return region;
 			}
 			set	
 			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
-		public string ZoneId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
+			return false;
 		}
 
-		public string ChargeType
-		{
-			get
-			{
-				return chargeType;
-			}
-			set	
-			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
-			}
-		}
-
-        public override DescribeInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeActiveOperationTaskResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

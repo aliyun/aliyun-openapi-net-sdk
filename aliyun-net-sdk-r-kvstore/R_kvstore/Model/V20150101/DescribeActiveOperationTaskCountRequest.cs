@@ -26,30 +26,24 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceMinorVersionRequest : RpcAcsRequest<ModifyInstanceMinorVersionResponse>
+    public class DescribeActiveOperationTaskCountRequest : RpcAcsRequest<DescribeActiveOperationTaskCountResponse>
     {
-        public ModifyInstanceMinorVersionRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
+        public DescribeActiveOperationTaskCountRequest()
+            : base("R_kvstore", "2015-01-01", "DescribeActiveOperationTaskCount", "redisa", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
-
 		private string securityToken;
 
 		private string resourceOwnerAccount;
-
-		private string minorversion;
 
 		private string ownerAccount;
 
 		private string action;
 
 		private long? ownerId;
-
-		private string effectTime;
 
 		private string accessKeyId;
 
@@ -63,19 +57,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -102,19 +83,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string Minorversion
-		{
-			get
-			{
-				return minorversion;
-			}
-			set	
-			{
-				minorversion = value;
-				DictionaryUtil.Add(QueryParameters, "Minorversion", value);
 			}
 		}
 
@@ -157,19 +125,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EffectTime
-		{
-			get
-			{
-				return effectTime;
-			}
-			set	
-			{
-				effectTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectTime", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -183,9 +138,14 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceMinorVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeActiveOperationTaskCountResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceMinorVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTaskCountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -26,30 +26,28 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceMinorVersionRequest : RpcAcsRequest<ModifyInstanceMinorVersionResponse>
+    public class ModifyActiveOperationTaskRequest : RpcAcsRequest<ModifyActiveOperationTaskResponse>
     {
-        public ModifyInstanceMinorVersionRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
+        public ModifyActiveOperationTaskRequest()
+            : base("R_kvstore", "2015-01-01", "ModifyActiveOperationTask", "redisa", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
-
 		private string securityToken;
 
 		private string resourceOwnerAccount;
-
-		private string minorversion;
 
 		private string ownerAccount;
 
 		private string action;
 
-		private long? ownerId;
+		private string ids;
 
-		private string effectTime;
+		private string switchTime;
+
+		private long? ownerId;
 
 		private string accessKeyId;
 
@@ -63,19 +61,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -105,19 +90,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Minorversion
-		{
-			get
-			{
-				return minorversion;
-			}
-			set	
-			{
-				minorversion = value;
-				DictionaryUtil.Add(QueryParameters, "Minorversion", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -144,6 +116,32 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string Ids
+		{
+			get
+			{
+				return ids;
+			}
+			set	
+			{
+				ids = value;
+				DictionaryUtil.Add(QueryParameters, "Ids", value);
+			}
+		}
+
+		public string SwitchTime
+		{
+			get
+			{
+				return switchTime;
+			}
+			set	
+			{
+				switchTime = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -154,19 +152,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string EffectTime
-		{
-			get
-			{
-				return effectTime;
-			}
-			set	
-			{
-				effectTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectTime", value);
 			}
 		}
 
@@ -183,9 +168,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceMinorVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyActiveOperationTaskResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceMinorVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyActiveOperationTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

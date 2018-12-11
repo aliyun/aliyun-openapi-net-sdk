@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceMinorVersionRequest : RpcAcsRequest<ModifyInstanceMinorVersionResponse>
+    public class UnlinkReplicaInstanceRequest : RpcAcsRequest<UnlinkReplicaInstanceResponse>
     {
-        public ModifyInstanceMinorVersionRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
+        public UnlinkReplicaInstanceRequest()
+            : base("R_kvstore", "2015-01-01", "UnlinkReplicaInstance", "redisa", "openAPI")
         {
         }
 
@@ -41,15 +41,13 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string resourceOwnerAccount;
 
-		private string minorversion;
-
 		private string ownerAccount;
+
+		private string replicaId;
 
 		private string action;
 
 		private long? ownerId;
-
-		private string effectTime;
 
 		private string accessKeyId;
 
@@ -105,19 +103,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Minorversion
-		{
-			get
-			{
-				return minorversion;
-			}
-			set	
-			{
-				minorversion = value;
-				DictionaryUtil.Add(QueryParameters, "Minorversion", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -128,6 +113,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string ReplicaId
+		{
+			get
+			{
+				return replicaId;
+			}
+			set	
+			{
+				replicaId = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
 			}
 		}
 
@@ -157,19 +155,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EffectTime
-		{
-			get
-			{
-				return effectTime;
-			}
-			set	
-			{
-				effectTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectTime", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -183,9 +168,14 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceMinorVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override UnlinkReplicaInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceMinorVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UnlinkReplicaInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

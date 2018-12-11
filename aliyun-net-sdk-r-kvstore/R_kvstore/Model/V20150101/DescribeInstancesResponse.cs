@@ -103,6 +103,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string instanceName;
 
+			private string searchKey;
+
 			private string connectionDomain;
 
 			private long? port;
@@ -157,6 +159,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string destroyTime;
 
+			private string connectionMode;
+
 			public string ReplacateId
 			{
 				get
@@ -190,6 +194,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					instanceName = value;
+				}
+			}
+
+			public string SearchKey
+			{
+				get
+				{
+					return searchKey;
+				}
+				set	
+				{
+					searchKey = value;
 				}
 			}
 
@@ -514,6 +530,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					destroyTime = value;
+				}
+			}
+
+			public string ConnectionMode
+			{
+				get
+				{
+					return connectionMode;
+				}
+				set	
+				{
+					connectionMode = value;
 				}
 			}
 		}

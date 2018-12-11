@@ -26,56 +26,46 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
+    public class DescribeAuditRecordsRequest : RpcAcsRequest<DescribeAuditRecordsResponse>
     {
-        public DescribeInstancesRequest()
-            : base("R_kvstore", "2015-01-01", "DescribeInstances", "redisa", "openAPI")
+        public DescribeAuditRecordsRequest()
+            : base("R_kvstore", "2015-01-01", "DescribeAuditRecords", "redisa", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string instanceStatus;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string searchKey;
+		private string endTime;
 
-		private string networkType;
-
-		private string engineVersion;
+		private string startTime;
 
 		private long? ownerId;
 
-		private string instanceClass;
+		private string queryKeywords;
 
 		private int? pageNumber;
 
 		private string accessKeyId;
 
-		private string vSwitchId;
+		private string hostAddress;
 
-		private string expired;
+		private string instanceId;
+
+		private string accountName;
 
 		private string securityToken;
 
-		private string instanceIds;
-
-		private string architectureType;
-
-		private string vpcId;
+		private string databaseName;
 
 		private int? pageSize;
 
 		private string action;
 
-		private string instanceType;
-
-		private string zoneId;
-
-		private string chargeType;
+		private string nodeId;
 
 		public long? ResourceOwnerId
 		{
@@ -87,19 +77,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceStatus
-		{
-			get
-			{
-				return instanceStatus;
-			}
-			set	
-			{
-				instanceStatus = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceStatus", value);
 			}
 		}
 
@@ -129,42 +106,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string SearchKey
+		public string EndTime
 		{
 			get
 			{
-				return searchKey;
+				return endTime;
 			}
 			set	
 			{
-				searchKey = value;
-				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public string NetworkType
+		public string StartTime
 		{
 			get
 			{
-				return networkType;
+				return startTime;
 			}
 			set	
 			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -181,16 +145,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceClass
+		public string QueryKeywords
 		{
 			get
 			{
-				return instanceClass;
+				return queryKeywords;
 			}
 			set	
 			{
-				instanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
+				queryKeywords = value;
+				DictionaryUtil.Add(QueryParameters, "QueryKeywords", value);
 			}
 		}
 
@@ -220,29 +184,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string VSwitchId
+		public string HostAddress
 		{
 			get
 			{
-				return vSwitchId;
+				return hostAddress;
 			}
 			set	
 			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+				hostAddress = value;
+				DictionaryUtil.Add(QueryParameters, "HostAddress", value);
 			}
 		}
 
-		public string Expired
+		public string InstanceId
 		{
 			get
 			{
-				return expired;
+				return instanceId;
 			}
 			set	
 			{
-				expired = value;
-				DictionaryUtil.Add(QueryParameters, "Expired", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string AccountName
+		{
+			get
+			{
+				return accountName;
+			}
+			set	
+			{
+				accountName = value;
+				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
@@ -259,42 +236,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceIds
+		public string DatabaseName
 		{
 			get
 			{
-				return instanceIds;
+				return databaseName;
 			}
 			set	
 			{
-				instanceIds = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
-			}
-		}
-
-		public string ArchitectureType
-		{
-			get
-			{
-				return architectureType;
-			}
-			set	
-			{
-				architectureType = value;
-				DictionaryUtil.Add(QueryParameters, "ArchitectureType", value);
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+				databaseName = value;
+				DictionaryUtil.Add(QueryParameters, "DatabaseName", value);
 			}
 		}
 
@@ -324,48 +275,22 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceType
+		public string NodeId
 		{
 			get
 			{
-				return instanceType;
+				return nodeId;
 			}
 			set	
 			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string ChargeType
-		{
-			get
-			{
-				return chargeType;
-			}
-			set	
-			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
-			}
-		}
-
-        public override DescribeInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeAuditRecordsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAuditRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
