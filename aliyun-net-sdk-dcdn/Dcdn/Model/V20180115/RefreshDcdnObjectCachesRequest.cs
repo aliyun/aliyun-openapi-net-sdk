@@ -29,7 +29,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
     public class RefreshDcdnObjectCachesRequest : RpcAcsRequest<RefreshDcdnObjectCachesResponse>
     {
         public RefreshDcdnObjectCachesRequest()
-            : base("dcdn", "2018-01-15", "RefreshDcdnObjectCaches")
+            : base("dcdn", "2018-01-15", "RefreshDcdnObjectCaches", "dcdn", "openAPI")
         {
         }
 

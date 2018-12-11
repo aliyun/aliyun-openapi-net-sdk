@@ -29,7 +29,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
     public class DescribeDcdnDomainTopReferVisitRequest : RpcAcsRequest<DescribeDcdnDomainTopReferVisitResponse>
     {
         public DescribeDcdnDomainTopReferVisitRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnDomainTopReferVisit")
+            : base("dcdn", "2018-01-15", "DescribeDcdnDomainTopReferVisit", "dcdn", "openAPI")
         {
         }
 

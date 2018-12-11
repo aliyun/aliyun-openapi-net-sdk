@@ -29,7 +29,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
     public class DescribeDcdnDomainQpsDataRequest : RpcAcsRequest<DescribeDcdnDomainQpsDataResponse>
     {
         public DescribeDcdnDomainQpsDataRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnDomainQpsData")
+            : base("dcdn", "2018-01-15", "DescribeDcdnDomainQpsData", "dcdn", "openAPI")
         {
         }
 
