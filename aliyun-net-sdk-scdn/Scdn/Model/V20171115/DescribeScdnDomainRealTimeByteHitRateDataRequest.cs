@@ -29,7 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
     public class DescribeScdnDomainRealTimeByteHitRateDataRequest : RpcAcsRequest<DescribeScdnDomainRealTimeByteHitRateDataResponse>
     {
         public DescribeScdnDomainRealTimeByteHitRateDataRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainRealTimeByteHitRateData")
+            : base("scdn", "2017-11-15", "DescribeScdnDomainRealTimeByteHitRateData", "scdn", "openAPI")
         {
         }
 

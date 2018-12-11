@@ -29,7 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
     public class DescribeScdnUserQuotaRequest : RpcAcsRequest<DescribeScdnUserQuotaResponse>
     {
         public DescribeScdnUserQuotaRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnUserQuota")
+            : base("scdn", "2017-11-15", "DescribeScdnUserQuota", "scdn", "openAPI")
         {
         }
 

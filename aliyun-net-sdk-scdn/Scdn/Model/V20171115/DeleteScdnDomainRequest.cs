@@ -29,7 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
     public class DeleteScdnDomainRequest : RpcAcsRequest<DeleteScdnDomainResponse>
     {
         public DeleteScdnDomainRequest()
-            : base("scdn", "2017-11-15", "DeleteScdnDomain")
+            : base("scdn", "2017-11-15", "DeleteScdnDomain", "scdn", "openAPI")
         {
         }
 

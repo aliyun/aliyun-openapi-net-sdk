@@ -29,7 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
     public class CheckScdnServiceRequest : RpcAcsRequest<CheckScdnServiceResponse>
     {
         public CheckScdnServiceRequest()
-            : base("scdn", "2017-11-15", "CheckScdnService")
+            : base("scdn", "2017-11-15", "CheckScdnService", "scdn", "openAPI")
         {
         }
 

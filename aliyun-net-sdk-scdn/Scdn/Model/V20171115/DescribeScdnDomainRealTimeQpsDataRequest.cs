@@ -29,7 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
     public class DescribeScdnDomainRealTimeQpsDataRequest : RpcAcsRequest<DescribeScdnDomainRealTimeQpsDataResponse>
     {
         public DescribeScdnDomainRealTimeQpsDataRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainRealTimeQpsData")
+            : base("scdn", "2017-11-15", "DescribeScdnDomainRealTimeQpsData", "scdn", "openAPI")
         {
         }
 

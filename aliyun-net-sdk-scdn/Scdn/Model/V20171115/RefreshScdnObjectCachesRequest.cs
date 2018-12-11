@@ -29,7 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
     public class RefreshScdnObjectCachesRequest : RpcAcsRequest<RefreshScdnObjectCachesResponse>
     {
         public RefreshScdnObjectCachesRequest()
-            : base("scdn", "2017-11-15", "RefreshScdnObjectCaches")
+            : base("scdn", "2017-11-15", "RefreshScdnObjectCaches", "scdn", "openAPI")
         {
         }
 

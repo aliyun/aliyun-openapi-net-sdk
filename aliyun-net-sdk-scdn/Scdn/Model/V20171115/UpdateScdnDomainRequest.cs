@@ -29,7 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
     public class UpdateScdnDomainRequest : RpcAcsRequest<UpdateScdnDomainResponse>
     {
         public UpdateScdnDomainRequest()
-            : base("scdn", "2017-11-15", "UpdateScdnDomain")
+            : base("scdn", "2017-11-15", "UpdateScdnDomain", "scdn", "openAPI")
         {
         }
 

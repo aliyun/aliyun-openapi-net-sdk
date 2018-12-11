@@ -29,7 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
     public class DescribeScdnDomainRealTimeBpsDataRequest : RpcAcsRequest<DescribeScdnDomainRealTimeBpsDataResponse>
     {
         public DescribeScdnDomainRealTimeBpsDataRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainRealTimeBpsData")
+            : base("scdn", "2017-11-15", "DescribeScdnDomainRealTimeBpsData", "scdn", "openAPI")
         {
         }
 

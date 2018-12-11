@@ -29,7 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
     public class SetScdnDomainCertificateRequest : RpcAcsRequest<SetScdnDomainCertificateResponse>
     {
         public SetScdnDomainCertificateRequest()
-            : base("scdn", "2017-11-15", "SetScdnDomainCertificate")
+            : base("scdn", "2017-11-15", "SetScdnDomainCertificate", "scdn", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
     public class DescribeScdnRefreshTasksRequest : RpcAcsRequest<DescribeScdnRefreshTasksResponse>
     {
         public DescribeScdnRefreshTasksRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnRefreshTasks")
+            : base("scdn", "2017-11-15", "DescribeScdnRefreshTasks", "scdn", "openAPI")
         {
         }
 

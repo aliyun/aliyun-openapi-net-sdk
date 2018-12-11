@@ -29,7 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
     public class DescribeScdnTopDomainsByFlowRequest : RpcAcsRequest<DescribeScdnTopDomainsByFlowResponse>
     {
         public DescribeScdnTopDomainsByFlowRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnTopDomainsByFlow")
+            : base("scdn", "2017-11-15", "DescribeScdnTopDomainsByFlow", "scdn", "openAPI")
         {
         }
 

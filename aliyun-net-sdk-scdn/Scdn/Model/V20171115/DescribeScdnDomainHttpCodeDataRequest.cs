@@ -29,7 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
     public class DescribeScdnDomainHttpCodeDataRequest : RpcAcsRequest<DescribeScdnDomainHttpCodeDataResponse>
     {
         public DescribeScdnDomainHttpCodeDataRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainHttpCodeData")
+            : base("scdn", "2017-11-15", "DescribeScdnDomainHttpCodeData", "scdn", "openAPI")
         {
         }
 
