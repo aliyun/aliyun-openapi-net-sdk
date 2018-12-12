@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
-    public class DescribeSmartAccessGatewayVersionsRequest : RpcAcsRequest<DescribeSmartAccessGatewayVersionsResponse>
+    public class SwitchSAGHaStateRequest : RpcAcsRequest<SwitchSAGHaStateResponse>
     {
-        public DescribeSmartAccessGatewayVersionsRequest()
-            : base("Smartag", "2018-03-13", "DescribeSmartAccessGatewayVersions", "smartag", "openAPI")
+        public SwitchSAGHaStateRequest()
+            : base("Smartag", "2018-03-13", "SwitchSAGHaState", "smartag", "openAPI")
         {
         }
 
@@ -38,6 +38,8 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 		private string resourceOwnerAccount;
 
 		private string regionId;
+
+		private string haType;
 
 		private string ownerAccount;
 
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				regionId = value;
 				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string HaType
+		{
+			get
+			{
+				return haType;
+			}
+			set	
+			{
+				haType = value;
+				DictionaryUtil.Add(QueryParameters, "HaType", value);
 			}
 		}
 
@@ -138,9 +153,9 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override DescribeSmartAccessGatewayVersionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SwitchSAGHaStateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSmartAccessGatewayVersionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SwitchSAGHaStateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

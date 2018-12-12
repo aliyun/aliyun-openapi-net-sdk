@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 			describeSmartAccessGatewayHaResponse.MainLinkId = context.StringValue("DescribeSmartAccessGatewayHa.MainLinkId");
 			describeSmartAccessGatewayHaResponse.BackupLinkId = context.StringValue("DescribeSmartAccessGatewayHa.BackupLinkId");
 			describeSmartAccessGatewayHaResponse.SmartAGId = context.StringValue("DescribeSmartAccessGatewayHa.SmartAGId");
+			describeSmartAccessGatewayHaResponse.MainLinkState = context.StringValue("DescribeSmartAccessGatewayHa.MainLinkState");
+			describeSmartAccessGatewayHaResponse.BackupLinkState = context.StringValue("DescribeSmartAccessGatewayHa.BackupLinkState");
         
 			return describeSmartAccessGatewayHaResponse;
         }

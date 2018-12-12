@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{bcc5db6a-62ff-45f9-af99-37802b632b69}</ProjectGuid>
+    <ProjectGuid>{2f7394c4-524b-41b4-a4f3-f6c676294a2f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="Smartag\Model\V20180313\DeleteSAGLinkLevelHaRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\RevokeInstanceFromCbnResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\CreateDedicatedLineBackupRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\ModifySmartAccessGatewayRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\GetCloudConnectNetworkUseLimitRequest.cs" />
@@ -50,59 +52,87 @@
 	<Compile Include="Smartag\Model\V20180313\RebootSmartAccessGatewayResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\GetSmartAccessGatewayUseLimitRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\ModifySmartAccessGatewayResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\CreateSAGLinkLevelHaResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\UpgradeSmartAccessGatewayRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\SwitchCloudBoxHaStateResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\DescribeRegionsResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\GrantInstanceToCbnResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\DescribeRegionsRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\ModifyCloudConnectNetworkResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\DeleteDedicatedLineBackupRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\DowngradeSmartAccessGatewayResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\UnicomOrderConfirmResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\DescribeSmartAccessGatewayVersionsResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\DeleteSAGLinkLevelHaResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\DescribeSmartAccessGatewayHaResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\UpgradeSmartAccessGatewayResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\CreateSmartAccessGatewayResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\UnbindSmartAccessGatewayResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\CreateSmartAccessGatewayRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\UnicomOrderConfirmRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\DowngradeSmartAccessGatewayRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\UpdateSmartAccessGatewayVersionRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\CreateSAGLinkLevelHaRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\GrantInstanceToCbnRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\DescribeGrantRulesResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\DescribeSmartAccessGatewaysRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\DescribeCloudConnectNetworksResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\DeleteDedicatedLineBackupResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\DeleteCloudConnectNetworkRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\ActivateSmartAccessGatewayRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\DescribeGrantRulesRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\BindSmartAccessGatewayResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\DescribeSmartAccessGatewaysResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\UnlockSmartAccessGatewayResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\UnicomSignConfirmResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\UnbindSmartAccessGatewayRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\UnlockSmartAccessGatewayRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\ModifyCloudConnectNetworkRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\CreateDedicatedLineBackupResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\GetCloudConnectNetworkUseLimitResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\SwitchSAGHaStateRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\ActivateSmartAccessGatewayResponse.cs" />
+	<Compile Include="Smartag\Model\V20180313\SwitchSAGHaStateResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\DescribeCloudConnectNetworksRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\UnicomSignConfirmRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\SwitchCloudBoxHaStateRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\BindSmartAccessGatewayRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\CreateCloudConnectNetworkResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\GetSmartAccessGatewayUseLimitResponse.cs" />
 	<Compile Include="Smartag\Model\V20180313\RebootSmartAccessGatewayRequest.cs" />
+	<Compile Include="Smartag\Model\V20180313\RevokeInstanceFromCbnRequest.cs" />
 	<Compile Include="Smartag\Model\V20180313\DeleteCloudConnectNetworkResponse.cs" />
 	<Compile Include="Smartag\Transform\V20180313\DeleteDedicatedLineBackupResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\ActivateSmartAccessGatewayResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\UnlockSmartAccessGatewayResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\CreateCloudConnectNetworkResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\RebootSmartAccessGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\CreateSAGLinkLevelHaResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\DescribeSmartAccessGatewayVersionsResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\GrantInstanceToCbnResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\DowngradeSmartAccessGatewayResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\ModifyCloudConnectNetworkResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\GetCloudConnectNetworkUseLimitResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\UnicomOrderConfirmResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\UnicomSignConfirmResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\DeleteSAGLinkLevelHaResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\UnbindSmartAccessGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\SwitchSAGHaStateResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\UpdateSmartAccessGatewayVersionResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\GetSmartAccessGatewayUseLimitResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\BindSmartAccessGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\RevokeInstanceFromCbnResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\ModifySmartAccessGatewayResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\SwitchCloudBoxHaStateResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\DescribeSmartAccessGatewaysResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\DescribeRegionsResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\CreateDedicatedLineBackupResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\DescribeSmartAccessGatewayHaResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\DescribeGrantRulesResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\DeleteCloudConnectNetworkResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\CreateSmartAccessGatewayResponseUnmarshaller.cs" />
 	<Compile Include="Smartag\Transform\V20180313\DescribeCloudConnectNetworksResponseUnmarshaller.cs" />
+	<Compile Include="Smartag\Transform\V20180313\UpgradeSmartAccessGatewayResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

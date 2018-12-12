@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
-    public class DescribeSmartAccessGatewayVersionsRequest : RpcAcsRequest<DescribeSmartAccessGatewayVersionsResponse>
+    public class UnicomSignConfirmRequest : RpcAcsRequest<UnicomSignConfirmResponse>
     {
-        public DescribeSmartAccessGatewayVersionsRequest()
-            : base("Smartag", "2018-03-13", "DescribeSmartAccessGatewayVersions", "smartag", "openAPI")
+        public UnicomSignConfirmRequest()
+            : base("Smartag", "2018-03-13", "UnicomSignConfirm", "smartag", "openAPI")
         {
         }
 
@@ -37,13 +37,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
 
 		private string action;
 
-		private string smartAGId;
+		private List<TmsOrder> tmsOrders;
 
 		private long? ownerId;
 
@@ -73,19 +71,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -112,16 +97,23 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string SmartAGId
+		public List<TmsOrder> TmsOrders
 		{
 			get
 			{
-				return smartAGId;
+				return tmsOrders;
 			}
-			set	
+
+			set
 			{
-				smartAGId = value;
-				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
+				tmsOrders = value;
+				for (int i = 0; i < tmsOrders.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TmsOrder." + (i + 1) + ".TmsCode", tmsOrders[i].TmsCode);
+					DictionaryUtil.Add(QueryParameters,"TmsOrder." + (i + 1) + ".SigningTime", tmsOrders[i].SigningTime);
+					DictionaryUtil.Add(QueryParameters,"TmsOrder." + (i + 1) + ".TmsOrderCode", tmsOrders[i].TmsOrderCode);
+					DictionaryUtil.Add(QueryParameters,"TmsOrder." + (i + 1) + ".TradeId", tmsOrders[i].TradeId);
+				}
 			}
 		}
 
@@ -138,9 +130,69 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override DescribeSmartAccessGatewayVersionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public class TmsOrder
+		{
+
+			private string tmsCode;
+
+			private string signingTime;
+
+			private string tmsOrderCode;
+
+			private string tradeId;
+
+			public string TmsCode
+			{
+				get
+				{
+					return tmsCode;
+				}
+				set	
+				{
+					tmsCode = value;
+				}
+			}
+
+			public string SigningTime
+			{
+				get
+				{
+					return signingTime;
+				}
+				set	
+				{
+					signingTime = value;
+				}
+			}
+
+			public string TmsOrderCode
+			{
+				get
+				{
+					return tmsOrderCode;
+				}
+				set	
+				{
+					tmsOrderCode = value;
+				}
+			}
+
+			public string TradeId
+			{
+				get
+				{
+					return tradeId;
+				}
+				set	
+				{
+					tradeId = value;
+				}
+			}
+		}
+
+        public override UnicomSignConfirmResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSmartAccessGatewayVersionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UnicomSignConfirmResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

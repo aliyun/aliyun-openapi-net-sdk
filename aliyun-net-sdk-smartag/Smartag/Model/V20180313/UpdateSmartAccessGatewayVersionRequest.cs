@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
+		private string serialNumber;
+
 		private string resourceOwnerAccount;
 
 		private string regionId;
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SerialNumber
+		{
+			get
+			{
+				return serialNumber;
+			}
+			set	
+			{
+				serialNumber = value;
+				DictionaryUtil.Add(QueryParameters, "SerialNumber", value);
 			}
 		}
 

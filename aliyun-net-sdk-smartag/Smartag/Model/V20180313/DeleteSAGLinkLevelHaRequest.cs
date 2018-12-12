@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
-    public class DescribeSmartAccessGatewayVersionsRequest : RpcAcsRequest<DescribeSmartAccessGatewayVersionsResponse>
+    public class DeleteSAGLinkLevelHaRequest : RpcAcsRequest<DeleteSAGLinkLevelHaResponse>
     {
-        public DescribeSmartAccessGatewayVersionsRequest()
-            : base("Smartag", "2018-03-13", "DescribeSmartAccessGatewayVersions", "smartag", "openAPI")
+        public DeleteSAGLinkLevelHaRequest()
+            : base("Smartag", "2018-03-13", "DeleteSAGLinkLevelHa", "smartag", "openAPI")
         {
         }
 
@@ -138,9 +138,9 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override DescribeSmartAccessGatewayVersionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteSAGLinkLevelHaResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSmartAccessGatewayVersionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteSAGLinkLevelHaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

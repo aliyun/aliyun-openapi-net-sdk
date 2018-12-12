@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
-    public class DescribeSmartAccessGatewayVersionsRequest : RpcAcsRequest<DescribeSmartAccessGatewayVersionsResponse>
+    public class RevokeInstanceFromCbnRequest : RpcAcsRequest<RevokeInstanceFromCbnResponse>
     {
-        public DescribeSmartAccessGatewayVersionsRequest()
-            : base("Smartag", "2018-03-13", "DescribeSmartAccessGatewayVersions", "smartag", "openAPI")
+        public RevokeInstanceFromCbnRequest()
+            : base("Smartag", "2018-03-13", "RevokeInstanceFromCbn", "smartag", "openAPI")
         {
         }
 
@@ -39,11 +39,13 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string regionId;
 
+		private string cenInstanceId;
+
 		private string ownerAccount;
 
 		private string action;
 
-		private string smartAGId;
+		private string ccnInstanceId;
 
 		private long? ownerId;
 
@@ -86,6 +88,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string CenInstanceId
+		{
+			get
+			{
+				return cenInstanceId;
+			}
+			set	
+			{
+				cenInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "CenInstanceId", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -112,16 +127,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string SmartAGId
+		public string CcnInstanceId
 		{
 			get
 			{
-				return smartAGId;
+				return ccnInstanceId;
 			}
 			set	
 			{
-				smartAGId = value;
-				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
+				ccnInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "CcnInstanceId", value);
 			}
 		}
 
@@ -138,9 +153,9 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override DescribeSmartAccessGatewayVersionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RevokeInstanceFromCbnResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSmartAccessGatewayVersionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RevokeInstanceFromCbnResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

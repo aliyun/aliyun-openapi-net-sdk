@@ -44,6 +44,10 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string smartAGId;
 
+		private string mainLinkState;
+
+		private string backupLinkState;
+
 		public string RequestId
 		{
 			get
@@ -161,6 +165,30 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			set	
 			{
 				smartAGId = value;
+			}
+		}
+
+		public string MainLinkState
+		{
+			get
+			{
+				return mainLinkState;
+			}
+			set	
+			{
+				mainLinkState = value;
+			}
+		}
+
+		public string BackupLinkState
+		{
+			get
+			{
+				return backupLinkState;
+			}
+			set	
+			{
+				backupLinkState = value;
 			}
 		}
 	}

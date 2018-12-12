@@ -26,26 +26,34 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
-    public class DescribeSmartAccessGatewayVersionsRequest : RpcAcsRequest<DescribeSmartAccessGatewayVersionsResponse>
+    public class CreateSAGLinkLevelHaRequest : RpcAcsRequest<CreateSAGLinkLevelHaResponse>
     {
-        public DescribeSmartAccessGatewayVersionsRequest()
-            : base("Smartag", "2018-03-13", "DescribeSmartAccessGatewayVersions", "smartag", "openAPI")
+        public CreateSAGLinkLevelHaRequest()
+            : base("Smartag", "2018-03-13", "CreateSAGLinkLevelHa", "smartag", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private string backupLinkId;
+
 		private string resourceOwnerAccount;
 
-		private string regionId;
+		private string haType;
 
 		private string ownerAccount;
+
+		private string mainLinkRegionId;
 
 		private string action;
 
 		private string smartAGId;
 
 		private long? ownerId;
+
+		private string mainLinkId;
+
+		private string backupLinkRegionId;
 
 		public long? ResourceOwnerId
 		{
@@ -57,6 +65,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string BackupLinkId
+		{
+			get
+			{
+				return backupLinkId;
+			}
+			set	
+			{
+				backupLinkId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupLinkId", value);
 			}
 		}
 
@@ -73,16 +94,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string RegionId
+		public string HaType
 		{
 			get
 			{
-				return regionId;
+				return haType;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				haType = value;
+				DictionaryUtil.Add(QueryParameters, "HaType", value);
 			}
 		}
 
@@ -96,6 +117,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string MainLinkRegionId
+		{
+			get
+			{
+				return mainLinkRegionId;
+			}
+			set	
+			{
+				mainLinkRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "MainLinkRegionId", value);
 			}
 		}
 
@@ -138,9 +172,35 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override DescribeSmartAccessGatewayVersionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string MainLinkId
+		{
+			get
+			{
+				return mainLinkId;
+			}
+			set	
+			{
+				mainLinkId = value;
+				DictionaryUtil.Add(QueryParameters, "MainLinkId", value);
+			}
+		}
+
+		public string BackupLinkRegionId
+		{
+			get
+			{
+				return backupLinkRegionId;
+			}
+			set	
+			{
+				backupLinkRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupLinkRegionId", value);
+			}
+		}
+
+        public override CreateSAGLinkLevelHaResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSmartAccessGatewayVersionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateSAGLinkLevelHaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

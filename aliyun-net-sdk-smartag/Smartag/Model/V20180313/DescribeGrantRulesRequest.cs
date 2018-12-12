@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
-    public class DescribeSmartAccessGatewayVersionsRequest : RpcAcsRequest<DescribeSmartAccessGatewayVersionsResponse>
+    public class DescribeGrantRulesRequest : RpcAcsRequest<DescribeGrantRulesResponse>
     {
-        public DescribeSmartAccessGatewayVersionsRequest()
-            : base("Smartag", "2018-03-13", "DescribeSmartAccessGatewayVersions", "smartag", "openAPI")
+        public DescribeGrantRulesRequest()
+            : base("Smartag", "2018-03-13", "DescribeGrantRules", "smartag", "openAPI")
         {
         }
 
@@ -41,11 +41,15 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string ownerAccount;
 
+		private string pageSize;
+
 		private string action;
 
-		private string smartAGId;
+		private string associatedCcnId;
 
 		private long? ownerId;
+
+		private string pageNumber;
 
 		public long? ResourceOwnerId
 		{
@@ -99,6 +103,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -112,16 +129,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string SmartAGId
+		public string AssociatedCcnId
 		{
 			get
 			{
-				return smartAGId;
+				return associatedCcnId;
 			}
 			set	
 			{
-				smartAGId = value;
-				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
+				associatedCcnId = value;
+				DictionaryUtil.Add(QueryParameters, "AssociatedCcnId", value);
 			}
 		}
 
@@ -138,9 +155,22 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override DescribeSmartAccessGatewayVersionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
+			}
+		}
+
+        public override DescribeGrantRulesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSmartAccessGatewayVersionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeGrantRulesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

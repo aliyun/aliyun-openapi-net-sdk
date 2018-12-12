@@ -26,14 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
-    public class DescribeSmartAccessGatewayVersionsRequest : RpcAcsRequest<DescribeSmartAccessGatewayVersionsResponse>
+    public class UpgradeSmartAccessGatewayRequest : RpcAcsRequest<UpgradeSmartAccessGatewayResponse>
     {
-        public DescribeSmartAccessGatewayVersionsRequest()
-            : base("Smartag", "2018-03-13", "DescribeSmartAccessGatewayVersions", "smartag", "openAPI")
+        public UpgradeSmartAccessGatewayRequest()
+            : base("Smartag", "2018-03-13", "UpgradeSmartAccessGateway", "smartag", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
+
+		private bool? autoPay;
+
+		private long? bandWidthSpec;
 
 		private string resourceOwnerAccount;
 
@@ -57,6 +61,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
+		public long? BandWidthSpec
+		{
+			get
+			{
+				return bandWidthSpec;
+			}
+			set	
+			{
+				bandWidthSpec = value;
+				DictionaryUtil.Add(QueryParameters, "BandWidthSpec", value.ToString());
 			}
 		}
 
@@ -138,9 +168,9 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override DescribeSmartAccessGatewayVersionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpgradeSmartAccessGatewayResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSmartAccessGatewayVersionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpgradeSmartAccessGatewayResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
