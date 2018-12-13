@@ -69,6 +69,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private int? ecsOrderLoginCount;
 
+		private int? systemDiskSize;
+
 		private string action;
 
 		private string computeSpotPriceLimit;
@@ -350,6 +352,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				ecsOrderLoginCount = value;
 				DictionaryUtil.Add(QueryParameters, "EcsOrder.Login.Count", value.ToString());
+			}
+		}
+
+		public int? SystemDiskSize
+		{
+			get
+			{
+				return systemDiskSize;
+			}
+			set	
+			{
+				systemDiskSize = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskSize", value.ToString());
 			}
 		}
 

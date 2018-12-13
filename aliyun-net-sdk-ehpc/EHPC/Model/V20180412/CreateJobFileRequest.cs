@@ -26,78 +26,50 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class RecoverClusterRequest : RpcAcsRequest<RecoverClusterResponse>
+    public class CreateJobFileRequest : RpcAcsRequest<CreateJobFileResponse>
     {
-        public RecoverClusterRequest()
-            : base("EHPC", "2018-04-12", "RecoverCluster", "ehs", "openAPI")
+        public CreateJobFileRequest()
+            : base("EHPC", "2018-04-12", "CreateJobFile", "ehs", "openAPI")
         {
         }
 
-		private string imageId;
+		private string targetFile;
 
-		private string osTag;
-
-		private string accountType;
-
-		private string schedulerType;
+		private string runasUserPassword;
 
 		private string action;
 
+		private string runasUser;
+
 		private string clusterId;
+
+		private string content;
 
 		private string accessKeyId;
 
-		private string imageOwnerAlias;
-
-		public string ImageId
+		public string TargetFile
 		{
 			get
 			{
-				return imageId;
+				return targetFile;
 			}
 			set	
 			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+				targetFile = value;
+				DictionaryUtil.Add(QueryParameters, "TargetFile", value);
 			}
 		}
 
-		public string OsTag
+		public string RunasUserPassword
 		{
 			get
 			{
-				return osTag;
+				return runasUserPassword;
 			}
 			set	
 			{
-				osTag = value;
-				DictionaryUtil.Add(QueryParameters, "OsTag", value);
-			}
-		}
-
-		public string AccountType
-		{
-			get
-			{
-				return accountType;
-			}
-			set	
-			{
-				accountType = value;
-				DictionaryUtil.Add(QueryParameters, "AccountType", value);
-			}
-		}
-
-		public string SchedulerType
-		{
-			get
-			{
-				return schedulerType;
-			}
-			set	
-			{
-				schedulerType = value;
-				DictionaryUtil.Add(QueryParameters, "SchedulerType", value);
+				runasUserPassword = value;
+				DictionaryUtil.Add(QueryParameters, "RunasUserPassword", value);
 			}
 		}
 
@@ -114,6 +86,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string RunasUser
+		{
+			get
+			{
+				return runasUser;
+			}
+			set	
+			{
+				runasUser = value;
+				DictionaryUtil.Add(QueryParameters, "RunasUser", value);
+			}
+		}
+
 		public string ClusterId
 		{
 			get
@@ -124,6 +109,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
 			}
 		}
 
@@ -140,22 +138,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string ImageOwnerAlias
-		{
-			get
-			{
-				return imageOwnerAlias;
-			}
-			set	
-			{
-				imageOwnerAlias = value;
-				DictionaryUtil.Add(QueryParameters, "ImageOwnerAlias", value);
-			}
-		}
-
-        public override RecoverClusterResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateJobFileResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return RecoverClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateJobFileResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

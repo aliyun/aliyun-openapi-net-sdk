@@ -59,6 +59,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string createMode;
 
+		private int? systemDiskSize;
+
 		private string action;
 
 		private string instanceType;
@@ -231,6 +233,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				createMode = value;
 				DictionaryUtil.Add(QueryParameters, "CreateMode", value);
+			}
+		}
+
+		public int? SystemDiskSize
+		{
+			get
+			{
+				return systemDiskSize;
+			}
+			set	
+			{
+				systemDiskSize = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskSize", value.ToString());
 			}
 		}
 

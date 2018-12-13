@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{fd092312-126c-4640-831e-fc7c26c8625e}</ProjectGuid>
+    <ProjectGuid>{767651f2-e43a-421f-a0b7-9008b8c9cf97}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -62,6 +62,7 @@
 	<Compile Include="EHPC\Model\V20180412\ListRegionsRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListJobTemplatesRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\SetJobUserRequest.cs" />
+	<Compile Include="EHPC\Model\V20180412\CreateJobFileResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\InvokeShellCommandRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ResetNodesRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\DeleteClusterRequest.cs" />
@@ -115,6 +116,7 @@
 	<Compile Include="EHPC\Model\V20180412\SubmitJobResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\DescribeContainerAppResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\StopJobsResponse.cs" />
+	<Compile Include="EHPC\Model\V20180412\CreateJobFileRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\ListQueuesResponse.cs" />
 	<Compile Include="EHPC\Model\V20180412\ModifyUserGroupsRequest.cs" />
 	<Compile Include="EHPC\Model\V20180412\StartNodesResponse.cs" />
@@ -198,6 +200,7 @@
 	<Compile Include="EHPC\Transform\V20180412\StartNodesResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\ListSoftwaresResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\RunCloudMetricProfilingResponseUnmarshaller.cs" />
+	<Compile Include="EHPC\Transform\V20180412\CreateJobFileResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\SetAutoScaleConfigResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\DeleteContainerAppsResponseUnmarshaller.cs" />
 	<Compile Include="EHPC\Transform\V20180412\GetAutoScaleConfigResponseUnmarshaller.cs" />

@@ -131,6 +131,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string location;
 
+			private string ehpcVersion;
+
 			private ListClusters_Managers managers;
 
 			private ListClusters_Computes computes;
@@ -340,6 +342,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					location = value;
+				}
+			}
+
+			public string EhpcVersion
+			{
+				get
+				{
+					return ehpcVersion;
+				}
+				set	
+				{
+					ehpcVersion = value;
 				}
 			}
 
