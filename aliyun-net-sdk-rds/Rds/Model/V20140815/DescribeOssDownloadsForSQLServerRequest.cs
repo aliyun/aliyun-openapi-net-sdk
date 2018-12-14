@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeOssDownloadsForSQLServerRequest : RpcAcsRequest<DescribeOssDownloadsForSQLServerResponse>
     {
         public DescribeOssDownloadsForSQLServerRequest()
-            : base("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "rds", "openAPI")
         {
         }
 

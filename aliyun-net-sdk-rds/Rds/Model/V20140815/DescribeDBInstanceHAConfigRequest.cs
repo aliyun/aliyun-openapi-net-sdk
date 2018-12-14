@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstanceHAConfigRequest : RpcAcsRequest<DescribeDBInstanceHAConfigResponse>
     {
         public DescribeDBInstanceHAConfigRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstanceHAConfig", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstanceHAConfig", "rds", "openAPI")
         {
         }
 

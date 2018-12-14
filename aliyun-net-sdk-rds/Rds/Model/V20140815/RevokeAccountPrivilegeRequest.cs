@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class RevokeAccountPrivilegeRequest : RpcAcsRequest<RevokeAccountPrivilegeResponse>
     {
         public RevokeAccountPrivilegeRequest()
-            : base("Rds", "2014-08-15", "RevokeAccountPrivilege", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "RevokeAccountPrivilege", "rds", "openAPI")
         {
         }
 

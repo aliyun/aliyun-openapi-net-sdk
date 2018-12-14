@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyReplicaDescriptionRequest : RpcAcsRequest<ModifyReplicaDescriptionResponse>
     {
         public ModifyReplicaDescriptionRequest()
-            : base("Rds", "2014-08-15", "ModifyReplicaDescription", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyReplicaDescription", "rds", "openAPI")
         {
         }
 

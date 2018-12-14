@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CopyDatabaseRequest : RpcAcsRequest<CopyDatabaseResponse>
     {
         public CopyDatabaseRequest()
-            : base("Rds", "2014-08-15", "CopyDatabase", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "CopyDatabase", "rds", "openAPI")
         {
         }
 

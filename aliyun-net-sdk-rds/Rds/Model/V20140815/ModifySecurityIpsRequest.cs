@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifySecurityIpsRequest : RpcAcsRequest<ModifySecurityIpsResponse>
     {
         public ModifySecurityIpsRequest()
-            : base("Rds", "2014-08-15", "ModifySecurityIps", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifySecurityIps", "rds", "openAPI")
         {
         }
 

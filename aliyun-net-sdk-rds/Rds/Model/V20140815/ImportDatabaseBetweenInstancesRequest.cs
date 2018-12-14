@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ImportDatabaseBetweenInstancesRequest : RpcAcsRequest<ImportDatabaseBetweenInstancesResponse>
     {
         public ImportDatabaseBetweenInstancesRequest()
-            : base("Rds", "2014-08-15", "ImportDatabaseBetweenInstances", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ImportDatabaseBetweenInstances", "rds", "openAPI")
         {
         }
 

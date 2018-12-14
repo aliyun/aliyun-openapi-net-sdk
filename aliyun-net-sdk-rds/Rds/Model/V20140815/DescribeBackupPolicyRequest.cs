@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeBackupPolicyRequest : RpcAcsRequest<DescribeBackupPolicyResponse>
     {
         public DescribeBackupPolicyRequest()
-            : base("Rds", "2014-08-15", "DescribeBackupPolicy", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeBackupPolicy", "rds", "openAPI")
         {
         }
 

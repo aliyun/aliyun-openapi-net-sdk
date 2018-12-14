@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeResourceUsageRequest : RpcAcsRequest<DescribeResourceUsageResponse>
     {
         public DescribeResourceUsageRequest()
-            : base("Rds", "2014-08-15", "DescribeResourceUsage", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeResourceUsage", "rds", "openAPI")
         {
         }
 

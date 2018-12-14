@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBInstanceConnectionModeRequest : RpcAcsRequest<ModifyDBInstanceConnectionModeResponse>
     {
         public ModifyDBInstanceConnectionModeRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceConnectionMode", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceConnectionMode", "rds", "openAPI")
         {
         }
 

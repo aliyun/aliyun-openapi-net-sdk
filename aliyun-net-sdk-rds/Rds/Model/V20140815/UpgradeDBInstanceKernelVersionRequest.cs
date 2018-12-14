@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class UpgradeDBInstanceKernelVersionRequest : RpcAcsRequest<UpgradeDBInstanceKernelVersionResponse>
     {
         public UpgradeDBInstanceKernelVersionRequest()
-            : base("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds", "openAPI")
         {
         }
 

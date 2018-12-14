@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class PurgeDBInstanceLogRequest : RpcAcsRequest<PurgeDBInstanceLogResponse>
     {
         public PurgeDBInstanceLogRequest()
-            : base("Rds", "2014-08-15", "PurgeDBInstanceLog", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "PurgeDBInstanceLog", "rds", "openAPI")
         {
         }
 

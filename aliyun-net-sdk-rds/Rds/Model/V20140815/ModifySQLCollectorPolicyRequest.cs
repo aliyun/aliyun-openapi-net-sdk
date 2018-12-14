@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifySQLCollectorPolicyRequest : RpcAcsRequest<ModifySQLCollectorPolicyResponse>
     {
         public ModifySQLCollectorPolicyRequest()
-            : base("Rds", "2014-08-15", "ModifySQLCollectorPolicy", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifySQLCollectorPolicy", "rds", "openAPI")
         {
         }
 

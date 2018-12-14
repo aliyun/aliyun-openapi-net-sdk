@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstanceTDERequest : RpcAcsRequest<DescribeDBInstanceTDEResponse>
     {
         public DescribeDBInstanceTDERequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstanceTDE", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstanceTDE", "rds", "openAPI")
         {
         }
 
