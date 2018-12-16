@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class SearchMediaRequest : RpcAcsRequest<SearchMediaResponse>
     {
         public SearchMediaRequest()
-            : base("vod", "2017-03-21", "SearchMedia")
+            : base("vod", "2017-03-21", "SearchMedia", "vod", "openAPI")
         {
         }
 
@@ -48,6 +48,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string action;
 
 		private string sortBy;
+
+		private string sessionId;
 
 		private long? ownerId;
 
@@ -156,6 +158,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				sortBy = value;
 				DictionaryUtil.Add(QueryParameters, "SortBy", value);
+			}
+		}
+
+		public string SessionId
+		{
+			get
+			{
+				return sessionId;
+			}
+			set	
+			{
+				sessionId = value;
+				DictionaryUtil.Add(QueryParameters, "SessionId", value);
 			}
 		}
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class RefreshObjectCachesRequest : RpcAcsRequest<RefreshObjectCachesResponse>
     {
         public RefreshObjectCachesRequest()
-            : base("vod", "2017-03-21", "RefreshObjectCaches")
+            : base("vod", "2017-03-21", "RefreshObjectCaches", "vod", "openAPI")
         {
         }
 

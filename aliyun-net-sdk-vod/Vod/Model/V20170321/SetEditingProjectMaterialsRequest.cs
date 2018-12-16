@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class SetEditingProjectMaterialsRequest : RpcAcsRequest<SetEditingProjectMaterialsResponse>
     {
         public SetEditingProjectMaterialsRequest()
-            : base("vod", "2017-03-21", "SetEditingProjectMaterials")
+            : base("vod", "2017-03-21", "SetEditingProjectMaterials", "vod", "openAPI")
         {
         }
 

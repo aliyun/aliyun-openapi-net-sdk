@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{723314e8-5e5f-49d5-9bf1-34a207ba14f0}</ProjectGuid>
+    <ProjectGuid>{c70c7054-407b-4ca0-bb63-99126871ec23}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -77,6 +77,7 @@
 	<Compile Include="Vod\Model\V20170321\ListAIVideoCoverJobRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\DescribePlayUserAvgRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetAuditResultResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\AddMediaSequencesResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\UpdateWatermarkResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\UpdateVideoInfosRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\DeleteWatermarkRequest.cs" />
@@ -230,6 +231,7 @@
 	<Compile Include="Vod\Model\V20170321\AddVodTemplateRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\GetVideoInfosRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitAIVideoCensorJobRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\AddMediaSequencesRequest.cs" />
 	<Compile Include="Vod\Transform\V20170321\GetWorkFlowResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SearchEditingProjectResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\UpdateVodTemplateResponseUnmarshaller.cs" />
@@ -281,6 +283,7 @@
 	<Compile Include="Vod\Transform\V20170321\UpdateWatermarkResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\ListSnapshotsResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\DescribeCdnDomainLogsResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\AddMediaSequencesResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\GetVideoPlayInfoResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\ListAIJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\ListAIVideoCensorJobResponseUnmarshaller.cs" />

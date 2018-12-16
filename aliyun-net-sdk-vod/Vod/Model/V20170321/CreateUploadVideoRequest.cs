@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class CreateUploadVideoRequest : RpcAcsRequest<CreateUploadVideoResponse>
     {
         public CreateUploadVideoRequest()
-            : base("vod", "2017-03-21", "CreateUploadVideo")
+            : base("vod", "2017-03-21", "CreateUploadVideo", "vod", "openAPI")
         {
         }
 

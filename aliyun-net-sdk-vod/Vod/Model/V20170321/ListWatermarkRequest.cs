@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class ListWatermarkRequest : RpcAcsRequest<ListWatermarkResponse>
     {
         public ListWatermarkRequest()
-            : base("vod", "2017-03-21", "ListWatermark")
+            : base("vod", "2017-03-21", "ListWatermark", "vod", "openAPI")
         {
         }
 

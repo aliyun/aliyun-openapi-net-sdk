@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DeleteVodTemplateRequest : RpcAcsRequest<DeleteVodTemplateResponse>
     {
         public DeleteVodTemplateRequest()
-            : base("vod", "2017-03-21", "DeleteVodTemplate")
+            : base("vod", "2017-03-21", "DeleteVodTemplate", "vod", "openAPI")
         {
         }
 

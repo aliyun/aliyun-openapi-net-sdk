@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class UpdateWorkFlowRequest : RpcAcsRequest<UpdateWorkFlowResponse>
     {
         public UpdateWorkFlowRequest()
-            : base("vod", "2017-03-21", "UpdateWorkFlow")
+            : base("vod", "2017-03-21", "UpdateWorkFlow", "vod", "openAPI")
         {
         }
 

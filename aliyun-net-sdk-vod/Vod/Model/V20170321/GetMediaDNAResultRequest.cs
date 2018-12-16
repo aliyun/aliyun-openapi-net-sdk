@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetMediaDNAResultRequest : RpcAcsRequest<GetMediaDNAResultResponse>
     {
         public GetMediaDNAResultRequest()
-            : base("vod", "2017-03-21", "GetMediaDNAResult")
+            : base("vod", "2017-03-21", "GetMediaDNAResult", "vod", "openAPI")
         {
         }
 

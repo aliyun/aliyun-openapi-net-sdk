@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DeleteWorkFlowRequest : RpcAcsRequest<DeleteWorkFlowResponse>
     {
         public DeleteWorkFlowRequest()
-            : base("vod", "2017-03-21", "DeleteWorkFlow")
+            : base("vod", "2017-03-21", "DeleteWorkFlow", "vod", "openAPI")
         {
         }
 

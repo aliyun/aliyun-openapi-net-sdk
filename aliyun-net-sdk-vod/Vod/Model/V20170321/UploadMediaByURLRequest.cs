@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class UploadMediaByURLRequest : RpcAcsRequest<UploadMediaByURLResponse>
     {
         public UploadMediaByURLRequest()
-            : base("vod", "2017-03-21", "UploadMediaByURL")
+            : base("vod", "2017-03-21", "UploadMediaByURL", "vod", "openAPI")
         {
         }
 

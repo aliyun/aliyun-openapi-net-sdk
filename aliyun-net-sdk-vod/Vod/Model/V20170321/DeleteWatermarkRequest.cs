@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DeleteWatermarkRequest : RpcAcsRequest<DeleteWatermarkResponse>
     {
         public DeleteWatermarkRequest()
-            : base("vod", "2017-03-21", "DeleteWatermark")
+            : base("vod", "2017-03-21", "DeleteWatermark", "vod", "openAPI")
         {
         }
 

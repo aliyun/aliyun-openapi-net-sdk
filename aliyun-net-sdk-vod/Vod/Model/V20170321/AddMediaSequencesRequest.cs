@@ -26,18 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class SubmitAIVideoCensorJobRequest : RpcAcsRequest<SubmitAIVideoCensorJobResponse>
+    public class AddMediaSequencesRequest : RpcAcsRequest<AddMediaSequencesResponse>
     {
-        public SubmitAIVideoCensorJobRequest()
-            : base("vod", "2017-03-21", "SubmitAIVideoCensorJob", "vod", "openAPI")
+        public AddMediaSequencesRequest()
+            : base("vod", "2017-03-21", "AddMediaSequences", "vod", "openAPI")
         {
         }
 
-		private string userData;
-
 		private string resourceOwnerId;
 
-		private string aIVideoCensorConfig;
+		private string mediaURL;
 
 		private string resourceOwnerAccount;
 
@@ -45,24 +43,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string action;
 
+		private string mediaSequences;
+
 		private string ownerId;
 
 		private string mediaId;
 
-		private string accessKeyId;
+		private string mediaType;
 
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
+		private string accessKeyId;
 
 		public string ResourceOwnerId
 		{
@@ -77,16 +66,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AIVideoCensorConfig
+		public string MediaURL
 		{
 			get
 			{
-				return aIVideoCensorConfig;
+				return mediaURL;
 			}
 			set	
 			{
-				aIVideoCensorConfig = value;
-				DictionaryUtil.Add(QueryParameters, "AIVideoCensorConfig", value);
+				mediaURL = value;
+				DictionaryUtil.Add(QueryParameters, "MediaURL", value);
 			}
 		}
 
@@ -129,6 +118,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string MediaSequences
+		{
+			get
+			{
+				return mediaSequences;
+			}
+			set	
+			{
+				mediaSequences = value;
+				DictionaryUtil.Add(QueryParameters, "MediaSequences", value);
+			}
+		}
+
 		public string OwnerId
 		{
 			get
@@ -155,6 +157,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string MediaType
+		{
+			get
+			{
+				return mediaType;
+			}
+			set	
+			{
+				mediaType = value;
+				DictionaryUtil.Add(QueryParameters, "MediaType", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -168,9 +183,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override SubmitAIVideoCensorJobResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddMediaSequencesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SubmitAIVideoCensorJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddMediaSequencesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

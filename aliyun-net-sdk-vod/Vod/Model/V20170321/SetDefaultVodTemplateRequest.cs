@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class SetDefaultVodTemplateRequest : RpcAcsRequest<SetDefaultVodTemplateResponse>
     {
         public SetDefaultVodTemplateRequest()
-            : base("vod", "2017-03-21", "SetDefaultVodTemplate")
+            : base("vod", "2017-03-21", "SetDefaultVodTemplate", "vod", "openAPI")
         {
         }
 

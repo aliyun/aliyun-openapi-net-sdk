@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class ListLiveRecordVideoRequest : RpcAcsRequest<ListLiveRecordVideoResponse>
     {
         public ListLiveRecordVideoRequest()
-            : base("vod", "2017-03-21", "ListLiveRecordVideo")
+            : base("vod", "2017-03-21", "ListLiveRecordVideo", "vod", "openAPI")
         {
         }
 

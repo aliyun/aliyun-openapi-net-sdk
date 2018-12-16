@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DescribeRefreshQuotaRequest : RpcAcsRequest<DescribeRefreshQuotaResponse>
     {
         public DescribeRefreshQuotaRequest()
-            : base("vod", "2017-03-21", "DescribeRefreshQuota")
+            : base("vod", "2017-03-21", "DescribeRefreshQuota", "vod", "openAPI")
         {
         }
 

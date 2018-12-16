@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DeleteImageRequest : RpcAcsRequest<DeleteImageResponse>
     {
         public DeleteImageRequest()
-            : base("vod", "2017-03-21", "DeleteImage")
+            : base("vod", "2017-03-21", "DeleteImage", "vod", "openAPI")
         {
         }
 

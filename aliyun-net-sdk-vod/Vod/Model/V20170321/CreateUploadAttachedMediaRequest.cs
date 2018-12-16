@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class CreateUploadAttachedMediaRequest : RpcAcsRequest<CreateUploadAttachedMediaResponse>
     {
         public CreateUploadAttachedMediaRequest()
-            : base("vod", "2017-03-21", "CreateUploadAttachedMedia")
+            : base("vod", "2017-03-21", "CreateUploadAttachedMedia", "vod", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class SetAuditSecurityIpRequest : RpcAcsRequest<SetAuditSecurityIpResponse>
     {
         public SetAuditSecurityIpRequest()
-            : base("vod", "2017-03-21", "SetAuditSecurityIp")
+            : base("vod", "2017-03-21", "SetAuditSecurityIp", "vod", "openAPI")
         {
         }
 
