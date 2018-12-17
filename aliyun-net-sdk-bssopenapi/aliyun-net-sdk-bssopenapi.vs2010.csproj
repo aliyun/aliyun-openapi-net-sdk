@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{f9e58e3f-265a-4f83-b169-8229d2e73a7a}</ProjectGuid>
+    <ProjectGuid>{ecf8b5d2-d097-486a-820c-8602dac68221}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -81,6 +81,7 @@
 	<Compile Include="BssOpenApi\Model\V20171214\QueryCashCouponsResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SubscribeExportToOSSRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryInstanceGaapCostResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\EnableBillGenerationRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryOrdersResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SetEnduserStatusRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\ChangeConsumeAmountRequest.cs" />
@@ -113,9 +114,11 @@
 	<Compile Include="BssOpenApi\Model\V20171214\GetResourcePackagePriceRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CreateUserQuotaResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryResourcePackageInstancesResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\EnableBillGenerationResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryPrepaidCardsRequest.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryPrepaidCardsResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\GetOrderDetailResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\EnableBillGenerationResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\DescribePricingModuleResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryOrdersResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryCashCouponsResponseUnmarshaller.cs" />

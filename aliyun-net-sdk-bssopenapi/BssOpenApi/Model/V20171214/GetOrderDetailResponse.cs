@@ -214,6 +214,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string paymentCurrency;
 
+				private string _operator;
+
 				public string OrderId
 				{
 					get
@@ -475,6 +477,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						paymentCurrency = value;
+					}
+				}
+
+				public string _Operator
+				{
+					get
+					{
+						return _operator;
+					}
+					set	
+					{
+						_operator = value;
 					}
 				}
 			}
