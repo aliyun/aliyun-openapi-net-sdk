@@ -35,13 +35,21 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private int? subscriptionDuration;
 
+		private string promotionNo;
+
 		private long? currentExpirationDate;
 
 		private string userClientIp;
 
 		private string domainName;
 
+		private string couponNo;
+
+		private bool? useCoupon;
+
 		private string lang;
+
+		private bool? usePromotion;
 
 		public int? SubscriptionDuration
 		{
@@ -53,6 +61,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				subscriptionDuration = value;
 				DictionaryUtil.Add(QueryParameters, "SubscriptionDuration", value.ToString());
+			}
+		}
+
+		public string PromotionNo
+		{
+			get
+			{
+				return promotionNo;
+			}
+			set	
+			{
+				promotionNo = value;
+				DictionaryUtil.Add(QueryParameters, "PromotionNo", value);
 			}
 		}
 
@@ -95,6 +116,32 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		public string CouponNo
+		{
+			get
+			{
+				return couponNo;
+			}
+			set	
+			{
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
+			}
+		}
+
+		public bool? UseCoupon
+		{
+			get
+			{
+				return useCoupon;
+			}
+			set	
+			{
+				useCoupon = value;
+				DictionaryUtil.Add(QueryParameters, "UseCoupon", value.ToString());
+			}
+		}
+
 		public string Lang
 		{
 			get
@@ -105,6 +152,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public bool? UsePromotion
+		{
+			get
+			{
+				return usePromotion;
+			}
+			set	
+			{
+				usePromotion = value;
+				DictionaryUtil.Add(QueryParameters, "UsePromotion", value.ToString());
 			}
 		}
 

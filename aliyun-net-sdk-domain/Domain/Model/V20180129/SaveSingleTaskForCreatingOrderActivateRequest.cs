@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private long? registrantProfileId;
 
+		private string couponNo;
+
 		private bool? aliyunDns;
 
 		private string zhCity;
@@ -79,15 +81,21 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private bool? trademarkDomainActivation;
 
+		private bool? useCoupon;
+
 		private string zhProvince;
 
 		private string registrantOrganization;
+
+		private string promotionNo;
 
 		private bool? enableDomainProxy;
 
 		private string userClientIp;
 
 		private string registrantName;
+
+		private bool? usePromotion;
 
 		public string Country
 		{
@@ -177,6 +185,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				registrantProfileId = value;
 				DictionaryUtil.Add(QueryParameters, "RegistrantProfileId", value.ToString());
+			}
+		}
+
+		public string CouponNo
+		{
+			get
+			{
+				return couponNo;
+			}
+			set	
+			{
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
 			}
 		}
 
@@ -388,6 +409,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		public bool? UseCoupon
+		{
+			get
+			{
+				return useCoupon;
+			}
+			set	
+			{
+				useCoupon = value;
+				DictionaryUtil.Add(QueryParameters, "UseCoupon", value.ToString());
+			}
+		}
+
 		public string ZhProvince
 		{
 			get
@@ -411,6 +445,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				registrantOrganization = value;
 				DictionaryUtil.Add(QueryParameters, "RegistrantOrganization", value);
+			}
+		}
+
+		public string PromotionNo
+		{
+			get
+			{
+				return promotionNo;
+			}
+			set	
+			{
+				promotionNo = value;
+				DictionaryUtil.Add(QueryParameters, "PromotionNo", value);
 			}
 		}
 
@@ -450,6 +497,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				registrantName = value;
 				DictionaryUtil.Add(QueryParameters, "RegistrantName", value);
+			}
+		}
+
+		public bool? UsePromotion
+		{
+			get
+			{
+				return usePromotion;
+			}
+			set	
+			{
+				usePromotion = value;
+				DictionaryUtil.Add(QueryParameters, "UsePromotion", value.ToString());
 			}
 		}
 
