@@ -37,11 +37,7 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private int? subscriptionDuration;
 
-		private string address;
-
 		private bool? permitPremiumActivation;
-
-		private string telArea;
 
 		private string city;
 
@@ -49,17 +45,11 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string dns1;
 
-		private string domainName;
-
 		private long? registrantProfileId;
 
-		private string telephone;
-
-		private bool? trademarkDomainActivation;
+		private string couponNo;
 
 		private bool? aliyunDns;
-
-		private string registrantOrganization;
 
 		private string telExt;
 
@@ -67,15 +57,33 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string postalCode;
 
-		private string userClientIp;
-
-		private bool? enableDomainProxy;
-
 		private string lang;
 
 		private string email;
 
+		private string address;
+
+		private string telArea;
+
+		private string domainName;
+
+		private string telephone;
+
+		private bool? trademarkDomainActivation;
+
+		private bool? useCoupon;
+
+		private string registrantOrganization;
+
+		private string promotionNo;
+
+		private string userClientIp;
+
+		private bool? enableDomainProxy;
+
 		private string registrantName;
+
+		private bool? usePromotion;
 
 		public string Country
 		{
@@ -103,19 +111,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string Address
-		{
-			get
-			{
-				return address;
-			}
-			set	
-			{
-				address = value;
-				DictionaryUtil.Add(QueryParameters, "Address", value);
-			}
-		}
-
 		public bool? PermitPremiumActivation
 		{
 			get
@@ -126,19 +121,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				permitPremiumActivation = value;
 				DictionaryUtil.Add(QueryParameters, "PermitPremiumActivation", value.ToString());
-			}
-		}
-
-		public string TelArea
-		{
-			get
-			{
-				return telArea;
-			}
-			set	
-			{
-				telArea = value;
-				DictionaryUtil.Add(QueryParameters, "TelArea", value);
 			}
 		}
 
@@ -181,19 +163,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
 		public long? RegistrantProfileId
 		{
 			get
@@ -207,29 +176,16 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string Telephone
+		public string CouponNo
 		{
 			get
 			{
-				return telephone;
+				return couponNo;
 			}
 			set	
 			{
-				telephone = value;
-				DictionaryUtil.Add(QueryParameters, "Telephone", value);
-			}
-		}
-
-		public bool? TrademarkDomainActivation
-		{
-			get
-			{
-				return trademarkDomainActivation;
-			}
-			set	
-			{
-				trademarkDomainActivation = value;
-				DictionaryUtil.Add(QueryParameters, "TrademarkDomainActivation", value.ToString());
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
 			}
 		}
 
@@ -243,19 +199,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				aliyunDns = value;
 				DictionaryUtil.Add(QueryParameters, "AliyunDns", value.ToString());
-			}
-		}
-
-		public string RegistrantOrganization
-		{
-			get
-			{
-				return registrantOrganization;
-			}
-			set	
-			{
-				registrantOrganization = value;
-				DictionaryUtil.Add(QueryParameters, "RegistrantOrganization", value);
 			}
 		}
 
@@ -298,32 +241,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public bool? EnableDomainProxy
-		{
-			get
-			{
-				return enableDomainProxy;
-			}
-			set	
-			{
-				enableDomainProxy = value;
-				DictionaryUtil.Add(QueryParameters, "EnableDomainProxy", value.ToString());
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -350,6 +267,136 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
+		public string Address
+		{
+			get
+			{
+				return address;
+			}
+			set	
+			{
+				address = value;
+				DictionaryUtil.Add(QueryParameters, "Address", value);
+			}
+		}
+
+		public string TelArea
+		{
+			get
+			{
+				return telArea;
+			}
+			set	
+			{
+				telArea = value;
+				DictionaryUtil.Add(QueryParameters, "TelArea", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Telephone
+		{
+			get
+			{
+				return telephone;
+			}
+			set	
+			{
+				telephone = value;
+				DictionaryUtil.Add(QueryParameters, "Telephone", value);
+			}
+		}
+
+		public bool? TrademarkDomainActivation
+		{
+			get
+			{
+				return trademarkDomainActivation;
+			}
+			set	
+			{
+				trademarkDomainActivation = value;
+				DictionaryUtil.Add(QueryParameters, "TrademarkDomainActivation", value.ToString());
+			}
+		}
+
+		public bool? UseCoupon
+		{
+			get
+			{
+				return useCoupon;
+			}
+			set	
+			{
+				useCoupon = value;
+				DictionaryUtil.Add(QueryParameters, "UseCoupon", value.ToString());
+			}
+		}
+
+		public string RegistrantOrganization
+		{
+			get
+			{
+				return registrantOrganization;
+			}
+			set	
+			{
+				registrantOrganization = value;
+				DictionaryUtil.Add(QueryParameters, "RegistrantOrganization", value);
+			}
+		}
+
+		public string PromotionNo
+		{
+			get
+			{
+				return promotionNo;
+			}
+			set	
+			{
+				promotionNo = value;
+				DictionaryUtil.Add(QueryParameters, "PromotionNo", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public bool? EnableDomainProxy
+		{
+			get
+			{
+				return enableDomainProxy;
+			}
+			set	
+			{
+				enableDomainProxy = value;
+				DictionaryUtil.Add(QueryParameters, "EnableDomainProxy", value.ToString());
+			}
+		}
+
 		public string RegistrantName
 		{
 			get
@@ -360,6 +407,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				registrantName = value;
 				DictionaryUtil.Add(QueryParameters, "RegistrantName", value);
+			}
+		}
+
+		public bool? UsePromotion
+		{
+			get
+			{
+				return usePromotion;
+			}
+			set	
+			{
+				usePromotion = value;
+				DictionaryUtil.Add(QueryParameters, "UsePromotion", value.ToString());
 			}
 		}
 

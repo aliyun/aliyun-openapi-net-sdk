@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8363d832-9493-4293-8a3a-0f7c7e7ccf18}</ProjectGuid>
+    <ProjectGuid>{ff25a7ab-83e2-403c-a5fd-8fc7fd436336}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -53,6 +53,7 @@
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForDeletingDnsHostResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\EmailVerifiedResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\TransferInRefetchWhoisEmailResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForDeletingDSRecordRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForCreatingOrderActivateResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForDomainNameProxyServiceResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\TransferInRefetchWhoisEmailRequest.cs" />
@@ -60,10 +61,12 @@
 	<Compile Include="Domain_intl\Model\V20171218\QueryChangeLogListResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForCreatingOrderTransferRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForCreatingOrderTransferRequest.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForModifyingDSRecordResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForTransferProhibitionLockRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForDomainNameProxyServiceResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryDomainByInstanceIdRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\EmailVerifiedRequest.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\QueryDSRecordRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForUpdateProhibitionLockResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryTransferInByInstanceIdRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\FuzzyMatchDomainSensitiveWordRequest.cs" />
@@ -102,7 +105,9 @@
 	<Compile Include="Domain_intl\Model\V20171218\QueryLocalEnsAssociationResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\CheckDomainSunriseClaimResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\CheckDomainSunriseClaimRequest.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\QueryDSRecordResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForCancelingTransferOutResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForAddingDSRecordRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForUpdatingContactInfoByNewContactResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForCancelingTransferOutRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForCreatingOrderRedeemRequest.cs" />
@@ -111,6 +116,7 @@
 	<Compile Include="Domain_intl\Model\V20171218\TransferInResendMailTokenResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\CheckDomainRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryTransferInByInstanceIdResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForDeletingDSRecordResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryTaskDetailHistoryResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryChangeLogListRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForUpdateProhibitionLockRequest.cs" />
@@ -121,6 +127,7 @@
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForCreatingDnsHostResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForCreatingOrderRenewRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\CheckTransferInFeasibilityResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForSynchronizingDSRecordRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForUpdatingContactInfoResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\LookupTmchNoticeResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForCreatingOrderRenewResponse.cs" />
@@ -143,12 +150,14 @@
 	<Compile Include="Domain_intl\Model\V20171218\TransferInReenterTransferAuthorizationCodeRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForDisassociatingEnsRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\PollTaskResultResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForModifyingDSRecordRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\BatchFuzzyMatchDomainSensitiveWordRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\DeleteRegistrantProfileRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\TransferInReenterTransferAuthorizationCodeResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForApprovingTransferOutResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryTaskInfoHistoryRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryTaskDetailHistoryRequest.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForSynchronizingDSRecordResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\ListEmailVerificationRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\TransferInCheckMailTokenResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\VerifyEmailRequest.cs" />
@@ -156,6 +165,7 @@
 	<Compile Include="Domain_intl\Model\V20171218\CheckDomainResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\ResendEmailVerificationRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\QueryTaskDetailListResponse.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForAddingDSRecordResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\FuzzyMatchDomainSensitiveWordResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\VerifyContactFieldRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\PollTaskResultRequest.cs" />
@@ -191,7 +201,10 @@
 	<Compile Include="Domain_intl\Transform\V20171218\TransferInRefetchWhoisEmailResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveBatchTaskForCreatingOrderTransferResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryChangeLogListResponseUnmarshaller.cs" />
+	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForAddingDSRecordResponseUnmarshaller.cs" />
+	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForModifyingDSRecordResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForDomainNameProxyServiceResponseUnmarshaller.cs" />
+	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForDeletingDSRecordResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\CheckTransferInFeasibilityResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveRegistrantProfileResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForDisassociatingEnsResponseUnmarshaller.cs" />
@@ -216,6 +229,7 @@
 	<Compile Include="Domain_intl\Transform\V20171218\TransferInReenterTransferAuthorizationCodeResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\ResendEmailVerificationResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveBatchTaskForUpdatingContactInfoByNewContactResponseUnmarshaller.cs" />
+	<Compile Include="Domain_intl\Transform\V20171218\QueryDSRecordResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryTaskListResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryTransferInListResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryDomainByInstanceIdResponseUnmarshaller.cs" />
@@ -237,6 +251,7 @@
 	<Compile Include="Domain_intl\Transform\V20171218\QueryRegistrantProfilesResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForApprovingTransferOutResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForModifyingDnsHostResponseUnmarshaller.cs" />
+	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForSynchronizingDSRecordResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\BatchFuzzyMatchDomainSensitiveWordResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>

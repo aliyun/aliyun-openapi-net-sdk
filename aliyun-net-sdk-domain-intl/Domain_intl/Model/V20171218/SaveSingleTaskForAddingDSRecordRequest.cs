@@ -26,65 +26,37 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-    public class SaveSingleTaskForCreatingOrderRedeemRequest : RpcAcsRequest<SaveSingleTaskForCreatingOrderRedeemResponse>
+    public class SaveSingleTaskForAddingDSRecordRequest : RpcAcsRequest<SaveSingleTaskForAddingDSRecordResponse>
     {
-        public SaveSingleTaskForCreatingOrderRedeemRequest()
-            : base("Domain_intl", "2017-12-18", "SaveSingleTaskForCreatingOrderRedeem", "domain", "openAPI")
+        public SaveSingleTaskForAddingDSRecordRequest()
+            : base("Domain_intl", "2017-12-18", "SaveSingleTaskForAddingDSRecord", "domain", "openAPI")
         {
         }
 
-		private string promotionNo;
-
-		private long? currentExpirationDate;
-
-		private string userClientIp;
+		private int? keyTag;
 
 		private string domainName;
 
-		private string couponNo;
+		private string userClientIp;
 
-		private bool? useCoupon;
+		private int? digestType;
+
+		private string digest;
 
 		private string lang;
 
-		private bool? usePromotion;
+		private int? algorithm;
 
-		public string PromotionNo
+		public int? KeyTag
 		{
 			get
 			{
-				return promotionNo;
+				return keyTag;
 			}
 			set	
 			{
-				promotionNo = value;
-				DictionaryUtil.Add(QueryParameters, "PromotionNo", value);
-			}
-		}
-
-		public long? CurrentExpirationDate
-		{
-			get
-			{
-				return currentExpirationDate;
-			}
-			set	
-			{
-				currentExpirationDate = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentExpirationDate", value.ToString());
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				keyTag = value;
+				DictionaryUtil.Add(QueryParameters, "KeyTag", value.ToString());
 			}
 		}
 
@@ -101,29 +73,42 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string CouponNo
+		public string UserClientIp
 		{
 			get
 			{
-				return couponNo;
+				return userClientIp;
 			}
 			set	
 			{
-				couponNo = value;
-				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
-		public bool? UseCoupon
+		public int? DigestType
 		{
 			get
 			{
-				return useCoupon;
+				return digestType;
 			}
 			set	
 			{
-				useCoupon = value;
-				DictionaryUtil.Add(QueryParameters, "UseCoupon", value.ToString());
+				digestType = value;
+				DictionaryUtil.Add(QueryParameters, "DigestType", value.ToString());
+			}
+		}
+
+		public string Digest
+		{
+			get
+			{
+				return digest;
+			}
+			set	
+			{
+				digest = value;
+				DictionaryUtil.Add(QueryParameters, "Digest", value);
 			}
 		}
 
@@ -140,22 +125,27 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public bool? UsePromotion
+		public int? Algorithm
 		{
 			get
 			{
-				return usePromotion;
+				return algorithm;
 			}
 			set	
 			{
-				usePromotion = value;
-				DictionaryUtil.Add(QueryParameters, "UsePromotion", value.ToString());
+				algorithm = value;
+				DictionaryUtil.Add(QueryParameters, "Algorithm", value.ToString());
 			}
 		}
 
-        public override SaveSingleTaskForCreatingOrderRedeemResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override SaveSingleTaskForAddingDSRecordResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SaveSingleTaskForCreatingOrderRedeemResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveSingleTaskForAddingDSRecordResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
