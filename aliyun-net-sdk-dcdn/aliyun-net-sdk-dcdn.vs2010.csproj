@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7dec960b-5ddd-4cd4-bc88-f948da6bbe48}</ProjectGuid>
+    <ProjectGuid>{d166071e-2541-45fe-9776-2cbbc498274d}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -51,6 +51,7 @@
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnRefreshTasksRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainIspDataRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\StartDcdnDomainRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\BatchSetDcdnDomainConfigsRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DeleteDcdnDomainResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainConfigsResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnTopDomainsByFlowResponse.cs" />
@@ -110,6 +111,7 @@
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainDetailResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainWebsocketTrafficDataRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainHttpCodeDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\BatchSetDcdnDomainConfigsResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainBpsDataResponse.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainDetailRequest.cs" />
 	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnUserDomainsRequest.cs" />
@@ -144,6 +146,7 @@
 	<Compile Include="Dcdn\Transform\V20180115\StopDcdnDomainResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainTrafficDataResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainWebsocketHttpCodeDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\BatchSetDcdnDomainConfigsResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainTopReferVisitResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainLogResponseUnmarshaller.cs" />
 	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnRefreshTasksResponseUnmarshaller.cs" />
