@@ -16,24 +16,40 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.ARMS.Model.V20181015;
-using System;
+using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.ARMS.Transform.V20181015
+namespace Aliyun.Acs.ARMS.Model.V20181219
 {
-    public class MetricQueryResponseUnmarshaller
-    {
-        public static MetricQueryResponse Unmarshall(UnmarshallerContext context)
-        {
-			MetricQueryResponse metricQueryResponse = new MetricQueryResponse();
+	public class MetricQueryResponse : AcsResponse
+	{
 
-			metricQueryResponse.HttpResponse = context.HttpResponse;
-			metricQueryResponse.Data = context.StringValue("MetricQuery.Data");
-			metricQueryResponse.RequestId = context.StringValue("MetricQuery.RequestId");
-        
-			return metricQueryResponse;
-        }
-    }
+		private string data;
+
+		private string requestId;
+
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

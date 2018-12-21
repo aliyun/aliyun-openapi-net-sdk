@@ -21,15 +21,15 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.ARMS.Transform;
-using Aliyun.Acs.ARMS.Transform.V20181015;
+using Aliyun.Acs.ARMS.Transform.V20181219;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.ARMS.Model.V20181015
+namespace Aliyun.Acs.ARMS.Model.V20181219
 {
     public class ARMSQueryDataSetRequest : RpcAcsRequest<ARMSQueryDataSetResponse>
     {
         public ARMSQueryDataSetRequest()
-            : base("ARMS", "2018-10-15", "ARMSQueryDataSet")
+            : base("ARMS", "2018-12-19", "ARMSQueryDataSet", "arms", "openAPI")
         {
         }
 

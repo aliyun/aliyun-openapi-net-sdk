@@ -21,17 +21,27 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.ARMS.Transform;
-using Aliyun.Acs.ARMS.Transform.V20181015;
+using Aliyun.Acs.ARMS.Transform.V20181219;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.ARMS.Model.V20181015
+namespace Aliyun.Acs.ARMS.Model.V20181219
 {
     public class MetricQueryRequest : RpcAcsRequest<MetricQueryResponse>
     {
         public MetricQueryRequest()
-            : base("ARMS", "2018-10-15", "MetricQuery")
+            : base("ARMS", "2018-12-19", "MetricQuery", "arms", "openAPI")
         {
         }
+
+		private long? endTime;
+
+		private string orderBy;
+
+		private List<Filters> filterss;
+
+		private long? startTime;
+
+		private string accessKeyId;
 
 		private int? iintervalInSec;
 
@@ -43,19 +53,79 @@ namespace Aliyun.Acs.ARMS.Model.V20181015
 
 		private int? limit;
 
-		private long? endTime;
-
-		private string orderBy;
-
-		private long? startTime;
-
-		private List<Filters> filterss;
-
 		private List<string> dimensionss;
 
 		private string order;
 
-		private string accessKeyId;
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public string OrderBy
+		{
+			get
+			{
+				return orderBy;
+			}
+			set	
+			{
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
+			}
+		}
+
+		public List<Filters> Filterss
+		{
+			get
+			{
+				return filterss;
+			}
+
+			set
+			{
+				filterss = value;
+				for (int i = 0; i < filterss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Filters." + (i + 1) + ".Value", filterss[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Filters." + (i + 1) + ".Key", filterss[i].Key);
+				}
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
 
 		public int? IintervalInSec
 		{
@@ -126,63 +196,6 @@ namespace Aliyun.Acs.ARMS.Model.V20181015
 			}
 		}
 
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
-			}
-		}
-
-		public string OrderBy
-		{
-			get
-			{
-				return orderBy;
-			}
-			set	
-			{
-				orderBy = value;
-				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
-			}
-		}
-
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
-
-		public List<Filters> Filterss
-		{
-			get
-			{
-				return filterss;
-			}
-
-			set
-			{
-				filterss = value;
-				for (int i = 0; i < filterss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Filters." + (i + 1) + ".Value", filterss[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Filters." + (i + 1) + ".Key", filterss[i].Key);
-				}
-			}
-		}
-
 		public List<string> Dimensionss
 		{
 			get
@@ -210,19 +223,6 @@ namespace Aliyun.Acs.ARMS.Model.V20181015
 			{
 				order = value;
 				DictionaryUtil.Add(QueryParameters, "Order", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
