@@ -26,18 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceAutoRenewalAttributeRequest : RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse>
+    public class DescribeDBInstanceMonitorRequest : RpcAcsRequest<DescribeDBInstanceMonitorResponse>
     {
-        public ModifyInstanceAutoRenewalAttributeRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa", "openAPI")
+        public DescribeDBInstanceMonitorRequest()
+            : base("R_kvstore", "2015-01-01", "DescribeDBInstanceMonitor", "redisa", "openAPI")
         {
         }
 
-		private string duration;
-
 		private long? resourceOwnerId;
-
-		private string autoRenew;
 
 		private string securityToken;
 
@@ -53,19 +49,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string accessKeyId;
 
-		public string Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value);
-			}
-		}
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -76,19 +59,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string AutoRenew
-		{
-			get
-			{
-				return autoRenew;
-			}
-			set	
-			{
-				autoRenew = value;
-				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
 			}
 		}
 
@@ -183,9 +153,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceAutoRenewalAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDBInstanceMonitorResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceAutoRenewalAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDBInstanceMonitorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -70,9 +70,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.PackageType = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].PackageType");
 				dBInstanceAttribute.ReplicaId = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ReplicaId");
 				dBInstanceAttribute.VpcAuthMode = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].VpcAuthMode");
-				dBInstanceAttribute.VpcAuthMode2 = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].VpcAuthMode");
+				dBInstanceAttribute.AuditLogRetention = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].AuditLogRetention");
 				dBInstanceAttribute.ReplicationMode = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ReplicationMode");
-				dBInstanceAttribute.LuaStatus = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].LuaStatus");
 
 				describeInstanceAttributeResponse_instances.Add(dBInstanceAttribute);
 			}

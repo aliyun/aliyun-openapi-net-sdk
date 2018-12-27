@@ -26,26 +26,28 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceAutoRenewalAttributeRequest : RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse>
+    public class MigrateToOtherZoneRequest : RpcAcsRequest<MigrateToOtherZoneResponse>
     {
-        public ModifyInstanceAutoRenewalAttributeRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa", "openAPI")
+        public MigrateToOtherZoneRequest()
+            : base("R_kvstore", "2015-01-01", "MigrateToOtherZone", "redisa", "openAPI")
         {
         }
 
-		private string duration;
+		private string vSwitchId;
 
 		private long? resourceOwnerId;
-
-		private string autoRenew;
 
 		private string securityToken;
 
 		private string resourceOwnerAccount;
 
+		private string effectiveTime;
+
 		private string ownerAccount;
 
 		private string action;
+
+		private string zoneId;
 
 		private string dBInstanceId;
 
@@ -53,16 +55,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string accessKeyId;
 
-		public string Duration
+		public string VSwitchId
 		{
 			get
 			{
-				return duration;
+				return vSwitchId;
 			}
 			set	
 			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value);
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
@@ -76,19 +78,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string AutoRenew
-		{
-			get
-			{
-				return autoRenew;
-			}
-			set	
-			{
-				autoRenew = value;
-				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
 			}
 		}
 
@@ -118,6 +107,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string EffectiveTime
+		{
+			get
+			{
+				return effectiveTime;
+			}
+			set	
+			{
+				effectiveTime = value;
+				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -141,6 +143,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
@@ -183,9 +198,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceAutoRenewalAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override MigrateToOtherZoneResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceAutoRenewalAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return MigrateToOtherZoneResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

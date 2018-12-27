@@ -36,6 +36,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private int? pageNumber;
 
+		private int? pageSize;
+
 		private int? pageRecordCount;
 
 		private List<DescribeSlowLogRecords_LogRecords> items;
@@ -109,6 +111,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 

@@ -36,6 +36,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeSlowLogRecordsResponse.Engine = context.StringValue("DescribeSlowLogRecords.Engine");
 			describeSlowLogRecordsResponse.TotalRecordCount = context.IntegerValue("DescribeSlowLogRecords.TotalRecordCount");
 			describeSlowLogRecordsResponse.PageNumber = context.IntegerValue("DescribeSlowLogRecords.PageNumber");
+			describeSlowLogRecordsResponse.PageSize = context.IntegerValue("DescribeSlowLogRecords.PageSize");
 			describeSlowLogRecordsResponse.PageRecordCount = context.IntegerValue("DescribeSlowLogRecords.PageRecordCount");
 
 			List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords> describeSlowLogRecordsResponse_items = new List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords>();

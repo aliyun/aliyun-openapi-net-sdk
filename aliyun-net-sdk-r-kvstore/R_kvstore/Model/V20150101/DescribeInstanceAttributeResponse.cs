@@ -125,11 +125,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string vpcAuthMode;
 
-			private string vpcAuthMode2;
+			private string auditLogRetention;
 
 			private string replicationMode;
-
-			private string luaStatus;
 
 			public string InstanceId
 			{
@@ -551,15 +549,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string VpcAuthMode2
+			public string AuditLogRetention
 			{
 				get
 				{
-					return vpcAuthMode2;
+					return auditLogRetention;
 				}
 				set	
 				{
-					vpcAuthMode2 = value;
+					auditLogRetention = value;
 				}
 			}
 
@@ -572,18 +570,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					replicationMode = value;
-				}
-			}
-
-			public string LuaStatus
-			{
-				get
-				{
-					return luaStatus;
-				}
-				set	
-				{
-					luaStatus = value;
 				}
 			}
 		}

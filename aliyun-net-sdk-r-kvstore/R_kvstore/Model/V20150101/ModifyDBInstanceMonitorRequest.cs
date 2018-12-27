@@ -26,18 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceAutoRenewalAttributeRequest : RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse>
+    public class ModifyDBInstanceMonitorRequest : RpcAcsRequest<ModifyDBInstanceMonitorResponse>
     {
-        public ModifyInstanceAutoRenewalAttributeRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa", "openAPI")
+        public ModifyDBInstanceMonitorRequest()
+            : base("R_kvstore", "2015-01-01", "ModifyDBInstanceMonitor", "redisa", "openAPI")
         {
         }
 
-		private string duration;
-
 		private long? resourceOwnerId;
-
-		private string autoRenew;
 
 		private string securityToken;
 
@@ -49,22 +45,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string dBInstanceId;
 
+		private string interval;
+
 		private long? ownerId;
 
 		private string accessKeyId;
-
-		public string Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -76,19 +61,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string AutoRenew
-		{
-			get
-			{
-				return autoRenew;
-			}
-			set	
-			{
-				autoRenew = value;
-				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
 			}
 		}
 
@@ -157,6 +129,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -183,9 +168,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceAutoRenewalAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyDBInstanceMonitorResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceAutoRenewalAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBInstanceMonitorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

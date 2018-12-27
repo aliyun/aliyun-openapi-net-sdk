@@ -26,18 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceAutoRenewalAttributeRequest : RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse>
+    public class ModifyIntranetAttributeRequest : RpcAcsRequest<ModifyIntranetAttributeResponse>
     {
-        public ModifyInstanceAutoRenewalAttributeRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa", "openAPI")
+        public ModifyIntranetAttributeRequest()
+            : base("R_kvstore", "2015-01-01", "ModifyIntranetAttribute", "redisa", "openAPI")
         {
         }
 
-		private string duration;
-
 		private long? resourceOwnerId;
 
-		private string autoRenew;
+		private string instanceId;
 
 		private string securityToken;
 
@@ -47,24 +45,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string action;
 
-		private string dBInstanceId;
-
 		private long? ownerId;
 
 		private string accessKeyId;
-
-		public string Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -79,16 +62,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AutoRenew
+		public string InstanceId
 		{
 			get
 			{
-				return autoRenew;
+				return instanceId;
 			}
 			set	
 			{
-				autoRenew = value;
-				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -144,19 +127,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -183,9 +153,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyInstanceAutoRenewalAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyIntranetAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceAutoRenewalAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyIntranetAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
