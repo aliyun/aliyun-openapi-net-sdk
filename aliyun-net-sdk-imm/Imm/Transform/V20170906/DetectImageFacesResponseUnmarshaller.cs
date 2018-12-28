@@ -38,7 +38,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				DetectImageFacesResponse.DetectImageFaces_FacesItem facesItem = new DetectImageFacesResponse.DetectImageFaces_FacesItem();
 				facesItem.FaceId = context.StringValue("DetectImageFaces.Faces["+ i +"].FaceId");
 				facesItem.FaceConfidence = context.FloatValue("DetectImageFaces.Faces["+ i +"].FaceConfidence");
-				facesItem.Age = context.StringValue("DetectImageFaces.Faces["+ i +"].Age");
+				facesItem.Age = context.IntegerValue("DetectImageFaces.Faces["+ i +"].Age");
 				facesItem.Gender = context.StringValue("DetectImageFaces.Faces["+ i +"].Gender");
 				facesItem.Emotion = context.StringValue("DetectImageFaces.Faces["+ i +"].Emotion");
 				facesItem.Attractive = context.FloatValue("DetectImageFaces.Faces["+ i +"].Attractive");

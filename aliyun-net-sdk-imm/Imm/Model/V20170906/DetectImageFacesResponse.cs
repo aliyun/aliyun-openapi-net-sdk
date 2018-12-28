@@ -73,7 +73,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private float? faceConfidence;
 
-			private string age;
+			private int? age;
 
 			private string gender;
 
@@ -117,7 +117,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public string Age
+			public int? Age
 			{
 				get
 				{
