@@ -26,12 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class ListTagNamesRequest : RpcAcsRequest<ListTagNamesResponse>
+    public class ListVideoAudiosRequest : RpcAcsRequest<ListVideoAudiosResponse>
     {
-        public ListTagNamesRequest()
-            : base("imm", "2017-09-06", "ListTagNames", "imm", "openAPI")
+        public ListVideoAudiosRequest()
+            : base("imm", "2017-09-06", "ListVideoAudios", "imm", "openAPI")
         {
         }
+
+		private string videoUri;
 
 		private string marker;
 
@@ -42,6 +44,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string setId;
 
 		private string accessKeyId;
+
+		public string VideoUri
+		{
+			get
+			{
+				return videoUri;
+			}
+			set	
+			{
+				videoUri = value;
+				DictionaryUtil.Add(QueryParameters, "VideoUri", value);
+			}
+		}
 
 		public string Marker
 		{
@@ -113,9 +128,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override ListTagNamesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListVideoAudiosResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTagNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListVideoAudiosResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

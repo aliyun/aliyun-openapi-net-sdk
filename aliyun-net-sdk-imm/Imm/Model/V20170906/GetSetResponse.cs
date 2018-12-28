@@ -21,14 +21,26 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class ListTagNamesResponse : AcsResponse
+	public class GetSetResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string nextMarker;
+		private string setId;
 
-		private List<ListTagNames_TagsItem> tags;
+		private string setName;
+
+		private long? createTime;
+
+		private long? modifyTime;
+
+		private int? faceCount;
+
+		private int? imageCount;
+
+		private int? videoCount;
+
+		private int? videoLength;
 
 		public string RequestId
 		{
@@ -42,59 +54,99 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string NextMarker
+		public string SetId
 		{
 			get
 			{
-				return nextMarker;
+				return setId;
 			}
 			set	
 			{
-				nextMarker = value;
+				setId = value;
 			}
 		}
 
-		public List<ListTagNames_TagsItem> Tags
+		public string SetName
 		{
 			get
 			{
-				return tags;
+				return setName;
 			}
 			set	
 			{
-				tags = value;
+				setName = value;
 			}
 		}
 
-		public class ListTagNames_TagsItem
+		public long? CreateTime
 		{
-
-			private string tagName;
-
-			private int? num;
-
-			public string TagName
+			get
 			{
-				get
-				{
-					return tagName;
-				}
-				set	
-				{
-					tagName = value;
-				}
+				return createTime;
 			}
-
-			public int? Num
+			set	
 			{
-				get
-				{
-					return num;
-				}
-				set	
-				{
-					num = value;
-				}
+				createTime = value;
+			}
+		}
+
+		public long? ModifyTime
+		{
+			get
+			{
+				return modifyTime;
+			}
+			set	
+			{
+				modifyTime = value;
+			}
+		}
+
+		public int? FaceCount
+		{
+			get
+			{
+				return faceCount;
+			}
+			set	
+			{
+				faceCount = value;
+			}
+		}
+
+		public int? ImageCount
+		{
+			get
+			{
+				return imageCount;
+			}
+			set	
+			{
+				imageCount = value;
+			}
+		}
+
+		public int? VideoCount
+		{
+			get
+			{
+				return videoCount;
+			}
+			set	
+			{
+				videoCount = value;
+			}
+		}
+
+		public int? VideoLength
+		{
+			get
+			{
+				return videoLength;
+			}
+			set	
+			{
+				videoLength = value;
 			}
 		}
 	}

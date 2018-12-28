@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class ListTagNamesRequest : RpcAcsRequest<ListTagNamesResponse>
+    public class ListSetsRequest : RpcAcsRequest<ListSetsResponse>
     {
-        public ListTagNamesRequest()
-            : base("imm", "2017-09-06", "ListTagNames", "imm", "openAPI")
+        public ListSetsRequest()
+            : base("imm", "2017-09-06", "ListSets", "imm", "openAPI")
         {
         }
 
@@ -38,8 +38,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string action;
 
 		private string project;
-
-		private string setId;
 
 		private string accessKeyId;
 
@@ -82,19 +80,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string SetId
-		{
-			get
-			{
-				return setId;
-			}
-			set	
-			{
-				setId = value;
-				DictionaryUtil.Add(QueryParameters, "SetId", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -113,9 +98,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override ListTagNamesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListSetsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTagNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListSetsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -31,6 +31,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 
 			listTagNamesResponse.HttpResponse = context.HttpResponse;
 			listTagNamesResponse.RequestId = context.StringValue("ListTagNames.RequestId");
+			listTagNamesResponse.NextMarker = context.StringValue("ListTagNames.NextMarker");
 
 			List<ListTagNamesResponse.ListTagNames_TagsItem> listTagNamesResponse_tags = new List<ListTagNamesResponse.ListTagNames_TagsItem>();
 			for (int i = 0; i < context.Length("ListTagNames.Tags.Length"); i++) {

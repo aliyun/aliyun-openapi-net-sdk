@@ -21,14 +21,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class ListTagNamesResponse : AcsResponse
+	public class DeleteVideoTaskResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string nextMarker;
-
-		private List<ListTagNames_TagsItem> tags;
 
 		public string RequestId
 		{
@@ -39,62 +35,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string NextMarker
-		{
-			get
-			{
-				return nextMarker;
-			}
-			set	
-			{
-				nextMarker = value;
-			}
-		}
-
-		public List<ListTagNames_TagsItem> Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-			}
-		}
-
-		public class ListTagNames_TagsItem
-		{
-
-			private string tagName;
-
-			private int? num;
-
-			public string TagName
-			{
-				get
-				{
-					return tagName;
-				}
-				set	
-				{
-					tagName = value;
-				}
-			}
-
-			public int? Num
-			{
-				get
-				{
-					return num;
-				}
-				set	
-				{
-					num = value;
-				}
 			}
 		}
 	}

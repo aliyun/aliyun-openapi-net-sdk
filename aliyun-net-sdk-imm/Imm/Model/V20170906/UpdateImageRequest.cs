@@ -26,14 +26,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class ListTagNamesRequest : RpcAcsRequest<ListTagNamesResponse>
+    public class UpdateImageRequest : RpcAcsRequest<UpdateImageResponse>
     {
-        public ListTagNamesRequest()
-            : base("imm", "2017-09-06", "ListTagNames", "imm", "openAPI")
+        public UpdateImageRequest()
+            : base("imm", "2017-09-06", "UpdateImage", "imm", "openAPI")
         {
         }
 
-		private string marker;
+		private string imageUri;
+
+		private string sourceUri;
+
+		private string sourcePosition;
+
+		private string remarksB;
 
 		private string action;
 
@@ -41,18 +47,61 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string setId;
 
+		private string remarksA;
+
+		private string sourceType;
+
 		private string accessKeyId;
 
-		public string Marker
+		public string ImageUri
 		{
 			get
 			{
-				return marker;
+				return imageUri;
 			}
 			set	
 			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
+				imageUri = value;
+				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+			}
+		}
+
+		public string SourceUri
+		{
+			get
+			{
+				return sourceUri;
+			}
+			set	
+			{
+				sourceUri = value;
+				DictionaryUtil.Add(QueryParameters, "SourceUri", value);
+			}
+		}
+
+		public string SourcePosition
+		{
+			get
+			{
+				return sourcePosition;
+			}
+			set	
+			{
+				sourcePosition = value;
+				DictionaryUtil.Add(QueryParameters, "SourcePosition", value);
+			}
+		}
+
+		public string RemarksB
+		{
+			get
+			{
+				return remarksB;
+			}
+			set	
+			{
+				remarksB = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksB", value);
 			}
 		}
 
@@ -95,6 +144,32 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string RemarksA
+		{
+			get
+			{
+				return remarksA;
+			}
+			set	
+			{
+				remarksA = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksA", value);
+			}
+		}
+
+		public string SourceType
+		{
+			get
+			{
+				return sourceType;
+			}
+			set	
+			{
+				sourceType = value;
+				DictionaryUtil.Add(QueryParameters, "SourceType", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -113,9 +188,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override ListTagNamesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateImageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTagNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

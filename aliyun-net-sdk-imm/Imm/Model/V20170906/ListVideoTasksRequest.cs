@@ -26,12 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class ListTagNamesRequest : RpcAcsRequest<ListTagNamesResponse>
+    public class ListVideoTasksRequest : RpcAcsRequest<ListVideoTasksResponse>
     {
-        public ListTagNamesRequest()
-            : base("imm", "2017-09-06", "ListTagNames", "imm", "openAPI")
+        public ListVideoTasksRequest()
+            : base("imm", "2017-09-06", "ListVideoTasks", "imm", "openAPI")
         {
         }
+
+		private int? maxKeys;
+
+		private string taskType;
 
 		private string marker;
 
@@ -39,9 +43,33 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string project;
 
-		private string setId;
-
 		private string accessKeyId;
+
+		public int? MaxKeys
+		{
+			get
+			{
+				return maxKeys;
+			}
+			set	
+			{
+				maxKeys = value;
+				DictionaryUtil.Add(QueryParameters, "MaxKeys", value.ToString());
+			}
+		}
+
+		public string TaskType
+		{
+			get
+			{
+				return taskType;
+			}
+			set	
+			{
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
+			}
+		}
 
 		public string Marker
 		{
@@ -82,19 +110,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string SetId
-		{
-			get
-			{
-				return setId;
-			}
-			set	
-			{
-				setId = value;
-				DictionaryUtil.Add(QueryParameters, "SetId", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -113,9 +128,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override ListTagNamesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListVideoTasksResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTagNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListVideoTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

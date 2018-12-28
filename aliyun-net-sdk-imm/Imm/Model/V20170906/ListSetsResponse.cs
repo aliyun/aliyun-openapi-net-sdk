@@ -21,14 +21,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class ListTagNamesResponse : AcsResponse
+	public class ListSetsResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private string nextMarker;
 
-		private List<ListTagNames_TagsItem> tags;
+		private List<ListSets_SetsItem> sets;
 
 		public string RequestId
 		{
@@ -54,46 +54,130 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public List<ListTagNames_TagsItem> Tags
+		public List<ListSets_SetsItem> Sets
 		{
 			get
 			{
-				return tags;
+				return sets;
 			}
 			set	
 			{
-				tags = value;
+				sets = value;
 			}
 		}
 
-		public class ListTagNames_TagsItem
+		public class ListSets_SetsItem
 		{
 
-			private string tagName;
+			private string setId;
 
-			private int? num;
+			private string setName;
 
-			public string TagName
+			private string createTime;
+
+			private string modifyTime;
+
+			private int? faceCount;
+
+			private int? imageCount;
+
+			private int? videoCount;
+
+			private int? videoLength;
+
+			public string SetId
 			{
 				get
 				{
-					return tagName;
+					return setId;
 				}
 				set	
 				{
-					tagName = value;
+					setId = value;
 				}
 			}
 
-			public int? Num
+			public string SetName
 			{
 				get
 				{
-					return num;
+					return setName;
 				}
 				set	
 				{
-					num = value;
+					setName = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
+				}
+			}
+
+			public int? FaceCount
+			{
+				get
+				{
+					return faceCount;
+				}
+				set	
+				{
+					faceCount = value;
+				}
+			}
+
+			public int? ImageCount
+			{
+				get
+				{
+					return imageCount;
+				}
+				set	
+				{
+					imageCount = value;
+				}
+			}
+
+			public int? VideoCount
+			{
+				get
+				{
+					return videoCount;
+				}
+				set	
+				{
+					videoCount = value;
+				}
+			}
+
+			public int? VideoLength
+			{
+				get
+				{
+					return videoLength;
+				}
+				set	
+				{
+					videoLength = value;
 				}
 			}
 		}

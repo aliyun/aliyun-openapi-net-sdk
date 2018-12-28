@@ -26,33 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class ListTagNamesRequest : RpcAcsRequest<ListTagNamesResponse>
+    public class DetectImageFacesRequest : RpcAcsRequest<DetectImageFacesResponse>
     {
-        public ListTagNamesRequest()
-            : base("imm", "2017-09-06", "ListTagNames", "imm", "openAPI")
+        public DetectImageFacesRequest()
+            : base("imm", "2017-09-06", "DetectImageFaces", "imm", "openAPI")
         {
         }
 
-		private string marker;
+		private string imageUri;
 
 		private string action;
 
 		private string project;
 
-		private string setId;
-
 		private string accessKeyId;
 
-		public string Marker
+		public string ImageUri
 		{
 			get
 			{
-				return marker;
+				return imageUri;
 			}
 			set	
 			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
+				imageUri = value;
+				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
 			}
 		}
 
@@ -82,19 +80,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string SetId
-		{
-			get
-			{
-				return setId;
-			}
-			set	
-			{
-				setId = value;
-				DictionaryUtil.Add(QueryParameters, "SetId", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -113,9 +98,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override ListTagNamesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DetectImageFacesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTagNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DetectImageFacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

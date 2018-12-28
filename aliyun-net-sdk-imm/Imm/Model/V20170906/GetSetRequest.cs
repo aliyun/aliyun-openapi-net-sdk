@@ -26,14 +26,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class ListTagNamesRequest : RpcAcsRequest<ListTagNamesResponse>
+    public class GetSetRequest : RpcAcsRequest<GetSetResponse>
     {
-        public ListTagNamesRequest()
-            : base("imm", "2017-09-06", "ListTagNames", "imm", "openAPI")
+        public GetSetRequest()
+            : base("imm", "2017-09-06", "GetSet", "imm", "openAPI")
         {
         }
-
-		private string marker;
 
 		private string action;
 
@@ -42,19 +40,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string setId;
 
 		private string accessKeyId;
-
-		public string Marker
-		{
-			get
-			{
-				return marker;
-			}
-			set	
-			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
-			}
-		}
 
 		public string Action
 		{
@@ -108,14 +93,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override ListTagNamesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetSetResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTagNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

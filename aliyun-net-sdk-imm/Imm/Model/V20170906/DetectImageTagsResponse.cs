@@ -21,14 +21,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class ListTagNamesResponse : AcsResponse
+	public class DetectImageTagsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string nextMarker;
+		private string imageUri;
 
-		private List<ListTagNames_TagsItem> tags;
+		private List<DetectImageTags_TagsItem> tags;
 
 		public string RequestId
 		{
@@ -42,19 +42,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string NextMarker
+		public string ImageUri
 		{
 			get
 			{
-				return nextMarker;
+				return imageUri;
 			}
 			set	
 			{
-				nextMarker = value;
+				imageUri = value;
 			}
 		}
 
-		public List<ListTagNames_TagsItem> Tags
+		public List<DetectImageTags_TagsItem> Tags
 		{
 			get
 			{
@@ -66,12 +66,20 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public class ListTagNames_TagsItem
+		public class DetectImageTags_TagsItem
 		{
 
 			private string tagName;
 
-			private int? num;
+			private float? tagConfidence;
+
+			private int? tagLevel;
+
+			private string parentTagName;
+
+			private string parentTagEnName;
+
+			private string tagEnName;
 
 			public string TagName
 			{
@@ -85,15 +93,63 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public int? Num
+			public float? TagConfidence
 			{
 				get
 				{
-					return num;
+					return tagConfidence;
 				}
 				set	
 				{
-					num = value;
+					tagConfidence = value;
+				}
+			}
+
+			public int? TagLevel
+			{
+				get
+				{
+					return tagLevel;
+				}
+				set	
+				{
+					tagLevel = value;
+				}
+			}
+
+			public string ParentTagName
+			{
+				get
+				{
+					return parentTagName;
+				}
+				set	
+				{
+					parentTagName = value;
+				}
+			}
+
+			public string ParentTagEnName
+			{
+				get
+				{
+					return parentTagEnName;
+				}
+				set	
+				{
+					parentTagEnName = value;
+				}
+			}
+
+			public string TagEnName
+			{
+				get
+				{
+					return tagEnName;
+				}
+				set	
+				{
+					tagEnName = value;
 				}
 			}
 		}

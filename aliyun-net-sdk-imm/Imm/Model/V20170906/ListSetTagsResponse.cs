@@ -21,14 +21,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class ListTagNamesResponse : AcsResponse
+	public class ListSetTagsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string nextMarker;
+		private string setId;
 
-		private List<ListTagNames_TagsItem> tags;
+		private List<ListSetTags_TagsItem> tags;
 
 		public string RequestId
 		{
@@ -42,19 +42,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string NextMarker
+		public string SetId
 		{
 			get
 			{
-				return nextMarker;
+				return setId;
 			}
 			set	
 			{
-				nextMarker = value;
+				setId = value;
 			}
 		}
 
-		public List<ListTagNames_TagsItem> Tags
+		public List<ListSetTags_TagsItem> Tags
 		{
 			get
 			{
@@ -66,12 +66,12 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public class ListTagNames_TagsItem
+		public class ListSetTags_TagsItem
 		{
 
 			private string tagName;
 
-			private int? num;
+			private int? tagCount;
 
 			public string TagName
 			{
@@ -85,15 +85,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public int? Num
+			public int? TagCount
 			{
 				get
 				{
-					return num;
+					return tagCount;
 				}
 				set	
 				{
-					num = value;
+					tagCount = value;
 				}
 			}
 		}

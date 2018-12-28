@@ -26,14 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class ListTagNamesRequest : RpcAcsRequest<ListTagNamesResponse>
+    public class CompareImageFacesRequest : RpcAcsRequest<CompareImageFacesResponse>
     {
-        public ListTagNamesRequest()
-            : base("imm", "2017-09-06", "ListTagNames", "imm", "openAPI")
+        public CompareImageFacesRequest()
+            : base("imm", "2017-09-06", "CompareImageFaces", "imm", "openAPI")
         {
         }
 
-		private string marker;
+		private string imageUriB;
+
+		private string imageUriA;
 
 		private string action;
 
@@ -41,18 +43,35 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string setId;
 
+		private string faceIdA;
+
+		private string faceIdB;
+
 		private string accessKeyId;
 
-		public string Marker
+		public string ImageUriB
 		{
 			get
 			{
-				return marker;
+				return imageUriB;
 			}
 			set	
 			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
+				imageUriB = value;
+				DictionaryUtil.Add(QueryParameters, "ImageUriB", value);
+			}
+		}
+
+		public string ImageUriA
+		{
+			get
+			{
+				return imageUriA;
+			}
+			set	
+			{
+				imageUriA = value;
+				DictionaryUtil.Add(QueryParameters, "ImageUriA", value);
 			}
 		}
 
@@ -95,6 +114,32 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string FaceIdA
+		{
+			get
+			{
+				return faceIdA;
+			}
+			set	
+			{
+				faceIdA = value;
+				DictionaryUtil.Add(QueryParameters, "FaceIdA", value);
+			}
+		}
+
+		public string FaceIdB
+		{
+			get
+			{
+				return faceIdB;
+			}
+			set	
+			{
+				faceIdB = value;
+				DictionaryUtil.Add(QueryParameters, "FaceIdB", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -113,9 +158,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override ListTagNamesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CompareImageFacesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTagNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CompareImageFacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

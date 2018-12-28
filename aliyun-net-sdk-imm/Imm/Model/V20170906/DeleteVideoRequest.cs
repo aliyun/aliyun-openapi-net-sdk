@@ -26,14 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class ListTagNamesRequest : RpcAcsRequest<ListTagNamesResponse>
+    public class DeleteVideoRequest : RpcAcsRequest<DeleteVideoResponse>
     {
-        public ListTagNamesRequest()
-            : base("imm", "2017-09-06", "ListTagNames", "imm", "openAPI")
+        public DeleteVideoRequest()
+            : base("imm", "2017-09-06", "DeleteVideo", "imm", "openAPI")
         {
         }
 
-		private string marker;
+		private string videoUri;
 
 		private string action;
 
@@ -41,18 +41,20 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string setId;
 
+		private bool? resources;
+
 		private string accessKeyId;
 
-		public string Marker
+		public string VideoUri
 		{
 			get
 			{
-				return marker;
+				return videoUri;
 			}
 			set	
 			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
+				videoUri = value;
+				DictionaryUtil.Add(QueryParameters, "VideoUri", value);
 			}
 		}
 
@@ -95,6 +97,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public bool? Resources
+		{
+			get
+			{
+				return resources;
+			}
+			set	
+			{
+				resources = value;
+				DictionaryUtil.Add(QueryParameters, "Resources", value.ToString());
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -113,9 +128,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override ListTagNamesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteVideoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTagNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteVideoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

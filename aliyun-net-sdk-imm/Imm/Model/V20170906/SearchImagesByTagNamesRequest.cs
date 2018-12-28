@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class ListTagNamesRequest : RpcAcsRequest<ListTagNamesResponse>
+    public class SearchImagesByTagNamesRequest : RpcAcsRequest<SearchImagesByTagNamesResponse>
     {
-        public ListTagNamesRequest()
-            : base("imm", "2017-09-06", "ListTagNames", "imm", "openAPI")
+        public SearchImagesByTagNamesRequest()
+            : base("imm", "2017-09-06", "SearchImagesByTagNames", "imm", "openAPI")
         {
         }
 
@@ -40,6 +40,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string project;
 
 		private string setId;
+
+		private string tagNames;
 
 		private string accessKeyId;
 
@@ -95,6 +97,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string TagNames
+		{
+			get
+			{
+				return tagNames;
+			}
+			set	
+			{
+				tagNames = value;
+				DictionaryUtil.Add(QueryParameters, "TagNames", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -113,9 +128,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override ListTagNamesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SearchImagesByTagNamesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTagNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SearchImagesByTagNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
