@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0c9014b4-7f75-492b-9109-561e11470621}</ProjectGuid>
+    <ProjectGuid>{0f3456b6-261e-48d8-98b7-922fc97b8848}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -41,13 +41,22 @@
   </ItemGroup>
   <ItemGroup>
 	<Compile Include="Dms_enterprise\Model\V20181101\RegisterInstanceRequest.cs" />
+	<Compile Include="Dms_enterprise\Model\V20181101\EnableUserRequest.cs" />
 	<Compile Include="Dms_enterprise\Model\V20181101\RegisterUserRequest.cs" />
 	<Compile Include="Dms_enterprise\Model\V20181101\GetOpLogRequest.cs" />
+	<Compile Include="Dms_enterprise\Model\V20181101\DeleteUserRequest.cs" />
+	<Compile Include="Dms_enterprise\Model\V20181101\EnableUserResponse.cs" />
+	<Compile Include="Dms_enterprise\Model\V20181101\DisableUserResponse.cs" />
 	<Compile Include="Dms_enterprise\Model\V20181101\RegisterInstanceResponse.cs" />
+	<Compile Include="Dms_enterprise\Model\V20181101\DeleteUserResponse.cs" />
 	<Compile Include="Dms_enterprise\Model\V20181101\RegisterUserResponse.cs" />
+	<Compile Include="Dms_enterprise\Model\V20181101\DisableUserRequest.cs" />
 	<Compile Include="Dms_enterprise\Model\V20181101\GetOpLogResponse.cs" />
 	<Compile Include="Dms_enterprise\Transform\V20181101\RegisterInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Dms_enterprise\Transform\V20181101\DeleteUserResponseUnmarshaller.cs" />
+	<Compile Include="Dms_enterprise\Transform\V20181101\EnableUserResponseUnmarshaller.cs" />
 	<Compile Include="Dms_enterprise\Transform\V20181101\RegisterUserResponseUnmarshaller.cs" />
+	<Compile Include="Dms_enterprise\Transform\V20181101\DisableUserResponseUnmarshaller.cs" />
 	<Compile Include="Dms_enterprise\Transform\V20181101\GetOpLogResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
