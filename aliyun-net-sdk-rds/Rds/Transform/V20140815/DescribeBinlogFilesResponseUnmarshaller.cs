@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				binLogFile.LinkExpiredTime = context.StringValue("DescribeBinlogFiles.Items["+ i +"].LinkExpiredTime");
 				binLogFile.Checksum = context.StringValue("DescribeBinlogFiles.Items["+ i +"].Checksum");
 				binLogFile.HostInstanceID = context.StringValue("DescribeBinlogFiles.Items["+ i +"].HostInstanceID");
+				binLogFile.LogFileName = context.StringValue("DescribeBinlogFiles.Items["+ i +"].LogFileName");
 
 				describeBinlogFilesResponse_items.Add(binLogFile);
 			}

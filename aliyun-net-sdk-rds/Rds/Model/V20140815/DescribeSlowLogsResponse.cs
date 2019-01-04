@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		private string dBInstanceId;
+
 		private string engine;
 
 		private string startTime;
 
 		private string endTime;
-
-		private string dBInstanceId;
 
 		private int? totalRecordCount;
 
@@ -51,6 +51,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
 			}
 		}
 
@@ -87,18 +99,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				endTime = value;
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
 			}
 		}
 
@@ -156,6 +156,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private long? slowLogId;
 
 			private long? sQLId;
+
+			private long? sQLHASH;
 
 			private string sQLIdStr;
 
@@ -216,6 +218,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					sQLId = value;
+				}
+			}
+
+			public long? SQLHASH
+			{
+				get
+				{
+					return sQLHASH;
+				}
+				set	
+				{
+					sQLHASH = value;
 				}
 			}
 

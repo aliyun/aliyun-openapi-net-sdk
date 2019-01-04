@@ -26,22 +26,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class RestoreDBInstanceRequest : RpcAcsRequest<RestoreDBInstanceResponse>
+    public class DescribeProxyFunctionSupportRequest : RpcAcsRequest<DescribeProxyFunctionSupportResponse>
     {
-        public RestoreDBInstanceRequest()
-            : base("Rds", "2014-08-15", "RestoreDBInstance", "rds", "openAPI")
+        public DescribeProxyFunctionSupportRequest()
+            : base("Rds", "2014-08-15", "DescribeProxyFunctionSupport", "rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string restoreTime;
+		private string securityToken;
 
 		private string resourceOwnerAccount;
-
-		private string clientToken;
-
-		private string backupId;
 
 		private string ownerAccount;
 
@@ -66,16 +62,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string RestoreTime
+		public string SecurityToken
 		{
 			get
 			{
-				return restoreTime;
+				return securityToken;
 			}
 			set	
 			{
-				restoreTime = value;
-				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -89,32 +85,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string BackupId
-		{
-			get
-			{
-				return backupId;
-			}
-			set	
-			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value);
 			}
 		}
 
@@ -183,9 +153,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override RestoreDBInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeProxyFunctionSupportResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return RestoreDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeProxyFunctionSupportResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

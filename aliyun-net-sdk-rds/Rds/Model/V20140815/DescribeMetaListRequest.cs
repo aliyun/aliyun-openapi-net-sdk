@@ -26,53 +26,40 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeSlowLogRecordsRequest : RpcAcsRequest<DescribeSlowLogRecordsResponse>
+    public class DescribeMetaListRequest : RpcAcsRequest<DescribeMetaListResponse>
     {
-        public DescribeSlowLogRecordsRequest()
-            : base("Rds", "2014-08-15", "DescribeSlowLogRecords", "rds", "openAPI")
+        public DescribeMetaListRequest()
+            : base("Rds", "2014-08-15", "DescribeMetaList", "rds", "openAPI")
         {
         }
 
-		private long? sQLId;
-
 		private long? resourceOwnerId;
+
+		private string restoreTime;
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
+		private string clientToken;
 
-		private string endTime;
+		private string pattern;
 
-		private string startTime;
+		private string backupSetID;
 
 		private long? ownerId;
 
-		private int? pageNumber;
-
 		private string accessKeyId;
 
-		private string dBName;
+		private string getDbName;
 
-		private int? pageSize;
+		private string restoreType;
+
+		private string pageSize;
 
 		private string action;
 
 		private string dBInstanceId;
 
-		private string sQLHASH;
-
-		public long? SQLId
-		{
-			get
-			{
-				return sQLId;
-			}
-			set	
-			{
-				sQLId = value;
-				DictionaryUtil.Add(QueryParameters, "SQLId", value.ToString());
-			}
-		}
+		private string pageIndex;
 
 		public long? ResourceOwnerId
 		{
@@ -84,6 +71,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string RestoreTime
+		{
+			get
+			{
+				return restoreTime;
+			}
+			set	
+			{
+				restoreTime = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
 			}
 		}
 
@@ -100,42 +100,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
+		public string ClientToken
 		{
 			get
 			{
-				return ownerAccount;
+				return clientToken;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public string EndTime
+		public string Pattern
 		{
 			get
 			{
-				return endTime;
+				return pattern;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				pattern = value;
+				DictionaryUtil.Add(QueryParameters, "Pattern", value);
 			}
 		}
 
-		public string StartTime
+		public string BackupSetID
 		{
 			get
 			{
-				return startTime;
+				return backupSetID;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				backupSetID = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetID", value);
 			}
 		}
 
@@ -152,19 +152,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -178,20 +165,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBName
+		public string GetDbName
 		{
 			get
 			{
-				return dBName;
+				return getDbName;
 			}
 			set	
 			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
+				getDbName = value;
+				DictionaryUtil.Add(QueryParameters, "GetDbName", value);
 			}
 		}
 
-		public int? PageSize
+		public string RestoreType
+		{
+			get
+			{
+				return restoreType;
+			}
+			set	
+			{
+				restoreType = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreType", value);
+			}
+		}
+
+		public string PageSize
 		{
 			get
 			{
@@ -200,7 +200,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
 			}
 		}
 
@@ -230,22 +230,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SQLHASH
+		public string PageIndex
 		{
 			get
 			{
-				return sQLHASH;
+				return pageIndex;
 			}
 			set	
 			{
-				sQLHASH = value;
-				DictionaryUtil.Add(QueryParameters, "SQLHASH", value);
+				pageIndex = value;
+				DictionaryUtil.Add(QueryParameters, "PageIndex", value);
 			}
 		}
 
-        public override DescribeSlowLogRecordsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeMetaListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSlowLogRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeMetaListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

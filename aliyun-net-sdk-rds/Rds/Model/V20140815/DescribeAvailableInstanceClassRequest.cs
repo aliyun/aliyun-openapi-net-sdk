@@ -26,14 +26,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeSlowLogRecordsRequest : RpcAcsRequest<DescribeSlowLogRecordsResponse>
+    public class DescribeAvailableInstanceClassRequest : RpcAcsRequest<DescribeAvailableInstanceClassResponse>
     {
-        public DescribeSlowLogRecordsRequest()
-            : base("Rds", "2014-08-15", "DescribeSlowLogRecords", "rds", "openAPI")
+        public DescribeAvailableInstanceClassRequest()
+            : base("Rds", "2014-08-15", "DescribeAvailableInstanceClass", "rds", "openAPI")
         {
         }
-
-		private long? sQLId;
 
 		private long? resourceOwnerId;
 
@@ -41,38 +39,25 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string ownerAccount;
 
-		private string endTime;
-
-		private string startTime;
+		private string engineVersion;
 
 		private long? ownerId;
 
-		private int? pageNumber;
-
 		private string accessKeyId;
 
-		private string dBName;
+		private string regionId;
 
-		private int? pageSize;
+		private string engine;
 
 		private string action;
 
+		private string zoneId;
+
 		private string dBInstanceId;
 
-		private string sQLHASH;
+		private string instanceChargeType;
 
-		public long? SQLId
-		{
-			get
-			{
-				return sQLId;
-			}
-			set	
-			{
-				sQLId = value;
-				DictionaryUtil.Add(QueryParameters, "SQLId", value.ToString());
-			}
-		}
+		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -113,29 +98,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EndTime
+		public string EngineVersion
 		{
 			get
 			{
-				return endTime;
+				return engineVersion;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
 			}
 		}
 
@@ -152,19 +124,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -178,29 +137,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBName
+		public string RegionId
 		{
 			get
 			{
-				return dBName;
+				return regionId;
 			}
 			set	
 			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
-		public int? PageSize
+		public string Engine
 		{
 			get
 			{
-				return pageSize;
+				return engine;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 
@@ -217,6 +176,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
 		public string DBInstanceId
 		{
 			get
@@ -230,22 +202,40 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SQLHASH
+		public string InstanceChargeType
 		{
 			get
 			{
-				return sQLHASH;
+				return instanceChargeType;
 			}
 			set	
 			{
-				sQLHASH = value;
-				DictionaryUtil.Add(QueryParameters, "SQLHASH", value);
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
 			}
 		}
 
-        public override DescribeSlowLogRecordsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string OrderType
+		{
+			get
+			{
+				return orderType;
+			}
+			set	
+			{
+				orderType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderType", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeAvailableInstanceClassResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSlowLogRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAvailableInstanceClassResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

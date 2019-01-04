@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			describeSlowLogsResponse.HttpResponse = context.HttpResponse;
 			describeSlowLogsResponse.RequestId = context.StringValue("DescribeSlowLogs.RequestId");
+			describeSlowLogsResponse.DBInstanceId = context.StringValue("DescribeSlowLogs.DBInstanceId");
 			describeSlowLogsResponse.Engine = context.StringValue("DescribeSlowLogs.Engine");
 			describeSlowLogsResponse.StartTime = context.StringValue("DescribeSlowLogs.StartTime");
 			describeSlowLogsResponse.EndTime = context.StringValue("DescribeSlowLogs.EndTime");
-			describeSlowLogsResponse.DBInstanceId = context.StringValue("DescribeSlowLogs.DBInstanceId");
 			describeSlowLogsResponse.TotalRecordCount = context.IntegerValue("DescribeSlowLogs.TotalRecordCount");
 			describeSlowLogsResponse.PageNumber = context.IntegerValue("DescribeSlowLogs.PageNumber");
 			describeSlowLogsResponse.PageRecordCount = context.IntegerValue("DescribeSlowLogs.PageRecordCount");
@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				DescribeSlowLogsResponse.DescribeSlowLogs_SQLSlowLog sQLSlowLog = new DescribeSlowLogsResponse.DescribeSlowLogs_SQLSlowLog();
 				sQLSlowLog.SlowLogId = context.LongValue("DescribeSlowLogs.Items["+ i +"].SlowLogId");
 				sQLSlowLog.SQLId = context.LongValue("DescribeSlowLogs.Items["+ i +"].SQLId");
+				sQLSlowLog.SQLHASH = context.LongValue("DescribeSlowLogs.Items["+ i +"].SQLHASH");
 				sQLSlowLog.SQLIdStr = context.StringValue("DescribeSlowLogs.Items["+ i +"].SQLIdStr");
 				sQLSlowLog.DBName = context.StringValue("DescribeSlowLogs.Items["+ i +"].DBName");
 				sQLSlowLog.SQLText = context.StringValue("DescribeSlowLogs.Items["+ i +"].SQLText");

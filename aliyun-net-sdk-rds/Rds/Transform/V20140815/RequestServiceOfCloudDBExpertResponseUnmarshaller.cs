@@ -30,6 +30,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			RequestServiceOfCloudDBExpertResponse requestServiceOfCloudDBExpertResponse = new RequestServiceOfCloudDBExpertResponse();
 
 			requestServiceOfCloudDBExpertResponse.HttpResponse = context.HttpResponse;
+			requestServiceOfCloudDBExpertResponse.RequestId = context.StringValue("RequestServiceOfCloudDBExpert.RequestId");
 			requestServiceOfCloudDBExpertResponse.Message = context.StringValue("RequestServiceOfCloudDBExpert.Message");
 			requestServiceOfCloudDBExpertResponse.Data = context.StringValue("RequestServiceOfCloudDBExpert.Data");
 			requestServiceOfCloudDBExpertResponse.Code = context.StringValue("RequestServiceOfCloudDBExpert.Code");

@@ -45,13 +45,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
-		private string iPType;
-
 		private string accessKeyId;
 
 		private string port;
 
 		private string distributionType;
+
+		private string netType;
 
 		private string action;
 
@@ -137,19 +137,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string IPType
-		{
-			get
-			{
-				return iPType;
-			}
-			set	
-			{
-				iPType = value;
-				DictionaryUtil.Add(QueryParameters, "IPType", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -186,6 +173,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				distributionType = value;
 				DictionaryUtil.Add(QueryParameters, "DistributionType", value);
+			}
+		}
+
+		public string NetType
+		{
+			get
+			{
+				return netType;
+			}
+			set	
+			{
+				netType = value;
+				DictionaryUtil.Add(QueryParameters, "NetType", value);
 			}
 		}
 

@@ -127,6 +127,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string hostInstanceID;
 
+			private string logFileName;
+
 			public long? FileSize
 			{
 				get
@@ -220,6 +222,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					hostInstanceID = value;
+				}
+			}
+
+			public string LogFileName
+			{
+				get
+				{
+					return logFileName;
+				}
+				set	
+				{
+					logFileName = value;
 				}
 			}
 		}
