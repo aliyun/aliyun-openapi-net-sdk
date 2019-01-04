@@ -21,18 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
 {
-	public class DescribeRegionsResponse : AcsResponse
+	public class DescribeZonesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? totalCount;
-
-		private int? pageSize;
-
-		private int? pageNumber;
-
-		private List<DescribeRegions_Region> regions;
+		private List<DescribeZones_Zone> zones;
 
 		public string RequestId
 		{
@@ -46,96 +40,60 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public int? TotalCount
+		public List<DescribeZones_Zone> Zones
 		{
 			get
 			{
-				return totalCount;
+				return zones;
 			}
 			set	
 			{
-				totalCount = value;
+				zones = value;
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public List<DescribeRegions_Region> Regions
-		{
-			get
-			{
-				return regions;
-			}
-			set	
-			{
-				regions = value;
-			}
-		}
-
-		public class DescribeRegions_Region
+		public class DescribeZones_Zone
 		{
 
-			private string regionId;
+			private string zoneId;
 
-			private string localName;
+			private List<string> capacity;
 
-			private string regionEndpoint;
+			private List<string> performance;
 
-			public string RegionId
+			public string ZoneId
 			{
 				get
 				{
-					return regionId;
+					return zoneId;
 				}
 				set	
 				{
-					regionId = value;
+					zoneId = value;
 				}
 			}
 
-			public string LocalName
+			public List<string> Capacity
 			{
 				get
 				{
-					return localName;
+					return capacity;
 				}
 				set	
 				{
-					localName = value;
+					capacity = value;
 				}
 			}
 
-			public string RegionEndpoint
+			public List<string> Performance
 			{
 				get
 				{
-					return regionEndpoint;
+					return performance;
 				}
 				set	
 				{
-					regionEndpoint = value;
+					performance = value;
 				}
 			}
 		}

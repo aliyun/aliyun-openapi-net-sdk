@@ -40,6 +40,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				DescribeRegionsResponse.DescribeRegions_Region region = new DescribeRegionsResponse.DescribeRegions_Region();
 				region.RegionId = context.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
 				region.LocalName = context.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
+				region.RegionEndpoint = context.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
 
 				describeRegionsResponse_regions.Add(region);
 			}

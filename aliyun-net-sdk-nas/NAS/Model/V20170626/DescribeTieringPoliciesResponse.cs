@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
 {
-	public class DescribeRegionsResponse : AcsResponse
+	public class DescribeTieringPoliciesResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private int? pageNumber;
 
-		private List<DescribeRegions_Region> regions;
+		private List<DescribeTieringPolicies_TieringPolicy> tieringPolicies;
 
 		public string RequestId
 		{
@@ -82,60 +82,144 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public List<DescribeRegions_Region> Regions
+		public List<DescribeTieringPolicies_TieringPolicy> TieringPolicies
 		{
 			get
 			{
-				return regions;
+				return tieringPolicies;
 			}
 			set	
 			{
-				regions = value;
+				tieringPolicies = value;
 			}
 		}
 
-		public class DescribeRegions_Region
+		public class DescribeTieringPolicies_TieringPolicy
 		{
 
-			private string regionId;
+			private string name;
 
-			private string localName;
+			private string description;
 
-			private string regionEndpoint;
+			private int? refCount;
 
-			public string RegionId
+			private long? mtime;
+
+			private long? atime;
+
+			private long? ctime;
+
+			private long? size;
+
+			private string fileName;
+
+			private long? recallTime;
+
+			public string Name
 			{
 				get
 				{
-					return regionId;
+					return name;
 				}
 				set	
 				{
-					regionId = value;
+					name = value;
 				}
 			}
 
-			public string LocalName
+			public string Description
 			{
 				get
 				{
-					return localName;
+					return description;
 				}
 				set	
 				{
-					localName = value;
+					description = value;
 				}
 			}
 
-			public string RegionEndpoint
+			public int? RefCount
 			{
 				get
 				{
-					return regionEndpoint;
+					return refCount;
 				}
 				set	
 				{
-					regionEndpoint = value;
+					refCount = value;
+				}
+			}
+
+			public long? Mtime
+			{
+				get
+				{
+					return mtime;
+				}
+				set	
+				{
+					mtime = value;
+				}
+			}
+
+			public long? Atime
+			{
+				get
+				{
+					return atime;
+				}
+				set	
+				{
+					atime = value;
+				}
+			}
+
+			public long? Ctime
+			{
+				get
+				{
+					return ctime;
+				}
+				set	
+				{
+					ctime = value;
+				}
+			}
+
+			public long? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string FileName
+			{
+				get
+				{
+					return fileName;
+				}
+				set	
+				{
+					fileName = value;
+				}
+			}
+
+			public long? RecallTime
+			{
+				get
+				{
+					return recallTime;
+				}
+				set	
+				{
+					recallTime = value;
 				}
 			}
 		}

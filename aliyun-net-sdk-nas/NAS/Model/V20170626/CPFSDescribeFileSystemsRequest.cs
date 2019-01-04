@@ -17,44 +17,38 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.NAS.Transform;
+using Aliyun.Acs.NAS.Transform.V20170626;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
 {
-	public class DescribeRegionsResponse : AcsResponse
-	{
+    public class CPFSDescribeFileSystemsRequest : RpcAcsRequest<CPFSDescribeFileSystemsResponse>
+    {
+        public CPFSDescribeFileSystemsRequest()
+            : base("NAS", "2017-06-26", "CPFSDescribeFileSystems", "nas", "openAPI")
+        {
+        }
 
-		private string requestId;
-
-		private int? totalCount;
+		private string fsId;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private List<DescribeRegions_Region> regions;
-
-		public string RequestId
+		public string FsId
 		{
 			get
 			{
-				return requestId;
+				return fsId;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
+				fsId = value;
+				DictionaryUtil.Add(QueryParameters, "FsId", value);
 			}
 		}
 
@@ -67,6 +61,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -79,65 +74,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public List<DescribeRegions_Region> Regions
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return regions;
-			}
-			set	
-			{
-				regions = value;
-			}
+			return false;
 		}
 
-		public class DescribeRegions_Region
-		{
-
-			private string regionId;
-
-			private string localName;
-
-			private string regionEndpoint;
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string LocalName
-			{
-				get
-				{
-					return localName;
-				}
-				set	
-				{
-					localName = value;
-				}
-			}
-
-			public string RegionEndpoint
-			{
-				get
-				{
-					return regionEndpoint;
-				}
-				set	
-				{
-					regionEndpoint = value;
-				}
-			}
-		}
-	}
+        public override CPFSDescribeFileSystemsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        {
+            return CPFSDescribeFileSystemsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }
