@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class FindSimilarFacesRequest : RpcAcsRequest<FindSimilarFacesResponse>
     {
         public FindSimilarFacesRequest()
-            : base("imm", "2017-09-06", "FindSimilarFaces", "2017-09-06", "openAPI")
+            : base("imm", "2017-09-06", "FindSimilarFaces", "imm", "openAPI")
         {
         }
 

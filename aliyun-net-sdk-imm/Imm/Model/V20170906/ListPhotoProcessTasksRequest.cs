@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class ListPhotoProcessTasksRequest : RpcAcsRequest<ListPhotoProcessTasksResponse>
     {
         public ListPhotoProcessTasksRequest()
-            : base("imm", "2017-09-06", "ListPhotoProcessTasks", "2017-09-06", "openAPI")
+            : base("imm", "2017-09-06", "ListPhotoProcessTasks", "imm", "openAPI")
         {
         }
 

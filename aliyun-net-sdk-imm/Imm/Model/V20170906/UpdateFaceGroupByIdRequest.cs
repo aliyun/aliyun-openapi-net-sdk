@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class UpdateFaceGroupByIdRequest : RpcAcsRequest<UpdateFaceGroupByIdResponse>
     {
         public UpdateFaceGroupByIdRequest()
-            : base("imm", "2017-09-06", "UpdateFaceGroupById", "2017-09-06", "openAPI")
+            : base("imm", "2017-09-06", "UpdateFaceGroupById", "imm", "openAPI")
         {
         }
 

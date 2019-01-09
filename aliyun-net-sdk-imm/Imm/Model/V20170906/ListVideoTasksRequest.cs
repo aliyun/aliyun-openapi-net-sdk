@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class ListVideoTasksRequest : RpcAcsRequest<ListVideoTasksResponse>
     {
         public ListVideoTasksRequest()
-            : base("imm", "2017-09-06", "ListVideoTasks", "2017-09-06", "openAPI")
+            : base("imm", "2017-09-06", "ListVideoTasks", "imm", "openAPI")
         {
         }
 

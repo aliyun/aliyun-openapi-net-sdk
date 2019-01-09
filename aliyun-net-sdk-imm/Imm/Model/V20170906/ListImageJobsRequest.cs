@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class ListImageJobsRequest : RpcAcsRequest<ListImageJobsResponse>
     {
         public ListImageJobsRequest()
-            : base("imm", "2017-09-06", "ListImageJobs", "2017-09-06", "openAPI")
+            : base("imm", "2017-09-06", "ListImageJobs", "imm", "openAPI")
         {
         }
 

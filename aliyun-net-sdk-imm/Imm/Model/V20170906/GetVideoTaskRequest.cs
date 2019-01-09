@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class GetVideoTaskRequest : RpcAcsRequest<GetVideoTaskResponse>
     {
         public GetVideoTaskRequest()
-            : base("imm", "2017-09-06", "GetVideoTask", "2017-09-06", "openAPI")
+            : base("imm", "2017-09-06", "GetVideoTask", "imm", "openAPI")
         {
         }
 

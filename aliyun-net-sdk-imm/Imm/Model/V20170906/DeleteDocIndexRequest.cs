@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class DeleteDocIndexRequest : RpcAcsRequest<DeleteDocIndexResponse>
     {
         public DeleteDocIndexRequest()
-            : base("imm", "2017-09-06", "DeleteDocIndex", "2017-09-06", "openAPI")
+            : base("imm", "2017-09-06", "DeleteDocIndex", "imm", "openAPI")
         {
         }
 

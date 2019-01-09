@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class ConvertOfficeFormatRequest : RpcAcsRequest<ConvertOfficeFormatResponse>
     {
         public ConvertOfficeFormatRequest()
-            : base("imm", "2017-09-06", "ConvertOfficeFormat", "2017-09-06", "openAPI")
+            : base("imm", "2017-09-06", "ConvertOfficeFormat", "imm", "openAPI")
         {
         }
 
