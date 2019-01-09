@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class DeleteOfficeConversionTaskRequest : RpcAcsRequest<DeleteOfficeConversionTaskResponse>
     {
         public DeleteOfficeConversionTaskRequest()
-            : base("imm", "2017-09-06", "DeleteOfficeConversionTask", "imm", "openAPI")
+            : base("imm", "2017-09-06", "DeleteOfficeConversionTask", "2017-09-06", "openAPI")
         {
         }
 

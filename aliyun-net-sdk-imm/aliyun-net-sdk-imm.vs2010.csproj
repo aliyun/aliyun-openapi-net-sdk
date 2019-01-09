@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{b0fc656e-2fa1-4c16-9dc1-97d99be4e528}</ProjectGuid>
+    <ProjectGuid>{5fbc7b51-549b-4e97-a240-525b254c8eab}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -48,6 +48,7 @@
 	<Compile Include="Imm\Model\V20170906\IndexFaceResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListImageJobsRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectImageCelebrityResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\FindImagesByTagNamesRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GetSetResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CompareImageFacesResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\DeletePornBatchDetectJobResponse.cs" />
@@ -61,8 +62,10 @@
 	<Compile Include="Imm\Model\V20170906\ListVideoTasksRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GetPhotoProcessTaskRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteDocIndexResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\FindSimilarFacesRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceSearchGroupUsersRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteFaceSearchImageByIdRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\FindImagesRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GetFaceSearchImageRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\SearchFaceResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateSetResponse.cs" />
@@ -98,6 +101,7 @@
 	<Compile Include="Imm\Model\V20170906\DeleteVideoTaskRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateDeleteFaceSetJobRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteProjectResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\FindImagesResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetFaceSetResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateOfficeConversionTaskResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetFaceDetailResponse.cs" />
@@ -202,6 +206,7 @@
 	<Compile Include="Imm\Model\V20170906\CreateVideoAnalyseTaskRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteTagSetResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\DeletePhotoProcessTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\FindImagesByTagNamesResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectImageFacesResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteSetRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\ConvertOfficeFormatRequest.cs" />
@@ -237,6 +242,7 @@
 	<Compile Include="Imm\Model\V20170906\UpdateSetRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectImageTagsResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CompareFaceResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\FindSimilarFacesResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceGroupPhotosRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectTagRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\ListSetsRequest.cs" />
@@ -290,6 +296,7 @@
 	<Compile Include="Imm\Transform\V20170906\GetFaceDetailResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DeleteFaceSearchImageByIdResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\PutProjectResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\FindSimilarFacesResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetFaceSearchGroupResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\ListFaceSetsResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DeleteFaceJobResponseUnmarshaller.cs" />
@@ -298,6 +305,7 @@
 	<Compile Include="Imm\Transform\V20170906\DeleteVideoTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetSetResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetFaceSearchImageResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\FindImagesByTagNamesResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\UpdateDocIndexMetaResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\ListPhotoProcessTasksResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DeleteImageResponseUnmarshaller.cs" />
@@ -326,6 +334,7 @@
 	<Compile Include="Imm\Transform\V20170906\CreateDocIndexTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DetectFaceResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetFaceSetDetailResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\FindImagesResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CompareImageFacesResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateGroupFacesJobResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DetectLogoResponseUnmarshaller.cs" />

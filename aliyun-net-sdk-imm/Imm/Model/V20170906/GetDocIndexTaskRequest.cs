@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class GetDocIndexTaskRequest : RpcAcsRequest<GetDocIndexTaskResponse>
     {
         public GetDocIndexTaskRequest()
-            : base("imm", "2017-09-06", "GetDocIndexTask", "imm", "openAPI")
+            : base("imm", "2017-09-06", "GetDocIndexTask", "2017-09-06", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class ListFaceGroupsRequest : RpcAcsRequest<ListFaceGroupsResponse>
     {
         public ListFaceGroupsRequest()
-            : base("imm", "2017-09-06", "ListFaceGroups", "imm", "openAPI")
+            : base("imm", "2017-09-06", "ListFaceGroups", "2017-09-06", "openAPI")
         {
         }
 

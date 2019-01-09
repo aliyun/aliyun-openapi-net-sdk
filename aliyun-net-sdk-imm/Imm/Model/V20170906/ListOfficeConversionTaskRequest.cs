@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class ListOfficeConversionTaskRequest : RpcAcsRequest<ListOfficeConversionTaskResponse>
     {
         public ListOfficeConversionTaskRequest()
-            : base("imm", "2017-09-06", "ListOfficeConversionTask", "imm", "openAPI")
+            : base("imm", "2017-09-06", "ListOfficeConversionTask", "2017-09-06", "openAPI")
         {
         }
 

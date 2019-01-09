@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class SearchImagesRequest : RpcAcsRequest<SearchImagesResponse>
+    public class FindImagesRequest : RpcAcsRequest<FindImagesResponse>
     {
-        public SearchImagesRequest()
-            : base("imm", "2017-09-06", "SearchImages", "2017-09-06", "openAPI")
+        public FindImagesRequest()
+            : base("imm", "2017-09-06", "FindImages", "2017-09-06", "openAPI")
         {
         }
 
@@ -353,9 +353,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override SearchImagesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override FindImagesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SearchImagesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FindImagesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

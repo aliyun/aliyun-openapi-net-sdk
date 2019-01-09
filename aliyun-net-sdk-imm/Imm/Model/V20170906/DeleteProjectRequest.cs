@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class DeleteProjectRequest : RpcAcsRequest<DeleteProjectResponse>
     {
         public DeleteProjectRequest()
-            : base("imm", "2017-09-06", "DeleteProject", "imm", "openAPI")
+            : base("imm", "2017-09-06", "DeleteProject", "2017-09-06", "openAPI")
         {
         }
 

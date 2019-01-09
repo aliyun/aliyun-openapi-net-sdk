@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class SearchImagesByTagNamesRequest : RpcAcsRequest<SearchImagesByTagNamesResponse>
     {
         public SearchImagesByTagNamesRequest()
-            : base("imm", "2017-09-06", "SearchImagesByTagNames", "imm", "openAPI")
+            : base("imm", "2017-09-06", "SearchImagesByTagNames", "2017-09-06", "openAPI")
         {
         }
 

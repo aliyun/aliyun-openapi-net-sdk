@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class UpdateSetRequest : RpcAcsRequest<UpdateSetResponse>
     {
         public UpdateSetRequest()
-            : base("imm", "2017-09-06", "UpdateSet", "imm", "openAPI")
+            : base("imm", "2017-09-06", "UpdateSet", "2017-09-06", "openAPI")
         {
         }
 

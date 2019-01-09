@@ -26,14 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class DeleteImageRequest : RpcAcsRequest<DeleteImageResponse>
+    public class FindImagesByTagNamesRequest : RpcAcsRequest<FindImagesByTagNamesResponse>
     {
-        public DeleteImageRequest()
-            : base("imm", "2017-09-06", "DeleteImage", "2017-09-06", "openAPI")
+        public FindImagesByTagNamesRequest()
+            : base("imm", "2017-09-06", "FindImagesByTagNames", "2017-09-06", "openAPI")
         {
         }
 
-		private string imageUri;
+		private string marker;
 
 		private string action;
 
@@ -41,18 +41,20 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string setId;
 
+		private string tagNames;
+
 		private string accessKeyId;
 
-		public string ImageUri
+		public string Marker
 		{
 			get
 			{
-				return imageUri;
+				return marker;
 			}
 			set	
 			{
-				imageUri = value;
-				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+				marker = value;
+				DictionaryUtil.Add(QueryParameters, "Marker", value);
 			}
 		}
 
@@ -95,6 +97,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string TagNames
+		{
+			get
+			{
+				return tagNames;
+			}
+			set	
+			{
+				tagNames = value;
+				DictionaryUtil.Add(QueryParameters, "TagNames", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -113,9 +128,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override DeleteImageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override FindImagesByTagNamesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DeleteImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FindImagesByTagNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

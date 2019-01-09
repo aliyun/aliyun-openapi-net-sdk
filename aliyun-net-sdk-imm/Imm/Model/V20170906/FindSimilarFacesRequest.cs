@@ -26,20 +26,24 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class DeleteImageRequest : RpcAcsRequest<DeleteImageResponse>
+    public class FindSimilarFacesRequest : RpcAcsRequest<FindSimilarFacesResponse>
     {
-        public DeleteImageRequest()
-            : base("imm", "2017-09-06", "DeleteImage", "2017-09-06", "openAPI")
+        public FindSimilarFacesRequest()
+            : base("imm", "2017-09-06", "FindSimilarFaces", "2017-09-06", "openAPI")
         {
         }
 
 		private string imageUri;
+
+		private int? limit;
 
 		private string action;
 
 		private string project;
 
 		private string setId;
+
+		private string faceId;
 
 		private string accessKeyId;
 
@@ -53,6 +57,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				imageUri = value;
 				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+			}
+		}
+
+		public int? Limit
+		{
+			get
+			{
+				return limit;
+			}
+			set	
+			{
+				limit = value;
+				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
 			}
 		}
 
@@ -95,6 +112,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string FaceId
+		{
+			get
+			{
+				return faceId;
+			}
+			set	
+			{
+				faceId = value;
+				DictionaryUtil.Add(QueryParameters, "FaceId", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -113,9 +143,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override DeleteImageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override FindSimilarFacesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DeleteImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FindSimilarFacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

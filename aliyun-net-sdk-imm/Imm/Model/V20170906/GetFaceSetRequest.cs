@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class GetFaceSetRequest : RpcAcsRequest<GetFaceSetResponse>
     {
         public GetFaceSetRequest()
-            : base("imm", "2017-09-06", "GetFaceSet", "imm", "openAPI")
+            : base("imm", "2017-09-06", "GetFaceSet", "2017-09-06", "openAPI")
         {
         }
 

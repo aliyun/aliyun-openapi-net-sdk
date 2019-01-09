@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class ListTagNamesRequest : RpcAcsRequest<ListTagNamesResponse>
     {
         public ListTagNamesRequest()
-            : base("imm", "2017-09-06", "ListTagNames", "imm", "openAPI")
+            : base("imm", "2017-09-06", "ListTagNames", "2017-09-06", "openAPI")
         {
         }
 

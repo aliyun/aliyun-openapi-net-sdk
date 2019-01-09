@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class ListPornBatchDetectJobsRequest : RpcAcsRequest<ListPornBatchDetectJobsResponse>
     {
         public ListPornBatchDetectJobsRequest()
-            : base("imm", "2017-09-06", "ListPornBatchDetectJobs", "imm", "openAPI")
+            : base("imm", "2017-09-06", "ListPornBatchDetectJobs", "2017-09-06", "openAPI")
         {
         }
 

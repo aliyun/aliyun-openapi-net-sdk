@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class CompareImageFacesRequest : RpcAcsRequest<CompareImageFacesResponse>
     {
         public CompareImageFacesRequest()
-            : base("imm", "2017-09-06", "CompareImageFaces", "imm", "openAPI")
+            : base("imm", "2017-09-06", "CompareImageFaces", "2017-09-06", "openAPI")
         {
         }
 

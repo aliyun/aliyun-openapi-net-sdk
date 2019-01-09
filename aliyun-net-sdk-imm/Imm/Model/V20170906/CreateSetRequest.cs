@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class CreateSetRequest : RpcAcsRequest<CreateSetResponse>
     {
         public CreateSetRequest()
-            : base("imm", "2017-09-06", "CreateSet", "imm", "openAPI")
+            : base("imm", "2017-09-06", "CreateSet", "2017-09-06", "openAPI")
         {
         }
 

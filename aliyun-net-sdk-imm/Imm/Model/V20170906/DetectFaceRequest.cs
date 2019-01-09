@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class DetectFaceRequest : RpcAcsRequest<DetectFaceResponse>
     {
         public DetectFaceRequest()
-            : base("imm", "2017-09-06", "DetectFace", "imm", "openAPI")
+            : base("imm", "2017-09-06", "DetectFace", "2017-09-06", "openAPI")
         {
         }
 

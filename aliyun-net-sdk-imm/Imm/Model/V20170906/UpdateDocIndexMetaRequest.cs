@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class UpdateDocIndexMetaRequest : RpcAcsRequest<UpdateDocIndexMetaResponse>
     {
         public UpdateDocIndexMetaRequest()
-            : base("imm", "2017-09-06", "UpdateDocIndexMeta", "imm", "openAPI")
+            : base("imm", "2017-09-06", "UpdateDocIndexMeta", "2017-09-06", "openAPI")
         {
         }
 

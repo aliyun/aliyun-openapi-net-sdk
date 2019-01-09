@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class DeleteTagByNameRequest : RpcAcsRequest<DeleteTagByNameResponse>
     {
         public DeleteTagByNameRequest()
-            : base("imm", "2017-09-06", "DeleteTagByName", "imm", "openAPI")
+            : base("imm", "2017-09-06", "DeleteTagByName", "2017-09-06", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class IndexFaceRequest : RpcAcsRequest<IndexFaceResponse>
     {
         public IndexFaceRequest()
-            : base("imm", "2017-09-06", "IndexFace", "imm", "openAPI")
+            : base("imm", "2017-09-06", "IndexFace", "2017-09-06", "openAPI")
         {
         }
 

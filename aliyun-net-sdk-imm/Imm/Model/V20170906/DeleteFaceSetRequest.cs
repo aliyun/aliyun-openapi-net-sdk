@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class DeleteFaceSetRequest : RpcAcsRequest<DeleteFaceSetResponse>
     {
         public DeleteFaceSetRequest()
-            : base("imm", "2017-09-06", "DeleteFaceSet", "imm", "openAPI")
+            : base("imm", "2017-09-06", "DeleteFaceSet", "2017-09-06", "openAPI")
         {
         }
 

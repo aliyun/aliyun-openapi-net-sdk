@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class DeleteVideoRequest : RpcAcsRequest<DeleteVideoResponse>
     {
         public DeleteVideoRequest()
-            : base("imm", "2017-09-06", "DeleteVideo", "imm", "openAPI")
+            : base("imm", "2017-09-06", "DeleteVideo", "2017-09-06", "openAPI")
         {
         }
 

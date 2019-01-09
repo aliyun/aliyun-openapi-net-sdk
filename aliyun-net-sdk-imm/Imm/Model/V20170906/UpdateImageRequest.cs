@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class UpdateImageRequest : RpcAcsRequest<UpdateImageResponse>
     {
         public UpdateImageRequest()
-            : base("imm", "2017-09-06", "UpdateImage", "imm", "openAPI")
+            : base("imm", "2017-09-06", "UpdateImage", "2017-09-06", "openAPI")
         {
         }
 

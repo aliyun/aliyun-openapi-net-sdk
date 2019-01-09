@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class ListTagJobsRequest : RpcAcsRequest<ListTagJobsResponse>
     {
         public ListTagJobsRequest()
-            : base("imm", "2017-09-06", "ListTagJobs", "imm", "openAPI")
+            : base("imm", "2017-09-06", "ListTagJobs", "2017-09-06", "openAPI")
         {
         }
 

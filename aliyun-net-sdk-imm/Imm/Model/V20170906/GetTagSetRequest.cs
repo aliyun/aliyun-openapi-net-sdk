@@ -29,7 +29,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class GetTagSetRequest : RpcAcsRequest<GetTagSetResponse>
     {
         public GetTagSetRequest()
-            : base("imm", "2017-09-06", "GetTagSet", "imm", "openAPI")
+            : base("imm", "2017-09-06", "GetTagSet", "2017-09-06", "openAPI")
         {
         }
 
