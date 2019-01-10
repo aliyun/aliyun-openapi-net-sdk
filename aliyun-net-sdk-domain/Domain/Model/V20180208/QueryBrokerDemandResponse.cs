@@ -137,6 +137,8 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 
 			private string bargainSellerMobile;
 
+			private float? servicePayPrice;
+
 			public string BizId
 			{
 				get
@@ -290,6 +292,18 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 				set	
 				{
 					bargainSellerMobile = value;
+				}
+			}
+
+			public float? ServicePayPrice
+			{
+				get
+				{
+					return servicePayPrice;
+				}
+				set	
+				{
+					servicePayPrice = value;
 				}
 			}
 		}

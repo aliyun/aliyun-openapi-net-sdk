@@ -39,8 +39,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string domainName;
 
-		private string userClientIp;
-
 		private string feeCommand;
 
 		private string lang;
@@ -81,19 +79,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
