@@ -73,6 +73,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string tgtType;
 
+		private bool? hidecomments;
+
 		private bool? fitToPagesTall;
 
 		private string srcUri;
@@ -338,6 +340,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				tgtType = value;
 				DictionaryUtil.Add(QueryParameters, "TgtType", value);
+			}
+		}
+
+		public bool? Hidecomments
+		{
+			get
+			{
+				return hidecomments;
+			}
+			set	
+			{
+				hidecomments = value;
+				DictionaryUtil.Add(QueryParameters, "Hidecomments", value.ToString());
 			}
 		}
 

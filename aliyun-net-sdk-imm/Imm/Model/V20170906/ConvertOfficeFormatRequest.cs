@@ -63,6 +63,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private bool? fitToPagesWide;
 
+		private bool? hidecomments;
+
 		private string tgtFilePrefix;
 
 		private string action;
@@ -267,6 +269,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				fitToPagesWide = value;
 				DictionaryUtil.Add(QueryParameters, "FitToPagesWide", value.ToString());
+			}
+		}
+
+		public bool? Hidecomments
+		{
+			get
+			{
+				return hidecomments;
+			}
+			set	
+			{
+				hidecomments = value;
+				DictionaryUtil.Add(QueryParameters, "Hidecomments", value.ToString());
 			}
 		}
 
