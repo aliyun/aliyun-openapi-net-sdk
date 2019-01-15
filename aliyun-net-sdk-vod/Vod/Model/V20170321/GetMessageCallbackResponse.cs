@@ -67,6 +67,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string authKey;
 
+			private string mnsEndpoint;
+
+			private string mnsQueueName;
+
 			public string CallbackType
 			{
 				get
@@ -136,6 +140,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					authKey = value;
+				}
+			}
+
+			public string MnsEndpoint
+			{
+				get
+				{
+					return mnsEndpoint;
+				}
+				set	
+				{
+					mnsEndpoint = value;
+				}
+			}
+
+			public string MnsQueueName
+			{
+				get
+				{
+					return mnsQueueName;
+				}
+				set	
+				{
+					mnsQueueName = value;
 				}
 			}
 		}

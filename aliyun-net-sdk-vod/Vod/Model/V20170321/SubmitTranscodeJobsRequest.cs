@@ -47,6 +47,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? ownerId;
 
+		private string priority;
+
 		private string encryptConfig;
 
 		private string accessKeyId;
@@ -141,6 +143,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value);
 			}
 		}
 

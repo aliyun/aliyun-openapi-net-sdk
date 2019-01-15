@@ -33,15 +33,28 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
+		private string startTime;
+
 		private string action;
 
 		private string endTime;
 
 		private string videoId;
 
-		private string startTime;
-
 		private long? ownerId;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
 
 		public string Action
 		{
@@ -79,19 +92,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				videoId = value;
 				DictionaryUtil.Add(QueryParameters, "VideoId", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
