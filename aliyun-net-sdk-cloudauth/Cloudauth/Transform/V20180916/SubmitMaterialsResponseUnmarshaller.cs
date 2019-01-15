@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 			verifyStatus.TrustedScore = context.FloatValue("SubmitMaterials.Data.VerifyStatus.TrustedScore");
 			verifyStatus.SimilarityScore = context.FloatValue("SubmitMaterials.Data.VerifyStatus.SimilarityScore");
 			verifyStatus.AuditConclusions = context.StringValue("SubmitMaterials.Data.VerifyStatus.AuditConclusions");
+			verifyStatus.AuthorityComparisonScore = context.FloatValue("SubmitMaterials.Data.VerifyStatus.AuthorityComparisonScore");
 			data.VerifyStatus = verifyStatus;
 			submitMaterialsResponse.Data = data;
         

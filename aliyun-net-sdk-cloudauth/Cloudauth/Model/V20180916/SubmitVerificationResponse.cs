@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
-	public class GetStatusResponse : AcsResponse
+	public class SubmitVerificationResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 
 		private string message;
 
-		private GetStatus_Data data;
+		private SubmitVerification_Data data;
 
 		public string RequestId
 		{
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-		public GetStatus_Data Data
+		public SubmitVerification_Data Data
 		{
 			get
 			{
@@ -94,76 +94,94 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-		public class GetStatus_Data
+		public class SubmitVerification_Data
 		{
 
-			private int? statusCode;
+			private SubmitVerification_VerifyStatus verifyStatus;
 
-			private float? trustedScore;
-
-			private float? similarityScore;
-
-			private string auditConclusions;
-
-			private float? authorityComparisonScore;
-
-			public int? StatusCode
+			public SubmitVerification_VerifyStatus VerifyStatus
 			{
 				get
 				{
-					return statusCode;
+					return verifyStatus;
 				}
 				set	
 				{
-					statusCode = value;
+					verifyStatus = value;
 				}
 			}
 
-			public float? TrustedScore
+			public class SubmitVerification_VerifyStatus
 			{
-				get
-				{
-					return trustedScore;
-				}
-				set	
-				{
-					trustedScore = value;
-				}
-			}
 
-			public float? SimilarityScore
-			{
-				get
-				{
-					return similarityScore;
-				}
-				set	
-				{
-					similarityScore = value;
-				}
-			}
+				private int? statusCode;
 
-			public string AuditConclusions
-			{
-				get
-				{
-					return auditConclusions;
-				}
-				set	
-				{
-					auditConclusions = value;
-				}
-			}
+				private float? trustedScore;
 
-			public float? AuthorityComparisonScore
-			{
-				get
+				private float? similarityScore;
+
+				private string auditConclusions;
+
+				private float? authorityComparisonScore;
+
+				public int? StatusCode
 				{
-					return authorityComparisonScore;
+					get
+					{
+						return statusCode;
+					}
+					set	
+					{
+						statusCode = value;
+					}
 				}
-				set	
+
+				public float? TrustedScore
 				{
-					authorityComparisonScore = value;
+					get
+					{
+						return trustedScore;
+					}
+					set	
+					{
+						trustedScore = value;
+					}
+				}
+
+				public float? SimilarityScore
+				{
+					get
+					{
+						return similarityScore;
+					}
+					set	
+					{
+						similarityScore = value;
+					}
+				}
+
+				public string AuditConclusions
+				{
+					get
+					{
+						return auditConclusions;
+					}
+					set	
+					{
+						auditConclusions = value;
+					}
+				}
+
+				public float? AuthorityComparisonScore
+				{
+					get
+					{
+						return authorityComparisonScore;
+					}
+					set	
+					{
+						authorityComparisonScore = value;
+					}
 				}
 			}
 		}

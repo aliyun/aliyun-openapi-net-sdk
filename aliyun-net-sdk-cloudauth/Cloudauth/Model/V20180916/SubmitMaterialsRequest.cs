@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
     public class SubmitMaterialsRequest : RpcAcsRequest<SubmitMaterialsResponse>
     {
         public SubmitMaterialsRequest()
-            : base("Cloudauth", "2018-09-16", "SubmitMaterials", "cloudauth", "openAPI")
+            : base("Cloudauth", "2018-09-16", "SubmitMaterials", "CloudAuth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
