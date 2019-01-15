@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class BatchCheckDeviceNamesResponse : AcsResponse
+	public class QueryDeviceGroupByTagsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,7 +32,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private BatchCheckDeviceNames_Data data;
+		private int? page;
+
+		private int? pageSize;
+
+		private int? pageCount;
+
+		private int? total;
+
+		private List<QueryDeviceGroupByTags_DeviceGroup> data;
 
 		public string RequestId
 		{
@@ -82,7 +90,55 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public BatchCheckDeviceNames_Data Data
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? PageCount
+		{
+			get
+			{
+				return pageCount;
+			}
+			set	
+			{
+				pageCount = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
+			}
+		}
+
+		public List<QueryDeviceGroupByTags_DeviceGroup> Data
 		{
 			get
 			{
@@ -94,34 +150,34 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class BatchCheckDeviceNames_Data
+		public class QueryDeviceGroupByTags_DeviceGroup
 		{
 
-			private long? applyId;
+			private string groupId;
 
-			private List<string> invalidDeviceNameList;
+			private string groupName;
 
-			public long? ApplyId
+			public string GroupId
 			{
 				get
 				{
-					return applyId;
+					return groupId;
 				}
 				set	
 				{
-					applyId = value;
+					groupId = value;
 				}
 			}
 
-			public List<string> InvalidDeviceNameList
+			public string GroupName
 			{
 				get
 				{
-					return invalidDeviceNameList;
+					return groupName;
 				}
 				set	
 				{
-					invalidDeviceNameList = value;
+					groupName = value;
 				}
 			}
 		}

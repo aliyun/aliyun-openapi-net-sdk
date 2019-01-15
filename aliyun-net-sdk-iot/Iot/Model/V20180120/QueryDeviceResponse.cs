@@ -169,6 +169,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string gmtModified;
 
+			private string utcCreate;
+
+			private string utcModified;
+
 			public string DeviceId
 			{
 				get
@@ -262,6 +266,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					gmtModified = value;
+				}
+			}
+
+			public string UtcCreate
+			{
+				get
+				{
+					return utcCreate;
+				}
+				set	
+				{
+					utcCreate = value;
+				}
+			}
+
+			public string UtcModified
+			{
+				get
+				{
+					return utcModified;
+				}
+				set	
+				{
+					utcModified = value;
 				}
 			}
 		}

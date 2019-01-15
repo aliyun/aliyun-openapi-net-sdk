@@ -26,66 +26,80 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class UpdateRecordPlanRequest : RpcAcsRequest<UpdateRecordPlanResponse>
+    public class DeleteProductTagsRequest : RpcAcsRequest<DeleteProductTagsResponse>
     {
-        public UpdateRecordPlanRequest()
-            : base("Iot", "2018-01-20", "UpdateRecordPlan")
+        public DeleteProductTagsRequest()
+            : base("Iot", "2018-01-20", "DeleteProductTags")
         {
         }
 
-		private string planId;
+		private string iotInstanceId;
 
-		private string name;
+		private List<string> productTagKeys;
 
-		private string templateId;
+		private string productKey;
 
-		public string PlanId
+		private string accessKeyId;
+
+		public string IotInstanceId
 		{
 			get
 			{
-				return planId;
+				return iotInstanceId;
 			}
 			set	
 			{
-				planId = value;
-				DictionaryUtil.Add(QueryParameters, "PlanId", value);
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
-		public string Name
+		public List<string> ProductTagKeys
 		{
 			get
 			{
-				return name;
+				return productTagKeys;
 			}
-			set	
+
+			set
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				productTagKeys = value;
+				for (int i = 0; i < productTagKeys.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ProductTagKey." + (i + 1) , productTagKeys[i]);
+				}
 			}
 		}
 
-		public string TemplateId
+		public string ProductKey
 		{
 			get
 			{
-				return templateId;
+				return productKey;
 			}
 			set	
 			{
-				templateId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string AccessKeyId
 		{
-			return false;
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
 		}
 
-        public override UpdateRecordPlanResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteProductTagsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return UpdateRecordPlanResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteProductTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

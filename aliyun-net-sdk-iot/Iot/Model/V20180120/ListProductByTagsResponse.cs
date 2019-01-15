@@ -21,18 +21,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class BatchCheckDeviceNamesResponse : AcsResponse
+	public class ListProductByTagsResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
 		private string errorMessage;
 
-		private BatchCheckDeviceNames_Data data;
+		private string code;
+
+		private List<ListProductByTags_ProductInfo> productInfos;
 
 		public string RequestId
 		{
@@ -58,18 +58,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string ErrorMessage
 		{
 			get
@@ -82,46 +70,100 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public BatchCheckDeviceNames_Data Data
+		public string Code
 		{
 			get
 			{
-				return data;
+				return code;
 			}
 			set	
 			{
-				data = value;
+				code = value;
 			}
 		}
 
-		public class BatchCheckDeviceNames_Data
+		public List<ListProductByTags_ProductInfo> ProductInfos
+		{
+			get
+			{
+				return productInfos;
+			}
+			set	
+			{
+				productInfos = value;
+			}
+		}
+
+		public class ListProductByTags_ProductInfo
 		{
 
-			private long? applyId;
+			private string productName;
 
-			private List<string> invalidDeviceNameList;
+			private string productKey;
 
-			public long? ApplyId
+			private long? createTime;
+
+			private string description;
+
+			private int? nodeType;
+
+			public string ProductName
 			{
 				get
 				{
-					return applyId;
+					return productName;
 				}
 				set	
 				{
-					applyId = value;
+					productName = value;
 				}
 			}
 
-			public List<string> InvalidDeviceNameList
+			public string ProductKey
 			{
 				get
 				{
-					return invalidDeviceNameList;
+					return productKey;
 				}
 				set	
 				{
-					invalidDeviceNameList = value;
+					productKey = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public int? NodeType
+			{
+				get
+				{
+					return nodeType;
+				}
+				set	
+				{
+					nodeType = value;
 				}
 			}
 		}

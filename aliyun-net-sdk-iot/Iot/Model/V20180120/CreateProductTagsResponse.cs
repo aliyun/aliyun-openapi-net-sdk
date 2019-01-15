@@ -21,18 +21,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class BatchCheckDeviceNamesResponse : AcsResponse
+	public class CreateProductTagsResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
 		private string errorMessage;
 
-		private BatchCheckDeviceNames_Data data;
+		private string code;
+
+		private List<CreateProductTags_ProductTag> invalidProductTags;
 
 		public string RequestId
 		{
@@ -58,18 +58,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string ErrorMessage
 		{
 			get
@@ -82,46 +70,58 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public BatchCheckDeviceNames_Data Data
+		public string Code
 		{
 			get
 			{
-				return data;
+				return code;
 			}
 			set	
 			{
-				data = value;
+				code = value;
 			}
 		}
 
-		public class BatchCheckDeviceNames_Data
+		public List<CreateProductTags_ProductTag> InvalidProductTags
+		{
+			get
+			{
+				return invalidProductTags;
+			}
+			set	
+			{
+				invalidProductTags = value;
+			}
+		}
+
+		public class CreateProductTags_ProductTag
 		{
 
-			private long? applyId;
+			private string tagKey;
 
-			private List<string> invalidDeviceNameList;
+			private string tagValue;
 
-			public long? ApplyId
+			public string TagKey
 			{
 				get
 				{
-					return applyId;
+					return tagKey;
 				}
 				set	
 				{
-					applyId = value;
+					tagKey = value;
 				}
 			}
 
-			public List<string> InvalidDeviceNameList
+			public string TagValue
 			{
 				get
 				{
-					return invalidDeviceNameList;
+					return tagValue;
 				}
 				set	
 				{
-					invalidDeviceNameList = value;
+					tagValue = value;
 				}
 			}
 		}

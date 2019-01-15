@@ -23,19 +23,19 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class UpdateRecordPlanResponseUnmarshaller
+    public class DeleteProductTagsResponseUnmarshaller
     {
-        public static UpdateRecordPlanResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteProductTagsResponse Unmarshall(UnmarshallerContext context)
         {
-			UpdateRecordPlanResponse updateRecordPlanResponse = new UpdateRecordPlanResponse();
+			DeleteProductTagsResponse deleteProductTagsResponse = new DeleteProductTagsResponse();
 
-			updateRecordPlanResponse.HttpResponse = context.HttpResponse;
-			updateRecordPlanResponse.RequestId = context.StringValue("UpdateRecordPlan.RequestId");
-			updateRecordPlanResponse.Success = context.BooleanValue("UpdateRecordPlan.Success");
-			updateRecordPlanResponse.ErrorMessage = context.StringValue("UpdateRecordPlan.ErrorMessage");
-			updateRecordPlanResponse.Code = context.StringValue("UpdateRecordPlan.Code");
+			deleteProductTagsResponse.HttpResponse = context.HttpResponse;
+			deleteProductTagsResponse.RequestId = context.StringValue("DeleteProductTags.RequestId");
+			deleteProductTagsResponse.Success = context.BooleanValue("DeleteProductTags.Success");
+			deleteProductTagsResponse.ErrorMessage = context.StringValue("DeleteProductTags.ErrorMessage");
+			deleteProductTagsResponse.Code = context.StringValue("DeleteProductTags.Code");
         
-			return updateRecordPlanResponse;
+			return deleteProductTagsResponse;
         }
     }
 }

@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.ProtocolType = context.StringValue("QueryProduct.Data.ProtocolType");
 			data.ProductStatus = context.StringValue("QueryProduct.Data.ProductStatus");
 			data.Owner = context.BooleanValue("QueryProduct.Data.Owner");
+			data.NetType = context.IntegerValue("QueryProduct.Data.NetType");
 			queryProductResponse.Data = data;
         
 			return queryProductResponse;

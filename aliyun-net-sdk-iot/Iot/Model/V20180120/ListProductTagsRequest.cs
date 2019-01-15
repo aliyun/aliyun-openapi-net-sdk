@@ -17,67 +17,55 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot.Transform;
+using Aliyun.Acs.Iot.Transform.V20180120;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class UpdateRecordPlanResponse : AcsResponse
-	{
+    public class ListProductTagsRequest : RpcAcsRequest<ListProductTagsResponse>
+    {
+        public ListProductTagsRequest()
+            : base("Iot", "2018-01-20", "ListProductTags")
+        {
+        }
 
-		private string requestId;
+		private string productKey;
 
-		private bool? success;
+		private string accessKeyId;
 
-		private string errorMessage;
-
-		private string code;
-
-		public string RequestId
+		public string ProductKey
 		{
 			get
 			{
-				return requestId;
+				return productKey;
 			}
 			set	
 			{
-				requestId = value;
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-		public bool? Success
+		public string AccessKeyId
 		{
 			get
 			{
-				return success;
+				return accessKeyId;
 			}
 			set	
 			{
-				success = value;
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-	}
+        public override ListProductTagsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        {
+            return ListProductTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

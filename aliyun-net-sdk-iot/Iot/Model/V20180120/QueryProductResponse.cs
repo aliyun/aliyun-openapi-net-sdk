@@ -127,6 +127,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private bool? owner;
 
+			private int? netType;
+
 			public long? GmtCreate
 			{
 				get
@@ -304,6 +306,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					owner = value;
+				}
+			}
+
+			public int? NetType
+			{
+				get
+				{
+					return netType;
+				}
+				set	
+				{
+					netType = value;
 				}
 			}
 		}
