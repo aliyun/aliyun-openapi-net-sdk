@@ -2,6 +2,6 @@ language: csharp
 sudo: true
 solution: aliyun-net-sdk-core/aliyun-net-sdk-core.vs2017.sln
 mono: none
-dotnet: 2.1.502
+dotnet: 2.2
 script: 
   - cd aliyun-net-sdk-core/Tests/AuthTests/ && dotnet test 
