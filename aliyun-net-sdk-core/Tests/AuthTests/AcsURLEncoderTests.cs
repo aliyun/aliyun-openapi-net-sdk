@@ -1,3 +1,5 @@
+using System.Text;
+using System.Web;
 using Xunit;
 using Aliyun.Acs.Core.Auth;
 
@@ -8,8 +10,9 @@ namespace AuthTests
         [Fact]
         public void Encode()
         {
-            string source = AcsURLEncoder.Encode(" ♂:@#¥%&*（");
-            Assert.False(source.Contains("@"));
+            string encode = AcsURLEncoder.Encode(" ♂:@#¥%&*（");
+            string source = HttpUtility.UrlEncode(encode, Encoding.UTF8);
+            Assert.Equal(encode, source);
         }
     }
 }
