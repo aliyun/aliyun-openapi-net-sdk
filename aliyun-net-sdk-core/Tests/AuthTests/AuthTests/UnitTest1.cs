@@ -6,20 +6,14 @@ namespace AuthTests
     public class UnitTest1
     {
         [Fact]
-        public void PassingTest()
+        public void Test1()
         {
             Assert.Equal(4, Add(2, 2));
         }
 
-        [Fact]
-        public void FailingTest()
+        public int Add(int a, int b)
         {
-            Assert.Equal(5, Add(2, 3));
-        }
-
-        int Add(int x, int y)
-        {
-            return x + y;
+            return a + b;
         }
     }
 }
