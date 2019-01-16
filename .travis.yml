@@ -1,5 +1,6 @@
 language: csharp
 solution: aliyun-net-sdk-core/aliyun-net-sdk-core.vs2017.sln
-dotnet: 2.2.102
+dotnet: 2.2
 script: 
   - aliyun-net-sdk-core/Tests/test.sh
+
