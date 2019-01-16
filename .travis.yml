@@ -1,5 +1,5 @@
 language: csharp
+sudo: true
 solution: aliyun-net-sdk-core/aliyun-net-sdk-core.vs2017.sln
 script: 
   - aliyun-net-sdk-core/Tests/test.sh
-
