@@ -11,7 +11,7 @@ namespace AuthTests
         public void Encode()
         {
             string encode = AcsURLEncoder.Encode(" ♂:@#¥%&*（");
-            string source = HttpUtility.UrlEncode(encode, Encoding.UTF8);
+            string source = HttpUtility.UrlDecode(encode, Encoding.UTF8);
             Assert.Equal(encode, source);
         }
     }
