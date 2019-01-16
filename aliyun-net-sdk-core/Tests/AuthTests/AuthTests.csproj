@@ -13,4 +13,7 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\aliyun-net-sdk-core.vs2017.csproj" />
+  </ItemGroup>
 </Project>
