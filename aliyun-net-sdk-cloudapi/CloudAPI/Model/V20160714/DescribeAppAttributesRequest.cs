@@ -29,15 +29,49 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeAppAttributesRequest : RpcAcsRequest<DescribeAppAttributesResponse>
     {
         public DescribeAppAttributesRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeAppAttributes")
+            : base("CloudAPI", "2016-07-14", "DescribeAppAttributes", "apigateway", "openAPI")
         {
         }
 
+		private string appName;
+
+		private string securityToken;
+
 		private long? appId;
+
+		private int? pageSize;
+
+		private string action;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private string accessKeyId;
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
 
 		public long? AppId
 		{
@@ -49,6 +83,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -65,16 +125,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public int? PageSize
+		public string AccessKeyId
 		{
 			get
 			{
-				return pageSize;
+				return accessKeyId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

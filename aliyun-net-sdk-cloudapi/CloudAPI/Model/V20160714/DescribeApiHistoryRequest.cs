@@ -29,17 +29,49 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeApiHistoryRequest : RpcAcsRequest<DescribeApiHistoryResponse>
     {
         public DescribeApiHistoryRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeApiHistory")
+            : base("CloudAPI", "2016-07-14", "DescribeApiHistory", "apigateway", "openAPI")
         {
         }
 
+		private string stageName;
+
+		private string securityToken;
+
 		private string groupId;
+
+		private string action;
 
 		private string apiId;
 
-		private string stageName;
-
 		private string historyVersion;
+
+		private string accessKeyId;
+
+		public string StageName
+		{
+			get
+			{
+				return stageName;
+			}
+			set	
+			{
+				stageName = value;
+				DictionaryUtil.Add(QueryParameters, "StageName", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -51,6 +83,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -67,19 +112,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string StageName
-		{
-			get
-			{
-				return stageName;
-			}
-			set	
-			{
-				stageName = value;
-				DictionaryUtil.Add(QueryParameters, "StageName", value);
-			}
-		}
-
 		public string HistoryVersion
 		{
 			get
@@ -90,6 +122,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				historyVersion = value;
 				DictionaryUtil.Add(QueryParameters, "HistoryVersion", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

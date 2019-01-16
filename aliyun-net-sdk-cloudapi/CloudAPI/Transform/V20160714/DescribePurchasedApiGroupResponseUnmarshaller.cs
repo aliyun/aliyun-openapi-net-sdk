@@ -38,14 +38,14 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describePurchasedApiGroupResponse.RegionId = context.StringValue("DescribePurchasedApiGroup.RegionId");
 			describePurchasedApiGroupResponse.Status = context.StringValue("DescribePurchasedApiGroup.Status");
 
-			List<DescribePurchasedApiGroupResponse.DomainItem> domains = new List<DescribePurchasedApiGroupResponse.DomainItem>();
+			List<DescribePurchasedApiGroupResponse.DescribePurchasedApiGroup_DomainItem> describePurchasedApiGroupResponse_domains = new List<DescribePurchasedApiGroupResponse.DescribePurchasedApiGroup_DomainItem>();
 			for (int i = 0; i < context.Length("DescribePurchasedApiGroup.Domains.Length"); i++) {
-				DescribePurchasedApiGroupResponse.DomainItem domainItem = new DescribePurchasedApiGroupResponse.DomainItem();
+				DescribePurchasedApiGroupResponse.DescribePurchasedApiGroup_DomainItem domainItem = new DescribePurchasedApiGroupResponse.DescribePurchasedApiGroup_DomainItem();
 				domainItem.DomainName = context.StringValue("DescribePurchasedApiGroup.Domains["+ i +"].DomainName");
 
-				domains.Add(domainItem);
+				describePurchasedApiGroupResponse_domains.Add(domainItem);
 			}
-			describePurchasedApiGroupResponse.Domains = domains;
+			describePurchasedApiGroupResponse.Domains = describePurchasedApiGroupResponse_domains;
         
 			return describePurchasedApiGroupResponse;
         }

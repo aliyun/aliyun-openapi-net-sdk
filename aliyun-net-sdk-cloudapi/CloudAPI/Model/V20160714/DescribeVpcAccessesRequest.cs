@@ -29,13 +29,58 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeVpcAccessesRequest : RpcAcsRequest<DescribeVpcAccessesResponse>
     {
         public DescribeVpcAccessesRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeVpcAccesses")
+            : base("CloudAPI", "2016-07-14", "DescribeVpcAccesses", "apigateway", "openAPI")
         {
         }
 
-		private int? pageNumber;
+		private string securityToken;
 
 		private int? pageSize;
+
+		private string action;
+
+		private int? pageNumber;
+
+		private string accessKeyId;
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -50,16 +95,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public int? PageSize
+		public string AccessKeyId
 		{
 			get
 			{
-				return pageSize;
+				return accessKeyId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

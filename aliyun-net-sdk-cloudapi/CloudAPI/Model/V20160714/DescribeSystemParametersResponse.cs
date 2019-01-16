@@ -24,9 +24,23 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeSystemParametersResponse : AcsResponse
 	{
 
-		private List<SystemParamItem> systemParams;
+		private string requestId;
 
-		public List<SystemParamItem> SystemParams
+		private List<DescribeSystemParameters_SystemParamItem> systemParams;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeSystemParameters_SystemParamItem> SystemParams
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class SystemParamItem{
+		public class DescribeSystemParameters_SystemParamItem
+		{
 
 			private string paramName;
 

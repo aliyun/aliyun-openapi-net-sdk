@@ -24,7 +24,21 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class CreateAppResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private long? appId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? AppId
 		{

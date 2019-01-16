@@ -29,13 +29,45 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeDomainsResolutionRequest : RpcAcsRequest<DescribeDomainsResolutionResponse>
     {
         public DescribeDomainsResolutionRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeDomainsResolution")
+            : base("CloudAPI", "2016-07-14", "DescribeDomainsResolution", "apigateway", "openAPI")
         {
         }
 
-		private string groupId;
+		private string securityToken;
 
 		private string domainNames;
+
+		private string groupId;
+
+		private string action;
+
+		private string accessKeyId;
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DomainNames
+		{
+			get
+			{
+				return domainNames;
+			}
+			set	
+			{
+				domainNames = value;
+				DictionaryUtil.Add(QueryParameters, "DomainNames", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -50,16 +82,29 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string DomainNames
+		public string Action
 		{
 			get
 			{
-				return domainNames;
+				return action;
 			}
 			set	
 			{
-				domainNames = value;
-				DictionaryUtil.Add(QueryParameters, "DomainNames", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

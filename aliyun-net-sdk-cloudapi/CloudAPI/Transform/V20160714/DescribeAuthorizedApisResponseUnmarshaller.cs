@@ -35,23 +35,24 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeAuthorizedApisResponse.PageSize = context.IntegerValue("DescribeAuthorizedApis.PageSize");
 			describeAuthorizedApisResponse.PageNumber = context.IntegerValue("DescribeAuthorizedApis.PageNumber");
 
-			List<DescribeAuthorizedApisResponse.AuthorizedApi> authorizedApis = new List<DescribeAuthorizedApisResponse.AuthorizedApi>();
+			List<DescribeAuthorizedApisResponse.DescribeAuthorizedApis_AuthorizedApi> describeAuthorizedApisResponse_authorizedApis = new List<DescribeAuthorizedApisResponse.DescribeAuthorizedApis_AuthorizedApi>();
 			for (int i = 0; i < context.Length("DescribeAuthorizedApis.AuthorizedApis.Length"); i++) {
-				DescribeAuthorizedApisResponse.AuthorizedApi authorizedApi = new DescribeAuthorizedApisResponse.AuthorizedApi();
+				DescribeAuthorizedApisResponse.DescribeAuthorizedApis_AuthorizedApi authorizedApi = new DescribeAuthorizedApisResponse.DescribeAuthorizedApis_AuthorizedApi();
 				authorizedApi.RegionId = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].RegionId");
 				authorizedApi.GroupId = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].GroupId");
 				authorizedApi.GroupName = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].GroupName");
 				authorizedApi.StageName = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].StageName");
-				authorizedApi.Operator = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].Operator");
+				authorizedApi._Operator = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].Operator");
 				authorizedApi.ApiId = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].ApiId");
 				authorizedApi.ApiName = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].ApiName");
 				authorizedApi.AuthorizationSource = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].AuthorizationSource");
 				authorizedApi.Description = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].Description");
 				authorizedApi.AuthorizedTime = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].AuthorizedTime");
+				authorizedApi.AuthVaildTime = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].AuthVaildTime");
 
-				authorizedApis.Add(authorizedApi);
+				describeAuthorizedApisResponse_authorizedApis.Add(authorizedApi);
 			}
-			describeAuthorizedApisResponse.AuthorizedApis = authorizedApis;
+			describeAuthorizedApisResponse.AuthorizedApis = describeAuthorizedApisResponse_authorizedApis;
         
 			return describeAuthorizedApisResponse;
         }

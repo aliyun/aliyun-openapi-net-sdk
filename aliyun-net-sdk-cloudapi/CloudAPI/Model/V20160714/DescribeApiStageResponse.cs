@@ -24,6 +24,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeApiStageResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string groupId;
 
 		private string stageId;
@@ -36,7 +38,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string modifiedTime;
 
-		private List<VariableItem> variables;
+		private List<DescribeApiStage_VariableItem> variables;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string GroupId
 		{
@@ -110,7 +124,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<VariableItem> Variables
+		public List<DescribeApiStage_VariableItem> Variables
 		{
 			get
 			{
@@ -122,11 +136,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class VariableItem{
+		public class DescribeApiStage_VariableItem
+		{
 
 			private string variableName;
 
 			private string variableValue;
+
+			private bool? supportRoute;
+
+			private DescribeApiStage_StageRouteModel stageRouteModel;
 
 			public string VariableName
 			{
@@ -149,6 +168,178 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					variableValue = value;
+				}
+			}
+
+			public bool? SupportRoute
+			{
+				get
+				{
+					return supportRoute;
+				}
+				set	
+				{
+					supportRoute = value;
+				}
+			}
+
+			public DescribeApiStage_StageRouteModel StageRouteModel
+			{
+				get
+				{
+					return stageRouteModel;
+				}
+				set	
+				{
+					stageRouteModel = value;
+				}
+			}
+
+			public class DescribeApiStage_StageRouteModel
+			{
+
+				private string parameterCatalog;
+
+				private string serviceParameterName;
+
+				private string location;
+
+				private string parameterType;
+
+				private string routeMatchSymbol;
+
+				private List<DescribeApiStage_RouteRuleItem> routeRules;
+
+				public string ParameterCatalog
+				{
+					get
+					{
+						return parameterCatalog;
+					}
+					set	
+					{
+						parameterCatalog = value;
+					}
+				}
+
+				public string ServiceParameterName
+				{
+					get
+					{
+						return serviceParameterName;
+					}
+					set	
+					{
+						serviceParameterName = value;
+					}
+				}
+
+				public string Location
+				{
+					get
+					{
+						return location;
+					}
+					set	
+					{
+						location = value;
+					}
+				}
+
+				public string ParameterType
+				{
+					get
+					{
+						return parameterType;
+					}
+					set	
+					{
+						parameterType = value;
+					}
+				}
+
+				public string RouteMatchSymbol
+				{
+					get
+					{
+						return routeMatchSymbol;
+					}
+					set	
+					{
+						routeMatchSymbol = value;
+					}
+				}
+
+				public List<DescribeApiStage_RouteRuleItem> RouteRules
+				{
+					get
+					{
+						return routeRules;
+					}
+					set	
+					{
+						routeRules = value;
+					}
+				}
+
+				public class DescribeApiStage_RouteRuleItem
+				{
+
+					private long? maxValue;
+
+					private long? minValue;
+
+					private string conditionValue;
+
+					private string resultValue;
+
+					public long? MaxValue
+					{
+						get
+						{
+							return maxValue;
+						}
+						set	
+						{
+							maxValue = value;
+						}
+					}
+
+					public long? MinValue
+					{
+						get
+						{
+							return minValue;
+						}
+						set	
+						{
+							minValue = value;
+						}
+					}
+
+					public string ConditionValue
+					{
+						get
+						{
+							return conditionValue;
+						}
+						set	
+						{
+							conditionValue = value;
+						}
+					}
+
+					public string ResultValue
+					{
+						get
+						{
+							return resultValue;
+						}
+						set	
+						{
+							resultValue = value;
+						}
+					}
 				}
 			}
 		}

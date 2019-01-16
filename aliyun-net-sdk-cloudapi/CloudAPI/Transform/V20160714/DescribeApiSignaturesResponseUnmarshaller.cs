@@ -35,18 +35,18 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiSignaturesResponse.PageSize = context.IntegerValue("DescribeApiSignatures.PageSize");
 			describeApiSignaturesResponse.PageNumber = context.IntegerValue("DescribeApiSignatures.PageNumber");
 
-			List<DescribeApiSignaturesResponse.ApiSignatureItem> apiSignatures = new List<DescribeApiSignaturesResponse.ApiSignatureItem>();
+			List<DescribeApiSignaturesResponse.DescribeApiSignatures_ApiSignatureItem> describeApiSignaturesResponse_apiSignatures = new List<DescribeApiSignaturesResponse.DescribeApiSignatures_ApiSignatureItem>();
 			for (int i = 0; i < context.Length("DescribeApiSignatures.ApiSignatures.Length"); i++) {
-				DescribeApiSignaturesResponse.ApiSignatureItem apiSignatureItem = new DescribeApiSignaturesResponse.ApiSignatureItem();
+				DescribeApiSignaturesResponse.DescribeApiSignatures_ApiSignatureItem apiSignatureItem = new DescribeApiSignaturesResponse.DescribeApiSignatures_ApiSignatureItem();
 				apiSignatureItem.ApiId = context.StringValue("DescribeApiSignatures.ApiSignatures["+ i +"].ApiId");
 				apiSignatureItem.ApiName = context.StringValue("DescribeApiSignatures.ApiSignatures["+ i +"].ApiName");
 				apiSignatureItem.SignatureId = context.StringValue("DescribeApiSignatures.ApiSignatures["+ i +"].SignatureId");
 				apiSignatureItem.SignatureName = context.StringValue("DescribeApiSignatures.ApiSignatures["+ i +"].SignatureName");
 				apiSignatureItem.BoundTime = context.StringValue("DescribeApiSignatures.ApiSignatures["+ i +"].BoundTime");
 
-				apiSignatures.Add(apiSignatureItem);
+				describeApiSignaturesResponse_apiSignatures.Add(apiSignatureItem);
 			}
-			describeApiSignaturesResponse.ApiSignatures = apiSignatures;
+			describeApiSignaturesResponse.ApiSignatures = describeApiSignaturesResponse_apiSignatures;
         
 			return describeApiSignaturesResponse;
         }

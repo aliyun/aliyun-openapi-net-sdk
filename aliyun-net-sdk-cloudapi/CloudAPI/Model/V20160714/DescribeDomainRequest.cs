@@ -29,13 +29,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeDomainRequest : RpcAcsRequest<DescribeDomainResponse>
     {
         public DescribeDomainRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeDomain")
+            : base("CloudAPI", "2016-07-14", "DescribeDomain", "apigateway", "openAPI")
         {
         }
+
+		private string securityToken;
 
 		private string groupId;
 
 		private string domainName;
+
+		private string action;
+
+		private string accessKeyId;
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -60,6 +79,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

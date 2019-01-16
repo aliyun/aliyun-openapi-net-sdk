@@ -38,15 +38,36 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiStageResponse.CreatedTime = context.StringValue("DescribeApiStage.CreatedTime");
 			describeApiStageResponse.ModifiedTime = context.StringValue("DescribeApiStage.ModifiedTime");
 
-			List<DescribeApiStageResponse.VariableItem> variables = new List<DescribeApiStageResponse.VariableItem>();
+			List<DescribeApiStageResponse.DescribeApiStage_VariableItem> describeApiStageResponse_variables = new List<DescribeApiStageResponse.DescribeApiStage_VariableItem>();
 			for (int i = 0; i < context.Length("DescribeApiStage.Variables.Length"); i++) {
-				DescribeApiStageResponse.VariableItem variableItem = new DescribeApiStageResponse.VariableItem();
+				DescribeApiStageResponse.DescribeApiStage_VariableItem variableItem = new DescribeApiStageResponse.DescribeApiStage_VariableItem();
 				variableItem.VariableName = context.StringValue("DescribeApiStage.Variables["+ i +"].VariableName");
 				variableItem.VariableValue = context.StringValue("DescribeApiStage.Variables["+ i +"].VariableValue");
+				variableItem.SupportRoute = context.BooleanValue("DescribeApiStage.Variables["+ i +"].SupportRoute");
 
-				variables.Add(variableItem);
+				DescribeApiStageResponse.DescribeApiStage_VariableItem.DescribeApiStage_StageRouteModel stageRouteModel = new DescribeApiStageResponse.DescribeApiStage_VariableItem.DescribeApiStage_StageRouteModel();
+				stageRouteModel.ParameterCatalog = context.StringValue("DescribeApiStage.Variables["+ i +"].StageRouteModel.ParameterCatalog");
+				stageRouteModel.ServiceParameterName = context.StringValue("DescribeApiStage.Variables["+ i +"].StageRouteModel.ServiceParameterName");
+				stageRouteModel.Location = context.StringValue("DescribeApiStage.Variables["+ i +"].StageRouteModel.Location");
+				stageRouteModel.ParameterType = context.StringValue("DescribeApiStage.Variables["+ i +"].StageRouteModel.ParameterType");
+				stageRouteModel.RouteMatchSymbol = context.StringValue("DescribeApiStage.Variables["+ i +"].StageRouteModel.RouteMatchSymbol");
+
+				List<DescribeApiStageResponse.DescribeApiStage_VariableItem.DescribeApiStage_StageRouteModel.DescribeApiStage_RouteRuleItem> stageRouteModel_routeRules = new List<DescribeApiStageResponse.DescribeApiStage_VariableItem.DescribeApiStage_StageRouteModel.DescribeApiStage_RouteRuleItem>();
+				for (int j = 0; j < context.Length("DescribeApiStage.Variables["+ i +"].StageRouteModel.RouteRules.Length"); j++) {
+					DescribeApiStageResponse.DescribeApiStage_VariableItem.DescribeApiStage_StageRouteModel.DescribeApiStage_RouteRuleItem routeRuleItem = new DescribeApiStageResponse.DescribeApiStage_VariableItem.DescribeApiStage_StageRouteModel.DescribeApiStage_RouteRuleItem();
+					routeRuleItem.MaxValue = context.LongValue("DescribeApiStage.Variables["+ i +"].StageRouteModel.RouteRules["+ j +"].MaxValue");
+					routeRuleItem.MinValue = context.LongValue("DescribeApiStage.Variables["+ i +"].StageRouteModel.RouteRules["+ j +"].MinValue");
+					routeRuleItem.ConditionValue = context.StringValue("DescribeApiStage.Variables["+ i +"].StageRouteModel.RouteRules["+ j +"].ConditionValue");
+					routeRuleItem.ResultValue = context.StringValue("DescribeApiStage.Variables["+ i +"].StageRouteModel.RouteRules["+ j +"].ResultValue");
+
+					stageRouteModel_routeRules.Add(routeRuleItem);
+				}
+				stageRouteModel.RouteRules = stageRouteModel_routeRules;
+				variableItem.StageRouteModel = stageRouteModel;
+
+				describeApiStageResponse_variables.Add(variableItem);
 			}
-			describeApiStageResponse.Variables = variables;
+			describeApiStageResponse.Variables = describeApiStageResponse_variables;
         
 			return describeApiStageResponse;
         }

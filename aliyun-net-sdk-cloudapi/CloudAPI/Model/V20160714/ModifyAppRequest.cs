@@ -29,28 +29,21 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class ModifyAppRequest : RpcAcsRequest<ModifyAppResponse>
     {
         public ModifyAppRequest()
-            : base("CloudAPI", "2016-07-14", "ModifyApp")
+            : base("CloudAPI", "2016-07-14", "ModifyApp", "apigateway", "openAPI")
         {
         }
 
+		private string appName;
+
+		private string securityToken;
+
 		private long? appId;
 
-		private string appName;
+		private string action;
 
 		private string description;
 
-		public long? AppId
-		{
-			get
-			{
-				return appId;
-			}
-			set	
-			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value.ToString());
-			}
-		}
+		private string accessKeyId;
 
 		public string AppName
 		{
@@ -65,6 +58,45 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public long? AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -75,6 +107,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

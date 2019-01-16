@@ -24,6 +24,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribePurchasedApiGroupResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string groupId;
 
 		private string groupName;
@@ -36,7 +38,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string status;
 
-		private List<DomainItem> domains;
+		private List<DescribePurchasedApiGroup_DomainItem> domains;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string GroupId
 		{
@@ -110,7 +124,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<DomainItem> Domains
+		public List<DescribePurchasedApiGroup_DomainItem> Domains
 		{
 			get
 			{
@@ -122,7 +136,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class DomainItem{
+		public class DescribePurchasedApiGroup_DomainItem
+		{
 
 			private string domainName;
 

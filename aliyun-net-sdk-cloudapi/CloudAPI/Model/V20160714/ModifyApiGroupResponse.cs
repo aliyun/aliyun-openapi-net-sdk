@@ -24,6 +24,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class ModifyApiGroupResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string groupId;
 
 		private string groupName;
@@ -31,6 +33,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 		private string subDomain;
 
 		private string description;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string GroupId
 		{

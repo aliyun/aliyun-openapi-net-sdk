@@ -29,19 +29,51 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class SwitchApiRequest : RpcAcsRequest<SwitchApiResponse>
     {
         public SwitchApiRequest()
-            : base("CloudAPI", "2016-07-14", "SwitchApi")
+            : base("CloudAPI", "2016-07-14", "SwitchApi", "apigateway", "openAPI")
         {
         }
 
+		private string stageName;
+
+		private string securityToken;
+
 		private string groupId;
 
-		private string apiId;
-
-		private string stageName;
+		private string action;
 
 		private string description;
 
+		private string apiId;
+
 		private string historyVersion;
+
+		private string accessKeyId;
+
+		public string StageName
+		{
+			get
+			{
+				return stageName;
+			}
+			set	
+			{
+				stageName = value;
+				DictionaryUtil.Add(QueryParameters, "StageName", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -56,29 +88,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string ApiId
+		public string Action
 		{
 			get
 			{
-				return apiId;
+				return action;
 			}
 			set	
 			{
-				apiId = value;
-				DictionaryUtil.Add(QueryParameters, "ApiId", value);
-			}
-		}
-
-		public string StageName
-		{
-			get
-			{
-				return stageName;
-			}
-			set	
-			{
-				stageName = value;
-				DictionaryUtil.Add(QueryParameters, "StageName", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -95,6 +114,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string ApiId
+		{
+			get
+			{
+				return apiId;
+			}
+			set	
+			{
+				apiId = value;
+				DictionaryUtil.Add(QueryParameters, "ApiId", value);
+			}
+		}
+
 		public string HistoryVersion
 		{
 			get
@@ -105,6 +137,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				historyVersion = value;
 				DictionaryUtil.Add(QueryParameters, "HistoryVersion", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

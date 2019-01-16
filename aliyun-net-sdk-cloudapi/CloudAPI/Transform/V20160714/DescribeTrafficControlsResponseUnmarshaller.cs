@@ -35,9 +35,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeTrafficControlsResponse.PageSize = context.IntegerValue("DescribeTrafficControls.PageSize");
 			describeTrafficControlsResponse.PageNumber = context.IntegerValue("DescribeTrafficControls.PageNumber");
 
-			List<DescribeTrafficControlsResponse.TrafficControl> trafficControls = new List<DescribeTrafficControlsResponse.TrafficControl>();
+			List<DescribeTrafficControlsResponse.DescribeTrafficControls_TrafficControl> describeTrafficControlsResponse_trafficControls = new List<DescribeTrafficControlsResponse.DescribeTrafficControls_TrafficControl>();
 			for (int i = 0; i < context.Length("DescribeTrafficControls.TrafficControls.Length"); i++) {
-				DescribeTrafficControlsResponse.TrafficControl trafficControl = new DescribeTrafficControlsResponse.TrafficControl();
+				DescribeTrafficControlsResponse.DescribeTrafficControls_TrafficControl trafficControl = new DescribeTrafficControlsResponse.DescribeTrafficControls_TrafficControl();
 				trafficControl.TrafficControlId = context.StringValue("DescribeTrafficControls.TrafficControls["+ i +"].TrafficControlId");
 				trafficControl.TrafficControlName = context.StringValue("DescribeTrafficControls.TrafficControls["+ i +"].TrafficControlName");
 				trafficControl.Description = context.StringValue("DescribeTrafficControls.TrafficControls["+ i +"].Description");
@@ -48,28 +48,28 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				trafficControl.CreatedTime = context.StringValue("DescribeTrafficControls.TrafficControls["+ i +"].CreatedTime");
 				trafficControl.ModifiedTime = context.StringValue("DescribeTrafficControls.TrafficControls["+ i +"].ModifiedTime");
 
-				List<DescribeTrafficControlsResponse.TrafficControl.SpecialPolicy> specialPolicies = new List<DescribeTrafficControlsResponse.TrafficControl.SpecialPolicy>();
+				List<DescribeTrafficControlsResponse.DescribeTrafficControls_TrafficControl.DescribeTrafficControls_SpecialPolicy> trafficControl_specialPolicies = new List<DescribeTrafficControlsResponse.DescribeTrafficControls_TrafficControl.DescribeTrafficControls_SpecialPolicy>();
 				for (int j = 0; j < context.Length("DescribeTrafficControls.TrafficControls["+ i +"].SpecialPolicies.Length"); j++) {
-					DescribeTrafficControlsResponse.TrafficControl.SpecialPolicy specialPolicy = new DescribeTrafficControlsResponse.TrafficControl.SpecialPolicy();
+					DescribeTrafficControlsResponse.DescribeTrafficControls_TrafficControl.DescribeTrafficControls_SpecialPolicy specialPolicy = new DescribeTrafficControlsResponse.DescribeTrafficControls_TrafficControl.DescribeTrafficControls_SpecialPolicy();
 					specialPolicy.SpecialType = context.StringValue("DescribeTrafficControls.TrafficControls["+ i +"].SpecialPolicies["+ j +"].SpecialType");
 
-					List<DescribeTrafficControlsResponse.TrafficControl.SpecialPolicy.Special> specials = new List<DescribeTrafficControlsResponse.TrafficControl.SpecialPolicy.Special>();
+					List<DescribeTrafficControlsResponse.DescribeTrafficControls_TrafficControl.DescribeTrafficControls_SpecialPolicy.DescribeTrafficControls_Special> specialPolicy_specials = new List<DescribeTrafficControlsResponse.DescribeTrafficControls_TrafficControl.DescribeTrafficControls_SpecialPolicy.DescribeTrafficControls_Special>();
 					for (int k = 0; k < context.Length("DescribeTrafficControls.TrafficControls["+ i +"].SpecialPolicies["+ j +"].Specials.Length"); k++) {
-						DescribeTrafficControlsResponse.TrafficControl.SpecialPolicy.Special special = new DescribeTrafficControlsResponse.TrafficControl.SpecialPolicy.Special();
+						DescribeTrafficControlsResponse.DescribeTrafficControls_TrafficControl.DescribeTrafficControls_SpecialPolicy.DescribeTrafficControls_Special special = new DescribeTrafficControlsResponse.DescribeTrafficControls_TrafficControl.DescribeTrafficControls_SpecialPolicy.DescribeTrafficControls_Special();
 						special.SpecialKey = context.StringValue("DescribeTrafficControls.TrafficControls["+ i +"].SpecialPolicies["+ j +"].Specials["+ k +"].SpecialKey");
 						special.TrafficValue = context.IntegerValue("DescribeTrafficControls.TrafficControls["+ i +"].SpecialPolicies["+ j +"].Specials["+ k +"].TrafficValue");
 
-						specials.Add(special);
+						specialPolicy_specials.Add(special);
 					}
-					specialPolicy.Specials = specials;
+					specialPolicy.Specials = specialPolicy_specials;
 
-					specialPolicies.Add(specialPolicy);
+					trafficControl_specialPolicies.Add(specialPolicy);
 				}
-				trafficControl.SpecialPolicies = specialPolicies;
+				trafficControl.SpecialPolicies = trafficControl_specialPolicies;
 
-				trafficControls.Add(trafficControl);
+				describeTrafficControlsResponse_trafficControls.Add(trafficControl);
 			}
-			describeTrafficControlsResponse.TrafficControls = trafficControls;
+			describeTrafficControlsResponse.TrafficControls = describeTrafficControlsResponse_trafficControls;
         
 			return describeTrafficControlsResponse;
         }

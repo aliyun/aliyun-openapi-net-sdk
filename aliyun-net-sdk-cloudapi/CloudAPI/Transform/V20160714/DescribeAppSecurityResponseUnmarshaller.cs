@@ -35,6 +35,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeAppSecurityResponse.AppSecret = context.StringValue("DescribeAppSecurity.AppSecret");
 			describeAppSecurityResponse.CreatedTime = context.StringValue("DescribeAppSecurity.CreatedTime");
 			describeAppSecurityResponse.ModifiedTime = context.StringValue("DescribeAppSecurity.ModifiedTime");
+			describeAppSecurityResponse.AppCode = context.StringValue("DescribeAppSecurity.AppCode");
         
 			return describeAppSecurityResponse;
         }

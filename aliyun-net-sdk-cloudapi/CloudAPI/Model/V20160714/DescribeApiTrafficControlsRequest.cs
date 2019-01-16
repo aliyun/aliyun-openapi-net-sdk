@@ -29,19 +29,25 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeApiTrafficControlsRequest : RpcAcsRequest<DescribeApiTrafficControlsResponse>
     {
         public DescribeApiTrafficControlsRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeApiTrafficControls")
+            : base("CloudAPI", "2016-07-14", "DescribeApiTrafficControls", "apigateway", "openAPI")
         {
         }
 
 		private string stageName;
 
+		private string securityToken;
+
 		private string groupId;
 
-		private string apiIds;
+		private int? pageSize;
+
+		private string action;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private string accessKeyId;
+
+		private string apiIds;
 
 		public string StageName
 		{
@@ -53,6 +59,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				stageName = value;
 				DictionaryUtil.Add(QueryParameters, "StageName", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -69,16 +88,29 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string ApiIds
+		public int? PageSize
 		{
 			get
 			{
-				return apiIds;
+				return pageSize;
 			}
 			set	
 			{
-				apiIds = value;
-				DictionaryUtil.Add(QueryParameters, "ApiIds", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -95,16 +127,29 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public int? PageSize
+		public string AccessKeyId
 		{
 			get
 			{
-				return pageSize;
+				return accessKeyId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string ApiIds
+		{
+			get
+			{
+				return apiIds;
+			}
+			set	
+			{
+				apiIds = value;
+				DictionaryUtil.Add(QueryParameters, "ApiIds", value);
 			}
 		}
 

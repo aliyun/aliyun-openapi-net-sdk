@@ -24,13 +24,27 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeApiGroupsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private List<ApiGroupAttribute> apiGroupAttributes;
+		private List<DescribeApiGroups_ApiGroupAttribute> apiGroupAttributes;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<ApiGroupAttribute> ApiGroupAttributes
+		public List<DescribeApiGroups_ApiGroupAttribute> ApiGroupAttributes
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class ApiGroupAttribute{
+		public class DescribeApiGroups_ApiGroupAttribute
+		{
 
 			private string groupId;
 
@@ -98,9 +113,9 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private int? trafficLimit;
 
-			private BillingStatusEnum? billingStatus;
+			private string billingStatus;
 
-			private IllegalStatusEnum? illegalStatus;
+			private string illegalStatus;
 
 			public string GroupId
 			{
@@ -198,7 +213,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
-			public BillingStatusEnum? BillingStatus
+			public string BillingStatus
 			{
 				get
 				{
@@ -210,7 +225,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
-			public IllegalStatusEnum? IllegalStatus
+			public string IllegalStatus
 			{
 				get
 				{
@@ -221,18 +236,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 					illegalStatus = value;
 				}
 			}
-
-public enum BillingStatusEnum {
-
-					NORMAL,
-					LOCKED,
-}
-
-public enum IllegalStatusEnum {
-
-					NORMAL,
-					LOCKED,
-}
 		}
 	}
 }

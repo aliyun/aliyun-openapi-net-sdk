@@ -23,5 +23,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
 	public class ResetAppSecretResponse : AcsResponse
 	{
+
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 	}
 }

@@ -24,6 +24,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeAppSecurityResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string appKey;
 
 		private string appSecret;
@@ -31,6 +33,20 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 		private string createdTime;
 
 		private string modifiedTime;
+
+		private string appCode;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string AppKey
 		{
@@ -77,6 +93,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			set	
 			{
 				modifiedTime = value;
+			}
+		}
+
+		public string AppCode
+		{
+			get
+			{
+				return appCode;
+			}
+			set	
+			{
+				appCode = value;
 			}
 		}
 	}

@@ -32,25 +32,25 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiErrorDataResponse.HttpResponse = context.HttpResponse;
 			describeApiErrorDataResponse.RequestId = context.StringValue("DescribeApiErrorData.RequestId");
 
-			List<DescribeApiErrorDataResponse.MonitorItem> clientErrors = new List<DescribeApiErrorDataResponse.MonitorItem>();
+			List<DescribeApiErrorDataResponse.DescribeApiErrorData_MonitorItem> describeApiErrorDataResponse_clientErrors = new List<DescribeApiErrorDataResponse.DescribeApiErrorData_MonitorItem>();
 			for (int i = 0; i < context.Length("DescribeApiErrorData.ClientErrors.Length"); i++) {
-				DescribeApiErrorDataResponse.MonitorItem monitorItem = new DescribeApiErrorDataResponse.MonitorItem();
+				DescribeApiErrorDataResponse.DescribeApiErrorData_MonitorItem monitorItem = new DescribeApiErrorDataResponse.DescribeApiErrorData_MonitorItem();
 				monitorItem.ItemTime = context.StringValue("DescribeApiErrorData.ClientErrors["+ i +"].ItemTime");
 				monitorItem.ItemValue = context.StringValue("DescribeApiErrorData.ClientErrors["+ i +"].ItemValue");
 
-				clientErrors.Add(monitorItem);
+				describeApiErrorDataResponse_clientErrors.Add(monitorItem);
 			}
-			describeApiErrorDataResponse.ClientErrors = clientErrors;
+			describeApiErrorDataResponse.ClientErrors = describeApiErrorDataResponse_clientErrors;
 
-			List<DescribeApiErrorDataResponse.MonitorItem> serverErrors = new List<DescribeApiErrorDataResponse.MonitorItem>();
+			List<DescribeApiErrorDataResponse.DescribeApiErrorData_MonitorItem> describeApiErrorDataResponse_serverErrors = new List<DescribeApiErrorDataResponse.DescribeApiErrorData_MonitorItem>();
 			for (int i = 0; i < context.Length("DescribeApiErrorData.ServerErrors.Length"); i++) {
-				DescribeApiErrorDataResponse.MonitorItem monitorItem = new DescribeApiErrorDataResponse.MonitorItem();
+				DescribeApiErrorDataResponse.DescribeApiErrorData_MonitorItem monitorItem = new DescribeApiErrorDataResponse.DescribeApiErrorData_MonitorItem();
 				monitorItem.ItemTime = context.StringValue("DescribeApiErrorData.ServerErrors["+ i +"].ItemTime");
 				monitorItem.ItemValue = context.StringValue("DescribeApiErrorData.ServerErrors["+ i +"].ItemValue");
 
-				serverErrors.Add(monitorItem);
+				describeApiErrorDataResponse_serverErrors.Add(monitorItem);
 			}
-			describeApiErrorDataResponse.ServerErrors = serverErrors;
+			describeApiErrorDataResponse.ServerErrors = describeApiErrorDataResponse_serverErrors;
         
 			return describeApiErrorDataResponse;
         }

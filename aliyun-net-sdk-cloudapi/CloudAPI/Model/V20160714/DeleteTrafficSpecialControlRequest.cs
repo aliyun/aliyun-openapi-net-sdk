@@ -29,15 +29,21 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DeleteTrafficSpecialControlRequest : RpcAcsRequest<DeleteTrafficSpecialControlResponse>
     {
         public DeleteTrafficSpecialControlRequest()
-            : base("CloudAPI", "2016-07-14", "DeleteTrafficSpecialControl")
+            : base("CloudAPI", "2016-07-14", "DeleteTrafficSpecialControl", "apigateway", "openAPI")
         {
         }
 
 		private string trafficControlId;
 
+		private string specialKey;
+
+		private string securityToken;
+
+		private string action;
+
 		private string specialType;
 
-		private string specialKey;
+		private string accessKeyId;
 
 		public string TrafficControlId
 		{
@@ -49,6 +55,45 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				trafficControlId = value;
 				DictionaryUtil.Add(QueryParameters, "TrafficControlId", value);
+			}
+		}
+
+		public string SpecialKey
+		{
+			get
+			{
+				return specialKey;
+			}
+			set	
+			{
+				specialKey = value;
+				DictionaryUtil.Add(QueryParameters, "SpecialKey", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -65,16 +110,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string SpecialKey
+		public string AccessKeyId
 		{
 			get
 			{
-				return specialKey;
+				return accessKeyId;
 			}
 			set	
 			{
-				specialKey = value;
-				DictionaryUtil.Add(QueryParameters, "SpecialKey", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class CreateSignatureResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string signatureId;
 
 		private string signatureName;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string SignatureId
 		{

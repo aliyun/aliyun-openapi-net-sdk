@@ -24,11 +24,25 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeApiTrafficDataResponse : AcsResponse
 	{
 
-		private List<MonitorItem> callUploads;
+		private string requestId;
 
-		private List<MonitorItem> callDownloads;
+		private List<DescribeApiTrafficData_MonitorItem> callUploads;
 
-		public List<MonitorItem> CallUploads
+		private List<DescribeApiTrafficData_MonitorItem> callDownloads;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeApiTrafficData_MonitorItem> CallUploads
 		{
 			get
 			{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<MonitorItem> CallDownloads
+		public List<DescribeApiTrafficData_MonitorItem> CallDownloads
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class MonitorItem{
+		public class DescribeApiTrafficData_MonitorItem
+		{
 
 			private string itemTime;
 

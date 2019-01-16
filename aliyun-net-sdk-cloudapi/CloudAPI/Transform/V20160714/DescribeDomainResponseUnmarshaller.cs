@@ -41,6 +41,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeDomainResponse.DomainBindingStatus = context.StringValue("DescribeDomain.DomainBindingStatus");
 			describeDomainResponse.DomainCNAMEStatus = context.StringValue("DescribeDomain.DomainCNAMEStatus");
 			describeDomainResponse.DomainLegalStatus = context.StringValue("DescribeDomain.DomainLegalStatus");
+			describeDomainResponse.DomainWebSocketStatus = context.StringValue("DescribeDomain.DomainWebSocketStatus");
 			describeDomainResponse.DomainRemark = context.StringValue("DescribeDomain.DomainRemark");
         
 			return describeDomainResponse;

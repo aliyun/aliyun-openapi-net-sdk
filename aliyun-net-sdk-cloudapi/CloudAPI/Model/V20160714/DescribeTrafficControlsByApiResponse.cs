@@ -24,9 +24,23 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeTrafficControlsByApiResponse : AcsResponse
 	{
 
-		private List<TrafficControlItem> trafficControlItems;
+		private string requestId;
 
-		public List<TrafficControlItem> TrafficControlItems
+		private List<DescribeTrafficControlsByApi_TrafficControlItem> trafficControlItems;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeTrafficControlsByApi_TrafficControlItem> TrafficControlItems
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class TrafficControlItem{
+		public class DescribeTrafficControlsByApi_TrafficControlItem
+		{
 
 			private string trafficControlItemId;
 

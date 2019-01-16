@@ -29,17 +29,23 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class AddTrafficSpecialControlRequest : RpcAcsRequest<AddTrafficSpecialControlResponse>
     {
         public AddTrafficSpecialControlRequest()
-            : base("CloudAPI", "2016-07-14", "AddTrafficSpecialControl")
+            : base("CloudAPI", "2016-07-14", "AddTrafficSpecialControl", "apigateway", "openAPI")
         {
         }
 
 		private string trafficControlId;
 
-		private string specialType;
-
 		private string specialKey;
 
+		private string securityToken;
+
 		private int? trafficValue;
+
+		private string action;
+
+		private string specialType;
+
+		private string accessKeyId;
 
 		public string TrafficControlId
 		{
@@ -51,19 +57,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				trafficControlId = value;
 				DictionaryUtil.Add(QueryParameters, "TrafficControlId", value);
-			}
-		}
-
-		public string SpecialType
-		{
-			get
-			{
-				return specialType;
-			}
-			set	
-			{
-				specialType = value;
-				DictionaryUtil.Add(QueryParameters, "SpecialType", value);
 			}
 		}
 
@@ -80,6 +73,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
 		public int? TrafficValue
 		{
 			get
@@ -90,6 +96,45 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				trafficValue = value;
 				DictionaryUtil.Add(QueryParameters, "TrafficValue", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string SpecialType
+		{
+			get
+			{
+				return specialType;
+			}
+			set	
+			{
+				specialType = value;
+				DictionaryUtil.Add(QueryParameters, "SpecialType", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

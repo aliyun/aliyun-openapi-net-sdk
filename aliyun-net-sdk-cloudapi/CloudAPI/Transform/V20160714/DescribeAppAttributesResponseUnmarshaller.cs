@@ -35,18 +35,18 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeAppAttributesResponse.PageSize = context.IntegerValue("DescribeAppAttributes.PageSize");
 			describeAppAttributesResponse.PageNumber = context.IntegerValue("DescribeAppAttributes.PageNumber");
 
-			List<DescribeAppAttributesResponse.AppAttribute> apps = new List<DescribeAppAttributesResponse.AppAttribute>();
+			List<DescribeAppAttributesResponse.DescribeAppAttributes_AppAttribute> describeAppAttributesResponse_apps = new List<DescribeAppAttributesResponse.DescribeAppAttributes_AppAttribute>();
 			for (int i = 0; i < context.Length("DescribeAppAttributes.Apps.Length"); i++) {
-				DescribeAppAttributesResponse.AppAttribute appAttribute = new DescribeAppAttributesResponse.AppAttribute();
+				DescribeAppAttributesResponse.DescribeAppAttributes_AppAttribute appAttribute = new DescribeAppAttributesResponse.DescribeAppAttributes_AppAttribute();
 				appAttribute.AppId = context.LongValue("DescribeAppAttributes.Apps["+ i +"].AppId");
 				appAttribute.AppName = context.StringValue("DescribeAppAttributes.Apps["+ i +"].AppName");
 				appAttribute.Description = context.StringValue("DescribeAppAttributes.Apps["+ i +"].Description");
 				appAttribute.CreatedTime = context.StringValue("DescribeAppAttributes.Apps["+ i +"].CreatedTime");
 				appAttribute.ModifiedTime = context.StringValue("DescribeAppAttributes.Apps["+ i +"].ModifiedTime");
 
-				apps.Add(appAttribute);
+				describeAppAttributesResponse_apps.Add(appAttribute);
 			}
-			describeAppAttributesResponse.Apps = apps;
+			describeAppAttributesResponse.Apps = describeAppAttributesResponse_apps;
         
 			return describeAppAttributesResponse;
         }

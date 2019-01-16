@@ -24,13 +24,27 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeApiTrafficControlsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private List<ApiTrafficControlItem> apiTrafficControls;
+		private List<DescribeApiTrafficControls_ApiTrafficControlItem> apiTrafficControls;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<ApiTrafficControlItem> ApiTrafficControls
+		public List<DescribeApiTrafficControls_ApiTrafficControlItem> ApiTrafficControls
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class ApiTrafficControlItem{
+		public class DescribeApiTrafficControls_ApiTrafficControlItem
+		{
 
 			private string apiId;
 
