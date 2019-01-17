@@ -5,9 +5,9 @@ before_build:
 - choco install opencover.portable
 - choco install codecov
 - choco install xunit
+- cd aliyun-net-sdk-core.Tests
 
 build:
-  project: aliyun-net-sdk-core.Tests\aliyun-net-sdk-core-unit-tests.csproj
   verbosity: minimal
 
 test_script:
