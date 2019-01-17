@@ -67,6 +67,7 @@ namespace Aliyun.Acs.Core.Auth
                 {
                     // Use the current expiring session token and wait for next round
                     credentials.SetLastFailedRefreshTime();
+                    e = null;
                 }
             }
             return credentials;

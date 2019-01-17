@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="./*/*.cs" />
+    <Compile Include="./Auth/AcsURLEncoder.cs" />
   </ItemGroup>
 
   <ItemGroup>
