@@ -106,10 +106,10 @@ namespace Aliyun.Acs.Core
             {
                 request.Method = Method;
             }
-            if (Protocol != null)
-            {
-                request.Protocol = Protocol;
-            }
+
+            // the result of the expression is always 'true' since a value of type 'ProtocolType' is never equal to 'null'
+            request.Protocol = Protocol;
+
             if (Domain != null)
             {
                 ProductDomain productDomain = new ProductDomain(request.Product, Domain);
