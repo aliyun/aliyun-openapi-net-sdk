@@ -8,3 +8,5 @@ branches:
     - master
 script: 
   - cd aliyun-net-sdk-core.Tests/ && dotnet test 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
