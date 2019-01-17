@@ -4,10 +4,12 @@ before_build:
 - nuget restore
 - choco install opencover.portable
 - choco install codecov
+- choco install xunit
 
 build:
+  project: aliyun-net-sdk-core.Tests\aliyun-net-sdk-core-unit-tests.csproj
   verbosity: minimal
 
 test_script:
-  - OpenCover.Console.exe -target:"dotnet.exe" -targetargs:"test" -output:"coverage.xml" -register:user
+  - OpenCover.Console.exe -target:"%xunit20%\xunit.console.x86.exe" -targetargs:"aliyun-net-sdk-core.Tests\bin\Debug\netcoreapp2.1\aliyun-net-sdk-core-unit-tests.dll" -output:"coverage.xml" -register:user
   - codecov -f "coverage.xml
