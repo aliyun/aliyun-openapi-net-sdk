@@ -1,0 +1,14 @@
+image: Visual Studio 2017
+
+before_build:
+- nuget restore
+- choco install opencover.portable
+- choco install codecov
+
+build:
+  project: aliyun-net-sdk-core\aliyun-net-sdk-core.vs2017.csproj
+  verbosity: minimal
+
+test_script:
+- OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\aliyun-net-sdk-core.Tests\bin\Debug\netcoreapp2.1\aliyun-net-sdk-core-unit-tests.dll -noshadow" -output:".\MyProject_coverage.xml"
+- codecov -f "MyProject_coverage.xml
