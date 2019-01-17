@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="./*/*.cs"/>
+    <Compile Include="./*/*.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +20,8 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
     <PackageReference Include="Microsoft.NETCore.TestHost" Version="2.0.8" />
+    <PackageReference Include="Moq" Version="4.10.1" />
+    <PackageReference Include="Codecov" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>

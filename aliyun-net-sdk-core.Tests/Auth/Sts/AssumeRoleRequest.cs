@@ -11,7 +11,9 @@ namespace Aliyun.Acs.Core.UnitTests.Auth.Sts
         public void AssumeRoleRequest()
         {
             AssumeRoleRequest assumeRoleRequest = new AssumeRoleRequest();
-            string policy = assumeRoleRequest.Policy;
+            string source = "foo";
+            assumeRoleRequest.Policy = source;
+            Assert.Equal(source, assumeRoleRequest.Policy);
         }
     }
 }
