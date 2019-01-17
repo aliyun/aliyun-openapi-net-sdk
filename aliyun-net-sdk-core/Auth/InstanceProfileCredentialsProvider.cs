@@ -63,11 +63,10 @@ namespace Aliyun.Acs.Core.Auth
                     ecsMetadataServiceFetchCount += 1;
                     credentials = fetcher.Fetch();
                 }
-                catch (ClientException e)
+                catch (ClientException)
                 {
                     // Use the current expiring session token and wait for next round
                     credentials.SetLastFailedRefreshTime();
-                    e = null;
                 }
             }
             return credentials;
