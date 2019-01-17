@@ -3,7 +3,10 @@ sudo: true
 solution: aliyun-net-sdk-core/aliyun-net-sdk-core.vs2017.sln
 mono: none
 dotnet: 2.1
+branches:
+  only:
+    - master
 script: 
-  - cd aliyun-net-sdk-core.Tests/ && dotnet test 
+  - cd aliyun-net-sdk-core.Tests/ && dotnet test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
