@@ -67,6 +67,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					eventType.Name = context.StringValue("DescribeInstancesFullStatus.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].EventType.Name");
 					scheduledSystemEventType.EventType = eventType;
 
+					DescribeInstancesFullStatusResponse.DescribeInstancesFullStatus_InstanceFullStatusType.DescribeInstancesFullStatus_ScheduledSystemEventType.DescribeInstancesFullStatus_ExtendedAttribute extendedAttribute = new DescribeInstancesFullStatusResponse.DescribeInstancesFullStatus_InstanceFullStatusType.DescribeInstancesFullStatus_ScheduledSystemEventType.DescribeInstancesFullStatus_ExtendedAttribute();
+					extendedAttribute.DiskId = context.StringValue("DescribeInstancesFullStatus.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.DiskId");
+					extendedAttribute.Device = context.StringValue("DescribeInstancesFullStatus.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.Device");
+					scheduledSystemEventType.ExtendedAttribute = extendedAttribute;
+
 					instanceFullStatusType_scheduledSystemEventSet.Add(scheduledSystemEventType);
 				}
 				instanceFullStatusType.ScheduledSystemEventSet = instanceFullStatusType_scheduledSystemEventSet;

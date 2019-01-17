@@ -81,6 +81,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string snapshotType;
 
+		private string kMSKeyId;
+
 		private string status;
 
 		public long? ResourceOwnerId
@@ -397,6 +399,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				snapshotType = value;
 				DictionaryUtil.Add(QueryParameters, "SnapshotType", value);
+			}
+		}
+
+		public string KMSKeyId
+		{
+			get
+			{
+				return kMSKeyId;
+			}
+			set	
+			{
+				kMSKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "KMSKeyId", value);
 			}
 		}
 

@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				DescribeLaunchTemplateVersionsResponse.DescribeLaunchTemplateVersions_LaunchTemplateVersionSet.DescribeLaunchTemplateVersions_LaunchTemplateData launchTemplateData = new DescribeLaunchTemplateVersionsResponse.DescribeLaunchTemplateVersions_LaunchTemplateVersionSet.DescribeLaunchTemplateVersions_LaunchTemplateData();
 				launchTemplateData.ImageId = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ImageId");
 				launchTemplateData.ImageOwnerAlias = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ImageOwnerAlias");
+				launchTemplateData.PasswordInherit = context.BooleanValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.PasswordInherit");
 				launchTemplateData.InstanceType = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InstanceType");
 				launchTemplateData.SecurityGroupId = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupId");
 				launchTemplateData.VpcId = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.VpcId");
@@ -91,6 +92,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					dataDisk.DiskName = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].DiskName");
 					dataDisk.Description = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].Description");
 					dataDisk.DeleteWithInstance = context.BooleanValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].DeleteWithInstance");
+					dataDisk.Device = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].Device");
 
 					launchTemplateData_dataDisks.Add(dataDisk);
 				}

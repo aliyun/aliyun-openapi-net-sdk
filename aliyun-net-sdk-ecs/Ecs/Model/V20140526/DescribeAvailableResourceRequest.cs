@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string systemDiskCategory;
 
+		private string scope;
+
 		private string action;
 
 		private string instanceType;
@@ -159,6 +161,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				systemDiskCategory = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDiskCategory", value);
+			}
+		}
+
+		public string Scope
+		{
+			get
+			{
+				return scope;
+			}
+			set	
+			{
+				scope = value;
+				DictionaryUtil.Add(QueryParameters, "Scope", value);
 			}
 		}
 

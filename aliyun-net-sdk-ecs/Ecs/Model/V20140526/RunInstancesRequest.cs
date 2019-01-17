@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string keyPairName;
 
+		private int? minAmount;
+
 		private float? spotPriceLimit;
 
 		private bool? deletionProtection;
@@ -220,6 +222,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				keyPairName = value;
 				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+			}
+		}
+
+		public int? MinAmount
+		{
+			get
+			{
+				return minAmount;
+			}
+			set	
+			{
+				minAmount = value;
+				DictionaryUtil.Add(QueryParameters, "MinAmount", value.ToString());
 			}
 		}
 
@@ -854,6 +869,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".SnapshotId", dataDisks[i].SnapshotId);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Encrypted", dataDisks[i].Encrypted);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".KMSKeyId", dataDisks[i].KMSKeyId);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DiskName", dataDisks[i].DiskName);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
@@ -1018,6 +1034,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string encrypted;
 
+			private string kMSKeyId;
+
 			private string diskName;
 
 			private string description;
@@ -1071,6 +1089,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					encrypted = value;
+				}
+			}
+
+			public string KMSKeyId
+			{
+				get
+				{
+					return kMSKeyId;
+				}
+				set	
+				{
+					kMSKeyId = value;
 				}
 			}
 

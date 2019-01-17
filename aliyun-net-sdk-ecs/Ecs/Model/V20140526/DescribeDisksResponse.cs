@@ -159,6 +159,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? iOPSWrite;
 
+			private string kMSKeyId;
+
 			private List<DescribeDisks_OperationLock> operationLocks;
 
 			private List<DescribeDisks_MountInstance> mountInstances;
@@ -534,6 +536,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					iOPSWrite = value;
+				}
+			}
+
+			public string KMSKeyId
+			{
+				get
+				{
+					return kMSKeyId;
+				}
+				set	
+				{
+					kMSKeyId = value;
 				}
 			}
 

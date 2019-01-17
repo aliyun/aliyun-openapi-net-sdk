@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string filter2Value;
 
+		private string iSP;
+
 		private string ownerAccount;
 
 		private string allocationId;
@@ -107,6 +109,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				filter2Value = value;
 				DictionaryUtil.Add(QueryParameters, "Filter.2.Value", value);
+			}
+		}
+
+		public string ISP
+		{
+			get
+			{
+				return iSP;
+			}
+			set	
+			{
+				iSP = value;
+				DictionaryUtil.Add(QueryParameters, "ISP", value);
 			}
 		}
 

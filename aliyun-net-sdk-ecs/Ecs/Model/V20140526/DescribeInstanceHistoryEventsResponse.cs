@@ -111,6 +111,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private DescribeInstanceHistoryEvents_EventCycleStatus eventCycleStatus;
 
+			private DescribeInstanceHistoryEvents_ExtendedAttribute extendedAttribute;
+
 			public string InstanceId
 			{
 				get
@@ -195,6 +197,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public DescribeInstanceHistoryEvents_ExtendedAttribute ExtendedAttribute
+			{
+				get
+				{
+					return extendedAttribute;
+				}
+				set	
+				{
+					extendedAttribute = value;
+				}
+			}
+
 			public class DescribeInstanceHistoryEvents_EventType
 			{
 
@@ -255,6 +269,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						name = value;
+					}
+				}
+			}
+
+			public class DescribeInstanceHistoryEvents_ExtendedAttribute
+			{
+
+				private string diskId;
+
+				private string device;
+
+				public string DiskId
+				{
+					get
+					{
+						return diskId;
+					}
+					set	
+					{
+						diskId = value;
+					}
+				}
+
+				public string Device
+				{
+					get
+					{
+						return device;
+					}
+					set	
+					{
+						device = value;
 					}
 				}
 			}

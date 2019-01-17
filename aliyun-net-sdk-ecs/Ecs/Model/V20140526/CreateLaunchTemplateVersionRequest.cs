@@ -91,6 +91,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string userData;
 
+		private bool? passwordInherit;
+
 		private string regionId;
 
 		private string instanceType;
@@ -503,6 +505,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public bool? PasswordInherit
+		{
+			get
+			{
+				return passwordInherit;
+			}
+			set	
+			{
+				passwordInherit = value;
+				DictionaryUtil.Add(QueryParameters, "PasswordInherit", value.ToString());
+			}
+		}
+
 		public string RegionId
 		{
 			get
@@ -673,6 +688,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DiskName", dataDisks[i].DiskName);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
 				}
 			}
 		}
@@ -839,6 +855,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? deleteWithInstance;
 
+			private string device;
+
 			public int? Size
 			{
 				get
@@ -920,6 +938,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					deleteWithInstance = value;
+				}
+			}
+
+			public string Device
+			{
+				get
+				{
+					return device;
+				}
+				set	
+				{
+					device = value;
 				}
 			}
 		}

@@ -129,6 +129,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string resourceGroupId;
 
+			private string kMSKeyId;
+
 			private List<DescribeSnapshots_Tag> tags;
 
 			public string SnapshotId
@@ -320,6 +322,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string KMSKeyId
+			{
+				get
+				{
+					return kMSKeyId;
+				}
+				set	
+				{
+					kMSKeyId = value;
 				}
 			}
 

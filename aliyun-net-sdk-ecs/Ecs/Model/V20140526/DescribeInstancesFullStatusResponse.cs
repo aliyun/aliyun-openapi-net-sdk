@@ -166,6 +166,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private DescribeInstancesFullStatus_EventType eventType;
 
+				private DescribeInstancesFullStatus_ExtendedAttribute extendedAttribute;
+
 				public string EventId
 				{
 					get
@@ -223,6 +225,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						eventType = value;
+					}
+				}
+
+				public DescribeInstancesFullStatus_ExtendedAttribute ExtendedAttribute
+				{
+					get
+					{
+						return extendedAttribute;
+					}
+					set	
+					{
+						extendedAttribute = value;
 					}
 				}
 
@@ -286,6 +300,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						set	
 						{
 							name = value;
+						}
+					}
+				}
+
+				public class DescribeInstancesFullStatus_ExtendedAttribute
+				{
+
+					private string diskId;
+
+					private string device;
+
+					public string DiskId
+					{
+						get
+						{
+							return diskId;
+						}
+						set	
+						{
+							diskId = value;
+						}
+					}
+
+					public string Device
+					{
+						get
+						{
+							return device;
+						}
+						set	
+						{
+							device = value;
 						}
 					}
 				}
