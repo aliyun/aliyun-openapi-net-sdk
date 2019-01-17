@@ -8,6 +8,7 @@ branches:
 install:
   - dotnet tool install --global altcover.visualizer
   - cd aliyun-net-sdk-core.Tests/ && dotnet add package AltCover && cd ../
+  - dotnet restore
 script: 
   - dotnet build
   - dotnet test /p:AltCover=true
