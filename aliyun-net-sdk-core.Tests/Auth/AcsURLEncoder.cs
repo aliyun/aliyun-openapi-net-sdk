@@ -3,7 +3,7 @@ using System.Web;
 using Xunit;
 using Aliyun.Acs.Core.Auth;
 
-namespace Aliyun.Acs.UnitTests.Core.Auth
+namespace Aliyun.Acs.Core.UnitTests.Auth
 {
     public class AcsURLEncoder_Test
     {
