@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				dedicatedHost.DedicatedHostType = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].DedicatedHostType");
 				dedicatedHost.Sockets = context.IntegerValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Sockets");
 				dedicatedHost.Cores = context.IntegerValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Cores");
+				dedicatedHost.PhysicalGpus = context.IntegerValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].PhysicalGpus");
+				dedicatedHost.GPUSpec = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].GPUSpec");
 				dedicatedHost.ActionOnMaintenance = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].ActionOnMaintenance");
 				dedicatedHost.Status = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Status");
 				dedicatedHost.CreationTime = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].CreationTime");
@@ -62,9 +64,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				}
 				dedicatedHost.SupportedInstanceTypeFamilies = dedicatedHost_supportedInstanceTypeFamilies;
 
+				List<string> dedicatedHost_supportedInstanceTypesList = new List<string>();
+				for (int j = 0; j < context.Length("DescribeDedicatedHosts.DedicatedHosts["+ i +"].SupportedInstanceTypesList.Length"); j++) {
+					dedicatedHost_supportedInstanceTypesList.Add(context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].SupportedInstanceTypesList["+ j +"]"));
+				}
+				dedicatedHost.SupportedInstanceTypesList = dedicatedHost_supportedInstanceTypesList;
+
 				DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHost.DescribeDedicatedHosts_Capacity capacity = new DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHost.DescribeDedicatedHosts_Capacity();
 				capacity.TotalVcpus = context.IntegerValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Capacity.TotalVcpus");
 				capacity.AvailableVcpus = context.IntegerValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Capacity.AvailableVcpus");
+				capacity.TotalVgpus = context.IntegerValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Capacity.TotalVgpus");
+				capacity.AvailableVgpus = context.IntegerValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Capacity.AvailableVgpus");
 				capacity.TotalMemory = context.FloatValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Capacity.TotalMemory");
 				capacity.AvailableMemory = context.FloatValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Capacity.AvailableMemory");
 				capacity.TotalLocalStorage = context.IntegerValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Capacity.TotalLocalStorage");

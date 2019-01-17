@@ -119,6 +119,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string ipCount;
 
+			private string iSP;
+
 			private string creationTime;
 
 			private string status;
@@ -254,6 +256,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					ipCount = value;
+				}
+			}
+
+			public string ISP
+			{
+				get
+				{
+					return iSP;
+				}
+				set	
+				{
+					iSP = value;
 				}
 			}
 

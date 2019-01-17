@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				bandwidthPackage.InternetChargeType = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].InternetChargeType");
 				bandwidthPackage.BusinessStatus = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].BusinessStatus");
 				bandwidthPackage.IpCount = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].IpCount");
+				bandwidthPackage.ISP = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].ISP");
 				bandwidthPackage.CreationTime = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].CreationTime");
 				bandwidthPackage.Status = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Status");
 

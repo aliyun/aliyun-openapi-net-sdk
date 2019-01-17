@@ -115,6 +115,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? cores;
 
+			private int? physicalGpus;
+
+			private string gPUSpec;
+
 			private string actionOnMaintenance;
 
 			private string status;
@@ -138,6 +142,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private List<DescribeDedicatedHosts_Tag> tags;
 
 			private List<string> supportedInstanceTypeFamilies;
+
+			private List<string> supportedInstanceTypesList;
 
 			private DescribeDedicatedHosts_Capacity capacity;
 
@@ -248,6 +254,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					cores = value;
+				}
+			}
+
+			public int? PhysicalGpus
+			{
+				get
+				{
+					return physicalGpus;
+				}
+				set	
+				{
+					physicalGpus = value;
+				}
+			}
+
+			public string GPUSpec
+			{
+				get
+				{
+					return gPUSpec;
+				}
+				set	
+				{
+					gPUSpec = value;
 				}
 			}
 
@@ -395,6 +425,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public List<string> SupportedInstanceTypesList
+			{
+				get
+				{
+					return supportedInstanceTypesList;
+				}
+				set	
+				{
+					supportedInstanceTypesList = value;
+				}
+			}
+
 			public DescribeDedicatedHosts_Capacity Capacity
 			{
 				get
@@ -508,6 +550,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private int? availableVcpus;
 
+				private int? totalVgpus;
+
+				private int? availableVgpus;
+
 				private float? totalMemory;
 
 				private float? availableMemory;
@@ -539,6 +585,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						availableVcpus = value;
+					}
+				}
+
+				public int? TotalVgpus
+				{
+					get
+					{
+						return totalVgpus;
+					}
+					set	
+					{
+						totalVgpus = value;
+					}
+				}
+
+				public int? AvailableVgpus
+				{
+					get
+					{
+						return availableVgpus;
+					}
+					set	
+					{
+						availableVgpus = value;
 					}
 				}
 

@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceType.InitialCredit = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InitialCredit");
 				instanceType.BaselineCredit = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].BaselineCredit");
 				instanceType.EniQuantity = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniQuantity");
+				instanceType.EniPrivateIpAddressQuantity = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniPrivateIpAddressQuantity");
 				instanceType.InstanceBandwidthRx = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceBandwidthRx");
 				instanceType.InstanceBandwidthTx = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceBandwidthTx");
 				instanceType.InstancePpsRx = context.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstancePpsRx");

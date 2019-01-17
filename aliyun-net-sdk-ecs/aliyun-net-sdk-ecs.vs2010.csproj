@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{48e2f8a4-2c5c-44b6-a2a6-485f7164103f}</ProjectGuid>
+    <ProjectGuid>{3a34b9f5-c056-4463-afe1-3b4bf887271c}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -211,6 +211,7 @@
 	<Compile Include="Ecs\Model\V20140526\JoinResourceGroupRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\UnassociateHaVipRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DetachKeyPairResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\AcceptInquiredSystemEventRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\StartInstanceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateNetworkInterfacePermissionResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyRouterInterfaceAttributeResponse.cs" />
@@ -456,6 +457,7 @@
 	<Compile Include="Ecs\Model\V20140526\RemoveBandwidthPackageIpsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInvocationsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyImageAttributeResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\AcceptInquiredSystemEventResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreatePhysicalConnectionResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceVncUrlResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeRouterInterfacesResponse.cs" />
@@ -531,6 +533,7 @@
 	<Compile Include="Ecs\Transform\V20140526\DescribeDedicatedHostTypesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyDiskChargeTypeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\AttachNetworkInterfaceResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\AcceptInquiredSystemEventResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyVSwitchAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\GetInstanceScreenshotResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\UnassociateEipAddressResponseUnmarshaller.cs" />

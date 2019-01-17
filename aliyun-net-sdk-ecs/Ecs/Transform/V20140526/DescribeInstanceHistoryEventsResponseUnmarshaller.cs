@@ -54,6 +54,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				eventCycleStatus.Name = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventCycleStatus.Name");
 				instanceSystemEventType.EventCycleStatus = eventCycleStatus;
 
+				DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute extendedAttribute = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute();
+				extendedAttribute.DiskId = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.DiskId");
+				extendedAttribute.Device = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.Device");
+				instanceSystemEventType.ExtendedAttribute = extendedAttribute;
+
 				describeInstanceHistoryEventsResponse_instanceSystemEventSet.Add(instanceSystemEventType);
 			}
 			describeInstanceHistoryEventsResponse.InstanceSystemEventSet = describeInstanceHistoryEventsResponse_instanceSystemEventSet;

@@ -230,6 +230,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string imageOwnerAlias;
 
+				private bool? passwordInherit;
+
 				private string instanceType;
 
 				private string securityGroupId;
@@ -317,6 +319,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						imageOwnerAlias = value;
+					}
+				}
+
+				public bool? PasswordInherit
+				{
+					get
+					{
+						return passwordInherit;
+					}
+					set	
+					{
+						passwordInherit = value;
 					}
 				}
 
@@ -733,6 +747,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 					private bool? deleteWithInstance;
 
+					private string device;
+
 					public int? Size
 					{
 						get
@@ -814,6 +830,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						set	
 						{
 							deleteWithInstance = value;
+						}
+					}
+
+					public string Device
+					{
+						get
+						{
+							return device;
+						}
+						set	
+						{
+							device = value;
 						}
 					}
 				}

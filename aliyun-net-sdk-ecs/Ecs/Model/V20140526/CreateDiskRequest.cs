@@ -65,6 +65,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<Tag> tags;
 
+		private string kMSKeyId;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -275,6 +277,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public string KMSKeyId
+		{
+			get
+			{
+				return kMSKeyId;
+			}
+			set	
+			{
+				kMSKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "KMSKeyId", value);
 			}
 		}
 
