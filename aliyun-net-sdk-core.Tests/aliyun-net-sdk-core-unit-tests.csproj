@@ -23,6 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\aliyun-net-sdk-core.vs2017.csproj" />
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2017.csproj" />
   </ItemGroup>
 </Project>
