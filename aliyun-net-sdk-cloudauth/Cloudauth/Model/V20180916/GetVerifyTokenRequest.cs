@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
     public class GetVerifyTokenRequest : RpcAcsRequest<GetVerifyTokenResponse>
     {
         public GetVerifyTokenRequest()
-            : base("Cloudauth", "2018-09-16", "GetVerifyToken", "cloudauth", "openAPI")
+            : base("Cloudauth", "2018-09-16", "GetVerifyToken", "CloudAuth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }

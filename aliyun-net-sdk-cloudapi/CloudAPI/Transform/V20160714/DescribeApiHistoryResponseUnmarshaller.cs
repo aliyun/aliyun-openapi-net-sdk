@@ -46,8 +46,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiHistoryResponse.ResultSample = context.StringValue("DescribeApiHistory.ResultSample");
 			describeApiHistoryResponse.FailResultSample = context.StringValue("DescribeApiHistory.FailResultSample");
 			describeApiHistoryResponse.DeployedTime = context.StringValue("DescribeApiHistory.DeployedTime");
+			describeApiHistoryResponse.AllowSignatureMethod = context.StringValue("DescribeApiHistory.AllowSignatureMethod");
 
-			DescribeApiHistoryResponse.RequestConfig_ requestConfig = new DescribeApiHistoryResponse.RequestConfig_();
+			DescribeApiHistoryResponse.DescribeApiHistory_RequestConfig requestConfig = new DescribeApiHistoryResponse.DescribeApiHistory_RequestConfig();
 			requestConfig.RequestProtocol = context.StringValue("DescribeApiHistory.RequestConfig.RequestProtocol");
 			requestConfig.RequestHttpMethod = context.StringValue("DescribeApiHistory.RequestConfig.RequestHttpMethod");
 			requestConfig.RequestPath = context.StringValue("DescribeApiHistory.RequestConfig.RequestPath");
@@ -56,17 +57,17 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			requestConfig.RequestMode = context.StringValue("DescribeApiHistory.RequestConfig.RequestMode");
 			describeApiHistoryResponse.RequestConfig = requestConfig;
 
-			DescribeApiHistoryResponse.ServiceConfig_ serviceConfig = new DescribeApiHistoryResponse.ServiceConfig_();
+			DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig serviceConfig = new DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig();
 			serviceConfig.ServiceProtocol = context.StringValue("DescribeApiHistory.ServiceConfig.ServiceProtocol");
 			serviceConfig.ServiceAddress = context.StringValue("DescribeApiHistory.ServiceConfig.ServiceAddress");
 			serviceConfig.ServiceHttpMethod = context.StringValue("DescribeApiHistory.ServiceConfig.ServiceHttpMethod");
 			serviceConfig.ServicePath = context.StringValue("DescribeApiHistory.ServiceConfig.ServicePath");
 			serviceConfig.ServiceTimeout = context.IntegerValue("DescribeApiHistory.ServiceConfig.ServiceTimeout");
-			serviceConfig.Mock = context.EnumValue<DescribeApiHistoryResponse.ServiceConfig_.MockEnum>("DescribeApiHistory.ServiceConfig.Mock");
+			serviceConfig.Mock = context.StringValue("DescribeApiHistory.ServiceConfig.Mock");
 			serviceConfig.MockResult = context.StringValue("DescribeApiHistory.ServiceConfig.MockResult");
-			serviceConfig.ServiceVpcEnable = context.EnumValue<DescribeApiHistoryResponse.ServiceConfig_.ServiceVpcEnableEnum>("DescribeApiHistory.ServiceConfig.ServiceVpcEnable");
+			serviceConfig.ServiceVpcEnable = context.StringValue("DescribeApiHistory.ServiceConfig.ServiceVpcEnable");
 
-			DescribeApiHistoryResponse.ServiceConfig_.VpcConfig_ vpcConfig = new DescribeApiHistoryResponse.ServiceConfig_.VpcConfig_();
+			DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_VpcConfig vpcConfig = new DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_VpcConfig();
 			vpcConfig.Name = context.StringValue("DescribeApiHistory.ServiceConfig.VpcConfig.Name");
 			vpcConfig.VpcId = context.StringValue("DescribeApiHistory.ServiceConfig.VpcConfig.VpcId");
 			vpcConfig.InstanceId = context.StringValue("DescribeApiHistory.ServiceConfig.VpcConfig.InstanceId");
@@ -74,27 +75,27 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			serviceConfig.VpcConfig = vpcConfig;
 			describeApiHistoryResponse.ServiceConfig = serviceConfig;
 
-			DescribeApiHistoryResponse.OpenIdConnectConfig_ openIdConnectConfig = new DescribeApiHistoryResponse.OpenIdConnectConfig_();
+			DescribeApiHistoryResponse.DescribeApiHistory_OpenIdConnectConfig openIdConnectConfig = new DescribeApiHistoryResponse.DescribeApiHistory_OpenIdConnectConfig();
 			openIdConnectConfig.OpenIdApiType = context.StringValue("DescribeApiHistory.OpenIdConnectConfig.OpenIdApiType");
 			openIdConnectConfig.IdTokenParamName = context.StringValue("DescribeApiHistory.OpenIdConnectConfig.IdTokenParamName");
 			openIdConnectConfig.PublicKeyId = context.StringValue("DescribeApiHistory.OpenIdConnectConfig.PublicKeyId");
 			openIdConnectConfig.PublicKey = context.StringValue("DescribeApiHistory.OpenIdConnectConfig.PublicKey");
 			describeApiHistoryResponse.OpenIdConnectConfig = openIdConnectConfig;
 
-			List<DescribeApiHistoryResponse.ErrorCodeSample> errorCodeSamples = new List<DescribeApiHistoryResponse.ErrorCodeSample>();
+			List<DescribeApiHistoryResponse.DescribeApiHistory_ErrorCodeSample> describeApiHistoryResponse_errorCodeSamples = new List<DescribeApiHistoryResponse.DescribeApiHistory_ErrorCodeSample>();
 			for (int i = 0; i < context.Length("DescribeApiHistory.ErrorCodeSamples.Length"); i++) {
-				DescribeApiHistoryResponse.ErrorCodeSample errorCodeSample = new DescribeApiHistoryResponse.ErrorCodeSample();
+				DescribeApiHistoryResponse.DescribeApiHistory_ErrorCodeSample errorCodeSample = new DescribeApiHistoryResponse.DescribeApiHistory_ErrorCodeSample();
 				errorCodeSample.Code = context.StringValue("DescribeApiHistory.ErrorCodeSamples["+ i +"].Code");
 				errorCodeSample.Message = context.StringValue("DescribeApiHistory.ErrorCodeSamples["+ i +"].Message");
 				errorCodeSample.Description = context.StringValue("DescribeApiHistory.ErrorCodeSamples["+ i +"].Description");
 
-				errorCodeSamples.Add(errorCodeSample);
+				describeApiHistoryResponse_errorCodeSamples.Add(errorCodeSample);
 			}
-			describeApiHistoryResponse.ErrorCodeSamples = errorCodeSamples;
+			describeApiHistoryResponse.ErrorCodeSamples = describeApiHistoryResponse_errorCodeSamples;
 
-			List<DescribeApiHistoryResponse.ResultDescription> resultDescriptions = new List<DescribeApiHistoryResponse.ResultDescription>();
+			List<DescribeApiHistoryResponse.DescribeApiHistory_ResultDescription> describeApiHistoryResponse_resultDescriptions = new List<DescribeApiHistoryResponse.DescribeApiHistory_ResultDescription>();
 			for (int i = 0; i < context.Length("DescribeApiHistory.ResultDescriptions.Length"); i++) {
-				DescribeApiHistoryResponse.ResultDescription resultDescription = new DescribeApiHistoryResponse.ResultDescription();
+				DescribeApiHistoryResponse.DescribeApiHistory_ResultDescription resultDescription = new DescribeApiHistoryResponse.DescribeApiHistory_ResultDescription();
 				resultDescription.Id = context.StringValue("DescribeApiHistory.ResultDescriptions["+ i +"].Id");
 				resultDescription.Pid = context.StringValue("DescribeApiHistory.ResultDescriptions["+ i +"].Pid");
 				resultDescription.HasChild = context.BooleanValue("DescribeApiHistory.ResultDescriptions["+ i +"].HasChild");
@@ -104,51 +105,51 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				resultDescription.Type = context.StringValue("DescribeApiHistory.ResultDescriptions["+ i +"].Type");
 				resultDescription.Description = context.StringValue("DescribeApiHistory.ResultDescriptions["+ i +"].Description");
 
-				resultDescriptions.Add(resultDescription);
+				describeApiHistoryResponse_resultDescriptions.Add(resultDescription);
 			}
-			describeApiHistoryResponse.ResultDescriptions = resultDescriptions;
+			describeApiHistoryResponse.ResultDescriptions = describeApiHistoryResponse_resultDescriptions;
 
-			List<DescribeApiHistoryResponse.SystemParameter> systemParameters = new List<DescribeApiHistoryResponse.SystemParameter>();
+			List<DescribeApiHistoryResponse.DescribeApiHistory_SystemParameter> describeApiHistoryResponse_systemParameters = new List<DescribeApiHistoryResponse.DescribeApiHistory_SystemParameter>();
 			for (int i = 0; i < context.Length("DescribeApiHistory.SystemParameters.Length"); i++) {
-				DescribeApiHistoryResponse.SystemParameter systemParameter = new DescribeApiHistoryResponse.SystemParameter();
+				DescribeApiHistoryResponse.DescribeApiHistory_SystemParameter systemParameter = new DescribeApiHistoryResponse.DescribeApiHistory_SystemParameter();
 				systemParameter.ParameterName = context.StringValue("DescribeApiHistory.SystemParameters["+ i +"].ParameterName");
 				systemParameter.ServiceParameterName = context.StringValue("DescribeApiHistory.SystemParameters["+ i +"].ServiceParameterName");
 				systemParameter.Location = context.StringValue("DescribeApiHistory.SystemParameters["+ i +"].Location");
 				systemParameter.DemoValue = context.StringValue("DescribeApiHistory.SystemParameters["+ i +"].DemoValue");
 				systemParameter.Description = context.StringValue("DescribeApiHistory.SystemParameters["+ i +"].Description");
 
-				systemParameters.Add(systemParameter);
+				describeApiHistoryResponse_systemParameters.Add(systemParameter);
 			}
-			describeApiHistoryResponse.SystemParameters = systemParameters;
+			describeApiHistoryResponse.SystemParameters = describeApiHistoryResponse_systemParameters;
 
-			List<DescribeApiHistoryResponse.CustomSystemParameter> customSystemParameters = new List<DescribeApiHistoryResponse.CustomSystemParameter>();
+			List<DescribeApiHistoryResponse.DescribeApiHistory_CustomSystemParameter> describeApiHistoryResponse_customSystemParameters = new List<DescribeApiHistoryResponse.DescribeApiHistory_CustomSystemParameter>();
 			for (int i = 0; i < context.Length("DescribeApiHistory.CustomSystemParameters.Length"); i++) {
-				DescribeApiHistoryResponse.CustomSystemParameter customSystemParameter = new DescribeApiHistoryResponse.CustomSystemParameter();
+				DescribeApiHistoryResponse.DescribeApiHistory_CustomSystemParameter customSystemParameter = new DescribeApiHistoryResponse.DescribeApiHistory_CustomSystemParameter();
 				customSystemParameter.ParameterName = context.StringValue("DescribeApiHistory.CustomSystemParameters["+ i +"].ParameterName");
 				customSystemParameter.ServiceParameterName = context.StringValue("DescribeApiHistory.CustomSystemParameters["+ i +"].ServiceParameterName");
 				customSystemParameter.Location = context.StringValue("DescribeApiHistory.CustomSystemParameters["+ i +"].Location");
 				customSystemParameter.DemoValue = context.StringValue("DescribeApiHistory.CustomSystemParameters["+ i +"].DemoValue");
 				customSystemParameter.Description = context.StringValue("DescribeApiHistory.CustomSystemParameters["+ i +"].Description");
 
-				customSystemParameters.Add(customSystemParameter);
+				describeApiHistoryResponse_customSystemParameters.Add(customSystemParameter);
 			}
-			describeApiHistoryResponse.CustomSystemParameters = customSystemParameters;
+			describeApiHistoryResponse.CustomSystemParameters = describeApiHistoryResponse_customSystemParameters;
 
-			List<DescribeApiHistoryResponse.ConstantParameter> constantParameters = new List<DescribeApiHistoryResponse.ConstantParameter>();
+			List<DescribeApiHistoryResponse.DescribeApiHistory_ConstantParameter> describeApiHistoryResponse_constantParameters = new List<DescribeApiHistoryResponse.DescribeApiHistory_ConstantParameter>();
 			for (int i = 0; i < context.Length("DescribeApiHistory.ConstantParameters.Length"); i++) {
-				DescribeApiHistoryResponse.ConstantParameter constantParameter = new DescribeApiHistoryResponse.ConstantParameter();
+				DescribeApiHistoryResponse.DescribeApiHistory_ConstantParameter constantParameter = new DescribeApiHistoryResponse.DescribeApiHistory_ConstantParameter();
 				constantParameter.ServiceParameterName = context.StringValue("DescribeApiHistory.ConstantParameters["+ i +"].ServiceParameterName");
 				constantParameter.ConstantValue = context.StringValue("DescribeApiHistory.ConstantParameters["+ i +"].ConstantValue");
 				constantParameter.Location = context.StringValue("DescribeApiHistory.ConstantParameters["+ i +"].Location");
 				constantParameter.Description = context.StringValue("DescribeApiHistory.ConstantParameters["+ i +"].Description");
 
-				constantParameters.Add(constantParameter);
+				describeApiHistoryResponse_constantParameters.Add(constantParameter);
 			}
-			describeApiHistoryResponse.ConstantParameters = constantParameters;
+			describeApiHistoryResponse.ConstantParameters = describeApiHistoryResponse_constantParameters;
 
-			List<DescribeApiHistoryResponse.RequestParameter> requestParameters = new List<DescribeApiHistoryResponse.RequestParameter>();
+			List<DescribeApiHistoryResponse.DescribeApiHistory_RequestParameter> describeApiHistoryResponse_requestParameters = new List<DescribeApiHistoryResponse.DescribeApiHistory_RequestParameter>();
 			for (int i = 0; i < context.Length("DescribeApiHistory.RequestParameters.Length"); i++) {
-				DescribeApiHistoryResponse.RequestParameter requestParameter = new DescribeApiHistoryResponse.RequestParameter();
+				DescribeApiHistoryResponse.DescribeApiHistory_RequestParameter requestParameter = new DescribeApiHistoryResponse.DescribeApiHistory_RequestParameter();
 				requestParameter.ApiParameterName = context.StringValue("DescribeApiHistory.RequestParameters["+ i +"].ApiParameterName");
 				requestParameter.Location = context.StringValue("DescribeApiHistory.RequestParameters["+ i +"].Location");
 				requestParameter.ParameterType = context.StringValue("DescribeApiHistory.RequestParameters["+ i +"].ParameterType");
@@ -166,30 +167,30 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				requestParameter.DocOrder = context.IntegerValue("DescribeApiHistory.RequestParameters["+ i +"].DocOrder");
 				requestParameter.Description = context.StringValue("DescribeApiHistory.RequestParameters["+ i +"].Description");
 
-				requestParameters.Add(requestParameter);
+				describeApiHistoryResponse_requestParameters.Add(requestParameter);
 			}
-			describeApiHistoryResponse.RequestParameters = requestParameters;
+			describeApiHistoryResponse.RequestParameters = describeApiHistoryResponse_requestParameters;
 
-			List<DescribeApiHistoryResponse.ServiceParameter> serviceParameters = new List<DescribeApiHistoryResponse.ServiceParameter>();
+			List<DescribeApiHistoryResponse.DescribeApiHistory_ServiceParameter> describeApiHistoryResponse_serviceParameters = new List<DescribeApiHistoryResponse.DescribeApiHistory_ServiceParameter>();
 			for (int i = 0; i < context.Length("DescribeApiHistory.ServiceParameters.Length"); i++) {
-				DescribeApiHistoryResponse.ServiceParameter serviceParameter = new DescribeApiHistoryResponse.ServiceParameter();
+				DescribeApiHistoryResponse.DescribeApiHistory_ServiceParameter serviceParameter = new DescribeApiHistoryResponse.DescribeApiHistory_ServiceParameter();
 				serviceParameter.ServiceParameterName = context.StringValue("DescribeApiHistory.ServiceParameters["+ i +"].ServiceParameterName");
 				serviceParameter.Location = context.StringValue("DescribeApiHistory.ServiceParameters["+ i +"].Location");
 				serviceParameter.ParameterType = context.StringValue("DescribeApiHistory.ServiceParameters["+ i +"].ParameterType");
 
-				serviceParameters.Add(serviceParameter);
+				describeApiHistoryResponse_serviceParameters.Add(serviceParameter);
 			}
-			describeApiHistoryResponse.ServiceParameters = serviceParameters;
+			describeApiHistoryResponse.ServiceParameters = describeApiHistoryResponse_serviceParameters;
 
-			List<DescribeApiHistoryResponse.ServiceParameterMap> serviceParametersMap = new List<DescribeApiHistoryResponse.ServiceParameterMap>();
+			List<DescribeApiHistoryResponse.DescribeApiHistory_ServiceParameterMap> describeApiHistoryResponse_serviceParametersMap = new List<DescribeApiHistoryResponse.DescribeApiHistory_ServiceParameterMap>();
 			for (int i = 0; i < context.Length("DescribeApiHistory.ServiceParametersMap.Length"); i++) {
-				DescribeApiHistoryResponse.ServiceParameterMap serviceParameterMap = new DescribeApiHistoryResponse.ServiceParameterMap();
+				DescribeApiHistoryResponse.DescribeApiHistory_ServiceParameterMap serviceParameterMap = new DescribeApiHistoryResponse.DescribeApiHistory_ServiceParameterMap();
 				serviceParameterMap.ServiceParameterName = context.StringValue("DescribeApiHistory.ServiceParametersMap["+ i +"].ServiceParameterName");
 				serviceParameterMap.RequestParameterName = context.StringValue("DescribeApiHistory.ServiceParametersMap["+ i +"].RequestParameterName");
 
-				serviceParametersMap.Add(serviceParameterMap);
+				describeApiHistoryResponse_serviceParametersMap.Add(serviceParameterMap);
 			}
-			describeApiHistoryResponse.ServiceParametersMap = serviceParametersMap;
+			describeApiHistoryResponse.ServiceParametersMap = describeApiHistoryResponse_serviceParametersMap;
         
 			return describeApiHistoryResponse;
         }

@@ -24,6 +24,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeApiGroupResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string groupId;
 
 		private string groupName;
@@ -40,15 +42,29 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string status;
 
-		private BillingStatusEnum? billingStatus;
+		private string billingStatus;
 
-		private IllegalStatusEnum? illegalStatus;
+		private string illegalStatus;
 
 		private int? trafficLimit;
 
-		private List<DomainItem> customDomains;
+		private string vpcDomain;
 
-		private List<StageInfo> stageItems;
+		private List<DescribeApiGroup_DomainItem> customDomains;
+
+		private List<DescribeApiGroup_StageInfo> stageItems;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string GroupId
 		{
@@ -146,7 +162,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public BillingStatusEnum? BillingStatus
+		public string BillingStatus
 		{
 			get
 			{
@@ -158,7 +174,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public IllegalStatusEnum? IllegalStatus
+		public string IllegalStatus
 		{
 			get
 			{
@@ -182,7 +198,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<DomainItem> CustomDomains
+		public string VpcDomain
+		{
+			get
+			{
+				return vpcDomain;
+			}
+			set	
+			{
+				vpcDomain = value;
+			}
+		}
+
+		public List<DescribeApiGroup_DomainItem> CustomDomains
 		{
 			get
 			{
@@ -194,7 +222,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<StageInfo> StageItems
+		public List<DescribeApiGroup_StageInfo> StageItems
 		{
 			get
 			{
@@ -206,19 +234,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-public enum BillingStatusEnum {
-
-			NORMAL,
-			LOCKED,
-}
-
-public enum IllegalStatusEnum {
-
-			NORMAL,
-			LOCKED,
-}
-
-		public class DomainItem{
+		public class DescribeApiGroup_DomainItem
+		{
 
 			private string domainName;
 
@@ -231,6 +248,8 @@ public enum IllegalStatusEnum {
 			private string domainBindingStatus;
 
 			private string domainLegalStatus;
+
+			private string domainWebSocketStatus;
 
 			private string domainRemark;
 
@@ -306,6 +325,18 @@ public enum IllegalStatusEnum {
 				}
 			}
 
+			public string DomainWebSocketStatus
+			{
+				get
+				{
+					return domainWebSocketStatus;
+				}
+				set	
+				{
+					domainWebSocketStatus = value;
+				}
+			}
+
 			public string DomainRemark
 			{
 				get
@@ -319,7 +350,8 @@ public enum IllegalStatusEnum {
 			}
 		}
 
-		public class StageInfo{
+		public class DescribeApiGroup_StageInfo
+		{
 
 			private string stageId;
 

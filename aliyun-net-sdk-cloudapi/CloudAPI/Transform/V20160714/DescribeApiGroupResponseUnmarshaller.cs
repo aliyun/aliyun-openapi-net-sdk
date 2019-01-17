@@ -39,35 +39,37 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiGroupResponse.ModifiedTime = context.StringValue("DescribeApiGroup.ModifiedTime");
 			describeApiGroupResponse.RegionId = context.StringValue("DescribeApiGroup.RegionId");
 			describeApiGroupResponse.Status = context.StringValue("DescribeApiGroup.Status");
-			describeApiGroupResponse.BillingStatus = context.EnumValue<DescribeApiGroupResponse.BillingStatusEnum>("DescribeApiGroup.BillingStatus");
-			describeApiGroupResponse.IllegalStatus = context.EnumValue<DescribeApiGroupResponse.IllegalStatusEnum>("DescribeApiGroup.IllegalStatus");
+			describeApiGroupResponse.BillingStatus = context.StringValue("DescribeApiGroup.BillingStatus");
+			describeApiGroupResponse.IllegalStatus = context.StringValue("DescribeApiGroup.IllegalStatus");
 			describeApiGroupResponse.TrafficLimit = context.IntegerValue("DescribeApiGroup.TrafficLimit");
+			describeApiGroupResponse.VpcDomain = context.StringValue("DescribeApiGroup.VpcDomain");
 
-			List<DescribeApiGroupResponse.DomainItem> customDomains = new List<DescribeApiGroupResponse.DomainItem>();
+			List<DescribeApiGroupResponse.DescribeApiGroup_DomainItem> describeApiGroupResponse_customDomains = new List<DescribeApiGroupResponse.DescribeApiGroup_DomainItem>();
 			for (int i = 0; i < context.Length("DescribeApiGroup.CustomDomains.Length"); i++) {
-				DescribeApiGroupResponse.DomainItem domainItem = new DescribeApiGroupResponse.DomainItem();
+				DescribeApiGroupResponse.DescribeApiGroup_DomainItem domainItem = new DescribeApiGroupResponse.DescribeApiGroup_DomainItem();
 				domainItem.DomainName = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainName");
 				domainItem.CertificateId = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].CertificateId");
 				domainItem.CertificateName = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].CertificateName");
 				domainItem.DomainCNAMEStatus = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainCNAMEStatus");
 				domainItem.DomainBindingStatus = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainBindingStatus");
 				domainItem.DomainLegalStatus = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainLegalStatus");
+				domainItem.DomainWebSocketStatus = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainWebSocketStatus");
 				domainItem.DomainRemark = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainRemark");
 
-				customDomains.Add(domainItem);
+				describeApiGroupResponse_customDomains.Add(domainItem);
 			}
-			describeApiGroupResponse.CustomDomains = customDomains;
+			describeApiGroupResponse.CustomDomains = describeApiGroupResponse_customDomains;
 
-			List<DescribeApiGroupResponse.StageInfo> stageItems = new List<DescribeApiGroupResponse.StageInfo>();
+			List<DescribeApiGroupResponse.DescribeApiGroup_StageInfo> describeApiGroupResponse_stageItems = new List<DescribeApiGroupResponse.DescribeApiGroup_StageInfo>();
 			for (int i = 0; i < context.Length("DescribeApiGroup.StageItems.Length"); i++) {
-				DescribeApiGroupResponse.StageInfo stageInfo = new DescribeApiGroupResponse.StageInfo();
+				DescribeApiGroupResponse.DescribeApiGroup_StageInfo stageInfo = new DescribeApiGroupResponse.DescribeApiGroup_StageInfo();
 				stageInfo.StageId = context.StringValue("DescribeApiGroup.StageItems["+ i +"].StageId");
 				stageInfo.StageName = context.StringValue("DescribeApiGroup.StageItems["+ i +"].StageName");
 				stageInfo.Description = context.StringValue("DescribeApiGroup.StageItems["+ i +"].Description");
 
-				stageItems.Add(stageInfo);
+				describeApiGroupResponse_stageItems.Add(stageInfo);
 			}
-			describeApiGroupResponse.StageItems = stageItems;
+			describeApiGroupResponse.StageItems = describeApiGroupResponse_stageItems;
         
 			return describeApiGroupResponse;
         }

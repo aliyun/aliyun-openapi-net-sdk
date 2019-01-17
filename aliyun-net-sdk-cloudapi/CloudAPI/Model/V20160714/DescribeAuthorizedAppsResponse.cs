@@ -24,13 +24,27 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeAuthorizedAppsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private List<AuthorizedApp> authorizedApps;
+		private List<DescribeAuthorizedApps_AuthorizedApp> authorizedApps;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<AuthorizedApp> AuthorizedApps
+		public List<DescribeAuthorizedApps_AuthorizedApp> AuthorizedApps
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class AuthorizedApp{
+		public class DescribeAuthorizedApps_AuthorizedApp
+		{
 
 			private string stageName;
 
@@ -88,13 +103,15 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private string appName;
 
-			private string operater;
+			private string _operator;
 
 			private string authorizationSource;
 
 			private string description;
 
 			private string authorizedTime;
+
+			private string authVaildTime;
 
 			public string StageName
 			{
@@ -132,15 +149,15 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
-			public string Operator
+			public string _Operator
 			{
 				get
 				{
-					return operater;
+					return _operator;
 				}
 				set	
 				{
-					operater = value;
+					_operator = value;
 				}
 			}
 
@@ -177,6 +194,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					authorizedTime = value;
+				}
+			}
+
+			public string AuthVaildTime
+			{
+				get
+				{
+					return authVaildTime;
+				}
+				set	
+				{
+					authVaildTime = value;
 				}
 			}
 		}

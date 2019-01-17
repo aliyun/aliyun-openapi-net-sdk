@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 
 				private string auditConclusions;
 
+				private float? authorityComparisonScore;
+
 				public int? StatusCode
 				{
 					get
@@ -167,6 +169,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 					set	
 					{
 						auditConclusions = value;
+					}
+				}
+
+				public float? AuthorityComparisonScore
+				{
+					get
+					{
+						return authorityComparisonScore;
+					}
+					set	
+					{
+						authorityComparisonScore = value;
 					}
 				}
 			}

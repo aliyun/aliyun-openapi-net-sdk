@@ -24,13 +24,27 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeApisByAppResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private List<AppApiRelationInfo> appApiRelationInfos;
+		private List<DescribeApisByApp_AppApiRelationInfo> appApiRelationInfos;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<AppApiRelationInfo> AppApiRelationInfos
+		public List<DescribeApisByApp_AppApiRelationInfo> AppApiRelationInfos
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class AppApiRelationInfo{
+		public class DescribeApisByApp_AppApiRelationInfo
+		{
 
 			private string regionId;
 
@@ -90,7 +105,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private string stageName;
 
-			private string operater;
+			private string _operator;
 
 			private string apiId;
 
@@ -150,15 +165,15 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
-			public string Operator
+			public string _Operator
 			{
 				get
 				{
-					return operater;
+					return _operator;
 				}
 				set	
 				{
-					operater = value;
+					_operator = value;
 				}
 			}
 

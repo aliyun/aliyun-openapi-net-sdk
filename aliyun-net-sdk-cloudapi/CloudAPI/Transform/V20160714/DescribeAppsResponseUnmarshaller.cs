@@ -35,16 +35,16 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeAppsResponse.PageSize = context.IntegerValue("DescribeApps.PageSize");
 			describeAppsResponse.PageNumber = context.IntegerValue("DescribeApps.PageNumber");
 
-			List<DescribeAppsResponse.AppItem> apps = new List<DescribeAppsResponse.AppItem>();
+			List<DescribeAppsResponse.DescribeApps_AppItem> describeAppsResponse_apps = new List<DescribeAppsResponse.DescribeApps_AppItem>();
 			for (int i = 0; i < context.Length("DescribeApps.Apps.Length"); i++) {
-				DescribeAppsResponse.AppItem appItem = new DescribeAppsResponse.AppItem();
+				DescribeAppsResponse.DescribeApps_AppItem appItem = new DescribeAppsResponse.DescribeApps_AppItem();
 				appItem.AppId = context.LongValue("DescribeApps.Apps["+ i +"].AppId");
 				appItem.AppName = context.StringValue("DescribeApps.Apps["+ i +"].AppName");
 				appItem.Description = context.StringValue("DescribeApps.Apps["+ i +"].Description");
 
-				apps.Add(appItem);
+				describeAppsResponse_apps.Add(appItem);
 			}
-			describeAppsResponse.Apps = apps;
+			describeAppsResponse.Apps = describeAppsResponse_apps;
         
 			return describeAppsResponse;
         }

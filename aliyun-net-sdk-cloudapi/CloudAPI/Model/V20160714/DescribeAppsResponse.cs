@@ -24,13 +24,27 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeAppsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private List<AppItem> apps;
+		private List<DescribeApps_AppItem> apps;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<AppItem> Apps
+		public List<DescribeApps_AppItem> Apps
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class AppItem{
+		public class DescribeApps_AppItem
+		{
 
 			private long? appId;
 

@@ -99,6 +99,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private long? applyId;
 
+			private List<string> invalidDeviceNameList;
+
 			public long? ApplyId
 			{
 				get
@@ -108,6 +110,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					applyId = value;
+				}
+			}
+
+			public List<string> InvalidDeviceNameList
+			{
+				get
+				{
+					return invalidDeviceNameList;
+				}
+				set	
+				{
+					invalidDeviceNameList = value;
 				}
 			}
 		}

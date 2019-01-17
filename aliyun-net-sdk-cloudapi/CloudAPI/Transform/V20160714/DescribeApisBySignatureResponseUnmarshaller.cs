@@ -35,9 +35,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApisBySignatureResponse.PageSize = context.IntegerValue("DescribeApisBySignature.PageSize");
 			describeApisBySignatureResponse.PageNumber = context.IntegerValue("DescribeApisBySignature.PageNumber");
 
-			List<DescribeApisBySignatureResponse.ApiInfo> apiInfos = new List<DescribeApisBySignatureResponse.ApiInfo>();
+			List<DescribeApisBySignatureResponse.DescribeApisBySignature_ApiInfo> describeApisBySignatureResponse_apiInfos = new List<DescribeApisBySignatureResponse.DescribeApisBySignature_ApiInfo>();
 			for (int i = 0; i < context.Length("DescribeApisBySignature.ApiInfos.Length"); i++) {
-				DescribeApisBySignatureResponse.ApiInfo apiInfo = new DescribeApisBySignatureResponse.ApiInfo();
+				DescribeApisBySignatureResponse.DescribeApisBySignature_ApiInfo apiInfo = new DescribeApisBySignatureResponse.DescribeApisBySignature_ApiInfo();
 				apiInfo.RegionId = context.StringValue("DescribeApisBySignature.ApiInfos["+ i +"].RegionId");
 				apiInfo.GroupId = context.StringValue("DescribeApisBySignature.ApiInfos["+ i +"].GroupId");
 				apiInfo.GroupName = context.StringValue("DescribeApisBySignature.ApiInfos["+ i +"].GroupName");
@@ -48,9 +48,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				apiInfo.Visibility = context.StringValue("DescribeApisBySignature.ApiInfos["+ i +"].Visibility");
 				apiInfo.BoundTime = context.StringValue("DescribeApisBySignature.ApiInfos["+ i +"].BoundTime");
 
-				apiInfos.Add(apiInfo);
+				describeApisBySignatureResponse_apiInfos.Add(apiInfo);
 			}
-			describeApisBySignatureResponse.ApiInfos = apiInfos;
+			describeApisBySignatureResponse.ApiInfos = describeApisBySignatureResponse_apiInfos;
         
 			return describeApisBySignatureResponse;
         }

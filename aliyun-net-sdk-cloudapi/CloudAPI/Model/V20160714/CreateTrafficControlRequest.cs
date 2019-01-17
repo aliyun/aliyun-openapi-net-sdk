@@ -29,21 +29,53 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class CreateTrafficControlRequest : RpcAcsRequest<CreateTrafficControlResponse>
     {
         public CreateTrafficControlRequest()
-            : base("CloudAPI", "2016-07-14", "CreateTrafficControl")
+            : base("CloudAPI", "2016-07-14", "CreateTrafficControl", "apigateway", "openAPI")
         {
         }
+
+		private int? apiDefault;
+
+		private string securityToken;
 
 		private string trafficControlName;
 
 		private string trafficControlUnit;
 
-		private int? apiDefault;
+		private string action;
+
+		private string description;
 
 		private int? userDefault;
 
 		private int? appDefault;
 
-		private string description;
+		private string accessKeyId;
+
+		public int? ApiDefault
+		{
+			get
+			{
+				return apiDefault;
+			}
+			set	
+			{
+				apiDefault = value;
+				DictionaryUtil.Add(QueryParameters, "ApiDefault", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
 
 		public string TrafficControlName
 		{
@@ -71,16 +103,29 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public int? ApiDefault
+		public string Action
 		{
 			get
 			{
-				return apiDefault;
+				return action;
 			}
 			set	
 			{
-				apiDefault = value;
-				DictionaryUtil.Add(QueryParameters, "ApiDefault", value.ToString());
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -110,16 +155,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string Description
+		public string AccessKeyId
 		{
 			get
 			{
-				return description;
+				return accessKeyId;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

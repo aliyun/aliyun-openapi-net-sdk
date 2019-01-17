@@ -35,9 +35,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApisByTrafficControlResponse.PageSize = context.IntegerValue("DescribeApisByTrafficControl.PageSize");
 			describeApisByTrafficControlResponse.PageNumber = context.IntegerValue("DescribeApisByTrafficControl.PageNumber");
 
-			List<DescribeApisByTrafficControlResponse.ApiInfo> apiInfos = new List<DescribeApisByTrafficControlResponse.ApiInfo>();
+			List<DescribeApisByTrafficControlResponse.DescribeApisByTrafficControl_ApiInfo> describeApisByTrafficControlResponse_apiInfos = new List<DescribeApisByTrafficControlResponse.DescribeApisByTrafficControl_ApiInfo>();
 			for (int i = 0; i < context.Length("DescribeApisByTrafficControl.ApiInfos.Length"); i++) {
-				DescribeApisByTrafficControlResponse.ApiInfo apiInfo = new DescribeApisByTrafficControlResponse.ApiInfo();
+				DescribeApisByTrafficControlResponse.DescribeApisByTrafficControl_ApiInfo apiInfo = new DescribeApisByTrafficControlResponse.DescribeApisByTrafficControl_ApiInfo();
 				apiInfo.RegionId = context.StringValue("DescribeApisByTrafficControl.ApiInfos["+ i +"].RegionId");
 				apiInfo.GroupId = context.StringValue("DescribeApisByTrafficControl.ApiInfos["+ i +"].GroupId");
 				apiInfo.GroupName = context.StringValue("DescribeApisByTrafficControl.ApiInfos["+ i +"].GroupName");
@@ -48,9 +48,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				apiInfo.Visibility = context.StringValue("DescribeApisByTrafficControl.ApiInfos["+ i +"].Visibility");
 				apiInfo.BoundTime = context.StringValue("DescribeApisByTrafficControl.ApiInfos["+ i +"].BoundTime");
 
-				apiInfos.Add(apiInfo);
+				describeApisByTrafficControlResponse_apiInfos.Add(apiInfo);
 			}
-			describeApisByTrafficControlResponse.ApiInfos = apiInfos;
+			describeApisByTrafficControlResponse.ApiInfos = describeApisByTrafficControlResponse_apiInfos;
         
 			return describeApisByTrafficControlResponse;
         }

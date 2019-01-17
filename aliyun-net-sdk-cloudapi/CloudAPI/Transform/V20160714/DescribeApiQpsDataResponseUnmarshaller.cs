@@ -32,25 +32,25 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiQpsDataResponse.HttpResponse = context.HttpResponse;
 			describeApiQpsDataResponse.RequestId = context.StringValue("DescribeApiQpsData.RequestId");
 
-			List<DescribeApiQpsDataResponse.MonitorItem> callSuccesses = new List<DescribeApiQpsDataResponse.MonitorItem>();
+			List<DescribeApiQpsDataResponse.DescribeApiQpsData_MonitorItem> describeApiQpsDataResponse_callSuccesses = new List<DescribeApiQpsDataResponse.DescribeApiQpsData_MonitorItem>();
 			for (int i = 0; i < context.Length("DescribeApiQpsData.CallSuccesses.Length"); i++) {
-				DescribeApiQpsDataResponse.MonitorItem monitorItem = new DescribeApiQpsDataResponse.MonitorItem();
+				DescribeApiQpsDataResponse.DescribeApiQpsData_MonitorItem monitorItem = new DescribeApiQpsDataResponse.DescribeApiQpsData_MonitorItem();
 				monitorItem.ItemTime = context.StringValue("DescribeApiQpsData.CallSuccesses["+ i +"].ItemTime");
 				monitorItem.ItemValue = context.StringValue("DescribeApiQpsData.CallSuccesses["+ i +"].ItemValue");
 
-				callSuccesses.Add(monitorItem);
+				describeApiQpsDataResponse_callSuccesses.Add(monitorItem);
 			}
-			describeApiQpsDataResponse.CallSuccesses = callSuccesses;
+			describeApiQpsDataResponse.CallSuccesses = describeApiQpsDataResponse_callSuccesses;
 
-			List<DescribeApiQpsDataResponse.MonitorItem> callFails = new List<DescribeApiQpsDataResponse.MonitorItem>();
+			List<DescribeApiQpsDataResponse.DescribeApiQpsData_MonitorItem> describeApiQpsDataResponse_callFails = new List<DescribeApiQpsDataResponse.DescribeApiQpsData_MonitorItem>();
 			for (int i = 0; i < context.Length("DescribeApiQpsData.CallFails.Length"); i++) {
-				DescribeApiQpsDataResponse.MonitorItem monitorItem = new DescribeApiQpsDataResponse.MonitorItem();
+				DescribeApiQpsDataResponse.DescribeApiQpsData_MonitorItem monitorItem = new DescribeApiQpsDataResponse.DescribeApiQpsData_MonitorItem();
 				monitorItem.ItemTime = context.StringValue("DescribeApiQpsData.CallFails["+ i +"].ItemTime");
 				monitorItem.ItemValue = context.StringValue("DescribeApiQpsData.CallFails["+ i +"].ItemValue");
 
-				callFails.Add(monitorItem);
+				describeApiQpsDataResponse_callFails.Add(monitorItem);
 			}
-			describeApiQpsDataResponse.CallFails = callFails;
+			describeApiQpsDataResponse.CallFails = describeApiQpsDataResponse_callFails;
         
 			return describeApiQpsDataResponse;
         }

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
     public class GetMaterialsRequest : RpcAcsRequest<GetMaterialsResponse>
     {
         public GetMaterialsRequest()
-            : base("Cloudauth", "2018-09-16", "GetMaterials", "cloudauth", "openAPI")
+            : base("Cloudauth", "2018-09-16", "GetMaterials", "CloudAuth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }

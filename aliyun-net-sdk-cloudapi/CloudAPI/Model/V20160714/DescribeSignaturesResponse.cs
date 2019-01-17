@@ -24,13 +24,27 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeSignaturesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private List<SignatureInfo> signatureInfos;
+		private List<DescribeSignatures_SignatureInfo> signatureInfos;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<SignatureInfo> SignatureInfos
+		public List<DescribeSignatures_SignatureInfo> SignatureInfos
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class SignatureInfo{
+		public class DescribeSignatures_SignatureInfo
+		{
 
 			private string regionId;
 

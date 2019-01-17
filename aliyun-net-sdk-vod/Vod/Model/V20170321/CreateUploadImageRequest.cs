@@ -37,15 +37,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string imageType;
 
-		private string originalFileName;
-
 		private string resourceOwnerAccount;
 
 		private string imageExt;
 
-		private long? cateId;
-
-		private string action;
+		private string description;
 
 		private long? ownerId;
 
@@ -56,6 +52,14 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string tags;
 
 		private string storageLocation;
+
+		private string userData;
+
+		private string originalFileName;
+
+		private long? cateId;
+
+		private string action;
 
 		public long? ResourceOwnerId
 		{
@@ -80,19 +84,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				imageType = value;
 				DictionaryUtil.Add(QueryParameters, "ImageType", value);
-			}
-		}
-
-		public string OriginalFileName
-		{
-			get
-			{
-				return originalFileName;
-			}
-			set	
-			{
-				originalFileName = value;
-				DictionaryUtil.Add(QueryParameters, "OriginalFileName", value);
 			}
 		}
 
@@ -122,29 +113,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? CateId
+		public string Description
 		{
 			get
 			{
-				return cateId;
+				return description;
 			}
 			set	
 			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -210,6 +188,58 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				storageLocation = value;
 				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public string OriginalFileName
+		{
+			get
+			{
+				return originalFileName;
+			}
+			set	
+			{
+				originalFileName = value;
+				DictionaryUtil.Add(QueryParameters, "OriginalFileName", value);
+			}
+		}
+
+		public long? CateId
+		{
+			get
+			{
+				return cateId;
+			}
+			set	
+			{
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

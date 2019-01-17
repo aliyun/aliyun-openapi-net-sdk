@@ -35,9 +35,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeVpcAccessesResponse.PageSize = context.IntegerValue("DescribeVpcAccesses.PageSize");
 			describeVpcAccessesResponse.PageNumber = context.IntegerValue("DescribeVpcAccesses.PageNumber");
 
-			List<DescribeVpcAccessesResponse.VpcAccessAttribute> vpcAccessAttributes = new List<DescribeVpcAccessesResponse.VpcAccessAttribute>();
+			List<DescribeVpcAccessesResponse.DescribeVpcAccesses_VpcAccessAttribute> describeVpcAccessesResponse_vpcAccessAttributes = new List<DescribeVpcAccessesResponse.DescribeVpcAccesses_VpcAccessAttribute>();
 			for (int i = 0; i < context.Length("DescribeVpcAccesses.VpcAccessAttributes.Length"); i++) {
-				DescribeVpcAccessesResponse.VpcAccessAttribute vpcAccessAttribute = new DescribeVpcAccessesResponse.VpcAccessAttribute();
+				DescribeVpcAccessesResponse.DescribeVpcAccesses_VpcAccessAttribute vpcAccessAttribute = new DescribeVpcAccessesResponse.DescribeVpcAccesses_VpcAccessAttribute();
 				vpcAccessAttribute.VpcId = context.StringValue("DescribeVpcAccesses.VpcAccessAttributes["+ i +"].VpcId");
 				vpcAccessAttribute.InstanceId = context.StringValue("DescribeVpcAccesses.VpcAccessAttributes["+ i +"].InstanceId");
 				vpcAccessAttribute.CreatedTime = context.StringValue("DescribeVpcAccesses.VpcAccessAttributes["+ i +"].CreatedTime");
@@ -45,9 +45,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				vpcAccessAttribute.RegionId = context.StringValue("DescribeVpcAccesses.VpcAccessAttributes["+ i +"].RegionId");
 				vpcAccessAttribute.Name = context.StringValue("DescribeVpcAccesses.VpcAccessAttributes["+ i +"].Name");
 
-				vpcAccessAttributes.Add(vpcAccessAttribute);
+				describeVpcAccessesResponse_vpcAccessAttributes.Add(vpcAccessAttribute);
 			}
-			describeVpcAccessesResponse.VpcAccessAttributes = vpcAccessAttributes;
+			describeVpcAccessesResponse.VpcAccessAttributes = describeVpcAccessesResponse_vpcAccessAttributes;
         
 			return describeVpcAccessesResponse;
         }

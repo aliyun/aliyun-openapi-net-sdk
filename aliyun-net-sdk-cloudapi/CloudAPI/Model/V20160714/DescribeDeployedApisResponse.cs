@@ -24,13 +24,27 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeDeployedApisResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private List<DeployedApiItem> deployedApis;
+		private List<DescribeDeployedApis_DeployedApiItem> deployedApis;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<DeployedApiItem> DeployedApis
+		public List<DescribeDeployedApis_DeployedApiItem> DeployedApis
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class DeployedApiItem{
+		public class DescribeDeployedApis_DeployedApiItem
+		{
 
 			private string regionId;
 

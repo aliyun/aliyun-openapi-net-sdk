@@ -35,9 +35,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApisResponse.PageSize = context.IntegerValue("DescribeApis.PageSize");
 			describeApisResponse.PageNumber = context.IntegerValue("DescribeApis.PageNumber");
 
-			List<DescribeApisResponse.ApiSummary> apiSummarys = new List<DescribeApisResponse.ApiSummary>();
+			List<DescribeApisResponse.DescribeApis_ApiSummary> describeApisResponse_apiSummarys = new List<DescribeApisResponse.DescribeApis_ApiSummary>();
 			for (int i = 0; i < context.Length("DescribeApis.ApiSummarys.Length"); i++) {
-				DescribeApisResponse.ApiSummary apiSummary = new DescribeApisResponse.ApiSummary();
+				DescribeApisResponse.DescribeApis_ApiSummary apiSummary = new DescribeApisResponse.DescribeApis_ApiSummary();
 				apiSummary.RegionId = context.StringValue("DescribeApis.ApiSummarys["+ i +"].RegionId");
 				apiSummary.GroupId = context.StringValue("DescribeApis.ApiSummarys["+ i +"].GroupId");
 				apiSummary.GroupName = context.StringValue("DescribeApis.ApiSummarys["+ i +"].GroupName");
@@ -48,9 +48,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				apiSummary.CreatedTime = context.StringValue("DescribeApis.ApiSummarys["+ i +"].CreatedTime");
 				apiSummary.ModifiedTime = context.StringValue("DescribeApis.ApiSummarys["+ i +"].ModifiedTime");
 
-				apiSummarys.Add(apiSummary);
+				describeApisResponse_apiSummarys.Add(apiSummary);
 			}
-			describeApisResponse.ApiSummarys = apiSummarys;
+			describeApisResponse.ApiSummarys = describeApisResponse_apiSummarys;
         
 			return describeApisResponse;
         }

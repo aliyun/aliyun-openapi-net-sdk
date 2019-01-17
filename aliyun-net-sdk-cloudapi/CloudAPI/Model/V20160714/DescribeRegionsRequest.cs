@@ -29,9 +29,69 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
     {
         public DescribeRegionsRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeRegions")
+            : base("CloudAPI", "2016-07-14", "DescribeRegions", "apigateway", "openAPI")
         {
         }
+
+		private string securityToken;
+
+		private string action;
+
+		private string language;
+
+		private string accessKeyId;
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Language
+		{
+			get
+			{
+				return language;
+			}
+			set	
+			{
+				language = value;
+				DictionaryUtil.Add(QueryParameters, "Language", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
 
         public override DescribeRegionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

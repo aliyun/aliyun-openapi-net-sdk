@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 			data.TrustedScore = context.FloatValue("GetStatus.Data.TrustedScore");
 			data.SimilarityScore = context.FloatValue("GetStatus.Data.SimilarityScore");
 			data.AuditConclusions = context.StringValue("GetStatus.Data.AuditConclusions");
+			data.AuthorityComparisonScore = context.FloatValue("GetStatus.Data.AuthorityComparisonScore");
 			getStatusResponse.Data = data;
         
 			return getStatusResponse;

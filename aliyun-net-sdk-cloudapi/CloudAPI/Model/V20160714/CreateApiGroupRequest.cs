@@ -29,13 +29,73 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class CreateApiGroupRequest : RpcAcsRequest<CreateApiGroupResponse>
     {
         public CreateApiGroupRequest()
-            : base("CloudAPI", "2016-07-14", "CreateApiGroup")
+            : base("CloudAPI", "2016-07-14", "CreateApiGroup", "apigateway", "openAPI")
         {
         }
 
-		private string groupName;
+		private string securityToken;
+
+		private string action;
 
 		private string description;
+
+		private string source;
+
+		private string groupName;
+
+		private string accessKeyId;
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string Source
+		{
+			get
+			{
+				return source;
+			}
+			set	
+			{
+				source = value;
+				DictionaryUtil.Add(QueryParameters, "Source", value);
+			}
+		}
 
 		public string GroupName
 		{
@@ -50,16 +110,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string Description
+		public string AccessKeyId
 		{
 			get
 			{
-				return description;
+				return accessKeyId;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

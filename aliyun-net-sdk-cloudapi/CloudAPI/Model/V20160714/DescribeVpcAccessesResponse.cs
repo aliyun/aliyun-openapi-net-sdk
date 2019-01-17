@@ -24,13 +24,27 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeVpcAccessesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private List<VpcAccessAttribute> vpcAccessAttributes;
+		private List<DescribeVpcAccesses_VpcAccessAttribute> vpcAccessAttributes;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<VpcAccessAttribute> VpcAccessAttributes
+		public List<DescribeVpcAccesses_VpcAccessAttribute> VpcAccessAttributes
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class VpcAccessAttribute{
+		public class DescribeVpcAccesses_VpcAccessAttribute
+		{
 
 			private string vpcId;
 

@@ -24,7 +24,21 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class SdkGenerateResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string downloadLink;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DownloadLink
 		{

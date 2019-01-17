@@ -24,6 +24,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeDomainResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string groupId;
 
 		private string domainName;
@@ -44,7 +46,21 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string domainLegalStatus;
 
+		private string domainWebSocketStatus;
+
 		private string domainRemark;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string GroupId
 		{
@@ -163,6 +179,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			set	
 			{
 				domainLegalStatus = value;
+			}
+		}
+
+		public string DomainWebSocketStatus
+		{
+			get
+			{
+				return domainWebSocketStatus;
+			}
+			set	
+			{
+				domainWebSocketStatus = value;
 			}
 		}
 

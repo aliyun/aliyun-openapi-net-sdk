@@ -32,16 +32,16 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeRegionsResponse.HttpResponse = context.HttpResponse;
 			describeRegionsResponse.RequestId = context.StringValue("DescribeRegions.RequestId");
 
-			List<DescribeRegionsResponse.Region> regions = new List<DescribeRegionsResponse.Region>();
+			List<DescribeRegionsResponse.DescribeRegions_Region> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_Region>();
 			for (int i = 0; i < context.Length("DescribeRegions.Regions.Length"); i++) {
-				DescribeRegionsResponse.Region region = new DescribeRegionsResponse.Region();
+				DescribeRegionsResponse.DescribeRegions_Region region = new DescribeRegionsResponse.DescribeRegions_Region();
 				region.RegionId = context.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
 				region.LocalName = context.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
-				region.EndPoint = context.StringValue("DescribeRegions.Regions["+ i +"].EndPoint");
+				region.RegionEndpoint = context.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
 
-				regions.Add(region);
+				describeRegionsResponse_regions.Add(region);
 			}
-			describeRegionsResponse.Regions = regions;
+			describeRegionsResponse.Regions = describeRegionsResponse_regions;
         
 			return describeRegionsResponse;
         }

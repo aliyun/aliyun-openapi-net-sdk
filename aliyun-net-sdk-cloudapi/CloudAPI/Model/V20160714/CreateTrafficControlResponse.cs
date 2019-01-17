@@ -24,7 +24,21 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class CreateTrafficControlResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string trafficControlId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string TrafficControlId
 		{

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeApiLatencyDataResponse : AcsResponse
 	{
 
-		private List<MonitorItem> callLatencys;
+		private string requestId;
 
-		public List<MonitorItem> CallLatencys
+		private List<DescribeApiLatencyData_MonitorItem> callLatencys;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeApiLatencyData_MonitorItem> CallLatencys
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class MonitorItem{
+		public class DescribeApiLatencyData_MonitorItem
+		{
 
 			private string itemTime;
 

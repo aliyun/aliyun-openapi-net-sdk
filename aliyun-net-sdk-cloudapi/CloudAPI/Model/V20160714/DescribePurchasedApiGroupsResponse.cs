@@ -24,13 +24,27 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribePurchasedApiGroupsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private List<PurchasedApiGroupAttribute> purchasedApiGroupAttributes;
+		private List<DescribePurchasedApiGroups_PurchasedApiGroupAttribute> purchasedApiGroupAttributes;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<PurchasedApiGroupAttribute> PurchasedApiGroupAttributes
+		public List<DescribePurchasedApiGroups_PurchasedApiGroupAttribute> PurchasedApiGroupAttributes
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class PurchasedApiGroupAttribute{
+		public class DescribePurchasedApiGroups_PurchasedApiGroupAttribute
+		{
 
 			private string groupId;
 
@@ -99,6 +114,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			private long? invokeTimesMax;
 
 			private long? invokeTimesNow;
+
+			private string status;
 
 			public string GroupId
 			{
@@ -205,6 +222,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					invokeTimesNow = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

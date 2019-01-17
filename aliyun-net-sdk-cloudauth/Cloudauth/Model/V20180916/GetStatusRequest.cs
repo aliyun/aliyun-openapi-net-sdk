@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
     public class GetStatusRequest : RpcAcsRequest<GetStatusResponse>
     {
         public GetStatusRequest()
-            : base("Cloudauth", "2018-09-16", "GetStatus", "cloudauth", "openAPI")
+            : base("Cloudauth", "2018-09-16", "GetStatus", "CloudAuth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }

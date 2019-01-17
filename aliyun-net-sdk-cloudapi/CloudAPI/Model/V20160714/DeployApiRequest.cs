@@ -29,17 +29,49 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DeployApiRequest : RpcAcsRequest<DeployApiResponse>
     {
         public DeployApiRequest()
-            : base("CloudAPI", "2016-07-14", "DeployApi")
+            : base("CloudAPI", "2016-07-14", "DeployApi", "apigateway", "openAPI")
         {
         }
 
+		private string stageName;
+
+		private string securityToken;
+
 		private string groupId;
+
+		private string action;
+
+		private string description;
 
 		private string apiId;
 
-		private string stageName;
+		private string accessKeyId;
 
-		private string description;
+		public string StageName
+		{
+			get
+			{
+				return stageName;
+			}
+			set	
+			{
+				stageName = value;
+				DictionaryUtil.Add(QueryParameters, "StageName", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -51,6 +83,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -67,29 +125,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string StageName
+		public string AccessKeyId
 		{
 			get
 			{
-				return stageName;
+				return accessKeyId;
 			}
 			set	
 			{
-				stageName = value;
-				DictionaryUtil.Add(QueryParameters, "StageName", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

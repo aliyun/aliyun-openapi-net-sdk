@@ -53,11 +53,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string storageLocation;
 
+		private string userData;
+
 		private string mediaExt;
 
 		private string fileName;
 
-		private int? cateId;
+		private long? cateId;
 
 		private string action;
 
@@ -191,6 +193,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
 		public string MediaExt
 		{
 			get
@@ -217,7 +232,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public int? CateId
+		public long? CateId
 		{
 			get
 			{

@@ -35,9 +35,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeHistoryApisResponse.PageSize = context.IntegerValue("DescribeHistoryApis.PageSize");
 			describeHistoryApisResponse.PageNumber = context.IntegerValue("DescribeHistoryApis.PageNumber");
 
-			List<DescribeHistoryApisResponse.ApiHisItem> apiHisItems = new List<DescribeHistoryApisResponse.ApiHisItem>();
+			List<DescribeHistoryApisResponse.DescribeHistoryApis_ApiHisItem> describeHistoryApisResponse_apiHisItems = new List<DescribeHistoryApisResponse.DescribeHistoryApis_ApiHisItem>();
 			for (int i = 0; i < context.Length("DescribeHistoryApis.ApiHisItems.Length"); i++) {
-				DescribeHistoryApisResponse.ApiHisItem apiHisItem = new DescribeHistoryApisResponse.ApiHisItem();
+				DescribeHistoryApisResponse.DescribeHistoryApis_ApiHisItem apiHisItem = new DescribeHistoryApisResponse.DescribeHistoryApis_ApiHisItem();
 				apiHisItem.RegionId = context.StringValue("DescribeHistoryApis.ApiHisItems["+ i +"].RegionId");
 				apiHisItem.ApiId = context.StringValue("DescribeHistoryApis.ApiHisItems["+ i +"].ApiId");
 				apiHisItem.ApiName = context.StringValue("DescribeHistoryApis.ApiHisItems["+ i +"].ApiName");
@@ -45,13 +45,13 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				apiHisItem.GroupName = context.StringValue("DescribeHistoryApis.ApiHisItems["+ i +"].GroupName");
 				apiHisItem.StageName = context.StringValue("DescribeHistoryApis.ApiHisItems["+ i +"].StageName");
 				apiHisItem.HistoryVersion = context.StringValue("DescribeHistoryApis.ApiHisItems["+ i +"].HistoryVersion");
-				apiHisItem.Status = context.EnumValue<DescribeHistoryApisResponse.ApiHisItem.StatusEnum>("DescribeHistoryApis.ApiHisItems["+ i +"].Status");
+				apiHisItem.Status = context.StringValue("DescribeHistoryApis.ApiHisItems["+ i +"].Status");
 				apiHisItem.Description = context.StringValue("DescribeHistoryApis.ApiHisItems["+ i +"].Description");
 				apiHisItem.DeployedTime = context.StringValue("DescribeHistoryApis.ApiHisItems["+ i +"].DeployedTime");
 
-				apiHisItems.Add(apiHisItem);
+				describeHistoryApisResponse_apiHisItems.Add(apiHisItem);
 			}
-			describeHistoryApisResponse.ApiHisItems = apiHisItems;
+			describeHistoryApisResponse.ApiHisItems = describeHistoryApisResponse_apiHisItems;
         
 			return describeHistoryApisResponse;
         }

@@ -32,25 +32,25 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiTrafficDataResponse.HttpResponse = context.HttpResponse;
 			describeApiTrafficDataResponse.RequestId = context.StringValue("DescribeApiTrafficData.RequestId");
 
-			List<DescribeApiTrafficDataResponse.MonitorItem> callUploads = new List<DescribeApiTrafficDataResponse.MonitorItem>();
+			List<DescribeApiTrafficDataResponse.DescribeApiTrafficData_MonitorItem> describeApiTrafficDataResponse_callUploads = new List<DescribeApiTrafficDataResponse.DescribeApiTrafficData_MonitorItem>();
 			for (int i = 0; i < context.Length("DescribeApiTrafficData.CallUploads.Length"); i++) {
-				DescribeApiTrafficDataResponse.MonitorItem monitorItem = new DescribeApiTrafficDataResponse.MonitorItem();
+				DescribeApiTrafficDataResponse.DescribeApiTrafficData_MonitorItem monitorItem = new DescribeApiTrafficDataResponse.DescribeApiTrafficData_MonitorItem();
 				monitorItem.ItemTime = context.StringValue("DescribeApiTrafficData.CallUploads["+ i +"].ItemTime");
 				monitorItem.ItemValue = context.StringValue("DescribeApiTrafficData.CallUploads["+ i +"].ItemValue");
 
-				callUploads.Add(monitorItem);
+				describeApiTrafficDataResponse_callUploads.Add(monitorItem);
 			}
-			describeApiTrafficDataResponse.CallUploads = callUploads;
+			describeApiTrafficDataResponse.CallUploads = describeApiTrafficDataResponse_callUploads;
 
-			List<DescribeApiTrafficDataResponse.MonitorItem> callDownloads = new List<DescribeApiTrafficDataResponse.MonitorItem>();
+			List<DescribeApiTrafficDataResponse.DescribeApiTrafficData_MonitorItem> describeApiTrafficDataResponse_callDownloads = new List<DescribeApiTrafficDataResponse.DescribeApiTrafficData_MonitorItem>();
 			for (int i = 0; i < context.Length("DescribeApiTrafficData.CallDownloads.Length"); i++) {
-				DescribeApiTrafficDataResponse.MonitorItem monitorItem = new DescribeApiTrafficDataResponse.MonitorItem();
+				DescribeApiTrafficDataResponse.DescribeApiTrafficData_MonitorItem monitorItem = new DescribeApiTrafficDataResponse.DescribeApiTrafficData_MonitorItem();
 				monitorItem.ItemTime = context.StringValue("DescribeApiTrafficData.CallDownloads["+ i +"].ItemTime");
 				monitorItem.ItemValue = context.StringValue("DescribeApiTrafficData.CallDownloads["+ i +"].ItemValue");
 
-				callDownloads.Add(monitorItem);
+				describeApiTrafficDataResponse_callDownloads.Add(monitorItem);
 			}
-			describeApiTrafficDataResponse.CallDownloads = callDownloads;
+			describeApiTrafficDataResponse.CallDownloads = describeApiTrafficDataResponse_callDownloads;
         
 			return describeApiTrafficDataResponse;
         }

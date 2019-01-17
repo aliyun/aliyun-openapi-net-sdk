@@ -65,6 +65,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string action;
 
+		private string workflowId;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -270,6 +272,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string WorkflowId
+		{
+			get
+			{
+				return workflowId;
+			}
+			set	
+			{
+				workflowId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
 			}
 		}
 

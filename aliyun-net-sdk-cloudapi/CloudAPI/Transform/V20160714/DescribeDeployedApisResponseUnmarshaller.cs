@@ -35,9 +35,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeDeployedApisResponse.PageSize = context.IntegerValue("DescribeDeployedApis.PageSize");
 			describeDeployedApisResponse.PageNumber = context.IntegerValue("DescribeDeployedApis.PageNumber");
 
-			List<DescribeDeployedApisResponse.DeployedApiItem> deployedApis = new List<DescribeDeployedApisResponse.DeployedApiItem>();
+			List<DescribeDeployedApisResponse.DescribeDeployedApis_DeployedApiItem> describeDeployedApisResponse_deployedApis = new List<DescribeDeployedApisResponse.DescribeDeployedApis_DeployedApiItem>();
 			for (int i = 0; i < context.Length("DescribeDeployedApis.DeployedApis.Length"); i++) {
-				DescribeDeployedApisResponse.DeployedApiItem deployedApiItem = new DescribeDeployedApisResponse.DeployedApiItem();
+				DescribeDeployedApisResponse.DescribeDeployedApis_DeployedApiItem deployedApiItem = new DescribeDeployedApisResponse.DescribeDeployedApis_DeployedApiItem();
 				deployedApiItem.RegionId = context.StringValue("DescribeDeployedApis.DeployedApis["+ i +"].RegionId");
 				deployedApiItem.ApiId = context.StringValue("DescribeDeployedApis.DeployedApis["+ i +"].ApiId");
 				deployedApiItem.ApiName = context.StringValue("DescribeDeployedApis.DeployedApis["+ i +"].ApiName");
@@ -48,9 +48,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				deployedApiItem.Description = context.StringValue("DescribeDeployedApis.DeployedApis["+ i +"].Description");
 				deployedApiItem.DeployedTime = context.StringValue("DescribeDeployedApis.DeployedApis["+ i +"].DeployedTime");
 
-				deployedApis.Add(deployedApiItem);
+				describeDeployedApisResponse_deployedApis.Add(deployedApiItem);
 			}
-			describeDeployedApisResponse.DeployedApis = deployedApis;
+			describeDeployedApisResponse.DeployedApis = describeDeployedApisResponse_deployedApis;
         
 			return describeDeployedApisResponse;
         }

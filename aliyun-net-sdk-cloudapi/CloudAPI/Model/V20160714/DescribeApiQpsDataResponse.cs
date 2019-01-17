@@ -24,11 +24,25 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeApiQpsDataResponse : AcsResponse
 	{
 
-		private List<MonitorItem> callSuccesses;
+		private string requestId;
 
-		private List<MonitorItem> callFails;
+		private List<DescribeApiQpsData_MonitorItem> callSuccesses;
 
-		public List<MonitorItem> CallSuccesses
+		private List<DescribeApiQpsData_MonitorItem> callFails;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeApiQpsData_MonitorItem> CallSuccesses
 		{
 			get
 			{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<MonitorItem> CallFails
+		public List<DescribeApiQpsData_MonitorItem> CallFails
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class MonitorItem{
+		public class DescribeApiQpsData_MonitorItem
+		{
 
 			private string itemTime;
 

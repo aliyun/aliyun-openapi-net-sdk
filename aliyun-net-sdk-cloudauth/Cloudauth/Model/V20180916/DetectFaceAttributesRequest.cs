@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
     public class DetectFaceAttributesRequest : RpcAcsRequest<DetectFaceAttributesResponse>
     {
         public DetectFaceAttributesRequest()
-            : base("Cloudauth", "2018-09-16", "DetectFaceAttributes", "cloudauth", "openAPI")
+            : base("Cloudauth", "2018-09-16", "DetectFaceAttributes", "CloudAuth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

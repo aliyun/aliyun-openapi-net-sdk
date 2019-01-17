@@ -29,28 +29,34 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class ModifySignatureRequest : RpcAcsRequest<ModifySignatureResponse>
     {
         public ModifySignatureRequest()
-            : base("CloudAPI", "2016-07-14", "ModifySignature")
+            : base("CloudAPI", "2016-07-14", "ModifySignature", "apigateway", "openAPI")
         {
         }
 
-		private string signatureId;
+		private string securityToken;
 
 		private string signatureName;
 
 		private string signatureKey;
 
+		private string action;
+
+		private string signatureId;
+
 		private string signatureSecret;
 
-		public string SignatureId
+		private string accessKeyId;
+
+		public string SecurityToken
 		{
 			get
 			{
-				return signatureId;
+				return securityToken;
 			}
 			set	
 			{
-				signatureId = value;
-				DictionaryUtil.Add(QueryParameters, "SignatureId", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -80,6 +86,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string SignatureId
+		{
+			get
+			{
+				return signatureId;
+			}
+			set	
+			{
+				signatureId = value;
+				DictionaryUtil.Add(QueryParameters, "SignatureId", value);
+			}
+		}
+
 		public string SignatureSecret
 		{
 			get
@@ -90,6 +122,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				signatureSecret = value;
 				DictionaryUtil.Add(QueryParameters, "SignatureSecret", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

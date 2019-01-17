@@ -29,26 +29,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeApisBySignatureRequest : RpcAcsRequest<DescribeApisBySignatureResponse>
     {
         public DescribeApisBySignatureRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeApisBySignature")
+            : base("CloudAPI", "2016-07-14", "DescribeApisBySignature", "apigateway", "openAPI")
         {
         }
 
-		private string signatureId;
+		private string securityToken;
 
 		private int? pageSize;
 
+		private string action;
+
+		private string signatureId;
+
 		private int? pageNumber;
 
-		public string SignatureId
+		private string accessKeyId;
+
+		public string SecurityToken
 		{
 			get
 			{
-				return signatureId;
+				return securityToken;
 			}
 			set	
 			{
-				signatureId = value;
-				DictionaryUtil.Add(QueryParameters, "SignatureId", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -65,6 +71,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string SignatureId
+		{
+			get
+			{
+				return signatureId;
+			}
+			set	
+			{
+				signatureId = value;
+				DictionaryUtil.Add(QueryParameters, "SignatureId", value);
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -75,6 +107,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeRegionsResponse : AcsResponse
 	{
 
-		private List<Region> regions;
+		private string requestId;
 
-		public List<Region> Regions
+		private List<DescribeRegions_Region> regions;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeRegions_Region> Regions
 		{
 			get
 			{
@@ -38,13 +52,14 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class Region{
+		public class DescribeRegions_Region
+		{
 
 			private string regionId;
 
 			private string localName;
 
-			private string endPoint;
+			private string regionEndpoint;
 
 			public string RegionId
 			{
@@ -70,15 +85,15 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
-			public string EndPoint
+			public string RegionEndpoint
 			{
 				get
 				{
-					return endPoint;
+					return regionEndpoint;
 				}
 				set	
 				{
-					endPoint = value;
+					regionEndpoint = value;
 				}
 			}
 		}

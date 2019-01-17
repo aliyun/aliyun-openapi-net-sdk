@@ -24,9 +24,23 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeDomainsResolutionResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string groupId;
 
-		private List<DomainResolution> domainResolutions;
+		private List<DescribeDomainsResolution_DomainResolution> domainResolutions;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string GroupId
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<DomainResolution> DomainResolutions
+		public List<DescribeDomainsResolution_DomainResolution> DomainResolutions
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class DomainResolution{
+		public class DescribeDomainsResolution_DomainResolution
+		{
 
 			private string domainName;
 
