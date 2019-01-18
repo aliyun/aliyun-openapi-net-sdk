@@ -7,3 +7,6 @@ coverage:
     project:
       default:
         target: 85%
+
+ignore:
+  - "aliyun-net-sdk-core.Tests/"  # ignore aliyun-net-sdk-core.Tests
