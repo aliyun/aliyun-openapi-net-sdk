@@ -20,6 +20,7 @@ using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Utils;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -37,7 +38,7 @@ namespace Aliyun.Acs.Core
         }
 
         public RoaAcsRequest(string product, string version)
-            : base(product, version)
+            : base(product)
         {
             this.SetVersion(version);
             Initialize();
@@ -46,22 +47,33 @@ namespace Aliyun.Acs.Core
         public RoaAcsRequest(string product, string version, string action)
             : base(product)
         {
-            this.Version = version;
+            this.SetVersion(version);
             this.ActionName = action;
             Initialize();
         }
 
-        public RoaAcsRequest(string product, string version, string action, string locationProduct)
+        public RoaAcsRequest(String product, String version, String action, String locationProduct)
             : base(product)
         {
-            Version = version;
+            this.SetVersion(version);
+            this.ActionName = action;
+            this.LocationProduct = locationProduct;
+            Initialize();
+        }
+
+        public RoaAcsRequest(string product, string version, string action, string locationProduct, string locationEndpointType)
+            : base(product)
+        {
+            this.SetVersion(version);
             ActionName = action;
             this.LocationProduct = locationProduct;
+            this.LocationEndpointType = locationEndpointType;
             Initialize();
         }
 
         private void Initialize()
         {
+            Method = MethodType.GET;
             this.AcceptFormat = FormatType.RAW;
             this.Composer = RoaSignatureComposer.GetComposer();
         }
@@ -101,17 +113,34 @@ namespace Aliyun.Acs.Core
             return url;
         }
 
-
-        public override HttpRequest SignRequest(ISigner signer, Credential credential, FormatType? format, ProductDomain domain)
+        public override HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
+            FormatType? format, ProductDomain domain)
         {
-            Dictionary<string, string> imutableMap = new Dictionary<string, string>(this.Headers);
-            if (null != signer && null != credential)
+            if (this.BodyParameters != null && this.BodyParameters.Count > 0)
             {
-                string accessKeyId = credential.AccessKeyId;
-                string accessSecret = credential.AccessSecret;
-                imutableMap = this.Composer.RefreshSignParameters(Headers, signer, accessKeyId, format);
-                string strToSign = this.Composer.ComposeStringToSign(Method, uriPattern, signer, QueryParameters, imutableMap, pathParameters);
-                string signature = signer.SignString(strToSign, accessSecret);
+                Dictionary<String, String> formParams = new Dictionary<String, String>(this.BodyParameters);
+                string formStr = ConcatQueryString(formParams);
+                byte[] formData = System.Text.Encoding.UTF8.GetBytes(formStr);
+                this.SetContent(formData, "UTF-8", FormatType.FORM);
+            }
+
+            Dictionary<string, string> imutableMap = new Dictionary<string, string>(this.Headers);
+            if (null != signer && null != credentials)
+            {
+                String accessKeyId = credentials.GetAccessKeyId();
+                imutableMap = Composer.RefreshSignParameters(Headers, signer, accessKeyId, format);
+                if (credentials is BasicSessionCredentials)
+                {
+                    String sessionToken = ((BasicSessionCredentials)credentials).GetSessionToken();
+                    if (null != sessionToken)
+                    {
+                        imutableMap.Add("x-acs-security-token", sessionToken);
+                    }
+                }
+
+                String strToSign = Composer.ComposeStringToSign(Method, uriPattern, signer,
+                    QueryParameters, imutableMap, pathParameters);
+                String signature = signer.SignString(strToSign, credentials);
                 DictionaryUtil.Add(imutableMap, "Authorization", "acs " + accessKeyId + ":" + signature);
             }
             Url = this.ComposeUrl(domain.DomianName, QueryParameters);
@@ -119,7 +148,7 @@ namespace Aliyun.Acs.Core
             return this;
         }
 
-        protected string UriPattern
+        public string UriPattern
         {
             get { return uriPattern; }
             set { uriPattern = value; }
@@ -129,6 +158,11 @@ namespace Aliyun.Acs.Core
         {
             get { return pathParameters; }
             set { pathParameters = value; }
+        }
+
+        public void AddPathParameters(string name, string value)
+        {
+            DictionaryUtil.Add(pathParameters, name, value);
         }
     }
 }

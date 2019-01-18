@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeLivePullStreamConfigResponse : AcsResponse
 	{
 
-		private List<LiveAppRecord> liveAppRecordList;
+		private string requestId;
 
-		public List<LiveAppRecord> LiveAppRecordList
+		private List<DescribeLivePullStreamConfig_LiveAppRecord> liveAppRecordList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeLivePullStreamConfig_LiveAppRecord> LiveAppRecordList
 		{
 			get
 			{
@@ -38,15 +52,14 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class LiveAppRecord{
+		public class DescribeLivePullStreamConfig_LiveAppRecord
+		{
 
 			private string domainName;
 
 			private string streamName;
 
 			private string sourceUrl;
-
-			private string always;
 
 			private string startTime;
 
@@ -85,18 +98,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					sourceUrl = value;
-				}
-			}
-
-			public string Always
-			{
-				get
-				{
-					return always;
-				}
-				set	
-				{
-					always = value;
 				}
 			}
 

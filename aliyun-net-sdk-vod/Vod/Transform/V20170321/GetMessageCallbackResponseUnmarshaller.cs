@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vod.Model.V20170321;
+using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Transform.V20170321
+namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetMessageCallbackResponseUnmarshaller
     {
@@ -32,9 +32,15 @@ namespace Aliyun.Acs.Vod.Transform.V20170321
 			getMessageCallbackResponse.HttpResponse = context.HttpResponse;
 			getMessageCallbackResponse.RequestId = context.StringValue("GetMessageCallback.RequestId");
 
-			GetMessageCallbackResponse.MessageCallback_ messageCallback = new GetMessageCallbackResponse.MessageCallback_();
+			GetMessageCallbackResponse.GetMessageCallback_MessageCallback messageCallback = new GetMessageCallbackResponse.GetMessageCallback_MessageCallback();
+			messageCallback.CallbackType = context.StringValue("GetMessageCallback.MessageCallback.CallbackType");
 			messageCallback.CallbackSwitch = context.StringValue("GetMessageCallback.MessageCallback.CallbackSwitch");
 			messageCallback.CallbackURL = context.StringValue("GetMessageCallback.MessageCallback.CallbackURL");
+			messageCallback.EventTypeList = context.StringValue("GetMessageCallback.MessageCallback.EventTypeList");
+			messageCallback.AuthSwitch = context.StringValue("GetMessageCallback.MessageCallback.AuthSwitch");
+			messageCallback.AuthKey = context.StringValue("GetMessageCallback.MessageCallback.AuthKey");
+			messageCallback.MnsEndpoint = context.StringValue("GetMessageCallback.MessageCallback.MnsEndpoint");
+			messageCallback.MnsQueueName = context.StringValue("GetMessageCallback.MessageCallback.MnsQueueName");
 			getMessageCallbackResponse.MessageCallback = messageCallback;
         
 			return getMessageCallbackResponse;

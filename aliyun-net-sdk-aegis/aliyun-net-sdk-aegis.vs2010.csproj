@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6506E40B-B820-4EF4-B894-5AF77A6CE0CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-aegis</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aegis\Model\V20161111\ReleaseInstanceRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeStratetyDetailRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\GetStatisticsByUuidResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeWarningRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeWebshellRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\GetEntityListResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\CreateInstanceRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\QueryCrackEventResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeStrategyTargetResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeVulListResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\GetStatisticsRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\GetAccountStatisticsResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\UpgradeInstanceResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeStrategyTargetRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\ModifyBatchIgnoreVulRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\ModifyStrategyRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\ModifyStrategyTargetRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\ModifyStrategyResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\QueryLoginEventRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\ModifyStrategyTargetResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\GetCrackStatisticsResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeVulListRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeStratetyDetailResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeStratetyResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeLoginLogsRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\QueryLoginEventResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeVulDetailsRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\DeleteStrategyResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeWebshellResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\GetCrackStatisticsRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeSuspiciousEventsResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\RenewInstanceResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\GetEntityListRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\DeleteStrategyRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\GetAccountStatisticsRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeVulDetailsResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\CreateInstanceResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\GetStatisticsByUuidRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeSuspiciousEventsRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeWarningResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\ModifyBatchIgnoreVulResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeLoginLogsResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\QueryCrackEventRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\DescribeStratetyRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\GetStatisticsResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\ReleaseInstanceResponse.cs" />
+    <Compile Include="Aegis\Model\V20161111\RenewInstanceRequest.cs" />
+    <Compile Include="Aegis\Model\V20161111\UpgradeInstanceRequest.cs" />
+    <Compile Include="Aegis\Transform\V20161111\DeleteStrategyResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\GetStatisticsResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\GetStatisticsByUuidResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\DescribeSuspiciousEventsResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\DescribeStrategyTargetResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\GetAccountStatisticsResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\RenewInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\DescribeStratetyResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\QueryCrackEventResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\DescribeWebshellResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\ReleaseInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\DescribeStratetyDetailResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\ModifyStrategyTargetResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\ModifyStrategyResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\DescribeWarningResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\DescribeVulDetailsResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\QueryLoginEventResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\GetEntityListResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\ModifyBatchIgnoreVulResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\DescribeLoginLogsResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\GetCrackStatisticsResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\CreateInstanceResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\DescribeVulListResponseUnmarshaller.cs" />
+    <Compile Include="Aegis\Transform\V20161111\UpgradeInstanceResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,21 @@
+2018-04-19 Version: 3.2.4
+1, upgrade slb sdk from 3.2.3 to 3.2.4
+2, fix return value type Integer to String
+
+2018-04-18 Version: 3.2.3
+1, upgrade slb sdk from 3.2.2 to 3.2.3
+2, add ACL related APIs
+
+2018-03-15 Version: 3.2.2
+1, Synchronize to the latest api list
+
+2017-11-14 Version: 3.2.1
+1, 发布新版SDK，与open API同步
+
+
+2017-08-15 Version: 3.2.0
+1, SLB接入业务location支持单元化region的自动路由
+2, 补齐RegionId参数，所有的接口的都支持RegionId入参
+3, 新增服务器组操作相关接口
+4, 新增设置、查询LB自动释放时间接口等
+

@@ -29,44 +29,48 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescibeImportsFromDatabaseRequest : RpcAcsRequest<DescibeImportsFromDatabaseResponse>
     {
         public DescibeImportsFromDatabaseRequest()
-            : base("Rds", "2014-08-15", "DescibeImportsFromDatabase")
+            : base("Rds", "2014-08-15", "DescibeImportsFromDatabase", "rds", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
 		private string clientToken;
-
-		private string dBInstanceId;
-
-		private string engine;
-
-		private int? importId;
-
-		private string startTime;
-
-		private string endTime;
-
-		private int? pageSize;
-
-		private int? pageNumber;
 
 		private string ownerAccount;
 
-		public long? OwnerId
+		private string endTime;
+
+		private string startTime;
+
+		private long? ownerId;
+
+		private int? pageNumber;
+
+		private string accessKeyId;
+
+		private int? importId;
+
+		private string engine;
+
+		private int? pageSize;
+
+		private string action;
+
+		private string dBInstanceId;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -83,19 +87,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -109,55 +100,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string OwnerAccount
 		{
 			get
 			{
-				return dBInstanceId;
+				return ownerAccount;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
-		public int? ImportId
-		{
-			get
-			{
-				return importId;
-			}
-			set	
-			{
-				importId = value;
-				DictionaryUtil.Add(QueryParameters, "ImportId", value.ToString());
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -174,16 +126,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageSize
+		public string StartTime
 		{
 			get
 			{
-				return pageSize;
+				return startTime;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -200,16 +165,81 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
+		public string AccessKeyId
 		{
 			get
 			{
-				return ownerAccount;
+				return accessKeyId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public int? ImportId
+		{
+			get
+			{
+				return importId;
+			}
+			set	
+			{
+				importId = value;
+				DictionaryUtil.Add(QueryParameters, "ImportId", value.ToString());
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

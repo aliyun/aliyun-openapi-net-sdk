@@ -33,34 +33,25 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
-
 		private string securityToken;
 
 		private string domainName;
 
-		private string logDay;
-
 		private long? pageSize;
 
-		private long? pageNumber;
-
-		private string startTime;
+		private string action;
 
 		private string endTime;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string startTime;
+
+		private long? ownerId;
+
+		private long? pageNumber;
+
+		private string accessKeyId;
+
+		private string logDay;
 
 		public string SecurityToken
 		{
@@ -88,19 +79,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string LogDay
-		{
-			get
-			{
-				return logDay;
-			}
-			set	
-			{
-				logDay = value;
-				DictionaryUtil.Add(QueryParameters, "LogDay", value);
-			}
-		}
-
 		public long? PageSize
 		{
 			get
@@ -114,16 +92,29 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public long? PageNumber
+		public string Action
 		{
 			get
 			{
-				return pageNumber;
+				return action;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -140,16 +131,55 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string EndTime
+		public long? OwnerId
 		{
 			get
 			{
-				return endTime;
+				return ownerId;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string LogDay
+		{
+			get
+			{
+				return logDay;
+			}
+			set	
+			{
+				logDay = value;
+				DictionaryUtil.Add(QueryParameters, "LogDay", value);
 			}
 		}
 

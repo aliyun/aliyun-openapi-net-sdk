@@ -36,15 +36,15 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainUvDataResponse.StartTime = context.StringValue("DescribeDomainUvData.StartTime");
 			describeDomainUvDataResponse.EndTime = context.StringValue("DescribeDomainUvData.EndTime");
 
-			List<DescribeDomainUvDataResponse.UsageData> uvDataInterval = new List<DescribeDomainUvDataResponse.UsageData>();
+			List<DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData> describeDomainUvDataResponse_uvDataInterval = new List<DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData>();
 			for (int i = 0; i < context.Length("DescribeDomainUvData.UvDataInterval.Length"); i++) {
-				DescribeDomainUvDataResponse.UsageData usageData = new DescribeDomainUvDataResponse.UsageData();
+				DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData usageData = new DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData();
 				usageData.TimeStamp = context.StringValue("DescribeDomainUvData.UvDataInterval["+ i +"].TimeStamp");
-				usageData.Value = context.StringValue("DescribeDomainUvData.UvDataInterval["+ i +"].Value");
+				usageData._Value = context.StringValue("DescribeDomainUvData.UvDataInterval["+ i +"].Value");
 
-				uvDataInterval.Add(usageData);
+				describeDomainUvDataResponse_uvDataInterval.Add(usageData);
 			}
-			describeDomainUvDataResponse.UvDataInterval = uvDataInterval;
+			describeDomainUvDataResponse.UvDataInterval = describeDomainUvDataResponse_uvDataInterval;
         
 			return describeDomainUvDataResponse;
         }

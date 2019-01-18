@@ -29,45 +29,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteInstanceRequest : RpcAcsRequest<DeleteInstanceResponse>
     {
         public DeleteInstanceRequest()
-            : base("Ecs", "2014-05-26", "DeleteInstance")
+            : base("Ecs", "2014-05-26", "DeleteInstance", "ecs", "openAPI")
         {
         }
-
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
 
 		private long? resourceOwnerId;
 
 		private string instanceId;
 
+		private string resourceOwnerAccount;
+
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private bool? terminateSubscription;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string action;
+
+		private bool? force;
+
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -95,6 +75,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -105,6 +98,58 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public bool? TerminateSubscription
+		{
+			get
+			{
+				return terminateSubscription;
+			}
+			set	
+			{
+				terminateSubscription = value;
+				DictionaryUtil.Add(QueryParameters, "TerminateSubscription", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public bool? Force
+		{
+			get
+			{
+				return force;
+			}
+			set	
+			{
+				force = value;
+				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

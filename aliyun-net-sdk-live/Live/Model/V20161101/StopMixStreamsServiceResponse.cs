@@ -19,14 +19,28 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class StopMixStreamsServiceResponse : AcsResponse
 	{
 
-		private List<MixStreamsInfo> mixStreamsInfoList;
+		private string requestId;
 
-		public List<MixStreamsInfo> MixStreamsInfoList
+		private List<StopMixStreamsService_MixStreamsInfo> mixStreamsInfoList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<StopMixStreamsService_MixStreamsInfo> MixStreamsInfoList
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class MixStreamsInfo{
+		public class StopMixStreamsService_MixStreamsInfo
+		{
 
 			private string domainName;
 

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class UpdateWaterMarkTemplateResponse : AcsResponse
 	{
 
-		private WaterMarkTemplate_ waterMarkTemplate;
+		private string requestId;
 
-		public WaterMarkTemplate_ WaterMarkTemplate
+		private UpdateWaterMarkTemplate_WaterMarkTemplate waterMarkTemplate;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public UpdateWaterMarkTemplate_WaterMarkTemplate WaterMarkTemplate
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class WaterMarkTemplate_{
+		public class UpdateWaterMarkTemplate_WaterMarkTemplate
+		{
 
 			private string id;
 
@@ -58,9 +73,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string state;
 
-			private Timeline_ timeline;
+			private UpdateWaterMarkTemplate_Timeline timeline;
 
-			private RatioRefer_ ratioRefer;
+			private UpdateWaterMarkTemplate_RatioRefer ratioRefer;
 
 			public string Id
 			{
@@ -170,7 +185,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Timeline_ Timeline
+			public UpdateWaterMarkTemplate_Timeline Timeline
 			{
 				get
 				{
@@ -182,7 +197,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public RatioRefer_ RatioRefer
+			public UpdateWaterMarkTemplate_RatioRefer RatioRefer
 			{
 				get
 				{
@@ -194,7 +209,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Timeline_{
+			public class UpdateWaterMarkTemplate_Timeline
+			{
 
 				private string start;
 
@@ -225,7 +241,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class RatioRefer_{
+			public class UpdateWaterMarkTemplate_RatioRefer
+			{
 
 				private string dx;
 

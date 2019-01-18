@@ -24,15 +24,29 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeCdnMonitorDataResponse : AcsResponse
 	{
 
-		private string domainName;
+		private string requestId;
 
-		private long? monitorInterval;
+		private string domainName;
 
 		private string startTime;
 
 		private string endTime;
 
-		private List<CDNMonitorData> monitorDatas;
+		private string monitorInterval;
+
+		private List<DescribeCdnMonitorData_CDNMonitorData> monitorDatas;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{
@@ -43,18 +57,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				domainName = value;
-			}
-		}
-
-		public long? MonitorInterval
-		{
-			get
-			{
-				return monitorInterval;
-			}
-			set	
-			{
-				monitorInterval = value;
 			}
 		}
 
@@ -82,7 +84,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<CDNMonitorData> MonitorDatas
+		public string MonitorInterval
+		{
+			get
+			{
+				return monitorInterval;
+			}
+			set	
+			{
+				monitorInterval = value;
+			}
+		}
+
+		public List<DescribeCdnMonitorData_CDNMonitorData> MonitorDatas
 		{
 			get
 			{
@@ -94,17 +108,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class CDNMonitorData{
+		public class DescribeCdnMonitorData_CDNMonitorData
+		{
 
 			private string timeStamp;
 
-			private string queryPerSecond;
-
 			private string bytesPerSecond;
 
-			private string bytesHitRate;
+			private string queryPerSecond;
 
 			private string requestHitRate;
+
+			private string bytesHitRate;
 
 			private string averageObjectSize;
 
@@ -120,18 +135,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string QueryPerSecond
-			{
-				get
-				{
-					return queryPerSecond;
-				}
-				set	
-				{
-					queryPerSecond = value;
-				}
-			}
-
 			public string BytesPerSecond
 			{
 				get
@@ -144,15 +147,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string BytesHitRate
+			public string QueryPerSecond
 			{
 				get
 				{
-					return bytesHitRate;
+					return queryPerSecond;
 				}
 				set	
 				{
-					bytesHitRate = value;
+					queryPerSecond = value;
 				}
 			}
 
@@ -165,6 +168,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					requestHitRate = value;
+				}
+			}
+
+			public string BytesHitRate
+			{
+				get
+				{
+					return bytesHitRate;
+				}
+				set	
+				{
+					bytesHitRate = value;
 				}
 			}
 

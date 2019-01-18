@@ -29,28 +29,34 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeSignaturesRequest : RpcAcsRequest<DescribeSignaturesResponse>
     {
         public DescribeSignaturesRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeSignatures")
+            : base("CloudAPI", "2016-07-14", "DescribeSignatures", "apigateway", "openAPI")
         {
         }
 
-		private string signatureId;
+		private string securityToken;
 
 		private string signatureName;
 
-		private int? pageNumber;
-
 		private int? pageSize;
 
-		public string SignatureId
+		private string action;
+
+		private string signatureId;
+
+		private int? pageNumber;
+
+		private string accessKeyId;
+
+		public string SecurityToken
 		{
 			get
 			{
-				return signatureId;
+				return securityToken;
 			}
 			set	
 			{
-				signatureId = value;
-				DictionaryUtil.Add(QueryParameters, "SignatureId", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -67,6 +73,45 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string SignatureId
+		{
+			get
+			{
+				return signatureId;
+			}
+			set	
+			{
+				signatureId = value;
+				DictionaryUtil.Add(QueryParameters, "SignatureId", value);
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -80,16 +125,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public int? PageSize
+		public string AccessKeyId
 		{
 			get
 			{
-				return pageSize;
+				return accessKeyId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

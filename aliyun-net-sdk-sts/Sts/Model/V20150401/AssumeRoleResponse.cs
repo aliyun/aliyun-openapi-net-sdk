@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 	public class AssumeRoleResponse : AcsResponse
 	{
 
-		private Credentials_ credentials;
+		private string requestId;
 
-		private AssumedRoleUser_ assumedRoleUser;
+		private AssumeRole_Credentials credentials;
 
-		public Credentials_ Credentials
+		private AssumeRole_AssumedRoleUser assumedRoleUser;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public AssumeRole_Credentials Credentials
 		{
 			get
 			{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public AssumedRoleUser_ AssumedRoleUser
+		public AssumeRole_AssumedRoleUser AssumedRoleUser
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public class Credentials_{
+		public class AssumeRole_Credentials
+		{
 
 			private string securityToken;
 
@@ -111,7 +126,8 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public class AssumedRoleUser_{
+		public class AssumeRole_AssumedRoleUser
+		{
 
 			private string arn;
 

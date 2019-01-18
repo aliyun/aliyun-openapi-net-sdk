@@ -33,43 +33,71 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
-
-		private string securityToken;
-
-		private string domainName;
-
 		private string startTime;
 
-		private string endTime;
+		private string action;
+
+		private string fixTimeGap;
 
 		private string timeMerge;
 
+		private string domainName;
+
+		private string endTime;
+
+		private long? ownerId;
+
 		private string interval;
 
-		public long? OwnerId
+		public string StartTime
 		{
 			get
 			{
-				return ownerId;
+				return startTime;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string SecurityToken
+		public string Action
 		{
 			get
 			{
-				return securityToken;
+				return action;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string FixTimeGap
+		{
+			get
+			{
+				return fixTimeGap;
+			}
+			set	
+			{
+				fixTimeGap = value;
+				DictionaryUtil.Add(QueryParameters, "FixTimeGap", value);
+			}
+		}
+
+		public string TimeMerge
+		{
+			get
+			{
+				return timeMerge;
+			}
+			set	
+			{
+				timeMerge = value;
+				DictionaryUtil.Add(QueryParameters, "TimeMerge", value);
 			}
 		}
 
@@ -86,19 +114,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
 		public string EndTime
 		{
 			get
@@ -112,16 +127,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string TimeMerge
+		public long? OwnerId
 		{
 			get
 			{
-				return timeMerge;
+				return ownerId;
 			}
 			set	
 			{
-				timeMerge = value;
-				DictionaryUtil.Add(QueryParameters, "TimeMerge", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

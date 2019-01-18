@@ -29,47 +29,25 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class UpdateMediaWorkflowRequest : RpcAcsRequest<UpdateMediaWorkflowResponse>
     {
         public UpdateMediaWorkflowRequest()
-            : base("Mts", "2014-06-18", "UpdateMediaWorkflow")
+            : base("Mts", "2014-06-18", "UpdateMediaWorkflow", "mts", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
 
-		private string mediaWorkflowId;
+		private string resourceOwnerAccount;
 
 		private string topology;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string action;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string mediaWorkflowId;
+
+		private long? ownerId;
+
+		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -84,16 +62,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string MediaWorkflowId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return mediaWorkflowId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				mediaWorkflowId = value;
-				DictionaryUtil.Add(QueryParameters, "MediaWorkflowId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -120,6 +98,58 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string MediaWorkflowId
+		{
+			get
+			{
+				return mediaWorkflowId;
+			}
+			set	
+			{
+				mediaWorkflowId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaWorkflowId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

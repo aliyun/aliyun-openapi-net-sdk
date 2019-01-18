@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeTasksResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalRecordCount;
 
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
-		private List<TaskProgressInfo> items;
+		private List<DescribeTasks_TaskProgressInfo> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalRecordCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<TaskProgressInfo> Items
+		public List<DescribeTasks_TaskProgressInfo> Items
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class TaskProgressInfo{
+		public class DescribeTasks_TaskProgressInfo
+		{
 
 			private string dBName;
 
@@ -98,7 +113,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string expectedFinishTime;
 
-			private StatusEnum? status;
+			private string status;
 
 			private string taskErrorCode;
 
@@ -200,7 +215,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public StatusEnum? Status
+			public string Status
 			{
 				get
 				{
@@ -235,15 +250,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					taskErrorMessage = value;
 				}
 			}
-
-public enum StatusEnum {
-
-					Processing,
-					NoStart,
-					Failed,
-					Success,
-					Pending,
-}
 		}
 	}
 }

@@ -1,0 +1,38 @@
+2018-03-15 Version: 1.1.12
+1, compatible .net core
+
+2018-03-12 Version: 1.1.11
+1, Update internal endpoints
+
+2018-03-01 Version: 1.1.10
+1, Support dotnet standard 2.0
+
+2018-02-01 Version: 1.1.9
+1, Support The STS token access.
+2, Support no AK access on ECS.
+
+2018-01-16 Version: 1.1.8
+1, fix bug: SSL validation is disable for the whole program
+
+2017-11-01 Version: 1.1.7
+1, 支持common调用
+
+
+2017-09-25 Version: 1.1.6
+1, 修改post方式不能传输body的bug
+2, 修改ROA方式调用的相关bug
+
+2017-09-06 Version: 1.1.6
+1, 修改IoT套件美西和新加坡节点的endpoint
+
+2017-08-05 Version: 1.1.5
+1, 支持Api定义showJsonItemName=false
+2, 消除编译警告
+
+2017-07-27 Version: 1.1.4
+1, 支持自动寻址，自动寻址endpoint缓存失效时间为1小时
+2, 手动调用AddEndpoint方法添加的endpoint优先级高于自动寻址
+
+2017-07-25 Version: 1.1.3
+1, 修改IoT套件在华东2个Region上的endpoint。
+

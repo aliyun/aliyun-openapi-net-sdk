@@ -25,10 +25,10 @@ namespace Aliyun.Acs.Core.Auth
     public interface ISignatureComposer
     {
         Dictionary<String, String> RefreshSignParameters(Dictionary<String, String> parameters,
-       ISigner signer, String accessKeyId, FormatType? format);
+            Signer signer, String accessKeyId, FormatType? format);
 
         String ComposeStringToSign(MethodType? method,
-               String uriPattern, ISigner signer,
+               String uriPattern, Signer signer,
                Dictionary<String, String> queries,
                Dictionary<String, String> headers,
                Dictionary<String, String> paths);

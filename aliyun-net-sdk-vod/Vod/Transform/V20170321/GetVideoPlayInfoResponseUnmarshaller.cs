@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vod.Model.V20170321;
+using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Transform.V20170321
+namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetVideoPlayInfoResponseUnmarshaller
     {
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Vod.Transform.V20170321
 			getVideoPlayInfoResponse.HttpResponse = context.HttpResponse;
 			getVideoPlayInfoResponse.RequestId = context.StringValue("GetVideoPlayInfo.RequestId");
 
-			GetVideoPlayInfoResponse.PlayInfo_ playInfo = new GetVideoPlayInfoResponse.PlayInfo_();
+			GetVideoPlayInfoResponse.GetVideoPlayInfo_PlayInfo playInfo = new GetVideoPlayInfoResponse.GetVideoPlayInfo_PlayInfo();
 			playInfo.AccessKeyId = context.StringValue("GetVideoPlayInfo.PlayInfo.AccessKeyId");
 			playInfo.AccessKeySecret = context.StringValue("GetVideoPlayInfo.PlayInfo.AccessKeySecret");
 			playInfo.AuthInfo = context.StringValue("GetVideoPlayInfo.PlayInfo.AuthInfo");
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Vod.Transform.V20170321
 			playInfo.PlayDomain = context.StringValue("GetVideoPlayInfo.PlayInfo.PlayDomain");
 			getVideoPlayInfoResponse.PlayInfo = playInfo;
 
-			GetVideoPlayInfoResponse.VideoInfo_ videoInfo = new GetVideoPlayInfoResponse.VideoInfo_();
+			GetVideoPlayInfoResponse.GetVideoPlayInfo_VideoInfo videoInfo = new GetVideoPlayInfoResponse.GetVideoPlayInfo_VideoInfo();
 			videoInfo.CoverURL = context.StringValue("GetVideoPlayInfo.VideoInfo.CoverURL");
 			videoInfo.CustomerId = context.LongValue("GetVideoPlayInfo.VideoInfo.CustomerId");
 			videoInfo.Duration = context.FloatValue("GetVideoPlayInfo.VideoInfo.Duration");

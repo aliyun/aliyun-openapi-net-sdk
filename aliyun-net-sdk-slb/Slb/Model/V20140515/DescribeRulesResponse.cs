@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeRulesResponse : AcsResponse
 	{
 
-		private List<Rule> rules;
+		private string requestId;
 
-		public List<Rule> Rules
+		private List<DescribeRules_Rule> rules;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeRules_Rule> Rules
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class Rule{
+		public class DescribeRules_Rule
+		{
 
 			private string ruleId;
 

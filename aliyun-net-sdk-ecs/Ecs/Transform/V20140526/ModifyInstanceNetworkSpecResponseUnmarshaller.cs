@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			modifyInstanceNetworkSpecResponse.HttpResponse = context.HttpResponse;
 			modifyInstanceNetworkSpecResponse.RequestId = context.StringValue("ModifyInstanceNetworkSpec.RequestId");
+			modifyInstanceNetworkSpecResponse.OrderId = context.StringValue("ModifyInstanceNetworkSpec.OrderId");
         
 			return modifyInstanceNetworkSpecResponse;
         }

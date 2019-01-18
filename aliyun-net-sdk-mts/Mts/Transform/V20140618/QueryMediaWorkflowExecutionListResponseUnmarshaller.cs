@@ -32,15 +32,15 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			queryMediaWorkflowExecutionListResponse.HttpResponse = context.HttpResponse;
 			queryMediaWorkflowExecutionListResponse.RequestId = context.StringValue("QueryMediaWorkflowExecutionList.RequestId");
 
-			List<string> nonExistRunIds = new List<string>();
+			List<string> queryMediaWorkflowExecutionListResponse_nonExistRunIds = new List<string>();
 			for (int i = 0; i < context.Length("QueryMediaWorkflowExecutionList.NonExistRunIds.Length"); i++) {
-				nonExistRunIds.Add(context.StringValue("QueryMediaWorkflowExecutionList.NonExistRunIds["+ i +"]"));
+				queryMediaWorkflowExecutionListResponse_nonExistRunIds.Add(context.StringValue("QueryMediaWorkflowExecutionList.NonExistRunIds["+ i +"]"));
 			}
-			queryMediaWorkflowExecutionListResponse.NonExistRunIds = nonExistRunIds;
+			queryMediaWorkflowExecutionListResponse.NonExistRunIds = queryMediaWorkflowExecutionListResponse_nonExistRunIds;
 
-			List<QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution> mediaWorkflowExecutionList = new List<QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution>();
+			List<QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution> queryMediaWorkflowExecutionListResponse_mediaWorkflowExecutionList = new List<QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution>();
 			for (int i = 0; i < context.Length("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList.Length"); i++) {
-				QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution mediaWorkflowExecution = new QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution();
+				QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution mediaWorkflowExecution = new QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution();
 				mediaWorkflowExecution.RunId = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].RunId");
 				mediaWorkflowExecution.MediaWorkflowId = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].MediaWorkflowId");
 				mediaWorkflowExecution.Name = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].Name");
@@ -48,19 +48,19 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				mediaWorkflowExecution.MediaId = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].MediaId");
 				mediaWorkflowExecution.CreationTime = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].CreationTime");
 
-				QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Input_ input = new QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Input_();
+				QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution.QueryMediaWorkflowExecutionList_Input input = new QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution.QueryMediaWorkflowExecutionList_Input();
 				input.UserData = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].Input.UserData");
 
-				QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Input_.InputFile_ inputFile = new QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Input_.InputFile_();
+				QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution.QueryMediaWorkflowExecutionList_Input.QueryMediaWorkflowExecutionList_InputFile inputFile = new QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution.QueryMediaWorkflowExecutionList_Input.QueryMediaWorkflowExecutionList_InputFile();
 				inputFile.Bucket = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].Input.InputFile.Bucket");
 				inputFile.Location = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].Input.InputFile.Location");
-				inputFile.Object = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].Input.InputFile.Object");
+				inputFile._Object = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].Input.InputFile.Object");
 				input.InputFile = inputFile;
 				mediaWorkflowExecution.Input = input;
 
-				List<QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Activity> activityList = new List<QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Activity>();
+				List<QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution.QueryMediaWorkflowExecutionList_Activity> mediaWorkflowExecution_activityList = new List<QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution.QueryMediaWorkflowExecutionList_Activity>();
 				for (int j = 0; j < context.Length("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList.Length"); j++) {
-					QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Activity activity = new QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Activity();
+					QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution.QueryMediaWorkflowExecutionList_Activity activity = new QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution.QueryMediaWorkflowExecutionList_Activity();
 					activity.Name = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].Name");
 					activity.Type = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].Type");
 					activity.JobId = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].JobId");
@@ -70,19 +70,19 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					activity.StartTime = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].StartTime");
 					activity.EndTime = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].EndTime");
 
-					QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Activity.MNSMessageResult_ mNSMessageResult = new QueryMediaWorkflowExecutionListResponse.MediaWorkflowExecution.Activity.MNSMessageResult_();
+					QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution.QueryMediaWorkflowExecutionList_Activity.QueryMediaWorkflowExecutionList_MNSMessageResult mNSMessageResult = new QueryMediaWorkflowExecutionListResponse.QueryMediaWorkflowExecutionList_MediaWorkflowExecution.QueryMediaWorkflowExecutionList_Activity.QueryMediaWorkflowExecutionList_MNSMessageResult();
 					mNSMessageResult.MessageId = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.MessageId");
 					mNSMessageResult.ErrorMessage = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.ErrorMessage");
 					mNSMessageResult.ErrorCode = context.StringValue("QueryMediaWorkflowExecutionList.MediaWorkflowExecutionList["+ i +"].ActivityList["+ j +"].MNSMessageResult.ErrorCode");
 					activity.MNSMessageResult = mNSMessageResult;
 
-					activityList.Add(activity);
+					mediaWorkflowExecution_activityList.Add(activity);
 				}
-				mediaWorkflowExecution.ActivityList = activityList;
+				mediaWorkflowExecution.ActivityList = mediaWorkflowExecution_activityList;
 
-				mediaWorkflowExecutionList.Add(mediaWorkflowExecution);
+				queryMediaWorkflowExecutionListResponse_mediaWorkflowExecutionList.Add(mediaWorkflowExecution);
 			}
-			queryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList = mediaWorkflowExecutionList;
+			queryMediaWorkflowExecutionListResponse.MediaWorkflowExecutionList = queryMediaWorkflowExecutionListResponse_mediaWorkflowExecutionList;
         
 			return queryMediaWorkflowExecutionListResponse;
         }

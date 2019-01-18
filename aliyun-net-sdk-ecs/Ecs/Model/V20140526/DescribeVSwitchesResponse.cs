@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeVSwitchesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<VSwitch> vSwitches;
+		private List<DescribeVSwitches_VSwitch> vSwitches;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<VSwitch> VSwitches
+		public List<DescribeVSwitches_VSwitch> VSwitches
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class VSwitch{
+		public class DescribeVSwitches_VSwitch
+		{
 
 			private string vSwitchId;
 
@@ -100,7 +115,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creationTime;
 
-			private string isDefault;
+			private bool? isDefault;
+
+			private string resourceGroupId;
 
 			public string VSwitchId
 			{
@@ -210,7 +227,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string IsDefault
+			public bool? IsDefault
 			{
 				get
 				{
@@ -219,6 +236,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					isDefault = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 		}

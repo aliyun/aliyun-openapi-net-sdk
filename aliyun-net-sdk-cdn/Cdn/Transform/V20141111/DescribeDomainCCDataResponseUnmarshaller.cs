@@ -36,15 +36,15 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainCCDataResponse.StartTime = context.StringValue("DescribeDomainCCData.StartTime");
 			describeDomainCCDataResponse.EndTime = context.StringValue("DescribeDomainCCData.EndTime");
 
-			List<DescribeDomainCCDataResponse.CCDatas> cCDataList = new List<DescribeDomainCCDataResponse.CCDatas>();
+			List<DescribeDomainCCDataResponse.DescribeDomainCCData_CCDatas> describeDomainCCDataResponse_cCDataList = new List<DescribeDomainCCDataResponse.DescribeDomainCCData_CCDatas>();
 			for (int i = 0; i < context.Length("DescribeDomainCCData.CCDataList.Length"); i++) {
-				DescribeDomainCCDataResponse.CCDatas cCDatas = new DescribeDomainCCDataResponse.CCDatas();
+				DescribeDomainCCDataResponse.DescribeDomainCCData_CCDatas cCDatas = new DescribeDomainCCDataResponse.DescribeDomainCCData_CCDatas();
 				cCDatas.TimeStamp = context.StringValue("DescribeDomainCCData.CCDataList["+ i +"].TimeStamp");
 				cCDatas.Count = context.StringValue("DescribeDomainCCData.CCDataList["+ i +"].Count");
 
-				cCDataList.Add(cCDatas);
+				describeDomainCCDataResponse_cCDataList.Add(cCDatas);
 			}
-			describeDomainCCDataResponse.CCDataList = cCDataList;
+			describeDomainCCDataResponse.CCDataList = describeDomainCCDataResponse_cCDataList;
         
 			return describeDomainCCDataResponse;
         }

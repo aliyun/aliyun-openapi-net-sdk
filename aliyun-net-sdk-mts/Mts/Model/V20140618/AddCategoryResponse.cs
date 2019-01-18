@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class AddCategoryResponse : AcsResponse
 	{
 
-		private Category_ category;
+		private string requestId;
 
-		public Category_ Category
+		private AddCategory_Category category;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public AddCategory_Category Category
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class Category_{
+		public class AddCategory_Category
+		{
 
 			private string cateId;
 

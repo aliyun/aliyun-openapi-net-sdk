@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerTCPListenerAttributeResponse.Scheduler = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.Scheduler");
 			describeLoadBalancerTCPListenerAttributeResponse.SynProxy = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.SynProxy");
 			describeLoadBalancerTCPListenerAttributeResponse.PersistenceTimeout = context.IntegerValue("DescribeLoadBalancerTCPListenerAttribute.PersistenceTimeout");
+			describeLoadBalancerTCPListenerAttributeResponse.EstablishedTimeout = context.IntegerValue("DescribeLoadBalancerTCPListenerAttribute.EstablishedTimeout");
 			describeLoadBalancerTCPListenerAttributeResponse.HealthCheck = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.HealthCheck");
 			describeLoadBalancerTCPListenerAttributeResponse.HealthyThreshold = context.IntegerValue("DescribeLoadBalancerTCPListenerAttribute.HealthyThreshold");
 			describeLoadBalancerTCPListenerAttributeResponse.UnhealthyThreshold = context.IntegerValue("DescribeLoadBalancerTCPListenerAttribute.UnhealthyThreshold");
@@ -50,6 +51,11 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerTCPListenerAttributeResponse.HealthCheckType = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.HealthCheckType");
 			describeLoadBalancerTCPListenerAttributeResponse.MaxConnection = context.IntegerValue("DescribeLoadBalancerTCPListenerAttribute.MaxConnection");
 			describeLoadBalancerTCPListenerAttributeResponse.VServerGroupId = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.VServerGroupId");
+			describeLoadBalancerTCPListenerAttributeResponse.MasterSlaveServerGroupId = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.MasterSlaveServerGroupId");
+			describeLoadBalancerTCPListenerAttributeResponse.AclId = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.AclId");
+			describeLoadBalancerTCPListenerAttributeResponse.AclType = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.AclType");
+			describeLoadBalancerTCPListenerAttributeResponse.AclStatus = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.AclStatus");
+			describeLoadBalancerTCPListenerAttributeResponse.VpcIds = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.VpcIds");
         
 			return describeLoadBalancerTCPListenerAttributeResponse;
         }

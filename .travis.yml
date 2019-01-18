@@ -1,0 +1,17 @@
+language: csharp
+sudo: true
+mono: none
+dotnet: 2.1
+branches:
+  only:
+    - master
+install:
+  - dotnet tool install --global altcover.visualizer
+  - cd aliyun-net-sdk-core.Tests/ && dotnet add package AltCover && cd ../
+  - dotnet restore
+script: 
+  - dotnet build
+  - dotnet test /p:AltCover=true
+after_success:
+  - cd aliyun-net-sdk-core/
+  - bash <(curl -s https://codecov.io/bash)

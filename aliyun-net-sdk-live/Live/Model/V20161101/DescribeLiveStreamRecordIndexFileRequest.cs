@@ -20,67 +20,45 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class DescribeLiveStreamRecordIndexFileRequest : RpcAcsRequest<DescribeLiveStreamRecordIndexFileResponse>
     {
         public DescribeLiveStreamRecordIndexFileRequest()
-            : base("Live", "2016-11-01", "DescribeLiveStreamRecordIndexFile")
+            : base("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile", "live", "openAPI")
         {
         }
 
-		private string securityToken;
-
-		private long? ownerId;
-
-		private string domainName;
+		private string recordId;
 
 		private string appName;
 
+		private string securityToken;
+
+		private string domainName;
+
+		private string action;
+
+		private long? ownerId;
+
 		private string streamName;
 
-		private string recordId;
+		private string accessKeyId;
 
-		public string SecurityToken
+		public string RecordId
 		{
 			get
 			{
-				return securityToken;
+				return recordId;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				recordId = value;
+				DictionaryUtil.Add(QueryParameters, "RecordId", value);
 			}
 		}
 
@@ -97,6 +75,58 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public string StreamName
 		{
 			get
@@ -110,16 +140,16 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string RecordId
+		public string AccessKeyId
 		{
 			get
 			{
-				return recordId;
+				return accessKeyId;
 			}
 			set	
 			{
-				recordId = value;
-				DictionaryUtil.Add(QueryParameters, "RecordId", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

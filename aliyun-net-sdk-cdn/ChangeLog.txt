@@ -1,0 +1,79 @@
+2018-12-03 Version: 3.0.3
+1, Update 2014-11-11 API.
+
+2018-11-10 Version: 3.0.2
+1, Update SetWaitingRoomConfig.
+
+2018-10-31 Version: 3.0.1
+1, Update SetWaitingRoomConfig.
+
+2018-10-31 Version: 3.0.0
+1, Add SetWaitingRoomConfig.
+
+2018-10-31 Version: 2.9.1
+1, Add SetWaitingRoomConfig.
+
+2018-09-30 Version: 2.9.0
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-09-29 Version: 2.9.0
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-08-08 Version: 2.8.0
+1, Update FC apis.
+
+2018-05-11 Version: 2.7.0
+1, Add Function Compute interface,support Function Compute.
+
+2018-03-15 Version: 2.6.3
+1, Synchronize to the latest api list
+
+2017-12-15 Version: 2.6.2
+1, Update SetReqAuthConfig.
+2, Add Scdn API.
+
+2017-12-15 Version: 2.6.1
+1, Update SetReqAuthConfig.
+
+2017-12-15 Version: 2.6.1
+1, Update version.
+
+2017-12-15 Version: 2.6.0
+1, Add scdn API.
+2, Update SetReqAuthConfig.
+
+2017-11-01 Version: 2.5.1
+1, 更新PurgeObjectCaches和PreloadObjectCaches接口，修复域名校验。
+2, 更新DescribeCdnDomainLogs接口，修复错误码。
+
+2017-08-30 Version: 2.6.0
+1, 新增接口DescribeDomainPnoData
+
+2017-08-25 Version: 2.5.0
+1, 新增接口DescribeDomainsUsageByDay。
+2, 新增接口DescribeTopDomainsByFlow。
+
+2017-08-04 Version: 2.4.0
+1, 增加了DescribeDomainAverageResponseTime接口。
+2, 增加了DescribeDomainMax95BpsData接口。
+3, 增加了DescribeDomainPathData接口。
+4, 增加了DescribeDomainRealTimeData接口。
+5, 增加了DescribeLiveStreamBitRateData接口。
+6, 增加了DescribeLiveStreamFrameAndBitRateByDomain接口。
+7, 增加了DescribeLiveStreamFrameInfo接口。
+8, 增加了DescribeLiveStreamFrameLossRatio接口。
+9, 增加了DescribeLiveStreamHlsOnlineUserNumByDomain接口。
+10, 增加了DescribeLiveStreamOnlineBps接口。
+11, 增加了DescribeLiveStreamOnlineUserNumByDomain接口。
+12, 增加了DescribeLiveStreamRelayPushBitRate接口。
+13, 增加了DescribeLiveStreamRoomBitRate接口。
+14, 增加了DescribeLiveStreamRoomUserNumber接口。
+15, 增加了DescribeUserCustomerLabels接口。
+16, 增加了SetIpBlackListConfig接口。
+17, 增加了SetRemoteReqAuthConfig接口。
+18, 增加了SetRemoveQueryStringConfig接口。
+

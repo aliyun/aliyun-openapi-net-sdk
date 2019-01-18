@@ -24,11 +24,25 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeApiErrorDataResponse : AcsResponse
 	{
 
-		private List<MonitorItem> clientErrors;
+		private string requestId;
 
-		private List<MonitorItem> serverErrors;
+		private List<DescribeApiErrorData_MonitorItem> clientErrors;
 
-		public List<MonitorItem> ClientErrors
+		private List<DescribeApiErrorData_MonitorItem> serverErrors;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeApiErrorData_MonitorItem> ClientErrors
 		{
 			get
 			{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<MonitorItem> ServerErrors
+		public List<DescribeApiErrorData_MonitorItem> ServerErrors
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class MonitorItem{
+		public class DescribeApiErrorData_MonitorItem
+		{
 
 			private string itemTime;
 

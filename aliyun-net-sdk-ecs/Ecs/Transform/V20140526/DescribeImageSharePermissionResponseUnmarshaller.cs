@@ -37,23 +37,23 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeImageSharePermissionResponse.PageSize = context.IntegerValue("DescribeImageSharePermission.PageSize");
 			describeImageSharePermissionResponse.ImageId = context.StringValue("DescribeImageSharePermission.ImageId");
 
-			List<DescribeImageSharePermissionResponse.ShareGroup> shareGroups = new List<DescribeImageSharePermissionResponse.ShareGroup>();
+			List<DescribeImageSharePermissionResponse.DescribeImageSharePermission_ShareGroup> describeImageSharePermissionResponse_shareGroups = new List<DescribeImageSharePermissionResponse.DescribeImageSharePermission_ShareGroup>();
 			for (int i = 0; i < context.Length("DescribeImageSharePermission.ShareGroups.Length"); i++) {
-				DescribeImageSharePermissionResponse.ShareGroup shareGroup = new DescribeImageSharePermissionResponse.ShareGroup();
+				DescribeImageSharePermissionResponse.DescribeImageSharePermission_ShareGroup shareGroup = new DescribeImageSharePermissionResponse.DescribeImageSharePermission_ShareGroup();
 				shareGroup.Group = context.StringValue("DescribeImageSharePermission.ShareGroups["+ i +"].Group");
 
-				shareGroups.Add(shareGroup);
+				describeImageSharePermissionResponse_shareGroups.Add(shareGroup);
 			}
-			describeImageSharePermissionResponse.ShareGroups = shareGroups;
+			describeImageSharePermissionResponse.ShareGroups = describeImageSharePermissionResponse_shareGroups;
 
-			List<DescribeImageSharePermissionResponse.Account> accounts = new List<DescribeImageSharePermissionResponse.Account>();
+			List<DescribeImageSharePermissionResponse.DescribeImageSharePermission_Account> describeImageSharePermissionResponse_accounts = new List<DescribeImageSharePermissionResponse.DescribeImageSharePermission_Account>();
 			for (int i = 0; i < context.Length("DescribeImageSharePermission.Accounts.Length"); i++) {
-				DescribeImageSharePermissionResponse.Account account = new DescribeImageSharePermissionResponse.Account();
+				DescribeImageSharePermissionResponse.DescribeImageSharePermission_Account account = new DescribeImageSharePermissionResponse.DescribeImageSharePermission_Account();
 				account.AliyunId = context.StringValue("DescribeImageSharePermission.Accounts["+ i +"].AliyunId");
 
-				accounts.Add(account);
+				describeImageSharePermissionResponse_accounts.Add(account);
 			}
-			describeImageSharePermissionResponse.Accounts = accounts;
+			describeImageSharePermissionResponse.Accounts = describeImageSharePermissionResponse_accounts;
         
 			return describeImageSharePermissionResponse;
         }

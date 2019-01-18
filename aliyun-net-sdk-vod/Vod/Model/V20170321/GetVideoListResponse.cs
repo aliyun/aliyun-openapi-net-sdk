@@ -24,9 +24,37 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class GetVideoListResponse : AcsResponse
 	{
 
-		private List<Video> videoList;
+		private string requestId;
 
-		public List<Video> VideoList
+		private int? total;
+
+		private List<GetVideoList_Video> videoList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
+			}
+		}
+
+		public List<GetVideoList_Video> VideoList
 		{
 			get
 			{
@@ -38,7 +66,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public class Video{
+		public class GetVideoList_Video
+		{
 
 			private string videoId;
 
@@ -58,11 +87,17 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string modifyTime;
 
+			private string modificationTime;
+
+			private string creationTime;
+
 			private string coverURL;
 
-			private int? cateId;
+			private long? cateId;
 
 			private string cateName;
+
+			private string storageLocation;
 
 			private List<string> snapshots;
 
@@ -174,6 +209,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string ModificationTime
+			{
+				get
+				{
+					return modificationTime;
+				}
+				set	
+				{
+					modificationTime = value;
+				}
+			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
+
 			public string CoverURL
 			{
 				get
@@ -186,7 +245,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public int? CateId
+			public long? CateId
 			{
 				get
 				{
@@ -207,6 +266,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					cateName = value;
+				}
+			}
+
+			public string StorageLocation
+			{
+				get
+				{
+					return storageLocation;
+				}
+				set	
+				{
+					storageLocation = value;
 				}
 			}
 

@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeCdnDomainLogsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private long? pageNumber;
 
 		private long? pageSize;
 
 		private long? totalCount;
 
-		private DomainLogModel_ domainLogModel;
+		private DescribeCdnDomainLogs_DomainLogModel domainLogModel;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? PageNumber
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public DomainLogModel_ DomainLogModel
+		public DescribeCdnDomainLogs_DomainLogModel DomainLogModel
 		{
 			get
 			{
@@ -80,11 +94,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class DomainLogModel_{
+		public class DescribeCdnDomainLogs_DomainLogModel
+		{
 
 			private string domainName;
 
-			private List<DomainLogDetail> domainLogDetails;
+			private List<DescribeCdnDomainLogs_DomainLogDetail> domainLogDetails;
 
 			public string DomainName
 			{
@@ -98,7 +113,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public List<DomainLogDetail> DomainLogDetails
+			public List<DescribeCdnDomainLogs_DomainLogDetail> DomainLogDetails
 			{
 				get
 				{
@@ -110,7 +125,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public class DomainLogDetail{
+			public class DescribeCdnDomainLogs_DomainLogDetail
+			{
 
 				private string logName;
 

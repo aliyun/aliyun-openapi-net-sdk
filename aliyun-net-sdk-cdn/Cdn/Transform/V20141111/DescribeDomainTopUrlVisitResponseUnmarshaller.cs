@@ -34,70 +34,70 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainTopUrlVisitResponse.DomainName = context.StringValue("DescribeDomainTopUrlVisit.DomainName");
 			describeDomainTopUrlVisitResponse.StartTime = context.StringValue("DescribeDomainTopUrlVisit.StartTime");
 
-			List<DescribeDomainTopUrlVisitResponse.UrlList> allUrlList = new List<DescribeDomainTopUrlVisitResponse.UrlList>();
+			List<DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList> describeDomainTopUrlVisitResponse_allUrlList = new List<DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList>();
 			for (int i = 0; i < context.Length("DescribeDomainTopUrlVisit.AllUrlList.Length"); i++) {
-				DescribeDomainTopUrlVisitResponse.UrlList urlList = new DescribeDomainTopUrlVisitResponse.UrlList();
+				DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList urlList = new DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList();
 				urlList.UrlDetail = context.StringValue("DescribeDomainTopUrlVisit.AllUrlList["+ i +"].UrlDetail");
 				urlList.VisitData = context.StringValue("DescribeDomainTopUrlVisit.AllUrlList["+ i +"].VisitData");
 				urlList.VisitProportion = context.FloatValue("DescribeDomainTopUrlVisit.AllUrlList["+ i +"].VisitProportion");
 				urlList.Flow = context.StringValue("DescribeDomainTopUrlVisit.AllUrlList["+ i +"].Flow");
 				urlList.FlowProportion = context.FloatValue("DescribeDomainTopUrlVisit.AllUrlList["+ i +"].FlowProportion");
 
-				allUrlList.Add(urlList);
+				describeDomainTopUrlVisitResponse_allUrlList.Add(urlList);
 			}
-			describeDomainTopUrlVisitResponse.AllUrlList = allUrlList;
+			describeDomainTopUrlVisitResponse.AllUrlList = describeDomainTopUrlVisitResponse_allUrlList;
 
-			List<DescribeDomainTopUrlVisitResponse.UrlList> url200List = new List<DescribeDomainTopUrlVisitResponse.UrlList>();
+			List<DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList> describeDomainTopUrlVisitResponse_url200List = new List<DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList>();
 			for (int i = 0; i < context.Length("DescribeDomainTopUrlVisit.Url200List.Length"); i++) {
-				DescribeDomainTopUrlVisitResponse.UrlList urlList = new DescribeDomainTopUrlVisitResponse.UrlList();
+				DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList urlList = new DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList();
 				urlList.UrlDetail = context.StringValue("DescribeDomainTopUrlVisit.Url200List["+ i +"].UrlDetail");
 				urlList.VisitData = context.StringValue("DescribeDomainTopUrlVisit.Url200List["+ i +"].VisitData");
 				urlList.VisitProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url200List["+ i +"].VisitProportion");
 				urlList.Flow = context.StringValue("DescribeDomainTopUrlVisit.Url200List["+ i +"].Flow");
 				urlList.FlowProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url200List["+ i +"].FlowProportion");
 
-				url200List.Add(urlList);
+				describeDomainTopUrlVisitResponse_url200List.Add(urlList);
 			}
-			describeDomainTopUrlVisitResponse.Url200List = url200List;
+			describeDomainTopUrlVisitResponse.Url200List = describeDomainTopUrlVisitResponse_url200List;
 
-			List<DescribeDomainTopUrlVisitResponse.UrlList> url300List = new List<DescribeDomainTopUrlVisitResponse.UrlList>();
+			List<DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList> describeDomainTopUrlVisitResponse_url300List = new List<DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList>();
 			for (int i = 0; i < context.Length("DescribeDomainTopUrlVisit.Url300List.Length"); i++) {
-				DescribeDomainTopUrlVisitResponse.UrlList urlList = new DescribeDomainTopUrlVisitResponse.UrlList();
+				DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList urlList = new DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList();
 				urlList.UrlDetail = context.StringValue("DescribeDomainTopUrlVisit.Url300List["+ i +"].UrlDetail");
 				urlList.VisitData = context.StringValue("DescribeDomainTopUrlVisit.Url300List["+ i +"].VisitData");
 				urlList.VisitProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url300List["+ i +"].VisitProportion");
 				urlList.Flow = context.StringValue("DescribeDomainTopUrlVisit.Url300List["+ i +"].Flow");
 				urlList.FlowProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url300List["+ i +"].FlowProportion");
 
-				url300List.Add(urlList);
+				describeDomainTopUrlVisitResponse_url300List.Add(urlList);
 			}
-			describeDomainTopUrlVisitResponse.Url300List = url300List;
+			describeDomainTopUrlVisitResponse.Url300List = describeDomainTopUrlVisitResponse_url300List;
 
-			List<DescribeDomainTopUrlVisitResponse.UrlList> url400List = new List<DescribeDomainTopUrlVisitResponse.UrlList>();
+			List<DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList> describeDomainTopUrlVisitResponse_url400List = new List<DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList>();
 			for (int i = 0; i < context.Length("DescribeDomainTopUrlVisit.Url400List.Length"); i++) {
-				DescribeDomainTopUrlVisitResponse.UrlList urlList = new DescribeDomainTopUrlVisitResponse.UrlList();
+				DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList urlList = new DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList();
 				urlList.UrlDetail = context.StringValue("DescribeDomainTopUrlVisit.Url400List["+ i +"].UrlDetail");
 				urlList.VisitData = context.StringValue("DescribeDomainTopUrlVisit.Url400List["+ i +"].VisitData");
 				urlList.VisitProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url400List["+ i +"].VisitProportion");
 				urlList.Flow = context.StringValue("DescribeDomainTopUrlVisit.Url400List["+ i +"].Flow");
 				urlList.FlowProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url400List["+ i +"].FlowProportion");
 
-				url400List.Add(urlList);
+				describeDomainTopUrlVisitResponse_url400List.Add(urlList);
 			}
-			describeDomainTopUrlVisitResponse.Url400List = url400List;
+			describeDomainTopUrlVisitResponse.Url400List = describeDomainTopUrlVisitResponse_url400List;
 
-			List<DescribeDomainTopUrlVisitResponse.UrlList> url500List = new List<DescribeDomainTopUrlVisitResponse.UrlList>();
+			List<DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList> describeDomainTopUrlVisitResponse_url500List = new List<DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList>();
 			for (int i = 0; i < context.Length("DescribeDomainTopUrlVisit.Url500List.Length"); i++) {
-				DescribeDomainTopUrlVisitResponse.UrlList urlList = new DescribeDomainTopUrlVisitResponse.UrlList();
+				DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList urlList = new DescribeDomainTopUrlVisitResponse.DescribeDomainTopUrlVisit_UrlList();
 				urlList.UrlDetail = context.StringValue("DescribeDomainTopUrlVisit.Url500List["+ i +"].UrlDetail");
 				urlList.VisitData = context.StringValue("DescribeDomainTopUrlVisit.Url500List["+ i +"].VisitData");
 				urlList.VisitProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url500List["+ i +"].VisitProportion");
 				urlList.Flow = context.StringValue("DescribeDomainTopUrlVisit.Url500List["+ i +"].Flow");
 				urlList.FlowProportion = context.FloatValue("DescribeDomainTopUrlVisit.Url500List["+ i +"].FlowProportion");
 
-				url500List.Add(urlList);
+				describeDomainTopUrlVisitResponse_url500List.Add(urlList);
 			}
-			describeDomainTopUrlVisitResponse.Url500List = url500List;
+			describeDomainTopUrlVisitResponse.Url500List = describeDomainTopUrlVisitResponse_url500List;
         
 			return describeDomainTopUrlVisitResponse;
         }

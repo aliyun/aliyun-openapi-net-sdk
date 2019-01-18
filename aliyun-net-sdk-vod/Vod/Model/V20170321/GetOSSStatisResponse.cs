@@ -24,9 +24,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class GetOSSStatisResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private long? maxStorageUtilization;
 
-		private List<OSSMetric> ossStatisList;
+		private List<GetOSSStatis_OSSMetric> ossStatisList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? MaxStorageUtilization
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public List<OSSMetric> OssStatisList
+		public List<GetOSSStatis_OSSMetric> OssStatisList
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public class OSSMetric{
+		public class GetOSSStatis_OSSMetric
+		{
 
 			private string statTime;
 

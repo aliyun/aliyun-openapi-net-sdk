@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Live.Model.V20161101;
+using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Transform.V20161101
+namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamsPublishListResponseUnmarshaller
     {
@@ -31,10 +31,14 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 
 			describeLiveStreamsPublishListResponse.HttpResponse = context.HttpResponse;
 			describeLiveStreamsPublishListResponse.RequestId = context.StringValue("DescribeLiveStreamsPublishList.RequestId");
+			describeLiveStreamsPublishListResponse.PageNum = context.IntegerValue("DescribeLiveStreamsPublishList.PageNum");
+			describeLiveStreamsPublishListResponse.PageSize = context.IntegerValue("DescribeLiveStreamsPublishList.PageSize");
+			describeLiveStreamsPublishListResponse.TotalNum = context.IntegerValue("DescribeLiveStreamsPublishList.TotalNum");
+			describeLiveStreamsPublishListResponse.TotalPage = context.IntegerValue("DescribeLiveStreamsPublishList.TotalPage");
 
-			List<DescribeLiveStreamsPublishListResponse.LiveStreamPublishInfo> publishInfo = new List<DescribeLiveStreamsPublishListResponse.LiveStreamPublishInfo>();
+			List<DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo> describeLiveStreamsPublishListResponse_publishInfo = new List<DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamsPublishList.PublishInfo.Length"); i++) {
-				DescribeLiveStreamsPublishListResponse.LiveStreamPublishInfo liveStreamPublishInfo = new DescribeLiveStreamsPublishListResponse.LiveStreamPublishInfo();
+				DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo liveStreamPublishInfo = new DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo();
 				liveStreamPublishInfo.DomainName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].DomainName");
 				liveStreamPublishInfo.AppName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].AppName");
 				liveStreamPublishInfo.StreamName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StreamName");
@@ -44,10 +48,14 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 				liveStreamPublishInfo.PublishUrl = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishUrl");
 				liveStreamPublishInfo.ClientAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].ClientAddr");
 				liveStreamPublishInfo.EdgeNodeAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].EdgeNodeAddr");
+				liveStreamPublishInfo.PublishDomain = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishDomain");
+				liveStreamPublishInfo.PublishType = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishType");
+				liveStreamPublishInfo.Transcoded = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].Transcoded");
+				liveStreamPublishInfo.TranscodeId = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].TranscodeId");
 
-				publishInfo.Add(liveStreamPublishInfo);
+				describeLiveStreamsPublishListResponse_publishInfo.Add(liveStreamPublishInfo);
 			}
-			describeLiveStreamsPublishListResponse.PublishInfo = publishInfo;
+			describeLiveStreamsPublishListResponse.PublishInfo = describeLiveStreamsPublishListResponse_publishInfo;
         
 			return describeLiveStreamsPublishListResponse;
         }

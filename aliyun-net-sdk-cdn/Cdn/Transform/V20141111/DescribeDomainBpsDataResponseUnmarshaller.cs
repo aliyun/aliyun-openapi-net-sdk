@@ -40,11 +40,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainBpsDataResponse.LocationName = context.StringValue("DescribeDomainBpsData.LocationName");
 			describeDomainBpsDataResponse.IspName = context.StringValue("DescribeDomainBpsData.IspName");
 
-			List<DescribeDomainBpsDataResponse.DataModule> bpsDataPerInterval = new List<DescribeDomainBpsDataResponse.DataModule>();
+			List<DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule> describeDomainBpsDataResponse_bpsDataPerInterval = new List<DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule>();
 			for (int i = 0; i < context.Length("DescribeDomainBpsData.BpsDataPerInterval.Length"); i++) {
-				DescribeDomainBpsDataResponse.DataModule dataModule = new DescribeDomainBpsDataResponse.DataModule();
+				DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule dataModule = new DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule.Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].Value");
+				dataModule._Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].Value");
 				dataModule.DomesticValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DomesticValue");
 				dataModule.OverseasValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].OverseasValue");
 				dataModule.DynamicValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DynamicValue");
@@ -57,19 +57,19 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				dataModule.DomesticL2Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DomesticL2Value");
 				dataModule.OverseasL2Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].OverseasL2Value");
 
-				bpsDataPerInterval.Add(dataModule);
+				describeDomainBpsDataResponse_bpsDataPerInterval.Add(dataModule);
 			}
-			describeDomainBpsDataResponse.BpsDataPerInterval = bpsDataPerInterval;
+			describeDomainBpsDataResponse.BpsDataPerInterval = describeDomainBpsDataResponse_bpsDataPerInterval;
 
-			List<DescribeDomainBpsDataResponse.DataModule> supplyBpsDatas = new List<DescribeDomainBpsDataResponse.DataModule>();
+			List<DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule1> describeDomainBpsDataResponse_supplyBpsDatas = new List<DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule1>();
 			for (int i = 0; i < context.Length("DescribeDomainBpsData.SupplyBpsDatas.Length"); i++) {
-				DescribeDomainBpsDataResponse.DataModule dataModule = new DescribeDomainBpsDataResponse.DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDomainBpsData.SupplyBpsDatas["+ i +"].TimeStamp");
-				dataModule.Value = context.StringValue("DescribeDomainBpsData.SupplyBpsDatas["+ i +"].Value");
+				DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule1 dataModule1 = new DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule1();
+				dataModule1.TimeStamp = context.StringValue("DescribeDomainBpsData.SupplyBpsDatas["+ i +"].TimeStamp");
+				dataModule1._Value = context.StringValue("DescribeDomainBpsData.SupplyBpsDatas["+ i +"].Value");
 
-				supplyBpsDatas.Add(dataModule);
+				describeDomainBpsDataResponse_supplyBpsDatas.Add(dataModule1);
 			}
-			describeDomainBpsDataResponse.SupplyBpsDatas = supplyBpsDatas;
+			describeDomainBpsDataResponse.SupplyBpsDatas = describeDomainBpsDataResponse_supplyBpsDatas;
         
 			return describeDomainBpsDataResponse;
         }

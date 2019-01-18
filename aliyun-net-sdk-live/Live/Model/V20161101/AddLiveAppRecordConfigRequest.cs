@@ -20,56 +20,55 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class AddLiveAppRecordConfigRequest : RpcAcsRequest<AddLiveAppRecordConfigResponse>
     {
         public AddLiveAppRecordConfigRequest()
-            : base("Live", "2016-11-01", "AddLiveAppRecordConfig")
+            : base("live", "2016-11-01", "AddLiveAppRecordConfig", "live", "openAPI")
         {
         }
 
-		private string securityToken;
-
-		private long? ownerId;
+		private string ossBucket;
 
 		private string domainName;
 
-		private string appName;
-
 		private string ossEndpoint;
 
-		private string ossBucket;
+		private string endTime;
+
+		private string startTime;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		private string appName;
+
+		private string securityToken;
 
 		private List<RecordFormat> recordFormats;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string action;
 
-		public long? OwnerId
+		private int? onDemand;
+
+		private string streamName;
+
+		public string OssBucket
 		{
 			get
 			{
-				return ownerId;
+				return ossBucket;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				ossBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
 			}
 		}
 
@@ -86,19 +85,6 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
 		public string OssEndpoint
 		{
 			get
@@ -112,16 +98,81 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string OssBucket
+		public string EndTime
 		{
 			get
 			{
-				return ossBucket;
+				return endTime;
 			}
 			set	
 			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -137,24 +188,75 @@ namespace Aliyun.Acs.Live.Model.V20161101
 				recordFormats = value;
 				for (int i = 0; i < recordFormats.Count; i++)
 				{
+					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".SliceOssObjectPrefix", recordFormats[i].SliceOssObjectPrefix);
 					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".Format", recordFormats[i].Format);
 					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".OssObjectPrefix", recordFormats[i].OssObjectPrefix);
-					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".SliceOssObjectPrefix", recordFormats[i].SliceOssObjectPrefix);
 					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".CycleDuration", recordFormats[i].CycleDuration);
 				}
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public int? OnDemand
+		{
+			get
+			{
+				return onDemand;
+			}
+			set	
+			{
+				onDemand = value;
+				DictionaryUtil.Add(QueryParameters, "OnDemand", value.ToString());
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 
 		public class RecordFormat
 		{
 
+			private string sliceOssObjectPrefix;
+
 			private string format;
 
 			private string ossObjectPrefix;
 
-			private string sliceOssObjectPrefix;
-
 			private int? cycleDuration;
+
+			public string SliceOssObjectPrefix
+			{
+				get
+				{
+					return sliceOssObjectPrefix;
+				}
+				set	
+				{
+					sliceOssObjectPrefix = value;
+				}
+			}
 
 			public string Format
 			{
@@ -177,18 +279,6 @@ namespace Aliyun.Acs.Live.Model.V20161101
 				set	
 				{
 					ossObjectPrefix = value;
-				}
-			}
-
-			public string SliceOssObjectPrefix
-			{
-				get
-				{
-					return sliceOssObjectPrefix;
-				}
-				set	
-				{
-					sliceOssObjectPrefix = value;
 				}
 			}
 

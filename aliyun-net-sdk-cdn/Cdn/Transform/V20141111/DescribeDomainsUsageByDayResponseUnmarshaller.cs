@@ -36,7 +36,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainsUsageByDayResponse.StartTime = context.StringValue("DescribeDomainsUsageByDay.StartTime");
 			describeDomainsUsageByDayResponse.EndTime = context.StringValue("DescribeDomainsUsageByDay.EndTime");
 
-			DescribeDomainsUsageByDayResponse.UsageTotal_ usageTotal = new DescribeDomainsUsageByDayResponse.UsageTotal_();
+			DescribeDomainsUsageByDayResponse.DescribeDomainsUsageByDay_UsageTotal usageTotal = new DescribeDomainsUsageByDayResponse.DescribeDomainsUsageByDay_UsageTotal();
 			usageTotal.BytesHitRate = context.StringValue("DescribeDomainsUsageByDay.UsageTotal.BytesHitRate");
 			usageTotal.RequestHitRate = context.StringValue("DescribeDomainsUsageByDay.UsageTotal.RequestHitRate");
 			usageTotal.MaxBps = context.StringValue("DescribeDomainsUsageByDay.UsageTotal.MaxBps");
@@ -47,9 +47,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			usageTotal.TotalTraffic = context.StringValue("DescribeDomainsUsageByDay.UsageTotal.TotalTraffic");
 			describeDomainsUsageByDayResponse.UsageTotal = usageTotal;
 
-			List<DescribeDomainsUsageByDayResponse.UsageByDay> usageByDays = new List<DescribeDomainsUsageByDayResponse.UsageByDay>();
+			List<DescribeDomainsUsageByDayResponse.DescribeDomainsUsageByDay_UsageByDay> describeDomainsUsageByDayResponse_usageByDays = new List<DescribeDomainsUsageByDayResponse.DescribeDomainsUsageByDay_UsageByDay>();
 			for (int i = 0; i < context.Length("DescribeDomainsUsageByDay.UsageByDays.Length"); i++) {
-				DescribeDomainsUsageByDayResponse.UsageByDay usageByDay = new DescribeDomainsUsageByDayResponse.UsageByDay();
+				DescribeDomainsUsageByDayResponse.DescribeDomainsUsageByDay_UsageByDay usageByDay = new DescribeDomainsUsageByDayResponse.DescribeDomainsUsageByDay_UsageByDay();
 				usageByDay.TimeStamp = context.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].TimeStamp");
 				usageByDay.Qps = context.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].Qps");
 				usageByDay.BytesHitRate = context.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].BytesHitRate");
@@ -61,9 +61,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				usageByDay.TotalAccess = context.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].TotalAccess");
 				usageByDay.TotalTraffic = context.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].TotalTraffic");
 
-				usageByDays.Add(usageByDay);
+				describeDomainsUsageByDayResponse_usageByDays.Add(usageByDay);
 			}
-			describeDomainsUsageByDayResponse.UsageByDays = usageByDays;
+			describeDomainsUsageByDayResponse.UsageByDays = describeDomainsUsageByDayResponse_usageByDays;
         
 			return describeDomainsUsageByDayResponse;
         }

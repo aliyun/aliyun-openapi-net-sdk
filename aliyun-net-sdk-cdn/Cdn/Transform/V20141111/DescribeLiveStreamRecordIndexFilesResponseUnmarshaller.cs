@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeLiveStreamRecordIndexFilesResponse.HttpResponse = context.HttpResponse;
 			describeLiveStreamRecordIndexFilesResponse.RequestId = context.StringValue("DescribeLiveStreamRecordIndexFiles.RequestId");
 
-			List<DescribeLiveStreamRecordIndexFilesResponse.RecordIndexInfo> recordIndexInfoList = new List<DescribeLiveStreamRecordIndexFilesResponse.RecordIndexInfo>();
+			List<DescribeLiveStreamRecordIndexFilesResponse.DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> describeLiveStreamRecordIndexFilesResponse_recordIndexInfoList = new List<DescribeLiveStreamRecordIndexFilesResponse.DescribeLiveStreamRecordIndexFiles_RecordIndexInfo>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList.Length"); i++) {
-				DescribeLiveStreamRecordIndexFilesResponse.RecordIndexInfo recordIndexInfo = new DescribeLiveStreamRecordIndexFilesResponse.RecordIndexInfo();
+				DescribeLiveStreamRecordIndexFilesResponse.DescribeLiveStreamRecordIndexFiles_RecordIndexInfo recordIndexInfo = new DescribeLiveStreamRecordIndexFilesResponse.DescribeLiveStreamRecordIndexFiles_RecordIndexInfo();
 				recordIndexInfo.RecordId = context.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].RecordId");
 				recordIndexInfo.RecordUrl = context.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].RecordUrl");
 				recordIndexInfo.DomainName = context.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].DomainName");
@@ -48,9 +48,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				recordIndexInfo.Width = context.IntegerValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].Width");
 				recordIndexInfo.CreateTime = context.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].CreateTime");
 
-				recordIndexInfoList.Add(recordIndexInfo);
+				describeLiveStreamRecordIndexFilesResponse_recordIndexInfoList.Add(recordIndexInfo);
 			}
-			describeLiveStreamRecordIndexFilesResponse.RecordIndexInfoList = recordIndexInfoList;
+			describeLiveStreamRecordIndexFilesResponse.RecordIndexInfoList = describeLiveStreamRecordIndexFilesResponse_recordIndexInfoList;
         
 			return describeLiveStreamRecordIndexFilesResponse;
         }

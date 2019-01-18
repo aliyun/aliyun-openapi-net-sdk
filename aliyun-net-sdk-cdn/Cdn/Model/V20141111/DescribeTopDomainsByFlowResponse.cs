@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeTopDomainsByFlowResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string startTime;
 
 		private string endTime;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private long? domainOnlineCount;
 
-		private List<TopDomain> topDomains;
+		private List<DescribeTopDomainsByFlow_TopDomain> topDomains;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string StartTime
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<TopDomain> TopDomains
+		public List<DescribeTopDomainsByFlow_TopDomain> TopDomains
 		{
 			get
 			{
@@ -94,7 +108,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class TopDomain{
+		public class DescribeTopDomainsByFlow_TopDomain
+		{
 
 			private string domainName;
 

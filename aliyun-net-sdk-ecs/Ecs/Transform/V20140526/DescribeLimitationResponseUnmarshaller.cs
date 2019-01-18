@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeLimitationResponse.HttpResponse = context.HttpResponse;
 			describeLimitationResponse.RequestId = context.StringValue("DescribeLimitation.RequestId");
 			describeLimitationResponse.Limitation = context.StringValue("DescribeLimitation.Limitation");
-			describeLimitationResponse.Value = context.StringValue("DescribeLimitation.Value");
+			describeLimitationResponse._Value = context.StringValue("DescribeLimitation.Value");
         
 			return describeLimitationResponse;
         }

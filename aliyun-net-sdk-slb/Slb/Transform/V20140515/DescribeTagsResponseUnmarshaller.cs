@@ -35,16 +35,16 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeTagsResponse.PageNumber = context.IntegerValue("DescribeTags.PageNumber");
 			describeTagsResponse.TotalCount = context.IntegerValue("DescribeTags.TotalCount");
 
-			List<DescribeTagsResponse.TagSet> tagSets = new List<DescribeTagsResponse.TagSet>();
+			List<DescribeTagsResponse.DescribeTags_TagSet> describeTagsResponse_tagSets = new List<DescribeTagsResponse.DescribeTags_TagSet>();
 			for (int i = 0; i < context.Length("DescribeTags.TagSets.Length"); i++) {
-				DescribeTagsResponse.TagSet tagSet = new DescribeTagsResponse.TagSet();
+				DescribeTagsResponse.DescribeTags_TagSet tagSet = new DescribeTagsResponse.DescribeTags_TagSet();
 				tagSet.TagKey = context.StringValue("DescribeTags.TagSets["+ i +"].TagKey");
 				tagSet.TagValue = context.StringValue("DescribeTags.TagSets["+ i +"].TagValue");
 				tagSet.InstanceCount = context.IntegerValue("DescribeTags.TagSets["+ i +"].InstanceCount");
 
-				tagSets.Add(tagSet);
+				describeTagsResponse_tagSets.Add(tagSet);
 			}
-			describeTagsResponse.TagSets = tagSets;
+			describeTagsResponse.TagSets = describeTagsResponse_tagSets;
         
 			return describeTagsResponse;
         }

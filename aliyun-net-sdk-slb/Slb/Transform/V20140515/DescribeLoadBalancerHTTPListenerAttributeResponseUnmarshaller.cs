@@ -53,6 +53,18 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheckHttpCode = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheckHttpCode");
 			describeLoadBalancerHTTPListenerAttributeResponse.MaxConnection = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.MaxConnection");
 			describeLoadBalancerHTTPListenerAttributeResponse.VServerGroupId = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.VServerGroupId");
+			describeLoadBalancerHTTPListenerAttributeResponse.Gzip = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.Gzip");
+			describeLoadBalancerHTTPListenerAttributeResponse.XForwardedFor_SLBIP = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.XForwardedFor_SLBIP");
+			describeLoadBalancerHTTPListenerAttributeResponse.XForwardedFor_SLBID = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.XForwardedFor_SLBID");
+			describeLoadBalancerHTTPListenerAttributeResponse.XForwardedFor_proto = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.XForwardedFor_proto");
+			describeLoadBalancerHTTPListenerAttributeResponse.AclId = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.AclId");
+			describeLoadBalancerHTTPListenerAttributeResponse.AclType = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.AclType");
+			describeLoadBalancerHTTPListenerAttributeResponse.AclStatus = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.AclStatus");
+			describeLoadBalancerHTTPListenerAttributeResponse.VpcIds = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.VpcIds");
+			describeLoadBalancerHTTPListenerAttributeResponse.ListenerForward = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.ListenerForward");
+			describeLoadBalancerHTTPListenerAttributeResponse.ForwardPort = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.ForwardPort");
+			describeLoadBalancerHTTPListenerAttributeResponse.RequestTimeout = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.RequestTimeout");
+			describeLoadBalancerHTTPListenerAttributeResponse.IdleTimeout = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.IdleTimeout");
         
 			return describeLoadBalancerHTTPListenerAttributeResponse;
         }

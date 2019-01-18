@@ -29,13 +29,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyImageShareGroupPermissionRequest : RpcAcsRequest<ModifyImageShareGroupPermissionResponse>
     {
         public ModifyImageShareGroupPermissionRequest()
-            : base("Ecs", "2014-05-26", "ModifyImageShareGroupPermission")
+            : base("Ecs", "2014-05-26", "ModifyImageShareGroupPermission", "ecs", "openAPI")
         {
         }
-
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
 
 		private long? resourceOwnerId;
 
@@ -43,35 +39,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string addGroup1;
 
-		private string removeGroup1;
+		private string resourceOwnerAccount;
+
+		private string regionId;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string removeGroup1;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string action;
+
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -112,16 +90,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RemoveGroup1
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return removeGroup1;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				removeGroup1 = value;
-				DictionaryUtil.Add(QueryParameters, "RemoveGroup.1", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -135,6 +126,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string RemoveGroup1
+		{
+			get
+			{
+				return removeGroup1;
+			}
+			set	
+			{
+				removeGroup1 = value;
+				DictionaryUtil.Add(QueryParameters, "RemoveGroup.1", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

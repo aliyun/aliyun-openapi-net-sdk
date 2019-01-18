@@ -32,15 +32,15 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeVServerGroupsResponse.HttpResponse = context.HttpResponse;
 			describeVServerGroupsResponse.RequestId = context.StringValue("DescribeVServerGroups.RequestId");
 
-			List<DescribeVServerGroupsResponse.VServerGroup> vServerGroups = new List<DescribeVServerGroupsResponse.VServerGroup>();
+			List<DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup> describeVServerGroupsResponse_vServerGroups = new List<DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup>();
 			for (int i = 0; i < context.Length("DescribeVServerGroups.VServerGroups.Length"); i++) {
-				DescribeVServerGroupsResponse.VServerGroup vServerGroup = new DescribeVServerGroupsResponse.VServerGroup();
+				DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup vServerGroup = new DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup();
 				vServerGroup.VServerGroupId = context.StringValue("DescribeVServerGroups.VServerGroups["+ i +"].VServerGroupId");
 				vServerGroup.VServerGroupName = context.StringValue("DescribeVServerGroups.VServerGroups["+ i +"].VServerGroupName");
 
-				vServerGroups.Add(vServerGroup);
+				describeVServerGroupsResponse_vServerGroups.Add(vServerGroup);
 			}
-			describeVServerGroupsResponse.VServerGroups = vServerGroups;
+			describeVServerGroupsResponse.VServerGroups = describeVServerGroupsResponse_vServerGroups;
         
 			return describeVServerGroupsResponse;
         }

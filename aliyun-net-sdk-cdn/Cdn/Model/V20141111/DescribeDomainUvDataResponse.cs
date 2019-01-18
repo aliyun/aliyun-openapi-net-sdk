@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainUvDataResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string domainName;
 
 		private string dataInterval;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string endTime;
 
-		private List<UsageData> uvDataInterval;
+		private List<DescribeDomainUvData_UsageData> uvDataInterval;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<UsageData> UvDataInterval
+		public List<DescribeDomainUvData_UsageData> UvDataInterval
 		{
 			get
 			{
@@ -94,11 +108,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class UsageData{
+		public class DescribeDomainUvData_UsageData
+		{
 
 			private string timeStamp;
 
-			private string value_;
+			private string _value;
 
 			public string TimeStamp
 			{
@@ -112,15 +127,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string Value
+			public string _Value
 			{
 				get
 				{
-					return value_;
+					return _value;
 				}
 				set	
 				{
-					value_ = value;
+					_value = value;
 				}
 			}
 		}

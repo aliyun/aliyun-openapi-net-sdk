@@ -20,6 +20,8 @@ using Aliyun.Acs.Core.Http;
 using System;
 using System.Globalization;
 using System.Security.Cryptography;
+using System.Text;
+using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Utils
 {
@@ -48,6 +50,17 @@ namespace Aliyun.Acs.Core.Utils
             return BitConverter.ToString(output).Replace("-", "");
         }
 
+        public static string Md5SumAndBase64(byte[] buff)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] output = md5.ComputeHash(buff);
+            //string md5Str = BitConverter.ToString(output).Replace("-", "");
+
+            //System.Text.Encoding encode = System.Text.Encoding.ASCII;
+            //byte[] bytedata = System.Text.Encoding.ASCII.GetBytes(md5Str);
+            return Convert.ToBase64String(output, 0, output.Length);
+        }
+
         public static string FormatTypeToString(FormatType? formatType)
         {
             if (FormatType.XML == formatType)
@@ -57,6 +70,10 @@ namespace Aliyun.Acs.Core.Utils
             if (FormatType.JSON == formatType)
             {
                 return "application/json";
+            }
+            if (FormatType.FORM == formatType)
+            {
+                return "application/x-www-form-urlencoded";
             }
             return "application/octet-stream";
         }
@@ -70,6 +87,10 @@ namespace Aliyun.Acs.Core.Utils
             if (format.ToLower().Equals("application/json"))
             {
                 return FormatType.JSON;
+            }
+            if (format.ToLower().Equals("application/x-www-form-urlencoded"))
+            {
+                return FormatType.FORM;
             }
             return FormatType.RAW;
         }

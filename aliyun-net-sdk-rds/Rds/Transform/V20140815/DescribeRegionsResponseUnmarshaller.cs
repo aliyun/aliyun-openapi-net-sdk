@@ -32,15 +32,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeRegionsResponse.HttpResponse = context.HttpResponse;
 			describeRegionsResponse.RequestId = context.StringValue("DescribeRegions.RequestId");
 
-			List<DescribeRegionsResponse.RDSRegion> regions = new List<DescribeRegionsResponse.RDSRegion>();
+			List<DescribeRegionsResponse.DescribeRegions_RDSRegion> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_RDSRegion>();
 			for (int i = 0; i < context.Length("DescribeRegions.Regions.Length"); i++) {
-				DescribeRegionsResponse.RDSRegion rDSRegion = new DescribeRegionsResponse.RDSRegion();
+				DescribeRegionsResponse.DescribeRegions_RDSRegion rDSRegion = new DescribeRegionsResponse.DescribeRegions_RDSRegion();
 				rDSRegion.RegionId = context.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
 				rDSRegion.ZoneId = context.StringValue("DescribeRegions.Regions["+ i +"].ZoneId");
 
-				regions.Add(rDSRegion);
+				describeRegionsResponse_regions.Add(rDSRegion);
 			}
-			describeRegionsResponse.Regions = regions;
+			describeRegionsResponse.Regions = describeRegionsResponse_regions;
         
 			return describeRegionsResponse;
         }

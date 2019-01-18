@@ -35,9 +35,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeSignaturesResponse.PageSize = context.IntegerValue("DescribeSignatures.PageSize");
 			describeSignaturesResponse.PageNumber = context.IntegerValue("DescribeSignatures.PageNumber");
 
-			List<DescribeSignaturesResponse.SignatureInfo> signatureInfos = new List<DescribeSignaturesResponse.SignatureInfo>();
+			List<DescribeSignaturesResponse.DescribeSignatures_SignatureInfo> describeSignaturesResponse_signatureInfos = new List<DescribeSignaturesResponse.DescribeSignatures_SignatureInfo>();
 			for (int i = 0; i < context.Length("DescribeSignatures.SignatureInfos.Length"); i++) {
-				DescribeSignaturesResponse.SignatureInfo signatureInfo = new DescribeSignaturesResponse.SignatureInfo();
+				DescribeSignaturesResponse.DescribeSignatures_SignatureInfo signatureInfo = new DescribeSignaturesResponse.DescribeSignatures_SignatureInfo();
 				signatureInfo.RegionId = context.StringValue("DescribeSignatures.SignatureInfos["+ i +"].RegionId");
 				signatureInfo.SignatureId = context.StringValue("DescribeSignatures.SignatureInfos["+ i +"].SignatureId");
 				signatureInfo.SignatureName = context.StringValue("DescribeSignatures.SignatureInfos["+ i +"].SignatureName");
@@ -46,9 +46,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				signatureInfo.CreatedTime = context.StringValue("DescribeSignatures.SignatureInfos["+ i +"].CreatedTime");
 				signatureInfo.ModifiedTime = context.StringValue("DescribeSignatures.SignatureInfos["+ i +"].ModifiedTime");
 
-				signatureInfos.Add(signatureInfo);
+				describeSignaturesResponse_signatureInfos.Add(signatureInfo);
 			}
-			describeSignaturesResponse.SignatureInfos = signatureInfos;
+			describeSignaturesResponse.SignatureInfos = describeSignaturesResponse_signatureInfos;
         
 			return describeSignaturesResponse;
         }

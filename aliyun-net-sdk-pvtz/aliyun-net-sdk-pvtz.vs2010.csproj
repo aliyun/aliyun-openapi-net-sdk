@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5cc9ed1a-e219-42b5-836d-8a93cdbf313f}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-pvtz</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Pvtz\Model\V20180101\DescribeStatisticSummaryRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeZoneVpcTreeRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DeleteZoneRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeZoneVpcTreeResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeZoneRecordsRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\AddZoneRecordResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeRegionsResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeRegionsRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeUserServiceStatusResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeRequestGraphResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeZoneInfoResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\UpdateZoneRemarkRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeZonesRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\AddZoneRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeZoneInfoRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\AddZoneRecordRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\UpdateZoneRecordResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeStatisticSummaryResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeZonesResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\BindZoneVpcRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeZoneRecordsResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DeleteZoneResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\UpdateZoneRecordRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\UpdateZoneRemarkResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\SetZoneRecordStatusResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DeleteZoneRecordResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\CheckZoneNameResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\CheckZoneNameRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DeleteZoneRecordRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeChangeLogsRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\SetZoneRecordStatusRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeRequestGraphRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeChangeLogsResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\DescribeUserServiceStatusRequest.cs" />
+	<Compile Include="Pvtz\Model\V20180101\BindZoneVpcResponse.cs" />
+	<Compile Include="Pvtz\Model\V20180101\AddZoneResponse.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\DeleteZoneRecordResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\UpdateZoneRemarkResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\DescribeZoneRecordsResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\DescribeZoneVpcTreeResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\DescribeChangeLogsResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\AddZoneResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\BindZoneVpcResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\SetZoneRecordStatusResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\CheckZoneNameResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\DeleteZoneResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\DescribeZonesResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\DescribeRequestGraphResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\DescribeStatisticSummaryResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\DescribeZoneInfoResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\DescribeUserServiceStatusResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\UpdateZoneRecordResponseUnmarshaller.cs" />
+	<Compile Include="Pvtz\Transform\V20180101\AddZoneRecordResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

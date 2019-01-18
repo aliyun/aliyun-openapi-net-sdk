@@ -33,11 +33,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeLiveStreamsBlockListResponse.RequestId = context.StringValue("DescribeLiveStreamsBlockList.RequestId");
 			describeLiveStreamsBlockListResponse.DomainName = context.StringValue("DescribeLiveStreamsBlockList.DomainName");
 
-			List<string> streamUrls = new List<string>();
+			List<string> describeLiveStreamsBlockListResponse_streamUrls = new List<string>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamsBlockList.StreamUrls.Length"); i++) {
-				streamUrls.Add(context.StringValue("DescribeLiveStreamsBlockList.StreamUrls["+ i +"]"));
+				describeLiveStreamsBlockListResponse_streamUrls.Add(context.StringValue("DescribeLiveStreamsBlockList.StreamUrls["+ i +"]"));
 			}
-			describeLiveStreamsBlockListResponse.StreamUrls = streamUrls;
+			describeLiveStreamsBlockListResponse.StreamUrls = describeLiveStreamsBlockListResponse_streamUrls;
         
 			return describeLiveStreamsBlockListResponse;
         }

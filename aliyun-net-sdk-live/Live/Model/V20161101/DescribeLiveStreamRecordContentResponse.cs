@@ -19,14 +19,28 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveStreamRecordContentResponse : AcsResponse
 	{
 
-		private List<RecordContentInfo> recordContentInfoList;
+		private string requestId;
 
-		public List<RecordContentInfo> RecordContentInfoList
+		private List<DescribeLiveStreamRecordContent_RecordContentInfo> recordContentInfoList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeLiveStreamRecordContent_RecordContentInfo> RecordContentInfoList
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class RecordContentInfo{
+		public class DescribeLiveStreamRecordContent_RecordContentInfo
+		{
 
 			private string ossEndpoint;
 

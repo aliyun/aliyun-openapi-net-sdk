@@ -24,6 +24,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeApiDocResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string regionId;
 
 		private string groupId;
@@ -50,13 +52,25 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string deployedTime;
 
-		private List<ErrorCodeSample> errorCodeSamples;
+		private List<DescribeApiDoc_ErrorCodeSample> errorCodeSamples;
 
-		private List<ResultDescription> resultDescriptions;
+		private List<DescribeApiDoc_ResultDescription> resultDescriptions;
 
-		private List<RequestParameter> requestParameters;
+		private List<DescribeApiDoc_RequestParameter> requestParameters;
 
-		private RequestConfig_ requestConfig;
+		private DescribeApiDoc_RequestConfig requestConfig;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string RegionId
 		{
@@ -214,7 +228,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<ErrorCodeSample> ErrorCodeSamples
+		public List<DescribeApiDoc_ErrorCodeSample> ErrorCodeSamples
 		{
 			get
 			{
@@ -226,7 +240,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<ResultDescription> ResultDescriptions
+		public List<DescribeApiDoc_ResultDescription> ResultDescriptions
 		{
 			get
 			{
@@ -238,7 +252,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<RequestParameter> RequestParameters
+		public List<DescribeApiDoc_RequestParameter> RequestParameters
 		{
 			get
 			{
@@ -250,7 +264,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public RequestConfig_ RequestConfig
+		public DescribeApiDoc_RequestConfig RequestConfig
 		{
 			get
 			{
@@ -262,7 +276,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class ErrorCodeSample{
+		public class DescribeApiDoc_ErrorCodeSample
+		{
 
 			private string code;
 
@@ -307,7 +322,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class ResultDescription{
+		public class DescribeApiDoc_ResultDescription
+		{
 
 			private string id;
 
@@ -324,8 +340,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			private string type;
 
 			private string description;
-
-			private string example;
 
 			public string Id
 			{
@@ -422,21 +436,10 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 					description = value;
 				}
 			}
-
-			public string Example
-			{
-				get
-				{
-					return example;
-				}
-				set	
-				{
-					example = value;
-				}
-			}
 		}
 
-		public class RequestParameter{
+		public class DescribeApiDoc_RequestParameter
+		{
 
 			private string apiParameterName;
 
@@ -663,7 +666,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class RequestConfig_{
+		public class DescribeApiDoc_RequestConfig
+		{
 
 			private string requestProtocol;
 
@@ -674,6 +678,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			private string bodyFormat;
 
 			private string postBodyDescription;
+
+			private string requestMode;
 
 			public string RequestProtocol
 			{
@@ -732,6 +738,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					postBodyDescription = value;
+				}
+			}
+
+			public string RequestMode
+			{
+				get
+				{
+					return requestMode;
+				}
+				set	
+				{
+					requestMode = value;
 				}
 			}
 		}

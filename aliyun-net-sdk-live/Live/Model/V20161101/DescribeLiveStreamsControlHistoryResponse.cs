@@ -19,14 +19,28 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveStreamsControlHistoryResponse : AcsResponse
 	{
 
-		private List<LiveStreamControlInfo> controlInfo;
+		private string requestId;
 
-		public List<LiveStreamControlInfo> ControlInfo
+		private List<DescribeLiveStreamsControlHistory_LiveStreamControlInfo> controlInfo;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeLiveStreamsControlHistory_LiveStreamControlInfo> ControlInfo
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class LiveStreamControlInfo{
+		public class DescribeLiveStreamsControlHistory_LiveStreamControlInfo
+		{
 
 			private string streamName;
 

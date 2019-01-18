@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeHaVipsResponse.PageNumber = context.IntegerValue("DescribeHaVips.PageNumber");
 			describeHaVipsResponse.PageSize = context.IntegerValue("DescribeHaVips.PageSize");
 
-			List<DescribeHaVipsResponse.HaVip> haVips = new List<DescribeHaVipsResponse.HaVip>();
+			List<DescribeHaVipsResponse.DescribeHaVips_HaVip> describeHaVipsResponse_haVips = new List<DescribeHaVipsResponse.DescribeHaVips_HaVip>();
 			for (int i = 0; i < context.Length("DescribeHaVips.HaVips.Length"); i++) {
-				DescribeHaVipsResponse.HaVip haVip = new DescribeHaVipsResponse.HaVip();
+				DescribeHaVipsResponse.DescribeHaVips_HaVip haVip = new DescribeHaVipsResponse.DescribeHaVips_HaVip();
 				haVip.HaVipId = context.StringValue("DescribeHaVips.HaVips["+ i +"].HaVipId");
 				haVip.RegionId = context.StringValue("DescribeHaVips.HaVips["+ i +"].RegionId");
 				haVip.VpcId = context.StringValue("DescribeHaVips.HaVips["+ i +"].VpcId");
@@ -48,21 +48,21 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				haVip.Description = context.StringValue("DescribeHaVips.HaVips["+ i +"].Description");
 				haVip.CreateTime = context.StringValue("DescribeHaVips.HaVips["+ i +"].CreateTime");
 
-				List<string> associatedInstances = new List<string>();
+				List<string> haVip_associatedInstances = new List<string>();
 				for (int j = 0; j < context.Length("DescribeHaVips.HaVips["+ i +"].AssociatedInstances.Length"); j++) {
-					associatedInstances.Add(context.StringValue("DescribeHaVips.HaVips["+ i +"].AssociatedInstances["+ j +"]"));
+					haVip_associatedInstances.Add(context.StringValue("DescribeHaVips.HaVips["+ i +"].AssociatedInstances["+ j +"]"));
 				}
-				haVip.AssociatedInstances = associatedInstances;
+				haVip.AssociatedInstances = haVip_associatedInstances;
 
-				List<string> associatedEipAddresses = new List<string>();
+				List<string> haVip_associatedEipAddresses = new List<string>();
 				for (int j = 0; j < context.Length("DescribeHaVips.HaVips["+ i +"].AssociatedEipAddresses.Length"); j++) {
-					associatedEipAddresses.Add(context.StringValue("DescribeHaVips.HaVips["+ i +"].AssociatedEipAddresses["+ j +"]"));
+					haVip_associatedEipAddresses.Add(context.StringValue("DescribeHaVips.HaVips["+ i +"].AssociatedEipAddresses["+ j +"]"));
 				}
-				haVip.AssociatedEipAddresses = associatedEipAddresses;
+				haVip.AssociatedEipAddresses = haVip_associatedEipAddresses;
 
-				haVips.Add(haVip);
+				describeHaVipsResponse_haVips.Add(haVip);
 			}
-			describeHaVipsResponse.HaVips = haVips;
+			describeHaVipsResponse.HaVips = describeHaVipsResponse_haVips;
         
 			return describeHaVipsResponse;
         }

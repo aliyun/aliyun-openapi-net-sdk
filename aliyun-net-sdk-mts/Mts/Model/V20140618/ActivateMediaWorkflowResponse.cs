@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class ActivateMediaWorkflowResponse : AcsResponse
 	{
 
-		private MediaWorkflow_ mediaWorkflow;
+		private string requestId;
 
-		public MediaWorkflow_ MediaWorkflow
+		private ActivateMediaWorkflow_MediaWorkflow mediaWorkflow;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public ActivateMediaWorkflow_MediaWorkflow MediaWorkflow
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class MediaWorkflow_{
+		public class ActivateMediaWorkflow_MediaWorkflow
+		{
 
 			private string mediaWorkflowId;
 

@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeRefreshQuotaResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string urlQuota;
 
 		private string dirQuota;
@@ -31,6 +33,26 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 		private string urlRemain;
 
 		private string dirRemain;
+
+		private string preloadQuota;
+
+		private string blockQuota;
+
+		private string preloadRemain;
+
+		private string blockRemain;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string UrlQuota
 		{
@@ -77,6 +99,54 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				dirRemain = value;
+			}
+		}
+
+		public string PreloadQuota
+		{
+			get
+			{
+				return preloadQuota;
+			}
+			set	
+			{
+				preloadQuota = value;
+			}
+		}
+
+		public string BlockQuota
+		{
+			get
+			{
+				return blockQuota;
+			}
+			set	
+			{
+				blockQuota = value;
+			}
+		}
+
+		public string PreloadRemain
+		{
+			get
+			{
+				return preloadRemain;
+			}
+			set	
+			{
+				preloadRemain = value;
+			}
+		}
+
+		public string BlockRemain
+		{
+			get
+			{
+				return blockRemain;
+			}
+			set	
+			{
+				blockRemain = value;
 			}
 		}
 	}

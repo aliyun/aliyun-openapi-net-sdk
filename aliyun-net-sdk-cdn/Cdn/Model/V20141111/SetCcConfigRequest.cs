@@ -33,28 +33,30 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string allowIps;
 
 		private string securityToken;
 
 		private string domainName;
 
-		private string enable;
+		private string action;
 
-		private string allowIps;
+		private long? ownerId;
 
 		private string blockIps;
 
-		public long? OwnerId
+		private string accessKeyId;
+
+		public string AllowIps
 		{
 			get
 			{
-				return ownerId;
+				return allowIps;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				allowIps = value;
+				DictionaryUtil.Add(QueryParameters, "AllowIps", value);
 			}
 		}
 
@@ -84,29 +86,29 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Enable
+		public string Action
 		{
 			get
 			{
-				return enable;
+				return action;
 			}
 			set	
 			{
-				enable = value;
-				DictionaryUtil.Add(QueryParameters, "Enable", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string AllowIps
+		public long? OwnerId
 		{
 			get
 			{
-				return allowIps;
+				return ownerId;
 			}
 			set	
 			{
-				allowIps = value;
-				DictionaryUtil.Add(QueryParameters, "AllowIps", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -120,6 +122,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				blockIps = value;
 				DictionaryUtil.Add(QueryParameters, "BlockIps", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

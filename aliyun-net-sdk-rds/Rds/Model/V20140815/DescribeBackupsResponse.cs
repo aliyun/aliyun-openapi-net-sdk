@@ -24,15 +24,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeBackupsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string totalRecordCount;
 
 		private string pageNumber;
 
 		private string pageRecordCount;
 
-		private int? totalBackupSize;
+		private long? totalBackupSize;
 
-		private List<Backup> items;
+		private List<DescribeBackups_Backup> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string TotalRecordCount
 		{
@@ -70,7 +84,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? TotalBackupSize
+		public long? TotalBackupSize
 		{
 			get
 			{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<Backup> Items
+		public List<DescribeBackups_Backup> Items
 		{
 			get
 			{
@@ -94,23 +108,24 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class Backup{
+		public class DescribeBackups_Backup
+		{
 
 			private string backupId;
 
 			private string dBInstanceId;
 
-			private BackupStatusEnum? backupStatus;
+			private string backupStatus;
 
 			private string backupStartTime;
 
 			private string backupEndTime;
 
-			private BackupTypeEnum? backupType;
+			private string backupType;
 
-			private BackupModeEnum? backupMode;
+			private string backupMode;
 
-			private BackupMethodEnum? backupMethod;
+			private string backupMethod;
 
 			private string backupDownloadURL;
 
@@ -118,9 +133,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string backupLocation;
 
-			private BackupExtractionStatusEnum? backupExtractionStatus;
+			private string backupExtractionStatus;
 
-			private BackupScaleEnum? backupScale;
+			private string backupScale;
 
 			private string backupDBNames;
 
@@ -130,7 +145,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string hostInstanceID;
 
-			private StoreStatusEnum? storeStatus;
+			private string storeStatus;
+
+			private string consistentTime;
 
 			public string BackupId
 			{
@@ -156,7 +173,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public BackupStatusEnum? BackupStatus
+			public string BackupStatus
 			{
 				get
 				{
@@ -192,7 +209,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public BackupTypeEnum? BackupType
+			public string BackupType
 			{
 				get
 				{
@@ -204,7 +221,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public BackupModeEnum? BackupMode
+			public string BackupMode
 			{
 				get
 				{
@@ -216,7 +233,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public BackupMethodEnum? BackupMethod
+			public string BackupMethod
 			{
 				get
 				{
@@ -264,7 +281,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public BackupExtractionStatusEnum? BackupExtractionStatus
+			public string BackupExtractionStatus
 			{
 				get
 				{
@@ -276,7 +293,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public BackupScaleEnum? BackupScale
+			public string BackupScale
 			{
 				get
 				{
@@ -336,7 +353,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public StoreStatusEnum? StoreStatus
+			public string StoreStatus
 			{
 				get
 				{
@@ -348,50 +365,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-public enum BackupStatusEnum {
-
-					Failed,
-					Success,
-}
-
-public enum BackupTypeEnum {
-
-					IncrementalBackup,
-					FullBackup,
-}
-
-public enum BackupModeEnum {
-
-					Manual,
-					Automated,
-}
-
-public enum BackupMethodEnum {
-
-					Physical,
-					Logical,
-					Snapshot,
-}
-
-public enum BackupExtractionStatusEnum {
-
-					Nostart,
-					Extracing,
-					Failed,
-					Success,
-}
-
-public enum BackupScaleEnum {
-
-					DBInstance,
-					Database,
-}
-
-public enum StoreStatusEnum {
-
-					Enabled,
-					Disabled,
-}
+			public string ConsistentTime
+			{
+				get
+				{
+					return consistentTime;
+				}
+				set	
+				{
+					consistentTime = value;
+				}
+			}
 		}
 	}
 }

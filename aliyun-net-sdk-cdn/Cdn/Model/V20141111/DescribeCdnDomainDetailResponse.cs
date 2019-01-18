@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeCdnDomainDetailResponse : AcsResponse
 	{
 
-		private GetDomainDetailModel_ getDomainDetailModel;
+		private string requestId;
 
-		public GetDomainDetailModel_ GetDomainDetailModel
+		private DescribeCdnDomainDetail_GetDomainDetailModel getDomainDetailModel;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public DescribeCdnDomainDetail_GetDomainDetailModel GetDomainDetailModel
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class GetDomainDetailModel_{
+		public class DescribeCdnDomainDetail_GetDomainDetailModel
+		{
 
 			private string gmtCreated;
 
@@ -69,6 +84,10 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			private string scope;
 
 			private string certificateName;
+
+			private string resourceGroupId;
+
+			private List<DescribeCdnDomainDetail_SourceModel> sourceModels;
 
 			private List<string> sources;
 
@@ -252,6 +271,30 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<DescribeCdnDomainDetail_SourceModel> SourceModels
+			{
+				get
+				{
+					return sourceModels;
+				}
+				set	
+				{
+					sourceModels = value;
+				}
+			}
+
 			public List<string> Sources
 			{
 				get
@@ -261,6 +304,80 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					sources = value;
+				}
+			}
+
+			public class DescribeCdnDomainDetail_SourceModel
+			{
+
+				private string content;
+
+				private string type;
+
+				private int? port;
+
+				private string enabled;
+
+				private string priority;
+
+				public string Content
+				{
+					get
+					{
+						return content;
+					}
+					set	
+					{
+						content = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public string Enabled
+				{
+					get
+					{
+						return enabled;
+					}
+					set	
+					{
+						enabled = value;
+					}
+				}
+
+				public string Priority
+				{
+					get
+					{
+						return priority;
+					}
+					set	
+					{
+						priority = value;
+					}
 				}
 			}
 		}

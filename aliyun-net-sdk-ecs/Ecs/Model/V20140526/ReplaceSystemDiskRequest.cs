@@ -29,53 +29,43 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ReplaceSystemDiskRequest : RpcAcsRequest<ReplaceSystemDiskResponse>
     {
         public ReplaceSystemDiskRequest()
-            : base("Ecs", "2014-05-26", "ReplaceSystemDisk")
+            : base("Ecs", "2014-05-26", "ReplaceSystemDisk", "ecs", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
-
-		private string instanceId;
 
 		private string imageId;
 
-		private int? systemDiskSize;
+		private string resourceOwnerAccount;
 
 		private string clientToken;
 
 		private string ownerAccount;
 
+		private string securityEnhancementStrategy;
+
+		private string keyPairName;
+
+		private long? ownerId;
+
+		private string platform;
+
+		private string password;
+
+		private string instanceId;
+
+		private bool? passwordInherit;
+
+		private int? systemDiskSize;
+
+		private string action;
+
+		private string diskId;
+
 		private bool? useAdditionalService;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string architecture;
 
 		public long? ResourceOwnerId
 		{
@@ -87,19 +77,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -116,16 +93,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? SystemDiskSize
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return systemDiskSize;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				systemDiskSize = value;
-				DictionaryUtil.Add(QueryParameters, "SystemDisk.Size", value.ToString());
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -155,6 +132,136 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string SecurityEnhancementStrategy
+		{
+			get
+			{
+				return securityEnhancementStrategy;
+			}
+			set	
+			{
+				securityEnhancementStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityEnhancementStrategy", value);
+			}
+		}
+
+		public string KeyPairName
+		{
+			get
+			{
+				return keyPairName;
+			}
+			set	
+			{
+				keyPairName = value;
+				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Platform
+		{
+			get
+			{
+				return platform;
+			}
+			set	
+			{
+				platform = value;
+				DictionaryUtil.Add(QueryParameters, "Platform", value);
+			}
+		}
+
+		public string Password
+		{
+			get
+			{
+				return password;
+			}
+			set	
+			{
+				password = value;
+				DictionaryUtil.Add(QueryParameters, "Password", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? PasswordInherit
+		{
+			get
+			{
+				return passwordInherit;
+			}
+			set	
+			{
+				passwordInherit = value;
+				DictionaryUtil.Add(QueryParameters, "PasswordInherit", value.ToString());
+			}
+		}
+
+		public int? SystemDiskSize
+		{
+			get
+			{
+				return systemDiskSize;
+			}
+			set	
+			{
+				systemDiskSize = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.Size", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string DiskId
+		{
+			get
+			{
+				return diskId;
+			}
+			set	
+			{
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+			}
+		}
+
 		public bool? UseAdditionalService
 		{
 			get
@@ -165,6 +272,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				useAdditionalService = value;
 				DictionaryUtil.Add(QueryParameters, "UseAdditionalService", value.ToString());
+			}
+		}
+
+		public string Architecture
+		{
+			get
+			{
+				return architecture;
+			}
+			set	
+			{
+				architecture = value;
+				DictionaryUtil.Add(QueryParameters, "Architecture", value);
 			}
 		}
 

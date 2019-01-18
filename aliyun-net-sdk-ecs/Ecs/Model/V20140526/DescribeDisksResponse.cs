@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDisksResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<Disk> disks;
+		private List<DescribeDisks_Disk> disks;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Disk> Disks
+		public List<DescribeDisks_Disk> Disks
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Disk{
+		public class DescribeDisks_Disk
+		{
 
 			private string diskId;
 
@@ -92,9 +107,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string description;
 
-			private TypeEnum? type;
+			private string type;
 
-			private CategoryEnum? category;
+			private string category;
 
 			private int? size;
 
@@ -132,9 +147,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string expiredTime;
 
-			private List<OperationLock> operationLocks;
+			private string resourceGroupId;
 
-			private List<Tag> tags;
+			private bool? encrypted;
+
+			private int? mountInstanceNum;
+
+			private int? iOPS;
+
+			private int? iOPSRead;
+
+			private int? iOPSWrite;
+
+			private string kMSKeyId;
+
+			private List<DescribeDisks_OperationLock> operationLocks;
+
+			private List<DescribeDisks_MountInstance> mountInstances;
+
+			private List<DescribeDisks_Tag> tags;
 
 			public string DiskId
 			{
@@ -196,7 +227,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public TypeEnum? Type
+			public string Type
 			{
 				get
 				{
@@ -208,7 +239,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public CategoryEnum? Category
+			public string Category
 			{
 				get
 				{
@@ -436,7 +467,91 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<OperationLock> OperationLocks
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public bool? Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
+				}
+			}
+
+			public int? MountInstanceNum
+			{
+				get
+				{
+					return mountInstanceNum;
+				}
+				set	
+				{
+					mountInstanceNum = value;
+				}
+			}
+
+			public int? IOPS
+			{
+				get
+				{
+					return iOPS;
+				}
+				set	
+				{
+					iOPS = value;
+				}
+			}
+
+			public int? IOPSRead
+			{
+				get
+				{
+					return iOPSRead;
+				}
+				set	
+				{
+					iOPSRead = value;
+				}
+			}
+
+			public int? IOPSWrite
+			{
+				get
+				{
+					return iOPSWrite;
+				}
+				set	
+				{
+					iOPSWrite = value;
+				}
+			}
+
+			public string KMSKeyId
+			{
+				get
+				{
+					return kMSKeyId;
+				}
+				set	
+				{
+					kMSKeyId = value;
+				}
+			}
+
+			public List<DescribeDisks_OperationLock> OperationLocks
 			{
 				get
 				{
@@ -448,7 +563,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<Tag> Tags
+			public List<DescribeDisks_MountInstance> MountInstances
+			{
+				get
+				{
+					return mountInstances;
+				}
+				set	
+				{
+					mountInstances = value;
+				}
+			}
+
+			public List<DescribeDisks_Tag> Tags
 			{
 				get
 				{
@@ -460,20 +587,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public enum TypeEnum {
-			
-					system,
-					data,
-			}
-
-			public enum CategoryEnum {
-			
-					ephemeral_ssd,
-					ephemeral,
-					cloud,
-			}
-
-			public class OperationLock{
+			public class DescribeDisks_OperationLock
+			{
 
 				private string lockReason;
 
@@ -490,7 +605,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class Tag{
+			public class DescribeDisks_MountInstance
+			{
+
+				private string instanceId;
+
+				private string device;
+
+				private string attachedTime;
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public string Device
+				{
+					get
+					{
+						return device;
+					}
+					set	
+					{
+						device = value;
+					}
+				}
+
+				public string AttachedTime
+				{
+					get
+					{
+						return attachedTime;
+					}
+					set	
+					{
+						attachedTime = value;
+					}
+				}
+			}
+
+			public class DescribeDisks_Tag
+			{
 
 				private string tagKey;
 

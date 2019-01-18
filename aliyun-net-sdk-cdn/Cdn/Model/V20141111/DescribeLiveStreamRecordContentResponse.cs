@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeLiveStreamRecordContentResponse : AcsResponse
 	{
 
-		private List<RecordContentInfo> recordContentInfoList;
+		private string requestId;
 
-		public List<RecordContentInfo> RecordContentInfoList
+		private List<DescribeLiveStreamRecordContent_RecordContentInfo> recordContentInfoList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeLiveStreamRecordContent_RecordContentInfo> RecordContentInfoList
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class RecordContentInfo{
+		public class DescribeLiveStreamRecordContent_RecordContentInfo
+		{
 
 			private string ossEndpoint;
 

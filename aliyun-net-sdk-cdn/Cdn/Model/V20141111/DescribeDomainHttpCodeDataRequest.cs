@@ -33,60 +33,34 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
-
-		private string securityToken;
-
-		private string domainName;
+		private string locationNameEn;
 
 		private string startTime;
 
-		private string endTime;
+		private string ispNameEn;
+
+		private string action;
 
 		private string timeMerge;
 
-		private string locationNameEn;
+		private string domainName;
 
-		private string ispNameEn;
+		private string endTime;
+
+		private long? ownerId;
 
 		private string interval;
 
-		public long? OwnerId
+		public string LocationNameEn
 		{
 			get
 			{
-				return ownerId;
+				return locationNameEn;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				locationNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
 			}
 		}
 
@@ -103,16 +77,29 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string EndTime
+		public string IspNameEn
 		{
 			get
 			{
-				return endTime;
+				return ispNameEn;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				ispNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -129,29 +116,42 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string LocationNameEn
+		public string DomainName
 		{
 			get
 			{
-				return locationNameEn;
+				return domainName;
 			}
 			set	
 			{
-				locationNameEn = value;
-				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
-		public string IspNameEn
+		public string EndTime
 		{
 			get
 			{
-				return ispNameEn;
+				return endTime;
 			}
 			set	
 			{
-				ispNameEn = value;
-				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

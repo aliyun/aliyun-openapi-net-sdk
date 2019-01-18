@@ -19,14 +19,28 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveStreamOnlineUserNumResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private long? totalUserNumber;
 
-		private List<LiveStreamOnlineUserNumInfo> onlineUserInfo;
+		private List<DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo> onlineUserInfo;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? TotalUserNumber
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public List<LiveStreamOnlineUserNumInfo> OnlineUserInfo
+		public List<DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo> OnlineUserInfo
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class LiveStreamOnlineUserNumInfo{
+		public class DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo
+		{
 
 			private string streamUrl;
 

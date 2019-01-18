@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Live.Model.V20161101;
+using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Transform.V20161101
+namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamsBlockListResponseUnmarshaller
     {
@@ -32,12 +32,16 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 			describeLiveStreamsBlockListResponse.HttpResponse = context.HttpResponse;
 			describeLiveStreamsBlockListResponse.RequestId = context.StringValue("DescribeLiveStreamsBlockList.RequestId");
 			describeLiveStreamsBlockListResponse.DomainName = context.StringValue("DescribeLiveStreamsBlockList.DomainName");
+			describeLiveStreamsBlockListResponse.PageNum = context.IntegerValue("DescribeLiveStreamsBlockList.PageNum");
+			describeLiveStreamsBlockListResponse.PageSize = context.IntegerValue("DescribeLiveStreamsBlockList.PageSize");
+			describeLiveStreamsBlockListResponse.TotalNum = context.IntegerValue("DescribeLiveStreamsBlockList.TotalNum");
+			describeLiveStreamsBlockListResponse.TotalPage = context.IntegerValue("DescribeLiveStreamsBlockList.TotalPage");
 
-			List<string> streamUrls = new List<string>();
+			List<string> describeLiveStreamsBlockListResponse_streamUrls = new List<string>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamsBlockList.StreamUrls.Length"); i++) {
-				streamUrls.Add(context.StringValue("DescribeLiveStreamsBlockList.StreamUrls["+ i +"]"));
+				describeLiveStreamsBlockListResponse_streamUrls.Add(context.StringValue("DescribeLiveStreamsBlockList.StreamUrls["+ i +"]"));
 			}
-			describeLiveStreamsBlockListResponse.StreamUrls = streamUrls;
+			describeLiveStreamsBlockListResponse.StreamUrls = describeLiveStreamsBlockListResponse_streamUrls;
         
 			return describeLiveStreamsBlockListResponse;
         }

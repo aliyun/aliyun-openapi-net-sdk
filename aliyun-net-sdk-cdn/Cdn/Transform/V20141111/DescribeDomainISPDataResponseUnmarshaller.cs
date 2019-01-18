@@ -36,27 +36,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainISPDataResponse.StartTime = context.StringValue("DescribeDomainISPData.StartTime");
 			describeDomainISPDataResponse.EndTime = context.StringValue("DescribeDomainISPData.EndTime");
 
-			List<DescribeDomainISPDataResponse.ISPProportionData> value = new List<DescribeDomainISPDataResponse.ISPProportionData>();
+			List<DescribeDomainISPDataResponse.DescribeDomainISPData_ISPProportionData> describeDomainISPDataResponse_value = new List<DescribeDomainISPDataResponse.DescribeDomainISPData_ISPProportionData>();
 			for (int i = 0; i < context.Length("DescribeDomainISPData.Value.Length"); i++) {
-				DescribeDomainISPDataResponse.ISPProportionData iSPProportionData = new DescribeDomainISPDataResponse.ISPProportionData();
+				DescribeDomainISPDataResponse.DescribeDomainISPData_ISPProportionData iSPProportionData = new DescribeDomainISPDataResponse.DescribeDomainISPData_ISPProportionData();
 				iSPProportionData.ISP = context.StringValue("DescribeDomainISPData.Value["+ i +"].ISP");
 				iSPProportionData.Proportion = context.StringValue("DescribeDomainISPData.Value["+ i +"].Proportion");
 				iSPProportionData.IspEname = context.StringValue("DescribeDomainISPData.Value["+ i +"].IspEname");
 				iSPProportionData.AvgObjectSize = context.StringValue("DescribeDomainISPData.Value["+ i +"].AvgObjectSize");
 				iSPProportionData.AvgResponseTime = context.StringValue("DescribeDomainISPData.Value["+ i +"].AvgResponseTime");
 				iSPProportionData.Bps = context.StringValue("DescribeDomainISPData.Value["+ i +"].Bps");
-				iSPProportionData.ByteHitRate = context.StringValue("DescribeDomainISPData.Value["+ i +"].ByteHitRate");
 				iSPProportionData.Qps = context.StringValue("DescribeDomainISPData.Value["+ i +"].Qps");
-				iSPProportionData.ReqErrRate = context.StringValue("DescribeDomainISPData.Value["+ i +"].ReqErrRate");
-				iSPProportionData.ReqHitRate = context.StringValue("DescribeDomainISPData.Value["+ i +"].ReqHitRate");
 				iSPProportionData.AvgResponseRate = context.StringValue("DescribeDomainISPData.Value["+ i +"].AvgResponseRate");
+				iSPProportionData.ByteHitRate = context.StringValue("DescribeDomainISPData.Value["+ i +"].ByteHitRate");
+				iSPProportionData.ReqHitRate = context.StringValue("DescribeDomainISPData.Value["+ i +"].ReqHitRate");
+				iSPProportionData.ReqErrRate = context.StringValue("DescribeDomainISPData.Value["+ i +"].ReqErrRate");
 				iSPProportionData.TotalBytes = context.StringValue("DescribeDomainISPData.Value["+ i +"].TotalBytes");
 				iSPProportionData.BytesProportion = context.StringValue("DescribeDomainISPData.Value["+ i +"].BytesProportion");
 				iSPProportionData.TotalQuery = context.StringValue("DescribeDomainISPData.Value["+ i +"].TotalQuery");
 
-				value.Add(iSPProportionData);
+				describeDomainISPDataResponse_value.Add(iSPProportionData);
 			}
-			describeDomainISPDataResponse.Value = value;
+			describeDomainISPDataResponse._Value = describeDomainISPDataResponse_value;
         
 			return describeDomainISPDataResponse;
         }

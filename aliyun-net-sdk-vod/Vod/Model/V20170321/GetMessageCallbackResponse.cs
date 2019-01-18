@@ -24,9 +24,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class GetMessageCallbackResponse : AcsResponse
 	{
 
-		private MessageCallback_ messageCallback;
+		private string requestId;
 
-		public MessageCallback_ MessageCallback
+		private GetMessageCallback_MessageCallback messageCallback;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public GetMessageCallback_MessageCallback MessageCallback
 		{
 			get
 			{
@@ -38,11 +52,36 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public class MessageCallback_{
+		public class GetMessageCallback_MessageCallback
+		{
+
+			private string callbackType;
 
 			private string callbackSwitch;
 
 			private string callbackURL;
+
+			private string eventTypeList;
+
+			private string authSwitch;
+
+			private string authKey;
+
+			private string mnsEndpoint;
+
+			private string mnsQueueName;
+
+			public string CallbackType
+			{
+				get
+				{
+					return callbackType;
+				}
+				set	
+				{
+					callbackType = value;
+				}
+			}
 
 			public string CallbackSwitch
 			{
@@ -65,6 +104,66 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					callbackURL = value;
+				}
+			}
+
+			public string EventTypeList
+			{
+				get
+				{
+					return eventTypeList;
+				}
+				set	
+				{
+					eventTypeList = value;
+				}
+			}
+
+			public string AuthSwitch
+			{
+				get
+				{
+					return authSwitch;
+				}
+				set	
+				{
+					authSwitch = value;
+				}
+			}
+
+			public string AuthKey
+			{
+				get
+				{
+					return authKey;
+				}
+				set	
+				{
+					authKey = value;
+				}
+			}
+
+			public string MnsEndpoint
+			{
+				get
+				{
+					return mnsEndpoint;
+				}
+				set	
+				{
+					mnsEndpoint = value;
+				}
+			}
+
+			public string MnsQueueName
+			{
+				get
+				{
+					return mnsQueueName;
+				}
+				set	
+				{
+					mnsQueueName = value;
 				}
 			}
 		}

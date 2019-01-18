@@ -33,30 +33,47 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string ossBucket;
+
+		private string appName;
 
 		private string securityToken;
 
 		private string domainName;
 
-		private string appName;
-
 		private string ossEndpoint;
-
-		private string ossBucket;
 
 		private string ossObjectPrefix;
 
-		public long? OwnerId
+		private string action;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public string OssBucket
 		{
 			get
 			{
-				return ownerId;
+				return ossBucket;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				ossBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -86,19 +103,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
 		public string OssEndpoint
 		{
 			get
@@ -112,19 +116,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string OssBucket
-		{
-			get
-			{
-				return ossBucket;
-			}
-			set	
-			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
-			}
-		}
-
 		public string OssObjectPrefix
 		{
 			get
@@ -135,6 +126,45 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				ossObjectPrefix = value;
 				DictionaryUtil.Add(QueryParameters, "OssObjectPrefix", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

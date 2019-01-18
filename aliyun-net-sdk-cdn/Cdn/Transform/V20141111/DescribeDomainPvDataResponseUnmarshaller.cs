@@ -36,15 +36,15 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainPvDataResponse.StartTime = context.StringValue("DescribeDomainPvData.StartTime");
 			describeDomainPvDataResponse.EndTime = context.StringValue("DescribeDomainPvData.EndTime");
 
-			List<DescribeDomainPvDataResponse.UsageData> pvDataInterval = new List<DescribeDomainPvDataResponse.UsageData>();
+			List<DescribeDomainPvDataResponse.DescribeDomainPvData_UsageData> describeDomainPvDataResponse_pvDataInterval = new List<DescribeDomainPvDataResponse.DescribeDomainPvData_UsageData>();
 			for (int i = 0; i < context.Length("DescribeDomainPvData.PvDataInterval.Length"); i++) {
-				DescribeDomainPvDataResponse.UsageData usageData = new DescribeDomainPvDataResponse.UsageData();
+				DescribeDomainPvDataResponse.DescribeDomainPvData_UsageData usageData = new DescribeDomainPvDataResponse.DescribeDomainPvData_UsageData();
 				usageData.TimeStamp = context.StringValue("DescribeDomainPvData.PvDataInterval["+ i +"].TimeStamp");
-				usageData.Value = context.StringValue("DescribeDomainPvData.PvDataInterval["+ i +"].Value");
+				usageData._Value = context.StringValue("DescribeDomainPvData.PvDataInterval["+ i +"].Value");
 
-				pvDataInterval.Add(usageData);
+				describeDomainPvDataResponse_pvDataInterval.Add(usageData);
 			}
-			describeDomainPvDataResponse.PvDataInterval = pvDataInterval;
+			describeDomainPvDataResponse.PvDataInterval = describeDomainPvDataResponse_pvDataInterval;
         
 			return describeDomainPvDataResponse;
         }

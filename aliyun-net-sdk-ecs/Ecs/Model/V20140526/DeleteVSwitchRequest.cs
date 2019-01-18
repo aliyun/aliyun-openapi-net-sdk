@@ -29,43 +29,34 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeleteVSwitchRequest : RpcAcsRequest<DeleteVSwitchResponse>
     {
         public DeleteVSwitchRequest()
-            : base("Ecs", "2014-05-26", "DeleteVSwitch")
+            : base("Ecs", "2014-05-26", "DeleteVSwitch", "ecs", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string vSwitchId;
 
 		private long? resourceOwnerId;
 
-		private string vSwitchId;
+		private string resourceOwnerAccount;
+
+		private string regionId;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string action;
 
-		public string ResourceOwnerAccount
+		private long? ownerId;
+
+		public string VSwitchId
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return vSwitchId;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
@@ -82,16 +73,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string VSwitchId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return vSwitchId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -105,6 +109,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

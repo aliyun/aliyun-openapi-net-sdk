@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
     {
         public DescribeRegionsRequest()
-            : base("Kms", "2016-01-20", "DescribeRegions")
+            : base("Kms", "2016-01-20", "DescribeRegions", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }

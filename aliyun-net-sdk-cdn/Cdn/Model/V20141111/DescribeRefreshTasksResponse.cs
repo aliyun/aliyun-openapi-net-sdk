@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeRefreshTasksResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private long? pageNumber;
 
 		private long? pageSize;
 
 		private long? totalCount;
 
-		private List<CDNTask> tasks;
+		private List<DescribeRefreshTasks_CDNTask> tasks;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? PageNumber
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<CDNTask> Tasks
+		public List<DescribeRefreshTasks_CDNTask> Tasks
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class CDNTask{
+		public class DescribeRefreshTasks_CDNTask
+		{
 
 			private string taskId;
 
@@ -93,6 +108,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			private string creationTime;
 
 			private string description;
+
+			private string objectType;
 
 			public string TaskId
 			{
@@ -163,6 +180,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string ObjectType
+			{
+				get
+				{
+					return objectType;
+				}
+				set	
+				{
+					objectType = value;
 				}
 			}
 		}

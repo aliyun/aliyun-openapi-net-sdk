@@ -29,51 +29,50 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifySecurityIpsRequest : RpcAcsRequest<ModifySecurityIpsResponse>
     {
         public ModifySecurityIpsRequest()
-            : base("Rds", "2014-08-15", "ModifySecurityIps")
+            : base("Rds", "2014-08-15", "ModifySecurityIps", "rds", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string dBInstanceIPArrayName;
 
 		private long? resourceOwnerId;
 
+		private string modifyMode;
+
+		private string resourceOwnerAccount;
+
 		private string clientToken;
-
-		private string dBInstanceId;
-
-		private string securityIps;
-
-		private string dBInstanceIPArrayName;
-
-		private string dBInstanceIPArrayAttribute;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string securityIps;
 
-		public string ResourceOwnerAccount
+		private string securityGroupId;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		private string whitelistNetworkType;
+
+		private string dBInstanceIPArrayAttribute;
+
+		private string securityIPType;
+
+		private string action;
+
+		private string dBInstanceId;
+
+		public string DBInstanceIPArrayName
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return dBInstanceIPArrayName;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				dBInstanceIPArrayName = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayName", value);
 			}
 		}
 
@@ -90,6 +89,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ModifyMode
+		{
+			get
+			{
+				return modifyMode;
+			}
+			set	
+			{
+				modifyMode = value;
+				DictionaryUtil.Add(QueryParameters, "ModifyMode", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string ClientToken
 		{
 			get
@@ -103,16 +128,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string OwnerAccount
 		{
 			get
 			{
-				return dBInstanceId;
+				return ownerAccount;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -129,16 +154,55 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceIPArrayName
+		public string SecurityGroupId
 		{
 			get
 			{
-				return dBInstanceIPArrayName;
+				return securityGroupId;
 			}
 			set	
 			{
-				dBInstanceIPArrayName = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayName", value);
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string WhitelistNetworkType
+		{
+			get
+			{
+				return whitelistNetworkType;
+			}
+			set	
+			{
+				whitelistNetworkType = value;
+				DictionaryUtil.Add(QueryParameters, "WhitelistNetworkType", value);
 			}
 		}
 
@@ -155,16 +219,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
+		public string SecurityIPType
 		{
 			get
 			{
-				return ownerAccount;
+				return securityIPType;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				securityIPType = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityIPType", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

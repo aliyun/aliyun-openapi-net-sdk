@@ -36,7 +36,7 @@ namespace Aliyun.Acs.Core.Regions
         }
 
         public static ProductDomain FindProductDomain(String regionId, String product,
-                List<Endpoint> endpoints, IAcsClient acsClient)
+                List<Endpoint> endpoints )
         {
             if (null == regionId || null == product || null == endpoints)
             {
@@ -49,10 +49,6 @@ namespace Aliyun.Acs.Core.Regions
                     ProductDomain domain = FindProductDomainByProduct(endpoint.ProductDomains, product);
                     return domain;
                 }
-            }
-            if ("Location".Equals(product))
-            {
-                return new ProductDomain("Location", "location.aliyuncs.com");
             }
             return null;
         }

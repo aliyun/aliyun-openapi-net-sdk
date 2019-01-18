@@ -20,82 +20,47 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class ForbidLiveStreamRequest : RpcAcsRequest<ForbidLiveStreamResponse>
     {
         public ForbidLiveStreamRequest()
-            : base("Live", "2016-11-01", "ForbidLiveStream")
+            : base("live", "2016-11-01", "ForbidLiveStream", "live", "openAPI")
         {
         }
 
-		private string securityToken;
-
-		private long? ownerId;
-
-		private string domainName;
-
-		private string liveStreamType;
+		private string resumeTime;
 
 		private string appName;
 
+		private string liveStreamType;
+
+		private string domainName;
+
+		private string action;
+
+		private long? ownerId;
+
+		private string oneshot;
+
 		private string streamName;
 
-		private string resumeTime;
+		private string controlStreamAction;
 
-		public string SecurityToken
+		public string ResumeTime
 		{
 			get
 			{
-				return securityToken;
+				return resumeTime;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string LiveStreamType
-		{
-			get
-			{
-				return liveStreamType;
-			}
-			set	
-			{
-				liveStreamType = value;
-				DictionaryUtil.Add(QueryParameters, "LiveStreamType", value);
+				resumeTime = value;
+				DictionaryUtil.Add(QueryParameters, "ResumeTime", value);
 			}
 		}
 
@@ -112,6 +77,71 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
+		public string LiveStreamType
+		{
+			get
+			{
+				return liveStreamType;
+			}
+			set	
+			{
+				liveStreamType = value;
+				DictionaryUtil.Add(QueryParameters, "LiveStreamType", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Oneshot
+		{
+			get
+			{
+				return oneshot;
+			}
+			set	
+			{
+				oneshot = value;
+				DictionaryUtil.Add(QueryParameters, "Oneshot", value);
+			}
+		}
+
 		public string StreamName
 		{
 			get
@@ -125,16 +155,16 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string ResumeTime
+		public string ControlStreamAction
 		{
 			get
 			{
-				return resumeTime;
+				return controlStreamAction;
 			}
 			set	
 			{
-				resumeTime = value;
-				DictionaryUtil.Add(QueryParameters, "ResumeTime", value);
+				controlStreamAction = value;
+				DictionaryUtil.Add(QueryParameters, "ControlStreamAction", value);
 			}
 		}
 

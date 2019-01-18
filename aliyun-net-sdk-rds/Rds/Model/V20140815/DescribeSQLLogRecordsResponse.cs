@@ -24,15 +24,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeSQLLogRecordsResponse : AcsResponse
 	{
 
-		private int? totalRecordCount;
+		private string requestId;
+
+		private long? totalRecordCount;
 
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
-		private List<SQLRecord> items;
+		private List<DescribeSQLLogRecords_SQLRecord> items;
 
-		public int? TotalRecordCount
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public long? TotalRecordCount
 		{
 			get
 			{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<SQLRecord> Items
+		public List<DescribeSQLLogRecords_SQLRecord> Items
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class SQLRecord{
+		public class DescribeSQLLogRecords_SQLRecord
+		{
 
 			private string dBName;
 

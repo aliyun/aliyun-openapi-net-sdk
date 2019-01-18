@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstancesByPerformanceResponse.TotalRecordCount = context.IntegerValue("DescribeDBInstancesByPerformance.TotalRecordCount");
 			describeDBInstancesByPerformanceResponse.PageRecordCount = context.IntegerValue("DescribeDBInstancesByPerformance.PageRecordCount");
 
-			List<DescribeDBInstancesByPerformanceResponse.DBInstancePerformance> items = new List<DescribeDBInstancesByPerformanceResponse.DBInstancePerformance>();
+			List<DescribeDBInstancesByPerformanceResponse.DescribeDBInstancesByPerformance_DBInstancePerformance> describeDBInstancesByPerformanceResponse_items = new List<DescribeDBInstancesByPerformanceResponse.DescribeDBInstancesByPerformance_DBInstancePerformance>();
 			for (int i = 0; i < context.Length("DescribeDBInstancesByPerformance.Items.Length"); i++) {
-				DescribeDBInstancesByPerformanceResponse.DBInstancePerformance dBInstancePerformance = new DescribeDBInstancesByPerformanceResponse.DBInstancePerformance();
+				DescribeDBInstancesByPerformanceResponse.DescribeDBInstancesByPerformance_DBInstancePerformance dBInstancePerformance = new DescribeDBInstancesByPerformanceResponse.DescribeDBInstancesByPerformance_DBInstancePerformance();
 				dBInstancePerformance.CPUUsage = context.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].CPUUsage");
 				dBInstancePerformance.IOPSUsage = context.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].IOPSUsage");
 				dBInstancePerformance.DiskUsage = context.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].DiskUsage");
@@ -45,9 +45,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstancePerformance.DBInstanceId = context.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].DBInstanceId");
 				dBInstancePerformance.DBInstanceDescription = context.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].DBInstanceDescription");
 
-				items.Add(dBInstancePerformance);
+				describeDBInstancesByPerformanceResponse_items.Add(dBInstancePerformance);
 			}
-			describeDBInstancesByPerformanceResponse.Items = items;
+			describeDBInstancesByPerformanceResponse.Items = describeDBInstancesByPerformanceResponse_items;
         
 			return describeDBInstancesByPerformanceResponse;
         }

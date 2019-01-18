@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Live.Model.V20161101;
+using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Transform.V20161101
+namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamOnlineUserNumResponseUnmarshaller
     {
@@ -33,16 +33,16 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 			describeLiveStreamOnlineUserNumResponse.RequestId = context.StringValue("DescribeLiveStreamOnlineUserNum.RequestId");
 			describeLiveStreamOnlineUserNumResponse.TotalUserNumber = context.LongValue("DescribeLiveStreamOnlineUserNum.TotalUserNumber");
 
-			List<DescribeLiveStreamOnlineUserNumResponse.LiveStreamOnlineUserNumInfo> onlineUserInfo = new List<DescribeLiveStreamOnlineUserNumResponse.LiveStreamOnlineUserNumInfo>();
+			List<DescribeLiveStreamOnlineUserNumResponse.DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo> describeLiveStreamOnlineUserNumResponse_onlineUserInfo = new List<DescribeLiveStreamOnlineUserNumResponse.DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamOnlineUserNum.OnlineUserInfo.Length"); i++) {
-				DescribeLiveStreamOnlineUserNumResponse.LiveStreamOnlineUserNumInfo liveStreamOnlineUserNumInfo = new DescribeLiveStreamOnlineUserNumResponse.LiveStreamOnlineUserNumInfo();
+				DescribeLiveStreamOnlineUserNumResponse.DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo liveStreamOnlineUserNumInfo = new DescribeLiveStreamOnlineUserNumResponse.DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo();
 				liveStreamOnlineUserNumInfo.StreamUrl = context.StringValue("DescribeLiveStreamOnlineUserNum.OnlineUserInfo["+ i +"].StreamUrl");
 				liveStreamOnlineUserNumInfo.UserNumber = context.LongValue("DescribeLiveStreamOnlineUserNum.OnlineUserInfo["+ i +"].UserNumber");
 				liveStreamOnlineUserNumInfo.Time = context.StringValue("DescribeLiveStreamOnlineUserNum.OnlineUserInfo["+ i +"].Time");
 
-				onlineUserInfo.Add(liveStreamOnlineUserNumInfo);
+				describeLiveStreamOnlineUserNumResponse_onlineUserInfo.Add(liveStreamOnlineUserNumInfo);
 			}
-			describeLiveStreamOnlineUserNumResponse.OnlineUserInfo = onlineUserInfo;
+			describeLiveStreamOnlineUserNumResponse.OnlineUserInfo = describeLiveStreamOnlineUserNumResponse_onlineUserInfo;
         
 			return describeLiveStreamOnlineUserNumResponse;
         }

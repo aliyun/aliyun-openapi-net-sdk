@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class QueryMediaWorkflowListResponse : AcsResponse
 	{
 
-		private List<MediaWorkflow> mediaWorkflowList;
+		private string requestId;
+
+		private List<QueryMediaWorkflowList_MediaWorkflow> mediaWorkflowList;
 
 		private List<string> nonExistMediaWorkflowIds;
 
-		public List<MediaWorkflow> MediaWorkflowList
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<QueryMediaWorkflowList_MediaWorkflow> MediaWorkflowList
 		{
 			get
 			{
@@ -52,13 +66,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class MediaWorkflow{
+		public class QueryMediaWorkflowList_MediaWorkflow
+		{
 
 			private string mediaWorkflowId;
 
 			private string name;
 
 			private string topology;
+
+			private string triggerMode;
 
 			private string state;
 
@@ -97,6 +114,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					topology = value;
+				}
+			}
+
+			public string TriggerMode
+			{
+				get
+				{
+					return triggerMode;
+				}
+				set	
+				{
+					triggerMode = value;
 				}
 			}
 

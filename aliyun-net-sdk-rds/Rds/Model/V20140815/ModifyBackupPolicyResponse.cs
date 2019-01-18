@@ -23,5 +23,89 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 {
 	public class ModifyBackupPolicyResponse : AcsResponse
 	{
+
+		private string requestId;
+
+		private string dBInstanceID;
+
+		private string enableBackupLog;
+
+		private int? localLogRetentionHours;
+
+		private string localLogRetentionSpace;
+
+		private string highSpaceUsageProtection;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string DBInstanceID
+		{
+			get
+			{
+				return dBInstanceID;
+			}
+			set	
+			{
+				dBInstanceID = value;
+			}
+		}
+
+		public string EnableBackupLog
+		{
+			get
+			{
+				return enableBackupLog;
+			}
+			set	
+			{
+				enableBackupLog = value;
+			}
+		}
+
+		public int? LocalLogRetentionHours
+		{
+			get
+			{
+				return localLogRetentionHours;
+			}
+			set	
+			{
+				localLogRetentionHours = value;
+			}
+		}
+
+		public string LocalLogRetentionSpace
+		{
+			get
+			{
+				return localLogRetentionSpace;
+			}
+			set	
+			{
+				localLogRetentionSpace = value;
+			}
+		}
+
+		public string HighSpaceUsageProtection
+		{
+			get
+			{
+				return highSpaceUsageProtection;
+			}
+			set	
+			{
+				highSpaceUsageProtection = value;
+			}
+		}
 	}
 }

@@ -29,15 +29,47 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DeleteApiStageVariableRequest : RpcAcsRequest<DeleteApiStageVariableResponse>
     {
         public DeleteApiStageVariableRequest()
-            : base("CloudAPI", "2016-07-14", "DeleteApiStageVariable")
+            : base("CloudAPI", "2016-07-14", "DeleteApiStageVariable", "apigateway", "openAPI")
         {
         }
 
+		private string securityToken;
+
+		private string variableName;
+
 		private string groupId;
+
+		private string action;
+
+		private string accessKeyId;
 
 		private string stageId;
 
-		private string variableName;
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string VariableName
+		{
+			get
+			{
+				return variableName;
+			}
+			set	
+			{
+				variableName = value;
+				DictionaryUtil.Add(QueryParameters, "VariableName", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -52,6 +84,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
 		public string StageId
 		{
 			get
@@ -62,19 +120,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				stageId = value;
 				DictionaryUtil.Add(QueryParameters, "StageId", value);
-			}
-		}
-
-		public string VariableName
-		{
-			get
-			{
-				return variableName;
-			}
-			set	
-			{
-				variableName = value;
-				DictionaryUtil.Add(QueryParameters, "VariableName", value);
 			}
 		}
 

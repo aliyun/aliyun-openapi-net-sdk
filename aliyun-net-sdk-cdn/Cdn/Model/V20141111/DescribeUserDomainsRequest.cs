@@ -33,114 +33,46 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
-
-		private string securityToken;
-
-		private int? pageSize;
-
-		private int? pageNumber;
-
-		private string domainName;
-
-		private string domainStatus;
-
-		private string domainSearchType;
+		private string funcFilter;
 
 		private string sources;
 
-		private string cdnType;
+		private string domainName;
+
+		private long? ownerId;
+
+		private string funcId;
+
+		private int? pageNumber;
+
+		private string domainStatus;
+
+		private string accessKeyId;
+
+		private string domainSearchType;
 
 		private bool? checkDomainShow;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string resourceGroupId;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string securityToken;
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+		private string cdnType;
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
+		private int? pageSize;
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+		private string action;
 
-		public string DomainStatus
+		public string FuncFilter
 		{
 			get
 			{
-				return domainStatus;
+				return funcFilter;
 			}
 			set	
 			{
-				domainStatus = value;
-				DictionaryUtil.Add(QueryParameters, "DomainStatus", value);
-			}
-		}
-
-		public string DomainSearchType
-		{
-			get
-			{
-				return domainSearchType;
-			}
-			set	
-			{
-				domainSearchType = value;
-				DictionaryUtil.Add(QueryParameters, "DomainSearchType", value);
+				funcFilter = value;
+				DictionaryUtil.Add(QueryParameters, "FuncFilter", value);
 			}
 		}
 
@@ -157,16 +89,94 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string CdnType
+		public string DomainName
 		{
 			get
 			{
-				return cdnType;
+				return domainName;
 			}
 			set	
 			{
-				cdnType = value;
-				DictionaryUtil.Add(QueryParameters, "CdnType", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string FuncId
+		{
+			get
+			{
+				return funcId;
+			}
+			set	
+			{
+				funcId = value;
+				DictionaryUtil.Add(QueryParameters, "FuncId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string DomainStatus
+		{
+			get
+			{
+				return domainStatus;
+			}
+			set	
+			{
+				domainStatus = value;
+				DictionaryUtil.Add(QueryParameters, "DomainStatus", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string DomainSearchType
+		{
+			get
+			{
+				return domainSearchType;
+			}
+			set	
+			{
+				domainSearchType = value;
+				DictionaryUtil.Add(QueryParameters, "DomainSearchType", value);
 			}
 		}
 
@@ -180,6 +190,71 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				checkDomainShow = value;
 				DictionaryUtil.Add(QueryParameters, "CheckDomainShow", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string CdnType
+		{
+			get
+			{
+				return cdnType;
+			}
+			set	
+			{
+				cdnType = value;
+				DictionaryUtil.Add(QueryParameters, "CdnType", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -32,19 +32,19 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainSrcFlowDataResponse.HttpResponse = context.HttpResponse;
 			describeDomainSrcFlowDataResponse.RequestId = context.StringValue("DescribeDomainSrcFlowData.RequestId");
 			describeDomainSrcFlowDataResponse.DomainName = context.StringValue("DescribeDomainSrcFlowData.DomainName");
-			describeDomainSrcFlowDataResponse.DataInterval = context.StringValue("DescribeDomainSrcFlowData.DataInterval");
 			describeDomainSrcFlowDataResponse.StartTime = context.StringValue("DescribeDomainSrcFlowData.StartTime");
 			describeDomainSrcFlowDataResponse.EndTime = context.StringValue("DescribeDomainSrcFlowData.EndTime");
+			describeDomainSrcFlowDataResponse.DataInterval = context.StringValue("DescribeDomainSrcFlowData.DataInterval");
 
-			List<DescribeDomainSrcFlowDataResponse.DataModule> srcFlowDataPerInterval = new List<DescribeDomainSrcFlowDataResponse.DataModule>();
+			List<DescribeDomainSrcFlowDataResponse.DescribeDomainSrcFlowData_DataModule> describeDomainSrcFlowDataResponse_srcFlowDataPerInterval = new List<DescribeDomainSrcFlowDataResponse.DescribeDomainSrcFlowData_DataModule>();
 			for (int i = 0; i < context.Length("DescribeDomainSrcFlowData.SrcFlowDataPerInterval.Length"); i++) {
-				DescribeDomainSrcFlowDataResponse.DataModule dataModule = new DescribeDomainSrcFlowDataResponse.DataModule();
+				DescribeDomainSrcFlowDataResponse.DescribeDomainSrcFlowData_DataModule dataModule = new DescribeDomainSrcFlowDataResponse.DescribeDomainSrcFlowData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeDomainSrcFlowData.SrcFlowDataPerInterval["+ i +"].TimeStamp");
-				dataModule.Value = context.StringValue("DescribeDomainSrcFlowData.SrcFlowDataPerInterval["+ i +"].Value");
+				dataModule._Value = context.StringValue("DescribeDomainSrcFlowData.SrcFlowDataPerInterval["+ i +"].Value");
 
-				srcFlowDataPerInterval.Add(dataModule);
+				describeDomainSrcFlowDataResponse_srcFlowDataPerInterval.Add(dataModule);
 			}
-			describeDomainSrcFlowDataResponse.SrcFlowDataPerInterval = srcFlowDataPerInterval;
+			describeDomainSrcFlowDataResponse.SrcFlowDataPerInterval = describeDomainSrcFlowDataResponse_srcFlowDataPerInterval;
         
 			return describeDomainSrcFlowDataResponse;
         }

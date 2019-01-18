@@ -32,29 +32,30 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			queryPipelineListResponse.HttpResponse = context.HttpResponse;
 			queryPipelineListResponse.RequestId = context.StringValue("QueryPipelineList.RequestId");
 
-			List<string> nonExistPids = new List<string>();
+			List<string> queryPipelineListResponse_nonExistPids = new List<string>();
 			for (int i = 0; i < context.Length("QueryPipelineList.NonExistPids.Length"); i++) {
-				nonExistPids.Add(context.StringValue("QueryPipelineList.NonExistPids["+ i +"]"));
+				queryPipelineListResponse_nonExistPids.Add(context.StringValue("QueryPipelineList.NonExistPids["+ i +"]"));
 			}
-			queryPipelineListResponse.NonExistPids = nonExistPids;
+			queryPipelineListResponse.NonExistPids = queryPipelineListResponse_nonExistPids;
 
-			List<QueryPipelineListResponse.Pipeline> pipelineList = new List<QueryPipelineListResponse.Pipeline>();
+			List<QueryPipelineListResponse.QueryPipelineList_Pipeline> queryPipelineListResponse_pipelineList = new List<QueryPipelineListResponse.QueryPipelineList_Pipeline>();
 			for (int i = 0; i < context.Length("QueryPipelineList.PipelineList.Length"); i++) {
-				QueryPipelineListResponse.Pipeline pipeline = new QueryPipelineListResponse.Pipeline();
+				QueryPipelineListResponse.QueryPipelineList_Pipeline pipeline = new QueryPipelineListResponse.QueryPipelineList_Pipeline();
 				pipeline.Id = context.StringValue("QueryPipelineList.PipelineList["+ i +"].Id");
 				pipeline.Name = context.StringValue("QueryPipelineList.PipelineList["+ i +"].Name");
 				pipeline.State = context.StringValue("QueryPipelineList.PipelineList["+ i +"].State");
 				pipeline.Speed = context.StringValue("QueryPipelineList.PipelineList["+ i +"].Speed");
+				pipeline.SpeedLevel = context.LongValue("QueryPipelineList.PipelineList["+ i +"].SpeedLevel");
 				pipeline.Role = context.StringValue("QueryPipelineList.PipelineList["+ i +"].Role");
 
-				QueryPipelineListResponse.Pipeline.NotifyConfig_ notifyConfig = new QueryPipelineListResponse.Pipeline.NotifyConfig_();
+				QueryPipelineListResponse.QueryPipelineList_Pipeline.QueryPipelineList_NotifyConfig notifyConfig = new QueryPipelineListResponse.QueryPipelineList_Pipeline.QueryPipelineList_NotifyConfig();
 				notifyConfig.Topic = context.StringValue("QueryPipelineList.PipelineList["+ i +"].NotifyConfig.Topic");
 				notifyConfig.QueueName = context.StringValue("QueryPipelineList.PipelineList["+ i +"].NotifyConfig.QueueName");
 				pipeline.NotifyConfig = notifyConfig;
 
-				pipelineList.Add(pipeline);
+				queryPipelineListResponse_pipelineList.Add(pipeline);
 			}
-			queryPipelineListResponse.PipelineList = pipelineList;
+			queryPipelineListResponse.PipelineList = queryPipelineListResponse_pipelineList;
         
 			return queryPipelineListResponse;
         }

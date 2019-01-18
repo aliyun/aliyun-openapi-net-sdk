@@ -32,15 +32,15 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			queryWaterMarkTemplateListResponse.HttpResponse = context.HttpResponse;
 			queryWaterMarkTemplateListResponse.RequestId = context.StringValue("QueryWaterMarkTemplateList.RequestId");
 
-			List<string> nonExistWids = new List<string>();
+			List<string> queryWaterMarkTemplateListResponse_nonExistWids = new List<string>();
 			for (int i = 0; i < context.Length("QueryWaterMarkTemplateList.NonExistWids.Length"); i++) {
-				nonExistWids.Add(context.StringValue("QueryWaterMarkTemplateList.NonExistWids["+ i +"]"));
+				queryWaterMarkTemplateListResponse_nonExistWids.Add(context.StringValue("QueryWaterMarkTemplateList.NonExistWids["+ i +"]"));
 			}
-			queryWaterMarkTemplateListResponse.NonExistWids = nonExistWids;
+			queryWaterMarkTemplateListResponse.NonExistWids = queryWaterMarkTemplateListResponse_nonExistWids;
 
-			List<QueryWaterMarkTemplateListResponse.WaterMarkTemplate> waterMarkTemplateList = new List<QueryWaterMarkTemplateListResponse.WaterMarkTemplate>();
+			List<QueryWaterMarkTemplateListResponse.QueryWaterMarkTemplateList_WaterMarkTemplate> queryWaterMarkTemplateListResponse_waterMarkTemplateList = new List<QueryWaterMarkTemplateListResponse.QueryWaterMarkTemplateList_WaterMarkTemplate>();
 			for (int i = 0; i < context.Length("QueryWaterMarkTemplateList.WaterMarkTemplateList.Length"); i++) {
-				QueryWaterMarkTemplateListResponse.WaterMarkTemplate waterMarkTemplate = new QueryWaterMarkTemplateListResponse.WaterMarkTemplate();
+				QueryWaterMarkTemplateListResponse.QueryWaterMarkTemplateList_WaterMarkTemplate waterMarkTemplate = new QueryWaterMarkTemplateListResponse.QueryWaterMarkTemplateList_WaterMarkTemplate();
 				waterMarkTemplate.Id = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].Id");
 				waterMarkTemplate.Name = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].Name");
 				waterMarkTemplate.Width = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].Width");
@@ -51,21 +51,21 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				waterMarkTemplate.Type = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].Type");
 				waterMarkTemplate.State = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].State");
 
-				QueryWaterMarkTemplateListResponse.WaterMarkTemplate.Timeline_ timeline = new QueryWaterMarkTemplateListResponse.WaterMarkTemplate.Timeline_();
+				QueryWaterMarkTemplateListResponse.QueryWaterMarkTemplateList_WaterMarkTemplate.QueryWaterMarkTemplateList_Timeline timeline = new QueryWaterMarkTemplateListResponse.QueryWaterMarkTemplateList_WaterMarkTemplate.QueryWaterMarkTemplateList_Timeline();
 				timeline.Start = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].Timeline.Start");
 				timeline.Duration = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].Timeline.Duration");
 				waterMarkTemplate.Timeline = timeline;
 
-				QueryWaterMarkTemplateListResponse.WaterMarkTemplate.RatioRefer_ ratioRefer = new QueryWaterMarkTemplateListResponse.WaterMarkTemplate.RatioRefer_();
+				QueryWaterMarkTemplateListResponse.QueryWaterMarkTemplateList_WaterMarkTemplate.QueryWaterMarkTemplateList_RatioRefer ratioRefer = new QueryWaterMarkTemplateListResponse.QueryWaterMarkTemplateList_WaterMarkTemplate.QueryWaterMarkTemplateList_RatioRefer();
 				ratioRefer.Dx = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].RatioRefer.Dx");
 				ratioRefer.Dy = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].RatioRefer.Dy");
 				ratioRefer.Width = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].RatioRefer.Width");
 				ratioRefer.Height = context.StringValue("QueryWaterMarkTemplateList.WaterMarkTemplateList["+ i +"].RatioRefer.Height");
 				waterMarkTemplate.RatioRefer = ratioRefer;
 
-				waterMarkTemplateList.Add(waterMarkTemplate);
+				queryWaterMarkTemplateListResponse_waterMarkTemplateList.Add(waterMarkTemplate);
 			}
-			queryWaterMarkTemplateListResponse.WaterMarkTemplateList = waterMarkTemplateList;
+			queryWaterMarkTemplateListResponse.WaterMarkTemplateList = queryWaterMarkTemplateListResponse_waterMarkTemplateList;
         
 			return queryWaterMarkTemplateListResponse;
         }

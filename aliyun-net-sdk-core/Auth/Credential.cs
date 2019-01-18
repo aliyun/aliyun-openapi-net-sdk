@@ -41,10 +41,28 @@ namespace Aliyun.Acs.Core.Auth
             this.RefreshDate = DateTime.Now;
         }
 
+        public Credential(String keyId, String secret, String securityToken)
+        {
+            this.AccessKeyId = keyId;
+            this.AccessSecret = secret;
+            this.SecurityToken = securityToken;
+            this.RefreshDate = new DateTime();
+        }
+
         public Credential(String keyId, String secret, int expiredHours)
         {
             this.AccessKeyId = keyId;
             this.AccessSecret = secret;
+            this.RefreshDate = new DateTime();
+
+            SetExpiredDate(expiredHours);
+        }
+
+        public Credential(String keyId, String secret, String securityToken, int expiredHours)
+        {
+            this.AccessKeyId = keyId;
+            this.AccessSecret = secret;
+            this.SecurityToken = securityToken;
             this.RefreshDate = new DateTime();
 
             SetExpiredDate(expiredHours);

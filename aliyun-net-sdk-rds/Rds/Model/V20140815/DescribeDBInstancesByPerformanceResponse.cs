@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstancesByPerformanceResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNumber;
 
 		private int? totalRecordCount;
 
 		private int? pageRecordCount;
 
-		private List<DBInstancePerformance> items;
+		private List<DescribeDBInstancesByPerformance_DBInstancePerformance> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<DBInstancePerformance> Items
+		public List<DescribeDBInstancesByPerformance_DBInstancePerformance> Items
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class DBInstancePerformance{
+		public class DescribeDBInstancesByPerformance_DBInstancePerformance
+		{
 
 			private string cPUUsage;
 

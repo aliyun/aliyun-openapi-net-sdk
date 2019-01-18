@@ -35,20 +35,21 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeAuthorizedAppsResponse.PageSize = context.IntegerValue("DescribeAuthorizedApps.PageSize");
 			describeAuthorizedAppsResponse.PageNumber = context.IntegerValue("DescribeAuthorizedApps.PageNumber");
 
-			List<DescribeAuthorizedAppsResponse.AuthorizedApp> authorizedApps = new List<DescribeAuthorizedAppsResponse.AuthorizedApp>();
+			List<DescribeAuthorizedAppsResponse.DescribeAuthorizedApps_AuthorizedApp> describeAuthorizedAppsResponse_authorizedApps = new List<DescribeAuthorizedAppsResponse.DescribeAuthorizedApps_AuthorizedApp>();
 			for (int i = 0; i < context.Length("DescribeAuthorizedApps.AuthorizedApps.Length"); i++) {
-				DescribeAuthorizedAppsResponse.AuthorizedApp authorizedApp = new DescribeAuthorizedAppsResponse.AuthorizedApp();
+				DescribeAuthorizedAppsResponse.DescribeAuthorizedApps_AuthorizedApp authorizedApp = new DescribeAuthorizedAppsResponse.DescribeAuthorizedApps_AuthorizedApp();
 				authorizedApp.StageName = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].StageName");
 				authorizedApp.AppId = context.LongValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AppId");
 				authorizedApp.AppName = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AppName");
-				authorizedApp.Operator = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].Operator");
+				authorizedApp._Operator = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].Operator");
 				authorizedApp.AuthorizationSource = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AuthorizationSource");
 				authorizedApp.Description = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].Description");
 				authorizedApp.AuthorizedTime = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AuthorizedTime");
+				authorizedApp.AuthVaildTime = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AuthVaildTime");
 
-				authorizedApps.Add(authorizedApp);
+				describeAuthorizedAppsResponse_authorizedApps.Add(authorizedApp);
 			}
-			describeAuthorizedAppsResponse.AuthorizedApps = authorizedApps;
+			describeAuthorizedAppsResponse.AuthorizedApps = describeAuthorizedAppsResponse_authorizedApps;
         
 			return describeAuthorizedAppsResponse;
         }

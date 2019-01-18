@@ -32,14 +32,14 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			updatePipelineResponse.HttpResponse = context.HttpResponse;
 			updatePipelineResponse.RequestId = context.StringValue("UpdatePipeline.RequestId");
 
-			UpdatePipelineResponse.Pipeline_ pipeline = new UpdatePipelineResponse.Pipeline_();
+			UpdatePipelineResponse.UpdatePipeline_Pipeline pipeline = new UpdatePipelineResponse.UpdatePipeline_Pipeline();
 			pipeline.Id = context.StringValue("UpdatePipeline.Pipeline.Id");
 			pipeline.Name = context.StringValue("UpdatePipeline.Pipeline.Name");
 			pipeline.State = context.StringValue("UpdatePipeline.Pipeline.State");
 			pipeline.Speed = context.StringValue("UpdatePipeline.Pipeline.Speed");
 			pipeline.Role = context.StringValue("UpdatePipeline.Pipeline.Role");
 
-			UpdatePipelineResponse.Pipeline_.NotifyConfig_ notifyConfig = new UpdatePipelineResponse.Pipeline_.NotifyConfig_();
+			UpdatePipelineResponse.UpdatePipeline_Pipeline.UpdatePipeline_NotifyConfig notifyConfig = new UpdatePipelineResponse.UpdatePipeline_Pipeline.UpdatePipeline_NotifyConfig();
 			notifyConfig.Topic = context.StringValue("UpdatePipeline.Pipeline.NotifyConfig.Topic");
 			notifyConfig.QueueName = context.StringValue("UpdatePipeline.Pipeline.NotifyConfig.QueueName");
 			pipeline.NotifyConfig = notifyConfig;

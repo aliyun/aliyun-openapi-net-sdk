@@ -32,22 +32,26 @@ namespace Aliyun.Acs.Core.Auth
         private const String SEPARATOR = "&";
 
         public Dictionary<String, String> RefreshSignParameters(Dictionary<String, String> parameters,
-                ISigner signer, String accessKeyId, FormatType? format)
+                Signer signer, String accessKeyId, FormatType? format)
         {
             Dictionary<String, String> immutableMap = new Dictionary<String, String>(parameters);
-
             DictionaryUtil.Add(immutableMap, "Timestamp", ParameterHelper.FormatIso8601Date(DateTime.Now));
-            DictionaryUtil.Add(immutableMap, "SignatureMethod", signer.SignerName);
-            DictionaryUtil.Add(immutableMap, "SignatureVersion", signer.SignerVersion);
+            DictionaryUtil.Add(immutableMap, "SignatureMethod", signer.GetSignerName());
+            DictionaryUtil.Add(immutableMap, "SignatureVersion", signer.GetSignerVersion());
             DictionaryUtil.Add(immutableMap, "SignatureNonce", Guid.NewGuid().ToString());
             DictionaryUtil.Add(immutableMap, "AccessKeyId", accessKeyId);
-            DictionaryUtil.Add(immutableMap, "Format", format.ToString());
-
+            if (null != format)
+            {
+                DictionaryUtil.Add(immutableMap, "Format", format.ToString());
+            }
+            if (signer.GetSignerType() != null)
+            {
+                DictionaryUtil.Add(immutableMap, "SignatureType", signer.GetSignerType());
+            }
             return immutableMap;
         }
 
-
-        public string ComposeStringToSign(MethodType? method, string uriPattern, ISigner signer,
+        public string ComposeStringToSign(MethodType? method, string uriPattern, Signer signer,
             Dictionary<string, string> queries, Dictionary<string, string> headers, Dictionary<string, string> paths)
         {
             var sortedDictionary = SortDictionary(queries);

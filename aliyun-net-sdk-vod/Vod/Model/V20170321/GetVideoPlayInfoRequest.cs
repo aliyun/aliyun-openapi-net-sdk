@@ -20,60 +20,51 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vod.Transform;
-using Aliyun.Acs.Vod.Transform.V20170321;
+using Aliyun.Acs.vod.Transform;
+using Aliyun.Acs.vod.Transform.V20170321;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Model.V20170321
+namespace Aliyun.Acs.vod.Model.V20170321
 {
     public class GetVideoPlayInfoRequest : RpcAcsRequest<GetVideoPlayInfoResponse>
     {
         public GetVideoPlayInfoRequest()
-            : base("vod", "2017-03-21", "GetVideoPlayInfo")
+            : base("vod", "2017-03-21", "GetVideoPlayInfo", "vod", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string signVersion;
 
 		private long? resourceOwnerId;
 
-		private string channel;
-
-		private long? clientTS;
-
 		private string clientVersion;
+
+		private string resourceOwnerAccount;
+
+		private string channel;
 
 		private string playSign;
 
-		private string signVersion;
+		private string action;
 
 		private string videoId;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private long? ownerId;
 
-		public string ResourceOwnerAccount
+		private string accessKeyId;
+
+		private long? clientTS;
+
+		public string SignVersion
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return signVersion;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				signVersion = value;
+				DictionaryUtil.Add(QueryParameters, "SignVersion", value);
 			}
 		}
 
@@ -90,32 +81,6 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
-		public string Channel
-		{
-			get
-			{
-				return channel;
-			}
-			set	
-			{
-				channel = value;
-				DictionaryUtil.Add(QueryParameters, "Channel", value);
-			}
-		}
-
-		public long? ClientTS
-		{
-			get
-			{
-				return clientTS;
-			}
-			set	
-			{
-				clientTS = value;
-				DictionaryUtil.Add(QueryParameters, "ClientTS", value.ToString());
-			}
-		}
-
 		public string ClientVersion
 		{
 			get
@@ -126,6 +91,32 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				clientVersion = value;
 				DictionaryUtil.Add(QueryParameters, "ClientVersion", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string Channel
+		{
+			get
+			{
+				return channel;
+			}
+			set	
+			{
+				channel = value;
+				DictionaryUtil.Add(QueryParameters, "Channel", value);
 			}
 		}
 
@@ -142,16 +133,16 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
-		public string SignVersion
+		public string Action
 		{
 			get
 			{
-				return signVersion;
+				return action;
 			}
 			set	
 			{
-				signVersion = value;
-				DictionaryUtil.Add(QueryParameters, "SignVersion", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -165,6 +156,45 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				videoId = value;
 				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public long? ClientTS
+		{
+			get
+			{
+				return clientTS;
+			}
+			set	
+			{
+				clientTS = value;
+				DictionaryUtil.Add(QueryParameters, "ClientTS", value.ToString());
 			}
 		}
 

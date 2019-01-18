@@ -29,58 +29,44 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CreateRouteEntryRequest : RpcAcsRequest<CreateRouteEntryResponse>
     {
         public CreateRouteEntryRequest()
-            : base("Ecs", "2014-05-26", "CreateRouteEntry")
+            : base("Ecs", "2014-05-26", "CreateRouteEntry", "ecs", "openAPI")
         {
         }
 
-		private List<NextHopList> nextHopLists;
-
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
-		private string routeTableId;
-
-		private string destinationCidrBlock;
-
-		private string nextHopId;
+		private string regionId;
 
 		private string clientToken;
 
-		private string nextHopType;
+		private string destinationCidrBlock;
 
 		private string ownerAccount;
 
-		public List<NextHopList> NextHopLists
+		private string action;
+
+		private string nextHopId;
+
+		private long? ownerId;
+
+		private string nextHopType;
+
+		private List<NextHopList> nextHopLists;
+
+		private string routeTableId;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return nextHopLists;
-			}
-
-			set
-			{
-				nextHopLists = value;
-				for (int i = 0; i < nextHopLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopType", nextHopLists[i].NextHopType);
-					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopId", nextHopLists[i].NextHopId);
-				}
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -97,55 +83,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string RegionId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return regionId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string RouteTableId
-		{
-			get
-			{
-				return routeTableId;
-			}
-			set	
-			{
-				routeTableId = value;
-				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
-			}
-		}
-
-		public string DestinationCidrBlock
-		{
-			get
-			{
-				return destinationCidrBlock;
-			}
-			set	
-			{
-				destinationCidrBlock = value;
-				DictionaryUtil.Add(QueryParameters, "DestinationCidrBlock", value);
-			}
-		}
-
-		public string NextHopId
-		{
-			get
-			{
-				return nextHopId;
-			}
-			set	
-			{
-				nextHopId = value;
-				DictionaryUtil.Add(QueryParameters, "NextHopId", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -162,16 +109,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string NextHopType
+		public string DestinationCidrBlock
 		{
 			get
 			{
-				return nextHopType;
+				return destinationCidrBlock;
 			}
 			set	
 			{
-				nextHopType = value;
-				DictionaryUtil.Add(QueryParameters, "NextHopType", value);
+				destinationCidrBlock = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationCidrBlock", value);
 			}
 		}
 
@@ -188,24 +135,95 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string NextHopId
+		{
+			get
+			{
+				return nextHopId;
+			}
+			set	
+			{
+				nextHopId = value;
+				DictionaryUtil.Add(QueryParameters, "NextHopId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string NextHopType
+		{
+			get
+			{
+				return nextHopType;
+			}
+			set	
+			{
+				nextHopType = value;
+				DictionaryUtil.Add(QueryParameters, "NextHopType", value);
+			}
+		}
+
+		public List<NextHopList> NextHopLists
+		{
+			get
+			{
+				return nextHopLists;
+			}
+
+			set
+			{
+				nextHopLists = value;
+				for (int i = 0; i < nextHopLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopId", nextHopLists[i].NextHopId);
+					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopType", nextHopLists[i].NextHopType);
+				}
+			}
+		}
+
+		public string RouteTableId
+		{
+			get
+			{
+				return routeTableId;
+			}
+			set	
+			{
+				routeTableId = value;
+				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
+			}
+		}
+
 		public class NextHopList
 		{
 
-			private string nextHopType;
-
 			private string nextHopId;
 
-			public string NextHopType
-			{
-				get
-				{
-					return nextHopType;
-				}
-				set	
-				{
-					nextHopType = value;
-				}
-			}
+			private string nextHopType;
 
 			public string NextHopId
 			{
@@ -216,6 +234,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					nextHopId = value;
+				}
+			}
+
+			public string NextHopType
+			{
+				get
+				{
+					return nextHopType;
+				}
+				set	
+				{
+					nextHopType = value;
 				}
 			}
 		}

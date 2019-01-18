@@ -33,36 +33,53 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string ossBucket;
+
+		private string appName;
 
 		private string securityToken;
 
 		private string domainName;
 
-		private string appName;
-
-		private string streamName;
-
 		private string ossEndpoint;
 
-		private string ossBucket;
-
-		private string ossObject;
-
-		private string startTime;
+		private string action;
 
 		private string endTime;
 
-		public long? OwnerId
+		private string startTime;
+
+		private long? ownerId;
+
+		private string streamName;
+
+		private string ossObject;
+
+		private string accessKeyId;
+
+		public string OssBucket
 		{
 			get
 			{
-				return ownerId;
+				return ossBucket;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				ossBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -92,32 +109,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
-
 		public string OssEndpoint
 		{
 			get
@@ -131,29 +122,29 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string OssBucket
+		public string Action
 		{
 			get
 			{
-				return ossBucket;
+				return action;
 			}
 			set	
 			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string OssObject
+		public string EndTime
 		{
 			get
 			{
-				return ossObject;
+				return endTime;
 			}
 			set	
 			{
-				ossObject = value;
-				DictionaryUtil.Add(QueryParameters, "OssObject", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -170,16 +161,55 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string EndTime
+		public long? OwnerId
 		{
 			get
 			{
-				return endTime;
+				return ownerId;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string OssObject
+		{
+			get
+			{
+				return ossObject;
+			}
+			set	
+			{
+				ossObject = value;
+				DictionaryUtil.Add(QueryParameters, "OssObject", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -37,14 +37,14 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeCdnServiceResponse.ChangingChargeType = context.StringValue("DescribeCdnService.ChangingChargeType");
 			describeCdnServiceResponse.ChangingAffectTime = context.StringValue("DescribeCdnService.ChangingAffectTime");
 
-			List<DescribeCdnServiceResponse.LockReason> operationLocks = new List<DescribeCdnServiceResponse.LockReason>();
+			List<DescribeCdnServiceResponse.DescribeCdnService_LockReason> describeCdnServiceResponse_operationLocks = new List<DescribeCdnServiceResponse.DescribeCdnService_LockReason>();
 			for (int i = 0; i < context.Length("DescribeCdnService.OperationLocks.Length"); i++) {
-				DescribeCdnServiceResponse.LockReason lockReason = new DescribeCdnServiceResponse.LockReason();
-				lockReason.LockReason_ = context.StringValue("DescribeCdnService.OperationLocks["+ i +"].LockReason");
+				DescribeCdnServiceResponse.DescribeCdnService_LockReason lockReason = new DescribeCdnServiceResponse.DescribeCdnService_LockReason();
+				lockReason.LockReason = context.StringValue("DescribeCdnService.OperationLocks["+ i +"].LockReason");
 
-				operationLocks.Add(lockReason);
+				describeCdnServiceResponse_operationLocks.Add(lockReason);
 			}
-			describeCdnServiceResponse.OperationLocks = operationLocks;
+			describeCdnServiceResponse.OperationLocks = describeCdnServiceResponse_operationLocks;
         
 			return describeCdnServiceResponse;
         }

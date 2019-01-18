@@ -33,39 +33,30 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
-
-		private string ownerAccount;
+		private string functions;
 
 		private string securityToken;
 
 		private string domainNames;
 
-		private string functions;
+		private string ownerAccount;
 
-		public long? OwnerId
+		private string action;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public string Functions
 		{
 			get
 			{
-				return ownerId;
+				return functions;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				functions = value;
+				DictionaryUtil.Add(QueryParameters, "Functions", value);
 			}
 		}
 
@@ -95,16 +86,55 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Functions
+		public string OwnerAccount
 		{
 			get
 			{
-				return functions;
+				return ownerAccount;
 			}
 			set	
 			{
-				functions = value;
-				DictionaryUtil.Add(QueryParameters, "Functions", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

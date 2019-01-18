@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeModifyParameterLogResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string engine;
 
 		private string dBInstanceId;
@@ -36,7 +38,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageRecordCount;
 
-		private List<ParameterChangeLog> items;
+		private List<DescribeModifyParameterLog_ParameterChangeLog> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Engine
 		{
@@ -110,7 +124,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<ParameterChangeLog> Items
+		public List<DescribeModifyParameterLog_ParameterChangeLog> Items
 		{
 			get
 			{
@@ -122,7 +136,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class ParameterChangeLog{
+		public class DescribeModifyParameterLog_ParameterChangeLog
+		{
 
 			private string modifyTime;
 
@@ -132,7 +147,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string parameterName;
 
-			private StatusEnum? status;
+			private string status;
 
 			public string ModifyTime
 			{
@@ -182,7 +197,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public StatusEnum? Status
+			public string Status
 			{
 				get
 				{
@@ -193,12 +208,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					status = value;
 				}
 			}
-
-public enum StatusEnum {
-
-					Applied,
-					Syncing,
-}
 		}
 	}
 }

@@ -34,6 +34,9 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			uploadCACertificateResponse.CACertificateId = context.StringValue("UploadCACertificate.CACertificateId");
 			uploadCACertificateResponse.CACertificateName = context.StringValue("UploadCACertificate.CACertificateName");
 			uploadCACertificateResponse.Fingerprint = context.StringValue("UploadCACertificate.Fingerprint");
+			uploadCACertificateResponse.ResourceGroupId = context.StringValue("UploadCACertificate.ResourceGroupId");
+			uploadCACertificateResponse.CreateTime = context.StringValue("UploadCACertificate.CreateTime");
+			uploadCACertificateResponse.CreateTimeStamp = context.LongValue("UploadCACertificate.CreateTimeStamp");
         
 			return uploadCACertificateResponse;
         }

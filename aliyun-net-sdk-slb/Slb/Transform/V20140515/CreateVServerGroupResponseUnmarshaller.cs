@@ -33,16 +33,19 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			createVServerGroupResponse.RequestId = context.StringValue("CreateVServerGroup.RequestId");
 			createVServerGroupResponse.VServerGroupId = context.StringValue("CreateVServerGroup.VServerGroupId");
 
-			List<CreateVServerGroupResponse.BackendServer> backendServers = new List<CreateVServerGroupResponse.BackendServer>();
+			List<CreateVServerGroupResponse.CreateVServerGroup_BackendServer> createVServerGroupResponse_backendServers = new List<CreateVServerGroupResponse.CreateVServerGroup_BackendServer>();
 			for (int i = 0; i < context.Length("CreateVServerGroup.BackendServers.Length"); i++) {
-				CreateVServerGroupResponse.BackendServer backendServer = new CreateVServerGroupResponse.BackendServer();
+				CreateVServerGroupResponse.CreateVServerGroup_BackendServer backendServer = new CreateVServerGroupResponse.CreateVServerGroup_BackendServer();
 				backendServer.ServerId = context.StringValue("CreateVServerGroup.BackendServers["+ i +"].ServerId");
 				backendServer.Port = context.IntegerValue("CreateVServerGroup.BackendServers["+ i +"].Port");
 				backendServer.Weight = context.IntegerValue("CreateVServerGroup.BackendServers["+ i +"].Weight");
+				backendServer.Type = context.StringValue("CreateVServerGroup.BackendServers["+ i +"].Type");
+				backendServer.ServerIp = context.StringValue("CreateVServerGroup.BackendServers["+ i +"].ServerIp");
+				backendServer.VpcId = context.StringValue("CreateVServerGroup.BackendServers["+ i +"].VpcId");
 
-				backendServers.Add(backendServer);
+				createVServerGroupResponse_backendServers.Add(backendServer);
 			}
-			createVServerGroupResponse.BackendServers = backendServers;
+			createVServerGroupResponse.BackendServers = createVServerGroupResponse_backendServers;
         
 			return createVServerGroupResponse;
         }

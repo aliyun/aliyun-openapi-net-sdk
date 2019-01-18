@@ -20,45 +20,53 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vod.Transform;
-using Aliyun.Acs.Vod.Transform.V20170321;
+using Aliyun.Acs.vod.Transform;
+using Aliyun.Acs.vod.Transform.V20170321;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Model.V20170321
+namespace Aliyun.Acs.vod.Model.V20170321
 {
     public class GetVideoListRequest : RpcAcsRequest<GetVideoListResponse>
     {
         public GetVideoListRequest()
-            : base("vod", "2017-03-21", "GetVideoList")
+            : base("vod", "2017-03-21", "GetVideoList", "vod", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
-		private int? cateId;
-
-		private string status;
+		private long? cateId;
 
 		private int? pageNo;
 
 		private int? pageSize;
 
+		private string action;
+
+		private string endTime;
+
 		private string sortBy;
 
-		public long? OwnerId
+		private string startTime;
+
+		private long? ownerId;
+
+		private string status;
+
+		private string storageLocation;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -75,20 +83,7 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? CateId
+		public long? CateId
 		{
 			get
 			{
@@ -98,19 +93,6 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				cateId = value;
 				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
@@ -140,6 +122,32 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
 		public string SortBy
 		{
 			get
@@ -150,6 +158,58 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				sortBy = value;
 				DictionaryUtil.Add(QueryParameters, "SortBy", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public string StorageLocation
+		{
+			get
+			{
+				return storageLocation;
+			}
+			set	
+			{
+				storageLocation = value;
+				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
 			}
 		}
 

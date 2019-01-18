@@ -35,16 +35,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstancesByExpireTimeResponse.TotalRecordCount = context.IntegerValue("DescribeDBInstancesByExpireTime.TotalRecordCount");
 			describeDBInstancesByExpireTimeResponse.PageRecordCount = context.IntegerValue("DescribeDBInstancesByExpireTime.PageRecordCount");
 
-			List<DescribeDBInstancesByExpireTimeResponse.DBInstanceExpireTime> items = new List<DescribeDBInstancesByExpireTimeResponse.DBInstanceExpireTime>();
+			List<DescribeDBInstancesByExpireTimeResponse.DescribeDBInstancesByExpireTime_DBInstanceExpireTime> describeDBInstancesByExpireTimeResponse_items = new List<DescribeDBInstancesByExpireTimeResponse.DescribeDBInstancesByExpireTime_DBInstanceExpireTime>();
 			for (int i = 0; i < context.Length("DescribeDBInstancesByExpireTime.Items.Length"); i++) {
-				DescribeDBInstancesByExpireTimeResponse.DBInstanceExpireTime dBInstanceExpireTime = new DescribeDBInstancesByExpireTimeResponse.DBInstanceExpireTime();
+				DescribeDBInstancesByExpireTimeResponse.DescribeDBInstancesByExpireTime_DBInstanceExpireTime dBInstanceExpireTime = new DescribeDBInstancesByExpireTimeResponse.DescribeDBInstancesByExpireTime_DBInstanceExpireTime();
 				dBInstanceExpireTime.DBInstanceId = context.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].DBInstanceId");
 				dBInstanceExpireTime.DBInstanceDescription = context.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].DBInstanceDescription");
 				dBInstanceExpireTime.ExpireTime = context.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].ExpireTime");
+				dBInstanceExpireTime.DBInstanceStatus = context.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].DBInstanceStatus");
+				dBInstanceExpireTime.LockMode = context.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].LockMode");
 
-				items.Add(dBInstanceExpireTime);
+				describeDBInstancesByExpireTimeResponse_items.Add(dBInstanceExpireTime);
 			}
-			describeDBInstancesByExpireTimeResponse.Items = items;
+			describeDBInstancesByExpireTimeResponse.Items = describeDBInstancesByExpireTimeResponse_items;
         
 			return describeDBInstancesByExpireTimeResponse;
         }

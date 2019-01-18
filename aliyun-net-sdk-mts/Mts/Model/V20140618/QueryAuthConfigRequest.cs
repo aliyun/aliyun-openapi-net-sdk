@@ -29,11 +29,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class QueryAuthConfigRequest : RpcAcsRequest<QueryAuthConfigResponse>
     {
         public QueryAuthConfigRequest()
-            : base("Mts", "2014-06-18", "QueryAuthConfig")
+            : base("Mts", "2014-06-18", "QueryAuthConfig", "mts", "openAPI")
         {
         }
-
-		private string ownerId;
 
 		private string resourceOwnerId;
 
@@ -41,18 +39,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerAccount;
 
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
-			}
-		}
+		private string action;
+
+		private string ownerId;
+
+		private string accessKeyId;
 
 		public string ResourceOwnerId
 		{
@@ -90,6 +81,45 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

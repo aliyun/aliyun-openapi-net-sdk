@@ -32,18 +32,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDiagnosticReportListResponse.HttpResponse = context.HttpResponse;
 			describeDiagnosticReportListResponse.RequestId = context.StringValue("DescribeDiagnosticReportList.RequestId");
 
-			List<DescribeDiagnosticReportListResponse.Report> reportList = new List<DescribeDiagnosticReportListResponse.Report>();
+			List<DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report> describeDiagnosticReportListResponse_reportList = new List<DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report>();
 			for (int i = 0; i < context.Length("DescribeDiagnosticReportList.ReportList.Length"); i++) {
-				DescribeDiagnosticReportListResponse.Report report = new DescribeDiagnosticReportListResponse.Report();
+				DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report report = new DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report();
 				report.DiagnosticTime = context.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].DiagnosticTime");
 				report.Score = context.IntegerValue("DescribeDiagnosticReportList.ReportList["+ i +"].Score");
 				report.StartTime = context.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].StartTime");
 				report.EndTime = context.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].EndTime");
 				report.DownloadURL = context.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].DownloadURL");
 
-				reportList.Add(report);
+				describeDiagnosticReportListResponse_reportList.Add(report);
 			}
-			describeDiagnosticReportListResponse.ReportList = reportList;
+			describeDiagnosticReportListResponse.ReportList = describeDiagnosticReportListResponse_reportList;
         
 			return describeDiagnosticReportListResponse;
         }

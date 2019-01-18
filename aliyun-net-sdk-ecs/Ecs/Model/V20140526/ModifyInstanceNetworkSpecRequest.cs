@@ -29,34 +29,61 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyInstanceNetworkSpecRequest : RpcAcsRequest<ModifyInstanceNetworkSpecResponse>
     {
         public ModifyInstanceNetworkSpecRequest()
-            : base("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec")
+            : base("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "ecs", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
+
+		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
-		private string instanceId;
-
-		private int? internetMaxBandwidthOut;
-
-		private int? internetMaxBandwidthIn;
+		private string clientToken;
 
 		private string ownerAccount;
 
-		public long? OwnerId
+		private int? internetMaxBandwidthOut;
+
+		private string endTime;
+
+		private string startTime;
+
+		private long? ownerId;
+
+		private string instanceId;
+
+		private string action;
+
+		private string networkChargeType;
+
+		private int? internetMaxBandwidthIn;
+
+		private bool? allocatePublicIp;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 
@@ -73,29 +100,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string ClientToken
 		{
 			get
 			{
-				return resourceOwnerId;
+				return clientToken;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public string InstanceId
+		public string OwnerAccount
 		{
 			get
 			{
-				return instanceId;
+				return ownerAccount;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -112,6 +139,84 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string NetworkChargeType
+		{
+			get
+			{
+				return networkChargeType;
+			}
+			set	
+			{
+				networkChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkChargeType", value);
+			}
+		}
+
 		public int? InternetMaxBandwidthIn
 		{
 			get
@@ -125,16 +230,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OwnerAccount
+		public bool? AllocatePublicIp
 		{
 			get
 			{
-				return ownerAccount;
+				return allocatePublicIp;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				allocatePublicIp = value;
+				DictionaryUtil.Add(QueryParameters, "AllocatePublicIp", value.ToString());
 			}
 		}
 

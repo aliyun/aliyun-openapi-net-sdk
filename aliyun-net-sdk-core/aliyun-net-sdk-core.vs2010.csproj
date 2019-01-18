@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB84CECB-295D-4772-A669-3726E511CCFA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs.Core</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcsError.cs" />
+    <Compile Include="Auth\AlibabaCloudCredentials.cs" />
+    <Compile Include="Auth\AlibabaCloudCredentialsProvider.cs" />
+    <Compile Include="Auth\BasicCredentials.cs" />
+    <Compile Include="Auth\BasicSessionCredentials.cs" />
+    <Compile Include="Auth\CredentialsBackupCompatibilityAdaptor.cs" />
+    <Compile Include="Auth\ECSMetadataServiceCredentialsFetcher.cs" />
+    <Compile Include="Auth\HmacSHA1Signer.cs" />
+    <Compile Include="Auth\InstanceProfileCredentials.cs" />
+    <Compile Include="Auth\InstanceProfileCredentialsProvider.cs" />
+    <Compile Include="Auth\KeyPairCredentials.cs" />
+    <Compile Include="Auth\LegacyCredentials.cs" />
+    <Compile Include="Auth\SHA256withRSASigner.cs" />
+    <Compile Include="Auth\Signer.cs" />
+    <Compile Include="Auth\StaticCredentialsProvider.cs" />
+    <Compile Include="Auth\STSAssumeRoleSessionCredentialsProvider.cs" />
+    <Compile Include="Auth\Sts\AssumeRoleRequest.cs" />
+    <Compile Include="Auth\Sts\AssumeRoleResponse.cs" />
+    <Compile Include="Auth\Sts\AssumeRoleResponseUnmarshaller.cs" />
+    <Compile Include="Auth\Sts\GetSessionAccessKeyRequest.cs" />
+    <Compile Include="Auth\Sts\GetSessionAccessKeyResponse.cs" />
+    <Compile Include="Auth\Sts\GetSessionAccessKeyResponseUnmarshaller.cs" />
+    <Compile Include="Regions\DescribeEndpointServiceImpl.cs" />
+    <Compile Include="Utils\DateTimeExtensions.cs" />
+    <Compile Include="CommonRequest.cs" />
+    <Compile Include="CommonResponse.cs" />
+    <Compile Include="CommonRoaRequest.cs" />
+    <Compile Include="CommonRpcRequest.cs" />
+    <Compile Include="Regions\DescribeEndpointService.cs" />
+    <Compile Include="Regions\Location\LocationConfig.cs" />
+    <Compile Include="Regions\RemoteEndpointsParser.cs" />
+    <Compile Include="Transform\AcsErrorUnmarshaller.cs" />
+    <Compile Include="AcsRequest.cs" />
+    <Compile Include="AcsResponse.cs" />
+    <Compile Include="Auth\AcsURLEncoder.cs" />
+    <Compile Include="Auth\Credential.cs" />
+    <Compile Include="Auth\ICredentialProvider.cs" />
+    <Compile Include="Auth\ISignatureComposer.cs" />
+    <Compile Include="Auth\ISigner.cs" />
+    <Compile Include="Auth\RoaSignatureComposer.cs" />
+    <Compile Include="Auth\RpcSignatureComposer.cs" />
+    <Compile Include="Auth\ShaHmac1.cs" />
+    <Compile Include="Auth\ShaHmac256.cs" />
+    <Compile Include="DefaultAcsClient.cs" />
+    <Compile Include="Exceptions\ClientException.cs" />
+    <Compile Include="Exceptions\ErrorType.cs" />
+    <Compile Include="Exceptions\ServerException.cs" />
+    <Compile Include="Http\FormatType.cs" />
+    <Compile Include="Http\HttpRequest.cs" />
+    <Compile Include="Http\HttpResponse.cs" />
+    <Compile Include="Http\MethodType.cs" />
+    <Compile Include="Http\PositionType.cs" />
+    <Compile Include="Http\ProtocolType.cs" />
+    <Compile Include="IAcsClient.cs" />
+    <Compile Include="Profile\DefaultProfile.cs" />
+    <Compile Include="Profile\IClientProfile.cs" />
+    <Compile Include="Reader\JsonReader.cs" />
+    <Compile Include="Reader\IReader.cs" />
+    <Compile Include="Reader\ReaderFactory.cs" />
+    <Compile Include="Reader\XmlReader.cs" />
+    <Compile Include="Regions\Endpoint.cs" />
+    <Compile Include="Regions\IEndpointsProvider.cs" />
+    <Compile Include="Regions\InternalEndpointsParser.cs" />
+    <Compile Include="Regions\Location\Model\DescribeEndpointRequest.cs" />
+    <Compile Include="Regions\Location\Model\DescribeEndpointResponse.cs" />
+    <Compile Include="Regions\Location\Transform\DescribeEndpointResponseUnmarshaller.cs" />
+    <Compile Include="Regions\ProductDomain.cs" />
+    <Compile Include="RoaAcsRequest.cs" />
+    <Compile Include="RpcAcsRequest.cs" />
+    <Compile Include="Transform\UnmarshallerContext.cs" />
+    <Compile Include="Utils\CacheTimeHelper.cs" />
+    <Compile Include="Utils\DictionaryUtil.cs" />
+    <Compile Include="Utils\ParameterHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Regions\endpoints.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

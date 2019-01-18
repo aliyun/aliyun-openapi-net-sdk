@@ -24,15 +24,29 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainHttpCodeDataResponse : AcsResponse
 	{
 
-		private string domainName;
+		private string requestId;
 
-		private string dataInterval;
+		private string domainName;
 
 		private string startTime;
 
 		private string endTime;
 
-		private List<UsageData> httpCodeData;
+		private string dataInterval;
+
+		private List<DescribeDomainHttpCodeData_UsageData> httpCodeData;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{
@@ -43,18 +57,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				domainName = value;
-			}
-		}
-
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
 			}
 		}
 
@@ -82,7 +84,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<UsageData> HttpCodeData
+		public string DataInterval
+		{
+			get
+			{
+				return dataInterval;
+			}
+			set	
+			{
+				dataInterval = value;
+			}
+		}
+
+		public List<DescribeDomainHttpCodeData_UsageData> HttpCodeData
 		{
 			get
 			{
@@ -94,11 +108,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class UsageData{
+		public class DescribeDomainHttpCodeData_UsageData
+		{
 
 			private string timeStamp;
 
-			private List<CodeProportionData> value_;
+			private List<DescribeDomainHttpCodeData_CodeProportionData> _value;
 
 			public string TimeStamp
 			{
@@ -112,23 +127,26 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public List<CodeProportionData> Value
+			public List<DescribeDomainHttpCodeData_CodeProportionData> _Value
 			{
 				get
 				{
-					return value_;
+					return _value;
 				}
 				set	
 				{
-					value_ = value;
+					_value = value;
 				}
 			}
 
-			public class CodeProportionData{
+			public class DescribeDomainHttpCodeData_CodeProportionData
+			{
 
 				private string code;
 
 				private string proportion;
+
+				private string count;
 
 				public string Code
 				{
@@ -151,6 +169,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					set	
 					{
 						proportion = value;
+					}
+				}
+
+				public string Count
+				{
+					get
+					{
+						return count;
+					}
+					set	
+					{
+						count = value;
 					}
 				}
 			}

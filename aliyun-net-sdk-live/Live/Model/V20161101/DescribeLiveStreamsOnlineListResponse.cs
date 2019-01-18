@@ -19,14 +19,84 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveStreamsOnlineListResponse : AcsResponse
 	{
 
-		private List<LiveStreamOnlineInfo> onlineInfo;
+		private string requestId;
 
-		public List<LiveStreamOnlineInfo> OnlineInfo
+		private int? pageNum;
+
+		private int? pageSize;
+
+		private int? totalNum;
+
+		private int? totalPage;
+
+		private List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> onlineInfo;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
+			}
+		}
+
+		public int? TotalPage
+		{
+			get
+			{
+				return totalPage;
+			}
+			set	
+			{
+				totalPage = value;
+			}
+		}
+
+		public List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> OnlineInfo
 		{
 			get
 			{
@@ -38,7 +108,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class LiveStreamOnlineInfo{
+		public class DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo
+		{
 
 			private string domainName;
 
@@ -49,6 +120,14 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			private string publishTime;
 
 			private string publishUrl;
+
+			private string publishDomain;
+
+			private string publishType;
+
+			private string transcoded;
+
+			private string transcodeId;
 
 			public string DomainName
 			{
@@ -107,6 +186,54 @@ namespace Aliyun.Acs.Live.Model.V20161101
 				set	
 				{
 					publishUrl = value;
+				}
+			}
+
+			public string PublishDomain
+			{
+				get
+				{
+					return publishDomain;
+				}
+				set	
+				{
+					publishDomain = value;
+				}
+			}
+
+			public string PublishType
+			{
+				get
+				{
+					return publishType;
+				}
+				set	
+				{
+					publishType = value;
+				}
+			}
+
+			public string Transcoded
+			{
+				get
+				{
+					return transcoded;
+				}
+				set	
+				{
+					transcoded = value;
+				}
+			}
+
+			public string TranscodeId
+			{
+				get
+				{
+					return transcodeId;
+				}
+				set	
+				{
+					transcodeId = value;
 				}
 			}
 		}

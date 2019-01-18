@@ -35,18 +35,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			descibeImportsFromDatabaseResponse.PageNumber = context.IntegerValue("DescibeImportsFromDatabase.PageNumber");
 			descibeImportsFromDatabaseResponse.PageRecordCount = context.IntegerValue("DescibeImportsFromDatabase.PageRecordCount");
 
-			List<DescibeImportsFromDatabaseResponse.ImportResultFromDB> items = new List<DescibeImportsFromDatabaseResponse.ImportResultFromDB>();
+			List<DescibeImportsFromDatabaseResponse.DescibeImportsFromDatabase_ImportResultFromDB> descibeImportsFromDatabaseResponse_items = new List<DescibeImportsFromDatabaseResponse.DescibeImportsFromDatabase_ImportResultFromDB>();
 			for (int i = 0; i < context.Length("DescibeImportsFromDatabase.Items.Length"); i++) {
-				DescibeImportsFromDatabaseResponse.ImportResultFromDB importResultFromDB = new DescibeImportsFromDatabaseResponse.ImportResultFromDB();
+				DescibeImportsFromDatabaseResponse.DescibeImportsFromDatabase_ImportResultFromDB importResultFromDB = new DescibeImportsFromDatabaseResponse.DescibeImportsFromDatabase_ImportResultFromDB();
 				importResultFromDB.ImportId = context.IntegerValue("DescibeImportsFromDatabase.Items["+ i +"].ImportId");
-				importResultFromDB.ImportDataType = context.EnumValue<DescibeImportsFromDatabaseResponse.ImportResultFromDB.ImportDataTypeEnum>("DescibeImportsFromDatabase.Items["+ i +"].ImportDataType");
-				importResultFromDB.ImportDataStatus = context.EnumValue<DescibeImportsFromDatabaseResponse.ImportResultFromDB.ImportDataStatusEnum>("DescibeImportsFromDatabase.Items["+ i +"].ImportDataStatus");
+				importResultFromDB.ImportDataType = context.StringValue("DescibeImportsFromDatabase.Items["+ i +"].ImportDataType");
+				importResultFromDB.ImportDataStatus = context.StringValue("DescibeImportsFromDatabase.Items["+ i +"].ImportDataStatus");
 				importResultFromDB.ImportDataStatusDescription = context.StringValue("DescibeImportsFromDatabase.Items["+ i +"].ImportDataStatusDescription");
 				importResultFromDB.IncrementalImportingTime = context.StringValue("DescibeImportsFromDatabase.Items["+ i +"].IncrementalImportingTime");
 
-				items.Add(importResultFromDB);
+				descibeImportsFromDatabaseResponse_items.Add(importResultFromDB);
 			}
-			descibeImportsFromDatabaseResponse.Items = items;
+			descibeImportsFromDatabaseResponse.Items = descibeImportsFromDatabaseResponse_items;
         
 			return descibeImportsFromDatabaseResponse;
         }

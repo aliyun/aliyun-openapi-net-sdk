@@ -35,18 +35,18 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiTrafficControlsResponse.PageSize = context.IntegerValue("DescribeApiTrafficControls.PageSize");
 			describeApiTrafficControlsResponse.PageNumber = context.IntegerValue("DescribeApiTrafficControls.PageNumber");
 
-			List<DescribeApiTrafficControlsResponse.ApiTrafficControlItem> apiTrafficControls = new List<DescribeApiTrafficControlsResponse.ApiTrafficControlItem>();
+			List<DescribeApiTrafficControlsResponse.DescribeApiTrafficControls_ApiTrafficControlItem> describeApiTrafficControlsResponse_apiTrafficControls = new List<DescribeApiTrafficControlsResponse.DescribeApiTrafficControls_ApiTrafficControlItem>();
 			for (int i = 0; i < context.Length("DescribeApiTrafficControls.ApiTrafficControls.Length"); i++) {
-				DescribeApiTrafficControlsResponse.ApiTrafficControlItem apiTrafficControlItem = new DescribeApiTrafficControlsResponse.ApiTrafficControlItem();
+				DescribeApiTrafficControlsResponse.DescribeApiTrafficControls_ApiTrafficControlItem apiTrafficControlItem = new DescribeApiTrafficControlsResponse.DescribeApiTrafficControls_ApiTrafficControlItem();
 				apiTrafficControlItem.ApiId = context.StringValue("DescribeApiTrafficControls.ApiTrafficControls["+ i +"].ApiId");
 				apiTrafficControlItem.ApiName = context.StringValue("DescribeApiTrafficControls.ApiTrafficControls["+ i +"].ApiName");
 				apiTrafficControlItem.TrafficControlId = context.StringValue("DescribeApiTrafficControls.ApiTrafficControls["+ i +"].TrafficControlId");
 				apiTrafficControlItem.TrafficControlName = context.StringValue("DescribeApiTrafficControls.ApiTrafficControls["+ i +"].TrafficControlName");
 				apiTrafficControlItem.BoundTime = context.StringValue("DescribeApiTrafficControls.ApiTrafficControls["+ i +"].BoundTime");
 
-				apiTrafficControls.Add(apiTrafficControlItem);
+				describeApiTrafficControlsResponse_apiTrafficControls.Add(apiTrafficControlItem);
 			}
-			describeApiTrafficControlsResponse.ApiTrafficControls = apiTrafficControls;
+			describeApiTrafficControlsResponse.ApiTrafficControls = describeApiTrafficControlsResponse_apiTrafficControls;
         
 			return describeApiTrafficControlsResponse;
         }

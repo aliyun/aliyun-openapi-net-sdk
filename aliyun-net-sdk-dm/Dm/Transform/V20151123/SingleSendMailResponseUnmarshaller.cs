@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Dm.Transform.V20151123
 
 			singleSendMailResponse.HttpResponse = context.HttpResponse;
 			singleSendMailResponse.RequestId = context.StringValue("SingleSendMail.RequestId");
+			singleSendMailResponse.EnvId = context.StringValue("SingleSendMail.EnvId");
         
 			return singleSendMailResponse;
         }

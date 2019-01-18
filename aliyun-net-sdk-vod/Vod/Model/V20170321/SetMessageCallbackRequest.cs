@@ -20,20 +20,20 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vod.Transform;
-using Aliyun.Acs.Vod.Transform.V20170321;
+using Aliyun.Acs.vod.Transform;
+using Aliyun.Acs.vod.Transform.V20170321;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Model.V20170321
+namespace Aliyun.Acs.vod.Model.V20170321
 {
     public class SetMessageCallbackRequest : RpcAcsRequest<SetMessageCallbackResponse>
     {
         public SetMessageCallbackRequest()
-            : base("vod", "2017-03-21", "SetMessageCallback")
+            : base("vod", "2017-03-21", "SetMessageCallback", "vod", "openAPI")
         {
         }
 
-		private string ownerId;
+		private string authKey;
 
 		private string resourceOwnerId;
 
@@ -41,22 +41,38 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 
 		private string ownerAccount;
 
-		private string callbackSwitch;
+		private string eventTypeList;
+
+		private string mnsQueueName;
+
+		private long? resourceRealOwnerId;
+
+		private string ownerId;
+
+		private string accessKeyId;
 
 		private string callbackType;
 
+		private string callbackSwitch;
+
+		private string mnsEndpoint;
+
+		private string action;
+
+		private string authSwitch;
+
 		private string callbackURL;
 
-		public string OwnerId
+		public string AuthKey
 		{
 			get
 			{
-				return ownerId;
+				return authKey;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+				authKey = value;
+				DictionaryUtil.Add(QueryParameters, "AuthKey", value);
 			}
 		}
 
@@ -99,16 +115,68 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
-		public string CallbackSwitch
+		public string EventTypeList
 		{
 			get
 			{
-				return callbackSwitch;
+				return eventTypeList;
 			}
 			set	
 			{
-				callbackSwitch = value;
-				DictionaryUtil.Add(QueryParameters, "CallbackSwitch", value);
+				eventTypeList = value;
+				DictionaryUtil.Add(QueryParameters, "EventTypeList", value);
+			}
+		}
+
+		public string MnsQueueName
+		{
+			get
+			{
+				return mnsQueueName;
+			}
+			set	
+			{
+				mnsQueueName = value;
+				DictionaryUtil.Add(QueryParameters, "MnsQueueName", value);
+			}
+		}
+
+		public long? ResourceRealOwnerId
+		{
+			get
+			{
+				return resourceRealOwnerId;
+			}
+			set	
+			{
+				resourceRealOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceRealOwnerId", value.ToString());
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -122,6 +190,58 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				callbackType = value;
 				DictionaryUtil.Add(QueryParameters, "CallbackType", value);
+			}
+		}
+
+		public string CallbackSwitch
+		{
+			get
+			{
+				return callbackSwitch;
+			}
+			set	
+			{
+				callbackSwitch = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackSwitch", value);
+			}
+		}
+
+		public string MnsEndpoint
+		{
+			get
+			{
+				return mnsEndpoint;
+			}
+			set	
+			{
+				mnsEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "MnsEndpoint", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string AuthSwitch
+		{
+			get
+			{
+				return authSwitch;
+			}
+			set	
+			{
+				authSwitch = value;
+				DictionaryUtil.Add(QueryParameters, "AuthSwitch", value);
 			}
 		}
 

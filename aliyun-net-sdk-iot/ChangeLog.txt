@@ -1,0 +1,60 @@
+2019-01-15 Version: 6.6.0
+1, add API of product tags.
+2, add API QueryDeviceGroupByTags.
+3, update response data of API BatchCheckDeviceNames.
+
+2019-01-15 Version: 6.6.0
+1, add API of product tags.
+2, add API QueryDeviceGroupByTags.
+3, update response data of API BatchCheckDeviceNames.
+
+2018-12-09 Version: 6.5.0
+1, Add Open API QuerySuperDeviceGroup.
+2, Add Open API QueryDeviceProperties.
+3, Add Open API QueryDeviceListByDeviceGroup.
+
+2018-11-28 Version: 6.4.0
+1, Add APIs InvokeThingsService, SetDevicesProperty and QueryDeviceByTags .
+
+2018-11-27 Version: 6.3.2
+1, Add APIs InvokeThingsService, SetDevicesProperty and QueryDeviceByTags .
+
+2018-10-16 Version: 6.3.1
+1, remove set group tags API.
+
+2018-10-13 Version: 6.3.0
+1, Add device group related APIs.
+
+2018-10-13 Version: 6.3.0
+1, Add device group related APIs.
+
+2018-10-13 Version: 6.3.0
+1, Add device group related APIs.
+
+2018-09-28 Version: 6.2.0
+1, Add one api, QueryAppDeviceList.
+
+2018-09-27 Version: 6.1.0
+1, Add one api, QueryAppDeviceList.
+
+2018-09-06 Version: 6.0.0
+1, Add API deleteProduct.
+2, Move all API to version 20180120.
+
+2018-08-27 Version: 5.1.0
+1, Add api GetGatewayBySubDevice.
+2, Modified the time related response parameters.
+3, Add messageId in response with InvokeThingService，SetDeviceProperty and NotifyAddThingTopo.
+
+2018-08-07 Version: 5.1.0
+1, Add api GetGatewayBySubDevice.
+2, Modified the time related response parameters.
+3, Add messageId in response with InvokeThingService，SetDeviceProperty and NotifyAddThingTopo.
+
+2018-04-17 Version: 5.0.0
+1, Add plenty of product management interfaces and device management interfaces
+2, Support for thing model and data storage
+
+2017-12-07 Version: 4.0.0
+1, release .NET iot sdk
+

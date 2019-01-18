@@ -35,24 +35,24 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstanceByTagsResponse.PageRecordCount = context.IntegerValue("DescribeDBInstanceByTags.PageRecordCount");
 			describeDBInstanceByTagsResponse.TotalRecordCount = context.IntegerValue("DescribeDBInstanceByTags.TotalRecordCount");
 
-			List<DescribeDBInstanceByTagsResponse.DBInstanceTag> items = new List<DescribeDBInstanceByTagsResponse.DBInstanceTag>();
+			List<DescribeDBInstanceByTagsResponse.DescribeDBInstanceByTags_DBInstanceTag> describeDBInstanceByTagsResponse_items = new List<DescribeDBInstanceByTagsResponse.DescribeDBInstanceByTags_DBInstanceTag>();
 			for (int i = 0; i < context.Length("DescribeDBInstanceByTags.Items.Length"); i++) {
-				DescribeDBInstanceByTagsResponse.DBInstanceTag dBInstanceTag = new DescribeDBInstanceByTagsResponse.DBInstanceTag();
+				DescribeDBInstanceByTagsResponse.DescribeDBInstanceByTags_DBInstanceTag dBInstanceTag = new DescribeDBInstanceByTagsResponse.DescribeDBInstanceByTags_DBInstanceTag();
 				dBInstanceTag.DBInstanceId = context.StringValue("DescribeDBInstanceByTags.Items["+ i +"].DBInstanceId");
 
-				List<DescribeDBInstanceByTagsResponse.DBInstanceTag.Tag> tags = new List<DescribeDBInstanceByTagsResponse.DBInstanceTag.Tag>();
+				List<DescribeDBInstanceByTagsResponse.DescribeDBInstanceByTags_DBInstanceTag.DescribeDBInstanceByTags_Tag> dBInstanceTag_tags = new List<DescribeDBInstanceByTagsResponse.DescribeDBInstanceByTags_DBInstanceTag.DescribeDBInstanceByTags_Tag>();
 				for (int j = 0; j < context.Length("DescribeDBInstanceByTags.Items["+ i +"].Tags.Length"); j++) {
-					DescribeDBInstanceByTagsResponse.DBInstanceTag.Tag tag = new DescribeDBInstanceByTagsResponse.DBInstanceTag.Tag();
+					DescribeDBInstanceByTagsResponse.DescribeDBInstanceByTags_DBInstanceTag.DescribeDBInstanceByTags_Tag tag = new DescribeDBInstanceByTagsResponse.DescribeDBInstanceByTags_DBInstanceTag.DescribeDBInstanceByTags_Tag();
 					tag.TagKey = context.StringValue("DescribeDBInstanceByTags.Items["+ i +"].Tags["+ j +"].TagKey");
 					tag.TagValue = context.StringValue("DescribeDBInstanceByTags.Items["+ i +"].Tags["+ j +"].TagValue");
 
-					tags.Add(tag);
+					dBInstanceTag_tags.Add(tag);
 				}
-				dBInstanceTag.Tags = tags;
+				dBInstanceTag.Tags = dBInstanceTag_tags;
 
-				items.Add(dBInstanceTag);
+				describeDBInstanceByTagsResponse_items.Add(dBInstanceTag);
 			}
-			describeDBInstanceByTagsResponse.Items = items;
+			describeDBInstanceByTagsResponse.Items = describeDBInstanceByTagsResponse_items;
         
 			return describeDBInstanceByTagsResponse;
         }

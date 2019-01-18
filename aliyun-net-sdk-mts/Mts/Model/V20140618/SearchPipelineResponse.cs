@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class SearchPipelineResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private long? totalCount;
 
 		private long? pageNumber;
 
 		private long? pageSize;
 
-		private List<Pipeline> pipelineList;
+		private List<SearchPipeline_Pipeline> pipelineList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public List<Pipeline> PipelineList
+		public List<SearchPipeline_Pipeline> PipelineList
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class Pipeline{
+		public class SearchPipeline_Pipeline
+		{
 
 			private string id;
 
@@ -90,9 +105,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string speed;
 
+			private long? speedLevel;
+
 			private string role;
 
-			private NotifyConfig_ notifyConfig;
+			private SearchPipeline_NotifyConfig notifyConfig;
 
 			public string Id
 			{
@@ -142,6 +159,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public long? SpeedLevel
+			{
+				get
+				{
+					return speedLevel;
+				}
+				set	
+				{
+					speedLevel = value;
+				}
+			}
+
 			public string Role
 			{
 				get
@@ -154,7 +183,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public NotifyConfig_ NotifyConfig
+			public SearchPipeline_NotifyConfig NotifyConfig
 			{
 				get
 				{
@@ -166,7 +195,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class NotifyConfig_{
+			public class SearchPipeline_NotifyConfig
+			{
 
 				private string topic;
 

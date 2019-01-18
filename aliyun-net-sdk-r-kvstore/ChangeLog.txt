@@ -1,0 +1,22 @@
+2018-12-27 Version: 2.0.5
+1, Add DescribeZones Api.
+
+2018-12-11 Version: 2.0.4
+1, Add ModifyInstanceVpcAuthMode OpenApi.
+2, Upgrade SDK Version to 2.0.4.
+
+2018-09-06 Version: 2.0.3
+1, fixed DescirbeRegions zoneId date type.
+
+2018-08-31 Version: 2.0.3
+1, The CreateInstance supported VPC IpAddress.
+
+2018-08-27 Version: 2.0.3
+1, createInstance supported IpAddress param.
+
+2018-05-28 Version: 2.0.2
+1, add new openapi .
+
+2017-10-17 Version: 1.0.0
+1, KvStore open api 开放， sdk 发布
+

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{81554787-6C1E-4DD7-B2D4-794C88EA66C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-hpc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HPC\Model\V20160603\CreateInstanceRequest.cs" />
+    <Compile Include="HPC\Model\V20160603\CreateInstanceResponse.cs" />
+    <Compile Include="HPC\Model\V20160603\DeleteInstanceRequest.cs" />
+    <Compile Include="HPC\Model\V20160603\DeleteInstanceResponse.cs" />
+    <Compile Include="HPC\Model\V20160603\DescribeInstancesRequest.cs" />
+    <Compile Include="HPC\Model\V20160603\DescribeInstancesResponse.cs" />
+    <Compile Include="HPC\Model\V20160603\ModifyJumpserverPasswordRequest.cs" />
+    <Compile Include="HPC\Model\V20160603\ModifyJumpserverPasswordResponse.cs" />
+    <Compile Include="HPC\Model\V20160603\RebootInstanceRequest.cs" />
+    <Compile Include="HPC\Model\V20160603\RebootInstanceResponse.cs" />
+    <Compile Include="HPC\Model\V20160603\RebootJumpserverRequest.cs" />
+    <Compile Include="HPC\Model\V20160603\RebootJumpserverResponse.cs" />
+    <Compile Include="HPC\Model\V20160603\StartJumpserverRequest.cs" />
+    <Compile Include="HPC\Model\V20160603\StartJumpserverResponse.cs" />
+    <Compile Include="HPC\Model\V20160603\StopJumpserverRequest.cs" />
+    <Compile Include="HPC\Model\V20160603\StopJumpserverResponse.cs" />
+    <Compile Include="HPC\Transform\V20160603\CreateInstanceResponseUnmarshaller.cs" />
+    <Compile Include="HPC\Transform\V20160603\DeleteInstanceResponseUnmarshaller.cs" />
+    <Compile Include="HPC\Transform\V20160603\DescribeInstancesResponseUnmarshaller.cs" />
+    <Compile Include="HPC\Transform\V20160603\ModifyJumpserverPasswordResponseUnmarshaller.cs" />
+    <Compile Include="HPC\Transform\V20160603\RebootInstanceResponseUnmarshaller.cs" />
+    <Compile Include="HPC\Transform\V20160603\RebootJumpserverResponseUnmarshaller.cs" />
+    <Compile Include="HPC\Transform\V20160603\StartJumpserverResponseUnmarshaller.cs" />
+    <Compile Include="HPC\Transform\V20160603\StopJumpserverResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

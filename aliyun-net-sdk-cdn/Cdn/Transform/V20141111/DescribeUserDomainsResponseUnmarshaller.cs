@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeUserDomainsResponse.PageSize = context.LongValue("DescribeUserDomains.PageSize");
 			describeUserDomainsResponse.TotalCount = context.LongValue("DescribeUserDomains.TotalCount");
 
-			List<DescribeUserDomainsResponse.PageData> domains = new List<DescribeUserDomainsResponse.PageData>();
+			List<DescribeUserDomainsResponse.DescribeUserDomains_PageData> describeUserDomainsResponse_domains = new List<DescribeUserDomainsResponse.DescribeUserDomains_PageData>();
 			for (int i = 0; i < context.Length("DescribeUserDomains.Domains.Length"); i++) {
-				DescribeUserDomainsResponse.PageData pageData = new DescribeUserDomainsResponse.PageData();
+				DescribeUserDomainsResponse.DescribeUserDomains_PageData pageData = new DescribeUserDomainsResponse.DescribeUserDomains_PageData();
 				pageData.DomainName = context.StringValue("DescribeUserDomains.Domains["+ i +"].DomainName");
 				pageData.Cname = context.StringValue("DescribeUserDomains.Domains["+ i +"].Cname");
 				pageData.CdnType = context.StringValue("DescribeUserDomains.Domains["+ i +"].CdnType");
@@ -47,16 +47,18 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				pageData.Description = context.StringValue("DescribeUserDomains.Domains["+ i +"].Description");
 				pageData.SourceType = context.StringValue("DescribeUserDomains.Domains["+ i +"].SourceType");
 				pageData.SslProtocol = context.StringValue("DescribeUserDomains.Domains["+ i +"].SslProtocol");
+				pageData.ResourceGroupId = context.StringValue("DescribeUserDomains.Domains["+ i +"].ResourceGroupId");
+				pageData.Sandbox = context.StringValue("DescribeUserDomains.Domains["+ i +"].Sandbox");
 
-				List<string> sources = new List<string>();
+				List<string> pageData_sources = new List<string>();
 				for (int j = 0; j < context.Length("DescribeUserDomains.Domains["+ i +"].Sources.Length"); j++) {
-					sources.Add(context.StringValue("DescribeUserDomains.Domains["+ i +"].Sources["+ j +"]"));
+					pageData_sources.Add(context.StringValue("DescribeUserDomains.Domains["+ i +"].Sources["+ j +"]"));
 				}
-				pageData.Sources = sources;
+				pageData.Sources = pageData_sources;
 
-				domains.Add(pageData);
+				describeUserDomainsResponse_domains.Add(pageData);
 			}
-			describeUserDomainsResponse.Domains = domains;
+			describeUserDomainsResponse.Domains = describeUserDomainsResponse_domains;
         
 			return describeUserDomainsResponse;
         }

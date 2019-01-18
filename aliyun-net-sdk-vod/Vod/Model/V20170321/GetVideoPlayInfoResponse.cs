@@ -24,11 +24,25 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class GetVideoPlayInfoResponse : AcsResponse
 	{
 
-		private PlayInfo_ playInfo;
+		private string requestId;
 
-		private VideoInfo_ videoInfo;
+		private GetVideoPlayInfo_PlayInfo playInfo;
 
-		public PlayInfo_ PlayInfo
+		private GetVideoPlayInfo_VideoInfo videoInfo;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public GetVideoPlayInfo_PlayInfo PlayInfo
 		{
 			get
 			{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public VideoInfo_ VideoInfo
+		public GetVideoPlayInfo_VideoInfo VideoInfo
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public class PlayInfo_{
+		public class GetVideoPlayInfo_PlayInfo
+		{
 
 			private string accessKeyId;
 
@@ -139,7 +154,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public class VideoInfo_{
+		public class GetVideoPlayInfo_VideoInfo
+		{
 
 			private string coverURL;
 

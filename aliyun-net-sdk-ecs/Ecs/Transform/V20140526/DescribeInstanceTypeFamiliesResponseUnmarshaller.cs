@@ -32,15 +32,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeInstanceTypeFamiliesResponse.HttpResponse = context.HttpResponse;
 			describeInstanceTypeFamiliesResponse.RequestId = context.StringValue("DescribeInstanceTypeFamilies.RequestId");
 
-			List<DescribeInstanceTypeFamiliesResponse.InstanceTypeFamily> instanceTypeFamilies = new List<DescribeInstanceTypeFamiliesResponse.InstanceTypeFamily>();
+			List<DescribeInstanceTypeFamiliesResponse.DescribeInstanceTypeFamilies_InstanceTypeFamily> describeInstanceTypeFamiliesResponse_instanceTypeFamilies = new List<DescribeInstanceTypeFamiliesResponse.DescribeInstanceTypeFamilies_InstanceTypeFamily>();
 			for (int i = 0; i < context.Length("DescribeInstanceTypeFamilies.InstanceTypeFamilies.Length"); i++) {
-				DescribeInstanceTypeFamiliesResponse.InstanceTypeFamily instanceTypeFamily = new DescribeInstanceTypeFamiliesResponse.InstanceTypeFamily();
+				DescribeInstanceTypeFamiliesResponse.DescribeInstanceTypeFamilies_InstanceTypeFamily instanceTypeFamily = new DescribeInstanceTypeFamiliesResponse.DescribeInstanceTypeFamilies_InstanceTypeFamily();
 				instanceTypeFamily.InstanceTypeFamilyId = context.StringValue("DescribeInstanceTypeFamilies.InstanceTypeFamilies["+ i +"].InstanceTypeFamilyId");
 				instanceTypeFamily.Generation = context.StringValue("DescribeInstanceTypeFamilies.InstanceTypeFamilies["+ i +"].Generation");
 
-				instanceTypeFamilies.Add(instanceTypeFamily);
+				describeInstanceTypeFamiliesResponse_instanceTypeFamilies.Add(instanceTypeFamily);
 			}
-			describeInstanceTypeFamiliesResponse.InstanceTypeFamilies = instanceTypeFamilies;
+			describeInstanceTypeFamiliesResponse.InstanceTypeFamilies = describeInstanceTypeFamiliesResponse_instanceTypeFamilies;
         
 			return describeInstanceTypeFamiliesResponse;
         }

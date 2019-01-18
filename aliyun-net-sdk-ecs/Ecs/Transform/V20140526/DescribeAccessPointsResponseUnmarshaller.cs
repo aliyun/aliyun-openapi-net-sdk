@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeAccessPointsResponse.PageSize = context.IntegerValue("DescribeAccessPoints.PageSize");
 			describeAccessPointsResponse.TotalCount = context.IntegerValue("DescribeAccessPoints.TotalCount");
 
-			List<DescribeAccessPointsResponse.AccessPointType> accessPointSet = new List<DescribeAccessPointsResponse.AccessPointType>();
+			List<DescribeAccessPointsResponse.DescribeAccessPoints_AccessPointType> describeAccessPointsResponse_accessPointSet = new List<DescribeAccessPointsResponse.DescribeAccessPoints_AccessPointType>();
 			for (int i = 0; i < context.Length("DescribeAccessPoints.AccessPointSet.Length"); i++) {
-				DescribeAccessPointsResponse.AccessPointType accessPointType = new DescribeAccessPointsResponse.AccessPointType();
+				DescribeAccessPointsResponse.DescribeAccessPoints_AccessPointType accessPointType = new DescribeAccessPointsResponse.DescribeAccessPoints_AccessPointType();
 				accessPointType.AccessPointId = context.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].AccessPointId");
 				accessPointType.Status = context.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].Status");
 				accessPointType.Type = context.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].Type");
@@ -47,9 +47,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				accessPointType.Name = context.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].Name");
 				accessPointType.Description = context.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].Description");
 
-				accessPointSet.Add(accessPointType);
+				describeAccessPointsResponse_accessPointSet.Add(accessPointType);
 			}
-			describeAccessPointsResponse.AccessPointSet = accessPointSet;
+			describeAccessPointsResponse.AccessPointSet = describeAccessPointsResponse_accessPointSet;
         
 			return describeAccessPointsResponse;
         }

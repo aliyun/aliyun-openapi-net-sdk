@@ -33,26 +33,30 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string pageType;
 
 		private string securityToken;
 
 		private string domainName;
 
-		private string pageType;
-
 		private string customPageUrl;
 
-		public long? OwnerId
+		private string action;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public string PageType
 		{
 			get
 			{
-				return ownerId;
+				return pageType;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				pageType = value;
+				DictionaryUtil.Add(QueryParameters, "PageType", value);
 			}
 		}
 
@@ -82,19 +86,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string PageType
-		{
-			get
-			{
-				return pageType;
-			}
-			set	
-			{
-				pageType = value;
-				DictionaryUtil.Add(QueryParameters, "PageType", value);
-			}
-		}
-
 		public string CustomPageUrl
 		{
 			get
@@ -105,6 +96,45 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				customPageUrl = value;
 				DictionaryUtil.Add(QueryParameters, "CustomPageUrl", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

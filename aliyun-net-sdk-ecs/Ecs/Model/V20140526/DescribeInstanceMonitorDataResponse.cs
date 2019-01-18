@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeInstanceMonitorDataResponse : AcsResponse
 	{
 
-		private List<InstanceMonitorData> monitorData;
+		private string requestId;
 
-		public List<InstanceMonitorData> MonitorData
+		private List<DescribeInstanceMonitorData_InstanceMonitorData> monitorData;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeInstanceMonitorData_InstanceMonitorData> MonitorData
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class InstanceMonitorData{
+		public class DescribeInstanceMonitorData_InstanceMonitorData
+		{
 
 			private string instanceId;
 
@@ -63,6 +78,14 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private int? bPSRead;
 
 			private int? bPSWrite;
+
+			private float? cPUCreditUsage;
+
+			private float? cPUCreditBalance;
+
+			private float? cPUAdvanceCreditBalance;
+
+			private float? cPUNotpaidSurplusCreditUsage;
 
 			private string timeStamp;
 
@@ -207,6 +230,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					bPSWrite = value;
+				}
+			}
+
+			public float? CPUCreditUsage
+			{
+				get
+				{
+					return cPUCreditUsage;
+				}
+				set	
+				{
+					cPUCreditUsage = value;
+				}
+			}
+
+			public float? CPUCreditBalance
+			{
+				get
+				{
+					return cPUCreditBalance;
+				}
+				set	
+				{
+					cPUCreditBalance = value;
+				}
+			}
+
+			public float? CPUAdvanceCreditBalance
+			{
+				get
+				{
+					return cPUAdvanceCreditBalance;
+				}
+				set	
+				{
+					cPUAdvanceCreditBalance = value;
+				}
+			}
+
+			public float? CPUNotpaidSurplusCreditUsage
+			{
+				get
+				{
+					return cPUNotpaidSurplusCreditUsage;
+				}
+				set	
+				{
+					cPUNotpaidSurplusCreditUsage = value;
 				}
 			}
 

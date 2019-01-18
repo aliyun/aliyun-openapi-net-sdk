@@ -33,30 +33,21 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
-
 		private string securityToken;
 
 		private string domainName;
 
-		private string cacheContent;
-
-		private string tTL;
+		private string action;
 
 		private string weight;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string cacheContent;
+
+		private long? ownerId;
+
+		private string tTL;
+
+		private string accessKeyId;
 
 		public string SecurityToken
 		{
@@ -84,6 +75,32 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Weight
+		{
+			get
+			{
+				return weight;
+			}
+			set	
+			{
+				weight = value;
+				DictionaryUtil.Add(QueryParameters, "Weight", value);
+			}
+		}
+
 		public string CacheContent
 		{
 			get
@@ -94,6 +111,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				cacheContent = value;
 				DictionaryUtil.Add(QueryParameters, "CacheContent", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -110,16 +140,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Weight
+		public string AccessKeyId
 		{
 			get
 			{
-				return weight;
+				return accessKeyId;
 			}
 			set	
 			{
-				weight = value;
-				DictionaryUtil.Add(QueryParameters, "Weight", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

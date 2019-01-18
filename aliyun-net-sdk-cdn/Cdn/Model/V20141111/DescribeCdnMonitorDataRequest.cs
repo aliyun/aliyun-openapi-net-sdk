@@ -33,41 +33,41 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string startTime;
 
-		private string securityToken;
+		private string action;
 
 		private string domainName;
 
-		private string startTime;
-
 		private string endTime;
+
+		private long? ownerId;
 
 		private string interval;
 
-		public long? OwnerId
+		public string StartTime
 		{
 			get
 			{
-				return ownerId;
+				return startTime;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string SecurityToken
+		public string Action
 		{
 			get
 			{
-				return securityToken;
+				return action;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -84,19 +84,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
 		public string EndTime
 		{
 			get
@@ -107,6 +94,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

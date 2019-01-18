@@ -29,36 +29,55 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class QueryMediaListRequest : RpcAcsRequest<QueryMediaListResponse>
     {
         public QueryMediaListRequest()
-            : base("Mts", "2014-06-18", "QueryMediaList")
+            : base("Mts", "2014-06-18", "QueryMediaList", "mts", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
+
+		private bool? includeSummaryList;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
-		private string mediaIds;
-
-		private bool? includePlayList;
-
 		private bool? includeSnapshotList;
-
-		private bool? includeMediaInfo;
 
 		private string ownerAccount;
 
-		public long? OwnerId
+		private string action;
+
+		private string mediaIds;
+
+		private long? ownerId;
+
+		private bool? includePlayList;
+
+		private string accessKeyId;
+
+		private bool? includeMediaInfo;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? IncludeSummaryList
+		{
+			get
+			{
+				return includeSummaryList;
+			}
+			set	
+			{
+				includeSummaryList = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeSummaryList", value.ToString());
 			}
 		}
 
@@ -75,16 +94,42 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public long? ResourceOwnerId
+		public bool? IncludeSnapshotList
 		{
 			get
 			{
-				return resourceOwnerId;
+				return includeSnapshotList;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				includeSnapshotList = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeSnapshotList", value.ToString());
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -101,6 +146,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public bool? IncludePlayList
 		{
 			get
@@ -114,16 +172,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public bool? IncludeSnapshotList
+		public string AccessKeyId
 		{
 			get
 			{
-				return includeSnapshotList;
+				return accessKeyId;
 			}
 			set	
 			{
-				includeSnapshotList = value;
-				DictionaryUtil.Add(QueryParameters, "IncludeSnapshotList", value.ToString());
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -137,19 +195,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				includeMediaInfo = value;
 				DictionaryUtil.Add(QueryParameters, "IncludeMediaInfo", value.ToString());
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 

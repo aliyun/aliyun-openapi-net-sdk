@@ -29,65 +29,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class AddTagsRequest : RpcAcsRequest<AddTagsResponse>
     {
         public AddTagsRequest()
-            : base("Ecs", "2014-05-26", "AddTags")
+            : base("Ecs", "2014-05-26", "AddTags", "ecs", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
-
-		private string resourceType;
 
 		private string resourceId;
 
-		private string tag1Key;
+		private string resourceOwnerAccount;
 
-		private string tag2Key;
+		private string regionId;
 
-		private string tag3Key;
+		private string action;
 
-		private string tag4Key;
+		private List<Tag> tags;
 
-		private string tag5Key;
+		private long? ownerId;
 
-		private string tag1Value;
-
-		private string tag2Value;
-
-		private string tag3Value;
-
-		private string tag4Value;
-
-		private string tag5Value;
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string resourceType;
 
 		public long? ResourceOwnerId
 		{
@@ -99,19 +59,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -128,133 +75,118 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag1Key
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return tag1Key;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				tag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string Tag2Key
+		public string RegionId
 		{
 			get
 			{
-				return tag2Key;
+				return regionId;
 			}
 			set	
 			{
-				tag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Key", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
-		public string Tag3Key
+		public string Action
 		{
 			get
 			{
-				return tag3Key;
+				return action;
 			}
 			set	
 			{
-				tag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Key", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string Tag4Key
+		public List<Tag> Tags
 		{
 			get
 			{
-				return tag4Key;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				tag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Key", value);
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 
-		public string Tag5Key
+		public long? OwnerId
 		{
 			get
 			{
-				return tag5Key;
+				return ownerId;
 			}
 			set	
 			{
-				tag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Key", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string Tag1Value
+		public string ResourceType
 		{
 			get
 			{
-				return tag1Value;
+				return resourceType;
 			}
 			set	
 			{
-				tag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string Tag2Value
+		public class Tag
 		{
-			get
-			{
-				return tag2Value;
-			}
-			set	
-			{
-				tag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Value", value);
-			}
-		}
 
-		public string Tag3Value
-		{
-			get
-			{
-				return tag3Value;
-			}
-			set	
-			{
-				tag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Value", value);
-			}
-		}
+			private string value_;
 
-		public string Tag4Value
-		{
-			get
-			{
-				return tag4Value;
-			}
-			set	
-			{
-				tag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Value", value);
-			}
-		}
+			private string key;
 
-		public string Tag5Value
-		{
-			get
+			public string Value
 			{
-				return tag5Value;
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
-			set	
+
+			public string Key
 			{
-				tag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Value", value);
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

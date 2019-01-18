@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeClustersResponse : AcsResponse
 	{
 
-		private List<Cluster> clusters;
+		private string requestId;
 
-		public List<Cluster> Clusters
+		private List<DescribeClusters_Cluster> clusters;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeClusters_Cluster> Clusters
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Cluster{
+		public class DescribeClusters_Cluster
+		{
 
 			private string clusterId;
 

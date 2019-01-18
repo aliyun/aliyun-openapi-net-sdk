@@ -20,37 +20,41 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vod.Transform;
-using Aliyun.Acs.Vod.Transform.V20170321;
+using Aliyun.Acs.vod.Transform;
+using Aliyun.Acs.vod.Transform.V20170321;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Model.V20170321
+namespace Aliyun.Acs.vod.Model.V20170321
 {
     public class GetVideoInfoRequest : RpcAcsRequest<GetVideoInfoResponse>
     {
         public GetVideoInfoRequest()
-            : base("vod", "2017-03-21", "GetVideoInfo")
+            : base("vod", "2017-03-21", "GetVideoInfo", "vod", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
+		private string action;
 
 		private string videoId;
 
-		public long? OwnerId
+		private string resultTypes;
+
+		private long? ownerId;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -67,16 +71,16 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string Action
 		{
 			get
 			{
-				return resourceOwnerId;
+				return action;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -90,6 +94,32 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				videoId = value;
 				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+			}
+		}
+
+		public string ResultTypes
+		{
+			get
+			{
+				return resultTypes;
+			}
+			set	
+			{
+				resultTypes = value;
+				DictionaryUtil.Add(QueryParameters, "ResultTypes", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

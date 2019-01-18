@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vod.Model.V20170321;
+using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Transform.V20170321
+namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class RefreshUploadVideoResponseUnmarshaller
     {
@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Vod.Transform.V20170321
 			refreshUploadVideoResponse.HttpResponse = context.HttpResponse;
 			refreshUploadVideoResponse.RequestId = context.StringValue("RefreshUploadVideo.RequestId");
 			refreshUploadVideoResponse.UploadAuth = context.StringValue("RefreshUploadVideo.UploadAuth");
+			refreshUploadVideoResponse.UploadAddress = context.StringValue("RefreshUploadVideo.UploadAddress");
+			refreshUploadVideoResponse.VideoId = context.StringValue("RefreshUploadVideo.VideoId");
         
 			return refreshUploadVideoResponse;
         }

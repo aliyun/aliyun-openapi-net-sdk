@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeVServerGroupsResponse : AcsResponse
 	{
 
-		private List<VServerGroup> vServerGroups;
+		private string requestId;
 
-		public List<VServerGroup> VServerGroups
+		private List<DescribeVServerGroups_VServerGroup> vServerGroups;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeVServerGroups_VServerGroup> VServerGroups
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class VServerGroup{
+		public class DescribeVServerGroups_VServerGroup
+		{
 
 			private string vServerGroupId;
 

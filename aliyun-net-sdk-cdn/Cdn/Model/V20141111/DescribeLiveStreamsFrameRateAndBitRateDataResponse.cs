@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeLiveStreamsFrameRateAndBitRateDataResponse : AcsResponse
 	{
 
-		private List<FrameRateAndBitRateInfo> frameRateAndBitRateInfos;
+		private string requestId;
 
-		public List<FrameRateAndBitRateInfo> FrameRateAndBitRateInfos
+		private List<DescribeLiveStreamsFrameRateAndBitRateData_FrameRateAndBitRateInfo> frameRateAndBitRateInfos;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeLiveStreamsFrameRateAndBitRateData_FrameRateAndBitRateInfo> FrameRateAndBitRateInfos
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class FrameRateAndBitRateInfo{
+		public class DescribeLiveStreamsFrameRateAndBitRateData_FrameRateAndBitRateInfo
+		{
 
 			private string streamUrl;
 

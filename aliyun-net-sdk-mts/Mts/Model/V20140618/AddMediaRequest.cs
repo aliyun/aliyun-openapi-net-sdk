@@ -29,44 +29,52 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class AddMediaRequest : RpcAcsRequest<AddMediaResponse>
     {
         public AddMediaRequest()
-            : base("Mts", "2014-06-18", "AddMedia")
+            : base("Mts", "2014-06-18", "AddMedia", "mts", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
-		private string fileURL;
-
-		private string title;
+		private string ownerAccount;
 
 		private string description;
 
-		private string coverURL;
+		private string overrideParams;
+
+		private long? ownerId;
+
+		private string title;
+
+		private bool? inputUnbind;
+
+		private string accessKeyId;
 
 		private string tags;
+
+		private string coverURL;
+
+		private long? cateId;
+
+		private string action;
+
+		private string fileURL;
 
 		private string mediaWorkflowId;
 
 		private string mediaWorkflowUserData;
 
-		private long? cateId;
-
-		private string ownerAccount;
-
-		public long? OwnerId
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -83,42 +91,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string OwnerAccount
 		{
 			get
 			{
-				return resourceOwnerId;
+				return ownerAccount;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string FileURL
-		{
-			get
-			{
-				return fileURL;
-			}
-			set	
-			{
-				fileURL = value;
-				DictionaryUtil.Add(QueryParameters, "FileURL", value);
-			}
-		}
-
-		public string Title
-		{
-			get
-			{
-				return title;
-			}
-			set	
-			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -135,16 +117,68 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string CoverURL
+		public string OverrideParams
 		{
 			get
 			{
-				return coverURL;
+				return overrideParams;
 			}
 			set	
 			{
-				coverURL = value;
-				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
+				overrideParams = value;
+				DictionaryUtil.Add(QueryParameters, "OverrideParams", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Title
+		{
+			get
+			{
+				return title;
+			}
+			set	
+			{
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		public bool? InputUnbind
+		{
+			get
+			{
+				return inputUnbind;
+			}
+			set	
+			{
+				inputUnbind = value;
+				DictionaryUtil.Add(QueryParameters, "InputUnbind", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -158,6 +192,58 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string CoverURL
+		{
+			get
+			{
+				return coverURL;
+			}
+			set	
+			{
+				coverURL = value;
+				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
+			}
+		}
+
+		public long? CateId
+		{
+			get
+			{
+				return cateId;
+			}
+			set	
+			{
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string FileURL
+		{
+			get
+			{
+				return fileURL;
+			}
+			set	
+			{
+				fileURL = value;
+				DictionaryUtil.Add(QueryParameters, "FileURL", value);
 			}
 		}
 
@@ -184,32 +270,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				mediaWorkflowUserData = value;
 				DictionaryUtil.Add(QueryParameters, "MediaWorkflowUserData", value);
-			}
-		}
-
-		public long? CateId
-		{
-			get
-			{
-				return cateId;
-			}
-			set	
-			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 

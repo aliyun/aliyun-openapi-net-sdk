@@ -29,41 +29,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeZonesRequest : RpcAcsRequest<DescribeZonesResponse>
     {
         public DescribeZonesRequest()
-            : base("Ecs", "2014-05-26", "DescribeZones")
+            : base("Ecs", "2014-05-26", "DescribeZones", "ecs", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string spotStrategy;
 
 		private long? resourceOwnerId;
 
+		private string resourceOwnerAccount;
+
+		private string regionId;
+
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string action;
 
-		public string ResourceOwnerAccount
+		private long? ownerId;
+
+		private string instanceChargeType;
+
+		private bool? verbose;
+
+		public string SpotStrategy
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return spotStrategy;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				spotStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
 			}
 		}
 
@@ -80,6 +77,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -90,6 +113,58 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+			}
+		}
+
+		public bool? Verbose
+		{
+			get
+			{
+				return verbose;
+			}
+			set	
+			{
+				verbose = value;
+				DictionaryUtil.Add(QueryParameters, "Verbose", value.ToString());
 			}
 		}
 

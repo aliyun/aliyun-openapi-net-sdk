@@ -1,0 +1,6 @@
+2019-01-16 Version: 4.8.0
+1, The plugin feature is released and supports a variety of plugins, as follows:trafficControl、backendSignature、ipControl、jwtAuth、cors、caching
+
+2017-08-18 Version: 4.3.0
+1, API网关支持入参透传，RequestConfig中增加RequestMode参数，此参数不填默认为MAPPING(入参映射)。
+

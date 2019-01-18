@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateVpcResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string vpcId;
 
 		private string vRouterId;
 
 		private string routeTableId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string VpcId
 		{

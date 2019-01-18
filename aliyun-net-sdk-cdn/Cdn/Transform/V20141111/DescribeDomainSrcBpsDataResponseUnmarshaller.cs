@@ -32,19 +32,19 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainSrcBpsDataResponse.HttpResponse = context.HttpResponse;
 			describeDomainSrcBpsDataResponse.RequestId = context.StringValue("DescribeDomainSrcBpsData.RequestId");
 			describeDomainSrcBpsDataResponse.DomainName = context.StringValue("DescribeDomainSrcBpsData.DomainName");
-			describeDomainSrcBpsDataResponse.DataInterval = context.StringValue("DescribeDomainSrcBpsData.DataInterval");
 			describeDomainSrcBpsDataResponse.StartTime = context.StringValue("DescribeDomainSrcBpsData.StartTime");
 			describeDomainSrcBpsDataResponse.EndTime = context.StringValue("DescribeDomainSrcBpsData.EndTime");
+			describeDomainSrcBpsDataResponse.DataInterval = context.StringValue("DescribeDomainSrcBpsData.DataInterval");
 
-			List<DescribeDomainSrcBpsDataResponse.DataModule> srcBpsDataPerInterval = new List<DescribeDomainSrcBpsDataResponse.DataModule>();
+			List<DescribeDomainSrcBpsDataResponse.DescribeDomainSrcBpsData_DataModule> describeDomainSrcBpsDataResponse_srcBpsDataPerInterval = new List<DescribeDomainSrcBpsDataResponse.DescribeDomainSrcBpsData_DataModule>();
 			for (int i = 0; i < context.Length("DescribeDomainSrcBpsData.SrcBpsDataPerInterval.Length"); i++) {
-				DescribeDomainSrcBpsDataResponse.DataModule dataModule = new DescribeDomainSrcBpsDataResponse.DataModule();
+				DescribeDomainSrcBpsDataResponse.DescribeDomainSrcBpsData_DataModule dataModule = new DescribeDomainSrcBpsDataResponse.DescribeDomainSrcBpsData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeDomainSrcBpsData.SrcBpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule.Value = context.StringValue("DescribeDomainSrcBpsData.SrcBpsDataPerInterval["+ i +"].Value");
+				dataModule._Value = context.StringValue("DescribeDomainSrcBpsData.SrcBpsDataPerInterval["+ i +"].Value");
 
-				srcBpsDataPerInterval.Add(dataModule);
+				describeDomainSrcBpsDataResponse_srcBpsDataPerInterval.Add(dataModule);
 			}
-			describeDomainSrcBpsDataResponse.SrcBpsDataPerInterval = srcBpsDataPerInterval;
+			describeDomainSrcBpsDataResponse.SrcBpsDataPerInterval = describeDomainSrcBpsDataResponse_srcBpsDataPerInterval;
         
 			return describeDomainSrcBpsDataResponse;
         }

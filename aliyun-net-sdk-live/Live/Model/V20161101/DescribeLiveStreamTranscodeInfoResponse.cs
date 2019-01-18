@@ -19,14 +19,28 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveStreamTranscodeInfoResponse : AcsResponse
 	{
 
-		private List<DomainTranscodeInfo> domainTranscodeList;
+		private string requestId;
 
-		public List<DomainTranscodeInfo> DomainTranscodeList
+		private List<DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> domainTranscodeList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> DomainTranscodeList
 		{
 			get
 			{
@@ -38,13 +52,16 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class DomainTranscodeInfo{
+		public class DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo
+		{
 
 			private string transcodeApp;
 
 			private string transcodeName;
 
 			private string transcodeTemplate;
+
+			private DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters customTranscodeParameters;
 
 			public string TranscodeApp
 			{
@@ -79,6 +96,92 @@ namespace Aliyun.Acs.Live.Model.V20161101
 				set	
 				{
 					transcodeTemplate = value;
+				}
+			}
+
+			public DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters CustomTranscodeParameters
+			{
+				get
+				{
+					return customTranscodeParameters;
+				}
+				set	
+				{
+					customTranscodeParameters = value;
+				}
+			}
+
+			public class DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters
+			{
+
+				private int? videoBitrate;
+
+				private int? fPS;
+
+				private int? height;
+
+				private int? width;
+
+				private string templateType;
+
+				public int? VideoBitrate
+				{
+					get
+					{
+						return videoBitrate;
+					}
+					set	
+					{
+						videoBitrate = value;
+					}
+				}
+
+				public int? FPS
+				{
+					get
+					{
+						return fPS;
+					}
+					set	
+					{
+						fPS = value;
+					}
+				}
+
+				public int? Height
+				{
+					get
+					{
+						return height;
+					}
+					set	
+					{
+						height = value;
+					}
+				}
+
+				public int? Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
+					}
+				}
+
+				public string TemplateType
+				{
+					get
+					{
+						return templateType;
+					}
+					set	
+					{
+						templateType = value;
+					}
 				}
 			}
 		}

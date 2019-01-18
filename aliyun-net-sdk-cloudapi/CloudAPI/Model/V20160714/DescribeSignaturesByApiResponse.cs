@@ -24,9 +24,23 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeSignaturesByApiResponse : AcsResponse
 	{
 
-		private List<SignatureItem> signatures;
+		private string requestId;
 
-		public List<SignatureItem> Signatures
+		private List<DescribeSignaturesByApi_SignatureItem> signatures;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeSignaturesByApi_SignatureItem> Signatures
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class SignatureItem{
+		public class DescribeSignaturesByApi_SignatureItem
+		{
 
 			private string signatureId;
 

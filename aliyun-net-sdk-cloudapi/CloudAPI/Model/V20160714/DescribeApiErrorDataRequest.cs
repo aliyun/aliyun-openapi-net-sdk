@@ -29,28 +29,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeApiErrorDataRequest : RpcAcsRequest<DescribeApiErrorDataResponse>
     {
         public DescribeApiErrorDataRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeApiErrorData")
+            : base("CloudAPI", "2016-07-14", "DescribeApiErrorData", "apigateway", "openAPI")
         {
         }
 
-		private string apiId;
+		private string securityToken;
 
 		private string groupId;
 
-		private string startTime;
-
 		private string endTime;
 
-		public string ApiId
+		private string startTime;
+
+		private string apiId;
+
+		private string accessKeyId;
+
+		public string SecurityToken
 		{
 			get
 			{
-				return apiId;
+				return securityToken;
 			}
 			set	
 			{
-				apiId = value;
-				DictionaryUtil.Add(QueryParameters, "ApiId", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -67,6 +71,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
 		public string StartTime
 		{
 			get
@@ -80,16 +97,29 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string EndTime
+		public string ApiId
 		{
 			get
 			{
-				return endTime;
+				return apiId;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				apiId = value;
+				DictionaryUtil.Add(QueryParameters, "ApiId", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

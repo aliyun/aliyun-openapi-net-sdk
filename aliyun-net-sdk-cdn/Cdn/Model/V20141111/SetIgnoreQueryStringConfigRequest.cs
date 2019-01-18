@@ -33,26 +33,45 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
-
-		private string securityToken;
-
-		private string domainName;
-
-		private string enable;
+		private string keepOssArgs;
 
 		private string hashKeyArgs;
 
-		public long? OwnerId
+		private string securityToken;
+
+		private string enable;
+
+		private string domainName;
+
+		private string action;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public string KeepOssArgs
 		{
 			get
 			{
-				return ownerId;
+				return keepOssArgs;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				keepOssArgs = value;
+				DictionaryUtil.Add(QueryParameters, "KeepOssArgs", value);
+			}
+		}
+
+		public string HashKeyArgs
+		{
+			get
+			{
+				return hashKeyArgs;
+			}
+			set	
+			{
+				hashKeyArgs = value;
+				DictionaryUtil.Add(QueryParameters, "HashKeyArgs", value);
 			}
 		}
 
@@ -69,19 +88,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
 		public string Enable
 		{
 			get
@@ -95,16 +101,55 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string HashKeyArgs
+		public string DomainName
 		{
 			get
 			{
-				return hashKeyArgs;
+				return domainName;
 			}
 			set	
 			{
-				hashKeyArgs = value;
-				DictionaryUtil.Add(QueryParameters, "HashKeyArgs", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

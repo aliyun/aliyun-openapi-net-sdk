@@ -20,24 +20,32 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class DescribeLiveStreamsBlockListRequest : RpcAcsRequest<DescribeLiveStreamsBlockListResponse>
     {
         public DescribeLiveStreamsBlockListRequest()
-            : base("Live", "2016-11-01", "DescribeLiveStreamsBlockList")
+            : base("live", "2016-11-01", "DescribeLiveStreamsBlockList", "live", "openAPI")
         {
         }
 
 		private string securityToken;
 
+		private string domainName;
+
+		private int? pageSize;
+
+		private string action;
+
 		private long? ownerId;
 
-		private string domainName;
+		private int? pageNum;
+
+		private string accessKeyId;
 
 		public string SecurityToken
 		{
@@ -49,6 +57,45 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -65,16 +112,29 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string DomainName
+		public int? PageNum
 		{
 			get
 			{
-				return domainName;
+				return pageNum;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

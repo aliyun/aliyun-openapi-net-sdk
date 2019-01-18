@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeLoadBalancerHTTPSListenerAttributeResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? listenerPort;
 
 		private int? backendServerPort;
@@ -71,6 +73,38 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private int? maxConnection;
 
 		private string vServerGroupId;
+
+		private string gzip;
+
+		private string xForwardedFor_SLBIP;
+
+		private string xForwardedFor_SLBID;
+
+		private string xForwardedFor_proto;
+
+		private string aclId;
+
+		private string aclType;
+
+		private string aclStatus;
+
+		private string vpcIds;
+
+		private int? requestTimeout;
+
+		private int? idleTimeout;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? ListenerPort
 		{
@@ -357,6 +391,126 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				vServerGroupId = value;
+			}
+		}
+
+		public string Gzip
+		{
+			get
+			{
+				return gzip;
+			}
+			set	
+			{
+				gzip = value;
+			}
+		}
+
+		public string XForwardedFor_SLBIP
+		{
+			get
+			{
+				return xForwardedFor_SLBIP;
+			}
+			set	
+			{
+				xForwardedFor_SLBIP = value;
+			}
+		}
+
+		public string XForwardedFor_SLBID
+		{
+			get
+			{
+				return xForwardedFor_SLBID;
+			}
+			set	
+			{
+				xForwardedFor_SLBID = value;
+			}
+		}
+
+		public string XForwardedFor_proto
+		{
+			get
+			{
+				return xForwardedFor_proto;
+			}
+			set	
+			{
+				xForwardedFor_proto = value;
+			}
+		}
+
+		public string AclId
+		{
+			get
+			{
+				return aclId;
+			}
+			set	
+			{
+				aclId = value;
+			}
+		}
+
+		public string AclType
+		{
+			get
+			{
+				return aclType;
+			}
+			set	
+			{
+				aclType = value;
+			}
+		}
+
+		public string AclStatus
+		{
+			get
+			{
+				return aclStatus;
+			}
+			set	
+			{
+				aclStatus = value;
+			}
+		}
+
+		public string VpcIds
+		{
+			get
+			{
+				return vpcIds;
+			}
+			set	
+			{
+				vpcIds = value;
+			}
+		}
+
+		public int? RequestTimeout
+		{
+			get
+			{
+				return requestTimeout;
+			}
+			set	
+			{
+				requestTimeout = value;
+			}
+		}
+
+		public int? IdleTimeout
+		{
+			get
+			{
+				return idleTimeout;
+			}
+			set	
+			{
+				idleTimeout = value;
 			}
 		}
 	}

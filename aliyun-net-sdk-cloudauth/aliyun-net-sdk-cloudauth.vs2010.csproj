@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{d573f325-c6a4-4c1a-aab9-6cadf88104fe}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-cloudauth</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Cloudauth\Model\V20180916\SubmitMaterialsResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\CompareFacesRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\GetMaterialsRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\GetVerifyTokenRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\CompareFacesResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\SubmitVerificationRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\DetectFaceAttributesRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\SubmitMaterialsRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\GetStatusResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\SubmitVerificationResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\GetVerifyTokenResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\GetStatusRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\GetMaterialsResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\DetectFaceAttributesResponse.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\SubmitMaterialsResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\CompareFacesResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\GetStatusResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\SubmitVerificationResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\GetMaterialsResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\GetVerifyTokenResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\DetectFaceAttributesResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeRegionsResponse : AcsResponse
 	{
 
-		private List<Region> regions;
+		private string requestId;
 
-		public List<Region> Regions
+		private List<DescribeRegions_Region> regions;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeRegions_Region> Regions
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class Region{
+		public class DescribeRegions_Region
+		{
 
 			private string regionId;
 

@@ -50,6 +50,12 @@ namespace Aliyun.Acs.Dm.Model.V20151123
 
 		private string tagName;
 
+		private string replyAddress;
+
+		private string replyAddressAlias;
+
+		private string clickTrace;
+
 		public long? OwnerId
 		{
 			get
@@ -151,6 +157,45 @@ namespace Aliyun.Acs.Dm.Model.V20151123
 			{
 				tagName = value;
 				DictionaryUtil.Add(QueryParameters, "TagName", value);
+			}
+		}
+
+		public string ReplyAddress
+		{
+			get
+			{
+				return replyAddress;
+			}
+			set	
+			{
+				replyAddress = value;
+				DictionaryUtil.Add(QueryParameters, "ReplyAddress", value);
+			}
+		}
+
+		public string ReplyAddressAlias
+		{
+			get
+			{
+				return replyAddressAlias;
+			}
+			set	
+			{
+				replyAddressAlias = value;
+				DictionaryUtil.Add(QueryParameters, "ReplyAddressAlias", value);
+			}
+		}
+
+		public string ClickTrace
+		{
+			get
+			{
+				return clickTrace;
+			}
+			set	
+			{
+				clickTrace = value;
+				DictionaryUtil.Add(QueryParameters, "ClickTrace", value);
 			}
 		}
 

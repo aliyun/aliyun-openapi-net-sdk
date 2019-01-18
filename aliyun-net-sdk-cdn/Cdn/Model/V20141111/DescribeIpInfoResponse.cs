@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeIpInfoResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string cdnIp;
 
 		private string iSP;
@@ -33,6 +35,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 		private string region;
 
 		private string regionEname;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string CdnIp
 		{

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeZonesResponse : AcsResponse
 	{
 
-		private List<Zone> zones;
+		private string requestId;
 
-		public List<Zone> Zones
+		private List<DescribeZones_Zone> zones;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeZones_Zone> Zones
 		{
 			get
 			{
@@ -38,19 +52,26 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Zone{
+		public class DescribeZones_Zone
+		{
 
 			private string zoneId;
 
 			private string localName;
 
-			private List<ResourcesInfo> availableResources;
+			private List<DescribeZones_ResourcesInfo> availableResources;
 
 			private List<string> availableResourceCreation;
 
 			private List<string> availableDiskCategories;
 
 			private List<string> availableInstanceTypes;
+
+			private List<string> availableVolumeCategories;
+
+			private List<string> availableDedicatedHostTypes;
+
+			private List<string> dedicatedHostGenerations;
 
 			public string ZoneId
 			{
@@ -76,7 +97,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<ResourcesInfo> AvailableResources
+			public List<DescribeZones_ResourcesInfo> AvailableResources
 			{
 				get
 				{
@@ -124,7 +145,44 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class ResourcesInfo{
+			public List<string> AvailableVolumeCategories
+			{
+				get
+				{
+					return availableVolumeCategories;
+				}
+				set	
+				{
+					availableVolumeCategories = value;
+				}
+			}
+
+			public List<string> AvailableDedicatedHostTypes
+			{
+				get
+				{
+					return availableDedicatedHostTypes;
+				}
+				set	
+				{
+					availableDedicatedHostTypes = value;
+				}
+			}
+
+			public List<string> DedicatedHostGenerations
+			{
+				get
+				{
+					return dedicatedHostGenerations;
+				}
+				set	
+				{
+					dedicatedHostGenerations = value;
+				}
+			}
+
+			public class DescribeZones_ResourcesInfo
+			{
 
 				private bool? ioOptimized;
 

@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Core.Http
         public FormatType? ContentType { get; set; }
         public byte[] Content { get; set; }
         public String Encoding { get; set; }
+        private int timeoutInMilliSeconds = 100000; // Default 100 Seconds
 
         public HttpRequest() { }
 
@@ -62,19 +63,29 @@ namespace Aliyun.Acs.Core.Http
                 return;
             }
             String contentLen = content.Length.ToString();
-            String strMd5 = ParameterHelper.Md5Sum(content);
+            String strMd5 = ParameterHelper.Md5SumAndBase64(content);
             FormatType? type = FormatType.RAW;
             if (null != format)
             {
                 ContentType = format;
                 type = format;
             }
+
+            this.Headers.Remove("Content-MD5");
+            this.Headers.Remove("Content-Length");
+            this.Headers.Remove("Content-Type");
             this.Headers.Add("Content-MD5", strMd5);
             this.Headers.Add("Content-Length", contentLen);
             this.Headers.Add("Content-Type", ParameterHelper.FormatTypeToString(type));
 
             this.Content = content;
             this.Encoding = encoding;
+        }
+
+        public int TimeoutInMilliSeconds
+        {
+            get { return timeoutInMilliSeconds; }
+            set { timeoutInMilliSeconds = value; }
         }
     }
 }

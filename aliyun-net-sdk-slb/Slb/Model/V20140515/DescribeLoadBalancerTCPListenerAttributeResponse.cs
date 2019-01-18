@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeLoadBalancerTCPListenerAttributeResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? listenerPort;
 
 		private int? backendServerPort;
@@ -37,6 +39,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string synProxy;
 
 		private int? persistenceTimeout;
+
+		private int? establishedTimeout;
 
 		private string healthCheck;
 
@@ -61,6 +65,28 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private int? maxConnection;
 
 		private string vServerGroupId;
+
+		private string masterSlaveServerGroupId;
+
+		private string aclId;
+
+		private string aclType;
+
+		private string aclStatus;
+
+		private string vpcIds;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? ListenerPort
 		{
@@ -143,6 +169,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				persistenceTimeout = value;
+			}
+		}
+
+		public int? EstablishedTimeout
+		{
+			get
+			{
+				return establishedTimeout;
+			}
+			set	
+			{
+				establishedTimeout = value;
 			}
 		}
 
@@ -287,6 +325,66 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				vServerGroupId = value;
+			}
+		}
+
+		public string MasterSlaveServerGroupId
+		{
+			get
+			{
+				return masterSlaveServerGroupId;
+			}
+			set	
+			{
+				masterSlaveServerGroupId = value;
+			}
+		}
+
+		public string AclId
+		{
+			get
+			{
+				return aclId;
+			}
+			set	
+			{
+				aclId = value;
+			}
+		}
+
+		public string AclType
+		{
+			get
+			{
+				return aclType;
+			}
+			set	
+			{
+				aclType = value;
+			}
+		}
+
+		public string AclStatus
+		{
+			get
+			{
+				return aclStatus;
+			}
+			set	
+			{
+				aclStatus = value;
+			}
+		}
+
+		public string VpcIds
+		{
+			get
+			{
+				return vpcIds;
+			}
+			set	
+			{
+				vpcIds = value;
 			}
 		}
 	}

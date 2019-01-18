@@ -24,7 +24,21 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class RefreshObjectCachesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string refreshTaskId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string RefreshTaskId
 		{

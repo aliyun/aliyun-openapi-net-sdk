@@ -29,43 +29,40 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class SetAppsAuthoritiesRequest : RpcAcsRequest<SetAppsAuthoritiesResponse>
     {
         public SetAppsAuthoritiesRequest()
-            : base("CloudAPI", "2016-07-14", "SetAppsAuthorities")
+            : base("CloudAPI", "2016-07-14", "SetAppsAuthorities", "apigateway", "openAPI")
         {
         }
 
-		private string groupId;
-
-		private string apiId;
+		private string authVaildTime;
 
 		private string stageName;
 
 		private string appIds;
 
+		private string securityToken;
+
+		private string groupId;
+
+		private string action;
+
 		private string description;
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
+		private string apiId;
 
-		public string ApiId
+		private string authValidTime;
+
+		private string accessKeyId;
+
+		public string AuthVaildTime
 		{
 			get
 			{
-				return apiId;
+				return authVaildTime;
 			}
 			set	
 			{
-				apiId = value;
-				DictionaryUtil.Add(QueryParameters, "ApiId", value);
+				authVaildTime = value;
+				DictionaryUtil.Add(QueryParameters, "AuthVaildTime", value);
 			}
 		}
 
@@ -95,6 +92,45 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -105,6 +141,45 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string ApiId
+		{
+			get
+			{
+				return apiId;
+			}
+			set	
+			{
+				apiId = value;
+				DictionaryUtil.Add(QueryParameters, "ApiId", value);
+			}
+		}
+
+		public string AuthValidTime
+		{
+			get
+			{
+				return authValidTime;
+			}
+			set	
+			{
+				authValidTime = value;
+				DictionaryUtil.Add(QueryParameters, "AuthValidTime", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

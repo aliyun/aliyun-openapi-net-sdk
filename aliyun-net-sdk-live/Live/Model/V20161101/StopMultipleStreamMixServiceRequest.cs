@@ -20,28 +20,45 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class StopMultipleStreamMixServiceRequest : RpcAcsRequest<StopMultipleStreamMixServiceResponse>
     {
         public StopMultipleStreamMixServiceRequest()
-            : base("Live", "2016-11-01", "StopMultipleStreamMixService")
+            : base("live", "2016-11-01", "StopMultipleStreamMixService", "live", "openAPI")
         {
         }
 
-		private string securityToken;
+		private string appName;
 
-		private long? ownerId;
+		private string securityToken;
 
 		private string domainName;
 
-		private string appName;
+		private string action;
+
+		private long? ownerId;
 
 		private string streamName;
+
+		private string accessKeyId;
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
 
 		public string SecurityToken
 		{
@@ -53,19 +70,6 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -82,16 +86,29 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string AppName
+		public string Action
 		{
 			get
 			{
-				return appName;
+				return action;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -105,6 +122,19 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			{
 				streamName = value;
 				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

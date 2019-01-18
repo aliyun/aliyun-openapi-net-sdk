@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainsBySourceResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string sources;
 
-		private List<DomainsData> domainsList;
+		private List<DescribeDomainsBySource_DomainsData> domainsList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Sources
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<DomainsData> DomainsList
+		public List<DescribeDomainsBySource_DomainsData> DomainsList
 		{
 			get
 			{
@@ -52,11 +66,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class DomainsData{
+		public class DescribeDomainsBySource_DomainsData
+		{
 
 			private string source;
 
-			private List<domainInfo> domainInfos;
+			private List<DescribeDomainsBySource_DomainInfo> domainInfos;
 
 			private List<string> domains;
 
@@ -72,7 +87,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public List<domainInfo> DomainInfos
+			public List<DescribeDomainsBySource_DomainInfo> DomainInfos
 			{
 				get
 				{
@@ -96,7 +111,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public class domainInfo{
+			public class DescribeDomainsBySource_DomainInfo
+			{
 
 				private string domainName;
 

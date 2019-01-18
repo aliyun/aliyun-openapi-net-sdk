@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{a8d3ab0d-8c43-48cd-9f24-7a01e877dafa}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-vpc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Vpc\Model\V20160428\ModifySnatEntryRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVRoutersResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateVpcResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateNqaRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ReleaseEipAddressRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateCommonBandwidthPackageRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeBandwidthPackagePublicIpMonitorDataResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteVpcResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVSwitchesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteNatGatewayRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifySslVpnClientCertResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeCommonBandwidthPackagesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyBandwidthPackageSpecRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\AllocateEipAddressResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyNqaResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyForwardEntryRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteHaVipResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CancelPhysicalConnectionRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateBandwidthPackageResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeRouteTableListResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpcsRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeServerRelatedGlobalAccelerationInstancesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpcAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyCommonBandwidthPackageSpecResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateVirtualBorderRouterResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateVSwitchResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyCommonBandwidthPackageAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeNatGatewaysResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateVirtualBorderRouterRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyNatGatewaySpecRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyVirtualBorderRouterAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateVpnConnectionRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeServerRelatedGlobalAccelerationInstancesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeBandwidthPackagePublicIpMonitorDataRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVirtualBorderRoutersForPhysicalConnectionRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpcsResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeNqasResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteBandwidthPackageResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyCommonBandwidthPackageSpecRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpnGatewayRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateBgpPeerResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\AddBandwidthPackageIpsResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVRoutersRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DownloadVpnConnectionConfigResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\AssociateGlobalAccelerationInstanceResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyRouteTableAttributesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateBgpPeerRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyNatGatewayAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateVSwitchRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeEipMonitorDataRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeCustomerGatewaysRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteSslVpnClientCertResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVSwitchAttributesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\TerminateVirtualBorderRouterResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\AddCommonBandwidthPackageIpResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateSnatEntryRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateForwardEntryResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateCommonBandwidthPackageResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyVirtualBorderRouterAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteBgpNetworkRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateRouteEntryResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpcAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\AssociateEipAddressRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateVpnConnectionResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeAccessPointsResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\AssociateHaVipResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyCommonBandwidthPackagePayTypeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyHaVipAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeSslVpnClientCertsResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeRegionsResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeNewProjectEipMonitorDataResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateRouteEntryRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\AssociateHaVipRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVirtualBorderRoutersRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeactivateRouterInterfaceRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeRegionsRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyNatGatewayAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeGlobalAccelerationInstancesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteVpnConnectionResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyHaVipAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\UnassociateHaVipRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeSnatTableEntriesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyRouterInterfaceAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\AddBgpNetworkResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeForwardTablesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyBandwidthPackageSpecResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeBgpPeersResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyForwardEntryResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyEipAddressAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpnGatewaysResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\AllocateEipAddressRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\AssociatePhysicalConnectionToVirtualBorderRouterRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyGlobalAccelerationInstanceSpecRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\TerminateVirtualBorderRouterRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeRouterInterfacesForGlobalResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DownloadVpnConnectionConfigRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeSslVpnClientCertResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteSslVpnClientCertRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\RecoverVirtualBorderRouterResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateRouterInterfaceResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVSwitchesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateSslVpnClientCertRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeRouteTablesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateSslVpnClientCertResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeletePhysicalConnectionResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpnConnectionRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyVRouterAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteRouterInterfaceResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeRouterInterfacesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ReleaseEipAddressResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ConnectRouterInterfaceResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateNatGatewayResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\RemoveCommonBandwidthPackageIpRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeZonesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateGlobalAccelerationInstanceResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyVpnGatewayAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeEipAddressesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifySnatEntryResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\RemoveGlobalAccelerationInstanceIpRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\AssociatePhysicalConnectionToVirtualBorderRouterResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateForwardEntryRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateSslVpnServerResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\RemoveCommonBandwidthPackageIpResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeHaVipsResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreatePhysicalConnectionNewResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\UnassociateEipAddressRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ActivateRouterInterfaceRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteCommonBandwidthPackageRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\TerminatePhysicalConnectionResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteVirtualBorderRouterResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateVpcRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyCustomerGatewayAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyVSwitchAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DisableVpcClassicLinkResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateBgpGroupResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeRouterInterfacesForGlobalRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateCustomerGatewayRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreatePhysicalConnectionRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpnGatewaysRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyEipAddressAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeHaVipsRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteRouterInterfaceRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyNqaRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifySslVpnServerRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateSnatEntryResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\EnablePhysicalConnectionResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\RemoveGlobalAccelerationInstanceIpResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteBgpGroupResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyVpnConnectionAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeZonesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpnConnectionResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeSslVpnClientCertsRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteGlobalAccelerationInstanceResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\EnableVpcClassicLinkRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyPhysicalConnectionAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateBandwidthPackageRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteSnatEntryRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateCustomerGatewayResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeBandwidthPackagesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyVpnGatewayAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyVpcAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyCustomerGatewayAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyBandwidthPackageAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeForwardTablesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CancelPhysicalConnectionResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteRouteEntryResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\UnassociatePhysicalConnectionFromVirtualBorderRouterResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeSslVpnServersResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateBgpGroupRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteRouteEntryRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeNewProjectEipMonitorDataRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeSslVpnClientCertRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyGlobalAccelerationInstanceAttributesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteBgpPeerResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyRouteTableAttributesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyRouterInterfaceSpecRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteVSwitchRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteCommonBandwidthPackageResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteCustomerGatewayResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifySslVpnServerResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribePhysicalConnectionsRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyCommonBandwidthPackagePayTypeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyBandwidthPackageAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyVpcAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateGlobalAccelerationInstanceRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeCustomerGatewayRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\RemoveBandwidthPackageIpsRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpnConnectionsResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\AddGlobalAccelerationInstanceIpRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyGlobalAccelerationInstanceAttributesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyRouterInterfaceAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVSwitchAttributesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\AssociateEipAddressResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\MoveResourceGroupResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteVirtualBorderRouterRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeEipAddressesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpnConnectionsRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyBgpGroupAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreatePhysicalConnectionNewRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteBandwidthPackageRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpnGatewayResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\AddGlobalAccelerationInstanceIpResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeCustomerGatewayResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteNqaResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeEipMonitorDataResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteForwardEntryResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\EnableVpcClassicLinkResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeCommonBandwidthPackagesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeRouteTablesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ActivateRouterInterfaceResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateNatGatewayRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteVpnConnectionRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeGlobalAccelerationInstancesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteNqaRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyCommonBandwidthPackageAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyVRouterAttributeResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteNatGatewayResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyVpnConnectionAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeBgpPeersRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\AddCommonBandwidthPackageIpRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVirtualBorderRoutersResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteSnatEntryResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\RecoverVirtualBorderRouterRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribePhysicalConnectionsResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteVSwitchResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ConnectRouterInterfaceRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteCustomerGatewayRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifySslVpnClientCertRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\AddBgpNetworkRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteSslVpnServerRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteBgpGroupRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteVpnGatewayRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteForwardEntryRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyPhysicalConnectionAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyNatGatewaySpecResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpnConnectionLogsResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\TerminatePhysicalConnectionRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeForwardTableEntriesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteSslVpnServerResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyBgpGroupAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\UnassociateHaVipResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\RemoveBandwidthPackageIpsResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteBgpPeerRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeNqasRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreatePhysicalConnectionResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeRouterInterfacesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeSnatTableEntriesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\UnassociatePhysicalConnectionFromVirtualBorderRouterRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteVpnGatewayResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeForwardTableEntriesRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVirtualBorderRoutersForPhysicalConnectionResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DisableVpcClassicLinkRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeactivateRouterInterfaceResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeAccessPointsRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\UnassociateGlobalAccelerationInstanceRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeletePhysicalConnectionRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\UnassociateEipAddressResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeNatGatewaysRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateSslVpnServerRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyVSwitchAttributeRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeVpnConnectionLogsRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeSslVpnServersRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyGlobalAccelerationInstanceSpecResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteVpcRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeCustomerGatewaysResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeRouteTableListRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\AssociateGlobalAccelerationInstanceRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateRouterInterfaceRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\ModifyRouterInterfaceSpecResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteBgpNetworkResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteGlobalAccelerationInstanceRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DeleteHaVipRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeBgpGroupsRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\EnablePhysicalConnectionRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\MoveResourceGroupRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\UnassociateGlobalAccelerationInstanceResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeBandwidthPackagesResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateNqaResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\AddBandwidthPackageIpsRequest.cs" />
+	<Compile Include="Vpc\Model\V20160428\DescribeBgpGroupsResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateHaVipResponse.cs" />
+	<Compile Include="Vpc\Model\V20160428\CreateHaVipRequest.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeRouteTableListResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribePhysicalConnectionsResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteSnatEntryResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\UnassociateGlobalAccelerationInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\MoveResourceGroupResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\AddBgpNetworkResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteNqaResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateGlobalAccelerationInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyVSwitchAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\UnassociateEipAddressResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteVirtualBorderRouterResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeRouterInterfacesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\AddBandwidthPackageIpsResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\RemoveCommonBandwidthPackageIpResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeVpcsResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyBgpGroupAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateForwardEntryResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DisableVpcClassicLinkResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyNqaResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeVpnGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeVSwitchAttributesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyBandwidthPackageSpecResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeVirtualBorderRoutersForPhysicalConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\EnableVpcClassicLinkResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateHaVipResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreatePhysicalConnectionNewResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeBgpPeersResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateBandwidthPackageResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyCommonBandwidthPackagePayTypeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeNqasResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeEipAddressesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeVirtualBorderRoutersResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteHaVipResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeVpnConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeSnatTableEntriesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteRouterInterfaceResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeBandwidthPackagePublicIpMonitorDataResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeVRoutersResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreatePhysicalConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeSslVpnClientCertsResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyVirtualBorderRouterAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeRouteTablesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeCustomerGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeactivateRouterInterfaceResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\AssociatePhysicalConnectionToVirtualBorderRouterResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateSnatEntryResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateCustomerGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyGlobalAccelerationInstanceSpecResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteVSwitchResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeCommonBandwidthPackagesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifySslVpnClientCertResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteBandwidthPackageResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteSslVpnClientCertResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifySslVpnServerResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateNqaResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ActivateRouterInterfaceResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeletePhysicalConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeGlobalAccelerationInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\UnassociateHaVipResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateVSwitchResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateSslVpnServerResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeForwardTablesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\RemoveGlobalAccelerationInstanceIpResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyRouterInterfaceAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeCustomerGatewaysResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifySnatEntryResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteCommonBandwidthPackageResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\TerminatePhysicalConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CancelPhysicalConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeSslVpnClientCertResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyRouterInterfaceSpecResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeZonesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyHaVipAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeVpnConnectionsResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyForwardEntryResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteCustomerGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateNatGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyVRouterAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeSslVpnServersResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ConnectRouterInterfaceResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteVpnConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeBandwidthPackagesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteVpnGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyNatGatewaySpecResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\AllocateEipAddressResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeForwardTableEntriesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateSslVpnClientCertResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteBgpGroupResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteRouteEntryResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyRouteTableAttributesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\UnassociatePhysicalConnectionFromVirtualBorderRouterResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteVpcResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteNatGatewayResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeVpcAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateRouteEntryResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\AddCommonBandwidthPackageIpResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyGlobalAccelerationInstanceAttributesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeNatGatewaysResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeEipMonitorDataResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyCustomerGatewayAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeServerRelatedGlobalAccelerationInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeVpnConnectionLogsResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeRouterInterfacesForGlobalResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateRouterInterfaceResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyCommonBandwidthPackageSpecResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteGlobalAccelerationInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeBgpGroupsResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\EnablePhysicalConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateBgpPeerResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\AssociateHaVipResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyVpnConnectionAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyPhysicalConnectionAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyCommonBandwidthPackageAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyEipAddressAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeAccessPointsResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\AssociateGlobalAccelerationInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateCommonBandwidthPackageResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\AssociateEipAddressResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyVpcAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeNewProjectEipMonitorDataResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateVpnConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\AddGlobalAccelerationInstanceIpResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\RecoverVirtualBorderRouterResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeHaVipsResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ReleaseEipAddressResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DownloadVpnConnectionConfigResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteBgpNetworkResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateBgpGroupResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateVirtualBorderRouterResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyBandwidthPackageAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\RemoveBandwidthPackageIpsResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteSslVpnServerResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\TerminateVirtualBorderRouterResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeVpnGatewaysResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteBgpPeerResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DescribeVSwitchesResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyNatGatewayAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\CreateVpcResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\DeleteForwardEntryResponseUnmarshaller.cs" />
+	<Compile Include="Vpc\Transform\V20160428\ModifyVpnGatewayAttributeResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

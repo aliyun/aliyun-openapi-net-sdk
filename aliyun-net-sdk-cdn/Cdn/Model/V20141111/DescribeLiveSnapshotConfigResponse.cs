@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeLiveSnapshotConfigResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNum;
 
 		private int? pageSize;
@@ -34,7 +36,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private int? totalPage;
 
-		private List<LiveStreamSnapshotConfig> liveStreamSnapshotConfigList;
+		private List<DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig> liveStreamSnapshotConfigList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNum
 		{
@@ -96,7 +110,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<LiveStreamSnapshotConfig> LiveStreamSnapshotConfigList
+		public List<DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig> LiveStreamSnapshotConfigList
 		{
 			get
 			{
@@ -108,7 +122,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class LiveStreamSnapshotConfig{
+		public class DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig
+		{
 
 			private string domainName;
 

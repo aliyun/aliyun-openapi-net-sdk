@@ -32,18 +32,24 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeServerCertificatesResponse.HttpResponse = context.HttpResponse;
 			describeServerCertificatesResponse.RequestId = context.StringValue("DescribeServerCertificates.RequestId");
 
-			List<DescribeServerCertificatesResponse.ServerCertificate> serverCertificates = new List<DescribeServerCertificatesResponse.ServerCertificate>();
+			List<DescribeServerCertificatesResponse.DescribeServerCertificates_ServerCertificate> describeServerCertificatesResponse_serverCertificates = new List<DescribeServerCertificatesResponse.DescribeServerCertificates_ServerCertificate>();
 			for (int i = 0; i < context.Length("DescribeServerCertificates.ServerCertificates.Length"); i++) {
-				DescribeServerCertificatesResponse.ServerCertificate serverCertificate = new DescribeServerCertificatesResponse.ServerCertificate();
+				DescribeServerCertificatesResponse.DescribeServerCertificates_ServerCertificate serverCertificate = new DescribeServerCertificatesResponse.DescribeServerCertificates_ServerCertificate();
 				serverCertificate.ServerCertificateId = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].ServerCertificateId");
 				serverCertificate.Fingerprint = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].Fingerprint");
 				serverCertificate.ServerCertificateName = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].ServerCertificateName");
 				serverCertificate.RegionId = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].RegionId");
 				serverCertificate.RegionIdAlias = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].RegionIdAlias");
+				serverCertificate.AliCloudCertificateId = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].AliCloudCertificateId");
+				serverCertificate.AliCloudCertificateName = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].AliCloudCertificateName");
+				serverCertificate.IsAliCloudCertificate = context.IntegerValue("DescribeServerCertificates.ServerCertificates["+ i +"].IsAliCloudCertificate");
+				serverCertificate.ResourceGroupId = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].ResourceGroupId");
+				serverCertificate.CreateTime = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].CreateTime");
+				serverCertificate.CreateTimeStamp = context.LongValue("DescribeServerCertificates.ServerCertificates["+ i +"].CreateTimeStamp");
 
-				serverCertificates.Add(serverCertificate);
+				describeServerCertificatesResponse_serverCertificates.Add(serverCertificate);
 			}
-			describeServerCertificatesResponse.ServerCertificates = serverCertificates;
+			describeServerCertificatesResponse.ServerCertificates = describeServerCertificatesResponse_serverCertificates;
         
 			return describeServerCertificatesResponse;
         }

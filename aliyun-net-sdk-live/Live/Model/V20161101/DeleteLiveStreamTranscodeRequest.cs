@@ -20,67 +20,32 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class DeleteLiveStreamTranscodeRequest : RpcAcsRequest<DeleteLiveStreamTranscodeResponse>
     {
         public DeleteLiveStreamTranscodeRequest()
-            : base("Live", "2016-11-01", "DeleteLiveStreamTranscode")
+            : base("live", "2016-11-01", "DeleteLiveStreamTranscode", "live", "openAPI")
         {
         }
-
-		private string securityToken;
-
-		private long? ownerId;
-
-		private string domain;
 
 		private string app;
 
 		private string template;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string securityToken;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string domain;
 
-		public string Domain
-		{
-			get
-			{
-				return domain;
-			}
-			set	
-			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
-			}
-		}
+		private string action;
+
+		private long? ownerId;
+
+		private string accessKeyId;
 
 		public string App
 		{
@@ -105,6 +70,71 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			{
 				template = value;
 				DictionaryUtil.Add(QueryParameters, "Template", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

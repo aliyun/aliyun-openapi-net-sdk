@@ -29,28 +29,21 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class RemoveVpcAccessRequest : RpcAcsRequest<RemoveVpcAccessResponse>
     {
         public RemoveVpcAccessRequest()
-            : base("CloudAPI", "2016-07-14", "RemoveVpcAccess")
+            : base("CloudAPI", "2016-07-14", "RemoveVpcAccess", "apigateway", "openAPI")
         {
         }
 
-		private string vpcId;
-
 		private string instanceId;
+
+		private string securityToken;
 
 		private int? port;
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
+		private string vpcId;
+
+		private string action;
+
+		private string accessKeyId;
 
 		public string InstanceId
 		{
@@ -65,6 +58,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
 		public int? Port
 		{
 			get
@@ -75,6 +81,45 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				port = value;
 				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

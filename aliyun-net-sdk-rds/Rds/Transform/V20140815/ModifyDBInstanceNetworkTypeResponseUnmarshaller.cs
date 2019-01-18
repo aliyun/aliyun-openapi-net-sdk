@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			modifyDBInstanceNetworkTypeResponse.HttpResponse = context.HttpResponse;
 			modifyDBInstanceNetworkTypeResponse.RequestId = context.StringValue("ModifyDBInstanceNetworkType.RequestId");
+			modifyDBInstanceNetworkTypeResponse.TaskId = context.StringValue("ModifyDBInstanceNetworkType.TaskId");
         
 			return modifyDBInstanceNetworkTypeResponse;
         }

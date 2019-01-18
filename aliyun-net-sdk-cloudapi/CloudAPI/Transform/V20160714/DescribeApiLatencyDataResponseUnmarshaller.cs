@@ -32,15 +32,15 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiLatencyDataResponse.HttpResponse = context.HttpResponse;
 			describeApiLatencyDataResponse.RequestId = context.StringValue("DescribeApiLatencyData.RequestId");
 
-			List<DescribeApiLatencyDataResponse.MonitorItem> callLatencys = new List<DescribeApiLatencyDataResponse.MonitorItem>();
+			List<DescribeApiLatencyDataResponse.DescribeApiLatencyData_MonitorItem> describeApiLatencyDataResponse_callLatencys = new List<DescribeApiLatencyDataResponse.DescribeApiLatencyData_MonitorItem>();
 			for (int i = 0; i < context.Length("DescribeApiLatencyData.CallLatencys.Length"); i++) {
-				DescribeApiLatencyDataResponse.MonitorItem monitorItem = new DescribeApiLatencyDataResponse.MonitorItem();
+				DescribeApiLatencyDataResponse.DescribeApiLatencyData_MonitorItem monitorItem = new DescribeApiLatencyDataResponse.DescribeApiLatencyData_MonitorItem();
 				monitorItem.ItemTime = context.StringValue("DescribeApiLatencyData.CallLatencys["+ i +"].ItemTime");
 				monitorItem.ItemValue = context.StringValue("DescribeApiLatencyData.CallLatencys["+ i +"].ItemValue");
 
-				callLatencys.Add(monitorItem);
+				describeApiLatencyDataResponse_callLatencys.Add(monitorItem);
 			}
-			describeApiLatencyDataResponse.CallLatencys = callLatencys;
+			describeApiLatencyDataResponse.CallLatencys = describeApiLatencyDataResponse_callLatencys;
         
 			return describeApiLatencyDataResponse;
         }

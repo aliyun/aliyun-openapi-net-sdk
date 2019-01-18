@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNumber;
 
 		private int? pageSize;
 
 		private int? totalCount;
 
-		private List<VirtualBorderRouterForPhysicalConnectionType> virtualBorderRouterForPhysicalConnectionSet;
+		private List<DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType> virtualBorderRouterForPhysicalConnectionSet;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<VirtualBorderRouterForPhysicalConnectionType> VirtualBorderRouterForPhysicalConnectionSet
+		public List<DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType> VirtualBorderRouterForPhysicalConnectionSet
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class VirtualBorderRouterForPhysicalConnectionType{
+		public class DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType
+		{
 
 			private string vbrId;
 

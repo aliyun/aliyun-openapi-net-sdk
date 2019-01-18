@@ -32,11 +32,13 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			createLoadBalancerResponse.HttpResponse = context.HttpResponse;
 			createLoadBalancerResponse.RequestId = context.StringValue("CreateLoadBalancer.RequestId");
 			createLoadBalancerResponse.LoadBalancerId = context.StringValue("CreateLoadBalancer.LoadBalancerId");
+			createLoadBalancerResponse.ResourceGroupId = context.StringValue("CreateLoadBalancer.ResourceGroupId");
 			createLoadBalancerResponse.Address = context.StringValue("CreateLoadBalancer.Address");
 			createLoadBalancerResponse.LoadBalancerName = context.StringValue("CreateLoadBalancer.LoadBalancerName");
 			createLoadBalancerResponse.VpcId = context.StringValue("CreateLoadBalancer.VpcId");
 			createLoadBalancerResponse.VSwitchId = context.StringValue("CreateLoadBalancer.VSwitchId");
 			createLoadBalancerResponse.NetworkType = context.StringValue("CreateLoadBalancer.NetworkType");
+			createLoadBalancerResponse.OrderId = context.LongValue("CreateLoadBalancer.OrderId");
         
 			return createLoadBalancerResponse;
         }

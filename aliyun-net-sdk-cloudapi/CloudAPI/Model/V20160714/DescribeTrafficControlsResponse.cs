@@ -24,13 +24,27 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeTrafficControlsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private List<TrafficControl> trafficControls;
+		private List<DescribeTrafficControls_TrafficControl> trafficControls;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<TrafficControl> TrafficControls
+		public List<DescribeTrafficControls_TrafficControl> TrafficControls
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class TrafficControl{
+		public class DescribeTrafficControls_TrafficControl
+		{
 
 			private string trafficControlId;
 
@@ -100,7 +115,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private string modifiedTime;
 
-			private List<SpecialPolicy> specialPolicies;
+			private List<DescribeTrafficControls_SpecialPolicy> specialPolicies;
 
 			public string TrafficControlId
 			{
@@ -210,7 +225,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
-			public List<SpecialPolicy> SpecialPolicies
+			public List<DescribeTrafficControls_SpecialPolicy> SpecialPolicies
 			{
 				get
 				{
@@ -222,11 +237,12 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
-			public class SpecialPolicy{
+			public class DescribeTrafficControls_SpecialPolicy
+			{
 
 				private string specialType;
 
-				private List<Special> specials;
+				private List<DescribeTrafficControls_Special> specials;
 
 				public string SpecialType
 				{
@@ -240,7 +256,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 					}
 				}
 
-				public List<Special> Specials
+				public List<DescribeTrafficControls_Special> Specials
 				{
 					get
 					{
@@ -252,7 +268,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 					}
 				}
 
-				public class Special{
+				public class DescribeTrafficControls_Special
+				{
 
 					private string specialKey;
 

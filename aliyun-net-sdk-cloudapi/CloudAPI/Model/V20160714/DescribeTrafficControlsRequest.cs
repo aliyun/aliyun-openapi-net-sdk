@@ -29,23 +29,29 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeTrafficControlsRequest : RpcAcsRequest<DescribeTrafficControlsResponse>
     {
         public DescribeTrafficControlsRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeTrafficControls")
+            : base("CloudAPI", "2016-07-14", "DescribeTrafficControls", "apigateway", "openAPI")
         {
         }
 
 		private string trafficControlId;
 
-		private string groupId;
-
-		private string apiId;
-
 		private string stageName;
+
+		private string securityToken;
 
 		private string trafficControlName;
 
-		private int? pageNumber;
+		private string groupId;
 
 		private int? pageSize;
+
+		private string action;
+
+		private string apiId;
+
+		private int? pageNumber;
+
+		private string accessKeyId;
 
 		public string TrafficControlId
 		{
@@ -57,32 +63,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				trafficControlId = value;
 				DictionaryUtil.Add(QueryParameters, "TrafficControlId", value);
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public string ApiId
-		{
-			get
-			{
-				return apiId;
-			}
-			set	
-			{
-				apiId = value;
-				DictionaryUtil.Add(QueryParameters, "ApiId", value);
 			}
 		}
 
@@ -99,6 +79,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
 		public string TrafficControlName
 		{
 			get
@@ -109,6 +102,58 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				trafficControlName = value;
 				DictionaryUtil.Add(QueryParameters, "TrafficControlName", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string ApiId
+		{
+			get
+			{
+				return apiId;
+			}
+			set	
+			{
+				apiId = value;
+				DictionaryUtil.Add(QueryParameters, "ApiId", value);
 			}
 		}
 
@@ -125,16 +170,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public int? PageSize
+		public string AccessKeyId
 		{
 			get
 			{
-				return pageSize;
+				return accessKeyId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

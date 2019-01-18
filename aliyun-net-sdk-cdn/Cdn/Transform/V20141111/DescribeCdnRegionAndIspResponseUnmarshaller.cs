@@ -32,25 +32,25 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeCdnRegionAndIspResponse.HttpResponse = context.HttpResponse;
 			describeCdnRegionAndIspResponse.RequestId = context.StringValue("DescribeCdnRegionAndIsp.RequestId");
 
-			List<DescribeCdnRegionAndIspResponse.Region> regions = new List<DescribeCdnRegionAndIspResponse.Region>();
+			List<DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Region> describeCdnRegionAndIspResponse_regions = new List<DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Region>();
 			for (int i = 0; i < context.Length("DescribeCdnRegionAndIsp.Regions.Length"); i++) {
-				DescribeCdnRegionAndIspResponse.Region region = new DescribeCdnRegionAndIspResponse.Region();
+				DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Region region = new DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Region();
 				region.NameZh = context.StringValue("DescribeCdnRegionAndIsp.Regions["+ i +"].NameZh");
 				region.NameEn = context.StringValue("DescribeCdnRegionAndIsp.Regions["+ i +"].NameEn");
 
-				regions.Add(region);
+				describeCdnRegionAndIspResponse_regions.Add(region);
 			}
-			describeCdnRegionAndIspResponse.Regions = regions;
+			describeCdnRegionAndIspResponse.Regions = describeCdnRegionAndIspResponse_regions;
 
-			List<DescribeCdnRegionAndIspResponse.Isp> isps = new List<DescribeCdnRegionAndIspResponse.Isp>();
+			List<DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Isp> describeCdnRegionAndIspResponse_isps = new List<DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Isp>();
 			for (int i = 0; i < context.Length("DescribeCdnRegionAndIsp.Isps.Length"); i++) {
-				DescribeCdnRegionAndIspResponse.Isp isp = new DescribeCdnRegionAndIspResponse.Isp();
+				DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Isp isp = new DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Isp();
 				isp.NameZh = context.StringValue("DescribeCdnRegionAndIsp.Isps["+ i +"].NameZh");
 				isp.NameEn = context.StringValue("DescribeCdnRegionAndIsp.Isps["+ i +"].NameEn");
 
-				isps.Add(isp);
+				describeCdnRegionAndIspResponse_isps.Add(isp);
 			}
-			describeCdnRegionAndIspResponse.Isps = isps;
+			describeCdnRegionAndIspResponse.Isps = describeCdnRegionAndIspResponse_isps;
         
 			return describeCdnRegionAndIspResponse;
         }

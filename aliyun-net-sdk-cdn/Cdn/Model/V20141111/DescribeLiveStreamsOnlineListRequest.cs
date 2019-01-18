@@ -33,24 +33,47 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string streamType;
+
+		private string appName;
 
 		private string securityToken;
 
 		private string domainName;
 
-		private string appName;
+		private int? pageSize;
 
-		public long? OwnerId
+		private string action;
+
+		private long? ownerId;
+
+		private int? pageNum;
+
+		private string accessKeyId;
+
+		public string StreamType
 		{
 			get
 			{
-				return ownerId;
+				return streamType;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				streamType = value;
+				DictionaryUtil.Add(QueryParameters, "StreamType", value);
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -80,16 +103,68 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string AppName
+		public int? PageSize
 		{
 			get
 			{
-				return appName;
+				return pageSize;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

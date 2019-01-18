@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Live.Model.V20161101;
+using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Transform.V20161101
+namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamsOnlineListResponseUnmarshaller
     {
@@ -31,19 +31,27 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 
 			describeLiveStreamsOnlineListResponse.HttpResponse = context.HttpResponse;
 			describeLiveStreamsOnlineListResponse.RequestId = context.StringValue("DescribeLiveStreamsOnlineList.RequestId");
+			describeLiveStreamsOnlineListResponse.PageNum = context.IntegerValue("DescribeLiveStreamsOnlineList.PageNum");
+			describeLiveStreamsOnlineListResponse.PageSize = context.IntegerValue("DescribeLiveStreamsOnlineList.PageSize");
+			describeLiveStreamsOnlineListResponse.TotalNum = context.IntegerValue("DescribeLiveStreamsOnlineList.TotalNum");
+			describeLiveStreamsOnlineListResponse.TotalPage = context.IntegerValue("DescribeLiveStreamsOnlineList.TotalPage");
 
-			List<DescribeLiveStreamsOnlineListResponse.LiveStreamOnlineInfo> onlineInfo = new List<DescribeLiveStreamsOnlineListResponse.LiveStreamOnlineInfo>();
+			List<DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> describeLiveStreamsOnlineListResponse_onlineInfo = new List<DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamsOnlineList.OnlineInfo.Length"); i++) {
-				DescribeLiveStreamsOnlineListResponse.LiveStreamOnlineInfo liveStreamOnlineInfo = new DescribeLiveStreamsOnlineListResponse.LiveStreamOnlineInfo();
+				DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo liveStreamOnlineInfo = new DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo();
 				liveStreamOnlineInfo.DomainName = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].DomainName");
 				liveStreamOnlineInfo.AppName = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].AppName");
 				liveStreamOnlineInfo.StreamName = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].StreamName");
 				liveStreamOnlineInfo.PublishTime = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishTime");
 				liveStreamOnlineInfo.PublishUrl = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishUrl");
+				liveStreamOnlineInfo.PublishDomain = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishDomain");
+				liveStreamOnlineInfo.PublishType = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishType");
+				liveStreamOnlineInfo.Transcoded = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].Transcoded");
+				liveStreamOnlineInfo.TranscodeId = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].TranscodeId");
 
-				onlineInfo.Add(liveStreamOnlineInfo);
+				describeLiveStreamsOnlineListResponse_onlineInfo.Add(liveStreamOnlineInfo);
 			}
-			describeLiveStreamsOnlineListResponse.OnlineInfo = onlineInfo;
+			describeLiveStreamsOnlineListResponse.OnlineInfo = describeLiveStreamsOnlineListResponse_onlineInfo;
         
 			return describeLiveStreamsOnlineListResponse;
         }

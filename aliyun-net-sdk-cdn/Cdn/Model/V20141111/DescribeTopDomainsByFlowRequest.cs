@@ -33,41 +33,17 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
-
-		private string securityToken;
-
 		private string startTime;
-
-		private string endTime;
 
 		private long? limit;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string action;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string product;
+
+		private string endTime;
+
+		private long? ownerId;
 
 		public string StartTime
 		{
@@ -79,6 +55,45 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public long? Limit
+		{
+			get
+			{
+				return limit;
+			}
+			set	
+			{
+				limit = value;
+				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Product
+		{
+			get
+			{
+				return product;
+			}
+			set	
+			{
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
 			}
 		}
 
@@ -95,16 +110,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public long? Limit
+		public long? OwnerId
 		{
 			get
 			{
-				return limit;
+				return ownerId;
 			}
 			set	
 			{
-				limit = value;
-				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

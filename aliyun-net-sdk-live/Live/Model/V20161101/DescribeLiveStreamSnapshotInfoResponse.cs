@@ -19,14 +19,28 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveStreamSnapshotInfoResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string nextStartTime;
 
-		private List<LiveStreamSnapshotInfo> liveStreamSnapshotInfoList;
+		private List<DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> liveStreamSnapshotInfoList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string NextStartTime
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public List<LiveStreamSnapshotInfo> LiveStreamSnapshotInfoList
+		public List<DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> LiveStreamSnapshotInfoList
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class LiveStreamSnapshotInfo{
+		public class DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo
+		{
 
 			private string ossEndpoint;
 

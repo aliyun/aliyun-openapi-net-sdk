@@ -24,7 +24,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class CreateLoadBalancerResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string loadBalancerId;
+
+		private string resourceGroupId;
 
 		private string address;
 
@@ -36,6 +40,20 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string networkType;
 
+		private long? orderId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string LoadBalancerId
 		{
 			get
@@ -45,6 +63,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				loadBalancerId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 
@@ -105,6 +135,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				networkType = value;
+			}
+		}
+
+		public long? OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 	}

@@ -29,69 +29,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeTagsRequest : RpcAcsRequest<DescribeTagsResponse>
     {
         public DescribeTagsRequest()
-            : base("Ecs", "2014-05-26", "DescribeTags")
+            : base("Ecs", "2014-05-26", "DescribeTags", "ecs", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
-
-		private int? pageSize;
-
-		private int? pageNumber;
-
-		private string resourceType;
 
 		private string resourceId;
 
-		private string tag1Key;
+		private string resourceOwnerAccount;
 
-		private string tag2Key;
+		private string regionId;
 
-		private string tag3Key;
+		private int? pageSize;
 
-		private string tag4Key;
+		private string action;
 
-		private string tag5Key;
+		private List<Tag> tags;
 
-		private string tag1Value;
+		private long? ownerId;
 
-		private string tag2Value;
+		private string resourceType;
 
-		private string tag3Value;
-
-		private string tag4Value;
-
-		private string tag5Value;
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private int? pageNumber;
 
 		public long? ResourceOwnerId
 		{
@@ -103,45 +63,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -158,133 +79,144 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag1Key
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return tag1Key;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				tag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string Tag2Key
+		public string RegionId
 		{
 			get
 			{
-				return tag2Key;
+				return regionId;
 			}
 			set	
 			{
-				tag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Key", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
-		public string Tag3Key
+		public int? PageSize
 		{
 			get
 			{
-				return tag3Key;
+				return pageSize;
 			}
 			set	
 			{
-				tag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Key", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string Tag4Key
+		public string Action
 		{
 			get
 			{
-				return tag4Key;
+				return action;
 			}
 			set	
 			{
-				tag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Key", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string Tag5Key
+		public List<Tag> Tags
 		{
 			get
 			{
-				return tag5Key;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				tag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Key", value);
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 
-		public string Tag1Value
+		public long? OwnerId
 		{
 			get
 			{
-				return tag1Value;
+				return ownerId;
 			}
 			set	
 			{
-				tag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string Tag2Value
+		public string ResourceType
 		{
 			get
 			{
-				return tag2Value;
+				return resourceType;
 			}
 			set	
 			{
-				tag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Value", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string Tag3Value
+		public int? PageNumber
 		{
 			get
 			{
-				return tag3Value;
+				return pageNumber;
 			}
 			set	
 			{
-				tag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Value", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string Tag4Value
+		public class Tag
 		{
-			get
-			{
-				return tag4Value;
-			}
-			set	
-			{
-				tag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Value", value);
-			}
-		}
 
-		public string Tag5Value
-		{
-			get
+			private string value_;
+
+			private string key;
+
+			public string Value
 			{
-				return tag5Value;
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
-			set	
+
+			public string Key
 			{
-				tag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Value", value);
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

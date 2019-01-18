@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstancesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNumber;
 
 		private int? totalRecordCount;
 
 		private int? pageRecordCount;
 
-		private List<DBInstance> items;
+		private List<DescribeDBInstances_DBInstance> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<DBInstance> Items
+		public List<DescribeDBInstances_DBInstance> Items
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class DBInstance{
+		public class DescribeDBInstances_DBInstance
+		{
 
 			private int? insId;
 
@@ -90,23 +105,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string payType;
 
-			private DBInstanceTypeEnum? dBInstanceType;
+			private string dBInstanceType;
 
 			private string regionId;
 
 			private string expireTime;
 
-			private DBInstanceStatusEnum? dBInstanceStatus;
+			private string destroyTime;
+
+			private string dBInstanceStatus;
 
 			private string engine;
 
-			private DBInstanceNetTypeEnum? dBInstanceNetType;
+			private string dBInstanceNetType;
 
-			private ConnectionModeEnum? connectionMode;
+			private string connectionMode;
 
-			private LockModeEnum? lockMode;
+			private string lockMode;
+
+			private string category;
+
+			private string dBInstanceStorageType;
+
+			private string dBInstanceClass;
 
 			private string instanceNetworkType;
+
+			private string vpcCloudInstanceId;
 
 			private string lockReason;
 
@@ -126,7 +151,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string vpcId;
 
-			private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+			private string vSwitchId;
+
+			private string replicateId;
+
+			private string resourceGroupId;
+
+			private string dispenseMode;
+
+			private string masterRegion;
+
+			private List<DescribeDBInstances_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+
+			private List<DescribeDBInstances_SlaveRegion> slaveRegions;
 
 			public int? InsId
 			{
@@ -176,7 +213,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public DBInstanceTypeEnum? DBInstanceType
+			public string DBInstanceType
 			{
 				get
 				{
@@ -212,7 +249,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public DBInstanceStatusEnum? DBInstanceStatus
+			public string DestroyTime
+			{
+				get
+				{
+					return destroyTime;
+				}
+				set	
+				{
+					destroyTime = value;
+				}
+			}
+
+			public string DBInstanceStatus
 			{
 				get
 				{
@@ -236,7 +285,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public DBInstanceNetTypeEnum? DBInstanceNetType
+			public string DBInstanceNetType
 			{
 				get
 				{
@@ -248,7 +297,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public ConnectionModeEnum? ConnectionMode
+			public string ConnectionMode
 			{
 				get
 				{
@@ -260,7 +309,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public LockModeEnum? LockMode
+			public string LockMode
 			{
 				get
 				{
@@ -269,6 +318,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					lockMode = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string DBInstanceStorageType
+			{
+				get
+				{
+					return dBInstanceStorageType;
+				}
+				set	
+				{
+					dBInstanceStorageType = value;
+				}
+			}
+
+			public string DBInstanceClass
+			{
+				get
+				{
+					return dBInstanceClass;
+				}
+				set	
+				{
+					dBInstanceClass = value;
 				}
 			}
 
@@ -281,6 +366,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					instanceNetworkType = value;
+				}
+			}
+
+			public string VpcCloudInstanceId
+			{
+				get
+				{
+					return vpcCloudInstanceId;
+				}
+				set	
+				{
+					vpcCloudInstanceId = value;
 				}
 			}
 
@@ -392,7 +489,67 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<ReadOnlyDBInstanceId> ReadOnlyDBInstanceIds
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string ReplicateId
+			{
+				get
+				{
+					return replicateId;
+				}
+				set	
+				{
+					replicateId = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string DispenseMode
+			{
+				get
+				{
+					return dispenseMode;
+				}
+				set	
+				{
+					dispenseMode = value;
+				}
+			}
+
+			public string MasterRegion
+			{
+				get
+				{
+					return masterRegion;
+				}
+				set	
+				{
+					masterRegion = value;
+				}
+			}
+
+			public List<DescribeDBInstances_ReadOnlyDBInstanceId> ReadOnlyDBInstanceIds
 			{
 				get
 				{
@@ -404,57 +561,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-public enum DBInstanceTypeEnum {
+			public List<DescribeDBInstances_SlaveRegion> SlaveRegions
+			{
+				get
+				{
+					return slaveRegions;
+				}
+				set	
+				{
+					slaveRegions = value;
+				}
+			}
 
-					Shared,
-					Guard,
-					Primary,
-					Readonly,
-					Temp,
-}
-
-public enum DBInstanceStatusEnum {
-
-					TempDBInstanceCreating,
-					Running,
-					Deleting,
-					DBInstanceClassChanging,
-					Creating,
-					Rebooting,
-					GuardSwitching,
-					LingSwitching,
-					Transing,
-					TransingToOthers,
-					ImportingFromOthers,
-					EngineVersionUpgrading,
-					DBInstanceNetTypeChanging,
-					Importing,
-					Restoring,
-}
-
-public enum DBInstanceNetTypeEnum {
-
-					Intranet,
-					Internet,
-}
-
-public enum ConnectionModeEnum {
-
-					Standard,
-					Safe,
-}
-
-public enum LockModeEnum {
-
-					LockByExpiration,
-					LockByRestoration,
-					LockReadInstanceByDiskQuota,
-					ManualLock,
-					LockByDiskQuota,
-					Unlock,
-}
-
-			public class ReadOnlyDBInstanceId{
+			public class DescribeDBInstances_ReadOnlyDBInstanceId
+			{
 
 				private string dBInstanceId;
 
@@ -467,6 +587,24 @@ public enum LockModeEnum {
 					set	
 					{
 						dBInstanceId = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstances_SlaveRegion
+			{
+
+				private string regionId;
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
 					}
 				}
 			}

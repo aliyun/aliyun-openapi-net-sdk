@@ -24,19 +24,33 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainTopUrlVisitResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string domainName;
 
 		private string startTime;
 
-		private List<UrlList> allUrlList;
+		private List<DescribeDomainTopUrlVisit_UrlList> allUrlList;
 
-		private List<UrlList> url200List;
+		private List<DescribeDomainTopUrlVisit_UrlList> url200List;
 
-		private List<UrlList> url300List;
+		private List<DescribeDomainTopUrlVisit_UrlList> url300List;
 
-		private List<UrlList> url400List;
+		private List<DescribeDomainTopUrlVisit_UrlList> url400List;
 
-		private List<UrlList> url500List;
+		private List<DescribeDomainTopUrlVisit_UrlList> url500List;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{
@@ -62,7 +76,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<UrlList> AllUrlList
+		public List<DescribeDomainTopUrlVisit_UrlList> AllUrlList
 		{
 			get
 			{
@@ -74,7 +88,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<UrlList> Url200List
+		public List<DescribeDomainTopUrlVisit_UrlList> Url200List
 		{
 			get
 			{
@@ -86,7 +100,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<UrlList> Url300List
+		public List<DescribeDomainTopUrlVisit_UrlList> Url300List
 		{
 			get
 			{
@@ -98,7 +112,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<UrlList> Url400List
+		public List<DescribeDomainTopUrlVisit_UrlList> Url400List
 		{
 			get
 			{
@@ -110,7 +124,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<UrlList> Url500List
+		public List<DescribeDomainTopUrlVisit_UrlList> Url500List
 		{
 			get
 			{
@@ -122,299 +136,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class UrlList{
-
-			private string urlDetail;
-
-			private string visitData;
-
-			private float? visitProportion;
-
-			private string flow;
-
-			private float? flowProportion;
-
-			public string UrlDetail
-			{
-				get
-				{
-					return urlDetail;
-				}
-				set	
-				{
-					urlDetail = value;
-				}
-			}
-
-			public string VisitData
-			{
-				get
-				{
-					return visitData;
-				}
-				set	
-				{
-					visitData = value;
-				}
-			}
-
-			public float? VisitProportion
-			{
-				get
-				{
-					return visitProportion;
-				}
-				set	
-				{
-					visitProportion = value;
-				}
-			}
-
-			public string Flow
-			{
-				get
-				{
-					return flow;
-				}
-				set	
-				{
-					flow = value;
-				}
-			}
-
-			public float? FlowProportion
-			{
-				get
-				{
-					return flowProportion;
-				}
-				set	
-				{
-					flowProportion = value;
-				}
-			}
-		}
-
-		public class UrlList{
-
-			private string urlDetail;
-
-			private string visitData;
-
-			private float? visitProportion;
-
-			private string flow;
-
-			private float? flowProportion;
-
-			public string UrlDetail
-			{
-				get
-				{
-					return urlDetail;
-				}
-				set	
-				{
-					urlDetail = value;
-				}
-			}
-
-			public string VisitData
-			{
-				get
-				{
-					return visitData;
-				}
-				set	
-				{
-					visitData = value;
-				}
-			}
-
-			public float? VisitProportion
-			{
-				get
-				{
-					return visitProportion;
-				}
-				set	
-				{
-					visitProportion = value;
-				}
-			}
-
-			public string Flow
-			{
-				get
-				{
-					return flow;
-				}
-				set	
-				{
-					flow = value;
-				}
-			}
-
-			public float? FlowProportion
-			{
-				get
-				{
-					return flowProportion;
-				}
-				set	
-				{
-					flowProportion = value;
-				}
-			}
-		}
-
-		public class UrlList{
-
-			private string urlDetail;
-
-			private string visitData;
-
-			private float? visitProportion;
-
-			private string flow;
-
-			private float? flowProportion;
-
-			public string UrlDetail
-			{
-				get
-				{
-					return urlDetail;
-				}
-				set	
-				{
-					urlDetail = value;
-				}
-			}
-
-			public string VisitData
-			{
-				get
-				{
-					return visitData;
-				}
-				set	
-				{
-					visitData = value;
-				}
-			}
-
-			public float? VisitProportion
-			{
-				get
-				{
-					return visitProportion;
-				}
-				set	
-				{
-					visitProportion = value;
-				}
-			}
-
-			public string Flow
-			{
-				get
-				{
-					return flow;
-				}
-				set	
-				{
-					flow = value;
-				}
-			}
-
-			public float? FlowProportion
-			{
-				get
-				{
-					return flowProportion;
-				}
-				set	
-				{
-					flowProportion = value;
-				}
-			}
-		}
-
-		public class UrlList{
-
-			private string urlDetail;
-
-			private string visitData;
-
-			private float? visitProportion;
-
-			private string flow;
-
-			private float? flowProportion;
-
-			public string UrlDetail
-			{
-				get
-				{
-					return urlDetail;
-				}
-				set	
-				{
-					urlDetail = value;
-				}
-			}
-
-			public string VisitData
-			{
-				get
-				{
-					return visitData;
-				}
-				set	
-				{
-					visitData = value;
-				}
-			}
-
-			public float? VisitProportion
-			{
-				get
-				{
-					return visitProportion;
-				}
-				set	
-				{
-					visitProportion = value;
-				}
-			}
-
-			public string Flow
-			{
-				get
-				{
-					return flow;
-				}
-				set	
-				{
-					flow = value;
-				}
-			}
-
-			public float? FlowProportion
-			{
-				get
-				{
-					return flowProportion;
-				}
-				set	
-				{
-					flowProportion = value;
-				}
-			}
-		}
-
-		public class UrlList{
+		public class DescribeDomainTopUrlVisit_UrlList
+		{
 
 			private string urlDetail;
 

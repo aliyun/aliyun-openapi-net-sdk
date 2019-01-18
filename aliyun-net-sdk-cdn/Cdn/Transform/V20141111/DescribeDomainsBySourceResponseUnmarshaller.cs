@@ -33,33 +33,33 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainsBySourceResponse.RequestId = context.StringValue("DescribeDomainsBySource.RequestId");
 			describeDomainsBySourceResponse.Sources = context.StringValue("DescribeDomainsBySource.Sources");
 
-			List<DescribeDomainsBySourceResponse.DomainsData> domainsList = new List<DescribeDomainsBySourceResponse.DomainsData>();
+			List<DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData> describeDomainsBySourceResponse_domainsList = new List<DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData>();
 			for (int i = 0; i < context.Length("DescribeDomainsBySource.DomainsList.Length"); i++) {
-				DescribeDomainsBySourceResponse.DomainsData domainsData = new DescribeDomainsBySourceResponse.DomainsData();
+				DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData domainsData = new DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData();
 				domainsData.Source = context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].Source");
 
-				List<string> domains = new List<string>();
+				List<string> domainsData_domains = new List<string>();
 				for (int j = 0; j < context.Length("DescribeDomainsBySource.DomainsList["+ i +"].Domains.Length"); j++) {
-					domains.Add(context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].Domains["+ j +"]"));
+					domainsData_domains.Add(context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].Domains["+ j +"]"));
 				}
-				domainsData.Domains = domains;
+				domainsData.Domains = domainsData_domains;
 
-				List<DescribeDomainsBySourceResponse.DomainsData.domainInfo> domainInfos = new List<DescribeDomainsBySourceResponse.DomainsData.domainInfo>();
+				List<DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData.DescribeDomainsBySource_DomainInfo> domainsData_domainInfos = new List<DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData.DescribeDomainsBySource_DomainInfo>();
 				for (int j = 0; j < context.Length("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos.Length"); j++) {
-					DescribeDomainsBySourceResponse.DomainsData.domainInfo domainInfo = new DescribeDomainsBySourceResponse.DomainsData.domainInfo();
+					DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData.DescribeDomainsBySource_DomainInfo domainInfo = new DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData.DescribeDomainsBySource_DomainInfo();
 					domainInfo.DomainName = context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].DomainName");
 					domainInfo.DomainCname = context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].DomainCname");
 					domainInfo.CreateTime = context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].CreateTime");
 					domainInfo.UpdateTime = context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].UpdateTime");
 					domainInfo.Status = context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].Status");
 
-					domainInfos.Add(domainInfo);
+					domainsData_domainInfos.Add(domainInfo);
 				}
-				domainsData.DomainInfos = domainInfos;
+				domainsData.DomainInfos = domainsData_domainInfos;
 
-				domainsList.Add(domainsData);
+				describeDomainsBySourceResponse_domainsList.Add(domainsData);
 			}
-			describeDomainsBySourceResponse.DomainsList = domainsList;
+			describeDomainsBySourceResponse.DomainsList = describeDomainsBySourceResponse_domainsList;
         
 			return describeDomainsBySourceResponse;
         }

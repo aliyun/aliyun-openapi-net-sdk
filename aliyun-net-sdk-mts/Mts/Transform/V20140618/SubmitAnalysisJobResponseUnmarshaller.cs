@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			submitAnalysisJobResponse.HttpResponse = context.HttpResponse;
 			submitAnalysisJobResponse.RequestId = context.StringValue("SubmitAnalysisJob.RequestId");
 
-			SubmitAnalysisJobResponse.AnalysisJob_ analysisJob = new SubmitAnalysisJobResponse.AnalysisJob_();
+			SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob analysisJob = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob();
 			analysisJob.Id = context.StringValue("SubmitAnalysisJob.AnalysisJob.Id");
 			analysisJob.UserData = context.StringValue("SubmitAnalysisJob.AnalysisJob.UserData");
 			analysisJob.State = context.StringValue("SubmitAnalysisJob.AnalysisJob.State");
@@ -43,23 +43,23 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			analysisJob.PipelineId = context.StringValue("SubmitAnalysisJob.AnalysisJob.PipelineId");
 			analysisJob.Priority = context.StringValue("SubmitAnalysisJob.AnalysisJob.Priority");
 
-			SubmitAnalysisJobResponse.AnalysisJob_.InputFile_ inputFile = new SubmitAnalysisJobResponse.AnalysisJob_.InputFile_();
+			SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_InputFile inputFile = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_InputFile();
 			inputFile.Bucket = context.StringValue("SubmitAnalysisJob.AnalysisJob.InputFile.Bucket");
 			inputFile.Location = context.StringValue("SubmitAnalysisJob.AnalysisJob.InputFile.Location");
-			inputFile.Object = context.StringValue("SubmitAnalysisJob.AnalysisJob.InputFile.Object");
+			inputFile._Object = context.StringValue("SubmitAnalysisJob.AnalysisJob.InputFile.Object");
 			analysisJob.InputFile = inputFile;
 
-			SubmitAnalysisJobResponse.AnalysisJob_.AnalysisConfig_ analysisConfig = new SubmitAnalysisJobResponse.AnalysisJob_.AnalysisConfig_();
+			SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_AnalysisConfig analysisConfig = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_AnalysisConfig();
 
-			SubmitAnalysisJobResponse.AnalysisJob_.AnalysisConfig_.QualityControl_ qualityControl = new SubmitAnalysisJobResponse.AnalysisJob_.AnalysisConfig_.QualityControl_();
+			SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_AnalysisConfig.SubmitAnalysisJob_QualityControl qualityControl = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_AnalysisConfig.SubmitAnalysisJob_QualityControl();
 			qualityControl.RateQuality = context.StringValue("SubmitAnalysisJob.AnalysisJob.AnalysisConfig.QualityControl.RateQuality");
 			qualityControl.MethodStreaming = context.StringValue("SubmitAnalysisJob.AnalysisJob.AnalysisConfig.QualityControl.MethodStreaming");
 			analysisConfig.QualityControl = qualityControl;
 
-			SubmitAnalysisJobResponse.AnalysisJob_.AnalysisConfig_.PropertiesControl_ propertiesControl = new SubmitAnalysisJobResponse.AnalysisJob_.AnalysisConfig_.PropertiesControl_();
+			SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_AnalysisConfig.SubmitAnalysisJob_PropertiesControl propertiesControl = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_AnalysisConfig.SubmitAnalysisJob_PropertiesControl();
 			propertiesControl.Deinterlace = context.StringValue("SubmitAnalysisJob.AnalysisJob.AnalysisConfig.PropertiesControl.Deinterlace");
 
-			SubmitAnalysisJobResponse.AnalysisJob_.AnalysisConfig_.PropertiesControl_.Crop_ crop = new SubmitAnalysisJobResponse.AnalysisJob_.AnalysisConfig_.PropertiesControl_.Crop_();
+			SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_AnalysisConfig.SubmitAnalysisJob_PropertiesControl.SubmitAnalysisJob_Crop crop = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_AnalysisConfig.SubmitAnalysisJob_PropertiesControl.SubmitAnalysisJob_Crop();
 			crop.Mode = context.StringValue("SubmitAnalysisJob.AnalysisJob.AnalysisConfig.PropertiesControl.Crop.Mode");
 			crop.Width = context.StringValue("SubmitAnalysisJob.AnalysisJob.AnalysisConfig.PropertiesControl.Crop.Width");
 			crop.Height = context.StringValue("SubmitAnalysisJob.AnalysisJob.AnalysisConfig.PropertiesControl.Crop.Height");
@@ -69,24 +69,24 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			analysisConfig.PropertiesControl = propertiesControl;
 			analysisJob.AnalysisConfig = analysisConfig;
 
-			SubmitAnalysisJobResponse.AnalysisJob_.MNSMessageResult_ mNSMessageResult = new SubmitAnalysisJobResponse.AnalysisJob_.MNSMessageResult_();
+			SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_MNSMessageResult mNSMessageResult = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_MNSMessageResult();
 			mNSMessageResult.MessageId = context.StringValue("SubmitAnalysisJob.AnalysisJob.MNSMessageResult.MessageId");
 			mNSMessageResult.ErrorMessage = context.StringValue("SubmitAnalysisJob.AnalysisJob.MNSMessageResult.ErrorMessage");
 			mNSMessageResult.ErrorCode = context.StringValue("SubmitAnalysisJob.AnalysisJob.MNSMessageResult.ErrorCode");
 			analysisJob.MNSMessageResult = mNSMessageResult;
 
-			List<SubmitAnalysisJobResponse.AnalysisJob_.Template> templateList = new List<SubmitAnalysisJobResponse.AnalysisJob_.Template>();
+			List<SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template> analysisJob_templateList = new List<SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template>();
 			for (int i = 0; i < context.Length("SubmitAnalysisJob.AnalysisJob.TemplateList.Length"); i++) {
-				SubmitAnalysisJobResponse.AnalysisJob_.Template template = new SubmitAnalysisJobResponse.AnalysisJob_.Template();
+				SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template template = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template();
 				template.Id = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Id");
 				template.Name = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Name");
 				template.State = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].State");
 
-				SubmitAnalysisJobResponse.AnalysisJob_.Template.Container_ container = new SubmitAnalysisJobResponse.AnalysisJob_.Template.Container_();
+				SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_Container container = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_Container();
 				container.Format = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Container.Format");
 				template.Container = container;
 
-				SubmitAnalysisJobResponse.AnalysisJob_.Template.Video_ video = new SubmitAnalysisJobResponse.AnalysisJob_.Template.Video_();
+				SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_Video video = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_Video();
 				video.Codec = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Video.Codec");
 				video.Profile = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Video.Profile");
 				video.Bitrate = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Video.Bitrate");
@@ -103,13 +103,13 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				video.Degrain = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Video.Degrain");
 				video.Qscale = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Video.Qscale");
 
-				SubmitAnalysisJobResponse.AnalysisJob_.Template.Video_.BitrateBnd_ bitrateBnd = new SubmitAnalysisJobResponse.AnalysisJob_.Template.Video_.BitrateBnd_();
+				SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_Video.SubmitAnalysisJob_BitrateBnd bitrateBnd = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_Video.SubmitAnalysisJob_BitrateBnd();
 				bitrateBnd.Max = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Video.BitrateBnd.Max");
 				bitrateBnd.Min = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Video.BitrateBnd.Min");
 				video.BitrateBnd = bitrateBnd;
 				template.Video = video;
 
-				SubmitAnalysisJobResponse.AnalysisJob_.Template.Audio_ audio = new SubmitAnalysisJobResponse.AnalysisJob_.Template.Audio_();
+				SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_Audio audio = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_Audio();
 				audio.Codec = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Audio.Codec");
 				audio.Profile = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Audio.Profile");
 				audio.Samplerate = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Audio.Samplerate");
@@ -118,25 +118,25 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				audio.Qscale = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].Audio.Qscale");
 				template.Audio = audio;
 
-				SubmitAnalysisJobResponse.AnalysisJob_.Template.TransConfig_ transConfig = new SubmitAnalysisJobResponse.AnalysisJob_.Template.TransConfig_();
+				SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_TransConfig transConfig = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_TransConfig();
 				transConfig.TransMode = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].TransConfig.TransMode");
 				template.TransConfig = transConfig;
 
-				SubmitAnalysisJobResponse.AnalysisJob_.Template.MuxConfig_ muxConfig = new SubmitAnalysisJobResponse.AnalysisJob_.Template.MuxConfig_();
+				SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_MuxConfig muxConfig = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_MuxConfig();
 
-				SubmitAnalysisJobResponse.AnalysisJob_.Template.MuxConfig_.Segment_ segment = new SubmitAnalysisJobResponse.AnalysisJob_.Template.MuxConfig_.Segment_();
+				SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_MuxConfig.SubmitAnalysisJob_Segment segment = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_MuxConfig.SubmitAnalysisJob_Segment();
 				segment.Duration = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].MuxConfig.Segment.Duration");
 				muxConfig.Segment = segment;
 
-				SubmitAnalysisJobResponse.AnalysisJob_.Template.MuxConfig_.Gif_ gif = new SubmitAnalysisJobResponse.AnalysisJob_.Template.MuxConfig_.Gif_();
+				SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_MuxConfig.SubmitAnalysisJob_Gif gif = new SubmitAnalysisJobResponse.SubmitAnalysisJob_AnalysisJob.SubmitAnalysisJob_Template.SubmitAnalysisJob_MuxConfig.SubmitAnalysisJob_Gif();
 				gif.Loop = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].MuxConfig.Gif.Loop");
 				gif.FinalDelay = context.StringValue("SubmitAnalysisJob.AnalysisJob.TemplateList["+ i +"].MuxConfig.Gif.FinalDelay");
 				muxConfig.Gif = gif;
 				template.MuxConfig = muxConfig;
 
-				templateList.Add(template);
+				analysisJob_templateList.Add(template);
 			}
-			analysisJob.TemplateList = templateList;
+			analysisJob.TemplateList = analysisJob_templateList;
 			submitAnalysisJobResponse.AnalysisJob = analysisJob;
         
 			return submitAnalysisJobResponse;

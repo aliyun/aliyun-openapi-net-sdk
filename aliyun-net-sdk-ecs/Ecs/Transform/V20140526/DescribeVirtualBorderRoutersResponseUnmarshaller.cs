@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeVirtualBorderRoutersResponse.PageSize = context.IntegerValue("DescribeVirtualBorderRouters.PageSize");
 			describeVirtualBorderRoutersResponse.TotalCount = context.IntegerValue("DescribeVirtualBorderRouters.TotalCount");
 
-			List<DescribeVirtualBorderRoutersResponse.VirtualBorderRouterType> virtualBorderRouterSet = new List<DescribeVirtualBorderRoutersResponse.VirtualBorderRouterType>();
+			List<DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType> describeVirtualBorderRoutersResponse_virtualBorderRouterSet = new List<DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType>();
 			for (int i = 0; i < context.Length("DescribeVirtualBorderRouters.VirtualBorderRouterSet.Length"); i++) {
-				DescribeVirtualBorderRoutersResponse.VirtualBorderRouterType virtualBorderRouterType = new DescribeVirtualBorderRoutersResponse.VirtualBorderRouterType();
+				DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType virtualBorderRouterType = new DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType();
 				virtualBorderRouterType.VbrId = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].VbrId");
 				virtualBorderRouterType.CreationTime = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].CreationTime");
 				virtualBorderRouterType.ActivationTime = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].ActivationTime");
@@ -59,9 +59,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				virtualBorderRouterType.Name = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Name");
 				virtualBorderRouterType.Description = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Description");
 
-				virtualBorderRouterSet.Add(virtualBorderRouterType);
+				describeVirtualBorderRoutersResponse_virtualBorderRouterSet.Add(virtualBorderRouterType);
 			}
-			describeVirtualBorderRoutersResponse.VirtualBorderRouterSet = virtualBorderRouterSet;
+			describeVirtualBorderRoutersResponse.VirtualBorderRouterSet = describeVirtualBorderRoutersResponse_virtualBorderRouterSet;
         
 			return describeVirtualBorderRoutersResponse;
         }

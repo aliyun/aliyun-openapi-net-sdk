@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainRegionDataResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string domainName;
 
 		private string dataInterval;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string endTime;
 
-		private List<RegionProportionData> value_;
+		private List<DescribeDomainRegionData_RegionProportionData> _value;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{
@@ -82,19 +96,20 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<RegionProportionData> Value
+		public List<DescribeDomainRegionData_RegionProportionData> _Value
 		{
 			get
 			{
-				return value_;
+				return _value;
 			}
 			set	
 			{
-				value_ = value;
+				_value = value;
 			}
 		}
 
-		public class RegionProportionData{
+		public class DescribeDomainRegionData_RegionProportionData
+		{
 
 			private string region;
 
@@ -108,15 +123,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string bps;
 
-			private string byteHitRate;
-
 			private string qps;
 
-			private string reqErrRate;
+			private string avgResponseRate;
+
+			private string byteHitRate;
 
 			private string reqHitRate;
 
-			private string avgResponseRate;
+			private string reqErrRate;
 
 			private string totalBytes;
 
@@ -196,18 +211,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string ByteHitRate
-			{
-				get
-				{
-					return byteHitRate;
-				}
-				set	
-				{
-					byteHitRate = value;
-				}
-			}
-
 			public string Qps
 			{
 				get
@@ -220,15 +223,27 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string ReqErrRate
+			public string AvgResponseRate
 			{
 				get
 				{
-					return reqErrRate;
+					return avgResponseRate;
 				}
 				set	
 				{
-					reqErrRate = value;
+					avgResponseRate = value;
+				}
+			}
+
+			public string ByteHitRate
+			{
+				get
+				{
+					return byteHitRate;
+				}
+				set	
+				{
+					byteHitRate = value;
 				}
 			}
 
@@ -244,15 +259,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string AvgResponseRate
+			public string ReqErrRate
 			{
 				get
 				{
-					return avgResponseRate;
+					return reqErrRate;
 				}
 				set	
 				{
-					avgResponseRate = value;
+					reqErrRate = value;
 				}
 			}
 

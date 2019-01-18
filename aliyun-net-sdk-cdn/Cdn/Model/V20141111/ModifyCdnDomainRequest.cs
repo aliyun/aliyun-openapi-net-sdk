@@ -33,28 +33,90 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string topLevelDomain;
+
+		private int? sourcePort;
+
+		private string resourceGroupId;
+
+		private string priorities;
+
+		private string sources;
 
 		private string securityToken;
 
 		private string domainName;
 
+		private string action;
+
 		private string sourceType;
 
-		private int? sourcePort;
+		private long? ownerId;
 
-		private string sources;
+		private string accessKeyId;
 
-		public long? OwnerId
+		public string TopLevelDomain
 		{
 			get
 			{
-				return ownerId;
+				return topLevelDomain;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				topLevelDomain = value;
+				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+			}
+		}
+
+		public int? SourcePort
+		{
+			get
+			{
+				return sourcePort;
+			}
+			set	
+			{
+				sourcePort = value;
+				DictionaryUtil.Add(QueryParameters, "SourcePort", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string Priorities
+		{
+			get
+			{
+				return priorities;
+			}
+			set	
+			{
+				priorities = value;
+				DictionaryUtil.Add(QueryParameters, "Priorities", value);
+			}
+		}
+
+		public string Sources
+		{
+			get
+			{
+				return sources;
+			}
+			set	
+			{
+				sources = value;
+				DictionaryUtil.Add(QueryParameters, "Sources", value);
 			}
 		}
 
@@ -84,6 +146,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string SourceType
 		{
 			get
@@ -97,29 +172,29 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public int? SourcePort
+		public long? OwnerId
 		{
 			get
 			{
-				return sourcePort;
+				return ownerId;
 			}
 			set	
 			{
-				sourcePort = value;
-				DictionaryUtil.Add(QueryParameters, "SourcePort", value.ToString());
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string Sources
+		public string AccessKeyId
 		{
 			get
 			{
-				return sources;
+				return accessKeyId;
 			}
 			set	
 			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

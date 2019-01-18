@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2553d0b7-631f-4af7-810b-27e870210bba}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-drds</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Drds\Model\V20171016\DescribeRdsListResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\DeleteDrdsDBResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\ModifyDrdsInstanceDescriptionResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\ModifyDrdsDBPasswdResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\CreateDrdsAccountRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeCreateDrdsInstanceStatusResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\RemoveReadOnlyAccountRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeDrdsDBIpWhiteListRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DeleteFailedDrdsDBRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\ModifyDrdsIpWhiteListResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\CreateReadOnlyAccountRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\CreateDrdsInstanceRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DeleteFailedDrdsDBResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeDrdsInstanceRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\CreateDrdsDBResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\RemoveDrdsInstanceRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeDrdsDBsResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\CreateReadOnlyAccountResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\ModifyDrdsInstanceDescriptionRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeDrdsDBIpWhiteListResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeDrdsInstanceNetInfoForInnerResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\ModifyRdsReadWeightRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeRegionsResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeRegionsRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeShardDBsRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\ModifyRdsReadWeightResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\ModifyFullTableScanResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\CreateDrdsAccountResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeRdsListRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeShardDbConnectionInfoRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeShardDbConnectionInfoResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\RemoveDrdsInstanceResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeReadOnlyAccountResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\DeleteDrdsDBRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeDrdsInstancesRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\QueryInstanceInfoByConnResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeDrdsDBRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeDrdsInstanceNetInfoForInnerRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\ModifyDrdsDBPasswdRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeCreateDrdsInstanceStatusRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\RemoveReadOnlyAccountResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\CreateDrdsDBRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\ModifyFullTableScanRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeReadOnlyAccountRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\CreateDrdsInstanceResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeDrdsInstanceResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeDrdsDBResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\ModifyDrdsIpWhiteListRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\ModifyReadOnlyAccountPasswordResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeShardDBsResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\ModifyReadOnlyAccountPasswordRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\QueryInstanceInfoByConnRequest.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeDrdsInstancesResponse.cs" />
+	<Compile Include="Drds\Model\V20171016\DescribeDrdsDBsRequest.cs" />
+	<Compile Include="Drds\Transform\V20171016\DescribeDrdsInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\CreateDrdsDBResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DescribeDrdsDBResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DescribeDrdsDBIpWhiteListResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\ModifyRdsReadWeightResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DeleteFailedDrdsDBResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\ModifyDrdsIpWhiteListResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\CreateDrdsAccountResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DescribeReadOnlyAccountResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\ModifyDrdsInstanceDescriptionResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DescribeShardDbConnectionInfoResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\ModifyReadOnlyAccountPasswordResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\QueryInstanceInfoByConnResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\CreateDrdsInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DescribeShardDBsResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DescribeCreateDrdsInstanceStatusResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DescribeDrdsInstanceNetInfoForInnerResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\CreateReadOnlyAccountResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DescribeDrdsInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\ModifyDrdsDBPasswdResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\RemoveReadOnlyAccountResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\RemoveDrdsInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DescribeDrdsDBsResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DescribeRdsListResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\DeleteDrdsDBResponseUnmarshaller.cs" />
+	<Compile Include="Drds\Transform\V20171016\ModifyFullTableScanResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

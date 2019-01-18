@@ -29,28 +29,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeactivateRouterInterfaceRequest : RpcAcsRequest<DeactivateRouterInterfaceResponse>
     {
         public DeactivateRouterInterfaceRequest()
-            : base("Ecs", "2014-05-26", "DeactivateRouterInterface")
+            : base("Ecs", "2014-05-26", "DeactivateRouterInterface", "ecs", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
+		private string regionId;
+
+		private string action;
+
+		private long? ownerId;
 
 		private string routerInterfaceId;
 
-		public long? OwnerId
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -67,16 +71,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string RegionId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return regionId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

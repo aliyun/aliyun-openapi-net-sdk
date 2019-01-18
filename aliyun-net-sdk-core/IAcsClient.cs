@@ -36,6 +36,8 @@ namespace Aliyun.Acs.Core
 
         T GetAcsResponse<T>(AcsRequest<T> request, String regionId, Credential credential) where T : AcsResponse;
 
+        CommonResponse GetCommonResponse(CommonRequest request);
+
         HttpResponse DoAction<T>(AcsRequest<T> request) where T : AcsResponse;
 
         HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryCounts) where T : AcsResponse;
@@ -49,9 +51,7 @@ namespace Aliyun.Acs.Core
         HttpResponse DoAction<T>(AcsRequest<T> request,
                 bool autoRetry, int maxRetryNumber,
                 String regionId, Credential credential,
-                ISigner signer, FormatType? format,
+                Signer signer, FormatType? format,
                 List<Endpoint> endpoints) where T : AcsResponse;
-
-        CommonResponse DoCommonAction(CommonRequest request);
     }
 }

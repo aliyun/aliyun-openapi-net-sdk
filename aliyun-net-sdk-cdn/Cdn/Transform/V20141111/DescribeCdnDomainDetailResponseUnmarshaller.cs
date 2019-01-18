@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeCdnDomainDetailResponse.HttpResponse = context.HttpResponse;
 			describeCdnDomainDetailResponse.RequestId = context.StringValue("DescribeCdnDomainDetail.RequestId");
 
-			DescribeCdnDomainDetailResponse.GetDomainDetailModel_ getDomainDetailModel = new DescribeCdnDomainDetailResponse.GetDomainDetailModel_();
+			DescribeCdnDomainDetailResponse.DescribeCdnDomainDetail_GetDomainDetailModel getDomainDetailModel = new DescribeCdnDomainDetailResponse.DescribeCdnDomainDetail_GetDomainDetailModel();
 			getDomainDetailModel.GmtCreated = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.GmtCreated");
 			getDomainDetailModel.GmtModified = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.GmtModified");
 			getDomainDetailModel.SourceType = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceType");
@@ -48,12 +48,26 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			getDomainDetailModel.Region = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Region");
 			getDomainDetailModel.Scope = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Scope");
 			getDomainDetailModel.CertificateName = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.CertificateName");
+			getDomainDetailModel.ResourceGroupId = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.ResourceGroupId");
 
-			List<string> sources = new List<string>();
+			List<string> getDomainDetailModel_sources = new List<string>();
 			for (int i = 0; i < context.Length("DescribeCdnDomainDetail.GetDomainDetailModel.Sources.Length"); i++) {
-				sources.Add(context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Sources["+ i +"]"));
+				getDomainDetailModel_sources.Add(context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Sources["+ i +"]"));
 			}
-			getDomainDetailModel.Sources = sources;
+			getDomainDetailModel.Sources = getDomainDetailModel_sources;
+
+			List<DescribeCdnDomainDetailResponse.DescribeCdnDomainDetail_GetDomainDetailModel.DescribeCdnDomainDetail_SourceModel> getDomainDetailModel_sourceModels = new List<DescribeCdnDomainDetailResponse.DescribeCdnDomainDetail_GetDomainDetailModel.DescribeCdnDomainDetail_SourceModel>();
+			for (int i = 0; i < context.Length("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels.Length"); i++) {
+				DescribeCdnDomainDetailResponse.DescribeCdnDomainDetail_GetDomainDetailModel.DescribeCdnDomainDetail_SourceModel sourceModel = new DescribeCdnDomainDetailResponse.DescribeCdnDomainDetail_GetDomainDetailModel.DescribeCdnDomainDetail_SourceModel();
+				sourceModel.Content = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Content");
+				sourceModel.Type = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Type");
+				sourceModel.Port = context.IntegerValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Port");
+				sourceModel.Enabled = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Enabled");
+				sourceModel.Priority = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Priority");
+
+				getDomainDetailModel_sourceModels.Add(sourceModel);
+			}
+			getDomainDetailModel.SourceModels = getDomainDetailModel_sourceModels;
 			describeCdnDomainDetailResponse.GetDomainDetailModel = getDomainDetailModel;
         
 			return describeCdnDomainDetailResponse;

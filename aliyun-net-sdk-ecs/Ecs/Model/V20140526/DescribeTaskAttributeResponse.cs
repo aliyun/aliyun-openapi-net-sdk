@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeTaskAttributeResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string taskId;
 
 		private string regionId;
@@ -46,7 +48,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string finishedTime;
 
-		private List<OperationProgress> operationProgressSet;
+		private List<DescribeTaskAttribute_OperationProgress> operationProgressSet;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string TaskId
 		{
@@ -180,7 +194,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<OperationProgress> OperationProgressSet
+		public List<DescribeTaskAttribute_OperationProgress> OperationProgressSet
 		{
 			get
 			{
@@ -192,7 +206,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class OperationProgress{
+		public class DescribeTaskAttribute_OperationProgress
+		{
 
 			private string operationStatus;
 
@@ -200,7 +215,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string errorMsg;
 
-			private List<RelatedItem> relatedItemSet;
+			private List<DescribeTaskAttribute_RelatedItem> relatedItemSet;
 
 			public string OperationStatus
 			{
@@ -238,7 +253,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<RelatedItem> RelatedItemSet
+			public List<DescribeTaskAttribute_RelatedItem> RelatedItemSet
 			{
 				get
 				{
@@ -250,11 +265,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class RelatedItem{
+			public class DescribeTaskAttribute_RelatedItem
+			{
 
 				private string name;
 
-				private string value;
+				private string _value;
 
 				public string Name
 				{
@@ -268,15 +284,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string Value
+				public string _Value
 				{
 					get
 					{
-						return value;
+						return _value;
 					}
 					set	
 					{
-						value = value;
+						_value = value;
 					}
 				}
 			}

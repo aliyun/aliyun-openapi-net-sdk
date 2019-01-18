@@ -33,17 +33,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeLiveStreamSnapshotInfoResponse.RequestId = context.StringValue("DescribeLiveStreamSnapshotInfo.RequestId");
 			describeLiveStreamSnapshotInfoResponse.NextStartTime = context.StringValue("DescribeLiveStreamSnapshotInfo.NextStartTime");
 
-			List<DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfo> liveStreamSnapshotInfoList = new List<DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfo>();
+			List<DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> describeLiveStreamSnapshotInfoResponse_liveStreamSnapshotInfoList = new List<DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList.Length"); i++) {
-				DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfo liveStreamSnapshotInfo = new DescribeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfo();
+				DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo liveStreamSnapshotInfo = new DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo();
 				liveStreamSnapshotInfo.OssEndpoint = context.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].OssEndpoint");
 				liveStreamSnapshotInfo.OssBucket = context.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].OssBucket");
 				liveStreamSnapshotInfo.OssObject = context.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].OssObject");
 				liveStreamSnapshotInfo.CreateTime = context.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].CreateTime");
 
-				liveStreamSnapshotInfoList.Add(liveStreamSnapshotInfo);
+				describeLiveStreamSnapshotInfoResponse_liveStreamSnapshotInfoList.Add(liveStreamSnapshotInfo);
 			}
-			describeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList = liveStreamSnapshotInfoList;
+			describeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList = describeLiveStreamSnapshotInfoResponse_liveStreamSnapshotInfoList;
         
 			return describeLiveStreamSnapshotInfoResponse;
         }

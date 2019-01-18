@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class SearchMediaResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private long? totalNum;
 
 		private long? pageNumber;
 
 		private long? pageSize;
 
-		private List<Media> mediaList;
+		private List<SearchMedia_Media> mediaList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? TotalNum
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public List<Media> MediaList
+		public List<SearchMedia_Media> MediaList
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class Media{
+		public class SearchMedia_Media
+		{
 
 			private string mediaId;
 
@@ -114,7 +129,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private List<string> runIdList;
 
-			private File_ file;
+			private SearchMedia_File file;
 
 			public string MediaId
 			{
@@ -308,7 +323,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public File_ File
+			public SearchMedia_File File
 			{
 				get
 				{
@@ -320,7 +335,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class File_{
+			public class SearchMedia_File
+			{
 
 				private string uRL;
 

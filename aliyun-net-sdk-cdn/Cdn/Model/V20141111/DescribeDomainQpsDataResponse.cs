@@ -24,15 +24,29 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainQpsDataResponse : AcsResponse
 	{
 
-		private string domainName;
+		private string requestId;
 
-		private string dataInterval;
+		private string domainName;
 
 		private string startTime;
 
 		private string endTime;
 
-		private List<DataModule> qpsDataInterval;
+		private string dataInterval;
+
+		private List<DescribeDomainQpsData_DataModule> qpsDataInterval;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{
@@ -43,18 +57,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				domainName = value;
-			}
-		}
-
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
 			}
 		}
 
@@ -82,7 +84,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<DataModule> QpsDataInterval
+		public string DataInterval
+		{
+			get
+			{
+				return dataInterval;
+			}
+			set	
+			{
+				dataInterval = value;
+			}
+		}
+
+		public List<DescribeDomainQpsData_DataModule> QpsDataInterval
 		{
 			get
 			{
@@ -94,11 +108,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class DataModule{
+		public class DescribeDomainQpsData_DataModule
+		{
 
 			private string timeStamp;
 
-			private string value_;
+			private string _value;
 
 			private string domesticValue;
 
@@ -134,15 +149,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string Value
+			public string _Value
 			{
 				get
 				{
-					return value_;
+					return _value;
 				}
 				set	
 				{
-					value_ = value;
+					_value = value;
 				}
 			}
 

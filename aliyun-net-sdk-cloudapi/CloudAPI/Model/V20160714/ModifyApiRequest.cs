@@ -29,253 +29,70 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class ModifyApiRequest : RpcAcsRequest<ModifyApiResponse>
     {
         public ModifyApiRequest()
-            : base("CloudAPI", "2016-07-14", "ModifyApi")
+            : base("CloudAPI", "2016-07-14", "ModifyApi", "apigateway", "openAPI")
         {
         }
 
-		private string groupId;
-
-		private string apiId;
-
-		private string apiName;
-
-		private string description;
-
-		private string visibility;
-
-		private string authType;
-
-		private string requestConfig;
-
-		private string serviceConfig;
-
-		private string requestParameters;
-
-		private string systemParameters;
-
-		private string constantParameters;
-
-		private string serviceParameters;
-
-		private string serviceParametersMap;
-
-		private string resultType;
-
-		private string resultSample;
-
-		private string failResultSample;
+		private string webSocketApiType;
 
 		private string errorCodeSamples;
 
-		private string resultDescriptions;
+		private string description;
+
+		private string constantParameters;
+
+		private string accessKeyId;
+
+		private string authType;
+
+		private string allowSignatureMethod;
+
+		private string serviceParameters;
+
+		private string failResultSample;
+
+		private string systemParameters;
+
+		private string serviceParametersMap;
+
+		private string securityToken;
 
 		private string openIdConnectConfig;
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
+		private string action;
 
-		public string ApiId
-		{
-			get
-			{
-				return apiId;
-			}
-			set	
-			{
-				apiId = value;
-				DictionaryUtil.Add(QueryParameters, "ApiId", value);
-			}
-		}
+		private string requestParameters;
 
-		public string ApiName
-		{
-			get
-			{
-				return apiName;
-			}
-			set	
-			{
-				apiName = value;
-				DictionaryUtil.Add(QueryParameters, "ApiName", value);
-			}
-		}
+		private string resultDescriptions;
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+		private string visibility;
 
-		public string Visibility
-		{
-			get
-			{
-				return visibility;
-			}
-			set	
-			{
-				visibility = value;
-				DictionaryUtil.Add(QueryParameters, "Visibility", value);
-			}
-		}
+		private string groupId;
 
-		public string AuthType
-		{
-			get
-			{
-				return authType;
-			}
-			set	
-			{
-				authType = value;
-				DictionaryUtil.Add(QueryParameters, "AuthType", value);
-			}
-		}
+		private string serviceConfig;
 
-		public string RequestConfig
-		{
-			get
-			{
-				return requestConfig;
-			}
-			set	
-			{
-				requestConfig = value;
-				DictionaryUtil.Add(QueryParameters, "RequestConfig", value);
-			}
-		}
+		private string resultType;
 
-		public string ServiceConfig
-		{
-			get
-			{
-				return serviceConfig;
-			}
-			set	
-			{
-				serviceConfig = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceConfig", value);
-			}
-		}
+		private string apiName;
 
-		public string RequestParameters
-		{
-			get
-			{
-				return requestParameters;
-			}
-			set	
-			{
-				requestParameters = value;
-				DictionaryUtil.Add(QueryParameters, "RequestParameters", value);
-			}
-		}
+		private string resultSample;
 
-		public string SystemParameters
-		{
-			get
-			{
-				return systemParameters;
-			}
-			set	
-			{
-				systemParameters = value;
-				DictionaryUtil.Add(QueryParameters, "SystemParameters", value);
-			}
-		}
+		private string requestConfig;
 
-		public string ConstantParameters
-		{
-			get
-			{
-				return constantParameters;
-			}
-			set	
-			{
-				constantParameters = value;
-				DictionaryUtil.Add(QueryParameters, "ConstantParameters", value);
-			}
-		}
+		private string resultBodyModel;
 
-		public string ServiceParameters
-		{
-			get
-			{
-				return serviceParameters;
-			}
-			set	
-			{
-				serviceParameters = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceParameters", value);
-			}
-		}
+		private string apiId;
 
-		public string ServiceParametersMap
+		public string WebSocketApiType
 		{
 			get
 			{
-				return serviceParametersMap;
+				return webSocketApiType;
 			}
 			set	
 			{
-				serviceParametersMap = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceParametersMap", value);
-			}
-		}
-
-		public string ResultType
-		{
-			get
-			{
-				return resultType;
-			}
-			set	
-			{
-				resultType = value;
-				DictionaryUtil.Add(QueryParameters, "ResultType", value);
-			}
-		}
-
-		public string ResultSample
-		{
-			get
-			{
-				return resultSample;
-			}
-			set	
-			{
-				resultSample = value;
-				DictionaryUtil.Add(QueryParameters, "ResultSample", value);
-			}
-		}
-
-		public string FailResultSample
-		{
-			get
-			{
-				return failResultSample;
-			}
-			set	
-			{
-				failResultSample = value;
-				DictionaryUtil.Add(QueryParameters, "FailResultSample", value);
+				webSocketApiType = value;
+				DictionaryUtil.Add(QueryParameters, "WebSocketApiType", value);
 			}
 		}
 
@@ -292,16 +109,133 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string ResultDescriptions
+		public string Description
 		{
 			get
 			{
-				return resultDescriptions;
+				return description;
 			}
 			set	
 			{
-				resultDescriptions = value;
-				DictionaryUtil.Add(QueryParameters, "ResultDescriptions", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string ConstantParameters
+		{
+			get
+			{
+				return constantParameters;
+			}
+			set	
+			{
+				constantParameters = value;
+				DictionaryUtil.Add(QueryParameters, "ConstantParameters", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string AuthType
+		{
+			get
+			{
+				return authType;
+			}
+			set	
+			{
+				authType = value;
+				DictionaryUtil.Add(QueryParameters, "AuthType", value);
+			}
+		}
+
+		public string AllowSignatureMethod
+		{
+			get
+			{
+				return allowSignatureMethod;
+			}
+			set	
+			{
+				allowSignatureMethod = value;
+				DictionaryUtil.Add(QueryParameters, "AllowSignatureMethod", value);
+			}
+		}
+
+		public string ServiceParameters
+		{
+			get
+			{
+				return serviceParameters;
+			}
+			set	
+			{
+				serviceParameters = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceParameters", value);
+			}
+		}
+
+		public string FailResultSample
+		{
+			get
+			{
+				return failResultSample;
+			}
+			set	
+			{
+				failResultSample = value;
+				DictionaryUtil.Add(QueryParameters, "FailResultSample", value);
+			}
+		}
+
+		public string SystemParameters
+		{
+			get
+			{
+				return systemParameters;
+			}
+			set	
+			{
+				systemParameters = value;
+				DictionaryUtil.Add(QueryParameters, "SystemParameters", value);
+			}
+		}
+
+		public string ServiceParametersMap
+		{
+			get
+			{
+				return serviceParametersMap;
+			}
+			set	
+			{
+				serviceParametersMap = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceParametersMap", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -315,6 +249,162 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				openIdConnectConfig = value;
 				DictionaryUtil.Add(QueryParameters, "OpenIdConnectConfig", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string RequestParameters
+		{
+			get
+			{
+				return requestParameters;
+			}
+			set	
+			{
+				requestParameters = value;
+				DictionaryUtil.Add(QueryParameters, "RequestParameters", value);
+			}
+		}
+
+		public string ResultDescriptions
+		{
+			get
+			{
+				return resultDescriptions;
+			}
+			set	
+			{
+				resultDescriptions = value;
+				DictionaryUtil.Add(QueryParameters, "ResultDescriptions", value);
+			}
+		}
+
+		public string Visibility
+		{
+			get
+			{
+				return visibility;
+			}
+			set	
+			{
+				visibility = value;
+				DictionaryUtil.Add(QueryParameters, "Visibility", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string ServiceConfig
+		{
+			get
+			{
+				return serviceConfig;
+			}
+			set	
+			{
+				serviceConfig = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceConfig", value);
+			}
+		}
+
+		public string ResultType
+		{
+			get
+			{
+				return resultType;
+			}
+			set	
+			{
+				resultType = value;
+				DictionaryUtil.Add(QueryParameters, "ResultType", value);
+			}
+		}
+
+		public string ApiName
+		{
+			get
+			{
+				return apiName;
+			}
+			set	
+			{
+				apiName = value;
+				DictionaryUtil.Add(QueryParameters, "ApiName", value);
+			}
+		}
+
+		public string ResultSample
+		{
+			get
+			{
+				return resultSample;
+			}
+			set	
+			{
+				resultSample = value;
+				DictionaryUtil.Add(QueryParameters, "ResultSample", value);
+			}
+		}
+
+		public string RequestConfig
+		{
+			get
+			{
+				return requestConfig;
+			}
+			set	
+			{
+				requestConfig = value;
+				DictionaryUtil.Add(QueryParameters, "RequestConfig", value);
+			}
+		}
+
+		public string ResultBodyModel
+		{
+			get
+			{
+				return resultBodyModel;
+			}
+			set	
+			{
+				resultBodyModel = value;
+				DictionaryUtil.Add(QueryParameters, "ResultBodyModel", value);
+			}
+		}
+
+		public string ApiId
+		{
+			get
+			{
+				return apiId;
+			}
+			set	
+			{
+				apiId = value;
+				DictionaryUtil.Add(QueryParameters, "ApiId", value);
 			}
 		}
 

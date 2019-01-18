@@ -33,32 +33,36 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string appName;
 
 		private string securityToken;
 
+		private string hlsSwitch;
+
 		private string domainName;
 
-		private string appName;
-
-		private string streamName;
-
-		private string startTime;
+		private string action;
 
 		private string endTime;
 
-		private string hlsSwitch;
+		private string startTime;
 
-		public long? OwnerId
+		private long? ownerId;
+
+		private string streamName;
+
+		private string accessKeyId;
+
+		public string AppName
 		{
 			get
 			{
-				return ownerId;
+				return appName;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -75,6 +79,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
+		public string HlsSwitch
+		{
+			get
+			{
+				return hlsSwitch;
+			}
+			set	
+			{
+				hlsSwitch = value;
+				DictionaryUtil.Add(QueryParameters, "HlsSwitch", value);
+			}
+		}
+
 		public string DomainName
 		{
 			get
@@ -88,42 +105,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string AppName
+		public string Action
 		{
 			get
 			{
-				return appName;
+				return action;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -140,16 +131,55 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string HlsSwitch
+		public string StartTime
 		{
 			get
 			{
-				return hlsSwitch;
+				return startTime;
 			}
 			set	
 			{
-				hlsSwitch = value;
-				DictionaryUtil.Add(QueryParameters, "HlsSwitch", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

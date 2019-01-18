@@ -33,26 +33,30 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string cacheType;
 
 		private string securityToken;
 
-		private string domainName;
-
-		private string cacheType;
-
 		private string configID;
 
-		public long? OwnerId
+		private string domainName;
+
+		private string action;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public string CacheType
 		{
 			get
 			{
-				return ownerId;
+				return cacheType;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				cacheType = value;
+				DictionaryUtil.Add(QueryParameters, "CacheType", value);
 			}
 		}
 
@@ -69,6 +73,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
+		public string ConfigID
+		{
+			get
+			{
+				return configID;
+			}
+			set	
+			{
+				configID = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigID", value);
+			}
+		}
+
 		public string DomainName
 		{
 			get
@@ -82,29 +99,42 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string CacheType
+		public string Action
 		{
 			get
 			{
-				return cacheType;
+				return action;
 			}
 			set	
 			{
-				cacheType = value;
-				DictionaryUtil.Add(QueryParameters, "CacheType", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string ConfigID
+		public long? OwnerId
 		{
 			get
 			{
-				return configID;
+				return ownerId;
 			}
 			set	
 			{
-				configID = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigID", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

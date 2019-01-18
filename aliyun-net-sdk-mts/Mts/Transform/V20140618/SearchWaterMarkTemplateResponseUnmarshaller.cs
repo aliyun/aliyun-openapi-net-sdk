@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			searchWaterMarkTemplateResponse.PageNumber = context.LongValue("SearchWaterMarkTemplate.PageNumber");
 			searchWaterMarkTemplateResponse.PageSize = context.LongValue("SearchWaterMarkTemplate.PageSize");
 
-			List<SearchWaterMarkTemplateResponse.WaterMarkTemplate> waterMarkTemplateList = new List<SearchWaterMarkTemplateResponse.WaterMarkTemplate>();
+			List<SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate> searchWaterMarkTemplateResponse_waterMarkTemplateList = new List<SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate>();
 			for (int i = 0; i < context.Length("SearchWaterMarkTemplate.WaterMarkTemplateList.Length"); i++) {
-				SearchWaterMarkTemplateResponse.WaterMarkTemplate waterMarkTemplate = new SearchWaterMarkTemplateResponse.WaterMarkTemplate();
+				SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate waterMarkTemplate = new SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate();
 				waterMarkTemplate.Id = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Id");
 				waterMarkTemplate.Name = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Name");
 				waterMarkTemplate.Width = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Width");
@@ -48,21 +48,21 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				waterMarkTemplate.Type = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Type");
 				waterMarkTemplate.State = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].State");
 
-				SearchWaterMarkTemplateResponse.WaterMarkTemplate.Timeline_ timeline = new SearchWaterMarkTemplateResponse.WaterMarkTemplate.Timeline_();
+				SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate.SearchWaterMarkTemplate_Timeline timeline = new SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate.SearchWaterMarkTemplate_Timeline();
 				timeline.Start = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Timeline.Start");
 				timeline.Duration = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].Timeline.Duration");
 				waterMarkTemplate.Timeline = timeline;
 
-				SearchWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer_ ratioRefer = new SearchWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer_();
+				SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate.SearchWaterMarkTemplate_RatioRefer ratioRefer = new SearchWaterMarkTemplateResponse.SearchWaterMarkTemplate_WaterMarkTemplate.SearchWaterMarkTemplate_RatioRefer();
 				ratioRefer.Dx = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].RatioRefer.Dx");
 				ratioRefer.Dy = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].RatioRefer.Dy");
 				ratioRefer.Width = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].RatioRefer.Width");
 				ratioRefer.Height = context.StringValue("SearchWaterMarkTemplate.WaterMarkTemplateList["+ i +"].RatioRefer.Height");
 				waterMarkTemplate.RatioRefer = ratioRefer;
 
-				waterMarkTemplateList.Add(waterMarkTemplate);
+				searchWaterMarkTemplateResponse_waterMarkTemplateList.Add(waterMarkTemplate);
 			}
-			searchWaterMarkTemplateResponse.WaterMarkTemplateList = waterMarkTemplateList;
+			searchWaterMarkTemplateResponse.WaterMarkTemplateList = searchWaterMarkTemplateResponse_waterMarkTemplateList;
         
 			return searchWaterMarkTemplateResponse;
         }

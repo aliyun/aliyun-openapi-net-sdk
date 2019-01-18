@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeInstanceAttributeResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string instanceId;
 
 		private string instanceName;
@@ -44,7 +46,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string hostName;
 
-		private StatusEnum? status;
+		private string status;
 
 		private string internetChargeType;
 
@@ -68,7 +70,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string expiredTime;
 
-		private List<LockReason> operationLocks;
+		private string stoppedMode;
+
+		private string creditSpecification;
+
+		private List<DescribeInstanceAttribute_LockReason> operationLocks;
 
 		private List<string> securityGroupIds;
 
@@ -76,9 +82,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> innerIpAddress;
 
-		private VpcAttributes_ vpcAttributes;
+		private DescribeInstanceAttribute_VpcAttributes vpcAttributes;
 
-		private EipAddress_ eipAddress;
+		private DescribeInstanceAttribute_EipAddress eipAddress;
+
+		private DescribeInstanceAttribute_DedicatedHostAttribute dedicatedHostAttribute;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string InstanceId
 		{
@@ -200,7 +220,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public StatusEnum? Status
+		public string Status
 		{
 			get
 			{
@@ -344,7 +364,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<LockReason> OperationLocks
+		public string StoppedMode
+		{
+			get
+			{
+				return stoppedMode;
+			}
+			set	
+			{
+				stoppedMode = value;
+			}
+		}
+
+		public string CreditSpecification
+		{
+			get
+			{
+				return creditSpecification;
+			}
+			set	
+			{
+				creditSpecification = value;
+			}
+		}
+
+		public List<DescribeInstanceAttribute_LockReason> OperationLocks
 		{
 			get
 			{
@@ -392,7 +436,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public VpcAttributes_ VpcAttributes
+		public DescribeInstanceAttribute_VpcAttributes VpcAttributes
 		{
 			get
 			{
@@ -404,7 +448,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public EipAddress_ EipAddress
+		public DescribeInstanceAttribute_EipAddress EipAddress
 		{
 			get
 			{
@@ -416,36 +460,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public enum StatusEnum {
-		
-			Deleted,
-			Stopped,
-			Transferring,
-			Running,
-			Resetting,
-			Starting,
-			Stopping,
-			Pending,
+		public DescribeInstanceAttribute_DedicatedHostAttribute DedicatedHostAttribute
+		{
+			get
+			{
+				return dedicatedHostAttribute;
+			}
+			set	
+			{
+				dedicatedHostAttribute = value;
+			}
 		}
 
-		public class LockReason{
+		public class DescribeInstanceAttribute_LockReason
+		{
 
-			private string lockReason_;
+			private string lockReason;
 
-			public string LockReason_
+			public string LockReason
 			{
 				get
 				{
-					return lockReason_;
+					return lockReason;
 				}
 				set	
 				{
-					lockReason_ = value;
+					lockReason = value;
 				}
 			}
 		}
 
-		public class VpcAttributes_{
+		public class DescribeInstanceAttribute_VpcAttributes
+		{
 
 			private string vpcId;
 
@@ -504,7 +550,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class EipAddress_{
+		public class DescribeInstanceAttribute_EipAddress
+		{
 
 			private string allocationId;
 
@@ -559,6 +606,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					internetChargeType = value;
+				}
+			}
+		}
+
+		public class DescribeInstanceAttribute_DedicatedHostAttribute
+		{
+
+			private string dedicatedHostId;
+
+			private string dedicatedHostName;
+
+			public string DedicatedHostId
+			{
+				get
+				{
+					return dedicatedHostId;
+				}
+				set	
+				{
+					dedicatedHostId = value;
+				}
+			}
+
+			public string DedicatedHostName
+			{
+				get
+				{
+					return dedicatedHostName;
+				}
+				set	
+				{
+					dedicatedHostName = value;
 				}
 			}
 		}

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeLiveStreamRecordIndexFilesResponse : AcsResponse
 	{
 
-		private List<RecordIndexInfo> recordIndexInfoList;
+		private string requestId;
 
-		public List<RecordIndexInfo> RecordIndexInfoList
+		private List<DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> recordIndexInfoList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> RecordIndexInfoList
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class RecordIndexInfo{
+		public class DescribeLiveStreamRecordIndexFiles_RecordIndexInfo
+		{
 
 			private string recordId;
 

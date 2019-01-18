@@ -29,9 +29,13 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class SetDomainRequest : RpcAcsRequest<SetDomainResponse>
     {
         public SetDomainRequest()
-            : base("CloudAPI", "2016-07-14", "SetDomain")
+            : base("CloudAPI", "2016-07-14", "SetDomain", "apigateway", "openAPI")
         {
         }
+
+		private string securityToken;
+
+		private string certificatePrivateKey;
 
 		private string groupId;
 
@@ -39,9 +43,37 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string certificateName;
 
+		private string action;
+
 		private string certificateBody;
 
-		private string certificatePrivateKey;
+		private string accessKeyId;
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string CertificatePrivateKey
+		{
+			get
+			{
+				return certificatePrivateKey;
+			}
+			set	
+			{
+				certificatePrivateKey = value;
+				DictionaryUtil.Add(QueryParameters, "CertificatePrivateKey", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -82,6 +114,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string CertificateBody
 		{
 			get
@@ -95,16 +140,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string CertificatePrivateKey
+		public string AccessKeyId
 		{
 			get
 			{
-				return certificatePrivateKey;
+				return accessKeyId;
 			}
 			set	
 			{
-				certificatePrivateKey = value;
-				DictionaryUtil.Add(QueryParameters, "CertificatePrivateKey", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

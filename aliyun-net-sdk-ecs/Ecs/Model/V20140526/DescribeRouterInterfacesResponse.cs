@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeRouterInterfacesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNumber;
 
 		private int? pageSize;
 
 		private int? totalCount;
 
-		private List<RouterInterfaceType> routerInterfaceSet;
+		private List<DescribeRouterInterfaces_RouterInterfaceType> routerInterfaceSet;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<RouterInterfaceType> RouterInterfaceSet
+		public List<DescribeRouterInterfaces_RouterInterfaceType> RouterInterfaceSet
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class RouterInterfaceType{
+		public class DescribeRouterInterfaces_RouterInterfaceType
+		{
 
 			private string routerInterfaceId;
 
@@ -99,6 +114,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private string routerType;
 
 			private string creationTime;
+
+			private string endTime;
+
+			private string chargeType;
 
 			private string status;
 
@@ -233,6 +252,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
 				}
 			}
 

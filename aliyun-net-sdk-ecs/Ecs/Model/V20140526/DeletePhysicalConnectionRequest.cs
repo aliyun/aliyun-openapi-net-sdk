@@ -29,47 +29,49 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DeletePhysicalConnectionRequest : RpcAcsRequest<DeletePhysicalConnectionResponse>
     {
         public DeletePhysicalConnectionRequest()
-            : base("Ecs", "2014-05-26", "DeletePhysicalConnection")
+            : base("Ecs", "2014-05-26", "DeletePhysicalConnection", "ecs", "openAPI")
         {
         }
 
-		private string physicalConnectionId;
+		private long? resourceOwnerId;
 
-		private long? ownerId;
+		private string regionId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
 		private string clientToken;
+
+		private string physicalConnectionId;
 
 		private string ownerAccount;
 
-		private string userCidr;
+		private string action;
 
-		public string PhysicalConnectionId
+		private long? ownerId;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return physicalConnectionId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				physicalConnectionId = value;
-				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
-		public long? OwnerId
+		public string RegionId
 		{
 			get
 			{
-				return ownerId;
+				return regionId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -86,19 +88,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -109,6 +98,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string PhysicalConnectionId
+		{
+			get
+			{
+				return physicalConnectionId;
+			}
+			set	
+			{
+				physicalConnectionId = value;
+				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
 			}
 		}
 
@@ -125,16 +127,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string UserCidr
+		public string Action
 		{
 			get
 			{
-				return userCidr;
+				return action;
 			}
 			set	
 			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

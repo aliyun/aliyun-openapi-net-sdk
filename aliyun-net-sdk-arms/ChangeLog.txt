@@ -1,0 +1,25 @@
+2018-12-21 Version: 2.3.0
+1, ARMS SDK 2018-12-19 go sdk upload
+
+2018-10-16 Version: 2.2.0
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
+2018-10-16 Version: 2.2.0
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
+2018-10-16 Version: 2.2.0
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
+2018-06-22 Version: 2.1.0
+1, Support ram-user and sts.
+2, Format message code.
+
+2017-12-20 Version: 2.0.1
+1, support tile dataset
+2, use dimension value type to replace isDrillDown
+
+2017-12-20 Version: 2.0.0
+1, support tile dataset
+2, use dimension value type to replace isDrillDown
+
+

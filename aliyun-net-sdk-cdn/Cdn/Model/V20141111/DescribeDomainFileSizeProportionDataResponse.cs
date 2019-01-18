@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainFileSizeProportionDataResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string domainName;
 
 		private string dataInterval;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string endTime;
 
-		private List<UsageData> fileSizeProportionDataInterval;
+		private List<DescribeDomainFileSizeProportionData_UsageData> fileSizeProportionDataInterval;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<UsageData> FileSizeProportionDataInterval
+		public List<DescribeDomainFileSizeProportionData_UsageData> FileSizeProportionDataInterval
 		{
 			get
 			{
@@ -94,11 +108,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class UsageData{
+		public class DescribeDomainFileSizeProportionData_UsageData
+		{
 
 			private string timeStamp;
 
-			private List<FileSizeProportionData> value_;
+			private List<DescribeDomainFileSizeProportionData_FileSizeProportionData> _value;
 
 			public string TimeStamp
 			{
@@ -112,19 +127,20 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public List<FileSizeProportionData> Value
+			public List<DescribeDomainFileSizeProportionData_FileSizeProportionData> _Value
 			{
 				get
 				{
-					return value_;
+					return _value;
 				}
 				set	
 				{
-					value_ = value;
+					_value = value;
 				}
 			}
 
-			public class FileSizeProportionData{
+			public class DescribeDomainFileSizeProportionData_FileSizeProportionData
+			{
 
 				private string fileSize;
 

@@ -32,17 +32,17 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			refreshCdnDomainConfigsCacheResponse.HttpResponse = context.HttpResponse;
 			refreshCdnDomainConfigsCacheResponse.RequestId = context.StringValue("RefreshCdnDomainConfigsCache.RequestId");
 
-			List<string> sucessDomains = new List<string>();
+			List<string> refreshCdnDomainConfigsCacheResponse_sucessDomains = new List<string>();
 			for (int i = 0; i < context.Length("RefreshCdnDomainConfigsCache.SucessDomains.Length"); i++) {
-				sucessDomains.Add(context.StringValue("RefreshCdnDomainConfigsCache.SucessDomains["+ i +"]"));
+				refreshCdnDomainConfigsCacheResponse_sucessDomains.Add(context.StringValue("RefreshCdnDomainConfigsCache.SucessDomains["+ i +"]"));
 			}
-			refreshCdnDomainConfigsCacheResponse.SucessDomains = sucessDomains;
+			refreshCdnDomainConfigsCacheResponse.SucessDomains = refreshCdnDomainConfigsCacheResponse_sucessDomains;
 
-			List<string> failedDomains = new List<string>();
+			List<string> refreshCdnDomainConfigsCacheResponse_failedDomains = new List<string>();
 			for (int i = 0; i < context.Length("RefreshCdnDomainConfigsCache.FailedDomains.Length"); i++) {
-				failedDomains.Add(context.StringValue("RefreshCdnDomainConfigsCache.FailedDomains["+ i +"]"));
+				refreshCdnDomainConfigsCacheResponse_failedDomains.Add(context.StringValue("RefreshCdnDomainConfigsCache.FailedDomains["+ i +"]"));
 			}
-			refreshCdnDomainConfigsCacheResponse.FailedDomains = failedDomains;
+			refreshCdnDomainConfigsCacheResponse.FailedDomains = refreshCdnDomainConfigsCacheResponse_failedDomains;
         
 			return refreshCdnDomainConfigsCacheResponse;
         }

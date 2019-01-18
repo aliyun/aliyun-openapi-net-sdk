@@ -29,38 +29,44 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstanceByTagsRequest : RpcAcsRequest<DescribeDBInstanceByTagsResponse>
     {
         public DescribeDBInstanceByTagsRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstanceByTags")
+            : base("Rds", "2014-08-15", "DescribeDBInstanceByTags", "rds", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
 		private string clientToken;
 
-		private string proxyId;
-
-		private string dBInstanceId;
-
-		private int? pageSize;
-
-		private int? pageNumber;
+		private string regionId;
 
 		private string ownerAccount;
 
-		public long? OwnerId
+		private int? pageSize;
+
+		private string action;
+
+		private string dBInstanceId;
+
+		private long? ownerId;
+
+		private int? pageNumber;
+
+		private string accessKeyId;
+
+		private string proxyId;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -77,19 +83,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -103,29 +96,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ProxyId
+		public string RegionId
 		{
 			get
 			{
-				return proxyId;
+				return regionId;
 			}
 			set	
 			{
-				proxyId = value;
-				DictionaryUtil.Add(QueryParameters, "proxyId", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
-		public string DBInstanceId
+		public string OwnerAccount
 		{
 			get
 			{
-				return dBInstanceId;
+				return ownerAccount;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -142,6 +135,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -155,16 +187,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
+		public string AccessKeyId
 		{
 			get
 			{
-				return ownerAccount;
+				return accessKeyId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string ProxyId
+		{
+			get
+			{
+				return proxyId;
+			}
+			set	
+			{
+				proxyId = value;
+				DictionaryUtil.Add(QueryParameters, "proxyId", value);
 			}
 		}
 

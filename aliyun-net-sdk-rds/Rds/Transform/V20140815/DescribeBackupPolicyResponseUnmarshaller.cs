@@ -37,6 +37,22 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeBackupPolicyResponse.PreferredBackupPeriod = context.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
 			describeBackupPolicyResponse.BackupLog = context.StringValue("DescribeBackupPolicy.BackupLog");
 			describeBackupPolicyResponse.LogBackupRetentionPeriod = context.IntegerValue("DescribeBackupPolicy.LogBackupRetentionPeriod");
+			describeBackupPolicyResponse.EnableBackupLog = context.StringValue("DescribeBackupPolicy.EnableBackupLog");
+			describeBackupPolicyResponse.LocalLogRetentionHours = context.IntegerValue("DescribeBackupPolicy.LocalLogRetentionHours");
+			describeBackupPolicyResponse.LocalLogRetentionSpace = context.StringValue("DescribeBackupPolicy.LocalLogRetentionSpace");
+			describeBackupPolicyResponse.Duplication = context.StringValue("DescribeBackupPolicy.Duplication");
+			describeBackupPolicyResponse.DuplicationContent = context.StringValue("DescribeBackupPolicy.DuplicationContent");
+			describeBackupPolicyResponse.HighSpaceUsageProtection = context.StringValue("DescribeBackupPolicy.HighSpaceUsageProtection");
+			describeBackupPolicyResponse.LogBackupFrequency = context.StringValue("DescribeBackupPolicy.LogBackupFrequency");
+
+			DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation duplicationLocation = new DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation();
+			duplicationLocation.Sotrage = context.StringValue("DescribeBackupPolicy.DuplicationLocation.Sotrage");
+
+			DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation.DescribeBackupPolicy_Location location = new DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation.DescribeBackupPolicy_Location();
+			location.Endpoint = context.StringValue("DescribeBackupPolicy.DuplicationLocation.Location.Endpoint");
+			location.Bucket = context.StringValue("DescribeBackupPolicy.DuplicationLocation.Location.Bucket");
+			duplicationLocation.Location = location;
+			describeBackupPolicyResponse.DuplicationLocation = duplicationLocation;
         
 			return describeBackupPolicyResponse;
         }

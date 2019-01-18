@@ -24,6 +24,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 	public class DescribeApiHistoryResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string regionId;
 
 		private string groupId;
@@ -54,27 +56,41 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string deployedTime;
 
-		private List<ErrorCodeSample> errorCodeSamples;
+		private string allowSignatureMethod;
 
-		private List<ResultDescription> resultDescriptions;
+		private List<DescribeApiHistory_ErrorCodeSample> errorCodeSamples;
 
-		private List<SystemParameter> systemParameters;
+		private List<DescribeApiHistory_ResultDescription> resultDescriptions;
 
-		private List<CustomSystemParameter> customSystemParameters;
+		private List<DescribeApiHistory_SystemParameter> systemParameters;
 
-		private List<ConstantParameter> constantParameters;
+		private List<DescribeApiHistory_CustomSystemParameter> customSystemParameters;
 
-		private List<RequestParameter> requestParameters;
+		private List<DescribeApiHistory_ConstantParameter> constantParameters;
 
-		private List<ServiceParameter> serviceParameters;
+		private List<DescribeApiHistory_RequestParameter> requestParameters;
 
-		private List<ServiceParameterMap> serviceParametersMap;
+		private List<DescribeApiHistory_ServiceParameter> serviceParameters;
 
-		private RequestConfig_ requestConfig;
+		private List<DescribeApiHistory_ServiceParameterMap> serviceParametersMap;
 
-		private ServiceConfig_ serviceConfig;
+		private DescribeApiHistory_RequestConfig requestConfig;
 
-		private OpenIdConnectConfig_ openIdConnectConfig;
+		private DescribeApiHistory_ServiceConfig serviceConfig;
+
+		private DescribeApiHistory_OpenIdConnectConfig openIdConnectConfig;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string RegionId
 		{
@@ -256,7 +272,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<ErrorCodeSample> ErrorCodeSamples
+		public string AllowSignatureMethod
+		{
+			get
+			{
+				return allowSignatureMethod;
+			}
+			set	
+			{
+				allowSignatureMethod = value;
+			}
+		}
+
+		public List<DescribeApiHistory_ErrorCodeSample> ErrorCodeSamples
 		{
 			get
 			{
@@ -268,7 +296,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<ResultDescription> ResultDescriptions
+		public List<DescribeApiHistory_ResultDescription> ResultDescriptions
 		{
 			get
 			{
@@ -280,7 +308,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<SystemParameter> SystemParameters
+		public List<DescribeApiHistory_SystemParameter> SystemParameters
 		{
 			get
 			{
@@ -292,7 +320,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<CustomSystemParameter> CustomSystemParameters
+		public List<DescribeApiHistory_CustomSystemParameter> CustomSystemParameters
 		{
 			get
 			{
@@ -304,7 +332,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<ConstantParameter> ConstantParameters
+		public List<DescribeApiHistory_ConstantParameter> ConstantParameters
 		{
 			get
 			{
@@ -316,7 +344,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<RequestParameter> RequestParameters
+		public List<DescribeApiHistory_RequestParameter> RequestParameters
 		{
 			get
 			{
@@ -328,7 +356,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<ServiceParameter> ServiceParameters
+		public List<DescribeApiHistory_ServiceParameter> ServiceParameters
 		{
 			get
 			{
@@ -340,7 +368,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public List<ServiceParameterMap> ServiceParametersMap
+		public List<DescribeApiHistory_ServiceParameterMap> ServiceParametersMap
 		{
 			get
 			{
@@ -352,7 +380,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public RequestConfig_ RequestConfig
+		public DescribeApiHistory_RequestConfig RequestConfig
 		{
 			get
 			{
@@ -364,7 +392,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public ServiceConfig_ ServiceConfig
+		public DescribeApiHistory_ServiceConfig ServiceConfig
 		{
 			get
 			{
@@ -376,7 +404,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public OpenIdConnectConfig_ OpenIdConnectConfig
+		public DescribeApiHistory_OpenIdConnectConfig OpenIdConnectConfig
 		{
 			get
 			{
@@ -388,7 +416,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class ErrorCodeSample{
+		public class DescribeApiHistory_ErrorCodeSample
+		{
 
 			private string code;
 
@@ -433,7 +462,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class ResultDescription{
+		public class DescribeApiHistory_ResultDescription
+		{
 
 			private string id;
 
@@ -548,7 +578,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class SystemParameter{
+		public class DescribeApiHistory_SystemParameter
+		{
 
 			private string parameterName;
 
@@ -621,7 +652,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class CustomSystemParameter{
+		public class DescribeApiHistory_CustomSystemParameter
+		{
 
 			private string parameterName;
 
@@ -694,7 +726,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class ConstantParameter{
+		public class DescribeApiHistory_ConstantParameter
+		{
 
 			private string serviceParameterName;
 
@@ -753,7 +786,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class RequestParameter{
+		public class DescribeApiHistory_RequestParameter
+		{
 
 			private string apiParameterName;
 
@@ -980,7 +1014,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class ServiceParameter{
+		public class DescribeApiHistory_ServiceParameter
+		{
 
 			private string serviceParameterName;
 
@@ -1025,7 +1060,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class ServiceParameterMap{
+		public class DescribeApiHistory_ServiceParameterMap
+		{
 
 			private string serviceParameterName;
 
@@ -1056,7 +1092,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public class RequestConfig_{
+		public class DescribeApiHistory_RequestConfig
+		{
 
 			private string requestProtocol;
 
@@ -1067,6 +1104,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			private string bodyFormat;
 
 			private string postBodyDescription;
+
+			private string requestMode;
 
 			public string RequestProtocol
 			{
@@ -1127,9 +1166,22 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 					postBodyDescription = value;
 				}
 			}
+
+			public string RequestMode
+			{
+				get
+				{
+					return requestMode;
+				}
+				set	
+				{
+					requestMode = value;
+				}
+			}
 		}
 
-		public class ServiceConfig_{
+		public class DescribeApiHistory_ServiceConfig
+		{
 
 			private string serviceProtocol;
 
@@ -1141,13 +1193,13 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private int? serviceTimeout;
 
-			private MockEnum? mock;
+			private string mock;
 
 			private string mockResult;
 
-			private ServiceVpcEnableEnum? serviceVpcEnable;
+			private string serviceVpcEnable;
 
-			private VpcConfig_ vpcConfig;
+			private DescribeApiHistory_VpcConfig vpcConfig;
 
 			public string ServiceProtocol
 			{
@@ -1209,7 +1261,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
-			public MockEnum? Mock
+			public string Mock
 			{
 				get
 				{
@@ -1233,7 +1285,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
-			public ServiceVpcEnableEnum? ServiceVpcEnable
+			public string ServiceVpcEnable
 			{
 				get
 				{
@@ -1245,7 +1297,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
-			public VpcConfig_ VpcConfig
+			public DescribeApiHistory_VpcConfig VpcConfig
 			{
 				get
 				{
@@ -1257,19 +1309,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
-public enum MockEnum {
-
-					FALSE,
-					TRUE,
-}
-
-public enum ServiceVpcEnableEnum {
-
-					FALSE,
-					TRUE,
-}
-
-			public class VpcConfig_{
+			public class DescribeApiHistory_VpcConfig
+			{
 
 				private string name;
 
@@ -1329,7 +1370,8 @@ public enum ServiceVpcEnableEnum {
 			}
 		}
 
-		public class OpenIdConnectConfig_{
+		public class DescribeApiHistory_OpenIdConnectConfig
+		{
 
 			private string openIdApiType;
 

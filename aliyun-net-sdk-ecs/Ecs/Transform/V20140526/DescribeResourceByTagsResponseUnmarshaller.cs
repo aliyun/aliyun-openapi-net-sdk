@@ -35,16 +35,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeResourceByTagsResponse.PageNumber = context.IntegerValue("DescribeResourceByTags.PageNumber");
 			describeResourceByTagsResponse.TotalCount = context.IntegerValue("DescribeResourceByTags.TotalCount");
 
-			List<DescribeResourceByTagsResponse.Resource> resources = new List<DescribeResourceByTagsResponse.Resource>();
+			List<DescribeResourceByTagsResponse.DescribeResourceByTags_Resource> describeResourceByTagsResponse_resources = new List<DescribeResourceByTagsResponse.DescribeResourceByTags_Resource>();
 			for (int i = 0; i < context.Length("DescribeResourceByTags.Resources.Length"); i++) {
-				DescribeResourceByTagsResponse.Resource resource = new DescribeResourceByTagsResponse.Resource();
+				DescribeResourceByTagsResponse.DescribeResourceByTags_Resource resource = new DescribeResourceByTagsResponse.DescribeResourceByTags_Resource();
 				resource.ResourceId = context.StringValue("DescribeResourceByTags.Resources["+ i +"].ResourceId");
 				resource.ResourceType = context.StringValue("DescribeResourceByTags.Resources["+ i +"].ResourceType");
 				resource.RegionId = context.StringValue("DescribeResourceByTags.Resources["+ i +"].RegionId");
 
-				resources.Add(resource);
+				describeResourceByTagsResponse_resources.Add(resource);
 			}
-			describeResourceByTagsResponse.Resources = resources;
+			describeResourceByTagsResponse.Resources = describeResourceByTagsResponse_resources;
         
 			return describeResourceByTagsResponse;
         }

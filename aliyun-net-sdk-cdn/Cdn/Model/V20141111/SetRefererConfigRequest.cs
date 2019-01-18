@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string referList;
 
 		private string securityToken;
 
@@ -41,20 +41,26 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string referType;
 
-		private string referList;
+		private string action;
+
+		private string disableAst;
+
+		private long? ownerId;
 
 		private string allowEmpty;
 
-		public long? OwnerId
+		private string accessKeyId;
+
+		public string ReferList
 		{
 			get
 			{
-				return ownerId;
+				return referList;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				referList = value;
+				DictionaryUtil.Add(QueryParameters, "ReferList", value);
 			}
 		}
 
@@ -97,16 +103,42 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string ReferList
+		public string Action
 		{
 			get
 			{
-				return referList;
+				return action;
 			}
 			set	
 			{
-				referList = value;
-				DictionaryUtil.Add(QueryParameters, "ReferList", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string DisableAst
+		{
+			get
+			{
+				return disableAst;
+			}
+			set	
+			{
+				disableAst = value;
+				DictionaryUtil.Add(QueryParameters, "DisableAst", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -120,6 +152,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				allowEmpty = value;
 				DictionaryUtil.Add(QueryParameters, "AllowEmpty", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

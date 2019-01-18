@@ -33,11 +33,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeCharacterSetNameResponse.RequestId = context.StringValue("DescribeCharacterSetName.RequestId");
 			describeCharacterSetNameResponse.Engine = context.StringValue("DescribeCharacterSetName.Engine");
 
-			List<string> characterSetNameItems = new List<string>();
+			List<string> describeCharacterSetNameResponse_characterSetNameItems = new List<string>();
 			for (int i = 0; i < context.Length("DescribeCharacterSetName.CharacterSetNameItems.Length"); i++) {
-				characterSetNameItems.Add(context.StringValue("DescribeCharacterSetName.CharacterSetNameItems["+ i +"]"));
+				describeCharacterSetNameResponse_characterSetNameItems.Add(context.StringValue("DescribeCharacterSetName.CharacterSetNameItems["+ i +"]"));
 			}
-			describeCharacterSetNameResponse.CharacterSetNameItems = characterSetNameItems;
+			describeCharacterSetNameResponse.CharacterSetNameItems = describeCharacterSetNameResponse_characterSetNameItems;
         
 			return describeCharacterSetNameResponse;
         }

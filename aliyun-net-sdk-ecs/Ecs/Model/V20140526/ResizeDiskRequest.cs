@@ -29,49 +29,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ResizeDiskRequest : RpcAcsRequest<ResizeDiskResponse>
     {
         public ResizeDiskRequest()
-            : base("Ecs", "2014-05-26", "ResizeDisk")
+            : base("Ecs", "2014-05-26", "ResizeDisk", "ecs", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
 
-		private string diskId;
-
-		private int? newSize;
+		private string resourceOwnerAccount;
 
 		private string clientToken;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private int? newSize;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string action;
+
+		private string diskId;
+
+		private long? ownerId;
+
+		private string type;
 
 		public long? ResourceOwnerId
 		{
@@ -86,29 +64,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DiskId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return diskId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				diskId = value;
-				DictionaryUtil.Add(QueryParameters, "DiskId", value);
-			}
-		}
-
-		public int? NewSize
-		{
-			get
-			{
-				return newSize;
-			}
-			set	
-			{
-				newSize = value;
-				DictionaryUtil.Add(QueryParameters, "NewSize", value.ToString());
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -135,6 +100,71 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public int? NewSize
+		{
+			get
+			{
+				return newSize;
+			}
+			set	
+			{
+				newSize = value;
+				DictionaryUtil.Add(QueryParameters, "NewSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string DiskId
+		{
+			get
+			{
+				return diskId;
+			}
+			set	
+			{
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 

@@ -33,28 +33,32 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string appName;
 
 		private string securityToken;
 
-		private string domainName;
-
 		private string liveStreamType;
 
-		private string appName;
+		private string domainName;
+
+		private string action;
+
+		private long? ownerId;
 
 		private string streamName;
 
-		public long? OwnerId
+		private string accessKeyId;
+
+		public string AppName
 		{
 			get
 			{
-				return ownerId;
+				return appName;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -71,19 +75,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
 		public string LiveStreamType
 		{
 			get
@@ -97,16 +88,42 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string AppName
+		public string DomainName
 		{
 			get
 			{
-				return appName;
+				return domainName;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -120,6 +137,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				streamName = value;
 				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

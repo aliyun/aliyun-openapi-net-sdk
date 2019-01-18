@@ -23,5 +23,7 @@ namespace Aliyun.Acs.Core.Reader
     public interface IReader
     {
         Dictionary<string, string> Read(string response, string endpoint);
+
+        Dictionary<string, string> ReadForHideArrayItem(string response, string endpoint);
     }
 }

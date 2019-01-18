@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class SearchWaterMarkTemplateResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private long? totalCount;
 
 		private long? pageNumber;
 
 		private long? pageSize;
 
-		private List<WaterMarkTemplate> waterMarkTemplateList;
+		private List<SearchWaterMarkTemplate_WaterMarkTemplate> waterMarkTemplateList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public List<WaterMarkTemplate> WaterMarkTemplateList
+		public List<SearchWaterMarkTemplate_WaterMarkTemplate> WaterMarkTemplateList
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class WaterMarkTemplate{
+		public class SearchWaterMarkTemplate_WaterMarkTemplate
+		{
 
 			private string id;
 
@@ -100,9 +115,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string state;
 
-			private Timeline_ timeline;
+			private SearchWaterMarkTemplate_Timeline timeline;
 
-			private RatioRefer_ ratioRefer;
+			private SearchWaterMarkTemplate_RatioRefer ratioRefer;
 
 			public string Id
 			{
@@ -212,7 +227,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Timeline_ Timeline
+			public SearchWaterMarkTemplate_Timeline Timeline
 			{
 				get
 				{
@@ -224,7 +239,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public RatioRefer_ RatioRefer
+			public SearchWaterMarkTemplate_RatioRefer RatioRefer
 			{
 				get
 				{
@@ -236,7 +251,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Timeline_{
+			public class SearchWaterMarkTemplate_Timeline
+			{
 
 				private string start;
 
@@ -267,7 +283,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class RatioRefer_{
+			public class SearchWaterMarkTemplate_RatioRefer
+			{
 
 				private string dx;
 

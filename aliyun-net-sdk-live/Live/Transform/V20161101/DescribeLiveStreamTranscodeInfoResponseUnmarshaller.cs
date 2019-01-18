@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Live.Model.V20161101;
+using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Transform.V20161101
+namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamTranscodeInfoResponseUnmarshaller
     {
@@ -32,16 +32,24 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 			describeLiveStreamTranscodeInfoResponse.HttpResponse = context.HttpResponse;
 			describeLiveStreamTranscodeInfoResponse.RequestId = context.StringValue("DescribeLiveStreamTranscodeInfo.RequestId");
 
-			List<DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo> domainTranscodeList = new List<DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo>();
+			List<DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> describeLiveStreamTranscodeInfoResponse_domainTranscodeList = new List<DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamTranscodeInfo.DomainTranscodeList.Length"); i++) {
-				DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo domainTranscodeInfo = new DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo();
+				DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo domainTranscodeInfo = new DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo();
 				domainTranscodeInfo.TranscodeApp = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeApp");
 				domainTranscodeInfo.TranscodeName = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeName");
 				domainTranscodeInfo.TranscodeTemplate = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeTemplate");
 
-				domainTranscodeList.Add(domainTranscodeInfo);
+				DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo.DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters customTranscodeParameters = new DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo.DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters();
+				customTranscodeParameters.VideoBitrate = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.VideoBitrate");
+				customTranscodeParameters.FPS = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.FPS");
+				customTranscodeParameters.Height = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Height");
+				customTranscodeParameters.Width = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Width");
+				customTranscodeParameters.TemplateType = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.TemplateType");
+				domainTranscodeInfo.CustomTranscodeParameters = customTranscodeParameters;
+
+				describeLiveStreamTranscodeInfoResponse_domainTranscodeList.Add(domainTranscodeInfo);
 			}
-			describeLiveStreamTranscodeInfoResponse.DomainTranscodeList = domainTranscodeList;
+			describeLiveStreamTranscodeInfoResponse.DomainTranscodeList = describeLiveStreamTranscodeInfoResponse_domainTranscodeList;
         
 			return describeLiveStreamTranscodeInfoResponse;
         }

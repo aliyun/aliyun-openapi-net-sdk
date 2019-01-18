@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class UpdateMediaResponse : AcsResponse
 	{
 
-		private Media_ media;
+		private string requestId;
 
-		public Media_ Media
+		private UpdateMedia_Media media;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public UpdateMedia_Media Media
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class Media_{
+		public class UpdateMedia_Media
+		{
 
 			private string mediaId;
 
@@ -66,13 +81,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string publishState;
 
+			private string censorState;
+
 			private string creationTime;
 
 			private List<string> tags;
 
 			private List<string> runIdList;
 
-			private File_ file;
+			private UpdateMedia_File file;
 
 			public string MediaId
 			{
@@ -230,6 +247,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public string CensorState
+			{
+				get
+				{
+					return censorState;
+				}
+				set	
+				{
+					censorState = value;
+				}
+			}
+
 			public string CreationTime
 			{
 				get
@@ -266,7 +295,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public File_ File
+			public UpdateMedia_File File
 			{
 				get
 				{
@@ -278,7 +307,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class File_{
+			public class UpdateMedia_File
+			{
 
 				private string uRL;
 

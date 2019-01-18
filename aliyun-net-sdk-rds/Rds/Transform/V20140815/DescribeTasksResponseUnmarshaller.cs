@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeTasksResponse.PageNumber = context.IntegerValue("DescribeTasks.PageNumber");
 			describeTasksResponse.PageRecordCount = context.IntegerValue("DescribeTasks.PageRecordCount");
 
-			List<DescribeTasksResponse.TaskProgressInfo> items = new List<DescribeTasksResponse.TaskProgressInfo>();
+			List<DescribeTasksResponse.DescribeTasks_TaskProgressInfo> describeTasksResponse_items = new List<DescribeTasksResponse.DescribeTasks_TaskProgressInfo>();
 			for (int i = 0; i < context.Length("DescribeTasks.Items.Length"); i++) {
-				DescribeTasksResponse.TaskProgressInfo taskProgressInfo = new DescribeTasksResponse.TaskProgressInfo();
+				DescribeTasksResponse.DescribeTasks_TaskProgressInfo taskProgressInfo = new DescribeTasksResponse.DescribeTasks_TaskProgressInfo();
 				taskProgressInfo.DBName = context.StringValue("DescribeTasks.Items["+ i +"].DBName");
 				taskProgressInfo.BeginTime = context.StringValue("DescribeTasks.Items["+ i +"].BeginTime");
 				taskProgressInfo.ProgressInfo = context.StringValue("DescribeTasks.Items["+ i +"].ProgressInfo");
@@ -46,13 +46,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				taskProgressInfo.TaskId = context.StringValue("DescribeTasks.Items["+ i +"].TaskId");
 				taskProgressInfo.Progress = context.StringValue("DescribeTasks.Items["+ i +"].Progress");
 				taskProgressInfo.ExpectedFinishTime = context.StringValue("DescribeTasks.Items["+ i +"].ExpectedFinishTime");
-				taskProgressInfo.Status = context.EnumValue<DescribeTasksResponse.TaskProgressInfo.StatusEnum>("DescribeTasks.Items["+ i +"].Status");
+				taskProgressInfo.Status = context.StringValue("DescribeTasks.Items["+ i +"].Status");
 				taskProgressInfo.TaskErrorCode = context.StringValue("DescribeTasks.Items["+ i +"].TaskErrorCode");
 				taskProgressInfo.TaskErrorMessage = context.StringValue("DescribeTasks.Items["+ i +"].TaskErrorMessage");
 
-				items.Add(taskProgressInfo);
+				describeTasksResponse_items.Add(taskProgressInfo);
 			}
-			describeTasksResponse.Items = items;
+			describeTasksResponse.Items = describeTasksResponse_items;
         
 			return describeTasksResponse;
         }

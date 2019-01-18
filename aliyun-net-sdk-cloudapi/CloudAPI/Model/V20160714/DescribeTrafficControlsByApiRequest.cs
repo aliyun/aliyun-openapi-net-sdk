@@ -29,15 +29,47 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeTrafficControlsByApiRequest : RpcAcsRequest<DescribeTrafficControlsByApiResponse>
     {
         public DescribeTrafficControlsByApiRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeTrafficControlsByApi")
+            : base("CloudAPI", "2016-07-14", "DescribeTrafficControlsByApi", "apigateway", "openAPI")
         {
         }
 
+		private string stageName;
+
+		private string securityToken;
+
 		private string groupId;
+
+		private string action;
 
 		private string apiId;
 
-		private string stageName;
+		private string accessKeyId;
+
+		public string StageName
+		{
+			get
+			{
+				return stageName;
+			}
+			set	
+			{
+				stageName = value;
+				DictionaryUtil.Add(QueryParameters, "StageName", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -49,6 +81,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -65,16 +110,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string StageName
+		public string AccessKeyId
 		{
 			get
 			{
-				return stageName;
+				return accessKeyId;
 			}
 			set	
 			{
-				stageName = value;
-				DictionaryUtil.Add(QueryParameters, "StageName", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

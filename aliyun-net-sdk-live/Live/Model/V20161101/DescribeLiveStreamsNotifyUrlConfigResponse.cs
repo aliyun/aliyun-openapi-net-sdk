@@ -19,14 +19,28 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveStreamsNotifyUrlConfigResponse : AcsResponse
 	{
 
-		private LiveStreamsNotifyConfig_ liveStreamsNotifyConfig;
+		private string requestId;
 
-		public LiveStreamsNotifyConfig_ LiveStreamsNotifyConfig
+		private DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig liveStreamsNotifyConfig;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig LiveStreamsNotifyConfig
 		{
 			get
 			{
@@ -38,11 +52,16 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class LiveStreamsNotifyConfig_{
+		public class DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig
+		{
 
 			private string domainName;
 
 			private string notifyUrl;
+
+			private string authType;
+
+			private string authKey;
 
 			public string DomainName
 			{
@@ -65,6 +84,30 @@ namespace Aliyun.Acs.Live.Model.V20161101
 				set	
 				{
 					notifyUrl = value;
+				}
+			}
+
+			public string AuthType
+			{
+				get
+				{
+					return authType;
+				}
+				set	
+				{
+					authType = value;
+				}
+			}
+
+			public string AuthKey
+			{
+				get
+				{
+					return authKey;
+				}
+				set	
+				{
+					authKey = value;
 				}
 			}
 		}

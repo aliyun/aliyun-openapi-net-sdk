@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Live.Model.V20161101;
+using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Transform.V20161101
+namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamRecordIndexFileResponseUnmarshaller
     {
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 			describeLiveStreamRecordIndexFileResponse.HttpResponse = context.HttpResponse;
 			describeLiveStreamRecordIndexFileResponse.RequestId = context.StringValue("DescribeLiveStreamRecordIndexFile.RequestId");
 
-			DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo_ recordIndexInfo = new DescribeLiveStreamRecordIndexFileResponse.RecordIndexInfo_();
+			DescribeLiveStreamRecordIndexFileResponse.DescribeLiveStreamRecordIndexFile_RecordIndexInfo recordIndexInfo = new DescribeLiveStreamRecordIndexFileResponse.DescribeLiveStreamRecordIndexFile_RecordIndexInfo();
 			recordIndexInfo.RecordId = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.RecordId");
 			recordIndexInfo.RecordUrl = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.RecordUrl");
 			recordIndexInfo.DomainName = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.DomainName");

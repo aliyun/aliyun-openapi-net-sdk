@@ -1,0 +1,311 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise.Transform;
+using Aliyun.Acs.dms_enterprise.Transform.V20181101;
+using System.Collections.Generic;
+
+namespace Aliyun.Acs.dms_enterprise.Model.V20181101
+{
+    public class RegisterInstanceRequest : RpcAcsRequest<RegisterInstanceResponse>
+    {
+        public RegisterInstanceRequest()
+            : base("dms_enterprise", "2018-11-01", "RegisterInstance", "dmsenterprise", "openAPI")
+        {
+        }
+
+		private string ecsInstanceId;
+
+		private string ecsRegion;
+
+		private int? exportTimeout;
+
+		private string databasePassword;
+
+		private string instanceAlias;
+
+		private string networkType;
+
+		private long? tid;
+
+		private string sid;
+
+		private string databaseUser;
+
+		private int? port;
+
+		private string vpcId;
+
+		private string instanceSource;
+
+		private string envType;
+
+		private string host;
+
+		private string instanceType;
+
+		private int? queryTimeout;
+
+		private long? dbaUid;
+
+		private string safeRule;
+
+		public string EcsInstanceId
+		{
+			get
+			{
+				return ecsInstanceId;
+			}
+			set	
+			{
+				ecsInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "EcsInstanceId", value);
+			}
+		}
+
+		public string EcsRegion
+		{
+			get
+			{
+				return ecsRegion;
+			}
+			set	
+			{
+				ecsRegion = value;
+				DictionaryUtil.Add(QueryParameters, "EcsRegion", value);
+			}
+		}
+
+		public int? ExportTimeout
+		{
+			get
+			{
+				return exportTimeout;
+			}
+			set	
+			{
+				exportTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "ExportTimeout", value.ToString());
+			}
+		}
+
+		public string DatabasePassword
+		{
+			get
+			{
+				return databasePassword;
+			}
+			set	
+			{
+				databasePassword = value;
+				DictionaryUtil.Add(QueryParameters, "DatabasePassword", value);
+			}
+		}
+
+		public string InstanceAlias
+		{
+			get
+			{
+				return instanceAlias;
+			}
+			set	
+			{
+				instanceAlias = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceAlias", value);
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
+		public long? Tid
+		{
+			get
+			{
+				return tid;
+			}
+			set	
+			{
+				tid = value;
+				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
+
+		public string Sid
+		{
+			get
+			{
+				return sid;
+			}
+			set	
+			{
+				sid = value;
+				DictionaryUtil.Add(QueryParameters, "Sid", value);
+			}
+		}
+
+		public string DatabaseUser
+		{
+			get
+			{
+				return databaseUser;
+			}
+			set	
+			{
+				databaseUser = value;
+				DictionaryUtil.Add(QueryParameters, "DatabaseUser", value);
+			}
+		}
+
+		public int? Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
+		public string InstanceSource
+		{
+			get
+			{
+				return instanceSource;
+			}
+			set	
+			{
+				instanceSource = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceSource", value);
+			}
+		}
+
+		public string EnvType
+		{
+			get
+			{
+				return envType;
+			}
+			set	
+			{
+				envType = value;
+				DictionaryUtil.Add(QueryParameters, "EnvType", value);
+			}
+		}
+
+		public string Host
+		{
+			get
+			{
+				return host;
+			}
+			set	
+			{
+				host = value;
+				DictionaryUtil.Add(QueryParameters, "Host", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public int? QueryTimeout
+		{
+			get
+			{
+				return queryTimeout;
+			}
+			set	
+			{
+				queryTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "QueryTimeout", value.ToString());
+			}
+		}
+
+		public long? DbaUid
+		{
+			get
+			{
+				return dbaUid;
+			}
+			set	
+			{
+				dbaUid = value;
+				DictionaryUtil.Add(QueryParameters, "DbaUid", value.ToString());
+			}
+		}
+
+		public string SafeRule
+		{
+			get
+			{
+				return safeRule;
+			}
+			set	
+			{
+				safeRule = value;
+				DictionaryUtil.Add(QueryParameters, "SafeRule", value);
+			}
+		}
+
+        public override RegisterInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        {
+            return RegisterInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
+}

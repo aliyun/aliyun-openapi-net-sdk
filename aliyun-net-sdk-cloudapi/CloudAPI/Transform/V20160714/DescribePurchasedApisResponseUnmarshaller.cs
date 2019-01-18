@@ -35,9 +35,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describePurchasedApisResponse.PageSize = context.IntegerValue("DescribePurchasedApis.PageSize");
 			describePurchasedApisResponse.PageNumber = context.IntegerValue("DescribePurchasedApis.PageNumber");
 
-			List<DescribePurchasedApisResponse.PurchasedApi> purchasedApis = new List<DescribePurchasedApisResponse.PurchasedApi>();
+			List<DescribePurchasedApisResponse.DescribePurchasedApis_PurchasedApi> describePurchasedApisResponse_purchasedApis = new List<DescribePurchasedApisResponse.DescribePurchasedApis_PurchasedApi>();
 			for (int i = 0; i < context.Length("DescribePurchasedApis.PurchasedApis.Length"); i++) {
-				DescribePurchasedApisResponse.PurchasedApi purchasedApi = new DescribePurchasedApisResponse.PurchasedApi();
+				DescribePurchasedApisResponse.DescribePurchasedApis_PurchasedApi purchasedApi = new DescribePurchasedApisResponse.DescribePurchasedApis_PurchasedApi();
 				purchasedApi.RegionId = context.StringValue("DescribePurchasedApis.PurchasedApis["+ i +"].RegionId");
 				purchasedApi.GroupId = context.StringValue("DescribePurchasedApis.PurchasedApis["+ i +"].GroupId");
 				purchasedApi.GroupName = context.StringValue("DescribePurchasedApis.PurchasedApis["+ i +"].GroupName");
@@ -47,9 +47,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				purchasedApi.Description = context.StringValue("DescribePurchasedApis.PurchasedApis["+ i +"].Description");
 				purchasedApi.PurchasedTime = context.StringValue("DescribePurchasedApis.PurchasedApis["+ i +"].PurchasedTime");
 
-				purchasedApis.Add(purchasedApi);
+				describePurchasedApisResponse_purchasedApis.Add(purchasedApi);
 			}
-			describePurchasedApisResponse.PurchasedApis = purchasedApis;
+			describePurchasedApisResponse.PurchasedApis = describePurchasedApisResponse_purchasedApis;
         
 			return describePurchasedApisResponse;
         }

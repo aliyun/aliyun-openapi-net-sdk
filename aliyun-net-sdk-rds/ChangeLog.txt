@@ -1,0 +1,47 @@
+2019-01-04 Version: 2.3.1
+1, modify DescribeSlowLogs, support query param SQLHASH, remove SQLID query param.
+2, modify DescribeSlowLogRecords, response values add SQLHASH, remove SQLID.
+3, upgrade rds sdk version 2.3.1.
+
+2018-12-14 Version: 2.2.0
+1, fixed sdk unit loute .
+2, upgrade rds sdk version 2.2.0.
+
+2018-12-11 Version: 2.3.0
+1, DescribeAccount support OwnerAccount params.
+2, Upgrade Rds SDK Version to 2.3.0
+
+2018-09-17 Version: 2.1.9
+1, describeRegions modify.
+
+2018-09-17 Version: 2.1.8
+1, ModifySecurityIps support WhitelistNetworkType 
+
+2018-09-16 Version: 2.1.7
+1, add CheckInstanceExist OpenApi.
+
+2018-09-13 Version: 2.1.6
+1, modify CheckDBInstance OpenApi
+
+2018-09-11 Version: 2.1.5
+1, add CheckDBInstance OpenApi.
+
+2018-07-18 Version: 2.1.4
+1, add openapi service.
+
+2018-05-22 Version: 2.1.3
+1, add DescribeMigrateTasks,DescribeOssDownloads,CheckRecoveryConditions.
+2, modify DescribeDBInstanceAttribute.
+
+2018-03-15 Version: 2.1.2
+1, Synchronize to the latest api list
+
+2017-09-27 Version: 2.1.1
+1, 修改了ModifyDBInstanceNetworkType接口，支持将Classic切换到VPC，设置经典网络保留期限。
+2, 修改了DescribeDBInstanceNetInfo 接口，返回值增加经典网络保留期限属性ExpiredTime。
+3, 增加了UpgradeDBInstanceNetWorkInfo接口。
+4, 增加了ModifyDBInstanceNetExpireTime 接口，支持Classic 实例网络保留期限。
+5, 增加了RenewInstance接口，支持实例到期续费。
+6, 增加了DescribeRenewalPrice接口，支持查询实例续费费用。
+7, 增加了DescribePrice接口，支持新购实例的续费计算。
+

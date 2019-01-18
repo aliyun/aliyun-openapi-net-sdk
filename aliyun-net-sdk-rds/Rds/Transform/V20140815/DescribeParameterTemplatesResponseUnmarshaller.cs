@@ -35,19 +35,19 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeParameterTemplatesResponse.EngineVersion = context.StringValue("DescribeParameterTemplates.EngineVersion");
 			describeParameterTemplatesResponse.ParameterCount = context.StringValue("DescribeParameterTemplates.ParameterCount");
 
-			List<DescribeParameterTemplatesResponse.TemplateRecord> parameters = new List<DescribeParameterTemplatesResponse.TemplateRecord>();
+			List<DescribeParameterTemplatesResponse.DescribeParameterTemplates_TemplateRecord> describeParameterTemplatesResponse_parameters = new List<DescribeParameterTemplatesResponse.DescribeParameterTemplates_TemplateRecord>();
 			for (int i = 0; i < context.Length("DescribeParameterTemplates.Parameters.Length"); i++) {
-				DescribeParameterTemplatesResponse.TemplateRecord templateRecord = new DescribeParameterTemplatesResponse.TemplateRecord();
+				DescribeParameterTemplatesResponse.DescribeParameterTemplates_TemplateRecord templateRecord = new DescribeParameterTemplatesResponse.DescribeParameterTemplates_TemplateRecord();
 				templateRecord.ParameterName = context.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterName");
 				templateRecord.ParameterValue = context.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterValue");
-				templateRecord.ForceModify = context.EnumValue<DescribeParameterTemplatesResponse.TemplateRecord.ForceModifyEnum>("DescribeParameterTemplates.Parameters["+ i +"].ForceModify");
-				templateRecord.ForceRestart = context.EnumValue<DescribeParameterTemplatesResponse.TemplateRecord.ForceRestartEnum>("DescribeParameterTemplates.Parameters["+ i +"].ForceRestart");
+				templateRecord.ForceModify = context.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ForceModify");
+				templateRecord.ForceRestart = context.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ForceRestart");
 				templateRecord.CheckingCode = context.StringValue("DescribeParameterTemplates.Parameters["+ i +"].CheckingCode");
 				templateRecord.ParameterDescription = context.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterDescription");
 
-				parameters.Add(templateRecord);
+				describeParameterTemplatesResponse_parameters.Add(templateRecord);
 			}
-			describeParameterTemplatesResponse.Parameters = parameters;
+			describeParameterTemplatesResponse.Parameters = describeParameterTemplatesResponse_parameters;
         
 			return describeParameterTemplatesResponse;
         }

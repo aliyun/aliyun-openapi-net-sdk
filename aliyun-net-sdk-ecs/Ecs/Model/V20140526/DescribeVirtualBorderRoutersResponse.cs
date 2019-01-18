@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeVirtualBorderRoutersResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNumber;
 
 		private int? pageSize;
 
 		private int? totalCount;
 
-		private List<VirtualBorderRouterType> virtualBorderRouterSet;
+		private List<DescribeVirtualBorderRouters_VirtualBorderRouterType> virtualBorderRouterSet;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<VirtualBorderRouterType> VirtualBorderRouterSet
+		public List<DescribeVirtualBorderRouters_VirtualBorderRouterType> VirtualBorderRouterSet
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class VirtualBorderRouterType{
+		public class DescribeVirtualBorderRouters_VirtualBorderRouterType
+		{
 
 			private string vbrId;
 

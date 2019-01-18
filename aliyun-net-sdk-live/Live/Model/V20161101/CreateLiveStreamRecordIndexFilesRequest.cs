@@ -20,75 +20,53 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class CreateLiveStreamRecordIndexFilesRequest : RpcAcsRequest<CreateLiveStreamRecordIndexFilesResponse>
     {
         public CreateLiveStreamRecordIndexFilesRequest()
-            : base("Live", "2016-11-01", "CreateLiveStreamRecordIndexFiles")
+            : base("live", "2016-11-01", "CreateLiveStreamRecordIndexFiles", "live", "openAPI")
         {
         }
 
-		private string securityToken;
-
-		private long? ownerId;
-
-		private string domainName;
+		private string ossBucket;
 
 		private string appName;
 
-		private string streamName;
+		private string securityToken;
+
+		private string domainName;
 
 		private string ossEndpoint;
 
-		private string ossBucket;
-
-		private string ossObject;
-
-		private string startTime;
+		private string action;
 
 		private string endTime;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string startTime;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private long? ownerId;
 
-		public string DomainName
+		private string streamName;
+
+		private string ossObject;
+
+		private string accessKeyId;
+
+		public string OssBucket
 		{
 			get
 			{
-				return domainName;
+				return ossBucket;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				ossBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
 			}
 		}
 
@@ -105,16 +83,29 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string StreamName
+		public string SecurityToken
 		{
 			get
 			{
-				return streamName;
+				return securityToken;
 			}
 			set	
 			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -131,29 +122,29 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string OssBucket
+		public string Action
 		{
 			get
 			{
-				return ossBucket;
+				return action;
 			}
 			set	
 			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string OssObject
+		public string EndTime
 		{
 			get
 			{
-				return ossObject;
+				return endTime;
 			}
 			set	
 			{
-				ossObject = value;
-				DictionaryUtil.Add(QueryParameters, "OssObject", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -170,16 +161,55 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string EndTime
+		public long? OwnerId
 		{
 			get
 			{
-				return endTime;
+				return ownerId;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string OssObject
+		{
+			get
+			{
+				return ossObject;
+			}
+			set	
+			{
+				ossObject = value;
+				DictionaryUtil.Add(QueryParameters, "OssObject", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -24,9 +24,65 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeLoadBalancersResponse : AcsResponse
 	{
 
-		private List<LoadBalancer> loadBalancers;
+		private string requestId;
 
-		public List<LoadBalancer> LoadBalancers
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private int? totalCount;
+
+		private List<DescribeLoadBalancers_LoadBalancer> loadBalancers;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public List<DescribeLoadBalancers_LoadBalancer> LoadBalancers
 		{
 			get
 			{
@@ -38,7 +94,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public class LoadBalancer{
+		public class DescribeLoadBalancers_LoadBalancer
+		{
 
 			private string loadBalancerId;
 
@@ -69,6 +126,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			private string createTime;
 
 			private long? createTimeStamp;
+
+			private string payType;
+
+			private string resourceGroupId;
 
 			public string LoadBalancerId
 			{
@@ -247,6 +308,30 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					createTimeStamp = value;
+				}
+			}
+
+			public string PayType
+			{
+				get
+				{
+					return payType;
+				}
+				set	
+				{
+					payType = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 		}

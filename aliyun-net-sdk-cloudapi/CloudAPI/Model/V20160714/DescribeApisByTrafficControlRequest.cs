@@ -29,15 +29,21 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeApisByTrafficControlRequest : RpcAcsRequest<DescribeApisByTrafficControlResponse>
     {
         public DescribeApisByTrafficControlRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeApisByTrafficControl")
+            : base("CloudAPI", "2016-07-14", "DescribeApisByTrafficControl", "apigateway", "openAPI")
         {
         }
 
 		private string trafficControlId;
 
+		private string securityToken;
+
 		private int? pageSize;
 
+		private string action;
+
 		private int? pageNumber;
+
+		private string accessKeyId;
 
 		public string TrafficControlId
 		{
@@ -49,6 +55,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				trafficControlId = value;
 				DictionaryUtil.Add(QueryParameters, "TrafficControlId", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -65,6 +84,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -75,6 +107,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

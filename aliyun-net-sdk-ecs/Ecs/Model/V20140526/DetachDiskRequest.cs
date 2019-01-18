@@ -29,47 +29,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DetachDiskRequest : RpcAcsRequest<DetachDiskResponse>
     {
         public DetachDiskRequest()
-            : base("Ecs", "2014-05-26", "DetachDisk")
+            : base("Ecs", "2014-05-26", "DetachDisk", "ecs", "openAPI")
         {
         }
-
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
 
 		private long? resourceOwnerId;
 
 		private string instanceId;
 
-		private string diskId;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string action;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string diskId;
+
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -97,16 +73,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DiskId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return diskId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				diskId = value;
-				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -120,6 +96,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string DiskId
+		{
+			get
+			{
+				return diskId;
+			}
+			set	
+			{
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

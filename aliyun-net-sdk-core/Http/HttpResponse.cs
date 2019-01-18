@@ -137,17 +137,7 @@ namespace Aliyun.Acs.Core.Http
         public static HttpWebRequest GetWebRequest(HttpRequest request)
         {
             HttpWebRequest httpWebRequest = null;
-            if (request.Url.Contains("https"))
-            {
-                ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
-                httpWebRequest = (HttpWebRequest)WebRequest.CreateDefault(new Uri(request.Url));
-            }
-            else
-            {
-                httpWebRequest = (HttpWebRequest)WebRequest.Create(request.Url);
-            }
-
-            httpWebRequest.ServicePoint.Expect100Continue = false;
+            httpWebRequest = (HttpWebRequest)WebRequest.Create(request.Url);
             httpWebRequest.Method = request.Method.ToString();
             httpWebRequest.KeepAlive = true;
             httpWebRequest.Timeout = _timeout;
@@ -163,15 +153,30 @@ namespace Aliyun.Acs.Core.Http
 
             foreach (var header in request.Headers)
             {
+                if (header.Key.Equals("Content-Length"))
+                {
+                    httpWebRequest.ContentLength = long.Parse(header.Value);
+                    continue;
+                }
+                if (header.Key.Equals("Content-Type"))
+                {
+                    httpWebRequest.ContentType = header.Value;
+                    continue;
+                }
+
                 httpWebRequest.Headers.Add(header.Key, header.Value);
             }
 
-            return httpWebRequest;
-        }
+            if ((request.Method == MethodType.POST || request.Method == MethodType.PUT) && request.Content != null)
+            {
+                using (Stream stream = httpWebRequest.GetRequestStream())
+                {
+                    stream.Write(request.Content, 0, request.Content.Length);
+                }
+            }
+            
 
-        public static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
-        {
-            return true;
+            return httpWebRequest;
         }
 
         public bool isSuccess()

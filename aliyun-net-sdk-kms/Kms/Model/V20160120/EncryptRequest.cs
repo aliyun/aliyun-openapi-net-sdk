@@ -29,18 +29,31 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class EncryptRequest : RpcAcsRequest<EncryptResponse>
     {
         public EncryptRequest()
-            : base("Kms", "2016-01-20", "Encrypt")
+            : base("Kms", "2016-01-20", "Encrypt", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string keyId;
+		private string encryptionContext;
 
-		private string plaintext;
+		private string keyId;
 
 		private string sTSToken;
 
-		private string encryptionContext;
+		private string plaintext;
+
+		public string EncryptionContext
+		{
+			get
+			{
+				return encryptionContext;
+			}
+			set	
+			{
+				encryptionContext = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
+			}
+		}
 
 		public string KeyId
 		{
@@ -52,19 +65,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				keyId = value;
 				DictionaryUtil.Add(QueryParameters, "KeyId", value);
-			}
-		}
-
-		public string Plaintext
-		{
-			get
-			{
-				return plaintext;
-			}
-			set	
-			{
-				plaintext = value;
-				DictionaryUtil.Add(QueryParameters, "Plaintext", value);
 			}
 		}
 
@@ -81,16 +81,16 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string EncryptionContext
+		public string Plaintext
 		{
 			get
 			{
-				return encryptionContext;
+				return plaintext;
 			}
 			set	
 			{
-				encryptionContext = value;
-				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
+				plaintext = value;
+				DictionaryUtil.Add(QueryParameters, "Plaintext", value);
 			}
 		}
 

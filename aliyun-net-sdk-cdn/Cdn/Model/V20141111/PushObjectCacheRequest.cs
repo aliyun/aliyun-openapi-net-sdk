@@ -33,22 +33,28 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string area;
 
 		private string securityToken;
 
 		private string objectPath;
 
-		public long? OwnerId
+		private string action;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public string Area
 		{
 			get
 			{
-				return ownerId;
+				return area;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				area = value;
+				DictionaryUtil.Add(QueryParameters, "Area", value);
 			}
 		}
 
@@ -75,6 +81,45 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				objectPath = value;
 				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

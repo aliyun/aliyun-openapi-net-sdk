@@ -19,14 +19,28 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class CreateLiveStreamRecordIndexFilesResponse : AcsResponse
 	{
 
-		private RecordInfo_ recordInfo;
+		private string requestId;
 
-		public RecordInfo_ RecordInfo
+		private CreateLiveStreamRecordIndexFiles_RecordInfo recordInfo;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public CreateLiveStreamRecordIndexFiles_RecordInfo RecordInfo
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class RecordInfo_{
+		public class CreateLiveStreamRecordIndexFiles_RecordInfo
+		{
 
 			private string recordId;
 

@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeRouterInterfacesResponse.PageSize = context.IntegerValue("DescribeRouterInterfaces.PageSize");
 			describeRouterInterfacesResponse.TotalCount = context.IntegerValue("DescribeRouterInterfaces.TotalCount");
 
-			List<DescribeRouterInterfacesResponse.RouterInterfaceType> routerInterfaceSet = new List<DescribeRouterInterfacesResponse.RouterInterfaceType>();
+			List<DescribeRouterInterfacesResponse.DescribeRouterInterfaces_RouterInterfaceType> describeRouterInterfacesResponse_routerInterfaceSet = new List<DescribeRouterInterfacesResponse.DescribeRouterInterfaces_RouterInterfaceType>();
 			for (int i = 0; i < context.Length("DescribeRouterInterfaces.RouterInterfaceSet.Length"); i++) {
-				DescribeRouterInterfacesResponse.RouterInterfaceType routerInterfaceType = new DescribeRouterInterfacesResponse.RouterInterfaceType();
+				DescribeRouterInterfacesResponse.DescribeRouterInterfaces_RouterInterfaceType routerInterfaceType = new DescribeRouterInterfacesResponse.DescribeRouterInterfaces_RouterInterfaceType();
 				routerInterfaceType.RouterInterfaceId = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].RouterInterfaceId");
 				routerInterfaceType.OppositeRegionId = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].OppositeRegionId");
 				routerInterfaceType.Role = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].Role");
@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				routerInterfaceType.RouterId = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].RouterId");
 				routerInterfaceType.RouterType = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].RouterType");
 				routerInterfaceType.CreationTime = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].CreationTime");
+				routerInterfaceType.EndTime = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].EndTime");
+				routerInterfaceType.ChargeType = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].ChargeType");
 				routerInterfaceType.Status = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].Status");
 				routerInterfaceType.BusinessStatus = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].BusinessStatus");
 				routerInterfaceType.ConnectedTime = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].ConnectedTime");
@@ -62,9 +64,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				routerInterfaceType.HealthCheckSourceIp = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].HealthCheckSourceIp");
 				routerInterfaceType.HealthCheckTargetIp = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].HealthCheckTargetIp");
 
-				routerInterfaceSet.Add(routerInterfaceType);
+				describeRouterInterfacesResponse_routerInterfaceSet.Add(routerInterfaceType);
 			}
-			describeRouterInterfacesResponse.RouterInterfaceSet = routerInterfaceSet;
+			describeRouterInterfacesResponse.RouterInterfaceSet = describeRouterInterfacesResponse_routerInterfaceSet;
         
 			return describeRouterInterfacesResponse;
         }

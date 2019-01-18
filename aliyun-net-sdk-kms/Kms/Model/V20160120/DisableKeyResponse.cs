@@ -23,5 +23,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 {
 	public class DisableKeyResponse : AcsResponse
 	{
+
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 	}
 }

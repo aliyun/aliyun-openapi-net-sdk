@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeLiveStreamsPublishListResponse.HttpResponse = context.HttpResponse;
 			describeLiveStreamsPublishListResponse.RequestId = context.StringValue("DescribeLiveStreamsPublishList.RequestId");
 
-			List<DescribeLiveStreamsPublishListResponse.LiveStreamPublishInfo> publishInfo = new List<DescribeLiveStreamsPublishListResponse.LiveStreamPublishInfo>();
+			List<DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo> describeLiveStreamsPublishListResponse_publishInfo = new List<DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamsPublishList.PublishInfo.Length"); i++) {
-				DescribeLiveStreamsPublishListResponse.LiveStreamPublishInfo liveStreamPublishInfo = new DescribeLiveStreamsPublishListResponse.LiveStreamPublishInfo();
+				DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo liveStreamPublishInfo = new DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo();
 				liveStreamPublishInfo.DomainName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].DomainName");
 				liveStreamPublishInfo.AppName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].AppName");
 				liveStreamPublishInfo.StreamName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StreamName");
@@ -45,9 +45,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				liveStreamPublishInfo.ClientAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].ClientAddr");
 				liveStreamPublishInfo.EdgeNodeAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].EdgeNodeAddr");
 
-				publishInfo.Add(liveStreamPublishInfo);
+				describeLiveStreamsPublishListResponse_publishInfo.Add(liveStreamPublishInfo);
 			}
-			describeLiveStreamsPublishListResponse.PublishInfo = publishInfo;
+			describeLiveStreamsPublishListResponse.PublishInfo = describeLiveStreamsPublishListResponse_publishInfo;
         
 			return describeLiveStreamsPublishListResponse;
         }

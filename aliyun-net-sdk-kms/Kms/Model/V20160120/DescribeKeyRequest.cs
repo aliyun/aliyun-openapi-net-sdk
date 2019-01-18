@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class DescribeKeyRequest : RpcAcsRequest<DescribeKeyResponse>
     {
         public DescribeKeyRequest()
-            : base("Kms", "2016-01-20", "DescribeKey")
+            : base("Kms", "2016-01-20", "DescribeKey", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }

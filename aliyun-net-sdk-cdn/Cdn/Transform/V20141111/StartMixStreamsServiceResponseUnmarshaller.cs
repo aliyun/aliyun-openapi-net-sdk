@@ -32,16 +32,16 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			startMixStreamsServiceResponse.HttpResponse = context.HttpResponse;
 			startMixStreamsServiceResponse.RequestId = context.StringValue("StartMixStreamsService.RequestId");
 
-			List<StartMixStreamsServiceResponse.MixStreamsInfo> mixStreamsInfoList = new List<StartMixStreamsServiceResponse.MixStreamsInfo>();
+			List<StartMixStreamsServiceResponse.StartMixStreamsService_MixStreamsInfo> startMixStreamsServiceResponse_mixStreamsInfoList = new List<StartMixStreamsServiceResponse.StartMixStreamsService_MixStreamsInfo>();
 			for (int i = 0; i < context.Length("StartMixStreamsService.MixStreamsInfoList.Length"); i++) {
-				StartMixStreamsServiceResponse.MixStreamsInfo mixStreamsInfo = new StartMixStreamsServiceResponse.MixStreamsInfo();
+				StartMixStreamsServiceResponse.StartMixStreamsService_MixStreamsInfo mixStreamsInfo = new StartMixStreamsServiceResponse.StartMixStreamsService_MixStreamsInfo();
 				mixStreamsInfo.DomainName = context.StringValue("StartMixStreamsService.MixStreamsInfoList["+ i +"].DomainName");
 				mixStreamsInfo.AppName = context.StringValue("StartMixStreamsService.MixStreamsInfoList["+ i +"].AppName");
 				mixStreamsInfo.StreamName = context.StringValue("StartMixStreamsService.MixStreamsInfoList["+ i +"].StreamName");
 
-				mixStreamsInfoList.Add(mixStreamsInfo);
+				startMixStreamsServiceResponse_mixStreamsInfoList.Add(mixStreamsInfo);
 			}
-			startMixStreamsServiceResponse.MixStreamsInfoList = mixStreamsInfoList;
+			startMixStreamsServiceResponse.MixStreamsInfoList = startMixStreamsServiceResponse_mixStreamsInfoList;
         
 			return startMixStreamsServiceResponse;
         }

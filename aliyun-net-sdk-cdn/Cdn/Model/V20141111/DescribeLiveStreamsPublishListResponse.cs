@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeLiveStreamsPublishListResponse : AcsResponse
 	{
 
-		private List<LiveStreamPublishInfo> publishInfo;
+		private string requestId;
 
-		public List<LiveStreamPublishInfo> PublishInfo
+		private List<DescribeLiveStreamsPublishList_LiveStreamPublishInfo> publishInfo;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeLiveStreamsPublishList_LiveStreamPublishInfo> PublishInfo
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class LiveStreamPublishInfo{
+		public class DescribeLiveStreamsPublishList_LiveStreamPublishInfo
+		{
 
 			private string domainName;
 

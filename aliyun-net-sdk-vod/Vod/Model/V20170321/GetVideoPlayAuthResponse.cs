@@ -24,9 +24,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class GetVideoPlayAuthResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string playAuth;
 
-		private VideoMeta_ videoMeta;
+		private GetVideoPlayAuth_VideoMeta videoMeta;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string PlayAuth
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public VideoMeta_ VideoMeta
+		public GetVideoPlayAuth_VideoMeta VideoMeta
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public class VideoMeta_{
+		public class GetVideoPlayAuth_VideoMeta
+		{
 
 			private string coverURL;
 

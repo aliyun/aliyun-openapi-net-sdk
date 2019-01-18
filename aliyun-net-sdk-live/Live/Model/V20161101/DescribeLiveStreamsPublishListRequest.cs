@@ -20,60 +20,53 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class DescribeLiveStreamsPublishListRequest : RpcAcsRequest<DescribeLiveStreamsPublishListResponse>
     {
         public DescribeLiveStreamsPublishListRequest()
-            : base("Live", "2016-11-01", "DescribeLiveStreamsPublishList")
+            : base("live", "2016-11-01", "DescribeLiveStreamsPublishList", "live", "openAPI")
         {
         }
 
-		private string securityToken;
-
-		private long? ownerId;
+		private string streamType;
 
 		private string domainName;
 
-		private string appName;
+		private string endTime;
 
-		private string streamName;
+		private string orderBy;
 
 		private string startTime;
 
-		private string endTime;
+		private long? ownerId;
 
-		private long? pageSize;
+		private int? pageNumber;
 
-		private long? pageNumber;
+		private string appName;
 
-		public string SecurityToken
+		private int? pageSize;
+
+		private string action;
+
+		private string streamName;
+
+		private string queryType;
+
+		public string StreamType
 		{
 			get
 			{
-				return securityToken;
+				return streamType;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				streamType = value;
+				DictionaryUtil.Add(QueryParameters, "StreamType", value);
 			}
 		}
 
@@ -90,29 +83,29 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string AppName
+		public string EndTime
 		{
 			get
 			{
-				return appName;
+				return endTime;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public string StreamName
+		public string OrderBy
 		{
 			get
 			{
-				return streamName;
+				return orderBy;
 			}
 			set	
 			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
 			}
 		}
 
@@ -129,20 +122,46 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string EndTime
+		public long? OwnerId
 		{
 			get
 			{
-				return endTime;
+				return ownerId;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public long? PageSize
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public int? PageSize
 		{
 			get
 			{
@@ -155,16 +174,42 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public long? PageNumber
+		public string Action
 		{
 			get
 			{
-				return pageNumber;
+				return action;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string QueryType
+		{
+			get
+			{
+				return queryType;
+			}
+			set	
+			{
+				queryType = value;
+				DictionaryUtil.Add(QueryParameters, "QueryType", value);
 			}
 		}
 

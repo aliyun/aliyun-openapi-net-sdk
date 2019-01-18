@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF3103C3-B05E-4BF0-BF7C-8EE34A6BDF65}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-cloudwf</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cloudwf\Model\V20170328\AddApgroupConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\AddApgroupConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\AliyunRegisterApAssetRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\AliyunRegisterApAssetResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ApgroupBatchAddApRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ApgroupBatchAddApResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ApgroupBatchDeleteApRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ApgroupBatchDeleteApResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\BatchRegisterApAssetRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\BatchRegisterApAssetResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\BatchSaveApPositionRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\BatchSaveApPositionResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\DelApPositionRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\DelApPositionResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\DeleteApRadioSsidConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\DeleteApRadioSsidConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\DeleteApgroupConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\DeleteApgroupConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\DeleteApgroupSsidConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\DeleteApgroupSsidConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\DeletePositionMapRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\DeletePositionMapResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\FindApRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\FindApResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetAccountConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetAccountConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetAddApsProgressRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetAddApsProgressResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApDetailedConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApDetailedConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApDetailedStatusRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApDetailedStatusResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApRunHistoryTimeSerRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApRunHistoryTimeSerResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApgroupConfigProgressRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApgroupConfigProgressResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApgroupDetailedConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApgroupDetailedConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApgroupScanConfigSaveProgressRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApgroupScanConfigSaveProgressResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApgroupSsidConfigProgressRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetApgroupSsidConfigProgressResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetGroupApRadioConfigProgressRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetGroupApRadioConfigProgressResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetGroupApRadioOnoffProgressRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetGroupApRadioOnoffProgressResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetGroupApRepairProgressRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetGroupApRepairProgressResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetLatestApStatisticRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetLatestApStatisticResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetLatestStaStatisticRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetLatestStaStatisticResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetOnlineApTimeSerRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetOnlineApTimeSerResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetOnlineStaTimeSerRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetOnlineStaTimeSerResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetRadioRunHistoryTimeSerRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetRadioRunHistoryTimeSerResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetStaDetailedStatusRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetStaDetailedStatusResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetStaRunHistoryTimeSerRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\GetStaRunHistoryTimeSerResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\KickAndClearPMKcacheRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\KickAndClearPMKcacheResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\KickStaRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\KickStaResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListAccountConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListAccountConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApAssetRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApAssetResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApDetailInfoRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApDetailInfoResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApPositionMapRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApPositionMapResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApPositionRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApPositionResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApPositionStatusRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApPositionStatusResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApRadioStatusRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApRadioStatusResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApStaStatusRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApStaStatusResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApStatusRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApStatusResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApgroupConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListApgroupConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListBriefApConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListBriefApConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListBriefConfigByActionRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListBriefConfigByActionResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListConfigByActionRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListConfigByActionResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListGroupApBriefConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListGroupApBriefConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListStaOnoffLogRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListStaOnoffLogResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListStaStatusRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ListStaStatusResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\OnoffGroupApRadioRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\OnoffGroupApRadioResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\RepairApRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\RepairApResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\RepairGroupApRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\RepairGroupApResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ResetApConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ResetApConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ResetApRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\ResetApResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveAccountConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveAccountConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApMapInfoRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApMapInfoResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApPortalConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApPortalConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApRadioConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApRadioConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApRadioSsidConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApRadioSsidConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApScanConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApScanConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApgroupConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApgroupConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApgroupScanConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApgroupScanConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApgroupSsidConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveApgroupSsidConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveGroupApRadioConfigRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveGroupApRadioConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SavePortalConfigResponse.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveStaStatusRequest.cs" />
+    <Compile Include="Cloudwf\Model\V20170328\SaveStaStatusResponse.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\AddApgroupConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\AliyunRegisterApAssetResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ApgroupBatchAddApResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ApgroupBatchDeleteApResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\BatchRegisterApAssetResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\BatchSaveApPositionResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\DelApPositionResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\DeleteApRadioSsidConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\DeleteApgroupConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\DeleteApgroupSsidConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\DeletePositionMapResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\FindApResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetAccountConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetAddApsProgressResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetApDetailedConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetApDetailedStatusResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetApRunHistoryTimeSerResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetApgroupConfigProgressResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetApgroupDetailedConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetApgroupScanConfigSaveProgressResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetApgroupSsidConfigProgressResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetGroupApRadioConfigProgressResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetGroupApRadioOnoffProgressResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetGroupApRepairProgressResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetLatestApStatisticResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetLatestStaStatisticResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetOnlineApTimeSerResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetOnlineStaTimeSerResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetRadioRunHistoryTimeSerResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetStaDetailedStatusResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\GetStaRunHistoryTimeSerResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\KickAndClearPMKcacheResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\KickStaResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListAccountConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListApAssetResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListApDetailInfoResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListApPositionMapResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListApPositionResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListApPositionStatusResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListApRadioStatusResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListApStaStatusResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListApStatusResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListApgroupConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListBriefApConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListBriefConfigByActionResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListConfigByActionResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListGroupApBriefConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListStaOnoffLogResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ListStaStatusResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\OnoffGroupApRadioResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\RepairApResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\RepairGroupApResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ResetApConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\ResetApResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SaveAccountConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SaveApConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SaveApMapInfoResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SaveApPortalConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SaveApRadioConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SaveApRadioSsidConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SaveApScanConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SaveApgroupConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SaveApgroupScanConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SaveApgroupSsidConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SaveGroupApRadioConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SavePortalConfigResponseUnmarshaller.cs" />
+    <Compile Include="Cloudwf\Transform\V20170328\SaveStaStatusResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

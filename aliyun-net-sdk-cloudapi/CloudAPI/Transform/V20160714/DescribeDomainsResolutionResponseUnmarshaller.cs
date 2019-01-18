@@ -33,15 +33,15 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeDomainsResolutionResponse.RequestId = context.StringValue("DescribeDomainsResolution.RequestId");
 			describeDomainsResolutionResponse.GroupId = context.StringValue("DescribeDomainsResolution.GroupId");
 
-			List<DescribeDomainsResolutionResponse.DomainResolution> domainResolutions = new List<DescribeDomainsResolutionResponse.DomainResolution>();
+			List<DescribeDomainsResolutionResponse.DescribeDomainsResolution_DomainResolution> describeDomainsResolutionResponse_domainResolutions = new List<DescribeDomainsResolutionResponse.DescribeDomainsResolution_DomainResolution>();
 			for (int i = 0; i < context.Length("DescribeDomainsResolution.DomainResolutions.Length"); i++) {
-				DescribeDomainsResolutionResponse.DomainResolution domainResolution = new DescribeDomainsResolutionResponse.DomainResolution();
+				DescribeDomainsResolutionResponse.DescribeDomainsResolution_DomainResolution domainResolution = new DescribeDomainsResolutionResponse.DescribeDomainsResolution_DomainResolution();
 				domainResolution.DomainName = context.StringValue("DescribeDomainsResolution.DomainResolutions["+ i +"].DomainName");
 				domainResolution.DomainResolutionStatus = context.StringValue("DescribeDomainsResolution.DomainResolutions["+ i +"].DomainResolutionStatus");
 
-				domainResolutions.Add(domainResolution);
+				describeDomainsResolutionResponse_domainResolutions.Add(domainResolution);
 			}
-			describeDomainsResolutionResponse.DomainResolutions = domainResolutions;
+			describeDomainsResolutionResponse.DomainResolutions = describeDomainsResolutionResponse_domainResolutions;
         
 			return describeDomainsResolutionResponse;
         }

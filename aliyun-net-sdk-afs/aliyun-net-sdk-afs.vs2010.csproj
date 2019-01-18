@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{465A136B-65B5-433B-ABA5-140AC29FA761}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-afs</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Afs\Model\V20180112\DescribePersonMachineListRequest.cs" />
+    <Compile Include="Afs\Model\V20180112\AnalyzeNvcRequest.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribeCaptchaMinRequest.cs" />
+    <Compile Include="Afs\Model\V20180112\CreateConfigurationResponse.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribeCaptchaDayRequest.cs" />
+    <Compile Include="Afs\Model\V20180112\ConfigurationStyleResponse.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribeCaptchaMinResponse.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribeEarlyWarningRequest.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribePersonMachineListResponse.cs" />
+    <Compile Include="Afs\Model\V20180112\SetEarlyWarningRequest.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribeCaptchaIpCityResponse.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribeConfigNameResponse.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribeCaptchaDayResponse.cs" />
+    <Compile Include="Afs\Model\V20180112\AuthenticateSigRequest.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribeCaptchaRiskResponse.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribeConfigNameRequest.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribeCaptchaIpCityRequest.cs" />
+    <Compile Include="Afs\Model\V20180112\AuthenticateSigResponse.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribeEarlyWarningResponse.cs" />
+    <Compile Include="Afs\Model\V20180112\ConfigurationStyleRequest.cs" />
+    <Compile Include="Afs\Model\V20180112\DescribeCaptchaRiskRequest.cs" />
+    <Compile Include="Afs\Model\V20180112\AnalyzeNvcResponse.cs" />
+    <Compile Include="Afs\Model\V20180112\SetEarlyWarningResponse.cs" />
+    <Compile Include="Afs\Model\V20180112\CreateConfigurationRequest.cs" />
+    <Compile Include="Afs\Transform\V20180112\DescribeCaptchaDayResponseUnmarshaller.cs" />
+    <Compile Include="Afs\Transform\V20180112\AuthenticateSigResponseUnmarshaller.cs" />
+    <Compile Include="Afs\Transform\V20180112\DescribePersonMachineListResponseUnmarshaller.cs" />
+    <Compile Include="Afs\Transform\V20180112\DescribeEarlyWarningResponseUnmarshaller.cs" />
+    <Compile Include="Afs\Transform\V20180112\DescribeCaptchaIpCityResponseUnmarshaller.cs" />
+    <Compile Include="Afs\Transform\V20180112\DescribeCaptchaMinResponseUnmarshaller.cs" />
+    <Compile Include="Afs\Transform\V20180112\DescribeCaptchaRiskResponseUnmarshaller.cs" />
+    <Compile Include="Afs\Transform\V20180112\CreateConfigurationResponseUnmarshaller.cs" />
+    <Compile Include="Afs\Transform\V20180112\SetEarlyWarningResponseUnmarshaller.cs" />
+    <Compile Include="Afs\Transform\V20180112\AnalyzeNvcResponseUnmarshaller.cs" />
+    <Compile Include="Afs\Transform\V20180112\ConfigurationStyleResponseUnmarshaller.cs" />
+    <Compile Include="Afs\Transform\V20180112\DescribeConfigNameResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

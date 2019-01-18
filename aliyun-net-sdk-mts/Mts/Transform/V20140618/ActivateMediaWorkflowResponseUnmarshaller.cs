@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			activateMediaWorkflowResponse.HttpResponse = context.HttpResponse;
 			activateMediaWorkflowResponse.RequestId = context.StringValue("ActivateMediaWorkflow.RequestId");
 
-			ActivateMediaWorkflowResponse.MediaWorkflow_ mediaWorkflow = new ActivateMediaWorkflowResponse.MediaWorkflow_();
+			ActivateMediaWorkflowResponse.ActivateMediaWorkflow_MediaWorkflow mediaWorkflow = new ActivateMediaWorkflowResponse.ActivateMediaWorkflow_MediaWorkflow();
 			mediaWorkflow.MediaWorkflowId = context.StringValue("ActivateMediaWorkflow.MediaWorkflow.MediaWorkflowId");
 			mediaWorkflow.Name = context.StringValue("ActivateMediaWorkflow.MediaWorkflow.Name");
 			mediaWorkflow.Topology = context.StringValue("ActivateMediaWorkflow.MediaWorkflow.Topology");

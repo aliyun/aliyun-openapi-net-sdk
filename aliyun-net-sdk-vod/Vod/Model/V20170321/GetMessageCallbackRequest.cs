@@ -20,20 +20,18 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vod.Transform;
-using Aliyun.Acs.Vod.Transform.V20170321;
+using Aliyun.Acs.vod.Transform;
+using Aliyun.Acs.vod.Transform.V20170321;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Model.V20170321
+namespace Aliyun.Acs.vod.Model.V20170321
 {
     public class GetMessageCallbackRequest : RpcAcsRequest<GetMessageCallbackResponse>
     {
         public GetMessageCallbackRequest()
-            : base("vod", "2017-03-21", "GetMessageCallback")
+            : base("vod", "2017-03-21", "GetMessageCallback", "vod", "openAPI")
         {
         }
-
-		private string ownerId;
 
 		private string resourceOwnerId;
 
@@ -41,18 +39,13 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 
 		private string ownerAccount;
 
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
-			}
-		}
+		private string action;
+
+		private long? resourceRealOwnerId;
+
+		private string ownerId;
+
+		private string accessKeyId;
 
 		public string ResourceOwnerId
 		{
@@ -90,6 +83,58 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? ResourceRealOwnerId
+		{
+			get
+			{
+				return resourceRealOwnerId;
+			}
+			set	
+			{
+				resourceRealOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceRealOwnerId", value.ToString());
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

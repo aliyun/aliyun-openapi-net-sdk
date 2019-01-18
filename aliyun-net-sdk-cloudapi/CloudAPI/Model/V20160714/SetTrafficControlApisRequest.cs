@@ -29,17 +29,23 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class SetTrafficControlApisRequest : RpcAcsRequest<SetTrafficControlApisResponse>
     {
         public SetTrafficControlApisRequest()
-            : base("CloudAPI", "2016-07-14", "SetTrafficControlApis")
+            : base("CloudAPI", "2016-07-14", "SetTrafficControlApis", "apigateway", "openAPI")
         {
         }
 
 		private string trafficControlId;
 
+		private string stageName;
+
+		private string securityToken;
+
 		private string groupId;
 
-		private string apiIds;
+		private string action;
 
-		private string stageName;
+		private string accessKeyId;
+
+		private string apiIds;
 
 		public string TrafficControlId
 		{
@@ -51,6 +57,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				trafficControlId = value;
 				DictionaryUtil.Add(QueryParameters, "TrafficControlId", value);
+			}
+		}
+
+		public string StageName
+		{
+			get
+			{
+				return stageName;
+			}
+			set	
+			{
+				stageName = value;
+				DictionaryUtil.Add(QueryParameters, "StageName", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -67,6 +99,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
 		public string ApiIds
 		{
 			get
@@ -77,19 +135,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				apiIds = value;
 				DictionaryUtil.Add(QueryParameters, "ApiIds", value);
-			}
-		}
-
-		public string StageName
-		{
-			get
-			{
-				return stageName;
-			}
-			set	
-			{
-				stageName = value;
-				DictionaryUtil.Add(QueryParameters, "StageName", value);
 			}
 		}
 

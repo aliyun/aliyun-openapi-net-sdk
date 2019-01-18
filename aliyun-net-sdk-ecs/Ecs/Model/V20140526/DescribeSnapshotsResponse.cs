@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeSnapshotsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<Snapshot> snapshots;
+		private List<DescribeSnapshots_Snapshot> snapshots;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Snapshot> Snapshots
+		public List<DescribeSnapshots_Snapshot> Snapshots
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Snapshot{
+		public class DescribeSnapshots_Snapshot
+		{
 
 			private string snapshotId;
 
@@ -92,7 +107,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string sourceDiskId;
 
-			private SourceDiskTypeEnum? sourceDiskType;
+			private string sourceDiskType;
+
+			private int? retentionDays;
+
+			private bool? encrypted;
 
 			private string sourceDiskSize;
 
@@ -104,7 +123,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string usage;
 
-			private List<Tag> tags;
+			private string sourceStorageType;
+
+			private int? remainTime;
+
+			private string resourceGroupId;
+
+			private string kMSKeyId;
+
+			private List<DescribeSnapshots_Tag> tags;
 
 			public string SnapshotId
 			{
@@ -166,7 +193,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public SourceDiskTypeEnum? SourceDiskType
+			public string SourceDiskType
 			{
 				get
 				{
@@ -175,6 +202,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					sourceDiskType = value;
+				}
+			}
+
+			public int? RetentionDays
+			{
+				get
+				{
+					return retentionDays;
+				}
+				set	
+				{
+					retentionDays = value;
+				}
+			}
+
+			public bool? Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
 				}
 			}
 
@@ -238,7 +289,55 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<Tag> Tags
+			public string SourceStorageType
+			{
+				get
+				{
+					return sourceStorageType;
+				}
+				set	
+				{
+					sourceStorageType = value;
+				}
+			}
+
+			public int? RemainTime
+			{
+				get
+				{
+					return remainTime;
+				}
+				set	
+				{
+					remainTime = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string KMSKeyId
+			{
+				get
+				{
+					return kMSKeyId;
+				}
+				set	
+				{
+					kMSKeyId = value;
+				}
+			}
+
+			public List<DescribeSnapshots_Tag> Tags
 			{
 				get
 				{
@@ -250,13 +349,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public enum SourceDiskTypeEnum {
-			
-					system,
-					data,
-			}
-
-			public class Tag{
+			public class DescribeSnapshots_Tag
+			{
 
 				private string tagKey;
 

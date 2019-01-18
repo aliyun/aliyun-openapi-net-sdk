@@ -19,14 +19,28 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveRecordNotifyConfigResponse : AcsResponse
 	{
 
-		private LiveRecordNotifyConfig_ liveRecordNotifyConfig;
+		private string requestId;
 
-		public LiveRecordNotifyConfig_ LiveRecordNotifyConfig
+		private DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig liveRecordNotifyConfig;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig LiveRecordNotifyConfig
 		{
 			get
 			{
@@ -38,11 +52,14 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class LiveRecordNotifyConfig_{
+		public class DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig
+		{
 
 			private string domainName;
 
 			private string notifyUrl;
+
+			private string onDemandUrl;
 
 			private bool? needStatusNotify;
 
@@ -67,6 +84,18 @@ namespace Aliyun.Acs.Live.Model.V20161101
 				set	
 				{
 					notifyUrl = value;
+				}
+			}
+
+			public string OnDemandUrl
+			{
+				get
+				{
+					return onDemandUrl;
+				}
+				set	
+				{
+					onDemandUrl = value;
 				}
 			}
 

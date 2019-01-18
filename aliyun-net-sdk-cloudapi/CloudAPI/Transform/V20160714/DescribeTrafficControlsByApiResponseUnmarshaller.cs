@@ -32,16 +32,16 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeTrafficControlsByApiResponse.HttpResponse = context.HttpResponse;
 			describeTrafficControlsByApiResponse.RequestId = context.StringValue("DescribeTrafficControlsByApi.RequestId");
 
-			List<DescribeTrafficControlsByApiResponse.TrafficControlItem> trafficControlItems = new List<DescribeTrafficControlsByApiResponse.TrafficControlItem>();
+			List<DescribeTrafficControlsByApiResponse.DescribeTrafficControlsByApi_TrafficControlItem> describeTrafficControlsByApiResponse_trafficControlItems = new List<DescribeTrafficControlsByApiResponse.DescribeTrafficControlsByApi_TrafficControlItem>();
 			for (int i = 0; i < context.Length("DescribeTrafficControlsByApi.TrafficControlItems.Length"); i++) {
-				DescribeTrafficControlsByApiResponse.TrafficControlItem trafficControlItem = new DescribeTrafficControlsByApiResponse.TrafficControlItem();
+				DescribeTrafficControlsByApiResponse.DescribeTrafficControlsByApi_TrafficControlItem trafficControlItem = new DescribeTrafficControlsByApiResponse.DescribeTrafficControlsByApi_TrafficControlItem();
 				trafficControlItem.TrafficControlItemId = context.StringValue("DescribeTrafficControlsByApi.TrafficControlItems["+ i +"].TrafficControlItemId");
 				trafficControlItem.TrafficControlItemName = context.StringValue("DescribeTrafficControlsByApi.TrafficControlItems["+ i +"].TrafficControlItemName");
 				trafficControlItem.BoundTime = context.StringValue("DescribeTrafficControlsByApi.TrafficControlItems["+ i +"].BoundTime");
 
-				trafficControlItems.Add(trafficControlItem);
+				describeTrafficControlsByApiResponse_trafficControlItems.Add(trafficControlItem);
 			}
-			describeTrafficControlsByApiResponse.TrafficControlItems = trafficControlItems;
+			describeTrafficControlsByApiResponse.TrafficControlItems = describeTrafficControlsByApiResponse_trafficControlItems;
         
 			return describeTrafficControlsByApiResponse;
         }

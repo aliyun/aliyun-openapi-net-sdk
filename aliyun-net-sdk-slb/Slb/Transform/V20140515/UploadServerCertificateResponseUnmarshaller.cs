@@ -36,6 +36,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			uploadServerCertificateResponse.ServerCertificateName = context.StringValue("UploadServerCertificate.ServerCertificateName");
 			uploadServerCertificateResponse.RegionId = context.StringValue("UploadServerCertificate.RegionId");
 			uploadServerCertificateResponse.RegionIdAlias = context.StringValue("UploadServerCertificate.RegionIdAlias");
+			uploadServerCertificateResponse.AliCloudCertificateId = context.StringValue("UploadServerCertificate.AliCloudCertificateId");
+			uploadServerCertificateResponse.AliCloudCertificateName = context.StringValue("UploadServerCertificate.AliCloudCertificateName");
+			uploadServerCertificateResponse.IsAliCloudCertificate = context.IntegerValue("UploadServerCertificate.IsAliCloudCertificate");
+			uploadServerCertificateResponse.ResourceGroupId = context.StringValue("UploadServerCertificate.ResourceGroupId");
+			uploadServerCertificateResponse.CreateTime = context.StringValue("UploadServerCertificate.CreateTime");
+			uploadServerCertificateResponse.CreateTimeStamp = context.LongValue("UploadServerCertificate.CreateTimeStamp");
         
 			return uploadServerCertificateResponse;
         }

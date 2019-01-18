@@ -1,67 +1,110 @@
-# Open API SDK for .Net developers
+# Alibaba Cloud C# Software Development Kit
+[中文文档](./README_zh.md)
 
-## Requirements
+[![Travis CI Build Status](https://travis-ci.org/aliyun/aliyun-openapi-net-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-net-sdk)
+[![Appveyor CI Build Status](https://ci.appveyor.com/api/projects/status/l6a4r74matmhwqf3?svg=true)](https://ci.appveyor.com/project/AxiosCros/aliyun-openapi-net-sdk-6xumj)
+[![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk)
 
-- 支持 .Net Freamwork 4.5 及以上版本；
-- 下载SDK 把 aliyun-net-sdk-core.dll 和相应产品的 .dll 文件添加引用到项目中。
 
-## Example
+The Alibaba Cloud C# Software Development Kit (SDK) allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
 
-    using Aliyun.Acs.Core;
-    using Aliyun.Acs.Core.Exceptions;
-    using Aliyun.Acs.Core.Profile;
-    using Aliyun.Acs.Ecs.Model.V20140526;
-    using System;
-     
-    class Sample
-    {
+This document introduces how to install and use Alibaba Cloud C# SDK.
+
+If you have any problem while using Java SDK, please join the **DingTalk group: 11771185 (the official SDK customer service group of Alibaba Cloud)** for consultation.
+
+## Prerequisites
+
+- To use Alibaba Cloud C# SDK, you must have an Alibaba Cloud account and an AccessKey.
+
+	The AccessKey is required when initializing the client. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey]([https://usercenter.console.aliyun.com/#/manage/ak](https://usercenter.console.aliyun.com/#/manage/ak)).
+
+	>**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
+
+- To use Alibaba Cloud Java SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
+
+- The Alibaba Cloud C# SDK is requires .NET Framework 4.0 or later.
+
+## Install C# SDK
+
+You must install the SDK core library for any SDK you use. For example, to call the ECS SDK, you must install both the ECS SDK and the SDK core library.
+
+Install the Alibaba Cloud C# SDK using one of the following methods:
+
+- Add DLL reference
+
+	1. Download the DLL package from [.NET SDK](https://develop.aliyun.com/tools/sdk#/dotnet********).
+
+	2. Right click your project in the **Solution Explorer** of Visual Studio and click **Reference**.
+
+	3. In the displayed menu, click **Add Reference**.
+
+	4. In the displayed dialog box, click **Browse**. Then select the downloaded DLL file and click **Confirm**.
+
+- Add project reference
+
+	1. Run the following command to clone the SDK source codes from GitHub.
+
+	```
+	git clone https://github.com/aliyun/aliyun-openapi-net-sdk.git
+	```
+
+	There are many folders prefixed with`aliyun-net-openapi-`in the cloned directory. Each folder contains `\\*.csproj` file, which is the project file**. For example, there is an `aliyun-net-sdk-ecs.csproj` file under the `aliyun-net-openapi-ecs` subfolder.
+
+	2. In Visual Studio, right click your solution.
+
+	3. Click **Add > Existing Project**.
+
+	4. In the displayed dialogue box, select the project file, for example, `aliyun-net-sdk-ecs.csproj`, and click then **Open**.
+
+	5. Right click your project and click **Reference > Add Reference**.
+
+	6. In the displayed dialog box, click the **Project ** tab, select the opened project and click **Confirm**.
+
+## Initiate a call
+
+The following code example shows the three main steps to use the Alibaba Cloud C# SDK:
+
+- Create and initialize a DefaultAcsClient instance.
+
+- Create a request and set parameters.
+
+- Initiate the request and handle the response.
+
+```
+using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Profile;
+using Aliyun.Acs.Core.Exceptions;
+using Aliyun.Acs.Ecs.Model.V20140526;
+
+class TestProgram
+{
     static void Main(string[] args)
     {
-    TestDescribeInstanceAttribute();
+        // Create a client used for initiating a request
+        IClientProfile profile = DefaultProfile.GetProfile(
+            "<your-region-id>",
+            "<your-access-key-id>",
+            "<your-access-key-secret>");
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+
+        try
+        {
+            // Create the request
+            DescribeInstancesRequest request = new DescribeInstancesRequest();
+            request.PageSize = 10;
+
+            // Initiate the request and get the response
+            DescribeInstancesResponse response = client.GetAcsResponse(request);
+            System.Console.WriteLine(response.TotalCount);
+        }
+        catch (ServerException ex)
+        {
+            System.Console.WriteLine(ex.ToString());
+        }
+        catch (ClientException ex)
+        {
+            System.Console.WriteLine(ex.ToString());
+        }
     }
-     
-    private static void TestDescribeInstanceAttribute()
-    {
-     
-    IClientProfile clientProfile = DefaultProfile.GetProfile("cn-hangzhou", "<your access key id>", "<your access key secret>");
-    DefaultAcsClient client = new DefaultAcsClient(clientProfile);
-     
-    DescribeInstanceAttributeRequest request = new DescribeInstanceAttributeRequest();
-    request.InstanceId = "<your instances id>";
-    try
-    {
-    DescribeInstanceAttributeResponse response = client.GetAcsResponse(request);
-    Console.Write(response.InstanceId);
-    }
-    catch (ServerException e)
-    {
-    Console.WriteLine(e.ErrorCode);
-    Console.WriteLine(e.ErrorMessage);
-    }
-    catch (ClientException e)
-    {
-    Console.WriteLine(e.ErrorCode);
-    Console.WriteLine(e.ErrorMessage);
-    }
-    }
-    }
-
-## Questions
-
-1. 怎么判断API调用成功？
-
-	通过catch异常判断API是否调用成功，当 API 的 http status>=200 且 <300 表示API调用成功；当http status>=300且<500 SDK抛ClientException；当http status >=500 SDK 抛 ServerException
-
-2. IClientProfile clientProfile = DefaultProfile.GetProfile("< your request regionid >", "< your access key id >", "< your access key secret >");
-
-	此处的regionid参数指你需要操作的region的id，例如要操作杭州region，则regionid=cn-hangzhou；默认填cn-hangzhou.
-
-
-
-## Authors && Contributors
-
-- [Ma Lijie](https://github.com/malijiefoxmail)
-
-## License
-
-licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
+}
+```

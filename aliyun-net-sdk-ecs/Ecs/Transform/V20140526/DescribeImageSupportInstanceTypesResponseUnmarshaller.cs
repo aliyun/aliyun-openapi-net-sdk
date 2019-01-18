@@ -34,17 +34,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeImageSupportInstanceTypesResponse.RegionId = context.StringValue("DescribeImageSupportInstanceTypes.RegionId");
 			describeImageSupportInstanceTypesResponse.ImageId = context.StringValue("DescribeImageSupportInstanceTypes.ImageId");
 
-			List<DescribeImageSupportInstanceTypesResponse.InstanceType> instanceTypes = new List<DescribeImageSupportInstanceTypesResponse.InstanceType>();
+			List<DescribeImageSupportInstanceTypesResponse.DescribeImageSupportInstanceTypes_InstanceType> describeImageSupportInstanceTypesResponse_instanceTypes = new List<DescribeImageSupportInstanceTypesResponse.DescribeImageSupportInstanceTypes_InstanceType>();
 			for (int i = 0; i < context.Length("DescribeImageSupportInstanceTypes.InstanceTypes.Length"); i++) {
-				DescribeImageSupportInstanceTypesResponse.InstanceType instanceType = new DescribeImageSupportInstanceTypesResponse.InstanceType();
+				DescribeImageSupportInstanceTypesResponse.DescribeImageSupportInstanceTypes_InstanceType instanceType = new DescribeImageSupportInstanceTypesResponse.DescribeImageSupportInstanceTypes_InstanceType();
 				instanceType.InstanceTypeId = context.StringValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].InstanceTypeId");
 				instanceType.CpuCoreCount = context.IntegerValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].CpuCoreCount");
 				instanceType.MemorySize = context.FloatValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].MemorySize");
 				instanceType.InstanceTypeFamily = context.StringValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].InstanceTypeFamily");
 
-				instanceTypes.Add(instanceType);
+				describeImageSupportInstanceTypesResponse_instanceTypes.Add(instanceType);
 			}
-			describeImageSupportInstanceTypesResponse.InstanceTypes = instanceTypes;
+			describeImageSupportInstanceTypesResponse.InstanceTypes = describeImageSupportInstanceTypesResponse_instanceTypes;
         
 			return describeImageSupportInstanceTypesResponse;
         }

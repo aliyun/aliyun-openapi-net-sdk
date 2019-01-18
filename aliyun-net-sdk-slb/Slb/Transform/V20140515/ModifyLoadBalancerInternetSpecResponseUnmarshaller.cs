@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 
 			modifyLoadBalancerInternetSpecResponse.HttpResponse = context.HttpResponse;
 			modifyLoadBalancerInternetSpecResponse.RequestId = context.StringValue("ModifyLoadBalancerInternetSpec.RequestId");
+			modifyLoadBalancerInternetSpecResponse.OrderId = context.LongValue("ModifyLoadBalancerInternetSpec.OrderId");
         
 			return modifyLoadBalancerInternetSpecResponse;
         }

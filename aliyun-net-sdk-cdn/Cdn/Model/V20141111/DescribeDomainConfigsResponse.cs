@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainConfigsResponse : AcsResponse
 	{
 
-		private DomainConfigs_ domainConfigs;
+		private string requestId;
 
-		public DomainConfigs_ DomainConfigs
+		private DescribeDomainConfigs_DomainConfigs domainConfigs;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public DescribeDomainConfigs_DomainConfigs DomainConfigs
 		{
 			get
 			{
@@ -38,47 +52,64 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class DomainConfigs_{
+		public class DescribeDomainConfigs_DomainConfigs
+		{
 
-			private List<CacheExpiredConfig> cacheExpiredConfigs;
+			private List<DescribeDomainConfigs_CacheExpiredConfig> cacheExpiredConfigs;
 
-			private List<HttpErrorPageConfig> httpErrorPageConfigs;
+			private List<DescribeDomainConfigs_HttpErrorPageConfig> httpErrorPageConfigs;
 
-			private List<HttpHeaderConfig> httpHeaderConfigs;
+			private List<DescribeDomainConfigs_HttpHeaderConfig> httpHeaderConfigs;
 
-			private List<DynamicConfig> dynamicConfigs;
+			private List<DescribeDomainConfigs_DynamicConfig> dynamicConfigs;
 
-			private List<ReqHeaderConfig> reqHeaderConfigs;
+			private List<DescribeDomainConfigs_ReqHeaderConfig> reqHeaderConfigs;
 
-			private CcConfig_ ccConfig;
+			private List<DescribeDomainConfigs_SetVarsConfig> setVarsConfigs;
 
-			private ErrorPageConfig_ errorPageConfig;
+			private DescribeDomainConfigs_CcConfig ccConfig;
 
-			private OptimizeConfig_ optimizeConfig;
+			private DescribeDomainConfigs_ErrorPageConfig errorPageConfig;
 
-			private PageCompressConfig_ pageCompressConfig;
+			private DescribeDomainConfigs_OptimizeConfig optimizeConfig;
 
-			private IgnoreQueryStringConfig_ ignoreQueryStringConfig;
+			private DescribeDomainConfigs_PageCompressConfig pageCompressConfig;
 
-			private RangeConfig_ rangeConfig;
+			private DescribeDomainConfigs_IgnoreQueryStringConfig ignoreQueryStringConfig;
 
-			private RefererConfig_ refererConfig;
+			private DescribeDomainConfigs_RangeConfig rangeConfig;
 
-			private ReqAuthConfig_ reqAuthConfig;
+			private DescribeDomainConfigs_RefererConfig refererConfig;
 
-			private SrcHostConfig_ srcHostConfig;
+			private DescribeDomainConfigs_ReqAuthConfig reqAuthConfig;
 
-			private VideoSeekConfig_ videoSeekConfig;
+			private DescribeDomainConfigs_SrcHostConfig srcHostConfig;
 
-			private WafConfig_ wafConfig;
+			private DescribeDomainConfigs_VideoSeekConfig videoSeekConfig;
 
-			private NotifyUrlConfig_ notifyUrlConfig;
+			private DescribeDomainConfigs_WafConfig wafConfig;
 
-			private RedirectTypeConfig_ redirectTypeConfig;
+			private DescribeDomainConfigs_NotifyUrlConfig notifyUrlConfig;
 
-			private ForwardSchemeConfig_ forwardSchemeConfig;
+			private DescribeDomainConfigs_RedirectTypeConfig redirectTypeConfig;
 
-			public List<CacheExpiredConfig> CacheExpiredConfigs
+			private DescribeDomainConfigs_ForwardSchemeConfig forwardSchemeConfig;
+
+			private DescribeDomainConfigs_RemoveQueryStringConfig removeQueryStringConfig;
+
+			private DescribeDomainConfigs_L2OssKeyConfig l2OssKeyConfig;
+
+			private DescribeDomainConfigs_MacServiceConfig macServiceConfig;
+
+			private DescribeDomainConfigs_GreenManagerConfig greenManagerConfig;
+
+			private DescribeDomainConfigs_HttpsOptionConfig httpsOptionConfig;
+
+			private DescribeDomainConfigs_AliBusinessConfig aliBusinessConfig;
+
+			private DescribeDomainConfigs_IpAllowListConfig ipAllowListConfig;
+
+			public List<DescribeDomainConfigs_CacheExpiredConfig> CacheExpiredConfigs
 			{
 				get
 				{
@@ -90,7 +121,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public List<HttpErrorPageConfig> HttpErrorPageConfigs
+			public List<DescribeDomainConfigs_HttpErrorPageConfig> HttpErrorPageConfigs
 			{
 				get
 				{
@@ -102,7 +133,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public List<HttpHeaderConfig> HttpHeaderConfigs
+			public List<DescribeDomainConfigs_HttpHeaderConfig> HttpHeaderConfigs
 			{
 				get
 				{
@@ -114,7 +145,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public List<DynamicConfig> DynamicConfigs
+			public List<DescribeDomainConfigs_DynamicConfig> DynamicConfigs
 			{
 				get
 				{
@@ -126,7 +157,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public List<ReqHeaderConfig> ReqHeaderConfigs
+			public List<DescribeDomainConfigs_ReqHeaderConfig> ReqHeaderConfigs
 			{
 				get
 				{
@@ -138,7 +169,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public CcConfig_ CcConfig
+			public List<DescribeDomainConfigs_SetVarsConfig> SetVarsConfigs
+			{
+				get
+				{
+					return setVarsConfigs;
+				}
+				set	
+				{
+					setVarsConfigs = value;
+				}
+			}
+
+			public DescribeDomainConfigs_CcConfig CcConfig
 			{
 				get
 				{
@@ -150,7 +193,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public ErrorPageConfig_ ErrorPageConfig
+			public DescribeDomainConfigs_ErrorPageConfig ErrorPageConfig
 			{
 				get
 				{
@@ -162,7 +205,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public OptimizeConfig_ OptimizeConfig
+			public DescribeDomainConfigs_OptimizeConfig OptimizeConfig
 			{
 				get
 				{
@@ -174,7 +217,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public PageCompressConfig_ PageCompressConfig
+			public DescribeDomainConfigs_PageCompressConfig PageCompressConfig
 			{
 				get
 				{
@@ -186,7 +229,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public IgnoreQueryStringConfig_ IgnoreQueryStringConfig
+			public DescribeDomainConfigs_IgnoreQueryStringConfig IgnoreQueryStringConfig
 			{
 				get
 				{
@@ -198,7 +241,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public RangeConfig_ RangeConfig
+			public DescribeDomainConfigs_RangeConfig RangeConfig
 			{
 				get
 				{
@@ -210,7 +253,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public RefererConfig_ RefererConfig
+			public DescribeDomainConfigs_RefererConfig RefererConfig
 			{
 				get
 				{
@@ -222,7 +265,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public ReqAuthConfig_ ReqAuthConfig
+			public DescribeDomainConfigs_ReqAuthConfig ReqAuthConfig
 			{
 				get
 				{
@@ -234,7 +277,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public SrcHostConfig_ SrcHostConfig
+			public DescribeDomainConfigs_SrcHostConfig SrcHostConfig
 			{
 				get
 				{
@@ -246,7 +289,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public VideoSeekConfig_ VideoSeekConfig
+			public DescribeDomainConfigs_VideoSeekConfig VideoSeekConfig
 			{
 				get
 				{
@@ -258,7 +301,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public WafConfig_ WafConfig
+			public DescribeDomainConfigs_WafConfig WafConfig
 			{
 				get
 				{
@@ -270,7 +313,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public NotifyUrlConfig_ NotifyUrlConfig
+			public DescribeDomainConfigs_NotifyUrlConfig NotifyUrlConfig
 			{
 				get
 				{
@@ -282,7 +325,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public RedirectTypeConfig_ RedirectTypeConfig
+			public DescribeDomainConfigs_RedirectTypeConfig RedirectTypeConfig
 			{
 				get
 				{
@@ -294,7 +337,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public ForwardSchemeConfig_ ForwardSchemeConfig
+			public DescribeDomainConfigs_ForwardSchemeConfig ForwardSchemeConfig
 			{
 				get
 				{
@@ -306,7 +349,92 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public class CacheExpiredConfig{
+			public DescribeDomainConfigs_RemoveQueryStringConfig RemoveQueryStringConfig
+			{
+				get
+				{
+					return removeQueryStringConfig;
+				}
+				set	
+				{
+					removeQueryStringConfig = value;
+				}
+			}
+
+			public DescribeDomainConfigs_L2OssKeyConfig L2OssKeyConfig
+			{
+				get
+				{
+					return l2OssKeyConfig;
+				}
+				set	
+				{
+					l2OssKeyConfig = value;
+				}
+			}
+
+			public DescribeDomainConfigs_MacServiceConfig MacServiceConfig
+			{
+				get
+				{
+					return macServiceConfig;
+				}
+				set	
+				{
+					macServiceConfig = value;
+				}
+			}
+
+			public DescribeDomainConfigs_GreenManagerConfig GreenManagerConfig
+			{
+				get
+				{
+					return greenManagerConfig;
+				}
+				set	
+				{
+					greenManagerConfig = value;
+				}
+			}
+
+			public DescribeDomainConfigs_HttpsOptionConfig HttpsOptionConfig
+			{
+				get
+				{
+					return httpsOptionConfig;
+				}
+				set	
+				{
+					httpsOptionConfig = value;
+				}
+			}
+
+			public DescribeDomainConfigs_AliBusinessConfig AliBusinessConfig
+			{
+				get
+				{
+					return aliBusinessConfig;
+				}
+				set	
+				{
+					aliBusinessConfig = value;
+				}
+			}
+
+			public DescribeDomainConfigs_IpAllowListConfig IpAllowListConfig
+			{
+				get
+				{
+					return ipAllowListConfig;
+				}
+				set	
+				{
+					ipAllowListConfig = value;
+				}
+			}
+
+			public class DescribeDomainConfigs_CacheExpiredConfig
+			{
 
 				private string configId;
 
@@ -393,13 +521,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public class HttpErrorPageConfig{
+			public class DescribeDomainConfigs_HttpErrorPageConfig
+			{
 
 				private string configId;
 
 				private string errorCode;
 
 				private string pageUrl;
+
+				private string status;
 
 				public string ConfigId
 				{
@@ -436,9 +567,22 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						pageUrl = value;
 					}
 				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
-			public class HttpHeaderConfig{
+			public class DescribeDomainConfigs_HttpHeaderConfig
+			{
 
 				private string configId;
 
@@ -497,9 +641,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public class DynamicConfig{
+			public class DescribeDomainConfigs_DynamicConfig
+			{
 
 				private string configId;
+
+				private string enable;
 
 				private string dynamicOrigin;
 
@@ -511,6 +658,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 				private string dynamicCacheControl;
 
+				private string status;
+
 				public string ConfigId
 				{
 					get
@@ -520,6 +669,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					set	
 					{
 						configId = value;
+					}
+				}
+
+				public string Enable
+				{
+					get
+					{
+						return enable;
+					}
+					set	
+					{
+						enable = value;
 					}
 				}
 
@@ -582,15 +743,30 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						dynamicCacheControl = value;
 					}
 				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
-			public class ReqHeaderConfig{
+			public class DescribeDomainConfigs_ReqHeaderConfig
+			{
 
 				private string configId;
 
 				private string key;
 
-				private string value_;
+				private string _value;
+
+				private string status;
 
 				public string ConfigId
 				{
@@ -616,26 +792,115 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					}
 				}
 
-				public string Value
+				public string _Value
 				{
 					get
 					{
-						return value_;
+						return _value;
 					}
 					set	
 					{
-						value_ = value;
+						_value = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
 					}
 				}
 			}
 
-			public class CcConfig_{
+			public class DescribeDomainConfigs_SetVarsConfig
+			{
+
+				private string configId;
+
+				private string varName;
+
+				private string varValue;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string VarName
+				{
+					get
+					{
+						return varName;
+					}
+					set	
+					{
+						varName = value;
+					}
+				}
+
+				public string VarValue
+				{
+					get
+					{
+						return varValue;
+					}
+					set	
+					{
+						varValue = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_CcConfig
+			{
+
+				private string configId;
 
 				private string enable;
 
 				private string allowIps;
 
 				private string blockIps;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
 
 				public string Enable
 				{
@@ -672,9 +937,22 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						blockIps = value;
 					}
 				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
-			public class ErrorPageConfig_{
+			public class DescribeDomainConfigs_ErrorPageConfig
+			{
 
 				private string configId;
 
@@ -683,6 +961,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				private string pageType;
 
 				private string customPageUrl;
+
+				private string status;
 
 				public string ConfigId
 				{
@@ -731,11 +1011,40 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						customPageUrl = value;
 					}
 				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
-			public class OptimizeConfig_{
+			public class DescribeDomainConfigs_OptimizeConfig
+			{
+
+				private string configId;
 
 				private string enable;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
 
 				public string Enable
 				{
@@ -748,11 +1057,40 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						enable = value;
 					}
 				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
-			public class PageCompressConfig_{
+			public class DescribeDomainConfigs_PageCompressConfig
+			{
+
+				private string configId;
 
 				private string enable;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
 
 				public string Enable
 				{
@@ -765,13 +1103,42 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						enable = value;
 					}
 				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
-			public class IgnoreQueryStringConfig_{
+			public class DescribeDomainConfigs_IgnoreQueryStringConfig
+			{
+
+				private string configId;
 
 				private string hashKeyArgs;
 
 				private string enable;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
 
 				public string HashKeyArgs
 				{
@@ -796,11 +1163,40 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						enable = value;
 					}
 				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
-			public class RangeConfig_{
+			public class DescribeDomainConfigs_RangeConfig
+			{
+
+				private string configId;
 
 				private string enable;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
 
 				public string Enable
 				{
@@ -813,15 +1209,46 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						enable = value;
 					}
 				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
-			public class RefererConfig_{
+			public class DescribeDomainConfigs_RefererConfig
+			{
+
+				private string configId;
 
 				private string referType;
 
 				private string referList;
 
 				private string allowEmpty;
+
+				private string disableAst;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
 
 				public string ReferType
 				{
@@ -858,15 +1285,66 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						allowEmpty = value;
 					}
 				}
+
+				public string DisableAst
+				{
+					get
+					{
+						return disableAst;
+					}
+					set	
+					{
+						disableAst = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
-			public class ReqAuthConfig_{
+			public class DescribeDomainConfigs_ReqAuthConfig
+			{
+
+				private string configId;
 
 				private string authType;
 
 				private string key1;
 
 				private string key2;
+
+				private string status;
+
+				private string aliAuthWhiteList;
+
+				private string authM3u8;
+
+				private string authAddr;
+
+				private string authRemoteDesc;
+
+				private string timeOut;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
 
 				public string AuthType
 				{
@@ -903,11 +1381,100 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						key2 = value;
 					}
 				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string AliAuthWhiteList
+				{
+					get
+					{
+						return aliAuthWhiteList;
+					}
+					set	
+					{
+						aliAuthWhiteList = value;
+					}
+				}
+
+				public string AuthM3u8
+				{
+					get
+					{
+						return authM3u8;
+					}
+					set	
+					{
+						authM3u8 = value;
+					}
+				}
+
+				public string AuthAddr
+				{
+					get
+					{
+						return authAddr;
+					}
+					set	
+					{
+						authAddr = value;
+					}
+				}
+
+				public string AuthRemoteDesc
+				{
+					get
+					{
+						return authRemoteDesc;
+					}
+					set	
+					{
+						authRemoteDesc = value;
+					}
+				}
+
+				public string TimeOut
+				{
+					get
+					{
+						return timeOut;
+					}
+					set	
+					{
+						timeOut = value;
+					}
+				}
 			}
 
-			public class SrcHostConfig_{
+			public class DescribeDomainConfigs_SrcHostConfig
+			{
+
+				private string configId;
 
 				private string domainName;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
 
 				public string DomainName
 				{
@@ -920,11 +1487,40 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						domainName = value;
 					}
 				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
-			public class VideoSeekConfig_{
+			public class DescribeDomainConfigs_VideoSeekConfig
+			{
+
+				private string configId;
 
 				private string enable;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
 
 				public string Enable
 				{
@@ -937,11 +1533,40 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						enable = value;
 					}
 				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
-			public class WafConfig_{
+			public class DescribeDomainConfigs_WafConfig
+			{
+
+				private string configId;
 
 				private string enable;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
 
 				public string Enable
 				{
@@ -954,9 +1579,22 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 						enable = value;
 					}
 				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
-			public class NotifyUrlConfig_{
+			public class DescribeDomainConfigs_NotifyUrlConfig
+			{
 
 				private string enable;
 
@@ -987,7 +1625,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public class RedirectTypeConfig_{
+			public class DescribeDomainConfigs_RedirectTypeConfig
+			{
 
 				private string redirectType;
 
@@ -1004,13 +1643,30 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public class ForwardSchemeConfig_{
+			public class DescribeDomainConfigs_ForwardSchemeConfig
+			{
+
+				private string configId;
 
 				private string enable;
 
 				private string schemeOrigin;
 
 				private string schemeOriginPort;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
 
 				public string Enable
 				{
@@ -1045,6 +1701,396 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					set	
 					{
 						schemeOriginPort = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_RemoveQueryStringConfig
+			{
+
+				private string aliRemoveArgs;
+
+				private string configId;
+
+				private string status;
+
+				public string AliRemoveArgs
+				{
+					get
+					{
+						return aliRemoveArgs;
+					}
+					set	
+					{
+						aliRemoveArgs = value;
+					}
+				}
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_L2OssKeyConfig
+			{
+
+				private string privateOssAuth;
+
+				private string configId;
+
+				private string status;
+
+				public string PrivateOssAuth
+				{
+					get
+					{
+						return privateOssAuth;
+					}
+					set	
+					{
+						privateOssAuth = value;
+					}
+				}
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_MacServiceConfig
+			{
+
+				private string appList;
+
+				private string enabled;
+
+				private string processResult;
+
+				private string configId;
+
+				private string status;
+
+				public string AppList
+				{
+					get
+					{
+						return appList;
+					}
+					set	
+					{
+						appList = value;
+					}
+				}
+
+				public string Enabled
+				{
+					get
+					{
+						return enabled;
+					}
+					set	
+					{
+						enabled = value;
+					}
+				}
+
+				public string ProcessResult
+				{
+					get
+					{
+						return processResult;
+					}
+					set	
+					{
+						processResult = value;
+					}
+				}
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_GreenManagerConfig
+			{
+
+				private string enabled;
+
+				private string configId;
+
+				private string status;
+
+				public string Enabled
+				{
+					get
+					{
+						return enabled;
+					}
+					set	
+					{
+						enabled = value;
+					}
+				}
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_HttpsOptionConfig
+			{
+
+				private string http2;
+
+				private string configId;
+
+				private string status;
+
+				public string Http2
+				{
+					get
+					{
+						return http2;
+					}
+					set	
+					{
+						http2 = value;
+					}
+				}
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_AliBusinessConfig
+			{
+
+				private string aliBusinessTable;
+
+				private string aliBusinessType;
+
+				private string configId;
+
+				private string status;
+
+				public string AliBusinessTable
+				{
+					get
+					{
+						return aliBusinessTable;
+					}
+					set	
+					{
+						aliBusinessTable = value;
+					}
+				}
+
+				public string AliBusinessType
+				{
+					get
+					{
+						return aliBusinessType;
+					}
+					set	
+					{
+						aliBusinessType = value;
+					}
+				}
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDomainConfigs_IpAllowListConfig
+			{
+
+				private string configId;
+
+				private string ipList;
+
+				private string ipAclXfwd;
+
+				private string status;
+
+				public string ConfigId
+				{
+					get
+					{
+						return configId;
+					}
+					set	
+					{
+						configId = value;
+					}
+				}
+
+				public string IpList
+				{
+					get
+					{
+						return ipList;
+					}
+					set	
+					{
+						ipList = value;
+					}
+				}
+
+				public string IpAclXfwd
+				{
+					get
+					{
+						return ipAclXfwd;
+					}
+					set	
+					{
+						ipAclXfwd = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
 					}
 				}
 			}

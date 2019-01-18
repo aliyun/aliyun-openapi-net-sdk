@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainBpsDataByTimeStampResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string domainName;
 
 		private string timeStamp;
 
-		private List<BpsDataModel> bpsDataList;
+		private List<DescribeDomainBpsDataByTimeStamp_BpsDataModel> bpsDataList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{
@@ -54,7 +68,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<BpsDataModel> BpsDataList
+		public List<DescribeDomainBpsDataByTimeStamp_BpsDataModel> BpsDataList
 		{
 			get
 			{
@@ -66,7 +80,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class BpsDataModel{
+		public class DescribeDomainBpsDataByTimeStamp_BpsDataModel
+		{
 
 			private string locationName;
 

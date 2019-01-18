@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDiskMonitorDataResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
-		private List<DiskMonitorData> monitorData;
+		private List<DescribeDiskMonitorData_DiskMonitorData> monitorData;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<DiskMonitorData> MonitorData
+		public List<DescribeDiskMonitorData_DiskMonitorData> MonitorData
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class DiskMonitorData{
+		public class DescribeDiskMonitorData_DiskMonitorData
+		{
 
 			private string diskId;
 
@@ -67,6 +82,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private int? bPSWrite;
 
 			private int? bPSTotal;
+
+			private int? latencyRead;
+
+			private int? latencyWrite;
 
 			private string timeStamp;
 
@@ -151,6 +170,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					bPSTotal = value;
+				}
+			}
+
+			public int? LatencyRead
+			{
+				get
+				{
+					return latencyRead;
+				}
+				set	
+				{
+					latencyRead = value;
+				}
+			}
+
+			public int? LatencyWrite
+			{
+				get
+				{
+					return latencyWrite;
+				}
+				set	
+				{
+					latencyWrite = value;
 				}
 			}
 

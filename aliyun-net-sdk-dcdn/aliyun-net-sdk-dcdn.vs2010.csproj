@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{d166071e-2541-45fe-9776-2cbbc498274d}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-dcdn</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Dcdn\Model\V20180115\SetDcdnDomainCertificateRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainLogResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainCertificateInfoResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DeleteDcdnDomainRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainCnameResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnUserResourcePackageRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainConfigsRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainTopUrlVisitResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnRefreshTasksRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainIspDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\StartDcdnDomainRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\BatchSetDcdnDomainConfigsRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DeleteDcdnDomainResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainConfigsResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnTopDomainsByFlowResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainOriginBpsDataResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainHitRateDataResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\UpdateDcdnDomainRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnCertificateListRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainWebsocketHttpCodeDataResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainWebsocketTrafficDataResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainIspDataResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainOriginTrafficDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainBpsDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainLogRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\PreloadDcdnObjectCachesRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\StartDcdnDomainResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainHitRateDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeUserDcdnStatusRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainOriginBpsDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\BatchDeleteDcdnDomainConfigsRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\UpdateDcdnDomainResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\RefreshDcdnObjectCachesRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainRegionDataResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainQpsDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnTopDomainsByFlowRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnRefreshQuotaRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnCertificateListResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnUserQuotaResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnServiceResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnUserQuotaRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\BatchDeleteDcdnDomainConfigsResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\StopDcdnDomainRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\RefreshDcdnObjectCachesResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnRefreshQuotaResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnRefreshTasksResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnServiceRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\PreloadDcdnObjectCachesResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainHttpCodeDataResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainCnameRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainTopUrlVisitRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnCertificateDetailRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainCertificateInfoRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainTrafficDataResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeUserDcdnStatusResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainTopReferVisitResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainTrafficDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainTopReferVisitRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainWebsocketHttpCodeDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\AddDcdnDomainResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainWebsocketBpsDataResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainOriginTrafficDataResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnCertificateDetailResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\StopDcdnDomainResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainRegionDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainWebsocketBpsDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\AddDcdnDomainRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainQpsDataResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainDetailResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainWebsocketTrafficDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainHttpCodeDataRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\BatchSetDcdnDomainConfigsResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainBpsDataResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnDomainDetailRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnUserDomainsRequest.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnUserResourcePackageResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\SetDcdnDomainCertificateResponse.cs" />
+	<Compile Include="Dcdn\Model\V20180115\DescribeDcdnUserDomainsResponse.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeUserDcdnStatusResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnCertificateListResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainConfigsResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\UpdateDcdnDomainResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainHitRateDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainDetailResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DeleteDcdnDomainResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnUserQuotaResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnRefreshQuotaResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainOriginBpsDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainQpsDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainTopUrlVisitResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainCnameResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainHttpCodeDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\AddDcdnDomainResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\PreloadDcdnObjectCachesResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainWebsocketBpsDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainCertificateInfoResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnCertificateDetailResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\StartDcdnDomainResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\RefreshDcdnObjectCachesResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainBpsDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnServiceResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainOriginTrafficDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\SetDcdnDomainCertificateResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\StopDcdnDomainResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainTrafficDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainWebsocketHttpCodeDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\BatchSetDcdnDomainConfigsResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainTopReferVisitResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainLogResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnRefreshTasksResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnUserDomainsResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnUserResourcePackageResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainWebsocketTrafficDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\BatchDeleteDcdnDomainConfigsResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainRegionDataResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnTopDomainsByFlowResponseUnmarshaller.cs" />
+	<Compile Include="Dcdn\Transform\V20180115\DescribeDcdnDomainIspDataResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

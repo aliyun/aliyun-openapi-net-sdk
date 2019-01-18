@@ -29,36 +29,68 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class SwitchDBInstanceNetTypeRequest : RpcAcsRequest<SwitchDBInstanceNetTypeResponse>
     {
         public SwitchDBInstanceNetTypeRequest()
-            : base("Rds", "2014-08-15", "SwitchDBInstanceNetType")
+            : base("Rds", "2014-08-15", "SwitchDBInstanceNetType", "rds", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
+
+		private string connectionStringPrefix;
+
+		private string connectionStringType;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
-
 		private string clientToken;
-
-		private string dBInstanceId;
-
-		private string connectionStringPrefix;
 
 		private string port;
 
 		private string ownerAccount;
 
-		public long? OwnerId
+		private string action;
+
+		private string dBInstanceId;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ConnectionStringPrefix
+		{
+			get
+			{
+				return connectionStringPrefix;
+			}
+			set	
+			{
+				connectionStringPrefix = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
+			}
+		}
+
+		public string ConnectionStringType
+		{
+			get
+			{
+				return connectionStringType;
+			}
+			set	
+			{
+				connectionStringType = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionStringType", value);
 			}
 		}
 
@@ -75,19 +107,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -98,32 +117,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string ConnectionStringPrefix
-		{
-			get
-			{
-				return connectionStringPrefix;
-			}
-			set	
-			{
-				connectionStringPrefix = value;
-				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
 			}
 		}
 
@@ -150,6 +143,58 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

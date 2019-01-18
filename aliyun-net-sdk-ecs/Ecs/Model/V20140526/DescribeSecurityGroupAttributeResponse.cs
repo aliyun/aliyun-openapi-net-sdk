@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeSecurityGroupAttributeResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string regionId;
 
 		private string securityGroupId;
@@ -34,7 +36,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string vpcId;
 
-		private List<Permission> permissions;
+		private string innerAccessPolicy;
+
+		private List<DescribeSecurityGroupAttribute_Permission> permissions;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string RegionId
 		{
@@ -96,7 +112,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Permission> Permissions
+		public string InnerAccessPolicy
+		{
+			get
+			{
+				return innerAccessPolicy;
+			}
+			set	
+			{
+				innerAccessPolicy = value;
+			}
+		}
+
+		public List<DescribeSecurityGroupAttribute_Permission> Permissions
 		{
 			get
 			{
@@ -108,15 +136,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Permission{
+		public class DescribeSecurityGroupAttribute_Permission
+		{
 
 			private string ipProtocol;
 
 			private string portRange;
 
+			private string sourcePortRange;
+
 			private string sourceGroupId;
 
+			private string sourceGroupName;
+
 			private string sourceCidrIp;
+
+			private string ipv6SourceCidrIp;
 
 			private string policy;
 
@@ -126,13 +161,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string destGroupId;
 
+			private string destGroupName;
+
 			private string destCidrIp;
+
+			private string ipv6DestCidrIp;
 
 			private string destGroupOwnerAccount;
 
 			private string priority;
 
 			private string direction;
+
+			private string description;
+
+			private string createTime;
 
 			public string IpProtocol
 			{
@@ -158,6 +201,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string SourcePortRange
+			{
+				get
+				{
+					return sourcePortRange;
+				}
+				set	
+				{
+					sourcePortRange = value;
+				}
+			}
+
 			public string SourceGroupId
 			{
 				get
@@ -170,6 +225,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string SourceGroupName
+			{
+				get
+				{
+					return sourceGroupName;
+				}
+				set	
+				{
+					sourceGroupName = value;
+				}
+			}
+
 			public string SourceCidrIp
 			{
 				get
@@ -179,6 +246,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					sourceCidrIp = value;
+				}
+			}
+
+			public string Ipv6SourceCidrIp
+			{
+				get
+				{
+					return ipv6SourceCidrIp;
+				}
+				set	
+				{
+					ipv6SourceCidrIp = value;
 				}
 			}
 
@@ -230,6 +309,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string DestGroupName
+			{
+				get
+				{
+					return destGroupName;
+				}
+				set	
+				{
+					destGroupName = value;
+				}
+			}
+
 			public string DestCidrIp
 			{
 				get
@@ -239,6 +330,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					destCidrIp = value;
+				}
+			}
+
+			public string Ipv6DestCidrIp
+			{
+				get
+				{
+					return ipv6DestCidrIp;
+				}
+				set	
+				{
+					ipv6DestCidrIp = value;
 				}
 			}
 
@@ -275,6 +378,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					direction = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
 				}
 			}
 		}

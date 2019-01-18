@@ -20,60 +20,49 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vod.Transform;
-using Aliyun.Acs.Vod.Transform.V20170321;
+using Aliyun.Acs.vod.Transform;
+using Aliyun.Acs.vod.Transform.V20170321;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Model.V20170321
+namespace Aliyun.Acs.vod.Model.V20170321
 {
     public class UpdateVideoInfoRequest : RpcAcsRequest<UpdateVideoInfoResponse>
     {
         public UpdateVideoInfoRequest()
-            : base("vod", "2017-03-21", "UpdateVideoInfo")
+            : base("vod", "2017-03-21", "UpdateVideoInfo", "vod", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private string coverURL;
 
 		private long? resourceOwnerId;
 
+		private string resourceOwnerAccount;
+
+		private long? cateId;
+
+		private string action;
+
+		private string description;
+
 		private string videoId;
+
+		private long? ownerId;
 
 		private string title;
 
 		private string tags;
 
-		private string description;
-
-		private string coverURL;
-
-		private int? cateId;
-
-		public long? OwnerId
+		public string CoverURL
 		{
 			get
 			{
-				return ownerId;
+				return coverURL;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				coverURL = value;
+				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
 			}
 		}
 
@@ -90,6 +79,58 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public long? CateId
+		{
+			get
+			{
+				return cateId;
+			}
+			set	
+			{
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
 		public string VideoId
 		{
 			get
@@ -100,6 +141,19 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				videoId = value;
 				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -126,45 +180,6 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string CoverURL
-		{
-			get
-			{
-				return coverURL;
-			}
-			set	
-			{
-				coverURL = value;
-				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
-			}
-		}
-
-		public int? CateId
-		{
-			get
-			{
-				return cateId;
-			}
-			set	
-			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
 			}
 		}
 

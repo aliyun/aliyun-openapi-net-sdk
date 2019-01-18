@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeErrorLogsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalRecordCount;
 
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
-		private List<ErrorLog> items;
+		private List<DescribeErrorLogs_ErrorLog> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalRecordCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<ErrorLog> Items
+		public List<DescribeErrorLogs_ErrorLog> Items
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class ErrorLog{
+		public class DescribeErrorLogs_ErrorLog
+		{
 
 			private string errorInfo;
 

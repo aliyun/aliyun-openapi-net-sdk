@@ -43,26 +43,26 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeTaskAttributeResponse.CreationTime = context.StringValue("DescribeTaskAttribute.CreationTime");
 			describeTaskAttributeResponse.FinishedTime = context.StringValue("DescribeTaskAttribute.FinishedTime");
 
-			List<DescribeTaskAttributeResponse.OperationProgress> operationProgressSet = new List<DescribeTaskAttributeResponse.OperationProgress>();
+			List<DescribeTaskAttributeResponse.DescribeTaskAttribute_OperationProgress> describeTaskAttributeResponse_operationProgressSet = new List<DescribeTaskAttributeResponse.DescribeTaskAttribute_OperationProgress>();
 			for (int i = 0; i < context.Length("DescribeTaskAttribute.OperationProgressSet.Length"); i++) {
-				DescribeTaskAttributeResponse.OperationProgress operationProgress = new DescribeTaskAttributeResponse.OperationProgress();
+				DescribeTaskAttributeResponse.DescribeTaskAttribute_OperationProgress operationProgress = new DescribeTaskAttributeResponse.DescribeTaskAttribute_OperationProgress();
 				operationProgress.OperationStatus = context.StringValue("DescribeTaskAttribute.OperationProgressSet["+ i +"].OperationStatus");
 				operationProgress.ErrorCode = context.StringValue("DescribeTaskAttribute.OperationProgressSet["+ i +"].ErrorCode");
 				operationProgress.ErrorMsg = context.StringValue("DescribeTaskAttribute.OperationProgressSet["+ i +"].ErrorMsg");
 
-				List<DescribeTaskAttributeResponse.OperationProgress.RelatedItem> relatedItemSet = new List<DescribeTaskAttributeResponse.OperationProgress.RelatedItem>();
+				List<DescribeTaskAttributeResponse.DescribeTaskAttribute_OperationProgress.DescribeTaskAttribute_RelatedItem> operationProgress_relatedItemSet = new List<DescribeTaskAttributeResponse.DescribeTaskAttribute_OperationProgress.DescribeTaskAttribute_RelatedItem>();
 				for (int j = 0; j < context.Length("DescribeTaskAttribute.OperationProgressSet["+ i +"].RelatedItemSet.Length"); j++) {
-					DescribeTaskAttributeResponse.OperationProgress.RelatedItem relatedItem = new DescribeTaskAttributeResponse.OperationProgress.RelatedItem();
+					DescribeTaskAttributeResponse.DescribeTaskAttribute_OperationProgress.DescribeTaskAttribute_RelatedItem relatedItem = new DescribeTaskAttributeResponse.DescribeTaskAttribute_OperationProgress.DescribeTaskAttribute_RelatedItem();
 					relatedItem.Name = context.StringValue("DescribeTaskAttribute.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Name");
-					relatedItem.Value = context.StringValue("DescribeTaskAttribute.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Value");
+					relatedItem._Value = context.StringValue("DescribeTaskAttribute.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Value");
 
-					relatedItemSet.Add(relatedItem);
+					operationProgress_relatedItemSet.Add(relatedItem);
 				}
-				operationProgress.RelatedItemSet = relatedItemSet;
+				operationProgress.RelatedItemSet = operationProgress_relatedItemSet;
 
-				operationProgressSet.Add(operationProgress);
+				describeTaskAttributeResponse_operationProgressSet.Add(operationProgress);
 			}
-			describeTaskAttributeResponse.OperationProgressSet = operationProgressSet;
+			describeTaskAttributeResponse.OperationProgressSet = describeTaskAttributeResponse_operationProgressSet;
         
 			return describeTaskAttributeResponse;
         }

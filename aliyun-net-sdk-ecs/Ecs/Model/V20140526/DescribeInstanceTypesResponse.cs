@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeInstanceTypesResponse : AcsResponse
 	{
 
-		private List<InstanceType> instanceTypes;
+		private string requestId;
 
-		public List<InstanceType> InstanceTypes
+		private List<DescribeInstanceTypes_InstanceType> instanceTypes;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeInstanceTypes_InstanceType> InstanceTypes
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class InstanceType{
+		public class DescribeInstanceTypes_InstanceType
+		{
 
 			private string instanceTypeId;
 
@@ -47,6 +62,34 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private float? memorySize;
 
 			private string instanceTypeFamily;
+
+			private long? localStorageCapacity;
+
+			private int? localStorageAmount;
+
+			private string localStorageCategory;
+
+			private int? gPUAmount;
+
+			private string gPUSpec;
+
+			private int? initialCredit;
+
+			private int? baselineCredit;
+
+			private int? eniQuantity;
+
+			private int? eniPrivateIpAddressQuantity;
+
+			private int? instanceBandwidthRx;
+
+			private int? instanceBandwidthTx;
+
+			private long? instancePpsRx;
+
+			private long? instancePpsTx;
+
+			private string instanceFamilyLevel;
 
 			public string InstanceTypeId
 			{
@@ -93,6 +136,174 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					instanceTypeFamily = value;
+				}
+			}
+
+			public long? LocalStorageCapacity
+			{
+				get
+				{
+					return localStorageCapacity;
+				}
+				set	
+				{
+					localStorageCapacity = value;
+				}
+			}
+
+			public int? LocalStorageAmount
+			{
+				get
+				{
+					return localStorageAmount;
+				}
+				set	
+				{
+					localStorageAmount = value;
+				}
+			}
+
+			public string LocalStorageCategory
+			{
+				get
+				{
+					return localStorageCategory;
+				}
+				set	
+				{
+					localStorageCategory = value;
+				}
+			}
+
+			public int? GPUAmount
+			{
+				get
+				{
+					return gPUAmount;
+				}
+				set	
+				{
+					gPUAmount = value;
+				}
+			}
+
+			public string GPUSpec
+			{
+				get
+				{
+					return gPUSpec;
+				}
+				set	
+				{
+					gPUSpec = value;
+				}
+			}
+
+			public int? InitialCredit
+			{
+				get
+				{
+					return initialCredit;
+				}
+				set	
+				{
+					initialCredit = value;
+				}
+			}
+
+			public int? BaselineCredit
+			{
+				get
+				{
+					return baselineCredit;
+				}
+				set	
+				{
+					baselineCredit = value;
+				}
+			}
+
+			public int? EniQuantity
+			{
+				get
+				{
+					return eniQuantity;
+				}
+				set	
+				{
+					eniQuantity = value;
+				}
+			}
+
+			public int? EniPrivateIpAddressQuantity
+			{
+				get
+				{
+					return eniPrivateIpAddressQuantity;
+				}
+				set	
+				{
+					eniPrivateIpAddressQuantity = value;
+				}
+			}
+
+			public int? InstanceBandwidthRx
+			{
+				get
+				{
+					return instanceBandwidthRx;
+				}
+				set	
+				{
+					instanceBandwidthRx = value;
+				}
+			}
+
+			public int? InstanceBandwidthTx
+			{
+				get
+				{
+					return instanceBandwidthTx;
+				}
+				set	
+				{
+					instanceBandwidthTx = value;
+				}
+			}
+
+			public long? InstancePpsRx
+			{
+				get
+				{
+					return instancePpsRx;
+				}
+				set	
+				{
+					instancePpsRx = value;
+				}
+			}
+
+			public long? InstancePpsTx
+			{
+				get
+				{
+					return instancePpsTx;
+				}
+				set	
+				{
+					instancePpsTx = value;
+				}
+			}
+
+			public string InstanceFamilyLevel
+			{
+				get
+				{
+					return instanceFamilyLevel;
+				}
+				set	
+				{
+					instanceFamilyLevel = value;
 				}
 			}
 		}

@@ -32,14 +32,14 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeClustersResponse.HttpResponse = context.HttpResponse;
 			describeClustersResponse.RequestId = context.StringValue("DescribeClusters.RequestId");
 
-			List<DescribeClustersResponse.Cluster> clusters = new List<DescribeClustersResponse.Cluster>();
+			List<DescribeClustersResponse.DescribeClusters_Cluster> describeClustersResponse_clusters = new List<DescribeClustersResponse.DescribeClusters_Cluster>();
 			for (int i = 0; i < context.Length("DescribeClusters.Clusters.Length"); i++) {
-				DescribeClustersResponse.Cluster cluster = new DescribeClustersResponse.Cluster();
+				DescribeClustersResponse.DescribeClusters_Cluster cluster = new DescribeClustersResponse.DescribeClusters_Cluster();
 				cluster.ClusterId = context.StringValue("DescribeClusters.Clusters["+ i +"].ClusterId");
 
-				clusters.Add(cluster);
+				describeClustersResponse_clusters.Add(cluster);
 			}
-			describeClustersResponse.Clusters = clusters;
+			describeClustersResponse.Clusters = describeClustersResponse_clusters;
         
 			return describeClustersResponse;
         }

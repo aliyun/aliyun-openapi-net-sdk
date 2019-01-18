@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeVRoutersResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<VRouter> vRouters;
+		private List<DescribeVRouters_VRouter> vRouters;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<VRouter> VRouters
+		public List<DescribeVRouters_VRouter> VRouters
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class VRouter{
+		public class DescribeVRouters_VRouter
+		{
 
 			private string regionId;
 

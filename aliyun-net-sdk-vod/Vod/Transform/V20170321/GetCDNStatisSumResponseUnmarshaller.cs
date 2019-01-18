@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vod.Model.V20170321;
+using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Transform.V20170321
+namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetCDNStatisSumResponseUnmarshaller
     {
@@ -34,9 +34,9 @@ namespace Aliyun.Acs.Vod.Transform.V20170321
 			getCDNStatisSumResponse.SumFlowDataValue = context.LongValue("GetCDNStatisSum.SumFlowDataValue");
 			getCDNStatisSumResponse.MaxBpsDataValue = context.LongValue("GetCDNStatisSum.MaxBpsDataValue");
 
-			List<GetCDNStatisSumResponse.CDNMetric> cDNStatisList = new List<GetCDNStatisSumResponse.CDNMetric>();
+			List<GetCDNStatisSumResponse.GetCDNStatisSum_CDNMetric> getCDNStatisSumResponse_cDNStatisList = new List<GetCDNStatisSumResponse.GetCDNStatisSum_CDNMetric>();
 			for (int i = 0; i < context.Length("GetCDNStatisSum.CDNStatisList.Length"); i++) {
-				GetCDNStatisSumResponse.CDNMetric cDNMetric = new GetCDNStatisSumResponse.CDNMetric();
+				GetCDNStatisSumResponse.GetCDNStatisSum_CDNMetric cDNMetric = new GetCDNStatisSumResponse.GetCDNStatisSum_CDNMetric();
 				cDNMetric.StatTime = context.StringValue("GetCDNStatisSum.CDNStatisList["+ i +"].StatTime");
 				cDNMetric.FlowDataDomesticValue = context.LongValue("GetCDNStatisSum.CDNStatisList["+ i +"].FlowDataDomesticValue");
 				cDNMetric.FlowDataOverseasValue = context.LongValue("GetCDNStatisSum.CDNStatisList["+ i +"].FlowDataOverseasValue");
@@ -45,9 +45,9 @@ namespace Aliyun.Acs.Vod.Transform.V20170321
 				cDNMetric.BpsDataOverseasValue = context.LongValue("GetCDNStatisSum.CDNStatisList["+ i +"].BpsDataOverseasValue");
 				cDNMetric.BpsDataValue = context.LongValue("GetCDNStatisSum.CDNStatisList["+ i +"].BpsDataValue");
 
-				cDNStatisList.Add(cDNMetric);
+				getCDNStatisSumResponse_cDNStatisList.Add(cDNMetric);
 			}
-			getCDNStatisSumResponse.CDNStatisList = cDNStatisList;
+			getCDNStatisSumResponse.CDNStatisList = getCDNStatisSumResponse_cDNStatisList;
         
 			return getCDNStatisSumResponse;
         }

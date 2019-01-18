@@ -19,10 +19,12 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveRecordConfigResponse : AcsResponse
 	{
+
+		private string requestId;
 
 		private int? pageNum;
 
@@ -34,7 +36,19 @@ namespace Aliyun.Acs.Live.Model.V20161101
 
 		private int? totalPage;
 
-		private List<LiveAppRecord> liveAppRecordList;
+		private List<DescribeLiveRecordConfig_LiveAppRecord> liveAppRecordList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNum
 		{
@@ -96,7 +110,7 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public List<LiveAppRecord> LiveAppRecordList
+		public List<DescribeLiveRecordConfig_LiveAppRecord> LiveAppRecordList
 		{
 			get
 			{
@@ -108,11 +122,14 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class LiveAppRecord{
+		public class DescribeLiveRecordConfig_LiveAppRecord
+		{
 
 			private string domainName;
 
 			private string appName;
+
+			private string streamName;
 
 			private string ossEndpoint;
 
@@ -120,7 +137,13 @@ namespace Aliyun.Acs.Live.Model.V20161101
 
 			private string createTime;
 
-			private List<RecordFormat> recordFormatList;
+			private string startTime;
+
+			private string endTime;
+
+			private int? onDemond;
+
+			private List<DescribeLiveRecordConfig_RecordFormat> recordFormatList;
 
 			public string DomainName
 			{
@@ -143,6 +166,18 @@ namespace Aliyun.Acs.Live.Model.V20161101
 				set	
 				{
 					appName = value;
+				}
+			}
+
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
 				}
 			}
 
@@ -182,7 +217,43 @@ namespace Aliyun.Acs.Live.Model.V20161101
 				}
 			}
 
-			public List<RecordFormat> RecordFormatList
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public int? OnDemond
+			{
+				get
+				{
+					return onDemond;
+				}
+				set	
+				{
+					onDemond = value;
+				}
+			}
+
+			public List<DescribeLiveRecordConfig_RecordFormat> RecordFormatList
 			{
 				get
 				{
@@ -194,7 +265,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 				}
 			}
 
-			public class RecordFormat{
+			public class DescribeLiveRecordConfig_RecordFormat
+			{
 
 				private string format;
 

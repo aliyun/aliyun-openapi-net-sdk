@@ -24,6 +24,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeSlowLogsResponse : AcsResponse
 	{
 
+		private string requestId;
+
+		private string dBInstanceId;
+
 		private string engine;
 
 		private string startTime;
@@ -36,7 +40,31 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageRecordCount;
 
-		private List<SQLSlowLog> items;
+		private List<DescribeSlowLogs_SQLSlowLog> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+			}
+		}
 
 		public string Engine
 		{
@@ -110,7 +138,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<SQLSlowLog> Items
+		public List<DescribeSlowLogs_SQLSlowLog> Items
 		{
 			get
 			{
@@ -122,11 +150,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class SQLSlowLog{
+		public class DescribeSlowLogs_SQLSlowLog
+		{
 
 			private long? slowLogId;
 
 			private long? sQLId;
+
+			private long? sQLHASH;
+
+			private string sQLIdStr;
 
 			private string dBName;
 
@@ -185,6 +218,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					sQLId = value;
+				}
+			}
+
+			public long? SQLHASH
+			{
+				get
+				{
+					return sQLHASH;
+				}
+				set	
+				{
+					sQLHASH = value;
+				}
+			}
+
+			public string SQLIdStr
+			{
+				get
+				{
+					return sQLIdStr;
+				}
+				set	
+				{
+					sQLIdStr = value;
 				}
 			}
 

@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class CloneDBInstanceResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string dBInstanceId;
 
 		private string orderId;
@@ -31,6 +33,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string connectionString;
 
 		private string port;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DBInstanceId
 		{

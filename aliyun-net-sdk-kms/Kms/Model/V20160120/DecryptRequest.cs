@@ -29,27 +29,27 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class DecryptRequest : RpcAcsRequest<DecryptResponse>
     {
         public DecryptRequest()
-            : base("Kms", "2016-01-20", "Decrypt")
+            : base("Kms", "2016-01-20", "Decrypt", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string ciphertextBlob;
+		private string encryptionContext;
 
 		private string sTSToken;
 
-		private string encryptionContext;
+		private string ciphertextBlob;
 
-		public string CiphertextBlob
+		public string EncryptionContext
 		{
 			get
 			{
-				return ciphertextBlob;
+				return encryptionContext;
 			}
 			set	
 			{
-				ciphertextBlob = value;
-				DictionaryUtil.Add(QueryParameters, "CiphertextBlob", value);
+				encryptionContext = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
 			}
 		}
 
@@ -66,16 +66,16 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string EncryptionContext
+		public string CiphertextBlob
 		{
 			get
 			{
-				return encryptionContext;
+				return ciphertextBlob;
 			}
 			set	
 			{
-				encryptionContext = value;
-				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
+				ciphertextBlob = value;
+				DictionaryUtil.Add(QueryParameters, "CiphertextBlob", value);
 			}
 		}
 

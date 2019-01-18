@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeUserConfigsResponse : AcsResponse
 	{
 
-		private Configs_ configs;
+		private string requestId;
 
-		public Configs_ Configs
+		private DescribeUserConfigs_Configs configs;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public DescribeUserConfigs_Configs Configs
 		{
 			get
 			{
@@ -38,11 +52,14 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class Configs_{
+		public class DescribeUserConfigs_Configs
+		{
 
-			private OssLogConfig_ ossLogConfig;
+			private DescribeUserConfigs_OssLogConfig ossLogConfig;
 
-			public OssLogConfig_ OssLogConfig
+			private DescribeUserConfigs_GreenManagerConfig greenManagerConfig;
+
+			public DescribeUserConfigs_OssLogConfig OssLogConfig
 			{
 				get
 				{
@@ -54,7 +71,20 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public class OssLogConfig_{
+			public DescribeUserConfigs_GreenManagerConfig GreenManagerConfig
+			{
+				get
+				{
+					return greenManagerConfig;
+				}
+				set	
+				{
+					greenManagerConfig = value;
+				}
+			}
+
+			public class DescribeUserConfigs_OssLogConfig
+			{
 
 				private string enable;
 
@@ -95,6 +125,38 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					set	
 					{
 						prefix = value;
+					}
+				}
+			}
+
+			public class DescribeUserConfigs_GreenManagerConfig
+			{
+
+				private string quota;
+
+				private string ratio;
+
+				public string Quota
+				{
+					get
+					{
+						return quota;
+					}
+					set	
+					{
+						quota = value;
+					}
+				}
+
+				public string Ratio
+				{
+					get
+					{
+						return ratio;
+					}
+					set	
+					{
+						ratio = value;
 					}
 				}
 			}

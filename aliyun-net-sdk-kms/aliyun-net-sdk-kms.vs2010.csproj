@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1facc6e2-4b5f-4278-9666-bdc390c56aec}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-kms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Kms\Model\V20160120\ImportKeyMaterialRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\CancelKeyDeletionRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\GenerateDataKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ListKeysRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\ListAliasesByKeyIdRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\EnableKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DeleteAliasResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ScheduleKeyDeletionResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\CreateKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\GenerateDataKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\ImportKeyMaterialResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeRegionsResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\EnableKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\CreateKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeRegionsRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\GetParametersForImportResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ScheduleKeyDeletionRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DeleteKeyMaterialResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ListAliasesByKeyIdResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\UpdateAliasRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\EncryptResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\UpdateAliasResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\GetParametersForImportRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DeleteKeyMaterialRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DeleteAliasRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\CancelKeyDeletionResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ListKeysResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DisableKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DecryptResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ListAliasesRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DecryptRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\CreateAliasResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\CreateAliasRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\EncryptRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DisableKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ListAliasesResponse.cs" />
+	<Compile Include="Kms\Transform\V20160120\UpdateAliasResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\ImportKeyMaterialResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\EnableKeyResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\GenerateDataKeyResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\ListAliasesByKeyIdResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\ListKeysResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\CancelKeyDeletionResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\CreateKeyResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\ScheduleKeyDeletionResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DeleteAliasResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DisableKeyResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\ListAliasesResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DeleteKeyMaterialResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DescribeKeyResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DecryptResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\GetParametersForImportResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\EncryptResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\CreateAliasResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			createRouterInterfaceResponse.HttpResponse = context.HttpResponse;
 			createRouterInterfaceResponse.RequestId = context.StringValue("CreateRouterInterface.RequestId");
 			createRouterInterfaceResponse.RouterInterfaceId = context.StringValue("CreateRouterInterface.RouterInterfaceId");
+			createRouterInterfaceResponse.OrderId = context.LongValue("CreateRouterInterface.OrderId");
         
 			return createRouterInterfaceResponse;
         }

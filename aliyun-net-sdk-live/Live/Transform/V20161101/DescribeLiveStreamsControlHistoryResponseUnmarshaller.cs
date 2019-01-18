@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Live.Model.V20161101;
+using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Transform.V20161101
+namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamsControlHistoryResponseUnmarshaller
     {
@@ -32,17 +32,17 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 			describeLiveStreamsControlHistoryResponse.HttpResponse = context.HttpResponse;
 			describeLiveStreamsControlHistoryResponse.RequestId = context.StringValue("DescribeLiveStreamsControlHistory.RequestId");
 
-			List<DescribeLiveStreamsControlHistoryResponse.LiveStreamControlInfo> controlInfo = new List<DescribeLiveStreamsControlHistoryResponse.LiveStreamControlInfo>();
+			List<DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo> describeLiveStreamsControlHistoryResponse_controlInfo = new List<DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamsControlHistory.ControlInfo.Length"); i++) {
-				DescribeLiveStreamsControlHistoryResponse.LiveStreamControlInfo liveStreamControlInfo = new DescribeLiveStreamsControlHistoryResponse.LiveStreamControlInfo();
+				DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo liveStreamControlInfo = new DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo();
 				liveStreamControlInfo.StreamName = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].StreamName");
 				liveStreamControlInfo.ClientIP = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].ClientIP");
 				liveStreamControlInfo.Action = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].Action");
 				liveStreamControlInfo.TimeStamp = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].TimeStamp");
 
-				controlInfo.Add(liveStreamControlInfo);
+				describeLiveStreamsControlHistoryResponse_controlInfo.Add(liveStreamControlInfo);
 			}
-			describeLiveStreamsControlHistoryResponse.ControlInfo = controlInfo;
+			describeLiveStreamsControlHistoryResponse.ControlInfo = describeLiveStreamsControlHistoryResponse_controlInfo;
         
 			return describeLiveStreamsControlHistoryResponse;
         }

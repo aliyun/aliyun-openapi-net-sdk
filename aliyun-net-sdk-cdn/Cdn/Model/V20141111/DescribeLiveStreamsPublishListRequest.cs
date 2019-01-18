@@ -33,34 +33,38 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string appName;
 
 		private string securityToken;
 
 		private string domainName;
 
-		private string appName;
+		private long? pageSize;
 
-		private string streamName;
-
-		private string startTime;
+		private string action;
 
 		private string endTime;
 
-		private long? pageSize;
+		private string startTime;
+
+		private long? ownerId;
+
+		private string streamName;
 
 		private long? pageNumber;
 
-		public long? OwnerId
+		private string accessKeyId;
+
+		public string AppName
 		{
 			get
 			{
-				return ownerId;
+				return appName;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
 			}
 		}
 
@@ -90,42 +94,29 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string AppName
+		public long? PageSize
 		{
 			get
 			{
-				return appName;
+				return pageSize;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string StreamName
+		public string Action
 		{
 			get
 			{
-				return streamName;
+				return action;
 			}
 			set	
 			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -142,16 +133,42 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public long? PageSize
+		public string StartTime
 		{
 			get
 			{
-				return pageSize;
+				return startTime;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 
@@ -165,6 +182,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

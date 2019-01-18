@@ -20,65 +20,43 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class AddLiveMixConfigRequest : RpcAcsRequest<AddLiveMixConfigResponse>
     {
         public AddLiveMixConfigRequest()
-            : base("Live", "2016-11-01", "AddLiveMixConfig")
+            : base("live", "2016-11-01", "AddLiveMixConfig", "live", "openAPI")
         {
         }
 
-		private string securityToken;
-
-		private long? ownerId;
-
-		private string domainName;
+		private string template;
 
 		private string appName;
 
-		private string template;
+		private string securityToken;
 
-		public string SecurityToken
+		private string domainName;
+
+		private string action;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		public string Template
 		{
 			get
 			{
-				return securityToken;
+				return template;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				template = value;
+				DictionaryUtil.Add(QueryParameters, "Template", value);
 			}
 		}
 
@@ -95,16 +73,68 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string Template
+		public string SecurityToken
 		{
 			get
 			{
-				return template;
+				return securityToken;
 			}
 			set	
 			{
-				template = value;
-				DictionaryUtil.Add(QueryParameters, "Template", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

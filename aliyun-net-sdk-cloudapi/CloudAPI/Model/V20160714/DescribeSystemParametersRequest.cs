@@ -29,9 +29,54 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeSystemParametersRequest : RpcAcsRequest<DescribeSystemParametersResponse>
     {
         public DescribeSystemParametersRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeSystemParameters")
+            : base("CloudAPI", "2016-07-14", "DescribeSystemParameters", "apigateway", "openAPI")
         {
         }
+
+		private string securityToken;
+
+		private string action;
+
+		private string accessKeyId;
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
 
         public override DescribeSystemParametersResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

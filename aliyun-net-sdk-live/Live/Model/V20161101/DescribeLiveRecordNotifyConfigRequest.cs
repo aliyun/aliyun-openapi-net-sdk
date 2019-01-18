@@ -20,24 +20,28 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Live.Transform;
-using Aliyun.Acs.Live.Transform.V20161101;
+using Aliyun.Acs.live.Transform;
+using Aliyun.Acs.live.Transform.V20161101;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
     public class DescribeLiveRecordNotifyConfigRequest : RpcAcsRequest<DescribeLiveRecordNotifyConfigResponse>
     {
         public DescribeLiveRecordNotifyConfigRequest()
-            : base("Live", "2016-11-01", "DescribeLiveRecordNotifyConfig")
+            : base("live", "2016-11-01", "DescribeLiveRecordNotifyConfig", "live", "openAPI")
         {
         }
 
 		private string securityToken;
 
+		private string domainName;
+
+		private string action;
+
 		private long? ownerId;
 
-		private string domainName;
+		private string accessKeyId;
 
 		public string SecurityToken
 		{
@@ -49,6 +53,32 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -65,16 +95,16 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public string DomainName
+		public string AccessKeyId
 		{
 			get
 			{
-				return domainName;
+				return accessKeyId;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

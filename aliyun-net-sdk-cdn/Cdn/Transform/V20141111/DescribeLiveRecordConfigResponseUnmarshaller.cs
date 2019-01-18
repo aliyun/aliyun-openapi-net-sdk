@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeLiveRecordConfigResponse.HttpResponse = context.HttpResponse;
 			describeLiveRecordConfigResponse.RequestId = context.StringValue("DescribeLiveRecordConfig.RequestId");
 
-			List<DescribeLiveRecordConfigResponse.LiveAppRecord> liveAppRecordList = new List<DescribeLiveRecordConfigResponse.LiveAppRecord>();
+			List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord> describeLiveRecordConfigResponse_liveAppRecordList = new List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord>();
 			for (int i = 0; i < context.Length("DescribeLiveRecordConfig.LiveAppRecordList.Length"); i++) {
-				DescribeLiveRecordConfigResponse.LiveAppRecord liveAppRecord = new DescribeLiveRecordConfigResponse.LiveAppRecord();
+				DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord liveAppRecord = new DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord();
 				liveAppRecord.DomainName = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].DomainName");
 				liveAppRecord.AppName = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].AppName");
 				liveAppRecord.OssEndpoint = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssEndpoint");
@@ -42,9 +42,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				liveAppRecord.OssObjectPrefix = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssObjectPrefix");
 				liveAppRecord.CreateTime = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].CreateTime");
 
-				liveAppRecordList.Add(liveAppRecord);
+				describeLiveRecordConfigResponse_liveAppRecordList.Add(liveAppRecord);
 			}
-			describeLiveRecordConfigResponse.LiveAppRecordList = liveAppRecordList;
+			describeLiveRecordConfigResponse.LiveAppRecordList = describeLiveRecordConfigResponse_liveAppRecordList;
         
 			return describeLiveRecordConfigResponse;
         }

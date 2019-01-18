@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class QueryMediaInfoJobListResponse : AcsResponse
 	{
 
-		private List<MediaInfoJob> mediaInfoJobList;
+		private string requestId;
+
+		private List<QueryMediaInfoJobList_MediaInfoJob> mediaInfoJobList;
 
 		private List<string> nonExistMediaInfoJobIds;
 
-		public List<MediaInfoJob> MediaInfoJobList
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<QueryMediaInfoJobList_MediaInfoJob> MediaInfoJobList
 		{
 			get
 			{
@@ -52,13 +66,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class MediaInfoJob{
+		public class QueryMediaInfoJobList_MediaInfoJob
+		{
 
 			private string jobId;
 
 			private string userData;
 
 			private string pipelineId;
+
+			private bool? async;
 
 			private string state;
 
@@ -68,11 +85,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string creationTime;
 
-			private Input_ input;
+			private QueryMediaInfoJobList_Input input;
 
-			private Properties_ properties;
+			private QueryMediaInfoJobList_Properties properties;
 
-			private MNSMessageResult_ mNSMessageResult;
+			private QueryMediaInfoJobList_MNSMessageResult mNSMessageResult;
 
 			public string JobId
 			{
@@ -107,6 +124,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					pipelineId = value;
+				}
+			}
+
+			public bool? Async
+			{
+				get
+				{
+					return async;
+				}
+				set	
+				{
+					async = value;
 				}
 			}
 
@@ -158,7 +187,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Input_ Input
+			public QueryMediaInfoJobList_Input Input
 			{
 				get
 				{
@@ -170,7 +199,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Properties_ Properties
+			public QueryMediaInfoJobList_Properties Properties
 			{
 				get
 				{
@@ -182,7 +211,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public MNSMessageResult_ MNSMessageResult
+			public QueryMediaInfoJobList_MNSMessageResult MNSMessageResult
 			{
 				get
 				{
@@ -194,13 +223,14 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Input_{
+			public class QueryMediaInfoJobList_Input
+			{
 
 				private string bucket;
 
 				private string location;
 
-				private string object_;
+				private string _object;
 
 				public string Bucket
 				{
@@ -226,20 +256,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public string Object
+				public string _Object
 				{
 					get
 					{
-						return object_;
+						return _object;
 					}
 					set	
 					{
-						object_ = value;
+						_object = value;
 					}
 				}
 			}
 
-			public class Properties_{
+			public class QueryMediaInfoJobList_Properties
+			{
 
 				private string width;
 
@@ -255,9 +286,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string fileFormat;
 
-				private Streams_ streams;
+				private QueryMediaInfoJobList_Streams streams;
 
-				private Format_ format;
+				private QueryMediaInfoJobList_Format format;
 
 				public string Width
 				{
@@ -343,7 +374,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Streams_ Streams
+				public QueryMediaInfoJobList_Streams Streams
 				{
 					get
 					{
@@ -355,7 +386,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public Format_ Format
+				public QueryMediaInfoJobList_Format Format
 				{
 					get
 					{
@@ -367,15 +398,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Streams_{
+				public class QueryMediaInfoJobList_Streams
+				{
 
-					private List<VideoStream> videoStreamList;
+					private List<QueryMediaInfoJobList_VideoStream> videoStreamList;
 
-					private List<AudioStream> audioStreamList;
+					private List<QueryMediaInfoJobList_AudioStream> audioStreamList;
 
-					private List<SubtitleStream> subtitleStreamList;
+					private List<QueryMediaInfoJobList_SubtitleStream> subtitleStreamList;
 
-					public List<VideoStream> VideoStreamList
+					public List<QueryMediaInfoJobList_VideoStream> VideoStreamList
 					{
 						get
 						{
@@ -387,7 +419,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public List<AudioStream> AudioStreamList
+					public List<QueryMediaInfoJobList_AudioStream> AudioStreamList
 					{
 						get
 						{
@@ -399,7 +431,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public List<SubtitleStream> SubtitleStreamList
+					public List<QueryMediaInfoJobList_SubtitleStream> SubtitleStreamList
 					{
 						get
 						{
@@ -411,7 +443,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class VideoStream{
+					public class QueryMediaInfoJobList_VideoStream
+					{
 
 						private string index;
 
@@ -459,7 +492,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 						private string rotate;
 
-						private NetworkCost_ networkCost;
+						private QueryMediaInfoJobList_NetworkCost networkCost;
 
 						public string Index
 						{
@@ -737,7 +770,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public NetworkCost_ NetworkCost
+						public QueryMediaInfoJobList_NetworkCost NetworkCost
 						{
 							get
 							{
@@ -749,7 +782,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							}
 						}
 
-						public class NetworkCost_{
+						public class QueryMediaInfoJobList_NetworkCost
+						{
 
 							private string preloadTime;
 
@@ -795,7 +829,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class AudioStream{
+					public class QueryMediaInfoJobList_AudioStream
+					{
 
 						private string index;
 
@@ -1022,9 +1057,26 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public class SubtitleStream{
+					public class QueryMediaInfoJobList_SubtitleStream
+					{
 
 						private string index;
+
+						private string codecName;
+
+						private string codecTimeBase;
+
+						private string codecLongName;
+
+						private string codecTagString;
+
+						private string codecTag;
+
+						private string timebase;
+
+						private string startTime;
+
+						private string duration;
 
 						private string lang;
 
@@ -1037,6 +1089,102 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							set	
 							{
 								index = value;
+							}
+						}
+
+						public string CodecName
+						{
+							get
+							{
+								return codecName;
+							}
+							set	
+							{
+								codecName = value;
+							}
+						}
+
+						public string CodecTimeBase
+						{
+							get
+							{
+								return codecTimeBase;
+							}
+							set	
+							{
+								codecTimeBase = value;
+							}
+						}
+
+						public string CodecLongName
+						{
+							get
+							{
+								return codecLongName;
+							}
+							set	
+							{
+								codecLongName = value;
+							}
+						}
+
+						public string CodecTagString
+						{
+							get
+							{
+								return codecTagString;
+							}
+							set	
+							{
+								codecTagString = value;
+							}
+						}
+
+						public string CodecTag
+						{
+							get
+							{
+								return codecTag;
+							}
+							set	
+							{
+								codecTag = value;
+							}
+						}
+
+						public string Timebase
+						{
+							get
+							{
+								return timebase;
+							}
+							set	
+							{
+								timebase = value;
+							}
+						}
+
+						public string StartTime
+						{
+							get
+							{
+								return startTime;
+							}
+							set	
+							{
+								startTime = value;
+							}
+						}
+
+						public string Duration
+						{
+							get
+							{
+								return duration;
+							}
+							set	
+							{
+								duration = value;
 							}
 						}
 
@@ -1054,7 +1202,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class Format_{
+				public class QueryMediaInfoJobList_Format
+				{
 
 					private string numStreams;
 
@@ -1170,7 +1319,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class MNSMessageResult_{
+			public class QueryMediaInfoJobList_MNSMessageResult
+			{
 
 				private string messageId;
 

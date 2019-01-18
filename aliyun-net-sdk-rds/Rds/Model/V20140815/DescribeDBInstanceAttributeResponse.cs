@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceAttributeResponse : AcsResponse
 	{
 
-		private List<DBInstanceAttribute> items;
+		private string requestId;
 
-		public List<DBInstanceAttribute> Items
+		private List<DescribeDBInstanceAttribute_DBInstanceAttribute> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeDBInstanceAttribute_DBInstanceAttribute> Items
 		{
 			get
 			{
@@ -38,7 +52,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class DBInstanceAttribute{
+		public class DescribeDBInstanceAttribute_DBInstanceAttribute
+		{
+
+			private string iPType;
+
+			private string dBInstanceDiskUsed;
+
+			private string guardDBInstanceName;
+
+			private bool? canTempUpgrade;
+
+			private string tempUpgradeTimeStart;
+
+			private string tempUpgradeTimeEnd;
+
+			private string tempUpgradeRecoveryTime;
+
+			private string tempUpgradeRecoveryClass;
+
+			private int? tempUpgradeRecoveryCpu;
+
+			private int? tempUpgradeRecoveryMemory;
+
+			private string tempUpgradeRecoveryMaxIOPS;
+
+			private string tempUpgradeRecoveryMaxConnections;
 
 			private int? insId;
 
@@ -48,7 +87,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string dBInstanceClassType;
 
-			private DBInstanceTypeEnum? dBInstanceType;
+			private string dBInstanceType;
 
 			private string regionId;
 
@@ -66,13 +105,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private int? dBInstanceStorage;
 
-			private DBInstanceNetTypeEnum? dBInstanceNetType;
+			private string vpcCloudInstanceId;
 
-			private DBInstanceStatusEnum? dBInstanceStatus;
+			private string dBInstanceNetType;
+
+			private string dBInstanceStatus;
 
 			private string dBInstanceDescription;
 
-			private LockModeEnum? lockMode;
+			private string lockMode;
 
 			private string lockReason;
 
@@ -102,6 +143,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string guardDBInstanceId;
 
+			private string replicateId;
+
 			private string tempDBInstanceId;
 
 			private string securityIPList;
@@ -110,15 +153,191 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string instanceNetworkType;
 
-			private AccountTypeEnum? accountType;
+			private string dBInstanceStorageType;
 
-			private SupportUpgradeAccountTypeEnum? supportUpgradeAccountType;
+			private string advancedFeatures;
+
+			private string category;
+
+			private string accountType;
+
+			private string supportUpgradeAccountType;
+
+			private string supportCreateSuperAccount;
 
 			private string vpcId;
 
-			private ConnectionModeEnum? connectionMode;
+			private string vSwitchId;
 
-			private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+			private string connectionMode;
+
+			private string currentKernelVersion;
+
+			private string latestKernelVersion;
+
+			private string resourceGroupId;
+
+			private string readonlyInstanceSQLDelayedTime;
+
+			private string securityIPMode;
+
+			private string timeZone;
+
+			private string collation;
+
+			private string dispenseMode;
+
+			private string masterRegion;
+
+			private List<DescribeDBInstanceAttribute_SlaveRegion> slaveRegions;
+
+			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
+
+			private DescribeDBInstanceAttribute_Extra extra;
+
+			public string IPType
+			{
+				get
+				{
+					return iPType;
+				}
+				set	
+				{
+					iPType = value;
+				}
+			}
+
+			public string DBInstanceDiskUsed
+			{
+				get
+				{
+					return dBInstanceDiskUsed;
+				}
+				set	
+				{
+					dBInstanceDiskUsed = value;
+				}
+			}
+
+			public string GuardDBInstanceName
+			{
+				get
+				{
+					return guardDBInstanceName;
+				}
+				set	
+				{
+					guardDBInstanceName = value;
+				}
+			}
+
+			public bool? CanTempUpgrade
+			{
+				get
+				{
+					return canTempUpgrade;
+				}
+				set	
+				{
+					canTempUpgrade = value;
+				}
+			}
+
+			public string TempUpgradeTimeStart
+			{
+				get
+				{
+					return tempUpgradeTimeStart;
+				}
+				set	
+				{
+					tempUpgradeTimeStart = value;
+				}
+			}
+
+			public string TempUpgradeTimeEnd
+			{
+				get
+				{
+					return tempUpgradeTimeEnd;
+				}
+				set	
+				{
+					tempUpgradeTimeEnd = value;
+				}
+			}
+
+			public string TempUpgradeRecoveryTime
+			{
+				get
+				{
+					return tempUpgradeRecoveryTime;
+				}
+				set	
+				{
+					tempUpgradeRecoveryTime = value;
+				}
+			}
+
+			public string TempUpgradeRecoveryClass
+			{
+				get
+				{
+					return tempUpgradeRecoveryClass;
+				}
+				set	
+				{
+					tempUpgradeRecoveryClass = value;
+				}
+			}
+
+			public int? TempUpgradeRecoveryCpu
+			{
+				get
+				{
+					return tempUpgradeRecoveryCpu;
+				}
+				set	
+				{
+					tempUpgradeRecoveryCpu = value;
+				}
+			}
+
+			public int? TempUpgradeRecoveryMemory
+			{
+				get
+				{
+					return tempUpgradeRecoveryMemory;
+				}
+				set	
+				{
+					tempUpgradeRecoveryMemory = value;
+				}
+			}
+
+			public string TempUpgradeRecoveryMaxIOPS
+			{
+				get
+				{
+					return tempUpgradeRecoveryMaxIOPS;
+				}
+				set	
+				{
+					tempUpgradeRecoveryMaxIOPS = value;
+				}
+			}
+
+			public string TempUpgradeRecoveryMaxConnections
+			{
+				get
+				{
+					return tempUpgradeRecoveryMaxConnections;
+				}
+				set	
+				{
+					tempUpgradeRecoveryMaxConnections = value;
+				}
+			}
 
 			public int? InsId
 			{
@@ -168,7 +387,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public DBInstanceTypeEnum? DBInstanceType
+			public string DBInstanceType
 			{
 				get
 				{
@@ -276,7 +495,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public DBInstanceNetTypeEnum? DBInstanceNetType
+			public string VpcCloudInstanceId
+			{
+				get
+				{
+					return vpcCloudInstanceId;
+				}
+				set	
+				{
+					vpcCloudInstanceId = value;
+				}
+			}
+
+			public string DBInstanceNetType
 			{
 				get
 				{
@@ -288,7 +519,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public DBInstanceStatusEnum? DBInstanceStatus
+			public string DBInstanceStatus
 			{
 				get
 				{
@@ -312,7 +543,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public LockModeEnum? LockMode
+			public string LockMode
 			{
 				get
 				{
@@ -492,6 +723,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			public string ReplicateId
+			{
+				get
+				{
+					return replicateId;
+				}
+				set	
+				{
+					replicateId = value;
+				}
+			}
+
 			public string TempDBInstanceId
 			{
 				get
@@ -540,7 +783,43 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public AccountTypeEnum? AccountType
+			public string DBInstanceStorageType
+			{
+				get
+				{
+					return dBInstanceStorageType;
+				}
+				set	
+				{
+					dBInstanceStorageType = value;
+				}
+			}
+
+			public string AdvancedFeatures
+			{
+				get
+				{
+					return advancedFeatures;
+				}
+				set	
+				{
+					advancedFeatures = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string AccountType
 			{
 				get
 				{
@@ -552,7 +831,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public SupportUpgradeAccountTypeEnum? SupportUpgradeAccountType
+			public string SupportUpgradeAccountType
 			{
 				get
 				{
@@ -561,6 +840,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					supportUpgradeAccountType = value;
+				}
+			}
+
+			public string SupportCreateSuperAccount
+			{
+				get
+				{
+					return supportCreateSuperAccount;
+				}
+				set	
+				{
+					supportCreateSuperAccount = value;
 				}
 			}
 
@@ -576,7 +867,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public ConnectionModeEnum? ConnectionMode
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string ConnectionMode
 			{
 				get
 				{
@@ -588,7 +891,127 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<ReadOnlyDBInstanceId> ReadOnlyDBInstanceIds
+			public string CurrentKernelVersion
+			{
+				get
+				{
+					return currentKernelVersion;
+				}
+				set	
+				{
+					currentKernelVersion = value;
+				}
+			}
+
+			public string LatestKernelVersion
+			{
+				get
+				{
+					return latestKernelVersion;
+				}
+				set	
+				{
+					latestKernelVersion = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string ReadonlyInstanceSQLDelayedTime
+			{
+				get
+				{
+					return readonlyInstanceSQLDelayedTime;
+				}
+				set	
+				{
+					readonlyInstanceSQLDelayedTime = value;
+				}
+			}
+
+			public string SecurityIPMode
+			{
+				get
+				{
+					return securityIPMode;
+				}
+				set	
+				{
+					securityIPMode = value;
+				}
+			}
+
+			public string TimeZone
+			{
+				get
+				{
+					return timeZone;
+				}
+				set	
+				{
+					timeZone = value;
+				}
+			}
+
+			public string Collation
+			{
+				get
+				{
+					return collation;
+				}
+				set	
+				{
+					collation = value;
+				}
+			}
+
+			public string DispenseMode
+			{
+				get
+				{
+					return dispenseMode;
+				}
+				set	
+				{
+					dispenseMode = value;
+				}
+			}
+
+			public string MasterRegion
+			{
+				get
+				{
+					return masterRegion;
+				}
+				set	
+				{
+					masterRegion = value;
+				}
+			}
+
+			public List<DescribeDBInstanceAttribute_SlaveRegion> SlaveRegions
+			{
+				get
+				{
+					return slaveRegions;
+				}
+				set	
+				{
+					slaveRegions = value;
+				}
+			}
+
+			public List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> ReadOnlyDBInstanceIds
 			{
 				get
 				{
@@ -600,76 +1023,102 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-public enum DBInstanceTypeEnum {
+			public DescribeDBInstanceAttribute_Extra Extra
+			{
+				get
+				{
+					return extra;
+				}
+				set	
+				{
+					extra = value;
+				}
+			}
 
-					Guard,
-					Primary,
-					Readonly,
-					Temp,
-}
+			public class DescribeDBInstanceAttribute_SlaveRegion
+			{
 
-public enum DBInstanceNetTypeEnum {
+				private string regionId;
 
-					Intranet,
-					Internet,
-}
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+			}
 
-public enum DBInstanceStatusEnum {
-
-					TempDBInstanceCreating,
-					Running,
-					Deleting,
-					DBInstanceClassChanging,
-					Creating,
-					GuardDBInstanceCreating,
-					Rebooting,
-					GuardSwitching,
-					SystemMaintaining,
-					Transing,
-					TransingToOthers,
-					ImportingFromOthers,
-					EngineVersionUpgrading,
-					ReadInstanceTransing,
-					LinkSwitching,
-					DBInstanceNetTypeChanging,
-					InstanceMaintaining,
-					Importing,
-					Restoring,
-}
-
-public enum LockModeEnum {
-
-					LockByExpiration,
-					LockByRestoration,
-					LockReadInstanceByDiskQuota,
-					ManualLock,
-					LockByDiskQuota,
-					Unlock,
-}
-
-public enum AccountTypeEnum {
-
-					Normal,
-					Super,
-}
-
-public enum SupportUpgradeAccountTypeEnum {
-
-					Yes,
-					No,
-}
-
-public enum ConnectionModeEnum {
-
-					Standard,
-					Safe,
-}
-
-			public class ReadOnlyDBInstanceId{
+			public class DescribeDBInstanceAttribute_ReadOnlyDBInstanceId
+			{
 
 				private string dBInstanceId;
 
 				public string DBInstanceId
+				{
+					get
+					{
+						return dBInstanceId;
+					}
+					set	
+					{
+						dBInstanceId = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstanceAttribute_Extra
+			{
+
+				private string replicaGroupID;
+
+				private string replicaGroupStatus;
+
+				private string activeReplicaDBInstanceID;
+
+				private List<string> dBInstanceId;
+
+				public string ReplicaGroupID
+				{
+					get
+					{
+						return replicaGroupID;
+					}
+					set	
+					{
+						replicaGroupID = value;
+					}
+				}
+
+				public string ReplicaGroupStatus
+				{
+					get
+					{
+						return replicaGroupStatus;
+					}
+					set	
+					{
+						replicaGroupStatus = value;
+					}
+				}
+
+				public string ActiveReplicaDBInstanceID
+				{
+					get
+					{
+						return activeReplicaDBInstanceID;
+					}
+					set	
+					{
+						activeReplicaDBInstanceID = value;
+					}
+				}
+
+				public List<string> DBInstanceId
 				{
 					get
 					{

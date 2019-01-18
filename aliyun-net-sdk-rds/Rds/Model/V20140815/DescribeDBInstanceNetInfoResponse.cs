@@ -24,9 +24,25 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceNetInfoResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string instanceNetworkType;
 
-		private List<DBInstanceNetInfo> dBInstanceNetInfos;
+		private string securityIPMode;
+
+		private List<DescribeDBInstanceNetInfo_DBInstanceNetInfo> dBInstanceNetInfos;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string InstanceNetworkType
 		{
@@ -40,7 +56,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<DBInstanceNetInfo> DBInstanceNetInfos
+		public string SecurityIPMode
+		{
+			get
+			{
+				return securityIPMode;
+			}
+			set	
+			{
+				securityIPMode = value;
+			}
+		}
+
+		public List<DescribeDBInstanceNetInfo_DBInstanceNetInfo> DBInstanceNetInfos
 		{
 			get
 			{
@@ -52,7 +80,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class DBInstanceNetInfo{
+		public class DescribeDBInstanceNetInfo_DBInstanceNetInfo
+		{
+
+			private string upgradeable;
+
+			private string expiredTime;
 
 			private string connectionString;
 
@@ -66,7 +99,39 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string vSwitchId;
 
-			private List<securityIPGroup> securityIPGroups;
+			private string connectionStringType;
+
+			private string maxDelayTime;
+
+			private string distributionType;
+
+			private List<DescribeDBInstanceNetInfo_SecurityIPGroup> securityIPGroups;
+
+			private List<DescribeDBInstanceNetInfo_DBInstanceWeight> dBInstanceWeights;
+
+			public string Upgradeable
+			{
+				get
+				{
+					return upgradeable;
+				}
+				set	
+				{
+					upgradeable = value;
+				}
+			}
+
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
+				}
+			}
 
 			public string ConnectionString
 			{
@@ -140,7 +205,43 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<securityIPGroup> SecurityIPGroups
+			public string ConnectionStringType
+			{
+				get
+				{
+					return connectionStringType;
+				}
+				set	
+				{
+					connectionStringType = value;
+				}
+			}
+
+			public string MaxDelayTime
+			{
+				get
+				{
+					return maxDelayTime;
+				}
+				set	
+				{
+					maxDelayTime = value;
+				}
+			}
+
+			public string DistributionType
+			{
+				get
+				{
+					return distributionType;
+				}
+				set	
+				{
+					distributionType = value;
+				}
+			}
+
+			public List<DescribeDBInstanceNetInfo_SecurityIPGroup> SecurityIPGroups
 			{
 				get
 				{
@@ -152,7 +253,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public class securityIPGroup{
+			public List<DescribeDBInstanceNetInfo_DBInstanceWeight> DBInstanceWeights
+			{
+				get
+				{
+					return dBInstanceWeights;
+				}
+				set	
+				{
+					dBInstanceWeights = value;
+				}
+			}
+
+			public class DescribeDBInstanceNetInfo_SecurityIPGroup
+			{
 
 				private string securityIPGroupName;
 
@@ -179,6 +293,66 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						securityIPs = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstanceNetInfo_DBInstanceWeight
+			{
+
+				private string dBInstanceId;
+
+				private string dBInstanceType;
+
+				private string availability;
+
+				private string weight;
+
+				public string DBInstanceId
+				{
+					get
+					{
+						return dBInstanceId;
+					}
+					set	
+					{
+						dBInstanceId = value;
+					}
+				}
+
+				public string DBInstanceType
+				{
+					get
+					{
+						return dBInstanceType;
+					}
+					set	
+					{
+						dBInstanceType = value;
+					}
+				}
+
+				public string Availability
+				{
+					get
+					{
+						return availability;
+					}
+					set	
+					{
+						availability = value;
+					}
+				}
+
+				public string Weight
+				{
+					get
+					{
+						return weight;
+					}
+					set	
+					{
+						weight = value;
 					}
 				}
 			}

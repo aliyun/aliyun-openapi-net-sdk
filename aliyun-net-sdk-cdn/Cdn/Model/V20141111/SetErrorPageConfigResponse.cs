@@ -23,5 +23,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 {
 	public class SetErrorPageConfigResponse : AcsResponse
 	{
+
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 	}
 }

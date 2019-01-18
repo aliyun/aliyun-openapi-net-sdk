@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeUserDomainsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private long? pageNumber;
 
 		private long? pageSize;
 
 		private long? totalCount;
 
-		private List<PageData> domains;
+		private List<DescribeUserDomains_PageData> domains;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? PageNumber
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<PageData> Domains
+		public List<DescribeUserDomains_PageData> Domains
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class PageData{
+		public class DescribeUserDomains_PageData
+		{
 
 			private string domainName;
 
@@ -99,6 +114,10 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			private string sourceType;
 
 			private string sslProtocol;
+
+			private string resourceGroupId;
+
+			private string sandbox;
 
 			private List<string> sources;
 
@@ -207,6 +226,30 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					sslProtocol = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string Sandbox
+			{
+				get
+				{
+					return sandbox;
+				}
+				set	
+				{
+					sandbox = value;
 				}
 			}
 

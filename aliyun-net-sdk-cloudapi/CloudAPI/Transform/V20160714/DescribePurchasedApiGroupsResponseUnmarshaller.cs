@@ -35,9 +35,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describePurchasedApiGroupsResponse.PageSize = context.IntegerValue("DescribePurchasedApiGroups.PageSize");
 			describePurchasedApiGroupsResponse.PageNumber = context.IntegerValue("DescribePurchasedApiGroups.PageNumber");
 
-			List<DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttribute> purchasedApiGroupAttributes = new List<DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttribute>();
+			List<DescribePurchasedApiGroupsResponse.DescribePurchasedApiGroups_PurchasedApiGroupAttribute> describePurchasedApiGroupsResponse_purchasedApiGroupAttributes = new List<DescribePurchasedApiGroupsResponse.DescribePurchasedApiGroups_PurchasedApiGroupAttribute>();
 			for (int i = 0; i < context.Length("DescribePurchasedApiGroups.PurchasedApiGroupAttributes.Length"); i++) {
-				DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttribute purchasedApiGroupAttribute = new DescribePurchasedApiGroupsResponse.PurchasedApiGroupAttribute();
+				DescribePurchasedApiGroupsResponse.DescribePurchasedApiGroups_PurchasedApiGroupAttribute purchasedApiGroupAttribute = new DescribePurchasedApiGroupsResponse.DescribePurchasedApiGroups_PurchasedApiGroupAttribute();
 				purchasedApiGroupAttribute.GroupId = context.StringValue("DescribePurchasedApiGroups.PurchasedApiGroupAttributes["+ i +"].GroupId");
 				purchasedApiGroupAttribute.GroupName = context.StringValue("DescribePurchasedApiGroups.PurchasedApiGroupAttributes["+ i +"].GroupName");
 				purchasedApiGroupAttribute.Description = context.StringValue("DescribePurchasedApiGroups.PurchasedApiGroupAttributes["+ i +"].Description");
@@ -47,10 +47,11 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				purchasedApiGroupAttribute.BillingType = context.StringValue("DescribePurchasedApiGroups.PurchasedApiGroupAttributes["+ i +"].BillingType");
 				purchasedApiGroupAttribute.InvokeTimesMax = context.LongValue("DescribePurchasedApiGroups.PurchasedApiGroupAttributes["+ i +"].InvokeTimesMax");
 				purchasedApiGroupAttribute.InvokeTimesNow = context.LongValue("DescribePurchasedApiGroups.PurchasedApiGroupAttributes["+ i +"].InvokeTimesNow");
+				purchasedApiGroupAttribute.Status = context.StringValue("DescribePurchasedApiGroups.PurchasedApiGroupAttributes["+ i +"].Status");
 
-				purchasedApiGroupAttributes.Add(purchasedApiGroupAttribute);
+				describePurchasedApiGroupsResponse_purchasedApiGroupAttributes.Add(purchasedApiGroupAttribute);
 			}
-			describePurchasedApiGroupsResponse.PurchasedApiGroupAttributes = purchasedApiGroupAttributes;
+			describePurchasedApiGroupsResponse.PurchasedApiGroupAttributes = describePurchasedApiGroupsResponse_purchasedApiGroupAttributes;
         
 			return describePurchasedApiGroupsResponse;
         }

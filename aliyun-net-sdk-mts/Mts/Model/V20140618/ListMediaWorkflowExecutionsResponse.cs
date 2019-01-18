@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class ListMediaWorkflowExecutionsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string nextPageToken;
 
-		private List<MediaWorkflowExecution> mediaWorkflowExecutionList;
+		private List<ListMediaWorkflowExecutions_MediaWorkflowExecution> mediaWorkflowExecutionList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string NextPageToken
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public List<MediaWorkflowExecution> MediaWorkflowExecutionList
+		public List<ListMediaWorkflowExecutions_MediaWorkflowExecution> MediaWorkflowExecutionList
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class MediaWorkflowExecution{
+		public class ListMediaWorkflowExecutions_MediaWorkflowExecution
+		{
 
 			private string runId;
 
@@ -66,9 +81,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string creationTime;
 
-			private List<Activity> activityList;
+			private List<ListMediaWorkflowExecutions_Activity> activityList;
 
-			private Input_ input;
+			private ListMediaWorkflowExecutions_Input input;
 
 			public string RunId
 			{
@@ -142,7 +157,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public List<Activity> ActivityList
+			public List<ListMediaWorkflowExecutions_Activity> ActivityList
 			{
 				get
 				{
@@ -154,7 +169,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public Input_ Input
+			public ListMediaWorkflowExecutions_Input Input
 			{
 				get
 				{
@@ -166,7 +181,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Activity{
+			public class ListMediaWorkflowExecutions_Activity
+			{
 
 				private string name;
 
@@ -184,7 +200,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string endTime;
 
-				private MNSMessageResult_ mNSMessageResult;
+				private ListMediaWorkflowExecutions_MNSMessageResult mNSMessageResult;
 
 				public string Name
 				{
@@ -282,7 +298,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public MNSMessageResult_ MNSMessageResult
+				public ListMediaWorkflowExecutions_MNSMessageResult MNSMessageResult
 				{
 					get
 					{
@@ -294,7 +310,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class MNSMessageResult_{
+				public class ListMediaWorkflowExecutions_MNSMessageResult
+				{
 
 					private string messageId;
 
@@ -340,11 +357,12 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class Input_{
+			public class ListMediaWorkflowExecutions_Input
+			{
 
 				private string userData;
 
-				private InputFile_ inputFile;
+				private ListMediaWorkflowExecutions_InputFile inputFile;
 
 				public string UserData
 				{
@@ -358,7 +376,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public InputFile_ InputFile
+				public ListMediaWorkflowExecutions_InputFile InputFile
 				{
 					get
 					{
@@ -370,13 +388,14 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
-				public class InputFile_{
+				public class ListMediaWorkflowExecutions_InputFile
+				{
 
 					private string bucket;
 
 					private string location;
 
-					private string object_;
+					private string _object;
 
 					public string Bucket
 					{
@@ -402,15 +421,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						}
 					}
 
-					public string Object
+					public string _Object
 					{
 						get
 						{
-							return object_;
+							return _object;
 						}
 						set	
 						{
-							object_ = value;
+							_object = value;
 						}
 					}
 				}

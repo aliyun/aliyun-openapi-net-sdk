@@ -29,20 +29,33 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class GenerateDataKeyRequest : RpcAcsRequest<GenerateDataKeyResponse>
     {
         public GenerateDataKeyRequest()
-            : base("Kms", "2016-01-20", "GenerateDataKey")
+            : base("Kms", "2016-01-20", "GenerateDataKey", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
+
+		private string encryptionContext;
 
 		private string keyId;
 
 		private string keySpec;
 
-		private int? numberOfBytes;
-
 		private string sTSToken;
 
-		private string encryptionContext;
+		private int? numberOfBytes;
+
+		public string EncryptionContext
+		{
+			get
+			{
+				return encryptionContext;
+			}
+			set	
+			{
+				encryptionContext = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
+			}
+		}
 
 		public string KeyId
 		{
@@ -70,19 +83,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public int? NumberOfBytes
-		{
-			get
-			{
-				return numberOfBytes;
-			}
-			set	
-			{
-				numberOfBytes = value;
-				DictionaryUtil.Add(QueryParameters, "NumberOfBytes", value.ToString());
-			}
-		}
-
 		public string STSToken
 		{
 			get
@@ -96,16 +96,16 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string EncryptionContext
+		public int? NumberOfBytes
 		{
 			get
 			{
-				return encryptionContext;
+				return numberOfBytes;
 			}
 			set	
 			{
-				encryptionContext = value;
-				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
+				numberOfBytes = value;
+				DictionaryUtil.Add(QueryParameters, "NumberOfBytes", value.ToString());
 			}
 		}
 

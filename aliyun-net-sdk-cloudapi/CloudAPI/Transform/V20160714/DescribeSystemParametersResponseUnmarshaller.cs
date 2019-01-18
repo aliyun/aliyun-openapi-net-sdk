@@ -32,17 +32,17 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeSystemParametersResponse.HttpResponse = context.HttpResponse;
 			describeSystemParametersResponse.RequestId = context.StringValue("DescribeSystemParameters.RequestId");
 
-			List<DescribeSystemParametersResponse.SystemParamItem> systemParams = new List<DescribeSystemParametersResponse.SystemParamItem>();
+			List<DescribeSystemParametersResponse.DescribeSystemParameters_SystemParamItem> describeSystemParametersResponse_systemParams = new List<DescribeSystemParametersResponse.DescribeSystemParameters_SystemParamItem>();
 			for (int i = 0; i < context.Length("DescribeSystemParameters.SystemParams.Length"); i++) {
-				DescribeSystemParametersResponse.SystemParamItem systemParamItem = new DescribeSystemParametersResponse.SystemParamItem();
+				DescribeSystemParametersResponse.DescribeSystemParameters_SystemParamItem systemParamItem = new DescribeSystemParametersResponse.DescribeSystemParameters_SystemParamItem();
 				systemParamItem.ParamName = context.StringValue("DescribeSystemParameters.SystemParams["+ i +"].ParamName");
 				systemParamItem.ParamType = context.StringValue("DescribeSystemParameters.SystemParams["+ i +"].ParamType");
 				systemParamItem.DemoValue = context.StringValue("DescribeSystemParameters.SystemParams["+ i +"].DemoValue");
 				systemParamItem.Description = context.StringValue("DescribeSystemParameters.SystemParams["+ i +"].Description");
 
-				systemParams.Add(systemParamItem);
+				describeSystemParametersResponse_systemParams.Add(systemParamItem);
 			}
-			describeSystemParametersResponse.SystemParams = systemParams;
+			describeSystemParametersResponse.SystemParams = describeSystemParametersResponse_systemParams;
         
 			return describeSystemParametersResponse;
         }

@@ -24,7 +24,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class UpgradeDBInstanceEngineVersionResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string taskId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string TaskId
 		{

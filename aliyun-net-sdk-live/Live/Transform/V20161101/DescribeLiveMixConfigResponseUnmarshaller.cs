@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Live.Model.V20161101;
+using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Transform.V20161101
+namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveMixConfigResponseUnmarshaller
     {
@@ -32,16 +32,16 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 			describeLiveMixConfigResponse.HttpResponse = context.HttpResponse;
 			describeLiveMixConfigResponse.RequestId = context.StringValue("DescribeLiveMixConfig.RequestId");
 
-			List<DescribeLiveMixConfigResponse.MixConfig> mixConfigList = new List<DescribeLiveMixConfigResponse.MixConfig>();
+			List<DescribeLiveMixConfigResponse.DescribeLiveMixConfig_MixConfig> describeLiveMixConfigResponse_mixConfigList = new List<DescribeLiveMixConfigResponse.DescribeLiveMixConfig_MixConfig>();
 			for (int i = 0; i < context.Length("DescribeLiveMixConfig.MixConfigList.Length"); i++) {
-				DescribeLiveMixConfigResponse.MixConfig mixConfig = new DescribeLiveMixConfigResponse.MixConfig();
+				DescribeLiveMixConfigResponse.DescribeLiveMixConfig_MixConfig mixConfig = new DescribeLiveMixConfigResponse.DescribeLiveMixConfig_MixConfig();
 				mixConfig.DomainName = context.StringValue("DescribeLiveMixConfig.MixConfigList["+ i +"].DomainName");
 				mixConfig.AppName = context.StringValue("DescribeLiveMixConfig.MixConfigList["+ i +"].AppName");
 				mixConfig.Template = context.StringValue("DescribeLiveMixConfig.MixConfigList["+ i +"].Template");
 
-				mixConfigList.Add(mixConfig);
+				describeLiveMixConfigResponse_mixConfigList.Add(mixConfig);
 			}
-			describeLiveMixConfigResponse.MixConfigList = mixConfigList;
+			describeLiveMixConfigResponse.MixConfigList = describeLiveMixConfigResponse_mixConfigList;
         
 			return describeLiveMixConfigResponse;
         }

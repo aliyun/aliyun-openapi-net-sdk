@@ -36,11 +36,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainFlowDataResponse.StartTime = context.StringValue("DescribeDomainFlowData.StartTime");
 			describeDomainFlowDataResponse.EndTime = context.StringValue("DescribeDomainFlowData.EndTime");
 
-			List<DescribeDomainFlowDataResponse.DataModule> flowDataPerInterval = new List<DescribeDomainFlowDataResponse.DataModule>();
+			List<DescribeDomainFlowDataResponse.DescribeDomainFlowData_DataModule> describeDomainFlowDataResponse_flowDataPerInterval = new List<DescribeDomainFlowDataResponse.DescribeDomainFlowData_DataModule>();
 			for (int i = 0; i < context.Length("DescribeDomainFlowData.FlowDataPerInterval.Length"); i++) {
-				DescribeDomainFlowDataResponse.DataModule dataModule = new DescribeDomainFlowDataResponse.DataModule();
+				DescribeDomainFlowDataResponse.DescribeDomainFlowData_DataModule dataModule = new DescribeDomainFlowDataResponse.DescribeDomainFlowData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].TimeStamp");
-				dataModule.Value = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].Value");
+				dataModule._Value = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].Value");
 				dataModule.DomesticValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].DomesticValue");
 				dataModule.OverseasValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].OverseasValue");
 				dataModule.DynamicValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].DynamicValue");
@@ -50,9 +50,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				dataModule.StaticDomesticValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].StaticDomesticValue");
 				dataModule.StaticOverseasValue = context.StringValue("DescribeDomainFlowData.FlowDataPerInterval["+ i +"].StaticOverseasValue");
 
-				flowDataPerInterval.Add(dataModule);
+				describeDomainFlowDataResponse_flowDataPerInterval.Add(dataModule);
 			}
-			describeDomainFlowDataResponse.FlowDataPerInterval = flowDataPerInterval;
+			describeDomainFlowDataResponse.FlowDataPerInterval = describeDomainFlowDataResponse_flowDataPerInterval;
         
 			return describeDomainFlowDataResponse;
         }

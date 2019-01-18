@@ -33,11 +33,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeL2VipsByDomainResponse.RequestId = context.StringValue("DescribeL2VipsByDomain.RequestId");
 			describeL2VipsByDomainResponse.DomainName = context.StringValue("DescribeL2VipsByDomain.DomainName");
 
-			List<string> vips = new List<string>();
+			List<string> describeL2VipsByDomainResponse_vips = new List<string>();
 			for (int i = 0; i < context.Length("DescribeL2VipsByDomain.Vips.Length"); i++) {
-				vips.Add(context.StringValue("DescribeL2VipsByDomain.Vips["+ i +"]"));
+				describeL2VipsByDomainResponse_vips.Add(context.StringValue("DescribeL2VipsByDomain.Vips["+ i +"]"));
 			}
-			describeL2VipsByDomainResponse.Vips = vips;
+			describeL2VipsByDomainResponse.Vips = describeL2VipsByDomainResponse_vips;
         
 			return describeL2VipsByDomainResponse;
         }

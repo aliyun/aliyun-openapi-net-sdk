@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeEipMonitorDataResponse : AcsResponse
 	{
 
-		private List<EipMonitorData> eipMonitorDatas;
+		private string requestId;
 
-		public List<EipMonitorData> EipMonitorDatas
+		private List<DescribeEipMonitorData_EipMonitorData> eipMonitorDatas;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeEipMonitorData_EipMonitorData> EipMonitorDatas
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class EipMonitorData{
+		public class DescribeEipMonitorData_EipMonitorData
+		{
 
 			private int? eipRX;
 

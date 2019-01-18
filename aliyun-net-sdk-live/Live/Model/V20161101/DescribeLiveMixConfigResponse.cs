@@ -19,14 +19,28 @@
 using Aliyun.Acs.Core;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Model.V20161101
+namespace Aliyun.Acs.live.Model.V20161101
 {
 	public class DescribeLiveMixConfigResponse : AcsResponse
 	{
 
-		private List<MixConfig> mixConfigList;
+		private string requestId;
 
-		public List<MixConfig> MixConfigList
+		private List<DescribeLiveMixConfig_MixConfig> mixConfigList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeLiveMixConfig_MixConfig> MixConfigList
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Live.Model.V20161101
 			}
 		}
 
-		public class MixConfig{
+		public class DescribeLiveMixConfig_MixConfig
+		{
 
 			private string domainName;
 

@@ -33,88 +33,42 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
-
-		private string securityToken;
-
-		private string domainName;
-
-		private string startTime;
-
-		private string endTime;
+		private string fixTimeGap;
 
 		private string timeMerge;
 
+		private string domainName;
+
+		private string endTime;
+
 		private string locationNameEn;
+
+		private string startTime;
 
 		private string ispNameEn;
 
+		private long? ownerId;
+
+		private string accessKeyId;
+
 		private string domainType;
+
+		private string securityToken;
+
+		private string action;
 
 		private string interval;
 
-		public long? OwnerId
+		public string FixTimeGap
 		{
 			get
 			{
-				return ownerId;
+				return fixTimeGap;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				fixTimeGap = value;
+				DictionaryUtil.Add(QueryParameters, "FixTimeGap", value);
 			}
 		}
 
@@ -131,6 +85,32 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
 		public string LocationNameEn
 		{
 			get
@@ -141,6 +121,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				locationNameEn = value;
 				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -157,6 +150,32 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
 		public string DomainType
 		{
 			get
@@ -167,6 +186,32 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				domainType = value;
 				DictionaryUtil.Add(QueryParameters, "DomainType", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

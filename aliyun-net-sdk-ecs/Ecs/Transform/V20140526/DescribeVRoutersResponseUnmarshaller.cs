@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeVRoutersResponse.PageNumber = context.IntegerValue("DescribeVRouters.PageNumber");
 			describeVRoutersResponse.PageSize = context.IntegerValue("DescribeVRouters.PageSize");
 
-			List<DescribeVRoutersResponse.VRouter> vRouters = new List<DescribeVRoutersResponse.VRouter>();
+			List<DescribeVRoutersResponse.DescribeVRouters_VRouter> describeVRoutersResponse_vRouters = new List<DescribeVRoutersResponse.DescribeVRouters_VRouter>();
 			for (int i = 0; i < context.Length("DescribeVRouters.VRouters.Length"); i++) {
-				DescribeVRoutersResponse.VRouter vRouter = new DescribeVRoutersResponse.VRouter();
+				DescribeVRoutersResponse.DescribeVRouters_VRouter vRouter = new DescribeVRoutersResponse.DescribeVRouters_VRouter();
 				vRouter.RegionId = context.StringValue("DescribeVRouters.VRouters["+ i +"].RegionId");
 				vRouter.VpcId = context.StringValue("DescribeVRouters.VRouters["+ i +"].VpcId");
 				vRouter.VRouterName = context.StringValue("DescribeVRouters.VRouters["+ i +"].VRouterName");
@@ -45,15 +45,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				vRouter.VRouterId = context.StringValue("DescribeVRouters.VRouters["+ i +"].VRouterId");
 				vRouter.CreationTime = context.StringValue("DescribeVRouters.VRouters["+ i +"].CreationTime");
 
-				List<string> routeTableIds = new List<string>();
+				List<string> vRouter_routeTableIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeVRouters.VRouters["+ i +"].RouteTableIds.Length"); j++) {
-					routeTableIds.Add(context.StringValue("DescribeVRouters.VRouters["+ i +"].RouteTableIds["+ j +"]"));
+					vRouter_routeTableIds.Add(context.StringValue("DescribeVRouters.VRouters["+ i +"].RouteTableIds["+ j +"]"));
 				}
-				vRouter.RouteTableIds = routeTableIds;
+				vRouter.RouteTableIds = vRouter_routeTableIds;
 
-				vRouters.Add(vRouter);
+				describeVRoutersResponse_vRouters.Add(vRouter);
 			}
-			describeVRoutersResponse.VRouters = vRouters;
+			describeVRoutersResponse.VRouters = describeVRoutersResponse_vRouters;
         
 			return describeVRoutersResponse;
         }

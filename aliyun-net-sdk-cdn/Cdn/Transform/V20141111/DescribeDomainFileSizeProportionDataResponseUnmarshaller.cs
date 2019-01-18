@@ -36,24 +36,24 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainFileSizeProportionDataResponse.StartTime = context.StringValue("DescribeDomainFileSizeProportionData.StartTime");
 			describeDomainFileSizeProportionDataResponse.EndTime = context.StringValue("DescribeDomainFileSizeProportionData.EndTime");
 
-			List<DescribeDomainFileSizeProportionDataResponse.UsageData> fileSizeProportionDataInterval = new List<DescribeDomainFileSizeProportionDataResponse.UsageData>();
+			List<DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData> describeDomainFileSizeProportionDataResponse_fileSizeProportionDataInterval = new List<DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData>();
 			for (int i = 0; i < context.Length("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval.Length"); i++) {
-				DescribeDomainFileSizeProportionDataResponse.UsageData usageData = new DescribeDomainFileSizeProportionDataResponse.UsageData();
+				DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData usageData = new DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData();
 				usageData.TimeStamp = context.StringValue("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval["+ i +"].TimeStamp");
 
-				List<DescribeDomainFileSizeProportionDataResponse.UsageData.FileSizeProportionData> value = new List<DescribeDomainFileSizeProportionDataResponse.UsageData.FileSizeProportionData>();
+				List<DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData.DescribeDomainFileSizeProportionData_FileSizeProportionData> usageData_value = new List<DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData.DescribeDomainFileSizeProportionData_FileSizeProportionData>();
 				for (int j = 0; j < context.Length("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval["+ i +"].Value.Length"); j++) {
-					DescribeDomainFileSizeProportionDataResponse.UsageData.FileSizeProportionData fileSizeProportionData = new DescribeDomainFileSizeProportionDataResponse.UsageData.FileSizeProportionData();
+					DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData.DescribeDomainFileSizeProportionData_FileSizeProportionData fileSizeProportionData = new DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData.DescribeDomainFileSizeProportionData_FileSizeProportionData();
 					fileSizeProportionData.FileSize = context.StringValue("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval["+ i +"].Value["+ j +"].FileSize");
 					fileSizeProportionData.Proportion = context.StringValue("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval["+ i +"].Value["+ j +"].Proportion");
 
-					value.Add(fileSizeProportionData);
+					usageData_value.Add(fileSizeProportionData);
 				}
-				usageData.Value = value;
+				usageData._Value = usageData_value;
 
-				fileSizeProportionDataInterval.Add(usageData);
+				describeDomainFileSizeProportionDataResponse_fileSizeProportionDataInterval.Add(usageData);
 			}
-			describeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval = fileSizeProportionDataInterval;
+			describeDomainFileSizeProportionDataResponse.FileSizeProportionDataInterval = describeDomainFileSizeProportionDataResponse_fileSizeProportionDataInterval;
         
 			return describeDomainFileSizeProportionDataResponse;
         }

@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Live.Model.V20161101;
+using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Transform.V20161101
+namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveRecordConfigResponseUnmarshaller
     {
@@ -37,30 +37,34 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 			describeLiveRecordConfigResponse.TotalNum = context.IntegerValue("DescribeLiveRecordConfig.TotalNum");
 			describeLiveRecordConfigResponse.TotalPage = context.IntegerValue("DescribeLiveRecordConfig.TotalPage");
 
-			List<DescribeLiveRecordConfigResponse.LiveAppRecord> liveAppRecordList = new List<DescribeLiveRecordConfigResponse.LiveAppRecord>();
+			List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord> describeLiveRecordConfigResponse_liveAppRecordList = new List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord>();
 			for (int i = 0; i < context.Length("DescribeLiveRecordConfig.LiveAppRecordList.Length"); i++) {
-				DescribeLiveRecordConfigResponse.LiveAppRecord liveAppRecord = new DescribeLiveRecordConfigResponse.LiveAppRecord();
+				DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord liveAppRecord = new DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord();
 				liveAppRecord.DomainName = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].DomainName");
 				liveAppRecord.AppName = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].AppName");
+				liveAppRecord.StreamName = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].StreamName");
 				liveAppRecord.OssEndpoint = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssEndpoint");
 				liveAppRecord.OssBucket = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssBucket");
 				liveAppRecord.CreateTime = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].CreateTime");
+				liveAppRecord.StartTime = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].StartTime");
+				liveAppRecord.EndTime = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].EndTime");
+				liveAppRecord.OnDemond = context.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OnDemond");
 
-				List<DescribeLiveRecordConfigResponse.LiveAppRecord.RecordFormat> recordFormatList = new List<DescribeLiveRecordConfigResponse.LiveAppRecord.RecordFormat>();
+				List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat> liveAppRecord_recordFormatList = new List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat>();
 				for (int j = 0; j < context.Length("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList.Length"); j++) {
-					DescribeLiveRecordConfigResponse.LiveAppRecord.RecordFormat recordFormat = new DescribeLiveRecordConfigResponse.LiveAppRecord.RecordFormat();
+					DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat recordFormat = new DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat();
 					recordFormat.Format = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].Format");
 					recordFormat.OssObjectPrefix = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].OssObjectPrefix");
 					recordFormat.SliceOssObjectPrefix = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].SliceOssObjectPrefix");
 					recordFormat.CycleDuration = context.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].CycleDuration");
 
-					recordFormatList.Add(recordFormat);
+					liveAppRecord_recordFormatList.Add(recordFormat);
 				}
-				liveAppRecord.RecordFormatList = recordFormatList;
+				liveAppRecord.RecordFormatList = liveAppRecord_recordFormatList;
 
-				liveAppRecordList.Add(liveAppRecord);
+				describeLiveRecordConfigResponse_liveAppRecordList.Add(liveAppRecord);
 			}
-			describeLiveRecordConfigResponse.LiveAppRecordList = liveAppRecordList;
+			describeLiveRecordConfigResponse.LiveAppRecordList = describeLiveRecordConfigResponse_liveAppRecordList;
         
 			return describeLiveRecordConfigResponse;
         }

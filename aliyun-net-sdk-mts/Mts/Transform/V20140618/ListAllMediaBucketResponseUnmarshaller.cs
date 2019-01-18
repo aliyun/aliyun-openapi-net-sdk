@@ -32,15 +32,15 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			listAllMediaBucketResponse.HttpResponse = context.HttpResponse;
 			listAllMediaBucketResponse.RequestId = context.StringValue("ListAllMediaBucket.RequestId");
 
-			List<ListAllMediaBucketResponse.MediaBucket> mediaBucketList = new List<ListAllMediaBucketResponse.MediaBucket>();
+			List<ListAllMediaBucketResponse.ListAllMediaBucket_MediaBucket> listAllMediaBucketResponse_mediaBucketList = new List<ListAllMediaBucketResponse.ListAllMediaBucket_MediaBucket>();
 			for (int i = 0; i < context.Length("ListAllMediaBucket.MediaBucketList.Length"); i++) {
-				ListAllMediaBucketResponse.MediaBucket mediaBucket = new ListAllMediaBucketResponse.MediaBucket();
+				ListAllMediaBucketResponse.ListAllMediaBucket_MediaBucket mediaBucket = new ListAllMediaBucketResponse.ListAllMediaBucket_MediaBucket();
 				mediaBucket.Bucket = context.StringValue("ListAllMediaBucket.MediaBucketList["+ i +"].Bucket");
 				mediaBucket.Type = context.StringValue("ListAllMediaBucket.MediaBucketList["+ i +"].Type");
 
-				mediaBucketList.Add(mediaBucket);
+				listAllMediaBucketResponse_mediaBucketList.Add(mediaBucket);
 			}
-			listAllMediaBucketResponse.MediaBucketList = mediaBucketList;
+			listAllMediaBucketResponse.MediaBucketList = listAllMediaBucketResponse_mediaBucketList;
         
 			return listAllMediaBucketResponse;
         }

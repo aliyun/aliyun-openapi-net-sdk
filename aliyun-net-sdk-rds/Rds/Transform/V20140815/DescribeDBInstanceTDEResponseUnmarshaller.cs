@@ -33,15 +33,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstanceTDEResponse.RequestId = context.StringValue("DescribeDBInstanceTDE.RequestId");
 			describeDBInstanceTDEResponse.TDEStatus = context.StringValue("DescribeDBInstanceTDE.TDEStatus");
 
-			List<DescribeDBInstanceTDEResponse.Database> databases = new List<DescribeDBInstanceTDEResponse.Database>();
+			List<DescribeDBInstanceTDEResponse.DescribeDBInstanceTDE_Database> describeDBInstanceTDEResponse_databases = new List<DescribeDBInstanceTDEResponse.DescribeDBInstanceTDE_Database>();
 			for (int i = 0; i < context.Length("DescribeDBInstanceTDE.Databases.Length"); i++) {
-				DescribeDBInstanceTDEResponse.Database database = new DescribeDBInstanceTDEResponse.Database();
+				DescribeDBInstanceTDEResponse.DescribeDBInstanceTDE_Database database = new DescribeDBInstanceTDEResponse.DescribeDBInstanceTDE_Database();
 				database.DBName = context.StringValue("DescribeDBInstanceTDE.Databases["+ i +"].DBName");
 				database.TDEStatus = context.StringValue("DescribeDBInstanceTDE.Databases["+ i +"].TDEStatus");
 
-				databases.Add(database);
+				describeDBInstanceTDEResponse_databases.Add(database);
 			}
-			describeDBInstanceTDEResponse.Databases = databases;
+			describeDBInstanceTDEResponse.Databases = describeDBInstanceTDEResponse_databases;
         
 			return describeDBInstanceTDEResponse;
         }

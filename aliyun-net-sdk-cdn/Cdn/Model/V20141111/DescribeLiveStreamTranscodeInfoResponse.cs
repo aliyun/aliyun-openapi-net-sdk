@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeLiveStreamTranscodeInfoResponse : AcsResponse
 	{
 
-		private List<DomainTranscodeInfo> domainTranscodeList;
+		private string requestId;
 
-		public List<DomainTranscodeInfo> DomainTranscodeList
+		private List<DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> domainTranscodeList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> DomainTranscodeList
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class DomainTranscodeInfo{
+		public class DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo
+		{
 
 			private string transcodeApp;
 

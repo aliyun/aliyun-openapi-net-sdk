@@ -29,38 +29,48 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class ModifyInstanceAttributeRequest : RpcAcsRequest<ModifyInstanceAttributeResponse>
     {
         public ModifyInstanceAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyInstanceAttribute")
+            : base("Ecs", "2014-05-26", "ModifyInstanceAttribute", "ecs", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
+		private bool? recyclable;
 
-		private string instanceId;
+		private string ownerAccount;
+
+		private string description;
+
+		private string creditSpecification;
+
+		private long? ownerId;
+
+		private bool? deletionProtection;
+
+		private string userData;
 
 		private string password;
 
 		private string hostName;
 
+		private string instanceId;
+
 		private string instanceName;
 
-		private string description;
+		private string action;
 
-		private string ownerAccount;
-
-		public long? OwnerId
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -77,29 +87,94 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ResourceOwnerId
+		public bool? Recyclable
 		{
 			get
 			{
-				return resourceOwnerId;
+				return recyclable;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				recyclable = value;
+				DictionaryUtil.Add(QueryParameters, "Recyclable", value.ToString());
 			}
 		}
 
-		public string InstanceId
+		public string OwnerAccount
 		{
 			get
 			{
-				return instanceId;
+				return ownerAccount;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string CreditSpecification
+		{
+			get
+			{
+				return creditSpecification;
+			}
+			set	
+			{
+				creditSpecification = value;
+				DictionaryUtil.Add(QueryParameters, "CreditSpecification", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? DeletionProtection
+		{
+			get
+			{
+				return deletionProtection;
+			}
+			set	
+			{
+				deletionProtection = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionProtection", value.ToString());
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 
@@ -129,6 +204,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
 		public string InstanceName
 		{
 			get
@@ -142,29 +230,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Description
+		public string Action
 		{
 			get
 			{
-				return description;
+				return action;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

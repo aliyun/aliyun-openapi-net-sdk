@@ -32,13 +32,18 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeUserConfigsResponse.HttpResponse = context.HttpResponse;
 			describeUserConfigsResponse.RequestId = context.StringValue("DescribeUserConfigs.RequestId");
 
-			DescribeUserConfigsResponse.Configs_ configs = new DescribeUserConfigsResponse.Configs_();
+			DescribeUserConfigsResponse.DescribeUserConfigs_Configs configs = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs();
 
-			DescribeUserConfigsResponse.Configs_.OssLogConfig_ ossLogConfig = new DescribeUserConfigsResponse.Configs_.OssLogConfig_();
+			DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_OssLogConfig ossLogConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_OssLogConfig();
 			ossLogConfig.Enable = context.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Enable");
 			ossLogConfig.Bucket = context.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Bucket");
 			ossLogConfig.Prefix = context.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Prefix");
 			configs.OssLogConfig = ossLogConfig;
+
+			DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_GreenManagerConfig greenManagerConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_GreenManagerConfig();
+			greenManagerConfig.Quota = context.StringValue("DescribeUserConfigs.Configs.GreenManagerConfig.Quota");
+			greenManagerConfig.Ratio = context.StringValue("DescribeUserConfigs.Configs.GreenManagerConfig.Ratio");
+			configs.GreenManagerConfig = greenManagerConfig;
 			describeUserConfigsResponse.Configs = configs;
         
 			return describeUserConfigsResponse;

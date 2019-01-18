@@ -1,0 +1,64 @@
+2019-01-10 Version: 3.12.1
+1, Add fields for QueryBrokerDemand api.
+
+2018-12-20 Version: 3.12.0
+1, Add Dns Sec apis.
+2, Add coupon and promotion fields for order apis.
+
+2018-11-22 Version: 3.11.0
+1, Add ScrollDomainList api.
+2, Add email filter for QueryRegistrantProfile.
+
+2018-11-19 Version: 3.10.1
+1, Add field BargainSellerPrice and BargainSellerMobile
+
+2018-11-13 Version: 3.10.0
+1, Add FuzzyMatchDomainSensitiveWord interface，Support fuzzy matching sensitive words.
+2, Add BatchFuzzyMatchDomainSensitiveWord interface，Support batch fuzzy matching sensitive words.
+3, Add DynamicCheck properties for results of CheckDomain interface.
+
+2018-10-26 Version: 3.9.1
+1, Remove useless parameters QueryDomainAdminDivision api.
+
+2018-10-25 Version: 3.9.0
+1, Add apis for trademark domains.
+2, Add QueryDomainAdminDivision api.
+
+2018-06-27 Version: 3.6.0
+1, Modify QueryDomainRealNameVerificationInfo Api, add a return value IdentityCredentialUrl, which is domain real name verification image, you can download it via a HTTP get request,It has validity for 30 seconds.
+2, Modify QueryRegistrantProfileRealNameVerificationInfo Api, add a return value IdentityCredentialUrl, which is domain real name verification image, you can download it via a HTTP get request,It has validity for 30 seconds
+
+
+2018-05-09 Version: 3.5.0
+1, Add apis for domain broker.
+
+2018-04-26 Version: 3.4.0
+1, Add apis for domain group.
+3, Add fields for QueryDomainList.
+
+2018-04-03 Version: 3.3.0
+1, Add APIs for domain transfer in and transfer out.
+2, Add APIs for poll and acknowledge domain task.
+3, Add API for query domain group list.
+
+2018-03-01 Version: 3.2.0
+1, Add GetReserveDomainUrl interface.
+
+2018-02-27 Version: 3.1.0
+1, Add auction APIs.
+2, Add return field DomainNameVerificationStatus to QueryDomainByInstanceId and QueryFailReasonForDomainRealNameVerification.
+
+2018-02-05 Version: 3.0.1
+1, Set POST as default method type for RegistrantProfileRealNameVerification, SaveTaskForUpdatingRegistrantInfoByIdentityCredential and SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential
+
+2018-01-31 Version: 3.0.0
+1, New version SDK for domains, standardizing api name.
+2, Provide api for domain registration and management.
+
+2017-08-16 Version: 2.3.0
+1, 增加了提交图片进行域名/信息模板实名认证的接口。
+2, 增加了根据已经实名认证信息模板来进行域名实名认证的接口。
+3, 增加了根据已经实名认证信息模板来进行域名信息修改(过户)的接口。
+4, 增加了查询域名/信息模板实名认证失败原因的接口。
+5, 增加了修改域名DNS的接口。
+

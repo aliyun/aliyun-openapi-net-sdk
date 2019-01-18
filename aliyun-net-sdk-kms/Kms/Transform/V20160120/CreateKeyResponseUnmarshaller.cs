@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			createKeyResponse.HttpResponse = context.HttpResponse;
 			createKeyResponse.RequestId = context.StringValue("CreateKey.RequestId");
 
-			CreateKeyResponse.KeyMetadata_ keyMetadata = new CreateKeyResponse.KeyMetadata_();
+			CreateKeyResponse.CreateKey_KeyMetadata keyMetadata = new CreateKeyResponse.CreateKey_KeyMetadata();
 			keyMetadata.CreationDate = context.StringValue("CreateKey.KeyMetadata.CreationDate");
 			keyMetadata.Description = context.StringValue("CreateKey.KeyMetadata.Description");
 			keyMetadata.KeyId = context.StringValue("CreateKey.KeyMetadata.KeyId");
@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			keyMetadata.DeleteDate = context.StringValue("CreateKey.KeyMetadata.DeleteDate");
 			keyMetadata.Creator = context.StringValue("CreateKey.KeyMetadata.Creator");
 			keyMetadata.Arn = context.StringValue("CreateKey.KeyMetadata.Arn");
+			keyMetadata.Origin = context.StringValue("CreateKey.KeyMetadata.Origin");
+			keyMetadata.MaterialExpireTime = context.StringValue("CreateKey.KeyMetadata.MaterialExpireTime");
 			createKeyResponse.KeyMetadata = keyMetadata;
         
 			return createKeyResponse;

@@ -34,18 +34,18 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainTopReferVisitResponse.DomainName = context.StringValue("DescribeDomainTopReferVisit.DomainName");
 			describeDomainTopReferVisitResponse.StartTime = context.StringValue("DescribeDomainTopReferVisit.StartTime");
 
-			List<DescribeDomainTopReferVisitResponse.ReferList> topReferList = new List<DescribeDomainTopReferVisitResponse.ReferList>();
+			List<DescribeDomainTopReferVisitResponse.DescribeDomainTopReferVisit_ReferList> describeDomainTopReferVisitResponse_topReferList = new List<DescribeDomainTopReferVisitResponse.DescribeDomainTopReferVisit_ReferList>();
 			for (int i = 0; i < context.Length("DescribeDomainTopReferVisit.TopReferList.Length"); i++) {
-				DescribeDomainTopReferVisitResponse.ReferList referList = new DescribeDomainTopReferVisitResponse.ReferList();
+				DescribeDomainTopReferVisitResponse.DescribeDomainTopReferVisit_ReferList referList = new DescribeDomainTopReferVisitResponse.DescribeDomainTopReferVisit_ReferList();
 				referList.ReferDetail = context.StringValue("DescribeDomainTopReferVisit.TopReferList["+ i +"].ReferDetail");
 				referList.VisitData = context.StringValue("DescribeDomainTopReferVisit.TopReferList["+ i +"].VisitData");
 				referList.VisitProportion = context.FloatValue("DescribeDomainTopReferVisit.TopReferList["+ i +"].VisitProportion");
 				referList.Flow = context.StringValue("DescribeDomainTopReferVisit.TopReferList["+ i +"].Flow");
 				referList.FlowProportion = context.FloatValue("DescribeDomainTopReferVisit.TopReferList["+ i +"].FlowProportion");
 
-				topReferList.Add(referList);
+				describeDomainTopReferVisitResponse_topReferList.Add(referList);
 			}
-			describeDomainTopReferVisitResponse.TopReferList = topReferList;
+			describeDomainTopReferVisitResponse.TopReferList = describeDomainTopReferVisitResponse_topReferList;
         
 			return describeDomainTopReferVisitResponse;
         }

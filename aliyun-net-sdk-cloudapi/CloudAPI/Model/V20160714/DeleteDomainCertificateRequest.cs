@@ -29,15 +29,34 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DeleteDomainCertificateRequest : RpcAcsRequest<DeleteDomainCertificateResponse>
     {
         public DeleteDomainCertificateRequest()
-            : base("CloudAPI", "2016-07-14", "DeleteDomainCertificate")
+            : base("CloudAPI", "2016-07-14", "DeleteDomainCertificate", "apigateway", "openAPI")
         {
         }
 
+		private string securityToken;
+
 		private string groupId;
+
+		private string certificateId;
 
 		private string domainName;
 
-		private string certificateId;
+		private string action;
+
+		private string accessKeyId;
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -49,6 +68,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string CertificateId
+		{
+			get
+			{
+				return certificateId;
+			}
+			set	
+			{
+				certificateId = value;
+				DictionaryUtil.Add(QueryParameters, "CertificateId", value);
 			}
 		}
 
@@ -65,16 +97,29 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string CertificateId
+		public string Action
 		{
 			get
 			{
-				return certificateId;
+				return action;
 			}
 			set	
 			{
-				certificateId = value;
-				DictionaryUtil.Add(QueryParameters, "CertificateId", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

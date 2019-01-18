@@ -24,9 +24,79 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeLiveStreamsOnlineListResponse : AcsResponse
 	{
 
-		private List<LiveStreamOnlineInfo> onlineInfo;
+		private string requestId;
 
-		public List<LiveStreamOnlineInfo> OnlineInfo
+		private int? pageNum;
+
+		private int? pageSize;
+
+		private int? totalNum;
+
+		private int? totalPage;
+
+		private List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> onlineInfo;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
+			}
+		}
+
+		public int? TotalPage
+		{
+			get
+			{
+				return totalPage;
+			}
+			set	
+			{
+				totalPage = value;
+			}
+		}
+
+		public List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> OnlineInfo
 		{
 			get
 			{
@@ -38,7 +108,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class LiveStreamOnlineInfo{
+		public class DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo
+		{
 
 			private string domainName;
 

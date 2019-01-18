@@ -36,26 +36,26 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstancePerformanceResponse.StartTime = context.StringValue("DescribeDBInstancePerformance.StartTime");
 			describeDBInstancePerformanceResponse.EndTime = context.StringValue("DescribeDBInstancePerformance.EndTime");
 
-			List<DescribeDBInstancePerformanceResponse.PerformanceKey> performanceKeys = new List<DescribeDBInstancePerformanceResponse.PerformanceKey>();
+			List<DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey> describeDBInstancePerformanceResponse_performanceKeys = new List<DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey>();
 			for (int i = 0; i < context.Length("DescribeDBInstancePerformance.PerformanceKeys.Length"); i++) {
-				DescribeDBInstancePerformanceResponse.PerformanceKey performanceKey = new DescribeDBInstancePerformanceResponse.PerformanceKey();
+				DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey performanceKey = new DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey();
 				performanceKey.Key = context.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Key");
 				performanceKey.Unit = context.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Unit");
 				performanceKey.ValueFormat = context.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].ValueFormat");
 
-				List<DescribeDBInstancePerformanceResponse.PerformanceKey.PerformanceValue> values = new List<DescribeDBInstancePerformanceResponse.PerformanceKey.PerformanceValue>();
+				List<DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey.DescribeDBInstancePerformance_PerformanceValue> performanceKey_values = new List<DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey.DescribeDBInstancePerformance_PerformanceValue>();
 				for (int j = 0; j < context.Length("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Values.Length"); j++) {
-					DescribeDBInstancePerformanceResponse.PerformanceKey.PerformanceValue performanceValue = new DescribeDBInstancePerformanceResponse.PerformanceKey.PerformanceValue();
-					performanceValue.Value = context.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Values["+ j +"].Value");
+					DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey.DescribeDBInstancePerformance_PerformanceValue performanceValue = new DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey.DescribeDBInstancePerformance_PerformanceValue();
+					performanceValue._Value = context.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Values["+ j +"].Value");
 					performanceValue.Date = context.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Values["+ j +"].Date");
 
-					values.Add(performanceValue);
+					performanceKey_values.Add(performanceValue);
 				}
-				performanceKey.Values = values;
+				performanceKey.Values = performanceKey_values;
 
-				performanceKeys.Add(performanceKey);
+				describeDBInstancePerformanceResponse_performanceKeys.Add(performanceKey);
 			}
-			describeDBInstancePerformanceResponse.PerformanceKeys = performanceKeys;
+			describeDBInstancePerformanceResponse.PerformanceKeys = describeDBInstancePerformanceResponse_performanceKeys;
         
 			return describeDBInstancePerformanceResponse;
         }

@@ -24,7 +24,21 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class DeleteTemplateResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string templateId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string TemplateId
 		{

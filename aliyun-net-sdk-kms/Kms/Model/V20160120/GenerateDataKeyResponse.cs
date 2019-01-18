@@ -30,6 +30,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string plaintext;
 
+		private string requestId;
+
 		public string CiphertextBlob
 		{
 			get
@@ -63,6 +65,18 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				plaintext = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

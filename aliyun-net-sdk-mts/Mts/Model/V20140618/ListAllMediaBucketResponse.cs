@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class ListAllMediaBucketResponse : AcsResponse
 	{
 
-		private List<MediaBucket> mediaBucketList;
+		private string requestId;
 
-		public List<MediaBucket> MediaBucketList
+		private List<ListAllMediaBucket_MediaBucket> mediaBucketList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<ListAllMediaBucket_MediaBucket> MediaBucketList
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class MediaBucket{
+		public class ListAllMediaBucket_MediaBucket
+		{
 
 			private string bucket;
 

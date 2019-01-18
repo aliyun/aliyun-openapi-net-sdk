@@ -35,23 +35,23 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApisByAppResponse.PageSize = context.IntegerValue("DescribeApisByApp.PageSize");
 			describeApisByAppResponse.PageNumber = context.IntegerValue("DescribeApisByApp.PageNumber");
 
-			List<DescribeApisByAppResponse.AppApiRelationInfo> appApiRelationInfos = new List<DescribeApisByAppResponse.AppApiRelationInfo>();
+			List<DescribeApisByAppResponse.DescribeApisByApp_AppApiRelationInfo> describeApisByAppResponse_appApiRelationInfos = new List<DescribeApisByAppResponse.DescribeApisByApp_AppApiRelationInfo>();
 			for (int i = 0; i < context.Length("DescribeApisByApp.AppApiRelationInfos.Length"); i++) {
-				DescribeApisByAppResponse.AppApiRelationInfo appApiRelationInfo = new DescribeApisByAppResponse.AppApiRelationInfo();
+				DescribeApisByAppResponse.DescribeApisByApp_AppApiRelationInfo appApiRelationInfo = new DescribeApisByAppResponse.DescribeApisByApp_AppApiRelationInfo();
 				appApiRelationInfo.RegionId = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].RegionId");
 				appApiRelationInfo.GroupId = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].GroupId");
 				appApiRelationInfo.GroupName = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].GroupName");
 				appApiRelationInfo.StageName = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].StageName");
-				appApiRelationInfo.Operator = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].Operator");
+				appApiRelationInfo._Operator = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].Operator");
 				appApiRelationInfo.ApiId = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].ApiId");
 				appApiRelationInfo.ApiName = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].ApiName");
 				appApiRelationInfo.AuthorizationSource = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].AuthorizationSource");
 				appApiRelationInfo.Description = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].Description");
 				appApiRelationInfo.CreatedTime = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].CreatedTime");
 
-				appApiRelationInfos.Add(appApiRelationInfo);
+				describeApisByAppResponse_appApiRelationInfos.Add(appApiRelationInfo);
 			}
-			describeApisByAppResponse.AppApiRelationInfos = appApiRelationInfos;
+			describeApisByAppResponse.AppApiRelationInfos = describeApisByAppResponse_appApiRelationInfos;
         
 			return describeApisByAppResponse;
         }

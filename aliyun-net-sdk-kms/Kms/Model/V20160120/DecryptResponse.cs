@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string keyId;
 
+		private string requestId;
+
 		public string Plaintext
 		{
 			get
@@ -49,6 +51,18 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				keyId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

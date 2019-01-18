@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeBackupPolicyResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? backupRetentionPeriod;
 
 		private string preferredNextBackupTime;
@@ -35,6 +37,34 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string backupLog;
 
 		private int? logBackupRetentionPeriod;
+
+		private string enableBackupLog;
+
+		private int? localLogRetentionHours;
+
+		private string localLogRetentionSpace;
+
+		private string duplication;
+
+		private string duplicationContent;
+
+		private string highSpaceUsageProtection;
+
+		private string logBackupFrequency;
+
+		private DescribeBackupPolicy_DuplicationLocation duplicationLocation;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? BackupRetentionPeriod
 		{
@@ -105,6 +135,166 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				logBackupRetentionPeriod = value;
+			}
+		}
+
+		public string EnableBackupLog
+		{
+			get
+			{
+				return enableBackupLog;
+			}
+			set	
+			{
+				enableBackupLog = value;
+			}
+		}
+
+		public int? LocalLogRetentionHours
+		{
+			get
+			{
+				return localLogRetentionHours;
+			}
+			set	
+			{
+				localLogRetentionHours = value;
+			}
+		}
+
+		public string LocalLogRetentionSpace
+		{
+			get
+			{
+				return localLogRetentionSpace;
+			}
+			set	
+			{
+				localLogRetentionSpace = value;
+			}
+		}
+
+		public string Duplication
+		{
+			get
+			{
+				return duplication;
+			}
+			set	
+			{
+				duplication = value;
+			}
+		}
+
+		public string DuplicationContent
+		{
+			get
+			{
+				return duplicationContent;
+			}
+			set	
+			{
+				duplicationContent = value;
+			}
+		}
+
+		public string HighSpaceUsageProtection
+		{
+			get
+			{
+				return highSpaceUsageProtection;
+			}
+			set	
+			{
+				highSpaceUsageProtection = value;
+			}
+		}
+
+		public string LogBackupFrequency
+		{
+			get
+			{
+				return logBackupFrequency;
+			}
+			set	
+			{
+				logBackupFrequency = value;
+			}
+		}
+
+		public DescribeBackupPolicy_DuplicationLocation DuplicationLocation
+		{
+			get
+			{
+				return duplicationLocation;
+			}
+			set	
+			{
+				duplicationLocation = value;
+			}
+		}
+
+		public class DescribeBackupPolicy_DuplicationLocation
+		{
+
+			private string sotrage;
+
+			private DescribeBackupPolicy_Location location;
+
+			public string Sotrage
+			{
+				get
+				{
+					return sotrage;
+				}
+				set	
+				{
+					sotrage = value;
+				}
+			}
+
+			public DescribeBackupPolicy_Location Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
+				}
+			}
+
+			public class DescribeBackupPolicy_Location
+			{
+
+				private string endpoint;
+
+				private string bucket;
+
+				public string Endpoint
+				{
+					get
+					{
+						return endpoint;
+					}
+					set	
+					{
+						endpoint = value;
+					}
+				}
+
+				public string Bucket
+				{
+					get
+					{
+						return bucket;
+					}
+					set	
+					{
+						bucket = value;
+					}
+				}
 			}
 		}
 	}

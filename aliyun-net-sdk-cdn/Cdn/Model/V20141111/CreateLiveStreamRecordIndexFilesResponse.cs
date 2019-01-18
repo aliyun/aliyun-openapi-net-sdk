@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class CreateLiveStreamRecordIndexFilesResponse : AcsResponse
 	{
 
-		private RecordInfo_ recordInfo;
+		private string requestId;
 
-		public RecordInfo_ RecordInfo
+		private CreateLiveStreamRecordIndexFiles_RecordInfo recordInfo;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public CreateLiveStreamRecordIndexFiles_RecordInfo RecordInfo
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class RecordInfo_{
+		public class CreateLiveStreamRecordIndexFiles_RecordInfo
+		{
 
 			private string recordId;
 

@@ -24,9 +24,37 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class GetVideoInfoResponse : AcsResponse
 	{
 
-		private Video_ video;
+		private string requestId;
 
-		public Video_ Video
+		private string aI;
+
+		private GetVideoInfo_Video video;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string AI
+		{
+			get
+			{
+				return aI;
+			}
+			set	
+			{
+				aI = value;
+			}
+		}
+
+		public GetVideoInfo_Video Video
 		{
 			get
 			{
@@ -38,7 +66,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public class Video_{
+		public class GetVideoInfo_Video
+		{
 
 			private string videoId;
 
@@ -58,11 +87,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string modifyTime;
 
+			private string modificationTime;
+
+			private string creationTime;
+
 			private string coverURL;
 
-			private int? cateId;
+			private long? cateId;
 
 			private string cateName;
+
+			private string downloadSwitch;
+
+			private string templateGroupId;
+
+			private string preprocessStatus;
+
+			private string storageLocation;
+
+			private string regionId;
+
+			private List<GetVideoInfo_Thumbnail> thumbnailList;
 
 			private List<string> snapshots;
 
@@ -174,6 +219,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string ModificationTime
+			{
+				get
+				{
+					return modificationTime;
+				}
+				set	
+				{
+					modificationTime = value;
+				}
+			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
+
 			public string CoverURL
 			{
 				get
@@ -186,7 +255,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public int? CateId
+			public long? CateId
 			{
 				get
 				{
@@ -210,6 +279,78 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string DownloadSwitch
+			{
+				get
+				{
+					return downloadSwitch;
+				}
+				set	
+				{
+					downloadSwitch = value;
+				}
+			}
+
+			public string TemplateGroupId
+			{
+				get
+				{
+					return templateGroupId;
+				}
+				set	
+				{
+					templateGroupId = value;
+				}
+			}
+
+			public string PreprocessStatus
+			{
+				get
+				{
+					return preprocessStatus;
+				}
+				set	
+				{
+					preprocessStatus = value;
+				}
+			}
+
+			public string StorageLocation
+			{
+				get
+				{
+					return storageLocation;
+				}
+				set	
+				{
+					storageLocation = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public List<GetVideoInfo_Thumbnail> ThumbnailList
+			{
+				get
+				{
+					return thumbnailList;
+				}
+				set	
+				{
+					thumbnailList = value;
+				}
+			}
+
 			public List<string> Snapshots
 			{
 				get
@@ -219,6 +360,24 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					snapshots = value;
+				}
+			}
+
+			public class GetVideoInfo_Thumbnail
+			{
+
+				private string uRL;
+
+				public string URL
+				{
+					get
+					{
+						return uRL;
+					}
+					set	
+					{
+						uRL = value;
+					}
 				}
 			}
 		}

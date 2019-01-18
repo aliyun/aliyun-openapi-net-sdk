@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstancesByExpireTimeResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? pageNumber;
 
 		private int? totalRecordCount;
 
 		private int? pageRecordCount;
 
-		private List<DBInstanceExpireTime> items;
+		private List<DescribeDBInstancesByExpireTime_DBInstanceExpireTime> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<DBInstanceExpireTime> Items
+		public List<DescribeDBInstancesByExpireTime_DBInstanceExpireTime> Items
 		{
 			get
 			{
@@ -80,13 +94,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public class DBInstanceExpireTime{
+		public class DescribeDBInstancesByExpireTime_DBInstanceExpireTime
+		{
 
 			private string dBInstanceId;
 
 			private string dBInstanceDescription;
 
 			private string expireTime;
+
+			private string dBInstanceStatus;
+
+			private string lockMode;
 
 			public string DBInstanceId
 			{
@@ -121,6 +140,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					expireTime = value;
+				}
+			}
+
+			public string DBInstanceStatus
+			{
+				get
+				{
+					return dBInstanceStatus;
+				}
+				set	
+				{
+					dBInstanceStatus = value;
+				}
+			}
+
+			public string LockMode
+			{
+				get
+				{
+					return lockMode;
+				}
+				set	
+				{
+					lockMode = value;
 				}
 			}
 		}

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Aliyun.Acs.Core</RootNamespace>
+    <Version>1.1.12</Version>
+    <Authors>Alibaba Cloud</Authors>
+    <PackageTags>alibaba aliyun SDK core</PackageTags>
+    <Copyright>©2009-2018 Alibaba Cloud</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/aliyun/aliyun-openapi-net-sdk/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/aliyun/aliyun-openapi-net-sdk</PackageProjectUrl>
+    <PackageIconUrl>https://www.alibabacloud.com/favicon.ico</PackageIconUrl>
+    <Description>Alibaba Cloud SDK for C#</Description>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <AssemblyName>aliyun-net-sdk-core</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Regions\endpoints.xml" />
+  </ItemGroup>
+</Project>

@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Dm.Transform.V20151123
 
 			batchSendMailResponse.HttpResponse = context.HttpResponse;
 			batchSendMailResponse.RequestId = context.StringValue("BatchSendMail.RequestId");
+			batchSendMailResponse.EnvId = context.StringValue("BatchSendMail.EnvId");
         
 			return batchSendMailResponse;
         }

@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeLiveStreamTranscodeInfoResponse.HttpResponse = context.HttpResponse;
 			describeLiveStreamTranscodeInfoResponse.RequestId = context.StringValue("DescribeLiveStreamTranscodeInfo.RequestId");
 
-			List<DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo> domainTranscodeList = new List<DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo>();
+			List<DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> describeLiveStreamTranscodeInfoResponse_domainTranscodeList = new List<DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamTranscodeInfo.DomainTranscodeList.Length"); i++) {
-				DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo domainTranscodeInfo = new DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo();
+				DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo domainTranscodeInfo = new DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo();
 				domainTranscodeInfo.TranscodeApp = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeApp");
 				domainTranscodeInfo.TranscodeId = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeId");
 				domainTranscodeInfo.TranscodeName = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeName");
@@ -42,9 +42,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				domainTranscodeInfo.TranscodeSnapshot = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeSnapshot");
 				domainTranscodeInfo.TranscodeTemplate = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeTemplate");
 
-				domainTranscodeList.Add(domainTranscodeInfo);
+				describeLiveStreamTranscodeInfoResponse_domainTranscodeList.Add(domainTranscodeInfo);
 			}
-			describeLiveStreamTranscodeInfoResponse.DomainTranscodeList = domainTranscodeList;
+			describeLiveStreamTranscodeInfoResponse.DomainTranscodeList = describeLiveStreamTranscodeInfoResponse_domainTranscodeList;
         
 			return describeLiveStreamTranscodeInfoResponse;
         }

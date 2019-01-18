@@ -20,37 +20,45 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vod.Transform;
-using Aliyun.Acs.Vod.Transform.V20170321;
+using Aliyun.Acs.vod.Transform;
+using Aliyun.Acs.vod.Transform.V20170321;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Vod.Model.V20170321
+namespace Aliyun.Acs.vod.Model.V20170321
 {
     public class GetVideoPlayAuthRequest : RpcAcsRequest<GetVideoPlayAuthResponse>
     {
         public GetVideoPlayAuthRequest()
-            : base("vod", "2017-03-21", "GetVideoPlayAuth")
+            : base("vod", "2017-03-21", "GetVideoPlayAuth", "vod", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
+		private string reAuthInfo;
+
+		private string playConfig;
+
+		private long? authInfoTimeout;
+
+		private string action;
 
 		private string videoId;
 
-		public long? OwnerId
+		private long? ownerId;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -67,16 +75,55 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string ReAuthInfo
 		{
 			get
 			{
-				return resourceOwnerId;
+				return reAuthInfo;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				reAuthInfo = value;
+				DictionaryUtil.Add(QueryParameters, "ReAuthInfo", value);
+			}
+		}
+
+		public string PlayConfig
+		{
+			get
+			{
+				return playConfig;
+			}
+			set	
+			{
+				playConfig = value;
+				DictionaryUtil.Add(QueryParameters, "PlayConfig", value);
+			}
+		}
+
+		public long? AuthInfoTimeout
+		{
+			get
+			{
+				return authInfoTimeout;
+			}
+			set	
+			{
+				authInfoTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "AuthInfoTimeout", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -90,6 +137,19 @@ namespace Aliyun.Acs.Vod.Model.V20170321
 			{
 				videoId = value;
 				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

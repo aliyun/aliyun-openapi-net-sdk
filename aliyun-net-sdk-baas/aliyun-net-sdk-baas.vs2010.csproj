@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{d88cfc31-045d-4237-a2b1-b22089f2d6b2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-baas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Baas\Model\V20180731\DescribeInvitationCodeResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\RejectUserRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateChannelResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateChaincodeResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeChaincodeUploadPolicyRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\GetBlockchainCreateTaskResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumOrderersRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationMembersRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\InviteUserResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationMembersResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DownloadAllResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DownloadSdkRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumConfigRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationDeletableRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeExplorerRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DestroyOrganizationResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\GetTemplatesResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\OperateUserResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateChannelMemberRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\CheckOrganizationDomainResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOssPropertiesResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\QueryBlockRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeTasksResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\InstallChaincodeResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeInviterResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumChaincodesResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumAdminStatusResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrgnaizationChaincodesRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\UpdateSchemaResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateConsortiumRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationPeersResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationChaincodesResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\GetOssPropertiesRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumOrderersResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\QueryOrganizationDeletableResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\ApplyBlockchainRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeTasksRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateOrganizationResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\GetMySuccessAppliesRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DestroyConsortiumRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\ApplyBlockchainResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeInvitationListRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\QueryConsortiumDeletableRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\GetMyBlockchainsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationSpecsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationUserCertsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeRootDomainResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\OperateUserRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeMySuccessAppliesResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationDeletableResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\InviteUserRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\InstallChaincodeRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeBlockchainCreateTaskResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationSpecsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\GetBlockchainInfoResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\InstantiateChaincodeResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\QueryTransactionRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeRegionsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeBcSchemaRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeRegionsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateBlockchainApplyRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\AcceptInvitationResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DownloadAllRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\GetBlockchainCreateTaskRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeAppliesResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeInvitationCodeRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DownloadSignedDataResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\InstantiateChaincodeRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\ConfirmConsortiumMemberRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DeleteChaincodeRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\ResetCertificateRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DeleteChaincodeResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\UpgradeChaincodeResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribePeerLogsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeTemplatesResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumMembersResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeAppliesRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\UpgradeChaincodeRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribePeerLogsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateChannelMemberResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DownloadBizviewRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateOrganizationRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\AcceptInvitationRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOssPropertiesRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\GetAppliesResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeEcosphereSpecsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DownloadOrganizationSDKResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\CheckConsortiumDomainResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\JoinChannelResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\ResetOrganizationUserPasswordRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DownloadBizviewResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\ResetCertificateResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumMemberApprovalResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeChannelMembersRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DownloadOrganizationSDKRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateConsortiumMemberResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumSpecsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\ResetUserResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumConfigResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\RejectUserResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeExplorerResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\ResetOrganizationUserPasswordResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeTemplatesRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\QueryMetricResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\CheckOrganizationDomainRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\GetMyBlockchainsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\QueryMetricRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\AgreeInviteRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\CheckConsortiumDomainRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeInviterRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumChannelsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeCandidateOrganizationsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\SynchronizeChaincodeRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\ConfirmConsortiumMemberResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumAdminStatusRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\GetTemplatesRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\GetBlockchainInfoRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeBcSchemaResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\GetMySuccessAppliesResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\UpdateSchemaRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumDeletableRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationUsersResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeInvitationListResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateChaincodeRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\GetBcSchemaResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeBlockchainInfoRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationPeersRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumSpecsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\QueryConsortiumDeletableResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\SchemaDetailResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\ResetUserRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\GetOssPropertiesResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateConsortiumMemberRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeBlockchainCreateTaskRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationChannelsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateConsortiumResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\QueryOrganizationDeletableRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\QueryBlockResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationUserCertsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationChannelsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumDeletableResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateEcosphereRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeRootDomainRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateEcosphereResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumChannelsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\SchemaDetailRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumMembersRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrgnaizationChaincodesResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeBlockchainInfoResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationUsersRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeChaincodeUploadPolicyResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DownloadSdkResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DownloadSignedDataRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumChaincodesRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\GetAppliesRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeConsortiumMemberApprovalRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateBlockchainApplyResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DestroyOrganizationRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\CreateChannelRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\QueryTransactionResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeMyBlockchainsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeChannelMembersResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeMySuccessAppliesRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\JoinChannelRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrganizationChaincodesRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrdererLogsResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeCandidateOrganizationsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeOrdererLogsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DestroyConsortiumResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\GetBcSchemaRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeMyBlockchainsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\DescribeEcosphereSpecsRequest.cs" />
+	<Compile Include="Baas\Model\V20180731\SynchronizeChaincodeResponse.cs" />
+	<Compile Include="Baas\Model\V20180731\AgreeInviteResponse.cs" />
+	<Compile Include="Baas\Transform\V20180731\DeleteChaincodeResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOrganizationUsersResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\SchemaDetailResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\ResetOrganizationUserPasswordResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\ApplyBlockchainResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\CreateChaincodeResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeConsortiumMembersResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\CreateConsortiumMemberResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeAppliesResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\CreateChannelResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\QueryOrganizationDeletableResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeChannelMembersResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeConsortiumMemberApprovalResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\QueryBlockResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\GetAppliesResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeEcosphereSpecsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOrdererLogsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeConsortiumsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DownloadOrganizationSDKResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeInvitationListResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\CheckConsortiumDomainResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeConsortiumDeletableResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeRootDomainResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\GetMyBlockchainsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeBcSchemaResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeInvitationCodeResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeCandidateOrganizationsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\QueryConsortiumDeletableResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\AcceptInvitationResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOrganizationMembersResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeExplorerResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\CreateEcosphereResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOrgnaizationChaincodesResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeBlockchainInfoResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOrganizationResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOrganizationChaincodesResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeInviterResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\GetBcSchemaResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeMySuccessAppliesResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\UpdateSchemaResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\ResetCertificateResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\RejectUserResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\QueryTransactionResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeConsortiumAdminStatusResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\QueryMetricResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\InstallChaincodeResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DownloadSdkResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeConsortiumChaincodesResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\GetTemplatesResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\GetMySuccessAppliesResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\SynchronizeChaincodeResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DestroyConsortiumResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\CreateBlockchainApplyResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DownloadBizviewResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOrganizationDeletableResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeConsortiumConfigResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOrganizationUserCertsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\JoinChannelResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeConsortiumChannelsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeMyBlockchainsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOrganizationsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DownloadAllResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeChaincodeUploadPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\CheckOrganizationDomainResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeBlockchainCreateTaskResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOrganizationPeersResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\CreateChannelMemberResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\AgreeInviteResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOrganizationSpecsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\CreateOrganizationResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\InstantiateChaincodeResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\GetBlockchainInfoResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DownloadSignedDataResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOrganizationChannelsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeConsortiumOrderersResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeOssPropertiesResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\CreateConsortiumResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\UpgradeChaincodeResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\GetOssPropertiesResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DestroyOrganizationResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\GetBlockchainCreateTaskResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\OperateUserResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\ResetUserResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeTasksResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\ConfirmConsortiumMemberResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeTemplatesResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\InviteUserResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribeConsortiumSpecsResponseUnmarshaller.cs" />
+	<Compile Include="Baas\Transform\V20180731\DescribePeerLogsResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

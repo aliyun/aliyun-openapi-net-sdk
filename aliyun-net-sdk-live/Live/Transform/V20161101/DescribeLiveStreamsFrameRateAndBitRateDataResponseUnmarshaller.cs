@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Live.Model.V20161101;
+using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Transform.V20161101
+namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamsFrameRateAndBitRateDataResponseUnmarshaller
     {
@@ -32,18 +32,18 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 			describeLiveStreamsFrameRateAndBitRateDataResponse.HttpResponse = context.HttpResponse;
 			describeLiveStreamsFrameRateAndBitRateDataResponse.RequestId = context.StringValue("DescribeLiveStreamsFrameRateAndBitRateData.RequestId");
 
-			List<DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfo> frameRateAndBitRateInfos = new List<DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfo>();
+			List<DescribeLiveStreamsFrameRateAndBitRateDataResponse.DescribeLiveStreamsFrameRateAndBitRateData_FrameRateAndBitRateInfo> describeLiveStreamsFrameRateAndBitRateDataResponse_frameRateAndBitRateInfos = new List<DescribeLiveStreamsFrameRateAndBitRateDataResponse.DescribeLiveStreamsFrameRateAndBitRateData_FrameRateAndBitRateInfo>();
 			for (int i = 0; i < context.Length("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos.Length"); i++) {
-				DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfo frameRateAndBitRateInfo = new DescribeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfo();
+				DescribeLiveStreamsFrameRateAndBitRateDataResponse.DescribeLiveStreamsFrameRateAndBitRateData_FrameRateAndBitRateInfo frameRateAndBitRateInfo = new DescribeLiveStreamsFrameRateAndBitRateDataResponse.DescribeLiveStreamsFrameRateAndBitRateData_FrameRateAndBitRateInfo();
 				frameRateAndBitRateInfo.StreamUrl = context.StringValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].StreamUrl");
 				frameRateAndBitRateInfo.VideoFrameRate = context.FloatValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate");
 				frameRateAndBitRateInfo.AudioFrameRate = context.FloatValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate");
 				frameRateAndBitRateInfo.BitRate = context.FloatValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].BitRate");
 				frameRateAndBitRateInfo.Time = context.StringValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].Time");
 
-				frameRateAndBitRateInfos.Add(frameRateAndBitRateInfo);
+				describeLiveStreamsFrameRateAndBitRateDataResponse_frameRateAndBitRateInfos.Add(frameRateAndBitRateInfo);
 			}
-			describeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos = frameRateAndBitRateInfos;
+			describeLiveStreamsFrameRateAndBitRateDataResponse.FrameRateAndBitRateInfos = describeLiveStreamsFrameRateAndBitRateDataResponse_frameRateAndBitRateInfos;
         
 			return describeLiveStreamsFrameRateAndBitRateDataResponse;
         }

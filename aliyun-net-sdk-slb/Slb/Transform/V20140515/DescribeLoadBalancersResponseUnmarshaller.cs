@@ -31,10 +31,13 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 
 			describeLoadBalancersResponse.HttpResponse = context.HttpResponse;
 			describeLoadBalancersResponse.RequestId = context.StringValue("DescribeLoadBalancers.RequestId");
+			describeLoadBalancersResponse.PageNumber = context.IntegerValue("DescribeLoadBalancers.PageNumber");
+			describeLoadBalancersResponse.PageSize = context.IntegerValue("DescribeLoadBalancers.PageSize");
+			describeLoadBalancersResponse.TotalCount = context.IntegerValue("DescribeLoadBalancers.TotalCount");
 
-			List<DescribeLoadBalancersResponse.LoadBalancer> loadBalancers = new List<DescribeLoadBalancersResponse.LoadBalancer>();
+			List<DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer> describeLoadBalancersResponse_loadBalancers = new List<DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer>();
 			for (int i = 0; i < context.Length("DescribeLoadBalancers.LoadBalancers.Length"); i++) {
-				DescribeLoadBalancersResponse.LoadBalancer loadBalancer = new DescribeLoadBalancersResponse.LoadBalancer();
+				DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer loadBalancer = new DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer();
 				loadBalancer.LoadBalancerId = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].LoadBalancerId");
 				loadBalancer.LoadBalancerName = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].LoadBalancerName");
 				loadBalancer.LoadBalancerStatus = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].LoadBalancerStatus");
@@ -50,10 +53,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				loadBalancer.InternetChargeType = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].InternetChargeType");
 				loadBalancer.CreateTime = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].CreateTime");
 				loadBalancer.CreateTimeStamp = context.LongValue("DescribeLoadBalancers.LoadBalancers["+ i +"].CreateTimeStamp");
+				loadBalancer.PayType = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].PayType");
+				loadBalancer.ResourceGroupId = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].ResourceGroupId");
 
-				loadBalancers.Add(loadBalancer);
+				describeLoadBalancersResponse_loadBalancers.Add(loadBalancer);
 			}
-			describeLoadBalancersResponse.LoadBalancers = loadBalancers;
+			describeLoadBalancersResponse.LoadBalancers = describeLoadBalancersResponse_loadBalancers;
         
 			return describeLoadBalancersResponse;
         }

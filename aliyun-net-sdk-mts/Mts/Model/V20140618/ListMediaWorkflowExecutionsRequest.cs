@@ -29,53 +29,31 @@ namespace Aliyun.Acs.Mts.Model.V20140618
     public class ListMediaWorkflowExecutionsRequest : RpcAcsRequest<ListMediaWorkflowExecutionsResponse>
     {
         public ListMediaWorkflowExecutionsRequest()
-            : base("Mts", "2014-06-18", "ListMediaWorkflowExecutions")
+            : base("Mts", "2014-06-18", "ListMediaWorkflowExecutions", "mts", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
 
-		private string mediaWorkflowId;
-
-		private string mediaWorkflowName;
+		private string resourceOwnerAccount;
 
 		private string inputFileURL;
 
 		private string nextPageToken;
 
-		private long? maximumPageSize;
-
 		private string ownerAccount;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string action;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private long? maximumPageSize;
+
+		private string mediaWorkflowId;
+
+		private long? ownerId;
+
+		private string mediaWorkflowName;
+
+		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -90,29 +68,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string MediaWorkflowId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return mediaWorkflowId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				mediaWorkflowId = value;
-				DictionaryUtil.Add(QueryParameters, "MediaWorkflowId", value);
-			}
-		}
-
-		public string MediaWorkflowName
-		{
-			get
-			{
-				return mediaWorkflowName;
-			}
-			set	
-			{
-				mediaWorkflowName = value;
-				DictionaryUtil.Add(QueryParameters, "MediaWorkflowName", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -142,6 +107,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public long? MaximumPageSize
 		{
 			get
@@ -155,16 +146,55 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string OwnerAccount
+		public string MediaWorkflowId
 		{
 			get
 			{
-				return ownerAccount;
+				return mediaWorkflowId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				mediaWorkflowId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaWorkflowId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string MediaWorkflowName
+		{
+			get
+			{
+				return mediaWorkflowName;
+			}
+			set	
+			{
+				mediaWorkflowName = value;
+				DictionaryUtil.Add(QueryParameters, "MediaWorkflowName", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

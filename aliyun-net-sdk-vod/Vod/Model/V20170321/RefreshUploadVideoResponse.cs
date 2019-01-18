@@ -24,7 +24,25 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class RefreshUploadVideoResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string uploadAuth;
+
+		private string uploadAddress;
+
+		private string videoId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string UploadAuth
 		{
@@ -35,6 +53,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				uploadAuth = value;
+			}
+		}
+
+		public string UploadAddress
+		{
+			get
+			{
+				return uploadAddress;
+			}
+			set	
+			{
+				uploadAddress = value;
+			}
+		}
+
+		public string VideoId
+		{
+			get
+			{
+				return videoId;
+			}
+			set	
+			{
+				videoId = value;
 			}
 		}
 	}

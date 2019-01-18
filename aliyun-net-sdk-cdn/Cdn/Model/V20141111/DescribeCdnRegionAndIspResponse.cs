@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeCdnRegionAndIspResponse : AcsResponse
 	{
 
-		private List<Region> regions;
+		private string requestId;
 
-		private List<Isp> isps;
+		private List<DescribeCdnRegionAndIsp_Region> regions;
 
-		public List<Region> Regions
+		private List<DescribeCdnRegionAndIsp_Isp> isps;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeCdnRegionAndIsp_Region> Regions
 		{
 			get
 			{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<Isp> Isps
+		public List<DescribeCdnRegionAndIsp_Isp> Isps
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class Region{
+		public class DescribeCdnRegionAndIsp_Region
+		{
 
 			private string nameZh;
 
@@ -83,7 +98,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class Isp{
+		public class DescribeCdnRegionAndIsp_Isp
+		{
 
 			private string nameZh;
 

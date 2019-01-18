@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15c5c084-4a06-48c2-979d-9cad3725f3ba}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-teslamaxcompute</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="TeslaMaxCompute\Model\V20180104\GetClusterInstanceResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\GetUserInstanceRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaHistoryInfoRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryResourceInventoryRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\GetInstancesStatusCountRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryCustomerSaleInfoRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryCustomerSaleInfoResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaInstanceResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaHistoryInfoResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryTopologyResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryTopologyRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\GetUserInstanceResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\GetProjectInstanceResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\GetInstancesStatusCountResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\GetProjectInstanceRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\QueryResourceInventoryResponse.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\GetClusterInstanceRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Model\V20180104\GetQuotaInstanceRequest.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetQuotaHistoryInfoResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetQuotaInstanceResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetUserInstanceResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20180104\QueryTopologyResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetClusterInstanceResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20180104\QueryResourceInventoryResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetProjectInstanceResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20180104\GetInstancesStatusCountResponseUnmarshaller.cs" />
+	<Compile Include="TeslaMaxCompute\Transform\V20180104\QueryCustomerSaleInfoResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

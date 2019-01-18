@@ -29,79 +29,31 @@ namespace Aliyun.Acs.Slb.Model.V20140515
     public class SetVServerGroupAttributeRequest : RpcAcsRequest<SetVServerGroupAttributeResponse>
     {
         public SetVServerGroupAttributeRequest()
-            : base("Slb", "2014-05-15", "SetVServerGroupAttribute")
+            : base("Slb", "2014-05-15", "SetVServerGroupAttribute", "slb", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
-		private long? resourceOwnerId;
-
-		private string ownerAccount;
-
 		private string access_key_id;
-
-		private string tags;
 
 		private string vServerGroupId;
 
-		private string vServerGroupName;
+		private long? resourceOwnerId;
+
+		private string resourceOwnerAccount;
+
+		private string regionId;
+
+		private string ownerAccount;
+
+		private string action;
+
+		private long? ownerId;
 
 		private string backendServers;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string tags;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+		private string vServerGroupName;
 
 		public string Access_key_id
 		{
@@ -113,19 +65,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				access_key_id = value;
 				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 
@@ -142,16 +81,81 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string VServerGroupName
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return vServerGroupName;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				vServerGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "VServerGroupName", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -165,6 +169,32 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				backendServers = value;
 				DictionaryUtil.Add(QueryParameters, "BackendServers", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string VServerGroupName
+		{
+			get
+			{
+				return vServerGroupName;
+			}
+			set	
+			{
+				vServerGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "VServerGroupName", value);
 			}
 		}
 

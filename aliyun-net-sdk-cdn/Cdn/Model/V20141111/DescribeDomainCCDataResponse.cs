@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainCCDataResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string domainName;
 
 		private string dataInterval;
@@ -32,7 +34,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string endTime;
 
-		private List<CCDatas> cCDataList;
+		private List<DescribeDomainCCData_CCDatas> cCDataList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{
@@ -82,7 +96,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<CCDatas> CCDataList
+		public List<DescribeDomainCCData_CCDatas> CCDataList
 		{
 			get
 			{
@@ -94,7 +108,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class CCDatas{
+		public class DescribeDomainCCData_CCDatas
+		{
 
 			private string timeStamp;
 

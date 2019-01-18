@@ -29,47 +29,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class DescribeDisksRequest : RpcAcsRequest<DescribeDisksResponse>
     {
         public DescribeDisksRequest()
-            : base("Ecs", "2014-05-26", "DescribeDisks")
+            : base("Ecs", "2014-05-26", "DescribeDisks", "ecs", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
-
 		private long? resourceOwnerId;
-
-		private string zoneId;
-
-		private string diskIds;
-
-		private string instanceId;
-
-		private string diskType;
-
-		private string category;
-
-		private string status;
 
 		private string snapshotId;
 
-		private bool? portable;
+		private string filter2Value;
 
-		private bool? deleteWithInstance;
-
-		private bool? deleteAutoSnapshot;
+		private string autoSnapshotPolicyId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
-
-		private string ownerAccount;
-
 		private string diskName;
 
-		private bool? enableAutoSnapshot;
+		private bool? deleteAutoSnapshot;
 
-		private bool? enableAutomatedSnapshotPolicy;
+		private string resourceGroupId;
 
 		private string diskChargeType;
 
@@ -77,57 +55,53 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string filter1Key;
 
-		private string filter2Key;
+		private string regionId;
+
+		private int? pageSize;
+
+		private string action;
+
+		private string diskIds;
+
+		private List<Tag> tags;
+
+		private bool? deleteWithInstance;
+
+		private bool? enableAutoSnapshot;
+
+		private bool? dryRun;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private string filter1Value;
 
-		private string filter2Value;
+		private bool? portable;
 
-		private string tag1Key;
+		private bool? enableAutomatedSnapshotPolicy;
 
-		private string tag2Key;
+		private string filter2Key;
 
-		private string tag3Key;
+		private long? ownerId;
 
-		private string tag4Key;
+		private string diskType;
 
-		private string tag5Key;
+		private List<string> additionalAttributess;
 
-		private string tag1Value;
+		private bool? enableShared;
 
-		private string tag2Value;
+		private string instanceId;
 
-		private string tag3Value;
+		private bool? encrypted;
 
-		private string tag4Value;
+		private string zoneId;
 
-		private string tag5Value;
+		private string category;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string kMSKeyId;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private string status;
 
 		public long? ResourceOwnerId
 		{
@@ -139,84 +113,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string DiskIds
-		{
-			get
-			{
-				return diskIds;
-			}
-			set	
-			{
-				diskIds = value;
-				DictionaryUtil.Add(QueryParameters, "DiskIds", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string DiskType
-		{
-			get
-			{
-				return diskType;
-			}
-			set	
-			{
-				diskType = value;
-				DictionaryUtil.Add(QueryParameters, "DiskType", value);
-			}
-		}
-
-		public string Category
-		{
-			get
-			{
-				return category;
-			}
-			set	
-			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
@@ -233,42 +129,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? Portable
+		public string Filter2Value
 		{
 			get
 			{
-				return portable;
+				return filter2Value;
 			}
 			set	
 			{
-				portable = value;
-				DictionaryUtil.Add(QueryParameters, "Portable", value.ToString());
+				filter2Value = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.2.Value", value);
 			}
 		}
 
-		public bool? DeleteWithInstance
+		public string AutoSnapshotPolicyId
 		{
 			get
 			{
-				return deleteWithInstance;
+				return autoSnapshotPolicyId;
 			}
 			set	
 			{
-				deleteWithInstance = value;
-				DictionaryUtil.Add(QueryParameters, "DeleteWithInstance", value.ToString());
-			}
-		}
-
-		public bool? DeleteAutoSnapshot
-		{
-			get
-			{
-				return deleteAutoSnapshot;
-			}
-			set	
-			{
-				deleteAutoSnapshot = value;
-				DictionaryUtil.Add(QueryParameters, "DeleteAutoSnapshot", value.ToString());
+				autoSnapshotPolicyId = value;
+				DictionaryUtil.Add(QueryParameters, "AutoSnapshotPolicyId", value);
 			}
 		}
 
@@ -285,32 +168,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string DiskName
 		{
 			get
@@ -324,29 +181,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? EnableAutoSnapshot
+		public bool? DeleteAutoSnapshot
 		{
 			get
 			{
-				return enableAutoSnapshot;
+				return deleteAutoSnapshot;
 			}
 			set	
 			{
-				enableAutoSnapshot = value;
-				DictionaryUtil.Add(QueryParameters, "EnableAutoSnapshot", value.ToString());
+				deleteAutoSnapshot = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteAutoSnapshot", value.ToString());
 			}
 		}
 
-		public bool? EnableAutomatedSnapshotPolicy
+		public string ResourceGroupId
 		{
 			get
 			{
-				return enableAutomatedSnapshotPolicy;
+				return resourceGroupId;
 			}
 			set	
 			{
-				enableAutomatedSnapshotPolicy = value;
-				DictionaryUtil.Add(QueryParameters, "EnableAutomatedSnapshotPolicy", value.ToString());
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -389,16 +246,138 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Filter2Key
+		public string RegionId
 		{
 			get
 			{
-				return filter2Key;
+				return regionId;
 			}
 			set	
 			{
-				filter2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.2.Key", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string DiskIds
+		{
+			get
+			{
+				return diskIds;
+			}
+			set	
+			{
+				diskIds = value;
+				DictionaryUtil.Add(QueryParameters, "DiskIds", value);
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
+		public bool? DeleteWithInstance
+		{
+			get
+			{
+				return deleteWithInstance;
+			}
+			set	
+			{
+				deleteWithInstance = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteWithInstance", value.ToString());
+			}
+		}
+
+		public bool? EnableAutoSnapshot
+		{
+			get
+			{
+				return enableAutoSnapshot;
+			}
+			set	
+			{
+				enableAutoSnapshot = value;
+				DictionaryUtil.Add(QueryParameters, "EnableAutoSnapshot", value.ToString());
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -415,146 +394,208 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Filter2Value
+		public bool? Portable
 		{
 			get
 			{
-				return filter2Value;
+				return portable;
 			}
 			set	
 			{
-				filter2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.2.Value", value);
+				portable = value;
+				DictionaryUtil.Add(QueryParameters, "Portable", value.ToString());
 			}
 		}
 
-		public string Tag1Key
+		public bool? EnableAutomatedSnapshotPolicy
 		{
 			get
 			{
-				return tag1Key;
+				return enableAutomatedSnapshotPolicy;
 			}
 			set	
 			{
-				tag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
+				enableAutomatedSnapshotPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "EnableAutomatedSnapshotPolicy", value.ToString());
 			}
 		}
 
-		public string Tag2Key
+		public string Filter2Key
 		{
 			get
 			{
-				return tag2Key;
+				return filter2Key;
 			}
 			set	
 			{
-				tag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Key", value);
+				filter2Key = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.2.Key", value);
 			}
 		}
 
-		public string Tag3Key
+		public long? OwnerId
 		{
 			get
 			{
-				return tag3Key;
+				return ownerId;
 			}
 			set	
 			{
-				tag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Key", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string Tag4Key
+		public string DiskType
 		{
 			get
 			{
-				return tag4Key;
+				return diskType;
 			}
 			set	
 			{
-				tag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Key", value);
+				diskType = value;
+				DictionaryUtil.Add(QueryParameters, "DiskType", value);
 			}
 		}
 
-		public string Tag5Key
+		public List<string> AdditionalAttributess
 		{
 			get
 			{
-				return tag5Key;
+				return additionalAttributess;
 			}
-			set	
+
+			set
 			{
-				tag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Key", value);
+				additionalAttributess = value;
+				for (int i = 0; i < additionalAttributess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"AdditionalAttributes." + (i + 1) , additionalAttributess[i]);
+				}
 			}
 		}
 
-		public string Tag1Value
+		public bool? EnableShared
 		{
 			get
 			{
-				return tag1Value;
+				return enableShared;
 			}
 			set	
 			{
-				tag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
+				enableShared = value;
+				DictionaryUtil.Add(QueryParameters, "EnableShared", value.ToString());
 			}
 		}
 
-		public string Tag2Value
+		public string InstanceId
 		{
 			get
 			{
-				return tag2Value;
+				return instanceId;
 			}
 			set	
 			{
-				tag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Value", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public string Tag3Value
+		public bool? Encrypted
 		{
 			get
 			{
-				return tag3Value;
+				return encrypted;
 			}
 			set	
 			{
-				tag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Value", value);
+				encrypted = value;
+				DictionaryUtil.Add(QueryParameters, "Encrypted", value.ToString());
 			}
 		}
 
-		public string Tag4Value
+		public string ZoneId
 		{
 			get
 			{
-				return tag4Value;
+				return zoneId;
 			}
 			set	
 			{
-				tag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Value", value);
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
-		public string Tag5Value
+		public string Category
 		{
 			get
 			{
-				return tag5Value;
+				return category;
 			}
 			set	
 			{
-				tag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Value", value);
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
+			}
+		}
+
+		public string KMSKeyId
+		{
+			get
+			{
+				return kMSKeyId;
+			}
+			set	
+			{
+				kMSKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "KMSKeyId", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

@@ -58,14 +58,24 @@ namespace Aliyun.Acs.Core
         {
             Version = version;
             ActionName = action;
+            LocationProduct = locationProduct;
+            Initialize();
+        }
+
+        public RpcAcsRequest(String product, String version, String action, String locationProduct, String locationEndpointType)
+            : base(product)
+        {
+            this.Version = version;
+            this.ActionName = action;
             this.LocationProduct = locationProduct;
+            this.LocationEndpointType = locationEndpointType;
             Initialize();
         }
 
         private void Initialize()
         {
             Method = MethodType.GET;
-            AcceptFormat = FormatType.XML;
+            AcceptFormat = FormatType.JSON;
             this.Composer = RpcSignatureComposer.GetComposer();
         }
 
@@ -108,22 +118,45 @@ namespace Aliyun.Acs.Core
             }
         }
 
-        public override HttpRequest SignRequest(ISigner signer, Credential credential, FormatType? format, ProductDomain domain)
+        public override HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
+                                       FormatType? format, ProductDomain domain)
         {
             Dictionary<String, String> imutableMap = new Dictionary<String, String>(QueryParameters);
-            if (null != signer && null != credential)
+
+            if (null != signer && null != credentials)
             {
-                String accessKeyId = credential.AccessKeyId;
-                String accessSecret = credential.AccessSecret;
-                imutableMap = this.Composer.RefreshSignParameters(QueryParameters, signer, accessKeyId, format);
+                String accessKeyId = credentials.GetAccessKeyId();
+                String accessSecret = credentials.GetAccessKeySecret();
+                if (credentials is BasicSessionCredentials)
+                {
+                    String sessionToken = ((BasicSessionCredentials)credentials).GetSessionToken();
+                    if (null != sessionToken)
+                    {
+                        QueryParameters.Add("SecurityToken", sessionToken);
+                    }
+                }
+                imutableMap = Composer.RefreshSignParameters(QueryParameters, signer, accessKeyId, format);
                 imutableMap.Add("RegionId", RegionId);
-                String strToSign = this.Composer.ComposeStringToSign(Method, null, signer, imutableMap, null, null);
+
+                Dictionary<String, String> paramsToSign = new Dictionary<String, String>(imutableMap);
+                if (this.BodyParameters != null && this.BodyParameters.Count > 0)
+                {
+                    Dictionary<String, String> formParams = new Dictionary<String, String>(this.BodyParameters);
+                    string formStr = ConcatQueryString(formParams);
+                    byte[] formData = System.Text.Encoding.UTF8.GetBytes(formStr);
+                    this.SetContent(formData, "UTF-8", FormatType.FORM);
+                    foreach (var formParam in formParams)
+                    {
+                        DictionaryUtil.Add(paramsToSign, formParam.Key, formParam.Value);
+                    }
+                }
+
+                String strToSign = this.Composer.ComposeStringToSign(Method, null, signer, paramsToSign, null, null);
                 String signature = signer.SignString(strToSign, accessSecret + "&");
                 imutableMap.Add("Signature", signature);
             }
 
-            String url = ComposeUrl(domain.DomianName, imutableMap);
-            this.Url = url;
+            Url = this.ComposeUrl(domain.DomianName, imutableMap);
             return this;
         }
 

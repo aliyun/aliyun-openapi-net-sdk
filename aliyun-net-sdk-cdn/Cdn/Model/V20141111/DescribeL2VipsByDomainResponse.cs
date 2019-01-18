@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeL2VipsByDomainResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string domainName;
 
 		private List<string> vips;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{

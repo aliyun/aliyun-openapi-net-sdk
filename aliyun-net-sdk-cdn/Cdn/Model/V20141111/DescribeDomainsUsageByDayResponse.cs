@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainsUsageByDayResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string domainName;
 
 		private string dataInterval;
@@ -32,9 +34,21 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string endTime;
 
-		private List<UsageByDay> usageByDays;
+		private List<DescribeDomainsUsageByDay_UsageByDay> usageByDays;
 
-		private UsageTotal_ usageTotal;
+		private DescribeDomainsUsageByDay_UsageTotal usageTotal;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{
@@ -84,7 +98,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<UsageByDay> UsageByDays
+		public List<DescribeDomainsUsageByDay_UsageByDay> UsageByDays
 		{
 			get
 			{
@@ -96,7 +110,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public UsageTotal_ UsageTotal
+		public DescribeDomainsUsageByDay_UsageTotal UsageTotal
 		{
 			get
 			{
@@ -108,7 +122,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class UsageByDay{
+		public class DescribeDomainsUsageByDay_UsageByDay
+		{
 
 			private string timeStamp;
 
@@ -251,7 +266,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class UsageTotal_{
+		public class DescribeDomainsUsageByDay_UsageTotal
+		{
 
 			private string bytesHitRate;
 

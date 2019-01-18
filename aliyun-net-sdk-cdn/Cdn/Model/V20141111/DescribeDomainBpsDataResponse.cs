@@ -24,6 +24,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainBpsDataResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string domainName;
 
 		private string dataInterval;
@@ -40,9 +42,21 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string ispName;
 
-		private List<DataModule> bpsDataPerInterval;
+		private List<DescribeDomainBpsData_DataModule> bpsDataPerInterval;
 
-		private List<DataModule> supplyBpsDatas;
+		private List<DescribeDomainBpsData_DataModule1> supplyBpsDatas;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{
@@ -140,7 +154,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<DataModule> BpsDataPerInterval
+		public List<DescribeDomainBpsData_DataModule> BpsDataPerInterval
 		{
 			get
 			{
@@ -152,7 +166,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<DataModule> SupplyBpsDatas
+		public List<DescribeDomainBpsData_DataModule1> SupplyBpsDatas
 		{
 			get
 			{
@@ -164,11 +178,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class DataModule{
+		public class DescribeDomainBpsData_DataModule
+		{
 
 			private string timeStamp;
 
-			private string value_;
+			private string _value;
 
 			private string domesticValue;
 
@@ -204,15 +219,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string Value
+			public string _Value
 			{
 				get
 				{
-					return value_;
+					return _value;
 				}
 				set	
 				{
-					value_ = value;
+					_value = value;
 				}
 			}
 
@@ -349,11 +364,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class DataModule{
+		public class DescribeDomainBpsData_DataModule1
+		{
 
 			private string timeStamp;
 
-			private string value_;
+			private string _value;
 
 			public string TimeStamp
 			{
@@ -367,15 +383,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string Value
+			public string _Value
 			{
 				get
 				{
-					return value_;
+					return _value;
 				}
 				set	
 				{
-					value_ = value;
+					_value = value;
 				}
 			}
 		}

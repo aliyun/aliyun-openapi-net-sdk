@@ -38,18 +38,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeModifyParameterLogResponse.PageNumber = context.IntegerValue("DescribeModifyParameterLog.PageNumber");
 			describeModifyParameterLogResponse.PageRecordCount = context.IntegerValue("DescribeModifyParameterLog.PageRecordCount");
 
-			List<DescribeModifyParameterLogResponse.ParameterChangeLog> items = new List<DescribeModifyParameterLogResponse.ParameterChangeLog>();
+			List<DescribeModifyParameterLogResponse.DescribeModifyParameterLog_ParameterChangeLog> describeModifyParameterLogResponse_items = new List<DescribeModifyParameterLogResponse.DescribeModifyParameterLog_ParameterChangeLog>();
 			for (int i = 0; i < context.Length("DescribeModifyParameterLog.Items.Length"); i++) {
-				DescribeModifyParameterLogResponse.ParameterChangeLog parameterChangeLog = new DescribeModifyParameterLogResponse.ParameterChangeLog();
+				DescribeModifyParameterLogResponse.DescribeModifyParameterLog_ParameterChangeLog parameterChangeLog = new DescribeModifyParameterLogResponse.DescribeModifyParameterLog_ParameterChangeLog();
 				parameterChangeLog.ModifyTime = context.StringValue("DescribeModifyParameterLog.Items["+ i +"].ModifyTime");
 				parameterChangeLog.OldParameterValue = context.StringValue("DescribeModifyParameterLog.Items["+ i +"].OldParameterValue");
 				parameterChangeLog.NewParameterValue = context.StringValue("DescribeModifyParameterLog.Items["+ i +"].NewParameterValue");
 				parameterChangeLog.ParameterName = context.StringValue("DescribeModifyParameterLog.Items["+ i +"].ParameterName");
-				parameterChangeLog.Status = context.EnumValue<DescribeModifyParameterLogResponse.ParameterChangeLog.StatusEnum>("DescribeModifyParameterLog.Items["+ i +"].Status");
+				parameterChangeLog.Status = context.StringValue("DescribeModifyParameterLog.Items["+ i +"].Status");
 
-				items.Add(parameterChangeLog);
+				describeModifyParameterLogResponse_items.Add(parameterChangeLog);
 			}
-			describeModifyParameterLogResponse.Items = items;
+			describeModifyParameterLogResponse.Items = describeModifyParameterLogResponse_items;
         
 			return describeModifyParameterLogResponse;
         }

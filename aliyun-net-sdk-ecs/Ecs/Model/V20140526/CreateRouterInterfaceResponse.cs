@@ -24,7 +24,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateRouterInterfaceResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string routerInterfaceId;
+
+		private long? orderId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string RouterInterfaceId
 		{
@@ -35,6 +51,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				routerInterfaceId = value;
+			}
+		}
+
+		public long? OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 	}

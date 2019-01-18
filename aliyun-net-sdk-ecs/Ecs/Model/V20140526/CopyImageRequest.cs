@@ -29,56 +29,70 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CopyImageRequest : RpcAcsRequest<CopyImageResponse>
     {
         public CopyImageRequest()
-            : base("Ecs", "2014-05-26", "CopyImage")
+            : base("Ecs", "2014-05-26", "CopyImage", "ecs", "openAPI")
         {
         }
 
-		private long? ownerId;
+		private long? resourceOwnerId;
+
+		private string imageId;
+
+		private bool? encrypted;
 
 		private string resourceOwnerAccount;
 
-		private long? resourceOwnerId;
+		private string regionId;
 
 		private string destinationImageName;
-
-		private string destinationDescription;
-
-		private string imageId;
 
 		private string destinationRegionId;
 
 		private string ownerAccount;
 
-		private string tag1Key;
+		private string action;
 
-		private string tag2Key;
+		private List<Tag> tags;
 
-		private string tag3Key;
+		private long? ownerId;
 
-		private string tag4Key;
+		private string destinationDescription;
 
-		private string tag5Key;
-
-		private string tag1Value;
-
-		private string tag2Value;
-
-		private string tag3Value;
-
-		private string tag4Value;
-
-		private string tag5Value;
-
-		public long? OwnerId
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return ownerId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public bool? Encrypted
+		{
+			get
+			{
+				return encrypted;
+			}
+			set	
+			{
+				encrypted = value;
+				DictionaryUtil.Add(QueryParameters, "Encrypted", value.ToString());
 			}
 		}
 
@@ -95,16 +109,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string RegionId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return regionId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -118,32 +132,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				destinationImageName = value;
 				DictionaryUtil.Add(QueryParameters, "DestinationImageName", value);
-			}
-		}
-
-		public string DestinationDescription
-		{
-			get
-			{
-				return destinationDescription;
-			}
-			set	
-			{
-				destinationDescription = value;
-				DictionaryUtil.Add(QueryParameters, "DestinationDescription", value);
-			}
-		}
-
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
 			}
 		}
 
@@ -173,133 +161,92 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag1Key
+		public string Action
 		{
 			get
 			{
-				return tag1Key;
+				return action;
 			}
 			set	
 			{
-				tag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string Tag2Key
+		public List<Tag> Tags
 		{
 			get
 			{
-				return tag2Key;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				tag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Key", value);
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 
-		public string Tag3Key
+		public long? OwnerId
 		{
 			get
 			{
-				return tag3Key;
+				return ownerId;
 			}
 			set	
 			{
-				tag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Key", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string Tag4Key
+		public string DestinationDescription
 		{
 			get
 			{
-				return tag4Key;
+				return destinationDescription;
 			}
 			set	
 			{
-				tag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Key", value);
+				destinationDescription = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationDescription", value);
 			}
 		}
 
-		public string Tag5Key
+		public class Tag
 		{
-			get
-			{
-				return tag5Key;
-			}
-			set	
-			{
-				tag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Key", value);
-			}
-		}
 
-		public string Tag1Value
-		{
-			get
-			{
-				return tag1Value;
-			}
-			set	
-			{
-				tag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
-			}
-		}
+			private string value_;
 
-		public string Tag2Value
-		{
-			get
-			{
-				return tag2Value;
-			}
-			set	
-			{
-				tag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Value", value);
-			}
-		}
+			private string key;
 
-		public string Tag3Value
-		{
-			get
+			public string Value
 			{
-				return tag3Value;
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
-			set	
-			{
-				tag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Value", value);
-			}
-		}
 
-		public string Tag4Value
-		{
-			get
+			public string Key
 			{
-				return tag4Value;
-			}
-			set	
-			{
-				tag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Value", value);
-			}
-		}
-
-		public string Tag5Value
-		{
-			get
-			{
-				return tag5Value;
-			}
-			set	
-			{
-				tag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Value", value);
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

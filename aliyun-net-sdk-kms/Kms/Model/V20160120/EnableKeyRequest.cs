@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class EnableKeyRequest : RpcAcsRequest<EnableKeyResponse>
     {
         public EnableKeyRequest()
-            : base("Kms", "2016-01-20", "EnableKey")
+            : base("Kms", "2016-01-20", "EnableKey", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }

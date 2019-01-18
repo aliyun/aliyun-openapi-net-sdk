@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	public class ListMediaResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string nextPageToken;
 
-		private List<Media> mediaList;
+		private List<ListMedia_Media> mediaList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string NextPageToken
 		{
@@ -40,7 +54,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public List<Media> MediaList
+		public List<ListMedia_Media> MediaList
 		{
 			get
 			{
@@ -52,7 +66,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public class Media{
+		public class ListMedia_Media
+		{
 
 			private string mediaId;
 
@@ -80,13 +95,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string publishState;
 
+			private string censorState;
+
 			private string creationTime;
 
 			private List<string> tags;
 
 			private List<string> runIdList;
 
-			private File_ file;
+			private ListMedia_File file;
 
 			public string MediaId
 			{
@@ -244,6 +261,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public string CensorState
+			{
+				get
+				{
+					return censorState;
+				}
+				set	
+				{
+					censorState = value;
+				}
+			}
+
 			public string CreationTime
 			{
 				get
@@ -280,7 +309,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public File_ File
+			public ListMedia_File File
 			{
 				get
 				{
@@ -292,7 +321,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
-			public class File_{
+			public class ListMedia_File
+			{
 
 				private string uRL;
 

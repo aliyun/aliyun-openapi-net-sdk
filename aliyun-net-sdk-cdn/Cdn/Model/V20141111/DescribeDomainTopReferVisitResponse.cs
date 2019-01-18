@@ -24,11 +24,25 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeDomainTopReferVisitResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string domainName;
 
 		private string startTime;
 
-		private List<ReferList> topReferList;
+		private List<DescribeDomainTopReferVisit_ReferList> topReferList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainName
 		{
@@ -54,7 +68,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<ReferList> TopReferList
+		public List<DescribeDomainTopReferVisit_ReferList> TopReferList
 		{
 			get
 			{
@@ -66,7 +80,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class ReferList{
+		public class DescribeDomainTopReferVisit_ReferList
+		{
 
 			private string referDetail;
 

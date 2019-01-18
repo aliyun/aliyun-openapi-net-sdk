@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{b8dbd9e8-fa27-414d-8c15-a067a9001bca}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-cloudesl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Cloudesl\Model\V20180801\BatchInsertItemsResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DeleteItemRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeUserOperationLogRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\UpdateStoreResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\CreateStoreRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\UpdateStoreRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\UnbindEslDeviceRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\BindEslDeviceShelfResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\UnbindEslDeviceResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeUserRamPolicyResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeUserRamPolicyRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeItemsResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeStoresResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\BatchInsertItemsRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\UnbindEslDeviceShelfRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeEslDevicesResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeUserOperationLogResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DeleteItemResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeEslDevicesRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\BindEslDeviceResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DeleteStoreRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\UnbindEslDeviceShelfResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DeleteEslDeviceRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\CreateStoreResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\BindEslDeviceShelfRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DeleteEslDeviceResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeItemsRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeCompanyResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeStoresRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\BindEslDeviceRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeCompanyRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeAlarmsResponse.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DescribeAlarmsRequest.cs" />
+	<Compile Include="Cloudesl\Model\V20180801\DeleteStoreResponse.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\DescribeAlarmsResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\BindEslDeviceShelfResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\BindEslDeviceResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\DeleteItemResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\DeleteEslDeviceResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\BatchInsertItemsResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\UnbindEslDeviceResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\DeleteStoreResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\DescribeUserRamPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\DescribeStoresResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\DescribeCompanyResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\CreateStoreResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\DescribeEslDevicesResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\UnbindEslDeviceShelfResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\DescribeUserOperationLogResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\DescribeItemsResponseUnmarshaller.cs" />
+	<Compile Include="Cloudesl\Transform\V20180801\UpdateStoreResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

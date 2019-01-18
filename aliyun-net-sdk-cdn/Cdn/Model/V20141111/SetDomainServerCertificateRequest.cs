@@ -33,71 +33,53 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private long? ownerId;
+		private string privateKey;
 
-		private string securityToken;
-
-		private string domainName;
-
-		private string certName;
+		private string forceSet;
 
 		private string serverCertificateStatus;
 
 		private string serverCertificate;
 
-		private string privateKey;
+		private string securityToken;
+
+		private string certType;
+
+		private string certName;
+
+		private string domainName;
+
+		private string action;
+
+		private long? ownerId;
 
 		private string region;
 
-		public long? OwnerId
+		private string accessKeyId;
+
+		public string PrivateKey
 		{
 			get
 			{
-				return ownerId;
+				return privateKey;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				privateKey = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
 			}
 		}
 
-		public string SecurityToken
+		public string ForceSet
 		{
 			get
 			{
-				return securityToken;
+				return forceSet;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string CertName
-		{
-			get
-			{
-				return certName;
-			}
-			set	
-			{
-				certName = value;
-				DictionaryUtil.Add(QueryParameters, "CertName", value);
+				forceSet = value;
+				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
 			}
 		}
 
@@ -127,16 +109,81 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string PrivateKey
+		public string SecurityToken
 		{
 			get
 			{
-				return privateKey;
+				return securityToken;
 			}
 			set	
 			{
-				privateKey = value;
-				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string CertType
+		{
+			get
+			{
+				return certType;
+			}
+			set	
+			{
+				certType = value;
+				DictionaryUtil.Add(QueryParameters, "CertType", value);
+			}
+		}
+
+		public string CertName
+		{
+			get
+			{
+				return certName;
+			}
+			set	
+			{
+				certName = value;
+				DictionaryUtil.Add(QueryParameters, "CertName", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -150,6 +197,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				region = value;
 				DictionaryUtil.Add(QueryParameters, "Region", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class StartMixStreamsServiceResponse : AcsResponse
 	{
 
-		private List<MixStreamsInfo> mixStreamsInfoList;
+		private string requestId;
 
-		public List<MixStreamsInfo> MixStreamsInfoList
+		private List<StartMixStreamsService_MixStreamsInfo> mixStreamsInfoList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<StartMixStreamsService_MixStreamsInfo> MixStreamsInfoList
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class MixStreamsInfo{
+		public class StartMixStreamsService_MixStreamsInfo
+		{
 
 			private string domainName;
 

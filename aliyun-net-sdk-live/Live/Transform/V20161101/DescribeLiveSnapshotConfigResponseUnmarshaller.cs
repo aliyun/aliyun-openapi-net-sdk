@@ -17,11 +17,11 @@
  * under the License.
  */
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Live.Model.V20161101;
+using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Live.Transform.V20161101
+namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveSnapshotConfigResponseUnmarshaller
     {
@@ -37,9 +37,9 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 			describeLiveSnapshotConfigResponse.TotalNum = context.IntegerValue("DescribeLiveSnapshotConfig.TotalNum");
 			describeLiveSnapshotConfigResponse.TotalPage = context.IntegerValue("DescribeLiveSnapshotConfig.TotalPage");
 
-			List<DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfig> liveStreamSnapshotConfigList = new List<DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfig>();
+			List<DescribeLiveSnapshotConfigResponse.DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig> describeLiveSnapshotConfigResponse_liveStreamSnapshotConfigList = new List<DescribeLiveSnapshotConfigResponse.DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig>();
 			for (int i = 0; i < context.Length("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList.Length"); i++) {
-				DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfig liveStreamSnapshotConfig = new DescribeLiveSnapshotConfigResponse.LiveStreamSnapshotConfig();
+				DescribeLiveSnapshotConfigResponse.DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig liveStreamSnapshotConfig = new DescribeLiveSnapshotConfigResponse.DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig();
 				liveStreamSnapshotConfig.DomainName = context.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].DomainName");
 				liveStreamSnapshotConfig.AppName = context.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].AppName");
 				liveStreamSnapshotConfig.TimeInterval = context.IntegerValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].TimeInterval");
@@ -49,9 +49,9 @@ namespace Aliyun.Acs.Live.Transform.V20161101
 				liveStreamSnapshotConfig.SequenceOssObject = context.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].SequenceOssObject");
 				liveStreamSnapshotConfig.CreateTime = context.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].CreateTime");
 
-				liveStreamSnapshotConfigList.Add(liveStreamSnapshotConfig);
+				describeLiveSnapshotConfigResponse_liveStreamSnapshotConfigList.Add(liveStreamSnapshotConfig);
 			}
-			describeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList = liveStreamSnapshotConfigList;
+			describeLiveSnapshotConfigResponse.LiveStreamSnapshotConfigList = describeLiveSnapshotConfigResponse_liveStreamSnapshotConfigList;
         
 			return describeLiveSnapshotConfigResponse;
         }

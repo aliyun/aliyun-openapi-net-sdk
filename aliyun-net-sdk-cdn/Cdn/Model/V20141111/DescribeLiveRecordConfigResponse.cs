@@ -24,9 +24,23 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeLiveRecordConfigResponse : AcsResponse
 	{
 
-		private List<LiveAppRecord> liveAppRecordList;
+		private string requestId;
 
-		public List<LiveAppRecord> LiveAppRecordList
+		private List<DescribeLiveRecordConfig_LiveAppRecord> liveAppRecordList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeLiveRecordConfig_LiveAppRecord> LiveAppRecordList
 		{
 			get
 			{
@@ -38,7 +52,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public class LiveAppRecord{
+		public class DescribeLiveRecordConfig_LiveAppRecord
+		{
 
 			private string domainName;
 

@@ -24,7 +24,21 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 	public class DescribeRangeDataByLocateAndIspServiceResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string jsonResult;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string JsonResult
 		{

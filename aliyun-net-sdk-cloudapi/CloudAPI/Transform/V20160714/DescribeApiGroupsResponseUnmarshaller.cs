@@ -35,9 +35,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiGroupsResponse.PageSize = context.IntegerValue("DescribeApiGroups.PageSize");
 			describeApiGroupsResponse.PageNumber = context.IntegerValue("DescribeApiGroups.PageNumber");
 
-			List<DescribeApiGroupsResponse.ApiGroupAttribute> apiGroupAttributes = new List<DescribeApiGroupsResponse.ApiGroupAttribute>();
+			List<DescribeApiGroupsResponse.DescribeApiGroups_ApiGroupAttribute> describeApiGroupsResponse_apiGroupAttributes = new List<DescribeApiGroupsResponse.DescribeApiGroups_ApiGroupAttribute>();
 			for (int i = 0; i < context.Length("DescribeApiGroups.ApiGroupAttributes.Length"); i++) {
-				DescribeApiGroupsResponse.ApiGroupAttribute apiGroupAttribute = new DescribeApiGroupsResponse.ApiGroupAttribute();
+				DescribeApiGroupsResponse.DescribeApiGroups_ApiGroupAttribute apiGroupAttribute = new DescribeApiGroupsResponse.DescribeApiGroups_ApiGroupAttribute();
 				apiGroupAttribute.GroupId = context.StringValue("DescribeApiGroups.ApiGroupAttributes["+ i +"].GroupId");
 				apiGroupAttribute.GroupName = context.StringValue("DescribeApiGroups.ApiGroupAttributes["+ i +"].GroupName");
 				apiGroupAttribute.SubDomain = context.StringValue("DescribeApiGroups.ApiGroupAttributes["+ i +"].SubDomain");
@@ -46,12 +46,12 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				apiGroupAttribute.ModifiedTime = context.StringValue("DescribeApiGroups.ApiGroupAttributes["+ i +"].ModifiedTime");
 				apiGroupAttribute.RegionId = context.StringValue("DescribeApiGroups.ApiGroupAttributes["+ i +"].RegionId");
 				apiGroupAttribute.TrafficLimit = context.IntegerValue("DescribeApiGroups.ApiGroupAttributes["+ i +"].TrafficLimit");
-				apiGroupAttribute.BillingStatus = context.EnumValue<DescribeApiGroupsResponse.ApiGroupAttribute.BillingStatusEnum>("DescribeApiGroups.ApiGroupAttributes["+ i +"].BillingStatus");
-				apiGroupAttribute.IllegalStatus = context.EnumValue<DescribeApiGroupsResponse.ApiGroupAttribute.IllegalStatusEnum>("DescribeApiGroups.ApiGroupAttributes["+ i +"].IllegalStatus");
+				apiGroupAttribute.BillingStatus = context.StringValue("DescribeApiGroups.ApiGroupAttributes["+ i +"].BillingStatus");
+				apiGroupAttribute.IllegalStatus = context.StringValue("DescribeApiGroups.ApiGroupAttributes["+ i +"].IllegalStatus");
 
-				apiGroupAttributes.Add(apiGroupAttribute);
+				describeApiGroupsResponse_apiGroupAttributes.Add(apiGroupAttribute);
 			}
-			describeApiGroupsResponse.ApiGroupAttributes = apiGroupAttributes;
+			describeApiGroupsResponse.ApiGroupAttributes = describeApiGroupsResponse_apiGroupAttributes;
         
 			return describeApiGroupsResponse;
         }

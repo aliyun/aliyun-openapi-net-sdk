@@ -24,13 +24,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeVpcsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<Vpc> vpcs;
+		private List<DescribeVpcs_Vpc> vpcs;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? TotalCount
 		{
@@ -68,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Vpc> Vpcs
+		public List<DescribeVpcs_Vpc> Vpcs
 		{
 			get
 			{
@@ -80,7 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public class Vpc{
+		public class DescribeVpcs_Vpc
+		{
 
 			private string vpcId;
 
@@ -98,7 +113,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string description;
 
-			private string isDefault;
+			private bool? isDefault;
 
 			private List<string> vSwitchIds;
 
@@ -200,7 +215,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string IsDefault
+			public bool? IsDefault
 			{
 				get
 				{

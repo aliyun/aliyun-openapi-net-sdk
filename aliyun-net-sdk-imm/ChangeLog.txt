@@ -1,0 +1,72 @@
+2019-01-11 Version: 1.3.4
+1, CreateOfficeConversionTask, ConvertOfficeFormat support Hidecomments
+
+2019-01-09 Version: 1.3.3
+1, Add user role support.
+
+2019-01-09 Version: 1.3.2
+1, Add user role support.
+2, Add new APIs for IMM.
+
+2018-12-28 Version: 1.3.1
+1, Add new set image video api
+
+2018-12-28 Version: 1.3.0
+1, Add new set image video api
+
+2018-12-28 Version: 1.3.0
+1, Add new set image video api
+
+2018-12-28 Version: 1.3.0
+1, Add new set image video api
+
+2018-12-28 Version: 1.3.0
+1, Add new set image video api.
+
+
+2018-12-28 Version: 1.2.2
+1, Add new set image video api.
+2, Add video async task api.
+
+2018-12-05 Version: 1.2.2
+1, Add image async job.
+2, Fix group bug.
+
+2018-11-27 Version: 1.2.1
+1, ConvertOfficeFormat support TgtFilePrefix, TgtFileSuffix, TgtFilePages, FitToPagesTall, FitToPagesWide
+
+2018-11-27 Version: 1.2.0
+1, add doc index api
+
+2018-11-15 Version: 1.1.2
+1, update version
+
+2018-11-15 Version: 1.1.1
+1, update version.
+
+2018-11-15 Version: 1.1.0
+1, Remove FaceCompare, FaceRegist, FaceSearch api.
+2, Add DetectLogo api.
+3, CreateOfficeConversionTask support IdempotentToken.
+
+2018-10-10 Version: 1.1.0
+1, add UpdateProject api, support update CU, ServiceRole
+2, PutProject not support edit
+3, CreateOfficeConversionTask api now supports FitToPagesTall, FitToPagesWide
+4, Remove paramater Engines, Indexers from project apis
+
+2018-08-24 Version: 1.0.3
+1, Add api: DetectQRCode
+
+2018-08-21 Version: 1.0.2
+1, DeleteFaceSearchImageByIdRequest add field: srcUri(String).
+2, CreateFaceSetResponse  add field: faces(Long).
+3, GetFaceSetResponse add field: faces(Long).
+4, Fix class Blurness in IndexFaceResponse.
+
+2018-08-04 Version: 1.0.1
+1, CreateOfficeConversionTask add TgtFilePages field to specify the final uploaded page
+
+2018-07-25 Version: 1.0.0
+1,  First version of C# SDK for IMM
+

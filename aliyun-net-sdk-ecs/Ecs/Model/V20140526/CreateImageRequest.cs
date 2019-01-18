@@ -29,71 +29,61 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
     public class CreateImageRequest : RpcAcsRequest<CreateImageResponse>
     {
         public CreateImageRequest()
-            : base("Ecs", "2014-05-26", "CreateImage")
+            : base("Ecs", "2014-05-26", "CreateImage", "ecs", "openAPI")
         {
         }
 
-		private long? ownerId;
-
-		private string resourceOwnerAccount;
+		private List<DiskDeviceMapping> diskDeviceMappings;
 
 		private long? resourceOwnerId;
 
 		private string snapshotId;
 
-		private string imageName;
-
-		private string imageVersion;
-
-		private string description;
+		private string resourceOwnerAccount;
 
 		private string clientToken;
 
 		private string ownerAccount;
 
-		private string tag1Key;
+		private string description;
 
-		private string tag2Key;
+		private long? ownerId;
 
-		private string tag3Key;
+		private string platform;
 
-		private string tag4Key;
+		private string resourceGroupId;
 
-		private string tag5Key;
+		private string instanceId;
 
-		private string tag1Value;
+		private string regionId;
 
-		private string tag2Value;
+		private string imageName;
 
-		private string tag3Value;
+		private string imageVersion;
 
-		private string tag4Value;
+		private string action;
 
-		private string tag5Value;
+		private List<Tag> tags;
 
-		public long? OwnerId
+		private string architecture;
+
+		public List<DiskDeviceMapping> DiskDeviceMappings
 		{
 			get
 			{
-				return ownerId;
+				return diskDeviceMappings;
 			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
 
-		public string ResourceOwnerAccount
-		{
-			get
+			set
 			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				diskDeviceMappings = value;
+				for (int i = 0; i < diskDeviceMappings.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".SnapshotId", diskDeviceMappings[i].SnapshotId);
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".Size", diskDeviceMappings[i].Size);
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".DiskType", diskDeviceMappings[i].DiskType);
+					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".Device", diskDeviceMappings[i].Device);
+				}
 			}
 		}
 
@@ -123,42 +113,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ImageName
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return imageName;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				imageName = value;
-				DictionaryUtil.Add(QueryParameters, "ImageName", value);
-			}
-		}
-
-		public string ImageVersion
-		{
-			get
-			{
-				return imageVersion;
-			}
-			set	
-			{
-				imageVersion = value;
-				DictionaryUtil.Add(QueryParameters, "ImageVersion", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -188,133 +152,243 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Tag1Key
+		public string Description
 		{
 			get
 			{
-				return tag1Key;
+				return description;
 			}
 			set	
 			{
-				tag1Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Key", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public string Tag2Key
+		public long? OwnerId
 		{
 			get
 			{
-				return tag2Key;
+				return ownerId;
 			}
 			set	
 			{
-				tag2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Key", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string Tag3Key
+		public string Platform
 		{
 			get
 			{
-				return tag3Key;
+				return platform;
 			}
 			set	
 			{
-				tag3Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Key", value);
+				platform = value;
+				DictionaryUtil.Add(QueryParameters, "Platform", value);
 			}
 		}
 
-		public string Tag4Key
+		public string ResourceGroupId
 		{
 			get
 			{
-				return tag4Key;
+				return resourceGroupId;
 			}
 			set	
 			{
-				tag4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Key", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
-		public string Tag5Key
+		public string InstanceId
 		{
 			get
 			{
-				return tag5Key;
+				return instanceId;
 			}
 			set	
 			{
-				tag5Key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Key", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public string Tag1Value
+		public string RegionId
 		{
 			get
 			{
-				return tag1Value;
+				return regionId;
 			}
 			set	
 			{
-				tag1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.Value", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
-		public string Tag2Value
+		public string ImageName
 		{
 			get
 			{
-				return tag2Value;
+				return imageName;
 			}
 			set	
 			{
-				tag2Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.Value", value);
+				imageName = value;
+				DictionaryUtil.Add(QueryParameters, "ImageName", value);
 			}
 		}
 
-		public string Tag3Value
+		public string ImageVersion
 		{
 			get
 			{
-				return tag3Value;
+				return imageVersion;
 			}
 			set	
 			{
-				tag3Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.Value", value);
+				imageVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ImageVersion", value);
 			}
 		}
 
-		public string Tag4Value
+		public string Action
 		{
 			get
 			{
-				return tag4Value;
+				return action;
 			}
 			set	
 			{
-				tag4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.Value", value);
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public string Tag5Value
+		public List<Tag> Tags
 		{
 			get
 			{
-				return tag5Value;
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
+		public string Architecture
+		{
+			get
+			{
+				return architecture;
 			}
 			set	
 			{
-				tag5Value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.Value", value);
+				architecture = value;
+				DictionaryUtil.Add(QueryParameters, "Architecture", value);
+			}
+		}
+
+		public class DiskDeviceMapping
+		{
+
+			private string snapshotId;
+
+			private int? size;
+
+			private string diskType;
+
+			private string device;
+
+			public string SnapshotId
+			{
+				get
+				{
+					return snapshotId;
+				}
+				set	
+				{
+					snapshotId = value;
+				}
+			}
+
+			public int? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string DiskType
+			{
+				get
+				{
+					return diskType;
+				}
+				set	
+				{
+					diskType = value;
+				}
+			}
+
+			public string Device
+			{
+				get
+				{
+					return device;
+				}
+				set	
+				{
+					device = value;
+				}
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 
