@@ -14,4 +14,4 @@ script:
   - dotnet test /p:AltCover=true
 after_success:
   - cd aliyun-net-sdk-core/
-  - bash <(curl -s https://codecov.io/bash) || echo"Codecov did not collect coverage reports"
+  - bash <(curl -s https://codecov.io/bash)
