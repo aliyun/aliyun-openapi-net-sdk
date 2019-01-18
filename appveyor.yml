@@ -2,7 +2,7 @@ version: '1.0.{build}'
 image: Visual Studio 2017
 branches:
   only:
-  - master
+    - master
 init:
   - cmd: git config --global core.autocrlf true
 install:
