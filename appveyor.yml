@@ -9,8 +9,8 @@ install:
   - cmd: dotnet --version
   - cmd: dotnet tool install --global altcover.visualizer
   - cmd: cd aliyun-net-sdk-core.Tests/ && dotnet add package AltCover && cd ../
-  - cmd: dotnet restore
 build_script:
+  - cmd: dotnet restore
   - cmd: dotnet build
 test_script:
   - cmd: dotnet test /p:AltCover=true
