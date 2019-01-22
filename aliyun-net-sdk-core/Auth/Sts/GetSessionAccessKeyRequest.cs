@@ -18,16 +18,15 @@
  */
 
 using System;
+
 using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth.Sts
 {
-    class GetSessionAccessKeyRequest : RpcAcsRequest<GetSessionAccessKeyResponse>
+    public class GetSessionAccessKeyRequest : RpcAcsRequest<GetSessionAccessKeyResponse>
     {
-        public GetSessionAccessKeyRequest()
-            : base("Sts", "2015-04-01", "GenerateSessionAccessKey")
-        {
-        }
+        public GetSessionAccessKeyRequest() : base("Sts", "2015-04-01", "GenerateSessionAccessKey")
+        { }
 
         private int durationSeconds = 3600;
         private String publicKeyId;
