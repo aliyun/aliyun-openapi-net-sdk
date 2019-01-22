@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{a2c963f1-277d-418e-a0e3-b8eb562ccbb7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-ros</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="ROS\Model\V20150901\DeleteStackResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\PreviewStackRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\CreateStacksResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\GetStackPolicyRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeStacksRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\UpdateStackRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\CreateStacksRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\GetStackPolicyResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeResourceTypeTemplateRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeStackDetailRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeRegionsResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeRegionsRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\DoActionsRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\DeleteStackRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\InquiryStackResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\ValidateTemplateRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\InquiryStackRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\AbandonStackResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeResourceDetailRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\SetStackPolicyRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeStackDetailResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\WaitConditionsRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeResourceDetailResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeResourceTypeTemplateResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\PreviewStackResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeEventsResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\SetStackPolicyResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\ContinueCreateStackResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeEventsRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeResourceTypeDetailRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\CancelUpdateStackResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeStacksResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\ValidateTemplateResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeResourceTypeDetailResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeResourceTypesResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeResourceTypesRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeTemplateResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeResourcesRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeResourcesResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\CancelUpdateStackRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\WaitConditionsResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\UpdateStackResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\AbandonStackRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\DoActionsResponse.cs" />
+	<Compile Include="ROS\Model\V20150901\DescribeTemplateRequest.cs" />
+	<Compile Include="ROS\Model\V20150901\ContinueCreateStackRequest.cs" />
+	<Compile Include="ROS\Transform\V20150901\ContinueCreateStackResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\DescribeResourcesResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\WaitConditionsResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\GetStackPolicyResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\PreviewStackResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\SetStackPolicyResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\DescribeStacksResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\DescribeTemplateResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\DescribeResourceDetailResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\DescribeResourceTypesResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\DoActionsResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\DescribeResourceTypeDetailResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\InquiryStackResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\AbandonStackResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\ValidateTemplateResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\DescribeResourceTypeTemplateResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\DescribeEventsResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\DeleteStackResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\UpdateStackResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\CancelUpdateStackResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\DescribeStackDetailResponseUnmarshaller.cs" />
+	<Compile Include="ROS\Transform\V20150901\CreateStacksResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
