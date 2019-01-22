@@ -22,7 +22,7 @@ using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth.Sts
 {
-    class GetSessionAccessKeyRequest : RpcAcsRequest<GetSessionAccessKeyResponse>
+    public class GetSessionAccessKeyRequest : RpcAcsRequest<GetSessionAccessKeyResponse>
     {
         public GetSessionAccessKeyRequest()
             : base("Sts", "2015-04-01", "GenerateSessionAccessKey")
