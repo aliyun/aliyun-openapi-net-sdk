@@ -23,9 +23,8 @@ namespace Aliyun.Acs.Core.UnitTests.Auth
         [Fact]
         public void SignString()
         {
-            // 结果每次都是不同的
             string str = this.getInstance().SignString("foo", "secret");
-            Assert.NotEmpty(str);
+            Assert.Equal("dzukRpPHVT1u4g9h6l0nV6mk9KRNKEGuTpW1LkzWLbQ=", str);
         }
 
         [Fact]
