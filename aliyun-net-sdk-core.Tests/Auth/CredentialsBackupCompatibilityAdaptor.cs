@@ -56,7 +56,7 @@ namespace Aliyun.Acs.Core.UnitTests.Auth
             var provider = new StaticCredentialsProvider(profile);
             CredentialsBackupCompatibilityAdaptor instance = new CredentialsBackupCompatibilityAdaptor(provider);;
             Assert.IsType<int>(instance.GetHashCode());
-            Assert.IsType<Type>(instance.GetType());
+            instance.GetType();
             Assert.IsType<Aliyun.Acs.Core.Auth.CredentialsBackupCompatibilityAdaptor>(instance);
         }
 
