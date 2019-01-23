@@ -105,7 +105,6 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				errorCodeSample.Code = context.StringValue("DescribeApi.ErrorCodeSamples["+ i +"].Code");
 				errorCodeSample.Message = context.StringValue("DescribeApi.ErrorCodeSamples["+ i +"].Message");
 				errorCodeSample.Description = context.StringValue("DescribeApi.ErrorCodeSamples["+ i +"].Description");
-				errorCodeSample.Model = context.StringValue("DescribeApi.ErrorCodeSamples["+ i +"].Model");
 
 				describeApiResponse_errorCodeSamples.Add(errorCodeSample);
 			}

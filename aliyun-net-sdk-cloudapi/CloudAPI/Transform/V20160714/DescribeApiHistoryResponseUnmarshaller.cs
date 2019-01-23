@@ -47,7 +47,6 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiHistoryResponse.FailResultSample = context.StringValue("DescribeApiHistory.FailResultSample");
 			describeApiHistoryResponse.DeployedTime = context.StringValue("DescribeApiHistory.DeployedTime");
 			describeApiHistoryResponse.AllowSignatureMethod = context.StringValue("DescribeApiHistory.AllowSignatureMethod");
-			describeApiHistoryResponse.ResultBodyModel = context.StringValue("DescribeApiHistory.ResultBodyModel");
 
 			DescribeApiHistoryResponse.DescribeApiHistory_RequestConfig requestConfig = new DescribeApiHistoryResponse.DescribeApiHistory_RequestConfig();
 			requestConfig.RequestProtocol = context.StringValue("DescribeApiHistory.RequestConfig.RequestProtocol");
@@ -56,7 +55,6 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			requestConfig.BodyFormat = context.StringValue("DescribeApiHistory.RequestConfig.BodyFormat");
 			requestConfig.PostBodyDescription = context.StringValue("DescribeApiHistory.RequestConfig.PostBodyDescription");
 			requestConfig.RequestMode = context.StringValue("DescribeApiHistory.RequestConfig.RequestMode");
-			requestConfig.BodyModel = context.StringValue("DescribeApiHistory.RequestConfig.BodyModel");
 			describeApiHistoryResponse.RequestConfig = requestConfig;
 
 			DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig serviceConfig = new DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig();
@@ -68,7 +66,6 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			serviceConfig.Mock = context.StringValue("DescribeApiHistory.ServiceConfig.Mock");
 			serviceConfig.MockResult = context.StringValue("DescribeApiHistory.ServiceConfig.MockResult");
 			serviceConfig.ServiceVpcEnable = context.StringValue("DescribeApiHistory.ServiceConfig.ServiceVpcEnable");
-			serviceConfig.MockStatusCode = context.IntegerValue("DescribeApiHistory.ServiceConfig.MockStatusCode");
 
 			DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_VpcConfig vpcConfig = new DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_VpcConfig();
 			vpcConfig.Name = context.StringValue("DescribeApiHistory.ServiceConfig.VpcConfig.Name");
@@ -76,16 +73,6 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			vpcConfig.InstanceId = context.StringValue("DescribeApiHistory.ServiceConfig.VpcConfig.InstanceId");
 			vpcConfig.Port = context.IntegerValue("DescribeApiHistory.ServiceConfig.VpcConfig.Port");
 			serviceConfig.VpcConfig = vpcConfig;
-
-			List<DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_MockHeader> serviceConfig_mockHeaders = new List<DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_MockHeader>();
-			for (int i = 0; i < context.Length("DescribeApiHistory.ServiceConfig.MockHeaders.Length"); i++) {
-				DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_MockHeader mockHeader = new DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_MockHeader();
-				mockHeader.HeaderName = context.StringValue("DescribeApiHistory.ServiceConfig.MockHeaders["+ i +"].HeaderName");
-				mockHeader.HeaderValue = context.StringValue("DescribeApiHistory.ServiceConfig.MockHeaders["+ i +"].HeaderValue");
-
-				serviceConfig_mockHeaders.Add(mockHeader);
-			}
-			serviceConfig.MockHeaders = serviceConfig_mockHeaders;
 			describeApiHistoryResponse.ServiceConfig = serviceConfig;
 
 			DescribeApiHistoryResponse.DescribeApiHistory_OpenIdConnectConfig openIdConnectConfig = new DescribeApiHistoryResponse.DescribeApiHistory_OpenIdConnectConfig();
