@@ -54,6 +54,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string allowSignatureMethod;
 
+		private string resultBodyModel;
+
 		private List<DescribeDeployedApi_ErrorCodeSample> errorCodeSamples;
 
 		private List<DescribeDeployedApi_ResultDescription> resultDescriptions;
@@ -253,6 +255,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			set	
 			{
 				allowSignatureMethod = value;
+			}
+		}
+
+		public string ResultBodyModel
+		{
+			get
+			{
+				return resultBodyModel;
+			}
+			set	
+			{
+				resultBodyModel = value;
 			}
 		}
 
@@ -1079,6 +1093,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private string requestMode;
 
+			private string bodyModel;
+
 			public string RequestProtocol
 			{
 				get
@@ -1150,6 +1166,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 					requestMode = value;
 				}
 			}
+
+			public string BodyModel
+			{
+				get
+				{
+					return bodyModel;
+				}
+				set	
+				{
+					bodyModel = value;
+				}
+			}
 		}
 
 		public class DescribeDeployedApi_ServiceConfig
@@ -1170,6 +1198,10 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			private string mockResult;
 
 			private string serviceVpcEnable;
+
+			private int? mockStatusCode;
+
+			private List<DescribeDeployedApi_MockHeader> mockHeaders;
 
 			private DescribeDeployedApi_VpcConfig vpcConfig;
 
@@ -1269,6 +1301,30 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
+			public int? MockStatusCode
+			{
+				get
+				{
+					return mockStatusCode;
+				}
+				set	
+				{
+					mockStatusCode = value;
+				}
+			}
+
+			public List<DescribeDeployedApi_MockHeader> MockHeaders
+			{
+				get
+				{
+					return mockHeaders;
+				}
+				set	
+				{
+					mockHeaders = value;
+				}
+			}
+
 			public DescribeDeployedApi_VpcConfig VpcConfig
 			{
 				get
@@ -1278,6 +1334,38 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					vpcConfig = value;
+				}
+			}
+
+			public class DescribeDeployedApi_MockHeader
+			{
+
+				private string headerName;
+
+				private string headerValue;
+
+				public string HeaderName
+				{
+					get
+					{
+						return headerName;
+					}
+					set	
+					{
+						headerName = value;
+					}
+				}
+
+				public string HeaderValue
+				{
+					get
+					{
+						return headerValue;
+					}
+					set	
+					{
+						headerValue = value;
+					}
 				}
 			}
 

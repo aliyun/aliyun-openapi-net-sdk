@@ -45,6 +45,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeDeployedApiResponse.FailResultSample = context.StringValue("DescribeDeployedApi.FailResultSample");
 			describeDeployedApiResponse.DeployedTime = context.StringValue("DescribeDeployedApi.DeployedTime");
 			describeDeployedApiResponse.AllowSignatureMethod = context.StringValue("DescribeDeployedApi.AllowSignatureMethod");
+			describeDeployedApiResponse.ResultBodyModel = context.StringValue("DescribeDeployedApi.ResultBodyModel");
 
 			DescribeDeployedApiResponse.DescribeDeployedApi_RequestConfig requestConfig = new DescribeDeployedApiResponse.DescribeDeployedApi_RequestConfig();
 			requestConfig.RequestProtocol = context.StringValue("DescribeDeployedApi.RequestConfig.RequestProtocol");
@@ -53,6 +54,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			requestConfig.BodyFormat = context.StringValue("DescribeDeployedApi.RequestConfig.BodyFormat");
 			requestConfig.PostBodyDescription = context.StringValue("DescribeDeployedApi.RequestConfig.PostBodyDescription");
 			requestConfig.RequestMode = context.StringValue("DescribeDeployedApi.RequestConfig.RequestMode");
+			requestConfig.BodyModel = context.StringValue("DescribeDeployedApi.RequestConfig.BodyModel");
 			describeDeployedApiResponse.RequestConfig = requestConfig;
 
 			DescribeDeployedApiResponse.DescribeDeployedApi_ServiceConfig serviceConfig = new DescribeDeployedApiResponse.DescribeDeployedApi_ServiceConfig();
@@ -64,6 +66,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			serviceConfig.Mock = context.StringValue("DescribeDeployedApi.ServiceConfig.Mock");
 			serviceConfig.MockResult = context.StringValue("DescribeDeployedApi.ServiceConfig.MockResult");
 			serviceConfig.ServiceVpcEnable = context.StringValue("DescribeDeployedApi.ServiceConfig.ServiceVpcEnable");
+			serviceConfig.MockStatusCode = context.IntegerValue("DescribeDeployedApi.ServiceConfig.MockStatusCode");
 
 			DescribeDeployedApiResponse.DescribeDeployedApi_ServiceConfig.DescribeDeployedApi_VpcConfig vpcConfig = new DescribeDeployedApiResponse.DescribeDeployedApi_ServiceConfig.DescribeDeployedApi_VpcConfig();
 			vpcConfig.Name = context.StringValue("DescribeDeployedApi.ServiceConfig.VpcConfig.Name");
@@ -71,6 +74,16 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			vpcConfig.InstanceId = context.StringValue("DescribeDeployedApi.ServiceConfig.VpcConfig.InstanceId");
 			vpcConfig.Port = context.IntegerValue("DescribeDeployedApi.ServiceConfig.VpcConfig.Port");
 			serviceConfig.VpcConfig = vpcConfig;
+
+			List<DescribeDeployedApiResponse.DescribeDeployedApi_ServiceConfig.DescribeDeployedApi_MockHeader> serviceConfig_mockHeaders = new List<DescribeDeployedApiResponse.DescribeDeployedApi_ServiceConfig.DescribeDeployedApi_MockHeader>();
+			for (int i = 0; i < context.Length("DescribeDeployedApi.ServiceConfig.MockHeaders.Length"); i++) {
+				DescribeDeployedApiResponse.DescribeDeployedApi_ServiceConfig.DescribeDeployedApi_MockHeader mockHeader = new DescribeDeployedApiResponse.DescribeDeployedApi_ServiceConfig.DescribeDeployedApi_MockHeader();
+				mockHeader.HeaderName = context.StringValue("DescribeDeployedApi.ServiceConfig.MockHeaders["+ i +"].HeaderName");
+				mockHeader.HeaderValue = context.StringValue("DescribeDeployedApi.ServiceConfig.MockHeaders["+ i +"].HeaderValue");
+
+				serviceConfig_mockHeaders.Add(mockHeader);
+			}
+			serviceConfig.MockHeaders = serviceConfig_mockHeaders;
 			describeDeployedApiResponse.ServiceConfig = serviceConfig;
 
 			DescribeDeployedApiResponse.DescribeDeployedApi_OpenIdConnectConfig openIdConnectConfig = new DescribeDeployedApiResponse.DescribeDeployedApi_OpenIdConnectConfig();
