@@ -24,14 +24,12 @@ namespace Aliyun.Acs.Core.UnitTests.Auth
         [Fact]
         public void SetRoleName()
         {
+            Assert.Throws<ArgumentNullException>(
+                () => { this.getInstance().SetRoleName(""); }
+            );
+
             this.getInstance().SetRoleName("roleName");
             // DONE WITH NO EXCEPTION
-
-            try
-            {
-                this.getInstance().SetRoleName("");
-            }
-            catch (ArgumentNullException) { }
         }
 
         [Fact]
