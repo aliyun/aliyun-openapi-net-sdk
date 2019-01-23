@@ -12,17 +12,13 @@ namespace Aliyun.Acs.Core.UnitTests.Auth
         public BasicSessionCredentials getInstance()
         {
             BasicSessionCredentials instance;
-            try
-            {
-                instance = new BasicSessionCredentials(null, null, "", 0);
-            }
-            catch (ArgumentOutOfRangeException) { }
+            Assert.Throws<System.ArgumentOutOfRangeException>(
+                () => { instance = new BasicSessionCredentials(null, null, "", 0); }
+            );
 
-            try
-            {
-                instance = new BasicSessionCredentials("accessKeyId", null, "", 0);
-            }
-            catch (ArgumentOutOfRangeException) { }
+            Assert.Throws<ArgumentOutOfRangeException>(
+                () => { instance = new BasicSessionCredentials("accessKeyId", null, "", 0); }
+            );
 
             instance = new BasicSessionCredentials("accessKeyId", "accessKeySecret", "sessionToken", 1);
             return instance;
