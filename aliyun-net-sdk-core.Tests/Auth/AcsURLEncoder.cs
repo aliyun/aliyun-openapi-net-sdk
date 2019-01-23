@@ -22,7 +22,8 @@ namespace Aliyun.Acs.Core.UnitTests.Auth
         [Fact]
         public void PercentEncode()
         {
-            Assert.NotNull(AcsURLEncoder.PercentEncode("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~!@#$%^&*()"));
+            string result = AcsURLEncoder.PercentEncode("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~!@#$%^&*()");
+            Assert.Equal("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~%21%40%23%24%25%5E%26%2A%28%29", result);
         }
     }
 }
