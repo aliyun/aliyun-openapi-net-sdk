@@ -23,7 +23,6 @@ namespace Aliyun.Acs.Core.UnitTests.Auth.Sts
                 };
             }
 
-            // 无异常抛出即为通过
             GetSessionAccessKeyResponse response = GetSessionAccessKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
             Assert.Equal("RequestId", response.RequestId);
             Assert.Equal("SessionAccessKeyId", response.SessionAccesskey.SessionAccessKeyId);
