@@ -25,20 +25,12 @@ namespace Aliyun.Acs.Core.UnitTests.Auth
         }
 
         [Fact]
-        public void GetAccessKeyId()
+        public void Get()
         {
             Assert.Equal("accessKeyId", this.getInstance().GetAccessKeyId());
-        }
 
-        [Fact]
-        public void GetAccessKeySecret()
-        {
             Assert.Equal("accessKeySecret", this.getInstance().GetAccessKeySecret());
-        }
 
-        [Fact]
-        public void GetSessionToken()
-        {
             Assert.Equal("sessionToken", this.getInstance().GetSessionToken());
         }
 
