@@ -16,13 +16,19 @@ namespace Aliyun.Acs.Core.UnitTests.Auth.Sts
             if (unmarshallerContext.ResponseDictionary == null)
             {
                 unmarshallerContext.ResponseDictionary = new Dictionary<string, string>
-                { { "foo", "bar" },
-                { "a", "A" },
-                { "b", "B" }
+                { { "GetSessionAccessKey.RequestId", "RequestId" },
+                { "GetSessionAccessKey.SessionAccessKey.SessionAccessKeyId", "SessionAccessKeyId" },
+                { "GetSessionAccessKey.SessionAccessKey.SessionAccessKeySecret", "SessionAccessKeySecret" },
+                { "GetSessionAccessKey.SessionAccessKey.Expiration", "100" }
                 };
             }
 
-            GetSessionAccessKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            // 无异常抛出即为通过
+            GetSessionAccessKeyResponse response = GetSessionAccessKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            Assert.Equal("RequestId", response.RequestId);
+            Assert.Equal("SessionAccessKeyId", response.SessionAccesskey.SessionAccessKeyId);
+            Assert.Equal("SessionAccessKeySecret", response.SessionAccesskey.SessionAccessKeySecert);
+            Assert.Equal("100", response.SessionAccesskey.Expiration);
         }
     }
 }
