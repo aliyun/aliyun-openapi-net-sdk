@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class AbolishApiRequest : RpcAcsRequest<AbolishApiResponse>
     {
         public AbolishApiRequest()
-            : base("CloudAPI", "2016-07-14", "AbolishApi")
+            : base("CloudAPI", "2016-07-14", "AbolishApi", "apigateway", "openAPI")
         {
         }
 

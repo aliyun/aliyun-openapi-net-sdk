@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DeleteLogConfigRequest : RpcAcsRequest<DeleteLogConfigResponse>
     {
         public DeleteLogConfigRequest()
-            : base("CloudAPI", "2016-07-14", "DeleteLogConfig")
+            : base("CloudAPI", "2016-07-14", "DeleteLogConfig", "apigateway", "openAPI")
         {
         }
 

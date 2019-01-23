@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class RemoveVpcAccessRequest : RpcAcsRequest<RemoveVpcAccessResponse>
     {
         public RemoveVpcAccessRequest()
-            : base("CloudAPI", "2016-07-14", "RemoveVpcAccess")
+            : base("CloudAPI", "2016-07-14", "RemoveVpcAccess", "apigateway", "openAPI")
         {
         }
 

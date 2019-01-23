@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class ReactivateDomainRequest : RpcAcsRequest<ReactivateDomainResponse>
     {
         public ReactivateDomainRequest()
-            : base("CloudAPI", "2016-07-14", "ReactivateDomain")
+            : base("CloudAPI", "2016-07-14", "ReactivateDomain", "apigateway", "openAPI")
         {
         }
 

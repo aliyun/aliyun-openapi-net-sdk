@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class CreateAppRequest : RpcAcsRequest<CreateAppResponse>
     {
         public CreateAppRequest()
-            : base("CloudAPI", "2016-07-14", "CreateApp")
+            : base("CloudAPI", "2016-07-14", "CreateApp", "apigateway", "openAPI")
         {
         }
 

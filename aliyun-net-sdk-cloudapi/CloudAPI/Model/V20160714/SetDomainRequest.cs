@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class SetDomainRequest : RpcAcsRequest<SetDomainResponse>
     {
         public SetDomainRequest()
-            : base("CloudAPI", "2016-07-14", "SetDomain")
+            : base("CloudAPI", "2016-07-14", "SetDomain", "apigateway", "openAPI")
         {
         }
 

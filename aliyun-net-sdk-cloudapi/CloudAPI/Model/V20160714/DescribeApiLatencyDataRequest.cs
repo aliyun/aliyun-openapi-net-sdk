@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeApiLatencyDataRequest : RpcAcsRequest<DescribeApiLatencyDataResponse>
     {
         public DescribeApiLatencyDataRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeApiLatencyData")
+            : base("CloudAPI", "2016-07-14", "DescribeApiLatencyData", "apigateway", "openAPI")
         {
         }
 

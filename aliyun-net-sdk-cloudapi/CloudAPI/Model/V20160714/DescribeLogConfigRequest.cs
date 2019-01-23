@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeLogConfigRequest : RpcAcsRequest<DescribeLogConfigResponse>
     {
         public DescribeLogConfigRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeLogConfig")
+            : base("CloudAPI", "2016-07-14", "DescribeLogConfig", "apigateway", "openAPI")
         {
         }
 

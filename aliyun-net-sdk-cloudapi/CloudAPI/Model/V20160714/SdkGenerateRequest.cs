@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class SdkGenerateRequest : RpcAcsRequest<SdkGenerateResponse>
     {
         public SdkGenerateRequest()
-            : base("CloudAPI", "2016-07-14", "SdkGenerate")
+            : base("CloudAPI", "2016-07-14", "SdkGenerate", "apigateway", "openAPI")
         {
         }
 

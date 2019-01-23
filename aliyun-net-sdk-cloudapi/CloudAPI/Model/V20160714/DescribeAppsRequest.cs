@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeAppsRequest : RpcAcsRequest<DescribeAppsResponse>
     {
         public DescribeAppsRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeApps")
+            : base("CloudAPI", "2016-07-14", "DescribeApps", "apigateway", "openAPI")
         {
         }
 

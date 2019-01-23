@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class CreateLogConfigRequest : RpcAcsRequest<CreateLogConfigResponse>
     {
         public CreateLogConfigRequest()
-            : base("CloudAPI", "2016-07-14", "CreateLogConfig")
+            : base("CloudAPI", "2016-07-14", "CreateLogConfig", "apigateway", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class CreateIpControlRequest : RpcAcsRequest<CreateIpControlResponse>
     {
         public CreateIpControlRequest()
-            : base("CloudAPI", "2016-07-14", "CreateIpControl")
+            : base("CloudAPI", "2016-07-14", "CreateIpControl", "apigateway", "openAPI")
         {
         }
 

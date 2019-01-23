@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeApiQpsDataRequest : RpcAcsRequest<DescribeApiQpsDataResponse>
     {
         public DescribeApiQpsDataRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeApiQpsData")
+            : base("CloudAPI", "2016-07-14", "DescribeApiQpsData", "apigateway", "openAPI")
         {
         }
 

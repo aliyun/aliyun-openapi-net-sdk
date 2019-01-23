@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class ModifyTrafficControlRequest : RpcAcsRequest<ModifyTrafficControlResponse>
     {
         public ModifyTrafficControlRequest()
-            : base("CloudAPI", "2016-07-14", "ModifyTrafficControl")
+            : base("CloudAPI", "2016-07-14", "ModifyTrafficControl", "apigateway", "openAPI")
         {
         }
 

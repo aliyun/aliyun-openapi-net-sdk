@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class RemoveIpControlPolicyItemRequest : RpcAcsRequest<RemoveIpControlPolicyItemResponse>
     {
         public RemoveIpControlPolicyItemRequest()
-            : base("CloudAPI", "2016-07-14", "RemoveIpControlPolicyItem")
+            : base("CloudAPI", "2016-07-14", "RemoveIpControlPolicyItem", "apigateway", "openAPI")
         {
         }
 

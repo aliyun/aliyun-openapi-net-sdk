@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DeleteAllTrafficSpecialControlRequest : RpcAcsRequest<DeleteAllTrafficSpecialControlResponse>
     {
         public DeleteAllTrafficSpecialControlRequest()
-            : base("CloudAPI", "2016-07-14", "DeleteAllTrafficSpecialControl")
+            : base("CloudAPI", "2016-07-14", "DeleteAllTrafficSpecialControl", "apigateway", "openAPI")
         {
         }
 

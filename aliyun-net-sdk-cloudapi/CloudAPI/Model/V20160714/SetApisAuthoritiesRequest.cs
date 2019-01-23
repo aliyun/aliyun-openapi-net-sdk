@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class SetApisAuthoritiesRequest : RpcAcsRequest<SetApisAuthoritiesResponse>
     {
         public SetApisAuthoritiesRequest()
-            : base("CloudAPI", "2016-07-14", "SetApisAuthorities")
+            : base("CloudAPI", "2016-07-14", "SetApisAuthorities", "apigateway", "openAPI")
         {
         }
 
