@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
     {
         public DescribeRegionsRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeRegions", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "DescribeRegions")
         {
         }
 

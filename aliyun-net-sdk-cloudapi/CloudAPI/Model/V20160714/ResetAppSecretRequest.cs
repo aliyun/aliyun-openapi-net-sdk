@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class ResetAppSecretRequest : RpcAcsRequest<ResetAppSecretResponse>
     {
         public ResetAppSecretRequest()
-            : base("CloudAPI", "2016-07-14", "ResetAppSecret", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "ResetAppSecret")
         {
         }
 

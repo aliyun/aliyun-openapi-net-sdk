@@ -467,6 +467,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private string description;
 
+			private string model;
+
 			public string Code
 			{
 				get
@@ -500,6 +502,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string Model
+			{
+				get
+				{
+					return model;
+				}
+				set	
+				{
+					model = value;
 				}
 			}
 		}

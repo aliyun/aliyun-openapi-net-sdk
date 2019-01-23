@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class CreateSignatureRequest : RpcAcsRequest<CreateSignatureResponse>
     {
         public CreateSignatureRequest()
-            : base("CloudAPI", "2016-07-14", "CreateSignature", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "CreateSignature")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DeleteDomainCertificateRequest : RpcAcsRequest<DeleteDomainCertificateResponse>
     {
         public DeleteDomainCertificateRequest()
-            : base("CloudAPI", "2016-07-14", "DeleteDomainCertificate", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "DeleteDomainCertificate")
         {
         }
 

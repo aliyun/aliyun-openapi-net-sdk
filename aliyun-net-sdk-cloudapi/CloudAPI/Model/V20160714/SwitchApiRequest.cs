@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class SwitchApiRequest : RpcAcsRequest<SwitchApiResponse>
     {
         public SwitchApiRequest()
-            : base("CloudAPI", "2016-07-14", "SwitchApi", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "SwitchApi")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class CreateApiStageVariableRequest : RpcAcsRequest<CreateApiStageVariableResponse>
     {
         public CreateApiStageVariableRequest()
-            : base("CloudAPI", "2016-07-14", "CreateApiStageVariable", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "CreateApiStageVariable")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeTrafficControlsByApiRequest : RpcAcsRequest<DescribeTrafficControlsByApiResponse>
     {
         public DescribeTrafficControlsByApiRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeTrafficControlsByApi", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "DescribeTrafficControlsByApi")
         {
         }
 

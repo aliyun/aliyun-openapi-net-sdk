@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class ImportSwaggerRequest : RpcAcsRequest<ImportSwaggerResponse>
     {
         public ImportSwaggerRequest()
-            : base("CloudAPI", "2016-07-14", "ImportSwagger", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "ImportSwagger")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DeleteSignatureRequest : RpcAcsRequest<DeleteSignatureResponse>
     {
         public DeleteSignatureRequest()
-            : base("CloudAPI", "2016-07-14", "DeleteSignature", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "DeleteSignature")
         {
         }
 

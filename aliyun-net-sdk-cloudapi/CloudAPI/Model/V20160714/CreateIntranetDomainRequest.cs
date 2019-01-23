@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class CreateIntranetDomainRequest : RpcAcsRequest<CreateIntranetDomainResponse>
     {
         public CreateIntranetDomainRequest()
-            : base("CloudAPI", "2016-07-14", "CreateIntranetDomain", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "CreateIntranetDomain")
         {
         }
 

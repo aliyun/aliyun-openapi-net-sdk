@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DeleteAppRequest : RpcAcsRequest<DeleteAppResponse>
     {
         public DeleteAppRequest()
-            : base("CloudAPI", "2016-07-14", "DeleteApp", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "DeleteApp")
         {
         }
 

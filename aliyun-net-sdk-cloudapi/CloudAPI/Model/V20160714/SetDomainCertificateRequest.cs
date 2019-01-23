@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class SetDomainCertificateRequest : RpcAcsRequest<SetDomainCertificateResponse>
     {
         public SetDomainCertificateRequest()
-            : base("CloudAPI", "2016-07-14", "SetDomainCertificate", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "SetDomainCertificate")
         {
         }
 

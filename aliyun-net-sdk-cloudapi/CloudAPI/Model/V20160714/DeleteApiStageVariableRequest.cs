@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DeleteApiStageVariableRequest : RpcAcsRequest<DeleteApiStageVariableResponse>
     {
         public DeleteApiStageVariableRequest()
-            : base("CloudAPI", "2016-07-14", "DeleteApiStageVariable", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "DeleteApiStageVariable")
         {
         }
 

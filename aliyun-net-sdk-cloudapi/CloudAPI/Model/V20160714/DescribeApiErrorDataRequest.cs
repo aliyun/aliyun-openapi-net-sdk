@@ -29,7 +29,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
     public class DescribeApiErrorDataRequest : RpcAcsRequest<DescribeApiErrorDataResponse>
     {
         public DescribeApiErrorDataRequest()
-            : base("CloudAPI", "2016-07-14", "DescribeApiErrorData", "apigateway", "openAPI")
+            : base("CloudAPI", "2016-07-14", "DescribeApiErrorData")
         {
         }
 
