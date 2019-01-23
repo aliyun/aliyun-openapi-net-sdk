@@ -1,11 +1,15 @@
+using System;
+using System.Globalization;
 using System.Text;
 using System.Web;
-using Xunit;
+
 using Aliyun.Acs.Core.Auth;
+
+using Xunit;
 
 namespace Aliyun.Acs.Core.UnitTests.Auth
 {
-    public class AcsURLEncoder_Test
+    public class AcsUrlEncoderTest
     {
         [Fact]
         public void Encode()
@@ -13,6 +17,12 @@ namespace Aliyun.Acs.Core.UnitTests.Auth
             string source = " ♂:@#¥%&*（";
             string encode = HttpUtility.UrlDecode(AcsURLEncoder.Encode(" ♂:@#¥%&*（"), Encoding.UTF8);
             Assert.Equal(encode, source);
+        }
+
+        [Fact]
+        public void PercentEncode()
+        {
+            Assert.NotNull(AcsURLEncoder.PercentEncode("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~!@#$%^&*()"));
         }
     }
 }
