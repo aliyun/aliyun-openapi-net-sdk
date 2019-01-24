@@ -14,7 +14,8 @@ namespace Aliyun.Acs.Core.UnitTests.Utils
         public void currentTimeMillis()
         {
             DateTime d = DateTime.Now;
-            DateTimeExtensions.currentTimeMillis(d);
+            var r = DateTimeExtensions.currentTimeMillis(d);
+            Assert.IsType<long>(r);
         }
     }
 }
