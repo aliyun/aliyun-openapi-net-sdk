@@ -11,21 +11,31 @@ namespace Aliyun.Acs.Core.UnitTests.Utils
 {
     public class ParameterHelperTest
     {
+        public DateTime dateTime()
+        {
+            DateTime datetime;
+            long timeStamp = 1548311719318;
+            DateTime startTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            datetime = startTime.AddMilliseconds(timeStamp);
+            datetime = TimeZoneInfo.ConvertTimeToUtc(datetime);
+            return datetime;
+        }
+
         [Fact]
         public void FormatIso8601Date()
         {
-            DateTime datetime = Convert.ToDateTime("2019,1,1");
+            DateTime datetime = this.dateTime();
             string result = ParameterHelper.FormatIso8601Date(datetime);
             Assert.NotEqual(datetime.ToString(), result);
-            Assert.Equal("2018-12-31T16:00:00Z", result);
+            Assert.Equal("2019-01-24T06:35:19Z", result);
         }
 
         [Fact]
         public void GetRFC2616Date()
         {
-            DateTime datetime = Convert.ToDateTime("2019,1,1");
+            DateTime datetime = this.dateTime();
             string result = ParameterHelper.GetRFC2616Date(datetime);
-            Assert.Equal("Mon, 31 Dec 2018 16:00:00 GMT", result);
+            Assert.Equal("Thu, 24 Jan 2019 06:35:19 GMT", result);
         }
 
         [Fact]
