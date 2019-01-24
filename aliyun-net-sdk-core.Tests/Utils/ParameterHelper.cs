@@ -14,13 +14,18 @@ namespace Aliyun.Acs.Core.UnitTests.Utils
         [Fact]
         public void FormatIso8601Date()
         {
-            ParameterHelper.FormatIso8601Date(DateTime.Now);
+            DateTime datetime = Convert.ToDateTime("2019,1,1");
+            string result = ParameterHelper.FormatIso8601Date(datetime);
+            Assert.NotEqual(datetime.ToString(), result);
+            Assert.Equal("2018-12-31T16:00:00Z", result);
         }
 
         [Fact]
         public void GetRFC2616Date()
         {
-            ParameterHelper.GetRFC2616Date(DateTime.Now);
+            DateTime datetime = Convert.ToDateTime("2019,1,1");
+            string result = ParameterHelper.GetRFC2616Date(datetime);
+            Assert.Equal("Mon, 31 Dec 2018 16:00:00 GMT", result);
         }
 
         [Fact]
