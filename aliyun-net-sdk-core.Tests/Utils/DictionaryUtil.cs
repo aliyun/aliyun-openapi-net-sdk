@@ -18,10 +18,14 @@ namespace Aliyun.Acs.Core.UnitTests.Utils
             };
 
             DictionaryUtil.Add(dic, "c", "d");
+            DictionaryUtil.Add(dic, "c", "d"); // 覆盖“添加相同元素”的情况
             Assert.Equal("d", DictionaryUtil.Get(dic, "c"));
 
             Dictionary<string, string> nullDic = null;
             DictionaryUtil.Add(nullDic, "nullKey", "nullValue"); // 方法无回调，无静态存储
+
+            // When value is null
+            DictionaryUtil.Add(dic, "nullValue", nullDic); // 方法无回调，无静态存储
         }
 
         [Fact]
