@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Core.UnitTests.Utils
             { { "a", "b" }
             };
             DictionaryUtil.Pop(dic, "a");
+            DictionaryUtil.Pop(dic, "c");
             Assert.Null(DictionaryUtil.Get(dic, "a"));
         }
     }

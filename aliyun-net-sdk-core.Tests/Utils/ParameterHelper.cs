@@ -66,6 +66,8 @@ namespace Aliyun.Acs.Core.UnitTests.Utils
             Assert.Equal("application/x-www-form-urlencoded",
                 ParameterHelper.FormatTypeToString(ParameterHelper.StingToFormatType("application/x-www-form-urlencoded"))
             );
+
+            Assert.Equal(FormatType.RAW, ParameterHelper.StingToFormatType("raw"));
         }
 
         [Fact]
