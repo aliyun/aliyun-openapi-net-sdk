@@ -25,6 +25,7 @@ namespace Aliyun.Acs.Core.UnitTests
             var mockAcsRequest = new MockAcsRequest();
             Assert.IsType<MockAcsRequest>(mockAcsRequest);
 
+            mockAcsRequest.AcceptFormat = FormatType.XML;
             Assert.Equal(FormatType.XML, mockAcsRequest.AcceptFormat);
             Assert.Equal(ProtocolType.HTTP, mockAcsRequest.Protocol);
         }
