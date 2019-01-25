@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 
 		private int? pageNumber;
 
+		private long? categoryId;
+
 		public int? PageSize
 		{
 			get
@@ -90,6 +92,19 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public long? CategoryId
+		{
+			get
+			{
+				return categoryId;
+			}
+			set	
+			{
+				categoryId = value;
+				DictionaryUtil.Add(QueryParameters, "CategoryId", value.ToString());
 			}
 		}
 

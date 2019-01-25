@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
 				ChatResponse.Chat_Message.Chat_Text text = new ChatResponse.Chat_Message.Chat_Text();
 				text.Content = context.StringValue("Chat.Messages["+ i +"].Text.Content");
 				text.AnswerSource = context.StringValue("Chat.Messages["+ i +"].Text.AnswerSource");
+				text.MetaData = context.StringValue("Chat.Messages["+ i +"].Text.MetaData");
 				message.Text = text;
 
 				ChatResponse.Chat_Message.Chat_Knowledge knowledge = new ChatResponse.Chat_Message.Chat_Knowledge();

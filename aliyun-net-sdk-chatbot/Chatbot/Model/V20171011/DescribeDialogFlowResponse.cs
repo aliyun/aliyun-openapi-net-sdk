@@ -659,9 +659,9 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 
 							private string type;
 
-							private List<DescribeDialogFlow_SwitchItem> _switch;
+							private string _params;
 
-							private List<string> _params;
+							private List<DescribeDialogFlow_SwitchItem> _switch;
 
 							public string Code
 							{
@@ -759,6 +759,18 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 								}
 							}
 
+							public string _Params
+							{
+								get
+								{
+									return _params;
+								}
+								set	
+								{
+									_params = value;
+								}
+							}
+
 							public List<DescribeDialogFlow_SwitchItem> _Switch
 							{
 								get
@@ -768,18 +780,6 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 								set	
 								{
 									_switch = value;
-								}
-							}
-
-							public List<string> _Params
-							{
-								get
-								{
-									return _params;
-								}
-								set	
-								{
-									_params = value;
 								}
 							}
 

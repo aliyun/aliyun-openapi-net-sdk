@@ -102,12 +102,7 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
 				pluginFieldDataFunction.AliyunFunction = context.StringValue("DescribeDialogFlow.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.AliyunFunction");
 				pluginFieldDataFunction.EndPoint = context.StringValue("DescribeDialogFlow.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.EndPoint");
 				pluginFieldDataFunction.Type = context.StringValue("DescribeDialogFlow.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.Type");
-
-				List<string> pluginFieldDataFunction_params = new List<string>();
-				for (int j = 0; j < context.Length("DescribeDialogFlow.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.Params.Length"); j++) {
-					pluginFieldDataFunction_params.Add(context.StringValue("DescribeDialogFlow.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.Params["+ j +"]"));
-				}
-				pluginFieldDataFunction._Params = pluginFieldDataFunction_params;
+				pluginFieldDataFunction._Params = context.StringValue("DescribeDialogFlow.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.Params");
 
 				List<DescribeDialogFlowResponse.DescribeDialogFlow_ModuleDefinition.DescribeDialogFlow_NodesItem.DescribeDialogFlow_PluginData.DescribeDialogFlow_Function.DescribeDialogFlow_PluginFieldDataFunction.DescribeDialogFlow_SwitchItem> pluginFieldDataFunction_switch = new List<DescribeDialogFlowResponse.DescribeDialogFlow_ModuleDefinition.DescribeDialogFlow_NodesItem.DescribeDialogFlow_PluginData.DescribeDialogFlow_Function.DescribeDialogFlow_PluginFieldDataFunction.DescribeDialogFlow_SwitchItem>();
 				for (int j = 0; j < context.Length("DescribeDialogFlow.ModuleDefinition.Nodes["+ i +"].PluginData.Function.PluginFieldDataFunction.Switch.Length"); j++) {

@@ -234,6 +234,8 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 
 				private string answerSource;
 
+				private string metaData;
+
 				public string Content
 				{
 					get
@@ -255,6 +257,18 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 					set	
 					{
 						answerSource = value;
+					}
+				}
+
+				public string MetaData
+				{
+					get
+					{
+						return metaData;
+					}
+					set	
+					{
+						metaData = value;
 					}
 				}
 			}
