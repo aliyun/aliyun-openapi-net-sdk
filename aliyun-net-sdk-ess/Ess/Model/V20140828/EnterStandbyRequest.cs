@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class EnterStandbyRequest : RpcAcsRequest<EnterStandbyResponse>
     {
         public EnterStandbyRequest()
-            : base("Ess", "2014-08-28", "EnterStandby")
+            : base("Ess", "2014-08-28", "EnterStandby", "ess", "openAPI")
         {
         }
 

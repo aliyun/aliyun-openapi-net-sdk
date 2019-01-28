@@ -47,6 +47,21 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingRule.MinSize = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].MinSize");
 				scalingRule.MaxSize = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].MaxSize");
 				scalingRule.ScalingRuleAri = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].ScalingRuleAri");
+				scalingRule.ScalingRuleType = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].ScalingRuleType");
+				scalingRule.EstimatedInstanceWarmup = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].EstimatedInstanceWarmup");
+				scalingRule.MetricName = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].MetricName");
+				scalingRule.TargetValue = context.FloatValue("DescribeScalingRules.ScalingRules["+ i +"].TargetValue");
+				scalingRule.DisableScaleIn = context.BooleanValue("DescribeScalingRules.ScalingRules["+ i +"].DisableScaleIn");
+
+				List<DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_Alarm> scalingRule_alarms = new List<DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_Alarm>();
+				for (int j = 0; j < context.Length("DescribeScalingRules.ScalingRules["+ i +"].Alarms.Length"); j++) {
+					DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_Alarm alarm = new DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_Alarm();
+					alarm.AlarmTaskName = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].Alarms["+ j +"].AlarmTaskName");
+					alarm.AlarmTaskId = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].Alarms["+ j +"].AlarmTaskId");
+
+					scalingRule_alarms.Add(alarm);
+				}
+				scalingRule.Alarms = scalingRule_alarms;
 
 				describeScalingRulesResponse_scalingRules.Add(scalingRule);
 			}

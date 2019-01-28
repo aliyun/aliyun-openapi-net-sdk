@@ -66,6 +66,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingConfiguration.SecurityEnhancementStrategy = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SecurityEnhancementStrategy");
 				scalingConfiguration.SpotStrategy = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SpotStrategy");
 				scalingConfiguration.PasswordInherit = context.BooleanValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].PasswordInherit");
+				scalingConfiguration.ResourceGroupId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ResourceGroupId");
 
 				List<string> scalingConfiguration_instanceTypes = new List<string>();
 				for (int j = 0; j < context.Length("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceTypes.Length"); j++) {

@@ -29,11 +29,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class ModifyScalingRuleRequest : RpcAcsRequest<ModifyScalingRuleResponse>
     {
         public ModifyScalingRuleRequest()
-            : base("Ess", "2014-08-28", "ModifyScalingRule")
+            : base("Ess", "2014-08-28", "ModifyScalingRule", "ess", "openAPI")
         {
         }
-
-		private string scalingRuleName;
 
 		private long? resourceOwnerId;
 
@@ -41,13 +39,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? adjustmentValue;
 
-		private string ownerAccount;
+		private int? estimatedInstanceWarmup;
 
-		private int? cooldown;
+		private string ownerAccount;
 
 		private string adjustmentType;
 
-		private string action;
+		private bool? disableScaleIn;
 
 		private long? ownerId;
 
@@ -55,18 +53,15 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string accessKeyId;
 
-		public string ScalingRuleName
-		{
-			get
-			{
-				return scalingRuleName;
-			}
-			set	
-			{
-				scalingRuleName = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleName", value);
-			}
-		}
+		private string scalingRuleName;
+
+		private int? cooldown;
+
+		private string action;
+
+		private float? targetValue;
+
+		private string metricName;
 
 		public long? ResourceOwnerId
 		{
@@ -107,6 +102,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public int? EstimatedInstanceWarmup
+		{
+			get
+			{
+				return estimatedInstanceWarmup;
+			}
+			set	
+			{
+				estimatedInstanceWarmup = value;
+				DictionaryUtil.Add(QueryParameters, "EstimatedInstanceWarmup", value.ToString());
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -117,19 +125,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? Cooldown
-		{
-			get
-			{
-				return cooldown;
-			}
-			set	
-			{
-				cooldown = value;
-				DictionaryUtil.Add(QueryParameters, "Cooldown", value.ToString());
 			}
 		}
 
@@ -146,16 +141,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string Action
+		public bool? DisableScaleIn
 		{
 			get
 			{
-				return action;
+				return disableScaleIn;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				disableScaleIn = value;
+				DictionaryUtil.Add(QueryParameters, "DisableScaleIn", value.ToString());
 			}
 		}
 
@@ -195,6 +190,71 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string ScalingRuleName
+		{
+			get
+			{
+				return scalingRuleName;
+			}
+			set	
+			{
+				scalingRuleName = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleName", value);
+			}
+		}
+
+		public int? Cooldown
+		{
+			get
+			{
+				return cooldown;
+			}
+			set	
+			{
+				cooldown = value;
+				DictionaryUtil.Add(QueryParameters, "Cooldown", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public float? TargetValue
+		{
+			get
+			{
+				return targetValue;
+			}
+			set	
+			{
+				targetValue = value;
+				DictionaryUtil.Add(QueryParameters, "TargetValue", value.ToString());
+			}
+		}
+
+		public string MetricName
+		{
+			get
+			{
+				return metricName;
+			}
+			set	
+			{
+				metricName = value;
+				DictionaryUtil.Add(QueryParameters, "MetricName", value);
 			}
 		}
 

@@ -39,6 +39,9 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 			describeLimitationResponse.MaxNumberOfLoadBalancers = context.IntegerValue("DescribeLimitation.MaxNumberOfLoadBalancers");
 			describeLimitationResponse.MaxNumberOfMinSize = context.IntegerValue("DescribeLimitation.MaxNumberOfMinSize");
 			describeLimitationResponse.MaxNumberOfMaxSize = context.IntegerValue("DescribeLimitation.MaxNumberOfMaxSize");
+			describeLimitationResponse.MaxNumberOfVServerGroups = context.IntegerValue("DescribeLimitation.MaxNumberOfVServerGroups");
+			describeLimitationResponse.MaxNumberOfLifecycleHooks = context.IntegerValue("DescribeLimitation.MaxNumberOfLifecycleHooks");
+			describeLimitationResponse.MaxNumberOfNotificationConfigurations = context.IntegerValue("DescribeLimitation.MaxNumberOfNotificationConfigurations");
         
 			return describeLimitationResponse;
         }

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DescribeCapacityHistoryRequest : RpcAcsRequest<DescribeCapacityHistoryResponse>
     {
         public DescribeCapacityHistoryRequest()
-            : base("Ess", "2014-08-28", "DescribeCapacityHistory")
+            : base("Ess", "2014-08-28", "DescribeCapacityHistory", "ess", "openAPI")
         {
         }
 

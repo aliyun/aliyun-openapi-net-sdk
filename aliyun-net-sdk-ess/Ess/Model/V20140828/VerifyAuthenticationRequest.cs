@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class VerifyAuthenticationRequest : RpcAcsRequest<VerifyAuthenticationResponse>
     {
         public VerifyAuthenticationRequest()
-            : base("Ess", "2014-08-28", "VerifyAuthentication")
+            : base("Ess", "2014-08-28", "VerifyAuthentication", "ess", "openAPI")
         {
         }
 

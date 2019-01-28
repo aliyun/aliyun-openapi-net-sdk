@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DescribeScalingRulesRequest : RpcAcsRequest<DescribeScalingRulesResponse>
     {
         public DescribeScalingRulesRequest()
-            : base("Ess", "2014-08-28", "DescribeScalingRules")
+            : base("Ess", "2014-08-28", "DescribeScalingRules", "ess", "openAPI")
         {
         }
 
@@ -66,6 +66,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private int? pageSize;
 
 		private string action;
+
+		private string scalingRuleType;
 
 		private string scalingRuleId10;
 
@@ -331,6 +333,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string ScalingRuleType
+		{
+			get
+			{
+				return scalingRuleType;
+			}
+			set	
+			{
+				scalingRuleType = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleType", value);
 			}
 		}
 

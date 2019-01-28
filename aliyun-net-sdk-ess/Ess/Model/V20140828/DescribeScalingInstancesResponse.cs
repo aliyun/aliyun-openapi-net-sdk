@@ -117,6 +117,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string launchTemplateVersion;
 
+			private string warmupState;
+
 			public string InstanceId
 			{
 				get
@@ -234,6 +236,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					launchTemplateVersion = value;
+				}
+			}
+
+			public string WarmupState
+			{
+				get
+				{
+					return warmupState;
+				}
+				set	
+				{
+					warmupState = value;
 				}
 			}
 		}

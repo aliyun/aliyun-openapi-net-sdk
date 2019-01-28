@@ -153,6 +153,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private bool? passwordInherit;
 
+			private string resourceGroupId;
+
 			private List<DescribeScalingConfigurations_DataDisk> dataDisks;
 
 			private List<DescribeScalingConfigurations_Tag> tags;
@@ -494,6 +496,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					passwordInherit = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

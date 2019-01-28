@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6c4e11ff-e9d3-48f8-a1bd-0c322fff3b84}</ProjectGuid>
+    <ProjectGuid>{f68fe44c-cbf1-47a2-82d4-ff47fbb1e398}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -50,8 +50,10 @@
 	<Compile Include="Ess\Model\V20140828\ModifyScheduledTaskRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\EnableAlarmRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\DescribeScalingGroupsResponse.cs" />
+	<Compile Include="Ess\Model\V20140828\DescribeAccountAttributesResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\CreateScalingGroupResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\CreateScalingConfigurationRequest.cs" />
+	<Compile Include="Ess\Model\V20140828\DetachVServerGroupsResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\CreateLifecycleHookRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\DescribeScalingActivitiesResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\DescribeScheduledTasksResponse.cs" />
@@ -86,13 +88,16 @@
 	<Compile Include="Ess\Model\V20140828\ModifyScalingGroupRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\DeleteScalingRuleRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\DetachDBInstancesRequest.cs" />
+	<Compile Include="Ess\Model\V20140828\DetachVServerGroupsRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\CreateLifecycleHookResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\DescribeLifecycleHooksRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\CreateScheduledTaskRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\ModifyLifecycleHookResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\EnterStandbyRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\ModifyNotificationConfigurationResponse.cs" />
+	<Compile Include="Ess\Model\V20140828\DescribeAccountAttributesRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\CompleteLifecycleActionRequest.cs" />
+	<Compile Include="Ess\Model\V20140828\AttachVServerGroupsResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\ExitStandbyResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\DescribeScalingActivityDetailResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\AttachInstancesRequest.cs" />
@@ -133,6 +138,7 @@
 	<Compile Include="Ess\Model\V20140828\DisableAlarmRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\ModifyScalingRuleResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\DescribeAlertConfigResponse.cs" />
+	<Compile Include="Ess\Model\V20140828\AttachVServerGroupsRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\VerifyUserRequest.cs" />
 	<Compile Include="Ess\Model\V20140828\VerifyAuthenticationResponse.cs" />
 	<Compile Include="Ess\Model\V20140828\DescribeScheduledTasksRequest.cs" />
@@ -164,6 +170,7 @@
 	<Compile Include="Ess\Transform\V20140828\DescribeAlarmsResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DescribeScalingRulesResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\CreateScalingConfigurationResponseUnmarshaller.cs" />
+	<Compile Include="Ess\Transform\V20140828\DetachVServerGroupsResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DescribeScalingInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\ModifyAlertConfigResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DeleteScalingGroupResponseUnmarshaller.cs" />
@@ -173,6 +180,7 @@
 	<Compile Include="Ess\Transform\V20140828\DeleteAlarmResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DeleteNotificationConfigurationResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\ModifyScalingConfigurationResponseUnmarshaller.cs" />
+	<Compile Include="Ess\Transform\V20140828\DescribeAccountAttributesResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\CreateScalingGroupResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\ExitStandbyResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DescribeLimitationResponseUnmarshaller.cs" />
@@ -194,6 +202,7 @@
 	<Compile Include="Ess\Transform\V20140828\EnterStandbyResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\RecordLifecycleActionHeartbeatResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\ModifyAlarmResponseUnmarshaller.cs" />
+	<Compile Include="Ess\Transform\V20140828\AttachVServerGroupsResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DescribeNotificationConfigurationsResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\DescribeCapacityHistoryResponseUnmarshaller.cs" />
 	<Compile Include="Ess\Transform\V20140828\EnableScalingGroupResponseUnmarshaller.cs" />

@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
-	public class DescribeLimitationResponse : AcsResponse
+	public class DescribeAccountAttributesResponse : AcsResponse
 	{
 
 		private int? maxNumberOfScalingGroups;
@@ -41,12 +41,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private int? maxNumberOfMinSize;
 
 		private int? maxNumberOfMaxSize;
-
-		private int? maxNumberOfVServerGroups;
-
-		private int? maxNumberOfLifecycleHooks;
-
-		private int? maxNumberOfNotificationConfigurations;
 
 		public int? MaxNumberOfScalingGroups
 		{
@@ -153,42 +147,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			set	
 			{
 				maxNumberOfMaxSize = value;
-			}
-		}
-
-		public int? MaxNumberOfVServerGroups
-		{
-			get
-			{
-				return maxNumberOfVServerGroups;
-			}
-			set	
-			{
-				maxNumberOfVServerGroups = value;
-			}
-		}
-
-		public int? MaxNumberOfLifecycleHooks
-		{
-			get
-			{
-				return maxNumberOfLifecycleHooks;
-			}
-			set	
-			{
-				maxNumberOfLifecycleHooks = value;
-			}
-		}
-
-		public int? MaxNumberOfNotificationConfigurations
-		{
-			get
-			{
-				return maxNumberOfNotificationConfigurations;
-			}
-			set	
-			{
-				maxNumberOfNotificationConfigurations = value;
 			}
 		}
 	}

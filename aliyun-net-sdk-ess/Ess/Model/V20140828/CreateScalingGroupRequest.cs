@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class CreateScalingGroupRequest : RpcAcsRequest<CreateScalingGroupResponse>
     {
         public CreateScalingGroupRequest()
-            : base("Ess", "2014-08-28", "CreateScalingGroup")
+            : base("Ess", "2014-08-28", "CreateScalingGroup", "ess", "openAPI")
         {
         }
 
@@ -74,6 +74,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private int? defaultCooldown;
 
 		private string removalPolicy1;
+
+		private List<VServerGroup> vServerGroups;
 
 		private string removalPolicy2;
 
@@ -363,6 +365,27 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public List<VServerGroup> VServerGroups
+		{
+			get
+			{
+				return vServerGroups;
+			}
+
+			set
+			{
+				vServerGroups = value;
+				for (int i = 0; i < vServerGroups.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"VServerGroup." + (i + 1) + ".LoadBalancerId", vServerGroups[i].LoadBalancerId);
+					for (int j = 0; j < vServerGroups[i].VServerGroupAttributes.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"VServerGroup." + (i + 1) + ".VServerGroupAttribute." +(j + 1), vServerGroups[i].VServerGroupAttributes[j]);
+					}
+				}
+			}
+		}
+
 		public string RemovalPolicy2
 		{
 			get
@@ -460,6 +483,84 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					lifecycleTransition = value;
+				}
+			}
+		}
+
+		public class VServerGroup
+		{
+
+			private string loadBalancerId;
+
+			private List<VServerGroupAttribute> vServerGroupAttributes;
+
+			public string LoadBalancerId
+			{
+				get
+				{
+					return loadBalancerId;
+				}
+				set	
+				{
+					loadBalancerId = value;
+				}
+			}
+
+			public List<VServerGroupAttribute> VServerGroupAttributes
+			{
+				get
+				{
+					return vServerGroupAttributes;
+				}
+				set	
+				{
+					vServerGroupAttributes = value;
+				}
+			}
+
+			public class VServerGroupAttribute
+			{
+
+				private string vServerGroupId;
+
+				private int? port;
+
+				private int? weight;
+
+				public string VServerGroupId
+				{
+					get
+					{
+						return vServerGroupId;
+					}
+					set	
+					{
+						vServerGroupId = value;
+					}
+				}
+
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public int? Weight
+				{
+					get
+					{
+						return weight;
+					}
+					set	
+					{
+						weight = value;
+					}
 				}
 			}
 		}

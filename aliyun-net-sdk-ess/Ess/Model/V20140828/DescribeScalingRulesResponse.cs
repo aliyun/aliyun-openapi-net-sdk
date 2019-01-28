@@ -115,6 +115,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string scalingRuleAri;
 
+			private string scalingRuleType;
+
+			private int? estimatedInstanceWarmup;
+
+			private string metricName;
+
+			private float? targetValue;
+
+			private bool? disableScaleIn;
+
+			private List<DescribeScalingRules_Alarm> alarms;
+
 			public string ScalingRuleId
 			{
 				get
@@ -220,6 +232,110 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					scalingRuleAri = value;
+				}
+			}
+
+			public string ScalingRuleType
+			{
+				get
+				{
+					return scalingRuleType;
+				}
+				set	
+				{
+					scalingRuleType = value;
+				}
+			}
+
+			public int? EstimatedInstanceWarmup
+			{
+				get
+				{
+					return estimatedInstanceWarmup;
+				}
+				set	
+				{
+					estimatedInstanceWarmup = value;
+				}
+			}
+
+			public string MetricName
+			{
+				get
+				{
+					return metricName;
+				}
+				set	
+				{
+					metricName = value;
+				}
+			}
+
+			public float? TargetValue
+			{
+				get
+				{
+					return targetValue;
+				}
+				set	
+				{
+					targetValue = value;
+				}
+			}
+
+			public bool? DisableScaleIn
+			{
+				get
+				{
+					return disableScaleIn;
+				}
+				set	
+				{
+					disableScaleIn = value;
+				}
+			}
+
+			public List<DescribeScalingRules_Alarm> Alarms
+			{
+				get
+				{
+					return alarms;
+				}
+				set	
+				{
+					alarms = value;
+				}
+			}
+
+			public class DescribeScalingRules_Alarm
+			{
+
+				private string alarmTaskName;
+
+				private string alarmTaskId;
+
+				public string AlarmTaskName
+				{
+					get
+					{
+						return alarmTaskName;
+					}
+					set	
+					{
+						alarmTaskName = value;
+					}
+				}
+
+				public string AlarmTaskId
+				{
+					get
+					{
+						return alarmTaskId;
+					}
+					set	
+					{
+						alarmTaskId = value;
+					}
 				}
 			}
 		}

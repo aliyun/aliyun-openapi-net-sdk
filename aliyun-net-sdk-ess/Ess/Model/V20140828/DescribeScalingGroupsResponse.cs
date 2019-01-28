@@ -149,6 +149,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private int? stoppedCapacity;
 
+			private List<DescribeScalingGroups_VServerGroup> vServerGroups;
+
 			private List<string> vSwitchIds;
 
 			private List<string> removalPolicies;
@@ -469,6 +471,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public List<DescribeScalingGroups_VServerGroup> VServerGroups
+			{
+				get
+				{
+					return vServerGroups;
+				}
+				set	
+				{
+					vServerGroups = value;
+				}
+			}
+
 			public List<string> VSwitchIds
 			{
 				get
@@ -514,6 +528,84 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					loadBalancerIds = value;
+				}
+			}
+
+			public class DescribeScalingGroups_VServerGroup
+			{
+
+				private string loadBalancerId;
+
+				private List<DescribeScalingGroups_VServerGroupAttribute> vServerGroupAttributes;
+
+				public string LoadBalancerId
+				{
+					get
+					{
+						return loadBalancerId;
+					}
+					set	
+					{
+						loadBalancerId = value;
+					}
+				}
+
+				public List<DescribeScalingGroups_VServerGroupAttribute> VServerGroupAttributes
+				{
+					get
+					{
+						return vServerGroupAttributes;
+					}
+					set	
+					{
+						vServerGroupAttributes = value;
+					}
+				}
+
+				public class DescribeScalingGroups_VServerGroupAttribute
+				{
+
+					private string vServerGroupId;
+
+					private int? port;
+
+					private int? weight;
+
+					public string VServerGroupId
+					{
+						get
+						{
+							return vServerGroupId;
+						}
+						set	
+						{
+							vServerGroupId = value;
+						}
+					}
+
+					public int? Port
+					{
+						get
+						{
+							return port;
+						}
+						set	
+						{
+							port = value;
+						}
+					}
+
+					public int? Weight
+					{
+						get
+						{
+							return weight;
+						}
+						set	
+						{
+							weight = value;
+						}
+					}
 				}
 			}
 		}

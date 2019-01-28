@@ -26,45 +26,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
-    public class DescribeLifecycleHooksRequest : RpcAcsRequest<DescribeLifecycleHooksResponse>
+    public class DescribeAccountAttributesRequest : RpcAcsRequest<DescribeAccountAttributesResponse>
     {
-        public DescribeLifecycleHooksRequest()
-            : base("Ess", "2014-08-28", "DescribeLifecycleHooks", "ess", "openAPI")
+        public DescribeAccountAttributesRequest()
+            : base("Ess", "2014-08-28", "DescribeAccountAttributes", "ess", "openAPI")
         {
         }
 
-		private string lifecycleHookName;
-
 		private string resourceOwnerAccount;
-
-		private string scalingGroupId;
-
-		private List<string> lifecycleHookIds;
-
-		private string ownerAccount;
-
-		private int? pageSize;
 
 		private string action;
 
 		private long? ownerId;
 
-		private int? pageNumber;
-
 		private string accessKeyId;
-
-		public string LifecycleHookName
-		{
-			get
-			{
-				return lifecycleHookName;
-			}
-			set	
-			{
-				lifecycleHookName = value;
-				DictionaryUtil.Add(QueryParameters, "LifecycleHookName", value);
-			}
-		}
 
 		public string ResourceOwnerAccount
 		{
@@ -76,62 +51,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ScalingGroupId
-		{
-			get
-			{
-				return scalingGroupId;
-			}
-			set	
-			{
-				scalingGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
-			}
-		}
-
-		public List<string> LifecycleHookIds
-		{
-			get
-			{
-				return lifecycleHookIds;
-			}
-
-			set
-			{
-				lifecycleHookIds = value;
-				for (int i = 0; i < lifecycleHookIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"LifecycleHookId." + (i + 1) , lifecycleHookIds[i]);
-				}
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -161,19 +80,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -187,9 +93,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override DescribeLifecycleHooksResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeAccountAttributesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLifecycleHooksResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAccountAttributesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

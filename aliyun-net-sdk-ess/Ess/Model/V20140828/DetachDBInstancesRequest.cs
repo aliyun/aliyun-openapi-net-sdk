@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DetachDBInstancesRequest : RpcAcsRequest<DetachDBInstancesResponse>
     {
         public DetachDBInstancesRequest()
-            : base("Ess", "2014-08-28", "DetachDBInstances")
+            : base("Ess", "2014-08-28", "DetachDBInstances", "ess", "openAPI")
         {
         }
 

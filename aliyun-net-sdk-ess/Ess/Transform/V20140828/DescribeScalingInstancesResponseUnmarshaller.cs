@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingInstance.CreationType = context.StringValue("DescribeScalingInstances.ScalingInstances["+ i +"].CreationType");
 				scalingInstance.LaunchTemplateId = context.StringValue("DescribeScalingInstances.ScalingInstances["+ i +"].LaunchTemplateId");
 				scalingInstance.LaunchTemplateVersion = context.StringValue("DescribeScalingInstances.ScalingInstances["+ i +"].LaunchTemplateVersion");
+				scalingInstance.WarmupState = context.StringValue("DescribeScalingInstances.ScalingInstances["+ i +"].WarmupState");
 
 				describeScalingInstancesResponse_scalingInstances.Add(scalingInstance);
 			}

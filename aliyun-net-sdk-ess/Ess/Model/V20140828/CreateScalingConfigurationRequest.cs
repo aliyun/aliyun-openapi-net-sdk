@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class CreateScalingConfigurationRequest : RpcAcsRequest<CreateScalingConfigurationResponse>
     {
         public CreateScalingConfigurationRequest()
-            : base("Ess", "2014-08-28", "CreateScalingConfiguration")
+            : base("Ess", "2014-08-28", "CreateScalingConfiguration", "ess", "openAPI")
         {
         }
 
@@ -58,6 +58,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string accessKeyId;
 
 		private string userData;
+
+		private string resourceGroupId;
 
 		private string hostName;
 
@@ -276,6 +278,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				userData = value;
 				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

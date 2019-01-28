@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class AttachDBInstancesRequest : RpcAcsRequest<AttachDBInstancesResponse>
     {
         public AttachDBInstancesRequest()
-            : base("Ess", "2014-08-28", "AttachDBInstances")
+            : base("Ess", "2014-08-28", "AttachDBInstances", "ess", "openAPI")
         {
         }
 

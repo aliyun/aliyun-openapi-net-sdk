@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DescribeScalingGroupsRequest : RpcAcsRequest<DescribeScalingGroupsResponse>
     {
         public DescribeScalingGroupsRequest()
-            : base("Ess", "2014-08-28", "DescribeScalingGroups")
+            : base("Ess", "2014-08-28", "DescribeScalingGroups", "ess", "openAPI")
         {
         }
 

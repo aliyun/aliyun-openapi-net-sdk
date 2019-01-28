@@ -26,16 +26,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
-    public class DescribeAlarmsRequest : RpcAcsRequest<DescribeAlarmsResponse>
+    public class AttachVServerGroupsRequest : RpcAcsRequest<AttachVServerGroupsResponse>
     {
-        public DescribeAlarmsRequest()
-            : base("Ess", "2014-08-28", "DescribeAlarms", "ess", "openAPI")
+        public AttachVServerGroupsRequest()
+            : base("Ess", "2014-08-28", "AttachVServerGroups", "ess", "openAPI")
         {
         }
-
-		private bool? isEnable;
-
-		private string metricType;
 
 		private string resourceOwnerAccount;
 
@@ -43,45 +39,15 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scalingGroupId;
 
-		private int? pageSize;
-
 		private string action;
 
-		private string state;
+		private bool? forceAttach;
 
 		private long? ownerId;
 
-		private string alarmTaskId;
-
-		private int? pageNumber;
+		private List<VServerGroup> vServerGroups;
 
 		private string accessKeyId;
-
-		public bool? IsEnable
-		{
-			get
-			{
-				return isEnable;
-			}
-			set	
-			{
-				isEnable = value;
-				DictionaryUtil.Add(QueryParameters, "IsEnable", value.ToString());
-			}
-		}
-
-		public string MetricType
-		{
-			get
-			{
-				return metricType;
-			}
-			set	
-			{
-				metricType = value;
-				DictionaryUtil.Add(QueryParameters, "MetricType", value);
-			}
-		}
 
 		public string ResourceOwnerAccount
 		{
@@ -122,19 +88,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public string Action
 		{
 			get
@@ -148,16 +101,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string State
+		public bool? ForceAttach
 		{
 			get
 			{
-				return state;
+				return forceAttach;
 			}
 			set	
 			{
-				state = value;
-				DictionaryUtil.Add(QueryParameters, "State", value);
+				forceAttach = value;
+				DictionaryUtil.Add(QueryParameters, "ForceAttach", value.ToString());
 			}
 		}
 
@@ -174,29 +127,24 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string AlarmTaskId
+		public List<VServerGroup> VServerGroups
 		{
 			get
 			{
-				return alarmTaskId;
+				return vServerGroups;
 			}
-			set	
-			{
-				alarmTaskId = value;
-				DictionaryUtil.Add(QueryParameters, "AlarmTaskId", value);
-			}
-		}
 
-		public int? PageNumber
-		{
-			get
+			set
 			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				vServerGroups = value;
+				for (int i = 0; i < vServerGroups.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"VServerGroup." + (i + 1) + ".LoadBalancerId", vServerGroups[i].LoadBalancerId);
+					for (int j = 0; j < vServerGroups[i].VServerGroupAttributes.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"VServerGroup." + (i + 1) + ".VServerGroupAttribute." +(j + 1), vServerGroups[i].VServerGroupAttributes[j]);
+					}
+				}
 			}
 		}
 
@@ -213,9 +161,87 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override DescribeAlarmsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public class VServerGroup
+		{
+
+			private string loadBalancerId;
+
+			private List<VServerGroupAttribute> vServerGroupAttributes;
+
+			public string LoadBalancerId
+			{
+				get
+				{
+					return loadBalancerId;
+				}
+				set	
+				{
+					loadBalancerId = value;
+				}
+			}
+
+			public List<VServerGroupAttribute> VServerGroupAttributes
+			{
+				get
+				{
+					return vServerGroupAttributes;
+				}
+				set	
+				{
+					vServerGroupAttributes = value;
+				}
+			}
+
+			public class VServerGroupAttribute
+			{
+
+				private string vServerGroupId;
+
+				private int? port;
+
+				private int? weight;
+
+				public string VServerGroupId
+				{
+					get
+					{
+						return vServerGroupId;
+					}
+					set	
+					{
+						vServerGroupId = value;
+					}
+				}
+
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public int? Weight
+				{
+					get
+					{
+						return weight;
+					}
+					set	
+					{
+						weight = value;
+					}
+				}
+			}
+		}
+
+        public override AttachVServerGroupsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAlarmsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AttachVServerGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

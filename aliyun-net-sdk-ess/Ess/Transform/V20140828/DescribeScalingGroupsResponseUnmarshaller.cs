@@ -89,6 +89,26 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				}
 				scalingGroup.LoadBalancerIds = scalingGroup_loadBalancerIds;
 
+				List<DescribeScalingGroupsResponse.DescribeScalingGroups_ScalingGroup.DescribeScalingGroups_VServerGroup> scalingGroup_vServerGroups = new List<DescribeScalingGroupsResponse.DescribeScalingGroups_ScalingGroup.DescribeScalingGroups_VServerGroup>();
+				for (int j = 0; j < context.Length("DescribeScalingGroups.ScalingGroups["+ i +"].VServerGroups.Length"); j++) {
+					DescribeScalingGroupsResponse.DescribeScalingGroups_ScalingGroup.DescribeScalingGroups_VServerGroup vServerGroup = new DescribeScalingGroupsResponse.DescribeScalingGroups_ScalingGroup.DescribeScalingGroups_VServerGroup();
+					vServerGroup.LoadBalancerId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].VServerGroups["+ j +"].LoadBalancerId");
+
+					List<DescribeScalingGroupsResponse.DescribeScalingGroups_ScalingGroup.DescribeScalingGroups_VServerGroup.DescribeScalingGroups_VServerGroupAttribute> vServerGroup_vServerGroupAttributes = new List<DescribeScalingGroupsResponse.DescribeScalingGroups_ScalingGroup.DescribeScalingGroups_VServerGroup.DescribeScalingGroups_VServerGroupAttribute>();
+					for (int k = 0; k < context.Length("DescribeScalingGroups.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes.Length"); k++) {
+						DescribeScalingGroupsResponse.DescribeScalingGroups_ScalingGroup.DescribeScalingGroups_VServerGroup.DescribeScalingGroups_VServerGroupAttribute vServerGroupAttribute = new DescribeScalingGroupsResponse.DescribeScalingGroups_ScalingGroup.DescribeScalingGroups_VServerGroup.DescribeScalingGroups_VServerGroupAttribute();
+						vServerGroupAttribute.VServerGroupId = context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes["+ k +"].VServerGroupId");
+						vServerGroupAttribute.Port = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes["+ k +"].Port");
+						vServerGroupAttribute.Weight = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].VServerGroups["+ j +"].VServerGroupAttributes["+ k +"].Weight");
+
+						vServerGroup_vServerGroupAttributes.Add(vServerGroupAttribute);
+					}
+					vServerGroup.VServerGroupAttributes = vServerGroup_vServerGroupAttributes;
+
+					scalingGroup_vServerGroups.Add(vServerGroup);
+				}
+				scalingGroup.VServerGroups = scalingGroup_vServerGroups;
+
 				describeScalingGroupsResponse_scalingGroups.Add(scalingGroup);
 			}
 			describeScalingGroupsResponse.ScalingGroups = describeScalingGroupsResponse_scalingGroups;

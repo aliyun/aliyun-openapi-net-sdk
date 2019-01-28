@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class ModifyScalingGroupRequest : RpcAcsRequest<ModifyScalingGroupResponse>
     {
         public ModifyScalingGroupRequest()
-            : base("Ess", "2014-08-28", "ModifyScalingGroup")
+            : base("Ess", "2014-08-28", "ModifyScalingGroup", "ess", "openAPI")
         {
         }
 
@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string scalingGroupName;
 
 		private string scalingGroupId;
+
+		private List<string> vSwitchIds;
 
 		private string ownerAccount;
 
@@ -73,7 +75,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				return resourceOwnerId;
 			}
-			set	
+			set
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
@@ -86,7 +88,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				return healthCheckType;
 			}
-			set	
+			set
 			{
 				healthCheckType = value;
 				DictionaryUtil.Add(QueryParameters, "HealthCheckType", value);
@@ -99,7 +101,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				return launchTemplateId;
 			}
-			set	
+			set
 			{
 				launchTemplateId = value;
 				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
@@ -112,7 +114,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				return resourceOwnerAccount;
 			}
-			set	
+			set
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
@@ -125,7 +127,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				return scalingGroupName;
 			}
-			set	
+			set
 			{
 				scalingGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingGroupName", value);
@@ -138,10 +140,27 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				return scalingGroupId;
 			}
-			set	
+			set
 			{
 				scalingGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
+			}
+		}
+
+		public List<string> VSwitchIds
+		{
+			get
+			{
+				return vSwitchIds;
+			}
+
+			set
+			{
+				vSwitchIds = value;
+				for (int i = 0; i < vSwitchIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"VSwitchIds." + (i + 1) , vSwitchIds[i]);
+				}
 			}
 		}
 

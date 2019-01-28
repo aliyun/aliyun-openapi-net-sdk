@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
     public class DescribeScheduledTasksRequest : RpcAcsRequest<DescribeScheduledTasksResponse>
     {
         public DescribeScheduledTasksRequest()
-            : base("Ess", "2014-08-28", "DescribeScheduledTasks")
+            : base("Ess", "2014-08-28", "DescribeScheduledTasks", "ess", "openAPI")
         {
         }
 
