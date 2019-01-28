@@ -319,5 +319,11 @@ namespace Aliyun.Acs.Core.Profile
             }
             credential = new CredentialsBackupCompatibilityAdaptor(credentialsProvider);
         }
+
+        public static void ClearDefaultProfile()
+        {
+            profile = null;
+            endpoints = null;
+        }
     }
 }
