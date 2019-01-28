@@ -26,35 +26,32 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QueryPriceListRequest : RpcAcsRequest<QueryPriceListResponse>
+    public class QueryBillRequest : RpcAcsRequest<QueryBillResponse>
     {
-        public QueryPriceListRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryPriceList")
+        public QueryBillRequest()
+            : base("BssOpenApi", "2017-12-14", "QueryBill")
         {
         }
 
-		private string moduleCode;
-
 		private string productCode;
+
+		private bool? isHideZeroCharge;
+
+		private bool? isDisplayLocalCurrency;
 
 		private string subscriptionType;
 
+		private int? pageSize;
+
+		private string billingCycle;
+
+		private string type;
+
 		private long? ownerId;
 
-		private string productType;
+		private int? pageNum;
 
-		public string ModuleCode
-		{
-			get
-			{
-				return moduleCode;
-			}
-			set	
-			{
-				moduleCode = value;
-				DictionaryUtil.Add(QueryParameters, "ModuleCode", value);
-			}
-		}
+		private string productType;
 
 		public string ProductCode
 		{
@@ -66,6 +63,32 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				productCode = value;
 				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+			}
+		}
+
+		public bool? IsHideZeroCharge
+		{
+			get
+			{
+				return isHideZeroCharge;
+			}
+			set	
+			{
+				isHideZeroCharge = value;
+				DictionaryUtil.Add(QueryParameters, "IsHideZeroCharge", value.ToString());
+			}
+		}
+
+		public bool? IsDisplayLocalCurrency
+		{
+			get
+			{
+				return isDisplayLocalCurrency;
+			}
+			set	
+			{
+				isDisplayLocalCurrency = value;
+				DictionaryUtil.Add(QueryParameters, "IsDisplayLocalCurrency", value.ToString());
 			}
 		}
 
@@ -82,6 +105,45 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string BillingCycle
+		{
+			get
+			{
+				return billingCycle;
+			}
+			set	
+			{
+				billingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -92,6 +154,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
@@ -108,9 +183,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-        public override QueryPriceListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryBillResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryPriceListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

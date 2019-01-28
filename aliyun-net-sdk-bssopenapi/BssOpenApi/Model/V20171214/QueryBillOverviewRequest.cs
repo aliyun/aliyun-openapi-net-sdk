@@ -26,61 +26,76 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QueryAccountBookListRequest : RpcAcsRequest<QueryAccountBookListResponse>
+    public class QueryBillOverviewRequest : RpcAcsRequest<QueryBillOverviewResponse>
     {
-        public QueryAccountBookListRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryAccountBookList")
+        public QueryBillOverviewRequest()
+            : base("BssOpenApi", "2017-12-14", "QueryBillOverview")
         {
         }
 
-		private long? uid;
+		private string productCode;
 
-		private string itemCodes;
+		private string subscriptionType;
 
-		private string bid;
+		private string billingCycle;
 
-		public long? Uid
+		private string productType;
+
+		public string ProductCode
 		{
 			get
 			{
-				return uid;
+				return productCode;
 			}
 			set	
 			{
-				uid = value;
-				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
+				productCode = value;
+				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
 			}
 		}
 
-		public string ItemCodes
+		public string SubscriptionType
 		{
 			get
 			{
-				return itemCodes;
+				return subscriptionType;
 			}
 			set	
 			{
-				itemCodes = value;
-				DictionaryUtil.Add(QueryParameters, "ItemCodes", value);
+				subscriptionType = value;
+				DictionaryUtil.Add(QueryParameters, "SubscriptionType", value);
 			}
 		}
 
-		public string Bid
+		public string BillingCycle
 		{
 			get
 			{
-				return bid;
+				return billingCycle;
 			}
 			set	
 			{
-				bid = value;
-				DictionaryUtil.Add(QueryParameters, "Bid", value);
+				billingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
 			}
 		}
 
-        public override QueryAccountBookListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string ProductType
+		{
+			get
+			{
+				return productType;
+			}
+			set	
+			{
+				productType = value;
+				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+			}
+		}
+
+        public override QueryBillOverviewResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryAccountBookListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryBillOverviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
