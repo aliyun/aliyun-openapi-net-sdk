@@ -14,10 +14,12 @@ namespace Aliyun.Acs.Core.UnitTests.Auth
         {
             Credential legacyCredential = new Credential("foo", "bar");
             LegacyCredentials instance = new LegacyCredentials(legacyCredential);
+            Assert.IsType<LegacyCredentials>(instance);
+            Assert.NotNull(instance);
         }
 
         [Fact]
-        public void GetAccessKeyId()
+        public void Get()
         {
             Credential legacyCredential = new Credential("foo", "bar");
             LegacyCredentials instance = new LegacyCredentials(legacyCredential);

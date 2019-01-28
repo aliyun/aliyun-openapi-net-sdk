@@ -24,14 +24,18 @@ namespace Aliyun.Acs.Core.UnitTests.Auth
         public void SetExpiredDate()
         {
             Credential instance;
-            instance = new Credential("keyId", "secret");
+            instance = new Credential("keyId", "secret", -1);
             Assert.False(instance.IsExpired());
+
+            instance = new Credential("keyId", "secret", 1);
+            Assert.True(instance.IsExpired());
         }
 
         [Fact]
-        public void IsExpiredTrue()
+        public void IsExpired()
         {
-            Credential instance = new Credential("keyId", "secret", 1);
+            Credential instance;
+            instance = new Credential("keyId", "secret", 1);
             instance.ExpiredDate = DateTime.Now.AddDays(1);
             Assert.True(instance.IsExpired());
         }

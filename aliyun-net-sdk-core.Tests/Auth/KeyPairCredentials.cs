@@ -14,6 +14,13 @@ namespace Aliyun.Acs.Core.UnitTests.Auth
         {
             KeyPairCredentials instance = new KeyPairCredentials("publicKeyId", "privateKeySecret");
             Assert.Equal("publicKeyId", instance.GetAccessKeyId());
+
+            Assert.Throws<ArgumentNullException>(
+                () =>
+                {
+                    instance = new KeyPairCredentials("publicKeyId", null);
+                }
+            );
         }
 
         [Fact]
