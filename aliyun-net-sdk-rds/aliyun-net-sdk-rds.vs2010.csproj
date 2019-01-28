@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0d5f592d-1c08-4a42-9bc9-3b53f9f49d34}</ProjectGuid>
+    <ProjectGuid>{0b4b73a7-4fdc-47d2-a1a0-77ebce417335}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -174,6 +174,7 @@
 	<Compile Include="Rds\Model\V20140815\DescribeDBInstanceMonitorResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeCollationTimeZonesResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyReadWriteSplittingConnectionResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\RestoreTableRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\ReleaseInstancePublicConnectionRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyReadonlyInstanceDelayReplicationTimeRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyResourceGroupRequest.cs" />
@@ -263,7 +264,10 @@
 	<Compile Include="Rds\Model\V20140815\ModifyAccountDescriptionRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeDBInstanceSSLRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyDBInstanceConnectionStringRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\MigrateToOtherRegionRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\RestoreTableResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeBinlogFilesResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\MigrateToOtherRegionResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeMetaListRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\MigrateToOtherZoneRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DeleteBackupResponse.cs" />
@@ -311,6 +315,7 @@
 	<Compile Include="Rds\Transform\V20140815\ReleaseReadWriteSplittingConnectionResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyDBInstanceProxyConfigurationResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DeleteBackupResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\MigrateToOtherRegionResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CancelImportResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeDBInstanceProxyConfigurationResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeDBInstanceTDEResponseUnmarshaller.cs" />
@@ -381,6 +386,7 @@
 	<Compile Include="Rds\Transform\V20140815\DescribeParametersResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeSQLLogRecordsResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifySecurityIpsResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\RestoreTableResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeDBInstancesByPerformanceResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyAccountDescriptionResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifySQLCollectorPolicyResponseUnmarshaller.cs" />

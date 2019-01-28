@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private int? isProxyEnable;
+		private bool? isProxySwitchEnable;
 
-		private int? isRwsplitEnable;
+		private bool? isRwsplitEnable;
 
-		private int? isRwsplitSupportReplicationLag;
+		private bool? isRwsplitSupportReplicationLag;
 
-		private int? isRwsplitSupportWeight;
+		private bool? isRwsplitSupportWeight;
 
-		private int? isTransparentSwitchEnable;
+		private bool? isTransparentSwitchEnable;
 
-		private int? isShortConnectionOptimizeEnable;
+		private bool? isShortConnectionOptimizeEnable;
 
-		private int? isAntiBruteFroceEnable;
+		private bool? isAntiBruteFroceEnable;
 
 		public string RequestId
 		{
@@ -52,19 +52,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? IsProxyEnable
+		public bool? IsProxySwitchEnable
 		{
 			get
 			{
-				return isProxyEnable;
+				return isProxySwitchEnable;
 			}
 			set	
 			{
-				isProxyEnable = value;
+				isProxySwitchEnable = value;
 			}
 		}
 
-		public int? IsRwsplitEnable
+		public bool? IsRwsplitEnable
 		{
 			get
 			{
@@ -76,7 +76,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? IsRwsplitSupportReplicationLag
+		public bool? IsRwsplitSupportReplicationLag
 		{
 			get
 			{
@@ -88,7 +88,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? IsRwsplitSupportWeight
+		public bool? IsRwsplitSupportWeight
 		{
 			get
 			{
@@ -100,7 +100,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? IsTransparentSwitchEnable
+		public bool? IsTransparentSwitchEnable
 		{
 			get
 			{
@@ -112,7 +112,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? IsShortConnectionOptimizeEnable
+		public bool? IsShortConnectionOptimizeEnable
 		{
 			get
 			{
@@ -124,7 +124,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? IsAntiBruteFroceEnable
+		public bool? IsAntiBruteFroceEnable
 		{
 			get
 			{

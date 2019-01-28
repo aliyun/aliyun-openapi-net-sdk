@@ -57,7 +57,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				backup.BackupSize = context.LongValue("DescribeBackups.Items["+ i +"].BackupSize");
 				backup.HostInstanceID = context.StringValue("DescribeBackups.Items["+ i +"].HostInstanceID");
 				backup.StoreStatus = context.StringValue("DescribeBackups.Items["+ i +"].StoreStatus");
-				backup.ConsistentTime = context.StringValue("DescribeBackups.Items["+ i +"].ConsistentTime");
+				backup.MetaStatus = context.StringValue("DescribeBackups.Items["+ i +"].MetaStatus");
 
 				describeBackupsResponse_items.Add(backup);
 			}

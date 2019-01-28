@@ -33,8 +33,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private long? sQLId;
-
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
@@ -60,19 +58,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string dBInstanceId;
 
 		private string sQLHASH;
-
-		public long? SQLId
-		{
-			get
-			{
-				return sQLId;
-			}
-			set	
-			{
-				sQLId = value;
-				DictionaryUtil.Add(QueryParameters, "SQLId", value.ToString());
-			}
-		}
 
 		public long? ResourceOwnerId
 		{

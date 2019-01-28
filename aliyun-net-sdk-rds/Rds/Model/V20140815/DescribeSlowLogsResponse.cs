@@ -155,9 +155,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private long? slowLogId;
 
-			private long? sQLId;
-
-			private long? sQLHASH;
+			private string sQLHASH;
 
 			private string sQLIdStr;
 
@@ -209,19 +207,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public long? SQLId
-			{
-				get
-				{
-					return sQLId;
-				}
-				set	
-				{
-					sQLId = value;
-				}
-			}
-
-			public long? SQLHASH
+			public string SQLHASH
 			{
 				get
 				{

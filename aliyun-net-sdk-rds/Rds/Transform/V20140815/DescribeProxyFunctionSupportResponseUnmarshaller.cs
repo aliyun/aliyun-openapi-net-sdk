@@ -31,13 +31,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			describeProxyFunctionSupportResponse.HttpResponse = context.HttpResponse;
 			describeProxyFunctionSupportResponse.RequestId = context.StringValue("DescribeProxyFunctionSupport.RequestId");
-			describeProxyFunctionSupportResponse.IsProxyEnable = context.IntegerValue("DescribeProxyFunctionSupport.IsProxyEnable");
-			describeProxyFunctionSupportResponse.IsRwsplitEnable = context.IntegerValue("DescribeProxyFunctionSupport.IsRwsplitEnable");
-			describeProxyFunctionSupportResponse.IsRwsplitSupportReplicationLag = context.IntegerValue("DescribeProxyFunctionSupport.IsRwsplitSupportReplicationLag");
-			describeProxyFunctionSupportResponse.IsRwsplitSupportWeight = context.IntegerValue("DescribeProxyFunctionSupport.IsRwsplitSupportWeight");
-			describeProxyFunctionSupportResponse.IsTransparentSwitchEnable = context.IntegerValue("DescribeProxyFunctionSupport.IsTransparentSwitchEnable");
-			describeProxyFunctionSupportResponse.IsShortConnectionOptimizeEnable = context.IntegerValue("DescribeProxyFunctionSupport.IsShortConnectionOptimizeEnable");
-			describeProxyFunctionSupportResponse.IsAntiBruteFroceEnable = context.IntegerValue("DescribeProxyFunctionSupport.IsAntiBruteFroceEnable");
+			describeProxyFunctionSupportResponse.IsProxySwitchEnable = context.BooleanValue("DescribeProxyFunctionSupport.IsProxySwitchEnable");
+			describeProxyFunctionSupportResponse.IsRwsplitEnable = context.BooleanValue("DescribeProxyFunctionSupport.IsRwsplitEnable");
+			describeProxyFunctionSupportResponse.IsRwsplitSupportReplicationLag = context.BooleanValue("DescribeProxyFunctionSupport.IsRwsplitSupportReplicationLag");
+			describeProxyFunctionSupportResponse.IsRwsplitSupportWeight = context.BooleanValue("DescribeProxyFunctionSupport.IsRwsplitSupportWeight");
+			describeProxyFunctionSupportResponse.IsTransparentSwitchEnable = context.BooleanValue("DescribeProxyFunctionSupport.IsTransparentSwitchEnable");
+			describeProxyFunctionSupportResponse.IsShortConnectionOptimizeEnable = context.BooleanValue("DescribeProxyFunctionSupport.IsShortConnectionOptimizeEnable");
+			describeProxyFunctionSupportResponse.IsAntiBruteFroceEnable = context.BooleanValue("DescribeProxyFunctionSupport.IsAntiBruteFroceEnable");
         
 			return describeProxyFunctionSupportResponse;
         }
