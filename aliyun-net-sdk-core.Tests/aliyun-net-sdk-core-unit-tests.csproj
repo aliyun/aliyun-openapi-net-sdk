@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <IsPackable>false</IsPackable>
+    <AssemblyName>aliyun-net-sdk-core.Tests</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
