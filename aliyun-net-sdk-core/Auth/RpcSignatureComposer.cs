@@ -87,6 +87,10 @@ namespace Aliyun.Acs.Core.Auth
             IDictionary<string, string> sortedDictionary = new SortedDictionary<string, string>(dic, StringComparer.Ordinal);
             return sortedDictionary;
         }
-    }
 
+        public static void ClearComposer()
+        {
+            composer = null;
+        }
+    }
 }
