@@ -19,6 +19,8 @@ namespace Aliyun.Acs.Core.UnitTests.Profile
         {
             DefaultProfile.ClearDefaultProfile();
 
+            // DefaultProfile 提供了7种private 实例化方式
+            // 但是GetProfile只实现了4个，其它3个无法覆盖
             DefaultProfile profile = DefaultProfile.GetProfile();
             Assert.IsType<DefaultProfile>(profile);
 
@@ -36,7 +38,6 @@ namespace Aliyun.Acs.Core.UnitTests.Profile
             mockICredentialProvider.Setup(foo => foo.Fresh()).Throws(exception);
             ICredentialProvider iCredentialProvider = mockICredentialProvider.Object;
             profile = DefaultProfile.GetProfile(regionId, iCredentialProvider);
-
             // 有异常抛出,说明执行了Fresh方法
             Assert.Throws<Exception>(
                 () =>
@@ -83,6 +84,7 @@ namespace Aliyun.Acs.Core.UnitTests.Profile
         {
             DefaultProfile.ClearDefaultProfile();
 
+            // Console.WriteLine("------GetEndpoints-------");
             string regionId = "GetEndpoints.someString";
             string productName = "ecs";
             string productDomain = "product_domain";
@@ -101,12 +103,15 @@ namespace Aliyun.Acs.Core.UnitTests.Profile
             // 但是会把regionId作为endpoint.Name
             productName = "product_name";
             endpoints = profile.GetEndpoints(regionId, productName);
+            // Assert.NotNull(endpoints);
             foreach (Endpoint endpoint in endpoints)
             {
+                // Console.WriteLine(endpoint.Name);
                 Assert.Equal(regionId, endpoint.Name);
                 products = endpoint.ProductDomains;
                 foreach (ProductDomain product in products)
                 {
+                    // Console.WriteLine(product.ProductName + "   " + product.DomianName);
                     Assert.Equal(productName, product.ProductName);
                     Assert.Equal(productDomain, product.DomianName);
                 }
@@ -134,10 +139,12 @@ namespace Aliyun.Acs.Core.UnitTests.Profile
             Assert.NotNull(endpoints);
             foreach (Endpoint endpoint in endpoints)
             {
+                // Console.WriteLine(endpoint.Name);
                 Assert.Equal(endpointName, endpoint.Name);
                 products = endpoint.ProductDomains;
                 foreach (ProductDomain product in products)
                 {
+                    // Console.WriteLine(product.ProductName + "   " + product.DomianName);
                     Assert.Equal(productName, product.ProductName);
                     Assert.Equal(productDomain, product.DomianName);
                 }
@@ -164,11 +171,20 @@ namespace Aliyun.Acs.Core.UnitTests.Profile
         public void SetCredentialsProvider()
         {
             DefaultProfile.ClearDefaultProfile();
+            Credential credential;
             DefaultProfile profile = DefaultProfile.GetProfile();
             var mock = new Mock<AlibabaCloudCredentialsProvider>();
             AlibabaCloudCredentialsProvider provider = mock.Object;
-            profile.SetCredentialsProvider(null);
-            profile.SetCredentialsProvider(provider);
+
+            profile.SetCredentialsProvider(provider); // 不为null时，直接回调，即此操作无效
+            credential = profile.GetCredential(); // 会执行credential初始化
+            Assert.NotNull(credential);
+            Assert.IsType<CredentialsBackupCompatibilityAdaptor>(credential);
+
+            profile.SetCredentialsProvider(null); // 会执行credential初始化
+            credential = profile.GetCredential(); // 不会执行credential初始化
+            Assert.NotNull(credential);
+            Assert.IsType<CredentialsBackupCompatibilityAdaptor>(credential);
         }
     }
 }
