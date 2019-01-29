@@ -74,6 +74,12 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string celebrityFailReason;
 
+		private string remarksC;
+
+		private string remarksD;
+
+		private string externalId;
+
 		private List<GetVideo_CelebrityItem> celebrity;
 
 		private List<GetVideo_VideoTagsItem> videoTags;
@@ -377,6 +383,42 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				celebrityFailReason = value;
+			}
+		}
+
+		public string RemarksC
+		{
+			get
+			{
+				return remarksC;
+			}
+			set	
+			{
+				remarksC = value;
+			}
+		}
+
+		public string RemarksD
+		{
+			get
+			{
+				return remarksD;
+			}
+			set	
+			{
+				remarksD = value;
+			}
+		}
+
+		public string ExternalId
+		{
+			get
+			{
+				return externalId;
+			}
+			set	
+			{
+				externalId = value;
 			}
 		}
 

@@ -38,6 +38,12 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string modifyTime;
 
+		private string remarksC;
+
+		private string remarksD;
+
+		private string externalId;
+
 		public string RequestId
 		{
 			get
@@ -119,6 +125,42 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				modifyTime = value;
+			}
+		}
+
+		public string RemarksC
+		{
+			get
+			{
+				return remarksC;
+			}
+			set	
+			{
+				remarksC = value;
+			}
+		}
+
+		public string RemarksD
+		{
+			get
+			{
+				return remarksD;
+			}
+			set	
+			{
+				remarksD = value;
+			}
+		}
+
+		public string ExternalId
+		{
+			get
+			{
+				return externalId;
+			}
+			set	
+			{
+				externalId = value;
 			}
 		}
 	}

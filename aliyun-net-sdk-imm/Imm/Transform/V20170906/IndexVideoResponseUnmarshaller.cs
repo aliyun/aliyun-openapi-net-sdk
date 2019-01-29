@@ -43,6 +43,9 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			indexVideoResponse.EndTime = context.StringValue("IndexVideo.EndTime");
 			indexVideoResponse.SaveType = context.BooleanValue("IndexVideo.SaveType");
 			indexVideoResponse.TgtUri = context.StringValue("IndexVideo.TgtUri");
+			indexVideoResponse.RemarksC = context.StringValue("IndexVideo.RemarksC");
+			indexVideoResponse.RemarksD = context.StringValue("IndexVideo.RemarksD");
+			indexVideoResponse.ExternalId = context.StringValue("IndexVideo.ExternalId");
         
 			return indexVideoResponse;
         }

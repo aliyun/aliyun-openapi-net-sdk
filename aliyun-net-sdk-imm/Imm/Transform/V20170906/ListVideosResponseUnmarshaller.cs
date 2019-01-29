@@ -60,6 +60,9 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				videosItem.CelebrityFailReason = context.StringValue("ListVideos.Videos["+ i +"].CelebrityFailReason");
 				videosItem.VideoTagsFailReason = context.StringValue("ListVideos.Videos["+ i +"].VideoTagsFailReason");
 				videosItem.ProcessFailReason = context.StringValue("ListVideos.Videos["+ i +"].ProcessFailReason");
+				videosItem.RemarksC = context.StringValue("ListVideos.Videos["+ i +"].RemarksC");
+				videosItem.RemarksD = context.StringValue("ListVideos.Videos["+ i +"].RemarksD");
+				videosItem.ExternalId = context.StringValue("ListVideos.Videos["+ i +"].ExternalId");
 
 				List<ListVideosResponse.ListVideos_VideosItem.ListVideos_VideoTagsItem> videosItem_videoTags = new List<ListVideosResponse.ListVideos_VideosItem.ListVideos_VideoTagsItem>();
 				for (int j = 0; j < context.Length("ListVideos.Videos["+ i +"].VideoTags.Length"); j++) {

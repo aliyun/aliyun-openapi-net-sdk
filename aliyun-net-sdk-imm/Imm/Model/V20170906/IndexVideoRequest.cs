@@ -43,6 +43,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string endTime;
 
+		private string externalId;
+
 		private string startTime;
 
 		private string accessKeyId;
@@ -50,6 +52,10 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string videoUri;
 
 		private bool? saveType;
+
+		private string remarksD;
+
+		private string remarksC;
 
 		private string action;
 
@@ -124,6 +130,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string ExternalId
+		{
+			get
+			{
+				return externalId;
+			}
+			set	
+			{
+				externalId = value;
+				DictionaryUtil.Add(QueryParameters, "ExternalId", value);
+			}
+		}
+
 		public string StartTime
 		{
 			get
@@ -173,6 +192,32 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				saveType = value;
 				DictionaryUtil.Add(QueryParameters, "SaveType", value.ToString());
+			}
+		}
+
+		public string RemarksD
+		{
+			get
+			{
+				return remarksD;
+			}
+			set	
+			{
+				remarksD = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksD", value);
+			}
+		}
+
+		public string RemarksC
+		{
+			get
+			{
+				return remarksC;
+			}
+			set	
+			{
+				remarksC = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksC", value);
 			}
 		}
 

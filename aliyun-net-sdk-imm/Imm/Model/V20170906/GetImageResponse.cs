@@ -84,6 +84,12 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string tagsStatus;
 
+		private string remarksC;
+
+		private string remarksD;
+
+		private string externalId;
+
 		private List<GetImage_FacesItem> faces;
 
 		private List<GetImage_OCRItem> oCR;
@@ -449,6 +455,42 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				tagsStatus = value;
+			}
+		}
+
+		public string RemarksC
+		{
+			get
+			{
+				return remarksC;
+			}
+			set	
+			{
+				remarksC = value;
+			}
+		}
+
+		public string RemarksD
+		{
+			get
+			{
+				return remarksD;
+			}
+			set	
+			{
+				remarksD = value;
+			}
+		}
+
+		public string ExternalId
+		{
+			get
+			{
+				return externalId;
+			}
+			set	
+			{
+				externalId = value;
 			}
 		}
 

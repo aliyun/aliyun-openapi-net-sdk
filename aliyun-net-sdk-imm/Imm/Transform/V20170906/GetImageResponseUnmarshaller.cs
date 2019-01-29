@@ -60,6 +60,9 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getImageResponse.CelebrityModifyTime = context.StringValue("GetImage.CelebrityModifyTime");
 			getImageResponse.CelebrityFailReason = context.StringValue("GetImage.CelebrityFailReason");
 			getImageResponse.TagsStatus = context.StringValue("GetImage.TagsStatus");
+			getImageResponse.RemarksC = context.StringValue("GetImage.RemarksC");
+			getImageResponse.RemarksD = context.StringValue("GetImage.RemarksD");
+			getImageResponse.ExternalId = context.StringValue("GetImage.ExternalId");
 
 			List<GetImageResponse.GetImage_FacesItem> getImageResponse_faces = new List<GetImageResponse.GetImage_FacesItem>();
 			for (int i = 0; i < context.Length("GetImage.Faces.Length"); i++) {

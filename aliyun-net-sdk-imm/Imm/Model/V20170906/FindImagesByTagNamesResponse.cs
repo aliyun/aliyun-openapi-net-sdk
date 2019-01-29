@@ -139,6 +139,12 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private string tagsStatus;
 
+			private string externalId;
+
+			private string remarksC;
+
+			private string remarksD;
+
 			private List<FindImagesByTagNames_FacesItem> faces;
 
 			private List<FindImagesByTagNames_TagsItem> tags;
@@ -480,6 +486,42 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					tagsStatus = value;
+				}
+			}
+
+			public string ExternalId
+			{
+				get
+				{
+					return externalId;
+				}
+				set	
+				{
+					externalId = value;
+				}
+			}
+
+			public string RemarksC
+			{
+				get
+				{
+					return remarksC;
+				}
+				set	
+				{
+					remarksC = value;
+				}
+			}
+
+			public string RemarksD
+			{
+				get
+				{
+					return remarksD;
+				}
+				set	
+				{
+					remarksD = value;
 				}
 			}
 

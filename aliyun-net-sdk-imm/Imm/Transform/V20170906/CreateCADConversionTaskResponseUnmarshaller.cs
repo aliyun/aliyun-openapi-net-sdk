@@ -23,18 +23,21 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Transform.V20170906
 {
-    public class CreateIndexFaceJobResponseUnmarshaller
+    public class CreateCADConversionTaskResponseUnmarshaller
     {
-        public static CreateIndexFaceJobResponse Unmarshall(UnmarshallerContext context)
+        public static CreateCADConversionTaskResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateIndexFaceJobResponse createIndexFaceJobResponse = new CreateIndexFaceJobResponse();
+			CreateCADConversionTaskResponse createCADConversionTaskResponse = new CreateCADConversionTaskResponse();
 
-			createIndexFaceJobResponse.HttpResponse = context.HttpResponse;
-			createIndexFaceJobResponse.RequestId = context.StringValue("CreateIndexFaceJob.RequestId");
-			createIndexFaceJobResponse.JobId = context.StringValue("CreateIndexFaceJob.JobId");
-			createIndexFaceJobResponse.JobType = context.StringValue("CreateIndexFaceJob.JobType");
+			createCADConversionTaskResponse.HttpResponse = context.HttpResponse;
+			createCADConversionTaskResponse.RequestId = context.StringValue("CreateCADConversionTask.RequestId");
+			createCADConversionTaskResponse.TaskId = context.StringValue("CreateCADConversionTask.TaskId");
+			createCADConversionTaskResponse.TgtLoc = context.StringValue("CreateCADConversionTask.TgtLoc");
+			createCADConversionTaskResponse.Status = context.StringValue("CreateCADConversionTask.Status");
+			createCADConversionTaskResponse.CreateTime = context.StringValue("CreateCADConversionTask.CreateTime");
+			createCADConversionTaskResponse.Percent = context.IntegerValue("CreateCADConversionTask.Percent");
         
-			return createIndexFaceJobResponse;
+			return createCADConversionTaskResponse;
         }
     }
 }

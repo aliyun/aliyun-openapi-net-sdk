@@ -56,6 +56,9 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				audiosItem.AudioFormat = context.StringValue("ListVideoAudios.Audios["+ i +"].AudioFormat");
 				audiosItem.AudioTextsFailReason = context.StringValue("ListVideoAudios.Audios["+ i +"].AudioTextsFailReason");
 				audiosItem.ProcessFailReason = context.StringValue("ListVideoAudios.Audios["+ i +"].ProcessFailReason");
+				audiosItem.RemarksC = context.StringValue("ListVideoAudios.Audios["+ i +"].RemarksC");
+				audiosItem.RemarksD = context.StringValue("ListVideoAudios.Audios["+ i +"].RemarksD");
+				audiosItem.ExternalId = context.StringValue("ListVideoAudios.Audios["+ i +"].ExternalId");
 
 				List<ListVideoAudiosResponse.ListVideoAudios_AudiosItem.ListVideoAudios_AudioTextsItem> audiosItem_audioTexts = new List<ListVideoAudiosResponse.ListVideoAudios_AudiosItem.ListVideoAudios_AudioTextsItem>();
 				for (int j = 0; j < context.Length("ListVideoAudios.Audios["+ i +"].AudioTexts.Length"); j++) {

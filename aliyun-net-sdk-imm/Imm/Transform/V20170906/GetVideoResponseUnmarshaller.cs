@@ -55,6 +55,9 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getVideoResponse.ProcessFailReason = context.StringValue("GetVideo.ProcessFailReason");
 			getVideoResponse.VideoTagsFailReason = context.StringValue("GetVideo.VideoTagsFailReason");
 			getVideoResponse.CelebrityFailReason = context.StringValue("GetVideo.CelebrityFailReason");
+			getVideoResponse.RemarksC = context.StringValue("GetVideo.RemarksC");
+			getVideoResponse.RemarksD = context.StringValue("GetVideo.RemarksD");
+			getVideoResponse.ExternalId = context.StringValue("GetVideo.ExternalId");
 
 			List<GetVideoResponse.GetVideo_CelebrityItem> getVideoResponse_celebrity = new List<GetVideoResponse.GetVideo_CelebrityItem>();
 			for (int i = 0; i < context.Length("GetVideo.Celebrity.Length"); i++) {

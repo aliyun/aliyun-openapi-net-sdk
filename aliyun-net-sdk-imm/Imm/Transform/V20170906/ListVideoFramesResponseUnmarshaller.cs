@@ -66,6 +66,9 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				framesItem.CelebrityModifyTime = context.StringValue("ListVideoFrames.Frames["+ i +"].CelebrityModifyTime");
 				framesItem.CelebrityFailReason = context.StringValue("ListVideoFrames.Frames["+ i +"].CelebrityFailReason");
 				framesItem.TagsStatus = context.StringValue("ListVideoFrames.Frames["+ i +"].TagsStatus");
+				framesItem.RemarksC = context.StringValue("ListVideoFrames.Frames["+ i +"].RemarksC");
+				framesItem.RemarksD = context.StringValue("ListVideoFrames.Frames["+ i +"].RemarksD");
+				framesItem.ExternalId = context.StringValue("ListVideoFrames.Frames["+ i +"].ExternalId");
 
 				List<ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_FacesItem> framesItem_faces = new List<ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_FacesItem>();
 				for (int j = 0; j < context.Length("ListVideoFrames.Frames["+ i +"].Faces.Length"); j++) {

@@ -21,14 +21,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class CreateGroupFacesJobResponse : AcsResponse
+	public class CreateCADConversionTaskResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string jobId;
+		private string taskId;
 
-		private string jobType;
+		private string tgtLoc;
+
+		private string status;
+
+		private string createTime;
+
+		private int? percent;
 
 		public string RequestId
 		{
@@ -42,27 +48,63 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string JobId
+		public string TaskId
 		{
 			get
 			{
-				return jobId;
+				return taskId;
 			}
 			set	
 			{
-				jobId = value;
+				taskId = value;
 			}
 		}
 
-		public string JobType
+		public string TgtLoc
 		{
 			get
 			{
-				return jobType;
+				return tgtLoc;
 			}
 			set	
 			{
-				jobType = value;
+				tgtLoc = value;
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
+
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
+			}
+		}
+
+		public int? Percent
+		{
+			get
+			{
+				return percent;
+			}
+			set	
+			{
+				percent = value;
 			}
 		}
 	}

@@ -37,6 +37,9 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			indexImageResponse.RemarksB = context.StringValue("IndexImage.RemarksB");
 			indexImageResponse.CreateTime = context.StringValue("IndexImage.CreateTime");
 			indexImageResponse.ModifyTime = context.StringValue("IndexImage.ModifyTime");
+			indexImageResponse.RemarksC = context.StringValue("IndexImage.RemarksC");
+			indexImageResponse.RemarksD = context.StringValue("IndexImage.RemarksD");
+			indexImageResponse.ExternalId = context.StringValue("IndexImage.ExternalId");
         
 			return indexImageResponse;
         }

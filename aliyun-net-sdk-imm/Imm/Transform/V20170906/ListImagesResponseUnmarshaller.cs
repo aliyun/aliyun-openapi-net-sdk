@@ -65,6 +65,9 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				imagesItem.CelebrityModifyTime = context.StringValue("ListImages.Images["+ i +"].CelebrityModifyTime");
 				imagesItem.CelebrityFailReason = context.StringValue("ListImages.Images["+ i +"].CelebrityFailReason");
 				imagesItem.TagsStatus = context.StringValue("ListImages.Images["+ i +"].TagsStatus");
+				imagesItem.RemarksC = context.StringValue("ListImages.Images["+ i +"].RemarksC");
+				imagesItem.RemarksD = context.StringValue("ListImages.Images["+ i +"].RemarksD");
+				imagesItem.ExternalId = context.StringValue("ListImages.Images["+ i +"].ExternalId");
 
 				List<ListImagesResponse.ListImages_ImagesItem.ListImages_FacesItem> imagesItem_faces = new List<ListImagesResponse.ListImages_ImagesItem.ListImages_FacesItem>();
 				for (int j = 0; j < context.Length("ListImages.Images["+ i +"].Faces.Length"); j++) {
