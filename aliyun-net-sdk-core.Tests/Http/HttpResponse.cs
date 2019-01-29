@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Core.UnitTests.Http
             Assert.Equal(MethodType.GET, response.Method);
 
             // When timeout!=0
-            response = HttpResponse.GetResponse(request, 1000);
+            response = HttpResponse.GetResponse(request, 100000);
 
             // Done With No Exception
         }
