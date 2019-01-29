@@ -16,14 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Regions.Location;
 using Aliyun.Acs.Core.Utils;
-using System;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Profile
 {
@@ -38,7 +39,7 @@ namespace Aliyun.Acs.Core.Profile
         private ICredentialProvider icredential = null;
         private RemoteEndpointsParser remoteProvider = null;
         private LocationConfig locationConfig = null;
-        private FormatType acceptFormat;
+        public FormatType acceptFormat;
 
         private DefaultProfile()
         {
@@ -64,23 +65,6 @@ namespace Aliyun.Acs.Core.Profile
             this.locationConfig = new LocationConfig();
         }
 
-        private DefaultProfile(String region, Credential creden, IEndpointsProvider provider)
-        {
-            this.iendpoints = provider;
-            this.credential = creden;
-            this.regionId = region;
-            this.locationConfig = new LocationConfig();
-            this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
-        }
-
-        private DefaultProfile(ICredentialProvider icredential)
-        {
-            this.icredential = icredential;
-            this.iendpoints = new InternalEndpointsParser();
-            this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
-            this.locationConfig = new LocationConfig();
-        }
-
         private DefaultProfile(String region, ICredentialProvider icredential)
         {
             this.iendpoints = new InternalEndpointsParser();
@@ -88,16 +72,6 @@ namespace Aliyun.Acs.Core.Profile
             this.regionId = region;
             this.locationConfig = new LocationConfig();
             this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
-        }
-
-        private DefaultProfile(ICredentialProvider icredential, String region, FormatType format)
-        {
-            this.regionId = region;
-            this.acceptFormat = format;
-            this.icredential = icredential;
-            this.iendpoints = new InternalEndpointsParser();
-            this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
-            this.locationConfig = new LocationConfig();
         }
 
         public string GetRegionId()
