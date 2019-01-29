@@ -12,7 +12,7 @@ namespace Aliyun.Acs.Core.UnitTests.Http
 {
     public class HttpResponseTest
     {
-        private string requestUrl = "https://www.easy-mock.com/mock/5c494b3370e39f5d6f283390/example/";
+        private string requestUrl = "https://www.alibabacloud.com/";
 
         [Fact]
         public HttpResponse Instance()
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Core.UnitTests.Http
             Dictionary<string, string> tmpHeaders = new Dictionary<string, string>
             { { "Content-MD5", "" },
                 { "Content-Length", "" },
-                { "Content-Type", "application/json" },
+                { "Content-Type", "application/json; charset=UTF-8" },
                 { "Accept", "accept" },
                 { "Date", "Thu, 24 Jan 2019 05:16:46 GMT" }
             };
@@ -44,6 +44,18 @@ namespace Aliyun.Acs.Core.UnitTests.Http
             Assert.Equal("UTF-8", instance.Encoding);
             Assert.Equal(FormatType.JSON, instance.ContentType);
             return instance;
+        }
+
+        [Fact]
+        public void SetContentWithEmptyHeaders()
+        {
+            Dictionary<string, string> tmpHeaders = new Dictionary<string, string> { };
+            byte[] content = Encoding.ASCII.GetBytes("");
+            HttpResponse instance = new HttpResponse(this.requestUrl);
+            instance.SetContent(content, "UTF-8", FormatType.JSON);
+            Assert.Equal(content, instance.Content);
+            Assert.Equal("UTF-8", instance.Encoding);
+            Assert.Equal(FormatType.JSON, instance.ContentType);
         }
 
         [Fact]
@@ -60,11 +72,18 @@ namespace Aliyun.Acs.Core.UnitTests.Http
         [Fact]
         public void GetResponse()
         {
-            HttpRequest request = new HttpRequest(this.requestUrl);
+            HttpResponse request = new HttpResponse(this.requestUrl);
             byte[] content = Encoding.ASCII.GetBytes("someString");
-            request.SetContent(content, "UTF-8", FormatType.JSON);
+            request.SetContent(content, "UTF-8", FormatType.FORM);
             request.Method = MethodType.GET;
-            // HttpResponse.GetResponse(request);
+            HttpResponse response = HttpResponse.GetResponse(request);
+            Assert.Equal("UTF-8", response.Encoding);
+            Assert.Equal(MethodType.GET, response.Method);
+
+            // When timeout!=0
+            response = HttpResponse.GetResponse(request, 100000);
+
+            // Done With No Exception
         }
 
         [Fact]
@@ -74,13 +93,27 @@ namespace Aliyun.Acs.Core.UnitTests.Http
             HttpWebRequest httpWebRequest = HttpResponse.GetWebRequest(request);
             Assert.IsType<HttpWebRequest>(httpWebRequest);
             Assert.Equal("application/octet-stream", httpWebRequest.ContentType);
+
+            // 删除 Accept 和 Date 请求头
+            request.Headers.Add("Accept", "accept");
+            request.Headers.Add("Date", "Thu, 24 Jan 2019 05:16:46 GMT");
+
+            // 覆盖POST方式
+            request.Method = MethodType.POST;
+            httpWebRequest = HttpResponse.GetWebRequest(request);
+            Assert.IsType<HttpWebRequest>(httpWebRequest);
+            Assert.Equal("application/octet-stream", httpWebRequest.ContentType);
         }
 
         [Fact]
         public void isSuccess()
         {
-            bool status = this.Instance().isSuccess();
-            Assert.IsType<bool>(status);
+            HttpResponse instance = this.SetContent();
+            bool status = instance.isSuccess();
+            Assert.False(status);
+
+            instance.Status = 200;
+            Assert.True(instance.isSuccess());
         }
     }
 }
