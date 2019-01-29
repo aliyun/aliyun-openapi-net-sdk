@@ -10,7 +10,7 @@ The Alibaba Cloud C# Software Development Kit (SDK) allows you to access Alibaba
 
 This document introduces how to install and use Alibaba Cloud C# SDK.
 
-If you have any problem while using Java SDK, please join the **DingTalk group: 11771185 (the official SDK customer service group of Alibaba Cloud)** for consultation.
+If you have any problem while using Java SDK, please [submit an issue](https://github.com/aliyun/aliyun-openapi-net-sdk/issues/new).
 
 ## Prerequisites
 
@@ -70,7 +70,7 @@ The following code example shows the three main steps to use the Alibaba Cloud C
 
 - Initiate the request and handle the response.
 
-```
+```csharp
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Exceptions;
