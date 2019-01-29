@@ -2,6 +2,7 @@ using System.Text;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
 
 using Xunit;
 
@@ -42,11 +43,24 @@ namespace Aliyun.Acs.Core.UnitTests
         [Fact]
         public void Add()
         {
+            UnmarshallerContext context = new UnmarshallerContext();
             CommonRequest instance = new CommonRequest();
-            instance.AddQueryParameters("foo", "bar"); // 私有参数，无get方法
-            instance.AddBodyParameters("foo", "bar"); // 私有参数，无get方法
-            instance.AddHeadParameters("foo", "bar"); // 私有参数，无get方法
-            instance.AddPathParameters("foo", "bar"); // 私有参数，无get方法
+
+            instance.AddQueryParameters("AddQueryParameters", "a");
+            context.ResponseDictionary = instance.QueryParameters;
+            Assert.Equal("a", context.StringValue("AddQueryParameters"));
+
+            instance.AddBodyParameters("AddBodyParameters", "b");
+            context.ResponseDictionary = instance.BodyParameters;
+            Assert.Equal("b", context.StringValue("AddBodyParameters"));
+
+            instance.AddHeadParameters("AddHeadParameters", "c");
+            context.ResponseDictionary = instance.HeadParameters;
+            Assert.Equal("c", context.StringValue("AddHeadParameters"));
+
+            instance.AddPathParameters("AddPathParameters", "d");
+            context.ResponseDictionary = instance.PathParameters;
+            Assert.Equal("d", context.StringValue("AddPathParameters"));
         }
 
         [Fact]
