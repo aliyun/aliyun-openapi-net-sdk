@@ -37,7 +37,7 @@
 2. 创建 API 请求并设置参数；
 3. 发起请求并处理返回。
 
-```
+```csharp
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Exceptions;
