@@ -51,6 +51,14 @@ namespace Aliyun.Acs.Core
 
         public String Domain { get; set; }
 
+        public Dictionary<String, String> QueryParameters { get { return this.queryParameters; } }
+
+        public Dictionary<String, String> BodyParameters { get { return this.bodyParameters; } }
+
+        public Dictionary<String, String> HeadParameters { get { return this.headParameters; } }
+
+        public Dictionary<String, String> PathParameters { get { return this.pathParameters; } }
+
         public CommonRequest()
         {
             AddHeadParameters("x-sdk-invoke-type", "common");
