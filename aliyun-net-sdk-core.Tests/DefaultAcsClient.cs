@@ -182,6 +182,7 @@ namespace Aliyun.Acs.Core.UnitTests
         [Fact]
         public void GetAcsResponseWhenStatusIsNotSuccess()
         {
+            // 400 Error
             DefaultAcsClient instance = this.MockDefaultAcsClient(400);
 
             // Mock AcsResquest
@@ -194,13 +195,24 @@ namespace Aliyun.Acs.Core.UnitTests
             // Mock credentials
             Credential credentials = new Credential(AKID, AKSE);
 
-            Action testCode = () =>
+            Action testCode400 = () =>
             {
                 var result = instance.GetAcsResponse<AcsResponse>(request, "cn-hangzhou", credentials);
             };
-            var ex = Record.Exception(testCode);
+            var ex = Record.Exception(testCode400);
             Assert.NotNull(ex);
             Assert.IsType<ClientException>(ex);
+            Assert.Equal("ThisIsCode : ThisIsMessage", ex.Message);
+
+            // 502 Error
+            instance = this.MockDefaultAcsClient(502);
+            Action testCode502 = () =>
+            {
+                var result = instance.GetAcsResponse<AcsResponse>(request, "cn-hangzhou", credentials);
+            };
+            ex = Record.Exception(testCode400);
+            Assert.NotNull(ex);
+            Assert.IsType<ServerException>(ex);
             Assert.Equal("ThisIsCode : ThisIsMessage", ex.Message);
         }
 
