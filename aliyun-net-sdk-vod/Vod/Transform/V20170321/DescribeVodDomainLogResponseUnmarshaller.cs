@@ -38,16 +38,11 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				domainLogDetail.DomainName = context.StringValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].DomainName");
 				domainLogDetail.LogCount = context.LongValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].LogCount");
 
-				List<DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_PageInfoDetail> domainLogDetail_pageInfos = new List<DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_PageInfoDetail>();
-				for (int j = 0; j < context.Length("DescribeVodDomainLog.DomainLogDetails["+ i +"].PageInfos.Length"); j++) {
-					DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_PageInfoDetail pageInfoDetail = new DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_PageInfoDetail();
-					pageInfoDetail.PageIndex = context.LongValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].PageInfos["+ j +"].PageIndex");
-					pageInfoDetail.PageSize = context.LongValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].PageInfos["+ j +"].PageSize");
-					pageInfoDetail.Total = context.LongValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].PageInfos["+ j +"].Total");
-
-					domainLogDetail_pageInfos.Add(pageInfoDetail);
-				}
-				domainLogDetail.PageInfos = domainLogDetail_pageInfos;
+				DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_PageInfos pageInfos = new DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_PageInfos();
+				pageInfos.PageNumber = context.LongValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].PageInfos.PageNumber");
+				pageInfos.PageSize = context.LongValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].PageInfos.PageSize");
+				pageInfos.Total = context.LongValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].PageInfos.Total");
+				domainLogDetail.PageInfos = pageInfos;
 
 				List<DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_LogInfoDetail> domainLogDetail_logInfos = new List<DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_LogInfoDetail>();
 				for (int j = 0; j < context.Length("DescribeVodDomainLog.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {

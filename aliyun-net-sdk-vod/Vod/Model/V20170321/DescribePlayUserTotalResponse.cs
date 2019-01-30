@@ -21,12 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class DescribeVodDomainLogResponse : AcsResponse
+	public class DescribePlayUserTotalResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeVodDomainLog_DomainLogDetail> domainLogDetails;
+		private List<DescribePlayUserTotal_UserPlayStatisTotal> userPlayStatisTotals;
 
 		public string RequestId
 		{
@@ -40,193 +40,207 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public List<DescribeVodDomainLog_DomainLogDetail> DomainLogDetails
+		public List<DescribePlayUserTotal_UserPlayStatisTotal> UserPlayStatisTotals
 		{
 			get
 			{
-				return domainLogDetails;
+				return userPlayStatisTotals;
 			}
 			set	
 			{
-				domainLogDetails = value;
+				userPlayStatisTotals = value;
 			}
 		}
 
-		public class DescribeVodDomainLog_DomainLogDetail
+		public class DescribePlayUserTotal_UserPlayStatisTotal
 		{
 
-			private string domainName;
+			private string date;
 
-			private long? logCount;
+			private string playDuration;
 
-			private List<DescribeVodDomainLog_LogInfoDetail> logInfos;
+			private string playRange;
 
-			private DescribeVodDomainLog_PageInfos pageInfos;
+			private DescribePlayUserTotal_VV vV;
 
-			public string DomainName
+			private DescribePlayUserTotal_UV uV;
+
+			public string Date
 			{
 				get
 				{
-					return domainName;
+					return date;
 				}
 				set	
 				{
-					domainName = value;
+					date = value;
 				}
 			}
 
-			public long? LogCount
+			public string PlayDuration
 			{
 				get
 				{
-					return logCount;
+					return playDuration;
 				}
 				set	
 				{
-					logCount = value;
+					playDuration = value;
 				}
 			}
 
-			public List<DescribeVodDomainLog_LogInfoDetail> LogInfos
+			public string PlayRange
 			{
 				get
 				{
-					return logInfos;
+					return playRange;
 				}
 				set	
 				{
-					logInfos = value;
+					playRange = value;
 				}
 			}
 
-			public DescribeVodDomainLog_PageInfos PageInfos
+			public DescribePlayUserTotal_VV VV
 			{
 				get
 				{
-					return pageInfos;
+					return vV;
 				}
 				set	
 				{
-					pageInfos = value;
+					vV = value;
 				}
 			}
 
-			public class DescribeVodDomainLog_LogInfoDetail
+			public DescribePlayUserTotal_UV UV
+			{
+				get
+				{
+					return uV;
+				}
+				set	
+				{
+					uV = value;
+				}
+			}
+
+			public class DescribePlayUserTotal_VV
 			{
 
-				private string logName;
+				private string android;
 
-				private string logPath;
+				private string iOS;
 
-				private long? logSize;
+				private string flash;
 
-				private string startTime;
+				private string hTML5;
 
-				private string endTime;
-
-				public string LogName
+				public string Android
 				{
 					get
 					{
-						return logName;
+						return android;
 					}
 					set	
 					{
-						logName = value;
+						android = value;
 					}
 				}
 
-				public string LogPath
+				public string IOS
 				{
 					get
 					{
-						return logPath;
+						return iOS;
 					}
 					set	
 					{
-						logPath = value;
+						iOS = value;
 					}
 				}
 
-				public long? LogSize
+				public string Flash
 				{
 					get
 					{
-						return logSize;
+						return flash;
 					}
 					set	
 					{
-						logSize = value;
+						flash = value;
 					}
 				}
 
-				public string StartTime
+				public string HTML5
 				{
 					get
 					{
-						return startTime;
+						return hTML5;
 					}
 					set	
 					{
-						startTime = value;
-					}
-				}
-
-				public string EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
+						hTML5 = value;
 					}
 				}
 			}
 
-			public class DescribeVodDomainLog_PageInfos
+			public class DescribePlayUserTotal_UV
 			{
 
-				private long? pageNumber;
+				private string android;
 
-				private long? pageSize;
+				private string iOS;
 
-				private long? total;
+				private string flash;
 
-				public long? PageNumber
+				private string hTML5;
+
+				public string Android
 				{
 					get
 					{
-						return pageNumber;
+						return android;
 					}
 					set	
 					{
-						pageNumber = value;
+						android = value;
 					}
 				}
 
-				public long? PageSize
+				public string IOS
 				{
 					get
 					{
-						return pageSize;
+						return iOS;
 					}
 					set	
 					{
-						pageSize = value;
+						iOS = value;
 					}
 				}
 
-				public long? Total
+				public string Flash
 				{
 					get
 					{
-						return total;
+						return flash;
 					}
 					set	
 					{
-						total = value;
+						flash = value;
+					}
+				}
+
+				public string HTML5
+				{
+					get
+					{
+						return hTML5;
+					}
+					set	
+					{
+						hTML5 = value;
 					}
 				}
 			}

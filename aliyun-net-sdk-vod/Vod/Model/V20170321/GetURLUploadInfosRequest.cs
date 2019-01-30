@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class ListTranscodeTemplateGroupRequest : RpcAcsRequest<ListTranscodeTemplateGroupResponse>
+    public class GetURLUploadInfosRequest : RpcAcsRequest<GetURLUploadInfosResponse>
     {
-        public ListTranscodeTemplateGroupRequest()
-            : base("vod", "2017-03-21", "ListTranscodeTemplateGroup", "vod", "openAPI")
+        public GetURLUploadInfosRequest()
+            : base("vod", "2017-03-21", "GetURLUploadInfos", "vod", "openAPI")
         {
         }
 
@@ -37,11 +37,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
+		private string jobIds;
+
+		private string uploadURLs;
+
 		private string action;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -66,6 +68,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string JobIds
+		{
+			get
+			{
+				return jobIds;
+			}
+			set	
+			{
+				jobIds = value;
+				DictionaryUtil.Add(QueryParameters, "JobIds", value);
+			}
+		}
+
+		public string UploadURLs
+		{
+			get
+			{
+				return uploadURLs;
+			}
+			set	
+			{
+				uploadURLs = value;
+				DictionaryUtil.Add(QueryParameters, "UploadURLs", value);
 			}
 		}
 
@@ -95,27 +123,14 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ListTranscodeTemplateGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetURLUploadInfosResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTranscodeTemplateGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetURLUploadInfosResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

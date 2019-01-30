@@ -21,12 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-	public class DeleteTranscodeTemplatesResponse : AcsResponse
+	public class DescribePlayUserAvgResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<string> nonExistTranscodeTemplateIds;
+		private List<DescribePlayUserAvg_UserPlayStatisAvg> userPlayStatisAvgs;
 
 		public string RequestId
 		{
@@ -40,15 +40,61 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public List<string> NonExistTranscodeTemplateIds
+		public List<DescribePlayUserAvg_UserPlayStatisAvg> UserPlayStatisAvgs
 		{
 			get
 			{
-				return nonExistTranscodeTemplateIds;
+				return userPlayStatisAvgs;
 			}
 			set	
 			{
-				nonExistTranscodeTemplateIds = value;
+				userPlayStatisAvgs = value;
+			}
+		}
+
+		public class DescribePlayUserAvg_UserPlayStatisAvg
+		{
+
+			private string date;
+
+			private string avgPlayDuration;
+
+			private string avgPlayCount;
+
+			public string Date
+			{
+				get
+				{
+					return date;
+				}
+				set	
+				{
+					date = value;
+				}
+			}
+
+			public string AvgPlayDuration
+			{
+				get
+				{
+					return avgPlayDuration;
+				}
+				set	
+				{
+					avgPlayDuration = value;
+				}
+			}
+
+			public string AvgPlayCount
+			{
+				get
+				{
+					return avgPlayCount;
+				}
+				set	
+				{
+					avgPlayCount = value;
+				}
 			}
 		}
 	}

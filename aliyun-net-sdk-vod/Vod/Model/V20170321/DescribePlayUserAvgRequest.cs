@@ -26,46 +26,31 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class ListTranscodeTemplateGroupRequest : RpcAcsRequest<ListTranscodeTemplateGroupResponse>
+    public class DescribePlayUserAvgRequest : RpcAcsRequest<DescribePlayUserAvgResponse>
     {
-        public ListTranscodeTemplateGroupRequest()
-            : base("vod", "2017-03-21", "ListTranscodeTemplateGroup", "vod", "openAPI")
+        public DescribePlayUserAvgRequest()
+            : base("vod", "2017-03-21", "DescribePlayUserAvg", "vod", "openAPI")
         {
         }
 
-		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
+		private string startTime;
 
 		private string action;
 
+		private string endTime;
+
 		private long? ownerId;
 
-		private string accessKeyId;
-
-		public long? ResourceOwnerId
+		public string StartTime
 		{
 			get
 			{
-				return resourceOwnerId;
+				return startTime;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -82,6 +67,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -95,27 +93,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override ListTranscodeTemplateGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribePlayUserAvgResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTranscodeTemplateGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribePlayUserAvgResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

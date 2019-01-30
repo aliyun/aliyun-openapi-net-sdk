@@ -26,46 +26,33 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class ListTranscodeTemplateGroupRequest : RpcAcsRequest<ListTranscodeTemplateGroupResponse>
+    public class DescribePlayTopVideosRequest : RpcAcsRequest<DescribePlayTopVideosResponse>
     {
-        public ListTranscodeTemplateGroupRequest()
-            : base("vod", "2017-03-21", "ListTranscodeTemplateGroup", "vod", "openAPI")
+        public DescribePlayTopVideosRequest()
+            : base("vod", "2017-03-21", "DescribePlayTopVideos", "vod", "openAPI")
         {
         }
 
-		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
+		private long? pageSize;
 
 		private string action;
 
 		private long? ownerId;
 
-		private string accessKeyId;
+		private string bizDate;
 
-		public long? ResourceOwnerId
+		private long? pageNo;
+
+		public long? PageSize
 		{
 			get
 			{
-				return resourceOwnerId;
+				return pageSize;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -95,27 +82,35 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AccessKeyId
+		public string BizDate
 		{
 			get
 			{
-				return accessKeyId;
+				return bizDate;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				bizDate = value;
+				DictionaryUtil.Add(QueryParameters, "BizDate", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public long? PageNo
 		{
-			return false;
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+			}
 		}
 
-        public override ListTranscodeTemplateGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribePlayTopVideosResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ListTranscodeTemplateGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribePlayTopVideosResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

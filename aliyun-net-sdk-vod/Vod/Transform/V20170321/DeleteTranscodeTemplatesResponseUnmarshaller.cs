@@ -31,6 +31,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 
 			deleteTranscodeTemplatesResponse.HttpResponse = context.HttpResponse;
 			deleteTranscodeTemplatesResponse.RequestId = context.StringValue("DeleteTranscodeTemplates.RequestId");
+
+			List<string> deleteTranscodeTemplatesResponse_nonExistTranscodeTemplateIds = new List<string>();
+			for (int i = 0; i < context.Length("DeleteTranscodeTemplates.NonExistTranscodeTemplateIds.Length"); i++) {
+				deleteTranscodeTemplatesResponse_nonExistTranscodeTemplateIds.Add(context.StringValue("DeleteTranscodeTemplates.NonExistTranscodeTemplateIds["+ i +"]"));
+			}
+			deleteTranscodeTemplatesResponse.NonExistTranscodeTemplateIds = deleteTranscodeTemplatesResponse_nonExistTranscodeTemplateIds;
         
 			return deleteTranscodeTemplatesResponse;
         }
