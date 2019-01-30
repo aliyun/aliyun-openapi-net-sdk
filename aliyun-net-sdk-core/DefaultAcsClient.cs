@@ -204,7 +204,7 @@ namespace Aliyun.Acs.Core
                 signer, format, endpoints);
         }
 
-        public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
+        public virtual HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
             AlibabaCloudCredentials credentials, Signer signer, FormatType? format, List<Endpoint> endpoints) where T : AcsResponse
         {
             FormatType? requestFormatType = request.AcceptFormat;
