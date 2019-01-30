@@ -13,5 +13,5 @@ script:
   - dotnet build
   - dotnet test /p:AltCover=true
 after_success:
-  - cd aliyun-net-sdk-core/
+  - cd aliyun-net-sdk-core.Tests/
   - bash <(curl -s https://codecov.io/bash)
