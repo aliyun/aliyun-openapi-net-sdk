@@ -282,6 +282,54 @@ namespace Aliyun.Acs.Core.UnitTests
             Assert.Equal(200, commonResponse.HttpStatus);
         }
 
+        [Fact]
+        public void DoAction()
+        {
+            // Mock RegionIds
+            ISet<String> regionIds = new HashSet<String>();
+            regionIds.Add("cn-hangzhou");
+
+            // Mock productDomains
+            List<ProductDomain> productDomains = new List<ProductDomain>() { };
+
+            // Mock endpoint
+            Endpoint endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
+
+            // Mock endpoints
+            List<Endpoint> endpoints = new List<Endpoint>() { };
+            endpoints.Add(endpoint);
+
+            // Mock credential
+            Credential credential = new Credential(AKID, AKSE);
+
+            // Mock Profile
+            var mockProfile = new Mock<IClientProfile>();
+            mockProfile.Setup(foo => foo.GetCredential()).Returns(credential);
+            IClientProfile profile = mockProfile.Object;
+
+            DefaultAcsClient instance = new DefaultAcsClient();
+
+            // Mock AcsResquest
+            MockAcsRequestForDefaultAcsClient request = new MockAcsRequestForDefaultAcsClient();
+            request.RegionId = "cn-hangzhou";
+            request.Product = "Ess";
+            request.LocationProduct = "ess";
+            request.LocationEndpointType = "openAPI";
+
+            // Mock AlibabaCloudCredentials
+            var mockCredentials = new Mock<AlibabaCloudCredentials>();
+            AlibabaCloudCredentials credentials = mockCredentials.Object;
+            Signer signer = new HmacSHA1Signer();
+
+            // When prodoctDomain is not exist
+            Assert.Throws<ClientException>(
+                () =>
+                {
+                    var response = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, endpoints);
+                }
+            );
+        }
+
         public sealed class MockAcsRequestForDefaultAcsClient : AcsRequest<AcsResponse>
         {
             public MockAcsRequestForDefaultAcsClient(string urlStr = null) : base(urlStr)
