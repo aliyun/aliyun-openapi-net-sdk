@@ -1,13 +1,11 @@
 using System;
-using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 
 using Xunit;
 
-namespace Aliyun.Acs.Core.UnitTests.Utils
+namespace Aliyun.Acs.Core.Tests.Units.Utils
 {
     public class ParameterHelperTest
     {
