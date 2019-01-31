@@ -1,20 +1,16 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 using Aliyun.Acs.Core.Auth;
-using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
 
 using Moq;
 
 using Xunit;
 
-namespace Aliyun.Acs.Core.UnitTests
+namespace Aliyun.Acs.Core.Tests.Units
 {
     public class RpcAcsRequestTest
     {

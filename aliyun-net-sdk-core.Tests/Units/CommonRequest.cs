@@ -1,12 +1,11 @@
 using System.Text;
 
-using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 
 using Xunit;
 
-namespace Aliyun.Acs.Core.UnitTests
+namespace Aliyun.Acs.Core.Tests.Units
 {
     public class CommonRequestTest
     {
