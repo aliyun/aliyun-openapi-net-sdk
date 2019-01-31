@@ -282,6 +282,43 @@ namespace Aliyun.Acs.Core.UnitTests
             Assert.Equal(200, commonResponse.HttpStatus);
         }
 
+        [Fact]
+        public void DoAction()
+        {
+            DefaultAcsClient instance = this.MockDefaultAcsClient();
+
+            // Mock AcsResquest
+            MockAcsRequestForDefaultAcsClient request = new MockAcsRequestForDefaultAcsClient();
+            request.RegionId = "cn-hangzhou";
+            request.Product = "Ess";
+            request.LocationProduct = "ess";
+            request.LocationEndpointType = "openAPI";
+
+            // Mock AlibabaCloudCredentials
+            var mockCredentials = new Mock<AlibabaCloudCredentials>();
+            AlibabaCloudCredentials credentials = mockCredentials.Object;
+            Signer signer = new HmacSHA1Signer();
+
+            // Mock RegionIds
+            ISet<String> regionIds = new HashSet<String>();
+            regionIds.Add("cn-hangzhou");
+
+            // Mock productDomains
+            List<ProductDomain> productDomains = new List<ProductDomain>() { };
+            ProductDomain productDomain = new ProductDomain("Ess", "ess.aliyuncs.com");
+            productDomains.Add(productDomain);
+
+            // Mock endpoint
+            Endpoint endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
+
+            // Mock endpoints
+            List<Endpoint> endpoints = new List<Endpoint>() { };
+            endpoints.Add(endpoint);
+
+            var response = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, endpoints);
+            Assert.NotNull(response);
+        }
+
         public sealed class MockAcsRequestForDefaultAcsClient : AcsRequest<AcsResponse>
         {
             public MockAcsRequestForDefaultAcsClient(string urlStr = null) : base(urlStr)
