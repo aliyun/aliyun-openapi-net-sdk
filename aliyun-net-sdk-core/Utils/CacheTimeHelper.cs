@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -21,6 +21,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Linq;
 using System.Text;
+
 using Aliyun.Acs.Core.Profile;
 
 namespace Aliyun.Acs.Core.Utils
@@ -44,7 +45,7 @@ namespace Aliyun.Acs.Core.Utils
                 lastClearTime = DateTime.Now;
                 lastClearTimePerProduct.TryAdd(key, lastClearTime);
             }
-            
+
             TimeSpan ts = DateTime.Now - lastClearTime;
 
             if (ENDPOINT_CACHE_TIME < ts.TotalSeconds)

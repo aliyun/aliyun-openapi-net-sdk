@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,9 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Regions.Location.Model;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Regions.Location.Model;
 
 namespace Aliyun.Acs.Core.Regions
 {
@@ -36,7 +37,7 @@ namespace Aliyun.Acs.Core.Regions
         }
 
         public static ProductDomain FindProductDomain(String regionId, String product,
-                List<Endpoint> endpoints )
+            List<Endpoint> endpoints)
         {
             if (null == regionId || null == product || null == endpoints)
             {

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,16 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- 
+
 using System;
+
 using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth.Sts
 {
     public class AssumeRoleRequest : RpcAcsRequest<AssumeRoleResponse>
     {
-        public AssumeRoleRequest()
-            : base("Sts", "2015-04-01", "AssumeRole")
+        public AssumeRoleRequest() : base("Sts", "2015-04-01", "AssumeRole")
         {
             Protocol = Http.ProtocolType.HTTPS;
         }

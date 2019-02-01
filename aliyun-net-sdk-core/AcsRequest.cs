@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,14 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
+using System.Collections.Generic;
+using System.Text;
+
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aliyun.Acs.Core
 {
@@ -57,7 +58,6 @@ namespace Aliyun.Acs.Core
                 DictionaryUtil.Add(Headers, "Accept", value.ToString());
             }
         }
-
 
         public ProtocolType Protocol
         {
@@ -107,8 +107,7 @@ namespace Aliyun.Acs.Core
             }
         }
 
-        public AcsRequest(String product)
-            : base(null)
+        public AcsRequest(String product) : base(null)
         {
             DictionaryUtil.Add(Headers, "x-sdk-client", "Net/2.0.0");
             DictionaryUtil.Add(Headers, "x-sdk-invoke-type", "normal");

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,6 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
@@ -23,8 +26,6 @@ using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Reader;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Transform;
-using System.Collections.Generic;
-using System;
 
 namespace Aliyun.Acs.Core
 {
@@ -93,7 +94,7 @@ namespace Aliyun.Acs.Core
             if (httpResponse.Content != null)
             {
                 data = System.Text.Encoding.UTF8.GetString(httpResponse.Content);
-            }           
+            }
 
             CommonResponse response = new CommonResponse();
             response.Data = data;
@@ -170,7 +171,7 @@ namespace Aliyun.Acs.Core
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry,
-                int maxRetryNumber, IClientProfile profile) where T : AcsResponse
+            int maxRetryNumber, IClientProfile profile) where T : AcsResponse
         {
             if (null == profile)
             {
@@ -269,7 +270,7 @@ namespace Aliyun.Acs.Core
             {
                 context.ResponseDictionary = reader.ReadForHideArrayItem(body, request.ActionName);
             }
-            
+
             context.HttpResponse = httpResponse;
             return request.GetResponse(context);
         }

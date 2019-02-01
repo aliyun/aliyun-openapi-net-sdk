@@ -17,14 +17,15 @@
  * under the License.
  */
 
-using Aliyun.Acs.Core.Exceptions;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Reader;
-using Aliyun.Acs.Core.Utils;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
+
+using Aliyun.Acs.Core.Exceptions;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Reader;
+using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth
 {
@@ -112,11 +113,11 @@ namespace Aliyun.Acs.Core.Auth
                 throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG + " Reason: " + e.ToString());
             }
 
-            if (DictionaryUtil.Get(dic, ".Code") == null
-                || DictionaryUtil.Get(dic, ".AccessKeyId") == null
-                || DictionaryUtil.Get(dic, ".AccessKeySecret") == null
-                || DictionaryUtil.Get(dic, ".SecurityToken") == null
-                || DictionaryUtil.Get(dic, ".Expiration") == null)
+            if (DictionaryUtil.Get(dic, ".Code") == null ||
+                DictionaryUtil.Get(dic, ".AccessKeyId") == null ||
+                DictionaryUtil.Get(dic, ".AccessKeySecret") == null ||
+                DictionaryUtil.Get(dic, ".SecurityToken") == null ||
+                DictionaryUtil.Get(dic, ".Expiration") == null)
             {
                 throw new ClientException("Invalid json got from ECS Metadata service.");
             }

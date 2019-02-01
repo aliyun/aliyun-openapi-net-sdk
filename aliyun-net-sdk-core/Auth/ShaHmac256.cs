@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -43,13 +43,12 @@ namespace Aliyun.Acs.Core.Auth
 
         public override String SignString(String source, String accessSecret)
         {
-            using (var algorithm = KeyedHashAlgorithm.Create("HMACSHA256"))
+            using(var algorithm = KeyedHashAlgorithm.Create("HMACSHA256"))
             {
                 algorithm.Key = Encoding.UTF8.GetBytes(accessSecret.ToCharArray());
                 return Convert.ToBase64String(algorithm.ComputeHash(Encoding.UTF8.GetBytes(source.ToCharArray())));
             }
         }
-
 
     }
 }

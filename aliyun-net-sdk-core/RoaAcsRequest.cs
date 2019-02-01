@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
+using System.Collections.Generic;
+using System.Text;
+
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Utils;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aliyun.Acs.Core
 {
@@ -31,29 +32,25 @@ namespace Aliyun.Acs.Core
         private string uriPattern = null;
         private Dictionary<string, string> pathParameters = new Dictionary<string, string>();
 
-        public RoaAcsRequest(string product)
-            : base(product)
+        public RoaAcsRequest(string product) : base(product)
         {
             Initialize();
         }
 
-        public RoaAcsRequest(string product, string version)
-            : base(product)
+        public RoaAcsRequest(string product, string version) : base(product)
         {
             this.SetVersion(version);
             Initialize();
         }
 
-        public RoaAcsRequest(string product, string version, string action)
-            : base(product)
+        public RoaAcsRequest(string product, string version, string action) : base(product)
         {
             this.SetVersion(version);
             this.ActionName = action;
             Initialize();
         }
 
-        public RoaAcsRequest(String product, String version, String action, String locationProduct)
-            : base(product)
+        public RoaAcsRequest(String product, String version, String action, String locationProduct) : base(product)
         {
             this.SetVersion(version);
             this.ActionName = action;
@@ -61,8 +58,7 @@ namespace Aliyun.Acs.Core
             Initialize();
         }
 
-        public RoaAcsRequest(string product, string version, string action, string locationProduct, string locationEndpointType)
-            : base(product)
+        public RoaAcsRequest(string product, string version, string action, string locationProduct, string locationEndpointType) : base(product)
         {
             this.SetVersion(version);
             ActionName = action;
@@ -77,7 +73,6 @@ namespace Aliyun.Acs.Core
             this.AcceptFormat = FormatType.RAW;
             this.Composer = RoaSignatureComposer.GetComposer();
         }
-
 
         public void SetVersion(string version)
         {
@@ -131,7 +126,7 @@ namespace Aliyun.Acs.Core
                 imutableMap = Composer.RefreshSignParameters(Headers, signer, accessKeyId, format);
                 if (credentials is BasicSessionCredentials)
                 {
-                    String sessionToken = ((BasicSessionCredentials)credentials).GetSessionToken();
+                    String sessionToken = ((BasicSessionCredentials) credentials).GetSessionToken();
                     if (null != sessionToken)
                     {
                         imutableMap.Add("x-acs-security-token", sessionToken);

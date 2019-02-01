@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,12 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Regions;
-using System;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core
 {
@@ -49,9 +50,9 @@ namespace Aliyun.Acs.Core
         HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryCounts, IClientProfile profile) where T : AcsResponse;
 
         HttpResponse DoAction<T>(AcsRequest<T> request,
-                bool autoRetry, int maxRetryNumber,
-                String regionId, Credential credential,
-                Signer signer, FormatType? format,
-                List<Endpoint> endpoints) where T : AcsResponse;
+            bool autoRetry, int maxRetryNumber,
+            String regionId, Credential credential,
+            Signer signer, FormatType? format,
+            List<Endpoint> endpoints) where T : AcsResponse;
     }
 }
