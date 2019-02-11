@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -19,16 +19,15 @@
 
 using System;
 using System.Runtime.CompilerServices;
+
 using Aliyun.Acs.Core.Utils;
-[assembly: InternalsVisibleTo("aliyun-net-sdk-core.Tests")]
+[assembly : InternalsVisibleTo("aliyun-net-sdk-core.Tests")]
 namespace Aliyun.Acs.Core.Auth.Sts
 {
     class GetSessionAccessKeyRequest : RpcAcsRequest<GetSessionAccessKeyResponse>
     {
-        public GetSessionAccessKeyRequest()
-            : base("Sts", "2015-04-01", "GenerateSessionAccessKey")
-        {
-        }
+        public GetSessionAccessKeyRequest() : base("Sts", "2015-04-01", "GenerateSessionAccessKey")
+        { }
 
         private int durationSeconds = 3600;
         private String publicKeyId;

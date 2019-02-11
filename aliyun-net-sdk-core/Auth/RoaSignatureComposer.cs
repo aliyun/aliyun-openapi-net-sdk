@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,11 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Utils;
 using System;
 using System.Collections.Generic;
 using System.Text;
+
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth
 {
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.Core.Auth
         protected const string HEADER_SEPARATOR = "\n";
 
         public Dictionary<string, string> RefreshSignParameters(Dictionary<String, String> parameters,
-                                Signer signer, String accessKeyId, FormatType? format)
+            Signer signer, String accessKeyId, FormatType? format)
         {
             Dictionary<string, string> immutableMap = new Dictionary<string, string>(parameters);
             DictionaryUtil.Add(immutableMap, "Date", ParameterHelper.GetRFC2616Date(DateTime.Now));
@@ -132,8 +133,8 @@ namespace Aliyun.Acs.Core.Auth
         }
 
         public String ComposeStringToSign(MethodType? method, String uriPattern, Signer signer,
-                                          Dictionary<string, string> queries, Dictionary<string, string> headers,
-                                         Dictionary<string, string> paths)
+            Dictionary<string, string> queries, Dictionary<string, string> headers,
+            Dictionary<string, string> paths)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(method).Append(HEADER_SEPARATOR);

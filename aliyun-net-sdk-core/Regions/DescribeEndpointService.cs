@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -21,20 +21,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Aliyun.Acs.Core.Regions.Location.Model;
+
 using Aliyun.Acs.Core.Auth;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Regions.Location;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Reader;
 using Aliyun.Acs.Core.Exceptions;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Reader;
+using Aliyun.Acs.Core.Regions.Location;
+using Aliyun.Acs.Core.Regions.Location.Model;
+using Aliyun.Acs.Core.Transform;
 
 namespace Aliyun.Acs.Core.Regions
 {
     interface DescribeEndpointService
     {
         DescribeEndpointResponse DescribeEndpoint(String regionId, String serviceCode, String endpointType,
-                                                  Credential credential,
-                                                  LocationConfig locationConfig);
+            Credential credential,
+            LocationConfig locationConfig);
     }
 }
