@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -18,6 +18,7 @@
  */
 
 using System;
+
 using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth
@@ -32,7 +33,7 @@ namespace Aliyun.Acs.Core.Auth
         private readonly double expireFact = 0.8;
 
         public BasicSessionCredentials(String accessKeyId, String accessKeySecret,
-                                       String sessionToken, long roleSessionDurationSeconds = 0)
+            String sessionToken, long roleSessionDurationSeconds = 0)
         {
             if (accessKeyId == null)
             {

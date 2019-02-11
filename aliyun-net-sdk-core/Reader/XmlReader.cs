@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -60,16 +60,16 @@ namespace Aliyun.Acs.Core.Reader
 
             XmlNodeList listElements = element.SelectNodes(element.FirstChild.Name);
             if (listElements.Count > 1 && element.ChildNodes.Count == listElements.Count)
-            {//be list
+            { //be list
                 ElementsAsList(element.ChildNodes, path);
             }
             else if (listElements.Count == 1 && element.ChildNodes.Count == 1)
-            {//may be list
-                ElementsAsList(listElements, path);//as list
-                Read(element.FirstChild, path, true);//as not list
+            { //may be list
+                ElementsAsList(listElements, path); //as list
+                Read(element.FirstChild, path, true); //as not list
             }
             else
-            {//not list
+            { //not list
                 foreach (XmlNode childElement in element.ChildNodes)
                 {
                     Read(childElement, path, true);

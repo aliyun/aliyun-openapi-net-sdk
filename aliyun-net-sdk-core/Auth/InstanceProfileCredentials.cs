@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -30,15 +30,15 @@ namespace Aliyun.Acs.Core.Auth
         private long lastFailedRefreshTime = 0;
 
         public InstanceProfileCredentials(String accessKeyId, String accessKeySecret,
-                                          String sessionToken, String expiration,
-                                          long roleSessionDurationSeconds) :
+                String sessionToken, String expiration,
+                long roleSessionDurationSeconds):
             base(accessKeyId, accessKeySecret, sessionToken, roleSessionDurationSeconds)
-        {
-            expiration = expiration.Replace('T', ' ').Replace('Z', ' ');
-            DateTime dt = Convert.ToDateTime(expiration);
+            {
+                expiration = expiration.Replace('T', ' ').Replace('Z', ' ');
+                DateTime dt = Convert.ToDateTime(expiration);
 
-            this.expiration = dt.Ticks;
-        }
+                this.expiration = dt.Ticks;
+            }
 
         public override bool WillSoonExpire()
         {

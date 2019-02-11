@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,12 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth
 {
@@ -32,7 +33,7 @@ namespace Aliyun.Acs.Core.Auth
         private const String SEPARATOR = "&";
 
         public Dictionary<String, String> RefreshSignParameters(Dictionary<String, String> parameters,
-                Signer signer, String accessKeyId, FormatType? format)
+            Signer signer, String accessKeyId, FormatType? format)
         {
             Dictionary<String, String> immutableMap = new Dictionary<String, String>(parameters);
             DictionaryUtil.Add(immutableMap, "Timestamp", ParameterHelper.FormatIso8601Date(DateTime.Now));
@@ -60,8 +61,8 @@ namespace Aliyun.Acs.Core.Auth
             foreach (var p in sortedDictionary)
             {
                 canonicalizedQueryString.Append("&")
-                .Append(AcsURLEncoder.PercentEncode(p.Key)).Append("=")
-                .Append(AcsURLEncoder.PercentEncode(p.Value));
+                    .Append(AcsURLEncoder.PercentEncode(p.Key)).Append("=")
+                    .Append(AcsURLEncoder.PercentEncode(p.Value));
             }
 
             StringBuilder stringToSign = new StringBuilder();
@@ -70,7 +71,7 @@ namespace Aliyun.Acs.Core.Auth
             stringToSign.Append(AcsURLEncoder.PercentEncode("/"));
             stringToSign.Append(SEPARATOR);
             stringToSign.Append(AcsURLEncoder.PercentEncode(
-                    canonicalizedQueryString.ToString().Substring(1)));
+                canonicalizedQueryString.ToString().Substring(1)));
 
             return stringToSign.ToString();
         }

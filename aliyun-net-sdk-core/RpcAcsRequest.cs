@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
+using System.Collections.Generic;
+using System.Text;
+
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Utils;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aliyun.Acs.Core
 {
@@ -32,29 +33,25 @@ namespace Aliyun.Acs.Core
         private string version;
         private FormatType acceptFormat;
 
-        public RpcAcsRequest(String product)
-            : base(product)
+        public RpcAcsRequest(String product) : base(product)
         {
             Initialize();
         }
 
-        public RpcAcsRequest(String product, String version)
-            : base(product)
+        public RpcAcsRequest(String product, String version) : base(product)
         {
             Version = version;
             Initialize();
         }
 
-        public RpcAcsRequest(String product, String version, String action)
-            : base(product)
+        public RpcAcsRequest(String product, String version, String action) : base(product)
         {
             Version = version;
             ActionName = action;
             Initialize();
         }
 
-        public RpcAcsRequest(String product, String version, String action, String locationProduct)
-            : base(product)
+        public RpcAcsRequest(String product, String version, String action, String locationProduct) : base(product)
         {
             Version = version;
             ActionName = action;
@@ -62,8 +59,7 @@ namespace Aliyun.Acs.Core
             Initialize();
         }
 
-        public RpcAcsRequest(String product, String version, String action, String locationProduct, String locationEndpointType)
-            : base(product)
+        public RpcAcsRequest(String product, String version, String action, String locationProduct, String locationEndpointType) : base(product)
         {
             this.Version = version;
             this.ActionName = action;
@@ -119,7 +115,7 @@ namespace Aliyun.Acs.Core
         }
 
         public override HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
-                                       FormatType? format, ProductDomain domain)
+            FormatType? format, ProductDomain domain)
         {
             Dictionary<String, String> imutableMap = new Dictionary<String, String>(QueryParameters);
 
@@ -129,7 +125,7 @@ namespace Aliyun.Acs.Core
                 String accessSecret = credentials.GetAccessKeySecret();
                 if (credentials is BasicSessionCredentials)
                 {
-                    String sessionToken = ((BasicSessionCredentials)credentials).GetSessionToken();
+                    String sessionToken = ((BasicSessionCredentials) credentials).GetSessionToken();
                     if (null != sessionToken)
                     {
                         QueryParameters.Add("SecurityToken", sessionToken);

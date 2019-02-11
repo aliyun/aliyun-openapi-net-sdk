@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,9 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Http;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Http;
 
 namespace Aliyun.Acs.Core.Auth
 {
@@ -28,9 +29,9 @@ namespace Aliyun.Acs.Core.Auth
             Signer signer, String accessKeyId, FormatType? format);
 
         String ComposeStringToSign(MethodType? method,
-               String uriPattern, Signer signer,
-               Dictionary<String, String> queries,
-               Dictionary<String, String> headers,
-               Dictionary<String, String> paths);
+            String uriPattern, Signer signer,
+            Dictionary<String, String> queries,
+            Dictionary<String, String> headers,
+            Dictionary<String, String> paths);
     }
 }

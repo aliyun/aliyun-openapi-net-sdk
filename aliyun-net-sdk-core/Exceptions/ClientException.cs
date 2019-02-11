@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -30,22 +30,19 @@ namespace Aliyun.Acs.Core.Exceptions
 
         public ErrorType ErrorType { get; set; }
 
-        public ClientException(String errCode, String errMsg, string requestId)
-            : this(errCode, errMsg)
+        public ClientException(String errCode, String errMsg, string requestId) : this(errCode, errMsg)
         {
 
         }
 
-        public ClientException(String errCode, String errMsg)
-            : base(errCode + " : " + errMsg)
+        public ClientException(String errCode, String errMsg) : base(errCode + " : " + errMsg)
         {
             ErrorCode = errCode;
             ErrorMessage = errMsg;
             ErrorType = ErrorType.Client;
         }
 
-        public ClientException(String message)
-            : base(message)
+        public ClientException(String message) : base(message)
         {
 
         }

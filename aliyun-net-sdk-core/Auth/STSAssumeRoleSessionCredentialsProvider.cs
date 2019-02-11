@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -18,8 +18,9 @@
  */
 
 using System;
-using Aliyun.Acs.Core.Profile;
+
 using Aliyun.Acs.Core.Auth.Sts;
+using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth
@@ -41,7 +42,7 @@ namespace Aliyun.Acs.Core.Auth
         private long assumeRoleRound = 0;
 
         public STSAssumeRoleSessionCredentialsProvider(AlibabaCloudCredentials longLivedCredentials,
-                                                       String roleArn, IClientProfile clientProfile)
+            String roleArn, IClientProfile clientProfile)
         {
             AlibabaCloudCredentialsProvider longLivedCredentialsProvider = new StaticCredentialsProvider(longLivedCredentials);
             this.roleArn = roleArn;
@@ -75,7 +76,7 @@ namespace Aliyun.Acs.Core.Auth
         }
 
         public STSAssumeRoleSessionCredentialsProvider(AlibabaCloudCredentialsProvider longLivedCredentialsProvider,
-                                               String roleArn, IClientProfile clientProfile)
+            String roleArn, IClientProfile clientProfile)
         {
             this.roleArn = roleArn;
             this.roleSessionName = GetNewRoleSessionName();

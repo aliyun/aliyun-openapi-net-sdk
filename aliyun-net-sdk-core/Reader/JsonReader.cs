@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Utils;
 using System;
 using System.Collections.Generic;
 using System.Text;
+
+using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Reader
 {
@@ -42,15 +43,15 @@ namespace Aliyun.Acs.Core.Reader
         private StringBuilder sb = new StringBuilder();
         private Dictionary<String, String> map = new Dictionary<String, String>();
 
-        private static Dictionary<char, char> escapes = new Dictionary<char, char> {
-            {'\\','\\'},
-            {'/', '/'},
-            {'"', '"'},
-            {'t','\t'},
-            {'n','\n'},
-            {'r','\r'},
-            {'b','\b'},
-            {'f','\f'}
+        private static Dictionary<char, char> escapes = new Dictionary<char, char>
+        { { '\\', '\\' },
+            { '/', '/' },
+            { '"', '"' },
+            { 't', '\t' },
+            { 'n', '\n' },
+            { 'r', '\r' },
+            { 'b', '\b' },
+            { 'f', '\f' }
         };
 
         public Dictionary<String, String> Read(String response, String endpoint)
@@ -86,31 +87,52 @@ namespace Aliyun.Acs.Core.Reader
             NextChar();
             switch (ch)
             {
-                case '{': ProcessObject(baseKey); break;
-                case '}': token = OBJECT_END_TOKEN; break;
+                case '{':
+                    ProcessObject(baseKey);
+                    break;
+                case '}':
+                    token = OBJECT_END_TOKEN;
+                    break;
                 case '[':
                     if (c == '"')
                     {
-                        ProcessList(baseKey); break;
+                        ProcessList(baseKey);
+                        break;
                     }
                     else
                     {
-                        ProcessArray(baseKey); break;
+                        ProcessArray(baseKey);
+                        break;
                     }
-                case ']': token = ARRAY_END_TOKEN; break;
-                case '"': token = ProcessString(); break;
-                case ',': token = COMMA_TOKEN; break;
-                case ':': token = COLON_TOKEN; break;
+                case ']':
+                    token = ARRAY_END_TOKEN;
+                    break;
+                case '"':
+                    token = ProcessString();
+                    break;
+                case ',':
+                    token = COMMA_TOKEN;
+                    break;
+                case ':':
+                    token = COLON_TOKEN;
+                    break;
                 case 't':
-                    NextChar(); NextChar(); NextChar();
+                    NextChar();
+                    NextChar();
+                    NextChar();
                     token = true;
                     break;
                 case 'n':
-                    NextChar(); NextChar(); NextChar();
+                    NextChar();
+                    NextChar();
+                    NextChar();
                     token = null;
                     break;
                 case 'f':
-                    NextChar(); NextChar(); NextChar(); NextChar();
+                    NextChar();
+                    NextChar();
+                    NextChar();
+                    NextChar();
                     token = false;
                     break;
                 default:
@@ -131,31 +153,52 @@ namespace Aliyun.Acs.Core.Reader
             NextChar();
             switch (ch)
             {
-                case '{': ProcessObjectForHideArrayItem(baseKey); break;
-                case '}': token = OBJECT_END_TOKEN; break;
+                case '{':
+                    ProcessObjectForHideArrayItem(baseKey);
+                    break;
+                case '}':
+                    token = OBJECT_END_TOKEN;
+                    break;
                 case '[':
                     if (c == '"')
                     {
-                        ProcessList(baseKey); break;
+                        ProcessList(baseKey);
+                        break;
                     }
                     else
                     {
-                        ProcessArrayForHideArrayItem(baseKey); break;
+                        ProcessArrayForHideArrayItem(baseKey);
+                        break;
                     }
-                case ']': token = ARRAY_END_TOKEN; break;
-                case '"': token = ProcessString(); break;
-                case ',': token = COMMA_TOKEN; break;
-                case ':': token = COLON_TOKEN; break;
+                case ']':
+                    token = ARRAY_END_TOKEN;
+                    break;
+                case '"':
+                    token = ProcessString();
+                    break;
+                case ',':
+                    token = COMMA_TOKEN;
+                    break;
+                case ':':
+                    token = COLON_TOKEN;
+                    break;
                 case 't':
-                    NextChar(); NextChar(); NextChar();
+                    NextChar();
+                    NextChar();
+                    NextChar();
                     token = true;
                     break;
                 case 'n':
-                    NextChar(); NextChar(); NextChar();
+                    NextChar();
+                    NextChar();
+                    NextChar();
                     token = null;
                     break;
                 case 'f':
-                    NextChar(); NextChar(); NextChar(); NextChar();
+                    NextChar();
+                    NextChar();
+                    NextChar();
+                    NextChar();
                     token = false;
                     break;
                 default:
@@ -340,7 +383,7 @@ namespace Aliyun.Acs.Core.Reader
                     Object value = escapes[c];
                     if (value != null)
                     {
-                        AddChar((Char)value);
+                        AddChar((Char) value);
                     }
                 }
                 else

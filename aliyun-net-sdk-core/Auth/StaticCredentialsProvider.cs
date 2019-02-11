@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -40,7 +40,7 @@ namespace Aliyun.Acs.Core.Auth
                 this.credentials = new BasicSessionCredentials(
                     legacyCredential.AccessKeyId,
                     legacyCredential.AccessSecret,
-                    legacyCredential.SecurityToken );
+                    legacyCredential.SecurityToken);
             }
             else
             {
