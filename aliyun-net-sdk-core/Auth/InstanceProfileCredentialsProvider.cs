@@ -53,7 +53,8 @@ namespace Aliyun.Acs.Core.Auth
                 ecsMetadataServiceFetchCount += 1;
                 credentials = fetcher.Fetch(maxRetryTimes);
             }
-            else if (credentials.IsExpired())
+
+            if (credentials.IsExpired())
             {
                 throw new ClientException("SDK.SessionTokenExpired", "Current session token has expired.");
             }
