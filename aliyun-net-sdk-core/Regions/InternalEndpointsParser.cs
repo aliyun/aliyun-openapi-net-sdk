@@ -20,11 +20,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Xml;
 
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Regions.Location;
 
+[assembly : InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace Aliyun.Acs.Core.Regions
 {
     class InternalEndpointsParser : IEndpointsProvider
@@ -71,7 +73,7 @@ namespace Aliyun.Acs.Core.Regions
             return products;
         }
 
-        public List<Product> GetProducts()
+        public virtual List<Product> GetProducts()
         {
             Type type = MethodBase.GetCurrentMethod().DeclaringType;
             string _namespace = type.Namespace;
