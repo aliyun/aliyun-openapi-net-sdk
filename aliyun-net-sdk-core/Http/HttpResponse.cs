@@ -40,8 +40,7 @@ namespace Aliyun.Acs.Core.Http
 
         }
 
-        public HttpResponse()
-        { }
+        public HttpResponse() { }
 
         public new void SetContent(byte[] content, string encoding, FormatType? format)
         {
