@@ -108,13 +108,18 @@ namespace Aliyun.Acs.Core.Auth
                 RoleSessionName = roleSessionName,
                 DurationSeconds = roleSessionDurationSeconds
             };
-            AssumeRoleResponse response = stsClient.GetAcsResponse(assumeRoleRequest);
+            AssumeRoleResponse response = this.GetResponse(assumeRoleRequest);
             return new BasicSessionCredentials(
                 response.Credentials.AccessKeyId,
                 response.Credentials.AccessKeySecret,
                 response.Credentials.SecurityToken,
                 roleSessionDurationSeconds
             );
+        }
+
+        public virtual AssumeRoleResponse GetResponse(AssumeRoleRequest assumeRoleRequest)
+        {
+            return stsClient.GetAcsResponse(assumeRoleRequest);
         }
     }
 }
