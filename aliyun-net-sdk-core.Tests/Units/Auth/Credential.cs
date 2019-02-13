@@ -38,6 +38,12 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             instance = new Credential("keyId", "secret", 1);
             instance.ExpiredDate = DateTime.Now.AddDays(1);
             Assert.True(instance.IsExpired());
+
+            instance.ExpiredDate = null;
+            Assert.False(instance.IsExpired());
+
+            instance.ExpiredDate = DateTime.Now.AddDays(-1);
+            Assert.False(instance.IsExpired());
         }
     }
 }

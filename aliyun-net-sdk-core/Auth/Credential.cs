@@ -24,7 +24,7 @@ namespace Aliyun.Acs.Core.Auth
     {
 
         public DateTime RefreshDate { get; set; }
-        public DateTime ExpiredDate { get; set; }
+        public DateTime? ExpiredDate { get; set; }
         public String AccessKeyId { get; set; }
         public String AccessSecret { get; set; }
         public String SecurityToken { get; set; }
