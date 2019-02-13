@@ -79,7 +79,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
         }
 
         [Fact]
-        public void GetEndpoints()
+        public void GetEndpoints1()
         {
             DefaultProfile.ClearDefaultProfile();
 
@@ -110,6 +110,55 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
                     Assert.Equal(productDomain, product.DomianName);
                 }
             }
+        }
+
+        [Fact]
+        public void GetEndpoints2()
+        {
+            DefaultProfile.ClearDefaultProfile();
+
+            // When product = null
+
+            DefaultProfile profile = DefaultProfile.GetProfile();
+
+            List<Endpoint> endpoints1 = profile.GetEndpoints(null, null);
+
+            List<Endpoint> endpoints2 = profile.GetEndpoints(null, null, null, null);
+
+            Assert.Equal(endpoints1, endpoints2);
+        }
+
+        [Fact]
+        public void GetEndpoints3()
+        {
+            DefaultProfile.ClearDefaultProfile();
+
+            // Mock RegionIds
+            ISet<String> regionIds = new HashSet<String>();
+            regionIds.Add("cn-hangzhou");
+
+            // Mock productDomains
+            List<ProductDomain> productDomains = new List<ProductDomain>() { };
+            ProductDomain productDomain = new ProductDomain("Ess", "ess.aliyuncs.com");
+            productDomains.Add(productDomain);
+
+            // Mock endpoint
+            Endpoint endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
+
+            var mock = new Mock<DefaultProfile>(true);
+            mock.Setup(foo => foo.GetEndpointByIEndpoints(
+                It.IsAny<string>(),
+                It.IsAny<string>()
+            )).Returns(endpoint);
+            mock.Setup(foo => foo.GetEndpointByRemoteProvider(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>()
+            )).Returns(endpoint);
+
+            DefaultProfile profile = mock.Object;
+            profile.GetEndpoints("product", "regionId", "serviceCode", "endpointType");
         }
 
         [Fact]
