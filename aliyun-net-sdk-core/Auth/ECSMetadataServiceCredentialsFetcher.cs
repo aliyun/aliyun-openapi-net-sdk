@@ -56,6 +56,11 @@ namespace Aliyun.Acs.Core.Auth
             SetCredentialUrl();
         }
 
+        public string GetRoleName()
+        {
+            return this.roleName;
+        }
+
         private void SetCredentialUrl()
         {
             credentialUrl = "http://" + metadataServiceHost + URL_IN_ECS_METADATA + roleName;
@@ -83,7 +88,7 @@ namespace Aliyun.Acs.Core.Auth
             HttpResponse response;
             try
             {
-                response = HttpResponse.GetResponse(request);
+                response = this.GetResponse(request);
             }
             catch (WebException e)
             {
@@ -98,7 +103,7 @@ namespace Aliyun.Acs.Core.Auth
             return Encoding.UTF8.GetString(response.Content);
         }
 
-        public InstanceProfileCredentials Fetch()
+        public virtual InstanceProfileCredentials Fetch()
         {
             Dictionary<string, string> dic;
             try
@@ -153,6 +158,11 @@ namespace Aliyun.Acs.Core.Auth
                 }
             }
             throw new ClientException("Failed to connect ECS Metadata Service: Max retry times exceeded.");
+        }
+
+        public virtual HttpResponse GetResponse(HttpRequest request)
+        {
+            return HttpResponse.GetResponse(request);
         }
     }
 }
