@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 using Aliyun.Acs.Core.Auth;
@@ -29,6 +30,7 @@ using Aliyun.Acs.Core.Regions.Location;
 using Aliyun.Acs.Core.Regions.Location.Model;
 using Aliyun.Acs.Core.Transform;
 
+[assembly : InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace Aliyun.Acs.Core.Regions
 {
     class DescribeEndpointServiceImpl : DescribeEndpointService
@@ -57,7 +59,7 @@ namespace Aliyun.Acs.Core.Regions
             ProductDomain domain = new ProductDomain(locationConfig.Product, locationConfig.Endpoint);
 
             HttpRequest httpRequest = request.SignRequest(signer, credential, FormatType.JSON, domain);
-            HttpResponse httpResponse = HttpResponse.GetResponse(httpRequest);
+            HttpResponse httpResponse = this.GetResponse(httpRequest);
             if (httpResponse.isSuccess())
             {
                 String data = Encoding.UTF8.GetString(httpResponse.Content);
@@ -123,6 +125,11 @@ namespace Aliyun.Acs.Core.Regions
                 stringContent = e.GetString(httpResponse.Content);
             }
             return stringContent;
+        }
+
+        public virtual HttpResponse GetResponse(HttpRequest httpRequest)
+        {
+            return HttpResponse.GetResponse(httpRequest);
         }
     }
 }
