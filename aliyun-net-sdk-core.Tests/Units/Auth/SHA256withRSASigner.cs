@@ -1,46 +1,53 @@
+using System;
+using System.Security.Cryptography;
+
+using Aliyun.Acs.Core.Auth;
+
+using Moq;
+
 using Xunit;
 
 namespace Aliyun.Acs.Core.Tests.Units.Auth
 {
     public class SHA256withRSASignerTest
     {
-        private SHA256withRSASigner instance;
-
-        public SHA256withRSASigner getInstance()
-        {
-            if (null == instance)
-            {
-                this.instance = new SHA256withRSASigner();
-            }
-            return this.instance;
-        }
-
         [Fact]
         public void SignString()
         {
+            SHA256withRSASigner instance = new SHA256withRSASigner();
+
             // 结果每次都是不同的
-            string str = this.getInstance().SignString("foo", "secret");
+            string str = instance.SignString("foo", "secret");
             Assert.NotEmpty(str);
+
+            var mock = new Mock<AlibabaCloudCredentials>();
+            mock.Setup(foo => foo.GetAccessKeySecret()).Returns("secret");
+            AlibabaCloudCredentials credentials = mock.Object;
+            string str2 = instance.SignString("foo", credentials);
+            Assert.NotEmpty(str2);
         }
 
         [Fact]
         public void GetSignerName()
         {
-            string signer = this.getInstance().GetSignerName();
+            SHA256withRSASigner instance = new SHA256withRSASigner();
+            string signer = instance.GetSignerName();
             Assert.Equal("SHA256withRSA", signer);
         }
 
         [Fact]
         public void GetSignerVersion()
         {
-            string signerVersion = this.getInstance().GetSignerVersion();
+            SHA256withRSASigner instance = new SHA256withRSASigner();
+            string signerVersion = instance.GetSignerVersion();
             Assert.Equal("1.0", signerVersion);
         }
 
         [Fact]
         public void GetSignerType()
         {
-            string signerType = this.getInstance().GetSignerType();
+            SHA256withRSASigner instance = new SHA256withRSASigner();
+            string signerType = instance.GetSignerType();
             Assert.Equal("PRIVATEKEY", signerType);
         }
     }
