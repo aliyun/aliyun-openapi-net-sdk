@@ -157,7 +157,6 @@ namespace Aliyun.Acs.Core.Profile
                 Endpoint endpoint = null;
                 if (serviceCode != null)
                 {
-                    // endpoint = remoteProvider.GetEndpoint(regionId, product, serviceCode, endpointType, credential, locationConfig);
                     endpoint = this.GetEndpointByRemoteProvider(regionId, product, serviceCode, endpointType);
                 }
                 if (endpoint == null)
