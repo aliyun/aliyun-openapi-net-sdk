@@ -41,6 +41,13 @@ namespace Aliyun.Acs.Core.Profile
         private LocationConfig locationConfig = null;
         public FormatType acceptFormat;
 
+        public DefaultProfile(bool mock = true)
+        {
+            this.locationConfig = new LocationConfig();
+            this.iendpoints = new InternalEndpointsParser();
+            this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
+        }
+
         private DefaultProfile()
         {
             this.locationConfig = new LocationConfig();
@@ -128,11 +135,11 @@ namespace Aliyun.Acs.Core.Profile
                 Endpoint endpoint = null;
                 if (serviceCode != null)
                 {
-                    endpoint = remoteProvider.GetEndpoint(regionId, product, serviceCode, endpointType, credential, locationConfig);
+                    endpoint = this.GetEndpointByRemoteProvider(regionId, product, serviceCode, endpointType);
                 }
                 if (endpoint == null)
                 {
-                    endpoint = iendpoints.GetEndpoint(regionId, product);
+                    endpoint = this.GetEndpointByIEndpoints(regionId, product);
                 }
                 if (endpoint != null)
                 {
@@ -150,11 +157,11 @@ namespace Aliyun.Acs.Core.Profile
                 Endpoint endpoint = null;
                 if (serviceCode != null)
                 {
-                    endpoint = remoteProvider.GetEndpoint(regionId, product, serviceCode, endpointType, credential, locationConfig);
+                    endpoint = this.GetEndpointByRemoteProvider(regionId, product, serviceCode, endpointType);
                 }
                 if (endpoint == null)
                 {
-                    endpoint = iendpoints.GetEndpoint(regionId, product);
+                    endpoint = this.GetEndpointByIEndpoints(regionId, product);
                 }
                 if (endpoint != null)
                 {
@@ -298,6 +305,16 @@ namespace Aliyun.Acs.Core.Profile
         {
             profile = null;
             endpoints = null;
+        }
+
+        public virtual Endpoint GetEndpointByRemoteProvider(String regionId, String product, String serviceCode, String endpointType)
+        {
+            return remoteProvider.GetEndpoint(regionId, product, serviceCode, endpointType, credential, locationConfig);
+        }
+
+        public virtual Endpoint GetEndpointByIEndpoints(String regionId, String product)
+        {
+            return iendpoints.GetEndpoint(regionId, product);
         }
     }
 }
