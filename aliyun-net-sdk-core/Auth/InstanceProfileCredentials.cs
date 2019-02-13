@@ -42,14 +42,12 @@ namespace Aliyun.Acs.Core.Auth
 
         public override bool WillSoonExpire()
         {
-            long now = DateTime.Now.Ticks;
-            return this.roleSessionDurationSeconds * (1 - expireFact) > (expiration - now) / 1000;
+            return this.roleSessionDurationSeconds * (1 - expireFact) > this.RemainTicks() / 1000;
         }
 
         public bool IsExpired()
         {
-            long now = DateTime.Now.Ticks;
-            return now >= expiration - refreshIntervalInMillSeconds;
+            return refreshIntervalInMillSeconds >= this.RemainTicks();
         }
 
         public bool ShouldRefresh()
@@ -68,6 +66,11 @@ namespace Aliyun.Acs.Core.Auth
         public void SetLastFailedRefreshTime()
         {
             lastFailedRefreshTime = DateTime.Now.Ticks;
+        }
+
+        public virtual long RemainTicks()
+        {
+            return expiration - DateTime.Now.Ticks;
         }
     }
 }

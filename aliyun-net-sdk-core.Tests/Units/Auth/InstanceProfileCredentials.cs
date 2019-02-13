@@ -26,8 +26,12 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         public void ShouldRefresh()
         {
             InstanceProfileCredentials instance = new InstanceProfileCredentials("a", "b", "c", DateTime.Now.ToString(), 100000);
-            bool tmp = instance.ShouldRefresh();
-            Assert.IsType<bool>(tmp);
+
+            Assert.True(instance.ShouldRefresh());
+
+            instance.SetLastFailedRefreshTime();
+
+            Assert.False(instance.ShouldRefresh());
         }
 
         [Fact]
