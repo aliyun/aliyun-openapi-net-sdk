@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
@@ -282,38 +283,20 @@ namespace Aliyun.Acs.Core.Tests.Units
         }
 
         [Fact]
-        public void DoAction()
+        public void DoAction1()
         {
-            // Mock RegionIds
-            ISet<String> regionIds = new HashSet<String>();
-            regionIds.Add("cn-hangzhou");
-
-            // Mock productDomains
-            List<ProductDomain> productDomains = new List<ProductDomain>() { };
-
-            // Mock endpoint
-            Endpoint endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
-
-            // Mock endpoints
-            List<Endpoint> endpoints = new List<Endpoint>() { };
-            endpoints.Add(endpoint);
+            // When
+            // request.AcceptFormat is null
+            // request.ProductDomain is null
+            // domain is null
 
             // Mock credential
             Credential credential = new Credential(AKID, AKSE);
-
-            // Mock Profile
-            var mockProfile = new Mock<IClientProfile>();
-            mockProfile.Setup(foo => foo.GetCredential()).Returns(credential);
-            IClientProfile profile = mockProfile.Object;
 
             DefaultAcsClient instance = new DefaultAcsClient();
 
             // Mock AcsResquest
             MockAcsRequestForDefaultAcsClient request = new MockAcsRequestForDefaultAcsClient();
-            request.RegionId = "cn-hangzhou";
-            request.Product = "Ess";
-            request.LocationProduct = "ess";
-            request.LocationEndpointType = "openAPI";
 
             // Mock AlibabaCloudCredentials
             var mockCredentials = new Mock<AlibabaCloudCredentials>();
@@ -324,9 +307,143 @@ namespace Aliyun.Acs.Core.Tests.Units
             Assert.Throws<ClientException>(
                 () =>
                 {
-                    var response = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, endpoints);
+                    var response = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
                 }
             );
+        }
+
+        [Fact]
+        public void DoAction2()
+        {
+            // When
+            // request.AcceptFormat is not null
+            // request.ProductDomain is not null
+            // domain is not null
+            // response.Content is null
+
+            // Mock response
+            HttpResponse response = new HttpResponse();
+            response.ContentType = FormatType.JSON;
+            response.Content = null;
+            response.Status = 200;
+
+            var mockInstance = new Mock<DefaultAcsClient>() { CallBase = true };
+            mockInstance.Setup(foo => foo.GetResponse(
+                It.IsAny<HttpRequest>()
+            )).Returns(response);
+
+            DefaultAcsClient instance = mockInstance.Object;
+
+            // Mock AcsResquest
+            MockAcsRequestForDefaultAcsClient request = new MockAcsRequestForDefaultAcsClient();
+            request.AcceptFormat = FormatType.JSON;
+            ProductDomain productDomain = new ProductDomain("productName", "productDomain");
+            request.ProductDomain = productDomain;
+
+            // Mock AlibabaCloudCredentials
+            var mockCredentials = new Mock<AlibabaCloudCredentials>();
+            AlibabaCloudCredentials credentials = mockCredentials.Object;
+
+            // Mock Signer
+            Signer signer = new HmacSHA1Signer();
+
+            Assert.Throws<ClientException>(
+                () =>
+                {
+                    var result = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
+                }
+            );
+        }
+
+        [Fact]
+        public void DoAction3()
+        {
+            // When
+            // request.AcceptFormat is not null
+            // request.ProductDomain is not null
+            // domain is not null
+            // response.Content is not null
+            // response.Status != 200
+
+            // Mock response
+            int status = 400;
+            string code = "ThisIsCode";
+            string message = "ThisIsMessage";
+            string requestId = "ThisIsRequestId";
+            HttpResponse response = new HttpResponse();
+            byte[] content = Encoding.GetEncoding("UTF-8").GetBytes("{\"Code\":\"" + code + "\",\"Message\":\"" + message + "\",\"RequestId\":\"" + requestId + "\"}");
+            response.ContentType = FormatType.JSON;
+            response.Content = content;
+            response.Status = status;
+
+            var mockInstance = new Mock<DefaultAcsClient>() { CallBase = true };
+            mockInstance.Setup(foo => foo.GetResponse(
+                It.IsAny<HttpRequest>()
+            )).Returns(response);
+
+            DefaultAcsClient instance = mockInstance.Object;
+
+            // Mock AcsResquest
+            MockAcsRequestForDefaultAcsClient request = new MockAcsRequestForDefaultAcsClient();
+            request.AcceptFormat = FormatType.JSON;
+            ProductDomain productDomain = new ProductDomain("productName", "productDomain");
+            request.ProductDomain = productDomain;
+
+            // Mock AlibabaCloudCredentials
+            var mockCredentials = new Mock<AlibabaCloudCredentials>();
+            AlibabaCloudCredentials credentials = mockCredentials.Object;
+
+            // Mock Signer
+            Signer signer = new HmacSHA1Signer();
+
+            var result = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
+            Assert.NotNull(result);
+            Assert.Equal(result.Status, response.Status);
+        }
+
+        [Fact]
+        public void DoAcion4()
+        {
+            // When
+            // request.AcceptFormat is not null
+            // request.ProductDomain is not null
+            // domain is not null
+            // response.Content is not null
+            // response.Status != 200
+
+            // Mock response
+            int status = 200;
+            string code = "ThisIsCode";
+            string message = "ThisIsMessage";
+            string requestId = "ThisIsRequestId";
+            HttpResponse response = new HttpResponse();
+            byte[] content = Encoding.GetEncoding("UTF-8").GetBytes("{\"Code\":\"" + code + "\",\"Message\":\"" + message + "\",\"RequestId\":\"" + requestId + "\"}");
+            response.ContentType = FormatType.JSON;
+            response.Content = content;
+            response.Status = status;
+
+            var mockInstance = new Mock<DefaultAcsClient>() { CallBase = true };
+            mockInstance.Setup(foo => foo.GetResponse(
+                It.IsAny<HttpRequest>()
+            )).Returns(response);
+
+            DefaultAcsClient instance = mockInstance.Object;
+
+            // Mock AcsResquest
+            MockAcsRequestForDefaultAcsClient request = new MockAcsRequestForDefaultAcsClient();
+            request.AcceptFormat = FormatType.JSON;
+            ProductDomain productDomain = new ProductDomain("productName", "productDomain");
+            request.ProductDomain = productDomain;
+
+            // Mock AlibabaCloudCredentials
+            var mockCredentials = new Mock<AlibabaCloudCredentials>();
+            AlibabaCloudCredentials credentials = mockCredentials.Object;
+
+            // Mock Signer
+            Signer signer = new HmacSHA1Signer();
+
+            var result = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
+            Assert.Equal(200, result.Status);
         }
 
         public sealed class MockAcsRequestForDefaultAcsClient : AcsRequest<AcsResponse>
