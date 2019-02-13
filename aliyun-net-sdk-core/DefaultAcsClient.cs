@@ -233,7 +233,7 @@ namespace Aliyun.Acs.Core
                 shouldRetry = autoRetry && retryTimes < maxRetryNumber;
                 HttpRequest httpRequest = request.SignRequest(signer, credentials, format, domain);
                 HttpResponse response;
-                response = HttpResponse.GetResponse(httpRequest);
+                response = this.GetResponse(httpRequest);
                 if (response.Content == null)
                 {
                     if (shouldRetry)
@@ -303,6 +303,9 @@ namespace Aliyun.Acs.Core
             get { return autoRetry; }
             set { autoRetry = value; }
         }
-
+        public virtual HttpResponse GetResponse(HttpRequest httpRequest)
+        {
+            return HttpResponse.GetResponse(httpRequest);
+        }
     }
 }
