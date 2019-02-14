@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 				topDomain.Rank = context.LongValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].Rank");
 				topDomain.TotalTraffic = context.StringValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].TotalTraffic");
 				topDomain.TrafficPercent = context.StringValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].TrafficPercent");
-				topDomain.MaxBps = context.LongValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].MaxBps");
+				topDomain.MaxBps = context.FloatValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].MaxBps");
 				topDomain.MaxBpsTime = context.StringValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].MaxBpsTime");
 				topDomain.TotalAccess = context.LongValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].TotalAccess");
 

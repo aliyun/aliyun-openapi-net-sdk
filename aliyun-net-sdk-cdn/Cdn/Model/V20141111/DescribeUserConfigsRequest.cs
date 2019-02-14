@@ -41,8 +41,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string config;
 
-		private string accessKeyId;
-
 		public string SecurityToken
 		{
 			get
@@ -92,19 +90,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				config = value;
 				DictionaryUtil.Add(QueryParameters, "Config", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 
 			pushObjectCacheResponse.HttpResponse = context.HttpResponse;
 			pushObjectCacheResponse.RequestId = context.StringValue("PushObjectCache.RequestId");
-			pushObjectCacheResponse.PreloadTaskId = context.StringValue("PushObjectCache.PreloadTaskId");
+			pushObjectCacheResponse.PushTaskId = context.StringValue("PushObjectCache.PushTaskId");
         
 			return pushObjectCacheResponse;
         }

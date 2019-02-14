@@ -45,8 +45,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string backSrcDomain;
 
-		private string accessKeyId;
-
 		public string SecurityToken
 		{
 			get
@@ -122,19 +120,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				backSrcDomain = value;
 				DictionaryUtil.Add(QueryParameters, "BackSrcDomain", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

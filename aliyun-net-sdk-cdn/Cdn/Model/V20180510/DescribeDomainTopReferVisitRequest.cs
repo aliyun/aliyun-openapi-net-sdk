@@ -33,43 +33,41 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string securityToken;
+		private string startTime;
 
-		private string domainName;
+		private string percent;
 
 		private string action;
 
-		private string sortBy;
-
-		private string startTime;
+		private string domainName;
 
 		private long? ownerId;
 
-		private string accessKeyId;
+		private string sortBy;
 
-		public string SecurityToken
+		public string StartTime
 		{
 			get
 			{
-				return securityToken;
+				return startTime;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string DomainName
+		public string Percent
 		{
 			get
 			{
-				return domainName;
+				return percent;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				percent = value;
+				DictionaryUtil.Add(QueryParameters, "Percent", value);
 			}
 		}
 
@@ -86,29 +84,16 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string SortBy
+		public string DomainName
 		{
 			get
 			{
-				return sortBy;
+				return domainName;
 			}
 			set	
 			{
-				sortBy = value;
-				DictionaryUtil.Add(QueryParameters, "SortBy", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -125,16 +110,16 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string AccessKeyId
+		public string SortBy
 		{
 			get
 			{
-				return accessKeyId;
+				return sortBy;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				sortBy = value;
+				DictionaryUtil.Add(QueryParameters, "SortBy", value);
 			}
 		}
 

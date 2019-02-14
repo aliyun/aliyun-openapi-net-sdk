@@ -55,8 +55,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string region;
 
-		private string accessKeyId;
-
 		public string PrivateKey
 		{
 			get
@@ -197,19 +195,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				region = value;
 				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

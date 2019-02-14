@@ -47,8 +47,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string domainStatus;
 
-		private string accessKeyId;
-
 		private string domainSearchType;
 
 		private bool? checkDomainShow;
@@ -151,19 +149,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				domainStatus = value;
 				DictionaryUtil.Add(QueryParameters, "DomainStatus", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

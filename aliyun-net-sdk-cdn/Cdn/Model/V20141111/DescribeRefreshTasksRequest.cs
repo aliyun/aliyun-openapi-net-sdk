@@ -45,8 +45,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private int? pageNumber;
 
-		private string accessKeyId;
-
 		private string resourceGroupId;
 
 		private string securityToken;
@@ -136,19 +134,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

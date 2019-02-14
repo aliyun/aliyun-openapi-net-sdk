@@ -51,8 +51,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string snapshot;
 
-		private string accessKeyId;
-
 		public string Template
 		{
 			get
@@ -167,19 +165,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				snapshot = value;
 				DictionaryUtil.Add(QueryParameters, "Snapshot", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -49,8 +49,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private int? pageNum;
 
-		private string accessKeyId;
-
 		public string StreamType
 		{
 			get
@@ -152,19 +150,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

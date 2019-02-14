@@ -55,8 +55,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string ossObject;
 
-		private string accessKeyId;
-
 		public string OssBucket
 		{
 			get
@@ -197,19 +195,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				ossObject = value;
 				DictionaryUtil.Add(QueryParameters, "OssObject", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

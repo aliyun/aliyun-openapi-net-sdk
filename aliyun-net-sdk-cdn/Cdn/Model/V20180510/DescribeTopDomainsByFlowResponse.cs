@@ -119,7 +119,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 			private string trafficPercent;
 
-			private long? maxBps;
+			private float? maxBps;
 
 			private string maxBpsTime;
 
@@ -173,7 +173,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public long? MaxBps
+			public float? MaxBps
 			{
 				get
 				{

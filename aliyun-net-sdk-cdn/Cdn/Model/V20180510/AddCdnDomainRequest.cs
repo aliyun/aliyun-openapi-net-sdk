@@ -55,8 +55,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string checkUrl;
 
-		private string accessKeyId;
-
 		public string TopLevelDomain
 		{
 			get
@@ -197,19 +195,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				checkUrl = value;
 				DictionaryUtil.Add(QueryParameters, "CheckUrl", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

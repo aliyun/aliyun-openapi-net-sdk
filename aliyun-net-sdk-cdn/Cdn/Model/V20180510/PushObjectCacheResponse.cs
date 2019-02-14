@@ -26,7 +26,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string requestId;
 
-		private string preloadTaskId;
+		private string pushTaskId;
 
 		public string RequestId
 		{
@@ -40,15 +40,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string PreloadTaskId
+		public string PushTaskId
 		{
 			get
 			{
-				return preloadTaskId;
+				return pushTaskId;
 			}
 			set	
 			{
-				preloadTaskId = value;
+				pushTaskId = value;
 			}
 		}
 	}

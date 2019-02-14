@@ -49,8 +49,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string allowEmpty;
 
-		private string accessKeyId;
-
 		public string ReferList
 		{
 			get
@@ -152,19 +150,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				allowEmpty = value;
 				DictionaryUtil.Add(QueryParameters, "AllowEmpty", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

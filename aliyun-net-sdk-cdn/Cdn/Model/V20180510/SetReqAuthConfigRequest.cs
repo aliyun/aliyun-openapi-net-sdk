@@ -49,8 +49,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string timeOut;
 
-		private string accessKeyId;
-
 		private string authType;
 
 		public string Key1
@@ -154,19 +152,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				timeOut = value;
 				DictionaryUtil.Add(QueryParameters, "TimeOut", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

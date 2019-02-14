@@ -44,6 +44,10 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			greenManagerConfig.Quota = context.StringValue("DescribeUserConfigs.Configs.GreenManagerConfig.Quota");
 			greenManagerConfig.Ratio = context.StringValue("DescribeUserConfigs.Configs.GreenManagerConfig.Ratio");
 			configs.GreenManagerConfig = greenManagerConfig;
+
+			DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_WafConfig wafConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_WafConfig();
+			wafConfig.Enable = context.StringValue("DescribeUserConfigs.Configs.WafConfig.Enable");
+			configs.WafConfig = wafConfig;
 			describeUserConfigsResponse.Configs = configs;
         
 			return describeUserConfigsResponse;

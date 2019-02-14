@@ -49,8 +49,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string tTL;
 
-		private string accessKeyId;
-
 		public string SecurityToken
 		{
 			get
@@ -152,19 +150,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				tTL = value;
 				DictionaryUtil.Add(QueryParameters, "TTL", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

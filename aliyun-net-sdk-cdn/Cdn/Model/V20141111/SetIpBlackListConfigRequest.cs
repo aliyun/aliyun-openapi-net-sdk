@@ -43,8 +43,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string blockIps;
 
-		private string accessKeyId;
-
 		public string SecurityToken
 		{
 			get
@@ -107,19 +105,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				blockIps = value;
 				DictionaryUtil.Add(QueryParameters, "BlockIps", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private DescribeUserConfigs_GreenManagerConfig greenManagerConfig;
 
+			private DescribeUserConfigs_WafConfig wafConfig;
+
 			public DescribeUserConfigs_OssLogConfig OssLogConfig
 			{
 				get
@@ -80,6 +82,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					greenManagerConfig = value;
+				}
+			}
+
+			public DescribeUserConfigs_WafConfig WafConfig
+			{
+				get
+				{
+					return wafConfig;
+				}
+				set	
+				{
+					wafConfig = value;
 				}
 			}
 
@@ -157,6 +171,24 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					set	
 					{
 						ratio = value;
+					}
+				}
+			}
+
+			public class DescribeUserConfigs_WafConfig
+			{
+
+				private string enable;
+
+				public string Enable
+				{
+					get
+					{
+						return enable;
+					}
+					set	
+					{
+						enable = value;
 					}
 				}
 			}

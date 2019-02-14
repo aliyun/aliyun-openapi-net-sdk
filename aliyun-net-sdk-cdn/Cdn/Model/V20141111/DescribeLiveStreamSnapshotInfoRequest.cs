@@ -51,8 +51,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string streamName;
 
-		private string accessKeyId;
-
 		public string AppName
 		{
 			get
@@ -167,19 +165,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				streamName = value;
 				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
