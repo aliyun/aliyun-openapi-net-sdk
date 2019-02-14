@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9c77943f-4f71-4aac-bcc9-45d3710db0e0}</ProjectGuid>
+    <ProjectGuid>{6ceb2ce2-f30f-48e0-860e-0905c1e090e4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -94,6 +94,7 @@
 	<Compile Include="Cdn\Model\V20141111\ModifyHttpHeaderConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainFileSizeProportionDataRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainTopReferVisitRequest.cs" />
+	<Compile Include="Cdn\Model\V20141111\DescribeCdnTypesResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainCustomLogConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DeleteCdnDomainRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetDomainGreenManagerConfigResponse.cs" />
@@ -138,6 +139,7 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainPvDataRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\ModifyHttpHeaderConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\ModifyDomainCustomLogConfigRequest.cs" />
+	<Compile Include="Cdn\Model\V20141111\DescribeDomainCCAttackInfoResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetIpBlackListConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetPageCompressConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\AddFCTriggerResponse.cs" />
@@ -157,6 +159,7 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeUserConfigsRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeCustomLogConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainFileSizeProportionDataResponse.cs" />
+	<Compile Include="Cdn\Model\V20141111\DescribeCdnTypesRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamTranscodeInfoResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\UpdateFCTriggerResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamsOnlineListRequest.cs" />
@@ -259,6 +262,7 @@
 	<Compile Include="Cdn\Model\V20141111\DescribeUserCustomLogConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeDomainUvDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetDomainServerCertificateResponse.cs" />
+	<Compile Include="Cdn\Model\V20141111\DescribeDomainCCAttackInfoRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeLiveStreamBitRateDataRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\SetHttpHeaderConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20141111\DescribeCdnUserQuotaRequest.cs" />
@@ -355,6 +359,7 @@
 	<Compile Include="Cdn\Model\V20180510\ModifyHttpHeaderConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainFileSizeProportionDataRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainTopReferVisitRequest.cs" />
+	<Compile Include="Cdn\Model\V20180510\DescribeCdnTypesResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainCustomLogConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DeleteCdnDomainRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\SetDomainGreenManagerConfigResponse.cs" />
@@ -412,6 +417,7 @@
 	<Compile Include="Cdn\Model\V20180510\DescribeCustomLogConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainSrcHttpCodeDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainFileSizeProportionDataResponse.cs" />
+	<Compile Include="Cdn\Model\V20180510\DescribeCdnTypesRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\UpdateFCTriggerResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\ModifyCdnDomainResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainTrafficDataRequest.cs" />
@@ -564,6 +570,7 @@
 	<Compile Include="Cdn\Transform\V20141111\DescribeCustomLogConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeCdnMonitorDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\ModifyCdnServiceResponseUnmarshaller.cs" />
+	<Compile Include="Cdn\Transform\V20141111\DescribeCdnTypesResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeDomainAverageResponseTimeResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetWaitingRoomConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeDomainRegionDataResponseUnmarshaller.cs" />
@@ -623,6 +630,7 @@
 	<Compile Include="Cdn\Transform\V20141111\DescribeDomainFileSizeProportionDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeDomainRealTimeBpsDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeDomainRealTimeByteHitRateDataResponseUnmarshaller.cs" />
+	<Compile Include="Cdn\Transform\V20141111\DescribeDomainCCAttackInfoResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\SetRemoveQueryStringConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeLiveStreamsFrameRateAndBitRateDataResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20141111\DescribeIpInfoResponseUnmarshaller.cs" />
@@ -687,6 +695,7 @@
 	<Compile Include="Cdn\Transform\V20180510\SetIpBlackListConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeCustomLogConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\ModifyCdnServiceResponseUnmarshaller.cs" />
+	<Compile Include="Cdn\Transform\V20180510\DescribeCdnTypesResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeDomainAverageResponseTimeResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\SetWaitingRoomConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeDomainRegionDataResponseUnmarshaller.cs" />
