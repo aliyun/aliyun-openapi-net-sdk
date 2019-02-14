@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string shadowMessage;
 
+		private string iotInstanceId;
+
 		private string deviceName;
 
 		private string productKey;
@@ -51,6 +53,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				shadowMessage = value;
 				DictionaryUtil.Add(QueryParameters, "ShadowMessage", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

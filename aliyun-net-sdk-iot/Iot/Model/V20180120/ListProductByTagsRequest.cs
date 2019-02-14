@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private List<ProductTag> productTags;
 
+		private string iotInstanceId;
+
 		private int? pageSize;
 
 		private int? currentPage;
@@ -56,6 +58,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					DictionaryUtil.Add(QueryParameters,"ProductTag." + (i + 1) + ".TagValue", productTags[i].TagValue);
 					DictionaryUtil.Add(QueryParameters,"ProductTag." + (i + 1) + ".TagKey", productTags[i].TagKey);
 				}
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

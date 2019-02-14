@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string configuration;
 
+		private string iotInstanceId;
+
 		private long? ruleId;
 
 		private string type;
@@ -53,6 +55,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				configuration = value;
 				DictionaryUtil.Add(QueryParameters, "Configuration", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

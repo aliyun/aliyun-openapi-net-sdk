@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private List<string> categoryKeyLists;
 
+		private string iotInstanceId;
+
 		private int? pageSize;
 
 		private int? currentPage;
@@ -76,6 +78,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				{
 					DictionaryUtil.Add(QueryParameters,"CategoryKeyList." + (i + 1) , categoryKeyLists[i]);
 				}
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

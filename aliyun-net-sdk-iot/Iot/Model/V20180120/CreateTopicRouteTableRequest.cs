@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string regionId;
 
+		private string iotInstanceId;
+
 		private string accessKeyId;
 
 		private string srcTopic;
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				regionId = value;
 				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

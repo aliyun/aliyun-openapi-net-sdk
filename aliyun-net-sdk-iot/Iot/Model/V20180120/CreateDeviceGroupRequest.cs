@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string groupDesc;
 
+		private string iotInstanceId;
+
 		private string superGroupId;
 
 		private string groupName;
@@ -51,6 +53,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				groupDesc = value;
 				DictionaryUtil.Add(QueryParameters, "GroupDesc", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

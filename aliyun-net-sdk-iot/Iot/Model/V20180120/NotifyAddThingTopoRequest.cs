@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string gwDeviceName;
 
+		private string iotInstanceId;
+
 		private string gwIotId;
 
 		private string deviceListStr;
@@ -66,6 +68,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				gwDeviceName = value;
 				DictionaryUtil.Add(QueryParameters, "GwDeviceName", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

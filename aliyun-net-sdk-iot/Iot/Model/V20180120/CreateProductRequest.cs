@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private bool? id2;
 
+		private string iotInstanceId;
+
 		private string netType;
 
 		private string productName;
@@ -89,6 +91,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				id2 = value;
 				DictionaryUtil.Add(QueryParameters, "Id2", value.ToString());
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

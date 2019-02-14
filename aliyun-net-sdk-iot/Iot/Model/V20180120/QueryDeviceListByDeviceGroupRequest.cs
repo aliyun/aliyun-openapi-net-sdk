@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
         {
         }
 
+		private string iotInstanceId;
+
 		private string groupId;
 
 		private int? pageSize;
@@ -40,6 +42,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private int? currentPage;
 
 		private string accessKeyId;
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
 
 		public string GroupId
 		{

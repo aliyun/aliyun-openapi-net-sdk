@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string iotId;
 
+		private string iotInstanceId;
+
 		private int? pageSize;
 
 		private long? endTime;
@@ -87,6 +89,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotId = value;
 				DictionaryUtil.Add(QueryParameters, "IotId", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

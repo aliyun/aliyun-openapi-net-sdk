@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string messageContent;
 
+		private string iotInstanceId;
+
 		private string productKey;
 
 		private string accessKeyId;
@@ -79,6 +81,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				messageContent = value;
 				DictionaryUtil.Add(QueryParameters, "MessageContent", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

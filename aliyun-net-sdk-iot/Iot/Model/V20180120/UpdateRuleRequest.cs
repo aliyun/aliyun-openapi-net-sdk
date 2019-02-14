@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string ruleDesc;
 
+		private string iotInstanceId;
+
 		private string name;
 
 		private string _where;
@@ -74,6 +76,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				ruleDesc = value;
 				DictionaryUtil.Add(QueryParameters, "RuleDesc", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

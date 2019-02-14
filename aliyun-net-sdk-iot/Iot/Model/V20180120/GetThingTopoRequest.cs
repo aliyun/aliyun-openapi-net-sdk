@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? pageNo;
 
+		private string iotInstanceId;
+
 		private int? pageSize;
 
 		private string deviceName;
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				pageNo = value;
 				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

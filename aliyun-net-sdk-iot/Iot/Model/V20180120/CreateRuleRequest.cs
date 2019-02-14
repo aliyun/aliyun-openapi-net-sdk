@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string dataType;
 
+		private string iotInstanceId;
+
 		private string name;
 
 		private string _where;
@@ -87,6 +89,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				dataType = value;
 				DictionaryUtil.Add(QueryParameters, "DataType", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
