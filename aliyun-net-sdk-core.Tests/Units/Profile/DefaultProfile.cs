@@ -162,6 +162,40 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
         }
 
         [Fact]
+        public void GetEndpoints4()
+        {
+            DefaultProfile.ClearDefaultProfile();
+
+            // Mock RegionIds
+            ISet<String> regionIds = new HashSet<String>();
+            regionIds.Add("cn-hangzhou");
+
+            // Mock productDomains
+            List<ProductDomain> productDomains = new List<ProductDomain>() { };
+            ProductDomain productDomain = new ProductDomain("Ess", "ess.aliyuncs.com");
+            productDomains.Add(productDomain);
+
+            // Mock endpoint
+            Endpoint endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
+
+            var mock = new Mock<DefaultProfile>(true);
+            mock.Setup(foo => foo.GetEndpointByIEndpoints(
+                It.IsAny<string>(),
+                It.IsAny<string>()
+            )).Returns(endpoint);
+            mock.Setup(foo => foo.GetEndpointByRemoteProvider(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>()
+            )).Returns(endpoint);
+
+            DefaultProfile profile = mock.Object;
+            List<Endpoint> endpoints = profile.GetEndpoints("cn-hangzhou", "Ess");
+            profile.GetEndpoints("productNotExist", "regionId", "serviceCode", "endpointType");
+        }
+
+        [Fact]
         public void AddEndpoint()
         {
             DefaultProfile.ClearDefaultProfile();
