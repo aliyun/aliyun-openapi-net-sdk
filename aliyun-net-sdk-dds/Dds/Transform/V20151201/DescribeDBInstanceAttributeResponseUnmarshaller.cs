@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance> describeDBInstanceAttributeResponse_dBInstances = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance>();
 			for (int i = 0; i < context.Length("DescribeDBInstanceAttribute.DBInstances.Length"); i++) {
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance dBInstance = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance();
+				dBInstance.ResourceGroupId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ResourceGroupId");
 				dBInstance.DBInstanceId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceId");
 				dBInstance.DBInstanceDescription = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceDescription");
 				dBInstance.RegionId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].RegionId");
@@ -58,7 +59,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.MaintainStartTime = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaintainStartTime");
 				dBInstance.MaintainEndTime = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaintainEndTime");
 				dBInstance.DBInstanceType = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceType");
-				dBInstance.LastDowngradeTime = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].LastDowngradeTime");
+				dBInstance.LastDowngradeTime = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].LastDowngradeTime");
 				dBInstance.ReplicationFactor = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicationFactor");
 				dBInstance.MaxIOPS = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaxIOPS");
 				dBInstance.MaxConnections = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaxConnections");

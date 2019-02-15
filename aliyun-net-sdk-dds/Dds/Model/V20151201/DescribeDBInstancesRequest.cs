@@ -33,19 +33,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         {
         }
 
-		private string expireTime;
-
 		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
 
 		private string engineVersion;
 
 		private string networkType;
-
-		private long? ownerId;
 
 		private int? pageNumber;
 
@@ -53,23 +45,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string accessKeyId;
 
-		private string dBInstanceType;
-
-		private string dBInstanceClass;
-
-		private string vSwitchId;
+		private string expired;
 
 		private string securityToken;
 
 		private string engine;
 
-		private string vpcId;
-
 		private int? pageSize;
 
 		private string action;
-
-		private string zoneId;
 
 		private string dBInstanceId;
 
@@ -77,20 +61,25 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceStatus;
 
-		private string chargeType;
+		private string expireTime;
 
-		public string ExpireTime
-		{
-			get
-			{
-				return expireTime;
-			}
-			set	
-			{
-				expireTime = value;
-				DictionaryUtil.Add(QueryParameters, "ExpireTime", value);
-			}
-		}
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
+		private string dBInstanceType;
+
+		private string dBInstanceClass;
+
+		private string vSwitchId;
+
+		private string vpcId;
+
+		private string zoneId;
+
+		private string chargeType;
 
 		public long? ResourceOwnerId
 		{
@@ -102,32 +91,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -154,19 +117,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				networkType = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -209,42 +159,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string DBInstanceType
+		public string Expired
 		{
 			get
 			{
-				return dBInstanceType;
+				return expired;
 			}
 			set	
 			{
-				dBInstanceType = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceType", value);
-			}
-		}
-
-		public string DBInstanceClass
-		{
-			get
-			{
-				return dBInstanceClass;
-			}
-			set	
-			{
-				dBInstanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
-			}
-		}
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+				expired = value;
+				DictionaryUtil.Add(QueryParameters, "Expired", value);
 			}
 		}
 
@@ -274,19 +198,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -310,19 +221,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
@@ -362,6 +260,123 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceStatus = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceStatus", value);
+			}
+		}
+
+		public string ExpireTime
+		{
+			get
+			{
+				return expireTime;
+			}
+			set	
+			{
+				expireTime = value;
+				DictionaryUtil.Add(QueryParameters, "ExpireTime", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string DBInstanceType
+		{
+			get
+			{
+				return dBInstanceType;
+			}
+			set	
+			{
+				dBInstanceType = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceType", value);
+			}
+		}
+
+		public string DBInstanceClass
+		{
+			get
+			{
+				return dBInstanceClass;
+			}
+			set	
+			{
+				dBInstanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 

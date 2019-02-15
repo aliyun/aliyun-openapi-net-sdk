@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance> describeDBInstancesResponse_dBInstances = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance>();
 			for (int i = 0; i < context.Length("DescribeDBInstances.DBInstances.Length"); i++) {
 				DescribeDBInstancesResponse.DescribeDBInstances_DBInstance dBInstance = new DescribeDBInstancesResponse.DescribeDBInstances_DBInstance();
+				dBInstance.ResourceGroupId = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].ResourceGroupId");
 				dBInstance.DBInstanceId = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceId");
 				dBInstance.DBInstanceDescription = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceDescription");
 				dBInstance.RegionId = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].RegionId");

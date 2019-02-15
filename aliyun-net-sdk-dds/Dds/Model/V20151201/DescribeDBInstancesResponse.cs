@@ -97,6 +97,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeDBInstances_DBInstance
 		{
 
+			private string resourceGroupId;
+
 			private string dBInstanceId;
 
 			private string dBInstanceDescription;
@@ -136,6 +138,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			private List<DescribeDBInstances_MongosAttribute> mongosList;
 
 			private List<DescribeDBInstances_ShardAttribute> shardList;
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
 
 			public string DBInstanceId
 			{

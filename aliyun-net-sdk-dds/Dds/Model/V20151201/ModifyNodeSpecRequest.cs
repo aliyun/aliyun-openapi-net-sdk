@@ -35,6 +35,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private bool? autoPay;
+
+		private string fromApp;
+
 		private string resourceOwnerAccount;
 
 		private string clientToken;
@@ -69,6 +73,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
+		public string FromApp
+		{
+			get
+			{
+				return fromApp;
+			}
+			set	
+			{
+				fromApp = value;
+				DictionaryUtil.Add(QueryParameters, "FromApp", value);
 			}
 		}
 

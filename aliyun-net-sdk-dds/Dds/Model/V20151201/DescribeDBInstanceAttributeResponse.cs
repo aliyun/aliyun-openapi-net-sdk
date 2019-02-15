@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeDBInstanceAttribute_DBInstance
 		{
 
+			private string resourceGroupId;
+
 			private string dBInstanceId;
 
 			private string dBInstanceDescription;
@@ -101,7 +103,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string dBInstanceType;
 
-			private int? lastDowngradeTime;
+			private string lastDowngradeTime;
 
 			private string replicationFactor;
 
@@ -116,6 +118,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			private List<DescribeDBInstanceAttribute_ShardAttribute> shardList;
 
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
 
 			public string DBInstanceId
 			{
@@ -393,7 +407,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public int? LastDowngradeTime
+			public string LastDowngradeTime
 			{
 				get
 				{
