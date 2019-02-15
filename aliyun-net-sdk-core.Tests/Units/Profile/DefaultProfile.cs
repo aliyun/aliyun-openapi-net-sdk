@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Auth;
+using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Regions;
@@ -159,6 +160,69 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
 
             DefaultProfile profile = mock.Object;
             profile.GetEndpoints("product", "regionId", "serviceCode", "endpointType");
+        }
+
+        [Fact]
+        public void GetEndpoints4()
+        {
+            DefaultProfile.ClearDefaultProfile();
+
+            // Mock RegionIds	
+            ISet<String> regionIds = new HashSet<String>();
+            regionIds.Add("cn-hangzhou");
+
+            // Mock productDomains	
+            List<ProductDomain> productDomains = new List<ProductDomain>() { };
+            ProductDomain productDomain = new ProductDomain("Ess", "ess.aliyuncs.com");
+            productDomains.Add(productDomain);
+
+            // Mock endpoint	
+            Endpoint endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
+
+            var mock = new Mock<DefaultProfile>(true);
+            mock.Setup(foo => foo.GetEndpointByIEndpoints(
+                It.IsAny<string>(),
+                It.IsAny<string>()
+            )).Returns(endpoint);
+            mock.Setup(foo => foo.GetEndpointByRemoteProvider(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>()
+            )).Returns(endpoint);
+
+            DefaultProfile profile = mock.Object;
+            List<Endpoint> endpoints = profile.GetEndpoints("cn-hangzhou", "Ess");
+
+            profile.GetEndpoints("productNotExist", "regionId", "serviceCode", "endpointType");
+        }
+
+        [Fact]
+        public void GetEndpoints5()
+        {
+            Endpoint endpoint = null;
+
+            var mock = new Mock<DefaultProfile>(true);
+            mock.Setup(foo => foo.GetEndpointByIEndpoints(
+                It.IsAny<string>(),
+                It.IsAny<string>()
+            )).Returns(endpoint);
+            mock.Setup(foo => foo.GetEndpointByRemoteProvider(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>()
+            )).Returns(endpoint);
+
+            DefaultProfile profile = mock.Object;
+            List<Endpoint> endpoints = profile.GetEndpoints("cn-hangzhou", "Ess");
+
+            Assert.Throws<ClientException>(
+                () =>
+                {
+                    profile.GetEndpoints("productNotExist", "regionId", "serviceCode", "endpointType");
+                }
+            );
         }
 
         [Fact]
