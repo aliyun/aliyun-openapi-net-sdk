@@ -148,6 +148,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             mockFetcher.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
+            mockFetcher.Setup(foo => foo.Fetch()).Returns(instanceProfileCredentials);
             ECSMetadataServiceCredentialsFetcher fetcher = mockFetcher.Object;
 
             string roleName = ACKMock.GetRoleName(true);
@@ -155,13 +156,24 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             AlibabaCloudCredentialsProvider provider = instance;
             instance.withFetcher(fetcher);
 
+            //  Credentials will Expired at first. No Throw Exception (15000 >= 10000)
             AlibabaCloudCredentials credentials = provider.GetCredentials();
+            Assert.Equal("MockAccessKeyId", credentials.GetAccessKeyId());
 
+            //  Credentials will Expired at Second. Throws Exception  (5000 < 10000)
+            mockCredentials.Setup(foo => foo.RemainTicks()).Returns(5000);
+            instanceProfileCredentials = mockCredentials.Object;
+            instanceProfileCredentials.SetLastFailedRefreshTime();
             mockFetcher.Setup(foo => foo.Fetch()).Returns(instanceProfileCredentials);
             fetcher = mockFetcher.Object;
             instance.withFetcher(fetcher);
-            credentials = provider.GetCredentials();
-            Assert.Equal("MockAccessKeyId", credentials.GetAccessKeyId());
+
+            Assert.Throws<ClientException>(
+                () =>
+                {
+                    credentials = provider.GetCredentials();
+                }
+            );
         }
 
         [Fact]
