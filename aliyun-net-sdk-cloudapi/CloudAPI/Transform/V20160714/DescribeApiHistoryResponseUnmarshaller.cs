@@ -48,6 +48,8 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiHistoryResponse.DeployedTime = context.StringValue("DescribeApiHistory.DeployedTime");
 			describeApiHistoryResponse.AllowSignatureMethod = context.StringValue("DescribeApiHistory.AllowSignatureMethod");
 			describeApiHistoryResponse.ResultBodyModel = context.StringValue("DescribeApiHistory.ResultBodyModel");
+			describeApiHistoryResponse.ForceNonceCheck = context.BooleanValue("DescribeApiHistory.ForceNonceCheck");
+			describeApiHistoryResponse.DisableInternet = context.BooleanValue("DescribeApiHistory.DisableInternet");
 
 			DescribeApiHistoryResponse.DescribeApiHistory_RequestConfig requestConfig = new DescribeApiHistoryResponse.DescribeApiHistory_RequestConfig();
 			requestConfig.RequestProtocol = context.StringValue("DescribeApiHistory.RequestConfig.RequestProtocol");

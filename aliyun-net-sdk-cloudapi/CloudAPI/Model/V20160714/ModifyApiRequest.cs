@@ -39,6 +39,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string description;
 
+		private bool? disableInternet;
+
 		private string constantParameters;
 
 		private string accessKeyId;
@@ -76,6 +78,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 		private string apiName;
 
 		private string resultSample;
+
+		private bool? forceNonceCheck;
 
 		private string requestConfig;
 
@@ -119,6 +123,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public bool? DisableInternet
+		{
+			get
+			{
+				return disableInternet;
+			}
+			set	
+			{
+				disableInternet = value;
+				DictionaryUtil.Add(QueryParameters, "DisableInternet", value.ToString());
 			}
 		}
 
@@ -366,6 +383,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				resultSample = value;
 				DictionaryUtil.Add(QueryParameters, "ResultSample", value);
+			}
+		}
+
+		public bool? ForceNonceCheck
+		{
+			get
+			{
+				return forceNonceCheck;
+			}
+			set	
+			{
+				forceNonceCheck = value;
+				DictionaryUtil.Add(QueryParameters, "ForceNonceCheck", value.ToString());
 			}
 		}
 

@@ -33,23 +33,15 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
         {
         }
 
-		private string resultDescriptions;
-
 		private string webSocketApiType;
-
-		private string visibility;
-
-		private string groupId;
 
 		private string errorCodeSamples;
 
 		private string description;
 
-		private string serviceConfig;
+		private bool? disableInternet;
 
 		private string constantParameters;
-
-		private string resultType;
 
 		private string accessKeyId;
 
@@ -61,13 +53,9 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string failResultSample;
 
-		private string apiName;
-
 		private string systemParameters;
 
 		private string serviceParametersMap;
-
-		private string resultSample;
 
 		private string securityToken;
 
@@ -77,22 +65,25 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string requestParameters;
 
+		private string resultDescriptions;
+
+		private string visibility;
+
+		private string groupId;
+
+		private string serviceConfig;
+
+		private string resultType;
+
+		private string apiName;
+
+		private string resultSample;
+
+		private bool? forceNonceCheck;
+
 		private string requestConfig;
 
 		private string resultBodyModel;
-
-		public string ResultDescriptions
-		{
-			get
-			{
-				return resultDescriptions;
-			}
-			set	
-			{
-				resultDescriptions = value;
-				DictionaryUtil.Add(QueryParameters, "ResultDescriptions", value);
-			}
-		}
 
 		public string WebSocketApiType
 		{
@@ -104,32 +95,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				webSocketApiType = value;
 				DictionaryUtil.Add(QueryParameters, "WebSocketApiType", value);
-			}
-		}
-
-		public string Visibility
-		{
-			get
-			{
-				return visibility;
-			}
-			set	
-			{
-				visibility = value;
-				DictionaryUtil.Add(QueryParameters, "Visibility", value);
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -159,16 +124,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string ServiceConfig
+		public bool? DisableInternet
 		{
 			get
 			{
-				return serviceConfig;
+				return disableInternet;
 			}
 			set	
 			{
-				serviceConfig = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceConfig", value);
+				disableInternet = value;
+				DictionaryUtil.Add(QueryParameters, "DisableInternet", value.ToString());
 			}
 		}
 
@@ -182,19 +147,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				constantParameters = value;
 				DictionaryUtil.Add(QueryParameters, "ConstantParameters", value);
-			}
-		}
-
-		public string ResultType
-		{
-			get
-			{
-				return resultType;
-			}
-			set	
-			{
-				resultType = value;
-				DictionaryUtil.Add(QueryParameters, "ResultType", value);
 			}
 		}
 
@@ -263,19 +215,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string ApiName
-		{
-			get
-			{
-				return apiName;
-			}
-			set	
-			{
-				apiName = value;
-				DictionaryUtil.Add(QueryParameters, "ApiName", value);
-			}
-		}
-
 		public string SystemParameters
 		{
 			get
@@ -299,19 +238,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				serviceParametersMap = value;
 				DictionaryUtil.Add(QueryParameters, "ServiceParametersMap", value);
-			}
-		}
-
-		public string ResultSample
-		{
-			get
-			{
-				return resultSample;
-			}
-			set	
-			{
-				resultSample = value;
-				DictionaryUtil.Add(QueryParameters, "ResultSample", value);
 			}
 		}
 
@@ -364,6 +290,110 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				requestParameters = value;
 				DictionaryUtil.Add(QueryParameters, "RequestParameters", value);
+			}
+		}
+
+		public string ResultDescriptions
+		{
+			get
+			{
+				return resultDescriptions;
+			}
+			set	
+			{
+				resultDescriptions = value;
+				DictionaryUtil.Add(QueryParameters, "ResultDescriptions", value);
+			}
+		}
+
+		public string Visibility
+		{
+			get
+			{
+				return visibility;
+			}
+			set	
+			{
+				visibility = value;
+				DictionaryUtil.Add(QueryParameters, "Visibility", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string ServiceConfig
+		{
+			get
+			{
+				return serviceConfig;
+			}
+			set	
+			{
+				serviceConfig = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceConfig", value);
+			}
+		}
+
+		public string ResultType
+		{
+			get
+			{
+				return resultType;
+			}
+			set	
+			{
+				resultType = value;
+				DictionaryUtil.Add(QueryParameters, "ResultType", value);
+			}
+		}
+
+		public string ApiName
+		{
+			get
+			{
+				return apiName;
+			}
+			set	
+			{
+				apiName = value;
+				DictionaryUtil.Add(QueryParameters, "ApiName", value);
+			}
+		}
+
+		public string ResultSample
+		{
+			get
+			{
+				return resultSample;
+			}
+			set	
+			{
+				resultSample = value;
+				DictionaryUtil.Add(QueryParameters, "ResultSample", value);
+			}
+		}
+
+		public bool? ForceNonceCheck
+		{
+			get
+			{
+				return forceNonceCheck;
+			}
+			set	
+			{
+				forceNonceCheck = value;
+				DictionaryUtil.Add(QueryParameters, "ForceNonceCheck", value.ToString());
 			}
 		}
 

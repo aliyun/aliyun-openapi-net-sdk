@@ -56,6 +56,10 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string resultBodyModel;
 
+		private bool? forceNonceCheck;
+
+		private bool? disableInternet;
+
 		private List<DescribeDeployedApi_ErrorCodeSample> errorCodeSamples;
 
 		private List<DescribeDeployedApi_ResultDescription> resultDescriptions;
@@ -267,6 +271,30 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			set	
 			{
 				resultBodyModel = value;
+			}
+		}
+
+		public bool? ForceNonceCheck
+		{
+			get
+			{
+				return forceNonceCheck;
+			}
+			set	
+			{
+				forceNonceCheck = value;
+			}
+		}
+
+		public bool? DisableInternet
+		{
+			get
+			{
+				return disableInternet;
+			}
+			set	
+			{
+				disableInternet = value;
 			}
 		}
 

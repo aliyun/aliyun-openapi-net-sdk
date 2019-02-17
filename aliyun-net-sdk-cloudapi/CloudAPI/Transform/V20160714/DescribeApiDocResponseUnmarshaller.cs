@@ -44,6 +44,8 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiDocResponse.ResultSample = context.StringValue("DescribeApiDoc.ResultSample");
 			describeApiDocResponse.FailResultSample = context.StringValue("DescribeApiDoc.FailResultSample");
 			describeApiDocResponse.DeployedTime = context.StringValue("DescribeApiDoc.DeployedTime");
+			describeApiDocResponse.ForceNonceCheck = context.BooleanValue("DescribeApiDoc.ForceNonceCheck");
+			describeApiDocResponse.DisableInternet = context.BooleanValue("DescribeApiDoc.DisableInternet");
 
 			DescribeApiDocResponse.DescribeApiDoc_RequestConfig requestConfig = new DescribeApiDocResponse.DescribeApiDoc_RequestConfig();
 			requestConfig.RequestProtocol = context.StringValue("DescribeApiDoc.RequestConfig.RequestProtocol");
