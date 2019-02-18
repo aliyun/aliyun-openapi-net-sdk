@@ -18,6 +18,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Exceptions;
@@ -115,7 +116,7 @@ namespace Aliyun.Acs.Core.Profile
         {
             if (null == endpoints)
             {
-                Endpoint endpoint = iendpoints.GetEndpoint(regionId, product);
+                Endpoint endpoint = this.GetEndpointByIEndpoints(regionId, product);
                 if (endpoint != null)
                 {
                     endpoints = new List<Endpoint>();
@@ -167,7 +168,7 @@ namespace Aliyun.Acs.Core.Profile
                 {
                     foreach (String region in endpoint.RegionIds)
                     {
-                        foreach (ProductDomain productDomain in endpoint.ProductDomains)
+                        foreach (ProductDomain productDomain in endpoint.ProductDomains.ToList())
                         {
                             AddEndpoint(endpoint.Name, region, product, productDomain.DomianName, false);
                             CacheTimeHelper.AddLastClearTimePerProduct(product, region, DateTime.Now);
