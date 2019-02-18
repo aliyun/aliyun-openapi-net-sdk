@@ -26,32 +26,30 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class StopInstanceRequest : RpcAcsRequest<StopInstanceResponse>
+    public class ImportSnapshotRequest : RpcAcsRequest<ImportSnapshotResponse>
     {
-        public StopInstanceRequest()
-            : base("Ecs", "2014-05-26", "StopInstance", "ecs", "openAPI")
+        public ImportSnapshotRequest()
+            : base("Ecs", "2014-05-26", "ImportSnapshot", "ecs", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
+		private string snapshotName;
 
-		private bool? dryRun;
+		private string ossObject;
 
-		private string resourceOwnerAccount;
-
-		private bool? confirmStop;
-
-		private string ownerAccount;
+		private string regionId;
 
 		private string action;
 
-		private string stoppedMode;
+		private string ossBucket;
+
+		private string resourceOwnerAccount;
+
+		private string roleName;
 
 		private long? ownerId;
-
-		private bool? forceStop;
 
 		public long? ResourceOwnerId
 		{
@@ -66,68 +64,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
+		public string SnapshotName
 		{
 			get
 			{
-				return instanceId;
+				return snapshotName;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				snapshotName = value;
+				DictionaryUtil.Add(QueryParameters, "SnapshotName", value);
 			}
 		}
 
-		public bool? DryRun
+		public string OssObject
 		{
 			get
 			{
-				return dryRun;
+				return ossObject;
 			}
 			set	
 			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+				ossObject = value;
+				DictionaryUtil.Add(QueryParameters, "OssObject", value);
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string RegionId
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return regionId;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public bool? ConfirmStop
-		{
-			get
-			{
-				return confirmStop;
-			}
-			set	
-			{
-				confirmStop = value;
-				DictionaryUtil.Add(QueryParameters, "ConfirmStop", value.ToString());
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -144,16 +116,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string StoppedMode
+		public string OssBucket
 		{
 			get
 			{
-				return stoppedMode;
+				return ossBucket;
 			}
 			set	
 			{
-				stoppedMode = value;
-				DictionaryUtil.Add(QueryParameters, "StoppedMode", value);
+				ossBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RoleName
+		{
+			get
+			{
+				return roleName;
+			}
+			set	
+			{
+				roleName = value;
+				DictionaryUtil.Add(QueryParameters, "RoleName", value);
 			}
 		}
 
@@ -170,22 +168,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? ForceStop
-		{
-			get
-			{
-				return forceStop;
-			}
-			set	
-			{
-				forceStop = value;
-				DictionaryUtil.Add(QueryParameters, "ForceStop", value.ToString());
-			}
-		}
-
-        public override StopInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ImportSnapshotResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return StopInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ImportSnapshotResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

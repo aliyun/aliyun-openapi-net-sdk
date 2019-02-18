@@ -26,41 +26,28 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class StartInstanceRequest : RpcAcsRequest<StartInstanceResponse>
+    public class ExportSnapshotRequest : RpcAcsRequest<ExportSnapshotResponse>
     {
-        public StartInstanceRequest()
-            : base("Ecs", "2014-05-26", "StartInstance", "ecs", "openAPI")
+        public ExportSnapshotRequest()
+            : base("Ecs", "2014-05-26", "ExportSnapshot", "ecs", "openAPI")
         {
         }
 
-		private bool? initLocalDisk;
-
 		private long? resourceOwnerId;
 
-		private string instanceId;
+		private string snapshotId;
 
-		private bool? dryRun;
-
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
+		private string regionId;
 
 		private string action;
 
-		private long? ownerId;
+		private string ossBucket;
 
-		public bool? InitLocalDisk
-		{
-			get
-			{
-				return initLocalDisk;
-			}
-			set	
-			{
-				initLocalDisk = value;
-				DictionaryUtil.Add(QueryParameters, "InitLocalDisk", value.ToString());
-			}
-		}
+		private string resourceOwnerAccount;
+
+		private string roleName;
+
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -75,55 +62,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
+		public string SnapshotId
 		{
 			get
 			{
-				return instanceId;
+				return snapshotId;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				snapshotId = value;
+				DictionaryUtil.Add(QueryParameters, "SnapshotId", value);
 			}
 		}
 
-		public bool? DryRun
+		public string RegionId
 		{
 			get
 			{
-				return dryRun;
+				return regionId;
 			}
 			set	
 			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -140,6 +101,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string OssBucket
+		{
+			get
+			{
+				return ossBucket;
+			}
+			set	
+			{
+				ossBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RoleName
+		{
+			get
+			{
+				return roleName;
+			}
+			set	
+			{
+				roleName = value;
+				DictionaryUtil.Add(QueryParameters, "RoleName", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -153,9 +153,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override StartInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ExportSnapshotResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return StartInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ExportSnapshotResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

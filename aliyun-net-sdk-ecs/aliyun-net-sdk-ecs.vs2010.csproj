@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3a34b9f5-c056-4463-afe1-3b4bf887271c}</ProjectGuid>
+    <ProjectGuid>{d7adbda1-6b55-48af-bb9a-e2c24ce8aea0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -92,6 +92,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeVpcsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeRenewalPriceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyHpcClusterAttributeResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\ExportSnapshotRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifySecurityGroupPolicyRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateKeyPairResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeTasksResponse.cs" />
@@ -115,6 +116,7 @@
 	<Compile Include="Ecs\Model\V20140526\CreateVirtualBorderRouterRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyVirtualBorderRouterAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInvocationResultsRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\ImportSnapshotRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeDedicatedHostTypesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\StopInvocationResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DetachNetworkInterfaceResponse.cs" />
@@ -151,6 +153,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeVRoutersRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInvocationsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateImageResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\ExportSnapshotResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyDeploymentSetAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeNetworkInterfacePermissionsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeDedicatedHostsRequest.cs" />
@@ -289,6 +292,7 @@
 	<Compile Include="Ecs\Model\V20140526\DeleteInstanceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyVSwitchAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceTypesRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\ImportSnapshotResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyHpcClusterAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateCommandResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ImportImageResponse.cs" />
@@ -610,6 +614,7 @@
 	<Compile Include="Ecs\Transform\V20140526\DeleteNetworkInterfaceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteVSwitchResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeTagsResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\ExportSnapshotResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateSecurityGroupResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ResetDiskResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateImageResponseUnmarshaller.cs" />
@@ -732,6 +737,7 @@
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceSpecResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeDiskMonitorDataResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ImportImageResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\ImportSnapshotResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeRegionsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\RecoverVirtualBorderRouterResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstancesResponseUnmarshaller.cs" />
