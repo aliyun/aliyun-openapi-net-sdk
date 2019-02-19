@@ -84,6 +84,20 @@ namespace Aliyun.Acs.Core.Tests.Units
             // CheckShowJsonItemName 方法会回调true，且无其它逻辑
             Assert.True(mockAcsRequest.CheckShowJsonItemName());
         }
+
+        [Fact]
+        public void UserAgentConfigTest()
+        {
+            var mockAcsRequest = new MockAcsRequest();
+            mockAcsRequest.AppendUserAgent("test", "1.2.3");
+            mockAcsRequest.AppendUserAgent("test", "1.2.4");
+            mockAcsRequest.AppendUserAgent("mock", "1.1.2");
+
+            var userAgent = UserAgent.Resolve(mockAcsRequest.GetSysUserAgentConfig(), null);
+            var resultStr = UserAgent.GetDefaultMessage() + " test/1.2.4" + " mock/1.1.2";
+
+            Assert.Equal(resultStr, userAgent);
+        }
     }
 
     public sealed class MockAcsRequest : AcsRequest<CommonRequest>

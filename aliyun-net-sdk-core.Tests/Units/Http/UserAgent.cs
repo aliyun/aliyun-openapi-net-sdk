@@ -25,6 +25,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
             dict.TryGetValue("test", out result);
             Assert.Equal("111", result);
 
+            userAgent.AppendUserAgent("test", "222");
+            dict.TryGetValue("test", out result);
+            Assert.Equal("222", result);
+
             dict.TryGetValue("null", out result);
             Assert.Null(result);
 
@@ -62,24 +66,24 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
         [Fact]
         public void ResolveTest()
         {
-            var userAgent = new UserAgent();
-            var agent = userAgent.Resolve(userAgent, null);
+            var UserAgent = new UserAgent();
+            var agent = UserAgent.Resolve(UserAgent, null);
             Assert.Equal(UserAgent.GetDefaultMessage(), agent);
 
-            agent = userAgent.Resolve(null, userAgent);
+            agent = UserAgent.Resolve(null, UserAgent);
             Assert.Equal(UserAgent.GetDefaultMessage(), agent);
 
-            userAgent.AppendUserAgent("test", "2.2.3");
-            userAgent.AppendUserAgent("Core", "22");
+            UserAgent.AppendUserAgent("test", "2.2.3");
+            UserAgent.AppendUserAgent("Core", "22");
             var resultStr = UserAgent.GetDefaultMessage() + " test/2.2.3";
 
-            agent = userAgent.Resolve(null, userAgent);
+            agent = UserAgent.Resolve(null, UserAgent);
             Assert.Equal(resultStr, agent);
 
-            agent = userAgent.Resolve(userAgent, null);
+            agent = UserAgent.Resolve(UserAgent, null);
             Assert.Equal(resultStr, agent);
 
-            agent = userAgent.Resolve(null, null);
+            agent = UserAgent.Resolve(null, null);
             Assert.Equal(UserAgent.GetDefaultMessage(), agent);
 
             var requestUserAgent = new UserAgent();
@@ -87,7 +91,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
             requestUserAgent.AppendUserAgent("test", "23");
 
             resultStr = UserAgent.GetDefaultMessage() + " requestUserAgent/1.1.1" + " test/23";
-            agent = userAgent.Resolve(requestUserAgent, userAgent);
+            agent = UserAgent.Resolve(requestUserAgent, UserAgent);
 
             Assert.Equal(resultStr, agent);
 

@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Core
     {
         private ProtocolType protocol = ProtocolType.HTTP;
         private FormatType acceptFormat;
+        private UserAgent userAgentConfig;
         private Dictionary<String, String> queryParameters = new Dictionary<String, String>();
         private Dictionary<String, String> domainParameters = new Dictionary<String, String>();
         private Dictionary<String, String> bodyParameters = new Dictionary<String, String>();
@@ -160,5 +161,18 @@ namespace Aliyun.Acs.Core
             return true;
         }
 
+        public UserAgent GetSysUserAgentConfig()
+        {
+            return this.userAgentConfig;
+        }
+
+        public void AppendUserAgent(string key, string value)
+        {
+            if (this.userAgentConfig == null)
+            {
+                this.userAgentConfig = new UserAgent();
+            }
+            this.userAgentConfig.AppendUserAgent(key, value);
+        }
     }
 }
