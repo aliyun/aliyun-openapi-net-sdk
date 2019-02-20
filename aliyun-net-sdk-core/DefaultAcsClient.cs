@@ -26,6 +26,7 @@ using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Reader;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core
 {
@@ -255,10 +256,33 @@ namespace Aliyun.Acs.Core
                     continue;
                 }
 
+                PrintHttpMsg(request, response);
+
                 return response;
             }
 
             return null;
+        }
+
+        private void PrintHttpMsg<T>(AcsRequest<T> request, HttpResponse response)
+        {
+            var environment_debug_value = Environment.GetEnvironmentVariable("DEBUG");
+
+            if (null != environment_debug_value && environment_debug_value.ToLower().Equals("sdk"))
+            {
+                Console.WriteLine(
+                    "> " + request.Method + "\n" +
+                    "> " + request.Url + "\n" +
+                    "> " + request.Protocol
+                );
+                DictionaryUtil.Print(request.Headers, '>');
+
+                Console.WriteLine(
+                    "< " + response.Status
+                );
+                DictionaryUtil.Print(response.Headers, '<');
+                Environment.SetEnvironmentVariable("DEBUG", null);
+            }
         }
 
         private T ReadResponse<T>(AcsRequest<T> request, HttpResponse httpResponse, FormatType? format) where T : AcsResponse
