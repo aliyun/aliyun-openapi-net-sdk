@@ -31,7 +31,6 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
         public InvokeServiceRequest()
             : base("industry_brain", "2018-07-12", "InvokeService")
         {
-			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
