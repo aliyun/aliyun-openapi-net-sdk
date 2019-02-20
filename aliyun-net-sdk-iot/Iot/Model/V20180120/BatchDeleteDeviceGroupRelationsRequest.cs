@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class BatchDeleteDeviceGroupRelationsRequest : RpcAcsRequest<BatchDeleteDeviceGroupRelationsResponse>
     {
         public BatchDeleteDeviceGroupRelationsRequest()
-            : base("Iot", "2018-01-20", "BatchDeleteDeviceGroupRelations")
+            : base("Iot", "2018-01-20", "BatchDeleteDeviceGroupRelations", "iot", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class BatchAddDeviceGroupRelationsRequest : RpcAcsRequest<BatchAddDeviceGroupRelationsResponse>
     {
         public BatchAddDeviceGroupRelationsRequest()
-            : base("Iot", "2018-01-20", "BatchAddDeviceGroupRelations")
+            : base("Iot", "2018-01-20", "BatchAddDeviceGroupRelations", "iot", "openAPI")
         {
         }
 

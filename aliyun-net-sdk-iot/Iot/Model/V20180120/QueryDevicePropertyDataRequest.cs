@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryDevicePropertyDataRequest : RpcAcsRequest<QueryDevicePropertyDataResponse>
     {
         public QueryDevicePropertyDataRequest()
-            : base("Iot", "2018-01-20", "QueryDevicePropertyData")
+            : base("Iot", "2018-01-20", "QueryDevicePropertyData", "iot", "openAPI")
         {
         }
 

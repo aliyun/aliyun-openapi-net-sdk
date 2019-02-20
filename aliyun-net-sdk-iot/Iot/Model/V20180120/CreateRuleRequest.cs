@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class CreateRuleRequest : RpcAcsRequest<CreateRuleResponse>
     {
         public CreateRuleRequest()
-            : base("Iot", "2018-01-20", "CreateRule")
+            : base("Iot", "2018-01-20", "CreateRule", "iot", "openAPI")
         {
         }
 

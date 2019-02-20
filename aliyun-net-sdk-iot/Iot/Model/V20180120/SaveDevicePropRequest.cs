@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class SaveDevicePropRequest : RpcAcsRequest<SaveDevicePropResponse>
     {
         public SaveDevicePropRequest()
-            : base("Iot", "2018-01-20", "SaveDeviceProp")
+            : base("Iot", "2018-01-20", "SaveDeviceProp", "iot", "openAPI")
         {
         }
 

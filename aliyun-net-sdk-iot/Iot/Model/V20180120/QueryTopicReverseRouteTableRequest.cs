@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryTopicReverseRouteTableRequest : RpcAcsRequest<QueryTopicReverseRouteTableResponse>
     {
         public QueryTopicReverseRouteTableRequest()
-            : base("Iot", "2018-01-20", "QueryTopicReverseRouteTable")
+            : base("Iot", "2018-01-20", "QueryTopicReverseRouteTable", "iot", "openAPI")
         {
         }
 

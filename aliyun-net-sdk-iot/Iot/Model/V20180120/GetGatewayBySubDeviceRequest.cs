@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class GetGatewayBySubDeviceRequest : RpcAcsRequest<GetGatewayBySubDeviceResponse>
     {
         public GetGatewayBySubDeviceRequest()
-            : base("Iot", "2018-01-20", "GetGatewayBySubDevice")
+            : base("Iot", "2018-01-20", "GetGatewayBySubDevice", "iot", "openAPI")
         {
         }
 

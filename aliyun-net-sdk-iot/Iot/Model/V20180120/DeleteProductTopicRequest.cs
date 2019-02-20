@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class DeleteProductTopicRequest : RpcAcsRequest<DeleteProductTopicResponse>
     {
         public DeleteProductTopicRequest()
-            : base("Iot", "2018-01-20", "DeleteProductTopic")
+            : base("Iot", "2018-01-20", "DeleteProductTopic", "iot", "openAPI")
         {
         }
 

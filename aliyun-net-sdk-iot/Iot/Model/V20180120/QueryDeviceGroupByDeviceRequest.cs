@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryDeviceGroupByDeviceRequest : RpcAcsRequest<QueryDeviceGroupByDeviceResponse>
     {
         public QueryDeviceGroupByDeviceRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceGroupByDevice")
+            : base("Iot", "2018-01-20", "QueryDeviceGroupByDevice", "iot", "openAPI")
         {
         }
 
