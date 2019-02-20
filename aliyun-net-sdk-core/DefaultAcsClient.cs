@@ -36,6 +36,7 @@ namespace Aliyun.Acs.Core
         private bool autoRetry = true;
         private IClientProfile clientProfile = null;
         private AlibabaCloudCredentialsProvider credentialsProvider;
+        private readonly UserAgent userAgentConfig = new UserAgent();
 
         public DefaultAcsClient()
         {
@@ -227,12 +228,15 @@ namespace Aliyun.Acs.Core
                 throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
             }
 
+            request.Headers["User-Agent"] = UserAgent.Resolve(request.GetSysUserAgentConfig(), this.userAgentConfig);
+
             bool shouldRetry = true;
             for (int retryTimes = 0; shouldRetry; retryTimes++)
             {
                 shouldRetry = autoRetry && retryTimes < maxRetryNumber;
                 HttpRequest httpRequest = request.SignRequest(signer, credentials, format, domain);
                 HttpResponse response;
+
                 response = this.GetResponse(httpRequest);
                 if (response.Content == null)
                 {
@@ -306,6 +310,16 @@ namespace Aliyun.Acs.Core
         public virtual HttpResponse GetResponse(HttpRequest httpRequest)
         {
             return HttpResponse.GetResponse(httpRequest);
+        }
+
+        public void AppendUserAgent(string key, string value)
+        {
+            this.userAgentConfig.AppendUserAgent(key, value);
+        }
+
+        public UserAgent GetUserAgentConfig()
+        {
+            return this.userAgentConfig;
         }
     }
 }

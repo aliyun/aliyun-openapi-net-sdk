@@ -41,19 +41,31 @@ namespace Aliyun.Acs.Core.Http
         {
             SetTheValue();
 
-            DEFAULT_MESSAGE += "Alibaba Cloud (" + OSVersion + ") ";
-            DEFAULT_MESSAGE += ClientVersion;
-            DEFAULT_MESSAGE += " Core/" + CoreVersion;
+            DEFAULT_MESSAGE += "Alibaba Cloud (" + this.OSVersion + ") ";
+            DEFAULT_MESSAGE += this.ClientVersion;
+            DEFAULT_MESSAGE += " Core/" + this.CoreVersion;
         }
 
         public void SetTheValue()
         {
-            OSVersion = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
+            this.OSVersion = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
             GetRuntimeRegexValue(System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory());
-            CoreVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            this.CoreVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            this.excludedList.Add("core");
+            this.excludedList.Add("microsoft.netcore.app");
+        }
 
-            excludedList.Add("core");
-            excludedList.Add("microsoft.netcore.app");
+        public void GetRuntimeRegexValue(string value)
+        {
+            Regex rx = new Regex(@"(Microsoft).*(\\|/).*(\d)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            Match matches = rx.Match(value);
+
+            if (matches.Success)
+            {
+                char[] separator = { '\\', '/' };
+                var array = matches.Value.Split(separator);
+                this.ClientVersion = array[0] + "/" + array[1];
+            }
         }
 
         public static string GetDefaultMessage()
@@ -65,17 +77,17 @@ namespace Aliyun.Acs.Core.Http
         {
             if (StringUtils.isEmpty(key) || StringUtils.isEmpty(value))
                 return;
-            if (excludedList.Contains(key.ToLowerInvariant()))
+            if (this.excludedList.Contains(key.ToLowerInvariant()))
                 return;
-            this.userAgent.Add(key, value);
+            DictionaryUtil.Add(this.userAgent, key, value);
         }
 
         public ReadOnlyDictionary<string, string> GetSysUserAgentDict()
         {
-            return new ReadOnlyDictionary<string, string>(userAgent);
+            return new ReadOnlyDictionary<string, string>(this.userAgent);
         }
 
-        public string Resolve(UserAgent requestConfig, UserAgent clientConfig)
+        public static string Resolve(UserAgent requestConfig, UserAgent clientConfig)
         {
             Dictionary<string, string> finalDict = new Dictionary<string, string>();
             if (clientConfig != null && clientConfig.GetSysUserAgentDict().Count > 0)
@@ -95,19 +107,6 @@ namespace Aliyun.Acs.Core.Http
             }
 
             return agent.ToString();
-        }
-
-        public void GetRuntimeRegexValue(string value)
-        {
-            Regex rx = new Regex(@"(Microsoft).*(\\|/).*(\d)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-            Match matches = rx.Match(value);
-
-            if (matches.Success)
-            {
-                char[] separator = { '\\', '/' };
-                var array = matches.Value.Split(separator);
-                ClientVersion = array[0] + "/" + array[1];
-            }
         }
     }
 }

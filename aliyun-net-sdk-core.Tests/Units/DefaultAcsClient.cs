@@ -471,5 +471,21 @@ namespace Aliyun.Acs.Core.Tests.Units
                 return response;
             }
         }
+
+        [Fact]
+        public void UserAgentConfigTest()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            DefaultAcsClient client = new DefaultAcsClient(profile);
+
+            client.AppendUserAgent("test", "1.1.2");
+            client.AppendUserAgent("test", "1.1.3");
+            client.AppendUserAgent("mock", "1.1.2");
+
+            var userAgent = UserAgent.Resolve(null, client.GetUserAgentConfig());
+            var resultStr = UserAgent.GetDefaultMessage() + " test/1.1.3" + " mock/1.1.2";
+
+            Assert.Equal(resultStr, userAgent);
+        }
     }
 }
