@@ -12,12 +12,19 @@ namespace Aliyun.Acs.Core.Tests.Features.HttpDebug
         [Fact]
         public void EcsHttpDebugTest()
         {
-            Environment.SetEnvironmentVariable("DEBUG", "sdk");
-            DescribeAccessPointsRequest request = new DescribeAccessPointsRequest();
-            DescribeAccessPointsResponse response = client.GetAcsResponse(request);
+            try
+            {
+                Environment.SetEnvironmentVariable("DEBUG", "sdk");
+                DescribeAccessPointsRequest request = new DescribeAccessPointsRequest();
+                DescribeAccessPointsResponse response = client.GetAcsResponse(request);
 
-            Assert.True(null != response.RequestId);
-            Assert.Null(Environment.GetEnvironmentVariable("DEBUG"));
+                Assert.True(null != response.RequestId);
+                Assert.Null(Environment.GetEnvironmentVariable("DEBUG"));
+            }
+            catch (ClientException ex)
+            {
+                Assert.True(ex.ErrorMessage.Contains("Can not find endpoint to access"));
+            }
         }
     }
 }
