@@ -58,5 +58,14 @@ namespace Aliyun.Acs.Core.Utils
             }
             return value;
         }
+
+        public static void Print(Dictionary<string, string> dic, char str)
+        {
+            foreach (KeyValuePair<string, string> item in dic)
+            {
+                System.Console.WriteLine("{0} {1}: {2}", str, item.Key, item.Value);
+            }
+            System.Console.WriteLine();
+        }
     }
 }
