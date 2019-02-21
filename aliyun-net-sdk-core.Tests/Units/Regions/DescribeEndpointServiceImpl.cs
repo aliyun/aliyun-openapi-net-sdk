@@ -38,7 +38,21 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
         [Fact]
         public void DescribeEndpoint2()
         {
-            DescribeEndpointServiceImpl instance = new DescribeEndpointServiceImpl();
+            var mock = new Mock<DescribeEndpointServiceImpl>();
+
+            HttpResponse response = new HttpResponse();
+            byte[] content = Encoding.GetEncoding("UTF-8").GetBytes("{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" + DateTimeMock.getNowDateTimeString() + "\"}");
+            response.ContentType = FormatType.JSON;
+            response.Content = content;
+            response.Status = 200;
+            response.Encoding = "UTF-8";
+
+            mock.Setup(foo => foo.GetResponse(
+                It.IsAny<HttpRequest>()
+            )).Returns(response);
+
+            DescribeEndpointServiceImpl instance = mock.Object;
+
             Credential credential = new Credential();
             LocationConfig locationConfig = new LocationConfig();
 
