@@ -20,28 +20,28 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Iot.Transform;
-using Aliyun.Acs.Iot.Transform.V20180120;
+using Aliyun.Acs.LinkFace.Transform;
+using Aliyun.Acs.LinkFace.Transform.V20180720;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Iot.Model.V20180120
+namespace Aliyun.Acs.LinkFace.Model.V20180720
 {
-    public class DeleteDeviceRequest : RpcAcsRequest<DeleteDeviceResponse>
+    public class DeleteDeviceGroupRequest : RpcAcsRequest<DeleteDeviceGroupResponse>
     {
-        public DeleteDeviceRequest()
-            : base("Iot", "2018-01-20", "DeleteDevice", "iot", "openAPI")
+        public DeleteDeviceGroupRequest()
+            : base("LinkFace", "2018-07-20", "DeleteDeviceGroup")
         {
+			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
 
 		private string iotId;
 
-		private string iotInstanceId;
+		private string groupId;
 
 		private string deviceName;
 
 		private string productKey;
-
-		private string accessKeyId;
 
 		public string IotId
 		{
@@ -52,20 +52,20 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotId = value;
-				DictionaryUtil.Add(QueryParameters, "IotId", value);
+				DictionaryUtil.Add(BodyParameters, "IotId", value);
 			}
 		}
 
-		public string IotInstanceId
+		public string GroupId
 		{
 			get
 			{
-				return iotInstanceId;
+				return groupId;
 			}
 			set	
 			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				groupId = value;
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
 			}
 		}
 
@@ -78,7 +78,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
+				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
 			}
 		}
 
@@ -91,26 +91,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				DictionaryUtil.Add(BodyParameters, "ProductKey", value);
 			}
 		}
 
-		public string AccessKeyId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
+			return false;
 		}
 
-        public override DeleteDeviceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteDeviceGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DeleteDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDeviceGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

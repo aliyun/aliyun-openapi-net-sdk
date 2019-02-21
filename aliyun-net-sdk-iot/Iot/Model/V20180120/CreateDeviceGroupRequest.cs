@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class CreateDeviceGroupRequest : RpcAcsRequest<CreateDeviceGroupResponse>
     {
         public CreateDeviceGroupRequest()
-            : base("Iot", "2018-01-20", "CreateDeviceGroup")
+            : base("Iot", "2018-01-20", "CreateDeviceGroup", "iot", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class BatchCheckDeviceNamesRequest : RpcAcsRequest<BatchCheckDeviceNamesResponse>
     {
         public BatchCheckDeviceNamesRequest()
-            : base("Iot", "2018-01-20", "BatchCheckDeviceNames")
+            : base("Iot", "2018-01-20", "BatchCheckDeviceNames", "iot", "openAPI")
         {
         }
 

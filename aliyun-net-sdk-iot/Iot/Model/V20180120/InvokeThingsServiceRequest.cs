@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class InvokeThingsServiceRequest : RpcAcsRequest<InvokeThingsServiceResponse>
     {
         public InvokeThingsServiceRequest()
-            : base("Iot", "2018-01-20", "InvokeThingsService")
+            : base("Iot", "2018-01-20", "InvokeThingsService", "iot", "openAPI")
         {
         }
 

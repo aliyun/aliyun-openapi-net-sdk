@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class RegisterDeviceRequest : RpcAcsRequest<RegisterDeviceResponse>
     {
         public RegisterDeviceRequest()
-            : base("Iot", "2018-01-20", "RegisterDevice")
+            : base("Iot", "2018-01-20", "RegisterDevice", "iot", "openAPI")
         {
         }
 

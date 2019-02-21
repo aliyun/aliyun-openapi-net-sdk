@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class DisableThingRequest : RpcAcsRequest<DisableThingResponse>
     {
         public DisableThingRequest()
-            : base("Iot", "2018-01-20", "DisableThing")
+            : base("Iot", "2018-01-20", "DisableThing", "iot", "openAPI")
         {
         }
 

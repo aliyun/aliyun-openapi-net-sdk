@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class UpdateProductTopicRequest : RpcAcsRequest<UpdateProductTopicResponse>
     {
         public UpdateProductTopicRequest()
-            : base("Iot", "2018-01-20", "UpdateProductTopic")
+            : base("Iot", "2018-01-20", "UpdateProductTopic", "iot", "openAPI")
         {
         }
 

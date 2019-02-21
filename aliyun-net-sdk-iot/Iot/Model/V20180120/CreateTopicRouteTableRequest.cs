@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class CreateTopicRouteTableRequest : RpcAcsRequest<CreateTopicRouteTableResponse>
     {
         public CreateTopicRouteTableRequest()
-            : base("Iot", "2018-01-20", "CreateTopicRouteTable")
+            : base("Iot", "2018-01-20", "CreateTopicRouteTable", "iot", "openAPI")
         {
         }
 
