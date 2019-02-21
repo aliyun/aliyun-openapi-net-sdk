@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{f7ac1574-d11a-4c2f-af90-d1de6c509c6f}</ProjectGuid>
+    <ProjectGuid>{c67b6b7c-cf97-43c5-8332-e30baa49cba9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -50,6 +50,7 @@
 	<Compile Include="LinkFace\Model\V20180720\QueryFaceRequest.cs" />
 	<Compile Include="LinkFace\Model\V20180720\LinkFaceResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\UpdateFaceRequest.cs" />
+	<Compile Include="LinkFace\Model\V20180720\DeleteDeviceGroupRequest.cs" />
 	<Compile Include="LinkFace\Model\V20180720\UpdateFaceResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\QueryAuthenticationResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\SearchFaceRequest.cs" />
@@ -58,13 +59,16 @@
 	<Compile Include="LinkFace\Model\V20180720\QueryAllGroupsResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\DeleteGroupResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\QueryGroupUsersRequest.cs" />
+	<Compile Include="LinkFace\Model\V20180720\DeleteDeviceGroupResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\DeleteGroupRequest.cs" />
 	<Compile Include="LinkFace\Model\V20180720\RegisterFaceResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\QueryAddUserInfoResponse.cs" />
+	<Compile Include="LinkFace\Model\V20180720\DeleteDeviceAllGroupResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\QueryAuthenticationRequest.cs" />
 	<Compile Include="LinkFace\Model\V20180720\QueryFaceResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\QueryAllGroupsRequest.cs" />
 	<Compile Include="LinkFace\Model\V20180720\SyncFacePicturesResponse.cs" />
+	<Compile Include="LinkFace\Model\V20180720\DeleteDeviceAllGroupRequest.cs" />
 	<Compile Include="LinkFace\Model\V20180720\QueryLicensesResponse.cs" />
 	<Compile Include="LinkFace\Model\V20180720\SyncFacePicturesRequest.cs" />
 	<Compile Include="LinkFace\Model\V20180720\UnlinkFaceRequest.cs" />
@@ -77,9 +81,11 @@
 	<Compile Include="LinkFace\Transform\V20180720\QueryFaceResponseUnmarshaller.cs" />
 	<Compile Include="LinkFace\Transform\V20180720\CreateGroupResponseUnmarshaller.cs" />
 	<Compile Include="LinkFace\Transform\V20180720\UpdateFaceResponseUnmarshaller.cs" />
+	<Compile Include="LinkFace\Transform\V20180720\DeleteDeviceAllGroupResponseUnmarshaller.cs" />
 	<Compile Include="LinkFace\Transform\V20180720\QueryLicensesResponseUnmarshaller.cs" />
 	<Compile Include="LinkFace\Transform\V20180720\QuerySyncPicScheduleResponseUnmarshaller.cs" />
 	<Compile Include="LinkFace\Transform\V20180720\UnlinkFaceResponseUnmarshaller.cs" />
+	<Compile Include="LinkFace\Transform\V20180720\DeleteDeviceGroupResponseUnmarshaller.cs" />
 	<Compile Include="LinkFace\Transform\V20180720\DeleteGroupResponseUnmarshaller.cs" />
 	<Compile Include="LinkFace\Transform\V20180720\QueryAllGroupsResponseUnmarshaller.cs" />
 	<Compile Include="LinkFace\Transform\V20180720\RegisterFaceResponseUnmarshaller.cs" />

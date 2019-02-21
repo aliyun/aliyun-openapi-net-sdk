@@ -26,18 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.LinkFace.Model.V20180720
 {
-    public class QueryAddUserInfoRequest : RpcAcsRequest<QueryAddUserInfoResponse>
+    public class DeleteDeviceAllGroupRequest : RpcAcsRequest<DeleteDeviceAllGroupResponse>
     {
-        public QueryAddUserInfoRequest()
-            : base("LinkFace", "2018-07-20", "QueryAddUserInfo")
+        public DeleteDeviceAllGroupRequest()
+            : base("LinkFace", "2018-07-20", "DeleteDeviceAllGroup")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private string iotId;
-
-		private string groupId;
 
 		private string deviceName;
 
@@ -53,19 +51,6 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 			{
 				iotId = value;
 				DictionaryUtil.Add(BodyParameters, "IotId", value);
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(BodyParameters, "GroupId", value);
 			}
 		}
 
@@ -100,9 +85,9 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 			return false;
 		}
 
-        public override QueryAddUserInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteDeviceAllGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryAddUserInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDeviceAllGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

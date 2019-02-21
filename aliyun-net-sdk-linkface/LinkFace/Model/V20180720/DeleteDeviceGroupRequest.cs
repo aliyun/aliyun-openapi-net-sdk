@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.LinkFace.Model.V20180720
 {
-    public class QueryAddUserInfoRequest : RpcAcsRequest<QueryAddUserInfoResponse>
+    public class DeleteDeviceGroupRequest : RpcAcsRequest<DeleteDeviceGroupResponse>
     {
-        public QueryAddUserInfoRequest()
-            : base("LinkFace", "2018-07-20", "QueryAddUserInfo")
+        public DeleteDeviceGroupRequest()
+            : base("LinkFace", "2018-07-20", "DeleteDeviceGroup")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
@@ -100,9 +100,9 @@ namespace Aliyun.Acs.LinkFace.Model.V20180720
 			return false;
 		}
 
-        public override QueryAddUserInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteDeviceGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryAddUserInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDeviceGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
