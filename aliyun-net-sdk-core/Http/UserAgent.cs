@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Core.Http
         {
             SetTheValue();
 
-            DEFAULT_MESSAGE = "Alibaba Cloud (" + this.OSVersion + ") ";
+            DEFAULT_MESSAGE += "Alibaba Cloud (" + this.OSVersion + ") ";
             DEFAULT_MESSAGE += this.ClientVersion;
             DEFAULT_MESSAGE += " Core/" + this.CoreVersion;
         }
