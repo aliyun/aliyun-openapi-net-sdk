@@ -3,23 +3,23 @@ using Xunit;
 using Aliyun.Acs.Core.Tests.Feature;
 using Aliyun.Acs.Core.Tests.Mock.Services.Ecs;
 using Aliyun.Acs.Core.Exceptions;
-using System;
 
-namespace Aliyun.Acs.Core.Tests.Features.HttpDebug
+namespace Aliyun.Acs.Core.Tests.Features.UserAgent
 {
-    public class HttpDebugTest : ProfileInitialization
+    public class UserAgentTest : ProfileInitialization
     {
         [Fact]
-        public void EcsHttpDebugTest()
+        public void GetUserAgentConfigTest()
         {
             try
             {
-                Environment.SetEnvironmentVariable("DEBUG", "sdk");
                 DescribeAccessPointsRequest request = new DescribeAccessPointsRequest();
                 DescribeAccessPointsResponse response = client.GetAcsResponse(request);
 
-                Assert.True(null != response.RequestId);
-                Assert.Null(Environment.GetEnvironmentVariable("DEBUG"));
+                request.AppendUserAgent("test", "111");
+
+                var resultStr = Aliyun.Acs.Core.Http.UserAgent.GetDefaultMessage() + " test/111";
+                Assert.Equal(resultStr, Aliyun.Acs.Core.Http.UserAgent.Resolve(request.GetSysUserAgentConfig(), null));
             }
             catch (ClientException ex)
             {
