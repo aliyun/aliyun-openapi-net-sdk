@@ -402,7 +402,7 @@ namespace Aliyun.Acs.Core.Tests.Units
         }
 
         [Fact]
-        public void DoAction4()
+        public void DoAcion4()
         {
             // When
             // request.AcceptFormat is not null
