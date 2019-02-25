@@ -7,15 +7,14 @@ init:
   - cmd: git config --global core.autocrlf true
 install:
   - cmd: dotnet --version
-  - cmd: dotnet tool install --global altcover.visualizer
-  - cmd: cd aliyun-net-sdk-core.Tests/ && dotnet add package AltCover && cd ../
+  - cmd: cd aliyun-net-sdk-core.Tests/
 build_script:
   - cmd: dotnet restore
   - cmd: dotnet build
 test_script:
-  - cmd: dotnet test /p:AltCover=true
+  - dotnet build
+  - test -z $ACCESS_KEY_ID -a -z $ACCESS_KEY_SECRET && dotnet test --filter Category!=FeatureTest || dotnet test
 on_finish:
-  - cmd: cd aliyun-net-sdk-core.Tests
   - ps: |
       $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
       Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh

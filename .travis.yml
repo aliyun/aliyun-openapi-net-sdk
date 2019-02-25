@@ -6,12 +6,10 @@ branches:
   only:
     - master
 install:
-  - dotnet tool install --global altcover.visualizer
-  - cd aliyun-net-sdk-core.Tests/ && dotnet add package AltCover && cd ../
+  - cd aliyun-net-sdk-core.Tests/
   - dotnet restore
 script: 
   - dotnet build
-  - dotnet test /p:AltCover=true
+  - test -z $ACCESS_KEY_ID -a -z $ACCESS_KEY_SECRET && dotnet test --filter Category!=FeatureTest || dotnet test
 after_success:
-  - cd aliyun-net-sdk-core.Tests/
   - bash <(curl -s https://codecov.io/bash)
