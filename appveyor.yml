@@ -7,14 +7,14 @@ init:
   - cmd: git config --global core.autocrlf true
 install:
   - cmd: dotnet --version
-  - cmd: dotnet tool install --global altcover.visualizer	  
+  - cmd: dotnet tool install --global altcover.visualizer
   - cmd: cd aliyun-net-sdk-core.Tests/ && dotnet add package AltCover && cd ../
 build_script:
   - cmd: dotnet restore
   - cmd: dotnet build
 test_script:
   - dotnet build
-  - test -z $ACCESS_KEY_ID -a -z $ACCESS_KEY_SECRET && dotnet test --filter Category!=FeatureTest || dotnet test
+  - test -z $ACCESS_KEY_ID -a -z $ACCESS_KEY_SECRET && dotnet test --filter Category!=FeatureTest /p:AltCover=true || dotnet test /p:AltCover=true
 on_finish:
   - cmd: cd aliyun-net-sdk-core.Tests
   - ps: |
