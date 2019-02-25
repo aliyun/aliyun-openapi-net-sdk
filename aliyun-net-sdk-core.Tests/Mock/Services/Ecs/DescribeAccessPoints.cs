@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Tests.Mock.Services.Ecs
 {
-    public class DescribeAccessPointsRequest : RpcAcsRequest<DescribeAccessPointsResponse>
+    public class DescribeAccessPoints : RpcAcsRequest<DescribeAccessPointsResponse>
     {
-        public DescribeAccessPointsRequest() : base("Ecs", "2014-05-26", "DescribeAccessPoints", "ecs", "openAPI") { }
+        public DescribeAccessPoints() : base("Ecs", "2014-05-26", "DescribeAccessPoints", "ecs", "openAPI") { }
 
         private List<Filter> filters;
 
