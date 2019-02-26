@@ -62,7 +62,7 @@ namespace Aliyun.Acs.Core.Regions
             HttpResponse httpResponse = this.GetResponse(httpRequest);
 
             Console.WriteLine(">>>>>>>>>>>>>");
-            Console.WriteLine("AccessKeyID" + credential.AccessKeyId);
+            Console.WriteLine("AccessKeyID >>>>>>>>>" + credential.AccessKeyId);
             Console.WriteLine(System.Text.Encoding.Default.GetString(httpResponse.Content));
 
             if (httpResponse.isSuccess())

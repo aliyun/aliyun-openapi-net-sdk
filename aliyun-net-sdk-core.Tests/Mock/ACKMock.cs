@@ -21,6 +21,7 @@ namespace Aliyun.Acs.Core.Tests.Mock
 
         private static string GetEnv(string envName, string mockData)
         {
+            Console.WriteLine("EnvironmentValue>>>>>>>>>" + Environment.GetEnvironmentVariable(envName));
             return Environment.GetEnvironmentVariable(envName) == null ? mockData : Environment.GetEnvironmentVariable(envName);
         }
     }
