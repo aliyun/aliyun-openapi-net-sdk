@@ -10,3 +10,4 @@ coverage:
 
 ignore:
   - "aliyun-net-sdk-core.Tests/"  # ignore aliyun-net-sdk-core.Tests
+  - "aliyun-net-sdk-ecs/"  #igonre aliyun-net-sdk-ecs

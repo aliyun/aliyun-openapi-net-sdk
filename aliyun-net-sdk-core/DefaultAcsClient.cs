@@ -271,16 +271,19 @@ namespace Aliyun.Acs.Core
 
             if (null != environment_debug_value && environment_debug_value.ToLower().Equals("sdk"))
             {
-                Console.WriteLine(
-                    "> " + request.Method + "\n" +
-                    "> " + request.Url + "\n"
-                );
-                DictionaryUtil.Print(request.Headers, '>');
+                if (null != request.Headers)
+                {
+                    Console.WriteLine(
+                        "> " + request.Method + "\n" +
+                        "> " + request.Url + "\n"
+                    );
+                    DictionaryUtil.Print(request.Headers, '>');
 
-                Console.WriteLine(
-                    "< " + response.Status
-                );
-                DictionaryUtil.Print(response.Headers, '<');
+                    Console.WriteLine(
+                        "< " + response.Status
+                    );
+                    DictionaryUtil.Print(response.Headers, '<');
+                }
                 Environment.SetEnvironmentVariable("DEBUG", null);
             }
         }
