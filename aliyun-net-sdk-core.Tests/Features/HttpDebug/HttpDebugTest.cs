@@ -16,6 +16,7 @@ namespace Aliyun.Acs.Core.Tests.Features.HttpDebug
         {
             Environment.SetEnvironmentVariable("DEBUG", "sdk");
             DescribeRegionsRequest request = new DescribeRegionsRequest();
+            Console.Write("Test => ");
             DescribeRegionsResponse response = client.GetAcsResponse(request);
 
             Assert.True(null != response.RequestId);

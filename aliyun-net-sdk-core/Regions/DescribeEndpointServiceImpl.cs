@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Core.Regions
 
             HttpRequest httpRequest = request.SignRequest(signer, credential, FormatType.JSON, domain);
             HttpResponse httpResponse = this.GetResponse(httpRequest);
+
+            Console.WriteLine(System.Text.Encoding.Default.GetString(httpResponse.Content));
             if (httpResponse.isSuccess())
             {
                 String data = Encoding.UTF8.GetString(httpResponse.Content);
