@@ -14,7 +14,7 @@ build_script:
   - cmd: dotnet build
 test_script:
   - dotnet build
-  - IF %ACCESS_KEY_ID%=="" (dotnet test --filter Category!=FeatureTest /p:AltCover=true) else (dotnet test /p:AltCover=true)
+  - cmd: IF %ACCESS_KEY_ID%=="" (dotnet test --filter Category!=FeatureTest /p:AltCover=true) else (dotnet test /p:AltCover=true)
 on_finish:
   - cmd: cd aliyun-net-sdk-core.Tests
   - ps: |
