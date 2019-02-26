@@ -6,12 +6,12 @@ namespace Aliyun.Acs.Core.Tests.Mock
     {
         public static string GetAccessKeyId(bool mock = false, string mockData = "AccessKeyId")
         {
-            return mock ? mockData : GetEnv("AKID", mockData);
+            return mock ? mockData : GetEnv("ACCESS_KEY_ID", mockData);
         }
 
         public static string GetAccessKeySecret(bool mock = false, string mockData = "AccessKeySecret")
         {
-            return mock ? mockData : GetEnv("AKSE", mockData);
+            return mock ? mockData : GetEnv("ACCESS_KEY_SECRET", mockData);
         }
 
         public static string GetRoleName(bool mock = false, string mockData = "RoleName")
