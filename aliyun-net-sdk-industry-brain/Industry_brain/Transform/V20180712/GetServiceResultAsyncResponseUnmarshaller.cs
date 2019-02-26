@@ -32,6 +32,8 @@ namespace Aliyun.Acs.industry_brain.Transform.V20180712
 			getServiceResultAsyncResponse.HttpResponse = context.HttpResponse;
 			getServiceResultAsyncResponse.RequestId = context.StringValue("GetServiceResultAsync.RequestId");
 			getServiceResultAsyncResponse.Data = context.StringValue("GetServiceResultAsync.Data");
+			getServiceResultAsyncResponse.Code = context.StringValue("GetServiceResultAsync.Code");
+			getServiceResultAsyncResponse.Message = context.StringValue("GetServiceResultAsync.Message");
         
 			return getServiceResultAsyncResponse;
         }

@@ -28,6 +28,10 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
 
 		private string data;
 
+		private string code;
+
+		private string message;
+
 		public string RequestId
 		{
 			get
@@ -49,6 +53,30 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 	}
