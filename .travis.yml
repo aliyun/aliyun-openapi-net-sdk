@@ -11,7 +11,7 @@ install:
   - dotnet restore
 script: 
   - dotnet build
-  - test -z $ACCESS_KEY_ID -a -z $ACCESS_KEY_SECRET && dotnet test --filter Category!=FeatureTest /p:AltCover=true || dotnet test /p:AltCover=true
+  - if [ $ACCESS_KEY_ID == "" ]; then dotnet test --filter Category!=FeatureTest /p:AltCover=true; else dotnet test /p:AltCover=true; fi
 after_success:
   - cd aliyun-net-sdk-core.Tests/
   - bash <(curl -s https://codecov.io/bash)
