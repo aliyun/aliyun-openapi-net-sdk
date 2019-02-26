@@ -9,12 +9,12 @@ namespace Aliyun.Acs.Core.Tests.Mock
 
         public static string GetAccessKeyId(bool mock = false, string mockData = "AccessKeyId")
         {
-            return mock ? mockData : GetEnv(ACKMock.AKID, mockData);
+            return mock ? mockData : GetEnv("ACCESS_KEY_ID", mockData);
         }
 
         public static string GetAccessKeySecret(bool mock = false, string mockData = "AccessKeySecret")
         {
-            return mock ? mockData : GetEnv(ACKMock.AKSE, mockData);
+            return mock ? mockData : GetEnv("ACCESS_KEY_SECRET", mockData);
         }
 
         public static string GetRoleName(bool mock = false, string mockData = "RoleName")
@@ -24,6 +24,12 @@ namespace Aliyun.Acs.Core.Tests.Mock
 
         private static string GetEnv(string envName, string mockData)
         {
+            if (Environment.GetEnvironmentVariable(envName) == null)
+            {
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine(envName + "  " + mockData);
+                Console.WriteLine("--------------------------------");
+            }
             return Environment.GetEnvironmentVariable(envName) == null ? mockData : Environment.GetEnvironmentVariable(envName);
         }
     }
