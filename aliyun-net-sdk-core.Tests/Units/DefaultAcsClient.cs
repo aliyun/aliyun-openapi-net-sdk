@@ -446,6 +446,59 @@ namespace Aliyun.Acs.Core.Tests.Units
             Assert.Equal(200, result.Status);
         }
 
+        [Fact]
+        public void DoAction5()
+        {
+
+            Environment.SetEnvironmentVariable("DEBUG", "sdk");
+            int status = 200;
+            string code = "ThisIsCode1";
+            string message = "ThisIsMessage1";
+            string requestId = "ThisIsRequestId1";
+            HttpResponse response = new HttpResponse();
+            byte[] content = Encoding.GetEncoding("UTF-8").GetBytes("{\"Code\":\"" + code + "\",\"Message\":\"" + message + "\",\"RequestId\":\"" + requestId + "\"}");
+            response.ContentType = FormatType.JSON;
+            response.Content = content;
+            response.Status = status;
+
+            Dictionary<string, string> tmpHeaders = new Dictionary<string, string>
+            { { "Content-MD5", "md5" },
+                { "Content-Length", "length" },
+                { "Content-Type", "text/json" }
+            };
+
+            response.Headers = tmpHeaders;
+
+            var mockInstance = new Mock<DefaultAcsClient>() { CallBase = true };
+            mockInstance.Setup(foo => foo.GetResponse(
+                It.IsAny<HttpRequest>()
+            )).Returns(response);
+
+            DefaultAcsClient instance = mockInstance.Object;
+
+            // Mock AcsResquest
+            MockAcsRequestForDefaultAcsClient request = new MockAcsRequestForDefaultAcsClient();
+            request.AcceptFormat = FormatType.JSON;
+            ProductDomain productDomain = new ProductDomain("productName1", "productDomain1");
+            request.ProductDomain = productDomain;
+
+            // Mock AlibabaCloudCredentials
+            var mockCredentials = new Mock<AlibabaCloudCredentials>();
+            AlibabaCloudCredentials credentials = mockCredentials.Object;
+
+            // Mock Signer
+            Signer signer = new HmacSHA1Signer();
+
+            var result = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
+
+            Assert.Null(Environment.GetEnvironmentVariable("DEBUG"));
+
+            status = 500;
+            result = instance.DoAction<AcsResponse>(request, true, 0, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
+            Assert.Null(Environment.GetEnvironmentVariable("DEBUG"));
+
+        }
+
         public sealed class MockAcsRequestForDefaultAcsClient : AcsRequest<AcsResponse>
         {
             public MockAcsRequestForDefaultAcsClient(string urlStr = null) : base(urlStr)
