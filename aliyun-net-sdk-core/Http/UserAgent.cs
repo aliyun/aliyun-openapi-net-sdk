@@ -16,13 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System.Text;
-using System.Reflection;
-using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Reflection;
+using System.Text;
+using System.Text.RegularExpressions;
 
 using Aliyun.Acs.Core.Utils;
-using System.Collections.ObjectModel;
 
 namespace Aliyun.Acs.Core.Http
 {
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Core.Http
         {
             SetTheValue();
 
-            DEFAULT_MESSAGE += "Alibaba Cloud (" + this.OSVersion + ") ";
+            DEFAULT_MESSAGE = "Alibaba Cloud (" + this.OSVersion + ") ";
             DEFAULT_MESSAGE += this.ClientVersion;
             DEFAULT_MESSAGE += " Core/" + this.CoreVersion;
         }
