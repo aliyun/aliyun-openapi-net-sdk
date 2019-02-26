@@ -10,6 +10,7 @@ namespace Aliyun.Acs.Core.Tests.Features.HttpDebug
 {
     public class HttpDebugTest : ProfileInitialization
     {
+        [Trait("Category", "FeatureTest")]
         [Fact]
         public void EcsHttpDebugTest()
         {
