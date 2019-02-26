@@ -31,22 +31,20 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
         public GetAsyncServiceResultRequest()
             : base("industry_brain", "2018-07-12", "GetAsyncServiceResult")
         {
-			Protocol = ProtocolType.HTTPS;
-			Method = MethodType.POST;
         }
 
-		private string serviceId;
+		private string taskId;
 
-		public string ServiceId
+		public string TaskId
 		{
 			get
 			{
-				return serviceId;
+				return taskId;
 			}
 			set	
 			{
-				serviceId = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceId", value);
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 

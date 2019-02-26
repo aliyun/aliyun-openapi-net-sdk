@@ -23,19 +23,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.industry_brain.Transform.V20180712
 {
-    public class GetAsyncServiceResultResponseUnmarshaller
+    public class AsyncResponsePostResponseUnmarshaller
     {
-        public static GetAsyncServiceResultResponse Unmarshall(UnmarshallerContext context)
+        public static AsyncResponsePostResponse Unmarshall(UnmarshallerContext context)
         {
-			GetAsyncServiceResultResponse getAsyncServiceResultResponse = new GetAsyncServiceResultResponse();
+			AsyncResponsePostResponse asyncResponsePostResponse = new AsyncResponsePostResponse();
 
-			getAsyncServiceResultResponse.HttpResponse = context.HttpResponse;
-			getAsyncServiceResultResponse.RequestId = context.StringValue("GetAsyncServiceResult.RequestId");
-			getAsyncServiceResultResponse.Data = context.StringValue("GetAsyncServiceResult.Data");
-			getAsyncServiceResultResponse.Code = context.StringValue("GetAsyncServiceResult.Code");
-			getAsyncServiceResultResponse.Message = context.StringValue("GetAsyncServiceResult.Message");
+			asyncResponsePostResponse.HttpResponse = context.HttpResponse;
+			asyncResponsePostResponse.RequestId = context.StringValue("AsyncResponsePost.RequestId");
+			asyncResponsePostResponse.Data = context.StringValue("AsyncResponsePost.Data");
+			asyncResponsePostResponse.Status = context.StringValue("AsyncResponsePost.Status");
+			asyncResponsePostResponse.Code = context.StringValue("AsyncResponsePost.Code");
+			asyncResponsePostResponse.Message = context.StringValue("AsyncResponsePost.Message");
         
-			return getAsyncServiceResultResponse;
+			return asyncResponsePostResponse;
         }
     }
 }

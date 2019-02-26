@@ -26,71 +26,86 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.industry_brain.Model.V20180712
 {
-    public class InvokeServiceAsyncRequest : RpcAcsRequest<InvokeServiceAsyncResponse>
+    public class AsyncResponsePostRequest : RpcAcsRequest<AsyncResponsePostResponse>
     {
-        public InvokeServiceAsyncRequest()
-            : base("industry_brain", "2018-07-12", "InvokeServiceAsync")
+        public AsyncResponsePostRequest()
+            : base("industry_brain", "2018-07-12", "AsyncResponsePost")
         {
 			Method = MethodType.POST;
         }
 
-		private bool? isShowInput;
+		private string data;
 
-		private string serviceId;
+		private float? progress;
 
-		private string _params;
+		private string message;
 
-		private string requestData;
+		private string taskId;
 
-		public bool? IsShowInput
+		private string status;
+
+		public string Data
 		{
 			get
 			{
-				return isShowInput;
+				return data;
 			}
 			set	
 			{
-				isShowInput = value;
-				DictionaryUtil.Add(QueryParameters, "IsShowInput", value.ToString());
+				data = value;
+				DictionaryUtil.Add(QueryParameters, "Data", value);
 			}
 		}
 
-		public string ServiceId
+		public float? Progress
 		{
 			get
 			{
-				return serviceId;
+				return progress;
 			}
 			set	
 			{
-				serviceId = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceId", value);
+				progress = value;
+				DictionaryUtil.Add(QueryParameters, "Progress", value.ToString());
 			}
 		}
 
-		public string _Params
+		public string Message
 		{
 			get
 			{
-				return _params;
+				return message;
 			}
 			set	
 			{
-				_params = value;
-				DictionaryUtil.Add(QueryParameters, "Params", value);
+				message = value;
+				DictionaryUtil.Add(QueryParameters, "Message", value);
 			}
 		}
 
-		public string RequestData
+		public string TaskId
 		{
 			get
 			{
-				return requestData;
+				return taskId;
 			}
 			set	
 			{
-				requestData = value;
-				DictionaryUtil.Add(QueryParameters, "RequestData", value);
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
@@ -99,9 +114,9 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
 			return false;
 		}
 
-        public override InvokeServiceAsyncResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AsyncResponsePostResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return InvokeServiceAsyncResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AsyncResponsePostResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

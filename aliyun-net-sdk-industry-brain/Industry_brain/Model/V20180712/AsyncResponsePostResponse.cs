@@ -21,12 +21,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.industry_brain.Model.V20180712
 {
-	public class InvokeServiceAsyncResponse : AcsResponse
+	public class AsyncResponsePostResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private string data;
+
+		private string status;
 
 		private string code;
 
@@ -53,6 +55,18 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
 			}
 		}
 
