@@ -55,8 +55,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string scope;
 
-		private string action;
-
 		private string sourceType;
 
 		private string checkUrl;
@@ -203,19 +201,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				scope = value;
 				DictionaryUtil.Add(QueryParameters, "Scope", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

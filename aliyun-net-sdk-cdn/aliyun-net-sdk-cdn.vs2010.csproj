@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6ceb2ce2-f30f-48e0-860e-0905c1e090e4}</ProjectGuid>
+    <ProjectGuid>{34cd960a-a838-4d54-83bd-0fd609a99c55}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -422,7 +422,6 @@
 	<Compile Include="Cdn\Model\V20180510\ModifyCdnDomainResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainTrafficDataRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\DeleteUserUsageDataExportTaskResponse.cs" />
-	<Compile Include="Cdn\Model\V20180510\SetPathCacheExpiredConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainTopUrlVisitRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\ModifyDomainCustomLogConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeRealtimeDeliveryAccResponse.cs" />
@@ -462,7 +461,6 @@
 	<Compile Include="Cdn\Model\V20180510\PushObjectCacheResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\AddCdnDomainResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\SetHttpsOptionConfigResponse.cs" />
-	<Compile Include="Cdn\Model\V20180510\SetPathCacheExpiredConfigRequest.cs" />
 	<Compile Include="Cdn\Model\V20180510\SetReqHeaderConfigResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainPvDataResponse.cs" />
 	<Compile Include="Cdn\Model\V20180510\DescribeDomainSrcTrafficDataRequest.cs" />
@@ -769,7 +767,6 @@
 	<Compile Include="Cdn\Transform\V20180510\DescribeL2VipsByDomainResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\SetSourceHostConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeCdnDomainConfigsResponseUnmarshaller.cs" />
-	<Compile Include="Cdn\Transform\V20180510\SetPathCacheExpiredConfigResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeCdnDomainDetailResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\DescribeCdnRegionAndIspResponseUnmarshaller.cs" />
 	<Compile Include="Cdn\Transform\V20180510\CreateUsageDetailDataExportTaskResponseUnmarshaller.cs" />
