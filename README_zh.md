@@ -34,8 +34,8 @@
 
 或者通过 .NET CLI 工具来安装（以安装 ECS为例）
 
+    dotnet add package aliyun-net-sdk-core --version 1.2.0
     dotnet add package aliyun-net-sdk-ecs --version 4.16.1
-    dotnet add package aliyun-net-sdk-core --version 1.1.12
 
 Aliyun C# SDK已发布的Nuget包：
 
