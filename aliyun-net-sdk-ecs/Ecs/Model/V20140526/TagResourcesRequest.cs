@@ -26,93 +26,87 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class StartInstanceRequest : RpcAcsRequest<StartInstanceResponse>
+    public class TagResourcesRequest : RpcAcsRequest<TagResourcesResponse>
     {
-        public StartInstanceRequest()
-            : base("Ecs", "2014-05-26", "StartInstance", "ecs", "openAPI")
+        public TagResourcesRequest()
+            : base("Ecs", "2014-05-26", "TagResources", "ecs", "openAPI")
         {
         }
 
-		private string sourceRegionId;
+		private string regionId;
 
-		private bool? initLocalDisk;
+		private string action;
 
-		private long? resourceOwnerId;
+		private List<Tag> tags;
 
-		private string instanceId;
-
-		private bool? dryRun;
+		private List<string> resourceIds;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
 
-		public string SourceRegionId
+		private string resourceType;
+
+		public string RegionId
 		{
 			get
 			{
-				return sourceRegionId;
+				return regionId;
 			}
 			set	
 			{
-				sourceRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "SourceRegionId", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
-		public bool? InitLocalDisk
+		public string Action
 		{
 			get
 			{
-				return initLocalDisk;
+				return action;
 			}
 			set	
 			{
-				initLocalDisk = value;
-				DictionaryUtil.Add(QueryParameters, "InitLocalDisk", value.ToString());
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
-		public long? ResourceOwnerId
+		public List<Tag> Tags
 		{
 			get
 			{
-				return resourceOwnerId;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+				}
 			}
 		}
 
-		public string InstanceId
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return instanceId;
+				return resourceIds;
 			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
 
-		public bool? DryRun
-		{
-			get
+			set
 			{
-				return dryRun;
-			}
-			set	
-			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
+				}
 			}
 		}
 
@@ -142,19 +136,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -168,9 +149,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override StartInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+		}
+
+        public override TagResourcesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return StartInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

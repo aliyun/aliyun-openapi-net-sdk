@@ -26,56 +26,32 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class StartInstanceRequest : RpcAcsRequest<StartInstanceResponse>
+    public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
-        public StartInstanceRequest()
-            : base("Ecs", "2014-05-26", "StartInstance", "ecs", "openAPI")
+        public UntagResourcesRequest()
+            : base("Ecs", "2014-05-26", "UntagResources", "ecs", "openAPI")
         {
         }
 
-		private string sourceRegionId;
-
-		private bool? initLocalDisk;
-
 		private long? resourceOwnerId;
 
-		private string instanceId;
+		private string regionId;
 
-		private bool? dryRun;
+		private string action;
+
+		private bool? all;
+
+		private List<string> resourceIds;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
 
-		public string SourceRegionId
-		{
-			get
-			{
-				return sourceRegionId;
-			}
-			set	
-			{
-				sourceRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "SourceRegionId", value);
-			}
-		}
+		private string resourceType;
 
-		public bool? InitLocalDisk
-		{
-			get
-			{
-				return initLocalDisk;
-			}
-			set	
-			{
-				initLocalDisk = value;
-				DictionaryUtil.Add(QueryParameters, "InitLocalDisk", value.ToString());
-			}
-		}
+		private List<string> tagKeys;
 
 		public long? ResourceOwnerId
 		{
@@ -90,29 +66,59 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
+		public string RegionId
 		{
 			get
 			{
-				return instanceId;
+				return regionId;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
-		public bool? DryRun
+		public string Action
 		{
 			get
 			{
-				return dryRun;
+				return action;
 			}
 			set	
 			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public bool? All
+		{
+			get
+			{
+				return all;
+			}
+			set	
+			{
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
+			}
+		}
+
+		public List<string> ResourceIds
+		{
+			get
+			{
+				return resourceIds;
+			}
+
+			set
+			{
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
+				}
 			}
 		}
 
@@ -142,19 +148,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -168,9 +161,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override StartInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public List<string> TagKeys
+		{
+			get
+			{
+				return tagKeys;
+			}
+
+			set
+			{
+				tagKeys = value;
+				for (int i = 0; i < tagKeys.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
+				}
+			}
+		}
+
+        public override UntagResourcesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return StartInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UntagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

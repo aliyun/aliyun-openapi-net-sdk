@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeSnapshotsUsageRequest : RpcAcsRequest<DescribeSnapshotsUsageResponse>
+    public class ListTagResourcesRequest : RpcAcsRequest<ListTagResourcesResponse>
     {
-        public DescribeSnapshotsUsageRequest()
-            : base("Ecs", "2014-05-26", "DescribeSnapshotsUsage", "ecs", "openAPI")
+        public ListTagResourcesRequest()
+            : base("Ecs", "2014-05-26", "ListTagResources", "ecs", "openAPI")
         {
         }
 
@@ -37,13 +37,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string regionId;
 
+		private string nextToken;
+
 		private string action;
+
+		private List<Tag> tags;
+
+		private List<string> resourceIds;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string resourceType;
 
 		public long? ResourceOwnerId
 		{
@@ -71,6 +79,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -81,6 +102,41 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+				}
+			}
+		}
+
+		public List<string> ResourceIds
+		{
+			get
+			{
+				return resourceIds;
+			}
+
+			set
+			{
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
+				}
 			}
 		}
 
@@ -123,9 +179,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override DescribeSnapshotsUsageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+		}
+
+        public override ListTagResourcesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSnapshotsUsageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
