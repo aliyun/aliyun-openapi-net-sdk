@@ -18,6 +18,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Exceptions;
@@ -125,6 +126,22 @@ namespace Aliyun.Acs.Core
                     }
                     else
                     {
+                        if (400 == httpResponse.Status && error.ErrorCode.Equals("SignatureDoesNotMatch"))
+                        {
+                            var errorMessage = error.ErrorMessage;
+                            Regex re = new Regex(@"string to sign is:", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                            Match matches = re.Match(errorMessage);
+
+                            if (matches.Success)
+                            {
+                                var errorStringToSign = errorMessage.Substring(matches.Index + matches.Length);
+
+                                if (request.StringToSign.Equals(errorStringToSign))
+                                {
+                                    throw new ClientException("SDK.InvalidAccessKeySecret", "Specified Access Key Secret is not valid.", error.RequestId);
+                                }
+                            }
+                        }
                         throw new ClientException(error.ErrorCode, error.ErrorMessage, error.RequestId);
                     }
                 }

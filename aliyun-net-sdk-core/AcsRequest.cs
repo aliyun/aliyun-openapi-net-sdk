@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Core
         public String LocationProduct { get; set; }
         public String LocationEndpointType { get; set; }
         public ProductDomain ProductDomain { get; set; }
+        public string StringToSign;
 
         public virtual FormatType AcceptFormat
         {

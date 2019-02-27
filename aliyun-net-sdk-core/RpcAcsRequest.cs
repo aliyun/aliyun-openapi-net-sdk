@@ -150,6 +150,8 @@ namespace Aliyun.Acs.Core
                 String strToSign = this.Composer.ComposeStringToSign(Method, null, signer, paramsToSign, null, null);
                 String signature = signer.SignString(strToSign, accessSecret + "&");
                 imutableMap.Add("Signature", signature);
+
+                this.StringToSign = strToSign;
             }
 
             Url = this.ComposeUrl(domain.DomianName, imutableMap);
