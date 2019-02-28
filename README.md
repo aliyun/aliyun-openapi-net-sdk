@@ -32,12 +32,13 @@ You must install the SDK core Nuget Package for any SDK you use. For example, to
 
 Use Package Manager
 
+    Install-Package aliyun-net-sdk-core -Version 1.2.0
     Install-Package aliyun-net-sdk-ecs -Version 4.16.1
-    Install-Package aliyun-net-sdk-core -Version 1.1.12
+
 Use .NET CLI
 
+    dotnet add package aliyun-net-sdk-core --version 1.2.0
     dotnet add package aliyun-net-sdk-ecs --version 4.16.1
-    dotnet add package aliyun-net-sdk-core --version 1.1.12
 
 Alibaba Cloud C# SDK Product Nuget Packages:
 

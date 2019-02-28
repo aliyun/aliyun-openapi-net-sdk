@@ -1,3 +1,9 @@
+2019-02-27 Version: 1.2.0
+1, fix bug: fix a dictionary handle error that will cause cpu 100% #43
+2, Add User-Agent to the http/https protocol
+3, Add support for http debug 
+4, Update the SignatureDoesNotMatch error Message
+
 2018-03-15 Version: 1.1.12
 1, compatible .net core
 
