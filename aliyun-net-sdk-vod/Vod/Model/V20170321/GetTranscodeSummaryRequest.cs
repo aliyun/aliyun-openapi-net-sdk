@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class DeleteTranscodeTemplateGroupRequest : RpcAcsRequest<DeleteTranscodeTemplateGroupResponse>
+    public class GetTranscodeSummaryRequest : RpcAcsRequest<GetTranscodeSummaryResponse>
     {
-        public DeleteTranscodeTemplateGroupRequest()
-            : base("vod", "2017-03-21", "DeleteTranscodeTemplateGroup", "vod", "openAPI")
+        public GetTranscodeSummaryRequest()
+            : base("vod", "2017-03-21", "GetTranscodeSummary", "vod", "openAPI")
         {
         }
 
@@ -39,15 +39,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string action;
 
-		private string transcodeTemplateIds;
-
 		private long? ownerId;
 
+		private string videoIds;
+
 		private string accessKeyId;
-
-		private string transcodeTemplateGroupId;
-
-		private string forceDelGroup;
 
 		public long? ResourceOwnerId
 		{
@@ -88,19 +84,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string TranscodeTemplateIds
-		{
-			get
-			{
-				return transcodeTemplateIds;
-			}
-			set	
-			{
-				transcodeTemplateIds = value;
-				DictionaryUtil.Add(QueryParameters, "TranscodeTemplateIds", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -111,6 +94,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string VideoIds
+		{
+			get
+			{
+				return videoIds;
+			}
+			set	
+			{
+				videoIds = value;
+				DictionaryUtil.Add(QueryParameters, "VideoIds", value);
 			}
 		}
 
@@ -127,40 +123,14 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string TranscodeTemplateGroupId
-		{
-			get
-			{
-				return transcodeTemplateGroupId;
-			}
-			set	
-			{
-				transcodeTemplateGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "TranscodeTemplateGroupId", value);
-			}
-		}
-
-		public string ForceDelGroup
-		{
-			get
-			{
-				return forceDelGroup;
-			}
-			set	
-			{
-				forceDelGroup = value;
-				DictionaryUtil.Add(QueryParameters, "ForceDelGroup", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DeleteTranscodeTemplateGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetTranscodeSummaryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DeleteTranscodeTemplateGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetTranscodeSummaryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

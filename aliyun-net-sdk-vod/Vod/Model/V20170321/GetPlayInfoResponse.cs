@@ -111,6 +111,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string encryptType;
 
+			private string narrowBandType;
+
 			public long? Width
 			{
 				get
@@ -360,6 +362,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					encryptType = value;
+				}
+			}
+
+			public string NarrowBandType
+			{
+				get
+				{
+					return narrowBandType;
+				}
+				set	
+				{
+					narrowBandType = value;
 				}
 			}
 		}

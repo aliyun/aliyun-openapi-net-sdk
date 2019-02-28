@@ -61,6 +61,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.StorageLocation = context.StringValue("SearchMedia.MediaList["+ i +"].Video.StorageLocation");
 				video.RegionId = context.StringValue("SearchMedia.MediaList["+ i +"].Video.RegionId");
 				video.TranscodeMode = context.StringValue("SearchMedia.MediaList["+ i +"].Video.TranscodeMode");
+				video.AuditStatus = context.StringValue("SearchMedia.MediaList["+ i +"].Video.AuditStatus");
+				video.AuditAIStatus = context.StringValue("SearchMedia.MediaList["+ i +"].Video.AuditAIStatus");
+				video.AuditManualStatus = context.StringValue("SearchMedia.MediaList["+ i +"].Video.AuditManualStatus");
+				video.AuditAIResult = context.StringValue("SearchMedia.MediaList["+ i +"].Video.AuditAIResult");
+				video.AuditTemplateId = context.StringValue("SearchMedia.MediaList["+ i +"].Video.AuditTemplateId");
+				video.CustomMediaInfo = context.StringValue("SearchMedia.MediaList["+ i +"].Video.CustomMediaInfo");
 
 				List<string> video_snapshots = new List<string>();
 				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].Video.Snapshots.Length"); j++) {
@@ -73,6 +79,29 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 					video_spriteSnapshots.Add(context.StringValue("SearchMedia.MediaList["+ i +"].Video.SpriteSnapshots["+ j +"]"));
 				}
 				video.SpriteSnapshots = video_spriteSnapshots;
+
+				List<SearchMediaResponse.SearchMedia_Media.SearchMedia_Video.SearchMedia_PlayInfo> video_playInfoList = new List<SearchMediaResponse.SearchMedia_Media.SearchMedia_Video.SearchMedia_PlayInfo>();
+				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].Video.PlayInfoList.Length"); j++) {
+					SearchMediaResponse.SearchMedia_Media.SearchMedia_Video.SearchMedia_PlayInfo playInfo = new SearchMediaResponse.SearchMedia_Media.SearchMedia_Video.SearchMedia_PlayInfo();
+					playInfo.Width = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Width");
+					playInfo.Height = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Height");
+					playInfo.Size = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Size");
+					playInfo.PlayURL = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].PlayURL");
+					playInfo.Bitrate = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Bitrate");
+					playInfo.Definition = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Definition");
+					playInfo.Duration = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Duration");
+					playInfo.Format = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Format");
+					playInfo.Fps = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Fps");
+					playInfo.Encrypt = context.LongValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Encrypt");
+					playInfo.Plaintext = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Plaintext");
+					playInfo.Complexity = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Complexity");
+					playInfo.StreamType = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].StreamType");
+					playInfo.Rand = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].Rand");
+					playInfo.JobId = context.StringValue("SearchMedia.MediaList["+ i +"].Video.PlayInfoList["+ j +"].JobId");
+
+					video_playInfoList.Add(playInfo);
+				}
+				video.PlayInfoList = video_playInfoList;
 				media.Video = video;
 
 				SearchMediaResponse.SearchMedia_Media.SearchMedia_Audio audio = new SearchMediaResponse.SearchMedia_Media.SearchMedia_Audio();
@@ -94,6 +123,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				audio.StorageLocation = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.StorageLocation");
 				audio.RegionId = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.RegionId");
 				audio.TranscodeMode = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.TranscodeMode");
+				audio.AuditStatus = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.AuditStatus");
+				audio.AuditAIStatus = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.AuditAIStatus");
+				audio.AuditManualStatus = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.AuditManualStatus");
+				audio.AuditAIResult = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.AuditAIResult");
+				audio.AuditTemplateId = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.AuditTemplateId");
+				audio.CustomMediaInfo = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.CustomMediaInfo");
 
 				List<string> audio_snapshots1 = new List<string>();
 				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].Audio.Snapshots.Length"); j++) {
@@ -106,6 +141,29 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 					audio_spriteSnapshots2.Add(context.StringValue("SearchMedia.MediaList["+ i +"].Audio.SpriteSnapshots["+ j +"]"));
 				}
 				audio.SpriteSnapshots2 = audio_spriteSnapshots2;
+
+				List<SearchMediaResponse.SearchMedia_Media.SearchMedia_Audio.SearchMedia_PlayInfo4> audio_playInfoList3 = new List<SearchMediaResponse.SearchMedia_Media.SearchMedia_Audio.SearchMedia_PlayInfo4>();
+				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList.Length"); j++) {
+					SearchMediaResponse.SearchMedia_Media.SearchMedia_Audio.SearchMedia_PlayInfo4 playInfo4 = new SearchMediaResponse.SearchMedia_Media.SearchMedia_Audio.SearchMedia_PlayInfo4();
+					playInfo4.Width = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Width");
+					playInfo4.Height = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Height");
+					playInfo4.Size = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Size");
+					playInfo4.PlayURL = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].PlayURL");
+					playInfo4.Bitrate = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Bitrate");
+					playInfo4.Definition = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Definition");
+					playInfo4.Duration = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Duration");
+					playInfo4.Format = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Format");
+					playInfo4.Fps = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Fps");
+					playInfo4.Encrypt = context.LongValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Encrypt");
+					playInfo4.Plaintext = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Plaintext");
+					playInfo4.Complexity = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Complexity");
+					playInfo4.StreamType = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].StreamType");
+					playInfo4.Rand = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].Rand");
+					playInfo4.JobId = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.PlayInfoList["+ j +"].JobId");
+
+					audio_playInfoList3.Add(playInfo4);
+				}
+				audio.PlayInfoList3 = audio_playInfoList3;
 				media.Audio = audio;
 
 				SearchMediaResponse.SearchMedia_Media.SearchMedia_Image image = new SearchMediaResponse.SearchMedia_Media.SearchMedia_Image();

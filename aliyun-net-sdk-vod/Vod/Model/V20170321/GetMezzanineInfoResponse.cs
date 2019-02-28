@@ -552,6 +552,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string lang;
 
+				private string rotate;
+
 				public string Index
 				{
 					get
@@ -801,6 +803,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						lang = value;
+					}
+				}
+
+				public string Rotate
+				{
+					get
+					{
+						return rotate;
+					}
+					set	
+					{
+						rotate = value;
 					}
 				}
 			}

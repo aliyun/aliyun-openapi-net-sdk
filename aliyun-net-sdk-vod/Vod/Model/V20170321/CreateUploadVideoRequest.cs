@@ -67,6 +67,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string workflowId;
 
+		private string customMediaInfo;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -285,6 +287,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				workflowId = value;
 				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
+			}
+		}
+
+		public string CustomMediaInfo
+		{
+			get
+			{
+				return customMediaInfo;
+			}
+			set	
+			{
+				customMediaInfo = value;
+				DictionaryUtil.Add(QueryParameters, "CustomMediaInfo", value);
 			}
 		}
 

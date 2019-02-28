@@ -75,6 +75,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string storageLocation;
 
+			private string status;
+
 			private GetImageInfo_Mezzanine mezzanine;
 
 			public string ImageId
@@ -194,6 +196,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					storageLocation = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 

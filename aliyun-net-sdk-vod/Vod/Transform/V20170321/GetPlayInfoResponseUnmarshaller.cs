@@ -77,6 +77,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				playInfo.CreationTime = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].CreationTime");
 				playInfo.ModificationTime = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].ModificationTime");
 				playInfo.EncryptType = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].EncryptType");
+				playInfo.NarrowBandType = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].NarrowBandType");
 
 				getPlayInfoResponse_playInfoList.Add(playInfo);
 			}

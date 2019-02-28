@@ -208,6 +208,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string transcodeMode;
 
+				private string auditStatus;
+
+				private string auditAIStatus;
+
+				private string auditManualStatus;
+
+				private string auditAIResult;
+
+				private string auditTemplateId;
+
+				private string customMediaInfo;
+
+				private List<SearchMedia_PlayInfo> playInfoList;
+
 				private List<string> snapshots;
 
 				private List<string> spriteSnapshots;
@@ -440,6 +454,90 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string AuditStatus
+				{
+					get
+					{
+						return auditStatus;
+					}
+					set	
+					{
+						auditStatus = value;
+					}
+				}
+
+				public string AuditAIStatus
+				{
+					get
+					{
+						return auditAIStatus;
+					}
+					set	
+					{
+						auditAIStatus = value;
+					}
+				}
+
+				public string AuditManualStatus
+				{
+					get
+					{
+						return auditManualStatus;
+					}
+					set	
+					{
+						auditManualStatus = value;
+					}
+				}
+
+				public string AuditAIResult
+				{
+					get
+					{
+						return auditAIResult;
+					}
+					set	
+					{
+						auditAIResult = value;
+					}
+				}
+
+				public string AuditTemplateId
+				{
+					get
+					{
+						return auditTemplateId;
+					}
+					set	
+					{
+						auditTemplateId = value;
+					}
+				}
+
+				public string CustomMediaInfo
+				{
+					get
+					{
+						return customMediaInfo;
+					}
+					set	
+					{
+						customMediaInfo = value;
+					}
+				}
+
+				public List<SearchMedia_PlayInfo> PlayInfoList
+				{
+					get
+					{
+						return playInfoList;
+					}
+					set	
+					{
+						playInfoList = value;
+					}
+				}
+
 				public List<string> Snapshots
 				{
 					get
@@ -461,6 +559,220 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						spriteSnapshots = value;
+					}
+				}
+
+				public class SearchMedia_PlayInfo
+				{
+
+					private string width;
+
+					private string height;
+
+					private string size;
+
+					private string playURL;
+
+					private string bitrate;
+
+					private string definition;
+
+					private string duration;
+
+					private string format;
+
+					private string fps;
+
+					private long? encrypt;
+
+					private string plaintext;
+
+					private string complexity;
+
+					private string streamType;
+
+					private string rand;
+
+					private string jobId;
+
+					public string Width
+					{
+						get
+						{
+							return width;
+						}
+						set	
+						{
+							width = value;
+						}
+					}
+
+					public string Height
+					{
+						get
+						{
+							return height;
+						}
+						set	
+						{
+							height = value;
+						}
+					}
+
+					public string Size
+					{
+						get
+						{
+							return size;
+						}
+						set	
+						{
+							size = value;
+						}
+					}
+
+					public string PlayURL
+					{
+						get
+						{
+							return playURL;
+						}
+						set	
+						{
+							playURL = value;
+						}
+					}
+
+					public string Bitrate
+					{
+						get
+						{
+							return bitrate;
+						}
+						set	
+						{
+							bitrate = value;
+						}
+					}
+
+					public string Definition
+					{
+						get
+						{
+							return definition;
+						}
+						set	
+						{
+							definition = value;
+						}
+					}
+
+					public string Duration
+					{
+						get
+						{
+							return duration;
+						}
+						set	
+						{
+							duration = value;
+						}
+					}
+
+					public string Format
+					{
+						get
+						{
+							return format;
+						}
+						set	
+						{
+							format = value;
+						}
+					}
+
+					public string Fps
+					{
+						get
+						{
+							return fps;
+						}
+						set	
+						{
+							fps = value;
+						}
+					}
+
+					public long? Encrypt
+					{
+						get
+						{
+							return encrypt;
+						}
+						set	
+						{
+							encrypt = value;
+						}
+					}
+
+					public string Plaintext
+					{
+						get
+						{
+							return plaintext;
+						}
+						set	
+						{
+							plaintext = value;
+						}
+					}
+
+					public string Complexity
+					{
+						get
+						{
+							return complexity;
+						}
+						set	
+						{
+							complexity = value;
+						}
+					}
+
+					public string StreamType
+					{
+						get
+						{
+							return streamType;
+						}
+						set	
+						{
+							streamType = value;
+						}
+					}
+
+					public string Rand
+					{
+						get
+						{
+							return rand;
+						}
+						set	
+						{
+							rand = value;
+						}
+					}
+
+					public string JobId
+					{
+						get
+						{
+							return jobId;
+						}
+						set	
+						{
+							jobId = value;
+						}
 					}
 				}
 			}
@@ -503,6 +815,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				private string regionId;
 
 				private string transcodeMode;
+
+				private string auditStatus;
+
+				private string auditAIStatus;
+
+				private string auditManualStatus;
+
+				private string auditAIResult;
+
+				private string auditTemplateId;
+
+				private string customMediaInfo;
+
+				private List<SearchMedia_PlayInfo4> playInfoList3;
 
 				private List<string> snapshots1;
 
@@ -724,6 +1050,90 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string AuditStatus
+				{
+					get
+					{
+						return auditStatus;
+					}
+					set	
+					{
+						auditStatus = value;
+					}
+				}
+
+				public string AuditAIStatus
+				{
+					get
+					{
+						return auditAIStatus;
+					}
+					set	
+					{
+						auditAIStatus = value;
+					}
+				}
+
+				public string AuditManualStatus
+				{
+					get
+					{
+						return auditManualStatus;
+					}
+					set	
+					{
+						auditManualStatus = value;
+					}
+				}
+
+				public string AuditAIResult
+				{
+					get
+					{
+						return auditAIResult;
+					}
+					set	
+					{
+						auditAIResult = value;
+					}
+				}
+
+				public string AuditTemplateId
+				{
+					get
+					{
+						return auditTemplateId;
+					}
+					set	
+					{
+						auditTemplateId = value;
+					}
+				}
+
+				public string CustomMediaInfo
+				{
+					get
+					{
+						return customMediaInfo;
+					}
+					set	
+					{
+						customMediaInfo = value;
+					}
+				}
+
+				public List<SearchMedia_PlayInfo4> PlayInfoList3
+				{
+					get
+					{
+						return playInfoList3;
+					}
+					set	
+					{
+						playInfoList3 = value;
+					}
+				}
+
 				public List<string> Snapshots1
 				{
 					get
@@ -745,6 +1155,220 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						spriteSnapshots2 = value;
+					}
+				}
+
+				public class SearchMedia_PlayInfo4
+				{
+
+					private string width;
+
+					private string height;
+
+					private string size;
+
+					private string playURL;
+
+					private string bitrate;
+
+					private string definition;
+
+					private string duration;
+
+					private string format;
+
+					private string fps;
+
+					private long? encrypt;
+
+					private string plaintext;
+
+					private string complexity;
+
+					private string streamType;
+
+					private string rand;
+
+					private string jobId;
+
+					public string Width
+					{
+						get
+						{
+							return width;
+						}
+						set	
+						{
+							width = value;
+						}
+					}
+
+					public string Height
+					{
+						get
+						{
+							return height;
+						}
+						set	
+						{
+							height = value;
+						}
+					}
+
+					public string Size
+					{
+						get
+						{
+							return size;
+						}
+						set	
+						{
+							size = value;
+						}
+					}
+
+					public string PlayURL
+					{
+						get
+						{
+							return playURL;
+						}
+						set	
+						{
+							playURL = value;
+						}
+					}
+
+					public string Bitrate
+					{
+						get
+						{
+							return bitrate;
+						}
+						set	
+						{
+							bitrate = value;
+						}
+					}
+
+					public string Definition
+					{
+						get
+						{
+							return definition;
+						}
+						set	
+						{
+							definition = value;
+						}
+					}
+
+					public string Duration
+					{
+						get
+						{
+							return duration;
+						}
+						set	
+						{
+							duration = value;
+						}
+					}
+
+					public string Format
+					{
+						get
+						{
+							return format;
+						}
+						set	
+						{
+							format = value;
+						}
+					}
+
+					public string Fps
+					{
+						get
+						{
+							return fps;
+						}
+						set	
+						{
+							fps = value;
+						}
+					}
+
+					public long? Encrypt
+					{
+						get
+						{
+							return encrypt;
+						}
+						set	
+						{
+							encrypt = value;
+						}
+					}
+
+					public string Plaintext
+					{
+						get
+						{
+							return plaintext;
+						}
+						set	
+						{
+							plaintext = value;
+						}
+					}
+
+					public string Complexity
+					{
+						get
+						{
+							return complexity;
+						}
+						set	
+						{
+							complexity = value;
+						}
+					}
+
+					public string StreamType
+					{
+						get
+						{
+							return streamType;
+						}
+						set	
+						{
+							streamType = value;
+						}
+					}
+
+					public string Rand
+					{
+						get
+						{
+							return rand;
+						}
+						set	
+						{
+							rand = value;
+						}
+					}
+
+					public string JobId
+					{
+						get
+						{
+							return jobId;
+						}
+						set	
+						{
+							jobId = value;
+						}
 					}
 				}
 			}

@@ -26,6 +26,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string requestId;
 
+		private List<string> nonExistTranscodeTemplateIds;
+
 		public string RequestId
 		{
 			get
@@ -35,6 +37,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public List<string> NonExistTranscodeTemplateIds
+		{
+			get
+			{
+				return nonExistTranscodeTemplateIds;
+			}
+			set	
+			{
+				nonExistTranscodeTemplateIds = value;
 			}
 		}
 	}

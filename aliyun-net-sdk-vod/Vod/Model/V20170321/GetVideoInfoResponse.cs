@@ -107,6 +107,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string regionId;
 
+			private string customMediaInfo;
+
 			private List<GetVideoInfo_Thumbnail> thumbnailList;
 
 			private List<string> snapshots;
@@ -336,6 +338,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string CustomMediaInfo
+			{
+				get
+				{
+					return customMediaInfo;
+				}
+				set	
+				{
+					customMediaInfo = value;
 				}
 			}
 

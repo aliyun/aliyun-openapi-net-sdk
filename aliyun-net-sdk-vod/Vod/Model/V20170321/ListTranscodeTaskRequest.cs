@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class SearchMediaRequest : RpcAcsRequest<SearchMediaResponse>
+    public class ListTranscodeTaskRequest : RpcAcsRequest<ListTranscodeTaskResponse>
     {
-        public SearchMediaRequest()
-            : base("vod", "2017-03-21", "SearchMedia", "vod", "openAPI")
+        public ListTranscodeTaskRequest()
+            : base("vod", "2017-03-21", "ListTranscodeTask", "vod", "openAPI")
         {
         }
 
@@ -37,27 +37,21 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
-		private string match;
-
-		private string sessionId;
-
-		private long? ownerId;
-
-		private string scrollToken;
-
 		private int? pageNo;
-
-		private string searchType;
 
 		private int? pageSize;
 
 		private string action;
 
-		private string sortBy;
+		private string endTime;
 
-		private string resultTypes;
+		private string videoId;
 
-		private string fields;
+		private string startTime;
+
+		private long? ownerId;
+
+		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -85,58 +79,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Match
-		{
-			get
-			{
-				return match;
-			}
-			set	
-			{
-				match = value;
-				DictionaryUtil.Add(QueryParameters, "Match", value);
-			}
-		}
-
-		public string SessionId
-		{
-			get
-			{
-				return sessionId;
-			}
-			set	
-			{
-				sessionId = value;
-				DictionaryUtil.Add(QueryParameters, "SessionId", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ScrollToken
-		{
-			get
-			{
-				return scrollToken;
-			}
-			set	
-			{
-				scrollToken = value;
-				DictionaryUtil.Add(QueryParameters, "ScrollToken", value);
-			}
-		}
-
 		public int? PageNo
 		{
 			get
@@ -147,19 +89,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				pageNo = value;
 				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
-			}
-		}
-
-		public string SearchType
-		{
-			get
-			{
-				return searchType;
-			}
-			set	
-			{
-				searchType = value;
-				DictionaryUtil.Add(QueryParameters, "SearchType", value);
 			}
 		}
 
@@ -189,42 +118,68 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string SortBy
+		public string EndTime
 		{
 			get
 			{
-				return sortBy;
+				return endTime;
 			}
 			set	
 			{
-				sortBy = value;
-				DictionaryUtil.Add(QueryParameters, "SortBy", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public string ResultTypes
+		public string VideoId
 		{
 			get
 			{
-				return resultTypes;
+				return videoId;
 			}
 			set	
 			{
-				resultTypes = value;
-				DictionaryUtil.Add(QueryParameters, "ResultTypes", value);
+				videoId = value;
+				DictionaryUtil.Add(QueryParameters, "VideoId", value);
 			}
 		}
 
-		public string Fields
+		public string StartTime
 		{
 			get
 			{
-				return fields;
+				return startTime;
 			}
 			set	
 			{
-				fields = value;
-				DictionaryUtil.Add(QueryParameters, "Fields", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -233,9 +188,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override SearchMediaResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListTranscodeTaskResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SearchMediaResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTranscodeTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

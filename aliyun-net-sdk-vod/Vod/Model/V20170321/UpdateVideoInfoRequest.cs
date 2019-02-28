@@ -33,15 +33,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
-		private string coverURL;
-
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
-
-		private long? cateId;
-
-		private string action;
 
 		private string description;
 
@@ -53,18 +47,17 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string tags;
 
-		public string CoverURL
-		{
-			get
-			{
-				return coverURL;
-			}
-			set	
-			{
-				coverURL = value;
-				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
-			}
-		}
+		private string coverURL;
+
+		private string downloadSwitch;
+
+		private long? cateId;
+
+		private string action;
+
+		private string customMediaInfo;
+
+		private string status;
 
 		public long? ResourceOwnerId
 		{
@@ -89,32 +82,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public long? CateId
-		{
-			get
-			{
-				return cateId;
-			}
-			set	
-			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -180,6 +147,84 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string CoverURL
+		{
+			get
+			{
+				return coverURL;
+			}
+			set	
+			{
+				coverURL = value;
+				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
+			}
+		}
+
+		public string DownloadSwitch
+		{
+			get
+			{
+				return downloadSwitch;
+			}
+			set	
+			{
+				downloadSwitch = value;
+				DictionaryUtil.Add(QueryParameters, "DownloadSwitch", value);
+			}
+		}
+
+		public long? CateId
+		{
+			get
+			{
+				return cateId;
+			}
+			set	
+			{
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string CustomMediaInfo
+		{
+			get
+			{
+				return customMediaInfo;
+			}
+			set	
+			{
+				customMediaInfo = value;
+				DictionaryUtil.Add(QueryParameters, "CustomMediaInfo", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 

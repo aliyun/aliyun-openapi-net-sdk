@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class DeleteTranscodeTemplatesRequest : RpcAcsRequest<DeleteTranscodeTemplatesResponse>
+    public class GetTranscodeTaskRequest : RpcAcsRequest<GetTranscodeTaskResponse>
     {
-        public DeleteTranscodeTemplatesRequest()
-            : base("vod", "2017-03-21", "DeleteTranscodeTemplates", "vod", "openAPI")
+        public GetTranscodeTaskRequest()
+            : base("vod", "2017-03-21", "GetTranscodeTask", "vod", "openAPI")
         {
         }
 
@@ -37,15 +37,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
+		private string transcodeTaskId;
+
 		private string action;
 
 		private long? ownerId;
 
 		private string accessKeyId;
-
-		private string transcodeTemplateGroupId;
-
-		private string transcodeTemplateIdList;
 
 		public long? ResourceOwnerId
 		{
@@ -70,6 +68,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string TranscodeTaskId
+		{
+			get
+			{
+				return transcodeTaskId;
+			}
+			set	
+			{
+				transcodeTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "TranscodeTaskId", value);
 			}
 		}
 
@@ -112,40 +123,14 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string TranscodeTemplateGroupId
-		{
-			get
-			{
-				return transcodeTemplateGroupId;
-			}
-			set	
-			{
-				transcodeTemplateGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "TranscodeTemplateGroupId", value);
-			}
-		}
-
-		public string TranscodeTemplateIdList
-		{
-			get
-			{
-				return transcodeTemplateIdList;
-			}
-			set	
-			{
-				transcodeTemplateIdList = value;
-				DictionaryUtil.Add(QueryParameters, "TranscodeTemplateIdList", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DeleteTranscodeTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetTranscodeTaskResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DeleteTranscodeTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetTranscodeTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

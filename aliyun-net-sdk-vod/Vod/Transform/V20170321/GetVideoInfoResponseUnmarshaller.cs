@@ -53,6 +53,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			video.PreprocessStatus = context.StringValue("GetVideoInfo.Video.PreprocessStatus");
 			video.StorageLocation = context.StringValue("GetVideoInfo.Video.StorageLocation");
 			video.RegionId = context.StringValue("GetVideoInfo.Video.RegionId");
+			video.CustomMediaInfo = context.StringValue("GetVideoInfo.Video.CustomMediaInfo");
 
 			List<string> video_snapshots = new List<string>();
 			for (int i = 0; i < context.Length("GetVideoInfo.Video.Snapshots.Length"); i++) {
