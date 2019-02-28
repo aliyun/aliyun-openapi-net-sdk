@@ -57,14 +57,14 @@ namespace Aliyun.Acs.Core.Http
 
         public void GetRuntimeRegexValue(string value)
         {
-            Regex rx = new Regex(@"(Microsoft).*(\\|/).*(\d)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            Regex rx = new Regex(@"(NetCore\.App).*(\\|\/).*(\d)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             Match matches = rx.Match(value);
 
             if (matches.Success)
             {
                 char[] separator = { '\\', '/' };
                 var array = matches.Value.Split(separator);
-                this.ClientVersion = array[0] + "/" + array[1];
+                this.ClientVersion = array[0].Replace(".", "").ToLower() + "/" + array[1];
             }
         }
 
