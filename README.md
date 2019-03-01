@@ -12,7 +12,7 @@ The Alibaba Cloud C# Software Development Kit (SDK) allows you to access Alibaba
 
 This document introduces how to install and use Alibaba Cloud C# SDK.
 
-If you have any problem while using Java SDK, please [submit an issue](https://github.com/aliyun/aliyun-openapi-net-sdk/issues/new).
+If you have any problem while using C# SDK, please [submit an issue](https://github.com/aliyun/aliyun-openapi-net-sdk/issues/new).
 
 ## Prerequisites
 
@@ -22,13 +22,13 @@ If you have any problem while using Java SDK, please [submit an issue](https://g
 
 	>**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
 
-- To use Alibaba Cloud Java SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
+- To use Alibaba Cloud C# SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
 
 - The Alibaba Cloud C# SDK is requires .NET Framework 4.0 or later.
 
 ## Using C# SDK with NuGet Packages
 
-You must install the SDK core Nuget Package for any SDK you use. For example, to call the ECS SDK, you must install both the [ECS Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-ecs/) and the [SDK core Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-core/).
+You must install the SDK core Nuget Package for any SDK you use. For example, to call the ECS product, you must install both the [ECS Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-ecs/) and the [SDK core Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-core/).
 
 Use Package Manager
 
