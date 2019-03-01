@@ -1,7 +1,8 @@
 language: csharp
 sudo: true
 mono: none
-dotnet: 2.1
+dotnet: 2.2
+dist: xenial
 branches:
   only:
     - master
@@ -9,9 +10,9 @@ install:
   - dotnet tool install --global altcover.visualizer
   - cd aliyun-net-sdk-core.Tests/ && dotnet add package AltCover && cd ../
   - dotnet restore
-script: 
+script:
   - dotnet build
   - if [ $ACCESS_KEY_ID == "" ]; then dotnet test --filter Category!=FeatureTest /p:AltCover=true; else dotnet test /p:AltCover=true; fi
 after_success:
   - cd aliyun-net-sdk-core.Tests/
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -c -F unittest
