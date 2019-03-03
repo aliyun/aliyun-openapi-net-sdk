@@ -27,13 +27,14 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static CreateCoreWordResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateCoreWordResponse createCoreWordResponse = new CreateCoreWordResponse();
+            CreateCoreWordResponse createCoreWordResponse = new CreateCoreWordResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("CreateCoreWord.RequestId"),
+                CoreWordCode = context.StringValue("CreateCoreWord.CoreWordCode")
+            };
 
-			createCoreWordResponse.HttpResponse = context.HttpResponse;
-			createCoreWordResponse.RequestId = context.StringValue("CreateCoreWord.RequestId");
-			createCoreWordResponse.CoreWordCode = context.StringValue("CreateCoreWord.CoreWordCode");
-        
-			return createCoreWordResponse;
+            return createCoreWordResponse;
         }
     }
 }

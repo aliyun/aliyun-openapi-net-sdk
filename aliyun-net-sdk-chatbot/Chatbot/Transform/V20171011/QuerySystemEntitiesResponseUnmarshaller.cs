@@ -27,19 +27,22 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static QuerySystemEntitiesResponse Unmarshall(UnmarshallerContext context)
         {
-			QuerySystemEntitiesResponse querySystemEntitiesResponse = new QuerySystemEntitiesResponse();
+            QuerySystemEntitiesResponse querySystemEntitiesResponse = new QuerySystemEntitiesResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("QuerySystemEntities.RequestId")
+            };
 
-			querySystemEntitiesResponse.HttpResponse = context.HttpResponse;
-			querySystemEntitiesResponse.RequestId = context.StringValue("QuerySystemEntities.RequestId");
-
-			List<QuerySystemEntitiesResponse.QuerySystemEntities_Entity> querySystemEntitiesResponse_systemEntities = new List<QuerySystemEntitiesResponse.QuerySystemEntities_Entity>();
+            List<QuerySystemEntitiesResponse.QuerySystemEntities_Entity> querySystemEntitiesResponse_systemEntities = new List<QuerySystemEntitiesResponse.QuerySystemEntities_Entity>();
 			for (int i = 0; i < context.Length("QuerySystemEntities.SystemEntities.Length"); i++) {
-				QuerySystemEntitiesResponse.QuerySystemEntities_Entity entity = new QuerySystemEntitiesResponse.QuerySystemEntities_Entity();
-				entity.DefaultQuestion = context.StringValue("QuerySystemEntities.SystemEntities["+ i +"].DefaultQuestion");
-				entity.EntityName = context.StringValue("QuerySystemEntities.SystemEntities["+ i +"].EntityName");
-				entity.EntityCode = context.StringValue("QuerySystemEntities.SystemEntities["+ i +"].EntityCode");
+                QuerySystemEntitiesResponse.QuerySystemEntities_Entity entity = new QuerySystemEntitiesResponse.QuerySystemEntities_Entity
+                {
+                    DefaultQuestion = context.StringValue("QuerySystemEntities.SystemEntities[" + i + "].DefaultQuestion"),
+                    EntityName = context.StringValue("QuerySystemEntities.SystemEntities[" + i + "].EntityName"),
+                    EntityCode = context.StringValue("QuerySystemEntities.SystemEntities[" + i + "].EntityCode")
+                };
 
-				querySystemEntitiesResponse_systemEntities.Add(entity);
+                querySystemEntitiesResponse_systemEntities.Add(entity);
 			}
 			querySystemEntitiesResponse.SystemEntities = querySystemEntitiesResponse_systemEntities;
         

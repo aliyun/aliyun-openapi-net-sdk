@@ -27,16 +27,17 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static DescribeCoreWordResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeCoreWordResponse describeCoreWordResponse = new DescribeCoreWordResponse();
+            DescribeCoreWordResponse describeCoreWordResponse = new DescribeCoreWordResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("DescribeCoreWord.RequestId"),
+                CoreWordCode = context.StringValue("DescribeCoreWord.CoreWordCode"),
+                CoreWordName = context.StringValue("DescribeCoreWord.CoreWordName"),
+                ModifyTime = context.StringValue("DescribeCoreWord.ModifyTime"),
+                CreateTime = context.StringValue("DescribeCoreWord.CreateTime")
+            };
 
-			describeCoreWordResponse.HttpResponse = context.HttpResponse;
-			describeCoreWordResponse.RequestId = context.StringValue("DescribeCoreWord.RequestId");
-			describeCoreWordResponse.CoreWordCode = context.StringValue("DescribeCoreWord.CoreWordCode");
-			describeCoreWordResponse.CoreWordName = context.StringValue("DescribeCoreWord.CoreWordName");
-			describeCoreWordResponse.ModifyTime = context.StringValue("DescribeCoreWord.ModifyTime");
-			describeCoreWordResponse.CreateTime = context.StringValue("DescribeCoreWord.CreateTime");
-
-			List<string> describeCoreWordResponse_synonyms = new List<string>();
+            List<string> describeCoreWordResponse_synonyms = new List<string>();
 			for (int i = 0; i < context.Length("DescribeCoreWord.Synonyms.Length"); i++) {
 				describeCoreWordResponse_synonyms.Add(context.StringValue("DescribeCoreWord.Synonyms["+ i +"]"));
 			}

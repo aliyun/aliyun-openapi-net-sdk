@@ -113,7 +113,7 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			return false;
 		}
 
-        public override QueryKnowledgesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryKnowledgesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return QueryKnowledgesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

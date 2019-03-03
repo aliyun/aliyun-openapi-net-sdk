@@ -27,24 +27,25 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static DescribeDialogResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDialogResponse describeDialogResponse = new DescribeDialogResponse();
+            DescribeDialogResponse describeDialogResponse = new DescribeDialogResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("DescribeDialog.RequestId"),
+                DialogId = context.LongValue("DescribeDialog.DialogId"),
+                DialogName = context.StringValue("DescribeDialog.DialogName"),
+                Description = context.StringValue("DescribeDialog.Description"),
+                CreateTime = context.StringValue("DescribeDialog.CreateTime"),
+                ModifyTime = context.StringValue("DescribeDialog.ModifyTime"),
+                CreateUserId = context.StringValue("DescribeDialog.CreateUserId"),
+                CreateUserName = context.StringValue("DescribeDialog.CreateUserName"),
+                ModifyUserId = context.StringValue("DescribeDialog.ModifyUserId"),
+                ModifyUserName = context.StringValue("DescribeDialog.ModifyUserName"),
+                IsSampleDialog = context.BooleanValue("DescribeDialog.IsSampleDialog"),
+                Status = context.IntegerValue("DescribeDialog.Status"),
+                IsOnline = context.BooleanValue("DescribeDialog.IsOnline")
+            };
 
-			describeDialogResponse.HttpResponse = context.HttpResponse;
-			describeDialogResponse.RequestId = context.StringValue("DescribeDialog.RequestId");
-			describeDialogResponse.DialogId = context.LongValue("DescribeDialog.DialogId");
-			describeDialogResponse.DialogName = context.StringValue("DescribeDialog.DialogName");
-			describeDialogResponse.Description = context.StringValue("DescribeDialog.Description");
-			describeDialogResponse.CreateTime = context.StringValue("DescribeDialog.CreateTime");
-			describeDialogResponse.ModifyTime = context.StringValue("DescribeDialog.ModifyTime");
-			describeDialogResponse.CreateUserId = context.StringValue("DescribeDialog.CreateUserId");
-			describeDialogResponse.CreateUserName = context.StringValue("DescribeDialog.CreateUserName");
-			describeDialogResponse.ModifyUserId = context.StringValue("DescribeDialog.ModifyUserId");
-			describeDialogResponse.ModifyUserName = context.StringValue("DescribeDialog.ModifyUserName");
-			describeDialogResponse.IsSampleDialog = context.BooleanValue("DescribeDialog.IsSampleDialog");
-			describeDialogResponse.Status = context.IntegerValue("DescribeDialog.Status");
-			describeDialogResponse.IsOnline = context.BooleanValue("DescribeDialog.IsOnline");
-        
-			return describeDialogResponse;
+            return describeDialogResponse;
         }
     }
 }

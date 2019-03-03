@@ -68,7 +68,7 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			return false;
 		}
 
-        public override RemoveSynonymResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RemoveSynonymResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return RemoveSynonymResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

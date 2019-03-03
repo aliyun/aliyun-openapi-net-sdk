@@ -27,34 +27,39 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static QueryEntitiesResponse Unmarshall(UnmarshallerContext context)
         {
-			QueryEntitiesResponse queryEntitiesResponse = new QueryEntitiesResponse();
+            QueryEntitiesResponse queryEntitiesResponse = new QueryEntitiesResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("QueryEntities.RequestId"),
+                PageNumber = context.IntegerValue("QueryEntities.PageNumber"),
+                PageSize = context.IntegerValue("QueryEntities.PageSize"),
+                TotalCount = context.IntegerValue("QueryEntities.TotalCount")
+            };
 
-			queryEntitiesResponse.HttpResponse = context.HttpResponse;
-			queryEntitiesResponse.RequestId = context.StringValue("QueryEntities.RequestId");
-			queryEntitiesResponse.PageNumber = context.IntegerValue("QueryEntities.PageNumber");
-			queryEntitiesResponse.PageSize = context.IntegerValue("QueryEntities.PageSize");
-			queryEntitiesResponse.TotalCount = context.IntegerValue("QueryEntities.TotalCount");
-
-			List<QueryEntitiesResponse.QueryEntities_Entity> queryEntitiesResponse_entities = new List<QueryEntitiesResponse.QueryEntities_Entity>();
+            List<QueryEntitiesResponse.QueryEntities_Entity> queryEntitiesResponse_entities = new List<QueryEntitiesResponse.QueryEntities_Entity>();
 			for (int i = 0; i < context.Length("QueryEntities.Entities.Length"); i++) {
-				QueryEntitiesResponse.QueryEntities_Entity entity = new QueryEntitiesResponse.QueryEntities_Entity();
-				entity.EntityId = context.LongValue("QueryEntities.Entities["+ i +"].EntityId");
-				entity.EntityName = context.StringValue("QueryEntities.Entities["+ i +"].EntityName");
-				entity.EntityType = context.StringValue("QueryEntities.Entities["+ i +"].EntityType");
-				entity.Regex = context.StringValue("QueryEntities.Entities["+ i +"].Regex");
-				entity.CreateTime = context.StringValue("QueryEntities.Entities["+ i +"].CreateTime");
-				entity.ModifyTime = context.StringValue("QueryEntities.Entities["+ i +"].ModifyTime");
-				entity.CreateUserId = context.StringValue("QueryEntities.Entities["+ i +"].CreateUserId");
-				entity.CreateUserName = context.StringValue("QueryEntities.Entities["+ i +"].CreateUserName");
-				entity.ModifyUserId = context.StringValue("QueryEntities.Entities["+ i +"].ModifyUserId");
-				entity.ModifyUserName = context.StringValue("QueryEntities.Entities["+ i +"].ModifyUserName");
+                QueryEntitiesResponse.QueryEntities_Entity entity = new QueryEntitiesResponse.QueryEntities_Entity
+                {
+                    EntityId = context.LongValue("QueryEntities.Entities[" + i + "].EntityId"),
+                    EntityName = context.StringValue("QueryEntities.Entities[" + i + "].EntityName"),
+                    EntityType = context.StringValue("QueryEntities.Entities[" + i + "].EntityType"),
+                    Regex = context.StringValue("QueryEntities.Entities[" + i + "].Regex"),
+                    CreateTime = context.StringValue("QueryEntities.Entities[" + i + "].CreateTime"),
+                    ModifyTime = context.StringValue("QueryEntities.Entities[" + i + "].ModifyTime"),
+                    CreateUserId = context.StringValue("QueryEntities.Entities[" + i + "].CreateUserId"),
+                    CreateUserName = context.StringValue("QueryEntities.Entities[" + i + "].CreateUserName"),
+                    ModifyUserId = context.StringValue("QueryEntities.Entities[" + i + "].ModifyUserId"),
+                    ModifyUserName = context.StringValue("QueryEntities.Entities[" + i + "].ModifyUserName")
+                };
 
-				List<QueryEntitiesResponse.QueryEntities_Entity.QueryEntities_MembersItem> entity_members = new List<QueryEntitiesResponse.QueryEntities_Entity.QueryEntities_MembersItem>();
+                List<QueryEntitiesResponse.QueryEntities_Entity.QueryEntities_MembersItem> entity_members = new List<QueryEntitiesResponse.QueryEntities_Entity.QueryEntities_MembersItem>();
 				for (int j = 0; j < context.Length("QueryEntities.Entities["+ i +"].Members.Length"); j++) {
-					QueryEntitiesResponse.QueryEntities_Entity.QueryEntities_MembersItem membersItem = new QueryEntitiesResponse.QueryEntities_Entity.QueryEntities_MembersItem();
-					membersItem.MemberName = context.StringValue("QueryEntities.Entities["+ i +"].Members["+ j +"].MemberName");
+                    QueryEntitiesResponse.QueryEntities_Entity.QueryEntities_MembersItem membersItem = new QueryEntitiesResponse.QueryEntities_Entity.QueryEntities_MembersItem
+                    {
+                        MemberName = context.StringValue("QueryEntities.Entities[" + i + "].Members[" + j + "].MemberName")
+                    };
 
-					List<string> membersItem_synonyms = new List<string>();
+                    List<string> membersItem_synonyms = new List<string>();
 					for (int k = 0; k < context.Length("QueryEntities.Entities["+ i +"].Members["+ j +"].Synonyms.Length"); k++) {
 						membersItem_synonyms.Add(context.StringValue("QueryEntities.Entities["+ i +"].Members["+ j +"].Synonyms["+ k +"]"));
 					}

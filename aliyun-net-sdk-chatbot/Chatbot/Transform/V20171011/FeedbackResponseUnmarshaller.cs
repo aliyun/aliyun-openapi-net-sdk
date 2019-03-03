@@ -27,14 +27,15 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static FeedbackResponse Unmarshall(UnmarshallerContext context)
         {
-			FeedbackResponse feedbackResponse = new FeedbackResponse();
+            FeedbackResponse feedbackResponse = new FeedbackResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("Feedback.RequestId"),
+                MessageId = context.StringValue("Feedback.MessageId"),
+                Feedback = context.StringValue("Feedback.Feedback")
+            };
 
-			feedbackResponse.HttpResponse = context.HttpResponse;
-			feedbackResponse.RequestId = context.StringValue("Feedback.RequestId");
-			feedbackResponse.MessageId = context.StringValue("Feedback.MessageId");
-			feedbackResponse.Feedback = context.StringValue("Feedback.Feedback");
-        
-			return feedbackResponse;
+            return feedbackResponse;
         }
     }
 }

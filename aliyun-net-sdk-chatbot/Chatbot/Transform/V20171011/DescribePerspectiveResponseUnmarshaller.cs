@@ -27,21 +27,22 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static DescribePerspectiveResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribePerspectiveResponse describePerspectiveResponse = new DescribePerspectiveResponse();
+            DescribePerspectiveResponse describePerspectiveResponse = new DescribePerspectiveResponse
+            {
+                HttpResponse = context.HttpResponse,
+                ModifyUserName = context.StringValue("DescribePerspective.ModifyUserName"),
+                ModifyTime = context.StringValue("DescribePerspective.ModifyTime"),
+                CreateTime = context.StringValue("DescribePerspective.CreateTime"),
+                SelfDefine = context.BooleanValue("DescribePerspective.SelfDefine"),
+                PerspectiveId = context.StringValue("DescribePerspective.PerspectiveId"),
+                CreateUserName = context.StringValue("DescribePerspective.CreateUserName"),
+                PerspectiveCode = context.StringValue("DescribePerspective.PerspectiveCode"),
+                Status = context.IntegerValue("DescribePerspective.Status"),
+                RequestId = context.StringValue("DescribePerspective.RequestId"),
+                Name = context.StringValue("DescribePerspective.Name")
+            };
 
-			describePerspectiveResponse.HttpResponse = context.HttpResponse;
-			describePerspectiveResponse.ModifyUserName = context.StringValue("DescribePerspective.ModifyUserName");
-			describePerspectiveResponse.ModifyTime = context.StringValue("DescribePerspective.ModifyTime");
-			describePerspectiveResponse.CreateTime = context.StringValue("DescribePerspective.CreateTime");
-			describePerspectiveResponse.SelfDefine = context.BooleanValue("DescribePerspective.SelfDefine");
-			describePerspectiveResponse.PerspectiveId = context.StringValue("DescribePerspective.PerspectiveId");
-			describePerspectiveResponse.CreateUserName = context.StringValue("DescribePerspective.CreateUserName");
-			describePerspectiveResponse.PerspectiveCode = context.StringValue("DescribePerspective.PerspectiveCode");
-			describePerspectiveResponse.Status = context.IntegerValue("DescribePerspective.Status");
-			describePerspectiveResponse.RequestId = context.StringValue("DescribePerspective.RequestId");
-			describePerspectiveResponse.Name = context.StringValue("DescribePerspective.Name");
-        
-			return describePerspectiveResponse;
+            return describePerspectiveResponse;
         }
     }
 }

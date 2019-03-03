@@ -68,7 +68,7 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			return false;
 		}
 
-        public override QueryCategoriesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryCategoriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return QueryCategoriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

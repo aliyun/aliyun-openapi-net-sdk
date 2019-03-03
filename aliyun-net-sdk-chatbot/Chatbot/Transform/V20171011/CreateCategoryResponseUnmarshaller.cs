@@ -27,14 +27,15 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static CreateCategoryResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateCategoryResponse createCategoryResponse = new CreateCategoryResponse();
+            CreateCategoryResponse createCategoryResponse = new CreateCategoryResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("CreateCategory.RequestId"),
+                CategoryId = context.LongValue("CreateCategory.CategoryId"),
+                Success = context.BooleanValue("CreateCategory.Success")
+            };
 
-			createCategoryResponse.HttpResponse = context.HttpResponse;
-			createCategoryResponse.RequestId = context.StringValue("CreateCategory.RequestId");
-			createCategoryResponse.CategoryId = context.LongValue("CreateCategory.CategoryId");
-			createCategoryResponse.Success = context.BooleanValue("CreateCategory.Success");
-        
-			return createCategoryResponse;
+            return createCategoryResponse;
         }
     }
 }

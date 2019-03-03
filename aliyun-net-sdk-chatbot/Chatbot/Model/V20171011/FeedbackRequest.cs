@@ -98,7 +98,7 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			return false;
 		}
 
-        public override FeedbackResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override FeedbackResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return FeedbackResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

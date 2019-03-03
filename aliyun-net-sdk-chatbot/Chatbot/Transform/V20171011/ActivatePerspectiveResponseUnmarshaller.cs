@@ -27,12 +27,13 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static ActivatePerspectiveResponse Unmarshall(UnmarshallerContext context)
         {
-			ActivatePerspectiveResponse activatePerspectiveResponse = new ActivatePerspectiveResponse();
+            ActivatePerspectiveResponse activatePerspectiveResponse = new ActivatePerspectiveResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("ActivatePerspective.RequestId")
+            };
 
-			activatePerspectiveResponse.HttpResponse = context.HttpResponse;
-			activatePerspectiveResponse.RequestId = context.StringValue("ActivatePerspective.RequestId");
-        
-			return activatePerspectiveResponse;
+            return activatePerspectiveResponse;
         }
     }
 }

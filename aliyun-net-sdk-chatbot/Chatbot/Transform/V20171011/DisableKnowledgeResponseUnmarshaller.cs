@@ -27,12 +27,13 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static DisableKnowledgeResponse Unmarshall(UnmarshallerContext context)
         {
-			DisableKnowledgeResponse disableKnowledgeResponse = new DisableKnowledgeResponse();
+            DisableKnowledgeResponse disableKnowledgeResponse = new DisableKnowledgeResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("DisableKnowledge.RequestId")
+            };
 
-			disableKnowledgeResponse.HttpResponse = context.HttpResponse;
-			disableKnowledgeResponse.RequestId = context.StringValue("DisableKnowledge.RequestId");
-        
-			return disableKnowledgeResponse;
+            return disableKnowledgeResponse;
         }
     }
 }

@@ -27,12 +27,13 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static DeleteDialogResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteDialogResponse deleteDialogResponse = new DeleteDialogResponse();
+            DeleteDialogResponse deleteDialogResponse = new DeleteDialogResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("DeleteDialog.RequestId")
+            };
 
-			deleteDialogResponse.HttpResponse = context.HttpResponse;
-			deleteDialogResponse.RequestId = context.StringValue("DeleteDialog.RequestId");
-        
-			return deleteDialogResponse;
+            return deleteDialogResponse;
         }
     }
 }

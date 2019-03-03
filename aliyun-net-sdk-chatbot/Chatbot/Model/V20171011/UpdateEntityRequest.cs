@@ -113,7 +113,7 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			return false;
 		}
 
-        public override UpdateEntityResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateEntityResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UpdateEntityResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

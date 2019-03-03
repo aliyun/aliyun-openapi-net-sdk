@@ -27,27 +27,30 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static DescribeEntitiesResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeEntitiesResponse describeEntitiesResponse = new DescribeEntitiesResponse();
+            DescribeEntitiesResponse describeEntitiesResponse = new DescribeEntitiesResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("DescribeEntities.RequestId"),
+                EntityId = context.LongValue("DescribeEntities.EntityId"),
+                EntityName = context.StringValue("DescribeEntities.EntityName"),
+                EntityType = context.StringValue("DescribeEntities.EntityType"),
+                Regex = context.StringValue("DescribeEntities.Regex"),
+                CreateTime = context.StringValue("DescribeEntities.CreateTime"),
+                ModifyTime = context.StringValue("DescribeEntities.ModifyTime"),
+                CreateUserId = context.StringValue("DescribeEntities.CreateUserId"),
+                CreateUserName = context.StringValue("DescribeEntities.CreateUserName"),
+                ModifyUserId = context.StringValue("DescribeEntities.ModifyUserId"),
+                ModifyUserName = context.StringValue("DescribeEntities.ModifyUserName")
+            };
 
-			describeEntitiesResponse.HttpResponse = context.HttpResponse;
-			describeEntitiesResponse.RequestId = context.StringValue("DescribeEntities.RequestId");
-			describeEntitiesResponse.EntityId = context.LongValue("DescribeEntities.EntityId");
-			describeEntitiesResponse.EntityName = context.StringValue("DescribeEntities.EntityName");
-			describeEntitiesResponse.EntityType = context.StringValue("DescribeEntities.EntityType");
-			describeEntitiesResponse.Regex = context.StringValue("DescribeEntities.Regex");
-			describeEntitiesResponse.CreateTime = context.StringValue("DescribeEntities.CreateTime");
-			describeEntitiesResponse.ModifyTime = context.StringValue("DescribeEntities.ModifyTime");
-			describeEntitiesResponse.CreateUserId = context.StringValue("DescribeEntities.CreateUserId");
-			describeEntitiesResponse.CreateUserName = context.StringValue("DescribeEntities.CreateUserName");
-			describeEntitiesResponse.ModifyUserId = context.StringValue("DescribeEntities.ModifyUserId");
-			describeEntitiesResponse.ModifyUserName = context.StringValue("DescribeEntities.ModifyUserName");
-
-			List<DescribeEntitiesResponse.DescribeEntities_MembersItem> describeEntitiesResponse_members = new List<DescribeEntitiesResponse.DescribeEntities_MembersItem>();
+            List<DescribeEntitiesResponse.DescribeEntities_MembersItem> describeEntitiesResponse_members = new List<DescribeEntitiesResponse.DescribeEntities_MembersItem>();
 			for (int i = 0; i < context.Length("DescribeEntities.Members.Length"); i++) {
-				DescribeEntitiesResponse.DescribeEntities_MembersItem membersItem = new DescribeEntitiesResponse.DescribeEntities_MembersItem();
-				membersItem.MemberName = context.StringValue("DescribeEntities.Members["+ i +"].MemberName");
+                DescribeEntitiesResponse.DescribeEntities_MembersItem membersItem = new DescribeEntitiesResponse.DescribeEntities_MembersItem
+                {
+                    MemberName = context.StringValue("DescribeEntities.Members[" + i + "].MemberName")
+                };
 
-				List<string> membersItem_synonyms = new List<string>();
+                List<string> membersItem_synonyms = new List<string>();
 				for (int j = 0; j < context.Length("DescribeEntities.Members["+ i +"].Synonyms.Length"); j++) {
 					membersItem_synonyms.Add(context.StringValue("DescribeEntities.Members["+ i +"].Synonyms["+ j +"]"));
 				}

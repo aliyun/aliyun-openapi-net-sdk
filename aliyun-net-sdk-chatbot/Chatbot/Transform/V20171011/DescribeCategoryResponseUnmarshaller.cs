@@ -27,15 +27,16 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static DescribeCategoryResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeCategoryResponse describeCategoryResponse = new DescribeCategoryResponse();
+            DescribeCategoryResponse describeCategoryResponse = new DescribeCategoryResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("DescribeCategory.RequestId"),
+                ParentCategoryId = context.LongValue("DescribeCategory.ParentCategoryId"),
+                CategoryId = context.LongValue("DescribeCategory.CategoryId"),
+                Name = context.StringValue("DescribeCategory.Name")
+            };
 
-			describeCategoryResponse.HttpResponse = context.HttpResponse;
-			describeCategoryResponse.RequestId = context.StringValue("DescribeCategory.RequestId");
-			describeCategoryResponse.ParentCategoryId = context.LongValue("DescribeCategory.ParentCategoryId");
-			describeCategoryResponse.CategoryId = context.LongValue("DescribeCategory.CategoryId");
-			describeCategoryResponse.Name = context.StringValue("DescribeCategory.Name");
-        
-			return describeCategoryResponse;
+            return describeCategoryResponse;
         }
     }
 }

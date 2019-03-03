@@ -27,13 +27,14 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static DeleteIntentResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteIntentResponse deleteIntentResponse = new DeleteIntentResponse();
+            DeleteIntentResponse deleteIntentResponse = new DeleteIntentResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("DeleteIntent.RequestId"),
+                IntentId = context.StringValue("DeleteIntent.IntentId")
+            };
 
-			deleteIntentResponse.HttpResponse = context.HttpResponse;
-			deleteIntentResponse.RequestId = context.StringValue("DeleteIntent.RequestId");
-			deleteIntentResponse.IntentId = context.StringValue("DeleteIntent.IntentId");
-        
-			return deleteIntentResponse;
+            return deleteIntentResponse;
         }
     }
 }

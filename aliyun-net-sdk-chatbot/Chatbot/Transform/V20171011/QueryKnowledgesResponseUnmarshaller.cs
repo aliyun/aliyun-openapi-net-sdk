@@ -27,30 +27,33 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static QueryKnowledgesResponse Unmarshall(UnmarshallerContext context)
         {
-			QueryKnowledgesResponse queryKnowledgesResponse = new QueryKnowledgesResponse();
+            QueryKnowledgesResponse queryKnowledgesResponse = new QueryKnowledgesResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("QueryKnowledges.RequestId"),
+                PageNumber = context.IntegerValue("QueryKnowledges.PageNumber"),
+                PageSize = context.IntegerValue("QueryKnowledges.PageSize"),
+                TotalCount = context.IntegerValue("QueryKnowledges.TotalCount")
+            };
 
-			queryKnowledgesResponse.HttpResponse = context.HttpResponse;
-			queryKnowledgesResponse.RequestId = context.StringValue("QueryKnowledges.RequestId");
-			queryKnowledgesResponse.PageNumber = context.IntegerValue("QueryKnowledges.PageNumber");
-			queryKnowledgesResponse.PageSize = context.IntegerValue("QueryKnowledges.PageSize");
-			queryKnowledgesResponse.TotalCount = context.IntegerValue("QueryKnowledges.TotalCount");
-
-			List<QueryKnowledgesResponse.QueryKnowledges_Knowledge> queryKnowledgesResponse_knowledges = new List<QueryKnowledgesResponse.QueryKnowledges_Knowledge>();
+            List<QueryKnowledgesResponse.QueryKnowledges_Knowledge> queryKnowledgesResponse_knowledges = new List<QueryKnowledgesResponse.QueryKnowledges_Knowledge>();
 			for (int i = 0; i < context.Length("QueryKnowledges.Knowledges.Length"); i++) {
-				QueryKnowledgesResponse.QueryKnowledges_Knowledge knowledge = new QueryKnowledgesResponse.QueryKnowledges_Knowledge();
-				knowledge.KnowledgeId = context.LongValue("QueryKnowledges.Knowledges["+ i +"].KnowledgeId");
-				knowledge.ModifyTime = context.StringValue("QueryKnowledges.Knowledges["+ i +"].ModifyTime");
-				knowledge.ModifyUserName = context.StringValue("QueryKnowledges.Knowledges["+ i +"].ModifyUserName");
-				knowledge.CreateTime = context.StringValue("QueryKnowledges.Knowledges["+ i +"].CreateTime");
-				knowledge.CreateUserName = context.StringValue("QueryKnowledges.Knowledges["+ i +"].CreateUserName");
-				knowledge.CategoryId = context.LongValue("QueryKnowledges.Knowledges["+ i +"].CategoryId");
-				knowledge.KnowledgeStatus = context.IntegerValue("QueryKnowledges.Knowledges["+ i +"].KnowledgeStatus");
-				knowledge.KnowledgeTitle = context.StringValue("QueryKnowledges.Knowledges["+ i +"].KnowledgeTitle");
-				knowledge.StartDate = context.StringValue("QueryKnowledges.Knowledges["+ i +"].StartDate");
-				knowledge.EndDate = context.StringValue("QueryKnowledges.Knowledges["+ i +"].EndDate");
-				knowledge.Version = context.StringValue("QueryKnowledges.Knowledges["+ i +"].Version");
+                QueryKnowledgesResponse.QueryKnowledges_Knowledge knowledge = new QueryKnowledgesResponse.QueryKnowledges_Knowledge
+                {
+                    KnowledgeId = context.LongValue("QueryKnowledges.Knowledges[" + i + "].KnowledgeId"),
+                    ModifyTime = context.StringValue("QueryKnowledges.Knowledges[" + i + "].ModifyTime"),
+                    ModifyUserName = context.StringValue("QueryKnowledges.Knowledges[" + i + "].ModifyUserName"),
+                    CreateTime = context.StringValue("QueryKnowledges.Knowledges[" + i + "].CreateTime"),
+                    CreateUserName = context.StringValue("QueryKnowledges.Knowledges[" + i + "].CreateUserName"),
+                    CategoryId = context.LongValue("QueryKnowledges.Knowledges[" + i + "].CategoryId"),
+                    KnowledgeStatus = context.IntegerValue("QueryKnowledges.Knowledges[" + i + "].KnowledgeStatus"),
+                    KnowledgeTitle = context.StringValue("QueryKnowledges.Knowledges[" + i + "].KnowledgeTitle"),
+                    StartDate = context.StringValue("QueryKnowledges.Knowledges[" + i + "].StartDate"),
+                    EndDate = context.StringValue("QueryKnowledges.Knowledges[" + i + "].EndDate"),
+                    Version = context.StringValue("QueryKnowledges.Knowledges[" + i + "].Version")
+                };
 
-				List<string> knowledge_coreWords = new List<string>();
+                List<string> knowledge_coreWords = new List<string>();
 				for (int j = 0; j < context.Length("QueryKnowledges.Knowledges["+ i +"].CoreWords.Length"); j++) {
 					knowledge_coreWords.Add(context.StringValue("QueryKnowledges.Knowledges["+ i +"].CoreWords["+ j +"]"));
 				}

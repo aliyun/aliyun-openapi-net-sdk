@@ -27,43 +27,52 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static ChatResponse Unmarshall(UnmarshallerContext context)
         {
-			ChatResponse chatResponse = new ChatResponse();
+            ChatResponse chatResponse = new ChatResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("Chat.RequestId"),
+                SessionId = context.StringValue("Chat.SessionId"),
+                MessageId = context.StringValue("Chat.MessageId"),
+                Tag = context.StringValue("Chat.Tag")
+            };
 
-			chatResponse.HttpResponse = context.HttpResponse;
-			chatResponse.RequestId = context.StringValue("Chat.RequestId");
-			chatResponse.SessionId = context.StringValue("Chat.SessionId");
-			chatResponse.MessageId = context.StringValue("Chat.MessageId");
-			chatResponse.Tag = context.StringValue("Chat.Tag");
-
-			List<ChatResponse.Chat_Message> chatResponse_messages = new List<ChatResponse.Chat_Message>();
+            List<ChatResponse.Chat_Message> chatResponse_messages = new List<ChatResponse.Chat_Message>();
 			for (int i = 0; i < context.Length("Chat.Messages.Length"); i++) {
-				ChatResponse.Chat_Message message = new ChatResponse.Chat_Message();
-				message.Type = context.StringValue("Chat.Messages["+ i +"].Type");
+                ChatResponse.Chat_Message message = new ChatResponse.Chat_Message
+                {
+                    Type = context.StringValue("Chat.Messages[" + i + "].Type")
+                };
 
-				ChatResponse.Chat_Message.Chat_Text text = new ChatResponse.Chat_Message.Chat_Text();
-				text.Content = context.StringValue("Chat.Messages["+ i +"].Text.Content");
-				text.AnswerSource = context.StringValue("Chat.Messages["+ i +"].Text.AnswerSource");
-				text.MetaData = context.StringValue("Chat.Messages["+ i +"].Text.MetaData");
-				message.Text = text;
+                ChatResponse.Chat_Message.Chat_Text text = new ChatResponse.Chat_Message.Chat_Text
+                {
+                    Content = context.StringValue("Chat.Messages[" + i + "].Text.Content"),
+                    AnswerSource = context.StringValue("Chat.Messages[" + i + "].Text.AnswerSource"),
+                    MetaData = context.StringValue("Chat.Messages[" + i + "].Text.MetaData")
+                };
+                message.Text = text;
 
-				ChatResponse.Chat_Message.Chat_Knowledge knowledge = new ChatResponse.Chat_Message.Chat_Knowledge();
-				knowledge.Id = context.StringValue("Chat.Messages["+ i +"].Knowledge.Id");
-				knowledge.Title = context.StringValue("Chat.Messages["+ i +"].Knowledge.Title");
-				knowledge.Summary = context.StringValue("Chat.Messages["+ i +"].Knowledge.Summary");
-				knowledge.Content = context.StringValue("Chat.Messages["+ i +"].Knowledge.Content");
-				knowledge.AnswerSource = context.StringValue("Chat.Messages["+ i +"].Knowledge.AnswerSource");
-				message.Knowledge = knowledge;
+                ChatResponse.Chat_Message.Chat_Knowledge knowledge = new ChatResponse.Chat_Message.Chat_Knowledge
+                {
+                    Id = context.StringValue("Chat.Messages[" + i + "].Knowledge.Id"),
+                    Title = context.StringValue("Chat.Messages[" + i + "].Knowledge.Title"),
+                    Summary = context.StringValue("Chat.Messages[" + i + "].Knowledge.Summary"),
+                    Content = context.StringValue("Chat.Messages[" + i + "].Knowledge.Content"),
+                    AnswerSource = context.StringValue("Chat.Messages[" + i + "].Knowledge.AnswerSource")
+                };
+                message.Knowledge = knowledge;
 
 				List<ChatResponse.Chat_Message.Chat_Recommend> message_recommends = new List<ChatResponse.Chat_Message.Chat_Recommend>();
 				for (int j = 0; j < context.Length("Chat.Messages["+ i +"].Recommends.Length"); j++) {
-					ChatResponse.Chat_Message.Chat_Recommend recommend = new ChatResponse.Chat_Message.Chat_Recommend();
-					recommend.KnowledgeId = context.StringValue("Chat.Messages["+ i +"].Recommends["+ j +"].KnowledgeId");
-					recommend.Title = context.StringValue("Chat.Messages["+ i +"].Recommends["+ j +"].Title");
-					recommend.AnswerSource = context.StringValue("Chat.Messages["+ i +"].Recommends["+ j +"].AnswerSource");
-					recommend.Summary = context.StringValue("Chat.Messages["+ i +"].Recommends["+ j +"].Summary");
-					recommend.Content = context.StringValue("Chat.Messages["+ i +"].Recommends["+ j +"].Content");
+                    ChatResponse.Chat_Message.Chat_Recommend recommend = new ChatResponse.Chat_Message.Chat_Recommend
+                    {
+                        KnowledgeId = context.StringValue("Chat.Messages[" + i + "].Recommends[" + j + "].KnowledgeId"),
+                        Title = context.StringValue("Chat.Messages[" + i + "].Recommends[" + j + "].Title"),
+                        AnswerSource = context.StringValue("Chat.Messages[" + i + "].Recommends[" + j + "].AnswerSource"),
+                        Summary = context.StringValue("Chat.Messages[" + i + "].Recommends[" + j + "].Summary"),
+                        Content = context.StringValue("Chat.Messages[" + i + "].Recommends[" + j + "].Content")
+                    };
 
-					message_recommends.Add(recommend);
+                    message_recommends.Add(recommend);
 				}
 				message.Recommends = message_recommends;
 

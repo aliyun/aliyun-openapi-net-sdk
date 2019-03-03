@@ -27,19 +27,22 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static QueryCategoriesResponse Unmarshall(UnmarshallerContext context)
         {
-			QueryCategoriesResponse queryCategoriesResponse = new QueryCategoriesResponse();
+            QueryCategoriesResponse queryCategoriesResponse = new QueryCategoriesResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("QueryCategories.RequestId")
+            };
 
-			queryCategoriesResponse.HttpResponse = context.HttpResponse;
-			queryCategoriesResponse.RequestId = context.StringValue("QueryCategories.RequestId");
-
-			List<QueryCategoriesResponse.QueryCategories_Category> queryCategoriesResponse_categories = new List<QueryCategoriesResponse.QueryCategories_Category>();
+            List<QueryCategoriesResponse.QueryCategories_Category> queryCategoriesResponse_categories = new List<QueryCategoriesResponse.QueryCategories_Category>();
 			for (int i = 0; i < context.Length("QueryCategories.Categories.Length"); i++) {
-				QueryCategoriesResponse.QueryCategories_Category category = new QueryCategoriesResponse.QueryCategories_Category();
-				category.CategoryId = context.LongValue("QueryCategories.Categories["+ i +"].CategoryId");
-				category.ParentCategoryId = context.LongValue("QueryCategories.Categories["+ i +"].ParentCategoryId");
-				category.Name = context.StringValue("QueryCategories.Categories["+ i +"].Name");
+                QueryCategoriesResponse.QueryCategories_Category category = new QueryCategoriesResponse.QueryCategories_Category
+                {
+                    CategoryId = context.LongValue("QueryCategories.Categories[" + i + "].CategoryId"),
+                    ParentCategoryId = context.LongValue("QueryCategories.Categories[" + i + "].ParentCategoryId"),
+                    Name = context.StringValue("QueryCategories.Categories[" + i + "].Name")
+                };
 
-				List<string> category_childrens = new List<string>();
+                List<string> category_childrens = new List<string>();
 				for (int j = 0; j < context.Length("QueryCategories.Categories["+ i +"].Childrens.Length"); j++) {
 					category_childrens.Add(context.StringValue("QueryCategories.Categories["+ i +"].Childrens["+ j +"]"));
 				}

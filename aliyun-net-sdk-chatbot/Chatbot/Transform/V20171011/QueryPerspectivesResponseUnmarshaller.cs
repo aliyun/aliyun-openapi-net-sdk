@@ -27,25 +27,28 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static QueryPerspectivesResponse Unmarshall(UnmarshallerContext context)
         {
-			QueryPerspectivesResponse queryPerspectivesResponse = new QueryPerspectivesResponse();
+            QueryPerspectivesResponse queryPerspectivesResponse = new QueryPerspectivesResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("QueryPerspectives.RequestId")
+            };
 
-			queryPerspectivesResponse.HttpResponse = context.HttpResponse;
-			queryPerspectivesResponse.RequestId = context.StringValue("QueryPerspectives.RequestId");
-
-			List<QueryPerspectivesResponse.QueryPerspectives_Perspective> queryPerspectivesResponse_perspectives = new List<QueryPerspectivesResponse.QueryPerspectives_Perspective>();
+            List<QueryPerspectivesResponse.QueryPerspectives_Perspective> queryPerspectivesResponse_perspectives = new List<QueryPerspectivesResponse.QueryPerspectives_Perspective>();
 			for (int i = 0; i < context.Length("QueryPerspectives.Perspectives.Length"); i++) {
-				QueryPerspectivesResponse.QueryPerspectives_Perspective perspective = new QueryPerspectivesResponse.QueryPerspectives_Perspective();
-				perspective.ModifyUserName = context.StringValue("QueryPerspectives.Perspectives["+ i +"].ModifyUserName");
-				perspective.ModifyTime = context.StringValue("QueryPerspectives.Perspectives["+ i +"].ModifyTime");
-				perspective.CreateTime = context.StringValue("QueryPerspectives.Perspectives["+ i +"].CreateTime");
-				perspective.SelfDefine = context.StringValue("QueryPerspectives.Perspectives["+ i +"].SelfDefine");
-				perspective.PerspectiveId = context.StringValue("QueryPerspectives.Perspectives["+ i +"].PerspectiveId");
-				perspective.CreateUserName = context.StringValue("QueryPerspectives.Perspectives["+ i +"].CreateUserName");
-				perspective.PerspectiveCode = context.StringValue("QueryPerspectives.Perspectives["+ i +"].PerspectiveCode");
-				perspective.Status = context.IntegerValue("QueryPerspectives.Perspectives["+ i +"].Status");
-				perspective.Name = context.StringValue("QueryPerspectives.Perspectives["+ i +"].Name");
+                QueryPerspectivesResponse.QueryPerspectives_Perspective perspective = new QueryPerspectivesResponse.QueryPerspectives_Perspective
+                {
+                    ModifyUserName = context.StringValue("QueryPerspectives.Perspectives[" + i + "].ModifyUserName"),
+                    ModifyTime = context.StringValue("QueryPerspectives.Perspectives[" + i + "].ModifyTime"),
+                    CreateTime = context.StringValue("QueryPerspectives.Perspectives[" + i + "].CreateTime"),
+                    SelfDefine = context.StringValue("QueryPerspectives.Perspectives[" + i + "].SelfDefine"),
+                    PerspectiveId = context.StringValue("QueryPerspectives.Perspectives[" + i + "].PerspectiveId"),
+                    CreateUserName = context.StringValue("QueryPerspectives.Perspectives[" + i + "].CreateUserName"),
+                    PerspectiveCode = context.StringValue("QueryPerspectives.Perspectives[" + i + "].PerspectiveCode"),
+                    Status = context.IntegerValue("QueryPerspectives.Perspectives[" + i + "].Status"),
+                    Name = context.StringValue("QueryPerspectives.Perspectives[" + i + "].Name")
+                };
 
-				queryPerspectivesResponse_perspectives.Add(perspective);
+                queryPerspectivesResponse_perspectives.Add(perspective);
 			}
 			queryPerspectivesResponse.Perspectives = queryPerspectivesResponse_perspectives;
         

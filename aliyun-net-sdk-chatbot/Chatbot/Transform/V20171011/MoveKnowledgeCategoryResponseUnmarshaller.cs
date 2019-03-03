@@ -27,12 +27,13 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static MoveKnowledgeCategoryResponse Unmarshall(UnmarshallerContext context)
         {
-			MoveKnowledgeCategoryResponse moveKnowledgeCategoryResponse = new MoveKnowledgeCategoryResponse();
+            MoveKnowledgeCategoryResponse moveKnowledgeCategoryResponse = new MoveKnowledgeCategoryResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("MoveKnowledgeCategory.RequestId")
+            };
 
-			moveKnowledgeCategoryResponse.HttpResponse = context.HttpResponse;
-			moveKnowledgeCategoryResponse.RequestId = context.StringValue("MoveKnowledgeCategory.RequestId");
-        
-			return moveKnowledgeCategoryResponse;
+            return moveKnowledgeCategoryResponse;
         }
     }
 }

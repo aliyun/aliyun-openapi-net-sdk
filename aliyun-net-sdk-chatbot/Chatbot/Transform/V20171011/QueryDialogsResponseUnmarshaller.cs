@@ -27,31 +27,34 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static QueryDialogsResponse Unmarshall(UnmarshallerContext context)
         {
-			QueryDialogsResponse queryDialogsResponse = new QueryDialogsResponse();
+            QueryDialogsResponse queryDialogsResponse = new QueryDialogsResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("QueryDialogs.RequestId"),
+                PageSize = context.IntegerValue("QueryDialogs.PageSize"),
+                PageNumber = context.IntegerValue("QueryDialogs.PageNumber"),
+                TotalCount = context.IntegerValue("QueryDialogs.TotalCount")
+            };
 
-			queryDialogsResponse.HttpResponse = context.HttpResponse;
-			queryDialogsResponse.RequestId = context.StringValue("QueryDialogs.RequestId");
-			queryDialogsResponse.PageSize = context.IntegerValue("QueryDialogs.PageSize");
-			queryDialogsResponse.PageNumber = context.IntegerValue("QueryDialogs.PageNumber");
-			queryDialogsResponse.TotalCount = context.IntegerValue("QueryDialogs.TotalCount");
-
-			List<QueryDialogsResponse.QueryDialogs_Dialog> queryDialogsResponse_dialogs = new List<QueryDialogsResponse.QueryDialogs_Dialog>();
+            List<QueryDialogsResponse.QueryDialogs_Dialog> queryDialogsResponse_dialogs = new List<QueryDialogsResponse.QueryDialogs_Dialog>();
 			for (int i = 0; i < context.Length("QueryDialogs.Dialogs.Length"); i++) {
-				QueryDialogsResponse.QueryDialogs_Dialog dialog = new QueryDialogsResponse.QueryDialogs_Dialog();
-				dialog.DialogId = context.LongValue("QueryDialogs.Dialogs["+ i +"].DialogId");
-				dialog.DialogName = context.StringValue("QueryDialogs.Dialogs["+ i +"].DialogName");
-				dialog.Description = context.StringValue("QueryDialogs.Dialogs["+ i +"].Description");
-				dialog.CreateTime = context.StringValue("QueryDialogs.Dialogs["+ i +"].CreateTime");
-				dialog.ModifyTime = context.StringValue("QueryDialogs.Dialogs["+ i +"].ModifyTime");
-				dialog.CreateUserId = context.StringValue("QueryDialogs.Dialogs["+ i +"].CreateUserId");
-				dialog.CreateUserName = context.StringValue("QueryDialogs.Dialogs["+ i +"].CreateUserName");
-				dialog.ModifyUserId = context.StringValue("QueryDialogs.Dialogs["+ i +"].ModifyUserId");
-				dialog.ModifyUserName = context.StringValue("QueryDialogs.Dialogs["+ i +"].ModifyUserName");
-				dialog.IsSampleDialog = context.BooleanValue("QueryDialogs.Dialogs["+ i +"].IsSampleDialog");
-				dialog.Status = context.IntegerValue("QueryDialogs.Dialogs["+ i +"].Status");
-				dialog.IsOnline = context.BooleanValue("QueryDialogs.Dialogs["+ i +"].IsOnline");
+                QueryDialogsResponse.QueryDialogs_Dialog dialog = new QueryDialogsResponse.QueryDialogs_Dialog
+                {
+                    DialogId = context.LongValue("QueryDialogs.Dialogs[" + i + "].DialogId"),
+                    DialogName = context.StringValue("QueryDialogs.Dialogs[" + i + "].DialogName"),
+                    Description = context.StringValue("QueryDialogs.Dialogs[" + i + "].Description"),
+                    CreateTime = context.StringValue("QueryDialogs.Dialogs[" + i + "].CreateTime"),
+                    ModifyTime = context.StringValue("QueryDialogs.Dialogs[" + i + "].ModifyTime"),
+                    CreateUserId = context.StringValue("QueryDialogs.Dialogs[" + i + "].CreateUserId"),
+                    CreateUserName = context.StringValue("QueryDialogs.Dialogs[" + i + "].CreateUserName"),
+                    ModifyUserId = context.StringValue("QueryDialogs.Dialogs[" + i + "].ModifyUserId"),
+                    ModifyUserName = context.StringValue("QueryDialogs.Dialogs[" + i + "].ModifyUserName"),
+                    IsSampleDialog = context.BooleanValue("QueryDialogs.Dialogs[" + i + "].IsSampleDialog"),
+                    Status = context.IntegerValue("QueryDialogs.Dialogs[" + i + "].Status"),
+                    IsOnline = context.BooleanValue("QueryDialogs.Dialogs[" + i + "].IsOnline")
+                };
 
-				queryDialogsResponse_dialogs.Add(dialog);
+                queryDialogsResponse_dialogs.Add(dialog);
 			}
 			queryDialogsResponse.Dialogs = queryDialogsResponse_dialogs;
         

@@ -68,7 +68,7 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			return false;
 		}
 
-        public override UpdateDialogFlowResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateDialogFlowResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UpdateDialogFlowResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

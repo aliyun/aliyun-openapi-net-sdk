@@ -68,7 +68,7 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			return false;
 		}
 
-        public override MoveKnowledgeCategoryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override MoveKnowledgeCategoryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return MoveKnowledgeCategoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

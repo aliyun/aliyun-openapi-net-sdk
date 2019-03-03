@@ -27,38 +27,45 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static QueryIntentsResponse Unmarshall(UnmarshallerContext context)
         {
-			QueryIntentsResponse queryIntentsResponse = new QueryIntentsResponse();
+            QueryIntentsResponse queryIntentsResponse = new QueryIntentsResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("QueryIntents.RequestId"),
+                PageNumber = context.IntegerValue("QueryIntents.PageNumber"),
+                PageSize = context.IntegerValue("QueryIntents.PageSize"),
+                TotalCount = context.IntegerValue("QueryIntents.TotalCount")
+            };
 
-			queryIntentsResponse.HttpResponse = context.HttpResponse;
-			queryIntentsResponse.RequestId = context.StringValue("QueryIntents.RequestId");
-			queryIntentsResponse.PageNumber = context.IntegerValue("QueryIntents.PageNumber");
-			queryIntentsResponse.PageSize = context.IntegerValue("QueryIntents.PageSize");
-			queryIntentsResponse.TotalCount = context.IntegerValue("QueryIntents.TotalCount");
-
-			List<QueryIntentsResponse.QueryIntents_Intent> queryIntentsResponse_intents = new List<QueryIntentsResponse.QueryIntents_Intent>();
+            List<QueryIntentsResponse.QueryIntents_Intent> queryIntentsResponse_intents = new List<QueryIntentsResponse.QueryIntents_Intent>();
 			for (int i = 0; i < context.Length("QueryIntents.Intents.Length"); i++) {
-				QueryIntentsResponse.QueryIntents_Intent intent = new QueryIntentsResponse.QueryIntents_Intent();
-				intent.IntentId = context.LongValue("QueryIntents.Intents["+ i +"].IntentId");
-				intent.Name = context.StringValue("QueryIntents.Intents["+ i +"].Name");
-				intent.CreateTime = context.StringValue("QueryIntents.Intents["+ i +"].CreateTime");
-				intent.ModifyTime = context.StringValue("QueryIntents.Intents["+ i +"].ModifyTime");
-				intent.CreateUserId = context.StringValue("QueryIntents.Intents["+ i +"].CreateUserId");
-				intent.CreateUserName = context.StringValue("QueryIntents.Intents["+ i +"].CreateUserName");
-				intent.ModifyUserId = context.StringValue("QueryIntents.Intents["+ i +"].ModifyUserId");
-				intent.ModifyUserName = context.StringValue("QueryIntents.Intents["+ i +"].ModifyUserName");
+                QueryIntentsResponse.QueryIntents_Intent intent = new QueryIntentsResponse.QueryIntents_Intent
+                {
+                    IntentId = context.LongValue("QueryIntents.Intents[" + i + "].IntentId"),
+                    Name = context.StringValue("QueryIntents.Intents[" + i + "].Name"),
+                    CreateTime = context.StringValue("QueryIntents.Intents[" + i + "].CreateTime"),
+                    ModifyTime = context.StringValue("QueryIntents.Intents[" + i + "].ModifyTime"),
+                    CreateUserId = context.StringValue("QueryIntents.Intents[" + i + "].CreateUserId"),
+                    CreateUserName = context.StringValue("QueryIntents.Intents[" + i + "].CreateUserName"),
+                    ModifyUserId = context.StringValue("QueryIntents.Intents[" + i + "].ModifyUserId"),
+                    ModifyUserName = context.StringValue("QueryIntents.Intents[" + i + "].ModifyUserName")
+                };
 
-				List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem> intent_userSay = new List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem>();
+                List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem> intent_userSay = new List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem>();
 				for (int j = 0; j < context.Length("QueryIntents.Intents["+ i +"].UserSay.Length"); j++) {
-					QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem userSayItem = new QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem();
-					userSayItem.Strict = context.BooleanValue("QueryIntents.Intents["+ i +"].UserSay["+ j +"].Strict");
+                    QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem userSayItem = new QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem
+                    {
+                        Strict = context.BooleanValue("QueryIntents.Intents[" + i + "].UserSay[" + j + "].Strict")
+                    };
 
-					List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem.QueryIntents_DataItem> userSayItem_data = new List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem.QueryIntents_DataItem>();
+                    List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem.QueryIntents_DataItem> userSayItem_data = new List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem.QueryIntents_DataItem>();
 					for (int k = 0; k < context.Length("QueryIntents.Intents["+ i +"].UserSay["+ j +"].Data.Length"); k++) {
-						QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem.QueryIntents_DataItem dataItem = new QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem.QueryIntents_DataItem();
-						dataItem.Text = context.StringValue("QueryIntents.Intents["+ i +"].UserSay["+ j +"].Data["+ k +"].Text");
-						dataItem.SlotId = context.StringValue("QueryIntents.Intents["+ i +"].UserSay["+ j +"].Data["+ k +"].SlotId");
+                        QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem.QueryIntents_DataItem dataItem = new QueryIntentsResponse.QueryIntents_Intent.QueryIntents_UserSayItem.QueryIntents_DataItem
+                        {
+                            Text = context.StringValue("QueryIntents.Intents[" + i + "].UserSay[" + j + "].Data[" + k + "].Text"),
+                            SlotId = context.StringValue("QueryIntents.Intents[" + i + "].UserSay[" + j + "].Data[" + k + "].SlotId")
+                        };
 
-						userSayItem_data.Add(dataItem);
+                        userSayItem_data.Add(dataItem);
 					}
 					userSayItem.Data = userSayItem_data;
 
@@ -68,11 +75,13 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
 
 				List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_RuleCheckItem> intent_ruleCheck = new List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_RuleCheckItem>();
 				for (int j = 0; j < context.Length("QueryIntents.Intents["+ i +"].RuleCheck.Length"); j++) {
-					QueryIntentsResponse.QueryIntents_Intent.QueryIntents_RuleCheckItem ruleCheckItem = new QueryIntentsResponse.QueryIntents_Intent.QueryIntents_RuleCheckItem();
-					ruleCheckItem.Text = context.StringValue("QueryIntents.Intents["+ i +"].RuleCheck["+ j +"].Text");
-					ruleCheckItem.Strict = context.BooleanValue("QueryIntents.Intents["+ i +"].RuleCheck["+ j +"].Strict");
+                    QueryIntentsResponse.QueryIntents_Intent.QueryIntents_RuleCheckItem ruleCheckItem = new QueryIntentsResponse.QueryIntents_Intent.QueryIntents_RuleCheckItem
+                    {
+                        Text = context.StringValue("QueryIntents.Intents[" + i + "].RuleCheck[" + j + "].Text"),
+                        Strict = context.BooleanValue("QueryIntents.Intents[" + i + "].RuleCheck[" + j + "].Strict")
+                    };
 
-					List<string> ruleCheckItem_warning = new List<string>();
+                    List<string> ruleCheckItem_warning = new List<string>();
 					for (int k = 0; k < context.Length("QueryIntents.Intents["+ i +"].RuleCheck["+ j +"].Warning.Length"); k++) {
 						ruleCheckItem_warning.Add(context.StringValue("QueryIntents.Intents["+ i +"].RuleCheck["+ j +"].Warning["+ k +"]"));
 					}
@@ -90,14 +99,16 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
 
 				List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_SlotItem> intent_slot = new List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_SlotItem>();
 				for (int j = 0; j < context.Length("QueryIntents.Intents["+ i +"].Slot.Length"); j++) {
-					QueryIntentsResponse.QueryIntents_Intent.QueryIntents_SlotItem slotItem = new QueryIntentsResponse.QueryIntents_Intent.QueryIntents_SlotItem();
-					slotItem.Name = context.StringValue("QueryIntents.Intents["+ i +"].Slot["+ j +"].Name");
-					slotItem._Value = context.StringValue("QueryIntents.Intents["+ i +"].Slot["+ j +"].Value");
-					slotItem.IsNecessary = context.BooleanValue("QueryIntents.Intents["+ i +"].Slot["+ j +"].IsNecessary");
-					slotItem.IsArray = context.BooleanValue("QueryIntents.Intents["+ i +"].Slot["+ j +"].IsArray");
-					slotItem.LifeSpan = context.IntegerValue("QueryIntents.Intents["+ i +"].Slot["+ j +"].LifeSpan");
+                    QueryIntentsResponse.QueryIntents_Intent.QueryIntents_SlotItem slotItem = new QueryIntentsResponse.QueryIntents_Intent.QueryIntents_SlotItem
+                    {
+                        Name = context.StringValue("QueryIntents.Intents[" + i + "].Slot[" + j + "].Name"),
+                        _Value = context.StringValue("QueryIntents.Intents[" + i + "].Slot[" + j + "].Value"),
+                        IsNecessary = context.BooleanValue("QueryIntents.Intents[" + i + "].Slot[" + j + "].IsNecessary"),
+                        IsArray = context.BooleanValue("QueryIntents.Intents[" + i + "].Slot[" + j + "].IsArray"),
+                        LifeSpan = context.IntegerValue("QueryIntents.Intents[" + i + "].Slot[" + j + "].LifeSpan")
+                    };
 
-					List<string> slotItem_question = new List<string>();
+                    List<string> slotItem_question = new List<string>();
 					for (int k = 0; k < context.Length("QueryIntents.Intents["+ i +"].Slot["+ j +"].Question.Length"); k++) {
 						slotItem_question.Add(context.StringValue("QueryIntents.Intents["+ i +"].Slot["+ j +"].Question["+ k +"]"));
 					}
@@ -105,11 +116,13 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
 
 					List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_SlotItem.QueryIntents_TagsItem> slotItem_tags = new List<QueryIntentsResponse.QueryIntents_Intent.QueryIntents_SlotItem.QueryIntents_TagsItem>();
 					for (int k = 0; k < context.Length("QueryIntents.Intents["+ i +"].Slot["+ j +"].Tags.Length"); k++) {
-						QueryIntentsResponse.QueryIntents_Intent.QueryIntents_SlotItem.QueryIntents_TagsItem tagsItem = new QueryIntentsResponse.QueryIntents_Intent.QueryIntents_SlotItem.QueryIntents_TagsItem();
-						tagsItem._Value = context.StringValue("QueryIntents.Intents["+ i +"].Slot["+ j +"].Tags["+ k +"].Value");
-						tagsItem.UserSayId = context.StringValue("QueryIntents.Intents["+ i +"].Slot["+ j +"].Tags["+ k +"].UserSayId");
+                        QueryIntentsResponse.QueryIntents_Intent.QueryIntents_SlotItem.QueryIntents_TagsItem tagsItem = new QueryIntentsResponse.QueryIntents_Intent.QueryIntents_SlotItem.QueryIntents_TagsItem
+                        {
+                            _Value = context.StringValue("QueryIntents.Intents[" + i + "].Slot[" + j + "].Tags[" + k + "].Value"),
+                            UserSayId = context.StringValue("QueryIntents.Intents[" + i + "].Slot[" + j + "].Tags[" + k + "].UserSayId")
+                        };
 
-						slotItem_tags.Add(tagsItem);
+                        slotItem_tags.Add(tagsItem);
 					}
 					slotItem.Tags = slotItem_tags;
 

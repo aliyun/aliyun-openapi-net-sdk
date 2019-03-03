@@ -27,13 +27,14 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static RemoveEntityMemberResponse Unmarshall(UnmarshallerContext context)
         {
-			RemoveEntityMemberResponse removeEntityMemberResponse = new RemoveEntityMemberResponse();
+            RemoveEntityMemberResponse removeEntityMemberResponse = new RemoveEntityMemberResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("RemoveEntityMember.RequestId"),
+                EntityId = context.StringValue("RemoveEntityMember.EntityId")
+            };
 
-			removeEntityMemberResponse.HttpResponse = context.HttpResponse;
-			removeEntityMemberResponse.RequestId = context.StringValue("RemoveEntityMember.RequestId");
-			removeEntityMemberResponse.EntityId = context.StringValue("RemoveEntityMember.EntityId");
-        
-			return removeEntityMemberResponse;
+            return removeEntityMemberResponse;
         }
     }
 }

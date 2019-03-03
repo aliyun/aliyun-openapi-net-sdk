@@ -53,7 +53,7 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			return false;
 		}
 
-        public override DeleteIntentResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteIntentResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteIntentResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

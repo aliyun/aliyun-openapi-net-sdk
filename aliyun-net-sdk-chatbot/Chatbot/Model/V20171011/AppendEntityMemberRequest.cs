@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			return false;
 		}
 
-        public override AppendEntityMemberResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AppendEntityMemberResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AppendEntityMemberResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

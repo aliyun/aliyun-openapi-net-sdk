@@ -27,23 +27,26 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static QueryCoreWordsResponse Unmarshall(UnmarshallerContext context)
         {
-			QueryCoreWordsResponse queryCoreWordsResponse = new QueryCoreWordsResponse();
+            QueryCoreWordsResponse queryCoreWordsResponse = new QueryCoreWordsResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("QueryCoreWords.RequestId"),
+                PageNumber = context.IntegerValue("QueryCoreWords.PageNumber"),
+                PageSize = context.IntegerValue("QueryCoreWords.PageSize"),
+                TotalCount = context.IntegerValue("QueryCoreWords.TotalCount")
+            };
 
-			queryCoreWordsResponse.HttpResponse = context.HttpResponse;
-			queryCoreWordsResponse.RequestId = context.StringValue("QueryCoreWords.RequestId");
-			queryCoreWordsResponse.PageNumber = context.IntegerValue("QueryCoreWords.PageNumber");
-			queryCoreWordsResponse.PageSize = context.IntegerValue("QueryCoreWords.PageSize");
-			queryCoreWordsResponse.TotalCount = context.IntegerValue("QueryCoreWords.TotalCount");
-
-			List<QueryCoreWordsResponse.QueryCoreWords_CoreWord> queryCoreWordsResponse_coreWords = new List<QueryCoreWordsResponse.QueryCoreWords_CoreWord>();
+            List<QueryCoreWordsResponse.QueryCoreWords_CoreWord> queryCoreWordsResponse_coreWords = new List<QueryCoreWordsResponse.QueryCoreWords_CoreWord>();
 			for (int i = 0; i < context.Length("QueryCoreWords.CoreWords.Length"); i++) {
-				QueryCoreWordsResponse.QueryCoreWords_CoreWord coreWord = new QueryCoreWordsResponse.QueryCoreWords_CoreWord();
-				coreWord.CoreWordCode = context.StringValue("QueryCoreWords.CoreWords["+ i +"].CoreWordCode");
-				coreWord.CoreWordName = context.StringValue("QueryCoreWords.CoreWords["+ i +"].CoreWordName");
-				coreWord.ModifyTime = context.StringValue("QueryCoreWords.CoreWords["+ i +"].ModifyTime");
-				coreWord.CreateTime = context.StringValue("QueryCoreWords.CoreWords["+ i +"].CreateTime");
+                QueryCoreWordsResponse.QueryCoreWords_CoreWord coreWord = new QueryCoreWordsResponse.QueryCoreWords_CoreWord
+                {
+                    CoreWordCode = context.StringValue("QueryCoreWords.CoreWords[" + i + "].CoreWordCode"),
+                    CoreWordName = context.StringValue("QueryCoreWords.CoreWords[" + i + "].CoreWordName"),
+                    ModifyTime = context.StringValue("QueryCoreWords.CoreWords[" + i + "].ModifyTime"),
+                    CreateTime = context.StringValue("QueryCoreWords.CoreWords[" + i + "].CreateTime")
+                };
 
-				List<string> coreWord_synonyms = new List<string>();
+                List<string> coreWord_synonyms = new List<string>();
 				for (int j = 0; j < context.Length("QueryCoreWords.CoreWords["+ i +"].Synonyms.Length"); j++) {
 					coreWord_synonyms.Add(context.StringValue("QueryCoreWords.CoreWords["+ i +"].Synonyms["+ j +"]"));
 				}

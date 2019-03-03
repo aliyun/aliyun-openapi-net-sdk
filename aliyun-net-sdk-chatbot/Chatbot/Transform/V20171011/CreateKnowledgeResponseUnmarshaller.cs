@@ -27,13 +27,14 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static CreateKnowledgeResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateKnowledgeResponse createKnowledgeResponse = new CreateKnowledgeResponse();
+            CreateKnowledgeResponse createKnowledgeResponse = new CreateKnowledgeResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("CreateKnowledge.RequestId"),
+                KnowledgeId = context.LongValue("CreateKnowledge.KnowledgeId")
+            };
 
-			createKnowledgeResponse.HttpResponse = context.HttpResponse;
-			createKnowledgeResponse.RequestId = context.StringValue("CreateKnowledge.RequestId");
-			createKnowledgeResponse.KnowledgeId = context.LongValue("CreateKnowledge.KnowledgeId");
-        
-			return createKnowledgeResponse;
+            return createKnowledgeResponse;
         }
     }
 }

@@ -27,12 +27,13 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static PublishDialogFlowResponse Unmarshall(UnmarshallerContext context)
         {
-			PublishDialogFlowResponse publishDialogFlowResponse = new PublishDialogFlowResponse();
+            PublishDialogFlowResponse publishDialogFlowResponse = new PublishDialogFlowResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("PublishDialogFlow.RequestId")
+            };
 
-			publishDialogFlowResponse.HttpResponse = context.HttpResponse;
-			publishDialogFlowResponse.RequestId = context.StringValue("PublishDialogFlow.RequestId");
-        
-			return publishDialogFlowResponse;
+            return publishDialogFlowResponse;
         }
     }
 }

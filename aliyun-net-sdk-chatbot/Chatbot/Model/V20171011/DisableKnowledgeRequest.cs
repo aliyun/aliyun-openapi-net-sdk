@@ -53,7 +53,7 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			return false;
 		}
 
-        public override DisableKnowledgeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DisableKnowledgeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DisableKnowledgeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

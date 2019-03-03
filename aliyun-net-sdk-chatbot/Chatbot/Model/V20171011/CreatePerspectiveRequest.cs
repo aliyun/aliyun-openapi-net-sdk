@@ -53,7 +53,7 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 			return false;
 		}
 
-        public override CreatePerspectiveResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreatePerspectiveResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreatePerspectiveResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

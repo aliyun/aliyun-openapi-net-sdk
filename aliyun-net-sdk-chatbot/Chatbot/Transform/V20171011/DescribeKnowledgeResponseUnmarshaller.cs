@@ -27,24 +27,25 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static DescribeKnowledgeResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeKnowledgeResponse describeKnowledgeResponse = new DescribeKnowledgeResponse();
+            DescribeKnowledgeResponse describeKnowledgeResponse = new DescribeKnowledgeResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("DescribeKnowledge.RequestId"),
+                EndDate = context.StringValue("DescribeKnowledge.EndDate"),
+                CreateUserName = context.StringValue("DescribeKnowledge.CreateUserName"),
+                KnowledgeTitle = context.StringValue("DescribeKnowledge.KnowledgeTitle"),
+                Version = context.IntegerValue("DescribeKnowledge.Version"),
+                KnowledgeId = context.LongValue("DescribeKnowledge.KnowledgeId"),
+                ModifyUserName = context.StringValue("DescribeKnowledge.ModifyUserName"),
+                ModifyTime = context.StringValue("DescribeKnowledge.ModifyTime"),
+                CreateTime = context.StringValue("DescribeKnowledge.CreateTime"),
+                KnowledgeType = context.IntegerValue("DescribeKnowledge.KnowledgeType"),
+                CategoryId = context.LongValue("DescribeKnowledge.CategoryId"),
+                StartDate = context.StringValue("DescribeKnowledge.StartDate"),
+                KnowledgeStatus = context.IntegerValue("DescribeKnowledge.KnowledgeStatus")
+            };
 
-			describeKnowledgeResponse.HttpResponse = context.HttpResponse;
-			describeKnowledgeResponse.RequestId = context.StringValue("DescribeKnowledge.RequestId");
-			describeKnowledgeResponse.EndDate = context.StringValue("DescribeKnowledge.EndDate");
-			describeKnowledgeResponse.CreateUserName = context.StringValue("DescribeKnowledge.CreateUserName");
-			describeKnowledgeResponse.KnowledgeTitle = context.StringValue("DescribeKnowledge.KnowledgeTitle");
-			describeKnowledgeResponse.Version = context.IntegerValue("DescribeKnowledge.Version");
-			describeKnowledgeResponse.KnowledgeId = context.LongValue("DescribeKnowledge.KnowledgeId");
-			describeKnowledgeResponse.ModifyUserName = context.StringValue("DescribeKnowledge.ModifyUserName");
-			describeKnowledgeResponse.ModifyTime = context.StringValue("DescribeKnowledge.ModifyTime");
-			describeKnowledgeResponse.CreateTime = context.StringValue("DescribeKnowledge.CreateTime");
-			describeKnowledgeResponse.KnowledgeType = context.IntegerValue("DescribeKnowledge.KnowledgeType");
-			describeKnowledgeResponse.CategoryId = context.LongValue("DescribeKnowledge.CategoryId");
-			describeKnowledgeResponse.StartDate = context.StringValue("DescribeKnowledge.StartDate");
-			describeKnowledgeResponse.KnowledgeStatus = context.IntegerValue("DescribeKnowledge.KnowledgeStatus");
-
-			List<string> describeKnowledgeResponse_keyWords = new List<string>();
+            List<string> describeKnowledgeResponse_keyWords = new List<string>();
 			for (int i = 0; i < context.Length("DescribeKnowledge.KeyWords.Length"); i++) {
 				describeKnowledgeResponse_keyWords.Add(context.StringValue("DescribeKnowledge.KeyWords["+ i +"]"));
 			}
@@ -58,38 +59,44 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
 
 			List<DescribeKnowledgeResponse.DescribeKnowledge_Outline> describeKnowledgeResponse_outlines = new List<DescribeKnowledgeResponse.DescribeKnowledge_Outline>();
 			for (int i = 0; i < context.Length("DescribeKnowledge.Outlines.Length"); i++) {
-				DescribeKnowledgeResponse.DescribeKnowledge_Outline outline = new DescribeKnowledgeResponse.DescribeKnowledge_Outline();
-				outline.KnowledgeId = context.LongValue("DescribeKnowledge.Outlines["+ i +"].KnowledgeId");
-				outline.Title = context.StringValue("DescribeKnowledge.Outlines["+ i +"].Title");
-				outline.OutlineId = context.LongValue("DescribeKnowledge.Outlines["+ i +"].OutlineId");
+                DescribeKnowledgeResponse.DescribeKnowledge_Outline outline = new DescribeKnowledgeResponse.DescribeKnowledge_Outline
+                {
+                    KnowledgeId = context.LongValue("DescribeKnowledge.Outlines[" + i + "].KnowledgeId"),
+                    Title = context.StringValue("DescribeKnowledge.Outlines[" + i + "].Title"),
+                    OutlineId = context.LongValue("DescribeKnowledge.Outlines[" + i + "].OutlineId")
+                };
 
-				describeKnowledgeResponse_outlines.Add(outline);
+                describeKnowledgeResponse_outlines.Add(outline);
 			}
 			describeKnowledgeResponse.Outlines = describeKnowledgeResponse_outlines;
 
 			List<DescribeKnowledgeResponse.DescribeKnowledge_SimQuestion> describeKnowledgeResponse_simQuestions = new List<DescribeKnowledgeResponse.DescribeKnowledge_SimQuestion>();
 			for (int i = 0; i < context.Length("DescribeKnowledge.SimQuestions.Length"); i++) {
-				DescribeKnowledgeResponse.DescribeKnowledge_SimQuestion simQuestion = new DescribeKnowledgeResponse.DescribeKnowledge_SimQuestion();
-				simQuestion.ModifyTime = context.StringValue("DescribeKnowledge.SimQuestions["+ i +"].ModifyTime");
-				simQuestion.CreateTime = context.StringValue("DescribeKnowledge.SimQuestions["+ i +"].CreateTime");
-				simQuestion.SimQuestionId = context.LongValue("DescribeKnowledge.SimQuestions["+ i +"].SimQuestionId");
-				simQuestion.Title = context.StringValue("DescribeKnowledge.SimQuestions["+ i +"].Title");
+                DescribeKnowledgeResponse.DescribeKnowledge_SimQuestion simQuestion = new DescribeKnowledgeResponse.DescribeKnowledge_SimQuestion
+                {
+                    ModifyTime = context.StringValue("DescribeKnowledge.SimQuestions[" + i + "].ModifyTime"),
+                    CreateTime = context.StringValue("DescribeKnowledge.SimQuestions[" + i + "].CreateTime"),
+                    SimQuestionId = context.LongValue("DescribeKnowledge.SimQuestions[" + i + "].SimQuestionId"),
+                    Title = context.StringValue("DescribeKnowledge.SimQuestions[" + i + "].Title")
+                };
 
-				describeKnowledgeResponse_simQuestions.Add(simQuestion);
+                describeKnowledgeResponse_simQuestions.Add(simQuestion);
 			}
 			describeKnowledgeResponse.SimQuestions = describeKnowledgeResponse_simQuestions;
 
 			List<DescribeKnowledgeResponse.DescribeKnowledge_Solution> describeKnowledgeResponse_solutions = new List<DescribeKnowledgeResponse.DescribeKnowledge_Solution>();
 			for (int i = 0; i < context.Length("DescribeKnowledge.Solutions.Length"); i++) {
-				DescribeKnowledgeResponse.DescribeKnowledge_Solution solution = new DescribeKnowledgeResponse.DescribeKnowledge_Solution();
-				solution.Summary = context.StringValue("DescribeKnowledge.Solutions["+ i +"].Summary");
-				solution.ModifyTime = context.StringValue("DescribeKnowledge.Solutions["+ i +"].ModifyTime");
-				solution.CreateTime = context.StringValue("DescribeKnowledge.Solutions["+ i +"].CreateTime");
-				solution.SolutionId = context.LongValue("DescribeKnowledge.Solutions["+ i +"].SolutionId");
-				solution.Content = context.StringValue("DescribeKnowledge.Solutions["+ i +"].Content");
-				solution.PlainText = context.StringValue("DescribeKnowledge.Solutions["+ i +"].PlainText");
+                DescribeKnowledgeResponse.DescribeKnowledge_Solution solution = new DescribeKnowledgeResponse.DescribeKnowledge_Solution
+                {
+                    Summary = context.StringValue("DescribeKnowledge.Solutions[" + i + "].Summary"),
+                    ModifyTime = context.StringValue("DescribeKnowledge.Solutions[" + i + "].ModifyTime"),
+                    CreateTime = context.StringValue("DescribeKnowledge.Solutions[" + i + "].CreateTime"),
+                    SolutionId = context.LongValue("DescribeKnowledge.Solutions[" + i + "].SolutionId"),
+                    Content = context.StringValue("DescribeKnowledge.Solutions[" + i + "].Content"),
+                    PlainText = context.StringValue("DescribeKnowledge.Solutions[" + i + "].PlainText")
+                };
 
-				List<string> solution_perspectiveIds = new List<string>();
+                List<string> solution_perspectiveIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeKnowledge.Solutions["+ i +"].PerspectiveIds.Length"); j++) {
 					solution_perspectiveIds.Add(context.StringValue("DescribeKnowledge.Solutions["+ i +"].PerspectiveIds["+ j +"]"));
 				}

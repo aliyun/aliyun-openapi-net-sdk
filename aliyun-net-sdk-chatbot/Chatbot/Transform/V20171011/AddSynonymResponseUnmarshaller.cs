@@ -27,12 +27,13 @@ namespace Aliyun.Acs.Chatbot.Transform.V20171011
     {
         public static AddSynonymResponse Unmarshall(UnmarshallerContext context)
         {
-			AddSynonymResponse addSynonymResponse = new AddSynonymResponse();
+            AddSynonymResponse addSynonymResponse = new AddSynonymResponse
+            {
+                HttpResponse = context.HttpResponse,
+                RequestId = context.StringValue("AddSynonym.RequestId")
+            };
 
-			addSynonymResponse.HttpResponse = context.HttpResponse;
-			addSynonymResponse.RequestId = context.StringValue("AddSynonym.RequestId");
-        
-			return addSynonymResponse;
+            return addSynonymResponse;
         }
     }
 }
