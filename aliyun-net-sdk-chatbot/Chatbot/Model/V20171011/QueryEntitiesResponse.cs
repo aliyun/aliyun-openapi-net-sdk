@@ -23,265 +23,46 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class QueryEntitiesResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public int? PageNumber { get; set; }
 
-		private int? pageNumber;
+        public int? PageSize { get; set; }
 
-		private int? pageSize;
+        public int? TotalCount { get; set; }
 
-		private int? totalCount;
+        public List<QueryEntities_Entity> Entities { get; set; }
 
-		private List<QueryEntities_Entity> entities;
-
-		public string RequestId
+        public class QueryEntities_Entity
 		{
-			get
+            public long? EntityId { get; set; }
+
+            public string EntityName { get; set; }
+
+            public string EntityType { get; set; }
+
+            public string Regex { get; set; }
+
+            public string CreateTime { get; set; }
+
+            public string ModifyTime { get; set; }
+
+            public string CreateUserId { get; set; }
+
+            public string CreateUserName { get; set; }
+
+            public string ModifyUserId { get; set; }
+
+            public string ModifyUserName { get; set; }
+
+            public List<QueryEntities_MembersItem> Members { get; set; }
+
+            public class QueryEntities_MembersItem
 			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+                public string MemberName { get; set; }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
-		public List<QueryEntities_Entity> Entities
-		{
-			get
-			{
-				return entities;
-			}
-			set	
-			{
-				entities = value;
-			}
-		}
-
-		public class QueryEntities_Entity
-		{
-
-			private long? entityId;
-
-			private string entityName;
-
-			private string entityType;
-
-			private string regex;
-
-			private string createTime;
-
-			private string modifyTime;
-
-			private string createUserId;
-
-			private string createUserName;
-
-			private string modifyUserId;
-
-			private string modifyUserName;
-
-			private List<QueryEntities_MembersItem> members;
-
-			public long? EntityId
-			{
-				get
-				{
-					return entityId;
-				}
-				set	
-				{
-					entityId = value;
-				}
-			}
-
-			public string EntityName
-			{
-				get
-				{
-					return entityName;
-				}
-				set	
-				{
-					entityName = value;
-				}
-			}
-
-			public string EntityType
-			{
-				get
-				{
-					return entityType;
-				}
-				set	
-				{
-					entityType = value;
-				}
-			}
-
-			public string Regex
-			{
-				get
-				{
-					return regex;
-				}
-				set	
-				{
-					regex = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
-
-			public string CreateUserId
-			{
-				get
-				{
-					return createUserId;
-				}
-				set	
-				{
-					createUserId = value;
-				}
-			}
-
-			public string CreateUserName
-			{
-				get
-				{
-					return createUserName;
-				}
-				set	
-				{
-					createUserName = value;
-				}
-			}
-
-			public string ModifyUserId
-			{
-				get
-				{
-					return modifyUserId;
-				}
-				set	
-				{
-					modifyUserId = value;
-				}
-			}
-
-			public string ModifyUserName
-			{
-				get
-				{
-					return modifyUserName;
-				}
-				set	
-				{
-					modifyUserName = value;
-				}
-			}
-
-			public List<QueryEntities_MembersItem> Members
-			{
-				get
-				{
-					return members;
-				}
-				set	
-				{
-					members = value;
-				}
-			}
-
-			public class QueryEntities_MembersItem
-			{
-
-				private string memberName;
-
-				private List<string> synonyms;
-
-				public string MemberName
-				{
-					get
-					{
-						return memberName;
-					}
-					set	
-					{
-						memberName = value;
-					}
-				}
-
-				public List<string> Synonyms
-				{
-					get
-					{
-						return synonyms;
-					}
-					set	
-					{
-						synonyms = value;
-					}
-				}
-			}
+                public List<string> Synonyms { get; set; }
+            }
 		}
 	}
 }

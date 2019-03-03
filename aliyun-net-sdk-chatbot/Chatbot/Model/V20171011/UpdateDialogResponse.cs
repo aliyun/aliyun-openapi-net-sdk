@@ -17,25 +17,12 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
-	public class UpdateDialogResponse : AcsResponse
+    public class UpdateDialogResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+        public new string RequestId { get; set; }
+    }
 }

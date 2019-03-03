@@ -23,1025 +23,181 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class DescribeDialogFlowResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public long? DialogId { get; set; }
 
-		private long? dialogId;
+        public string InstanceId { get; set; }
 
-		private string instanceId;
+        public string DialogName { get; set; }
 
-		private string dialogName;
+        public long? ModuleId { get; set; }
 
-		private long? moduleId;
+        public string ModuleName { get; set; }
 
-		private string moduleName;
+        public string Templates { get; set; }
 
-		private string templates;
+        public string CreateTime { get; set; }
 
-		private string createTime;
+        public string ModifyTime { get; set; }
 
-		private string modifyTime;
+        public string CreateUserId { get; set; }
 
-		private string createUserId;
+        public string CreateUserName { get; set; }
 
-		private string createUserName;
+        public string ModifyUserId { get; set; }
 
-		private string modifyUserId;
+        public string ModifyUserName { get; set; }
 
-		private string modifyUserName;
+        public string AccountId { get; set; }
 
-		private string accountId;
+        public string Tags { get; set; }
 
-		private string tags;
+        public int? Status { get; set; }
 
-		private int? status;
+        public DescribeDialogFlow_ModuleDefinition ModuleDefinition { get; set; }
 
-		private DescribeDialogFlow_ModuleDefinition moduleDefinition;
-
-		public string RequestId
+        public class DescribeDialogFlow_ModuleDefinition
 		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+            public List<DescribeDialogFlow_NodesItem> Nodes { get; set; }
 
-		public long? DialogId
-		{
-			get
-			{
-				return dialogId;
-			}
-			set	
-			{
-				dialogId = value;
-			}
-		}
+            public List<DescribeDialogFlow_EdgesItem> Edges { get; set; }
 
-		public string InstanceId
-		{
-			get
+            public class DescribeDialogFlow_NodesItem
 			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
+                public string Code { get; set; }
 
-		public string DialogName
-		{
-			get
-			{
-				return dialogName;
-			}
-			set	
-			{
-				dialogName = value;
-			}
-		}
+                public string ComponentCode { get; set; }
 
-		public long? ModuleId
-		{
-			get
-			{
-				return moduleId;
-			}
-			set	
-			{
-				moduleId = value;
-			}
-		}
+                public bool? PluginDataUpdate { get; set; }
 
-		public string ModuleName
-		{
-			get
-			{
-				return moduleName;
-			}
-			set	
-			{
-				moduleName = value;
-			}
-		}
+                public string Xx { get; set; }
 
-		public string Templates
-		{
-			get
-			{
-				return templates;
-			}
-			set	
-			{
-				templates = value;
-			}
-		}
+                public string Yy { get; set; }
 
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
+                public string Id { get; set; }
 
-		public string ModifyTime
-		{
-			get
-			{
-				return modifyTime;
-			}
-			set	
-			{
-				modifyTime = value;
-			}
-		}
+                public string Label { get; set; }
 
-		public string CreateUserId
-		{
-			get
-			{
-				return createUserId;
-			}
-			set	
-			{
-				createUserId = value;
-			}
-		}
+                public DescribeDialogFlow_PluginData PluginData { get; set; }
 
-		public string CreateUserName
-		{
-			get
-			{
-				return createUserName;
-			}
-			set	
-			{
-				createUserName = value;
-			}
-		}
-
-		public string ModifyUserId
-		{
-			get
-			{
-				return modifyUserId;
-			}
-			set	
-			{
-				modifyUserId = value;
-			}
-		}
-
-		public string ModifyUserName
-		{
-			get
-			{
-				return modifyUserName;
-			}
-			set	
-			{
-				modifyUserName = value;
-			}
-		}
-
-		public string AccountId
-		{
-			get
-			{
-				return accountId;
-			}
-			set	
-			{
-				accountId = value;
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-			}
-		}
-
-		public int? Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-
-		public DescribeDialogFlow_ModuleDefinition ModuleDefinition
-		{
-			get
-			{
-				return moduleDefinition;
-			}
-			set	
-			{
-				moduleDefinition = value;
-			}
-		}
-
-		public class DescribeDialogFlow_ModuleDefinition
-		{
-
-			private List<DescribeDialogFlow_NodesItem> nodes;
-
-			private List<DescribeDialogFlow_EdgesItem> edges;
-
-			public List<DescribeDialogFlow_NodesItem> Nodes
-			{
-				get
+                public class DescribeDialogFlow_PluginData
 				{
-					return nodes;
-				}
-				set	
-				{
-					nodes = value;
-				}
-			}
+                    public DescribeDialogFlow_Entry Entry { get; set; }
 
-			public List<DescribeDialogFlow_EdgesItem> Edges
-			{
-				get
-				{
-					return edges;
-				}
-				set	
-				{
-					edges = value;
-				}
-			}
+                    public DescribeDialogFlow_Function Function { get; set; }
 
-			public class DescribeDialogFlow_NodesItem
-			{
+                    public DescribeDialogFlow_Response Response { get; set; }
 
-				private string code;
+                    public DescribeDialogFlow_Slot Slot { get; set; }
 
-				private string componentCode;
-
-				private bool? pluginDataUpdate;
-
-				private string xx;
-
-				private string yy;
-
-				private string id;
-
-				private string label;
-
-				private DescribeDialogFlow_PluginData pluginData;
-
-				public string Code
-				{
-					get
+                    public class DescribeDialogFlow_Entry
 					{
-						return code;
-					}
-					set	
-					{
-						code = value;
-					}
-				}
+                        public DescribeDialogFlow_PluginFieldDataEntry PluginFieldDataEntry { get; set; }
 
-				public string ComponentCode
-				{
-					get
-					{
-						return componentCode;
-					}
-					set	
-					{
-						componentCode = value;
-					}
-				}
-
-				public bool? PluginDataUpdate
-				{
-					get
-					{
-						return pluginDataUpdate;
-					}
-					set	
-					{
-						pluginDataUpdate = value;
-					}
-				}
-
-				public string Xx
-				{
-					get
-					{
-						return xx;
-					}
-					set	
-					{
-						xx = value;
-					}
-				}
-
-				public string Yy
-				{
-					get
-					{
-						return yy;
-					}
-					set	
-					{
-						yy = value;
-					}
-				}
-
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string Label
-				{
-					get
-					{
-						return label;
-					}
-					set	
-					{
-						label = value;
-					}
-				}
-
-				public DescribeDialogFlow_PluginData PluginData
-				{
-					get
-					{
-						return pluginData;
-					}
-					set	
-					{
-						pluginData = value;
-					}
-				}
-
-				public class DescribeDialogFlow_PluginData
-				{
-
-					private DescribeDialogFlow_Entry entry;
-
-					private DescribeDialogFlow_Function function;
-
-					private DescribeDialogFlow_Response response;
-
-					private DescribeDialogFlow_Slot slot;
-
-					public DescribeDialogFlow_Entry Entry
-					{
-						get
+                        public class DescribeDialogFlow_PluginFieldDataEntry
 						{
-							return entry;
-						}
-						set	
-						{
-							entry = value;
-						}
-					}
+                            public int? LifeSpan { get; set; }
 
-					public DescribeDialogFlow_Function Function
-					{
-						get
-						{
-							return function;
-						}
-						set	
-						{
-							function = value;
-						}
-					}
+                            public string Name { get; set; }
 
-					public DescribeDialogFlow_Response Response
-					{
-						get
-						{
-							return response;
-						}
-						set	
-						{
-							response = value;
-						}
-					}
+                            public List<DescribeDialogFlow_ContentEntryItem> ContentEntry { get; set; }
 
-					public DescribeDialogFlow_Slot Slot
-					{
-						get
-						{
-							return slot;
-						}
-						set	
-						{
-							slot = value;
-						}
-					}
-
-					public class DescribeDialogFlow_Entry
-					{
-
-						private DescribeDialogFlow_PluginFieldDataEntry pluginFieldDataEntry;
-
-						public DescribeDialogFlow_PluginFieldDataEntry PluginFieldDataEntry
-						{
-							get
+                            public class DescribeDialogFlow_ContentEntryItem
 							{
-								return pluginFieldDataEntry;
-							}
-							set	
-							{
-								pluginFieldDataEntry = value;
-							}
-						}
+                                public List<DescribeDialogFlow_ConditionEntriesItem> ConditionEntries { get; set; }
 
-						public class DescribeDialogFlow_PluginFieldDataEntry
-						{
-
-							private int? lifeSpan;
-
-							private string name;
-
-							private List<DescribeDialogFlow_ContentEntryItem> contentEntry;
-
-							public int? LifeSpan
-							{
-								get
+                                public class DescribeDialogFlow_ConditionEntriesItem
 								{
-									return lifeSpan;
-								}
-								set	
-								{
-									lifeSpan = value;
-								}
-							}
+                                    public string Id { get; set; }
 
-							public string Name
-							{
-								get
-								{
-									return name;
-								}
-								set	
-								{
-									name = value;
-								}
-							}
+                                    public string Term { get; set; }
 
-							public List<DescribeDialogFlow_ContentEntryItem> ContentEntry
-							{
-								get
-								{
-									return contentEntry;
-								}
-								set	
-								{
-									contentEntry = value;
-								}
-							}
+                                    public string Name { get; set; }
 
-							public class DescribeDialogFlow_ContentEntryItem
-							{
+                                    public string Type { get; set; }
 
-								private List<DescribeDialogFlow_ConditionEntriesItem> conditionEntries;
-
-								public List<DescribeDialogFlow_ConditionEntriesItem> ConditionEntries
-								{
-									get
-									{
-										return conditionEntries;
-									}
-									set	
-									{
-										conditionEntries = value;
-									}
-								}
-
-								public class DescribeDialogFlow_ConditionEntriesItem
-								{
-
-									private string id;
-
-									private string term;
-
-									private string name;
-
-									private string type;
-
-									private string _value;
-
-									public string Id
-									{
-										get
-										{
-											return id;
-										}
-										set	
-										{
-											id = value;
-										}
-									}
-
-									public string Term
-									{
-										get
-										{
-											return term;
-										}
-										set	
-										{
-											term = value;
-										}
-									}
-
-									public string Name
-									{
-										get
-										{
-											return name;
-										}
-										set	
-										{
-											name = value;
-										}
-									}
-
-									public string Type
-									{
-										get
-										{
-											return type;
-										}
-										set	
-										{
-											type = value;
-										}
-									}
-
-									public string _Value
-									{
-										get
-										{
-											return _value;
-										}
-										set	
-										{
-											_value = value;
-										}
-									}
-								}
+                                    public string _Value { get; set; }
+                                }
 							}
 						}
 					}
 
 					public class DescribeDialogFlow_Function
 					{
+                        public DescribeDialogFlow_PluginFieldDataFunction PluginFieldDataFunction { get; set; }
 
-						private DescribeDialogFlow_PluginFieldDataFunction pluginFieldDataFunction;
-
-						public DescribeDialogFlow_PluginFieldDataFunction PluginFieldDataFunction
+                        public class DescribeDialogFlow_PluginFieldDataFunction
 						{
-							get
+                            public string Code { get; set; }
+
+                            public string Description { get; set; }
+
+                            public string Function { get; set; }
+
+                            public string Name { get; set; }
+
+                            public string AliyunService { get; set; }
+
+                            public string AliyunFunction { get; set; }
+
+                            public string EndPoint { get; set; }
+
+                            public string Type { get; set; }
+
+                            public string _Params { get; set; }
+
+                            public List<DescribeDialogFlow_SwitchItem> _Switch { get; set; }
+
+                            public class DescribeDialogFlow_SwitchItem
 							{
-								return pluginFieldDataFunction;
-							}
-							set	
-							{
-								pluginFieldDataFunction = value;
-							}
-						}
+                                public string Id { get; set; }
 
-						public class DescribeDialogFlow_PluginFieldDataFunction
-						{
+                                public string Label { get; set; }
 
-							private string code;
+                                public string Type { get; set; }
 
-							private string description;
+                                public string _Value { get; set; }
 
-							private string function;
-
-							private string name;
-
-							private string aliyunService;
-
-							private string aliyunFunction;
-
-							private string endPoint;
-
-							private string type;
-
-							private string _params;
-
-							private List<DescribeDialogFlow_SwitchItem> _switch;
-
-							public string Code
-							{
-								get
-								{
-									return code;
-								}
-								set	
-								{
-									code = value;
-								}
-							}
-
-							public string Description
-							{
-								get
-								{
-									return description;
-								}
-								set	
-								{
-									description = value;
-								}
-							}
-
-							public string Function
-							{
-								get
-								{
-									return function;
-								}
-								set	
-								{
-									function = value;
-								}
-							}
-
-							public string Name
-							{
-								get
-								{
-									return name;
-								}
-								set	
-								{
-									name = value;
-								}
-							}
-
-							public string AliyunService
-							{
-								get
-								{
-									return aliyunService;
-								}
-								set	
-								{
-									aliyunService = value;
-								}
-							}
-
-							public string AliyunFunction
-							{
-								get
-								{
-									return aliyunFunction;
-								}
-								set	
-								{
-									aliyunFunction = value;
-								}
-							}
-
-							public string EndPoint
-							{
-								get
-								{
-									return endPoint;
-								}
-								set	
-								{
-									endPoint = value;
-								}
-							}
-
-							public string Type
-							{
-								get
-								{
-									return type;
-								}
-								set	
-								{
-									type = value;
-								}
-							}
-
-							public string _Params
-							{
-								get
-								{
-									return _params;
-								}
-								set	
-								{
-									_params = value;
-								}
-							}
-
-							public List<DescribeDialogFlow_SwitchItem> _Switch
-							{
-								get
-								{
-									return _switch;
-								}
-								set	
-								{
-									_switch = value;
-								}
-							}
-
-							public class DescribeDialogFlow_SwitchItem
-							{
-
-								private string id;
-
-								private string label;
-
-								private string type;
-
-								private string _value;
-
-								private string name;
-
-								public string Id
-								{
-									get
-									{
-										return id;
-									}
-									set	
-									{
-										id = value;
-									}
-								}
-
-								public string Label
-								{
-									get
-									{
-										return label;
-									}
-									set	
-									{
-										label = value;
-									}
-								}
-
-								public string Type
-								{
-									get
-									{
-										return type;
-									}
-									set	
-									{
-										type = value;
-									}
-								}
-
-								public string _Value
-								{
-									get
-									{
-										return _value;
-									}
-									set	
-									{
-										_value = value;
-									}
-								}
-
-								public string Name
-								{
-									get
-									{
-										return name;
-									}
-									set	
-									{
-										name = value;
-									}
-								}
-							}
+                                public string Name { get; set; }
+                            }
 						}
 					}
 
 					public class DescribeDialogFlow_Response
 					{
+                        public DescribeDialogFlow_PluginFieldDataResponse PluginFieldDataResponse { get; set; }
 
-						private DescribeDialogFlow_PluginFieldDataResponse pluginFieldDataResponse;
-
-						public DescribeDialogFlow_PluginFieldDataResponse PluginFieldDataResponse
+                        public class DescribeDialogFlow_PluginFieldDataResponse
 						{
-							get
+                            public string Name { get; set; }
+
+                            public DescribeDialogFlow_ContentResponse ContentResponse { get; set; }
+
+                            public class DescribeDialogFlow_ContentResponse
 							{
-								return pluginFieldDataResponse;
-							}
-							set	
-							{
-								pluginFieldDataResponse = value;
-							}
-						}
+                                public string Text { get; set; }
 
-						public class DescribeDialogFlow_PluginFieldDataResponse
-						{
+                                public string Type { get; set; }
 
-							private string name;
+                                public string Image { get; set; }
 
-							private DescribeDialogFlow_ContentResponse contentResponse;
+                                public DescribeDialogFlow_ButtonList ButtonList { get; set; }
 
-							public string Name
-							{
-								get
+                                public class DescribeDialogFlow_ButtonList
 								{
-									return name;
-								}
-								set	
-								{
-									name = value;
-								}
-							}
+                                    public string Intro { get; set; }
 
-							public DescribeDialogFlow_ContentResponse ContentResponse
-							{
-								get
-								{
-									return contentResponse;
-								}
-								set	
-								{
-									contentResponse = value;
-								}
-							}
+                                    public List<DescribeDialogFlow_ButtonItem> Button { get; set; }
 
-							public class DescribeDialogFlow_ContentResponse
-							{
-
-								private string text;
-
-								private string type;
-
-								private string image;
-
-								private DescribeDialogFlow_ButtonList buttonList;
-
-								public string Text
-								{
-									get
+                                    public class DescribeDialogFlow_ButtonItem
 									{
-										return text;
-									}
-									set	
-									{
-										text = value;
-									}
-								}
+                                        public string Name { get; set; }
 
-								public string Type
-								{
-									get
-									{
-										return type;
-									}
-									set	
-									{
-										type = value;
-									}
-								}
+                                        public string Type { get; set; }
 
-								public string Image
-								{
-									get
-									{
-										return image;
-									}
-									set	
-									{
-										image = value;
-									}
-								}
-
-								public DescribeDialogFlow_ButtonList ButtonList
-								{
-									get
-									{
-										return buttonList;
-									}
-									set	
-									{
-										buttonList = value;
-									}
-								}
-
-								public class DescribeDialogFlow_ButtonList
-								{
-
-									private string intro;
-
-									private List<DescribeDialogFlow_ButtonItem> button;
-
-									public string Intro
-									{
-										get
-										{
-											return intro;
-										}
-										set	
-										{
-											intro = value;
-										}
-									}
-
-									public List<DescribeDialogFlow_ButtonItem> Button
-									{
-										get
-										{
-											return button;
-										}
-										set	
-										{
-											button = value;
-										}
-									}
-
-									public class DescribeDialogFlow_ButtonItem
-									{
-
-										private string name;
-
-										private string type;
-
-										private string text;
-
-										public string Name
-										{
-											get
-											{
-												return name;
-											}
-											set	
-											{
-												name = value;
-											}
-										}
-
-										public string Type
-										{
-											get
-											{
-												return type;
-											}
-											set	
-											{
-												type = value;
-											}
-										}
-
-										public string Text
-										{
-											get
-											{
-												return text;
-											}
-											set	
-											{
-												text = value;
-											}
-										}
-									}
+                                        public string Text { get; set; }
+                                    }
 								}
 							}
 						}
@@ -1049,181 +205,34 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 
 					public class DescribeDialogFlow_Slot
 					{
+                        public DescribeDialogFlow_PluginFieldDataSlot PluginFieldDataSlot { get; set; }
 
-						private DescribeDialogFlow_PluginFieldDataSlot pluginFieldDataSlot;
-
-						public DescribeDialogFlow_PluginFieldDataSlot PluginFieldDataSlot
+                        public class DescribeDialogFlow_PluginFieldDataSlot
 						{
-							get
+                            public string IntentId { get; set; }
+
+                            public string IntentName { get; set; }
+
+                            public bool? IsSysIntent { get; set; }
+
+                            public string Name { get; set; }
+
+                            public List<DescribeDialogFlow_ContentSlotItem> ContentSlot { get; set; }
+
+                            public class DescribeDialogFlow_ContentSlotItem
 							{
-								return pluginFieldDataSlot;
-							}
-							set	
-							{
-								pluginFieldDataSlot = value;
-							}
-						}
+                                public bool? IsArray { get; set; }
 
-						public class DescribeDialogFlow_PluginFieldDataSlot
-						{
+                                public bool? IsNecessary { get; set; }
 
-							private string intentId;
+                                public int? LifeSpan { get; set; }
 
-							private string intentName;
+                                public string Name { get; set; }
 
-							private bool? isSysIntent;
+                                public string _Value { get; set; }
 
-							private string name;
-
-							private List<DescribeDialogFlow_ContentSlotItem> contentSlot;
-
-							public string IntentId
-							{
-								get
-								{
-									return intentId;
-								}
-								set	
-								{
-									intentId = value;
-								}
-							}
-
-							public string IntentName
-							{
-								get
-								{
-									return intentName;
-								}
-								set	
-								{
-									intentName = value;
-								}
-							}
-
-							public bool? IsSysIntent
-							{
-								get
-								{
-									return isSysIntent;
-								}
-								set	
-								{
-									isSysIntent = value;
-								}
-							}
-
-							public string Name
-							{
-								get
-								{
-									return name;
-								}
-								set	
-								{
-									name = value;
-								}
-							}
-
-							public List<DescribeDialogFlow_ContentSlotItem> ContentSlot
-							{
-								get
-								{
-									return contentSlot;
-								}
-								set	
-								{
-									contentSlot = value;
-								}
-							}
-
-							public class DescribeDialogFlow_ContentSlotItem
-							{
-
-								private bool? isArray;
-
-								private bool? isNecessary;
-
-								private int? lifeSpan;
-
-								private string name;
-
-								private string _value;
-
-								private List<string> question;
-
-								public bool? IsArray
-								{
-									get
-									{
-										return isArray;
-									}
-									set	
-									{
-										isArray = value;
-									}
-								}
-
-								public bool? IsNecessary
-								{
-									get
-									{
-										return isNecessary;
-									}
-									set	
-									{
-										isNecessary = value;
-									}
-								}
-
-								public int? LifeSpan
-								{
-									get
-									{
-										return lifeSpan;
-									}
-									set	
-									{
-										lifeSpan = value;
-									}
-								}
-
-								public string Name
-								{
-									get
-									{
-										return name;
-									}
-									set	
-									{
-										name = value;
-									}
-								}
-
-								public string _Value
-								{
-									get
-									{
-										return _value;
-									}
-									set	
-									{
-										_value = value;
-									}
-								}
-
-								public List<string> Question
-								{
-									get
-									{
-										return question;
-									}
-									set	
-									{
-										question = value;
-									}
-								}
-							}
+                                public List<string> Question { get; set; }
+                            }
 						}
 					}
 				}
@@ -1231,63 +240,14 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 
 			public class DescribeDialogFlow_EdgesItem
 			{
+                public string Id { get; set; }
 
-				private string id;
+                public string Label { get; set; }
 
-				private string label;
+                public string Source { get; set; }
 
-				private string source;
-
-				private string target;
-
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string Label
-				{
-					get
-					{
-						return label;
-					}
-					set	
-					{
-						label = value;
-					}
-				}
-
-				public string Source
-				{
-					get
-					{
-						return source;
-					}
-					set	
-					{
-						source = value;
-					}
-				}
-
-				public string Target
-				{
-					get
-					{
-						return target;
-					}
-					set	
-					{
-						target = value;
-					}
-				}
-			}
+                public string Target { get; set; }
+            }
 		}
 	}
 }

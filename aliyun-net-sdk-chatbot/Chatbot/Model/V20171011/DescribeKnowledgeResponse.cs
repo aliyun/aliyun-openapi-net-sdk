@@ -23,465 +23,77 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class DescribeKnowledgeResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public string EndDate { get; set; }
 
-		private string endDate;
+        public string CreateUserName { get; set; }
 
-		private string createUserName;
+        public string KnowledgeTitle { get; set; }
 
-		private string knowledgeTitle;
+        public int? Version { get; set; }
 
-		private int? version;
+        public long? KnowledgeId { get; set; }
 
-		private long? knowledgeId;
+        public string ModifyUserName { get; set; }
 
-		private string modifyUserName;
+        public string ModifyTime { get; set; }
 
-		private string modifyTime;
+        public string CreateTime { get; set; }
 
-		private string createTime;
+        public int? KnowledgeType { get; set; }
 
-		private int? knowledgeType;
+        public long? CategoryId { get; set; }
 
-		private long? categoryId;
+        public string StartDate { get; set; }
 
-		private string startDate;
+        public int? KnowledgeStatus { get; set; }
 
-		private int? knowledgeStatus;
+        public List<DescribeKnowledge_Outline> Outlines { get; set; }
 
-		private List<DescribeKnowledge_Outline> outlines;
+        public List<DescribeKnowledge_SimQuestion> SimQuestions { get; set; }
 
-		private List<DescribeKnowledge_SimQuestion> simQuestions;
+        public List<DescribeKnowledge_Solution> Solutions { get; set; }
 
-		private List<DescribeKnowledge_Solution> solutions;
+        public List<string> KeyWords { get; set; }
 
-		private List<string> keyWords;
+        public List<string> CoreWords { get; set; }
 
-		private List<string> coreWords;
-
-		public string RequestId
+        public class DescribeKnowledge_Outline
 		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+            public long? KnowledgeId { get; set; }
 
-		public string EndDate
-		{
-			get
-			{
-				return endDate;
-			}
-			set	
-			{
-				endDate = value;
-			}
-		}
+            public string Title { get; set; }
 
-		public string CreateUserName
-		{
-			get
-			{
-				return createUserName;
-			}
-			set	
-			{
-				createUserName = value;
-			}
-		}
-
-		public string KnowledgeTitle
-		{
-			get
-			{
-				return knowledgeTitle;
-			}
-			set	
-			{
-				knowledgeTitle = value;
-			}
-		}
-
-		public int? Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-			}
-		}
-
-		public long? KnowledgeId
-		{
-			get
-			{
-				return knowledgeId;
-			}
-			set	
-			{
-				knowledgeId = value;
-			}
-		}
-
-		public string ModifyUserName
-		{
-			get
-			{
-				return modifyUserName;
-			}
-			set	
-			{
-				modifyUserName = value;
-			}
-		}
-
-		public string ModifyTime
-		{
-			get
-			{
-				return modifyTime;
-			}
-			set	
-			{
-				modifyTime = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-
-		public int? KnowledgeType
-		{
-			get
-			{
-				return knowledgeType;
-			}
-			set	
-			{
-				knowledgeType = value;
-			}
-		}
-
-		public long? CategoryId
-		{
-			get
-			{
-				return categoryId;
-			}
-			set	
-			{
-				categoryId = value;
-			}
-		}
-
-		public string StartDate
-		{
-			get
-			{
-				return startDate;
-			}
-			set	
-			{
-				startDate = value;
-			}
-		}
-
-		public int? KnowledgeStatus
-		{
-			get
-			{
-				return knowledgeStatus;
-			}
-			set	
-			{
-				knowledgeStatus = value;
-			}
-		}
-
-		public List<DescribeKnowledge_Outline> Outlines
-		{
-			get
-			{
-				return outlines;
-			}
-			set	
-			{
-				outlines = value;
-			}
-		}
-
-		public List<DescribeKnowledge_SimQuestion> SimQuestions
-		{
-			get
-			{
-				return simQuestions;
-			}
-			set	
-			{
-				simQuestions = value;
-			}
-		}
-
-		public List<DescribeKnowledge_Solution> Solutions
-		{
-			get
-			{
-				return solutions;
-			}
-			set	
-			{
-				solutions = value;
-			}
-		}
-
-		public List<string> KeyWords
-		{
-			get
-			{
-				return keyWords;
-			}
-			set	
-			{
-				keyWords = value;
-			}
-		}
-
-		public List<string> CoreWords
-		{
-			get
-			{
-				return coreWords;
-			}
-			set	
-			{
-				coreWords = value;
-			}
-		}
-
-		public class DescribeKnowledge_Outline
-		{
-
-			private long? knowledgeId;
-
-			private string title;
-
-			private long? outlineId;
-
-			public long? KnowledgeId
-			{
-				get
-				{
-					return knowledgeId;
-				}
-				set	
-				{
-					knowledgeId = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
-
-			public long? OutlineId
-			{
-				get
-				{
-					return outlineId;
-				}
-				set	
-				{
-					outlineId = value;
-				}
-			}
-		}
+            public long? OutlineId { get; set; }
+        }
 
 		public class DescribeKnowledge_SimQuestion
 		{
+            public string ModifyTime { get; set; }
 
-			private string modifyTime;
+            public string CreateTime { get; set; }
 
-			private string createTime;
+            public long? SimQuestionId { get; set; }
 
-			private long? simQuestionId;
-
-			private string title;
-
-			public string ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public long? SimQuestionId
-			{
-				get
-				{
-					return simQuestionId;
-				}
-				set	
-				{
-					simQuestionId = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
-		}
+            public string Title { get; set; }
+        }
 
 		public class DescribeKnowledge_Solution
 		{
+            public string Summary { get; set; }
 
-			private string summary;
+            public string ModifyTime { get; set; }
 
-			private string modifyTime;
+            public string CreateTime { get; set; }
 
-			private string createTime;
+            public long? SolutionId { get; set; }
 
-			private long? solutionId;
+            public string Content { get; set; }
 
-			private string content;
+            public string PlainText { get; set; }
 
-			private string plainText;
-
-			private List<string> perspectiveIds;
-
-			public string Summary
-			{
-				get
-				{
-					return summary;
-				}
-				set	
-				{
-					summary = value;
-				}
-			}
-
-			public string ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public long? SolutionId
-			{
-				get
-				{
-					return solutionId;
-				}
-				set	
-				{
-					solutionId = value;
-				}
-			}
-
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
-				}
-			}
-
-			public string PlainText
-			{
-				get
-				{
-					return plainText;
-				}
-				set	
-				{
-					plainText = value;
-				}
-			}
-
-			public List<string> PerspectiveIds
-			{
-				get
-				{
-					return perspectiveIds;
-				}
-				set	
-				{
-					perspectiveIds = value;
-				}
-			}
-		}
+            public List<string> PerspectiveIds { get; set; }
+        }
 	}
 }

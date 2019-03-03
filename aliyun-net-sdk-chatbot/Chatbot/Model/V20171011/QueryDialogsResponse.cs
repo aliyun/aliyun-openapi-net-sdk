@@ -23,247 +23,41 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class QueryDialogsResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public int? PageSize { get; set; }
 
-		private int? pageSize;
+        public int? PageNumber { get; set; }
 
-		private int? pageNumber;
+        public int? TotalCount { get; set; }
 
-		private int? totalCount;
+        public List<QueryDialogs_Dialog> Dialogs { get; set; }
 
-		private List<QueryDialogs_Dialog> dialogs;
-
-		public string RequestId
+        public class QueryDialogs_Dialog
 		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+            public long? DialogId { get; set; }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+            public string DialogName { get; set; }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+            public string Description { get; set; }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+            public string CreateTime { get; set; }
 
-		public List<QueryDialogs_Dialog> Dialogs
-		{
-			get
-			{
-				return dialogs;
-			}
-			set	
-			{
-				dialogs = value;
-			}
-		}
+            public string ModifyTime { get; set; }
 
-		public class QueryDialogs_Dialog
-		{
+            public string CreateUserId { get; set; }
 
-			private long? dialogId;
+            public string CreateUserName { get; set; }
 
-			private string dialogName;
+            public string ModifyUserId { get; set; }
 
-			private string description;
+            public string ModifyUserName { get; set; }
 
-			private string createTime;
+            public bool? IsSampleDialog { get; set; }
 
-			private string modifyTime;
+            public int? Status { get; set; }
 
-			private string createUserId;
-
-			private string createUserName;
-
-			private string modifyUserId;
-
-			private string modifyUserName;
-
-			private bool? isSampleDialog;
-
-			private int? status;
-
-			private bool? isOnline;
-
-			public long? DialogId
-			{
-				get
-				{
-					return dialogId;
-				}
-				set	
-				{
-					dialogId = value;
-				}
-			}
-
-			public string DialogName
-			{
-				get
-				{
-					return dialogName;
-				}
-				set	
-				{
-					dialogName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
-
-			public string CreateUserId
-			{
-				get
-				{
-					return createUserId;
-				}
-				set	
-				{
-					createUserId = value;
-				}
-			}
-
-			public string CreateUserName
-			{
-				get
-				{
-					return createUserName;
-				}
-				set	
-				{
-					createUserName = value;
-				}
-			}
-
-			public string ModifyUserId
-			{
-				get
-				{
-					return modifyUserId;
-				}
-				set	
-				{
-					modifyUserId = value;
-				}
-			}
-
-			public string ModifyUserName
-			{
-				get
-				{
-					return modifyUserName;
-				}
-				set	
-				{
-					modifyUserName = value;
-				}
-			}
-
-			public bool? IsSampleDialog
-			{
-				get
-				{
-					return isSampleDialog;
-				}
-				set	
-				{
-					isSampleDialog = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public bool? IsOnline
-			{
-				get
-				{
-					return isOnline;
-				}
-				set	
-				{
-					isOnline = value;
-				}
-			}
-		}
+            public bool? IsOnline { get; set; }
+        }
 	}
 }

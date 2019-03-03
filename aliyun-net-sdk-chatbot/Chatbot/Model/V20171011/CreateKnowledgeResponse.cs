@@ -23,33 +23,8 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class CreateKnowledgeResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
-
-		private long? knowledgeId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public long? KnowledgeId
-		{
-			get
-			{
-				return knowledgeId;
-			}
-			set	
-			{
-				knowledgeId = value;
-			}
-		}
-	}
+        public long? KnowledgeId { get; set; }
+    }
 }

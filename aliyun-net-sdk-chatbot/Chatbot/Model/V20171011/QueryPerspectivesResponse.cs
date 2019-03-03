@@ -23,163 +23,29 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class QueryPerspectivesResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public List<QueryPerspectives_Perspective> Perspectives { get; set; }
 
-		private List<QueryPerspectives_Perspective> perspectives;
-
-		public string RequestId
+        public class QueryPerspectives_Perspective
 		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+            public string ModifyUserName { get; set; }
 
-		public List<QueryPerspectives_Perspective> Perspectives
-		{
-			get
-			{
-				return perspectives;
-			}
-			set	
-			{
-				perspectives = value;
-			}
-		}
+            public string ModifyTime { get; set; }
 
-		public class QueryPerspectives_Perspective
-		{
+            public string CreateTime { get; set; }
 
-			private string modifyUserName;
+            public string SelfDefine { get; set; }
 
-			private string modifyTime;
+            public string PerspectiveId { get; set; }
 
-			private string createTime;
+            public string CreateUserName { get; set; }
 
-			private string selfDefine;
+            public string PerspectiveCode { get; set; }
 
-			private string perspectiveId;
+            public int? Status { get; set; }
 
-			private string createUserName;
-
-			private string perspectiveCode;
-
-			private int? status;
-
-			private string name;
-
-			public string ModifyUserName
-			{
-				get
-				{
-					return modifyUserName;
-				}
-				set	
-				{
-					modifyUserName = value;
-				}
-			}
-
-			public string ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string SelfDefine
-			{
-				get
-				{
-					return selfDefine;
-				}
-				set	
-				{
-					selfDefine = value;
-				}
-			}
-
-			public string PerspectiveId
-			{
-				get
-				{
-					return perspectiveId;
-				}
-				set	
-				{
-					perspectiveId = value;
-				}
-			}
-
-			public string CreateUserName
-			{
-				get
-				{
-					return createUserName;
-				}
-				set	
-				{
-					createUserName = value;
-				}
-			}
-
-			public string PerspectiveCode
-			{
-				get
-				{
-					return perspectiveCode;
-				}
-				set	
-				{
-					perspectiveCode = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-		}
+            public string Name { get; set; }
+        }
 	}
 }

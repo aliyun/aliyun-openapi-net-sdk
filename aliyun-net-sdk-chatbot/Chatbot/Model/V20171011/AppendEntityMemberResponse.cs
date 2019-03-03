@@ -23,33 +23,8 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class AppendEntityMemberResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
-
-		private string entityId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string EntityId
-		{
-			get
-			{
-				return entityId;
-			}
-			set	
-			{
-				entityId = value;
-			}
-		}
-	}
+        public string EntityId { get; set; }
+    }
 }

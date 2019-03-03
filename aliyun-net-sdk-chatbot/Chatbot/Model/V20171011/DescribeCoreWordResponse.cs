@@ -23,89 +23,16 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class DescribeCoreWordResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public string CoreWordCode { get; set; }
 
-		private string coreWordCode;
+        public string CoreWordName { get; set; }
 
-		private string coreWordName;
+        public string ModifyTime { get; set; }
 
-		private string modifyTime;
+        public string CreateTime { get; set; }
 
-		private string createTime;
-
-		private List<string> synonyms;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string CoreWordCode
-		{
-			get
-			{
-				return coreWordCode;
-			}
-			set	
-			{
-				coreWordCode = value;
-			}
-		}
-
-		public string CoreWordName
-		{
-			get
-			{
-				return coreWordName;
-			}
-			set	
-			{
-				coreWordName = value;
-			}
-		}
-
-		public string ModifyTime
-		{
-			get
-			{
-				return modifyTime;
-			}
-			set	
-			{
-				modifyTime = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-
-		public List<string> Synonyms
-		{
-			get
-			{
-				return synonyms;
-			}
-			set	
-			{
-				synonyms = value;
-			}
-		}
-	}
+        public List<string> Synonyms { get; set; }
+    }
 }

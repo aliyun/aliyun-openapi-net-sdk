@@ -23,24 +23,11 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class UpdateIntentResponse : AcsResponse
 	{
+        private string intentId;
 
-		private string requestId;
+        public new string RequestId { get; set; }
 
-		private string intentId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string IntentId
+        public string IntentId
 		{
 			get
 			{

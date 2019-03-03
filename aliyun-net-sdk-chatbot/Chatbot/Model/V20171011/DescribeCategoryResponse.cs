@@ -23,61 +23,12 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class DescribeCategoryResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public long? ParentCategoryId { get; set; }
 
-		private long? parentCategoryId;
+        public long? CategoryId { get; set; }
 
-		private long? categoryId;
-
-		private string name;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public long? ParentCategoryId
-		{
-			get
-			{
-				return parentCategoryId;
-			}
-			set	
-			{
-				parentCategoryId = value;
-			}
-		}
-
-		public long? CategoryId
-		{
-			get
-			{
-				return categoryId;
-			}
-			set	
-			{
-				categoryId = value;
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-	}
+        public string Name { get; set; }
+    }
 }

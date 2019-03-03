@@ -23,33 +23,8 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class CreatePerspectiveResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
-
-		private string perspectiveId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string PerspectiveId
-		{
-			get
-			{
-				return perspectiveId;
-			}
-			set	
-			{
-				perspectiveId = value;
-			}
-		}
-	}
+        public string PerspectiveId { get; set; }
+    }
 }

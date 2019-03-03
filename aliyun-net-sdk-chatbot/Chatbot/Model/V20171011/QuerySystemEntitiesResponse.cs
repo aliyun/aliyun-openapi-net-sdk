@@ -23,79 +23,17 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class QuerySystemEntitiesResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public List<QuerySystemEntities_Entity> SystemEntities { get; set; }
 
-		private List<QuerySystemEntities_Entity> systemEntities;
-
-		public string RequestId
+        public class QuerySystemEntities_Entity
 		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+            public string DefaultQuestion { get; set; }
 
-		public List<QuerySystemEntities_Entity> SystemEntities
-		{
-			get
-			{
-				return systemEntities;
-			}
-			set	
-			{
-				systemEntities = value;
-			}
-		}
+            public string EntityName { get; set; }
 
-		public class QuerySystemEntities_Entity
-		{
-
-			private string defaultQuestion;
-
-			private string entityName;
-
-			private string entityCode;
-
-			public string DefaultQuestion
-			{
-				get
-				{
-					return defaultQuestion;
-				}
-				set	
-				{
-					defaultQuestion = value;
-				}
-			}
-
-			public string EntityName
-			{
-				get
-				{
-					return entityName;
-				}
-				set	
-				{
-					entityName = value;
-				}
-			}
-
-			public string EntityCode
-			{
-				get
-				{
-					return entityCode;
-				}
-				set	
-				{
-					entityCode = value;
-				}
-			}
-		}
+            public string EntityCode { get; set; }
+        }
 	}
 }

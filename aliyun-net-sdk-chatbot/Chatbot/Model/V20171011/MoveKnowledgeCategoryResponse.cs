@@ -24,18 +24,6 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 	public class MoveKnowledgeCategoryResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+        public new string RequestId { get; set; }
+    }
 }

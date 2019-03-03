@@ -23,205 +23,35 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class DescribeEntitiesResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public long? EntityId { get; set; }
 
-		private long? entityId;
+        public string EntityName { get; set; }
 
-		private string entityName;
+        public string EntityType { get; set; }
 
-		private string entityType;
+        public string Regex { get; set; }
 
-		private string regex;
+        public string CreateTime { get; set; }
 
-		private string createTime;
+        public string ModifyTime { get; set; }
 
-		private string modifyTime;
+        public string CreateUserId { get; set; }
 
-		private string createUserId;
+        public string CreateUserName { get; set; }
 
-		private string createUserName;
+        public string ModifyUserId { get; set; }
 
-		private string modifyUserId;
+        public string ModifyUserName { get; set; }
 
-		private string modifyUserName;
+        public List<DescribeEntities_MembersItem> Members { get; set; }
 
-		private List<DescribeEntities_MembersItem> members;
-
-		public string RequestId
+        public class DescribeEntities_MembersItem
 		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+            public string MemberName { get; set; }
 
-		public long? EntityId
-		{
-			get
-			{
-				return entityId;
-			}
-			set	
-			{
-				entityId = value;
-			}
-		}
-
-		public string EntityName
-		{
-			get
-			{
-				return entityName;
-			}
-			set	
-			{
-				entityName = value;
-			}
-		}
-
-		public string EntityType
-		{
-			get
-			{
-				return entityType;
-			}
-			set	
-			{
-				entityType = value;
-			}
-		}
-
-		public string Regex
-		{
-			get
-			{
-				return regex;
-			}
-			set	
-			{
-				regex = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-
-		public string ModifyTime
-		{
-			get
-			{
-				return modifyTime;
-			}
-			set	
-			{
-				modifyTime = value;
-			}
-		}
-
-		public string CreateUserId
-		{
-			get
-			{
-				return createUserId;
-			}
-			set	
-			{
-				createUserId = value;
-			}
-		}
-
-		public string CreateUserName
-		{
-			get
-			{
-				return createUserName;
-			}
-			set	
-			{
-				createUserName = value;
-			}
-		}
-
-		public string ModifyUserId
-		{
-			get
-			{
-				return modifyUserId;
-			}
-			set	
-			{
-				modifyUserId = value;
-			}
-		}
-
-		public string ModifyUserName
-		{
-			get
-			{
-				return modifyUserName;
-			}
-			set	
-			{
-				modifyUserName = value;
-			}
-		}
-
-		public List<DescribeEntities_MembersItem> Members
-		{
-			get
-			{
-				return members;
-			}
-			set	
-			{
-				members = value;
-			}
-		}
-
-		public class DescribeEntities_MembersItem
-		{
-
-			private string memberName;
-
-			private List<string> synonyms;
-
-			public string MemberName
-			{
-				get
-				{
-					return memberName;
-				}
-				set	
-				{
-					memberName = value;
-				}
-			}
-
-			public List<string> Synonyms
-			{
-				get
-				{
-					return synonyms;
-				}
-				set	
-				{
-					synonyms = value;
-				}
-			}
-		}
+            public List<string> Synonyms { get; set; }
+        }
 	}
 }

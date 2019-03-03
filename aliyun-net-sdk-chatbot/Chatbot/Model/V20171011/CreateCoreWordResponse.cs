@@ -23,33 +23,8 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class CreateCoreWordResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
-
-		private string coreWordCode;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string CoreWordCode
-		{
-			get
-			{
-				return coreWordCode;
-			}
-			set	
-			{
-				coreWordCode = value;
-			}
-		}
-	}
+        public string CoreWordCode { get; set; }
+    }
 }

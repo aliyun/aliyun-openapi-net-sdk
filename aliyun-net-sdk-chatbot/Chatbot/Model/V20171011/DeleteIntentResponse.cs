@@ -23,33 +23,8 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class DeleteIntentResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
-
-		private string intentId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string IntentId
-		{
-			get
-			{
-				return intentId;
-			}
-			set	
-			{
-				intentId = value;
-			}
-		}
-	}
+        public string IntentId { get; set; }
+    }
 }

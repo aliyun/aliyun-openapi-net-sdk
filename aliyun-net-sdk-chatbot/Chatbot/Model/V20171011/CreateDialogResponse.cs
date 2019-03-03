@@ -23,33 +23,8 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class CreateDialogResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
-
-		private string dialogId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DialogId
-		{
-			get
-			{
-				return dialogId;
-			}
-			set	
-			{
-				dialogId = value;
-			}
-		}
-	}
+        public string DialogId { get; set; }
+    }
 }

@@ -23,93 +23,19 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class QueryCategoriesResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public List<QueryCategories_Category> Categories { get; set; }
 
-		private List<QueryCategories_Category> categories;
-
-		public string RequestId
+        public class QueryCategories_Category
 		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+            public long? CategoryId { get; set; }
 
-		public List<QueryCategories_Category> Categories
-		{
-			get
-			{
-				return categories;
-			}
-			set	
-			{
-				categories = value;
-			}
-		}
+            public long? ParentCategoryId { get; set; }
 
-		public class QueryCategories_Category
-		{
+            public string Name { get; set; }
 
-			private long? categoryId;
-
-			private long? parentCategoryId;
-
-			private string name;
-
-			private List<string> childrens;
-
-			public long? CategoryId
-			{
-				get
-				{
-					return categoryId;
-				}
-				set	
-				{
-					categoryId = value;
-				}
-			}
-
-			public long? ParentCategoryId
-			{
-				get
-				{
-					return parentCategoryId;
-				}
-				set	
-				{
-					parentCategoryId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public List<string> Childrens
-			{
-				get
-				{
-					return childrens;
-				}
-				set	
-				{
-					childrens = value;
-				}
-			}
-		}
+            public List<string> Childrens { get; set; }
+        }
 	}
 }

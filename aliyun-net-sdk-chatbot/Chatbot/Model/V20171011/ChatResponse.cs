@@ -23,329 +23,60 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class ChatResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public string SessionId { get; set; }
 
-		private string sessionId;
+        public string MessageId { get; set; }
 
-		private string messageId;
+        public string Tag { get; set; }
 
-		private string tag;
+        public List<Chat_Message> Messages { get; set; }
 
-		private List<Chat_Message> messages;
-
-		public string RequestId
+        public class Chat_Message
 		{
-			get
+            public string Type { get; set; }
+
+            public List<Chat_Recommend> Recommends { get; set; }
+
+            public Chat_Text Text { get; set; }
+
+            public Chat_Knowledge Knowledge { get; set; }
+
+            public class Chat_Recommend
 			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+                public string KnowledgeId { get; set; }
 
-		public string SessionId
-		{
-			get
-			{
-				return sessionId;
-			}
-			set	
-			{
-				sessionId = value;
-			}
-		}
+                public string Title { get; set; }
 
-		public string MessageId
-		{
-			get
-			{
-				return messageId;
-			}
-			set	
-			{
-				messageId = value;
-			}
-		}
+                public string AnswerSource { get; set; }
 
-		public string Tag
-		{
-			get
-			{
-				return tag;
-			}
-			set	
-			{
-				tag = value;
-			}
-		}
+                public string Summary { get; set; }
 
-		public List<Chat_Message> Messages
-		{
-			get
-			{
-				return messages;
-			}
-			set	
-			{
-				messages = value;
-			}
-		}
-
-		public class Chat_Message
-		{
-
-			private string type;
-
-			private List<Chat_Recommend> recommends;
-
-			private Chat_Text text;
-
-			private Chat_Knowledge knowledge;
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public List<Chat_Recommend> Recommends
-			{
-				get
-				{
-					return recommends;
-				}
-				set	
-				{
-					recommends = value;
-				}
-			}
-
-			public Chat_Text Text
-			{
-				get
-				{
-					return text;
-				}
-				set	
-				{
-					text = value;
-				}
-			}
-
-			public Chat_Knowledge Knowledge
-			{
-				get
-				{
-					return knowledge;
-				}
-				set	
-				{
-					knowledge = value;
-				}
-			}
-
-			public class Chat_Recommend
-			{
-
-				private string knowledgeId;
-
-				private string title;
-
-				private string answerSource;
-
-				private string summary;
-
-				private string content;
-
-				public string KnowledgeId
-				{
-					get
-					{
-						return knowledgeId;
-					}
-					set	
-					{
-						knowledgeId = value;
-					}
-				}
-
-				public string Title
-				{
-					get
-					{
-						return title;
-					}
-					set	
-					{
-						title = value;
-					}
-				}
-
-				public string AnswerSource
-				{
-					get
-					{
-						return answerSource;
-					}
-					set	
-					{
-						answerSource = value;
-					}
-				}
-
-				public string Summary
-				{
-					get
-					{
-						return summary;
-					}
-					set	
-					{
-						summary = value;
-					}
-				}
-
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
-					}
-				}
-			}
+                public string Content { get; set; }
+            }
 
 			public class Chat_Text
 			{
+                public string Content { get; set; }
 
-				private string content;
+                public string AnswerSource { get; set; }
 
-				private string answerSource;
-
-				private string metaData;
-
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
-					}
-				}
-
-				public string AnswerSource
-				{
-					get
-					{
-						return answerSource;
-					}
-					set	
-					{
-						answerSource = value;
-					}
-				}
-
-				public string MetaData
-				{
-					get
-					{
-						return metaData;
-					}
-					set	
-					{
-						metaData = value;
-					}
-				}
-			}
+                public string MetaData { get; set; }
+            }
 
 			public class Chat_Knowledge
 			{
+                public string Id { get; set; }
 
-				private string id;
+                public string Title { get; set; }
 
-				private string title;
+                public string Summary { get; set; }
 
-				private string summary;
+                public string Content { get; set; }
 
-				private string content;
-
-				private string answerSource;
-
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string Title
-				{
-					get
-					{
-						return title;
-					}
-					set	
-					{
-						title = value;
-					}
-				}
-
-				public string Summary
-				{
-					get
-					{
-						return summary;
-					}
-					set	
-					{
-						summary = value;
-					}
-				}
-
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
-					}
-				}
-
-				public string AnswerSource
-				{
-					get
-					{
-						return answerSource;
-					}
-					set	
-					{
-						answerSource = value;
-					}
-				}
-			}
+                public string AnswerSource { get; set; }
+            }
 		}
 	}
 }

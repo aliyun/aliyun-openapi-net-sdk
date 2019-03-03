@@ -23,187 +23,30 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class DescribeDialogResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public long? DialogId { get; set; }
 
-		private long? dialogId;
+        public string DialogName { get; set; }
 
-		private string dialogName;
+        public string Description { get; set; }
 
-		private string description;
+        public string CreateTime { get; set; }
 
-		private string createTime;
+        public string ModifyTime { get; set; }
 
-		private string modifyTime;
+        public string CreateUserId { get; set; }
 
-		private string createUserId;
+        public string CreateUserName { get; set; }
 
-		private string createUserName;
+        public string ModifyUserId { get; set; }
 
-		private string modifyUserId;
+        public string ModifyUserName { get; set; }
 
-		private string modifyUserName;
+        public bool? IsSampleDialog { get; set; }
 
-		private bool? isSampleDialog;
+        public int? Status { get; set; }
 
-		private int? status;
-
-		private bool? isOnline;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public long? DialogId
-		{
-			get
-			{
-				return dialogId;
-			}
-			set	
-			{
-				dialogId = value;
-			}
-		}
-
-		public string DialogName
-		{
-			get
-			{
-				return dialogName;
-			}
-			set	
-			{
-				dialogName = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-
-		public string ModifyTime
-		{
-			get
-			{
-				return modifyTime;
-			}
-			set	
-			{
-				modifyTime = value;
-			}
-		}
-
-		public string CreateUserId
-		{
-			get
-			{
-				return createUserId;
-			}
-			set	
-			{
-				createUserId = value;
-			}
-		}
-
-		public string CreateUserName
-		{
-			get
-			{
-				return createUserName;
-			}
-			set	
-			{
-				createUserName = value;
-			}
-		}
-
-		public string ModifyUserId
-		{
-			get
-			{
-				return modifyUserId;
-			}
-			set	
-			{
-				modifyUserId = value;
-			}
-		}
-
-		public string ModifyUserName
-		{
-			get
-			{
-				return modifyUserName;
-			}
-			set	
-			{
-				modifyUserName = value;
-			}
-		}
-
-		public bool? IsSampleDialog
-		{
-			get
-			{
-				return isSampleDialog;
-			}
-			set	
-			{
-				isSampleDialog = value;
-			}
-		}
-
-		public int? Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-
-		public bool? IsOnline
-		{
-			get
-			{
-				return isOnline;
-			}
-			set	
-			{
-				isOnline = value;
-			}
-		}
-	}
+        public bool? IsOnline { get; set; }
+    }
 }

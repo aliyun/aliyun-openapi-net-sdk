@@ -23,47 +23,10 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class FeedbackResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public string MessageId { get; set; }
 
-		private string messageId;
-
-		private string feedback;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string MessageId
-		{
-			get
-			{
-				return messageId;
-			}
-			set	
-			{
-				messageId = value;
-			}
-		}
-
-		public string Feedback
-		{
-			get
-			{
-				return feedback;
-			}
-			set	
-			{
-				feedback = value;
-			}
-		}
-	}
+        public string Feedback { get; set; }
+    }
 }

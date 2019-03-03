@@ -23,490 +23,87 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class QueryIntentsResponse : AcsResponse
 	{
+        public new string RequestId { get; set; }
 
-		private string requestId;
+        public int? PageNumber { get; set; }
 
-		private int? pageNumber;
+        public int? PageSize { get; set; }
 
-		private int? pageSize;
+        public int? TotalCount { get; set; }
 
-		private int? totalCount;
+        public List<QueryIntents_Intent> Intents { get; set; }
 
-		private List<QueryIntents_Intent> intents;
-
-		public string RequestId
+        public class QueryIntents_Intent
 		{
-			get
+            public long? IntentId { get; set; }
+
+            public string Name { get; set; }
+
+            public string CreateTime { get; set; }
+
+            public string ModifyTime { get; set; }
+
+            public string CreateUserId { get; set; }
+
+            public string CreateUserName { get; set; }
+
+            public string ModifyUserId { get; set; }
+
+            public string ModifyUserName { get; set; }
+
+            public List<QueryIntents_UserSayItem> UserSay { get; set; }
+
+            public List<QueryIntents_RuleCheckItem> RuleCheck { get; set; }
+
+            public List<QueryIntents_SlotItem> Slot { get; set; }
+
+            public class QueryIntents_UserSayItem
 			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+                public bool? Strict { get; set; }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+                public List<QueryIntents_DataItem> Data { get; set; }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
-		public List<QueryIntents_Intent> Intents
-		{
-			get
-			{
-				return intents;
-			}
-			set	
-			{
-				intents = value;
-			}
-		}
-
-		public class QueryIntents_Intent
-		{
-
-			private long? intentId;
-
-			private string name;
-
-			private string createTime;
-
-			private string modifyTime;
-
-			private string createUserId;
-
-			private string createUserName;
-
-			private string modifyUserId;
-
-			private string modifyUserName;
-
-			private List<QueryIntents_UserSayItem> userSay;
-
-			private List<QueryIntents_RuleCheckItem> ruleCheck;
-
-			private List<QueryIntents_SlotItem> slot;
-
-			public long? IntentId
-			{
-				get
+                public class QueryIntents_DataItem
 				{
-					return intentId;
-				}
-				set	
-				{
-					intentId = value;
-				}
-			}
+                    public string Text { get; set; }
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
-
-			public string CreateUserId
-			{
-				get
-				{
-					return createUserId;
-				}
-				set	
-				{
-					createUserId = value;
-				}
-			}
-
-			public string CreateUserName
-			{
-				get
-				{
-					return createUserName;
-				}
-				set	
-				{
-					createUserName = value;
-				}
-			}
-
-			public string ModifyUserId
-			{
-				get
-				{
-					return modifyUserId;
-				}
-				set	
-				{
-					modifyUserId = value;
-				}
-			}
-
-			public string ModifyUserName
-			{
-				get
-				{
-					return modifyUserName;
-				}
-				set	
-				{
-					modifyUserName = value;
-				}
-			}
-
-			public List<QueryIntents_UserSayItem> UserSay
-			{
-				get
-				{
-					return userSay;
-				}
-				set	
-				{
-					userSay = value;
-				}
-			}
-
-			public List<QueryIntents_RuleCheckItem> RuleCheck
-			{
-				get
-				{
-					return ruleCheck;
-				}
-				set	
-				{
-					ruleCheck = value;
-				}
-			}
-
-			public List<QueryIntents_SlotItem> Slot
-			{
-				get
-				{
-					return slot;
-				}
-				set	
-				{
-					slot = value;
-				}
-			}
-
-			public class QueryIntents_UserSayItem
-			{
-
-				private bool? strict;
-
-				private List<QueryIntents_DataItem> data;
-
-				public bool? Strict
-				{
-					get
-					{
-						return strict;
-					}
-					set	
-					{
-						strict = value;
-					}
-				}
-
-				public List<QueryIntents_DataItem> Data
-				{
-					get
-					{
-						return data;
-					}
-					set	
-					{
-						data = value;
-					}
-				}
-
-				public class QueryIntents_DataItem
-				{
-
-					private string text;
-
-					private string slotId;
-
-					public string Text
-					{
-						get
-						{
-							return text;
-						}
-						set	
-						{
-							text = value;
-						}
-					}
-
-					public string SlotId
-					{
-						get
-						{
-							return slotId;
-						}
-						set	
-						{
-							slotId = value;
-						}
-					}
-				}
+                    public string SlotId { get; set; }
+                }
 			}
 
 			public class QueryIntents_RuleCheckItem
 			{
+                public string Text { get; set; }
 
-				private string text;
+                public bool? Strict { get; set; }
 
-				private bool? strict;
+                public List<string> Warning { get; set; }
 
-				private List<string> warning;
-
-				private List<string> error;
-
-				public string Text
-				{
-					get
-					{
-						return text;
-					}
-					set	
-					{
-						text = value;
-					}
-				}
-
-				public bool? Strict
-				{
-					get
-					{
-						return strict;
-					}
-					set	
-					{
-						strict = value;
-					}
-				}
-
-				public List<string> Warning
-				{
-					get
-					{
-						return warning;
-					}
-					set	
-					{
-						warning = value;
-					}
-				}
-
-				public List<string> Error
-				{
-					get
-					{
-						return error;
-					}
-					set	
-					{
-						error = value;
-					}
-				}
-			}
+                public List<string> Error { get; set; }
+            }
 
 			public class QueryIntents_SlotItem
 			{
+                public string Name { get; set; }
 
-				private string name;
+                public string _Value { get; set; }
 
-				private string _value;
+                public bool? IsNecessary { get; set; }
 
-				private bool? isNecessary;
+                public bool? IsArray { get; set; }
 
-				private bool? isArray;
+                public int? LifeSpan { get; set; }
 
-				private int? lifeSpan;
+                public List<QueryIntents_TagsItem> Tags { get; set; }
 
-				private List<QueryIntents_TagsItem> tags;
+                public List<string> Question { get; set; }
 
-				private List<string> question;
-
-				public string Name
+                public class QueryIntents_TagsItem
 				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+                    public string _Value { get; set; }
 
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
-
-				public bool? IsNecessary
-				{
-					get
-					{
-						return isNecessary;
-					}
-					set	
-					{
-						isNecessary = value;
-					}
-				}
-
-				public bool? IsArray
-				{
-					get
-					{
-						return isArray;
-					}
-					set	
-					{
-						isArray = value;
-					}
-				}
-
-				public int? LifeSpan
-				{
-					get
-					{
-						return lifeSpan;
-					}
-					set	
-					{
-						lifeSpan = value;
-					}
-				}
-
-				public List<QueryIntents_TagsItem> Tags
-				{
-					get
-					{
-						return tags;
-					}
-					set	
-					{
-						tags = value;
-					}
-				}
-
-				public List<string> Question
-				{
-					get
-					{
-						return question;
-					}
-					set	
-					{
-						question = value;
-					}
-				}
-
-				public class QueryIntents_TagsItem
-				{
-
-					private string _value;
-
-					private string userSayId;
-
-					public string _Value
-					{
-						get
-						{
-							return _value;
-						}
-						set	
-						{
-							_value = value;
-						}
-					}
-
-					public string UserSayId
-					{
-						get
-						{
-							return userSayId;
-						}
-						set	
-						{
-							userSayId = value;
-						}
-					}
-				}
+                    public string UserSayId { get; set; }
+                }
 			}
 		}
 	}

@@ -23,145 +23,24 @@ namespace Aliyun.Acs.Chatbot.Model.V20171011
 {
 	public class DescribePerspectiveResponse : AcsResponse
 	{
+        public string ModifyUserName { get; set; }
 
-		private string modifyUserName;
+        public string ModifyTime { get; set; }
 
-		private string modifyTime;
+        public string CreateTime { get; set; }
 
-		private string createTime;
+        public bool? SelfDefine { get; set; }
 
-		private bool? selfDefine;
+        public string PerspectiveId { get; set; }
 
-		private string perspectiveId;
+        public string CreateUserName { get; set; }
 
-		private string createUserName;
+        public string PerspectiveCode { get; set; }
 
-		private string perspectiveCode;
+        public int? Status { get; set; }
 
-		private int? status;
+        public new string RequestId { get; set; }
 
-		private string requestId;
-
-		private string name;
-
-		public string ModifyUserName
-		{
-			get
-			{
-				return modifyUserName;
-			}
-			set	
-			{
-				modifyUserName = value;
-			}
-		}
-
-		public string ModifyTime
-		{
-			get
-			{
-				return modifyTime;
-			}
-			set	
-			{
-				modifyTime = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-
-		public bool? SelfDefine
-		{
-			get
-			{
-				return selfDefine;
-			}
-			set	
-			{
-				selfDefine = value;
-			}
-		}
-
-		public string PerspectiveId
-		{
-			get
-			{
-				return perspectiveId;
-			}
-			set	
-			{
-				perspectiveId = value;
-			}
-		}
-
-		public string CreateUserName
-		{
-			get
-			{
-				return createUserName;
-			}
-			set	
-			{
-				createUserName = value;
-			}
-		}
-
-		public string PerspectiveCode
-		{
-			get
-			{
-				return perspectiveCode;
-			}
-			set	
-			{
-				perspectiveCode = value;
-			}
-		}
-
-		public int? Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-	}
+        public string Name { get; set; }
+    }
 }
