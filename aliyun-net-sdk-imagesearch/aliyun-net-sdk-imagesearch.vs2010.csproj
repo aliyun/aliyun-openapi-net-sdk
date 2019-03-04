@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f6d5e503-2ca3-45a1-bdc3-0d6154feba7e}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-imagesearch</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="ImageSearch\Model\V20180120\DeleteItemRequest.cs" />
+	<Compile Include="ImageSearch\Model\V20180120\AddItemRequest.cs" />
+	<Compile Include="ImageSearch\Model\V20180120\DeleteItemResponse.cs" />
+	<Compile Include="ImageSearch\Model\V20180120\SearchItemResponse.cs" />
+	<Compile Include="ImageSearch\Model\V20180120\SearchItemRequest.cs" />
+	<Compile Include="ImageSearch\Model\V20180120\AddItemResponse.cs" />
+	<Compile Include="ImageSearch\Transform\V20180120\DeleteItemResponseUnmarshaller.cs" />
+	<Compile Include="ImageSearch\Transform\V20180120\AddItemResponseUnmarshaller.cs" />
+	<Compile Include="ImageSearch\Transform\V20180120\SearchItemResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
