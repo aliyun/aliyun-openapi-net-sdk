@@ -20,7 +20,3 @@ flags:
     # only test featuretest
     paths:
       - aliyun-sdk-feature-test/
-
-ignore:
-  - "aliyun-net-sdk-core.Tests/"  # ignore aliyun-net-sdk-core.Tests
-  - "aliyun-sdk-feature-test/"    # ignore aliyun-sdk-feature-test
