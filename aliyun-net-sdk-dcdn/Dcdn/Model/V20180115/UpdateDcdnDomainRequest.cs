@@ -29,7 +29,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
     public class UpdateDcdnDomainRequest : RpcAcsRequest<UpdateDcdnDomainResponse>
     {
         public UpdateDcdnDomainRequest()
-            : base("dcdn", "2018-01-15", "UpdateDcdnDomain", "dcdn", "openAPI")
+            : base("dcdn", "2018-01-15", "UpdateDcdnDomain")
         {
         }
 
@@ -46,8 +46,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 		private string action;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public string TopLevelDomain
 		{
@@ -137,19 +135,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

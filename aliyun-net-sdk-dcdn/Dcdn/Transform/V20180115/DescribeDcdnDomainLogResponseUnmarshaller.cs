@@ -38,16 +38,11 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 				DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail domainLogDetail = new DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail();
 				domainLogDetail.LogCount = context.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogCount");
 
-				List<DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_PageInfoDetail> domainLogDetail_pageInfos = new List<DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_PageInfoDetail>();
-				for (int j = 0; j < context.Length("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos.Length"); j++) {
-					DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_PageInfoDetail pageInfoDetail = new DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_PageInfoDetail();
-					pageInfoDetail.PageIndex = context.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos["+ j +"].PageIndex");
-					pageInfoDetail.PageSize = context.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos["+ j +"].PageSize");
-					pageInfoDetail.Total = context.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos["+ j +"].Total");
-
-					domainLogDetail_pageInfos.Add(pageInfoDetail);
-				}
-				domainLogDetail.PageInfos = domainLogDetail_pageInfos;
+				DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_PageInfos pageInfos = new DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_PageInfos();
+				pageInfos.PageIndex = context.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos.PageIndex");
+				pageInfos.PageSize = context.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos.PageSize");
+				pageInfos.Total = context.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos.Total");
+				domainLogDetail.PageInfos = pageInfos;
 
 				List<DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_LogInfoDetail> domainLogDetail_logInfos = new List<DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_LogInfoDetail>();
 				for (int j = 0; j < context.Length("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {

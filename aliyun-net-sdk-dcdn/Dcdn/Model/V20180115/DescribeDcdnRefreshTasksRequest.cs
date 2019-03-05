@@ -29,7 +29,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
     public class DescribeDcdnRefreshTasksRequest : RpcAcsRequest<DescribeDcdnRefreshTasksResponse>
     {
         public DescribeDcdnRefreshTasksRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnRefreshTasks", "dcdn", "openAPI")
+            : base("dcdn", "2018-01-15", "DescribeDcdnRefreshTasks")
         {
         }
 
@@ -44,8 +44,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 		private long? ownerId;
 
 		private int? pageNumber;
-
-		private string accessKeyId;
 
 		private string resourceGroupId;
 
@@ -136,19 +134,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

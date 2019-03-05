@@ -29,7 +29,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
     public class SetDcdnDomainCertificateRequest : RpcAcsRequest<SetDcdnDomainCertificateResponse>
     {
         public SetDcdnDomainCertificateRequest()
-            : base("dcdn", "2018-01-15", "SetDcdnDomainCertificate", "dcdn", "openAPI")
+            : base("dcdn", "2018-01-15", "SetDcdnDomainCertificate")
         {
         }
 
@@ -52,8 +52,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 		private long? ownerId;
 
 		private string region;
-
-		private string accessKeyId;
 
 		private string sSLPri;
 
@@ -184,19 +182,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				region = value;
 				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

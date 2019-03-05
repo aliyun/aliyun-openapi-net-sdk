@@ -29,7 +29,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
     public class StartDcdnDomainRequest : RpcAcsRequest<StartDcdnDomainResponse>
     {
         public StartDcdnDomainRequest()
-            : base("dcdn", "2018-01-15", "StartDcdnDomain", "dcdn", "openAPI")
+            : base("dcdn", "2018-01-15", "StartDcdnDomain")
         {
         }
 
@@ -40,8 +40,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 		private string action;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public string SecurityToken
 		{
@@ -92,19 +90,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

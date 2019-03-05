@@ -29,7 +29,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
     public class AddDcdnDomainRequest : RpcAcsRequest<AddDcdnDomainResponse>
     {
         public AddDcdnDomainRequest()
-            : base("dcdn", "2018-01-15", "AddDcdnDomain", "dcdn", "openAPI")
+            : base("dcdn", "2018-01-15", "AddDcdnDomain")
         {
         }
 
@@ -52,8 +52,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 		private long? ownerId;
 
 		private string checkUrl;
-
-		private string accessKeyId;
 
 		public string TopLevelDomain
 		{
@@ -182,19 +180,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				checkUrl = value;
 				DictionaryUtil.Add(QueryParameters, "CheckUrl", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

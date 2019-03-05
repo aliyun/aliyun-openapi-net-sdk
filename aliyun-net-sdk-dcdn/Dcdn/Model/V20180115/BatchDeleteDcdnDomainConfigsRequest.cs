@@ -29,7 +29,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
     public class BatchDeleteDcdnDomainConfigsRequest : RpcAcsRequest<BatchDeleteDcdnDomainConfigsResponse>
     {
         public BatchDeleteDcdnDomainConfigsRequest()
-            : base("dcdn", "2018-01-15", "BatchDeleteDcdnDomainConfigs", "dcdn", "openAPI")
+            : base("dcdn", "2018-01-15", "BatchDeleteDcdnDomainConfigs")
         {
         }
 
@@ -44,8 +44,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 		private string action;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public string FunctionNames
 		{
@@ -122,19 +120,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

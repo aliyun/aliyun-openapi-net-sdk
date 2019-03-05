@@ -29,7 +29,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
     public class RefreshDcdnObjectCachesRequest : RpcAcsRequest<RefreshDcdnObjectCachesResponse>
     {
         public RefreshDcdnObjectCachesRequest()
-            : base("dcdn", "2018-01-15", "RefreshDcdnObjectCaches", "dcdn", "openAPI")
+            : base("dcdn", "2018-01-15", "RefreshDcdnObjectCaches")
         {
         }
 
@@ -42,8 +42,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 		private long? ownerId;
 
 		private string objectType;
-
-		private string accessKeyId;
 
 		public string SecurityToken
 		{
@@ -107,19 +105,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				objectType = value;
 				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

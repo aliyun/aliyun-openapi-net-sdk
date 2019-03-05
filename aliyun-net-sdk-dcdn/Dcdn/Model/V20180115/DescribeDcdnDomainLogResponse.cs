@@ -71,9 +71,9 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 			private long? logCount;
 
-			private List<DescribeDcdnDomainLog_PageInfoDetail> pageInfos;
-
 			private List<DescribeDcdnDomainLog_LogInfoDetail> logInfos;
+
+			private DescribeDcdnDomainLog_PageInfos pageInfos;
 
 			public long? LogCount
 			{
@@ -84,18 +84,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 				set	
 				{
 					logCount = value;
-				}
-			}
-
-			public List<DescribeDcdnDomainLog_PageInfoDetail> PageInfos
-			{
-				get
-				{
-					return pageInfos;
-				}
-				set	
-				{
-					pageInfos = value;
 				}
 			}
 
@@ -111,49 +99,15 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 				}
 			}
 
-			public class DescribeDcdnDomainLog_PageInfoDetail
+			public DescribeDcdnDomainLog_PageInfos PageInfos
 			{
-
-				private long? pageIndex;
-
-				private long? pageSize;
-
-				private long? total;
-
-				public long? PageIndex
+				get
 				{
-					get
-					{
-						return pageIndex;
-					}
-					set	
-					{
-						pageIndex = value;
-					}
+					return pageInfos;
 				}
-
-				public long? PageSize
+				set	
 				{
-					get
-					{
-						return pageSize;
-					}
-					set	
-					{
-						pageSize = value;
-					}
-				}
-
-				public long? Total
-				{
-					get
-					{
-						return total;
-					}
-					set	
-					{
-						total = value;
-					}
+					pageInfos = value;
 				}
 			}
 
@@ -227,6 +181,52 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 					set	
 					{
 						endTime = value;
+					}
+				}
+			}
+
+			public class DescribeDcdnDomainLog_PageInfos
+			{
+
+				private long? pageIndex;
+
+				private long? pageSize;
+
+				private long? total;
+
+				public long? PageIndex
+				{
+					get
+					{
+						return pageIndex;
+					}
+					set	
+					{
+						pageIndex = value;
+					}
+				}
+
+				public long? PageSize
+				{
+					get
+					{
+						return pageSize;
+					}
+					set	
+					{
+						pageSize = value;
+					}
+				}
+
+				public long? Total
+				{
+					get
+					{
+						return total;
+					}
+					set	
+					{
+						total = value;
 					}
 				}
 			}
