@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 using Aliyun.Acs.Core.Auth;
+using Aliyun.Acs.Core.Auth.Provider;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Profile;
@@ -205,6 +206,10 @@ namespace Aliyun.Acs.Core
             }
 
             AlibabaCloudCredentials credentials = credentialsProvider.GetCredentials();
+            if (credentials == null)
+            {
+                credentials = new DefaultCredentialProvider().GetAlibabaCloudClientCredential();
+            }
             Signer signer = Signer.GetSigner(credentials);
             FormatType format = profile.GetFormat();
             List<Endpoint> endpoints;

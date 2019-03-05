@@ -27,7 +27,7 @@ namespace Aliyun.Acs.Core.Profile
 {
     public interface IClientProfile
     {
-
+        string DefaultClientName { get; set; }
         ISigner GetSigner();
 
         String GetRegionId();

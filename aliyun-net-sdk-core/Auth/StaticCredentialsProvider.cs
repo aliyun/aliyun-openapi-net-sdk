@@ -34,7 +34,7 @@ namespace Aliyun.Acs.Core.Auth
         public StaticCredentialsProvider(IClientProfile clientProfile)
         {
             this.clientProfile = clientProfile;
-            Credential legacyCredential = this.clientProfile.GetCredential();
+            StsCredential legacyCredential = this.clientProfile.GetCredential();
             if (null != legacyCredential.SecurityToken)
             {
                 this.credentials = new BasicSessionCredentials(

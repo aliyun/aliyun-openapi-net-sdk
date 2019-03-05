@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Core.Profile
         private LocationConfig locationConfig = null;
         public FormatType acceptFormat;
 
+        public string DefaultClientName { get; set; }
+
         public DefaultProfile(bool mock = true)
         {
             this.locationConfig = new LocationConfig();

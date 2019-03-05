@@ -25,15 +25,15 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class BasicSessionCredentials : AlibabaCloudCredentials
     {
-        private readonly String accessKeyId;
-        private readonly String accessKeySecret;
-        private readonly String sessionToken;
+        private readonly string accessKeyId;
+        private readonly string accessKeySecret;
+        private readonly string sessionToken;
         protected readonly long roleSessionDurationSeconds;
         private long sessionStartedTimeInMilliSeconds = 0;
         private readonly double expireFact = 0.8;
 
-        public BasicSessionCredentials(String accessKeyId, String accessKeySecret,
-            String sessionToken, long roleSessionDurationSeconds = 0)
+        public BasicSessionCredentials(string accessKeyId, string accessKeySecret,
+            string sessionToken, long roleSessionDurationSeconds = 0)
         {
             if (accessKeyId == null)
             {
@@ -51,17 +51,17 @@ namespace Aliyun.Acs.Core.Auth
             this.sessionStartedTimeInMilliSeconds = DateTimeExtensions.currentTimeMillis(DateTime.Now);
         }
 
-        public String GetAccessKeyId()
+        public string GetAccessKeyId()
         {
             return accessKeyId;
         }
 
-        public String GetAccessKeySecret()
+        public string GetAccessKeySecret()
         {
             return accessKeySecret;
         }
 
-        public String GetSessionToken()
+        public string GetSessionToken()
         {
             return sessionToken;
         }

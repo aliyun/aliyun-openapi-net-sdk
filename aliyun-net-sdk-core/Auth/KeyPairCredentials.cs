@@ -21,32 +21,8 @@ using System;
 
 namespace Aliyun.Acs.Core.Auth
 {
-    public class KeyPairCredentials : AlibabaCloudCredentials
+    public class KeyPairCredentials : RsaKeyPairCredential
     {
-        private String privateKeySecret;
-        private String publicKeyId;
-
-        public KeyPairCredentials(String publicKeyId, String privateKeySecret)
-        {
-            if (publicKeyId == null || privateKeySecret == null)
-            {
-                throw new ArgumentNullException(
-                    "You must provide a valid pair of Public Key ID and Private Key Secret."
-                );
-            }
-
-            this.publicKeyId = publicKeyId;
-            this.privateKeySecret = privateKeySecret;
-        }
-
-        public String GetAccessKeyId()
-        {
-            return publicKeyId;
-        }
-
-        public String GetAccessKeySecret()
-        {
-            return privateKeySecret;
-        }
+        public KeyPairCredentials(string publicKeyId, string privateKeySecret) : base(publicKeyId, privateKeySecret) { }
     }
 }

@@ -21,26 +21,9 @@ using System;
 
 namespace Aliyun.Acs.Core.Auth
 {
-    public class BasicCredentials : AlibabaCloudCredentials
+    [Obsolete]
+    public class BasicCredentials : AccessKeyCredential
     {
-
-        private readonly String accessKeyId;
-        private readonly String accessKeySecret;
-
-        public BasicCredentials(String accessKeyId, String accessKeySecret)
-        {
-            this.accessKeyId = accessKeyId;
-            this.accessKeySecret = accessKeySecret;
-        }
-
-        public String GetAccessKeyId()
-        {
-            return accessKeyId;
-        }
-
-        public String GetAccessKeySecret()
-        {
-            return accessKeySecret;
-        }
+        public BasicCredentials(string accessKeyId, string accessKeySecret) : base(accessKeyId, accessKeySecret) { }
     }
 }

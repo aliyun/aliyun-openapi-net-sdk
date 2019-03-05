@@ -125,10 +125,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             STSAssumeRoleSessionCredentialsProvider instance = mockInstance.Object;
 
             var credentials = instance.GetCredentials(); // 执行credential初始化
-            Assert.IsType<BasicSessionCredentials>(credentials);
+            Assert.IsType<RamRoleArnCredential>(credentials);
 
             var credentials2 = instance.GetCredentials(); // 不执行credential初始化，直接获取
-            Assert.IsType<BasicSessionCredentials>(credentials);
+            Assert.IsType<RamRoleArnCredential>(credentials);
             Assert.Equal(credentials.GetAccessKeyId(), credentials2.GetAccessKeyId());
             Assert.Equal(credentials.GetAccessKeySecret(), credentials2.GetAccessKeySecret());
         }
