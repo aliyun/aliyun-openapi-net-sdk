@@ -95,15 +95,12 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.ContentType = FormatType.JSON;
             request.BodyParameters.Add("ContentMD5NotMatched", "test");
 
-            try
+            var exception = Assert.Throws<ClientException>(() =>
             {
                 this.client.GetAcsResponse(request);
-            }
-            catch (ClientException ex)
-            {
-                Assert.Equal("HTTPBadRequest", ex.ErrorCode);
-                Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", ex.ErrorMessage);
-            }
+            });
+            Assert.Equal("HTTPBadRequest", exception.ErrorCode);
+            Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
         }
 
         [Trait("Category", "FeatureTest")]
@@ -116,15 +113,12 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.ContentType = FormatType.XML;
             request.BodyParameters.Add("ContentMD5NotMatched", "test");
 
-            try
+            var exception = Assert.Throws<ClientException>(() =>
             {
                 this.client.GetAcsResponse(request);
-            }
-            catch (ClientException ex)
-            {
-                Assert.Equal("HTTPBadRequest", ex.ErrorCode);
-                Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", ex.ErrorMessage);
-            }
+            });
+            Assert.Equal("HTTPBadRequest", exception.ErrorCode);
+            Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
         }
 
         [Trait("Category", "FeatureTest")]
@@ -137,15 +131,12 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.ContentType = FormatType.FORM;
             request.BodyParameters.Add("ContentMD5NotMatched", "test");
 
-            try
+            var exception = Assert.Throws<ClientException>(() =>
             {
                 this.client.GetAcsResponse(request);
-            }
-            catch (ClientException ex)
-            {
-                Assert.Equal("HTTPBadRequest", ex.ErrorCode);
-                Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", ex.ErrorMessage);
-            }
+            });
+            Assert.Equal("HTTPBadRequest", exception.ErrorCode);
+            Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
         }
 
         [Trait("Category", "FeatureTest")]
@@ -158,15 +149,12 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.ContentType = FormatType.JSON;
             request.BodyParameters.Add("test", "test");
 
-            try
+            var exception = Assert.Throws<ClientException>(() =>
             {
                 this.client.GetAcsResponse(request);
-            }
-            catch (ClientException ex)
-            {
-                Assert.Equal("HTTPBadRequest", ex.ErrorCode);
-                Assert.Equal("No action specified", ex.ErrorMessage);
-            }
+            });
+            Assert.Equal("HTTPBadRequest", exception.ErrorCode);
+            Assert.Equal("No action specified", exception.ErrorMessage);
         }
 
         [Trait("Category", "FeatureTest")]
@@ -180,15 +168,12 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.BodyParameters.Add("test", "test");
             request.BodyParameters.Add("test2", "test2");
 
-            try
+            var exception = Assert.Throws<ClientException>(() =>
             {
                 this.client.GetAcsResponse(request);
-            }
-            catch (ClientException ex)
-            {
-                Assert.Equal("HTTPBadRequest", ex.ErrorCode);
-                Assert.Equal("No action specified", ex.ErrorMessage);
-            }
+            });
+            Assert.Equal("HTTPBadRequest", exception.ErrorCode);
+            Assert.Equal("No action specified", exception.ErrorMessage);
         }
 
         [Trait("Category", "FeatureTest")]
@@ -201,15 +186,12 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.ContentType = FormatType.FORM;
             request.BodyParameters.Add("test", "test");
 
-            try
+            var exception = Assert.Throws<ClientException>(() =>
             {
                 this.client.GetAcsResponse(request);
-            }
-            catch (ClientException ex)
-            {
-                Assert.Equal("HTTPBadRequest", ex.ErrorCode);
-                Assert.Equal("No action specified", ex.ErrorMessage);
-            }
+            });
+            Assert.Equal("HTTPBadRequest", exception.ErrorCode);
+            Assert.Equal("No action specified", exception.ErrorMessage);
         }
     }
 }
