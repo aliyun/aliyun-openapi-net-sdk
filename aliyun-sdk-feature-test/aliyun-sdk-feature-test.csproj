@@ -24,6 +24,12 @@
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2017.csproj" />
     <ProjectReference Include="..\aliyun-net-sdk-ecs\aliyun-net-sdk-ecs.vs2017.csproj" />
+    <ProjectReference Include="..\aliyun-net-sdk-rds\aliyun-net-sdk-rds.vs2017.csproj" />
+    <ProjectReference Include="..\aliyun-net-sdk-cdn\aliyun-net-sdk-cdn.vs2017.csproj" />
+    <ProjectReference Include="..\aliyun-net-sdk-slb\aliyun-net-sdk-slb.vs2017.csproj" />
+    <ProjectReference Include="..\aliyun-net-sdk-ram\aliyun-net-sdk-ram.vs2017.csproj" />
+    <ProjectReference Include="..\aliyun-net-sdk-vpc\aliyun-net-sdk-vpc.vs2017.csproj" />
+    <ProjectReference Include="..\aliyun-net-sdk-ros\aliyun-net-sdk-ros.vs2017.csproj" />
   </ItemGroup>
 
 </Project>

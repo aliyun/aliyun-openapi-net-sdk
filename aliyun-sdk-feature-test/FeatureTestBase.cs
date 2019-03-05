@@ -1,39 +1,54 @@
 using System;
 
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Auth.Sts;
 using Aliyun.Acs.Core.Profile;
 
 namespace Aliyun.Acs.Feature.Test
 {
     public class FeatureTestBase
     {
-        private static string regionId = "cn-shanghai";
+        public string regionId = "cn-shanghai";
         private static readonly string AccessKeyId = "ACCESS_KEY_ID";
         private static readonly string AccessKeySecret = "ACCESS_KEY_SECRET";
-
-        private string accessKey;
-        private string accessKeySecret;
+        private static readonly string roleArn = "RAM";
 
         private IClientProfile profile;
         public DefaultAcsClient client;
 
         public FeatureTestBase()
         {
-            accessKey = GetAccessKeyId();
-            accessKeySecret = GetAccessKeySecret();
-
-            profile = DefaultProfile.GetProfile(regionId, accessKey, accessKeySecret);
+            profile = DefaultProfile.GetProfile(regionId, GetBasicAccessKeyId(), GetBasicAccessKeySecret());
             client = new DefaultAcsClient(profile);
         }
 
-        private string GetAccessKeyId()
+        public string GetBasicAccessKeyId()
         {
             return Environment.GetEnvironmentVariable(AccessKeyId) ?? "FakeAccessKeyId";
         }
 
-        private string GetAccessKeySecret()
+        public string GetBasicAccessKeySecret()
         {
             return Environment.GetEnvironmentVariable(AccessKeySecret) ?? "FakeAccessKeySecret";
+        }
+
+        public string GetRoleArn()
+        {
+            return Environment.GetEnvironmentVariable(roleArn) ?? "FakeRoleArn";
+        }
+
+        public string GetToken()
+        {
+            DefaultProfile profile = DefaultProfile.GetProfile(this.regionId, GetBasicAccessKeyId(), GetBasicAccessKeySecret());
+            IAcsClient client = new DefaultAcsClient(profile);
+
+            AssumeRoleRequest assumeRoleRequest = new AssumeRoleRequest();
+            assumeRoleRequest.RoleArn = GetRoleArn();
+            assumeRoleRequest.RoleSessionName = "robert_test";
+
+            AssumeRoleResponse assumeRoleResponse = client.GetAcsResponse(assumeRoleRequest);
+
+            return assumeRoleResponse.Credentials.SecurityToken;
         }
     }
 }
