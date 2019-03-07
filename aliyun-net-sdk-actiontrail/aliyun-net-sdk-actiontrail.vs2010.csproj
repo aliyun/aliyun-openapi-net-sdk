@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{c8ce0506-fec8-4ec6-9c44-d695f002a082}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-actiontrail</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Actiontrail\Model\V20171204\DescribeTrailsRequest.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\CreateTrailResponse.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\CreateTrailRequest.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\StartLoggingRequest.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\GetTrailStatusRequest.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\DescribeRegionsResponse.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\DescribeRegionsRequest.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\GetTrailStatusResponse.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\LookupEventsResponse.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\StopLoggingRequest.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\UpdateTrailResponse.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\LookupEventsRequest.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\UpdateTrailRequest.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\StartLoggingResponse.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\DeleteTrailRequest.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\DescribeTrailsResponse.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\StopLoggingResponse.cs" />
+	<Compile Include="Actiontrail\Model\V20171204\DeleteTrailResponse.cs" />
+	<Compile Include="Actiontrail\Transform\V20171204\UpdateTrailResponseUnmarshaller.cs" />
+	<Compile Include="Actiontrail\Transform\V20171204\GetTrailStatusResponseUnmarshaller.cs" />
+	<Compile Include="Actiontrail\Transform\V20171204\DescribeTrailsResponseUnmarshaller.cs" />
+	<Compile Include="Actiontrail\Transform\V20171204\StartLoggingResponseUnmarshaller.cs" />
+	<Compile Include="Actiontrail\Transform\V20171204\StopLoggingResponseUnmarshaller.cs" />
+	<Compile Include="Actiontrail\Transform\V20171204\LookupEventsResponseUnmarshaller.cs" />
+	<Compile Include="Actiontrail\Transform\V20171204\CreateTrailResponseUnmarshaller.cs" />
+	<Compile Include="Actiontrail\Transform\V20171204\DeleteTrailResponseUnmarshaller.cs" />
+	<Compile Include="Actiontrail\Transform\V20171204\DescribeRegionsResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
