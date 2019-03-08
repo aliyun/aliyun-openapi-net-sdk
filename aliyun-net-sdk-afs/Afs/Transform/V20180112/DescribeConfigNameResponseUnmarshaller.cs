@@ -32,8 +32,18 @@ namespace Aliyun.Acs.afs.Transform.V20180112
 			describeConfigNameResponse.HttpResponse = context.HttpResponse;
 			describeConfigNameResponse.RequestId = context.StringValue("DescribeConfigName.RequestId");
 			describeConfigNameResponse.HasConfig = context.BooleanValue("DescribeConfigName.HasConfig");
-			describeConfigNameResponse.ConfigNames = context.StringValue("DescribeConfigName.ConfigNames");
 			describeConfigNameResponse.BizCode = context.StringValue("DescribeConfigName.BizCode");
+
+			List<DescribeConfigNameResponse.DescribeConfigName_ConfigName> describeConfigNameResponse_configNames = new List<DescribeConfigNameResponse.DescribeConfigName_ConfigName>();
+			for (int i = 0; i < context.Length("DescribeConfigName.ConfigNames.Length"); i++) {
+				DescribeConfigNameResponse.DescribeConfigName_ConfigName configName = new DescribeConfigNameResponse.DescribeConfigName_ConfigName();
+				configName.AliUid = context.StringValue("DescribeConfigName.ConfigNames["+ i +"].AliUid");
+				configName.ConfigName = context.StringValue("DescribeConfigName.ConfigNames["+ i +"].ConfigName");
+				configName.RefExtId = context.StringValue("DescribeConfigName.ConfigNames["+ i +"].RefExtId");
+
+				describeConfigNameResponse_configNames.Add(configName);
+			}
+			describeConfigNameResponse.ConfigNames = describeConfigNameResponse_configNames;
         
 			return describeConfigNameResponse;
         }

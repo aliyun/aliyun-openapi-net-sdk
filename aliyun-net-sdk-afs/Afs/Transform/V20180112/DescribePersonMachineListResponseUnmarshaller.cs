@@ -45,6 +45,8 @@ namespace Aliyun.Acs.afs.Transform.V20180112
 				personMachine.ApplyType = context.StringValue("DescribePersonMachineList.PersonMachineRes.PersonMachines["+ i +"].ApplyType");
 				personMachine.Scene = context.StringValue("DescribePersonMachineList.PersonMachineRes.PersonMachines["+ i +"].Scene");
 				personMachine.LastUpdate = context.StringValue("DescribePersonMachineList.PersonMachineRes.PersonMachines["+ i +"].LastUpdate");
+				personMachine.ExtId = context.StringValue("DescribePersonMachineList.PersonMachineRes.PersonMachines["+ i +"].ExtId");
+				personMachine.SceneOriginal = context.StringValue("DescribePersonMachineList.PersonMachineRes.PersonMachines["+ i +"].SceneOriginal");
 
 				personMachineRes_personMachines.Add(personMachine);
 			}

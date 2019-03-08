@@ -35,8 +35,6 @@ namespace Aliyun.Acs.afs.Model.V20180112
 
 		private string timeEnd;
 
-		private long? resourceOwnerId;
-
 		private bool? warnOpen;
 
 		private string sourceIp;
@@ -61,19 +59,6 @@ namespace Aliyun.Acs.afs.Model.V20180112
 			{
 				timeEnd = value;
 				DictionaryUtil.Add(QueryParameters, "TimeEnd", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 

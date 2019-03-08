@@ -17,53 +17,45 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.afs.Transform;
+using Aliyun.Acs.afs.Transform.V20180112;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.afs.Model.V20180112
 {
-	public class CreateConfigurationResponse : AcsResponse
-	{
+    public class DescribeOrderInfoRequest : RpcAcsRequest<DescribeOrderInfoResponse>
+    {
+        public DescribeOrderInfoRequest()
+            : base("afs", "2018-01-12", "DescribeOrderInfo")
+        {
+        }
 
-		private string requestId;
+		private string sourceIp;
 
-		private string bizCode;
-
-		private string refExtId;
-
-		public string RequestId
+		public string SourceIp
 		{
 			get
 			{
-				return requestId;
+				return sourceIp;
 			}
 			set	
 			{
-				requestId = value;
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
-		public string BizCode
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return bizCode;
-			}
-			set	
-			{
-				bizCode = value;
-			}
+			return false;
 		}
 
-		public string RefExtId
-		{
-			get
-			{
-				return refExtId;
-			}
-			set	
-			{
-				refExtId = value;
-			}
-		}
-	}
+        public override DescribeOrderInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        {
+            return DescribeOrderInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

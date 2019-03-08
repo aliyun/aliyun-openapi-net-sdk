@@ -21,14 +21,20 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.afs.Model.V20180112
 {
-	public class CreateConfigurationResponse : AcsResponse
+	public class DescribeOrderInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private string bizCode;
 
-		private string refExtId;
+		private string orderLevel;
+
+		private string num;
+
+		private string beginDate;
+
+		private string endDate;
 
 		public string RequestId
 		{
@@ -54,15 +60,51 @@ namespace Aliyun.Acs.afs.Model.V20180112
 			}
 		}
 
-		public string RefExtId
+		public string OrderLevel
 		{
 			get
 			{
-				return refExtId;
+				return orderLevel;
 			}
 			set	
 			{
-				refExtId = value;
+				orderLevel = value;
+			}
+		}
+
+		public string Num
+		{
+			get
+			{
+				return num;
+			}
+			set	
+			{
+				num = value;
+			}
+		}
+
+		public string BeginDate
+		{
+			get
+			{
+				return beginDate;
+			}
+			set	
+			{
+				beginDate = value;
+			}
+		}
+
+		public string EndDate
+		{
+			get
+			{
+				return endDate;
+			}
+			set	
+			{
+				endDate = value;
 			}
 		}
 	}

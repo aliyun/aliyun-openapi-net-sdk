@@ -40,6 +40,11 @@ namespace Aliyun.Acs.afs.Transform.V20180112
 			codeData.Python = context.StringValue("ConfigurationStyle.CodeData.Python");
 			codeData.Java = context.StringValue("ConfigurationStyle.CodeData.Java");
 			codeData.NodeJs = context.StringValue("ConfigurationStyle.CodeData.NodeJs");
+			codeData.NetUrl = context.StringValue("ConfigurationStyle.CodeData.NetUrl");
+			codeData.PhpUrl = context.StringValue("ConfigurationStyle.CodeData.PhpUrl");
+			codeData.PythonUrl = context.StringValue("ConfigurationStyle.CodeData.PythonUrl");
+			codeData.JavaUrl = context.StringValue("ConfigurationStyle.CodeData.JavaUrl");
+			codeData.NodeJsUrl = context.StringValue("ConfigurationStyle.CodeData.NodeJsUrl");
 			configurationStyleResponse.CodeData = codeData;
         
 			return configurationStyleResponse;

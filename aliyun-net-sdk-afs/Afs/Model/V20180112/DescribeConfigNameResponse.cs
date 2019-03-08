@@ -28,9 +28,9 @@ namespace Aliyun.Acs.afs.Model.V20180112
 
 		private bool? hasConfig;
 
-		private string configNames;
-
 		private string bizCode;
+
+		private List<DescribeConfigName_ConfigName> configNames;
 
 		public string RequestId
 		{
@@ -56,7 +56,19 @@ namespace Aliyun.Acs.afs.Model.V20180112
 			}
 		}
 
-		public string ConfigNames
+		public string BizCode
+		{
+			get
+			{
+				return bizCode;
+			}
+			set	
+			{
+				bizCode = value;
+			}
+		}
+
+		public List<DescribeConfigName_ConfigName> ConfigNames
 		{
 			get
 			{
@@ -68,15 +80,49 @@ namespace Aliyun.Acs.afs.Model.V20180112
 			}
 		}
 
-		public string BizCode
+		public class DescribeConfigName_ConfigName
 		{
-			get
+
+			private string aliUid;
+
+			private string configName;
+
+			private string refExtId;
+
+			public string AliUid
 			{
-				return bizCode;
+				get
+				{
+					return aliUid;
+				}
+				set	
+				{
+					aliUid = value;
+				}
 			}
-			set	
+
+			public string ConfigName
 			{
-				bizCode = value;
+				get
+				{
+					return configName;
+				}
+				set	
+				{
+					configName = value;
+				}
+			}
+
+			public string RefExtId
+			{
+				get
+				{
+					return refExtId;
+				}
+				set	
+				{
+					refExtId = value;
+				}
 			}
 		}
 	}

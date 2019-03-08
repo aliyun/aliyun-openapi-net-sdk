@@ -26,10 +26,10 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.afs.Model.V20180112
 {
-    public class DescribeCaptchaRiskRequest : RpcAcsRequest<DescribeCaptchaRiskResponse>
+    public class UpdateConfigNameRequest : RpcAcsRequest<UpdateConfigNameResponse>
     {
-        public DescribeCaptchaRiskRequest()
-            : base("afs", "2018-01-12", "DescribeCaptchaRisk")
+        public UpdateConfigNameRequest()
+            : base("afs", "2018-01-12", "UpdateConfigName")
         {
         }
 
@@ -39,7 +39,7 @@ namespace Aliyun.Acs.afs.Model.V20180112
 
 		private string refExtId;
 
-		private string time;
+		private string lang;
 
 		public string SourceIp
 		{
@@ -80,16 +80,16 @@ namespace Aliyun.Acs.afs.Model.V20180112
 			}
 		}
 
-		public string Time
+		public string Lang
 		{
 			get
 			{
-				return time;
+				return lang;
 			}
 			set	
 			{
-				time = value;
-				DictionaryUtil.Add(QueryParameters, "Time", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -98,9 +98,9 @@ namespace Aliyun.Acs.afs.Model.V20180112
 			return false;
 		}
 
-        public override DescribeCaptchaRiskResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateConfigNameResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCaptchaRiskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateConfigNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

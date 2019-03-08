@@ -21,14 +21,12 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.afs.Model.V20180112
 {
-	public class CreateConfigurationResponse : AcsResponse
+	public class DescribeCaptchaOrderResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private string bizCode;
-
-		private string refExtId;
 
 		public string RequestId
 		{
@@ -51,18 +49,6 @@ namespace Aliyun.Acs.afs.Model.V20180112
 			set	
 			{
 				bizCode = value;
-			}
-		}
-
-		public string RefExtId
-		{
-			get
-			{
-				return refExtId;
-			}
-			set	
-			{
-				refExtId = value;
 			}
 		}
 	}

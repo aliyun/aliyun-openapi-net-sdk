@@ -16,54 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.afs.Model.V20180112;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.afs.Model.V20180112
+namespace Aliyun.Acs.afs.Transform.V20180112
 {
-	public class CreateConfigurationResponse : AcsResponse
-	{
+    public class DescribeCaptchaOrderResponseUnmarshaller
+    {
+        public static DescribeCaptchaOrderResponse Unmarshall(UnmarshallerContext context)
+        {
+			DescribeCaptchaOrderResponse describeCaptchaOrderResponse = new DescribeCaptchaOrderResponse();
 
-		private string requestId;
-
-		private string bizCode;
-
-		private string refExtId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string BizCode
-		{
-			get
-			{
-				return bizCode;
-			}
-			set	
-			{
-				bizCode = value;
-			}
-		}
-
-		public string RefExtId
-		{
-			get
-			{
-				return refExtId;
-			}
-			set	
-			{
-				refExtId = value;
-			}
-		}
-	}
+			describeCaptchaOrderResponse.HttpResponse = context.HttpResponse;
+			describeCaptchaOrderResponse.RequestId = context.StringValue("DescribeCaptchaOrder.RequestId");
+			describeCaptchaOrderResponse.BizCode = context.StringValue("DescribeCaptchaOrder.BizCode");
+        
+			return describeCaptchaOrderResponse;
+        }
+    }
 }

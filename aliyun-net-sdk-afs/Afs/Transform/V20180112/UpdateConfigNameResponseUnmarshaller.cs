@@ -16,54 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.afs.Model.V20180112;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.afs.Model.V20180112
+namespace Aliyun.Acs.afs.Transform.V20180112
 {
-	public class CreateConfigurationResponse : AcsResponse
-	{
+    public class UpdateConfigNameResponseUnmarshaller
+    {
+        public static UpdateConfigNameResponse Unmarshall(UnmarshallerContext context)
+        {
+			UpdateConfigNameResponse updateConfigNameResponse = new UpdateConfigNameResponse();
 
-		private string requestId;
-
-		private string bizCode;
-
-		private string refExtId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string BizCode
-		{
-			get
-			{
-				return bizCode;
-			}
-			set	
-			{
-				bizCode = value;
-			}
-		}
-
-		public string RefExtId
-		{
-			get
-			{
-				return refExtId;
-			}
-			set	
-			{
-				refExtId = value;
-			}
-		}
-	}
+			updateConfigNameResponse.HttpResponse = context.HttpResponse;
+			updateConfigNameResponse.RequestId = context.StringValue("UpdateConfigName.RequestId");
+			updateConfigNameResponse.BizCode = context.StringValue("UpdateConfigName.BizCode");
+        
+			return updateConfigNameResponse;
+        }
+    }
 }

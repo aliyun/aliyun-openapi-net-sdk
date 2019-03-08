@@ -35,8 +35,6 @@ namespace Aliyun.Acs.afs.Model.V20180112
 
 		private string sig;
 
-		private long? resourceOwnerId;
-
 		private string remoteIp;
 
 		private string sourceIp;
@@ -59,19 +57,6 @@ namespace Aliyun.Acs.afs.Model.V20180112
 			{
 				sig = value;
 				DictionaryUtil.Add(QueryParameters, "Sig", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 

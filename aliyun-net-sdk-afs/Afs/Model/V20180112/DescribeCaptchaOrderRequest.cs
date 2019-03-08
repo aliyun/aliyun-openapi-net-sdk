@@ -17,53 +17,60 @@
  * under the License.
  */
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.afs.Transform;
+using Aliyun.Acs.afs.Transform.V20180112;
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.afs.Model.V20180112
 {
-	public class CreateConfigurationResponse : AcsResponse
-	{
+    public class DescribeCaptchaOrderRequest : RpcAcsRequest<DescribeCaptchaOrderResponse>
+    {
+        public DescribeCaptchaOrderRequest()
+            : base("afs", "2018-01-12", "DescribeCaptchaOrder")
+        {
+        }
 
-		private string requestId;
+		private string sourceIp;
 
-		private string bizCode;
+		private string lang;
 
-		private string refExtId;
-
-		public string RequestId
+		public string SourceIp
 		{
 			get
 			{
-				return requestId;
+				return sourceIp;
 			}
 			set	
 			{
-				requestId = value;
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
-		public string BizCode
+		public string Lang
 		{
 			get
 			{
-				return bizCode;
+				return lang;
 			}
 			set	
 			{
-				bizCode = value;
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
-		public string RefExtId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return refExtId;
-			}
-			set	
-			{
-				refExtId = value;
-			}
+			return false;
 		}
-	}
+
+        public override DescribeCaptchaOrderResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        {
+            return DescribeCaptchaOrderResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

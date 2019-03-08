@@ -23,18 +23,21 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.afs.Transform.V20180112
 {
-    public class CreateConfigurationResponseUnmarshaller
+    public class DescribeOrderInfoResponseUnmarshaller
     {
-        public static CreateConfigurationResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOrderInfoResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateConfigurationResponse createConfigurationResponse = new CreateConfigurationResponse();
+			DescribeOrderInfoResponse describeOrderInfoResponse = new DescribeOrderInfoResponse();
 
-			createConfigurationResponse.HttpResponse = context.HttpResponse;
-			createConfigurationResponse.RequestId = context.StringValue("CreateConfiguration.RequestId");
-			createConfigurationResponse.BizCode = context.StringValue("CreateConfiguration.BizCode");
-			createConfigurationResponse.RefExtId = context.StringValue("CreateConfiguration.RefExtId");
+			describeOrderInfoResponse.HttpResponse = context.HttpResponse;
+			describeOrderInfoResponse.RequestId = context.StringValue("DescribeOrderInfo.RequestId");
+			describeOrderInfoResponse.BizCode = context.StringValue("DescribeOrderInfo.BizCode");
+			describeOrderInfoResponse.OrderLevel = context.StringValue("DescribeOrderInfo.OrderLevel");
+			describeOrderInfoResponse.Num = context.StringValue("DescribeOrderInfo.Num");
+			describeOrderInfoResponse.BeginDate = context.StringValue("DescribeOrderInfo.BeginDate");
+			describeOrderInfoResponse.EndDate = context.StringValue("DescribeOrderInfo.EndDate");
         
-			return createConfigurationResponse;
+			return describeOrderInfoResponse;
         }
     }
 }

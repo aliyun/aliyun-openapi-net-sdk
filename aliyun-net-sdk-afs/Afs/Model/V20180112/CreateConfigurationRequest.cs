@@ -33,8 +33,6 @@ namespace Aliyun.Acs.afs.Model.V20180112
         {
         }
 
-		private long? resourceOwnerId;
-
 		private string sourceIp;
 
 		private string configurationName;
@@ -46,19 +44,6 @@ namespace Aliyun.Acs.afs.Model.V20180112
 		private string applyType;
 
 		private string scene;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
 
 		public string SourceIp
 		{

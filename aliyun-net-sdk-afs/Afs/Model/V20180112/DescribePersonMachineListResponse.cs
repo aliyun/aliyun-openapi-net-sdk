@@ -112,6 +112,10 @@ namespace Aliyun.Acs.afs.Model.V20180112
 
 				private string lastUpdate;
 
+				private string extId;
+
+				private string sceneOriginal;
+
 				public string ConfigurationName
 				{
 					get
@@ -181,6 +185,30 @@ namespace Aliyun.Acs.afs.Model.V20180112
 					set	
 					{
 						lastUpdate = value;
+					}
+				}
+
+				public string ExtId
+				{
+					get
+					{
+						return extId;
+					}
+					set	
+					{
+						extId = value;
+					}
+				}
+
+				public string SceneOriginal
+				{
+					get
+					{
+						return sceneOriginal;
+					}
+					set	
+					{
+						sceneOriginal = value;
 					}
 				}
 			}

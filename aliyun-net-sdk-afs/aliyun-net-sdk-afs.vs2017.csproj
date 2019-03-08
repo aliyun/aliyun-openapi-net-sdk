@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -12,8 +12,7 @@
     <PackageIconUrl>https://www.alibabacloud.com/favicon.ico</PackageIconUrl>
     <Description>Alibaba Cloud SDK for C#</Description>
     <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageTags>alibaba aliyun SDK</PackageTags>
-    <PackageId>aliyun-net-sdk-afs</PackageId>
+    <PackageTags>alibaba aliyun SDK afs</PackageTags>
     <AssemblyName>aliyun-net-sdk-afs</AssemblyName>
   </PropertyGroup>
 

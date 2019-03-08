@@ -33,28 +33,15 @@ namespace Aliyun.Acs.afs.Model.V20180112
         {
         }
 
-		private long? resourceOwnerId;
-
 		private string sourceIp;
 
 		private string configName;
 
+		private string refExtId;
+
 		private string time;
 
 		private string type;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
 
 		public string SourceIp
 		{
@@ -79,6 +66,19 @@ namespace Aliyun.Acs.afs.Model.V20180112
 			{
 				configName = value;
 				DictionaryUtil.Add(QueryParameters, "ConfigName", value);
+			}
+		}
+
+		public string RefExtId
+		{
+			get
+			{
+				return refExtId;
+			}
+			set	
+			{
+				refExtId = value;
+				DictionaryUtil.Add(QueryParameters, "RefExtId", value);
 			}
 		}
 

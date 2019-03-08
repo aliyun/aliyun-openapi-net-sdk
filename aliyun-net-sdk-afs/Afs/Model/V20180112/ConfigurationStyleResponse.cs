@@ -81,6 +81,16 @@ namespace Aliyun.Acs.afs.Model.V20180112
 
 			private string nodeJs;
 
+			private string netUrl;
+
+			private string phpUrl;
+
+			private string pythonUrl;
+
+			private string javaUrl;
+
+			private string nodeJsUrl;
+
 			public string Html
 			{
 				get
@@ -150,6 +160,66 @@ namespace Aliyun.Acs.afs.Model.V20180112
 				set	
 				{
 					nodeJs = value;
+				}
+			}
+
+			public string NetUrl
+			{
+				get
+				{
+					return netUrl;
+				}
+				set	
+				{
+					netUrl = value;
+				}
+			}
+
+			public string PhpUrl
+			{
+				get
+				{
+					return phpUrl;
+				}
+				set	
+				{
+					phpUrl = value;
+				}
+			}
+
+			public string PythonUrl
+			{
+				get
+				{
+					return pythonUrl;
+				}
+				set	
+				{
+					pythonUrl = value;
+				}
+			}
+
+			public string JavaUrl
+			{
+				get
+				{
+					return javaUrl;
+				}
+				set	
+				{
+					javaUrl = value;
+				}
+			}
+
+			public string NodeJsUrl
+			{
+				get
+				{
+					return nodeJsUrl;
+				}
+				set	
+				{
+					nodeJsUrl = value;
 				}
 			}
 		}
