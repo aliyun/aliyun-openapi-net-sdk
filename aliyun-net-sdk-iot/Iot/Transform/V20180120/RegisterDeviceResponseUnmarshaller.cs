@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.ProductKey = context.StringValue("RegisterDevice.Data.ProductKey");
 			data.DeviceName = context.StringValue("RegisterDevice.Data.DeviceName");
 			data.DeviceSecret = context.StringValue("RegisterDevice.Data.DeviceSecret");
+			data.DevEui = context.StringValue("RegisterDevice.Data.DevEui");
+			data.JoinEui = context.StringValue("RegisterDevice.Data.JoinEui");
 			registerDeviceResponse.Data = data;
         
 			return registerDeviceResponse;

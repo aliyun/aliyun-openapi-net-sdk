@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string aliyunCommodityCode;
 
+		private string joinPermissionId;
+
 		private long? categoryId;
 
 		private string accessKeyId;
@@ -169,6 +171,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				aliyunCommodityCode = value;
 				DictionaryUtil.Add(QueryParameters, "AliyunCommodityCode", value);
+			}
+		}
+
+		public string JoinPermissionId
+		{
+			get
+			{
+				return joinPermissionId;
+			}
+			set	
+			{
+				joinPermissionId = value;
+				DictionaryUtil.Add(QueryParameters, "JoinPermissionId", value);
 			}
 		}
 

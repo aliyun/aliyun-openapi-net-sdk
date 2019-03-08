@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				applyDeviceInfo.DeviceId = context.StringValue("QueryPageByApplyId.ApplyDeviceList["+ i +"].DeviceId");
 				applyDeviceInfo.DeviceName = context.StringValue("QueryPageByApplyId.ApplyDeviceList["+ i +"].DeviceName");
 				applyDeviceInfo.DeviceSecret = context.StringValue("QueryPageByApplyId.ApplyDeviceList["+ i +"].DeviceSecret");
+				applyDeviceInfo.IotId = context.StringValue("QueryPageByApplyId.ApplyDeviceList["+ i +"].IotId");
 
 				queryPageByApplyIdResponse_applyDeviceList.Add(applyDeviceInfo);
 			}

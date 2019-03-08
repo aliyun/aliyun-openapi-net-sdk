@@ -26,14 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class SaveDevicePropRequest : RpcAcsRequest<SaveDevicePropResponse>
+    public class SetDeviceDesiredPropertyRequest : RpcAcsRequest<SetDeviceDesiredPropertyResponse>
     {
-        public SaveDevicePropRequest()
-            : base("Iot", "2018-01-20", "SaveDeviceProp", "iot", "openAPI")
+        public SetDeviceDesiredPropertyRequest()
+            : base("Iot", "2018-01-20", "SetDeviceDesiredProperty", "iot", "openAPI")
         {
         }
 
 		private string iotId;
+
+		private string versions;
 
 		private string iotInstanceId;
 
@@ -41,9 +43,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string productKey;
 
-		private string accessKeyId;
+		private string items;
 
-		private string props;
+		private string accessKeyId;
 
 		public string IotId
 		{
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotId = value;
 				DictionaryUtil.Add(QueryParameters, "IotId", value);
+			}
+		}
+
+		public string Versions
+		{
+			get
+			{
+				return versions;
+			}
+			set	
+			{
+				versions = value;
+				DictionaryUtil.Add(QueryParameters, "Versions", value);
 			}
 		}
 
@@ -97,6 +112,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public string Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+				DictionaryUtil.Add(QueryParameters, "Items", value);
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -110,22 +138,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Props
-		{
-			get
-			{
-				return props;
-			}
-			set	
-			{
-				props = value;
-				DictionaryUtil.Add(QueryParameters, "Props", value);
-			}
-		}
-
-        public override SaveDevicePropResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SetDeviceDesiredPropertyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SaveDevicePropResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetDeviceDesiredPropertyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -107,6 +107,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string lastOnlineTime;
 
+			private string iotId;
+
 			public string DeviceId
 			{
 				get
@@ -164,6 +166,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					lastOnlineTime = value;
+				}
+			}
+
+			public string IotId
+			{
+				get
+				{
+					return iotId;
+				}
+				set	
+				{
+					iotId = value;
 				}
 			}
 		}

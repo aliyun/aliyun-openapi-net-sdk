@@ -105,6 +105,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string deviceSecret;
 
+			private string devEui;
+
+			private string joinEui;
+
 			public string IotId
 			{
 				get
@@ -150,6 +154,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					deviceSecret = value;
+				}
+			}
+
+			public string DevEui
+			{
+				get
+				{
+					return devEui;
+				}
+				set	
+				{
+					devEui = value;
+				}
+			}
+
+			public string JoinEui
+			{
+				get
+				{
+					return joinEui;
+				}
+				set	
+				{
+					joinEui = value;
 				}
 			}
 		}

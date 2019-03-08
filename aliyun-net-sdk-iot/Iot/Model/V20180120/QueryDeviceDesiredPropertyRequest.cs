@@ -26,12 +26,14 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class SaveDevicePropRequest : RpcAcsRequest<SaveDevicePropResponse>
+    public class QueryDeviceDesiredPropertyRequest : RpcAcsRequest<QueryDeviceDesiredPropertyResponse>
     {
-        public SaveDevicePropRequest()
-            : base("Iot", "2018-01-20", "SaveDeviceProp", "iot", "openAPI")
+        public QueryDeviceDesiredPropertyRequest()
+            : base("Iot", "2018-01-20", "QueryDeviceDesiredProperty", "iot", "openAPI")
         {
         }
+
+		private List<string> identifiers;
 
 		private string iotId;
 
@@ -43,7 +45,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string accessKeyId;
 
-		private string props;
+		public List<string> Identifiers
+		{
+			get
+			{
+				return identifiers;
+			}
+
+			set
+			{
+				identifiers = value;
+				for (int i = 0; i < identifiers.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Identifier." + (i + 1) , identifiers[i]);
+				}
+			}
+		}
 
 		public string IotId
 		{
@@ -110,22 +127,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Props
-		{
-			get
-			{
-				return props;
-			}
-			set	
-			{
-				props = value;
-				DictionaryUtil.Add(QueryParameters, "Props", value);
-			}
-		}
-
-        public override SaveDevicePropResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryDeviceDesiredPropertyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return SaveDevicePropResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDeviceDesiredPropertyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				deviceStatus.Status = context.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].Status");
 				deviceStatus.AsAddress = context.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].AsAddress");
 				deviceStatus.LastOnlineTime = context.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].LastOnlineTime");
+				deviceStatus.IotId = context.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].IotId");
 
 				batchGetDeviceStateResponse_deviceStatusList.Add(deviceStatus);
 			}

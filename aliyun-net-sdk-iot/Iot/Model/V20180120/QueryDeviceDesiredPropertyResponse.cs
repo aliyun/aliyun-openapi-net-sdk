@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryPageByApplyIdResponse : AcsResponse
+	public class QueryDeviceDesiredPropertyResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,15 +32,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private int? pageSize;
-
-		private int? page;
-
-		private int? pageCount;
-
-		private int? total;
-
-		private List<QueryPageByApplyId_ApplyDeviceInfo> applyDeviceList;
+		private QueryDeviceDesiredProperty_Data data;
 
 		public string RequestId
 		{
@@ -90,122 +82,134 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? PageSize
+		public QueryDeviceDesiredProperty_Data Data
 		{
 			get
 			{
-				return pageSize;
+				return data;
 			}
 			set	
 			{
-				pageSize = value;
+				data = value;
 			}
 		}
 
-		public int? Page
-		{
-			get
-			{
-				return page;
-			}
-			set	
-			{
-				page = value;
-			}
-		}
-
-		public int? PageCount
-		{
-			get
-			{
-				return pageCount;
-			}
-			set	
-			{
-				pageCount = value;
-			}
-		}
-
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
-
-		public List<QueryPageByApplyId_ApplyDeviceInfo> ApplyDeviceList
-		{
-			get
-			{
-				return applyDeviceList;
-			}
-			set	
-			{
-				applyDeviceList = value;
-			}
-		}
-
-		public class QueryPageByApplyId_ApplyDeviceInfo
+		public class QueryDeviceDesiredProperty_Data
 		{
 
-			private string deviceId;
+			private List<QueryDeviceDesiredProperty_DesiredPropertyInfo> list;
 
-			private string deviceName;
-
-			private string deviceSecret;
-
-			private string iotId;
-
-			public string DeviceId
+			public List<QueryDeviceDesiredProperty_DesiredPropertyInfo> List
 			{
 				get
 				{
-					return deviceId;
+					return list;
 				}
 				set	
 				{
-					deviceId = value;
+					list = value;
 				}
 			}
 
-			public string DeviceName
+			public class QueryDeviceDesiredProperty_DesiredPropertyInfo
 			{
-				get
-				{
-					return deviceName;
-				}
-				set	
-				{
-					deviceName = value;
-				}
-			}
 
-			public string DeviceSecret
-			{
-				get
-				{
-					return deviceSecret;
-				}
-				set	
-				{
-					deviceSecret = value;
-				}
-			}
+				private string unit;
 
-			public string IotId
-			{
-				get
+				private string identifier;
+
+				private string dataType;
+
+				private string time;
+
+				private string _value;
+
+				private string name;
+
+				private long? version;
+
+				public string Unit
 				{
-					return iotId;
+					get
+					{
+						return unit;
+					}
+					set	
+					{
+						unit = value;
+					}
 				}
-				set	
+
+				public string Identifier
 				{
-					iotId = value;
+					get
+					{
+						return identifier;
+					}
+					set	
+					{
+						identifier = value;
+					}
+				}
+
+				public string DataType
+				{
+					get
+					{
+						return dataType;
+					}
+					set	
+					{
+						dataType = value;
+					}
+				}
+
+				public string Time
+				{
+					get
+					{
+						return time;
+					}
+					set	
+					{
+						time = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public long? Version
+				{
+					get
+					{
+						return version;
+					}
+					set	
+					{
+						version = value;
+					}
 				}
 			}
 		}

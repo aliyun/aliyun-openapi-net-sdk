@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
         {
         }
 
+		private List<string> iotIds;
+
 		private string iotInstanceId;
 
 		private List<string> deviceNames;
@@ -40,6 +42,23 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string productKey;
 
 		private string accessKeyId;
+
+		public List<string> IotIds
+		{
+			get
+			{
+				return iotIds;
+			}
+
+			set
+			{
+				iotIds = value;
+				for (int i = 0; i < iotIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"IotId." + (i + 1) , iotIds[i]);
+				}
+			}
+		}
 
 		public string IotInstanceId
 		{

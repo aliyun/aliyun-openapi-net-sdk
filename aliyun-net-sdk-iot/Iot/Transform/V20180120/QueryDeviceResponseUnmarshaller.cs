@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				deviceInfo.GmtModified = context.StringValue("QueryDevice.Data["+ i +"].GmtModified");
 				deviceInfo.UtcCreate = context.StringValue("QueryDevice.Data["+ i +"].UtcCreate");
 				deviceInfo.UtcModified = context.StringValue("QueryDevice.Data["+ i +"].UtcModified");
+				deviceInfo.IotId = context.StringValue("QueryDevice.Data["+ i +"].IotId");
 
 				queryDeviceResponse_data.Add(deviceInfo);
 			}

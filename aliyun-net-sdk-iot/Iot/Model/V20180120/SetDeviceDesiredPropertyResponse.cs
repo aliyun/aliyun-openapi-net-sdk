@@ -21,26 +21,18 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryPageByApplyIdResponse : AcsResponse
+	public class SetDeviceDesiredPropertyResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
 		private string errorMessage;
 
-		private int? pageSize;
+		private string code;
 
-		private int? page;
-
-		private int? pageCount;
-
-		private int? total;
-
-		private List<QueryPageByApplyId_ApplyDeviceInfo> applyDeviceList;
+		private SetDeviceDesiredProperty_Data data;
 
 		public string RequestId
 		{
@@ -66,18 +58,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string ErrorMessage
 		{
 			get
@@ -90,122 +70,58 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? PageSize
+		public string Code
 		{
 			get
 			{
-				return pageSize;
+				return code;
 			}
 			set	
 			{
-				pageSize = value;
+				code = value;
 			}
 		}
 
-		public int? Page
+		public SetDeviceDesiredProperty_Data Data
 		{
 			get
 			{
-				return page;
+				return data;
 			}
 			set	
 			{
-				page = value;
+				data = value;
 			}
 		}
 
-		public int? PageCount
-		{
-			get
-			{
-				return pageCount;
-			}
-			set	
-			{
-				pageCount = value;
-			}
-		}
-
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
-
-		public List<QueryPageByApplyId_ApplyDeviceInfo> ApplyDeviceList
-		{
-			get
-			{
-				return applyDeviceList;
-			}
-			set	
-			{
-				applyDeviceList = value;
-			}
-		}
-
-		public class QueryPageByApplyId_ApplyDeviceInfo
+		public class SetDeviceDesiredProperty_Data
 		{
 
-			private string deviceId;
+			private string messageId;
 
-			private string deviceName;
+			private string versions;
 
-			private string deviceSecret;
-
-			private string iotId;
-
-			public string DeviceId
+			public string MessageId
 			{
 				get
 				{
-					return deviceId;
+					return messageId;
 				}
 				set	
 				{
-					deviceId = value;
+					messageId = value;
 				}
 			}
 
-			public string DeviceName
+			public string Versions
 			{
 				get
 				{
-					return deviceName;
+					return versions;
 				}
 				set	
 				{
-					deviceName = value;
-				}
-			}
-
-			public string DeviceSecret
-			{
-				get
-				{
-					return deviceSecret;
-				}
-				set	
-				{
-					deviceSecret = value;
-				}
-			}
-
-			public string IotId
-			{
-				get
-				{
-					return iotId;
-				}
-				set	
-				{
-					iotId = value;
+					versions = value;
 				}
 			}
 		}
