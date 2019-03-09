@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net471</TargetFrameworks>
+    <TargetFrameworks Condition="'$(OS)' != 'Windows_NT'">netstandard2.0</TargetFrameworks>
     <RootNamespace>Aliyun.Acs.Core</RootNamespace>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
     <Authors>Alibaba Cloud</Authors>
     <PackageTags>alibaba aliyun SDK core</PackageTags>
     <Copyright>©2009-2018 Alibaba Cloud</Copyright>
@@ -15,10 +16,17 @@
     <PackageReleaseNotes></PackageReleaseNotes>
     <AssemblyName>aliyun-net-sdk-core</AssemblyName>
   </PropertyGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="Regions\endpoints.xml" />
   </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="sharpconfig" Version="3.2.8" />
   </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net471' ">
+    <Reference Include="System.Web" />
+  </ItemGroup>
+
 </Project>
