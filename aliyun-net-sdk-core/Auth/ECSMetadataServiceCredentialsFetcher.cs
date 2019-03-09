@@ -31,13 +31,13 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class ECSMetadataServiceCredentialsFetcher
     {
-        private const String URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
+        private const string URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
         private const int DEFAULT_TIMEOUT_IN_MILLISECONDS = 5000;
-        private String credentialUrl;
-        private String roleName;
-        private String metadataServiceHost = "100.100.100.200";
+        private string credentialUrl;
+        private string roleName;
+        private string metadataServiceHost = "100.100.100.200";
         private int connectionTimeoutInMilliseconds;
-        private const String ECS_METADAT_FETCH_ERROR_MSG = "Failed to get RAM session credentials from ECS metadata service.";
+        private const string ECS_METADAT_FETCH_ERROR_MSG = "Failed to get RAM session credentials from ECS metadata service.";
         private const int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600 * 6;
 
         public ECSMetadataServiceCredentialsFetcher()
@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Core.Auth
             this.connectionTimeoutInMilliseconds = DEFAULT_TIMEOUT_IN_MILLISECONDS;
         }
 
-        public void SetRoleName(String roleName)
+        public void SetRoleName(string roleName)
         {
             if (String.IsNullOrEmpty(roleName))
             {
@@ -79,7 +79,7 @@ namespace Aliyun.Acs.Core.Auth
             return this;
         }
 
-        public String GetMetadata()
+        public string GetMetadata()
         {
             HttpRequest request = new HttpRequest(credentialUrl);
             request.Method = MethodType.GET;
@@ -103,7 +103,7 @@ namespace Aliyun.Acs.Core.Auth
             return Encoding.UTF8.GetString(response.Content);
         }
 
-        public virtual InstanceProfileCredentials Fetch()
+        public virtual EcsRamRoleCredential Fetch()
         {
             Dictionary<string, string> dic;
             try
@@ -132,7 +132,7 @@ namespace Aliyun.Acs.Core.Auth
                 throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG);
             }
 
-            return new InstanceProfileCredentials(
+            return new EcsRamRoleCredential(
                 DictionaryUtil.Get(dic, ".AccessKeyId"),
                 DictionaryUtil.Get(dic, ".AccessKeySecret"),
                 DictionaryUtil.Get(dic, ".SecurityToken"),
@@ -141,7 +141,7 @@ namespace Aliyun.Acs.Core.Auth
             );
         }
 
-        public InstanceProfileCredentials Fetch(int retryTimes)
+        public EcsRamRoleCredential Fetch(int retryTimes)
         {
             for (int i = 0; i <= retryTimes; i++)
             {

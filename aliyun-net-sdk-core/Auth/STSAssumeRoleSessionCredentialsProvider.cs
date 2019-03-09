@@ -31,13 +31,13 @@ namespace Aliyun.Acs.Core.Auth
 
         private IAcsClient stsClient;
 
-        private readonly String roleArn;
+        private readonly string roleArn;
 
-        private String roleSessionName;
+        private string roleSessionName;
 
         private long roleSessionDurationSeconds;
 
-        private BasicSessionCredentials credentials = null;
+        private RamRoleArnCredential credentials = null;
 
         private long assumeRoleRound = 0;
 
@@ -98,7 +98,7 @@ namespace Aliyun.Acs.Core.Auth
             return credentials;
         }
 
-        private BasicSessionCredentials GetNewSessionCredentials()
+        private RamRoleArnCredential GetNewSessionCredentials()
         {
             assumeRoleRound += 1;
 
@@ -109,9 +109,11 @@ namespace Aliyun.Acs.Core.Auth
                 DurationSeconds = roleSessionDurationSeconds
             };
             AssumeRoleResponse response = this.GetResponse(assumeRoleRequest);
-            return new BasicSessionCredentials(
+            return new RamRoleArnCredential(
                 response.Credentials.AccessKeyId,
                 response.Credentials.AccessKeySecret,
+                roleArn,
+                roleSessionName,
                 response.Credentials.SecurityToken,
                 roleSessionDurationSeconds
             );

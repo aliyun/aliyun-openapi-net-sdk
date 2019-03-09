@@ -23,19 +23,19 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class LegacyCredentials : AlibabaCloudCredentials
     {
-        private readonly Credential legacyCredential;
+        private readonly StsCredential legacyCredential;
 
-        public LegacyCredentials(Credential legacyCrendential)
+        public LegacyCredentials(StsCredential legacyCrendential)
         {
             this.legacyCredential = legacyCrendential;
         }
 
-        public String GetAccessKeyId()
+        public string GetAccessKeyId()
         {
             return legacyCredential.AccessKeyId;
         }
 
-        public String GetAccessKeySecret()
+        public string GetAccessKeySecret()
         {
             return legacyCredential.AccessSecret;
         }

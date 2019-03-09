@@ -35,12 +35,12 @@ namespace Aliyun.Acs.Core.Auth
             return credentials;
         }
 
-        public String GetAccessKeyId()
+        public new string GetAccessKeyId()
         {
             return GetCredentials().GetAccessKeyId();
         }
 
-        public String GetAccessSecret()
+        public string GetAccessSecret()
         {
             return GetCredentials().GetAccessKeySecret();
         }
@@ -50,7 +50,7 @@ namespace Aliyun.Acs.Core.Auth
             return false;
         }
 
-        public String GetSecurityToken()
+        public string GetSecurityToken()
         {
             AlibabaCloudCredentials credentials = GetCredentials();
             if (credentials is BasicSessionCredentials)

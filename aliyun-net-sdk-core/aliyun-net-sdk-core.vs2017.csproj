@@ -18,4 +18,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Regions\endpoints.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="sharpconfig" Version="3.2.8" />
+  </ItemGroup>
 </Project>

@@ -25,14 +25,14 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class InstanceProfileCredentialsProvider : AlibabaCloudCredentialsProvider
     {
-        private InstanceProfileCredentials credentials = null;
+        private EcsRamRoleCredential credentials = null;
         public int ecsMetadataServiceFetchCount = 0;
         private ECSMetadataServiceCredentialsFetcher fetcher;
         private const int MAX_ECS_METADATA_FETCH_RETRY_TIMES = 3;
         private int maxRetryTimes = MAX_ECS_METADATA_FETCH_RETRY_TIMES;
-        private readonly String roleName;
+        private readonly string roleName;
 
-        public InstanceProfileCredentialsProvider(String roleName)
+        public InstanceProfileCredentialsProvider(string roleName)
         {
             this.roleName = roleName;
             this.fetcher = new ECSMetadataServiceCredentialsFetcher();

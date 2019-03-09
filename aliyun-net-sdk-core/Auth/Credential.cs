@@ -20,74 +20,15 @@ using System;
 
 namespace Aliyun.Acs.Core.Auth
 {
-    public class Credential
+    [Obsolete]
+    public class Credential : StsCredential
     {
-
-        public DateTime RefreshDate { get; set; }
-        public DateTime? ExpiredDate { get; set; }
-        public String AccessKeyId { get; set; }
-        public String AccessSecret { get; set; }
-        public String SecurityToken { get; set; }
-
-        public Credential()
-        {
-            this.RefreshDate = DateTime.Now;
-        }
-
-        public Credential(String keyId, String secret)
-        {
-            this.AccessKeyId = keyId;
-            this.AccessSecret = secret;
-            this.RefreshDate = DateTime.Now;
-        }
-
-        public Credential(String keyId, String secret, String securityToken)
-        {
-            this.AccessKeyId = keyId;
-            this.AccessSecret = secret;
-            this.SecurityToken = securityToken;
-            this.RefreshDate = new DateTime();
-        }
-
-        public Credential(String keyId, String secret, int expiredHours)
-        {
-            this.AccessKeyId = keyId;
-            this.AccessSecret = secret;
-            this.RefreshDate = new DateTime();
-
-            SetExpiredDate(expiredHours);
-        }
-
-        public Credential(String keyId, String secret, String securityToken, int expiredHours)
-        {
-            this.AccessKeyId = keyId;
-            this.AccessSecret = secret;
-            this.SecurityToken = securityToken;
-            this.RefreshDate = new DateTime();
-
-            SetExpiredDate(expiredHours);
-        }
-
-        private void SetExpiredDate(int expiredHours)
-        {
-            if (expiredHours > 0)
-            {
-                ExpiredDate = DateTime.Now.AddHours(expiredHours);
-            }
-        }
-
-        public bool IsExpired()
-        {
-            if (this.ExpiredDate == null)
-            {
-                return false;
-            }
-            if (this.ExpiredDate < DateTime.Now)
-            {
-                return false;
-            }
-            return true;
-        }
+        public Credential() : base() { }
+        public Credential(string accessKeyId, string accessKeySecret) : base(accessKeyId, accessKeySecret) { }
+        public Credential(string accessKeyId, string accessKeySecret, string securityToken) : base(accessKeyId, accessKeySecret, securityToken) { }
+        public Credential(string accessKeyId, string accessKeySecret, int expiredHours) : base(accessKeyId, accessKeySecret, expiredHours) { }
+        public Credential(string accessKeyId, string accessKeySecret, string securityToken, int expiredHours) : base(accessKeyId, accessKeySecret, securityToken, expiredHours) { }
 
     }
+
 }
