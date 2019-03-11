@@ -49,6 +49,9 @@ namespace Aliyun.Acs.Feature.Test.Core
         [Fact]
         public void BasicRpcStsTokenConnectionsTest()
         {
+            if (base.GetRoleArn().Equals("FakeRoleArn"))
+                return;
+
             BasicSessionCredentials basciCredential = new BasicSessionCredentials(this.GetBasicAccessKeyId(), this.GetBasicAccessKeySecret(), this.GetToken());
             DefaultProfile profile = DefaultProfile.GetProfile(this.regionId, this.GetBasicAccessKeyId(), this.GetBasicAccessKeySecret());
             DefaultAcsClient client = new DefaultAcsClient(profile, basciCredential);
@@ -64,6 +67,9 @@ namespace Aliyun.Acs.Feature.Test.Core
         [Fact]
         public void BasicRoaTokenConnection()
         {
+            if (base.GetRoleArn().Equals("FakeRoleArn"))
+                return;
+
             BasicSessionCredentials basciCredential = new BasicSessionCredentials(this.GetBasicAccessKeyId(), this.GetBasicAccessKeySecret(), this.GetToken());
             DefaultProfile profile = DefaultProfile.GetProfile(this.regionId, this.GetBasicAccessKeyId(), this.GetBasicAccessKeySecret());
             DefaultAcsClient client = new DefaultAcsClient(profile, basciCredential);
@@ -116,6 +122,9 @@ namespace Aliyun.Acs.Feature.Test.Core
         [Fact]
         public void UnicodeAndQueryTest()
         {
+            if (base.GetRoleArn().Equals("FakeRoleArn"))
+                return;
+
             BasicSessionCredentials basciCredential = new BasicSessionCredentials(this.GetBasicAccessKeyId(), this.GetBasicAccessKeySecret(), this.GetToken());
             DefaultProfile profile = DefaultProfile.GetProfile(this.regionId, this.GetBasicAccessKeyId(), this.GetBasicAccessKeySecret());
             DefaultAcsClient client = new DefaultAcsClient(profile, basciCredential);

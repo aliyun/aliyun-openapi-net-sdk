@@ -19,8 +19,8 @@ namespace Aliyun.Acs.Core.Tests.Units
 
         public static void InitializeEnvironmentValue()
         {
-            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ACCESS_KEY_ID", Environment.GetEnvironmentVariable("ACCESS_KEY_ID"));
-            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ACCESS_KEY_SECRET", Environment.GetEnvironmentVariable("ACCESS_KEY_SECRET"));
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ACCESS_KEY_ID", "ACCESS_KEY_ID");
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ACCESS_KEY_SECRET", "ACCESS_KEY_SECRET");
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "cn-hangzhou");
         }
 
