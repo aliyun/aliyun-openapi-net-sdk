@@ -1,5 +1,6 @@
-2019-03-09 Version 1.2.1
+2019-03-11 Version 1.2.2
 1, fix bug: fix user-agent set error when user use .net framework 4.6.1 with core version 1.2.0 to get response
+2, Add credential chains
 
 2019-02-27 Version: 1.2.0
 1, fix bug: fix a dictionary handle error that will cause cpu 100% #43
