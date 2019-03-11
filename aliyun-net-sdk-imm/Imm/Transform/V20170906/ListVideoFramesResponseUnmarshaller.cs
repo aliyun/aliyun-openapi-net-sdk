@@ -81,6 +81,8 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 					facesItem.Emotion = context.StringValue("ListVideoFrames.Frames["+ i +"].Faces["+ j +"].Emotion");
 					facesItem.FaceId = context.StringValue("ListVideoFrames.Frames["+ i +"].Faces["+ j +"].FaceId");
 					facesItem.EmotionConfidence = context.FloatValue("ListVideoFrames.Frames["+ i +"].Faces["+ j +"].EmotionConfidence");
+					facesItem.GroupId = context.StringValue("ListVideoFrames.Frames["+ i +"].Faces["+ j +"].GroupId");
+					facesItem.FaceQuality = context.FloatValue("ListVideoFrames.Frames["+ i +"].Faces["+ j +"].FaceQuality");
 
 					ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_FacesItem.ListVideoFrames_EmotionDetails emotionDetails = new ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_FacesItem.ListVideoFrames_EmotionDetails();
 					emotionDetails.SAD = context.FloatValue("ListVideoFrames.Frames["+ i +"].Faces["+ j +"].EmotionDetails.SAD");
@@ -108,6 +110,12 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 					faceBoundary.Width = context.IntegerValue("ListVideoFrames.Frames["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Width");
 					faceBoundary.Left = context.IntegerValue("ListVideoFrames.Frames["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Left");
 					faceAttributes.FaceBoundary = faceBoundary;
+
+					ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_FacesItem.ListVideoFrames_FaceAttributes.ListVideoFrames_HeadPose headPose = new ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_FacesItem.ListVideoFrames_FaceAttributes.ListVideoFrames_HeadPose();
+					headPose.Pitch = context.FloatValue("ListVideoFrames.Frames["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Pitch");
+					headPose.Roll = context.FloatValue("ListVideoFrames.Frames["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Roll");
+					headPose.Yaw = context.FloatValue("ListVideoFrames.Frames["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Yaw");
+					faceAttributes.HeadPose = headPose;
 					facesItem.FaceAttributes = faceAttributes;
 
 					framesItem_faces.Add(facesItem);

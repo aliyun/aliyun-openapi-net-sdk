@@ -559,6 +559,10 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private float? genderConfidence;
 
+			private string groupId;
+
+			private float? faceQuality;
+
 			private GetImage_FaceAttributes faceAttributes;
 
 			private GetImage_EmotionDetails emotionDetails;
@@ -647,6 +651,30 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			public float? FaceQuality
+			{
+				get
+				{
+					return faceQuality;
+				}
+				set	
+				{
+					faceQuality = value;
+				}
+			}
+
 			public GetImage_FaceAttributes FaceAttributes
 			{
 				get
@@ -691,6 +719,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				private float? maskConfidence;
 
 				private GetImage_FaceBoundary faceBoundary;
+
+				private GetImage_HeadPose headPose;
 
 				public string Glasses
 				{
@@ -800,6 +830,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					}
 				}
 
+				public GetImage_HeadPose HeadPose
+				{
+					get
+					{
+						return headPose;
+					}
+					set	
+					{
+						headPose = value;
+					}
+				}
+
 				public class GetImage_FaceBoundary
 				{
 
@@ -856,6 +898,52 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						set	
 						{
 							height = value;
+						}
+					}
+				}
+
+				public class GetImage_HeadPose
+				{
+
+					private float? pitch;
+
+					private float? roll;
+
+					private float? yaw;
+
+					public float? Pitch
+					{
+						get
+						{
+							return pitch;
+						}
+						set	
+						{
+							pitch = value;
+						}
+					}
+
+					public float? Roll
+					{
+						get
+						{
+							return roll;
+						}
+						set	
+						{
+							roll = value;
+						}
+					}
+
+					public float? Yaw
+					{
+						get
+						{
+							return yaw;
+						}
+						set	
+						{
+							yaw = value;
 						}
 					}
 				}

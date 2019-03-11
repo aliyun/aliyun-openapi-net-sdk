@@ -592,6 +592,10 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 				private float? emotionConfidence;
 
+				private string groupId;
+
+				private float? faceQuality;
+
 				private FindImagesByTagNames_EmotionDetails emotionDetails;
 
 				private FindImagesByTagNames_FaceAttributes faceAttributes;
@@ -689,6 +693,30 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						emotionConfidence = value;
+					}
+				}
+
+				public string GroupId
+				{
+					get
+					{
+						return groupId;
+					}
+					set	
+					{
+						groupId = value;
+					}
+				}
+
+				public float? FaceQuality
+				{
+					get
+					{
+						return faceQuality;
+					}
+					set	
+					{
+						faceQuality = value;
 					}
 				}
 
@@ -839,6 +867,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 					private FindImagesByTagNames_FaceBoundary faceBoundary;
 
+					private FindImagesByTagNames_HeadPose headPose;
+
 					public float? GlassesConfidence
 					{
 						get
@@ -947,6 +977,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						}
 					}
 
+					public FindImagesByTagNames_HeadPose HeadPose
+					{
+						get
+						{
+							return headPose;
+						}
+						set	
+						{
+							headPose = value;
+						}
+					}
+
 					public class FindImagesByTagNames_FaceBoundary
 					{
 
@@ -1003,6 +1045,52 @@ namespace Aliyun.Acs.imm.Model.V20170906
 							set	
 							{
 								left = value;
+							}
+						}
+					}
+
+					public class FindImagesByTagNames_HeadPose
+					{
+
+						private float? pitch;
+
+						private float? roll;
+
+						private float? yaw;
+
+						public float? Pitch
+						{
+							get
+							{
+								return pitch;
+							}
+							set	
+							{
+								pitch = value;
+							}
+						}
+
+						public float? Roll
+						{
+							get
+							{
+								return roll;
+							}
+							set	
+							{
+								roll = value;
+							}
+						}
+
+						public float? Yaw
+						{
+							get
+							{
+								return yaw;
+							}
+							set	
+							{
+								yaw = value;
 							}
 						}
 					}

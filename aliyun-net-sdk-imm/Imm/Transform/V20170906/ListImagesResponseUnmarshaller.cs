@@ -80,6 +80,8 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 					facesItem.Emotion = context.StringValue("ListImages.Images["+ i +"].Faces["+ j +"].Emotion");
 					facesItem.FaceId = context.StringValue("ListImages.Images["+ i +"].Faces["+ j +"].FaceId");
 					facesItem.EmotionConfidence = context.FloatValue("ListImages.Images["+ i +"].Faces["+ j +"].EmotionConfidence");
+					facesItem.GroupId = context.StringValue("ListImages.Images["+ i +"].Faces["+ j +"].GroupId");
+					facesItem.FaceQuality = context.FloatValue("ListImages.Images["+ i +"].Faces["+ j +"].FaceQuality");
 
 					ListImagesResponse.ListImages_ImagesItem.ListImages_FacesItem.ListImages_EmotionDetails emotionDetails = new ListImagesResponse.ListImages_ImagesItem.ListImages_FacesItem.ListImages_EmotionDetails();
 					emotionDetails.SAD = context.FloatValue("ListImages.Images["+ i +"].Faces["+ j +"].EmotionDetails.SAD");
@@ -107,6 +109,12 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 					faceBoundary.Width = context.IntegerValue("ListImages.Images["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Width");
 					faceBoundary.Left = context.IntegerValue("ListImages.Images["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Left");
 					faceAttributes.FaceBoundary = faceBoundary;
+
+					ListImagesResponse.ListImages_ImagesItem.ListImages_FacesItem.ListImages_FaceAttributes.ListImages_HeadPose headPose = new ListImagesResponse.ListImages_ImagesItem.ListImages_FacesItem.ListImages_FaceAttributes.ListImages_HeadPose();
+					headPose.Pitch = context.FloatValue("ListImages.Images["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Pitch");
+					headPose.Roll = context.FloatValue("ListImages.Images["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Roll");
+					headPose.Yaw = context.FloatValue("ListImages.Images["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Yaw");
+					faceAttributes.HeadPose = headPose;
 					facesItem.FaceAttributes = faceAttributes;
 
 					imagesItem_faces.Add(facesItem);

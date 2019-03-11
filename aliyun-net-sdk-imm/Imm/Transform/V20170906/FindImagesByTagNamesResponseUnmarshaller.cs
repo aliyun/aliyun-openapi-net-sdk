@@ -80,6 +80,8 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 					facesItem.Emotion = context.StringValue("FindImagesByTagNames.Images["+ i +"].Faces["+ j +"].Emotion");
 					facesItem.FaceId = context.StringValue("FindImagesByTagNames.Images["+ i +"].Faces["+ j +"].FaceId");
 					facesItem.EmotionConfidence = context.FloatValue("FindImagesByTagNames.Images["+ i +"].Faces["+ j +"].EmotionConfidence");
+					facesItem.GroupId = context.StringValue("FindImagesByTagNames.Images["+ i +"].Faces["+ j +"].GroupId");
+					facesItem.FaceQuality = context.FloatValue("FindImagesByTagNames.Images["+ i +"].Faces["+ j +"].FaceQuality");
 
 					FindImagesByTagNamesResponse.FindImagesByTagNames_Frames.FindImagesByTagNames_FacesItem.FindImagesByTagNames_EmotionDetails emotionDetails = new FindImagesByTagNamesResponse.FindImagesByTagNames_Frames.FindImagesByTagNames_FacesItem.FindImagesByTagNames_EmotionDetails();
 					emotionDetails.SAD = context.FloatValue("FindImagesByTagNames.Images["+ i +"].Faces["+ j +"].EmotionDetails.SAD");
@@ -107,6 +109,12 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 					faceBoundary.Width = context.IntegerValue("FindImagesByTagNames.Images["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Width");
 					faceBoundary.Left = context.IntegerValue("FindImagesByTagNames.Images["+ i +"].Faces["+ j +"].FaceAttributes.FaceBoundary.Left");
 					faceAttributes.FaceBoundary = faceBoundary;
+
+					FindImagesByTagNamesResponse.FindImagesByTagNames_Frames.FindImagesByTagNames_FacesItem.FindImagesByTagNames_FaceAttributes.FindImagesByTagNames_HeadPose headPose = new FindImagesByTagNamesResponse.FindImagesByTagNames_Frames.FindImagesByTagNames_FacesItem.FindImagesByTagNames_FaceAttributes.FindImagesByTagNames_HeadPose();
+					headPose.Pitch = context.FloatValue("FindImagesByTagNames.Images["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Pitch");
+					headPose.Roll = context.FloatValue("FindImagesByTagNames.Images["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Roll");
+					headPose.Yaw = context.FloatValue("FindImagesByTagNames.Images["+ i +"].Faces["+ j +"].FaceAttributes.HeadPose.Yaw");
+					faceAttributes.HeadPose = headPose;
 					facesItem.FaceAttributes = faceAttributes;
 
 					frames_faces.Add(facesItem);

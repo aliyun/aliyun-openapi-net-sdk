@@ -74,6 +74,8 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				facesItem.Emotion = context.StringValue("GetImage.Faces["+ i +"].Emotion");
 				facesItem.Attractive = context.FloatValue("GetImage.Faces["+ i +"].Attractive");
 				facesItem.GenderConfidence = context.FloatValue("GetImage.Faces["+ i +"].GenderConfidence");
+				facesItem.GroupId = context.StringValue("GetImage.Faces["+ i +"].GroupId");
+				facesItem.FaceQuality = context.FloatValue("GetImage.Faces["+ i +"].FaceQuality");
 
 				GetImageResponse.GetImage_FacesItem.GetImage_FaceAttributes faceAttributes = new GetImageResponse.GetImage_FacesItem.GetImage_FaceAttributes();
 				faceAttributes.Glasses = context.StringValue("GetImage.Faces["+ i +"].FaceAttributes.Glasses");
@@ -91,6 +93,12 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				faceBoundary.Width = context.IntegerValue("GetImage.Faces["+ i +"].FaceAttributes.FaceBoundary.Width");
 				faceBoundary.Height = context.IntegerValue("GetImage.Faces["+ i +"].FaceAttributes.FaceBoundary.Height");
 				faceAttributes.FaceBoundary = faceBoundary;
+
+				GetImageResponse.GetImage_FacesItem.GetImage_FaceAttributes.GetImage_HeadPose headPose = new GetImageResponse.GetImage_FacesItem.GetImage_FaceAttributes.GetImage_HeadPose();
+				headPose.Pitch = context.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.HeadPose.Pitch");
+				headPose.Roll = context.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.HeadPose.Roll");
+				headPose.Yaw = context.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.HeadPose.Yaw");
+				faceAttributes.HeadPose = headPose;
 				facesItem.FaceAttributes = faceAttributes;
 
 				GetImageResponse.GetImage_FacesItem.GetImage_EmotionDetails emotionDetails = new GetImageResponse.GetImage_FacesItem.GetImage_EmotionDetails();

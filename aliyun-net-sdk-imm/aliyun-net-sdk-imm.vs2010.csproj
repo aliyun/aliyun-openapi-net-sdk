@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{60fa0946-e08a-4353-8964-57ef85e8ac94}</ProjectGuid>
+    <ProjectGuid>{5369a284-d5a0-457e-bc65-3cec5a7faa27}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -171,6 +171,7 @@
 	<Compile Include="Imm\Model\V20170906\CreateTagSetRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectImageTextsResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteFaceSearchGroupRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateGroupFacesJobResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListSetTagsRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GetImageJobRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectLogoRequest.cs" />
@@ -213,6 +214,7 @@
 	<Compile Include="Imm\Model\V20170906\ListSetsRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\SearchDocIndexRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\ListPornBatchDetectJobsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateGroupFacesJobRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\GetPornBatchDetectJobResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetPhotoProcessTaskResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\GetProjectResponse.cs" />
@@ -282,6 +284,7 @@
 	<Compile Include="Imm\Transform\V20170906\CreateDocIndexTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\FindImagesResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CompareImageFacesResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\CreateGroupFacesJobResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DetectLogoResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetVideoResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\ListPornBatchDetectJobsResponseUnmarshaller.cs" />

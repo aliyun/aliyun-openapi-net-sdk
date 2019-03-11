@@ -35,6 +35,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string marker;
 
+		private int? limit;
+
 		private string action;
 
 		private string project;
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				marker = value;
 				DictionaryUtil.Add(QueryParameters, "Marker", value);
+			}
+		}
+
+		public int? Limit
+		{
+			get
+			{
+				return limit;
+			}
+			set	
+			{
+				limit = value;
+				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
 			}
 		}
 

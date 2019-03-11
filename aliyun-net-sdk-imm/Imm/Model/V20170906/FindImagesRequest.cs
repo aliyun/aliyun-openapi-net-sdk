@@ -51,6 +51,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string oCRContentsMatch;
 
+		private int? limit;
+
 		private string action;
 
 		private string remarksDPrefix;
@@ -62,6 +64,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string order;
 
 		private string remarksAPrefix;
+
+		private string groupId;
 
 		private string orderBy;
 
@@ -79,7 +83,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string setId;
 
-		private string updateTimeRange;
+		private string modifyTimeRange;
 
 		public string Gender
 		{
@@ -198,6 +202,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public int? Limit
+		{
+			get
+			{
+				return limit;
+			}
+			set	
+			{
+				limit = value;
+				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -273,6 +290,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				remarksAPrefix = value;
 				DictionaryUtil.Add(QueryParameters, "RemarksAPrefix", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -380,16 +410,16 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string UpdateTimeRange
+		public string ModifyTimeRange
 		{
 			get
 			{
-				return updateTimeRange;
+				return modifyTimeRange;
 			}
 			set	
 			{
-				updateTimeRange = value;
-				DictionaryUtil.Add(QueryParameters, "UpdateTimeRange", value);
+				modifyTimeRange = value;
+				DictionaryUtil.Add(QueryParameters, "ModifyTimeRange", value);
 			}
 		}
 

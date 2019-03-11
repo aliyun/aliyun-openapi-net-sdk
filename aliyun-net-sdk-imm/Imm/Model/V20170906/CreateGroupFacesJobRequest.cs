@@ -26,18 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class FindSimilarFacesRequest : RpcAcsRequest<FindSimilarFacesResponse>
+    public class CreateGroupFacesJobRequest : RpcAcsRequest<CreateGroupFacesJobResponse>
     {
-        public FindSimilarFacesRequest()
-            : base("imm", "2017-09-06", "FindSimilarFaces", "imm", "openAPI")
+        public CreateGroupFacesJobRequest()
+            : base("imm", "2017-09-06", "CreateGroupFacesJob", "imm", "openAPI")
         {
         }
 
-		private string imageUri;
+		private string notifyTopicName;
 
-		private float? minSimilarity;
-
-		private int? limit;
+		private string notifyEndpoint;
 
 		private string action;
 
@@ -45,46 +43,31 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string setId;
 
-		private string faceId;
-
 		private string accessKeyId;
 
-		public string ImageUri
+		public string NotifyTopicName
 		{
 			get
 			{
-				return imageUri;
+				return notifyTopicName;
 			}
 			set	
 			{
-				imageUri = value;
-				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+				notifyTopicName = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
 			}
 		}
 
-		public float? MinSimilarity
+		public string NotifyEndpoint
 		{
 			get
 			{
-				return minSimilarity;
+				return notifyEndpoint;
 			}
 			set	
 			{
-				minSimilarity = value;
-				DictionaryUtil.Add(QueryParameters, "MinSimilarity", value.ToString());
-			}
-		}
-
-		public int? Limit
-		{
-			get
-			{
-				return limit;
-			}
-			set	
-			{
-				limit = value;
-				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
+				notifyEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
 			}
 		}
 
@@ -127,19 +110,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string FaceId
-		{
-			get
-			{
-				return faceId;
-			}
-			set	
-			{
-				faceId = value;
-				DictionaryUtil.Add(QueryParameters, "FaceId", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -158,9 +128,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override FindSimilarFacesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateGroupFacesJobResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return FindSimilarFacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateGroupFacesJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
