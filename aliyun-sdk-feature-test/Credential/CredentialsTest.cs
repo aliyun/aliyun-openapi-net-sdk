@@ -13,6 +13,8 @@ namespace Aliyun.Acs.Feature.Test.Credential
         [Fact]
         public void SdkManageTokenTest()
         {
+            if (base.GetRoleArn().Equals("FakeRoleArn"))
+                return;
             DefaultProfile profile = DefaultProfile.GetProfile("cn-hangzhou", this.GetBasicAccessKeyId(), this.GetBasicAccessKeySecret());
             BasicCredentials basicCredential = new BasicCredentials(this.GetBasicAccessKeyId(), this.GetBasicAccessKeySecret());
             STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(basicCredential, this.GetRoleArn(), profile);
