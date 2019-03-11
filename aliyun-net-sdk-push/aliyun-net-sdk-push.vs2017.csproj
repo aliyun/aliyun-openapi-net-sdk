@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Aliyun.Acs.Push</RootNamespace>
-    <Version>3.10.0</Version>
+    <Version>3.10.1</Version>
     <Authors>Alibaba Cloud</Authors>
     <Copyright>©2009-2018 Alibaba Cloud</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
