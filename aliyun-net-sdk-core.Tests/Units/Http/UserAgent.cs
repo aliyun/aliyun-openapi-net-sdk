@@ -1,8 +1,9 @@
-using Xunit;
-using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 using Aliyun.Acs.Core.Http;
+
+using Xunit;
 
 namespace Aliyun.Acs.Core.Tests.Units.Http
 {
@@ -95,6 +96,46 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
 
             Assert.Equal(resultStr, agent);
 
+        }
+
+        [Fact]
+        public void FrameworkAndCoreRegexTest()
+        {
+            var dire1 = "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\";
+            var dire2 = "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\2.1.8\\";
+            char[] separator = { '\\', '/' };
+
+            Regex rx = new Regex(@"(\.NET).*(\\|\/).*(\d)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            Match matches = rx.Match(dire1);
+
+            string clientVersion = "";
+            if (matches.Success)
+            {
+                var array = matches.Value.Split(separator);
+                clientVersion = BuildClientVersion(array);
+            }
+
+            Assert.Equal("netframework64/v4.0.30319", clientVersion);
+            matches = rx.Match(dire2);
+            if (matches.Success)
+            {
+                var array = matches.Value.Split(separator);
+                clientVersion = BuildClientVersion(array);
+            }
+            Assert.Equal("netcoreapp/2.1.8", clientVersion);
+        }
+
+        private string BuildClientVersion(string[] value)
+        {
+            string finalValue = "";
+            for (int i = 0; i < value.Length - 1; ++i)
+            {
+                finalValue += value[i].Replace(".", "").ToLower();
+            }
+
+            finalValue += "/" + value[value.Length - 1];
+
+            return finalValue;
         }
     }
 }

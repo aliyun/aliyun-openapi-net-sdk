@@ -48,24 +48,50 @@ namespace Aliyun.Acs.Core.Http
 
         public void SetTheValue()
         {
-            this.OSVersion = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
-            GetRuntimeRegexValue(System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory());
+            this.OSVersion = GetOsVersion();
+            this.ClientVersion = GetRuntimeRegexValue(System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory());
             this.CoreVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             this.excludedList.Add("core");
             this.excludedList.Add("microsoft.netcore.app");
         }
 
-        public void GetRuntimeRegexValue(string value)
+        private string GetOsVersion()
         {
-            Regex rx = new Regex(@"(NetCore\.App).*(\\|\/).*(\d)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            try
+            {
+                return System.Runtime.InteropServices.RuntimeInformation.OSDescription;
+            }
+            catch (System.Exception)
+            {
+                return System.Environment.OSVersion.ToString();
+            }
+        }
+
+        public string GetRuntimeRegexValue(string value)
+        {
+            Regex rx = new Regex(@"(\.NET).*(\\|\/).*(\d)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
             Match matches = rx.Match(value);
+            char[] separator = { '\\', '/' };
 
             if (matches.Success)
             {
-                char[] separator = { '\\', '/' };
-                var array = matches.Value.Split(separator);
-                this.ClientVersion = array[0].Replace(".", "").ToLower() + "/" + array[1];
+                var clientValueArray = matches.Value.Split(separator);
+                return BuildClientVersion(clientValueArray);
             }
+            return "RuntimeNotFound";
+        }
+
+        private string BuildClientVersion(string[] value)
+        {
+            string finalValue = "";
+            for (int i = 0; i < value.Length - 1; ++i)
+            {
+                finalValue += value[i].Replace(".", "").ToLower();
+            }
+
+            finalValue += "/" + value[value.Length - 1];
+
+            return finalValue;
         }
 
         public static string GetDefaultMessage()
