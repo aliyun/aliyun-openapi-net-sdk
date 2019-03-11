@@ -161,6 +161,11 @@ namespace Aliyun.Acs.Core.Http
                     httpWebRequest.ContentType = header.Value;
                     continue;
                 }
+                if (header.Key.Equals("User-Agent"))
+                {
+                    httpWebRequest.UserAgent = header.Value;
+                    continue;
+                }
 
                 httpWebRequest.Headers.Add(header.Key, header.Value);
             }
