@@ -9,14 +9,12 @@ coverage:
       unittest:
         flags: unittest
         target: 85%
-      featuretest:
-        flags: featuretest
 flags:
   unittest:
     # only test unittests
     paths:
-      - aliyun-net-sdk-core.Tests/
-  featuretest:
-    # only test featuretest
-    paths:
-      - aliyun-sdk-feature-test/
+      - aliyun-net-sdk-core/
+
+ignore:
+  - "aliyun-net-sdk-core.Tests/" # ignore aliyun-net-sdk-core.Tests
+  - "aliyun-sdk-feature-test/" # ignore aliyun-sdk-feature-test
