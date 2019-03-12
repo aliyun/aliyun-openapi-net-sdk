@@ -178,6 +178,48 @@ class TestProgram
 
 在创建 DefaultAcsClient 实例并初始化时，您需要填写 3 个参数：`Region ID`、`Access Key ID` 和 `Access Key Secret`。`Access Key ID` 和 `Access Key Secret` 可以从控制台获得；而 `Region ID` 可以从[地域列表](https://help.aliyun.com/document_detail/40654.html)中获得。
 
+### 使用BearerToken 调用 [CCC](https://www.nuget.org/packages/aliyun-net-sdk-ccc/) 产品
+
+首先需要保证您已经安装了相应的Nuget包依赖。
+
+```csharp
+using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Profile;
+using Aliyun.Acs.Core.Exceptions;
+using Aliyun.Acs.CCC.Model.V20170705;
+
+class TestProgram
+{
+    static void Main(string[] args)
+    {
+        // 构建一个 Client，用于发起请求
+        IClientProfile profile = DefaultProfile.GetProfile("<your-region-id>");
+        BearerTokenCredential bearerTokenCredential = new BearerTokenCredential("<your-bearertoken>");
+
+        DefaultAcsClient client = new DefaultAcsClient(profile, bearerTokenCredential);
+
+        try
+        {
+            // 构造请求
+            ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
+
+            // 发起请求，并得到 Response
+            var response = client.GetAcsResponse(request);
+
+            //Do something as you want below
+        }
+        catch (ServerException ex)
+        {
+            System.Console.WriteLine(ex.ToString());
+        }
+        catch (ClientException ex)
+        {
+            System.Console.WriteLine(ex.ToString());
+        }
+    }
+}
+```
+
 ## API参考
 
 要知道您想访问的产品提供的 API 以及它们的参数，请参考开放了 API 的[产品列表](https://develop.aliyun.com/tools/openapilist)。

@@ -1,6 +1,7 @@
 using System;
 
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Auth.Sts;
 using Aliyun.Acs.Core.Profile;
 
@@ -13,7 +14,9 @@ namespace Aliyun.Acs.Feature.Test
         private static readonly string AccessKeySecret = "ACCESS_KEY_SECRET";
         private static readonly string roleArn = "RAM";
 
-        private IClientProfile profile;
+        private static readonly string bearerToken = "BEARERTOKEN";
+
+        public IClientProfile profile;
         public DefaultAcsClient client;
 
         public FeatureTestBase()
@@ -35,6 +38,11 @@ namespace Aliyun.Acs.Feature.Test
         public string GetRoleArn()
         {
             return Environment.GetEnvironmentVariable(roleArn) ?? "FakeRoleArn";
+        }
+
+        public string GetBearerToken()
+        {
+            return Environment.GetEnvironmentVariable(bearerToken) ?? "FakeBearerToken";
         }
 
         public string GetToken()

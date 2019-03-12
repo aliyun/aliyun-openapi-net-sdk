@@ -100,7 +100,12 @@ namespace Aliyun.Acs.Core.Tests.Units
             signer = new HmacSHA1Signer();
             mockRpcAcsRequest.SignRequest(signer, credential, FormatType.JSON, domain);
 
-            // Done With No Exception
+            // Test BearerToken SignRequest with Rpc
+            mockRpcAcsRequest.BodyParameters = null;
+            BearerTokenSigner bearerTokenSigner = new BearerTokenSigner();
+            BearerTokenCredential bearerTokenCredential = new BearerTokenCredential("FakeBearerToken");
+
+            mockRpcAcsRequest.SignRequest(bearerTokenSigner, bearerTokenCredential, FormatType.JSON, domain);
         }
 
         [Fact]

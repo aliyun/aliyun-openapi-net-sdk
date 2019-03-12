@@ -224,9 +224,7 @@ namespace Aliyun.Acs.Core
         public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
             Credential credential, Signer signer, FormatType? format, List<Endpoint> endpoints) where T : AcsResponse
         {
-            return DoAction(request, autoRetry, maxRetryNumber, regionId,
-                new LegacyCredentials(credential),
-                signer, format, endpoints);
+            return DoAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer, format, endpoints);
         }
 
         public virtual HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
