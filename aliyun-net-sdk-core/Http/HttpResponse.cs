@@ -20,25 +20,21 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Net.Security;
-using System.Security.Cryptography.X509Certificates;
 
+using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Http
 {
     public class HttpResponse : HttpRequest
     {
-
-        private static int _timeout = 100000; // No effect
         private static int bufferLength = 1024;
+        private const int DEFAULT_READ_TIMEOUT_IN_MilliSeconds = 10000; //Default read timeout 10s
+        private const int DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds = 5000; //Default connect timeout 5s
 
         public int Status { get; set; }
 
-        public HttpResponse(string strUrl) : base(strUrl)
-        {
-
-        }
+        public HttpResponse(string strUrl) : base(strUrl) { }
 
         public HttpResponse() { }
 
@@ -124,10 +120,13 @@ namespace Aliyun.Acs.Core.Http
                 }
                 else
                 {
-                    throw ex;
+                    throw new ClientException(ex.ToString());
                 }
             }
-
+            catch (Exception ex)
+            {
+                throw new ClientException(ex.ToString());
+            }
             PasrseHttpResponse(httpResponse, httpWebResponse);
             return httpResponse;
         }
@@ -138,7 +137,9 @@ namespace Aliyun.Acs.Core.Http
             httpWebRequest = (HttpWebRequest) WebRequest.Create(request.Url);
             httpWebRequest.Method = request.Method.ToString();
             httpWebRequest.KeepAlive = true;
-            httpWebRequest.Timeout = _timeout;
+
+            httpWebRequest.Timeout = request.connectTimeout > 0 ? request.connectTimeout : DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds;
+            httpWebRequest.ReadWriteTimeout = request.readTimeout > 0 ? request.readTimeout : DEFAULT_READ_TIMEOUT_IN_MilliSeconds;
 
             if (request.Headers.ContainsKey("Accept"))
             {

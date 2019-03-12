@@ -41,6 +41,9 @@ namespace Aliyun.Acs.Core
         private AlibabaCloudCredentialsProvider credentialsProvider;
         private readonly UserAgent userAgentConfig = new UserAgent();
 
+        public int readTimeout { get; private set; }
+        public int connectTimeout { get; private set; }
+
         public DefaultAcsClient()
         {
             this.clientProfile = DefaultProfile.GetProfile();
@@ -260,6 +263,8 @@ namespace Aliyun.Acs.Core
                 HttpRequest httpRequest = request.SignRequest(signer, credentials, format, domain);
                 HttpResponse response;
 
+                ResolveTimeout(httpRequest);
+
                 response = this.GetResponse(httpRequest);
 
                 PrintHttpDebugMsg(request, response);
@@ -369,6 +374,49 @@ namespace Aliyun.Acs.Core
         public UserAgent GetUserAgentConfig()
         {
             return this.userAgentConfig;
+        }
+
+        public void SetConnectTimeoutInMilliSeconds(int connectTimeout)
+        {
+            this.connectTimeout = connectTimeout;
+        }
+
+        public void SetReadTimeoutInMilliSeconds(int readTimeout)
+        {
+            this.readTimeout = readTimeout;
+        }
+
+        public void ResolveTimeout(HttpRequest request)
+        {
+            int finalConnectTimeout = 0;
+            int finalReadTimeout = 0;
+
+            if (0 < request.connectTimeout)
+            {
+                finalConnectTimeout = request.connectTimeout;
+            }
+            else
+            {
+                if (0 < this.connectTimeout)
+                {
+                    finalConnectTimeout = this.connectTimeout;
+                }
+            }
+
+            if (0 < request.readTimeout)
+            {
+                finalReadTimeout = request.readTimeout;
+            }
+            else
+            {
+                if (0 < this.readTimeout)
+                {
+                    finalReadTimeout = this.readTimeout;
+                }
+            }
+
+            request.SetReadTimeoutInMilliSeconds(finalReadTimeout);
+            request.SetConnectTimeoutInMilliSeconds(finalConnectTimeout);
         }
     }
 }

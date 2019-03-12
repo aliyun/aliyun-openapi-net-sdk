@@ -22,7 +22,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
         public void EcsRequestTest()
         {
             DescribeInstancesRequest request = new DescribeInstancesRequest();
-            DescribeInstancesResponse response = this.client.GetAcsResponse(request);
+            DescribeInstancesResponse response = client.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.True(0 <= response.TotalCount);
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
         public void RdsRequestTest()
         {
             Rds.Model.V20140815.DescribeRegionsRequest request = new Rds.Model.V20140815.DescribeRegionsRequest();
-            Rds.Model.V20140815.DescribeRegionsResponse response = this.client.GetAcsResponse(request);
+            Rds.Model.V20140815.DescribeRegionsResponse response = client.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.NotNull(response.RequestId);
@@ -46,7 +46,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             DescribeCdnCertificateDetailRequest request = new DescribeCdnCertificateDetailRequest();
             request.CertName = "cdnRequestTest";
 
-            DescribeCdnCertificateDetailResponse response = this.client.GetAcsResponse(request);
+            DescribeCdnCertificateDetailResponse response = client.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.NotNull(response.RequestId);
@@ -57,7 +57,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
         public void SlbRequestTest()
         {
             DescribeAccessControlListsRequest request = new DescribeAccessControlListsRequest();
-            DescribeAccessControlListsResponse response = this.client.GetAcsResponse(request);
+            DescribeAccessControlListsResponse response = client.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.True(0 <= response.Acls.Count);
@@ -68,7 +68,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
         public void RamRequestTest()
         {
             ListAccessKeysRequest request = new ListAccessKeysRequest();
-            ListAccessKeysResponse response = this.client.GetAcsResponse(request);
+            ListAccessKeysResponse response = client.GetAcsResponse(request);
 
             Assert.NotNull(response.AccessKeys);
             Assert.NotNull(response.RequestId);
@@ -79,7 +79,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
         public void VpcRequestTest()
         {
             Vpc.Model.V20160428.DescribeVpcsRequest request = new Vpc.Model.V20160428.DescribeVpcsRequest();
-            Vpc.Model.V20160428.DescribeVpcsResponse response = this.client.GetAcsResponse(request);
+            Vpc.Model.V20160428.DescribeVpcsResponse response = client.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.True(0 <= response.Vpcs.Count);
@@ -97,7 +97,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                this.client.GetAcsResponse(request);
+                client.GetAcsResponse(request);
             });
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
             Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
@@ -115,7 +115,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                this.client.GetAcsResponse(request);
+                client.GetAcsResponse(request);
             });
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
             Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
@@ -133,7 +133,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                this.client.GetAcsResponse(request);
+                client.GetAcsResponse(request);
             });
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
             Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
@@ -151,7 +151,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                this.client.GetAcsResponse(request);
+                client.GetAcsResponse(request);
             });
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
             Assert.Equal("No action specified", exception.ErrorMessage);
@@ -170,7 +170,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                this.client.GetAcsResponse(request);
+                client.GetAcsResponse(request);
             });
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
             Assert.Equal("No action specified", exception.ErrorMessage);
@@ -188,7 +188,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                this.client.GetAcsResponse(request);
+                client.GetAcsResponse(request);
             });
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
             Assert.Equal("No action specified", exception.ErrorMessage);

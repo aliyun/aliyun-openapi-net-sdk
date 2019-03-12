@@ -563,5 +563,81 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             Assert.Equal(resultStr, userAgent);
         }
+
+        [Fact]
+        public void SetConnectTimeoutTest()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            DefaultAcsClient client = new DefaultAcsClient(profile);
+            client.SetConnectTimeoutInMilliSeconds(3000);
+
+            Assert.Equal(3000, client.connectTimeout);
+        }
+
+        [Fact]
+        public void SetReadTimeoutTest()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            DefaultAcsClient client = new DefaultAcsClient(profile);
+            client.SetReadTimeoutInMilliSeconds(3000);
+
+            Assert.Equal(3000, client.readTimeout);
+        }
+
+        [Fact]
+        public void ResolveConnectTimeoutTest()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            DefaultAcsClient client = new DefaultAcsClient(profile);
+            HttpRequest httpRequest = new HttpRequest();
+
+            ///Case1: Client connect timeout is 1024 ms, Request connect timeout is 2048 ms
+            ///Expect: the final connect timeout should be 2048 ms
+            client.SetConnectTimeoutInMilliSeconds(1024);
+            httpRequest.SetConnectTimeoutInMilliSeconds(2048);
+            client.ResolveTimeout(httpRequest);
+            Assert.Equal(2048, httpRequest.connectTimeout);
+
+            ///Case2: Client connect timeout is 1024 ms, Request connect timeout is 0 ms
+            ///Expect: the final connect timeout should be 1024 ms
+            httpRequest.SetConnectTimeoutInMilliSeconds(0);
+            client.ResolveTimeout(httpRequest);
+            Assert.Equal(1024, httpRequest.connectTimeout);
+
+            ///Case3: Client connect timeout is 0 ms, Request connect timeout is 2048 ms
+            ///Expect: the final connect timeout should be 2048 ms
+            client.SetConnectTimeoutInMilliSeconds(0);
+            httpRequest.SetConnectTimeoutInMilliSeconds(2048);
+            client.ResolveTimeout(httpRequest);
+            Assert.Equal(2048, httpRequest.connectTimeout);
+        }
+
+        [Fact]
+        public void ResolveReadTimeoutTest()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            DefaultAcsClient client = new DefaultAcsClient(profile);
+            HttpRequest httpRequest = new HttpRequest();
+
+            ///Case1: Client read timeout is 1024 ms, Request read timeout is 2048 ms
+            ///Expect: the final read timeout should be 2048 ms
+            client.SetReadTimeoutInMilliSeconds(1024);
+            httpRequest.SetReadTimeoutInMilliSeconds(2048);
+            client.ResolveTimeout(httpRequest);
+            Assert.Equal(2048, httpRequest.readTimeout);
+
+            ///Case2: Client read timeout is 1024 ms, Request read timeout is 0 ms
+            ///Expect: the final read timeout should be 1024 ms
+            httpRequest.SetReadTimeoutInMilliSeconds(0);
+            client.ResolveTimeout(httpRequest);
+            Assert.Equal(1024, httpRequest.readTimeout);
+
+            ///Case3: Client read timeout is 0 ms, Request read timeout is 2048 ms
+            ///Expect: the final read timeout should be 2048 ms
+            client.SetReadTimeoutInMilliSeconds(0);
+            httpRequest.SetReadTimeoutInMilliSeconds(2048);
+            client.ResolveTimeout(httpRequest);
+            Assert.Equal(2048, httpRequest.readTimeout);
+        }
     }
 }

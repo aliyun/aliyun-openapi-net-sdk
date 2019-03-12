@@ -14,7 +14,7 @@ namespace Aliyun.Acs.Feature.Test
         private static readonly string roleArn = "RAM";
 
         private IClientProfile profile;
-        public DefaultAcsClient client;
+        public static DefaultAcsClient client;
 
         public FeatureTestBase()
         {

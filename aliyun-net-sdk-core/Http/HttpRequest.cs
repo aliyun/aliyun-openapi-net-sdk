@@ -27,22 +27,24 @@ namespace Aliyun.Acs.Core.Http
     public class HttpRequest
     {
         public Dictionary<string, string> Headers { get; set; }
-        public String Url { get; set; }
+        public string Url { get; set; }
         public MethodType? Method { get; set; }
         public FormatType? ContentType { get; set; }
         public byte[] Content { get; set; }
-        public String Encoding { get; set; }
-        private int timeoutInMilliSeconds = 100000; // Default 100 Seconds
+        public string Encoding { get; set; }
+        public int timeoutInMilliSeconds { get; set; } = 100000;
+        public int readTimeout { get; private set; }
+        public int connectTimeout { get; private set; }
 
         public HttpRequest() { }
 
-        public HttpRequest(String strUrl)
+        public HttpRequest(string strUrl)
         {
             Url = strUrl;
             Headers = new Dictionary<string, string>();
         }
 
-        public HttpRequest(String strUrl, Dictionary<string, string> tmpHeaders)
+        public HttpRequest(string strUrl, Dictionary<string, string> tmpHeaders)
         {
             Url = strUrl;
             if (null != tmpHeaders)
@@ -51,7 +53,7 @@ namespace Aliyun.Acs.Core.Http
             }
         }
 
-        public void SetContent(byte[] content, String encoding, FormatType? format)
+        public void SetContent(byte[] content, string encoding, FormatType? format)
         {
             if (null == content)
             {
@@ -63,8 +65,8 @@ namespace Aliyun.Acs.Core.Http
                 Encoding = null;
                 return;
             }
-            String contentLen = content.Length.ToString();
-            String strMd5 = ParameterHelper.Md5SumAndBase64(content);
+            string contentLen = content.Length.ToString();
+            string strMd5 = ParameterHelper.Md5SumAndBase64(content);
             FormatType? type = FormatType.RAW;
             if (null != format)
             {
@@ -83,10 +85,14 @@ namespace Aliyun.Acs.Core.Http
             this.Encoding = encoding;
         }
 
-        public int TimeoutInMilliSeconds
+        public void SetConnectTimeoutInMilliSeconds(int connectTimeout)
         {
-            get { return timeoutInMilliSeconds; }
-            set { timeoutInMilliSeconds = value; }
+            this.connectTimeout = connectTimeout;
+        }
+
+        public void SetReadTimeoutInMilliSeconds(int readTimeout)
+        {
+            this.readTimeout = readTimeout;
         }
     }
 }
