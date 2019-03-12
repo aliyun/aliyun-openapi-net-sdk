@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{40d1863d-5438-4700-9eb7-c947e184893e}</ProjectGuid>
+    <ProjectGuid>{0a946535-9e85-42f3-bf76-e3f8f700cc8f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,10 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Xspace\Model\V20170720\QueryCustomerByPhoneResponse.cs" />
 	<Compile Include="Xspace\Model\V20170720\QueryCustomerByPhoneRequest.cs" />
-	<Compile Include="Xspace\Model\V20170720\QueryCustomerByIdRequest.cs" />
 	<Compile Include="Xspace\Model\V20170720\QueryCustomerByIdResponse.cs" />
+	<Compile Include="Xspace\Model\V20170720\QueryCustomerByPhoneResponse.cs" />
+	<Compile Include="Xspace\Model\V20170720\QueryCustomerByIdRequest.cs" />
 	<Compile Include="Xspace\Transform\V20170720\QueryCustomerByIdResponseUnmarshaller.cs" />
 	<Compile Include="Xspace\Transform\V20170720\QueryCustomerByPhoneResponseUnmarshaller.cs" />
   </ItemGroup>
