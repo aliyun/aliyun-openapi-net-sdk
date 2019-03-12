@@ -118,7 +118,11 @@ namespace Aliyun.Acs.Core.Tests.Units
             signer = new HmacSHA1Signer();
             mockRoaAcsRequest.SignRequest(signer, credential, FormatType.JSON, domain);
 
-            // Done With No Exception
+            //Test Bearertoken SignRequest with Rpc
+            mockRoaAcsRequest.BodyParameters = null;
+            BearerTokenSigner bearerTokenSigner = new BearerTokenSigner();
+            BearerTokenCredential bearerTokenCredential = new BearerTokenCredential("FakeBearerToken");
+            mockRoaAcsRequest.SignRequest(bearerTokenSigner, bearerTokenCredential, FormatType.JSON, domain);
         }
 
         [Fact]
@@ -140,23 +144,11 @@ namespace Aliyun.Acs.Core.Tests.Units
 
         public MockRoaAcsRequest(string product, string version) : base(product, version) { }
 
-        public MockRoaAcsRequest(
-            string product, string version, string action
-        ) : base(
-            product, version, action
-        ) { }
+        public MockRoaAcsRequest(string product, string version, string action) : base(product, version, action) { }
 
-        public MockRoaAcsRequest(
-            String product, String version, String action, String locationProduct
-        ) : base(
-            product, version, action, locationProduct
-        ) { }
+        public MockRoaAcsRequest(string product, string version, string action, string locationProduct) : base(product, version, action, locationProduct) { }
 
-        public MockRoaAcsRequest(
-            string product, string version, string action, string locationProduct, string locationEndpointType
-        ) : base(
-            product, version, action, locationProduct, locationEndpointType
-        ) { }
+        public MockRoaAcsRequest(string product, string version, string action, string locationProduct, string locationEndpointType) : base(product, version, action, locationProduct, locationEndpointType) { }
 
         public override CommonResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

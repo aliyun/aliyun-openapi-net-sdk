@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Core.Auth
             DictionaryUtil.Add(immutableMap, "SignatureVersion", signer.GetSignerVersion());
             DictionaryUtil.Add(immutableMap, "SignatureNonce", Guid.NewGuid().ToString());
             DictionaryUtil.Add(immutableMap, "AccessKeyId", accessKeyId);
+
             if (null != format)
             {
                 DictionaryUtil.Add(immutableMap, "Format", format.ToString());

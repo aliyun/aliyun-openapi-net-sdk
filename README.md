@@ -183,3 +183,46 @@ class TestProgram
     }
 }
 ```
+
+### Use BearerToken to invoke [CCC](https://www.nuget.org/packages/aliyun-net-sdk-ccc/) Product
+
+You should install the relative Nuget Package, as it said before, when you are running the test demo in your local machine.
+
+```csharp
+using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Profile;
+using Aliyun.Acs.Core.Exceptions;
+using Aliyun.Acs.CCC.Model.V20170705;
+
+class TestProgram
+{
+    static void Main(string[] args)
+    {
+        // Create a client used for initiating a request
+        IClientProfile profile = DefaultProfile.GetProfile("<your-region-id>");
+        BearerTokenCredential bearerTokenCredential = new BearerTokenCredential("<your-bearertoken>");
+
+        DefaultAcsClient client = new DefaultAcsClient(profile, bearerTokenCredential);
+
+        try
+        {
+            // Create the request
+            ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
+
+            // Initiate the request and get the response
+            var response = client.GetAcsResponse(request);
+            
+            //Do something as you want below
+        }
+        catch (ServerException ex)
+        {
+            System.Console.WriteLine(ex.ToString());
+        }
+        catch (ClientException ex)
+        {
+            System.Console.WriteLine(ex.ToString());
+        }
+    }
+}
+```
+

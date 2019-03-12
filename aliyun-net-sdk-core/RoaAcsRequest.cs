@@ -50,7 +50,7 @@ namespace Aliyun.Acs.Core
             Initialize();
         }
 
-        public RoaAcsRequest(String product, String version, String action, String locationProduct) : base(product)
+        public RoaAcsRequest(string product, string version, string action, string locationProduct) : base(product)
         {
             this.SetVersion(version);
             this.ActionName = action;
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Core
         public override string ComposeUrl(string endpoint, Dictionary<string, string> queries)
         {
 
-            Dictionary<string, string> mapQueries = (queries == null) ? QueryParameters : queries;
+            var mapQueries = (queries == null) ? QueryParameters : queries;
             StringBuilder urlBuilder = new StringBuilder("");
             urlBuilder.Append(Protocol);
             urlBuilder.Append("://").Append(endpoint);
@@ -113,29 +113,38 @@ namespace Aliyun.Acs.Core
         {
             if (this.BodyParameters != null && this.BodyParameters.Count > 0)
             {
-                Dictionary<String, String> formParams = new Dictionary<String, String>(this.BodyParameters);
+                var formParams = new Dictionary<string, string>(this.BodyParameters);
                 string formStr = ConcatQueryString(formParams);
                 byte[] formData = System.Text.Encoding.UTF8.GetBytes(formStr);
                 this.SetContent(formData, "UTF-8", FormatType.FORM);
             }
 
-            Dictionary<string, string> imutableMap = new Dictionary<string, string>(this.Headers);
+            var imutableMap = new Dictionary<string, string>(this.Headers);
             if (null != signer && null != credentials)
             {
-                String accessKeyId = credentials.GetAccessKeyId();
+                var accessKeyId = credentials.GetAccessKeyId();
                 imutableMap = Composer.RefreshSignParameters(Headers, signer, accessKeyId, format);
                 if (credentials is BasicSessionCredentials)
                 {
-                    String sessionToken = ((BasicSessionCredentials) credentials).GetSessionToken();
+                    var sessionToken = ((BasicSessionCredentials) credentials).GetSessionToken();
                     if (null != sessionToken)
                     {
                         imutableMap.Add("x-acs-security-token", sessionToken);
                     }
                 }
 
-                String strToSign = Composer.ComposeStringToSign(Method, uriPattern, signer,
+                if (credentials is BearerTokenCredential)
+                {
+                    var bearerToken = ((BearerTokenCredential) credentials).GetBearerToken();
+                    if (null != bearerToken)
+                    {
+                        QueryParameters.Add("x-acs-bearer-token", bearerToken);
+                    }
+                }
+
+                var strToSign = Composer.ComposeStringToSign(Method, uriPattern, signer,
                     QueryParameters, imutableMap, pathParameters);
-                String signature = signer.SignString(strToSign, credentials);
+                var signature = signer.SignString(strToSign, credentials);
                 DictionaryUtil.Add(imutableMap, "Authorization", "acs " + accessKeyId + ":" + signature);
             }
             Url = this.ComposeUrl(domain.DomianName, QueryParameters);
