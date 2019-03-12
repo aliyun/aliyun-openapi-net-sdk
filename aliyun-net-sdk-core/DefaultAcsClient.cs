@@ -127,7 +127,7 @@ namespace Aliyun.Acs.Core
                     }
                     else
                     {
-                        if (400 == httpResponse.Status && error.ErrorCode.Equals("SignatureDoesNotMatch"))
+                        if (400 == httpResponse.Status && (error.ErrorCode.Equals("SignatureDoesNotMatch") || error.ErrorCode.Equals("IncompleteSignature")))
                         {
                             var errorMessage = error.ErrorMessage;
                             Regex re = new Regex(@"string to sign is:", RegexOptions.Compiled | RegexOptions.IgnoreCase);
