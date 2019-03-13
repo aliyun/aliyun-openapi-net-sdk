@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.jarvis.Transform;
 using Aliyun.Acs.jarvis.Transform.V20180206;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.jarvis.Model.V20180206
 {
     public class DescribeCpmcPunishListRequest : RpcAcsRequest<DescribeCpmcPunishListResponse>
     {
         public DescribeCpmcPunishListRequest()
-            : base("jarvis", "2018-02-06", "DescribeCpmcPunishList")
+            : base("jarvis", "2018-02-06", "DescribeCpmcPunishList", "jarvis", "openAPI")
         {
         }
 
@@ -143,7 +144,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			return false;
 		}
 
-        public override DescribeCpmcPunishListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeCpmcPunishListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeCpmcPunishListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

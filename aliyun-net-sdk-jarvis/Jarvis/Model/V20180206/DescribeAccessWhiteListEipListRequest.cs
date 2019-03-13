@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.jarvis.Transform;
 using Aliyun.Acs.jarvis.Transform.V20180206;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.jarvis.Model.V20180206
 {
     public class DescribeAccessWhiteListEipListRequest : RpcAcsRequest<DescribeAccessWhiteListEipListResponse>
     {
         public DescribeAccessWhiteListEipListRequest()
-            : base("jarvis", "2018-02-06", "DescribeAccessWhiteListEipList")
+            : base("jarvis", "2018-02-06", "DescribeAccessWhiteListEipList", "jarvis", "openAPI")
         {
         }
 
@@ -83,7 +84,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			return false;
 		}
 
-        public override DescribeAccessWhiteListEipListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeAccessWhiteListEipListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeAccessWhiteListEipListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

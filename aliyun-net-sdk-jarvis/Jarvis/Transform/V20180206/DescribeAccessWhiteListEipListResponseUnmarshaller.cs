@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.jarvis.Model.V20180206;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.jarvis.Model.V20180206;
 
 namespace Aliyun.Acs.jarvis.Transform.V20180206
 {
@@ -34,16 +35,18 @@ namespace Aliyun.Acs.jarvis.Transform.V20180206
 			describeAccessWhiteListEipListResponse.TotalCount = context.IntegerValue("DescribeAccessWhiteListEipList.TotalCount");
 			describeAccessWhiteListEipListResponse.Module = context.StringValue("DescribeAccessWhiteListEipList.Module");
 
-			List<DescribeAccessWhiteListEipListResponse.DescribeAccessWhiteListEipList_Ecs> describeAccessWhiteListEipListResponse_ecsList = new List<DescribeAccessWhiteListEipListResponse.DescribeAccessWhiteListEipList_Ecs>();
-			for (int i = 0; i < context.Length("DescribeAccessWhiteListEipList.EcsList.Length"); i++) {
+			List<DescribeAccessWhiteListEipListResponse.DescribeAccessWhiteListEipList_Ecs> describeAccessWhiteListEipListResponse_eipList = new List<DescribeAccessWhiteListEipListResponse.DescribeAccessWhiteListEipList_Ecs>();
+			for (int i = 0; i < context.Length("DescribeAccessWhiteListEipList.EipList.Length"); i++) {
 				DescribeAccessWhiteListEipListResponse.DescribeAccessWhiteListEipList_Ecs ecs = new DescribeAccessWhiteListEipListResponse.DescribeAccessWhiteListEipList_Ecs();
-				ecs.InstanceName = context.StringValue("DescribeAccessWhiteListEipList.EcsList["+ i +"].InstanceName");
-				ecs.InstanceId = context.StringValue("DescribeAccessWhiteListEipList.EcsList["+ i +"].InstanceId");
-				ecs.IP = context.StringValue("DescribeAccessWhiteListEipList.EcsList["+ i +"].IP");
+				ecs.InstanceName = context.StringValue("DescribeAccessWhiteListEipList.EipList["+ i +"].InstanceName");
+				ecs.InstanceId = context.StringValue("DescribeAccessWhiteListEipList.EipList["+ i +"].InstanceId");
+				ecs.IP = context.StringValue("DescribeAccessWhiteListEipList.EipList["+ i +"].IP");
+				ecs.Region = context.StringValue("DescribeAccessWhiteListEipList.EipList["+ i +"].Region");
+				ecs.ItemSign = context.StringValue("DescribeAccessWhiteListEipList.EipList["+ i +"].ItemSign");
 
-				describeAccessWhiteListEipListResponse_ecsList.Add(ecs);
+				describeAccessWhiteListEipListResponse_eipList.Add(ecs);
 			}
-			describeAccessWhiteListEipListResponse.EcsList = describeAccessWhiteListEipListResponse_ecsList;
+			describeAccessWhiteListEipListResponse.EipList = describeAccessWhiteListEipListResponse_eipList;
         
 			return describeAccessWhiteListEipListResponse;
         }

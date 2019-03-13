@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.jarvis.Transform;
 using Aliyun.Acs.jarvis.Transform.V20180206;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.jarvis.Model.V20180206
 {
     public class DescribeRiskTrendRequest : RpcAcsRequest<DescribeRiskTrendResponse>
     {
         public DescribeRiskTrendRequest()
-            : base("jarvis", "2018-02-06", "DescribeRiskTrend")
+            : base("jarvis", "2018-02-06", "DescribeRiskTrend", "jarvis", "openAPI")
         {
         }
 
@@ -128,7 +129,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			return false;
 		}
 
-        public override DescribeRiskTrendResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeRiskTrendResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeRiskTrendResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

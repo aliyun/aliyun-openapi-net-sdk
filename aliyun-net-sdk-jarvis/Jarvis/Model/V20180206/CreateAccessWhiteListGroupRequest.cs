@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.jarvis.Transform;
 using Aliyun.Acs.jarvis.Transform.V20180206;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.jarvis.Model.V20180206
 {
     public class CreateAccessWhiteListGroupRequest : RpcAcsRequest<CreateAccessWhiteListGroupResponse>
     {
         public CreateAccessWhiteListGroupRequest()
-            : base("jarvis", "2018-02-06", "CreateAccessWhiteListGroup")
+            : base("jarvis", "2018-02-06", "CreateAccessWhiteListGroup", "jarvis", "openAPI")
         {
         }
 
@@ -50,6 +51,8 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 		private string productName;
 
 		private int? whiteListType;
+
+		private string instanceInfoList;
 
 		private string lang;
 
@@ -172,6 +175,19 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			}
 		}
 
+		public string InstanceInfoList
+		{
+			get
+			{
+				return instanceInfoList;
+			}
+			set	
+			{
+				instanceInfoList = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceInfoList", value);
+			}
+		}
+
 		public string Lang
 		{
 			get
@@ -203,7 +219,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			return false;
 		}
 
-        public override CreateAccessWhiteListGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateAccessWhiteListGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateAccessWhiteListGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

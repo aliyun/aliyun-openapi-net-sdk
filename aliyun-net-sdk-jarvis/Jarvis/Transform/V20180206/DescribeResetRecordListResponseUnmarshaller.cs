@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.jarvis.Model.V20180206;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.jarvis.Model.V20180206;
 
 namespace Aliyun.Acs.jarvis.Transform.V20180206
 {

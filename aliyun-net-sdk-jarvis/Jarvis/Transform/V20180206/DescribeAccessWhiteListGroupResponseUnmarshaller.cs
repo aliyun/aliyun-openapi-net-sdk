@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.jarvis.Model.V20180206;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.jarvis.Model.V20180206;
 
 namespace Aliyun.Acs.jarvis.Transform.V20180206
 {
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.jarvis.Transform.V20180206
 			for (int i = 0; i < context.Length("DescribeAccessWhiteListGroup.DataList.Length"); i++) {
 				DescribeAccessWhiteListGroupResponse.DescribeAccessWhiteListGroup_Data data = new DescribeAccessWhiteListGroupResponse.DescribeAccessWhiteListGroup_Data();
 				data.Status = context.StringValue("DescribeAccessWhiteListGroup.DataList["+ i +"].Status");
+				data.InsProduct = context.StringValue("DescribeAccessWhiteListGroup.DataList["+ i +"].InsProduct");
 				data.GmtCreate = context.StringValue("DescribeAccessWhiteListGroup.DataList["+ i +"].GmtCreate");
 				data.GmtRealExpire = context.StringValue("DescribeAccessWhiteListGroup.DataList["+ i +"].GmtRealExpire");
 				data.SrcIP = context.StringValue("DescribeAccessWhiteListGroup.DataList["+ i +"].SrcIP");

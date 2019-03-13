@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.jarvis.Transform;
 using Aliyun.Acs.jarvis.Transform.V20180206;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.jarvis.Model.V20180206
 {
     public class DescribeAccessWhiteListGroupRequest : RpcAcsRequest<DescribeAccessWhiteListGroupResponse>
     {
         public DescribeAccessWhiteListGroupRequest()
-            : base("jarvis", "2018-02-06", "DescribeAccessWhiteListGroup")
+            : base("jarvis", "2018-02-06", "DescribeAccessWhiteListGroup", "jarvis", "openAPI")
         {
         }
 
@@ -38,6 +39,8 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 		private string sourceIp;
 
 		private int? pageSize;
+
+		private string queryProduct;
 
 		private int? currentPage;
 
@@ -87,6 +90,19 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string QueryProduct
+		{
+			get
+			{
+				return queryProduct;
+			}
+			set	
+			{
+				queryProduct = value;
+				DictionaryUtil.Add(QueryParameters, "queryProduct", value);
 			}
 		}
 
@@ -173,7 +189,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			return false;
 		}
 
-        public override DescribeAccessWhiteListGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeAccessWhiteListGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeAccessWhiteListGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

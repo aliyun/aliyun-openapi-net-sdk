@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.jarvis.Model.V20180206
 {
@@ -85,6 +86,8 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 
 			private string status;
 
+			private string insProduct;
+
 			private string gmtCreate;
 
 			private string gmtRealExpire;
@@ -106,6 +109,18 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string InsProduct
+			{
+				get
+				{
+					return insProduct;
+				}
+				set	
+				{
+					insProduct = value;
 				}
 			}
 

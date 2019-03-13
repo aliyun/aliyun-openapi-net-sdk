@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.jarvis.Model.V20180206
 {
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 
 		private string module;
 
-		private List<DescribeAccessWhiteListSlbList_Ecs> ecsList;
+		private List<DescribeAccessWhiteListSlbList_Ecs> slbList;
 
 		public string RequestId
 		{
@@ -68,15 +69,15 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			}
 		}
 
-		public List<DescribeAccessWhiteListSlbList_Ecs> EcsList
+		public List<DescribeAccessWhiteListSlbList_Ecs> SlbList
 		{
 			get
 			{
-				return ecsList;
+				return slbList;
 			}
 			set	
 			{
-				ecsList = value;
+				slbList = value;
 			}
 		}
 
@@ -88,6 +89,10 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 			private string instanceId;
 
 			private string iP;
+
+			private string region;
+
+			private string itemSign;
 
 			public string InstanceName
 			{
@@ -122,6 +127,30 @@ namespace Aliyun.Acs.jarvis.Model.V20180206
 				set	
 				{
 					iP = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			public string ItemSign
+			{
+				get
+				{
+					return itemSign;
+				}
+				set	
+				{
+					itemSign = value;
 				}
 			}
 		}
