@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string bandwidthPackageId;
 
+		private string resourceGroupId;
+
 		public string RequestId
 		{
 			get
@@ -49,6 +51,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				bandwidthPackageId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 	}

@@ -64,7 +64,17 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				routerInterfaceType.HealthCheckSourceIp = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].HealthCheckSourceIp");
 				routerInterfaceType.HealthCheckTargetIp = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].HealthCheckTargetIp");
 				routerInterfaceType.OppositeVpcInstanceId = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].OppositeVpcInstanceId");
+				routerInterfaceType.Bandwidth = context.IntegerValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].Bandwidth");
 				routerInterfaceType.VpcInstanceId = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].VpcInstanceId");
+				routerInterfaceType.OppositeBandwidth = context.IntegerValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].OppositeBandwidth");
+				routerInterfaceType.HasReservationData = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].HasReservationData");
+				routerInterfaceType.ReservationBandwidth = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].ReservationBandwidth");
+				routerInterfaceType.ReservationInternetChargeType = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].ReservationInternetChargeType");
+				routerInterfaceType.ReservationActiveTime = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].ReservationActiveTime");
+				routerInterfaceType.ReservationOrderType = context.StringValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].ReservationOrderType");
+				routerInterfaceType.CrossBorder = context.BooleanValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].CrossBorder");
+				routerInterfaceType.HcThreshold = context.IntegerValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].HcThreshold");
+				routerInterfaceType.HcRate = context.IntegerValue("DescribeRouterInterfaces.RouterInterfaceSet["+ i +"].HcRate");
 
 				describeRouterInterfacesResponse_routerInterfaceSet.Add(routerInterfaceType);
 			}

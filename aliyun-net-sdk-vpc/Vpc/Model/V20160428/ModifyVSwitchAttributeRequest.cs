@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string resourceOwnerAccount;
 
+		private string regionId;
+
 		private string vSwitchName;
 
 		private string ownerAccount;
@@ -48,6 +50,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string description;
 
 		private long? ownerId;
+
+		private int? ipv6CidrBlock;
 
 		public string VSwitchId
 		{
@@ -85,6 +89,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -150,6 +167,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? Ipv6CidrBlock
+		{
+			get
+			{
+				return ipv6CidrBlock;
+			}
+			set	
+			{
+				ipv6CidrBlock = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6CidrBlock", value.ToString());
 			}
 		}
 

@@ -50,6 +50,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				commonBandwidthPackage.ExpiredTime = context.StringValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].ExpiredTime");
 				commonBandwidthPackage.Status = context.StringValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].Status");
 				commonBandwidthPackage.Ratio = context.IntegerValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].Ratio");
+				commonBandwidthPackage.ResourceGroupId = context.StringValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].ResourceGroupId");
+				commonBandwidthPackage.HasReservationData = context.StringValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].HasReservationData");
+				commonBandwidthPackage.ReservationBandwidth = context.StringValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].ReservationBandwidth");
+				commonBandwidthPackage.ReservationInternetChargeType = context.StringValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].ReservationInternetChargeType");
+				commonBandwidthPackage.ReservationActiveTime = context.StringValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].ReservationActiveTime");
+				commonBandwidthPackage.ReservationOrderType = context.StringValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].ReservationOrderType");
+				commonBandwidthPackage.ISP = context.StringValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].ISP");
 
 				List<DescribeCommonBandwidthPackagesResponse.DescribeCommonBandwidthPackages_CommonBandwidthPackage.DescribeCommonBandwidthPackages_PublicIpAddresse> commonBandwidthPackage_publicIpAddresses = new List<DescribeCommonBandwidthPackagesResponse.DescribeCommonBandwidthPackages_CommonBandwidthPackage.DescribeCommonBandwidthPackages_PublicIpAddresse>();
 				for (int j = 0; j < context.Length("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].PublicIpAddresses.Length"); j++) {

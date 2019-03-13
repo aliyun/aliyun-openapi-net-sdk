@@ -52,6 +52,11 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				globalAccelerationInstance.Description = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].Description");
 				globalAccelerationInstance.ExpiredTime = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].ExpiredTime");
 				globalAccelerationInstance.CreationTime = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].CreationTime");
+				globalAccelerationInstance.HasReservationData = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].HasReservationData");
+				globalAccelerationInstance.ReservationBandwidth = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].ReservationBandwidth");
+				globalAccelerationInstance.ReservationInternetChargeType = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].ReservationInternetChargeType");
+				globalAccelerationInstance.ReservationActiveTime = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].ReservationActiveTime");
+				globalAccelerationInstance.ReservationOrderType = context.StringValue("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].ReservationOrderType");
 
 				List<DescribeGlobalAccelerationInstancesResponse.DescribeGlobalAccelerationInstances_GlobalAccelerationInstance.DescribeGlobalAccelerationInstances_LockReason> globalAccelerationInstance_operationLocks = new List<DescribeGlobalAccelerationInstancesResponse.DescribeGlobalAccelerationInstances_GlobalAccelerationInstance.DescribeGlobalAccelerationInstances_LockReason>();
 				for (int j = 0; j < context.Length("DescribeGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].OperationLocks.Length"); j++) {

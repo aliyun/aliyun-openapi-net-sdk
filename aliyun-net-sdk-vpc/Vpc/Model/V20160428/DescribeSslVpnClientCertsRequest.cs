@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
+		private string sslVpnClientCertId;
+
 		private int? pageNumber;
 
 		public string SslVpnServerId
@@ -167,6 +169,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SslVpnClientCertId
+		{
+			get
+			{
+				return sslVpnClientCertId;
+			}
+			set	
+			{
+				sslVpnClientCertId = value;
+				DictionaryUtil.Add(QueryParameters, "SslVpnClientCertId", value);
 			}
 		}
 

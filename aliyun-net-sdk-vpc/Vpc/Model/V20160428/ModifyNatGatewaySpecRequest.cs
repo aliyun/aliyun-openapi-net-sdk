@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
+		private bool? autoPay;
+
 		private string resourceOwnerAccount;
 
 		private string regionId;
@@ -61,6 +63,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 

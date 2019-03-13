@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress eipAddress = new DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress();
 				eipAddress.RegionId = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].RegionId");
 				eipAddress.IpAddress = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].IpAddress");
+				eipAddress.PrivateIpAddress = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].PrivateIpAddress");
 				eipAddress.AllocationId = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].AllocationId");
 				eipAddress.Status = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Status");
 				eipAddress.InstanceId = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InstanceId");
@@ -51,11 +52,19 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				eipAddress.InstanceRegionId = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InstanceRegionId");
 				eipAddress.ChargeType = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ChargeType");
 				eipAddress.ExpiredTime = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ExpiredTime");
+				eipAddress.HDMonitorStatus = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].HDMonitorStatus");
 				eipAddress.Name = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Name");
+				eipAddress.ISP = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ISP");
 				eipAddress.Descritpion = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Descritpion");
 				eipAddress.BandwidthPackageId = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].BandwidthPackageId");
 				eipAddress.BandwidthPackageType = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].BandwidthPackageType");
 				eipAddress.ResourceGroupId = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ResourceGroupId");
+				eipAddress.HasReservationData = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].HasReservationData");
+				eipAddress.ReservationBandwidth = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationBandwidth");
+				eipAddress.ReservationInternetChargeType = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationInternetChargeType");
+				eipAddress.ReservationActiveTime = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationActiveTime");
+				eipAddress.ReservationOrderType = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationOrderType");
+				eipAddress.Mode = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Mode");
 
 				List<string> eipAddress_availableRegions = new List<string>();
 				for (int j = 0; j < context.Length("DescribeEipAddresses.EipAddresses["+ i +"].AvailableRegions.Length"); j++) {
@@ -71,6 +80,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 					eipAddress_operationLocks.Add(lockReason);
 				}
 				eipAddress.OperationLocks = eipAddress_operationLocks;
+
+				List<DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress.DescribeEipAddresses_Tag> eipAddress_tags = new List<DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress.DescribeEipAddresses_Tag>();
+				for (int j = 0; j < context.Length("DescribeEipAddresses.EipAddresses["+ i +"].Tags.Length"); j++) {
+					DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress.DescribeEipAddresses_Tag tag = new DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress.DescribeEipAddresses_Tag();
+					tag.Key = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Tags["+ j +"].Value");
+
+					eipAddress_tags.Add(tag);
+				}
+				eipAddress.Tags = eipAddress_tags;
 
 				describeEipAddressesResponse_eipAddresses.Add(eipAddress);
 			}

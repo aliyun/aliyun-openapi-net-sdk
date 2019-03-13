@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string bandwidth;
 
+		private string regionId;
+
 		private string ownerAccount;
 
 		private string name;
@@ -87,6 +89,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				bandwidth = value;
 				DictionaryUtil.Add(QueryParameters, "Bandwidth", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 

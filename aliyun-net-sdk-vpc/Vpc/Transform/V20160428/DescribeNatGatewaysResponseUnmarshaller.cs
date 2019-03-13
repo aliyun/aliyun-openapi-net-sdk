@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				natGateway.VpcId = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].VpcId");
 				natGateway.Spec = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].Spec");
 				natGateway.InstanceChargeType = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].InstanceChargeType");
+				natGateway.ExpiredTime = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].ExpiredTime");
+				natGateway.AutoPay = context.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].AutoPay");
 				natGateway.BusinessStatus = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].BusinessStatus");
 				natGateway.CreationTime = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].CreationTime");
 				natGateway.Status = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].Status");

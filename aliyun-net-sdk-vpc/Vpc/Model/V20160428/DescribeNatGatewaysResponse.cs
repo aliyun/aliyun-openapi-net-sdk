@@ -111,6 +111,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string instanceChargeType;
 
+			private string expiredTime;
+
+			private bool? autoPay;
+
 			private string businessStatus;
 
 			private string creationTime;
@@ -206,6 +210,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					instanceChargeType = value;
+				}
+			}
+
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
+				}
+			}
+
+			public bool? AutoPay
+			{
+				get
+				{
+					return autoPay;
+				}
+				set	
+				{
+					autoPay = value;
 				}
 			}
 

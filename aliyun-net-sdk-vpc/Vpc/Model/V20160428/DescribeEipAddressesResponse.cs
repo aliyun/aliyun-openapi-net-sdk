@@ -101,6 +101,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string ipAddress;
 
+			private string privateIpAddress;
+
 			private string allocationId;
 
 			private string status;
@@ -123,7 +125,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string expiredTime;
 
+			private string hDMonitorStatus;
+
 			private string name;
+
+			private string iSP;
 
 			private string descritpion;
 
@@ -133,7 +139,21 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string resourceGroupId;
 
+			private string hasReservationData;
+
+			private string reservationBandwidth;
+
+			private string reservationInternetChargeType;
+
+			private string reservationActiveTime;
+
+			private string reservationOrderType;
+
+			private string mode;
+
 			private List<DescribeEipAddresses_LockReason> operationLocks;
+
+			private List<DescribeEipAddresses_Tag> tags;
 
 			private List<string> availableRegions;
 
@@ -158,6 +178,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipAddress = value;
+				}
+			}
+
+			public string PrivateIpAddress
+			{
+				get
+				{
+					return privateIpAddress;
+				}
+				set	
+				{
+					privateIpAddress = value;
 				}
 			}
 
@@ -293,6 +325,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string HDMonitorStatus
+			{
+				get
+				{
+					return hDMonitorStatus;
+				}
+				set	
+				{
+					hDMonitorStatus = value;
+				}
+			}
+
 			public string Name
 			{
 				get
@@ -302,6 +346,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					name = value;
+				}
+			}
+
+			public string ISP
+			{
+				get
+				{
+					return iSP;
+				}
+				set	
+				{
+					iSP = value;
 				}
 			}
 
@@ -353,6 +409,78 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string HasReservationData
+			{
+				get
+				{
+					return hasReservationData;
+				}
+				set	
+				{
+					hasReservationData = value;
+				}
+			}
+
+			public string ReservationBandwidth
+			{
+				get
+				{
+					return reservationBandwidth;
+				}
+				set	
+				{
+					reservationBandwidth = value;
+				}
+			}
+
+			public string ReservationInternetChargeType
+			{
+				get
+				{
+					return reservationInternetChargeType;
+				}
+				set	
+				{
+					reservationInternetChargeType = value;
+				}
+			}
+
+			public string ReservationActiveTime
+			{
+				get
+				{
+					return reservationActiveTime;
+				}
+				set	
+				{
+					reservationActiveTime = value;
+				}
+			}
+
+			public string ReservationOrderType
+			{
+				get
+				{
+					return reservationOrderType;
+				}
+				set	
+				{
+					reservationOrderType = value;
+				}
+			}
+
+			public string Mode
+			{
+				get
+				{
+					return mode;
+				}
+				set	
+				{
+					mode = value;
+				}
+			}
+
 			public List<DescribeEipAddresses_LockReason> OperationLocks
 			{
 				get
@@ -362,6 +490,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					operationLocks = value;
+				}
+			}
+
+			public List<DescribeEipAddresses_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -391,6 +531,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						lockReason = value;
+					}
+				}
+			}
+
+			public class DescribeEipAddresses_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

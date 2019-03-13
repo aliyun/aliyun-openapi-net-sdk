@@ -34,6 +34,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string cidrBlock;
 
+		private string ipv6CidrBlock;
+
 		private string zoneId;
 
 		private long? availableIpAddressCount;
@@ -46,7 +48,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private bool? isDefault;
 
+		private string resourceGroupId;
+
 		private List<DescribeVSwitchAttributes_CloudResourceSetType> cloudResources;
+
+		private DescribeVSwitchAttributes_RouteTable routeTable;
 
 		public string RequestId
 		{
@@ -105,6 +111,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				cidrBlock = value;
+			}
+		}
+
+		public string Ipv6CidrBlock
+		{
+			get
+			{
+				return ipv6CidrBlock;
+			}
+			set	
+			{
+				ipv6CidrBlock = value;
 			}
 		}
 
@@ -180,6 +198,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+			}
+		}
+
 		public List<DescribeVSwitchAttributes_CloudResourceSetType> CloudResources
 		{
 			get
@@ -189,6 +219,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				cloudResources = value;
+			}
+		}
+
+		public DescribeVSwitchAttributes_RouteTable RouteTable
+		{
+			get
+			{
+				return routeTable;
+			}
+			set	
+			{
+				routeTable = value;
 			}
 		}
 
@@ -220,6 +262,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					resourceCount = value;
+				}
+			}
+		}
+
+		public class DescribeVSwitchAttributes_RouteTable
+		{
+
+			private string routeTableId;
+
+			private string routeTableType;
+
+			public string RouteTableId
+			{
+				get
+				{
+					return routeTableId;
+				}
+				set	
+				{
+					routeTableId = value;
+				}
+			}
+
+			public string RouteTableType
+			{
+				get
+				{
+					return routeTableType;
+				}
+				set	
+				{
+					routeTableType = value;
 				}
 			}
 		}

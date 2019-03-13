@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string regionId;
 
+		private string routeEntryId;
+
 		private string destinationCidrBlock;
 
 		private string ownerAccount;
@@ -89,6 +91,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				regionId = value;
 				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string RouteEntryId
+		{
+			get
+			{
+				return routeEntryId;
+			}
+			set	
+			{
+				routeEntryId = value;
+				DictionaryUtil.Add(QueryParameters, "RouteEntryId", value);
 			}
 		}
 
@@ -169,8 +184,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				nextHopLists = value;
 				for (int i = 0; i < nextHopLists.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopType", nextHopLists[i].NextHopType);
 					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopId", nextHopLists[i].NextHopId);
+					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopType", nextHopLists[i].NextHopType);
 				}
 			}
 		}
@@ -191,21 +206,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class NextHopList
 		{
 
-			private string nextHopType;
-
 			private string nextHopId;
 
-			public string NextHopType
-			{
-				get
-				{
-					return nextHopType;
-				}
-				set	
-				{
-					nextHopType = value;
-				}
-			}
+			private string nextHopType;
 
 			public string NextHopId
 			{
@@ -216,6 +219,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					nextHopId = value;
+				}
+			}
+
+			public string NextHopType
+			{
+				get
+				{
+					return nextHopType;
+				}
+				set	
+				{
+					nextHopType = value;
 				}
 			}
 		}

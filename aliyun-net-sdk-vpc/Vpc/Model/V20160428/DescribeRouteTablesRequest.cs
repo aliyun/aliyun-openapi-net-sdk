@@ -49,7 +49,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string routerType;
 
+		private string resourceGroupId;
+
 		private string routeTableName;
+
+		private string regionId;
 
 		private string routerId;
 
@@ -163,6 +167,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public string RouteTableName
 		{
 			get
@@ -173,6 +190,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				routeTableName = value;
 				DictionaryUtil.Add(QueryParameters, "RouteTableName", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 

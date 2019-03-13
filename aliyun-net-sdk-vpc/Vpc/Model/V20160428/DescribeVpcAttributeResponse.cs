@@ -38,6 +38,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string cidrBlock;
 
+		private string ipv6CidrBlock;
+
 		private string vRouterId;
 
 		private string description;
@@ -137,6 +139,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				cidrBlock = value;
+			}
+		}
+
+		public string Ipv6CidrBlock
+		{
+			get
+			{
+				return ipv6CidrBlock;
+			}
+			set	
+			{
+				ipv6CidrBlock = value;
 			}
 		}
 

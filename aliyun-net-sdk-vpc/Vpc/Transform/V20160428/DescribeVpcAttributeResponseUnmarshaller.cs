@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describeVpcAttributeResponse.VpcName = context.StringValue("DescribeVpcAttribute.VpcName");
 			describeVpcAttributeResponse.CreationTime = context.StringValue("DescribeVpcAttribute.CreationTime");
 			describeVpcAttributeResponse.CidrBlock = context.StringValue("DescribeVpcAttribute.CidrBlock");
+			describeVpcAttributeResponse.Ipv6CidrBlock = context.StringValue("DescribeVpcAttribute.Ipv6CidrBlock");
 			describeVpcAttributeResponse.VRouterId = context.StringValue("DescribeVpcAttribute.VRouterId");
 			describeVpcAttributeResponse.Description = context.StringValue("DescribeVpcAttribute.Description");
 			describeVpcAttributeResponse.IsDefault = context.BooleanValue("DescribeVpcAttribute.IsDefault");

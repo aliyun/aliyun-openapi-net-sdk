@@ -105,6 +105,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string cidrBlock;
 
+			private string ipv6CidrBlock;
+
 			private string zoneId;
 
 			private long? availableIpAddressCount;
@@ -116,6 +118,12 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private string creationTime;
 
 			private bool? isDefault;
+
+			private string resourceGroupId;
+
+			private List<DescribeVSwitches_Tag> tags;
+
+			private DescribeVSwitches_RouteTable routeTable;
 
 			public string VSwitchId
 			{
@@ -162,6 +170,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					cidrBlock = value;
+				}
+			}
+
+			public string Ipv6CidrBlock
+			{
+				get
+				{
+					return ipv6CidrBlock;
+				}
+				set	
+				{
+					ipv6CidrBlock = value;
 				}
 			}
 
@@ -234,6 +254,106 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					isDefault = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<DescribeVSwitches_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public DescribeVSwitches_RouteTable RouteTable
+			{
+				get
+				{
+					return routeTable;
+				}
+				set	
+				{
+					routeTable = value;
+				}
+			}
+
+			public class DescribeVSwitches_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+			}
+
+			public class DescribeVSwitches_RouteTable
+			{
+
+				private string routeTableId;
+
+				private string routeTableType;
+
+				public string RouteTableId
+				{
+					get
+					{
+						return routeTableId;
+					}
+					set	
+					{
+						routeTableId = value;
+					}
+				}
+
+				public string RouteTableType
+				{
+					get
+					{
+						return routeTableType;
+					}
+					set	
+					{
+						routeTableType = value;
+					}
 				}
 			}
 		}

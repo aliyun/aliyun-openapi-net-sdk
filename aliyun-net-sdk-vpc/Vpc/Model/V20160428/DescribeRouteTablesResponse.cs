@@ -105,7 +105,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string creationTime;
 
+			private string resourceGroupId;
+
 			private List<DescribeRouteTables_RouteEntry> routeEntrys;
+
+			private List<string> vSwitchIds;
 
 			public string VRouterId
 			{
@@ -155,6 +159,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			public List<DescribeRouteTables_RouteEntry> RouteEntrys
 			{
 				get
@@ -164,6 +180,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					routeEntrys = value;
+				}
+			}
+
+			public List<string> VSwitchIds
+			{
+				get
+				{
+					return vSwitchIds;
+				}
+				set	
+				{
+					vSwitchIds = value;
 				}
 			}
 
@@ -183,6 +211,14 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				private string nextHopType;
 
 				private string nextHopRegionId;
+
+				private string nextHopOppsiteType;
+
+				private string nextHopOppsiteInstanceId;
+
+				private string nextHopOppsiteRegionId;
+
+				private string privateIpAddress;
 
 				private List<DescribeRouteTables_NextHop> nextHops;
 
@@ -270,6 +306,54 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
+				public string NextHopOppsiteType
+				{
+					get
+					{
+						return nextHopOppsiteType;
+					}
+					set	
+					{
+						nextHopOppsiteType = value;
+					}
+				}
+
+				public string NextHopOppsiteInstanceId
+				{
+					get
+					{
+						return nextHopOppsiteInstanceId;
+					}
+					set	
+					{
+						nextHopOppsiteInstanceId = value;
+					}
+				}
+
+				public string NextHopOppsiteRegionId
+				{
+					get
+					{
+						return nextHopOppsiteRegionId;
+					}
+					set	
+					{
+						nextHopOppsiteRegionId = value;
+					}
+				}
+
+				public string PrivateIpAddress
+				{
+					get
+					{
+						return privateIpAddress;
+					}
+					set	
+					{
+						privateIpAddress = value;
+					}
+				}
+
 				public List<DescribeRouteTables_NextHop> NextHops
 				{
 					get
@@ -294,6 +378,12 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					private int? weight;
 
 					private string nextHopRegionId;
+
+					private string nextHopOppsiteType;
+
+					private string nextHopOppsiteInstanceId;
+
+					private string nextHopOppsiteRegionId;
 
 					public string NextHopType
 					{
@@ -352,6 +442,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 						set	
 						{
 							nextHopRegionId = value;
+						}
+					}
+
+					public string NextHopOppsiteType
+					{
+						get
+						{
+							return nextHopOppsiteType;
+						}
+						set	
+						{
+							nextHopOppsiteType = value;
+						}
+					}
+
+					public string NextHopOppsiteInstanceId
+					{
+						get
+						{
+							return nextHopOppsiteInstanceId;
+						}
+						set	
+						{
+							nextHopOppsiteInstanceId = value;
+						}
+					}
+
+					public string NextHopOppsiteRegionId
+					{
+						get
+						{
+							return nextHopOppsiteRegionId;
+						}
+						set	
+						{
+							nextHopOppsiteRegionId = value;
 						}
 					}
 				}

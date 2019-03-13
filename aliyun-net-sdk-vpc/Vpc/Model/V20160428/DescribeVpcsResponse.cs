@@ -109,6 +109,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string cidrBlock;
 
+			private string ipv6CidrBlock;
+
 			private string vRouterId;
 
 			private string description;
@@ -116,6 +118,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private bool? isDefault;
 
 			private string resourceGroupId;
+
+			private List<DescribeVpcs_Tag> tags;
 
 			private List<string> vSwitchIds;
 
@@ -197,6 +201,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string Ipv6CidrBlock
+			{
+				get
+				{
+					return ipv6CidrBlock;
+				}
+				set	
+				{
+					ipv6CidrBlock = value;
+				}
+			}
+
 			public string VRouterId
 			{
 				get
@@ -245,6 +261,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public List<DescribeVpcs_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public List<string> VSwitchIds
 			{
 				get
@@ -290,6 +318,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					routerTableIds = value;
+				}
+			}
+
+			public class DescribeVpcs_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

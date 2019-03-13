@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				snatTableEntry.SourceCIDR = context.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SourceCIDR");
 				snatTableEntry.SnatIp = context.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatIp");
 				snatTableEntry.Status = context.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].Status");
+				snatTableEntry.SnatEntryName = context.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatEntryName");
 
 				describeSnatTableEntriesResponse_snatTableEntries.Add(snatTableEntry);
 			}

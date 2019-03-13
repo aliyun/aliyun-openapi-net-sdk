@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string localName;
 
+			private string regionEndpoint;
+
 			public string RegionId
 			{
 				get
@@ -80,6 +82,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					localName = value;
+				}
+			}
+
+			public string RegionEndpoint
+			{
+				get
+				{
+					return regionEndpoint;
+				}
+				set	
+				{
+					regionEndpoint = value;
 				}
 			}
 		}

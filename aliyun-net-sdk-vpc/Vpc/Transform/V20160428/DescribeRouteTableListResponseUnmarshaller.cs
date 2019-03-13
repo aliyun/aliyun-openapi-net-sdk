@@ -48,7 +48,24 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				routerTableListType.RouteTableName = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].RouteTableName");
 				routerTableListType.RouteTableType = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].RouteTableType");
 				routerTableListType.Description = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Description");
+				routerTableListType.ResourceGroupId = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].ResourceGroupId");
 				routerTableListType.CreationTime = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].CreationTime");
+
+				List<string> routerTableListType_vSwitchIds = new List<string>();
+				for (int j = 0; j < context.Length("DescribeRouteTableList.RouterTableList["+ i +"].VSwitchIds.Length"); j++) {
+					routerTableListType_vSwitchIds.Add(context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].VSwitchIds["+ j +"]"));
+				}
+				routerTableListType.VSwitchIds = routerTableListType_vSwitchIds;
+
+				List<DescribeRouteTableListResponse.DescribeRouteTableList_RouterTableListType.DescribeRouteTableList_Tag> routerTableListType_tags = new List<DescribeRouteTableListResponse.DescribeRouteTableList_RouterTableListType.DescribeRouteTableList_Tag>();
+				for (int j = 0; j < context.Length("DescribeRouteTableList.RouterTableList["+ i +"].Tags.Length"); j++) {
+					DescribeRouteTableListResponse.DescribeRouteTableList_RouterTableListType.DescribeRouteTableList_Tag tag = new DescribeRouteTableListResponse.DescribeRouteTableList_RouterTableListType.DescribeRouteTableList_Tag();
+					tag.Key = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Tags["+ j +"].Value");
+
+					routerTableListType_tags.Add(tag);
+				}
+				routerTableListType.Tags = routerTableListType_tags;
 
 				describeRouteTableListResponse_routerTableList.Add(routerTableListType);
 			}

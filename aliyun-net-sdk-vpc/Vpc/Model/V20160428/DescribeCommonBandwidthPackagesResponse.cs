@@ -121,6 +121,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private int? ratio;
 
+			private string resourceGroupId;
+
+			private string hasReservationData;
+
+			private string reservationBandwidth;
+
+			private string reservationInternetChargeType;
+
+			private string reservationActiveTime;
+
+			private string reservationOrderType;
+
+			private string iSP;
+
 			private List<DescribeCommonBandwidthPackages_PublicIpAddresse> publicIpAddresses;
 
 			public string BandwidthPackageId
@@ -264,6 +278,90 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ratio = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string HasReservationData
+			{
+				get
+				{
+					return hasReservationData;
+				}
+				set	
+				{
+					hasReservationData = value;
+				}
+			}
+
+			public string ReservationBandwidth
+			{
+				get
+				{
+					return reservationBandwidth;
+				}
+				set	
+				{
+					reservationBandwidth = value;
+				}
+			}
+
+			public string ReservationInternetChargeType
+			{
+				get
+				{
+					return reservationInternetChargeType;
+				}
+				set	
+				{
+					reservationInternetChargeType = value;
+				}
+			}
+
+			public string ReservationActiveTime
+			{
+				get
+				{
+					return reservationActiveTime;
+				}
+				set	
+				{
+					reservationActiveTime = value;
+				}
+			}
+
+			public string ReservationOrderType
+			{
+				get
+				{
+					return reservationOrderType;
+				}
+				set	
+				{
+					reservationOrderType = value;
+				}
+			}
+
+			public string ISP
+			{
+				get
+				{
+					return iSP;
+				}
+				set	
+				{
+					iSP = value;
 				}
 			}
 

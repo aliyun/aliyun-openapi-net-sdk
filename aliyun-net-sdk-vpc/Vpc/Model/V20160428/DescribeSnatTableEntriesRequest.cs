@@ -37,21 +37,29 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string resourceOwnerAccount;
 
+		private string ownerAccount;
+
+		private string sourceCIDR;
+
+		private string snatTableId;
+
+		private long? ownerId;
+
+		private string snatIp;
+
+		private int? pageNumber;
+
+		private string sourceVSwitchId;
+
 		private string regionId;
 
-		private string ownerAccount;
+		private string snatEntryName;
 
 		private int? pageSize;
 
 		private string action;
 
-		private string snatTableId;
-
 		private string snatEntryId;
-
-		private long? ownerId;
-
-		private int? pageNumber;
 
 		public long? ResourceOwnerId
 		{
@@ -79,6 +87,97 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string SourceCIDR
+		{
+			get
+			{
+				return sourceCIDR;
+			}
+			set	
+			{
+				sourceCIDR = value;
+				DictionaryUtil.Add(QueryParameters, "SourceCIDR", value);
+			}
+		}
+
+		public string SnatTableId
+		{
+			get
+			{
+				return snatTableId;
+			}
+			set	
+			{
+				snatTableId = value;
+				DictionaryUtil.Add(QueryParameters, "SnatTableId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SnatIp
+		{
+			get
+			{
+				return snatIp;
+			}
+			set	
+			{
+				snatIp = value;
+				DictionaryUtil.Add(QueryParameters, "SnatIp", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string SourceVSwitchId
+		{
+			get
+			{
+				return sourceVSwitchId;
+			}
+			set	
+			{
+				sourceVSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "SourceVSwitchId", value);
+			}
+		}
+
 		public string RegionId
 		{
 			get
@@ -92,16 +191,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string OwnerAccount
+		public string SnatEntryName
 		{
 			get
 			{
-				return ownerAccount;
+				return snatEntryName;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				snatEntryName = value;
+				DictionaryUtil.Add(QueryParameters, "SnatEntryName", value);
 			}
 		}
 
@@ -131,19 +230,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string SnatTableId
-		{
-			get
-			{
-				return snatTableId;
-			}
-			set	
-			{
-				snatTableId = value;
-				DictionaryUtil.Add(QueryParameters, "SnatTableId", value);
-			}
-		}
-
 		public string SnatEntryId
 		{
 			get
@@ -154,32 +240,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				snatEntryId = value;
 				DictionaryUtil.Add(QueryParameters, "SnatEntryId", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

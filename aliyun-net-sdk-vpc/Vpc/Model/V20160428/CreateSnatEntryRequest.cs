@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ownerAccount;
 
+		private string snatEntryName;
+
 		private string sourceCIDR;
 
 		private string action;
@@ -115,6 +117,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string SnatEntryName
+		{
+			get
+			{
+				return snatEntryName;
+			}
+			set	
+			{
+				snatEntryName = value;
+				DictionaryUtil.Add(QueryParameters, "SnatEntryName", value);
 			}
 		}
 

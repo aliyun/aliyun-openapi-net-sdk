@@ -35,13 +35,23 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private bool? autoPay;
 
-		private string regionId;
+		private string resourceOwnerAccount;
 
 		private string clientToken;
 
 		private string ownerAccount;
+
+		private string description;
+
+		private long? ownerId;
+
+		private string spec;
+
+		private string duration;
+
+		private string regionId;
 
 		private string vpcId;
 
@@ -49,13 +59,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string action;
 
-		private string description;
-
-		private long? ownerId;
-
 		private List<BandwidthPackage> bandwidthPackages;
 
-		private string spec;
+		private string instanceChargeType;
+
+		private string pricingCycle;
 
 		public long? ResourceOwnerId
 		{
@@ -70,6 +78,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -80,19 +101,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -119,6 +127,71 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Spec
+		{
+			get
+			{
+				return spec;
+			}
+			set	
+			{
+				spec = value;
+				DictionaryUtil.Add(QueryParameters, "Spec", value);
+			}
+		}
+
+		public string Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
+				DictionaryUtil.Add(QueryParameters, "Duration", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -161,32 +234,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public List<BandwidthPackage> BandwidthPackages
 		{
 			get
@@ -199,52 +246,53 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				bandwidthPackages = value;
 				for (int i = 0; i < bandwidthPackages.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".IpCount", bandwidthPackages[i].IpCount);
 					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Bandwidth", bandwidthPackages[i].Bandwidth);
 					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Zone", bandwidthPackages[i].Zone);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".ISP", bandwidthPackages[i].ISP);
 					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".InternetChargeType", bandwidthPackages[i].InternetChargeType);
+					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".ISP", bandwidthPackages[i].ISP);
+					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".IpCount", bandwidthPackages[i].IpCount);
 				}
 			}
 		}
 
-		public string Spec
+		public string InstanceChargeType
 		{
 			get
 			{
-				return spec;
+				return instanceChargeType;
 			}
 			set	
 			{
-				spec = value;
-				DictionaryUtil.Add(QueryParameters, "Spec", value);
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+			}
+		}
+
+		public string PricingCycle
+		{
+			get
+			{
+				return pricingCycle;
+			}
+			set	
+			{
+				pricingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
 			}
 		}
 
 		public class BandwidthPackage
 		{
 
-			private int? ipCount;
-
 			private int? bandwidth;
 
 			private string zone;
 
-			private string iSP;
-
 			private string internetChargeType;
 
-			public int? IpCount
-			{
-				get
-				{
-					return ipCount;
-				}
-				set	
-				{
-					ipCount = value;
-				}
-			}
+			private string iSP;
+
+			private int? ipCount;
 
 			public int? Bandwidth
 			{
@@ -270,6 +318,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string InternetChargeType
+			{
+				get
+				{
+					return internetChargeType;
+				}
+				set	
+				{
+					internetChargeType = value;
+				}
+			}
+
 			public string ISP
 			{
 				get
@@ -282,15 +342,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string InternetChargeType
+			public int? IpCount
 			{
 				get
 				{
-					return internetChargeType;
+					return ipCount;
 				}
 				set	
 				{
-					internetChargeType = value;
+					ipCount = value;
 				}
 			}
 		}

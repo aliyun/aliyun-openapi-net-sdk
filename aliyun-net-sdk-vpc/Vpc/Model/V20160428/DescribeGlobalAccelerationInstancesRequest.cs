@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
+		private bool? includeReservationData;
+
 		private string globalAccelerationInstanceId;
 
 		private string serverId;
@@ -151,6 +153,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? IncludeReservationData
+		{
+			get
+			{
+				return includeReservationData;
+			}
+			set	
+			{
+				includeReservationData = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeReservationData", value.ToString());
 			}
 		}
 

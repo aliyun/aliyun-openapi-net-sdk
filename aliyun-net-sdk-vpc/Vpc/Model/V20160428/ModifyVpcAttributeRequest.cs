@@ -39,9 +39,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string resourceOwnerAccount;
 
+		private string regionId;
+
 		private string vpcId;
 
 		private string ownerAccount;
+
+		private string cidrBlock;
+
+		private bool? enableIPv6;
 
 		private string action;
 
@@ -88,6 +94,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string VpcId
 		{
 			get
@@ -111,6 +130,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string CidrBlock
+		{
+			get
+			{
+				return cidrBlock;
+			}
+			set	
+			{
+				cidrBlock = value;
+				DictionaryUtil.Add(QueryParameters, "CidrBlock", value);
+			}
+		}
+
+		public bool? EnableIPv6
+		{
+			get
+			{
+				return enableIPv6;
+			}
+			set	
+			{
+				enableIPv6 = value;
+				DictionaryUtil.Add(QueryParameters, "EnableIPv6", value.ToString());
 			}
 		}
 

@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string regionId;
 
+		private string vpnConnectionId;
+
 		private string ownerAccount;
 
 		private int? pageSize;
@@ -89,6 +91,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				regionId = value;
 				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string VpnConnectionId
+		{
+			get
+			{
+				return vpnConnectionId;
+			}
+			set	
+			{
+				vpnConnectionId = value;
+				DictionaryUtil.Add(QueryParameters, "VpnConnectionId", value);
 			}
 		}
 

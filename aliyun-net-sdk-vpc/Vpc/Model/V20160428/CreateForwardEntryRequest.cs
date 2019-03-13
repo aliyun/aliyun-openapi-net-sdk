@@ -37,25 +37,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ipProtocol;
 
-		private string internalPort;
+		private string forwardEntryName;
 
 		private string ownerAccount;
 
 		private string forwardTableId;
 
-		private string action;
-
 		private long? ownerId;
+
+		private string internalIp;
+
+		private string regionId;
+
+		private string internalPort;
+
+		private string action;
 
 		private string externalIp;
 
 		private string externalPort;
-
-		private string internalIp;
 
 		public long? ResourceOwnerId
 		{
@@ -83,19 +85,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string IpProtocol
 		{
 			get
@@ -109,16 +98,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string InternalPort
+		public string ForwardEntryName
 		{
 			get
 			{
-				return internalPort;
+				return forwardEntryName;
 			}
 			set	
 			{
-				internalPort = value;
-				DictionaryUtil.Add(QueryParameters, "InternalPort", value);
+				forwardEntryName = value;
+				DictionaryUtil.Add(QueryParameters, "ForwardEntryName", value);
 			}
 		}
 
@@ -148,19 +137,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -171,6 +147,58 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InternalIp
+		{
+			get
+			{
+				return internalIp;
+			}
+			set	
+			{
+				internalIp = value;
+				DictionaryUtil.Add(QueryParameters, "InternalIp", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string InternalPort
+		{
+			get
+			{
+				return internalPort;
+			}
+			set	
+			{
+				internalPort = value;
+				DictionaryUtil.Add(QueryParameters, "InternalPort", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -197,19 +225,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				externalPort = value;
 				DictionaryUtil.Add(QueryParameters, "ExternalPort", value);
-			}
-		}
-
-		public string InternalIp
-		{
-			get
-			{
-				return internalIp;
-			}
-			set	
-			{
-				internalIp = value;
-				DictionaryUtil.Add(QueryParameters, "InternalIp", value);
 			}
 		}
 

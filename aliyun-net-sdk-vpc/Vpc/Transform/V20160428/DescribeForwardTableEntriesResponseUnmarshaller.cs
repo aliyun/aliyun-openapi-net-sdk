@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				forwardTableEntry.InternalIp = context.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].InternalIp");
 				forwardTableEntry.InternalPort = context.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].InternalPort");
 				forwardTableEntry.Status = context.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].Status");
+				forwardTableEntry.ForwardEntryName = context.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].ForwardEntryName");
 
 				describeForwardTableEntriesResponse_forwardTableEntries.Add(forwardTableEntry);
 			}

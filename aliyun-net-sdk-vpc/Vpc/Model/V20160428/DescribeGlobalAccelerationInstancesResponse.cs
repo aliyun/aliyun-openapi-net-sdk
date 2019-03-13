@@ -125,6 +125,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string creationTime;
 
+			private string hasReservationData;
+
+			private string reservationBandwidth;
+
+			private string reservationInternetChargeType;
+
+			private string reservationActiveTime;
+
+			private string reservationOrderType;
+
 			private List<DescribeGlobalAccelerationInstances_LockReason> operationLocks;
 
 			private List<DescribeGlobalAccelerationInstances_BackendServer> backendServers;
@@ -296,6 +306,66 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string HasReservationData
+			{
+				get
+				{
+					return hasReservationData;
+				}
+				set	
+				{
+					hasReservationData = value;
+				}
+			}
+
+			public string ReservationBandwidth
+			{
+				get
+				{
+					return reservationBandwidth;
+				}
+				set	
+				{
+					reservationBandwidth = value;
+				}
+			}
+
+			public string ReservationInternetChargeType
+			{
+				get
+				{
+					return reservationInternetChargeType;
+				}
+				set	
+				{
+					reservationInternetChargeType = value;
+				}
+			}
+
+			public string ReservationActiveTime
+			{
+				get
+				{
+					return reservationActiveTime;
+				}
+				set	
+				{
+					reservationActiveTime = value;
+				}
+			}
+
+			public string ReservationOrderType
+			{
+				get
+				{
+					return reservationOrderType;
+				}
+				set	
+				{
+					reservationOrderType = value;
 				}
 			}
 

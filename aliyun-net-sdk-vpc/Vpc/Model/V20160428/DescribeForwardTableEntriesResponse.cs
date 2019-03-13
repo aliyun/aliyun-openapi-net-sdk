@@ -113,6 +113,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string status;
 
+			private string forwardEntryName;
+
 			public string ForwardTableId
 			{
 				get
@@ -206,6 +208,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string ForwardEntryName
+			{
+				get
+				{
+					return forwardEntryName;
+				}
+				set	
+				{
+					forwardEntryName = value;
 				}
 			}
 		}

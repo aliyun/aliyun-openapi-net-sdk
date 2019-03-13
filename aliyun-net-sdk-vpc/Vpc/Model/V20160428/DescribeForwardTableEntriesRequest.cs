@@ -37,21 +37,33 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
+		private string ipProtocol;
 
-		private string forwardEntryId;
+		private string forwardEntryName;
 
 		private string ownerAccount;
 
 		private string forwardTableId;
 
+		private long? ownerId;
+
+		private string internalIp;
+
+		private int? pageNumber;
+
+		private string regionId;
+
+		private string forwardEntryId;
+
+		private string internalPort;
+
 		private int? pageSize;
 
 		private string action;
 
-		private long? ownerId;
+		private string externalIp;
 
-		private int? pageNumber;
+		private string externalPort;
 
 		public long? ResourceOwnerId
 		{
@@ -79,29 +91,29 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
+		public string IpProtocol
 		{
 			get
 			{
-				return regionId;
+				return ipProtocol;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				ipProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "IpProtocol", value);
 			}
 		}
 
-		public string ForwardEntryId
+		public string ForwardEntryName
 		{
 			get
 			{
-				return forwardEntryId;
+				return forwardEntryName;
 			}
 			set	
 			{
-				forwardEntryId = value;
-				DictionaryUtil.Add(QueryParameters, "ForwardEntryId", value);
+				forwardEntryName = value;
+				DictionaryUtil.Add(QueryParameters, "ForwardEntryName", value);
 			}
 		}
 
@@ -131,6 +143,84 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InternalIp
+		{
+			get
+			{
+				return internalIp;
+			}
+			set	
+			{
+				internalIp = value;
+				DictionaryUtil.Add(QueryParameters, "InternalIp", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string ForwardEntryId
+		{
+			get
+			{
+				return forwardEntryId;
+			}
+			set	
+			{
+				forwardEntryId = value;
+				DictionaryUtil.Add(QueryParameters, "ForwardEntryId", value);
+			}
+		}
+
+		public string InternalPort
+		{
+			get
+			{
+				return internalPort;
+			}
+			set	
+			{
+				internalPort = value;
+				DictionaryUtil.Add(QueryParameters, "InternalPort", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -157,29 +247,29 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public long? OwnerId
+		public string ExternalIp
 		{
 			get
 			{
-				return ownerId;
+				return externalIp;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				externalIp = value;
+				DictionaryUtil.Add(QueryParameters, "ExternalIp", value);
 			}
 		}
 
-		public int? PageNumber
+		public string ExternalPort
 		{
 			get
 			{
-				return pageNumber;
+				return externalPort;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				externalPort = value;
+				DictionaryUtil.Add(QueryParameters, "ExternalPort", value);
 			}
 		}
 

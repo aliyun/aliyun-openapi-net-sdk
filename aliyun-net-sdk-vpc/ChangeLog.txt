@@ -1,3 +1,6 @@
+2019-03-13 Version: 3.0.4
+1, Update Dependency
+
 2018-03-15 Version: 3.0.2
 1, Synchronize to the latest api list
 

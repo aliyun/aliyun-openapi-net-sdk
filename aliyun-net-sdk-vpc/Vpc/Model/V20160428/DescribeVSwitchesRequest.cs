@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string vSwitchId;
 
+		private string resourceGroupId;
+
 		private string regionId;
 
 		private string vpcId;
@@ -57,7 +59,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string zoneId;
 
+		private List<Tag> tags;
+
 		private bool? isDefault;
+
+		private string routeTableId;
 
 		public long? ResourceOwnerId
 		{
@@ -134,6 +140,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -215,6 +234,24 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
 		public bool? IsDefault
 		{
 			get
@@ -225,6 +262,51 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				isDefault = value;
 				DictionaryUtil.Add(QueryParameters, "IsDefault", value.ToString());
+			}
+		}
+
+		public string RouteTableId
+		{
+			get
+			{
+				return routeTableId;
+			}
+			set	
+			{
+				routeTableId = value;
+				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

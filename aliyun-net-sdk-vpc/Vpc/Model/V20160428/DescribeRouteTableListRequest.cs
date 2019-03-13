@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string routerType;
 
+		private string resourceGroupId;
+
 		private string routeTableName;
 
 		private string regionId;
@@ -56,6 +58,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private int? pageSize;
 
 		private string action;
+
+		private List<Tag> tags;
 
 		private string routeTableId;
 
@@ -137,6 +141,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public string RouteTableName
 		{
 			get
@@ -215,6 +232,24 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
 		public string RouteTableId
 		{
 			get
@@ -225,6 +260,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				routeTableId = value;
 				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

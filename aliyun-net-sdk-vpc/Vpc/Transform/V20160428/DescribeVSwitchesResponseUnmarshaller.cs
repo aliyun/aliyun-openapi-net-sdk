@@ -42,12 +42,29 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vSwitch.VpcId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].VpcId");
 				vSwitch.Status = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Status");
 				vSwitch.CidrBlock = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].CidrBlock");
+				vSwitch.Ipv6CidrBlock = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Ipv6CidrBlock");
 				vSwitch.ZoneId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].ZoneId");
 				vSwitch.AvailableIpAddressCount = context.LongValue("DescribeVSwitches.VSwitches["+ i +"].AvailableIpAddressCount");
 				vSwitch.Description = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Description");
 				vSwitch.VSwitchName = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].VSwitchName");
 				vSwitch.CreationTime = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].CreationTime");
 				vSwitch.IsDefault = context.BooleanValue("DescribeVSwitches.VSwitches["+ i +"].IsDefault");
+				vSwitch.ResourceGroupId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].ResourceGroupId");
+
+				DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_RouteTable routeTable = new DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_RouteTable();
+				routeTable.RouteTableId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].RouteTable.RouteTableId");
+				routeTable.RouteTableType = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].RouteTable.RouteTableType");
+				vSwitch.RouteTable = routeTable;
+
+				List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_Tag> vSwitch_tags = new List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_Tag>();
+				for (int j = 0; j < context.Length("DescribeVSwitches.VSwitches["+ i +"].Tags.Length"); j++) {
+					DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_Tag tag = new DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_Tag();
+					tag.Key = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Tags["+ j +"].Value");
+
+					vSwitch_tags.Add(tag);
+				}
+				vSwitch.Tags = vSwitch_tags;
 
 				describeVSwitchesResponse_vSwitches.Add(vSwitch);
 			}

@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
+		private bool? includeReservationData;
+
 		private int? pageNumber;
 
 		public List<Filter> Filters
@@ -61,11 +63,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				filters = value;
 				for (int i = 0; i < filters.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
 					for (int j = 0; j < filters[i].Values.Count; j++)
 					{
 						DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value." +(j + 1), filters[i].Values[j]);
 					}
+					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
 				}
 			}
 		}
@@ -148,6 +150,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public bool? IncludeReservationData
+		{
+			get
+			{
+				return includeReservationData;
+			}
+			set	
+			{
+				includeReservationData = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeReservationData", value.ToString());
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -164,21 +179,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class Filter
 		{
 
-			private string key;
-
 			private List<string> values;
 
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
+			private string key;
 
 			public List<string> Values
 			{
@@ -189,6 +192,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					values = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

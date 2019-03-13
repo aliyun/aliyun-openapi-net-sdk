@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
+		private string privateIpAddress;
+
 		private long? resourceOwnerId;
 
 		private string instanceId;
@@ -52,6 +54,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string allocationId;
 
 		private long? ownerId;
+
+		public string PrivateIpAddress
+		{
+			get
+			{
+				return privateIpAddress;
+			}
+			set	
+			{
+				privateIpAddress = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{

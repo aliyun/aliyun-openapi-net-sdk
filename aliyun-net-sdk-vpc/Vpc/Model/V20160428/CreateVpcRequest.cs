@@ -33,55 +33,33 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
-		private string vpcName;
-
-		private string resourceGroupId;
-
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
-
-		private string regionId;
 
 		private string clientToken;
 
 		private string ownerAccount;
 
+		private bool? enableIpv6;
+
+		private string description;
+
+		private long? ownerId;
+
+		private string ipv6CidrBlock;
+
+		private string vpcName;
+
+		private string resourceGroupId;
+
+		private string regionId;
+
 		private string cidrBlock;
 
 		private string action;
 
-		private string description;
-
 		private string userCidr;
-
-		private long? ownerId;
-
-		public string VpcName
-		{
-			get
-			{
-				return vpcName;
-			}
-			set	
-			{
-				vpcName = value;
-				DictionaryUtil.Add(QueryParameters, "VpcName", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -106,19 +84,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -148,6 +113,97 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public bool? EnableIpv6
+		{
+			get
+			{
+				return enableIpv6;
+			}
+			set	
+			{
+				enableIpv6 = value;
+				DictionaryUtil.Add(QueryParameters, "EnableIpv6", value.ToString());
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Ipv6CidrBlock
+		{
+			get
+			{
+				return ipv6CidrBlock;
+			}
+			set	
+			{
+				ipv6CidrBlock = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6CidrBlock", value);
+			}
+		}
+
+		public string VpcName
+		{
+			get
+			{
+				return vpcName;
+			}
+			set	
+			{
+				vpcName = value;
+				DictionaryUtil.Add(QueryParameters, "VpcName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string CidrBlock
 		{
 			get
@@ -174,19 +230,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public string UserCidr
 		{
 			get
@@ -197,19 +240,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				userCidr = value;
 				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

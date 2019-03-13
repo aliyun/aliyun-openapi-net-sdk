@@ -35,12 +35,19 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describeVSwitchAttributesResponse.VpcId = context.StringValue("DescribeVSwitchAttributes.VpcId");
 			describeVSwitchAttributesResponse.Status = context.StringValue("DescribeVSwitchAttributes.Status");
 			describeVSwitchAttributesResponse.CidrBlock = context.StringValue("DescribeVSwitchAttributes.CidrBlock");
+			describeVSwitchAttributesResponse.Ipv6CidrBlock = context.StringValue("DescribeVSwitchAttributes.Ipv6CidrBlock");
 			describeVSwitchAttributesResponse.ZoneId = context.StringValue("DescribeVSwitchAttributes.ZoneId");
 			describeVSwitchAttributesResponse.AvailableIpAddressCount = context.LongValue("DescribeVSwitchAttributes.AvailableIpAddressCount");
 			describeVSwitchAttributesResponse.Description = context.StringValue("DescribeVSwitchAttributes.Description");
 			describeVSwitchAttributesResponse.VSwitchName = context.StringValue("DescribeVSwitchAttributes.VSwitchName");
 			describeVSwitchAttributesResponse.CreationTime = context.StringValue("DescribeVSwitchAttributes.CreationTime");
 			describeVSwitchAttributesResponse.IsDefault = context.BooleanValue("DescribeVSwitchAttributes.IsDefault");
+			describeVSwitchAttributesResponse.ResourceGroupId = context.StringValue("DescribeVSwitchAttributes.ResourceGroupId");
+
+			DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_RouteTable routeTable = new DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_RouteTable();
+			routeTable.RouteTableId = context.StringValue("DescribeVSwitchAttributes.RouteTable.RouteTableId");
+			routeTable.RouteTableType = context.StringValue("DescribeVSwitchAttributes.RouteTable.RouteTableType");
+			describeVSwitchAttributesResponse.RouteTable = routeTable;
 
 			List<DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_CloudResourceSetType> describeVSwitchAttributesResponse_cloudResources = new List<DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_CloudResourceSetType>();
 			for (int i = 0; i < context.Length("DescribeVSwitchAttributes.CloudResources.Length"); i++) {

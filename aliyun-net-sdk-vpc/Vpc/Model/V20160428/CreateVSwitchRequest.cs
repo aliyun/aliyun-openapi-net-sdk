@@ -39,21 +39,25 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string clientToken;
 
+		private string ownerAccount;
+
+		private string description;
+
+		private long? ownerId;
+
+		private int? ipv6CidrBlock;
+
+		private string regionId;
+
 		private string vpcId;
 
 		private string vSwitchName;
-
-		private string ownerAccount;
 
 		private string cidrBlock;
 
 		private string action;
 
 		private string zoneId;
-
-		private string description;
-
-		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -94,6 +98,71 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? Ipv6CidrBlock
+		{
+			get
+			{
+				return ipv6CidrBlock;
+			}
+			set	
+			{
+				ipv6CidrBlock = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6CidrBlock", value.ToString());
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string VpcId
 		{
 			get
@@ -117,19 +186,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				vSwitchName = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchName", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -169,32 +225,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

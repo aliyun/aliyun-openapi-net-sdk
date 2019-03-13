@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string routeEntryName;
 
-		private string regionId;
+		private string resourceOwnerAccount;
 
 		private string clientToken;
 
@@ -45,11 +45,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ownerAccount;
 
+		private long? ownerId;
+
+		private string privateIpAddress;
+
+		private string regionId;
+
 		private string action;
 
 		private string nextHopId;
-
-		private long? ownerId;
 
 		private string nextHopType;
 
@@ -70,6 +74,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string RouteEntryName
+		{
+			get
+			{
+				return routeEntryName;
+			}
+			set	
+			{
+				routeEntryName = value;
+				DictionaryUtil.Add(QueryParameters, "RouteEntryName", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -80,19 +97,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -135,6 +139,45 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PrivateIpAddress
+		{
+			get
+			{
+				return privateIpAddress;
+			}
+			set	
+			{
+				privateIpAddress = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -158,19 +201,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				nextHopId = value;
 				DictionaryUtil.Add(QueryParameters, "NextHopId", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -199,9 +229,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				nextHopLists = value;
 				for (int i = 0; i < nextHopLists.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopType", nextHopLists[i].NextHopType);
-					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopId", nextHopLists[i].NextHopId);
 					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".Weight", nextHopLists[i].Weight);
+					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopId", nextHopLists[i].NextHopId);
+					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopType", nextHopLists[i].NextHopType);
 				}
 			}
 		}
@@ -222,21 +252,21 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class NextHopList
 		{
 
-			private string nextHopType;
+			private int? weight;
 
 			private string nextHopId;
 
-			private int? weight;
+			private string nextHopType;
 
-			public string NextHopType
+			public int? Weight
 			{
 				get
 				{
-					return nextHopType;
+					return weight;
 				}
 				set	
 				{
-					nextHopType = value;
+					weight = value;
 				}
 			}
 
@@ -252,15 +282,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public int? Weight
+			public string NextHopType
 			{
 				get
 				{
-					return weight;
+					return nextHopType;
 				}
 				set	
 				{
-					weight = value;
+					nextHopType = value;
 				}
 			}
 		}

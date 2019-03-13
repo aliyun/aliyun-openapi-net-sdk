@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ipProtocol;
 
+		private string forwardEntryName;
+
 		private string ownerAccount;
 
 		private string forwardTableId;
@@ -95,6 +97,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ipProtocol = value;
 				DictionaryUtil.Add(QueryParameters, "IpProtocol", value);
+			}
+		}
+
+		public string ForwardEntryName
+		{
+			get
+			{
+				return forwardEntryName;
+			}
+			set	
+			{
+				forwardEntryName = value;
+				DictionaryUtil.Add(QueryParameters, "ForwardEntryName", value);
 			}
 		}
 

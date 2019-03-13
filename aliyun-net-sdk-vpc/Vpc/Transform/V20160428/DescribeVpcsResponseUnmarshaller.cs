@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vpc.VpcName = context.StringValue("DescribeVpcs.Vpcs["+ i +"].VpcName");
 				vpc.CreationTime = context.StringValue("DescribeVpcs.Vpcs["+ i +"].CreationTime");
 				vpc.CidrBlock = context.StringValue("DescribeVpcs.Vpcs["+ i +"].CidrBlock");
+				vpc.Ipv6CidrBlock = context.StringValue("DescribeVpcs.Vpcs["+ i +"].Ipv6CidrBlock");
 				vpc.VRouterId = context.StringValue("DescribeVpcs.Vpcs["+ i +"].VRouterId");
 				vpc.Description = context.StringValue("DescribeVpcs.Vpcs["+ i +"].Description");
 				vpc.IsDefault = context.BooleanValue("DescribeVpcs.Vpcs["+ i +"].IsDefault");
@@ -72,6 +73,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 					vpc_routerTableIds.Add(context.StringValue("DescribeVpcs.Vpcs["+ i +"].RouterTableIds["+ j +"]"));
 				}
 				vpc.RouterTableIds = vpc_routerTableIds;
+
+				List<DescribeVpcsResponse.DescribeVpcs_Vpc.DescribeVpcs_Tag> vpc_tags = new List<DescribeVpcsResponse.DescribeVpcs_Vpc.DescribeVpcs_Tag>();
+				for (int j = 0; j < context.Length("DescribeVpcs.Vpcs["+ i +"].Tags.Length"); j++) {
+					DescribeVpcsResponse.DescribeVpcs_Vpc.DescribeVpcs_Tag tag = new DescribeVpcsResponse.DescribeVpcs_Vpc.DescribeVpcs_Tag();
+					tag.Key = context.StringValue("DescribeVpcs.Vpcs["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeVpcs.Vpcs["+ i +"].Tags["+ j +"].Value");
+
+					vpc_tags.Add(tag);
+				}
+				vpc.Tags = vpc_tags;
 
 				describeVpcsResponse_vpcs.Add(vpc);
 			}

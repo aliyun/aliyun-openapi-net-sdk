@@ -153,7 +153,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string description;
 
+			private string resourceGroupId;
+
 			private string creationTime;
+
+			private List<DescribeRouteTableList_Tag> tags;
+
+			private List<string> vSwitchIds;
 
 			public string VpcId
 			{
@@ -239,6 +245,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			public string CreationTime
 			{
 				get
@@ -248,6 +266,62 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public List<DescribeRouteTableList_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public List<string> VSwitchIds
+			{
+				get
+				{
+					return vSwitchIds;
+				}
+				set	
+				{
+					vSwitchIds = value;
+				}
+			}
+
+			public class DescribeRouteTableList_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string routerInterfaceId;
 
+		private long? orderId;
+
 		public string RequestId
 		{
 			get
@@ -49,6 +51,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				routerInterfaceId = value;
+			}
+		}
+
+		public long? OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 	}

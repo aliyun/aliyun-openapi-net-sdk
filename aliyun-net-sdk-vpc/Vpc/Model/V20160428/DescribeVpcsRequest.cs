@@ -33,55 +33,31 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
-		private string vpcName;
-
-		private string resourceGroupId;
-
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
-		private string vpcId;
-
 		private string ownerAccount;
-
-		private int? pageSize;
-
-		private string action;
-
-		private bool? isDefault;
 
 		private long? ownerId;
 
 		private int? pageNumber;
 
-		public string VpcName
-		{
-			get
-			{
-				return vpcName;
-			}
-			set	
-			{
-				vpcName = value;
-				DictionaryUtil.Add(QueryParameters, "VpcName", value);
-			}
-		}
+		private string vpcName;
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
+		private string resourceGroupId;
+
+		private string regionId;
+
+		private string vpcId;
+
+		private int? pageSize;
+
+		private string action;
+
+		private List<Tag> tags;
+
+		private bool? isDefault;
 
 		public long? ResourceOwnerId
 		{
@@ -106,6 +82,71 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string VpcName
+		{
+			get
+			{
+				return vpcName;
+			}
+			set	
+			{
+				vpcName = value;
+				DictionaryUtil.Add(QueryParameters, "VpcName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -135,19 +176,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -174,6 +202,24 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
 		public bool? IsDefault
 		{
 			get
@@ -187,29 +233,35 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public long? OwnerId
+		public class Tag
 		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
 
-		public int? PageNumber
-		{
-			get
+			private string value_;
+
+			private string key;
+
+			public string Value
 			{
-				return pageNumber;
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
-			set	
+
+			public string Key
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

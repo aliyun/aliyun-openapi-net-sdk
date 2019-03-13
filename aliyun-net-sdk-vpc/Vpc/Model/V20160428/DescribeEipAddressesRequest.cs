@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string filter2Value;
 
+		private string iSP;
+
 		private string ownerAccount;
 
 		private string allocationId;
@@ -48,6 +50,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string filter2Key;
 
 		private long? ownerId;
+
+		private bool? includeReservationData;
 
 		private string eipAddress;
 
@@ -66,6 +70,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private int? pageSize;
 
 		private string action;
+
+		private List<Tag> tags;
 
 		private string chargeType;
 
@@ -109,6 +115,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				filter2Value = value;
 				DictionaryUtil.Add(QueryParameters, "Filter.2.Value", value);
+			}
+		}
+
+		public string ISP
+		{
+			get
+			{
+				return iSP;
+			}
+			set	
+			{
+				iSP = value;
+				DictionaryUtil.Add(QueryParameters, "ISP", value);
 			}
 		}
 
@@ -174,6 +193,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? IncludeReservationData
+		{
+			get
+			{
+				return includeReservationData;
+			}
+			set	
+			{
+				includeReservationData = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeReservationData", value.ToString());
 			}
 		}
 
@@ -294,6 +326,24 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
 		public string ChargeType
 		{
 			get
@@ -330,6 +380,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				status = value;
 				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

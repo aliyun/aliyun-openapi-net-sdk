@@ -113,6 +113,12 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string circuitCode;
 
+			private string localGatewayIp;
+
+			private string peerGatewayIp;
+
+			private string peeringSubnetMask;
+
 			public string VbrId
 			{
 				get
@@ -206,6 +212,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					circuitCode = value;
+				}
+			}
+
+			public string LocalGatewayIp
+			{
+				get
+				{
+					return localGatewayIp;
+				}
+				set	
+				{
+					localGatewayIp = value;
+				}
+			}
+
+			public string PeerGatewayIp
+			{
+				get
+				{
+					return peerGatewayIp;
+				}
+				set	
+				{
+					peerGatewayIp = value;
+				}
+			}
+
+			public string PeeringSubnetMask
+			{
+				get
+				{
+					return peeringSubnetMask;
+				}
+				set	
+				{
+					peeringSubnetMask = value;
 				}
 			}
 		}

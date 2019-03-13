@@ -149,7 +149,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string oppositeVpcInstanceId;
 
+			private int? bandwidth;
+
 			private string vpcInstanceId;
+
+			private int? oppositeBandwidth;
+
+			private string hasReservationData;
+
+			private string reservationBandwidth;
+
+			private string reservationInternetChargeType;
+
+			private string reservationActiveTime;
+
+			private string reservationOrderType;
+
+			private bool? crossBorder;
+
+			private int? hcThreshold;
+
+			private int? hcRate;
 
 			public string RouterInterfaceId
 			{
@@ -463,6 +483,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public int? Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
 			public string VpcInstanceId
 			{
 				get
@@ -472,6 +504,114 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					vpcInstanceId = value;
+				}
+			}
+
+			public int? OppositeBandwidth
+			{
+				get
+				{
+					return oppositeBandwidth;
+				}
+				set	
+				{
+					oppositeBandwidth = value;
+				}
+			}
+
+			public string HasReservationData
+			{
+				get
+				{
+					return hasReservationData;
+				}
+				set	
+				{
+					hasReservationData = value;
+				}
+			}
+
+			public string ReservationBandwidth
+			{
+				get
+				{
+					return reservationBandwidth;
+				}
+				set	
+				{
+					reservationBandwidth = value;
+				}
+			}
+
+			public string ReservationInternetChargeType
+			{
+				get
+				{
+					return reservationInternetChargeType;
+				}
+				set	
+				{
+					reservationInternetChargeType = value;
+				}
+			}
+
+			public string ReservationActiveTime
+			{
+				get
+				{
+					return reservationActiveTime;
+				}
+				set	
+				{
+					reservationActiveTime = value;
+				}
+			}
+
+			public string ReservationOrderType
+			{
+				get
+				{
+					return reservationOrderType;
+				}
+				set	
+				{
+					reservationOrderType = value;
+				}
+			}
+
+			public bool? CrossBorder
+			{
+				get
+				{
+					return crossBorder;
+				}
+				set	
+				{
+					crossBorder = value;
+				}
+			}
+
+			public int? HcThreshold
+			{
+				get
+				{
+					return hcThreshold;
+				}
+				set	
+				{
+					hcThreshold = value;
+				}
+			}
+
+			public int? HcRate
+			{
+				get
+				{
+					return hcRate;
+				}
+				set	
+				{
+					hcRate = value;
 				}
 			}
 		}

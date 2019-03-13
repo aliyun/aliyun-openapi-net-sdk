@@ -109,6 +109,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string status;
 
+			private string snatEntryName;
+
 			public string SnatTableId
 			{
 				get
@@ -178,6 +180,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string SnatEntryName
+			{
+				get
+				{
+					return snatEntryName;
+				}
+				set	
+				{
+					snatEntryName = value;
 				}
 			}
 		}
