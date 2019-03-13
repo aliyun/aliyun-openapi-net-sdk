@@ -130,7 +130,7 @@ namespace Aliyun.Acs.Core
                     }
                     else
                     {
-                        if (400 == httpResponse.Status && error.ErrorCode.Equals("SignatureDoesNotMatch"))
+                        if (400 == httpResponse.Status && (error.ErrorCode.Equals("SignatureDoesNotMatch") || error.ErrorCode.Equals("IncompleteSignature")))
                         {
                             var errorMessage = error.ErrorMessage;
                             Regex re = new Regex(@"string to sign is:", RegexOptions.Compiled | RegexOptions.IgnoreCase);
@@ -227,9 +227,7 @@ namespace Aliyun.Acs.Core
         public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
             Credential credential, Signer signer, FormatType? format, List<Endpoint> endpoints) where T : AcsResponse
         {
-            return DoAction(request, autoRetry, maxRetryNumber, regionId,
-                new LegacyCredentials(credential),
-                signer, format, endpoints);
+            return DoAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer, format, endpoints);
         }
 
         public virtual HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,

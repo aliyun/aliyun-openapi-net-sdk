@@ -242,6 +242,31 @@ namespace Aliyun.Acs.Core.Tests.Units
         }
 
         [Fact]
+        public void TestIncompleteSignature()
+        {
+            DefaultAcsClient instance = this.MockDefaultAcsClient(400, "IncompleteSignature", "The request signature does not conform to Aliyun standards. server string to sign is:Error Signature");
+            MockAcsRequestForDefaultAcsClient request = new MockAcsRequestForDefaultAcsClient();
+            request.StringToSign = "this is string to sign info";
+            Credential credentials = new Credential(AKID, AKSE);
+
+            Exception signatureException = Assert.Throws<ClientException>(() =>
+            {
+                var result = instance.GetAcsResponse<AcsResponse>(request, "cn-hangzhou", credentials);
+            });
+
+            Assert.Equal("IncompleteSignature : The request signature does not conform to Aliyun standards. server string to sign is:Error Signature", signatureException.Message);
+
+            instance = this.MockDefaultAcsClient(400, "IncompleteSignature", "The request signature does not conform to Aliyun standards. server string to sign is:this is string to sign info");
+
+            Exception invalidException = Assert.Throws<ClientException>(() =>
+            {
+                var result = instance.GetAcsResponse<AcsResponse>(request, "cn-hangzhou", credentials);
+            });
+
+            Assert.Equal("SDK.InvalidAccessKeySecret : Specified Access Key Secret is not valid.", invalidException.Message);
+        }
+
+        [Fact]
         public void GetCommonResponse()
         {
             int status = 200;

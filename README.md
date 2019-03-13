@@ -4,6 +4,7 @@
 [![Travis CI Build Status](https://travis-ci.org/aliyun/aliyun-openapi-net-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-net-sdk)
 [![Appveyor CI Build Status](https://ci.appveyor.com/api/projects/status/l6a4r74matmhwqf3?svg=true)](https://ci.appveyor.com/project/AxiosCros/aliyun-openapi-net-sdk-6xumj)
 [![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk)
+[![NuGet version](https://badge.fury.io/nu/aliyun-net-sdk-core.svg)](https://badge.fury.io/nu/aliyun-net-sdk-core)
 [![Nuget Download](https://img.shields.io/nuget/dt/aliyun-net-sdk-core.svg?label=Nuget%20Download&style=flat)](https://www.nuget.org/packages/aliyun-net-sdk-core/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/LICENSE)
 
@@ -182,3 +183,46 @@ class TestProgram
     }
 }
 ```
+
+### Use BearerToken to invoke [CCC](https://www.nuget.org/packages/aliyun-net-sdk-ccc/) Product
+
+You should install the relative Nuget Package, as it said before, when you are running the test demo in your local machine.
+
+```csharp
+using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Profile;
+using Aliyun.Acs.Core.Exceptions;
+using Aliyun.Acs.CCC.Model.V20170705;
+
+class TestProgram
+{
+    static void Main(string[] args)
+    {
+        // Create a client used for initiating a request
+        IClientProfile profile = DefaultProfile.GetProfile("<your-region-id>");
+        BearerTokenCredential bearerTokenCredential = new BearerTokenCredential("<your-bearertoken>");
+
+        DefaultAcsClient client = new DefaultAcsClient(profile, bearerTokenCredential);
+
+        try
+        {
+            // Create the request
+            ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
+
+            // Initiate the request and get the response
+            var response = client.GetAcsResponse(request);
+            
+            //Do something as you want below
+        }
+        catch (ServerException ex)
+        {
+            System.Console.WriteLine(ex.ToString());
+        }
+        catch (ClientException ex)
+        {
+            System.Console.WriteLine(ex.ToString());
+        }
+    }
+}
+```
+

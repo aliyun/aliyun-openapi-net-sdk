@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{25b75a60-0035-4cfa-9460-2b04ce6cd43e}</ProjectGuid>
+    <ProjectGuid>{0a946535-9e85-42f3-bf76-e3f8f700cc8f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
-    <AssemblyName>aliyun-net-sdk-tesladam</AssemblyName>
+    <AssemblyName>aliyun-net-sdk-xspace</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,21 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="TeslaDam\Model\V20180118\HostGetsResponse.cs" />
-	<Compile Include="TeslaDam\Model\V20180118\HostGetsRequest.cs" />
-	<Compile Include="TeslaDam\Model\V20180118\ActionDiskMaskResponse.cs" />
-	<Compile Include="TeslaDam\Model\V20180118\ActionResponse.cs" />
-	<Compile Include="TeslaDam\Model\V20180118\ActionDiskRmaResponse.cs" />
-	<Compile Include="TeslaDam\Model\V20180118\ActionDiskCheckResponse.cs" />
-	<Compile Include="TeslaDam\Model\V20180118\ActionDiskMaskRequest.cs" />
-	<Compile Include="TeslaDam\Model\V20180118\ActionDiskCheckRequest.cs" />
-	<Compile Include="TeslaDam\Model\V20180118\ActionRequest.cs" />
-	<Compile Include="TeslaDam\Model\V20180118\ActionDiskRmaRequest.cs" />
-	<Compile Include="TeslaDam\Transform\V20180118\ActionDiskMaskResponseUnmarshaller.cs" />
-	<Compile Include="TeslaDam\Transform\V20180118\ActionResponseUnmarshaller.cs" />
-	<Compile Include="TeslaDam\Transform\V20180118\HostGetsResponseUnmarshaller.cs" />
-	<Compile Include="TeslaDam\Transform\V20180118\ActionDiskRmaResponseUnmarshaller.cs" />
-	<Compile Include="TeslaDam\Transform\V20180118\ActionDiskCheckResponseUnmarshaller.cs" />
+	<Compile Include="Xspace\Model\V20170720\QueryCustomerByPhoneRequest.cs" />
+	<Compile Include="Xspace\Model\V20170720\QueryCustomerByIdResponse.cs" />
+	<Compile Include="Xspace\Model\V20170720\QueryCustomerByPhoneResponse.cs" />
+	<Compile Include="Xspace\Model\V20170720\QueryCustomerByIdRequest.cs" />
+	<Compile Include="Xspace\Transform\V20170720\QueryCustomerByIdResponseUnmarshaller.cs" />
+	<Compile Include="Xspace\Transform\V20170720\QueryCustomerByPhoneResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

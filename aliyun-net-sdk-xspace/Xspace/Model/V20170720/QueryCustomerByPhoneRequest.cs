@@ -20,57 +20,39 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.TeslaDam.Transform;
-using Aliyun.Acs.TeslaDam.Transform.V20180118;
+using Aliyun.Acs.xspace.Transform;
+using Aliyun.Acs.xspace.Transform.V20170720;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.TeslaDam.Model.V20180118
+namespace Aliyun.Acs.xspace.Model.V20170720
 {
-    public class ActionRequest : RpcAcsRequest<ActionResponse>
+    public class QueryCustomerByPhoneRequest : RoaAcsRequest<QueryCustomerByPhoneResponse>
     {
-        public ActionRequest()
-            : base("TeslaDam", "2018-01-18", "Action", "tesladam", "openAPI")
+        public QueryCustomerByPhoneRequest()
+            : base("xspace", "2017-07-20", "QueryCustomerByPhone")
         {
+			UriPattern = "/customerbyphone";
+			Method = MethodType.POST;
         }
 
-		private int? orderId;
+		private string phone;
 
-		private string stepCode;
-
-		public int? OrderId
+		public string Phone
 		{
 			get
 			{
-				return orderId;
+				return phone;
 			}
 			set	
 			{
-				orderId = value;
-				DictionaryUtil.Add(QueryParameters, "OrderId", value.ToString());
+				phone = value;
+				DictionaryUtil.Add(QueryParameters, "Phone", value);
 			}
 		}
 
-		public string StepCode
-		{
-			get
-			{
-				return stepCode;
-			}
-			set	
-			{
-				stepCode = value;
-				DictionaryUtil.Add(QueryParameters, "StepCode", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override ActionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryCustomerByPhoneResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return ActionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryCustomerByPhoneResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

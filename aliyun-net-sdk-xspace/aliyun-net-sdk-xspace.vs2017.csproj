@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Aliyun.Acs.TeslaDam</RootNamespace>
-    <Version>1.0.2</Version>
+    <RootNamespace>Aliyun.Acs.xspace</RootNamespace>
+    <Version>1.1.1</Version>
     <Authors>Alibaba Cloud</Authors>
     <Copyright>©2009-2018 Alibaba Cloud</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -12,8 +12,8 @@
     <PackageIconUrl>https://www.alibabacloud.com/favicon.ico</PackageIconUrl>
     <Description>Alibaba Cloud SDK for C#</Description>
     <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageTags>alibaba aliyun SDK TeslaDam</PackageTags>
-    <AssemblyName>aliyun-net-sdk-tesladam</AssemblyName>
+    <PackageTags>alibaba aliyun SDK xspace</PackageTags>
+    <AssemblyName>aliyun-net-sdk-xspace</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

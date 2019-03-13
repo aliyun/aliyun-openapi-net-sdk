@@ -20,6 +20,9 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
 
             KeyPairCredentials KeyPairCredentials = new KeyPairCredentials("publicKeyId", "privateKeySecret");
             Assert.IsType<SHA256withRSASigner>(MockSigner.GetSigner(KeyPairCredentials));
+
+            BearerTokenCredential bearerTokenCredential = new BearerTokenCredential("FakeBearerToken");
+            Assert.IsType<BearerTokenSigner>(MockSigner.GetSigner(bearerTokenCredential));
         }
     }
     public class MockSigner : Signer
