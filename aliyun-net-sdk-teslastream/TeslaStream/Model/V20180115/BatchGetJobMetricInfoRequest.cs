@@ -29,7 +29,7 @@ namespace Aliyun.Acs.TeslaStream.Model.V20180115
     public class BatchGetJobMetricInfoRequest : RpcAcsRequest<BatchGetJobMetricInfoResponse>
     {
         public BatchGetJobMetricInfoRequest()
-            : base("TeslaStream", "2018-01-15", "BatchGetJobMetricInfo")
+            : base("TeslaStream", "2018-01-15", "BatchGetJobMetricInfo", "teslastream", "openAPI")
         {
         }
 

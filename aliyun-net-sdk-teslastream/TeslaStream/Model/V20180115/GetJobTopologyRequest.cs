@@ -29,7 +29,7 @@ namespace Aliyun.Acs.TeslaStream.Model.V20180115
     public class GetJobTopologyRequest : RpcAcsRequest<GetJobTopologyResponse>
     {
         public GetJobTopologyRequest()
-            : base("TeslaStream", "2018-01-15", "GetJobTopology")
+            : base("TeslaStream", "2018-01-15", "GetJobTopology", "teslastream", "openAPI")
         {
         }
 

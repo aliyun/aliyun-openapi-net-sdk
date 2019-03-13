@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{d492a2ee-b1c2-478a-b653-5b790a6a0c66}</ProjectGuid>
+    <ProjectGuid>{5db1bde8-c8fa-40b2-8430-bcab38fde8cb}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -41,14 +41,14 @@
   </ItemGroup>
   <ItemGroup>
 	<Compile Include="TeslaStream\Model\V20180115\BatchGetPluginConfigInfoResponse.cs" />
+	<Compile Include="TeslaStream\Model\V20180115\BatchGetJobMetricInfoResponse.cs" />
 	<Compile Include="TeslaStream\Model\V20180115\BatchGetPluginConfigInfoRequest.cs" />
 	<Compile Include="TeslaStream\Model\V20180115\GetJobTopologyResponse.cs" />
-	<Compile Include="TeslaStream\Model\V20180115\BatchGetJobMetricInfoResponse.cs" />
-	<Compile Include="TeslaStream\Model\V20180115\BatchGetJobMetricInfoRequest.cs" />
 	<Compile Include="TeslaStream\Model\V20180115\GetJobTopologyRequest.cs" />
-	<Compile Include="TeslaStream\Transform\V20180115\BatchGetJobMetricInfoResponseUnmarshaller.cs" />
+	<Compile Include="TeslaStream\Model\V20180115\BatchGetJobMetricInfoRequest.cs" />
 	<Compile Include="TeslaStream\Transform\V20180115\GetJobTopologyResponseUnmarshaller.cs" />
 	<Compile Include="TeslaStream\Transform\V20180115\BatchGetPluginConfigInfoResponseUnmarshaller.cs" />
+	<Compile Include="TeslaStream\Transform\V20180115\BatchGetJobMetricInfoResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

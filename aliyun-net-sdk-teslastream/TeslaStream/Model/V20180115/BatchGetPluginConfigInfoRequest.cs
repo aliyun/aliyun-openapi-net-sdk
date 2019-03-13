@@ -29,7 +29,7 @@ namespace Aliyun.Acs.TeslaStream.Model.V20180115
     public class BatchGetPluginConfigInfoRequest : RpcAcsRequest<BatchGetPluginConfigInfoResponse>
     {
         public BatchGetPluginConfigInfoRequest()
-            : base("TeslaStream", "2018-01-15", "BatchGetPluginConfigInfo")
+            : base("TeslaStream", "2018-01-15", "BatchGetPluginConfigInfo", "teslastream", "openAPI")
         {
         }
 
