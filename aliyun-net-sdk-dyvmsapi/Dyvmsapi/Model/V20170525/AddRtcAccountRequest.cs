@@ -27,10 +27,10 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class VoipAddAccountRequest : RpcAcsRequest<VoipAddAccountResponse>
+    public class AddRtcAccountRequest : RpcAcsRequest<AddRtcAccountResponse>
     {
-        public VoipAddAccountRequest()
-            : base("Dyvmsapi", "2017-05-25", "VoipAddAccount")
+        public AddRtcAccountRequest()
+            : base("Dyvmsapi", "2017-05-25", "AddRtcAccount")
         {
         }
 
@@ -124,9 +124,9 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-        public override VoipAddAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AddRtcAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return VoipAddAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddRtcAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-	public class SmartCallResponse : AcsResponse
+	public class BatchRobotSmartCallResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string callId;
+		private string taskId;
 
 		private string code;
 
@@ -45,15 +45,15 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string CallId
+		public string TaskId
 		{
 			get
 			{
-				return callId;
+				return taskId;
 			}
 			set	
 			{
-				callId = value;
+				taskId = value;
 			}
 		}
 

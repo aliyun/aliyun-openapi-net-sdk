@@ -24,19 +24,19 @@ using Aliyun.Acs.Dyvmsapi.Model.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
-    public class VoipAddAccountResponseUnmarshaller
+    public class QueryRobotInfoListResponseUnmarshaller
     {
-        public static VoipAddAccountResponse Unmarshall(UnmarshallerContext context)
+        public static QueryRobotInfoListResponse Unmarshall(UnmarshallerContext context)
         {
-			VoipAddAccountResponse voipAddAccountResponse = new VoipAddAccountResponse();
+			QueryRobotInfoListResponse queryRobotInfoListResponse = new QueryRobotInfoListResponse();
 
-			voipAddAccountResponse.HttpResponse = context.HttpResponse;
-			voipAddAccountResponse.RequestId = context.StringValue("VoipAddAccount.RequestId");
-			voipAddAccountResponse.Module = context.StringValue("VoipAddAccount.Module");
-			voipAddAccountResponse.Code = context.StringValue("VoipAddAccount.Code");
-			voipAddAccountResponse.Message = context.StringValue("VoipAddAccount.Message");
+			queryRobotInfoListResponse.HttpResponse = context.HttpResponse;
+			queryRobotInfoListResponse.RequestId = context.StringValue("QueryRobotInfoList.RequestId");
+			queryRobotInfoListResponse.Data = context.StringValue("QueryRobotInfoList.Data");
+			queryRobotInfoListResponse.Code = context.StringValue("QueryRobotInfoList.Code");
+			queryRobotInfoListResponse.Message = context.StringValue("QueryRobotInfoList.Message");
         
-			return voipAddAccountResponse;
+			return queryRobotInfoListResponse;
         }
     }
 }

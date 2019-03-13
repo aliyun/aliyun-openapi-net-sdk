@@ -27,22 +27,26 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class VoipAddAccountRequest : RpcAcsRequest<VoipAddAccountResponse>
+    public class QueryCallDetailByTaskIdRequest : RpcAcsRequest<QueryCallDetailByTaskIdResponse>
     {
-        public VoipAddAccountRequest()
-            : base("Dyvmsapi", "2017-05-25", "VoipAddAccount")
+        public QueryCallDetailByTaskIdRequest()
+            : base("Dyvmsapi", "2017-05-25", "QueryCallDetailByTaskId")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private long? queryDate;
+
 		private string resourceOwnerAccount;
+
+		private string callee;
 
 		private string action;
 
 		private long? ownerId;
 
-		private string deviceId;
+		private string taskId;
 
 		private string accessKeyId;
 
@@ -59,6 +63,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
+		public long? QueryDate
+		{
+			get
+			{
+				return queryDate;
+			}
+			set	
+			{
+				queryDate = value;
+				DictionaryUtil.Add(QueryParameters, "QueryDate", value.ToString());
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -69,6 +86,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string Callee
+		{
+			get
+			{
+				return callee;
+			}
+			set	
+			{
+				callee = value;
+				DictionaryUtil.Add(QueryParameters, "Callee", value);
 			}
 		}
 
@@ -98,16 +128,16 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string DeviceId
+		public string TaskId
 		{
 			get
 			{
-				return deviceId;
+				return taskId;
 			}
 			set	
 			{
-				deviceId = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
@@ -124,9 +154,9 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-        public override VoipAddAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryCallDetailByTaskIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return VoipAddAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryCallDetailByTaskIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

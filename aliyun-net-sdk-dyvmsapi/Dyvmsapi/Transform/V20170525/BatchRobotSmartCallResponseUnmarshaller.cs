@@ -24,19 +24,19 @@ using Aliyun.Acs.Dyvmsapi.Model.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
-    public class VoipAddAccountResponseUnmarshaller
+    public class BatchRobotSmartCallResponseUnmarshaller
     {
-        public static VoipAddAccountResponse Unmarshall(UnmarshallerContext context)
+        public static BatchRobotSmartCallResponse Unmarshall(UnmarshallerContext context)
         {
-			VoipAddAccountResponse voipAddAccountResponse = new VoipAddAccountResponse();
+			BatchRobotSmartCallResponse batchRobotSmartCallResponse = new BatchRobotSmartCallResponse();
 
-			voipAddAccountResponse.HttpResponse = context.HttpResponse;
-			voipAddAccountResponse.RequestId = context.StringValue("VoipAddAccount.RequestId");
-			voipAddAccountResponse.Module = context.StringValue("VoipAddAccount.Module");
-			voipAddAccountResponse.Code = context.StringValue("VoipAddAccount.Code");
-			voipAddAccountResponse.Message = context.StringValue("VoipAddAccount.Message");
+			batchRobotSmartCallResponse.HttpResponse = context.HttpResponse;
+			batchRobotSmartCallResponse.RequestId = context.StringValue("BatchRobotSmartCall.RequestId");
+			batchRobotSmartCallResponse.TaskId = context.StringValue("BatchRobotSmartCall.TaskId");
+			batchRobotSmartCallResponse.Code = context.StringValue("BatchRobotSmartCall.Code");
+			batchRobotSmartCallResponse.Message = context.StringValue("BatchRobotSmartCall.Message");
         
-			return voipAddAccountResponse;
+			return batchRobotSmartCallResponse;
         }
     }
 }

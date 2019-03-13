@@ -27,22 +27,22 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class VoipAddAccountRequest : RpcAcsRequest<VoipAddAccountResponse>
+    public class QueryRobotInfoListRequest : RpcAcsRequest<QueryRobotInfoListResponse>
     {
-        public VoipAddAccountRequest()
-            : base("Dyvmsapi", "2017-05-25", "VoipAddAccount")
+        public QueryRobotInfoListRequest()
+            : base("Dyvmsapi", "2017-05-25", "QueryRobotInfoList")
         {
         }
 
 		private long? resourceOwnerId;
+
+		private string auditStatus;
 
 		private string resourceOwnerAccount;
 
 		private string action;
 
 		private long? ownerId;
-
-		private string deviceId;
 
 		private string accessKeyId;
 
@@ -56,6 +56,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string AuditStatus
+		{
+			get
+			{
+				return auditStatus;
+			}
+			set	
+			{
+				auditStatus = value;
+				DictionaryUtil.Add(QueryParameters, "AuditStatus", value);
 			}
 		}
 
@@ -98,19 +111,6 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string DeviceId
-		{
-			get
-			{
-				return deviceId;
-			}
-			set	
-			{
-				deviceId = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -124,9 +124,9 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-        public override VoipAddAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryRobotInfoListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return VoipAddAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryRobotInfoListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

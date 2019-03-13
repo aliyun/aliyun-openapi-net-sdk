@@ -27,38 +27,42 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class SingleCallByTtsRequest : RpcAcsRequest<SingleCallByTtsResponse>
+    public class BatchRobotSmartCallRequest : RpcAcsRequest<BatchRobotSmartCallResponse>
     {
-        public SingleCallByTtsRequest()
-            : base("Dyvmsapi", "2017-05-25", "SingleCallByTts")
+        public BatchRobotSmartCallRequest()
+            : base("Dyvmsapi", "2017-05-25", "BatchRobotSmartCall")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private bool? earlyMediaAsr;
+
 		private string resourceOwnerAccount;
 
-		private string ttsCode;
+		private string ttsParamHead;
 
-		private int? playTimes;
+		private string taskName;
 
 		private string ttsParam;
 
 		private long? ownerId;
 
-		private int? speed;
+		private string dialogId;
 
 		private string accessKeyId;
 
-		private int? volume;
-
 		private string calledNumber;
+
+		private long? scheduleTime;
 
 		private string calledShowNumber;
 
 		private string action;
 
-		private string outId;
+		private string corpName;
+
+		private bool? scheduleCall;
 
 		public long? ResourceOwnerId
 		{
@@ -70,6 +74,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? EarlyMediaAsr
+		{
+			get
+			{
+				return earlyMediaAsr;
+			}
+			set	
+			{
+				earlyMediaAsr = value;
+				DictionaryUtil.Add(QueryParameters, "EarlyMediaAsr", value.ToString());
 			}
 		}
 
@@ -86,29 +103,29 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string TtsCode
+		public string TtsParamHead
 		{
 			get
 			{
-				return ttsCode;
+				return ttsParamHead;
 			}
 			set	
 			{
-				ttsCode = value;
-				DictionaryUtil.Add(QueryParameters, "TtsCode", value);
+				ttsParamHead = value;
+				DictionaryUtil.Add(QueryParameters, "TtsParamHead", value);
 			}
 		}
 
-		public int? PlayTimes
+		public string TaskName
 		{
 			get
 			{
-				return playTimes;
+				return taskName;
 			}
 			set	
 			{
-				playTimes = value;
-				DictionaryUtil.Add(QueryParameters, "PlayTimes", value.ToString());
+				taskName = value;
+				DictionaryUtil.Add(QueryParameters, "TaskName", value);
 			}
 		}
 
@@ -138,16 +155,16 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public int? Speed
+		public string DialogId
 		{
 			get
 			{
-				return speed;
+				return dialogId;
 			}
 			set	
 			{
-				speed = value;
-				DictionaryUtil.Add(QueryParameters, "Speed", value.ToString());
+				dialogId = value;
+				DictionaryUtil.Add(QueryParameters, "DialogId", value);
 			}
 		}
 
@@ -164,19 +181,6 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public int? Volume
-		{
-			get
-			{
-				return volume;
-			}
-			set	
-			{
-				volume = value;
-				DictionaryUtil.Add(QueryParameters, "Volume", value.ToString());
-			}
-		}
-
 		public string CalledNumber
 		{
 			get
@@ -187,6 +191,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				calledNumber = value;
 				DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
+			}
+		}
+
+		public long? ScheduleTime
+		{
+			get
+			{
+				return scheduleTime;
+			}
+			set	
+			{
+				scheduleTime = value;
+				DictionaryUtil.Add(QueryParameters, "ScheduleTime", value.ToString());
 			}
 		}
 
@@ -216,22 +233,35 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string OutId
+		public string CorpName
 		{
 			get
 			{
-				return outId;
+				return corpName;
 			}
 			set	
 			{
-				outId = value;
-				DictionaryUtil.Add(QueryParameters, "OutId", value);
+				corpName = value;
+				DictionaryUtil.Add(QueryParameters, "CorpName", value);
 			}
 		}
 
-        public override SingleCallByTtsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public bool? ScheduleCall
+		{
+			get
+			{
+				return scheduleCall;
+			}
+			set	
+			{
+				scheduleCall = value;
+				DictionaryUtil.Add(QueryParameters, "ScheduleCall", value.ToString());
+			}
+		}
+
+        public override BatchRobotSmartCallResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SingleCallByTtsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchRobotSmartCallResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

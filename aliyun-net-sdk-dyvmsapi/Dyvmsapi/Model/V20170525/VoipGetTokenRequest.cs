@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dyvmsapi.Transform;
 using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 		private long? ownerId;
 
 		private string deviceId;
+
+		private bool? isCustomAccount;
 
 		private string accessKeyId;
 
@@ -125,6 +128,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
+		public bool? IsCustomAccount
+		{
+			get
+			{
+				return isCustomAccount;
+			}
+			set	
+			{
+				isCustomAccount = value;
+				DictionaryUtil.Add(QueryParameters, "IsCustomAccount", value.ToString());
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -138,7 +154,7 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-        public override VoipGetTokenResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override VoipGetTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return VoipGetTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

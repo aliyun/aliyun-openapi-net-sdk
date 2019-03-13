@@ -16,69 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Dyvmsapi.Model.V20170525;
 
-namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
+namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
-	public class SmartCallResponse : AcsResponse
-	{
+    public class GetRtcTokenResponseUnmarshaller
+    {
+        public static GetRtcTokenResponse Unmarshall(UnmarshallerContext context)
+        {
+			GetRtcTokenResponse getRtcTokenResponse = new GetRtcTokenResponse();
 
-		private string requestId;
-
-		private string callId;
-
-		private string code;
-
-		private string message;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string CallId
-		{
-			get
-			{
-				return callId;
-			}
-			set	
-			{
-				callId = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-	}
+			getRtcTokenResponse.HttpResponse = context.HttpResponse;
+			getRtcTokenResponse.RequestId = context.StringValue("GetRtcToken.RequestId");
+			getRtcTokenResponse.Module = context.StringValue("GetRtcToken.Module");
+			getRtcTokenResponse.Code = context.StringValue("GetRtcToken.Code");
+			getRtcTokenResponse.Message = context.StringValue("GetRtcToken.Message");
+        
+			return getRtcTokenResponse;
+        }
+    }
 }

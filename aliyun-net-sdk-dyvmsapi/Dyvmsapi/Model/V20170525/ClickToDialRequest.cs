@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dyvmsapi.Transform;
 using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
@@ -243,7 +244,7 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-        public override ClickToDialResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ClickToDialResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ClickToDialResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

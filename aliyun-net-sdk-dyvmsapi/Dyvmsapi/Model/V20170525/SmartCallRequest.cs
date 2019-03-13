@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dyvmsapi.Transform;
 using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
@@ -35,6 +36,32 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 
 		private long? resourceOwnerId;
 
+		private string voiceCodeParam;
+
+		private bool? earlyMediaAsr;
+
+		private int? speed;
+
+		private string accessKeyId;
+
+		private int? sessionTimeout;
+
+		private string dynamicId;
+
+		private string calledNumber;
+
+		private int? ttsSpeed;
+
+		private string voiceCode;
+
+		private string calledShowNumber;
+
+		private string action;
+
+		private int? actionCodeTimeBreak;
+
+		private bool? ttsConf;
+
 		private bool? actionCodeBreak;
 
 		private string resourceOwnerAccount;
@@ -43,29 +70,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 
 		private long? ownerId;
 
-		private int? speed;
-
-		private string accessKeyId;
+		private int? ttsVolume;
 
 		private int? volume;
 
-		private string dynamicId;
-
-		private string calledNumber;
-
-		private string voiceCode;
-
 		private int? muteTime;
-
-		private string calledShowNumber;
-
-		private string action;
 
 		private string outId;
 
 		private string asrModelId;
 
 		private int? pauseTime;
+
+		private string ttsStyle;
 
 		public long? ResourceOwnerId
 		{
@@ -77,6 +94,175 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string VoiceCodeParam
+		{
+			get
+			{
+				return voiceCodeParam;
+			}
+			set	
+			{
+				voiceCodeParam = value;
+				DictionaryUtil.Add(QueryParameters, "VoiceCodeParam", value);
+			}
+		}
+
+		public bool? EarlyMediaAsr
+		{
+			get
+			{
+				return earlyMediaAsr;
+			}
+			set	
+			{
+				earlyMediaAsr = value;
+				DictionaryUtil.Add(QueryParameters, "EarlyMediaAsr", value.ToString());
+			}
+		}
+
+		public int? Speed
+		{
+			get
+			{
+				return speed;
+			}
+			set	
+			{
+				speed = value;
+				DictionaryUtil.Add(QueryParameters, "Speed", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public int? SessionTimeout
+		{
+			get
+			{
+				return sessionTimeout;
+			}
+			set	
+			{
+				sessionTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "SessionTimeout", value.ToString());
+			}
+		}
+
+		public string DynamicId
+		{
+			get
+			{
+				return dynamicId;
+			}
+			set	
+			{
+				dynamicId = value;
+				DictionaryUtil.Add(QueryParameters, "DynamicId", value);
+			}
+		}
+
+		public string CalledNumber
+		{
+			get
+			{
+				return calledNumber;
+			}
+			set	
+			{
+				calledNumber = value;
+				DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
+			}
+		}
+
+		public int? TtsSpeed
+		{
+			get
+			{
+				return ttsSpeed;
+			}
+			set	
+			{
+				ttsSpeed = value;
+				DictionaryUtil.Add(QueryParameters, "TtsSpeed", value.ToString());
+			}
+		}
+
+		public string VoiceCode
+		{
+			get
+			{
+				return voiceCode;
+			}
+			set	
+			{
+				voiceCode = value;
+				DictionaryUtil.Add(QueryParameters, "VoiceCode", value);
+			}
+		}
+
+		public string CalledShowNumber
+		{
+			get
+			{
+				return calledShowNumber;
+			}
+			set	
+			{
+				calledShowNumber = value;
+				DictionaryUtil.Add(QueryParameters, "CalledShowNumber", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public int? ActionCodeTimeBreak
+		{
+			get
+			{
+				return actionCodeTimeBreak;
+			}
+			set	
+			{
+				actionCodeTimeBreak = value;
+				DictionaryUtil.Add(QueryParameters, "ActionCodeTimeBreak", value.ToString());
+			}
+		}
+
+		public bool? TtsConf
+		{
+			get
+			{
+				return ttsConf;
+			}
+			set	
+			{
+				ttsConf = value;
+				DictionaryUtil.Add(QueryParameters, "TtsConf", value.ToString());
 			}
 		}
 
@@ -132,29 +318,16 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public int? Speed
+		public int? TtsVolume
 		{
 			get
 			{
-				return speed;
+				return ttsVolume;
 			}
 			set	
 			{
-				speed = value;
-				DictionaryUtil.Add(QueryParameters, "Speed", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				ttsVolume = value;
+				DictionaryUtil.Add(QueryParameters, "TtsVolume", value.ToString());
 			}
 		}
 
@@ -171,45 +344,6 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string DynamicId
-		{
-			get
-			{
-				return dynamicId;
-			}
-			set	
-			{
-				dynamicId = value;
-				DictionaryUtil.Add(QueryParameters, "DynamicId", value);
-			}
-		}
-
-		public string CalledNumber
-		{
-			get
-			{
-				return calledNumber;
-			}
-			set	
-			{
-				calledNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
-			}
-		}
-
-		public string VoiceCode
-		{
-			get
-			{
-				return voiceCode;
-			}
-			set	
-			{
-				voiceCode = value;
-				DictionaryUtil.Add(QueryParameters, "VoiceCode", value);
-			}
-		}
-
 		public int? MuteTime
 		{
 			get
@@ -220,32 +354,6 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				muteTime = value;
 				DictionaryUtil.Add(QueryParameters, "MuteTime", value.ToString());
-			}
-		}
-
-		public string CalledShowNumber
-		{
-			get
-			{
-				return calledShowNumber;
-			}
-			set	
-			{
-				calledShowNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CalledShowNumber", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -288,7 +396,20 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-        public override SmartCallResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string TtsStyle
+		{
+			get
+			{
+				return ttsStyle;
+			}
+			set	
+			{
+				ttsStyle = value;
+				DictionaryUtil.Add(QueryParameters, "TtsStyle", value);
+			}
+		}
+
+        public override SmartCallResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SmartCallResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dyvmsapi.Transform;
 using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
@@ -88,9 +89,9 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 				menuKeyMaps = value;
 				for (int i = 0; i < menuKeyMaps.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"MenuKeyMap." + (i + 1) + ".Key", menuKeyMaps[i].Key);
 					DictionaryUtil.Add(QueryParameters,"MenuKeyMap." + (i + 1) + ".Code", menuKeyMaps[i].Code);
 					DictionaryUtil.Add(QueryParameters,"MenuKeyMap." + (i + 1) + ".TtsParams", menuKeyMaps[i].TtsParams);
+					DictionaryUtil.Add(QueryParameters,"MenuKeyMap." + (i + 1) + ".Key", menuKeyMaps[i].Key);
 				}
 			}
 		}
@@ -267,23 +268,11 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 		public class MenuKeyMap
 		{
 
-			private string key;
-
 			private string code;
 
 			private string ttsParams;
 
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
+			private string key;
 
 			public string Code
 			{
@@ -308,9 +297,21 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 					ttsParams = value;
 				}
 			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
 		}
 
-        public override IvrCallResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override IvrCallResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return IvrCallResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

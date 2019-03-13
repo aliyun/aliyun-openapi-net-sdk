@@ -27,10 +27,10 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class VoipAddAccountRequest : RpcAcsRequest<VoipAddAccountResponse>
+    public class GetRtcTokenRequest : RpcAcsRequest<GetRtcTokenResponse>
     {
-        public VoipAddAccountRequest()
-            : base("Dyvmsapi", "2017-05-25", "VoipAddAccount")
+        public GetRtcTokenRequest()
+            : base("Dyvmsapi", "2017-05-25", "GetRtcToken")
         {
         }
 
@@ -42,7 +42,11 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 
 		private long? ownerId;
 
+		private string userId;
+
 		private string deviceId;
+
+		private bool? isCustomAccount;
 
 		private string accessKeyId;
 
@@ -98,6 +102,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
+		public string UserId
+		{
+			get
+			{
+				return userId;
+			}
+			set	
+			{
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
+			}
+		}
+
 		public string DeviceId
 		{
 			get
@@ -108,6 +125,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				deviceId = value;
 				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
+			}
+		}
+
+		public bool? IsCustomAccount
+		{
+			get
+			{
+				return isCustomAccount;
+			}
+			set	
+			{
+				isCustomAccount = value;
+				DictionaryUtil.Add(QueryParameters, "IsCustomAccount", value.ToString());
 			}
 		}
 
@@ -124,9 +154,9 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-        public override VoipAddAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetRtcTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return VoipAddAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetRtcTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

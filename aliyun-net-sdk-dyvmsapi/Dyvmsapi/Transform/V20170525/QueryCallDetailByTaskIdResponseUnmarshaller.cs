@@ -24,19 +24,19 @@ using Aliyun.Acs.Dyvmsapi.Model.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
-    public class VoipAddAccountResponseUnmarshaller
+    public class QueryCallDetailByTaskIdResponseUnmarshaller
     {
-        public static VoipAddAccountResponse Unmarshall(UnmarshallerContext context)
+        public static QueryCallDetailByTaskIdResponse Unmarshall(UnmarshallerContext context)
         {
-			VoipAddAccountResponse voipAddAccountResponse = new VoipAddAccountResponse();
+			QueryCallDetailByTaskIdResponse queryCallDetailByTaskIdResponse = new QueryCallDetailByTaskIdResponse();
 
-			voipAddAccountResponse.HttpResponse = context.HttpResponse;
-			voipAddAccountResponse.RequestId = context.StringValue("VoipAddAccount.RequestId");
-			voipAddAccountResponse.Module = context.StringValue("VoipAddAccount.Module");
-			voipAddAccountResponse.Code = context.StringValue("VoipAddAccount.Code");
-			voipAddAccountResponse.Message = context.StringValue("VoipAddAccount.Message");
+			queryCallDetailByTaskIdResponse.HttpResponse = context.HttpResponse;
+			queryCallDetailByTaskIdResponse.RequestId = context.StringValue("QueryCallDetailByTaskId.RequestId");
+			queryCallDetailByTaskIdResponse.Data = context.StringValue("QueryCallDetailByTaskId.Data");
+			queryCallDetailByTaskIdResponse.Code = context.StringValue("QueryCallDetailByTaskId.Code");
+			queryCallDetailByTaskIdResponse.Message = context.StringValue("QueryCallDetailByTaskId.Message");
         
-			return voipAddAccountResponse;
+			return queryCallDetailByTaskIdResponse;
         }
     }
 }
