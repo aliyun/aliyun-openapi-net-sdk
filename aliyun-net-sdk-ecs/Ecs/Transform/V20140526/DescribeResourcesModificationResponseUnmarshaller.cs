@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				availableZone.RegionId = context.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].RegionId");
 				availableZone.ZoneId = context.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].ZoneId");
 				availableZone.Status = context.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].Status");
+				availableZone.StatusCategory = context.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].StatusCategory");
 
 				List<DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone.DescribeResourcesModification_AvailableResource> availableZone_availableResources = new List<DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone.DescribeResourcesModification_AvailableResource>();
 				for (int j = 0; j < context.Length("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources.Length"); j++) {
@@ -49,6 +50,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 						DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone.DescribeResourcesModification_AvailableResource.DescribeResourcesModification_SupportedResource supportedResource = new DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone.DescribeResourcesModification_AvailableResource.DescribeResourcesModification_SupportedResource();
 						supportedResource._Value = context.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Value");
 						supportedResource.Status = context.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Status");
+						supportedResource.StatusCategory = context.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].StatusCategory");
 						supportedResource.Min = context.IntegerValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Min");
 						supportedResource.Max = context.IntegerValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Max");
 						supportedResource.Unit = context.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Unit");

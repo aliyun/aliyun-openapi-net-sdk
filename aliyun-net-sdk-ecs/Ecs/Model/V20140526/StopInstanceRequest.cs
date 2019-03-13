@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private bool? hibernate;
+
 		private bool? forceStop;
 
 		public long? ResourceOwnerId
@@ -167,6 +169,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? Hibernate
+		{
+			get
+			{
+				return hibernate;
+			}
+			set	
+			{
+				hibernate = value;
+				DictionaryUtil.Add(QueryParameters, "Hibernate", value.ToString());
 			}
 		}
 

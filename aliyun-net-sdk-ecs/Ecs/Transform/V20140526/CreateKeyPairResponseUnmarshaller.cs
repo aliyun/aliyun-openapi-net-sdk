@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			createKeyPairResponse.HttpResponse = context.HttpResponse;
 			createKeyPairResponse.RequestId = context.StringValue("CreateKeyPair.RequestId");
+			createKeyPairResponse.KeyPairId = context.StringValue("CreateKeyPair.KeyPairId");
 			createKeyPairResponse.KeyPairName = context.StringValue("CreateKeyPair.KeyPairName");
 			createKeyPairResponse.KeyPairFingerPrint = context.StringValue("CreateKeyPair.KeyPairFingerPrint");
 			createKeyPairResponse.PrivateKeyBody = context.StringValue("CreateKeyPair.PrivateKeyBody");

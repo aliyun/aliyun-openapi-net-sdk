@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string status;
 
+			private string statusCategory;
+
 			private List<DescribeResourcesModification_AvailableResource> availableResources;
 
 			public string RegionId
@@ -96,6 +98,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string StatusCategory
+			{
+				get
+				{
+					return statusCategory;
+				}
+				set	
+				{
+					statusCategory = value;
 				}
 			}
 
@@ -149,6 +163,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 					private string status;
 
+					private string statusCategory;
+
 					private int? min;
 
 					private int? max;
@@ -176,6 +192,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						set	
 						{
 							status = value;
+						}
+					}
+
+					public string StatusCategory
+					{
+						get
+						{
+							return statusCategory;
+						}
+						set	
+						{
+							statusCategory = value;
 						}
 					}
 

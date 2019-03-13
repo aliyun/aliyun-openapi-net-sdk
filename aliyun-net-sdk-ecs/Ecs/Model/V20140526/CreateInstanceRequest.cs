@@ -65,6 +65,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private string capacityReservationPreference;
+
 		private string vSwitchId;
 
 		private string privateIpAddress;
@@ -102,6 +104,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string description;
 
 		private string systemDiskCategory;
+
+		private string capacityReservationId;
 
 		private string userData;
 
@@ -350,6 +354,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string CapacityReservationPreference
+		{
+			get
+			{
+				return capacityReservationPreference;
+			}
+			set	
+			{
+				capacityReservationPreference = value;
+				DictionaryUtil.Add(QueryParameters, "CapacityReservationPreference", value);
+			}
+		}
+
 		public string VSwitchId
 		{
 			get
@@ -594,6 +611,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				systemDiskCategory = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDisk.Category", value);
+			}
+		}
+
+		public string CapacityReservationId
+		{
+			get
+			{
+				return capacityReservationId;
+			}
+			set	
+			{
+				capacityReservationId = value;
+				DictionaryUtil.Add(QueryParameters, "CapacityReservationId", value);
 			}
 		}
 

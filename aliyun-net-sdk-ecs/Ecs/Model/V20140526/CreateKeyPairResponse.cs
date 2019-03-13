@@ -26,6 +26,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string requestId;
 
+		private string keyPairId;
+
 		private string keyPairName;
 
 		private string keyPairFingerPrint;
@@ -41,6 +43,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string KeyPairId
+		{
+			get
+			{
+				return keyPairId;
+			}
+			set	
+			{
+				keyPairId = value;
 			}
 		}
 

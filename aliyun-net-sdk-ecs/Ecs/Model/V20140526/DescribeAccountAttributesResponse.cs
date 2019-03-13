@@ -88,6 +88,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string _value;
 
+				private string expiredTime;
+
 				private string zoneId;
 
 				private string instanceChargeType;
@@ -105,6 +107,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						_value = value;
+					}
+				}
+
+				public string ExpiredTime
+				{
+					get
+					{
+						return expiredTime;
+					}
+					set	
+					{
+						expiredTime = value;
 					}
 				}
 

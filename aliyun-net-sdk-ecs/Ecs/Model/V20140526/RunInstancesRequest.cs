@@ -73,6 +73,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private string capacityReservationPreference;
+
 		private string vSwitchId;
 
 		private string spotStrategy;
@@ -109,6 +111,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string systemDiskCategory;
 
+		private string capacityReservationId;
+
 		private string userData;
 
 		private bool? passwordInherit;
@@ -116,6 +120,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string regionId;
 
 		private string instanceType;
+
+		private bool? hibernationConfigured;
 
 		private string instanceChargeType;
 
@@ -412,6 +418,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string CapacityReservationPreference
+		{
+			get
+			{
+				return capacityReservationPreference;
+			}
+			set	
+			{
+				capacityReservationPreference = value;
+				DictionaryUtil.Add(QueryParameters, "CapacityReservationPreference", value);
+			}
+		}
+
 		public string VSwitchId
 		{
 			get
@@ -650,6 +669,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string CapacityReservationId
+		{
+			get
+			{
+				return capacityReservationId;
+			}
+			set	
+			{
+				capacityReservationId = value;
+				DictionaryUtil.Add(QueryParameters, "CapacityReservationId", value);
+			}
+		}
+
 		public string UserData
 		{
 			get
@@ -699,6 +731,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public bool? HibernationConfigured
+		{
+			get
+			{
+				return hibernationConfigured;
+			}
+			set	
+			{
+				hibernationConfigured = value;
+				DictionaryUtil.Add(QueryParameters, "HibernationConfigured", value.ToString());
 			}
 		}
 

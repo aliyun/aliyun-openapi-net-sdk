@@ -203,6 +203,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private DescribeInstances_DedicatedHostAttribute dedicatedHostAttribute;
 
+			private DescribeInstances_EcsCapacityReservationAttr ecsCapacityReservationAttr;
+
 			public string InstanceId
 			{
 				get
@@ -839,6 +841,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public DescribeInstances_EcsCapacityReservationAttr EcsCapacityReservationAttr
+			{
+				get
+				{
+					return ecsCapacityReservationAttr;
+				}
+				set	
+				{
+					ecsCapacityReservationAttr = value;
+				}
+			}
+
 			public class DescribeInstances_NetworkInterface
 			{
 
@@ -1111,6 +1125,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						dedicatedHostName = value;
+					}
+				}
+			}
+
+			public class DescribeInstances_EcsCapacityReservationAttr
+			{
+
+				private string capacityReservationId;
+
+				private string capacityReservationPreference;
+
+				public string CapacityReservationId
+				{
+					get
+					{
+						return capacityReservationId;
+					}
+					set	
+					{
+						capacityReservationId = value;
+					}
+				}
+
+				public string CapacityReservationPreference
+				{
+					get
+					{
+						return capacityReservationPreference;
+					}
+					set	
+					{
+						capacityReservationPreference = value;
 					}
 				}
 			}

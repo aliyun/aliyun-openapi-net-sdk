@@ -131,6 +131,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				dedicatedHostAttribute.DedicatedHostName = context.StringValue("DescribeInstances.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostName");
 				instance.DedicatedHostAttribute = dedicatedHostAttribute;
 
+				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_EcsCapacityReservationAttr ecsCapacityReservationAttr = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_EcsCapacityReservationAttr();
+				ecsCapacityReservationAttr.CapacityReservationId = context.StringValue("DescribeInstances.Instances["+ i +"].EcsCapacityReservationAttr.CapacityReservationId");
+				ecsCapacityReservationAttr.CapacityReservationPreference = context.StringValue("DescribeInstances.Instances["+ i +"].EcsCapacityReservationAttr.CapacityReservationPreference");
+				instance.EcsCapacityReservationAttr = ecsCapacityReservationAttr;
+
 				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface> instance_networkInterfaces = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].NetworkInterfaces.Length"); j++) {
 					DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface networkInterface = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface();
