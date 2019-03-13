@@ -29,7 +29,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
     public class GetQuotaHistoryInfoRequest : RpcAcsRequest<GetQuotaHistoryInfoResponse>
     {
         public GetQuotaHistoryInfoRequest()
-            : base("TeslaMaxCompute", "2018-01-04", "GetQuotaHistoryInfo")
+            : base("TeslaMaxCompute", "2018-01-04", "GetQuotaHistoryInfo", "teslamaxcompute", "openAPI")
         {
         }
 

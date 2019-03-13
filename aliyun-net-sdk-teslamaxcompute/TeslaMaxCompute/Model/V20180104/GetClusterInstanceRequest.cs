@@ -29,7 +29,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
     public class GetClusterInstanceRequest : RpcAcsRequest<GetClusterInstanceResponse>
     {
         public GetClusterInstanceRequest()
-            : base("TeslaMaxCompute", "2018-01-04", "GetClusterInstance")
+            : base("TeslaMaxCompute", "2018-01-04", "GetClusterInstance", "teslamaxcompute", "openAPI")
         {
         }
 

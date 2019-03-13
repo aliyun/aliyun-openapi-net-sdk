@@ -29,7 +29,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
     public class GetInstancesStatusCountRequest : RpcAcsRequest<GetInstancesStatusCountResponse>
     {
         public GetInstancesStatusCountRequest()
-            : base("TeslaMaxCompute", "2018-01-04", "GetInstancesStatusCount")
+            : base("TeslaMaxCompute", "2018-01-04", "GetInstancesStatusCount", "teslamaxcompute", "openAPI")
         {
         }
 

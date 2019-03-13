@@ -29,7 +29,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
     public class GetProjectInstanceRequest : RpcAcsRequest<GetProjectInstanceResponse>
     {
         public GetProjectInstanceRequest()
-            : base("TeslaMaxCompute", "2018-01-04", "GetProjectInstance")
+            : base("TeslaMaxCompute", "2018-01-04", "GetProjectInstance", "teslamaxcompute", "openAPI")
         {
         }
 

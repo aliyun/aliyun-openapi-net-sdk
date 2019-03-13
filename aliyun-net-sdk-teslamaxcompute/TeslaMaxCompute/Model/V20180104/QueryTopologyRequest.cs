@@ -29,7 +29,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
     public class QueryTopologyRequest : RpcAcsRequest<QueryTopologyResponse>
     {
         public QueryTopologyRequest()
-            : base("TeslaMaxCompute", "2018-01-04", "QueryTopology")
+            : base("TeslaMaxCompute", "2018-01-04", "QueryTopology", "teslamaxcompute", "openAPI")
         {
         }
 

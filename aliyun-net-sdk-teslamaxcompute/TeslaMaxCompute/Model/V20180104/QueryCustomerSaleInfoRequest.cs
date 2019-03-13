@@ -29,7 +29,7 @@ namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
     public class QueryCustomerSaleInfoRequest : RpcAcsRequest<QueryCustomerSaleInfoResponse>
     {
         public QueryCustomerSaleInfoRequest()
-            : base("TeslaMaxCompute", "2018-01-04", "QueryCustomerSaleInfo")
+            : base("TeslaMaxCompute", "2018-01-04", "QueryCustomerSaleInfo", "teslamaxcompute", "openAPI")
         {
         }
 

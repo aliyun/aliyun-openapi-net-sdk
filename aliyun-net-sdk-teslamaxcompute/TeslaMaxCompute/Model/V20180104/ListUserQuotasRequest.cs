@@ -26,16 +26,16 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.TeslaMaxCompute.Model.V20180104
 {
-    public class QueryResourceInventoryRequest : RpcAcsRequest<QueryResourceInventoryResponse>
+    public class ListUserQuotasRequest : RpcAcsRequest<ListUserQuotasResponse>
     {
-        public QueryResourceInventoryRequest()
-            : base("TeslaMaxCompute", "2018-01-04", "QueryResourceInventory", "teslamaxcompute", "openAPI")
+        public ListUserQuotasRequest()
+            : base("TeslaMaxCompute", "2018-01-04", "ListUserQuotas", "teslamaxcompute", "openAPI")
         {
         }
 
-        public override QueryResourceInventoryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListUserQuotasResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {
-            return QueryResourceInventoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListUserQuotasResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
