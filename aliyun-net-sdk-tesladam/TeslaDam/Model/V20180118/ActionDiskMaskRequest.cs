@@ -29,7 +29,7 @@ namespace Aliyun.Acs.TeslaDam.Model.V20180118
     public class ActionDiskMaskRequest : RpcAcsRequest<ActionDiskMaskResponse>
     {
         public ActionDiskMaskRequest()
-            : base("TeslaDam", "2018-01-18", "ActionDiskMask")
+            : base("TeslaDam", "2018-01-18", "ActionDiskMask", "tesladam", "openAPI")
         {
         }
 

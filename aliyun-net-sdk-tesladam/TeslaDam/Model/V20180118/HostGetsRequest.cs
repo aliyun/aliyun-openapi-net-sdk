@@ -29,7 +29,7 @@ namespace Aliyun.Acs.TeslaDam.Model.V20180118
     public class HostGetsRequest : RpcAcsRequest<HostGetsResponse>
     {
         public HostGetsRequest()
-            : base("TeslaDam", "2018-01-18", "HostGets")
+            : base("TeslaDam", "2018-01-18", "HostGets", "tesladam", "openAPI")
         {
         }
 

@@ -29,7 +29,7 @@ namespace Aliyun.Acs.TeslaDam.Model.V20180118
     public class ActionRequest : RpcAcsRequest<ActionResponse>
     {
         public ActionRequest()
-            : base("TeslaDam", "2018-01-18", "Action")
+            : base("TeslaDam", "2018-01-18", "Action", "tesladam", "openAPI")
         {
         }
 
