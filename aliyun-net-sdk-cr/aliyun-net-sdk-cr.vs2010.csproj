@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8a578a4d-e92d-46d2-b1f9-376bf6ec4a9a}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-cr</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Cr\Model\V20160607\UpdateUserInfoRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetNamespaceAuthorizationListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoBuildListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoWebhookLogListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoAuthorizationListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\StartRepoBuildRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateRepoAuthorizationResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoSyncTaskResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetMirrorListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateRepoResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetNamespaceRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetImageManifestResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateCollectionRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateCollectionResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetMirrorListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetCollectionRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateRepoSourceRepoRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoBatchResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateRepoWebhookResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateRepoSyncTaskResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteUserSourceAccountResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoTagsRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetUserSourceAccountResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateNamespaceAuthorizationResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateNamespaceAuthorizationResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoListByNamespaceRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateRepoWebhookResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoBuildStatusRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateUserSourceAccountResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteRepoResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateNamespaceRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteCollectionResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteNamespaceAuthorizationResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoBatchRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteRepoRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoSourceRepoResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetNamespaceResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRegionListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteNamespaceResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateNamespaceAuthorizationRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetUserSourceAccountRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateRepoBuildRuleRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoSourceRepoRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateNamespaceAuthorizationRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateUserInfoRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateRepoSourceRepoResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateRepoBuildRuleResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetSubUserListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetImageScanResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetNamespaceAuthorizationListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateUserInfoResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateRepoAuthorizationRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateRepoBuildRuleRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\StartImageScanRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\StartRepoBuildResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetSearchRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\StartRepoBuildByRuleRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteImageResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteRepoAuthorizationRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetAuthorizationTokenResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\SearchRepoResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetImageLayerRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetNamespaceListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateRepoResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoTagsResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateNamespaceResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteNamespaceAuthorizationRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteRepoBuildRuleResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetUserSourceRepoRefListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetImageLayerResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetAuthorizationTokenRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoWebhookLogListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetImageScanRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteRepoWebhookResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateNamespaceRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\SearchRepoRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoBuildRuleListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteCollectionRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateUserInfoResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoWebhookRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetUserInfoResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteRepoAuthorizationResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoBuildRuleListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoAuthorizationListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetUserSourceRepoListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateRepoRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateRepoAuthorizationRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetUserSourceRepoListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoListByNamespaceResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoSyncTaskListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateRepoWebhookRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRegionResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetSearchResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteRepoBuildRuleRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateNamespaceResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateRepoWebhookRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateRepoRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoWebhookResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetCollectionResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRegionListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteImageRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateRepoSyncTaskRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\StartImageScanResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoBuildStatusResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteRepoWebhookRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetImageManifestRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoSyncTaskRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoBuildLogsRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteUserSourceAccountRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CancelRepoBuildResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRegionRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\CancelRepoBuildRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\StartRepoBuildByRuleResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\DeleteNamespaceRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateRepoBuildRuleResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetUserSourceRepoRefListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\UpdateRepoAuthorizationResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoBuildLogsResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\CreateUserSourceAccountRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetNamespaceListRequest.cs" />
+	<Compile Include="Cr\Model\V20160607\GetSubUserListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoSyncTaskListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetRepoBuildListResponse.cs" />
+	<Compile Include="Cr\Model\V20160607\GetUserInfoRequest.cs" />
+	<Compile Include="Cr\Transform\V20160607\StartRepoBuildResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\DeleteNamespaceResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetImageManifestResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRegionResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoBuildRuleListResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoBuildStatusResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\UpdateRepoSourceRepoResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoSyncTaskListResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetAuthorizationTokenResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\CreateNamespaceAuthorizationResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoSourceRepoResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetCollectionResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetUserInfoResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoAuthorizationListResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\DeleteRepoWebhookResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\CreateRepoResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\CreateRepoAuthorizationResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\DeleteNamespaceAuthorizationResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\DeleteCollectionResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\StartImageScanResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\UpdateRepoAuthorizationResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetSubUserListResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\UpdateNamespaceAuthorizationResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoListByNamespaceResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRegionListResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\CreateRepoWebhookResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoBatchResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\SearchRepoResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\DeleteRepoAuthorizationResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetSearchResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\UpdateRepoBuildRuleResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\StartRepoBuildByRuleResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetUserSourceRepoRefListResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetNamespaceResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoWebhookLogListResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetNamespaceAuthorizationListResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\DeleteUserSourceAccountResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetImageScanResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\UpdateNamespaceResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoBuildListResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\DeleteImageResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoListResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\CreateNamespaceResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\CreateRepoBuildRuleResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoTagsResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoSyncTaskResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetNamespaceListResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\CancelRepoBuildResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\UpdateRepoResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetImageLayerResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoBuildLogsResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetUserSourceRepoListResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\DeleteRepoResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\CreateCollectionResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\CreateRepoSyncTaskResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetRepoWebhookResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetUserSourceAccountResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\CreateUserSourceAccountResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\UpdateUserInfoResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\UpdateRepoWebhookResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\CreateUserInfoResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\DeleteRepoBuildRuleResponseUnmarshaller.cs" />
+	<Compile Include="Cr\Transform\V20160607\GetMirrorListResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
