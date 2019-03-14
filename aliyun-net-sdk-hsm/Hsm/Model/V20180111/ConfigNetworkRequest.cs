@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.hsm.Transform;
 using Aliyun.Acs.hsm.Transform.V20180111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.hsm.Model.V20180111
 {
@@ -31,7 +32,6 @@ namespace Aliyun.Acs.hsm.Model.V20180111
         public ConfigNetworkRequest()
             : base("hsm", "2018-01-11", "ConfigNetwork", "hsm", "openAPI")
         {
-			Method = MethodType.POST;
         }
 
 		private string vSwitchId;
@@ -129,7 +129,7 @@ namespace Aliyun.Acs.hsm.Model.V20180111
 			return false;
 		}
 
-        public override ConfigNetworkResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ConfigNetworkResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ConfigNetworkResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.hsm.Transform;
 using Aliyun.Acs.hsm.Transform.V20180111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.hsm.Model.V20180111
 {
@@ -31,7 +32,6 @@ namespace Aliyun.Acs.hsm.Model.V20180111
         public ReleaseInstanceRequest()
             : base("hsm", "2018-01-11", "ReleaseInstance", "hsm", "openAPI")
         {
-			Method = MethodType.POST;
         }
 
 		private string resourceOwnerId;
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.hsm.Model.V20180111
 			return false;
 		}
 
-        public override ReleaseInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ReleaseInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ReleaseInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

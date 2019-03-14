@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{40d14fd0-f90a-43a1-a2b2-9370642647d0}</ProjectGuid>
+    <ProjectGuid>{ae743488-9f2c-4cf8-912e-dc133ee33808}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,30 +40,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Hsm\Model\V20180111\ReleaseInstanceRequest.cs" />
-	<Compile Include="Hsm\Model\V20180111\CreateInstanceRequest.cs" />
 	<Compile Include="Hsm\Model\V20180111\ModifyInstanceResponse.cs" />
+	<Compile Include="Hsm\Model\V20180111\ReleaseInstanceResponse.cs" />
+	<Compile Include="Hsm\Model\V20180111\ConfigNetworkRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\DescribeInstancesRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\ConfigNetworkResponse.cs" />
+	<Compile Include="Hsm\Model\V20180111\DescribeInstancesResponse.cs" />
+	<Compile Include="Hsm\Model\V20180111\RenewInstanceRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\CreateInstanceResponse.cs" />
 	<Compile Include="Hsm\Model\V20180111\DescribeRegionsResponse.cs" />
 	<Compile Include="Hsm\Model\V20180111\ConfigWhiteListResponse.cs" />
-	<Compile Include="Hsm\Model\V20180111\ConfigNetworkResponse.cs" />
-	<Compile Include="Hsm\Model\V20180111\DescribeRegionsRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\CreateInstanceRequest.cs" />
 	<Compile Include="Hsm\Model\V20180111\ModifyInstanceRequest.cs" />
-	<Compile Include="Hsm\Model\V20180111\DescribeInstancesRequest.cs" />
 	<Compile Include="Hsm\Model\V20180111\RenewInstanceResponse.cs" />
-	<Compile Include="Hsm\Model\V20180111\CreateInstanceResponse.cs" />
-	<Compile Include="Hsm\Model\V20180111\ConfigNetworkRequest.cs" />
-	<Compile Include="Hsm\Model\V20180111\ReleaseInstanceResponse.cs" />
 	<Compile Include="Hsm\Model\V20180111\ConfigWhiteListRequest.cs" />
-	<Compile Include="Hsm\Model\V20180111\RenewInstanceRequest.cs" />
-	<Compile Include="Hsm\Model\V20180111\DescribeInstancesResponse.cs" />
+	<Compile Include="Hsm\Model\V20180111\ReleaseInstanceRequest.cs" />
+	<Compile Include="Hsm\Model\V20180111\DescribeRegionsRequest.cs" />
+	<Compile Include="Hsm\Transform\V20180111\ConfigWhiteListResponseUnmarshaller.cs" />
+	<Compile Include="Hsm\Transform\V20180111\ReleaseInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Hsm\Transform\V20180111\CreateInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Hsm\Transform\V20180111\ModifyInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Hsm\Transform\V20180111\ConfigNetworkResponseUnmarshaller.cs" />
-	<Compile Include="Hsm\Transform\V20180111\RenewInstanceResponseUnmarshaller.cs" />
-	<Compile Include="Hsm\Transform\V20180111\ReleaseInstanceResponseUnmarshaller.cs" />
-	<Compile Include="Hsm\Transform\V20180111\ConfigWhiteListResponseUnmarshaller.cs" />
-	<Compile Include="Hsm\Transform\V20180111\DescribeRegionsResponseUnmarshaller.cs" />
 	<Compile Include="Hsm\Transform\V20180111\DescribeInstancesResponseUnmarshaller.cs" />
-	<Compile Include="Hsm\Transform\V20180111\CreateInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Hsm\Transform\V20180111\RenewInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Hsm\Transform\V20180111\DescribeRegionsResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
