@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83df6210-1861-424d-a4b8-f432266e8426}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-gpdb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Gpdb\Model\V20160503\ReleaseInstancePublicConnectionResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifyAccountDescriptionResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeSQLCollectorPolicyRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeSQLLogRecordsResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeRdsVpcsResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ListTagResourcesRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifyDBInstanceNetworkTypeRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifyDBInstanceDescriptionRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeDBInstancesResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeSlowLogRecordsRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeDBInstanceAttributeRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeAccountsRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifyDBInstanceConnectionModeResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeSQLLogFilesResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeDBInstanceNetInfoRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifySecurityIpsRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DeleteDBInstanceResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifyDBInstanceMaintainTimeRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\TagResourcesResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeSQLLogRecordsRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ListTagResourcesResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeResourceUsageResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ReleaseInstancePublicConnectionRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifyDBInstanceMaintainTimeResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifyDBInstanceNetworkTypeResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeDBInstanceAttributeResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\CreateDBInstanceRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DeleteDatabaseResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeDBInstanceNetInfoResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeSlowLogRecordsResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeDBInstanceIPArrayListResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeSQLCollectorPolicyResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeSQLLogFilesRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\AllocateInstancePublicConnectionResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifyDBInstanceConnectionModeRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeDBInstancesRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifySecurityIpsResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\AllocateInstancePublicConnectionRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\RestartDBInstanceRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifySQLCollectorPolicyResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\UntagResourcesResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeAccountsResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeRdsVSwitchsResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifyDBInstanceDescriptionResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeRegionsResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DeleteDatabaseRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\CreateAccountResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\TagResourcesRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeDBInstanceIPArrayListRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifyDBInstanceConnectionStringRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeResourceUsageRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\AddBuDBInstanceRelationResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DeleteDBInstanceRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ResetAccountPasswordResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeRdsVpcsRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeDBInstancePerformanceRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ResetAccountPasswordRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifyAccountDescriptionRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\AddBuDBInstanceRelationRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\CreateAccountRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifyDBInstanceConnectionStringResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\SwitchDBInstanceNetTypeRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\UntagResourcesRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\CreateDBInstanceResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeRdsVSwitchsRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\ModifySQLCollectorPolicyRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeRegionsRequest.cs" />
+	<Compile Include="Gpdb\Model\V20160503\DescribeDBInstancePerformanceResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\RestartDBInstanceResponse.cs" />
+	<Compile Include="Gpdb\Model\V20160503\SwitchDBInstanceNetTypeResponse.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeSlowLogRecordsResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\ListTagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\SwitchDBInstanceNetTypeResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeDBInstanceAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\ModifyDBInstanceMaintainTimeResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeRdsVpcsResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\ModifyDBInstanceNetworkTypeResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeAccountsResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\ModifySQLCollectorPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeResourceUsageResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DeleteDatabaseResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\AllocateInstancePublicConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeRdsVSwitchsResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\UntagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeSQLLogFilesResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeSQLCollectorPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\RestartDBInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\CreateDBInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\ModifyDBInstanceDescriptionResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\ResetAccountPasswordResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\CreateAccountResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeDBInstanceNetInfoResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\TagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\ReleaseInstancePublicConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeDBInstancePerformanceResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeSQLLogRecordsResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\ModifySecurityIpsResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeDBInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DeleteDBInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\ModifyDBInstanceConnectionStringResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\DescribeDBInstanceIPArrayListResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\ModifyAccountDescriptionResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\AddBuDBInstanceRelationResponseUnmarshaller.cs" />
+	<Compile Include="Gpdb\Transform\V20160503\ModifyDBInstanceConnectionModeResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
