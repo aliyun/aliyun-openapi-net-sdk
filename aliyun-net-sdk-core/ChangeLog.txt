@@ -1,3 +1,8 @@
+2019-03-14 Version 1.2.3
+1, Add support for bearertoken
+2, Add support for timeout
+3, Improve the Signature error code message
+
 2019-03-11 Version 1.2.2
 1, fix bug: fix user-agent set error when user use .net framework 4.6.1 with core version 1.2.0 to get response
 2, Add credential chains
