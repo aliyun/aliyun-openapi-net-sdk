@@ -18,6 +18,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 
 using Aliyun.Acs.Core.Auth;
@@ -43,6 +44,8 @@ namespace Aliyun.Acs.Core
 
         public int readTimeout { get; private set; }
         public int connectTimeout { get; private set; }
+        public bool IgnoreCertificate { get; private set; }
+        public X509CertificateCollection ClientX509CertificateCollection { get; private set; }
 
         public DefaultAcsClient()
         {
@@ -259,11 +262,11 @@ namespace Aliyun.Acs.Core
             {
                 shouldRetry = autoRetry && retryTimes < maxRetryNumber;
                 HttpRequest httpRequest = request.SignRequest(signer, credentials, format, domain);
-                HttpResponse response;
-
                 ResolveTimeout(httpRequest);
+                httpRequest.SetHttpsInsecure(this.IgnoreCertificate);
+                httpRequest.SetHTTPSCAs(this.ClientX509CertificateCollection);
 
-                response = this.GetResponse(httpRequest);
+                HttpResponse response = this.GetResponse(httpRequest);
 
                 PrintHttpDebugMsg(request, response);
 
@@ -391,6 +394,24 @@ namespace Aliyun.Acs.Core
 
             var finalConnectTimeout = request.connectTimeout > 0 ? request.connectTimeout : this.connectTimeout > 0 ? this.connectTimeout : 0;
             request.SetConnectTimeoutInMilliSeconds(finalConnectTimeout);
+        }
+
+        public void SetHttpsInsecure(bool ignoreCertificate = false)
+        {
+            IgnoreCertificate = ignoreCertificate;
+        }
+
+        public void SetHTTPSCAs(X509CertificateCollection x509CertificateCollection)
+        {
+            ClientX509CertificateCollection = x509CertificateCollection;
+        }
+
+        public void SetHttpsClientKey(string key, string certificatePath)
+        {
+            X509Certificate2Collection x509Certificate2Collection = new X509Certificate2Collection();
+            x509Certificate2Collection.Import(certificatePath, key, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.PersistKeySet);
+
+            SetHTTPSCAs(x509Certificate2Collection);
         }
     }
 }

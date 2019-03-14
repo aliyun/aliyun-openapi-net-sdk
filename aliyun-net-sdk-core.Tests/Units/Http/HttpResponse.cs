@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 using Aliyun.Acs.Core.Http;
@@ -118,6 +119,20 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
 
             Assert.Equal(2048, httpWebRequest.ReadWriteTimeout);
             Assert.Equal(1024, httpWebRequest.Timeout);
+        }
+
+        [Fact]
+        public void GetWebRequestWithIgnoreCertificate()
+        {
+            HttpRequest request = HttpRequestTest.SetContent();
+            request.SetHttpsInsecure(true);
+
+            X509Certificate2Collection x509Certificate2Collection = new X509Certificate2Collection();
+            request.SetHTTPSCAs(x509Certificate2Collection);
+
+            HttpWebRequest httpWebRequest = HttpResponse.GetWebRequest(request);
+
+            Assert.Equal(x509Certificate2Collection, httpWebRequest.ClientCertificates);
         }
 
         [Fact]

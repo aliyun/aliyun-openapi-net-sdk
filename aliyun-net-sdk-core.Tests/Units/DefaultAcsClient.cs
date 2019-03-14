@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 using Aliyun.Acs.Core;
@@ -663,6 +666,61 @@ namespace Aliyun.Acs.Core.Tests.Units
             httpRequest.SetReadTimeoutInMilliSeconds(2048);
             client.ResolveTimeout(httpRequest);
             Assert.Equal(2048, httpRequest.readTimeout);
+        }
+
+        [Fact]
+        public void ClientIgnoreCertificateTest()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            DefaultAcsClient client = new DefaultAcsClient(profile);
+
+            client.SetHttpsInsecure();
+            Assert.False(client.IgnoreCertificate);
+
+            client.SetHttpsInsecure(true);
+            Assert.True(client.IgnoreCertificate);
+        }
+
+        [Fact]
+        public void ClientCertificateChainTest()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            DefaultAcsClient client = new DefaultAcsClient(profile);
+
+            X509CertificateCollection x509CertificateCollection = new X509CertificateCollection();
+            client.SetHTTPSCAs(x509CertificateCollection);
+
+            Assert.Equal(x509CertificateCollection, client.ClientX509CertificateCollection);
+        }
+
+        [Fact]
+        public void GetRequestCertificateCollection()
+        {
+            string homePath = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ?
+                Environment.GetEnvironmentVariable("HOME") + "/" :
+                Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%") + "\\";
+
+            var ecdsa = ECDsa.Create(); // generate asymmetric key pair
+            var req = new CertificateRequest("cn=foobar", ecdsa, HashAlgorithmName.SHA256);
+            var cert = req.CreateSelfSigned(DateTimeOffset.Now, DateTimeOffset.Now.AddYears(5));
+            // Create PFX (PKCS #12) with private key
+            File.WriteAllBytes(homePath + "mycert.pfx", cert.Export(X509ContentType.Pfx, "password"));
+            // Create Base 64 encoded CER (public key only)
+            File.WriteAllText(homePath + "mycert.cer",
+                "-----BEGIN CERTIFICATE-----\r\n" +
+                Convert.ToBase64String(cert.Export(X509ContentType.Cert), Base64FormattingOptions.InsertLineBreaks) +
+                "\r\n-----END CERTIFICATE-----");
+
+            X509Certificate2Collection x509Certificate2Collection = new X509Certificate2Collection();
+            x509Certificate2Collection.Import(homePath + "mycert.cer", homePath + "mycert.pfx", X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.PersistKeySet);
+
+            HttpRequest instance = new HttpRequest();
+            instance.SetHttpsClientKey(homePath + "mycert.pfx", homePath + "mycert.cer");
+
+            File.Delete(homePath + "mycert.cer");
+            File.Delete(homePath + "mycert.pfx");
+
+            Assert.Equal(x509Certificate2Collection, instance.RequestX509CertificateCollection);
         }
     }
 }

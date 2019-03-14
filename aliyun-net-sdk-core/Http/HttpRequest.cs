@@ -18,6 +18,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 using Aliyun.Acs.Core.Utils;
 
@@ -35,6 +36,10 @@ namespace Aliyun.Acs.Core.Http
         public int timeoutInMilliSeconds { get; set; } = 100000;
         public int readTimeout { get; private set; }
         public int connectTimeout { get; private set; }
+
+        public bool IgnoreCertificate { get; private set; }
+
+        public X509CertificateCollection RequestX509CertificateCollection { get; private set; }
 
         public HttpRequest() { }
 
@@ -93,6 +98,24 @@ namespace Aliyun.Acs.Core.Http
         public void SetReadTimeoutInMilliSeconds(int readTimeout)
         {
             this.readTimeout = readTimeout;
+        }
+
+        public void SetHttpsInsecure(bool ignoreCertificate = false)
+        {
+            IgnoreCertificate = ignoreCertificate;
+        }
+
+        public void SetHTTPSCAs(X509CertificateCollection x509CertificateCollection)
+        {
+            RequestX509CertificateCollection = x509CertificateCollection;
+        }
+
+        public void SetHttpsClientKey(string key, string certificatePath)
+        {
+            X509Certificate2Collection x509Certificate2Collection = new X509Certificate2Collection();
+            x509Certificate2Collection.Import(certificatePath, key, X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.PersistKeySet);
+
+            SetHTTPSCAs(x509Certificate2Collection);
         }
     }
 }
