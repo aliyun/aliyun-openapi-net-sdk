@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Sas_api.Transform;
 using Aliyun.Acs.Sas_api.Transform.V20170705;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Sas_api.Model.V20170705
 {
     public class GetInstanceCountRequest : RpcAcsRequest<GetInstanceCountResponse>
     {
         public GetInstanceCountRequest()
-            : base("Sas_api", "2017-07-05", "GetInstanceCount")
+            : base("Sas_api", "2017-07-05", "GetInstanceCount", "sas-api", "openAPI")
         {
         }
 
@@ -48,7 +49,7 @@ namespace Aliyun.Acs.Sas_api.Model.V20170705
 			}
 		}
 
-        public override GetInstanceCountResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetInstanceCountResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetInstanceCountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,56 +16,62 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Sas_api.Transform;
 using Aliyun.Acs.Sas_api.Transform.V20170705;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Sas_api.Model.V20170705
 {
-    public class GetSecurityEventListRequest : RpcAcsRequest<GetSecurityEventListResponse>
+    public class DescribeAccountProfileByKeyRequest : RpcAcsRequest<DescribeAccountProfileByKeyResponse>
     {
-        public GetSecurityEventListRequest()
-            : base("Sas_api", "2017-07-05", "GetSecurityEventList")
+        public DescribeAccountProfileByKeyRequest()
+            : base("Sas_api", "2017-07-05", "DescribeAccountProfileByKey", "sas-api", "openAPI")
         {
         }
 
-		private int? start;
+		private string sourceIp;
 
-		private int? limit;
+		private string keyword;
 
-		public int? Start
+		public string SourceIp
 		{
 			get
 			{
-				return start;
+				return sourceIp;
 			}
 			set	
 			{
-				start = value;
-				DictionaryUtil.Add(QueryParameters, "Start", value.ToString());
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
-		public int? Limit
+		public string Keyword
 		{
 			get
 			{
-				return limit;
+				return keyword;
 			}
 			set	
 			{
-				limit = value;
-				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
+				keyword = value;
+				DictionaryUtil.Add(QueryParameters, "Keyword", value);
 			}
 		}
 
-        public override GetSecurityEventListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeAccountProfileByKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetSecurityEventListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAccountProfileByKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

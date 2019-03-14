@@ -16,25 +16,73 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Sas_api.Model.V20170705;
-using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Sas_api.Transform.V20170705
-{
-    public class RefundInstanceResponseUnmarshaller
-    {
-        public static RefundInstanceResponse Unmarshall(UnmarshallerContext context)
-        {
-			RefundInstanceResponse refundInstanceResponse = new RefundInstanceResponse();
+using Aliyun.Acs.Core;
 
-			refundInstanceResponse.HttpResponse = context.HttpResponse;
-			refundInstanceResponse.Code = context.StringValue("RefundInstance.Code");
-			refundInstanceResponse.Message = context.StringValue("RefundInstance.Message");
-			refundInstanceResponse.RequestId = context.StringValue("RefundInstance.RequestId");
-        
-			return refundInstanceResponse;
-        }
-    }
+namespace Aliyun.Acs.Sas_api.Model.V20170705
+{
+	public class DescribeHitRatePieResponse : AcsResponse
+	{
+
+		private string requestId;
+
+		private List<DescribeHitRatePie_Item> items;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeHitRatePie_Item> Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+			}
+		}
+
+		public class DescribeHitRatePie_Item
+		{
+
+			private long? data;
+
+			private string name;
+
+			public long? Data
+			{
+				get
+				{
+					return data;
+				}
+				set	
+				{
+					data = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+		}
+	}
 }

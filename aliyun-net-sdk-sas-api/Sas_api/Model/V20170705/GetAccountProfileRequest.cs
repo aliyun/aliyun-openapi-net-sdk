@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Sas_api.Transform;
 using Aliyun.Acs.Sas_api.Transform.V20170705;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Sas_api.Model.V20170705
 {
     public class GetAccountProfileRequest : RpcAcsRequest<GetAccountProfileResponse>
     {
         public GetAccountProfileRequest()
-            : base("Sas_api", "2017-07-05", "GetAccountProfile")
+            : base("Sas_api", "2017-07-05", "GetAccountProfile", "sas-api", "openAPI")
         {
         }
 
@@ -213,7 +214,7 @@ namespace Aliyun.Acs.Sas_api.Model.V20170705
 			}
 		}
 
-        public override GetAccountProfileResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetAccountProfileResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetAccountProfileResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

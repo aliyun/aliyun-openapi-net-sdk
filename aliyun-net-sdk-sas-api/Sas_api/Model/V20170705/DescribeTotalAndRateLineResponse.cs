@@ -16,43 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas_api.Model.V20170705
 {
-	public class RefundInstanceResponse : AcsResponse
+	public class DescribeTotalAndRateLineResponse : AcsResponse
 	{
-
-		private string code;
-
-		private string message;
 
 		private string requestId;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private List<DescribeTotalAndRateLine_Item> items;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private List<string> categories;
 
 		public string RequestId
 		{
@@ -63,6 +40,76 @@ namespace Aliyun.Acs.Sas_api.Model.V20170705
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public List<DescribeTotalAndRateLine_Item> Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+			}
+		}
+
+		public List<string> Categories
+		{
+			get
+			{
+				return categories;
+			}
+			set	
+			{
+				categories = value;
+			}
+		}
+
+		public class DescribeTotalAndRateLine_Item
+		{
+
+			private float? data;
+
+			private string id;
+
+			private string name;
+
+			public float? Data
+			{
+				get
+				{
+					return data;
+				}
+				set	
+				{
+					data = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
 			}
 		}
 	}

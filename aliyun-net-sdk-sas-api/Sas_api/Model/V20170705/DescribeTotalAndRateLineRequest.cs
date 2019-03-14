@@ -16,56 +16,62 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Sas_api.Transform;
 using Aliyun.Acs.Sas_api.Transform.V20170705;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Sas_api.Model.V20170705
 {
-    public class RefundInstanceRequest : RpcAcsRequest<RefundInstanceResponse>
+    public class DescribeTotalAndRateLineRequest : RpcAcsRequest<DescribeTotalAndRateLineResponse>
     {
-        public RefundInstanceRequest()
-            : base("Sas_api", "2017-07-05", "RefundInstance")
+        public DescribeTotalAndRateLineRequest()
+            : base("Sas_api", "2017-07-05", "DescribeTotalAndRateLine", "sas-api", "openAPI")
         {
         }
 
-		private string instanceId;
+		private string sourceIp;
 
-		private long? ownerId;
+		private int? apiType;
 
-		public string InstanceId
+		public string SourceIp
 		{
 			get
 			{
-				return instanceId;
+				return sourceIp;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
-		public long? OwnerId
+		public int? ApiType
 		{
 			get
 			{
-				return ownerId;
+				return apiType;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				apiType = value;
+				DictionaryUtil.Add(QueryParameters, "ApiType", value.ToString());
 			}
 		}
 
-        public override RefundInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeTotalAndRateLineResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RefundInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeTotalAndRateLineResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

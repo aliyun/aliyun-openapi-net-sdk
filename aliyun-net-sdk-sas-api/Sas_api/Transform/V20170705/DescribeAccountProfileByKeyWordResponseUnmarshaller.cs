@@ -24,24 +24,20 @@ using Aliyun.Acs.Sas_api.Model.V20170705;
 
 namespace Aliyun.Acs.Sas_api.Transform.V20170705
 {
-    public class GetIpProfileResponseUnmarshaller
+    public class DescribeAccountProfileByKeyWordResponseUnmarshaller
     {
-        public static GetIpProfileResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAccountProfileByKeyWordResponse Unmarshall(UnmarshallerContext context)
         {
-			GetIpProfileResponse getIpProfileResponse = new GetIpProfileResponse();
+			DescribeAccountProfileByKeyWordResponse describeAccountProfileByKeyWordResponse = new DescribeAccountProfileByKeyWordResponse();
 
-			getIpProfileResponse.HttpResponse = context.HttpResponse;
-			getIpProfileResponse.Code = context.IntegerValue("GetIpProfile.Code");
-			getIpProfileResponse.Message = context.StringValue("GetIpProfile.Message");
-			getIpProfileResponse.Success = context.BooleanValue("GetIpProfile.Success");
-			getIpProfileResponse.RequestId = context.StringValue("GetIpProfile.RequestId");
-
-			GetIpProfileResponse.GetIpProfile_Data data = new GetIpProfileResponse.GetIpProfile_Data();
-			data.Ip = context.StringValue("GetIpProfile.Data.Ip");
-			data.Info = context.StringValue("GetIpProfile.Data.Info");
-			getIpProfileResponse.Data = data;
+			describeAccountProfileByKeyWordResponse.HttpResponse = context.HttpResponse;
+			describeAccountProfileByKeyWordResponse.RequestId = context.StringValue("DescribeAccountProfileByKeyWord.RequestId");
+			describeAccountProfileByKeyWordResponse.Ip = context.StringValue("DescribeAccountProfileByKeyWord.Ip");
+			describeAccountProfileByKeyWordResponse.IpInfo = context.StringValue("DescribeAccountProfileByKeyWord.IpInfo");
+			describeAccountProfileByKeyWordResponse.Phone = context.StringValue("DescribeAccountProfileByKeyWord.Phone");
+			describeAccountProfileByKeyWordResponse.PhoneInfo = context.StringValue("DescribeAccountProfileByKeyWord.PhoneInfo");
         
-			return getIpProfileResponse;
+			return describeAccountProfileByKeyWordResponse;
         }
     }
 }

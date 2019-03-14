@@ -16,73 +16,28 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas_api.Model.V20170705
 {
-	public class UpgradeInstanceResponse : AcsResponse
+	public class DescribeAccountProfileByKeyResponse : AcsResponse
 	{
-
-		private string code;
-
-		private string message;
-
-		private string orderId;
-
-		private string instanceId;
 
 		private string requestId;
 
-		private List<string> instanceIds;
+		private string ip;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string ipInfo;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private string phone;
 
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
+		private string phoneInfo;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
+		private int? keywordCount;
+
+		private int? keywordLimit;
 
 		public string RequestId
 		{
@@ -96,15 +51,75 @@ namespace Aliyun.Acs.Sas_api.Model.V20170705
 			}
 		}
 
-		public List<string> InstanceIds
+		public string Ip
 		{
 			get
 			{
-				return instanceIds;
+				return ip;
 			}
 			set	
 			{
-				instanceIds = value;
+				ip = value;
+			}
+		}
+
+		public string IpInfo
+		{
+			get
+			{
+				return ipInfo;
+			}
+			set	
+			{
+				ipInfo = value;
+			}
+		}
+
+		public string Phone
+		{
+			get
+			{
+				return phone;
+			}
+			set	
+			{
+				phone = value;
+			}
+		}
+
+		public string PhoneInfo
+		{
+			get
+			{
+				return phoneInfo;
+			}
+			set	
+			{
+				phoneInfo = value;
+			}
+		}
+
+		public int? KeywordCount
+		{
+			get
+			{
+				return keywordCount;
+			}
+			set	
+			{
+				keywordCount = value;
+			}
+		}
+
+		public int? KeywordLimit
+		{
+			get
+			{
+				return keywordLimit;
+			}
+			set	
+			{
+				keywordLimit = value;
 			}
 		}
 	}

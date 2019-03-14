@@ -16,56 +16,62 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Sas_api.Transform;
 using Aliyun.Acs.Sas_api.Transform.V20170705;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Sas_api.Model.V20170705
 {
-    public class GetThreatAnalyseListRequest : RpcAcsRequest<GetThreatAnalyseListResponse>
+    public class DescribePerDateDataRequest : RpcAcsRequest<DescribePerDateDataResponse>
     {
-        public GetThreatAnalyseListRequest()
-            : base("Sas_api", "2017-07-05", "GetThreatAnalyseList")
+        public DescribePerDateDataRequest()
+            : base("Sas_api", "2017-07-05", "DescribePerDateData", "sas-api", "openAPI")
         {
         }
 
-		private int? start;
+		private string sourceIp;
 
-		private int? limit;
+		private int? apiType;
 
-		public int? Start
+		public string SourceIp
 		{
 			get
 			{
-				return start;
+				return sourceIp;
 			}
 			set	
 			{
-				start = value;
-				DictionaryUtil.Add(QueryParameters, "Start", value.ToString());
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
-		public int? Limit
+		public int? ApiType
 		{
 			get
 			{
-				return limit;
+				return apiType;
 			}
 			set	
 			{
-				limit = value;
-				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
+				apiType = value;
+				DictionaryUtil.Add(QueryParameters, "ApiType", value.ToString());
 			}
 		}
 
-        public override GetThreatAnalyseListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribePerDateDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetThreatAnalyseListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribePerDateDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

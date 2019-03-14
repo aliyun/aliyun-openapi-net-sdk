@@ -27,76 +27,96 @@ using Aliyun.Acs.Sas_api.Transform.V20170705;
 
 namespace Aliyun.Acs.Sas_api.Model.V20170705
 {
-    public class GetPhoneProfileRequest : RpcAcsRequest<GetPhoneProfileResponse>
+    public class DescribeHitRatePieRequest : RpcAcsRequest<DescribeHitRatePieResponse>
     {
-        public GetPhoneProfileRequest()
-            : base("Sas_api", "2017-07-05", "GetPhoneProfile", "sas-api", "openAPI")
+        public DescribeHitRatePieRequest()
+            : base("Sas_api", "2017-07-05", "DescribeHitRatePie", "sas-api", "openAPI")
         {
         }
 
-		private string phone;
+		private string endDate;
 
-		private int? sensType;
+		private string sourceIp;
 
-		private string dataVersion;
+		private string startDate;
 
-		private int? businessType;
+		private int? hitDay;
 
-		public string Phone
+		private int? apiType;
+
+		public string EndDate
 		{
 			get
 			{
-				return phone;
+				return endDate;
 			}
 			set	
 			{
-				phone = value;
-				DictionaryUtil.Add(QueryParameters, "Phone", value);
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
 			}
 		}
 
-		public int? SensType
+		public string SourceIp
 		{
 			get
 			{
-				return sensType;
+				return sourceIp;
 			}
 			set	
 			{
-				sensType = value;
-				DictionaryUtil.Add(QueryParameters, "SensType", value.ToString());
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
-		public string DataVersion
+		public string StartDate
 		{
 			get
 			{
-				return dataVersion;
+				return startDate;
 			}
 			set	
 			{
-				dataVersion = value;
-				DictionaryUtil.Add(QueryParameters, "DataVersion", value);
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
 			}
 		}
 
-		public int? BusinessType
+		public int? HitDay
 		{
 			get
 			{
-				return businessType;
+				return hitDay;
 			}
 			set	
 			{
-				businessType = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessType", value.ToString());
+				hitDay = value;
+				DictionaryUtil.Add(QueryParameters, "HitDay", value.ToString());
 			}
 		}
 
-        public override GetPhoneProfileResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? ApiType
+		{
+			get
+			{
+				return apiType;
+			}
+			set	
+			{
+				apiType = value;
+				DictionaryUtil.Add(QueryParameters, "ApiType", value.ToString());
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeHitRatePieResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetPhoneProfileResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeHitRatePieResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

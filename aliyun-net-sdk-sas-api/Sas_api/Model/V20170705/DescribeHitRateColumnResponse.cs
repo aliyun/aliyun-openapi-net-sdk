@@ -22,54 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas_api.Model.V20170705
 {
-	public class GetPhoneProfileResponse : AcsResponse
+	public class DescribeHitRateColumnResponse : AcsResponse
 	{
-
-		private int? code;
-
-		private string message;
-
-		private bool? success;
 
 		private string requestId;
 
-		private GetPhoneProfile_Data data;
+		private List<DescribeHitRateColumn_Item> items;
 
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private DescribeHitRateColumn_TimeScope timeScope;
 
 		public string RequestId
 		{
@@ -83,46 +43,104 @@ namespace Aliyun.Acs.Sas_api.Model.V20170705
 			}
 		}
 
-		public GetPhoneProfile_Data Data
+		public List<DescribeHitRateColumn_Item> Items
 		{
 			get
 			{
-				return data;
+				return items;
 			}
 			set	
 			{
-				data = value;
+				items = value;
 			}
 		}
 
-		public class GetPhoneProfile_Data
+		public DescribeHitRateColumn_TimeScope TimeScope
+		{
+			get
+			{
+				return timeScope;
+			}
+			set	
+			{
+				timeScope = value;
+			}
+		}
+
+		public class DescribeHitRateColumn_Item
 		{
 
-			private string phone;
+			private long? data;
 
-			private string info;
+			private string id;
 
-			public string Phone
+			private string name;
+
+			public long? Data
 			{
 				get
 				{
-					return phone;
+					return data;
 				}
 				set	
 				{
-					phone = value;
+					data = value;
 				}
 			}
 
-			public string Info
+			public string Id
 			{
 				get
 				{
-					return info;
+					return id;
 				}
 				set	
 				{
-					info = value;
+					id = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+		}
+
+		public class DescribeHitRateColumn_TimeScope
+		{
+
+			private long? interval;
+
+			private long? start;
+
+			public long? Interval
+			{
+				get
+				{
+					return interval;
+				}
+				set	
+				{
+					interval = value;
+				}
+			}
+
+			public long? Start
+			{
+				get
+				{
+					return start;
+				}
+				set	
+				{
+					start = value;
 				}
 			}
 		}

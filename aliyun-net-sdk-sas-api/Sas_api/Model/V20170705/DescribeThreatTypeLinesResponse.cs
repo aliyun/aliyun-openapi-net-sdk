@@ -16,73 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas_api.Model.V20170705
 {
-	public class CreateInstanceResponse : AcsResponse
+	public class DescribeThreatTypeLinesResponse : AcsResponse
 	{
-
-		private string code;
-
-		private string message;
-
-		private string orderId;
-
-		private string instanceId;
 
 		private string requestId;
 
-		private List<string> instanceIds;
+		private List<DescribeThreatTypeLines_Item> items;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
+		private List<string> categories;
 
 		public string RequestId
 		{
@@ -96,15 +43,73 @@ namespace Aliyun.Acs.Sas_api.Model.V20170705
 			}
 		}
 
-		public List<string> InstanceIds
+		public List<DescribeThreatTypeLines_Item> Items
 		{
 			get
 			{
-				return instanceIds;
+				return items;
 			}
 			set	
 			{
-				instanceIds = value;
+				items = value;
+			}
+		}
+
+		public List<string> Categories
+		{
+			get
+			{
+				return categories;
+			}
+			set	
+			{
+				categories = value;
+			}
+		}
+
+		public class DescribeThreatTypeLines_Item
+		{
+
+			private float? data;
+
+			private string id;
+
+			private string name;
+
+			public float? Data
+			{
+				get
+				{
+					return data;
+				}
+				set	
+				{
+					data = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
 			}
 		}
 	}

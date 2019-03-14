@@ -22,54 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas_api.Model.V20170705
 {
-	public class GetPhoneProfileResponse : AcsResponse
+	public class DescribeAccountProfileByKeyWordResponse : AcsResponse
 	{
-
-		private int? code;
-
-		private string message;
-
-		private bool? success;
 
 		private string requestId;
 
-		private GetPhoneProfile_Data data;
+		private string ip;
 
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string ipInfo;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private string phone;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private string phoneInfo;
 
 		public string RequestId
 		{
@@ -83,47 +47,51 @@ namespace Aliyun.Acs.Sas_api.Model.V20170705
 			}
 		}
 
-		public GetPhoneProfile_Data Data
+		public string Ip
 		{
 			get
 			{
-				return data;
+				return ip;
 			}
 			set	
 			{
-				data = value;
+				ip = value;
 			}
 		}
 
-		public class GetPhoneProfile_Data
+		public string IpInfo
 		{
-
-			private string phone;
-
-			private string info;
-
-			public string Phone
+			get
 			{
-				get
-				{
-					return phone;
-				}
-				set	
-				{
-					phone = value;
-				}
+				return ipInfo;
 			}
-
-			public string Info
+			set	
 			{
-				get
-				{
-					return info;
-				}
-				set	
-				{
-					info = value;
-				}
+				ipInfo = value;
+			}
+		}
+
+		public string Phone
+		{
+			get
+			{
+				return phone;
+			}
+			set	
+			{
+				phone = value;
+			}
+		}
+
+		public string PhoneInfo
+		{
+			get
+			{
+				return phoneInfo;
+			}
+			set	
+			{
+				phoneInfo = value;
 			}
 		}
 	}

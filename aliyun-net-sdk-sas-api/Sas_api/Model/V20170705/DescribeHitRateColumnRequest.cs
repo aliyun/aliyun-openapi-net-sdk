@@ -16,101 +16,107 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Sas_api.Transform;
 using Aliyun.Acs.Sas_api.Transform.V20170705;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Sas_api.Model.V20170705
 {
-    public class UpgradeInstanceRequest : RpcAcsRequest<UpgradeInstanceResponse>
+    public class DescribeHitRateColumnRequest : RpcAcsRequest<DescribeHitRateColumnResponse>
     {
-        public UpgradeInstanceRequest()
-            : base("Sas_api", "2017-07-05", "UpgradeInstance")
+        public DescribeHitRateColumnRequest()
+            : base("Sas_api", "2017-07-05", "DescribeHitRateColumn", "sas-api", "openAPI")
         {
         }
 
-		private string instanceId;
+		private string endDate;
 
-		private string clientToken;
+		private string sourceIp;
 
-		private int? buyNumber;
+		private int? hitDay;
 
-		private long? ownerId;
+		private string startDate;
 
-		private string versionCode;
+		private int? apiType;
 
-		public string InstanceId
+		public string EndDate
 		{
 			get
 			{
-				return instanceId;
+				return endDate;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
 			}
 		}
 
-		public string ClientToken
+		public string SourceIp
 		{
 			get
 			{
-				return clientToken;
+				return sourceIp;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
-		public int? BuyNumber
+		public int? HitDay
 		{
 			get
 			{
-				return buyNumber;
+				return hitDay;
 			}
 			set	
 			{
-				buyNumber = value;
-				DictionaryUtil.Add(QueryParameters, "BuyNumber", value.ToString());
+				hitDay = value;
+				DictionaryUtil.Add(QueryParameters, "HitDay", value.ToString());
 			}
 		}
 
-		public long? OwnerId
+		public string StartDate
 		{
 			get
 			{
-				return ownerId;
+				return startDate;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
 			}
 		}
 
-		public string VersionCode
+		public int? ApiType
 		{
 			get
 			{
-				return versionCode;
+				return apiType;
 			}
 			set	
 			{
-				versionCode = value;
-				DictionaryUtil.Add(QueryParameters, "VersionCode", value);
+				apiType = value;
+				DictionaryUtil.Add(QueryParameters, "ApiType", value.ToString());
 			}
 		}
 
-        public override UpgradeInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeHitRateColumnResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpgradeInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeHitRateColumnResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
