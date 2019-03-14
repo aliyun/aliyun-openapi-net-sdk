@@ -104,6 +104,23 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
         }
 
         [Fact]
+        public void GetWebRequestWithTimeout()
+        {
+            HttpRequest request = HttpRequestTest.SetContent();
+            HttpWebRequest httpWebRequest = HttpResponse.GetWebRequest(request);
+
+            Assert.Equal(5000, httpWebRequest.Timeout);
+            Assert.Equal(10000, httpWebRequest.ReadWriteTimeout);
+
+            request.SetConnectTimeoutInMilliSeconds(1024);
+            request.SetReadTimeoutInMilliSeconds(2048);
+            httpWebRequest = HttpResponse.GetWebRequest(request);
+
+            Assert.Equal(2048, httpWebRequest.ReadWriteTimeout);
+            Assert.Equal(1024, httpWebRequest.Timeout);
+        }
+
+        [Fact]
         public void isSuccess()
         {
             HttpResponse instance = this.SetContent();

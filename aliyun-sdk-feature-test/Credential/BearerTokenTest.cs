@@ -16,13 +16,13 @@ namespace Aliyun.Acs.Feature.Test.Credential
             BearerTokenCredential bearerTokenCredential = new BearerTokenCredential(base.GetBearerToken());
 
             base.profile = DefaultProfile.GetProfile("cn-hangzhou");
-            base.client = new Acs.Core.DefaultAcsClient(base.profile, bearerTokenCredential);
+            client = new Acs.Core.DefaultAcsClient(base.profile, bearerTokenCredential);
 
             ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                var response = base.client.GetAcsResponse(request);
+                var response = client.GetAcsResponse(request);
             });
 
             Assert.Equal("InvalidBearerToken.Inactive", exception.ErrorCode);

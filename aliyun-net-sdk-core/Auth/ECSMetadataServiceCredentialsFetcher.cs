@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Core.Auth
         {
             HttpRequest request = new HttpRequest(credentialUrl);
             request.Method = MethodType.GET;
-            request.TimeoutInMilliSeconds = connectionTimeoutInMilliseconds;
+            request.SetConnectTimeoutInMilliSeconds(connectionTimeoutInMilliseconds);
 
             HttpResponse response;
             try

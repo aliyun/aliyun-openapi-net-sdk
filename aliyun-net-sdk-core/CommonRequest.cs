@@ -109,7 +109,7 @@ namespace Aliyun.Acs.Core
             }
             if (TimeoutInMilliSeconds > 0)
             {
-                request.TimeoutInMilliSeconds = TimeoutInMilliSeconds;
+                request.SetReadTimeoutInMilliSeconds(TimeoutInMilliSeconds);
             }
             if (Method != null)
             {

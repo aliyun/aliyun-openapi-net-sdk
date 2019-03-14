@@ -22,7 +22,7 @@ namespace Aliyun.Acs.Feature.Test.Core
             request.Version = "2014-05-26";
             request.Action = "DescribeAccessPoints";
 
-            CommonResponse response = this.client.GetCommonResponse(request);
+            CommonResponse response = client.GetCommonResponse(request);
 
             Assert.Equal("200", response.HttpStatus.ToString());
             Assert.NotNull(response.Data);
@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Feature.Test.Core
             request.UriPattern = "/resource_types";
             request.Method = MethodType.GET;
 
-            CommonResponse response = this.client.GetCommonResponse(request);
+            CommonResponse response = client.GetCommonResponse(request);
 
             Assert.Equal("200", response.HttpStatus.ToString());
             Assert.NotNull(response.Data);
@@ -96,7 +96,7 @@ namespace Aliyun.Acs.Feature.Test.Core
             request.Action = "DescribeAccessPoints";
             request.Protocol = ProtocolType.HTTPS;
 
-            CommonResponse response = this.client.GetCommonResponse(request);
+            CommonResponse response = client.GetCommonResponse(request);
             Assert.Equal(200, response.HttpStatus);
             Assert.NotNull(response.Data);
         }

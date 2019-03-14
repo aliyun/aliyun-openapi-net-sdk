@@ -17,7 +17,7 @@ namespace Aliyun.Acs.Feature.Test
         private static readonly string bearerToken = "BEARERTOKEN";
 
         public IClientProfile profile;
-        public DefaultAcsClient client;
+        public static DefaultAcsClient client;
 
         public FeatureTestBase()
         {

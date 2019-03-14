@@ -41,6 +41,9 @@ namespace Aliyun.Acs.Core
         private AlibabaCloudCredentialsProvider credentialsProvider;
         private readonly UserAgent userAgentConfig = new UserAgent();
 
+        public int readTimeout { get; private set; }
+        public int connectTimeout { get; private set; }
+
         public DefaultAcsClient()
         {
             this.clientProfile = DefaultProfile.GetProfile();
@@ -258,6 +261,8 @@ namespace Aliyun.Acs.Core
                 HttpRequest httpRequest = request.SignRequest(signer, credentials, format, domain);
                 HttpResponse response;
 
+                ResolveTimeout(httpRequest);
+
                 response = this.GetResponse(httpRequest);
 
                 PrintHttpDebugMsg(request, response);
@@ -367,6 +372,25 @@ namespace Aliyun.Acs.Core
         public UserAgent GetUserAgentConfig()
         {
             return this.userAgentConfig;
+        }
+
+        public void SetConnectTimeoutInMilliSeconds(int connectTimeout)
+        {
+            this.connectTimeout = connectTimeout;
+        }
+
+        public void SetReadTimeoutInMilliSeconds(int readTimeout)
+        {
+            this.readTimeout = readTimeout;
+        }
+
+        public void ResolveTimeout(HttpRequest request)
+        {
+            var finalReadTimeout = request.readTimeout > 0 ? request.readTimeout : this.readTimeout > 0 ? this.readTimeout : 0;
+            request.SetReadTimeoutInMilliSeconds(finalReadTimeout);
+
+            var finalConnectTimeout = request.connectTimeout > 0 ? request.connectTimeout : this.connectTimeout > 0 ? this.connectTimeout : 0;
+            request.SetConnectTimeoutInMilliSeconds(finalConnectTimeout);
         }
     }
 }
