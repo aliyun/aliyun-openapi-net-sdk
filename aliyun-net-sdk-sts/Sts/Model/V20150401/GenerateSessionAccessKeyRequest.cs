@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Sts.Transform;
 using Aliyun.Acs.Sts.Transform.V20150401;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Sts.Model.V20150401
 {
     public class GenerateSessionAccessKeyRequest : RpcAcsRequest<GenerateSessionAccessKeyResponse>
     {
         public GenerateSessionAccessKeyRequest()
-            : base("Sts", "2015-04-01", "GenerateSessionAccessKey")
+            : base("Sts", "2015-04-01", "GenerateSessionAccessKey", "sts", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -49,7 +50,7 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-        public override GenerateSessionAccessKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GenerateSessionAccessKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GenerateSessionAccessKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

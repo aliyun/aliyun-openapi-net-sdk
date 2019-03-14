@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53121270-5D0A-4B76-AC56-E8DBD08C5227}</ProjectGuid>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{cdc65ae6-08c1-4b77-bcf8-4d56230067e9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -39,22 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sts\Model\V20150401\AssumeRoleRequest.cs" />
-    <Compile Include="Sts\Model\V20150401\GenerateSessionAccessKeyResponse.cs" />
-    <Compile Include="Sts\Model\V20150401\GetCallerIdentityRequest.cs" />
-    <Compile Include="Sts\Model\V20150401\GenerateSessionAccessKeyRequest.cs" />
-    <Compile Include="Sts\Model\V20150401\AssumeRoleResponse.cs" />
-    <Compile Include="Sts\Model\V20150401\GetCallerIdentityResponse.cs" />
-    <Compile Include="Sts\Transform\V20150401\GenerateSessionAccessKeyResponseUnmarshaller.cs" />
-    <Compile Include="Sts\Transform\V20150401\GetCallerIdentityResponseUnmarshaller.cs" />
-    <Compile Include="Sts\Transform\V20150401\AssumeRoleResponseUnmarshaller.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
+	<Compile Include="Sts\Model\V20150401\GenerateSessionAccessKeyResponse.cs" />
+	<Compile Include="Sts\Model\V20150401\GetCallerIdentityResponse.cs" />
+	<Compile Include="Sts\Model\V20150401\GenerateSessionAccessKeyRequest.cs" />
+	<Compile Include="Sts\Model\V20150401\GetCallerIdentityRequest.cs" />
+	<Compile Include="Sts\Model\V20150401\AssumeRoleResponse.cs" />
+	<Compile Include="Sts\Model\V20150401\AssumeRoleRequest.cs" />
+	<Compile Include="Sts\Transform\V20150401\AssumeRoleResponseUnmarshaller.cs" />
+	<Compile Include="Sts\Transform\V20150401\GenerateSessionAccessKeyResponseUnmarshaller.cs" />
+	<Compile Include="Sts\Transform\V20150401\GetCallerIdentityResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
-      <Project>{BB84CECB-295D-4772-A669-3726E511CCFA}</Project>
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
       <Name>aliyun-net-sdk-core.vs2010</Name>
     </ProjectReference>
   </ItemGroup>

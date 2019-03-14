@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Sts.Transform;
 using Aliyun.Acs.Sts.Transform.V20150401;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Sts.Model.V20150401
 {
     public class AssumeRoleRequest : RpcAcsRequest<AssumeRoleResponse>
     {
         public AssumeRoleRequest()
-            : base("Sts", "2015-04-01", "AssumeRole")
+            : base("Sts", "2015-04-01", "AssumeRole", "sts", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -94,7 +95,7 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-        public override AssumeRoleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AssumeRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AssumeRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

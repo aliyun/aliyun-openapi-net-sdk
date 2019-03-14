@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Sts.Model.V20150401;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Sts.Model.V20150401;
 
 namespace Aliyun.Acs.Sts.Transform.V20150401
 {
@@ -32,7 +33,10 @@ namespace Aliyun.Acs.Sts.Transform.V20150401
 			getCallerIdentityResponse.HttpResponse = context.HttpResponse;
 			getCallerIdentityResponse.AccountId = context.StringValue("GetCallerIdentity.AccountId");
 			getCallerIdentityResponse.UserId = context.StringValue("GetCallerIdentity.UserId");
+			getCallerIdentityResponse.RoleId = context.StringValue("GetCallerIdentity.RoleId");
 			getCallerIdentityResponse.Arn = context.StringValue("GetCallerIdentity.Arn");
+			getCallerIdentityResponse.IdentityType = context.StringValue("GetCallerIdentity.IdentityType");
+			getCallerIdentityResponse.PrincipalId = context.StringValue("GetCallerIdentity.PrincipalId");
 			getCallerIdentityResponse.RequestId = context.StringValue("GetCallerIdentity.RequestId");
         
 			return getCallerIdentityResponse;

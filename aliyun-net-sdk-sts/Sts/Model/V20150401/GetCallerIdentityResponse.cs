@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sts.Model.V20150401
 {
@@ -28,7 +29,13 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 
 		private string userId;
 
+		private string roleId;
+
 		private string arn;
+
+		private string identityType;
+
+		private string principalId;
 
 		private string requestId;
 
@@ -56,6 +63,18 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
+		public string RoleId
+		{
+			get
+			{
+				return roleId;
+			}
+			set	
+			{
+				roleId = value;
+			}
+		}
+
 		public string Arn
 		{
 			get
@@ -65,6 +84,30 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			set	
 			{
 				arn = value;
+			}
+		}
+
+		public string IdentityType
+		{
+			get
+			{
+				return identityType;
+			}
+			set	
+			{
+				identityType = value;
+			}
+		}
+
+		public string PrincipalId
+		{
+			get
+			{
+				return principalId;
+			}
+			set	
+			{
+				principalId = value;
 			}
 		}
 

@@ -16,25 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Sts.Transform;
 using Aliyun.Acs.Sts.Transform.V20150401;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Sts.Model.V20150401
 {
     public class GetCallerIdentityRequest : RpcAcsRequest<GetCallerIdentityResponse>
     {
         public GetCallerIdentityRequest()
-            : base("Sts", "2015-04-01", "GetCallerIdentity")
+            : base("Sts", "2015-04-01", "GetCallerIdentity", "sts", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-        public override GetCallerIdentityResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetCallerIdentityResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetCallerIdentityResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
