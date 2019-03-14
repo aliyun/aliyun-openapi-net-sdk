@@ -386,34 +386,10 @@ namespace Aliyun.Acs.Core
 
         public void ResolveTimeout(HttpRequest request)
         {
-            int finalConnectTimeout = 0;
-            int finalReadTimeout = 0;
-
-            if (0 < request.connectTimeout)
-            {
-                finalConnectTimeout = request.connectTimeout;
-            }
-            else
-            {
-                if (0 < this.connectTimeout)
-                {
-                    finalConnectTimeout = this.connectTimeout;
-                }
-            }
-
-            if (0 < request.readTimeout)
-            {
-                finalReadTimeout = request.readTimeout;
-            }
-            else
-            {
-                if (0 < this.readTimeout)
-                {
-                    finalReadTimeout = this.readTimeout;
-                }
-            }
-
+            var finalReadTimeout = request.readTimeout > 0 ? request.readTimeout : this.readTimeout > 0 ? this.readTimeout : 0;
             request.SetReadTimeoutInMilliSeconds(finalReadTimeout);
+
+            var finalConnectTimeout = request.connectTimeout > 0 ? request.connectTimeout : this.connectTimeout > 0 ? this.connectTimeout : 0;
             request.SetConnectTimeoutInMilliSeconds(finalConnectTimeout);
         }
     }
