@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f42ebe30-3b98-43e3-9b5c-4e1a92186624}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-cbn</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Cbn\Model\V20170912\DescribePublishedRouteEntriesRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\EnableCenVbrHealthCheckResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\ModifyCenAttributeRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\WithdrawPublishedRouteEntriesResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\CreateCenBandwidthPackageRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DetachCenChildInstanceRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DeleteRouteServiceInCenResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\AttachCenChildInstanceRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenRegionDomainRouteEntriesResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeGrantRulesToCenResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\AssociateCenBandwidthPackageRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeGeographicRegionMembershipResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenPrivateZoneRoutesRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenInterRegionBandwidthLimitsResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\UnassociateCenBandwidthPackageResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\ModifyCenBandwidthPackageSpecResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DetachCenChildInstanceResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\RoutePrivateZoneInCenToVpcRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\SetCenInterRegionBandwidthLimitRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\ModifyCenAttributeResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenPrivateZoneRoutesResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\SetCenInterRegionBandwidthLimitResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeRouteConflictRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DeleteCenResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCensResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCensRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\CreateCenResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\ResolveAndRouteServiceInCenRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeRouteServicesInCenResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenAttachedChildInstancesRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\AssociateCenBandwidthPackageResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeGeographicRegionMembershipRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeGrantRulesToCenRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenGeographicSpansRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\ModifyCenBandwidthPackageAttributeRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\UnroutePrivateZoneInCenToVpcRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DeleteCenBandwidthPackageResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenBandwidthPackagesRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DeleteRouteServiceInCenRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DisableCenVbrHealthCheckResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenRegionDomainRouteEntriesRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DeleteCenRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\ResolveAndRouteServiceInCenResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeRouteServicesInCenRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\UntagResourcesResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenGeographicSpanRemainingBandwidthResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenAttachedChildInstanceAttributeRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\PublishRouteEntriesRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeChildInstanceRegionsResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenGeographicSpanRemainingBandwidthRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\CreateCenBandwidthPackageResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\UnassociateCenBandwidthPackageRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenBandwidthPackagesResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\CreateCenRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenAttachedChildInstanceAttributeResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\ModifyCenBandwidthPackageSpecRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenGeographicSpansResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\PublishRouteEntriesResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribePublishedRouteEntriesResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\WithdrawPublishedRouteEntriesRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenAttachedChildInstancesResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DeleteCenBandwidthPackageRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\ModifyCenBandwidthPackageAttributeResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\EnableCenVbrHealthCheckRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenVbrHealthCheckRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenVbrHealthCheckResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DisableCenVbrHealthCheckRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\UnroutePrivateZoneInCenToVpcResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeRouteConflictResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeCenInterRegionBandwidthLimitsRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\RoutePrivateZoneInCenToVpcResponse.cs" />
+	<Compile Include="Cbn\Model\V20170912\UntagResourcesRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\DescribeChildInstanceRegionsRequest.cs" />
+	<Compile Include="Cbn\Model\V20170912\AttachCenChildInstanceResponse.cs" />
+	<Compile Include="Cbn\Transform\V20170912\ModifyCenBandwidthPackageAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\CreateCenResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeCensResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\UnassociateCenBandwidthPackageResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\ModifyCenAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeCenAttachedChildInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\ModifyCenBandwidthPackageSpecResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\CreateCenBandwidthPackageResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\RoutePrivateZoneInCenToVpcResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeCenBandwidthPackagesResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DeleteCenResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\PublishRouteEntriesResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeGrantRulesToCenResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeGeographicRegionMembershipResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\UntagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\EnableCenVbrHealthCheckResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeCenVbrHealthCheckResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeCenGeographicSpanRemainingBandwidthResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\ResolveAndRouteServiceInCenResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DisableCenVbrHealthCheckResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeRouteServicesInCenResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DeleteRouteServiceInCenResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribePublishedRouteEntriesResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\AttachCenChildInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeCenInterRegionBandwidthLimitsResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DetachCenChildInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DeleteCenBandwidthPackageResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeCenRegionDomainRouteEntriesResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\WithdrawPublishedRouteEntriesResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeChildInstanceRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\SetCenInterRegionBandwidthLimitResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeRouteConflictResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeCenGeographicSpansResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeCenAttachedChildInstanceAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\UnroutePrivateZoneInCenToVpcResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\AssociateCenBandwidthPackageResponseUnmarshaller.cs" />
+	<Compile Include="Cbn\Transform\V20170912\DescribeCenPrivateZoneRoutesResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
