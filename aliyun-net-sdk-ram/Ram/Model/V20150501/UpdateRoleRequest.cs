@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
     public class UpdateRoleRequest : RpcAcsRequest<UpdateRoleResponse>
     {
         public UpdateRoleRequest()
-            : base("Ram", "2015-05-01", "UpdateRole")
+            : base("Ram", "2015-05-01", "UpdateRole", "ram", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -37,8 +38,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		private string newAssumeRolePolicyDocument;
 
 		private string roleName;
-
-		private string action;
 
 		public string NewAssumeRolePolicyDocument
 		{
@@ -66,20 +65,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-        public override UpdateRoleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UpdateRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,40 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
     public class ListAccessKeysRequest : RpcAcsRequest<ListAccessKeysResponse>
     {
         public ListAccessKeysRequest()
-            : base("Ram", "2015-05-01", "ListAccessKeys")
+            : base("Ram", "2015-05-01", "ListAccessKeys", "ram", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string action;
-
 		private string userName;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
 
 		public string UserName
 		{
@@ -64,7 +50,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-        public override ListAccessKeysResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListAccessKeysResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ListAccessKeysResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

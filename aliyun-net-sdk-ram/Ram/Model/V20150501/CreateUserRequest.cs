@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
     public class CreateUserRequest : RpcAcsRequest<CreateUserResponse>
     {
         public CreateUserRequest()
-            : base("Ram", "2015-05-01", "CreateUser")
+            : base("Ram", "2015-05-01", "CreateUser", "ram", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -39,8 +40,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		private string displayName;
 
 		private string mobilePhone;
-
-		private string action;
 
 		private string email;
 
@@ -85,19 +84,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string Email
 		{
 			get
@@ -124,7 +110,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-        public override CreateUserResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateUserResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

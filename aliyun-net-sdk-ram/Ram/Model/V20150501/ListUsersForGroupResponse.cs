@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
@@ -25,6 +26,10 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 	{
 
 		private string requestId;
+
+		private bool? isTruncated;
+
+		private string marker;
 
 		private List<ListUsersForGroup_User> users;
 
@@ -37,6 +42,30 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? IsTruncated
+		{
+			get
+			{
+				return isTruncated;
+			}
+			set	
+			{
+				isTruncated = value;
+			}
+		}
+
+		public string Marker
+		{
+			get
+			{
+				return marker;
+			}
+			set	
+			{
+				marker = value;
 			}
 		}
 

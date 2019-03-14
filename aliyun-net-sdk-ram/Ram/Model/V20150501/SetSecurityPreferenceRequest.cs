@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
     public class SetSecurityPreferenceRequest : RpcAcsRequest<SetSecurityPreferenceResponse>
     {
         public SetSecurityPreferenceRequest()
-            : base("Ram", "2015-05-01", "SetSecurityPreference")
+            : base("Ram", "2015-05-01", "SetSecurityPreference", "ram", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -42,9 +43,11 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 
 		private bool? enableSaveMFATicket;
 
-		private string action;
+		private string loginNetworkMasks;
 
 		private bool? allowUserToChangePassword;
+
+		private int? loginSessionDuration;
 
 		public bool? AllowUserToManageAccessKeys
 		{
@@ -98,16 +101,16 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-		public string Action
+		public string LoginNetworkMasks
 		{
 			get
 			{
-				return action;
+				return loginNetworkMasks;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				loginNetworkMasks = value;
+				DictionaryUtil.Add(QueryParameters, "LoginNetworkMasks", value);
 			}
 		}
 
@@ -124,7 +127,20 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-        public override SetSecurityPreferenceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public int? LoginSessionDuration
+		{
+			get
+			{
+				return loginSessionDuration;
+			}
+			set	
+			{
+				loginSessionDuration = value;
+				DictionaryUtil.Add(QueryParameters, "LoginSessionDuration", value.ToString());
+			}
+		}
+
+        public override SetSecurityPreferenceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SetSecurityPreferenceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

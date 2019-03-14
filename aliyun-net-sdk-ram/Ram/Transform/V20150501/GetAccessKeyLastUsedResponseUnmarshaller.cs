@@ -24,22 +24,20 @@ using Aliyun.Acs.Ram.Model.V20150501;
 
 namespace Aliyun.Acs.Ram.Transform.V20150501
 {
-    public class CreateGroupResponseUnmarshaller
+    public class GetAccessKeyLastUsedResponseUnmarshaller
     {
-        public static CreateGroupResponse Unmarshall(UnmarshallerContext context)
+        public static GetAccessKeyLastUsedResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateGroupResponse createGroupResponse = new CreateGroupResponse();
+			GetAccessKeyLastUsedResponse getAccessKeyLastUsedResponse = new GetAccessKeyLastUsedResponse();
 
-			createGroupResponse.HttpResponse = context.HttpResponse;
-			createGroupResponse.RequestId = context.StringValue("CreateGroup.RequestId");
+			getAccessKeyLastUsedResponse.HttpResponse = context.HttpResponse;
+			getAccessKeyLastUsedResponse.RequestId = context.StringValue("GetAccessKeyLastUsed.RequestId");
 
-			CreateGroupResponse.CreateGroup_Group group = new CreateGroupResponse.CreateGroup_Group();
-			group.GroupName = context.StringValue("CreateGroup.Group.GroupName");
-			group.Comments = context.StringValue("CreateGroup.Group.Comments");
-			group.CreateDate = context.StringValue("CreateGroup.Group.CreateDate");
-			createGroupResponse.Group = group;
+			GetAccessKeyLastUsedResponse.GetAccessKeyLastUsed_AccessKeyLastUsed accessKeyLastUsed = new GetAccessKeyLastUsedResponse.GetAccessKeyLastUsed_AccessKeyLastUsed();
+			accessKeyLastUsed.LastUsedDate = context.StringValue("GetAccessKeyLastUsed.AccessKeyLastUsed.LastUsedDate");
+			getAccessKeyLastUsedResponse.AccessKeyLastUsed = accessKeyLastUsed;
         
-			return createGroupResponse;
+			return getAccessKeyLastUsedResponse;
         }
     }
 }

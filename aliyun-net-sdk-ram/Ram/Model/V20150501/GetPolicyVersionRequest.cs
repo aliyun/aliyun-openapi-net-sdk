@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
     public class GetPolicyVersionRequest : RpcAcsRequest<GetPolicyVersionResponse>
     {
         public GetPolicyVersionRequest()
-            : base("Ram", "2015-05-01", "GetPolicyVersion")
+            : base("Ram", "2015-05-01", "GetPolicyVersion", "ram", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -37,8 +38,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		private string versionId;
 
 		private string policyType;
-
-		private string action;
 
 		private string policyName;
 
@@ -68,19 +67,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string PolicyName
 		{
 			get
@@ -94,7 +80,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-        public override GetPolicyVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetPolicyVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetPolicyVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

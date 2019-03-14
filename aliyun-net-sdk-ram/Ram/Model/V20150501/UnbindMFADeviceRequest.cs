@@ -16,40 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
     public class UnbindMFADeviceRequest : RpcAcsRequest<UnbindMFADeviceResponse>
     {
         public UnbindMFADeviceRequest()
-            : base("Ram", "2015-05-01", "UnbindMFADevice")
+            : base("Ram", "2015-05-01", "UnbindMFADevice", "ram", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string action;
-
 		private string userName;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
 
 		public string UserName
 		{
@@ -64,7 +50,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-        public override UnbindMFADeviceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UnbindMFADeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UnbindMFADeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

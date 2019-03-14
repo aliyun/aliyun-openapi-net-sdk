@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ram.Model.V20150501;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ram.Model.V20150501;
 
 namespace Aliyun.Acs.Ram.Transform.V20150501
 {
@@ -31,6 +32,8 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 
 			listUsersForGroupResponse.HttpResponse = context.HttpResponse;
 			listUsersForGroupResponse.RequestId = context.StringValue("ListUsersForGroup.RequestId");
+			listUsersForGroupResponse.IsTruncated = context.BooleanValue("ListUsersForGroup.IsTruncated");
+			listUsersForGroupResponse.Marker = context.StringValue("ListUsersForGroup.Marker");
 
 			List<ListUsersForGroupResponse.ListUsersForGroup_User> listUsersForGroupResponse_users = new List<ListUsersForGroupResponse.ListUsersForGroup_User>();
 			for (int i = 0; i < context.Length("ListUsersForGroup.Users.Length"); i++) {

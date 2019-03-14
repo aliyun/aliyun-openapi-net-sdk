@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
@@ -118,6 +119,10 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 
 				private bool? allowUserToChangePassword;
 
+				private int? loginSessionDuration;
+
+				private string loginNetworkMasks;
+
 				public bool? EnableSaveMFATicket
 				{
 					get
@@ -139,6 +144,30 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 					set	
 					{
 						allowUserToChangePassword = value;
+					}
+				}
+
+				public int? LoginSessionDuration
+				{
+					get
+					{
+						return loginSessionDuration;
+					}
+					set	
+					{
+						loginSessionDuration = value;
+					}
+				}
+
+				public string LoginNetworkMasks
+				{
+					get
+					{
+						return loginNetworkMasks;
+					}
+					set	
+					{
+						loginNetworkMasks = value;
 					}
 				}
 			}

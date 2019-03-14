@@ -16,40 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
     public class ListVirtualMFADevicesRequest : RpcAcsRequest<ListVirtualMFADevicesResponse>
     {
         public ListVirtualMFADevicesRequest()
-            : base("Ram", "2015-05-01", "ListVirtualMFADevices")
+            : base("Ram", "2015-05-01", "ListVirtualMFADevices", "ram", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string action;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-        public override ListVirtualMFADevicesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListVirtualMFADevicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ListVirtualMFADevicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

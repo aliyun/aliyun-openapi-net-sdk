@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class CreatePolicyResponse : AcsResponse
+	public class GetAccessKeyLastUsedResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private CreatePolicy_Policy policy;
+		private GetAccessKeyLastUsed_AccessKeyLastUsed accessKeyLastUsed;
 
 		public string RequestId
 		{
@@ -41,88 +41,32 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-		public CreatePolicy_Policy Policy
+		public GetAccessKeyLastUsed_AccessKeyLastUsed AccessKeyLastUsed
 		{
 			get
 			{
-				return policy;
+				return accessKeyLastUsed;
 			}
 			set	
 			{
-				policy = value;
+				accessKeyLastUsed = value;
 			}
 		}
 
-		public class CreatePolicy_Policy
+		public class GetAccessKeyLastUsed_AccessKeyLastUsed
 		{
 
-			private string policyName;
+			private string lastUsedDate;
 
-			private string policyType;
-
-			private string description;
-
-			private string defaultVersion;
-
-			private string createDate;
-
-			public string PolicyName
+			public string LastUsedDate
 			{
 				get
 				{
-					return policyName;
+					return lastUsedDate;
 				}
 				set	
 				{
-					policyName = value;
-				}
-			}
-
-			public string PolicyType
-			{
-				get
-				{
-					return policyType;
-				}
-				set	
-				{
-					policyType = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string DefaultVersion
-			{
-				get
-				{
-					return defaultVersion;
-				}
-				set	
-				{
-					defaultVersion = value;
-				}
-			}
-
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
+					lastUsedDate = value;
 				}
 			}
 		}

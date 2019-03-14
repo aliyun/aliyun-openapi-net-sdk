@@ -16,40 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
     public class GetGroupRequest : RpcAcsRequest<GetGroupResponse>
     {
         public GetGroupRequest()
-            : base("Ram", "2015-05-01", "GetGroup")
+            : base("Ram", "2015-05-01", "GetGroup", "ram", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string action;
-
 		private string groupName;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
 
 		public string GroupName
 		{
@@ -64,7 +50,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-        public override GetGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

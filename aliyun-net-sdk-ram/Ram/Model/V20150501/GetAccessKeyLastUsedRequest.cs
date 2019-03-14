@@ -27,58 +27,28 @@ using Aliyun.Acs.Ram.Transform.V20150501;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-    public class BindMFADeviceRequest : RpcAcsRequest<BindMFADeviceResponse>
+    public class GetAccessKeyLastUsedRequest : RpcAcsRequest<GetAccessKeyLastUsedResponse>
     {
-        public BindMFADeviceRequest()
-            : base("Ram", "2015-05-01", "BindMFADevice", "ram", "openAPI")
+        public GetAccessKeyLastUsedRequest()
+            : base("Ram", "2015-05-01", "GetAccessKeyLastUsed", "ram", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string serialNumber;
-
-		private string authenticationCode2;
-
-		private string authenticationCode1;
+		private string userAccessKeyId;
 
 		private string userName;
 
-		public string SerialNumber
+		public string UserAccessKeyId
 		{
 			get
 			{
-				return serialNumber;
+				return userAccessKeyId;
 			}
 			set	
 			{
-				serialNumber = value;
-				DictionaryUtil.Add(QueryParameters, "SerialNumber", value);
-			}
-		}
-
-		public string AuthenticationCode2
-		{
-			get
-			{
-				return authenticationCode2;
-			}
-			set	
-			{
-				authenticationCode2 = value;
-				DictionaryUtil.Add(QueryParameters, "AuthenticationCode2", value);
-			}
-		}
-
-		public string AuthenticationCode1
-		{
-			get
-			{
-				return authenticationCode1;
-			}
-			set	
-			{
-				authenticationCode1 = value;
-				DictionaryUtil.Add(QueryParameters, "AuthenticationCode1", value);
+				userAccessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "UserAccessKeyId", value);
 			}
 		}
 
@@ -95,9 +65,9 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-        public override BindMFADeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetAccessKeyLastUsedResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BindMFADeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetAccessKeyLastUsedResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

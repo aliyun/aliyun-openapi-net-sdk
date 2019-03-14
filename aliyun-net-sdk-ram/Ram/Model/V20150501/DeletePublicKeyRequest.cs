@@ -16,42 +16,28 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
     public class DeletePublicKeyRequest : RpcAcsRequest<DeletePublicKeyResponse>
     {
         public DeletePublicKeyRequest()
-            : base("Ram", "2015-05-01", "DeletePublicKey")
+            : base("Ram", "2015-05-01", "DeletePublicKey", "ram", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string action;
-
 		private string userPublicKeyId;
 
 		private string userName;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
 
 		public string UserPublicKeyId
 		{
@@ -79,7 +65,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-        public override DeletePublicKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeletePublicKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeletePublicKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,44 +16,30 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
     public class UpdatePublicKeyRequest : RpcAcsRequest<UpdatePublicKeyResponse>
     {
         public UpdatePublicKeyRequest()
-            : base("Ram", "2015-05-01", "UpdatePublicKey")
+            : base("Ram", "2015-05-01", "UpdatePublicKey", "ram", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
-
-		private string action;
 
 		private string userPublicKeyId;
 
 		private string userName;
 
 		private string status;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
 
 		public string UserPublicKeyId
 		{
@@ -94,7 +80,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-        public override UpdatePublicKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdatePublicKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UpdatePublicKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

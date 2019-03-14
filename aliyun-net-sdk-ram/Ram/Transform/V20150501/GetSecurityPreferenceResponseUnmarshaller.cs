@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ram.Model.V20150501;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ram.Model.V20150501;
 
 namespace Aliyun.Acs.Ram.Transform.V20150501
 {
@@ -37,6 +38,8 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 			GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_LoginProfilePreference loginProfilePreference = new GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_LoginProfilePreference();
 			loginProfilePreference.EnableSaveMFATicket = context.BooleanValue("GetSecurityPreference.SecurityPreference.LoginProfilePreference.EnableSaveMFATicket");
 			loginProfilePreference.AllowUserToChangePassword = context.BooleanValue("GetSecurityPreference.SecurityPreference.LoginProfilePreference.AllowUserToChangePassword");
+			loginProfilePreference.LoginSessionDuration = context.IntegerValue("GetSecurityPreference.SecurityPreference.LoginProfilePreference.LoginSessionDuration");
+			loginProfilePreference.LoginNetworkMasks = context.StringValue("GetSecurityPreference.SecurityPreference.LoginProfilePreference.LoginNetworkMasks");
 			securityPreference.LoginProfilePreference = loginProfilePreference;
 
 			GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_AccessKeyPreference accessKeyPreference = new GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_AccessKeyPreference();
