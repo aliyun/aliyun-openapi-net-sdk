@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.MoPen.Transform;
 using Aliyun.Acs.MoPen.Transform.V20180211;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.MoPen.Model.V20180211
 {
     public class MoPenDeleteGroupMemberRequest : RpcAcsRequest<MoPenDeleteGroupMemberResponse>
     {
         public MoPenDeleteGroupMemberRequest()
-            : base("MoPen", "2018-02-11", "MoPenDeleteGroupMember")
+            : base("MoPen", "2018-02-11", "MoPenDeleteGroupMember", "mopen", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
@@ -70,7 +71,7 @@ namespace Aliyun.Acs.MoPen.Model.V20180211
 			return false;
 		}
 
-        public override MoPenDeleteGroupMemberResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override MoPenDeleteGroupMemberResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return MoPenDeleteGroupMemberResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
