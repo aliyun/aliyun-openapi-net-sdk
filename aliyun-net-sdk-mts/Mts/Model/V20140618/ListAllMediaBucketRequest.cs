@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Mts.Transform;
 using Aliyun.Acs.Mts.Transform.V20140618;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
@@ -37,9 +38,13 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string resourceOwnerAccount;
 
+		private string nextPageToken;
+
 		private string ownerAccount;
 
 		private string action;
+
+		private int? maximumPageSize;
 
 		private long? ownerId;
 
@@ -71,6 +76,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string NextPageToken
+		{
+			get
+			{
+				return nextPageToken;
+			}
+			set	
+			{
+				nextPageToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextPageToken", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -94,6 +112,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				action = value;
 				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public int? MaximumPageSize
+		{
+			get
+			{
+				return maximumPageSize;
+			}
+			set	
+			{
+				maximumPageSize = value;
+				DictionaryUtil.Add(QueryParameters, "MaximumPageSize", value.ToString());
 			}
 		}
 
@@ -123,7 +154,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-        public override ListAllMediaBucketResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListAllMediaBucketResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ListAllMediaBucketResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

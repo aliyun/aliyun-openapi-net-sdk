@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
@@ -232,6 +233,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string qscale;
 
+				private string longShortMode;
+
 				private string _remove;
 
 				private string crop;
@@ -239,6 +242,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				private string pad;
 
 				private string maxFps;
+
+				private string resoPriority;
 
 				private QueryTemplateList_BitrateBnd bitrateBnd;
 
@@ -422,6 +427,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					}
 				}
 
+				public string LongShortMode
+				{
+					get
+					{
+						return longShortMode;
+					}
+					set	
+					{
+						longShortMode = value;
+					}
+				}
+
 				public string _Remove
 				{
 					get
@@ -467,6 +484,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						maxFps = value;
+					}
+				}
+
+				public string ResoPriority
+				{
+					get
+					{
+						return resoPriority;
+					}
+					set	
+					{
+						resoPriority = value;
 					}
 				}
 
@@ -740,6 +769,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private QueryTemplateList_Gif gif;
 
+				private QueryTemplateList_Webp webp;
+
 				public QueryTemplateList_Segment Segment
 				{
 					get
@@ -761,6 +792,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						gif = value;
+					}
+				}
+
+				public QueryTemplateList_Webp Webp
+				{
+					get
+					{
+						return webp;
+					}
+					set	
+					{
+						webp = value;
 					}
 				}
 
@@ -838,6 +881,24 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							ditherMode = value;
+						}
+					}
+				}
+
+				public class QueryTemplateList_Webp
+				{
+
+					private string loop;
+
+					public string Loop
+					{
+						get
+						{
+							return loop;
+						}
+						set	
+						{
+							loop = value;
 						}
 					}
 				}

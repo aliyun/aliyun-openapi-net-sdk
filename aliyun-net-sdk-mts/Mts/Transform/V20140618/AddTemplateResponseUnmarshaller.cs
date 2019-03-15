@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Mts.Model.V20140618;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Mts.Model.V20140618;
 
 namespace Aliyun.Acs.Mts.Transform.V20140618
 {
@@ -57,10 +58,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			video.PixFmt = context.StringValue("AddTemplate.Template.Video.PixFmt");
 			video.Degrain = context.StringValue("AddTemplate.Template.Video.Degrain");
 			video.Qscale = context.StringValue("AddTemplate.Template.Video.Qscale");
+			video.LongShortMode = context.StringValue("AddTemplate.Template.Video.LongShortMode");
 			video._Remove = context.StringValue("AddTemplate.Template.Video.Remove");
 			video.Crop = context.StringValue("AddTemplate.Template.Video.Crop");
 			video.Pad = context.StringValue("AddTemplate.Template.Video.Pad");
 			video.MaxFps = context.StringValue("AddTemplate.Template.Video.MaxFps");
+			video.ResoPriority = context.StringValue("AddTemplate.Template.Video.ResoPriority");
 
 			AddTemplateResponse.AddTemplate_Template.AddTemplate_Video.AddTemplate_BitrateBnd bitrateBnd = new AddTemplateResponse.AddTemplate_Template.AddTemplate_Video.AddTemplate_BitrateBnd();
 			bitrateBnd.Max = context.StringValue("AddTemplate.Template.Video.BitrateBnd.Max");
@@ -106,6 +109,10 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			gif.IsCustomPalette = context.StringValue("AddTemplate.Template.MuxConfig.Gif.IsCustomPalette");
 			gif.DitherMode = context.StringValue("AddTemplate.Template.MuxConfig.Gif.DitherMode");
 			muxConfig.Gif = gif;
+
+			AddTemplateResponse.AddTemplate_Template.AddTemplate_MuxConfig.AddTemplate_Webp webp = new AddTemplateResponse.AddTemplate_Template.AddTemplate_MuxConfig.AddTemplate_Webp();
+			webp.Loop = context.StringValue("AddTemplate.Template.MuxConfig.Webp.Loop");
+			muxConfig.Webp = webp;
 			template.MuxConfig = muxConfig;
 			addTemplateResponse.Template = template;
         

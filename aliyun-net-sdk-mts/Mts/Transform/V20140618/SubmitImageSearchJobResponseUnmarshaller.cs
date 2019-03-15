@@ -16,40 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Mts.Model.V20140618
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Mts.Model.V20140618;
+
+namespace Aliyun.Acs.Mts.Transform.V20140618
 {
-	public class SubmitCensorJobResponse : AcsResponse
-	{
+    public class SubmitImageSearchJobResponseUnmarshaller
+    {
+        public static SubmitImageSearchJobResponse Unmarshall(UnmarshallerContext context)
+        {
+			SubmitImageSearchJobResponse submitImageSearchJobResponse = new SubmitImageSearchJobResponse();
 
-		private string requestId;
-
-		private string jobId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-			}
-		}
-	}
+			submitImageSearchJobResponse.HttpResponse = context.HttpResponse;
+			submitImageSearchJobResponse.RequestId = context.StringValue("SubmitImageSearchJob.RequestId");
+			submitImageSearchJobResponse.JobId = context.StringValue("SubmitImageSearchJob.JobId");
+        
+			return submitImageSearchJobResponse;
+        }
+    }
 }

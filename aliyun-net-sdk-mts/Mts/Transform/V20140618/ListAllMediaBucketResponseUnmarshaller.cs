@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Mts.Model.V20140618;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Mts.Model.V20140618;
 
 namespace Aliyun.Acs.Mts.Transform.V20140618
 {
@@ -31,6 +32,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 
 			listAllMediaBucketResponse.HttpResponse = context.HttpResponse;
 			listAllMediaBucketResponse.RequestId = context.StringValue("ListAllMediaBucket.RequestId");
+			listAllMediaBucketResponse.NextPageToken = context.StringValue("ListAllMediaBucket.NextPageToken");
 
 			List<ListAllMediaBucketResponse.ListAllMediaBucket_MediaBucket> listAllMediaBucketResponse_mediaBucketList = new List<ListAllMediaBucketResponse.ListAllMediaBucket_MediaBucket>();
 			for (int i = 0; i < context.Length("ListAllMediaBucket.MediaBucketList.Length"); i++) {

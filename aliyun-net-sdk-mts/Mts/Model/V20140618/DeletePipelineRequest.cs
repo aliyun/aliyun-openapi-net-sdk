@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Mts.Transform;
 using Aliyun.Acs.Mts.Transform.V20140618;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
@@ -138,7 +139,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-        public override DeletePipelineResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeletePipelineResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeletePipelineResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

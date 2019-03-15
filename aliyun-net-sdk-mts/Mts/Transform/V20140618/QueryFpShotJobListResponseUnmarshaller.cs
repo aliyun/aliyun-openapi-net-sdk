@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Mts.Model.V20140618;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Mts.Model.V20140618;
 
 namespace Aliyun.Acs.Mts.Transform.V20140618
 {
@@ -31,6 +32,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 
 			queryFpShotJobListResponse.HttpResponse = context.HttpResponse;
 			queryFpShotJobListResponse.RequestId = context.StringValue("QueryFpShotJobList.RequestId");
+			queryFpShotJobListResponse.NextPageToken = context.StringValue("QueryFpShotJobList.NextPageToken");
 
 			List<string> queryFpShotJobListResponse_nonExistIds = new List<string>();
 			for (int i = 0; i < context.Length("QueryFpShotJobList.NonExistIds.Length"); i++) {
@@ -38,12 +40,19 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			}
 			queryFpShotJobListResponse.NonExistIds = queryFpShotJobListResponse_nonExistIds;
 
+			List<string> queryFpShotJobListResponse_nonExistPrimaryKeys = new List<string>();
+			for (int i = 0; i < context.Length("QueryFpShotJobList.NonExistPrimaryKeys.Length"); i++) {
+				queryFpShotJobListResponse_nonExistPrimaryKeys.Add(context.StringValue("QueryFpShotJobList.NonExistPrimaryKeys["+ i +"]"));
+			}
+			queryFpShotJobListResponse.NonExistPrimaryKeys = queryFpShotJobListResponse_nonExistPrimaryKeys;
+
 			List<QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob> queryFpShotJobListResponse_fpShotJobList = new List<QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob>();
 			for (int i = 0; i < context.Length("QueryFpShotJobList.FpShotJobList.Length"); i++) {
 				QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob fpShotJob = new QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob();
 				fpShotJob.Id = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].Id");
 				fpShotJob.UserData = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].UserData");
 				fpShotJob.PipelineId = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].PipelineId");
+				fpShotJob.FileId = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].FileId");
 				fpShotJob.State = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].State");
 				fpShotJob.Code = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].Code");
 				fpShotJob.Message = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].Message");
@@ -55,6 +64,11 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				inputFile.Location = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].InputFile.Location");
 				inputFile._Object = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].InputFile.Object");
 				fpShotJob.InputFile = inputFile;
+
+				QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotConfig fpShotConfig = new QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotConfig();
+				fpShotConfig.PrimaryKey = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].FpShotConfig.PrimaryKey");
+				fpShotConfig.SaveType = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].FpShotConfig.SaveType");
+				fpShotJob.FpShotConfig = fpShotConfig;
 
 				QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult fpShotResult = new QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult();
 
@@ -85,6 +99,34 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					fpShotResult_fpShots.Add(fpShot);
 				}
 				fpShotResult.FpShots = fpShotResult_fpShots;
+
+				List<QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult.QueryFpShotJobList_FpShot> fpShotResult_audioFpShots = new List<QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult.QueryFpShotJobList_FpShot>();
+				for (int j = 0; j < context.Length("QueryFpShotJobList.FpShotJobList["+ i +"].FpShotResult.AudioFpShots.Length"); j++) {
+					QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult.QueryFpShotJobList_FpShot fpShot = new QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult.QueryFpShotJobList_FpShot();
+					fpShot.PrimaryKey = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].FpShotResult.AudioFpShots["+ j +"].PrimaryKey");
+					fpShot.Similarity = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].FpShotResult.AudioFpShots["+ j +"].Similarity");
+
+					List<QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult.QueryFpShotJobList_FpShot.QueryFpShotJobList_FpShotSlice> fpShot_fpShotSlices = new List<QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult.QueryFpShotJobList_FpShot.QueryFpShotJobList_FpShotSlice>();
+					for (int k = 0; k < context.Length("QueryFpShotJobList.FpShotJobList["+ i +"].FpShotResult.AudioFpShots["+ j +"].FpShotSlices.Length"); k++) {
+						QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult.QueryFpShotJobList_FpShot.QueryFpShotJobList_FpShotSlice fpShotSlice = new QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult.QueryFpShotJobList_FpShot.QueryFpShotJobList_FpShotSlice();
+
+						QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult.QueryFpShotJobList_FpShot.QueryFpShotJobList_FpShotSlice.QueryFpShotJobList_Input queryFpShotJobList_FpShotSliceQueryFpShotJobList_Input = new QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult.QueryFpShotJobList_FpShot.QueryFpShotJobList_FpShotSlice.QueryFpShotJobList_Input();
+						queryFpShotJobList_FpShotSliceQueryFpShotJobList_Input.Start = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].FpShotResult.AudioFpShots["+ j +"].FpShotSlices["+ k +"].Input.Start");
+						queryFpShotJobList_FpShotSliceQueryFpShotJobList_Input.Duration = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].FpShotResult.AudioFpShots["+ j +"].FpShotSlices["+ k +"].Input.Duration");
+						fpShotSlice.Input = queryFpShotJobList_FpShotSliceQueryFpShotJobList_Input;
+
+						QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult.QueryFpShotJobList_FpShot.QueryFpShotJobList_FpShotSlice.QueryFpShotJobList_Duplication queryFpShotJobList_FpShotSliceQueryFpShotJobList_Duplication = new QueryFpShotJobListResponse.QueryFpShotJobList_FpShotJob.QueryFpShotJobList_FpShotResult.QueryFpShotJobList_FpShot.QueryFpShotJobList_FpShotSlice.QueryFpShotJobList_Duplication();
+						queryFpShotJobList_FpShotSliceQueryFpShotJobList_Duplication.Start = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].FpShotResult.AudioFpShots["+ j +"].FpShotSlices["+ k +"].Duplication.Start");
+						queryFpShotJobList_FpShotSliceQueryFpShotJobList_Duplication.Duration = context.StringValue("QueryFpShotJobList.FpShotJobList["+ i +"].FpShotResult.AudioFpShots["+ j +"].FpShotSlices["+ k +"].Duplication.Duration");
+						fpShotSlice.Duplication = queryFpShotJobList_FpShotSliceQueryFpShotJobList_Duplication;
+
+						fpShot_fpShotSlices.Add(fpShotSlice);
+					}
+					fpShot.FpShotSlices = fpShot_fpShotSlices;
+
+					fpShotResult_audioFpShots.Add(fpShot);
+				}
+				fpShotResult.AudioFpShots = fpShotResult_audioFpShots;
 				fpShotJob.FpShotResult = fpShotResult;
 
 				queryFpShotJobListResponse_fpShotJobList.Add(fpShotJob);

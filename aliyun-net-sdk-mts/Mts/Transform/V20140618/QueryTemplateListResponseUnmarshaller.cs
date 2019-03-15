@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Mts.Model.V20140618;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Mts.Model.V20140618;
 
 namespace Aliyun.Acs.Mts.Transform.V20140618
 {
@@ -65,10 +66,12 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				video.PixFmt = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.PixFmt");
 				video.Degrain = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Degrain");
 				video.Qscale = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Qscale");
+				video.LongShortMode = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.LongShortMode");
 				video._Remove = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Remove");
 				video.Crop = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Crop");
 				video.Pad = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.Pad");
 				video.MaxFps = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.MaxFps");
+				video.ResoPriority = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.ResoPriority");
 
 				QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_Video.QueryTemplateList_BitrateBnd bitrateBnd = new QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_Video.QueryTemplateList_BitrateBnd();
 				bitrateBnd.Max = context.StringValue("QueryTemplateList.TemplateList["+ i +"].Video.BitrateBnd.Max");
@@ -109,6 +112,10 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				gif.IsCustomPalette = context.StringValue("QueryTemplateList.TemplateList["+ i +"].MuxConfig.Gif.IsCustomPalette");
 				gif.DitherMode = context.StringValue("QueryTemplateList.TemplateList["+ i +"].MuxConfig.Gif.DitherMode");
 				muxConfig.Gif = gif;
+
+				QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_MuxConfig.QueryTemplateList_Webp webp = new QueryTemplateListResponse.QueryTemplateList_Template.QueryTemplateList_MuxConfig.QueryTemplateList_Webp();
+				webp.Loop = context.StringValue("QueryTemplateList.TemplateList["+ i +"].MuxConfig.Webp.Loop");
+				muxConfig.Webp = webp;
 				template.MuxConfig = muxConfig;
 
 				queryTemplateListResponse_templateList.Add(template);

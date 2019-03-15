@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
@@ -25,6 +26,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 	{
 
 		private string requestId;
+
+		private string nextPageToken;
 
 		private List<ListAllMediaBucket_MediaBucket> mediaBucketList;
 
@@ -37,6 +40,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string NextPageToken
+		{
+			get
+			{
+				return nextPageToken;
+			}
+			set	
+			{
+				nextPageToken = value;
 			}
 		}
 

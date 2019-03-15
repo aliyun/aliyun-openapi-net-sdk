@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
@@ -260,6 +261,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string qscale;
 
+				private string longShortMode;
+
 				private string _remove;
 
 				private string crop;
@@ -447,6 +450,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						qscale = value;
+					}
+				}
+
+				public string LongShortMode
+				{
+					get
+					{
+						return longShortMode;
+					}
+					set	
+					{
+						longShortMode = value;
 					}
 				}
 

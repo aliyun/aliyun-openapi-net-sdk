@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Mts.Transform;
 using Aliyun.Acs.Mts.Transform.V20140618;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
@@ -37,15 +38,29 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string resourceOwnerAccount;
 
-		private string jobIds;
+		private string nextPageToken;
+
+		private string startOfJobCreatedTimeRange;
 
 		private string ownerAccount;
 
-		private string action;
+		private long? maximumPageSize;
 
 		private long? ownerId;
 
 		private string accessKeyId;
+
+		private string pipelineId;
+
+		private string primaryKeyList;
+
+		private string jobIds;
+
+		private string action;
+
+		private string state;
+
+		private string endOfJobCreatedTimeRange;
 
 		public long? ResourceOwnerId
 		{
@@ -73,16 +88,29 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string JobIds
+		public string NextPageToken
 		{
 			get
 			{
-				return jobIds;
+				return nextPageToken;
 			}
 			set	
 			{
-				jobIds = value;
-				DictionaryUtil.Add(QueryParameters, "JobIds", value);
+				nextPageToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextPageToken", value);
+			}
+		}
+
+		public string StartOfJobCreatedTimeRange
+		{
+			get
+			{
+				return startOfJobCreatedTimeRange;
+			}
+			set	
+			{
+				startOfJobCreatedTimeRange = value;
+				DictionaryUtil.Add(QueryParameters, "StartOfJobCreatedTimeRange", value);
 			}
 		}
 
@@ -99,16 +127,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Action
+		public long? MaximumPageSize
 		{
 			get
 			{
-				return action;
+				return maximumPageSize;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				maximumPageSize = value;
+				DictionaryUtil.Add(QueryParameters, "MaximumPageSize", value.ToString());
 			}
 		}
 
@@ -138,7 +166,85 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-        public override QueryFpShotJobListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string PipelineId
+		{
+			get
+			{
+				return pipelineId;
+			}
+			set	
+			{
+				pipelineId = value;
+				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string PrimaryKeyList
+		{
+			get
+			{
+				return primaryKeyList;
+			}
+			set	
+			{
+				primaryKeyList = value;
+				DictionaryUtil.Add(QueryParameters, "PrimaryKeyList", value);
+			}
+		}
+
+		public string JobIds
+		{
+			get
+			{
+				return jobIds;
+			}
+			set	
+			{
+				jobIds = value;
+				DictionaryUtil.Add(QueryParameters, "JobIds", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string State
+		{
+			get
+			{
+				return state;
+			}
+			set	
+			{
+				state = value;
+				DictionaryUtil.Add(QueryParameters, "State", value);
+			}
+		}
+
+		public string EndOfJobCreatedTimeRange
+		{
+			get
+			{
+				return endOfJobCreatedTimeRange;
+			}
+			set	
+			{
+				endOfJobCreatedTimeRange = value;
+				DictionaryUtil.Add(QueryParameters, "EndOfJobCreatedTimeRange", value);
+			}
+		}
+
+        public override QueryFpShotJobListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return QueryFpShotJobListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

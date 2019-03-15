@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Mts.Model.V20140618;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Mts.Model.V20140618;
 
 namespace Aliyun.Acs.Mts.Transform.V20140618
 {
@@ -62,6 +63,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				video.PixFmt = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.PixFmt");
 				video.Degrain = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.Degrain");
 				video.Qscale = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.Qscale");
+				video.LongShortMode = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.LongShortMode");
 				video._Remove = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.Remove");
 				video.Crop = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.Crop");
 				video.Pad = context.StringValue("SearchTemplate.TemplateList["+ i +"].Video.Pad");

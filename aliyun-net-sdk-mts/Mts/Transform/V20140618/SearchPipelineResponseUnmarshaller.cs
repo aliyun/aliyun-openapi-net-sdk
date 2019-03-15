@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Mts.Model.V20140618;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Mts.Model.V20140618;
 
 namespace Aliyun.Acs.Mts.Transform.V20140618
 {
@@ -43,11 +44,14 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				pipeline.State = context.StringValue("SearchPipeline.PipelineList["+ i +"].State");
 				pipeline.Speed = context.StringValue("SearchPipeline.PipelineList["+ i +"].Speed");
 				pipeline.SpeedLevel = context.LongValue("SearchPipeline.PipelineList["+ i +"].SpeedLevel");
+				pipeline.QuotaAllocate = context.LongValue("SearchPipeline.PipelineList["+ i +"].QuotaAllocate");
 				pipeline.Role = context.StringValue("SearchPipeline.PipelineList["+ i +"].Role");
 
 				SearchPipelineResponse.SearchPipeline_Pipeline.SearchPipeline_NotifyConfig notifyConfig = new SearchPipelineResponse.SearchPipeline_Pipeline.SearchPipeline_NotifyConfig();
 				notifyConfig.Topic = context.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.Topic");
 				notifyConfig.QueueName = context.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.QueueName");
+				notifyConfig.MqTopic = context.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.MqTopic");
+				notifyConfig.MqTag = context.StringValue("SearchPipeline.PipelineList["+ i +"].NotifyConfig.MqTag");
 				pipeline.NotifyConfig = notifyConfig;
 
 				searchPipelineResponse_pipelineList.Add(pipeline);

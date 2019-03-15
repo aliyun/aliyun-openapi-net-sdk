@@ -16,178 +16,56 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Mts.Transform;
 using Aliyun.Acs.Mts.Transform.V20140618;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
-    public class SubmitCensorJobRequest : RpcAcsRequest<SubmitCensorJobResponse>
+    public class SubmitMcuJobRequest : RpcAcsRequest<SubmitMcuJobResponse>
     {
-        public SubmitCensorJobRequest()
-            : base("Mts", "2014-06-18", "SubmitCensorJob", "mts", "openAPI")
+        public SubmitMcuJobRequest()
+            : base("Mts", "2014-06-18", "SubmitMcuJob", "mts", "openAPI")
         {
         }
 
-		private long? resourceOwnerId;
-
-		private string coverImages;
-
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private string description;
-
-		private long? ownerId;
-
-		private string title;
-
-		private string censorConfig;
-
-		private string accessKeyId;
-
-		private string pipelineId;
+		private string template;
 
 		private string input;
 
 		private string userData;
 
+		private long? resourceOwnerId;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
 		private string action;
 
-		private string barrages;
+		private long? ownerId;
 
-		public long? ResourceOwnerId
+		private string templateId;
+
+		private string accessKeyId;
+
+		private string pipelineId;
+
+		public string Template
 		{
 			get
 			{
-				return resourceOwnerId;
+				return template;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string CoverImages
-		{
-			get
-			{
-				return coverImages;
-			}
-			set	
-			{
-				coverImages = value;
-				DictionaryUtil.Add(QueryParameters, "CoverImages", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Title
-		{
-			get
-			{
-				return title;
-			}
-			set	
-			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
-			}
-		}
-
-		public string CensorConfig
-		{
-			get
-			{
-				return censorConfig;
-			}
-			set	
-			{
-				censorConfig = value;
-				DictionaryUtil.Add(QueryParameters, "CensorConfig", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string PipelineId
-		{
-			get
-			{
-				return pipelineId;
-			}
-			set	
-			{
-				pipelineId = value;
-				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+				template = value;
+				DictionaryUtil.Add(QueryParameters, "Template", value);
 			}
 		}
 
@@ -217,6 +95,45 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -230,22 +147,61 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Barrages
+		public long? OwnerId
 		{
 			get
 			{
-				return barrages;
+				return ownerId;
 			}
 			set	
 			{
-				barrages = value;
-				DictionaryUtil.Add(QueryParameters, "Barrages", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-        public override SubmitCensorJobResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string PipelineId
+		{
+			get
+			{
+				return pipelineId;
+			}
+			set	
+			{
+				pipelineId = value;
+				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+        public override SubmitMcuJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SubmitCensorJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitMcuJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Mts.Model.V20140618;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Mts.Model.V20140618;
 
 namespace Aliyun.Acs.Mts.Transform.V20140618
 {
@@ -48,6 +49,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			video.Crf = context.StringValue("UpdateTemplate.Template.Video.Crf");
 			video.Width = context.StringValue("UpdateTemplate.Template.Video.Width");
 			video.Height = context.StringValue("UpdateTemplate.Template.Video.Height");
+			video.LongShortMode = context.StringValue("UpdateTemplate.Template.Video.LongShortMode");
 			video.Fps = context.StringValue("UpdateTemplate.Template.Video.Fps");
 			video.Gop = context.StringValue("UpdateTemplate.Template.Video.Gop");
 			video.Preset = context.StringValue("UpdateTemplate.Template.Video.Preset");
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			video.Crop = context.StringValue("UpdateTemplate.Template.Video.Crop");
 			video.Pad = context.StringValue("UpdateTemplate.Template.Video.Pad");
 			video.MaxFps = context.StringValue("UpdateTemplate.Template.Video.MaxFps");
+			video.ResoPriority = context.StringValue("UpdateTemplate.Template.Video.ResoPriority");
 
 			UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_Video.UpdateTemplate_BitrateBnd bitrateBnd = new UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_Video.UpdateTemplate_BitrateBnd();
 			bitrateBnd.Max = context.StringValue("UpdateTemplate.Template.Video.BitrateBnd.Max");
@@ -101,6 +104,10 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			gif.IsCustomPalette = context.StringValue("UpdateTemplate.Template.MuxConfig.Gif.IsCustomPalette");
 			gif.DitherMode = context.StringValue("UpdateTemplate.Template.MuxConfig.Gif.DitherMode");
 			muxConfig.Gif = gif;
+
+			UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_MuxConfig.UpdateTemplate_Webp webp = new UpdateTemplateResponse.UpdateTemplate_Template.UpdateTemplate_MuxConfig.UpdateTemplate_Webp();
+			webp.Loop = context.StringValue("UpdateTemplate.Template.MuxConfig.Webp.Loop");
+			muxConfig.Webp = webp;
 			template.MuxConfig = muxConfig;
 			updateTemplateResponse.Template = template;
         

@@ -16,24 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Mts.Model.V20140618;
-using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Mts.Transform.V20140618
-{
-    public class SubmitCensorJobResponseUnmarshaller
-    {
-        public static SubmitCensorJobResponse Unmarshall(UnmarshallerContext context)
-        {
-			SubmitCensorJobResponse submitCensorJobResponse = new SubmitCensorJobResponse();
+using Aliyun.Acs.Core;
 
-			submitCensorJobResponse.HttpResponse = context.HttpResponse;
-			submitCensorJobResponse.RequestId = context.StringValue("SubmitCensorJob.RequestId");
-			submitCensorJobResponse.JobId = context.StringValue("SubmitCensorJob.JobId");
-        
-			return submitCensorJobResponse;
-        }
-    }
+namespace Aliyun.Acs.Mts.Model.V20140618
+{
+	public class DeleteMcuTemplateResponse : AcsResponse
+	{
+
+		private string requestId;
+
+		private string templateId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+			}
+		}
+	}
 }

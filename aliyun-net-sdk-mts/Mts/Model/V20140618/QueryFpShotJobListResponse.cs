@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
@@ -26,9 +27,13 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string requestId;
 
+		private string nextPageToken;
+
 		private List<QueryFpShotJobList_FpShotJob> fpShotJobList;
 
 		private List<string> nonExistIds;
+
+		private List<string> nonExistPrimaryKeys;
 
 		public string RequestId
 		{
@@ -39,6 +44,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string NextPageToken
+		{
+			get
+			{
+				return nextPageToken;
+			}
+			set	
+			{
+				nextPageToken = value;
 			}
 		}
 
@@ -66,6 +83,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public List<string> NonExistPrimaryKeys
+		{
+			get
+			{
+				return nonExistPrimaryKeys;
+			}
+			set	
+			{
+				nonExistPrimaryKeys = value;
+			}
+		}
+
 		public class QueryFpShotJobList_FpShotJob
 		{
 
@@ -74,6 +103,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			private string userData;
 
 			private string pipelineId;
+
+			private string fileId;
 
 			private string state;
 
@@ -86,6 +117,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			private string finishTime;
 
 			private QueryFpShotJobList_InputFile inputFile;
+
+			private QueryFpShotJobList_FpShotConfig fpShotConfig;
 
 			private QueryFpShotJobList_FpShotResult fpShotResult;
 
@@ -122,6 +155,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					pipelineId = value;
+				}
+			}
+
+			public string FileId
+			{
+				get
+				{
+					return fileId;
+				}
+				set	
+				{
+					fileId = value;
 				}
 			}
 
@@ -197,6 +242,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public QueryFpShotJobList_FpShotConfig FpShotConfig
+			{
+				get
+				{
+					return fpShotConfig;
+				}
+				set	
+				{
+					fpShotConfig = value;
+				}
+			}
+
 			public QueryFpShotJobList_FpShotResult FpShotResult
 			{
 				get
@@ -255,10 +312,44 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public class QueryFpShotJobList_FpShotConfig
+			{
+
+				private string primaryKey;
+
+				private string saveType;
+
+				public string PrimaryKey
+				{
+					get
+					{
+						return primaryKey;
+					}
+					set	
+					{
+						primaryKey = value;
+					}
+				}
+
+				public string SaveType
+				{
+					get
+					{
+						return saveType;
+					}
+					set	
+					{
+						saveType = value;
+					}
+				}
+			}
+
 			public class QueryFpShotJobList_FpShotResult
 			{
 
 				private List<QueryFpShotJobList_FpShot> fpShots;
+
+				private List<QueryFpShotJobList_FpShot> audioFpShots;
 
 				public List<QueryFpShotJobList_FpShot> FpShots
 				{
@@ -269,6 +360,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						fpShots = value;
+					}
+				}
+
+				public List<QueryFpShotJobList_FpShot> AudioFpShots
+				{
+					get
+					{
+						return audioFpShots;
+					}
+					set	
+					{
+						audioFpShots = value;
 					}
 				}
 

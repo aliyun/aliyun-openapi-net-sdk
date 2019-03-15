@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
@@ -78,6 +79,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			private string speed;
 
 			private long? speedLevel;
+
+			private long? quotaAllocate;
 
 			private string role;
 
@@ -143,6 +146,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				}
 			}
 
+			public long? QuotaAllocate
+			{
+				get
+				{
+					return quotaAllocate;
+				}
+				set	
+				{
+					quotaAllocate = value;
+				}
+			}
+
 			public string Role
 			{
 				get
@@ -174,6 +189,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string queueName;
 
+				private string mqTopic;
+
+				private string mqTag;
+
 				public string Topic
 				{
 					get
@@ -195,6 +214,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						queueName = value;
+					}
+				}
+
+				public string MqTopic
+				{
+					get
+					{
+						return mqTopic;
+					}
+					set	
+					{
+						mqTopic = value;
+					}
+				}
+
+				public string MqTag
+				{
+					get
+					{
+						return mqTag;
+					}
+					set	
+					{
+						mqTag = value;
 					}
 				}
 			}

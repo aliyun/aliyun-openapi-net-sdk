@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Mts.Model.V20140618;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Mts.Model.V20140618;
 
 namespace Aliyun.Acs.Mts.Transform.V20140618
 {
@@ -37,11 +38,14 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			pipeline.Name = context.StringValue("UpdatePipeline.Pipeline.Name");
 			pipeline.State = context.StringValue("UpdatePipeline.Pipeline.State");
 			pipeline.Speed = context.StringValue("UpdatePipeline.Pipeline.Speed");
+			pipeline.QuotaAllocate = context.LongValue("UpdatePipeline.Pipeline.QuotaAllocate");
 			pipeline.Role = context.StringValue("UpdatePipeline.Pipeline.Role");
 
 			UpdatePipelineResponse.UpdatePipeline_Pipeline.UpdatePipeline_NotifyConfig notifyConfig = new UpdatePipelineResponse.UpdatePipeline_Pipeline.UpdatePipeline_NotifyConfig();
 			notifyConfig.Topic = context.StringValue("UpdatePipeline.Pipeline.NotifyConfig.Topic");
 			notifyConfig.QueueName = context.StringValue("UpdatePipeline.Pipeline.NotifyConfig.QueueName");
+			notifyConfig.MqTopic = context.StringValue("UpdatePipeline.Pipeline.NotifyConfig.MqTopic");
+			notifyConfig.MqTag = context.StringValue("UpdatePipeline.Pipeline.NotifyConfig.MqTag");
 			pipeline.NotifyConfig = notifyConfig;
 			updatePipelineResponse.Pipeline = pipeline;
         

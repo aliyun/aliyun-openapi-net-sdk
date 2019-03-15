@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Mts.Model.V20140618;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Mts.Model.V20140618;
 
 namespace Aliyun.Acs.Mts.Transform.V20140618
 {
@@ -386,6 +387,19 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					output_outSubtitleList.Add(outSubtitle);
 				}
 				output.OutSubtitleList = output_outSubtitleList;
+
+				List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Amix> output_amixList = new List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Amix>();
+				for (int j = 0; j < context.Length("SubmitJobs.JobResultList["+ i +"].Job.Output.AmixList.Length"); j++) {
+					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Amix amix = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Amix();
+					amix.AmixURL = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.AmixList["+ j +"].AmixURL");
+					amix.Map = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.AmixList["+ j +"].Map");
+					amix.MixDurMode = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.AmixList["+ j +"].MixDurMode");
+					amix.Start = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.AmixList["+ j +"].Start");
+					amix.Duration = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.AmixList["+ j +"].Duration");
+
+					output_amixList.Add(amix);
+				}
+				output.AmixList = output_amixList;
 				job.Output = output;
 
 				SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_MNSMessageResult mNSMessageResult = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_MNSMessageResult();

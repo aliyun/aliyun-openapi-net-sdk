@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Mts.Model.V20140618
 {
@@ -345,6 +346,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private List<SubmitJobs_OutSubtitle> outSubtitleList;
 
+					private List<SubmitJobs_Amix> amixList;
+
 					private SubmitJobs_DigiWaterMark digiWaterMark;
 
 					private SubmitJobs_OutputFile outputFile;
@@ -536,6 +539,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							outSubtitleList = value;
+						}
+					}
+
+					public List<SubmitJobs_Amix> AmixList
+					{
+						get
+						{
+							return amixList;
+						}
+						set	
+						{
+							amixList = value;
 						}
 					}
 
@@ -1195,6 +1210,80 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 								{
 									roleArn = value;
 								}
+							}
+						}
+					}
+
+					public class SubmitJobs_Amix
+					{
+
+						private string amixURL;
+
+						private string map;
+
+						private string mixDurMode;
+
+						private string start;
+
+						private string duration;
+
+						public string AmixURL
+						{
+							get
+							{
+								return amixURL;
+							}
+							set	
+							{
+								amixURL = value;
+							}
+						}
+
+						public string Map
+						{
+							get
+							{
+								return map;
+							}
+							set	
+							{
+								map = value;
+							}
+						}
+
+						public string MixDurMode
+						{
+							get
+							{
+								return mixDurMode;
+							}
+							set	
+							{
+								mixDurMode = value;
+							}
+						}
+
+						public string Start
+						{
+							get
+							{
+								return start;
+							}
+							set	
+							{
+								start = value;
+							}
+						}
+
+						public string Duration
+						{
+							get
+							{
+								return duration;
+							}
+							set	
+							{
+								duration = value;
 							}
 						}
 					}
