@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{e510c1aa-a91e-4944-b28c-733188d03ae6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-snsuapi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Snsuapi\Model\V20180709\MobileStatusQueryResponse.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\BandPrecheckRequest.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\MobileStopSpeedUpResponse.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\MobileStatusQueryRequest.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\BandStartSpeedUpResponse.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\BandStatusQueryResponse.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\BandStopSpeedUpRequest.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\BandOfferOrderRequest.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\BandStopSpeedUpResponse.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\BandStatusQueryRequest.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\BandOfferOrderResponse.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\MobileStartSpeedUpResponse.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\MobileStopSpeedUpRequest.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\BandStartSpeedUpRequest.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\MobileStartSpeedUpRequest.cs" />
+	<Compile Include="Snsuapi\Model\V20180709\BandPrecheckResponse.cs" />
+	<Compile Include="Snsuapi\Transform\V20180709\MobileStopSpeedUpResponseUnmarshaller.cs" />
+	<Compile Include="Snsuapi\Transform\V20180709\MobileStartSpeedUpResponseUnmarshaller.cs" />
+	<Compile Include="Snsuapi\Transform\V20180709\BandPrecheckResponseUnmarshaller.cs" />
+	<Compile Include="Snsuapi\Transform\V20180709\MobileStatusQueryResponseUnmarshaller.cs" />
+	<Compile Include="Snsuapi\Transform\V20180709\BandStopSpeedUpResponseUnmarshaller.cs" />
+	<Compile Include="Snsuapi\Transform\V20180709\BandStartSpeedUpResponseUnmarshaller.cs" />
+	<Compile Include="Snsuapi\Transform\V20180709\BandStatusQueryResponseUnmarshaller.cs" />
+	<Compile Include="Snsuapi\Transform\V20180709\BandOfferOrderResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
