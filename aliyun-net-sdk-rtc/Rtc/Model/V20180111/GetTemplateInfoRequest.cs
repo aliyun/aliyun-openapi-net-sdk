@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.rtc.Transform;
 using Aliyun.Acs.rtc.Transform.V20180111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.rtc.Model.V20180111
 {
@@ -93,7 +94,7 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-        public override GetTemplateInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetTemplateInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetTemplateInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

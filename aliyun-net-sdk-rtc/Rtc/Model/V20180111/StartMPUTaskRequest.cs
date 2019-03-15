@@ -27,43 +27,62 @@ using Aliyun.Acs.rtc.Transform.V20180111;
 
 namespace Aliyun.Acs.rtc.Model.V20180111
 {
-    public class UpdateTaskParamRequest : RpcAcsRequest<UpdateTaskParamResponse>
+    public class StartMPUTaskRequest : RpcAcsRequest<StartMPUTaskResponse>
     {
-        public UpdateTaskParamRequest()
-            : base("rtc", "2018-01-11", "UpdateTaskParam", "rtc", "openAPI")
+        public StartMPUTaskRequest()
+            : base("rtc", "2018-01-11", "StartMPUTask", "rtc", "openAPI")
         {
         }
 
-		private List<MixPanes> mixPaness;
+		private List<UserPanes> userPaness;
+
+		private int? backgroundColor;
 
 		private string action;
 
-		private long? taskId;
+		private List<long?> layoutIdss;
+
+		private string taskId;
+
+		private string streamURL;
 
 		private long? ownerId;
 
-		private long? templateId;
-
 		private string appId;
+
+		private int? mediaEncode;
 
 		private string channelId;
 
-		public List<MixPanes> MixPaness
+		public List<UserPanes> UserPaness
 		{
 			get
 			{
-				return mixPaness;
+				return userPaness;
 			}
 
 			set
 			{
-				mixPaness = value;
-				for (int i = 0; i < mixPaness.Count; i++)
+				userPaness = value;
+				for (int i = 0; i < userPaness.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"MixPanes." + (i + 1) + ".PaneId", mixPaness[i].PaneId);
-					DictionaryUtil.Add(QueryParameters,"MixPanes." + (i + 1) + ".UserId", mixPaness[i].UserId);
-					DictionaryUtil.Add(QueryParameters,"MixPanes." + (i + 1) + ".SourceType", mixPaness[i].SourceType);
+					DictionaryUtil.Add(QueryParameters,"UserPanes." + (i + 1) + ".PaneId", userPaness[i].PaneId);
+					DictionaryUtil.Add(QueryParameters,"UserPanes." + (i + 1) + ".UserId", userPaness[i].UserId);
+					DictionaryUtil.Add(QueryParameters,"UserPanes." + (i + 1) + ".SourceType", userPaness[i].SourceType);
 				}
+			}
+		}
+
+		public int? BackgroundColor
+		{
+			get
+			{
+				return backgroundColor;
+			}
+			set	
+			{
+				backgroundColor = value;
+				DictionaryUtil.Add(QueryParameters, "BackgroundColor", value.ToString());
 			}
 		}
 
@@ -80,7 +99,24 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public long? TaskId
+		public List<long?> LayoutIdss
+		{
+			get
+			{
+				return layoutIdss;
+			}
+
+			set
+			{
+				layoutIdss = value;
+				for (int i = 0; i < layoutIdss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"LayoutIds." + (i + 1) , layoutIdss[i]);
+				}
+			}
+		}
+
+		public string TaskId
 		{
 			get
 			{
@@ -89,7 +125,20 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			set	
 			{
 				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+			}
+		}
+
+		public string StreamURL
+		{
+			get
+			{
+				return streamURL;
+			}
+			set	
+			{
+				streamURL = value;
+				DictionaryUtil.Add(QueryParameters, "StreamURL", value);
 			}
 		}
 
@@ -106,19 +155,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public long? TemplateId
-		{
-			get
-			{
-				return templateId;
-			}
-			set	
-			{
-				templateId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
-			}
-		}
-
 		public string AppId
 		{
 			get
@@ -129,6 +165,19 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
+			}
+		}
+
+		public int? MediaEncode
+		{
+			get
+			{
+				return mediaEncode;
+			}
+			set	
+			{
+				mediaEncode = value;
+				DictionaryUtil.Add(QueryParameters, "MediaEncode", value.ToString());
 			}
 		}
 
@@ -145,7 +194,7 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public class MixPanes
+		public class UserPanes
 		{
 
 			private int? paneId;
@@ -191,9 +240,9 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-        public override UpdateTaskParamResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override StartMPUTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateTaskParamResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StartMPUTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

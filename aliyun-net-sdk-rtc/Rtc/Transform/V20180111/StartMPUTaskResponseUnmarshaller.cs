@@ -24,17 +24,16 @@ using Aliyun.Acs.rtc.Model.V20180111;
 
 namespace Aliyun.Acs.rtc.Transform.V20180111
 {
-    public class CreateTemplateResponseUnmarshaller
+    public class StartMPUTaskResponseUnmarshaller
     {
-        public static CreateTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static StartMPUTaskResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateTemplateResponse createTemplateResponse = new CreateTemplateResponse();
+			StartMPUTaskResponse startMPUTaskResponse = new StartMPUTaskResponse();
 
-			createTemplateResponse.HttpResponse = context.HttpResponse;
-			createTemplateResponse.RequestId = context.StringValue("CreateTemplate.RequestId");
-			createTemplateResponse.TemplateId = context.LongValue("CreateTemplate.TemplateId");
+			startMPUTaskResponse.HttpResponse = context.HttpResponse;
+			startMPUTaskResponse.RequestId = context.StringValue("StartMPUTask.RequestId");
         
-			return createTemplateResponse;
+			return startMPUTaskResponse;
         }
     }
 }

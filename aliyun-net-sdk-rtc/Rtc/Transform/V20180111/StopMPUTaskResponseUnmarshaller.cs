@@ -16,23 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.rtc.Model.V20180111;
 using System;
 using System.Collections.Generic;
 
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.rtc.Model.V20180111;
+
 namespace Aliyun.Acs.rtc.Transform.V20180111
 {
-    public class StartAppResponseUnmarshaller
+    public class StopMPUTaskResponseUnmarshaller
     {
-        public static StartAppResponse Unmarshall(UnmarshallerContext context)
+        public static StopMPUTaskResponse Unmarshall(UnmarshallerContext context)
         {
-			StartAppResponse startAppResponse = new StartAppResponse();
+			StopMPUTaskResponse stopMPUTaskResponse = new StopMPUTaskResponse();
 
-			startAppResponse.HttpResponse = context.HttpResponse;
-			startAppResponse.RequestId = context.StringValue("StartApp.RequestId");
+			stopMPUTaskResponse.HttpResponse = context.HttpResponse;
+			stopMPUTaskResponse.RequestId = context.StringValue("StopMPUTask.RequestId");
         
-			return startAppResponse;
+			return stopMPUTaskResponse;
         }
     }
 }

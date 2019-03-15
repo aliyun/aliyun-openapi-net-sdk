@@ -16,25 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.rtc.Model.V20180111;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.rtc.Transform.V20180111
+namespace Aliyun.Acs.rtc.Model.V20180111
 {
-    public class CreateTemplateResponseUnmarshaller
-    {
-        public static CreateTemplateResponse Unmarshall(UnmarshallerContext context)
-        {
-			CreateTemplateResponse createTemplateResponse = new CreateTemplateResponse();
+	public class GetMPUTaskStatusResponse : AcsResponse
+	{
 
-			createTemplateResponse.HttpResponse = context.HttpResponse;
-			createTemplateResponse.RequestId = context.StringValue("CreateTemplate.RequestId");
-			createTemplateResponse.TemplateId = context.LongValue("CreateTemplate.TemplateId");
-        
-			return createTemplateResponse;
-        }
-    }
+		private string requestId;
+
+		private int? status;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
+	}
 }

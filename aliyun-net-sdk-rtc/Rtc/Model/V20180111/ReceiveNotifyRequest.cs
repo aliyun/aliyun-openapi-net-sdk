@@ -27,50 +27,50 @@ using Aliyun.Acs.rtc.Transform.V20180111;
 
 namespace Aliyun.Acs.rtc.Model.V20180111
 {
-    public class DescribeAppsRequest : RpcAcsRequest<DescribeAppsResponse>
+    public class ReceiveNotifyRequest : RpcAcsRequest<ReceiveNotifyResponse>
     {
-        public DescribeAppsRequest()
-            : base("rtc", "2018-01-11", "DescribeApps", "rtc", "openAPI")
+        public ReceiveNotifyRequest()
+            : base("rtc", "2018-01-11", "ReceiveNotify", "rtc", "openAPI")
         {
         }
 
-		private int? pageNum;
+		private string traceId;
 
-		private int? pageSize;
+		private string content;
 
 		private string action;
 
-		private string order;
+		private string _event;
 
 		private long? ownerId;
 
-		private string appId;
+		private string contentType;
 
-		private string status;
+		private string bizId;
 
-		public int? PageNum
+		public string TraceId
 		{
 			get
 			{
-				return pageNum;
+				return traceId;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				traceId = value;
+				DictionaryUtil.Add(QueryParameters, "TraceId", value);
 			}
 		}
 
-		public int? PageSize
+		public string Content
 		{
 			get
 			{
-				return pageSize;
+				return content;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
 			}
 		}
 
@@ -87,16 +87,16 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public string Order
+		public string _Event
 		{
 			get
 			{
-				return order;
+				return _event;
 			}
 			set	
 			{
-				order = value;
-				DictionaryUtil.Add(QueryParameters, "Order", value);
+				_event = value;
+				DictionaryUtil.Add(QueryParameters, "Event", value);
 			}
 		}
 
@@ -113,35 +113,35 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public string AppId
+		public string ContentType
 		{
 			get
 			{
-				return appId;
+				return contentType;
 			}
 			set	
 			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
+				contentType = value;
+				DictionaryUtil.Add(QueryParameters, "ContentType", value);
 			}
 		}
 
-		public string Status
+		public string BizId
 		{
 			get
 			{
-				return status;
+				return bizId;
 			}
 			set	
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 
-        public override DescribeAppsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ReceiveNotifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAppsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ReceiveNotifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

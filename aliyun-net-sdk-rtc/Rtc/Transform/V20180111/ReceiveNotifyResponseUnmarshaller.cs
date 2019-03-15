@@ -16,26 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.rtc.Model.V20180111
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.rtc.Model.V20180111;
+
+namespace Aliyun.Acs.rtc.Transform.V20180111
 {
-	public class StopAppResponse : AcsResponse
-	{
+    public class ReceiveNotifyResponseUnmarshaller
+    {
+        public static ReceiveNotifyResponse Unmarshall(UnmarshallerContext context)
+        {
+			ReceiveNotifyResponse receiveNotifyResponse = new ReceiveNotifyResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			receiveNotifyResponse.HttpResponse = context.HttpResponse;
+			receiveNotifyResponse.RequestId = context.StringValue("ReceiveNotify.RequestId");
+			receiveNotifyResponse.TraceId = context.StringValue("ReceiveNotify.TraceId");
+        
+			return receiveNotifyResponse;
+        }
+    }
 }
