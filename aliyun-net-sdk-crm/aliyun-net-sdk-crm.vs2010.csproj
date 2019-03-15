@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{10a12d2a-f730-4cdd-8f77-8a6f8a6e3aa7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-crm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Crm\Model\V20150408\QueryBidUserCertifiedInfoResponse.cs" />
+	<Compile Include="Crm\Model\V20150408\AddLabelResponse.cs" />
+	<Compile Include="Crm\Model\V20150408\CheckLabelRequest.cs" />
+	<Compile Include="Crm\Model\V20150408\BatchGetAliyunIdByAliyunPkResponse.cs" />
+	<Compile Include="Crm\Model\V20150408\CheckLabelResponse.cs" />
+	<Compile Include="Crm\Model\V20150408\DeleteLabelForBidResponse.cs" />
+	<Compile Include="Crm\Model\V20150408\AddLabelRequest.cs" />
+	<Compile Include="Crm\Model\V20150408\RemoveIdentityCertifiedForBidUserRequest.cs" />
+	<Compile Include="Crm\Model\V20150408\DeleteLabelForBidRequest.cs" />
+	<Compile Include="Crm\Model\V20150408\RemoveIdentityCertifiedForBidUserResponse.cs" />
+	<Compile Include="Crm\Model\V20150408\DeleteLabelRequest.cs" />
+	<Compile Include="Crm\Model\V20150408\QueryBidUserCertifiedInfoRequest.cs" />
+	<Compile Include="Crm\Model\V20150408\AddIdentityCertifiedForBidUserRequest.cs" />
+	<Compile Include="Crm\Model\V20150408\GetAliyunPkByAliyunIdResponse.cs" />
+	<Compile Include="Crm\Model\V20150408\AddLabelForBidResponse.cs" />
+	<Compile Include="Crm\Model\V20150408\QueryCustomerLabelRequest.cs" />
+	<Compile Include="Crm\Model\V20150408\CheckLabelForBidRequest.cs" />
+	<Compile Include="Crm\Model\V20150408\AddIdentityCertifiedForBidUserResponse.cs" />
+	<Compile Include="Crm\Model\V20150408\QueryCustomerLabelResponse.cs" />
+	<Compile Include="Crm\Model\V20150408\DeleteLabelResponse.cs" />
+	<Compile Include="Crm\Model\V20150408\BatchGetAliyunIdByAliyunPkRequest.cs" />
+	<Compile Include="Crm\Model\V20150408\AddLabelForBidRequest.cs" />
+	<Compile Include="Crm\Model\V20150408\GetAliyunPkByAliyunIdRequest.cs" />
+	<Compile Include="Crm\Model\V20150408\CheckLabelForBidResponse.cs" />
+	<Compile Include="Crm\Transform\V20150408\DeleteLabelResponseUnmarshaller.cs" />
+	<Compile Include="Crm\Transform\V20150408\RemoveIdentityCertifiedForBidUserResponseUnmarshaller.cs" />
+	<Compile Include="Crm\Transform\V20150408\QueryBidUserCertifiedInfoResponseUnmarshaller.cs" />
+	<Compile Include="Crm\Transform\V20150408\CheckLabelResponseUnmarshaller.cs" />
+	<Compile Include="Crm\Transform\V20150408\DeleteLabelForBidResponseUnmarshaller.cs" />
+	<Compile Include="Crm\Transform\V20150408\GetAliyunPkByAliyunIdResponseUnmarshaller.cs" />
+	<Compile Include="Crm\Transform\V20150408\QueryCustomerLabelResponseUnmarshaller.cs" />
+	<Compile Include="Crm\Transform\V20150408\BatchGetAliyunIdByAliyunPkResponseUnmarshaller.cs" />
+	<Compile Include="Crm\Transform\V20150408\AddLabelForBidResponseUnmarshaller.cs" />
+	<Compile Include="Crm\Transform\V20150408\AddLabelResponseUnmarshaller.cs" />
+	<Compile Include="Crm\Transform\V20150408\CheckLabelForBidResponseUnmarshaller.cs" />
+	<Compile Include="Crm\Transform\V20150408\AddIdentityCertifiedForBidUserResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
