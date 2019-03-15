@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.pvtz.Model.V20180101
 {
@@ -129,6 +130,8 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 
 			private bool? isPtr;
 
+			private string proxyPattern;
+
 			public string ZoneId
 			{
 				get
@@ -234,6 +237,18 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 				set	
 				{
 					isPtr = value;
+				}
+			}
+
+			public string ProxyPattern
+			{
+				get
+				{
+					return proxyPattern;
+				}
+				set	
+				{
+					proxyPattern = value;
 				}
 			}
 		}

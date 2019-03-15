@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.pvtz.Model.V20180101;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.pvtz.Model.V20180101;
 
 namespace Aliyun.Acs.pvtz.Transform.V20180101
 {
@@ -40,6 +41,7 @@ namespace Aliyun.Acs.pvtz.Transform.V20180101
 			describeZoneInfoResponse.UpdateTime = context.StringValue("DescribeZoneInfo.UpdateTime");
 			describeZoneInfoResponse.UpdateTimestamp = context.LongValue("DescribeZoneInfo.UpdateTimestamp");
 			describeZoneInfoResponse.IsPtr = context.BooleanValue("DescribeZoneInfo.IsPtr");
+			describeZoneInfoResponse.ProxyPattern = context.StringValue("DescribeZoneInfo.ProxyPattern");
 
 			List<DescribeZoneInfoResponse.DescribeZoneInfo_Vpc> describeZoneInfoResponse_bindVpcs = new List<DescribeZoneInfoResponse.DescribeZoneInfo_Vpc>();
 			for (int i = 0; i < context.Length("DescribeZoneInfo.BindVpcs.Length"); i++) {
@@ -48,6 +50,7 @@ namespace Aliyun.Acs.pvtz.Transform.V20180101
 				vpc.VpcId = context.StringValue("DescribeZoneInfo.BindVpcs["+ i +"].VpcId");
 				vpc.VpcName = context.StringValue("DescribeZoneInfo.BindVpcs["+ i +"].VpcName");
 				vpc.RegionName = context.StringValue("DescribeZoneInfo.BindVpcs["+ i +"].RegionName");
+				vpc.RegionId = context.StringValue("DescribeZoneInfo.BindVpcs["+ i +"].RegionId");
 
 				describeZoneInfoResponse_bindVpcs.Add(vpc);
 			}

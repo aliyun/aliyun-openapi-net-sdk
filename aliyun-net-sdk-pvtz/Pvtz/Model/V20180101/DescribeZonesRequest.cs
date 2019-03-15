@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.pvtz.Transform;
 using Aliyun.Acs.pvtz.Transform.V20180101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.pvtz.Model.V20180101
 {
@@ -33,15 +34,34 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
         {
         }
 
+		private string queryVpcId;
+
 		private int? pageSize;
 
 		private string userClientIp;
+
+		private string searchMode;
 
 		private string lang;
 
 		private string keyword;
 
 		private int? pageNumber;
+
+		private string queryRegionId;
+
+		public string QueryVpcId
+		{
+			get
+			{
+				return queryVpcId;
+			}
+			set	
+			{
+				queryVpcId = value;
+				DictionaryUtil.Add(QueryParameters, "QueryVpcId", value);
+			}
+		}
 
 		public int? PageSize
 		{
@@ -66,6 +86,19 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public string SearchMode
+		{
+			get
+			{
+				return searchMode;
+			}
+			set	
+			{
+				searchMode = value;
+				DictionaryUtil.Add(QueryParameters, "SearchMode", value);
 			}
 		}
 
@@ -108,7 +141,20 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			}
 		}
 
-        public override DescribeZonesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string QueryRegionId
+		{
+			get
+			{
+				return queryRegionId;
+			}
+			set	
+			{
+				queryRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "QueryRegionId", value);
+			}
+		}
+
+        public override DescribeZonesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeZonesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -24,18 +24,17 @@ using Aliyun.Acs.pvtz.Model.V20180101;
 
 namespace Aliyun.Acs.pvtz.Transform.V20180101
 {
-    public class AddZoneRecordResponseUnmarshaller
+    public class SetProxyPatternResponseUnmarshaller
     {
-        public static AddZoneRecordResponse Unmarshall(UnmarshallerContext context)
+        public static SetProxyPatternResponse Unmarshall(UnmarshallerContext context)
         {
-			AddZoneRecordResponse addZoneRecordResponse = new AddZoneRecordResponse();
+			SetProxyPatternResponse setProxyPatternResponse = new SetProxyPatternResponse();
 
-			addZoneRecordResponse.HttpResponse = context.HttpResponse;
-			addZoneRecordResponse.RequestId = context.StringValue("AddZoneRecord.RequestId");
-			addZoneRecordResponse.Success = context.BooleanValue("AddZoneRecord.Success");
-			addZoneRecordResponse.RecordId = context.LongValue("AddZoneRecord.RecordId");
+			setProxyPatternResponse.HttpResponse = context.HttpResponse;
+			setProxyPatternResponse.RequestId = context.StringValue("SetProxyPattern.RequestId");
+			setProxyPatternResponse.ZoneId = context.StringValue("SetProxyPattern.ZoneId");
         
-			return addZoneRecordResponse;
+			return setProxyPatternResponse;
         }
     }
 }

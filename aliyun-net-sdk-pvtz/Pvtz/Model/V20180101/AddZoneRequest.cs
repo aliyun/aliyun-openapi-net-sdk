@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.pvtz.Transform;
 using Aliyun.Acs.pvtz.Transform.V20180101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.pvtz.Model.V20180101
 {
@@ -33,11 +34,26 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
         {
         }
 
+		private string proxyPattern;
+
 		private string userClientIp;
 
 		private string lang;
 
 		private string zoneName;
+
+		public string ProxyPattern
+		{
+			get
+			{
+				return proxyPattern;
+			}
+			set	
+			{
+				proxyPattern = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyPattern", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -78,7 +94,7 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			}
 		}
 
-        public override AddZoneResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddZoneResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AddZoneResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

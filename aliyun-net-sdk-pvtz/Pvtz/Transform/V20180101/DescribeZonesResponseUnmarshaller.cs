@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.pvtz.Model.V20180101;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.pvtz.Model.V20180101;
 
 namespace Aliyun.Acs.pvtz.Transform.V20180101
 {
@@ -48,6 +49,7 @@ namespace Aliyun.Acs.pvtz.Transform.V20180101
 				zone.UpdateTime = context.StringValue("DescribeZones.Zones["+ i +"].UpdateTime");
 				zone.UpdateTimestamp = context.LongValue("DescribeZones.Zones["+ i +"].UpdateTimestamp");
 				zone.IsPtr = context.BooleanValue("DescribeZones.Zones["+ i +"].IsPtr");
+				zone.ProxyPattern = context.StringValue("DescribeZones.Zones["+ i +"].ProxyPattern");
 
 				describeZonesResponse_zones.Add(zone);
 			}

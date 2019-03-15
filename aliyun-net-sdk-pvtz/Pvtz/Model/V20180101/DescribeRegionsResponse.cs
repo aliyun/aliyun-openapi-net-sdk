@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.pvtz.Model.V20180101
 {
@@ -59,6 +60,10 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 
 			private string regionName;
 
+			private string localName;
+
+			private string regionEndpoint;
+
 			public string RegionId
 			{
 				get
@@ -80,6 +85,30 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 				set	
 				{
 					regionName = value;
+				}
+			}
+
+			public string LocalName
+			{
+				get
+				{
+					return localName;
+				}
+				set	
+				{
+					localName = value;
+				}
+			}
+
+			public string RegionEndpoint
+			{
+				get
+				{
+					return regionEndpoint;
+				}
+				set	
+				{
+					regionEndpoint = value;
 				}
 			}
 		}

@@ -16,26 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.pvtz.Model.V20180101;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.pvtz.Transform.V20180101
+namespace Aliyun.Acs.pvtz.Model.V20180101
 {
-    public class AddZoneRecordResponseUnmarshaller
-    {
-        public static AddZoneRecordResponse Unmarshall(UnmarshallerContext context)
-        {
-			AddZoneRecordResponse addZoneRecordResponse = new AddZoneRecordResponse();
+	public class SetProxyPatternResponse : AcsResponse
+	{
 
-			addZoneRecordResponse.HttpResponse = context.HttpResponse;
-			addZoneRecordResponse.RequestId = context.StringValue("AddZoneRecord.RequestId");
-			addZoneRecordResponse.Success = context.BooleanValue("AddZoneRecord.Success");
-			addZoneRecordResponse.RecordId = context.LongValue("AddZoneRecord.RecordId");
-        
-			return addZoneRecordResponse;
-        }
-    }
+		private string requestId;
+
+		private string zoneId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+			}
+		}
+	}
 }

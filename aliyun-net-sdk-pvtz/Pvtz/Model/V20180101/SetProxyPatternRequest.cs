@@ -27,14 +27,14 @@ using Aliyun.Acs.pvtz.Transform.V20180101;
 
 namespace Aliyun.Acs.pvtz.Model.V20180101
 {
-    public class AddZoneRecordRequest : RpcAcsRequest<AddZoneRecordResponse>
+    public class SetProxyPatternRequest : RpcAcsRequest<SetProxyPatternResponse>
     {
-        public AddZoneRecordRequest()
-            : base("pvtz", "2018-01-01", "AddZoneRecord", "pvtz", "openAPI")
+        public SetProxyPatternRequest()
+            : base("pvtz", "2018-01-01", "SetProxyPattern", "pvtz", "openAPI")
         {
         }
 
-		private string rr;
+		private string proxyPattern;
 
 		private string userClientIp;
 
@@ -42,24 +42,16 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 
 		private string lang;
 
-		private string type;
-
-		private int? priority;
-
-		private int? ttl;
-
-		private string _value;
-
-		public string Rr
+		public string ProxyPattern
 		{
 			get
 			{
-				return rr;
+				return proxyPattern;
 			}
 			set	
 			{
-				rr = value;
-				DictionaryUtil.Add(QueryParameters, "Rr", value);
+				proxyPattern = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyPattern", value);
 			}
 		}
 
@@ -102,61 +94,9 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			}
 		}
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public int? Priority
-		{
-			get
-			{
-				return priority;
-			}
-			set	
-			{
-				priority = value;
-				DictionaryUtil.Add(QueryParameters, "Priority", value.ToString());
-			}
-		}
-
-		public int? Ttl
-		{
-			get
-			{
-				return ttl;
-			}
-			set	
-			{
-				ttl = value;
-				DictionaryUtil.Add(QueryParameters, "Ttl", value.ToString());
-			}
-		}
-
-		public string _Value
-		{
-			get
-			{
-				return _value;
-			}
-			set	
-			{
-				_value = value;
-				DictionaryUtil.Add(QueryParameters, "Value", value);
-			}
-		}
-
-        public override AddZoneRecordResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetProxyPatternResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddZoneRecordResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetProxyPatternResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

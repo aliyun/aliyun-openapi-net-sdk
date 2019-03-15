@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.pvtz.Model.V20180101
 {
@@ -43,6 +44,8 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 		private long? updateTimestamp;
 
 		private bool? isPtr;
+
+		private string proxyPattern;
 
 		private List<DescribeZoneInfo_Vpc> bindVpcs;
 
@@ -166,6 +169,18 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			}
 		}
 
+		public string ProxyPattern
+		{
+			get
+			{
+				return proxyPattern;
+			}
+			set	
+			{
+				proxyPattern = value;
+			}
+		}
+
 		public List<DescribeZoneInfo_Vpc> BindVpcs
 		{
 			get
@@ -188,6 +203,8 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			private string vpcName;
 
 			private string regionName;
+
+			private string regionId;
 
 			public string ReionId
 			{
@@ -234,6 +251,18 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 				set	
 				{
 					regionName = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

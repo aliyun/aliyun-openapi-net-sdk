@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.pvtz.Transform;
 using Aliyun.Acs.pvtz.Transform.V20180101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.pvtz.Model.V20180101
 {
@@ -39,11 +40,13 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 
 		private string zoneId;
 
+		private string searchMode;
+
 		private string tag;
 
-		private string keyword;
-
 		private string lang;
+
+		private string keyword;
 
 		private int? pageNumber;
 
@@ -86,6 +89,19 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			}
 		}
 
+		public string SearchMode
+		{
+			get
+			{
+				return searchMode;
+			}
+			set	
+			{
+				searchMode = value;
+				DictionaryUtil.Add(QueryParameters, "SearchMode", value);
+			}
+		}
+
 		public string Tag
 		{
 			get
@@ -96,19 +112,6 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			{
 				tag = value;
 				DictionaryUtil.Add(QueryParameters, "Tag", value);
-			}
-		}
-
-		public string Keyword
-		{
-			get
-			{
-				return keyword;
-			}
-			set	
-			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
 			}
 		}
 
@@ -125,6 +128,19 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			}
 		}
 
+		public string Keyword
+		{
+			get
+			{
+				return keyword;
+			}
+			set	
+			{
+				keyword = value;
+				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -138,7 +154,7 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			}
 		}
 
-        public override DescribeZoneRecordsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeZoneRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeZoneRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
