@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CloudPhoto.Transform;
 using Aliyun.Acs.CloudPhoto.Transform.V20170711;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 {
@@ -83,7 +84,7 @@ namespace Aliyun.Acs.CloudPhoto.Model.V20170711
 			}
 		}
 
-        public override GetDownloadUrlsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetDownloadUrlsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetDownloadUrlsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

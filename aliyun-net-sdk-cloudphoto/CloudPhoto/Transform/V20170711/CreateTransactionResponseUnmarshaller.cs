@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CloudPhoto.Model.V20170711;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CloudPhoto.Model.V20170711;
 
 namespace Aliyun.Acs.CloudPhoto.Transform.V20170711
 {
