@@ -141,6 +141,11 @@ namespace Aliyun.Acs.Core.Http
             httpWebRequest.Timeout = request.connectTimeout > 0 ? request.connectTimeout : DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds;
             httpWebRequest.ReadWriteTimeout = request.readTimeout > 0 ? request.readTimeout : DEFAULT_READ_TIMEOUT_IN_MilliSeconds;
 
+            if (request.IgnoreCertificate)
+            {
+                httpWebRequest.ServerCertificateValidationCallback = (s, cert, chains, sslPolicyError) => true;
+            }
+
             if (request.Headers.ContainsKey("Accept"))
             {
                 httpWebRequest.Accept = DictionaryUtil.Pop(request.Headers, "Accept");
