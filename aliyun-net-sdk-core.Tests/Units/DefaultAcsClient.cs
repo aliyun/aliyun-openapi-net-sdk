@@ -664,5 +664,18 @@ namespace Aliyun.Acs.Core.Tests.Units
             client.ResolveTimeout(httpRequest);
             Assert.Equal(2048, httpRequest.readTimeout);
         }
+
+        [Fact]
+        public void ClientIgnoreCertificateTest()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            DefaultAcsClient client = new DefaultAcsClient(profile);
+
+            client.SetHttpsInsecure();
+            Assert.False(client.IgnoreCertificate);
+
+            client.SetHttpsInsecure(true);
+            Assert.True(client.IgnoreCertificate);
+        }
     }
 }

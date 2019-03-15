@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Core.Http
         public int timeoutInMilliSeconds { get; set; } = 100000;
         public int readTimeout { get; private set; }
         public int connectTimeout { get; private set; }
+        public bool IgnoreCertificate { get; private set; }
 
         public HttpRequest() { }
 
@@ -93,6 +94,11 @@ namespace Aliyun.Acs.Core.Http
         public void SetReadTimeoutInMilliSeconds(int readTimeout)
         {
             this.readTimeout = readTimeout;
+        }
+
+        public void SetHttpsInsecure(bool ignoreCertificate = false)
+        {
+            IgnoreCertificate = ignoreCertificate;
         }
     }
 }

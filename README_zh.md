@@ -252,6 +252,18 @@ request.SetConnectTimeoutInMilliSeconds(1024);
 request.SetReadTimeoutInMilliSeconds(2048);
 ```
 
+## 忽略HTTPS证书校验
+
+当您想要在客户端关掉HTTPS证书的校验时，你可以在 Client 或 Request 级别进行设置
+
+```c#
+// client级别的证书忽略校验
+client.SetHttpsInsecure(true);
+
+// request级别的证书忽略校验
+request.SetHttpsInsecure(true);
+```
+
 ## API参考
 
 要知道您想访问的产品提供的 API 以及它们的参数，请参考开放了 API 的[产品列表](https://develop.aliyun.com/tools/openapilist)。

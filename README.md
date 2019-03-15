@@ -256,3 +256,16 @@ DescribeInstancesRequest request = new DescribeInstancesRequest();
 request.SetConnectTimeoutInMilliSeconds(1024);
 request.SetReadTimeoutInMilliSeconds(2048);
 ```
+
+## Ignore HTTPS certificate verification
+
+When you want to turn off the verification of the HTTPS certificate on the client, you can set it at the Client or Request level.
+
+```c#
+//  Client level certificate ignores verification
+client.SetHttpsInsecure(true);
+
+// Request level certificate ignores verification
+request.SetHttpsInsecure(true);
+```
+****

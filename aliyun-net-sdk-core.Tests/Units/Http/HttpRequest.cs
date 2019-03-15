@@ -90,5 +90,17 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
             instance.SetReadTimeoutInMilliSeconds(2048);
             Assert.Equal(2048, instance.readTimeout);
         }
+
+        [Fact]
+        public void RequestIgnoreCertificateTest()
+        {
+            HttpRequest instance = new HttpRequest();
+
+            instance.SetHttpsInsecure();
+            Assert.False(instance.IgnoreCertificate);
+
+            instance.SetHttpsInsecure(true);
+            Assert.True(instance.IgnoreCertificate);
+        }
     }
 }

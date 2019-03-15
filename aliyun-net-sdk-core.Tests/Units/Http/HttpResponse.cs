@@ -121,6 +121,15 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
         }
 
         [Fact]
+        public void GetWebRequestWithIgnoreCertificate()
+        {
+            HttpRequest request = HttpRequestTest.SetContent();
+            request.SetHttpsInsecure(true);
+
+            HttpWebRequest httpWebRequest = HttpResponse.GetWebRequest(request);
+        }
+
+        [Fact]
         public void isSuccess()
         {
             HttpResponse instance = this.SetContent();

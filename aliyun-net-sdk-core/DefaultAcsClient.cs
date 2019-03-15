@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Core
 
         public int readTimeout { get; private set; }
         public int connectTimeout { get; private set; }
+        public bool IgnoreCertificate { get; private set; }
 
         public DefaultAcsClient()
         {
@@ -259,11 +260,11 @@ namespace Aliyun.Acs.Core
             {
                 shouldRetry = autoRetry && retryTimes < maxRetryNumber;
                 HttpRequest httpRequest = request.SignRequest(signer, credentials, format, domain);
-                HttpResponse response;
 
                 ResolveTimeout(httpRequest);
+                SetHttpsInsecure(IgnoreCertificate);
 
-                response = this.GetResponse(httpRequest);
+                HttpResponse response = this.GetResponse(httpRequest);
 
                 PrintHttpDebugMsg(request, response);
 
@@ -391,6 +392,11 @@ namespace Aliyun.Acs.Core
 
             var finalConnectTimeout = request.connectTimeout > 0 ? request.connectTimeout : this.connectTimeout > 0 ? this.connectTimeout : 0;
             request.SetConnectTimeoutInMilliSeconds(finalConnectTimeout);
+        }
+
+        public void SetHttpsInsecure(bool ignoreCertificate = false)
+        {
+            IgnoreCertificate = ignoreCertificate;
         }
     }
 }
