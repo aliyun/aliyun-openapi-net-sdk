@@ -19,24 +19,27 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Ccs.Transform;
-using Aliyun.Acs.Ccs.Transform.V20171001;
 
 namespace Aliyun.Acs.Ccs.Model.V20171001
 {
-    public class GetHotlineRecordRequest : RpcAcsRequest<GetHotlineRecordResponse>
-    {
-        public GetHotlineRecordRequest()
-            : base("Ccs", "2017-10-01", "GetHotlineRecord", "ccs", "openAPI")
-        {
-        }
+	public class CreateTicketResponse : AcsResponse
+	{
+
+		private string requestId;
 
 		private string id;
 
-		private string ccsInstanceId;
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Id
 		{
@@ -47,26 +50,7 @@ namespace Aliyun.Acs.Ccs.Model.V20171001
 			set	
 			{
 				id = value;
-				DictionaryUtil.Add(QueryParameters, "Id", value);
 			}
 		}
-
-		public string CcsInstanceId
-		{
-			get
-			{
-				return ccsInstanceId;
-			}
-			set	
-			{
-				ccsInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "CcsInstanceId", value);
-			}
-		}
-
-        public override GetHotlineRecordResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return GetHotlineRecordResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+	}
 }

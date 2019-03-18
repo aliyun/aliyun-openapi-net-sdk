@@ -27,27 +27,60 @@ using Aliyun.Acs.Ccs.Transform.V20171001;
 
 namespace Aliyun.Acs.Ccs.Model.V20171001
 {
-    public class GetHotlineRecordRequest : RpcAcsRequest<GetHotlineRecordResponse>
+    public class CreateTicketRequest : RpcAcsRequest<CreateTicketResponse>
     {
-        public GetHotlineRecordRequest()
-            : base("Ccs", "2017-10-01", "GetHotlineRecord", "ccs", "openAPI")
+        public CreateTicketRequest()
+            : base("Ccs", "2017-10-01", "CreateTicket", "ccs", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
-		private string id;
+		private string creatorId;
+
+		private string description;
+
+		private string type;
 
 		private string ccsInstanceId;
 
-		public string Id
+		private string customFields;
+
+		public string CreatorId
 		{
 			get
 			{
-				return id;
+				return creatorId;
 			}
 			set	
 			{
-				id = value;
-				DictionaryUtil.Add(QueryParameters, "Id", value);
+				creatorId = value;
+				DictionaryUtil.Add(QueryParameters, "CreatorId", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -64,9 +97,22 @@ namespace Aliyun.Acs.Ccs.Model.V20171001
 			}
 		}
 
-        public override GetHotlineRecordResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string CustomFields
+		{
+			get
+			{
+				return customFields;
+			}
+			set	
+			{
+				customFields = value;
+				DictionaryUtil.Add(QueryParameters, "CustomFields", value);
+			}
+		}
+
+        public override CreateTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetHotlineRecordResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

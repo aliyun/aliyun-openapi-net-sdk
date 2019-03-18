@@ -27,16 +27,35 @@ using Aliyun.Acs.Ccs.Transform.V20171001;
 
 namespace Aliyun.Acs.Ccs.Model.V20171001
 {
-    public class GetHotlineRecordRequest : RpcAcsRequest<GetHotlineRecordResponse>
+    public class ProceedTicketRequest : RpcAcsRequest<ProceedTicketResponse>
     {
-        public GetHotlineRecordRequest()
-            : base("Ccs", "2017-10-01", "GetHotlineRecord", "ccs", "openAPI")
+        public ProceedTicketRequest()
+            : base("Ccs", "2017-10-01", "ProceedTicket", "ccs", "openAPI")
         {
         }
+
+		private string memo;
 
 		private string id;
 
 		private string ccsInstanceId;
+
+		private string operation;
+
+		private string operatorId;
+
+		public string Memo
+		{
+			get
+			{
+				return memo;
+			}
+			set	
+			{
+				memo = value;
+				DictionaryUtil.Add(QueryParameters, "Memo", value);
+			}
+		}
 
 		public string Id
 		{
@@ -64,9 +83,35 @@ namespace Aliyun.Acs.Ccs.Model.V20171001
 			}
 		}
 
-        public override GetHotlineRecordResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Operation
+		{
+			get
+			{
+				return operation;
+			}
+			set	
+			{
+				operation = value;
+				DictionaryUtil.Add(QueryParameters, "Operation", value);
+			}
+		}
+
+		public string OperatorId
+		{
+			get
+			{
+				return operatorId;
+			}
+			set	
+			{
+				operatorId = value;
+				DictionaryUtil.Add(QueryParameters, "OperatorId", value);
+			}
+		}
+
+        public override ProceedTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetHotlineRecordResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ProceedTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

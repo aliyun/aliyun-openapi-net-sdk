@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ccs.Model.V20171001
 {
@@ -26,7 +27,7 @@ namespace Aliyun.Acs.Ccs.Model.V20171001
 
 		private string requestId;
 
-		private int? totalCount;
+		private long? totalCount;
 
 		private int? pageNum;
 
@@ -46,7 +47,7 @@ namespace Aliyun.Acs.Ccs.Model.V20171001
 			}
 		}
 
-		public int? TotalCount
+		public long? TotalCount
 		{
 			get
 			{

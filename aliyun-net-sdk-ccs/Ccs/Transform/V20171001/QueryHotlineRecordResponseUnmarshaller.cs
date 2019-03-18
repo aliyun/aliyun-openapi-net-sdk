@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ccs.Model.V20171001;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ccs.Model.V20171001;
 
 namespace Aliyun.Acs.Ccs.Transform.V20171001
 {
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.Ccs.Transform.V20171001
 
 			queryHotlineRecordResponse.HttpResponse = context.HttpResponse;
 			queryHotlineRecordResponse.RequestId = context.StringValue("QueryHotlineRecord.RequestId");
-			queryHotlineRecordResponse.TotalCount = context.IntegerValue("QueryHotlineRecord.TotalCount");
+			queryHotlineRecordResponse.TotalCount = context.LongValue("QueryHotlineRecord.TotalCount");
 			queryHotlineRecordResponse.PageNum = context.IntegerValue("QueryHotlineRecord.PageNum");
 			queryHotlineRecordResponse.PageSize = context.IntegerValue("QueryHotlineRecord.PageSize");
 
