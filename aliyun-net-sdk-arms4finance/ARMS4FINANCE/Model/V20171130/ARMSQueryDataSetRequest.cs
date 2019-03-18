@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.ARMS4FINANCE.Transform;
 using Aliyun.Acs.ARMS4FINANCE.Transform.V20171130;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.ARMS4FINANCE.Model.V20171130
 {
     public class ARMSQueryDataSetRequest : RpcAcsRequest<ARMSQueryDataSetResponse>
     {
         public ARMSQueryDataSetRequest()
-            : base("ARMS4FINANCE", "2017-11-30", "ARMSQueryDataSet")
+            : base("ARMS4FINANCE", "2017-11-30", "ARMSQueryDataSet", "arms4finance", "openAPI")
         {
         }
 
@@ -156,8 +157,8 @@ namespace Aliyun.Acs.ARMS4FINANCE.Model.V20171130
 				dimensionss = value;
 				for (int i = 0; i < dimensionss.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Dimensions." + (i + 1) + ".Key", dimensionss[i].Key);
 					DictionaryUtil.Add(QueryParameters,"Dimensions." + (i + 1) + ".Value", dimensionss[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Dimensions." + (i + 1) + ".Key", dimensionss[i].Key);
 				}
 			}
 		}
@@ -165,21 +166,9 @@ namespace Aliyun.Acs.ARMS4FINANCE.Model.V20171130
 		public class Dimensions
 		{
 
-			private string key;
-
 			private string value_;
 
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
+			private string key;
 
 			public string Value
 			{
@@ -192,9 +181,21 @@ namespace Aliyun.Acs.ARMS4FINANCE.Model.V20171130
 					value_ = value;
 				}
 			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
 		}
 
-        public override ARMSQueryDataSetResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ARMSQueryDataSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ARMSQueryDataSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

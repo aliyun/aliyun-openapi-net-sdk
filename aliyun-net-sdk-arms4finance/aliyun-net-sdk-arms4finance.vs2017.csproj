@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Aliyun.Acs.ARMS4FINANCE</RootNamespace>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <Authors>Alibaba Cloud</Authors>
     <Copyright>©2009-2018 Alibaba Cloud</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -12,8 +12,7 @@
     <PackageIconUrl>https://www.alibabacloud.com/favicon.ico</PackageIconUrl>
     <Description>Alibaba Cloud SDK for C#</Description>
     <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageTags>alibaba aliyun SDK</PackageTags>
-    <PackageId>aliyun-net-sdk-arms4finance</PackageId>
+    <PackageTags>alibaba aliyun SDK ARMS4FINANCE</PackageTags>
     <AssemblyName>aliyun-net-sdk-arms4finance</AssemblyName>
   </PropertyGroup>
 
