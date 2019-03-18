@@ -49,7 +49,15 @@ namespace Aliyun.Acs.Core.Auth
             this.roleSessionName = GetNewRoleSessionName();
             this.stsClient = new DefaultAcsClient(clientProfile, longLivedCredentialsProvider);
             this.roleSessionDurationSeconds = DEFAULT_DURATION_SECONDS;
+        }
 
+        public STSAssumeRoleSessionCredentialsProvider(AlibabaCloudCredentials longLivedCredentials, string roleArn, IAcsClient client)
+        {
+            AlibabaCloudCredentialsProvider longLivedCredentialsProvider = new StaticCredentialsProvider(longLivedCredentials);
+            this.roleArn = roleArn;
+            this.roleSessionName = GetNewRoleSessionName();
+            this.stsClient = client;
+            this.roleSessionDurationSeconds = DEFAULT_DURATION_SECONDS;
         }
 
         public STSAssumeRoleSessionCredentialsProvider WithRoleSessionName(String roleSessionName)
@@ -108,7 +116,7 @@ namespace Aliyun.Acs.Core.Auth
                 RoleSessionName = roleSessionName,
                 DurationSeconds = roleSessionDurationSeconds
             };
-            AssumeRoleResponse response = this.GetResponse(assumeRoleRequest);
+            AssumeRoleResponse response = this.stsClient.GetAcsResponse(assumeRoleRequest);
             return new RamRoleArnCredential(
                 response.Credentials.AccessKeyId,
                 response.Credentials.AccessKeySecret,
@@ -117,11 +125,6 @@ namespace Aliyun.Acs.Core.Auth
                 response.Credentials.SecurityToken,
                 roleSessionDurationSeconds
             );
-        }
-
-        public virtual AssumeRoleResponse GetResponse(AssumeRoleRequest assumeRoleRequest)
-        {
-            return stsClient.GetAcsResponse(assumeRoleRequest);
         }
     }
 }
