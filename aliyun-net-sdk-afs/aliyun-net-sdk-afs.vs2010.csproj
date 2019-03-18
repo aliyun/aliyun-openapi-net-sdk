@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3c5ea2d2-25c4-4452-b512-a0cad5e4e0f3}</ProjectGuid>
+    <ProjectGuid>{ea764971-e795-497c-9d4e-106ff972edf1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,51 +40,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Afs\Model\V20180112\DescribePersonMachineListRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\AnalyzeNvcRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeCaptchaMinRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\CreateConfigurationResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeCaptchaDayRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\UpdateConfigNameRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeCaptchaOrderResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\UpdateConfigNameResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\ConfigurationStyleResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeCaptchaMinResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeOrderInfoResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeEarlyWarningRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribePersonMachineListResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\SetEarlyWarningRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeCaptchaIpCityResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeConfigNameResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeCaptchaDayResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeCaptchaOrderRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\AuthenticateSigRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeCaptchaRiskResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeConfigNameRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeCaptchaIpCityRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\AuthenticateSigResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeEarlyWarningResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeOrderInfoRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\ConfigurationStyleRequest.cs" />
-	<Compile Include="Afs\Model\V20180112\DescribeCaptchaRiskRequest.cs" />
 	<Compile Include="Afs\Model\V20180112\AnalyzeNvcResponse.cs" />
-	<Compile Include="Afs\Model\V20180112\SetEarlyWarningResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\UpdateConfigNameResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeCaptchaDayRequest.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeCaptchaDayResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\AuthenticateSigResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeCaptchaRiskRequest.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeCaptchaMinResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeCaptchaOrderRequest.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeEarlyWarningResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribePersonMachineListRequest.cs" />
 	<Compile Include="Afs\Model\V20180112\CreateConfigurationRequest.cs" />
-	<Compile Include="Afs\Transform\V20180112\DescribeOrderInfoResponseUnmarshaller.cs" />
+	<Compile Include="Afs\Model\V20180112\SetEarlyWarningRequest.cs" />
+	<Compile Include="Afs\Model\V20180112\CreateConfigurationResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeCaptchaMinRequest.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeCaptchaIpCityRequest.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeCaptchaRiskResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeCaptchaIpCityResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeOrderInfoResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribePersonMachineListResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\UpdateConfigNameRequest.cs" />
+	<Compile Include="Afs\Model\V20180112\ConfigurationStyleRequest.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeCaptchaOrderResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\SetEarlyWarningResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeConfigNameRequest.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeOrderInfoRequest.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeConfigNameResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\ConfigurationStyleResponse.cs" />
+	<Compile Include="Afs\Model\V20180112\AuthenticateSigRequest.cs" />
+	<Compile Include="Afs\Model\V20180112\AnalyzeNvcRequest.cs" />
+	<Compile Include="Afs\Model\V20180112\DescribeEarlyWarningRequest.cs" />
+	<Compile Include="Afs\Transform\V20180112\DescribeCaptchaIpCityResponseUnmarshaller.cs" />
+	<Compile Include="Afs\Transform\V20180112\DescribeConfigNameResponseUnmarshaller.cs" />
+	<Compile Include="Afs\Transform\V20180112\ConfigurationStyleResponseUnmarshaller.cs" />
+	<Compile Include="Afs\Transform\V20180112\DescribeCaptchaMinResponseUnmarshaller.cs" />
+	<Compile Include="Afs\Transform\V20180112\SetEarlyWarningResponseUnmarshaller.cs" />
+	<Compile Include="Afs\Transform\V20180112\DescribeEarlyWarningResponseUnmarshaller.cs" />
 	<Compile Include="Afs\Transform\V20180112\DescribeCaptchaDayResponseUnmarshaller.cs" />
 	<Compile Include="Afs\Transform\V20180112\AuthenticateSigResponseUnmarshaller.cs" />
-	<Compile Include="Afs\Transform\V20180112\DescribePersonMachineListResponseUnmarshaller.cs" />
-	<Compile Include="Afs\Transform\V20180112\DescribeEarlyWarningResponseUnmarshaller.cs" />
-	<Compile Include="Afs\Transform\V20180112\DescribeCaptchaOrderResponseUnmarshaller.cs" />
-	<Compile Include="Afs\Transform\V20180112\DescribeCaptchaIpCityResponseUnmarshaller.cs" />
-	<Compile Include="Afs\Transform\V20180112\DescribeCaptchaMinResponseUnmarshaller.cs" />
 	<Compile Include="Afs\Transform\V20180112\UpdateConfigNameResponseUnmarshaller.cs" />
-	<Compile Include="Afs\Transform\V20180112\DescribeCaptchaRiskResponseUnmarshaller.cs" />
-	<Compile Include="Afs\Transform\V20180112\CreateConfigurationResponseUnmarshaller.cs" />
-	<Compile Include="Afs\Transform\V20180112\SetEarlyWarningResponseUnmarshaller.cs" />
 	<Compile Include="Afs\Transform\V20180112\AnalyzeNvcResponseUnmarshaller.cs" />
-	<Compile Include="Afs\Transform\V20180112\ConfigurationStyleResponseUnmarshaller.cs" />
-	<Compile Include="Afs\Transform\V20180112\DescribeConfigNameResponseUnmarshaller.cs" />
+	<Compile Include="Afs\Transform\V20180112\DescribeCaptchaOrderResponseUnmarshaller.cs" />
+	<Compile Include="Afs\Transform\V20180112\CreateConfigurationResponseUnmarshaller.cs" />
+	<Compile Include="Afs\Transform\V20180112\DescribeOrderInfoResponseUnmarshaller.cs" />
+	<Compile Include="Afs\Transform\V20180112\DescribeCaptchaRiskResponseUnmarshaller.cs" />
+	<Compile Include="Afs\Transform\V20180112\DescribePersonMachineListResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

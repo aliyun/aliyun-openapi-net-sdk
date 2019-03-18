@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.afs.Transform;
 using Aliyun.Acs.afs.Transform.V20180112;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.afs.Model.V20180112
 {
     public class SetEarlyWarningRequest : RpcAcsRequest<SetEarlyWarningResponse>
     {
         public SetEarlyWarningRequest()
-            : base("afs", "2018-01-12", "SetEarlyWarning")
+            : base("afs", "2018-01-12", "SetEarlyWarning", "afs", "openAPI")
         {
         }
 
@@ -158,7 +159,7 @@ namespace Aliyun.Acs.afs.Model.V20180112
 			return false;
 		}
 
-        public override SetEarlyWarningResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SetEarlyWarningResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SetEarlyWarningResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.afs.Transform;
 using Aliyun.Acs.afs.Transform.V20180112;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.afs.Model.V20180112
 {
     public class DescribeOrderInfoRequest : RpcAcsRequest<DescribeOrderInfoResponse>
     {
         public DescribeOrderInfoRequest()
-            : base("afs", "2018-01-12", "DescribeOrderInfo")
+            : base("afs", "2018-01-12", "DescribeOrderInfo", "afs", "openAPI")
         {
         }
 
@@ -53,7 +54,7 @@ namespace Aliyun.Acs.afs.Model.V20180112
 			return false;
 		}
 
-        public override DescribeOrderInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeOrderInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeOrderInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

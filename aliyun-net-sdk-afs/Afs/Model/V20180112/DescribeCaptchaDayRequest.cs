@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.afs.Transform;
 using Aliyun.Acs.afs.Transform.V20180112;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.afs.Model.V20180112
 {
     public class DescribeCaptchaDayRequest : RpcAcsRequest<DescribeCaptchaDayResponse>
     {
         public DescribeCaptchaDayRequest()
-            : base("afs", "2018-01-12", "DescribeCaptchaDay")
+            : base("afs", "2018-01-12", "DescribeCaptchaDay", "afs", "openAPI")
         {
         }
 
@@ -113,7 +114,7 @@ namespace Aliyun.Acs.afs.Model.V20180112
 			return false;
 		}
 
-        public override DescribeCaptchaDayResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeCaptchaDayResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeCaptchaDayResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
