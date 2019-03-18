@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9a80c5b1-a80d-4107-a872-81c307e89504}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-cas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Cas\Model\V20180813\DescribeLocationListResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DeleteCertificateRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateDeploymentResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOrderMaterialResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeSignatureTradeListRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDeploymentProductRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeStsAuthStatusRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeSignatureTradeDetailResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOrderAuditFailRecordRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOrderAuditFailRecordResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDeploymentDomainListRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOrderListRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDomainVerifyInfoResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeHelpListRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOSSUploadInfoResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDeploymentDetailRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeCertificateDetailRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOrderMaterialRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOSSDownloadInfoRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeCertificateBrandListRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDomainVerifyConfigurationStatusRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOrderListResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOSSDownloadInfoResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateCertificateRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOrderDetailRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateCooperationOrderRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DeleteOrderResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDomainVerifyConfigurationStatusResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeCertificateBrandListResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDeploymentProductResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateOrderCancelResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeSignatureStatisticsResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateSignatureResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateWebSignatureResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateOrderRevokeRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeCertificateListRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DeleteCertificateResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateAliDnsRecordIdRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateDomainVerifyConfigurationStatusRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DeleteOrderRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeStsAuthStatusResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateUnDeploymentResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOrderDetailResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateCooperationOrderResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateOrderDocumentRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateOrderRevokeResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeSignatureTradeDetailRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeCertificateListResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateOrderDocumentResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeExpectationResultRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDownloadCertificateResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateSignatureRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateWebSignatureRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeLocationListRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateOrderMaterialResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateOrderMaterialRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDownloadDomainVerifyConfigurationResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDownloadDomainVerifyConfigurationRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeHelpListResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeSignatureStatisticsRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateFilingSignatureDocumentRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOSSUploadInfoRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateOrderAuditResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeCertificateStatusCountResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeSignatureCapacityResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDeploymentRegionListRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDownloadCertificateRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateFilingSignatureDocumentResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateOrderCancelRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeCertificateStatusCountRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateSignaturePeopleCertificateResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeExpectationResultResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeSignatureTradeListResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateDomainVerifyConfigurationStatusResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDeploymentDomainListResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateDeploymentRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateSignatureDocumentResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeCertificateDetailResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateOrderAuditRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateSignatureDocumentRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDomainVerifyInfoRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateSignaturePeopleCertificateRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOrderDocumentResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDeploymentRegionListResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateCertificateNameRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateAliDnsRecordIdResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeDeploymentDetailResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeOrderDocumentRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateCertificateResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\DescribeSignatureCapacityRequest.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateCertificateNameResponse.cs" />
+	<Compile Include="Cas\Model\V20180813\CreateUnDeploymentRequest.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeOSSDownloadInfoResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeCertificateStatusCountResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeLocationListResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateOrderRevokeResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeSignatureCapacityResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateDeploymentResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeSignatureStatisticsResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateCertificateResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeDownloadDomainVerifyConfigurationResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateOrderMaterialResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeExpectationResultResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeDomainVerifyConfigurationStatusResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateOrderCancelResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateDomainVerifyConfigurationStatusResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateCooperationOrderResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeDeploymentProductResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeDeploymentRegionListResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeOrderDetailResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeDomainVerifyInfoResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateSignaturePeopleCertificateResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeDeploymentDomainListResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeDeploymentDetailResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateOrderDocumentResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateCertificateNameResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DeleteCertificateResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeOrderAuditFailRecordResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeOSSUploadInfoResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateOrderAuditResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateSignatureResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateAliDnsRecordIdResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeSignatureTradeListResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateSignatureDocumentResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeHelpListResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeSignatureTradeDetailResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DeleteOrderResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeCertificateDetailResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeCertificateListResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeOrderListResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeDownloadCertificateResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateUnDeploymentResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeStsAuthStatusResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateFilingSignatureDocumentResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeOrderMaterialResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeCertificateBrandListResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\DescribeOrderDocumentResponseUnmarshaller.cs" />
+	<Compile Include="Cas\Transform\V20180813\CreateWebSignatureResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
