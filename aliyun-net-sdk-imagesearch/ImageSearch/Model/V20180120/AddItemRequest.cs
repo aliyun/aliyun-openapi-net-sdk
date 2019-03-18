@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.ImageSearch.Transform;
 using Aliyun.Acs.ImageSearch.Transform.V20180120;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.ImageSearch.Model.V20180120
 {
     public class AddItemRequest : RoaAcsRequest<AddItemResponse>
     {
         public AddItemRequest()
-            : base("ImageSearch", "2018-01-20", "AddItem")
+            : base("ImageSearch", "2018-01-20", "AddItem", "imagesearch", "openAPI")
         {
 			UriPattern = "/item/add";
 			Method = MethodType.POST;
@@ -50,7 +51,7 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 			}
 		}
 
-        public override AddItemResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AddItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

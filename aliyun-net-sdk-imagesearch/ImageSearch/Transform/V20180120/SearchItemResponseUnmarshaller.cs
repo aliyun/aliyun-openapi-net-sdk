@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.ImageSearch.Model.V20180120;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.ImageSearch.Model.V20180120;
 
 namespace Aliyun.Acs.ImageSearch.Transform.V20180120
 {
