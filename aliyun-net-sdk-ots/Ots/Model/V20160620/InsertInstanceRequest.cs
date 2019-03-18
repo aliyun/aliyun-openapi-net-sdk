@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ots.Transform;
 using Aliyun.Acs.Ots.Transform.V20160620;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ots.Model.V20160620
 {
@@ -140,8 +141,8 @@ namespace Aliyun.Acs.Ots.Model.V20160620
 				tagInfos = value;
 				for (int i = 0; i < tagInfos.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"TagInfo." + (i + 1) + ".TagKey", tagInfos[i].TagKey);
 					DictionaryUtil.Add(QueryParameters,"TagInfo." + (i + 1) + ".TagValue", tagInfos[i].TagValue);
+					DictionaryUtil.Add(QueryParameters,"TagInfo." + (i + 1) + ".TagKey", tagInfos[i].TagKey);
 				}
 			}
 		}
@@ -162,21 +163,9 @@ namespace Aliyun.Acs.Ots.Model.V20160620
 		public class TagInfo
 		{
 
-			private string tagKey;
-
 			private string tagValue;
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
+			private string tagKey;
 
 			public string TagValue
 			{
@@ -189,9 +178,21 @@ namespace Aliyun.Acs.Ots.Model.V20160620
 					tagValue = value;
 				}
 			}
+
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
+				}
+			}
 		}
 
-        public override InsertInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override InsertInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return InsertInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

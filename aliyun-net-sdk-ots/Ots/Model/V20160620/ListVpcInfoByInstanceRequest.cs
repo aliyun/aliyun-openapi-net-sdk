@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ots.Transform;
 using Aliyun.Acs.Ots.Transform.V20160620;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ots.Model.V20160620
 {
@@ -123,7 +124,7 @@ namespace Aliyun.Acs.Ots.Model.V20160620
 			}
 		}
 
-        public override ListVpcInfoByInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListVpcInfoByInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ListVpcInfoByInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
