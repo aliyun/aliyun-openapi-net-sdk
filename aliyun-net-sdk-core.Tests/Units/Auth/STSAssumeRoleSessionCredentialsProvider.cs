@@ -100,37 +100,24 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         {
             DefaultProfile.ClearDefaultProfile();
 
-            var mock = new Mock<AlibabaCloudCredentials>();
-            mock.Setup(foo => foo.GetAccessKeyId()).Returns("accessKeyId");
-            mock.Setup(foo => foo.GetAccessKeySecret()).Returns("accessKeySecret");
+            var mockRamRoleArnCredential = new Mock<RamRoleArnCredential>("accesskeyId", "accessKeySecret", "roleArn", "roleSessionName", "sessionToken", 100);
+            var ramRoleCredential = mockRamRoleArnCredential.Object;
 
-            AlibabaCloudCredentials longLivedCredentials = mock.Object;
-
-            IClientProfile profile = DefaultProfile.GetProfile(
-                "cn-hangzhou",
-                "accessKeyId",
-                "accessKeySecret"
-            );
-
-            var mockInstance = new Mock<STSAssumeRoleSessionCredentialsProvider>(longLivedCredentials, "roleArn", profile);
-            AssumeRoleResponse response = new AssumeRoleResponse();
+            var response = new AssumeRoleResponse();
             response.Credentials = new AssumeRoleResponse.AssumeRole_Credentials();
-            response.Credentials.AccessKeyId = "MockAccessKeyId";
-            response.Credentials.AccessKeySecret = "MockAccessKeyId";
-            response.Credentials.SecurityToken = "MockSecurityToken";
+            response.Credentials.AccessKeyId = "ak";
+            response.Credentials.AccessKeySecret = "aks";
+            response.Credentials.SecurityToken = "token";
 
-            mockInstance.Setup(foo => foo.GetResponse(
-                It.IsAny<AssumeRoleRequest>()
-            )).Returns(response);
-            STSAssumeRoleSessionCredentialsProvider instance = mockInstance.Object;
+            var mockClient = new Mock<IAcsClient>();
+            mockClient.Setup(x => x.GetAcsResponse(It.IsAny<AcsRequest<AssumeRoleResponse>>())).Returns(response);
+            var client = mockClient.Object;
 
-            var credentials = instance.GetCredentials(); // 执行credential初始化
-            Assert.IsType<RamRoleArnCredential>(credentials);
+            var mockInstance = new Mock<STSAssumeRoleSessionCredentialsProvider>(ramRoleCredential, "roleArn", client);
 
-            var credentials2 = instance.GetCredentials(); // 不执行credential初始化，直接获取
-            Assert.IsType<RamRoleArnCredential>(credentials);
-            Assert.Equal(credentials.GetAccessKeyId(), credentials2.GetAccessKeyId());
-            Assert.Equal(credentials.GetAccessKeySecret(), credentials2.GetAccessKeySecret());
+            var instance = mockInstance.Object;
+
+            Assert.NotNull(instance.GetCredentials());
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         {
             // when securityToken is not null
             var mock = new Mock<IClientProfile>();
-            Credential credential = new Credential("accessKeyId", "accessKeySecret", "securityToken");
+            Core.Auth.Credential credential = new Core.Auth.Credential("accessKeyId", "accessKeySecret", "securityToken");
             mock.Setup(foo => foo.GetCredential()).Returns(credential);
             IClientProfile profile = mock.Object;
             StaticCredentialsProvider instance = new StaticCredentialsProvider(profile);
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
 
             // when securityToken is null
             var mock2 = new Mock<IClientProfile>();
-            Credential credential2 = new Credential("accessKeyId", "accessKeySecret");
+            Core.Auth.Credential credential2 = new Core.Auth.Credential("accessKeyId", "accessKeySecret");
             mock2.Setup(foo => foo.GetCredential()).Returns(credential2);
             IClientProfile profile2 = mock2.Object;
             StaticCredentialsProvider instance2 = new StaticCredentialsProvider(profile2);

@@ -29,7 +29,7 @@ using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth
 {
-    public class ECSMetadataServiceCredentialsFetcher
+    public class ECSMetadataServiceCredentialsFetcher : AlibabaCloudCredentialsProvider
     {
         private const string URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
         private const int DEFAULT_TIMEOUT_IN_MILLISECONDS = 5000;
@@ -163,6 +163,11 @@ namespace Aliyun.Acs.Core.Auth
         public virtual HttpResponse GetResponse(HttpRequest request)
         {
             return HttpResponse.GetResponse(request);
+        }
+
+        public AlibabaCloudCredentials GetCredentials()
+        {
+            return Fetch();
         }
     }
 }

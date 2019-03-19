@@ -10,7 +10,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void Instance()
         {
-            Credential legacyCredential = new Credential("foo", "bar");
+            Core.Auth.Credential legacyCredential = new Core.Auth.Credential("foo", "bar");
             LegacyCredentials instance = new LegacyCredentials(legacyCredential);
             Assert.IsType<LegacyCredentials>(instance);
             Assert.NotNull(instance);
@@ -19,7 +19,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void Get()
         {
-            Credential legacyCredential = new Credential("foo", "bar");
+            Core.Auth.Credential legacyCredential = new Core.Auth.Credential("foo", "bar");
             LegacyCredentials instance = new LegacyCredentials(legacyCredential);
             Assert.Equal("foo", instance.GetAccessKeyId());
         }
@@ -27,7 +27,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void GetAccessKeySecret()
         {
-            Credential legacyCredential = new Credential("foo", "bar");
+            Core.Auth.Credential legacyCredential = new Core.Auth.Credential("foo", "bar");
             LegacyCredentials instance = new LegacyCredentials(legacyCredential);
             Assert.Equal("bar", instance.GetAccessKeySecret());
         }
