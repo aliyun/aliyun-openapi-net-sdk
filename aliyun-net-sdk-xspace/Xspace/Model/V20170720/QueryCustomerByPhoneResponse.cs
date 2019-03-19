@@ -249,6 +249,10 @@ namespace Aliyun.Acs.xspace.Model.V20170720
 
 				private string mainAccountUid;
 
+				private string associatePerson;
+
+				private string tag;
+
 				private List<string> associatePersonList;
 
 				public string Cid
@@ -296,6 +300,30 @@ namespace Aliyun.Acs.xspace.Model.V20170720
 					set	
 					{
 						mainAccountUid = value;
+					}
+				}
+
+				public string AssociatePerson
+				{
+					get
+					{
+						return associatePerson;
+					}
+					set	
+					{
+						associatePerson = value;
+					}
+				}
+
+				public string Tag
+				{
+					get
+					{
+						return tag;
+					}
+					set	
+					{
+						tag = value;
 					}
 				}
 

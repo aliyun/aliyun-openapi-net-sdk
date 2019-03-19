@@ -59,6 +59,8 @@ namespace Aliyun.Acs.xspace.Transform.V20170720
 				customizeFields.AbcUrl = context.StringValue("QueryCustomerByPhone.Data["+ i +"].CustomizeFields.AbcUrl");
 				customizeFields.DistributionLevel = context.StringValue("QueryCustomerByPhone.Data["+ i +"].CustomizeFields.DistributionLevel");
 				customizeFields.MainAccountUid = context.StringValue("QueryCustomerByPhone.Data["+ i +"].CustomizeFields.MainAccountUid");
+				customizeFields.AssociatePerson = context.StringValue("QueryCustomerByPhone.Data["+ i +"].CustomizeFields.AssociatePerson");
+				customizeFields.Tag = context.StringValue("QueryCustomerByPhone.Data["+ i +"].CustomizeFields.Tag");
 
 				List<string> customizeFields_associatePersonList = new List<string>();
 				for (int j = 0; j < context.Length("QueryCustomerByPhone.Data["+ i +"].CustomizeFields.AssociatePersonList.Length"); j++) {
