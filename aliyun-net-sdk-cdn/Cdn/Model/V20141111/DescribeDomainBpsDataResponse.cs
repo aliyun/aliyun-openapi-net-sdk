@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
@@ -27,8 +28,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 		private string requestId;
 
 		private string domainName;
-
-		private string dataInterval;
 
 		private string startTime;
 
@@ -42,9 +41,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string ispName;
 
-		private List<DescribeDomainBpsData_DataModule> bpsDataPerInterval;
+		private string dataInterval;
 
-		private List<DescribeDomainBpsData_DataModule1> supplyBpsDatas;
+		private List<DescribeDomainBpsData_DataModule> bpsDataPerInterval;
 
 		public string RequestId
 		{
@@ -67,18 +66,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				domainName = value;
-			}
-		}
-
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
 			}
 		}
 
@@ -154,6 +141,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
+		public string DataInterval
+		{
+			get
+			{
+				return dataInterval;
+			}
+			set	
+			{
+				dataInterval = value;
+			}
+		}
+
 		public List<DescribeDomainBpsData_DataModule> BpsDataPerInterval
 		{
 			get
@@ -163,18 +162,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				bpsDataPerInterval = value;
-			}
-		}
-
-		public List<DescribeDomainBpsData_DataModule1> SupplyBpsDatas
-		{
-			get
-			{
-				return supplyBpsDatas;
-			}
-			set	
-			{
-				supplyBpsDatas = value;
 			}
 		}
 
@@ -189,6 +176,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string overseasValue;
 
+			private string l2Value;
+
+			private string domesticL2Value;
+
+			private string overseasL2Value;
+
 			private string dynamicValue;
 
 			private string dynamicDomesticValue;
@@ -200,12 +193,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			private string staticDomesticValue;
 
 			private string staticOverseasValue;
-
-			private string l2Value;
-
-			private string domesticL2Value;
-
-			private string overseasL2Value;
 
 			public string TimeStamp
 			{
@@ -252,6 +239,42 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					overseasValue = value;
+				}
+			}
+
+			public string L2Value
+			{
+				get
+				{
+					return l2Value;
+				}
+				set	
+				{
+					l2Value = value;
+				}
+			}
+
+			public string DomesticL2Value
+			{
+				get
+				{
+					return domesticL2Value;
+				}
+				set	
+				{
+					domesticL2Value = value;
+				}
+			}
+
+			public string OverseasL2Value
+			{
+				get
+				{
+					return overseasL2Value;
+				}
+				set	
+				{
+					overseasL2Value = value;
 				}
 			}
 
@@ -324,74 +347,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					staticOverseasValue = value;
-				}
-			}
-
-			public string L2Value
-			{
-				get
-				{
-					return l2Value;
-				}
-				set	
-				{
-					l2Value = value;
-				}
-			}
-
-			public string DomesticL2Value
-			{
-				get
-				{
-					return domesticL2Value;
-				}
-				set	
-				{
-					domesticL2Value = value;
-				}
-			}
-
-			public string OverseasL2Value
-			{
-				get
-				{
-					return overseasL2Value;
-				}
-				set	
-				{
-					overseasL2Value = value;
-				}
-			}
-		}
-
-		public class DescribeDomainBpsData_DataModule1
-		{
-
-			private string timeStamp;
-
-			private string _value;
-
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
-
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
 				}
 			}
 		}

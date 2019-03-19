@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
@@ -34,8 +35,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         }
 
 		private string startTime;
-
-		private string type;
 
 		private string dataProtocol;
 
@@ -51,6 +50,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string field;
 
+		private string interval;
+
 		public string StartTime
 		{
 			get
@@ -61,19 +62,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -168,7 +156,20 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override DescribeDomainUsageDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
+			}
+		}
+
+        public override DescribeDomainUsageDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDomainUsageDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

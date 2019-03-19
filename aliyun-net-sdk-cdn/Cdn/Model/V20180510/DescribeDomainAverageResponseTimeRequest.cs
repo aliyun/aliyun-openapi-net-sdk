@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
@@ -183,7 +184,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override DescribeDomainAverageResponseTimeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainAverageResponseTimeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDomainAverageResponseTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

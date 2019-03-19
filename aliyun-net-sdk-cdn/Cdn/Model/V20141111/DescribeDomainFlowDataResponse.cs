@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
@@ -28,11 +29,11 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string domainName;
 
-		private string dataInterval;
-
 		private string startTime;
 
 		private string endTime;
+
+		private string dataInterval;
 
 		private List<DescribeDomainFlowData_DataModule> flowDataPerInterval;
 
@@ -60,18 +61,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
-
 		public string StartTime
 		{
 			get
@@ -93,6 +82,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				endTime = value;
+			}
+		}
+
+		public string DataInterval
+		{
+			get
+			{
+				return dataInterval;
+			}
+			set	
+			{
+				dataInterval = value;
 			}
 		}
 

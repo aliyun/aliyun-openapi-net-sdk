@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20141111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
@@ -33,120 +34,25 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string domainType;
-
-		private string fixTimeGap;
-
-		private string securityToken;
-
-		private string timeMerge;
-
-		private string domainName;
-
-		private string action;
-
-		private string endTime;
-
 		private string locationNameEn;
-
-		private string interval;
 
 		private string startTime;
 
 		private string ispNameEn;
 
+		private string domainType;
+
+		private string action;
+
+		private string timeMerge;
+
+		private string domainName;
+
+		private string endTime;
+
 		private long? ownerId;
 
-		public string DomainType
-		{
-			get
-			{
-				return domainType;
-			}
-			set	
-			{
-				domainType = value;
-				DictionaryUtil.Add(QueryParameters, "DomainType", value);
-			}
-		}
-
-		public string FixTimeGap
-		{
-			get
-			{
-				return fixTimeGap;
-			}
-			set	
-			{
-				fixTimeGap = value;
-				DictionaryUtil.Add(QueryParameters, "FixTimeGap", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string TimeMerge
-		{
-			get
-			{
-				return timeMerge;
-			}
-			set	
-			{
-				timeMerge = value;
-				DictionaryUtil.Add(QueryParameters, "TimeMerge", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+		private string interval;
 
 		public string LocationNameEn
 		{
@@ -158,19 +64,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				locationNameEn = value;
 				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
-			}
-		}
-
-		public string Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 
@@ -200,6 +93,71 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
+		public string DomainType
+		{
+			get
+			{
+				return domainType;
+			}
+			set	
+			{
+				domainType = value;
+				DictionaryUtil.Add(QueryParameters, "DomainType", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string TimeMerge
+		{
+			get
+			{
+				return timeMerge;
+			}
+			set	
+			{
+				timeMerge = value;
+				DictionaryUtil.Add(QueryParameters, "TimeMerge", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -213,7 +171,20 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override DescribeDomainFlowDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
+			}
+		}
+
+        public override DescribeDomainFlowDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDomainFlowDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cdn.Model.V20141111;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Cdn.Model.V20141111;
 
 namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
@@ -32,9 +33,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			describeDomainFlowDataResponse.HttpResponse = context.HttpResponse;
 			describeDomainFlowDataResponse.RequestId = context.StringValue("DescribeDomainFlowData.RequestId");
 			describeDomainFlowDataResponse.DomainName = context.StringValue("DescribeDomainFlowData.DomainName");
-			describeDomainFlowDataResponse.DataInterval = context.StringValue("DescribeDomainFlowData.DataInterval");
 			describeDomainFlowDataResponse.StartTime = context.StringValue("DescribeDomainFlowData.StartTime");
 			describeDomainFlowDataResponse.EndTime = context.StringValue("DescribeDomainFlowData.EndTime");
+			describeDomainFlowDataResponse.DataInterval = context.StringValue("DescribeDomainFlowData.DataInterval");
 
 			List<DescribeDomainFlowDataResponse.DescribeDomainFlowData_DataModule> describeDomainFlowDataResponse_flowDataPerInterval = new List<DescribeDomainFlowDataResponse.DescribeDomainFlowData_DataModule>();
 			for (int i = 0; i < context.Length("DescribeDomainFlowData.FlowDataPerInterval.Length"); i++) {
