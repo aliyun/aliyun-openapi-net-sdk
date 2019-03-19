@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudwf.Transform;
 using Aliyun.Acs.cloudwf.Transform.V20170328;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudwf.Model.V20170328
 {
     public class DeleteApRadioSsidConfigRequest : RpcAcsRequest<DeleteApRadioSsidConfigResponse>
     {
         public DeleteApRadioSsidConfigRequest()
-            : base("cloudwf", "2017-03-28", "DeleteApRadioSsidConfig")
+            : base("cloudwf", "2017-03-28", "DeleteApRadioSsidConfig", "cloudwf", "openAPI")
         {
         }
 
@@ -78,7 +79,7 @@ namespace Aliyun.Acs.cloudwf.Model.V20170328
 			}
 		}
 
-        public override DeleteApRadioSsidConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteApRadioSsidConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteApRadioSsidConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

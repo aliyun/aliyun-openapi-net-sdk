@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudwf.Transform;
 using Aliyun.Acs.cloudwf.Transform.V20170328;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudwf.Model.V20170328
 {
     public class SaveStaStatusRequest : RpcAcsRequest<SaveStaStatusResponse>
     {
         public SaveStaStatusRequest()
-            : base("cloudwf", "2017-03-28", "SaveStaStatus")
+            : base("cloudwf", "2017-03-28", "SaveStaStatus", "cloudwf", "openAPI")
         {
         }
 
@@ -78,7 +79,7 @@ namespace Aliyun.Acs.cloudwf.Model.V20170328
 			}
 		}
 
-        public override SaveStaStatusResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SaveStaStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SaveStaStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

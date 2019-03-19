@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudwf.Transform;
 using Aliyun.Acs.cloudwf.Transform.V20170328;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudwf.Model.V20170328
 {
     public class SaveApgroupScanConfigRequest : RpcAcsRequest<SaveApgroupScanConfigResponse>
     {
         public SaveApgroupScanConfigRequest()
-            : base("cloudwf", "2017-03-28", "SaveApgroupScanConfig")
+            : base("cloudwf", "2017-03-28", "SaveApgroupScanConfig", "cloudwf", "openAPI")
         {
         }
 
@@ -78,7 +79,7 @@ namespace Aliyun.Acs.cloudwf.Model.V20170328
 			}
 		}
 
-        public override SaveApgroupScanConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SaveApgroupScanConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SaveApgroupScanConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

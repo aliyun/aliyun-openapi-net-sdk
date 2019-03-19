@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudwf.Transform;
 using Aliyun.Acs.cloudwf.Transform.V20170328;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudwf.Model.V20170328
 {
     public class DeletePositionMapRequest : RpcAcsRequest<DeletePositionMapResponse>
     {
         public DeletePositionMapRequest()
-            : base("cloudwf", "2017-03-28", "DeletePositionMap")
+            : base("cloudwf", "2017-03-28", "DeletePositionMap", "cloudwf", "openAPI")
         {
         }
 
@@ -63,7 +64,7 @@ namespace Aliyun.Acs.cloudwf.Model.V20170328
 			}
 		}
 
-        public override DeletePositionMapResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeletePositionMapResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeletePositionMapResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

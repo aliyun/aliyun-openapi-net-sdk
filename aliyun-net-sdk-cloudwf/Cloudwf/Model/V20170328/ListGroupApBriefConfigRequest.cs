@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudwf.Transform;
 using Aliyun.Acs.cloudwf.Transform.V20170328;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudwf.Model.V20170328
 {
     public class ListGroupApBriefConfigRequest : RpcAcsRequest<ListGroupApBriefConfigResponse>
     {
         public ListGroupApBriefConfigRequest()
-            : base("cloudwf", "2017-03-28", "ListGroupApBriefConfig")
+            : base("cloudwf", "2017-03-28", "ListGroupApBriefConfig", "cloudwf", "openAPI")
         {
         }
 
@@ -168,7 +169,7 @@ namespace Aliyun.Acs.cloudwf.Model.V20170328
 			}
 		}
 
-        public override ListGroupApBriefConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListGroupApBriefConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ListGroupApBriefConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
