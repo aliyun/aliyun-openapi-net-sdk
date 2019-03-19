@@ -102,5 +102,14 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
             instance.SetHttpsInsecure(true);
             Assert.True(instance.IgnoreCertificate);
         }
+
+        [Fact]
+        public void GetWebProxy()
+        {
+            HttpRequest request = new HttpRequest();
+            request.WebProxy = new System.Net.WebProxy();
+
+            Assert.NotNull(request.WebProxy);
+        }
     }
 }

@@ -146,6 +146,11 @@ namespace Aliyun.Acs.Core.Http
                 httpWebRequest.ServerCertificateValidationCallback = (s, cert, chains, sslPolicyError) => true;
             }
 
+            if (null != request.WebProxy)
+            {
+                httpWebRequest.Proxy = request.WebProxy;
+            }
+
             if (request.Headers.ContainsKey("Accept"))
             {
                 httpWebRequest.Accept = DictionaryUtil.Pop(request.Headers, "Accept");
