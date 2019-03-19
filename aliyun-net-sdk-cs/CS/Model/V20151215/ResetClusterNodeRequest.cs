@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CS.Transform;
 using Aliyun.Acs.CS.Transform.V20151215;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CS.Model.V20151215
 {
     public class ResetClusterNodeRequest : RoaAcsRequest<ResetClusterNodeResponse>
     {
         public ResetClusterNodeRequest()
-            : base("CS", "2015-12-15", "ResetClusterNode")
+            : base("CS", "2015-12-15", "ResetClusterNode", "cs", "openAPI")
         {
 			UriPattern = "/clusters/[ClusterId]/instances/[InstanceId]/reset";
 			Method = MethodType.POST;
@@ -65,7 +66,7 @@ namespace Aliyun.Acs.CS.Model.V20151215
 			}
 		}
 
-        public override ResetClusterNodeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ResetClusterNodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ResetClusterNodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

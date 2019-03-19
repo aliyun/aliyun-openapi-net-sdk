@@ -16,22 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CS.Model.V20151215;
 using System;
 using System.Collections.Generic;
 
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CS.Model.V20151215;
+
 namespace Aliyun.Acs.CS.Transform.V20151215
 {
-    public class CreateTemplateResponseUnmarshaller
+    public class DescribeClusterUserKubeconfigResponseUnmarshaller
     {
-        public static CreateTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeClusterUserKubeconfigResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateTemplateResponse createTemplateResponse = new CreateTemplateResponse();
+			DescribeClusterUserKubeconfigResponse describeClusterUserKubeconfigResponse = new DescribeClusterUserKubeconfigResponse();
 
-			createTemplateResponse.HttpResponse = context.HttpResponse;
+			describeClusterUserKubeconfigResponse.HttpResponse = context.HttpResponse;
         
-			return createTemplateResponse;
+			return describeClusterUserKubeconfigResponse;
         }
     }
 }

@@ -16,12 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.CS.Model.V20151215
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CS.Model.V20151215;
+
+namespace Aliyun.Acs.CS.Transform.V20151215
 {
-	public class CallbackClusterTokenResponse : AcsResponse
-	{
-	}
+    public class DescribeClusterEndpointsResponseUnmarshaller
+    {
+        public static DescribeClusterEndpointsResponse Unmarshall(UnmarshallerContext context)
+        {
+			DescribeClusterEndpointsResponse describeClusterEndpointsResponse = new DescribeClusterEndpointsResponse();
+
+			describeClusterEndpointsResponse.HttpResponse = context.HttpResponse;
+        
+			return describeClusterEndpointsResponse;
+        }
+    }
 }

@@ -16,43 +16,44 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CS.Transform;
 using Aliyun.Acs.CS.Transform.V20151215;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CS.Model.V20151215
 {
-    public class DescribeTaskInfoRequest : RoaAcsRequest<DescribeTaskInfoResponse>
+    public class DescribeClusterEndpointsRequest : RoaAcsRequest<DescribeClusterEndpointsResponse>
     {
-        public DescribeTaskInfoRequest()
-            : base("CS", "2015-12-15", "DescribeTaskInfo")
+        public DescribeClusterEndpointsRequest()
+            : base("CS", "2015-12-15", "DescribeClusterEndpoints", "cs", "openAPI")
         {
-			UriPattern = "/tasks/[TaskId]";
+			UriPattern = "/clusters/[ClusterId]/endpoints";
 			Method = MethodType.GET;
         }
 
-		private string taskId;
+		private string clusterId;
 
-		public string TaskId
+		public string ClusterId
 		{
 			get
 			{
-				return taskId;
+				return clusterId;
 			}
 			set	
 			{
-				taskId = value;
-				DictionaryUtil.Add(PathParameters, "TaskId", value);
+				clusterId = value;
+				DictionaryUtil.Add(PathParameters, "ClusterId", value);
 			}
 		}
 
-        public override DescribeTaskInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeClusterEndpointsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeTaskInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeClusterEndpointsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -16,22 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CS.Model.V20151215;
-using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.CS.Transform.V20151215
-{
-    public class DescribeUserContainersResponseUnmarshaller
-    {
-        public static DescribeUserContainersResponse Unmarshall(UnmarshallerContext context)
-        {
-			DescribeUserContainersResponse describeUserContainersResponse = new DescribeUserContainersResponse();
+using Aliyun.Acs.Core;
 
-			describeUserContainersResponse.HttpResponse = context.HttpResponse;
-        
-			return describeUserContainersResponse;
-        }
-    }
+namespace Aliyun.Acs.CS.Model.V20151215
+{
+	public class DescribeClusterEndpointsResponse : AcsResponse
+	{
+	}
 }

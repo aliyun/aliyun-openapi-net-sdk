@@ -16,26 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CS.Transform;
 using Aliyun.Acs.CS.Transform.V20151215;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CS.Model.V20151215
 {
     public class DescribeApiVersionRequest : RoaAcsRequest<DescribeApiVersionResponse>
     {
         public DescribeApiVersionRequest()
-            : base("CS", "2015-12-15", "DescribeApiVersion")
+            : base("CS", "2015-12-15", "DescribeApiVersion", "cs", "openAPI")
         {
 			UriPattern = "/version";
 			Method = MethodType.GET;
         }
 
-        public override DescribeApiVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeApiVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeApiVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

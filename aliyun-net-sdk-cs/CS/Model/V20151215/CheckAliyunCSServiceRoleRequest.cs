@@ -16,26 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CS.Transform;
 using Aliyun.Acs.CS.Transform.V20151215;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CS.Model.V20151215
 {
     public class CheckAliyunCSServiceRoleRequest : RoaAcsRequest<CheckAliyunCSServiceRoleResponse>
     {
         public CheckAliyunCSServiceRoleRequest()
-            : base("CS", "2015-12-15", "CheckAliyunCSServiceRole")
+            : base("CS", "2015-12-15", "CheckAliyunCSServiceRole", "cs", "openAPI")
         {
 			UriPattern = "/aliyuncsrole/status";
 			Method = MethodType.GET;
         }
 
-        public override CheckAliyunCSServiceRoleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CheckAliyunCSServiceRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CheckAliyunCSServiceRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

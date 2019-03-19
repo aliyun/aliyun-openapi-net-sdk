@@ -16,22 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CS.Transform;
 using Aliyun.Acs.CS.Transform.V20151215;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CS.Model.V20151215
 {
-    public class DescribeClusterHostsRequest : RoaAcsRequest<DescribeClusterHostsResponse>
+    public class DescribeClusterUserKubeconfigRequest : RoaAcsRequest<DescribeClusterUserKubeconfigResponse>
     {
-        public DescribeClusterHostsRequest()
-            : base("CS", "2015-12-15", "DescribeClusterHosts")
+        public DescribeClusterUserKubeconfigRequest()
+            : base("CS", "2015-12-15", "DescribeClusterUserKubeconfig", "cs", "openAPI")
         {
-			UriPattern = "/clusters/[ClusterId]/hosts";
+			UriPattern = "/k8s/[ClusterId]/user_config";
 			Method = MethodType.GET;
         }
 
@@ -50,9 +51,9 @@ namespace Aliyun.Acs.CS.Model.V20151215
 			}
 		}
 
-        public override DescribeClusterHostsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeClusterUserKubeconfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeClusterHostsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeClusterUserKubeconfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

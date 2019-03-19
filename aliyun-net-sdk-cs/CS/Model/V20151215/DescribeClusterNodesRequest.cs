@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CS.Transform;
 using Aliyun.Acs.CS.Transform.V20151215;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CS.Model.V20151215
 {
     public class DescribeClusterNodesRequest : RoaAcsRequest<DescribeClusterNodesResponse>
     {
         public DescribeClusterNodesRequest()
-            : base("CS", "2015-12-15", "DescribeClusterNodes")
+            : base("CS", "2015-12-15", "DescribeClusterNodes", "cs", "openAPI")
         {
 			UriPattern = "/clusters/[ClusterId]/nodes";
 			Method = MethodType.GET;
@@ -80,7 +81,7 @@ namespace Aliyun.Acs.CS.Model.V20151215
 			}
 		}
 
-        public override DescribeClusterNodesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeClusterNodesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeClusterNodesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

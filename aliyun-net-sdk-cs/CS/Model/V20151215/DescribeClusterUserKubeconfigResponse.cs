@@ -16,28 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.CS.Transform;
-using Aliyun.Acs.CS.Transform.V20151215;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CS.Model.V20151215
 {
-    public class ModifyClusterNameRequest : RoaAcsRequest<ModifyClusterNameResponse>
-    {
-        public ModifyClusterNameRequest()
-            : base("CS", "2015-12-15", "ModifyClusterName")
-        {
-			UriPattern = "/clusters/[ClusterId]/name/[ClusterName]";
-			Method = MethodType.POST;
-        }
-
-        public override ModifyClusterNameResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
-        {
-            return ModifyClusterNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+	public class DescribeClusterUserKubeconfigResponse : AcsResponse
+	{
+	}
 }

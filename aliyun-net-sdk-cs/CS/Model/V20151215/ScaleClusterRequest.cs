@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CS.Transform;
 using Aliyun.Acs.CS.Transform.V20151215;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CS.Model.V20151215
 {
     public class ScaleClusterRequest : RoaAcsRequest<ScaleClusterResponse>
     {
         public ScaleClusterRequest()
-            : base("CS", "2015-12-15", "ScaleCluster")
+            : base("CS", "2015-12-15", "ScaleCluster", "cs", "openAPI")
         {
 			UriPattern = "/clusters/[ClusterId]";
 			Method = MethodType.PUT;
@@ -50,7 +51,7 @@ namespace Aliyun.Acs.CS.Model.V20151215
 			}
 		}
 
-        public override ScaleClusterResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ScaleClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ScaleClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

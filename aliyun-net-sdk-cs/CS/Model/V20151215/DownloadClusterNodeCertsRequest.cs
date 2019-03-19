@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CS.Transform;
 using Aliyun.Acs.CS.Transform.V20151215;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CS.Model.V20151215
 {
     public class DownloadClusterNodeCertsRequest : RoaAcsRequest<DownloadClusterNodeCertsResponse>
     {
         public DownloadClusterNodeCertsRequest()
-            : base("CS", "2015-12-15", "DownloadClusterNodeCerts")
+            : base("CS", "2015-12-15", "DownloadClusterNodeCerts", "cs", "openAPI")
         {
 			UriPattern = "/token/[Token]/nodes/[NodeId]/certs";
 			Method = MethodType.GET;
@@ -65,7 +66,7 @@ namespace Aliyun.Acs.CS.Model.V20151215
 			}
 		}
 
-        public override DownloadClusterNodeCertsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DownloadClusterNodeCertsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DownloadClusterNodeCertsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

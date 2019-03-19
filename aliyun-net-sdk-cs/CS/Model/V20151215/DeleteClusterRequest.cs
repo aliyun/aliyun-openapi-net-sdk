@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CS.Transform;
 using Aliyun.Acs.CS.Transform.V20151215;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CS.Model.V20151215
 {
     public class DeleteClusterRequest : RoaAcsRequest<DeleteClusterResponse>
     {
         public DeleteClusterRequest()
-            : base("CS", "2015-12-15", "DeleteCluster")
+            : base("CS", "2015-12-15", "DeleteCluster", "cs", "openAPI")
         {
 			UriPattern = "/clusters/[ClusterId]";
 			Method = MethodType.DELETE;
@@ -50,7 +51,7 @@ namespace Aliyun.Acs.CS.Model.V20151215
 			}
 		}
 
-        public override DeleteClusterResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
