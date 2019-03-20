@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{116e6689-4930-474a-80ff-ecd32c8f8878}</ProjectGuid>
+    <ProjectGuid>{ab89bf3a-0ce6-4bce-b560-2bccc494e856}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,27 +40,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Httpdns\Model\V20160201\DeleteDomainRequest.cs" />
-	<Compile Include="Httpdns\Model\V20160201\GetResolveStatisticsResponse.cs" />
-	<Compile Include="Httpdns\Model\V20160201\AddDomainRequest.cs" />
+	<Compile Include="Httpdns\Model\V20160201\DescribeDomainsRequest.cs" />
+	<Compile Include="Httpdns\Model\V20160201\GetResolveCountSummaryResponse.cs" />
 	<Compile Include="Httpdns\Model\V20160201\ListDomainsResponse.cs" />
-	<Compile Include="Httpdns\Model\V20160201\DescribeDomainsResponse.cs" />
-	<Compile Include="Httpdns\Model\V20160201\GetAccountInfoRequest.cs" />
+	<Compile Include="Httpdns\Model\V20160201\GetAccountInfoResponse.cs" />
+	<Compile Include="Httpdns\Model\V20160201\GetResolveStatisticsResponse.cs" />
+	<Compile Include="Httpdns\Model\V20160201\DeleteDomainResponse.cs" />
+	<Compile Include="Httpdns\Model\V20160201\ListDomainsRequest.cs" />
+	<Compile Include="Httpdns\Model\V20160201\AddDomainRequest.cs" />
 	<Compile Include="Httpdns\Model\V20160201\AddDomainResponse.cs" />
 	<Compile Include="Httpdns\Model\V20160201\GetResolveStatisticsRequest.cs" />
-	<Compile Include="Httpdns\Model\V20160201\DescribeDomainsRequest.cs" />
-	<Compile Include="Httpdns\Model\V20160201\DeleteDomainResponse.cs" />
-	<Compile Include="Httpdns\Model\V20160201\GetResolveCountSummaryResponse.cs" />
+	<Compile Include="Httpdns\Model\V20160201\DescribeDomainsResponse.cs" />
 	<Compile Include="Httpdns\Model\V20160201\GetResolveCountSummaryRequest.cs" />
-	<Compile Include="Httpdns\Model\V20160201\GetAccountInfoResponse.cs" />
-	<Compile Include="Httpdns\Model\V20160201\ListDomainsRequest.cs" />
-	<Compile Include="Httpdns\Transform\V20160201\ListDomainsResponseUnmarshaller.cs" />
-	<Compile Include="Httpdns\Transform\V20160201\GetAccountInfoResponseUnmarshaller.cs" />
+	<Compile Include="Httpdns\Model\V20160201\GetAccountInfoRequest.cs" />
+	<Compile Include="Httpdns\Model\V20160201\DeleteDomainRequest.cs" />
+	<Compile Include="Httpdns\Transform\V20160201\DeleteDomainResponseUnmarshaller.cs" />
 	<Compile Include="Httpdns\Transform\V20160201\DescribeDomainsResponseUnmarshaller.cs" />
 	<Compile Include="Httpdns\Transform\V20160201\GetResolveCountSummaryResponseUnmarshaller.cs" />
-	<Compile Include="Httpdns\Transform\V20160201\GetResolveStatisticsResponseUnmarshaller.cs" />
 	<Compile Include="Httpdns\Transform\V20160201\AddDomainResponseUnmarshaller.cs" />
-	<Compile Include="Httpdns\Transform\V20160201\DeleteDomainResponseUnmarshaller.cs" />
+	<Compile Include="Httpdns\Transform\V20160201\GetResolveStatisticsResponseUnmarshaller.cs" />
+	<Compile Include="Httpdns\Transform\V20160201\GetAccountInfoResponseUnmarshaller.cs" />
+	<Compile Include="Httpdns\Transform\V20160201\ListDomainsResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

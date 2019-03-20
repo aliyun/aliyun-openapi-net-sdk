@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Httpdns.Model.V20160201
 {
@@ -59,6 +60,10 @@ namespace Aliyun.Acs.Httpdns.Model.V20160201
 
 			private long? https;
 
+			private long? http6;
+
+			private long? https6;
+
 			public long? Http
 			{
 				get
@@ -80,6 +85,30 @@ namespace Aliyun.Acs.Httpdns.Model.V20160201
 				set	
 				{
 					https = value;
+				}
+			}
+
+			public long? Http6
+			{
+				get
+				{
+					return http6;
+				}
+				set	
+				{
+					http6 = value;
+				}
+			}
+
+			public long? Https6
+			{
+				get
+				{
+					return https6;
+				}
+				set	
+				{
+					https6 = value;
 				}
 			}
 		}

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Httpdns.Model.V20160201;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Httpdns.Model.V20160201;
 
 namespace Aliyun.Acs.Httpdns.Transform.V20160201
 {
@@ -41,6 +42,8 @@ namespace Aliyun.Acs.Httpdns.Transform.V20160201
 				domainInfo.DomainName = context.StringValue("ListDomains.DomainInfos["+ i +"].DomainName");
 				domainInfo.Resolved = context.LongValue("ListDomains.DomainInfos["+ i +"].Resolved");
 				domainInfo.ResolvedHttps = context.LongValue("ListDomains.DomainInfos["+ i +"].ResolvedHttps");
+				domainInfo.Resolved6 = context.LongValue("ListDomains.DomainInfos["+ i +"].Resolved6");
+				domainInfo.ResolvedHttps6 = context.LongValue("ListDomains.DomainInfos["+ i +"].ResolvedHttps6");
 
 				listDomainsResponse_domainInfos.Add(domainInfo);
 			}

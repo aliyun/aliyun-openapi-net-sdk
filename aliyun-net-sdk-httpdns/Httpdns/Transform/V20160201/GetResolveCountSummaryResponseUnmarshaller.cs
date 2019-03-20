@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Httpdns.Model.V20160201;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Httpdns.Model.V20160201;
 
 namespace Aliyun.Acs.Httpdns.Transform.V20160201
 {
@@ -35,6 +36,8 @@ namespace Aliyun.Acs.Httpdns.Transform.V20160201
 			GetResolveCountSummaryResponse.GetResolveCountSummary_ResolveSummary resolveSummary = new GetResolveCountSummaryResponse.GetResolveCountSummary_ResolveSummary();
 			resolveSummary.Http = context.LongValue("GetResolveCountSummary.ResolveSummary.Http");
 			resolveSummary.Https = context.LongValue("GetResolveCountSummary.ResolveSummary.Https");
+			resolveSummary.Http6 = context.LongValue("GetResolveCountSummary.ResolveSummary.Http6");
+			resolveSummary.Https6 = context.LongValue("GetResolveCountSummary.ResolveSummary.Https6");
 			getResolveCountSummaryResponse.ResolveSummary = resolveSummary;
         
 			return getResolveCountSummaryResponse;

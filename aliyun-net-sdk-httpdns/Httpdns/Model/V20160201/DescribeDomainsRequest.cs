@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Httpdns.Transform;
 using Aliyun.Acs.Httpdns.Transform.V20160201;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Httpdns.Model.V20160201
 {
     public class DescribeDomainsRequest : RpcAcsRequest<DescribeDomainsResponse>
     {
         public DescribeDomainsRequest()
-            : base("Httpdns", "2016-02-01", "DescribeDomains")
+            : base("Httpdns", "2016-02-01", "DescribeDomains", "httpdns", "openAPI")
         {
         }
 
@@ -93,7 +94,7 @@ namespace Aliyun.Acs.Httpdns.Model.V20160201
 			}
 		}
 
-        public override DescribeDomainsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDomainsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

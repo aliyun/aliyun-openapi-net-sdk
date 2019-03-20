@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Httpdns.Transform;
 using Aliyun.Acs.Httpdns.Transform.V20160201;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Httpdns.Model.V20160201
 {
     public class GetResolveCountSummaryRequest : RpcAcsRequest<GetResolveCountSummaryResponse>
     {
         public GetResolveCountSummaryRequest()
-            : base("Httpdns", "2016-02-01", "GetResolveCountSummary")
+            : base("Httpdns", "2016-02-01", "GetResolveCountSummary", "httpdns", "openAPI")
         {
         }
 
@@ -78,7 +79,7 @@ namespace Aliyun.Acs.Httpdns.Model.V20160201
 			}
 		}
 
-        public override GetResolveCountSummaryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetResolveCountSummaryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetResolveCountSummaryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
