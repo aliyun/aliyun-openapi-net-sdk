@@ -364,6 +364,7 @@ namespace Aliyun.Acs.Core
             get { return autoRetry; }
             set { autoRetry = value; }
         }
+
         public virtual HttpResponse GetResponse(HttpRequest httpRequest)
         {
             return HttpResponse.GetResponse(httpRequest);
@@ -389,7 +390,7 @@ namespace Aliyun.Acs.Core
             this.readTimeout = readTimeout;
         }
 
-        public void ResolveTimeout(HttpRequest request)
+        private void ResolveTimeout(HttpRequest request)
         {
             var finalReadTimeout = request.readTimeout > 0 ? request.readTimeout : this.readTimeout > 0 ? this.readTimeout : 0;
             request.SetReadTimeoutInMilliSeconds(finalReadTimeout);
