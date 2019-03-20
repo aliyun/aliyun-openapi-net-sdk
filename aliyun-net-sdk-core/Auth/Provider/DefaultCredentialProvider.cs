@@ -177,12 +177,6 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
                         return GetRamRoleArnAlibabaCloudCredential();
                     }
-                    else if (config[userDefineSectionNode]["type"].RawValue.Equals("bearer_token"))
-                    {
-                        this.bearer_token = config[userDefineSectionNode]["bearer_token"].RawValue;
-
-                        return GetBearerTokenAlibabaCloudCredential();
-                    }
                     else if (config[userDefineSectionNode]["type"].RawValue.Equals("rsa_key_pair"))
                     {
                         this.publicKeyId = config[userDefineSectionNode]["public_key_id"].RawValue;
@@ -260,13 +254,6 @@ namespace Aliyun.Acs.Core.Auth.Provider
             RamRoleArnCredential ramRoleArnCredential = (RamRoleArnCredential) sTSAssumeRoleSessionCredentialsProvider.GetCredentials();
 
             return ramRoleArnCredential;
-        }
-
-        public AlibabaCloudCredentials GetBearerTokenAlibabaCloudCredential()
-        {
-            BearerTokenCredential bearerTokenCredential = new BearerTokenCredential(this.bearer_token);
-
-            return bearerTokenCredential;
         }
 
         public virtual AlibabaCloudCredentials GetRsaKeyPairAlibabaCloudCredential()
