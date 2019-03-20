@@ -16,8 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
+
 namespace Aliyun.Acs.Core.Utils
 {
+    [Obsolete("Use String.IsNullOrEmpty instead")]
     public class StringUtils
     {
         public static bool isEmpty(string s)
