@@ -16,51 +16,67 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class AddDomainRecordRequest : RpcAcsRequest<AddDomainRecordResponse>
     {
         public AddDomainRecordRequest()
-            : base("Alidns", "2015-01-09", "AddDomainRecord")
+            : base("Alidns", "2015-01-09", "AddDomainRecord", "alidns", "openAPI")
         {
         }
 
-		private string lang;
+		private string rR;
+
+		private string line;
 
 		private string userClientIp;
 
 		private string domainName;
 
-		private string rR;
+		private string lang;
 
 		private string type;
 
-		private string value_;
+		private long? priority;
+
+		private string _value;
 
 		private long? tTL;
 
-		private long? priority;
+		private string accessKeyId;
 
-		private string line;
-
-		public string Lang
+		public string RR
 		{
 			get
 			{
-				return lang;
+				return rR;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				rR = value;
+				DictionaryUtil.Add(QueryParameters, "RR", value);
+			}
+		}
+
+		public string Line
+		{
+			get
+			{
+				return line;
+			}
+			set	
+			{
+				line = value;
+				DictionaryUtil.Add(QueryParameters, "Line", value);
 			}
 		}
 
@@ -90,16 +106,16 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string RR
+		public string Lang
 		{
 			get
 			{
-				return rR;
+				return lang;
 			}
 			set	
 			{
-				rR = value;
-				DictionaryUtil.Add(QueryParameters, "RR", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -116,15 +132,28 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string Value
+		public long? Priority
 		{
 			get
 			{
-				return value_;
+				return priority;
 			}
 			set	
 			{
-				value_ = value;
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value.ToString());
+			}
+		}
+
+		public string _Value
+		{
+			get
+			{
+				return _value;
+			}
+			set	
+			{
+				_value = value;
 				DictionaryUtil.Add(QueryParameters, "Value", value);
 			}
 		}
@@ -142,33 +171,20 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public long? Priority
+		public string AccessKeyId
 		{
 			get
 			{
-				return priority;
+				return accessKeyId;
 			}
 			set	
 			{
-				priority = value;
-				DictionaryUtil.Add(QueryParameters, "Priority", value.ToString());
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
-		public string Line
-		{
-			get
-			{
-				return line;
-			}
-			set	
-			{
-				line = value;
-				DictionaryUtil.Add(QueryParameters, "Line", value);
-			}
-		}
-
-        public override AddDomainRecordResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddDomainRecordResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AddDomainRecordResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

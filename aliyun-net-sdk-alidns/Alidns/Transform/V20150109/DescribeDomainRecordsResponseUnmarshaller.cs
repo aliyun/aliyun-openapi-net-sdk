@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -35,24 +36,25 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDomainRecordsResponse.PageNumber = context.LongValue("DescribeDomainRecords.PageNumber");
 			describeDomainRecordsResponse.PageSize = context.LongValue("DescribeDomainRecords.PageSize");
 
-			List<DescribeDomainRecordsResponse.Record> domainRecords = new List<DescribeDomainRecordsResponse.Record>();
+			List<DescribeDomainRecordsResponse.DescribeDomainRecords_Record> describeDomainRecordsResponse_domainRecords = new List<DescribeDomainRecordsResponse.DescribeDomainRecords_Record>();
 			for (int i = 0; i < context.Length("DescribeDomainRecords.DomainRecords.Length"); i++) {
-				DescribeDomainRecordsResponse.Record record = new DescribeDomainRecordsResponse.Record();
+				DescribeDomainRecordsResponse.DescribeDomainRecords_Record record = new DescribeDomainRecordsResponse.DescribeDomainRecords_Record();
 				record.DomainName = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].DomainName");
 				record.RecordId = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].RecordId");
 				record.RR = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].RR");
 				record.Type = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Type");
-				record.Value = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Value");
+				record._Value = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Value");
 				record.TTL = context.LongValue("DescribeDomainRecords.DomainRecords["+ i +"].TTL");
 				record.Priority = context.LongValue("DescribeDomainRecords.DomainRecords["+ i +"].Priority");
 				record.Line = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Line");
 				record.Status = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Status");
 				record.Locked = context.BooleanValue("DescribeDomainRecords.DomainRecords["+ i +"].Locked");
 				record.Weight = context.IntegerValue("DescribeDomainRecords.DomainRecords["+ i +"].Weight");
+				record.Remark = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Remark");
 
-				domainRecords.Add(record);
+				describeDomainRecordsResponse_domainRecords.Add(record);
 			}
-			describeDomainRecordsResponse.DomainRecords = domainRecords;
+			describeDomainRecordsResponse.DomainRecords = describeDomainRecordsResponse_domainRecords;
         
 			return describeDomainRecordsResponse;
         }

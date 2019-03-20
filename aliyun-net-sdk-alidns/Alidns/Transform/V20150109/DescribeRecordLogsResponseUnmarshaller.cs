@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -35,17 +36,18 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeRecordLogsResponse.PageNumber = context.LongValue("DescribeRecordLogs.PageNumber");
 			describeRecordLogsResponse.PageSize = context.LongValue("DescribeRecordLogs.PageSize");
 
-			List<DescribeRecordLogsResponse.RecordLog> recordLogs = new List<DescribeRecordLogsResponse.RecordLog>();
+			List<DescribeRecordLogsResponse.DescribeRecordLogs_RecordLog> describeRecordLogsResponse_recordLogs = new List<DescribeRecordLogsResponse.DescribeRecordLogs_RecordLog>();
 			for (int i = 0; i < context.Length("DescribeRecordLogs.RecordLogs.Length"); i++) {
-				DescribeRecordLogsResponse.RecordLog recordLog = new DescribeRecordLogsResponse.RecordLog();
+				DescribeRecordLogsResponse.DescribeRecordLogs_RecordLog recordLog = new DescribeRecordLogsResponse.DescribeRecordLogs_RecordLog();
 				recordLog.ActionTime = context.StringValue("DescribeRecordLogs.RecordLogs["+ i +"].ActionTime");
+				recordLog.ActionTimestamp = context.LongValue("DescribeRecordLogs.RecordLogs["+ i +"].ActionTimestamp");
 				recordLog.Action = context.StringValue("DescribeRecordLogs.RecordLogs["+ i +"].Action");
 				recordLog.Message = context.StringValue("DescribeRecordLogs.RecordLogs["+ i +"].Message");
 				recordLog.ClientIp = context.StringValue("DescribeRecordLogs.RecordLogs["+ i +"].ClientIp");
 
-				recordLogs.Add(recordLog);
+				describeRecordLogsResponse_recordLogs.Add(recordLog);
 			}
-			describeRecordLogsResponse.RecordLogs = recordLogs;
+			describeRecordLogsResponse.RecordLogs = describeRecordLogsResponse_recordLogs;
         
 			return describeRecordLogsResponse;
         }

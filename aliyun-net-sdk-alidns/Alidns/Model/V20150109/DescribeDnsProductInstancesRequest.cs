@@ -16,45 +16,35 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class DescribeDnsProductInstancesRequest : RpcAcsRequest<DescribeDnsProductInstancesResponse>
     {
         public DescribeDnsProductInstancesRequest()
-            : base("Alidns", "2015-01-09", "DescribeDnsProductInstances")
+            : base("Alidns", "2015-01-09", "DescribeDnsProductInstances", "alidns", "openAPI")
         {
         }
 
-		private string lang;
-
 		private string userClientIp;
-
-		private long? pageNumber;
 
 		private long? pageSize;
 
+		private string lang;
+
 		private string versionCode;
 
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
+		private long? pageNumber;
+
+		private string accessKeyId;
 
 		public string UserClientIp
 		{
@@ -66,19 +56,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -95,6 +72,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
 		public string VersionCode
 		{
 			get
@@ -108,7 +98,33 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-        public override DescribeDnsProductInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override DescribeDnsProductInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDnsProductInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

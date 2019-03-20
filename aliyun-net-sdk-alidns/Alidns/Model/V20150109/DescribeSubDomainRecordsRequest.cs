@@ -16,45 +16,50 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class DescribeSubDomainRecordsRequest : RpcAcsRequest<DescribeSubDomainRecordsResponse>
     {
         public DescribeSubDomainRecordsRequest()
-            : base("Alidns", "2015-01-09", "DescribeSubDomainRecords")
+            : base("Alidns", "2015-01-09", "DescribeSubDomainRecords", "alidns", "openAPI")
         {
         }
 
-		private string lang;
+		private string line;
 
 		private string userClientIp;
 
+		private long? pageSize;
+
 		private string subDomain;
 
-		private long? pageNumber;
-
-		private long? pageSize;
+		private string lang;
 
 		private string type;
 
-		public string Lang
+		private long? pageNumber;
+
+		private string accessKeyId;
+
+		public string Line
 		{
 			get
 			{
-				return lang;
+				return line;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				line = value;
+				DictionaryUtil.Add(QueryParameters, "Line", value);
 			}
 		}
 
@@ -71,6 +76,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string SubDomain
 		{
 			get
@@ -84,29 +102,16 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public long? PageNumber
+		public string Lang
 		{
 			get
 			{
-				return pageNumber;
+				return lang;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -123,7 +128,33 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-        public override DescribeSubDomainRecordsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override DescribeSubDomainRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeSubDomainRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -32,17 +33,17 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			modifyHichinaDomainDNSResponse.HttpResponse = context.HttpResponse;
 			modifyHichinaDomainDNSResponse.RequestId = context.StringValue("ModifyHichinaDomainDNS.RequestId");
 
-			List<string> originalDnsServers = new List<string>();
+			List<string> modifyHichinaDomainDNSResponse_originalDnsServers = new List<string>();
 			for (int i = 0; i < context.Length("ModifyHichinaDomainDNS.OriginalDnsServers.Length"); i++) {
-				originalDnsServers.Add(context.StringValue("ModifyHichinaDomainDNS.OriginalDnsServers["+ i +"]"));
+				modifyHichinaDomainDNSResponse_originalDnsServers.Add(context.StringValue("ModifyHichinaDomainDNS.OriginalDnsServers["+ i +"]"));
 			}
-			modifyHichinaDomainDNSResponse.OriginalDnsServers = originalDnsServers;
+			modifyHichinaDomainDNSResponse.OriginalDnsServers = modifyHichinaDomainDNSResponse_originalDnsServers;
 
-			List<string> newDnsServers = new List<string>();
+			List<string> modifyHichinaDomainDNSResponse_newDnsServers = new List<string>();
 			for (int i = 0; i < context.Length("ModifyHichinaDomainDNS.NewDnsServers.Length"); i++) {
-				newDnsServers.Add(context.StringValue("ModifyHichinaDomainDNS.NewDnsServers["+ i +"]"));
+				modifyHichinaDomainDNSResponse_newDnsServers.Add(context.StringValue("ModifyHichinaDomainDNS.NewDnsServers["+ i +"]"));
 			}
-			modifyHichinaDomainDNSResponse.NewDnsServers = newDnsServers;
+			modifyHichinaDomainDNSResponse.NewDnsServers = modifyHichinaDomainDNSResponse_newDnsServers;
         
 			return modifyHichinaDomainDNSResponse;
         }

@@ -16,45 +16,52 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class DescribeRecordLogsRequest : RpcAcsRequest<DescribeRecordLogsResponse>
     {
         public DescribeRecordLogsRequest()
-            : base("Alidns", "2015-01-09", "DescribeRecordLogs")
+            : base("Alidns", "2015-01-09", "DescribeRecordLogs", "alidns", "openAPI")
         {
         }
 
-		private string lang;
+		private string endDate;
 
 		private string userClientIp;
 
 		private string domainName;
 
-		private long? pageNumber;
-
 		private long? pageSize;
+
+		private string lang;
 
 		private string keyWord;
 
-		public string Lang
+		private string startDate;
+
+		private long? pageNumber;
+
+		private string accessKeyId;
+
+		public string EndDate
 		{
 			get
 			{
-				return lang;
+				return endDate;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "endDate", value);
 			}
 		}
 
@@ -84,19 +91,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public long? PageSize
 		{
 			get
@@ -107,6 +101,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -123,7 +130,46 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-        public override DescribeRecordLogsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string StartDate
+		{
+			get
+			{
+				return startDate;
+			}
+			set	
+			{
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override DescribeRecordLogsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeRecordLogsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

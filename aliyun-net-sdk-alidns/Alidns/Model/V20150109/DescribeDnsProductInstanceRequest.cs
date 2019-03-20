@@ -16,39 +16,42 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class DescribeDnsProductInstanceRequest : RpcAcsRequest<DescribeDnsProductInstanceResponse>
     {
         public DescribeDnsProductInstanceRequest()
-            : base("Alidns", "2015-01-09", "DescribeDnsProductInstance")
+            : base("Alidns", "2015-01-09", "DescribeDnsProductInstance", "alidns", "openAPI")
         {
         }
 
-		private string lang;
+		private string instanceId;
 
 		private string userClientIp;
 
-		private string instanceId;
+		private string lang;
 
-		public string Lang
+		private string accessKeyId;
+
+		public string InstanceId
 		{
 			get
 			{
-				return lang;
+				return instanceId;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -65,20 +68,33 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string InstanceId
+		public string Lang
 		{
 			get
 			{
-				return instanceId;
+				return lang;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
-        public override DescribeDnsProductInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override DescribeDnsProductInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDnsProductInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

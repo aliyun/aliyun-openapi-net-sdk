@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -37,11 +38,11 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			addDomainResponse.GroupId = context.StringValue("AddDomain.GroupId");
 			addDomainResponse.GroupName = context.StringValue("AddDomain.GroupName");
 
-			List<string> dnsServers = new List<string>();
+			List<string> addDomainResponse_dnsServers = new List<string>();
 			for (int i = 0; i < context.Length("AddDomain.DnsServers.Length"); i++) {
-				dnsServers.Add(context.StringValue("AddDomain.DnsServers["+ i +"]"));
+				addDomainResponse_dnsServers.Add(context.StringValue("AddDomain.DnsServers["+ i +"]"));
 			}
-			addDomainResponse.DnsServers = dnsServers;
+			addDomainResponse.DnsServers = addDomainResponse_dnsServers;
         
 			return addDomainResponse;
         }

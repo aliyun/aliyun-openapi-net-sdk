@@ -16,19 +16,36 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
 	public class DescribeDomainNsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private bool? allAliDns;
 
 		private bool? includeAliDns;
 
 		private List<string> dnsServers;
+
+		private List<string> expectDnsServers;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public bool? AllAliDns
 		{
@@ -63,6 +80,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				dnsServers = value;
+			}
+		}
+
+		public List<string> ExpectDnsServers
+		{
+			get
+			{
+				return expectDnsServers;
+			}
+			set	
+			{
+				expectDnsServers = value;
 			}
 		}
 	}

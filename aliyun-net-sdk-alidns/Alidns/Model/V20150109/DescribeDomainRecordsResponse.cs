@@ -16,13 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
 	public class DescribeDomainRecordsResponse : AcsResponse
 	{
+
+		private string requestId;
 
 		private long? totalCount;
 
@@ -30,7 +33,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private long? pageSize;
 
-		private List<Record> domainRecords;
+		private List<DescribeDomainRecords_Record> domainRecords;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? TotalCount
 		{
@@ -68,7 +83,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public List<Record> DomainRecords
+		public List<DescribeDomainRecords_Record> DomainRecords
 		{
 			get
 			{
@@ -80,7 +95,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public class Record{
+		public class DescribeDomainRecords_Record
+		{
 
 			private string domainName;
 
@@ -90,7 +106,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private string type;
 
-			private string value_;
+			private string _value;
 
 			private long? tTL;
 
@@ -103,6 +119,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			private bool? locked;
 
 			private int? weight;
+
+			private string remark;
 
 			public string DomainName
 			{
@@ -152,15 +170,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
-			public string Value
+			public string _Value
 			{
 				get
 				{
-					return value_;
+					return _value;
 				}
 				set	
 				{
-					value_ = value;
+					_value = value;
 				}
 			}
 
@@ -233,6 +251,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					weight = value;
+				}
+			}
+
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
 				}
 			}
 		}

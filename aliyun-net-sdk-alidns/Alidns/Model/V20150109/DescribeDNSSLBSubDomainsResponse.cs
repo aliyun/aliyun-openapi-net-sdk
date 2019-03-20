@@ -16,13 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
 	public class DescribeDNSSLBSubDomainsResponse : AcsResponse
 	{
+
+		private string requestId;
 
 		private long? totalCount;
 
@@ -30,7 +33,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private long? pageSize;
 
-		private List<SlbSubDomain> slbSubDomains;
+		private List<DescribeDNSSLBSubDomains_SlbSubDomain> slbSubDomains;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? TotalCount
 		{
@@ -68,7 +83,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public List<SlbSubDomain> SlbSubDomains
+		public List<DescribeDNSSLBSubDomains_SlbSubDomain> SlbSubDomains
 		{
 			get
 			{
@@ -80,13 +95,16 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public class SlbSubDomain{
+		public class DescribeDNSSLBSubDomains_SlbSubDomain
+		{
 
 			private string subDomain;
 
 			private long? recordCount;
 
 			private bool? open;
+
+			private string type;
 
 			public string SubDomain
 			{
@@ -121,6 +139,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					open = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}

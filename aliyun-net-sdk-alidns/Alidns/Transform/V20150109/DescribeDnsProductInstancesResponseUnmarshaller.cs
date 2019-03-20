@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -35,9 +36,9 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDnsProductInstancesResponse.PageNumber = context.LongValue("DescribeDnsProductInstances.PageNumber");
 			describeDnsProductInstancesResponse.PageSize = context.LongValue("DescribeDnsProductInstances.PageSize");
 
-			List<DescribeDnsProductInstancesResponse.DnsProduct> dnsProducts = new List<DescribeDnsProductInstancesResponse.DnsProduct>();
+			List<DescribeDnsProductInstancesResponse.DescribeDnsProductInstances_DnsProduct> describeDnsProductInstancesResponse_dnsProducts = new List<DescribeDnsProductInstancesResponse.DescribeDnsProductInstances_DnsProduct>();
 			for (int i = 0; i < context.Length("DescribeDnsProductInstances.DnsProducts.Length"); i++) {
-				DescribeDnsProductInstancesResponse.DnsProduct dnsProduct = new DescribeDnsProductInstancesResponse.DnsProduct();
+				DescribeDnsProductInstancesResponse.DescribeDnsProductInstances_DnsProduct dnsProduct = new DescribeDnsProductInstancesResponse.DescribeDnsProductInstances_DnsProduct();
 				dnsProduct.InstanceId = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].InstanceId");
 				dnsProduct.VersionCode = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].VersionCode");
 				dnsProduct.VersionName = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].VersionName");
@@ -62,10 +63,17 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				dnsProduct.MonitorNodeCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].MonitorNodeCount");
 				dnsProduct.MonitorFrequency = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].MonitorFrequency");
 				dnsProduct.MonitorTaskCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].MonitorTaskCount");
+				dnsProduct.RegionLines = context.BooleanValue("DescribeDnsProductInstances.DnsProducts["+ i +"].RegionLines");
+				dnsProduct.Gslb = context.BooleanValue("DescribeDnsProductInstances.DnsProducts["+ i +"].Gslb");
+				dnsProduct.InClean = context.BooleanValue("DescribeDnsProductInstances.DnsProducts["+ i +"].InClean");
+				dnsProduct.InBlackHole = context.BooleanValue("DescribeDnsProductInstances.DnsProducts["+ i +"].InBlackHole");
+				dnsProduct.BindDomainCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindDomainCount");
+				dnsProduct.BindDomainUsedCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindDomainUsedCount");
+				dnsProduct.DnsSecurity = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].DnsSecurity");
 
-				dnsProducts.Add(dnsProduct);
+				describeDnsProductInstancesResponse_dnsProducts.Add(dnsProduct);
 			}
-			describeDnsProductInstancesResponse.DnsProducts = dnsProducts;
+			describeDnsProductInstancesResponse.DnsProducts = describeDnsProductInstancesResponse_dnsProducts;
         
 			return describeDnsProductInstancesResponse;
         }

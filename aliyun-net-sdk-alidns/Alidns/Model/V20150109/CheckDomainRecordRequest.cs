@@ -16,45 +16,48 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class CheckDomainRecordRequest : RpcAcsRequest<CheckDomainRecordResponse>
     {
         public CheckDomainRecordRequest()
-            : base("Alidns", "2015-01-09", "CheckDomainRecord")
+            : base("Alidns", "2015-01-09", "CheckDomainRecord", "alidns", "openAPI")
         {
         }
 
-		private string lang;
+		private string rR;
 
 		private string userClientIp;
 
 		private string domainName;
 
-		private string rR;
+		private string lang;
 
 		private string type;
 
-		private string value_;
+		private string _value;
 
-		public string Lang
+		private string accessKeyId;
+
+		public string RR
 		{
 			get
 			{
-				return lang;
+				return rR;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				rR = value;
+				DictionaryUtil.Add(QueryParameters, "RR", value);
 			}
 		}
 
@@ -84,16 +87,16 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string RR
+		public string Lang
 		{
 			get
 			{
-				return rR;
+				return lang;
 			}
 			set	
 			{
-				rR = value;
-				DictionaryUtil.Add(QueryParameters, "RR", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -110,20 +113,33 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string Value
+		public string _Value
 		{
 			get
 			{
-				return value_;
+				return _value;
 			}
 			set	
 			{
-				value_ = value;
+				_value = value;
 				DictionaryUtil.Add(QueryParameters, "Value", value);
 			}
 		}
 
-        public override CheckDomainRecordResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override CheckDomainRecordResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CheckDomainRecordResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

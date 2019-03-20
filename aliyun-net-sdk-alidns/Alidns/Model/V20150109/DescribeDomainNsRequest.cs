@@ -16,41 +16,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class DescribeDomainNsRequest : RpcAcsRequest<DescribeDomainNsResponse>
     {
         public DescribeDomainNsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainNs")
+            : base("Alidns", "2015-01-09", "DescribeDomainNs", "alidns", "openAPI")
         {
         }
-
-		private string lang;
 
 		private string userClientIp;
 
 		private string domainName;
 
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
+		private string lang;
+
+		private string accessKeyId;
 
 		public string UserClientIp
 		{
@@ -78,7 +68,33 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-        public override DescribeDomainNsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override DescribeDomainNsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDomainNsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

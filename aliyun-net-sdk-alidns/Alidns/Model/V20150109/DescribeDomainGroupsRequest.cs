@@ -16,45 +16,35 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class DescribeDomainGroupsRequest : RpcAcsRequest<DescribeDomainGroupsResponse>
     {
         public DescribeDomainGroupsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainGroups")
+            : base("Alidns", "2015-01-09", "DescribeDomainGroups", "alidns", "openAPI")
         {
         }
 
-		private string lang;
-
 		private string userClientIp;
+
+		private long? pageSize;
+
+		private string lang;
 
 		private string keyWord;
 
 		private long? pageNumber;
 
-		private long? pageSize;
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
+		private string accessKeyId;
 
 		public string UserClientIp
 		{
@@ -66,6 +56,32 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -95,20 +111,20 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public long? PageSize
+		public string AccessKeyId
 		{
 			get
 			{
-				return pageSize;
+				return accessKeyId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
-        public override DescribeDomainGroupsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDomainGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

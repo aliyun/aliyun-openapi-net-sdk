@@ -16,13 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
 	public class DescribeRecordLogsResponse : AcsResponse
 	{
+
+		private string requestId;
 
 		private long? totalCount;
 
@@ -30,7 +33,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private long? pageSize;
 
-		private List<RecordLog> recordLogs;
+		private List<DescribeRecordLogs_RecordLog> recordLogs;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? TotalCount
 		{
@@ -68,7 +83,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public List<RecordLog> RecordLogs
+		public List<DescribeRecordLogs_RecordLog> RecordLogs
 		{
 			get
 			{
@@ -80,9 +95,12 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public class RecordLog{
+		public class DescribeRecordLogs_RecordLog
+		{
 
 			private string actionTime;
+
+			private long? actionTimestamp;
 
 			private string action;
 
@@ -99,6 +117,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					actionTime = value;
+				}
+			}
+
+			public long? ActionTimestamp
+			{
+				get
+				{
+					return actionTimestamp;
+				}
+				set	
+				{
+					actionTimestamp = value;
 				}
 			}
 

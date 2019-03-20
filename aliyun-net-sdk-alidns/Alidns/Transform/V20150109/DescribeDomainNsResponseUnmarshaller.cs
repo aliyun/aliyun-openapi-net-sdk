@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -34,11 +35,17 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDomainNsResponse.AllAliDns = context.BooleanValue("DescribeDomainNs.AllAliDns");
 			describeDomainNsResponse.IncludeAliDns = context.BooleanValue("DescribeDomainNs.IncludeAliDns");
 
-			List<string> dnsServers = new List<string>();
+			List<string> describeDomainNsResponse_dnsServers = new List<string>();
 			for (int i = 0; i < context.Length("DescribeDomainNs.DnsServers.Length"); i++) {
-				dnsServers.Add(context.StringValue("DescribeDomainNs.DnsServers["+ i +"]"));
+				describeDomainNsResponse_dnsServers.Add(context.StringValue("DescribeDomainNs.DnsServers["+ i +"]"));
 			}
-			describeDomainNsResponse.DnsServers = dnsServers;
+			describeDomainNsResponse.DnsServers = describeDomainNsResponse_dnsServers;
+
+			List<string> describeDomainNsResponse_expectDnsServers = new List<string>();
+			for (int i = 0; i < context.Length("DescribeDomainNs.ExpectDnsServers.Length"); i++) {
+				describeDomainNsResponse_expectDnsServers.Add(context.StringValue("DescribeDomainNs.ExpectDnsServers["+ i +"]"));
+			}
+			describeDomainNsResponse.ExpectDnsServers = describeDomainNsResponse_expectDnsServers;
         
 			return describeDomainNsResponse;
         }

@@ -16,13 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
 	public class DescribeDomainsResponse : AcsResponse
 	{
+
+		private string requestId;
 
 		private long? totalCount;
 
@@ -30,7 +33,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private long? pageSize;
 
-		private List<Domain> domains;
+		private List<DescribeDomains_Domain> domains;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? TotalCount
 		{
@@ -68,7 +83,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public List<Domain> Domains
+		public List<DescribeDomains_Domain> Domains
 		{
 			get
 			{
@@ -80,7 +95,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public class Domain{
+		public class DescribeDomains_Domain
+		{
 
 			private string domainId;
 
@@ -90,7 +106,11 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private bool? aliDomain;
 
+			private long? recordCount;
+
 			private string registrantEmail;
+
+			private string remark;
 
 			private string groupId;
 
@@ -101,6 +121,10 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			private string versionCode;
 
 			private string versionName;
+
+			private string instanceEndTime;
+
+			private bool? instanceExpired;
 
 			private List<string> dnsServers;
 
@@ -152,6 +176,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
+			public long? RecordCount
+			{
+				get
+				{
+					return recordCount;
+				}
+				set	
+				{
+					recordCount = value;
+				}
+			}
+
 			public string RegistrantEmail
 			{
 				get
@@ -161,6 +197,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					registrantEmail = value;
+				}
+			}
+
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
 				}
 			}
 
@@ -221,6 +269,30 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					versionName = value;
+				}
+			}
+
+			public string InstanceEndTime
+			{
+				get
+				{
+					return instanceEndTime;
+				}
+				set	
+				{
+					instanceEndTime = value;
+				}
+			}
+
+			public bool? InstanceExpired
+			{
+				get
+				{
+					return instanceExpired;
+				}
+				set	
+				{
+					instanceExpired = value;
 				}
 			}
 

@@ -16,39 +16,42 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class DeleteDomainRecordRequest : RpcAcsRequest<DeleteDomainRecordResponse>
     {
         public DeleteDomainRecordRequest()
-            : base("Alidns", "2015-01-09", "DeleteDomainRecord")
+            : base("Alidns", "2015-01-09", "DeleteDomainRecord", "alidns", "openAPI")
         {
         }
 
-		private string lang;
+		private string recordId;
 
 		private string userClientIp;
 
-		private string recordId;
+		private string lang;
 
-		public string Lang
+		private string accessKeyId;
+
+		public string RecordId
 		{
 			get
 			{
-				return lang;
+				return recordId;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				recordId = value;
+				DictionaryUtil.Add(QueryParameters, "RecordId", value);
 			}
 		}
 
@@ -65,20 +68,33 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string RecordId
+		public string Lang
 		{
 			get
 			{
-				return recordId;
+				return lang;
 			}
 			set	
 			{
-				recordId = value;
-				DictionaryUtil.Add(QueryParameters, "RecordId", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
-        public override DeleteDomainRecordResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override DeleteDomainRecordResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteDomainRecordResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

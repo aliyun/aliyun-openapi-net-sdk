@@ -16,13 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
 	public class DescribeDnsProductInstancesResponse : AcsResponse
 	{
+
+		private string requestId;
 
 		private long? totalCount;
 
@@ -30,7 +33,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private long? pageSize;
 
-		private List<DnsProduct> dnsProducts;
+		private List<DescribeDnsProductInstances_DnsProduct> dnsProducts;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? TotalCount
 		{
@@ -68,7 +83,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public List<DnsProduct> DnsProducts
+		public List<DescribeDnsProductInstances_DnsProduct> DnsProducts
 		{
 			get
 			{
@@ -80,7 +95,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public class DnsProduct{
+		public class DescribeDnsProductInstances_DnsProduct
+		{
 
 			private string instanceId;
 
@@ -129,6 +145,20 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			private long? monitorFrequency;
 
 			private long? monitorTaskCount;
+
+			private bool? regionLines;
+
+			private bool? gslb;
+
+			private bool? inClean;
+
+			private bool? inBlackHole;
+
+			private long? bindDomainCount;
+
+			private long? bindDomainUsedCount;
+
+			private string dnsSecurity;
 
 			public string InstanceId
 			{
@@ -415,6 +445,90 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					monitorTaskCount = value;
+				}
+			}
+
+			public bool? RegionLines
+			{
+				get
+				{
+					return regionLines;
+				}
+				set	
+				{
+					regionLines = value;
+				}
+			}
+
+			public bool? Gslb
+			{
+				get
+				{
+					return gslb;
+				}
+				set	
+				{
+					gslb = value;
+				}
+			}
+
+			public bool? InClean
+			{
+				get
+				{
+					return inClean;
+				}
+				set	
+				{
+					inClean = value;
+				}
+			}
+
+			public bool? InBlackHole
+			{
+				get
+				{
+					return inBlackHole;
+				}
+				set	
+				{
+					inBlackHole = value;
+				}
+			}
+
+			public long? BindDomainCount
+			{
+				get
+				{
+					return bindDomainCount;
+				}
+				set	
+				{
+					bindDomainCount = value;
+				}
+			}
+
+			public long? BindDomainUsedCount
+			{
+				get
+				{
+					return bindDomainUsedCount;
+				}
+				set	
+				{
+					bindDomainUsedCount = value;
+				}
+			}
+
+			public string DnsSecurity
+			{
+				get
+				{
+					return dnsSecurity;
+				}
+				set	
+				{
+					dnsSecurity = value;
 				}
 			}
 		}

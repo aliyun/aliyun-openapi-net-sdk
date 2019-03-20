@@ -16,13 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
 	public class DescribeDomainGroupsResponse : AcsResponse
 	{
+
+		private string requestId;
 
 		private long? totalCount;
 
@@ -30,7 +33,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private long? pageSize;
 
-		private List<DomainGroup> domainGroups;
+		private List<DescribeDomainGroups_DomainGroup> domainGroups;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public long? TotalCount
 		{
@@ -68,7 +83,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public List<DomainGroup> DomainGroups
+		public List<DescribeDomainGroups_DomainGroup> DomainGroups
 		{
 			get
 			{
@@ -80,11 +95,14 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public class DomainGroup{
+		public class DescribeDomainGroups_DomainGroup
+		{
 
 			private string groupId;
 
 			private string groupName;
+
+			private long? domainCount;
 
 			public string GroupId
 			{
@@ -107,6 +125,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					groupName = value;
+				}
+			}
+
+			public long? DomainCount
+			{
+				get
+				{
+					return domainCount;
+				}
+				set	
+				{
+					domainCount = value;
 				}
 			}
 		}

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -35,15 +36,16 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDomainGroupsResponse.PageNumber = context.LongValue("DescribeDomainGroups.PageNumber");
 			describeDomainGroupsResponse.PageSize = context.LongValue("DescribeDomainGroups.PageSize");
 
-			List<DescribeDomainGroupsResponse.DomainGroup> domainGroups = new List<DescribeDomainGroupsResponse.DomainGroup>();
+			List<DescribeDomainGroupsResponse.DescribeDomainGroups_DomainGroup> describeDomainGroupsResponse_domainGroups = new List<DescribeDomainGroupsResponse.DescribeDomainGroups_DomainGroup>();
 			for (int i = 0; i < context.Length("DescribeDomainGroups.DomainGroups.Length"); i++) {
-				DescribeDomainGroupsResponse.DomainGroup domainGroup = new DescribeDomainGroupsResponse.DomainGroup();
+				DescribeDomainGroupsResponse.DescribeDomainGroups_DomainGroup domainGroup = new DescribeDomainGroupsResponse.DescribeDomainGroups_DomainGroup();
 				domainGroup.GroupId = context.StringValue("DescribeDomainGroups.DomainGroups["+ i +"].GroupId");
 				domainGroup.GroupName = context.StringValue("DescribeDomainGroups.DomainGroups["+ i +"].GroupName");
+				domainGroup.DomainCount = context.LongValue("DescribeDomainGroups.DomainGroups["+ i +"].DomainCount");
 
-				domainGroups.Add(domainGroup);
+				describeDomainGroupsResponse_domainGroups.Add(domainGroup);
 			}
-			describeDomainGroupsResponse.DomainGroups = domainGroups;
+			describeDomainGroupsResponse.DomainGroups = describeDomainGroupsResponse_domainGroups;
         
 			return describeDomainGroupsResponse;
         }

@@ -16,17 +16,32 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
 	public class ChangeDomainGroupResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string groupId;
 
 		private string groupName;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string GroupId
 		{

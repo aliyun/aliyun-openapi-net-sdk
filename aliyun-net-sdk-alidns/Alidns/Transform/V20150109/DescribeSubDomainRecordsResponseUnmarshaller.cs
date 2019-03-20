@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -35,14 +36,14 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeSubDomainRecordsResponse.PageNumber = context.LongValue("DescribeSubDomainRecords.PageNumber");
 			describeSubDomainRecordsResponse.PageSize = context.LongValue("DescribeSubDomainRecords.PageSize");
 
-			List<DescribeSubDomainRecordsResponse.Record> domainRecords = new List<DescribeSubDomainRecordsResponse.Record>();
+			List<DescribeSubDomainRecordsResponse.DescribeSubDomainRecords_Record> describeSubDomainRecordsResponse_domainRecords = new List<DescribeSubDomainRecordsResponse.DescribeSubDomainRecords_Record>();
 			for (int i = 0; i < context.Length("DescribeSubDomainRecords.DomainRecords.Length"); i++) {
-				DescribeSubDomainRecordsResponse.Record record = new DescribeSubDomainRecordsResponse.Record();
+				DescribeSubDomainRecordsResponse.DescribeSubDomainRecords_Record record = new DescribeSubDomainRecordsResponse.DescribeSubDomainRecords_Record();
 				record.DomainName = context.StringValue("DescribeSubDomainRecords.DomainRecords["+ i +"].DomainName");
 				record.RecordId = context.StringValue("DescribeSubDomainRecords.DomainRecords["+ i +"].RecordId");
 				record.RR = context.StringValue("DescribeSubDomainRecords.DomainRecords["+ i +"].RR");
 				record.Type = context.StringValue("DescribeSubDomainRecords.DomainRecords["+ i +"].Type");
-				record.Value = context.StringValue("DescribeSubDomainRecords.DomainRecords["+ i +"].Value");
+				record._Value = context.StringValue("DescribeSubDomainRecords.DomainRecords["+ i +"].Value");
 				record.TTL = context.LongValue("DescribeSubDomainRecords.DomainRecords["+ i +"].TTL");
 				record.Priority = context.LongValue("DescribeSubDomainRecords.DomainRecords["+ i +"].Priority");
 				record.Line = context.StringValue("DescribeSubDomainRecords.DomainRecords["+ i +"].Line");
@@ -50,9 +51,9 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				record.Locked = context.BooleanValue("DescribeSubDomainRecords.DomainRecords["+ i +"].Locked");
 				record.Weight = context.IntegerValue("DescribeSubDomainRecords.DomainRecords["+ i +"].Weight");
 
-				domainRecords.Add(record);
+				describeSubDomainRecordsResponse_domainRecords.Add(record);
 			}
-			describeSubDomainRecordsResponse.DomainRecords = domainRecords;
+			describeSubDomainRecordsResponse.DomainRecords = describeSubDomainRecordsResponse_domainRecords;
         
 			return describeSubDomainRecordsResponse;
         }

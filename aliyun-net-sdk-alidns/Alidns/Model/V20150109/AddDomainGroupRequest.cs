@@ -16,41 +16,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class AddDomainGroupRequest : RpcAcsRequest<AddDomainGroupResponse>
     {
         public AddDomainGroupRequest()
-            : base("Alidns", "2015-01-09", "AddDomainGroup")
+            : base("Alidns", "2015-01-09", "AddDomainGroup", "alidns", "openAPI")
         {
         }
 
-		private string lang;
-
 		private string userClientIp;
+
+		private string lang;
 
 		private string groupName;
 
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
+		private string accessKeyId;
 
 		public string UserClientIp
 		{
@@ -62,6 +52,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -78,7 +81,20 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-        public override AddDomainGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override AddDomainGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AddDomainGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -35,16 +36,17 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDNSSLBSubDomainsResponse.PageNumber = context.LongValue("DescribeDNSSLBSubDomains.PageNumber");
 			describeDNSSLBSubDomainsResponse.PageSize = context.LongValue("DescribeDNSSLBSubDomains.PageSize");
 
-			List<DescribeDNSSLBSubDomainsResponse.SlbSubDomain> slbSubDomains = new List<DescribeDNSSLBSubDomainsResponse.SlbSubDomain>();
+			List<DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain> describeDNSSLBSubDomainsResponse_slbSubDomains = new List<DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain>();
 			for (int i = 0; i < context.Length("DescribeDNSSLBSubDomains.SlbSubDomains.Length"); i++) {
-				DescribeDNSSLBSubDomainsResponse.SlbSubDomain slbSubDomain = new DescribeDNSSLBSubDomainsResponse.SlbSubDomain();
+				DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain slbSubDomain = new DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain();
 				slbSubDomain.SubDomain = context.StringValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].SubDomain");
 				slbSubDomain.RecordCount = context.LongValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].RecordCount");
 				slbSubDomain.Open = context.BooleanValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].Open");
+				slbSubDomain.Type = context.StringValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].Type");
 
-				slbSubDomains.Add(slbSubDomain);
+				describeDNSSLBSubDomainsResponse_slbSubDomains.Add(slbSubDomain);
 			}
-			describeDNSSLBSubDomainsResponse.SlbSubDomains = slbSubDomains;
+			describeDNSSLBSubDomainsResponse.SlbSubDomains = describeDNSSLBSubDomainsResponse_slbSubDomains;
         
 			return describeDNSSLBSubDomainsResponse;
         }

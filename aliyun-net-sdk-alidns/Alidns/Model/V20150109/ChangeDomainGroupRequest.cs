@@ -16,41 +16,44 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class ChangeDomainGroupRequest : RpcAcsRequest<ChangeDomainGroupResponse>
     {
         public ChangeDomainGroupRequest()
-            : base("Alidns", "2015-01-09", "ChangeDomainGroup")
+            : base("Alidns", "2015-01-09", "ChangeDomainGroup", "alidns", "openAPI")
         {
         }
 
-		private string lang;
+		private string groupId;
 
 		private string userClientIp;
 
 		private string domainName;
 
-		private string groupId;
+		private string lang;
 
-		public string Lang
+		private string accessKeyId;
+
+		public string GroupId
 		{
 			get
 			{
-				return lang;
+				return groupId;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -80,20 +83,33 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string GroupId
+		public string Lang
 		{
 			get
 			{
-				return groupId;
+				return lang;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
-        public override ChangeDomainGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override ChangeDomainGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ChangeDomainGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,13 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
 	public class DescribeDomainRecordInfoResponse : AcsResponse
 	{
+
+		private string requestId;
 
 		private string domainId;
 
@@ -40,7 +43,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string type;
 
-		private string value_;
+		private string _value;
 
 		private long? tTL;
 
@@ -51,6 +54,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string status;
 
 		private bool? locked;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DomainId
 		{
@@ -148,15 +163,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string Value
+		public string _Value
 		{
 			get
 			{
-				return value_;
+				return _value;
 			}
 			set	
 			{
-				value_ = value;
+				_value = value;
 			}
 		}
 

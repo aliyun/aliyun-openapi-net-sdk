@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -55,12 +56,19 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDnsProductInstanceResponse.MonitorNodeCount = context.LongValue("DescribeDnsProductInstance.MonitorNodeCount");
 			describeDnsProductInstanceResponse.MonitorFrequency = context.LongValue("DescribeDnsProductInstance.MonitorFrequency");
 			describeDnsProductInstanceResponse.MonitorTaskCount = context.LongValue("DescribeDnsProductInstance.MonitorTaskCount");
+			describeDnsProductInstanceResponse.RegionLines = context.BooleanValue("DescribeDnsProductInstance.RegionLines");
+			describeDnsProductInstanceResponse.Gslb = context.BooleanValue("DescribeDnsProductInstance.Gslb");
+			describeDnsProductInstanceResponse.InClean = context.BooleanValue("DescribeDnsProductInstance.InClean");
+			describeDnsProductInstanceResponse.InBlackHole = context.BooleanValue("DescribeDnsProductInstance.InBlackHole");
+			describeDnsProductInstanceResponse.BindDomainCount = context.LongValue("DescribeDnsProductInstance.BindDomainCount");
+			describeDnsProductInstanceResponse.BindDomainUsedCount = context.LongValue("DescribeDnsProductInstance.BindDomainUsedCount");
+			describeDnsProductInstanceResponse.DnsSecurity = context.StringValue("DescribeDnsProductInstance.DnsSecurity");
 
-			List<string> dnsServers = new List<string>();
+			List<string> describeDnsProductInstanceResponse_dnsServers = new List<string>();
 			for (int i = 0; i < context.Length("DescribeDnsProductInstance.DnsServers.Length"); i++) {
-				dnsServers.Add(context.StringValue("DescribeDnsProductInstance.DnsServers["+ i +"]"));
+				describeDnsProductInstanceResponse_dnsServers.Add(context.StringValue("DescribeDnsProductInstance.DnsServers["+ i +"]"));
 			}
-			describeDnsProductInstanceResponse.DnsServers = dnsServers;
+			describeDnsProductInstanceResponse.DnsServers = describeDnsProductInstanceResponse_dnsServers;
         
 			return describeDnsProductInstanceResponse;
         }

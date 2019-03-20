@@ -16,39 +16,42 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class GetMainDomainNameRequest : RpcAcsRequest<GetMainDomainNameResponse>
     {
         public GetMainDomainNameRequest()
-            : base("Alidns", "2015-01-09", "GetMainDomainName")
+            : base("Alidns", "2015-01-09", "GetMainDomainName", "alidns", "openAPI")
         {
         }
 
-		private string lang;
+		private string inputString;
 
 		private string userClientIp;
 
-		private string inputString;
+		private string lang;
 
-		public string Lang
+		private string accessKeyId;
+
+		public string InputString
 		{
 			get
 			{
-				return lang;
+				return inputString;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				inputString = value;
+				DictionaryUtil.Add(QueryParameters, "InputString", value);
 			}
 		}
 
@@ -65,20 +68,33 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string InputString
+		public string Lang
 		{
 			get
 			{
-				return inputString;
+				return lang;
 			}
 			set	
 			{
-				inputString = value;
-				DictionaryUtil.Add(QueryParameters, "InputString", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
-        public override GetMainDomainNameResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override GetMainDomainNameResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetMainDomainNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

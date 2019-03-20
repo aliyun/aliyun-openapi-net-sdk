@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -39,7 +40,7 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDomainRecordInfoResponse.RecordId = context.StringValue("DescribeDomainRecordInfo.RecordId");
 			describeDomainRecordInfoResponse.RR = context.StringValue("DescribeDomainRecordInfo.RR");
 			describeDomainRecordInfoResponse.Type = context.StringValue("DescribeDomainRecordInfo.Type");
-			describeDomainRecordInfoResponse.Value = context.StringValue("DescribeDomainRecordInfo.Value");
+			describeDomainRecordInfoResponse._Value = context.StringValue("DescribeDomainRecordInfo.Value");
 			describeDomainRecordInfoResponse.TTL = context.LongValue("DescribeDomainRecordInfo.TTL");
 			describeDomainRecordInfoResponse.Priority = context.LongValue("DescribeDomainRecordInfo.Priority");
 			describeDomainRecordInfoResponse.Line = context.StringValue("DescribeDomainRecordInfo.Line");

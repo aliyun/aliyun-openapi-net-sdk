@@ -16,62 +16,73 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class DescribeDomainRecordsRequest : RpcAcsRequest<DescribeDomainRecordsResponse>
     {
         public DescribeDomainRecordsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainRecords")
+            : base("Alidns", "2015-01-09", "DescribeDomainRecords", "alidns", "openAPI")
         {
         }
 
-		private string lang;
+		private string valueKeyWord;
 
-		private string userClientIp;
+		private long? groupId;
 
 		private string domainName;
 
+		private string orderBy;
+
 		private long? pageNumber;
+
+		private string userClientIp;
 
 		private long? pageSize;
 
-		private string rRKeyWord;
+		private string searchMode;
+
+		private string lang;
+
+		private string keyWord;
 
 		private string typeKeyWord;
 
-		private string valueKeyWord;
+		private string rRKeyWord;
 
-		public string Lang
+		private string direction;
+
+		public string ValueKeyWord
 		{
 			get
 			{
-				return lang;
+				return valueKeyWord;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				valueKeyWord = value;
+				DictionaryUtil.Add(QueryParameters, "ValueKeyWord", value);
 			}
 		}
 
-		public string UserClientIp
+		public long? GroupId
 		{
 			get
 			{
-				return userClientIp;
+				return groupId;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
 			}
 		}
 
@@ -88,6 +99,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
+		public string OrderBy
+		{
+			get
+			{
+				return orderBy;
+			}
+			set	
+			{
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
+			}
+		}
+
 		public long? PageNumber
 		{
 			get
@@ -98,6 +122,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -114,16 +151,42 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string RRKeyWord
+		public string SearchMode
 		{
 			get
 			{
-				return rRKeyWord;
+				return searchMode;
 			}
 			set	
 			{
-				rRKeyWord = value;
-				DictionaryUtil.Add(QueryParameters, "RRKeyWord", value);
+				searchMode = value;
+				DictionaryUtil.Add(QueryParameters, "SearchMode", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string KeyWord
+		{
+			get
+			{
+				return keyWord;
+			}
+			set	
+			{
+				keyWord = value;
+				DictionaryUtil.Add(QueryParameters, "KeyWord", value);
 			}
 		}
 
@@ -140,20 +203,33 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string ValueKeyWord
+		public string RRKeyWord
 		{
 			get
 			{
-				return valueKeyWord;
+				return rRKeyWord;
 			}
 			set	
 			{
-				valueKeyWord = value;
-				DictionaryUtil.Add(QueryParameters, "ValueKeyWord", value);
+				rRKeyWord = value;
+				DictionaryUtil.Add(QueryParameters, "RRKeyWord", value);
 			}
 		}
 
-        public override DescribeDomainRecordsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Direction
+		{
+			get
+			{
+				return direction;
+			}
+			set	
+			{
+				direction = value;
+				DictionaryUtil.Add(QueryParameters, "Direction", value);
+			}
+		}
+
+        public override DescribeDomainRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDomainRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

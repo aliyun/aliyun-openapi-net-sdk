@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -35,18 +36,43 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDomainInfoResponse.DomainName = context.StringValue("DescribeDomainInfo.DomainName");
 			describeDomainInfoResponse.PunyCode = context.StringValue("DescribeDomainInfo.PunyCode");
 			describeDomainInfoResponse.AliDomain = context.BooleanValue("DescribeDomainInfo.AliDomain");
-			describeDomainInfoResponse.RegistrantEmail = context.StringValue("DescribeDomainInfo.RegistrantEmail");
+			describeDomainInfoResponse.Remark = context.StringValue("DescribeDomainInfo.Remark");
 			describeDomainInfoResponse.GroupId = context.StringValue("DescribeDomainInfo.GroupId");
 			describeDomainInfoResponse.GroupName = context.StringValue("DescribeDomainInfo.GroupName");
 			describeDomainInfoResponse.InstanceId = context.StringValue("DescribeDomainInfo.InstanceId");
 			describeDomainInfoResponse.VersionCode = context.StringValue("DescribeDomainInfo.VersionCode");
 			describeDomainInfoResponse.VersionName = context.StringValue("DescribeDomainInfo.VersionName");
+			describeDomainInfoResponse.MinTtl = context.LongValue("DescribeDomainInfo.MinTtl");
+			describeDomainInfoResponse.RecordLineTreeJson = context.StringValue("DescribeDomainInfo.RecordLineTreeJson");
+			describeDomainInfoResponse.LineType = context.StringValue("DescribeDomainInfo.LineType");
+			describeDomainInfoResponse.RegionLines = context.BooleanValue("DescribeDomainInfo.RegionLines");
+			describeDomainInfoResponse.InBlackHole = context.BooleanValue("DescribeDomainInfo.InBlackHole");
+			describeDomainInfoResponse.InClean = context.BooleanValue("DescribeDomainInfo.InClean");
+			describeDomainInfoResponse.SlaveDns = context.BooleanValue("DescribeDomainInfo.SlaveDns");
 
-			List<string> dnsServers = new List<string>();
+			List<string> describeDomainInfoResponse_dnsServers = new List<string>();
 			for (int i = 0; i < context.Length("DescribeDomainInfo.DnsServers.Length"); i++) {
-				dnsServers.Add(context.StringValue("DescribeDomainInfo.DnsServers["+ i +"]"));
+				describeDomainInfoResponse_dnsServers.Add(context.StringValue("DescribeDomainInfo.DnsServers["+ i +"]"));
 			}
-			describeDomainInfoResponse.DnsServers = dnsServers;
+			describeDomainInfoResponse.DnsServers = describeDomainInfoResponse_dnsServers;
+
+			List<string> describeDomainInfoResponse_availableTtls = new List<string>();
+			for (int i = 0; i < context.Length("DescribeDomainInfo.AvailableTtls.Length"); i++) {
+				describeDomainInfoResponse_availableTtls.Add(context.StringValue("DescribeDomainInfo.AvailableTtls["+ i +"]"));
+			}
+			describeDomainInfoResponse.AvailableTtls = describeDomainInfoResponse_availableTtls;
+
+			List<DescribeDomainInfoResponse.DescribeDomainInfo_RecordLine> describeDomainInfoResponse_recordLines = new List<DescribeDomainInfoResponse.DescribeDomainInfo_RecordLine>();
+			for (int i = 0; i < context.Length("DescribeDomainInfo.RecordLines.Length"); i++) {
+				DescribeDomainInfoResponse.DescribeDomainInfo_RecordLine recordLine = new DescribeDomainInfoResponse.DescribeDomainInfo_RecordLine();
+				recordLine.LineCode = context.StringValue("DescribeDomainInfo.RecordLines["+ i +"].LineCode");
+				recordLine.FatherCode = context.StringValue("DescribeDomainInfo.RecordLines["+ i +"].FatherCode");
+				recordLine.LineName = context.StringValue("DescribeDomainInfo.RecordLines["+ i +"].LineName");
+				recordLine.LineDisplayName = context.StringValue("DescribeDomainInfo.RecordLines["+ i +"].LineDisplayName");
+
+				describeDomainInfoResponse_recordLines.Add(recordLine);
+			}
+			describeDomainInfoResponse.RecordLines = describeDomainInfoResponse_recordLines;
         
 			return describeDomainInfoResponse;
         }

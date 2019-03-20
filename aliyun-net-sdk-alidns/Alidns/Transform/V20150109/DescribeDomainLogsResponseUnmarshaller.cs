@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Alidns.Model.V20150109;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
@@ -35,18 +36,19 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDomainLogsResponse.PageNumber = context.LongValue("DescribeDomainLogs.PageNumber");
 			describeDomainLogsResponse.PageSize = context.LongValue("DescribeDomainLogs.PageSize");
 
-			List<DescribeDomainLogsResponse.DomainLog> domainLogs = new List<DescribeDomainLogsResponse.DomainLog>();
+			List<DescribeDomainLogsResponse.DescribeDomainLogs_DomainLog> describeDomainLogsResponse_domainLogs = new List<DescribeDomainLogsResponse.DescribeDomainLogs_DomainLog>();
 			for (int i = 0; i < context.Length("DescribeDomainLogs.DomainLogs.Length"); i++) {
-				DescribeDomainLogsResponse.DomainLog domainLog = new DescribeDomainLogsResponse.DomainLog();
+				DescribeDomainLogsResponse.DescribeDomainLogs_DomainLog domainLog = new DescribeDomainLogsResponse.DescribeDomainLogs_DomainLog();
 				domainLog.ActionTime = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].ActionTime");
+				domainLog.ActionTimestamp = context.LongValue("DescribeDomainLogs.DomainLogs["+ i +"].ActionTimestamp");
 				domainLog.DomainName = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].DomainName");
 				domainLog.Action = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].Action");
 				domainLog.Message = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].Message");
 				domainLog.ClientIp = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].ClientIp");
 
-				domainLogs.Add(domainLog);
+				describeDomainLogsResponse_domainLogs.Add(domainLog);
 			}
-			describeDomainLogsResponse.DomainLogs = domainLogs;
+			describeDomainLogsResponse.DomainLogs = describeDomainLogsResponse_domainLogs;
         
 			return describeDomainLogsResponse;
         }

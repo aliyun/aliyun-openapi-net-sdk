@@ -16,56 +16,35 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Alidns.Transform;
 using Aliyun.Acs.Alidns.Transform.V20150109;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
     public class ChangeDomainOfDnsProductRequest : RpcAcsRequest<ChangeDomainOfDnsProductResponse>
     {
         public ChangeDomainOfDnsProductRequest()
-            : base("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct")
+            : base("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct", "alidns", "openAPI")
         {
         }
-
-		private string lang;
-
-		private string userClientIp;
 
 		private string instanceId;
 
 		private string newDomain;
 
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
+		private string userClientIp;
 
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
+		private bool? force;
+
+		private string lang;
+
+		private string accessKeyId;
 
 		public string InstanceId
 		{
@@ -93,7 +72,59 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-        public override ChangeDomainOfDnsProductResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public bool? Force
+		{
+			get
+			{
+				return force;
+			}
+			set	
+			{
+				force = value;
+				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override ChangeDomainOfDnsProductResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ChangeDomainOfDnsProductResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
