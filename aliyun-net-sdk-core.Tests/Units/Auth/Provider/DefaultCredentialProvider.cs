@@ -208,29 +208,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         }
 
         /*
-        Case: Test Credential File With default Client Name and file exist with bearer token credential
-        Result: should return BearerTokenCredential
-        Use credential chains
-         */
-        [Fact]
-        public void GetCredentialFileAlibabaCloudCredentialWithBearerToken()
-        {
-            DefaultProfile profile = DefaultProfile.GetProfile();
-            profile.DefaultClientName = "default";
-            var defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider(profile, null);
-            var homePath = defaultCredentialProvider.GetHomePath();
-
-            TestHelper.CreateIniFileWithBearerToken(homePath);
-
-            var credential = (BearerTokenCredential) defaultCredentialProvider.GetAlibabaCloudClientCredential();
-
-            TestHelper.DeleteIniFile(homePath);
-            Assert.NotNull(credential);
-            Assert.Null(credential.GetAccessKeyId());
-            Assert.Null(credential.GetAccessKeySecret());
-        }
-
-        /*
         Case: Test Credential File With default Client Name and file exist with rsa credential
         Result: should return BasicSessionCredentials
         Use credential chains
