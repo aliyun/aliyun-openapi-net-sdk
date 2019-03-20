@@ -18,6 +18,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text.RegularExpressions;
 
 using Aliyun.Acs.Core.Auth;
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.Core
         public int readTimeout { get; private set; }
         public int connectTimeout { get; private set; }
         public bool IgnoreCertificate { get; private set; }
+
+        public HttpWebProxy WebProxy = new HttpWebProxy();
 
         public DefaultAcsClient()
         {
@@ -263,6 +266,7 @@ namespace Aliyun.Acs.Core
 
                 ResolveTimeout(httpRequest);
                 SetHttpsInsecure(IgnoreCertificate);
+                ResolveProxy(httpRequest, request);
 
                 HttpResponse response = this.GetResponse(httpRequest);
 
@@ -397,6 +401,55 @@ namespace Aliyun.Acs.Core
         public void SetHttpsInsecure(bool ignoreCertificate = false)
         {
             IgnoreCertificate = ignoreCertificate;
+        }
+
+        /// <summary>
+        /// Set Http, Https or no proxy
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="urls"></param>
+        public void SetProxy(ProxyType type, string urls)
+        {
+            switch (type)
+            {
+                case ProxyType.HTTP_PROXY:
+                    this.WebProxy.HttpProxyUrl = urls;
+                    break;
+                case ProxyType.HTTPS_PROXY:
+                    this.WebProxy.HttpsProxyUrl = urls;
+                    break;
+                case ProxyType.NO_PROXY:
+                    var urlList = urls.Split(',');
+                    this.WebProxy.NoProxyUrlList = urlList;
+                    break;
+            }
+        }
+
+        private void ResolveProxy<T>(HttpRequest httpRequest, AcsRequest<T> request) where T : AcsResponse
+        {
+            if (null == this.WebProxy.HttpProxyUrl)
+            {
+                SetHttpWebEnvironmentProxyUrl();
+            }
+
+            if (request.Protocol == ProtocolType.HTTP)
+            {
+                httpRequest.WebProxy = new WebProxy(this.WebProxy.HttpProxyUrl, false, this.WebProxy.NoProxyUrlList);
+            }
+            else
+            {
+                httpRequest.WebProxy = new WebProxy(this.WebProxy.HttpsProxyUrl, false, this.WebProxy.NoProxyUrlList);
+            }
+
+        }
+
+        private void SetHttpWebEnvironmentProxyUrl()
+        {
+            char[] splitItem = { ',', '，' };
+
+            this.WebProxy.HttpProxyUrl = Environment.GetEnvironmentVariable("HTTP_PROXY") ?? Environment.GetEnvironmentVariable("http_proxy") ?? null;
+            this.WebProxy.HttpsProxyUrl = Environment.GetEnvironmentVariable("HTTPS_PROXY") ?? Environment.GetEnvironmentVariable("https_proxy") ?? null;
+            this.WebProxy.NoProxyUrlList = (Environment.GetEnvironmentVariable("NO_PROXY") ?? Environment.GetEnvironmentVariable("no_proxy") ?? "").Split(splitItem);
         }
     }
 }

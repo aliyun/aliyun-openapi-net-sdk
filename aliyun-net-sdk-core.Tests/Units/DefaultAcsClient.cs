@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Auth;
+using Aliyun.Acs.Core.Auth.Sts;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Profile;
@@ -676,6 +679,43 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             client.SetHttpsInsecure(true);
             Assert.True(client.IgnoreCertificate);
+        }
+
+        [Fact]
+        public void SetProxyTest()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            var client = new DefaultAcsClient(profile);
+
+            client.SetProxy(ProxyType.HTTP_PROXY, "http://alibabacloud.com");
+            client.SetProxy(ProxyType.HTTPS_PROXY, "https://alibabacloud.com");
+            client.SetProxy(ProxyType.NO_PROXY, "localhost,locahost:8080");
+
+            Assert.Equal("http://alibabacloud.com", client.WebProxy.HttpProxyUrl);
+            Assert.Equal("https://alibabacloud.com", client.WebProxy.HttpsProxyUrl);
+            Assert.Equal("localhost,locahost:8080".Split(','), client.WebProxy.NoProxyUrlList);
+        }
+
+        [Fact]
+        public void ResolveProxy()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            HttpRequest httpRequest = new HttpRequest();
+            var request = new AssumeRoleRequest();
+
+            Type type = typeof(DefaultAcsClient);
+            var resolveProxy = Activator.CreateInstance(type, profile);
+            MethodInfo methodInfo = type.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
+                .Where(x => x.Name == "ResolveProxy" && x.IsPrivate)
+                .First();
+
+            MethodInfo genericMethod = methodInfo.MakeGenericMethod(typeof(AssumeRoleResponse));
+
+            object[] parameters = { httpRequest, request };
+            genericMethod.Invoke(resolveProxy, parameters);
+
+            request.Protocol = ProtocolType.HTTP;
+            genericMethod.Invoke(resolveProxy, parameters);
         }
     }
 }

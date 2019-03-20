@@ -18,6 +18,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 using Aliyun.Acs.Core.Utils;
 
@@ -36,6 +37,8 @@ namespace Aliyun.Acs.Core.Http
         public int readTimeout { get; private set; }
         public int connectTimeout { get; private set; }
         public bool IgnoreCertificate { get; private set; }
+
+        public IWebProxy WebProxy { get; set; }
 
         public HttpRequest() { }
 

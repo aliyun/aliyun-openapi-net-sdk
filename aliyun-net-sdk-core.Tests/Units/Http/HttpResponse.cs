@@ -130,6 +130,15 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
         }
 
         [Fact]
+        public void GetWebRequestWithProxy()
+        {
+            HttpRequest request = HttpRequestTest.SetContent();
+            request.WebProxy = new System.Net.WebProxy();
+
+            HttpWebRequest httpWebRequest = HttpResponse.GetWebRequest(request);
+        }
+
+        [Fact]
         public void isSuccess()
         {
             HttpResponse instance = this.SetContent();
