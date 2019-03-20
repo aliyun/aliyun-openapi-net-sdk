@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
@@ -101,7 +102,7 @@ namespace Aliyun.Acs.Core.Http
 
         public void AppendUserAgent(string key, string value)
         {
-            if (StringUtils.isEmpty(key) || StringUtils.isEmpty(value))
+            if (String.IsNullOrEmpty(key) || String.IsNullOrEmpty(value))
                 return;
             if (this.excludedList.Contains(key.ToLowerInvariant()))
                 return;
