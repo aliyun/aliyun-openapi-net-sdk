@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
@@ -37,6 +38,10 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		private List<ListEventTargetsByRule_FCParameter> fcParameters;
 
 		private List<ListEventTargetsByRule_MnsParameter> mnsParameters;
+
+		private List<ListEventTargetsByRule_WebhookParameter> webhookParameters;
+
+		private List<ListEventTargetsByRule_SlsParameter> slsParameters;
 
 		public string Code
 		{
@@ -119,6 +124,30 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			set	
 			{
 				mnsParameters = value;
+			}
+		}
+
+		public List<ListEventTargetsByRule_WebhookParameter> WebhookParameters
+		{
+			get
+			{
+				return webhookParameters;
+			}
+			set	
+			{
+				webhookParameters = value;
+			}
+		}
+
+		public List<ListEventTargetsByRule_SlsParameter> SlsParameters
+		{
+			get
+			{
+				return slsParameters;
+			}
+			set	
+			{
+				slsParameters = value;
 			}
 		}
 
@@ -270,6 +299,126 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					id = value;
+				}
+			}
+		}
+
+		public class ListEventTargetsByRule_WebhookParameter
+		{
+
+			private string id;
+
+			private string protocol;
+
+			private string method;
+
+			private string url;
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Protocol
+			{
+				get
+				{
+					return protocol;
+				}
+				set	
+				{
+					protocol = value;
+				}
+			}
+
+			public string Method
+			{
+				get
+				{
+					return method;
+				}
+				set	
+				{
+					method = value;
+				}
+			}
+
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
+				}
+			}
+		}
+
+		public class ListEventTargetsByRule_SlsParameter
+		{
+
+			private string id;
+
+			private string region;
+
+			private string project;
+
+			private string logStore;
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			public string Project
+			{
+				get
+				{
+					return project;
+				}
+				set	
+				{
+					project = value;
+				}
+			}
+
+			public string LogStore
+			{
+				get
+				{
+					return logStore;
+				}
+				set	
+				{
+					logStore = value;
 				}
 			}
 		}

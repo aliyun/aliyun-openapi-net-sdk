@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cms.Model.V20180308;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Cms.Model.V20180308;
 
 namespace Aliyun.Acs.Cms.Transform.V20180308
 {
@@ -36,6 +37,7 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 			queryMetricLastResponse.Cursor = context.StringValue("QueryMetricLast.Cursor");
 			queryMetricLastResponse.Datapoints = context.StringValue("QueryMetricLast.Datapoints");
 			queryMetricLastResponse.Period = context.StringValue("QueryMetricLast.Period");
+			queryMetricLastResponse.Success = context.StringValue("QueryMetricLast.Success");
         
 			return queryMetricLastResponse;
         }

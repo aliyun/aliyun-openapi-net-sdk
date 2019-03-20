@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
@@ -234,6 +235,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 				private List<string> levelList;
 
+				private List<string> eventTypeList;
+
 				public string Product
 				{
 					get
@@ -279,6 +282,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 					set	
 					{
 						levelList = value;
+					}
+				}
+
+				public List<string> EventTypeList
+				{
+					get
+					{
+						return eventTypeList;
+					}
+					set	
+					{
+						eventTypeList = value;
 					}
 				}
 			}

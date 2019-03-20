@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cms.Model.V20180308;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Cms.Model.V20180308;
 
 namespace Aliyun.Acs.Cms.Transform.V20180308
 {
@@ -68,6 +69,30 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 				listEventTargetsByRuleResponse_mnsParameters.Add(mnsParameter);
 			}
 			listEventTargetsByRuleResponse.MnsParameters = listEventTargetsByRuleResponse_mnsParameters;
+
+			List<ListEventTargetsByRuleResponse.ListEventTargetsByRule_WebhookParameter> listEventTargetsByRuleResponse_webhookParameters = new List<ListEventTargetsByRuleResponse.ListEventTargetsByRule_WebhookParameter>();
+			for (int i = 0; i < context.Length("ListEventTargetsByRule.WebhookParameters.Length"); i++) {
+				ListEventTargetsByRuleResponse.ListEventTargetsByRule_WebhookParameter webhookParameter = new ListEventTargetsByRuleResponse.ListEventTargetsByRule_WebhookParameter();
+				webhookParameter.Id = context.StringValue("ListEventTargetsByRule.WebhookParameters["+ i +"].Id");
+				webhookParameter.Protocol = context.StringValue("ListEventTargetsByRule.WebhookParameters["+ i +"].Protocol");
+				webhookParameter.Method = context.StringValue("ListEventTargetsByRule.WebhookParameters["+ i +"].Method");
+				webhookParameter.Url = context.StringValue("ListEventTargetsByRule.WebhookParameters["+ i +"].Url");
+
+				listEventTargetsByRuleResponse_webhookParameters.Add(webhookParameter);
+			}
+			listEventTargetsByRuleResponse.WebhookParameters = listEventTargetsByRuleResponse_webhookParameters;
+
+			List<ListEventTargetsByRuleResponse.ListEventTargetsByRule_SlsParameter> listEventTargetsByRuleResponse_slsParameters = new List<ListEventTargetsByRuleResponse.ListEventTargetsByRule_SlsParameter>();
+			for (int i = 0; i < context.Length("ListEventTargetsByRule.SlsParameters.Length"); i++) {
+				ListEventTargetsByRuleResponse.ListEventTargetsByRule_SlsParameter slsParameter = new ListEventTargetsByRuleResponse.ListEventTargetsByRule_SlsParameter();
+				slsParameter.Id = context.StringValue("ListEventTargetsByRule.SlsParameters["+ i +"].Id");
+				slsParameter.Region = context.StringValue("ListEventTargetsByRule.SlsParameters["+ i +"].Region");
+				slsParameter.Project = context.StringValue("ListEventTargetsByRule.SlsParameters["+ i +"].Project");
+				slsParameter.LogStore = context.StringValue("ListEventTargetsByRule.SlsParameters["+ i +"].LogStore");
+
+				listEventTargetsByRuleResponse_slsParameters.Add(slsParameter);
+			}
+			listEventTargetsByRuleResponse.SlsParameters = listEventTargetsByRuleResponse_slsParameters;
         
 			return listEventTargetsByRuleResponse;
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cms.Model.V20180308;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Cms.Model.V20180308;
 
 namespace Aliyun.Acs.Cms.Transform.V20180308
 {
@@ -64,6 +65,30 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 				alarm.ComparisonOperator = context.StringValue("DescribeAlarms.Datapoints["+ i +"].ComparisonOperator");
 				alarm.Threshold = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Threshold");
 				alarm.DisplayName = context.StringValue("DescribeAlarms.Datapoints["+ i +"].DisplayName");
+
+				DescribeAlarmsResponse.DescribeAlarms_Alarm.DescribeAlarms_Escalations escalations = new DescribeAlarmsResponse.DescribeAlarms_Alarm.DescribeAlarms_Escalations();
+
+				DescribeAlarmsResponse.DescribeAlarms_Alarm.DescribeAlarms_Escalations.DescribeAlarms_Info info = new DescribeAlarmsResponse.DescribeAlarms_Alarm.DescribeAlarms_Escalations.DescribeAlarms_Info();
+				info.ComparisonOperator = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Escalations.Info.ComparisonOperator");
+				info.Statistics = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Escalations.Info.Statistics");
+				info.Threshold = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Escalations.Info.Threshold");
+				info.Times = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Escalations.Info.Times");
+				escalations.Info = info;
+
+				DescribeAlarmsResponse.DescribeAlarms_Alarm.DescribeAlarms_Escalations.DescribeAlarms_Warn warn = new DescribeAlarmsResponse.DescribeAlarms_Alarm.DescribeAlarms_Escalations.DescribeAlarms_Warn();
+				warn.ComparisonOperator = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Escalations.Warn.ComparisonOperator");
+				warn.Statistics = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Escalations.Warn.Statistics");
+				warn.Threshold = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Escalations.Warn.Threshold");
+				warn.Times = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Escalations.Warn.Times");
+				escalations.Warn = warn;
+
+				DescribeAlarmsResponse.DescribeAlarms_Alarm.DescribeAlarms_Escalations.DescribeAlarms_Critical critical = new DescribeAlarmsResponse.DescribeAlarms_Alarm.DescribeAlarms_Escalations.DescribeAlarms_Critical();
+				critical.ComparisonOperator = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Escalations.Critical.ComparisonOperator");
+				critical.Statistics = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Escalations.Critical.Statistics");
+				critical.Threshold = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Escalations.Critical.Threshold");
+				critical.Times = context.StringValue("DescribeAlarms.Datapoints["+ i +"].Escalations.Critical.Times");
+				escalations.Critical = critical;
+				alarm.Escalations = escalations;
 
 				describeAlarmsResponse_datapoints.Add(alarm);
 			}

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cms.Transform;
 using Aliyun.Acs.Cms.Transform.V20180308;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
@@ -39,8 +40,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string period;
 
-		private string metric;
-
 		private string length;
 
 		private string project;
@@ -51,9 +50,13 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private string startTime;
 
-		private string page;
-
 		private string accessKeyId;
+
+		private string metric;
+
+		private string action;
+
+		private string page;
 
 		private string dimensions;
 
@@ -93,19 +96,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value);
-			}
-		}
-
-		public string Metric
-		{
-			get
-			{
-				return metric;
-			}
-			set	
-			{
-				metric = value;
-				DictionaryUtil.Add(QueryParameters, "Metric", value);
 			}
 		}
 
@@ -174,19 +164,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public string Page
-		{
-			get
-			{
-				return page;
-			}
-			set	
-			{
-				page = value;
-				DictionaryUtil.Add(QueryParameters, "Page", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -197,6 +174,45 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				accessKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string Metric
+		{
+			get
+			{
+				return metric;
+			}
+			set	
+			{
+				metric = value;
+				DictionaryUtil.Add(QueryParameters, "Metric", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
+		public string Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "Page", value);
 			}
 		}
 
@@ -213,7 +229,7 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-        public override QueryMetricLastResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryMetricLastResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return QueryMetricLastResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

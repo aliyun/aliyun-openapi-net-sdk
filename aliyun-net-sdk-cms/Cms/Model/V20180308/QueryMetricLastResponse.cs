@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
@@ -35,6 +36,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		private string datapoints;
 
 		private string period;
+
+		private string success;
 
 		public string Code
 		{
@@ -105,6 +108,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			set	
 			{
 				period = value;
+			}
+		}
+
+		public string Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

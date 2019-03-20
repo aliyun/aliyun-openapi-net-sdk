@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cms.Transform;
 using Aliyun.Acs.Cms.Transform.V20180308;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
@@ -40,6 +41,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		private string _namespace;
 
 		private int? pageSize;
+
+		private string action;
 
 		private string id;
 
@@ -101,6 +104,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
+			}
+		}
+
 		public string Id
 		{
 			get
@@ -153,7 +169,7 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-        public override ListAlarmResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListAlarmResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ListAlarmResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

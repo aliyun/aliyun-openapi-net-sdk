@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cms.Transform;
 using Aliyun.Acs.Cms.Transform.V20180308;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
@@ -39,9 +40,9 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 
 		private int? pageSize;
 
-		private string keyword;
-
 		private string type;
+
+		private string keyword;
 
 		private string groupName;
 
@@ -88,19 +89,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-		public string Keyword
-		{
-			get
-			{
-				return keyword;
-			}
-			set	
-			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
-			}
-		}
-
 		public string Type
 		{
 			get
@@ -111,6 +99,19 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string Keyword
+		{
+			get
+			{
+				return keyword;
+			}
+			set	
+			{
+				keyword = value;
+				DictionaryUtil.Add(QueryParameters, "Keyword", value);
 			}
 		}
 
@@ -153,7 +154,7 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-        public override ListMyGroupsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListMyGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ListMyGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

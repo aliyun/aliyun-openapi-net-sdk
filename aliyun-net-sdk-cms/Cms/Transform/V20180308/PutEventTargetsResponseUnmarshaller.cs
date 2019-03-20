@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cms.Model.V20180308;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Cms.Model.V20180308;
 
 namespace Aliyun.Acs.Cms.Transform.V20180308
 {
@@ -104,6 +105,18 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 				putEventTargetsResponse_failedFcParameters.Add(fcParameter);
 			}
 			putEventTargetsResponse.FailedFcParameters = putEventTargetsResponse_failedFcParameters;
+
+			List<PutEventTargetsResponse.PutEventTargets_FailedSlsParameter> putEventTargetsResponse_failedSlsParameters = new List<PutEventTargetsResponse.PutEventTargets_FailedSlsParameter>();
+			for (int i = 0; i < context.Length("PutEventTargets.FailedSlsParameters.Length"); i++) {
+				PutEventTargetsResponse.PutEventTargets_FailedSlsParameter failedSlsParameter = new PutEventTargetsResponse.PutEventTargets_FailedSlsParameter();
+				failedSlsParameter.Id = context.StringValue("PutEventTargets.FailedSlsParameters["+ i +"].Id");
+				failedSlsParameter.Region = context.StringValue("PutEventTargets.FailedSlsParameters["+ i +"].Region");
+				failedSlsParameter.Project = context.StringValue("PutEventTargets.FailedSlsParameters["+ i +"].Project");
+				failedSlsParameter.LogStore = context.StringValue("PutEventTargets.FailedSlsParameters["+ i +"].LogStore");
+
+				putEventTargetsResponse_failedSlsParameters.Add(failedSlsParameter);
+			}
+			putEventTargetsResponse.FailedSlsParameters = putEventTargetsResponse_failedSlsParameters;
         
 			return putEventTargetsResponse;
         }

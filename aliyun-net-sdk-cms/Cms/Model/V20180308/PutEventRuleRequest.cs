@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cms.Transform;
 using Aliyun.Acs.Cms.Transform.V20180308;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
@@ -57,18 +58,22 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				eventPatterns = value;
 				for (int i = 0; i < eventPatterns.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"EventPattern." + (i + 1) + ".Product", eventPatterns[i].Product);
-					for (int j = 0; j < eventPatterns[i].NameLists.Count; j++)
+					for (int j = 0; j < eventPatterns[i].LevelLists.Count; j++)
 					{
-						DictionaryUtil.Add(QueryParameters,"EventPattern." + (i + 1) + ".NameList." +(j + 1), eventPatterns[i].NameLists[j]);
+						DictionaryUtil.Add(QueryParameters,"EventPattern." + (i + 1) + ".LevelList." +(j + 1), eventPatterns[i].LevelLists[j]);
 					}
+					DictionaryUtil.Add(QueryParameters,"EventPattern." + (i + 1) + ".Product", eventPatterns[i].Product);
 					for (int j = 0; j < eventPatterns[i].StatusLists.Count; j++)
 					{
 						DictionaryUtil.Add(QueryParameters,"EventPattern." + (i + 1) + ".StatusList." +(j + 1), eventPatterns[i].StatusLists[j]);
 					}
-					for (int j = 0; j < eventPatterns[i].LevelLists.Count; j++)
+					for (int j = 0; j < eventPatterns[i].NameLists.Count; j++)
 					{
-						DictionaryUtil.Add(QueryParameters,"EventPattern." + (i + 1) + ".LevelList." +(j + 1), eventPatterns[i].LevelLists[j]);
+						DictionaryUtil.Add(QueryParameters,"EventPattern." + (i + 1) + ".NameList." +(j + 1), eventPatterns[i].NameLists[j]);
+					}
+					for (int j = 0; j < eventPatterns[i].EventTypeLists.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"EventPattern." + (i + 1) + ".EventTypeList." +(j + 1), eventPatterns[i].EventTypeLists[j]);
 					}
 				}
 			}
@@ -142,13 +147,27 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		public class EventPattern
 		{
 
-			private string product;
+			private List<string> levelLists;
 
-			private List<string> nameLists;
+			private string product;
 
 			private List<string> statusLists;
 
-			private List<string> levelLists;
+			private List<string> nameLists;
+
+			private List<string> eventTypeLists;
+
+			public List<string> LevelLists
+			{
+				get
+				{
+					return levelLists;
+				}
+				set	
+				{
+					levelLists = value;
+				}
+			}
 
 			public string Product
 			{
@@ -159,18 +178,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					product = value;
-				}
-			}
-
-			public List<string> NameLists
-			{
-				get
-				{
-					return nameLists;
-				}
-				set	
-				{
-					nameLists = value;
 				}
 			}
 
@@ -186,20 +193,32 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				}
 			}
 
-			public List<string> LevelLists
+			public List<string> NameLists
 			{
 				get
 				{
-					return levelLists;
+					return nameLists;
 				}
 				set	
 				{
-					levelLists = value;
+					nameLists = value;
+				}
+			}
+
+			public List<string> EventTypeLists
+			{
+				get
+				{
+					return eventTypeLists;
+				}
+				set	
+				{
+					eventTypeLists = value;
 				}
 			}
 		}
 
-        public override PutEventRuleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override PutEventRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return PutEventRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

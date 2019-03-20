@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cms.Model.V20180308;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Cms.Model.V20180308;
 
 namespace Aliyun.Acs.Cms.Transform.V20180308
 {
@@ -69,6 +70,12 @@ namespace Aliyun.Acs.Cms.Transform.V20180308
 						eventPatternItem_levelList.Add(context.StringValue("ListEventRules.Datapoints["+ i +"].EventPattern["+ j +"].LevelList["+ k +"]"));
 					}
 					eventPatternItem.LevelList = eventPatternItem_levelList;
+
+					List<string> eventPatternItem_eventTypeList = new List<string>();
+					for (int k = 0; k < context.Length("ListEventRules.Datapoints["+ i +"].EventPattern["+ j +"].EventTypeList.Length"); k++) {
+						eventPatternItem_eventTypeList.Add(context.StringValue("ListEventRules.Datapoints["+ i +"].EventPattern["+ j +"].EventTypeList["+ k +"]"));
+					}
+					eventPatternItem.EventTypeList = eventPatternItem_eventTypeList;
 
 					eventRule_eventPattern.Add(eventPatternItem);
 				}

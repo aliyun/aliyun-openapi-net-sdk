@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cms.Transform;
 using Aliyun.Acs.Cms.Transform.V20180308;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
@@ -36,6 +37,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		private List<WebhookParameters> webhookParameterss;
 
 		private List<ContactParameters> contactParameterss;
+
+		private List<SlsParameters> slsParameterss;
 
 		private List<FcParameters> fcParameterss;
 
@@ -55,10 +58,10 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				webhookParameterss = value;
 				for (int i = 0; i < webhookParameterss.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"WebhookParameters." + (i + 1) + ".Id", webhookParameterss[i].Id);
 					DictionaryUtil.Add(QueryParameters,"WebhookParameters." + (i + 1) + ".Protocol", webhookParameterss[i].Protocol);
-					DictionaryUtil.Add(QueryParameters,"WebhookParameters." + (i + 1) + ".Url", webhookParameterss[i].Url);
 					DictionaryUtil.Add(QueryParameters,"WebhookParameters." + (i + 1) + ".Method", webhookParameterss[i].Method);
+					DictionaryUtil.Add(QueryParameters,"WebhookParameters." + (i + 1) + ".Id", webhookParameterss[i].Id);
+					DictionaryUtil.Add(QueryParameters,"WebhookParameters." + (i + 1) + ".Url", webhookParameterss[i].Url);
 				}
 			}
 		}
@@ -75,9 +78,29 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				contactParameterss = value;
 				for (int i = 0; i < contactParameterss.Count; i++)
 				{
+					DictionaryUtil.Add(QueryParameters,"ContactParameters." + (i + 1) + ".Level", contactParameterss[i].Level);
 					DictionaryUtil.Add(QueryParameters,"ContactParameters." + (i + 1) + ".Id", contactParameterss[i].Id);
 					DictionaryUtil.Add(QueryParameters,"ContactParameters." + (i + 1) + ".ContactGroupName", contactParameterss[i].ContactGroupName);
-					DictionaryUtil.Add(QueryParameters,"ContactParameters." + (i + 1) + ".Level", contactParameterss[i].Level);
+				}
+			}
+		}
+
+		public List<SlsParameters> SlsParameterss
+		{
+			get
+			{
+				return slsParameterss;
+			}
+
+			set
+			{
+				slsParameterss = value;
+				for (int i = 0; i < slsParameterss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SlsParameters." + (i + 1) + ".Project", slsParameterss[i].Project);
+					DictionaryUtil.Add(QueryParameters,"SlsParameters." + (i + 1) + ".Id", slsParameterss[i].Id);
+					DictionaryUtil.Add(QueryParameters,"SlsParameters." + (i + 1) + ".Region", slsParameterss[i].Region);
+					DictionaryUtil.Add(QueryParameters,"SlsParameters." + (i + 1) + ".LogStore", slsParameterss[i].LogStore);
 				}
 			}
 		}
@@ -94,10 +117,10 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				fcParameterss = value;
 				for (int i = 0; i < fcParameterss.Count; i++)
 				{
+					DictionaryUtil.Add(QueryParameters,"FcParameters." + (i + 1) + ".FunctionName", fcParameterss[i].FunctionName);
+					DictionaryUtil.Add(QueryParameters,"FcParameters." + (i + 1) + ".ServiceName", fcParameterss[i].ServiceName);
 					DictionaryUtil.Add(QueryParameters,"FcParameters." + (i + 1) + ".Id", fcParameterss[i].Id);
 					DictionaryUtil.Add(QueryParameters,"FcParameters." + (i + 1) + ".Region", fcParameterss[i].Region);
-					DictionaryUtil.Add(QueryParameters,"FcParameters." + (i + 1) + ".ServiceName", fcParameterss[i].ServiceName);
-					DictionaryUtil.Add(QueryParameters,"FcParameters." + (i + 1) + ".FunctionName", fcParameterss[i].FunctionName);
 				}
 			}
 		}
@@ -137,25 +160,13 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		public class WebhookParameters
 		{
 
-			private string id;
-
 			private string protocol;
-
-			private string url;
 
 			private string method;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string id;
+
+			private string url;
 
 			public string Protocol
 			{
@@ -166,18 +177,6 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					protocol = value;
-				}
-			}
-
-			public string Url
-			{
-				get
-				{
-					return url;
-				}
-				set	
-				{
-					url = value;
 				}
 			}
 
@@ -192,16 +191,52 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 					method = value;
 				}
 			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
+				}
+			}
 		}
 
 		public class ContactParameters
 		{
 
+			private string level;
+
 			private string id;
 
 			private string contactGroupName;
 
-			private string level;
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
+				}
+			}
 
 			public string Id
 			{
@@ -226,30 +261,30 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 					contactGroupName = value;
 				}
 			}
-
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
 		}
 
-		public class FcParameters
+		public class SlsParameters
 		{
+
+			private string project;
 
 			private string id;
 
 			private string region;
 
-			private string serviceName;
+			private string logStore;
 
-			private string functionName;
+			public string Project
+			{
+				get
+				{
+					return project;
+				}
+				set	
+				{
+					project = value;
+				}
+			}
 
 			public string Id
 			{
@@ -275,6 +310,42 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				}
 			}
 
+			public string LogStore
+			{
+				get
+				{
+					return logStore;
+				}
+				set	
+				{
+					logStore = value;
+				}
+			}
+		}
+
+		public class FcParameters
+		{
+
+			private string functionName;
+
+			private string serviceName;
+
+			private string id;
+
+			private string region;
+
+			public string FunctionName
+			{
+				get
+				{
+					return functionName;
+				}
+				set	
+				{
+					functionName = value;
+				}
+			}
+
 			public string ServiceName
 			{
 				get
@@ -287,15 +358,27 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				}
 			}
 
-			public string FunctionName
+			public string Id
 			{
 				get
 				{
-					return functionName;
+					return id;
 				}
 				set	
 				{
-					functionName = value;
+					id = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
 				}
 			}
 		}
@@ -346,7 +429,7 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-        public override PutEventTargetsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override PutEventTargetsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return PutEventTargetsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

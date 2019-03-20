@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cms.Transform;
 using Aliyun.Acs.Cms.Transform.V20180308;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
@@ -38,6 +39,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		private string instanceIdList;
 
 		private long? groupId;
+
+		private string category;
 
 		public string InstanceIds
 		{
@@ -78,7 +81,20 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			}
 		}
 
-        public override DeleteMyGroupInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
+			}
+		}
+
+        public override DeleteMyGroupInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteMyGroupInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

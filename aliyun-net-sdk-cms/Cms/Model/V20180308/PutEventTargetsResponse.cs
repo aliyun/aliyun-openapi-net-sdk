@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
@@ -47,6 +48,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 		private List<PutEventTargets_MnsParameter> failedMnsParameters;
 
 		private List<PutEventTargets_FcParameter> failedFcParameters;
+
+		private List<PutEventTargets_FailedSlsParameter> failedSlsParameters;
 
 		public bool? Success
 		{
@@ -189,6 +192,18 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			set	
 			{
 				failedFcParameters = value;
+			}
+		}
+
+		public List<PutEventTargets_FailedSlsParameter> FailedSlsParameters
+		{
+			get
+			{
+				return failedSlsParameters;
+			}
+			set	
+			{
+				failedSlsParameters = value;
 			}
 		}
 
@@ -340,6 +355,66 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					functionName = value;
+				}
+			}
+		}
+
+		public class PutEventTargets_FailedSlsParameter
+		{
+
+			private string id;
+
+			private string region;
+
+			private string project;
+
+			private string logStore;
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			public string Project
+			{
+				get
+				{
+					return project;
+				}
+				set	
+				{
+					project = value;
+				}
+			}
+
+			public string LogStore
+			{
+				get
+				{
+					return logStore;
+				}
+				set	
+				{
+					logStore = value;
 				}
 			}
 		}

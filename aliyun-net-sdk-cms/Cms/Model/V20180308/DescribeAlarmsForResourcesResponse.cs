@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cms.Model.V20180308
 {
@@ -182,6 +183,8 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 			private string comparisonOperator;
 
 			private string threshold;
+
+			private DescribeAlarmsForResources_Escalations escalations;
 
 			public string Uuid
 			{
@@ -444,6 +447,244 @@ namespace Aliyun.Acs.Cms.Model.V20180308
 				set	
 				{
 					threshold = value;
+				}
+			}
+
+			public DescribeAlarmsForResources_Escalations Escalations
+			{
+				get
+				{
+					return escalations;
+				}
+				set	
+				{
+					escalations = value;
+				}
+			}
+
+			public class DescribeAlarmsForResources_Escalations
+			{
+
+				private DescribeAlarmsForResources_Info info;
+
+				private DescribeAlarmsForResources_Warn warn;
+
+				private DescribeAlarmsForResources_Critical critical;
+
+				public DescribeAlarmsForResources_Info Info
+				{
+					get
+					{
+						return info;
+					}
+					set	
+					{
+						info = value;
+					}
+				}
+
+				public DescribeAlarmsForResources_Warn Warn
+				{
+					get
+					{
+						return warn;
+					}
+					set	
+					{
+						warn = value;
+					}
+				}
+
+				public DescribeAlarmsForResources_Critical Critical
+				{
+					get
+					{
+						return critical;
+					}
+					set	
+					{
+						critical = value;
+					}
+				}
+
+				public class DescribeAlarmsForResources_Info
+				{
+
+					private string comparisonOperator;
+
+					private string statistics;
+
+					private string threshold;
+
+					private string times;
+
+					public string ComparisonOperator
+					{
+						get
+						{
+							return comparisonOperator;
+						}
+						set	
+						{
+							comparisonOperator = value;
+						}
+					}
+
+					public string Statistics
+					{
+						get
+						{
+							return statistics;
+						}
+						set	
+						{
+							statistics = value;
+						}
+					}
+
+					public string Threshold
+					{
+						get
+						{
+							return threshold;
+						}
+						set	
+						{
+							threshold = value;
+						}
+					}
+
+					public string Times
+					{
+						get
+						{
+							return times;
+						}
+						set	
+						{
+							times = value;
+						}
+					}
+				}
+
+				public class DescribeAlarmsForResources_Warn
+				{
+
+					private string comparisonOperator;
+
+					private string statistics;
+
+					private string threshold;
+
+					private string times;
+
+					public string ComparisonOperator
+					{
+						get
+						{
+							return comparisonOperator;
+						}
+						set	
+						{
+							comparisonOperator = value;
+						}
+					}
+
+					public string Statistics
+					{
+						get
+						{
+							return statistics;
+						}
+						set	
+						{
+							statistics = value;
+						}
+					}
+
+					public string Threshold
+					{
+						get
+						{
+							return threshold;
+						}
+						set	
+						{
+							threshold = value;
+						}
+					}
+
+					public string Times
+					{
+						get
+						{
+							return times;
+						}
+						set	
+						{
+							times = value;
+						}
+					}
+				}
+
+				public class DescribeAlarmsForResources_Critical
+				{
+
+					private string comparisonOperator;
+
+					private string statistics;
+
+					private string threshold;
+
+					private string times;
+
+					public string ComparisonOperator
+					{
+						get
+						{
+							return comparisonOperator;
+						}
+						set	
+						{
+							comparisonOperator = value;
+						}
+					}
+
+					public string Statistics
+					{
+						get
+						{
+							return statistics;
+						}
+						set	
+						{
+							statistics = value;
+						}
+					}
+
+					public string Threshold
+					{
+						get
+						{
+							return threshold;
+						}
+						set	
+						{
+							threshold = value;
+						}
+					}
+
+					public string Times
+					{
+						get
+						{
+							return times;
+						}
+						set	
+						{
+							times = value;
+						}
+					}
 				}
 			}
 		}
