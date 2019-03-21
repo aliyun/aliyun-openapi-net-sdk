@@ -703,26 +703,96 @@ namespace Aliyun.Acs.Core.Tests.Units
         }
 
         [Fact]
-        public void SetProxyTest()
+        public void SetGetHttpProxy()
         {
             IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
             var client = new DefaultAcsClient(profile);
+            client.SetHttpProxy("http://localhost.com");
 
-            client.SetProxy(ProxyType.HTTP_PROXY, "http://alibabacloud.com");
-            client.SetProxy(ProxyType.HTTPS_PROXY, "https://alibabacloud.com");
-            client.SetProxy(ProxyType.NO_PROXY, "localhost,locahost:8080");
+            Assert.Equal("http://localhost.com", client.GetHttpProxy());
 
-            Assert.Equal("http://alibabacloud.com", client.WebProxy.HttpProxyUrl);
-            Assert.Equal("https://alibabacloud.com", client.WebProxy.HttpsProxyUrl);
-            Assert.Equal("localhost,locahost:8080".Split(','), client.WebProxy.NoProxyUrlList);
+            client.SetHttpProxy(null);
+            Environment.SetEnvironmentVariable("HTTP_PROXY", "http_proxy_1");
+            Assert.Equal("http_proxy_1", client.GetHttpProxy());
+            Environment.SetEnvironmentVariable("HTTP_PROXY", null);
+
+            client.SetHttpProxy(null);
+            Environment.SetEnvironmentVariable("http_proxy", "http_proxy_2");
+            Assert.Equal("http_proxy_2", client.GetHttpProxy());
+            Environment.SetEnvironmentVariable("http_proxy", null);
+
+            client.SetHttpProxy("http://localhost.com");
+            Environment.SetEnvironmentVariable("HTTP_PROXY", "http_proxy_1");
+            Environment.SetEnvironmentVariable("http_proxy", "http_proxy_2");
+            Assert.Equal("http://localhost.com", client.GetHttpProxy());
+            Environment.SetEnvironmentVariable("http_proxy", null);
+            Environment.SetEnvironmentVariable("HTTP_PROXY", null);
+            client.SetHttpProxy(null);
+        }
+
+        [Fact]
+        public void SetGetHttpsProxy()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            var client = new DefaultAcsClient(profile);
+            client.SetHttpsProxy("https://localhost.com");
+
+            Assert.Equal("https://localhost.com", client.GetHttpsProxy());
+
+            client.SetHttpsProxy(null);
+            Environment.SetEnvironmentVariable("HTTPS_PROXY", "https_proxy_1");
+            Assert.Equal("https_proxy_1", client.GetHttpsProxy());
+            Environment.SetEnvironmentVariable("HTTPS_PROXY", null);
+
+            client.SetHttpsProxy(null);
+            Environment.SetEnvironmentVariable("https_proxy", "https_proxy_2");
+            Assert.Equal("https_proxy_2", client.GetHttpsProxy());
+            Environment.SetEnvironmentVariable("https_proxy", null);
+
+            client.SetHttpsProxy("https://localhost.com");
+            Environment.SetEnvironmentVariable("HTTPS_PROXY", "https_proxy_1");
+            Environment.SetEnvironmentVariable("https_proxy", "https_proxy_2");
+            Assert.Equal("https://localhost.com", client.GetHttpsProxy());
+            Environment.SetEnvironmentVariable("https_proxy", null);
+            Environment.SetEnvironmentVariable("HTTPS_PROXY", null);
+            client.SetHttpsProxy(null);
+        }
+
+        [Fact]
+        public void SetGetNoProxy()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            var client = new DefaultAcsClient(profile);
+            client.SetNoProxy("localhost.com,localtest.com");
+
+            Assert.Equal("localhost.com,localtest.com", client.GetNoProxy());
+
+            client.SetNoProxy(null);
+            Environment.SetEnvironmentVariable("NO_PROXY", "no_proxy_1");
+            Assert.Equal("no_proxy_1", client.GetNoProxy());
+            Environment.SetEnvironmentVariable("NO_PROXY", null);
+
+            client.SetNoProxy(null);
+            Environment.SetEnvironmentVariable("no_proxy", "no_proxy_2");
+            Assert.Equal("no_proxy_2", client.GetNoProxy());
+            Environment.SetEnvironmentVariable("no_proxy", null);
+
+            client.SetNoProxy("localhost.com,localtest.com");
+            Environment.SetEnvironmentVariable("NO_PROXY", "no_proxy_1");
+            Environment.SetEnvironmentVariable("no_proxy", "no_proxy_2");
+            Assert.Equal("localhost.com,localtest.com", client.GetNoProxy());
+            Environment.SetEnvironmentVariable("no_proxy", null);
+            Environment.SetEnvironmentVariable("NO_PROXY", null);
+            client.SetNoProxy(null);
         }
 
         [Fact]
         public void ResolveProxy()
         {
             IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
-            HttpRequest httpRequest = new HttpRequest();
-            var request = new AssumeRoleRequest();
+            HttpRequest httpRequest = new HttpRequest("urls", new Dictionary<string, string>());
+
+            var acsRequest = new AssumeRoleRequest();
 
             Type type = typeof(DefaultAcsClient);
             var resolveProxy = Activator.CreateInstance(type, profile);
@@ -732,11 +802,29 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             MethodInfo genericMethod = methodInfo.MakeGenericMethod(typeof(AssumeRoleResponse));
 
-            object[] parameters = { httpRequest, request };
+            object[] parameters = { httpRequest, acsRequest };
             genericMethod.Invoke(resolveProxy, parameters);
 
-            request.Protocol = ProtocolType.HTTP;
+            acsRequest.Protocol = ProtocolType.HTTP;
+            Environment.SetEnvironmentVariable("HTTP_PROXY", "http://username:password@192.168.16.1:10");
+            Environment.SetEnvironmentVariable("no_proxy", "localhost,127.0.0.1,localaddress,.localdomain.com");
+
             genericMethod.Invoke(resolveProxy, parameters);
+            Assert.True(httpRequest.Headers.ContainsKey("Authorization"));
+            Environment.SetEnvironmentVariable("HTTP_PROXY", null);
+            httpRequest.Headers.Remove("Authorization");
+
+            acsRequest.Protocol = ProtocolType.HTTPS;
+            Environment.SetEnvironmentVariable("HTTPS_PROXY", "https://username:password@192.168.16.1:10");
+            genericMethod.Invoke(resolveProxy, parameters);
+            Assert.True(httpRequest.Headers.ContainsKey("Authorization"));
+            Environment.SetEnvironmentVariable("HTTPS_PROXY", null);
+            httpRequest.Headers.Remove("Authorization");
+
+            Environment.SetEnvironmentVariable("HTTPS_PROXY", "https://192.168.16.1:10");
+            genericMethod.Invoke(resolveProxy, parameters);
+            Assert.False(httpRequest.Headers.ContainsKey("Authorization"));
+            Environment.SetEnvironmentVariable("HTTPS_PROXY", null);
         }
     }
 }

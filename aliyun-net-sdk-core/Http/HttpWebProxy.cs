@@ -17,14 +17,15 @@
  * under the License.
  */
 
+using System;
 using System.Net;
 
 namespace Aliyun.Acs.Core.Http
 {
     public class HttpWebProxy
     {
-        public string HttpProxyUrl { get; set; }
-        public string HttpsProxyUrl { get; set; }
-        public string[] NoProxyUrlList { get; set; }
+        public string HttpProxy { get; set; }
+        public string HttpsProxy { get; set; }
+        public string NoProxy { get; set; }
     }
 }

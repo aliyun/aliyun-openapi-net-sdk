@@ -46,7 +46,7 @@ namespace Aliyun.Acs.Core
         public int connectTimeout { get; private set; }
         public bool IgnoreCertificate { get; private set; }
 
-        public HttpWebProxy WebProxy = new HttpWebProxy();
+        private static HttpWebProxy WebProxy = new HttpWebProxy();
 
         public DefaultAcsClient()
         {
@@ -405,52 +405,97 @@ namespace Aliyun.Acs.Core
         }
 
         /// <summary>
-        /// Set Http, Https or no proxy
+        /// Set Http Proxy
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="urls"></param>
-        public void SetProxy(ProxyType type, string urls)
+        /// <param name="httpProxy"></param>
+        public void SetHttpProxy(string httpProxy)
         {
-            switch (type)
-            {
-                case ProxyType.HTTP_PROXY:
-                    this.WebProxy.HttpProxyUrl = urls;
-                    break;
-                case ProxyType.HTTPS_PROXY:
-                    this.WebProxy.HttpsProxyUrl = urls;
-                    break;
-                case ProxyType.NO_PROXY:
-                    var urlList = urls.Split(',');
-                    this.WebProxy.NoProxyUrlList = urlList;
-                    break;
-            }
+            WebProxy.HttpProxy = httpProxy;
+        }
+
+        /// <summary>
+        /// Set Https Proxy
+        /// </summary>
+        /// <param name="httpsProxy"></param>
+        public void SetHttpsProxy(string httpsProxy)
+        {
+            WebProxy.HttpsProxy = httpsProxy;
+        }
+
+        /// <summary>
+        /// Set Proxy White List
+        /// </summary>
+        /// <param name="urls"></param>
+        public void SetNoProxy(string urls)
+        {
+            WebProxy.NoProxy = urls;
+        }
+
+        /// <summary>
+        /// Get Http Proxy
+        /// </summary>
+        /// <returns></returns>
+        public string GetHttpProxy()
+        {
+            return WebProxy.HttpProxy??Environment.GetEnvironmentVariable("HTTP_PROXY") ?? Environment.GetEnvironmentVariable("http_proxy") ?? null;
+        }
+
+        /// <summary>
+        /// Get Https Proxy
+        /// </summary>
+        /// <returns></returns>
+        public string GetHttpsProxy()
+        {
+            return WebProxy.HttpsProxy??Environment.GetEnvironmentVariable("HTTPS_PROXY") ?? Environment.GetEnvironmentVariable("https_proxy") ?? null;
+        }
+
+        /// <summary>
+        /// Get Proxy White List
+        /// </summary>
+        /// <returns></returns>
+        public string GetNoProxy()
+        {
+            return WebProxy.NoProxy??Environment.GetEnvironmentVariable("NO_PROXY") ?? Environment.GetEnvironmentVariable("no_proxy") ?? null;
         }
 
         private void ResolveProxy<T>(HttpRequest httpRequest, AcsRequest<T> request) where T : AcsResponse
         {
-            if (null == this.WebProxy.HttpProxyUrl)
-            {
-                SetHttpWebEnvironmentProxyUrl();
-            }
+            string authorization = "";
+            string proxy = "";
+            string[] noProxy = GetNoProxy()?.Split(',');
+
+            Uri originProxyUri;
+            Uri finalProxyUri;
+            ICredentials credential;
 
             if (request.Protocol == ProtocolType.HTTP)
             {
-                httpRequest.WebProxy = new WebProxy(this.WebProxy.HttpProxyUrl, false, this.WebProxy.NoProxyUrlList);
+                proxy = GetHttpProxy();
             }
             else
             {
-                httpRequest.WebProxy = new WebProxy(this.WebProxy.HttpsProxyUrl, false, this.WebProxy.NoProxyUrlList);
+                proxy = GetHttpsProxy();
             }
 
-        }
+            if (!String.IsNullOrEmpty(proxy))
+            {
+                originProxyUri = new Uri(proxy);
+                if (!String.IsNullOrEmpty(originProxyUri.UserInfo))
+                {
+                    authorization = Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(originProxyUri.UserInfo));
+                    finalProxyUri = new Uri(originProxyUri.Scheme + "://" + originProxyUri.Authority);
+                    var userInfoArray = originProxyUri.UserInfo.Split(':');
+                    credential = new NetworkCredential(userInfoArray[0], userInfoArray[1]);
 
-        private void SetHttpWebEnvironmentProxyUrl()
-        {
-            char[] splitItem = { ',', '，' };
-
-            this.WebProxy.HttpProxyUrl = Environment.GetEnvironmentVariable("HTTP_PROXY") ?? Environment.GetEnvironmentVariable("http_proxy") ?? null;
-            this.WebProxy.HttpsProxyUrl = Environment.GetEnvironmentVariable("HTTPS_PROXY") ?? Environment.GetEnvironmentVariable("https_proxy") ?? null;
-            this.WebProxy.NoProxyUrlList = (Environment.GetEnvironmentVariable("NO_PROXY") ?? Environment.GetEnvironmentVariable("no_proxy") ?? "").Split(splitItem);
+                    httpRequest.WebProxy = new WebProxy(finalProxyUri, false, noProxy, credential);
+                    httpRequest.Headers.Add("Authorization", "Basic " + authorization);
+                }
+                else
+                {
+                    finalProxyUri = originProxyUri;
+                    httpRequest.WebProxy = new WebProxy(finalProxyUri, false, noProxy);
+                }
+            }
         }
     }
 }
