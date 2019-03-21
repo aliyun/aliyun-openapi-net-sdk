@@ -22,10 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class DisableKeyResponse : AcsResponse
+	public class ListResourceTagsResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private List<ListResourceTags_Tag> tags;
 
 		public string RequestId
 		{
@@ -36,6 +38,64 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public List<ListResourceTags_Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+			}
+		}
+
+		public class ListResourceTags_Tag
+		{
+
+			private string keyId;
+
+			private string tagKey;
+
+			private string tagValue;
+
+			public string KeyId
+			{
+				get
+				{
+					return keyId;
+				}
+				set	
+				{
+					keyId = value;
+				}
+			}
+
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
+				}
+			}
+
+			public string TagValue
+			{
+				get
+				{
+					return tagValue;
+				}
+				set	
+				{
+					tagValue = value;
+				}
 			}
 		}
 	}

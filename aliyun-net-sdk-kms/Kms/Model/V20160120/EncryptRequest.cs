@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Kms.Transform;
 using Aliyun.Acs.Kms.Transform.V20160120;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
@@ -94,7 +95,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override EncryptResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override EncryptResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return EncryptResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

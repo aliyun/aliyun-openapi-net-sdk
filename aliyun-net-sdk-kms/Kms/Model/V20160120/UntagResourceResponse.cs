@@ -22,20 +22,20 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class DisableKeyResponse : AcsResponse
+	public class UntagResourceResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string keyId;
 
-		public string RequestId
+		public string KeyId
 		{
 			get
 			{
-				return requestId;
+				return keyId;
 			}
 			set	
 			{
-				requestId = value;
+				keyId = value;
 			}
 		}
 	}

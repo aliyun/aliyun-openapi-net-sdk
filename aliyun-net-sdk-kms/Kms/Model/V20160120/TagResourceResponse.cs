@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class DisableKeyResponse : AcsResponse
+	public class TagResourceResponse : AcsResponse
 	{
 
 		private string requestId;

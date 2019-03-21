@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class GetParametersForImportRequest : RpcAcsRequest<GetParametersForImportResponse>
+    public class TagResourceRequest : RpcAcsRequest<TagResourceResponse>
     {
-        public GetParametersForImportRequest()
-            : base("Kms", "2016-01-20", "GetParametersForImport", "kms", "openAPI")
+        public TagResourceRequest()
+            : base("Kms", "2016-01-20", "TagResource", "kms", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -39,9 +39,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string sTSToken;
 
-		private string wrappingAlgorithm;
-
-		private string wrappingKeySpec;
+		private string tags;
 
 		public string KeyId
 		{
@@ -69,35 +67,22 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string WrappingAlgorithm
+		public string Tags
 		{
 			get
 			{
-				return wrappingAlgorithm;
+				return tags;
 			}
 			set	
 			{
-				wrappingAlgorithm = value;
-				DictionaryUtil.Add(QueryParameters, "WrappingAlgorithm", value);
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 
-		public string WrappingKeySpec
-		{
-			get
-			{
-				return wrappingKeySpec;
-			}
-			set	
-			{
-				wrappingKeySpec = value;
-				DictionaryUtil.Add(QueryParameters, "WrappingKeySpec", value);
-			}
-		}
-
-        public override GetParametersForImportResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TagResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetParametersForImportResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TagResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
