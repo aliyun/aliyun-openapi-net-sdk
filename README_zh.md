@@ -264,6 +264,20 @@ client.SetHttpsInsecure(true);
 request.SetHttpsInsecure(true);
 ```
 
+## HTTP 代理
+
+如果您想使用 http，https 代理或者代理白名单，您可以设置环境变量 HTTP_PROXY ，HTTPS_PROXY 和 NO_PROXY，或者您也可以通过客户端来配置。
+
+```csharp
+//客户端优先级高于环境变量
+//SetProxy(ProxyType type, string urls)
+client.SetProxy(ProxyType.HTTP_PROXY, "http://127.0.0.1:8080");
+
+client.SetProxy(ProxyType.HTTPS_PROXY, "https://127.0.0.1:8080");
+
+client.SetProxy(ProxyType.NO_PROXY, "127.0.0.1,localhost");
+```
+
 ## API参考
 
 要知道您想访问的产品提供的 API 以及它们的参数，请参考开放了 API 的[产品列表](https://develop.aliyun.com/tools/openapilist)。

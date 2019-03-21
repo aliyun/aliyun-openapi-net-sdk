@@ -268,4 +268,17 @@ client.SetHttpsInsecure(true);
 // Request level certificate ignores verification
 request.SetHttpsInsecure(true);
 ```
-****
+
+## Http Proxy
+
+If you want to use the http, https proxy or proxy whitelist, you can set the environment variables HTTP_PROXY , HTTPS_PROXY and NO_PROXY , or you can configure them via the client.
+
+```c#
+//Client priority is higher than environment variable
+//SetProxy(ProxyType type, string urls)
+client.SetProxy(ProxyType.HTTP_PROXY, "http://127.0.0.1:8080");
+
+client.SetProxy(ProxyType.HTTPS_PROXY, "https://127.0.0.1:8080");
+
+client.SetProxy(ProxyType.NO_PROXY, "127.0.0.1,localhost");
+```
