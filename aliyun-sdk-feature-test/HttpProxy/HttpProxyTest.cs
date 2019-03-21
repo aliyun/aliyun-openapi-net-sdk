@@ -11,11 +11,17 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
         public void HttpProxy()
         {
             DescribeAccessPointsRequest request = new DescribeAccessPointsRequest();
-            client.SetProxy(ProxyType.HTTP_PROXY, "http://localhost:8989");
+            client.SetHttpProxy("http://localhost:8989");
 
             var response = client.GetAcsResponse(request);
 
             Assert.NotNull(response.HttpResponse.Content);
+
+            var expectValue = "HTTP/1.1 o_o";
+            string actualValue;
+            response.HttpResponse.Headers.TryGetValue("Via", out actualValue);
+
+            Assert.Equal(expectValue, actualValue);
         }
     }
 }
