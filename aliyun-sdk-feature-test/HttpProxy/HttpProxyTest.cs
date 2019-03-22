@@ -5,6 +5,7 @@ using Xunit;
 
 namespace Aliyun.Acs.Feature.Test.HttpProxy
 {
+    [Trait("Category", "FeatureTest")]
     public class HttpProxyTest : FeatureTestBase
     {
         [Fact]

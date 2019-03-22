@@ -10,9 +10,9 @@ using Xunit;
 
 namespace Aliyun.Acs.Feature.Test.Timeout
 {
+    [Trait("Category", "FeatureTest")]
     public class TimeoutTest : FeatureTestBase
     {
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void TestConnectTimeoutWithException()
         {
@@ -28,7 +28,6 @@ namespace Aliyun.Acs.Feature.Test.Timeout
             Assert.NotNull(exception.Message);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void TestEcsConnectTimeoutWithException()
         {
@@ -43,7 +42,6 @@ namespace Aliyun.Acs.Feature.Test.Timeout
             Assert.NotNull(exception.Message);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void TestTimeoutPriority()
         {

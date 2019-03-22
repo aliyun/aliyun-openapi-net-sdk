@@ -7,17 +7,17 @@ using Xunit;
 
 namespace Aliyun.Acs.Feature.Test.Credential
 {
+    [Trait("Category", "FeatureTest")]
     public class CredentialsTest : FeatureTestBase
     {
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void SdkManageTokenTest()
         {
-            if (base.GetRoleArn().Equals("FakeRoleArn"))
+            if (GetRoleArn().Equals("FakeRoleArn"))
                 return;
-            DefaultProfile profile = DefaultProfile.GetProfile("cn-hangzhou", this.GetBasicAccessKeyId(), this.GetBasicAccessKeySecret());
-            BasicCredentials basicCredential = new BasicCredentials(this.GetBasicAccessKeyId(), this.GetBasicAccessKeySecret());
-            STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(basicCredential, this.GetRoleArn(), profile);
+            DefaultProfile profile = DefaultProfile.GetProfile("cn-hangzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
+            BasicCredentials basicCredential = new BasicCredentials(GetBasicAccessKeyId(), GetBasicAccessKeySecret());
+            STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(basicCredential, GetRoleArn(), profile);
 
             DefaultAcsClient client = new DefaultAcsClient(profile, provider);
 
