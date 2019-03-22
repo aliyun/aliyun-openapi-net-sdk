@@ -824,7 +824,11 @@ namespace Aliyun.Acs.Core.Tests.Units
             Environment.SetEnvironmentVariable("HTTPS_PROXY", "https://192.168.16.1:10");
             genericMethod.Invoke(resolveProxy, parameters);
             Assert.False(httpRequest.Headers.ContainsKey("Authorization"));
+
             Environment.SetEnvironmentVariable("HTTPS_PROXY", null);
+            Environment.SetEnvironmentVariable("HTTP_PROXY", null);
+            Environment.SetEnvironmentVariable("no_proxy", null);
+            httpRequest.Headers.Remove("Authorization");
         }
     }
 }
