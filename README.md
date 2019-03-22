@@ -275,10 +275,20 @@ If you want to use the http, https proxy or proxy whitelist, you can set the env
 
 ```c#
 //Client priority is higher than environment variable
-//SetProxy(ProxyType type, string urls)
-client.SetProxy(ProxyType.HTTP_PROXY, "http://127.0.0.1:8080");
 
-client.SetProxy(ProxyType.HTTPS_PROXY, "https://127.0.0.1:8080");
+//Set up the http proxy
+client.SetHttpProxy("http://localhost.com");
+//Get http proxy
+client.GetHttpProxy();
 
-client.SetProxy(ProxyType.NO_PROXY, "127.0.0.1,localhost");
+//Set up the https proxy
+client.SetHttpsProxy("https://localhost.com");
+client.SetHttpsProxy("http://username:password@localhost.com:10");
+//Get https proxy
+client.GetHttpsProxy();
+
+//Set proxy whitelist
+client.SetNoProxy("localhost.com,localtest.com");
+//Get the agent white list
+client.GetNoProxy();
 ```

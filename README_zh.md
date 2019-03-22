@@ -270,12 +270,22 @@ request.SetHttpsInsecure(true);
 
 ```csharp
 //客户端优先级高于环境变量
-//SetProxy(ProxyType type, string urls)
-client.SetProxy(ProxyType.HTTP_PROXY, "http://127.0.0.1:8080");
 
-client.SetProxy(ProxyType.HTTPS_PROXY, "https://127.0.0.1:8080");
+//设置 http 代理
+client.SetHttpProxy("http://localhost.com");
+//获取 http 代理
+client.GetHttpProxy();
 
-client.SetProxy(ProxyType.NO_PROXY, "127.0.0.1,localhost");
+//设置 https 代理
+client.SetHttpsProxy("https://localhost.com");
+client.SetHttpsProxy("http://username:password@localhost.com:10");
+//获取 https 代理
+client.GetHttpsProxy();
+
+//设置代理白名单
+client.SetNoProxy("localhost.com,localtest.com");
+//获取代理白名单
+client.GetNoProxy();
 ```
 
 ## API参考
