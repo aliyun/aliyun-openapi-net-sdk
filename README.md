@@ -25,7 +25,9 @@ If you have any problem while using C# SDK, please [submit an issue](https://git
 
 - To use Alibaba Cloud C# SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
 
-- The Alibaba Cloud C# SDK is requires .NET Framework 4.0 or later.
+- The Alibaba Cloud C# SDK is requires：
+    - **`.NET Framework 4.6.1`** or later
+    - **`.NET Standard 2.0`** or later
 
 ## Using C# SDK with NuGet Packages
 
@@ -292,3 +294,7 @@ client.SetNoProxy("localhost.com,localtest.com");
 //Get the agent white list
 client.GetNoProxy();
 ```
+
+## .NET OpenAPI Explorer
+
+You can see the product code examples you are using in the [OpenAPI Explorer](https://api.aliyun.com/#/?product=Ecs&api=DescribeAccessPoints&params={}&tab=DEMO&lang=CSHARP).

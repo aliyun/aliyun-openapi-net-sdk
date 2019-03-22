@@ -1,4 +1,5 @@
 # 阿里云开发者C#工具套件
+[英文文档](./README.md)
 
 [![Travis CI Build Status](https://travis-ci.org/aliyun/aliyun-openapi-net-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-net-sdk)
 [![Appveyor CI Build Status](https://ci.appveyor.com/api/projects/status/l6a4r74matmhwqf3?svg=true)](https://ci.appveyor.com/project/AxiosCros/aliyun-openapi-net-sdk-6xumj)
@@ -14,7 +15,7 @@
 
 ## 环境准备
 
-1. 阿里云 C# SDK 适用于 .NET Framework 4.0 及以上版本。
+1. 阿里云 C# SDK 适用于 **`.NET Framework 4.6.1`**  或者 **`.NET Standard 2.0`** 及其以上版本。
 2. 要使用阿里云 C# SDK，您需要一个云账号以及一对 Access Key ID 和 Access Key Secret。请在阿里云控制台中的 [AccessKey 管理页面]([https://usercenter.console.aliyun.com/#/manage/ak](https://usercenter.console.aliyun.com/#/manage/ak))上创建和查看您的 Access Key，或者联系您的系统管理员。
 3. 要使用阿里云 SDK 访问某个产品的 API，您需要事先在[阿里云控制台](https://home.console.aliyun.com/new#/)中开通这个产品。
 
@@ -287,6 +288,10 @@ client.SetNoProxy("localhost.com,localtest.com");
 //获取代理白名单
 client.GetNoProxy();
 ```
+
+## 使用Demo及其示例
+
+您可以在 [OpenAPI Explorer](https://api.aliyun.com/#/?product=Ecs&api=DescribeAccessPoints&params={}&tab=DEMO&lang=CSHARP) 中查看您所使用的产品代码示例。
 
 ## API参考
 
