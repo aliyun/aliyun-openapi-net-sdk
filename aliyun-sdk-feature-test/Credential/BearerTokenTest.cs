@@ -7,13 +7,13 @@ using Xunit;
 
 namespace Aliyun.Acs.Feature.Test.Credential
 {
+    [Trait("Category", "FeatureTest")]
     public class BearerTokenTest : FeatureTestBase
     {
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void BearerTokenAccessTest()
         {
-            BearerTokenCredential bearerTokenCredential = new BearerTokenCredential(base.GetBearerToken());
+            BearerTokenCredential bearerTokenCredential = new BearerTokenCredential(GetBearerToken());
 
             base.profile = DefaultProfile.GetProfile("cn-hangzhou");
             client = new Acs.Core.DefaultAcsClient(base.profile, bearerTokenCredential);

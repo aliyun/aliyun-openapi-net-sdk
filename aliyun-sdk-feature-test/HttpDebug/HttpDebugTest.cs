@@ -6,9 +6,9 @@ using Xunit;
 
 namespace Aliyun.Acs.Feature.Test.HttpDebug
 {
+    [Trait("Category", "FeatureTest")]
     public class HttpDebugTest : FeatureTestBase
     {
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void EcsHttpDebugTest()
         {

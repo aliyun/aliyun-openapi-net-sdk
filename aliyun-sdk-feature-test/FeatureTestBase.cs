@@ -23,24 +23,26 @@ namespace Aliyun.Acs.Feature.Test
         {
             profile = DefaultProfile.GetProfile(regionId, GetBasicAccessKeyId(), GetBasicAccessKeySecret());
             client = new DefaultAcsClient(profile);
+            client.SetConnectTimeoutInMilliSeconds(2 * 60 * 1000);
+            client.SetReadTimeoutInMilliSeconds(2 * 60 * 1000);
         }
 
-        public string GetBasicAccessKeyId()
+        public static string GetBasicAccessKeyId()
         {
             return Environment.GetEnvironmentVariable(AccessKeyId) ?? "FakeAccessKeyId";
         }
 
-        public string GetBasicAccessKeySecret()
+        public static string GetBasicAccessKeySecret()
         {
             return Environment.GetEnvironmentVariable(AccessKeySecret) ?? "FakeAccessKeySecret";
         }
 
-        public string GetRoleArn()
+        public static string GetRoleArn()
         {
             return Environment.GetEnvironmentVariable(roleArn) ?? "FakeRoleArn";
         }
 
-        public string GetBearerToken()
+        public static string GetBearerToken()
         {
             return Environment.GetEnvironmentVariable(bearerToken) ?? "FakeBearerToken";
         }

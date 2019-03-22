@@ -15,9 +15,9 @@ using Xunit;
 
 namespace Aliyun.Acs.Feature.Test.APIEncapsulate
 {
+    [Trait("Category", "FeatureTest")]
     public class APIEncapsulateTest : FeatureTestBase
     {
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void EcsRequestTest()
         {
@@ -28,7 +28,6 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.True(0 <= response.TotalCount);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void RdsRequestTest()
         {
@@ -39,7 +38,6 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.NotNull(response.RequestId);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void CdnRequestTest()
         {
@@ -52,7 +50,6 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.NotNull(response.RequestId);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void SlbRequestTest()
         {
@@ -63,7 +60,6 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.True(0 <= response.Acls.Count);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void RamRequestTest()
         {
@@ -74,7 +70,6 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.NotNull(response.RequestId);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void VpcRequestTest()
         {
@@ -85,7 +80,6 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.True(0 <= response.Vpcs.Count);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void JsonPutTypeTest()
         {
@@ -103,7 +97,6 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void XmlPutTypeTest()
         {
@@ -121,7 +114,6 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void FormPutTypeTest()
         {
@@ -139,7 +131,6 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void JsonPostTypeTest()
         {
@@ -157,7 +148,6 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.Equal("No action specified", exception.ErrorMessage);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void XmlPostTypeTest()
         {
@@ -176,7 +166,6 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             Assert.Equal("No action specified", exception.ErrorMessage);
         }
 
-        [Trait("Category", "FeatureTest")]
         [Fact]
         public void FormPostTypeTest()
         {
