@@ -14,14 +14,27 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
             client.SetHttpProxy("http://localhost:8989");
 
             var response = client.GetAcsResponse(request);
-
             Assert.NotNull(response.HttpResponse.Content);
+
+            var expectValue = "HTTP/1.1 o_o";
+            string actualValue;
+            response.HttpResponse.Headers.TryGetValue("Via", out actualValue);
+            Assert.Equal(expectValue, actualValue);
+        }
+
+        [Fact]
+        public void HttpProxyWithCredential()
+        {
+            DescribeAccessPointsRequest request = new DescribeAccessPointsRequest();
+            client.SetHttpProxy("http://username:password@localhost:8989");
+            var response = client.GetAcsResponse(request);
 
             var expectValue = "HTTP/1.1 o_o";
             string actualValue;
             response.HttpResponse.Headers.TryGetValue("Via", out actualValue);
 
             Assert.Equal(expectValue, actualValue);
+            Assert.NotNull(response.HttpResponse.Content);
         }
     }
 }
