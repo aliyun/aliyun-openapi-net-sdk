@@ -33,54 +33,54 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		private List<string> userIds;
+        private List<string> userIds;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public List<string> UserIds
-		{
-			get
-			{
-				return userIds;
-			}
+        public List<string> UserIds
+        {
+            get
+            {
+                return userIds;
+            }
 
-			set
-			{
-				userIds = value;
-				for (int i = 0; i < userIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"UserId." + (i + 1) , userIds[i]);
-				}
-			}
-		}
+            set
+            {
+                userIds = value;
+                for (int i = 0; i < userIds.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "UserId." + (i + 1), userIds[i]);
+                }
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override RemoveUsersResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

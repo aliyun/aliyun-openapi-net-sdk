@@ -22,147 +22,147 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeCdnUserQuotaResponse : AcsResponse
-	{
+    public class DescribeCdnUserQuotaResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? domainQuota;
+        private int? domainQuota;
 
-		private int? refreshUrlQuota;
+        private int? refreshUrlQuota;
 
-		private int? refreshDirQuota;
+        private int? refreshDirQuota;
 
-		private int? refreshUrlRemain;
+        private int? refreshUrlRemain;
 
-		private int? refreshDirRemain;
+        private int? refreshDirRemain;
 
-		private int? preloadQuota;
+        private int? preloadQuota;
 
-		private int? preloadRemain;
+        private int? preloadRemain;
 
-		private int? blockQuota;
+        private int? blockQuota;
 
-		private int? blockRemain;
+        private int? blockRemain;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? DomainQuota
-		{
-			get
-			{
-				return domainQuota;
-			}
-			set	
-			{
-				domainQuota = value;
-			}
-		}
+        public int? DomainQuota
+        {
+            get
+            {
+                return domainQuota;
+            }
+            set
+            {
+                domainQuota = value;
+            }
+        }
 
-		public int? RefreshUrlQuota
-		{
-			get
-			{
-				return refreshUrlQuota;
-			}
-			set	
-			{
-				refreshUrlQuota = value;
-			}
-		}
+        public int? RefreshUrlQuota
+        {
+            get
+            {
+                return refreshUrlQuota;
+            }
+            set
+            {
+                refreshUrlQuota = value;
+            }
+        }
 
-		public int? RefreshDirQuota
-		{
-			get
-			{
-				return refreshDirQuota;
-			}
-			set	
-			{
-				refreshDirQuota = value;
-			}
-		}
+        public int? RefreshDirQuota
+        {
+            get
+            {
+                return refreshDirQuota;
+            }
+            set
+            {
+                refreshDirQuota = value;
+            }
+        }
 
-		public int? RefreshUrlRemain
-		{
-			get
-			{
-				return refreshUrlRemain;
-			}
-			set	
-			{
-				refreshUrlRemain = value;
-			}
-		}
+        public int? RefreshUrlRemain
+        {
+            get
+            {
+                return refreshUrlRemain;
+            }
+            set
+            {
+                refreshUrlRemain = value;
+            }
+        }
 
-		public int? RefreshDirRemain
-		{
-			get
-			{
-				return refreshDirRemain;
-			}
-			set	
-			{
-				refreshDirRemain = value;
-			}
-		}
+        public int? RefreshDirRemain
+        {
+            get
+            {
+                return refreshDirRemain;
+            }
+            set
+            {
+                refreshDirRemain = value;
+            }
+        }
 
-		public int? PreloadQuota
-		{
-			get
-			{
-				return preloadQuota;
-			}
-			set	
-			{
-				preloadQuota = value;
-			}
-		}
+        public int? PreloadQuota
+        {
+            get
+            {
+                return preloadQuota;
+            }
+            set
+            {
+                preloadQuota = value;
+            }
+        }
 
-		public int? PreloadRemain
-		{
-			get
-			{
-				return preloadRemain;
-			}
-			set	
-			{
-				preloadRemain = value;
-			}
-		}
+        public int? PreloadRemain
+        {
+            get
+            {
+                return preloadRemain;
+            }
+            set
+            {
+                preloadRemain = value;
+            }
+        }
 
-		public int? BlockQuota
-		{
-			get
-			{
-				return blockQuota;
-			}
-			set	
-			{
-				blockQuota = value;
-			}
-		}
+        public int? BlockQuota
+        {
+            get
+            {
+                return blockQuota;
+            }
+            set
+            {
+                blockQuota = value;
+            }
+        }
 
-		public int? BlockRemain
-		{
-			get
-			{
-				return blockRemain;
-			}
-			set	
-			{
-				blockRemain = value;
-			}
-		}
-	}
+        public int? BlockRemain
+        {
+            get
+            {
+                return blockRemain;
+            }
+            set
+            {
+                blockRemain = value;
+            }
+        }
+    }
 }

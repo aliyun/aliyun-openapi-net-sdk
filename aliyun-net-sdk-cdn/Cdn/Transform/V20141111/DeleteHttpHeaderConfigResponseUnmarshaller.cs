@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DeleteHttpHeaderConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteHttpHeaderConfigResponse deleteHttpHeaderConfigResponse = new DeleteHttpHeaderConfigResponse();
+            DeleteHttpHeaderConfigResponse deleteHttpHeaderConfigResponse = new DeleteHttpHeaderConfigResponse();
 
-			deleteHttpHeaderConfigResponse.HttpResponse = context.HttpResponse;
-			deleteHttpHeaderConfigResponse.RequestId = context.StringValue("DeleteHttpHeaderConfig.RequestId");
-        
-			return deleteHttpHeaderConfigResponse;
+            deleteHttpHeaderConfigResponse.HttpResponse = context.HttpResponse;
+            deleteHttpHeaderConfigResponse.RequestId = context.StringValue("DeleteHttpHeaderConfig.RequestId");
+
+            return deleteHttpHeaderConfigResponse;
         }
     }
 }

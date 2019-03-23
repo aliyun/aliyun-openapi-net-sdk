@@ -34,95 +34,95 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string startTime;
+        private string startTime;
 
-		private long? limit;
+        private long? limit;
 
-		private string action;
+        private string action;
 
-		private string product;
+        private string product;
 
-		private string endTime;
+        private string endTime;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+                DictionaryUtil.Add(QueryParameters, "StartTime", value);
+            }
+        }
 
-		public long? Limit
-		{
-			get
-			{
-				return limit;
-			}
-			set	
-			{
-				limit = value;
-				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
-			}
-		}
+        public long? Limit
+        {
+            get
+            {
+                return limit;
+            }
+            set
+            {
+                limit = value;
+                DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string Product
-		{
-			get
-			{
-				return product;
-			}
-			set	
-			{
-				product = value;
-				DictionaryUtil.Add(QueryParameters, "Product", value);
-			}
-		}
+        public string Product
+        {
+            get
+            {
+                return product;
+            }
+            set
+            {
+                product = value;
+                DictionaryUtil.Add(QueryParameters, "Product", value);
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+                DictionaryUtil.Add(QueryParameters, "EndTime", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override DescribeTopDomainsByFlowResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

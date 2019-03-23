@@ -21,67 +21,67 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeInstanceTypeFamiliesResponse : AcsResponse
-	{
+    public class DescribeInstanceTypeFamiliesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeInstanceTypeFamilies_InstanceTypeFamily> instanceTypeFamilies;
+        private List<DescribeInstanceTypeFamilies_InstanceTypeFamily> instanceTypeFamilies;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeInstanceTypeFamilies_InstanceTypeFamily> InstanceTypeFamilies
-		{
-			get
-			{
-				return instanceTypeFamilies;
-			}
-			set	
-			{
-				instanceTypeFamilies = value;
-			}
-		}
+        public List<DescribeInstanceTypeFamilies_InstanceTypeFamily> InstanceTypeFamilies
+        {
+            get
+            {
+                return instanceTypeFamilies;
+            }
+            set
+            {
+                instanceTypeFamilies = value;
+            }
+        }
 
-		public class DescribeInstanceTypeFamilies_InstanceTypeFamily
-		{
+        public class DescribeInstanceTypeFamilies_InstanceTypeFamily
+        {
 
-			private string instanceTypeFamilyId;
+            private string instanceTypeFamilyId;
 
-			private string generation;
+            private string generation;
 
-			public string InstanceTypeFamilyId
-			{
-				get
-				{
-					return instanceTypeFamilyId;
-				}
-				set	
-				{
-					instanceTypeFamilyId = value;
-				}
-			}
+            public string InstanceTypeFamilyId
+            {
+                get
+                {
+                    return instanceTypeFamilyId;
+                }
+                set
+                {
+                    instanceTypeFamilyId = value;
+                }
+            }
 
-			public string Generation
-			{
-				get
-				{
-					return generation;
-				}
-				set	
-				{
-					generation = value;
-				}
-			}
-		}
-	}
+            public string Generation
+            {
+                get
+                {
+                    return generation;
+                }
+                set
+                {
+                    generation = value;
+                }
+            }
+        }
+    }
 }

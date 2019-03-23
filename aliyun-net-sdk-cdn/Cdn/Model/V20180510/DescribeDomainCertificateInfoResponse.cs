@@ -22,221 +22,221 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeDomainCertificateInfoResponse : AcsResponse
-	{
+    public class DescribeDomainCertificateInfoResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeDomainCertificateInfo_CertInfo> certInfos;
+        private List<DescribeDomainCertificateInfo_CertInfo> certInfos;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeDomainCertificateInfo_CertInfo> CertInfos
-		{
-			get
-			{
-				return certInfos;
-			}
-			set	
-			{
-				certInfos = value;
-			}
-		}
+        public List<DescribeDomainCertificateInfo_CertInfo> CertInfos
+        {
+            get
+            {
+                return certInfos;
+            }
+            set
+            {
+                certInfos = value;
+            }
+        }
 
-		public class DescribeDomainCertificateInfo_CertInfo
-		{
+        public class DescribeDomainCertificateInfo_CertInfo
+        {
 
-			private string domainName;
+            private string domainName;
 
-			private string certName;
+            private string certName;
 
-			private string certDomainName;
+            private string certDomainName;
 
-			private string certExpireTime;
+            private string certExpireTime;
 
-			private string certLife;
+            private string certLife;
 
-			private string certOrg;
+            private string certOrg;
 
-			private string certType;
+            private string certType;
 
-			private string serverCertificateStatus;
+            private string serverCertificateStatus;
 
-			private string status;
+            private string status;
 
-			private string serverCertificate;
+            private string serverCertificate;
 
-			private string certUpdateTime;
+            private string certUpdateTime;
 
-			private string certStartTime;
+            private string certStartTime;
 
-			private string domainCnameStatus;
+            private string domainCnameStatus;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+            public string DomainName
+            {
+                get
+                {
+                    return domainName;
+                }
+                set
+                {
+                    domainName = value;
+                }
+            }
 
-			public string CertName
-			{
-				get
-				{
-					return certName;
-				}
-				set	
-				{
-					certName = value;
-				}
-			}
+            public string CertName
+            {
+                get
+                {
+                    return certName;
+                }
+                set
+                {
+                    certName = value;
+                }
+            }
 
-			public string CertDomainName
-			{
-				get
-				{
-					return certDomainName;
-				}
-				set	
-				{
-					certDomainName = value;
-				}
-			}
+            public string CertDomainName
+            {
+                get
+                {
+                    return certDomainName;
+                }
+                set
+                {
+                    certDomainName = value;
+                }
+            }
 
-			public string CertExpireTime
-			{
-				get
-				{
-					return certExpireTime;
-				}
-				set	
-				{
-					certExpireTime = value;
-				}
-			}
+            public string CertExpireTime
+            {
+                get
+                {
+                    return certExpireTime;
+                }
+                set
+                {
+                    certExpireTime = value;
+                }
+            }
 
-			public string CertLife
-			{
-				get
-				{
-					return certLife;
-				}
-				set	
-				{
-					certLife = value;
-				}
-			}
+            public string CertLife
+            {
+                get
+                {
+                    return certLife;
+                }
+                set
+                {
+                    certLife = value;
+                }
+            }
 
-			public string CertOrg
-			{
-				get
-				{
-					return certOrg;
-				}
-				set	
-				{
-					certOrg = value;
-				}
-			}
+            public string CertOrg
+            {
+                get
+                {
+                    return certOrg;
+                }
+                set
+                {
+                    certOrg = value;
+                }
+            }
 
-			public string CertType
-			{
-				get
-				{
-					return certType;
-				}
-				set	
-				{
-					certType = value;
-				}
-			}
+            public string CertType
+            {
+                get
+                {
+                    return certType;
+                }
+                set
+                {
+                    certType = value;
+                }
+            }
 
-			public string ServerCertificateStatus
-			{
-				get
-				{
-					return serverCertificateStatus;
-				}
-				set	
-				{
-					serverCertificateStatus = value;
-				}
-			}
+            public string ServerCertificateStatus
+            {
+                get
+                {
+                    return serverCertificateStatus;
+                }
+                set
+                {
+                    serverCertificateStatus = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string ServerCertificate
-			{
-				get
-				{
-					return serverCertificate;
-				}
-				set	
-				{
-					serverCertificate = value;
-				}
-			}
+            public string ServerCertificate
+            {
+                get
+                {
+                    return serverCertificate;
+                }
+                set
+                {
+                    serverCertificate = value;
+                }
+            }
 
-			public string CertUpdateTime
-			{
-				get
-				{
-					return certUpdateTime;
-				}
-				set	
-				{
-					certUpdateTime = value;
-				}
-			}
+            public string CertUpdateTime
+            {
+                get
+                {
+                    return certUpdateTime;
+                }
+                set
+                {
+                    certUpdateTime = value;
+                }
+            }
 
-			public string CertStartTime
-			{
-				get
-				{
-					return certStartTime;
-				}
-				set	
-				{
-					certStartTime = value;
-				}
-			}
+            public string CertStartTime
+            {
+                get
+                {
+                    return certStartTime;
+                }
+                set
+                {
+                    certStartTime = value;
+                }
+            }
 
-			public string DomainCnameStatus
-			{
-				get
-				{
-					return domainCnameStatus;
-				}
-				set	
-				{
-					domainCnameStatus = value;
-				}
-			}
-		}
-	}
+            public string DomainCnameStatus
+            {
+                get
+                {
+                    return domainCnameStatus;
+                }
+                set
+                {
+                    domainCnameStatus = value;
+                }
+            }
+        }
+    }
 }

@@ -21,109 +21,109 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeRulesResponse : AcsResponse
-	{
+    public class DescribeRulesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeRules_Rule> rules;
+        private List<DescribeRules_Rule> rules;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeRules_Rule> Rules
-		{
-			get
-			{
-				return rules;
-			}
-			set	
-			{
-				rules = value;
-			}
-		}
+        public List<DescribeRules_Rule> Rules
+        {
+            get
+            {
+                return rules;
+            }
+            set
+            {
+                rules = value;
+            }
+        }
 
-		public class DescribeRules_Rule
-		{
+        public class DescribeRules_Rule
+        {
 
-			private string ruleId;
+            private string ruleId;
 
-			private string ruleName;
+            private string ruleName;
 
-			private string domain;
+            private string domain;
 
-			private string url;
+            private string url;
 
-			private string vServerGroupId;
+            private string vServerGroupId;
 
-			public string RuleId
-			{
-				get
-				{
-					return ruleId;
-				}
-				set	
-				{
-					ruleId = value;
-				}
-			}
+            public string RuleId
+            {
+                get
+                {
+                    return ruleId;
+                }
+                set
+                {
+                    ruleId = value;
+                }
+            }
 
-			public string RuleName
-			{
-				get
-				{
-					return ruleName;
-				}
-				set	
-				{
-					ruleName = value;
-				}
-			}
+            public string RuleName
+            {
+                get
+                {
+                    return ruleName;
+                }
+                set
+                {
+                    ruleName = value;
+                }
+            }
 
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
+            public string Domain
+            {
+                get
+                {
+                    return domain;
+                }
+                set
+                {
+                    domain = value;
+                }
+            }
 
-			public string Url
-			{
-				get
-				{
-					return url;
-				}
-				set	
-				{
-					url = value;
-				}
-			}
+            public string Url
+            {
+                get
+                {
+                    return url;
+                }
+                set
+                {
+                    url = value;
+                }
+            }
 
-			public string VServerGroupId
-			{
-				get
-				{
-					return vServerGroupId;
-				}
-				set	
-				{
-					vServerGroupId = value;
-				}
-			}
-		}
-	}
+            public string VServerGroupId
+            {
+                get
+                {
+                    return vServerGroupId;
+                }
+                set
+                {
+                    vServerGroupId = value;
+                }
+            }
+        }
+    }
 }

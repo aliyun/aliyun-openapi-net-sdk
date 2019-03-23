@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static DeleteVServerGroupResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteVServerGroupResponse deleteVServerGroupResponse = new DeleteVServerGroupResponse();
+            DeleteVServerGroupResponse deleteVServerGroupResponse = new DeleteVServerGroupResponse();
 
-			deleteVServerGroupResponse.HttpResponse = context.HttpResponse;
-			deleteVServerGroupResponse.RequestId = context.StringValue("DeleteVServerGroup.RequestId");
-        
-			return deleteVServerGroupResponse;
+            deleteVServerGroupResponse.HttpResponse = context.HttpResponse;
+            deleteVServerGroupResponse.RequestId = context.StringValue("DeleteVServerGroup.RequestId");
+
+            return deleteVServerGroupResponse;
         }
     }
 }

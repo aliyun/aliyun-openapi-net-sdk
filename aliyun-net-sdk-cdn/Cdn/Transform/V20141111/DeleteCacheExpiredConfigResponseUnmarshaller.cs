@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DeleteCacheExpiredConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteCacheExpiredConfigResponse deleteCacheExpiredConfigResponse = new DeleteCacheExpiredConfigResponse();
+            DeleteCacheExpiredConfigResponse deleteCacheExpiredConfigResponse = new DeleteCacheExpiredConfigResponse();
 
-			deleteCacheExpiredConfigResponse.HttpResponse = context.HttpResponse;
-			deleteCacheExpiredConfigResponse.RequestId = context.StringValue("DeleteCacheExpiredConfig.RequestId");
-        
-			return deleteCacheExpiredConfigResponse;
+            deleteCacheExpiredConfigResponse.HttpResponse = context.HttpResponse;
+            deleteCacheExpiredConfigResponse.RequestId = context.StringValue("DeleteCacheExpiredConfig.RequestId");
+
+            return deleteCacheExpiredConfigResponse;
         }
     }
 }

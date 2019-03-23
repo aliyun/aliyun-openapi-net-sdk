@@ -22,81 +22,81 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class StopMixStreamsServiceResponse : AcsResponse
-	{
+    public class StopMixStreamsServiceResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<StopMixStreamsService_MixStreamsInfo> mixStreamsInfoList;
+        private List<StopMixStreamsService_MixStreamsInfo> mixStreamsInfoList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<StopMixStreamsService_MixStreamsInfo> MixStreamsInfoList
-		{
-			get
-			{
-				return mixStreamsInfoList;
-			}
-			set	
-			{
-				mixStreamsInfoList = value;
-			}
-		}
+        public List<StopMixStreamsService_MixStreamsInfo> MixStreamsInfoList
+        {
+            get
+            {
+                return mixStreamsInfoList;
+            }
+            set
+            {
+                mixStreamsInfoList = value;
+            }
+        }
 
-		public class StopMixStreamsService_MixStreamsInfo
-		{
+        public class StopMixStreamsService_MixStreamsInfo
+        {
 
-			private string domainName;
+            private string domainName;
 
-			private string appName;
+            private string appName;
 
-			private string streamName;
+            private string streamName;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+            public string DomainName
+            {
+                get
+                {
+                    return domainName;
+                }
+                set
+                {
+                    domainName = value;
+                }
+            }
 
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
+            public string AppName
+            {
+                get
+                {
+                    return appName;
+                }
+                set
+                {
+                    appName = value;
+                }
+            }
 
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-		}
-	}
+            public string StreamName
+            {
+                get
+                {
+                    return streamName;
+                }
+                set
+                {
+                    streamName = value;
+                }
+            }
+        }
+    }
 }

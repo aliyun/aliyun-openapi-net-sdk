@@ -33,140 +33,140 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string restoreTime;
+        private string restoreTime;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private int? backupId;
+        private int? backupId;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string action;
+        private string action;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string RestoreTime
-		{
-			get
-			{
-				return restoreTime;
-			}
-			set	
-			{
-				restoreTime = value;
-				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
-			}
-		}
+        public string RestoreTime
+        {
+            get
+            {
+                return restoreTime;
+            }
+            set
+            {
+                restoreTime = value;
+                DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public int? BackupId
-		{
-			get
-			{
-				return backupId;
-			}
-			set	
-			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value.ToString());
-			}
-		}
+        public int? BackupId
+        {
+            get
+            {
+                return backupId;
+            }
+            set
+            {
+                backupId = value;
+                DictionaryUtil.Add(QueryParameters, "BackupId", value.ToString());
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+                DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override CreateTempDBInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

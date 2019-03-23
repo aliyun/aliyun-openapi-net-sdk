@@ -21,169 +21,169 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeKeyPairsResponse : AcsResponse
-	{
+    public class DescribeKeyPairsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeKeyPairs_KeyPair> keyPairs;
+        private List<DescribeKeyPairs_KeyPair> keyPairs;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeKeyPairs_KeyPair> KeyPairs
-		{
-			get
-			{
-				return keyPairs;
-			}
-			set	
-			{
-				keyPairs = value;
-			}
-		}
+        public List<DescribeKeyPairs_KeyPair> KeyPairs
+        {
+            get
+            {
+                return keyPairs;
+            }
+            set
+            {
+                keyPairs = value;
+            }
+        }
 
-		public class DescribeKeyPairs_KeyPair
-		{
+        public class DescribeKeyPairs_KeyPair
+        {
 
-			private string keyPairName;
+            private string keyPairName;
 
-			private string keyPairFingerPrint;
+            private string keyPairFingerPrint;
 
-			private string resourceGroupId;
+            private string resourceGroupId;
 
-			private List<DescribeKeyPairs_Tag> tags;
+            private List<DescribeKeyPairs_Tag> tags;
 
-			public string KeyPairName
-			{
-				get
-				{
-					return keyPairName;
-				}
-				set	
-				{
-					keyPairName = value;
-				}
-			}
+            public string KeyPairName
+            {
+                get
+                {
+                    return keyPairName;
+                }
+                set
+                {
+                    keyPairName = value;
+                }
+            }
 
-			public string KeyPairFingerPrint
-			{
-				get
-				{
-					return keyPairFingerPrint;
-				}
-				set	
-				{
-					keyPairFingerPrint = value;
-				}
-			}
+            public string KeyPairFingerPrint
+            {
+                get
+                {
+                    return keyPairFingerPrint;
+                }
+                set
+                {
+                    keyPairFingerPrint = value;
+                }
+            }
 
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
+            public string ResourceGroupId
+            {
+                get
+                {
+                    return resourceGroupId;
+                }
+                set
+                {
+                    resourceGroupId = value;
+                }
+            }
 
-			public List<DescribeKeyPairs_Tag> Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
+            public List<DescribeKeyPairs_Tag> Tags
+            {
+                get
+                {
+                    return tags;
+                }
+                set
+                {
+                    tags = value;
+                }
+            }
 
-			public class DescribeKeyPairs_Tag
-			{
+            public class DescribeKeyPairs_Tag
+            {
 
-				private string tagKey;
+                private string tagKey;
 
-				private string tagValue;
+                private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+                public string TagKey
+                {
+                    get
+                    {
+                        return tagKey;
+                    }
+                    set
+                    {
+                        tagKey = value;
+                    }
+                }
 
-				public string TagValue
-				{
-					get
-					{
-						return tagValue;
-					}
-					set	
-					{
-						tagValue = value;
-					}
-				}
-			}
-		}
-	}
+                public string TagValue
+                {
+                    get
+                    {
+                        return tagValue;
+                    }
+                    set
+                    {
+                        tagValue = value;
+                    }
+                }
+            }
+        }
+    }
 }

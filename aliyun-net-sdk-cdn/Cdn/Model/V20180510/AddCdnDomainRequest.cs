@@ -34,170 +34,170 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string topLevelDomain;
+        private string topLevelDomain;
 
-		private string resourceGroupId;
+        private string resourceGroupId;
 
-		private string sources;
+        private string sources;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string cdnType;
+        private string cdnType;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string scope;
+        private string scope;
 
-		private string domainName;
+        private string domainName;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string checkUrl;
+        private string checkUrl;
 
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
-			}
-		}
+        public string TopLevelDomain
+        {
+            get
+            {
+                return topLevelDomain;
+            }
+            set
+            {
+                topLevelDomain = value;
+                DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+            }
+        }
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
+        public string ResourceGroupId
+        {
+            get
+            {
+                return resourceGroupId;
+            }
+            set
+            {
+                resourceGroupId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+            }
+        }
 
-		public string Sources
-		{
-			get
-			{
-				return sources;
-			}
-			set	
-			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
-			}
-		}
+        public string Sources
+        {
+            get
+            {
+                return sources;
+            }
+            set
+            {
+                sources = value;
+                DictionaryUtil.Add(QueryParameters, "Sources", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string CdnType
-		{
-			get
-			{
-				return cdnType;
-			}
-			set	
-			{
-				cdnType = value;
-				DictionaryUtil.Add(QueryParameters, "CdnType", value);
-			}
-		}
+        public string CdnType
+        {
+            get
+            {
+                return cdnType;
+            }
+            set
+            {
+                cdnType = value;
+                DictionaryUtil.Add(QueryParameters, "CdnType", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string Scope
-		{
-			get
-			{
-				return scope;
-			}
-			set	
-			{
-				scope = value;
-				DictionaryUtil.Add(QueryParameters, "Scope", value);
-			}
-		}
+        public string Scope
+        {
+            get
+            {
+                return scope;
+            }
+            set
+            {
+                scope = value;
+                DictionaryUtil.Add(QueryParameters, "Scope", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string CheckUrl
-		{
-			get
-			{
-				return checkUrl;
-			}
-			set	
-			{
-				checkUrl = value;
-				DictionaryUtil.Add(QueryParameters, "CheckUrl", value);
-			}
-		}
+        public string CheckUrl
+        {
+            get
+            {
+                return checkUrl;
+            }
+            set
+            {
+                checkUrl = value;
+                DictionaryUtil.Add(QueryParameters, "CheckUrl", value);
+            }
+        }
 
         public override AddCdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

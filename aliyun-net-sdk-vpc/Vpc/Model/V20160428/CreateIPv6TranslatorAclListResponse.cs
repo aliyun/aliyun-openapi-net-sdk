@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateIPv6TranslatorAclListResponse : AcsResponse
-	{
+    public class CreateIPv6TranslatorAclListResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string aclId;
+        private string aclId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string AclId
-		{
-			get
-			{
-				return aclId;
-			}
-			set	
-			{
-				aclId = value;
-			}
-		}
-	}
+        public string AclId
+        {
+            get
+            {
+                return aclId;
+            }
+            set
+            {
+                aclId = value;
+            }
+        }
+    }
 }

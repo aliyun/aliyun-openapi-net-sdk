@@ -28,31 +28,32 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeDomainPathDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainPathDataResponse describeDomainPathDataResponse = new DescribeDomainPathDataResponse();
+            DescribeDomainPathDataResponse describeDomainPathDataResponse = new DescribeDomainPathDataResponse();
 
-			describeDomainPathDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainPathDataResponse.RequestId = context.StringValue("DescribeDomainPathData.RequestId");
-			describeDomainPathDataResponse.DomainName = context.StringValue("DescribeDomainPathData.DomainName");
-			describeDomainPathDataResponse.StartTime = context.StringValue("DescribeDomainPathData.StartTime");
-			describeDomainPathDataResponse.EndTime = context.StringValue("DescribeDomainPathData.EndTime");
-			describeDomainPathDataResponse.PageSize = context.IntegerValue("DescribeDomainPathData.PageSize");
-			describeDomainPathDataResponse.PageNumber = context.IntegerValue("DescribeDomainPathData.PageNumber");
-			describeDomainPathDataResponse.DataInterval = context.StringValue("DescribeDomainPathData.DataInterval");
-			describeDomainPathDataResponse.TotalCount = context.IntegerValue("DescribeDomainPathData.TotalCount");
+            describeDomainPathDataResponse.HttpResponse = context.HttpResponse;
+            describeDomainPathDataResponse.RequestId = context.StringValue("DescribeDomainPathData.RequestId");
+            describeDomainPathDataResponse.DomainName = context.StringValue("DescribeDomainPathData.DomainName");
+            describeDomainPathDataResponse.StartTime = context.StringValue("DescribeDomainPathData.StartTime");
+            describeDomainPathDataResponse.EndTime = context.StringValue("DescribeDomainPathData.EndTime");
+            describeDomainPathDataResponse.PageSize = context.IntegerValue("DescribeDomainPathData.PageSize");
+            describeDomainPathDataResponse.PageNumber = context.IntegerValue("DescribeDomainPathData.PageNumber");
+            describeDomainPathDataResponse.DataInterval = context.StringValue("DescribeDomainPathData.DataInterval");
+            describeDomainPathDataResponse.TotalCount = context.IntegerValue("DescribeDomainPathData.TotalCount");
 
-			List<DescribeDomainPathDataResponse.DescribeDomainPathData_UsageData> describeDomainPathDataResponse_pathDataPerInterval = new List<DescribeDomainPathDataResponse.DescribeDomainPathData_UsageData>();
-			for (int i = 0; i < context.Length("DescribeDomainPathData.PathDataPerInterval.Length"); i++) {
-				DescribeDomainPathDataResponse.DescribeDomainPathData_UsageData usageData = new DescribeDomainPathDataResponse.DescribeDomainPathData_UsageData();
-				usageData.Traffic = context.IntegerValue("DescribeDomainPathData.PathDataPerInterval["+ i +"].Traffic");
-				usageData.Acc = context.IntegerValue("DescribeDomainPathData.PathDataPerInterval["+ i +"].Acc");
-				usageData.Path = context.StringValue("DescribeDomainPathData.PathDataPerInterval["+ i +"].Path");
-				usageData.Time = context.StringValue("DescribeDomainPathData.PathDataPerInterval["+ i +"].Time");
+            List<DescribeDomainPathDataResponse.DescribeDomainPathData_UsageData> describeDomainPathDataResponse_pathDataPerInterval = new List<DescribeDomainPathDataResponse.DescribeDomainPathData_UsageData>();
+            for (int i = 0; i < context.Length("DescribeDomainPathData.PathDataPerInterval.Length"); i++)
+            {
+                DescribeDomainPathDataResponse.DescribeDomainPathData_UsageData usageData = new DescribeDomainPathDataResponse.DescribeDomainPathData_UsageData();
+                usageData.Traffic = context.IntegerValue("DescribeDomainPathData.PathDataPerInterval[" + i + "].Traffic");
+                usageData.Acc = context.IntegerValue("DescribeDomainPathData.PathDataPerInterval[" + i + "].Acc");
+                usageData.Path = context.StringValue("DescribeDomainPathData.PathDataPerInterval[" + i + "].Path");
+                usageData.Time = context.StringValue("DescribeDomainPathData.PathDataPerInterval[" + i + "].Time");
 
-				describeDomainPathDataResponse_pathDataPerInterval.Add(usageData);
-			}
-			describeDomainPathDataResponse.PathDataPerInterval = describeDomainPathDataResponse_pathDataPerInterval;
-        
-			return describeDomainPathDataResponse;
+                describeDomainPathDataResponse_pathDataPerInterval.Add(usageData);
+            }
+            describeDomainPathDataResponse.PathDataPerInterval = describeDomainPathDataResponse_pathDataPerInterval;
+
+            return describeDomainPathDataResponse;
         }
     }
 }

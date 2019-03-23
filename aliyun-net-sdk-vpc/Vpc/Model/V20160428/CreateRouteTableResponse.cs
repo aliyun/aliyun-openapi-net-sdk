@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateRouteTableResponse : AcsResponse
-	{
+    public class CreateRouteTableResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string routeTableId;
+        private string routeTableId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string RouteTableId
-		{
-			get
-			{
-				return routeTableId;
-			}
-			set	
-			{
-				routeTableId = value;
-			}
-		}
-	}
+        public string RouteTableId
+        {
+            get
+            {
+                return routeTableId;
+            }
+            set
+            {
+                routeTableId = value;
+            }
+        }
+    }
 }

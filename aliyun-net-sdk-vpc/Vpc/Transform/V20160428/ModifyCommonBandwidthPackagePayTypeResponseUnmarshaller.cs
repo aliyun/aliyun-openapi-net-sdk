@@ -27,15 +27,15 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static ModifyCommonBandwidthPackagePayTypeResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyCommonBandwidthPackagePayTypeResponse modifyCommonBandwidthPackagePayTypeResponse = new ModifyCommonBandwidthPackagePayTypeResponse();
+            ModifyCommonBandwidthPackagePayTypeResponse modifyCommonBandwidthPackagePayTypeResponse = new ModifyCommonBandwidthPackagePayTypeResponse();
 
-			modifyCommonBandwidthPackagePayTypeResponse.HttpResponse = context.HttpResponse;
-			modifyCommonBandwidthPackagePayTypeResponse.RequestId = context.StringValue("ModifyCommonBandwidthPackagePayType.RequestId");
-			modifyCommonBandwidthPackagePayTypeResponse.OrderId = context.LongValue("ModifyCommonBandwidthPackagePayType.OrderId");
-			modifyCommonBandwidthPackagePayTypeResponse.Code = context.StringValue("ModifyCommonBandwidthPackagePayType.Code");
-			modifyCommonBandwidthPackagePayTypeResponse.Message = context.StringValue("ModifyCommonBandwidthPackagePayType.Message");
-        
-			return modifyCommonBandwidthPackagePayTypeResponse;
+            modifyCommonBandwidthPackagePayTypeResponse.HttpResponse = context.HttpResponse;
+            modifyCommonBandwidthPackagePayTypeResponse.RequestId = context.StringValue("ModifyCommonBandwidthPackagePayType.RequestId");
+            modifyCommonBandwidthPackagePayTypeResponse.OrderId = context.LongValue("ModifyCommonBandwidthPackagePayType.OrderId");
+            modifyCommonBandwidthPackagePayTypeResponse.Code = context.StringValue("ModifyCommonBandwidthPackagePayType.Code");
+            modifyCommonBandwidthPackagePayTypeResponse.Message = context.StringValue("ModifyCommonBandwidthPackagePayType.Message");
+
+            return modifyCommonBandwidthPackagePayTypeResponse;
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public GetPasswordPolicyRequest()
             : base("Ram", "2015-05-01", "GetPasswordPolicy", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
         public override GetPasswordPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)

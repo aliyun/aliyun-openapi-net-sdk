@@ -21,361 +21,361 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeBackupsResponse : AcsResponse
-	{
+    public class DescribeBackupsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string totalRecordCount;
+        private string totalRecordCount;
 
-		private string pageNumber;
+        private string pageNumber;
 
-		private string pageRecordCount;
+        private string pageRecordCount;
 
-		private long? totalBackupSize;
+        private long? totalBackupSize;
 
-		private List<DescribeBackups_Backup> items;
+        private List<DescribeBackups_Backup> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public string TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public string PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public string PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public string PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public long? TotalBackupSize
-		{
-			get
-			{
-				return totalBackupSize;
-			}
-			set	
-			{
-				totalBackupSize = value;
-			}
-		}
+        public long? TotalBackupSize
+        {
+            get
+            {
+                return totalBackupSize;
+            }
+            set
+            {
+                totalBackupSize = value;
+            }
+        }
 
-		public List<DescribeBackups_Backup> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeBackups_Backup> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeBackups_Backup
-		{
+        public class DescribeBackups_Backup
+        {
 
-			private string backupId;
+            private string backupId;
 
-			private string dBInstanceId;
+            private string dBInstanceId;
 
-			private string backupStatus;
+            private string backupStatus;
 
-			private string backupStartTime;
+            private string backupStartTime;
 
-			private string backupEndTime;
+            private string backupEndTime;
 
-			private string backupType;
+            private string backupType;
 
-			private string backupMode;
+            private string backupMode;
 
-			private string backupMethod;
+            private string backupMethod;
 
-			private string backupDownloadURL;
+            private string backupDownloadURL;
 
-			private string backupIntranetDownloadURL;
+            private string backupIntranetDownloadURL;
 
-			private string backupLocation;
+            private string backupLocation;
 
-			private string backupExtractionStatus;
+            private string backupExtractionStatus;
 
-			private string backupScale;
+            private string backupScale;
 
-			private string backupDBNames;
+            private string backupDBNames;
 
-			private long? totalBackupSize;
+            private long? totalBackupSize;
 
-			private long? backupSize;
+            private long? backupSize;
 
-			private string hostInstanceID;
+            private string hostInstanceID;
 
-			private string storeStatus;
+            private string storeStatus;
 
-			private string metaStatus;
+            private string metaStatus;
 
-			public string BackupId
-			{
-				get
-				{
-					return backupId;
-				}
-				set	
-				{
-					backupId = value;
-				}
-			}
+            public string BackupId
+            {
+                get
+                {
+                    return backupId;
+                }
+                set
+                {
+                    backupId = value;
+                }
+            }
 
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
+            public string DBInstanceId
+            {
+                get
+                {
+                    return dBInstanceId;
+                }
+                set
+                {
+                    dBInstanceId = value;
+                }
+            }
 
-			public string BackupStatus
-			{
-				get
-				{
-					return backupStatus;
-				}
-				set	
-				{
-					backupStatus = value;
-				}
-			}
+            public string BackupStatus
+            {
+                get
+                {
+                    return backupStatus;
+                }
+                set
+                {
+                    backupStatus = value;
+                }
+            }
 
-			public string BackupStartTime
-			{
-				get
-				{
-					return backupStartTime;
-				}
-				set	
-				{
-					backupStartTime = value;
-				}
-			}
+            public string BackupStartTime
+            {
+                get
+                {
+                    return backupStartTime;
+                }
+                set
+                {
+                    backupStartTime = value;
+                }
+            }
 
-			public string BackupEndTime
-			{
-				get
-				{
-					return backupEndTime;
-				}
-				set	
-				{
-					backupEndTime = value;
-				}
-			}
+            public string BackupEndTime
+            {
+                get
+                {
+                    return backupEndTime;
+                }
+                set
+                {
+                    backupEndTime = value;
+                }
+            }
 
-			public string BackupType
-			{
-				get
-				{
-					return backupType;
-				}
-				set	
-				{
-					backupType = value;
-				}
-			}
+            public string BackupType
+            {
+                get
+                {
+                    return backupType;
+                }
+                set
+                {
+                    backupType = value;
+                }
+            }
 
-			public string BackupMode
-			{
-				get
-				{
-					return backupMode;
-				}
-				set	
-				{
-					backupMode = value;
-				}
-			}
+            public string BackupMode
+            {
+                get
+                {
+                    return backupMode;
+                }
+                set
+                {
+                    backupMode = value;
+                }
+            }
 
-			public string BackupMethod
-			{
-				get
-				{
-					return backupMethod;
-				}
-				set	
-				{
-					backupMethod = value;
-				}
-			}
+            public string BackupMethod
+            {
+                get
+                {
+                    return backupMethod;
+                }
+                set
+                {
+                    backupMethod = value;
+                }
+            }
 
-			public string BackupDownloadURL
-			{
-				get
-				{
-					return backupDownloadURL;
-				}
-				set	
-				{
-					backupDownloadURL = value;
-				}
-			}
+            public string BackupDownloadURL
+            {
+                get
+                {
+                    return backupDownloadURL;
+                }
+                set
+                {
+                    backupDownloadURL = value;
+                }
+            }
 
-			public string BackupIntranetDownloadURL
-			{
-				get
-				{
-					return backupIntranetDownloadURL;
-				}
-				set	
-				{
-					backupIntranetDownloadURL = value;
-				}
-			}
+            public string BackupIntranetDownloadURL
+            {
+                get
+                {
+                    return backupIntranetDownloadURL;
+                }
+                set
+                {
+                    backupIntranetDownloadURL = value;
+                }
+            }
 
-			public string BackupLocation
-			{
-				get
-				{
-					return backupLocation;
-				}
-				set	
-				{
-					backupLocation = value;
-				}
-			}
+            public string BackupLocation
+            {
+                get
+                {
+                    return backupLocation;
+                }
+                set
+                {
+                    backupLocation = value;
+                }
+            }
 
-			public string BackupExtractionStatus
-			{
-				get
-				{
-					return backupExtractionStatus;
-				}
-				set	
-				{
-					backupExtractionStatus = value;
-				}
-			}
+            public string BackupExtractionStatus
+            {
+                get
+                {
+                    return backupExtractionStatus;
+                }
+                set
+                {
+                    backupExtractionStatus = value;
+                }
+            }
 
-			public string BackupScale
-			{
-				get
-				{
-					return backupScale;
-				}
-				set	
-				{
-					backupScale = value;
-				}
-			}
+            public string BackupScale
+            {
+                get
+                {
+                    return backupScale;
+                }
+                set
+                {
+                    backupScale = value;
+                }
+            }
 
-			public string BackupDBNames
-			{
-				get
-				{
-					return backupDBNames;
-				}
-				set	
-				{
-					backupDBNames = value;
-				}
-			}
+            public string BackupDBNames
+            {
+                get
+                {
+                    return backupDBNames;
+                }
+                set
+                {
+                    backupDBNames = value;
+                }
+            }
 
-			public long? TotalBackupSize
-			{
-				get
-				{
-					return totalBackupSize;
-				}
-				set	
-				{
-					totalBackupSize = value;
-				}
-			}
+            public long? TotalBackupSize
+            {
+                get
+                {
+                    return totalBackupSize;
+                }
+                set
+                {
+                    totalBackupSize = value;
+                }
+            }
 
-			public long? BackupSize
-			{
-				get
-				{
-					return backupSize;
-				}
-				set	
-				{
-					backupSize = value;
-				}
-			}
+            public long? BackupSize
+            {
+                get
+                {
+                    return backupSize;
+                }
+                set
+                {
+                    backupSize = value;
+                }
+            }
 
-			public string HostInstanceID
-			{
-				get
-				{
-					return hostInstanceID;
-				}
-				set	
-				{
-					hostInstanceID = value;
-				}
-			}
+            public string HostInstanceID
+            {
+                get
+                {
+                    return hostInstanceID;
+                }
+                set
+                {
+                    hostInstanceID = value;
+                }
+            }
 
-			public string StoreStatus
-			{
-				get
-				{
-					return storeStatus;
-				}
-				set	
-				{
-					storeStatus = value;
-				}
-			}
+            public string StoreStatus
+            {
+                get
+                {
+                    return storeStatus;
+                }
+                set
+                {
+                    storeStatus = value;
+                }
+            }
 
-			public string MetaStatus
-			{
-				get
-				{
-					return metaStatus;
-				}
-				set	
-				{
-					metaStatus = value;
-				}
-			}
-		}
-	}
+            public string MetaStatus
+            {
+                get
+                {
+                    return metaStatus;
+                }
+                set
+                {
+                    metaStatus = value;
+                }
+            }
+        }
+    }
 }

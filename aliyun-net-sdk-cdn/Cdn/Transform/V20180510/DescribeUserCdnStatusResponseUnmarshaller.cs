@@ -28,16 +28,16 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeUserCdnStatusResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeUserCdnStatusResponse describeUserCdnStatusResponse = new DescribeUserCdnStatusResponse();
+            DescribeUserCdnStatusResponse describeUserCdnStatusResponse = new DescribeUserCdnStatusResponse();
 
-			describeUserCdnStatusResponse.HttpResponse = context.HttpResponse;
-			describeUserCdnStatusResponse.RequestId = context.StringValue("DescribeUserCdnStatus.RequestId");
-			describeUserCdnStatusResponse.Enabled = context.BooleanValue("DescribeUserCdnStatus.Enabled");
-			describeUserCdnStatusResponse.OnService = context.BooleanValue("DescribeUserCdnStatus.OnService");
-			describeUserCdnStatusResponse.InDebt = context.BooleanValue("DescribeUserCdnStatus.InDebt");
-			describeUserCdnStatusResponse.InDebtOverdue = context.BooleanValue("DescribeUserCdnStatus.InDebtOverdue");
-        
-			return describeUserCdnStatusResponse;
+            describeUserCdnStatusResponse.HttpResponse = context.HttpResponse;
+            describeUserCdnStatusResponse.RequestId = context.StringValue("DescribeUserCdnStatus.RequestId");
+            describeUserCdnStatusResponse.Enabled = context.BooleanValue("DescribeUserCdnStatus.Enabled");
+            describeUserCdnStatusResponse.OnService = context.BooleanValue("DescribeUserCdnStatus.OnService");
+            describeUserCdnStatusResponse.InDebt = context.BooleanValue("DescribeUserCdnStatus.InDebt");
+            describeUserCdnStatusResponse.InDebtOverdue = context.BooleanValue("DescribeUserCdnStatus.InDebtOverdue");
+
+            return describeUserCdnStatusResponse;
         }
     }
 }

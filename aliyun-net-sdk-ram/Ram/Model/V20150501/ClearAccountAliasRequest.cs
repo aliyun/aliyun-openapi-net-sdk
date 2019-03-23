@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public ClearAccountAliasRequest()
             : base("Ram", "2015-05-01", "ClearAccountAlias", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
         public override ClearAccountAliasResponse GetResponse(UnmarshallerContext unmarshallerContext)

@@ -21,105 +21,105 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class UploadCACertificateResponse : AcsResponse
-	{
+    public class UploadCACertificateResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string cACertificateId;
+        private string cACertificateId;
 
-		private string cACertificateName;
+        private string cACertificateName;
 
-		private string fingerprint;
+        private string fingerprint;
 
-		private string resourceGroupId;
+        private string resourceGroupId;
 
-		private string createTime;
+        private string createTime;
 
-		private long? createTimeStamp;
+        private long? createTimeStamp;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string CACertificateId
-		{
-			get
-			{
-				return cACertificateId;
-			}
-			set	
-			{
-				cACertificateId = value;
-			}
-		}
+        public string CACertificateId
+        {
+            get
+            {
+                return cACertificateId;
+            }
+            set
+            {
+                cACertificateId = value;
+            }
+        }
 
-		public string CACertificateName
-		{
-			get
-			{
-				return cACertificateName;
-			}
-			set	
-			{
-				cACertificateName = value;
-			}
-		}
+        public string CACertificateName
+        {
+            get
+            {
+                return cACertificateName;
+            }
+            set
+            {
+                cACertificateName = value;
+            }
+        }
 
-		public string Fingerprint
-		{
-			get
-			{
-				return fingerprint;
-			}
-			set	
-			{
-				fingerprint = value;
-			}
-		}
+        public string Fingerprint
+        {
+            get
+            {
+                return fingerprint;
+            }
+            set
+            {
+                fingerprint = value;
+            }
+        }
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-			}
-		}
+        public string ResourceGroupId
+        {
+            get
+            {
+                return resourceGroupId;
+            }
+            set
+            {
+                resourceGroupId = value;
+            }
+        }
 
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
+        public string CreateTime
+        {
+            get
+            {
+                return createTime;
+            }
+            set
+            {
+                createTime = value;
+            }
+        }
 
-		public long? CreateTimeStamp
-		{
-			get
-			{
-				return createTimeStamp;
-			}
-			set	
-			{
-				createTimeStamp = value;
-			}
-		}
-	}
+        public long? CreateTimeStamp
+        {
+            get
+            {
+                return createTimeStamp;
+            }
+            set
+            {
+                createTimeStamp = value;
+            }
+        }
+    }
 }

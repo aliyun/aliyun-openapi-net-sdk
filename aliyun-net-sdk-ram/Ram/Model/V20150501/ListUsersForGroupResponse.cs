@@ -22,109 +22,109 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class ListUsersForGroupResponse : AcsResponse
-	{
+    public class ListUsersForGroupResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? isTruncated;
+        private bool? isTruncated;
 
-		private string marker;
+        private string marker;
 
-		private List<ListUsersForGroup_User> users;
+        private List<ListUsersForGroup_User> users;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? IsTruncated
-		{
-			get
-			{
-				return isTruncated;
-			}
-			set	
-			{
-				isTruncated = value;
-			}
-		}
+        public bool? IsTruncated
+        {
+            get
+            {
+                return isTruncated;
+            }
+            set
+            {
+                isTruncated = value;
+            }
+        }
 
-		public string Marker
-		{
-			get
-			{
-				return marker;
-			}
-			set	
-			{
-				marker = value;
-			}
-		}
+        public string Marker
+        {
+            get
+            {
+                return marker;
+            }
+            set
+            {
+                marker = value;
+            }
+        }
 
-		public List<ListUsersForGroup_User> Users
-		{
-			get
-			{
-				return users;
-			}
-			set	
-			{
-				users = value;
-			}
-		}
+        public List<ListUsersForGroup_User> Users
+        {
+            get
+            {
+                return users;
+            }
+            set
+            {
+                users = value;
+            }
+        }
 
-		public class ListUsersForGroup_User
-		{
+        public class ListUsersForGroup_User
+        {
 
-			private string userName;
+            private string userName;
 
-			private string displayName;
+            private string displayName;
 
-			private string joinDate;
+            private string joinDate;
 
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
+            public string UserName
+            {
+                get
+                {
+                    return userName;
+                }
+                set
+                {
+                    userName = value;
+                }
+            }
 
-			public string DisplayName
-			{
-				get
-				{
-					return displayName;
-				}
-				set	
-				{
-					displayName = value;
-				}
-			}
+            public string DisplayName
+            {
+                get
+                {
+                    return displayName;
+                }
+                set
+                {
+                    displayName = value;
+                }
+            }
 
-			public string JoinDate
-			{
-				get
-				{
-					return joinDate;
-				}
-				set	
-				{
-					joinDate = value;
-				}
-			}
-		}
-	}
+            public string JoinDate
+            {
+                get
+                {
+                    return joinDate;
+                }
+                set
+                {
+                    joinDate = value;
+                }
+            }
+        }
+    }
 }

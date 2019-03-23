@@ -34,95 +34,95 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string action;
+        private string action;
 
-		private string domainName;
+        private string domainName;
 
-		private string cacheContent;
+        private string cacheContent;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string tTL;
+        private string tTL;
 
-		private long? configId;
+        private long? configId;
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string CacheContent
-		{
-			get
-			{
-				return cacheContent;
-			}
-			set	
-			{
-				cacheContent = value;
-				DictionaryUtil.Add(QueryParameters, "CacheContent", value);
-			}
-		}
+        public string CacheContent
+        {
+            get
+            {
+                return cacheContent;
+            }
+            set
+            {
+                cacheContent = value;
+                DictionaryUtil.Add(QueryParameters, "CacheContent", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string TTL
-		{
-			get
-			{
-				return tTL;
-			}
-			set	
-			{
-				tTL = value;
-				DictionaryUtil.Add(QueryParameters, "TTL", value);
-			}
-		}
+        public string TTL
+        {
+            get
+            {
+                return tTL;
+            }
+            set
+            {
+                tTL = value;
+                DictionaryUtil.Add(QueryParameters, "TTL", value);
+            }
+        }
 
-		public long? ConfigId
-		{
-			get
-			{
-				return configId;
-			}
-			set	
-			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
-			}
-		}
+        public long? ConfigId
+        {
+            get
+            {
+                return configId;
+            }
+            set
+            {
+                configId = value;
+                DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
+            }
+        }
 
         public override SetFileCacheExpiredConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

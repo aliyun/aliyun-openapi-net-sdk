@@ -21,179 +21,179 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeTasksResponse : AcsResponse
-	{
+    public class DescribeTasksResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string regionId;
+        private string regionId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeTasks_Task> taskSet;
+        private List<DescribeTasks_Task> taskSet;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeTasks_Task> TaskSet
-		{
-			get
-			{
-				return taskSet;
-			}
-			set	
-			{
-				taskSet = value;
-			}
-		}
+        public List<DescribeTasks_Task> TaskSet
+        {
+            get
+            {
+                return taskSet;
+            }
+            set
+            {
+                taskSet = value;
+            }
+        }
 
-		public class DescribeTasks_Task
-		{
+        public class DescribeTasks_Task
+        {
 
-			private string taskId;
+            private string taskId;
 
-			private string taskAction;
+            private string taskAction;
 
-			private string taskStatus;
+            private string taskStatus;
 
-			private string supportCancel;
+            private string supportCancel;
 
-			private string creationTime;
+            private string creationTime;
 
-			private string finishedTime;
+            private string finishedTime;
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+            public string TaskId
+            {
+                get
+                {
+                    return taskId;
+                }
+                set
+                {
+                    taskId = value;
+                }
+            }
 
-			public string TaskAction
-			{
-				get
-				{
-					return taskAction;
-				}
-				set	
-				{
-					taskAction = value;
-				}
-			}
+            public string TaskAction
+            {
+                get
+                {
+                    return taskAction;
+                }
+                set
+                {
+                    taskAction = value;
+                }
+            }
 
-			public string TaskStatus
-			{
-				get
-				{
-					return taskStatus;
-				}
-				set	
-				{
-					taskStatus = value;
-				}
-			}
+            public string TaskStatus
+            {
+                get
+                {
+                    return taskStatus;
+                }
+                set
+                {
+                    taskStatus = value;
+                }
+            }
 
-			public string SupportCancel
-			{
-				get
-				{
-					return supportCancel;
-				}
-				set	
-				{
-					supportCancel = value;
-				}
-			}
+            public string SupportCancel
+            {
+                get
+                {
+                    return supportCancel;
+                }
+                set
+                {
+                    supportCancel = value;
+                }
+            }
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+            public string CreationTime
+            {
+                get
+                {
+                    return creationTime;
+                }
+                set
+                {
+                    creationTime = value;
+                }
+            }
 
-			public string FinishedTime
-			{
-				get
-				{
-					return finishedTime;
-				}
-				set	
-				{
-					finishedTime = value;
-				}
-			}
-		}
-	}
+            public string FinishedTime
+            {
+                get
+                {
+                    return finishedTime;
+                }
+                set
+                {
+                    finishedTime = value;
+                }
+            }
+        }
+    }
 }

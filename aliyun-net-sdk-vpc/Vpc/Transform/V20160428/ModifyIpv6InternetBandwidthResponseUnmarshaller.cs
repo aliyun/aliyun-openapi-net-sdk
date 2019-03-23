@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static ModifyIpv6InternetBandwidthResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyIpv6InternetBandwidthResponse modifyIpv6InternetBandwidthResponse = new ModifyIpv6InternetBandwidthResponse();
+            ModifyIpv6InternetBandwidthResponse modifyIpv6InternetBandwidthResponse = new ModifyIpv6InternetBandwidthResponse();
 
-			modifyIpv6InternetBandwidthResponse.HttpResponse = context.HttpResponse;
-			modifyIpv6InternetBandwidthResponse.RequestId = context.StringValue("ModifyIpv6InternetBandwidth.RequestId");
-        
-			return modifyIpv6InternetBandwidthResponse;
+            modifyIpv6InternetBandwidthResponse.HttpResponse = context.HttpResponse;
+            modifyIpv6InternetBandwidthResponse.RequestId = context.StringValue("ModifyIpv6InternetBandwidth.RequestId");
+
+            return modifyIpv6InternetBandwidthResponse;
         }
     }
 }

@@ -33,74 +33,74 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private bool? all;
+        private bool? all;
 
-		private List<string> jobIds;
+        private List<string> jobIds;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string jobGroupId;
+        private string jobGroupId;
 
-		public bool? All
-		{
-			get
-			{
-				return all;
-			}
-			set	
-			{
-				all = value;
-				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
-			}
-		}
+        public bool? All
+        {
+            get
+            {
+                return all;
+            }
+            set
+            {
+                all = value;
+                DictionaryUtil.Add(QueryParameters, "All", value.ToString());
+            }
+        }
 
-		public List<string> JobIds
-		{
-			get
-			{
-				return jobIds;
-			}
+        public List<string> JobIds
+        {
+            get
+            {
+                return jobIds;
+            }
 
-			set
-			{
-				jobIds = value;
-				for (int i = 0; i < jobIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"JobId." + (i + 1) , jobIds[i]);
-				}
-			}
-		}
+            set
+            {
+                jobIds = value;
+                for (int i = 0; i < jobIds.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "JobId." + (i + 1), jobIds[i]);
+                }
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string JobGroupId
-		{
-			get
-			{
-				return jobGroupId;
-			}
-			set	
-			{
-				jobGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
-			}
-		}
+        public string JobGroupId
+        {
+            get
+            {
+                return jobGroupId;
+            }
+            set
+            {
+                jobGroupId = value;
+                DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override CancelPredictiveJobsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

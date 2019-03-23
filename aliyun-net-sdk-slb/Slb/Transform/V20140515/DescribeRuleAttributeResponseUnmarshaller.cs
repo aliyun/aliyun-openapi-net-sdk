@@ -27,18 +27,18 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static DescribeRuleAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeRuleAttributeResponse describeRuleAttributeResponse = new DescribeRuleAttributeResponse();
+            DescribeRuleAttributeResponse describeRuleAttributeResponse = new DescribeRuleAttributeResponse();
 
-			describeRuleAttributeResponse.HttpResponse = context.HttpResponse;
-			describeRuleAttributeResponse.RequestId = context.StringValue("DescribeRuleAttribute.RequestId");
-			describeRuleAttributeResponse.RuleName = context.StringValue("DescribeRuleAttribute.RuleName");
-			describeRuleAttributeResponse.LoadBalancerId = context.StringValue("DescribeRuleAttribute.LoadBalancerId");
-			describeRuleAttributeResponse.ListenerPort = context.StringValue("DescribeRuleAttribute.ListenerPort");
-			describeRuleAttributeResponse.Domain = context.StringValue("DescribeRuleAttribute.Domain");
-			describeRuleAttributeResponse.Url = context.StringValue("DescribeRuleAttribute.Url");
-			describeRuleAttributeResponse.VServerGroupId = context.StringValue("DescribeRuleAttribute.VServerGroupId");
-        
-			return describeRuleAttributeResponse;
+            describeRuleAttributeResponse.HttpResponse = context.HttpResponse;
+            describeRuleAttributeResponse.RequestId = context.StringValue("DescribeRuleAttribute.RequestId");
+            describeRuleAttributeResponse.RuleName = context.StringValue("DescribeRuleAttribute.RuleName");
+            describeRuleAttributeResponse.LoadBalancerId = context.StringValue("DescribeRuleAttribute.LoadBalancerId");
+            describeRuleAttributeResponse.ListenerPort = context.StringValue("DescribeRuleAttribute.ListenerPort");
+            describeRuleAttributeResponse.Domain = context.StringValue("DescribeRuleAttribute.Domain");
+            describeRuleAttributeResponse.Url = context.StringValue("DescribeRuleAttribute.Url");
+            describeRuleAttributeResponse.VServerGroupId = context.StringValue("DescribeRuleAttribute.VServerGroupId");
+
+            return describeRuleAttributeResponse;
         }
     }
 }

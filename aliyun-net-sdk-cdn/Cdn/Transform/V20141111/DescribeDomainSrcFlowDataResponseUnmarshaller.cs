@@ -28,26 +28,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeDomainSrcFlowDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainSrcFlowDataResponse describeDomainSrcFlowDataResponse = new DescribeDomainSrcFlowDataResponse();
+            DescribeDomainSrcFlowDataResponse describeDomainSrcFlowDataResponse = new DescribeDomainSrcFlowDataResponse();
 
-			describeDomainSrcFlowDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainSrcFlowDataResponse.RequestId = context.StringValue("DescribeDomainSrcFlowData.RequestId");
-			describeDomainSrcFlowDataResponse.DomainName = context.StringValue("DescribeDomainSrcFlowData.DomainName");
-			describeDomainSrcFlowDataResponse.StartTime = context.StringValue("DescribeDomainSrcFlowData.StartTime");
-			describeDomainSrcFlowDataResponse.EndTime = context.StringValue("DescribeDomainSrcFlowData.EndTime");
-			describeDomainSrcFlowDataResponse.DataInterval = context.StringValue("DescribeDomainSrcFlowData.DataInterval");
+            describeDomainSrcFlowDataResponse.HttpResponse = context.HttpResponse;
+            describeDomainSrcFlowDataResponse.RequestId = context.StringValue("DescribeDomainSrcFlowData.RequestId");
+            describeDomainSrcFlowDataResponse.DomainName = context.StringValue("DescribeDomainSrcFlowData.DomainName");
+            describeDomainSrcFlowDataResponse.StartTime = context.StringValue("DescribeDomainSrcFlowData.StartTime");
+            describeDomainSrcFlowDataResponse.EndTime = context.StringValue("DescribeDomainSrcFlowData.EndTime");
+            describeDomainSrcFlowDataResponse.DataInterval = context.StringValue("DescribeDomainSrcFlowData.DataInterval");
 
-			List<DescribeDomainSrcFlowDataResponse.DescribeDomainSrcFlowData_DataModule> describeDomainSrcFlowDataResponse_srcFlowDataPerInterval = new List<DescribeDomainSrcFlowDataResponse.DescribeDomainSrcFlowData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDomainSrcFlowData.SrcFlowDataPerInterval.Length"); i++) {
-				DescribeDomainSrcFlowDataResponse.DescribeDomainSrcFlowData_DataModule dataModule = new DescribeDomainSrcFlowDataResponse.DescribeDomainSrcFlowData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDomainSrcFlowData.SrcFlowDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainSrcFlowData.SrcFlowDataPerInterval["+ i +"].Value");
+            List<DescribeDomainSrcFlowDataResponse.DescribeDomainSrcFlowData_DataModule> describeDomainSrcFlowDataResponse_srcFlowDataPerInterval = new List<DescribeDomainSrcFlowDataResponse.DescribeDomainSrcFlowData_DataModule>();
+            for (int i = 0; i < context.Length("DescribeDomainSrcFlowData.SrcFlowDataPerInterval.Length"); i++)
+            {
+                DescribeDomainSrcFlowDataResponse.DescribeDomainSrcFlowData_DataModule dataModule = new DescribeDomainSrcFlowDataResponse.DescribeDomainSrcFlowData_DataModule();
+                dataModule.TimeStamp = context.StringValue("DescribeDomainSrcFlowData.SrcFlowDataPerInterval[" + i + "].TimeStamp");
+                dataModule._Value = context.StringValue("DescribeDomainSrcFlowData.SrcFlowDataPerInterval[" + i + "].Value");
 
-				describeDomainSrcFlowDataResponse_srcFlowDataPerInterval.Add(dataModule);
-			}
-			describeDomainSrcFlowDataResponse.SrcFlowDataPerInterval = describeDomainSrcFlowDataResponse_srcFlowDataPerInterval;
-        
-			return describeDomainSrcFlowDataResponse;
+                describeDomainSrcFlowDataResponse_srcFlowDataPerInterval.Add(dataModule);
+            }
+            describeDomainSrcFlowDataResponse.SrcFlowDataPerInterval = describeDomainSrcFlowDataResponse_srcFlowDataPerInterval;
+
+            return describeDomainSrcFlowDataResponse;
         }
     }
 }

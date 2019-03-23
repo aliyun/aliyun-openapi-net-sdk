@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static UpdateLiveAppSnapshotConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			UpdateLiveAppSnapshotConfigResponse updateLiveAppSnapshotConfigResponse = new UpdateLiveAppSnapshotConfigResponse();
+            UpdateLiveAppSnapshotConfigResponse updateLiveAppSnapshotConfigResponse = new UpdateLiveAppSnapshotConfigResponse();
 
-			updateLiveAppSnapshotConfigResponse.HttpResponse = context.HttpResponse;
-			updateLiveAppSnapshotConfigResponse.RequestId = context.StringValue("UpdateLiveAppSnapshotConfig.RequestId");
-        
-			return updateLiveAppSnapshotConfigResponse;
+            updateLiveAppSnapshotConfigResponse.HttpResponse = context.HttpResponse;
+            updateLiveAppSnapshotConfigResponse.RequestId = context.StringValue("UpdateLiveAppSnapshotConfig.RequestId");
+
+            return updateLiveAppSnapshotConfigResponse;
         }
     }
 }

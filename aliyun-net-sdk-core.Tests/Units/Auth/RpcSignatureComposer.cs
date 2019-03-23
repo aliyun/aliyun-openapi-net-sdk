@@ -14,7 +14,8 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         public void RefreshSignParameters()
         {
             RpcSignatureComposer.ClearComposer();
-            FormatType formatType = FormatType.JSON;;
+            FormatType formatType = FormatType.JSON;
+            ;
             ISignatureComposer signatureComposer;
             UnmarshallerContext context;
 

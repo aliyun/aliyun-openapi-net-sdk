@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static CopyImageResponse Unmarshall(UnmarshallerContext context)
         {
-			CopyImageResponse copyImageResponse = new CopyImageResponse();
+            CopyImageResponse copyImageResponse = new CopyImageResponse();
 
-			copyImageResponse.HttpResponse = context.HttpResponse;
-			copyImageResponse.RequestId = context.StringValue("CopyImage.RequestId");
-			copyImageResponse.ImageId = context.StringValue("CopyImage.ImageId");
-        
-			return copyImageResponse;
+            copyImageResponse.HttpResponse = context.HttpResponse;
+            copyImageResponse.RequestId = context.StringValue("CopyImage.RequestId");
+            copyImageResponse.ImageId = context.StringValue("CopyImage.ImageId");
+
+            return copyImageResponse;
         }
     }
 }

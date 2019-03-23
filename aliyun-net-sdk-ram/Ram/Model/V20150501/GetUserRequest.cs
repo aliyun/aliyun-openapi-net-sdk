@@ -32,23 +32,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public GetUserRequest()
             : base("Ram", "2015-05-01", "GetUser", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string userName;
+        private string userName;
 
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
-			}
-		}
+        public string UserName
+        {
+            get
+            {
+                return userName;
+            }
+            set
+            {
+                userName = value;
+                DictionaryUtil.Add(QueryParameters, "UserName", value);
+            }
+        }
 
         public override GetUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

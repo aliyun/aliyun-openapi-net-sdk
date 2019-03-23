@@ -27,47 +27,49 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static ListRealTimeAgentResponse Unmarshall(UnmarshallerContext context)
         {
-			ListRealTimeAgentResponse listRealTimeAgentResponse = new ListRealTimeAgentResponse();
+            ListRealTimeAgentResponse listRealTimeAgentResponse = new ListRealTimeAgentResponse();
 
-			listRealTimeAgentResponse.HttpResponse = context.HttpResponse;
-			listRealTimeAgentResponse.RequestId = context.StringValue("ListRealTimeAgent.RequestId");
-			listRealTimeAgentResponse.Success = context.BooleanValue("ListRealTimeAgent.Success");
-			listRealTimeAgentResponse.Code = context.StringValue("ListRealTimeAgent.Code");
-			listRealTimeAgentResponse.Message = context.StringValue("ListRealTimeAgent.Message");
-			listRealTimeAgentResponse.HttpStatusCode = context.IntegerValue("ListRealTimeAgent.HttpStatusCode");
+            listRealTimeAgentResponse.HttpResponse = context.HttpResponse;
+            listRealTimeAgentResponse.RequestId = context.StringValue("ListRealTimeAgent.RequestId");
+            listRealTimeAgentResponse.Success = context.BooleanValue("ListRealTimeAgent.Success");
+            listRealTimeAgentResponse.Code = context.StringValue("ListRealTimeAgent.Code");
+            listRealTimeAgentResponse.Message = context.StringValue("ListRealTimeAgent.Message");
+            listRealTimeAgentResponse.HttpStatusCode = context.IntegerValue("ListRealTimeAgent.HttpStatusCode");
 
-			List<ListRealTimeAgentResponse.ListRealTimeAgent_User> listRealTimeAgentResponse_data = new List<ListRealTimeAgentResponse.ListRealTimeAgent_User>();
-			for (int i = 0; i < context.Length("ListRealTimeAgent.Data.Length"); i++) {
-				ListRealTimeAgentResponse.ListRealTimeAgent_User user = new ListRealTimeAgentResponse.ListRealTimeAgent_User();
-				user.RamId = context.StringValue("ListRealTimeAgent.Data["+ i +"].RamId");
-				user.DisplayName = context.StringValue("ListRealTimeAgent.Data["+ i +"].DisplayName");
-				user.Phone = context.StringValue("ListRealTimeAgent.Data["+ i +"].Phone");
-				user.Dn = context.StringValue("ListRealTimeAgent.Data["+ i +"].Dn");
-				user.State = context.StringValue("ListRealTimeAgent.Data["+ i +"].State");
-				user.StateDesc = context.StringValue("ListRealTimeAgent.Data["+ i +"].StateDesc");
+            List<ListRealTimeAgentResponse.ListRealTimeAgent_User> listRealTimeAgentResponse_data = new List<ListRealTimeAgentResponse.ListRealTimeAgent_User>();
+            for (int i = 0; i < context.Length("ListRealTimeAgent.Data.Length"); i++)
+            {
+                ListRealTimeAgentResponse.ListRealTimeAgent_User user = new ListRealTimeAgentResponse.ListRealTimeAgent_User();
+                user.RamId = context.StringValue("ListRealTimeAgent.Data[" + i + "].RamId");
+                user.DisplayName = context.StringValue("ListRealTimeAgent.Data[" + i + "].DisplayName");
+                user.Phone = context.StringValue("ListRealTimeAgent.Data[" + i + "].Phone");
+                user.Dn = context.StringValue("ListRealTimeAgent.Data[" + i + "].Dn");
+                user.State = context.StringValue("ListRealTimeAgent.Data[" + i + "].State");
+                user.StateDesc = context.StringValue("ListRealTimeAgent.Data[" + i + "].StateDesc");
 
-				List<ListRealTimeAgentResponse.ListRealTimeAgent_User.ListRealTimeAgent_SkillLevel> user_skillLevels = new List<ListRealTimeAgentResponse.ListRealTimeAgent_User.ListRealTimeAgent_SkillLevel>();
-				for (int j = 0; j < context.Length("ListRealTimeAgent.Data["+ i +"].SkillLevels.Length"); j++) {
-					ListRealTimeAgentResponse.ListRealTimeAgent_User.ListRealTimeAgent_SkillLevel skillLevel = new ListRealTimeAgentResponse.ListRealTimeAgent_User.ListRealTimeAgent_SkillLevel();
-					skillLevel.SkillLevelId = context.StringValue("ListRealTimeAgent.Data["+ i +"].SkillLevels["+ j +"].SkillLevelId");
-					skillLevel.Level = context.IntegerValue("ListRealTimeAgent.Data["+ i +"].SkillLevels["+ j +"].Level");
+                List<ListRealTimeAgentResponse.ListRealTimeAgent_User.ListRealTimeAgent_SkillLevel> user_skillLevels = new List<ListRealTimeAgentResponse.ListRealTimeAgent_User.ListRealTimeAgent_SkillLevel>();
+                for (int j = 0; j < context.Length("ListRealTimeAgent.Data[" + i + "].SkillLevels.Length"); j++)
+                {
+                    ListRealTimeAgentResponse.ListRealTimeAgent_User.ListRealTimeAgent_SkillLevel skillLevel = new ListRealTimeAgentResponse.ListRealTimeAgent_User.ListRealTimeAgent_SkillLevel();
+                    skillLevel.SkillLevelId = context.StringValue("ListRealTimeAgent.Data[" + i + "].SkillLevels[" + j + "].SkillLevelId");
+                    skillLevel.Level = context.IntegerValue("ListRealTimeAgent.Data[" + i + "].SkillLevels[" + j + "].Level");
 
-					ListRealTimeAgentResponse.ListRealTimeAgent_User.ListRealTimeAgent_SkillLevel.ListRealTimeAgent_Skill skill = new ListRealTimeAgentResponse.ListRealTimeAgent_User.ListRealTimeAgent_SkillLevel.ListRealTimeAgent_Skill();
-					skill.SkillGroupId = context.StringValue("ListRealTimeAgent.Data["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupId");
-					skill.InstanceId = context.StringValue("ListRealTimeAgent.Data["+ i +"].SkillLevels["+ j +"].Skill.InstanceId");
-					skill.SkillGroupName = context.StringValue("ListRealTimeAgent.Data["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupName");
-					skill.SkillGroupDescription = context.StringValue("ListRealTimeAgent.Data["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupDescription");
-					skillLevel.Skill = skill;
+                    ListRealTimeAgentResponse.ListRealTimeAgent_User.ListRealTimeAgent_SkillLevel.ListRealTimeAgent_Skill skill = new ListRealTimeAgentResponse.ListRealTimeAgent_User.ListRealTimeAgent_SkillLevel.ListRealTimeAgent_Skill();
+                    skill.SkillGroupId = context.StringValue("ListRealTimeAgent.Data[" + i + "].SkillLevels[" + j + "].Skill.SkillGroupId");
+                    skill.InstanceId = context.StringValue("ListRealTimeAgent.Data[" + i + "].SkillLevels[" + j + "].Skill.InstanceId");
+                    skill.SkillGroupName = context.StringValue("ListRealTimeAgent.Data[" + i + "].SkillLevels[" + j + "].Skill.SkillGroupName");
+                    skill.SkillGroupDescription = context.StringValue("ListRealTimeAgent.Data[" + i + "].SkillLevels[" + j + "].Skill.SkillGroupDescription");
+                    skillLevel.Skill = skill;
 
-					user_skillLevels.Add(skillLevel);
-				}
-				user.SkillLevels = user_skillLevels;
+                    user_skillLevels.Add(skillLevel);
+                }
+                user.SkillLevels = user_skillLevels;
 
-				listRealTimeAgentResponse_data.Add(user);
-			}
-			listRealTimeAgentResponse.Data = listRealTimeAgentResponse_data;
-        
-			return listRealTimeAgentResponse;
+                listRealTimeAgentResponse_data.Add(user);
+            }
+            listRealTimeAgentResponse.Data = listRealTimeAgentResponse_data;
+
+            return listRealTimeAgentResponse;
         }
     }
 }

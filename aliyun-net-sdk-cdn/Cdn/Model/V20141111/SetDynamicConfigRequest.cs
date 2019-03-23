@@ -34,140 +34,140 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string dynamicOrigin;
+        private string dynamicOrigin;
 
-		private string staticType;
+        private string staticType;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string staticUri;
+        private string staticUri;
 
-		private string domainName;
+        private string domainName;
 
-		private string action;
+        private string action;
 
-		private string staticPath;
+        private string staticPath;
 
-		private string dynamicCacheControl;
+        private string dynamicCacheControl;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string DynamicOrigin
-		{
-			get
-			{
-				return dynamicOrigin;
-			}
-			set	
-			{
-				dynamicOrigin = value;
-				DictionaryUtil.Add(QueryParameters, "DynamicOrigin", value);
-			}
-		}
+        public string DynamicOrigin
+        {
+            get
+            {
+                return dynamicOrigin;
+            }
+            set
+            {
+                dynamicOrigin = value;
+                DictionaryUtil.Add(QueryParameters, "DynamicOrigin", value);
+            }
+        }
 
-		public string StaticType
-		{
-			get
-			{
-				return staticType;
-			}
-			set	
-			{
-				staticType = value;
-				DictionaryUtil.Add(QueryParameters, "StaticType", value);
-			}
-		}
+        public string StaticType
+        {
+            get
+            {
+                return staticType;
+            }
+            set
+            {
+                staticType = value;
+                DictionaryUtil.Add(QueryParameters, "StaticType", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string StaticUri
-		{
-			get
-			{
-				return staticUri;
-			}
-			set	
-			{
-				staticUri = value;
-				DictionaryUtil.Add(QueryParameters, "StaticUri", value);
-			}
-		}
+        public string StaticUri
+        {
+            get
+            {
+                return staticUri;
+            }
+            set
+            {
+                staticUri = value;
+                DictionaryUtil.Add(QueryParameters, "StaticUri", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string StaticPath
-		{
-			get
-			{
-				return staticPath;
-			}
-			set	
-			{
-				staticPath = value;
-				DictionaryUtil.Add(QueryParameters, "StaticPath", value);
-			}
-		}
+        public string StaticPath
+        {
+            get
+            {
+                return staticPath;
+            }
+            set
+            {
+                staticPath = value;
+                DictionaryUtil.Add(QueryParameters, "StaticPath", value);
+            }
+        }
 
-		public string DynamicCacheControl
-		{
-			get
-			{
-				return dynamicCacheControl;
-			}
-			set	
-			{
-				dynamicCacheControl = value;
-				DictionaryUtil.Add(QueryParameters, "DynamicCacheControl", value);
-			}
-		}
+        public string DynamicCacheControl
+        {
+            get
+            {
+                return dynamicCacheControl;
+            }
+            set
+            {
+                dynamicCacheControl = value;
+                DictionaryUtil.Add(QueryParameters, "DynamicCacheControl", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override SetDynamicConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

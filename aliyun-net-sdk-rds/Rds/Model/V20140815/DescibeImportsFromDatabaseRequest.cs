@@ -33,215 +33,215 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string clientToken;
+        private string clientToken;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string endTime;
+        private string endTime;
 
-		private string startTime;
+        private string startTime;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		private int? importId;
+        private int? importId;
 
-		private string engine;
+        private string engine;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private string action;
+        private string action;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
+        public string ClientToken
+        {
+            get
+            {
+                return clientToken;
+            }
+            set
+            {
+                clientToken = value;
+                DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+                DictionaryUtil.Add(QueryParameters, "EndTime", value);
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+                DictionaryUtil.Add(QueryParameters, "StartTime", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+                DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
-		public int? ImportId
-		{
-			get
-			{
-				return importId;
-			}
-			set	
-			{
-				importId = value;
-				DictionaryUtil.Add(QueryParameters, "ImportId", value.ToString());
-			}
-		}
+        public int? ImportId
+        {
+            get
+            {
+                return importId;
+            }
+            set
+            {
+                importId = value;
+                DictionaryUtil.Add(QueryParameters, "ImportId", value.ToString());
+            }
+        }
 
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
+        public string Engine
+        {
+            get
+            {
+                return engine;
+            }
+            set
+            {
+                engine = value;
+                DictionaryUtil.Add(QueryParameters, "Engine", value);
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+                DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+                DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+            }
+        }
 
         public override DescibeImportsFromDatabaseResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

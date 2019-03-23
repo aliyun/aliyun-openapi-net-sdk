@@ -22,193 +22,193 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeTopDomainsByFlowResponse : AcsResponse
-	{
+    public class DescribeTopDomainsByFlowResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private long? domainCount;
+        private long? domainCount;
 
-		private long? domainOnlineCount;
+        private long? domainOnlineCount;
 
-		private List<DescribeTopDomainsByFlow_TopDomain> topDomains;
+        private List<DescribeTopDomainsByFlow_TopDomain> topDomains;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public long? DomainCount
-		{
-			get
-			{
-				return domainCount;
-			}
-			set	
-			{
-				domainCount = value;
-			}
-		}
+        public long? DomainCount
+        {
+            get
+            {
+                return domainCount;
+            }
+            set
+            {
+                domainCount = value;
+            }
+        }
 
-		public long? DomainOnlineCount
-		{
-			get
-			{
-				return domainOnlineCount;
-			}
-			set	
-			{
-				domainOnlineCount = value;
-			}
-		}
+        public long? DomainOnlineCount
+        {
+            get
+            {
+                return domainOnlineCount;
+            }
+            set
+            {
+                domainOnlineCount = value;
+            }
+        }
 
-		public List<DescribeTopDomainsByFlow_TopDomain> TopDomains
-		{
-			get
-			{
-				return topDomains;
-			}
-			set	
-			{
-				topDomains = value;
-			}
-		}
+        public List<DescribeTopDomainsByFlow_TopDomain> TopDomains
+        {
+            get
+            {
+                return topDomains;
+            }
+            set
+            {
+                topDomains = value;
+            }
+        }
 
-		public class DescribeTopDomainsByFlow_TopDomain
-		{
+        public class DescribeTopDomainsByFlow_TopDomain
+        {
 
-			private string domainName;
+            private string domainName;
 
-			private long? rank;
+            private long? rank;
 
-			private string totalTraffic;
+            private string totalTraffic;
 
-			private string trafficPercent;
+            private string trafficPercent;
 
-			private float? maxBps;
+            private float? maxBps;
 
-			private string maxBpsTime;
+            private string maxBpsTime;
 
-			private long? totalAccess;
+            private long? totalAccess;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+            public string DomainName
+            {
+                get
+                {
+                    return domainName;
+                }
+                set
+                {
+                    domainName = value;
+                }
+            }
 
-			public long? Rank
-			{
-				get
-				{
-					return rank;
-				}
-				set	
-				{
-					rank = value;
-				}
-			}
+            public long? Rank
+            {
+                get
+                {
+                    return rank;
+                }
+                set
+                {
+                    rank = value;
+                }
+            }
 
-			public string TotalTraffic
-			{
-				get
-				{
-					return totalTraffic;
-				}
-				set	
-				{
-					totalTraffic = value;
-				}
-			}
+            public string TotalTraffic
+            {
+                get
+                {
+                    return totalTraffic;
+                }
+                set
+                {
+                    totalTraffic = value;
+                }
+            }
 
-			public string TrafficPercent
-			{
-				get
-				{
-					return trafficPercent;
-				}
-				set	
-				{
-					trafficPercent = value;
-				}
-			}
+            public string TrafficPercent
+            {
+                get
+                {
+                    return trafficPercent;
+                }
+                set
+                {
+                    trafficPercent = value;
+                }
+            }
 
-			public float? MaxBps
-			{
-				get
-				{
-					return maxBps;
-				}
-				set	
-				{
-					maxBps = value;
-				}
-			}
+            public float? MaxBps
+            {
+                get
+                {
+                    return maxBps;
+                }
+                set
+                {
+                    maxBps = value;
+                }
+            }
 
-			public string MaxBpsTime
-			{
-				get
-				{
-					return maxBpsTime;
-				}
-				set	
-				{
-					maxBpsTime = value;
-				}
-			}
+            public string MaxBpsTime
+            {
+                get
+                {
+                    return maxBpsTime;
+                }
+                set
+                {
+                    maxBpsTime = value;
+                }
+            }
 
-			public long? TotalAccess
-			{
-				get
-				{
-					return totalAccess;
-				}
-				set	
-				{
-					totalAccess = value;
-				}
-			}
-		}
-	}
+            public long? TotalAccess
+            {
+                get
+                {
+                    return totalAccess;
+                }
+                set
+                {
+                    totalAccess = value;
+                }
+            }
+        }
+    }
 }

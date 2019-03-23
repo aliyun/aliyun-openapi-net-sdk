@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeResourceByTagsResponse : AcsResponse
-	{
+    public class DescribeResourceByTagsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private List<DescribeResourceByTags_Resource> resources;
+        private List<DescribeResourceByTags_Resource> resources;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribeResourceByTags_Resource> Resources
-		{
-			get
-			{
-				return resources;
-			}
-			set	
-			{
-				resources = value;
-			}
-		}
+        public List<DescribeResourceByTags_Resource> Resources
+        {
+            get
+            {
+                return resources;
+            }
+            set
+            {
+                resources = value;
+            }
+        }
 
-		public class DescribeResourceByTags_Resource
-		{
+        public class DescribeResourceByTags_Resource
+        {
 
-			private string resourceId;
+            private string resourceId;
 
-			private string resourceType;
+            private string resourceType;
 
-			private string regionId;
+            private string regionId;
 
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
-				}
-			}
+            public string ResourceId
+            {
+                get
+                {
+                    return resourceId;
+                }
+                set
+                {
+                    resourceId = value;
+                }
+            }
 
-			public string ResourceType
-			{
-				get
-				{
-					return resourceType;
-				}
-				set	
-				{
-					resourceType = value;
-				}
-			}
+            public string ResourceType
+            {
+                get
+                {
+                    return resourceType;
+                }
+                set
+                {
+                    resourceType = value;
+                }
+            }
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-		}
-	}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
+        }
+    }
 }

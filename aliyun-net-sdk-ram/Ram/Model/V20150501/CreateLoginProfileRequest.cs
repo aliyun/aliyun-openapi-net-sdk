@@ -32,68 +32,68 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public CreateLoginProfileRequest()
             : base("Ram", "2015-05-01", "CreateLoginProfile", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string password;
+        private string password;
 
-		private bool? passwordResetRequired;
+        private bool? passwordResetRequired;
 
-		private bool? mFABindRequired;
+        private bool? mFABindRequired;
 
-		private string userName;
+        private string userName;
 
-		public string Password
-		{
-			get
-			{
-				return password;
-			}
-			set	
-			{
-				password = value;
-				DictionaryUtil.Add(QueryParameters, "Password", value);
-			}
-		}
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                password = value;
+                DictionaryUtil.Add(QueryParameters, "Password", value);
+            }
+        }
 
-		public bool? PasswordResetRequired
-		{
-			get
-			{
-				return passwordResetRequired;
-			}
-			set	
-			{
-				passwordResetRequired = value;
-				DictionaryUtil.Add(QueryParameters, "PasswordResetRequired", value.ToString());
-			}
-		}
+        public bool? PasswordResetRequired
+        {
+            get
+            {
+                return passwordResetRequired;
+            }
+            set
+            {
+                passwordResetRequired = value;
+                DictionaryUtil.Add(QueryParameters, "PasswordResetRequired", value.ToString());
+            }
+        }
 
-		public bool? MFABindRequired
-		{
-			get
-			{
-				return mFABindRequired;
-			}
-			set	
-			{
-				mFABindRequired = value;
-				DictionaryUtil.Add(QueryParameters, "MFABindRequired", value.ToString());
-			}
-		}
+        public bool? MFABindRequired
+        {
+            get
+            {
+                return mFABindRequired;
+            }
+            set
+            {
+                mFABindRequired = value;
+                DictionaryUtil.Add(QueryParameters, "MFABindRequired", value.ToString());
+            }
+        }
 
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
-			}
-		}
+        public string UserName
+        {
+            get
+            {
+                return userName;
+            }
+            set
+            {
+                userName = value;
+                DictionaryUtil.Add(QueryParameters, "UserName", value);
+            }
+        }
 
         public override CreateLoginProfileResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

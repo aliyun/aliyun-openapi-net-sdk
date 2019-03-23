@@ -27,26 +27,27 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static StartJobResponse Unmarshall(UnmarshallerContext context)
         {
-			StartJobResponse startJobResponse = new StartJobResponse();
+            StartJobResponse startJobResponse = new StartJobResponse();
 
-			startJobResponse.HttpResponse = context.HttpResponse;
-			startJobResponse.RequestId = context.StringValue("StartJob.RequestId");
-			startJobResponse.Success = context.BooleanValue("StartJob.Success");
-			startJobResponse.Code = context.StringValue("StartJob.Code");
-			startJobResponse.Message = context.StringValue("StartJob.Message");
-			startJobResponse.HttpStatusCode = context.IntegerValue("StartJob.HttpStatusCode");
+            startJobResponse.HttpResponse = context.HttpResponse;
+            startJobResponse.RequestId = context.StringValue("StartJob.RequestId");
+            startJobResponse.Success = context.BooleanValue("StartJob.Success");
+            startJobResponse.Code = context.StringValue("StartJob.Code");
+            startJobResponse.Message = context.StringValue("StartJob.Message");
+            startJobResponse.HttpStatusCode = context.IntegerValue("StartJob.HttpStatusCode");
 
-			List<StartJobResponse.StartJob_KeyValuePair> startJobResponse_taskIds = new List<StartJobResponse.StartJob_KeyValuePair>();
-			for (int i = 0; i < context.Length("StartJob.TaskIds.Length"); i++) {
-				StartJobResponse.StartJob_KeyValuePair keyValuePair = new StartJobResponse.StartJob_KeyValuePair();
-				keyValuePair.Key = context.StringValue("StartJob.TaskIds["+ i +"].Key");
-				keyValuePair._Value = context.StringValue("StartJob.TaskIds["+ i +"].Value");
+            List<StartJobResponse.StartJob_KeyValuePair> startJobResponse_taskIds = new List<StartJobResponse.StartJob_KeyValuePair>();
+            for (int i = 0; i < context.Length("StartJob.TaskIds.Length"); i++)
+            {
+                StartJobResponse.StartJob_KeyValuePair keyValuePair = new StartJobResponse.StartJob_KeyValuePair();
+                keyValuePair.Key = context.StringValue("StartJob.TaskIds[" + i + "].Key");
+                keyValuePair._Value = context.StringValue("StartJob.TaskIds[" + i + "].Value");
 
-				startJobResponse_taskIds.Add(keyValuePair);
-			}
-			startJobResponse.TaskIds = startJobResponse_taskIds;
-        
-			return startJobResponse;
+                startJobResponse_taskIds.Add(keyValuePair);
+            }
+            startJobResponse.TaskIds = startJobResponse_taskIds;
+
+            return startJobResponse;
         }
     }
 }

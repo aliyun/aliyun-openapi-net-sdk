@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CheckInstanceExistResponse : AcsResponse
-	{
+    public class CheckInstanceExistResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? isExistInstance;
+        private bool? isExistInstance;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? IsExistInstance
-		{
-			get
-			{
-				return isExistInstance;
-			}
-			set	
-			{
-				isExistInstance = value;
-			}
-		}
-	}
+        public bool? IsExistInstance
+        {
+            get
+            {
+                return isExistInstance;
+            }
+            set
+            {
+                isExistInstance = value;
+            }
+        }
+    }
 }

@@ -21,183 +21,183 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeDatabasesResponse : AcsResponse
-	{
+    public class DescribeDatabasesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeDatabases_Database> databases;
+        private List<DescribeDatabases_Database> databases;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeDatabases_Database> Databases
-		{
-			get
-			{
-				return databases;
-			}
-			set	
-			{
-				databases = value;
-			}
-		}
+        public List<DescribeDatabases_Database> Databases
+        {
+            get
+            {
+                return databases;
+            }
+            set
+            {
+                databases = value;
+            }
+        }
 
-		public class DescribeDatabases_Database
-		{
+        public class DescribeDatabases_Database
+        {
 
-			private string dBName;
+            private string dBName;
 
-			private string dBInstanceId;
+            private string dBInstanceId;
 
-			private string engine;
+            private string engine;
 
-			private string dBStatus;
+            private string dBStatus;
 
-			private string characterSetName;
+            private string characterSetName;
 
-			private string dBDescription;
+            private string dBDescription;
 
-			private List<DescribeDatabases_AccountPrivilegeInfo> accounts;
+            private List<DescribeDatabases_AccountPrivilegeInfo> accounts;
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
+            public string DBName
+            {
+                get
+                {
+                    return dBName;
+                }
+                set
+                {
+                    dBName = value;
+                }
+            }
 
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
+            public string DBInstanceId
+            {
+                get
+                {
+                    return dBInstanceId;
+                }
+                set
+                {
+                    dBInstanceId = value;
+                }
+            }
 
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
+            public string Engine
+            {
+                get
+                {
+                    return engine;
+                }
+                set
+                {
+                    engine = value;
+                }
+            }
 
-			public string DBStatus
-			{
-				get
-				{
-					return dBStatus;
-				}
-				set	
-				{
-					dBStatus = value;
-				}
-			}
+            public string DBStatus
+            {
+                get
+                {
+                    return dBStatus;
+                }
+                set
+                {
+                    dBStatus = value;
+                }
+            }
 
-			public string CharacterSetName
-			{
-				get
-				{
-					return characterSetName;
-				}
-				set	
-				{
-					characterSetName = value;
-				}
-			}
+            public string CharacterSetName
+            {
+                get
+                {
+                    return characterSetName;
+                }
+                set
+                {
+                    characterSetName = value;
+                }
+            }
 
-			public string DBDescription
-			{
-				get
-				{
-					return dBDescription;
-				}
-				set	
-				{
-					dBDescription = value;
-				}
-			}
+            public string DBDescription
+            {
+                get
+                {
+                    return dBDescription;
+                }
+                set
+                {
+                    dBDescription = value;
+                }
+            }
 
-			public List<DescribeDatabases_AccountPrivilegeInfo> Accounts
-			{
-				get
-				{
-					return accounts;
-				}
-				set	
-				{
-					accounts = value;
-				}
-			}
+            public List<DescribeDatabases_AccountPrivilegeInfo> Accounts
+            {
+                get
+                {
+                    return accounts;
+                }
+                set
+                {
+                    accounts = value;
+                }
+            }
 
-			public class DescribeDatabases_AccountPrivilegeInfo
-			{
+            public class DescribeDatabases_AccountPrivilegeInfo
+            {
 
-				private string account;
+                private string account;
 
-				private string accountPrivilege;
+                private string accountPrivilege;
 
-				private string accountPrivilegeDetail;
+                private string accountPrivilegeDetail;
 
-				public string Account
-				{
-					get
-					{
-						return account;
-					}
-					set	
-					{
-						account = value;
-					}
-				}
+                public string Account
+                {
+                    get
+                    {
+                        return account;
+                    }
+                    set
+                    {
+                        account = value;
+                    }
+                }
 
-				public string AccountPrivilege
-				{
-					get
-					{
-						return accountPrivilege;
-					}
-					set	
-					{
-						accountPrivilege = value;
-					}
-				}
+                public string AccountPrivilege
+                {
+                    get
+                    {
+                        return accountPrivilege;
+                    }
+                    set
+                    {
+                        accountPrivilege = value;
+                    }
+                }
 
-				public string AccountPrivilegeDetail
-				{
-					get
-					{
-						return accountPrivilegeDetail;
-					}
-					set	
-					{
-						accountPrivilegeDetail = value;
-					}
-				}
-			}
-		}
-	}
+                public string AccountPrivilegeDetail
+                {
+                    get
+                    {
+                        return accountPrivilegeDetail;
+                    }
+                    set
+                    {
+                        accountPrivilegeDetail = value;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -32,38 +32,38 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public ListPolicyVersionsRequest()
             : base("Ram", "2015-05-01", "ListPolicyVersions", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string policyType;
+        private string policyType;
 
-		private string policyName;
+        private string policyName;
 
-		public string PolicyType
-		{
-			get
-			{
-				return policyType;
-			}
-			set	
-			{
-				policyType = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyType", value);
-			}
-		}
+        public string PolicyType
+        {
+            get
+            {
+                return policyType;
+            }
+            set
+            {
+                policyType = value;
+                DictionaryUtil.Add(QueryParameters, "PolicyType", value);
+            }
+        }
 
-		public string PolicyName
-		{
-			get
-			{
-				return policyName;
-			}
-			set	
-			{
-				policyName = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyName", value);
-			}
-		}
+        public string PolicyName
+        {
+            get
+            {
+                return policyName;
+            }
+            set
+            {
+                policyName = value;
+                DictionaryUtil.Add(QueryParameters, "PolicyName", value);
+            }
+        }
 
         public override ListPolicyVersionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

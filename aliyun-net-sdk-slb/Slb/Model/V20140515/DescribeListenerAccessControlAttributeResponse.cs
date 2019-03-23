@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeListenerAccessControlAttributeResponse : AcsResponse
-	{
+    public class DescribeListenerAccessControlAttributeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string accessControlStatus;
+        private string accessControlStatus;
 
-		private string sourceItems;
+        private string sourceItems;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string AccessControlStatus
-		{
-			get
-			{
-				return accessControlStatus;
-			}
-			set	
-			{
-				accessControlStatus = value;
-			}
-		}
+        public string AccessControlStatus
+        {
+            get
+            {
+                return accessControlStatus;
+            }
+            set
+            {
+                accessControlStatus = value;
+            }
+        }
 
-		public string SourceItems
-		{
-			get
-			{
-				return sourceItems;
-			}
-			set	
-			{
-				sourceItems = value;
-			}
-		}
-	}
+        public string SourceItems
+        {
+            get
+            {
+                return sourceItems;
+            }
+            set
+            {
+                sourceItems = value;
+            }
+        }
+    }
 }

@@ -27,20 +27,20 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static TwoPartiesCallResponse Unmarshall(UnmarshallerContext context)
         {
-			TwoPartiesCallResponse twoPartiesCallResponse = new TwoPartiesCallResponse();
+            TwoPartiesCallResponse twoPartiesCallResponse = new TwoPartiesCallResponse();
 
-			twoPartiesCallResponse.HttpResponse = context.HttpResponse;
-			twoPartiesCallResponse.RequestId = context.StringValue("TwoPartiesCall.RequestId");
-			twoPartiesCallResponse.Success = context.BooleanValue("TwoPartiesCall.Success");
-			twoPartiesCallResponse.Code = context.StringValue("TwoPartiesCall.Code");
-			twoPartiesCallResponse.Message = context.StringValue("TwoPartiesCall.Message");
-			twoPartiesCallResponse.HttpStatusCode = context.IntegerValue("TwoPartiesCall.HttpStatusCode");
-			twoPartiesCallResponse.StatusCode = context.StringValue("TwoPartiesCall.StatusCode");
-			twoPartiesCallResponse.StatusDesc = context.StringValue("TwoPartiesCall.StatusDesc");
-			twoPartiesCallResponse.TaskId = context.StringValue("TwoPartiesCall.TaskId");
-			twoPartiesCallResponse.TimeStamp = context.StringValue("TwoPartiesCall.TimeStamp");
-        
-			return twoPartiesCallResponse;
+            twoPartiesCallResponse.HttpResponse = context.HttpResponse;
+            twoPartiesCallResponse.RequestId = context.StringValue("TwoPartiesCall.RequestId");
+            twoPartiesCallResponse.Success = context.BooleanValue("TwoPartiesCall.Success");
+            twoPartiesCallResponse.Code = context.StringValue("TwoPartiesCall.Code");
+            twoPartiesCallResponse.Message = context.StringValue("TwoPartiesCall.Message");
+            twoPartiesCallResponse.HttpStatusCode = context.IntegerValue("TwoPartiesCall.HttpStatusCode");
+            twoPartiesCallResponse.StatusCode = context.StringValue("TwoPartiesCall.StatusCode");
+            twoPartiesCallResponse.StatusDesc = context.StringValue("TwoPartiesCall.StatusDesc");
+            twoPartiesCallResponse.TaskId = context.StringValue("TwoPartiesCall.TaskId");
+            twoPartiesCallResponse.TimeStamp = context.StringValue("TwoPartiesCall.TimeStamp");
+
+            return twoPartiesCallResponse;
         }
     }
 }

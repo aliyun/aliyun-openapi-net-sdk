@@ -28,24 +28,24 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static GetUserResponse Unmarshall(UnmarshallerContext context)
         {
-			GetUserResponse getUserResponse = new GetUserResponse();
+            GetUserResponse getUserResponse = new GetUserResponse();
 
-			getUserResponse.HttpResponse = context.HttpResponse;
-			getUserResponse.RequestId = context.StringValue("GetUser.RequestId");
+            getUserResponse.HttpResponse = context.HttpResponse;
+            getUserResponse.RequestId = context.StringValue("GetUser.RequestId");
 
-			GetUserResponse.GetUser_User user = new GetUserResponse.GetUser_User();
-			user.UserId = context.StringValue("GetUser.User.UserId");
-			user.UserName = context.StringValue("GetUser.User.UserName");
-			user.DisplayName = context.StringValue("GetUser.User.DisplayName");
-			user.MobilePhone = context.StringValue("GetUser.User.MobilePhone");
-			user.Email = context.StringValue("GetUser.User.Email");
-			user.Comments = context.StringValue("GetUser.User.Comments");
-			user.CreateDate = context.StringValue("GetUser.User.CreateDate");
-			user.UpdateDate = context.StringValue("GetUser.User.UpdateDate");
-			user.LastLoginDate = context.StringValue("GetUser.User.LastLoginDate");
-			getUserResponse.User = user;
-        
-			return getUserResponse;
+            GetUserResponse.GetUser_User user = new GetUserResponse.GetUser_User();
+            user.UserId = context.StringValue("GetUser.User.UserId");
+            user.UserName = context.StringValue("GetUser.User.UserName");
+            user.DisplayName = context.StringValue("GetUser.User.DisplayName");
+            user.MobilePhone = context.StringValue("GetUser.User.MobilePhone");
+            user.Email = context.StringValue("GetUser.User.Email");
+            user.Comments = context.StringValue("GetUser.User.Comments");
+            user.CreateDate = context.StringValue("GetUser.User.CreateDate");
+            user.UpdateDate = context.StringValue("GetUser.User.UpdateDate");
+            user.LastLoginDate = context.StringValue("GetUser.User.LastLoginDate");
+            getUserResponse.User = user;
+
+            return getUserResponse;
         }
     }
 }

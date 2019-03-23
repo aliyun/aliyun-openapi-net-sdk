@@ -22,21 +22,21 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class StopCdnDomainResponse : AcsResponse
-	{
+    public class StopCdnDomainResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
+    }
 }

@@ -21,21 +21,21 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DeleteSslVpnServerResponse : AcsResponse
-	{
+    public class DeleteSslVpnServerResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
+    }
 }

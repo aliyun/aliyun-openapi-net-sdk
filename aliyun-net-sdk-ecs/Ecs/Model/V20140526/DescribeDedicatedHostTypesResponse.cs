@@ -21,221 +21,221 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeDedicatedHostTypesResponse : AcsResponse
-	{
+    public class DescribeDedicatedHostTypesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeDedicatedHostTypes_DedicatedHostType> dedicatedHostTypes;
+        private List<DescribeDedicatedHostTypes_DedicatedHostType> dedicatedHostTypes;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeDedicatedHostTypes_DedicatedHostType> DedicatedHostTypes
-		{
-			get
-			{
-				return dedicatedHostTypes;
-			}
-			set	
-			{
-				dedicatedHostTypes = value;
-			}
-		}
+        public List<DescribeDedicatedHostTypes_DedicatedHostType> DedicatedHostTypes
+        {
+            get
+            {
+                return dedicatedHostTypes;
+            }
+            set
+            {
+                dedicatedHostTypes = value;
+            }
+        }
 
-		public class DescribeDedicatedHostTypes_DedicatedHostType
-		{
+        public class DescribeDedicatedHostTypes_DedicatedHostType
+        {
 
-			private string dedicatedHostType;
+            private string dedicatedHostType;
 
-			private int? sockets;
+            private int? sockets;
 
-			private int? totalVcpus;
+            private int? totalVcpus;
 
-			private int? totalVgpus;
+            private int? totalVgpus;
 
-			private int? cores;
+            private int? cores;
 
-			private int? physicalGpus;
+            private int? physicalGpus;
 
-			private float? memorySize;
+            private float? memorySize;
 
-			private long? localStorageCapacity;
+            private long? localStorageCapacity;
 
-			private int? localStorageAmount;
+            private int? localStorageAmount;
 
-			private string localStorageCategory;
+            private string localStorageCategory;
 
-			private string gPUSpec;
+            private string gPUSpec;
 
-			private List<string> supportedInstanceTypeFamilies;
+            private List<string> supportedInstanceTypeFamilies;
 
-			private List<string> supportedInstanceTypesList;
+            private List<string> supportedInstanceTypesList;
 
-			public string DedicatedHostType
-			{
-				get
-				{
-					return dedicatedHostType;
-				}
-				set	
-				{
-					dedicatedHostType = value;
-				}
-			}
+            public string DedicatedHostType
+            {
+                get
+                {
+                    return dedicatedHostType;
+                }
+                set
+                {
+                    dedicatedHostType = value;
+                }
+            }
 
-			public int? Sockets
-			{
-				get
-				{
-					return sockets;
-				}
-				set	
-				{
-					sockets = value;
-				}
-			}
+            public int? Sockets
+            {
+                get
+                {
+                    return sockets;
+                }
+                set
+                {
+                    sockets = value;
+                }
+            }
 
-			public int? TotalVcpus
-			{
-				get
-				{
-					return totalVcpus;
-				}
-				set	
-				{
-					totalVcpus = value;
-				}
-			}
+            public int? TotalVcpus
+            {
+                get
+                {
+                    return totalVcpus;
+                }
+                set
+                {
+                    totalVcpus = value;
+                }
+            }
 
-			public int? TotalVgpus
-			{
-				get
-				{
-					return totalVgpus;
-				}
-				set	
-				{
-					totalVgpus = value;
-				}
-			}
+            public int? TotalVgpus
+            {
+                get
+                {
+                    return totalVgpus;
+                }
+                set
+                {
+                    totalVgpus = value;
+                }
+            }
 
-			public int? Cores
-			{
-				get
-				{
-					return cores;
-				}
-				set	
-				{
-					cores = value;
-				}
-			}
+            public int? Cores
+            {
+                get
+                {
+                    return cores;
+                }
+                set
+                {
+                    cores = value;
+                }
+            }
 
-			public int? PhysicalGpus
-			{
-				get
-				{
-					return physicalGpus;
-				}
-				set	
-				{
-					physicalGpus = value;
-				}
-			}
+            public int? PhysicalGpus
+            {
+                get
+                {
+                    return physicalGpus;
+                }
+                set
+                {
+                    physicalGpus = value;
+                }
+            }
 
-			public float? MemorySize
-			{
-				get
-				{
-					return memorySize;
-				}
-				set	
-				{
-					memorySize = value;
-				}
-			}
+            public float? MemorySize
+            {
+                get
+                {
+                    return memorySize;
+                }
+                set
+                {
+                    memorySize = value;
+                }
+            }
 
-			public long? LocalStorageCapacity
-			{
-				get
-				{
-					return localStorageCapacity;
-				}
-				set	
-				{
-					localStorageCapacity = value;
-				}
-			}
+            public long? LocalStorageCapacity
+            {
+                get
+                {
+                    return localStorageCapacity;
+                }
+                set
+                {
+                    localStorageCapacity = value;
+                }
+            }
 
-			public int? LocalStorageAmount
-			{
-				get
-				{
-					return localStorageAmount;
-				}
-				set	
-				{
-					localStorageAmount = value;
-				}
-			}
+            public int? LocalStorageAmount
+            {
+                get
+                {
+                    return localStorageAmount;
+                }
+                set
+                {
+                    localStorageAmount = value;
+                }
+            }
 
-			public string LocalStorageCategory
-			{
-				get
-				{
-					return localStorageCategory;
-				}
-				set	
-				{
-					localStorageCategory = value;
-				}
-			}
+            public string LocalStorageCategory
+            {
+                get
+                {
+                    return localStorageCategory;
+                }
+                set
+                {
+                    localStorageCategory = value;
+                }
+            }
 
-			public string GPUSpec
-			{
-				get
-				{
-					return gPUSpec;
-				}
-				set	
-				{
-					gPUSpec = value;
-				}
-			}
+            public string GPUSpec
+            {
+                get
+                {
+                    return gPUSpec;
+                }
+                set
+                {
+                    gPUSpec = value;
+                }
+            }
 
-			public List<string> SupportedInstanceTypeFamilies
-			{
-				get
-				{
-					return supportedInstanceTypeFamilies;
-				}
-				set	
-				{
-					supportedInstanceTypeFamilies = value;
-				}
-			}
+            public List<string> SupportedInstanceTypeFamilies
+            {
+                get
+                {
+                    return supportedInstanceTypeFamilies;
+                }
+                set
+                {
+                    supportedInstanceTypeFamilies = value;
+                }
+            }
 
-			public List<string> SupportedInstanceTypesList
-			{
-				get
-				{
-					return supportedInstanceTypesList;
-				}
-				set	
-				{
-					supportedInstanceTypesList = value;
-				}
-			}
-		}
-	}
+            public List<string> SupportedInstanceTypesList
+            {
+                get
+                {
+                    return supportedInstanceTypesList;
+                }
+                set
+                {
+                    supportedInstanceTypesList = value;
+                }
+            }
+        }
+    }
 }

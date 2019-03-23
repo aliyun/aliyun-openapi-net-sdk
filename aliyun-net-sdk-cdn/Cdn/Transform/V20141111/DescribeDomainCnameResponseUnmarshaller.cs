@@ -28,23 +28,24 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeDomainCnameResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainCnameResponse describeDomainCnameResponse = new DescribeDomainCnameResponse();
+            DescribeDomainCnameResponse describeDomainCnameResponse = new DescribeDomainCnameResponse();
 
-			describeDomainCnameResponse.HttpResponse = context.HttpResponse;
-			describeDomainCnameResponse.RequestId = context.StringValue("DescribeDomainCname.RequestId");
+            describeDomainCnameResponse.HttpResponse = context.HttpResponse;
+            describeDomainCnameResponse.RequestId = context.StringValue("DescribeDomainCname.RequestId");
 
-			List<DescribeDomainCnameResponse.DescribeDomainCname_Data> describeDomainCnameResponse_cnameDatas = new List<DescribeDomainCnameResponse.DescribeDomainCname_Data>();
-			for (int i = 0; i < context.Length("DescribeDomainCname.CnameDatas.Length"); i++) {
-				DescribeDomainCnameResponse.DescribeDomainCname_Data data = new DescribeDomainCnameResponse.DescribeDomainCname_Data();
-				data.Domain = context.StringValue("DescribeDomainCname.CnameDatas["+ i +"].Domain");
-				data.Cname = context.StringValue("DescribeDomainCname.CnameDatas["+ i +"].Cname");
-				data.Status = context.IntegerValue("DescribeDomainCname.CnameDatas["+ i +"].Status");
+            List<DescribeDomainCnameResponse.DescribeDomainCname_Data> describeDomainCnameResponse_cnameDatas = new List<DescribeDomainCnameResponse.DescribeDomainCname_Data>();
+            for (int i = 0; i < context.Length("DescribeDomainCname.CnameDatas.Length"); i++)
+            {
+                DescribeDomainCnameResponse.DescribeDomainCname_Data data = new DescribeDomainCnameResponse.DescribeDomainCname_Data();
+                data.Domain = context.StringValue("DescribeDomainCname.CnameDatas[" + i + "].Domain");
+                data.Cname = context.StringValue("DescribeDomainCname.CnameDatas[" + i + "].Cname");
+                data.Status = context.IntegerValue("DescribeDomainCname.CnameDatas[" + i + "].Status");
 
-				describeDomainCnameResponse_cnameDatas.Add(data);
-			}
-			describeDomainCnameResponse.CnameDatas = describeDomainCnameResponse_cnameDatas;
-        
-			return describeDomainCnameResponse;
+                describeDomainCnameResponse_cnameDatas.Add(data);
+            }
+            describeDomainCnameResponse.CnameDatas = describeDomainCnameResponse_cnameDatas;
+
+            return describeDomainCnameResponse;
         }
     }
 }

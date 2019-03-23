@@ -33,234 +33,234 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string launchTemplateName;
+        private string launchTemplateName;
 
-		private long? maxVersion;
+        private long? maxVersion;
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private bool? defaultVersion;
+        private bool? defaultVersion;
 
-		private long? minVersion;
+        private long? minVersion;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private string regionId;
+        private string regionId;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private string action;
+        private string action;
 
-		private string launchTemplateId;
+        private string launchTemplateId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private List<long?> launchTemplateVersions;
+        private List<long?> launchTemplateVersions;
 
-		private bool? detailFlag;
+        private bool? detailFlag;
 
-		public string LaunchTemplateName
-		{
-			get
-			{
-				return launchTemplateName;
-			}
-			set	
-			{
-				launchTemplateName = value;
-				DictionaryUtil.Add(QueryParameters, "LaunchTemplateName", value);
-			}
-		}
+        public string LaunchTemplateName
+        {
+            get
+            {
+                return launchTemplateName;
+            }
+            set
+            {
+                launchTemplateName = value;
+                DictionaryUtil.Add(QueryParameters, "LaunchTemplateName", value);
+            }
+        }
 
-		public long? MaxVersion
-		{
-			get
-			{
-				return maxVersion;
-			}
-			set	
-			{
-				maxVersion = value;
-				DictionaryUtil.Add(QueryParameters, "MaxVersion", value.ToString());
-			}
-		}
+        public long? MaxVersion
+        {
+            get
+            {
+                return maxVersion;
+            }
+            set
+            {
+                maxVersion = value;
+                DictionaryUtil.Add(QueryParameters, "MaxVersion", value.ToString());
+            }
+        }
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public bool? DefaultVersion
-		{
-			get
-			{
-				return defaultVersion;
-			}
-			set	
-			{
-				defaultVersion = value;
-				DictionaryUtil.Add(QueryParameters, "DefaultVersion", value.ToString());
-			}
-		}
+        public bool? DefaultVersion
+        {
+            get
+            {
+                return defaultVersion;
+            }
+            set
+            {
+                defaultVersion = value;
+                DictionaryUtil.Add(QueryParameters, "DefaultVersion", value.ToString());
+            }
+        }
 
-		public long? MinVersion
-		{
-			get
-			{
-				return minVersion;
-			}
-			set	
-			{
-				minVersion = value;
-				DictionaryUtil.Add(QueryParameters, "MinVersion", value.ToString());
-			}
-		}
+        public long? MinVersion
+        {
+            get
+            {
+                return minVersion;
+            }
+            set
+            {
+                minVersion = value;
+                DictionaryUtil.Add(QueryParameters, "MinVersion", value.ToString());
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+                DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+                DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string LaunchTemplateId
-		{
-			get
-			{
-				return launchTemplateId;
-			}
-			set	
-			{
-				launchTemplateId = value;
-				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
-			}
-		}
+        public string LaunchTemplateId
+        {
+            get
+            {
+                return launchTemplateId;
+            }
+            set
+            {
+                launchTemplateId = value;
+                DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public List<long?> LaunchTemplateVersions
-		{
-			get
-			{
-				return launchTemplateVersions;
-			}
+        public List<long?> LaunchTemplateVersions
+        {
+            get
+            {
+                return launchTemplateVersions;
+            }
 
-			set
-			{
-				launchTemplateVersions = value;
-				for (int i = 0; i < launchTemplateVersions.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateVersion." + (i + 1) , launchTemplateVersions[i]);
-				}
-			}
-		}
+            set
+            {
+                launchTemplateVersions = value;
+                for (int i = 0; i < launchTemplateVersions.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "LaunchTemplateVersion." + (i + 1), launchTemplateVersions[i]);
+                }
+            }
+        }
 
-		public bool? DetailFlag
-		{
-			get
-			{
-				return detailFlag;
-			}
-			set	
-			{
-				detailFlag = value;
-				DictionaryUtil.Add(QueryParameters, "DetailFlag", value.ToString());
-			}
-		}
+        public bool? DetailFlag
+        {
+            get
+            {
+                return detailFlag;
+            }
+            set
+            {
+                detailFlag = value;
+                DictionaryUtil.Add(QueryParameters, "DetailFlag", value.ToString());
+            }
+        }
 
         public override DescribeLaunchTemplateVersionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

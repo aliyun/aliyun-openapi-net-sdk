@@ -26,7 +26,7 @@ using System.Xml;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Regions.Location;
 
-[assembly : InternalsVisibleTo("DynamicProxyGenAssembly2")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace Aliyun.Acs.Core.Regions
 {
     class InternalEndpointsParser : IEndpointsProvider

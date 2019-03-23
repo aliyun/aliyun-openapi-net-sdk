@@ -31,54 +31,54 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public DeleteStackRequest()
             : base("ROS", "2015-09-01", "DeleteStack")
         {
-			UriPattern = "/stacks/[StackName]/[StackId]";
-			Method = MethodType.DELETE;
+            UriPattern = "/stacks/[StackName]/[StackId]";
+            Method = MethodType.DELETE;
         }
 
-		private string regionId;
+        private string regionId;
 
-		private string stackId;
+        private string stackId;
 
-		private string stackName;
+        private string stackName;
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string StackId
-		{
-			get
-			{
-				return stackId;
-			}
-			set	
-			{
-				stackId = value;
-				DictionaryUtil.Add(PathParameters, "StackId", value);
-			}
-		}
+        public string StackId
+        {
+            get
+            {
+                return stackId;
+            }
+            set
+            {
+                stackId = value;
+                DictionaryUtil.Add(PathParameters, "StackId", value);
+            }
+        }
 
-		public string StackName
-		{
-			get
-			{
-				return stackName;
-			}
-			set	
-			{
-				stackName = value;
-				DictionaryUtil.Add(PathParameters, "StackName", value);
-			}
-		}
+        public string StackName
+        {
+            get
+            {
+                return stackName;
+            }
+            set
+            {
+                stackName = value;
+                DictionaryUtil.Add(PathParameters, "StackName", value);
+            }
+        }
 
         public override DeleteStackResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

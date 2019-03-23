@@ -28,19 +28,20 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeL2VipsByDynamicDomainResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeL2VipsByDynamicDomainResponse describeL2VipsByDynamicDomainResponse = new DescribeL2VipsByDynamicDomainResponse();
+            DescribeL2VipsByDynamicDomainResponse describeL2VipsByDynamicDomainResponse = new DescribeL2VipsByDynamicDomainResponse();
 
-			describeL2VipsByDynamicDomainResponse.HttpResponse = context.HttpResponse;
-			describeL2VipsByDynamicDomainResponse.RequestId = context.StringValue("DescribeL2VipsByDynamicDomain.RequestId");
-			describeL2VipsByDynamicDomainResponse.DomainName = context.StringValue("DescribeL2VipsByDynamicDomain.DomainName");
+            describeL2VipsByDynamicDomainResponse.HttpResponse = context.HttpResponse;
+            describeL2VipsByDynamicDomainResponse.RequestId = context.StringValue("DescribeL2VipsByDynamicDomain.RequestId");
+            describeL2VipsByDynamicDomainResponse.DomainName = context.StringValue("DescribeL2VipsByDynamicDomain.DomainName");
 
-			List<string> describeL2VipsByDynamicDomainResponse_vips = new List<string>();
-			for (int i = 0; i < context.Length("DescribeL2VipsByDynamicDomain.Vips.Length"); i++) {
-				describeL2VipsByDynamicDomainResponse_vips.Add(context.StringValue("DescribeL2VipsByDynamicDomain.Vips["+ i +"]"));
-			}
-			describeL2VipsByDynamicDomainResponse.Vips = describeL2VipsByDynamicDomainResponse_vips;
-        
-			return describeL2VipsByDynamicDomainResponse;
+            List<string> describeL2VipsByDynamicDomainResponse_vips = new List<string>();
+            for (int i = 0; i < context.Length("DescribeL2VipsByDynamicDomain.Vips.Length"); i++)
+            {
+                describeL2VipsByDynamicDomainResponse_vips.Add(context.StringValue("DescribeL2VipsByDynamicDomain.Vips[" + i + "]"));
+            }
+            describeL2VipsByDynamicDomainResponse.Vips = describeL2VipsByDynamicDomainResponse_vips;
+
+            return describeL2VipsByDynamicDomainResponse;
         }
     }
 }

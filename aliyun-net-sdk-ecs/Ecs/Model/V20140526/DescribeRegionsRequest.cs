@@ -33,125 +33,125 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string acceptLanguage;
+        private string acceptLanguage;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string instanceChargeType;
+        private string instanceChargeType;
 
-		private string resourceType;
+        private string resourceType;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string AcceptLanguage
-		{
-			get
-			{
-				return acceptLanguage;
-			}
-			set	
-			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
-			}
-		}
+        public string AcceptLanguage
+        {
+            get
+            {
+                return acceptLanguage;
+            }
+            set
+            {
+                acceptLanguage = value;
+                DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
-			}
-		}
+        public string InstanceChargeType
+        {
+            get
+            {
+                return instanceChargeType;
+            }
+            set
+            {
+                instanceChargeType = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+            }
+        }
 
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
+        public string ResourceType
+        {
+            get
+            {
+                return resourceType;
+            }
+            set
+            {
+                resourceType = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+            }
+        }
 
         public override DescribeRegionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

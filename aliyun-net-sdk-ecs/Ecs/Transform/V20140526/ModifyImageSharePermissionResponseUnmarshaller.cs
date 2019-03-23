@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ModifyImageSharePermissionResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyImageSharePermissionResponse modifyImageSharePermissionResponse = new ModifyImageSharePermissionResponse();
+            ModifyImageSharePermissionResponse modifyImageSharePermissionResponse = new ModifyImageSharePermissionResponse();
 
-			modifyImageSharePermissionResponse.HttpResponse = context.HttpResponse;
-			modifyImageSharePermissionResponse.RequestId = context.StringValue("ModifyImageSharePermission.RequestId");
-        
-			return modifyImageSharePermissionResponse;
+            modifyImageSharePermissionResponse.HttpResponse = context.HttpResponse;
+            modifyImageSharePermissionResponse.RequestId = context.StringValue("ModifyImageSharePermission.RequestId");
+
+            return modifyImageSharePermissionResponse;
         }
     }
 }

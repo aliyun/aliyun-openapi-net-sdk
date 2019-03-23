@@ -22,95 +22,95 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class CreateLoginProfileResponse : AcsResponse
-	{
+    public class CreateLoginProfileResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private CreateLoginProfile_LoginProfile loginProfile;
+        private CreateLoginProfile_LoginProfile loginProfile;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public CreateLoginProfile_LoginProfile LoginProfile
-		{
-			get
-			{
-				return loginProfile;
-			}
-			set	
-			{
-				loginProfile = value;
-			}
-		}
+        public CreateLoginProfile_LoginProfile LoginProfile
+        {
+            get
+            {
+                return loginProfile;
+            }
+            set
+            {
+                loginProfile = value;
+            }
+        }
 
-		public class CreateLoginProfile_LoginProfile
-		{
+        public class CreateLoginProfile_LoginProfile
+        {
 
-			private string userName;
+            private string userName;
 
-			private bool? passwordResetRequired;
+            private bool? passwordResetRequired;
 
-			private bool? mFABindRequired;
+            private bool? mFABindRequired;
 
-			private string createDate;
+            private string createDate;
 
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
+            public string UserName
+            {
+                get
+                {
+                    return userName;
+                }
+                set
+                {
+                    userName = value;
+                }
+            }
 
-			public bool? PasswordResetRequired
-			{
-				get
-				{
-					return passwordResetRequired;
-				}
-				set	
-				{
-					passwordResetRequired = value;
-				}
-			}
+            public bool? PasswordResetRequired
+            {
+                get
+                {
+                    return passwordResetRequired;
+                }
+                set
+                {
+                    passwordResetRequired = value;
+                }
+            }
 
-			public bool? MFABindRequired
-			{
-				get
-				{
-					return mFABindRequired;
-				}
-				set	
-				{
-					mFABindRequired = value;
-				}
-			}
+            public bool? MFABindRequired
+            {
+                get
+                {
+                    return mFABindRequired;
+                }
+                set
+                {
+                    mFABindRequired = value;
+                }
+            }
 
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
-				}
-			}
-		}
-	}
+            public string CreateDate
+            {
+                get
+                {
+                    return createDate;
+                }
+                set
+                {
+                    createDate = value;
+                }
+            }
+        }
+    }
 }

@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class ModifySecurityIpsResponse : AcsResponse
-	{
+    public class ModifySecurityIpsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string taskId;
+        private string taskId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
-	}
+        public string TaskId
+        {
+            get
+            {
+                return taskId;
+            }
+            set
+            {
+                taskId = value;
+            }
+        }
+    }
 }

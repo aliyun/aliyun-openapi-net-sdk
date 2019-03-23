@@ -21,351 +21,351 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeBandwidthPackagesResponse : AcsResponse
-	{
+    public class DescribeBandwidthPackagesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeBandwidthPackages_BandwidthPackage> bandwidthPackages;
+        private List<DescribeBandwidthPackages_BandwidthPackage> bandwidthPackages;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeBandwidthPackages_BandwidthPackage> BandwidthPackages
-		{
-			get
-			{
-				return bandwidthPackages;
-			}
-			set	
-			{
-				bandwidthPackages = value;
-			}
-		}
+        public List<DescribeBandwidthPackages_BandwidthPackage> BandwidthPackages
+        {
+            get
+            {
+                return bandwidthPackages;
+            }
+            set
+            {
+                bandwidthPackages = value;
+            }
+        }
 
-		public class DescribeBandwidthPackages_BandwidthPackage
-		{
+        public class DescribeBandwidthPackages_BandwidthPackage
+        {
 
-			private string bandwidthPackageId;
+            private string bandwidthPackageId;
 
-			private string regionId;
+            private string regionId;
 
-			private string name;
+            private string name;
 
-			private string description;
+            private string description;
 
-			private string zoneId;
+            private string zoneId;
 
-			private string natGatewayId;
+            private string natGatewayId;
 
-			private string bandwidth;
+            private string bandwidth;
 
-			private string instanceChargeType;
+            private string instanceChargeType;
 
-			private string internetChargeType;
+            private string internetChargeType;
 
-			private string businessStatus;
+            private string businessStatus;
 
-			private string ipCount;
+            private string ipCount;
 
-			private string creationTime;
+            private string creationTime;
 
-			private string status;
+            private string status;
 
-			private string iSP;
+            private string iSP;
 
-			private List<DescribeBandwidthPackages_PublicIpAddresse> publicIpAddresses;
+            private List<DescribeBandwidthPackages_PublicIpAddresse> publicIpAddresses;
 
-			public string BandwidthPackageId
-			{
-				get
-				{
-					return bandwidthPackageId;
-				}
-				set	
-				{
-					bandwidthPackageId = value;
-				}
-			}
+            public string BandwidthPackageId
+            {
+                get
+                {
+                    return bandwidthPackageId;
+                }
+                set
+                {
+                    bandwidthPackageId = value;
+                }
+            }
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+            public string ZoneId
+            {
+                get
+                {
+                    return zoneId;
+                }
+                set
+                {
+                    zoneId = value;
+                }
+            }
 
-			public string NatGatewayId
-			{
-				get
-				{
-					return natGatewayId;
-				}
-				set	
-				{
-					natGatewayId = value;
-				}
-			}
+            public string NatGatewayId
+            {
+                get
+                {
+                    return natGatewayId;
+                }
+                set
+                {
+                    natGatewayId = value;
+                }
+            }
 
-			public string Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
-				}
-			}
+            public string Bandwidth
+            {
+                get
+                {
+                    return bandwidth;
+                }
+                set
+                {
+                    bandwidth = value;
+                }
+            }
 
-			public string InstanceChargeType
-			{
-				get
-				{
-					return instanceChargeType;
-				}
-				set	
-				{
-					instanceChargeType = value;
-				}
-			}
+            public string InstanceChargeType
+            {
+                get
+                {
+                    return instanceChargeType;
+                }
+                set
+                {
+                    instanceChargeType = value;
+                }
+            }
 
-			public string InternetChargeType
-			{
-				get
-				{
-					return internetChargeType;
-				}
-				set	
-				{
-					internetChargeType = value;
-				}
-			}
+            public string InternetChargeType
+            {
+                get
+                {
+                    return internetChargeType;
+                }
+                set
+                {
+                    internetChargeType = value;
+                }
+            }
 
-			public string BusinessStatus
-			{
-				get
-				{
-					return businessStatus;
-				}
-				set	
-				{
-					businessStatus = value;
-				}
-			}
+            public string BusinessStatus
+            {
+                get
+                {
+                    return businessStatus;
+                }
+                set
+                {
+                    businessStatus = value;
+                }
+            }
 
-			public string IpCount
-			{
-				get
-				{
-					return ipCount;
-				}
-				set	
-				{
-					ipCount = value;
-				}
-			}
+            public string IpCount
+            {
+                get
+                {
+                    return ipCount;
+                }
+                set
+                {
+                    ipCount = value;
+                }
+            }
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+            public string CreationTime
+            {
+                get
+                {
+                    return creationTime;
+                }
+                set
+                {
+                    creationTime = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string ISP
-			{
-				get
-				{
-					return iSP;
-				}
-				set	
-				{
-					iSP = value;
-				}
-			}
+            public string ISP
+            {
+                get
+                {
+                    return iSP;
+                }
+                set
+                {
+                    iSP = value;
+                }
+            }
 
-			public List<DescribeBandwidthPackages_PublicIpAddresse> PublicIpAddresses
-			{
-				get
-				{
-					return publicIpAddresses;
-				}
-				set	
-				{
-					publicIpAddresses = value;
-				}
-			}
+            public List<DescribeBandwidthPackages_PublicIpAddresse> PublicIpAddresses
+            {
+                get
+                {
+                    return publicIpAddresses;
+                }
+                set
+                {
+                    publicIpAddresses = value;
+                }
+            }
 
-			public class DescribeBandwidthPackages_PublicIpAddresse
-			{
+            public class DescribeBandwidthPackages_PublicIpAddresse
+            {
 
-				private string allocationId;
+                private string allocationId;
 
-				private string ipAddress;
+                private string ipAddress;
 
-				private string usingStatus;
+                private string usingStatus;
 
-				private bool? apAccessEnabled;
+                private bool? apAccessEnabled;
 
-				public string AllocationId
-				{
-					get
-					{
-						return allocationId;
-					}
-					set	
-					{
-						allocationId = value;
-					}
-				}
+                public string AllocationId
+                {
+                    get
+                    {
+                        return allocationId;
+                    }
+                    set
+                    {
+                        allocationId = value;
+                    }
+                }
 
-				public string IpAddress
-				{
-					get
-					{
-						return ipAddress;
-					}
-					set	
-					{
-						ipAddress = value;
-					}
-				}
+                public string IpAddress
+                {
+                    get
+                    {
+                        return ipAddress;
+                    }
+                    set
+                    {
+                        ipAddress = value;
+                    }
+                }
 
-				public string UsingStatus
-				{
-					get
-					{
-						return usingStatus;
-					}
-					set	
-					{
-						usingStatus = value;
-					}
-				}
+                public string UsingStatus
+                {
+                    get
+                    {
+                        return usingStatus;
+                    }
+                    set
+                    {
+                        usingStatus = value;
+                    }
+                }
 
-				public bool? ApAccessEnabled
-				{
-					get
-					{
-						return apAccessEnabled;
-					}
-					set	
-					{
-						apAccessEnabled = value;
-					}
-				}
-			}
-		}
-	}
+                public bool? ApAccessEnabled
+                {
+                    get
+                    {
+                        return apAccessEnabled;
+                    }
+                    set
+                    {
+                        apAccessEnabled = value;
+                    }
+                }
+            }
+        }
+    }
 }

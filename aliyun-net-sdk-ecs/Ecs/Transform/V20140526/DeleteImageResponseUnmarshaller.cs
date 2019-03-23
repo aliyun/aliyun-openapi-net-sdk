@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DeleteImageResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteImageResponse deleteImageResponse = new DeleteImageResponse();
+            DeleteImageResponse deleteImageResponse = new DeleteImageResponse();
 
-			deleteImageResponse.HttpResponse = context.HttpResponse;
-			deleteImageResponse.RequestId = context.StringValue("DeleteImage.RequestId");
-        
-			return deleteImageResponse;
+            deleteImageResponse.HttpResponse = context.HttpResponse;
+            deleteImageResponse.RequestId = context.StringValue("DeleteImage.RequestId");
+
+            return deleteImageResponse;
         }
     }
 }

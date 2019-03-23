@@ -28,21 +28,21 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static CreateLiveStreamRecordIndexFilesResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateLiveStreamRecordIndexFilesResponse createLiveStreamRecordIndexFilesResponse = new CreateLiveStreamRecordIndexFilesResponse();
+            CreateLiveStreamRecordIndexFilesResponse createLiveStreamRecordIndexFilesResponse = new CreateLiveStreamRecordIndexFilesResponse();
 
-			createLiveStreamRecordIndexFilesResponse.HttpResponse = context.HttpResponse;
-			createLiveStreamRecordIndexFilesResponse.RequestId = context.StringValue("CreateLiveStreamRecordIndexFiles.RequestId");
+            createLiveStreamRecordIndexFilesResponse.HttpResponse = context.HttpResponse;
+            createLiveStreamRecordIndexFilesResponse.RequestId = context.StringValue("CreateLiveStreamRecordIndexFiles.RequestId");
 
-			CreateLiveStreamRecordIndexFilesResponse.CreateLiveStreamRecordIndexFiles_RecordInfo recordInfo = new CreateLiveStreamRecordIndexFilesResponse.CreateLiveStreamRecordIndexFiles_RecordInfo();
-			recordInfo.RecordId = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordId");
-			recordInfo.RecordUrl = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordUrl");
-			recordInfo.Duration = context.FloatValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Duration");
-			recordInfo.Height = context.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Height");
-			recordInfo.Width = context.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Width");
-			recordInfo.CreateTime = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.CreateTime");
-			createLiveStreamRecordIndexFilesResponse.RecordInfo = recordInfo;
-        
-			return createLiveStreamRecordIndexFilesResponse;
+            CreateLiveStreamRecordIndexFilesResponse.CreateLiveStreamRecordIndexFiles_RecordInfo recordInfo = new CreateLiveStreamRecordIndexFilesResponse.CreateLiveStreamRecordIndexFiles_RecordInfo();
+            recordInfo.RecordId = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordId");
+            recordInfo.RecordUrl = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordUrl");
+            recordInfo.Duration = context.FloatValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Duration");
+            recordInfo.Height = context.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Height");
+            recordInfo.Width = context.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Width");
+            recordInfo.CreateTime = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.CreateTime");
+            createLiveStreamRecordIndexFilesResponse.RecordInfo = recordInfo;
+
+            return createLiveStreamRecordIndexFilesResponse;
         }
     }
 }

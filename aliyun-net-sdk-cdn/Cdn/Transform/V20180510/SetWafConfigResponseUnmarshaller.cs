@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static SetWafConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			SetWafConfigResponse setWafConfigResponse = new SetWafConfigResponse();
+            SetWafConfigResponse setWafConfigResponse = new SetWafConfigResponse();
 
-			setWafConfigResponse.HttpResponse = context.HttpResponse;
-			setWafConfigResponse.RequestId = context.StringValue("SetWafConfig.RequestId");
-        
-			return setWafConfigResponse;
+            setWafConfigResponse.HttpResponse = context.HttpResponse;
+            setWafConfigResponse.RequestId = context.StringValue("SetWafConfig.RequestId");
+
+            return setWafConfigResponse;
         }
     }
 }

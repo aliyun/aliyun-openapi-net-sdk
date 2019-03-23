@@ -21,165 +21,165 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeDBInstancesByPerformanceResponse : AcsResponse
-	{
+    public class DescribeDBInstancesByPerformanceResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? totalRecordCount;
+        private int? totalRecordCount;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private List<DescribeDBInstancesByPerformance_DBInstancePerformance> items;
+        private List<DescribeDBInstancesByPerformance_DBInstancePerformance> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public int? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public List<DescribeDBInstancesByPerformance_DBInstancePerformance> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeDBInstancesByPerformance_DBInstancePerformance> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeDBInstancesByPerformance_DBInstancePerformance
-		{
+        public class DescribeDBInstancesByPerformance_DBInstancePerformance
+        {
 
-			private string cPUUsage;
+            private string cPUUsage;
 
-			private string iOPSUsage;
+            private string iOPSUsage;
 
-			private string diskUsage;
+            private string diskUsage;
 
-			private string sessionUsage;
+            private string sessionUsage;
 
-			private string dBInstanceId;
+            private string dBInstanceId;
 
-			private string dBInstanceDescription;
+            private string dBInstanceDescription;
 
-			public string CPUUsage
-			{
-				get
-				{
-					return cPUUsage;
-				}
-				set	
-				{
-					cPUUsage = value;
-				}
-			}
+            public string CPUUsage
+            {
+                get
+                {
+                    return cPUUsage;
+                }
+                set
+                {
+                    cPUUsage = value;
+                }
+            }
 
-			public string IOPSUsage
-			{
-				get
-				{
-					return iOPSUsage;
-				}
-				set	
-				{
-					iOPSUsage = value;
-				}
-			}
+            public string IOPSUsage
+            {
+                get
+                {
+                    return iOPSUsage;
+                }
+                set
+                {
+                    iOPSUsage = value;
+                }
+            }
 
-			public string DiskUsage
-			{
-				get
-				{
-					return diskUsage;
-				}
-				set	
-				{
-					diskUsage = value;
-				}
-			}
+            public string DiskUsage
+            {
+                get
+                {
+                    return diskUsage;
+                }
+                set
+                {
+                    diskUsage = value;
+                }
+            }
 
-			public string SessionUsage
-			{
-				get
-				{
-					return sessionUsage;
-				}
-				set	
-				{
-					sessionUsage = value;
-				}
-			}
+            public string SessionUsage
+            {
+                get
+                {
+                    return sessionUsage;
+                }
+                set
+                {
+                    sessionUsage = value;
+                }
+            }
 
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
+            public string DBInstanceId
+            {
+                get
+                {
+                    return dBInstanceId;
+                }
+                set
+                {
+                    dBInstanceId = value;
+                }
+            }
 
-			public string DBInstanceDescription
-			{
-				get
-				{
-					return dBInstanceDescription;
-				}
-				set	
-				{
-					dBInstanceDescription = value;
-				}
-			}
-		}
-	}
+            public string DBInstanceDescription
+            {
+                get
+                {
+                    return dBInstanceDescription;
+                }
+                set
+                {
+                    dBInstanceDescription = value;
+                }
+            }
+        }
+    }
 }

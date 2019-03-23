@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeLoadBalancerAutoReleaseTimeResponse : AcsResponse
-	{
+    public class DescribeLoadBalancerAutoReleaseTimeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private long? autoReleaseTime;
+        private long? autoReleaseTime;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public long? AutoReleaseTime
-		{
-			get
-			{
-				return autoReleaseTime;
-			}
-			set	
-			{
-				autoReleaseTime = value;
-			}
-		}
-	}
+        public long? AutoReleaseTime
+        {
+            get
+            {
+                return autoReleaseTime;
+            }
+            set
+            {
+                autoReleaseTime = value;
+            }
+        }
+    }
 }

@@ -21,267 +21,267 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeTagsResponse : AcsResponse
-	{
+    public class DescribeTagsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private List<DescribeTags_Tag> tags;
+        private List<DescribeTags_Tag> tags;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribeTags_Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-			}
-		}
+        public List<DescribeTags_Tag> Tags
+        {
+            get
+            {
+                return tags;
+            }
+            set
+            {
+                tags = value;
+            }
+        }
 
-		public class DescribeTags_Tag
-		{
+        public class DescribeTags_Tag
+        {
 
-			private string tagKey;
+            private string tagKey;
 
-			private string tagValue;
+            private string tagValue;
 
-			private DescribeTags_ResourceTypeCount resourceTypeCount;
+            private DescribeTags_ResourceTypeCount resourceTypeCount;
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
+            public string TagKey
+            {
+                get
+                {
+                    return tagKey;
+                }
+                set
+                {
+                    tagKey = value;
+                }
+            }
 
-			public string TagValue
-			{
-				get
-				{
-					return tagValue;
-				}
-				set	
-				{
-					tagValue = value;
-				}
-			}
+            public string TagValue
+            {
+                get
+                {
+                    return tagValue;
+                }
+                set
+                {
+                    tagValue = value;
+                }
+            }
 
-			public DescribeTags_ResourceTypeCount ResourceTypeCount
-			{
-				get
-				{
-					return resourceTypeCount;
-				}
-				set	
-				{
-					resourceTypeCount = value;
-				}
-			}
+            public DescribeTags_ResourceTypeCount ResourceTypeCount
+            {
+                get
+                {
+                    return resourceTypeCount;
+                }
+                set
+                {
+                    resourceTypeCount = value;
+                }
+            }
 
-			public class DescribeTags_ResourceTypeCount
-			{
+            public class DescribeTags_ResourceTypeCount
+            {
 
-				private int? instance;
+                private int? instance;
 
-				private int? disk;
+                private int? disk;
 
-				private int? volume;
+                private int? volume;
 
-				private int? image;
+                private int? image;
 
-				private int? snapshot;
+                private int? snapshot;
 
-				private int? securitygroup;
+                private int? securitygroup;
 
-				private int? launchTemplate;
+                private int? launchTemplate;
 
-				private int? eni;
+                private int? eni;
 
-				private int? ddh;
+                private int? ddh;
 
-				private int? keyPair;
+                private int? keyPair;
 
-				public int? Instance
-				{
-					get
-					{
-						return instance;
-					}
-					set	
-					{
-						instance = value;
-					}
-				}
+                public int? Instance
+                {
+                    get
+                    {
+                        return instance;
+                    }
+                    set
+                    {
+                        instance = value;
+                    }
+                }
 
-				public int? Disk
-				{
-					get
-					{
-						return disk;
-					}
-					set	
-					{
-						disk = value;
-					}
-				}
+                public int? Disk
+                {
+                    get
+                    {
+                        return disk;
+                    }
+                    set
+                    {
+                        disk = value;
+                    }
+                }
 
-				public int? Volume
-				{
-					get
-					{
-						return volume;
-					}
-					set	
-					{
-						volume = value;
-					}
-				}
+                public int? Volume
+                {
+                    get
+                    {
+                        return volume;
+                    }
+                    set
+                    {
+                        volume = value;
+                    }
+                }
 
-				public int? Image
-				{
-					get
-					{
-						return image;
-					}
-					set	
-					{
-						image = value;
-					}
-				}
+                public int? Image
+                {
+                    get
+                    {
+                        return image;
+                    }
+                    set
+                    {
+                        image = value;
+                    }
+                }
 
-				public int? Snapshot
-				{
-					get
-					{
-						return snapshot;
-					}
-					set	
-					{
-						snapshot = value;
-					}
-				}
+                public int? Snapshot
+                {
+                    get
+                    {
+                        return snapshot;
+                    }
+                    set
+                    {
+                        snapshot = value;
+                    }
+                }
 
-				public int? Securitygroup
-				{
-					get
-					{
-						return securitygroup;
-					}
-					set	
-					{
-						securitygroup = value;
-					}
-				}
+                public int? Securitygroup
+                {
+                    get
+                    {
+                        return securitygroup;
+                    }
+                    set
+                    {
+                        securitygroup = value;
+                    }
+                }
 
-				public int? LaunchTemplate
-				{
-					get
-					{
-						return launchTemplate;
-					}
-					set	
-					{
-						launchTemplate = value;
-					}
-				}
+                public int? LaunchTemplate
+                {
+                    get
+                    {
+                        return launchTemplate;
+                    }
+                    set
+                    {
+                        launchTemplate = value;
+                    }
+                }
 
-				public int? Eni
-				{
-					get
-					{
-						return eni;
-					}
-					set	
-					{
-						eni = value;
-					}
-				}
+                public int? Eni
+                {
+                    get
+                    {
+                        return eni;
+                    }
+                    set
+                    {
+                        eni = value;
+                    }
+                }
 
-				public int? Ddh
-				{
-					get
-					{
-						return ddh;
-					}
-					set	
-					{
-						ddh = value;
-					}
-				}
+                public int? Ddh
+                {
+                    get
+                    {
+                        return ddh;
+                    }
+                    set
+                    {
+                        ddh = value;
+                    }
+                }
 
-				public int? KeyPair
-				{
-					get
-					{
-						return keyPair;
-					}
-					set	
-					{
-						keyPair = value;
-					}
-				}
-			}
-		}
-	}
+                public int? KeyPair
+                {
+                    get
+                    {
+                        return keyPair;
+                    }
+                    set
+                    {
+                        keyPair = value;
+                    }
+                }
+            }
+        }
+    }
 }

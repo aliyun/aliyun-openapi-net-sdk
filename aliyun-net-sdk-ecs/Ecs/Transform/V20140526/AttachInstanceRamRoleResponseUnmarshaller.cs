@@ -27,27 +27,28 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static AttachInstanceRamRoleResponse Unmarshall(UnmarshallerContext context)
         {
-			AttachInstanceRamRoleResponse attachInstanceRamRoleResponse = new AttachInstanceRamRoleResponse();
+            AttachInstanceRamRoleResponse attachInstanceRamRoleResponse = new AttachInstanceRamRoleResponse();
 
-			attachInstanceRamRoleResponse.HttpResponse = context.HttpResponse;
-			attachInstanceRamRoleResponse.RequestId = context.StringValue("AttachInstanceRamRole.RequestId");
-			attachInstanceRamRoleResponse.TotalCount = context.IntegerValue("AttachInstanceRamRole.TotalCount");
-			attachInstanceRamRoleResponse.FailCount = context.IntegerValue("AttachInstanceRamRole.FailCount");
-			attachInstanceRamRoleResponse.RamRoleName = context.StringValue("AttachInstanceRamRole.RamRoleName");
+            attachInstanceRamRoleResponse.HttpResponse = context.HttpResponse;
+            attachInstanceRamRoleResponse.RequestId = context.StringValue("AttachInstanceRamRole.RequestId");
+            attachInstanceRamRoleResponse.TotalCount = context.IntegerValue("AttachInstanceRamRole.TotalCount");
+            attachInstanceRamRoleResponse.FailCount = context.IntegerValue("AttachInstanceRamRole.FailCount");
+            attachInstanceRamRoleResponse.RamRoleName = context.StringValue("AttachInstanceRamRole.RamRoleName");
 
-			List<AttachInstanceRamRoleResponse.AttachInstanceRamRole_AttachInstanceRamRoleResult> attachInstanceRamRoleResponse_attachInstanceRamRoleResults = new List<AttachInstanceRamRoleResponse.AttachInstanceRamRole_AttachInstanceRamRoleResult>();
-			for (int i = 0; i < context.Length("AttachInstanceRamRole.AttachInstanceRamRoleResults.Length"); i++) {
-				AttachInstanceRamRoleResponse.AttachInstanceRamRole_AttachInstanceRamRoleResult attachInstanceRamRoleResult = new AttachInstanceRamRoleResponse.AttachInstanceRamRole_AttachInstanceRamRoleResult();
-				attachInstanceRamRoleResult.InstanceId = context.StringValue("AttachInstanceRamRole.AttachInstanceRamRoleResults["+ i +"].InstanceId");
-				attachInstanceRamRoleResult.Success = context.BooleanValue("AttachInstanceRamRole.AttachInstanceRamRoleResults["+ i +"].Success");
-				attachInstanceRamRoleResult.Code = context.StringValue("AttachInstanceRamRole.AttachInstanceRamRoleResults["+ i +"].Code");
-				attachInstanceRamRoleResult.Message = context.StringValue("AttachInstanceRamRole.AttachInstanceRamRoleResults["+ i +"].Message");
+            List<AttachInstanceRamRoleResponse.AttachInstanceRamRole_AttachInstanceRamRoleResult> attachInstanceRamRoleResponse_attachInstanceRamRoleResults = new List<AttachInstanceRamRoleResponse.AttachInstanceRamRole_AttachInstanceRamRoleResult>();
+            for (int i = 0; i < context.Length("AttachInstanceRamRole.AttachInstanceRamRoleResults.Length"); i++)
+            {
+                AttachInstanceRamRoleResponse.AttachInstanceRamRole_AttachInstanceRamRoleResult attachInstanceRamRoleResult = new AttachInstanceRamRoleResponse.AttachInstanceRamRole_AttachInstanceRamRoleResult();
+                attachInstanceRamRoleResult.InstanceId = context.StringValue("AttachInstanceRamRole.AttachInstanceRamRoleResults[" + i + "].InstanceId");
+                attachInstanceRamRoleResult.Success = context.BooleanValue("AttachInstanceRamRole.AttachInstanceRamRoleResults[" + i + "].Success");
+                attachInstanceRamRoleResult.Code = context.StringValue("AttachInstanceRamRole.AttachInstanceRamRoleResults[" + i + "].Code");
+                attachInstanceRamRoleResult.Message = context.StringValue("AttachInstanceRamRole.AttachInstanceRamRoleResults[" + i + "].Message");
 
-				attachInstanceRamRoleResponse_attachInstanceRamRoleResults.Add(attachInstanceRamRoleResult);
-			}
-			attachInstanceRamRoleResponse.AttachInstanceRamRoleResults = attachInstanceRamRoleResponse_attachInstanceRamRoleResults;
-        
-			return attachInstanceRamRoleResponse;
+                attachInstanceRamRoleResponse_attachInstanceRamRoleResults.Add(attachInstanceRamRoleResult);
+            }
+            attachInstanceRamRoleResponse.AttachInstanceRamRoleResults = attachInstanceRamRoleResponse_attachInstanceRamRoleResults;
+
+            return attachInstanceRamRoleResponse;
         }
     }
 }

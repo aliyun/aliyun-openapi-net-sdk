@@ -21,365 +21,365 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeDemandsResponse : AcsResponse
-	{
+    public class DescribeDemandsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private string regionId;
+        private string regionId;
 
-		private List<DescribeDemands_Demand> demands;
+        private List<DescribeDemands_Demand> demands;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+            }
+        }
 
-		public List<DescribeDemands_Demand> Demands
-		{
-			get
-			{
-				return demands;
-			}
-			set	
-			{
-				demands = value;
-			}
-		}
+        public List<DescribeDemands_Demand> Demands
+        {
+            get
+            {
+                return demands;
+            }
+            set
+            {
+                demands = value;
+            }
+        }
 
-		public class DescribeDemands_Demand
-		{
+        public class DescribeDemands_Demand
+        {
 
-			private string zoneId;
+            private string zoneId;
 
-			private string demandTime;
+            private string demandTime;
 
-			private string instanceTypeFamily;
+            private string instanceTypeFamily;
 
-			private string instanceType;
+            private string instanceType;
 
-			private string instanceChargeType;
+            private string instanceChargeType;
 
-			private int? period;
+            private int? period;
 
-			private string periodUnit;
+            private string periodUnit;
 
-			private string startTime;
+            private string startTime;
 
-			private string endTime;
+            private string endTime;
 
-			private string demandStatus;
+            private string demandStatus;
 
-			private int? totalAmount;
+            private int? totalAmount;
 
-			private int? availableAmount;
+            private int? availableAmount;
 
-			private int? usedAmount;
+            private int? usedAmount;
 
-			private int? deliveringAmount;
+            private int? deliveringAmount;
 
-			private List<DescribeDemands_SupplyInfo> supplyInfos;
+            private List<DescribeDemands_SupplyInfo> supplyInfos;
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+            public string ZoneId
+            {
+                get
+                {
+                    return zoneId;
+                }
+                set
+                {
+                    zoneId = value;
+                }
+            }
 
-			public string DemandTime
-			{
-				get
-				{
-					return demandTime;
-				}
-				set	
-				{
-					demandTime = value;
-				}
-			}
+            public string DemandTime
+            {
+                get
+                {
+                    return demandTime;
+                }
+                set
+                {
+                    demandTime = value;
+                }
+            }
 
-			public string InstanceTypeFamily
-			{
-				get
-				{
-					return instanceTypeFamily;
-				}
-				set	
-				{
-					instanceTypeFamily = value;
-				}
-			}
+            public string InstanceTypeFamily
+            {
+                get
+                {
+                    return instanceTypeFamily;
+                }
+                set
+                {
+                    instanceTypeFamily = value;
+                }
+            }
 
-			public string InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
-				}
-			}
+            public string InstanceType
+            {
+                get
+                {
+                    return instanceType;
+                }
+                set
+                {
+                    instanceType = value;
+                }
+            }
 
-			public string InstanceChargeType
-			{
-				get
-				{
-					return instanceChargeType;
-				}
-				set	
-				{
-					instanceChargeType = value;
-				}
-			}
+            public string InstanceChargeType
+            {
+                get
+                {
+                    return instanceChargeType;
+                }
+                set
+                {
+                    instanceChargeType = value;
+                }
+            }
 
-			public int? Period
-			{
-				get
-				{
-					return period;
-				}
-				set	
-				{
-					period = value;
-				}
-			}
+            public int? Period
+            {
+                get
+                {
+                    return period;
+                }
+                set
+                {
+                    period = value;
+                }
+            }
 
-			public string PeriodUnit
-			{
-				get
-				{
-					return periodUnit;
-				}
-				set	
-				{
-					periodUnit = value;
-				}
-			}
+            public string PeriodUnit
+            {
+                get
+                {
+                    return periodUnit;
+                }
+                set
+                {
+                    periodUnit = value;
+                }
+            }
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+            public string StartTime
+            {
+                get
+                {
+                    return startTime;
+                }
+                set
+                {
+                    startTime = value;
+                }
+            }
 
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
+            public string EndTime
+            {
+                get
+                {
+                    return endTime;
+                }
+                set
+                {
+                    endTime = value;
+                }
+            }
 
-			public string DemandStatus
-			{
-				get
-				{
-					return demandStatus;
-				}
-				set	
-				{
-					demandStatus = value;
-				}
-			}
+            public string DemandStatus
+            {
+                get
+                {
+                    return demandStatus;
+                }
+                set
+                {
+                    demandStatus = value;
+                }
+            }
 
-			public int? TotalAmount
-			{
-				get
-				{
-					return totalAmount;
-				}
-				set	
-				{
-					totalAmount = value;
-				}
-			}
+            public int? TotalAmount
+            {
+                get
+                {
+                    return totalAmount;
+                }
+                set
+                {
+                    totalAmount = value;
+                }
+            }
 
-			public int? AvailableAmount
-			{
-				get
-				{
-					return availableAmount;
-				}
-				set	
-				{
-					availableAmount = value;
-				}
-			}
+            public int? AvailableAmount
+            {
+                get
+                {
+                    return availableAmount;
+                }
+                set
+                {
+                    availableAmount = value;
+                }
+            }
 
-			public int? UsedAmount
-			{
-				get
-				{
-					return usedAmount;
-				}
-				set	
-				{
-					usedAmount = value;
-				}
-			}
+            public int? UsedAmount
+            {
+                get
+                {
+                    return usedAmount;
+                }
+                set
+                {
+                    usedAmount = value;
+                }
+            }
 
-			public int? DeliveringAmount
-			{
-				get
-				{
-					return deliveringAmount;
-				}
-				set	
-				{
-					deliveringAmount = value;
-				}
-			}
+            public int? DeliveringAmount
+            {
+                get
+                {
+                    return deliveringAmount;
+                }
+                set
+                {
+                    deliveringAmount = value;
+                }
+            }
 
-			public List<DescribeDemands_SupplyInfo> SupplyInfos
-			{
-				get
-				{
-					return supplyInfos;
-				}
-				set	
-				{
-					supplyInfos = value;
-				}
-			}
+            public List<DescribeDemands_SupplyInfo> SupplyInfos
+            {
+                get
+                {
+                    return supplyInfos;
+                }
+                set
+                {
+                    supplyInfos = value;
+                }
+            }
 
-			public class DescribeDemands_SupplyInfo
-			{
+            public class DescribeDemands_SupplyInfo
+            {
 
-				private int? amount;
+                private int? amount;
 
-				private string supplyStatus;
+                private string supplyStatus;
 
-				private string supplyStartTime;
+                private string supplyStartTime;
 
-				private string supplyEndTime;
+                private string supplyEndTime;
 
-				public int? Amount
-				{
-					get
-					{
-						return amount;
-					}
-					set	
-					{
-						amount = value;
-					}
-				}
+                public int? Amount
+                {
+                    get
+                    {
+                        return amount;
+                    }
+                    set
+                    {
+                        amount = value;
+                    }
+                }
 
-				public string SupplyStatus
-				{
-					get
-					{
-						return supplyStatus;
-					}
-					set	
-					{
-						supplyStatus = value;
-					}
-				}
+                public string SupplyStatus
+                {
+                    get
+                    {
+                        return supplyStatus;
+                    }
+                    set
+                    {
+                        supplyStatus = value;
+                    }
+                }
 
-				public string SupplyStartTime
-				{
-					get
-					{
-						return supplyStartTime;
-					}
-					set	
-					{
-						supplyStartTime = value;
-					}
-				}
+                public string SupplyStartTime
+                {
+                    get
+                    {
+                        return supplyStartTime;
+                    }
+                    set
+                    {
+                        supplyStartTime = value;
+                    }
+                }
 
-				public string SupplyEndTime
-				{
-					get
-					{
-						return supplyEndTime;
-					}
-					set	
-					{
-						supplyEndTime = value;
-					}
-				}
-			}
-		}
-	}
+                public string SupplyEndTime
+                {
+                    get
+                    {
+                        return supplyEndTime;
+                    }
+                    set
+                    {
+                        supplyEndTime = value;
+                    }
+                }
+            }
+        }
+    }
 }

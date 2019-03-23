@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static AddGlobalAccelerationInstanceIpResponse Unmarshall(UnmarshallerContext context)
         {
-			AddGlobalAccelerationInstanceIpResponse addGlobalAccelerationInstanceIpResponse = new AddGlobalAccelerationInstanceIpResponse();
+            AddGlobalAccelerationInstanceIpResponse addGlobalAccelerationInstanceIpResponse = new AddGlobalAccelerationInstanceIpResponse();
 
-			addGlobalAccelerationInstanceIpResponse.HttpResponse = context.HttpResponse;
-			addGlobalAccelerationInstanceIpResponse.RequestId = context.StringValue("AddGlobalAccelerationInstanceIp.RequestId");
-        
-			return addGlobalAccelerationInstanceIpResponse;
+            addGlobalAccelerationInstanceIpResponse.HttpResponse = context.HttpResponse;
+            addGlobalAccelerationInstanceIpResponse.RequestId = context.StringValue("AddGlobalAccelerationInstanceIp.RequestId");
+
+            return addGlobalAccelerationInstanceIpResponse;
         }
     }
 }

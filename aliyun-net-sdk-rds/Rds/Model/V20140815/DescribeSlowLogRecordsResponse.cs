@@ -21,221 +21,221 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeSlowLogRecordsResponse : AcsResponse
-	{
+    public class DescribeSlowLogRecordsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string engine;
+        private string engine;
 
-		private int? totalRecordCount;
+        private int? totalRecordCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private List<DescribeSlowLogRecords_SQLSlowRecord> items;
+        private List<DescribeSlowLogRecords_SQLSlowRecord> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+            }
+        }
 
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
+        public string Engine
+        {
+            get
+            {
+                return engine;
+            }
+            set
+            {
+                engine = value;
+            }
+        }
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public int? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public List<DescribeSlowLogRecords_SQLSlowRecord> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeSlowLogRecords_SQLSlowRecord> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeSlowLogRecords_SQLSlowRecord
-		{
+        public class DescribeSlowLogRecords_SQLSlowRecord
+        {
 
-			private string hostAddress;
+            private string hostAddress;
 
-			private string dBName;
+            private string dBName;
 
-			private string sQLText;
+            private string sQLText;
 
-			private long? queryTimes;
+            private long? queryTimes;
 
-			private long? lockTimes;
+            private long? lockTimes;
 
-			private long? parseRowCounts;
+            private long? parseRowCounts;
 
-			private long? returnRowCounts;
+            private long? returnRowCounts;
 
-			private string executionStartTime;
+            private string executionStartTime;
 
-			public string HostAddress
-			{
-				get
-				{
-					return hostAddress;
-				}
-				set	
-				{
-					hostAddress = value;
-				}
-			}
+            public string HostAddress
+            {
+                get
+                {
+                    return hostAddress;
+                }
+                set
+                {
+                    hostAddress = value;
+                }
+            }
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
+            public string DBName
+            {
+                get
+                {
+                    return dBName;
+                }
+                set
+                {
+                    dBName = value;
+                }
+            }
 
-			public string SQLText
-			{
-				get
-				{
-					return sQLText;
-				}
-				set	
-				{
-					sQLText = value;
-				}
-			}
+            public string SQLText
+            {
+                get
+                {
+                    return sQLText;
+                }
+                set
+                {
+                    sQLText = value;
+                }
+            }
 
-			public long? QueryTimes
-			{
-				get
-				{
-					return queryTimes;
-				}
-				set	
-				{
-					queryTimes = value;
-				}
-			}
+            public long? QueryTimes
+            {
+                get
+                {
+                    return queryTimes;
+                }
+                set
+                {
+                    queryTimes = value;
+                }
+            }
 
-			public long? LockTimes
-			{
-				get
-				{
-					return lockTimes;
-				}
-				set	
-				{
-					lockTimes = value;
-				}
-			}
+            public long? LockTimes
+            {
+                get
+                {
+                    return lockTimes;
+                }
+                set
+                {
+                    lockTimes = value;
+                }
+            }
 
-			public long? ParseRowCounts
-			{
-				get
-				{
-					return parseRowCounts;
-				}
-				set	
-				{
-					parseRowCounts = value;
-				}
-			}
+            public long? ParseRowCounts
+            {
+                get
+                {
+                    return parseRowCounts;
+                }
+                set
+                {
+                    parseRowCounts = value;
+                }
+            }
 
-			public long? ReturnRowCounts
-			{
-				get
-				{
-					return returnRowCounts;
-				}
-				set	
-				{
-					returnRowCounts = value;
-				}
-			}
+            public long? ReturnRowCounts
+            {
+                get
+                {
+                    return returnRowCounts;
+                }
+                set
+                {
+                    returnRowCounts = value;
+                }
+            }
 
-			public string ExecutionStartTime
-			{
-				get
-				{
-					return executionStartTime;
-				}
-				set	
-				{
-					executionStartTime = value;
-				}
-			}
-		}
-	}
+            public string ExecutionStartTime
+            {
+                get
+                {
+                    return executionStartTime;
+                }
+                set
+                {
+                    executionStartTime = value;
+                }
+            }
+        }
+    }
 }

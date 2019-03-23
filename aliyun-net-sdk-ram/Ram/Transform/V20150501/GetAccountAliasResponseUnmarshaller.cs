@@ -28,13 +28,13 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static GetAccountAliasResponse Unmarshall(UnmarshallerContext context)
         {
-			GetAccountAliasResponse getAccountAliasResponse = new GetAccountAliasResponse();
+            GetAccountAliasResponse getAccountAliasResponse = new GetAccountAliasResponse();
 
-			getAccountAliasResponse.HttpResponse = context.HttpResponse;
-			getAccountAliasResponse.RequestId = context.StringValue("GetAccountAlias.RequestId");
-			getAccountAliasResponse.AccountAlias = context.StringValue("GetAccountAlias.AccountAlias");
-        
-			return getAccountAliasResponse;
+            getAccountAliasResponse.HttpResponse = context.HttpResponse;
+            getAccountAliasResponse.RequestId = context.StringValue("GetAccountAlias.RequestId");
+            getAccountAliasResponse.AccountAlias = context.StringValue("GetAccountAlias.AccountAlias");
+
+            return getAccountAliasResponse;
         }
     }
 }

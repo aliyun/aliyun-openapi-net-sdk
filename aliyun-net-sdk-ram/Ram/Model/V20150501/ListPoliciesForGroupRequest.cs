@@ -32,23 +32,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public ListPoliciesForGroupRequest()
             : base("Ram", "2015-05-01", "ListPoliciesForGroup", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string groupName;
+        private string groupName;
 
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
+        public string GroupName
+        {
+            get
+            {
+                return groupName;
+            }
+            set
+            {
+                groupName = value;
+                DictionaryUtil.Add(QueryParameters, "GroupName", value);
+            }
+        }
 
         public override ListPoliciesForGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

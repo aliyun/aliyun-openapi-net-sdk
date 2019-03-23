@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static RemoveBandwidthPackageIpsResponse Unmarshall(UnmarshallerContext context)
         {
-			RemoveBandwidthPackageIpsResponse removeBandwidthPackageIpsResponse = new RemoveBandwidthPackageIpsResponse();
+            RemoveBandwidthPackageIpsResponse removeBandwidthPackageIpsResponse = new RemoveBandwidthPackageIpsResponse();
 
-			removeBandwidthPackageIpsResponse.HttpResponse = context.HttpResponse;
-			removeBandwidthPackageIpsResponse.RequestId = context.StringValue("RemoveBandwidthPackageIps.RequestId");
-        
-			return removeBandwidthPackageIpsResponse;
+            removeBandwidthPackageIpsResponse.HttpResponse = context.HttpResponse;
+            removeBandwidthPackageIpsResponse.RequestId = context.StringValue("RemoveBandwidthPackageIps.RequestId");
+
+            return removeBandwidthPackageIpsResponse;
         }
     }
 }

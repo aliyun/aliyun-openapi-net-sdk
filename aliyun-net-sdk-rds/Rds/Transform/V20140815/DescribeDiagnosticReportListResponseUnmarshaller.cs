@@ -27,25 +27,26 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static DescribeDiagnosticReportListResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDiagnosticReportListResponse describeDiagnosticReportListResponse = new DescribeDiagnosticReportListResponse();
+            DescribeDiagnosticReportListResponse describeDiagnosticReportListResponse = new DescribeDiagnosticReportListResponse();
 
-			describeDiagnosticReportListResponse.HttpResponse = context.HttpResponse;
-			describeDiagnosticReportListResponse.RequestId = context.StringValue("DescribeDiagnosticReportList.RequestId");
+            describeDiagnosticReportListResponse.HttpResponse = context.HttpResponse;
+            describeDiagnosticReportListResponse.RequestId = context.StringValue("DescribeDiagnosticReportList.RequestId");
 
-			List<DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report> describeDiagnosticReportListResponse_reportList = new List<DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report>();
-			for (int i = 0; i < context.Length("DescribeDiagnosticReportList.ReportList.Length"); i++) {
-				DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report report = new DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report();
-				report.DiagnosticTime = context.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].DiagnosticTime");
-				report.Score = context.IntegerValue("DescribeDiagnosticReportList.ReportList["+ i +"].Score");
-				report.StartTime = context.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].StartTime");
-				report.EndTime = context.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].EndTime");
-				report.DownloadURL = context.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].DownloadURL");
+            List<DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report> describeDiagnosticReportListResponse_reportList = new List<DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report>();
+            for (int i = 0; i < context.Length("DescribeDiagnosticReportList.ReportList.Length"); i++)
+            {
+                DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report report = new DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report();
+                report.DiagnosticTime = context.StringValue("DescribeDiagnosticReportList.ReportList[" + i + "].DiagnosticTime");
+                report.Score = context.IntegerValue("DescribeDiagnosticReportList.ReportList[" + i + "].Score");
+                report.StartTime = context.StringValue("DescribeDiagnosticReportList.ReportList[" + i + "].StartTime");
+                report.EndTime = context.StringValue("DescribeDiagnosticReportList.ReportList[" + i + "].EndTime");
+                report.DownloadURL = context.StringValue("DescribeDiagnosticReportList.ReportList[" + i + "].DownloadURL");
 
-				describeDiagnosticReportListResponse_reportList.Add(report);
-			}
-			describeDiagnosticReportListResponse.ReportList = describeDiagnosticReportListResponse_reportList;
-        
-			return describeDiagnosticReportListResponse;
+                describeDiagnosticReportListResponse_reportList.Add(report);
+            }
+            describeDiagnosticReportListResponse.ReportList = describeDiagnosticReportListResponse_reportList;
+
+            return describeDiagnosticReportListResponse;
         }
     }
 }

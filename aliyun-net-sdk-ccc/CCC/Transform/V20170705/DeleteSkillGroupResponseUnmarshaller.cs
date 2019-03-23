@@ -27,16 +27,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static DeleteSkillGroupResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteSkillGroupResponse deleteSkillGroupResponse = new DeleteSkillGroupResponse();
+            DeleteSkillGroupResponse deleteSkillGroupResponse = new DeleteSkillGroupResponse();
 
-			deleteSkillGroupResponse.HttpResponse = context.HttpResponse;
-			deleteSkillGroupResponse.RequestId = context.StringValue("DeleteSkillGroup.RequestId");
-			deleteSkillGroupResponse.Success = context.BooleanValue("DeleteSkillGroup.Success");
-			deleteSkillGroupResponse.Code = context.StringValue("DeleteSkillGroup.Code");
-			deleteSkillGroupResponse.Message = context.StringValue("DeleteSkillGroup.Message");
-			deleteSkillGroupResponse.HttpStatusCode = context.IntegerValue("DeleteSkillGroup.HttpStatusCode");
-        
-			return deleteSkillGroupResponse;
+            deleteSkillGroupResponse.HttpResponse = context.HttpResponse;
+            deleteSkillGroupResponse.RequestId = context.StringValue("DeleteSkillGroup.RequestId");
+            deleteSkillGroupResponse.Success = context.BooleanValue("DeleteSkillGroup.Success");
+            deleteSkillGroupResponse.Code = context.StringValue("DeleteSkillGroup.Code");
+            deleteSkillGroupResponse.Message = context.StringValue("DeleteSkillGroup.Message");
+            deleteSkillGroupResponse.HttpStatusCode = context.IntegerValue("DeleteSkillGroup.HttpStatusCode");
+
+            return deleteSkillGroupResponse;
         }
     }
 }

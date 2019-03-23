@@ -33,185 +33,185 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string description;
+        private string description;
 
-		private string regionId;
+        private string regionId;
 
-		private string actionOnMaintenance;
+        private string actionOnMaintenance;
 
-		private string action;
+        private string action;
 
-		private string dedicatedHostName;
+        private string dedicatedHostName;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string dedicatedHostId;
+        private string dedicatedHostId;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private int? networkAttributesSlbUdpTimeout;
+        private int? networkAttributesSlbUdpTimeout;
 
-		private int? networkAttributesUdpTimeout;
+        private int? networkAttributesUdpTimeout;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string ActionOnMaintenance
-		{
-			get
-			{
-				return actionOnMaintenance;
-			}
-			set	
-			{
-				actionOnMaintenance = value;
-				DictionaryUtil.Add(QueryParameters, "ActionOnMaintenance", value);
-			}
-		}
+        public string ActionOnMaintenance
+        {
+            get
+            {
+                return actionOnMaintenance;
+            }
+            set
+            {
+                actionOnMaintenance = value;
+                DictionaryUtil.Add(QueryParameters, "ActionOnMaintenance", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string DedicatedHostName
-		{
-			get
-			{
-				return dedicatedHostName;
-			}
-			set	
-			{
-				dedicatedHostName = value;
-				DictionaryUtil.Add(QueryParameters, "DedicatedHostName", value);
-			}
-		}
+        public string DedicatedHostName
+        {
+            get
+            {
+                return dedicatedHostName;
+            }
+            set
+            {
+                dedicatedHostName = value;
+                DictionaryUtil.Add(QueryParameters, "DedicatedHostName", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string DedicatedHostId
-		{
-			get
-			{
-				return dedicatedHostId;
-			}
-			set	
-			{
-				dedicatedHostId = value;
-				DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
-			}
-		}
+        public string DedicatedHostId
+        {
+            get
+            {
+                return dedicatedHostId;
+            }
+            set
+            {
+                dedicatedHostId = value;
+                DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public int? NetworkAttributesSlbUdpTimeout
-		{
-			get
-			{
-				return networkAttributesSlbUdpTimeout;
-			}
-			set	
-			{
-				networkAttributesSlbUdpTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkAttributes.SlbUdpTimeout", value.ToString());
-			}
-		}
+        public int? NetworkAttributesSlbUdpTimeout
+        {
+            get
+            {
+                return networkAttributesSlbUdpTimeout;
+            }
+            set
+            {
+                networkAttributesSlbUdpTimeout = value;
+                DictionaryUtil.Add(QueryParameters, "NetworkAttributes.SlbUdpTimeout", value.ToString());
+            }
+        }
 
-		public int? NetworkAttributesUdpTimeout
-		{
-			get
-			{
-				return networkAttributesUdpTimeout;
-			}
-			set	
-			{
-				networkAttributesUdpTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkAttributes.UdpTimeout", value.ToString());
-			}
-		}
+        public int? NetworkAttributesUdpTimeout
+        {
+            get
+            {
+                return networkAttributesUdpTimeout;
+            }
+            set
+            {
+                networkAttributesUdpTimeout = value;
+                DictionaryUtil.Add(QueryParameters, "NetworkAttributes.UdpTimeout", value.ToString());
+            }
+        }
 
         public override ModifyDedicatedHostAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

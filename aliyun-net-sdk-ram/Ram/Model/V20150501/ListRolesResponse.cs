@@ -22,151 +22,151 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class ListRolesResponse : AcsResponse
-	{
+    public class ListRolesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? isTruncated;
+        private bool? isTruncated;
 
-		private string marker;
+        private string marker;
 
-		private List<ListRoles_Role> roles;
+        private List<ListRoles_Role> roles;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? IsTruncated
-		{
-			get
-			{
-				return isTruncated;
-			}
-			set	
-			{
-				isTruncated = value;
-			}
-		}
+        public bool? IsTruncated
+        {
+            get
+            {
+                return isTruncated;
+            }
+            set
+            {
+                isTruncated = value;
+            }
+        }
 
-		public string Marker
-		{
-			get
-			{
-				return marker;
-			}
-			set	
-			{
-				marker = value;
-			}
-		}
+        public string Marker
+        {
+            get
+            {
+                return marker;
+            }
+            set
+            {
+                marker = value;
+            }
+        }
 
-		public List<ListRoles_Role> Roles
-		{
-			get
-			{
-				return roles;
-			}
-			set	
-			{
-				roles = value;
-			}
-		}
+        public List<ListRoles_Role> Roles
+        {
+            get
+            {
+                return roles;
+            }
+            set
+            {
+                roles = value;
+            }
+        }
 
-		public class ListRoles_Role
-		{
+        public class ListRoles_Role
+        {
 
-			private string roleId;
+            private string roleId;
 
-			private string roleName;
+            private string roleName;
 
-			private string arn;
+            private string arn;
 
-			private string description;
+            private string description;
 
-			private string createDate;
+            private string createDate;
 
-			private string updateDate;
+            private string updateDate;
 
-			public string RoleId
-			{
-				get
-				{
-					return roleId;
-				}
-				set	
-				{
-					roleId = value;
-				}
-			}
+            public string RoleId
+            {
+                get
+                {
+                    return roleId;
+                }
+                set
+                {
+                    roleId = value;
+                }
+            }
 
-			public string RoleName
-			{
-				get
-				{
-					return roleName;
-				}
-				set	
-				{
-					roleName = value;
-				}
-			}
+            public string RoleName
+            {
+                get
+                {
+                    return roleName;
+                }
+                set
+                {
+                    roleName = value;
+                }
+            }
 
-			public string Arn
-			{
-				get
-				{
-					return arn;
-				}
-				set	
-				{
-					arn = value;
-				}
-			}
+            public string Arn
+            {
+                get
+                {
+                    return arn;
+                }
+                set
+                {
+                    arn = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
-				}
-			}
+            public string CreateDate
+            {
+                get
+                {
+                    return createDate;
+                }
+                set
+                {
+                    createDate = value;
+                }
+            }
 
-			public string UpdateDate
-			{
-				get
-				{
-					return updateDate;
-				}
-				set	
-				{
-					updateDate = value;
-				}
-			}
-		}
-	}
+            public string UpdateDate
+            {
+                get
+                {
+                    return updateDate;
+                }
+                set
+                {
+                    updateDate = value;
+                }
+            }
+        }
+    }
 }

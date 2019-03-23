@@ -27,49 +27,51 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DescribeBandwidthPackagesResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeBandwidthPackagesResponse describeBandwidthPackagesResponse = new DescribeBandwidthPackagesResponse();
+            DescribeBandwidthPackagesResponse describeBandwidthPackagesResponse = new DescribeBandwidthPackagesResponse();
 
-			describeBandwidthPackagesResponse.HttpResponse = context.HttpResponse;
-			describeBandwidthPackagesResponse.RequestId = context.StringValue("DescribeBandwidthPackages.RequestId");
-			describeBandwidthPackagesResponse.TotalCount = context.IntegerValue("DescribeBandwidthPackages.TotalCount");
-			describeBandwidthPackagesResponse.PageNumber = context.IntegerValue("DescribeBandwidthPackages.PageNumber");
-			describeBandwidthPackagesResponse.PageSize = context.IntegerValue("DescribeBandwidthPackages.PageSize");
+            describeBandwidthPackagesResponse.HttpResponse = context.HttpResponse;
+            describeBandwidthPackagesResponse.RequestId = context.StringValue("DescribeBandwidthPackages.RequestId");
+            describeBandwidthPackagesResponse.TotalCount = context.IntegerValue("DescribeBandwidthPackages.TotalCount");
+            describeBandwidthPackagesResponse.PageNumber = context.IntegerValue("DescribeBandwidthPackages.PageNumber");
+            describeBandwidthPackagesResponse.PageSize = context.IntegerValue("DescribeBandwidthPackages.PageSize");
 
-			List<DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage> describeBandwidthPackagesResponse_bandwidthPackages = new List<DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage>();
-			for (int i = 0; i < context.Length("DescribeBandwidthPackages.BandwidthPackages.Length"); i++) {
-				DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage bandwidthPackage = new DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage();
-				bandwidthPackage.BandwidthPackageId = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].BandwidthPackageId");
-				bandwidthPackage.RegionId = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].RegionId");
-				bandwidthPackage.Name = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Name");
-				bandwidthPackage.Description = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Description");
-				bandwidthPackage.ZoneId = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].ZoneId");
-				bandwidthPackage.NatGatewayId = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].NatGatewayId");
-				bandwidthPackage.Bandwidth = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Bandwidth");
-				bandwidthPackage.InstanceChargeType = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].InstanceChargeType");
-				bandwidthPackage.InternetChargeType = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].InternetChargeType");
-				bandwidthPackage.BusinessStatus = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].BusinessStatus");
-				bandwidthPackage.IpCount = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].IpCount");
-				bandwidthPackage.CreationTime = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].CreationTime");
-				bandwidthPackage.Status = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Status");
-				bandwidthPackage.ISP = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].ISP");
+            List<DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage> describeBandwidthPackagesResponse_bandwidthPackages = new List<DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage>();
+            for (int i = 0; i < context.Length("DescribeBandwidthPackages.BandwidthPackages.Length"); i++)
+            {
+                DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage bandwidthPackage = new DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage();
+                bandwidthPackage.BandwidthPackageId = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].BandwidthPackageId");
+                bandwidthPackage.RegionId = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].RegionId");
+                bandwidthPackage.Name = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].Name");
+                bandwidthPackage.Description = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].Description");
+                bandwidthPackage.ZoneId = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].ZoneId");
+                bandwidthPackage.NatGatewayId = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].NatGatewayId");
+                bandwidthPackage.Bandwidth = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].Bandwidth");
+                bandwidthPackage.InstanceChargeType = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].InstanceChargeType");
+                bandwidthPackage.InternetChargeType = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].InternetChargeType");
+                bandwidthPackage.BusinessStatus = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].BusinessStatus");
+                bandwidthPackage.IpCount = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].IpCount");
+                bandwidthPackage.CreationTime = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].CreationTime");
+                bandwidthPackage.Status = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].Status");
+                bandwidthPackage.ISP = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].ISP");
 
-				List<DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage.DescribeBandwidthPackages_PublicIpAddresse> bandwidthPackage_publicIpAddresses = new List<DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage.DescribeBandwidthPackages_PublicIpAddresse>();
-				for (int j = 0; j < context.Length("DescribeBandwidthPackages.BandwidthPackages["+ i +"].PublicIpAddresses.Length"); j++) {
-					DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage.DescribeBandwidthPackages_PublicIpAddresse publicIpAddresse = new DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage.DescribeBandwidthPackages_PublicIpAddresse();
-					publicIpAddresse.AllocationId = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].AllocationId");
-					publicIpAddresse.IpAddress = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].IpAddress");
-					publicIpAddresse.UsingStatus = context.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].UsingStatus");
-					publicIpAddresse.ApAccessEnabled = context.BooleanValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].ApAccessEnabled");
+                List<DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage.DescribeBandwidthPackages_PublicIpAddresse> bandwidthPackage_publicIpAddresses = new List<DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage.DescribeBandwidthPackages_PublicIpAddresse>();
+                for (int j = 0; j < context.Length("DescribeBandwidthPackages.BandwidthPackages[" + i + "].PublicIpAddresses.Length"); j++)
+                {
+                    DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage.DescribeBandwidthPackages_PublicIpAddresse publicIpAddresse = new DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage.DescribeBandwidthPackages_PublicIpAddresse();
+                    publicIpAddresse.AllocationId = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].PublicIpAddresses[" + j + "].AllocationId");
+                    publicIpAddresse.IpAddress = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].PublicIpAddresses[" + j + "].IpAddress");
+                    publicIpAddresse.UsingStatus = context.StringValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].PublicIpAddresses[" + j + "].UsingStatus");
+                    publicIpAddresse.ApAccessEnabled = context.BooleanValue("DescribeBandwidthPackages.BandwidthPackages[" + i + "].PublicIpAddresses[" + j + "].ApAccessEnabled");
 
-					bandwidthPackage_publicIpAddresses.Add(publicIpAddresse);
-				}
-				bandwidthPackage.PublicIpAddresses = bandwidthPackage_publicIpAddresses;
+                    bandwidthPackage_publicIpAddresses.Add(publicIpAddresse);
+                }
+                bandwidthPackage.PublicIpAddresses = bandwidthPackage_publicIpAddresses;
 
-				describeBandwidthPackagesResponse_bandwidthPackages.Add(bandwidthPackage);
-			}
-			describeBandwidthPackagesResponse.BandwidthPackages = describeBandwidthPackagesResponse_bandwidthPackages;
-        
-			return describeBandwidthPackagesResponse;
+                describeBandwidthPackagesResponse_bandwidthPackages.Add(bandwidthPackage);
+            }
+            describeBandwidthPackagesResponse.BandwidthPackages = describeBandwidthPackagesResponse_bandwidthPackages;
+
+            return describeBandwidthPackagesResponse;
         }
     }
 }

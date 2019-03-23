@@ -27,16 +27,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static SubmitBatchJobsResponse Unmarshall(UnmarshallerContext context)
         {
-			SubmitBatchJobsResponse submitBatchJobsResponse = new SubmitBatchJobsResponse();
+            SubmitBatchJobsResponse submitBatchJobsResponse = new SubmitBatchJobsResponse();
 
-			submitBatchJobsResponse.HttpResponse = context.HttpResponse;
-			submitBatchJobsResponse.RequestId = context.StringValue("SubmitBatchJobs.RequestId");
-			submitBatchJobsResponse.Success = context.BooleanValue("SubmitBatchJobs.Success");
-			submitBatchJobsResponse.Code = context.StringValue("SubmitBatchJobs.Code");
-			submitBatchJobsResponse.Message = context.StringValue("SubmitBatchJobs.Message");
-			submitBatchJobsResponse.HttpStatusCode = context.IntegerValue("SubmitBatchJobs.HttpStatusCode");
-        
-			return submitBatchJobsResponse;
+            submitBatchJobsResponse.HttpResponse = context.HttpResponse;
+            submitBatchJobsResponse.RequestId = context.StringValue("SubmitBatchJobs.RequestId");
+            submitBatchJobsResponse.Success = context.BooleanValue("SubmitBatchJobs.Success");
+            submitBatchJobsResponse.Code = context.StringValue("SubmitBatchJobs.Code");
+            submitBatchJobsResponse.Message = context.StringValue("SubmitBatchJobs.Message");
+            submitBatchJobsResponse.HttpStatusCode = context.IntegerValue("SubmitBatchJobs.HttpStatusCode");
+
+            return submitBatchJobsResponse;
         }
     }
 }

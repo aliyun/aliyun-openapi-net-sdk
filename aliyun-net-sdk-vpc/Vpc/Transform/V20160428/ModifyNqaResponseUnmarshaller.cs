@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static ModifyNqaResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyNqaResponse modifyNqaResponse = new ModifyNqaResponse();
+            ModifyNqaResponse modifyNqaResponse = new ModifyNqaResponse();
 
-			modifyNqaResponse.HttpResponse = context.HttpResponse;
-			modifyNqaResponse.RequestId = context.StringValue("ModifyNqa.RequestId");
-        
-			return modifyNqaResponse;
+            modifyNqaResponse.HttpResponse = context.HttpResponse;
+            modifyNqaResponse.RequestId = context.StringValue("ModifyNqa.RequestId");
+
+            return modifyNqaResponse;
         }
     }
 }

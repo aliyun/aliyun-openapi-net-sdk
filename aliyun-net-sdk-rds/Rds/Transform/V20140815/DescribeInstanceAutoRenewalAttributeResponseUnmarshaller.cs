@@ -27,28 +27,29 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static DescribeInstanceAutoRenewalAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeInstanceAutoRenewalAttributeResponse describeInstanceAutoRenewalAttributeResponse = new DescribeInstanceAutoRenewalAttributeResponse();
+            DescribeInstanceAutoRenewalAttributeResponse describeInstanceAutoRenewalAttributeResponse = new DescribeInstanceAutoRenewalAttributeResponse();
 
-			describeInstanceAutoRenewalAttributeResponse.HttpResponse = context.HttpResponse;
-			describeInstanceAutoRenewalAttributeResponse.RequestId = context.StringValue("DescribeInstanceAutoRenewalAttribute.RequestId");
-			describeInstanceAutoRenewalAttributeResponse.PageNumber = context.IntegerValue("DescribeInstanceAutoRenewalAttribute.PageNumber");
-			describeInstanceAutoRenewalAttributeResponse.TotalRecordCount = context.IntegerValue("DescribeInstanceAutoRenewalAttribute.TotalRecordCount");
-			describeInstanceAutoRenewalAttributeResponse.PageRecordCount = context.IntegerValue("DescribeInstanceAutoRenewalAttribute.PageRecordCount");
+            describeInstanceAutoRenewalAttributeResponse.HttpResponse = context.HttpResponse;
+            describeInstanceAutoRenewalAttributeResponse.RequestId = context.StringValue("DescribeInstanceAutoRenewalAttribute.RequestId");
+            describeInstanceAutoRenewalAttributeResponse.PageNumber = context.IntegerValue("DescribeInstanceAutoRenewalAttribute.PageNumber");
+            describeInstanceAutoRenewalAttributeResponse.TotalRecordCount = context.IntegerValue("DescribeInstanceAutoRenewalAttribute.TotalRecordCount");
+            describeInstanceAutoRenewalAttributeResponse.PageRecordCount = context.IntegerValue("DescribeInstanceAutoRenewalAttribute.PageRecordCount");
 
-			List<DescribeInstanceAutoRenewalAttributeResponse.DescribeInstanceAutoRenewalAttribute_Item> describeInstanceAutoRenewalAttributeResponse_items = new List<DescribeInstanceAutoRenewalAttributeResponse.DescribeInstanceAutoRenewalAttribute_Item>();
-			for (int i = 0; i < context.Length("DescribeInstanceAutoRenewalAttribute.Items.Length"); i++) {
-				DescribeInstanceAutoRenewalAttributeResponse.DescribeInstanceAutoRenewalAttribute_Item item = new DescribeInstanceAutoRenewalAttributeResponse.DescribeInstanceAutoRenewalAttribute_Item();
-				item.DBInstanceId = context.StringValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].DBInstanceId");
-				item.RegionId = context.StringValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].RegionId");
-				item.Duration = context.IntegerValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].Duration");
-				item.Status = context.StringValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].Status");
-				item.AutoRenew = context.StringValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].AutoRenew");
+            List<DescribeInstanceAutoRenewalAttributeResponse.DescribeInstanceAutoRenewalAttribute_Item> describeInstanceAutoRenewalAttributeResponse_items = new List<DescribeInstanceAutoRenewalAttributeResponse.DescribeInstanceAutoRenewalAttribute_Item>();
+            for (int i = 0; i < context.Length("DescribeInstanceAutoRenewalAttribute.Items.Length"); i++)
+            {
+                DescribeInstanceAutoRenewalAttributeResponse.DescribeInstanceAutoRenewalAttribute_Item item = new DescribeInstanceAutoRenewalAttributeResponse.DescribeInstanceAutoRenewalAttribute_Item();
+                item.DBInstanceId = context.StringValue("DescribeInstanceAutoRenewalAttribute.Items[" + i + "].DBInstanceId");
+                item.RegionId = context.StringValue("DescribeInstanceAutoRenewalAttribute.Items[" + i + "].RegionId");
+                item.Duration = context.IntegerValue("DescribeInstanceAutoRenewalAttribute.Items[" + i + "].Duration");
+                item.Status = context.StringValue("DescribeInstanceAutoRenewalAttribute.Items[" + i + "].Status");
+                item.AutoRenew = context.StringValue("DescribeInstanceAutoRenewalAttribute.Items[" + i + "].AutoRenew");
 
-				describeInstanceAutoRenewalAttributeResponse_items.Add(item);
-			}
-			describeInstanceAutoRenewalAttributeResponse.Items = describeInstanceAutoRenewalAttributeResponse_items;
-        
-			return describeInstanceAutoRenewalAttributeResponse;
+                describeInstanceAutoRenewalAttributeResponse_items.Add(item);
+            }
+            describeInstanceAutoRenewalAttributeResponse.Items = describeInstanceAutoRenewalAttributeResponse_items;
+
+            return describeInstanceAutoRenewalAttributeResponse;
         }
     }
 }

@@ -21,151 +21,151 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeMetaListResponse : AcsResponse
-	{
+    public class DescribeMetaListResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string dBInstanceName;
+        private string dBInstanceName;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private int? totalRecordCount;
+        private int? totalRecordCount;
 
-		private int? totalPageCount;
+        private int? totalPageCount;
 
-		private List<DescribeMetaList_Meta> items;
+        private List<DescribeMetaList_Meta> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DBInstanceName
-		{
-			get
-			{
-				return dBInstanceName;
-			}
-			set	
-			{
-				dBInstanceName = value;
-			}
-		}
+        public string DBInstanceName
+        {
+            get
+            {
+                return dBInstanceName;
+            }
+            set
+            {
+                dBInstanceName = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public int? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public int? TotalPageCount
-		{
-			get
-			{
-				return totalPageCount;
-			}
-			set	
-			{
-				totalPageCount = value;
-			}
-		}
+        public int? TotalPageCount
+        {
+            get
+            {
+                return totalPageCount;
+            }
+            set
+            {
+                totalPageCount = value;
+            }
+        }
 
-		public List<DescribeMetaList_Meta> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeMetaList_Meta> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeMetaList_Meta
-		{
+        public class DescribeMetaList_Meta
+        {
 
-			private string database;
+            private string database;
 
-			private string tables;
+            private string tables;
 
-			private string size;
+            private string size;
 
-			public string Database
-			{
-				get
-				{
-					return database;
-				}
-				set	
-				{
-					database = value;
-				}
-			}
+            public string Database
+            {
+                get
+                {
+                    return database;
+                }
+                set
+                {
+                    database = value;
+                }
+            }
 
-			public string Tables
-			{
-				get
-				{
-					return tables;
-				}
-				set	
-				{
-					tables = value;
-				}
-			}
+            public string Tables
+            {
+                get
+                {
+                    return tables;
+                }
+                set
+                {
+                    tables = value;
+                }
+            }
 
-			public string Size
-			{
-				get
-				{
-					return size;
-				}
-				set	
-				{
-					size = value;
-				}
-			}
-		}
-	}
+            public string Size
+            {
+                get
+                {
+                    return size;
+                }
+                set
+                {
+                    size = value;
+                }
+            }
+        }
+    }
 }

@@ -32,38 +32,38 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public UploadPublicKeyRequest()
             : base("Ram", "2015-05-01", "UploadPublicKey", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string publicKeySpec;
+        private string publicKeySpec;
 
-		private string userName;
+        private string userName;
 
-		public string PublicKeySpec
-		{
-			get
-			{
-				return publicKeySpec;
-			}
-			set	
-			{
-				publicKeySpec = value;
-				DictionaryUtil.Add(QueryParameters, "PublicKeySpec", value);
-			}
-		}
+        public string PublicKeySpec
+        {
+            get
+            {
+                return publicKeySpec;
+            }
+            set
+            {
+                publicKeySpec = value;
+                DictionaryUtil.Add(QueryParameters, "PublicKeySpec", value);
+            }
+        }
 
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
-			}
-		}
+        public string UserName
+        {
+            get
+            {
+                return userName;
+            }
+            set
+            {
+                userName = value;
+                DictionaryUtil.Add(QueryParameters, "UserName", value);
+            }
+        }
 
         public override UploadPublicKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

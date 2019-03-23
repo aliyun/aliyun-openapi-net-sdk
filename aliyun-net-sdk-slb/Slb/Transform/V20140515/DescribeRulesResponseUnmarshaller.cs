@@ -27,25 +27,26 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static DescribeRulesResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeRulesResponse describeRulesResponse = new DescribeRulesResponse();
+            DescribeRulesResponse describeRulesResponse = new DescribeRulesResponse();
 
-			describeRulesResponse.HttpResponse = context.HttpResponse;
-			describeRulesResponse.RequestId = context.StringValue("DescribeRules.RequestId");
+            describeRulesResponse.HttpResponse = context.HttpResponse;
+            describeRulesResponse.RequestId = context.StringValue("DescribeRules.RequestId");
 
-			List<DescribeRulesResponse.DescribeRules_Rule> describeRulesResponse_rules = new List<DescribeRulesResponse.DescribeRules_Rule>();
-			for (int i = 0; i < context.Length("DescribeRules.Rules.Length"); i++) {
-				DescribeRulesResponse.DescribeRules_Rule rule = new DescribeRulesResponse.DescribeRules_Rule();
-				rule.RuleId = context.StringValue("DescribeRules.Rules["+ i +"].RuleId");
-				rule.RuleName = context.StringValue("DescribeRules.Rules["+ i +"].RuleName");
-				rule.Domain = context.StringValue("DescribeRules.Rules["+ i +"].Domain");
-				rule.Url = context.StringValue("DescribeRules.Rules["+ i +"].Url");
-				rule.VServerGroupId = context.StringValue("DescribeRules.Rules["+ i +"].VServerGroupId");
+            List<DescribeRulesResponse.DescribeRules_Rule> describeRulesResponse_rules = new List<DescribeRulesResponse.DescribeRules_Rule>();
+            for (int i = 0; i < context.Length("DescribeRules.Rules.Length"); i++)
+            {
+                DescribeRulesResponse.DescribeRules_Rule rule = new DescribeRulesResponse.DescribeRules_Rule();
+                rule.RuleId = context.StringValue("DescribeRules.Rules[" + i + "].RuleId");
+                rule.RuleName = context.StringValue("DescribeRules.Rules[" + i + "].RuleName");
+                rule.Domain = context.StringValue("DescribeRules.Rules[" + i + "].Domain");
+                rule.Url = context.StringValue("DescribeRules.Rules[" + i + "].Url");
+                rule.VServerGroupId = context.StringValue("DescribeRules.Rules[" + i + "].VServerGroupId");
 
-				describeRulesResponse_rules.Add(rule);
-			}
-			describeRulesResponse.Rules = describeRulesResponse_rules;
-        
-			return describeRulesResponse;
+                describeRulesResponse_rules.Add(rule);
+            }
+            describeRulesResponse.Rules = describeRulesResponse_rules;
+
+            return describeRulesResponse;
         }
     }
 }

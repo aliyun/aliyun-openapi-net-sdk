@@ -34,140 +34,140 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string startTime;
+        private string startTime;
 
-		private string dataProtocol;
+        private string dataProtocol;
 
-		private string action;
+        private string action;
 
-		private string area;
+        private string area;
 
-		private string domainName;
+        private string domainName;
 
-		private string endTime;
+        private string endTime;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string field;
+        private string field;
 
-		private string interval;
+        private string interval;
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+                DictionaryUtil.Add(QueryParameters, "StartTime", value);
+            }
+        }
 
-		public string DataProtocol
-		{
-			get
-			{
-				return dataProtocol;
-			}
-			set	
-			{
-				dataProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "DataProtocol", value);
-			}
-		}
+        public string DataProtocol
+        {
+            get
+            {
+                return dataProtocol;
+            }
+            set
+            {
+                dataProtocol = value;
+                DictionaryUtil.Add(QueryParameters, "DataProtocol", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string Area
-		{
-			get
-			{
-				return area;
-			}
-			set	
-			{
-				area = value;
-				DictionaryUtil.Add(QueryParameters, "Area", value);
-			}
-		}
+        public string Area
+        {
+            get
+            {
+                return area;
+            }
+            set
+            {
+                area = value;
+                DictionaryUtil.Add(QueryParameters, "Area", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+                DictionaryUtil.Add(QueryParameters, "EndTime", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string Field
-		{
-			get
-			{
-				return field;
-			}
-			set	
-			{
-				field = value;
-				DictionaryUtil.Add(QueryParameters, "Field", value);
-			}
-		}
+        public string Field
+        {
+            get
+            {
+                return field;
+            }
+            set
+            {
+                field = value;
+                DictionaryUtil.Add(QueryParameters, "Field", value);
+            }
+        }
 
-		public string Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
-			}
-		}
+        public string Interval
+        {
+            get
+            {
+                return interval;
+            }
+            set
+            {
+                interval = value;
+                DictionaryUtil.Add(QueryParameters, "Interval", value);
+            }
+        }
 
         public override DescribeDomainUsageDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

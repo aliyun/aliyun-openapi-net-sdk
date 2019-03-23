@@ -28,29 +28,30 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeDomainUsageDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainUsageDataResponse describeDomainUsageDataResponse = new DescribeDomainUsageDataResponse();
+            DescribeDomainUsageDataResponse describeDomainUsageDataResponse = new DescribeDomainUsageDataResponse();
 
-			describeDomainUsageDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainUsageDataResponse.RequestId = context.StringValue("DescribeDomainUsageData.RequestId");
-			describeDomainUsageDataResponse.DomainName = context.StringValue("DescribeDomainUsageData.DomainName");
-			describeDomainUsageDataResponse.StartTime = context.StringValue("DescribeDomainUsageData.StartTime");
-			describeDomainUsageDataResponse.EndTime = context.StringValue("DescribeDomainUsageData.EndTime");
-			describeDomainUsageDataResponse.Type = context.StringValue("DescribeDomainUsageData.Type");
-			describeDomainUsageDataResponse.Area = context.StringValue("DescribeDomainUsageData.Area");
-			describeDomainUsageDataResponse.DataInterval = context.StringValue("DescribeDomainUsageData.DataInterval");
+            describeDomainUsageDataResponse.HttpResponse = context.HttpResponse;
+            describeDomainUsageDataResponse.RequestId = context.StringValue("DescribeDomainUsageData.RequestId");
+            describeDomainUsageDataResponse.DomainName = context.StringValue("DescribeDomainUsageData.DomainName");
+            describeDomainUsageDataResponse.StartTime = context.StringValue("DescribeDomainUsageData.StartTime");
+            describeDomainUsageDataResponse.EndTime = context.StringValue("DescribeDomainUsageData.EndTime");
+            describeDomainUsageDataResponse.Type = context.StringValue("DescribeDomainUsageData.Type");
+            describeDomainUsageDataResponse.Area = context.StringValue("DescribeDomainUsageData.Area");
+            describeDomainUsageDataResponse.DataInterval = context.StringValue("DescribeDomainUsageData.DataInterval");
 
-			List<DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule> describeDomainUsageDataResponse_usageDataPerInterval = new List<DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDomainUsageData.UsageDataPerInterval.Length"); i++) {
-				DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule dataModule = new DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDomainUsageData.UsageDataPerInterval["+ i +"].TimeStamp");
-				dataModule.PeakTime = context.StringValue("DescribeDomainUsageData.UsageDataPerInterval["+ i +"].PeakTime");
-				dataModule._Value = context.StringValue("DescribeDomainUsageData.UsageDataPerInterval["+ i +"].Value");
+            List<DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule> describeDomainUsageDataResponse_usageDataPerInterval = new List<DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule>();
+            for (int i = 0; i < context.Length("DescribeDomainUsageData.UsageDataPerInterval.Length"); i++)
+            {
+                DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule dataModule = new DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule();
+                dataModule.TimeStamp = context.StringValue("DescribeDomainUsageData.UsageDataPerInterval[" + i + "].TimeStamp");
+                dataModule.PeakTime = context.StringValue("DescribeDomainUsageData.UsageDataPerInterval[" + i + "].PeakTime");
+                dataModule._Value = context.StringValue("DescribeDomainUsageData.UsageDataPerInterval[" + i + "].Value");
 
-				describeDomainUsageDataResponse_usageDataPerInterval.Add(dataModule);
-			}
-			describeDomainUsageDataResponse.UsageDataPerInterval = describeDomainUsageDataResponse_usageDataPerInterval;
-        
-			return describeDomainUsageDataResponse;
+                describeDomainUsageDataResponse_usageDataPerInterval.Add(dataModule);
+            }
+            describeDomainUsageDataResponse.UsageDataPerInterval = describeDomainUsageDataResponse_usageDataPerInterval;
+
+            return describeDomainUsageDataResponse;
         }
     }
 }

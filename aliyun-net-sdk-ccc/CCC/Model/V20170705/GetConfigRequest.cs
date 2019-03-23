@@ -33,80 +33,80 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		private string name;
+        private string name;
 
-		private string objectType;
+        private string objectType;
 
-		private string objectId;
+        private string objectId;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public string ObjectType
-		{
-			get
-			{
-				return objectType;
-			}
-			set	
-			{
-				objectType = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
-			}
-		}
+        public string ObjectType
+        {
+            get
+            {
+                return objectType;
+            }
+            set
+            {
+                objectType = value;
+                DictionaryUtil.Add(QueryParameters, "ObjectType", value);
+            }
+        }
 
-		public string ObjectId
-		{
-			get
-			{
-				return objectId;
-			}
-			set	
-			{
-				objectId = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectId", value);
-			}
-		}
+        public string ObjectId
+        {
+            get
+            {
+                return objectId;
+            }
+            set
+            {
+                objectId = value;
+                DictionaryUtil.Add(QueryParameters, "ObjectId", value);
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override GetConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

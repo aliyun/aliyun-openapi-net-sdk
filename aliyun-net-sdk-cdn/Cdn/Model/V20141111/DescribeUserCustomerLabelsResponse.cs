@@ -22,35 +22,35 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeUserCustomerLabelsResponse : AcsResponse
-	{
+    public class DescribeUserCustomerLabelsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? isInnerUser;
+        private bool? isInnerUser;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? IsInnerUser
-		{
-			get
-			{
-				return isInnerUser;
-			}
-			set	
-			{
-				isInnerUser = value;
-			}
-		}
-	}
+        public bool? IsInnerUser
+        {
+            get
+            {
+                return isInnerUser;
+            }
+            set
+            {
+                isInnerUser = value;
+            }
+        }
+    }
 }

@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ModifyInstanceNetworkSpecResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyInstanceNetworkSpecResponse modifyInstanceNetworkSpecResponse = new ModifyInstanceNetworkSpecResponse();
+            ModifyInstanceNetworkSpecResponse modifyInstanceNetworkSpecResponse = new ModifyInstanceNetworkSpecResponse();
 
-			modifyInstanceNetworkSpecResponse.HttpResponse = context.HttpResponse;
-			modifyInstanceNetworkSpecResponse.RequestId = context.StringValue("ModifyInstanceNetworkSpec.RequestId");
-			modifyInstanceNetworkSpecResponse.OrderId = context.StringValue("ModifyInstanceNetworkSpec.OrderId");
-        
-			return modifyInstanceNetworkSpecResponse;
+            modifyInstanceNetworkSpecResponse.HttpResponse = context.HttpResponse;
+            modifyInstanceNetworkSpecResponse.RequestId = context.StringValue("ModifyInstanceNetworkSpec.RequestId");
+            modifyInstanceNetworkSpecResponse.OrderId = context.StringValue("ModifyInstanceNetworkSpec.OrderId");
+
+            return modifyInstanceNetworkSpecResponse;
         }
     }
 }

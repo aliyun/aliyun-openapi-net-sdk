@@ -22,207 +22,207 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLiveStreamRecordIndexFilesResponse : AcsResponse
-	{
+    public class DescribeLiveStreamRecordIndexFilesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> recordIndexInfoList;
+        private List<DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> recordIndexInfoList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> RecordIndexInfoList
-		{
-			get
-			{
-				return recordIndexInfoList;
-			}
-			set	
-			{
-				recordIndexInfoList = value;
-			}
-		}
+        public List<DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> RecordIndexInfoList
+        {
+            get
+            {
+                return recordIndexInfoList;
+            }
+            set
+            {
+                recordIndexInfoList = value;
+            }
+        }
 
-		public class DescribeLiveStreamRecordIndexFiles_RecordIndexInfo
-		{
+        public class DescribeLiveStreamRecordIndexFiles_RecordIndexInfo
+        {
 
-			private string recordId;
+            private string recordId;
 
-			private string recordUrl;
+            private string recordUrl;
 
-			private string domainName;
+            private string domainName;
 
-			private string appName;
+            private string appName;
 
-			private string streamName;
+            private string streamName;
 
-			private string ossObject;
+            private string ossObject;
 
-			private string startTime;
+            private string startTime;
 
-			private string endTime;
+            private string endTime;
 
-			private float? duration;
+            private float? duration;
 
-			private int? height;
+            private int? height;
 
-			private int? width;
+            private int? width;
 
-			private string createTime;
+            private string createTime;
 
-			public string RecordId
-			{
-				get
-				{
-					return recordId;
-				}
-				set	
-				{
-					recordId = value;
-				}
-			}
+            public string RecordId
+            {
+                get
+                {
+                    return recordId;
+                }
+                set
+                {
+                    recordId = value;
+                }
+            }
 
-			public string RecordUrl
-			{
-				get
-				{
-					return recordUrl;
-				}
-				set	
-				{
-					recordUrl = value;
-				}
-			}
+            public string RecordUrl
+            {
+                get
+                {
+                    return recordUrl;
+                }
+                set
+                {
+                    recordUrl = value;
+                }
+            }
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+            public string DomainName
+            {
+                get
+                {
+                    return domainName;
+                }
+                set
+                {
+                    domainName = value;
+                }
+            }
 
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
+            public string AppName
+            {
+                get
+                {
+                    return appName;
+                }
+                set
+                {
+                    appName = value;
+                }
+            }
 
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
+            public string StreamName
+            {
+                get
+                {
+                    return streamName;
+                }
+                set
+                {
+                    streamName = value;
+                }
+            }
 
-			public string OssObject
-			{
-				get
-				{
-					return ossObject;
-				}
-				set	
-				{
-					ossObject = value;
-				}
-			}
+            public string OssObject
+            {
+                get
+                {
+                    return ossObject;
+                }
+                set
+                {
+                    ossObject = value;
+                }
+            }
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+            public string StartTime
+            {
+                get
+                {
+                    return startTime;
+                }
+                set
+                {
+                    startTime = value;
+                }
+            }
 
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
+            public string EndTime
+            {
+                get
+                {
+                    return endTime;
+                }
+                set
+                {
+                    endTime = value;
+                }
+            }
 
-			public float? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
+            public float? Duration
+            {
+                get
+                {
+                    return duration;
+                }
+                set
+                {
+                    duration = value;
+                }
+            }
 
-			public int? Height
-			{
-				get
-				{
-					return height;
-				}
-				set	
-				{
-					height = value;
-				}
-			}
+            public int? Height
+            {
+                get
+                {
+                    return height;
+                }
+                set
+                {
+                    height = value;
+                }
+            }
 
-			public int? Width
-			{
-				get
-				{
-					return width;
-				}
-				set	
-				{
-					width = value;
-				}
-			}
+            public int? Width
+            {
+                get
+                {
+                    return width;
+                }
+                set
+                {
+                    width = value;
+                }
+            }
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-		}
-	}
+            public string CreateTime
+            {
+                get
+                {
+                    return createTime;
+                }
+                set
+                {
+                    createTime = value;
+                }
+            }
+        }
+    }
 }

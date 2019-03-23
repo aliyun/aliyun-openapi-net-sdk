@@ -21,21 +21,21 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CancelAutoSnapshotPolicyResponse : AcsResponse
-	{
+    public class CancelAutoSnapshotPolicyResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
+    }
 }

@@ -28,18 +28,19 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeUserCustomLogConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeUserCustomLogConfigResponse describeUserCustomLogConfigResponse = new DescribeUserCustomLogConfigResponse();
+            DescribeUserCustomLogConfigResponse describeUserCustomLogConfigResponse = new DescribeUserCustomLogConfigResponse();
 
-			describeUserCustomLogConfigResponse.HttpResponse = context.HttpResponse;
-			describeUserCustomLogConfigResponse.RequestId = context.StringValue("DescribeUserCustomLogConfig.RequestId");
+            describeUserCustomLogConfigResponse.HttpResponse = context.HttpResponse;
+            describeUserCustomLogConfigResponse.RequestId = context.StringValue("DescribeUserCustomLogConfig.RequestId");
 
-			List<string> describeUserCustomLogConfigResponse_configIds = new List<string>();
-			for (int i = 0; i < context.Length("DescribeUserCustomLogConfig.ConfigIds.Length"); i++) {
-				describeUserCustomLogConfigResponse_configIds.Add(context.StringValue("DescribeUserCustomLogConfig.ConfigIds["+ i +"]"));
-			}
-			describeUserCustomLogConfigResponse.ConfigIds = describeUserCustomLogConfigResponse_configIds;
-        
-			return describeUserCustomLogConfigResponse;
+            List<string> describeUserCustomLogConfigResponse_configIds = new List<string>();
+            for (int i = 0; i < context.Length("DescribeUserCustomLogConfig.ConfigIds.Length"); i++)
+            {
+                describeUserCustomLogConfigResponse_configIds.Add(context.StringValue("DescribeUserCustomLogConfig.ConfigIds[" + i + "]"));
+            }
+            describeUserCustomLogConfigResponse.ConfigIds = describeUserCustomLogConfigResponse_configIds;
+
+            return describeUserCustomLogConfigResponse;
         }
     }
 }

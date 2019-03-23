@@ -27,57 +27,61 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DescribeVpcAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeVpcAttributeResponse describeVpcAttributeResponse = new DescribeVpcAttributeResponse();
+            DescribeVpcAttributeResponse describeVpcAttributeResponse = new DescribeVpcAttributeResponse();
 
-			describeVpcAttributeResponse.HttpResponse = context.HttpResponse;
-			describeVpcAttributeResponse.RequestId = context.StringValue("DescribeVpcAttribute.RequestId");
-			describeVpcAttributeResponse.VpcId = context.StringValue("DescribeVpcAttribute.VpcId");
-			describeVpcAttributeResponse.RegionId = context.StringValue("DescribeVpcAttribute.RegionId");
-			describeVpcAttributeResponse.Status = context.StringValue("DescribeVpcAttribute.Status");
-			describeVpcAttributeResponse.VpcName = context.StringValue("DescribeVpcAttribute.VpcName");
-			describeVpcAttributeResponse.CreationTime = context.StringValue("DescribeVpcAttribute.CreationTime");
-			describeVpcAttributeResponse.CidrBlock = context.StringValue("DescribeVpcAttribute.CidrBlock");
-			describeVpcAttributeResponse.Ipv6CidrBlock = context.StringValue("DescribeVpcAttribute.Ipv6CidrBlock");
-			describeVpcAttributeResponse.VRouterId = context.StringValue("DescribeVpcAttribute.VRouterId");
-			describeVpcAttributeResponse.Description = context.StringValue("DescribeVpcAttribute.Description");
-			describeVpcAttributeResponse.IsDefault = context.BooleanValue("DescribeVpcAttribute.IsDefault");
-			describeVpcAttributeResponse.ClassicLinkEnabled = context.BooleanValue("DescribeVpcAttribute.ClassicLinkEnabled");
-			describeVpcAttributeResponse.ResourceGroupId = context.StringValue("DescribeVpcAttribute.ResourceGroupId");
+            describeVpcAttributeResponse.HttpResponse = context.HttpResponse;
+            describeVpcAttributeResponse.RequestId = context.StringValue("DescribeVpcAttribute.RequestId");
+            describeVpcAttributeResponse.VpcId = context.StringValue("DescribeVpcAttribute.VpcId");
+            describeVpcAttributeResponse.RegionId = context.StringValue("DescribeVpcAttribute.RegionId");
+            describeVpcAttributeResponse.Status = context.StringValue("DescribeVpcAttribute.Status");
+            describeVpcAttributeResponse.VpcName = context.StringValue("DescribeVpcAttribute.VpcName");
+            describeVpcAttributeResponse.CreationTime = context.StringValue("DescribeVpcAttribute.CreationTime");
+            describeVpcAttributeResponse.CidrBlock = context.StringValue("DescribeVpcAttribute.CidrBlock");
+            describeVpcAttributeResponse.Ipv6CidrBlock = context.StringValue("DescribeVpcAttribute.Ipv6CidrBlock");
+            describeVpcAttributeResponse.VRouterId = context.StringValue("DescribeVpcAttribute.VRouterId");
+            describeVpcAttributeResponse.Description = context.StringValue("DescribeVpcAttribute.Description");
+            describeVpcAttributeResponse.IsDefault = context.BooleanValue("DescribeVpcAttribute.IsDefault");
+            describeVpcAttributeResponse.ClassicLinkEnabled = context.BooleanValue("DescribeVpcAttribute.ClassicLinkEnabled");
+            describeVpcAttributeResponse.ResourceGroupId = context.StringValue("DescribeVpcAttribute.ResourceGroupId");
 
-			List<string> describeVpcAttributeResponse_vSwitchIds = new List<string>();
-			for (int i = 0; i < context.Length("DescribeVpcAttribute.VSwitchIds.Length"); i++) {
-				describeVpcAttributeResponse_vSwitchIds.Add(context.StringValue("DescribeVpcAttribute.VSwitchIds["+ i +"]"));
-			}
-			describeVpcAttributeResponse.VSwitchIds = describeVpcAttributeResponse_vSwitchIds;
+            List<string> describeVpcAttributeResponse_vSwitchIds = new List<string>();
+            for (int i = 0; i < context.Length("DescribeVpcAttribute.VSwitchIds.Length"); i++)
+            {
+                describeVpcAttributeResponse_vSwitchIds.Add(context.StringValue("DescribeVpcAttribute.VSwitchIds[" + i + "]"));
+            }
+            describeVpcAttributeResponse.VSwitchIds = describeVpcAttributeResponse_vSwitchIds;
 
-			List<string> describeVpcAttributeResponse_userCidrs = new List<string>();
-			for (int i = 0; i < context.Length("DescribeVpcAttribute.UserCidrs.Length"); i++) {
-				describeVpcAttributeResponse_userCidrs.Add(context.StringValue("DescribeVpcAttribute.UserCidrs["+ i +"]"));
-			}
-			describeVpcAttributeResponse.UserCidrs = describeVpcAttributeResponse_userCidrs;
+            List<string> describeVpcAttributeResponse_userCidrs = new List<string>();
+            for (int i = 0; i < context.Length("DescribeVpcAttribute.UserCidrs.Length"); i++)
+            {
+                describeVpcAttributeResponse_userCidrs.Add(context.StringValue("DescribeVpcAttribute.UserCidrs[" + i + "]"));
+            }
+            describeVpcAttributeResponse.UserCidrs = describeVpcAttributeResponse_userCidrs;
 
-			List<DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen> describeVpcAttributeResponse_associatedCens = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen>();
-			for (int i = 0; i < context.Length("DescribeVpcAttribute.AssociatedCens.Length"); i++) {
-				DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen associatedCen = new DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen();
-				associatedCen.CenId = context.StringValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenId");
-				associatedCen.CenOwnerId = context.LongValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenOwnerId");
-				associatedCen.CenStatus = context.StringValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenStatus");
+            List<DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen> describeVpcAttributeResponse_associatedCens = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen>();
+            for (int i = 0; i < context.Length("DescribeVpcAttribute.AssociatedCens.Length"); i++)
+            {
+                DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen associatedCen = new DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen();
+                associatedCen.CenId = context.StringValue("DescribeVpcAttribute.AssociatedCens[" + i + "].CenId");
+                associatedCen.CenOwnerId = context.LongValue("DescribeVpcAttribute.AssociatedCens[" + i + "].CenOwnerId");
+                associatedCen.CenStatus = context.StringValue("DescribeVpcAttribute.AssociatedCens[" + i + "].CenStatus");
 
-				describeVpcAttributeResponse_associatedCens.Add(associatedCen);
-			}
-			describeVpcAttributeResponse.AssociatedCens = describeVpcAttributeResponse_associatedCens;
+                describeVpcAttributeResponse_associatedCens.Add(associatedCen);
+            }
+            describeVpcAttributeResponse.AssociatedCens = describeVpcAttributeResponse_associatedCens;
 
-			List<DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType> describeVpcAttributeResponse_cloudResources = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType>();
-			for (int i = 0; i < context.Length("DescribeVpcAttribute.CloudResources.Length"); i++) {
-				DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType cloudResourceSetType = new DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType();
-				cloudResourceSetType.ResourceType = context.StringValue("DescribeVpcAttribute.CloudResources["+ i +"].ResourceType");
-				cloudResourceSetType.ResourceCount = context.IntegerValue("DescribeVpcAttribute.CloudResources["+ i +"].ResourceCount");
+            List<DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType> describeVpcAttributeResponse_cloudResources = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType>();
+            for (int i = 0; i < context.Length("DescribeVpcAttribute.CloudResources.Length"); i++)
+            {
+                DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType cloudResourceSetType = new DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType();
+                cloudResourceSetType.ResourceType = context.StringValue("DescribeVpcAttribute.CloudResources[" + i + "].ResourceType");
+                cloudResourceSetType.ResourceCount = context.IntegerValue("DescribeVpcAttribute.CloudResources[" + i + "].ResourceCount");
 
-				describeVpcAttributeResponse_cloudResources.Add(cloudResourceSetType);
-			}
-			describeVpcAttributeResponse.CloudResources = describeVpcAttributeResponse_cloudResources;
-        
-			return describeVpcAttributeResponse;
+                describeVpcAttributeResponse_cloudResources.Add(cloudResourceSetType);
+            }
+            describeVpcAttributeResponse.CloudResources = describeVpcAttributeResponse_cloudResources;
+
+            return describeVpcAttributeResponse;
         }
     }
 }

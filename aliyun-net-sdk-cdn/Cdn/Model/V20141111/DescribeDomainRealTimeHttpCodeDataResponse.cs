@@ -22,169 +22,169 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainRealTimeHttpCodeDataResponse : AcsResponse
-	{
+    public class DescribeDomainRealTimeHttpCodeDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private string dataInterval;
+        private string dataInterval;
 
-		private List<DescribeDomainRealTimeHttpCodeData_UsageData> realTimeHttpCodeData;
+        private List<DescribeDomainRealTimeHttpCodeData_UsageData> realTimeHttpCodeData;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
+        public string DataInterval
+        {
+            get
+            {
+                return dataInterval;
+            }
+            set
+            {
+                dataInterval = value;
+            }
+        }
 
-		public List<DescribeDomainRealTimeHttpCodeData_UsageData> RealTimeHttpCodeData
-		{
-			get
-			{
-				return realTimeHttpCodeData;
-			}
-			set	
-			{
-				realTimeHttpCodeData = value;
-			}
-		}
+        public List<DescribeDomainRealTimeHttpCodeData_UsageData> RealTimeHttpCodeData
+        {
+            get
+            {
+                return realTimeHttpCodeData;
+            }
+            set
+            {
+                realTimeHttpCodeData = value;
+            }
+        }
 
-		public class DescribeDomainRealTimeHttpCodeData_UsageData
-		{
+        public class DescribeDomainRealTimeHttpCodeData_UsageData
+        {
 
-			private string timeStamp;
+            private string timeStamp;
 
-			private List<DescribeDomainRealTimeHttpCodeData_RealTimeCodeProportionData> _value;
+            private List<DescribeDomainRealTimeHttpCodeData_RealTimeCodeProportionData> _value;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
 
-			public List<DescribeDomainRealTimeHttpCodeData_RealTimeCodeProportionData> _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
-			}
+            public List<DescribeDomainRealTimeHttpCodeData_RealTimeCodeProportionData> _Value
+            {
+                get
+                {
+                    return _value;
+                }
+                set
+                {
+                    _value = value;
+                }
+            }
 
-			public class DescribeDomainRealTimeHttpCodeData_RealTimeCodeProportionData
-			{
+            public class DescribeDomainRealTimeHttpCodeData_RealTimeCodeProportionData
+            {
 
-				private string code;
+                private string code;
 
-				private string proportion;
+                private string proportion;
 
-				private string count;
+                private string count;
 
-				public string Code
-				{
-					get
-					{
-						return code;
-					}
-					set	
-					{
-						code = value;
-					}
-				}
+                public string Code
+                {
+                    get
+                    {
+                        return code;
+                    }
+                    set
+                    {
+                        code = value;
+                    }
+                }
 
-				public string Proportion
-				{
-					get
-					{
-						return proportion;
-					}
-					set	
-					{
-						proportion = value;
-					}
-				}
+                public string Proportion
+                {
+                    get
+                    {
+                        return proportion;
+                    }
+                    set
+                    {
+                        proportion = value;
+                    }
+                }
 
-				public string Count
-				{
-					get
-					{
-						return count;
-					}
-					set	
-					{
-						count = value;
-					}
-				}
-			}
-		}
-	}
+                public string Count
+                {
+                    get
+                    {
+                        return count;
+                    }
+                    set
+                    {
+                        count = value;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -21,599 +21,599 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeRouterInterfacesResponse : AcsResponse
-	{
-
-		private string requestId;
+    public class DescribeRouterInterfacesResponse : AcsResponse
+    {
+
+        private string requestId;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private List<DescribeRouterInterfaces_RouterInterfaceType> routerInterfaceSet;
+        private List<DescribeRouterInterfaces_RouterInterfaceType> routerInterfaceSet;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribeRouterInterfaces_RouterInterfaceType> RouterInterfaceSet
-		{
-			get
-			{
-				return routerInterfaceSet;
-			}
-			set	
-			{
-				routerInterfaceSet = value;
-			}
-		}
+        public List<DescribeRouterInterfaces_RouterInterfaceType> RouterInterfaceSet
+        {
+            get
+            {
+                return routerInterfaceSet;
+            }
+            set
+            {
+                routerInterfaceSet = value;
+            }
+        }
 
-		public class DescribeRouterInterfaces_RouterInterfaceType
-		{
+        public class DescribeRouterInterfaces_RouterInterfaceType
+        {
 
-			private string routerInterfaceId;
+            private string routerInterfaceId;
 
-			private string oppositeRegionId;
+            private string oppositeRegionId;
 
-			private string role;
+            private string role;
 
-			private string spec;
+            private string spec;
 
-			private string name;
+            private string name;
 
-			private string description;
+            private string description;
 
-			private string routerId;
+            private string routerId;
 
-			private string routerType;
+            private string routerType;
 
-			private string creationTime;
+            private string creationTime;
 
-			private string endTime;
+            private string endTime;
 
-			private string chargeType;
+            private string chargeType;
 
-			private string status;
+            private string status;
 
-			private string businessStatus;
+            private string businessStatus;
 
-			private string connectedTime;
+            private string connectedTime;
 
-			private string oppositeInterfaceId;
+            private string oppositeInterfaceId;
 
-			private string oppositeInterfaceSpec;
+            private string oppositeInterfaceSpec;
 
-			private string oppositeInterfaceStatus;
+            private string oppositeInterfaceStatus;
 
-			private string oppositeInterfaceBusinessStatus;
+            private string oppositeInterfaceBusinessStatus;
 
-			private string oppositeRouterId;
+            private string oppositeRouterId;
 
-			private string oppositeRouterType;
+            private string oppositeRouterType;
 
-			private string oppositeInterfaceOwnerId;
+            private string oppositeInterfaceOwnerId;
 
-			private string accessPointId;
+            private string accessPointId;
 
-			private string oppositeAccessPointId;
-
-			private string healthCheckSourceIp;
+            private string oppositeAccessPointId;
+
+            private string healthCheckSourceIp;
 
-			private string healthCheckTargetIp;
-
-			private string oppositeVpcInstanceId;
-
-			private int? bandwidth;
-
-			private string vpcInstanceId;
-
-			private int? oppositeBandwidth;
-
-			private string hasReservationData;
-
-			private string reservationBandwidth;
-
-			private string reservationInternetChargeType;
-
-			private string reservationActiveTime;
-
-			private string reservationOrderType;
-
-			private bool? crossBorder;
-
-			private int? hcThreshold;
-
-			private int? hcRate;
-
-			public string RouterInterfaceId
-			{
-				get
-				{
-					return routerInterfaceId;
-				}
-				set	
-				{
-					routerInterfaceId = value;
-				}
-			}
-
-			public string OppositeRegionId
-			{
-				get
-				{
-					return oppositeRegionId;
-				}
-				set	
-				{
-					oppositeRegionId = value;
-				}
-			}
-
-			public string Role
-			{
-				get
-				{
-					return role;
-				}
-				set	
-				{
-					role = value;
-				}
-			}
-
-			public string Spec
-			{
-				get
-				{
-					return spec;
-				}
-				set	
-				{
-					spec = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string RouterId
-			{
-				get
-				{
-					return routerId;
-				}
-				set	
-				{
-					routerId = value;
-				}
-			}
-
-			public string RouterType
-			{
-				get
-				{
-					return routerType;
-				}
-				set	
-				{
-					routerType = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
-			public string ChargeType
-			{
-				get
-				{
-					return chargeType;
-				}
-				set	
-				{
-					chargeType = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string BusinessStatus
-			{
-				get
-				{
-					return businessStatus;
-				}
-				set	
-				{
-					businessStatus = value;
-				}
-			}
-
-			public string ConnectedTime
-			{
-				get
-				{
-					return connectedTime;
-				}
-				set	
-				{
-					connectedTime = value;
-				}
-			}
-
-			public string OppositeInterfaceId
-			{
-				get
-				{
-					return oppositeInterfaceId;
-				}
-				set	
-				{
-					oppositeInterfaceId = value;
-				}
-			}
-
-			public string OppositeInterfaceSpec
-			{
-				get
-				{
-					return oppositeInterfaceSpec;
-				}
-				set	
-				{
-					oppositeInterfaceSpec = value;
-				}
-			}
-
-			public string OppositeInterfaceStatus
-			{
-				get
-				{
-					return oppositeInterfaceStatus;
-				}
-				set	
-				{
-					oppositeInterfaceStatus = value;
-				}
-			}
-
-			public string OppositeInterfaceBusinessStatus
-			{
-				get
-				{
-					return oppositeInterfaceBusinessStatus;
-				}
-				set	
-				{
-					oppositeInterfaceBusinessStatus = value;
-				}
-			}
-
-			public string OppositeRouterId
-			{
-				get
-				{
-					return oppositeRouterId;
-				}
-				set	
-				{
-					oppositeRouterId = value;
-				}
-			}
-
-			public string OppositeRouterType
-			{
-				get
-				{
-					return oppositeRouterType;
-				}
-				set	
-				{
-					oppositeRouterType = value;
-				}
-			}
-
-			public string OppositeInterfaceOwnerId
-			{
-				get
-				{
-					return oppositeInterfaceOwnerId;
-				}
-				set	
-				{
-					oppositeInterfaceOwnerId = value;
-				}
-			}
-
-			public string AccessPointId
-			{
-				get
-				{
-					return accessPointId;
-				}
-				set	
-				{
-					accessPointId = value;
-				}
-			}
-
-			public string OppositeAccessPointId
-			{
-				get
-				{
-					return oppositeAccessPointId;
-				}
-				set	
-				{
-					oppositeAccessPointId = value;
-				}
-			}
-
-			public string HealthCheckSourceIp
-			{
-				get
-				{
-					return healthCheckSourceIp;
-				}
-				set	
-				{
-					healthCheckSourceIp = value;
-				}
-			}
-
-			public string HealthCheckTargetIp
-			{
-				get
-				{
-					return healthCheckTargetIp;
-				}
-				set	
-				{
-					healthCheckTargetIp = value;
-				}
-			}
-
-			public string OppositeVpcInstanceId
-			{
-				get
-				{
-					return oppositeVpcInstanceId;
-				}
-				set	
-				{
-					oppositeVpcInstanceId = value;
-				}
-			}
-
-			public int? Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
-				}
-			}
-
-			public string VpcInstanceId
-			{
-				get
-				{
-					return vpcInstanceId;
-				}
-				set	
-				{
-					vpcInstanceId = value;
-				}
-			}
-
-			public int? OppositeBandwidth
-			{
-				get
-				{
-					return oppositeBandwidth;
-				}
-				set	
-				{
-					oppositeBandwidth = value;
-				}
-			}
-
-			public string HasReservationData
-			{
-				get
-				{
-					return hasReservationData;
-				}
-				set	
-				{
-					hasReservationData = value;
-				}
-			}
-
-			public string ReservationBandwidth
-			{
-				get
-				{
-					return reservationBandwidth;
-				}
-				set	
-				{
-					reservationBandwidth = value;
-				}
-			}
-
-			public string ReservationInternetChargeType
-			{
-				get
-				{
-					return reservationInternetChargeType;
-				}
-				set	
-				{
-					reservationInternetChargeType = value;
-				}
-			}
-
-			public string ReservationActiveTime
-			{
-				get
-				{
-					return reservationActiveTime;
-				}
-				set	
-				{
-					reservationActiveTime = value;
-				}
-			}
-
-			public string ReservationOrderType
-			{
-				get
-				{
-					return reservationOrderType;
-				}
-				set	
-				{
-					reservationOrderType = value;
-				}
-			}
-
-			public bool? CrossBorder
-			{
-				get
-				{
-					return crossBorder;
-				}
-				set	
-				{
-					crossBorder = value;
-				}
-			}
-
-			public int? HcThreshold
-			{
-				get
-				{
-					return hcThreshold;
-				}
-				set	
-				{
-					hcThreshold = value;
-				}
-			}
-
-			public int? HcRate
-			{
-				get
-				{
-					return hcRate;
-				}
-				set	
-				{
-					hcRate = value;
-				}
-			}
-		}
-	}
+            private string healthCheckTargetIp;
+
+            private string oppositeVpcInstanceId;
+
+            private int? bandwidth;
+
+            private string vpcInstanceId;
+
+            private int? oppositeBandwidth;
+
+            private string hasReservationData;
+
+            private string reservationBandwidth;
+
+            private string reservationInternetChargeType;
+
+            private string reservationActiveTime;
+
+            private string reservationOrderType;
+
+            private bool? crossBorder;
+
+            private int? hcThreshold;
+
+            private int? hcRate;
+
+            public string RouterInterfaceId
+            {
+                get
+                {
+                    return routerInterfaceId;
+                }
+                set
+                {
+                    routerInterfaceId = value;
+                }
+            }
+
+            public string OppositeRegionId
+            {
+                get
+                {
+                    return oppositeRegionId;
+                }
+                set
+                {
+                    oppositeRegionId = value;
+                }
+            }
+
+            public string Role
+            {
+                get
+                {
+                    return role;
+                }
+                set
+                {
+                    role = value;
+                }
+            }
+
+            public string Spec
+            {
+                get
+                {
+                    return spec;
+                }
+                set
+                {
+                    spec = value;
+                }
+            }
+
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
+
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
+
+            public string RouterId
+            {
+                get
+                {
+                    return routerId;
+                }
+                set
+                {
+                    routerId = value;
+                }
+            }
+
+            public string RouterType
+            {
+                get
+                {
+                    return routerType;
+                }
+                set
+                {
+                    routerType = value;
+                }
+            }
+
+            public string CreationTime
+            {
+                get
+                {
+                    return creationTime;
+                }
+                set
+                {
+                    creationTime = value;
+                }
+            }
+
+            public string EndTime
+            {
+                get
+                {
+                    return endTime;
+                }
+                set
+                {
+                    endTime = value;
+                }
+            }
+
+            public string ChargeType
+            {
+                get
+                {
+                    return chargeType;
+                }
+                set
+                {
+                    chargeType = value;
+                }
+            }
+
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
+
+            public string BusinessStatus
+            {
+                get
+                {
+                    return businessStatus;
+                }
+                set
+                {
+                    businessStatus = value;
+                }
+            }
+
+            public string ConnectedTime
+            {
+                get
+                {
+                    return connectedTime;
+                }
+                set
+                {
+                    connectedTime = value;
+                }
+            }
+
+            public string OppositeInterfaceId
+            {
+                get
+                {
+                    return oppositeInterfaceId;
+                }
+                set
+                {
+                    oppositeInterfaceId = value;
+                }
+            }
+
+            public string OppositeInterfaceSpec
+            {
+                get
+                {
+                    return oppositeInterfaceSpec;
+                }
+                set
+                {
+                    oppositeInterfaceSpec = value;
+                }
+            }
+
+            public string OppositeInterfaceStatus
+            {
+                get
+                {
+                    return oppositeInterfaceStatus;
+                }
+                set
+                {
+                    oppositeInterfaceStatus = value;
+                }
+            }
+
+            public string OppositeInterfaceBusinessStatus
+            {
+                get
+                {
+                    return oppositeInterfaceBusinessStatus;
+                }
+                set
+                {
+                    oppositeInterfaceBusinessStatus = value;
+                }
+            }
+
+            public string OppositeRouterId
+            {
+                get
+                {
+                    return oppositeRouterId;
+                }
+                set
+                {
+                    oppositeRouterId = value;
+                }
+            }
+
+            public string OppositeRouterType
+            {
+                get
+                {
+                    return oppositeRouterType;
+                }
+                set
+                {
+                    oppositeRouterType = value;
+                }
+            }
+
+            public string OppositeInterfaceOwnerId
+            {
+                get
+                {
+                    return oppositeInterfaceOwnerId;
+                }
+                set
+                {
+                    oppositeInterfaceOwnerId = value;
+                }
+            }
+
+            public string AccessPointId
+            {
+                get
+                {
+                    return accessPointId;
+                }
+                set
+                {
+                    accessPointId = value;
+                }
+            }
+
+            public string OppositeAccessPointId
+            {
+                get
+                {
+                    return oppositeAccessPointId;
+                }
+                set
+                {
+                    oppositeAccessPointId = value;
+                }
+            }
+
+            public string HealthCheckSourceIp
+            {
+                get
+                {
+                    return healthCheckSourceIp;
+                }
+                set
+                {
+                    healthCheckSourceIp = value;
+                }
+            }
+
+            public string HealthCheckTargetIp
+            {
+                get
+                {
+                    return healthCheckTargetIp;
+                }
+                set
+                {
+                    healthCheckTargetIp = value;
+                }
+            }
+
+            public string OppositeVpcInstanceId
+            {
+                get
+                {
+                    return oppositeVpcInstanceId;
+                }
+                set
+                {
+                    oppositeVpcInstanceId = value;
+                }
+            }
+
+            public int? Bandwidth
+            {
+                get
+                {
+                    return bandwidth;
+                }
+                set
+                {
+                    bandwidth = value;
+                }
+            }
+
+            public string VpcInstanceId
+            {
+                get
+                {
+                    return vpcInstanceId;
+                }
+                set
+                {
+                    vpcInstanceId = value;
+                }
+            }
+
+            public int? OppositeBandwidth
+            {
+                get
+                {
+                    return oppositeBandwidth;
+                }
+                set
+                {
+                    oppositeBandwidth = value;
+                }
+            }
+
+            public string HasReservationData
+            {
+                get
+                {
+                    return hasReservationData;
+                }
+                set
+                {
+                    hasReservationData = value;
+                }
+            }
+
+            public string ReservationBandwidth
+            {
+                get
+                {
+                    return reservationBandwidth;
+                }
+                set
+                {
+                    reservationBandwidth = value;
+                }
+            }
+
+            public string ReservationInternetChargeType
+            {
+                get
+                {
+                    return reservationInternetChargeType;
+                }
+                set
+                {
+                    reservationInternetChargeType = value;
+                }
+            }
+
+            public string ReservationActiveTime
+            {
+                get
+                {
+                    return reservationActiveTime;
+                }
+                set
+                {
+                    reservationActiveTime = value;
+                }
+            }
+
+            public string ReservationOrderType
+            {
+                get
+                {
+                    return reservationOrderType;
+                }
+                set
+                {
+                    reservationOrderType = value;
+                }
+            }
+
+            public bool? CrossBorder
+            {
+                get
+                {
+                    return crossBorder;
+                }
+                set
+                {
+                    crossBorder = value;
+                }
+            }
+
+            public int? HcThreshold
+            {
+                get
+                {
+                    return hcThreshold;
+                }
+                set
+                {
+                    hcThreshold = value;
+                }
+            }
+
+            public int? HcRate
+            {
+                get
+                {
+                    return hcRate;
+                }
+                set
+                {
+                    hcRate = value;
+                }
+            }
+        }
+    }
 }

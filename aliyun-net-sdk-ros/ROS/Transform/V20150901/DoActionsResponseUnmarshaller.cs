@@ -27,11 +27,11 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
     {
         public static DoActionsResponse Unmarshall(UnmarshallerContext context)
         {
-			DoActionsResponse doActionsResponse = new DoActionsResponse();
+            DoActionsResponse doActionsResponse = new DoActionsResponse();
 
-			doActionsResponse.HttpResponse = context.HttpResponse;
-        
-			return doActionsResponse;
+            doActionsResponse.HttpResponse = context.HttpResponse;
+
+            return doActionsResponse;
         }
     }
 }

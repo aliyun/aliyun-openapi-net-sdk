@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class AllocateDedicatedHostsResponse : AcsResponse
-	{
+    public class AllocateDedicatedHostsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<string> dedicatedHostIdSets;
+        private List<string> dedicatedHostIdSets;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<string> DedicatedHostIdSets
-		{
-			get
-			{
-				return dedicatedHostIdSets;
-			}
-			set	
-			{
-				dedicatedHostIdSets = value;
-			}
-		}
-	}
+        public List<string> DedicatedHostIdSets
+        {
+            get
+            {
+                return dedicatedHostIdSets;
+            }
+            set
+            {
+                dedicatedHostIdSets = value;
+            }
+        }
+    }
 }

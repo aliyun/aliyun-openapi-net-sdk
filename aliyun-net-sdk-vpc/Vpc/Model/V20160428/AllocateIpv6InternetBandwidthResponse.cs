@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class AllocateIpv6InternetBandwidthResponse : AcsResponse
-	{
+    public class AllocateIpv6InternetBandwidthResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string ipv6AddressId;
+        private string ipv6AddressId;
 
-		private string internetBandwidthId;
+        private string internetBandwidthId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Ipv6AddressId
-		{
-			get
-			{
-				return ipv6AddressId;
-			}
-			set	
-			{
-				ipv6AddressId = value;
-			}
-		}
+        public string Ipv6AddressId
+        {
+            get
+            {
+                return ipv6AddressId;
+            }
+            set
+            {
+                ipv6AddressId = value;
+            }
+        }
 
-		public string InternetBandwidthId
-		{
-			get
-			{
-				return internetBandwidthId;
-			}
-			set	
-			{
-				internetBandwidthId = value;
-			}
-		}
-	}
+        public string InternetBandwidthId
+        {
+            get
+            {
+                return internetBandwidthId;
+            }
+            set
+            {
+                internetBandwidthId = value;
+            }
+        }
+    }
 }

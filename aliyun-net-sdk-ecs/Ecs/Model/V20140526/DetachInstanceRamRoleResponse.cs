@@ -21,183 +21,183 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DetachInstanceRamRoleResponse : AcsResponse
-	{
+    public class DetachInstanceRamRoleResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? failCount;
+        private int? failCount;
 
-		private string ramRoleName;
+        private string ramRoleName;
 
-		private List<DetachInstanceRamRole_DetachInstanceRamRoleResult> detachInstanceRamRoleResults;
+        private List<DetachInstanceRamRole_DetachInstanceRamRoleResult> detachInstanceRamRoleResults;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? FailCount
-		{
-			get
-			{
-				return failCount;
-			}
-			set	
-			{
-				failCount = value;
-			}
-		}
+        public int? FailCount
+        {
+            get
+            {
+                return failCount;
+            }
+            set
+            {
+                failCount = value;
+            }
+        }
 
-		public string RamRoleName
-		{
-			get
-			{
-				return ramRoleName;
-			}
-			set	
-			{
-				ramRoleName = value;
-			}
-		}
+        public string RamRoleName
+        {
+            get
+            {
+                return ramRoleName;
+            }
+            set
+            {
+                ramRoleName = value;
+            }
+        }
 
-		public List<DetachInstanceRamRole_DetachInstanceRamRoleResult> DetachInstanceRamRoleResults
-		{
-			get
-			{
-				return detachInstanceRamRoleResults;
-			}
-			set	
-			{
-				detachInstanceRamRoleResults = value;
-			}
-		}
+        public List<DetachInstanceRamRole_DetachInstanceRamRoleResult> DetachInstanceRamRoleResults
+        {
+            get
+            {
+                return detachInstanceRamRoleResults;
+            }
+            set
+            {
+                detachInstanceRamRoleResults = value;
+            }
+        }
 
-		public class DetachInstanceRamRole_DetachInstanceRamRoleResult
-		{
+        public class DetachInstanceRamRole_DetachInstanceRamRoleResult
+        {
 
-			private string instanceId;
+            private string instanceId;
 
-			private bool? success;
+            private bool? success;
 
-			private string code;
+            private string code;
 
-			private string message;
+            private string message;
 
-			private List<DetachInstanceRamRole_InstanceRamRoleSet> instanceRamRoleSets;
+            private List<DetachInstanceRamRole_InstanceRamRoleSet> instanceRamRoleSets;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public bool? Success
-			{
-				get
-				{
-					return success;
-				}
-				set	
-				{
-					success = value;
-				}
-			}
+            public bool? Success
+            {
+                get
+                {
+                    return success;
+                }
+                set
+                {
+                    success = value;
+                }
+            }
 
-			public string Code
-			{
-				get
-				{
-					return code;
-				}
-				set	
-				{
-					code = value;
-				}
-			}
+            public string Code
+            {
+                get
+                {
+                    return code;
+                }
+                set
+                {
+                    code = value;
+                }
+            }
 
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
-				}
-			}
+            public string Message
+            {
+                get
+                {
+                    return message;
+                }
+                set
+                {
+                    message = value;
+                }
+            }
 
-			public List<DetachInstanceRamRole_InstanceRamRoleSet> InstanceRamRoleSets
-			{
-				get
-				{
-					return instanceRamRoleSets;
-				}
-				set	
-				{
-					instanceRamRoleSets = value;
-				}
-			}
+            public List<DetachInstanceRamRole_InstanceRamRoleSet> InstanceRamRoleSets
+            {
+                get
+                {
+                    return instanceRamRoleSets;
+                }
+                set
+                {
+                    instanceRamRoleSets = value;
+                }
+            }
 
-			public class DetachInstanceRamRole_InstanceRamRoleSet
-			{
+            public class DetachInstanceRamRole_InstanceRamRoleSet
+            {
 
-				private string instanceId;
+                private string instanceId;
 
-				private string ramRoleName;
+                private string ramRoleName;
 
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
+                public string InstanceId
+                {
+                    get
+                    {
+                        return instanceId;
+                    }
+                    set
+                    {
+                        instanceId = value;
+                    }
+                }
 
-				public string RamRoleName
-				{
-					get
-					{
-						return ramRoleName;
-					}
-					set	
-					{
-						ramRoleName = value;
-					}
-				}
-			}
-		}
-	}
+                public string RamRoleName
+                {
+                    get
+                    {
+                        return ramRoleName;
+                    }
+                    set
+                    {
+                        ramRoleName = value;
+                    }
+                }
+            }
+        }
+    }
 }

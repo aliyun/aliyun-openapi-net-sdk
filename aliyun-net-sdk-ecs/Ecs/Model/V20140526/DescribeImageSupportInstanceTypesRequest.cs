@@ -33,162 +33,162 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string actionType;
+        private string actionType;
 
-		private List<Filter> filters;
+        private List<Filter> filters;
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string imageId;
+        private string imageId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string regionId;
+        private string regionId;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string ActionType
-		{
-			get
-			{
-				return actionType;
-			}
-			set	
-			{
-				actionType = value;
-				DictionaryUtil.Add(QueryParameters, "ActionType", value);
-			}
-		}
+        public string ActionType
+        {
+            get
+            {
+                return actionType;
+            }
+            set
+            {
+                actionType = value;
+                DictionaryUtil.Add(QueryParameters, "ActionType", value);
+            }
+        }
 
-		public List<Filter> Filters
-		{
-			get
-			{
-				return filters;
-			}
+        public List<Filter> Filters
+        {
+            get
+            {
+                return filters;
+            }
 
-			set
-			{
-				filters = value;
-				for (int i = 0; i < filters.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value", filters[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
-				}
-			}
-		}
+            set
+            {
+                filters = value;
+                for (int i = 0; i < filters.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "Filter." + (i + 1) + ".Value", filters[i].Value);
+                    DictionaryUtil.Add(QueryParameters, "Filter." + (i + 1) + ".Key", filters[i].Key);
+                }
+            }
+        }
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
+        public string ImageId
+        {
+            get
+            {
+                return imageId;
+            }
+            set
+            {
+                imageId = value;
+                DictionaryUtil.Add(QueryParameters, "ImageId", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public class Filter
-		{
+        public class Filter
+        {
 
-			private string value_;
+            private string value_;
 
-			private string key;
+            private string key;
 
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
+            public string Value
+            {
+                get
+                {
+                    return value_;
+                }
+                set
+                {
+                    value_ = value;
+                }
+            }
 
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-		}
+            public string Key
+            {
+                get
+                {
+                    return key;
+                }
+                set
+                {
+                    key = value;
+                }
+            }
+        }
 
         public override DescribeImageSupportInstanceTypesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

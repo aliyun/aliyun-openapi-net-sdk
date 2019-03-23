@@ -22,123 +22,123 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLiveRecordConfigResponse : AcsResponse
-	{
+    public class DescribeLiveRecordConfigResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeLiveRecordConfig_LiveAppRecord> liveAppRecordList;
+        private List<DescribeLiveRecordConfig_LiveAppRecord> liveAppRecordList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeLiveRecordConfig_LiveAppRecord> LiveAppRecordList
-		{
-			get
-			{
-				return liveAppRecordList;
-			}
-			set	
-			{
-				liveAppRecordList = value;
-			}
-		}
+        public List<DescribeLiveRecordConfig_LiveAppRecord> LiveAppRecordList
+        {
+            get
+            {
+                return liveAppRecordList;
+            }
+            set
+            {
+                liveAppRecordList = value;
+            }
+        }
 
-		public class DescribeLiveRecordConfig_LiveAppRecord
-		{
+        public class DescribeLiveRecordConfig_LiveAppRecord
+        {
 
-			private string domainName;
+            private string domainName;
 
-			private string appName;
+            private string appName;
 
-			private string ossEndpoint;
+            private string ossEndpoint;
 
-			private string ossBucket;
+            private string ossBucket;
 
-			private string ossObjectPrefix;
+            private string ossObjectPrefix;
 
-			private string createTime;
+            private string createTime;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+            public string DomainName
+            {
+                get
+                {
+                    return domainName;
+                }
+                set
+                {
+                    domainName = value;
+                }
+            }
 
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
+            public string AppName
+            {
+                get
+                {
+                    return appName;
+                }
+                set
+                {
+                    appName = value;
+                }
+            }
 
-			public string OssEndpoint
-			{
-				get
-				{
-					return ossEndpoint;
-				}
-				set	
-				{
-					ossEndpoint = value;
-				}
-			}
+            public string OssEndpoint
+            {
+                get
+                {
+                    return ossEndpoint;
+                }
+                set
+                {
+                    ossEndpoint = value;
+                }
+            }
 
-			public string OssBucket
-			{
-				get
-				{
-					return ossBucket;
-				}
-				set	
-				{
-					ossBucket = value;
-				}
-			}
+            public string OssBucket
+            {
+                get
+                {
+                    return ossBucket;
+                }
+                set
+                {
+                    ossBucket = value;
+                }
+            }
 
-			public string OssObjectPrefix
-			{
-				get
-				{
-					return ossObjectPrefix;
-				}
-				set	
-				{
-					ossObjectPrefix = value;
-				}
-			}
+            public string OssObjectPrefix
+            {
+                get
+                {
+                    return ossObjectPrefix;
+                }
+                set
+                {
+                    ossObjectPrefix = value;
+                }
+            }
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-		}
-	}
+            public string CreateTime
+            {
+                get
+                {
+                    return createTime;
+                }
+                set
+                {
+                    createTime = value;
+                }
+            }
+        }
+    }
 }

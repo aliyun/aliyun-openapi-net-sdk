@@ -21,193 +21,193 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeSQLLogRecordsResponse : AcsResponse
-	{
+    public class DescribeSQLLogRecordsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private long? totalRecordCount;
+        private long? totalRecordCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private List<DescribeSQLLogRecords_SQLRecord> items;
+        private List<DescribeSQLLogRecords_SQLRecord> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public long? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public long? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public List<DescribeSQLLogRecords_SQLRecord> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeSQLLogRecords_SQLRecord> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeSQLLogRecords_SQLRecord
-		{
+        public class DescribeSQLLogRecords_SQLRecord
+        {
 
-			private string dBName;
+            private string dBName;
 
-			private string accountName;
+            private string accountName;
 
-			private string hostAddress;
+            private string hostAddress;
 
-			private string sQLText;
+            private string sQLText;
 
-			private long? totalExecutionTimes;
+            private long? totalExecutionTimes;
 
-			private long? returnRowCounts;
+            private long? returnRowCounts;
 
-			private string executeTime;
+            private string executeTime;
 
-			private string threadID;
+            private string threadID;
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
+            public string DBName
+            {
+                get
+                {
+                    return dBName;
+                }
+                set
+                {
+                    dBName = value;
+                }
+            }
 
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
+            public string AccountName
+            {
+                get
+                {
+                    return accountName;
+                }
+                set
+                {
+                    accountName = value;
+                }
+            }
 
-			public string HostAddress
-			{
-				get
-				{
-					return hostAddress;
-				}
-				set	
-				{
-					hostAddress = value;
-				}
-			}
+            public string HostAddress
+            {
+                get
+                {
+                    return hostAddress;
+                }
+                set
+                {
+                    hostAddress = value;
+                }
+            }
 
-			public string SQLText
-			{
-				get
-				{
-					return sQLText;
-				}
-				set	
-				{
-					sQLText = value;
-				}
-			}
+            public string SQLText
+            {
+                get
+                {
+                    return sQLText;
+                }
+                set
+                {
+                    sQLText = value;
+                }
+            }
 
-			public long? TotalExecutionTimes
-			{
-				get
-				{
-					return totalExecutionTimes;
-				}
-				set	
-				{
-					totalExecutionTimes = value;
-				}
-			}
+            public long? TotalExecutionTimes
+            {
+                get
+                {
+                    return totalExecutionTimes;
+                }
+                set
+                {
+                    totalExecutionTimes = value;
+                }
+            }
 
-			public long? ReturnRowCounts
-			{
-				get
-				{
-					return returnRowCounts;
-				}
-				set	
-				{
-					returnRowCounts = value;
-				}
-			}
+            public long? ReturnRowCounts
+            {
+                get
+                {
+                    return returnRowCounts;
+                }
+                set
+                {
+                    returnRowCounts = value;
+                }
+            }
 
-			public string ExecuteTime
-			{
-				get
-				{
-					return executeTime;
-				}
-				set	
-				{
-					executeTime = value;
-				}
-			}
+            public string ExecuteTime
+            {
+                get
+                {
+                    return executeTime;
+                }
+                set
+                {
+                    executeTime = value;
+                }
+            }
 
-			public string ThreadID
-			{
-				get
-				{
-					return threadID;
-				}
-				set	
-				{
-					threadID = value;
-				}
-			}
-		}
-	}
+            public string ThreadID
+            {
+                get
+                {
+                    return threadID;
+                }
+                set
+                {
+                    threadID = value;
+                }
+            }
+        }
+    }
 }

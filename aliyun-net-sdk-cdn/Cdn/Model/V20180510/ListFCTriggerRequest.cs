@@ -34,70 +34,70 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string eventMetaVersion;
+        private string eventMetaVersion;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string action;
+        private string action;
 
-		private string eventMetaName;
+        private string eventMetaName;
 
-		public string EventMetaVersion
-		{
-			get
-			{
-				return eventMetaVersion;
-			}
-			set	
-			{
-				eventMetaVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EventMetaVersion", value);
-			}
-		}
+        public string EventMetaVersion
+        {
+            get
+            {
+                return eventMetaVersion;
+            }
+            set
+            {
+                eventMetaVersion = value;
+                DictionaryUtil.Add(QueryParameters, "EventMetaVersion", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string EventMetaName
-		{
-			get
-			{
-				return eventMetaName;
-			}
-			set	
-			{
-				eventMetaName = value;
-				DictionaryUtil.Add(QueryParameters, "EventMetaName", value);
-			}
-		}
+        public string EventMetaName
+        {
+            get
+            {
+                return eventMetaName;
+            }
+            set
+            {
+                eventMetaName = value;
+                DictionaryUtil.Add(QueryParameters, "EventMetaName", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override ListFCTriggerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

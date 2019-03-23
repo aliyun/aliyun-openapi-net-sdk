@@ -21,197 +21,197 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class GetConversationListResponse : AcsResponse
-	{
+    public class GetConversationListResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? success;
+        private bool? success;
 
-		private string code;
+        private string code;
 
-		private string message;
+        private string message;
 
-		private int? httpStatusCode;
+        private int? httpStatusCode;
 
-		private List<GetConversationList_ConversationDetail> conversations;
+        private List<GetConversationList_ConversationDetail> conversations;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+        public int? HttpStatusCode
+        {
+            get
+            {
+                return httpStatusCode;
+            }
+            set
+            {
+                httpStatusCode = value;
+            }
+        }
 
-		public List<GetConversationList_ConversationDetail> Conversations
-		{
-			get
-			{
-				return conversations;
-			}
-			set	
-			{
-				conversations = value;
-			}
-		}
+        public List<GetConversationList_ConversationDetail> Conversations
+        {
+            get
+            {
+                return conversations;
+            }
+            set
+            {
+                conversations = value;
+            }
+        }
 
-		public class GetConversationList_ConversationDetail
-		{
+        public class GetConversationList_ConversationDetail
+        {
 
-			private long? timestamp;
+            private long? timestamp;
 
-			private string speaker;
+            private string speaker;
 
-			private string script;
+            private string script;
 
-			private List<GetConversationList_SummaryItem> summary;
+            private List<GetConversationList_SummaryItem> summary;
 
-			public long? Timestamp
-			{
-				get
-				{
-					return timestamp;
-				}
-				set	
-				{
-					timestamp = value;
-				}
-			}
+            public long? Timestamp
+            {
+                get
+                {
+                    return timestamp;
+                }
+                set
+                {
+                    timestamp = value;
+                }
+            }
 
-			public string Speaker
-			{
-				get
-				{
-					return speaker;
-				}
-				set	
-				{
-					speaker = value;
-				}
-			}
+            public string Speaker
+            {
+                get
+                {
+                    return speaker;
+                }
+                set
+                {
+                    speaker = value;
+                }
+            }
 
-			public string Script
-			{
-				get
-				{
-					return script;
-				}
-				set	
-				{
-					script = value;
-				}
-			}
+            public string Script
+            {
+                get
+                {
+                    return script;
+                }
+                set
+                {
+                    script = value;
+                }
+            }
 
-			public List<GetConversationList_SummaryItem> Summary
-			{
-				get
-				{
-					return summary;
-				}
-				set	
-				{
-					summary = value;
-				}
-			}
+            public List<GetConversationList_SummaryItem> Summary
+            {
+                get
+                {
+                    return summary;
+                }
+                set
+                {
+                    summary = value;
+                }
+            }
 
-			public class GetConversationList_SummaryItem
-			{
+            public class GetConversationList_SummaryItem
+            {
 
-				private string category;
+                private string category;
 
-				private string summaryName;
+                private string summaryName;
 
-				private string content;
+                private string content;
 
-				public string Category
-				{
-					get
-					{
-						return category;
-					}
-					set	
-					{
-						category = value;
-					}
-				}
+                public string Category
+                {
+                    get
+                    {
+                        return category;
+                    }
+                    set
+                    {
+                        category = value;
+                    }
+                }
 
-				public string SummaryName
-				{
-					get
-					{
-						return summaryName;
-					}
-					set	
-					{
-						summaryName = value;
-					}
-				}
+                public string SummaryName
+                {
+                    get
+                    {
+                        return summaryName;
+                    }
+                    set
+                    {
+                        summaryName = value;
+                    }
+                }
 
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
-					}
-				}
-			}
-		}
-	}
+                public string Content
+                {
+                    get
+                    {
+                        return content;
+                    }
+                    set
+                    {
+                        content = value;
+                    }
+                }
+            }
+        }
+    }
 }

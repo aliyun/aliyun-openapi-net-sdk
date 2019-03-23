@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class ImportKeyPairResponse : AcsResponse
-	{
+    public class ImportKeyPairResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string keyPairName;
+        private string keyPairName;
 
-		private string keyPairFingerPrint;
+        private string keyPairFingerPrint;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string KeyPairName
-		{
-			get
-			{
-				return keyPairName;
-			}
-			set	
-			{
-				keyPairName = value;
-			}
-		}
+        public string KeyPairName
+        {
+            get
+            {
+                return keyPairName;
+            }
+            set
+            {
+                keyPairName = value;
+            }
+        }
 
-		public string KeyPairFingerPrint
-		{
-			get
-			{
-				return keyPairFingerPrint;
-			}
-			set	
-			{
-				keyPairFingerPrint = value;
-			}
-		}
-	}
+        public string KeyPairFingerPrint
+        {
+            get
+            {
+                return keyPairFingerPrint;
+            }
+            set
+            {
+                keyPairFingerPrint = value;
+            }
+        }
+    }
 }

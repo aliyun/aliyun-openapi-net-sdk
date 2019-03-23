@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateHpcClusterResponse : AcsResponse
-	{
+    public class CreateHpcClusterResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string hpcClusterId;
+        private string hpcClusterId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string HpcClusterId
-		{
-			get
-			{
-				return hpcClusterId;
-			}
-			set	
-			{
-				hpcClusterId = value;
-			}
-		}
-	}
+        public string HpcClusterId
+        {
+            get
+            {
+                return hpcClusterId;
+            }
+            set
+            {
+                hpcClusterId = value;
+            }
+        }
+    }
 }

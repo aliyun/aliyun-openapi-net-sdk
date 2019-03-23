@@ -27,37 +27,38 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static ListRecordingsByContactIdResponse Unmarshall(UnmarshallerContext context)
         {
-			ListRecordingsByContactIdResponse listRecordingsByContactIdResponse = new ListRecordingsByContactIdResponse();
+            ListRecordingsByContactIdResponse listRecordingsByContactIdResponse = new ListRecordingsByContactIdResponse();
 
-			listRecordingsByContactIdResponse.HttpResponse = context.HttpResponse;
-			listRecordingsByContactIdResponse.RequestId = context.StringValue("ListRecordingsByContactId.RequestId");
-			listRecordingsByContactIdResponse.Success = context.BooleanValue("ListRecordingsByContactId.Success");
-			listRecordingsByContactIdResponse.Code = context.StringValue("ListRecordingsByContactId.Code");
-			listRecordingsByContactIdResponse.Message = context.StringValue("ListRecordingsByContactId.Message");
-			listRecordingsByContactIdResponse.HttpStatusCode = context.IntegerValue("ListRecordingsByContactId.HttpStatusCode");
+            listRecordingsByContactIdResponse.HttpResponse = context.HttpResponse;
+            listRecordingsByContactIdResponse.RequestId = context.StringValue("ListRecordingsByContactId.RequestId");
+            listRecordingsByContactIdResponse.Success = context.BooleanValue("ListRecordingsByContactId.Success");
+            listRecordingsByContactIdResponse.Code = context.StringValue("ListRecordingsByContactId.Code");
+            listRecordingsByContactIdResponse.Message = context.StringValue("ListRecordingsByContactId.Message");
+            listRecordingsByContactIdResponse.HttpStatusCode = context.IntegerValue("ListRecordingsByContactId.HttpStatusCode");
 
-			List<ListRecordingsByContactIdResponse.ListRecordingsByContactId_Recording> listRecordingsByContactIdResponse_recordings = new List<ListRecordingsByContactIdResponse.ListRecordingsByContactId_Recording>();
-			for (int i = 0; i < context.Length("ListRecordingsByContactId.Recordings.Length"); i++) {
-				ListRecordingsByContactIdResponse.ListRecordingsByContactId_Recording recording = new ListRecordingsByContactIdResponse.ListRecordingsByContactId_Recording();
-				recording.ContactId = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].ContactId");
-				recording.ContactType = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].ContactType");
-				recording.AgentId = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].AgentId");
-				recording.AgentName = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].AgentName");
-				recording.CallingNumber = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].CallingNumber");
-				recording.CalledNumber = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].CalledNumber");
-				recording.StartTime = context.LongValue("ListRecordingsByContactId.Recordings["+ i +"].StartTime");
-				recording.Duration = context.IntegerValue("ListRecordingsByContactId.Recordings["+ i +"].Duration");
-				recording.FileName = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].FileName");
-				recording.FilePath = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].FilePath");
-				recording.FileDescription = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].FileDescription");
-				recording.Channel = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].Channel");
-				recording.InstanceId = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].InstanceId");
+            List<ListRecordingsByContactIdResponse.ListRecordingsByContactId_Recording> listRecordingsByContactIdResponse_recordings = new List<ListRecordingsByContactIdResponse.ListRecordingsByContactId_Recording>();
+            for (int i = 0; i < context.Length("ListRecordingsByContactId.Recordings.Length"); i++)
+            {
+                ListRecordingsByContactIdResponse.ListRecordingsByContactId_Recording recording = new ListRecordingsByContactIdResponse.ListRecordingsByContactId_Recording();
+                recording.ContactId = context.StringValue("ListRecordingsByContactId.Recordings[" + i + "].ContactId");
+                recording.ContactType = context.StringValue("ListRecordingsByContactId.Recordings[" + i + "].ContactType");
+                recording.AgentId = context.StringValue("ListRecordingsByContactId.Recordings[" + i + "].AgentId");
+                recording.AgentName = context.StringValue("ListRecordingsByContactId.Recordings[" + i + "].AgentName");
+                recording.CallingNumber = context.StringValue("ListRecordingsByContactId.Recordings[" + i + "].CallingNumber");
+                recording.CalledNumber = context.StringValue("ListRecordingsByContactId.Recordings[" + i + "].CalledNumber");
+                recording.StartTime = context.LongValue("ListRecordingsByContactId.Recordings[" + i + "].StartTime");
+                recording.Duration = context.IntegerValue("ListRecordingsByContactId.Recordings[" + i + "].Duration");
+                recording.FileName = context.StringValue("ListRecordingsByContactId.Recordings[" + i + "].FileName");
+                recording.FilePath = context.StringValue("ListRecordingsByContactId.Recordings[" + i + "].FilePath");
+                recording.FileDescription = context.StringValue("ListRecordingsByContactId.Recordings[" + i + "].FileDescription");
+                recording.Channel = context.StringValue("ListRecordingsByContactId.Recordings[" + i + "].Channel");
+                recording.InstanceId = context.StringValue("ListRecordingsByContactId.Recordings[" + i + "].InstanceId");
 
-				listRecordingsByContactIdResponse_recordings.Add(recording);
-			}
-			listRecordingsByContactIdResponse.Recordings = listRecordingsByContactIdResponse_recordings;
-        
-			return listRecordingsByContactIdResponse;
+                listRecordingsByContactIdResponse_recordings.Add(recording);
+            }
+            listRecordingsByContactIdResponse.Recordings = listRecordingsByContactIdResponse_recordings;
+
+            return listRecordingsByContactIdResponse;
         }
     }
 }

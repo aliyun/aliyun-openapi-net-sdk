@@ -33,114 +33,114 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private List<string> attributeNames;
+        private List<string> attributeNames;
 
-		private string regionId;
+        private string regionId;
 
-		private string action;
+        private string action;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string zoneId;
+        private string zoneId;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public List<string> AttributeNames
-		{
-			get
-			{
-				return attributeNames;
-			}
+        public List<string> AttributeNames
+        {
+            get
+            {
+                return attributeNames;
+            }
 
-			set
-			{
-				attributeNames = value;
-				for (int i = 0; i < attributeNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AttributeName." + (i + 1) , attributeNames[i]);
-				}
-			}
-		}
+            set
+            {
+                attributeNames = value;
+                for (int i = 0; i < attributeNames.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "AttributeName." + (i + 1), attributeNames[i]);
+                }
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
+        public string ZoneId
+        {
+            get
+            {
+                return zoneId;
+            }
+            set
+            {
+                zoneId = value;
+                DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+            }
+        }
 
         public override DescribeAccountAttributesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

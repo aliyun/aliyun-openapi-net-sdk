@@ -28,19 +28,19 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static UploadPublicKeyResponse Unmarshall(UnmarshallerContext context)
         {
-			UploadPublicKeyResponse uploadPublicKeyResponse = new UploadPublicKeyResponse();
+            UploadPublicKeyResponse uploadPublicKeyResponse = new UploadPublicKeyResponse();
 
-			uploadPublicKeyResponse.HttpResponse = context.HttpResponse;
-			uploadPublicKeyResponse.RequestId = context.StringValue("UploadPublicKey.RequestId");
+            uploadPublicKeyResponse.HttpResponse = context.HttpResponse;
+            uploadPublicKeyResponse.RequestId = context.StringValue("UploadPublicKey.RequestId");
 
-			UploadPublicKeyResponse.UploadPublicKey_PublicKey publicKey = new UploadPublicKeyResponse.UploadPublicKey_PublicKey();
-			publicKey.PublicKeyId = context.StringValue("UploadPublicKey.PublicKey.PublicKeyId");
-			publicKey.PublicKeySpec = context.StringValue("UploadPublicKey.PublicKey.PublicKeySpec");
-			publicKey.Status = context.StringValue("UploadPublicKey.PublicKey.Status");
-			publicKey.CreateDate = context.StringValue("UploadPublicKey.PublicKey.CreateDate");
-			uploadPublicKeyResponse.PublicKey = publicKey;
-        
-			return uploadPublicKeyResponse;
+            UploadPublicKeyResponse.UploadPublicKey_PublicKey publicKey = new UploadPublicKeyResponse.UploadPublicKey_PublicKey();
+            publicKey.PublicKeyId = context.StringValue("UploadPublicKey.PublicKey.PublicKeyId");
+            publicKey.PublicKeySpec = context.StringValue("UploadPublicKey.PublicKey.PublicKeySpec");
+            publicKey.Status = context.StringValue("UploadPublicKey.PublicKey.Status");
+            publicKey.CreateDate = context.StringValue("UploadPublicKey.PublicKey.CreateDate");
+            uploadPublicKeyResponse.PublicKey = publicKey;
+
+            return uploadPublicKeyResponse;
         }
     }
 }

@@ -34,110 +34,110 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string keepOssArgs;
+        private string keepOssArgs;
 
-		private string hashKeyArgs;
+        private string hashKeyArgs;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string enable;
+        private string enable;
 
-		private string domainName;
+        private string domainName;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string KeepOssArgs
-		{
-			get
-			{
-				return keepOssArgs;
-			}
-			set	
-			{
-				keepOssArgs = value;
-				DictionaryUtil.Add(QueryParameters, "KeepOssArgs", value);
-			}
-		}
+        public string KeepOssArgs
+        {
+            get
+            {
+                return keepOssArgs;
+            }
+            set
+            {
+                keepOssArgs = value;
+                DictionaryUtil.Add(QueryParameters, "KeepOssArgs", value);
+            }
+        }
 
-		public string HashKeyArgs
-		{
-			get
-			{
-				return hashKeyArgs;
-			}
-			set	
-			{
-				hashKeyArgs = value;
-				DictionaryUtil.Add(QueryParameters, "HashKeyArgs", value);
-			}
-		}
+        public string HashKeyArgs
+        {
+            get
+            {
+                return hashKeyArgs;
+            }
+            set
+            {
+                hashKeyArgs = value;
+                DictionaryUtil.Add(QueryParameters, "HashKeyArgs", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string Enable
-		{
-			get
-			{
-				return enable;
-			}
-			set	
-			{
-				enable = value;
-				DictionaryUtil.Add(QueryParameters, "Enable", value);
-			}
-		}
+        public string Enable
+        {
+            get
+            {
+                return enable;
+            }
+            set
+            {
+                enable = value;
+                DictionaryUtil.Add(QueryParameters, "Enable", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override SetIgnoreQueryStringConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

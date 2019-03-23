@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static DeletePublicKeyResponse Unmarshall(UnmarshallerContext context)
         {
-			DeletePublicKeyResponse deletePublicKeyResponse = new DeletePublicKeyResponse();
+            DeletePublicKeyResponse deletePublicKeyResponse = new DeletePublicKeyResponse();
 
-			deletePublicKeyResponse.HttpResponse = context.HttpResponse;
-			deletePublicKeyResponse.RequestId = context.StringValue("DeletePublicKey.RequestId");
-        
-			return deletePublicKeyResponse;
+            deletePublicKeyResponse.HttpResponse = context.HttpResponse;
+            deletePublicKeyResponse.RequestId = context.StringValue("DeletePublicKey.RequestId");
+
+            return deletePublicKeyResponse;
         }
     }
 }

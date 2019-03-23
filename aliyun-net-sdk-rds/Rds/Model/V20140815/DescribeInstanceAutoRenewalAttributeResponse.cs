@@ -21,151 +21,151 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeInstanceAutoRenewalAttributeResponse : AcsResponse
-	{
+    public class DescribeInstanceAutoRenewalAttributeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? totalRecordCount;
+        private int? totalRecordCount;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private List<DescribeInstanceAutoRenewalAttribute_Item> items;
+        private List<DescribeInstanceAutoRenewalAttribute_Item> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public int? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public List<DescribeInstanceAutoRenewalAttribute_Item> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeInstanceAutoRenewalAttribute_Item> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeInstanceAutoRenewalAttribute_Item
-		{
+        public class DescribeInstanceAutoRenewalAttribute_Item
+        {
 
-			private string dBInstanceId;
+            private string dBInstanceId;
 
-			private string regionId;
+            private string regionId;
 
-			private int? duration;
+            private int? duration;
 
-			private string status;
+            private string status;
 
-			private string autoRenew;
+            private string autoRenew;
 
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
+            public string DBInstanceId
+            {
+                get
+                {
+                    return dBInstanceId;
+                }
+                set
+                {
+                    dBInstanceId = value;
+                }
+            }
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public int? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
+            public int? Duration
+            {
+                get
+                {
+                    return duration;
+                }
+                set
+                {
+                    duration = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string AutoRenew
-			{
-				get
-				{
-					return autoRenew;
-				}
-				set	
-				{
-					autoRenew = value;
-				}
-			}
-		}
-	}
+            public string AutoRenew
+            {
+                get
+                {
+                    return autoRenew;
+                }
+                set
+                {
+                    autoRenew = value;
+                }
+            }
+        }
+    }
 }

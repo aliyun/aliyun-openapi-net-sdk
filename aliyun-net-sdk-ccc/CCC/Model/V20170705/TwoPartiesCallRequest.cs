@@ -33,80 +33,80 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string caller;
+        private string caller;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string calleeCustomer;
+        private string calleeCustomer;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		private string calleeAgent;
+        private string calleeAgent;
 
-		public string Caller
-		{
-			get
-			{
-				return caller;
-			}
-			set	
-			{
-				caller = value;
-				DictionaryUtil.Add(QueryParameters, "Caller", value);
-			}
-		}
+        public string Caller
+        {
+            get
+            {
+                return caller;
+            }
+            set
+            {
+                caller = value;
+                DictionaryUtil.Add(QueryParameters, "Caller", value);
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string CalleeCustomer
-		{
-			get
-			{
-				return calleeCustomer;
-			}
-			set	
-			{
-				calleeCustomer = value;
-				DictionaryUtil.Add(QueryParameters, "CalleeCustomer", value);
-			}
-		}
+        public string CalleeCustomer
+        {
+            get
+            {
+                return calleeCustomer;
+            }
+            set
+            {
+                calleeCustomer = value;
+                DictionaryUtil.Add(QueryParameters, "CalleeCustomer", value);
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
-		public string CalleeAgent
-		{
-			get
-			{
-				return calleeAgent;
-			}
-			set	
-			{
-				calleeAgent = value;
-				DictionaryUtil.Add(QueryParameters, "CalleeAgent", value);
-			}
-		}
+        public string CalleeAgent
+        {
+            get
+            {
+                return calleeAgent;
+            }
+            set
+            {
+                calleeAgent = value;
+                DictionaryUtil.Add(QueryParameters, "CalleeAgent", value);
+            }
+        }
 
         public override TwoPartiesCallResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

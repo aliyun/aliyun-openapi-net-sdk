@@ -34,50 +34,50 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string sSLPub;
+        private string sSLPub;
 
-		private string action;
+        private string action;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string SSLPub
-		{
-			get
-			{
-				return sSLPub;
-			}
-			set	
-			{
-				sSLPub = value;
-				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
-			}
-		}
+        public string SSLPub
+        {
+            get
+            {
+                return sSLPub;
+            }
+            set
+            {
+                sSLPub = value;
+                DictionaryUtil.Add(QueryParameters, "SSLPub", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
         public override DescribeCdnDomainByCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

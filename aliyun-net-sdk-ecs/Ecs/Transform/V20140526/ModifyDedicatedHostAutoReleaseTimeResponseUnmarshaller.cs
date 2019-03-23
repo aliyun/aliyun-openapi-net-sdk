@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ModifyDedicatedHostAutoReleaseTimeResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyDedicatedHostAutoReleaseTimeResponse modifyDedicatedHostAutoReleaseTimeResponse = new ModifyDedicatedHostAutoReleaseTimeResponse();
+            ModifyDedicatedHostAutoReleaseTimeResponse modifyDedicatedHostAutoReleaseTimeResponse = new ModifyDedicatedHostAutoReleaseTimeResponse();
 
-			modifyDedicatedHostAutoReleaseTimeResponse.HttpResponse = context.HttpResponse;
-			modifyDedicatedHostAutoReleaseTimeResponse.RequestId = context.StringValue("ModifyDedicatedHostAutoReleaseTime.RequestId");
-        
-			return modifyDedicatedHostAutoReleaseTimeResponse;
+            modifyDedicatedHostAutoReleaseTimeResponse.HttpResponse = context.HttpResponse;
+            modifyDedicatedHostAutoReleaseTimeResponse.RequestId = context.StringValue("ModifyDedicatedHostAutoReleaseTime.RequestId");
+
+            return modifyDedicatedHostAutoReleaseTimeResponse;
         }
     }
 }

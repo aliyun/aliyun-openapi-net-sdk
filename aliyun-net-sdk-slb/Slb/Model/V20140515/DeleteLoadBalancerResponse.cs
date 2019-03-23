@@ -21,21 +21,21 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DeleteLoadBalancerResponse : AcsResponse
-	{
+    public class DeleteLoadBalancerResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
+    }
 }

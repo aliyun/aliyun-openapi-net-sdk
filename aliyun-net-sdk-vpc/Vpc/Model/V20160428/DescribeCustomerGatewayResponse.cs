@@ -21,91 +21,91 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeCustomerGatewayResponse : AcsResponse
-	{
+    public class DescribeCustomerGatewayResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string customerGatewayId;
+        private string customerGatewayId;
 
-		private string ipAddress;
+        private string ipAddress;
 
-		private string name;
+        private string name;
 
-		private string description;
+        private string description;
 
-		private long? createTime;
+        private long? createTime;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string CustomerGatewayId
-		{
-			get
-			{
-				return customerGatewayId;
-			}
-			set	
-			{
-				customerGatewayId = value;
-			}
-		}
+        public string CustomerGatewayId
+        {
+            get
+            {
+                return customerGatewayId;
+            }
+            set
+            {
+                customerGatewayId = value;
+            }
+        }
 
-		public string IpAddress
-		{
-			get
-			{
-				return ipAddress;
-			}
-			set	
-			{
-				ipAddress = value;
-			}
-		}
+        public string IpAddress
+        {
+            get
+            {
+                return ipAddress;
+            }
+            set
+            {
+                ipAddress = value;
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+            }
+        }
 
-		public long? CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-	}
+        public long? CreateTime
+        {
+            get
+            {
+                return createTime;
+            }
+            set
+            {
+                createTime = value;
+            }
+        }
+    }
 }

@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class ModifyLoadBalancerInternetSpecResponse : AcsResponse
-	{
+    public class ModifyLoadBalancerInternetSpecResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private long? orderId;
+        private long? orderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-	}
+        public long? OrderId
+        {
+            get
+            {
+                return orderId;
+            }
+            set
+            {
+                orderId = value;
+            }
+        }
+    }
 }

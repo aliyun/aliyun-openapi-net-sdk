@@ -28,23 +28,23 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static GetPolicyResponse Unmarshall(UnmarshallerContext context)
         {
-			GetPolicyResponse getPolicyResponse = new GetPolicyResponse();
+            GetPolicyResponse getPolicyResponse = new GetPolicyResponse();
 
-			getPolicyResponse.HttpResponse = context.HttpResponse;
-			getPolicyResponse.RequestId = context.StringValue("GetPolicy.RequestId");
+            getPolicyResponse.HttpResponse = context.HttpResponse;
+            getPolicyResponse.RequestId = context.StringValue("GetPolicy.RequestId");
 
-			GetPolicyResponse.GetPolicy_Policy policy = new GetPolicyResponse.GetPolicy_Policy();
-			policy.PolicyName = context.StringValue("GetPolicy.Policy.PolicyName");
-			policy.PolicyType = context.StringValue("GetPolicy.Policy.PolicyType");
-			policy.Description = context.StringValue("GetPolicy.Policy.Description");
-			policy.DefaultVersion = context.StringValue("GetPolicy.Policy.DefaultVersion");
-			policy.PolicyDocument = context.StringValue("GetPolicy.Policy.PolicyDocument");
-			policy.CreateDate = context.StringValue("GetPolicy.Policy.CreateDate");
-			policy.UpdateDate = context.StringValue("GetPolicy.Policy.UpdateDate");
-			policy.AttachmentCount = context.IntegerValue("GetPolicy.Policy.AttachmentCount");
-			getPolicyResponse.Policy = policy;
-        
-			return getPolicyResponse;
+            GetPolicyResponse.GetPolicy_Policy policy = new GetPolicyResponse.GetPolicy_Policy();
+            policy.PolicyName = context.StringValue("GetPolicy.Policy.PolicyName");
+            policy.PolicyType = context.StringValue("GetPolicy.Policy.PolicyType");
+            policy.Description = context.StringValue("GetPolicy.Policy.Description");
+            policy.DefaultVersion = context.StringValue("GetPolicy.Policy.DefaultVersion");
+            policy.PolicyDocument = context.StringValue("GetPolicy.Policy.PolicyDocument");
+            policy.CreateDate = context.StringValue("GetPolicy.Policy.CreateDate");
+            policy.UpdateDate = context.StringValue("GetPolicy.Policy.UpdateDate");
+            policy.AttachmentCount = context.IntegerValue("GetPolicy.Policy.AttachmentCount");
+            getPolicyResponse.Policy = policy;
+
+            return getPolicyResponse;
         }
     }
 }

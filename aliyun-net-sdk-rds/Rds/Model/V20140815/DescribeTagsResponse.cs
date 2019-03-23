@@ -21,81 +21,81 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeTagsResponse : AcsResponse
-	{
+    public class DescribeTagsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeTags_TagInfos> items;
+        private List<DescribeTags_TagInfos> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeTags_TagInfos> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeTags_TagInfos> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeTags_TagInfos
-		{
+        public class DescribeTags_TagInfos
+        {
 
-			private string tagKey;
+            private string tagKey;
 
-			private string tagValue;
+            private string tagValue;
 
-			private List<string> dBInstanceIds;
+            private List<string> dBInstanceIds;
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
+            public string TagKey
+            {
+                get
+                {
+                    return tagKey;
+                }
+                set
+                {
+                    tagKey = value;
+                }
+            }
 
-			public string TagValue
-			{
-				get
-				{
-					return tagValue;
-				}
-				set	
-				{
-					tagValue = value;
-				}
-			}
+            public string TagValue
+            {
+                get
+                {
+                    return tagValue;
+                }
+                set
+                {
+                    tagValue = value;
+                }
+            }
 
-			public List<string> DBInstanceIds
-			{
-				get
-				{
-					return dBInstanceIds;
-				}
-				set	
-				{
-					dBInstanceIds = value;
-				}
-			}
-		}
-	}
+            public List<string> DBInstanceIds
+            {
+                get
+                {
+                    return dBInstanceIds;
+                }
+                set
+                {
+                    dBInstanceIds = value;
+                }
+            }
+        }
+    }
 }

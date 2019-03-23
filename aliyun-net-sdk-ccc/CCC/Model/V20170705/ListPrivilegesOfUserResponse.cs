@@ -21,137 +21,137 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class ListPrivilegesOfUserResponse : AcsResponse
-	{
+    public class ListPrivilegesOfUserResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? success;
+        private bool? success;
 
-		private string code;
+        private string code;
 
-		private string message;
+        private string message;
 
-		private int? httpStatusCode;
+        private int? httpStatusCode;
 
-		private List<ListPrivilegesOfUser_Privilege> privileges;
+        private List<ListPrivilegesOfUser_Privilege> privileges;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+        public int? HttpStatusCode
+        {
+            get
+            {
+                return httpStatusCode;
+            }
+            set
+            {
+                httpStatusCode = value;
+            }
+        }
 
-		public List<ListPrivilegesOfUser_Privilege> Privileges
-		{
-			get
-			{
-				return privileges;
-			}
-			set	
-			{
-				privileges = value;
-			}
-		}
+        public List<ListPrivilegesOfUser_Privilege> Privileges
+        {
+            get
+            {
+                return privileges;
+            }
+            set
+            {
+                privileges = value;
+            }
+        }
 
-		public class ListPrivilegesOfUser_Privilege
-		{
+        public class ListPrivilegesOfUser_Privilege
+        {
 
-			private string privilegeId;
+            private string privilegeId;
 
-			private string privilegeName;
+            private string privilegeName;
 
-			private string privilegeDescription;
+            private string privilegeDescription;
 
-			public string PrivilegeId
-			{
-				get
-				{
-					return privilegeId;
-				}
-				set	
-				{
-					privilegeId = value;
-				}
-			}
+            public string PrivilegeId
+            {
+                get
+                {
+                    return privilegeId;
+                }
+                set
+                {
+                    privilegeId = value;
+                }
+            }
 
-			public string PrivilegeName
-			{
-				get
-				{
-					return privilegeName;
-				}
-				set	
-				{
-					privilegeName = value;
-				}
-			}
+            public string PrivilegeName
+            {
+                get
+                {
+                    return privilegeName;
+                }
+                set
+                {
+                    privilegeName = value;
+                }
+            }
 
-			public string PrivilegeDescription
-			{
-				get
-				{
-					return privilegeDescription;
-				}
-				set	
-				{
-					privilegeDescription = value;
-				}
-			}
-		}
-	}
+            public string PrivilegeDescription
+            {
+                get
+                {
+                    return privilegeDescription;
+                }
+                set
+                {
+                    privilegeDescription = value;
+                }
+            }
+        }
+    }
 }

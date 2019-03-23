@@ -22,21 +22,21 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class DeletePolicyVersionResponse : AcsResponse
-	{
+    public class DeletePolicyVersionResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
+    }
 }

@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static SetErrorPageConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			SetErrorPageConfigResponse setErrorPageConfigResponse = new SetErrorPageConfigResponse();
+            SetErrorPageConfigResponse setErrorPageConfigResponse = new SetErrorPageConfigResponse();
 
-			setErrorPageConfigResponse.HttpResponse = context.HttpResponse;
-			setErrorPageConfigResponse.RequestId = context.StringValue("SetErrorPageConfig.RequestId");
-        
-			return setErrorPageConfigResponse;
+            setErrorPageConfigResponse.HttpResponse = context.HttpResponse;
+            setErrorPageConfigResponse.RequestId = context.StringValue("SetErrorPageConfig.RequestId");
+
+            return setErrorPageConfigResponse;
         }
     }
 }

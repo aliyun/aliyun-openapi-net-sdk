@@ -33,54 +33,54 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		private List<string> configItems;
+        private List<string> configItems;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public List<string> ConfigItems
-		{
-			get
-			{
-				return configItems;
-			}
+        public List<string> ConfigItems
+        {
+            get
+            {
+                return configItems;
+            }
 
-			set
-			{
-				configItems = value;
-				for (int i = 0; i < configItems.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ConfigItem." + (i + 1) , configItems[i]);
-				}
-			}
-		}
+            set
+            {
+                configItems = value;
+                for (int i = 0; i < configItems.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "ConfigItem." + (i + 1), configItems[i]);
+                }
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override ListConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

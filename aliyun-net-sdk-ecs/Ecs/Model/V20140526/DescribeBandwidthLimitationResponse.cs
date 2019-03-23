@@ -21,95 +21,95 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeBandwidthLimitationResponse : AcsResponse
-	{
+    public class DescribeBandwidthLimitationResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeBandwidthLimitation_Bandwidth> bandwidths;
+        private List<DescribeBandwidthLimitation_Bandwidth> bandwidths;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeBandwidthLimitation_Bandwidth> Bandwidths
-		{
-			get
-			{
-				return bandwidths;
-			}
-			set	
-			{
-				bandwidths = value;
-			}
-		}
+        public List<DescribeBandwidthLimitation_Bandwidth> Bandwidths
+        {
+            get
+            {
+                return bandwidths;
+            }
+            set
+            {
+                bandwidths = value;
+            }
+        }
 
-		public class DescribeBandwidthLimitation_Bandwidth
-		{
+        public class DescribeBandwidthLimitation_Bandwidth
+        {
 
-			private string internetChargeType;
+            private string internetChargeType;
 
-			private int? min;
+            private int? min;
 
-			private int? max;
+            private int? max;
 
-			private string unit;
+            private string unit;
 
-			public string InternetChargeType
-			{
-				get
-				{
-					return internetChargeType;
-				}
-				set	
-				{
-					internetChargeType = value;
-				}
-			}
+            public string InternetChargeType
+            {
+                get
+                {
+                    return internetChargeType;
+                }
+                set
+                {
+                    internetChargeType = value;
+                }
+            }
 
-			public int? Min
-			{
-				get
-				{
-					return min;
-				}
-				set	
-				{
-					min = value;
-				}
-			}
+            public int? Min
+            {
+                get
+                {
+                    return min;
+                }
+                set
+                {
+                    min = value;
+                }
+            }
 
-			public int? Max
-			{
-				get
-				{
-					return max;
-				}
-				set	
-				{
-					max = value;
-				}
-			}
+            public int? Max
+            {
+                get
+                {
+                    return max;
+                }
+                set
+                {
+                    max = value;
+                }
+            }
 
-			public string Unit
-			{
-				get
-				{
-					return unit;
-				}
-				set	
-				{
-					unit = value;
-				}
-			}
-		}
-	}
+            public string Unit
+            {
+                get
+                {
+                    return unit;
+                }
+                set
+                {
+                    unit = value;
+                }
+            }
+        }
+    }
 }

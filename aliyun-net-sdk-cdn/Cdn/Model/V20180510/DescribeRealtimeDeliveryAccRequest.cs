@@ -34,110 +34,110 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string project;
+        private string project;
 
-		private string startTime;
+        private string startTime;
 
-		private string action;
+        private string action;
 
-		private string endTime;
+        private string endTime;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string interval;
+        private string interval;
 
-		private string logStore;
+        private string logStore;
 
-		public string Project
-		{
-			get
-			{
-				return project;
-			}
-			set	
-			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
-			}
-		}
+        public string Project
+        {
+            get
+            {
+                return project;
+            }
+            set
+            {
+                project = value;
+                DictionaryUtil.Add(QueryParameters, "Project", value);
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+                DictionaryUtil.Add(QueryParameters, "StartTime", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+                DictionaryUtil.Add(QueryParameters, "EndTime", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
-			}
-		}
+        public string Interval
+        {
+            get
+            {
+                return interval;
+            }
+            set
+            {
+                interval = value;
+                DictionaryUtil.Add(QueryParameters, "Interval", value);
+            }
+        }
 
-		public string LogStore
-		{
-			get
-			{
-				return logStore;
-			}
-			set	
-			{
-				logStore = value;
-				DictionaryUtil.Add(QueryParameters, "LogStore", value);
-			}
-		}
+        public string LogStore
+        {
+            get
+            {
+                return logStore;
+            }
+            set
+            {
+                logStore = value;
+                DictionaryUtil.Add(QueryParameters, "LogStore", value);
+            }
+        }
 
         public override DescribeRealtimeDeliveryAccResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

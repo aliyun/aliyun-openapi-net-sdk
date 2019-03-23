@@ -21,229 +21,229 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeResourcesModificationResponse : AcsResponse
-	{
+    public class DescribeResourcesModificationResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeResourcesModification_AvailableZone> availableZones;
+        private List<DescribeResourcesModification_AvailableZone> availableZones;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeResourcesModification_AvailableZone> AvailableZones
-		{
-			get
-			{
-				return availableZones;
-			}
-			set	
-			{
-				availableZones = value;
-			}
-		}
+        public List<DescribeResourcesModification_AvailableZone> AvailableZones
+        {
+            get
+            {
+                return availableZones;
+            }
+            set
+            {
+                availableZones = value;
+            }
+        }
 
-		public class DescribeResourcesModification_AvailableZone
-		{
+        public class DescribeResourcesModification_AvailableZone
+        {
 
-			private string regionId;
+            private string regionId;
 
-			private string zoneId;
+            private string zoneId;
 
-			private string status;
+            private string status;
 
-			private string statusCategory;
+            private string statusCategory;
 
-			private List<DescribeResourcesModification_AvailableResource> availableResources;
+            private List<DescribeResourcesModification_AvailableResource> availableResources;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+            public string ZoneId
+            {
+                get
+                {
+                    return zoneId;
+                }
+                set
+                {
+                    zoneId = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string StatusCategory
-			{
-				get
-				{
-					return statusCategory;
-				}
-				set	
-				{
-					statusCategory = value;
-				}
-			}
+            public string StatusCategory
+            {
+                get
+                {
+                    return statusCategory;
+                }
+                set
+                {
+                    statusCategory = value;
+                }
+            }
 
-			public List<DescribeResourcesModification_AvailableResource> AvailableResources
-			{
-				get
-				{
-					return availableResources;
-				}
-				set	
-				{
-					availableResources = value;
-				}
-			}
+            public List<DescribeResourcesModification_AvailableResource> AvailableResources
+            {
+                get
+                {
+                    return availableResources;
+                }
+                set
+                {
+                    availableResources = value;
+                }
+            }
 
-			public class DescribeResourcesModification_AvailableResource
-			{
+            public class DescribeResourcesModification_AvailableResource
+            {
 
-				private string type;
+                private string type;
 
-				private List<DescribeResourcesModification_SupportedResource> supportedResources;
+                private List<DescribeResourcesModification_SupportedResource> supportedResources;
 
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
+                public string Type
+                {
+                    get
+                    {
+                        return type;
+                    }
+                    set
+                    {
+                        type = value;
+                    }
+                }
 
-				public List<DescribeResourcesModification_SupportedResource> SupportedResources
-				{
-					get
-					{
-						return supportedResources;
-					}
-					set	
-					{
-						supportedResources = value;
-					}
-				}
+                public List<DescribeResourcesModification_SupportedResource> SupportedResources
+                {
+                    get
+                    {
+                        return supportedResources;
+                    }
+                    set
+                    {
+                        supportedResources = value;
+                    }
+                }
 
-				public class DescribeResourcesModification_SupportedResource
-				{
+                public class DescribeResourcesModification_SupportedResource
+                {
 
-					private string _value;
+                    private string _value;
 
-					private string status;
+                    private string status;
 
-					private string statusCategory;
+                    private string statusCategory;
 
-					private int? min;
+                    private int? min;
 
-					private int? max;
+                    private int? max;
 
-					private string unit;
+                    private string unit;
 
-					public string _Value
-					{
-						get
-						{
-							return _value;
-						}
-						set	
-						{
-							_value = value;
-						}
-					}
+                    public string _Value
+                    {
+                        get
+                        {
+                            return _value;
+                        }
+                        set
+                        {
+                            _value = value;
+                        }
+                    }
 
-					public string Status
-					{
-						get
-						{
-							return status;
-						}
-						set	
-						{
-							status = value;
-						}
-					}
+                    public string Status
+                    {
+                        get
+                        {
+                            return status;
+                        }
+                        set
+                        {
+                            status = value;
+                        }
+                    }
 
-					public string StatusCategory
-					{
-						get
-						{
-							return statusCategory;
-						}
-						set	
-						{
-							statusCategory = value;
-						}
-					}
+                    public string StatusCategory
+                    {
+                        get
+                        {
+                            return statusCategory;
+                        }
+                        set
+                        {
+                            statusCategory = value;
+                        }
+                    }
 
-					public int? Min
-					{
-						get
-						{
-							return min;
-						}
-						set	
-						{
-							min = value;
-						}
-					}
+                    public int? Min
+                    {
+                        get
+                        {
+                            return min;
+                        }
+                        set
+                        {
+                            min = value;
+                        }
+                    }
 
-					public int? Max
-					{
-						get
-						{
-							return max;
-						}
-						set	
-						{
-							max = value;
-						}
-					}
+                    public int? Max
+                    {
+                        get
+                        {
+                            return max;
+                        }
+                        set
+                        {
+                            max = value;
+                        }
+                    }
 
-					public string Unit
-					{
-						get
-						{
-							return unit;
-						}
-						set	
-						{
-							unit = value;
-						}
-					}
-				}
-			}
-		}
-	}
+                    public string Unit
+                    {
+                        get
+                        {
+                            return unit;
+                        }
+                        set
+                        {
+                            unit = value;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

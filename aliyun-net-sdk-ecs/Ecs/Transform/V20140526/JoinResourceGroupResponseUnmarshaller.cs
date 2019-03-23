@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static JoinResourceGroupResponse Unmarshall(UnmarshallerContext context)
         {
-			JoinResourceGroupResponse joinResourceGroupResponse = new JoinResourceGroupResponse();
+            JoinResourceGroupResponse joinResourceGroupResponse = new JoinResourceGroupResponse();
 
-			joinResourceGroupResponse.HttpResponse = context.HttpResponse;
-			joinResourceGroupResponse.RequestId = context.StringValue("JoinResourceGroup.RequestId");
-        
-			return joinResourceGroupResponse;
+            joinResourceGroupResponse.HttpResponse = context.HttpResponse;
+            joinResourceGroupResponse.RequestId = context.StringValue("JoinResourceGroup.RequestId");
+
+            return joinResourceGroupResponse;
         }
     }
 }

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static ModifyBgpGroupAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyBgpGroupAttributeResponse modifyBgpGroupAttributeResponse = new ModifyBgpGroupAttributeResponse();
+            ModifyBgpGroupAttributeResponse modifyBgpGroupAttributeResponse = new ModifyBgpGroupAttributeResponse();
 
-			modifyBgpGroupAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyBgpGroupAttributeResponse.RequestId = context.StringValue("ModifyBgpGroupAttribute.RequestId");
-        
-			return modifyBgpGroupAttributeResponse;
+            modifyBgpGroupAttributeResponse.HttpResponse = context.HttpResponse;
+            modifyBgpGroupAttributeResponse.RequestId = context.StringValue("ModifyBgpGroupAttribute.RequestId");
+
+            return modifyBgpGroupAttributeResponse;
         }
     }
 }

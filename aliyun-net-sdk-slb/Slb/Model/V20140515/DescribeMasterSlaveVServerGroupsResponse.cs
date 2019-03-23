@@ -21,67 +21,67 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeMasterSlaveVServerGroupsResponse : AcsResponse
-	{
+    public class DescribeMasterSlaveVServerGroupsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup> masterSlaveVServerGroups;
+        private List<DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup> masterSlaveVServerGroups;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup> MasterSlaveVServerGroups
-		{
-			get
-			{
-				return masterSlaveVServerGroups;
-			}
-			set	
-			{
-				masterSlaveVServerGroups = value;
-			}
-		}
+        public List<DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup> MasterSlaveVServerGroups
+        {
+            get
+            {
+                return masterSlaveVServerGroups;
+            }
+            set
+            {
+                masterSlaveVServerGroups = value;
+            }
+        }
 
-		public class DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup
-		{
+        public class DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup
+        {
 
-			private string masterSlaveVServerGroupId;
+            private string masterSlaveVServerGroupId;
 
-			private string masterSlaveVServerGroupName;
+            private string masterSlaveVServerGroupName;
 
-			public string MasterSlaveVServerGroupId
-			{
-				get
-				{
-					return masterSlaveVServerGroupId;
-				}
-				set	
-				{
-					masterSlaveVServerGroupId = value;
-				}
-			}
+            public string MasterSlaveVServerGroupId
+            {
+                get
+                {
+                    return masterSlaveVServerGroupId;
+                }
+                set
+                {
+                    masterSlaveVServerGroupId = value;
+                }
+            }
 
-			public string MasterSlaveVServerGroupName
-			{
-				get
-				{
-					return masterSlaveVServerGroupName;
-				}
-				set	
-				{
-					masterSlaveVServerGroupName = value;
-				}
-			}
-		}
-	}
+            public string MasterSlaveVServerGroupName
+            {
+                get
+                {
+                    return masterSlaveVServerGroupName;
+                }
+                set
+                {
+                    masterSlaveVServerGroupName = value;
+                }
+            }
+        }
+    }
 }

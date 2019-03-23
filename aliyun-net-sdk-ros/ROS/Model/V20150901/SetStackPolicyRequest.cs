@@ -31,39 +31,39 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public SetStackPolicyRequest()
             : base("ROS", "2015-09-01", "SetStackPolicy")
         {
-			UriPattern = "/stacks/[StackName]/[StackId]/policy";
-			Method = MethodType.POST;
+            UriPattern = "/stacks/[StackName]/[StackId]/policy";
+            Method = MethodType.POST;
         }
 
-		private string stackId;
+        private string stackId;
 
-		private string stackName;
+        private string stackName;
 
-		public string StackId
-		{
-			get
-			{
-				return stackId;
-			}
-			set	
-			{
-				stackId = value;
-				DictionaryUtil.Add(PathParameters, "StackId", value);
-			}
-		}
+        public string StackId
+        {
+            get
+            {
+                return stackId;
+            }
+            set
+            {
+                stackId = value;
+                DictionaryUtil.Add(PathParameters, "StackId", value);
+            }
+        }
 
-		public string StackName
-		{
-			get
-			{
-				return stackName;
-			}
-			set	
-			{
-				stackName = value;
-				DictionaryUtil.Add(PathParameters, "StackName", value);
-			}
-		}
+        public string StackName
+        {
+            get
+            {
+                return stackName;
+            }
+            set
+            {
+                stackName = value;
+                DictionaryUtil.Add(PathParameters, "StackName", value);
+            }
+        }
 
         public override SetStackPolicyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

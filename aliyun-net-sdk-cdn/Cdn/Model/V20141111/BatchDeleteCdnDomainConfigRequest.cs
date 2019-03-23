@@ -34,95 +34,95 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string functionNames;
+        private string functionNames;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string domainNames;
+        private string domainNames;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string FunctionNames
-		{
-			get
-			{
-				return functionNames;
-			}
-			set	
-			{
-				functionNames = value;
-				DictionaryUtil.Add(QueryParameters, "FunctionNames", value);
-			}
-		}
+        public string FunctionNames
+        {
+            get
+            {
+                return functionNames;
+            }
+            set
+            {
+                functionNames = value;
+                DictionaryUtil.Add(QueryParameters, "FunctionNames", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string DomainNames
-		{
-			get
-			{
-				return domainNames;
-			}
-			set	
-			{
-				domainNames = value;
-				DictionaryUtil.Add(QueryParameters, "DomainNames", value);
-			}
-		}
+        public string DomainNames
+        {
+            get
+            {
+                return domainNames;
+            }
+            set
+            {
+                domainNames = value;
+                DictionaryUtil.Add(QueryParameters, "DomainNames", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override BatchDeleteCdnDomainConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

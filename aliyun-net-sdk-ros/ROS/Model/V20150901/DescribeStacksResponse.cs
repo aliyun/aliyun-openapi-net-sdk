@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.ROS.Model.V20150901
 {
-	public class DescribeStacksResponse : AcsResponse
-	{
-	}
+    public class DescribeStacksResponse : AcsResponse
+    {
+    }
 }

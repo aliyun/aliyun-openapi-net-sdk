@@ -27,27 +27,28 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static RemoveVServerGroupBackendServersResponse Unmarshall(UnmarshallerContext context)
         {
-			RemoveVServerGroupBackendServersResponse removeVServerGroupBackendServersResponse = new RemoveVServerGroupBackendServersResponse();
+            RemoveVServerGroupBackendServersResponse removeVServerGroupBackendServersResponse = new RemoveVServerGroupBackendServersResponse();
 
-			removeVServerGroupBackendServersResponse.HttpResponse = context.HttpResponse;
-			removeVServerGroupBackendServersResponse.RequestId = context.StringValue("RemoveVServerGroupBackendServers.RequestId");
-			removeVServerGroupBackendServersResponse.VServerGroupId = context.StringValue("RemoveVServerGroupBackendServers.VServerGroupId");
+            removeVServerGroupBackendServersResponse.HttpResponse = context.HttpResponse;
+            removeVServerGroupBackendServersResponse.RequestId = context.StringValue("RemoveVServerGroupBackendServers.RequestId");
+            removeVServerGroupBackendServersResponse.VServerGroupId = context.StringValue("RemoveVServerGroupBackendServers.VServerGroupId");
 
-			List<RemoveVServerGroupBackendServersResponse.RemoveVServerGroupBackendServers_BackendServer> removeVServerGroupBackendServersResponse_backendServers = new List<RemoveVServerGroupBackendServersResponse.RemoveVServerGroupBackendServers_BackendServer>();
-			for (int i = 0; i < context.Length("RemoveVServerGroupBackendServers.BackendServers.Length"); i++) {
-				RemoveVServerGroupBackendServersResponse.RemoveVServerGroupBackendServers_BackendServer backendServer = new RemoveVServerGroupBackendServersResponse.RemoveVServerGroupBackendServers_BackendServer();
-				backendServer.ServerId = context.StringValue("RemoveVServerGroupBackendServers.BackendServers["+ i +"].ServerId");
-				backendServer.Port = context.IntegerValue("RemoveVServerGroupBackendServers.BackendServers["+ i +"].Port");
-				backendServer.Weight = context.IntegerValue("RemoveVServerGroupBackendServers.BackendServers["+ i +"].Weight");
-				backendServer.Type = context.StringValue("RemoveVServerGroupBackendServers.BackendServers["+ i +"].Type");
-				backendServer.ServerIp = context.StringValue("RemoveVServerGroupBackendServers.BackendServers["+ i +"].ServerIp");
-				backendServer.VpcId = context.StringValue("RemoveVServerGroupBackendServers.BackendServers["+ i +"].VpcId");
+            List<RemoveVServerGroupBackendServersResponse.RemoveVServerGroupBackendServers_BackendServer> removeVServerGroupBackendServersResponse_backendServers = new List<RemoveVServerGroupBackendServersResponse.RemoveVServerGroupBackendServers_BackendServer>();
+            for (int i = 0; i < context.Length("RemoveVServerGroupBackendServers.BackendServers.Length"); i++)
+            {
+                RemoveVServerGroupBackendServersResponse.RemoveVServerGroupBackendServers_BackendServer backendServer = new RemoveVServerGroupBackendServersResponse.RemoveVServerGroupBackendServers_BackendServer();
+                backendServer.ServerId = context.StringValue("RemoveVServerGroupBackendServers.BackendServers[" + i + "].ServerId");
+                backendServer.Port = context.IntegerValue("RemoveVServerGroupBackendServers.BackendServers[" + i + "].Port");
+                backendServer.Weight = context.IntegerValue("RemoveVServerGroupBackendServers.BackendServers[" + i + "].Weight");
+                backendServer.Type = context.StringValue("RemoveVServerGroupBackendServers.BackendServers[" + i + "].Type");
+                backendServer.ServerIp = context.StringValue("RemoveVServerGroupBackendServers.BackendServers[" + i + "].ServerIp");
+                backendServer.VpcId = context.StringValue("RemoveVServerGroupBackendServers.BackendServers[" + i + "].VpcId");
 
-				removeVServerGroupBackendServersResponse_backendServers.Add(backendServer);
-			}
-			removeVServerGroupBackendServersResponse.BackendServers = removeVServerGroupBackendServersResponse_backendServers;
-        
-			return removeVServerGroupBackendServersResponse;
+                removeVServerGroupBackendServersResponse_backendServers.Add(backendServer);
+            }
+            removeVServerGroupBackendServersResponse.BackendServers = removeVServerGroupBackendServersResponse_backendServers;
+
+            return removeVServerGroupBackendServersResponse;
         }
     }
 }

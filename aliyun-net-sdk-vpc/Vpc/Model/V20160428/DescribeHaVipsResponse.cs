@@ -21,235 +21,235 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeHaVipsResponse : AcsResponse
-	{
+    public class DescribeHaVipsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeHaVips_HaVip> haVips;
+        private List<DescribeHaVips_HaVip> haVips;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeHaVips_HaVip> HaVips
-		{
-			get
-			{
-				return haVips;
-			}
-			set	
-			{
-				haVips = value;
-			}
-		}
+        public List<DescribeHaVips_HaVip> HaVips
+        {
+            get
+            {
+                return haVips;
+            }
+            set
+            {
+                haVips = value;
+            }
+        }
 
-		public class DescribeHaVips_HaVip
-		{
+        public class DescribeHaVips_HaVip
+        {
 
-			private string haVipId;
+            private string haVipId;
 
-			private string regionId;
+            private string regionId;
 
-			private string vpcId;
+            private string vpcId;
 
-			private string vSwitchId;
+            private string vSwitchId;
 
-			private string ipAddress;
+            private string ipAddress;
 
-			private string status;
+            private string status;
 
-			private string masterInstanceId;
+            private string masterInstanceId;
 
-			private string description;
+            private string description;
 
-			private string createTime;
+            private string createTime;
 
-			private List<string> associatedInstances;
+            private List<string> associatedInstances;
 
-			private List<string> associatedEipAddresses;
+            private List<string> associatedEipAddresses;
 
-			public string HaVipId
-			{
-				get
-				{
-					return haVipId;
-				}
-				set	
-				{
-					haVipId = value;
-				}
-			}
+            public string HaVipId
+            {
+                get
+                {
+                    return haVipId;
+                }
+                set
+                {
+                    haVipId = value;
+                }
+            }
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
+            public string VpcId
+            {
+                get
+                {
+                    return vpcId;
+                }
+                set
+                {
+                    vpcId = value;
+                }
+            }
 
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
+            public string VSwitchId
+            {
+                get
+                {
+                    return vSwitchId;
+                }
+                set
+                {
+                    vSwitchId = value;
+                }
+            }
 
-			public string IpAddress
-			{
-				get
-				{
-					return ipAddress;
-				}
-				set	
-				{
-					ipAddress = value;
-				}
-			}
+            public string IpAddress
+            {
+                get
+                {
+                    return ipAddress;
+                }
+                set
+                {
+                    ipAddress = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string MasterInstanceId
-			{
-				get
-				{
-					return masterInstanceId;
-				}
-				set	
-				{
-					masterInstanceId = value;
-				}
-			}
+            public string MasterInstanceId
+            {
+                get
+                {
+                    return masterInstanceId;
+                }
+                set
+                {
+                    masterInstanceId = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+            public string CreateTime
+            {
+                get
+                {
+                    return createTime;
+                }
+                set
+                {
+                    createTime = value;
+                }
+            }
 
-			public List<string> AssociatedInstances
-			{
-				get
-				{
-					return associatedInstances;
-				}
-				set	
-				{
-					associatedInstances = value;
-				}
-			}
+            public List<string> AssociatedInstances
+            {
+                get
+                {
+                    return associatedInstances;
+                }
+                set
+                {
+                    associatedInstances = value;
+                }
+            }
 
-			public List<string> AssociatedEipAddresses
-			{
-				get
-				{
-					return associatedEipAddresses;
-				}
-				set	
-				{
-					associatedEipAddresses = value;
-				}
-			}
-		}
-	}
+            public List<string> AssociatedEipAddresses
+            {
+                get
+                {
+                    return associatedEipAddresses;
+                }
+                set
+                {
+                    associatedEipAddresses = value;
+                }
+            }
+        }
+    }
 }

@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DeactiveFlowLogResponse : AcsResponse
-	{
+    public class DeactiveFlowLogResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string success;
+        private string success;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-	}
+        public string Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
+    }
 }

@@ -27,16 +27,16 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static CloneDBInstanceResponse Unmarshall(UnmarshallerContext context)
         {
-			CloneDBInstanceResponse cloneDBInstanceResponse = new CloneDBInstanceResponse();
+            CloneDBInstanceResponse cloneDBInstanceResponse = new CloneDBInstanceResponse();
 
-			cloneDBInstanceResponse.HttpResponse = context.HttpResponse;
-			cloneDBInstanceResponse.RequestId = context.StringValue("CloneDBInstance.RequestId");
-			cloneDBInstanceResponse.DBInstanceId = context.StringValue("CloneDBInstance.DBInstanceId");
-			cloneDBInstanceResponse.OrderId = context.StringValue("CloneDBInstance.OrderId");
-			cloneDBInstanceResponse.ConnectionString = context.StringValue("CloneDBInstance.ConnectionString");
-			cloneDBInstanceResponse.Port = context.StringValue("CloneDBInstance.Port");
-        
-			return cloneDBInstanceResponse;
+            cloneDBInstanceResponse.HttpResponse = context.HttpResponse;
+            cloneDBInstanceResponse.RequestId = context.StringValue("CloneDBInstance.RequestId");
+            cloneDBInstanceResponse.DBInstanceId = context.StringValue("CloneDBInstance.DBInstanceId");
+            cloneDBInstanceResponse.OrderId = context.StringValue("CloneDBInstance.OrderId");
+            cloneDBInstanceResponse.ConnectionString = context.StringValue("CloneDBInstance.ConnectionString");
+            cloneDBInstanceResponse.Port = context.StringValue("CloneDBInstance.Port");
+
+            return cloneDBInstanceResponse;
         }
     }
 }

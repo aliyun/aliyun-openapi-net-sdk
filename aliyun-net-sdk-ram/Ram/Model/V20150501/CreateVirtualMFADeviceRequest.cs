@@ -32,23 +32,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public CreateVirtualMFADeviceRequest()
             : base("Ram", "2015-05-01", "CreateVirtualMFADevice", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string virtualMFADeviceName;
+        private string virtualMFADeviceName;
 
-		public string VirtualMFADeviceName
-		{
-			get
-			{
-				return virtualMFADeviceName;
-			}
-			set	
-			{
-				virtualMFADeviceName = value;
-				DictionaryUtil.Add(QueryParameters, "VirtualMFADeviceName", value);
-			}
-		}
+        public string VirtualMFADeviceName
+        {
+            get
+            {
+                return virtualMFADeviceName;
+            }
+            set
+            {
+                virtualMFADeviceName = value;
+                DictionaryUtil.Add(QueryParameters, "VirtualMFADeviceName", value);
+            }
+        }
 
         public override CreateVirtualMFADeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

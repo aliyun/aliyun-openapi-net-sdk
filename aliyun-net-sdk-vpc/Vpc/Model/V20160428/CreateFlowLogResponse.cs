@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateFlowLogResponse : AcsResponse
-	{
+    public class CreateFlowLogResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string success;
+        private string success;
 
-		private string flowLogId;
+        private string flowLogId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public string Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string FlowLogId
-		{
-			get
-			{
-				return flowLogId;
-			}
-			set	
-			{
-				flowLogId = value;
-			}
-		}
-	}
+        public string FlowLogId
+        {
+            get
+            {
+                return flowLogId;
+            }
+            set
+            {
+                flowLogId = value;
+            }
+        }
+    }
 }

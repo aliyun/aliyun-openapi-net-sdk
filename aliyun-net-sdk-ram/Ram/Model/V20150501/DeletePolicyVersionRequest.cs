@@ -32,38 +32,38 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public DeletePolicyVersionRequest()
             : base("Ram", "2015-05-01", "DeletePolicyVersion", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string versionId;
+        private string versionId;
 
-		private string policyName;
+        private string policyName;
 
-		public string VersionId
-		{
-			get
-			{
-				return versionId;
-			}
-			set	
-			{
-				versionId = value;
-				DictionaryUtil.Add(QueryParameters, "VersionId", value);
-			}
-		}
+        public string VersionId
+        {
+            get
+            {
+                return versionId;
+            }
+            set
+            {
+                versionId = value;
+                DictionaryUtil.Add(QueryParameters, "VersionId", value);
+            }
+        }
 
-		public string PolicyName
-		{
-			get
-			{
-				return policyName;
-			}
-			set	
-			{
-				policyName = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyName", value);
-			}
-		}
+        public string PolicyName
+        {
+            get
+            {
+                return policyName;
+            }
+            set
+            {
+                policyName = value;
+                DictionaryUtil.Add(QueryParameters, "PolicyName", value);
+            }
+        }
 
         public override DeletePolicyVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

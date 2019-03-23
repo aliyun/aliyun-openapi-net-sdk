@@ -34,80 +34,80 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string action;
+        private string action;
 
-		private string blockIps;
+        private string blockIps;
 
-		private string domainName;
+        private string domainName;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private long? configId;
+        private long? configId;
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string BlockIps
-		{
-			get
-			{
-				return blockIps;
-			}
-			set	
-			{
-				blockIps = value;
-				DictionaryUtil.Add(QueryParameters, "BlockIps", value);
-			}
-		}
+        public string BlockIps
+        {
+            get
+            {
+                return blockIps;
+            }
+            set
+            {
+                blockIps = value;
+                DictionaryUtil.Add(QueryParameters, "BlockIps", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public long? ConfigId
-		{
-			get
-			{
-				return configId;
-			}
-			set	
-			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
-			}
-		}
+        public long? ConfigId
+        {
+            get
+            {
+                return configId;
+            }
+            set
+            {
+                configId = value;
+                DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
+            }
+        }
 
         public override SetIpBlackListConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

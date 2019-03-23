@@ -33,230 +33,230 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private List<string> launchTemplateNames;
+        private List<string> launchTemplateNames;
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private string regionId;
+        private string regionId;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private string action;
+        private string action;
 
-		private List<TemplateTag> templateTags;
+        private List<TemplateTag> templateTags;
 
-		private List<string> launchTemplateIds;
+        private List<string> launchTemplateIds;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string templateResourceGroupId;
+        private string templateResourceGroupId;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public List<string> LaunchTemplateNames
-		{
-			get
-			{
-				return launchTemplateNames;
-			}
+        public List<string> LaunchTemplateNames
+        {
+            get
+            {
+                return launchTemplateNames;
+            }
 
-			set
-			{
-				launchTemplateNames = value;
-				for (int i = 0; i < launchTemplateNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateName." + (i + 1) , launchTemplateNames[i]);
-				}
-			}
-		}
+            set
+            {
+                launchTemplateNames = value;
+                for (int i = 0; i < launchTemplateNames.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "LaunchTemplateName." + (i + 1), launchTemplateNames[i]);
+                }
+            }
+        }
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+                DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+                DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public List<TemplateTag> TemplateTags
-		{
-			get
-			{
-				return templateTags;
-			}
+        public List<TemplateTag> TemplateTags
+        {
+            get
+            {
+                return templateTags;
+            }
 
-			set
-			{
-				templateTags = value;
-				for (int i = 0; i < templateTags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Key", templateTags[i].Key);
-					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Value", templateTags[i].Value);
-				}
-			}
-		}
+            set
+            {
+                templateTags = value;
+                for (int i = 0; i < templateTags.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "TemplateTag." + (i + 1) + ".Key", templateTags[i].Key);
+                    DictionaryUtil.Add(QueryParameters, "TemplateTag." + (i + 1) + ".Value", templateTags[i].Value);
+                }
+            }
+        }
 
-		public List<string> LaunchTemplateIds
-		{
-			get
-			{
-				return launchTemplateIds;
-			}
+        public List<string> LaunchTemplateIds
+        {
+            get
+            {
+                return launchTemplateIds;
+            }
 
-			set
-			{
-				launchTemplateIds = value;
-				for (int i = 0; i < launchTemplateIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateId." + (i + 1) , launchTemplateIds[i]);
-				}
-			}
-		}
+            set
+            {
+                launchTemplateIds = value;
+                for (int i = 0; i < launchTemplateIds.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "LaunchTemplateId." + (i + 1), launchTemplateIds[i]);
+                }
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string TemplateResourceGroupId
-		{
-			get
-			{
-				return templateResourceGroupId;
-			}
-			set	
-			{
-				templateResourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateResourceGroupId", value);
-			}
-		}
+        public string TemplateResourceGroupId
+        {
+            get
+            {
+                return templateResourceGroupId;
+            }
+            set
+            {
+                templateResourceGroupId = value;
+                DictionaryUtil.Add(QueryParameters, "TemplateResourceGroupId", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public class TemplateTag
-		{
+        public class TemplateTag
+        {
 
-			private string key;
+            private string key;
 
-			private string value_;
+            private string value_;
 
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
+            public string Key
+            {
+                get
+                {
+                    return key;
+                }
+                set
+                {
+                    key = value;
+                }
+            }
 
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-		}
+            public string Value
+            {
+                get
+                {
+                    return value_;
+                }
+                set
+                {
+                    value_ = value;
+                }
+            }
+        }
 
         public override DescribeLaunchTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

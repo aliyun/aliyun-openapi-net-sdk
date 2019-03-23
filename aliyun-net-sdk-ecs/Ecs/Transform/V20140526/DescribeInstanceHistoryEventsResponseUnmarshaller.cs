@@ -27,43 +27,44 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeInstanceHistoryEventsResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeInstanceHistoryEventsResponse describeInstanceHistoryEventsResponse = new DescribeInstanceHistoryEventsResponse();
+            DescribeInstanceHistoryEventsResponse describeInstanceHistoryEventsResponse = new DescribeInstanceHistoryEventsResponse();
 
-			describeInstanceHistoryEventsResponse.HttpResponse = context.HttpResponse;
-			describeInstanceHistoryEventsResponse.RequestId = context.StringValue("DescribeInstanceHistoryEvents.RequestId");
-			describeInstanceHistoryEventsResponse.TotalCount = context.IntegerValue("DescribeInstanceHistoryEvents.TotalCount");
-			describeInstanceHistoryEventsResponse.PageNumber = context.IntegerValue("DescribeInstanceHistoryEvents.PageNumber");
-			describeInstanceHistoryEventsResponse.PageSize = context.IntegerValue("DescribeInstanceHistoryEvents.PageSize");
+            describeInstanceHistoryEventsResponse.HttpResponse = context.HttpResponse;
+            describeInstanceHistoryEventsResponse.RequestId = context.StringValue("DescribeInstanceHistoryEvents.RequestId");
+            describeInstanceHistoryEventsResponse.TotalCount = context.IntegerValue("DescribeInstanceHistoryEvents.TotalCount");
+            describeInstanceHistoryEventsResponse.PageNumber = context.IntegerValue("DescribeInstanceHistoryEvents.PageNumber");
+            describeInstanceHistoryEventsResponse.PageSize = context.IntegerValue("DescribeInstanceHistoryEvents.PageSize");
 
-			List<DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType> describeInstanceHistoryEventsResponse_instanceSystemEventSet = new List<DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType>();
-			for (int i = 0; i < context.Length("DescribeInstanceHistoryEvents.InstanceSystemEventSet.Length"); i++) {
-				DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType instanceSystemEventType = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType();
-				instanceSystemEventType.InstanceId = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].InstanceId");
-				instanceSystemEventType.EventId = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventId");
-				instanceSystemEventType.EventPublishTime = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventPublishTime");
-				instanceSystemEventType.NotBefore = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].NotBefore");
-				instanceSystemEventType.EventFinishTime = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventFinishTime");
+            List<DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType> describeInstanceHistoryEventsResponse_instanceSystemEventSet = new List<DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType>();
+            for (int i = 0; i < context.Length("DescribeInstanceHistoryEvents.InstanceSystemEventSet.Length"); i++)
+            {
+                DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType instanceSystemEventType = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType();
+                instanceSystemEventType.InstanceId = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet[" + i + "].InstanceId");
+                instanceSystemEventType.EventId = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet[" + i + "].EventId");
+                instanceSystemEventType.EventPublishTime = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet[" + i + "].EventPublishTime");
+                instanceSystemEventType.NotBefore = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet[" + i + "].NotBefore");
+                instanceSystemEventType.EventFinishTime = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet[" + i + "].EventFinishTime");
 
-				DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventType eventType = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventType();
-				eventType.Code = context.IntegerValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventType.Code");
-				eventType.Name = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventType.Name");
-				instanceSystemEventType.EventType = eventType;
+                DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventType eventType = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventType();
+                eventType.Code = context.IntegerValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet[" + i + "].EventType.Code");
+                eventType.Name = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet[" + i + "].EventType.Name");
+                instanceSystemEventType.EventType = eventType;
 
-				DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventCycleStatus eventCycleStatus = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventCycleStatus();
-				eventCycleStatus.Code = context.IntegerValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventCycleStatus.Code");
-				eventCycleStatus.Name = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventCycleStatus.Name");
-				instanceSystemEventType.EventCycleStatus = eventCycleStatus;
+                DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventCycleStatus eventCycleStatus = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventCycleStatus();
+                eventCycleStatus.Code = context.IntegerValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet[" + i + "].EventCycleStatus.Code");
+                eventCycleStatus.Name = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet[" + i + "].EventCycleStatus.Name");
+                instanceSystemEventType.EventCycleStatus = eventCycleStatus;
 
-				DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute extendedAttribute = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute();
-				extendedAttribute.DiskId = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.DiskId");
-				extendedAttribute.Device = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.Device");
-				instanceSystemEventType.ExtendedAttribute = extendedAttribute;
+                DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute extendedAttribute = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute();
+                extendedAttribute.DiskId = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet[" + i + "].ExtendedAttribute.DiskId");
+                extendedAttribute.Device = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet[" + i + "].ExtendedAttribute.Device");
+                instanceSystemEventType.ExtendedAttribute = extendedAttribute;
 
-				describeInstanceHistoryEventsResponse_instanceSystemEventSet.Add(instanceSystemEventType);
-			}
-			describeInstanceHistoryEventsResponse.InstanceSystemEventSet = describeInstanceHistoryEventsResponse_instanceSystemEventSet;
-        
-			return describeInstanceHistoryEventsResponse;
+                describeInstanceHistoryEventsResponse_instanceSystemEventSet.Add(instanceSystemEventType);
+            }
+            describeInstanceHistoryEventsResponse.InstanceSystemEventSet = describeInstanceHistoryEventsResponse_instanceSystemEventSet;
+
+            return describeInstanceHistoryEventsResponse;
         }
     }
 }

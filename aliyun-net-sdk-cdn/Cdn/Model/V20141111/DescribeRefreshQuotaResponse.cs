@@ -22,133 +22,133 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeRefreshQuotaResponse : AcsResponse
-	{
+    public class DescribeRefreshQuotaResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string urlQuota;
+        private string urlQuota;
 
-		private string dirQuota;
+        private string dirQuota;
 
-		private string urlRemain;
+        private string urlRemain;
 
-		private string dirRemain;
+        private string dirRemain;
 
-		private string preloadQuota;
+        private string preloadQuota;
 
-		private string blockQuota;
+        private string blockQuota;
 
-		private string preloadRemain;
+        private string preloadRemain;
 
-		private string blockRemain;
+        private string blockRemain;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string UrlQuota
-		{
-			get
-			{
-				return urlQuota;
-			}
-			set	
-			{
-				urlQuota = value;
-			}
-		}
+        public string UrlQuota
+        {
+            get
+            {
+                return urlQuota;
+            }
+            set
+            {
+                urlQuota = value;
+            }
+        }
 
-		public string DirQuota
-		{
-			get
-			{
-				return dirQuota;
-			}
-			set	
-			{
-				dirQuota = value;
-			}
-		}
+        public string DirQuota
+        {
+            get
+            {
+                return dirQuota;
+            }
+            set
+            {
+                dirQuota = value;
+            }
+        }
 
-		public string UrlRemain
-		{
-			get
-			{
-				return urlRemain;
-			}
-			set	
-			{
-				urlRemain = value;
-			}
-		}
+        public string UrlRemain
+        {
+            get
+            {
+                return urlRemain;
+            }
+            set
+            {
+                urlRemain = value;
+            }
+        }
 
-		public string DirRemain
-		{
-			get
-			{
-				return dirRemain;
-			}
-			set	
-			{
-				dirRemain = value;
-			}
-		}
+        public string DirRemain
+        {
+            get
+            {
+                return dirRemain;
+            }
+            set
+            {
+                dirRemain = value;
+            }
+        }
 
-		public string PreloadQuota
-		{
-			get
-			{
-				return preloadQuota;
-			}
-			set	
-			{
-				preloadQuota = value;
-			}
-		}
+        public string PreloadQuota
+        {
+            get
+            {
+                return preloadQuota;
+            }
+            set
+            {
+                preloadQuota = value;
+            }
+        }
 
-		public string BlockQuota
-		{
-			get
-			{
-				return blockQuota;
-			}
-			set	
-			{
-				blockQuota = value;
-			}
-		}
+        public string BlockQuota
+        {
+            get
+            {
+                return blockQuota;
+            }
+            set
+            {
+                blockQuota = value;
+            }
+        }
 
-		public string PreloadRemain
-		{
-			get
-			{
-				return preloadRemain;
-			}
-			set	
-			{
-				preloadRemain = value;
-			}
-		}
+        public string PreloadRemain
+        {
+            get
+            {
+                return preloadRemain;
+            }
+            set
+            {
+                preloadRemain = value;
+            }
+        }
 
-		public string BlockRemain
-		{
-			get
-			{
-				return blockRemain;
-			}
-			set	
-			{
-				blockRemain = value;
-			}
-		}
-	}
+        public string BlockRemain
+        {
+            get
+            {
+                return blockRemain;
+            }
+            set
+            {
+                blockRemain = value;
+            }
+        }
+    }
 }

@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static AllocatePublicIpAddressResponse Unmarshall(UnmarshallerContext context)
         {
-			AllocatePublicIpAddressResponse allocatePublicIpAddressResponse = new AllocatePublicIpAddressResponse();
+            AllocatePublicIpAddressResponse allocatePublicIpAddressResponse = new AllocatePublicIpAddressResponse();
 
-			allocatePublicIpAddressResponse.HttpResponse = context.HttpResponse;
-			allocatePublicIpAddressResponse.RequestId = context.StringValue("AllocatePublicIpAddress.RequestId");
-			allocatePublicIpAddressResponse.IpAddress = context.StringValue("AllocatePublicIpAddress.IpAddress");
-        
-			return allocatePublicIpAddressResponse;
+            allocatePublicIpAddressResponse.HttpResponse = context.HttpResponse;
+            allocatePublicIpAddressResponse.RequestId = context.StringValue("AllocatePublicIpAddress.RequestId");
+            allocatePublicIpAddressResponse.IpAddress = context.StringValue("AllocatePublicIpAddress.IpAddress");
+
+            return allocatePublicIpAddressResponse;
         }
     }
 }

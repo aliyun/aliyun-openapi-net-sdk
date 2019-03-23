@@ -31,54 +31,54 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public DescribeResourceDetailRequest()
             : base("ROS", "2015-09-01", "DescribeResourceDetail")
         {
-			UriPattern = "/stacks/[StackName]/[StackId]/resources/[ResourceName]";
-			Method = MethodType.GET;
+            UriPattern = "/stacks/[StackName]/[StackId]/resources/[ResourceName]";
+            Method = MethodType.GET;
         }
 
-		private string stackId;
+        private string stackId;
 
-		private string stackName;
+        private string stackName;
 
-		private string resourceName;
+        private string resourceName;
 
-		public string StackId
-		{
-			get
-			{
-				return stackId;
-			}
-			set	
-			{
-				stackId = value;
-				DictionaryUtil.Add(PathParameters, "StackId", value);
-			}
-		}
+        public string StackId
+        {
+            get
+            {
+                return stackId;
+            }
+            set
+            {
+                stackId = value;
+                DictionaryUtil.Add(PathParameters, "StackId", value);
+            }
+        }
 
-		public string StackName
-		{
-			get
-			{
-				return stackName;
-			}
-			set	
-			{
-				stackName = value;
-				DictionaryUtil.Add(PathParameters, "StackName", value);
-			}
-		}
+        public string StackName
+        {
+            get
+            {
+                return stackName;
+            }
+            set
+            {
+                stackName = value;
+                DictionaryUtil.Add(PathParameters, "StackName", value);
+            }
+        }
 
-		public string ResourceName
-		{
-			get
-			{
-				return resourceName;
-			}
-			set	
-			{
-				resourceName = value;
-				DictionaryUtil.Add(PathParameters, "ResourceName", value);
-			}
-		}
+        public string ResourceName
+        {
+            get
+            {
+                return resourceName;
+            }
+            set
+            {
+                resourceName = value;
+                DictionaryUtil.Add(PathParameters, "ResourceName", value);
+            }
+        }
 
         public override DescribeResourceDetailResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

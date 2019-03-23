@@ -27,20 +27,20 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static DownloadOriginalStatisticsReportResponse Unmarshall(UnmarshallerContext context)
         {
-			DownloadOriginalStatisticsReportResponse downloadOriginalStatisticsReportResponse = new DownloadOriginalStatisticsReportResponse();
+            DownloadOriginalStatisticsReportResponse downloadOriginalStatisticsReportResponse = new DownloadOriginalStatisticsReportResponse();
 
-			downloadOriginalStatisticsReportResponse.HttpResponse = context.HttpResponse;
-			downloadOriginalStatisticsReportResponse.RequestId = context.StringValue("DownloadOriginalStatisticsReport.RequestId");
-			downloadOriginalStatisticsReportResponse.Success = context.BooleanValue("DownloadOriginalStatisticsReport.Success");
-			downloadOriginalStatisticsReportResponse.Code = context.StringValue("DownloadOriginalStatisticsReport.Code");
-			downloadOriginalStatisticsReportResponse.Message = context.StringValue("DownloadOriginalStatisticsReport.Message");
-			downloadOriginalStatisticsReportResponse.HttpStatusCode = context.IntegerValue("DownloadOriginalStatisticsReport.HttpStatusCode");
+            downloadOriginalStatisticsReportResponse.HttpResponse = context.HttpResponse;
+            downloadOriginalStatisticsReportResponse.RequestId = context.StringValue("DownloadOriginalStatisticsReport.RequestId");
+            downloadOriginalStatisticsReportResponse.Success = context.BooleanValue("DownloadOriginalStatisticsReport.Success");
+            downloadOriginalStatisticsReportResponse.Code = context.StringValue("DownloadOriginalStatisticsReport.Code");
+            downloadOriginalStatisticsReportResponse.Message = context.StringValue("DownloadOriginalStatisticsReport.Message");
+            downloadOriginalStatisticsReportResponse.HttpStatusCode = context.IntegerValue("DownloadOriginalStatisticsReport.HttpStatusCode");
 
-			DownloadOriginalStatisticsReportResponse.DownloadOriginalStatisticsReport_DownloadParams downloadParams = new DownloadOriginalStatisticsReportResponse.DownloadOriginalStatisticsReport_DownloadParams();
-			downloadParams.SignatureUrl = context.StringValue("DownloadOriginalStatisticsReport.DownloadParams.SignatureUrl");
-			downloadOriginalStatisticsReportResponse.DownloadParams = downloadParams;
-        
-			return downloadOriginalStatisticsReportResponse;
+            DownloadOriginalStatisticsReportResponse.DownloadOriginalStatisticsReport_DownloadParams downloadParams = new DownloadOriginalStatisticsReportResponse.DownloadOriginalStatisticsReport_DownloadParams();
+            downloadParams.SignatureUrl = context.StringValue("DownloadOriginalStatisticsReport.DownloadParams.SignatureUrl");
+            downloadOriginalStatisticsReportResponse.DownloadParams = downloadParams;
+
+            return downloadOriginalStatisticsReportResponse;
         }
     }
 }

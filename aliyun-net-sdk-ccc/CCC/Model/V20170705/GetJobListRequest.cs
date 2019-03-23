@@ -33,100 +33,100 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		private string jobGroupId;
+        private string jobGroupId;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? status;
+        private int? status;
 
-		private bool? queryAll;
+        private bool? queryAll;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string JobGroupId
-		{
-			get
-			{
-				return jobGroupId;
-			}
-			set	
-			{
-				jobGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
-			}
-		}
+        public string JobGroupId
+        {
+            get
+            {
+                return jobGroupId;
+            }
+            set
+            {
+                jobGroupId = value;
+                DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+                DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+                DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+            }
+        }
 
-		public int? Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
-			}
-		}
+        public int? Status
+        {
+            get
+            {
+                return status;
+            }
+            set
+            {
+                status = value;
+                DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
+            }
+        }
 
-		public bool? QueryAll
-		{
-			get
-			{
-				return queryAll;
-			}
-			set	
-			{
-				queryAll = value;
-				DictionaryUtil.Add(QueryParameters, "QueryAll", value.ToString());
-			}
-		}
+        public bool? QueryAll
+        {
+            get
+            {
+                return queryAll;
+            }
+            set
+            {
+                queryAll = value;
+                DictionaryUtil.Add(QueryParameters, "QueryAll", value.ToString());
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override GetJobListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ModifyImageAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyImageAttributeResponse modifyImageAttributeResponse = new ModifyImageAttributeResponse();
+            ModifyImageAttributeResponse modifyImageAttributeResponse = new ModifyImageAttributeResponse();
 
-			modifyImageAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyImageAttributeResponse.RequestId = context.StringValue("ModifyImageAttribute.RequestId");
-        
-			return modifyImageAttributeResponse;
+            modifyImageAttributeResponse.HttpResponse = context.HttpResponse;
+            modifyImageAttributeResponse.RequestId = context.StringValue("ModifyImageAttribute.RequestId");
+
+            return modifyImageAttributeResponse;
         }
     }
 }

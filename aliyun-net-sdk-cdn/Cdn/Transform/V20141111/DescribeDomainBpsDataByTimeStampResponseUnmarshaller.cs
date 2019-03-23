@@ -28,25 +28,26 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeDomainBpsDataByTimeStampResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainBpsDataByTimeStampResponse describeDomainBpsDataByTimeStampResponse = new DescribeDomainBpsDataByTimeStampResponse();
+            DescribeDomainBpsDataByTimeStampResponse describeDomainBpsDataByTimeStampResponse = new DescribeDomainBpsDataByTimeStampResponse();
 
-			describeDomainBpsDataByTimeStampResponse.HttpResponse = context.HttpResponse;
-			describeDomainBpsDataByTimeStampResponse.RequestId = context.StringValue("DescribeDomainBpsDataByTimeStamp.RequestId");
-			describeDomainBpsDataByTimeStampResponse.DomainName = context.StringValue("DescribeDomainBpsDataByTimeStamp.DomainName");
-			describeDomainBpsDataByTimeStampResponse.TimeStamp = context.StringValue("DescribeDomainBpsDataByTimeStamp.TimeStamp");
+            describeDomainBpsDataByTimeStampResponse.HttpResponse = context.HttpResponse;
+            describeDomainBpsDataByTimeStampResponse.RequestId = context.StringValue("DescribeDomainBpsDataByTimeStamp.RequestId");
+            describeDomainBpsDataByTimeStampResponse.DomainName = context.StringValue("DescribeDomainBpsDataByTimeStamp.DomainName");
+            describeDomainBpsDataByTimeStampResponse.TimeStamp = context.StringValue("DescribeDomainBpsDataByTimeStamp.TimeStamp");
 
-			List<DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel> describeDomainBpsDataByTimeStampResponse_bpsDataList = new List<DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel>();
-			for (int i = 0; i < context.Length("DescribeDomainBpsDataByTimeStamp.BpsDataList.Length"); i++) {
-				DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel bpsDataModel = new DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel();
-				bpsDataModel.LocationName = context.StringValue("DescribeDomainBpsDataByTimeStamp.BpsDataList["+ i +"].LocationName");
-				bpsDataModel.IspName = context.StringValue("DescribeDomainBpsDataByTimeStamp.BpsDataList["+ i +"].IspName");
-				bpsDataModel.Bps = context.LongValue("DescribeDomainBpsDataByTimeStamp.BpsDataList["+ i +"].Bps");
+            List<DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel> describeDomainBpsDataByTimeStampResponse_bpsDataList = new List<DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel>();
+            for (int i = 0; i < context.Length("DescribeDomainBpsDataByTimeStamp.BpsDataList.Length"); i++)
+            {
+                DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel bpsDataModel = new DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel();
+                bpsDataModel.LocationName = context.StringValue("DescribeDomainBpsDataByTimeStamp.BpsDataList[" + i + "].LocationName");
+                bpsDataModel.IspName = context.StringValue("DescribeDomainBpsDataByTimeStamp.BpsDataList[" + i + "].IspName");
+                bpsDataModel.Bps = context.LongValue("DescribeDomainBpsDataByTimeStamp.BpsDataList[" + i + "].Bps");
 
-				describeDomainBpsDataByTimeStampResponse_bpsDataList.Add(bpsDataModel);
-			}
-			describeDomainBpsDataByTimeStampResponse.BpsDataList = describeDomainBpsDataByTimeStampResponse_bpsDataList;
-        
-			return describeDomainBpsDataByTimeStampResponse;
+                describeDomainBpsDataByTimeStampResponse_bpsDataList.Add(bpsDataModel);
+            }
+            describeDomainBpsDataByTimeStampResponse.BpsDataList = describeDomainBpsDataByTimeStampResponse_bpsDataList;
+
+            return describeDomainBpsDataByTimeStampResponse;
         }
     }
 }

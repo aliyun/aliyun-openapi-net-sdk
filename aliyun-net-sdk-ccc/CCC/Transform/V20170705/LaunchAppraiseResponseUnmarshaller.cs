@@ -27,16 +27,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static LaunchAppraiseResponse Unmarshall(UnmarshallerContext context)
         {
-			LaunchAppraiseResponse launchAppraiseResponse = new LaunchAppraiseResponse();
+            LaunchAppraiseResponse launchAppraiseResponse = new LaunchAppraiseResponse();
 
-			launchAppraiseResponse.HttpResponse = context.HttpResponse;
-			launchAppraiseResponse.RequestId = context.StringValue("LaunchAppraise.RequestId");
-			launchAppraiseResponse.Success = context.BooleanValue("LaunchAppraise.Success");
-			launchAppraiseResponse.Code = context.StringValue("LaunchAppraise.Code");
-			launchAppraiseResponse.Message = context.StringValue("LaunchAppraise.Message");
-			launchAppraiseResponse.HttpStatusCode = context.IntegerValue("LaunchAppraise.HttpStatusCode");
-        
-			return launchAppraiseResponse;
+            launchAppraiseResponse.HttpResponse = context.HttpResponse;
+            launchAppraiseResponse.RequestId = context.StringValue("LaunchAppraise.RequestId");
+            launchAppraiseResponse.Success = context.BooleanValue("LaunchAppraise.Success");
+            launchAppraiseResponse.Code = context.StringValue("LaunchAppraise.Code");
+            launchAppraiseResponse.Message = context.StringValue("LaunchAppraise.Message");
+            launchAppraiseResponse.HttpStatusCode = context.IntegerValue("LaunchAppraise.HttpStatusCode");
+
+            return launchAppraiseResponse;
         }
     }
 }

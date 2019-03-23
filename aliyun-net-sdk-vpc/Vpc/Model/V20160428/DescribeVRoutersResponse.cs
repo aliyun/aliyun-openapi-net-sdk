@@ -21,179 +21,179 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeVRoutersResponse : AcsResponse
-	{
+    public class DescribeVRoutersResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeVRouters_VRouter> vRouters;
+        private List<DescribeVRouters_VRouter> vRouters;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeVRouters_VRouter> VRouters
-		{
-			get
-			{
-				return vRouters;
-			}
-			set	
-			{
-				vRouters = value;
-			}
-		}
+        public List<DescribeVRouters_VRouter> VRouters
+        {
+            get
+            {
+                return vRouters;
+            }
+            set
+            {
+                vRouters = value;
+            }
+        }
 
-		public class DescribeVRouters_VRouter
-		{
+        public class DescribeVRouters_VRouter
+        {
 
-			private string regionId;
+            private string regionId;
 
-			private string vpcId;
+            private string vpcId;
 
-			private string vRouterName;
+            private string vRouterName;
 
-			private string description;
+            private string description;
 
-			private string vRouterId;
+            private string vRouterId;
 
-			private string creationTime;
+            private string creationTime;
 
-			private List<string> routeTableIds;
+            private List<string> routeTableIds;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
+            public string VpcId
+            {
+                get
+                {
+                    return vpcId;
+                }
+                set
+                {
+                    vpcId = value;
+                }
+            }
 
-			public string VRouterName
-			{
-				get
-				{
-					return vRouterName;
-				}
-				set	
-				{
-					vRouterName = value;
-				}
-			}
+            public string VRouterName
+            {
+                get
+                {
+                    return vRouterName;
+                }
+                set
+                {
+                    vRouterName = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string VRouterId
-			{
-				get
-				{
-					return vRouterId;
-				}
-				set	
-				{
-					vRouterId = value;
-				}
-			}
+            public string VRouterId
+            {
+                get
+                {
+                    return vRouterId;
+                }
+                set
+                {
+                    vRouterId = value;
+                }
+            }
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+            public string CreationTime
+            {
+                get
+                {
+                    return creationTime;
+                }
+                set
+                {
+                    creationTime = value;
+                }
+            }
 
-			public List<string> RouteTableIds
-			{
-				get
-				{
-					return routeTableIds;
-				}
-				set	
-				{
-					routeTableIds = value;
-				}
-			}
-		}
-	}
+            public List<string> RouteTableIds
+            {
+                get
+                {
+                    return routeTableIds;
+                }
+                set
+                {
+                    routeTableIds = value;
+                }
+            }
+        }
+    }
 }

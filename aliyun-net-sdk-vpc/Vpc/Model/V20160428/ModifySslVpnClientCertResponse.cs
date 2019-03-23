@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class ModifySslVpnClientCertResponse : AcsResponse
-	{
+    public class ModifySslVpnClientCertResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string name;
+        private string name;
 
-		private string sslVpnClientCertId;
+        private string sslVpnClientCertId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
 
-		public string SslVpnClientCertId
-		{
-			get
-			{
-				return sslVpnClientCertId;
-			}
-			set	
-			{
-				sslVpnClientCertId = value;
-			}
-		}
-	}
+        public string SslVpnClientCertId
+        {
+            get
+            {
+                return sslVpnClientCertId;
+            }
+            set
+            {
+                sslVpnClientCertId = value;
+            }
+        }
+    }
 }

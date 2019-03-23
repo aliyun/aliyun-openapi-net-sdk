@@ -27,11 +27,11 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
     {
         public static PreviewStackResponse Unmarshall(UnmarshallerContext context)
         {
-			PreviewStackResponse previewStackResponse = new PreviewStackResponse();
+            PreviewStackResponse previewStackResponse = new PreviewStackResponse();
 
-			previewStackResponse.HttpResponse = context.HttpResponse;
-        
-			return previewStackResponse;
+            previewStackResponse.HttpResponse = context.HttpResponse;
+
+            return previewStackResponse;
         }
     }
 }

@@ -32,23 +32,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public DeleteVirtualMFADeviceRequest()
             : base("Ram", "2015-05-01", "DeleteVirtualMFADevice", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string serialNumber;
+        private string serialNumber;
 
-		public string SerialNumber
-		{
-			get
-			{
-				return serialNumber;
-			}
-			set	
-			{
-				serialNumber = value;
-				DictionaryUtil.Add(QueryParameters, "SerialNumber", value);
-			}
-		}
+        public string SerialNumber
+        {
+            get
+            {
+                return serialNumber;
+            }
+            set
+            {
+                serialNumber = value;
+                DictionaryUtil.Add(QueryParameters, "SerialNumber", value);
+            }
+        }
 
         public override DeleteVirtualMFADeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

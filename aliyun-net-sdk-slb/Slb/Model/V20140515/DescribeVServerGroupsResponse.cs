@@ -21,67 +21,67 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeVServerGroupsResponse : AcsResponse
-	{
+    public class DescribeVServerGroupsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeVServerGroups_VServerGroup> vServerGroups;
+        private List<DescribeVServerGroups_VServerGroup> vServerGroups;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeVServerGroups_VServerGroup> VServerGroups
-		{
-			get
-			{
-				return vServerGroups;
-			}
-			set	
-			{
-				vServerGroups = value;
-			}
-		}
+        public List<DescribeVServerGroups_VServerGroup> VServerGroups
+        {
+            get
+            {
+                return vServerGroups;
+            }
+            set
+            {
+                vServerGroups = value;
+            }
+        }
 
-		public class DescribeVServerGroups_VServerGroup
-		{
+        public class DescribeVServerGroups_VServerGroup
+        {
 
-			private string vServerGroupId;
+            private string vServerGroupId;
 
-			private string vServerGroupName;
+            private string vServerGroupName;
 
-			public string VServerGroupId
-			{
-				get
-				{
-					return vServerGroupId;
-				}
-				set	
-				{
-					vServerGroupId = value;
-				}
-			}
+            public string VServerGroupId
+            {
+                get
+                {
+                    return vServerGroupId;
+                }
+                set
+                {
+                    vServerGroupId = value;
+                }
+            }
 
-			public string VServerGroupName
-			{
-				get
-				{
-					return vServerGroupName;
-				}
-				set	
-				{
-					vServerGroupName = value;
-				}
-			}
-		}
-	}
+            public string VServerGroupName
+            {
+                get
+                {
+                    return vServerGroupName;
+                }
+                set
+                {
+                    vServerGroupName = value;
+                }
+            }
+        }
+    }
 }

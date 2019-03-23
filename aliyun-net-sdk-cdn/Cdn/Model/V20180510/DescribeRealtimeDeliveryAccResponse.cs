@@ -22,81 +22,81 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeRealtimeDeliveryAccResponse : AcsResponse
-	{
+    public class DescribeRealtimeDeliveryAccResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeRealtimeDeliveryAcc_AccData> reatTimeDeliveryAccData;
+        private List<DescribeRealtimeDeliveryAcc_AccData> reatTimeDeliveryAccData;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeRealtimeDeliveryAcc_AccData> ReatTimeDeliveryAccData
-		{
-			get
-			{
-				return reatTimeDeliveryAccData;
-			}
-			set	
-			{
-				reatTimeDeliveryAccData = value;
-			}
-		}
+        public List<DescribeRealtimeDeliveryAcc_AccData> ReatTimeDeliveryAccData
+        {
+            get
+            {
+                return reatTimeDeliveryAccData;
+            }
+            set
+            {
+                reatTimeDeliveryAccData = value;
+            }
+        }
 
-		public class DescribeRealtimeDeliveryAcc_AccData
-		{
+        public class DescribeRealtimeDeliveryAcc_AccData
+        {
 
-			private string timeStamp;
+            private string timeStamp;
 
-			private int? successNum;
+            private int? successNum;
 
-			private int? failedNum;
+            private int? failedNum;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
 
-			public int? SuccessNum
-			{
-				get
-				{
-					return successNum;
-				}
-				set	
-				{
-					successNum = value;
-				}
-			}
+            public int? SuccessNum
+            {
+                get
+                {
+                    return successNum;
+                }
+                set
+                {
+                    successNum = value;
+                }
+            }
 
-			public int? FailedNum
-			{
-				get
-				{
-					return failedNum;
-				}
-				set	
-				{
-					failedNum = value;
-				}
-			}
-		}
-	}
+            public int? FailedNum
+            {
+                get
+                {
+                    return failedNum;
+                }
+                set
+                {
+                    failedNum = value;
+                }
+            }
+        }
+    }
 }

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static UnassociateEipAddressResponse Unmarshall(UnmarshallerContext context)
         {
-			UnassociateEipAddressResponse unassociateEipAddressResponse = new UnassociateEipAddressResponse();
+            UnassociateEipAddressResponse unassociateEipAddressResponse = new UnassociateEipAddressResponse();
 
-			unassociateEipAddressResponse.HttpResponse = context.HttpResponse;
-			unassociateEipAddressResponse.RequestId = context.StringValue("UnassociateEipAddress.RequestId");
-        
-			return unassociateEipAddressResponse;
+            unassociateEipAddressResponse.HttpResponse = context.HttpResponse;
+            unassociateEipAddressResponse.RequestId = context.StringValue("UnassociateEipAddress.RequestId");
+
+            return unassociateEipAddressResponse;
         }
     }
 }

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static GrantAccountPrivilegeResponse Unmarshall(UnmarshallerContext context)
         {
-			GrantAccountPrivilegeResponse grantAccountPrivilegeResponse = new GrantAccountPrivilegeResponse();
+            GrantAccountPrivilegeResponse grantAccountPrivilegeResponse = new GrantAccountPrivilegeResponse();
 
-			grantAccountPrivilegeResponse.HttpResponse = context.HttpResponse;
-			grantAccountPrivilegeResponse.RequestId = context.StringValue("GrantAccountPrivilege.RequestId");
-        
-			return grantAccountPrivilegeResponse;
+            grantAccountPrivilegeResponse.HttpResponse = context.HttpResponse;
+            grantAccountPrivilegeResponse.RequestId = context.StringValue("GrantAccountPrivilege.RequestId");
+
+            return grantAccountPrivilegeResponse;
         }
     }
 }

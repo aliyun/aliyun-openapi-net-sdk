@@ -22,215 +22,215 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeCdnDomainLogsResponse : AcsResponse
-	{
+    public class DescribeCdnDomainLogsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeCdnDomainLogs_DomainLogDetail> domainLogDetails;
+        private List<DescribeCdnDomainLogs_DomainLogDetail> domainLogDetails;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeCdnDomainLogs_DomainLogDetail> DomainLogDetails
-		{
-			get
-			{
-				return domainLogDetails;
-			}
-			set	
-			{
-				domainLogDetails = value;
-			}
-		}
+        public List<DescribeCdnDomainLogs_DomainLogDetail> DomainLogDetails
+        {
+            get
+            {
+                return domainLogDetails;
+            }
+            set
+            {
+                domainLogDetails = value;
+            }
+        }
 
-		public class DescribeCdnDomainLogs_DomainLogDetail
-		{
+        public class DescribeCdnDomainLogs_DomainLogDetail
+        {
 
-			private string domainName;
+            private string domainName;
 
-			private long? logCount;
+            private long? logCount;
 
-			private List<DescribeCdnDomainLogs_PageInfoDetail> pageInfos;
+            private List<DescribeCdnDomainLogs_PageInfoDetail> pageInfos;
 
-			private List<DescribeCdnDomainLogs_LogInfoDetail> logInfos;
+            private List<DescribeCdnDomainLogs_LogInfoDetail> logInfos;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+            public string DomainName
+            {
+                get
+                {
+                    return domainName;
+                }
+                set
+                {
+                    domainName = value;
+                }
+            }
 
-			public long? LogCount
-			{
-				get
-				{
-					return logCount;
-				}
-				set	
-				{
-					logCount = value;
-				}
-			}
+            public long? LogCount
+            {
+                get
+                {
+                    return logCount;
+                }
+                set
+                {
+                    logCount = value;
+                }
+            }
 
-			public List<DescribeCdnDomainLogs_PageInfoDetail> PageInfos
-			{
-				get
-				{
-					return pageInfos;
-				}
-				set	
-				{
-					pageInfos = value;
-				}
-			}
+            public List<DescribeCdnDomainLogs_PageInfoDetail> PageInfos
+            {
+                get
+                {
+                    return pageInfos;
+                }
+                set
+                {
+                    pageInfos = value;
+                }
+            }
 
-			public List<DescribeCdnDomainLogs_LogInfoDetail> LogInfos
-			{
-				get
-				{
-					return logInfos;
-				}
-				set	
-				{
-					logInfos = value;
-				}
-			}
+            public List<DescribeCdnDomainLogs_LogInfoDetail> LogInfos
+            {
+                get
+                {
+                    return logInfos;
+                }
+                set
+                {
+                    logInfos = value;
+                }
+            }
 
-			public class DescribeCdnDomainLogs_PageInfoDetail
-			{
+            public class DescribeCdnDomainLogs_PageInfoDetail
+            {
 
-				private long? pageIndex;
+                private long? pageIndex;
 
-				private long? pageSize;
+                private long? pageSize;
 
-				private long? total;
+                private long? total;
 
-				public long? PageIndex
-				{
-					get
-					{
-						return pageIndex;
-					}
-					set	
-					{
-						pageIndex = value;
-					}
-				}
+                public long? PageIndex
+                {
+                    get
+                    {
+                        return pageIndex;
+                    }
+                    set
+                    {
+                        pageIndex = value;
+                    }
+                }
 
-				public long? PageSize
-				{
-					get
-					{
-						return pageSize;
-					}
-					set	
-					{
-						pageSize = value;
-					}
-				}
+                public long? PageSize
+                {
+                    get
+                    {
+                        return pageSize;
+                    }
+                    set
+                    {
+                        pageSize = value;
+                    }
+                }
 
-				public long? Total
-				{
-					get
-					{
-						return total;
-					}
-					set	
-					{
-						total = value;
-					}
-				}
-			}
+                public long? Total
+                {
+                    get
+                    {
+                        return total;
+                    }
+                    set
+                    {
+                        total = value;
+                    }
+                }
+            }
 
-			public class DescribeCdnDomainLogs_LogInfoDetail
-			{
+            public class DescribeCdnDomainLogs_LogInfoDetail
+            {
 
-				private string logName;
+                private string logName;
 
-				private string logPath;
+                private string logPath;
 
-				private long? logSize;
+                private long? logSize;
 
-				private string startTime;
+                private string startTime;
 
-				private string endTime;
+                private string endTime;
 
-				public string LogName
-				{
-					get
-					{
-						return logName;
-					}
-					set	
-					{
-						logName = value;
-					}
-				}
+                public string LogName
+                {
+                    get
+                    {
+                        return logName;
+                    }
+                    set
+                    {
+                        logName = value;
+                    }
+                }
 
-				public string LogPath
-				{
-					get
-					{
-						return logPath;
-					}
-					set	
-					{
-						logPath = value;
-					}
-				}
+                public string LogPath
+                {
+                    get
+                    {
+                        return logPath;
+                    }
+                    set
+                    {
+                        logPath = value;
+                    }
+                }
 
-				public long? LogSize
-				{
-					get
-					{
-						return logSize;
-					}
-					set	
-					{
-						logSize = value;
-					}
-				}
+                public long? LogSize
+                {
+                    get
+                    {
+                        return logSize;
+                    }
+                    set
+                    {
+                        logSize = value;
+                    }
+                }
 
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
+                public string StartTime
+                {
+                    get
+                    {
+                        return startTime;
+                    }
+                    set
+                    {
+                        startTime = value;
+                    }
+                }
 
-				public string EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
-					}
-				}
-			}
-		}
-	}
+                public string EndTime
+                {
+                    get
+                    {
+                        return endTime;
+                    }
+                    set
+                    {
+                        endTime = value;
+                    }
+                }
+            }
+        }
+    }
 }

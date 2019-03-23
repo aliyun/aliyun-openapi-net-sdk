@@ -21,165 +21,165 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeIpv6EgressOnlyRulesResponse : AcsResponse
-	{
+    public class DescribeIpv6EgressOnlyRulesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeIpv6EgressOnlyRules_Ipv6EgressOnlyRule> ipv6EgressOnlyRules;
+        private List<DescribeIpv6EgressOnlyRules_Ipv6EgressOnlyRule> ipv6EgressOnlyRules;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeIpv6EgressOnlyRules_Ipv6EgressOnlyRule> Ipv6EgressOnlyRules
-		{
-			get
-			{
-				return ipv6EgressOnlyRules;
-			}
-			set	
-			{
-				ipv6EgressOnlyRules = value;
-			}
-		}
+        public List<DescribeIpv6EgressOnlyRules_Ipv6EgressOnlyRule> Ipv6EgressOnlyRules
+        {
+            get
+            {
+                return ipv6EgressOnlyRules;
+            }
+            set
+            {
+                ipv6EgressOnlyRules = value;
+            }
+        }
 
-		public class DescribeIpv6EgressOnlyRules_Ipv6EgressOnlyRule
-		{
+        public class DescribeIpv6EgressOnlyRules_Ipv6EgressOnlyRule
+        {
 
-			private string ipv6EgressOnlyRuleId;
+            private string ipv6EgressOnlyRuleId;
 
-			private string instanceType;
+            private string instanceType;
 
-			private string instanceId;
+            private string instanceId;
 
-			private string status;
+            private string status;
 
-			private string name;
+            private string name;
 
-			private string description;
+            private string description;
 
-			public string Ipv6EgressOnlyRuleId
-			{
-				get
-				{
-					return ipv6EgressOnlyRuleId;
-				}
-				set	
-				{
-					ipv6EgressOnlyRuleId = value;
-				}
-			}
+            public string Ipv6EgressOnlyRuleId
+            {
+                get
+                {
+                    return ipv6EgressOnlyRuleId;
+                }
+                set
+                {
+                    ipv6EgressOnlyRuleId = value;
+                }
+            }
 
-			public string InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
-				}
-			}
+            public string InstanceType
+            {
+                get
+                {
+                    return instanceType;
+                }
+                set
+                {
+                    instanceType = value;
+                }
+            }
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-		}
-	}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
+        }
+    }
 }

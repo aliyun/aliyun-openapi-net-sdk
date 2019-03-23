@@ -21,235 +21,235 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeDeploymentSetsResponse : AcsResponse
-	{
+    public class DescribeDeploymentSetsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string regionId;
+        private string regionId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeDeploymentSets_DeploymentSet> deploymentSets;
+        private List<DescribeDeploymentSets_DeploymentSet> deploymentSets;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeDeploymentSets_DeploymentSet> DeploymentSets
-		{
-			get
-			{
-				return deploymentSets;
-			}
-			set	
-			{
-				deploymentSets = value;
-			}
-		}
+        public List<DescribeDeploymentSets_DeploymentSet> DeploymentSets
+        {
+            get
+            {
+                return deploymentSets;
+            }
+            set
+            {
+                deploymentSets = value;
+            }
+        }
 
-		public class DescribeDeploymentSets_DeploymentSet
-		{
+        public class DescribeDeploymentSets_DeploymentSet
+        {
 
-			private string deploymentSetId;
+            private string deploymentSetId;
 
-			private string deploymentSetDescription;
+            private string deploymentSetDescription;
 
-			private string deploymentSetName;
+            private string deploymentSetName;
 
-			private string strategy;
+            private string strategy;
 
-			private string deploymentStrategy;
+            private string deploymentStrategy;
 
-			private string domain;
+            private string domain;
 
-			private string granularity;
+            private string granularity;
 
-			private int? instanceAmount;
+            private int? instanceAmount;
 
-			private string creationTime;
+            private string creationTime;
 
-			private List<string> instanceIds;
+            private List<string> instanceIds;
 
-			public string DeploymentSetId
-			{
-				get
-				{
-					return deploymentSetId;
-				}
-				set	
-				{
-					deploymentSetId = value;
-				}
-			}
+            public string DeploymentSetId
+            {
+                get
+                {
+                    return deploymentSetId;
+                }
+                set
+                {
+                    deploymentSetId = value;
+                }
+            }
 
-			public string DeploymentSetDescription
-			{
-				get
-				{
-					return deploymentSetDescription;
-				}
-				set	
-				{
-					deploymentSetDescription = value;
-				}
-			}
+            public string DeploymentSetDescription
+            {
+                get
+                {
+                    return deploymentSetDescription;
+                }
+                set
+                {
+                    deploymentSetDescription = value;
+                }
+            }
 
-			public string DeploymentSetName
-			{
-				get
-				{
-					return deploymentSetName;
-				}
-				set	
-				{
-					deploymentSetName = value;
-				}
-			}
+            public string DeploymentSetName
+            {
+                get
+                {
+                    return deploymentSetName;
+                }
+                set
+                {
+                    deploymentSetName = value;
+                }
+            }
 
-			public string Strategy
-			{
-				get
-				{
-					return strategy;
-				}
-				set	
-				{
-					strategy = value;
-				}
-			}
+            public string Strategy
+            {
+                get
+                {
+                    return strategy;
+                }
+                set
+                {
+                    strategy = value;
+                }
+            }
 
-			public string DeploymentStrategy
-			{
-				get
-				{
-					return deploymentStrategy;
-				}
-				set	
-				{
-					deploymentStrategy = value;
-				}
-			}
+            public string DeploymentStrategy
+            {
+                get
+                {
+                    return deploymentStrategy;
+                }
+                set
+                {
+                    deploymentStrategy = value;
+                }
+            }
 
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
+            public string Domain
+            {
+                get
+                {
+                    return domain;
+                }
+                set
+                {
+                    domain = value;
+                }
+            }
 
-			public string Granularity
-			{
-				get
-				{
-					return granularity;
-				}
-				set	
-				{
-					granularity = value;
-				}
-			}
+            public string Granularity
+            {
+                get
+                {
+                    return granularity;
+                }
+                set
+                {
+                    granularity = value;
+                }
+            }
 
-			public int? InstanceAmount
-			{
-				get
-				{
-					return instanceAmount;
-				}
-				set	
-				{
-					instanceAmount = value;
-				}
-			}
+            public int? InstanceAmount
+            {
+                get
+                {
+                    return instanceAmount;
+                }
+                set
+                {
+                    instanceAmount = value;
+                }
+            }
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+            public string CreationTime
+            {
+                get
+                {
+                    return creationTime;
+                }
+                set
+                {
+                    creationTime = value;
+                }
+            }
 
-			public List<string> InstanceIds
-			{
-				get
-				{
-					return instanceIds;
-				}
-				set	
-				{
-					instanceIds = value;
-				}
-			}
-		}
-	}
+            public List<string> InstanceIds
+            {
+                get
+                {
+                    return instanceIds;
+                }
+                set
+                {
+                    instanceIds = value;
+                }
+            }
+        }
+    }
 }

@@ -21,77 +21,77 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class EipFillProductResponse : AcsResponse
-	{
+    public class EipFillProductResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string data;
+        private string data;
 
-		private string code;
+        private string code;
 
-		private bool? success;
+        private bool? success;
 
-		private string message;
+        private string message;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
+        public string Data
+        {
+            get
+            {
+                return data;
+            }
+            set
+            {
+                data = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-	}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
+    }
 }

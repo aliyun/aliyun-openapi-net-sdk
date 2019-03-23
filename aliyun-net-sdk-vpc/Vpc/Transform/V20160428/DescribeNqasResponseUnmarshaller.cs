@@ -27,28 +27,29 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DescribeNqasResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeNqasResponse describeNqasResponse = new DescribeNqasResponse();
+            DescribeNqasResponse describeNqasResponse = new DescribeNqasResponse();
 
-			describeNqasResponse.HttpResponse = context.HttpResponse;
-			describeNqasResponse.RequestId = context.StringValue("DescribeNqas.RequestId");
-			describeNqasResponse.TotalCount = context.IntegerValue("DescribeNqas.TotalCount");
-			describeNqasResponse.PageNumber = context.IntegerValue("DescribeNqas.PageNumber");
-			describeNqasResponse.PageSize = context.IntegerValue("DescribeNqas.PageSize");
+            describeNqasResponse.HttpResponse = context.HttpResponse;
+            describeNqasResponse.RequestId = context.StringValue("DescribeNqas.RequestId");
+            describeNqasResponse.TotalCount = context.IntegerValue("DescribeNqas.TotalCount");
+            describeNqasResponse.PageNumber = context.IntegerValue("DescribeNqas.PageNumber");
+            describeNqasResponse.PageSize = context.IntegerValue("DescribeNqas.PageSize");
 
-			List<DescribeNqasResponse.DescribeNqas_Nqa> describeNqasResponse_nqas = new List<DescribeNqasResponse.DescribeNqas_Nqa>();
-			for (int i = 0; i < context.Length("DescribeNqas.Nqas.Length"); i++) {
-				DescribeNqasResponse.DescribeNqas_Nqa nqa = new DescribeNqasResponse.DescribeNqas_Nqa();
-				nqa.NqaId = context.StringValue("DescribeNqas.Nqas["+ i +"].NqaId");
-				nqa.RegionId = context.StringValue("DescribeNqas.Nqas["+ i +"].RegionId");
-				nqa.Status = context.StringValue("DescribeNqas.Nqas["+ i +"].Status");
-				nqa.RouterId = context.StringValue("DescribeNqas.Nqas["+ i +"].RouterId");
-				nqa.DestinationIp = context.StringValue("DescribeNqas.Nqas["+ i +"].DestinationIp");
+            List<DescribeNqasResponse.DescribeNqas_Nqa> describeNqasResponse_nqas = new List<DescribeNqasResponse.DescribeNqas_Nqa>();
+            for (int i = 0; i < context.Length("DescribeNqas.Nqas.Length"); i++)
+            {
+                DescribeNqasResponse.DescribeNqas_Nqa nqa = new DescribeNqasResponse.DescribeNqas_Nqa();
+                nqa.NqaId = context.StringValue("DescribeNqas.Nqas[" + i + "].NqaId");
+                nqa.RegionId = context.StringValue("DescribeNqas.Nqas[" + i + "].RegionId");
+                nqa.Status = context.StringValue("DescribeNqas.Nqas[" + i + "].Status");
+                nqa.RouterId = context.StringValue("DescribeNqas.Nqas[" + i + "].RouterId");
+                nqa.DestinationIp = context.StringValue("DescribeNqas.Nqas[" + i + "].DestinationIp");
 
-				describeNqasResponse_nqas.Add(nqa);
-			}
-			describeNqasResponse.Nqas = describeNqasResponse_nqas;
-        
-			return describeNqasResponse;
+                describeNqasResponse_nqas.Add(nqa);
+            }
+            describeNqasResponse.Nqas = describeNqasResponse_nqas;
+
+            return describeNqasResponse;
         }
     }
 }

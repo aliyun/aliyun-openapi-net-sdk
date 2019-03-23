@@ -33,327 +33,327 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private bool? autoPay;
+        private bool? autoPay;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string clientToken;
+        private string clientToken;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string description;
+        private string description;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string spec;
+        private string spec;
 
-		private string duration;
+        private string duration;
 
-		private string regionId;
+        private string regionId;
 
-		private string vpcId;
+        private string vpcId;
 
-		private string name;
+        private string name;
 
-		private string action;
+        private string action;
 
-		private List<BandwidthPackage> bandwidthPackages;
+        private List<BandwidthPackage> bandwidthPackages;
 
-		private string instanceChargeType;
+        private string instanceChargeType;
 
-		private string pricingCycle;
+        private string pricingCycle;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public bool? AutoPay
-		{
-			get
-			{
-				return autoPay;
-			}
-			set	
-			{
-				autoPay = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
-			}
-		}
+        public bool? AutoPay
+        {
+            get
+            {
+                return autoPay;
+            }
+            set
+            {
+                autoPay = value;
+                DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
+        public string ClientToken
+        {
+            get
+            {
+                return clientToken;
+            }
+            set
+            {
+                clientToken = value;
+                DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string Spec
-		{
-			get
-			{
-				return spec;
-			}
-			set	
-			{
-				spec = value;
-				DictionaryUtil.Add(QueryParameters, "Spec", value);
-			}
-		}
+        public string Spec
+        {
+            get
+            {
+                return spec;
+            }
+            set
+            {
+                spec = value;
+                DictionaryUtil.Add(QueryParameters, "Spec", value);
+            }
+        }
 
-		public string Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value);
-			}
-		}
+        public string Duration
+        {
+            get
+            {
+                return duration;
+            }
+            set
+            {
+                duration = value;
+                DictionaryUtil.Add(QueryParameters, "Duration", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
+        public string VpcId
+        {
+            get
+            {
+                return vpcId;
+            }
+            set
+            {
+                vpcId = value;
+                DictionaryUtil.Add(QueryParameters, "VpcId", value);
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public List<BandwidthPackage> BandwidthPackages
-		{
-			get
-			{
-				return bandwidthPackages;
-			}
+        public List<BandwidthPackage> BandwidthPackages
+        {
+            get
+            {
+                return bandwidthPackages;
+            }
 
-			set
-			{
-				bandwidthPackages = value;
-				for (int i = 0; i < bandwidthPackages.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Bandwidth", bandwidthPackages[i].Bandwidth);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Zone", bandwidthPackages[i].Zone);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".InternetChargeType", bandwidthPackages[i].InternetChargeType);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".ISP", bandwidthPackages[i].ISP);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".IpCount", bandwidthPackages[i].IpCount);
-				}
-			}
-		}
+            set
+            {
+                bandwidthPackages = value;
+                for (int i = 0; i < bandwidthPackages.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "BandwidthPackage." + (i + 1) + ".Bandwidth", bandwidthPackages[i].Bandwidth);
+                    DictionaryUtil.Add(QueryParameters, "BandwidthPackage." + (i + 1) + ".Zone", bandwidthPackages[i].Zone);
+                    DictionaryUtil.Add(QueryParameters, "BandwidthPackage." + (i + 1) + ".InternetChargeType", bandwidthPackages[i].InternetChargeType);
+                    DictionaryUtil.Add(QueryParameters, "BandwidthPackage." + (i + 1) + ".ISP", bandwidthPackages[i].ISP);
+                    DictionaryUtil.Add(QueryParameters, "BandwidthPackage." + (i + 1) + ".IpCount", bandwidthPackages[i].IpCount);
+                }
+            }
+        }
 
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
-			}
-		}
+        public string InstanceChargeType
+        {
+            get
+            {
+                return instanceChargeType;
+            }
+            set
+            {
+                instanceChargeType = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+            }
+        }
 
-		public string PricingCycle
-		{
-			get
-			{
-				return pricingCycle;
-			}
-			set	
-			{
-				pricingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
-			}
-		}
+        public string PricingCycle
+        {
+            get
+            {
+                return pricingCycle;
+            }
+            set
+            {
+                pricingCycle = value;
+                DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
+            }
+        }
 
-		public class BandwidthPackage
-		{
+        public class BandwidthPackage
+        {
 
-			private int? bandwidth;
+            private int? bandwidth;
 
-			private string zone;
+            private string zone;
 
-			private string internetChargeType;
+            private string internetChargeType;
 
-			private string iSP;
+            private string iSP;
 
-			private int? ipCount;
+            private int? ipCount;
 
-			public int? Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
-				}
-			}
+            public int? Bandwidth
+            {
+                get
+                {
+                    return bandwidth;
+                }
+                set
+                {
+                    bandwidth = value;
+                }
+            }
 
-			public string Zone
-			{
-				get
-				{
-					return zone;
-				}
-				set	
-				{
-					zone = value;
-				}
-			}
+            public string Zone
+            {
+                get
+                {
+                    return zone;
+                }
+                set
+                {
+                    zone = value;
+                }
+            }
 
-			public string InternetChargeType
-			{
-				get
-				{
-					return internetChargeType;
-				}
-				set	
-				{
-					internetChargeType = value;
-				}
-			}
+            public string InternetChargeType
+            {
+                get
+                {
+                    return internetChargeType;
+                }
+                set
+                {
+                    internetChargeType = value;
+                }
+            }
 
-			public string ISP
-			{
-				get
-				{
-					return iSP;
-				}
-				set	
-				{
-					iSP = value;
-				}
-			}
+            public string ISP
+            {
+                get
+                {
+                    return iSP;
+                }
+                set
+                {
+                    iSP = value;
+                }
+            }
 
-			public int? IpCount
-			{
-				get
-				{
-					return ipCount;
-				}
-				set	
-				{
-					ipCount = value;
-				}
-			}
-		}
+            public int? IpCount
+            {
+                get
+                {
+                    return ipCount;
+                }
+                set
+                {
+                    ipCount = value;
+                }
+            }
+        }
 
         public override CreateNatGatewayResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

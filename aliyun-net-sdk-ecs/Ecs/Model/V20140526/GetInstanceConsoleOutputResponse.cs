@@ -21,63 +21,63 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class GetInstanceConsoleOutputResponse : AcsResponse
-	{
+    public class GetInstanceConsoleOutputResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string consoleOutput;
+        private string consoleOutput;
 
-		private string lastUpdateTime;
+        private string lastUpdateTime;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+            }
+        }
 
-		public string ConsoleOutput
-		{
-			get
-			{
-				return consoleOutput;
-			}
-			set	
-			{
-				consoleOutput = value;
-			}
-		}
+        public string ConsoleOutput
+        {
+            get
+            {
+                return consoleOutput;
+            }
+            set
+            {
+                consoleOutput = value;
+            }
+        }
 
-		public string LastUpdateTime
-		{
-			get
-			{
-				return lastUpdateTime;
-			}
-			set	
-			{
-				lastUpdateTime = value;
-			}
-		}
-	}
+        public string LastUpdateTime
+        {
+            get
+            {
+                return lastUpdateTime;
+            }
+            set
+            {
+                lastUpdateTime = value;
+            }
+        }
+    }
 }

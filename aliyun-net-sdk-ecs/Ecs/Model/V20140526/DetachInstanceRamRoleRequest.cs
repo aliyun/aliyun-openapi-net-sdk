@@ -33,110 +33,110 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string regionId;
+        private string regionId;
 
-		private string instanceIds;
+        private string instanceIds;
 
-		private string action;
+        private string action;
 
-		private string ramRoleName;
+        private string ramRoleName;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string InstanceIds
-		{
-			get
-			{
-				return instanceIds;
-			}
-			set	
-			{
-				instanceIds = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
-			}
-		}
+        public string InstanceIds
+        {
+            get
+            {
+                return instanceIds;
+            }
+            set
+            {
+                instanceIds = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string RamRoleName
-		{
-			get
-			{
-				return ramRoleName;
-			}
-			set	
-			{
-				ramRoleName = value;
-				DictionaryUtil.Add(QueryParameters, "RamRoleName", value);
-			}
-		}
+        public string RamRoleName
+        {
+            get
+            {
+                return ramRoleName;
+            }
+            set
+            {
+                ramRoleName = value;
+                DictionaryUtil.Add(QueryParameters, "RamRoleName", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override DetachInstanceRamRoleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

@@ -28,20 +28,20 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeRefreshQuotaResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeRefreshQuotaResponse describeRefreshQuotaResponse = new DescribeRefreshQuotaResponse();
+            DescribeRefreshQuotaResponse describeRefreshQuotaResponse = new DescribeRefreshQuotaResponse();
 
-			describeRefreshQuotaResponse.HttpResponse = context.HttpResponse;
-			describeRefreshQuotaResponse.RequestId = context.StringValue("DescribeRefreshQuota.RequestId");
-			describeRefreshQuotaResponse.UrlQuota = context.StringValue("DescribeRefreshQuota.UrlQuota");
-			describeRefreshQuotaResponse.DirQuota = context.StringValue("DescribeRefreshQuota.DirQuota");
-			describeRefreshQuotaResponse.UrlRemain = context.StringValue("DescribeRefreshQuota.UrlRemain");
-			describeRefreshQuotaResponse.DirRemain = context.StringValue("DescribeRefreshQuota.DirRemain");
-			describeRefreshQuotaResponse.PreloadQuota = context.StringValue("DescribeRefreshQuota.PreloadQuota");
-			describeRefreshQuotaResponse.BlockQuota = context.StringValue("DescribeRefreshQuota.BlockQuota");
-			describeRefreshQuotaResponse.PreloadRemain = context.StringValue("DescribeRefreshQuota.PreloadRemain");
-			describeRefreshQuotaResponse.BlockRemain = context.StringValue("DescribeRefreshQuota.BlockRemain");
-        
-			return describeRefreshQuotaResponse;
+            describeRefreshQuotaResponse.HttpResponse = context.HttpResponse;
+            describeRefreshQuotaResponse.RequestId = context.StringValue("DescribeRefreshQuota.RequestId");
+            describeRefreshQuotaResponse.UrlQuota = context.StringValue("DescribeRefreshQuota.UrlQuota");
+            describeRefreshQuotaResponse.DirQuota = context.StringValue("DescribeRefreshQuota.DirQuota");
+            describeRefreshQuotaResponse.UrlRemain = context.StringValue("DescribeRefreshQuota.UrlRemain");
+            describeRefreshQuotaResponse.DirRemain = context.StringValue("DescribeRefreshQuota.DirRemain");
+            describeRefreshQuotaResponse.PreloadQuota = context.StringValue("DescribeRefreshQuota.PreloadQuota");
+            describeRefreshQuotaResponse.BlockQuota = context.StringValue("DescribeRefreshQuota.BlockQuota");
+            describeRefreshQuotaResponse.PreloadRemain = context.StringValue("DescribeRefreshQuota.PreloadRemain");
+            describeRefreshQuotaResponse.BlockRemain = context.StringValue("DescribeRefreshQuota.BlockRemain");
+
+            return describeRefreshQuotaResponse;
         }
     }
 }

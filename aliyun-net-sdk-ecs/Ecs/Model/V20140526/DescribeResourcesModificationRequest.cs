@@ -33,200 +33,200 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private float? memory;
+        private float? memory;
 
-		private int? cores;
+        private int? cores;
 
-		private string regionId;
+        private string regionId;
 
-		private bool? migrateAcrossZone;
+        private bool? migrateAcrossZone;
 
-		private string action;
+        private string action;
 
-		private string instanceType;
+        private string instanceType;
 
-		private string resourceId;
+        private string resourceId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string operationType;
+        private string operationType;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string destinationResource;
+        private string destinationResource;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public float? Memory
-		{
-			get
-			{
-				return memory;
-			}
-			set	
-			{
-				memory = value;
-				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
-			}
-		}
+        public float? Memory
+        {
+            get
+            {
+                return memory;
+            }
+            set
+            {
+                memory = value;
+                DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
+            }
+        }
 
-		public int? Cores
-		{
-			get
-			{
-				return cores;
-			}
-			set	
-			{
-				cores = value;
-				DictionaryUtil.Add(QueryParameters, "Cores", value.ToString());
-			}
-		}
+        public int? Cores
+        {
+            get
+            {
+                return cores;
+            }
+            set
+            {
+                cores = value;
+                DictionaryUtil.Add(QueryParameters, "Cores", value.ToString());
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public bool? MigrateAcrossZone
-		{
-			get
-			{
-				return migrateAcrossZone;
-			}
-			set	
-			{
-				migrateAcrossZone = value;
-				DictionaryUtil.Add(QueryParameters, "MigrateAcrossZone", value.ToString());
-			}
-		}
+        public bool? MigrateAcrossZone
+        {
+            get
+            {
+                return migrateAcrossZone;
+            }
+            set
+            {
+                migrateAcrossZone = value;
+                DictionaryUtil.Add(QueryParameters, "MigrateAcrossZone", value.ToString());
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
+        public string InstanceType
+        {
+            get
+            {
+                return instanceType;
+            }
+            set
+            {
+                instanceType = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+            }
+        }
 
-		public string ResourceId
-		{
-			get
-			{
-				return resourceId;
-			}
-			set	
-			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
+        public string ResourceId
+        {
+            get
+            {
+                return resourceId;
+            }
+            set
+            {
+                resourceId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string OperationType
-		{
-			get
-			{
-				return operationType;
-			}
-			set	
-			{
-				operationType = value;
-				DictionaryUtil.Add(QueryParameters, "OperationType", value);
-			}
-		}
+        public string OperationType
+        {
+            get
+            {
+                return operationType;
+            }
+            set
+            {
+                operationType = value;
+                DictionaryUtil.Add(QueryParameters, "OperationType", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string DestinationResource
-		{
-			get
-			{
-				return destinationResource;
-			}
-			set	
-			{
-				destinationResource = value;
-				DictionaryUtil.Add(QueryParameters, "DestinationResource", value);
-			}
-		}
+        public string DestinationResource
+        {
+            get
+            {
+                return destinationResource;
+            }
+            set
+            {
+                destinationResource = value;
+                DictionaryUtil.Add(QueryParameters, "DestinationResource", value);
+            }
+        }
 
         public override DescribeResourcesModificationResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

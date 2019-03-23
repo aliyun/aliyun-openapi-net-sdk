@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DeleteSecurityGroupResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteSecurityGroupResponse deleteSecurityGroupResponse = new DeleteSecurityGroupResponse();
+            DeleteSecurityGroupResponse deleteSecurityGroupResponse = new DeleteSecurityGroupResponse();
 
-			deleteSecurityGroupResponse.HttpResponse = context.HttpResponse;
-			deleteSecurityGroupResponse.RequestId = context.StringValue("DeleteSecurityGroup.RequestId");
-        
-			return deleteSecurityGroupResponse;
+            deleteSecurityGroupResponse.HttpResponse = context.HttpResponse;
+            deleteSecurityGroupResponse.RequestId = context.StringValue("DeleteSecurityGroup.RequestId");
+
+            return deleteSecurityGroupResponse;
         }
     }
 }

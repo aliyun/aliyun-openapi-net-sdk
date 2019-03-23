@@ -21,327 +21,327 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class GetSurveyResponse : AcsResponse
-	{
+    public class GetSurveyResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? success;
+        private bool? success;
 
-		private string code;
+        private string code;
 
-		private string message;
+        private string message;
 
-		private int? httpStatusCode;
+        private int? httpStatusCode;
 
-		private GetSurvey_Survey survey;
+        private GetSurvey_Survey survey;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+        public int? HttpStatusCode
+        {
+            get
+            {
+                return httpStatusCode;
+            }
+            set
+            {
+                httpStatusCode = value;
+            }
+        }
 
-		public GetSurvey_Survey Survey
-		{
-			get
-			{
-				return survey;
-			}
-			set	
-			{
-				survey = value;
-			}
-		}
+        public GetSurvey_Survey Survey
+        {
+            get
+            {
+                return survey;
+            }
+            set
+            {
+                survey = value;
+            }
+        }
 
-		public class GetSurvey_Survey
-		{
+        public class GetSurvey_Survey
+        {
 
-			private string id;
+            private string id;
 
-			private string scenarioUuid;
+            private string scenarioUuid;
 
-			private string name;
+            private string name;
 
-			private string description;
+            private string description;
 
-			private string role;
+            private string role;
 
-			private int? round;
+            private int? round;
 
-			private string hotWords;
+            private string hotWords;
 
-			private string speechOptimizationParam;
+            private string speechOptimizationParam;
 
-			private string globalQuestions;
+            private string globalQuestions;
 
-			private GetSurvey_Flow flow;
+            private GetSurvey_Flow flow;
 
-			private GetSurvey_AsrCustomModel asrCustomModel;
+            private GetSurvey_AsrCustomModel asrCustomModel;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+            public string Id
+            {
+                get
+                {
+                    return id;
+                }
+                set
+                {
+                    id = value;
+                }
+            }
 
-			public string ScenarioUuid
-			{
-				get
-				{
-					return scenarioUuid;
-				}
-				set	
-				{
-					scenarioUuid = value;
-				}
-			}
+            public string ScenarioUuid
+            {
+                get
+                {
+                    return scenarioUuid;
+                }
+                set
+                {
+                    scenarioUuid = value;
+                }
+            }
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string Role
-			{
-				get
-				{
-					return role;
-				}
-				set	
-				{
-					role = value;
-				}
-			}
+            public string Role
+            {
+                get
+                {
+                    return role;
+                }
+                set
+                {
+                    role = value;
+                }
+            }
 
-			public int? Round
-			{
-				get
-				{
-					return round;
-				}
-				set	
-				{
-					round = value;
-				}
-			}
+            public int? Round
+            {
+                get
+                {
+                    return round;
+                }
+                set
+                {
+                    round = value;
+                }
+            }
 
-			public string HotWords
-			{
-				get
-				{
-					return hotWords;
-				}
-				set	
-				{
-					hotWords = value;
-				}
-			}
+            public string HotWords
+            {
+                get
+                {
+                    return hotWords;
+                }
+                set
+                {
+                    hotWords = value;
+                }
+            }
 
-			public string SpeechOptimizationParam
-			{
-				get
-				{
-					return speechOptimizationParam;
-				}
-				set	
-				{
-					speechOptimizationParam = value;
-				}
-			}
+            public string SpeechOptimizationParam
+            {
+                get
+                {
+                    return speechOptimizationParam;
+                }
+                set
+                {
+                    speechOptimizationParam = value;
+                }
+            }
 
-			public string GlobalQuestions
-			{
-				get
-				{
-					return globalQuestions;
-				}
-				set	
-				{
-					globalQuestions = value;
-				}
-			}
+            public string GlobalQuestions
+            {
+                get
+                {
+                    return globalQuestions;
+                }
+                set
+                {
+                    globalQuestions = value;
+                }
+            }
 
-			public GetSurvey_Flow Flow
-			{
-				get
-				{
-					return flow;
-				}
-				set	
-				{
-					flow = value;
-				}
-			}
+            public GetSurvey_Flow Flow
+            {
+                get
+                {
+                    return flow;
+                }
+                set
+                {
+                    flow = value;
+                }
+            }
 
-			public GetSurvey_AsrCustomModel AsrCustomModel
-			{
-				get
-				{
-					return asrCustomModel;
-				}
-				set	
-				{
-					asrCustomModel = value;
-				}
-			}
+            public GetSurvey_AsrCustomModel AsrCustomModel
+            {
+                get
+                {
+                    return asrCustomModel;
+                }
+                set
+                {
+                    asrCustomModel = value;
+                }
+            }
 
-			public class GetSurvey_Flow
-			{
+            public class GetSurvey_Flow
+            {
 
-				private string flowId;
+                private string flowId;
 
-				private bool? isPublished;
+                private bool? isPublished;
 
-				private string flowJson;
+                private string flowJson;
 
-				public string FlowId
-				{
-					get
-					{
-						return flowId;
-					}
-					set	
-					{
-						flowId = value;
-					}
-				}
+                public string FlowId
+                {
+                    get
+                    {
+                        return flowId;
+                    }
+                    set
+                    {
+                        flowId = value;
+                    }
+                }
 
-				public bool? IsPublished
-				{
-					get
-					{
-						return isPublished;
-					}
-					set	
-					{
-						isPublished = value;
-					}
-				}
+                public bool? IsPublished
+                {
+                    get
+                    {
+                        return isPublished;
+                    }
+                    set
+                    {
+                        isPublished = value;
+                    }
+                }
 
-				public string FlowJson
-				{
-					get
-					{
-						return flowJson;
-					}
-					set	
-					{
-						flowJson = value;
-					}
-				}
-			}
+                public string FlowJson
+                {
+                    get
+                    {
+                        return flowJson;
+                    }
+                    set
+                    {
+                        flowJson = value;
+                    }
+                }
+            }
 
-			public class GetSurvey_AsrCustomModel
-			{
+            public class GetSurvey_AsrCustomModel
+            {
 
-				private string corpora;
+                private string corpora;
 
-				private int? customModelStatus;
+                private int? customModelStatus;
 
-				public string Corpora
-				{
-					get
-					{
-						return corpora;
-					}
-					set	
-					{
-						corpora = value;
-					}
-				}
+                public string Corpora
+                {
+                    get
+                    {
+                        return corpora;
+                    }
+                    set
+                    {
+                        corpora = value;
+                    }
+                }
 
-				public int? CustomModelStatus
-				{
-					get
-					{
-						return customModelStatus;
-					}
-					set	
-					{
-						customModelStatus = value;
-					}
-				}
-			}
-		}
-	}
+                public int? CustomModelStatus
+                {
+                    get
+                    {
+                        return customModelStatus;
+                    }
+                    set
+                    {
+                        customModelStatus = value;
+                    }
+                }
+            }
+        }
+    }
 }

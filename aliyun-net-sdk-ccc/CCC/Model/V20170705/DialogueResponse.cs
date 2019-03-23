@@ -21,137 +21,137 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class DialogueResponse : AcsResponse
-	{
+    public class DialogueResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? success;
+        private bool? success;
 
-		private string code;
+        private string code;
 
-		private string message;
+        private string message;
 
-		private int? httpStatusCode;
+        private int? httpStatusCode;
 
-		private Dialogue_Feedback feedback;
+        private Dialogue_Feedback feedback;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+        public int? HttpStatusCode
+        {
+            get
+            {
+                return httpStatusCode;
+            }
+            set
+            {
+                httpStatusCode = value;
+            }
+        }
 
-		public Dialogue_Feedback Feedback
-		{
-			get
-			{
-				return feedback;
-			}
-			set	
-			{
-				feedback = value;
-			}
-		}
+        public Dialogue_Feedback Feedback
+        {
+            get
+            {
+                return feedback;
+            }
+            set
+            {
+                feedback = value;
+            }
+        }
 
-		public class Dialogue_Feedback
-		{
+        public class Dialogue_Feedback
+        {
 
-			private string content;
+            private string content;
 
-			private string action;
+            private string action;
 
-			private string actionParams;
+            private string actionParams;
 
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
-				}
-			}
+            public string Content
+            {
+                get
+                {
+                    return content;
+                }
+                set
+                {
+                    content = value;
+                }
+            }
 
-			public string Action
-			{
-				get
-				{
-					return action;
-				}
-				set	
-				{
-					action = value;
-				}
-			}
+            public string Action
+            {
+                get
+                {
+                    return action;
+                }
+                set
+                {
+                    action = value;
+                }
+            }
 
-			public string ActionParams
-			{
-				get
-				{
-					return actionParams;
-				}
-				set	
-				{
-					actionParams = value;
-				}
-			}
-		}
-	}
+            public string ActionParams
+            {
+                get
+                {
+                    return actionParams;
+                }
+                set
+                {
+                    actionParams = value;
+                }
+            }
+        }
+    }
 }

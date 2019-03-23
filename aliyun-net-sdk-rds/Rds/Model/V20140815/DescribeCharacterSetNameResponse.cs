@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeCharacterSetNameResponse : AcsResponse
-	{
+    public class DescribeCharacterSetNameResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string engine;
+        private string engine;
 
-		private List<string> characterSetNameItems;
+        private List<string> characterSetNameItems;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
+        public string Engine
+        {
+            get
+            {
+                return engine;
+            }
+            set
+            {
+                engine = value;
+            }
+        }
 
-		public List<string> CharacterSetNameItems
-		{
-			get
-			{
-				return characterSetNameItems;
-			}
-			set	
-			{
-				characterSetNameItems = value;
-			}
-		}
-	}
+        public List<string> CharacterSetNameItems
+        {
+            get
+            {
+                return characterSetNameItems;
+            }
+            set
+            {
+                characterSetNameItems = value;
+            }
+        }
+    }
 }

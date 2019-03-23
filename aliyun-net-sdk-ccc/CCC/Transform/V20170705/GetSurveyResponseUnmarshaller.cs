@@ -27,39 +27,39 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static GetSurveyResponse Unmarshall(UnmarshallerContext context)
         {
-			GetSurveyResponse getSurveyResponse = new GetSurveyResponse();
+            GetSurveyResponse getSurveyResponse = new GetSurveyResponse();
 
-			getSurveyResponse.HttpResponse = context.HttpResponse;
-			getSurveyResponse.RequestId = context.StringValue("GetSurvey.RequestId");
-			getSurveyResponse.Success = context.BooleanValue("GetSurvey.Success");
-			getSurveyResponse.Code = context.StringValue("GetSurvey.Code");
-			getSurveyResponse.Message = context.StringValue("GetSurvey.Message");
-			getSurveyResponse.HttpStatusCode = context.IntegerValue("GetSurvey.HttpStatusCode");
+            getSurveyResponse.HttpResponse = context.HttpResponse;
+            getSurveyResponse.RequestId = context.StringValue("GetSurvey.RequestId");
+            getSurveyResponse.Success = context.BooleanValue("GetSurvey.Success");
+            getSurveyResponse.Code = context.StringValue("GetSurvey.Code");
+            getSurveyResponse.Message = context.StringValue("GetSurvey.Message");
+            getSurveyResponse.HttpStatusCode = context.IntegerValue("GetSurvey.HttpStatusCode");
 
-			GetSurveyResponse.GetSurvey_Survey survey = new GetSurveyResponse.GetSurvey_Survey();
-			survey.Id = context.StringValue("GetSurvey.Survey.Id");
-			survey.ScenarioUuid = context.StringValue("GetSurvey.Survey.ScenarioUuid");
-			survey.Name = context.StringValue("GetSurvey.Survey.Name");
-			survey.Description = context.StringValue("GetSurvey.Survey.Description");
-			survey.Role = context.StringValue("GetSurvey.Survey.Role");
-			survey.Round = context.IntegerValue("GetSurvey.Survey.Round");
-			survey.HotWords = context.StringValue("GetSurvey.Survey.HotWords");
-			survey.SpeechOptimizationParam = context.StringValue("GetSurvey.Survey.SpeechOptimizationParam");
-			survey.GlobalQuestions = context.StringValue("GetSurvey.Survey.GlobalQuestions");
+            GetSurveyResponse.GetSurvey_Survey survey = new GetSurveyResponse.GetSurvey_Survey();
+            survey.Id = context.StringValue("GetSurvey.Survey.Id");
+            survey.ScenarioUuid = context.StringValue("GetSurvey.Survey.ScenarioUuid");
+            survey.Name = context.StringValue("GetSurvey.Survey.Name");
+            survey.Description = context.StringValue("GetSurvey.Survey.Description");
+            survey.Role = context.StringValue("GetSurvey.Survey.Role");
+            survey.Round = context.IntegerValue("GetSurvey.Survey.Round");
+            survey.HotWords = context.StringValue("GetSurvey.Survey.HotWords");
+            survey.SpeechOptimizationParam = context.StringValue("GetSurvey.Survey.SpeechOptimizationParam");
+            survey.GlobalQuestions = context.StringValue("GetSurvey.Survey.GlobalQuestions");
 
-			GetSurveyResponse.GetSurvey_Survey.GetSurvey_Flow flow = new GetSurveyResponse.GetSurvey_Survey.GetSurvey_Flow();
-			flow.FlowId = context.StringValue("GetSurvey.Survey.Flow.FlowId");
-			flow.IsPublished = context.BooleanValue("GetSurvey.Survey.Flow.IsPublished");
-			flow.FlowJson = context.StringValue("GetSurvey.Survey.Flow.FlowJson");
-			survey.Flow = flow;
+            GetSurveyResponse.GetSurvey_Survey.GetSurvey_Flow flow = new GetSurveyResponse.GetSurvey_Survey.GetSurvey_Flow();
+            flow.FlowId = context.StringValue("GetSurvey.Survey.Flow.FlowId");
+            flow.IsPublished = context.BooleanValue("GetSurvey.Survey.Flow.IsPublished");
+            flow.FlowJson = context.StringValue("GetSurvey.Survey.Flow.FlowJson");
+            survey.Flow = flow;
 
-			GetSurveyResponse.GetSurvey_Survey.GetSurvey_AsrCustomModel asrCustomModel = new GetSurveyResponse.GetSurvey_Survey.GetSurvey_AsrCustomModel();
-			asrCustomModel.Corpora = context.StringValue("GetSurvey.Survey.AsrCustomModel.Corpora");
-			asrCustomModel.CustomModelStatus = context.IntegerValue("GetSurvey.Survey.AsrCustomModel.CustomModelStatus");
-			survey.AsrCustomModel = asrCustomModel;
-			getSurveyResponse.Survey = survey;
-        
-			return getSurveyResponse;
+            GetSurveyResponse.GetSurvey_Survey.GetSurvey_AsrCustomModel asrCustomModel = new GetSurveyResponse.GetSurvey_Survey.GetSurvey_AsrCustomModel();
+            asrCustomModel.Corpora = context.StringValue("GetSurvey.Survey.AsrCustomModel.Corpora");
+            asrCustomModel.CustomModelStatus = context.IntegerValue("GetSurvey.Survey.AsrCustomModel.CustomModelStatus");
+            survey.AsrCustomModel = asrCustomModel;
+            getSurveyResponse.Survey = survey;
+
+            return getSurveyResponse;
         }
     }
 }

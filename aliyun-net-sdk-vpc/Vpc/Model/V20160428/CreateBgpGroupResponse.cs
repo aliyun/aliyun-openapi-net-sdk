@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateBgpGroupResponse : AcsResponse
-	{
+    public class CreateBgpGroupResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string bgpGroupId;
+        private string bgpGroupId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string BgpGroupId
-		{
-			get
-			{
-				return bgpGroupId;
-			}
-			set	
-			{
-				bgpGroupId = value;
-			}
-		}
-	}
+        public string BgpGroupId
+        {
+            get
+            {
+                return bgpGroupId;
+            }
+            set
+            {
+                bgpGroupId = value;
+            }
+        }
+    }
 }

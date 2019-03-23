@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static CreateNetworkInterfaceResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateNetworkInterfaceResponse createNetworkInterfaceResponse = new CreateNetworkInterfaceResponse();
+            CreateNetworkInterfaceResponse createNetworkInterfaceResponse = new CreateNetworkInterfaceResponse();
 
-			createNetworkInterfaceResponse.HttpResponse = context.HttpResponse;
-			createNetworkInterfaceResponse.RequestId = context.StringValue("CreateNetworkInterface.RequestId");
-			createNetworkInterfaceResponse.NetworkInterfaceId = context.StringValue("CreateNetworkInterface.NetworkInterfaceId");
-        
-			return createNetworkInterfaceResponse;
+            createNetworkInterfaceResponse.HttpResponse = context.HttpResponse;
+            createNetworkInterfaceResponse.RequestId = context.StringValue("CreateNetworkInterface.RequestId");
+            createNetworkInterfaceResponse.NetworkInterfaceId = context.StringValue("CreateNetworkInterface.NetworkInterfaceId");
+
+            return createNetworkInterfaceResponse;
         }
     }
 }

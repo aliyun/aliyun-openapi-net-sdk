@@ -22,155 +22,155 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainFileSizeProportionDataResponse : AcsResponse
-	{
+    public class DescribeDomainFileSizeProportionDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string dataInterval;
+        private string dataInterval;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private List<DescribeDomainFileSizeProportionData_UsageData> fileSizeProportionDataInterval;
+        private List<DescribeDomainFileSizeProportionData_UsageData> fileSizeProportionDataInterval;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
+        public string DataInterval
+        {
+            get
+            {
+                return dataInterval;
+            }
+            set
+            {
+                dataInterval = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public List<DescribeDomainFileSizeProportionData_UsageData> FileSizeProportionDataInterval
-		{
-			get
-			{
-				return fileSizeProportionDataInterval;
-			}
-			set	
-			{
-				fileSizeProportionDataInterval = value;
-			}
-		}
+        public List<DescribeDomainFileSizeProportionData_UsageData> FileSizeProportionDataInterval
+        {
+            get
+            {
+                return fileSizeProportionDataInterval;
+            }
+            set
+            {
+                fileSizeProportionDataInterval = value;
+            }
+        }
 
-		public class DescribeDomainFileSizeProportionData_UsageData
-		{
+        public class DescribeDomainFileSizeProportionData_UsageData
+        {
 
-			private string timeStamp;
+            private string timeStamp;
 
-			private List<DescribeDomainFileSizeProportionData_FileSizeProportionData> _value;
+            private List<DescribeDomainFileSizeProportionData_FileSizeProportionData> _value;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
 
-			public List<DescribeDomainFileSizeProportionData_FileSizeProportionData> _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
-			}
+            public List<DescribeDomainFileSizeProportionData_FileSizeProportionData> _Value
+            {
+                get
+                {
+                    return _value;
+                }
+                set
+                {
+                    _value = value;
+                }
+            }
 
-			public class DescribeDomainFileSizeProportionData_FileSizeProportionData
-			{
+            public class DescribeDomainFileSizeProportionData_FileSizeProportionData
+            {
 
-				private string fileSize;
+                private string fileSize;
 
-				private string proportion;
+                private string proportion;
 
-				public string FileSize
-				{
-					get
-					{
-						return fileSize;
-					}
-					set	
-					{
-						fileSize = value;
-					}
-				}
+                public string FileSize
+                {
+                    get
+                    {
+                        return fileSize;
+                    }
+                    set
+                    {
+                        fileSize = value;
+                    }
+                }
 
-				public string Proportion
-				{
-					get
-					{
-						return proportion;
-					}
-					set	
-					{
-						proportion = value;
-					}
-				}
-			}
-		}
-	}
+                public string Proportion
+                {
+                    get
+                    {
+                        return proportion;
+                    }
+                    set
+                    {
+                        proportion = value;
+                    }
+                }
+            }
+        }
+    }
 }

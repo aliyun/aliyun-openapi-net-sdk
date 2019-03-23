@@ -21,267 +21,267 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeZonesResponse : AcsResponse
-	{
+    public class DescribeZonesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeZones_Zone> zones;
+        private List<DescribeZones_Zone> zones;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeZones_Zone> Zones
-		{
-			get
-			{
-				return zones;
-			}
-			set	
-			{
-				zones = value;
-			}
-		}
+        public List<DescribeZones_Zone> Zones
+        {
+            get
+            {
+                return zones;
+            }
+            set
+            {
+                zones = value;
+            }
+        }
 
-		public class DescribeZones_Zone
-		{
+        public class DescribeZones_Zone
+        {
 
-			private string zoneId;
+            private string zoneId;
 
-			private string localName;
+            private string localName;
 
-			private List<DescribeZones_ResourcesInfo> availableResources;
+            private List<DescribeZones_ResourcesInfo> availableResources;
 
-			private List<string> availableResourceCreation;
+            private List<string> availableResourceCreation;
 
-			private List<string> availableDiskCategories;
+            private List<string> availableDiskCategories;
 
-			private List<string> availableInstanceTypes;
+            private List<string> availableInstanceTypes;
 
-			private List<string> availableVolumeCategories;
+            private List<string> availableVolumeCategories;
 
-			private List<string> availableDedicatedHostTypes;
+            private List<string> availableDedicatedHostTypes;
 
-			private List<string> dedicatedHostGenerations;
+            private List<string> dedicatedHostGenerations;
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+            public string ZoneId
+            {
+                get
+                {
+                    return zoneId;
+                }
+                set
+                {
+                    zoneId = value;
+                }
+            }
 
-			public string LocalName
-			{
-				get
-				{
-					return localName;
-				}
-				set	
-				{
-					localName = value;
-				}
-			}
+            public string LocalName
+            {
+                get
+                {
+                    return localName;
+                }
+                set
+                {
+                    localName = value;
+                }
+            }
 
-			public List<DescribeZones_ResourcesInfo> AvailableResources
-			{
-				get
-				{
-					return availableResources;
-				}
-				set	
-				{
-					availableResources = value;
-				}
-			}
+            public List<DescribeZones_ResourcesInfo> AvailableResources
+            {
+                get
+                {
+                    return availableResources;
+                }
+                set
+                {
+                    availableResources = value;
+                }
+            }
 
-			public List<string> AvailableResourceCreation
-			{
-				get
-				{
-					return availableResourceCreation;
-				}
-				set	
-				{
-					availableResourceCreation = value;
-				}
-			}
+            public List<string> AvailableResourceCreation
+            {
+                get
+                {
+                    return availableResourceCreation;
+                }
+                set
+                {
+                    availableResourceCreation = value;
+                }
+            }
 
-			public List<string> AvailableDiskCategories
-			{
-				get
-				{
-					return availableDiskCategories;
-				}
-				set	
-				{
-					availableDiskCategories = value;
-				}
-			}
+            public List<string> AvailableDiskCategories
+            {
+                get
+                {
+                    return availableDiskCategories;
+                }
+                set
+                {
+                    availableDiskCategories = value;
+                }
+            }
 
-			public List<string> AvailableInstanceTypes
-			{
-				get
-				{
-					return availableInstanceTypes;
-				}
-				set	
-				{
-					availableInstanceTypes = value;
-				}
-			}
+            public List<string> AvailableInstanceTypes
+            {
+                get
+                {
+                    return availableInstanceTypes;
+                }
+                set
+                {
+                    availableInstanceTypes = value;
+                }
+            }
 
-			public List<string> AvailableVolumeCategories
-			{
-				get
-				{
-					return availableVolumeCategories;
-				}
-				set	
-				{
-					availableVolumeCategories = value;
-				}
-			}
+            public List<string> AvailableVolumeCategories
+            {
+                get
+                {
+                    return availableVolumeCategories;
+                }
+                set
+                {
+                    availableVolumeCategories = value;
+                }
+            }
 
-			public List<string> AvailableDedicatedHostTypes
-			{
-				get
-				{
-					return availableDedicatedHostTypes;
-				}
-				set	
-				{
-					availableDedicatedHostTypes = value;
-				}
-			}
+            public List<string> AvailableDedicatedHostTypes
+            {
+                get
+                {
+                    return availableDedicatedHostTypes;
+                }
+                set
+                {
+                    availableDedicatedHostTypes = value;
+                }
+            }
 
-			public List<string> DedicatedHostGenerations
-			{
-				get
-				{
-					return dedicatedHostGenerations;
-				}
-				set	
-				{
-					dedicatedHostGenerations = value;
-				}
-			}
+            public List<string> DedicatedHostGenerations
+            {
+                get
+                {
+                    return dedicatedHostGenerations;
+                }
+                set
+                {
+                    dedicatedHostGenerations = value;
+                }
+            }
 
-			public class DescribeZones_ResourcesInfo
-			{
+            public class DescribeZones_ResourcesInfo
+            {
 
-				private bool? ioOptimized;
+                private bool? ioOptimized;
 
-				private List<string> systemDiskCategories;
+                private List<string> systemDiskCategories;
 
-				private List<string> dataDiskCategories;
+                private List<string> dataDiskCategories;
 
-				private List<string> networkTypes;
+                private List<string> networkTypes;
 
-				private List<string> instanceTypes;
+                private List<string> instanceTypes;
 
-				private List<string> instanceTypeFamilies;
+                private List<string> instanceTypeFamilies;
 
-				private List<string> instanceGenerations;
+                private List<string> instanceGenerations;
 
-				public bool? IoOptimized
-				{
-					get
-					{
-						return ioOptimized;
-					}
-					set	
-					{
-						ioOptimized = value;
-					}
-				}
+                public bool? IoOptimized
+                {
+                    get
+                    {
+                        return ioOptimized;
+                    }
+                    set
+                    {
+                        ioOptimized = value;
+                    }
+                }
 
-				public List<string> SystemDiskCategories
-				{
-					get
-					{
-						return systemDiskCategories;
-					}
-					set	
-					{
-						systemDiskCategories = value;
-					}
-				}
+                public List<string> SystemDiskCategories
+                {
+                    get
+                    {
+                        return systemDiskCategories;
+                    }
+                    set
+                    {
+                        systemDiskCategories = value;
+                    }
+                }
 
-				public List<string> DataDiskCategories
-				{
-					get
-					{
-						return dataDiskCategories;
-					}
-					set	
-					{
-						dataDiskCategories = value;
-					}
-				}
+                public List<string> DataDiskCategories
+                {
+                    get
+                    {
+                        return dataDiskCategories;
+                    }
+                    set
+                    {
+                        dataDiskCategories = value;
+                    }
+                }
 
-				public List<string> NetworkTypes
-				{
-					get
-					{
-						return networkTypes;
-					}
-					set	
-					{
-						networkTypes = value;
-					}
-				}
+                public List<string> NetworkTypes
+                {
+                    get
+                    {
+                        return networkTypes;
+                    }
+                    set
+                    {
+                        networkTypes = value;
+                    }
+                }
 
-				public List<string> InstanceTypes
-				{
-					get
-					{
-						return instanceTypes;
-					}
-					set	
-					{
-						instanceTypes = value;
-					}
-				}
+                public List<string> InstanceTypes
+                {
+                    get
+                    {
+                        return instanceTypes;
+                    }
+                    set
+                    {
+                        instanceTypes = value;
+                    }
+                }
 
-				public List<string> InstanceTypeFamilies
-				{
-					get
-					{
-						return instanceTypeFamilies;
-					}
-					set	
-					{
-						instanceTypeFamilies = value;
-					}
-				}
+                public List<string> InstanceTypeFamilies
+                {
+                    get
+                    {
+                        return instanceTypeFamilies;
+                    }
+                    set
+                    {
+                        instanceTypeFamilies = value;
+                    }
+                }
 
-				public List<string> InstanceGenerations
-				{
-					get
-					{
-						return instanceGenerations;
-					}
-					set	
-					{
-						instanceGenerations = value;
-					}
-				}
-			}
-		}
-	}
+                public List<string> InstanceGenerations
+                {
+                    get
+                    {
+                        return instanceGenerations;
+                    }
+                    set
+                    {
+                        instanceGenerations = value;
+                    }
+                }
+            }
+        }
+    }
 }

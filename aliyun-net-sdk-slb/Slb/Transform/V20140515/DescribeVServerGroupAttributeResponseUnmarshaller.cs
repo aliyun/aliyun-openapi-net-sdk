@@ -27,28 +27,29 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static DescribeVServerGroupAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeVServerGroupAttributeResponse describeVServerGroupAttributeResponse = new DescribeVServerGroupAttributeResponse();
+            DescribeVServerGroupAttributeResponse describeVServerGroupAttributeResponse = new DescribeVServerGroupAttributeResponse();
 
-			describeVServerGroupAttributeResponse.HttpResponse = context.HttpResponse;
-			describeVServerGroupAttributeResponse.RequestId = context.StringValue("DescribeVServerGroupAttribute.RequestId");
-			describeVServerGroupAttributeResponse.VServerGroupId = context.StringValue("DescribeVServerGroupAttribute.VServerGroupId");
-			describeVServerGroupAttributeResponse.VServerGroupName = context.StringValue("DescribeVServerGroupAttribute.VServerGroupName");
+            describeVServerGroupAttributeResponse.HttpResponse = context.HttpResponse;
+            describeVServerGroupAttributeResponse.RequestId = context.StringValue("DescribeVServerGroupAttribute.RequestId");
+            describeVServerGroupAttributeResponse.VServerGroupId = context.StringValue("DescribeVServerGroupAttribute.VServerGroupId");
+            describeVServerGroupAttributeResponse.VServerGroupName = context.StringValue("DescribeVServerGroupAttribute.VServerGroupName");
 
-			List<DescribeVServerGroupAttributeResponse.DescribeVServerGroupAttribute_BackendServer> describeVServerGroupAttributeResponse_backendServers = new List<DescribeVServerGroupAttributeResponse.DescribeVServerGroupAttribute_BackendServer>();
-			for (int i = 0; i < context.Length("DescribeVServerGroupAttribute.BackendServers.Length"); i++) {
-				DescribeVServerGroupAttributeResponse.DescribeVServerGroupAttribute_BackendServer backendServer = new DescribeVServerGroupAttributeResponse.DescribeVServerGroupAttribute_BackendServer();
-				backendServer.ServerId = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].ServerId");
-				backendServer.Port = context.IntegerValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Port");
-				backendServer.Weight = context.IntegerValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Weight");
-				backendServer.Type = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Type");
-				backendServer.ServerIp = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].ServerIp");
-				backendServer.VpcId = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].VpcId");
+            List<DescribeVServerGroupAttributeResponse.DescribeVServerGroupAttribute_BackendServer> describeVServerGroupAttributeResponse_backendServers = new List<DescribeVServerGroupAttributeResponse.DescribeVServerGroupAttribute_BackendServer>();
+            for (int i = 0; i < context.Length("DescribeVServerGroupAttribute.BackendServers.Length"); i++)
+            {
+                DescribeVServerGroupAttributeResponse.DescribeVServerGroupAttribute_BackendServer backendServer = new DescribeVServerGroupAttributeResponse.DescribeVServerGroupAttribute_BackendServer();
+                backendServer.ServerId = context.StringValue("DescribeVServerGroupAttribute.BackendServers[" + i + "].ServerId");
+                backendServer.Port = context.IntegerValue("DescribeVServerGroupAttribute.BackendServers[" + i + "].Port");
+                backendServer.Weight = context.IntegerValue("DescribeVServerGroupAttribute.BackendServers[" + i + "].Weight");
+                backendServer.Type = context.StringValue("DescribeVServerGroupAttribute.BackendServers[" + i + "].Type");
+                backendServer.ServerIp = context.StringValue("DescribeVServerGroupAttribute.BackendServers[" + i + "].ServerIp");
+                backendServer.VpcId = context.StringValue("DescribeVServerGroupAttribute.BackendServers[" + i + "].VpcId");
 
-				describeVServerGroupAttributeResponse_backendServers.Add(backendServer);
-			}
-			describeVServerGroupAttributeResponse.BackendServers = describeVServerGroupAttributeResponse_backendServers;
-        
-			return describeVServerGroupAttributeResponse;
+                describeVServerGroupAttributeResponse_backendServers.Add(backendServer);
+            }
+            describeVServerGroupAttributeResponse.BackendServers = describeVServerGroupAttributeResponse_backendServers;
+
+            return describeVServerGroupAttributeResponse;
         }
     }
 }

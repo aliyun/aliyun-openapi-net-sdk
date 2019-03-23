@@ -22,221 +22,221 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeDomainBpsDataResponse : AcsResponse
-	{
+    public class DescribeDomainBpsDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private string locationNameEn;
+        private string locationNameEn;
 
-		private string ispNameEn;
+        private string ispNameEn;
 
-		private string dataInterval;
+        private string dataInterval;
 
-		private List<DescribeDomainBpsData_DataModule> bpsDataPerInterval;
+        private List<DescribeDomainBpsData_DataModule> bpsDataPerInterval;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public string LocationNameEn
-		{
-			get
-			{
-				return locationNameEn;
-			}
-			set	
-			{
-				locationNameEn = value;
-			}
-		}
+        public string LocationNameEn
+        {
+            get
+            {
+                return locationNameEn;
+            }
+            set
+            {
+                locationNameEn = value;
+            }
+        }
 
-		public string IspNameEn
-		{
-			get
-			{
-				return ispNameEn;
-			}
-			set	
-			{
-				ispNameEn = value;
-			}
-		}
+        public string IspNameEn
+        {
+            get
+            {
+                return ispNameEn;
+            }
+            set
+            {
+                ispNameEn = value;
+            }
+        }
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
+        public string DataInterval
+        {
+            get
+            {
+                return dataInterval;
+            }
+            set
+            {
+                dataInterval = value;
+            }
+        }
 
-		public List<DescribeDomainBpsData_DataModule> BpsDataPerInterval
-		{
-			get
-			{
-				return bpsDataPerInterval;
-			}
-			set	
-			{
-				bpsDataPerInterval = value;
-			}
-		}
+        public List<DescribeDomainBpsData_DataModule> BpsDataPerInterval
+        {
+            get
+            {
+                return bpsDataPerInterval;
+            }
+            set
+            {
+                bpsDataPerInterval = value;
+            }
+        }
 
-		public class DescribeDomainBpsData_DataModule
-		{
+        public class DescribeDomainBpsData_DataModule
+        {
 
-			private string timeStamp;
+            private string timeStamp;
 
-			private string _value;
+            private string _value;
 
-			private string domesticValue;
+            private string domesticValue;
 
-			private string overseasValue;
+            private string overseasValue;
 
-			private string httpsValue;
+            private string httpsValue;
 
-			private string httpsDomesticValue;
+            private string httpsDomesticValue;
 
-			private string httpsOverseasValue;
+            private string httpsOverseasValue;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
 
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
-			}
+            public string _Value
+            {
+                get
+                {
+                    return _value;
+                }
+                set
+                {
+                    _value = value;
+                }
+            }
 
-			public string DomesticValue
-			{
-				get
-				{
-					return domesticValue;
-				}
-				set	
-				{
-					domesticValue = value;
-				}
-			}
+            public string DomesticValue
+            {
+                get
+                {
+                    return domesticValue;
+                }
+                set
+                {
+                    domesticValue = value;
+                }
+            }
 
-			public string OverseasValue
-			{
-				get
-				{
-					return overseasValue;
-				}
-				set	
-				{
-					overseasValue = value;
-				}
-			}
+            public string OverseasValue
+            {
+                get
+                {
+                    return overseasValue;
+                }
+                set
+                {
+                    overseasValue = value;
+                }
+            }
 
-			public string HttpsValue
-			{
-				get
-				{
-					return httpsValue;
-				}
-				set	
-				{
-					httpsValue = value;
-				}
-			}
+            public string HttpsValue
+            {
+                get
+                {
+                    return httpsValue;
+                }
+                set
+                {
+                    httpsValue = value;
+                }
+            }
 
-			public string HttpsDomesticValue
-			{
-				get
-				{
-					return httpsDomesticValue;
-				}
-				set	
-				{
-					httpsDomesticValue = value;
-				}
-			}
+            public string HttpsDomesticValue
+            {
+                get
+                {
+                    return httpsDomesticValue;
+                }
+                set
+                {
+                    httpsDomesticValue = value;
+                }
+            }
 
-			public string HttpsOverseasValue
-			{
-				get
-				{
-					return httpsOverseasValue;
-				}
-				set	
-				{
-					httpsOverseasValue = value;
-				}
-			}
-		}
-	}
+            public string HttpsOverseasValue
+            {
+                get
+                {
+                    return httpsOverseasValue;
+                }
+                set
+                {
+                    httpsOverseasValue = value;
+                }
+            }
+        }
+    }
 }

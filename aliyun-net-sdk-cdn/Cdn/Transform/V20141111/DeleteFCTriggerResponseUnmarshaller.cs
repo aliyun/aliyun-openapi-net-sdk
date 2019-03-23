@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DeleteFCTriggerResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteFCTriggerResponse deleteFCTriggerResponse = new DeleteFCTriggerResponse();
+            DeleteFCTriggerResponse deleteFCTriggerResponse = new DeleteFCTriggerResponse();
 
-			deleteFCTriggerResponse.HttpResponse = context.HttpResponse;
-			deleteFCTriggerResponse.RequestId = context.StringValue("DeleteFCTrigger.RequestId");
-        
-			return deleteFCTriggerResponse;
+            deleteFCTriggerResponse.HttpResponse = context.HttpResponse;
+            deleteFCTriggerResponse.RequestId = context.StringValue("DeleteFCTrigger.RequestId");
+
+            return deleteFCTriggerResponse;
         }
     }
 }

@@ -33,40 +33,40 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string jobId;
+        private string jobId;
 
-		private string instanceId;
+        private string instanceId;
 
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
-			}
-		}
+        public string JobId
+        {
+            get
+            {
+                return jobId;
+            }
+            set
+            {
+                jobId = value;
+                DictionaryUtil.Add(QueryParameters, "JobId", value);
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override GetTaskListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

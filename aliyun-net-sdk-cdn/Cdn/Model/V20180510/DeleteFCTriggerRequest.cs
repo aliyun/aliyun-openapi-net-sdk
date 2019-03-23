@@ -34,50 +34,50 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string triggerARN;
+        private string triggerARN;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string action;
+        private string action;
 
-		public string TriggerARN
-		{
-			get
-			{
-				return triggerARN;
-			}
-			set	
-			{
-				triggerARN = value;
-				DictionaryUtil.Add(QueryParameters, "TriggerARN", value);
-			}
-		}
+        public string TriggerARN
+        {
+            get
+            {
+                return triggerARN;
+            }
+            set
+            {
+                triggerARN = value;
+                DictionaryUtil.Add(QueryParameters, "TriggerARN", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
         public override DeleteFCTriggerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

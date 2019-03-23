@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateBandwidthPackageResponse : AcsResponse
-	{
+    public class CreateBandwidthPackageResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string bandwidthPackageId;
+        private string bandwidthPackageId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string BandwidthPackageId
-		{
-			get
-			{
-				return bandwidthPackageId;
-			}
-			set	
-			{
-				bandwidthPackageId = value;
-			}
-		}
-	}
+        public string BandwidthPackageId
+        {
+            get
+            {
+                return bandwidthPackageId;
+            }
+            set
+            {
+                bandwidthPackageId = value;
+            }
+        }
+    }
 }

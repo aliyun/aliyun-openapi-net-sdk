@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class RemoveBackendServersResponse : AcsResponse
-	{
+    public class RemoveBackendServersResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string loadBalancerId;
+        private string loadBalancerId;
 
-		private List<RemoveBackendServers_BackendServer> backendServers;
+        private List<RemoveBackendServers_BackendServer> backendServers;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-			}
-		}
+        public string LoadBalancerId
+        {
+            get
+            {
+                return loadBalancerId;
+            }
+            set
+            {
+                loadBalancerId = value;
+            }
+        }
 
-		public List<RemoveBackendServers_BackendServer> BackendServers
-		{
-			get
-			{
-				return backendServers;
-			}
-			set	
-			{
-				backendServers = value;
-			}
-		}
+        public List<RemoveBackendServers_BackendServer> BackendServers
+        {
+            get
+            {
+                return backendServers;
+            }
+            set
+            {
+                backendServers = value;
+            }
+        }
 
-		public class RemoveBackendServers_BackendServer
-		{
+        public class RemoveBackendServers_BackendServer
+        {
 
-			private string serverId;
+            private string serverId;
 
-			private int? weight;
+            private int? weight;
 
-			private string serverIp;
+            private string serverIp;
 
-			private string vpcId;
+            private string vpcId;
 
-			private string type;
+            private string type;
 
-			public string ServerId
-			{
-				get
-				{
-					return serverId;
-				}
-				set	
-				{
-					serverId = value;
-				}
-			}
+            public string ServerId
+            {
+                get
+                {
+                    return serverId;
+                }
+                set
+                {
+                    serverId = value;
+                }
+            }
 
-			public int? Weight
-			{
-				get
-				{
-					return weight;
-				}
-				set	
-				{
-					weight = value;
-				}
-			}
+            public int? Weight
+            {
+                get
+                {
+                    return weight;
+                }
+                set
+                {
+                    weight = value;
+                }
+            }
 
-			public string ServerIp
-			{
-				get
-				{
-					return serverIp;
-				}
-				set	
-				{
-					serverIp = value;
-				}
-			}
+            public string ServerIp
+            {
+                get
+                {
+                    return serverIp;
+                }
+                set
+                {
+                    serverIp = value;
+                }
+            }
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
+            public string VpcId
+            {
+                get
+                {
+                    return vpcId;
+                }
+                set
+                {
+                    vpcId = value;
+                }
+            }
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-		}
-	}
+            public string Type
+            {
+                get
+                {
+                    return type;
+                }
+                set
+                {
+                    type = value;
+                }
+            }
+        }
+    }
 }

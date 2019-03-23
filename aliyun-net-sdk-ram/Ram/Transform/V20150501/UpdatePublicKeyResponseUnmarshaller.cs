@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static UpdatePublicKeyResponse Unmarshall(UnmarshallerContext context)
         {
-			UpdatePublicKeyResponse updatePublicKeyResponse = new UpdatePublicKeyResponse();
+            UpdatePublicKeyResponse updatePublicKeyResponse = new UpdatePublicKeyResponse();
 
-			updatePublicKeyResponse.HttpResponse = context.HttpResponse;
-			updatePublicKeyResponse.RequestId = context.StringValue("UpdatePublicKey.RequestId");
-        
-			return updatePublicKeyResponse;
+            updatePublicKeyResponse.HttpResponse = context.HttpResponse;
+            updatePublicKeyResponse.RequestId = context.StringValue("UpdatePublicKey.RequestId");
+
+            return updatePublicKeyResponse;
         }
     }
 }

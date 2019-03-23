@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ModifyHpcClusterAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyHpcClusterAttributeResponse modifyHpcClusterAttributeResponse = new ModifyHpcClusterAttributeResponse();
+            ModifyHpcClusterAttributeResponse modifyHpcClusterAttributeResponse = new ModifyHpcClusterAttributeResponse();
 
-			modifyHpcClusterAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyHpcClusterAttributeResponse.RequestId = context.StringValue("ModifyHpcClusterAttribute.RequestId");
-        
-			return modifyHpcClusterAttributeResponse;
+            modifyHpcClusterAttributeResponse.HttpResponse = context.HttpResponse;
+            modifyHpcClusterAttributeResponse.RequestId = context.StringValue("ModifyHpcClusterAttribute.RequestId");
+
+            return modifyHpcClusterAttributeResponse;
         }
     }
 }

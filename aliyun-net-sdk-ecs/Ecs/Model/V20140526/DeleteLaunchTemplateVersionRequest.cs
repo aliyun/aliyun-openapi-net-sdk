@@ -33,144 +33,144 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string launchTemplateName;
+        private string launchTemplateName;
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private List<long?> deleteVersions;
+        private List<long?> deleteVersions;
 
-		private string regionId;
+        private string regionId;
 
-		private string action;
+        private string action;
 
-		private string launchTemplateId;
+        private string launchTemplateId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string LaunchTemplateName
-		{
-			get
-			{
-				return launchTemplateName;
-			}
-			set	
-			{
-				launchTemplateName = value;
-				DictionaryUtil.Add(QueryParameters, "LaunchTemplateName", value);
-			}
-		}
+        public string LaunchTemplateName
+        {
+            get
+            {
+                return launchTemplateName;
+            }
+            set
+            {
+                launchTemplateName = value;
+                DictionaryUtil.Add(QueryParameters, "LaunchTemplateName", value);
+            }
+        }
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public List<long?> DeleteVersions
-		{
-			get
-			{
-				return deleteVersions;
-			}
+        public List<long?> DeleteVersions
+        {
+            get
+            {
+                return deleteVersions;
+            }
 
-			set
-			{
-				deleteVersions = value;
-				for (int i = 0; i < deleteVersions.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DeleteVersion." + (i + 1) , deleteVersions[i]);
-				}
-			}
-		}
+            set
+            {
+                deleteVersions = value;
+                for (int i = 0; i < deleteVersions.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "DeleteVersion." + (i + 1), deleteVersions[i]);
+                }
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string LaunchTemplateId
-		{
-			get
-			{
-				return launchTemplateId;
-			}
-			set	
-			{
-				launchTemplateId = value;
-				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
-			}
-		}
+        public string LaunchTemplateId
+        {
+            get
+            {
+                return launchTemplateId;
+            }
+            set
+            {
+                launchTemplateId = value;
+                DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override DeleteLaunchTemplateVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

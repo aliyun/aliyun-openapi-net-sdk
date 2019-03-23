@@ -27,24 +27,25 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeBandwidthLimitationResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeBandwidthLimitationResponse describeBandwidthLimitationResponse = new DescribeBandwidthLimitationResponse();
+            DescribeBandwidthLimitationResponse describeBandwidthLimitationResponse = new DescribeBandwidthLimitationResponse();
 
-			describeBandwidthLimitationResponse.HttpResponse = context.HttpResponse;
-			describeBandwidthLimitationResponse.RequestId = context.StringValue("DescribeBandwidthLimitation.RequestId");
+            describeBandwidthLimitationResponse.HttpResponse = context.HttpResponse;
+            describeBandwidthLimitationResponse.RequestId = context.StringValue("DescribeBandwidthLimitation.RequestId");
 
-			List<DescribeBandwidthLimitationResponse.DescribeBandwidthLimitation_Bandwidth> describeBandwidthLimitationResponse_bandwidths = new List<DescribeBandwidthLimitationResponse.DescribeBandwidthLimitation_Bandwidth>();
-			for (int i = 0; i < context.Length("DescribeBandwidthLimitation.Bandwidths.Length"); i++) {
-				DescribeBandwidthLimitationResponse.DescribeBandwidthLimitation_Bandwidth bandwidth = new DescribeBandwidthLimitationResponse.DescribeBandwidthLimitation_Bandwidth();
-				bandwidth.InternetChargeType = context.StringValue("DescribeBandwidthLimitation.Bandwidths["+ i +"].InternetChargeType");
-				bandwidth.Min = context.IntegerValue("DescribeBandwidthLimitation.Bandwidths["+ i +"].Min");
-				bandwidth.Max = context.IntegerValue("DescribeBandwidthLimitation.Bandwidths["+ i +"].Max");
-				bandwidth.Unit = context.StringValue("DescribeBandwidthLimitation.Bandwidths["+ i +"].Unit");
+            List<DescribeBandwidthLimitationResponse.DescribeBandwidthLimitation_Bandwidth> describeBandwidthLimitationResponse_bandwidths = new List<DescribeBandwidthLimitationResponse.DescribeBandwidthLimitation_Bandwidth>();
+            for (int i = 0; i < context.Length("DescribeBandwidthLimitation.Bandwidths.Length"); i++)
+            {
+                DescribeBandwidthLimitationResponse.DescribeBandwidthLimitation_Bandwidth bandwidth = new DescribeBandwidthLimitationResponse.DescribeBandwidthLimitation_Bandwidth();
+                bandwidth.InternetChargeType = context.StringValue("DescribeBandwidthLimitation.Bandwidths[" + i + "].InternetChargeType");
+                bandwidth.Min = context.IntegerValue("DescribeBandwidthLimitation.Bandwidths[" + i + "].Min");
+                bandwidth.Max = context.IntegerValue("DescribeBandwidthLimitation.Bandwidths[" + i + "].Max");
+                bandwidth.Unit = context.StringValue("DescribeBandwidthLimitation.Bandwidths[" + i + "].Unit");
 
-				describeBandwidthLimitationResponse_bandwidths.Add(bandwidth);
-			}
-			describeBandwidthLimitationResponse.Bandwidths = describeBandwidthLimitationResponse_bandwidths;
-        
-			return describeBandwidthLimitationResponse;
+                describeBandwidthLimitationResponse_bandwidths.Add(bandwidth);
+            }
+            describeBandwidthLimitationResponse.Bandwidths = describeBandwidthLimitationResponse_bandwidths;
+
+            return describeBandwidthLimitationResponse;
         }
     }
 }

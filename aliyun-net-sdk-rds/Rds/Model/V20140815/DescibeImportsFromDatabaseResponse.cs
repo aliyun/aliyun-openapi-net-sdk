@@ -21,151 +21,151 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescibeImportsFromDatabaseResponse : AcsResponse
-	{
+    public class DescibeImportsFromDatabaseResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalRecordCount;
+        private int? totalRecordCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private List<DescibeImportsFromDatabase_ImportResultFromDB> items;
+        private List<DescibeImportsFromDatabase_ImportResultFromDB> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public int? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public List<DescibeImportsFromDatabase_ImportResultFromDB> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescibeImportsFromDatabase_ImportResultFromDB> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescibeImportsFromDatabase_ImportResultFromDB
-		{
+        public class DescibeImportsFromDatabase_ImportResultFromDB
+        {
 
-			private int? importId;
+            private int? importId;
 
-			private string importDataType;
+            private string importDataType;
 
-			private string importDataStatus;
+            private string importDataStatus;
 
-			private string importDataStatusDescription;
+            private string importDataStatusDescription;
 
-			private string incrementalImportingTime;
+            private string incrementalImportingTime;
 
-			public int? ImportId
-			{
-				get
-				{
-					return importId;
-				}
-				set	
-				{
-					importId = value;
-				}
-			}
+            public int? ImportId
+            {
+                get
+                {
+                    return importId;
+                }
+                set
+                {
+                    importId = value;
+                }
+            }
 
-			public string ImportDataType
-			{
-				get
-				{
-					return importDataType;
-				}
-				set	
-				{
-					importDataType = value;
-				}
-			}
+            public string ImportDataType
+            {
+                get
+                {
+                    return importDataType;
+                }
+                set
+                {
+                    importDataType = value;
+                }
+            }
 
-			public string ImportDataStatus
-			{
-				get
-				{
-					return importDataStatus;
-				}
-				set	
-				{
-					importDataStatus = value;
-				}
-			}
+            public string ImportDataStatus
+            {
+                get
+                {
+                    return importDataStatus;
+                }
+                set
+                {
+                    importDataStatus = value;
+                }
+            }
 
-			public string ImportDataStatusDescription
-			{
-				get
-				{
-					return importDataStatusDescription;
-				}
-				set	
-				{
-					importDataStatusDescription = value;
-				}
-			}
+            public string ImportDataStatusDescription
+            {
+                get
+                {
+                    return importDataStatusDescription;
+                }
+                set
+                {
+                    importDataStatusDescription = value;
+                }
+            }
 
-			public string IncrementalImportingTime
-			{
-				get
-				{
-					return incrementalImportingTime;
-				}
-				set	
-				{
-					incrementalImportingTime = value;
-				}
-			}
-		}
-	}
+            public string IncrementalImportingTime
+            {
+                get
+                {
+                    return incrementalImportingTime;
+                }
+                set
+                {
+                    incrementalImportingTime = value;
+                }
+            }
+        }
+    }
 }

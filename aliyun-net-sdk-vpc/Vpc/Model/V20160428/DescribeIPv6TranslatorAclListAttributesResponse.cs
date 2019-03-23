@@ -21,151 +21,151 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeIPv6TranslatorAclListAttributesResponse : AcsResponse
-	{
+    public class DescribeIPv6TranslatorAclListAttributesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string aclId;
+        private string aclId;
 
-		private string aclName;
+        private string aclName;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeIPv6TranslatorAclListAttributes_AclEntry> aclEntries;
+        private List<DescribeIPv6TranslatorAclListAttributes_AclEntry> aclEntries;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string AclId
-		{
-			get
-			{
-				return aclId;
-			}
-			set	
-			{
-				aclId = value;
-			}
-		}
+        public string AclId
+        {
+            get
+            {
+                return aclId;
+            }
+            set
+            {
+                aclId = value;
+            }
+        }
 
-		public string AclName
-		{
-			get
-			{
-				return aclName;
-			}
-			set	
-			{
-				aclName = value;
-			}
-		}
+        public string AclName
+        {
+            get
+            {
+                return aclName;
+            }
+            set
+            {
+                aclName = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeIPv6TranslatorAclListAttributes_AclEntry> AclEntries
-		{
-			get
-			{
-				return aclEntries;
-			}
-			set	
-			{
-				aclEntries = value;
-			}
-		}
+        public List<DescribeIPv6TranslatorAclListAttributes_AclEntry> AclEntries
+        {
+            get
+            {
+                return aclEntries;
+            }
+            set
+            {
+                aclEntries = value;
+            }
+        }
 
-		public class DescribeIPv6TranslatorAclListAttributes_AclEntry
-		{
+        public class DescribeIPv6TranslatorAclListAttributes_AclEntry
+        {
 
-			private string aclEntryId;
+            private string aclEntryId;
 
-			private string aclEntryIp;
+            private string aclEntryIp;
 
-			private string aclEntryComment;
+            private string aclEntryComment;
 
-			public string AclEntryId
-			{
-				get
-				{
-					return aclEntryId;
-				}
-				set	
-				{
-					aclEntryId = value;
-				}
-			}
+            public string AclEntryId
+            {
+                get
+                {
+                    return aclEntryId;
+                }
+                set
+                {
+                    aclEntryId = value;
+                }
+            }
 
-			public string AclEntryIp
-			{
-				get
-				{
-					return aclEntryIp;
-				}
-				set	
-				{
-					aclEntryIp = value;
-				}
-			}
+            public string AclEntryIp
+            {
+                get
+                {
+                    return aclEntryIp;
+                }
+                set
+                {
+                    aclEntryIp = value;
+                }
+            }
 
-			public string AclEntryComment
-			{
-				get
-				{
-					return aclEntryComment;
-				}
-				set	
-				{
-					aclEntryComment = value;
-				}
-			}
-		}
-	}
+            public string AclEntryComment
+            {
+                get
+                {
+                    return aclEntryComment;
+                }
+                set
+                {
+                    aclEntryComment = value;
+                }
+            }
+        }
+    }
 }

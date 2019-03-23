@@ -28,16 +28,16 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeDomainCustomLogConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainCustomLogConfigResponse describeDomainCustomLogConfigResponse = new DescribeDomainCustomLogConfigResponse();
+            DescribeDomainCustomLogConfigResponse describeDomainCustomLogConfigResponse = new DescribeDomainCustomLogConfigResponse();
 
-			describeDomainCustomLogConfigResponse.HttpResponse = context.HttpResponse;
-			describeDomainCustomLogConfigResponse.RequestId = context.StringValue("DescribeDomainCustomLogConfig.RequestId");
-			describeDomainCustomLogConfigResponse.ConfigId = context.StringValue("DescribeDomainCustomLogConfig.ConfigId");
-			describeDomainCustomLogConfigResponse.Remark = context.StringValue("DescribeDomainCustomLogConfig.Remark");
-			describeDomainCustomLogConfigResponse.Sample = context.StringValue("DescribeDomainCustomLogConfig.Sample");
-			describeDomainCustomLogConfigResponse.Tag = context.StringValue("DescribeDomainCustomLogConfig.Tag");
-        
-			return describeDomainCustomLogConfigResponse;
+            describeDomainCustomLogConfigResponse.HttpResponse = context.HttpResponse;
+            describeDomainCustomLogConfigResponse.RequestId = context.StringValue("DescribeDomainCustomLogConfig.RequestId");
+            describeDomainCustomLogConfigResponse.ConfigId = context.StringValue("DescribeDomainCustomLogConfig.ConfigId");
+            describeDomainCustomLogConfigResponse.Remark = context.StringValue("DescribeDomainCustomLogConfig.Remark");
+            describeDomainCustomLogConfigResponse.Sample = context.StringValue("DescribeDomainCustomLogConfig.Sample");
+            describeDomainCustomLogConfigResponse.Tag = context.StringValue("DescribeDomainCustomLogConfig.Tag");
+
+            return describeDomainCustomLogConfigResponse;
         }
     }
 }

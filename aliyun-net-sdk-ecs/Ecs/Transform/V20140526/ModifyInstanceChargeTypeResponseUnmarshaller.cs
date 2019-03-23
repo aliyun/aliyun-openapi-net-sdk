@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ModifyInstanceChargeTypeResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyInstanceChargeTypeResponse modifyInstanceChargeTypeResponse = new ModifyInstanceChargeTypeResponse();
+            ModifyInstanceChargeTypeResponse modifyInstanceChargeTypeResponse = new ModifyInstanceChargeTypeResponse();
 
-			modifyInstanceChargeTypeResponse.HttpResponse = context.HttpResponse;
-			modifyInstanceChargeTypeResponse.RequestId = context.StringValue("ModifyInstanceChargeType.RequestId");
-			modifyInstanceChargeTypeResponse.OrderId = context.StringValue("ModifyInstanceChargeType.OrderId");
-        
-			return modifyInstanceChargeTypeResponse;
+            modifyInstanceChargeTypeResponse.HttpResponse = context.HttpResponse;
+            modifyInstanceChargeTypeResponse.RequestId = context.StringValue("ModifyInstanceChargeType.RequestId");
+            modifyInstanceChargeTypeResponse.OrderId = context.StringValue("ModifyInstanceChargeType.OrderId");
+
+            return modifyInstanceChargeTypeResponse;
         }
     }
 }

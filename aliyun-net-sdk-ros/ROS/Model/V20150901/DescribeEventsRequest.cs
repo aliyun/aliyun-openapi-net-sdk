@@ -31,114 +31,114 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public DescribeEventsRequest()
             : base("ROS", "2015-09-01", "DescribeEvents")
         {
-			UriPattern = "/stacks/[StackName]/[StackId]/events";
-			Method = MethodType.GET;
+            UriPattern = "/stacks/[StackName]/[StackId]/events";
+            Method = MethodType.GET;
         }
 
-		private string stackId;
+        private string stackId;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private string stackName;
+        private string stackName;
 
-		private string resourceName;
+        private string resourceName;
 
-		private string resourceStatus;
+        private string resourceStatus;
 
-		private string resourceType;
+        private string resourceType;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		public string StackId
-		{
-			get
-			{
-				return stackId;
-			}
-			set	
-			{
-				stackId = value;
-				DictionaryUtil.Add(PathParameters, "StackId", value);
-			}
-		}
+        public string StackId
+        {
+            get
+            {
+                return stackId;
+            }
+            set
+            {
+                stackId = value;
+                DictionaryUtil.Add(PathParameters, "StackId", value);
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+                DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+            }
+        }
 
-		public string StackName
-		{
-			get
-			{
-				return stackName;
-			}
-			set	
-			{
-				stackName = value;
-				DictionaryUtil.Add(PathParameters, "StackName", value);
-			}
-		}
+        public string StackName
+        {
+            get
+            {
+                return stackName;
+            }
+            set
+            {
+                stackName = value;
+                DictionaryUtil.Add(PathParameters, "StackName", value);
+            }
+        }
 
-		public string ResourceName
-		{
-			get
-			{
-				return resourceName;
-			}
-			set	
-			{
-				resourceName = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceName", value);
-			}
-		}
+        public string ResourceName
+        {
+            get
+            {
+                return resourceName;
+            }
+            set
+            {
+                resourceName = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceName", value);
+            }
+        }
 
-		public string ResourceStatus
-		{
-			get
-			{
-				return resourceStatus;
-			}
-			set	
-			{
-				resourceStatus = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceStatus", value);
-			}
-		}
+        public string ResourceStatus
+        {
+            get
+            {
+                return resourceStatus;
+            }
+            set
+            {
+                resourceStatus = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceStatus", value);
+            }
+        }
 
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
+        public string ResourceType
+        {
+            get
+            {
+                return resourceType;
+            }
+            set
+            {
+                resourceType = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+                DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+            }
+        }
 
         public override DescribeEventsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

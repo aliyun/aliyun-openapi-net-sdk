@@ -28,26 +28,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeCdnServiceResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeCdnServiceResponse describeCdnServiceResponse = new DescribeCdnServiceResponse();
+            DescribeCdnServiceResponse describeCdnServiceResponse = new DescribeCdnServiceResponse();
 
-			describeCdnServiceResponse.HttpResponse = context.HttpResponse;
-			describeCdnServiceResponse.RequestId = context.StringValue("DescribeCdnService.RequestId");
-			describeCdnServiceResponse.InstanceId = context.StringValue("DescribeCdnService.InstanceId");
-			describeCdnServiceResponse.InternetChargeType = context.StringValue("DescribeCdnService.InternetChargeType");
-			describeCdnServiceResponse.OpeningTime = context.StringValue("DescribeCdnService.OpeningTime");
-			describeCdnServiceResponse.ChangingChargeType = context.StringValue("DescribeCdnService.ChangingChargeType");
-			describeCdnServiceResponse.ChangingAffectTime = context.StringValue("DescribeCdnService.ChangingAffectTime");
+            describeCdnServiceResponse.HttpResponse = context.HttpResponse;
+            describeCdnServiceResponse.RequestId = context.StringValue("DescribeCdnService.RequestId");
+            describeCdnServiceResponse.InstanceId = context.StringValue("DescribeCdnService.InstanceId");
+            describeCdnServiceResponse.InternetChargeType = context.StringValue("DescribeCdnService.InternetChargeType");
+            describeCdnServiceResponse.OpeningTime = context.StringValue("DescribeCdnService.OpeningTime");
+            describeCdnServiceResponse.ChangingChargeType = context.StringValue("DescribeCdnService.ChangingChargeType");
+            describeCdnServiceResponse.ChangingAffectTime = context.StringValue("DescribeCdnService.ChangingAffectTime");
 
-			List<DescribeCdnServiceResponse.DescribeCdnService_LockReason> describeCdnServiceResponse_operationLocks = new List<DescribeCdnServiceResponse.DescribeCdnService_LockReason>();
-			for (int i = 0; i < context.Length("DescribeCdnService.OperationLocks.Length"); i++) {
-				DescribeCdnServiceResponse.DescribeCdnService_LockReason lockReason = new DescribeCdnServiceResponse.DescribeCdnService_LockReason();
-				lockReason.LockReason = context.StringValue("DescribeCdnService.OperationLocks["+ i +"].LockReason");
+            List<DescribeCdnServiceResponse.DescribeCdnService_LockReason> describeCdnServiceResponse_operationLocks = new List<DescribeCdnServiceResponse.DescribeCdnService_LockReason>();
+            for (int i = 0; i < context.Length("DescribeCdnService.OperationLocks.Length"); i++)
+            {
+                DescribeCdnServiceResponse.DescribeCdnService_LockReason lockReason = new DescribeCdnServiceResponse.DescribeCdnService_LockReason();
+                lockReason.LockReason = context.StringValue("DescribeCdnService.OperationLocks[" + i + "].LockReason");
 
-				describeCdnServiceResponse_operationLocks.Add(lockReason);
-			}
-			describeCdnServiceResponse.OperationLocks = describeCdnServiceResponse_operationLocks;
-        
-			return describeCdnServiceResponse;
+                describeCdnServiceResponse_operationLocks.Add(lockReason);
+            }
+            describeCdnServiceResponse.OperationLocks = describeCdnServiceResponse_operationLocks;
+
+            return describeCdnServiceResponse;
         }
     }
 }

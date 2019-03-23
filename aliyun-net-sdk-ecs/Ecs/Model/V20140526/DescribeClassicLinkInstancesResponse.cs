@@ -21,109 +21,109 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeClassicLinkInstancesResponse : AcsResponse
-	{
+    public class DescribeClassicLinkInstancesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeClassicLinkInstances_Link> links;
+        private List<DescribeClassicLinkInstances_Link> links;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeClassicLinkInstances_Link> Links
-		{
-			get
-			{
-				return links;
-			}
-			set	
-			{
-				links = value;
-			}
-		}
+        public List<DescribeClassicLinkInstances_Link> Links
+        {
+            get
+            {
+                return links;
+            }
+            set
+            {
+                links = value;
+            }
+        }
 
-		public class DescribeClassicLinkInstances_Link
-		{
+        public class DescribeClassicLinkInstances_Link
+        {
 
-			private string instanceId;
+            private string instanceId;
 
-			private string vpcId;
+            private string vpcId;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
-		}
-	}
+            public string VpcId
+            {
+                get
+                {
+                    return vpcId;
+                }
+                set
+                {
+                    vpcId = value;
+                }
+            }
+        }
+    }
 }

@@ -21,95 +21,95 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeSecurityGroupConfigurationResponse : AcsResponse
-	{
+    public class DescribeSecurityGroupConfigurationResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string dBInstanceName;
+        private string dBInstanceName;
 
-		private List<DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation> items;
+        private List<DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DBInstanceName
-		{
-			get
-			{
-				return dBInstanceName;
-			}
-			set	
-			{
-				dBInstanceName = value;
-			}
-		}
+        public string DBInstanceName
+        {
+            get
+            {
+                return dBInstanceName;
+            }
+            set
+            {
+                dBInstanceName = value;
+            }
+        }
 
-		public List<DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation
-		{
+        public class DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation
+        {
 
-			private string regionId;
+            private string regionId;
 
-			private string securityGroupId;
+            private string securityGroupId;
 
-			private string networkType;
+            private string networkType;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string SecurityGroupId
-			{
-				get
-				{
-					return securityGroupId;
-				}
-				set	
-				{
-					securityGroupId = value;
-				}
-			}
+            public string SecurityGroupId
+            {
+                get
+                {
+                    return securityGroupId;
+                }
+                set
+                {
+                    securityGroupId = value;
+                }
+            }
 
-			public string NetworkType
-			{
-				get
-				{
-					return networkType;
-				}
-				set	
-				{
-					networkType = value;
-				}
-			}
-		}
-	}
+            public string NetworkType
+            {
+                get
+                {
+                    return networkType;
+                }
+                set
+                {
+                    networkType = value;
+                }
+            }
+        }
+    }
 }

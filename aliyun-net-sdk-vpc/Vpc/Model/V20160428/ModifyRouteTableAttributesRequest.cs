@@ -33,200 +33,200 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string bandwidth;
+        private string bandwidth;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string description;
+        private string description;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string kbpsBandwidth;
+        private string kbpsBandwidth;
 
-		private string routeTableName;
+        private string routeTableName;
 
-		private string regionId;
+        private string regionId;
 
-		private long? resourceUid;
+        private long? resourceUid;
 
-		private string action;
+        private string action;
 
-		private string resourceBid;
+        private string resourceBid;
 
-		private string routeTableId;
+        private string routeTableId;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "Bandwidth", value);
-			}
-		}
+        public string Bandwidth
+        {
+            get
+            {
+                return bandwidth;
+            }
+            set
+            {
+                bandwidth = value;
+                DictionaryUtil.Add(QueryParameters, "Bandwidth", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string KbpsBandwidth
-		{
-			get
-			{
-				return kbpsBandwidth;
-			}
-			set	
-			{
-				kbpsBandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "KbpsBandwidth", value);
-			}
-		}
+        public string KbpsBandwidth
+        {
+            get
+            {
+                return kbpsBandwidth;
+            }
+            set
+            {
+                kbpsBandwidth = value;
+                DictionaryUtil.Add(QueryParameters, "KbpsBandwidth", value);
+            }
+        }
 
-		public string RouteTableName
-		{
-			get
-			{
-				return routeTableName;
-			}
-			set	
-			{
-				routeTableName = value;
-				DictionaryUtil.Add(QueryParameters, "RouteTableName", value);
-			}
-		}
+        public string RouteTableName
+        {
+            get
+            {
+                return routeTableName;
+            }
+            set
+            {
+                routeTableName = value;
+                DictionaryUtil.Add(QueryParameters, "RouteTableName", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public long? ResourceUid
-		{
-			get
-			{
-				return resourceUid;
-			}
-			set	
-			{
-				resourceUid = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceUid", value.ToString());
-			}
-		}
+        public long? ResourceUid
+        {
+            get
+            {
+                return resourceUid;
+            }
+            set
+            {
+                resourceUid = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceUid", value.ToString());
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string ResourceBid
-		{
-			get
-			{
-				return resourceBid;
-			}
-			set	
-			{
-				resourceBid = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceBid", value);
-			}
-		}
+        public string ResourceBid
+        {
+            get
+            {
+                return resourceBid;
+            }
+            set
+            {
+                resourceBid = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceBid", value);
+            }
+        }
 
-		public string RouteTableId
-		{
-			get
-			{
-				return routeTableId;
-			}
-			set	
-			{
-				routeTableId = value;
-				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
-			}
-		}
+        public string RouteTableId
+        {
+            get
+            {
+                return routeTableId;
+            }
+            set
+            {
+                routeTableId = value;
+                DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
+            }
+        }
 
         public override ModifyRouteTableAttributesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

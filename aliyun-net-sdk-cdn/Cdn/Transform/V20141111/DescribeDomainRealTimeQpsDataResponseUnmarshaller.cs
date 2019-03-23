@@ -28,22 +28,23 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeDomainRealTimeQpsDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainRealTimeQpsDataResponse describeDomainRealTimeQpsDataResponse = new DescribeDomainRealTimeQpsDataResponse();
+            DescribeDomainRealTimeQpsDataResponse describeDomainRealTimeQpsDataResponse = new DescribeDomainRealTimeQpsDataResponse();
 
-			describeDomainRealTimeQpsDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainRealTimeQpsDataResponse.RequestId = context.StringValue("DescribeDomainRealTimeQpsData.RequestId");
+            describeDomainRealTimeQpsDataResponse.HttpResponse = context.HttpResponse;
+            describeDomainRealTimeQpsDataResponse.RequestId = context.StringValue("DescribeDomainRealTimeQpsData.RequestId");
 
-			List<DescribeDomainRealTimeQpsDataResponse.DescribeDomainRealTimeQpsData_QpsModel> describeDomainRealTimeQpsDataResponse_data = new List<DescribeDomainRealTimeQpsDataResponse.DescribeDomainRealTimeQpsData_QpsModel>();
-			for (int i = 0; i < context.Length("DescribeDomainRealTimeQpsData.Data.Length"); i++) {
-				DescribeDomainRealTimeQpsDataResponse.DescribeDomainRealTimeQpsData_QpsModel qpsModel = new DescribeDomainRealTimeQpsDataResponse.DescribeDomainRealTimeQpsData_QpsModel();
-				qpsModel.Qps = context.FloatValue("DescribeDomainRealTimeQpsData.Data["+ i +"].Qps");
-				qpsModel.TimeStamp = context.StringValue("DescribeDomainRealTimeQpsData.Data["+ i +"].TimeStamp");
+            List<DescribeDomainRealTimeQpsDataResponse.DescribeDomainRealTimeQpsData_QpsModel> describeDomainRealTimeQpsDataResponse_data = new List<DescribeDomainRealTimeQpsDataResponse.DescribeDomainRealTimeQpsData_QpsModel>();
+            for (int i = 0; i < context.Length("DescribeDomainRealTimeQpsData.Data.Length"); i++)
+            {
+                DescribeDomainRealTimeQpsDataResponse.DescribeDomainRealTimeQpsData_QpsModel qpsModel = new DescribeDomainRealTimeQpsDataResponse.DescribeDomainRealTimeQpsData_QpsModel();
+                qpsModel.Qps = context.FloatValue("DescribeDomainRealTimeQpsData.Data[" + i + "].Qps");
+                qpsModel.TimeStamp = context.StringValue("DescribeDomainRealTimeQpsData.Data[" + i + "].TimeStamp");
 
-				describeDomainRealTimeQpsDataResponse_data.Add(qpsModel);
-			}
-			describeDomainRealTimeQpsDataResponse.Data = describeDomainRealTimeQpsDataResponse_data;
-        
-			return describeDomainRealTimeQpsDataResponse;
+                describeDomainRealTimeQpsDataResponse_data.Add(qpsModel);
+            }
+            describeDomainRealTimeQpsDataResponse.Data = describeDomainRealTimeQpsDataResponse_data;
+
+            return describeDomainRealTimeQpsDataResponse;
         }
     }
 }

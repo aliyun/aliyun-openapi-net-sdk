@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeParametersResponse : AcsResponse
-	{
+    public class DescribeParametersResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string engine;
+        private string engine;
 
-		private string engineVersion;
+        private string engineVersion;
 
-		private List<DescribeParameters_DBInstanceParameter> configParameters;
+        private List<DescribeParameters_DBInstanceParameter> configParameters;
 
-		private List<DescribeParameters_DBInstanceParameter> runningParameters;
+        private List<DescribeParameters_DBInstanceParameter> runningParameters;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
+        public string Engine
+        {
+            get
+            {
+                return engine;
+            }
+            set
+            {
+                engine = value;
+            }
+        }
 
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-			}
-		}
+        public string EngineVersion
+        {
+            get
+            {
+                return engineVersion;
+            }
+            set
+            {
+                engineVersion = value;
+            }
+        }
 
-		public List<DescribeParameters_DBInstanceParameter> ConfigParameters
-		{
-			get
-			{
-				return configParameters;
-			}
-			set	
-			{
-				configParameters = value;
-			}
-		}
+        public List<DescribeParameters_DBInstanceParameter> ConfigParameters
+        {
+            get
+            {
+                return configParameters;
+            }
+            set
+            {
+                configParameters = value;
+            }
+        }
 
-		public List<DescribeParameters_DBInstanceParameter> RunningParameters
-		{
-			get
-			{
-				return runningParameters;
-			}
-			set	
-			{
-				runningParameters = value;
-			}
-		}
+        public List<DescribeParameters_DBInstanceParameter> RunningParameters
+        {
+            get
+            {
+                return runningParameters;
+            }
+            set
+            {
+                runningParameters = value;
+            }
+        }
 
-		public class DescribeParameters_DBInstanceParameter
-		{
+        public class DescribeParameters_DBInstanceParameter
+        {
 
-			private string parameterName;
+            private string parameterName;
 
-			private string parameterValue;
+            private string parameterValue;
 
-			private string parameterDescription;
+            private string parameterDescription;
 
-			public string ParameterName
-			{
-				get
-				{
-					return parameterName;
-				}
-				set	
-				{
-					parameterName = value;
-				}
-			}
+            public string ParameterName
+            {
+                get
+                {
+                    return parameterName;
+                }
+                set
+                {
+                    parameterName = value;
+                }
+            }
 
-			public string ParameterValue
-			{
-				get
-				{
-					return parameterValue;
-				}
-				set	
-				{
-					parameterValue = value;
-				}
-			}
+            public string ParameterValue
+            {
+                get
+                {
+                    return parameterValue;
+                }
+                set
+                {
+                    parameterValue = value;
+                }
+            }
 
-			public string ParameterDescription
-			{
-				get
-				{
-					return parameterDescription;
-				}
-				set	
-				{
-					parameterDescription = value;
-				}
-			}
-		}
-	}
+            public string ParameterDescription
+            {
+                get
+                {
+                    return parameterDescription;
+                }
+                set
+                {
+                    parameterDescription = value;
+                }
+            }
+        }
+    }
 }

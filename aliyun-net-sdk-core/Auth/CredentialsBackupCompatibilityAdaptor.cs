@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Core.Auth
             AlibabaCloudCredentials credentials = GetCredentials();
             if (credentials is BasicSessionCredentials)
             {
-                return ((BasicSessionCredentials) credentials).GetSessionToken();
+                return ((BasicSessionCredentials)credentials).GetSessionToken();
             }
             else
             {

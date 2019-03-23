@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public CreateStacksRequest()
             : base("ROS", "2015-09-01", "CreateStacks")
         {
-			UriPattern = "/stacks";
-			Method = MethodType.POST;
+            UriPattern = "/stacks";
+            Method = MethodType.POST;
         }
 
         public override CreateStacksResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)

@@ -22,49 +22,49 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeL2VipsByDynamicDomainResponse : AcsResponse
-	{
+    public class DescribeL2VipsByDynamicDomainResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private List<string> vips;
+        private List<string> vips;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public List<string> Vips
-		{
-			get
-			{
-				return vips;
-			}
-			set	
-			{
-				vips = value;
-			}
-		}
-	}
+        public List<string> Vips
+        {
+            get
+            {
+                return vips;
+            }
+            set
+            {
+                vips = value;
+            }
+        }
+    }
 }

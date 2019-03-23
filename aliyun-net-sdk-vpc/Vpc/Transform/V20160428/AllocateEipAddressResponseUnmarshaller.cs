@@ -27,16 +27,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static AllocateEipAddressResponse Unmarshall(UnmarshallerContext context)
         {
-			AllocateEipAddressResponse allocateEipAddressResponse = new AllocateEipAddressResponse();
+            AllocateEipAddressResponse allocateEipAddressResponse = new AllocateEipAddressResponse();
 
-			allocateEipAddressResponse.HttpResponse = context.HttpResponse;
-			allocateEipAddressResponse.RequestId = context.StringValue("AllocateEipAddress.RequestId");
-			allocateEipAddressResponse.AllocationId = context.StringValue("AllocateEipAddress.AllocationId");
-			allocateEipAddressResponse.EipAddress = context.StringValue("AllocateEipAddress.EipAddress");
-			allocateEipAddressResponse.OrderId = context.LongValue("AllocateEipAddress.OrderId");
-			allocateEipAddressResponse.ResourceGroupId = context.StringValue("AllocateEipAddress.ResourceGroupId");
-        
-			return allocateEipAddressResponse;
+            allocateEipAddressResponse.HttpResponse = context.HttpResponse;
+            allocateEipAddressResponse.RequestId = context.StringValue("AllocateEipAddress.RequestId");
+            allocateEipAddressResponse.AllocationId = context.StringValue("AllocateEipAddress.AllocationId");
+            allocateEipAddressResponse.EipAddress = context.StringValue("AllocateEipAddress.EipAddress");
+            allocateEipAddressResponse.OrderId = context.LongValue("AllocateEipAddress.OrderId");
+            allocateEipAddressResponse.ResourceGroupId = context.StringValue("AllocateEipAddress.ResourceGroupId");
+
+            return allocateEipAddressResponse;
         }
     }
 }

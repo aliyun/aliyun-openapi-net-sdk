@@ -27,11 +27,11 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
     {
         public static InquiryStackResponse Unmarshall(UnmarshallerContext context)
         {
-			InquiryStackResponse inquiryStackResponse = new InquiryStackResponse();
+            InquiryStackResponse inquiryStackResponse = new InquiryStackResponse();
 
-			inquiryStackResponse.HttpResponse = context.HttpResponse;
-        
-			return inquiryStackResponse;
+            inquiryStackResponse.HttpResponse = context.HttpResponse;
+
+            return inquiryStackResponse;
         }
     }
 }

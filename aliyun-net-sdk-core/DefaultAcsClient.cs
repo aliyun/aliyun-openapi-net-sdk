@@ -437,7 +437,7 @@ namespace Aliyun.Acs.Core
         /// <returns></returns>
         public string GetHttpProxy()
         {
-            return WebProxy.HttpProxy??Environment.GetEnvironmentVariable("HTTP_PROXY") ?? Environment.GetEnvironmentVariable("http_proxy") ?? null;
+            return WebProxy.HttpProxy ?? Environment.GetEnvironmentVariable("HTTP_PROXY") ?? Environment.GetEnvironmentVariable("http_proxy") ?? null;
         }
 
         /// <summary>
@@ -446,7 +446,7 @@ namespace Aliyun.Acs.Core
         /// <returns></returns>
         public string GetHttpsProxy()
         {
-            return WebProxy.HttpsProxy??Environment.GetEnvironmentVariable("HTTPS_PROXY") ?? Environment.GetEnvironmentVariable("https_proxy") ?? null;
+            return WebProxy.HttpsProxy ?? Environment.GetEnvironmentVariable("HTTPS_PROXY") ?? Environment.GetEnvironmentVariable("https_proxy") ?? null;
         }
 
         /// <summary>
@@ -455,7 +455,7 @@ namespace Aliyun.Acs.Core
         /// <returns></returns>
         public string GetNoProxy()
         {
-            return WebProxy.NoProxy??Environment.GetEnvironmentVariable("NO_PROXY") ?? Environment.GetEnvironmentVariable("no_proxy") ?? null;
+            return WebProxy.NoProxy ?? Environment.GetEnvironmentVariable("NO_PROXY") ?? Environment.GetEnvironmentVariable("no_proxy") ?? null;
         }
 
         private void ResolveProxy<T>(HttpRequest httpRequest, AcsRequest<T> request) where T : AcsResponse

@@ -21,315 +21,315 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeLoadBalancerUDPListenerAttributeResponse : AcsResponse
-	{
+    public class DescribeLoadBalancerUDPListenerAttributeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? listenerPort;
+        private int? listenerPort;
 
-		private int? backendServerPort;
+        private int? backendServerPort;
 
-		private string status;
+        private string status;
 
-		private int? bandwidth;
+        private int? bandwidth;
 
-		private string scheduler;
+        private string scheduler;
 
-		private int? persistenceTimeout;
+        private int? persistenceTimeout;
 
-		private string healthCheck;
+        private string healthCheck;
 
-		private int? healthyThreshold;
+        private int? healthyThreshold;
 
-		private int? unhealthyThreshold;
+        private int? unhealthyThreshold;
 
-		private int? healthCheckConnectTimeout;
+        private int? healthCheckConnectTimeout;
 
-		private int? healthCheckConnectPort;
+        private int? healthCheckConnectPort;
 
-		private int? healthCheckInterval;
+        private int? healthCheckInterval;
 
-		private string healthCheckReq;
+        private string healthCheckReq;
 
-		private string healthCheckExp;
+        private string healthCheckExp;
 
-		private int? maxConnection;
+        private int? maxConnection;
 
-		private string vServerGroupId;
+        private string vServerGroupId;
 
-		private string masterSlaveServerGroupId;
+        private string masterSlaveServerGroupId;
 
-		private string aclId;
+        private string aclId;
 
-		private string aclType;
+        private string aclType;
 
-		private string aclStatus;
+        private string aclStatus;
 
-		private string vpcIds;
+        private string vpcIds;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? ListenerPort
-		{
-			get
-			{
-				return listenerPort;
-			}
-			set	
-			{
-				listenerPort = value;
-			}
-		}
+        public int? ListenerPort
+        {
+            get
+            {
+                return listenerPort;
+            }
+            set
+            {
+                listenerPort = value;
+            }
+        }
 
-		public int? BackendServerPort
-		{
-			get
-			{
-				return backendServerPort;
-			}
-			set	
-			{
-				backendServerPort = value;
-			}
-		}
+        public int? BackendServerPort
+        {
+            get
+            {
+                return backendServerPort;
+            }
+            set
+            {
+                backendServerPort = value;
+            }
+        }
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
+        public string Status
+        {
+            get
+            {
+                return status;
+            }
+            set
+            {
+                status = value;
+            }
+        }
 
-		public int? Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-			}
-		}
+        public int? Bandwidth
+        {
+            get
+            {
+                return bandwidth;
+            }
+            set
+            {
+                bandwidth = value;
+            }
+        }
 
-		public string Scheduler
-		{
-			get
-			{
-				return scheduler;
-			}
-			set	
-			{
-				scheduler = value;
-			}
-		}
+        public string Scheduler
+        {
+            get
+            {
+                return scheduler;
+            }
+            set
+            {
+                scheduler = value;
+            }
+        }
 
-		public int? PersistenceTimeout
-		{
-			get
-			{
-				return persistenceTimeout;
-			}
-			set	
-			{
-				persistenceTimeout = value;
-			}
-		}
+        public int? PersistenceTimeout
+        {
+            get
+            {
+                return persistenceTimeout;
+            }
+            set
+            {
+                persistenceTimeout = value;
+            }
+        }
 
-		public string HealthCheck
-		{
-			get
-			{
-				return healthCheck;
-			}
-			set	
-			{
-				healthCheck = value;
-			}
-		}
+        public string HealthCheck
+        {
+            get
+            {
+                return healthCheck;
+            }
+            set
+            {
+                healthCheck = value;
+            }
+        }
 
-		public int? HealthyThreshold
-		{
-			get
-			{
-				return healthyThreshold;
-			}
-			set	
-			{
-				healthyThreshold = value;
-			}
-		}
+        public int? HealthyThreshold
+        {
+            get
+            {
+                return healthyThreshold;
+            }
+            set
+            {
+                healthyThreshold = value;
+            }
+        }
 
-		public int? UnhealthyThreshold
-		{
-			get
-			{
-				return unhealthyThreshold;
-			}
-			set	
-			{
-				unhealthyThreshold = value;
-			}
-		}
+        public int? UnhealthyThreshold
+        {
+            get
+            {
+                return unhealthyThreshold;
+            }
+            set
+            {
+                unhealthyThreshold = value;
+            }
+        }
 
-		public int? HealthCheckConnectTimeout
-		{
-			get
-			{
-				return healthCheckConnectTimeout;
-			}
-			set	
-			{
-				healthCheckConnectTimeout = value;
-			}
-		}
+        public int? HealthCheckConnectTimeout
+        {
+            get
+            {
+                return healthCheckConnectTimeout;
+            }
+            set
+            {
+                healthCheckConnectTimeout = value;
+            }
+        }
 
-		public int? HealthCheckConnectPort
-		{
-			get
-			{
-				return healthCheckConnectPort;
-			}
-			set	
-			{
-				healthCheckConnectPort = value;
-			}
-		}
+        public int? HealthCheckConnectPort
+        {
+            get
+            {
+                return healthCheckConnectPort;
+            }
+            set
+            {
+                healthCheckConnectPort = value;
+            }
+        }
 
-		public int? HealthCheckInterval
-		{
-			get
-			{
-				return healthCheckInterval;
-			}
-			set	
-			{
-				healthCheckInterval = value;
-			}
-		}
+        public int? HealthCheckInterval
+        {
+            get
+            {
+                return healthCheckInterval;
+            }
+            set
+            {
+                healthCheckInterval = value;
+            }
+        }
 
-		public string HealthCheckReq
-		{
-			get
-			{
-				return healthCheckReq;
-			}
-			set	
-			{
-				healthCheckReq = value;
-			}
-		}
+        public string HealthCheckReq
+        {
+            get
+            {
+                return healthCheckReq;
+            }
+            set
+            {
+                healthCheckReq = value;
+            }
+        }
 
-		public string HealthCheckExp
-		{
-			get
-			{
-				return healthCheckExp;
-			}
-			set	
-			{
-				healthCheckExp = value;
-			}
-		}
+        public string HealthCheckExp
+        {
+            get
+            {
+                return healthCheckExp;
+            }
+            set
+            {
+                healthCheckExp = value;
+            }
+        }
 
-		public int? MaxConnection
-		{
-			get
-			{
-				return maxConnection;
-			}
-			set	
-			{
-				maxConnection = value;
-			}
-		}
+        public int? MaxConnection
+        {
+            get
+            {
+                return maxConnection;
+            }
+            set
+            {
+                maxConnection = value;
+            }
+        }
 
-		public string VServerGroupId
-		{
-			get
-			{
-				return vServerGroupId;
-			}
-			set	
-			{
-				vServerGroupId = value;
-			}
-		}
+        public string VServerGroupId
+        {
+            get
+            {
+                return vServerGroupId;
+            }
+            set
+            {
+                vServerGroupId = value;
+            }
+        }
 
-		public string MasterSlaveServerGroupId
-		{
-			get
-			{
-				return masterSlaveServerGroupId;
-			}
-			set	
-			{
-				masterSlaveServerGroupId = value;
-			}
-		}
+        public string MasterSlaveServerGroupId
+        {
+            get
+            {
+                return masterSlaveServerGroupId;
+            }
+            set
+            {
+                masterSlaveServerGroupId = value;
+            }
+        }
 
-		public string AclId
-		{
-			get
-			{
-				return aclId;
-			}
-			set	
-			{
-				aclId = value;
-			}
-		}
+        public string AclId
+        {
+            get
+            {
+                return aclId;
+            }
+            set
+            {
+                aclId = value;
+            }
+        }
 
-		public string AclType
-		{
-			get
-			{
-				return aclType;
-			}
-			set	
-			{
-				aclType = value;
-			}
-		}
+        public string AclType
+        {
+            get
+            {
+                return aclType;
+            }
+            set
+            {
+                aclType = value;
+            }
+        }
 
-		public string AclStatus
-		{
-			get
-			{
-				return aclStatus;
-			}
-			set	
-			{
-				aclStatus = value;
-			}
-		}
+        public string AclStatus
+        {
+            get
+            {
+                return aclStatus;
+            }
+            set
+            {
+                aclStatus = value;
+            }
+        }
 
-		public string VpcIds
-		{
-			get
-			{
-				return vpcIds;
-			}
-			set	
-			{
-				vpcIds = value;
-			}
-		}
-	}
+        public string VpcIds
+        {
+            get
+            {
+                return vpcIds;
+            }
+            set
+            {
+                vpcIds = value;
+            }
+        }
+    }
 }

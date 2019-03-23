@@ -22,109 +22,109 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLivePullStreamConfigResponse : AcsResponse
-	{
+    public class DescribeLivePullStreamConfigResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeLivePullStreamConfig_LiveAppRecord> liveAppRecordList;
+        private List<DescribeLivePullStreamConfig_LiveAppRecord> liveAppRecordList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeLivePullStreamConfig_LiveAppRecord> LiveAppRecordList
-		{
-			get
-			{
-				return liveAppRecordList;
-			}
-			set	
-			{
-				liveAppRecordList = value;
-			}
-		}
+        public List<DescribeLivePullStreamConfig_LiveAppRecord> LiveAppRecordList
+        {
+            get
+            {
+                return liveAppRecordList;
+            }
+            set
+            {
+                liveAppRecordList = value;
+            }
+        }
 
-		public class DescribeLivePullStreamConfig_LiveAppRecord
-		{
+        public class DescribeLivePullStreamConfig_LiveAppRecord
+        {
 
-			private string domainName;
+            private string domainName;
 
-			private string streamName;
+            private string streamName;
 
-			private string sourceUrl;
+            private string sourceUrl;
 
-			private string startTime;
+            private string startTime;
 
-			private string endTime;
+            private string endTime;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+            public string DomainName
+            {
+                get
+                {
+                    return domainName;
+                }
+                set
+                {
+                    domainName = value;
+                }
+            }
 
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
+            public string StreamName
+            {
+                get
+                {
+                    return streamName;
+                }
+                set
+                {
+                    streamName = value;
+                }
+            }
 
-			public string SourceUrl
-			{
-				get
-				{
-					return sourceUrl;
-				}
-				set	
-				{
-					sourceUrl = value;
-				}
-			}
+            public string SourceUrl
+            {
+                get
+                {
+                    return sourceUrl;
+                }
+                set
+                {
+                    sourceUrl = value;
+                }
+            }
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+            public string StartTime
+            {
+                get
+                {
+                    return startTime;
+                }
+                set
+                {
+                    startTime = value;
+                }
+            }
 
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-		}
-	}
+            public string EndTime
+            {
+                get
+                {
+                    return endTime;
+                }
+                set
+                {
+                    endTime = value;
+                }
+            }
+        }
+    }
 }

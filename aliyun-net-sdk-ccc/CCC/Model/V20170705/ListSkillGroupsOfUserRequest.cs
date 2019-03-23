@@ -33,50 +33,50 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		private string userId;
+        private string userId;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
-			}
-		}
+        public string UserId
+        {
+            get
+            {
+                return userId;
+            }
+            set
+            {
+                userId = value;
+                DictionaryUtil.Add(QueryParameters, "UserId", value);
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override ListSkillGroupsOfUserResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

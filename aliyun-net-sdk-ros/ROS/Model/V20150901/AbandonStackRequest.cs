@@ -31,39 +31,39 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public AbandonStackRequest()
             : base("ROS", "2015-09-01", "AbandonStack")
         {
-			UriPattern = "/stacks/[StackName]/[StackId]/abandon";
-			Method = MethodType.DELETE;
+            UriPattern = "/stacks/[StackName]/[StackId]/abandon";
+            Method = MethodType.DELETE;
         }
 
-		private string stackId;
+        private string stackId;
 
-		private string stackName;
+        private string stackName;
 
-		public string StackId
-		{
-			get
-			{
-				return stackId;
-			}
-			set	
-			{
-				stackId = value;
-				DictionaryUtil.Add(PathParameters, "StackId", value);
-			}
-		}
+        public string StackId
+        {
+            get
+            {
+                return stackId;
+            }
+            set
+            {
+                stackId = value;
+                DictionaryUtil.Add(PathParameters, "StackId", value);
+            }
+        }
 
-		public string StackName
-		{
-			get
-			{
-				return stackName;
-			}
-			set	
-			{
-				stackName = value;
-				DictionaryUtil.Add(PathParameters, "StackName", value);
-			}
-		}
+        public string StackName
+        {
+            get
+            {
+                return stackName;
+            }
+            set
+            {
+                stackName = value;
+                DictionaryUtil.Add(PathParameters, "StackName", value);
+            }
+        }
 
         public override AbandonStackResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

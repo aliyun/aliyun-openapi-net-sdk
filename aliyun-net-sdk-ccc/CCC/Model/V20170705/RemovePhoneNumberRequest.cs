@@ -33,50 +33,50 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		private string phoneNumberId;
+        private string phoneNumberId;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string PhoneNumberId
-		{
-			get
-			{
-				return phoneNumberId;
-			}
-			set	
-			{
-				phoneNumberId = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNumberId", value);
-			}
-		}
+        public string PhoneNumberId
+        {
+            get
+            {
+                return phoneNumberId;
+            }
+            set
+            {
+                phoneNumberId = value;
+                DictionaryUtil.Add(QueryParameters, "PhoneNumberId", value);
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override RemovePhoneNumberResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

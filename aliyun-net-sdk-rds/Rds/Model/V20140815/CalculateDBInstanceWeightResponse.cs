@@ -21,109 +21,109 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CalculateDBInstanceWeightResponse : AcsResponse
-	{
+    public class CalculateDBInstanceWeightResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<CalculateDBInstanceWeight_DBInstanceWeight> items;
+        private List<CalculateDBInstanceWeight_DBInstanceWeight> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<CalculateDBInstanceWeight_DBInstanceWeight> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<CalculateDBInstanceWeight_DBInstanceWeight> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class CalculateDBInstanceWeight_DBInstanceWeight
-		{
+        public class CalculateDBInstanceWeight_DBInstanceWeight
+        {
 
-			private string dBInstanceId;
+            private string dBInstanceId;
 
-			private string dBInstanceType;
+            private string dBInstanceType;
 
-			private string readonlyInstanceSQLDelayedTime;
+            private string readonlyInstanceSQLDelayedTime;
 
-			private string availability;
+            private string availability;
 
-			private string weight;
+            private string weight;
 
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
+            public string DBInstanceId
+            {
+                get
+                {
+                    return dBInstanceId;
+                }
+                set
+                {
+                    dBInstanceId = value;
+                }
+            }
 
-			public string DBInstanceType
-			{
-				get
-				{
-					return dBInstanceType;
-				}
-				set	
-				{
-					dBInstanceType = value;
-				}
-			}
+            public string DBInstanceType
+            {
+                get
+                {
+                    return dBInstanceType;
+                }
+                set
+                {
+                    dBInstanceType = value;
+                }
+            }
 
-			public string ReadonlyInstanceSQLDelayedTime
-			{
-				get
-				{
-					return readonlyInstanceSQLDelayedTime;
-				}
-				set	
-				{
-					readonlyInstanceSQLDelayedTime = value;
-				}
-			}
+            public string ReadonlyInstanceSQLDelayedTime
+            {
+                get
+                {
+                    return readonlyInstanceSQLDelayedTime;
+                }
+                set
+                {
+                    readonlyInstanceSQLDelayedTime = value;
+                }
+            }
 
-			public string Availability
-			{
-				get
-				{
-					return availability;
-				}
-				set	
-				{
-					availability = value;
-				}
-			}
+            public string Availability
+            {
+                get
+                {
+                    return availability;
+                }
+                set
+                {
+                    availability = value;
+                }
+            }
 
-			public string Weight
-			{
-				get
-				{
-					return weight;
-				}
-				set	
-				{
-					weight = value;
-				}
-			}
-		}
-	}
+            public string Weight
+            {
+                get
+                {
+                    return weight;
+                }
+                set
+                {
+                    weight = value;
+                }
+            }
+        }
+    }
 }

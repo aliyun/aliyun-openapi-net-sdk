@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static CreateIpv6EgressOnlyRuleResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateIpv6EgressOnlyRuleResponse createIpv6EgressOnlyRuleResponse = new CreateIpv6EgressOnlyRuleResponse();
+            CreateIpv6EgressOnlyRuleResponse createIpv6EgressOnlyRuleResponse = new CreateIpv6EgressOnlyRuleResponse();
 
-			createIpv6EgressOnlyRuleResponse.HttpResponse = context.HttpResponse;
-			createIpv6EgressOnlyRuleResponse.RequestId = context.StringValue("CreateIpv6EgressOnlyRule.RequestId");
-			createIpv6EgressOnlyRuleResponse.Ipv6EgressRuleId = context.StringValue("CreateIpv6EgressOnlyRule.Ipv6EgressRuleId");
-        
-			return createIpv6EgressOnlyRuleResponse;
+            createIpv6EgressOnlyRuleResponse.HttpResponse = context.HttpResponse;
+            createIpv6EgressOnlyRuleResponse.RequestId = context.StringValue("CreateIpv6EgressOnlyRule.RequestId");
+            createIpv6EgressOnlyRuleResponse.Ipv6EgressRuleId = context.StringValue("CreateIpv6EgressOnlyRule.Ipv6EgressRuleId");
+
+            return createIpv6EgressOnlyRuleResponse;
         }
     }
 }

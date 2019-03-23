@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DeleteCdnDomainResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteCdnDomainResponse deleteCdnDomainResponse = new DeleteCdnDomainResponse();
+            DeleteCdnDomainResponse deleteCdnDomainResponse = new DeleteCdnDomainResponse();
 
-			deleteCdnDomainResponse.HttpResponse = context.HttpResponse;
-			deleteCdnDomainResponse.RequestId = context.StringValue("DeleteCdnDomain.RequestId");
-        
-			return deleteCdnDomainResponse;
+            deleteCdnDomainResponse.HttpResponse = context.HttpResponse;
+            deleteCdnDomainResponse.RequestId = context.StringValue("DeleteCdnDomain.RequestId");
+
+            return deleteCdnDomainResponse;
         }
     }
 }

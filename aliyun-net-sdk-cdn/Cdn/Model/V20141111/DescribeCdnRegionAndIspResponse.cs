@@ -22,113 +22,113 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeCdnRegionAndIspResponse : AcsResponse
-	{
+    public class DescribeCdnRegionAndIspResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeCdnRegionAndIsp_Region> regions;
+        private List<DescribeCdnRegionAndIsp_Region> regions;
 
-		private List<DescribeCdnRegionAndIsp_Isp> isps;
+        private List<DescribeCdnRegionAndIsp_Isp> isps;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeCdnRegionAndIsp_Region> Regions
-		{
-			get
-			{
-				return regions;
-			}
-			set	
-			{
-				regions = value;
-			}
-		}
+        public List<DescribeCdnRegionAndIsp_Region> Regions
+        {
+            get
+            {
+                return regions;
+            }
+            set
+            {
+                regions = value;
+            }
+        }
 
-		public List<DescribeCdnRegionAndIsp_Isp> Isps
-		{
-			get
-			{
-				return isps;
-			}
-			set	
-			{
-				isps = value;
-			}
-		}
+        public List<DescribeCdnRegionAndIsp_Isp> Isps
+        {
+            get
+            {
+                return isps;
+            }
+            set
+            {
+                isps = value;
+            }
+        }
 
-		public class DescribeCdnRegionAndIsp_Region
-		{
+        public class DescribeCdnRegionAndIsp_Region
+        {
 
-			private string nameZh;
+            private string nameZh;
 
-			private string nameEn;
+            private string nameEn;
 
-			public string NameZh
-			{
-				get
-				{
-					return nameZh;
-				}
-				set	
-				{
-					nameZh = value;
-				}
-			}
+            public string NameZh
+            {
+                get
+                {
+                    return nameZh;
+                }
+                set
+                {
+                    nameZh = value;
+                }
+            }
 
-			public string NameEn
-			{
-				get
-				{
-					return nameEn;
-				}
-				set	
-				{
-					nameEn = value;
-				}
-			}
-		}
+            public string NameEn
+            {
+                get
+                {
+                    return nameEn;
+                }
+                set
+                {
+                    nameEn = value;
+                }
+            }
+        }
 
-		public class DescribeCdnRegionAndIsp_Isp
-		{
+        public class DescribeCdnRegionAndIsp_Isp
+        {
 
-			private string nameZh;
+            private string nameZh;
 
-			private string nameEn;
+            private string nameEn;
 
-			public string NameZh
-			{
-				get
-				{
-					return nameZh;
-				}
-				set	
-				{
-					nameZh = value;
-				}
-			}
+            public string NameZh
+            {
+                get
+                {
+                    return nameZh;
+                }
+                set
+                {
+                    nameZh = value;
+                }
+            }
 
-			public string NameEn
-			{
-				get
-				{
-					return nameEn;
-				}
-				set	
-				{
-					nameEn = value;
-				}
-			}
-		}
-	}
+            public string NameEn
+            {
+                get
+                {
+                    return nameEn;
+                }
+                set
+                {
+                    nameEn = value;
+                }
+            }
+        }
+    }
 }

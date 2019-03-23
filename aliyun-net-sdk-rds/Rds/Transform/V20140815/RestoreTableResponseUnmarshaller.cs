@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static RestoreTableResponse Unmarshall(UnmarshallerContext context)
         {
-			RestoreTableResponse restoreTableResponse = new RestoreTableResponse();
+            RestoreTableResponse restoreTableResponse = new RestoreTableResponse();
 
-			restoreTableResponse.HttpResponse = context.HttpResponse;
-			restoreTableResponse.RequestId = context.StringValue("RestoreTable.RequestId");
-        
-			return restoreTableResponse;
+            restoreTableResponse.HttpResponse = context.HttpResponse;
+            restoreTableResponse.RequestId = context.StringValue("RestoreTable.RequestId");
+
+            return restoreTableResponse;
         }
     }
 }

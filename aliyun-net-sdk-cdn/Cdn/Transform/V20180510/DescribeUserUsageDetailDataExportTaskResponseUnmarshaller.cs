@@ -28,37 +28,38 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeUserUsageDetailDataExportTaskResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeUserUsageDetailDataExportTaskResponse describeUserUsageDetailDataExportTaskResponse = new DescribeUserUsageDetailDataExportTaskResponse();
+            DescribeUserUsageDetailDataExportTaskResponse describeUserUsageDetailDataExportTaskResponse = new DescribeUserUsageDetailDataExportTaskResponse();
 
-			describeUserUsageDetailDataExportTaskResponse.HttpResponse = context.HttpResponse;
-			describeUserUsageDetailDataExportTaskResponse.RequestId = context.StringValue("DescribeUserUsageDetailDataExportTask.RequestId");
+            describeUserUsageDetailDataExportTaskResponse.HttpResponse = context.HttpResponse;
+            describeUserUsageDetailDataExportTaskResponse.RequestId = context.StringValue("DescribeUserUsageDetailDataExportTask.RequestId");
 
-			DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage usageDataPerPage = new DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage();
-			usageDataPerPage.TotalCount = context.IntegerValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.TotalCount");
-			usageDataPerPage.PageSize = context.IntegerValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.PageSize");
-			usageDataPerPage.PageNumber = context.IntegerValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.PageNumber");
+            DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage usageDataPerPage = new DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage();
+            usageDataPerPage.TotalCount = context.IntegerValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.TotalCount");
+            usageDataPerPage.PageSize = context.IntegerValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.PageSize");
+            usageDataPerPage.PageNumber = context.IntegerValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.PageNumber");
 
-			List<DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage.DescribeUserUsageDetailDataExportTask_DataItem> usageDataPerPage_data = new List<DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage.DescribeUserUsageDetailDataExportTask_DataItem>();
-			for (int i = 0; i < context.Length("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data.Length"); i++) {
-				DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage.DescribeUserUsageDetailDataExportTask_DataItem dataItem = new DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage.DescribeUserUsageDetailDataExportTask_DataItem();
-				dataItem.TaskName = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data["+ i +"].TaskName");
-				dataItem.TaskId = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data["+ i +"].TaskId");
-				dataItem.CreateTime = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data["+ i +"].CreateTime");
-				dataItem.UpdateTime = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data["+ i +"].UpdateTime");
-				dataItem.Status = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data["+ i +"].Status");
-				dataItem.DownloadUrl = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data["+ i +"].DownloadUrl");
+            List<DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage.DescribeUserUsageDetailDataExportTask_DataItem> usageDataPerPage_data = new List<DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage.DescribeUserUsageDetailDataExportTask_DataItem>();
+            for (int i = 0; i < context.Length("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data.Length"); i++)
+            {
+                DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage.DescribeUserUsageDetailDataExportTask_DataItem dataItem = new DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage.DescribeUserUsageDetailDataExportTask_DataItem();
+                dataItem.TaskName = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data[" + i + "].TaskName");
+                dataItem.TaskId = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data[" + i + "].TaskId");
+                dataItem.CreateTime = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data[" + i + "].CreateTime");
+                dataItem.UpdateTime = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data[" + i + "].UpdateTime");
+                dataItem.Status = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data[" + i + "].Status");
+                dataItem.DownloadUrl = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data[" + i + "].DownloadUrl");
 
-				DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage.DescribeUserUsageDetailDataExportTask_DataItem.DescribeUserUsageDetailDataExportTask_TaskConfig taskConfig = new DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage.DescribeUserUsageDetailDataExportTask_DataItem.DescribeUserUsageDetailDataExportTask_TaskConfig();
-				taskConfig.StartTime = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data["+ i +"].TaskConfig.StartTime");
-				taskConfig.EndTime = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data["+ i +"].TaskConfig.EndTime");
-				dataItem.TaskConfig = taskConfig;
+                DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage.DescribeUserUsageDetailDataExportTask_DataItem.DescribeUserUsageDetailDataExportTask_TaskConfig taskConfig = new DescribeUserUsageDetailDataExportTaskResponse.DescribeUserUsageDetailDataExportTask_UsageDataPerPage.DescribeUserUsageDetailDataExportTask_DataItem.DescribeUserUsageDetailDataExportTask_TaskConfig();
+                taskConfig.StartTime = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data[" + i + "].TaskConfig.StartTime");
+                taskConfig.EndTime = context.StringValue("DescribeUserUsageDetailDataExportTask.UsageDataPerPage.Data[" + i + "].TaskConfig.EndTime");
+                dataItem.TaskConfig = taskConfig;
 
-				usageDataPerPage_data.Add(dataItem);
-			}
-			usageDataPerPage.Data = usageDataPerPage_data;
-			describeUserUsageDetailDataExportTaskResponse.UsageDataPerPage = usageDataPerPage;
-        
-			return describeUserUsageDetailDataExportTaskResponse;
+                usageDataPerPage_data.Add(dataItem);
+            }
+            usageDataPerPage.Data = usageDataPerPage_data;
+            describeUserUsageDetailDataExportTaskResponse.UsageDataPerPage = usageDataPerPage;
+
+            return describeUserUsageDetailDataExportTaskResponse;
         }
     }
 }

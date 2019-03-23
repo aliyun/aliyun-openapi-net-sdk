@@ -48,7 +48,7 @@ namespace Aliyun.Acs.Core.Http
         private static void PasrseHttpResponse(HttpResponse httpResponse, HttpWebResponse httpWebResponse)
         {
             httpResponse.Content = ReadContent(httpResponse, httpWebResponse);
-            httpResponse.Status = (int) httpWebResponse.StatusCode;
+            httpResponse.Status = (int)httpWebResponse.StatusCode;
             httpResponse.Headers = new Dictionary<string, string>();
             httpResponse.Method = ParameterHelper.StringToMethodType(httpWebResponse.Method);
 
@@ -103,20 +103,20 @@ namespace Aliyun.Acs.Core.Http
             HttpWebRequest httpWebRequest = GetWebRequest(request);
             if (timeout != null)
             {
-                httpWebRequest.Timeout = (int) timeout;
+                httpWebRequest.Timeout = (int)timeout;
             }
 
             HttpResponse httpResponse = new HttpResponse(httpWebRequest.RequestUri.AbsoluteUri);
             HttpWebResponse httpWebResponse = null;
             try
             {
-                httpWebResponse = (HttpWebResponse) httpWebRequest.GetResponse();
+                httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
             }
             catch (WebException ex)
             {
                 if (ex.Response != null)
                 {
-                    httpWebResponse = (HttpWebResponse) ex.Response;
+                    httpWebResponse = (HttpWebResponse)ex.Response;
                 }
                 else
                 {
@@ -134,7 +134,7 @@ namespace Aliyun.Acs.Core.Http
         public static HttpWebRequest GetWebRequest(HttpRequest request)
         {
             HttpWebRequest httpWebRequest = null;
-            httpWebRequest = (HttpWebRequest) WebRequest.Create(request.Url);
+            httpWebRequest = (HttpWebRequest)WebRequest.Create(request.Url);
             httpWebRequest.Method = request.Method.ToString();
             httpWebRequest.KeepAlive = true;
 
@@ -183,7 +183,7 @@ namespace Aliyun.Acs.Core.Http
 
             if ((request.Method == MethodType.POST || request.Method == MethodType.PUT) && request.Content != null)
             {
-                using(Stream stream = httpWebRequest.GetRequestStream())
+                using (Stream stream = httpWebRequest.GetRequestStream())
                 {
                     stream.Write(request.Content, 0, request.Content.Length);
                 }

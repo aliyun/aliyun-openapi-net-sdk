@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeTagsResponse : AcsResponse
-	{
+    public class DescribeTagsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private List<DescribeTags_TagSet> tagSets;
+        private List<DescribeTags_TagSet> tagSets;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribeTags_TagSet> TagSets
-		{
-			get
-			{
-				return tagSets;
-			}
-			set	
-			{
-				tagSets = value;
-			}
-		}
+        public List<DescribeTags_TagSet> TagSets
+        {
+            get
+            {
+                return tagSets;
+            }
+            set
+            {
+                tagSets = value;
+            }
+        }
 
-		public class DescribeTags_TagSet
-		{
+        public class DescribeTags_TagSet
+        {
 
-			private string tagKey;
+            private string tagKey;
 
-			private string tagValue;
+            private string tagValue;
 
-			private int? instanceCount;
+            private int? instanceCount;
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
+            public string TagKey
+            {
+                get
+                {
+                    return tagKey;
+                }
+                set
+                {
+                    tagKey = value;
+                }
+            }
 
-			public string TagValue
-			{
-				get
-				{
-					return tagValue;
-				}
-				set	
-				{
-					tagValue = value;
-				}
-			}
+            public string TagValue
+            {
+                get
+                {
+                    return tagValue;
+                }
+                set
+                {
+                    tagValue = value;
+                }
+            }
 
-			public int? InstanceCount
-			{
-				get
-				{
-					return instanceCount;
-				}
-				set	
-				{
-					instanceCount = value;
-				}
-			}
-		}
-	}
+            public int? InstanceCount
+            {
+                get
+                {
+                    return instanceCount;
+                }
+                set
+                {
+                    instanceCount = value;
+                }
+            }
+        }
+    }
 }

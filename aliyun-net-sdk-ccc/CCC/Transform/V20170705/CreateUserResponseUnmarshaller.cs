@@ -27,17 +27,17 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static CreateUserResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateUserResponse createUserResponse = new CreateUserResponse();
+            CreateUserResponse createUserResponse = new CreateUserResponse();
 
-			createUserResponse.HttpResponse = context.HttpResponse;
-			createUserResponse.RequestId = context.StringValue("CreateUser.RequestId");
-			createUserResponse.Success = context.BooleanValue("CreateUser.Success");
-			createUserResponse.Code = context.StringValue("CreateUser.Code");
-			createUserResponse.Message = context.StringValue("CreateUser.Message");
-			createUserResponse.HttpStatusCode = context.IntegerValue("CreateUser.HttpStatusCode");
-			createUserResponse.UserId = context.StringValue("CreateUser.UserId");
-        
-			return createUserResponse;
+            createUserResponse.HttpResponse = context.HttpResponse;
+            createUserResponse.RequestId = context.StringValue("CreateUser.RequestId");
+            createUserResponse.Success = context.BooleanValue("CreateUser.Success");
+            createUserResponse.Code = context.StringValue("CreateUser.Code");
+            createUserResponse.Message = context.StringValue("CreateUser.Message");
+            createUserResponse.HttpStatusCode = context.IntegerValue("CreateUser.HttpStatusCode");
+            createUserResponse.UserId = context.StringValue("CreateUser.UserId");
+
+            return createUserResponse;
         }
     }
 }

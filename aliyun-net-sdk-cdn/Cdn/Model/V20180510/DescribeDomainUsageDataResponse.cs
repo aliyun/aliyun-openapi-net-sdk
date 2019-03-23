@@ -22,165 +22,165 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeDomainUsageDataResponse : AcsResponse
-	{
+    public class DescribeDomainUsageDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private string type;
+        private string type;
 
-		private string area;
+        private string area;
 
-		private string dataInterval;
+        private string dataInterval;
 
-		private List<DescribeDomainUsageData_DataModule> usageDataPerInterval;
+        private List<DescribeDomainUsageData_DataModule> usageDataPerInterval;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-			}
-		}
+        public string Type
+        {
+            get
+            {
+                return type;
+            }
+            set
+            {
+                type = value;
+            }
+        }
 
-		public string Area
-		{
-			get
-			{
-				return area;
-			}
-			set	
-			{
-				area = value;
-			}
-		}
+        public string Area
+        {
+            get
+            {
+                return area;
+            }
+            set
+            {
+                area = value;
+            }
+        }
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
+        public string DataInterval
+        {
+            get
+            {
+                return dataInterval;
+            }
+            set
+            {
+                dataInterval = value;
+            }
+        }
 
-		public List<DescribeDomainUsageData_DataModule> UsageDataPerInterval
-		{
-			get
-			{
-				return usageDataPerInterval;
-			}
-			set	
-			{
-				usageDataPerInterval = value;
-			}
-		}
+        public List<DescribeDomainUsageData_DataModule> UsageDataPerInterval
+        {
+            get
+            {
+                return usageDataPerInterval;
+            }
+            set
+            {
+                usageDataPerInterval = value;
+            }
+        }
 
-		public class DescribeDomainUsageData_DataModule
-		{
+        public class DescribeDomainUsageData_DataModule
+        {
 
-			private string timeStamp;
+            private string timeStamp;
 
-			private string peakTime;
+            private string peakTime;
 
-			private string _value;
+            private string _value;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
 
-			public string PeakTime
-			{
-				get
-				{
-					return peakTime;
-				}
-				set	
-				{
-					peakTime = value;
-				}
-			}
+            public string PeakTime
+            {
+                get
+                {
+                    return peakTime;
+                }
+                set
+                {
+                    peakTime = value;
+                }
+            }
 
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
-			}
-		}
-	}
+            public string _Value
+            {
+                get
+                {
+                    return _value;
+                }
+                set
+                {
+                    _value = value;
+                }
+            }
+        }
+    }
 }

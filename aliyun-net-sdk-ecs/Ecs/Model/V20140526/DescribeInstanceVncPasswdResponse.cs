@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeInstanceVncPasswdResponse : AcsResponse
-	{
+    public class DescribeInstanceVncPasswdResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string vncPasswd;
+        private string vncPasswd;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string VncPasswd
-		{
-			get
-			{
-				return vncPasswd;
-			}
-			set	
-			{
-				vncPasswd = value;
-			}
-		}
-	}
+        public string VncPasswd
+        {
+            get
+            {
+                return vncPasswd;
+            }
+            set
+            {
+                vncPasswd = value;
+            }
+        }
+    }
 }

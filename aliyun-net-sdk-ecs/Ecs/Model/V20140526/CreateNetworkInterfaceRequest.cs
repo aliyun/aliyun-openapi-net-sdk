@@ -33,252 +33,252 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string clientToken;
+        private string clientToken;
 
-		private string securityGroupId;
+        private string securityGroupId;
 
-		private string description;
+        private string description;
 
-		private string resourceGroupId;
+        private string resourceGroupId;
 
-		private string regionId;
+        private string regionId;
 
-		private string action;
+        private string action;
 
-		private List<Tag> tags;
+        private List<Tag> tags;
 
-		private string networkInterfaceName;
+        private string networkInterfaceName;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string vSwitchId;
+        private string vSwitchId;
 
-		private string primaryIpAddress;
+        private string primaryIpAddress;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
+        public string ClientToken
+        {
+            get
+            {
+                return clientToken;
+            }
+            set
+            {
+                clientToken = value;
+                DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+            }
+        }
 
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
+        public string SecurityGroupId
+        {
+            get
+            {
+                return securityGroupId;
+            }
+            set
+            {
+                securityGroupId = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
+        public string ResourceGroupId
+        {
+            get
+            {
+                return resourceGroupId;
+            }
+            set
+            {
+                resourceGroupId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
+        public List<Tag> Tags
+        {
+            get
+            {
+                return tags;
+            }
 
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-				}
-			}
-		}
+            set
+            {
+                tags = value;
+                for (int i = 0; i < tags.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "Tag." + (i + 1) + ".Key", tags[i].Key);
+                    DictionaryUtil.Add(QueryParameters, "Tag." + (i + 1) + ".Value", tags[i].Value);
+                }
+            }
+        }
 
-		public string NetworkInterfaceName
-		{
-			get
-			{
-				return networkInterfaceName;
-			}
-			set	
-			{
-				networkInterfaceName = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkInterfaceName", value);
-			}
-		}
+        public string NetworkInterfaceName
+        {
+            get
+            {
+                return networkInterfaceName;
+            }
+            set
+            {
+                networkInterfaceName = value;
+                DictionaryUtil.Add(QueryParameters, "NetworkInterfaceName", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
+        public string VSwitchId
+        {
+            get
+            {
+                return vSwitchId;
+            }
+            set
+            {
+                vSwitchId = value;
+                DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+            }
+        }
 
-		public string PrimaryIpAddress
-		{
-			get
-			{
-				return primaryIpAddress;
-			}
-			set	
-			{
-				primaryIpAddress = value;
-				DictionaryUtil.Add(QueryParameters, "PrimaryIpAddress", value);
-			}
-		}
+        public string PrimaryIpAddress
+        {
+            get
+            {
+                return primaryIpAddress;
+            }
+            set
+            {
+                primaryIpAddress = value;
+                DictionaryUtil.Add(QueryParameters, "PrimaryIpAddress", value);
+            }
+        }
 
-		public class Tag
-		{
+        public class Tag
+        {
 
-			private string key;
+            private string key;
 
-			private string value_;
+            private string value_;
 
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
+            public string Key
+            {
+                get
+                {
+                    return key;
+                }
+                set
+                {
+                    key = value;
+                }
+            }
 
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-		}
+            public string Value
+            {
+                get
+                {
+                    return value_;
+                }
+                set
+                {
+                    value_ = value;
+                }
+            }
+        }
 
         public override CreateNetworkInterfaceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

@@ -33,25 +33,25 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override ListScenariosResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

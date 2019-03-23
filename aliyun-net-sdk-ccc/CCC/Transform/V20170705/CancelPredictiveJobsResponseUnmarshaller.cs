@@ -27,16 +27,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static CancelPredictiveJobsResponse Unmarshall(UnmarshallerContext context)
         {
-			CancelPredictiveJobsResponse cancelPredictiveJobsResponse = new CancelPredictiveJobsResponse();
+            CancelPredictiveJobsResponse cancelPredictiveJobsResponse = new CancelPredictiveJobsResponse();
 
-			cancelPredictiveJobsResponse.HttpResponse = context.HttpResponse;
-			cancelPredictiveJobsResponse.RequestId = context.StringValue("CancelPredictiveJobs.RequestId");
-			cancelPredictiveJobsResponse.Success = context.BooleanValue("CancelPredictiveJobs.Success");
-			cancelPredictiveJobsResponse.Code = context.StringValue("CancelPredictiveJobs.Code");
-			cancelPredictiveJobsResponse.Message = context.StringValue("CancelPredictiveJobs.Message");
-			cancelPredictiveJobsResponse.HttpStatusCode = context.IntegerValue("CancelPredictiveJobs.HttpStatusCode");
-        
-			return cancelPredictiveJobsResponse;
+            cancelPredictiveJobsResponse.HttpResponse = context.HttpResponse;
+            cancelPredictiveJobsResponse.RequestId = context.StringValue("CancelPredictiveJobs.RequestId");
+            cancelPredictiveJobsResponse.Success = context.BooleanValue("CancelPredictiveJobs.Success");
+            cancelPredictiveJobsResponse.Code = context.StringValue("CancelPredictiveJobs.Code");
+            cancelPredictiveJobsResponse.Message = context.StringValue("CancelPredictiveJobs.Message");
+            cancelPredictiveJobsResponse.HttpStatusCode = context.IntegerValue("CancelPredictiveJobs.HttpStatusCode");
+
+            return cancelPredictiveJobsResponse;
         }
     }
 }

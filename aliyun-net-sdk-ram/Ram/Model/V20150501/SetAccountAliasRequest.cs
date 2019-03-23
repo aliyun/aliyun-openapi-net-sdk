@@ -32,23 +32,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public SetAccountAliasRequest()
             : base("Ram", "2015-05-01", "SetAccountAlias", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string accountAlias;
+        private string accountAlias;
 
-		public string AccountAlias
-		{
-			get
-			{
-				return accountAlias;
-			}
-			set	
-			{
-				accountAlias = value;
-				DictionaryUtil.Add(QueryParameters, "AccountAlias", value);
-			}
-		}
+        public string AccountAlias
+        {
+            get
+            {
+                return accountAlias;
+            }
+            set
+            {
+                accountAlias = value;
+                DictionaryUtil.Add(QueryParameters, "AccountAlias", value);
+            }
+        }
 
         public override SetAccountAliasResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

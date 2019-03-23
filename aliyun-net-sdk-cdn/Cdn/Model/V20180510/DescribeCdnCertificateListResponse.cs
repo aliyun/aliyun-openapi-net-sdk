@@ -22,155 +22,155 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeCdnCertificateListResponse : AcsResponse
-	{
+    public class DescribeCdnCertificateListResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private DescribeCdnCertificateList_CertificateListModel certificateListModel;
+        private DescribeCdnCertificateList_CertificateListModel certificateListModel;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public DescribeCdnCertificateList_CertificateListModel CertificateListModel
-		{
-			get
-			{
-				return certificateListModel;
-			}
-			set	
-			{
-				certificateListModel = value;
-			}
-		}
+        public DescribeCdnCertificateList_CertificateListModel CertificateListModel
+        {
+            get
+            {
+                return certificateListModel;
+            }
+            set
+            {
+                certificateListModel = value;
+            }
+        }
 
-		public class DescribeCdnCertificateList_CertificateListModel
-		{
+        public class DescribeCdnCertificateList_CertificateListModel
+        {
 
-			private int? count;
+            private int? count;
 
-			private List<DescribeCdnCertificateList_Cert> certList;
+            private List<DescribeCdnCertificateList_Cert> certList;
 
-			public int? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
-			}
+            public int? Count
+            {
+                get
+                {
+                    return count;
+                }
+                set
+                {
+                    count = value;
+                }
+            }
 
-			public List<DescribeCdnCertificateList_Cert> CertList
-			{
-				get
-				{
-					return certList;
-				}
-				set	
-				{
-					certList = value;
-				}
-			}
+            public List<DescribeCdnCertificateList_Cert> CertList
+            {
+                get
+                {
+                    return certList;
+                }
+                set
+                {
+                    certList = value;
+                }
+            }
 
-			public class DescribeCdnCertificateList_Cert
-			{
+            public class DescribeCdnCertificateList_Cert
+            {
 
-				private string certName;
+                private string certName;
 
-				private long? certId;
+                private long? certId;
 
-				private string fingerprint;
+                private string fingerprint;
 
-				private string common;
+                private string common;
 
-				private string issuer;
+                private string issuer;
 
-				private long? lastTime;
+                private long? lastTime;
 
-				public string CertName
-				{
-					get
-					{
-						return certName;
-					}
-					set	
-					{
-						certName = value;
-					}
-				}
+                public string CertName
+                {
+                    get
+                    {
+                        return certName;
+                    }
+                    set
+                    {
+                        certName = value;
+                    }
+                }
 
-				public long? CertId
-				{
-					get
-					{
-						return certId;
-					}
-					set	
-					{
-						certId = value;
-					}
-				}
+                public long? CertId
+                {
+                    get
+                    {
+                        return certId;
+                    }
+                    set
+                    {
+                        certId = value;
+                    }
+                }
 
-				public string Fingerprint
-				{
-					get
-					{
-						return fingerprint;
-					}
-					set	
-					{
-						fingerprint = value;
-					}
-				}
+                public string Fingerprint
+                {
+                    get
+                    {
+                        return fingerprint;
+                    }
+                    set
+                    {
+                        fingerprint = value;
+                    }
+                }
 
-				public string Common
-				{
-					get
-					{
-						return common;
-					}
-					set	
-					{
-						common = value;
-					}
-				}
+                public string Common
+                {
+                    get
+                    {
+                        return common;
+                    }
+                    set
+                    {
+                        common = value;
+                    }
+                }
 
-				public string Issuer
-				{
-					get
-					{
-						return issuer;
-					}
-					set	
-					{
-						issuer = value;
-					}
-				}
+                public string Issuer
+                {
+                    get
+                    {
+                        return issuer;
+                    }
+                    set
+                    {
+                        issuer = value;
+                    }
+                }
 
-				public long? LastTime
-				{
-					get
-					{
-						return lastTime;
-					}
-					set	
-					{
-						lastTime = value;
-					}
-				}
-			}
-		}
-	}
+                public long? LastTime
+                {
+                    get
+                    {
+                        return lastTime;
+                    }
+                    set
+                    {
+                        lastTime = value;
+                    }
+                }
+            }
+        }
+    }
 }

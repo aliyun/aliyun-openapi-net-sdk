@@ -22,263 +22,263 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeDomainISPDataResponse : AcsResponse
-	{
+    public class DescribeDomainISPDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string dataInterval;
+        private string dataInterval;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private List<DescribeDomainISPData_ISPProportionData> _value;
+        private List<DescribeDomainISPData_ISPProportionData> _value;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
+        public string DataInterval
+        {
+            get
+            {
+                return dataInterval;
+            }
+            set
+            {
+                dataInterval = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public List<DescribeDomainISPData_ISPProportionData> _Value
-		{
-			get
-			{
-				return _value;
-			}
-			set	
-			{
-				_value = value;
-			}
-		}
+        public List<DescribeDomainISPData_ISPProportionData> _Value
+        {
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                _value = value;
+            }
+        }
 
-		public class DescribeDomainISPData_ISPProportionData
-		{
+        public class DescribeDomainISPData_ISPProportionData
+        {
 
-			private string iSP;
+            private string iSP;
 
-			private string proportion;
+            private string proportion;
 
-			private string ispEname;
+            private string ispEname;
 
-			private string avgObjectSize;
+            private string avgObjectSize;
 
-			private string avgResponseTime;
+            private string avgResponseTime;
 
-			private string bps;
+            private string bps;
 
-			private string qps;
+            private string qps;
 
-			private string avgResponseRate;
+            private string avgResponseRate;
 
-			private string reqErrRate;
+            private string reqErrRate;
 
-			private string totalBytes;
+            private string totalBytes;
 
-			private string bytesProportion;
+            private string bytesProportion;
 
-			private string totalQuery;
+            private string totalQuery;
 
-			public string ISP
-			{
-				get
-				{
-					return iSP;
-				}
-				set	
-				{
-					iSP = value;
-				}
-			}
+            public string ISP
+            {
+                get
+                {
+                    return iSP;
+                }
+                set
+                {
+                    iSP = value;
+                }
+            }
 
-			public string Proportion
-			{
-				get
-				{
-					return proportion;
-				}
-				set	
-				{
-					proportion = value;
-				}
-			}
+            public string Proportion
+            {
+                get
+                {
+                    return proportion;
+                }
+                set
+                {
+                    proportion = value;
+                }
+            }
 
-			public string IspEname
-			{
-				get
-				{
-					return ispEname;
-				}
-				set	
-				{
-					ispEname = value;
-				}
-			}
+            public string IspEname
+            {
+                get
+                {
+                    return ispEname;
+                }
+                set
+                {
+                    ispEname = value;
+                }
+            }
 
-			public string AvgObjectSize
-			{
-				get
-				{
-					return avgObjectSize;
-				}
-				set	
-				{
-					avgObjectSize = value;
-				}
-			}
+            public string AvgObjectSize
+            {
+                get
+                {
+                    return avgObjectSize;
+                }
+                set
+                {
+                    avgObjectSize = value;
+                }
+            }
 
-			public string AvgResponseTime
-			{
-				get
-				{
-					return avgResponseTime;
-				}
-				set	
-				{
-					avgResponseTime = value;
-				}
-			}
+            public string AvgResponseTime
+            {
+                get
+                {
+                    return avgResponseTime;
+                }
+                set
+                {
+                    avgResponseTime = value;
+                }
+            }
 
-			public string Bps
-			{
-				get
-				{
-					return bps;
-				}
-				set	
-				{
-					bps = value;
-				}
-			}
+            public string Bps
+            {
+                get
+                {
+                    return bps;
+                }
+                set
+                {
+                    bps = value;
+                }
+            }
 
-			public string Qps
-			{
-				get
-				{
-					return qps;
-				}
-				set	
-				{
-					qps = value;
-				}
-			}
+            public string Qps
+            {
+                get
+                {
+                    return qps;
+                }
+                set
+                {
+                    qps = value;
+                }
+            }
 
-			public string AvgResponseRate
-			{
-				get
-				{
-					return avgResponseRate;
-				}
-				set	
-				{
-					avgResponseRate = value;
-				}
-			}
+            public string AvgResponseRate
+            {
+                get
+                {
+                    return avgResponseRate;
+                }
+                set
+                {
+                    avgResponseRate = value;
+                }
+            }
 
-			public string ReqErrRate
-			{
-				get
-				{
-					return reqErrRate;
-				}
-				set	
-				{
-					reqErrRate = value;
-				}
-			}
+            public string ReqErrRate
+            {
+                get
+                {
+                    return reqErrRate;
+                }
+                set
+                {
+                    reqErrRate = value;
+                }
+            }
 
-			public string TotalBytes
-			{
-				get
-				{
-					return totalBytes;
-				}
-				set	
-				{
-					totalBytes = value;
-				}
-			}
+            public string TotalBytes
+            {
+                get
+                {
+                    return totalBytes;
+                }
+                set
+                {
+                    totalBytes = value;
+                }
+            }
 
-			public string BytesProportion
-			{
-				get
-				{
-					return bytesProportion;
-				}
-				set	
-				{
-					bytesProportion = value;
-				}
-			}
+            public string BytesProportion
+            {
+                get
+                {
+                    return bytesProportion;
+                }
+                set
+                {
+                    bytesProportion = value;
+                }
+            }
 
-			public string TotalQuery
-			{
-				get
-				{
-					return totalQuery;
-				}
-				set	
-				{
-					totalQuery = value;
-				}
-			}
-		}
-	}
+            public string TotalQuery
+            {
+                get
+                {
+                    return totalQuery;
+                }
+                set
+                {
+                    totalQuery = value;
+                }
+            }
+        }
+    }
 }

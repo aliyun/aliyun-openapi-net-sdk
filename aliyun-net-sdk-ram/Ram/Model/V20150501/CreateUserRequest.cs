@@ -32,83 +32,83 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public CreateUserRequest()
             : base("Ram", "2015-05-01", "CreateUser", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string comments;
+        private string comments;
 
-		private string displayName;
+        private string displayName;
 
-		private string mobilePhone;
+        private string mobilePhone;
 
-		private string email;
+        private string email;
 
-		private string userName;
+        private string userName;
 
-		public string Comments
-		{
-			get
-			{
-				return comments;
-			}
-			set	
-			{
-				comments = value;
-				DictionaryUtil.Add(QueryParameters, "Comments", value);
-			}
-		}
+        public string Comments
+        {
+            get
+            {
+                return comments;
+            }
+            set
+            {
+                comments = value;
+                DictionaryUtil.Add(QueryParameters, "Comments", value);
+            }
+        }
 
-		public string DisplayName
-		{
-			get
-			{
-				return displayName;
-			}
-			set	
-			{
-				displayName = value;
-				DictionaryUtil.Add(QueryParameters, "DisplayName", value);
-			}
-		}
+        public string DisplayName
+        {
+            get
+            {
+                return displayName;
+            }
+            set
+            {
+                displayName = value;
+                DictionaryUtil.Add(QueryParameters, "DisplayName", value);
+            }
+        }
 
-		public string MobilePhone
-		{
-			get
-			{
-				return mobilePhone;
-			}
-			set	
-			{
-				mobilePhone = value;
-				DictionaryUtil.Add(QueryParameters, "MobilePhone", value);
-			}
-		}
+        public string MobilePhone
+        {
+            get
+            {
+                return mobilePhone;
+            }
+            set
+            {
+                mobilePhone = value;
+                DictionaryUtil.Add(QueryParameters, "MobilePhone", value);
+            }
+        }
 
-		public string Email
-		{
-			get
-			{
-				return email;
-			}
-			set	
-			{
-				email = value;
-				DictionaryUtil.Add(QueryParameters, "Email", value);
-			}
-		}
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+            set
+            {
+                email = value;
+                DictionaryUtil.Add(QueryParameters, "Email", value);
+            }
+        }
 
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
-			}
-		}
+        public string UserName
+        {
+            get
+            {
+                return userName;
+            }
+            set
+            {
+                userName = value;
+                DictionaryUtil.Add(QueryParameters, "UserName", value);
+            }
+        }
 
         public override CreateUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

@@ -22,67 +22,67 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainRealTimeByteHitRateDataResponse : AcsResponse
-	{
+    public class DescribeDomainRealTimeByteHitRateDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel> data;
+        private List<DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel> data;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel> Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
+        public List<DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel> Data
+        {
+            get
+            {
+                return data;
+            }
+            set
+            {
+                data = value;
+            }
+        }
 
-		public class DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel
-		{
+        public class DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel
+        {
 
-			private float? byteHitRate;
+            private float? byteHitRate;
 
-			private string timeStamp;
+            private string timeStamp;
 
-			public float? ByteHitRate
-			{
-				get
-				{
-					return byteHitRate;
-				}
-				set	
-				{
-					byteHitRate = value;
-				}
-			}
+            public float? ByteHitRate
+            {
+                get
+                {
+                    return byteHitRate;
+                }
+                set
+                {
+                    byteHitRate = value;
+                }
+            }
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
-		}
-	}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
+        }
+    }
 }

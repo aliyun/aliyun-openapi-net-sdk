@@ -27,35 +27,36 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static GetConversationDetailByContactIdResponse Unmarshall(UnmarshallerContext context)
         {
-			GetConversationDetailByContactIdResponse getConversationDetailByContactIdResponse = new GetConversationDetailByContactIdResponse();
+            GetConversationDetailByContactIdResponse getConversationDetailByContactIdResponse = new GetConversationDetailByContactIdResponse();
 
-			getConversationDetailByContactIdResponse.HttpResponse = context.HttpResponse;
-			getConversationDetailByContactIdResponse.RequestId = context.StringValue("GetConversationDetailByContactId.RequestId");
-			getConversationDetailByContactIdResponse.Success = context.BooleanValue("GetConversationDetailByContactId.Success");
-			getConversationDetailByContactIdResponse.Code = context.StringValue("GetConversationDetailByContactId.Code");
-			getConversationDetailByContactIdResponse.Message = context.StringValue("GetConversationDetailByContactId.Message");
-			getConversationDetailByContactIdResponse.HttpStatusCode = context.IntegerValue("GetConversationDetailByContactId.HttpStatusCode");
+            getConversationDetailByContactIdResponse.HttpResponse = context.HttpResponse;
+            getConversationDetailByContactIdResponse.RequestId = context.StringValue("GetConversationDetailByContactId.RequestId");
+            getConversationDetailByContactIdResponse.Success = context.BooleanValue("GetConversationDetailByContactId.Success");
+            getConversationDetailByContactIdResponse.Code = context.StringValue("GetConversationDetailByContactId.Code");
+            getConversationDetailByContactIdResponse.Message = context.StringValue("GetConversationDetailByContactId.Message");
+            getConversationDetailByContactIdResponse.HttpStatusCode = context.IntegerValue("GetConversationDetailByContactId.HttpStatusCode");
 
-			GetConversationDetailByContactIdResponse.GetConversationDetailByContactId_DataList dataList = new GetConversationDetailByContactIdResponse.GetConversationDetailByContactId_DataList();
-			dataList.TotalCount = context.IntegerValue("GetConversationDetailByContactId.DataList.TotalCount");
-			dataList.PageNumber = context.IntegerValue("GetConversationDetailByContactId.DataList.PageNumber");
-			dataList.PageSize = context.IntegerValue("GetConversationDetailByContactId.DataList.PageSize");
+            GetConversationDetailByContactIdResponse.GetConversationDetailByContactId_DataList dataList = new GetConversationDetailByContactIdResponse.GetConversationDetailByContactId_DataList();
+            dataList.TotalCount = context.IntegerValue("GetConversationDetailByContactId.DataList.TotalCount");
+            dataList.PageNumber = context.IntegerValue("GetConversationDetailByContactId.DataList.PageNumber");
+            dataList.PageSize = context.IntegerValue("GetConversationDetailByContactId.DataList.PageSize");
 
-			List<GetConversationDetailByContactIdResponse.GetConversationDetailByContactId_DataList.GetConversationDetailByContactId_QualityCheckPhrase> dataList_list = new List<GetConversationDetailByContactIdResponse.GetConversationDetailByContactId_DataList.GetConversationDetailByContactId_QualityCheckPhrase>();
-			for (int i = 0; i < context.Length("GetConversationDetailByContactId.DataList.List.Length"); i++) {
-				GetConversationDetailByContactIdResponse.GetConversationDetailByContactId_DataList.GetConversationDetailByContactId_QualityCheckPhrase qualityCheckPhrase = new GetConversationDetailByContactIdResponse.GetConversationDetailByContactId_DataList.GetConversationDetailByContactId_QualityCheckPhrase();
-				qualityCheckPhrase.Identity = context.StringValue("GetConversationDetailByContactId.DataList.List["+ i +"].Identity");
-				qualityCheckPhrase.Role = context.StringValue("GetConversationDetailByContactId.DataList.List["+ i +"].Role");
-				qualityCheckPhrase.Words = context.StringValue("GetConversationDetailByContactId.DataList.List["+ i +"].Words");
-				qualityCheckPhrase.Begin = context.LongValue("GetConversationDetailByContactId.DataList.List["+ i +"].Begin");
-				qualityCheckPhrase.End = context.LongValue("GetConversationDetailByContactId.DataList.List["+ i +"].End");
+            List<GetConversationDetailByContactIdResponse.GetConversationDetailByContactId_DataList.GetConversationDetailByContactId_QualityCheckPhrase> dataList_list = new List<GetConversationDetailByContactIdResponse.GetConversationDetailByContactId_DataList.GetConversationDetailByContactId_QualityCheckPhrase>();
+            for (int i = 0; i < context.Length("GetConversationDetailByContactId.DataList.List.Length"); i++)
+            {
+                GetConversationDetailByContactIdResponse.GetConversationDetailByContactId_DataList.GetConversationDetailByContactId_QualityCheckPhrase qualityCheckPhrase = new GetConversationDetailByContactIdResponse.GetConversationDetailByContactId_DataList.GetConversationDetailByContactId_QualityCheckPhrase();
+                qualityCheckPhrase.Identity = context.StringValue("GetConversationDetailByContactId.DataList.List[" + i + "].Identity");
+                qualityCheckPhrase.Role = context.StringValue("GetConversationDetailByContactId.DataList.List[" + i + "].Role");
+                qualityCheckPhrase.Words = context.StringValue("GetConversationDetailByContactId.DataList.List[" + i + "].Words");
+                qualityCheckPhrase.Begin = context.LongValue("GetConversationDetailByContactId.DataList.List[" + i + "].Begin");
+                qualityCheckPhrase.End = context.LongValue("GetConversationDetailByContactId.DataList.List[" + i + "].End");
 
-				dataList_list.Add(qualityCheckPhrase);
-			}
-			dataList.List = dataList_list;
-			getConversationDetailByContactIdResponse.DataList = dataList;
-        
-			return getConversationDetailByContactIdResponse;
+                dataList_list.Add(qualityCheckPhrase);
+            }
+            dataList.List = dataList_list;
+            getConversationDetailByContactIdResponse.DataList = dataList;
+
+            return getConversationDetailByContactIdResponse;
         }
     }
 }

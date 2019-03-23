@@ -30,7 +30,7 @@ using Aliyun.Acs.Core.Regions.Location;
 using Aliyun.Acs.Core.Regions.Location.Model;
 using Aliyun.Acs.Core.Transform;
 
-[assembly : InternalsVisibleTo("DynamicProxyGenAssembly2")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace Aliyun.Acs.Core.Regions
 {
     class DescribeEndpointServiceImpl : DescribeEndpointService

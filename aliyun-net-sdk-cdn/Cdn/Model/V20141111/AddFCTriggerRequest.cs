@@ -34,140 +34,140 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string notes;
+        private string notes;
 
-		private string eventMetaVersion;
+        private string eventMetaVersion;
 
-		private string action;
+        private string action;
 
-		private string triggerARN;
+        private string triggerARN;
 
-		private string sourceARN;
+        private string sourceARN;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string roleARN;
+        private string roleARN;
 
-		private string eventMetaName;
+        private string eventMetaName;
 
-		private string functionARN;
+        private string functionARN;
 
-		public string Notes
-		{
-			get
-			{
-				return notes;
-			}
-			set	
-			{
-				notes = value;
-				DictionaryUtil.Add(BodyParameters, "Notes", value);
-			}
-		}
+        public string Notes
+        {
+            get
+            {
+                return notes;
+            }
+            set
+            {
+                notes = value;
+                DictionaryUtil.Add(BodyParameters, "Notes", value);
+            }
+        }
 
-		public string EventMetaVersion
-		{
-			get
-			{
-				return eventMetaVersion;
-			}
-			set	
-			{
-				eventMetaVersion = value;
-				DictionaryUtil.Add(BodyParameters, "EventMetaVersion", value);
-			}
-		}
+        public string EventMetaVersion
+        {
+            get
+            {
+                return eventMetaVersion;
+            }
+            set
+            {
+                eventMetaVersion = value;
+                DictionaryUtil.Add(BodyParameters, "EventMetaVersion", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string TriggerARN
-		{
-			get
-			{
-				return triggerARN;
-			}
-			set	
-			{
-				triggerARN = value;
-				DictionaryUtil.Add(QueryParameters, "TriggerARN", value);
-			}
-		}
+        public string TriggerARN
+        {
+            get
+            {
+                return triggerARN;
+            }
+            set
+            {
+                triggerARN = value;
+                DictionaryUtil.Add(QueryParameters, "TriggerARN", value);
+            }
+        }
 
-		public string SourceARN
-		{
-			get
-			{
-				return sourceARN;
-			}
-			set	
-			{
-				sourceARN = value;
-				DictionaryUtil.Add(BodyParameters, "SourceARN", value);
-			}
-		}
+        public string SourceARN
+        {
+            get
+            {
+                return sourceARN;
+            }
+            set
+            {
+                sourceARN = value;
+                DictionaryUtil.Add(BodyParameters, "SourceARN", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string RoleARN
-		{
-			get
-			{
-				return roleARN;
-			}
-			set	
-			{
-				roleARN = value;
-				DictionaryUtil.Add(BodyParameters, "RoleARN", value);
-			}
-		}
+        public string RoleARN
+        {
+            get
+            {
+                return roleARN;
+            }
+            set
+            {
+                roleARN = value;
+                DictionaryUtil.Add(BodyParameters, "RoleARN", value);
+            }
+        }
 
-		public string EventMetaName
-		{
-			get
-			{
-				return eventMetaName;
-			}
-			set	
-			{
-				eventMetaName = value;
-				DictionaryUtil.Add(BodyParameters, "EventMetaName", value);
-			}
-		}
+        public string EventMetaName
+        {
+            get
+            {
+                return eventMetaName;
+            }
+            set
+            {
+                eventMetaName = value;
+                DictionaryUtil.Add(BodyParameters, "EventMetaName", value);
+            }
+        }
 
-		public string FunctionARN
-		{
-			get
-			{
-				return functionARN;
-			}
-			set	
-			{
-				functionARN = value;
-				DictionaryUtil.Add(BodyParameters, "FunctionARN", value);
-			}
-		}
+        public string FunctionARN
+        {
+            get
+            {
+                return functionARN;
+            }
+            set
+            {
+                functionARN = value;
+                DictionaryUtil.Add(BodyParameters, "FunctionARN", value);
+            }
+        }
 
         public override AddFCTriggerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

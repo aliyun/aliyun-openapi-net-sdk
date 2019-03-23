@@ -27,29 +27,29 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static RequestLoginInfoResponse Unmarshall(UnmarshallerContext context)
         {
-			RequestLoginInfoResponse requestLoginInfoResponse = new RequestLoginInfoResponse();
+            RequestLoginInfoResponse requestLoginInfoResponse = new RequestLoginInfoResponse();
 
-			requestLoginInfoResponse.HttpResponse = context.HttpResponse;
-			requestLoginInfoResponse.RequestId = context.StringValue("RequestLoginInfo.RequestId");
-			requestLoginInfoResponse.Success = context.BooleanValue("RequestLoginInfo.Success");
-			requestLoginInfoResponse.Code = context.StringValue("RequestLoginInfo.Code");
-			requestLoginInfoResponse.Message = context.StringValue("RequestLoginInfo.Message");
-			requestLoginInfoResponse.HttpStatusCode = context.IntegerValue("RequestLoginInfo.HttpStatusCode");
+            requestLoginInfoResponse.HttpResponse = context.HttpResponse;
+            requestLoginInfoResponse.RequestId = context.StringValue("RequestLoginInfo.RequestId");
+            requestLoginInfoResponse.Success = context.BooleanValue("RequestLoginInfo.Success");
+            requestLoginInfoResponse.Code = context.StringValue("RequestLoginInfo.Code");
+            requestLoginInfoResponse.Message = context.StringValue("RequestLoginInfo.Message");
+            requestLoginInfoResponse.HttpStatusCode = context.IntegerValue("RequestLoginInfo.HttpStatusCode");
 
-			RequestLoginInfoResponse.RequestLoginInfo_LoginInfo loginInfo = new RequestLoginInfoResponse.RequestLoginInfo_LoginInfo();
-			loginInfo.UserName = context.StringValue("RequestLoginInfo.LoginInfo.UserName");
-			loginInfo.DisplayName = context.StringValue("RequestLoginInfo.LoginInfo.DisplayName");
-			loginInfo.PhoneNumber = context.StringValue("RequestLoginInfo.LoginInfo.PhoneNumber");
-			loginInfo.Region = context.StringValue("RequestLoginInfo.LoginInfo.Region");
-			loginInfo.WebRtcUrl = context.StringValue("RequestLoginInfo.LoginInfo.WebRtcUrl");
-			loginInfo.AgentServerUrl = context.StringValue("RequestLoginInfo.LoginInfo.AgentServerUrl");
-			loginInfo.Extension = context.StringValue("RequestLoginInfo.LoginInfo.Extension");
-			loginInfo.TenantId = context.StringValue("RequestLoginInfo.LoginInfo.TenantId");
-			loginInfo.Signature = context.StringValue("RequestLoginInfo.LoginInfo.Signature");
-			loginInfo.SignData = context.StringValue("RequestLoginInfo.LoginInfo.SignData");
-			requestLoginInfoResponse.LoginInfo = loginInfo;
-        
-			return requestLoginInfoResponse;
+            RequestLoginInfoResponse.RequestLoginInfo_LoginInfo loginInfo = new RequestLoginInfoResponse.RequestLoginInfo_LoginInfo();
+            loginInfo.UserName = context.StringValue("RequestLoginInfo.LoginInfo.UserName");
+            loginInfo.DisplayName = context.StringValue("RequestLoginInfo.LoginInfo.DisplayName");
+            loginInfo.PhoneNumber = context.StringValue("RequestLoginInfo.LoginInfo.PhoneNumber");
+            loginInfo.Region = context.StringValue("RequestLoginInfo.LoginInfo.Region");
+            loginInfo.WebRtcUrl = context.StringValue("RequestLoginInfo.LoginInfo.WebRtcUrl");
+            loginInfo.AgentServerUrl = context.StringValue("RequestLoginInfo.LoginInfo.AgentServerUrl");
+            loginInfo.Extension = context.StringValue("RequestLoginInfo.LoginInfo.Extension");
+            loginInfo.TenantId = context.StringValue("RequestLoginInfo.LoginInfo.TenantId");
+            loginInfo.Signature = context.StringValue("RequestLoginInfo.LoginInfo.Signature");
+            loginInfo.SignData = context.StringValue("RequestLoginInfo.LoginInfo.SignData");
+            requestLoginInfoResponse.LoginInfo = loginInfo;
+
+            return requestLoginInfoResponse;
         }
     }
 }

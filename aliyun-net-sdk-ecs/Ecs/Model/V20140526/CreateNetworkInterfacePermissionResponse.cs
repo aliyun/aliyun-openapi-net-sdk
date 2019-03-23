@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateNetworkInterfacePermissionResponse : AcsResponse
-	{
+    public class CreateNetworkInterfacePermissionResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private CreateNetworkInterfacePermission_NetworkInterfacePermission networkInterfacePermission;
+        private CreateNetworkInterfacePermission_NetworkInterfacePermission networkInterfacePermission;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public CreateNetworkInterfacePermission_NetworkInterfacePermission NetworkInterfacePermission
-		{
-			get
-			{
-				return networkInterfacePermission;
-			}
-			set	
-			{
-				networkInterfacePermission = value;
-			}
-		}
+        public CreateNetworkInterfacePermission_NetworkInterfacePermission NetworkInterfacePermission
+        {
+            get
+            {
+                return networkInterfacePermission;
+            }
+            set
+            {
+                networkInterfacePermission = value;
+            }
+        }
 
-		public class CreateNetworkInterfacePermission_NetworkInterfacePermission
-		{
+        public class CreateNetworkInterfacePermission_NetworkInterfacePermission
+        {
 
-			private long? accountId;
+            private long? accountId;
 
-			private string serviceName;
+            private string serviceName;
 
-			private string networkInterfaceId;
+            private string networkInterfaceId;
 
-			private string networkInterfacePermissionId;
+            private string networkInterfacePermissionId;
 
-			private string permission;
+            private string permission;
 
-			private string permissionState;
+            private string permissionState;
 
-			public long? AccountId
-			{
-				get
-				{
-					return accountId;
-				}
-				set	
-				{
-					accountId = value;
-				}
-			}
+            public long? AccountId
+            {
+                get
+                {
+                    return accountId;
+                }
+                set
+                {
+                    accountId = value;
+                }
+            }
 
-			public string ServiceName
-			{
-				get
-				{
-					return serviceName;
-				}
-				set	
-				{
-					serviceName = value;
-				}
-			}
+            public string ServiceName
+            {
+                get
+                {
+                    return serviceName;
+                }
+                set
+                {
+                    serviceName = value;
+                }
+            }
 
-			public string NetworkInterfaceId
-			{
-				get
-				{
-					return networkInterfaceId;
-				}
-				set	
-				{
-					networkInterfaceId = value;
-				}
-			}
+            public string NetworkInterfaceId
+            {
+                get
+                {
+                    return networkInterfaceId;
+                }
+                set
+                {
+                    networkInterfaceId = value;
+                }
+            }
 
-			public string NetworkInterfacePermissionId
-			{
-				get
-				{
-					return networkInterfacePermissionId;
-				}
-				set	
-				{
-					networkInterfacePermissionId = value;
-				}
-			}
+            public string NetworkInterfacePermissionId
+            {
+                get
+                {
+                    return networkInterfacePermissionId;
+                }
+                set
+                {
+                    networkInterfacePermissionId = value;
+                }
+            }
 
-			public string Permission
-			{
-				get
-				{
-					return permission;
-				}
-				set	
-				{
-					permission = value;
-				}
-			}
+            public string Permission
+            {
+                get
+                {
+                    return permission;
+                }
+                set
+                {
+                    permission = value;
+                }
+            }
 
-			public string PermissionState
-			{
-				get
-				{
-					return permissionState;
-				}
-				set	
-				{
-					permissionState = value;
-				}
-			}
-		}
-	}
+            public string PermissionState
+            {
+                get
+                {
+                    return permissionState;
+                }
+                set
+                {
+                    permissionState = value;
+                }
+            }
+        }
+    }
 }

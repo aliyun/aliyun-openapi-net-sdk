@@ -21,91 +21,91 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateMigrateTaskResponse : AcsResponse
-	{
+    public class CreateMigrateTaskResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string taskId;
+        private string taskId;
 
-		private string dBName;
+        private string dBName;
 
-		private string migrateTaskId;
+        private string migrateTaskId;
 
-		private string backupMode;
+        private string backupMode;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+            }
+        }
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
+        public string TaskId
+        {
+            get
+            {
+                return taskId;
+            }
+            set
+            {
+                taskId = value;
+            }
+        }
 
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-			}
-		}
+        public string DBName
+        {
+            get
+            {
+                return dBName;
+            }
+            set
+            {
+                dBName = value;
+            }
+        }
 
-		public string MigrateTaskId
-		{
-			get
-			{
-				return migrateTaskId;
-			}
-			set	
-			{
-				migrateTaskId = value;
-			}
-		}
+        public string MigrateTaskId
+        {
+            get
+            {
+                return migrateTaskId;
+            }
+            set
+            {
+                migrateTaskId = value;
+            }
+        }
 
-		public string BackupMode
-		{
-			get
-			{
-				return backupMode;
-			}
-			set	
-			{
-				backupMode = value;
-			}
-		}
-	}
+        public string BackupMode
+        {
+            get
+            {
+                return backupMode;
+            }
+            set
+            {
+                backupMode = value;
+            }
+        }
+    }
 }

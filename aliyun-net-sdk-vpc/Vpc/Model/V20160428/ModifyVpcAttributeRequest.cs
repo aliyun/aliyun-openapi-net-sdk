@@ -33,170 +33,170 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
-		private string vpcName;
+        private string vpcName;
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string regionId;
+        private string regionId;
 
-		private string vpcId;
+        private string vpcId;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string cidrBlock;
+        private string cidrBlock;
 
-		private bool? enableIPv6;
+        private bool? enableIPv6;
 
-		private string action;
+        private string action;
 
-		private string description;
+        private string description;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string VpcName
-		{
-			get
-			{
-				return vpcName;
-			}
-			set	
-			{
-				vpcName = value;
-				DictionaryUtil.Add(QueryParameters, "VpcName", value);
-			}
-		}
+        public string VpcName
+        {
+            get
+            {
+                return vpcName;
+            }
+            set
+            {
+                vpcName = value;
+                DictionaryUtil.Add(QueryParameters, "VpcName", value);
+            }
+        }
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
+        public string VpcId
+        {
+            get
+            {
+                return vpcId;
+            }
+            set
+            {
+                vpcId = value;
+                DictionaryUtil.Add(QueryParameters, "VpcId", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string CidrBlock
-		{
-			get
-			{
-				return cidrBlock;
-			}
-			set	
-			{
-				cidrBlock = value;
-				DictionaryUtil.Add(QueryParameters, "CidrBlock", value);
-			}
-		}
+        public string CidrBlock
+        {
+            get
+            {
+                return cidrBlock;
+            }
+            set
+            {
+                cidrBlock = value;
+                DictionaryUtil.Add(QueryParameters, "CidrBlock", value);
+            }
+        }
 
-		public bool? EnableIPv6
-		{
-			get
-			{
-				return enableIPv6;
-			}
-			set	
-			{
-				enableIPv6 = value;
-				DictionaryUtil.Add(QueryParameters, "EnableIPv6", value.ToString());
-			}
-		}
+        public bool? EnableIPv6
+        {
+            get
+            {
+                return enableIPv6;
+            }
+            set
+            {
+                enableIPv6 = value;
+                DictionaryUtil.Add(QueryParameters, "EnableIPv6", value.ToString());
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override ModifyVpcAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

@@ -33,185 +33,185 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         {
         }
 
-		private string access_key_id;
+        private string access_key_id;
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string masterSlaveBackendServers;
+        private string masterSlaveBackendServers;
 
-		private string loadBalancerId;
+        private string loadBalancerId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string regionId;
+        private string regionId;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string action;
+        private string action;
 
-		private string masterSlaveVServerGroupName;
+        private string masterSlaveVServerGroupName;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		private string tags;
+        private string tags;
 
-		public string Access_key_id
-		{
-			get
-			{
-				return access_key_id;
-			}
-			set	
-			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
+        public string Access_key_id
+        {
+            get
+            {
+                return access_key_id;
+            }
+            set
+            {
+                access_key_id = value;
+                DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+            }
+        }
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string MasterSlaveBackendServers
-		{
-			get
-			{
-				return masterSlaveBackendServers;
-			}
-			set	
-			{
-				masterSlaveBackendServers = value;
-				DictionaryUtil.Add(QueryParameters, "MasterSlaveBackendServers", value);
-			}
-		}
+        public string MasterSlaveBackendServers
+        {
+            get
+            {
+                return masterSlaveBackendServers;
+            }
+            set
+            {
+                masterSlaveBackendServers = value;
+                DictionaryUtil.Add(QueryParameters, "MasterSlaveBackendServers", value);
+            }
+        }
 
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
-			}
-		}
+        public string LoadBalancerId
+        {
+            get
+            {
+                return loadBalancerId;
+            }
+            set
+            {
+                loadBalancerId = value;
+                DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string MasterSlaveVServerGroupName
-		{
-			get
-			{
-				return masterSlaveVServerGroupName;
-			}
-			set	
-			{
-				masterSlaveVServerGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "MasterSlaveVServerGroupName", value);
-			}
-		}
+        public string MasterSlaveVServerGroupName
+        {
+            get
+            {
+                return masterSlaveVServerGroupName;
+            }
+            set
+            {
+                masterSlaveVServerGroupName = value;
+                DictionaryUtil.Add(QueryParameters, "MasterSlaveVServerGroupName", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
+        public string Tags
+        {
+            get
+            {
+                return tags;
+            }
+            set
+            {
+                tags = value;
+                DictionaryUtil.Add(QueryParameters, "Tags", value);
+            }
+        }
 
         public override CreateMasterSlaveVServerGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

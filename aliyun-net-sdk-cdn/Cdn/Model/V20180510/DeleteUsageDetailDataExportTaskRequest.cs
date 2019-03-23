@@ -34,50 +34,50 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string action;
+        private string action;
 
-		private string taskId;
+        private string taskId;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
-			}
-		}
+        public string TaskId
+        {
+            get
+            {
+                return taskId;
+            }
+            set
+            {
+                taskId = value;
+                DictionaryUtil.Add(QueryParameters, "TaskId", value);
+            }
+        }
 
         public override DeleteUsageDetailDataExportTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

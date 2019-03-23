@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeInstanceVncPasswdResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeInstanceVncPasswdResponse describeInstanceVncPasswdResponse = new DescribeInstanceVncPasswdResponse();
+            DescribeInstanceVncPasswdResponse describeInstanceVncPasswdResponse = new DescribeInstanceVncPasswdResponse();
 
-			describeInstanceVncPasswdResponse.HttpResponse = context.HttpResponse;
-			describeInstanceVncPasswdResponse.RequestId = context.StringValue("DescribeInstanceVncPasswd.RequestId");
-			describeInstanceVncPasswdResponse.VncPasswd = context.StringValue("DescribeInstanceVncPasswd.VncPasswd");
-        
-			return describeInstanceVncPasswdResponse;
+            describeInstanceVncPasswdResponse.HttpResponse = context.HttpResponse;
+            describeInstanceVncPasswdResponse.RequestId = context.StringValue("DescribeInstanceVncPasswd.RequestId");
+            describeInstanceVncPasswdResponse.VncPasswd = context.StringValue("DescribeInstanceVncPasswd.VncPasswd");
+
+            return describeInstanceVncPasswdResponse;
         }
     }
 }

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DeleteVSwitchResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteVSwitchResponse deleteVSwitchResponse = new DeleteVSwitchResponse();
+            DeleteVSwitchResponse deleteVSwitchResponse = new DeleteVSwitchResponse();
 
-			deleteVSwitchResponse.HttpResponse = context.HttpResponse;
-			deleteVSwitchResponse.RequestId = context.StringValue("DeleteVSwitch.RequestId");
-        
-			return deleteVSwitchResponse;
+            deleteVSwitchResponse.HttpResponse = context.HttpResponse;
+            deleteVSwitchResponse.RequestId = context.StringValue("DeleteVSwitch.RequestId");
+
+            return deleteVSwitchResponse;
         }
     }
 }

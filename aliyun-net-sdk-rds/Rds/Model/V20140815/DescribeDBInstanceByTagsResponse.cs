@@ -21,141 +21,141 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeDBInstanceByTagsResponse : AcsResponse
-	{
+    public class DescribeDBInstanceByTagsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private int? totalRecordCount;
+        private int? totalRecordCount;
 
-		private List<DescribeDBInstanceByTags_DBInstanceTag> items;
+        private List<DescribeDBInstanceByTags_DBInstanceTag> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public int? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public List<DescribeDBInstanceByTags_DBInstanceTag> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeDBInstanceByTags_DBInstanceTag> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeDBInstanceByTags_DBInstanceTag
-		{
+        public class DescribeDBInstanceByTags_DBInstanceTag
+        {
 
-			private string dBInstanceId;
+            private string dBInstanceId;
 
-			private List<DescribeDBInstanceByTags_Tag> tags;
+            private List<DescribeDBInstanceByTags_Tag> tags;
 
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
+            public string DBInstanceId
+            {
+                get
+                {
+                    return dBInstanceId;
+                }
+                set
+                {
+                    dBInstanceId = value;
+                }
+            }
 
-			public List<DescribeDBInstanceByTags_Tag> Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
+            public List<DescribeDBInstanceByTags_Tag> Tags
+            {
+                get
+                {
+                    return tags;
+                }
+                set
+                {
+                    tags = value;
+                }
+            }
 
-			public class DescribeDBInstanceByTags_Tag
-			{
+            public class DescribeDBInstanceByTags_Tag
+            {
 
-				private string tagKey;
+                private string tagKey;
 
-				private string tagValue;
+                private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+                public string TagKey
+                {
+                    get
+                    {
+                        return tagKey;
+                    }
+                    set
+                    {
+                        tagKey = value;
+                    }
+                }
 
-				public string TagValue
-				{
-					get
-					{
-						return tagValue;
-					}
-					set	
-					{
-						tagValue = value;
-					}
-				}
-			}
-		}
-	}
+                public string TagValue
+                {
+                    get
+                    {
+                        return tagValue;
+                    }
+                    set
+                    {
+                        tagValue = value;
+                    }
+                }
+            }
+        }
+    }
 }

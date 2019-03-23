@@ -21,67 +21,67 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeMasterSlaveServerGroupsResponse : AcsResponse
-	{
+    public class DescribeMasterSlaveServerGroupsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeMasterSlaveServerGroups_MasterSlaveServerGroup> masterSlaveServerGroups;
+        private List<DescribeMasterSlaveServerGroups_MasterSlaveServerGroup> masterSlaveServerGroups;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeMasterSlaveServerGroups_MasterSlaveServerGroup> MasterSlaveServerGroups
-		{
-			get
-			{
-				return masterSlaveServerGroups;
-			}
-			set	
-			{
-				masterSlaveServerGroups = value;
-			}
-		}
+        public List<DescribeMasterSlaveServerGroups_MasterSlaveServerGroup> MasterSlaveServerGroups
+        {
+            get
+            {
+                return masterSlaveServerGroups;
+            }
+            set
+            {
+                masterSlaveServerGroups = value;
+            }
+        }
 
-		public class DescribeMasterSlaveServerGroups_MasterSlaveServerGroup
-		{
+        public class DescribeMasterSlaveServerGroups_MasterSlaveServerGroup
+        {
 
-			private string masterSlaveServerGroupId;
+            private string masterSlaveServerGroupId;
 
-			private string masterSlaveServerGroupName;
+            private string masterSlaveServerGroupName;
 
-			public string MasterSlaveServerGroupId
-			{
-				get
-				{
-					return masterSlaveServerGroupId;
-				}
-				set	
-				{
-					masterSlaveServerGroupId = value;
-				}
-			}
+            public string MasterSlaveServerGroupId
+            {
+                get
+                {
+                    return masterSlaveServerGroupId;
+                }
+                set
+                {
+                    masterSlaveServerGroupId = value;
+                }
+            }
 
-			public string MasterSlaveServerGroupName
-			{
-				get
-				{
-					return masterSlaveServerGroupName;
-				}
-				set	
-				{
-					masterSlaveServerGroupName = value;
-				}
-			}
-		}
-	}
+            public string MasterSlaveServerGroupName
+            {
+                get
+                {
+                    return masterSlaveServerGroupName;
+                }
+                set
+                {
+                    masterSlaveServerGroupName = value;
+                }
+            }
+        }
+    }
 }

@@ -27,45 +27,48 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static DescribeSQLReportsResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeSQLReportsResponse describeSQLReportsResponse = new DescribeSQLReportsResponse();
+            DescribeSQLReportsResponse describeSQLReportsResponse = new DescribeSQLReportsResponse();
 
-			describeSQLReportsResponse.HttpResponse = context.HttpResponse;
-			describeSQLReportsResponse.RequestId = context.StringValue("DescribeSQLReports.RequestId");
-			describeSQLReportsResponse.TotalRecordCount = context.IntegerValue("DescribeSQLReports.TotalRecordCount");
-			describeSQLReportsResponse.PageNumber = context.IntegerValue("DescribeSQLReports.PageNumber");
-			describeSQLReportsResponse.PageRecordCount = context.IntegerValue("DescribeSQLReports.PageRecordCount");
+            describeSQLReportsResponse.HttpResponse = context.HttpResponse;
+            describeSQLReportsResponse.RequestId = context.StringValue("DescribeSQLReports.RequestId");
+            describeSQLReportsResponse.TotalRecordCount = context.IntegerValue("DescribeSQLReports.TotalRecordCount");
+            describeSQLReportsResponse.PageNumber = context.IntegerValue("DescribeSQLReports.PageNumber");
+            describeSQLReportsResponse.PageRecordCount = context.IntegerValue("DescribeSQLReports.PageRecordCount");
 
-			List<DescribeSQLReportsResponse.DescribeSQLReports_Item> describeSQLReportsResponse_items = new List<DescribeSQLReportsResponse.DescribeSQLReports_Item>();
-			for (int i = 0; i < context.Length("DescribeSQLReports.Items.Length"); i++) {
-				DescribeSQLReportsResponse.DescribeSQLReports_Item item = new DescribeSQLReportsResponse.DescribeSQLReports_Item();
-				item.ReportTime = context.StringValue("DescribeSQLReports.Items["+ i +"].ReportTime");
+            List<DescribeSQLReportsResponse.DescribeSQLReports_Item> describeSQLReportsResponse_items = new List<DescribeSQLReportsResponse.DescribeSQLReports_Item>();
+            for (int i = 0; i < context.Length("DescribeSQLReports.Items.Length"); i++)
+            {
+                DescribeSQLReportsResponse.DescribeSQLReports_Item item = new DescribeSQLReportsResponse.DescribeSQLReports_Item();
+                item.ReportTime = context.StringValue("DescribeSQLReports.Items[" + i + "].ReportTime");
 
-				List<DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_LatencyTopNItem> item_latencyTopNItems = new List<DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_LatencyTopNItem>();
-				for (int j = 0; j < context.Length("DescribeSQLReports.Items["+ i +"].LatencyTopNItems.Length"); j++) {
-					DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_LatencyTopNItem latencyTopNItem = new DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_LatencyTopNItem();
-					latencyTopNItem.SQLText = context.StringValue("DescribeSQLReports.Items["+ i +"].LatencyTopNItems["+ j +"].SQLText");
-					latencyTopNItem.AvgLatency = context.LongValue("DescribeSQLReports.Items["+ i +"].LatencyTopNItems["+ j +"].AvgLatency");
-					latencyTopNItem.SQLExecuteTimes = context.LongValue("DescribeSQLReports.Items["+ i +"].LatencyTopNItems["+ j +"].SQLExecuteTimes");
+                List<DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_LatencyTopNItem> item_latencyTopNItems = new List<DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_LatencyTopNItem>();
+                for (int j = 0; j < context.Length("DescribeSQLReports.Items[" + i + "].LatencyTopNItems.Length"); j++)
+                {
+                    DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_LatencyTopNItem latencyTopNItem = new DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_LatencyTopNItem();
+                    latencyTopNItem.SQLText = context.StringValue("DescribeSQLReports.Items[" + i + "].LatencyTopNItems[" + j + "].SQLText");
+                    latencyTopNItem.AvgLatency = context.LongValue("DescribeSQLReports.Items[" + i + "].LatencyTopNItems[" + j + "].AvgLatency");
+                    latencyTopNItem.SQLExecuteTimes = context.LongValue("DescribeSQLReports.Items[" + i + "].LatencyTopNItems[" + j + "].SQLExecuteTimes");
 
-					item_latencyTopNItems.Add(latencyTopNItem);
-				}
-				item.LatencyTopNItems = item_latencyTopNItems;
+                    item_latencyTopNItems.Add(latencyTopNItem);
+                }
+                item.LatencyTopNItems = item_latencyTopNItems;
 
-				List<DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_QPSTopNItem> item_qPSTopNItems = new List<DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_QPSTopNItem>();
-				for (int j = 0; j < context.Length("DescribeSQLReports.Items["+ i +"].QPSTopNItems.Length"); j++) {
-					DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_QPSTopNItem qPSTopNItem = new DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_QPSTopNItem();
-					qPSTopNItem.SQLText = context.StringValue("DescribeSQLReports.Items["+ i +"].QPSTopNItems["+ j +"].SQLText");
-					qPSTopNItem.SQLExecuteTimes = context.LongValue("DescribeSQLReports.Items["+ i +"].QPSTopNItems["+ j +"].SQLExecuteTimes");
+                List<DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_QPSTopNItem> item_qPSTopNItems = new List<DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_QPSTopNItem>();
+                for (int j = 0; j < context.Length("DescribeSQLReports.Items[" + i + "].QPSTopNItems.Length"); j++)
+                {
+                    DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_QPSTopNItem qPSTopNItem = new DescribeSQLReportsResponse.DescribeSQLReports_Item.DescribeSQLReports_QPSTopNItem();
+                    qPSTopNItem.SQLText = context.StringValue("DescribeSQLReports.Items[" + i + "].QPSTopNItems[" + j + "].SQLText");
+                    qPSTopNItem.SQLExecuteTimes = context.LongValue("DescribeSQLReports.Items[" + i + "].QPSTopNItems[" + j + "].SQLExecuteTimes");
 
-					item_qPSTopNItems.Add(qPSTopNItem);
-				}
-				item.QPSTopNItems = item_qPSTopNItems;
+                    item_qPSTopNItems.Add(qPSTopNItem);
+                }
+                item.QPSTopNItems = item_qPSTopNItems;
 
-				describeSQLReportsResponse_items.Add(item);
-			}
-			describeSQLReportsResponse.Items = describeSQLReportsResponse_items;
-        
-			return describeSQLReportsResponse;
+                describeSQLReportsResponse_items.Add(item);
+            }
+            describeSQLReportsResponse.Items = describeSQLReportsResponse_items;
+
+            return describeSQLReportsResponse;
         }
     }
 }

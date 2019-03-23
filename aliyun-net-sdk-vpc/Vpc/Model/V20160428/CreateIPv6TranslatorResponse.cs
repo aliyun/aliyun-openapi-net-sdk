@@ -21,77 +21,77 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateIPv6TranslatorResponse : AcsResponse
-	{
+    public class CreateIPv6TranslatorResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string ipv6TranslatorId;
+        private string ipv6TranslatorId;
 
-		private string name;
+        private string name;
 
-		private string spec;
+        private string spec;
 
-		private long? orderId;
+        private long? orderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Ipv6TranslatorId
-		{
-			get
-			{
-				return ipv6TranslatorId;
-			}
-			set	
-			{
-				ipv6TranslatorId = value;
-			}
-		}
+        public string Ipv6TranslatorId
+        {
+            get
+            {
+                return ipv6TranslatorId;
+            }
+            set
+            {
+                ipv6TranslatorId = value;
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
 
-		public string Spec
-		{
-			get
-			{
-				return spec;
-			}
-			set	
-			{
-				spec = value;
-			}
-		}
+        public string Spec
+        {
+            get
+            {
+                return spec;
+            }
+            set
+            {
+                spec = value;
+            }
+        }
 
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-	}
+        public long? OrderId
+        {
+            get
+            {
+                return orderId;
+            }
+            set
+            {
+                orderId = value;
+            }
+        }
+    }
 }

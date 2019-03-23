@@ -21,77 +21,77 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class AllocateEipAddressResponse : AcsResponse
-	{
+    public class AllocateEipAddressResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string allocationId;
+        private string allocationId;
 
-		private string eipAddress;
+        private string eipAddress;
 
-		private long? orderId;
+        private long? orderId;
 
-		private string resourceGroupId;
+        private string resourceGroupId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string AllocationId
-		{
-			get
-			{
-				return allocationId;
-			}
-			set	
-			{
-				allocationId = value;
-			}
-		}
+        public string AllocationId
+        {
+            get
+            {
+                return allocationId;
+            }
+            set
+            {
+                allocationId = value;
+            }
+        }
 
-		public string EipAddress
-		{
-			get
-			{
-				return eipAddress;
-			}
-			set	
-			{
-				eipAddress = value;
-			}
-		}
+        public string EipAddress
+        {
+            get
+            {
+                return eipAddress;
+            }
+            set
+            {
+                eipAddress = value;
+            }
+        }
 
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
+        public long? OrderId
+        {
+            get
+            {
+                return orderId;
+            }
+            set
+            {
+                orderId = value;
+            }
+        }
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-			}
-		}
-	}
+        public string ResourceGroupId
+        {
+            get
+            {
+                return resourceGroupId;
+            }
+            set
+            {
+                resourceGroupId = value;
+            }
+        }
+    }
 }

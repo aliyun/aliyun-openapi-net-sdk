@@ -32,98 +32,98 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public UpdateUserRequest()
             : base("Ram", "2015-05-01", "UpdateUser", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string newUserName;
+        private string newUserName;
 
-		private string newDisplayName;
+        private string newDisplayName;
 
-		private string newMobilePhone;
+        private string newMobilePhone;
 
-		private string newComments;
+        private string newComments;
 
-		private string newEmail;
+        private string newEmail;
 
-		private string userName;
+        private string userName;
 
-		public string NewUserName
-		{
-			get
-			{
-				return newUserName;
-			}
-			set	
-			{
-				newUserName = value;
-				DictionaryUtil.Add(QueryParameters, "NewUserName", value);
-			}
-		}
+        public string NewUserName
+        {
+            get
+            {
+                return newUserName;
+            }
+            set
+            {
+                newUserName = value;
+                DictionaryUtil.Add(QueryParameters, "NewUserName", value);
+            }
+        }
 
-		public string NewDisplayName
-		{
-			get
-			{
-				return newDisplayName;
-			}
-			set	
-			{
-				newDisplayName = value;
-				DictionaryUtil.Add(QueryParameters, "NewDisplayName", value);
-			}
-		}
+        public string NewDisplayName
+        {
+            get
+            {
+                return newDisplayName;
+            }
+            set
+            {
+                newDisplayName = value;
+                DictionaryUtil.Add(QueryParameters, "NewDisplayName", value);
+            }
+        }
 
-		public string NewMobilePhone
-		{
-			get
-			{
-				return newMobilePhone;
-			}
-			set	
-			{
-				newMobilePhone = value;
-				DictionaryUtil.Add(QueryParameters, "NewMobilePhone", value);
-			}
-		}
+        public string NewMobilePhone
+        {
+            get
+            {
+                return newMobilePhone;
+            }
+            set
+            {
+                newMobilePhone = value;
+                DictionaryUtil.Add(QueryParameters, "NewMobilePhone", value);
+            }
+        }
 
-		public string NewComments
-		{
-			get
-			{
-				return newComments;
-			}
-			set	
-			{
-				newComments = value;
-				DictionaryUtil.Add(QueryParameters, "NewComments", value);
-			}
-		}
+        public string NewComments
+        {
+            get
+            {
+                return newComments;
+            }
+            set
+            {
+                newComments = value;
+                DictionaryUtil.Add(QueryParameters, "NewComments", value);
+            }
+        }
 
-		public string NewEmail
-		{
-			get
-			{
-				return newEmail;
-			}
-			set	
-			{
-				newEmail = value;
-				DictionaryUtil.Add(QueryParameters, "NewEmail", value);
-			}
-		}
+        public string NewEmail
+        {
+            get
+            {
+                return newEmail;
+            }
+            set
+            {
+                newEmail = value;
+                DictionaryUtil.Add(QueryParameters, "NewEmail", value);
+            }
+        }
 
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
-			}
-		}
+        public string UserName
+        {
+            get
+            {
+                return userName;
+            }
+            set
+            {
+                userName = value;
+                DictionaryUtil.Add(QueryParameters, "UserName", value);
+            }
+        }
 
         public override UpdateUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

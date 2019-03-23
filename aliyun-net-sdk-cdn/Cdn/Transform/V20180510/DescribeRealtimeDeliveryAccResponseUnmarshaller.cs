@@ -28,23 +28,24 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeRealtimeDeliveryAccResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeRealtimeDeliveryAccResponse describeRealtimeDeliveryAccResponse = new DescribeRealtimeDeliveryAccResponse();
+            DescribeRealtimeDeliveryAccResponse describeRealtimeDeliveryAccResponse = new DescribeRealtimeDeliveryAccResponse();
 
-			describeRealtimeDeliveryAccResponse.HttpResponse = context.HttpResponse;
-			describeRealtimeDeliveryAccResponse.RequestId = context.StringValue("DescribeRealtimeDeliveryAcc.RequestId");
+            describeRealtimeDeliveryAccResponse.HttpResponse = context.HttpResponse;
+            describeRealtimeDeliveryAccResponse.RequestId = context.StringValue("DescribeRealtimeDeliveryAcc.RequestId");
 
-			List<DescribeRealtimeDeliveryAccResponse.DescribeRealtimeDeliveryAcc_AccData> describeRealtimeDeliveryAccResponse_reatTimeDeliveryAccData = new List<DescribeRealtimeDeliveryAccResponse.DescribeRealtimeDeliveryAcc_AccData>();
-			for (int i = 0; i < context.Length("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData.Length"); i++) {
-				DescribeRealtimeDeliveryAccResponse.DescribeRealtimeDeliveryAcc_AccData accData = new DescribeRealtimeDeliveryAccResponse.DescribeRealtimeDeliveryAcc_AccData();
-				accData.TimeStamp = context.StringValue("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData["+ i +"].TimeStamp");
-				accData.SuccessNum = context.IntegerValue("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData["+ i +"].SuccessNum");
-				accData.FailedNum = context.IntegerValue("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData["+ i +"].FailedNum");
+            List<DescribeRealtimeDeliveryAccResponse.DescribeRealtimeDeliveryAcc_AccData> describeRealtimeDeliveryAccResponse_reatTimeDeliveryAccData = new List<DescribeRealtimeDeliveryAccResponse.DescribeRealtimeDeliveryAcc_AccData>();
+            for (int i = 0; i < context.Length("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData.Length"); i++)
+            {
+                DescribeRealtimeDeliveryAccResponse.DescribeRealtimeDeliveryAcc_AccData accData = new DescribeRealtimeDeliveryAccResponse.DescribeRealtimeDeliveryAcc_AccData();
+                accData.TimeStamp = context.StringValue("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData[" + i + "].TimeStamp");
+                accData.SuccessNum = context.IntegerValue("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData[" + i + "].SuccessNum");
+                accData.FailedNum = context.IntegerValue("DescribeRealtimeDeliveryAcc.ReatTimeDeliveryAccData[" + i + "].FailedNum");
 
-				describeRealtimeDeliveryAccResponse_reatTimeDeliveryAccData.Add(accData);
-			}
-			describeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData = describeRealtimeDeliveryAccResponse_reatTimeDeliveryAccData;
-        
-			return describeRealtimeDeliveryAccResponse;
+                describeRealtimeDeliveryAccResponse_reatTimeDeliveryAccData.Add(accData);
+            }
+            describeRealtimeDeliveryAccResponse.ReatTimeDeliveryAccData = describeRealtimeDeliveryAccResponse_reatTimeDeliveryAccData;
+
+            return describeRealtimeDeliveryAccResponse;
         }
     }
 }

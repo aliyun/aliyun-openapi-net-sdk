@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static RemoveGlobalAccelerationInstanceIpResponse Unmarshall(UnmarshallerContext context)
         {
-			RemoveGlobalAccelerationInstanceIpResponse removeGlobalAccelerationInstanceIpResponse = new RemoveGlobalAccelerationInstanceIpResponse();
+            RemoveGlobalAccelerationInstanceIpResponse removeGlobalAccelerationInstanceIpResponse = new RemoveGlobalAccelerationInstanceIpResponse();
 
-			removeGlobalAccelerationInstanceIpResponse.HttpResponse = context.HttpResponse;
-			removeGlobalAccelerationInstanceIpResponse.RequestId = context.StringValue("RemoveGlobalAccelerationInstanceIp.RequestId");
-        
-			return removeGlobalAccelerationInstanceIpResponse;
+            removeGlobalAccelerationInstanceIpResponse.HttpResponse = context.HttpResponse;
+            removeGlobalAccelerationInstanceIpResponse.RequestId = context.StringValue("RemoveGlobalAccelerationInstanceIp.RequestId");
+
+            return removeGlobalAccelerationInstanceIpResponse;
         }
     }
 }

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static AssociateRouteTableResponse Unmarshall(UnmarshallerContext context)
         {
-			AssociateRouteTableResponse associateRouteTableResponse = new AssociateRouteTableResponse();
+            AssociateRouteTableResponse associateRouteTableResponse = new AssociateRouteTableResponse();
 
-			associateRouteTableResponse.HttpResponse = context.HttpResponse;
-			associateRouteTableResponse.RequestId = context.StringValue("AssociateRouteTable.RequestId");
-        
-			return associateRouteTableResponse;
+            associateRouteTableResponse.HttpResponse = context.HttpResponse;
+            associateRouteTableResponse.RequestId = context.StringValue("AssociateRouteTable.RequestId");
+
+            return associateRouteTableResponse;
         }
     }
 }

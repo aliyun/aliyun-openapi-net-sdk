@@ -27,21 +27,21 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static GetNumberRegionInfoResponse Unmarshall(UnmarshallerContext context)
         {
-			GetNumberRegionInfoResponse getNumberRegionInfoResponse = new GetNumberRegionInfoResponse();
+            GetNumberRegionInfoResponse getNumberRegionInfoResponse = new GetNumberRegionInfoResponse();
 
-			getNumberRegionInfoResponse.HttpResponse = context.HttpResponse;
-			getNumberRegionInfoResponse.RequestId = context.StringValue("GetNumberRegionInfo.RequestId");
-			getNumberRegionInfoResponse.Success = context.BooleanValue("GetNumberRegionInfo.Success");
-			getNumberRegionInfoResponse.Code = context.StringValue("GetNumberRegionInfo.Code");
-			getNumberRegionInfoResponse.Message = context.StringValue("GetNumberRegionInfo.Message");
+            getNumberRegionInfoResponse.HttpResponse = context.HttpResponse;
+            getNumberRegionInfoResponse.RequestId = context.StringValue("GetNumberRegionInfo.RequestId");
+            getNumberRegionInfoResponse.Success = context.BooleanValue("GetNumberRegionInfo.Success");
+            getNumberRegionInfoResponse.Code = context.StringValue("GetNumberRegionInfo.Code");
+            getNumberRegionInfoResponse.Message = context.StringValue("GetNumberRegionInfo.Message");
 
-			GetNumberRegionInfoResponse.GetNumberRegionInfo_PhoneNumber phoneNumber = new GetNumberRegionInfoResponse.GetNumberRegionInfo_PhoneNumber();
-			phoneNumber.Number = context.StringValue("GetNumberRegionInfo.PhoneNumber.Number");
-			phoneNumber.Province = context.StringValue("GetNumberRegionInfo.PhoneNumber.Province");
-			phoneNumber.City = context.StringValue("GetNumberRegionInfo.PhoneNumber.City");
-			getNumberRegionInfoResponse.PhoneNumber = phoneNumber;
-        
-			return getNumberRegionInfoResponse;
+            GetNumberRegionInfoResponse.GetNumberRegionInfo_PhoneNumber phoneNumber = new GetNumberRegionInfoResponse.GetNumberRegionInfo_PhoneNumber();
+            phoneNumber.Number = context.StringValue("GetNumberRegionInfo.PhoneNumber.Number");
+            phoneNumber.Province = context.StringValue("GetNumberRegionInfo.PhoneNumber.Province");
+            phoneNumber.City = context.StringValue("GetNumberRegionInfo.PhoneNumber.City");
+            getNumberRegionInfoResponse.PhoneNumber = phoneNumber;
+
+            return getNumberRegionInfoResponse;
         }
     }
 }

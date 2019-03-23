@@ -21,67 +21,67 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeZonesResponse : AcsResponse
-	{
+    public class DescribeZonesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeZones_Zone> zones;
+        private List<DescribeZones_Zone> zones;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeZones_Zone> Zones
-		{
-			get
-			{
-				return zones;
-			}
-			set	
-			{
-				zones = value;
-			}
-		}
+        public List<DescribeZones_Zone> Zones
+        {
+            get
+            {
+                return zones;
+            }
+            set
+            {
+                zones = value;
+            }
+        }
 
-		public class DescribeZones_Zone
-		{
+        public class DescribeZones_Zone
+        {
 
-			private string zoneId;
+            private string zoneId;
 
-			private string localName;
+            private string localName;
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+            public string ZoneId
+            {
+                get
+                {
+                    return zoneId;
+                }
+                set
+                {
+                    zoneId = value;
+                }
+            }
 
-			public string LocalName
-			{
-				get
-				{
-					return localName;
-				}
-				set	
-				{
-					localName = value;
-				}
-			}
-		}
-	}
+            public string LocalName
+            {
+                get
+                {
+                    return localName;
+                }
+                set
+                {
+                    localName = value;
+                }
+            }
+        }
+    }
 }

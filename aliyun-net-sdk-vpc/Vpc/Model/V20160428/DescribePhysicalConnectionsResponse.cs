@@ -21,333 +21,333 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribePhysicalConnectionsResponse : AcsResponse
-	{
+    public class DescribePhysicalConnectionsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private List<DescribePhysicalConnections_PhysicalConnectionType> physicalConnectionSet;
+        private List<DescribePhysicalConnections_PhysicalConnectionType> physicalConnectionSet;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribePhysicalConnections_PhysicalConnectionType> PhysicalConnectionSet
-		{
-			get
-			{
-				return physicalConnectionSet;
-			}
-			set	
-			{
-				physicalConnectionSet = value;
-			}
-		}
+        public List<DescribePhysicalConnections_PhysicalConnectionType> PhysicalConnectionSet
+        {
+            get
+            {
+                return physicalConnectionSet;
+            }
+            set
+            {
+                physicalConnectionSet = value;
+            }
+        }
 
-		public class DescribePhysicalConnections_PhysicalConnectionType
-		{
+        public class DescribePhysicalConnections_PhysicalConnectionType
+        {
 
-			private string physicalConnectionId;
+            private string physicalConnectionId;
 
-			private string accessPointId;
+            private string accessPointId;
 
-			private string type;
+            private string type;
 
-			private string status;
+            private string status;
 
-			private string businessStatus;
+            private string businessStatus;
 
-			private string creationTime;
+            private string creationTime;
 
-			private string enabledTime;
+            private string enabledTime;
 
-			private string lineOperator;
+            private string lineOperator;
 
-			private string spec;
+            private string spec;
 
-			private string peerLocation;
+            private string peerLocation;
 
-			private string portType;
+            private string portType;
 
-			private string redundantPhysicalConnectionId;
+            private string redundantPhysicalConnectionId;
 
-			private string name;
+            private string name;
 
-			private string description;
+            private string description;
 
-			private string adLocation;
+            private string adLocation;
 
-			private string portNumber;
+            private string portNumber;
 
-			private string circuitCode;
+            private string circuitCode;
 
-			private long? bandwidth;
+            private long? bandwidth;
 
-			public string PhysicalConnectionId
-			{
-				get
-				{
-					return physicalConnectionId;
-				}
-				set	
-				{
-					physicalConnectionId = value;
-				}
-			}
+            public string PhysicalConnectionId
+            {
+                get
+                {
+                    return physicalConnectionId;
+                }
+                set
+                {
+                    physicalConnectionId = value;
+                }
+            }
 
-			public string AccessPointId
-			{
-				get
-				{
-					return accessPointId;
-				}
-				set	
-				{
-					accessPointId = value;
-				}
-			}
+            public string AccessPointId
+            {
+                get
+                {
+                    return accessPointId;
+                }
+                set
+                {
+                    accessPointId = value;
+                }
+            }
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+            public string Type
+            {
+                get
+                {
+                    return type;
+                }
+                set
+                {
+                    type = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string BusinessStatus
-			{
-				get
-				{
-					return businessStatus;
-				}
-				set	
-				{
-					businessStatus = value;
-				}
-			}
+            public string BusinessStatus
+            {
+                get
+                {
+                    return businessStatus;
+                }
+                set
+                {
+                    businessStatus = value;
+                }
+            }
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+            public string CreationTime
+            {
+                get
+                {
+                    return creationTime;
+                }
+                set
+                {
+                    creationTime = value;
+                }
+            }
 
-			public string EnabledTime
-			{
-				get
-				{
-					return enabledTime;
-				}
-				set	
-				{
-					enabledTime = value;
-				}
-			}
+            public string EnabledTime
+            {
+                get
+                {
+                    return enabledTime;
+                }
+                set
+                {
+                    enabledTime = value;
+                }
+            }
 
-			public string LineOperator
-			{
-				get
-				{
-					return lineOperator;
-				}
-				set	
-				{
-					lineOperator = value;
-				}
-			}
+            public string LineOperator
+            {
+                get
+                {
+                    return lineOperator;
+                }
+                set
+                {
+                    lineOperator = value;
+                }
+            }
 
-			public string Spec
-			{
-				get
-				{
-					return spec;
-				}
-				set	
-				{
-					spec = value;
-				}
-			}
+            public string Spec
+            {
+                get
+                {
+                    return spec;
+                }
+                set
+                {
+                    spec = value;
+                }
+            }
 
-			public string PeerLocation
-			{
-				get
-				{
-					return peerLocation;
-				}
-				set	
-				{
-					peerLocation = value;
-				}
-			}
+            public string PeerLocation
+            {
+                get
+                {
+                    return peerLocation;
+                }
+                set
+                {
+                    peerLocation = value;
+                }
+            }
 
-			public string PortType
-			{
-				get
-				{
-					return portType;
-				}
-				set	
-				{
-					portType = value;
-				}
-			}
+            public string PortType
+            {
+                get
+                {
+                    return portType;
+                }
+                set
+                {
+                    portType = value;
+                }
+            }
 
-			public string RedundantPhysicalConnectionId
-			{
-				get
-				{
-					return redundantPhysicalConnectionId;
-				}
-				set	
-				{
-					redundantPhysicalConnectionId = value;
-				}
-			}
+            public string RedundantPhysicalConnectionId
+            {
+                get
+                {
+                    return redundantPhysicalConnectionId;
+                }
+                set
+                {
+                    redundantPhysicalConnectionId = value;
+                }
+            }
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string AdLocation
-			{
-				get
-				{
-					return adLocation;
-				}
-				set	
-				{
-					adLocation = value;
-				}
-			}
+            public string AdLocation
+            {
+                get
+                {
+                    return adLocation;
+                }
+                set
+                {
+                    adLocation = value;
+                }
+            }
 
-			public string PortNumber
-			{
-				get
-				{
-					return portNumber;
-				}
-				set	
-				{
-					portNumber = value;
-				}
-			}
+            public string PortNumber
+            {
+                get
+                {
+                    return portNumber;
+                }
+                set
+                {
+                    portNumber = value;
+                }
+            }
 
-			public string CircuitCode
-			{
-				get
-				{
-					return circuitCode;
-				}
-				set	
-				{
-					circuitCode = value;
-				}
-			}
+            public string CircuitCode
+            {
+                get
+                {
+                    return circuitCode;
+                }
+                set
+                {
+                    circuitCode = value;
+                }
+            }
 
-			public long? Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
-				}
-			}
-		}
-	}
+            public long? Bandwidth
+            {
+                get
+                {
+                    return bandwidth;
+                }
+                set
+                {
+                    bandwidth = value;
+                }
+            }
+        }
+    }
 }

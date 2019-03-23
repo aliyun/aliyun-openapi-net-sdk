@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DeleteLiveStreamTranscodeResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteLiveStreamTranscodeResponse deleteLiveStreamTranscodeResponse = new DeleteLiveStreamTranscodeResponse();
+            DeleteLiveStreamTranscodeResponse deleteLiveStreamTranscodeResponse = new DeleteLiveStreamTranscodeResponse();
 
-			deleteLiveStreamTranscodeResponse.HttpResponse = context.HttpResponse;
-			deleteLiveStreamTranscodeResponse.RequestId = context.StringValue("DeleteLiveStreamTranscode.RequestId");
-        
-			return deleteLiveStreamTranscodeResponse;
+            deleteLiveStreamTranscodeResponse.HttpResponse = context.HttpResponse;
+            deleteLiveStreamTranscodeResponse.RequestId = context.StringValue("DeleteLiveStreamTranscode.RequestId");
+
+            return deleteLiveStreamTranscodeResponse;
         }
     }
 }

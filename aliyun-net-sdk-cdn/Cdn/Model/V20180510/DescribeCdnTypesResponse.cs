@@ -22,67 +22,67 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeCdnTypesResponse : AcsResponse
-	{
+    public class DescribeCdnTypesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeCdnTypes_CdnType> cdnTypes;
+        private List<DescribeCdnTypes_CdnType> cdnTypes;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeCdnTypes_CdnType> CdnTypes
-		{
-			get
-			{
-				return cdnTypes;
-			}
-			set	
-			{
-				cdnTypes = value;
-			}
-		}
+        public List<DescribeCdnTypes_CdnType> CdnTypes
+        {
+            get
+            {
+                return cdnTypes;
+            }
+            set
+            {
+                cdnTypes = value;
+            }
+        }
 
-		public class DescribeCdnTypes_CdnType
-		{
+        public class DescribeCdnTypes_CdnType
+        {
 
-			private string type;
+            private string type;
 
-			private string desc;
+            private string desc;
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+            public string Type
+            {
+                get
+                {
+                    return type;
+                }
+                set
+                {
+                    type = value;
+                }
+            }
 
-			public string Desc
-			{
-				get
-				{
-					return desc;
-				}
-				set	
-				{
-					desc = value;
-				}
-			}
-		}
-	}
+            public string Desc
+            {
+                get
+                {
+                    return desc;
+                }
+                set
+                {
+                    desc = value;
+                }
+            }
+        }
+    }
 }

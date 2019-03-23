@@ -28,34 +28,34 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static GetSecurityPreferenceResponse Unmarshall(UnmarshallerContext context)
         {
-			GetSecurityPreferenceResponse getSecurityPreferenceResponse = new GetSecurityPreferenceResponse();
+            GetSecurityPreferenceResponse getSecurityPreferenceResponse = new GetSecurityPreferenceResponse();
 
-			getSecurityPreferenceResponse.HttpResponse = context.HttpResponse;
-			getSecurityPreferenceResponse.RequestId = context.StringValue("GetSecurityPreference.RequestId");
+            getSecurityPreferenceResponse.HttpResponse = context.HttpResponse;
+            getSecurityPreferenceResponse.RequestId = context.StringValue("GetSecurityPreference.RequestId");
 
-			GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference securityPreference = new GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference();
+            GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference securityPreference = new GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference();
 
-			GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_LoginProfilePreference loginProfilePreference = new GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_LoginProfilePreference();
-			loginProfilePreference.EnableSaveMFATicket = context.BooleanValue("GetSecurityPreference.SecurityPreference.LoginProfilePreference.EnableSaveMFATicket");
-			loginProfilePreference.AllowUserToChangePassword = context.BooleanValue("GetSecurityPreference.SecurityPreference.LoginProfilePreference.AllowUserToChangePassword");
-			loginProfilePreference.LoginSessionDuration = context.IntegerValue("GetSecurityPreference.SecurityPreference.LoginProfilePreference.LoginSessionDuration");
-			loginProfilePreference.LoginNetworkMasks = context.StringValue("GetSecurityPreference.SecurityPreference.LoginProfilePreference.LoginNetworkMasks");
-			securityPreference.LoginProfilePreference = loginProfilePreference;
+            GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_LoginProfilePreference loginProfilePreference = new GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_LoginProfilePreference();
+            loginProfilePreference.EnableSaveMFATicket = context.BooleanValue("GetSecurityPreference.SecurityPreference.LoginProfilePreference.EnableSaveMFATicket");
+            loginProfilePreference.AllowUserToChangePassword = context.BooleanValue("GetSecurityPreference.SecurityPreference.LoginProfilePreference.AllowUserToChangePassword");
+            loginProfilePreference.LoginSessionDuration = context.IntegerValue("GetSecurityPreference.SecurityPreference.LoginProfilePreference.LoginSessionDuration");
+            loginProfilePreference.LoginNetworkMasks = context.StringValue("GetSecurityPreference.SecurityPreference.LoginProfilePreference.LoginNetworkMasks");
+            securityPreference.LoginProfilePreference = loginProfilePreference;
 
-			GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_AccessKeyPreference accessKeyPreference = new GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_AccessKeyPreference();
-			accessKeyPreference.AllowUserToManageAccessKeys = context.BooleanValue("GetSecurityPreference.SecurityPreference.AccessKeyPreference.AllowUserToManageAccessKeys");
-			securityPreference.AccessKeyPreference = accessKeyPreference;
+            GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_AccessKeyPreference accessKeyPreference = new GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_AccessKeyPreference();
+            accessKeyPreference.AllowUserToManageAccessKeys = context.BooleanValue("GetSecurityPreference.SecurityPreference.AccessKeyPreference.AllowUserToManageAccessKeys");
+            securityPreference.AccessKeyPreference = accessKeyPreference;
 
-			GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_PublicKeyPreference publicKeyPreference = new GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_PublicKeyPreference();
-			publicKeyPreference.AllowUserToManagePublicKeys = context.BooleanValue("GetSecurityPreference.SecurityPreference.PublicKeyPreference.AllowUserToManagePublicKeys");
-			securityPreference.PublicKeyPreference = publicKeyPreference;
+            GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_PublicKeyPreference publicKeyPreference = new GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_PublicKeyPreference();
+            publicKeyPreference.AllowUserToManagePublicKeys = context.BooleanValue("GetSecurityPreference.SecurityPreference.PublicKeyPreference.AllowUserToManagePublicKeys");
+            securityPreference.PublicKeyPreference = publicKeyPreference;
 
-			GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_MFAPreference mFAPreference = new GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_MFAPreference();
-			mFAPreference.AllowUserToManageMFADevices = context.BooleanValue("GetSecurityPreference.SecurityPreference.MFAPreference.AllowUserToManageMFADevices");
-			securityPreference.MFAPreference = mFAPreference;
-			getSecurityPreferenceResponse.SecurityPreference = securityPreference;
-        
-			return getSecurityPreferenceResponse;
+            GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_MFAPreference mFAPreference = new GetSecurityPreferenceResponse.GetSecurityPreference_SecurityPreference.GetSecurityPreference_MFAPreference();
+            mFAPreference.AllowUserToManageMFADevices = context.BooleanValue("GetSecurityPreference.SecurityPreference.MFAPreference.AllowUserToManageMFADevices");
+            securityPreference.MFAPreference = mFAPreference;
+            getSecurityPreferenceResponse.SecurityPreference = securityPreference;
+
+            return getSecurityPreferenceResponse;
         }
     }
 }

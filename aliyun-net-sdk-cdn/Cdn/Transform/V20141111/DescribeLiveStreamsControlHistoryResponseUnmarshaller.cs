@@ -28,24 +28,25 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeLiveStreamsControlHistoryResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLiveStreamsControlHistoryResponse describeLiveStreamsControlHistoryResponse = new DescribeLiveStreamsControlHistoryResponse();
+            DescribeLiveStreamsControlHistoryResponse describeLiveStreamsControlHistoryResponse = new DescribeLiveStreamsControlHistoryResponse();
 
-			describeLiveStreamsControlHistoryResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamsControlHistoryResponse.RequestId = context.StringValue("DescribeLiveStreamsControlHistory.RequestId");
+            describeLiveStreamsControlHistoryResponse.HttpResponse = context.HttpResponse;
+            describeLiveStreamsControlHistoryResponse.RequestId = context.StringValue("DescribeLiveStreamsControlHistory.RequestId");
 
-			List<DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo> describeLiveStreamsControlHistoryResponse_controlInfo = new List<DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamsControlHistory.ControlInfo.Length"); i++) {
-				DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo liveStreamControlInfo = new DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo();
-				liveStreamControlInfo.StreamName = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].StreamName");
-				liveStreamControlInfo.ClientIP = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].ClientIP");
-				liveStreamControlInfo.Action = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].Action");
-				liveStreamControlInfo.TimeStamp = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].TimeStamp");
+            List<DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo> describeLiveStreamsControlHistoryResponse_controlInfo = new List<DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo>();
+            for (int i = 0; i < context.Length("DescribeLiveStreamsControlHistory.ControlInfo.Length"); i++)
+            {
+                DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo liveStreamControlInfo = new DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo();
+                liveStreamControlInfo.StreamName = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo[" + i + "].StreamName");
+                liveStreamControlInfo.ClientIP = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo[" + i + "].ClientIP");
+                liveStreamControlInfo.Action = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo[" + i + "].Action");
+                liveStreamControlInfo.TimeStamp = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo[" + i + "].TimeStamp");
 
-				describeLiveStreamsControlHistoryResponse_controlInfo.Add(liveStreamControlInfo);
-			}
-			describeLiveStreamsControlHistoryResponse.ControlInfo = describeLiveStreamsControlHistoryResponse_controlInfo;
-        
-			return describeLiveStreamsControlHistoryResponse;
+                describeLiveStreamsControlHistoryResponse_controlInfo.Add(liveStreamControlInfo);
+            }
+            describeLiveStreamsControlHistoryResponse.ControlInfo = describeLiveStreamsControlHistoryResponse_controlInfo;
+
+            return describeLiveStreamsControlHistoryResponse;
         }
     }
 }

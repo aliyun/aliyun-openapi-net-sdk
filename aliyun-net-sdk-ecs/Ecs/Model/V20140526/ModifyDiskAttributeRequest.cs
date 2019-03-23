@@ -33,170 +33,170 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string diskName;
+        private string diskName;
 
-		private bool? deleteAutoSnapshot;
+        private bool? deleteAutoSnapshot;
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private bool? enableAutoSnapshot;
+        private bool? enableAutoSnapshot;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string action;
+        private string action;
 
-		private string description;
+        private string description;
 
-		private string diskId;
+        private string diskId;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private bool? deleteWithInstance;
+        private bool? deleteWithInstance;
 
-		public string DiskName
-		{
-			get
-			{
-				return diskName;
-			}
-			set	
-			{
-				diskName = value;
-				DictionaryUtil.Add(QueryParameters, "DiskName", value);
-			}
-		}
+        public string DiskName
+        {
+            get
+            {
+                return diskName;
+            }
+            set
+            {
+                diskName = value;
+                DictionaryUtil.Add(QueryParameters, "DiskName", value);
+            }
+        }
 
-		public bool? DeleteAutoSnapshot
-		{
-			get
-			{
-				return deleteAutoSnapshot;
-			}
-			set	
-			{
-				deleteAutoSnapshot = value;
-				DictionaryUtil.Add(QueryParameters, "DeleteAutoSnapshot", value.ToString());
-			}
-		}
+        public bool? DeleteAutoSnapshot
+        {
+            get
+            {
+                return deleteAutoSnapshot;
+            }
+            set
+            {
+                deleteAutoSnapshot = value;
+                DictionaryUtil.Add(QueryParameters, "DeleteAutoSnapshot", value.ToString());
+            }
+        }
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public bool? EnableAutoSnapshot
-		{
-			get
-			{
-				return enableAutoSnapshot;
-			}
-			set	
-			{
-				enableAutoSnapshot = value;
-				DictionaryUtil.Add(QueryParameters, "EnableAutoSnapshot", value.ToString());
-			}
-		}
+        public bool? EnableAutoSnapshot
+        {
+            get
+            {
+                return enableAutoSnapshot;
+            }
+            set
+            {
+                enableAutoSnapshot = value;
+                DictionaryUtil.Add(QueryParameters, "EnableAutoSnapshot", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string DiskId
-		{
-			get
-			{
-				return diskId;
-			}
-			set	
-			{
-				diskId = value;
-				DictionaryUtil.Add(QueryParameters, "DiskId", value);
-			}
-		}
+        public string DiskId
+        {
+            get
+            {
+                return diskId;
+            }
+            set
+            {
+                diskId = value;
+                DictionaryUtil.Add(QueryParameters, "DiskId", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public bool? DeleteWithInstance
-		{
-			get
-			{
-				return deleteWithInstance;
-			}
-			set	
-			{
-				deleteWithInstance = value;
-				DictionaryUtil.Add(QueryParameters, "DeleteWithInstance", value.ToString());
-			}
-		}
+        public bool? DeleteWithInstance
+        {
+            get
+            {
+                return deleteWithInstance;
+            }
+            set
+            {
+                deleteWithInstance = value;
+                DictionaryUtil.Add(QueryParameters, "DeleteWithInstance", value.ToString());
+            }
+        }
 
         public override ModifyDiskAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static AddListenerWhiteListItemResponse Unmarshall(UnmarshallerContext context)
         {
-			AddListenerWhiteListItemResponse addListenerWhiteListItemResponse = new AddListenerWhiteListItemResponse();
+            AddListenerWhiteListItemResponse addListenerWhiteListItemResponse = new AddListenerWhiteListItemResponse();
 
-			addListenerWhiteListItemResponse.HttpResponse = context.HttpResponse;
-			addListenerWhiteListItemResponse.RequestId = context.StringValue("AddListenerWhiteListItem.RequestId");
-        
-			return addListenerWhiteListItemResponse;
+            addListenerWhiteListItemResponse.HttpResponse = context.HttpResponse;
+            addListenerWhiteListItemResponse.RequestId = context.StringValue("AddListenerWhiteListItem.RequestId");
+
+            return addListenerWhiteListItemResponse;
         }
     }
 }

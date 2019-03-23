@@ -28,25 +28,26 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static ListPoliciesForRoleResponse Unmarshall(UnmarshallerContext context)
         {
-			ListPoliciesForRoleResponse listPoliciesForRoleResponse = new ListPoliciesForRoleResponse();
+            ListPoliciesForRoleResponse listPoliciesForRoleResponse = new ListPoliciesForRoleResponse();
 
-			listPoliciesForRoleResponse.HttpResponse = context.HttpResponse;
-			listPoliciesForRoleResponse.RequestId = context.StringValue("ListPoliciesForRole.RequestId");
+            listPoliciesForRoleResponse.HttpResponse = context.HttpResponse;
+            listPoliciesForRoleResponse.RequestId = context.StringValue("ListPoliciesForRole.RequestId");
 
-			List<ListPoliciesForRoleResponse.ListPoliciesForRole_Policy> listPoliciesForRoleResponse_policies = new List<ListPoliciesForRoleResponse.ListPoliciesForRole_Policy>();
-			for (int i = 0; i < context.Length("ListPoliciesForRole.Policies.Length"); i++) {
-				ListPoliciesForRoleResponse.ListPoliciesForRole_Policy policy = new ListPoliciesForRoleResponse.ListPoliciesForRole_Policy();
-				policy.PolicyName = context.StringValue("ListPoliciesForRole.Policies["+ i +"].PolicyName");
-				policy.PolicyType = context.StringValue("ListPoliciesForRole.Policies["+ i +"].PolicyType");
-				policy.Description = context.StringValue("ListPoliciesForRole.Policies["+ i +"].Description");
-				policy.DefaultVersion = context.StringValue("ListPoliciesForRole.Policies["+ i +"].DefaultVersion");
-				policy.AttachDate = context.StringValue("ListPoliciesForRole.Policies["+ i +"].AttachDate");
+            List<ListPoliciesForRoleResponse.ListPoliciesForRole_Policy> listPoliciesForRoleResponse_policies = new List<ListPoliciesForRoleResponse.ListPoliciesForRole_Policy>();
+            for (int i = 0; i < context.Length("ListPoliciesForRole.Policies.Length"); i++)
+            {
+                ListPoliciesForRoleResponse.ListPoliciesForRole_Policy policy = new ListPoliciesForRoleResponse.ListPoliciesForRole_Policy();
+                policy.PolicyName = context.StringValue("ListPoliciesForRole.Policies[" + i + "].PolicyName");
+                policy.PolicyType = context.StringValue("ListPoliciesForRole.Policies[" + i + "].PolicyType");
+                policy.Description = context.StringValue("ListPoliciesForRole.Policies[" + i + "].Description");
+                policy.DefaultVersion = context.StringValue("ListPoliciesForRole.Policies[" + i + "].DefaultVersion");
+                policy.AttachDate = context.StringValue("ListPoliciesForRole.Policies[" + i + "].AttachDate");
 
-				listPoliciesForRoleResponse_policies.Add(policy);
-			}
-			listPoliciesForRoleResponse.Policies = listPoliciesForRoleResponse_policies;
-        
-			return listPoliciesForRoleResponse;
+                listPoliciesForRoleResponse_policies.Add(policy);
+            }
+            listPoliciesForRoleResponse.Policies = listPoliciesForRoleResponse_policies;
+
+            return listPoliciesForRoleResponse;
         }
     }
 }

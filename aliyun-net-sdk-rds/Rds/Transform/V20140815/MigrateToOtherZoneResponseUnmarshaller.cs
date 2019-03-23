@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static MigrateToOtherZoneResponse Unmarshall(UnmarshallerContext context)
         {
-			MigrateToOtherZoneResponse migrateToOtherZoneResponse = new MigrateToOtherZoneResponse();
+            MigrateToOtherZoneResponse migrateToOtherZoneResponse = new MigrateToOtherZoneResponse();
 
-			migrateToOtherZoneResponse.HttpResponse = context.HttpResponse;
-			migrateToOtherZoneResponse.RequestId = context.StringValue("MigrateToOtherZone.RequestId");
-        
-			return migrateToOtherZoneResponse;
+            migrateToOtherZoneResponse.HttpResponse = context.HttpResponse;
+            migrateToOtherZoneResponse.RequestId = context.StringValue("MigrateToOtherZone.RequestId");
+
+            return migrateToOtherZoneResponse;
         }
     }
 }

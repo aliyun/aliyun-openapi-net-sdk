@@ -214,7 +214,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
             {
                 if (defaultProfile.DefaultClientName.Equals("default"))
                 {
-                    var eCSMetadataServiceCredentialsFetcher = (ECSMetadataServiceCredentialsFetcher) alibabaCloudCredentialProvider;
+                    var eCSMetadataServiceCredentialsFetcher = (ECSMetadataServiceCredentialsFetcher)alibabaCloudCredentialProvider;
                     eCSMetadataServiceCredentialsFetcher.SetRoleName(roleName);
                     var ecsInstanceCredential = eCSMetadataServiceCredentialsFetcher.Fetch();
 
@@ -250,8 +250,8 @@ namespace Aliyun.Acs.Core.Auth.Provider
                 STSAssumeRoleSessionCredentialsProvider.DEFAULT_DURATION_SECONDS);
             this.defaultProfile = DefaultProfile.GetProfile(this.regionId, this.accessKeyId, this.accessKeySecret);
 
-            var sTSAssumeRoleSessionCredentialsProvider = (STSAssumeRoleSessionCredentialsProvider) alibabaCloudCredentialProvider;
-            RamRoleArnCredential ramRoleArnCredential = (RamRoleArnCredential) sTSAssumeRoleSessionCredentialsProvider.GetCredentials();
+            var sTSAssumeRoleSessionCredentialsProvider = (STSAssumeRoleSessionCredentialsProvider)alibabaCloudCredentialProvider;
+            RamRoleArnCredential ramRoleArnCredential = (RamRoleArnCredential)sTSAssumeRoleSessionCredentialsProvider.GetCredentials();
 
             return ramRoleArnCredential;
         }
@@ -265,8 +265,8 @@ namespace Aliyun.Acs.Core.Auth.Provider
             RsaKeyPairCredential rsaKeyPairCredential = new RsaKeyPairCredential(this.publicKeyId, this.privateKeyFile);
             DefaultProfile profile = DefaultProfile.GetProfile(this.regionId, this.publicKeyId, this.privateKeyFile);
 
-            var provider = (RsaKeyPairCredentialProvider) alibabaCloudCredentialProvider;
-            BasicSessionCredentials basicCrededential = (BasicSessionCredentials) provider.GetCredentials();
+            var provider = (RsaKeyPairCredentialProvider)alibabaCloudCredentialProvider;
+            BasicSessionCredentials basicCrededential = (BasicSessionCredentials)provider.GetCredentials();
 
             return basicCrededential;
         }

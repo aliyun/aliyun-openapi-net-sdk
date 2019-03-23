@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class ReplaceSystemDiskResponse : AcsResponse
-	{
+    public class ReplaceSystemDiskResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string diskId;
+        private string diskId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DiskId
-		{
-			get
-			{
-				return diskId;
-			}
-			set	
-			{
-				diskId = value;
-			}
-		}
-	}
+        public string DiskId
+        {
+            get
+            {
+                return diskId;
+            }
+            set
+            {
+                diskId = value;
+            }
+        }
+    }
 }

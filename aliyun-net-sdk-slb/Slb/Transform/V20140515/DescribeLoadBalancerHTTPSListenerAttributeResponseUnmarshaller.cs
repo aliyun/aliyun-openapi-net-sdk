@@ -27,46 +27,46 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static DescribeLoadBalancerHTTPSListenerAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLoadBalancerHTTPSListenerAttributeResponse describeLoadBalancerHTTPSListenerAttributeResponse = new DescribeLoadBalancerHTTPSListenerAttributeResponse();
+            DescribeLoadBalancerHTTPSListenerAttributeResponse describeLoadBalancerHTTPSListenerAttributeResponse = new DescribeLoadBalancerHTTPSListenerAttributeResponse();
 
-			describeLoadBalancerHTTPSListenerAttributeResponse.HttpResponse = context.HttpResponse;
-			describeLoadBalancerHTTPSListenerAttributeResponse.RequestId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.RequestId");
-			describeLoadBalancerHTTPSListenerAttributeResponse.ListenerPort = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.ListenerPort");
-			describeLoadBalancerHTTPSListenerAttributeResponse.BackendServerPort = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.BackendServerPort");
-			describeLoadBalancerHTTPSListenerAttributeResponse.Bandwidth = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.Bandwidth");
-			describeLoadBalancerHTTPSListenerAttributeResponse.Status = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Status");
-			describeLoadBalancerHTTPSListenerAttributeResponse.SecurityStatus = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.SecurityStatus");
-			describeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.XForwardedFor");
-			describeLoadBalancerHTTPSListenerAttributeResponse.Scheduler = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Scheduler");
-			describeLoadBalancerHTTPSListenerAttributeResponse.StickySession = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.StickySession");
-			describeLoadBalancerHTTPSListenerAttributeResponse.StickySessionType = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.StickySessionType");
-			describeLoadBalancerHTTPSListenerAttributeResponse.CookieTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.CookieTimeout");
-			describeLoadBalancerHTTPSListenerAttributeResponse.Cookie = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Cookie");
-			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheck = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheck");
-			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckDomain = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckDomain");
-			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckURI = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckURI");
-			describeLoadBalancerHTTPSListenerAttributeResponse.HealthyThreshold = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthyThreshold");
-			describeLoadBalancerHTTPSListenerAttributeResponse.UnhealthyThreshold = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.UnhealthyThreshold");
-			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckTimeout");
-			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckInterval = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckInterval");
-			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckConnectPort = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckConnectPort");
-			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckHttpCode = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckHttpCode");
-			describeLoadBalancerHTTPSListenerAttributeResponse.ServerCertificateId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.ServerCertificateId");
-			describeLoadBalancerHTTPSListenerAttributeResponse.CACertificateId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.CACertificateId");
-			describeLoadBalancerHTTPSListenerAttributeResponse.MaxConnection = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.MaxConnection");
-			describeLoadBalancerHTTPSListenerAttributeResponse.VServerGroupId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.VServerGroupId");
-			describeLoadBalancerHTTPSListenerAttributeResponse.Gzip = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Gzip");
-			describeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_SLBIP = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.XForwardedFor_SLBIP");
-			describeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_SLBID = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.XForwardedFor_SLBID");
-			describeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_proto = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.XForwardedFor_proto");
-			describeLoadBalancerHTTPSListenerAttributeResponse.AclId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.AclId");
-			describeLoadBalancerHTTPSListenerAttributeResponse.AclType = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.AclType");
-			describeLoadBalancerHTTPSListenerAttributeResponse.AclStatus = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.AclStatus");
-			describeLoadBalancerHTTPSListenerAttributeResponse.VpcIds = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.VpcIds");
-			describeLoadBalancerHTTPSListenerAttributeResponse.RequestTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.RequestTimeout");
-			describeLoadBalancerHTTPSListenerAttributeResponse.IdleTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.IdleTimeout");
-        
-			return describeLoadBalancerHTTPSListenerAttributeResponse;
+            describeLoadBalancerHTTPSListenerAttributeResponse.HttpResponse = context.HttpResponse;
+            describeLoadBalancerHTTPSListenerAttributeResponse.RequestId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.RequestId");
+            describeLoadBalancerHTTPSListenerAttributeResponse.ListenerPort = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.ListenerPort");
+            describeLoadBalancerHTTPSListenerAttributeResponse.BackendServerPort = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.BackendServerPort");
+            describeLoadBalancerHTTPSListenerAttributeResponse.Bandwidth = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.Bandwidth");
+            describeLoadBalancerHTTPSListenerAttributeResponse.Status = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Status");
+            describeLoadBalancerHTTPSListenerAttributeResponse.SecurityStatus = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.SecurityStatus");
+            describeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.XForwardedFor");
+            describeLoadBalancerHTTPSListenerAttributeResponse.Scheduler = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Scheduler");
+            describeLoadBalancerHTTPSListenerAttributeResponse.StickySession = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.StickySession");
+            describeLoadBalancerHTTPSListenerAttributeResponse.StickySessionType = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.StickySessionType");
+            describeLoadBalancerHTTPSListenerAttributeResponse.CookieTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.CookieTimeout");
+            describeLoadBalancerHTTPSListenerAttributeResponse.Cookie = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Cookie");
+            describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheck = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheck");
+            describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckDomain = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckDomain");
+            describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckURI = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckURI");
+            describeLoadBalancerHTTPSListenerAttributeResponse.HealthyThreshold = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthyThreshold");
+            describeLoadBalancerHTTPSListenerAttributeResponse.UnhealthyThreshold = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.UnhealthyThreshold");
+            describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckTimeout");
+            describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckInterval = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckInterval");
+            describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckConnectPort = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckConnectPort");
+            describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckHttpCode = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckHttpCode");
+            describeLoadBalancerHTTPSListenerAttributeResponse.ServerCertificateId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.ServerCertificateId");
+            describeLoadBalancerHTTPSListenerAttributeResponse.CACertificateId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.CACertificateId");
+            describeLoadBalancerHTTPSListenerAttributeResponse.MaxConnection = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.MaxConnection");
+            describeLoadBalancerHTTPSListenerAttributeResponse.VServerGroupId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.VServerGroupId");
+            describeLoadBalancerHTTPSListenerAttributeResponse.Gzip = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Gzip");
+            describeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_SLBIP = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.XForwardedFor_SLBIP");
+            describeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_SLBID = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.XForwardedFor_SLBID");
+            describeLoadBalancerHTTPSListenerAttributeResponse.XForwardedFor_proto = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.XForwardedFor_proto");
+            describeLoadBalancerHTTPSListenerAttributeResponse.AclId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.AclId");
+            describeLoadBalancerHTTPSListenerAttributeResponse.AclType = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.AclType");
+            describeLoadBalancerHTTPSListenerAttributeResponse.AclStatus = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.AclStatus");
+            describeLoadBalancerHTTPSListenerAttributeResponse.VpcIds = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.VpcIds");
+            describeLoadBalancerHTTPSListenerAttributeResponse.RequestTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.RequestTimeout");
+            describeLoadBalancerHTTPSListenerAttributeResponse.IdleTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.IdleTimeout");
+
+            return describeLoadBalancerHTTPSListenerAttributeResponse;
         }
     }
 }

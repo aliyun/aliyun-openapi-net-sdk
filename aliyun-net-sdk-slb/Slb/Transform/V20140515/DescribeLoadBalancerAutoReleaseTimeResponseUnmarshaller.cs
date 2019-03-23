@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static DescribeLoadBalancerAutoReleaseTimeResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLoadBalancerAutoReleaseTimeResponse describeLoadBalancerAutoReleaseTimeResponse = new DescribeLoadBalancerAutoReleaseTimeResponse();
+            DescribeLoadBalancerAutoReleaseTimeResponse describeLoadBalancerAutoReleaseTimeResponse = new DescribeLoadBalancerAutoReleaseTimeResponse();
 
-			describeLoadBalancerAutoReleaseTimeResponse.HttpResponse = context.HttpResponse;
-			describeLoadBalancerAutoReleaseTimeResponse.RequestId = context.StringValue("DescribeLoadBalancerAutoReleaseTime.RequestId");
-			describeLoadBalancerAutoReleaseTimeResponse.AutoReleaseTime = context.LongValue("DescribeLoadBalancerAutoReleaseTime.AutoReleaseTime");
-        
-			return describeLoadBalancerAutoReleaseTimeResponse;
+            describeLoadBalancerAutoReleaseTimeResponse.HttpResponse = context.HttpResponse;
+            describeLoadBalancerAutoReleaseTimeResponse.RequestId = context.StringValue("DescribeLoadBalancerAutoReleaseTime.RequestId");
+            describeLoadBalancerAutoReleaseTimeResponse.AutoReleaseTime = context.LongValue("DescribeLoadBalancerAutoReleaseTime.AutoReleaseTime");
+
+            return describeLoadBalancerAutoReleaseTimeResponse;
         }
     }
 }

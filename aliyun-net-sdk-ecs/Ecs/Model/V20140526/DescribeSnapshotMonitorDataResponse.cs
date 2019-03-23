@@ -21,67 +21,67 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeSnapshotMonitorDataResponse : AcsResponse
-	{
+    public class DescribeSnapshotMonitorDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeSnapshotMonitorData_DataPoint> monitorData;
+        private List<DescribeSnapshotMonitorData_DataPoint> monitorData;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeSnapshotMonitorData_DataPoint> MonitorData
-		{
-			get
-			{
-				return monitorData;
-			}
-			set	
-			{
-				monitorData = value;
-			}
-		}
+        public List<DescribeSnapshotMonitorData_DataPoint> MonitorData
+        {
+            get
+            {
+                return monitorData;
+            }
+            set
+            {
+                monitorData = value;
+            }
+        }
 
-		public class DescribeSnapshotMonitorData_DataPoint
-		{
+        public class DescribeSnapshotMonitorData_DataPoint
+        {
 
-			private string timeStamp;
+            private string timeStamp;
 
-			private long? size;
+            private long? size;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
 
-			public long? Size
-			{
-				get
-				{
-					return size;
-				}
-				set	
-				{
-					size = value;
-				}
-			}
-		}
-	}
+            public long? Size
+            {
+                get
+                {
+                    return size;
+                }
+                set
+                {
+                    size = value;
+                }
+            }
+        }
+    }
 }

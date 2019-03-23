@@ -22,95 +22,95 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class ListPolicyVersionsResponse : AcsResponse
-	{
+    public class ListPolicyVersionsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<ListPolicyVersions_PolicyVersion> policyVersions;
+        private List<ListPolicyVersions_PolicyVersion> policyVersions;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<ListPolicyVersions_PolicyVersion> PolicyVersions
-		{
-			get
-			{
-				return policyVersions;
-			}
-			set	
-			{
-				policyVersions = value;
-			}
-		}
+        public List<ListPolicyVersions_PolicyVersion> PolicyVersions
+        {
+            get
+            {
+                return policyVersions;
+            }
+            set
+            {
+                policyVersions = value;
+            }
+        }
 
-		public class ListPolicyVersions_PolicyVersion
-		{
+        public class ListPolicyVersions_PolicyVersion
+        {
 
-			private string versionId;
+            private string versionId;
 
-			private bool? isDefaultVersion;
+            private bool? isDefaultVersion;
 
-			private string policyDocument;
+            private string policyDocument;
 
-			private string createDate;
+            private string createDate;
 
-			public string VersionId
-			{
-				get
-				{
-					return versionId;
-				}
-				set	
-				{
-					versionId = value;
-				}
-			}
+            public string VersionId
+            {
+                get
+                {
+                    return versionId;
+                }
+                set
+                {
+                    versionId = value;
+                }
+            }
 
-			public bool? IsDefaultVersion
-			{
-				get
-				{
-					return isDefaultVersion;
-				}
-				set	
-				{
-					isDefaultVersion = value;
-				}
-			}
+            public bool? IsDefaultVersion
+            {
+                get
+                {
+                    return isDefaultVersion;
+                }
+                set
+                {
+                    isDefaultVersion = value;
+                }
+            }
 
-			public string PolicyDocument
-			{
-				get
-				{
-					return policyDocument;
-				}
-				set	
-				{
-					policyDocument = value;
-				}
-			}
+            public string PolicyDocument
+            {
+                get
+                {
+                    return policyDocument;
+                }
+                set
+                {
+                    policyDocument = value;
+                }
+            }
 
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
-				}
-			}
-		}
-	}
+            public string CreateDate
+            {
+                get
+                {
+                    return createDate;
+                }
+                set
+                {
+                    createDate = value;
+                }
+            }
+        }
+    }
 }

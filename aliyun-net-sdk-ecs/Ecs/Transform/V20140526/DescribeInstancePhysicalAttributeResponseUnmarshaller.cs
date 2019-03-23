@@ -27,16 +27,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeInstancePhysicalAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeInstancePhysicalAttributeResponse describeInstancePhysicalAttributeResponse = new DescribeInstancePhysicalAttributeResponse();
+            DescribeInstancePhysicalAttributeResponse describeInstancePhysicalAttributeResponse = new DescribeInstancePhysicalAttributeResponse();
 
-			describeInstancePhysicalAttributeResponse.HttpResponse = context.HttpResponse;
-			describeInstancePhysicalAttributeResponse.RequestId = context.StringValue("DescribeInstancePhysicalAttribute.RequestId");
-			describeInstancePhysicalAttributeResponse.InstanceId = context.StringValue("DescribeInstancePhysicalAttribute.InstanceId");
-			describeInstancePhysicalAttributeResponse.VlanId = context.StringValue("DescribeInstancePhysicalAttribute.VlanId");
-			describeInstancePhysicalAttributeResponse.NodeControllerId = context.StringValue("DescribeInstancePhysicalAttribute.NodeControllerId");
-			describeInstancePhysicalAttributeResponse.RackId = context.StringValue("DescribeInstancePhysicalAttribute.RackId");
-        
-			return describeInstancePhysicalAttributeResponse;
+            describeInstancePhysicalAttributeResponse.HttpResponse = context.HttpResponse;
+            describeInstancePhysicalAttributeResponse.RequestId = context.StringValue("DescribeInstancePhysicalAttribute.RequestId");
+            describeInstancePhysicalAttributeResponse.InstanceId = context.StringValue("DescribeInstancePhysicalAttribute.InstanceId");
+            describeInstancePhysicalAttributeResponse.VlanId = context.StringValue("DescribeInstancePhysicalAttribute.VlanId");
+            describeInstancePhysicalAttributeResponse.NodeControllerId = context.StringValue("DescribeInstancePhysicalAttribute.NodeControllerId");
+            describeInstancePhysicalAttributeResponse.RackId = context.StringValue("DescribeInstancePhysicalAttribute.RackId");
+
+            return describeInstancePhysicalAttributeResponse;
         }
     }
 }

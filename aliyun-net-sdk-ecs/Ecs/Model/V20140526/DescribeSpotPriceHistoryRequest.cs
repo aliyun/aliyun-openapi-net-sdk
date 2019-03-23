@@ -33,215 +33,215 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string ioOptimized;
+        private string ioOptimized;
 
-		private string networkType;
+        private string networkType;
 
-		private string startTime;
+        private string startTime;
 
-		private string regionId;
+        private string regionId;
 
-		private string action;
+        private string action;
 
-		private string instanceType;
+        private string instanceType;
 
-		private int? offset;
+        private int? offset;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string endTime;
+        private string endTime;
 
-		private string oSType;
+        private string oSType;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string zoneId;
+        private string zoneId;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string IoOptimized
-		{
-			get
-			{
-				return ioOptimized;
-			}
-			set	
-			{
-				ioOptimized = value;
-				DictionaryUtil.Add(QueryParameters, "IoOptimized", value);
-			}
-		}
+        public string IoOptimized
+        {
+            get
+            {
+                return ioOptimized;
+            }
+            set
+            {
+                ioOptimized = value;
+                DictionaryUtil.Add(QueryParameters, "IoOptimized", value);
+            }
+        }
 
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
+        public string NetworkType
+        {
+            get
+            {
+                return networkType;
+            }
+            set
+            {
+                networkType = value;
+                DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+                DictionaryUtil.Add(QueryParameters, "StartTime", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
+        public string InstanceType
+        {
+            get
+            {
+                return instanceType;
+            }
+            set
+            {
+                instanceType = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+            }
+        }
 
-		public int? Offset
-		{
-			get
-			{
-				return offset;
-			}
-			set	
-			{
-				offset = value;
-				DictionaryUtil.Add(QueryParameters, "Offset", value.ToString());
-			}
-		}
+        public int? Offset
+        {
+            get
+            {
+                return offset;
+            }
+            set
+            {
+                offset = value;
+                DictionaryUtil.Add(QueryParameters, "Offset", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+                DictionaryUtil.Add(QueryParameters, "EndTime", value);
+            }
+        }
 
-		public string OSType
-		{
-			get
-			{
-				return oSType;
-			}
-			set	
-			{
-				oSType = value;
-				DictionaryUtil.Add(QueryParameters, "OSType", value);
-			}
-		}
+        public string OSType
+        {
+            get
+            {
+                return oSType;
+            }
+            set
+            {
+                oSType = value;
+                DictionaryUtil.Add(QueryParameters, "OSType", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
+        public string ZoneId
+        {
+            get
+            {
+                return zoneId;
+            }
+            set
+            {
+                zoneId = value;
+                DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+            }
+        }
 
         public override DescribeSpotPriceHistoryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

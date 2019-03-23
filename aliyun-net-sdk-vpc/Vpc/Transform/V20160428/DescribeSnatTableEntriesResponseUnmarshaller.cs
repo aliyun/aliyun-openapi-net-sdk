@@ -27,30 +27,31 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DescribeSnatTableEntriesResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeSnatTableEntriesResponse describeSnatTableEntriesResponse = new DescribeSnatTableEntriesResponse();
+            DescribeSnatTableEntriesResponse describeSnatTableEntriesResponse = new DescribeSnatTableEntriesResponse();
 
-			describeSnatTableEntriesResponse.HttpResponse = context.HttpResponse;
-			describeSnatTableEntriesResponse.RequestId = context.StringValue("DescribeSnatTableEntries.RequestId");
-			describeSnatTableEntriesResponse.TotalCount = context.IntegerValue("DescribeSnatTableEntries.TotalCount");
-			describeSnatTableEntriesResponse.PageNumber = context.IntegerValue("DescribeSnatTableEntries.PageNumber");
-			describeSnatTableEntriesResponse.PageSize = context.IntegerValue("DescribeSnatTableEntries.PageSize");
+            describeSnatTableEntriesResponse.HttpResponse = context.HttpResponse;
+            describeSnatTableEntriesResponse.RequestId = context.StringValue("DescribeSnatTableEntries.RequestId");
+            describeSnatTableEntriesResponse.TotalCount = context.IntegerValue("DescribeSnatTableEntries.TotalCount");
+            describeSnatTableEntriesResponse.PageNumber = context.IntegerValue("DescribeSnatTableEntries.PageNumber");
+            describeSnatTableEntriesResponse.PageSize = context.IntegerValue("DescribeSnatTableEntries.PageSize");
 
-			List<DescribeSnatTableEntriesResponse.DescribeSnatTableEntries_SnatTableEntry> describeSnatTableEntriesResponse_snatTableEntries = new List<DescribeSnatTableEntriesResponse.DescribeSnatTableEntries_SnatTableEntry>();
-			for (int i = 0; i < context.Length("DescribeSnatTableEntries.SnatTableEntries.Length"); i++) {
-				DescribeSnatTableEntriesResponse.DescribeSnatTableEntries_SnatTableEntry snatTableEntry = new DescribeSnatTableEntriesResponse.DescribeSnatTableEntries_SnatTableEntry();
-				snatTableEntry.SnatTableId = context.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatTableId");
-				snatTableEntry.SnatEntryId = context.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatEntryId");
-				snatTableEntry.SourceVSwitchId = context.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SourceVSwitchId");
-				snatTableEntry.SourceCIDR = context.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SourceCIDR");
-				snatTableEntry.SnatIp = context.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatIp");
-				snatTableEntry.Status = context.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].Status");
-				snatTableEntry.SnatEntryName = context.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatEntryName");
+            List<DescribeSnatTableEntriesResponse.DescribeSnatTableEntries_SnatTableEntry> describeSnatTableEntriesResponse_snatTableEntries = new List<DescribeSnatTableEntriesResponse.DescribeSnatTableEntries_SnatTableEntry>();
+            for (int i = 0; i < context.Length("DescribeSnatTableEntries.SnatTableEntries.Length"); i++)
+            {
+                DescribeSnatTableEntriesResponse.DescribeSnatTableEntries_SnatTableEntry snatTableEntry = new DescribeSnatTableEntriesResponse.DescribeSnatTableEntries_SnatTableEntry();
+                snatTableEntry.SnatTableId = context.StringValue("DescribeSnatTableEntries.SnatTableEntries[" + i + "].SnatTableId");
+                snatTableEntry.SnatEntryId = context.StringValue("DescribeSnatTableEntries.SnatTableEntries[" + i + "].SnatEntryId");
+                snatTableEntry.SourceVSwitchId = context.StringValue("DescribeSnatTableEntries.SnatTableEntries[" + i + "].SourceVSwitchId");
+                snatTableEntry.SourceCIDR = context.StringValue("DescribeSnatTableEntries.SnatTableEntries[" + i + "].SourceCIDR");
+                snatTableEntry.SnatIp = context.StringValue("DescribeSnatTableEntries.SnatTableEntries[" + i + "].SnatIp");
+                snatTableEntry.Status = context.StringValue("DescribeSnatTableEntries.SnatTableEntries[" + i + "].Status");
+                snatTableEntry.SnatEntryName = context.StringValue("DescribeSnatTableEntries.SnatTableEntries[" + i + "].SnatEntryName");
 
-				describeSnatTableEntriesResponse_snatTableEntries.Add(snatTableEntry);
-			}
-			describeSnatTableEntriesResponse.SnatTableEntries = describeSnatTableEntriesResponse_snatTableEntries;
-        
-			return describeSnatTableEntriesResponse;
+                describeSnatTableEntriesResponse_snatTableEntries.Add(snatTableEntry);
+            }
+            describeSnatTableEntriesResponse.SnatTableEntries = describeSnatTableEntriesResponse_snatTableEntries;
+
+            return describeSnatTableEntriesResponse;
         }
     }
 }

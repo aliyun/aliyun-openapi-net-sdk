@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static DetachPolicyFromUserResponse Unmarshall(UnmarshallerContext context)
         {
-			DetachPolicyFromUserResponse detachPolicyFromUserResponse = new DetachPolicyFromUserResponse();
+            DetachPolicyFromUserResponse detachPolicyFromUserResponse = new DetachPolicyFromUserResponse();
 
-			detachPolicyFromUserResponse.HttpResponse = context.HttpResponse;
-			detachPolicyFromUserResponse.RequestId = context.StringValue("DetachPolicyFromUser.RequestId");
-        
-			return detachPolicyFromUserResponse;
+            detachPolicyFromUserResponse.HttpResponse = context.HttpResponse;
+            detachPolicyFromUserResponse.RequestId = context.StringValue("DetachPolicyFromUser.RequestId");
+
+            return detachPolicyFromUserResponse;
         }
     }
 }

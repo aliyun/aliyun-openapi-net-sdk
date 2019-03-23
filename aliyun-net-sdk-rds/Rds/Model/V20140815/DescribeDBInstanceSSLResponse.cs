@@ -21,77 +21,77 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeDBInstanceSSLResponse : AcsResponse
-	{
+    public class DescribeDBInstanceSSLResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string connectionString;
+        private string connectionString;
 
-		private string sSLExpireTime;
+        private string sSLExpireTime;
 
-		private string requireUpdate;
+        private string requireUpdate;
 
-		private string requireUpdateReason;
+        private string requireUpdateReason;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string ConnectionString
-		{
-			get
-			{
-				return connectionString;
-			}
-			set	
-			{
-				connectionString = value;
-			}
-		}
+        public string ConnectionString
+        {
+            get
+            {
+                return connectionString;
+            }
+            set
+            {
+                connectionString = value;
+            }
+        }
 
-		public string SSLExpireTime
-		{
-			get
-			{
-				return sSLExpireTime;
-			}
-			set	
-			{
-				sSLExpireTime = value;
-			}
-		}
+        public string SSLExpireTime
+        {
+            get
+            {
+                return sSLExpireTime;
+            }
+            set
+            {
+                sSLExpireTime = value;
+            }
+        }
 
-		public string RequireUpdate
-		{
-			get
-			{
-				return requireUpdate;
-			}
-			set	
-			{
-				requireUpdate = value;
-			}
-		}
+        public string RequireUpdate
+        {
+            get
+            {
+                return requireUpdate;
+            }
+            set
+            {
+                requireUpdate = value;
+            }
+        }
 
-		public string RequireUpdateReason
-		{
-			get
-			{
-				return requireUpdateReason;
-			}
-			set	
-			{
-				requireUpdateReason = value;
-			}
-		}
-	}
+        public string RequireUpdateReason
+        {
+            get
+            {
+                return requireUpdateReason;
+            }
+            set
+            {
+                requireUpdateReason = value;
+            }
+        }
+    }
 }

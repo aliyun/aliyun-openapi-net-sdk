@@ -21,179 +21,179 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeOssDownloadsResponse : AcsResponse
-	{
+    public class DescribeOssDownloadsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string migrateTaskId;
+        private string migrateTaskId;
 
-		private List<DescribeOssDownloads_OssDownload> items;
+        private List<DescribeOssDownloads_OssDownload> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+            }
+        }
 
-		public string MigrateTaskId
-		{
-			get
-			{
-				return migrateTaskId;
-			}
-			set	
-			{
-				migrateTaskId = value;
-			}
-		}
+        public string MigrateTaskId
+        {
+            get
+            {
+                return migrateTaskId;
+            }
+            set
+            {
+                migrateTaskId = value;
+            }
+        }
 
-		public List<DescribeOssDownloads_OssDownload> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeOssDownloads_OssDownload> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeOssDownloads_OssDownload
-		{
+        public class DescribeOssDownloads_OssDownload
+        {
 
-			private string fileName;
+            private string fileName;
 
-			private string createTime;
+            private string createTime;
 
-			private string endTime;
+            private string endTime;
 
-			private string backupMode;
+            private string backupMode;
 
-			private string fileSize;
+            private string fileSize;
 
-			private string status;
+            private string status;
 
-			private string isAvailable;
+            private string isAvailable;
 
-			private string description;
+            private string description;
 
-			public string FileName
-			{
-				get
-				{
-					return fileName;
-				}
-				set	
-				{
-					fileName = value;
-				}
-			}
+            public string FileName
+            {
+                get
+                {
+                    return fileName;
+                }
+                set
+                {
+                    fileName = value;
+                }
+            }
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+            public string CreateTime
+            {
+                get
+                {
+                    return createTime;
+                }
+                set
+                {
+                    createTime = value;
+                }
+            }
 
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
+            public string EndTime
+            {
+                get
+                {
+                    return endTime;
+                }
+                set
+                {
+                    endTime = value;
+                }
+            }
 
-			public string BackupMode
-			{
-				get
-				{
-					return backupMode;
-				}
-				set	
-				{
-					backupMode = value;
-				}
-			}
+            public string BackupMode
+            {
+                get
+                {
+                    return backupMode;
+                }
+                set
+                {
+                    backupMode = value;
+                }
+            }
 
-			public string FileSize
-			{
-				get
-				{
-					return fileSize;
-				}
-				set	
-				{
-					fileSize = value;
-				}
-			}
+            public string FileSize
+            {
+                get
+                {
+                    return fileSize;
+                }
+                set
+                {
+                    fileSize = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string IsAvailable
-			{
-				get
-				{
-					return isAvailable;
-				}
-				set	
-				{
-					isAvailable = value;
-				}
-			}
+            public string IsAvailable
+            {
+                get
+                {
+                    return isAvailable;
+                }
+                set
+                {
+                    isAvailable = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-		}
-	}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
+        }
+    }
 }

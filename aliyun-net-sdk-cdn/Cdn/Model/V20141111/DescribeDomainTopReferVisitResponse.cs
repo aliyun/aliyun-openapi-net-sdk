@@ -22,137 +22,137 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainTopReferVisitResponse : AcsResponse
-	{
+    public class DescribeDomainTopReferVisitResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string startTime;
+        private string startTime;
 
-		private List<DescribeDomainTopReferVisit_ReferList> topReferList;
+        private List<DescribeDomainTopReferVisit_ReferList> topReferList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public List<DescribeDomainTopReferVisit_ReferList> TopReferList
-		{
-			get
-			{
-				return topReferList;
-			}
-			set	
-			{
-				topReferList = value;
-			}
-		}
+        public List<DescribeDomainTopReferVisit_ReferList> TopReferList
+        {
+            get
+            {
+                return topReferList;
+            }
+            set
+            {
+                topReferList = value;
+            }
+        }
 
-		public class DescribeDomainTopReferVisit_ReferList
-		{
+        public class DescribeDomainTopReferVisit_ReferList
+        {
 
-			private string referDetail;
+            private string referDetail;
 
-			private string visitData;
+            private string visitData;
 
-			private float? visitProportion;
+            private float? visitProportion;
 
-			private string flow;
+            private string flow;
 
-			private float? flowProportion;
+            private float? flowProportion;
 
-			public string ReferDetail
-			{
-				get
-				{
-					return referDetail;
-				}
-				set	
-				{
-					referDetail = value;
-				}
-			}
+            public string ReferDetail
+            {
+                get
+                {
+                    return referDetail;
+                }
+                set
+                {
+                    referDetail = value;
+                }
+            }
 
-			public string VisitData
-			{
-				get
-				{
-					return visitData;
-				}
-				set	
-				{
-					visitData = value;
-				}
-			}
+            public string VisitData
+            {
+                get
+                {
+                    return visitData;
+                }
+                set
+                {
+                    visitData = value;
+                }
+            }
 
-			public float? VisitProportion
-			{
-				get
-				{
-					return visitProportion;
-				}
-				set	
-				{
-					visitProportion = value;
-				}
-			}
+            public float? VisitProportion
+            {
+                get
+                {
+                    return visitProportion;
+                }
+                set
+                {
+                    visitProportion = value;
+                }
+            }
 
-			public string Flow
-			{
-				get
-				{
-					return flow;
-				}
-				set	
-				{
-					flow = value;
-				}
-			}
+            public string Flow
+            {
+                get
+                {
+                    return flow;
+                }
+                set
+                {
+                    flow = value;
+                }
+            }
 
-			public float? FlowProportion
-			{
-				get
-				{
-					return flowProportion;
-				}
-				set	
-				{
-					flowProportion = value;
-				}
-			}
-		}
-	}
+            public float? FlowProportion
+            {
+                get
+                {
+                    return flowProportion;
+                }
+                set
+                {
+                    flowProportion = value;
+                }
+            }
+        }
+    }
 }

@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateVSwitchResponse : AcsResponse
-	{
+    public class CreateVSwitchResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string vSwitchId;
+        private string vSwitchId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-			}
-		}
-	}
+        public string VSwitchId
+        {
+            get
+            {
+                return vSwitchId;
+            }
+            set
+            {
+                vSwitchId = value;
+            }
+        }
+    }
 }

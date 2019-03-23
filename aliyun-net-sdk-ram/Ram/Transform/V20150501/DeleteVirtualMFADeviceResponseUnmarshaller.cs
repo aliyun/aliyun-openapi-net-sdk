@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static DeleteVirtualMFADeviceResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteVirtualMFADeviceResponse deleteVirtualMFADeviceResponse = new DeleteVirtualMFADeviceResponse();
+            DeleteVirtualMFADeviceResponse deleteVirtualMFADeviceResponse = new DeleteVirtualMFADeviceResponse();
 
-			deleteVirtualMFADeviceResponse.HttpResponse = context.HttpResponse;
-			deleteVirtualMFADeviceResponse.RequestId = context.StringValue("DeleteVirtualMFADevice.RequestId");
-        
-			return deleteVirtualMFADeviceResponse;
+            deleteVirtualMFADeviceResponse.HttpResponse = context.HttpResponse;
+            deleteVirtualMFADeviceResponse.RequestId = context.StringValue("DeleteVirtualMFADevice.RequestId");
+
+            return deleteVirtualMFADeviceResponse;
         }
     }
 }

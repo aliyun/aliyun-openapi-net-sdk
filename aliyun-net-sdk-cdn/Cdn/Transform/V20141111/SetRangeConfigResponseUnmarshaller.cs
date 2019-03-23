@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static SetRangeConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			SetRangeConfigResponse setRangeConfigResponse = new SetRangeConfigResponse();
+            SetRangeConfigResponse setRangeConfigResponse = new SetRangeConfigResponse();
 
-			setRangeConfigResponse.HttpResponse = context.HttpResponse;
-			setRangeConfigResponse.RequestId = context.StringValue("SetRangeConfig.RequestId");
-        
-			return setRangeConfigResponse;
+            setRangeConfigResponse.HttpResponse = context.HttpResponse;
+            setRangeConfigResponse.RequestId = context.StringValue("SetRangeConfig.RequestId");
+
+            return setRangeConfigResponse;
         }
     }
 }

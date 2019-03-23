@@ -27,20 +27,20 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static GetJobTemplateDownloadParamsResponse Unmarshall(UnmarshallerContext context)
         {
-			GetJobTemplateDownloadParamsResponse getJobTemplateDownloadParamsResponse = new GetJobTemplateDownloadParamsResponse();
+            GetJobTemplateDownloadParamsResponse getJobTemplateDownloadParamsResponse = new GetJobTemplateDownloadParamsResponse();
 
-			getJobTemplateDownloadParamsResponse.HttpResponse = context.HttpResponse;
-			getJobTemplateDownloadParamsResponse.RequestId = context.StringValue("GetJobTemplateDownloadParams.RequestId");
-			getJobTemplateDownloadParamsResponse.Success = context.BooleanValue("GetJobTemplateDownloadParams.Success");
-			getJobTemplateDownloadParamsResponse.Code = context.StringValue("GetJobTemplateDownloadParams.Code");
-			getJobTemplateDownloadParamsResponse.Message = context.StringValue("GetJobTemplateDownloadParams.Message");
-			getJobTemplateDownloadParamsResponse.HttpStatusCode = context.IntegerValue("GetJobTemplateDownloadParams.HttpStatusCode");
+            getJobTemplateDownloadParamsResponse.HttpResponse = context.HttpResponse;
+            getJobTemplateDownloadParamsResponse.RequestId = context.StringValue("GetJobTemplateDownloadParams.RequestId");
+            getJobTemplateDownloadParamsResponse.Success = context.BooleanValue("GetJobTemplateDownloadParams.Success");
+            getJobTemplateDownloadParamsResponse.Code = context.StringValue("GetJobTemplateDownloadParams.Code");
+            getJobTemplateDownloadParamsResponse.Message = context.StringValue("GetJobTemplateDownloadParams.Message");
+            getJobTemplateDownloadParamsResponse.HttpStatusCode = context.IntegerValue("GetJobTemplateDownloadParams.HttpStatusCode");
 
-			GetJobTemplateDownloadParamsResponse.GetJobTemplateDownloadParams_DownloadParams downloadParams = new GetJobTemplateDownloadParamsResponse.GetJobTemplateDownloadParams_DownloadParams();
-			downloadParams.SignatureUrl = context.StringValue("GetJobTemplateDownloadParams.DownloadParams.SignatureUrl");
-			getJobTemplateDownloadParamsResponse.DownloadParams = downloadParams;
-        
-			return getJobTemplateDownloadParamsResponse;
+            GetJobTemplateDownloadParamsResponse.GetJobTemplateDownloadParams_DownloadParams downloadParams = new GetJobTemplateDownloadParamsResponse.GetJobTemplateDownloadParams_DownloadParams();
+            downloadParams.SignatureUrl = context.StringValue("GetJobTemplateDownloadParams.DownloadParams.SignatureUrl");
+            getJobTemplateDownloadParamsResponse.DownloadParams = downloadParams;
+
+            return getJobTemplateDownloadParamsResponse;
         }
     }
 }

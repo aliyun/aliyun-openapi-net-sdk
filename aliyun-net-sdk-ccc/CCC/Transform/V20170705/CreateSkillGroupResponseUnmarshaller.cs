@@ -27,17 +27,17 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static CreateSkillGroupResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateSkillGroupResponse createSkillGroupResponse = new CreateSkillGroupResponse();
+            CreateSkillGroupResponse createSkillGroupResponse = new CreateSkillGroupResponse();
 
-			createSkillGroupResponse.HttpResponse = context.HttpResponse;
-			createSkillGroupResponse.RequestId = context.StringValue("CreateSkillGroup.RequestId");
-			createSkillGroupResponse.Success = context.BooleanValue("CreateSkillGroup.Success");
-			createSkillGroupResponse.Code = context.StringValue("CreateSkillGroup.Code");
-			createSkillGroupResponse.Message = context.StringValue("CreateSkillGroup.Message");
-			createSkillGroupResponse.HttpStatusCode = context.IntegerValue("CreateSkillGroup.HttpStatusCode");
-			createSkillGroupResponse.SkillGroupId = context.StringValue("CreateSkillGroup.SkillGroupId");
-        
-			return createSkillGroupResponse;
+            createSkillGroupResponse.HttpResponse = context.HttpResponse;
+            createSkillGroupResponse.RequestId = context.StringValue("CreateSkillGroup.RequestId");
+            createSkillGroupResponse.Success = context.BooleanValue("CreateSkillGroup.Success");
+            createSkillGroupResponse.Code = context.StringValue("CreateSkillGroup.Code");
+            createSkillGroupResponse.Message = context.StringValue("CreateSkillGroup.Message");
+            createSkillGroupResponse.HttpStatusCode = context.IntegerValue("CreateSkillGroup.HttpStatusCode");
+            createSkillGroupResponse.SkillGroupId = context.StringValue("CreateSkillGroup.SkillGroupId");
+
+            return createSkillGroupResponse;
         }
     }
 }

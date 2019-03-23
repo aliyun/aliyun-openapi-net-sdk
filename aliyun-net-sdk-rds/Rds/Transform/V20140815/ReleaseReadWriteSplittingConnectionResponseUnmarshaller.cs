@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static ReleaseReadWriteSplittingConnectionResponse Unmarshall(UnmarshallerContext context)
         {
-			ReleaseReadWriteSplittingConnectionResponse releaseReadWriteSplittingConnectionResponse = new ReleaseReadWriteSplittingConnectionResponse();
+            ReleaseReadWriteSplittingConnectionResponse releaseReadWriteSplittingConnectionResponse = new ReleaseReadWriteSplittingConnectionResponse();
 
-			releaseReadWriteSplittingConnectionResponse.HttpResponse = context.HttpResponse;
-			releaseReadWriteSplittingConnectionResponse.RequestId = context.StringValue("ReleaseReadWriteSplittingConnection.RequestId");
-        
-			return releaseReadWriteSplittingConnectionResponse;
+            releaseReadWriteSplittingConnectionResponse.HttpResponse = context.HttpResponse;
+            releaseReadWriteSplittingConnectionResponse.RequestId = context.StringValue("ReleaseReadWriteSplittingConnection.RequestId");
+
+            return releaseReadWriteSplittingConnectionResponse;
         }
     }
 }

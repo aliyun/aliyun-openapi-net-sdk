@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class DownloadRecordingResponse : AcsResponse
-	{
+    public class DownloadRecordingResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? success;
+        private bool? success;
 
-		private string code;
+        private string code;
 
-		private string message;
+        private string message;
 
-		private int? httpStatusCode;
+        private int? httpStatusCode;
 
-		private DownloadRecording_MediaDownloadParam mediaDownloadParam;
+        private DownloadRecording_MediaDownloadParam mediaDownloadParam;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+        public int? HttpStatusCode
+        {
+            get
+            {
+                return httpStatusCode;
+            }
+            set
+            {
+                httpStatusCode = value;
+            }
+        }
 
-		public DownloadRecording_MediaDownloadParam MediaDownloadParam
-		{
-			get
-			{
-				return mediaDownloadParam;
-			}
-			set	
-			{
-				mediaDownloadParam = value;
-			}
-		}
+        public DownloadRecording_MediaDownloadParam MediaDownloadParam
+        {
+            get
+            {
+                return mediaDownloadParam;
+            }
+            set
+            {
+                mediaDownloadParam = value;
+            }
+        }
 
-		public class DownloadRecording_MediaDownloadParam
-		{
+        public class DownloadRecording_MediaDownloadParam
+        {
 
-			private string signatureUrl;
+            private string signatureUrl;
 
-			private string fileName;
+            private string fileName;
 
-			public string SignatureUrl
-			{
-				get
-				{
-					return signatureUrl;
-				}
-				set	
-				{
-					signatureUrl = value;
-				}
-			}
+            public string SignatureUrl
+            {
+                get
+                {
+                    return signatureUrl;
+                }
+                set
+                {
+                    signatureUrl = value;
+                }
+            }
 
-			public string FileName
-			{
-				get
-				{
-					return fileName;
-				}
-				set	
-				{
-					fileName = value;
-				}
-			}
-		}
-	}
+            public string FileName
+            {
+                get
+                {
+                    return fileName;
+                }
+                set
+                {
+                    fileName = value;
+                }
+            }
+        }
+    }
 }

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static SwitchDBInstanceHAResponse Unmarshall(UnmarshallerContext context)
         {
-			SwitchDBInstanceHAResponse switchDBInstanceHAResponse = new SwitchDBInstanceHAResponse();
+            SwitchDBInstanceHAResponse switchDBInstanceHAResponse = new SwitchDBInstanceHAResponse();
 
-			switchDBInstanceHAResponse.HttpResponse = context.HttpResponse;
-			switchDBInstanceHAResponse.RequestId = context.StringValue("SwitchDBInstanceHA.RequestId");
-        
-			return switchDBInstanceHAResponse;
+            switchDBInstanceHAResponse.HttpResponse = context.HttpResponse;
+            switchDBInstanceHAResponse.RequestId = context.StringValue("SwitchDBInstanceHA.RequestId");
+
+            return switchDBInstanceHAResponse;
         }
     }
 }

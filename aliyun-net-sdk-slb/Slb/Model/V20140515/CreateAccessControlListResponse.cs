@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class CreateAccessControlListResponse : AcsResponse
-	{
+    public class CreateAccessControlListResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string aclId;
+        private string aclId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string AclId
-		{
-			get
-			{
-				return aclId;
-			}
-			set	
-			{
-				aclId = value;
-			}
-		}
-	}
+        public string AclId
+        {
+            get
+            {
+                return aclId;
+            }
+            set
+            {
+                aclId = value;
+            }
+        }
+    }
 }

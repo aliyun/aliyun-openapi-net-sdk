@@ -31,39 +31,39 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public DescribeResourcesRequest()
             : base("ROS", "2015-09-01", "DescribeResources")
         {
-			UriPattern = "/stacks/[StackName]/[StackId]/resources";
-			Method = MethodType.GET;
+            UriPattern = "/stacks/[StackName]/[StackId]/resources";
+            Method = MethodType.GET;
         }
 
-		private string stackId;
+        private string stackId;
 
-		private string stackName;
+        private string stackName;
 
-		public string StackId
-		{
-			get
-			{
-				return stackId;
-			}
-			set	
-			{
-				stackId = value;
-				DictionaryUtil.Add(PathParameters, "StackId", value);
-			}
-		}
+        public string StackId
+        {
+            get
+            {
+                return stackId;
+            }
+            set
+            {
+                stackId = value;
+                DictionaryUtil.Add(PathParameters, "StackId", value);
+            }
+        }
 
-		public string StackName
-		{
-			get
-			{
-				return stackName;
-			}
-			set	
-			{
-				stackName = value;
-				DictionaryUtil.Add(PathParameters, "StackName", value);
-			}
-		}
+        public string StackName
+        {
+            get
+            {
+                return stackName;
+            }
+            set
+            {
+                stackName = value;
+                DictionaryUtil.Add(PathParameters, "StackName", value);
+            }
+        }
 
         public override DescribeResourcesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

@@ -22,109 +22,109 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainBpsDataByTimeStampResponse : AcsResponse
-	{
+    public class DescribeDomainBpsDataByTimeStampResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string timeStamp;
+        private string timeStamp;
 
-		private List<DescribeDomainBpsDataByTimeStamp_BpsDataModel> bpsDataList;
+        private List<DescribeDomainBpsDataByTimeStamp_BpsDataModel> bpsDataList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string TimeStamp
-		{
-			get
-			{
-				return timeStamp;
-			}
-			set	
-			{
-				timeStamp = value;
-			}
-		}
+        public string TimeStamp
+        {
+            get
+            {
+                return timeStamp;
+            }
+            set
+            {
+                timeStamp = value;
+            }
+        }
 
-		public List<DescribeDomainBpsDataByTimeStamp_BpsDataModel> BpsDataList
-		{
-			get
-			{
-				return bpsDataList;
-			}
-			set	
-			{
-				bpsDataList = value;
-			}
-		}
+        public List<DescribeDomainBpsDataByTimeStamp_BpsDataModel> BpsDataList
+        {
+            get
+            {
+                return bpsDataList;
+            }
+            set
+            {
+                bpsDataList = value;
+            }
+        }
 
-		public class DescribeDomainBpsDataByTimeStamp_BpsDataModel
-		{
+        public class DescribeDomainBpsDataByTimeStamp_BpsDataModel
+        {
 
-			private string locationName;
+            private string locationName;
 
-			private string ispName;
+            private string ispName;
 
-			private long? bps;
+            private long? bps;
 
-			public string LocationName
-			{
-				get
-				{
-					return locationName;
-				}
-				set	
-				{
-					locationName = value;
-				}
-			}
+            public string LocationName
+            {
+                get
+                {
+                    return locationName;
+                }
+                set
+                {
+                    locationName = value;
+                }
+            }
 
-			public string IspName
-			{
-				get
-				{
-					return ispName;
-				}
-				set	
-				{
-					ispName = value;
-				}
-			}
+            public string IspName
+            {
+                get
+                {
+                    return ispName;
+                }
+                set
+                {
+                    ispName = value;
+                }
+            }
 
-			public long? Bps
-			{
-				get
-				{
-					return bps;
-				}
-				set	
-				{
-					bps = value;
-				}
-			}
-		}
-	}
+            public long? Bps
+            {
+                get
+                {
+                    return bps;
+                }
+                set
+                {
+                    bps = value;
+                }
+            }
+        }
+    }
 }

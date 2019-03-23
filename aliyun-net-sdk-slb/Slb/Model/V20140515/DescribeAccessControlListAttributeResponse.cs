@@ -21,169 +21,169 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeAccessControlListAttributeResponse : AcsResponse
-	{
+    public class DescribeAccessControlListAttributeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string aclId;
+        private string aclId;
 
-		private string aclName;
+        private string aclName;
 
-		private List<DescribeAccessControlListAttribute_AclEntry> aclEntrys;
+        private List<DescribeAccessControlListAttribute_AclEntry> aclEntrys;
 
-		private List<DescribeAccessControlListAttribute_RelatedListener> relatedListeners;
+        private List<DescribeAccessControlListAttribute_RelatedListener> relatedListeners;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string AclId
-		{
-			get
-			{
-				return aclId;
-			}
-			set	
-			{
-				aclId = value;
-			}
-		}
+        public string AclId
+        {
+            get
+            {
+                return aclId;
+            }
+            set
+            {
+                aclId = value;
+            }
+        }
 
-		public string AclName
-		{
-			get
-			{
-				return aclName;
-			}
-			set	
-			{
-				aclName = value;
-			}
-		}
+        public string AclName
+        {
+            get
+            {
+                return aclName;
+            }
+            set
+            {
+                aclName = value;
+            }
+        }
 
-		public List<DescribeAccessControlListAttribute_AclEntry> AclEntrys
-		{
-			get
-			{
-				return aclEntrys;
-			}
-			set	
-			{
-				aclEntrys = value;
-			}
-		}
+        public List<DescribeAccessControlListAttribute_AclEntry> AclEntrys
+        {
+            get
+            {
+                return aclEntrys;
+            }
+            set
+            {
+                aclEntrys = value;
+            }
+        }
 
-		public List<DescribeAccessControlListAttribute_RelatedListener> RelatedListeners
-		{
-			get
-			{
-				return relatedListeners;
-			}
-			set	
-			{
-				relatedListeners = value;
-			}
-		}
+        public List<DescribeAccessControlListAttribute_RelatedListener> RelatedListeners
+        {
+            get
+            {
+                return relatedListeners;
+            }
+            set
+            {
+                relatedListeners = value;
+            }
+        }
 
-		public class DescribeAccessControlListAttribute_AclEntry
-		{
+        public class DescribeAccessControlListAttribute_AclEntry
+        {
 
-			private string aclEntryIP;
+            private string aclEntryIP;
 
-			private string aclEntryComment;
+            private string aclEntryComment;
 
-			public string AclEntryIP
-			{
-				get
-				{
-					return aclEntryIP;
-				}
-				set	
-				{
-					aclEntryIP = value;
-				}
-			}
+            public string AclEntryIP
+            {
+                get
+                {
+                    return aclEntryIP;
+                }
+                set
+                {
+                    aclEntryIP = value;
+                }
+            }
 
-			public string AclEntryComment
-			{
-				get
-				{
-					return aclEntryComment;
-				}
-				set	
-				{
-					aclEntryComment = value;
-				}
-			}
-		}
+            public string AclEntryComment
+            {
+                get
+                {
+                    return aclEntryComment;
+                }
+                set
+                {
+                    aclEntryComment = value;
+                }
+            }
+        }
 
-		public class DescribeAccessControlListAttribute_RelatedListener
-		{
+        public class DescribeAccessControlListAttribute_RelatedListener
+        {
 
-			private string loadBalancerId;
+            private string loadBalancerId;
 
-			private int? listenerPort;
+            private int? listenerPort;
 
-			private string aclType;
+            private string aclType;
 
-			private string protocol;
+            private string protocol;
 
-			public string LoadBalancerId
-			{
-				get
-				{
-					return loadBalancerId;
-				}
-				set	
-				{
-					loadBalancerId = value;
-				}
-			}
+            public string LoadBalancerId
+            {
+                get
+                {
+                    return loadBalancerId;
+                }
+                set
+                {
+                    loadBalancerId = value;
+                }
+            }
 
-			public int? ListenerPort
-			{
-				get
-				{
-					return listenerPort;
-				}
-				set	
-				{
-					listenerPort = value;
-				}
-			}
+            public int? ListenerPort
+            {
+                get
+                {
+                    return listenerPort;
+                }
+                set
+                {
+                    listenerPort = value;
+                }
+            }
 
-			public string AclType
-			{
-				get
-				{
-					return aclType;
-				}
-				set	
-				{
-					aclType = value;
-				}
-			}
+            public string AclType
+            {
+                get
+                {
+                    return aclType;
+                }
+                set
+                {
+                    aclType = value;
+                }
+            }
 
-			public string Protocol
-			{
-				get
-				{
-					return protocol;
-				}
-				set	
-				{
-					protocol = value;
-				}
-			}
-		}
-	}
+            public string Protocol
+            {
+                get
+                {
+                    return protocol;
+                }
+                set
+                {
+                    protocol = value;
+                }
+            }
+        }
+    }
 }

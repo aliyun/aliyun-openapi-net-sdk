@@ -22,109 +22,109 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLiveStreamSnapshotInfoResponse : AcsResponse
-	{
+    public class DescribeLiveStreamSnapshotInfoResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string nextStartTime;
+        private string nextStartTime;
 
-		private List<DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> liveStreamSnapshotInfoList;
+        private List<DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> liveStreamSnapshotInfoList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string NextStartTime
-		{
-			get
-			{
-				return nextStartTime;
-			}
-			set	
-			{
-				nextStartTime = value;
-			}
-		}
+        public string NextStartTime
+        {
+            get
+            {
+                return nextStartTime;
+            }
+            set
+            {
+                nextStartTime = value;
+            }
+        }
 
-		public List<DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> LiveStreamSnapshotInfoList
-		{
-			get
-			{
-				return liveStreamSnapshotInfoList;
-			}
-			set	
-			{
-				liveStreamSnapshotInfoList = value;
-			}
-		}
+        public List<DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> LiveStreamSnapshotInfoList
+        {
+            get
+            {
+                return liveStreamSnapshotInfoList;
+            }
+            set
+            {
+                liveStreamSnapshotInfoList = value;
+            }
+        }
 
-		public class DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo
-		{
+        public class DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo
+        {
 
-			private string ossEndpoint;
+            private string ossEndpoint;
 
-			private string ossBucket;
+            private string ossBucket;
 
-			private string ossObject;
+            private string ossObject;
 
-			private string createTime;
+            private string createTime;
 
-			public string OssEndpoint
-			{
-				get
-				{
-					return ossEndpoint;
-				}
-				set	
-				{
-					ossEndpoint = value;
-				}
-			}
+            public string OssEndpoint
+            {
+                get
+                {
+                    return ossEndpoint;
+                }
+                set
+                {
+                    ossEndpoint = value;
+                }
+            }
 
-			public string OssBucket
-			{
-				get
-				{
-					return ossBucket;
-				}
-				set	
-				{
-					ossBucket = value;
-				}
-			}
+            public string OssBucket
+            {
+                get
+                {
+                    return ossBucket;
+                }
+                set
+                {
+                    ossBucket = value;
+                }
+            }
 
-			public string OssObject
-			{
-				get
-				{
-					return ossObject;
-				}
-				set	
-				{
-					ossObject = value;
-				}
-			}
+            public string OssObject
+            {
+                get
+                {
+                    return ossObject;
+                }
+                set
+                {
+                    ossObject = value;
+                }
+            }
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-		}
-	}
+            public string CreateTime
+            {
+                get
+                {
+                    return createTime;
+                }
+                set
+                {
+                    createTime = value;
+                }
+            }
+        }
+    }
 }

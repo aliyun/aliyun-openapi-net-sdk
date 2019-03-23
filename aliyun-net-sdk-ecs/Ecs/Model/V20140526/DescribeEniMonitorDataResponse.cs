@@ -21,165 +21,165 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeEniMonitorDataResponse : AcsResponse
-	{
+    public class DescribeEniMonitorDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private List<DescribeEniMonitorData_EniMonitorData> monitorData;
+        private List<DescribeEniMonitorData_EniMonitorData> monitorData;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribeEniMonitorData_EniMonitorData> MonitorData
-		{
-			get
-			{
-				return monitorData;
-			}
-			set	
-			{
-				monitorData = value;
-			}
-		}
+        public List<DescribeEniMonitorData_EniMonitorData> MonitorData
+        {
+            get
+            {
+                return monitorData;
+            }
+            set
+            {
+                monitorData = value;
+            }
+        }
 
-		public class DescribeEniMonitorData_EniMonitorData
-		{
+        public class DescribeEniMonitorData_EniMonitorData
+        {
 
-			private string eniId;
+            private string eniId;
 
-			private string timeStamp;
+            private string timeStamp;
 
-			private string packetTx;
+            private string packetTx;
 
-			private string packetRx;
+            private string packetRx;
 
-			private string intranetTx;
+            private string intranetTx;
 
-			private string intranetRx;
+            private string intranetRx;
 
-			private string dropPacketTx;
+            private string dropPacketTx;
 
-			private string dropPacketRx;
+            private string dropPacketRx;
 
-			public string EniId
-			{
-				get
-				{
-					return eniId;
-				}
-				set	
-				{
-					eniId = value;
-				}
-			}
+            public string EniId
+            {
+                get
+                {
+                    return eniId;
+                }
+                set
+                {
+                    eniId = value;
+                }
+            }
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
 
-			public string PacketTx
-			{
-				get
-				{
-					return packetTx;
-				}
-				set	
-				{
-					packetTx = value;
-				}
-			}
+            public string PacketTx
+            {
+                get
+                {
+                    return packetTx;
+                }
+                set
+                {
+                    packetTx = value;
+                }
+            }
 
-			public string PacketRx
-			{
-				get
-				{
-					return packetRx;
-				}
-				set	
-				{
-					packetRx = value;
-				}
-			}
+            public string PacketRx
+            {
+                get
+                {
+                    return packetRx;
+                }
+                set
+                {
+                    packetRx = value;
+                }
+            }
 
-			public string IntranetTx
-			{
-				get
-				{
-					return intranetTx;
-				}
-				set	
-				{
-					intranetTx = value;
-				}
-			}
+            public string IntranetTx
+            {
+                get
+                {
+                    return intranetTx;
+                }
+                set
+                {
+                    intranetTx = value;
+                }
+            }
 
-			public string IntranetRx
-			{
-				get
-				{
-					return intranetRx;
-				}
-				set	
-				{
-					intranetRx = value;
-				}
-			}
+            public string IntranetRx
+            {
+                get
+                {
+                    return intranetRx;
+                }
+                set
+                {
+                    intranetRx = value;
+                }
+            }
 
-			public string DropPacketTx
-			{
-				get
-				{
-					return dropPacketTx;
-				}
-				set	
-				{
-					dropPacketTx = value;
-				}
-			}
+            public string DropPacketTx
+            {
+                get
+                {
+                    return dropPacketTx;
+                }
+                set
+                {
+                    dropPacketTx = value;
+                }
+            }
 
-			public string DropPacketRx
-			{
-				get
-				{
-					return dropPacketRx;
-				}
-				set	
-				{
-					dropPacketRx = value;
-				}
-			}
-		}
-	}
+            public string DropPacketRx
+            {
+                get
+                {
+                    return dropPacketRx;
+                }
+                set
+                {
+                    dropPacketRx = value;
+                }
+            }
+        }
+    }
 }

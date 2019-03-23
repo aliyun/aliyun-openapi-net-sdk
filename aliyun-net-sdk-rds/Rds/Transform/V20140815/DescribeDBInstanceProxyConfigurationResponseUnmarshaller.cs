@@ -27,15 +27,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static DescribeDBInstanceProxyConfigurationResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDBInstanceProxyConfigurationResponse describeDBInstanceProxyConfigurationResponse = new DescribeDBInstanceProxyConfigurationResponse();
+            DescribeDBInstanceProxyConfigurationResponse describeDBInstanceProxyConfigurationResponse = new DescribeDBInstanceProxyConfigurationResponse();
 
-			describeDBInstanceProxyConfigurationResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceProxyConfigurationResponse.RequestId = context.StringValue("DescribeDBInstanceProxyConfiguration.RequestId");
-			describeDBInstanceProxyConfigurationResponse.TransparentSwitchConfiguration = context.StringValue("DescribeDBInstanceProxyConfiguration.TransparentSwitchConfiguration");
-			describeDBInstanceProxyConfigurationResponse.PersistentConnectionsConfiguration = context.StringValue("DescribeDBInstanceProxyConfiguration.PersistentConnectionsConfiguration");
-			describeDBInstanceProxyConfigurationResponse.AttacksProtectionConfiguration = context.StringValue("DescribeDBInstanceProxyConfiguration.AttacksProtectionConfiguration");
-        
-			return describeDBInstanceProxyConfigurationResponse;
+            describeDBInstanceProxyConfigurationResponse.HttpResponse = context.HttpResponse;
+            describeDBInstanceProxyConfigurationResponse.RequestId = context.StringValue("DescribeDBInstanceProxyConfiguration.RequestId");
+            describeDBInstanceProxyConfigurationResponse.TransparentSwitchConfiguration = context.StringValue("DescribeDBInstanceProxyConfiguration.TransparentSwitchConfiguration");
+            describeDBInstanceProxyConfigurationResponse.PersistentConnectionsConfiguration = context.StringValue("DescribeDBInstanceProxyConfiguration.PersistentConnectionsConfiguration");
+            describeDBInstanceProxyConfigurationResponse.AttacksProtectionConfiguration = context.StringValue("DescribeDBInstanceProxyConfiguration.AttacksProtectionConfiguration");
+
+            return describeDBInstanceProxyConfigurationResponse;
         }
     }
 }

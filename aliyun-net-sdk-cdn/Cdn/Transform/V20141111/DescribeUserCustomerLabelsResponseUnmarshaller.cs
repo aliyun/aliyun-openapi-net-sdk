@@ -28,13 +28,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeUserCustomerLabelsResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeUserCustomerLabelsResponse describeUserCustomerLabelsResponse = new DescribeUserCustomerLabelsResponse();
+            DescribeUserCustomerLabelsResponse describeUserCustomerLabelsResponse = new DescribeUserCustomerLabelsResponse();
 
-			describeUserCustomerLabelsResponse.HttpResponse = context.HttpResponse;
-			describeUserCustomerLabelsResponse.RequestId = context.StringValue("DescribeUserCustomerLabels.RequestId");
-			describeUserCustomerLabelsResponse.IsInnerUser = context.BooleanValue("DescribeUserCustomerLabels.IsInnerUser");
-        
-			return describeUserCustomerLabelsResponse;
+            describeUserCustomerLabelsResponse.HttpResponse = context.HttpResponse;
+            describeUserCustomerLabelsResponse.RequestId = context.StringValue("DescribeUserCustomerLabels.RequestId");
+            describeUserCustomerLabelsResponse.IsInnerUser = context.BooleanValue("DescribeUserCustomerLabels.IsInnerUser");
+
+            return describeUserCustomerLabelsResponse;
         }
     }
 }

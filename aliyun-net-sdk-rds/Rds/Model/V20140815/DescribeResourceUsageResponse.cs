@@ -21,161 +21,161 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeResourceUsageResponse : AcsResponse
-	{
+    public class DescribeResourceUsageResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string engine;
+        private string engine;
 
-		private long? diskUsed;
+        private long? diskUsed;
 
-		private long? dataSize;
+        private long? dataSize;
 
-		private long? logSize;
+        private long? logSize;
 
-		private long? backupSize;
+        private long? backupSize;
 
-		private long? backupOssDataSize;
+        private long? backupOssDataSize;
 
-		private long? backupOssLogSize;
+        private long? backupOssLogSize;
 
-		private long? sQLSize;
+        private long? sQLSize;
 
-		private long? coldBackupSize;
+        private long? coldBackupSize;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+            }
+        }
 
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
+        public string Engine
+        {
+            get
+            {
+                return engine;
+            }
+            set
+            {
+                engine = value;
+            }
+        }
 
-		public long? DiskUsed
-		{
-			get
-			{
-				return diskUsed;
-			}
-			set	
-			{
-				diskUsed = value;
-			}
-		}
+        public long? DiskUsed
+        {
+            get
+            {
+                return diskUsed;
+            }
+            set
+            {
+                diskUsed = value;
+            }
+        }
 
-		public long? DataSize
-		{
-			get
-			{
-				return dataSize;
-			}
-			set	
-			{
-				dataSize = value;
-			}
-		}
+        public long? DataSize
+        {
+            get
+            {
+                return dataSize;
+            }
+            set
+            {
+                dataSize = value;
+            }
+        }
 
-		public long? LogSize
-		{
-			get
-			{
-				return logSize;
-			}
-			set	
-			{
-				logSize = value;
-			}
-		}
+        public long? LogSize
+        {
+            get
+            {
+                return logSize;
+            }
+            set
+            {
+                logSize = value;
+            }
+        }
 
-		public long? BackupSize
-		{
-			get
-			{
-				return backupSize;
-			}
-			set	
-			{
-				backupSize = value;
-			}
-		}
+        public long? BackupSize
+        {
+            get
+            {
+                return backupSize;
+            }
+            set
+            {
+                backupSize = value;
+            }
+        }
 
-		public long? BackupOssDataSize
-		{
-			get
-			{
-				return backupOssDataSize;
-			}
-			set	
-			{
-				backupOssDataSize = value;
-			}
-		}
+        public long? BackupOssDataSize
+        {
+            get
+            {
+                return backupOssDataSize;
+            }
+            set
+            {
+                backupOssDataSize = value;
+            }
+        }
 
-		public long? BackupOssLogSize
-		{
-			get
-			{
-				return backupOssLogSize;
-			}
-			set	
-			{
-				backupOssLogSize = value;
-			}
-		}
+        public long? BackupOssLogSize
+        {
+            get
+            {
+                return backupOssLogSize;
+            }
+            set
+            {
+                backupOssLogSize = value;
+            }
+        }
 
-		public long? SQLSize
-		{
-			get
-			{
-				return sQLSize;
-			}
-			set	
-			{
-				sQLSize = value;
-			}
-		}
+        public long? SQLSize
+        {
+            get
+            {
+                return sQLSize;
+            }
+            set
+            {
+                sQLSize = value;
+            }
+        }
 
-		public long? ColdBackupSize
-		{
-			get
-			{
-				return coldBackupSize;
-			}
-			set	
-			{
-				coldBackupSize = value;
-			}
-		}
-	}
+        public long? ColdBackupSize
+        {
+            get
+            {
+                return coldBackupSize;
+            }
+            set
+            {
+                coldBackupSize = value;
+            }
+        }
+    }
 }

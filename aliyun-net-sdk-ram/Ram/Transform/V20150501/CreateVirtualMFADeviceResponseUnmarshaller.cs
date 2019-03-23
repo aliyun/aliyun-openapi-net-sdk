@@ -28,18 +28,18 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static CreateVirtualMFADeviceResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateVirtualMFADeviceResponse createVirtualMFADeviceResponse = new CreateVirtualMFADeviceResponse();
+            CreateVirtualMFADeviceResponse createVirtualMFADeviceResponse = new CreateVirtualMFADeviceResponse();
 
-			createVirtualMFADeviceResponse.HttpResponse = context.HttpResponse;
-			createVirtualMFADeviceResponse.RequestId = context.StringValue("CreateVirtualMFADevice.RequestId");
+            createVirtualMFADeviceResponse.HttpResponse = context.HttpResponse;
+            createVirtualMFADeviceResponse.RequestId = context.StringValue("CreateVirtualMFADevice.RequestId");
 
-			CreateVirtualMFADeviceResponse.CreateVirtualMFADevice_VirtualMFADevice virtualMFADevice = new CreateVirtualMFADeviceResponse.CreateVirtualMFADevice_VirtualMFADevice();
-			virtualMFADevice.SerialNumber = context.StringValue("CreateVirtualMFADevice.VirtualMFADevice.SerialNumber");
-			virtualMFADevice.Base32StringSeed = context.StringValue("CreateVirtualMFADevice.VirtualMFADevice.Base32StringSeed");
-			virtualMFADevice.QRCodePNG = context.StringValue("CreateVirtualMFADevice.VirtualMFADevice.QRCodePNG");
-			createVirtualMFADeviceResponse.VirtualMFADevice = virtualMFADevice;
-        
-			return createVirtualMFADeviceResponse;
+            CreateVirtualMFADeviceResponse.CreateVirtualMFADevice_VirtualMFADevice virtualMFADevice = new CreateVirtualMFADeviceResponse.CreateVirtualMFADevice_VirtualMFADevice();
+            virtualMFADevice.SerialNumber = context.StringValue("CreateVirtualMFADevice.VirtualMFADevice.SerialNumber");
+            virtualMFADevice.Base32StringSeed = context.StringValue("CreateVirtualMFADevice.VirtualMFADevice.Base32StringSeed");
+            virtualMFADevice.QRCodePNG = context.StringValue("CreateVirtualMFADevice.VirtualMFADevice.QRCodePNG");
+            createVirtualMFADeviceResponse.VirtualMFADevice = virtualMFADevice;
+
+            return createVirtualMFADeviceResponse;
         }
     }
 }

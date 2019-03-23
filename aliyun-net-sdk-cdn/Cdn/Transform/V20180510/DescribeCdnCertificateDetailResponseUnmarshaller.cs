@@ -28,16 +28,16 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeCdnCertificateDetailResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeCdnCertificateDetailResponse describeCdnCertificateDetailResponse = new DescribeCdnCertificateDetailResponse();
+            DescribeCdnCertificateDetailResponse describeCdnCertificateDetailResponse = new DescribeCdnCertificateDetailResponse();
 
-			describeCdnCertificateDetailResponse.HttpResponse = context.HttpResponse;
-			describeCdnCertificateDetailResponse.RequestId = context.StringValue("DescribeCdnCertificateDetail.RequestId");
-			describeCdnCertificateDetailResponse.Cert = context.StringValue("DescribeCdnCertificateDetail.Cert");
-			describeCdnCertificateDetailResponse.Key = context.StringValue("DescribeCdnCertificateDetail.Key");
-			describeCdnCertificateDetailResponse.CertId = context.LongValue("DescribeCdnCertificateDetail.CertId");
-			describeCdnCertificateDetailResponse.CertName = context.StringValue("DescribeCdnCertificateDetail.CertName");
-        
-			return describeCdnCertificateDetailResponse;
+            describeCdnCertificateDetailResponse.HttpResponse = context.HttpResponse;
+            describeCdnCertificateDetailResponse.RequestId = context.StringValue("DescribeCdnCertificateDetail.RequestId");
+            describeCdnCertificateDetailResponse.Cert = context.StringValue("DescribeCdnCertificateDetail.Cert");
+            describeCdnCertificateDetailResponse.Key = context.StringValue("DescribeCdnCertificateDetail.Key");
+            describeCdnCertificateDetailResponse.CertId = context.LongValue("DescribeCdnCertificateDetail.CertId");
+            describeCdnCertificateDetailResponse.CertName = context.StringValue("DescribeCdnCertificateDetail.CertName");
+
+            return describeCdnCertificateDetailResponse;
         }
     }
 }

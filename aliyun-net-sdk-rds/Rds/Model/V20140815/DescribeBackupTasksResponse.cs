@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeBackupTasksResponse : AcsResponse
-	{
+    public class DescribeBackupTasksResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeBackupTasks_BackupJob> items;
+        private List<DescribeBackupTasks_BackupJob> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeBackupTasks_BackupJob> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeBackupTasks_BackupJob> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeBackupTasks_BackupJob
-		{
+        public class DescribeBackupTasks_BackupJob
+        {
 
-			private string backupProgressStatus;
+            private string backupProgressStatus;
 
-			private string backupStatus;
+            private string backupStatus;
 
-			private string jobMode;
+            private string jobMode;
 
-			private string process;
+            private string process;
 
-			private string taskAction;
+            private string taskAction;
 
-			private string backupJobId;
+            private string backupJobId;
 
-			public string BackupProgressStatus
-			{
-				get
-				{
-					return backupProgressStatus;
-				}
-				set	
-				{
-					backupProgressStatus = value;
-				}
-			}
+            public string BackupProgressStatus
+            {
+                get
+                {
+                    return backupProgressStatus;
+                }
+                set
+                {
+                    backupProgressStatus = value;
+                }
+            }
 
-			public string BackupStatus
-			{
-				get
-				{
-					return backupStatus;
-				}
-				set	
-				{
-					backupStatus = value;
-				}
-			}
+            public string BackupStatus
+            {
+                get
+                {
+                    return backupStatus;
+                }
+                set
+                {
+                    backupStatus = value;
+                }
+            }
 
-			public string JobMode
-			{
-				get
-				{
-					return jobMode;
-				}
-				set	
-				{
-					jobMode = value;
-				}
-			}
+            public string JobMode
+            {
+                get
+                {
+                    return jobMode;
+                }
+                set
+                {
+                    jobMode = value;
+                }
+            }
 
-			public string Process
-			{
-				get
-				{
-					return process;
-				}
-				set	
-				{
-					process = value;
-				}
-			}
+            public string Process
+            {
+                get
+                {
+                    return process;
+                }
+                set
+                {
+                    process = value;
+                }
+            }
 
-			public string TaskAction
-			{
-				get
-				{
-					return taskAction;
-				}
-				set	
-				{
-					taskAction = value;
-				}
-			}
+            public string TaskAction
+            {
+                get
+                {
+                    return taskAction;
+                }
+                set
+                {
+                    taskAction = value;
+                }
+            }
 
-			public string BackupJobId
-			{
-				get
-				{
-					return backupJobId;
-				}
-				set	
-				{
-					backupJobId = value;
-				}
-			}
-		}
-	}
+            public string BackupJobId
+            {
+                get
+                {
+                    return backupJobId;
+                }
+                set
+                {
+                    backupJobId = value;
+                }
+            }
+        }
+    }
 }

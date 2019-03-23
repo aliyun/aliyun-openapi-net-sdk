@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DeleteDiskResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteDiskResponse deleteDiskResponse = new DeleteDiskResponse();
+            DeleteDiskResponse deleteDiskResponse = new DeleteDiskResponse();
 
-			deleteDiskResponse.HttpResponse = context.HttpResponse;
-			deleteDiskResponse.RequestId = context.StringValue("DeleteDisk.RequestId");
-        
-			return deleteDiskResponse;
+            deleteDiskResponse.HttpResponse = context.HttpResponse;
+            deleteDiskResponse.RequestId = context.StringValue("DeleteDisk.RequestId");
+
+            return deleteDiskResponse;
         }
     }
 }

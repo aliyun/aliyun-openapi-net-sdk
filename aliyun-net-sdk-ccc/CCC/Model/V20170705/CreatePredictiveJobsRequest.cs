@@ -33,74 +33,74 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		private string skillGroupId;
+        private string skillGroupId;
 
-		private string strategyJson;
+        private string strategyJson;
 
-		private List<string> jobsJsons;
+        private List<string> jobsJsons;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string SkillGroupId
-		{
-			get
-			{
-				return skillGroupId;
-			}
-			set	
-			{
-				skillGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
-			}
-		}
+        public string SkillGroupId
+        {
+            get
+            {
+                return skillGroupId;
+            }
+            set
+            {
+                skillGroupId = value;
+                DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
+            }
+        }
 
-		public string StrategyJson
-		{
-			get
-			{
-				return strategyJson;
-			}
-			set	
-			{
-				strategyJson = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
-			}
-		}
+        public string StrategyJson
+        {
+            get
+            {
+                return strategyJson;
+            }
+            set
+            {
+                strategyJson = value;
+                DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
+            }
+        }
 
-		public List<string> JobsJsons
-		{
-			get
-			{
-				return jobsJsons;
-			}
+        public List<string> JobsJsons
+        {
+            get
+            {
+                return jobsJsons;
+            }
 
-			set
-			{
-				jobsJsons = value;
-				for (int i = 0; i < jobsJsons.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"JobsJson." + (i + 1) , jobsJsons[i]);
-				}
-			}
-		}
+            set
+            {
+                jobsJsons = value;
+                for (int i = 0; i < jobsJsons.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "JobsJson." + (i + 1), jobsJsons[i]);
+                }
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override CreatePredictiveJobsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

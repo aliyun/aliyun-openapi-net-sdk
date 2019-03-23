@@ -21,193 +21,193 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeModifyParameterLogResponse : AcsResponse
-	{
+    public class DescribeModifyParameterLogResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string engine;
+        private string engine;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string engineVersion;
+        private string engineVersion;
 
-		private int? totalRecordCount;
+        private int? totalRecordCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private List<DescribeModifyParameterLog_ParameterChangeLog> items;
+        private List<DescribeModifyParameterLog_ParameterChangeLog> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
+        public string Engine
+        {
+            get
+            {
+                return engine;
+            }
+            set
+            {
+                engine = value;
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+            }
+        }
 
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-			}
-		}
+        public string EngineVersion
+        {
+            get
+            {
+                return engineVersion;
+            }
+            set
+            {
+                engineVersion = value;
+            }
+        }
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public int? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public List<DescribeModifyParameterLog_ParameterChangeLog> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeModifyParameterLog_ParameterChangeLog> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeModifyParameterLog_ParameterChangeLog
-		{
+        public class DescribeModifyParameterLog_ParameterChangeLog
+        {
 
-			private string modifyTime;
+            private string modifyTime;
 
-			private string oldParameterValue;
+            private string oldParameterValue;
 
-			private string newParameterValue;
+            private string newParameterValue;
 
-			private string parameterName;
+            private string parameterName;
 
-			private string status;
+            private string status;
 
-			public string ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
+            public string ModifyTime
+            {
+                get
+                {
+                    return modifyTime;
+                }
+                set
+                {
+                    modifyTime = value;
+                }
+            }
 
-			public string OldParameterValue
-			{
-				get
-				{
-					return oldParameterValue;
-				}
-				set	
-				{
-					oldParameterValue = value;
-				}
-			}
+            public string OldParameterValue
+            {
+                get
+                {
+                    return oldParameterValue;
+                }
+                set
+                {
+                    oldParameterValue = value;
+                }
+            }
 
-			public string NewParameterValue
-			{
-				get
-				{
-					return newParameterValue;
-				}
-				set	
-				{
-					newParameterValue = value;
-				}
-			}
+            public string NewParameterValue
+            {
+                get
+                {
+                    return newParameterValue;
+                }
+                set
+                {
+                    newParameterValue = value;
+                }
+            }
 
-			public string ParameterName
-			{
-				get
-				{
-					return parameterName;
-				}
-				set	
-				{
-					parameterName = value;
-				}
-			}
+            public string ParameterName
+            {
+                get
+                {
+                    return parameterName;
+                }
+                set
+                {
+                    parameterName = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-		}
-	}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
+        }
+    }
 }

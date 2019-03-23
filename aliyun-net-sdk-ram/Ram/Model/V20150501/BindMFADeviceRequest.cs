@@ -32,68 +32,68 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public BindMFADeviceRequest()
             : base("Ram", "2015-05-01", "BindMFADevice", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string serialNumber;
+        private string serialNumber;
 
-		private string authenticationCode2;
+        private string authenticationCode2;
 
-		private string authenticationCode1;
+        private string authenticationCode1;
 
-		private string userName;
+        private string userName;
 
-		public string SerialNumber
-		{
-			get
-			{
-				return serialNumber;
-			}
-			set	
-			{
-				serialNumber = value;
-				DictionaryUtil.Add(QueryParameters, "SerialNumber", value);
-			}
-		}
+        public string SerialNumber
+        {
+            get
+            {
+                return serialNumber;
+            }
+            set
+            {
+                serialNumber = value;
+                DictionaryUtil.Add(QueryParameters, "SerialNumber", value);
+            }
+        }
 
-		public string AuthenticationCode2
-		{
-			get
-			{
-				return authenticationCode2;
-			}
-			set	
-			{
-				authenticationCode2 = value;
-				DictionaryUtil.Add(QueryParameters, "AuthenticationCode2", value);
-			}
-		}
+        public string AuthenticationCode2
+        {
+            get
+            {
+                return authenticationCode2;
+            }
+            set
+            {
+                authenticationCode2 = value;
+                DictionaryUtil.Add(QueryParameters, "AuthenticationCode2", value);
+            }
+        }
 
-		public string AuthenticationCode1
-		{
-			get
-			{
-				return authenticationCode1;
-			}
-			set	
-			{
-				authenticationCode1 = value;
-				DictionaryUtil.Add(QueryParameters, "AuthenticationCode1", value);
-			}
-		}
+        public string AuthenticationCode1
+        {
+            get
+            {
+                return authenticationCode1;
+            }
+            set
+            {
+                authenticationCode1 = value;
+                DictionaryUtil.Add(QueryParameters, "AuthenticationCode1", value);
+            }
+        }
 
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
-			}
-		}
+        public string UserName
+        {
+            get
+            {
+                return userName;
+            }
+            set
+            {
+                userName = value;
+                DictionaryUtil.Add(QueryParameters, "UserName", value);
+            }
+        }
 
         public override BindMFADeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

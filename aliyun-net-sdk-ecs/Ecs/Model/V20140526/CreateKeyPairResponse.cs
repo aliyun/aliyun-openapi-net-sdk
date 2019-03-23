@@ -21,77 +21,77 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateKeyPairResponse : AcsResponse
-	{
+    public class CreateKeyPairResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string keyPairId;
+        private string keyPairId;
 
-		private string keyPairName;
+        private string keyPairName;
 
-		private string keyPairFingerPrint;
+        private string keyPairFingerPrint;
 
-		private string privateKeyBody;
+        private string privateKeyBody;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string KeyPairId
-		{
-			get
-			{
-				return keyPairId;
-			}
-			set	
-			{
-				keyPairId = value;
-			}
-		}
+        public string KeyPairId
+        {
+            get
+            {
+                return keyPairId;
+            }
+            set
+            {
+                keyPairId = value;
+            }
+        }
 
-		public string KeyPairName
-		{
-			get
-			{
-				return keyPairName;
-			}
-			set	
-			{
-				keyPairName = value;
-			}
-		}
+        public string KeyPairName
+        {
+            get
+            {
+                return keyPairName;
+            }
+            set
+            {
+                keyPairName = value;
+            }
+        }
 
-		public string KeyPairFingerPrint
-		{
-			get
-			{
-				return keyPairFingerPrint;
-			}
-			set	
-			{
-				keyPairFingerPrint = value;
-			}
-		}
+        public string KeyPairFingerPrint
+        {
+            get
+            {
+                return keyPairFingerPrint;
+            }
+            set
+            {
+                keyPairFingerPrint = value;
+            }
+        }
 
-		public string PrivateKeyBody
-		{
-			get
-			{
-				return privateKeyBody;
-			}
-			set	
-			{
-				privateKeyBody = value;
-			}
-		}
-	}
+        public string PrivateKeyBody
+        {
+            get
+            {
+                return privateKeyBody;
+            }
+            set
+            {
+                privateKeyBody = value;
+            }
+        }
+    }
 }

@@ -33,282 +33,282 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private List<DiskDeviceMapping> diskDeviceMappings;
+        private List<DiskDeviceMapping> diskDeviceMappings;
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string regionId;
+        private string regionId;
 
-		private string imageName;
+        private string imageName;
 
-		private string roleName;
+        private string roleName;
 
-		private string action;
+        private string action;
 
-		private string description;
+        private string description;
 
-		private string oSType;
+        private string oSType;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string platform;
+        private string platform;
 
-		private string architecture;
+        private string architecture;
 
-		public List<DiskDeviceMapping> DiskDeviceMappings
-		{
-			get
-			{
-				return diskDeviceMappings;
-			}
+        public List<DiskDeviceMapping> DiskDeviceMappings
+        {
+            get
+            {
+                return diskDeviceMappings;
+            }
 
-			set
-			{
-				diskDeviceMappings = value;
-				for (int i = 0; i < diskDeviceMappings.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".OSSBucket", diskDeviceMappings[i].OSSBucket);
-					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".DiskImSize", diskDeviceMappings[i].DiskImSize);
-					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".Format", diskDeviceMappings[i].Format);
-					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".Device", diskDeviceMappings[i].Device);
-					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".OSSObject", diskDeviceMappings[i].OSSObject);
-					DictionaryUtil.Add(QueryParameters,"DiskDeviceMapping." + (i + 1) + ".DiskImageSize", diskDeviceMappings[i].DiskImageSize);
-				}
-			}
-		}
+            set
+            {
+                diskDeviceMappings = value;
+                for (int i = 0; i < diskDeviceMappings.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "DiskDeviceMapping." + (i + 1) + ".OSSBucket", diskDeviceMappings[i].OSSBucket);
+                    DictionaryUtil.Add(QueryParameters, "DiskDeviceMapping." + (i + 1) + ".DiskImSize", diskDeviceMappings[i].DiskImSize);
+                    DictionaryUtil.Add(QueryParameters, "DiskDeviceMapping." + (i + 1) + ".Format", diskDeviceMappings[i].Format);
+                    DictionaryUtil.Add(QueryParameters, "DiskDeviceMapping." + (i + 1) + ".Device", diskDeviceMappings[i].Device);
+                    DictionaryUtil.Add(QueryParameters, "DiskDeviceMapping." + (i + 1) + ".OSSObject", diskDeviceMappings[i].OSSObject);
+                    DictionaryUtil.Add(QueryParameters, "DiskDeviceMapping." + (i + 1) + ".DiskImageSize", diskDeviceMappings[i].DiskImageSize);
+                }
+            }
+        }
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string ImageName
-		{
-			get
-			{
-				return imageName;
-			}
-			set	
-			{
-				imageName = value;
-				DictionaryUtil.Add(QueryParameters, "ImageName", value);
-			}
-		}
+        public string ImageName
+        {
+            get
+            {
+                return imageName;
+            }
+            set
+            {
+                imageName = value;
+                DictionaryUtil.Add(QueryParameters, "ImageName", value);
+            }
+        }
 
-		public string RoleName
-		{
-			get
-			{
-				return roleName;
-			}
-			set	
-			{
-				roleName = value;
-				DictionaryUtil.Add(QueryParameters, "RoleName", value);
-			}
-		}
+        public string RoleName
+        {
+            get
+            {
+                return roleName;
+            }
+            set
+            {
+                roleName = value;
+                DictionaryUtil.Add(QueryParameters, "RoleName", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string OSType
-		{
-			get
-			{
-				return oSType;
-			}
-			set	
-			{
-				oSType = value;
-				DictionaryUtil.Add(QueryParameters, "OSType", value);
-			}
-		}
+        public string OSType
+        {
+            get
+            {
+                return oSType;
+            }
+            set
+            {
+                oSType = value;
+                DictionaryUtil.Add(QueryParameters, "OSType", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string Platform
-		{
-			get
-			{
-				return platform;
-			}
-			set	
-			{
-				platform = value;
-				DictionaryUtil.Add(QueryParameters, "Platform", value);
-			}
-		}
+        public string Platform
+        {
+            get
+            {
+                return platform;
+            }
+            set
+            {
+                platform = value;
+                DictionaryUtil.Add(QueryParameters, "Platform", value);
+            }
+        }
 
-		public string Architecture
-		{
-			get
-			{
-				return architecture;
-			}
-			set	
-			{
-				architecture = value;
-				DictionaryUtil.Add(QueryParameters, "Architecture", value);
-			}
-		}
+        public string Architecture
+        {
+            get
+            {
+                return architecture;
+            }
+            set
+            {
+                architecture = value;
+                DictionaryUtil.Add(QueryParameters, "Architecture", value);
+            }
+        }
 
-		public class DiskDeviceMapping
-		{
+        public class DiskDeviceMapping
+        {
 
-			private string oSSBucket;
+            private string oSSBucket;
 
-			private int? diskImSize;
+            private int? diskImSize;
 
-			private string format;
+            private string format;
 
-			private string device;
+            private string device;
 
-			private string oSSObject;
+            private string oSSObject;
 
-			private int? diskImageSize;
+            private int? diskImageSize;
 
-			public string OSSBucket
-			{
-				get
-				{
-					return oSSBucket;
-				}
-				set	
-				{
-					oSSBucket = value;
-				}
-			}
+            public string OSSBucket
+            {
+                get
+                {
+                    return oSSBucket;
+                }
+                set
+                {
+                    oSSBucket = value;
+                }
+            }
 
-			public int? DiskImSize
-			{
-				get
-				{
-					return diskImSize;
-				}
-				set	
-				{
-					diskImSize = value;
-				}
-			}
+            public int? DiskImSize
+            {
+                get
+                {
+                    return diskImSize;
+                }
+                set
+                {
+                    diskImSize = value;
+                }
+            }
 
-			public string Format
-			{
-				get
-				{
-					return format;
-				}
-				set	
-				{
-					format = value;
-				}
-			}
+            public string Format
+            {
+                get
+                {
+                    return format;
+                }
+                set
+                {
+                    format = value;
+                }
+            }
 
-			public string Device
-			{
-				get
-				{
-					return device;
-				}
-				set	
-				{
-					device = value;
-				}
-			}
+            public string Device
+            {
+                get
+                {
+                    return device;
+                }
+                set
+                {
+                    device = value;
+                }
+            }
 
-			public string OSSObject
-			{
-				get
-				{
-					return oSSObject;
-				}
-				set	
-				{
-					oSSObject = value;
-				}
-			}
+            public string OSSObject
+            {
+                get
+                {
+                    return oSSObject;
+                }
+                set
+                {
+                    oSSObject = value;
+                }
+            }
 
-			public int? DiskImageSize
-			{
-				get
-				{
-					return diskImageSize;
-				}
-				set	
-				{
-					diskImageSize = value;
-				}
-			}
-		}
+            public int? DiskImageSize
+            {
+                get
+                {
+                    return diskImageSize;
+                }
+                set
+                {
+                    diskImageSize = value;
+                }
+            }
+        }
 
         public override ImportImageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

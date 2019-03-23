@@ -21,151 +21,151 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeInstanceAutoRenewAttributeResponse : AcsResponse
-	{
+    public class DescribeInstanceAutoRenewAttributeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private List<DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute> instanceRenewAttributes;
+        private List<DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute> instanceRenewAttributes;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute> InstanceRenewAttributes
-		{
-			get
-			{
-				return instanceRenewAttributes;
-			}
-			set	
-			{
-				instanceRenewAttributes = value;
-			}
-		}
+        public List<DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute> InstanceRenewAttributes
+        {
+            get
+            {
+                return instanceRenewAttributes;
+            }
+            set
+            {
+                instanceRenewAttributes = value;
+            }
+        }
 
-		public class DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute
-		{
+        public class DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute
+        {
 
-			private string instanceId;
+            private string instanceId;
 
-			private bool? autoRenewEnabled;
+            private bool? autoRenewEnabled;
 
-			private int? duration;
+            private int? duration;
 
-			private string periodUnit;
+            private string periodUnit;
 
-			private string renewalStatus;
+            private string renewalStatus;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public bool? AutoRenewEnabled
-			{
-				get
-				{
-					return autoRenewEnabled;
-				}
-				set	
-				{
-					autoRenewEnabled = value;
-				}
-			}
+            public bool? AutoRenewEnabled
+            {
+                get
+                {
+                    return autoRenewEnabled;
+                }
+                set
+                {
+                    autoRenewEnabled = value;
+                }
+            }
 
-			public int? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
+            public int? Duration
+            {
+                get
+                {
+                    return duration;
+                }
+                set
+                {
+                    duration = value;
+                }
+            }
 
-			public string PeriodUnit
-			{
-				get
-				{
-					return periodUnit;
-				}
-				set	
-				{
-					periodUnit = value;
-				}
-			}
+            public string PeriodUnit
+            {
+                get
+                {
+                    return periodUnit;
+                }
+                set
+                {
+                    periodUnit = value;
+                }
+            }
 
-			public string RenewalStatus
-			{
-				get
-				{
-					return renewalStatus;
-				}
-				set	
-				{
-					renewalStatus = value;
-				}
-			}
-		}
-	}
+            public string RenewalStatus
+            {
+                get
+                {
+                    return renewalStatus;
+                }
+                set
+                {
+                    renewalStatus = value;
+                }
+            }
+        }
+    }
 }

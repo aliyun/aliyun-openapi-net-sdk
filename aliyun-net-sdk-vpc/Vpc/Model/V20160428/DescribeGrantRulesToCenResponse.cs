@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeGrantRulesToCenResponse : AcsResponse
-	{
+    public class DescribeGrantRulesToCenResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeGrantRulesToCen_CbnGrantRule> cenGrantRules;
+        private List<DescribeGrantRulesToCen_CbnGrantRule> cenGrantRules;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeGrantRulesToCen_CbnGrantRule> CenGrantRules
-		{
-			get
-			{
-				return cenGrantRules;
-			}
-			set	
-			{
-				cenGrantRules = value;
-			}
-		}
+        public List<DescribeGrantRulesToCen_CbnGrantRule> CenGrantRules
+        {
+            get
+            {
+                return cenGrantRules;
+            }
+            set
+            {
+                cenGrantRules = value;
+            }
+        }
 
-		public class DescribeGrantRulesToCen_CbnGrantRule
-		{
+        public class DescribeGrantRulesToCen_CbnGrantRule
+        {
 
-			private string cenInstanceId;
+            private string cenInstanceId;
 
-			private long? cenOwnerId;
+            private long? cenOwnerId;
 
-			private string creationTime;
+            private string creationTime;
 
-			public string CenInstanceId
-			{
-				get
-				{
-					return cenInstanceId;
-				}
-				set	
-				{
-					cenInstanceId = value;
-				}
-			}
+            public string CenInstanceId
+            {
+                get
+                {
+                    return cenInstanceId;
+                }
+                set
+                {
+                    cenInstanceId = value;
+                }
+            }
 
-			public long? CenOwnerId
-			{
-				get
-				{
-					return cenOwnerId;
-				}
-				set	
-				{
-					cenOwnerId = value;
-				}
-			}
+            public long? CenOwnerId
+            {
+                get
+                {
+                    return cenOwnerId;
+                }
+                set
+                {
+                    cenOwnerId = value;
+                }
+            }
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-		}
-	}
+            public string CreationTime
+            {
+                get
+                {
+                    return creationTime;
+                }
+                set
+                {
+                    creationTime = value;
+                }
+            }
+        }
+    }
 }

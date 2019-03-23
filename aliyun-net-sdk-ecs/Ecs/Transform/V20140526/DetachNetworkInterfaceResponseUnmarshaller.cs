@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DetachNetworkInterfaceResponse Unmarshall(UnmarshallerContext context)
         {
-			DetachNetworkInterfaceResponse detachNetworkInterfaceResponse = new DetachNetworkInterfaceResponse();
+            DetachNetworkInterfaceResponse detachNetworkInterfaceResponse = new DetachNetworkInterfaceResponse();
 
-			detachNetworkInterfaceResponse.HttpResponse = context.HttpResponse;
-			detachNetworkInterfaceResponse.RequestId = context.StringValue("DetachNetworkInterface.RequestId");
-        
-			return detachNetworkInterfaceResponse;
+            detachNetworkInterfaceResponse.HttpResponse = context.HttpResponse;
+            detachNetworkInterfaceResponse.RequestId = context.StringValue("DetachNetworkInterface.RequestId");
+
+            return detachNetworkInterfaceResponse;
         }
     }
 }

@@ -33,10 +33,10 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override ListScenarioTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

@@ -27,23 +27,24 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DescribeRegionsResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
+            DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
-			describeRegionsResponse.HttpResponse = context.HttpResponse;
-			describeRegionsResponse.RequestId = context.StringValue("DescribeRegions.RequestId");
+            describeRegionsResponse.HttpResponse = context.HttpResponse;
+            describeRegionsResponse.RequestId = context.StringValue("DescribeRegions.RequestId");
 
-			List<DescribeRegionsResponse.DescribeRegions_Region> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_Region>();
-			for (int i = 0; i < context.Length("DescribeRegions.Regions.Length"); i++) {
-				DescribeRegionsResponse.DescribeRegions_Region region = new DescribeRegionsResponse.DescribeRegions_Region();
-				region.RegionId = context.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
-				region.LocalName = context.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
-				region.RegionEndpoint = context.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
+            List<DescribeRegionsResponse.DescribeRegions_Region> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_Region>();
+            for (int i = 0; i < context.Length("DescribeRegions.Regions.Length"); i++)
+            {
+                DescribeRegionsResponse.DescribeRegions_Region region = new DescribeRegionsResponse.DescribeRegions_Region();
+                region.RegionId = context.StringValue("DescribeRegions.Regions[" + i + "].RegionId");
+                region.LocalName = context.StringValue("DescribeRegions.Regions[" + i + "].LocalName");
+                region.RegionEndpoint = context.StringValue("DescribeRegions.Regions[" + i + "].RegionEndpoint");
 
-				describeRegionsResponse_regions.Add(region);
-			}
-			describeRegionsResponse.Regions = describeRegionsResponse_regions;
-        
-			return describeRegionsResponse;
+                describeRegionsResponse_regions.Add(region);
+            }
+            describeRegionsResponse.Regions = describeRegionsResponse_regions;
+
+            return describeRegionsResponse;
         }
     }
 }

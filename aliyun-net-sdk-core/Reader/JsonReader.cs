@@ -383,7 +383,7 @@ namespace Aliyun.Acs.Core.Reader
                     Object value = escapes[c];
                     if (value != null)
                     {
-                        AddChar((Char) value);
+                        AddChar((Char)value);
                     }
                 }
                 else

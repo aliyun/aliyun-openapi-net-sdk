@@ -33,50 +33,50 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		private string skillGroupId;
+        private string skillGroupId;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string SkillGroupId
-		{
-			get
-			{
-				return skillGroupId;
-			}
-			set	
-			{
-				skillGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
-			}
-		}
+        public string SkillGroupId
+        {
+            get
+            {
+                return skillGroupId;
+            }
+            set
+            {
+                skillGroupId = value;
+                DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override DeleteSkillGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

@@ -22,123 +22,123 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeCdnServiceResponse : AcsResponse
-	{
+    public class DescribeCdnServiceResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string internetChargeType;
+        private string internetChargeType;
 
-		private string openingTime;
+        private string openingTime;
 
-		private string changingChargeType;
+        private string changingChargeType;
 
-		private string changingAffectTime;
+        private string changingAffectTime;
 
-		private List<DescribeCdnService_LockReason> operationLocks;
+        private List<DescribeCdnService_LockReason> operationLocks;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+            }
+        }
 
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-			}
-		}
+        public string InternetChargeType
+        {
+            get
+            {
+                return internetChargeType;
+            }
+            set
+            {
+                internetChargeType = value;
+            }
+        }
 
-		public string OpeningTime
-		{
-			get
-			{
-				return openingTime;
-			}
-			set	
-			{
-				openingTime = value;
-			}
-		}
+        public string OpeningTime
+        {
+            get
+            {
+                return openingTime;
+            }
+            set
+            {
+                openingTime = value;
+            }
+        }
 
-		public string ChangingChargeType
-		{
-			get
-			{
-				return changingChargeType;
-			}
-			set	
-			{
-				changingChargeType = value;
-			}
-		}
+        public string ChangingChargeType
+        {
+            get
+            {
+                return changingChargeType;
+            }
+            set
+            {
+                changingChargeType = value;
+            }
+        }
 
-		public string ChangingAffectTime
-		{
-			get
-			{
-				return changingAffectTime;
-			}
-			set	
-			{
-				changingAffectTime = value;
-			}
-		}
+        public string ChangingAffectTime
+        {
+            get
+            {
+                return changingAffectTime;
+            }
+            set
+            {
+                changingAffectTime = value;
+            }
+        }
 
-		public List<DescribeCdnService_LockReason> OperationLocks
-		{
-			get
-			{
-				return operationLocks;
-			}
-			set	
-			{
-				operationLocks = value;
-			}
-		}
+        public List<DescribeCdnService_LockReason> OperationLocks
+        {
+            get
+            {
+                return operationLocks;
+            }
+            set
+            {
+                operationLocks = value;
+            }
+        }
 
-		public class DescribeCdnService_LockReason
-		{
+        public class DescribeCdnService_LockReason
+        {
 
-			private string lockReason;
+            private string lockReason;
 
-			public string LockReason
-			{
-				get
-				{
-					return lockReason;
-				}
-				set	
-				{
-					lockReason = value;
-				}
-			}
-		}
-	}
+            public string LockReason
+            {
+                get
+                {
+                    return lockReason;
+                }
+                set
+                {
+                    lockReason = value;
+                }
+            }
+        }
+    }
 }

@@ -27,14 +27,14 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static AllocateEipAddressResponse Unmarshall(UnmarshallerContext context)
         {
-			AllocateEipAddressResponse allocateEipAddressResponse = new AllocateEipAddressResponse();
+            AllocateEipAddressResponse allocateEipAddressResponse = new AllocateEipAddressResponse();
 
-			allocateEipAddressResponse.HttpResponse = context.HttpResponse;
-			allocateEipAddressResponse.RequestId = context.StringValue("AllocateEipAddress.RequestId");
-			allocateEipAddressResponse.AllocationId = context.StringValue("AllocateEipAddress.AllocationId");
-			allocateEipAddressResponse.EipAddress = context.StringValue("AllocateEipAddress.EipAddress");
-        
-			return allocateEipAddressResponse;
+            allocateEipAddressResponse.HttpResponse = context.HttpResponse;
+            allocateEipAddressResponse.RequestId = context.StringValue("AllocateEipAddress.RequestId");
+            allocateEipAddressResponse.AllocationId = context.StringValue("AllocateEipAddress.AllocationId");
+            allocateEipAddressResponse.EipAddress = context.StringValue("AllocateEipAddress.EipAddress");
+
+            return allocateEipAddressResponse;
         }
     }
 }

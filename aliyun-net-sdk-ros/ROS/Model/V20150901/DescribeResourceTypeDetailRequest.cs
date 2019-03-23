@@ -31,24 +31,24 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public DescribeResourceTypeDetailRequest()
             : base("ROS", "2015-09-01", "DescribeResourceTypeDetail")
         {
-			UriPattern = "/resource_types/[TypeName]";
-			Method = MethodType.GET;
+            UriPattern = "/resource_types/[TypeName]";
+            Method = MethodType.GET;
         }
 
-		private string typeName;
+        private string typeName;
 
-		public string TypeName
-		{
-			get
-			{
-				return typeName;
-			}
-			set	
-			{
-				typeName = value;
-				DictionaryUtil.Add(PathParameters, "TypeName", value);
-			}
-		}
+        public string TypeName
+        {
+            get
+            {
+                return typeName;
+            }
+            set
+            {
+                typeName = value;
+                DictionaryUtil.Add(PathParameters, "TypeName", value);
+            }
+        }
 
         public override DescribeResourceTypeDetailResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

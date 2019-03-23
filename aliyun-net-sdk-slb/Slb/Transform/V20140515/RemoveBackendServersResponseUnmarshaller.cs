@@ -27,26 +27,27 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static RemoveBackendServersResponse Unmarshall(UnmarshallerContext context)
         {
-			RemoveBackendServersResponse removeBackendServersResponse = new RemoveBackendServersResponse();
+            RemoveBackendServersResponse removeBackendServersResponse = new RemoveBackendServersResponse();
 
-			removeBackendServersResponse.HttpResponse = context.HttpResponse;
-			removeBackendServersResponse.RequestId = context.StringValue("RemoveBackendServers.RequestId");
-			removeBackendServersResponse.LoadBalancerId = context.StringValue("RemoveBackendServers.LoadBalancerId");
+            removeBackendServersResponse.HttpResponse = context.HttpResponse;
+            removeBackendServersResponse.RequestId = context.StringValue("RemoveBackendServers.RequestId");
+            removeBackendServersResponse.LoadBalancerId = context.StringValue("RemoveBackendServers.LoadBalancerId");
 
-			List<RemoveBackendServersResponse.RemoveBackendServers_BackendServer> removeBackendServersResponse_backendServers = new List<RemoveBackendServersResponse.RemoveBackendServers_BackendServer>();
-			for (int i = 0; i < context.Length("RemoveBackendServers.BackendServers.Length"); i++) {
-				RemoveBackendServersResponse.RemoveBackendServers_BackendServer backendServer = new RemoveBackendServersResponse.RemoveBackendServers_BackendServer();
-				backendServer.ServerId = context.StringValue("RemoveBackendServers.BackendServers["+ i +"].ServerId");
-				backendServer.Weight = context.IntegerValue("RemoveBackendServers.BackendServers["+ i +"].Weight");
-				backendServer.ServerIp = context.StringValue("RemoveBackendServers.BackendServers["+ i +"].ServerIp");
-				backendServer.VpcId = context.StringValue("RemoveBackendServers.BackendServers["+ i +"].VpcId");
-				backendServer.Type = context.StringValue("RemoveBackendServers.BackendServers["+ i +"].Type");
+            List<RemoveBackendServersResponse.RemoveBackendServers_BackendServer> removeBackendServersResponse_backendServers = new List<RemoveBackendServersResponse.RemoveBackendServers_BackendServer>();
+            for (int i = 0; i < context.Length("RemoveBackendServers.BackendServers.Length"); i++)
+            {
+                RemoveBackendServersResponse.RemoveBackendServers_BackendServer backendServer = new RemoveBackendServersResponse.RemoveBackendServers_BackendServer();
+                backendServer.ServerId = context.StringValue("RemoveBackendServers.BackendServers[" + i + "].ServerId");
+                backendServer.Weight = context.IntegerValue("RemoveBackendServers.BackendServers[" + i + "].Weight");
+                backendServer.ServerIp = context.StringValue("RemoveBackendServers.BackendServers[" + i + "].ServerIp");
+                backendServer.VpcId = context.StringValue("RemoveBackendServers.BackendServers[" + i + "].VpcId");
+                backendServer.Type = context.StringValue("RemoveBackendServers.BackendServers[" + i + "].Type");
 
-				removeBackendServersResponse_backendServers.Add(backendServer);
-			}
-			removeBackendServersResponse.BackendServers = removeBackendServersResponse_backendServers;
-        
-			return removeBackendServersResponse;
+                removeBackendServersResponse_backendServers.Add(backendServer);
+            }
+            removeBackendServersResponse.BackendServers = removeBackendServersResponse_backendServers;
+
+            return removeBackendServersResponse;
         }
     }
 }

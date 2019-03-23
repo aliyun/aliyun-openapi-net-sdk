@@ -22,127 +22,127 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class ListVirtualMFADevicesResponse : AcsResponse
-	{
+    public class ListVirtualMFADevicesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<ListVirtualMFADevices_VirtualMFADevice> virtualMFADevices;
+        private List<ListVirtualMFADevices_VirtualMFADevice> virtualMFADevices;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<ListVirtualMFADevices_VirtualMFADevice> VirtualMFADevices
-		{
-			get
-			{
-				return virtualMFADevices;
-			}
-			set	
-			{
-				virtualMFADevices = value;
-			}
-		}
+        public List<ListVirtualMFADevices_VirtualMFADevice> VirtualMFADevices
+        {
+            get
+            {
+                return virtualMFADevices;
+            }
+            set
+            {
+                virtualMFADevices = value;
+            }
+        }
 
-		public class ListVirtualMFADevices_VirtualMFADevice
-		{
+        public class ListVirtualMFADevices_VirtualMFADevice
+        {
 
-			private string serialNumber;
+            private string serialNumber;
 
-			private string activateDate;
+            private string activateDate;
 
-			private ListVirtualMFADevices_User user;
+            private ListVirtualMFADevices_User user;
 
-			public string SerialNumber
-			{
-				get
-				{
-					return serialNumber;
-				}
-				set	
-				{
-					serialNumber = value;
-				}
-			}
+            public string SerialNumber
+            {
+                get
+                {
+                    return serialNumber;
+                }
+                set
+                {
+                    serialNumber = value;
+                }
+            }
 
-			public string ActivateDate
-			{
-				get
-				{
-					return activateDate;
-				}
-				set	
-				{
-					activateDate = value;
-				}
-			}
+            public string ActivateDate
+            {
+                get
+                {
+                    return activateDate;
+                }
+                set
+                {
+                    activateDate = value;
+                }
+            }
 
-			public ListVirtualMFADevices_User User
-			{
-				get
-				{
-					return user;
-				}
-				set	
-				{
-					user = value;
-				}
-			}
+            public ListVirtualMFADevices_User User
+            {
+                get
+                {
+                    return user;
+                }
+                set
+                {
+                    user = value;
+                }
+            }
 
-			public class ListVirtualMFADevices_User
-			{
+            public class ListVirtualMFADevices_User
+            {
 
-				private string userId;
+                private string userId;
 
-				private string userName;
+                private string userName;
 
-				private string displayName;
+                private string displayName;
 
-				public string UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
+                public string UserId
+                {
+                    get
+                    {
+                        return userId;
+                    }
+                    set
+                    {
+                        userId = value;
+                    }
+                }
 
-				public string UserName
-				{
-					get
-					{
-						return userName;
-					}
-					set	
-					{
-						userName = value;
-					}
-				}
+                public string UserName
+                {
+                    get
+                    {
+                        return userName;
+                    }
+                    set
+                    {
+                        userName = value;
+                    }
+                }
 
-				public string DisplayName
-				{
-					get
-					{
-						return displayName;
-					}
-					set	
-					{
-						displayName = value;
-					}
-				}
-			}
-		}
-	}
+                public string DisplayName
+                {
+                    get
+                    {
+                        return displayName;
+                    }
+                    set
+                    {
+                        displayName = value;
+                    }
+                }
+            }
+        }
+    }
 }

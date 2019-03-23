@@ -22,53 +22,53 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class GetUserMFAInfoResponse : AcsResponse
-	{
+    public class GetUserMFAInfoResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private GetUserMFAInfo_MFADevice mFADevice;
+        private GetUserMFAInfo_MFADevice mFADevice;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public GetUserMFAInfo_MFADevice MFADevice
-		{
-			get
-			{
-				return mFADevice;
-			}
-			set	
-			{
-				mFADevice = value;
-			}
-		}
+        public GetUserMFAInfo_MFADevice MFADevice
+        {
+            get
+            {
+                return mFADevice;
+            }
+            set
+            {
+                mFADevice = value;
+            }
+        }
 
-		public class GetUserMFAInfo_MFADevice
-		{
+        public class GetUserMFAInfo_MFADevice
+        {
 
-			private string serialNumber;
+            private string serialNumber;
 
-			public string SerialNumber
-			{
-				get
-				{
-					return serialNumber;
-				}
-				set	
-				{
-					serialNumber = value;
-				}
-			}
-		}
-	}
+            public string SerialNumber
+            {
+                get
+                {
+                    return serialNumber;
+                }
+                set
+                {
+                    serialNumber = value;
+                }
+            }
+        }
+    }
 }

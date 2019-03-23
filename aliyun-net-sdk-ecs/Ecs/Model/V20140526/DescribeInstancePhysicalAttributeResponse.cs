@@ -21,77 +21,77 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeInstancePhysicalAttributeResponse : AcsResponse
-	{
+    public class DescribeInstancePhysicalAttributeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string vlanId;
+        private string vlanId;
 
-		private string nodeControllerId;
+        private string nodeControllerId;
 
-		private string rackId;
+        private string rackId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+            }
+        }
 
-		public string VlanId
-		{
-			get
-			{
-				return vlanId;
-			}
-			set	
-			{
-				vlanId = value;
-			}
-		}
+        public string VlanId
+        {
+            get
+            {
+                return vlanId;
+            }
+            set
+            {
+                vlanId = value;
+            }
+        }
 
-		public string NodeControllerId
-		{
-			get
-			{
-				return nodeControllerId;
-			}
-			set	
-			{
-				nodeControllerId = value;
-			}
-		}
+        public string NodeControllerId
+        {
+            get
+            {
+                return nodeControllerId;
+            }
+            set
+            {
+                nodeControllerId = value;
+            }
+        }
 
-		public string RackId
-		{
-			get
-			{
-				return rackId;
-			}
-			set	
-			{
-				rackId = value;
-			}
-		}
-	}
+        public string RackId
+        {
+            get
+            {
+                return rackId;
+            }
+            set
+            {
+                rackId = value;
+            }
+        }
+    }
 }

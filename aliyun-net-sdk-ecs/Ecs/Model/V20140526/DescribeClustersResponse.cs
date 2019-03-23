@@ -21,53 +21,53 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeClustersResponse : AcsResponse
-	{
+    public class DescribeClustersResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeClusters_Cluster> clusters;
+        private List<DescribeClusters_Cluster> clusters;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeClusters_Cluster> Clusters
-		{
-			get
-			{
-				return clusters;
-			}
-			set	
-			{
-				clusters = value;
-			}
-		}
+        public List<DescribeClusters_Cluster> Clusters
+        {
+            get
+            {
+                return clusters;
+            }
+            set
+            {
+                clusters = value;
+            }
+        }
 
-		public class DescribeClusters_Cluster
-		{
+        public class DescribeClusters_Cluster
+        {
 
-			private string clusterId;
+            private string clusterId;
 
-			public string ClusterId
-			{
-				get
-				{
-					return clusterId;
-				}
-				set	
-				{
-					clusterId = value;
-				}
-			}
-		}
-	}
+            public string ClusterId
+            {
+                get
+                {
+                    return clusterId;
+                }
+                set
+                {
+                    clusterId = value;
+                }
+            }
+        }
+    }
 }

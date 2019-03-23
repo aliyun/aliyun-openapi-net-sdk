@@ -27,16 +27,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static ResumeJobsResponse Unmarshall(UnmarshallerContext context)
         {
-			ResumeJobsResponse resumeJobsResponse = new ResumeJobsResponse();
+            ResumeJobsResponse resumeJobsResponse = new ResumeJobsResponse();
 
-			resumeJobsResponse.HttpResponse = context.HttpResponse;
-			resumeJobsResponse.RequestId = context.StringValue("ResumeJobs.RequestId");
-			resumeJobsResponse.Success = context.BooleanValue("ResumeJobs.Success");
-			resumeJobsResponse.Code = context.StringValue("ResumeJobs.Code");
-			resumeJobsResponse.Message = context.StringValue("ResumeJobs.Message");
-			resumeJobsResponse.HttpStatusCode = context.IntegerValue("ResumeJobs.HttpStatusCode");
-        
-			return resumeJobsResponse;
+            resumeJobsResponse.HttpResponse = context.HttpResponse;
+            resumeJobsResponse.RequestId = context.StringValue("ResumeJobs.RequestId");
+            resumeJobsResponse.Success = context.BooleanValue("ResumeJobs.Success");
+            resumeJobsResponse.Code = context.StringValue("ResumeJobs.Code");
+            resumeJobsResponse.Message = context.StringValue("ResumeJobs.Message");
+            resumeJobsResponse.HttpStatusCode = context.IntegerValue("ResumeJobs.HttpStatusCode");
+
+            return resumeJobsResponse;
         }
     }
 }

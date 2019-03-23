@@ -33,95 +33,95 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string acid;
+        private string acid;
 
-		private string instanceId;
+        private string instanceId;
 
-		private int? contactType;
+        private int? contactType;
 
-		private string phoneNumbers;
+        private string phoneNumbers;
 
-		private string skillGroupId;
+        private string skillGroupId;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string Acid
-		{
-			get
-			{
-				return acid;
-			}
-			set	
-			{
-				acid = value;
-				DictionaryUtil.Add(QueryParameters, "Acid", value);
-			}
-		}
+        public string Acid
+        {
+            get
+            {
+                return acid;
+            }
+            set
+            {
+                acid = value;
+                DictionaryUtil.Add(QueryParameters, "Acid", value);
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public int? ContactType
-		{
-			get
-			{
-				return contactType;
-			}
-			set	
-			{
-				contactType = value;
-				DictionaryUtil.Add(QueryParameters, "ContactType", value.ToString());
-			}
-		}
+        public int? ContactType
+        {
+            get
+            {
+                return contactType;
+            }
+            set
+            {
+                contactType = value;
+                DictionaryUtil.Add(QueryParameters, "ContactType", value.ToString());
+            }
+        }
 
-		public string PhoneNumbers
-		{
-			get
-			{
-				return phoneNumbers;
-			}
-			set	
-			{
-				phoneNumbers = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNumbers", value);
-			}
-		}
+        public string PhoneNumbers
+        {
+            get
+            {
+                return phoneNumbers;
+            }
+            set
+            {
+                phoneNumbers = value;
+                DictionaryUtil.Add(QueryParameters, "PhoneNumbers", value);
+            }
+        }
 
-		public string SkillGroupId
-		{
-			get
-			{
-				return skillGroupId;
-			}
-			set	
-			{
-				skillGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
-			}
-		}
+        public string SkillGroupId
+        {
+            get
+            {
+                return skillGroupId;
+            }
+            set
+            {
+                skillGroupId = value;
+                DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override LaunchShortMessageAppraiseResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

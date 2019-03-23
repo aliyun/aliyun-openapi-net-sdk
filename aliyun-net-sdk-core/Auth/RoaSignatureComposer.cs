@@ -36,7 +36,8 @@ namespace Aliyun.Acs.Core.Auth
         {
             Dictionary<string, string> immutableMap = new Dictionary<string, string>(parameters);
             DictionaryUtil.Add(immutableMap, "Date", ParameterHelper.GetRFC2616Date(DateTime.Now));
-            if (null == format) { format = FormatType.RAW; }
+            if (null == format)
+            { format = FormatType.RAW; }
             DictionaryUtil.Add(immutableMap, "Accept", ParameterHelper.FormatTypeToString(format));
             DictionaryUtil.Add(immutableMap, "x-acs-signature-method", signer.GetSignerName());
             DictionaryUtil.Add(immutableMap, "x-acs-signature-version", signer.GetSignerVersion());

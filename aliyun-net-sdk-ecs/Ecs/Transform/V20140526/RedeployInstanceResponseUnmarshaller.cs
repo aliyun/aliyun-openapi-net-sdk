@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static RedeployInstanceResponse Unmarshall(UnmarshallerContext context)
         {
-			RedeployInstanceResponse redeployInstanceResponse = new RedeployInstanceResponse();
+            RedeployInstanceResponse redeployInstanceResponse = new RedeployInstanceResponse();
 
-			redeployInstanceResponse.HttpResponse = context.HttpResponse;
-			redeployInstanceResponse.RequestId = context.StringValue("RedeployInstance.RequestId");
-			redeployInstanceResponse.TaskId = context.StringValue("RedeployInstance.TaskId");
-        
-			return redeployInstanceResponse;
+            redeployInstanceResponse.HttpResponse = context.HttpResponse;
+            redeployInstanceResponse.RequestId = context.StringValue("RedeployInstance.RequestId");
+            redeployInstanceResponse.TaskId = context.StringValue("RedeployInstance.TaskId");
+
+            return redeployInstanceResponse;
         }
     }
 }

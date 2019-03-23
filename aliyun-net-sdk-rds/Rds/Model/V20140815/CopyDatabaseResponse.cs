@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CopyDatabaseResponse : AcsResponse
-	{
+    public class CopyDatabaseResponse : AcsResponse
+    {
 
-		private string dBName;
+        private string dBName;
 
-		private string dBStatus;
+        private string dBStatus;
 
-		private string taskId;
+        private string taskId;
 
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-			}
-		}
+        public string DBName
+        {
+            get
+            {
+                return dBName;
+            }
+            set
+            {
+                dBName = value;
+            }
+        }
 
-		public string DBStatus
-		{
-			get
-			{
-				return dBStatus;
-			}
-			set	
-			{
-				dBStatus = value;
-			}
-		}
+        public string DBStatus
+        {
+            get
+            {
+                return dBStatus;
+            }
+            set
+            {
+                dBStatus = value;
+            }
+        }
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
-	}
+        public string TaskId
+        {
+            get
+            {
+                return taskId;
+            }
+            set
+            {
+                taskId = value;
+            }
+        }
+    }
 }

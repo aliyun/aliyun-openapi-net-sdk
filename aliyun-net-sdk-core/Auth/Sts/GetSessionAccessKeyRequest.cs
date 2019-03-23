@@ -21,7 +21,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 using Aliyun.Acs.Core.Utils;
-[assembly : InternalsVisibleTo("aliyun-net-sdk-core.Tests")]
+[assembly: InternalsVisibleTo("aliyun-net-sdk-core.Tests")]
 namespace Aliyun.Acs.Core.Auth.Sts
 {
     class GetSessionAccessKeyRequest : RpcAcsRequest<GetSessionAccessKeyResponse>

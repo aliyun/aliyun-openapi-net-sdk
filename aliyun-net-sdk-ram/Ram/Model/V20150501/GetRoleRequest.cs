@@ -32,23 +32,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public GetRoleRequest()
             : base("Ram", "2015-05-01", "GetRole", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string roleName;
+        private string roleName;
 
-		public string RoleName
-		{
-			get
-			{
-				return roleName;
-			}
-			set	
-			{
-				roleName = value;
-				DictionaryUtil.Add(QueryParameters, "RoleName", value);
-			}
-		}
+        public string RoleName
+        {
+            get
+            {
+                return roleName;
+            }
+            set
+            {
+                roleName = value;
+                DictionaryUtil.Add(QueryParameters, "RoleName", value);
+            }
+        }
 
         public override GetRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

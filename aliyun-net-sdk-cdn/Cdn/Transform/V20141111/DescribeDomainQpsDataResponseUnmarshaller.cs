@@ -28,37 +28,38 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeDomainQpsDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainQpsDataResponse describeDomainQpsDataResponse = new DescribeDomainQpsDataResponse();
+            DescribeDomainQpsDataResponse describeDomainQpsDataResponse = new DescribeDomainQpsDataResponse();
 
-			describeDomainQpsDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainQpsDataResponse.RequestId = context.StringValue("DescribeDomainQpsData.RequestId");
-			describeDomainQpsDataResponse.DomainName = context.StringValue("DescribeDomainQpsData.DomainName");
-			describeDomainQpsDataResponse.StartTime = context.StringValue("DescribeDomainQpsData.StartTime");
-			describeDomainQpsDataResponse.EndTime = context.StringValue("DescribeDomainQpsData.EndTime");
-			describeDomainQpsDataResponse.DataInterval = context.StringValue("DescribeDomainQpsData.DataInterval");
+            describeDomainQpsDataResponse.HttpResponse = context.HttpResponse;
+            describeDomainQpsDataResponse.RequestId = context.StringValue("DescribeDomainQpsData.RequestId");
+            describeDomainQpsDataResponse.DomainName = context.StringValue("DescribeDomainQpsData.DomainName");
+            describeDomainQpsDataResponse.StartTime = context.StringValue("DescribeDomainQpsData.StartTime");
+            describeDomainQpsDataResponse.EndTime = context.StringValue("DescribeDomainQpsData.EndTime");
+            describeDomainQpsDataResponse.DataInterval = context.StringValue("DescribeDomainQpsData.DataInterval");
 
-			List<DescribeDomainQpsDataResponse.DescribeDomainQpsData_DataModule> describeDomainQpsDataResponse_qpsDataInterval = new List<DescribeDomainQpsDataResponse.DescribeDomainQpsData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDomainQpsData.QpsDataInterval.Length"); i++) {
-				DescribeDomainQpsDataResponse.DescribeDomainQpsData_DataModule dataModule = new DescribeDomainQpsDataResponse.DescribeDomainQpsData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].Value");
-				dataModule.DomesticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].DomesticValue");
-				dataModule.OverseasValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].OverseasValue");
-				dataModule.AccValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].AccValue");
-				dataModule.AccDomesticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].AccDomesticValue");
-				dataModule.AccOverseasValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].AccOverseasValue");
-				dataModule.DynamicValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].DynamicValue");
-				dataModule.DynamicDomesticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].DynamicDomesticValue");
-				dataModule.DynamicOverseasValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].DynamicOverseasValue");
-				dataModule.StaticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].StaticValue");
-				dataModule.StaticDomesticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].StaticDomesticValue");
-				dataModule.StaticOverseasValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].StaticOverseasValue");
+            List<DescribeDomainQpsDataResponse.DescribeDomainQpsData_DataModule> describeDomainQpsDataResponse_qpsDataInterval = new List<DescribeDomainQpsDataResponse.DescribeDomainQpsData_DataModule>();
+            for (int i = 0; i < context.Length("DescribeDomainQpsData.QpsDataInterval.Length"); i++)
+            {
+                DescribeDomainQpsDataResponse.DescribeDomainQpsData_DataModule dataModule = new DescribeDomainQpsDataResponse.DescribeDomainQpsData_DataModule();
+                dataModule.TimeStamp = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].TimeStamp");
+                dataModule._Value = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].Value");
+                dataModule.DomesticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].DomesticValue");
+                dataModule.OverseasValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].OverseasValue");
+                dataModule.AccValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].AccValue");
+                dataModule.AccDomesticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].AccDomesticValue");
+                dataModule.AccOverseasValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].AccOverseasValue");
+                dataModule.DynamicValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].DynamicValue");
+                dataModule.DynamicDomesticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].DynamicDomesticValue");
+                dataModule.DynamicOverseasValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].DynamicOverseasValue");
+                dataModule.StaticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].StaticValue");
+                dataModule.StaticDomesticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].StaticDomesticValue");
+                dataModule.StaticOverseasValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval[" + i + "].StaticOverseasValue");
 
-				describeDomainQpsDataResponse_qpsDataInterval.Add(dataModule);
-			}
-			describeDomainQpsDataResponse.QpsDataInterval = describeDomainQpsDataResponse_qpsDataInterval;
-        
-			return describeDomainQpsDataResponse;
+                describeDomainQpsDataResponse_qpsDataInterval.Add(dataModule);
+            }
+            describeDomainQpsDataResponse.QpsDataInterval = describeDomainQpsDataResponse_qpsDataInterval;
+
+            return describeDomainQpsDataResponse;
         }
     }
 }

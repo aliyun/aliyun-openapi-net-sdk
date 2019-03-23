@@ -32,23 +32,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public UnbindMFADeviceRequest()
             : base("Ram", "2015-05-01", "UnbindMFADevice", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string userName;
+        private string userName;
 
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
-			}
-		}
+        public string UserName
+        {
+            get
+            {
+                return userName;
+            }
+            set
+            {
+                userName = value;
+                DictionaryUtil.Add(QueryParameters, "UserName", value);
+            }
+        }
 
         public override UnbindMFADeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

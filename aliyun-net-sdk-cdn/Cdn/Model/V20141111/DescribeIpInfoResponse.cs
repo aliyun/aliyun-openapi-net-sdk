@@ -22,91 +22,91 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeIpInfoResponse : AcsResponse
-	{
+    public class DescribeIpInfoResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string cdnIp;
+        private string cdnIp;
 
-		private string iSP;
+        private string iSP;
 
-		private string ispEname;
+        private string ispEname;
 
-		private string region;
+        private string region;
 
-		private string regionEname;
+        private string regionEname;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string CdnIp
-		{
-			get
-			{
-				return cdnIp;
-			}
-			set	
-			{
-				cdnIp = value;
-			}
-		}
+        public string CdnIp
+        {
+            get
+            {
+                return cdnIp;
+            }
+            set
+            {
+                cdnIp = value;
+            }
+        }
 
-		public string ISP
-		{
-			get
-			{
-				return iSP;
-			}
-			set	
-			{
-				iSP = value;
-			}
-		}
+        public string ISP
+        {
+            get
+            {
+                return iSP;
+            }
+            set
+            {
+                iSP = value;
+            }
+        }
 
-		public string IspEname
-		{
-			get
-			{
-				return ispEname;
-			}
-			set	
-			{
-				ispEname = value;
-			}
-		}
+        public string IspEname
+        {
+            get
+            {
+                return ispEname;
+            }
+            set
+            {
+                ispEname = value;
+            }
+        }
 
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-			}
-		}
+        public string Region
+        {
+            get
+            {
+                return region;
+            }
+            set
+            {
+                region = value;
+            }
+        }
 
-		public string RegionEname
-		{
-			get
-			{
-				return regionEname;
-			}
-			set	
-			{
-				regionEname = value;
-			}
-		}
-	}
+        public string RegionEname
+        {
+            get
+            {
+                return regionEname;
+            }
+            set
+            {
+                regionEname = value;
+            }
+        }
+    }
 }

@@ -21,225 +21,225 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeInvocationsResponse : AcsResponse
-	{
+    public class DescribeInvocationsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private long? totalCount;
+        private long? totalCount;
 
-		private long? pageNumber;
+        private long? pageNumber;
 
-		private long? pageSize;
+        private long? pageSize;
 
-		private List<DescribeInvocations_Invocation> invocations;
+        private List<DescribeInvocations_Invocation> invocations;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public long? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public long? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public long? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeInvocations_Invocation> Invocations
-		{
-			get
-			{
-				return invocations;
-			}
-			set	
-			{
-				invocations = value;
-			}
-		}
+        public List<DescribeInvocations_Invocation> Invocations
+        {
+            get
+            {
+                return invocations;
+            }
+            set
+            {
+                invocations = value;
+            }
+        }
 
-		public class DescribeInvocations_Invocation
-		{
+        public class DescribeInvocations_Invocation
+        {
 
-			private string invokeId;
+            private string invokeId;
 
-			private string commandId;
+            private string commandId;
 
-			private string commandType;
+            private string commandType;
 
-			private string commandName;
+            private string commandName;
 
-			private string frequency;
+            private string frequency;
 
-			private bool? timed;
+            private bool? timed;
 
-			private string invokeStatus;
+            private string invokeStatus;
 
-			private List<DescribeInvocations_InvokeInstance> invokeInstances;
+            private List<DescribeInvocations_InvokeInstance> invokeInstances;
 
-			public string InvokeId
-			{
-				get
-				{
-					return invokeId;
-				}
-				set	
-				{
-					invokeId = value;
-				}
-			}
+            public string InvokeId
+            {
+                get
+                {
+                    return invokeId;
+                }
+                set
+                {
+                    invokeId = value;
+                }
+            }
 
-			public string CommandId
-			{
-				get
-				{
-					return commandId;
-				}
-				set	
-				{
-					commandId = value;
-				}
-			}
+            public string CommandId
+            {
+                get
+                {
+                    return commandId;
+                }
+                set
+                {
+                    commandId = value;
+                }
+            }
 
-			public string CommandType
-			{
-				get
-				{
-					return commandType;
-				}
-				set	
-				{
-					commandType = value;
-				}
-			}
+            public string CommandType
+            {
+                get
+                {
+                    return commandType;
+                }
+                set
+                {
+                    commandType = value;
+                }
+            }
 
-			public string CommandName
-			{
-				get
-				{
-					return commandName;
-				}
-				set	
-				{
-					commandName = value;
-				}
-			}
+            public string CommandName
+            {
+                get
+                {
+                    return commandName;
+                }
+                set
+                {
+                    commandName = value;
+                }
+            }
 
-			public string Frequency
-			{
-				get
-				{
-					return frequency;
-				}
-				set	
-				{
-					frequency = value;
-				}
-			}
+            public string Frequency
+            {
+                get
+                {
+                    return frequency;
+                }
+                set
+                {
+                    frequency = value;
+                }
+            }
 
-			public bool? Timed
-			{
-				get
-				{
-					return timed;
-				}
-				set	
-				{
-					timed = value;
-				}
-			}
+            public bool? Timed
+            {
+                get
+                {
+                    return timed;
+                }
+                set
+                {
+                    timed = value;
+                }
+            }
 
-			public string InvokeStatus
-			{
-				get
-				{
-					return invokeStatus;
-				}
-				set	
-				{
-					invokeStatus = value;
-				}
-			}
+            public string InvokeStatus
+            {
+                get
+                {
+                    return invokeStatus;
+                }
+                set
+                {
+                    invokeStatus = value;
+                }
+            }
 
-			public List<DescribeInvocations_InvokeInstance> InvokeInstances
-			{
-				get
-				{
-					return invokeInstances;
-				}
-				set	
-				{
-					invokeInstances = value;
-				}
-			}
+            public List<DescribeInvocations_InvokeInstance> InvokeInstances
+            {
+                get
+                {
+                    return invokeInstances;
+                }
+                set
+                {
+                    invokeInstances = value;
+                }
+            }
 
-			public class DescribeInvocations_InvokeInstance
-			{
+            public class DescribeInvocations_InvokeInstance
+            {
 
-				private string instanceId;
+                private string instanceId;
 
-				private string instanceInvokeStatus;
+                private string instanceInvokeStatus;
 
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
+                public string InstanceId
+                {
+                    get
+                    {
+                        return instanceId;
+                    }
+                    set
+                    {
+                        instanceId = value;
+                    }
+                }
 
-				public string InstanceInvokeStatus
-				{
-					get
-					{
-						return instanceInvokeStatus;
-					}
-					set	
-					{
-						instanceInvokeStatus = value;
-					}
-				}
-			}
-		}
-	}
+                public string InstanceInvokeStatus
+                {
+                    get
+                    {
+                        return instanceInvokeStatus;
+                    }
+                    set
+                    {
+                        instanceInvokeStatus = value;
+                    }
+                }
+            }
+        }
+    }
 }

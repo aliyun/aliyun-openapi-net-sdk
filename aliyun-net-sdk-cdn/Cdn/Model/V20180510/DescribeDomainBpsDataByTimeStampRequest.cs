@@ -34,110 +34,110 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string ispNames;
+        private string ispNames;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string locationNames;
+        private string locationNames;
 
-		private string domainName;
+        private string domainName;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string timePoint;
+        private string timePoint;
 
-		public string IspNames
-		{
-			get
-			{
-				return ispNames;
-			}
-			set	
-			{
-				ispNames = value;
-				DictionaryUtil.Add(QueryParameters, "IspNames", value);
-			}
-		}
+        public string IspNames
+        {
+            get
+            {
+                return ispNames;
+            }
+            set
+            {
+                ispNames = value;
+                DictionaryUtil.Add(QueryParameters, "IspNames", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string LocationNames
-		{
-			get
-			{
-				return locationNames;
-			}
-			set	
-			{
-				locationNames = value;
-				DictionaryUtil.Add(QueryParameters, "LocationNames", value);
-			}
-		}
+        public string LocationNames
+        {
+            get
+            {
+                return locationNames;
+            }
+            set
+            {
+                locationNames = value;
+                DictionaryUtil.Add(QueryParameters, "LocationNames", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string TimePoint
-		{
-			get
-			{
-				return timePoint;
-			}
-			set	
-			{
-				timePoint = value;
-				DictionaryUtil.Add(QueryParameters, "TimePoint", value);
-			}
-		}
+        public string TimePoint
+        {
+            get
+            {
+                return timePoint;
+            }
+            set
+            {
+                timePoint = value;
+                DictionaryUtil.Add(QueryParameters, "TimePoint", value);
+            }
+        }
 
         public override DescribeDomainBpsDataByTimeStampResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

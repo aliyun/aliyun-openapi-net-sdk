@@ -22,123 +22,123 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class ListFCTriggerResponse : AcsResponse
-	{
+    public class ListFCTriggerResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<ListFCTrigger_FCTrigger> fCTriggers;
+        private List<ListFCTrigger_FCTrigger> fCTriggers;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<ListFCTrigger_FCTrigger> FCTriggers
-		{
-			get
-			{
-				return fCTriggers;
-			}
-			set	
-			{
-				fCTriggers = value;
-			}
-		}
+        public List<ListFCTrigger_FCTrigger> FCTriggers
+        {
+            get
+            {
+                return fCTriggers;
+            }
+            set
+            {
+                fCTriggers = value;
+            }
+        }
 
-		public class ListFCTrigger_FCTrigger
-		{
+        public class ListFCTrigger_FCTrigger
+        {
 
-			private string eventMetaName;
+            private string eventMetaName;
 
-			private string eventMetaVersion;
+            private string eventMetaVersion;
 
-			private string triggerARN;
+            private string triggerARN;
 
-			private string roleARN;
+            private string roleARN;
 
-			private string sourceArn;
+            private string sourceArn;
 
-			private string notes;
+            private string notes;
 
-			public string EventMetaName
-			{
-				get
-				{
-					return eventMetaName;
-				}
-				set	
-				{
-					eventMetaName = value;
-				}
-			}
+            public string EventMetaName
+            {
+                get
+                {
+                    return eventMetaName;
+                }
+                set
+                {
+                    eventMetaName = value;
+                }
+            }
 
-			public string EventMetaVersion
-			{
-				get
-				{
-					return eventMetaVersion;
-				}
-				set	
-				{
-					eventMetaVersion = value;
-				}
-			}
+            public string EventMetaVersion
+            {
+                get
+                {
+                    return eventMetaVersion;
+                }
+                set
+                {
+                    eventMetaVersion = value;
+                }
+            }
 
-			public string TriggerARN
-			{
-				get
-				{
-					return triggerARN;
-				}
-				set	
-				{
-					triggerARN = value;
-				}
-			}
+            public string TriggerARN
+            {
+                get
+                {
+                    return triggerARN;
+                }
+                set
+                {
+                    triggerARN = value;
+                }
+            }
 
-			public string RoleARN
-			{
-				get
-				{
-					return roleARN;
-				}
-				set	
-				{
-					roleARN = value;
-				}
-			}
+            public string RoleARN
+            {
+                get
+                {
+                    return roleARN;
+                }
+                set
+                {
+                    roleARN = value;
+                }
+            }
 
-			public string SourceArn
-			{
-				get
-				{
-					return sourceArn;
-				}
-				set	
-				{
-					sourceArn = value;
-				}
-			}
+            public string SourceArn
+            {
+                get
+                {
+                    return sourceArn;
+                }
+                set
+                {
+                    sourceArn = value;
+                }
+            }
 
-			public string Notes
-			{
-				get
-				{
-					return notes;
-				}
-				set	
-				{
-					notes = value;
-				}
-			}
-		}
-	}
+            public string Notes
+            {
+                get
+                {
+                    return notes;
+                }
+                set
+                {
+                    notes = value;
+                }
+            }
+        }
+    }
 }

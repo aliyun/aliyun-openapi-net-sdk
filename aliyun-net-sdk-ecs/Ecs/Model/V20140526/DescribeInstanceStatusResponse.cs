@@ -21,109 +21,109 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeInstanceStatusResponse : AcsResponse
-	{
+    public class DescribeInstanceStatusResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeInstanceStatus_InstanceStatus> instanceStatuses;
+        private List<DescribeInstanceStatus_InstanceStatus> instanceStatuses;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeInstanceStatus_InstanceStatus> InstanceStatuses
-		{
-			get
-			{
-				return instanceStatuses;
-			}
-			set	
-			{
-				instanceStatuses = value;
-			}
-		}
+        public List<DescribeInstanceStatus_InstanceStatus> InstanceStatuses
+        {
+            get
+            {
+                return instanceStatuses;
+            }
+            set
+            {
+                instanceStatuses = value;
+            }
+        }
 
-		public class DescribeInstanceStatus_InstanceStatus
-		{
+        public class DescribeInstanceStatus_InstanceStatus
+        {
 
-			private string instanceId;
+            private string instanceId;
 
-			private string status;
+            private string status;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-		}
-	}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
+        }
+    }
 }

@@ -27,15 +27,15 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static CreateVpnGatewayResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateVpnGatewayResponse createVpnGatewayResponse = new CreateVpnGatewayResponse();
+            CreateVpnGatewayResponse createVpnGatewayResponse = new CreateVpnGatewayResponse();
 
-			createVpnGatewayResponse.HttpResponse = context.HttpResponse;
-			createVpnGatewayResponse.RequestId = context.StringValue("CreateVpnGateway.RequestId");
-			createVpnGatewayResponse.VpnGatewayId = context.StringValue("CreateVpnGateway.VpnGatewayId");
-			createVpnGatewayResponse.Name = context.StringValue("CreateVpnGateway.Name");
-			createVpnGatewayResponse.OrderId = context.LongValue("CreateVpnGateway.OrderId");
-        
-			return createVpnGatewayResponse;
+            createVpnGatewayResponse.HttpResponse = context.HttpResponse;
+            createVpnGatewayResponse.RequestId = context.StringValue("CreateVpnGateway.RequestId");
+            createVpnGatewayResponse.VpnGatewayId = context.StringValue("CreateVpnGateway.VpnGatewayId");
+            createVpnGatewayResponse.Name = context.StringValue("CreateVpnGateway.Name");
+            createVpnGatewayResponse.OrderId = context.LongValue("CreateVpnGateway.OrderId");
+
+            return createVpnGatewayResponse;
         }
     }
 }

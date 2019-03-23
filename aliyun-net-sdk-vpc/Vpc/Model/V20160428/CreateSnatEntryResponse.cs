@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateSnatEntryResponse : AcsResponse
-	{
+    public class CreateSnatEntryResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string snatEntryId;
+        private string snatEntryId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string SnatEntryId
-		{
-			get
-			{
-				return snatEntryId;
-			}
-			set	
-			{
-				snatEntryId = value;
-			}
-		}
-	}
+        public string SnatEntryId
+        {
+            get
+            {
+                return snatEntryId;
+            }
+            set
+            {
+                snatEntryId = value;
+            }
+        }
+    }
 }

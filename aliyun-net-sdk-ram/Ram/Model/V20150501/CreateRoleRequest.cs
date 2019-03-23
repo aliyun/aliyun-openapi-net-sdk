@@ -32,53 +32,53 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public CreateRoleRequest()
             : base("Ram", "2015-05-01", "CreateRole", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string roleName;
+        private string roleName;
 
-		private string description;
+        private string description;
 
-		private string assumeRolePolicyDocument;
+        private string assumeRolePolicyDocument;
 
-		public string RoleName
-		{
-			get
-			{
-				return roleName;
-			}
-			set	
-			{
-				roleName = value;
-				DictionaryUtil.Add(QueryParameters, "RoleName", value);
-			}
-		}
+        public string RoleName
+        {
+            get
+            {
+                return roleName;
+            }
+            set
+            {
+                roleName = value;
+                DictionaryUtil.Add(QueryParameters, "RoleName", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string AssumeRolePolicyDocument
-		{
-			get
-			{
-				return assumeRolePolicyDocument;
-			}
-			set	
-			{
-				assumeRolePolicyDocument = value;
-				DictionaryUtil.Add(QueryParameters, "AssumeRolePolicyDocument", value);
-			}
-		}
+        public string AssumeRolePolicyDocument
+        {
+            get
+            {
+                return assumeRolePolicyDocument;
+            }
+            set
+            {
+                assumeRolePolicyDocument = value;
+                DictionaryUtil.Add(QueryParameters, "AssumeRolePolicyDocument", value);
+            }
+        }
 
         public override CreateRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

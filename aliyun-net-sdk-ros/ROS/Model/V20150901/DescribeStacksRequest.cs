@@ -31,84 +31,84 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public DescribeStacksRequest()
             : base("ROS", "2015-09-01", "DescribeStacks")
         {
-			UriPattern = "/stacks";
-			Method = MethodType.GET;
+            UriPattern = "/stacks";
+            Method = MethodType.GET;
         }
 
-		private string stackId;
+        private string stackId;
 
-		private string name;
+        private string name;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private string status;
+        private string status;
 
-		public string StackId
-		{
-			get
-			{
-				return stackId;
-			}
-			set	
-			{
-				stackId = value;
-				DictionaryUtil.Add(QueryParameters, "StackId", value);
-			}
-		}
+        public string StackId
+        {
+            get
+            {
+                return stackId;
+            }
+            set
+            {
+                stackId = value;
+                DictionaryUtil.Add(QueryParameters, "StackId", value);
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+                DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+                DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+            }
+        }
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
+        public string Status
+        {
+            get
+            {
+                return status;
+            }
+            set
+            {
+                status = value;
+                DictionaryUtil.Add(QueryParameters, "Status", value);
+            }
+        }
 
         public override DescribeStacksResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static SetRemoveQueryStringConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			SetRemoveQueryStringConfigResponse setRemoveQueryStringConfigResponse = new SetRemoveQueryStringConfigResponse();
+            SetRemoveQueryStringConfigResponse setRemoveQueryStringConfigResponse = new SetRemoveQueryStringConfigResponse();
 
-			setRemoveQueryStringConfigResponse.HttpResponse = context.HttpResponse;
-			setRemoveQueryStringConfigResponse.RequestId = context.StringValue("SetRemoveQueryStringConfig.RequestId");
-        
-			return setRemoveQueryStringConfigResponse;
+            setRemoveQueryStringConfigResponse.HttpResponse = context.HttpResponse;
+            setRemoveQueryStringConfigResponse.RequestId = context.StringValue("SetRemoveQueryStringConfig.RequestId");
+
+            return setRemoveQueryStringConfigResponse;
         }
     }
 }

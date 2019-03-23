@@ -27,22 +27,22 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static DialogueResponse Unmarshall(UnmarshallerContext context)
         {
-			DialogueResponse dialogueResponse = new DialogueResponse();
+            DialogueResponse dialogueResponse = new DialogueResponse();
 
-			dialogueResponse.HttpResponse = context.HttpResponse;
-			dialogueResponse.RequestId = context.StringValue("Dialogue.RequestId");
-			dialogueResponse.Success = context.BooleanValue("Dialogue.Success");
-			dialogueResponse.Code = context.StringValue("Dialogue.Code");
-			dialogueResponse.Message = context.StringValue("Dialogue.Message");
-			dialogueResponse.HttpStatusCode = context.IntegerValue("Dialogue.HttpStatusCode");
+            dialogueResponse.HttpResponse = context.HttpResponse;
+            dialogueResponse.RequestId = context.StringValue("Dialogue.RequestId");
+            dialogueResponse.Success = context.BooleanValue("Dialogue.Success");
+            dialogueResponse.Code = context.StringValue("Dialogue.Code");
+            dialogueResponse.Message = context.StringValue("Dialogue.Message");
+            dialogueResponse.HttpStatusCode = context.IntegerValue("Dialogue.HttpStatusCode");
 
-			DialogueResponse.Dialogue_Feedback feedback = new DialogueResponse.Dialogue_Feedback();
-			feedback.Content = context.StringValue("Dialogue.Feedback.Content");
-			feedback.Action = context.StringValue("Dialogue.Feedback.Action");
-			feedback.ActionParams = context.StringValue("Dialogue.Feedback.ActionParams");
-			dialogueResponse.Feedback = feedback;
-        
-			return dialogueResponse;
+            DialogueResponse.Dialogue_Feedback feedback = new DialogueResponse.Dialogue_Feedback();
+            feedback.Content = context.StringValue("Dialogue.Feedback.Content");
+            feedback.Action = context.StringValue("Dialogue.Feedback.Action");
+            feedback.ActionParams = context.StringValue("Dialogue.Feedback.ActionParams");
+            dialogueResponse.Feedback = feedback;
+
+            return dialogueResponse;
         }
     }
 }

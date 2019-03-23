@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static ModifyResourceGroupResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyResourceGroupResponse modifyResourceGroupResponse = new ModifyResourceGroupResponse();
+            ModifyResourceGroupResponse modifyResourceGroupResponse = new ModifyResourceGroupResponse();
 
-			modifyResourceGroupResponse.HttpResponse = context.HttpResponse;
-			modifyResourceGroupResponse.RequestId = context.StringValue("ModifyResourceGroup.RequestId");
-        
-			return modifyResourceGroupResponse;
+            modifyResourceGroupResponse.HttpResponse = context.HttpResponse;
+            modifyResourceGroupResponse.RequestId = context.StringValue("ModifyResourceGroup.RequestId");
+
+            return modifyResourceGroupResponse;
         }
     }
 }

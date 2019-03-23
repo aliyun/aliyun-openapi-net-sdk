@@ -33,85 +33,85 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string variables;
+        private string variables;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string name;
+        private string name;
 
-		private string description;
+        private string description;
 
-		private string templateId;
+        private string templateId;
 
-		public string Variables
-		{
-			get
-			{
-				return variables;
-			}
-			set	
-			{
-				variables = value;
-				DictionaryUtil.Add(QueryParameters, "Variables", value);
-			}
-		}
+        public string Variables
+        {
+            get
+            {
+                return variables;
+            }
+            set
+            {
+                variables = value;
+                DictionaryUtil.Add(QueryParameters, "Variables", value);
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string TemplateId
-		{
-			get
-			{
-				return templateId;
-			}
-			set	
-			{
-				templateId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
-			}
-		}
+        public string TemplateId
+        {
+            get
+            {
+                return templateId;
+            }
+            set
+            {
+                templateId = value;
+                DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override CreateScenarioFromTemplateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

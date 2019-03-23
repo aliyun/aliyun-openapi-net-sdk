@@ -21,137 +21,137 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DetachKeyPairResponse : AcsResponse
-	{
+    public class DetachKeyPairResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string totalCount;
+        private string totalCount;
 
-		private string failCount;
+        private string failCount;
 
-		private string keyPairName;
+        private string keyPairName;
 
-		private List<DetachKeyPair_Result> results;
+        private List<DetachKeyPair_Result> results;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public string TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public string FailCount
-		{
-			get
-			{
-				return failCount;
-			}
-			set	
-			{
-				failCount = value;
-			}
-		}
+        public string FailCount
+        {
+            get
+            {
+                return failCount;
+            }
+            set
+            {
+                failCount = value;
+            }
+        }
 
-		public string KeyPairName
-		{
-			get
-			{
-				return keyPairName;
-			}
-			set	
-			{
-				keyPairName = value;
-			}
-		}
+        public string KeyPairName
+        {
+            get
+            {
+                return keyPairName;
+            }
+            set
+            {
+                keyPairName = value;
+            }
+        }
 
-		public List<DetachKeyPair_Result> Results
-		{
-			get
-			{
-				return results;
-			}
-			set	
-			{
-				results = value;
-			}
-		}
+        public List<DetachKeyPair_Result> Results
+        {
+            get
+            {
+                return results;
+            }
+            set
+            {
+                results = value;
+            }
+        }
 
-		public class DetachKeyPair_Result
-		{
+        public class DetachKeyPair_Result
+        {
 
-			private string instanceId;
+            private string instanceId;
 
-			private string success;
+            private string success;
 
-			private string code;
+            private string code;
 
-			private string message;
+            private string message;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public string Success
-			{
-				get
-				{
-					return success;
-				}
-				set	
-				{
-					success = value;
-				}
-			}
+            public string Success
+            {
+                get
+                {
+                    return success;
+                }
+                set
+                {
+                    success = value;
+                }
+            }
 
-			public string Code
-			{
-				get
-				{
-					return code;
-				}
-				set	
-				{
-					code = value;
-				}
-			}
+            public string Code
+            {
+                get
+                {
+                    return code;
+                }
+                set
+                {
+                    code = value;
+                }
+            }
 
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
-				}
-			}
-		}
-	}
+            public string Message
+            {
+                get
+                {
+                    return message;
+                }
+                set
+                {
+                    message = value;
+                }
+            }
+        }
+    }
 }

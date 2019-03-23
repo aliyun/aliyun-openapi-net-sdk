@@ -22,109 +22,109 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class ListPoliciesForUserResponse : AcsResponse
-	{
+    public class ListPoliciesForUserResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<ListPoliciesForUser_Policy> policies;
+        private List<ListPoliciesForUser_Policy> policies;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<ListPoliciesForUser_Policy> Policies
-		{
-			get
-			{
-				return policies;
-			}
-			set	
-			{
-				policies = value;
-			}
-		}
+        public List<ListPoliciesForUser_Policy> Policies
+        {
+            get
+            {
+                return policies;
+            }
+            set
+            {
+                policies = value;
+            }
+        }
 
-		public class ListPoliciesForUser_Policy
-		{
+        public class ListPoliciesForUser_Policy
+        {
 
-			private string policyName;
+            private string policyName;
 
-			private string policyType;
+            private string policyType;
 
-			private string description;
+            private string description;
 
-			private string defaultVersion;
+            private string defaultVersion;
 
-			private string attachDate;
+            private string attachDate;
 
-			public string PolicyName
-			{
-				get
-				{
-					return policyName;
-				}
-				set	
-				{
-					policyName = value;
-				}
-			}
+            public string PolicyName
+            {
+                get
+                {
+                    return policyName;
+                }
+                set
+                {
+                    policyName = value;
+                }
+            }
 
-			public string PolicyType
-			{
-				get
-				{
-					return policyType;
-				}
-				set	
-				{
-					policyType = value;
-				}
-			}
+            public string PolicyType
+            {
+                get
+                {
+                    return policyType;
+                }
+                set
+                {
+                    policyType = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string DefaultVersion
-			{
-				get
-				{
-					return defaultVersion;
-				}
-				set	
-				{
-					defaultVersion = value;
-				}
-			}
+            public string DefaultVersion
+            {
+                get
+                {
+                    return defaultVersion;
+                }
+                set
+                {
+                    defaultVersion = value;
+                }
+            }
 
-			public string AttachDate
-			{
-				get
-				{
-					return attachDate;
-				}
-				set	
-				{
-					attachDate = value;
-				}
-			}
-		}
-	}
+            public string AttachDate
+            {
+                get
+                {
+                    return attachDate;
+                }
+                set
+                {
+                    attachDate = value;
+                }
+            }
+        }
+    }
 }

@@ -21,67 +21,67 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeAccessControlListsResponse : AcsResponse
-	{
+    public class DescribeAccessControlListsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeAccessControlLists_Acl> acls;
+        private List<DescribeAccessControlLists_Acl> acls;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeAccessControlLists_Acl> Acls
-		{
-			get
-			{
-				return acls;
-			}
-			set	
-			{
-				acls = value;
-			}
-		}
+        public List<DescribeAccessControlLists_Acl> Acls
+        {
+            get
+            {
+                return acls;
+            }
+            set
+            {
+                acls = value;
+            }
+        }
 
-		public class DescribeAccessControlLists_Acl
-		{
+        public class DescribeAccessControlLists_Acl
+        {
 
-			private string aclId;
+            private string aclId;
 
-			private string aclName;
+            private string aclName;
 
-			public string AclId
-			{
-				get
-				{
-					return aclId;
-				}
-				set	
-				{
-					aclId = value;
-				}
-			}
+            public string AclId
+            {
+                get
+                {
+                    return aclId;
+                }
+                set
+                {
+                    aclId = value;
+                }
+            }
 
-			public string AclName
-			{
-				get
-				{
-					return aclName;
-				}
-				set	
-				{
-					aclName = value;
-				}
-			}
-		}
-	}
+            public string AclName
+            {
+                get
+                {
+                    return aclName;
+                }
+                set
+                {
+                    aclName = value;
+                }
+            }
+        }
+    }
 }

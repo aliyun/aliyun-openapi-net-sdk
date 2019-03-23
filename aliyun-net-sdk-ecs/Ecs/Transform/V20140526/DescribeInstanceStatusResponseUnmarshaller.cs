@@ -27,25 +27,26 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeInstanceStatusResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeInstanceStatusResponse describeInstanceStatusResponse = new DescribeInstanceStatusResponse();
+            DescribeInstanceStatusResponse describeInstanceStatusResponse = new DescribeInstanceStatusResponse();
 
-			describeInstanceStatusResponse.HttpResponse = context.HttpResponse;
-			describeInstanceStatusResponse.RequestId = context.StringValue("DescribeInstanceStatus.RequestId");
-			describeInstanceStatusResponse.TotalCount = context.IntegerValue("DescribeInstanceStatus.TotalCount");
-			describeInstanceStatusResponse.PageNumber = context.IntegerValue("DescribeInstanceStatus.PageNumber");
-			describeInstanceStatusResponse.PageSize = context.IntegerValue("DescribeInstanceStatus.PageSize");
+            describeInstanceStatusResponse.HttpResponse = context.HttpResponse;
+            describeInstanceStatusResponse.RequestId = context.StringValue("DescribeInstanceStatus.RequestId");
+            describeInstanceStatusResponse.TotalCount = context.IntegerValue("DescribeInstanceStatus.TotalCount");
+            describeInstanceStatusResponse.PageNumber = context.IntegerValue("DescribeInstanceStatus.PageNumber");
+            describeInstanceStatusResponse.PageSize = context.IntegerValue("DescribeInstanceStatus.PageSize");
 
-			List<DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus> describeInstanceStatusResponse_instanceStatuses = new List<DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus>();
-			for (int i = 0; i < context.Length("DescribeInstanceStatus.InstanceStatuses.Length"); i++) {
-				DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus instanceStatus = new DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus();
-				instanceStatus.InstanceId = context.StringValue("DescribeInstanceStatus.InstanceStatuses["+ i +"].InstanceId");
-				instanceStatus.Status = context.StringValue("DescribeInstanceStatus.InstanceStatuses["+ i +"].Status");
+            List<DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus> describeInstanceStatusResponse_instanceStatuses = new List<DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus>();
+            for (int i = 0; i < context.Length("DescribeInstanceStatus.InstanceStatuses.Length"); i++)
+            {
+                DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus instanceStatus = new DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus();
+                instanceStatus.InstanceId = context.StringValue("DescribeInstanceStatus.InstanceStatuses[" + i + "].InstanceId");
+                instanceStatus.Status = context.StringValue("DescribeInstanceStatus.InstanceStatuses[" + i + "].Status");
 
-				describeInstanceStatusResponse_instanceStatuses.Add(instanceStatus);
-			}
-			describeInstanceStatusResponse.InstanceStatuses = describeInstanceStatusResponse_instanceStatuses;
-        
-			return describeInstanceStatusResponse;
+                describeInstanceStatusResponse_instanceStatuses.Add(instanceStatus);
+            }
+            describeInstanceStatusResponse.InstanceStatuses = describeInstanceStatusResponse_instanceStatuses;
+
+            return describeInstanceStatusResponse;
         }
     }
 }

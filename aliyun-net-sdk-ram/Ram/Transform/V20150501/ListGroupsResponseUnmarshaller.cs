@@ -28,26 +28,27 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static ListGroupsResponse Unmarshall(UnmarshallerContext context)
         {
-			ListGroupsResponse listGroupsResponse = new ListGroupsResponse();
+            ListGroupsResponse listGroupsResponse = new ListGroupsResponse();
 
-			listGroupsResponse.HttpResponse = context.HttpResponse;
-			listGroupsResponse.RequestId = context.StringValue("ListGroups.RequestId");
-			listGroupsResponse.IsTruncated = context.BooleanValue("ListGroups.IsTruncated");
-			listGroupsResponse.Marker = context.StringValue("ListGroups.Marker");
+            listGroupsResponse.HttpResponse = context.HttpResponse;
+            listGroupsResponse.RequestId = context.StringValue("ListGroups.RequestId");
+            listGroupsResponse.IsTruncated = context.BooleanValue("ListGroups.IsTruncated");
+            listGroupsResponse.Marker = context.StringValue("ListGroups.Marker");
 
-			List<ListGroupsResponse.ListGroups_Group> listGroupsResponse_groups = new List<ListGroupsResponse.ListGroups_Group>();
-			for (int i = 0; i < context.Length("ListGroups.Groups.Length"); i++) {
-				ListGroupsResponse.ListGroups_Group group = new ListGroupsResponse.ListGroups_Group();
-				group.GroupName = context.StringValue("ListGroups.Groups["+ i +"].GroupName");
-				group.Comments = context.StringValue("ListGroups.Groups["+ i +"].Comments");
-				group.CreateDate = context.StringValue("ListGroups.Groups["+ i +"].CreateDate");
-				group.UpdateDate = context.StringValue("ListGroups.Groups["+ i +"].UpdateDate");
+            List<ListGroupsResponse.ListGroups_Group> listGroupsResponse_groups = new List<ListGroupsResponse.ListGroups_Group>();
+            for (int i = 0; i < context.Length("ListGroups.Groups.Length"); i++)
+            {
+                ListGroupsResponse.ListGroups_Group group = new ListGroupsResponse.ListGroups_Group();
+                group.GroupName = context.StringValue("ListGroups.Groups[" + i + "].GroupName");
+                group.Comments = context.StringValue("ListGroups.Groups[" + i + "].Comments");
+                group.CreateDate = context.StringValue("ListGroups.Groups[" + i + "].CreateDate");
+                group.UpdateDate = context.StringValue("ListGroups.Groups[" + i + "].UpdateDate");
 
-				listGroupsResponse_groups.Add(group);
-			}
-			listGroupsResponse.Groups = listGroupsResponse_groups;
-        
-			return listGroupsResponse;
+                listGroupsResponse_groups.Add(group);
+            }
+            listGroupsResponse.Groups = listGroupsResponse_groups;
+
+            return listGroupsResponse;
         }
     }
 }

@@ -21,77 +21,77 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateDBInstanceReplicaResponse : AcsResponse
-	{
+    public class CreateDBInstanceReplicaResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private long? orderId;
+        private long? orderId;
 
-		private string replicaId;
+        private string replicaId;
 
-		private string workflowId;
+        private string workflowId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+            }
+        }
 
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
+        public long? OrderId
+        {
+            get
+            {
+                return orderId;
+            }
+            set
+            {
+                orderId = value;
+            }
+        }
 
-		public string ReplicaId
-		{
-			get
-			{
-				return replicaId;
-			}
-			set	
-			{
-				replicaId = value;
-			}
-		}
+        public string ReplicaId
+        {
+            get
+            {
+                return replicaId;
+            }
+            set
+            {
+                replicaId = value;
+            }
+        }
 
-		public string WorkflowId
-		{
-			get
-			{
-				return workflowId;
-			}
-			set	
-			{
-				workflowId = value;
-			}
-		}
-	}
+        public string WorkflowId
+        {
+            get
+            {
+                return workflowId;
+            }
+            set
+            {
+                workflowId = value;
+            }
+        }
+    }
 }

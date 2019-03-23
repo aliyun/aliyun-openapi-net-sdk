@@ -27,44 +27,45 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static ListSurveysResponse Unmarshall(UnmarshallerContext context)
         {
-			ListSurveysResponse listSurveysResponse = new ListSurveysResponse();
+            ListSurveysResponse listSurveysResponse = new ListSurveysResponse();
 
-			listSurveysResponse.HttpResponse = context.HttpResponse;
-			listSurveysResponse.RequestId = context.StringValue("ListSurveys.RequestId");
-			listSurveysResponse.Success = context.BooleanValue("ListSurveys.Success");
-			listSurveysResponse.Code = context.StringValue("ListSurveys.Code");
-			listSurveysResponse.Message = context.StringValue("ListSurveys.Message");
-			listSurveysResponse.HttpStatusCode = context.IntegerValue("ListSurveys.HttpStatusCode");
+            listSurveysResponse.HttpResponse = context.HttpResponse;
+            listSurveysResponse.RequestId = context.StringValue("ListSurveys.RequestId");
+            listSurveysResponse.Success = context.BooleanValue("ListSurveys.Success");
+            listSurveysResponse.Code = context.StringValue("ListSurveys.Code");
+            listSurveysResponse.Message = context.StringValue("ListSurveys.Message");
+            listSurveysResponse.HttpStatusCode = context.IntegerValue("ListSurveys.HttpStatusCode");
 
-			List<ListSurveysResponse.ListSurveys_Survey> listSurveysResponse_surveys = new List<ListSurveysResponse.ListSurveys_Survey>();
-			for (int i = 0; i < context.Length("ListSurveys.Surveys.Length"); i++) {
-				ListSurveysResponse.ListSurveys_Survey survey = new ListSurveysResponse.ListSurveys_Survey();
-				survey.Id = context.StringValue("ListSurveys.Surveys["+ i +"].Id");
-				survey.ScenarioUuid = context.StringValue("ListSurveys.Surveys["+ i +"].ScenarioUuid");
-				survey.Name = context.StringValue("ListSurveys.Surveys["+ i +"].Name");
-				survey.Description = context.StringValue("ListSurveys.Surveys["+ i +"].Description");
-				survey.Role = context.StringValue("ListSurveys.Surveys["+ i +"].Role");
-				survey.Round = context.IntegerValue("ListSurveys.Surveys["+ i +"].Round");
-				survey.HotWords = context.StringValue("ListSurveys.Surveys["+ i +"].HotWords");
-				survey.SpeechOptimizationParam = context.StringValue("ListSurveys.Surveys["+ i +"].SpeechOptimizationParam");
-				survey.GlobalQuestions = context.StringValue("ListSurveys.Surveys["+ i +"].GlobalQuestions");
+            List<ListSurveysResponse.ListSurveys_Survey> listSurveysResponse_surveys = new List<ListSurveysResponse.ListSurveys_Survey>();
+            for (int i = 0; i < context.Length("ListSurveys.Surveys.Length"); i++)
+            {
+                ListSurveysResponse.ListSurveys_Survey survey = new ListSurveysResponse.ListSurveys_Survey();
+                survey.Id = context.StringValue("ListSurveys.Surveys[" + i + "].Id");
+                survey.ScenarioUuid = context.StringValue("ListSurveys.Surveys[" + i + "].ScenarioUuid");
+                survey.Name = context.StringValue("ListSurveys.Surveys[" + i + "].Name");
+                survey.Description = context.StringValue("ListSurveys.Surveys[" + i + "].Description");
+                survey.Role = context.StringValue("ListSurveys.Surveys[" + i + "].Role");
+                survey.Round = context.IntegerValue("ListSurveys.Surveys[" + i + "].Round");
+                survey.HotWords = context.StringValue("ListSurveys.Surveys[" + i + "].HotWords");
+                survey.SpeechOptimizationParam = context.StringValue("ListSurveys.Surveys[" + i + "].SpeechOptimizationParam");
+                survey.GlobalQuestions = context.StringValue("ListSurveys.Surveys[" + i + "].GlobalQuestions");
 
-				ListSurveysResponse.ListSurveys_Survey.ListSurveys_Flow flow = new ListSurveysResponse.ListSurveys_Survey.ListSurveys_Flow();
-				flow.FlowId = context.StringValue("ListSurveys.Surveys["+ i +"].Flow.FlowId");
-				flow.IsPublished = context.BooleanValue("ListSurveys.Surveys["+ i +"].Flow.IsPublished");
-				flow.FlowJson = context.StringValue("ListSurveys.Surveys["+ i +"].Flow.FlowJson");
-				survey.Flow = flow;
+                ListSurveysResponse.ListSurveys_Survey.ListSurveys_Flow flow = new ListSurveysResponse.ListSurveys_Survey.ListSurveys_Flow();
+                flow.FlowId = context.StringValue("ListSurveys.Surveys[" + i + "].Flow.FlowId");
+                flow.IsPublished = context.BooleanValue("ListSurveys.Surveys[" + i + "].Flow.IsPublished");
+                flow.FlowJson = context.StringValue("ListSurveys.Surveys[" + i + "].Flow.FlowJson");
+                survey.Flow = flow;
 
-				ListSurveysResponse.ListSurveys_Survey.ListSurveys_AsrCustomModel asrCustomModel = new ListSurveysResponse.ListSurveys_Survey.ListSurveys_AsrCustomModel();
-				asrCustomModel.Corpora = context.StringValue("ListSurveys.Surveys["+ i +"].AsrCustomModel.Corpora");
-				asrCustomModel.CustomModelStatus = context.IntegerValue("ListSurveys.Surveys["+ i +"].AsrCustomModel.CustomModelStatus");
-				survey.AsrCustomModel = asrCustomModel;
+                ListSurveysResponse.ListSurveys_Survey.ListSurveys_AsrCustomModel asrCustomModel = new ListSurveysResponse.ListSurveys_Survey.ListSurveys_AsrCustomModel();
+                asrCustomModel.Corpora = context.StringValue("ListSurveys.Surveys[" + i + "].AsrCustomModel.Corpora");
+                asrCustomModel.CustomModelStatus = context.IntegerValue("ListSurveys.Surveys[" + i + "].AsrCustomModel.CustomModelStatus");
+                survey.AsrCustomModel = asrCustomModel;
 
-				listSurveysResponse_surveys.Add(survey);
-			}
-			listSurveysResponse.Surveys = listSurveysResponse_surveys;
-        
-			return listSurveysResponse;
+                listSurveysResponse_surveys.Add(survey);
+            }
+            listSurveysResponse.Surveys = listSurveysResponse_surveys;
+
+            return listSurveysResponse;
         }
     }
 }

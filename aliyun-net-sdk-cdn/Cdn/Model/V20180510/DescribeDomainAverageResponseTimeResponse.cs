@@ -22,179 +22,179 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeDomainAverageResponseTimeResponse : AcsResponse
-	{
+    public class DescribeDomainAverageResponseTimeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private string locationNameEn;
+        private string locationNameEn;
 
-		private string ispNameEn;
+        private string ispNameEn;
 
-		private string locationName;
+        private string locationName;
 
-		private string ispName;
+        private string ispName;
 
-		private string dataInterval;
+        private string dataInterval;
 
-		private List<DescribeDomainAverageResponseTime_DataModule> avgRTPerInterval;
+        private List<DescribeDomainAverageResponseTime_DataModule> avgRTPerInterval;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public string LocationNameEn
-		{
-			get
-			{
-				return locationNameEn;
-			}
-			set	
-			{
-				locationNameEn = value;
-			}
-		}
+        public string LocationNameEn
+        {
+            get
+            {
+                return locationNameEn;
+            }
+            set
+            {
+                locationNameEn = value;
+            }
+        }
 
-		public string IspNameEn
-		{
-			get
-			{
-				return ispNameEn;
-			}
-			set	
-			{
-				ispNameEn = value;
-			}
-		}
+        public string IspNameEn
+        {
+            get
+            {
+                return ispNameEn;
+            }
+            set
+            {
+                ispNameEn = value;
+            }
+        }
 
-		public string LocationName
-		{
-			get
-			{
-				return locationName;
-			}
-			set	
-			{
-				locationName = value;
-			}
-		}
+        public string LocationName
+        {
+            get
+            {
+                return locationName;
+            }
+            set
+            {
+                locationName = value;
+            }
+        }
 
-		public string IspName
-		{
-			get
-			{
-				return ispName;
-			}
-			set	
-			{
-				ispName = value;
-			}
-		}
+        public string IspName
+        {
+            get
+            {
+                return ispName;
+            }
+            set
+            {
+                ispName = value;
+            }
+        }
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
+        public string DataInterval
+        {
+            get
+            {
+                return dataInterval;
+            }
+            set
+            {
+                dataInterval = value;
+            }
+        }
 
-		public List<DescribeDomainAverageResponseTime_DataModule> AvgRTPerInterval
-		{
-			get
-			{
-				return avgRTPerInterval;
-			}
-			set	
-			{
-				avgRTPerInterval = value;
-			}
-		}
+        public List<DescribeDomainAverageResponseTime_DataModule> AvgRTPerInterval
+        {
+            get
+            {
+                return avgRTPerInterval;
+            }
+            set
+            {
+                avgRTPerInterval = value;
+            }
+        }
 
-		public class DescribeDomainAverageResponseTime_DataModule
-		{
+        public class DescribeDomainAverageResponseTime_DataModule
+        {
 
-			private string timeStamp;
+            private string timeStamp;
 
-			private string _value;
+            private string _value;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
 
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
-			}
-		}
-	}
+            public string _Value
+            {
+                get
+                {
+                    return _value;
+                }
+                set
+                {
+                    _value = value;
+                }
+            }
+        }
+    }
 }

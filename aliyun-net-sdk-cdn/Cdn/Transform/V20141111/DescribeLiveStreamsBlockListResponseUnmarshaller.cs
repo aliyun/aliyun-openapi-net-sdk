@@ -28,19 +28,20 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeLiveStreamsBlockListResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLiveStreamsBlockListResponse describeLiveStreamsBlockListResponse = new DescribeLiveStreamsBlockListResponse();
+            DescribeLiveStreamsBlockListResponse describeLiveStreamsBlockListResponse = new DescribeLiveStreamsBlockListResponse();
 
-			describeLiveStreamsBlockListResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamsBlockListResponse.RequestId = context.StringValue("DescribeLiveStreamsBlockList.RequestId");
-			describeLiveStreamsBlockListResponse.DomainName = context.StringValue("DescribeLiveStreamsBlockList.DomainName");
+            describeLiveStreamsBlockListResponse.HttpResponse = context.HttpResponse;
+            describeLiveStreamsBlockListResponse.RequestId = context.StringValue("DescribeLiveStreamsBlockList.RequestId");
+            describeLiveStreamsBlockListResponse.DomainName = context.StringValue("DescribeLiveStreamsBlockList.DomainName");
 
-			List<string> describeLiveStreamsBlockListResponse_streamUrls = new List<string>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamsBlockList.StreamUrls.Length"); i++) {
-				describeLiveStreamsBlockListResponse_streamUrls.Add(context.StringValue("DescribeLiveStreamsBlockList.StreamUrls["+ i +"]"));
-			}
-			describeLiveStreamsBlockListResponse.StreamUrls = describeLiveStreamsBlockListResponse_streamUrls;
-        
-			return describeLiveStreamsBlockListResponse;
+            List<string> describeLiveStreamsBlockListResponse_streamUrls = new List<string>();
+            for (int i = 0; i < context.Length("DescribeLiveStreamsBlockList.StreamUrls.Length"); i++)
+            {
+                describeLiveStreamsBlockListResponse_streamUrls.Add(context.StringValue("DescribeLiveStreamsBlockList.StreamUrls[" + i + "]"));
+            }
+            describeLiveStreamsBlockListResponse.StreamUrls = describeLiveStreamsBlockListResponse_streamUrls;
+
+            return describeLiveStreamsBlockListResponse;
         }
     }
 }

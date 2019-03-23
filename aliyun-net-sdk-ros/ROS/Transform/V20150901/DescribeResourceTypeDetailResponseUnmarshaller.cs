@@ -27,11 +27,11 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
     {
         public static DescribeResourceTypeDetailResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeResourceTypeDetailResponse describeResourceTypeDetailResponse = new DescribeResourceTypeDetailResponse();
+            DescribeResourceTypeDetailResponse describeResourceTypeDetailResponse = new DescribeResourceTypeDetailResponse();
 
-			describeResourceTypeDetailResponse.HttpResponse = context.HttpResponse;
-        
-			return describeResourceTypeDetailResponse;
+            describeResourceTypeDetailResponse.HttpResponse = context.HttpResponse;
+
+            return describeResourceTypeDetailResponse;
         }
     }
 }

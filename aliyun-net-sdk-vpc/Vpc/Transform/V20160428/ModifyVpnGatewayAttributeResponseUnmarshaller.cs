@@ -27,24 +27,24 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static ModifyVpnGatewayAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyVpnGatewayAttributeResponse modifyVpnGatewayAttributeResponse = new ModifyVpnGatewayAttributeResponse();
+            ModifyVpnGatewayAttributeResponse modifyVpnGatewayAttributeResponse = new ModifyVpnGatewayAttributeResponse();
 
-			modifyVpnGatewayAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyVpnGatewayAttributeResponse.RequestId = context.StringValue("ModifyVpnGatewayAttribute.RequestId");
-			modifyVpnGatewayAttributeResponse.VpnGatewayId = context.StringValue("ModifyVpnGatewayAttribute.VpnGatewayId");
-			modifyVpnGatewayAttributeResponse.VpcId = context.StringValue("ModifyVpnGatewayAttribute.VpcId");
-			modifyVpnGatewayAttributeResponse.VSwitchId = context.StringValue("ModifyVpnGatewayAttribute.VSwitchId");
-			modifyVpnGatewayAttributeResponse.InternetIp = context.StringValue("ModifyVpnGatewayAttribute.InternetIp");
-			modifyVpnGatewayAttributeResponse.IntranetIp = context.StringValue("ModifyVpnGatewayAttribute.IntranetIp");
-			modifyVpnGatewayAttributeResponse.CreateTime = context.LongValue("ModifyVpnGatewayAttribute.CreateTime");
-			modifyVpnGatewayAttributeResponse.EndTime = context.LongValue("ModifyVpnGatewayAttribute.EndTime");
-			modifyVpnGatewayAttributeResponse.Spec = context.StringValue("ModifyVpnGatewayAttribute.Spec");
-			modifyVpnGatewayAttributeResponse.Name = context.StringValue("ModifyVpnGatewayAttribute.Name");
-			modifyVpnGatewayAttributeResponse.Description = context.StringValue("ModifyVpnGatewayAttribute.Description");
-			modifyVpnGatewayAttributeResponse.Status = context.StringValue("ModifyVpnGatewayAttribute.Status");
-			modifyVpnGatewayAttributeResponse.BusinessStatus = context.StringValue("ModifyVpnGatewayAttribute.BusinessStatus");
-        
-			return modifyVpnGatewayAttributeResponse;
+            modifyVpnGatewayAttributeResponse.HttpResponse = context.HttpResponse;
+            modifyVpnGatewayAttributeResponse.RequestId = context.StringValue("ModifyVpnGatewayAttribute.RequestId");
+            modifyVpnGatewayAttributeResponse.VpnGatewayId = context.StringValue("ModifyVpnGatewayAttribute.VpnGatewayId");
+            modifyVpnGatewayAttributeResponse.VpcId = context.StringValue("ModifyVpnGatewayAttribute.VpcId");
+            modifyVpnGatewayAttributeResponse.VSwitchId = context.StringValue("ModifyVpnGatewayAttribute.VSwitchId");
+            modifyVpnGatewayAttributeResponse.InternetIp = context.StringValue("ModifyVpnGatewayAttribute.InternetIp");
+            modifyVpnGatewayAttributeResponse.IntranetIp = context.StringValue("ModifyVpnGatewayAttribute.IntranetIp");
+            modifyVpnGatewayAttributeResponse.CreateTime = context.LongValue("ModifyVpnGatewayAttribute.CreateTime");
+            modifyVpnGatewayAttributeResponse.EndTime = context.LongValue("ModifyVpnGatewayAttribute.EndTime");
+            modifyVpnGatewayAttributeResponse.Spec = context.StringValue("ModifyVpnGatewayAttribute.Spec");
+            modifyVpnGatewayAttributeResponse.Name = context.StringValue("ModifyVpnGatewayAttribute.Name");
+            modifyVpnGatewayAttributeResponse.Description = context.StringValue("ModifyVpnGatewayAttribute.Description");
+            modifyVpnGatewayAttributeResponse.Status = context.StringValue("ModifyVpnGatewayAttribute.Status");
+            modifyVpnGatewayAttributeResponse.BusinessStatus = context.StringValue("ModifyVpnGatewayAttribute.BusinessStatus");
+
+            return modifyVpnGatewayAttributeResponse;
         }
     }
 }

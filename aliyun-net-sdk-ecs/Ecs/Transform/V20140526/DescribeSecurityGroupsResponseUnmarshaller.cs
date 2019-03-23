@@ -27,42 +27,44 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeSecurityGroupsResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeSecurityGroupsResponse describeSecurityGroupsResponse = new DescribeSecurityGroupsResponse();
+            DescribeSecurityGroupsResponse describeSecurityGroupsResponse = new DescribeSecurityGroupsResponse();
 
-			describeSecurityGroupsResponse.HttpResponse = context.HttpResponse;
-			describeSecurityGroupsResponse.RequestId = context.StringValue("DescribeSecurityGroups.RequestId");
-			describeSecurityGroupsResponse.RegionId = context.StringValue("DescribeSecurityGroups.RegionId");
-			describeSecurityGroupsResponse.TotalCount = context.IntegerValue("DescribeSecurityGroups.TotalCount");
-			describeSecurityGroupsResponse.PageNumber = context.IntegerValue("DescribeSecurityGroups.PageNumber");
-			describeSecurityGroupsResponse.PageSize = context.IntegerValue("DescribeSecurityGroups.PageSize");
+            describeSecurityGroupsResponse.HttpResponse = context.HttpResponse;
+            describeSecurityGroupsResponse.RequestId = context.StringValue("DescribeSecurityGroups.RequestId");
+            describeSecurityGroupsResponse.RegionId = context.StringValue("DescribeSecurityGroups.RegionId");
+            describeSecurityGroupsResponse.TotalCount = context.IntegerValue("DescribeSecurityGroups.TotalCount");
+            describeSecurityGroupsResponse.PageNumber = context.IntegerValue("DescribeSecurityGroups.PageNumber");
+            describeSecurityGroupsResponse.PageSize = context.IntegerValue("DescribeSecurityGroups.PageSize");
 
-			List<DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup> describeSecurityGroupsResponse_securityGroups = new List<DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup>();
-			for (int i = 0; i < context.Length("DescribeSecurityGroups.SecurityGroups.Length"); i++) {
-				DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup securityGroup = new DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup();
-				securityGroup.SecurityGroupId = context.StringValue("DescribeSecurityGroups.SecurityGroups["+ i +"].SecurityGroupId");
-				securityGroup.Description = context.StringValue("DescribeSecurityGroups.SecurityGroups["+ i +"].Description");
-				securityGroup.SecurityGroupName = context.StringValue("DescribeSecurityGroups.SecurityGroups["+ i +"].SecurityGroupName");
-				securityGroup.VpcId = context.StringValue("DescribeSecurityGroups.SecurityGroups["+ i +"].VpcId");
-				securityGroup.CreationTime = context.StringValue("DescribeSecurityGroups.SecurityGroups["+ i +"].CreationTime");
-				securityGroup.AvailableInstanceAmount = context.IntegerValue("DescribeSecurityGroups.SecurityGroups["+ i +"].AvailableInstanceAmount");
-				securityGroup.EcsCount = context.IntegerValue("DescribeSecurityGroups.SecurityGroups["+ i +"].EcsCount");
-				securityGroup.ResourceGroupId = context.StringValue("DescribeSecurityGroups.SecurityGroups["+ i +"].ResourceGroupId");
+            List<DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup> describeSecurityGroupsResponse_securityGroups = new List<DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup>();
+            for (int i = 0; i < context.Length("DescribeSecurityGroups.SecurityGroups.Length"); i++)
+            {
+                DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup securityGroup = new DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup();
+                securityGroup.SecurityGroupId = context.StringValue("DescribeSecurityGroups.SecurityGroups[" + i + "].SecurityGroupId");
+                securityGroup.Description = context.StringValue("DescribeSecurityGroups.SecurityGroups[" + i + "].Description");
+                securityGroup.SecurityGroupName = context.StringValue("DescribeSecurityGroups.SecurityGroups[" + i + "].SecurityGroupName");
+                securityGroup.VpcId = context.StringValue("DescribeSecurityGroups.SecurityGroups[" + i + "].VpcId");
+                securityGroup.CreationTime = context.StringValue("DescribeSecurityGroups.SecurityGroups[" + i + "].CreationTime");
+                securityGroup.AvailableInstanceAmount = context.IntegerValue("DescribeSecurityGroups.SecurityGroups[" + i + "].AvailableInstanceAmount");
+                securityGroup.EcsCount = context.IntegerValue("DescribeSecurityGroups.SecurityGroups[" + i + "].EcsCount");
+                securityGroup.ResourceGroupId = context.StringValue("DescribeSecurityGroups.SecurityGroups[" + i + "].ResourceGroupId");
 
-				List<DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup.DescribeSecurityGroups_Tag> securityGroup_tags = new List<DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup.DescribeSecurityGroups_Tag>();
-				for (int j = 0; j < context.Length("DescribeSecurityGroups.SecurityGroups["+ i +"].Tags.Length"); j++) {
-					DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup.DescribeSecurityGroups_Tag tag = new DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup.DescribeSecurityGroups_Tag();
-					tag.TagKey = context.StringValue("DescribeSecurityGroups.SecurityGroups["+ i +"].Tags["+ j +"].TagKey");
-					tag.TagValue = context.StringValue("DescribeSecurityGroups.SecurityGroups["+ i +"].Tags["+ j +"].TagValue");
+                List<DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup.DescribeSecurityGroups_Tag> securityGroup_tags = new List<DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup.DescribeSecurityGroups_Tag>();
+                for (int j = 0; j < context.Length("DescribeSecurityGroups.SecurityGroups[" + i + "].Tags.Length"); j++)
+                {
+                    DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup.DescribeSecurityGroups_Tag tag = new DescribeSecurityGroupsResponse.DescribeSecurityGroups_SecurityGroup.DescribeSecurityGroups_Tag();
+                    tag.TagKey = context.StringValue("DescribeSecurityGroups.SecurityGroups[" + i + "].Tags[" + j + "].TagKey");
+                    tag.TagValue = context.StringValue("DescribeSecurityGroups.SecurityGroups[" + i + "].Tags[" + j + "].TagValue");
 
-					securityGroup_tags.Add(tag);
-				}
-				securityGroup.Tags = securityGroup_tags;
+                    securityGroup_tags.Add(tag);
+                }
+                securityGroup.Tags = securityGroup_tags;
 
-				describeSecurityGroupsResponse_securityGroups.Add(securityGroup);
-			}
-			describeSecurityGroupsResponse.SecurityGroups = describeSecurityGroupsResponse_securityGroups;
-        
-			return describeSecurityGroupsResponse;
+                describeSecurityGroupsResponse_securityGroups.Add(securityGroup);
+            }
+            describeSecurityGroupsResponse.SecurityGroups = describeSecurityGroupsResponse_securityGroups;
+
+            return describeSecurityGroupsResponse;
         }
     }
 }

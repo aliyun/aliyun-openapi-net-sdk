@@ -22,127 +22,127 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeCdnDomainConfigsResponse : AcsResponse
-	{
+    public class DescribeCdnDomainConfigsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeCdnDomainConfigs_DomainConfig> domainConfigs;
+        private List<DescribeCdnDomainConfigs_DomainConfig> domainConfigs;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeCdnDomainConfigs_DomainConfig> DomainConfigs
-		{
-			get
-			{
-				return domainConfigs;
-			}
-			set	
-			{
-				domainConfigs = value;
-			}
-		}
+        public List<DescribeCdnDomainConfigs_DomainConfig> DomainConfigs
+        {
+            get
+            {
+                return domainConfigs;
+            }
+            set
+            {
+                domainConfigs = value;
+            }
+        }
 
-		public class DescribeCdnDomainConfigs_DomainConfig
-		{
+        public class DescribeCdnDomainConfigs_DomainConfig
+        {
 
-			private string functionName;
+            private string functionName;
 
-			private string configId;
+            private string configId;
 
-			private string status;
+            private string status;
 
-			private List<DescribeCdnDomainConfigs_FunctionArg> functionArgs;
+            private List<DescribeCdnDomainConfigs_FunctionArg> functionArgs;
 
-			public string FunctionName
-			{
-				get
-				{
-					return functionName;
-				}
-				set	
-				{
-					functionName = value;
-				}
-			}
+            public string FunctionName
+            {
+                get
+                {
+                    return functionName;
+                }
+                set
+                {
+                    functionName = value;
+                }
+            }
 
-			public string ConfigId
-			{
-				get
-				{
-					return configId;
-				}
-				set	
-				{
-					configId = value;
-				}
-			}
+            public string ConfigId
+            {
+                get
+                {
+                    return configId;
+                }
+                set
+                {
+                    configId = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public List<DescribeCdnDomainConfigs_FunctionArg> FunctionArgs
-			{
-				get
-				{
-					return functionArgs;
-				}
-				set	
-				{
-					functionArgs = value;
-				}
-			}
+            public List<DescribeCdnDomainConfigs_FunctionArg> FunctionArgs
+            {
+                get
+                {
+                    return functionArgs;
+                }
+                set
+                {
+                    functionArgs = value;
+                }
+            }
 
-			public class DescribeCdnDomainConfigs_FunctionArg
-			{
+            public class DescribeCdnDomainConfigs_FunctionArg
+            {
 
-				private string argName;
+                private string argName;
 
-				private string argValue;
+                private string argValue;
 
-				public string ArgName
-				{
-					get
-					{
-						return argName;
-					}
-					set	
-					{
-						argName = value;
-					}
-				}
+                public string ArgName
+                {
+                    get
+                    {
+                        return argName;
+                    }
+                    set
+                    {
+                        argName = value;
+                    }
+                }
 
-				public string ArgValue
-				{
-					get
-					{
-						return argValue;
-					}
-					set	
-					{
-						argValue = value;
-					}
-				}
-			}
-		}
-	}
+                public string ArgValue
+                {
+                    get
+                    {
+                        return argValue;
+                    }
+                    set
+                    {
+                        argValue = value;
+                    }
+                }
+            }
+        }
+    }
 }

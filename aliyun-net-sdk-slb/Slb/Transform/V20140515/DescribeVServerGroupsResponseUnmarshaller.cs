@@ -27,22 +27,23 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static DescribeVServerGroupsResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeVServerGroupsResponse describeVServerGroupsResponse = new DescribeVServerGroupsResponse();
+            DescribeVServerGroupsResponse describeVServerGroupsResponse = new DescribeVServerGroupsResponse();
 
-			describeVServerGroupsResponse.HttpResponse = context.HttpResponse;
-			describeVServerGroupsResponse.RequestId = context.StringValue("DescribeVServerGroups.RequestId");
+            describeVServerGroupsResponse.HttpResponse = context.HttpResponse;
+            describeVServerGroupsResponse.RequestId = context.StringValue("DescribeVServerGroups.RequestId");
 
-			List<DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup> describeVServerGroupsResponse_vServerGroups = new List<DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup>();
-			for (int i = 0; i < context.Length("DescribeVServerGroups.VServerGroups.Length"); i++) {
-				DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup vServerGroup = new DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup();
-				vServerGroup.VServerGroupId = context.StringValue("DescribeVServerGroups.VServerGroups["+ i +"].VServerGroupId");
-				vServerGroup.VServerGroupName = context.StringValue("DescribeVServerGroups.VServerGroups["+ i +"].VServerGroupName");
+            List<DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup> describeVServerGroupsResponse_vServerGroups = new List<DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup>();
+            for (int i = 0; i < context.Length("DescribeVServerGroups.VServerGroups.Length"); i++)
+            {
+                DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup vServerGroup = new DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup();
+                vServerGroup.VServerGroupId = context.StringValue("DescribeVServerGroups.VServerGroups[" + i + "].VServerGroupId");
+                vServerGroup.VServerGroupName = context.StringValue("DescribeVServerGroups.VServerGroups[" + i + "].VServerGroupName");
 
-				describeVServerGroupsResponse_vServerGroups.Add(vServerGroup);
-			}
-			describeVServerGroupsResponse.VServerGroups = describeVServerGroupsResponse_vServerGroups;
-        
-			return describeVServerGroupsResponse;
+                describeVServerGroupsResponse_vServerGroups.Add(vServerGroup);
+            }
+            describeVServerGroupsResponse.VServerGroups = describeVServerGroupsResponse_vServerGroups;
+
+            return describeVServerGroupsResponse;
         }
     }
 }

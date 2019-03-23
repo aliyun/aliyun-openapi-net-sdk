@@ -21,137 +21,137 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class EncryptResponse : AcsResponse
-	{
+    public class EncryptResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? success;
+        private bool? success;
 
-		private string code;
+        private string code;
 
-		private string message;
+        private string message;
 
-		private int? httpStatusCode;
+        private int? httpStatusCode;
 
-		private string publicKey;
+        private string publicKey;
 
-		private List<Encrypt_CypherContent> cypherContents;
+        private List<Encrypt_CypherContent> cypherContents;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+        public int? HttpStatusCode
+        {
+            get
+            {
+                return httpStatusCode;
+            }
+            set
+            {
+                httpStatusCode = value;
+            }
+        }
 
-		public string PublicKey
-		{
-			get
-			{
-				return publicKey;
-			}
-			set	
-			{
-				publicKey = value;
-			}
-		}
+        public string PublicKey
+        {
+            get
+            {
+                return publicKey;
+            }
+            set
+            {
+                publicKey = value;
+            }
+        }
 
-		public List<Encrypt_CypherContent> CypherContents
-		{
-			get
-			{
-				return cypherContents;
-			}
-			set	
-			{
-				cypherContents = value;
-			}
-		}
+        public List<Encrypt_CypherContent> CypherContents
+        {
+            get
+            {
+                return cypherContents;
+            }
+            set
+            {
+                cypherContents = value;
+            }
+        }
 
-		public class Encrypt_CypherContent
-		{
+        public class Encrypt_CypherContent
+        {
 
-			private string plainText;
+            private string plainText;
 
-			private string cypherText;
+            private string cypherText;
 
-			public string PlainText
-			{
-				get
-				{
-					return plainText;
-				}
-				set	
-				{
-					plainText = value;
-				}
-			}
+            public string PlainText
+            {
+                get
+                {
+                    return plainText;
+                }
+                set
+                {
+                    plainText = value;
+                }
+            }
 
-			public string CypherText
-			{
-				get
-				{
-					return cypherText;
-				}
-				set	
-				{
-					cypherText = value;
-				}
-			}
-		}
-	}
+            public string CypherText
+            {
+                get
+                {
+                    return cypherText;
+                }
+                set
+                {
+                    cypherText = value;
+                }
+            }
+        }
+    }
 }

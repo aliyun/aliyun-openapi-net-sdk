@@ -28,19 +28,19 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static GetLoginProfileResponse Unmarshall(UnmarshallerContext context)
         {
-			GetLoginProfileResponse getLoginProfileResponse = new GetLoginProfileResponse();
+            GetLoginProfileResponse getLoginProfileResponse = new GetLoginProfileResponse();
 
-			getLoginProfileResponse.HttpResponse = context.HttpResponse;
-			getLoginProfileResponse.RequestId = context.StringValue("GetLoginProfile.RequestId");
+            getLoginProfileResponse.HttpResponse = context.HttpResponse;
+            getLoginProfileResponse.RequestId = context.StringValue("GetLoginProfile.RequestId");
 
-			GetLoginProfileResponse.GetLoginProfile_LoginProfile loginProfile = new GetLoginProfileResponse.GetLoginProfile_LoginProfile();
-			loginProfile.UserName = context.StringValue("GetLoginProfile.LoginProfile.UserName");
-			loginProfile.PasswordResetRequired = context.BooleanValue("GetLoginProfile.LoginProfile.PasswordResetRequired");
-			loginProfile.MFABindRequired = context.BooleanValue("GetLoginProfile.LoginProfile.MFABindRequired");
-			loginProfile.CreateDate = context.StringValue("GetLoginProfile.LoginProfile.CreateDate");
-			getLoginProfileResponse.LoginProfile = loginProfile;
-        
-			return getLoginProfileResponse;
+            GetLoginProfileResponse.GetLoginProfile_LoginProfile loginProfile = new GetLoginProfileResponse.GetLoginProfile_LoginProfile();
+            loginProfile.UserName = context.StringValue("GetLoginProfile.LoginProfile.UserName");
+            loginProfile.PasswordResetRequired = context.BooleanValue("GetLoginProfile.LoginProfile.PasswordResetRequired");
+            loginProfile.MFABindRequired = context.BooleanValue("GetLoginProfile.LoginProfile.MFABindRequired");
+            loginProfile.CreateDate = context.StringValue("GetLoginProfile.LoginProfile.CreateDate");
+            getLoginProfileResponse.LoginProfile = loginProfile;
+
+            return getLoginProfileResponse;
         }
     }
 }

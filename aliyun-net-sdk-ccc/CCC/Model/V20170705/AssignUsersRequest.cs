@@ -33,111 +33,111 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private List<string> userRamIds;
+        private List<string> userRamIds;
 
-		private List<int?> skillLevels;
+        private List<int?> skillLevels;
 
-		private string instanceId;
+        private string instanceId;
 
-		private List<string> roleIds;
+        private List<string> roleIds;
 
-		private List<string> skillGroupIds;
+        private List<string> skillGroupIds;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public List<string> UserRamIds
-		{
-			get
-			{
-				return userRamIds;
-			}
+        public List<string> UserRamIds
+        {
+            get
+            {
+                return userRamIds;
+            }
 
-			set
-			{
-				userRamIds = value;
-				for (int i = 0; i < userRamIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"UserRamId." + (i + 1) , userRamIds[i]);
-				}
-			}
-		}
+            set
+            {
+                userRamIds = value;
+                for (int i = 0; i < userRamIds.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "UserRamId." + (i + 1), userRamIds[i]);
+                }
+            }
+        }
 
-		public List<int?> SkillLevels
-		{
-			get
-			{
-				return skillLevels;
-			}
+        public List<int?> SkillLevels
+        {
+            get
+            {
+                return skillLevels;
+            }
 
-			set
-			{
-				skillLevels = value;
-				for (int i = 0; i < skillLevels.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SkillLevel." + (i + 1) , skillLevels[i]);
-				}
-			}
-		}
+            set
+            {
+                skillLevels = value;
+                for (int i = 0; i < skillLevels.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "SkillLevel." + (i + 1), skillLevels[i]);
+                }
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public List<string> RoleIds
-		{
-			get
-			{
-				return roleIds;
-			}
+        public List<string> RoleIds
+        {
+            get
+            {
+                return roleIds;
+            }
 
-			set
-			{
-				roleIds = value;
-				for (int i = 0; i < roleIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RoleId." + (i + 1) , roleIds[i]);
-				}
-			}
-		}
+            set
+            {
+                roleIds = value;
+                for (int i = 0; i < roleIds.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "RoleId." + (i + 1), roleIds[i]);
+                }
+            }
+        }
 
-		public List<string> SkillGroupIds
-		{
-			get
-			{
-				return skillGroupIds;
-			}
+        public List<string> SkillGroupIds
+        {
+            get
+            {
+                return skillGroupIds;
+            }
 
-			set
-			{
-				skillGroupIds = value;
-				for (int i = 0; i < skillGroupIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SkillGroupId." + (i + 1) , skillGroupIds[i]);
-				}
-			}
-		}
+            set
+            {
+                skillGroupIds = value;
+                for (int i = 0; i < skillGroupIds.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "SkillGroupId." + (i + 1), skillGroupIds[i]);
+                }
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override AssignUsersResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

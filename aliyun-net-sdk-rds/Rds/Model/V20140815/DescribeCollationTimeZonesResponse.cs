@@ -21,81 +21,81 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeCollationTimeZonesResponse : AcsResponse
-	{
+    public class DescribeCollationTimeZonesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeCollationTimeZones_CollationTimeZone> collationTimeZones;
+        private List<DescribeCollationTimeZones_CollationTimeZone> collationTimeZones;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeCollationTimeZones_CollationTimeZone> CollationTimeZones
-		{
-			get
-			{
-				return collationTimeZones;
-			}
-			set	
-			{
-				collationTimeZones = value;
-			}
-		}
+        public List<DescribeCollationTimeZones_CollationTimeZone> CollationTimeZones
+        {
+            get
+            {
+                return collationTimeZones;
+            }
+            set
+            {
+                collationTimeZones = value;
+            }
+        }
 
-		public class DescribeCollationTimeZones_CollationTimeZone
-		{
+        public class DescribeCollationTimeZones_CollationTimeZone
+        {
 
-			private string timeZone;
+            private string timeZone;
 
-			private string standardTimeOffset;
+            private string standardTimeOffset;
 
-			private string description;
+            private string description;
 
-			public string TimeZone
-			{
-				get
-				{
-					return timeZone;
-				}
-				set	
-				{
-					timeZone = value;
-				}
-			}
+            public string TimeZone
+            {
+                get
+                {
+                    return timeZone;
+                }
+                set
+                {
+                    timeZone = value;
+                }
+            }
 
-			public string StandardTimeOffset
-			{
-				get
-				{
-					return standardTimeOffset;
-				}
-				set	
-				{
-					standardTimeOffset = value;
-				}
-			}
+            public string StandardTimeOffset
+            {
+                get
+                {
+                    return standardTimeOffset;
+                }
+                set
+                {
+                    standardTimeOffset = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-		}
-	}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
+        }
+    }
 }

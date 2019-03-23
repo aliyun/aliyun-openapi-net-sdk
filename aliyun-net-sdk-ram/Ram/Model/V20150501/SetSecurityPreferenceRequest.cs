@@ -32,113 +32,113 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public SetSecurityPreferenceRequest()
             : base("Ram", "2015-05-01", "SetSecurityPreference", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private bool? allowUserToManageAccessKeys;
+        private bool? allowUserToManageAccessKeys;
 
-		private bool? allowUserToManageMFADevices;
+        private bool? allowUserToManageMFADevices;
 
-		private bool? allowUserToManagePublicKeys;
+        private bool? allowUserToManagePublicKeys;
 
-		private bool? enableSaveMFATicket;
+        private bool? enableSaveMFATicket;
 
-		private string loginNetworkMasks;
+        private string loginNetworkMasks;
 
-		private bool? allowUserToChangePassword;
+        private bool? allowUserToChangePassword;
 
-		private int? loginSessionDuration;
+        private int? loginSessionDuration;
 
-		public bool? AllowUserToManageAccessKeys
-		{
-			get
-			{
-				return allowUserToManageAccessKeys;
-			}
-			set	
-			{
-				allowUserToManageAccessKeys = value;
-				DictionaryUtil.Add(QueryParameters, "AllowUserToManageAccessKeys", value.ToString());
-			}
-		}
+        public bool? AllowUserToManageAccessKeys
+        {
+            get
+            {
+                return allowUserToManageAccessKeys;
+            }
+            set
+            {
+                allowUserToManageAccessKeys = value;
+                DictionaryUtil.Add(QueryParameters, "AllowUserToManageAccessKeys", value.ToString());
+            }
+        }
 
-		public bool? AllowUserToManageMFADevices
-		{
-			get
-			{
-				return allowUserToManageMFADevices;
-			}
-			set	
-			{
-				allowUserToManageMFADevices = value;
-				DictionaryUtil.Add(QueryParameters, "AllowUserToManageMFADevices", value.ToString());
-			}
-		}
+        public bool? AllowUserToManageMFADevices
+        {
+            get
+            {
+                return allowUserToManageMFADevices;
+            }
+            set
+            {
+                allowUserToManageMFADevices = value;
+                DictionaryUtil.Add(QueryParameters, "AllowUserToManageMFADevices", value.ToString());
+            }
+        }
 
-		public bool? AllowUserToManagePublicKeys
-		{
-			get
-			{
-				return allowUserToManagePublicKeys;
-			}
-			set	
-			{
-				allowUserToManagePublicKeys = value;
-				DictionaryUtil.Add(QueryParameters, "AllowUserToManagePublicKeys", value.ToString());
-			}
-		}
+        public bool? AllowUserToManagePublicKeys
+        {
+            get
+            {
+                return allowUserToManagePublicKeys;
+            }
+            set
+            {
+                allowUserToManagePublicKeys = value;
+                DictionaryUtil.Add(QueryParameters, "AllowUserToManagePublicKeys", value.ToString());
+            }
+        }
 
-		public bool? EnableSaveMFATicket
-		{
-			get
-			{
-				return enableSaveMFATicket;
-			}
-			set	
-			{
-				enableSaveMFATicket = value;
-				DictionaryUtil.Add(QueryParameters, "EnableSaveMFATicket", value.ToString());
-			}
-		}
+        public bool? EnableSaveMFATicket
+        {
+            get
+            {
+                return enableSaveMFATicket;
+            }
+            set
+            {
+                enableSaveMFATicket = value;
+                DictionaryUtil.Add(QueryParameters, "EnableSaveMFATicket", value.ToString());
+            }
+        }
 
-		public string LoginNetworkMasks
-		{
-			get
-			{
-				return loginNetworkMasks;
-			}
-			set	
-			{
-				loginNetworkMasks = value;
-				DictionaryUtil.Add(QueryParameters, "LoginNetworkMasks", value);
-			}
-		}
+        public string LoginNetworkMasks
+        {
+            get
+            {
+                return loginNetworkMasks;
+            }
+            set
+            {
+                loginNetworkMasks = value;
+                DictionaryUtil.Add(QueryParameters, "LoginNetworkMasks", value);
+            }
+        }
 
-		public bool? AllowUserToChangePassword
-		{
-			get
-			{
-				return allowUserToChangePassword;
-			}
-			set	
-			{
-				allowUserToChangePassword = value;
-				DictionaryUtil.Add(QueryParameters, "AllowUserToChangePassword", value.ToString());
-			}
-		}
+        public bool? AllowUserToChangePassword
+        {
+            get
+            {
+                return allowUserToChangePassword;
+            }
+            set
+            {
+                allowUserToChangePassword = value;
+                DictionaryUtil.Add(QueryParameters, "AllowUserToChangePassword", value.ToString());
+            }
+        }
 
-		public int? LoginSessionDuration
-		{
-			get
-			{
-				return loginSessionDuration;
-			}
-			set	
-			{
-				loginSessionDuration = value;
-				DictionaryUtil.Add(QueryParameters, "LoginSessionDuration", value.ToString());
-			}
-		}
+        public int? LoginSessionDuration
+        {
+            get
+            {
+                return loginSessionDuration;
+            }
+            set
+            {
+                loginSessionDuration = value;
+                DictionaryUtil.Add(QueryParameters, "LoginSessionDuration", value.ToString());
+            }
+        }
 
         public override SetSecurityPreferenceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

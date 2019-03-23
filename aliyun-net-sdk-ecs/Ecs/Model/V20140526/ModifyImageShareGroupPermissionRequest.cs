@@ -33,140 +33,140 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string imageId;
+        private string imageId;
 
-		private string addGroup1;
+        private string addGroup1;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string regionId;
+        private string regionId;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string removeGroup1;
+        private string removeGroup1;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
+        public string ImageId
+        {
+            get
+            {
+                return imageId;
+            }
+            set
+            {
+                imageId = value;
+                DictionaryUtil.Add(QueryParameters, "ImageId", value);
+            }
+        }
 
-		public string AddGroup1
-		{
-			get
-			{
-				return addGroup1;
-			}
-			set	
-			{
-				addGroup1 = value;
-				DictionaryUtil.Add(QueryParameters, "AddGroup.1", value);
-			}
-		}
+        public string AddGroup1
+        {
+            get
+            {
+                return addGroup1;
+            }
+            set
+            {
+                addGroup1 = value;
+                DictionaryUtil.Add(QueryParameters, "AddGroup.1", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string RemoveGroup1
-		{
-			get
-			{
-				return removeGroup1;
-			}
-			set	
-			{
-				removeGroup1 = value;
-				DictionaryUtil.Add(QueryParameters, "RemoveGroup.1", value);
-			}
-		}
+        public string RemoveGroup1
+        {
+            get
+            {
+                return removeGroup1;
+            }
+            set
+            {
+                removeGroup1 = value;
+                DictionaryUtil.Add(QueryParameters, "RemoveGroup.1", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override ModifyImageShareGroupPermissionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

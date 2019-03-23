@@ -28,24 +28,25 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeLiveStreamOnlineUserNumResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLiveStreamOnlineUserNumResponse describeLiveStreamOnlineUserNumResponse = new DescribeLiveStreamOnlineUserNumResponse();
+            DescribeLiveStreamOnlineUserNumResponse describeLiveStreamOnlineUserNumResponse = new DescribeLiveStreamOnlineUserNumResponse();
 
-			describeLiveStreamOnlineUserNumResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamOnlineUserNumResponse.RequestId = context.StringValue("DescribeLiveStreamOnlineUserNum.RequestId");
-			describeLiveStreamOnlineUserNumResponse.TotalUserNumber = context.LongValue("DescribeLiveStreamOnlineUserNum.TotalUserNumber");
+            describeLiveStreamOnlineUserNumResponse.HttpResponse = context.HttpResponse;
+            describeLiveStreamOnlineUserNumResponse.RequestId = context.StringValue("DescribeLiveStreamOnlineUserNum.RequestId");
+            describeLiveStreamOnlineUserNumResponse.TotalUserNumber = context.LongValue("DescribeLiveStreamOnlineUserNum.TotalUserNumber");
 
-			List<DescribeLiveStreamOnlineUserNumResponse.DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo> describeLiveStreamOnlineUserNumResponse_onlineUserInfo = new List<DescribeLiveStreamOnlineUserNumResponse.DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamOnlineUserNum.OnlineUserInfo.Length"); i++) {
-				DescribeLiveStreamOnlineUserNumResponse.DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo liveStreamOnlineUserNumInfo = new DescribeLiveStreamOnlineUserNumResponse.DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo();
-				liveStreamOnlineUserNumInfo.StreamUrl = context.StringValue("DescribeLiveStreamOnlineUserNum.OnlineUserInfo["+ i +"].StreamUrl");
-				liveStreamOnlineUserNumInfo.UserNumber = context.LongValue("DescribeLiveStreamOnlineUserNum.OnlineUserInfo["+ i +"].UserNumber");
-				liveStreamOnlineUserNumInfo.Time = context.StringValue("DescribeLiveStreamOnlineUserNum.OnlineUserInfo["+ i +"].Time");
+            List<DescribeLiveStreamOnlineUserNumResponse.DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo> describeLiveStreamOnlineUserNumResponse_onlineUserInfo = new List<DescribeLiveStreamOnlineUserNumResponse.DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo>();
+            for (int i = 0; i < context.Length("DescribeLiveStreamOnlineUserNum.OnlineUserInfo.Length"); i++)
+            {
+                DescribeLiveStreamOnlineUserNumResponse.DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo liveStreamOnlineUserNumInfo = new DescribeLiveStreamOnlineUserNumResponse.DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo();
+                liveStreamOnlineUserNumInfo.StreamUrl = context.StringValue("DescribeLiveStreamOnlineUserNum.OnlineUserInfo[" + i + "].StreamUrl");
+                liveStreamOnlineUserNumInfo.UserNumber = context.LongValue("DescribeLiveStreamOnlineUserNum.OnlineUserInfo[" + i + "].UserNumber");
+                liveStreamOnlineUserNumInfo.Time = context.StringValue("DescribeLiveStreamOnlineUserNum.OnlineUserInfo[" + i + "].Time");
 
-				describeLiveStreamOnlineUserNumResponse_onlineUserInfo.Add(liveStreamOnlineUserNumInfo);
-			}
-			describeLiveStreamOnlineUserNumResponse.OnlineUserInfo = describeLiveStreamOnlineUserNumResponse_onlineUserInfo;
-        
-			return describeLiveStreamOnlineUserNumResponse;
+                describeLiveStreamOnlineUserNumResponse_onlineUserInfo.Add(liveStreamOnlineUserNumInfo);
+            }
+            describeLiveStreamOnlineUserNumResponse.OnlineUserInfo = describeLiveStreamOnlineUserNumResponse_onlineUserInfo;
+
+            return describeLiveStreamOnlineUserNumResponse;
         }
     }
 }

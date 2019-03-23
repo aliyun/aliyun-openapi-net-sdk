@@ -21,337 +21,337 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeIpv6AddressesResponse : AcsResponse
-	{
+    public class DescribeIpv6AddressesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeIpv6Addresses_Ipv6Address> ipv6Addresses;
+        private List<DescribeIpv6Addresses_Ipv6Address> ipv6Addresses;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeIpv6Addresses_Ipv6Address> Ipv6Addresses
-		{
-			get
-			{
-				return ipv6Addresses;
-			}
-			set	
-			{
-				ipv6Addresses = value;
-			}
-		}
+        public List<DescribeIpv6Addresses_Ipv6Address> Ipv6Addresses
+        {
+            get
+            {
+                return ipv6Addresses;
+            }
+            set
+            {
+                ipv6Addresses = value;
+            }
+        }
 
-		public class DescribeIpv6Addresses_Ipv6Address
-		{
+        public class DescribeIpv6Addresses_Ipv6Address
+        {
 
-			private string ipv6AddressId;
+            private string ipv6AddressId;
 
-			private string ipv6AddressName;
+            private string ipv6AddressName;
 
-			private string vSwitchId;
+            private string vSwitchId;
 
-			private string vpcId;
+            private string vpcId;
 
-			private string ipv6GatewayId;
+            private string ipv6GatewayId;
 
-			private string ipv6Address;
+            private string ipv6Address;
 
-			private string associatedInstanceId;
+            private string associatedInstanceId;
 
-			private string associatedInstanceType;
+            private string associatedInstanceType;
 
-			private string status;
+            private string status;
 
-			private string networkType;
+            private string networkType;
 
-			private int? realBandwidth;
+            private int? realBandwidth;
 
-			private string allocationTime;
+            private string allocationTime;
 
-			private DescribeIpv6Addresses_Ipv6InternetBandwidth ipv6InternetBandwidth;
+            private DescribeIpv6Addresses_Ipv6InternetBandwidth ipv6InternetBandwidth;
 
-			public string Ipv6AddressId
-			{
-				get
-				{
-					return ipv6AddressId;
-				}
-				set	
-				{
-					ipv6AddressId = value;
-				}
-			}
+            public string Ipv6AddressId
+            {
+                get
+                {
+                    return ipv6AddressId;
+                }
+                set
+                {
+                    ipv6AddressId = value;
+                }
+            }
 
-			public string Ipv6AddressName
-			{
-				get
-				{
-					return ipv6AddressName;
-				}
-				set	
-				{
-					ipv6AddressName = value;
-				}
-			}
+            public string Ipv6AddressName
+            {
+                get
+                {
+                    return ipv6AddressName;
+                }
+                set
+                {
+                    ipv6AddressName = value;
+                }
+            }
 
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
+            public string VSwitchId
+            {
+                get
+                {
+                    return vSwitchId;
+                }
+                set
+                {
+                    vSwitchId = value;
+                }
+            }
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
+            public string VpcId
+            {
+                get
+                {
+                    return vpcId;
+                }
+                set
+                {
+                    vpcId = value;
+                }
+            }
 
-			public string Ipv6GatewayId
-			{
-				get
-				{
-					return ipv6GatewayId;
-				}
-				set	
-				{
-					ipv6GatewayId = value;
-				}
-			}
+            public string Ipv6GatewayId
+            {
+                get
+                {
+                    return ipv6GatewayId;
+                }
+                set
+                {
+                    ipv6GatewayId = value;
+                }
+            }
 
-			public string Ipv6Address
-			{
-				get
-				{
-					return ipv6Address;
-				}
-				set	
-				{
-					ipv6Address = value;
-				}
-			}
+            public string Ipv6Address
+            {
+                get
+                {
+                    return ipv6Address;
+                }
+                set
+                {
+                    ipv6Address = value;
+                }
+            }
 
-			public string AssociatedInstanceId
-			{
-				get
-				{
-					return associatedInstanceId;
-				}
-				set	
-				{
-					associatedInstanceId = value;
-				}
-			}
+            public string AssociatedInstanceId
+            {
+                get
+                {
+                    return associatedInstanceId;
+                }
+                set
+                {
+                    associatedInstanceId = value;
+                }
+            }
 
-			public string AssociatedInstanceType
-			{
-				get
-				{
-					return associatedInstanceType;
-				}
-				set	
-				{
-					associatedInstanceType = value;
-				}
-			}
+            public string AssociatedInstanceType
+            {
+                get
+                {
+                    return associatedInstanceType;
+                }
+                set
+                {
+                    associatedInstanceType = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string NetworkType
-			{
-				get
-				{
-					return networkType;
-				}
-				set	
-				{
-					networkType = value;
-				}
-			}
+            public string NetworkType
+            {
+                get
+                {
+                    return networkType;
+                }
+                set
+                {
+                    networkType = value;
+                }
+            }
 
-			public int? RealBandwidth
-			{
-				get
-				{
-					return realBandwidth;
-				}
-				set	
-				{
-					realBandwidth = value;
-				}
-			}
+            public int? RealBandwidth
+            {
+                get
+                {
+                    return realBandwidth;
+                }
+                set
+                {
+                    realBandwidth = value;
+                }
+            }
 
-			public string AllocationTime
-			{
-				get
-				{
-					return allocationTime;
-				}
-				set	
-				{
-					allocationTime = value;
-				}
-			}
+            public string AllocationTime
+            {
+                get
+                {
+                    return allocationTime;
+                }
+                set
+                {
+                    allocationTime = value;
+                }
+            }
 
-			public DescribeIpv6Addresses_Ipv6InternetBandwidth Ipv6InternetBandwidth
-			{
-				get
-				{
-					return ipv6InternetBandwidth;
-				}
-				set	
-				{
-					ipv6InternetBandwidth = value;
-				}
-			}
+            public DescribeIpv6Addresses_Ipv6InternetBandwidth Ipv6InternetBandwidth
+            {
+                get
+                {
+                    return ipv6InternetBandwidth;
+                }
+                set
+                {
+                    ipv6InternetBandwidth = value;
+                }
+            }
 
-			public class DescribeIpv6Addresses_Ipv6InternetBandwidth
-			{
+            public class DescribeIpv6Addresses_Ipv6InternetBandwidth
+            {
 
-				private int? bandwidth;
+                private int? bandwidth;
 
-				private string instanceChargeType;
+                private string instanceChargeType;
 
-				private string internetChargeType;
+                private string internetChargeType;
 
-				private string businessStatus;
+                private string businessStatus;
 
-				private string ipv6InternetBandwidthId;
+                private string ipv6InternetBandwidthId;
 
-				public int? Bandwidth
-				{
-					get
-					{
-						return bandwidth;
-					}
-					set	
-					{
-						bandwidth = value;
-					}
-				}
+                public int? Bandwidth
+                {
+                    get
+                    {
+                        return bandwidth;
+                    }
+                    set
+                    {
+                        bandwidth = value;
+                    }
+                }
 
-				public string InstanceChargeType
-				{
-					get
-					{
-						return instanceChargeType;
-					}
-					set	
-					{
-						instanceChargeType = value;
-					}
-				}
+                public string InstanceChargeType
+                {
+                    get
+                    {
+                        return instanceChargeType;
+                    }
+                    set
+                    {
+                        instanceChargeType = value;
+                    }
+                }
 
-				public string InternetChargeType
-				{
-					get
-					{
-						return internetChargeType;
-					}
-					set	
-					{
-						internetChargeType = value;
-					}
-				}
+                public string InternetChargeType
+                {
+                    get
+                    {
+                        return internetChargeType;
+                    }
+                    set
+                    {
+                        internetChargeType = value;
+                    }
+                }
 
-				public string BusinessStatus
-				{
-					get
-					{
-						return businessStatus;
-					}
-					set	
-					{
-						businessStatus = value;
-					}
-				}
+                public string BusinessStatus
+                {
+                    get
+                    {
+                        return businessStatus;
+                    }
+                    set
+                    {
+                        businessStatus = value;
+                    }
+                }
 
-				public string Ipv6InternetBandwidthId
-				{
-					get
-					{
-						return ipv6InternetBandwidthId;
-					}
-					set	
-					{
-						ipv6InternetBandwidthId = value;
-					}
-				}
-			}
-		}
-	}
+                public string Ipv6InternetBandwidthId
+                {
+                    get
+                    {
+                        return ipv6InternetBandwidthId;
+                    }
+                    set
+                    {
+                        ipv6InternetBandwidthId = value;
+                    }
+                }
+            }
+        }
+    }
 }

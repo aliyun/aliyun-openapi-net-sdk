@@ -21,77 +21,77 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateNatGatewayResponse : AcsResponse
-	{
+    public class CreateNatGatewayResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string natGatewayId;
+        private string natGatewayId;
 
-		private List<string> forwardTableIds;
+        private List<string> forwardTableIds;
 
-		private List<string> snatTableIds;
+        private List<string> snatTableIds;
 
-		private List<string> bandwidthPackageIds;
+        private List<string> bandwidthPackageIds;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string NatGatewayId
-		{
-			get
-			{
-				return natGatewayId;
-			}
-			set	
-			{
-				natGatewayId = value;
-			}
-		}
+        public string NatGatewayId
+        {
+            get
+            {
+                return natGatewayId;
+            }
+            set
+            {
+                natGatewayId = value;
+            }
+        }
 
-		public List<string> ForwardTableIds
-		{
-			get
-			{
-				return forwardTableIds;
-			}
-			set	
-			{
-				forwardTableIds = value;
-			}
-		}
+        public List<string> ForwardTableIds
+        {
+            get
+            {
+                return forwardTableIds;
+            }
+            set
+            {
+                forwardTableIds = value;
+            }
+        }
 
-		public List<string> SnatTableIds
-		{
-			get
-			{
-				return snatTableIds;
-			}
-			set	
-			{
-				snatTableIds = value;
-			}
-		}
+        public List<string> SnatTableIds
+        {
+            get
+            {
+                return snatTableIds;
+            }
+            set
+            {
+                snatTableIds = value;
+            }
+        }
 
-		public List<string> BandwidthPackageIds
-		{
-			get
-			{
-				return bandwidthPackageIds;
-			}
-			set	
-			{
-				bandwidthPackageIds = value;
-			}
-		}
-	}
+        public List<string> BandwidthPackageIds
+        {
+            get
+            {
+                return bandwidthPackageIds;
+            }
+            set
+            {
+                bandwidthPackageIds = value;
+            }
+        }
+    }
 }

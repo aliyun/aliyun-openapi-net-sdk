@@ -34,95 +34,95 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string securityToken;
+        private string securityToken;
 
-		private string domainName;
+        private string domainName;
 
-		private string action;
+        private string action;
 
-		private string pageUrl;
+        private string pageUrl;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string errorCode;
+        private string errorCode;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string PageUrl
-		{
-			get
-			{
-				return pageUrl;
-			}
-			set	
-			{
-				pageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "PageUrl", value);
-			}
-		}
+        public string PageUrl
+        {
+            get
+            {
+                return pageUrl;
+            }
+            set
+            {
+                pageUrl = value;
+                DictionaryUtil.Add(QueryParameters, "PageUrl", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-				DictionaryUtil.Add(QueryParameters, "ErrorCode", value);
-			}
-		}
+        public string ErrorCode
+        {
+            get
+            {
+                return errorCode;
+            }
+            set
+            {
+                errorCode = value;
+                DictionaryUtil.Add(QueryParameters, "ErrorCode", value);
+            }
+        }
 
         public override SetHttpErrorPageConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

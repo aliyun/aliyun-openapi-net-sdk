@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static SetPageCompressConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			SetPageCompressConfigResponse setPageCompressConfigResponse = new SetPageCompressConfigResponse();
+            SetPageCompressConfigResponse setPageCompressConfigResponse = new SetPageCompressConfigResponse();
 
-			setPageCompressConfigResponse.HttpResponse = context.HttpResponse;
-			setPageCompressConfigResponse.RequestId = context.StringValue("SetPageCompressConfig.RequestId");
-        
-			return setPageCompressConfigResponse;
+            setPageCompressConfigResponse.HttpResponse = context.HttpResponse;
+            setPageCompressConfigResponse.RequestId = context.StringValue("SetPageCompressConfig.RequestId");
+
+            return setPageCompressConfigResponse;
         }
     }
 }

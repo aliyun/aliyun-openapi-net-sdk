@@ -33,108 +33,108 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private List<string> callingNumbers;
+        private List<string> callingNumbers;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string groupId;
+        private string groupId;
 
-		private string strategyJson;
+        private string strategyJson;
 
-		private string scenarioId;
+        private string scenarioId;
 
-		private List<string> jobsJsons;
+        private List<string> jobsJsons;
 
-		public List<string> CallingNumbers
-		{
-			get
-			{
-				return callingNumbers;
-			}
+        public List<string> CallingNumbers
+        {
+            get
+            {
+                return callingNumbers;
+            }
 
-			set
-			{
-				callingNumbers = value;
-				for (int i = 0; i < callingNumbers.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
-				}
-			}
-		}
+            set
+            {
+                callingNumbers = value;
+                for (int i = 0; i < callingNumbers.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "CallingNumber." + (i + 1), callingNumbers[i]);
+                }
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
+        public string GroupId
+        {
+            get
+            {
+                return groupId;
+            }
+            set
+            {
+                groupId = value;
+                DictionaryUtil.Add(QueryParameters, "GroupId", value);
+            }
+        }
 
-		public string StrategyJson
-		{
-			get
-			{
-				return strategyJson;
-			}
-			set	
-			{
-				strategyJson = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
-			}
-		}
+        public string StrategyJson
+        {
+            get
+            {
+                return strategyJson;
+            }
+            set
+            {
+                strategyJson = value;
+                DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
+            }
+        }
 
-		public string ScenarioId
-		{
-			get
-			{
-				return scenarioId;
-			}
-			set	
-			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
-			}
-		}
+        public string ScenarioId
+        {
+            get
+            {
+                return scenarioId;
+            }
+            set
+            {
+                scenarioId = value;
+                DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+            }
+        }
 
-		public List<string> JobsJsons
-		{
-			get
-			{
-				return jobsJsons;
-			}
+        public List<string> JobsJsons
+        {
+            get
+            {
+                return jobsJsons;
+            }
 
-			set
-			{
-				jobsJsons = value;
-				for (int i = 0; i < jobsJsons.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"JobsJson." + (i + 1) , jobsJsons[i]);
-				}
-			}
-		}
+            set
+            {
+                jobsJsons = value;
+                for (int i = 0; i < jobsJsons.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "JobsJson." + (i + 1), jobsJsons[i]);
+                }
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override AssignJobsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

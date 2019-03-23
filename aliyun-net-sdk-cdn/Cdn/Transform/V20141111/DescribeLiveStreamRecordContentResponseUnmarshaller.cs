@@ -28,26 +28,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeLiveStreamRecordContentResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLiveStreamRecordContentResponse describeLiveStreamRecordContentResponse = new DescribeLiveStreamRecordContentResponse();
+            DescribeLiveStreamRecordContentResponse describeLiveStreamRecordContentResponse = new DescribeLiveStreamRecordContentResponse();
 
-			describeLiveStreamRecordContentResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamRecordContentResponse.RequestId = context.StringValue("DescribeLiveStreamRecordContent.RequestId");
+            describeLiveStreamRecordContentResponse.HttpResponse = context.HttpResponse;
+            describeLiveStreamRecordContentResponse.RequestId = context.StringValue("DescribeLiveStreamRecordContent.RequestId");
 
-			List<DescribeLiveStreamRecordContentResponse.DescribeLiveStreamRecordContent_RecordContentInfo> describeLiveStreamRecordContentResponse_recordContentInfoList = new List<DescribeLiveStreamRecordContentResponse.DescribeLiveStreamRecordContent_RecordContentInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamRecordContent.RecordContentInfoList.Length"); i++) {
-				DescribeLiveStreamRecordContentResponse.DescribeLiveStreamRecordContent_RecordContentInfo recordContentInfo = new DescribeLiveStreamRecordContentResponse.DescribeLiveStreamRecordContent_RecordContentInfo();
-				recordContentInfo.OssEndpoint = context.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].OssEndpoint");
-				recordContentInfo.OssBucket = context.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].OssBucket");
-				recordContentInfo.OssObjectPrefix = context.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].OssObjectPrefix");
-				recordContentInfo.StartTime = context.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].StartTime");
-				recordContentInfo.EndTime = context.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].EndTime");
-				recordContentInfo.Duration = context.FloatValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].Duration");
+            List<DescribeLiveStreamRecordContentResponse.DescribeLiveStreamRecordContent_RecordContentInfo> describeLiveStreamRecordContentResponse_recordContentInfoList = new List<DescribeLiveStreamRecordContentResponse.DescribeLiveStreamRecordContent_RecordContentInfo>();
+            for (int i = 0; i < context.Length("DescribeLiveStreamRecordContent.RecordContentInfoList.Length"); i++)
+            {
+                DescribeLiveStreamRecordContentResponse.DescribeLiveStreamRecordContent_RecordContentInfo recordContentInfo = new DescribeLiveStreamRecordContentResponse.DescribeLiveStreamRecordContent_RecordContentInfo();
+                recordContentInfo.OssEndpoint = context.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList[" + i + "].OssEndpoint");
+                recordContentInfo.OssBucket = context.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList[" + i + "].OssBucket");
+                recordContentInfo.OssObjectPrefix = context.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList[" + i + "].OssObjectPrefix");
+                recordContentInfo.StartTime = context.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList[" + i + "].StartTime");
+                recordContentInfo.EndTime = context.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList[" + i + "].EndTime");
+                recordContentInfo.Duration = context.FloatValue("DescribeLiveStreamRecordContent.RecordContentInfoList[" + i + "].Duration");
 
-				describeLiveStreamRecordContentResponse_recordContentInfoList.Add(recordContentInfo);
-			}
-			describeLiveStreamRecordContentResponse.RecordContentInfoList = describeLiveStreamRecordContentResponse_recordContentInfoList;
-        
-			return describeLiveStreamRecordContentResponse;
+                describeLiveStreamRecordContentResponse_recordContentInfoList.Add(recordContentInfo);
+            }
+            describeLiveStreamRecordContentResponse.RecordContentInfoList = describeLiveStreamRecordContentResponse_recordContentInfoList;
+
+            return describeLiveStreamRecordContentResponse;
         }
     }
 }

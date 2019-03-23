@@ -34,170 +34,170 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string privateKey;
+        private string privateKey;
 
-		private string forceSet;
+        private string forceSet;
 
-		private string serverCertificateStatus;
+        private string serverCertificateStatus;
 
-		private string serverCertificate;
+        private string serverCertificate;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string certType;
+        private string certType;
 
-		private string certName;
+        private string certName;
 
-		private string domainName;
+        private string domainName;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string region;
+        private string region;
 
-		public string PrivateKey
-		{
-			get
-			{
-				return privateKey;
-			}
-			set	
-			{
-				privateKey = value;
-				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
-			}
-		}
+        public string PrivateKey
+        {
+            get
+            {
+                return privateKey;
+            }
+            set
+            {
+                privateKey = value;
+                DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
+            }
+        }
 
-		public string ForceSet
-		{
-			get
-			{
-				return forceSet;
-			}
-			set	
-			{
-				forceSet = value;
-				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
-			}
-		}
+        public string ForceSet
+        {
+            get
+            {
+                return forceSet;
+            }
+            set
+            {
+                forceSet = value;
+                DictionaryUtil.Add(QueryParameters, "ForceSet", value);
+            }
+        }
 
-		public string ServerCertificateStatus
-		{
-			get
-			{
-				return serverCertificateStatus;
-			}
-			set	
-			{
-				serverCertificateStatus = value;
-				DictionaryUtil.Add(QueryParameters, "ServerCertificateStatus", value);
-			}
-		}
+        public string ServerCertificateStatus
+        {
+            get
+            {
+                return serverCertificateStatus;
+            }
+            set
+            {
+                serverCertificateStatus = value;
+                DictionaryUtil.Add(QueryParameters, "ServerCertificateStatus", value);
+            }
+        }
 
-		public string ServerCertificate
-		{
-			get
-			{
-				return serverCertificate;
-			}
-			set	
-			{
-				serverCertificate = value;
-				DictionaryUtil.Add(QueryParameters, "ServerCertificate", value);
-			}
-		}
+        public string ServerCertificate
+        {
+            get
+            {
+                return serverCertificate;
+            }
+            set
+            {
+                serverCertificate = value;
+                DictionaryUtil.Add(QueryParameters, "ServerCertificate", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string CertType
-		{
-			get
-			{
-				return certType;
-			}
-			set	
-			{
-				certType = value;
-				DictionaryUtil.Add(QueryParameters, "CertType", value);
-			}
-		}
+        public string CertType
+        {
+            get
+            {
+                return certType;
+            }
+            set
+            {
+                certType = value;
+                DictionaryUtil.Add(QueryParameters, "CertType", value);
+            }
+        }
 
-		public string CertName
-		{
-			get
-			{
-				return certName;
-			}
-			set	
-			{
-				certName = value;
-				DictionaryUtil.Add(QueryParameters, "CertName", value);
-			}
-		}
+        public string CertName
+        {
+            get
+            {
+                return certName;
+            }
+            set
+            {
+                certName = value;
+                DictionaryUtil.Add(QueryParameters, "CertName", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
+        public string Region
+        {
+            get
+            {
+                return region;
+            }
+            set
+            {
+                region = value;
+                DictionaryUtil.Add(QueryParameters, "Region", value);
+            }
+        }
 
         public override SetDomainServerCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

@@ -52,7 +52,8 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             IClientProfile profile = DefaultProfile.GetProfile("cn-shanghai", "accessKeyId", "accessKeySecret");
             DefaultAcsClient client = new DefaultAcsClient(profile);
             var provider = new StaticCredentialsProvider(profile);
-            CredentialsBackupCompatibilityAdaptor instance = new CredentialsBackupCompatibilityAdaptor(provider);;
+            CredentialsBackupCompatibilityAdaptor instance = new CredentialsBackupCompatibilityAdaptor(provider);
+            ;
             Assert.IsType<int>(instance.GetHashCode());
             instance.GetType();
             Assert.IsType<Aliyun.Acs.Core.Auth.CredentialsBackupCompatibilityAdaptor>(instance);

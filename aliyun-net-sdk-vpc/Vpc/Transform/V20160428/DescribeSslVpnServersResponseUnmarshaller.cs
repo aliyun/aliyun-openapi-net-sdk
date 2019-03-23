@@ -27,37 +27,38 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DescribeSslVpnServersResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeSslVpnServersResponse describeSslVpnServersResponse = new DescribeSslVpnServersResponse();
+            DescribeSslVpnServersResponse describeSslVpnServersResponse = new DescribeSslVpnServersResponse();
 
-			describeSslVpnServersResponse.HttpResponse = context.HttpResponse;
-			describeSslVpnServersResponse.RequestId = context.StringValue("DescribeSslVpnServers.RequestId");
-			describeSslVpnServersResponse.TotalCount = context.IntegerValue("DescribeSslVpnServers.TotalCount");
-			describeSslVpnServersResponse.PageNumber = context.IntegerValue("DescribeSslVpnServers.PageNumber");
-			describeSslVpnServersResponse.PageSize = context.IntegerValue("DescribeSslVpnServers.PageSize");
+            describeSslVpnServersResponse.HttpResponse = context.HttpResponse;
+            describeSslVpnServersResponse.RequestId = context.StringValue("DescribeSslVpnServers.RequestId");
+            describeSslVpnServersResponse.TotalCount = context.IntegerValue("DescribeSslVpnServers.TotalCount");
+            describeSslVpnServersResponse.PageNumber = context.IntegerValue("DescribeSslVpnServers.PageNumber");
+            describeSslVpnServersResponse.PageSize = context.IntegerValue("DescribeSslVpnServers.PageSize");
 
-			List<DescribeSslVpnServersResponse.DescribeSslVpnServers_SslVpnServer> describeSslVpnServersResponse_sslVpnServers = new List<DescribeSslVpnServersResponse.DescribeSslVpnServers_SslVpnServer>();
-			for (int i = 0; i < context.Length("DescribeSslVpnServers.SslVpnServers.Length"); i++) {
-				DescribeSslVpnServersResponse.DescribeSslVpnServers_SslVpnServer sslVpnServer = new DescribeSslVpnServersResponse.DescribeSslVpnServers_SslVpnServer();
-				sslVpnServer.RegionId = context.StringValue("DescribeSslVpnServers.SslVpnServers["+ i +"].RegionId");
-				sslVpnServer.SslVpnServerId = context.StringValue("DescribeSslVpnServers.SslVpnServers["+ i +"].SslVpnServerId");
-				sslVpnServer.VpnGatewayId = context.StringValue("DescribeSslVpnServers.SslVpnServers["+ i +"].VpnGatewayId");
-				sslVpnServer.Name = context.StringValue("DescribeSslVpnServers.SslVpnServers["+ i +"].Name");
-				sslVpnServer.LocalSubnet = context.StringValue("DescribeSslVpnServers.SslVpnServers["+ i +"].LocalSubnet");
-				sslVpnServer.ClientIpPool = context.StringValue("DescribeSslVpnServers.SslVpnServers["+ i +"].ClientIpPool");
-				sslVpnServer.CreateTime = context.LongValue("DescribeSslVpnServers.SslVpnServers["+ i +"].CreateTime");
-				sslVpnServer.Cipher = context.StringValue("DescribeSslVpnServers.SslVpnServers["+ i +"].Cipher");
-				sslVpnServer.Proto = context.StringValue("DescribeSslVpnServers.SslVpnServers["+ i +"].Proto");
-				sslVpnServer.Port = context.IntegerValue("DescribeSslVpnServers.SslVpnServers["+ i +"].Port");
-				sslVpnServer.Compress = context.BooleanValue("DescribeSslVpnServers.SslVpnServers["+ i +"].Compress");
-				sslVpnServer.Connections = context.IntegerValue("DescribeSslVpnServers.SslVpnServers["+ i +"].Connections");
-				sslVpnServer.MaxConnections = context.IntegerValue("DescribeSslVpnServers.SslVpnServers["+ i +"].MaxConnections");
-				sslVpnServer.InternetIp = context.StringValue("DescribeSslVpnServers.SslVpnServers["+ i +"].InternetIp");
+            List<DescribeSslVpnServersResponse.DescribeSslVpnServers_SslVpnServer> describeSslVpnServersResponse_sslVpnServers = new List<DescribeSslVpnServersResponse.DescribeSslVpnServers_SslVpnServer>();
+            for (int i = 0; i < context.Length("DescribeSslVpnServers.SslVpnServers.Length"); i++)
+            {
+                DescribeSslVpnServersResponse.DescribeSslVpnServers_SslVpnServer sslVpnServer = new DescribeSslVpnServersResponse.DescribeSslVpnServers_SslVpnServer();
+                sslVpnServer.RegionId = context.StringValue("DescribeSslVpnServers.SslVpnServers[" + i + "].RegionId");
+                sslVpnServer.SslVpnServerId = context.StringValue("DescribeSslVpnServers.SslVpnServers[" + i + "].SslVpnServerId");
+                sslVpnServer.VpnGatewayId = context.StringValue("DescribeSslVpnServers.SslVpnServers[" + i + "].VpnGatewayId");
+                sslVpnServer.Name = context.StringValue("DescribeSslVpnServers.SslVpnServers[" + i + "].Name");
+                sslVpnServer.LocalSubnet = context.StringValue("DescribeSslVpnServers.SslVpnServers[" + i + "].LocalSubnet");
+                sslVpnServer.ClientIpPool = context.StringValue("DescribeSslVpnServers.SslVpnServers[" + i + "].ClientIpPool");
+                sslVpnServer.CreateTime = context.LongValue("DescribeSslVpnServers.SslVpnServers[" + i + "].CreateTime");
+                sslVpnServer.Cipher = context.StringValue("DescribeSslVpnServers.SslVpnServers[" + i + "].Cipher");
+                sslVpnServer.Proto = context.StringValue("DescribeSslVpnServers.SslVpnServers[" + i + "].Proto");
+                sslVpnServer.Port = context.IntegerValue("DescribeSslVpnServers.SslVpnServers[" + i + "].Port");
+                sslVpnServer.Compress = context.BooleanValue("DescribeSslVpnServers.SslVpnServers[" + i + "].Compress");
+                sslVpnServer.Connections = context.IntegerValue("DescribeSslVpnServers.SslVpnServers[" + i + "].Connections");
+                sslVpnServer.MaxConnections = context.IntegerValue("DescribeSslVpnServers.SslVpnServers[" + i + "].MaxConnections");
+                sslVpnServer.InternetIp = context.StringValue("DescribeSslVpnServers.SslVpnServers[" + i + "].InternetIp");
 
-				describeSslVpnServersResponse_sslVpnServers.Add(sslVpnServer);
-			}
-			describeSslVpnServersResponse.SslVpnServers = describeSslVpnServersResponse_sslVpnServers;
-        
-			return describeSslVpnServersResponse;
+                describeSslVpnServersResponse_sslVpnServers.Add(sslVpnServer);
+            }
+            describeSslVpnServersResponse.SslVpnServers = describeSslVpnServersResponse_sslVpnServers;
+
+            return describeSslVpnServersResponse;
         }
     }
 }

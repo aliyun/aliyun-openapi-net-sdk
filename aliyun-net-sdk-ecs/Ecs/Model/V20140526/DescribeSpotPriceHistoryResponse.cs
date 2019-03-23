@@ -21,165 +21,165 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeSpotPriceHistoryResponse : AcsResponse
-	{
+    public class DescribeSpotPriceHistoryResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? nextOffset;
+        private int? nextOffset;
 
-		private string currency;
+        private string currency;
 
-		private List<DescribeSpotPriceHistory_SpotPriceType> spotPrices;
+        private List<DescribeSpotPriceHistory_SpotPriceType> spotPrices;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? NextOffset
-		{
-			get
-			{
-				return nextOffset;
-			}
-			set	
-			{
-				nextOffset = value;
-			}
-		}
+        public int? NextOffset
+        {
+            get
+            {
+                return nextOffset;
+            }
+            set
+            {
+                nextOffset = value;
+            }
+        }
 
-		public string Currency
-		{
-			get
-			{
-				return currency;
-			}
-			set	
-			{
-				currency = value;
-			}
-		}
+        public string Currency
+        {
+            get
+            {
+                return currency;
+            }
+            set
+            {
+                currency = value;
+            }
+        }
 
-		public List<DescribeSpotPriceHistory_SpotPriceType> SpotPrices
-		{
-			get
-			{
-				return spotPrices;
-			}
-			set	
-			{
-				spotPrices = value;
-			}
-		}
+        public List<DescribeSpotPriceHistory_SpotPriceType> SpotPrices
+        {
+            get
+            {
+                return spotPrices;
+            }
+            set
+            {
+                spotPrices = value;
+            }
+        }
 
-		public class DescribeSpotPriceHistory_SpotPriceType
-		{
+        public class DescribeSpotPriceHistory_SpotPriceType
+        {
 
-			private string zoneId;
+            private string zoneId;
 
-			private string instanceType;
+            private string instanceType;
 
-			private string ioOptimized;
+            private string ioOptimized;
 
-			private string timestamp;
+            private string timestamp;
 
-			private string networkType;
+            private string networkType;
 
-			private float? spotPrice;
+            private float? spotPrice;
 
-			private float? originPrice;
+            private float? originPrice;
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+            public string ZoneId
+            {
+                get
+                {
+                    return zoneId;
+                }
+                set
+                {
+                    zoneId = value;
+                }
+            }
 
-			public string InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
-				}
-			}
+            public string InstanceType
+            {
+                get
+                {
+                    return instanceType;
+                }
+                set
+                {
+                    instanceType = value;
+                }
+            }
 
-			public string IoOptimized
-			{
-				get
-				{
-					return ioOptimized;
-				}
-				set	
-				{
-					ioOptimized = value;
-				}
-			}
+            public string IoOptimized
+            {
+                get
+                {
+                    return ioOptimized;
+                }
+                set
+                {
+                    ioOptimized = value;
+                }
+            }
 
-			public string Timestamp
-			{
-				get
-				{
-					return timestamp;
-				}
-				set	
-				{
-					timestamp = value;
-				}
-			}
+            public string Timestamp
+            {
+                get
+                {
+                    return timestamp;
+                }
+                set
+                {
+                    timestamp = value;
+                }
+            }
 
-			public string NetworkType
-			{
-				get
-				{
-					return networkType;
-				}
-				set	
-				{
-					networkType = value;
-				}
-			}
+            public string NetworkType
+            {
+                get
+                {
+                    return networkType;
+                }
+                set
+                {
+                    networkType = value;
+                }
+            }
 
-			public float? SpotPrice
-			{
-				get
-				{
-					return spotPrice;
-				}
-				set	
-				{
-					spotPrice = value;
-				}
-			}
+            public float? SpotPrice
+            {
+                get
+                {
+                    return spotPrice;
+                }
+                set
+                {
+                    spotPrice = value;
+                }
+            }
 
-			public float? OriginPrice
-			{
-				get
-				{
-					return originPrice;
-				}
-				set	
-				{
-					originPrice = value;
-				}
-			}
-		}
-	}
+            public float? OriginPrice
+            {
+                get
+                {
+                    return originPrice;
+                }
+                set
+                {
+                    originPrice = value;
+                }
+            }
+        }
+    }
 }

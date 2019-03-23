@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class GetInstanceScreenshotResponse : AcsResponse
-	{
+    public class GetInstanceScreenshotResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string screenshot;
+        private string screenshot;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+            }
+        }
 
-		public string Screenshot
-		{
-			get
-			{
-				return screenshot;
-			}
-			set	
-			{
-				screenshot = value;
-			}
-		}
-	}
+        public string Screenshot
+        {
+            get
+            {
+                return screenshot;
+            }
+            set
+            {
+                screenshot = value;
+            }
+        }
+    }
 }

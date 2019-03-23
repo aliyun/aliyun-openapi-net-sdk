@@ -22,165 +22,165 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLiveStreamsPublishListResponse : AcsResponse
-	{
+    public class DescribeLiveStreamsPublishListResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeLiveStreamsPublishList_LiveStreamPublishInfo> publishInfo;
+        private List<DescribeLiveStreamsPublishList_LiveStreamPublishInfo> publishInfo;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeLiveStreamsPublishList_LiveStreamPublishInfo> PublishInfo
-		{
-			get
-			{
-				return publishInfo;
-			}
-			set	
-			{
-				publishInfo = value;
-			}
-		}
+        public List<DescribeLiveStreamsPublishList_LiveStreamPublishInfo> PublishInfo
+        {
+            get
+            {
+                return publishInfo;
+            }
+            set
+            {
+                publishInfo = value;
+            }
+        }
 
-		public class DescribeLiveStreamsPublishList_LiveStreamPublishInfo
-		{
+        public class DescribeLiveStreamsPublishList_LiveStreamPublishInfo
+        {
 
-			private string domainName;
+            private string domainName;
 
-			private string appName;
+            private string appName;
 
-			private string streamName;
+            private string streamName;
 
-			private string streamUrl;
+            private string streamUrl;
 
-			private string publishTime;
+            private string publishTime;
 
-			private string stopTime;
+            private string stopTime;
 
-			private string publishUrl;
+            private string publishUrl;
 
-			private string clientAddr;
+            private string clientAddr;
 
-			private string edgeNodeAddr;
+            private string edgeNodeAddr;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+            public string DomainName
+            {
+                get
+                {
+                    return domainName;
+                }
+                set
+                {
+                    domainName = value;
+                }
+            }
 
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
+            public string AppName
+            {
+                get
+                {
+                    return appName;
+                }
+                set
+                {
+                    appName = value;
+                }
+            }
 
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
+            public string StreamName
+            {
+                get
+                {
+                    return streamName;
+                }
+                set
+                {
+                    streamName = value;
+                }
+            }
 
-			public string StreamUrl
-			{
-				get
-				{
-					return streamUrl;
-				}
-				set	
-				{
-					streamUrl = value;
-				}
-			}
+            public string StreamUrl
+            {
+                get
+                {
+                    return streamUrl;
+                }
+                set
+                {
+                    streamUrl = value;
+                }
+            }
 
-			public string PublishTime
-			{
-				get
-				{
-					return publishTime;
-				}
-				set	
-				{
-					publishTime = value;
-				}
-			}
+            public string PublishTime
+            {
+                get
+                {
+                    return publishTime;
+                }
+                set
+                {
+                    publishTime = value;
+                }
+            }
 
-			public string StopTime
-			{
-				get
-				{
-					return stopTime;
-				}
-				set	
-				{
-					stopTime = value;
-				}
-			}
+            public string StopTime
+            {
+                get
+                {
+                    return stopTime;
+                }
+                set
+                {
+                    stopTime = value;
+                }
+            }
 
-			public string PublishUrl
-			{
-				get
-				{
-					return publishUrl;
-				}
-				set	
-				{
-					publishUrl = value;
-				}
-			}
+            public string PublishUrl
+            {
+                get
+                {
+                    return publishUrl;
+                }
+                set
+                {
+                    publishUrl = value;
+                }
+            }
 
-			public string ClientAddr
-			{
-				get
-				{
-					return clientAddr;
-				}
-				set	
-				{
-					clientAddr = value;
-				}
-			}
+            public string ClientAddr
+            {
+                get
+                {
+                    return clientAddr;
+                }
+                set
+                {
+                    clientAddr = value;
+                }
+            }
 
-			public string EdgeNodeAddr
-			{
-				get
-				{
-					return edgeNodeAddr;
-				}
-				set	
-				{
-					edgeNodeAddr = value;
-				}
-			}
-		}
-	}
+            public string EdgeNodeAddr
+            {
+                get
+                {
+                    return edgeNodeAddr;
+                }
+                set
+                {
+                    edgeNodeAddr = value;
+                }
+            }
+        }
+    }
 }

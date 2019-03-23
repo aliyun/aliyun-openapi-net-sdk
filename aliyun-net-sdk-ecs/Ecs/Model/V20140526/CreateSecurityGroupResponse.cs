@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateSecurityGroupResponse : AcsResponse
-	{
+    public class CreateSecurityGroupResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string securityGroupId;
+        private string securityGroupId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
-			}
-		}
-	}
+        public string SecurityGroupId
+        {
+            get
+            {
+                return securityGroupId;
+            }
+            set
+            {
+                securityGroupId = value;
+            }
+        }
+    }
 }

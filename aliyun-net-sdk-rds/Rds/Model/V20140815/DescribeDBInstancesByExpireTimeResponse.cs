@@ -21,151 +21,151 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeDBInstancesByExpireTimeResponse : AcsResponse
-	{
+    public class DescribeDBInstancesByExpireTimeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? totalRecordCount;
+        private int? totalRecordCount;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private List<DescribeDBInstancesByExpireTime_DBInstanceExpireTime> items;
+        private List<DescribeDBInstancesByExpireTime_DBInstanceExpireTime> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public int? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public List<DescribeDBInstancesByExpireTime_DBInstanceExpireTime> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeDBInstancesByExpireTime_DBInstanceExpireTime> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeDBInstancesByExpireTime_DBInstanceExpireTime
-		{
+        public class DescribeDBInstancesByExpireTime_DBInstanceExpireTime
+        {
 
-			private string dBInstanceId;
+            private string dBInstanceId;
 
-			private string dBInstanceDescription;
+            private string dBInstanceDescription;
 
-			private string expireTime;
+            private string expireTime;
 
-			private string dBInstanceStatus;
+            private string dBInstanceStatus;
 
-			private string lockMode;
+            private string lockMode;
 
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
+            public string DBInstanceId
+            {
+                get
+                {
+                    return dBInstanceId;
+                }
+                set
+                {
+                    dBInstanceId = value;
+                }
+            }
 
-			public string DBInstanceDescription
-			{
-				get
-				{
-					return dBInstanceDescription;
-				}
-				set	
-				{
-					dBInstanceDescription = value;
-				}
-			}
+            public string DBInstanceDescription
+            {
+                get
+                {
+                    return dBInstanceDescription;
+                }
+                set
+                {
+                    dBInstanceDescription = value;
+                }
+            }
 
-			public string ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
-				}
-			}
+            public string ExpireTime
+            {
+                get
+                {
+                    return expireTime;
+                }
+                set
+                {
+                    expireTime = value;
+                }
+            }
 
-			public string DBInstanceStatus
-			{
-				get
-				{
-					return dBInstanceStatus;
-				}
-				set	
-				{
-					dBInstanceStatus = value;
-				}
-			}
+            public string DBInstanceStatus
+            {
+                get
+                {
+                    return dBInstanceStatus;
+                }
+                set
+                {
+                    dBInstanceStatus = value;
+                }
+            }
 
-			public string LockMode
-			{
-				get
-				{
-					return lockMode;
-				}
-				set	
-				{
-					lockMode = value;
-				}
-			}
-		}
-	}
+            public string LockMode
+            {
+                get
+                {
+                    return lockMode;
+                }
+                set
+                {
+                    lockMode = value;
+                }
+            }
+        }
+    }
 }

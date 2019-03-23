@@ -27,40 +27,41 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static DescribeLoadBalancersResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLoadBalancersResponse describeLoadBalancersResponse = new DescribeLoadBalancersResponse();
+            DescribeLoadBalancersResponse describeLoadBalancersResponse = new DescribeLoadBalancersResponse();
 
-			describeLoadBalancersResponse.HttpResponse = context.HttpResponse;
-			describeLoadBalancersResponse.RequestId = context.StringValue("DescribeLoadBalancers.RequestId");
-			describeLoadBalancersResponse.PageNumber = context.IntegerValue("DescribeLoadBalancers.PageNumber");
-			describeLoadBalancersResponse.PageSize = context.IntegerValue("DescribeLoadBalancers.PageSize");
-			describeLoadBalancersResponse.TotalCount = context.IntegerValue("DescribeLoadBalancers.TotalCount");
+            describeLoadBalancersResponse.HttpResponse = context.HttpResponse;
+            describeLoadBalancersResponse.RequestId = context.StringValue("DescribeLoadBalancers.RequestId");
+            describeLoadBalancersResponse.PageNumber = context.IntegerValue("DescribeLoadBalancers.PageNumber");
+            describeLoadBalancersResponse.PageSize = context.IntegerValue("DescribeLoadBalancers.PageSize");
+            describeLoadBalancersResponse.TotalCount = context.IntegerValue("DescribeLoadBalancers.TotalCount");
 
-			List<DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer> describeLoadBalancersResponse_loadBalancers = new List<DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer>();
-			for (int i = 0; i < context.Length("DescribeLoadBalancers.LoadBalancers.Length"); i++) {
-				DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer loadBalancer = new DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer();
-				loadBalancer.LoadBalancerId = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].LoadBalancerId");
-				loadBalancer.LoadBalancerName = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].LoadBalancerName");
-				loadBalancer.LoadBalancerStatus = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].LoadBalancerStatus");
-				loadBalancer.Address = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].Address");
-				loadBalancer.AddressType = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].AddressType");
-				loadBalancer.RegionId = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].RegionId");
-				loadBalancer.RegionIdAlias = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].RegionIdAlias");
-				loadBalancer.VSwitchId = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].VSwitchId");
-				loadBalancer.VpcId = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].VpcId");
-				loadBalancer.NetworkType = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].NetworkType");
-				loadBalancer.MasterZoneId = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].MasterZoneId");
-				loadBalancer.SlaveZoneId = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].SlaveZoneId");
-				loadBalancer.InternetChargeType = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].InternetChargeType");
-				loadBalancer.CreateTime = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].CreateTime");
-				loadBalancer.CreateTimeStamp = context.LongValue("DescribeLoadBalancers.LoadBalancers["+ i +"].CreateTimeStamp");
-				loadBalancer.PayType = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].PayType");
-				loadBalancer.ResourceGroupId = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].ResourceGroupId");
+            List<DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer> describeLoadBalancersResponse_loadBalancers = new List<DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer>();
+            for (int i = 0; i < context.Length("DescribeLoadBalancers.LoadBalancers.Length"); i++)
+            {
+                DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer loadBalancer = new DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer();
+                loadBalancer.LoadBalancerId = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].LoadBalancerId");
+                loadBalancer.LoadBalancerName = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].LoadBalancerName");
+                loadBalancer.LoadBalancerStatus = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].LoadBalancerStatus");
+                loadBalancer.Address = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].Address");
+                loadBalancer.AddressType = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].AddressType");
+                loadBalancer.RegionId = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].RegionId");
+                loadBalancer.RegionIdAlias = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].RegionIdAlias");
+                loadBalancer.VSwitchId = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].VSwitchId");
+                loadBalancer.VpcId = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].VpcId");
+                loadBalancer.NetworkType = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].NetworkType");
+                loadBalancer.MasterZoneId = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].MasterZoneId");
+                loadBalancer.SlaveZoneId = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].SlaveZoneId");
+                loadBalancer.InternetChargeType = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].InternetChargeType");
+                loadBalancer.CreateTime = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].CreateTime");
+                loadBalancer.CreateTimeStamp = context.LongValue("DescribeLoadBalancers.LoadBalancers[" + i + "].CreateTimeStamp");
+                loadBalancer.PayType = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].PayType");
+                loadBalancer.ResourceGroupId = context.StringValue("DescribeLoadBalancers.LoadBalancers[" + i + "].ResourceGroupId");
 
-				describeLoadBalancersResponse_loadBalancers.Add(loadBalancer);
-			}
-			describeLoadBalancersResponse.LoadBalancers = describeLoadBalancersResponse_loadBalancers;
-        
-			return describeLoadBalancersResponse;
+                describeLoadBalancersResponse_loadBalancers.Add(loadBalancer);
+            }
+            describeLoadBalancersResponse.LoadBalancers = describeLoadBalancersResponse_loadBalancers;
+
+            return describeLoadBalancersResponse;
         }
     }
 }

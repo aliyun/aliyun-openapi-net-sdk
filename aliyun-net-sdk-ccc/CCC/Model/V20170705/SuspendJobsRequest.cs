@@ -33,108 +33,108 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private bool? all;
+        private bool? all;
 
-		private List<string> jobIds;
+        private List<string> jobIds;
 
-		private string instanceId;
+        private string instanceId;
 
-		private List<string> jobReferenceIds;
+        private List<string> jobReferenceIds;
 
-		private string groupId;
+        private string groupId;
 
-		private string scenarioId;
+        private string scenarioId;
 
-		public bool? All
-		{
-			get
-			{
-				return all;
-			}
-			set	
-			{
-				all = value;
-				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
-			}
-		}
+        public bool? All
+        {
+            get
+            {
+                return all;
+            }
+            set
+            {
+                all = value;
+                DictionaryUtil.Add(QueryParameters, "All", value.ToString());
+            }
+        }
 
-		public List<string> JobIds
-		{
-			get
-			{
-				return jobIds;
-			}
+        public List<string> JobIds
+        {
+            get
+            {
+                return jobIds;
+            }
 
-			set
-			{
-				jobIds = value;
-				for (int i = 0; i < jobIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"JobId." + (i + 1) , jobIds[i]);
-				}
-			}
-		}
+            set
+            {
+                jobIds = value;
+                for (int i = 0; i < jobIds.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "JobId." + (i + 1), jobIds[i]);
+                }
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public List<string> JobReferenceIds
-		{
-			get
-			{
-				return jobReferenceIds;
-			}
+        public List<string> JobReferenceIds
+        {
+            get
+            {
+                return jobReferenceIds;
+            }
 
-			set
-			{
-				jobReferenceIds = value;
-				for (int i = 0; i < jobReferenceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"JobReferenceId." + (i + 1) , jobReferenceIds[i]);
-				}
-			}
-		}
+            set
+            {
+                jobReferenceIds = value;
+                for (int i = 0; i < jobReferenceIds.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "JobReferenceId." + (i + 1), jobReferenceIds[i]);
+                }
+            }
+        }
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
+        public string GroupId
+        {
+            get
+            {
+                return groupId;
+            }
+            set
+            {
+                groupId = value;
+                DictionaryUtil.Add(QueryParameters, "GroupId", value);
+            }
+        }
 
-		public string ScenarioId
-		{
-			get
-			{
-				return scenarioId;
-			}
-			set	
-			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
-			}
-		}
+        public string ScenarioId
+        {
+            get
+            {
+                return scenarioId;
+            }
+            set
+            {
+                scenarioId = value;
+                DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override SuspendJobsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

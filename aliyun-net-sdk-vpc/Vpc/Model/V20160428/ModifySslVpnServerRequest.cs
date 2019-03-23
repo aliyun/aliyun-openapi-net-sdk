@@ -33,230 +33,230 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
-		private string cipher;
+        private string cipher;
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string clientIpPool;
+        private string clientIpPool;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string clientToken;
+        private string clientToken;
 
-		private bool? compress;
+        private bool? compress;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string sslVpnServerId;
+        private string sslVpnServerId;
 
-		private string localSubnet;
+        private string localSubnet;
 
-		private string regionId;
+        private string regionId;
 
-		private int? port;
+        private int? port;
 
-		private string proto;
+        private string proto;
 
-		private string name;
+        private string name;
 
-		private string action;
+        private string action;
 
-		public string Cipher
-		{
-			get
-			{
-				return cipher;
-			}
-			set	
-			{
-				cipher = value;
-				DictionaryUtil.Add(QueryParameters, "Cipher", value);
-			}
-		}
+        public string Cipher
+        {
+            get
+            {
+                return cipher;
+            }
+            set
+            {
+                cipher = value;
+                DictionaryUtil.Add(QueryParameters, "Cipher", value);
+            }
+        }
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ClientIpPool
-		{
-			get
-			{
-				return clientIpPool;
-			}
-			set	
-			{
-				clientIpPool = value;
-				DictionaryUtil.Add(QueryParameters, "ClientIpPool", value);
-			}
-		}
+        public string ClientIpPool
+        {
+            get
+            {
+                return clientIpPool;
+            }
+            set
+            {
+                clientIpPool = value;
+                DictionaryUtil.Add(QueryParameters, "ClientIpPool", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
+        public string ClientToken
+        {
+            get
+            {
+                return clientToken;
+            }
+            set
+            {
+                clientToken = value;
+                DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+            }
+        }
 
-		public bool? Compress
-		{
-			get
-			{
-				return compress;
-			}
-			set	
-			{
-				compress = value;
-				DictionaryUtil.Add(QueryParameters, "Compress", value.ToString());
-			}
-		}
+        public bool? Compress
+        {
+            get
+            {
+                return compress;
+            }
+            set
+            {
+                compress = value;
+                DictionaryUtil.Add(QueryParameters, "Compress", value.ToString());
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string SslVpnServerId
-		{
-			get
-			{
-				return sslVpnServerId;
-			}
-			set	
-			{
-				sslVpnServerId = value;
-				DictionaryUtil.Add(QueryParameters, "SslVpnServerId", value);
-			}
-		}
+        public string SslVpnServerId
+        {
+            get
+            {
+                return sslVpnServerId;
+            }
+            set
+            {
+                sslVpnServerId = value;
+                DictionaryUtil.Add(QueryParameters, "SslVpnServerId", value);
+            }
+        }
 
-		public string LocalSubnet
-		{
-			get
-			{
-				return localSubnet;
-			}
-			set	
-			{
-				localSubnet = value;
-				DictionaryUtil.Add(QueryParameters, "LocalSubnet", value);
-			}
-		}
+        public string LocalSubnet
+        {
+            get
+            {
+                return localSubnet;
+            }
+            set
+            {
+                localSubnet = value;
+                DictionaryUtil.Add(QueryParameters, "LocalSubnet", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public int? Port
-		{
-			get
-			{
-				return port;
-			}
-			set	
-			{
-				port = value;
-				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
-			}
-		}
+        public int? Port
+        {
+            get
+            {
+                return port;
+            }
+            set
+            {
+                port = value;
+                DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
+            }
+        }
 
-		public string Proto
-		{
-			get
-			{
-				return proto;
-			}
-			set	
-			{
-				proto = value;
-				DictionaryUtil.Add(QueryParameters, "Proto", value);
-			}
-		}
+        public string Proto
+        {
+            get
+            {
+                return proto;
+            }
+            set
+            {
+                proto = value;
+                DictionaryUtil.Add(QueryParameters, "Proto", value);
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
         public override ModifySslVpnServerResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

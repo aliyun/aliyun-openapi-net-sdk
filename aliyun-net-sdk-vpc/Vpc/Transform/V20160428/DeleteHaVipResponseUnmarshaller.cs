@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DeleteHaVipResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteHaVipResponse deleteHaVipResponse = new DeleteHaVipResponse();
+            DeleteHaVipResponse deleteHaVipResponse = new DeleteHaVipResponse();
 
-			deleteHaVipResponse.HttpResponse = context.HttpResponse;
-			deleteHaVipResponse.RequestId = context.StringValue("DeleteHaVip.RequestId");
-        
-			return deleteHaVipResponse;
+            deleteHaVipResponse.HttpResponse = context.HttpResponse;
+            deleteHaVipResponse.RequestId = context.StringValue("DeleteHaVip.RequestId");
+
+            return deleteHaVipResponse;
         }
     }
 }

@@ -21,235 +21,235 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class RequestLoginInfoResponse : AcsResponse
-	{
+    public class RequestLoginInfoResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? success;
+        private bool? success;
 
-		private string code;
+        private string code;
 
-		private string message;
+        private string message;
 
-		private int? httpStatusCode;
+        private int? httpStatusCode;
 
-		private RequestLoginInfo_LoginInfo loginInfo;
+        private RequestLoginInfo_LoginInfo loginInfo;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+        public int? HttpStatusCode
+        {
+            get
+            {
+                return httpStatusCode;
+            }
+            set
+            {
+                httpStatusCode = value;
+            }
+        }
 
-		public RequestLoginInfo_LoginInfo LoginInfo
-		{
-			get
-			{
-				return loginInfo;
-			}
-			set	
-			{
-				loginInfo = value;
-			}
-		}
+        public RequestLoginInfo_LoginInfo LoginInfo
+        {
+            get
+            {
+                return loginInfo;
+            }
+            set
+            {
+                loginInfo = value;
+            }
+        }
 
-		public class RequestLoginInfo_LoginInfo
-		{
+        public class RequestLoginInfo_LoginInfo
+        {
 
-			private string userName;
+            private string userName;
 
-			private string displayName;
+            private string displayName;
 
-			private string phoneNumber;
+            private string phoneNumber;
 
-			private string region;
+            private string region;
 
-			private string webRtcUrl;
+            private string webRtcUrl;
 
-			private string agentServerUrl;
+            private string agentServerUrl;
 
-			private string extension;
+            private string extension;
 
-			private string tenantId;
+            private string tenantId;
 
-			private string signature;
+            private string signature;
 
-			private string signData;
+            private string signData;
 
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
+            public string UserName
+            {
+                get
+                {
+                    return userName;
+                }
+                set
+                {
+                    userName = value;
+                }
+            }
 
-			public string DisplayName
-			{
-				get
-				{
-					return displayName;
-				}
-				set	
-				{
-					displayName = value;
-				}
-			}
+            public string DisplayName
+            {
+                get
+                {
+                    return displayName;
+                }
+                set
+                {
+                    displayName = value;
+                }
+            }
 
-			public string PhoneNumber
-			{
-				get
-				{
-					return phoneNumber;
-				}
-				set	
-				{
-					phoneNumber = value;
-				}
-			}
+            public string PhoneNumber
+            {
+                get
+                {
+                    return phoneNumber;
+                }
+                set
+                {
+                    phoneNumber = value;
+                }
+            }
 
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
+            public string Region
+            {
+                get
+                {
+                    return region;
+                }
+                set
+                {
+                    region = value;
+                }
+            }
 
-			public string WebRtcUrl
-			{
-				get
-				{
-					return webRtcUrl;
-				}
-				set	
-				{
-					webRtcUrl = value;
-				}
-			}
+            public string WebRtcUrl
+            {
+                get
+                {
+                    return webRtcUrl;
+                }
+                set
+                {
+                    webRtcUrl = value;
+                }
+            }
 
-			public string AgentServerUrl
-			{
-				get
-				{
-					return agentServerUrl;
-				}
-				set	
-				{
-					agentServerUrl = value;
-				}
-			}
+            public string AgentServerUrl
+            {
+                get
+                {
+                    return agentServerUrl;
+                }
+                set
+                {
+                    agentServerUrl = value;
+                }
+            }
 
-			public string Extension
-			{
-				get
-				{
-					return extension;
-				}
-				set	
-				{
-					extension = value;
-				}
-			}
+            public string Extension
+            {
+                get
+                {
+                    return extension;
+                }
+                set
+                {
+                    extension = value;
+                }
+            }
 
-			public string TenantId
-			{
-				get
-				{
-					return tenantId;
-				}
-				set	
-				{
-					tenantId = value;
-				}
-			}
+            public string TenantId
+            {
+                get
+                {
+                    return tenantId;
+                }
+                set
+                {
+                    tenantId = value;
+                }
+            }
 
-			public string Signature
-			{
-				get
-				{
-					return signature;
-				}
-				set	
-				{
-					signature = value;
-				}
-			}
+            public string Signature
+            {
+                get
+                {
+                    return signature;
+                }
+                set
+                {
+                    signature = value;
+                }
+            }
 
-			public string SignData
-			{
-				get
-				{
-					return signData;
-				}
-				set	
-				{
-					signData = value;
-				}
-			}
-		}
-	}
+            public string SignData
+            {
+                get
+                {
+                    return signData;
+                }
+                set
+                {
+                    signData = value;
+                }
+            }
+        }
+    }
 }

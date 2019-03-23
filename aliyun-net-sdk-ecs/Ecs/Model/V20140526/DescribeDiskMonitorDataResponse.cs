@@ -21,193 +21,193 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeDiskMonitorDataResponse : AcsResponse
-	{
+    public class DescribeDiskMonitorDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private List<DescribeDiskMonitorData_DiskMonitorData> monitorData;
+        private List<DescribeDiskMonitorData_DiskMonitorData> monitorData;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribeDiskMonitorData_DiskMonitorData> MonitorData
-		{
-			get
-			{
-				return monitorData;
-			}
-			set	
-			{
-				monitorData = value;
-			}
-		}
+        public List<DescribeDiskMonitorData_DiskMonitorData> MonitorData
+        {
+            get
+            {
+                return monitorData;
+            }
+            set
+            {
+                monitorData = value;
+            }
+        }
 
-		public class DescribeDiskMonitorData_DiskMonitorData
-		{
+        public class DescribeDiskMonitorData_DiskMonitorData
+        {
 
-			private string diskId;
+            private string diskId;
 
-			private int? iOPSRead;
+            private int? iOPSRead;
 
-			private int? iOPSWrite;
+            private int? iOPSWrite;
 
-			private int? iOPSTotal;
+            private int? iOPSTotal;
 
-			private int? bPSRead;
+            private int? bPSRead;
 
-			private int? bPSWrite;
+            private int? bPSWrite;
 
-			private int? bPSTotal;
+            private int? bPSTotal;
 
-			private int? latencyRead;
+            private int? latencyRead;
 
-			private int? latencyWrite;
+            private int? latencyWrite;
 
-			private string timeStamp;
+            private string timeStamp;
 
-			public string DiskId
-			{
-				get
-				{
-					return diskId;
-				}
-				set	
-				{
-					diskId = value;
-				}
-			}
+            public string DiskId
+            {
+                get
+                {
+                    return diskId;
+                }
+                set
+                {
+                    diskId = value;
+                }
+            }
 
-			public int? IOPSRead
-			{
-				get
-				{
-					return iOPSRead;
-				}
-				set	
-				{
-					iOPSRead = value;
-				}
-			}
+            public int? IOPSRead
+            {
+                get
+                {
+                    return iOPSRead;
+                }
+                set
+                {
+                    iOPSRead = value;
+                }
+            }
 
-			public int? IOPSWrite
-			{
-				get
-				{
-					return iOPSWrite;
-				}
-				set	
-				{
-					iOPSWrite = value;
-				}
-			}
+            public int? IOPSWrite
+            {
+                get
+                {
+                    return iOPSWrite;
+                }
+                set
+                {
+                    iOPSWrite = value;
+                }
+            }
 
-			public int? IOPSTotal
-			{
-				get
-				{
-					return iOPSTotal;
-				}
-				set	
-				{
-					iOPSTotal = value;
-				}
-			}
+            public int? IOPSTotal
+            {
+                get
+                {
+                    return iOPSTotal;
+                }
+                set
+                {
+                    iOPSTotal = value;
+                }
+            }
 
-			public int? BPSRead
-			{
-				get
-				{
-					return bPSRead;
-				}
-				set	
-				{
-					bPSRead = value;
-				}
-			}
+            public int? BPSRead
+            {
+                get
+                {
+                    return bPSRead;
+                }
+                set
+                {
+                    bPSRead = value;
+                }
+            }
 
-			public int? BPSWrite
-			{
-				get
-				{
-					return bPSWrite;
-				}
-				set	
-				{
-					bPSWrite = value;
-				}
-			}
+            public int? BPSWrite
+            {
+                get
+                {
+                    return bPSWrite;
+                }
+                set
+                {
+                    bPSWrite = value;
+                }
+            }
 
-			public int? BPSTotal
-			{
-				get
-				{
-					return bPSTotal;
-				}
-				set	
-				{
-					bPSTotal = value;
-				}
-			}
+            public int? BPSTotal
+            {
+                get
+                {
+                    return bPSTotal;
+                }
+                set
+                {
+                    bPSTotal = value;
+                }
+            }
 
-			public int? LatencyRead
-			{
-				get
-				{
-					return latencyRead;
-				}
-				set	
-				{
-					latencyRead = value;
-				}
-			}
+            public int? LatencyRead
+            {
+                get
+                {
+                    return latencyRead;
+                }
+                set
+                {
+                    latencyRead = value;
+                }
+            }
 
-			public int? LatencyWrite
-			{
-				get
-				{
-					return latencyWrite;
-				}
-				set	
-				{
-					latencyWrite = value;
-				}
-			}
+            public int? LatencyWrite
+            {
+                get
+                {
+                    return latencyWrite;
+                }
+                set
+                {
+                    latencyWrite = value;
+                }
+            }
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
-		}
-	}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
+        }
+    }
 }

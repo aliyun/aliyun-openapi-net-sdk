@@ -34,125 +34,125 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string resumeTime;
+        private string resumeTime;
 
-		private string appName;
+        private string appName;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string liveStreamType;
+        private string liveStreamType;
 
-		private string domainName;
+        private string domainName;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string streamName;
+        private string streamName;
 
-		public string ResumeTime
-		{
-			get
-			{
-				return resumeTime;
-			}
-			set	
-			{
-				resumeTime = value;
-				DictionaryUtil.Add(QueryParameters, "ResumeTime", value);
-			}
-		}
+        public string ResumeTime
+        {
+            get
+            {
+                return resumeTime;
+            }
+            set
+            {
+                resumeTime = value;
+                DictionaryUtil.Add(QueryParameters, "ResumeTime", value);
+            }
+        }
 
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
+        public string AppName
+        {
+            get
+            {
+                return appName;
+            }
+            set
+            {
+                appName = value;
+                DictionaryUtil.Add(QueryParameters, "AppName", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string LiveStreamType
-		{
-			get
-			{
-				return liveStreamType;
-			}
-			set	
-			{
-				liveStreamType = value;
-				DictionaryUtil.Add(QueryParameters, "LiveStreamType", value);
-			}
-		}
+        public string LiveStreamType
+        {
+            get
+            {
+                return liveStreamType;
+            }
+            set
+            {
+                liveStreamType = value;
+                DictionaryUtil.Add(QueryParameters, "LiveStreamType", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
+        public string StreamName
+        {
+            get
+            {
+                return streamName;
+            }
+            set
+            {
+                streamName = value;
+                DictionaryUtil.Add(QueryParameters, "StreamName", value);
+            }
+        }
 
         public override ForbidLiveStreamResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

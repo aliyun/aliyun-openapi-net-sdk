@@ -34,95 +34,95 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string startTime;
+        private string startTime;
 
-		private string percent;
+        private string percent;
 
-		private string action;
+        private string action;
 
-		private string domainName;
+        private string domainName;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string sortBy;
+        private string sortBy;
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+                DictionaryUtil.Add(QueryParameters, "StartTime", value);
+            }
+        }
 
-		public string Percent
-		{
-			get
-			{
-				return percent;
-			}
-			set	
-			{
-				percent = value;
-				DictionaryUtil.Add(QueryParameters, "Percent", value);
-			}
-		}
+        public string Percent
+        {
+            get
+            {
+                return percent;
+            }
+            set
+            {
+                percent = value;
+                DictionaryUtil.Add(QueryParameters, "Percent", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string SortBy
-		{
-			get
-			{
-				return sortBy;
-			}
-			set	
-			{
-				sortBy = value;
-				DictionaryUtil.Add(QueryParameters, "SortBy", value);
-			}
-		}
+        public string SortBy
+        {
+            get
+            {
+                return sortBy;
+            }
+            set
+            {
+                sortBy = value;
+                DictionaryUtil.Add(QueryParameters, "SortBy", value);
+            }
+        }
 
         public override DescribeDomainTopUrlVisitResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

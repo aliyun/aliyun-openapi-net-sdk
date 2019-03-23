@@ -28,19 +28,19 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static GetPublicKeyResponse Unmarshall(UnmarshallerContext context)
         {
-			GetPublicKeyResponse getPublicKeyResponse = new GetPublicKeyResponse();
+            GetPublicKeyResponse getPublicKeyResponse = new GetPublicKeyResponse();
 
-			getPublicKeyResponse.HttpResponse = context.HttpResponse;
-			getPublicKeyResponse.RequestId = context.StringValue("GetPublicKey.RequestId");
+            getPublicKeyResponse.HttpResponse = context.HttpResponse;
+            getPublicKeyResponse.RequestId = context.StringValue("GetPublicKey.RequestId");
 
-			GetPublicKeyResponse.GetPublicKey_PublicKey publicKey = new GetPublicKeyResponse.GetPublicKey_PublicKey();
-			publicKey.PublicKeyId = context.StringValue("GetPublicKey.PublicKey.PublicKeyId");
-			publicKey.PublicKeySpec = context.StringValue("GetPublicKey.PublicKey.PublicKeySpec");
-			publicKey.Status = context.StringValue("GetPublicKey.PublicKey.Status");
-			publicKey.CreateDate = context.StringValue("GetPublicKey.PublicKey.CreateDate");
-			getPublicKeyResponse.PublicKey = publicKey;
-        
-			return getPublicKeyResponse;
+            GetPublicKeyResponse.GetPublicKey_PublicKey publicKey = new GetPublicKeyResponse.GetPublicKey_PublicKey();
+            publicKey.PublicKeyId = context.StringValue("GetPublicKey.PublicKey.PublicKeyId");
+            publicKey.PublicKeySpec = context.StringValue("GetPublicKey.PublicKey.PublicKeySpec");
+            publicKey.Status = context.StringValue("GetPublicKey.PublicKey.Status");
+            publicKey.CreateDate = context.StringValue("GetPublicKey.PublicKey.CreateDate");
+            getPublicKeyResponse.PublicKey = publicKey;
+
+            return getPublicKeyResponse;
         }
     }
 }

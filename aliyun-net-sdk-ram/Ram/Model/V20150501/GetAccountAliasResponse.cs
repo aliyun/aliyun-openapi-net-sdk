@@ -22,35 +22,35 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class GetAccountAliasResponse : AcsResponse
-	{
+    public class GetAccountAliasResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string accountAlias;
+        private string accountAlias;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string AccountAlias
-		{
-			get
-			{
-				return accountAlias;
-			}
-			set	
-			{
-				accountAlias = value;
-			}
-		}
-	}
+        public string AccountAlias
+        {
+            get
+            {
+                return accountAlias;
+            }
+            set
+            {
+                accountAlias = value;
+            }
+        }
+    }
 }

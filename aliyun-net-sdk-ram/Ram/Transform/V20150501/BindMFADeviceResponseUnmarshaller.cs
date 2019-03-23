@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static BindMFADeviceResponse Unmarshall(UnmarshallerContext context)
         {
-			BindMFADeviceResponse bindMFADeviceResponse = new BindMFADeviceResponse();
+            BindMFADeviceResponse bindMFADeviceResponse = new BindMFADeviceResponse();
 
-			bindMFADeviceResponse.HttpResponse = context.HttpResponse;
-			bindMFADeviceResponse.RequestId = context.StringValue("BindMFADevice.RequestId");
-        
-			return bindMFADeviceResponse;
+            bindMFADeviceResponse.HttpResponse = context.HttpResponse;
+            bindMFADeviceResponse.RequestId = context.StringValue("BindMFADevice.RequestId");
+
+            return bindMFADeviceResponse;
         }
     }
 }

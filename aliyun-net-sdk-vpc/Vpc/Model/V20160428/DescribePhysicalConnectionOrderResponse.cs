@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribePhysicalConnectionOrderResponse : AcsResponse
-	{
+    public class DescribePhysicalConnectionOrderResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string orderId;
+        private string orderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+            }
+        }
 
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-	}
+        public string OrderId
+        {
+            get
+            {
+                return orderId;
+            }
+            set
+            {
+                orderId = value;
+            }
+        }
+    }
 }

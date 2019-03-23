@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.ROS.Model.V20150901
 {
-	public class CancelUpdateStackResponse : AcsResponse
-	{
-	}
+    public class CancelUpdateStackResponse : AcsResponse
+    {
+    }
 }

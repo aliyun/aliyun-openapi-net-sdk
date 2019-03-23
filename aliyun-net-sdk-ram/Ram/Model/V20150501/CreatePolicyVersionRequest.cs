@@ -32,53 +32,53 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public CreatePolicyVersionRequest()
             : base("Ram", "2015-05-01", "CreatePolicyVersion", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private bool? setAsDefault;
+        private bool? setAsDefault;
 
-		private string policyName;
+        private string policyName;
 
-		private string policyDocument;
+        private string policyDocument;
 
-		public bool? SetAsDefault
-		{
-			get
-			{
-				return setAsDefault;
-			}
-			set	
-			{
-				setAsDefault = value;
-				DictionaryUtil.Add(QueryParameters, "SetAsDefault", value.ToString());
-			}
-		}
+        public bool? SetAsDefault
+        {
+            get
+            {
+                return setAsDefault;
+            }
+            set
+            {
+                setAsDefault = value;
+                DictionaryUtil.Add(QueryParameters, "SetAsDefault", value.ToString());
+            }
+        }
 
-		public string PolicyName
-		{
-			get
-			{
-				return policyName;
-			}
-			set	
-			{
-				policyName = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyName", value);
-			}
-		}
+        public string PolicyName
+        {
+            get
+            {
+                return policyName;
+            }
+            set
+            {
+                policyName = value;
+                DictionaryUtil.Add(QueryParameters, "PolicyName", value);
+            }
+        }
 
-		public string PolicyDocument
-		{
-			get
-			{
-				return policyDocument;
-			}
-			set	
-			{
-				policyDocument = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyDocument", value);
-			}
-		}
+        public string PolicyDocument
+        {
+            get
+            {
+                return policyDocument;
+            }
+            set
+            {
+                policyDocument = value;
+                DictionaryUtil.Add(QueryParameters, "PolicyDocument", value);
+            }
+        }
 
         public override CreatePolicyVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

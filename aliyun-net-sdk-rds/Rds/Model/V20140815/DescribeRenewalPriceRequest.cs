@@ -33,275 +33,275 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private int? quantity;
+        private int? quantity;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string clientToken;
+        private string clientToken;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string commodityCode;
+        private string commodityCode;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string usedTime;
+        private string usedTime;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		private string dBInstanceClass;
+        private string dBInstanceClass;
 
-		private string regionId;
+        private string regionId;
 
-		private string promotionCode;
+        private string promotionCode;
 
-		private string action;
+        private string action;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string timeType;
+        private string timeType;
 
-		private string payType;
+        private string payType;
 
-		private string businessInfo;
+        private string businessInfo;
 
-		private string orderType;
+        private string orderType;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public int? Quantity
-		{
-			get
-			{
-				return quantity;
-			}
-			set	
-			{
-				quantity = value;
-				DictionaryUtil.Add(QueryParameters, "Quantity", value.ToString());
-			}
-		}
+        public int? Quantity
+        {
+            get
+            {
+                return quantity;
+            }
+            set
+            {
+                quantity = value;
+                DictionaryUtil.Add(QueryParameters, "Quantity", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
+        public string ClientToken
+        {
+            get
+            {
+                return clientToken;
+            }
+            set
+            {
+                clientToken = value;
+                DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string CommodityCode
-		{
-			get
-			{
-				return commodityCode;
-			}
-			set	
-			{
-				commodityCode = value;
-				DictionaryUtil.Add(QueryParameters, "CommodityCode", value);
-			}
-		}
+        public string CommodityCode
+        {
+            get
+            {
+                return commodityCode;
+            }
+            set
+            {
+                commodityCode = value;
+                DictionaryUtil.Add(QueryParameters, "CommodityCode", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string UsedTime
-		{
-			get
-			{
-				return usedTime;
-			}
-			set	
-			{
-				usedTime = value;
-				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
-			}
-		}
+        public string UsedTime
+        {
+            get
+            {
+                return usedTime;
+            }
+            set
+            {
+                usedTime = value;
+                DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
-		public string DBInstanceClass
-		{
-			get
-			{
-				return dBInstanceClass;
-			}
-			set	
-			{
-				dBInstanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
-			}
-		}
+        public string DBInstanceClass
+        {
+            get
+            {
+                return dBInstanceClass;
+            }
+            set
+            {
+                dBInstanceClass = value;
+                DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string PromotionCode
-		{
-			get
-			{
-				return promotionCode;
-			}
-			set	
-			{
-				promotionCode = value;
-				DictionaryUtil.Add(QueryParameters, "PromotionCode", value);
-			}
-		}
+        public string PromotionCode
+        {
+            get
+            {
+                return promotionCode;
+            }
+            set
+            {
+                promotionCode = value;
+                DictionaryUtil.Add(QueryParameters, "PromotionCode", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+                DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+            }
+        }
 
-		public string TimeType
-		{
-			get
-			{
-				return timeType;
-			}
-			set	
-			{
-				timeType = value;
-				DictionaryUtil.Add(QueryParameters, "TimeType", value);
-			}
-		}
+        public string TimeType
+        {
+            get
+            {
+                return timeType;
+            }
+            set
+            {
+                timeType = value;
+                DictionaryUtil.Add(QueryParameters, "TimeType", value);
+            }
+        }
 
-		public string PayType
-		{
-			get
-			{
-				return payType;
-			}
-			set	
-			{
-				payType = value;
-				DictionaryUtil.Add(QueryParameters, "PayType", value);
-			}
-		}
+        public string PayType
+        {
+            get
+            {
+                return payType;
+            }
+            set
+            {
+                payType = value;
+                DictionaryUtil.Add(QueryParameters, "PayType", value);
+            }
+        }
 
-		public string BusinessInfo
-		{
-			get
-			{
-				return businessInfo;
-			}
-			set	
-			{
-				businessInfo = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
-			}
-		}
+        public string BusinessInfo
+        {
+            get
+            {
+                return businessInfo;
+            }
+            set
+            {
+                businessInfo = value;
+                DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+            }
+        }
 
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
+        public string OrderType
+        {
+            get
+            {
+                return orderType;
+            }
+            set
+            {
+                orderType = value;
+                DictionaryUtil.Add(QueryParameters, "OrderType", value);
+            }
+        }
 
         public override DescribeRenewalPriceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

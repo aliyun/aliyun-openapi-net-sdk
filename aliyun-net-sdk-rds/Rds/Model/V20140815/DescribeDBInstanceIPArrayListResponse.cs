@@ -21,109 +21,109 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeDBInstanceIPArrayListResponse : AcsResponse
-	{
+    public class DescribeDBInstanceIPArrayListResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeDBInstanceIPArrayList_DBInstanceIPArray> items;
+        private List<DescribeDBInstanceIPArrayList_DBInstanceIPArray> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeDBInstanceIPArrayList_DBInstanceIPArray> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeDBInstanceIPArrayList_DBInstanceIPArray> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeDBInstanceIPArrayList_DBInstanceIPArray
-		{
+        public class DescribeDBInstanceIPArrayList_DBInstanceIPArray
+        {
 
-			private string dBInstanceIPArrayName;
+            private string dBInstanceIPArrayName;
 
-			private string dBInstanceIPArrayAttribute;
+            private string dBInstanceIPArrayAttribute;
 
-			private string securityIPType;
+            private string securityIPType;
 
-			private string securityIPList;
+            private string securityIPList;
 
-			private string whitelistNetworkType;
+            private string whitelistNetworkType;
 
-			public string DBInstanceIPArrayName
-			{
-				get
-				{
-					return dBInstanceIPArrayName;
-				}
-				set	
-				{
-					dBInstanceIPArrayName = value;
-				}
-			}
+            public string DBInstanceIPArrayName
+            {
+                get
+                {
+                    return dBInstanceIPArrayName;
+                }
+                set
+                {
+                    dBInstanceIPArrayName = value;
+                }
+            }
 
-			public string DBInstanceIPArrayAttribute
-			{
-				get
-				{
-					return dBInstanceIPArrayAttribute;
-				}
-				set	
-				{
-					dBInstanceIPArrayAttribute = value;
-				}
-			}
+            public string DBInstanceIPArrayAttribute
+            {
+                get
+                {
+                    return dBInstanceIPArrayAttribute;
+                }
+                set
+                {
+                    dBInstanceIPArrayAttribute = value;
+                }
+            }
 
-			public string SecurityIPType
-			{
-				get
-				{
-					return securityIPType;
-				}
-				set	
-				{
-					securityIPType = value;
-				}
-			}
+            public string SecurityIPType
+            {
+                get
+                {
+                    return securityIPType;
+                }
+                set
+                {
+                    securityIPType = value;
+                }
+            }
 
-			public string SecurityIPList
-			{
-				get
-				{
-					return securityIPList;
-				}
-				set	
-				{
-					securityIPList = value;
-				}
-			}
+            public string SecurityIPList
+            {
+                get
+                {
+                    return securityIPList;
+                }
+                set
+                {
+                    securityIPList = value;
+                }
+            }
 
-			public string WhitelistNetworkType
-			{
-				get
-				{
-					return whitelistNetworkType;
-				}
-				set	
-				{
-					whitelistNetworkType = value;
-				}
-			}
-		}
-	}
+            public string WhitelistNetworkType
+            {
+                get
+                {
+                    return whitelistNetworkType;
+                }
+                set
+                {
+                    whitelistNetworkType = value;
+                }
+            }
+        }
+    }
 }

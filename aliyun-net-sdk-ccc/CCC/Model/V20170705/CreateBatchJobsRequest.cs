@@ -33,134 +33,134 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private List<string> callingNumbers;
+        private List<string> callingNumbers;
 
-		private string instanceId;
+        private string instanceId;
 
-		private bool? submitted;
+        private bool? submitted;
 
-		private string strategyJson;
+        private string strategyJson;
 
-		private string name;
+        private string name;
 
-		private string description;
+        private string description;
 
-		private string scenarioId;
+        private string scenarioId;
 
-		private string jobFilePath;
+        private string jobFilePath;
 
-		public List<string> CallingNumbers
-		{
-			get
-			{
-				return callingNumbers;
-			}
+        public List<string> CallingNumbers
+        {
+            get
+            {
+                return callingNumbers;
+            }
 
-			set
-			{
-				callingNumbers = value;
-				for (int i = 0; i < callingNumbers.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
-				}
-			}
-		}
+            set
+            {
+                callingNumbers = value;
+                for (int i = 0; i < callingNumbers.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "CallingNumber." + (i + 1), callingNumbers[i]);
+                }
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public bool? Submitted
-		{
-			get
-			{
-				return submitted;
-			}
-			set	
-			{
-				submitted = value;
-				DictionaryUtil.Add(QueryParameters, "Submitted", value.ToString());
-			}
-		}
+        public bool? Submitted
+        {
+            get
+            {
+                return submitted;
+            }
+            set
+            {
+                submitted = value;
+                DictionaryUtil.Add(QueryParameters, "Submitted", value.ToString());
+            }
+        }
 
-		public string StrategyJson
-		{
-			get
-			{
-				return strategyJson;
-			}
-			set	
-			{
-				strategyJson = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
-			}
-		}
+        public string StrategyJson
+        {
+            get
+            {
+                return strategyJson;
+            }
+            set
+            {
+                strategyJson = value;
+                DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string ScenarioId
-		{
-			get
-			{
-				return scenarioId;
-			}
-			set	
-			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
-			}
-		}
+        public string ScenarioId
+        {
+            get
+            {
+                return scenarioId;
+            }
+            set
+            {
+                scenarioId = value;
+                DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+            }
+        }
 
-		public string JobFilePath
-		{
-			get
-			{
-				return jobFilePath;
-			}
-			set	
-			{
-				jobFilePath = value;
-				DictionaryUtil.Add(QueryParameters, "JobFilePath", value);
-			}
-		}
+        public string JobFilePath
+        {
+            get
+            {
+                return jobFilePath;
+            }
+            set
+            {
+                jobFilePath = value;
+                DictionaryUtil.Add(QueryParameters, "JobFilePath", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override CreateBatchJobsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

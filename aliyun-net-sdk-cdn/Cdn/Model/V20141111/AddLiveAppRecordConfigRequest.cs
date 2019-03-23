@@ -34,125 +34,125 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string ossBucket;
+        private string ossBucket;
 
-		private string appName;
+        private string appName;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string domainName;
+        private string domainName;
 
-		private string ossEndpoint;
+        private string ossEndpoint;
 
-		private string ossObjectPrefix;
+        private string ossObjectPrefix;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string OssBucket
-		{
-			get
-			{
-				return ossBucket;
-			}
-			set	
-			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
-			}
-		}
+        public string OssBucket
+        {
+            get
+            {
+                return ossBucket;
+            }
+            set
+            {
+                ossBucket = value;
+                DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+            }
+        }
 
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
+        public string AppName
+        {
+            get
+            {
+                return appName;
+            }
+            set
+            {
+                appName = value;
+                DictionaryUtil.Add(QueryParameters, "AppName", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string OssEndpoint
-		{
-			get
-			{
-				return ossEndpoint;
-			}
-			set	
-			{
-				ossEndpoint = value;
-				DictionaryUtil.Add(QueryParameters, "OssEndpoint", value);
-			}
-		}
+        public string OssEndpoint
+        {
+            get
+            {
+                return ossEndpoint;
+            }
+            set
+            {
+                ossEndpoint = value;
+                DictionaryUtil.Add(QueryParameters, "OssEndpoint", value);
+            }
+        }
 
-		public string OssObjectPrefix
-		{
-			get
-			{
-				return ossObjectPrefix;
-			}
-			set	
-			{
-				ossObjectPrefix = value;
-				DictionaryUtil.Add(QueryParameters, "OssObjectPrefix", value);
-			}
-		}
+        public string OssObjectPrefix
+        {
+            get
+            {
+                return ossObjectPrefix;
+            }
+            set
+            {
+                ossObjectPrefix = value;
+                DictionaryUtil.Add(QueryParameters, "OssObjectPrefix", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override AddLiveAppRecordConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

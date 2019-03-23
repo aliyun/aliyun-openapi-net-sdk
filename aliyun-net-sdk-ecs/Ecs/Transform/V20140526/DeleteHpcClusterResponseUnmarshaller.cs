@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DeleteHpcClusterResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteHpcClusterResponse deleteHpcClusterResponse = new DeleteHpcClusterResponse();
+            DeleteHpcClusterResponse deleteHpcClusterResponse = new DeleteHpcClusterResponse();
 
-			deleteHpcClusterResponse.HttpResponse = context.HttpResponse;
-			deleteHpcClusterResponse.RequestId = context.StringValue("DeleteHpcCluster.RequestId");
-        
-			return deleteHpcClusterResponse;
+            deleteHpcClusterResponse.HttpResponse = context.HttpResponse;
+            deleteHpcClusterResponse.RequestId = context.StringValue("DeleteHpcCluster.RequestId");
+
+            return deleteHpcClusterResponse;
         }
     }
 }

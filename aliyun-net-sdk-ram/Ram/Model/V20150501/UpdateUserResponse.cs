@@ -22,151 +22,151 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class UpdateUserResponse : AcsResponse
-	{
+    public class UpdateUserResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private UpdateUser_User user;
+        private UpdateUser_User user;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public UpdateUser_User User
-		{
-			get
-			{
-				return user;
-			}
-			set	
-			{
-				user = value;
-			}
-		}
+        public UpdateUser_User User
+        {
+            get
+            {
+                return user;
+            }
+            set
+            {
+                user = value;
+            }
+        }
 
-		public class UpdateUser_User
-		{
+        public class UpdateUser_User
+        {
 
-			private string userId;
+            private string userId;
 
-			private string userName;
+            private string userName;
 
-			private string displayName;
+            private string displayName;
 
-			private string mobilePhone;
+            private string mobilePhone;
 
-			private string email;
+            private string email;
 
-			private string comments;
+            private string comments;
 
-			private string createDate;
+            private string createDate;
 
-			private string updateDate;
+            private string updateDate;
 
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
+            public string UserId
+            {
+                get
+                {
+                    return userId;
+                }
+                set
+                {
+                    userId = value;
+                }
+            }
 
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
+            public string UserName
+            {
+                get
+                {
+                    return userName;
+                }
+                set
+                {
+                    userName = value;
+                }
+            }
 
-			public string DisplayName
-			{
-				get
-				{
-					return displayName;
-				}
-				set	
-				{
-					displayName = value;
-				}
-			}
+            public string DisplayName
+            {
+                get
+                {
+                    return displayName;
+                }
+                set
+                {
+                    displayName = value;
+                }
+            }
 
-			public string MobilePhone
-			{
-				get
-				{
-					return mobilePhone;
-				}
-				set	
-				{
-					mobilePhone = value;
-				}
-			}
+            public string MobilePhone
+            {
+                get
+                {
+                    return mobilePhone;
+                }
+                set
+                {
+                    mobilePhone = value;
+                }
+            }
 
-			public string Email
-			{
-				get
-				{
-					return email;
-				}
-				set	
-				{
-					email = value;
-				}
-			}
+            public string Email
+            {
+                get
+                {
+                    return email;
+                }
+                set
+                {
+                    email = value;
+                }
+            }
 
-			public string Comments
-			{
-				get
-				{
-					return comments;
-				}
-				set	
-				{
-					comments = value;
-				}
-			}
+            public string Comments
+            {
+                get
+                {
+                    return comments;
+                }
+                set
+                {
+                    comments = value;
+                }
+            }
 
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
-				}
-			}
+            public string CreateDate
+            {
+                get
+                {
+                    return createDate;
+                }
+                set
+                {
+                    createDate = value;
+                }
+            }
 
-			public string UpdateDate
-			{
-				get
-				{
-					return updateDate;
-				}
-				set	
-				{
-					updateDate = value;
-				}
-			}
-		}
-	}
+            public string UpdateDate
+            {
+                get
+                {
+                    return updateDate;
+                }
+                set
+                {
+                    updateDate = value;
+                }
+            }
+        }
+    }
 }

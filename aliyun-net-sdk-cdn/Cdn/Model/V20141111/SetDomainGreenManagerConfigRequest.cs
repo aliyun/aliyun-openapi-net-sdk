@@ -34,65 +34,65 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string domainName;
+        private string domainName;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string enable;
+        private string enable;
 
-		private string action;
+        private string action;
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string Enable
-		{
-			get
-			{
-				return enable;
-			}
-			set	
-			{
-				enable = value;
-				DictionaryUtil.Add(QueryParameters, "Enable", value);
-			}
-		}
+        public string Enable
+        {
+            get
+            {
+                return enable;
+            }
+            set
+            {
+                enable = value;
+                DictionaryUtil.Add(QueryParameters, "Enable", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
         public override SetDomainGreenManagerConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

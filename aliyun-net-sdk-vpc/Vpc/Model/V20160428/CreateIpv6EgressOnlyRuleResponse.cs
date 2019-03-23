@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateIpv6EgressOnlyRuleResponse : AcsResponse
-	{
+    public class CreateIpv6EgressOnlyRuleResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string ipv6EgressRuleId;
+        private string ipv6EgressRuleId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Ipv6EgressRuleId
-		{
-			get
-			{
-				return ipv6EgressRuleId;
-			}
-			set	
-			{
-				ipv6EgressRuleId = value;
-			}
-		}
-	}
+        public string Ipv6EgressRuleId
+        {
+            get
+            {
+                return ipv6EgressRuleId;
+            }
+            set
+            {
+                ipv6EgressRuleId = value;
+            }
+        }
+    }
 }

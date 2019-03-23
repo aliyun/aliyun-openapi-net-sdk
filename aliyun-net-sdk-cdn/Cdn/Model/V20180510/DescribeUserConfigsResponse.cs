@@ -22,177 +22,177 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeUserConfigsResponse : AcsResponse
-	{
+    public class DescribeUserConfigsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private DescribeUserConfigs_Configs configs;
+        private DescribeUserConfigs_Configs configs;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public DescribeUserConfigs_Configs Configs
-		{
-			get
-			{
-				return configs;
-			}
-			set	
-			{
-				configs = value;
-			}
-		}
+        public DescribeUserConfigs_Configs Configs
+        {
+            get
+            {
+                return configs;
+            }
+            set
+            {
+                configs = value;
+            }
+        }
 
-		public class DescribeUserConfigs_Configs
-		{
+        public class DescribeUserConfigs_Configs
+        {
 
-			private DescribeUserConfigs_OssLogConfig ossLogConfig;
+            private DescribeUserConfigs_OssLogConfig ossLogConfig;
 
-			private DescribeUserConfigs_GreenManagerConfig greenManagerConfig;
+            private DescribeUserConfigs_GreenManagerConfig greenManagerConfig;
 
-			private DescribeUserConfigs_WafConfig wafConfig;
+            private DescribeUserConfigs_WafConfig wafConfig;
 
-			public DescribeUserConfigs_OssLogConfig OssLogConfig
-			{
-				get
-				{
-					return ossLogConfig;
-				}
-				set	
-				{
-					ossLogConfig = value;
-				}
-			}
+            public DescribeUserConfigs_OssLogConfig OssLogConfig
+            {
+                get
+                {
+                    return ossLogConfig;
+                }
+                set
+                {
+                    ossLogConfig = value;
+                }
+            }
 
-			public DescribeUserConfigs_GreenManagerConfig GreenManagerConfig
-			{
-				get
-				{
-					return greenManagerConfig;
-				}
-				set	
-				{
-					greenManagerConfig = value;
-				}
-			}
+            public DescribeUserConfigs_GreenManagerConfig GreenManagerConfig
+            {
+                get
+                {
+                    return greenManagerConfig;
+                }
+                set
+                {
+                    greenManagerConfig = value;
+                }
+            }
 
-			public DescribeUserConfigs_WafConfig WafConfig
-			{
-				get
-				{
-					return wafConfig;
-				}
-				set	
-				{
-					wafConfig = value;
-				}
-			}
+            public DescribeUserConfigs_WafConfig WafConfig
+            {
+                get
+                {
+                    return wafConfig;
+                }
+                set
+                {
+                    wafConfig = value;
+                }
+            }
 
-			public class DescribeUserConfigs_OssLogConfig
-			{
+            public class DescribeUserConfigs_OssLogConfig
+            {
 
-				private string enable;
+                private string enable;
 
-				private string bucket;
+                private string bucket;
 
-				private string prefix;
+                private string prefix;
 
-				public string Enable
-				{
-					get
-					{
-						return enable;
-					}
-					set	
-					{
-						enable = value;
-					}
-				}
+                public string Enable
+                {
+                    get
+                    {
+                        return enable;
+                    }
+                    set
+                    {
+                        enable = value;
+                    }
+                }
 
-				public string Bucket
-				{
-					get
-					{
-						return bucket;
-					}
-					set	
-					{
-						bucket = value;
-					}
-				}
+                public string Bucket
+                {
+                    get
+                    {
+                        return bucket;
+                    }
+                    set
+                    {
+                        bucket = value;
+                    }
+                }
 
-				public string Prefix
-				{
-					get
-					{
-						return prefix;
-					}
-					set	
-					{
-						prefix = value;
-					}
-				}
-			}
+                public string Prefix
+                {
+                    get
+                    {
+                        return prefix;
+                    }
+                    set
+                    {
+                        prefix = value;
+                    }
+                }
+            }
 
-			public class DescribeUserConfigs_GreenManagerConfig
-			{
+            public class DescribeUserConfigs_GreenManagerConfig
+            {
 
-				private string quota;
+                private string quota;
 
-				private string ratio;
+                private string ratio;
 
-				public string Quota
-				{
-					get
-					{
-						return quota;
-					}
-					set	
-					{
-						quota = value;
-					}
-				}
+                public string Quota
+                {
+                    get
+                    {
+                        return quota;
+                    }
+                    set
+                    {
+                        quota = value;
+                    }
+                }
 
-				public string Ratio
-				{
-					get
-					{
-						return ratio;
-					}
-					set	
-					{
-						ratio = value;
-					}
-				}
-			}
+                public string Ratio
+                {
+                    get
+                    {
+                        return ratio;
+                    }
+                    set
+                    {
+                        ratio = value;
+                    }
+                }
+            }
 
-			public class DescribeUserConfigs_WafConfig
-			{
+            public class DescribeUserConfigs_WafConfig
+            {
 
-				private string enable;
+                private string enable;
 
-				public string Enable
-				{
-					get
-					{
-						return enable;
-					}
-					set	
-					{
-						enable = value;
-					}
-				}
-			}
-		}
-	}
+                public string Enable
+                {
+                    get
+                    {
+                        return enable;
+                    }
+                    set
+                    {
+                        enable = value;
+                    }
+                }
+            }
+        }
+    }
 }

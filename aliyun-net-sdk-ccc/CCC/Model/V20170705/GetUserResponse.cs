@@ -21,419 +21,419 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class GetUserResponse : AcsResponse
-	{
+    public class GetUserResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? success;
+        private bool? success;
 
-		private string code;
+        private string code;
 
-		private string message;
+        private string message;
 
-		private int? httpStatusCode;
+        private int? httpStatusCode;
 
-		private GetUser_User user;
+        private GetUser_User user;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+        public int? HttpStatusCode
+        {
+            get
+            {
+                return httpStatusCode;
+            }
+            set
+            {
+                httpStatusCode = value;
+            }
+        }
 
-		public GetUser_User User
-		{
-			get
-			{
-				return user;
-			}
-			set	
-			{
-				user = value;
-			}
-		}
+        public GetUser_User User
+        {
+            get
+            {
+                return user;
+            }
+            set
+            {
+                user = value;
+            }
+        }
 
-		public class GetUser_User
-		{
+        public class GetUser_User
+        {
 
-			private string userId;
+            private string userId;
 
-			private string ramId;
+            private string ramId;
 
-			private string instanceId;
+            private string instanceId;
 
-			private List<GetUser_Role> roles;
+            private List<GetUser_Role> roles;
 
-			private List<GetUser_SkillLevel> skillLevels;
+            private List<GetUser_SkillLevel> skillLevels;
 
-			private GetUser_Detail detail;
+            private GetUser_Detail detail;
 
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
+            public string UserId
+            {
+                get
+                {
+                    return userId;
+                }
+                set
+                {
+                    userId = value;
+                }
+            }
 
-			public string RamId
-			{
-				get
-				{
-					return ramId;
-				}
-				set	
-				{
-					ramId = value;
-				}
-			}
+            public string RamId
+            {
+                get
+                {
+                    return ramId;
+                }
+                set
+                {
+                    ramId = value;
+                }
+            }
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public List<GetUser_Role> Roles
-			{
-				get
-				{
-					return roles;
-				}
-				set	
-				{
-					roles = value;
-				}
-			}
+            public List<GetUser_Role> Roles
+            {
+                get
+                {
+                    return roles;
+                }
+                set
+                {
+                    roles = value;
+                }
+            }
 
-			public List<GetUser_SkillLevel> SkillLevels
-			{
-				get
-				{
-					return skillLevels;
-				}
-				set	
-				{
-					skillLevels = value;
-				}
-			}
+            public List<GetUser_SkillLevel> SkillLevels
+            {
+                get
+                {
+                    return skillLevels;
+                }
+                set
+                {
+                    skillLevels = value;
+                }
+            }
 
-			public GetUser_Detail Detail
-			{
-				get
-				{
-					return detail;
-				}
-				set	
-				{
-					detail = value;
-				}
-			}
+            public GetUser_Detail Detail
+            {
+                get
+                {
+                    return detail;
+                }
+                set
+                {
+                    detail = value;
+                }
+            }
 
-			public class GetUser_Role
-			{
+            public class GetUser_Role
+            {
 
-				private string roleId;
+                private string roleId;
 
-				private string instanceId;
+                private string instanceId;
 
-				private string roleName;
+                private string roleName;
 
-				private string roleDescription;
+                private string roleDescription;
 
-				public string RoleId
-				{
-					get
-					{
-						return roleId;
-					}
-					set	
-					{
-						roleId = value;
-					}
-				}
+                public string RoleId
+                {
+                    get
+                    {
+                        return roleId;
+                    }
+                    set
+                    {
+                        roleId = value;
+                    }
+                }
 
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
+                public string InstanceId
+                {
+                    get
+                    {
+                        return instanceId;
+                    }
+                    set
+                    {
+                        instanceId = value;
+                    }
+                }
 
-				public string RoleName
-				{
-					get
-					{
-						return roleName;
-					}
-					set	
-					{
-						roleName = value;
-					}
-				}
+                public string RoleName
+                {
+                    get
+                    {
+                        return roleName;
+                    }
+                    set
+                    {
+                        roleName = value;
+                    }
+                }
 
-				public string RoleDescription
-				{
-					get
-					{
-						return roleDescription;
-					}
-					set	
-					{
-						roleDescription = value;
-					}
-				}
-			}
+                public string RoleDescription
+                {
+                    get
+                    {
+                        return roleDescription;
+                    }
+                    set
+                    {
+                        roleDescription = value;
+                    }
+                }
+            }
 
-			public class GetUser_SkillLevel
-			{
+            public class GetUser_SkillLevel
+            {
 
-				private string skillLevelId;
+                private string skillLevelId;
 
-				private int? level;
+                private int? level;
 
-				private GetUser_Skill skill;
+                private GetUser_Skill skill;
 
-				public string SkillLevelId
-				{
-					get
-					{
-						return skillLevelId;
-					}
-					set	
-					{
-						skillLevelId = value;
-					}
-				}
+                public string SkillLevelId
+                {
+                    get
+                    {
+                        return skillLevelId;
+                    }
+                    set
+                    {
+                        skillLevelId = value;
+                    }
+                }
 
-				public int? Level
-				{
-					get
-					{
-						return level;
-					}
-					set	
-					{
-						level = value;
-					}
-				}
+                public int? Level
+                {
+                    get
+                    {
+                        return level;
+                    }
+                    set
+                    {
+                        level = value;
+                    }
+                }
 
-				public GetUser_Skill Skill
-				{
-					get
-					{
-						return skill;
-					}
-					set	
-					{
-						skill = value;
-					}
-				}
+                public GetUser_Skill Skill
+                {
+                    get
+                    {
+                        return skill;
+                    }
+                    set
+                    {
+                        skill = value;
+                    }
+                }
 
-				public class GetUser_Skill
-				{
+                public class GetUser_Skill
+                {
 
-					private string skillGroupId;
+                    private string skillGroupId;
 
-					private string instanceId;
+                    private string instanceId;
 
-					private string skillGroupName;
+                    private string skillGroupName;
 
-					private string skillGroupDescription;
+                    private string skillGroupDescription;
 
-					public string SkillGroupId
-					{
-						get
-						{
-							return skillGroupId;
-						}
-						set	
-						{
-							skillGroupId = value;
-						}
-					}
+                    public string SkillGroupId
+                    {
+                        get
+                        {
+                            return skillGroupId;
+                        }
+                        set
+                        {
+                            skillGroupId = value;
+                        }
+                    }
 
-					public string InstanceId
-					{
-						get
-						{
-							return instanceId;
-						}
-						set	
-						{
-							instanceId = value;
-						}
-					}
+                    public string InstanceId
+                    {
+                        get
+                        {
+                            return instanceId;
+                        }
+                        set
+                        {
+                            instanceId = value;
+                        }
+                    }
 
-					public string SkillGroupName
-					{
-						get
-						{
-							return skillGroupName;
-						}
-						set	
-						{
-							skillGroupName = value;
-						}
-					}
+                    public string SkillGroupName
+                    {
+                        get
+                        {
+                            return skillGroupName;
+                        }
+                        set
+                        {
+                            skillGroupName = value;
+                        }
+                    }
 
-					public string SkillGroupDescription
-					{
-						get
-						{
-							return skillGroupDescription;
-						}
-						set	
-						{
-							skillGroupDescription = value;
-						}
-					}
-				}
-			}
+                    public string SkillGroupDescription
+                    {
+                        get
+                        {
+                            return skillGroupDescription;
+                        }
+                        set
+                        {
+                            skillGroupDescription = value;
+                        }
+                    }
+                }
+            }
 
-			public class GetUser_Detail
-			{
+            public class GetUser_Detail
+            {
 
-				private string loginName;
+                private string loginName;
 
-				private string displayName;
+                private string displayName;
 
-				private string phone;
+                private string phone;
 
-				private string email;
+                private string email;
 
-				private string department;
+                private string department;
 
-				public string LoginName
-				{
-					get
-					{
-						return loginName;
-					}
-					set	
-					{
-						loginName = value;
-					}
-				}
+                public string LoginName
+                {
+                    get
+                    {
+                        return loginName;
+                    }
+                    set
+                    {
+                        loginName = value;
+                    }
+                }
 
-				public string DisplayName
-				{
-					get
-					{
-						return displayName;
-					}
-					set	
-					{
-						displayName = value;
-					}
-				}
+                public string DisplayName
+                {
+                    get
+                    {
+                        return displayName;
+                    }
+                    set
+                    {
+                        displayName = value;
+                    }
+                }
 
-				public string Phone
-				{
-					get
-					{
-						return phone;
-					}
-					set	
-					{
-						phone = value;
-					}
-				}
+                public string Phone
+                {
+                    get
+                    {
+                        return phone;
+                    }
+                    set
+                    {
+                        phone = value;
+                    }
+                }
 
-				public string Email
-				{
-					get
-					{
-						return email;
-					}
-					set	
-					{
-						email = value;
-					}
-				}
+                public string Email
+                {
+                    get
+                    {
+                        return email;
+                    }
+                    set
+                    {
+                        email = value;
+                    }
+                }
 
-				public string Department
-				{
-					get
-					{
-						return department;
-					}
-					set	
-					{
-						department = value;
-					}
-				}
-			}
-		}
-	}
+                public string Department
+                {
+                    get
+                    {
+                        return department;
+                    }
+                    set
+                    {
+                        department = value;
+                    }
+                }
+            }
+        }
+    }
 }

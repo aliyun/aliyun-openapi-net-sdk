@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DeleteCustomerGatewayResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteCustomerGatewayResponse deleteCustomerGatewayResponse = new DeleteCustomerGatewayResponse();
+            DeleteCustomerGatewayResponse deleteCustomerGatewayResponse = new DeleteCustomerGatewayResponse();
 
-			deleteCustomerGatewayResponse.HttpResponse = context.HttpResponse;
-			deleteCustomerGatewayResponse.RequestId = context.StringValue("DeleteCustomerGateway.RequestId");
-        
-			return deleteCustomerGatewayResponse;
+            deleteCustomerGatewayResponse.HttpResponse = context.HttpResponse;
+            deleteCustomerGatewayResponse.RequestId = context.StringValue("DeleteCustomerGateway.RequestId");
+
+            return deleteCustomerGatewayResponse;
         }
     }
 }

@@ -34,95 +34,95 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string action;
+        private string action;
 
-		private string aliRemoveArgs;
+        private string aliRemoveArgs;
 
-		private string keepOssArgs;
+        private string keepOssArgs;
 
-		private string domainName;
+        private string domainName;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private long? configId;
+        private long? configId;
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string AliRemoveArgs
-		{
-			get
-			{
-				return aliRemoveArgs;
-			}
-			set	
-			{
-				aliRemoveArgs = value;
-				DictionaryUtil.Add(QueryParameters, "AliRemoveArgs", value);
-			}
-		}
+        public string AliRemoveArgs
+        {
+            get
+            {
+                return aliRemoveArgs;
+            }
+            set
+            {
+                aliRemoveArgs = value;
+                DictionaryUtil.Add(QueryParameters, "AliRemoveArgs", value);
+            }
+        }
 
-		public string KeepOssArgs
-		{
-			get
-			{
-				return keepOssArgs;
-			}
-			set	
-			{
-				keepOssArgs = value;
-				DictionaryUtil.Add(QueryParameters, "KeepOssArgs", value);
-			}
-		}
+        public string KeepOssArgs
+        {
+            get
+            {
+                return keepOssArgs;
+            }
+            set
+            {
+                keepOssArgs = value;
+                DictionaryUtil.Add(QueryParameters, "KeepOssArgs", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public long? ConfigId
-		{
-			get
-			{
-				return configId;
-			}
-			set	
-			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
-			}
-		}
+        public long? ConfigId
+        {
+            get
+            {
+                return configId;
+            }
+            set
+            {
+                configId = value;
+                DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
+            }
+        }
 
         public override SetRemoveQueryStringConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

@@ -34,110 +34,110 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string securityToken;
+        private string securityToken;
 
-		private long? configId;
+        private long? configId;
 
-		private string domainName;
+        private string domainName;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string _value;
+        private string _value;
 
-		private string key;
+        private string key;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public long? ConfigId
-		{
-			get
-			{
-				return configId;
-			}
-			set	
-			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
-			}
-		}
+        public long? ConfigId
+        {
+            get
+            {
+                return configId;
+            }
+            set
+            {
+                configId = value;
+                DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string _Value
-		{
-			get
-			{
-				return _value;
-			}
-			set	
-			{
-				_value = value;
-				DictionaryUtil.Add(QueryParameters, "Value", value);
-			}
-		}
+        public string _Value
+        {
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                _value = value;
+                DictionaryUtil.Add(QueryParameters, "Value", value);
+            }
+        }
 
-		public string Key
-		{
-			get
-			{
-				return key;
-			}
-			set	
-			{
-				key = value;
-				DictionaryUtil.Add(QueryParameters, "Key", value);
-			}
-		}
+        public string Key
+        {
+            get
+            {
+                return key;
+            }
+            set
+            {
+                key = value;
+                DictionaryUtil.Add(QueryParameters, "Key", value);
+            }
+        }
 
         public override SetReqHeaderConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

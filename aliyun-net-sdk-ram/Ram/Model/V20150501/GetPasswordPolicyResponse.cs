@@ -22,165 +22,165 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class GetPasswordPolicyResponse : AcsResponse
-	{
+    public class GetPasswordPolicyResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private GetPasswordPolicy_PasswordPolicy passwordPolicy;
+        private GetPasswordPolicy_PasswordPolicy passwordPolicy;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public GetPasswordPolicy_PasswordPolicy PasswordPolicy
-		{
-			get
-			{
-				return passwordPolicy;
-			}
-			set	
-			{
-				passwordPolicy = value;
-			}
-		}
+        public GetPasswordPolicy_PasswordPolicy PasswordPolicy
+        {
+            get
+            {
+                return passwordPolicy;
+            }
+            set
+            {
+                passwordPolicy = value;
+            }
+        }
 
-		public class GetPasswordPolicy_PasswordPolicy
-		{
+        public class GetPasswordPolicy_PasswordPolicy
+        {
 
-			private int? minimumPasswordLength;
+            private int? minimumPasswordLength;
 
-			private bool? requireLowercaseCharacters;
+            private bool? requireLowercaseCharacters;
 
-			private bool? requireUppercaseCharacters;
+            private bool? requireUppercaseCharacters;
 
-			private bool? requireNumbers;
+            private bool? requireNumbers;
 
-			private bool? requireSymbols;
+            private bool? requireSymbols;
 
-			private bool? hardExpiry;
+            private bool? hardExpiry;
 
-			private int? maxPasswordAge;
+            private int? maxPasswordAge;
 
-			private int? passwordReusePrevention;
+            private int? passwordReusePrevention;
 
-			private int? maxLoginAttemps;
+            private int? maxLoginAttemps;
 
-			public int? MinimumPasswordLength
-			{
-				get
-				{
-					return minimumPasswordLength;
-				}
-				set	
-				{
-					minimumPasswordLength = value;
-				}
-			}
+            public int? MinimumPasswordLength
+            {
+                get
+                {
+                    return minimumPasswordLength;
+                }
+                set
+                {
+                    minimumPasswordLength = value;
+                }
+            }
 
-			public bool? RequireLowercaseCharacters
-			{
-				get
-				{
-					return requireLowercaseCharacters;
-				}
-				set	
-				{
-					requireLowercaseCharacters = value;
-				}
-			}
+            public bool? RequireLowercaseCharacters
+            {
+                get
+                {
+                    return requireLowercaseCharacters;
+                }
+                set
+                {
+                    requireLowercaseCharacters = value;
+                }
+            }
 
-			public bool? RequireUppercaseCharacters
-			{
-				get
-				{
-					return requireUppercaseCharacters;
-				}
-				set	
-				{
-					requireUppercaseCharacters = value;
-				}
-			}
+            public bool? RequireUppercaseCharacters
+            {
+                get
+                {
+                    return requireUppercaseCharacters;
+                }
+                set
+                {
+                    requireUppercaseCharacters = value;
+                }
+            }
 
-			public bool? RequireNumbers
-			{
-				get
-				{
-					return requireNumbers;
-				}
-				set	
-				{
-					requireNumbers = value;
-				}
-			}
+            public bool? RequireNumbers
+            {
+                get
+                {
+                    return requireNumbers;
+                }
+                set
+                {
+                    requireNumbers = value;
+                }
+            }
 
-			public bool? RequireSymbols
-			{
-				get
-				{
-					return requireSymbols;
-				}
-				set	
-				{
-					requireSymbols = value;
-				}
-			}
+            public bool? RequireSymbols
+            {
+                get
+                {
+                    return requireSymbols;
+                }
+                set
+                {
+                    requireSymbols = value;
+                }
+            }
 
-			public bool? HardExpiry
-			{
-				get
-				{
-					return hardExpiry;
-				}
-				set	
-				{
-					hardExpiry = value;
-				}
-			}
+            public bool? HardExpiry
+            {
+                get
+                {
+                    return hardExpiry;
+                }
+                set
+                {
+                    hardExpiry = value;
+                }
+            }
 
-			public int? MaxPasswordAge
-			{
-				get
-				{
-					return maxPasswordAge;
-				}
-				set	
-				{
-					maxPasswordAge = value;
-				}
-			}
+            public int? MaxPasswordAge
+            {
+                get
+                {
+                    return maxPasswordAge;
+                }
+                set
+                {
+                    maxPasswordAge = value;
+                }
+            }
 
-			public int? PasswordReusePrevention
-			{
-				get
-				{
-					return passwordReusePrevention;
-				}
-				set	
-				{
-					passwordReusePrevention = value;
-				}
-			}
+            public int? PasswordReusePrevention
+            {
+                get
+                {
+                    return passwordReusePrevention;
+                }
+                set
+                {
+                    passwordReusePrevention = value;
+                }
+            }
 
-			public int? MaxLoginAttemps
-			{
-				get
-				{
-					return maxLoginAttemps;
-				}
-				set	
-				{
-					maxLoginAttemps = value;
-				}
-			}
-		}
-	}
+            public int? MaxLoginAttemps
+            {
+                get
+                {
+                    return maxLoginAttemps;
+                }
+                set
+                {
+                    maxLoginAttemps = value;
+                }
+            }
+        }
+    }
 }

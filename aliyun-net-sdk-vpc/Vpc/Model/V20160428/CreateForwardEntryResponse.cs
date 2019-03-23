@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateForwardEntryResponse : AcsResponse
-	{
+    public class CreateForwardEntryResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string forwardEntryId;
+        private string forwardEntryId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string ForwardEntryId
-		{
-			get
-			{
-				return forwardEntryId;
-			}
-			set	
-			{
-				forwardEntryId = value;
-			}
-		}
-	}
+        public string ForwardEntryId
+        {
+            get
+            {
+                return forwardEntryId;
+            }
+            set
+            {
+                forwardEntryId = value;
+            }
+        }
+    }
 }

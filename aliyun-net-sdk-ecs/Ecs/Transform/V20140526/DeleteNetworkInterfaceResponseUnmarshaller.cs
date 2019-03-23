@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DeleteNetworkInterfaceResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteNetworkInterfaceResponse deleteNetworkInterfaceResponse = new DeleteNetworkInterfaceResponse();
+            DeleteNetworkInterfaceResponse deleteNetworkInterfaceResponse = new DeleteNetworkInterfaceResponse();
 
-			deleteNetworkInterfaceResponse.HttpResponse = context.HttpResponse;
-			deleteNetworkInterfaceResponse.RequestId = context.StringValue("DeleteNetworkInterface.RequestId");
-        
-			return deleteNetworkInterfaceResponse;
+            deleteNetworkInterfaceResponse.HttpResponse = context.HttpResponse;
+            deleteNetworkInterfaceResponse.RequestId = context.StringValue("DeleteNetworkInterface.RequestId");
+
+            return deleteNetworkInterfaceResponse;
         }
     }
 }

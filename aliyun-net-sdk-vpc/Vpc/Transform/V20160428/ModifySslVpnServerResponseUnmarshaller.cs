@@ -27,26 +27,26 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static ModifySslVpnServerResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifySslVpnServerResponse modifySslVpnServerResponse = new ModifySslVpnServerResponse();
+            ModifySslVpnServerResponse modifySslVpnServerResponse = new ModifySslVpnServerResponse();
 
-			modifySslVpnServerResponse.HttpResponse = context.HttpResponse;
-			modifySslVpnServerResponse.RequestId = context.StringValue("ModifySslVpnServer.RequestId");
-			modifySslVpnServerResponse.RegionId = context.StringValue("ModifySslVpnServer.RegionId");
-			modifySslVpnServerResponse.SslVpnServerId = context.StringValue("ModifySslVpnServer.SslVpnServerId");
-			modifySslVpnServerResponse.VpnGatewayId = context.StringValue("ModifySslVpnServer.VpnGatewayId");
-			modifySslVpnServerResponse.Name = context.StringValue("ModifySslVpnServer.Name");
-			modifySslVpnServerResponse.LocalSubnet = context.StringValue("ModifySslVpnServer.LocalSubnet");
-			modifySslVpnServerResponse.ClientIpPool = context.StringValue("ModifySslVpnServer.ClientIpPool");
-			modifySslVpnServerResponse.CreateTime = context.LongValue("ModifySslVpnServer.CreateTime");
-			modifySslVpnServerResponse.Cipher = context.StringValue("ModifySslVpnServer.Cipher");
-			modifySslVpnServerResponse.Proto = context.StringValue("ModifySslVpnServer.Proto");
-			modifySslVpnServerResponse.Port = context.IntegerValue("ModifySslVpnServer.Port");
-			modifySslVpnServerResponse.Compress = context.BooleanValue("ModifySslVpnServer.Compress");
-			modifySslVpnServerResponse.Connections = context.IntegerValue("ModifySslVpnServer.Connections");
-			modifySslVpnServerResponse.MaxConnections = context.IntegerValue("ModifySslVpnServer.MaxConnections");
-			modifySslVpnServerResponse.InternetIp = context.StringValue("ModifySslVpnServer.InternetIp");
-        
-			return modifySslVpnServerResponse;
+            modifySslVpnServerResponse.HttpResponse = context.HttpResponse;
+            modifySslVpnServerResponse.RequestId = context.StringValue("ModifySslVpnServer.RequestId");
+            modifySslVpnServerResponse.RegionId = context.StringValue("ModifySslVpnServer.RegionId");
+            modifySslVpnServerResponse.SslVpnServerId = context.StringValue("ModifySslVpnServer.SslVpnServerId");
+            modifySslVpnServerResponse.VpnGatewayId = context.StringValue("ModifySslVpnServer.VpnGatewayId");
+            modifySslVpnServerResponse.Name = context.StringValue("ModifySslVpnServer.Name");
+            modifySslVpnServerResponse.LocalSubnet = context.StringValue("ModifySslVpnServer.LocalSubnet");
+            modifySslVpnServerResponse.ClientIpPool = context.StringValue("ModifySslVpnServer.ClientIpPool");
+            modifySslVpnServerResponse.CreateTime = context.LongValue("ModifySslVpnServer.CreateTime");
+            modifySslVpnServerResponse.Cipher = context.StringValue("ModifySslVpnServer.Cipher");
+            modifySslVpnServerResponse.Proto = context.StringValue("ModifySslVpnServer.Proto");
+            modifySslVpnServerResponse.Port = context.IntegerValue("ModifySslVpnServer.Port");
+            modifySslVpnServerResponse.Compress = context.BooleanValue("ModifySslVpnServer.Compress");
+            modifySslVpnServerResponse.Connections = context.IntegerValue("ModifySslVpnServer.Connections");
+            modifySslVpnServerResponse.MaxConnections = context.IntegerValue("ModifySslVpnServer.MaxConnections");
+            modifySslVpnServerResponse.InternetIp = context.StringValue("ModifySslVpnServer.InternetIp");
+
+            return modifySslVpnServerResponse;
         }
     }
 }

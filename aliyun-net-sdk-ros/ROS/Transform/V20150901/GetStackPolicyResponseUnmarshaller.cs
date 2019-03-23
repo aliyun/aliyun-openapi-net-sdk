@@ -27,11 +27,11 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
     {
         public static GetStackPolicyResponse Unmarshall(UnmarshallerContext context)
         {
-			GetStackPolicyResponse getStackPolicyResponse = new GetStackPolicyResponse();
+            GetStackPolicyResponse getStackPolicyResponse = new GetStackPolicyResponse();
 
-			getStackPolicyResponse.HttpResponse = context.HttpResponse;
-        
-			return getStackPolicyResponse;
+            getStackPolicyResponse.HttpResponse = context.HttpResponse;
+
+            return getStackPolicyResponse;
         }
     }
 }

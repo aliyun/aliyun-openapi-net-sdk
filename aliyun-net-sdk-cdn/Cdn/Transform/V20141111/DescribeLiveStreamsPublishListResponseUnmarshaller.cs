@@ -28,29 +28,30 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeLiveStreamsPublishListResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLiveStreamsPublishListResponse describeLiveStreamsPublishListResponse = new DescribeLiveStreamsPublishListResponse();
+            DescribeLiveStreamsPublishListResponse describeLiveStreamsPublishListResponse = new DescribeLiveStreamsPublishListResponse();
 
-			describeLiveStreamsPublishListResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamsPublishListResponse.RequestId = context.StringValue("DescribeLiveStreamsPublishList.RequestId");
+            describeLiveStreamsPublishListResponse.HttpResponse = context.HttpResponse;
+            describeLiveStreamsPublishListResponse.RequestId = context.StringValue("DescribeLiveStreamsPublishList.RequestId");
 
-			List<DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo> describeLiveStreamsPublishListResponse_publishInfo = new List<DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamsPublishList.PublishInfo.Length"); i++) {
-				DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo liveStreamPublishInfo = new DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo();
-				liveStreamPublishInfo.DomainName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].DomainName");
-				liveStreamPublishInfo.AppName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].AppName");
-				liveStreamPublishInfo.StreamName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StreamName");
-				liveStreamPublishInfo.StreamUrl = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StreamUrl");
-				liveStreamPublishInfo.PublishTime = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishTime");
-				liveStreamPublishInfo.StopTime = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StopTime");
-				liveStreamPublishInfo.PublishUrl = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishUrl");
-				liveStreamPublishInfo.ClientAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].ClientAddr");
-				liveStreamPublishInfo.EdgeNodeAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].EdgeNodeAddr");
+            List<DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo> describeLiveStreamsPublishListResponse_publishInfo = new List<DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo>();
+            for (int i = 0; i < context.Length("DescribeLiveStreamsPublishList.PublishInfo.Length"); i++)
+            {
+                DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo liveStreamPublishInfo = new DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo();
+                liveStreamPublishInfo.DomainName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo[" + i + "].DomainName");
+                liveStreamPublishInfo.AppName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo[" + i + "].AppName");
+                liveStreamPublishInfo.StreamName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo[" + i + "].StreamName");
+                liveStreamPublishInfo.StreamUrl = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo[" + i + "].StreamUrl");
+                liveStreamPublishInfo.PublishTime = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo[" + i + "].PublishTime");
+                liveStreamPublishInfo.StopTime = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo[" + i + "].StopTime");
+                liveStreamPublishInfo.PublishUrl = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo[" + i + "].PublishUrl");
+                liveStreamPublishInfo.ClientAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo[" + i + "].ClientAddr");
+                liveStreamPublishInfo.EdgeNodeAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo[" + i + "].EdgeNodeAddr");
 
-				describeLiveStreamsPublishListResponse_publishInfo.Add(liveStreamPublishInfo);
-			}
-			describeLiveStreamsPublishListResponse.PublishInfo = describeLiveStreamsPublishListResponse_publishInfo;
-        
-			return describeLiveStreamsPublishListResponse;
+                describeLiveStreamsPublishListResponse_publishInfo.Add(liveStreamPublishInfo);
+            }
+            describeLiveStreamsPublishListResponse.PublishInfo = describeLiveStreamsPublishListResponse_publishInfo;
+
+            return describeLiveStreamsPublishListResponse;
         }
     }
 }

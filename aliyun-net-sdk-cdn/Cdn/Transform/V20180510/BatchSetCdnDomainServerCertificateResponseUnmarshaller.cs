@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static BatchSetCdnDomainServerCertificateResponse Unmarshall(UnmarshallerContext context)
         {
-			BatchSetCdnDomainServerCertificateResponse batchSetCdnDomainServerCertificateResponse = new BatchSetCdnDomainServerCertificateResponse();
+            BatchSetCdnDomainServerCertificateResponse batchSetCdnDomainServerCertificateResponse = new BatchSetCdnDomainServerCertificateResponse();
 
-			batchSetCdnDomainServerCertificateResponse.HttpResponse = context.HttpResponse;
-			batchSetCdnDomainServerCertificateResponse.RequestId = context.StringValue("BatchSetCdnDomainServerCertificate.RequestId");
-        
-			return batchSetCdnDomainServerCertificateResponse;
+            batchSetCdnDomainServerCertificateResponse.HttpResponse = context.HttpResponse;
+            batchSetCdnDomainServerCertificateResponse.RequestId = context.StringValue("BatchSetCdnDomainServerCertificate.RequestId");
+
+            return batchSetCdnDomainServerCertificateResponse;
         }
     }
 }

@@ -28,25 +28,26 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeLiveStreamBitRateDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLiveStreamBitRateDataResponse describeLiveStreamBitRateDataResponse = new DescribeLiveStreamBitRateDataResponse();
+            DescribeLiveStreamBitRateDataResponse describeLiveStreamBitRateDataResponse = new DescribeLiveStreamBitRateDataResponse();
 
-			describeLiveStreamBitRateDataResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamBitRateDataResponse.RequestId = context.StringValue("DescribeLiveStreamBitRateData.RequestId");
+            describeLiveStreamBitRateDataResponse.HttpResponse = context.HttpResponse;
+            describeLiveStreamBitRateDataResponse.RequestId = context.StringValue("DescribeLiveStreamBitRateData.RequestId");
 
-			List<DescribeLiveStreamBitRateDataResponse.DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo> describeLiveStreamBitRateDataResponse_frameRateAndBitRateInfos = new List<DescribeLiveStreamBitRateDataResponse.DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamBitRateData.FrameRateAndBitRateInfos.Length"); i++) {
-				DescribeLiveStreamBitRateDataResponse.DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo frameRateAndBitRateInfo = new DescribeLiveStreamBitRateDataResponse.DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo();
-				frameRateAndBitRateInfo.StreamUrl = context.StringValue("DescribeLiveStreamBitRateData.FrameRateAndBitRateInfos["+ i +"].StreamUrl");
-				frameRateAndBitRateInfo.VideoFrameRate = context.FloatValue("DescribeLiveStreamBitRateData.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate");
-				frameRateAndBitRateInfo.AudioFrameRate = context.FloatValue("DescribeLiveStreamBitRateData.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate");
-				frameRateAndBitRateInfo.BitRate = context.FloatValue("DescribeLiveStreamBitRateData.FrameRateAndBitRateInfos["+ i +"].BitRate");
-				frameRateAndBitRateInfo.Time = context.StringValue("DescribeLiveStreamBitRateData.FrameRateAndBitRateInfos["+ i +"].Time");
+            List<DescribeLiveStreamBitRateDataResponse.DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo> describeLiveStreamBitRateDataResponse_frameRateAndBitRateInfos = new List<DescribeLiveStreamBitRateDataResponse.DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo>();
+            for (int i = 0; i < context.Length("DescribeLiveStreamBitRateData.FrameRateAndBitRateInfos.Length"); i++)
+            {
+                DescribeLiveStreamBitRateDataResponse.DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo frameRateAndBitRateInfo = new DescribeLiveStreamBitRateDataResponse.DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo();
+                frameRateAndBitRateInfo.StreamUrl = context.StringValue("DescribeLiveStreamBitRateData.FrameRateAndBitRateInfos[" + i + "].StreamUrl");
+                frameRateAndBitRateInfo.VideoFrameRate = context.FloatValue("DescribeLiveStreamBitRateData.FrameRateAndBitRateInfos[" + i + "].VideoFrameRate");
+                frameRateAndBitRateInfo.AudioFrameRate = context.FloatValue("DescribeLiveStreamBitRateData.FrameRateAndBitRateInfos[" + i + "].AudioFrameRate");
+                frameRateAndBitRateInfo.BitRate = context.FloatValue("DescribeLiveStreamBitRateData.FrameRateAndBitRateInfos[" + i + "].BitRate");
+                frameRateAndBitRateInfo.Time = context.StringValue("DescribeLiveStreamBitRateData.FrameRateAndBitRateInfos[" + i + "].Time");
 
-				describeLiveStreamBitRateDataResponse_frameRateAndBitRateInfos.Add(frameRateAndBitRateInfo);
-			}
-			describeLiveStreamBitRateDataResponse.FrameRateAndBitRateInfos = describeLiveStreamBitRateDataResponse_frameRateAndBitRateInfos;
-        
-			return describeLiveStreamBitRateDataResponse;
+                describeLiveStreamBitRateDataResponse_frameRateAndBitRateInfos.Add(frameRateAndBitRateInfo);
+            }
+            describeLiveStreamBitRateDataResponse.FrameRateAndBitRateInfos = describeLiveStreamBitRateDataResponse_frameRateAndBitRateInfos;
+
+            return describeLiveStreamBitRateDataResponse;
         }
     }
 }

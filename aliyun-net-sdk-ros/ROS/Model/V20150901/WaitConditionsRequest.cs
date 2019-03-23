@@ -31,84 +31,84 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public WaitConditionsRequest()
             : base("ROS", "2015-09-01", "WaitConditions")
         {
-			UriPattern = "/waitcondition";
-			Method = MethodType.POST;
+            UriPattern = "/waitcondition";
+            Method = MethodType.POST;
         }
 
-		private string resource;
+        private string resource;
 
-		private string signature;
+        private string signature;
 
-		private string stackid;
+        private string stackid;
 
-		private string expire;
+        private string expire;
 
-		private string stackname;
+        private string stackname;
 
-		public string Resource
-		{
-			get
-			{
-				return resource;
-			}
-			set	
-			{
-				resource = value;
-				DictionaryUtil.Add(QueryParameters, "resource", value);
-			}
-		}
+        public string Resource
+        {
+            get
+            {
+                return resource;
+            }
+            set
+            {
+                resource = value;
+                DictionaryUtil.Add(QueryParameters, "resource", value);
+            }
+        }
 
-		public string Signature
-		{
-			get
-			{
-				return signature;
-			}
-			set	
-			{
-				signature = value;
-				DictionaryUtil.Add(QueryParameters, "signature", value);
-			}
-		}
+        public string Signature
+        {
+            get
+            {
+                return signature;
+            }
+            set
+            {
+                signature = value;
+                DictionaryUtil.Add(QueryParameters, "signature", value);
+            }
+        }
 
-		public string Stackid
-		{
-			get
-			{
-				return stackid;
-			}
-			set	
-			{
-				stackid = value;
-				DictionaryUtil.Add(QueryParameters, "stackid", value);
-			}
-		}
+        public string Stackid
+        {
+            get
+            {
+                return stackid;
+            }
+            set
+            {
+                stackid = value;
+                DictionaryUtil.Add(QueryParameters, "stackid", value);
+            }
+        }
 
-		public string Expire
-		{
-			get
-			{
-				return expire;
-			}
-			set	
-			{
-				expire = value;
-				DictionaryUtil.Add(QueryParameters, "expire", value);
-			}
-		}
+        public string Expire
+        {
+            get
+            {
+                return expire;
+            }
+            set
+            {
+                expire = value;
+                DictionaryUtil.Add(QueryParameters, "expire", value);
+            }
+        }
 
-		public string Stackname
-		{
-			get
-			{
-				return stackname;
-			}
-			set	
-			{
-				stackname = value;
-				DictionaryUtil.Add(QueryParameters, "stackname", value);
-			}
-		}
+        public string Stackname
+        {
+            get
+            {
+                return stackname;
+            }
+            set
+            {
+                stackname = value;
+                DictionaryUtil.Add(QueryParameters, "stackname", value);
+            }
+        }
 
         public override WaitConditionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

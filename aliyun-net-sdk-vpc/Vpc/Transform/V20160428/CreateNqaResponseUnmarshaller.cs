@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static CreateNqaResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateNqaResponse createNqaResponse = new CreateNqaResponse();
+            CreateNqaResponse createNqaResponse = new CreateNqaResponse();
 
-			createNqaResponse.HttpResponse = context.HttpResponse;
-			createNqaResponse.RequestId = context.StringValue("CreateNqa.RequestId");
-			createNqaResponse.NqaId = context.StringValue("CreateNqa.NqaId");
-        
-			return createNqaResponse;
+            createNqaResponse.HttpResponse = context.HttpResponse;
+            createNqaResponse.RequestId = context.StringValue("CreateNqa.RequestId");
+            createNqaResponse.NqaId = context.StringValue("CreateNqa.NqaId");
+
+            return createNqaResponse;
         }
     }
 }

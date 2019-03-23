@@ -28,13 +28,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static RefreshObjectCachesResponse Unmarshall(UnmarshallerContext context)
         {
-			RefreshObjectCachesResponse refreshObjectCachesResponse = new RefreshObjectCachesResponse();
+            RefreshObjectCachesResponse refreshObjectCachesResponse = new RefreshObjectCachesResponse();
 
-			refreshObjectCachesResponse.HttpResponse = context.HttpResponse;
-			refreshObjectCachesResponse.RequestId = context.StringValue("RefreshObjectCaches.RequestId");
-			refreshObjectCachesResponse.RefreshTaskId = context.StringValue("RefreshObjectCaches.RefreshTaskId");
-        
-			return refreshObjectCachesResponse;
+            refreshObjectCachesResponse.HttpResponse = context.HttpResponse;
+            refreshObjectCachesResponse.RequestId = context.StringValue("RefreshObjectCaches.RequestId");
+            refreshObjectCachesResponse.RefreshTaskId = context.StringValue("RefreshObjectCaches.RefreshTaskId");
+
+            return refreshObjectCachesResponse;
         }
     }
 }

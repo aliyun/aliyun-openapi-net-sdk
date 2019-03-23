@@ -21,67 +21,67 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeInstanceTopologyResponse : AcsResponse
-	{
+    public class DescribeInstanceTopologyResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeInstanceTopology_Topology> topologys;
+        private List<DescribeInstanceTopology_Topology> topologys;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeInstanceTopology_Topology> Topologys
-		{
-			get
-			{
-				return topologys;
-			}
-			set	
-			{
-				topologys = value;
-			}
-		}
+        public List<DescribeInstanceTopology_Topology> Topologys
+        {
+            get
+            {
+                return topologys;
+            }
+            set
+            {
+                topologys = value;
+            }
+        }
 
-		public class DescribeInstanceTopology_Topology
-		{
+        public class DescribeInstanceTopology_Topology
+        {
 
-			private string instanceId;
+            private string instanceId;
 
-			private string hostId;
+            private string hostId;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public string HostId
-			{
-				get
-				{
-					return hostId;
-				}
-				set	
-				{
-					hostId = value;
-				}
-			}
-		}
-	}
+            public string HostId
+            {
+                get
+                {
+                    return hostId;
+                }
+                set
+                {
+                    hostId = value;
+                }
+            }
+        }
+    }
 }

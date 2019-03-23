@@ -27,24 +27,24 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static DescribeTaskInfoResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeTaskInfoResponse describeTaskInfoResponse = new DescribeTaskInfoResponse();
+            DescribeTaskInfoResponse describeTaskInfoResponse = new DescribeTaskInfoResponse();
 
-			describeTaskInfoResponse.HttpResponse = context.HttpResponse;
-			describeTaskInfoResponse.RequestId = context.StringValue("DescribeTaskInfo.RequestId");
-			describeTaskInfoResponse.TaskId = context.StringValue("DescribeTaskInfo.TaskId");
-			describeTaskInfoResponse.BeginTime = context.StringValue("DescribeTaskInfo.BeginTime");
-			describeTaskInfoResponse.FinishTime = context.StringValue("DescribeTaskInfo.FinishTime");
-			describeTaskInfoResponse.CreateTime = context.StringValue("DescribeTaskInfo.CreateTime");
-			describeTaskInfoResponse.TaskAction = context.StringValue("DescribeTaskInfo.TaskAction");
-			describeTaskInfoResponse.DBName = context.StringValue("DescribeTaskInfo.DBName");
-			describeTaskInfoResponse.TaskErrorCode = context.StringValue("DescribeTaskInfo.TaskErrorCode");
-			describeTaskInfoResponse.Progress = context.StringValue("DescribeTaskInfo.Progress");
-			describeTaskInfoResponse.ExpectedFinishTime = context.StringValue("DescribeTaskInfo.ExpectedFinishTime");
-			describeTaskInfoResponse.TaskErrorMessage = context.StringValue("DescribeTaskInfo.TaskErrorMessage");
-			describeTaskInfoResponse.ProgressInfo = context.StringValue("DescribeTaskInfo.ProgressInfo");
-			describeTaskInfoResponse.Status = context.StringValue("DescribeTaskInfo.Status");
-        
-			return describeTaskInfoResponse;
+            describeTaskInfoResponse.HttpResponse = context.HttpResponse;
+            describeTaskInfoResponse.RequestId = context.StringValue("DescribeTaskInfo.RequestId");
+            describeTaskInfoResponse.TaskId = context.StringValue("DescribeTaskInfo.TaskId");
+            describeTaskInfoResponse.BeginTime = context.StringValue("DescribeTaskInfo.BeginTime");
+            describeTaskInfoResponse.FinishTime = context.StringValue("DescribeTaskInfo.FinishTime");
+            describeTaskInfoResponse.CreateTime = context.StringValue("DescribeTaskInfo.CreateTime");
+            describeTaskInfoResponse.TaskAction = context.StringValue("DescribeTaskInfo.TaskAction");
+            describeTaskInfoResponse.DBName = context.StringValue("DescribeTaskInfo.DBName");
+            describeTaskInfoResponse.TaskErrorCode = context.StringValue("DescribeTaskInfo.TaskErrorCode");
+            describeTaskInfoResponse.Progress = context.StringValue("DescribeTaskInfo.Progress");
+            describeTaskInfoResponse.ExpectedFinishTime = context.StringValue("DescribeTaskInfo.ExpectedFinishTime");
+            describeTaskInfoResponse.TaskErrorMessage = context.StringValue("DescribeTaskInfo.TaskErrorMessage");
+            describeTaskInfoResponse.ProgressInfo = context.StringValue("DescribeTaskInfo.ProgressInfo");
+            describeTaskInfoResponse.Status = context.StringValue("DescribeTaskInfo.Status");
+
+            return describeTaskInfoResponse;
         }
     }
 }

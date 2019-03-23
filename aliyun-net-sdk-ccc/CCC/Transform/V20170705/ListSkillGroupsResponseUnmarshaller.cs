@@ -27,48 +27,50 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static ListSkillGroupsResponse Unmarshall(UnmarshallerContext context)
         {
-			ListSkillGroupsResponse listSkillGroupsResponse = new ListSkillGroupsResponse();
+            ListSkillGroupsResponse listSkillGroupsResponse = new ListSkillGroupsResponse();
 
-			listSkillGroupsResponse.HttpResponse = context.HttpResponse;
-			listSkillGroupsResponse.RequestId = context.StringValue("ListSkillGroups.RequestId");
-			listSkillGroupsResponse.Success = context.BooleanValue("ListSkillGroups.Success");
-			listSkillGroupsResponse.Code = context.StringValue("ListSkillGroups.Code");
-			listSkillGroupsResponse.Message = context.StringValue("ListSkillGroups.Message");
-			listSkillGroupsResponse.HttpStatusCode = context.IntegerValue("ListSkillGroups.HttpStatusCode");
+            listSkillGroupsResponse.HttpResponse = context.HttpResponse;
+            listSkillGroupsResponse.RequestId = context.StringValue("ListSkillGroups.RequestId");
+            listSkillGroupsResponse.Success = context.BooleanValue("ListSkillGroups.Success");
+            listSkillGroupsResponse.Code = context.StringValue("ListSkillGroups.Code");
+            listSkillGroupsResponse.Message = context.StringValue("ListSkillGroups.Message");
+            listSkillGroupsResponse.HttpStatusCode = context.IntegerValue("ListSkillGroups.HttpStatusCode");
 
-			List<ListSkillGroupsResponse.ListSkillGroups_SkillGroup> listSkillGroupsResponse_skillGroups = new List<ListSkillGroupsResponse.ListSkillGroups_SkillGroup>();
-			for (int i = 0; i < context.Length("ListSkillGroups.SkillGroups.Length"); i++) {
-				ListSkillGroupsResponse.ListSkillGroups_SkillGroup skillGroup = new ListSkillGroupsResponse.ListSkillGroups_SkillGroup();
-				skillGroup.SkillGroupId = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].SkillGroupId");
-				skillGroup.InstanceId = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].InstanceId");
-				skillGroup.SkillGroupName = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].SkillGroupName");
-				skillGroup.AccSkillGroupName = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].AccSkillGroupName");
-				skillGroup.AccQueueName = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].AccQueueName");
-				skillGroup.SkillGroupDescription = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].SkillGroupDescription");
-				skillGroup.UserCount = context.IntegerValue("ListSkillGroups.SkillGroups["+ i +"].UserCount");
+            List<ListSkillGroupsResponse.ListSkillGroups_SkillGroup> listSkillGroupsResponse_skillGroups = new List<ListSkillGroupsResponse.ListSkillGroups_SkillGroup>();
+            for (int i = 0; i < context.Length("ListSkillGroups.SkillGroups.Length"); i++)
+            {
+                ListSkillGroupsResponse.ListSkillGroups_SkillGroup skillGroup = new ListSkillGroupsResponse.ListSkillGroups_SkillGroup();
+                skillGroup.SkillGroupId = context.StringValue("ListSkillGroups.SkillGroups[" + i + "].SkillGroupId");
+                skillGroup.InstanceId = context.StringValue("ListSkillGroups.SkillGroups[" + i + "].InstanceId");
+                skillGroup.SkillGroupName = context.StringValue("ListSkillGroups.SkillGroups[" + i + "].SkillGroupName");
+                skillGroup.AccSkillGroupName = context.StringValue("ListSkillGroups.SkillGroups[" + i + "].AccSkillGroupName");
+                skillGroup.AccQueueName = context.StringValue("ListSkillGroups.SkillGroups[" + i + "].AccQueueName");
+                skillGroup.SkillGroupDescription = context.StringValue("ListSkillGroups.SkillGroups[" + i + "].SkillGroupDescription");
+                skillGroup.UserCount = context.IntegerValue("ListSkillGroups.SkillGroups[" + i + "].UserCount");
 
-				List<ListSkillGroupsResponse.ListSkillGroups_SkillGroup.ListSkillGroups_PhoneNumber> skillGroup_outboundPhoneNumbers = new List<ListSkillGroupsResponse.ListSkillGroups_SkillGroup.ListSkillGroups_PhoneNumber>();
-				for (int j = 0; j < context.Length("ListSkillGroups.SkillGroups["+ i +"].OutboundPhoneNumbers.Length"); j++) {
-					ListSkillGroupsResponse.ListSkillGroups_SkillGroup.ListSkillGroups_PhoneNumber phoneNumber = new ListSkillGroupsResponse.ListSkillGroups_SkillGroup.ListSkillGroups_PhoneNumber();
-					phoneNumber.PhoneNumberId = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].PhoneNumberId");
-					phoneNumber.InstanceId = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].InstanceId");
-					phoneNumber.Number = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].Number");
-					phoneNumber.PhoneNumberDescription = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].PhoneNumberDescription");
-					phoneNumber.TestOnly = context.BooleanValue("ListSkillGroups.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].TestOnly");
-					phoneNumber.RemainingTime = context.IntegerValue("ListSkillGroups.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].RemainingTime");
-					phoneNumber.AllowOutbound = context.BooleanValue("ListSkillGroups.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].AllowOutbound");
-					phoneNumber.Usage = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].Usage");
-					phoneNumber.Trunks = context.IntegerValue("ListSkillGroups.SkillGroups["+ i +"].OutboundPhoneNumbers["+ j +"].Trunks");
+                List<ListSkillGroupsResponse.ListSkillGroups_SkillGroup.ListSkillGroups_PhoneNumber> skillGroup_outboundPhoneNumbers = new List<ListSkillGroupsResponse.ListSkillGroups_SkillGroup.ListSkillGroups_PhoneNumber>();
+                for (int j = 0; j < context.Length("ListSkillGroups.SkillGroups[" + i + "].OutboundPhoneNumbers.Length"); j++)
+                {
+                    ListSkillGroupsResponse.ListSkillGroups_SkillGroup.ListSkillGroups_PhoneNumber phoneNumber = new ListSkillGroupsResponse.ListSkillGroups_SkillGroup.ListSkillGroups_PhoneNumber();
+                    phoneNumber.PhoneNumberId = context.StringValue("ListSkillGroups.SkillGroups[" + i + "].OutboundPhoneNumbers[" + j + "].PhoneNumberId");
+                    phoneNumber.InstanceId = context.StringValue("ListSkillGroups.SkillGroups[" + i + "].OutboundPhoneNumbers[" + j + "].InstanceId");
+                    phoneNumber.Number = context.StringValue("ListSkillGroups.SkillGroups[" + i + "].OutboundPhoneNumbers[" + j + "].Number");
+                    phoneNumber.PhoneNumberDescription = context.StringValue("ListSkillGroups.SkillGroups[" + i + "].OutboundPhoneNumbers[" + j + "].PhoneNumberDescription");
+                    phoneNumber.TestOnly = context.BooleanValue("ListSkillGroups.SkillGroups[" + i + "].OutboundPhoneNumbers[" + j + "].TestOnly");
+                    phoneNumber.RemainingTime = context.IntegerValue("ListSkillGroups.SkillGroups[" + i + "].OutboundPhoneNumbers[" + j + "].RemainingTime");
+                    phoneNumber.AllowOutbound = context.BooleanValue("ListSkillGroups.SkillGroups[" + i + "].OutboundPhoneNumbers[" + j + "].AllowOutbound");
+                    phoneNumber.Usage = context.StringValue("ListSkillGroups.SkillGroups[" + i + "].OutboundPhoneNumbers[" + j + "].Usage");
+                    phoneNumber.Trunks = context.IntegerValue("ListSkillGroups.SkillGroups[" + i + "].OutboundPhoneNumbers[" + j + "].Trunks");
 
-					skillGroup_outboundPhoneNumbers.Add(phoneNumber);
-				}
-				skillGroup.OutboundPhoneNumbers = skillGroup_outboundPhoneNumbers;
+                    skillGroup_outboundPhoneNumbers.Add(phoneNumber);
+                }
+                skillGroup.OutboundPhoneNumbers = skillGroup_outboundPhoneNumbers;
 
-				listSkillGroupsResponse_skillGroups.Add(skillGroup);
-			}
-			listSkillGroupsResponse.SkillGroups = listSkillGroupsResponse_skillGroups;
-        
-			return listSkillGroupsResponse;
+                listSkillGroupsResponse_skillGroups.Add(skillGroup);
+            }
+            listSkillGroupsResponse.SkillGroups = listSkillGroupsResponse_skillGroups;
+
+            return listSkillGroupsResponse;
         }
     }
 }

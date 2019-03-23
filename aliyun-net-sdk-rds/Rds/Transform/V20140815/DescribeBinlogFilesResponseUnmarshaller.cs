@@ -27,33 +27,34 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static DescribeBinlogFilesResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeBinlogFilesResponse describeBinlogFilesResponse = new DescribeBinlogFilesResponse();
+            DescribeBinlogFilesResponse describeBinlogFilesResponse = new DescribeBinlogFilesResponse();
 
-			describeBinlogFilesResponse.HttpResponse = context.HttpResponse;
-			describeBinlogFilesResponse.RequestId = context.StringValue("DescribeBinlogFiles.RequestId");
-			describeBinlogFilesResponse.TotalRecordCount = context.IntegerValue("DescribeBinlogFiles.TotalRecordCount");
-			describeBinlogFilesResponse.PageNumber = context.IntegerValue("DescribeBinlogFiles.PageNumber");
-			describeBinlogFilesResponse.PageRecordCount = context.IntegerValue("DescribeBinlogFiles.PageRecordCount");
-			describeBinlogFilesResponse.TotalFileSize = context.LongValue("DescribeBinlogFiles.TotalFileSize");
+            describeBinlogFilesResponse.HttpResponse = context.HttpResponse;
+            describeBinlogFilesResponse.RequestId = context.StringValue("DescribeBinlogFiles.RequestId");
+            describeBinlogFilesResponse.TotalRecordCount = context.IntegerValue("DescribeBinlogFiles.TotalRecordCount");
+            describeBinlogFilesResponse.PageNumber = context.IntegerValue("DescribeBinlogFiles.PageNumber");
+            describeBinlogFilesResponse.PageRecordCount = context.IntegerValue("DescribeBinlogFiles.PageRecordCount");
+            describeBinlogFilesResponse.TotalFileSize = context.LongValue("DescribeBinlogFiles.TotalFileSize");
 
-			List<DescribeBinlogFilesResponse.DescribeBinlogFiles_BinLogFile> describeBinlogFilesResponse_items = new List<DescribeBinlogFilesResponse.DescribeBinlogFiles_BinLogFile>();
-			for (int i = 0; i < context.Length("DescribeBinlogFiles.Items.Length"); i++) {
-				DescribeBinlogFilesResponse.DescribeBinlogFiles_BinLogFile binLogFile = new DescribeBinlogFilesResponse.DescribeBinlogFiles_BinLogFile();
-				binLogFile.FileSize = context.LongValue("DescribeBinlogFiles.Items["+ i +"].FileSize");
-				binLogFile.LogBeginTime = context.StringValue("DescribeBinlogFiles.Items["+ i +"].LogBeginTime");
-				binLogFile.LogEndTime = context.StringValue("DescribeBinlogFiles.Items["+ i +"].LogEndTime");
-				binLogFile.DownloadLink = context.StringValue("DescribeBinlogFiles.Items["+ i +"].DownloadLink");
-				binLogFile.IntranetDownloadLink = context.StringValue("DescribeBinlogFiles.Items["+ i +"].IntranetDownloadLink");
-				binLogFile.LinkExpiredTime = context.StringValue("DescribeBinlogFiles.Items["+ i +"].LinkExpiredTime");
-				binLogFile.Checksum = context.StringValue("DescribeBinlogFiles.Items["+ i +"].Checksum");
-				binLogFile.HostInstanceID = context.StringValue("DescribeBinlogFiles.Items["+ i +"].HostInstanceID");
-				binLogFile.LogFileName = context.StringValue("DescribeBinlogFiles.Items["+ i +"].LogFileName");
+            List<DescribeBinlogFilesResponse.DescribeBinlogFiles_BinLogFile> describeBinlogFilesResponse_items = new List<DescribeBinlogFilesResponse.DescribeBinlogFiles_BinLogFile>();
+            for (int i = 0; i < context.Length("DescribeBinlogFiles.Items.Length"); i++)
+            {
+                DescribeBinlogFilesResponse.DescribeBinlogFiles_BinLogFile binLogFile = new DescribeBinlogFilesResponse.DescribeBinlogFiles_BinLogFile();
+                binLogFile.FileSize = context.LongValue("DescribeBinlogFiles.Items[" + i + "].FileSize");
+                binLogFile.LogBeginTime = context.StringValue("DescribeBinlogFiles.Items[" + i + "].LogBeginTime");
+                binLogFile.LogEndTime = context.StringValue("DescribeBinlogFiles.Items[" + i + "].LogEndTime");
+                binLogFile.DownloadLink = context.StringValue("DescribeBinlogFiles.Items[" + i + "].DownloadLink");
+                binLogFile.IntranetDownloadLink = context.StringValue("DescribeBinlogFiles.Items[" + i + "].IntranetDownloadLink");
+                binLogFile.LinkExpiredTime = context.StringValue("DescribeBinlogFiles.Items[" + i + "].LinkExpiredTime");
+                binLogFile.Checksum = context.StringValue("DescribeBinlogFiles.Items[" + i + "].Checksum");
+                binLogFile.HostInstanceID = context.StringValue("DescribeBinlogFiles.Items[" + i + "].HostInstanceID");
+                binLogFile.LogFileName = context.StringValue("DescribeBinlogFiles.Items[" + i + "].LogFileName");
 
-				describeBinlogFilesResponse_items.Add(binLogFile);
-			}
-			describeBinlogFilesResponse.Items = describeBinlogFilesResponse_items;
-        
-			return describeBinlogFilesResponse;
+                describeBinlogFilesResponse_items.Add(binLogFile);
+            }
+            describeBinlogFilesResponse.Items = describeBinlogFilesResponse_items;
+
+            return describeBinlogFilesResponse;
         }
     }
 }

@@ -21,291 +21,291 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeInstanceTypesResponse : AcsResponse
-	{
+    public class DescribeInstanceTypesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeInstanceTypes_InstanceType> instanceTypes;
+        private List<DescribeInstanceTypes_InstanceType> instanceTypes;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeInstanceTypes_InstanceType> InstanceTypes
-		{
-			get
-			{
-				return instanceTypes;
-			}
-			set	
-			{
-				instanceTypes = value;
-			}
-		}
+        public List<DescribeInstanceTypes_InstanceType> InstanceTypes
+        {
+            get
+            {
+                return instanceTypes;
+            }
+            set
+            {
+                instanceTypes = value;
+            }
+        }
 
-		public class DescribeInstanceTypes_InstanceType
-		{
+        public class DescribeInstanceTypes_InstanceType
+        {
 
-			private string instanceTypeId;
+            private string instanceTypeId;
 
-			private int? cpuCoreCount;
+            private int? cpuCoreCount;
 
-			private float? memorySize;
+            private float? memorySize;
 
-			private string instanceTypeFamily;
+            private string instanceTypeFamily;
 
-			private long? localStorageCapacity;
+            private long? localStorageCapacity;
 
-			private int? localStorageAmount;
+            private int? localStorageAmount;
 
-			private string localStorageCategory;
+            private string localStorageCategory;
 
-			private int? gPUAmount;
+            private int? gPUAmount;
 
-			private string gPUSpec;
+            private string gPUSpec;
 
-			private int? initialCredit;
+            private int? initialCredit;
 
-			private int? baselineCredit;
+            private int? baselineCredit;
 
-			private int? eniQuantity;
+            private int? eniQuantity;
 
-			private int? eniPrivateIpAddressQuantity;
+            private int? eniPrivateIpAddressQuantity;
 
-			private int? instanceBandwidthRx;
+            private int? instanceBandwidthRx;
 
-			private int? instanceBandwidthTx;
+            private int? instanceBandwidthTx;
 
-			private long? instancePpsRx;
+            private long? instancePpsRx;
 
-			private long? instancePpsTx;
+            private long? instancePpsTx;
 
-			private string instanceFamilyLevel;
+            private string instanceFamilyLevel;
 
-			public string InstanceTypeId
-			{
-				get
-				{
-					return instanceTypeId;
-				}
-				set	
-				{
-					instanceTypeId = value;
-				}
-			}
+            public string InstanceTypeId
+            {
+                get
+                {
+                    return instanceTypeId;
+                }
+                set
+                {
+                    instanceTypeId = value;
+                }
+            }
 
-			public int? CpuCoreCount
-			{
-				get
-				{
-					return cpuCoreCount;
-				}
-				set	
-				{
-					cpuCoreCount = value;
-				}
-			}
+            public int? CpuCoreCount
+            {
+                get
+                {
+                    return cpuCoreCount;
+                }
+                set
+                {
+                    cpuCoreCount = value;
+                }
+            }
 
-			public float? MemorySize
-			{
-				get
-				{
-					return memorySize;
-				}
-				set	
-				{
-					memorySize = value;
-				}
-			}
+            public float? MemorySize
+            {
+                get
+                {
+                    return memorySize;
+                }
+                set
+                {
+                    memorySize = value;
+                }
+            }
 
-			public string InstanceTypeFamily
-			{
-				get
-				{
-					return instanceTypeFamily;
-				}
-				set	
-				{
-					instanceTypeFamily = value;
-				}
-			}
+            public string InstanceTypeFamily
+            {
+                get
+                {
+                    return instanceTypeFamily;
+                }
+                set
+                {
+                    instanceTypeFamily = value;
+                }
+            }
 
-			public long? LocalStorageCapacity
-			{
-				get
-				{
-					return localStorageCapacity;
-				}
-				set	
-				{
-					localStorageCapacity = value;
-				}
-			}
+            public long? LocalStorageCapacity
+            {
+                get
+                {
+                    return localStorageCapacity;
+                }
+                set
+                {
+                    localStorageCapacity = value;
+                }
+            }
 
-			public int? LocalStorageAmount
-			{
-				get
-				{
-					return localStorageAmount;
-				}
-				set	
-				{
-					localStorageAmount = value;
-				}
-			}
+            public int? LocalStorageAmount
+            {
+                get
+                {
+                    return localStorageAmount;
+                }
+                set
+                {
+                    localStorageAmount = value;
+                }
+            }
 
-			public string LocalStorageCategory
-			{
-				get
-				{
-					return localStorageCategory;
-				}
-				set	
-				{
-					localStorageCategory = value;
-				}
-			}
+            public string LocalStorageCategory
+            {
+                get
+                {
+                    return localStorageCategory;
+                }
+                set
+                {
+                    localStorageCategory = value;
+                }
+            }
 
-			public int? GPUAmount
-			{
-				get
-				{
-					return gPUAmount;
-				}
-				set	
-				{
-					gPUAmount = value;
-				}
-			}
+            public int? GPUAmount
+            {
+                get
+                {
+                    return gPUAmount;
+                }
+                set
+                {
+                    gPUAmount = value;
+                }
+            }
 
-			public string GPUSpec
-			{
-				get
-				{
-					return gPUSpec;
-				}
-				set	
-				{
-					gPUSpec = value;
-				}
-			}
+            public string GPUSpec
+            {
+                get
+                {
+                    return gPUSpec;
+                }
+                set
+                {
+                    gPUSpec = value;
+                }
+            }
 
-			public int? InitialCredit
-			{
-				get
-				{
-					return initialCredit;
-				}
-				set	
-				{
-					initialCredit = value;
-				}
-			}
+            public int? InitialCredit
+            {
+                get
+                {
+                    return initialCredit;
+                }
+                set
+                {
+                    initialCredit = value;
+                }
+            }
 
-			public int? BaselineCredit
-			{
-				get
-				{
-					return baselineCredit;
-				}
-				set	
-				{
-					baselineCredit = value;
-				}
-			}
+            public int? BaselineCredit
+            {
+                get
+                {
+                    return baselineCredit;
+                }
+                set
+                {
+                    baselineCredit = value;
+                }
+            }
 
-			public int? EniQuantity
-			{
-				get
-				{
-					return eniQuantity;
-				}
-				set	
-				{
-					eniQuantity = value;
-				}
-			}
+            public int? EniQuantity
+            {
+                get
+                {
+                    return eniQuantity;
+                }
+                set
+                {
+                    eniQuantity = value;
+                }
+            }
 
-			public int? EniPrivateIpAddressQuantity
-			{
-				get
-				{
-					return eniPrivateIpAddressQuantity;
-				}
-				set	
-				{
-					eniPrivateIpAddressQuantity = value;
-				}
-			}
+            public int? EniPrivateIpAddressQuantity
+            {
+                get
+                {
+                    return eniPrivateIpAddressQuantity;
+                }
+                set
+                {
+                    eniPrivateIpAddressQuantity = value;
+                }
+            }
 
-			public int? InstanceBandwidthRx
-			{
-				get
-				{
-					return instanceBandwidthRx;
-				}
-				set	
-				{
-					instanceBandwidthRx = value;
-				}
-			}
+            public int? InstanceBandwidthRx
+            {
+                get
+                {
+                    return instanceBandwidthRx;
+                }
+                set
+                {
+                    instanceBandwidthRx = value;
+                }
+            }
 
-			public int? InstanceBandwidthTx
-			{
-				get
-				{
-					return instanceBandwidthTx;
-				}
-				set	
-				{
-					instanceBandwidthTx = value;
-				}
-			}
+            public int? InstanceBandwidthTx
+            {
+                get
+                {
+                    return instanceBandwidthTx;
+                }
+                set
+                {
+                    instanceBandwidthTx = value;
+                }
+            }
 
-			public long? InstancePpsRx
-			{
-				get
-				{
-					return instancePpsRx;
-				}
-				set	
-				{
-					instancePpsRx = value;
-				}
-			}
+            public long? InstancePpsRx
+            {
+                get
+                {
+                    return instancePpsRx;
+                }
+                set
+                {
+                    instancePpsRx = value;
+                }
+            }
 
-			public long? InstancePpsTx
-			{
-				get
-				{
-					return instancePpsTx;
-				}
-				set	
-				{
-					instancePpsTx = value;
-				}
-			}
+            public long? InstancePpsTx
+            {
+                get
+                {
+                    return instancePpsTx;
+                }
+                set
+                {
+                    instancePpsTx = value;
+                }
+            }
 
-			public string InstanceFamilyLevel
-			{
-				get
-				{
-					return instanceFamilyLevel;
-				}
-				set	
-				{
-					instanceFamilyLevel = value;
-				}
-			}
-		}
-	}
+            public string InstanceFamilyLevel
+            {
+                get
+                {
+                    return instanceFamilyLevel;
+                }
+                set
+                {
+                    instanceFamilyLevel = value;
+                }
+            }
+        }
+    }
 }

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static ReleaseInstancePublicConnectionResponse Unmarshall(UnmarshallerContext context)
         {
-			ReleaseInstancePublicConnectionResponse releaseInstancePublicConnectionResponse = new ReleaseInstancePublicConnectionResponse();
+            ReleaseInstancePublicConnectionResponse releaseInstancePublicConnectionResponse = new ReleaseInstancePublicConnectionResponse();
 
-			releaseInstancePublicConnectionResponse.HttpResponse = context.HttpResponse;
-			releaseInstancePublicConnectionResponse.RequestId = context.StringValue("ReleaseInstancePublicConnection.RequestId");
-        
-			return releaseInstancePublicConnectionResponse;
+            releaseInstancePublicConnectionResponse.HttpResponse = context.HttpResponse;
+            releaseInstancePublicConnectionResponse.RequestId = context.StringValue("ReleaseInstancePublicConnection.RequestId");
+
+            return releaseInstancePublicConnectionResponse;
         }
     }
 }

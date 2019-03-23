@@ -22,209 +22,209 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class GetSecurityPreferenceResponse : AcsResponse
-	{
+    public class GetSecurityPreferenceResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private GetSecurityPreference_SecurityPreference securityPreference;
+        private GetSecurityPreference_SecurityPreference securityPreference;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public GetSecurityPreference_SecurityPreference SecurityPreference
-		{
-			get
-			{
-				return securityPreference;
-			}
-			set	
-			{
-				securityPreference = value;
-			}
-		}
+        public GetSecurityPreference_SecurityPreference SecurityPreference
+        {
+            get
+            {
+                return securityPreference;
+            }
+            set
+            {
+                securityPreference = value;
+            }
+        }
 
-		public class GetSecurityPreference_SecurityPreference
-		{
+        public class GetSecurityPreference_SecurityPreference
+        {
 
-			private GetSecurityPreference_LoginProfilePreference loginProfilePreference;
+            private GetSecurityPreference_LoginProfilePreference loginProfilePreference;
 
-			private GetSecurityPreference_AccessKeyPreference accessKeyPreference;
+            private GetSecurityPreference_AccessKeyPreference accessKeyPreference;
 
-			private GetSecurityPreference_PublicKeyPreference publicKeyPreference;
+            private GetSecurityPreference_PublicKeyPreference publicKeyPreference;
 
-			private GetSecurityPreference_MFAPreference mFAPreference;
+            private GetSecurityPreference_MFAPreference mFAPreference;
 
-			public GetSecurityPreference_LoginProfilePreference LoginProfilePreference
-			{
-				get
-				{
-					return loginProfilePreference;
-				}
-				set	
-				{
-					loginProfilePreference = value;
-				}
-			}
+            public GetSecurityPreference_LoginProfilePreference LoginProfilePreference
+            {
+                get
+                {
+                    return loginProfilePreference;
+                }
+                set
+                {
+                    loginProfilePreference = value;
+                }
+            }
 
-			public GetSecurityPreference_AccessKeyPreference AccessKeyPreference
-			{
-				get
-				{
-					return accessKeyPreference;
-				}
-				set	
-				{
-					accessKeyPreference = value;
-				}
-			}
+            public GetSecurityPreference_AccessKeyPreference AccessKeyPreference
+            {
+                get
+                {
+                    return accessKeyPreference;
+                }
+                set
+                {
+                    accessKeyPreference = value;
+                }
+            }
 
-			public GetSecurityPreference_PublicKeyPreference PublicKeyPreference
-			{
-				get
-				{
-					return publicKeyPreference;
-				}
-				set	
-				{
-					publicKeyPreference = value;
-				}
-			}
+            public GetSecurityPreference_PublicKeyPreference PublicKeyPreference
+            {
+                get
+                {
+                    return publicKeyPreference;
+                }
+                set
+                {
+                    publicKeyPreference = value;
+                }
+            }
 
-			public GetSecurityPreference_MFAPreference MFAPreference
-			{
-				get
-				{
-					return mFAPreference;
-				}
-				set	
-				{
-					mFAPreference = value;
-				}
-			}
+            public GetSecurityPreference_MFAPreference MFAPreference
+            {
+                get
+                {
+                    return mFAPreference;
+                }
+                set
+                {
+                    mFAPreference = value;
+                }
+            }
 
-			public class GetSecurityPreference_LoginProfilePreference
-			{
+            public class GetSecurityPreference_LoginProfilePreference
+            {
 
-				private bool? enableSaveMFATicket;
+                private bool? enableSaveMFATicket;
 
-				private bool? allowUserToChangePassword;
+                private bool? allowUserToChangePassword;
 
-				private int? loginSessionDuration;
+                private int? loginSessionDuration;
 
-				private string loginNetworkMasks;
+                private string loginNetworkMasks;
 
-				public bool? EnableSaveMFATicket
-				{
-					get
-					{
-						return enableSaveMFATicket;
-					}
-					set	
-					{
-						enableSaveMFATicket = value;
-					}
-				}
+                public bool? EnableSaveMFATicket
+                {
+                    get
+                    {
+                        return enableSaveMFATicket;
+                    }
+                    set
+                    {
+                        enableSaveMFATicket = value;
+                    }
+                }
 
-				public bool? AllowUserToChangePassword
-				{
-					get
-					{
-						return allowUserToChangePassword;
-					}
-					set	
-					{
-						allowUserToChangePassword = value;
-					}
-				}
+                public bool? AllowUserToChangePassword
+                {
+                    get
+                    {
+                        return allowUserToChangePassword;
+                    }
+                    set
+                    {
+                        allowUserToChangePassword = value;
+                    }
+                }
 
-				public int? LoginSessionDuration
-				{
-					get
-					{
-						return loginSessionDuration;
-					}
-					set	
-					{
-						loginSessionDuration = value;
-					}
-				}
+                public int? LoginSessionDuration
+                {
+                    get
+                    {
+                        return loginSessionDuration;
+                    }
+                    set
+                    {
+                        loginSessionDuration = value;
+                    }
+                }
 
-				public string LoginNetworkMasks
-				{
-					get
-					{
-						return loginNetworkMasks;
-					}
-					set	
-					{
-						loginNetworkMasks = value;
-					}
-				}
-			}
+                public string LoginNetworkMasks
+                {
+                    get
+                    {
+                        return loginNetworkMasks;
+                    }
+                    set
+                    {
+                        loginNetworkMasks = value;
+                    }
+                }
+            }
 
-			public class GetSecurityPreference_AccessKeyPreference
-			{
+            public class GetSecurityPreference_AccessKeyPreference
+            {
 
-				private bool? allowUserToManageAccessKeys;
+                private bool? allowUserToManageAccessKeys;
 
-				public bool? AllowUserToManageAccessKeys
-				{
-					get
-					{
-						return allowUserToManageAccessKeys;
-					}
-					set	
-					{
-						allowUserToManageAccessKeys = value;
-					}
-				}
-			}
+                public bool? AllowUserToManageAccessKeys
+                {
+                    get
+                    {
+                        return allowUserToManageAccessKeys;
+                    }
+                    set
+                    {
+                        allowUserToManageAccessKeys = value;
+                    }
+                }
+            }
 
-			public class GetSecurityPreference_PublicKeyPreference
-			{
+            public class GetSecurityPreference_PublicKeyPreference
+            {
 
-				private bool? allowUserToManagePublicKeys;
+                private bool? allowUserToManagePublicKeys;
 
-				public bool? AllowUserToManagePublicKeys
-				{
-					get
-					{
-						return allowUserToManagePublicKeys;
-					}
-					set	
-					{
-						allowUserToManagePublicKeys = value;
-					}
-				}
-			}
+                public bool? AllowUserToManagePublicKeys
+                {
+                    get
+                    {
+                        return allowUserToManagePublicKeys;
+                    }
+                    set
+                    {
+                        allowUserToManagePublicKeys = value;
+                    }
+                }
+            }
 
-			public class GetSecurityPreference_MFAPreference
-			{
+            public class GetSecurityPreference_MFAPreference
+            {
 
-				private bool? allowUserToManageMFADevices;
+                private bool? allowUserToManageMFADevices;
 
-				public bool? AllowUserToManageMFADevices
-				{
-					get
-					{
-						return allowUserToManageMFADevices;
-					}
-					set	
-					{
-						allowUserToManageMFADevices = value;
-					}
-				}
-			}
-		}
-	}
+                public bool? AllowUserToManageMFADevices
+                {
+                    get
+                    {
+                        return allowUserToManageMFADevices;
+                    }
+                    set
+                    {
+                        allowUserToManageMFADevices = value;
+                    }
+                }
+            }
+        }
+    }
 }

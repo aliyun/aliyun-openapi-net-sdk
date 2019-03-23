@@ -33,230 +33,230 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string backupId;
+        private string backupId;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string endTime;
+        private string endTime;
 
-		private string startTime;
+        private string startTime;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		private string backupStatus;
+        private string backupStatus;
 
-		private string backupLocation;
+        private string backupLocation;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private string action;
+        private string action;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string backupMode;
+        private string backupMode;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string BackupId
-		{
-			get
-			{
-				return backupId;
-			}
-			set	
-			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value);
-			}
-		}
+        public string BackupId
+        {
+            get
+            {
+                return backupId;
+            }
+            set
+            {
+                backupId = value;
+                DictionaryUtil.Add(QueryParameters, "BackupId", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+                DictionaryUtil.Add(QueryParameters, "EndTime", value);
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+                DictionaryUtil.Add(QueryParameters, "StartTime", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+                DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
-		public string BackupStatus
-		{
-			get
-			{
-				return backupStatus;
-			}
-			set	
-			{
-				backupStatus = value;
-				DictionaryUtil.Add(QueryParameters, "BackupStatus", value);
-			}
-		}
+        public string BackupStatus
+        {
+            get
+            {
+                return backupStatus;
+            }
+            set
+            {
+                backupStatus = value;
+                DictionaryUtil.Add(QueryParameters, "BackupStatus", value);
+            }
+        }
 
-		public string BackupLocation
-		{
-			get
-			{
-				return backupLocation;
-			}
-			set	
-			{
-				backupLocation = value;
-				DictionaryUtil.Add(QueryParameters, "BackupLocation", value);
-			}
-		}
+        public string BackupLocation
+        {
+            get
+            {
+                return backupLocation;
+            }
+            set
+            {
+                backupLocation = value;
+                DictionaryUtil.Add(QueryParameters, "BackupLocation", value);
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+                DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+                DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+            }
+        }
 
-		public string BackupMode
-		{
-			get
-			{
-				return backupMode;
-			}
-			set	
-			{
-				backupMode = value;
-				DictionaryUtil.Add(QueryParameters, "BackupMode", value);
-			}
-		}
+        public string BackupMode
+        {
+            get
+            {
+                return backupMode;
+            }
+            set
+            {
+                backupMode = value;
+                DictionaryUtil.Add(QueryParameters, "BackupMode", value);
+            }
+        }
 
         public override DescribeBackupsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

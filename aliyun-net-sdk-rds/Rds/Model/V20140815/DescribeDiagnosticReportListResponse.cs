@@ -21,109 +21,109 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeDiagnosticReportListResponse : AcsResponse
-	{
+    public class DescribeDiagnosticReportListResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeDiagnosticReportList_Report> reportList;
+        private List<DescribeDiagnosticReportList_Report> reportList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeDiagnosticReportList_Report> ReportList
-		{
-			get
-			{
-				return reportList;
-			}
-			set	
-			{
-				reportList = value;
-			}
-		}
+        public List<DescribeDiagnosticReportList_Report> ReportList
+        {
+            get
+            {
+                return reportList;
+            }
+            set
+            {
+                reportList = value;
+            }
+        }
 
-		public class DescribeDiagnosticReportList_Report
-		{
+        public class DescribeDiagnosticReportList_Report
+        {
 
-			private string diagnosticTime;
+            private string diagnosticTime;
 
-			private int? score;
+            private int? score;
 
-			private string startTime;
+            private string startTime;
 
-			private string endTime;
+            private string endTime;
 
-			private string downloadURL;
+            private string downloadURL;
 
-			public string DiagnosticTime
-			{
-				get
-				{
-					return diagnosticTime;
-				}
-				set	
-				{
-					diagnosticTime = value;
-				}
-			}
+            public string DiagnosticTime
+            {
+                get
+                {
+                    return diagnosticTime;
+                }
+                set
+                {
+                    diagnosticTime = value;
+                }
+            }
 
-			public int? Score
-			{
-				get
-				{
-					return score;
-				}
-				set	
-				{
-					score = value;
-				}
-			}
+            public int? Score
+            {
+                get
+                {
+                    return score;
+                }
+                set
+                {
+                    score = value;
+                }
+            }
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+            public string StartTime
+            {
+                get
+                {
+                    return startTime;
+                }
+                set
+                {
+                    startTime = value;
+                }
+            }
 
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
+            public string EndTime
+            {
+                get
+                {
+                    return endTime;
+                }
+                set
+                {
+                    endTime = value;
+                }
+            }
 
-			public string DownloadURL
-			{
-				get
-				{
-					return downloadURL;
-				}
-				set	
-				{
-					downloadURL = value;
-				}
-			}
-		}
-	}
+            public string DownloadURL
+            {
+                get
+                {
+                    return downloadURL;
+                }
+                set
+                {
+                    downloadURL = value;
+                }
+            }
+        }
+    }
 }

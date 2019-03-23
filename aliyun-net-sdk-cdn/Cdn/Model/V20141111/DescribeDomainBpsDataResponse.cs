@@ -22,333 +22,333 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainBpsDataResponse : AcsResponse
-	{
+    public class DescribeDomainBpsDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private string locationNameEn;
+        private string locationNameEn;
 
-		private string ispNameEn;
+        private string ispNameEn;
 
-		private string locationName;
+        private string locationName;
 
-		private string ispName;
+        private string ispName;
 
-		private string dataInterval;
+        private string dataInterval;
 
-		private List<DescribeDomainBpsData_DataModule> bpsDataPerInterval;
+        private List<DescribeDomainBpsData_DataModule> bpsDataPerInterval;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public string LocationNameEn
-		{
-			get
-			{
-				return locationNameEn;
-			}
-			set	
-			{
-				locationNameEn = value;
-			}
-		}
+        public string LocationNameEn
+        {
+            get
+            {
+                return locationNameEn;
+            }
+            set
+            {
+                locationNameEn = value;
+            }
+        }
 
-		public string IspNameEn
-		{
-			get
-			{
-				return ispNameEn;
-			}
-			set	
-			{
-				ispNameEn = value;
-			}
-		}
+        public string IspNameEn
+        {
+            get
+            {
+                return ispNameEn;
+            }
+            set
+            {
+                ispNameEn = value;
+            }
+        }
 
-		public string LocationName
-		{
-			get
-			{
-				return locationName;
-			}
-			set	
-			{
-				locationName = value;
-			}
-		}
+        public string LocationName
+        {
+            get
+            {
+                return locationName;
+            }
+            set
+            {
+                locationName = value;
+            }
+        }
 
-		public string IspName
-		{
-			get
-			{
-				return ispName;
-			}
-			set	
-			{
-				ispName = value;
-			}
-		}
+        public string IspName
+        {
+            get
+            {
+                return ispName;
+            }
+            set
+            {
+                ispName = value;
+            }
+        }
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
+        public string DataInterval
+        {
+            get
+            {
+                return dataInterval;
+            }
+            set
+            {
+                dataInterval = value;
+            }
+        }
 
-		public List<DescribeDomainBpsData_DataModule> BpsDataPerInterval
-		{
-			get
-			{
-				return bpsDataPerInterval;
-			}
-			set	
-			{
-				bpsDataPerInterval = value;
-			}
-		}
+        public List<DescribeDomainBpsData_DataModule> BpsDataPerInterval
+        {
+            get
+            {
+                return bpsDataPerInterval;
+            }
+            set
+            {
+                bpsDataPerInterval = value;
+            }
+        }
 
-		public class DescribeDomainBpsData_DataModule
-		{
+        public class DescribeDomainBpsData_DataModule
+        {
 
-			private string timeStamp;
+            private string timeStamp;
 
-			private string _value;
+            private string _value;
 
-			private string domesticValue;
+            private string domesticValue;
 
-			private string overseasValue;
+            private string overseasValue;
 
-			private string l2Value;
+            private string l2Value;
 
-			private string domesticL2Value;
+            private string domesticL2Value;
 
-			private string overseasL2Value;
+            private string overseasL2Value;
 
-			private string dynamicValue;
+            private string dynamicValue;
 
-			private string dynamicDomesticValue;
+            private string dynamicDomesticValue;
 
-			private string dynamicOverseasValue;
+            private string dynamicOverseasValue;
 
-			private string staticValue;
+            private string staticValue;
 
-			private string staticDomesticValue;
+            private string staticDomesticValue;
 
-			private string staticOverseasValue;
+            private string staticOverseasValue;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
 
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
-			}
+            public string _Value
+            {
+                get
+                {
+                    return _value;
+                }
+                set
+                {
+                    _value = value;
+                }
+            }
 
-			public string DomesticValue
-			{
-				get
-				{
-					return domesticValue;
-				}
-				set	
-				{
-					domesticValue = value;
-				}
-			}
+            public string DomesticValue
+            {
+                get
+                {
+                    return domesticValue;
+                }
+                set
+                {
+                    domesticValue = value;
+                }
+            }
 
-			public string OverseasValue
-			{
-				get
-				{
-					return overseasValue;
-				}
-				set	
-				{
-					overseasValue = value;
-				}
-			}
+            public string OverseasValue
+            {
+                get
+                {
+                    return overseasValue;
+                }
+                set
+                {
+                    overseasValue = value;
+                }
+            }
 
-			public string L2Value
-			{
-				get
-				{
-					return l2Value;
-				}
-				set	
-				{
-					l2Value = value;
-				}
-			}
+            public string L2Value
+            {
+                get
+                {
+                    return l2Value;
+                }
+                set
+                {
+                    l2Value = value;
+                }
+            }
 
-			public string DomesticL2Value
-			{
-				get
-				{
-					return domesticL2Value;
-				}
-				set	
-				{
-					domesticL2Value = value;
-				}
-			}
+            public string DomesticL2Value
+            {
+                get
+                {
+                    return domesticL2Value;
+                }
+                set
+                {
+                    domesticL2Value = value;
+                }
+            }
 
-			public string OverseasL2Value
-			{
-				get
-				{
-					return overseasL2Value;
-				}
-				set	
-				{
-					overseasL2Value = value;
-				}
-			}
+            public string OverseasL2Value
+            {
+                get
+                {
+                    return overseasL2Value;
+                }
+                set
+                {
+                    overseasL2Value = value;
+                }
+            }
 
-			public string DynamicValue
-			{
-				get
-				{
-					return dynamicValue;
-				}
-				set	
-				{
-					dynamicValue = value;
-				}
-			}
+            public string DynamicValue
+            {
+                get
+                {
+                    return dynamicValue;
+                }
+                set
+                {
+                    dynamicValue = value;
+                }
+            }
 
-			public string DynamicDomesticValue
-			{
-				get
-				{
-					return dynamicDomesticValue;
-				}
-				set	
-				{
-					dynamicDomesticValue = value;
-				}
-			}
+            public string DynamicDomesticValue
+            {
+                get
+                {
+                    return dynamicDomesticValue;
+                }
+                set
+                {
+                    dynamicDomesticValue = value;
+                }
+            }
 
-			public string DynamicOverseasValue
-			{
-				get
-				{
-					return dynamicOverseasValue;
-				}
-				set	
-				{
-					dynamicOverseasValue = value;
-				}
-			}
+            public string DynamicOverseasValue
+            {
+                get
+                {
+                    return dynamicOverseasValue;
+                }
+                set
+                {
+                    dynamicOverseasValue = value;
+                }
+            }
 
-			public string StaticValue
-			{
-				get
-				{
-					return staticValue;
-				}
-				set	
-				{
-					staticValue = value;
-				}
-			}
+            public string StaticValue
+            {
+                get
+                {
+                    return staticValue;
+                }
+                set
+                {
+                    staticValue = value;
+                }
+            }
 
-			public string StaticDomesticValue
-			{
-				get
-				{
-					return staticDomesticValue;
-				}
-				set	
-				{
-					staticDomesticValue = value;
-				}
-			}
+            public string StaticDomesticValue
+            {
+                get
+                {
+                    return staticDomesticValue;
+                }
+                set
+                {
+                    staticDomesticValue = value;
+                }
+            }
 
-			public string StaticOverseasValue
-			{
-				get
-				{
-					return staticOverseasValue;
-				}
-				set	
-				{
-					staticOverseasValue = value;
-				}
-			}
-		}
-	}
+            public string StaticOverseasValue
+            {
+                get
+                {
+                    return staticOverseasValue;
+                }
+                set
+                {
+                    staticOverseasValue = value;
+                }
+            }
+        }
+    }
 }

@@ -22,49 +22,49 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLiveStreamsBlockListResponse : AcsResponse
-	{
+    public class DescribeLiveStreamsBlockListResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private List<string> streamUrls;
+        private List<string> streamUrls;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public List<string> StreamUrls
-		{
-			get
-			{
-				return streamUrls;
-			}
-			set	
-			{
-				streamUrls = value;
-			}
-		}
-	}
+        public List<string> StreamUrls
+        {
+            get
+            {
+                return streamUrls;
+            }
+            set
+            {
+                streamUrls = value;
+            }
+        }
+    }
 }

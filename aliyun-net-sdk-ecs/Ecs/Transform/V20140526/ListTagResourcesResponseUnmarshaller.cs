@@ -27,25 +27,26 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ListTagResourcesResponse Unmarshall(UnmarshallerContext context)
         {
-			ListTagResourcesResponse listTagResourcesResponse = new ListTagResourcesResponse();
+            ListTagResourcesResponse listTagResourcesResponse = new ListTagResourcesResponse();
 
-			listTagResourcesResponse.HttpResponse = context.HttpResponse;
-			listTagResourcesResponse.RequestId = context.StringValue("ListTagResources.RequestId");
-			listTagResourcesResponse.NextToken = context.StringValue("ListTagResources.NextToken");
+            listTagResourcesResponse.HttpResponse = context.HttpResponse;
+            listTagResourcesResponse.RequestId = context.StringValue("ListTagResources.RequestId");
+            listTagResourcesResponse.NextToken = context.StringValue("ListTagResources.NextToken");
 
-			List<ListTagResourcesResponse.ListTagResources_TagResource> listTagResourcesResponse_tagResources = new List<ListTagResourcesResponse.ListTagResources_TagResource>();
-			for (int i = 0; i < context.Length("ListTagResources.TagResources.Length"); i++) {
-				ListTagResourcesResponse.ListTagResources_TagResource tagResource = new ListTagResourcesResponse.ListTagResources_TagResource();
-				tagResource.ResourceType = context.StringValue("ListTagResources.TagResources["+ i +"].ResourceType");
-				tagResource.ResourceId = context.StringValue("ListTagResources.TagResources["+ i +"].ResourceId");
-				tagResource.TagKey = context.StringValue("ListTagResources.TagResources["+ i +"].TagKey");
-				tagResource.TagValue = context.StringValue("ListTagResources.TagResources["+ i +"].TagValue");
+            List<ListTagResourcesResponse.ListTagResources_TagResource> listTagResourcesResponse_tagResources = new List<ListTagResourcesResponse.ListTagResources_TagResource>();
+            for (int i = 0; i < context.Length("ListTagResources.TagResources.Length"); i++)
+            {
+                ListTagResourcesResponse.ListTagResources_TagResource tagResource = new ListTagResourcesResponse.ListTagResources_TagResource();
+                tagResource.ResourceType = context.StringValue("ListTagResources.TagResources[" + i + "].ResourceType");
+                tagResource.ResourceId = context.StringValue("ListTagResources.TagResources[" + i + "].ResourceId");
+                tagResource.TagKey = context.StringValue("ListTagResources.TagResources[" + i + "].TagKey");
+                tagResource.TagValue = context.StringValue("ListTagResources.TagResources[" + i + "].TagValue");
 
-				listTagResourcesResponse_tagResources.Add(tagResource);
-			}
-			listTagResourcesResponse.TagResources = listTagResourcesResponse_tagResources;
-        
-			return listTagResourcesResponse;
+                listTagResourcesResponse_tagResources.Add(tagResource);
+            }
+            listTagResourcesResponse.TagResources = listTagResourcesResponse_tagResources;
+
+            return listTagResourcesResponse;
         }
     }
 }

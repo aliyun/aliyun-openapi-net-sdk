@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static ModifyIpv6GatewaySpecResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyIpv6GatewaySpecResponse modifyIpv6GatewaySpecResponse = new ModifyIpv6GatewaySpecResponse();
+            ModifyIpv6GatewaySpecResponse modifyIpv6GatewaySpecResponse = new ModifyIpv6GatewaySpecResponse();
 
-			modifyIpv6GatewaySpecResponse.HttpResponse = context.HttpResponse;
-			modifyIpv6GatewaySpecResponse.RequestId = context.StringValue("ModifyIpv6GatewaySpec.RequestId");
-        
-			return modifyIpv6GatewaySpecResponse;
+            modifyIpv6GatewaySpecResponse.HttpResponse = context.HttpResponse;
+            modifyIpv6GatewaySpecResponse.RequestId = context.StringValue("ModifyIpv6GatewaySpec.RequestId");
+
+            return modifyIpv6GatewaySpecResponse;
         }
     }
 }

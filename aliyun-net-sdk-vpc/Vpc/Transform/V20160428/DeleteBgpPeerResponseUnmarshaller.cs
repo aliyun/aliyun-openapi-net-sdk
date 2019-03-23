@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DeleteBgpPeerResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteBgpPeerResponse deleteBgpPeerResponse = new DeleteBgpPeerResponse();
+            DeleteBgpPeerResponse deleteBgpPeerResponse = new DeleteBgpPeerResponse();
 
-			deleteBgpPeerResponse.HttpResponse = context.HttpResponse;
-			deleteBgpPeerResponse.RequestId = context.StringValue("DeleteBgpPeer.RequestId");
-        
-			return deleteBgpPeerResponse;
+            deleteBgpPeerResponse.HttpResponse = context.HttpResponse;
+            deleteBgpPeerResponse.RequestId = context.StringValue("DeleteBgpPeer.RequestId");
+
+            return deleteBgpPeerResponse;
         }
     }
 }

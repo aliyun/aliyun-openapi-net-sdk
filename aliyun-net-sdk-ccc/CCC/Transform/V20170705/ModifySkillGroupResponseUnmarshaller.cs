@@ -27,16 +27,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static ModifySkillGroupResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifySkillGroupResponse modifySkillGroupResponse = new ModifySkillGroupResponse();
+            ModifySkillGroupResponse modifySkillGroupResponse = new ModifySkillGroupResponse();
 
-			modifySkillGroupResponse.HttpResponse = context.HttpResponse;
-			modifySkillGroupResponse.RequestId = context.StringValue("ModifySkillGroup.RequestId");
-			modifySkillGroupResponse.Success = context.BooleanValue("ModifySkillGroup.Success");
-			modifySkillGroupResponse.Code = context.StringValue("ModifySkillGroup.Code");
-			modifySkillGroupResponse.Message = context.StringValue("ModifySkillGroup.Message");
-			modifySkillGroupResponse.HttpStatusCode = context.IntegerValue("ModifySkillGroup.HttpStatusCode");
-        
-			return modifySkillGroupResponse;
+            modifySkillGroupResponse.HttpResponse = context.HttpResponse;
+            modifySkillGroupResponse.RequestId = context.StringValue("ModifySkillGroup.RequestId");
+            modifySkillGroupResponse.Success = context.BooleanValue("ModifySkillGroup.Success");
+            modifySkillGroupResponse.Code = context.StringValue("ModifySkillGroup.Code");
+            modifySkillGroupResponse.Message = context.StringValue("ModifySkillGroup.Message");
+            modifySkillGroupResponse.HttpStatusCode = context.IntegerValue("ModifySkillGroup.HttpStatusCode");
+
+            return modifySkillGroupResponse;
         }
     }
 }

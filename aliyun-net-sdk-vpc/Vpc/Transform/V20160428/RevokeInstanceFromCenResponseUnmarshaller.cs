@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static RevokeInstanceFromCenResponse Unmarshall(UnmarshallerContext context)
         {
-			RevokeInstanceFromCenResponse revokeInstanceFromCenResponse = new RevokeInstanceFromCenResponse();
+            RevokeInstanceFromCenResponse revokeInstanceFromCenResponse = new RevokeInstanceFromCenResponse();
 
-			revokeInstanceFromCenResponse.HttpResponse = context.HttpResponse;
-			revokeInstanceFromCenResponse.RequestId = context.StringValue("RevokeInstanceFromCen.RequestId");
-        
-			return revokeInstanceFromCenResponse;
+            revokeInstanceFromCenResponse.HttpResponse = context.HttpResponse;
+            revokeInstanceFromCenResponse.RequestId = context.StringValue("RevokeInstanceFromCen.RequestId");
+
+            return revokeInstanceFromCenResponse;
         }
     }
 }

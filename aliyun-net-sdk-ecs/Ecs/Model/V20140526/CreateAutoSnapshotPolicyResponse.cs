@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateAutoSnapshotPolicyResponse : AcsResponse
-	{
+    public class CreateAutoSnapshotPolicyResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string autoSnapshotPolicyId;
+        private string autoSnapshotPolicyId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string AutoSnapshotPolicyId
-		{
-			get
-			{
-				return autoSnapshotPolicyId;
-			}
-			set	
-			{
-				autoSnapshotPolicyId = value;
-			}
-		}
-	}
+        public string AutoSnapshotPolicyId
+        {
+            get
+            {
+                return autoSnapshotPolicyId;
+            }
+            set
+            {
+                autoSnapshotPolicyId = value;
+            }
+        }
+    }
 }

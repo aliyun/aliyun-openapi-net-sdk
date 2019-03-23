@@ -32,53 +32,53 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public AttachPolicyToGroupRequest()
             : base("Ram", "2015-05-01", "AttachPolicyToGroup", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string policyType;
+        private string policyType;
 
-		private string policyName;
+        private string policyName;
 
-		private string groupName;
+        private string groupName;
 
-		public string PolicyType
-		{
-			get
-			{
-				return policyType;
-			}
-			set	
-			{
-				policyType = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyType", value);
-			}
-		}
+        public string PolicyType
+        {
+            get
+            {
+                return policyType;
+            }
+            set
+            {
+                policyType = value;
+                DictionaryUtil.Add(QueryParameters, "PolicyType", value);
+            }
+        }
 
-		public string PolicyName
-		{
-			get
-			{
-				return policyName;
-			}
-			set	
-			{
-				policyName = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyName", value);
-			}
-		}
+        public string PolicyName
+        {
+            get
+            {
+                return policyName;
+            }
+            set
+            {
+                policyName = value;
+                DictionaryUtil.Add(QueryParameters, "PolicyName", value);
+            }
+        }
 
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
+        public string GroupName
+        {
+            get
+            {
+                return groupName;
+            }
+            set
+            {
+                groupName = value;
+                DictionaryUtil.Add(QueryParameters, "GroupName", value);
+            }
+        }
 
         public override AttachPolicyToGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

@@ -33,275 +33,275 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string accessPointId;
+        private string accessPointId;
 
-		private string redundantPhysicalConnectionId;
+        private string redundantPhysicalConnectionId;
 
-		private string peerLocation;
+        private string peerLocation;
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string portType;
+        private string portType;
 
-		private string circuitCode;
+        private string circuitCode;
 
-		private int? bandwidth;
+        private int? bandwidth;
 
-		private string clientToken;
+        private string clientToken;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string description;
+        private string description;
 
-		private string type;
+        private string type;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string lineOperator;
+        private string lineOperator;
 
-		private string regionId;
+        private string regionId;
 
-		private string name;
+        private string name;
 
-		private string action;
+        private string action;
 
-		private string userCidr;
+        private string userCidr;
 
-		public string AccessPointId
-		{
-			get
-			{
-				return accessPointId;
-			}
-			set	
-			{
-				accessPointId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessPointId", value);
-			}
-		}
+        public string AccessPointId
+        {
+            get
+            {
+                return accessPointId;
+            }
+            set
+            {
+                accessPointId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessPointId", value);
+            }
+        }
 
-		public string RedundantPhysicalConnectionId
-		{
-			get
-			{
-				return redundantPhysicalConnectionId;
-			}
-			set	
-			{
-				redundantPhysicalConnectionId = value;
-				DictionaryUtil.Add(QueryParameters, "RedundantPhysicalConnectionId", value);
-			}
-		}
+        public string RedundantPhysicalConnectionId
+        {
+            get
+            {
+                return redundantPhysicalConnectionId;
+            }
+            set
+            {
+                redundantPhysicalConnectionId = value;
+                DictionaryUtil.Add(QueryParameters, "RedundantPhysicalConnectionId", value);
+            }
+        }
 
-		public string PeerLocation
-		{
-			get
-			{
-				return peerLocation;
-			}
-			set	
-			{
-				peerLocation = value;
-				DictionaryUtil.Add(QueryParameters, "PeerLocation", value);
-			}
-		}
+        public string PeerLocation
+        {
+            get
+            {
+                return peerLocation;
+            }
+            set
+            {
+                peerLocation = value;
+                DictionaryUtil.Add(QueryParameters, "PeerLocation", value);
+            }
+        }
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string PortType
-		{
-			get
-			{
-				return portType;
-			}
-			set	
-			{
-				portType = value;
-				DictionaryUtil.Add(QueryParameters, "PortType", value);
-			}
-		}
+        public string PortType
+        {
+            get
+            {
+                return portType;
+            }
+            set
+            {
+                portType = value;
+                DictionaryUtil.Add(QueryParameters, "PortType", value);
+            }
+        }
 
-		public string CircuitCode
-		{
-			get
-			{
-				return circuitCode;
-			}
-			set	
-			{
-				circuitCode = value;
-				DictionaryUtil.Add(QueryParameters, "CircuitCode", value);
-			}
-		}
+        public string CircuitCode
+        {
+            get
+            {
+                return circuitCode;
+            }
+            set
+            {
+                circuitCode = value;
+                DictionaryUtil.Add(QueryParameters, "CircuitCode", value);
+            }
+        }
 
-		public int? Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "bandwidth", value.ToString());
-			}
-		}
+        public int? Bandwidth
+        {
+            get
+            {
+                return bandwidth;
+            }
+            set
+            {
+                bandwidth = value;
+                DictionaryUtil.Add(QueryParameters, "bandwidth", value.ToString());
+            }
+        }
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
+        public string ClientToken
+        {
+            get
+            {
+                return clientToken;
+            }
+            set
+            {
+                clientToken = value;
+                DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
+        public string Type
+        {
+            get
+            {
+                return type;
+            }
+            set
+            {
+                type = value;
+                DictionaryUtil.Add(QueryParameters, "Type", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string LineOperator
-		{
-			get
-			{
-				return lineOperator;
-			}
-			set	
-			{
-				lineOperator = value;
-				DictionaryUtil.Add(QueryParameters, "LineOperator", value);
-			}
-		}
+        public string LineOperator
+        {
+            get
+            {
+                return lineOperator;
+            }
+            set
+            {
+                lineOperator = value;
+                DictionaryUtil.Add(QueryParameters, "LineOperator", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string UserCidr
-		{
-			get
-			{
-				return userCidr;
-			}
-			set	
-			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
-			}
-		}
+        public string UserCidr
+        {
+            get
+            {
+                return userCidr;
+            }
+            set
+            {
+                userCidr = value;
+                DictionaryUtil.Add(QueryParameters, "UserCidr", value);
+            }
+        }
 
         public override CreatePhysicalConnectionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

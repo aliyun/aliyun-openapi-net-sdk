@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static CreateLaunchTemplateResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateLaunchTemplateResponse createLaunchTemplateResponse = new CreateLaunchTemplateResponse();
+            CreateLaunchTemplateResponse createLaunchTemplateResponse = new CreateLaunchTemplateResponse();
 
-			createLaunchTemplateResponse.HttpResponse = context.HttpResponse;
-			createLaunchTemplateResponse.RequestId = context.StringValue("CreateLaunchTemplate.RequestId");
-			createLaunchTemplateResponse.LaunchTemplateId = context.StringValue("CreateLaunchTemplate.LaunchTemplateId");
-        
-			return createLaunchTemplateResponse;
+            createLaunchTemplateResponse.HttpResponse = context.HttpResponse;
+            createLaunchTemplateResponse.RequestId = context.StringValue("CreateLaunchTemplate.RequestId");
+            createLaunchTemplateResponse.LaunchTemplateId = context.StringValue("CreateLaunchTemplate.LaunchTemplateId");
+
+            return createLaunchTemplateResponse;
         }
     }
 }

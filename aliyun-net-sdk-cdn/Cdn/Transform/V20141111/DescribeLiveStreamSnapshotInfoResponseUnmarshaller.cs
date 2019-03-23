@@ -28,25 +28,26 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeLiveStreamSnapshotInfoResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLiveStreamSnapshotInfoResponse describeLiveStreamSnapshotInfoResponse = new DescribeLiveStreamSnapshotInfoResponse();
+            DescribeLiveStreamSnapshotInfoResponse describeLiveStreamSnapshotInfoResponse = new DescribeLiveStreamSnapshotInfoResponse();
 
-			describeLiveStreamSnapshotInfoResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamSnapshotInfoResponse.RequestId = context.StringValue("DescribeLiveStreamSnapshotInfo.RequestId");
-			describeLiveStreamSnapshotInfoResponse.NextStartTime = context.StringValue("DescribeLiveStreamSnapshotInfo.NextStartTime");
+            describeLiveStreamSnapshotInfoResponse.HttpResponse = context.HttpResponse;
+            describeLiveStreamSnapshotInfoResponse.RequestId = context.StringValue("DescribeLiveStreamSnapshotInfo.RequestId");
+            describeLiveStreamSnapshotInfoResponse.NextStartTime = context.StringValue("DescribeLiveStreamSnapshotInfo.NextStartTime");
 
-			List<DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> describeLiveStreamSnapshotInfoResponse_liveStreamSnapshotInfoList = new List<DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList.Length"); i++) {
-				DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo liveStreamSnapshotInfo = new DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo();
-				liveStreamSnapshotInfo.OssEndpoint = context.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].OssEndpoint");
-				liveStreamSnapshotInfo.OssBucket = context.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].OssBucket");
-				liveStreamSnapshotInfo.OssObject = context.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].OssObject");
-				liveStreamSnapshotInfo.CreateTime = context.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].CreateTime");
+            List<DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> describeLiveStreamSnapshotInfoResponse_liveStreamSnapshotInfoList = new List<DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo>();
+            for (int i = 0; i < context.Length("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList.Length"); i++)
+            {
+                DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo liveStreamSnapshotInfo = new DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo();
+                liveStreamSnapshotInfo.OssEndpoint = context.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList[" + i + "].OssEndpoint");
+                liveStreamSnapshotInfo.OssBucket = context.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList[" + i + "].OssBucket");
+                liveStreamSnapshotInfo.OssObject = context.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList[" + i + "].OssObject");
+                liveStreamSnapshotInfo.CreateTime = context.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList[" + i + "].CreateTime");
 
-				describeLiveStreamSnapshotInfoResponse_liveStreamSnapshotInfoList.Add(liveStreamSnapshotInfo);
-			}
-			describeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList = describeLiveStreamSnapshotInfoResponse_liveStreamSnapshotInfoList;
-        
-			return describeLiveStreamSnapshotInfoResponse;
+                describeLiveStreamSnapshotInfoResponse_liveStreamSnapshotInfoList.Add(liveStreamSnapshotInfo);
+            }
+            describeLiveStreamSnapshotInfoResponse.LiveStreamSnapshotInfoList = describeLiveStreamSnapshotInfoResponse_liveStreamSnapshotInfoList;
+
+            return describeLiveStreamSnapshotInfoResponse;
         }
     }
 }

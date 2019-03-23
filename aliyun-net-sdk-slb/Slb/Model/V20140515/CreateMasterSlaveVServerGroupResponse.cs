@@ -21,151 +21,151 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class CreateMasterSlaveVServerGroupResponse : AcsResponse
-	{
+    public class CreateMasterSlaveVServerGroupResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string masterSlaveVServerGroupId;
+        private string masterSlaveVServerGroupId;
 
-		private List<CreateMasterSlaveVServerGroup_MasterSlaveBackendServer> masterSlaveBackendServers;
+        private List<CreateMasterSlaveVServerGroup_MasterSlaveBackendServer> masterSlaveBackendServers;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string MasterSlaveVServerGroupId
-		{
-			get
-			{
-				return masterSlaveVServerGroupId;
-			}
-			set	
-			{
-				masterSlaveVServerGroupId = value;
-			}
-		}
+        public string MasterSlaveVServerGroupId
+        {
+            get
+            {
+                return masterSlaveVServerGroupId;
+            }
+            set
+            {
+                masterSlaveVServerGroupId = value;
+            }
+        }
 
-		public List<CreateMasterSlaveVServerGroup_MasterSlaveBackendServer> MasterSlaveBackendServers
-		{
-			get
-			{
-				return masterSlaveBackendServers;
-			}
-			set	
-			{
-				masterSlaveBackendServers = value;
-			}
-		}
+        public List<CreateMasterSlaveVServerGroup_MasterSlaveBackendServer> MasterSlaveBackendServers
+        {
+            get
+            {
+                return masterSlaveBackendServers;
+            }
+            set
+            {
+                masterSlaveBackendServers = value;
+            }
+        }
 
-		public class CreateMasterSlaveVServerGroup_MasterSlaveBackendServer
-		{
+        public class CreateMasterSlaveVServerGroup_MasterSlaveBackendServer
+        {
 
-			private string serverId;
+            private string serverId;
 
-			private int? port;
+            private int? port;
 
-			private int? weight;
+            private int? weight;
 
-			private int? isBackup;
+            private int? isBackup;
 
-			private string type;
+            private string type;
 
-			private string serverIp;
+            private string serverIp;
 
-			private string vpcId;
+            private string vpcId;
 
-			public string ServerId
-			{
-				get
-				{
-					return serverId;
-				}
-				set	
-				{
-					serverId = value;
-				}
-			}
+            public string ServerId
+            {
+                get
+                {
+                    return serverId;
+                }
+                set
+                {
+                    serverId = value;
+                }
+            }
 
-			public int? Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
+            public int? Port
+            {
+                get
+                {
+                    return port;
+                }
+                set
+                {
+                    port = value;
+                }
+            }
 
-			public int? Weight
-			{
-				get
-				{
-					return weight;
-				}
-				set	
-				{
-					weight = value;
-				}
-			}
+            public int? Weight
+            {
+                get
+                {
+                    return weight;
+                }
+                set
+                {
+                    weight = value;
+                }
+            }
 
-			public int? IsBackup
-			{
-				get
-				{
-					return isBackup;
-				}
-				set	
-				{
-					isBackup = value;
-				}
-			}
+            public int? IsBackup
+            {
+                get
+                {
+                    return isBackup;
+                }
+                set
+                {
+                    isBackup = value;
+                }
+            }
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+            public string Type
+            {
+                get
+                {
+                    return type;
+                }
+                set
+                {
+                    type = value;
+                }
+            }
 
-			public string ServerIp
-			{
-				get
-				{
-					return serverIp;
-				}
-				set	
-				{
-					serverIp = value;
-				}
-			}
+            public string ServerIp
+            {
+                get
+                {
+                    return serverIp;
+                }
+                set
+                {
+                    serverIp = value;
+                }
+            }
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
-		}
-	}
+            public string VpcId
+            {
+                get
+                {
+                    return vpcId;
+                }
+                set
+                {
+                    vpcId = value;
+                }
+            }
+        }
+    }
 }

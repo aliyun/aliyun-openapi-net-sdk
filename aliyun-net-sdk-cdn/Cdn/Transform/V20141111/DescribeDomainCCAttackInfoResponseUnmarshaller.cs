@@ -28,37 +28,39 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeDomainCCAttackInfoResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainCCAttackInfoResponse describeDomainCCAttackInfoResponse = new DescribeDomainCCAttackInfoResponse();
+            DescribeDomainCCAttackInfoResponse describeDomainCCAttackInfoResponse = new DescribeDomainCCAttackInfoResponse();
 
-			describeDomainCCAttackInfoResponse.HttpResponse = context.HttpResponse;
-			describeDomainCCAttackInfoResponse.RequestId = context.StringValue("DescribeDomainCCAttackInfo.RequestId");
-			describeDomainCCAttackInfoResponse.DomainName = context.StringValue("DescribeDomainCCAttackInfo.DomainName");
-			describeDomainCCAttackInfoResponse.StartTime = context.StringValue("DescribeDomainCCAttackInfo.StartTime");
-			describeDomainCCAttackInfoResponse.EndTime = context.StringValue("DescribeDomainCCAttackInfo.EndTime");
+            describeDomainCCAttackInfoResponse.HttpResponse = context.HttpResponse;
+            describeDomainCCAttackInfoResponse.RequestId = context.StringValue("DescribeDomainCCAttackInfo.RequestId");
+            describeDomainCCAttackInfoResponse.DomainName = context.StringValue("DescribeDomainCCAttackInfo.DomainName");
+            describeDomainCCAttackInfoResponse.StartTime = context.StringValue("DescribeDomainCCAttackInfo.StartTime");
+            describeDomainCCAttackInfoResponse.EndTime = context.StringValue("DescribeDomainCCAttackInfo.EndTime");
 
-			List<DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackIpDatas> describeDomainCCAttackInfoResponse_attackIpDataList = new List<DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackIpDatas>();
-			for (int i = 0; i < context.Length("DescribeDomainCCAttackInfo.AttackIpDataList.Length"); i++) {
-				DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackIpDatas attackIpDatas = new DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackIpDatas();
-				attackIpDatas.Ip = context.StringValue("DescribeDomainCCAttackInfo.AttackIpDataList["+ i +"].Ip");
-				attackIpDatas.AttackCount = context.StringValue("DescribeDomainCCAttackInfo.AttackIpDataList["+ i +"].AttackCount");
-				attackIpDatas.Result = context.StringValue("DescribeDomainCCAttackInfo.AttackIpDataList["+ i +"].Result");
+            List<DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackIpDatas> describeDomainCCAttackInfoResponse_attackIpDataList = new List<DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackIpDatas>();
+            for (int i = 0; i < context.Length("DescribeDomainCCAttackInfo.AttackIpDataList.Length"); i++)
+            {
+                DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackIpDatas attackIpDatas = new DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackIpDatas();
+                attackIpDatas.Ip = context.StringValue("DescribeDomainCCAttackInfo.AttackIpDataList[" + i + "].Ip");
+                attackIpDatas.AttackCount = context.StringValue("DescribeDomainCCAttackInfo.AttackIpDataList[" + i + "].AttackCount");
+                attackIpDatas.Result = context.StringValue("DescribeDomainCCAttackInfo.AttackIpDataList[" + i + "].Result");
 
-				describeDomainCCAttackInfoResponse_attackIpDataList.Add(attackIpDatas);
-			}
-			describeDomainCCAttackInfoResponse.AttackIpDataList = describeDomainCCAttackInfoResponse_attackIpDataList;
+                describeDomainCCAttackInfoResponse_attackIpDataList.Add(attackIpDatas);
+            }
+            describeDomainCCAttackInfoResponse.AttackIpDataList = describeDomainCCAttackInfoResponse_attackIpDataList;
 
-			List<DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackedUrlDatas> describeDomainCCAttackInfoResponse_attackedUrlDataList = new List<DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackedUrlDatas>();
-			for (int i = 0; i < context.Length("DescribeDomainCCAttackInfo.AttackedUrlDataList.Length"); i++) {
-				DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackedUrlDatas attackedUrlDatas = new DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackedUrlDatas();
-				attackedUrlDatas.Url = context.StringValue("DescribeDomainCCAttackInfo.AttackedUrlDataList["+ i +"].Url");
-				attackedUrlDatas.AttackCount = context.StringValue("DescribeDomainCCAttackInfo.AttackedUrlDataList["+ i +"].AttackCount");
-				attackedUrlDatas.Result = context.StringValue("DescribeDomainCCAttackInfo.AttackedUrlDataList["+ i +"].Result");
+            List<DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackedUrlDatas> describeDomainCCAttackInfoResponse_attackedUrlDataList = new List<DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackedUrlDatas>();
+            for (int i = 0; i < context.Length("DescribeDomainCCAttackInfo.AttackedUrlDataList.Length"); i++)
+            {
+                DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackedUrlDatas attackedUrlDatas = new DescribeDomainCCAttackInfoResponse.DescribeDomainCCAttackInfo_AttackedUrlDatas();
+                attackedUrlDatas.Url = context.StringValue("DescribeDomainCCAttackInfo.AttackedUrlDataList[" + i + "].Url");
+                attackedUrlDatas.AttackCount = context.StringValue("DescribeDomainCCAttackInfo.AttackedUrlDataList[" + i + "].AttackCount");
+                attackedUrlDatas.Result = context.StringValue("DescribeDomainCCAttackInfo.AttackedUrlDataList[" + i + "].Result");
 
-				describeDomainCCAttackInfoResponse_attackedUrlDataList.Add(attackedUrlDatas);
-			}
-			describeDomainCCAttackInfoResponse.AttackedUrlDataList = describeDomainCCAttackInfoResponse_attackedUrlDataList;
-        
-			return describeDomainCCAttackInfoResponse;
+                describeDomainCCAttackInfoResponse_attackedUrlDataList.Add(attackedUrlDatas);
+            }
+            describeDomainCCAttackInfoResponse.AttackedUrlDataList = describeDomainCCAttackInfoResponse_attackedUrlDataList;
+
+            return describeDomainCCAttackInfoResponse;
         }
     }
 }

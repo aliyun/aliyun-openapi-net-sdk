@@ -22,123 +22,123 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLiveStreamTranscodeInfoResponse : AcsResponse
-	{
+    public class DescribeLiveStreamTranscodeInfoResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> domainTranscodeList;
+        private List<DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> domainTranscodeList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> DomainTranscodeList
-		{
-			get
-			{
-				return domainTranscodeList;
-			}
-			set	
-			{
-				domainTranscodeList = value;
-			}
-		}
+        public List<DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> DomainTranscodeList
+        {
+            get
+            {
+                return domainTranscodeList;
+            }
+            set
+            {
+                domainTranscodeList = value;
+            }
+        }
 
-		public class DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo
-		{
+        public class DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo
+        {
 
-			private string transcodeApp;
+            private string transcodeApp;
 
-			private string transcodeId;
+            private string transcodeId;
 
-			private string transcodeName;
+            private string transcodeName;
 
-			private string transcodeRecord;
+            private string transcodeRecord;
 
-			private string transcodeSnapshot;
+            private string transcodeSnapshot;
 
-			private string transcodeTemplate;
+            private string transcodeTemplate;
 
-			public string TranscodeApp
-			{
-				get
-				{
-					return transcodeApp;
-				}
-				set	
-				{
-					transcodeApp = value;
-				}
-			}
+            public string TranscodeApp
+            {
+                get
+                {
+                    return transcodeApp;
+                }
+                set
+                {
+                    transcodeApp = value;
+                }
+            }
 
-			public string TranscodeId
-			{
-				get
-				{
-					return transcodeId;
-				}
-				set	
-				{
-					transcodeId = value;
-				}
-			}
+            public string TranscodeId
+            {
+                get
+                {
+                    return transcodeId;
+                }
+                set
+                {
+                    transcodeId = value;
+                }
+            }
 
-			public string TranscodeName
-			{
-				get
-				{
-					return transcodeName;
-				}
-				set	
-				{
-					transcodeName = value;
-				}
-			}
+            public string TranscodeName
+            {
+                get
+                {
+                    return transcodeName;
+                }
+                set
+                {
+                    transcodeName = value;
+                }
+            }
 
-			public string TranscodeRecord
-			{
-				get
-				{
-					return transcodeRecord;
-				}
-				set	
-				{
-					transcodeRecord = value;
-				}
-			}
+            public string TranscodeRecord
+            {
+                get
+                {
+                    return transcodeRecord;
+                }
+                set
+                {
+                    transcodeRecord = value;
+                }
+            }
 
-			public string TranscodeSnapshot
-			{
-				get
-				{
-					return transcodeSnapshot;
-				}
-				set	
-				{
-					transcodeSnapshot = value;
-				}
-			}
+            public string TranscodeSnapshot
+            {
+                get
+                {
+                    return transcodeSnapshot;
+                }
+                set
+                {
+                    transcodeSnapshot = value;
+                }
+            }
 
-			public string TranscodeTemplate
-			{
-				get
-				{
-					return transcodeTemplate;
-				}
-				set	
-				{
-					transcodeTemplate = value;
-				}
-			}
-		}
-	}
+            public string TranscodeTemplate
+            {
+                get
+                {
+                    return transcodeTemplate;
+                }
+                set
+                {
+                    transcodeTemplate = value;
+                }
+            }
+        }
+    }
 }

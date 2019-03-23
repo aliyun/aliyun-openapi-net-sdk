@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DeleteNqaResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteNqaResponse deleteNqaResponse = new DeleteNqaResponse();
+            DeleteNqaResponse deleteNqaResponse = new DeleteNqaResponse();
 
-			deleteNqaResponse.HttpResponse = context.HttpResponse;
-			deleteNqaResponse.RequestId = context.StringValue("DeleteNqa.RequestId");
-        
-			return deleteNqaResponse;
+            deleteNqaResponse.HttpResponse = context.HttpResponse;
+            deleteNqaResponse.RequestId = context.StringValue("DeleteNqa.RequestId");
+
+            return deleteNqaResponse;
         }
     }
 }

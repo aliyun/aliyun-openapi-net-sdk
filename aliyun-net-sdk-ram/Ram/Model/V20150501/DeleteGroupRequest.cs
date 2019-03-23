@@ -32,23 +32,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public DeleteGroupRequest()
             : base("Ram", "2015-05-01", "DeleteGroup", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string groupName;
+        private string groupName;
 
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
+        public string GroupName
+        {
+            get
+            {
+                return groupName;
+            }
+            set
+            {
+                groupName = value;
+                DictionaryUtil.Add(QueryParameters, "GroupName", value);
+            }
+        }
 
         public override DeleteGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

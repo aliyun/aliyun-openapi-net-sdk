@@ -33,230 +33,230 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private int? period;
+        private int? period;
 
-		private bool? autoPay;
+        private bool? autoPay;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private int? bandwidth;
+        private int? bandwidth;
 
-		private bool? enableIpsec;
+        private bool? enableIpsec;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private bool? enableSsl;
+        private bool? enableSsl;
 
-		private int? sslConnections;
+        private int? sslConnections;
 
-		private string regionId;
+        private string regionId;
 
-		private string vpcId;
+        private string vpcId;
 
-		private string name;
+        private string name;
 
-		private string action;
+        private string action;
 
-		private string instanceChargeType;
+        private string instanceChargeType;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public int? Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
-			}
-		}
+        public int? Period
+        {
+            get
+            {
+                return period;
+            }
+            set
+            {
+                period = value;
+                DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+            }
+        }
 
-		public bool? AutoPay
-		{
-			get
-			{
-				return autoPay;
-			}
-			set	
-			{
-				autoPay = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
-			}
-		}
+        public bool? AutoPay
+        {
+            get
+            {
+                return autoPay;
+            }
+            set
+            {
+                autoPay = value;
+                DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public int? Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "Bandwidth", value.ToString());
-			}
-		}
+        public int? Bandwidth
+        {
+            get
+            {
+                return bandwidth;
+            }
+            set
+            {
+                bandwidth = value;
+                DictionaryUtil.Add(QueryParameters, "Bandwidth", value.ToString());
+            }
+        }
 
-		public bool? EnableIpsec
-		{
-			get
-			{
-				return enableIpsec;
-			}
-			set	
-			{
-				enableIpsec = value;
-				DictionaryUtil.Add(QueryParameters, "EnableIpsec", value.ToString());
-			}
-		}
+        public bool? EnableIpsec
+        {
+            get
+            {
+                return enableIpsec;
+            }
+            set
+            {
+                enableIpsec = value;
+                DictionaryUtil.Add(QueryParameters, "EnableIpsec", value.ToString());
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public bool? EnableSsl
-		{
-			get
-			{
-				return enableSsl;
-			}
-			set	
-			{
-				enableSsl = value;
-				DictionaryUtil.Add(QueryParameters, "EnableSsl", value.ToString());
-			}
-		}
+        public bool? EnableSsl
+        {
+            get
+            {
+                return enableSsl;
+            }
+            set
+            {
+                enableSsl = value;
+                DictionaryUtil.Add(QueryParameters, "EnableSsl", value.ToString());
+            }
+        }
 
-		public int? SslConnections
-		{
-			get
-			{
-				return sslConnections;
-			}
-			set	
-			{
-				sslConnections = value;
-				DictionaryUtil.Add(QueryParameters, "SslConnections", value.ToString());
-			}
-		}
+        public int? SslConnections
+        {
+            get
+            {
+                return sslConnections;
+            }
+            set
+            {
+                sslConnections = value;
+                DictionaryUtil.Add(QueryParameters, "SslConnections", value.ToString());
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
+        public string VpcId
+        {
+            get
+            {
+                return vpcId;
+            }
+            set
+            {
+                vpcId = value;
+                DictionaryUtil.Add(QueryParameters, "VpcId", value);
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
-			}
-		}
+        public string InstanceChargeType
+        {
+            get
+            {
+                return instanceChargeType;
+            }
+            set
+            {
+                instanceChargeType = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+            }
+        }
 
         public override CreateVpnGatewayResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

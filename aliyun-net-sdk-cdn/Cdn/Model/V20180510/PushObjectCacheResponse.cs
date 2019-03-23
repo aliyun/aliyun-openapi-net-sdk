@@ -22,35 +22,35 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class PushObjectCacheResponse : AcsResponse
-	{
+    public class PushObjectCacheResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string pushTaskId;
+        private string pushTaskId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string PushTaskId
-		{
-			get
-			{
-				return pushTaskId;
-			}
-			set	
-			{
-				pushTaskId = value;
-			}
-		}
-	}
+        public string PushTaskId
+        {
+            get
+            {
+                return pushTaskId;
+            }
+            set
+            {
+                pushTaskId = value;
+            }
+        }
+    }
 }

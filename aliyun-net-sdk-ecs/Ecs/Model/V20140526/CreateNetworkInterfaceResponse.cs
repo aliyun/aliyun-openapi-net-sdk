@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateNetworkInterfaceResponse : AcsResponse
-	{
+    public class CreateNetworkInterfaceResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string networkInterfaceId;
+        private string networkInterfaceId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string NetworkInterfaceId
-		{
-			get
-			{
-				return networkInterfaceId;
-			}
-			set	
-			{
-				networkInterfaceId = value;
-			}
-		}
-	}
+        public string NetworkInterfaceId
+        {
+            get
+            {
+                return networkInterfaceId;
+            }
+            set
+            {
+                networkInterfaceId = value;
+            }
+        }
+    }
 }

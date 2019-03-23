@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateSslVpnServerResponse : AcsResponse
-	{
+    public class CreateSslVpnServerResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string sslVpnServerId;
+        private string sslVpnServerId;
 
-		private string name;
+        private string name;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string SslVpnServerId
-		{
-			get
-			{
-				return sslVpnServerId;
-			}
-			set	
-			{
-				sslVpnServerId = value;
-			}
-		}
+        public string SslVpnServerId
+        {
+            get
+            {
+                return sslVpnServerId;
+            }
+            set
+            {
+                sslVpnServerId = value;
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-	}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+    }
 }

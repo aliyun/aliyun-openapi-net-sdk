@@ -27,63 +27,66 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static CreateJobGroupResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateJobGroupResponse createJobGroupResponse = new CreateJobGroupResponse();
+            CreateJobGroupResponse createJobGroupResponse = new CreateJobGroupResponse();
 
-			createJobGroupResponse.HttpResponse = context.HttpResponse;
-			createJobGroupResponse.RequestId = context.StringValue("CreateJobGroup.RequestId");
-			createJobGroupResponse.Success = context.BooleanValue("CreateJobGroup.Success");
-			createJobGroupResponse.Code = context.StringValue("CreateJobGroup.Code");
-			createJobGroupResponse.Message = context.StringValue("CreateJobGroup.Message");
-			createJobGroupResponse.HttpStatusCode = context.IntegerValue("CreateJobGroup.HttpStatusCode");
+            createJobGroupResponse.HttpResponse = context.HttpResponse;
+            createJobGroupResponse.RequestId = context.StringValue("CreateJobGroup.RequestId");
+            createJobGroupResponse.Success = context.BooleanValue("CreateJobGroup.Success");
+            createJobGroupResponse.Code = context.StringValue("CreateJobGroup.Code");
+            createJobGroupResponse.Message = context.StringValue("CreateJobGroup.Message");
+            createJobGroupResponse.HttpStatusCode = context.IntegerValue("CreateJobGroup.HttpStatusCode");
 
-			CreateJobGroupResponse.CreateJobGroup_JobGroup jobGroup = new CreateJobGroupResponse.CreateJobGroup_JobGroup();
-			jobGroup.JobGroupId = context.StringValue("CreateJobGroup.JobGroup.JobGroupId");
-			jobGroup.JobGroupName = context.StringValue("CreateJobGroup.JobGroup.JobGroupName");
-			jobGroup.JobGroupDescription = context.StringValue("CreateJobGroup.JobGroup.JobGroupDescription");
-			jobGroup.ScenarioId = context.StringValue("CreateJobGroup.JobGroup.ScenarioId");
-			jobGroup.JobFilePath = context.StringValue("CreateJobGroup.JobGroup.JobFilePath");
-			jobGroup.CreationTime = context.LongValue("CreateJobGroup.JobGroup.CreationTime");
+            CreateJobGroupResponse.CreateJobGroup_JobGroup jobGroup = new CreateJobGroupResponse.CreateJobGroup_JobGroup();
+            jobGroup.JobGroupId = context.StringValue("CreateJobGroup.JobGroup.JobGroupId");
+            jobGroup.JobGroupName = context.StringValue("CreateJobGroup.JobGroup.JobGroupName");
+            jobGroup.JobGroupDescription = context.StringValue("CreateJobGroup.JobGroup.JobGroupDescription");
+            jobGroup.ScenarioId = context.StringValue("CreateJobGroup.JobGroup.ScenarioId");
+            jobGroup.JobFilePath = context.StringValue("CreateJobGroup.JobGroup.JobFilePath");
+            jobGroup.CreationTime = context.LongValue("CreateJobGroup.JobGroup.CreationTime");
 
-			List<string> jobGroup_callingNumbers = new List<string>();
-			for (int i = 0; i < context.Length("CreateJobGroup.JobGroup.CallingNumbers.Length"); i++) {
-				jobGroup_callingNumbers.Add(context.StringValue("CreateJobGroup.JobGroup.CallingNumbers["+ i +"]"));
-			}
-			jobGroup.CallingNumbers = jobGroup_callingNumbers;
+            List<string> jobGroup_callingNumbers = new List<string>();
+            for (int i = 0; i < context.Length("CreateJobGroup.JobGroup.CallingNumbers.Length"); i++)
+            {
+                jobGroup_callingNumbers.Add(context.StringValue("CreateJobGroup.JobGroup.CallingNumbers[" + i + "]"));
+            }
+            jobGroup.CallingNumbers = jobGroup_callingNumbers;
 
-			CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy strategy = new CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy();
-			strategy.StrategyId = context.StringValue("CreateJobGroup.JobGroup.Strategy.StrategyId");
-			strategy.StrategyName = context.StringValue("CreateJobGroup.JobGroup.Strategy.StrategyName");
-			strategy.StrategyDescription = context.StringValue("CreateJobGroup.JobGroup.Strategy.StrategyDescription");
-			strategy.Type = context.StringValue("CreateJobGroup.JobGroup.Strategy.Type");
-			strategy.StartTime = context.LongValue("CreateJobGroup.JobGroup.Strategy.StartTime");
-			strategy.EndTime = context.LongValue("CreateJobGroup.JobGroup.Strategy.EndTime");
-			strategy.RepeatBy = context.StringValue("CreateJobGroup.JobGroup.Strategy.RepeatBy");
-			strategy.MaxAttemptsPerDay = context.IntegerValue("CreateJobGroup.JobGroup.Strategy.MaxAttemptsPerDay");
-			strategy.MinAttemptInterval = context.IntegerValue("CreateJobGroup.JobGroup.Strategy.MinAttemptInterval");
-			strategy.Customized = context.StringValue("CreateJobGroup.JobGroup.Strategy.Customized");
-			strategy.RoutingStrategy = context.StringValue("CreateJobGroup.JobGroup.Strategy.RoutingStrategy");
-			strategy.FollowUpStrategy = context.StringValue("CreateJobGroup.JobGroup.Strategy.FollowUpStrategy");
-			strategy.IsTemplate = context.BooleanValue("CreateJobGroup.JobGroup.Strategy.IsTemplate");
+            CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy strategy = new CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy();
+            strategy.StrategyId = context.StringValue("CreateJobGroup.JobGroup.Strategy.StrategyId");
+            strategy.StrategyName = context.StringValue("CreateJobGroup.JobGroup.Strategy.StrategyName");
+            strategy.StrategyDescription = context.StringValue("CreateJobGroup.JobGroup.Strategy.StrategyDescription");
+            strategy.Type = context.StringValue("CreateJobGroup.JobGroup.Strategy.Type");
+            strategy.StartTime = context.LongValue("CreateJobGroup.JobGroup.Strategy.StartTime");
+            strategy.EndTime = context.LongValue("CreateJobGroup.JobGroup.Strategy.EndTime");
+            strategy.RepeatBy = context.StringValue("CreateJobGroup.JobGroup.Strategy.RepeatBy");
+            strategy.MaxAttemptsPerDay = context.IntegerValue("CreateJobGroup.JobGroup.Strategy.MaxAttemptsPerDay");
+            strategy.MinAttemptInterval = context.IntegerValue("CreateJobGroup.JobGroup.Strategy.MinAttemptInterval");
+            strategy.Customized = context.StringValue("CreateJobGroup.JobGroup.Strategy.Customized");
+            strategy.RoutingStrategy = context.StringValue("CreateJobGroup.JobGroup.Strategy.RoutingStrategy");
+            strategy.FollowUpStrategy = context.StringValue("CreateJobGroup.JobGroup.Strategy.FollowUpStrategy");
+            strategy.IsTemplate = context.BooleanValue("CreateJobGroup.JobGroup.Strategy.IsTemplate");
 
-			List<string> strategy_repeatDays = new List<string>();
-			for (int i = 0; i < context.Length("CreateJobGroup.JobGroup.Strategy.RepeatDays.Length"); i++) {
-				strategy_repeatDays.Add(context.StringValue("CreateJobGroup.JobGroup.Strategy.RepeatDays["+ i +"]"));
-			}
-			strategy.RepeatDays = strategy_repeatDays;
+            List<string> strategy_repeatDays = new List<string>();
+            for (int i = 0; i < context.Length("CreateJobGroup.JobGroup.Strategy.RepeatDays.Length"); i++)
+            {
+                strategy_repeatDays.Add(context.StringValue("CreateJobGroup.JobGroup.Strategy.RepeatDays[" + i + "]"));
+            }
+            strategy.RepeatDays = strategy_repeatDays;
 
-			List<CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy.CreateJobGroup_TimeFrame> strategy_workingTime = new List<CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy.CreateJobGroup_TimeFrame>();
-			for (int i = 0; i < context.Length("CreateJobGroup.JobGroup.Strategy.WorkingTime.Length"); i++) {
-				CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy.CreateJobGroup_TimeFrame timeFrame = new CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy.CreateJobGroup_TimeFrame();
-				timeFrame.From = context.StringValue("CreateJobGroup.JobGroup.Strategy.WorkingTime["+ i +"].From");
-				timeFrame.To = context.StringValue("CreateJobGroup.JobGroup.Strategy.WorkingTime["+ i +"].To");
+            List<CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy.CreateJobGroup_TimeFrame> strategy_workingTime = new List<CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy.CreateJobGroup_TimeFrame>();
+            for (int i = 0; i < context.Length("CreateJobGroup.JobGroup.Strategy.WorkingTime.Length"); i++)
+            {
+                CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy.CreateJobGroup_TimeFrame timeFrame = new CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy.CreateJobGroup_TimeFrame();
+                timeFrame.From = context.StringValue("CreateJobGroup.JobGroup.Strategy.WorkingTime[" + i + "].From");
+                timeFrame.To = context.StringValue("CreateJobGroup.JobGroup.Strategy.WorkingTime[" + i + "].To");
 
-				strategy_workingTime.Add(timeFrame);
-			}
-			strategy.WorkingTime = strategy_workingTime;
-			jobGroup.Strategy = strategy;
-			createJobGroupResponse.JobGroup = jobGroup;
-        
-			return createJobGroupResponse;
+                strategy_workingTime.Add(timeFrame);
+            }
+            strategy.WorkingTime = strategy_workingTime;
+            jobGroup.Strategy = strategy;
+            createJobGroupResponse.JobGroup = jobGroup;
+
+            return createJobGroupResponse;
         }
     }
 }

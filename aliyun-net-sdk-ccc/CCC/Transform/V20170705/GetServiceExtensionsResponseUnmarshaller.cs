@@ -27,26 +27,27 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static GetServiceExtensionsResponse Unmarshall(UnmarshallerContext context)
         {
-			GetServiceExtensionsResponse getServiceExtensionsResponse = new GetServiceExtensionsResponse();
+            GetServiceExtensionsResponse getServiceExtensionsResponse = new GetServiceExtensionsResponse();
 
-			getServiceExtensionsResponse.HttpResponse = context.HttpResponse;
-			getServiceExtensionsResponse.RequestId = context.StringValue("GetServiceExtensions.RequestId");
-			getServiceExtensionsResponse.Success = context.BooleanValue("GetServiceExtensions.Success");
-			getServiceExtensionsResponse.Code = context.StringValue("GetServiceExtensions.Code");
-			getServiceExtensionsResponse.Message = context.StringValue("GetServiceExtensions.Message");
-			getServiceExtensionsResponse.HttpStatusCode = context.IntegerValue("GetServiceExtensions.HttpStatusCode");
+            getServiceExtensionsResponse.HttpResponse = context.HttpResponse;
+            getServiceExtensionsResponse.RequestId = context.StringValue("GetServiceExtensions.RequestId");
+            getServiceExtensionsResponse.Success = context.BooleanValue("GetServiceExtensions.Success");
+            getServiceExtensionsResponse.Code = context.StringValue("GetServiceExtensions.Code");
+            getServiceExtensionsResponse.Message = context.StringValue("GetServiceExtensions.Message");
+            getServiceExtensionsResponse.HttpStatusCode = context.IntegerValue("GetServiceExtensions.HttpStatusCode");
 
-			List<GetServiceExtensionsResponse.GetServiceExtensions_ServiceExtension> getServiceExtensionsResponse_serviceExtensions = new List<GetServiceExtensionsResponse.GetServiceExtensions_ServiceExtension>();
-			for (int i = 0; i < context.Length("GetServiceExtensions.ServiceExtensions.Length"); i++) {
-				GetServiceExtensionsResponse.GetServiceExtensions_ServiceExtension serviceExtension = new GetServiceExtensionsResponse.GetServiceExtensions_ServiceExtension();
-				serviceExtension.Name = context.StringValue("GetServiceExtensions.ServiceExtensions["+ i +"].Name");
-				serviceExtension.Number = context.StringValue("GetServiceExtensions.ServiceExtensions["+ i +"].Number");
+            List<GetServiceExtensionsResponse.GetServiceExtensions_ServiceExtension> getServiceExtensionsResponse_serviceExtensions = new List<GetServiceExtensionsResponse.GetServiceExtensions_ServiceExtension>();
+            for (int i = 0; i < context.Length("GetServiceExtensions.ServiceExtensions.Length"); i++)
+            {
+                GetServiceExtensionsResponse.GetServiceExtensions_ServiceExtension serviceExtension = new GetServiceExtensionsResponse.GetServiceExtensions_ServiceExtension();
+                serviceExtension.Name = context.StringValue("GetServiceExtensions.ServiceExtensions[" + i + "].Name");
+                serviceExtension.Number = context.StringValue("GetServiceExtensions.ServiceExtensions[" + i + "].Number");
 
-				getServiceExtensionsResponse_serviceExtensions.Add(serviceExtension);
-			}
-			getServiceExtensionsResponse.ServiceExtensions = getServiceExtensionsResponse_serviceExtensions;
-        
-			return getServiceExtensionsResponse;
+                getServiceExtensionsResponse_serviceExtensions.Add(serviceExtension);
+            }
+            getServiceExtensionsResponse.ServiceExtensions = getServiceExtensionsResponse_serviceExtensions;
+
+            return getServiceExtensionsResponse;
         }
     }
 }

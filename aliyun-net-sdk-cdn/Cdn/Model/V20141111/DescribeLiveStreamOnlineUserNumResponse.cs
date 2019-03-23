@@ -22,95 +22,95 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLiveStreamOnlineUserNumResponse : AcsResponse
-	{
+    public class DescribeLiveStreamOnlineUserNumResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private long? totalUserNumber;
+        private long? totalUserNumber;
 
-		private List<DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo> onlineUserInfo;
+        private List<DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo> onlineUserInfo;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public long? TotalUserNumber
-		{
-			get
-			{
-				return totalUserNumber;
-			}
-			set	
-			{
-				totalUserNumber = value;
-			}
-		}
+        public long? TotalUserNumber
+        {
+            get
+            {
+                return totalUserNumber;
+            }
+            set
+            {
+                totalUserNumber = value;
+            }
+        }
 
-		public List<DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo> OnlineUserInfo
-		{
-			get
-			{
-				return onlineUserInfo;
-			}
-			set	
-			{
-				onlineUserInfo = value;
-			}
-		}
+        public List<DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo> OnlineUserInfo
+        {
+            get
+            {
+                return onlineUserInfo;
+            }
+            set
+            {
+                onlineUserInfo = value;
+            }
+        }
 
-		public class DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo
-		{
+        public class DescribeLiveStreamOnlineUserNum_LiveStreamOnlineUserNumInfo
+        {
 
-			private string streamUrl;
+            private string streamUrl;
 
-			private long? userNumber;
+            private long? userNumber;
 
-			private string time;
+            private string time;
 
-			public string StreamUrl
-			{
-				get
-				{
-					return streamUrl;
-				}
-				set	
-				{
-					streamUrl = value;
-				}
-			}
+            public string StreamUrl
+            {
+                get
+                {
+                    return streamUrl;
+                }
+                set
+                {
+                    streamUrl = value;
+                }
+            }
 
-			public long? UserNumber
-			{
-				get
-				{
-					return userNumber;
-				}
-				set	
-				{
-					userNumber = value;
-				}
-			}
+            public long? UserNumber
+            {
+                get
+                {
+                    return userNumber;
+                }
+                set
+                {
+                    userNumber = value;
+                }
+            }
 
-			public string Time
-			{
-				get
-				{
-					return time;
-				}
-				set	
-				{
-					time = value;
-				}
-			}
-		}
-	}
+            public string Time
+            {
+                get
+                {
+                    return time;
+                }
+                set
+                {
+                    time = value;
+                }
+            }
+        }
+    }
 }

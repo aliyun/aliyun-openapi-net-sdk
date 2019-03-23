@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeLimitationResponse : AcsResponse
-	{
+    public class DescribeLimitationResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string limitation;
+        private string limitation;
 
-		private string _value;
+        private string _value;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Limitation
-		{
-			get
-			{
-				return limitation;
-			}
-			set	
-			{
-				limitation = value;
-			}
-		}
+        public string Limitation
+        {
+            get
+            {
+                return limitation;
+            }
+            set
+            {
+                limitation = value;
+            }
+        }
 
-		public string _Value
-		{
-			get
-			{
-				return _value;
-			}
-			set	
-			{
-				_value = value;
-			}
-		}
-	}
+        public string _Value
+        {
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                _value = value;
+            }
+        }
+    }
 }

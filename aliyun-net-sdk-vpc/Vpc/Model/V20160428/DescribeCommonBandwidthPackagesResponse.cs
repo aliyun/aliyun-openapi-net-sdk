@@ -21,393 +21,393 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeCommonBandwidthPackagesResponse : AcsResponse
-	{
+    public class DescribeCommonBandwidthPackagesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeCommonBandwidthPackages_CommonBandwidthPackage> commonBandwidthPackages;
+        private List<DescribeCommonBandwidthPackages_CommonBandwidthPackage> commonBandwidthPackages;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeCommonBandwidthPackages_CommonBandwidthPackage> CommonBandwidthPackages
-		{
-			get
-			{
-				return commonBandwidthPackages;
-			}
-			set	
-			{
-				commonBandwidthPackages = value;
-			}
-		}
+        public List<DescribeCommonBandwidthPackages_CommonBandwidthPackage> CommonBandwidthPackages
+        {
+            get
+            {
+                return commonBandwidthPackages;
+            }
+            set
+            {
+                commonBandwidthPackages = value;
+            }
+        }
 
-		public class DescribeCommonBandwidthPackages_CommonBandwidthPackage
-		{
+        public class DescribeCommonBandwidthPackages_CommonBandwidthPackage
+        {
 
-			private string bandwidthPackageId;
+            private string bandwidthPackageId;
 
-			private string regionId;
+            private string regionId;
 
-			private string name;
+            private string name;
 
-			private string description;
+            private string description;
 
-			private string bandwidth;
+            private string bandwidth;
 
-			private string instanceChargeType;
+            private string instanceChargeType;
 
-			private string internetChargeType;
+            private string internetChargeType;
 
-			private string businessStatus;
+            private string businessStatus;
 
-			private string creationTime;
+            private string creationTime;
 
-			private string expiredTime;
+            private string expiredTime;
 
-			private string status;
+            private string status;
 
-			private int? ratio;
+            private int? ratio;
 
-			private string resourceGroupId;
+            private string resourceGroupId;
 
-			private string hasReservationData;
+            private string hasReservationData;
 
-			private string reservationBandwidth;
+            private string reservationBandwidth;
 
-			private string reservationInternetChargeType;
+            private string reservationInternetChargeType;
 
-			private string reservationActiveTime;
+            private string reservationActiveTime;
 
-			private string reservationOrderType;
+            private string reservationOrderType;
 
-			private string iSP;
+            private string iSP;
 
-			private List<DescribeCommonBandwidthPackages_PublicIpAddresse> publicIpAddresses;
+            private List<DescribeCommonBandwidthPackages_PublicIpAddresse> publicIpAddresses;
 
-			public string BandwidthPackageId
-			{
-				get
-				{
-					return bandwidthPackageId;
-				}
-				set	
-				{
-					bandwidthPackageId = value;
-				}
-			}
+            public string BandwidthPackageId
+            {
+                get
+                {
+                    return bandwidthPackageId;
+                }
+                set
+                {
+                    bandwidthPackageId = value;
+                }
+            }
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
-				}
-			}
+            public string Bandwidth
+            {
+                get
+                {
+                    return bandwidth;
+                }
+                set
+                {
+                    bandwidth = value;
+                }
+            }
 
-			public string InstanceChargeType
-			{
-				get
-				{
-					return instanceChargeType;
-				}
-				set	
-				{
-					instanceChargeType = value;
-				}
-			}
+            public string InstanceChargeType
+            {
+                get
+                {
+                    return instanceChargeType;
+                }
+                set
+                {
+                    instanceChargeType = value;
+                }
+            }
 
-			public string InternetChargeType
-			{
-				get
-				{
-					return internetChargeType;
-				}
-				set	
-				{
-					internetChargeType = value;
-				}
-			}
+            public string InternetChargeType
+            {
+                get
+                {
+                    return internetChargeType;
+                }
+                set
+                {
+                    internetChargeType = value;
+                }
+            }
 
-			public string BusinessStatus
-			{
-				get
-				{
-					return businessStatus;
-				}
-				set	
-				{
-					businessStatus = value;
-				}
-			}
+            public string BusinessStatus
+            {
+                get
+                {
+                    return businessStatus;
+                }
+                set
+                {
+                    businessStatus = value;
+                }
+            }
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+            public string CreationTime
+            {
+                get
+                {
+                    return creationTime;
+                }
+                set
+                {
+                    creationTime = value;
+                }
+            }
 
-			public string ExpiredTime
-			{
-				get
-				{
-					return expiredTime;
-				}
-				set	
-				{
-					expiredTime = value;
-				}
-			}
+            public string ExpiredTime
+            {
+                get
+                {
+                    return expiredTime;
+                }
+                set
+                {
+                    expiredTime = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public int? Ratio
-			{
-				get
-				{
-					return ratio;
-				}
-				set	
-				{
-					ratio = value;
-				}
-			}
+            public int? Ratio
+            {
+                get
+                {
+                    return ratio;
+                }
+                set
+                {
+                    ratio = value;
+                }
+            }
 
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
+            public string ResourceGroupId
+            {
+                get
+                {
+                    return resourceGroupId;
+                }
+                set
+                {
+                    resourceGroupId = value;
+                }
+            }
 
-			public string HasReservationData
-			{
-				get
-				{
-					return hasReservationData;
-				}
-				set	
-				{
-					hasReservationData = value;
-				}
-			}
+            public string HasReservationData
+            {
+                get
+                {
+                    return hasReservationData;
+                }
+                set
+                {
+                    hasReservationData = value;
+                }
+            }
 
-			public string ReservationBandwidth
-			{
-				get
-				{
-					return reservationBandwidth;
-				}
-				set	
-				{
-					reservationBandwidth = value;
-				}
-			}
+            public string ReservationBandwidth
+            {
+                get
+                {
+                    return reservationBandwidth;
+                }
+                set
+                {
+                    reservationBandwidth = value;
+                }
+            }
 
-			public string ReservationInternetChargeType
-			{
-				get
-				{
-					return reservationInternetChargeType;
-				}
-				set	
-				{
-					reservationInternetChargeType = value;
-				}
-			}
+            public string ReservationInternetChargeType
+            {
+                get
+                {
+                    return reservationInternetChargeType;
+                }
+                set
+                {
+                    reservationInternetChargeType = value;
+                }
+            }
 
-			public string ReservationActiveTime
-			{
-				get
-				{
-					return reservationActiveTime;
-				}
-				set	
-				{
-					reservationActiveTime = value;
-				}
-			}
+            public string ReservationActiveTime
+            {
+                get
+                {
+                    return reservationActiveTime;
+                }
+                set
+                {
+                    reservationActiveTime = value;
+                }
+            }
 
-			public string ReservationOrderType
-			{
-				get
-				{
-					return reservationOrderType;
-				}
-				set	
-				{
-					reservationOrderType = value;
-				}
-			}
+            public string ReservationOrderType
+            {
+                get
+                {
+                    return reservationOrderType;
+                }
+                set
+                {
+                    reservationOrderType = value;
+                }
+            }
 
-			public string ISP
-			{
-				get
-				{
-					return iSP;
-				}
-				set	
-				{
-					iSP = value;
-				}
-			}
+            public string ISP
+            {
+                get
+                {
+                    return iSP;
+                }
+                set
+                {
+                    iSP = value;
+                }
+            }
 
-			public List<DescribeCommonBandwidthPackages_PublicIpAddresse> PublicIpAddresses
-			{
-				get
-				{
-					return publicIpAddresses;
-				}
-				set	
-				{
-					publicIpAddresses = value;
-				}
-			}
+            public List<DescribeCommonBandwidthPackages_PublicIpAddresse> PublicIpAddresses
+            {
+                get
+                {
+                    return publicIpAddresses;
+                }
+                set
+                {
+                    publicIpAddresses = value;
+                }
+            }
 
-			public class DescribeCommonBandwidthPackages_PublicIpAddresse
-			{
+            public class DescribeCommonBandwidthPackages_PublicIpAddresse
+            {
 
-				private string allocationId;
+                private string allocationId;
 
-				private string ipAddress;
+                private string ipAddress;
 
-				public string AllocationId
-				{
-					get
-					{
-						return allocationId;
-					}
-					set	
-					{
-						allocationId = value;
-					}
-				}
+                public string AllocationId
+                {
+                    get
+                    {
+                        return allocationId;
+                    }
+                    set
+                    {
+                        allocationId = value;
+                    }
+                }
 
-				public string IpAddress
-				{
-					get
-					{
-						return ipAddress;
-					}
-					set	
-					{
-						ipAddress = value;
-					}
-				}
-			}
-		}
-	}
+                public string IpAddress
+                {
+                    get
+                    {
+                        return ipAddress;
+                    }
+                    set
+                    {
+                        ipAddress = value;
+                    }
+                }
+            }
+        }
+    }
 }

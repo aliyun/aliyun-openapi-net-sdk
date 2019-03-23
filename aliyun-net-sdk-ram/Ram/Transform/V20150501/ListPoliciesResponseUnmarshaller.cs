@@ -28,29 +28,30 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static ListPoliciesResponse Unmarshall(UnmarshallerContext context)
         {
-			ListPoliciesResponse listPoliciesResponse = new ListPoliciesResponse();
+            ListPoliciesResponse listPoliciesResponse = new ListPoliciesResponse();
 
-			listPoliciesResponse.HttpResponse = context.HttpResponse;
-			listPoliciesResponse.RequestId = context.StringValue("ListPolicies.RequestId");
-			listPoliciesResponse.IsTruncated = context.BooleanValue("ListPolicies.IsTruncated");
-			listPoliciesResponse.Marker = context.StringValue("ListPolicies.Marker");
+            listPoliciesResponse.HttpResponse = context.HttpResponse;
+            listPoliciesResponse.RequestId = context.StringValue("ListPolicies.RequestId");
+            listPoliciesResponse.IsTruncated = context.BooleanValue("ListPolicies.IsTruncated");
+            listPoliciesResponse.Marker = context.StringValue("ListPolicies.Marker");
 
-			List<ListPoliciesResponse.ListPolicies_Policy> listPoliciesResponse_policies = new List<ListPoliciesResponse.ListPolicies_Policy>();
-			for (int i = 0; i < context.Length("ListPolicies.Policies.Length"); i++) {
-				ListPoliciesResponse.ListPolicies_Policy policy = new ListPoliciesResponse.ListPolicies_Policy();
-				policy.PolicyName = context.StringValue("ListPolicies.Policies["+ i +"].PolicyName");
-				policy.PolicyType = context.StringValue("ListPolicies.Policies["+ i +"].PolicyType");
-				policy.Description = context.StringValue("ListPolicies.Policies["+ i +"].Description");
-				policy.DefaultVersion = context.StringValue("ListPolicies.Policies["+ i +"].DefaultVersion");
-				policy.CreateDate = context.StringValue("ListPolicies.Policies["+ i +"].CreateDate");
-				policy.UpdateDate = context.StringValue("ListPolicies.Policies["+ i +"].UpdateDate");
-				policy.AttachmentCount = context.IntegerValue("ListPolicies.Policies["+ i +"].AttachmentCount");
+            List<ListPoliciesResponse.ListPolicies_Policy> listPoliciesResponse_policies = new List<ListPoliciesResponse.ListPolicies_Policy>();
+            for (int i = 0; i < context.Length("ListPolicies.Policies.Length"); i++)
+            {
+                ListPoliciesResponse.ListPolicies_Policy policy = new ListPoliciesResponse.ListPolicies_Policy();
+                policy.PolicyName = context.StringValue("ListPolicies.Policies[" + i + "].PolicyName");
+                policy.PolicyType = context.StringValue("ListPolicies.Policies[" + i + "].PolicyType");
+                policy.Description = context.StringValue("ListPolicies.Policies[" + i + "].Description");
+                policy.DefaultVersion = context.StringValue("ListPolicies.Policies[" + i + "].DefaultVersion");
+                policy.CreateDate = context.StringValue("ListPolicies.Policies[" + i + "].CreateDate");
+                policy.UpdateDate = context.StringValue("ListPolicies.Policies[" + i + "].UpdateDate");
+                policy.AttachmentCount = context.IntegerValue("ListPolicies.Policies[" + i + "].AttachmentCount");
 
-				listPoliciesResponse_policies.Add(policy);
-			}
-			listPoliciesResponse.Policies = listPoliciesResponse_policies;
-        
-			return listPoliciesResponse;
+                listPoliciesResponse_policies.Add(policy);
+            }
+            listPoliciesResponse.Policies = listPoliciesResponse_policies;
+
+            return listPoliciesResponse;
         }
     }
 }

@@ -22,123 +22,123 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLiveStreamRecordContentResponse : AcsResponse
-	{
+    public class DescribeLiveStreamRecordContentResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeLiveStreamRecordContent_RecordContentInfo> recordContentInfoList;
+        private List<DescribeLiveStreamRecordContent_RecordContentInfo> recordContentInfoList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeLiveStreamRecordContent_RecordContentInfo> RecordContentInfoList
-		{
-			get
-			{
-				return recordContentInfoList;
-			}
-			set	
-			{
-				recordContentInfoList = value;
-			}
-		}
+        public List<DescribeLiveStreamRecordContent_RecordContentInfo> RecordContentInfoList
+        {
+            get
+            {
+                return recordContentInfoList;
+            }
+            set
+            {
+                recordContentInfoList = value;
+            }
+        }
 
-		public class DescribeLiveStreamRecordContent_RecordContentInfo
-		{
+        public class DescribeLiveStreamRecordContent_RecordContentInfo
+        {
 
-			private string ossEndpoint;
+            private string ossEndpoint;
 
-			private string ossBucket;
+            private string ossBucket;
 
-			private string ossObjectPrefix;
+            private string ossObjectPrefix;
 
-			private string startTime;
+            private string startTime;
 
-			private string endTime;
+            private string endTime;
 
-			private float? duration;
+            private float? duration;
 
-			public string OssEndpoint
-			{
-				get
-				{
-					return ossEndpoint;
-				}
-				set	
-				{
-					ossEndpoint = value;
-				}
-			}
+            public string OssEndpoint
+            {
+                get
+                {
+                    return ossEndpoint;
+                }
+                set
+                {
+                    ossEndpoint = value;
+                }
+            }
 
-			public string OssBucket
-			{
-				get
-				{
-					return ossBucket;
-				}
-				set	
-				{
-					ossBucket = value;
-				}
-			}
+            public string OssBucket
+            {
+                get
+                {
+                    return ossBucket;
+                }
+                set
+                {
+                    ossBucket = value;
+                }
+            }
 
-			public string OssObjectPrefix
-			{
-				get
-				{
-					return ossObjectPrefix;
-				}
-				set	
-				{
-					ossObjectPrefix = value;
-				}
-			}
+            public string OssObjectPrefix
+            {
+                get
+                {
+                    return ossObjectPrefix;
+                }
+                set
+                {
+                    ossObjectPrefix = value;
+                }
+            }
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+            public string StartTime
+            {
+                get
+                {
+                    return startTime;
+                }
+                set
+                {
+                    startTime = value;
+                }
+            }
 
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
+            public string EndTime
+            {
+                get
+                {
+                    return endTime;
+                }
+                set
+                {
+                    endTime = value;
+                }
+            }
 
-			public float? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
-		}
-	}
+            public float? Duration
+            {
+                get
+                {
+                    return duration;
+                }
+                set
+                {
+                    duration = value;
+                }
+            }
+        }
+    }
 }

@@ -27,21 +27,21 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static CreateNetworkInterfacePermissionResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateNetworkInterfacePermissionResponse createNetworkInterfacePermissionResponse = new CreateNetworkInterfacePermissionResponse();
+            CreateNetworkInterfacePermissionResponse createNetworkInterfacePermissionResponse = new CreateNetworkInterfacePermissionResponse();
 
-			createNetworkInterfacePermissionResponse.HttpResponse = context.HttpResponse;
-			createNetworkInterfacePermissionResponse.RequestId = context.StringValue("CreateNetworkInterfacePermission.RequestId");
+            createNetworkInterfacePermissionResponse.HttpResponse = context.HttpResponse;
+            createNetworkInterfacePermissionResponse.RequestId = context.StringValue("CreateNetworkInterfacePermission.RequestId");
 
-			CreateNetworkInterfacePermissionResponse.CreateNetworkInterfacePermission_NetworkInterfacePermission networkInterfacePermission = new CreateNetworkInterfacePermissionResponse.CreateNetworkInterfacePermission_NetworkInterfacePermission();
-			networkInterfacePermission.AccountId = context.LongValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.AccountId");
-			networkInterfacePermission.ServiceName = context.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.ServiceName");
-			networkInterfacePermission.NetworkInterfaceId = context.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.NetworkInterfaceId");
-			networkInterfacePermission.NetworkInterfacePermissionId = context.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.NetworkInterfacePermissionId");
-			networkInterfacePermission.Permission = context.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.Permission");
-			networkInterfacePermission.PermissionState = context.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.PermissionState");
-			createNetworkInterfacePermissionResponse.NetworkInterfacePermission = networkInterfacePermission;
-        
-			return createNetworkInterfacePermissionResponse;
+            CreateNetworkInterfacePermissionResponse.CreateNetworkInterfacePermission_NetworkInterfacePermission networkInterfacePermission = new CreateNetworkInterfacePermissionResponse.CreateNetworkInterfacePermission_NetworkInterfacePermission();
+            networkInterfacePermission.AccountId = context.LongValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.AccountId");
+            networkInterfacePermission.ServiceName = context.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.ServiceName");
+            networkInterfacePermission.NetworkInterfaceId = context.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.NetworkInterfaceId");
+            networkInterfacePermission.NetworkInterfacePermissionId = context.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.NetworkInterfacePermissionId");
+            networkInterfacePermission.Permission = context.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.Permission");
+            networkInterfacePermission.PermissionState = context.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.PermissionState");
+            createNetworkInterfacePermissionResponse.NetworkInterfacePermission = networkInterfacePermission;
+
+            return createNetworkInterfacePermissionResponse;
         }
     }
 }

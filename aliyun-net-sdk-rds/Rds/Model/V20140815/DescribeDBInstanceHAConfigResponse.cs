@@ -21,179 +21,179 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeDBInstanceHAConfigResponse : AcsResponse
-	{
+    public class DescribeDBInstanceHAConfigResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string syncMode;
+        private string syncMode;
 
-		private string hAMode;
+        private string hAMode;
 
-		private List<DescribeDBInstanceHAConfig_NodeInfo> hostInstanceInfos;
+        private List<DescribeDBInstanceHAConfig_NodeInfo> hostInstanceInfos;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+            }
+        }
 
-		public string SyncMode
-		{
-			get
-			{
-				return syncMode;
-			}
-			set	
-			{
-				syncMode = value;
-			}
-		}
+        public string SyncMode
+        {
+            get
+            {
+                return syncMode;
+            }
+            set
+            {
+                syncMode = value;
+            }
+        }
 
-		public string HAMode
-		{
-			get
-			{
-				return hAMode;
-			}
-			set	
-			{
-				hAMode = value;
-			}
-		}
+        public string HAMode
+        {
+            get
+            {
+                return hAMode;
+            }
+            set
+            {
+                hAMode = value;
+            }
+        }
 
-		public List<DescribeDBInstanceHAConfig_NodeInfo> HostInstanceInfos
-		{
-			get
-			{
-				return hostInstanceInfos;
-			}
-			set	
-			{
-				hostInstanceInfos = value;
-			}
-		}
+        public List<DescribeDBInstanceHAConfig_NodeInfo> HostInstanceInfos
+        {
+            get
+            {
+                return hostInstanceInfos;
+            }
+            set
+            {
+                hostInstanceInfos = value;
+            }
+        }
 
-		public class DescribeDBInstanceHAConfig_NodeInfo
-		{
+        public class DescribeDBInstanceHAConfig_NodeInfo
+        {
 
-			private string nodeId;
+            private string nodeId;
 
-			private string regionId;
+            private string regionId;
 
-			private string logSyncTime;
+            private string logSyncTime;
 
-			private string dataSyncTime;
+            private string dataSyncTime;
 
-			private string nodeType;
+            private string nodeType;
 
-			private string zoneId;
+            private string zoneId;
 
-			private string syncStatus;
+            private string syncStatus;
 
-			public string NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
-				}
-			}
+            public string NodeId
+            {
+                get
+                {
+                    return nodeId;
+                }
+                set
+                {
+                    nodeId = value;
+                }
+            }
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string LogSyncTime
-			{
-				get
-				{
-					return logSyncTime;
-				}
-				set	
-				{
-					logSyncTime = value;
-				}
-			}
+            public string LogSyncTime
+            {
+                get
+                {
+                    return logSyncTime;
+                }
+                set
+                {
+                    logSyncTime = value;
+                }
+            }
 
-			public string DataSyncTime
-			{
-				get
-				{
-					return dataSyncTime;
-				}
-				set	
-				{
-					dataSyncTime = value;
-				}
-			}
+            public string DataSyncTime
+            {
+                get
+                {
+                    return dataSyncTime;
+                }
+                set
+                {
+                    dataSyncTime = value;
+                }
+            }
 
-			public string NodeType
-			{
-				get
-				{
-					return nodeType;
-				}
-				set	
-				{
-					nodeType = value;
-				}
-			}
+            public string NodeType
+            {
+                get
+                {
+                    return nodeType;
+                }
+                set
+                {
+                    nodeType = value;
+                }
+            }
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+            public string ZoneId
+            {
+                get
+                {
+                    return zoneId;
+                }
+                set
+                {
+                    zoneId = value;
+                }
+            }
 
-			public string SyncStatus
-			{
-				get
-				{
-					return syncStatus;
-				}
-				set	
-				{
-					syncStatus = value;
-				}
-			}
-		}
-	}
+            public string SyncStatus
+            {
+                get
+                {
+                    return syncStatus;
+                }
+                set
+                {
+                    syncStatus = value;
+                }
+            }
+        }
+    }
 }

@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateHaVipResponse : AcsResponse
-	{
+    public class CreateHaVipResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string haVipId;
+        private string haVipId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string HaVipId
-		{
-			get
-			{
-				return haVipId;
-			}
-			set	
-			{
-				haVipId = value;
-			}
-		}
-	}
+        public string HaVipId
+        {
+            get
+            {
+                return haVipId;
+            }
+            set
+            {
+                haVipId = value;
+            }
+        }
+    }
 }

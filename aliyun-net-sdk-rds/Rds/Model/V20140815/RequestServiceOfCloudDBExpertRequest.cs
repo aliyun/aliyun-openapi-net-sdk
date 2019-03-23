@@ -33,70 +33,70 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private string serviceRequestParam;
+        private string serviceRequestParam;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string serviceRequestType;
+        private string serviceRequestType;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string ServiceRequestParam
-		{
-			get
-			{
-				return serviceRequestParam;
-			}
-			set	
-			{
-				serviceRequestParam = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceRequestParam", value);
-			}
-		}
+        public string ServiceRequestParam
+        {
+            get
+            {
+                return serviceRequestParam;
+            }
+            set
+            {
+                serviceRequestParam = value;
+                DictionaryUtil.Add(QueryParameters, "ServiceRequestParam", value);
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+                DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+            }
+        }
 
-		public string ServiceRequestType
-		{
-			get
-			{
-				return serviceRequestType;
-			}
-			set	
-			{
-				serviceRequestType = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceRequestType", value);
-			}
-		}
+        public string ServiceRequestType
+        {
+            get
+            {
+                return serviceRequestType;
+            }
+            set
+            {
+                serviceRequestType = value;
+                DictionaryUtil.Add(QueryParameters, "ServiceRequestType", value);
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override RequestServiceOfCloudDBExpertResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

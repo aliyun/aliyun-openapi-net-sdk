@@ -33,215 +33,215 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private int? period;
+        private int? period;
 
-		private bool? dryRun;
+        private bool? dryRun;
 
-		private bool? autoPay;
+        private bool? autoPay;
 
-		private bool? includeDataDisks;
+        private bool? includeDataDisks;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string clientToken;
+        private string clientToken;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string periodUnit;
+        private string periodUnit;
 
-		private string instanceIds;
+        private string instanceIds;
 
-		private string regionId;
+        private string regionId;
 
-		private string action;
+        private string action;
 
-		private string instanceChargeType;
+        private string instanceChargeType;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public int? Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
-			}
-		}
+        public int? Period
+        {
+            get
+            {
+                return period;
+            }
+            set
+            {
+                period = value;
+                DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+            }
+        }
 
-		public bool? DryRun
-		{
-			get
-			{
-				return dryRun;
-			}
-			set	
-			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
-			}
-		}
+        public bool? DryRun
+        {
+            get
+            {
+                return dryRun;
+            }
+            set
+            {
+                dryRun = value;
+                DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+            }
+        }
 
-		public bool? AutoPay
-		{
-			get
-			{
-				return autoPay;
-			}
-			set	
-			{
-				autoPay = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
-			}
-		}
+        public bool? AutoPay
+        {
+            get
+            {
+                return autoPay;
+            }
+            set
+            {
+                autoPay = value;
+                DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+            }
+        }
 
-		public bool? IncludeDataDisks
-		{
-			get
-			{
-				return includeDataDisks;
-			}
-			set	
-			{
-				includeDataDisks = value;
-				DictionaryUtil.Add(QueryParameters, "IncludeDataDisks", value.ToString());
-			}
-		}
+        public bool? IncludeDataDisks
+        {
+            get
+            {
+                return includeDataDisks;
+            }
+            set
+            {
+                includeDataDisks = value;
+                DictionaryUtil.Add(QueryParameters, "IncludeDataDisks", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
+        public string ClientToken
+        {
+            get
+            {
+                return clientToken;
+            }
+            set
+            {
+                clientToken = value;
+                DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string PeriodUnit
-		{
-			get
-			{
-				return periodUnit;
-			}
-			set	
-			{
-				periodUnit = value;
-				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
-			}
-		}
+        public string PeriodUnit
+        {
+            get
+            {
+                return periodUnit;
+            }
+            set
+            {
+                periodUnit = value;
+                DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
+            }
+        }
 
-		public string InstanceIds
-		{
-			get
-			{
-				return instanceIds;
-			}
-			set	
-			{
-				instanceIds = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
-			}
-		}
+        public string InstanceIds
+        {
+            get
+            {
+                return instanceIds;
+            }
+            set
+            {
+                instanceIds = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
-			}
-		}
+        public string InstanceChargeType
+        {
+            get
+            {
+                return instanceChargeType;
+            }
+            set
+            {
+                instanceChargeType = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+            }
+        }
 
         public override ModifyInstanceChargeTypeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

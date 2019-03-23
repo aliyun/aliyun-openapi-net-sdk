@@ -22,151 +22,151 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeCdnUserResourcePackageResponse : AcsResponse
-	{
+    public class DescribeCdnUserResourcePackageResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeCdnUserResourcePackage_ResourcePackageInfo> resourcePackageInfos;
+        private List<DescribeCdnUserResourcePackage_ResourcePackageInfo> resourcePackageInfos;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeCdnUserResourcePackage_ResourcePackageInfo> ResourcePackageInfos
-		{
-			get
-			{
-				return resourcePackageInfos;
-			}
-			set	
-			{
-				resourcePackageInfos = value;
-			}
-		}
+        public List<DescribeCdnUserResourcePackage_ResourcePackageInfo> ResourcePackageInfos
+        {
+            get
+            {
+                return resourcePackageInfos;
+            }
+            set
+            {
+                resourcePackageInfos = value;
+            }
+        }
 
-		public class DescribeCdnUserResourcePackage_ResourcePackageInfo
-		{
+        public class DescribeCdnUserResourcePackage_ResourcePackageInfo
+        {
 
-			private string currCapacity;
+            private string currCapacity;
 
-			private string initCapacity;
+            private string initCapacity;
 
-			private string commodityCode;
+            private string commodityCode;
 
-			private string displayName;
+            private string displayName;
 
-			private string instanceId;
+            private string instanceId;
 
-			private string status;
+            private string status;
 
-			private string startTime;
+            private string startTime;
 
-			private string endTime;
+            private string endTime;
 
-			public string CurrCapacity
-			{
-				get
-				{
-					return currCapacity;
-				}
-				set	
-				{
-					currCapacity = value;
-				}
-			}
+            public string CurrCapacity
+            {
+                get
+                {
+                    return currCapacity;
+                }
+                set
+                {
+                    currCapacity = value;
+                }
+            }
 
-			public string InitCapacity
-			{
-				get
-				{
-					return initCapacity;
-				}
-				set	
-				{
-					initCapacity = value;
-				}
-			}
+            public string InitCapacity
+            {
+                get
+                {
+                    return initCapacity;
+                }
+                set
+                {
+                    initCapacity = value;
+                }
+            }
 
-			public string CommodityCode
-			{
-				get
-				{
-					return commodityCode;
-				}
-				set	
-				{
-					commodityCode = value;
-				}
-			}
+            public string CommodityCode
+            {
+                get
+                {
+                    return commodityCode;
+                }
+                set
+                {
+                    commodityCode = value;
+                }
+            }
 
-			public string DisplayName
-			{
-				get
-				{
-					return displayName;
-				}
-				set	
-				{
-					displayName = value;
-				}
-			}
+            public string DisplayName
+            {
+                get
+                {
+                    return displayName;
+                }
+                set
+                {
+                    displayName = value;
+                }
+            }
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+            public string StartTime
+            {
+                get
+                {
+                    return startTime;
+                }
+                set
+                {
+                    startTime = value;
+                }
+            }
 
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-		}
-	}
+            public string EndTime
+            {
+                get
+                {
+                    return endTime;
+                }
+                set
+                {
+                    endTime = value;
+                }
+            }
+        }
+    }
 }

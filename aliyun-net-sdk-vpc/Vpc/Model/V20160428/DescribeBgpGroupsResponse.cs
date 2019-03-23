@@ -21,263 +21,263 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeBgpGroupsResponse : AcsResponse
-	{
+    public class DescribeBgpGroupsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeBgpGroups_BgpGroup> bgpGroups;
+        private List<DescribeBgpGroups_BgpGroup> bgpGroups;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeBgpGroups_BgpGroup> BgpGroups
-		{
-			get
-			{
-				return bgpGroups;
-			}
-			set	
-			{
-				bgpGroups = value;
-			}
-		}
+        public List<DescribeBgpGroups_BgpGroup> BgpGroups
+        {
+            get
+            {
+                return bgpGroups;
+            }
+            set
+            {
+                bgpGroups = value;
+            }
+        }
 
-		public class DescribeBgpGroups_BgpGroup
-		{
+        public class DescribeBgpGroups_BgpGroup
+        {
 
-			private string name;
+            private string name;
 
-			private string description;
+            private string description;
 
-			private string bgpGroupId;
+            private string bgpGroupId;
 
-			private string peerAsn;
+            private string peerAsn;
 
-			private string authKey;
+            private string authKey;
 
-			private string routerId;
+            private string routerId;
 
-			private string status;
+            private string status;
 
-			private string keepalive;
+            private string keepalive;
 
-			private string localAsn;
+            private string localAsn;
 
-			private string hold;
+            private string hold;
 
-			private string isFake;
+            private string isFake;
 
-			private string routeLimit;
+            private string routeLimit;
 
-			private string regionId;
+            private string regionId;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string BgpGroupId
-			{
-				get
-				{
-					return bgpGroupId;
-				}
-				set	
-				{
-					bgpGroupId = value;
-				}
-			}
+            public string BgpGroupId
+            {
+                get
+                {
+                    return bgpGroupId;
+                }
+                set
+                {
+                    bgpGroupId = value;
+                }
+            }
 
-			public string PeerAsn
-			{
-				get
-				{
-					return peerAsn;
-				}
-				set	
-				{
-					peerAsn = value;
-				}
-			}
+            public string PeerAsn
+            {
+                get
+                {
+                    return peerAsn;
+                }
+                set
+                {
+                    peerAsn = value;
+                }
+            }
 
-			public string AuthKey
-			{
-				get
-				{
-					return authKey;
-				}
-				set	
-				{
-					authKey = value;
-				}
-			}
+            public string AuthKey
+            {
+                get
+                {
+                    return authKey;
+                }
+                set
+                {
+                    authKey = value;
+                }
+            }
 
-			public string RouterId
-			{
-				get
-				{
-					return routerId;
-				}
-				set	
-				{
-					routerId = value;
-				}
-			}
+            public string RouterId
+            {
+                get
+                {
+                    return routerId;
+                }
+                set
+                {
+                    routerId = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string Keepalive
-			{
-				get
-				{
-					return keepalive;
-				}
-				set	
-				{
-					keepalive = value;
-				}
-			}
+            public string Keepalive
+            {
+                get
+                {
+                    return keepalive;
+                }
+                set
+                {
+                    keepalive = value;
+                }
+            }
 
-			public string LocalAsn
-			{
-				get
-				{
-					return localAsn;
-				}
-				set	
-				{
-					localAsn = value;
-				}
-			}
+            public string LocalAsn
+            {
+                get
+                {
+                    return localAsn;
+                }
+                set
+                {
+                    localAsn = value;
+                }
+            }
 
-			public string Hold
-			{
-				get
-				{
-					return hold;
-				}
-				set	
-				{
-					hold = value;
-				}
-			}
+            public string Hold
+            {
+                get
+                {
+                    return hold;
+                }
+                set
+                {
+                    hold = value;
+                }
+            }
 
-			public string IsFake
-			{
-				get
-				{
-					return isFake;
-				}
-				set	
-				{
-					isFake = value;
-				}
-			}
+            public string IsFake
+            {
+                get
+                {
+                    return isFake;
+                }
+                set
+                {
+                    isFake = value;
+                }
+            }
 
-			public string RouteLimit
-			{
-				get
-				{
-					return routeLimit;
-				}
-				set	
-				{
-					routeLimit = value;
-				}
-			}
+            public string RouteLimit
+            {
+                get
+                {
+                    return routeLimit;
+                }
+                set
+                {
+                    routeLimit = value;
+                }
+            }
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-		}
-	}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
+        }
+    }
 }

@@ -21,63 +21,63 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateVpcResponse : AcsResponse
-	{
+    public class CreateVpcResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string vpcId;
+        private string vpcId;
 
-		private string vRouterId;
+        private string vRouterId;
 
-		private string routeTableId;
+        private string routeTableId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-			}
-		}
+        public string VpcId
+        {
+            get
+            {
+                return vpcId;
+            }
+            set
+            {
+                vpcId = value;
+            }
+        }
 
-		public string VRouterId
-		{
-			get
-			{
-				return vRouterId;
-			}
-			set	
-			{
-				vRouterId = value;
-			}
-		}
+        public string VRouterId
+        {
+            get
+            {
+                return vRouterId;
+            }
+            set
+            {
+                vRouterId = value;
+            }
+        }
 
-		public string RouteTableId
-		{
-			get
-			{
-				return routeTableId;
-			}
-			set	
-			{
-				routeTableId = value;
-			}
-		}
-	}
+        public string RouteTableId
+        {
+            get
+            {
+                return routeTableId;
+            }
+            set
+            {
+                routeTableId = value;
+            }
+        }
+    }
 }

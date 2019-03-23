@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static AddBgpNetworkResponse Unmarshall(UnmarshallerContext context)
         {
-			AddBgpNetworkResponse addBgpNetworkResponse = new AddBgpNetworkResponse();
+            AddBgpNetworkResponse addBgpNetworkResponse = new AddBgpNetworkResponse();
 
-			addBgpNetworkResponse.HttpResponse = context.HttpResponse;
-			addBgpNetworkResponse.RequestId = context.StringValue("AddBgpNetwork.RequestId");
-        
-			return addBgpNetworkResponse;
+            addBgpNetworkResponse.HttpResponse = context.HttpResponse;
+            addBgpNetworkResponse.RequestId = context.StringValue("AddBgpNetwork.RequestId");
+
+            return addBgpNetworkResponse;
         }
     }
 }

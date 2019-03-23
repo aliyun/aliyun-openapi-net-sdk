@@ -21,67 +21,67 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeRegionsResponse : AcsResponse
-	{
+    public class DescribeRegionsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeRegions_RDSRegion> regions;
+        private List<DescribeRegions_RDSRegion> regions;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeRegions_RDSRegion> Regions
-		{
-			get
-			{
-				return regions;
-			}
-			set	
-			{
-				regions = value;
-			}
-		}
+        public List<DescribeRegions_RDSRegion> Regions
+        {
+            get
+            {
+                return regions;
+            }
+            set
+            {
+                regions = value;
+            }
+        }
 
-		public class DescribeRegions_RDSRegion
-		{
+        public class DescribeRegions_RDSRegion
+        {
 
-			private string regionId;
+            private string regionId;
 
-			private string zoneId;
+            private string zoneId;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-		}
-	}
+            public string ZoneId
+            {
+                get
+                {
+                    return zoneId;
+                }
+                set
+                {
+                    zoneId = value;
+                }
+            }
+        }
+    }
 }

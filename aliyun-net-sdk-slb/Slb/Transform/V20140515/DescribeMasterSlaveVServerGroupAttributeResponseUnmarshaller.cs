@@ -27,29 +27,30 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static DescribeMasterSlaveVServerGroupAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeMasterSlaveVServerGroupAttributeResponse describeMasterSlaveVServerGroupAttributeResponse = new DescribeMasterSlaveVServerGroupAttributeResponse();
+            DescribeMasterSlaveVServerGroupAttributeResponse describeMasterSlaveVServerGroupAttributeResponse = new DescribeMasterSlaveVServerGroupAttributeResponse();
 
-			describeMasterSlaveVServerGroupAttributeResponse.HttpResponse = context.HttpResponse;
-			describeMasterSlaveVServerGroupAttributeResponse.RequestId = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.RequestId");
-			describeMasterSlaveVServerGroupAttributeResponse.MasterSlaveVServerGroupId = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveVServerGroupId");
-			describeMasterSlaveVServerGroupAttributeResponse.MasterSlaveVServerGroupName = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveVServerGroupName");
+            describeMasterSlaveVServerGroupAttributeResponse.HttpResponse = context.HttpResponse;
+            describeMasterSlaveVServerGroupAttributeResponse.RequestId = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.RequestId");
+            describeMasterSlaveVServerGroupAttributeResponse.MasterSlaveVServerGroupId = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveVServerGroupId");
+            describeMasterSlaveVServerGroupAttributeResponse.MasterSlaveVServerGroupName = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveVServerGroupName");
 
-			List<DescribeMasterSlaveVServerGroupAttributeResponse.DescribeMasterSlaveVServerGroupAttribute_MasterSlaveBackendServer> describeMasterSlaveVServerGroupAttributeResponse_masterSlaveBackendServers = new List<DescribeMasterSlaveVServerGroupAttributeResponse.DescribeMasterSlaveVServerGroupAttribute_MasterSlaveBackendServer>();
-			for (int i = 0; i < context.Length("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers.Length"); i++) {
-				DescribeMasterSlaveVServerGroupAttributeResponse.DescribeMasterSlaveVServerGroupAttribute_MasterSlaveBackendServer masterSlaveBackendServer = new DescribeMasterSlaveVServerGroupAttributeResponse.DescribeMasterSlaveVServerGroupAttribute_MasterSlaveBackendServer();
-				masterSlaveBackendServer.ServerId = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers["+ i +"].ServerId");
-				masterSlaveBackendServer.Port = context.IntegerValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers["+ i +"].Port");
-				masterSlaveBackendServer.Weight = context.IntegerValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers["+ i +"].Weight");
-				masterSlaveBackendServer.IsBackup = context.IntegerValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers["+ i +"].IsBackup");
-				masterSlaveBackendServer.Type = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers["+ i +"].Type");
-				masterSlaveBackendServer.ServerIp = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers["+ i +"].ServerIp");
-				masterSlaveBackendServer.VpcId = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers["+ i +"].VpcId");
+            List<DescribeMasterSlaveVServerGroupAttributeResponse.DescribeMasterSlaveVServerGroupAttribute_MasterSlaveBackendServer> describeMasterSlaveVServerGroupAttributeResponse_masterSlaveBackendServers = new List<DescribeMasterSlaveVServerGroupAttributeResponse.DescribeMasterSlaveVServerGroupAttribute_MasterSlaveBackendServer>();
+            for (int i = 0; i < context.Length("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers.Length"); i++)
+            {
+                DescribeMasterSlaveVServerGroupAttributeResponse.DescribeMasterSlaveVServerGroupAttribute_MasterSlaveBackendServer masterSlaveBackendServer = new DescribeMasterSlaveVServerGroupAttributeResponse.DescribeMasterSlaveVServerGroupAttribute_MasterSlaveBackendServer();
+                masterSlaveBackendServer.ServerId = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers[" + i + "].ServerId");
+                masterSlaveBackendServer.Port = context.IntegerValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers[" + i + "].Port");
+                masterSlaveBackendServer.Weight = context.IntegerValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers[" + i + "].Weight");
+                masterSlaveBackendServer.IsBackup = context.IntegerValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers[" + i + "].IsBackup");
+                masterSlaveBackendServer.Type = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers[" + i + "].Type");
+                masterSlaveBackendServer.ServerIp = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers[" + i + "].ServerIp");
+                masterSlaveBackendServer.VpcId = context.StringValue("DescribeMasterSlaveVServerGroupAttribute.MasterSlaveBackendServers[" + i + "].VpcId");
 
-				describeMasterSlaveVServerGroupAttributeResponse_masterSlaveBackendServers.Add(masterSlaveBackendServer);
-			}
-			describeMasterSlaveVServerGroupAttributeResponse.MasterSlaveBackendServers = describeMasterSlaveVServerGroupAttributeResponse_masterSlaveBackendServers;
-        
-			return describeMasterSlaveVServerGroupAttributeResponse;
+                describeMasterSlaveVServerGroupAttributeResponse_masterSlaveBackendServers.Add(masterSlaveBackendServer);
+            }
+            describeMasterSlaveVServerGroupAttributeResponse.MasterSlaveBackendServers = describeMasterSlaveVServerGroupAttributeResponse_masterSlaveBackendServers;
+
+            return describeMasterSlaveVServerGroupAttributeResponse;
         }
     }
 }

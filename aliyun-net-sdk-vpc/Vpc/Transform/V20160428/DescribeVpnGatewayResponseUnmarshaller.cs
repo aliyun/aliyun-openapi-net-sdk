@@ -27,27 +27,27 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DescribeVpnGatewayResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeVpnGatewayResponse describeVpnGatewayResponse = new DescribeVpnGatewayResponse();
+            DescribeVpnGatewayResponse describeVpnGatewayResponse = new DescribeVpnGatewayResponse();
 
-			describeVpnGatewayResponse.HttpResponse = context.HttpResponse;
-			describeVpnGatewayResponse.RequestId = context.StringValue("DescribeVpnGateway.RequestId");
-			describeVpnGatewayResponse.VpnGatewayId = context.StringValue("DescribeVpnGateway.VpnGatewayId");
-			describeVpnGatewayResponse.VpcId = context.StringValue("DescribeVpnGateway.VpcId");
-			describeVpnGatewayResponse.VSwitchId = context.StringValue("DescribeVpnGateway.VSwitchId");
-			describeVpnGatewayResponse.InternetIp = context.StringValue("DescribeVpnGateway.InternetIp");
-			describeVpnGatewayResponse.CreateTime = context.LongValue("DescribeVpnGateway.CreateTime");
-			describeVpnGatewayResponse.EndTime = context.LongValue("DescribeVpnGateway.EndTime");
-			describeVpnGatewayResponse.Spec = context.StringValue("DescribeVpnGateway.Spec");
-			describeVpnGatewayResponse.Name = context.StringValue("DescribeVpnGateway.Name");
-			describeVpnGatewayResponse.Description = context.StringValue("DescribeVpnGateway.Description");
-			describeVpnGatewayResponse.Status = context.StringValue("DescribeVpnGateway.Status");
-			describeVpnGatewayResponse.BusinessStatus = context.StringValue("DescribeVpnGateway.BusinessStatus");
-			describeVpnGatewayResponse.ChargeType = context.StringValue("DescribeVpnGateway.ChargeType");
-			describeVpnGatewayResponse.IpsecVpn = context.StringValue("DescribeVpnGateway.IpsecVpn");
-			describeVpnGatewayResponse.SslVpn = context.StringValue("DescribeVpnGateway.SslVpn");
-			describeVpnGatewayResponse.SslMaxConnections = context.LongValue("DescribeVpnGateway.SslMaxConnections");
-        
-			return describeVpnGatewayResponse;
+            describeVpnGatewayResponse.HttpResponse = context.HttpResponse;
+            describeVpnGatewayResponse.RequestId = context.StringValue("DescribeVpnGateway.RequestId");
+            describeVpnGatewayResponse.VpnGatewayId = context.StringValue("DescribeVpnGateway.VpnGatewayId");
+            describeVpnGatewayResponse.VpcId = context.StringValue("DescribeVpnGateway.VpcId");
+            describeVpnGatewayResponse.VSwitchId = context.StringValue("DescribeVpnGateway.VSwitchId");
+            describeVpnGatewayResponse.InternetIp = context.StringValue("DescribeVpnGateway.InternetIp");
+            describeVpnGatewayResponse.CreateTime = context.LongValue("DescribeVpnGateway.CreateTime");
+            describeVpnGatewayResponse.EndTime = context.LongValue("DescribeVpnGateway.EndTime");
+            describeVpnGatewayResponse.Spec = context.StringValue("DescribeVpnGateway.Spec");
+            describeVpnGatewayResponse.Name = context.StringValue("DescribeVpnGateway.Name");
+            describeVpnGatewayResponse.Description = context.StringValue("DescribeVpnGateway.Description");
+            describeVpnGatewayResponse.Status = context.StringValue("DescribeVpnGateway.Status");
+            describeVpnGatewayResponse.BusinessStatus = context.StringValue("DescribeVpnGateway.BusinessStatus");
+            describeVpnGatewayResponse.ChargeType = context.StringValue("DescribeVpnGateway.ChargeType");
+            describeVpnGatewayResponse.IpsecVpn = context.StringValue("DescribeVpnGateway.IpsecVpn");
+            describeVpnGatewayResponse.SslVpn = context.StringValue("DescribeVpnGateway.SslVpn");
+            describeVpnGatewayResponse.SslMaxConnections = context.LongValue("DescribeVpnGateway.SslMaxConnections");
+
+            return describeVpnGatewayResponse;
         }
     }
 }

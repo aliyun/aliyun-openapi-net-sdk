@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static AcceptInquiredSystemEventResponse Unmarshall(UnmarshallerContext context)
         {
-			AcceptInquiredSystemEventResponse acceptInquiredSystemEventResponse = new AcceptInquiredSystemEventResponse();
+            AcceptInquiredSystemEventResponse acceptInquiredSystemEventResponse = new AcceptInquiredSystemEventResponse();
 
-			acceptInquiredSystemEventResponse.HttpResponse = context.HttpResponse;
-			acceptInquiredSystemEventResponse.RequestId = context.StringValue("AcceptInquiredSystemEvent.RequestId");
-        
-			return acceptInquiredSystemEventResponse;
+            acceptInquiredSystemEventResponse.HttpResponse = context.HttpResponse;
+            acceptInquiredSystemEventResponse.RequestId = context.StringValue("AcceptInquiredSystemEvent.RequestId");
+
+            return acceptInquiredSystemEventResponse;
         }
     }
 }

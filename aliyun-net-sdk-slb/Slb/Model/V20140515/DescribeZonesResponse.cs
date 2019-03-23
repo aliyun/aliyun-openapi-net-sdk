@@ -21,113 +21,113 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeZonesResponse : AcsResponse
-	{
+    public class DescribeZonesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeZones_Zone> zones;
+        private List<DescribeZones_Zone> zones;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeZones_Zone> Zones
-		{
-			get
-			{
-				return zones;
-			}
-			set	
-			{
-				zones = value;
-			}
-		}
+        public List<DescribeZones_Zone> Zones
+        {
+            get
+            {
+                return zones;
+            }
+            set
+            {
+                zones = value;
+            }
+        }
 
-		public class DescribeZones_Zone
-		{
+        public class DescribeZones_Zone
+        {
 
-			private string zoneId;
+            private string zoneId;
 
-			private string localName;
+            private string localName;
 
-			private List<DescribeZones_SlaveZone> slaveZones;
+            private List<DescribeZones_SlaveZone> slaveZones;
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+            public string ZoneId
+            {
+                get
+                {
+                    return zoneId;
+                }
+                set
+                {
+                    zoneId = value;
+                }
+            }
 
-			public string LocalName
-			{
-				get
-				{
-					return localName;
-				}
-				set	
-				{
-					localName = value;
-				}
-			}
+            public string LocalName
+            {
+                get
+                {
+                    return localName;
+                }
+                set
+                {
+                    localName = value;
+                }
+            }
 
-			public List<DescribeZones_SlaveZone> SlaveZones
-			{
-				get
-				{
-					return slaveZones;
-				}
-				set	
-				{
-					slaveZones = value;
-				}
-			}
+            public List<DescribeZones_SlaveZone> SlaveZones
+            {
+                get
+                {
+                    return slaveZones;
+                }
+                set
+                {
+                    slaveZones = value;
+                }
+            }
 
-			public class DescribeZones_SlaveZone
-			{
+            public class DescribeZones_SlaveZone
+            {
 
-				private string zoneId;
+                private string zoneId;
 
-				private string localName;
+                private string localName;
 
-				public string ZoneId
-				{
-					get
-					{
-						return zoneId;
-					}
-					set	
-					{
-						zoneId = value;
-					}
-				}
+                public string ZoneId
+                {
+                    get
+                    {
+                        return zoneId;
+                    }
+                    set
+                    {
+                        zoneId = value;
+                    }
+                }
 
-				public string LocalName
-				{
-					get
-					{
-						return localName;
-					}
-					set	
-					{
-						localName = value;
-					}
-				}
-			}
-		}
-	}
+                public string LocalName
+                {
+                    get
+                    {
+                        return localName;
+                    }
+                    set
+                    {
+                        localName = value;
+                    }
+                }
+            }
+        }
+    }
 }

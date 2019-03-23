@@ -33,140 +33,140 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string agentId;
+        private string agentId;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string criteria;
+        private string criteria;
 
-		private string phoneNumber;
+        private string phoneNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private long? stopTime;
+        private long? stopTime;
 
-		private long? startTime;
+        private long? startTime;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string AgentId
-		{
-			get
-			{
-				return agentId;
-			}
-			set	
-			{
-				agentId = value;
-				DictionaryUtil.Add(QueryParameters, "AgentId", value);
-			}
-		}
+        public string AgentId
+        {
+            get
+            {
+                return agentId;
+            }
+            set
+            {
+                agentId = value;
+                DictionaryUtil.Add(QueryParameters, "AgentId", value);
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string Criteria
-		{
-			get
-			{
-				return criteria;
-			}
-			set	
-			{
-				criteria = value;
-				DictionaryUtil.Add(QueryParameters, "Criteria", value);
-			}
-		}
+        public string Criteria
+        {
+            get
+            {
+                return criteria;
+            }
+            set
+            {
+                criteria = value;
+                DictionaryUtil.Add(QueryParameters, "Criteria", value);
+            }
+        }
 
-		public string PhoneNumber
-		{
-			get
-			{
-				return phoneNumber;
-			}
-			set	
-			{
-				phoneNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
-			}
-		}
+        public string PhoneNumber
+        {
+            get
+            {
+                return phoneNumber;
+            }
+            set
+            {
+                phoneNumber = value;
+                DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+                DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+            }
+        }
 
-		public long? StopTime
-		{
-			get
-			{
-				return stopTime;
-			}
-			set	
-			{
-				stopTime = value;
-				DictionaryUtil.Add(QueryParameters, "StopTime", value.ToString());
-			}
-		}
+        public long? StopTime
+        {
+            get
+            {
+                return stopTime;
+            }
+            set
+            {
+                stopTime = value;
+                DictionaryUtil.Add(QueryParameters, "StopTime", value.ToString());
+            }
+        }
 
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
+        public long? StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+                DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+                DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override ListRecordingsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

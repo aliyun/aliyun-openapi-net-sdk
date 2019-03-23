@@ -21,225 +21,225 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class GetConversationDetailByContactIdResponse : AcsResponse
-	{
+    public class GetConversationDetailByContactIdResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? success;
+        private bool? success;
 
-		private string code;
+        private string code;
 
-		private string message;
+        private string message;
 
-		private int? httpStatusCode;
+        private int? httpStatusCode;
 
-		private GetConversationDetailByContactId_DataList dataList;
+        private GetConversationDetailByContactId_DataList dataList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+        public int? HttpStatusCode
+        {
+            get
+            {
+                return httpStatusCode;
+            }
+            set
+            {
+                httpStatusCode = value;
+            }
+        }
 
-		public GetConversationDetailByContactId_DataList DataList
-		{
-			get
-			{
-				return dataList;
-			}
-			set	
-			{
-				dataList = value;
-			}
-		}
+        public GetConversationDetailByContactId_DataList DataList
+        {
+            get
+            {
+                return dataList;
+            }
+            set
+            {
+                dataList = value;
+            }
+        }
 
-		public class GetConversationDetailByContactId_DataList
-		{
+        public class GetConversationDetailByContactId_DataList
+        {
 
-			private int? totalCount;
+            private int? totalCount;
 
-			private int? pageNumber;
+            private int? pageNumber;
 
-			private int? pageSize;
+            private int? pageSize;
 
-			private List<GetConversationDetailByContactId_QualityCheckPhrase> list;
+            private List<GetConversationDetailByContactId_QualityCheckPhrase> list;
 
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+            public int? TotalCount
+            {
+                get
+                {
+                    return totalCount;
+                }
+                set
+                {
+                    totalCount = value;
+                }
+            }
 
-			public int? PageNumber
-			{
-				get
-				{
-					return pageNumber;
-				}
-				set	
-				{
-					pageNumber = value;
-				}
-			}
+            public int? PageNumber
+            {
+                get
+                {
+                    return pageNumber;
+                }
+                set
+                {
+                    pageNumber = value;
+                }
+            }
 
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
+            public int? PageSize
+            {
+                get
+                {
+                    return pageSize;
+                }
+                set
+                {
+                    pageSize = value;
+                }
+            }
 
-			public List<GetConversationDetailByContactId_QualityCheckPhrase> List
-			{
-				get
-				{
-					return list;
-				}
-				set	
-				{
-					list = value;
-				}
-			}
+            public List<GetConversationDetailByContactId_QualityCheckPhrase> List
+            {
+                get
+                {
+                    return list;
+                }
+                set
+                {
+                    list = value;
+                }
+            }
 
-			public class GetConversationDetailByContactId_QualityCheckPhrase
-			{
+            public class GetConversationDetailByContactId_QualityCheckPhrase
+            {
 
-				private string identity;
+                private string identity;
 
-				private string role;
+                private string role;
 
-				private string words;
+                private string words;
 
-				private long? begin;
+                private long? begin;
 
-				private long? end;
+                private long? end;
 
-				public string Identity
-				{
-					get
-					{
-						return identity;
-					}
-					set	
-					{
-						identity = value;
-					}
-				}
+                public string Identity
+                {
+                    get
+                    {
+                        return identity;
+                    }
+                    set
+                    {
+                        identity = value;
+                    }
+                }
 
-				public string Role
-				{
-					get
-					{
-						return role;
-					}
-					set	
-					{
-						role = value;
-					}
-				}
+                public string Role
+                {
+                    get
+                    {
+                        return role;
+                    }
+                    set
+                    {
+                        role = value;
+                    }
+                }
 
-				public string Words
-				{
-					get
-					{
-						return words;
-					}
-					set	
-					{
-						words = value;
-					}
-				}
+                public string Words
+                {
+                    get
+                    {
+                        return words;
+                    }
+                    set
+                    {
+                        words = value;
+                    }
+                }
 
-				public long? Begin
-				{
-					get
-					{
-						return begin;
-					}
-					set	
-					{
-						begin = value;
-					}
-				}
+                public long? Begin
+                {
+                    get
+                    {
+                        return begin;
+                    }
+                    set
+                    {
+                        begin = value;
+                    }
+                }
 
-				public long? End
-				{
-					get
-					{
-						return end;
-					}
-					set	
-					{
-						end = value;
-					}
-				}
-			}
-		}
-	}
+                public long? End
+                {
+                    get
+                    {
+                        return end;
+                    }
+                    set
+                    {
+                        end = value;
+                    }
+                }
+            }
+        }
+    }
 }

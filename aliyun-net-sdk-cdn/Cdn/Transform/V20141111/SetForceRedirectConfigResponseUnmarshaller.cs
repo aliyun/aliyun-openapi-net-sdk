@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static SetForceRedirectConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			SetForceRedirectConfigResponse setForceRedirectConfigResponse = new SetForceRedirectConfigResponse();
+            SetForceRedirectConfigResponse setForceRedirectConfigResponse = new SetForceRedirectConfigResponse();
 
-			setForceRedirectConfigResponse.HttpResponse = context.HttpResponse;
-			setForceRedirectConfigResponse.RequestId = context.StringValue("SetForceRedirectConfig.RequestId");
-        
-			return setForceRedirectConfigResponse;
+            setForceRedirectConfigResponse.HttpResponse = context.HttpResponse;
+            setForceRedirectConfigResponse.RequestId = context.StringValue("SetForceRedirectConfig.RequestId");
+
+            return setForceRedirectConfigResponse;
         }
     }
 }

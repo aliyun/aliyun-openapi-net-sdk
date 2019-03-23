@@ -22,35 +22,35 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeRangeDataByLocateAndIspServiceResponse : AcsResponse
-	{
+    public class DescribeRangeDataByLocateAndIspServiceResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string jsonResult;
+        private string jsonResult;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string JsonResult
-		{
-			get
-			{
-				return jsonResult;
-			}
-			set	
-			{
-				jsonResult = value;
-			}
-		}
-	}
+        public string JsonResult
+        {
+            get
+            {
+                return jsonResult;
+            }
+            set
+            {
+                jsonResult = value;
+            }
+        }
+    }
 }

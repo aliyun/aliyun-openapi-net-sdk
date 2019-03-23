@@ -33,185 +33,185 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string workingDir;
+        private string workingDir;
 
-		private string description;
+        private string description;
 
-		private string commandId;
+        private string commandId;
 
-		private string commandContent;
+        private string commandContent;
 
-		private long? timeout;
+        private long? timeout;
 
-		private string regionId;
+        private string regionId;
 
-		private string action;
+        private string action;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string name;
+        private string name;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string WorkingDir
-		{
-			get
-			{
-				return workingDir;
-			}
-			set	
-			{
-				workingDir = value;
-				DictionaryUtil.Add(QueryParameters, "WorkingDir", value);
-			}
-		}
+        public string WorkingDir
+        {
+            get
+            {
+                return workingDir;
+            }
+            set
+            {
+                workingDir = value;
+                DictionaryUtil.Add(QueryParameters, "WorkingDir", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string CommandId
-		{
-			get
-			{
-				return commandId;
-			}
-			set	
-			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
-			}
-		}
+        public string CommandId
+        {
+            get
+            {
+                return commandId;
+            }
+            set
+            {
+                commandId = value;
+                DictionaryUtil.Add(QueryParameters, "CommandId", value);
+            }
+        }
 
-		public string CommandContent
-		{
-			get
-			{
-				return commandContent;
-			}
-			set	
-			{
-				commandContent = value;
-				DictionaryUtil.Add(QueryParameters, "CommandContent", value);
-			}
-		}
+        public string CommandContent
+        {
+            get
+            {
+                return commandContent;
+            }
+            set
+            {
+                commandContent = value;
+                DictionaryUtil.Add(QueryParameters, "CommandContent", value);
+            }
+        }
 
-		public long? Timeout
-		{
-			get
-			{
-				return timeout;
-			}
-			set	
-			{
-				timeout = value;
-				DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
-			}
-		}
+        public long? Timeout
+        {
+            get
+            {
+                return timeout;
+            }
+            set
+            {
+                timeout = value;
+                DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
         public override ModifyCommandResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

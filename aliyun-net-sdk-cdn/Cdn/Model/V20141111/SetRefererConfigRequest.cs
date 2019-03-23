@@ -34,125 +34,125 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string referList;
+        private string referList;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string domainName;
+        private string domainName;
 
-		private string referType;
+        private string referType;
 
-		private string action;
+        private string action;
 
-		private string disableAst;
+        private string disableAst;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string allowEmpty;
+        private string allowEmpty;
 
-		public string ReferList
-		{
-			get
-			{
-				return referList;
-			}
-			set	
-			{
-				referList = value;
-				DictionaryUtil.Add(QueryParameters, "ReferList", value);
-			}
-		}
+        public string ReferList
+        {
+            get
+            {
+                return referList;
+            }
+            set
+            {
+                referList = value;
+                DictionaryUtil.Add(QueryParameters, "ReferList", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string ReferType
-		{
-			get
-			{
-				return referType;
-			}
-			set	
-			{
-				referType = value;
-				DictionaryUtil.Add(QueryParameters, "ReferType", value);
-			}
-		}
+        public string ReferType
+        {
+            get
+            {
+                return referType;
+            }
+            set
+            {
+                referType = value;
+                DictionaryUtil.Add(QueryParameters, "ReferType", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string DisableAst
-		{
-			get
-			{
-				return disableAst;
-			}
-			set	
-			{
-				disableAst = value;
-				DictionaryUtil.Add(QueryParameters, "DisableAst", value);
-			}
-		}
+        public string DisableAst
+        {
+            get
+            {
+                return disableAst;
+            }
+            set
+            {
+                disableAst = value;
+                DictionaryUtil.Add(QueryParameters, "DisableAst", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string AllowEmpty
-		{
-			get
-			{
-				return allowEmpty;
-			}
-			set	
-			{
-				allowEmpty = value;
-				DictionaryUtil.Add(QueryParameters, "AllowEmpty", value);
-			}
-		}
+        public string AllowEmpty
+        {
+            get
+            {
+                return allowEmpty;
+            }
+            set
+            {
+                allowEmpty = value;
+                DictionaryUtil.Add(QueryParameters, "AllowEmpty", value);
+            }
+        }
 
         public override SetRefererConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

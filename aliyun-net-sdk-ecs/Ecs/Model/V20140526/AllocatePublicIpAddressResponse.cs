@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class AllocatePublicIpAddressResponse : AcsResponse
-	{
+    public class AllocatePublicIpAddressResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string ipAddress;
+        private string ipAddress;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string IpAddress
-		{
-			get
-			{
-				return ipAddress;
-			}
-			set	
-			{
-				ipAddress = value;
-			}
-		}
-	}
+        public string IpAddress
+        {
+            get
+            {
+                return ipAddress;
+            }
+            set
+            {
+                ipAddress = value;
+            }
+        }
+    }
 }

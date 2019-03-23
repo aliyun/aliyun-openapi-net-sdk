@@ -27,22 +27,23 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeCloudAssistantStatusResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeCloudAssistantStatusResponse describeCloudAssistantStatusResponse = new DescribeCloudAssistantStatusResponse();
+            DescribeCloudAssistantStatusResponse describeCloudAssistantStatusResponse = new DescribeCloudAssistantStatusResponse();
 
-			describeCloudAssistantStatusResponse.HttpResponse = context.HttpResponse;
-			describeCloudAssistantStatusResponse.RequestId = context.StringValue("DescribeCloudAssistantStatus.RequestId");
+            describeCloudAssistantStatusResponse.HttpResponse = context.HttpResponse;
+            describeCloudAssistantStatusResponse.RequestId = context.StringValue("DescribeCloudAssistantStatus.RequestId");
 
-			List<DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus> describeCloudAssistantStatusResponse_instanceCloudAssistantStatusSet = new List<DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus>();
-			for (int i = 0; i < context.Length("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet.Length"); i++) {
-				DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus instanceCloudAssistantStatus = new DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus();
-				instanceCloudAssistantStatus.InstanceId = context.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].InstanceId");
-				instanceCloudAssistantStatus.CloudAssistantStatus = context.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantStatus");
+            List<DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus> describeCloudAssistantStatusResponse_instanceCloudAssistantStatusSet = new List<DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus>();
+            for (int i = 0; i < context.Length("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet.Length"); i++)
+            {
+                DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus instanceCloudAssistantStatus = new DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus();
+                instanceCloudAssistantStatus.InstanceId = context.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet[" + i + "].InstanceId");
+                instanceCloudAssistantStatus.CloudAssistantStatus = context.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet[" + i + "].CloudAssistantStatus");
 
-				describeCloudAssistantStatusResponse_instanceCloudAssistantStatusSet.Add(instanceCloudAssistantStatus);
-			}
-			describeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet = describeCloudAssistantStatusResponse_instanceCloudAssistantStatusSet;
-        
-			return describeCloudAssistantStatusResponse;
+                describeCloudAssistantStatusResponse_instanceCloudAssistantStatusSet.Add(instanceCloudAssistantStatus);
+            }
+            describeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet = describeCloudAssistantStatusResponse_instanceCloudAssistantStatusSet;
+
+            return describeCloudAssistantStatusResponse;
         }
     }
 }

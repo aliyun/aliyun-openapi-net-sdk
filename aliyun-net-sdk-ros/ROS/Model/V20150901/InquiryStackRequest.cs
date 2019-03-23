@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public InquiryStackRequest()
             : base("ROS", "2015-09-01", "InquiryStack")
         {
-			UriPattern = "/stacks/inquiry";
-			Method = MethodType.POST;
+            UriPattern = "/stacks/inquiry";
+            Method = MethodType.POST;
         }
 
         public override InquiryStackResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)

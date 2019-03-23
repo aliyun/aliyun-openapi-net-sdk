@@ -33,230 +33,230 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		private string vSwitchId;
+        private string vSwitchId;
 
-		private string privateIpAddress;
+        private string privateIpAddress;
 
-		private string retainClassic;
+        private string retainClassic;
 
-		private string classicExpiredDays;
+        private string classicExpiredDays;
 
-		private string vPCId;
+        private string vPCId;
 
-		private string action;
+        private string action;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string readWriteSplittingPrivateIpAddress;
+        private string readWriteSplittingPrivateIpAddress;
 
-		private string instanceNetworkType;
+        private string instanceNetworkType;
 
-		private int? readWriteSplittingClassicExpiredDays;
+        private int? readWriteSplittingClassicExpiredDays;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
+        public string VSwitchId
+        {
+            get
+            {
+                return vSwitchId;
+            }
+            set
+            {
+                vSwitchId = value;
+                DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+            }
+        }
 
-		public string PrivateIpAddress
-		{
-			get
-			{
-				return privateIpAddress;
-			}
-			set	
-			{
-				privateIpAddress = value;
-				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
-			}
-		}
+        public string PrivateIpAddress
+        {
+            get
+            {
+                return privateIpAddress;
+            }
+            set
+            {
+                privateIpAddress = value;
+                DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
+            }
+        }
 
-		public string RetainClassic
-		{
-			get
-			{
-				return retainClassic;
-			}
-			set	
-			{
-				retainClassic = value;
-				DictionaryUtil.Add(QueryParameters, "RetainClassic", value);
-			}
-		}
+        public string RetainClassic
+        {
+            get
+            {
+                return retainClassic;
+            }
+            set
+            {
+                retainClassic = value;
+                DictionaryUtil.Add(QueryParameters, "RetainClassic", value);
+            }
+        }
 
-		public string ClassicExpiredDays
-		{
-			get
-			{
-				return classicExpiredDays;
-			}
-			set	
-			{
-				classicExpiredDays = value;
-				DictionaryUtil.Add(QueryParameters, "ClassicExpiredDays", value);
-			}
-		}
+        public string ClassicExpiredDays
+        {
+            get
+            {
+                return classicExpiredDays;
+            }
+            set
+            {
+                classicExpiredDays = value;
+                DictionaryUtil.Add(QueryParameters, "ClassicExpiredDays", value);
+            }
+        }
 
-		public string VPCId
-		{
-			get
-			{
-				return vPCId;
-			}
-			set	
-			{
-				vPCId = value;
-				DictionaryUtil.Add(QueryParameters, "VPCId", value);
-			}
-		}
+        public string VPCId
+        {
+            get
+            {
+                return vPCId;
+            }
+            set
+            {
+                vPCId = value;
+                DictionaryUtil.Add(QueryParameters, "VPCId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+                DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+            }
+        }
 
-		public string ReadWriteSplittingPrivateIpAddress
-		{
-			get
-			{
-				return readWriteSplittingPrivateIpAddress;
-			}
-			set	
-			{
-				readWriteSplittingPrivateIpAddress = value;
-				DictionaryUtil.Add(QueryParameters, "ReadWriteSplittingPrivateIpAddress", value);
-			}
-		}
+        public string ReadWriteSplittingPrivateIpAddress
+        {
+            get
+            {
+                return readWriteSplittingPrivateIpAddress;
+            }
+            set
+            {
+                readWriteSplittingPrivateIpAddress = value;
+                DictionaryUtil.Add(QueryParameters, "ReadWriteSplittingPrivateIpAddress", value);
+            }
+        }
 
-		public string InstanceNetworkType
-		{
-			get
-			{
-				return instanceNetworkType;
-			}
-			set	
-			{
-				instanceNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
-			}
-		}
+        public string InstanceNetworkType
+        {
+            get
+            {
+                return instanceNetworkType;
+            }
+            set
+            {
+                instanceNetworkType = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
+            }
+        }
 
-		public int? ReadWriteSplittingClassicExpiredDays
-		{
-			get
-			{
-				return readWriteSplittingClassicExpiredDays;
-			}
-			set	
-			{
-				readWriteSplittingClassicExpiredDays = value;
-				DictionaryUtil.Add(QueryParameters, "ReadWriteSplittingClassicExpiredDays", value.ToString());
-			}
-		}
+        public int? ReadWriteSplittingClassicExpiredDays
+        {
+            get
+            {
+                return readWriteSplittingClassicExpiredDays;
+            }
+            set
+            {
+                readWriteSplittingClassicExpiredDays = value;
+                DictionaryUtil.Add(QueryParameters, "ReadWriteSplittingClassicExpiredDays", value.ToString());
+            }
+        }
 
         public override ModifyDBInstanceNetworkTypeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

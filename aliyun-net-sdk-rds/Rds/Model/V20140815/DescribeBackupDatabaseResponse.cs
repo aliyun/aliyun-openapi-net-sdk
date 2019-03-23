@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeBackupDatabaseResponse : AcsResponse
-	{
+    public class DescribeBackupDatabaseResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string databaseNames;
+        private string databaseNames;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DatabaseNames
-		{
-			get
-			{
-				return databaseNames;
-			}
-			set	
-			{
-				databaseNames = value;
-			}
-		}
-	}
+        public string DatabaseNames
+        {
+            get
+            {
+                return databaseNames;
+            }
+            set
+            {
+                databaseNames = value;
+            }
+        }
+    }
 }

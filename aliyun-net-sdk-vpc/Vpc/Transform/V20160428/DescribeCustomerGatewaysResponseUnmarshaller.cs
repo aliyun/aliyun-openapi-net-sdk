@@ -27,28 +27,29 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DescribeCustomerGatewaysResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeCustomerGatewaysResponse describeCustomerGatewaysResponse = new DescribeCustomerGatewaysResponse();
+            DescribeCustomerGatewaysResponse describeCustomerGatewaysResponse = new DescribeCustomerGatewaysResponse();
 
-			describeCustomerGatewaysResponse.HttpResponse = context.HttpResponse;
-			describeCustomerGatewaysResponse.RequestId = context.StringValue("DescribeCustomerGateways.RequestId");
-			describeCustomerGatewaysResponse.TotalCount = context.IntegerValue("DescribeCustomerGateways.TotalCount");
-			describeCustomerGatewaysResponse.PageNumber = context.IntegerValue("DescribeCustomerGateways.PageNumber");
-			describeCustomerGatewaysResponse.PageSize = context.IntegerValue("DescribeCustomerGateways.PageSize");
+            describeCustomerGatewaysResponse.HttpResponse = context.HttpResponse;
+            describeCustomerGatewaysResponse.RequestId = context.StringValue("DescribeCustomerGateways.RequestId");
+            describeCustomerGatewaysResponse.TotalCount = context.IntegerValue("DescribeCustomerGateways.TotalCount");
+            describeCustomerGatewaysResponse.PageNumber = context.IntegerValue("DescribeCustomerGateways.PageNumber");
+            describeCustomerGatewaysResponse.PageSize = context.IntegerValue("DescribeCustomerGateways.PageSize");
 
-			List<DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway> describeCustomerGatewaysResponse_customerGateways = new List<DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway>();
-			for (int i = 0; i < context.Length("DescribeCustomerGateways.CustomerGateways.Length"); i++) {
-				DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway customerGateway = new DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway();
-				customerGateway.CustomerGatewayId = context.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].CustomerGatewayId");
-				customerGateway.Name = context.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].Name");
-				customerGateway.IpAddress = context.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].IpAddress");
-				customerGateway.Description = context.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].Description");
-				customerGateway.CreateTime = context.LongValue("DescribeCustomerGateways.CustomerGateways["+ i +"].CreateTime");
+            List<DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway> describeCustomerGatewaysResponse_customerGateways = new List<DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway>();
+            for (int i = 0; i < context.Length("DescribeCustomerGateways.CustomerGateways.Length"); i++)
+            {
+                DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway customerGateway = new DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway();
+                customerGateway.CustomerGatewayId = context.StringValue("DescribeCustomerGateways.CustomerGateways[" + i + "].CustomerGatewayId");
+                customerGateway.Name = context.StringValue("DescribeCustomerGateways.CustomerGateways[" + i + "].Name");
+                customerGateway.IpAddress = context.StringValue("DescribeCustomerGateways.CustomerGateways[" + i + "].IpAddress");
+                customerGateway.Description = context.StringValue("DescribeCustomerGateways.CustomerGateways[" + i + "].Description");
+                customerGateway.CreateTime = context.LongValue("DescribeCustomerGateways.CustomerGateways[" + i + "].CreateTime");
 
-				describeCustomerGatewaysResponse_customerGateways.Add(customerGateway);
-			}
-			describeCustomerGatewaysResponse.CustomerGateways = describeCustomerGatewaysResponse_customerGateways;
-        
-			return describeCustomerGatewaysResponse;
+                describeCustomerGatewaysResponse_customerGateways.Add(customerGateway);
+            }
+            describeCustomerGatewaysResponse.CustomerGateways = describeCustomerGatewaysResponse_customerGateways;
+
+            return describeCustomerGatewaysResponse;
         }
     }
 }

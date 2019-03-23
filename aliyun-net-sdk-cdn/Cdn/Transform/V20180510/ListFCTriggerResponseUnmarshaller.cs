@@ -28,26 +28,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static ListFCTriggerResponse Unmarshall(UnmarshallerContext context)
         {
-			ListFCTriggerResponse listFCTriggerResponse = new ListFCTriggerResponse();
+            ListFCTriggerResponse listFCTriggerResponse = new ListFCTriggerResponse();
 
-			listFCTriggerResponse.HttpResponse = context.HttpResponse;
-			listFCTriggerResponse.RequestId = context.StringValue("ListFCTrigger.RequestId");
+            listFCTriggerResponse.HttpResponse = context.HttpResponse;
+            listFCTriggerResponse.RequestId = context.StringValue("ListFCTrigger.RequestId");
 
-			List<ListFCTriggerResponse.ListFCTrigger_FCTrigger> listFCTriggerResponse_fCTriggers = new List<ListFCTriggerResponse.ListFCTrigger_FCTrigger>();
-			for (int i = 0; i < context.Length("ListFCTrigger.FCTriggers.Length"); i++) {
-				ListFCTriggerResponse.ListFCTrigger_FCTrigger fCTrigger = new ListFCTriggerResponse.ListFCTrigger_FCTrigger();
-				fCTrigger.EventMetaName = context.StringValue("ListFCTrigger.FCTriggers["+ i +"].EventMetaName");
-				fCTrigger.EventMetaVersion = context.StringValue("ListFCTrigger.FCTriggers["+ i +"].EventMetaVersion");
-				fCTrigger.TriggerARN = context.StringValue("ListFCTrigger.FCTriggers["+ i +"].TriggerARN");
-				fCTrigger.RoleARN = context.StringValue("ListFCTrigger.FCTriggers["+ i +"].RoleARN");
-				fCTrigger.SourceArn = context.StringValue("ListFCTrigger.FCTriggers["+ i +"].SourceArn");
-				fCTrigger.Notes = context.StringValue("ListFCTrigger.FCTriggers["+ i +"].Notes");
+            List<ListFCTriggerResponse.ListFCTrigger_FCTrigger> listFCTriggerResponse_fCTriggers = new List<ListFCTriggerResponse.ListFCTrigger_FCTrigger>();
+            for (int i = 0; i < context.Length("ListFCTrigger.FCTriggers.Length"); i++)
+            {
+                ListFCTriggerResponse.ListFCTrigger_FCTrigger fCTrigger = new ListFCTriggerResponse.ListFCTrigger_FCTrigger();
+                fCTrigger.EventMetaName = context.StringValue("ListFCTrigger.FCTriggers[" + i + "].EventMetaName");
+                fCTrigger.EventMetaVersion = context.StringValue("ListFCTrigger.FCTriggers[" + i + "].EventMetaVersion");
+                fCTrigger.TriggerARN = context.StringValue("ListFCTrigger.FCTriggers[" + i + "].TriggerARN");
+                fCTrigger.RoleARN = context.StringValue("ListFCTrigger.FCTriggers[" + i + "].RoleARN");
+                fCTrigger.SourceArn = context.StringValue("ListFCTrigger.FCTriggers[" + i + "].SourceArn");
+                fCTrigger.Notes = context.StringValue("ListFCTrigger.FCTriggers[" + i + "].Notes");
 
-				listFCTriggerResponse_fCTriggers.Add(fCTrigger);
-			}
-			listFCTriggerResponse.FCTriggers = listFCTriggerResponse_fCTriggers;
-        
-			return listFCTriggerResponse;
+                listFCTriggerResponse_fCTriggers.Add(fCTrigger);
+            }
+            listFCTriggerResponse.FCTriggers = listFCTriggerResponse_fCTriggers;
+
+            return listFCTriggerResponse;
         }
     }
 }

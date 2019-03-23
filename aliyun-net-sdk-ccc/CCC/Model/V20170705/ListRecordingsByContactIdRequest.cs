@@ -33,50 +33,50 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		private string contactId;
+        private string contactId;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string ContactId
-		{
-			get
-			{
-				return contactId;
-			}
-			set	
-			{
-				contactId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactId", value);
-			}
-		}
+        public string ContactId
+        {
+            get
+            {
+                return contactId;
+            }
+            set
+            {
+                contactId = value;
+                DictionaryUtil.Add(QueryParameters, "ContactId", value);
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override ListRecordingsByContactIdResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

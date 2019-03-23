@@ -22,105 +22,105 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainMax95BpsDataResponse : AcsResponse
-	{
+    public class DescribeDomainMax95BpsDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private string max95Bps;
+        private string max95Bps;
 
-		private string domesticMax95Bps;
+        private string domesticMax95Bps;
 
-		private string overseasMax95Bps;
+        private string overseasMax95Bps;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public string Max95Bps
-		{
-			get
-			{
-				return max95Bps;
-			}
-			set	
-			{
-				max95Bps = value;
-			}
-		}
+        public string Max95Bps
+        {
+            get
+            {
+                return max95Bps;
+            }
+            set
+            {
+                max95Bps = value;
+            }
+        }
 
-		public string DomesticMax95Bps
-		{
-			get
-			{
-				return domesticMax95Bps;
-			}
-			set	
-			{
-				domesticMax95Bps = value;
-			}
-		}
+        public string DomesticMax95Bps
+        {
+            get
+            {
+                return domesticMax95Bps;
+            }
+            set
+            {
+                domesticMax95Bps = value;
+            }
+        }
 
-		public string OverseasMax95Bps
-		{
-			get
-			{
-				return overseasMax95Bps;
-			}
-			set	
-			{
-				overseasMax95Bps = value;
-			}
-		}
-	}
+        public string OverseasMax95Bps
+        {
+            get
+            {
+                return overseasMax95Bps;
+            }
+            set
+            {
+                overseasMax95Bps = value;
+            }
+        }
+    }
 }

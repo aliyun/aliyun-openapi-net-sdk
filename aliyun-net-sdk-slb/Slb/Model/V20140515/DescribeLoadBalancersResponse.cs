@@ -21,319 +21,319 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeLoadBalancersResponse : AcsResponse
-	{
+    public class DescribeLoadBalancersResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private List<DescribeLoadBalancers_LoadBalancer> loadBalancers;
+        private List<DescribeLoadBalancers_LoadBalancer> loadBalancers;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribeLoadBalancers_LoadBalancer> LoadBalancers
-		{
-			get
-			{
-				return loadBalancers;
-			}
-			set	
-			{
-				loadBalancers = value;
-			}
-		}
+        public List<DescribeLoadBalancers_LoadBalancer> LoadBalancers
+        {
+            get
+            {
+                return loadBalancers;
+            }
+            set
+            {
+                loadBalancers = value;
+            }
+        }
 
-		public class DescribeLoadBalancers_LoadBalancer
-		{
+        public class DescribeLoadBalancers_LoadBalancer
+        {
 
-			private string loadBalancerId;
+            private string loadBalancerId;
 
-			private string loadBalancerName;
+            private string loadBalancerName;
 
-			private string loadBalancerStatus;
+            private string loadBalancerStatus;
 
-			private string address;
+            private string address;
 
-			private string addressType;
+            private string addressType;
 
-			private string regionId;
+            private string regionId;
 
-			private string regionIdAlias;
+            private string regionIdAlias;
 
-			private string vSwitchId;
+            private string vSwitchId;
 
-			private string vpcId;
+            private string vpcId;
 
-			private string networkType;
+            private string networkType;
 
-			private string masterZoneId;
+            private string masterZoneId;
 
-			private string slaveZoneId;
+            private string slaveZoneId;
 
-			private string internetChargeType;
+            private string internetChargeType;
 
-			private string createTime;
+            private string createTime;
 
-			private long? createTimeStamp;
+            private long? createTimeStamp;
 
-			private string payType;
+            private string payType;
 
-			private string resourceGroupId;
+            private string resourceGroupId;
 
-			public string LoadBalancerId
-			{
-				get
-				{
-					return loadBalancerId;
-				}
-				set	
-				{
-					loadBalancerId = value;
-				}
-			}
+            public string LoadBalancerId
+            {
+                get
+                {
+                    return loadBalancerId;
+                }
+                set
+                {
+                    loadBalancerId = value;
+                }
+            }
 
-			public string LoadBalancerName
-			{
-				get
-				{
-					return loadBalancerName;
-				}
-				set	
-				{
-					loadBalancerName = value;
-				}
-			}
+            public string LoadBalancerName
+            {
+                get
+                {
+                    return loadBalancerName;
+                }
+                set
+                {
+                    loadBalancerName = value;
+                }
+            }
 
-			public string LoadBalancerStatus
-			{
-				get
-				{
-					return loadBalancerStatus;
-				}
-				set	
-				{
-					loadBalancerStatus = value;
-				}
-			}
+            public string LoadBalancerStatus
+            {
+                get
+                {
+                    return loadBalancerStatus;
+                }
+                set
+                {
+                    loadBalancerStatus = value;
+                }
+            }
 
-			public string Address
-			{
-				get
-				{
-					return address;
-				}
-				set	
-				{
-					address = value;
-				}
-			}
+            public string Address
+            {
+                get
+                {
+                    return address;
+                }
+                set
+                {
+                    address = value;
+                }
+            }
 
-			public string AddressType
-			{
-				get
-				{
-					return addressType;
-				}
-				set	
-				{
-					addressType = value;
-				}
-			}
+            public string AddressType
+            {
+                get
+                {
+                    return addressType;
+                }
+                set
+                {
+                    addressType = value;
+                }
+            }
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string RegionIdAlias
-			{
-				get
-				{
-					return regionIdAlias;
-				}
-				set	
-				{
-					regionIdAlias = value;
-				}
-			}
+            public string RegionIdAlias
+            {
+                get
+                {
+                    return regionIdAlias;
+                }
+                set
+                {
+                    regionIdAlias = value;
+                }
+            }
 
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
+            public string VSwitchId
+            {
+                get
+                {
+                    return vSwitchId;
+                }
+                set
+                {
+                    vSwitchId = value;
+                }
+            }
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
+            public string VpcId
+            {
+                get
+                {
+                    return vpcId;
+                }
+                set
+                {
+                    vpcId = value;
+                }
+            }
 
-			public string NetworkType
-			{
-				get
-				{
-					return networkType;
-				}
-				set	
-				{
-					networkType = value;
-				}
-			}
+            public string NetworkType
+            {
+                get
+                {
+                    return networkType;
+                }
+                set
+                {
+                    networkType = value;
+                }
+            }
 
-			public string MasterZoneId
-			{
-				get
-				{
-					return masterZoneId;
-				}
-				set	
-				{
-					masterZoneId = value;
-				}
-			}
+            public string MasterZoneId
+            {
+                get
+                {
+                    return masterZoneId;
+                }
+                set
+                {
+                    masterZoneId = value;
+                }
+            }
 
-			public string SlaveZoneId
-			{
-				get
-				{
-					return slaveZoneId;
-				}
-				set	
-				{
-					slaveZoneId = value;
-				}
-			}
+            public string SlaveZoneId
+            {
+                get
+                {
+                    return slaveZoneId;
+                }
+                set
+                {
+                    slaveZoneId = value;
+                }
+            }
 
-			public string InternetChargeType
-			{
-				get
-				{
-					return internetChargeType;
-				}
-				set	
-				{
-					internetChargeType = value;
-				}
-			}
+            public string InternetChargeType
+            {
+                get
+                {
+                    return internetChargeType;
+                }
+                set
+                {
+                    internetChargeType = value;
+                }
+            }
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+            public string CreateTime
+            {
+                get
+                {
+                    return createTime;
+                }
+                set
+                {
+                    createTime = value;
+                }
+            }
 
-			public long? CreateTimeStamp
-			{
-				get
-				{
-					return createTimeStamp;
-				}
-				set	
-				{
-					createTimeStamp = value;
-				}
-			}
+            public long? CreateTimeStamp
+            {
+                get
+                {
+                    return createTimeStamp;
+                }
+                set
+                {
+                    createTimeStamp = value;
+                }
+            }
 
-			public string PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
-				}
-			}
+            public string PayType
+            {
+                get
+                {
+                    return payType;
+                }
+                set
+                {
+                    payType = value;
+                }
+            }
 
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
-		}
-	}
+            public string ResourceGroupId
+            {
+                get
+                {
+                    return resourceGroupId;
+                }
+                set
+                {
+                    resourceGroupId = value;
+                }
+            }
+        }
+    }
 }

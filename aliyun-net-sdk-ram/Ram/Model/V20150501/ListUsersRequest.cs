@@ -32,38 +32,38 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public ListUsersRequest()
             : base("Ram", "2015-05-01", "ListUsers", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string marker;
+        private string marker;
 
-		private int? maxItems;
+        private int? maxItems;
 
-		public string Marker
-		{
-			get
-			{
-				return marker;
-			}
-			set	
-			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
-			}
-		}
+        public string Marker
+        {
+            get
+            {
+                return marker;
+            }
+            set
+            {
+                marker = value;
+                DictionaryUtil.Add(QueryParameters, "Marker", value);
+            }
+        }
 
-		public int? MaxItems
-		{
-			get
-			{
-				return maxItems;
-			}
-			set	
-			{
-				maxItems = value;
-				DictionaryUtil.Add(QueryParameters, "MaxItems", value.ToString());
-			}
-		}
+        public int? MaxItems
+        {
+            get
+            {
+                return maxItems;
+            }
+            set
+            {
+                maxItems = value;
+                DictionaryUtil.Add(QueryParameters, "MaxItems", value.ToString());
+            }
+        }
 
         public override ListUsersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

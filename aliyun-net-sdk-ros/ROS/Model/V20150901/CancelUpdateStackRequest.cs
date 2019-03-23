@@ -31,39 +31,39 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public CancelUpdateStackRequest()
             : base("ROS", "2015-09-01", "CancelUpdateStack")
         {
-			UriPattern = "/stacks/[StackName]/[StackId]/cancel";
-			Method = MethodType.PUT;
+            UriPattern = "/stacks/[StackName]/[StackId]/cancel";
+            Method = MethodType.PUT;
         }
 
-		private string stackId;
+        private string stackId;
 
-		private string stackName;
+        private string stackName;
 
-		public string StackId
-		{
-			get
-			{
-				return stackId;
-			}
-			set	
-			{
-				stackId = value;
-				DictionaryUtil.Add(PathParameters, "StackId", value);
-			}
-		}
+        public string StackId
+        {
+            get
+            {
+                return stackId;
+            }
+            set
+            {
+                stackId = value;
+                DictionaryUtil.Add(PathParameters, "StackId", value);
+            }
+        }
 
-		public string StackName
-		{
-			get
-			{
-				return stackName;
-			}
-			set	
-			{
-				stackName = value;
-				DictionaryUtil.Add(PathParameters, "StackName", value);
-			}
-		}
+        public string StackName
+        {
+            get
+            {
+                return stackName;
+            }
+            set
+            {
+                stackName = value;
+                DictionaryUtil.Add(PathParameters, "StackName", value);
+            }
+        }
 
         public override CancelUpdateStackResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

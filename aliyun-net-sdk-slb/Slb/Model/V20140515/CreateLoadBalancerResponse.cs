@@ -21,133 +21,133 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class CreateLoadBalancerResponse : AcsResponse
-	{
+    public class CreateLoadBalancerResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string loadBalancerId;
+        private string loadBalancerId;
 
-		private string resourceGroupId;
+        private string resourceGroupId;
 
-		private string address;
+        private string address;
 
-		private string loadBalancerName;
+        private string loadBalancerName;
 
-		private string vpcId;
+        private string vpcId;
 
-		private string vSwitchId;
+        private string vSwitchId;
 
-		private string networkType;
+        private string networkType;
 
-		private long? orderId;
+        private long? orderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-			}
-		}
+        public string LoadBalancerId
+        {
+            get
+            {
+                return loadBalancerId;
+            }
+            set
+            {
+                loadBalancerId = value;
+            }
+        }
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-			}
-		}
+        public string ResourceGroupId
+        {
+            get
+            {
+                return resourceGroupId;
+            }
+            set
+            {
+                resourceGroupId = value;
+            }
+        }
 
-		public string Address
-		{
-			get
-			{
-				return address;
-			}
-			set	
-			{
-				address = value;
-			}
-		}
+        public string Address
+        {
+            get
+            {
+                return address;
+            }
+            set
+            {
+                address = value;
+            }
+        }
 
-		public string LoadBalancerName
-		{
-			get
-			{
-				return loadBalancerName;
-			}
-			set	
-			{
-				loadBalancerName = value;
-			}
-		}
+        public string LoadBalancerName
+        {
+            get
+            {
+                return loadBalancerName;
+            }
+            set
+            {
+                loadBalancerName = value;
+            }
+        }
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-			}
-		}
+        public string VpcId
+        {
+            get
+            {
+                return vpcId;
+            }
+            set
+            {
+                vpcId = value;
+            }
+        }
 
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-			}
-		}
+        public string VSwitchId
+        {
+            get
+            {
+                return vSwitchId;
+            }
+            set
+            {
+                vSwitchId = value;
+            }
+        }
 
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-			}
-		}
+        public string NetworkType
+        {
+            get
+            {
+                return networkType;
+            }
+            set
+            {
+                networkType = value;
+            }
+        }
 
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-	}
+        public long? OrderId
+        {
+            get
+            {
+                return orderId;
+            }
+            set
+            {
+                orderId = value;
+            }
+        }
+    }
 }

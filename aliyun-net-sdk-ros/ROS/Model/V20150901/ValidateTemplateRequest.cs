@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public ValidateTemplateRequest()
             : base("ROS", "2015-09-01", "ValidateTemplate")
         {
-			UriPattern = "/validate";
-			Method = MethodType.POST;
+            UriPattern = "/validate";
+            Method = MethodType.POST;
         }
 
         public override ValidateTemplateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)

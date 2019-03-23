@@ -27,16 +27,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static RemoveUsersResponse Unmarshall(UnmarshallerContext context)
         {
-			RemoveUsersResponse removeUsersResponse = new RemoveUsersResponse();
+            RemoveUsersResponse removeUsersResponse = new RemoveUsersResponse();
 
-			removeUsersResponse.HttpResponse = context.HttpResponse;
-			removeUsersResponse.RequestId = context.StringValue("RemoveUsers.RequestId");
-			removeUsersResponse.Success = context.BooleanValue("RemoveUsers.Success");
-			removeUsersResponse.Code = context.StringValue("RemoveUsers.Code");
-			removeUsersResponse.Message = context.StringValue("RemoveUsers.Message");
-			removeUsersResponse.HttpStatusCode = context.IntegerValue("RemoveUsers.HttpStatusCode");
-        
-			return removeUsersResponse;
+            removeUsersResponse.HttpResponse = context.HttpResponse;
+            removeUsersResponse.RequestId = context.StringValue("RemoveUsers.RequestId");
+            removeUsersResponse.Success = context.BooleanValue("RemoveUsers.Success");
+            removeUsersResponse.Code = context.StringValue("RemoveUsers.Code");
+            removeUsersResponse.Message = context.StringValue("RemoveUsers.Message");
+            removeUsersResponse.HttpStatusCode = context.IntegerValue("RemoveUsers.HttpStatusCode");
+
+            return removeUsersResponse;
         }
     }
 }

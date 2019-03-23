@@ -33,163 +33,163 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string regionId;
+        private string regionId;
 
-		private string action;
+        private string action;
 
-		private bool? all;
+        private bool? all;
 
-		private List<string> resourceIds;
+        private List<string> resourceIds;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string resourceType;
+        private string resourceType;
 
-		private List<string> tagKeys;
+        private List<string> tagKeys;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public bool? All
-		{
-			get
-			{
-				return all;
-			}
-			set	
-			{
-				all = value;
-				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
-			}
-		}
+        public bool? All
+        {
+            get
+            {
+                return all;
+            }
+            set
+            {
+                all = value;
+                DictionaryUtil.Add(QueryParameters, "All", value.ToString());
+            }
+        }
 
-		public List<string> ResourceIds
-		{
-			get
-			{
-				return resourceIds;
-			}
+        public List<string> ResourceIds
+        {
+            get
+            {
+                return resourceIds;
+            }
 
-			set
-			{
-				resourceIds = value;
-				for (int i = 0; i < resourceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
-				}
-			}
-		}
+            set
+            {
+                resourceIds = value;
+                for (int i = 0; i < resourceIds.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "ResourceId." + (i + 1), resourceIds[i]);
+                }
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
+        public string ResourceType
+        {
+            get
+            {
+                return resourceType;
+            }
+            set
+            {
+                resourceType = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+            }
+        }
 
-		public List<string> TagKeys
-		{
-			get
-			{
-				return tagKeys;
-			}
+        public List<string> TagKeys
+        {
+            get
+            {
+                return tagKeys;
+            }
 
-			set
-			{
-				tagKeys = value;
-				for (int i = 0; i < tagKeys.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
-				}
-			}
-		}
+            set
+            {
+                tagKeys = value;
+                for (int i = 0; i < tagKeys.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "TagKey." + (i + 1), tagKeys[i]);
+                }
+            }
+        }
 
         public override UntagResourcesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

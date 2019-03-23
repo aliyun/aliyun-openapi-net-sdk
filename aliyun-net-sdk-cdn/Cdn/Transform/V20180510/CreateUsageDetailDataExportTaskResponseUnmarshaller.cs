@@ -28,15 +28,15 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static CreateUsageDetailDataExportTaskResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateUsageDetailDataExportTaskResponse createUsageDetailDataExportTaskResponse = new CreateUsageDetailDataExportTaskResponse();
+            CreateUsageDetailDataExportTaskResponse createUsageDetailDataExportTaskResponse = new CreateUsageDetailDataExportTaskResponse();
 
-			createUsageDetailDataExportTaskResponse.HttpResponse = context.HttpResponse;
-			createUsageDetailDataExportTaskResponse.RequestId = context.StringValue("CreateUsageDetailDataExportTask.RequestId");
-			createUsageDetailDataExportTaskResponse.StartTime = context.StringValue("CreateUsageDetailDataExportTask.StartTime");
-			createUsageDetailDataExportTaskResponse.EndTime = context.StringValue("CreateUsageDetailDataExportTask.EndTime");
-			createUsageDetailDataExportTaskResponse.TaskId = context.StringValue("CreateUsageDetailDataExportTask.TaskId");
-        
-			return createUsageDetailDataExportTaskResponse;
+            createUsageDetailDataExportTaskResponse.HttpResponse = context.HttpResponse;
+            createUsageDetailDataExportTaskResponse.RequestId = context.StringValue("CreateUsageDetailDataExportTask.RequestId");
+            createUsageDetailDataExportTaskResponse.StartTime = context.StringValue("CreateUsageDetailDataExportTask.StartTime");
+            createUsageDetailDataExportTaskResponse.EndTime = context.StringValue("CreateUsageDetailDataExportTask.EndTime");
+            createUsageDetailDataExportTaskResponse.TaskId = context.StringValue("CreateUsageDetailDataExportTask.TaskId");
+
+            return createUsageDetailDataExportTaskResponse;
         }
     }
 }

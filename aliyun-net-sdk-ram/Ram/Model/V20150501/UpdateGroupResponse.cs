@@ -22,95 +22,95 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class UpdateGroupResponse : AcsResponse
-	{
+    public class UpdateGroupResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private UpdateGroup_Group group;
+        private UpdateGroup_Group group;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public UpdateGroup_Group Group
-		{
-			get
-			{
-				return group;
-			}
-			set	
-			{
-				group = value;
-			}
-		}
+        public UpdateGroup_Group Group
+        {
+            get
+            {
+                return group;
+            }
+            set
+            {
+                group = value;
+            }
+        }
 
-		public class UpdateGroup_Group
-		{
+        public class UpdateGroup_Group
+        {
 
-			private string groupName;
+            private string groupName;
 
-			private string comments;
+            private string comments;
 
-			private string createDate;
+            private string createDate;
 
-			private string updateDate;
+            private string updateDate;
 
-			public string GroupName
-			{
-				get
-				{
-					return groupName;
-				}
-				set	
-				{
-					groupName = value;
-				}
-			}
+            public string GroupName
+            {
+                get
+                {
+                    return groupName;
+                }
+                set
+                {
+                    groupName = value;
+                }
+            }
 
-			public string Comments
-			{
-				get
-				{
-					return comments;
-				}
-				set	
-				{
-					comments = value;
-				}
-			}
+            public string Comments
+            {
+                get
+                {
+                    return comments;
+                }
+                set
+                {
+                    comments = value;
+                }
+            }
 
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
-				}
-			}
+            public string CreateDate
+            {
+                get
+                {
+                    return createDate;
+                }
+                set
+                {
+                    createDate = value;
+                }
+            }
 
-			public string UpdateDate
-			{
-				get
-				{
-					return updateDate;
-				}
-				set	
-				{
-					updateDate = value;
-				}
-			}
-		}
-	}
+            public string UpdateDate
+            {
+                get
+                {
+                    return updateDate;
+                }
+                set
+                {
+                    updateDate = value;
+                }
+            }
+        }
+    }
 }

@@ -34,155 +34,155 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string topLevelDomain;
+        private string topLevelDomain;
 
-		private int? sourcePort;
+        private int? sourcePort;
 
-		private string resourceGroupId;
+        private string resourceGroupId;
 
-		private string priorities;
+        private string priorities;
 
-		private string sources;
+        private string sources;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string domainName;
+        private string domainName;
 
-		private string action;
+        private string action;
 
-		private string sourceType;
+        private string sourceType;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
-			}
-		}
+        public string TopLevelDomain
+        {
+            get
+            {
+                return topLevelDomain;
+            }
+            set
+            {
+                topLevelDomain = value;
+                DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+            }
+        }
 
-		public int? SourcePort
-		{
-			get
-			{
-				return sourcePort;
-			}
-			set	
-			{
-				sourcePort = value;
-				DictionaryUtil.Add(QueryParameters, "SourcePort", value.ToString());
-			}
-		}
+        public int? SourcePort
+        {
+            get
+            {
+                return sourcePort;
+            }
+            set
+            {
+                sourcePort = value;
+                DictionaryUtil.Add(QueryParameters, "SourcePort", value.ToString());
+            }
+        }
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
+        public string ResourceGroupId
+        {
+            get
+            {
+                return resourceGroupId;
+            }
+            set
+            {
+                resourceGroupId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+            }
+        }
 
-		public string Priorities
-		{
-			get
-			{
-				return priorities;
-			}
-			set	
-			{
-				priorities = value;
-				DictionaryUtil.Add(QueryParameters, "Priorities", value);
-			}
-		}
+        public string Priorities
+        {
+            get
+            {
+                return priorities;
+            }
+            set
+            {
+                priorities = value;
+                DictionaryUtil.Add(QueryParameters, "Priorities", value);
+            }
+        }
 
-		public string Sources
-		{
-			get
-			{
-				return sources;
-			}
-			set	
-			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
-			}
-		}
+        public string Sources
+        {
+            get
+            {
+                return sources;
+            }
+            set
+            {
+                sources = value;
+                DictionaryUtil.Add(QueryParameters, "Sources", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string SourceType
-		{
-			get
-			{
-				return sourceType;
-			}
-			set	
-			{
-				sourceType = value;
-				DictionaryUtil.Add(QueryParameters, "SourceType", value);
-			}
-		}
+        public string SourceType
+        {
+            get
+            {
+                return sourceType;
+            }
+            set
+            {
+                sourceType = value;
+                DictionaryUtil.Add(QueryParameters, "SourceType", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override ModifyCdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

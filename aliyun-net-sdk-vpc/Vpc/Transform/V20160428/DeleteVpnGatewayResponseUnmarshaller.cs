@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DeleteVpnGatewayResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteVpnGatewayResponse deleteVpnGatewayResponse = new DeleteVpnGatewayResponse();
+            DeleteVpnGatewayResponse deleteVpnGatewayResponse = new DeleteVpnGatewayResponse();
 
-			deleteVpnGatewayResponse.HttpResponse = context.HttpResponse;
-			deleteVpnGatewayResponse.RequestId = context.StringValue("DeleteVpnGateway.RequestId");
-        
-			return deleteVpnGatewayResponse;
+            deleteVpnGatewayResponse.HttpResponse = context.HttpResponse;
+            deleteVpnGatewayResponse.RequestId = context.StringValue("DeleteVpnGateway.RequestId");
+
+            return deleteVpnGatewayResponse;
         }
     }
 }

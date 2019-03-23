@@ -21,99 +21,99 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeSecurityGroupReferencesResponse : AcsResponse
-	{
+    public class DescribeSecurityGroupReferencesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeSecurityGroupReferences_SecurityGroupReference> securityGroupReferences;
+        private List<DescribeSecurityGroupReferences_SecurityGroupReference> securityGroupReferences;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeSecurityGroupReferences_SecurityGroupReference> SecurityGroupReferences
-		{
-			get
-			{
-				return securityGroupReferences;
-			}
-			set	
-			{
-				securityGroupReferences = value;
-			}
-		}
+        public List<DescribeSecurityGroupReferences_SecurityGroupReference> SecurityGroupReferences
+        {
+            get
+            {
+                return securityGroupReferences;
+            }
+            set
+            {
+                securityGroupReferences = value;
+            }
+        }
 
-		public class DescribeSecurityGroupReferences_SecurityGroupReference
-		{
+        public class DescribeSecurityGroupReferences_SecurityGroupReference
+        {
 
-			private string securityGroupId;
+            private string securityGroupId;
 
-			private List<DescribeSecurityGroupReferences_ReferencingSecurityGroup> referencingSecurityGroups;
+            private List<DescribeSecurityGroupReferences_ReferencingSecurityGroup> referencingSecurityGroups;
 
-			public string SecurityGroupId
-			{
-				get
-				{
-					return securityGroupId;
-				}
-				set	
-				{
-					securityGroupId = value;
-				}
-			}
+            public string SecurityGroupId
+            {
+                get
+                {
+                    return securityGroupId;
+                }
+                set
+                {
+                    securityGroupId = value;
+                }
+            }
 
-			public List<DescribeSecurityGroupReferences_ReferencingSecurityGroup> ReferencingSecurityGroups
-			{
-				get
-				{
-					return referencingSecurityGroups;
-				}
-				set	
-				{
-					referencingSecurityGroups = value;
-				}
-			}
+            public List<DescribeSecurityGroupReferences_ReferencingSecurityGroup> ReferencingSecurityGroups
+            {
+                get
+                {
+                    return referencingSecurityGroups;
+                }
+                set
+                {
+                    referencingSecurityGroups = value;
+                }
+            }
 
-			public class DescribeSecurityGroupReferences_ReferencingSecurityGroup
-			{
+            public class DescribeSecurityGroupReferences_ReferencingSecurityGroup
+            {
 
-				private string aliUid;
+                private string aliUid;
 
-				private string securityGroupId;
+                private string securityGroupId;
 
-				public string AliUid
-				{
-					get
-					{
-						return aliUid;
-					}
-					set	
-					{
-						aliUid = value;
-					}
-				}
+                public string AliUid
+                {
+                    get
+                    {
+                        return aliUid;
+                    }
+                    set
+                    {
+                        aliUid = value;
+                    }
+                }
 
-				public string SecurityGroupId
-				{
-					get
-					{
-						return securityGroupId;
-					}
-					set	
-					{
-						securityGroupId = value;
-					}
-				}
-			}
-		}
-	}
+                public string SecurityGroupId
+                {
+                    get
+                    {
+                        return securityGroupId;
+                    }
+                    set
+                    {
+                        securityGroupId = value;
+                    }
+                }
+            }
+        }
+    }
 }

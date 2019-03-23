@@ -21,155 +21,155 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeImageSharePermissionResponse : AcsResponse
-	{
+    public class DescribeImageSharePermissionResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string regionId;
+        private string regionId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private string imageId;
+        private string imageId;
 
-		private List<DescribeImageSharePermission_ShareGroup> shareGroups;
+        private List<DescribeImageSharePermission_ShareGroup> shareGroups;
 
-		private List<DescribeImageSharePermission_Account> accounts;
+        private List<DescribeImageSharePermission_Account> accounts;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-			}
-		}
+        public string ImageId
+        {
+            get
+            {
+                return imageId;
+            }
+            set
+            {
+                imageId = value;
+            }
+        }
 
-		public List<DescribeImageSharePermission_ShareGroup> ShareGroups
-		{
-			get
-			{
-				return shareGroups;
-			}
-			set	
-			{
-				shareGroups = value;
-			}
-		}
+        public List<DescribeImageSharePermission_ShareGroup> ShareGroups
+        {
+            get
+            {
+                return shareGroups;
+            }
+            set
+            {
+                shareGroups = value;
+            }
+        }
 
-		public List<DescribeImageSharePermission_Account> Accounts
-		{
-			get
-			{
-				return accounts;
-			}
-			set	
-			{
-				accounts = value;
-			}
-		}
+        public List<DescribeImageSharePermission_Account> Accounts
+        {
+            get
+            {
+                return accounts;
+            }
+            set
+            {
+                accounts = value;
+            }
+        }
 
-		public class DescribeImageSharePermission_ShareGroup
-		{
+        public class DescribeImageSharePermission_ShareGroup
+        {
 
-			private string group;
+            private string group;
 
-			public string Group
-			{
-				get
-				{
-					return group;
-				}
-				set	
-				{
-					group = value;
-				}
-			}
-		}
+            public string Group
+            {
+                get
+                {
+                    return group;
+                }
+                set
+                {
+                    group = value;
+                }
+            }
+        }
 
-		public class DescribeImageSharePermission_Account
-		{
+        public class DescribeImageSharePermission_Account
+        {
 
-			private string aliyunId;
+            private string aliyunId;
 
-			public string AliyunId
-			{
-				get
-				{
-					return aliyunId;
-				}
-				set	
-				{
-					aliyunId = value;
-				}
-			}
-		}
-	}
+            public string AliyunId
+            {
+                get
+                {
+                    return aliyunId;
+                }
+                set
+                {
+                    aliyunId = value;
+                }
+            }
+        }
+    }
 }

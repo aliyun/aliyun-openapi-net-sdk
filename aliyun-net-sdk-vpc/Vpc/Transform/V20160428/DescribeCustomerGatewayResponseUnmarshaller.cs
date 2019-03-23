@@ -27,17 +27,17 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DescribeCustomerGatewayResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeCustomerGatewayResponse describeCustomerGatewayResponse = new DescribeCustomerGatewayResponse();
+            DescribeCustomerGatewayResponse describeCustomerGatewayResponse = new DescribeCustomerGatewayResponse();
 
-			describeCustomerGatewayResponse.HttpResponse = context.HttpResponse;
-			describeCustomerGatewayResponse.RequestId = context.StringValue("DescribeCustomerGateway.RequestId");
-			describeCustomerGatewayResponse.CustomerGatewayId = context.StringValue("DescribeCustomerGateway.CustomerGatewayId");
-			describeCustomerGatewayResponse.IpAddress = context.StringValue("DescribeCustomerGateway.IpAddress");
-			describeCustomerGatewayResponse.Name = context.StringValue("DescribeCustomerGateway.Name");
-			describeCustomerGatewayResponse.Description = context.StringValue("DescribeCustomerGateway.Description");
-			describeCustomerGatewayResponse.CreateTime = context.LongValue("DescribeCustomerGateway.CreateTime");
-        
-			return describeCustomerGatewayResponse;
+            describeCustomerGatewayResponse.HttpResponse = context.HttpResponse;
+            describeCustomerGatewayResponse.RequestId = context.StringValue("DescribeCustomerGateway.RequestId");
+            describeCustomerGatewayResponse.CustomerGatewayId = context.StringValue("DescribeCustomerGateway.CustomerGatewayId");
+            describeCustomerGatewayResponse.IpAddress = context.StringValue("DescribeCustomerGateway.IpAddress");
+            describeCustomerGatewayResponse.Name = context.StringValue("DescribeCustomerGateway.Name");
+            describeCustomerGatewayResponse.Description = context.StringValue("DescribeCustomerGateway.Description");
+            describeCustomerGatewayResponse.CreateTime = context.LongValue("DescribeCustomerGateway.CreateTime");
+
+            return describeCustomerGatewayResponse;
         }
     }
 }

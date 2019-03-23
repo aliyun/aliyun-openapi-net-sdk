@@ -33,200 +33,200 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
-		private string authKey;
+        private string authKey;
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string clientToken;
+        private string clientToken;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string bgpGroupId;
+        private string bgpGroupId;
 
-		private string description;
+        private string description;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private long? peerAsn;
+        private long? peerAsn;
 
-		private bool? isFakeAsn;
+        private bool? isFakeAsn;
 
-		private string regionId;
+        private string regionId;
 
-		private string name;
+        private string name;
 
-		private string action;
+        private string action;
 
-		public string AuthKey
-		{
-			get
-			{
-				return authKey;
-			}
-			set	
-			{
-				authKey = value;
-				DictionaryUtil.Add(QueryParameters, "AuthKey", value);
-			}
-		}
+        public string AuthKey
+        {
+            get
+            {
+                return authKey;
+            }
+            set
+            {
+                authKey = value;
+                DictionaryUtil.Add(QueryParameters, "AuthKey", value);
+            }
+        }
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
+        public string ClientToken
+        {
+            get
+            {
+                return clientToken;
+            }
+            set
+            {
+                clientToken = value;
+                DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string BgpGroupId
-		{
-			get
-			{
-				return bgpGroupId;
-			}
-			set	
-			{
-				bgpGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "BgpGroupId", value);
-			}
-		}
+        public string BgpGroupId
+        {
+            get
+            {
+                return bgpGroupId;
+            }
+            set
+            {
+                bgpGroupId = value;
+                DictionaryUtil.Add(QueryParameters, "BgpGroupId", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public long? PeerAsn
-		{
-			get
-			{
-				return peerAsn;
-			}
-			set	
-			{
-				peerAsn = value;
-				DictionaryUtil.Add(QueryParameters, "PeerAsn", value.ToString());
-			}
-		}
+        public long? PeerAsn
+        {
+            get
+            {
+                return peerAsn;
+            }
+            set
+            {
+                peerAsn = value;
+                DictionaryUtil.Add(QueryParameters, "PeerAsn", value.ToString());
+            }
+        }
 
-		public bool? IsFakeAsn
-		{
-			get
-			{
-				return isFakeAsn;
-			}
-			set	
-			{
-				isFakeAsn = value;
-				DictionaryUtil.Add(QueryParameters, "IsFakeAsn", value.ToString());
-			}
-		}
+        public bool? IsFakeAsn
+        {
+            get
+            {
+                return isFakeAsn;
+            }
+            set
+            {
+                isFakeAsn = value;
+                DictionaryUtil.Add(QueryParameters, "IsFakeAsn", value.ToString());
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
         public override ModifyBgpGroupAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

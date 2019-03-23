@@ -21,365 +21,365 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class ModifyVpnConnectionAttributeResponse : AcsResponse
-	{
+    public class ModifyVpnConnectionAttributeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string vpnConnectionId;
+        private string vpnConnectionId;
 
-		private string customerGatewayId;
+        private string customerGatewayId;
 
-		private string vpnGatewayId;
+        private string vpnGatewayId;
 
-		private string name;
+        private string name;
 
-		private string description;
+        private string description;
 
-		private string localSubnet;
+        private string localSubnet;
 
-		private string remoteSubnet;
+        private string remoteSubnet;
 
-		private long? createTime;
+        private long? createTime;
 
-		private bool? effectImmediately;
+        private bool? effectImmediately;
 
-		private ModifyVpnConnectionAttribute_IkeConfig ikeConfig;
+        private ModifyVpnConnectionAttribute_IkeConfig ikeConfig;
 
-		private ModifyVpnConnectionAttribute_IpsecConfig ipsecConfig;
+        private ModifyVpnConnectionAttribute_IpsecConfig ipsecConfig;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string VpnConnectionId
-		{
-			get
-			{
-				return vpnConnectionId;
-			}
-			set	
-			{
-				vpnConnectionId = value;
-			}
-		}
+        public string VpnConnectionId
+        {
+            get
+            {
+                return vpnConnectionId;
+            }
+            set
+            {
+                vpnConnectionId = value;
+            }
+        }
 
-		public string CustomerGatewayId
-		{
-			get
-			{
-				return customerGatewayId;
-			}
-			set	
-			{
-				customerGatewayId = value;
-			}
-		}
+        public string CustomerGatewayId
+        {
+            get
+            {
+                return customerGatewayId;
+            }
+            set
+            {
+                customerGatewayId = value;
+            }
+        }
 
-		public string VpnGatewayId
-		{
-			get
-			{
-				return vpnGatewayId;
-			}
-			set	
-			{
-				vpnGatewayId = value;
-			}
-		}
+        public string VpnGatewayId
+        {
+            get
+            {
+                return vpnGatewayId;
+            }
+            set
+            {
+                vpnGatewayId = value;
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+            }
+        }
 
-		public string LocalSubnet
-		{
-			get
-			{
-				return localSubnet;
-			}
-			set	
-			{
-				localSubnet = value;
-			}
-		}
+        public string LocalSubnet
+        {
+            get
+            {
+                return localSubnet;
+            }
+            set
+            {
+                localSubnet = value;
+            }
+        }
 
-		public string RemoteSubnet
-		{
-			get
-			{
-				return remoteSubnet;
-			}
-			set	
-			{
-				remoteSubnet = value;
-			}
-		}
+        public string RemoteSubnet
+        {
+            get
+            {
+                return remoteSubnet;
+            }
+            set
+            {
+                remoteSubnet = value;
+            }
+        }
 
-		public long? CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
+        public long? CreateTime
+        {
+            get
+            {
+                return createTime;
+            }
+            set
+            {
+                createTime = value;
+            }
+        }
 
-		public bool? EffectImmediately
-		{
-			get
-			{
-				return effectImmediately;
-			}
-			set	
-			{
-				effectImmediately = value;
-			}
-		}
+        public bool? EffectImmediately
+        {
+            get
+            {
+                return effectImmediately;
+            }
+            set
+            {
+                effectImmediately = value;
+            }
+        }
 
-		public ModifyVpnConnectionAttribute_IkeConfig IkeConfig
-		{
-			get
-			{
-				return ikeConfig;
-			}
-			set	
-			{
-				ikeConfig = value;
-			}
-		}
+        public ModifyVpnConnectionAttribute_IkeConfig IkeConfig
+        {
+            get
+            {
+                return ikeConfig;
+            }
+            set
+            {
+                ikeConfig = value;
+            }
+        }
 
-		public ModifyVpnConnectionAttribute_IpsecConfig IpsecConfig
-		{
-			get
-			{
-				return ipsecConfig;
-			}
-			set	
-			{
-				ipsecConfig = value;
-			}
-		}
+        public ModifyVpnConnectionAttribute_IpsecConfig IpsecConfig
+        {
+            get
+            {
+                return ipsecConfig;
+            }
+            set
+            {
+                ipsecConfig = value;
+            }
+        }
 
-		public class ModifyVpnConnectionAttribute_IkeConfig
-		{
+        public class ModifyVpnConnectionAttribute_IkeConfig
+        {
 
-			private string psk;
+            private string psk;
 
-			private string ikeVersion;
+            private string ikeVersion;
 
-			private string ikeMode;
+            private string ikeMode;
 
-			private string ikeEncAlg;
+            private string ikeEncAlg;
 
-			private string ikeAuthAlg;
+            private string ikeAuthAlg;
 
-			private string ikePfs;
+            private string ikePfs;
 
-			private long? ikeLifetime;
+            private long? ikeLifetime;
 
-			private string localId;
+            private string localId;
 
-			private string remoteId;
+            private string remoteId;
 
-			public string Psk
-			{
-				get
-				{
-					return psk;
-				}
-				set	
-				{
-					psk = value;
-				}
-			}
+            public string Psk
+            {
+                get
+                {
+                    return psk;
+                }
+                set
+                {
+                    psk = value;
+                }
+            }
 
-			public string IkeVersion
-			{
-				get
-				{
-					return ikeVersion;
-				}
-				set	
-				{
-					ikeVersion = value;
-				}
-			}
+            public string IkeVersion
+            {
+                get
+                {
+                    return ikeVersion;
+                }
+                set
+                {
+                    ikeVersion = value;
+                }
+            }
 
-			public string IkeMode
-			{
-				get
-				{
-					return ikeMode;
-				}
-				set	
-				{
-					ikeMode = value;
-				}
-			}
+            public string IkeMode
+            {
+                get
+                {
+                    return ikeMode;
+                }
+                set
+                {
+                    ikeMode = value;
+                }
+            }
 
-			public string IkeEncAlg
-			{
-				get
-				{
-					return ikeEncAlg;
-				}
-				set	
-				{
-					ikeEncAlg = value;
-				}
-			}
+            public string IkeEncAlg
+            {
+                get
+                {
+                    return ikeEncAlg;
+                }
+                set
+                {
+                    ikeEncAlg = value;
+                }
+            }
 
-			public string IkeAuthAlg
-			{
-				get
-				{
-					return ikeAuthAlg;
-				}
-				set	
-				{
-					ikeAuthAlg = value;
-				}
-			}
+            public string IkeAuthAlg
+            {
+                get
+                {
+                    return ikeAuthAlg;
+                }
+                set
+                {
+                    ikeAuthAlg = value;
+                }
+            }
 
-			public string IkePfs
-			{
-				get
-				{
-					return ikePfs;
-				}
-				set	
-				{
-					ikePfs = value;
-				}
-			}
+            public string IkePfs
+            {
+                get
+                {
+                    return ikePfs;
+                }
+                set
+                {
+                    ikePfs = value;
+                }
+            }
 
-			public long? IkeLifetime
-			{
-				get
-				{
-					return ikeLifetime;
-				}
-				set	
-				{
-					ikeLifetime = value;
-				}
-			}
+            public long? IkeLifetime
+            {
+                get
+                {
+                    return ikeLifetime;
+                }
+                set
+                {
+                    ikeLifetime = value;
+                }
+            }
 
-			public string LocalId
-			{
-				get
-				{
-					return localId;
-				}
-				set	
-				{
-					localId = value;
-				}
-			}
+            public string LocalId
+            {
+                get
+                {
+                    return localId;
+                }
+                set
+                {
+                    localId = value;
+                }
+            }
 
-			public string RemoteId
-			{
-				get
-				{
-					return remoteId;
-				}
-				set	
-				{
-					remoteId = value;
-				}
-			}
-		}
+            public string RemoteId
+            {
+                get
+                {
+                    return remoteId;
+                }
+                set
+                {
+                    remoteId = value;
+                }
+            }
+        }
 
-		public class ModifyVpnConnectionAttribute_IpsecConfig
-		{
+        public class ModifyVpnConnectionAttribute_IpsecConfig
+        {
 
-			private string ipsecEncAlg;
+            private string ipsecEncAlg;
 
-			private string ipsecAuthAlg;
+            private string ipsecAuthAlg;
 
-			private string ipsecPfs;
+            private string ipsecPfs;
 
-			private long? ipsecLifetime;
+            private long? ipsecLifetime;
 
-			public string IpsecEncAlg
-			{
-				get
-				{
-					return ipsecEncAlg;
-				}
-				set	
-				{
-					ipsecEncAlg = value;
-				}
-			}
+            public string IpsecEncAlg
+            {
+                get
+                {
+                    return ipsecEncAlg;
+                }
+                set
+                {
+                    ipsecEncAlg = value;
+                }
+            }
 
-			public string IpsecAuthAlg
-			{
-				get
-				{
-					return ipsecAuthAlg;
-				}
-				set	
-				{
-					ipsecAuthAlg = value;
-				}
-			}
+            public string IpsecAuthAlg
+            {
+                get
+                {
+                    return ipsecAuthAlg;
+                }
+                set
+                {
+                    ipsecAuthAlg = value;
+                }
+            }
 
-			public string IpsecPfs
-			{
-				get
-				{
-					return ipsecPfs;
-				}
-				set	
-				{
-					ipsecPfs = value;
-				}
-			}
+            public string IpsecPfs
+            {
+                get
+                {
+                    return ipsecPfs;
+                }
+                set
+                {
+                    ipsecPfs = value;
+                }
+            }
 
-			public long? IpsecLifetime
-			{
-				get
-				{
-					return ipsecLifetime;
-				}
-				set	
-				{
-					ipsecLifetime = value;
-				}
-			}
-		}
-	}
+            public long? IpsecLifetime
+            {
+                get
+                {
+                    return ipsecLifetime;
+                }
+                set
+                {
+                    ipsecLifetime = value;
+                }
+            }
+        }
+    }
 }

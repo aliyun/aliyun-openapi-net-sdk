@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ExportSnapshotResponse Unmarshall(UnmarshallerContext context)
         {
-			ExportSnapshotResponse exportSnapshotResponse = new ExportSnapshotResponse();
+            ExportSnapshotResponse exportSnapshotResponse = new ExportSnapshotResponse();
 
-			exportSnapshotResponse.HttpResponse = context.HttpResponse;
-			exportSnapshotResponse.RequestId = context.StringValue("ExportSnapshot.RequestId");
-			exportSnapshotResponse.TaskId = context.StringValue("ExportSnapshot.TaskId");
-        
-			return exportSnapshotResponse;
+            exportSnapshotResponse.HttpResponse = context.HttpResponse;
+            exportSnapshotResponse.RequestId = context.StringValue("ExportSnapshot.RequestId");
+            exportSnapshotResponse.TaskId = context.StringValue("ExportSnapshot.TaskId");
+
+            return exportSnapshotResponse;
         }
     }
 }

@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class ModifyRouterInterfaceSpecResponse : AcsResponse
-	{
+    public class ModifyRouterInterfaceSpecResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string spec;
+        private string spec;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Spec
-		{
-			get
-			{
-				return spec;
-			}
-			set	
-			{
-				spec = value;
-			}
-		}
-	}
+        public string Spec
+        {
+            get
+            {
+                return spec;
+            }
+            set
+            {
+                spec = value;
+            }
+        }
+    }
 }

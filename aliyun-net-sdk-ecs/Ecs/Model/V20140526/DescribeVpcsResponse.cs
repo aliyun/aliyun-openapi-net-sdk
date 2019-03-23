@@ -21,235 +21,235 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeVpcsResponse : AcsResponse
-	{
+    public class DescribeVpcsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeVpcs_Vpc> vpcs;
+        private List<DescribeVpcs_Vpc> vpcs;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeVpcs_Vpc> Vpcs
-		{
-			get
-			{
-				return vpcs;
-			}
-			set	
-			{
-				vpcs = value;
-			}
-		}
+        public List<DescribeVpcs_Vpc> Vpcs
+        {
+            get
+            {
+                return vpcs;
+            }
+            set
+            {
+                vpcs = value;
+            }
+        }
 
-		public class DescribeVpcs_Vpc
-		{
+        public class DescribeVpcs_Vpc
+        {
 
-			private string vpcId;
+            private string vpcId;
 
-			private string regionId;
+            private string regionId;
 
-			private string status;
+            private string status;
 
-			private string vpcName;
+            private string vpcName;
 
-			private string creationTime;
+            private string creationTime;
 
-			private string cidrBlock;
+            private string cidrBlock;
 
-			private string vRouterId;
+            private string vRouterId;
 
-			private string description;
+            private string description;
 
-			private bool? isDefault;
+            private bool? isDefault;
 
-			private List<string> vSwitchIds;
+            private List<string> vSwitchIds;
 
-			private List<string> userCidrs;
+            private List<string> userCidrs;
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
+            public string VpcId
+            {
+                get
+                {
+                    return vpcId;
+                }
+                set
+                {
+                    vpcId = value;
+                }
+            }
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string VpcName
-			{
-				get
-				{
-					return vpcName;
-				}
-				set	
-				{
-					vpcName = value;
-				}
-			}
+            public string VpcName
+            {
+                get
+                {
+                    return vpcName;
+                }
+                set
+                {
+                    vpcName = value;
+                }
+            }
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+            public string CreationTime
+            {
+                get
+                {
+                    return creationTime;
+                }
+                set
+                {
+                    creationTime = value;
+                }
+            }
 
-			public string CidrBlock
-			{
-				get
-				{
-					return cidrBlock;
-				}
-				set	
-				{
-					cidrBlock = value;
-				}
-			}
+            public string CidrBlock
+            {
+                get
+                {
+                    return cidrBlock;
+                }
+                set
+                {
+                    cidrBlock = value;
+                }
+            }
 
-			public string VRouterId
-			{
-				get
-				{
-					return vRouterId;
-				}
-				set	
-				{
-					vRouterId = value;
-				}
-			}
+            public string VRouterId
+            {
+                get
+                {
+                    return vRouterId;
+                }
+                set
+                {
+                    vRouterId = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public bool? IsDefault
-			{
-				get
-				{
-					return isDefault;
-				}
-				set	
-				{
-					isDefault = value;
-				}
-			}
+            public bool? IsDefault
+            {
+                get
+                {
+                    return isDefault;
+                }
+                set
+                {
+                    isDefault = value;
+                }
+            }
 
-			public List<string> VSwitchIds
-			{
-				get
-				{
-					return vSwitchIds;
-				}
-				set	
-				{
-					vSwitchIds = value;
-				}
-			}
+            public List<string> VSwitchIds
+            {
+                get
+                {
+                    return vSwitchIds;
+                }
+                set
+                {
+                    vSwitchIds = value;
+                }
+            }
 
-			public List<string> UserCidrs
-			{
-				get
-				{
-					return userCidrs;
-				}
-				set	
-				{
-					userCidrs = value;
-				}
-			}
-		}
-	}
+            public List<string> UserCidrs
+            {
+                get
+                {
+                    return userCidrs;
+                }
+                set
+                {
+                    userCidrs = value;
+                }
+            }
+        }
+    }
 }

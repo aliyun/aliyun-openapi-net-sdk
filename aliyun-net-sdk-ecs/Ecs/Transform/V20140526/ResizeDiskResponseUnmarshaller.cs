@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ResizeDiskResponse Unmarshall(UnmarshallerContext context)
         {
-			ResizeDiskResponse resizeDiskResponse = new ResizeDiskResponse();
+            ResizeDiskResponse resizeDiskResponse = new ResizeDiskResponse();
 
-			resizeDiskResponse.HttpResponse = context.HttpResponse;
-			resizeDiskResponse.RequestId = context.StringValue("ResizeDisk.RequestId");
-        
-			return resizeDiskResponse;
+            resizeDiskResponse.HttpResponse = context.HttpResponse;
+            resizeDiskResponse.RequestId = context.StringValue("ResizeDisk.RequestId");
+
+            return resizeDiskResponse;
         }
     }
 }

@@ -22,95 +22,95 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class CreateAccessKeyResponse : AcsResponse
-	{
+    public class CreateAccessKeyResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private CreateAccessKey_AccessKey accessKey;
+        private CreateAccessKey_AccessKey accessKey;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public CreateAccessKey_AccessKey AccessKey
-		{
-			get
-			{
-				return accessKey;
-			}
-			set	
-			{
-				accessKey = value;
-			}
-		}
+        public CreateAccessKey_AccessKey AccessKey
+        {
+            get
+            {
+                return accessKey;
+            }
+            set
+            {
+                accessKey = value;
+            }
+        }
 
-		public class CreateAccessKey_AccessKey
-		{
+        public class CreateAccessKey_AccessKey
+        {
 
-			private string accessKeyId;
+            private string accessKeyId;
 
-			private string accessKeySecret;
+            private string accessKeySecret;
 
-			private string status;
+            private string status;
 
-			private string createDate;
+            private string createDate;
 
-			public string AccessKeyId
-			{
-				get
-				{
-					return accessKeyId;
-				}
-				set	
-				{
-					accessKeyId = value;
-				}
-			}
+            public string AccessKeyId
+            {
+                get
+                {
+                    return accessKeyId;
+                }
+                set
+                {
+                    accessKeyId = value;
+                }
+            }
 
-			public string AccessKeySecret
-			{
-				get
-				{
-					return accessKeySecret;
-				}
-				set	
-				{
-					accessKeySecret = value;
-				}
-			}
+            public string AccessKeySecret
+            {
+                get
+                {
+                    return accessKeySecret;
+                }
+                set
+                {
+                    accessKeySecret = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
-				}
-			}
-		}
-	}
+            public string CreateDate
+            {
+                get
+                {
+                    return createDate;
+                }
+                set
+                {
+                    createDate = value;
+                }
+            }
+        }
+    }
 }

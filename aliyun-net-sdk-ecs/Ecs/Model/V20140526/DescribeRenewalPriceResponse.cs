@@ -21,279 +21,279 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeRenewalPriceResponse : AcsResponse
-	{
+    public class DescribeRenewalPriceResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private DescribeRenewalPrice_PriceInfo priceInfo;
+        private DescribeRenewalPrice_PriceInfo priceInfo;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public DescribeRenewalPrice_PriceInfo PriceInfo
-		{
-			get
-			{
-				return priceInfo;
-			}
-			set	
-			{
-				priceInfo = value;
-			}
-		}
+        public DescribeRenewalPrice_PriceInfo PriceInfo
+        {
+            get
+            {
+                return priceInfo;
+            }
+            set
+            {
+                priceInfo = value;
+            }
+        }
 
-		public class DescribeRenewalPrice_PriceInfo
-		{
+        public class DescribeRenewalPrice_PriceInfo
+        {
 
-			private List<DescribeRenewalPrice_Rule> rules;
+            private List<DescribeRenewalPrice_Rule> rules;
 
-			private DescribeRenewalPrice_Price price;
+            private DescribeRenewalPrice_Price price;
 
-			public List<DescribeRenewalPrice_Rule> Rules
-			{
-				get
-				{
-					return rules;
-				}
-				set	
-				{
-					rules = value;
-				}
-			}
+            public List<DescribeRenewalPrice_Rule> Rules
+            {
+                get
+                {
+                    return rules;
+                }
+                set
+                {
+                    rules = value;
+                }
+            }
 
-			public DescribeRenewalPrice_Price Price
-			{
-				get
-				{
-					return price;
-				}
-				set	
-				{
-					price = value;
-				}
-			}
+            public DescribeRenewalPrice_Price Price
+            {
+                get
+                {
+                    return price;
+                }
+                set
+                {
+                    price = value;
+                }
+            }
 
-			public class DescribeRenewalPrice_Rule
-			{
+            public class DescribeRenewalPrice_Rule
+            {
 
-				private long? ruleId;
+                private long? ruleId;
 
-				private string description;
+                private string description;
 
-				public long? RuleId
-				{
-					get
-					{
-						return ruleId;
-					}
-					set	
-					{
-						ruleId = value;
-					}
-				}
+                public long? RuleId
+                {
+                    get
+                    {
+                        return ruleId;
+                    }
+                    set
+                    {
+                        ruleId = value;
+                    }
+                }
 
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-			}
+                public string Description
+                {
+                    get
+                    {
+                        return description;
+                    }
+                    set
+                    {
+                        description = value;
+                    }
+                }
+            }
 
-			public class DescribeRenewalPrice_Price
-			{
+            public class DescribeRenewalPrice_Price
+            {
 
-				private float? originalPrice;
+                private float? originalPrice;
 
-				private float? discountPrice;
+                private float? discountPrice;
 
-				private float? tradePrice;
+                private float? tradePrice;
 
-				private string currency;
+                private string currency;
 
-				private List<DescribeRenewalPrice_ResourcePriceModel> detailInfos;
+                private List<DescribeRenewalPrice_ResourcePriceModel> detailInfos;
 
-				public float? OriginalPrice
-				{
-					get
-					{
-						return originalPrice;
-					}
-					set	
-					{
-						originalPrice = value;
-					}
-				}
+                public float? OriginalPrice
+                {
+                    get
+                    {
+                        return originalPrice;
+                    }
+                    set
+                    {
+                        originalPrice = value;
+                    }
+                }
 
-				public float? DiscountPrice
-				{
-					get
-					{
-						return discountPrice;
-					}
-					set	
-					{
-						discountPrice = value;
-					}
-				}
+                public float? DiscountPrice
+                {
+                    get
+                    {
+                        return discountPrice;
+                    }
+                    set
+                    {
+                        discountPrice = value;
+                    }
+                }
 
-				public float? TradePrice
-				{
-					get
-					{
-						return tradePrice;
-					}
-					set	
-					{
-						tradePrice = value;
-					}
-				}
+                public float? TradePrice
+                {
+                    get
+                    {
+                        return tradePrice;
+                    }
+                    set
+                    {
+                        tradePrice = value;
+                    }
+                }
 
-				public string Currency
-				{
-					get
-					{
-						return currency;
-					}
-					set	
-					{
-						currency = value;
-					}
-				}
+                public string Currency
+                {
+                    get
+                    {
+                        return currency;
+                    }
+                    set
+                    {
+                        currency = value;
+                    }
+                }
 
-				public List<DescribeRenewalPrice_ResourcePriceModel> DetailInfos
-				{
-					get
-					{
-						return detailInfos;
-					}
-					set	
-					{
-						detailInfos = value;
-					}
-				}
+                public List<DescribeRenewalPrice_ResourcePriceModel> DetailInfos
+                {
+                    get
+                    {
+                        return detailInfos;
+                    }
+                    set
+                    {
+                        detailInfos = value;
+                    }
+                }
 
-				public class DescribeRenewalPrice_ResourcePriceModel
-				{
+                public class DescribeRenewalPrice_ResourcePriceModel
+                {
 
-					private string resource;
+                    private string resource;
 
-					private float? originalPrice;
+                    private float? originalPrice;
 
-					private float? discountPrice;
+                    private float? discountPrice;
 
-					private float? tradePrice;
+                    private float? tradePrice;
 
-					private List<DescribeRenewalPrice_Rule1> subRules;
+                    private List<DescribeRenewalPrice_Rule1> subRules;
 
-					public string Resource
-					{
-						get
-						{
-							return resource;
-						}
-						set	
-						{
-							resource = value;
-						}
-					}
+                    public string Resource
+                    {
+                        get
+                        {
+                            return resource;
+                        }
+                        set
+                        {
+                            resource = value;
+                        }
+                    }
 
-					public float? OriginalPrice
-					{
-						get
-						{
-							return originalPrice;
-						}
-						set	
-						{
-							originalPrice = value;
-						}
-					}
+                    public float? OriginalPrice
+                    {
+                        get
+                        {
+                            return originalPrice;
+                        }
+                        set
+                        {
+                            originalPrice = value;
+                        }
+                    }
 
-					public float? DiscountPrice
-					{
-						get
-						{
-							return discountPrice;
-						}
-						set	
-						{
-							discountPrice = value;
-						}
-					}
+                    public float? DiscountPrice
+                    {
+                        get
+                        {
+                            return discountPrice;
+                        }
+                        set
+                        {
+                            discountPrice = value;
+                        }
+                    }
 
-					public float? TradePrice
-					{
-						get
-						{
-							return tradePrice;
-						}
-						set	
-						{
-							tradePrice = value;
-						}
-					}
+                    public float? TradePrice
+                    {
+                        get
+                        {
+                            return tradePrice;
+                        }
+                        set
+                        {
+                            tradePrice = value;
+                        }
+                    }
 
-					public List<DescribeRenewalPrice_Rule1> SubRules
-					{
-						get
-						{
-							return subRules;
-						}
-						set	
-						{
-							subRules = value;
-						}
-					}
+                    public List<DescribeRenewalPrice_Rule1> SubRules
+                    {
+                        get
+                        {
+                            return subRules;
+                        }
+                        set
+                        {
+                            subRules = value;
+                        }
+                    }
 
-					public class DescribeRenewalPrice_Rule1
-					{
+                    public class DescribeRenewalPrice_Rule1
+                    {
 
-						private long? ruleId;
+                        private long? ruleId;
 
-						private string description;
+                        private string description;
 
-						public long? RuleId
-						{
-							get
-							{
-								return ruleId;
-							}
-							set	
-							{
-								ruleId = value;
-							}
-						}
+                        public long? RuleId
+                        {
+                            get
+                            {
+                                return ruleId;
+                            }
+                            set
+                            {
+                                ruleId = value;
+                            }
+                        }
 
-						public string Description
-						{
-							get
-							{
-								return description;
-							}
-							set	
-							{
-								description = value;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+                        public string Description
+                        {
+                            get
+                            {
+                                return description;
+                            }
+                            set
+                            {
+                                description = value;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

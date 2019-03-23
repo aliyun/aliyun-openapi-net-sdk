@@ -27,11 +27,11 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
     {
         public static AbandonStackResponse Unmarshall(UnmarshallerContext context)
         {
-			AbandonStackResponse abandonStackResponse = new AbandonStackResponse();
+            AbandonStackResponse abandonStackResponse = new AbandonStackResponse();
 
-			abandonStackResponse.HttpResponse = context.HttpResponse;
-        
-			return abandonStackResponse;
+            abandonStackResponse.HttpResponse = context.HttpResponse;
+
+            return abandonStackResponse;
         }
     }
 }

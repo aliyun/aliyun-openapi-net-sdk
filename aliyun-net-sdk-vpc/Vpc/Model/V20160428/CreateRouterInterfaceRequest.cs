@@ -33,395 +33,395 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
-		private string accessPointId;
+        private string accessPointId;
 
-		private string oppositeRouterId;
+        private string oppositeRouterId;
 
-		private string oppositeAccessPointId;
+        private string oppositeAccessPointId;
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string role;
+        private string role;
 
-		private string clientToken;
+        private string clientToken;
 
-		private string healthCheckTargetIp;
+        private string healthCheckTargetIp;
 
-		private string description;
+        private string description;
 
-		private string spec;
+        private string spec;
 
-		private string regionId;
+        private string regionId;
 
-		private string action;
+        private string action;
 
-		private string oppositeInterfaceId;
+        private string oppositeInterfaceId;
 
-		private string instanceChargeType;
+        private string instanceChargeType;
 
-		private int? period;
+        private int? period;
 
-		private bool? autoPay;
+        private bool? autoPay;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string oppositeRegionId;
+        private string oppositeRegionId;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string oppositeInterfaceOwnerId;
+        private string oppositeInterfaceOwnerId;
 
-		private string routerType;
+        private string routerType;
 
-		private string healthCheckSourceIp;
+        private string healthCheckSourceIp;
 
-		private string routerId;
+        private string routerId;
 
-		private string oppositeRouterType;
+        private string oppositeRouterType;
 
-		private string name;
+        private string name;
 
-		private string pricingCycle;
+        private string pricingCycle;
 
-		public string AccessPointId
-		{
-			get
-			{
-				return accessPointId;
-			}
-			set	
-			{
-				accessPointId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessPointId", value);
-			}
-		}
+        public string AccessPointId
+        {
+            get
+            {
+                return accessPointId;
+            }
+            set
+            {
+                accessPointId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessPointId", value);
+            }
+        }
 
-		public string OppositeRouterId
-		{
-			get
-			{
-				return oppositeRouterId;
-			}
-			set	
-			{
-				oppositeRouterId = value;
-				DictionaryUtil.Add(QueryParameters, "OppositeRouterId", value);
-			}
-		}
+        public string OppositeRouterId
+        {
+            get
+            {
+                return oppositeRouterId;
+            }
+            set
+            {
+                oppositeRouterId = value;
+                DictionaryUtil.Add(QueryParameters, "OppositeRouterId", value);
+            }
+        }
 
-		public string OppositeAccessPointId
-		{
-			get
-			{
-				return oppositeAccessPointId;
-			}
-			set	
-			{
-				oppositeAccessPointId = value;
-				DictionaryUtil.Add(QueryParameters, "OppositeAccessPointId", value);
-			}
-		}
+        public string OppositeAccessPointId
+        {
+            get
+            {
+                return oppositeAccessPointId;
+            }
+            set
+            {
+                oppositeAccessPointId = value;
+                DictionaryUtil.Add(QueryParameters, "OppositeAccessPointId", value);
+            }
+        }
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string Role
-		{
-			get
-			{
-				return role;
-			}
-			set	
-			{
-				role = value;
-				DictionaryUtil.Add(QueryParameters, "Role", value);
-			}
-		}
+        public string Role
+        {
+            get
+            {
+                return role;
+            }
+            set
+            {
+                role = value;
+                DictionaryUtil.Add(QueryParameters, "Role", value);
+            }
+        }
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
+        public string ClientToken
+        {
+            get
+            {
+                return clientToken;
+            }
+            set
+            {
+                clientToken = value;
+                DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+            }
+        }
 
-		public string HealthCheckTargetIp
-		{
-			get
-			{
-				return healthCheckTargetIp;
-			}
-			set	
-			{
-				healthCheckTargetIp = value;
-				DictionaryUtil.Add(QueryParameters, "HealthCheckTargetIp", value);
-			}
-		}
+        public string HealthCheckTargetIp
+        {
+            get
+            {
+                return healthCheckTargetIp;
+            }
+            set
+            {
+                healthCheckTargetIp = value;
+                DictionaryUtil.Add(QueryParameters, "HealthCheckTargetIp", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string Spec
-		{
-			get
-			{
-				return spec;
-			}
-			set	
-			{
-				spec = value;
-				DictionaryUtil.Add(QueryParameters, "Spec", value);
-			}
-		}
+        public string Spec
+        {
+            get
+            {
+                return spec;
+            }
+            set
+            {
+                spec = value;
+                DictionaryUtil.Add(QueryParameters, "Spec", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string OppositeInterfaceId
-		{
-			get
-			{
-				return oppositeInterfaceId;
-			}
-			set	
-			{
-				oppositeInterfaceId = value;
-				DictionaryUtil.Add(QueryParameters, "OppositeInterfaceId", value);
-			}
-		}
+        public string OppositeInterfaceId
+        {
+            get
+            {
+                return oppositeInterfaceId;
+            }
+            set
+            {
+                oppositeInterfaceId = value;
+                DictionaryUtil.Add(QueryParameters, "OppositeInterfaceId", value);
+            }
+        }
 
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
-			}
-		}
+        public string InstanceChargeType
+        {
+            get
+            {
+                return instanceChargeType;
+            }
+            set
+            {
+                instanceChargeType = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+            }
+        }
 
-		public int? Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
-			}
-		}
+        public int? Period
+        {
+            get
+            {
+                return period;
+            }
+            set
+            {
+                period = value;
+                DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+            }
+        }
 
-		public bool? AutoPay
-		{
-			get
-			{
-				return autoPay;
-			}
-			set	
-			{
-				autoPay = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
-			}
-		}
+        public bool? AutoPay
+        {
+            get
+            {
+                return autoPay;
+            }
+            set
+            {
+                autoPay = value;
+                DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string OppositeRegionId
-		{
-			get
-			{
-				return oppositeRegionId;
-			}
-			set	
-			{
-				oppositeRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "OppositeRegionId", value);
-			}
-		}
+        public string OppositeRegionId
+        {
+            get
+            {
+                return oppositeRegionId;
+            }
+            set
+            {
+                oppositeRegionId = value;
+                DictionaryUtil.Add(QueryParameters, "OppositeRegionId", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string OppositeInterfaceOwnerId
-		{
-			get
-			{
-				return oppositeInterfaceOwnerId;
-			}
-			set	
-			{
-				oppositeInterfaceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "OppositeInterfaceOwnerId", value);
-			}
-		}
+        public string OppositeInterfaceOwnerId
+        {
+            get
+            {
+                return oppositeInterfaceOwnerId;
+            }
+            set
+            {
+                oppositeInterfaceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "OppositeInterfaceOwnerId", value);
+            }
+        }
 
-		public string RouterType
-		{
-			get
-			{
-				return routerType;
-			}
-			set	
-			{
-				routerType = value;
-				DictionaryUtil.Add(QueryParameters, "RouterType", value);
-			}
-		}
+        public string RouterType
+        {
+            get
+            {
+                return routerType;
+            }
+            set
+            {
+                routerType = value;
+                DictionaryUtil.Add(QueryParameters, "RouterType", value);
+            }
+        }
 
-		public string HealthCheckSourceIp
-		{
-			get
-			{
-				return healthCheckSourceIp;
-			}
-			set	
-			{
-				healthCheckSourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "HealthCheckSourceIp", value);
-			}
-		}
+        public string HealthCheckSourceIp
+        {
+            get
+            {
+                return healthCheckSourceIp;
+            }
+            set
+            {
+                healthCheckSourceIp = value;
+                DictionaryUtil.Add(QueryParameters, "HealthCheckSourceIp", value);
+            }
+        }
 
-		public string RouterId
-		{
-			get
-			{
-				return routerId;
-			}
-			set	
-			{
-				routerId = value;
-				DictionaryUtil.Add(QueryParameters, "RouterId", value);
-			}
-		}
+        public string RouterId
+        {
+            get
+            {
+                return routerId;
+            }
+            set
+            {
+                routerId = value;
+                DictionaryUtil.Add(QueryParameters, "RouterId", value);
+            }
+        }
 
-		public string OppositeRouterType
-		{
-			get
-			{
-				return oppositeRouterType;
-			}
-			set	
-			{
-				oppositeRouterType = value;
-				DictionaryUtil.Add(QueryParameters, "OppositeRouterType", value);
-			}
-		}
+        public string OppositeRouterType
+        {
+            get
+            {
+                return oppositeRouterType;
+            }
+            set
+            {
+                oppositeRouterType = value;
+                DictionaryUtil.Add(QueryParameters, "OppositeRouterType", value);
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public string PricingCycle
-		{
-			get
-			{
-				return pricingCycle;
-			}
-			set	
-			{
-				pricingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
-			}
-		}
+        public string PricingCycle
+        {
+            get
+            {
+                return pricingCycle;
+            }
+            set
+            {
+                pricingCycle = value;
+                DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
+            }
+        }
 
         public override CreateRouterInterfaceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

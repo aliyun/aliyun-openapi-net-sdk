@@ -32,53 +32,53 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public DetachPolicyFromUserRequest()
             : base("Ram", "2015-05-01", "DetachPolicyFromUser", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string policyType;
+        private string policyType;
 
-		private string policyName;
+        private string policyName;
 
-		private string userName;
+        private string userName;
 
-		public string PolicyType
-		{
-			get
-			{
-				return policyType;
-			}
-			set	
-			{
-				policyType = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyType", value);
-			}
-		}
+        public string PolicyType
+        {
+            get
+            {
+                return policyType;
+            }
+            set
+            {
+                policyType = value;
+                DictionaryUtil.Add(QueryParameters, "PolicyType", value);
+            }
+        }
 
-		public string PolicyName
-		{
-			get
-			{
-				return policyName;
-			}
-			set	
-			{
-				policyName = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyName", value);
-			}
-		}
+        public string PolicyName
+        {
+            get
+            {
+                return policyName;
+            }
+            set
+            {
+                policyName = value;
+                DictionaryUtil.Add(QueryParameters, "PolicyName", value);
+            }
+        }
 
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
-			}
-		}
+        public string UserName
+        {
+            get
+            {
+                return userName;
+            }
+            set
+            {
+                userName = value;
+                DictionaryUtil.Add(QueryParameters, "UserName", value);
+            }
+        }
 
         public override DetachPolicyFromUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

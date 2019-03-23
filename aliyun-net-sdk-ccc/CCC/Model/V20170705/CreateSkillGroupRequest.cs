@@ -33,122 +33,122 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private List<int?> skillLevels;
+        private List<int?> skillLevels;
 
-		private string instanceId;
+        private string instanceId;
 
-		private List<string> outboundPhoneNumberIds;
+        private List<string> outboundPhoneNumberIds;
 
-		private string name;
+        private string name;
 
-		private string description;
+        private string description;
 
-		private List<string> userIds;
+        private List<string> userIds;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public List<int?> SkillLevels
-		{
-			get
-			{
-				return skillLevels;
-			}
+        public List<int?> SkillLevels
+        {
+            get
+            {
+                return skillLevels;
+            }
 
-			set
-			{
-				skillLevels = value;
-				for (int i = 0; i < skillLevels.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SkillLevel." + (i + 1) , skillLevels[i]);
-				}
-			}
-		}
+            set
+            {
+                skillLevels = value;
+                for (int i = 0; i < skillLevels.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "SkillLevel." + (i + 1), skillLevels[i]);
+                }
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public List<string> OutboundPhoneNumberIds
-		{
-			get
-			{
-				return outboundPhoneNumberIds;
-			}
+        public List<string> OutboundPhoneNumberIds
+        {
+            get
+            {
+                return outboundPhoneNumberIds;
+            }
 
-			set
-			{
-				outboundPhoneNumberIds = value;
-				for (int i = 0; i < outboundPhoneNumberIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"OutboundPhoneNumberId." + (i + 1) , outboundPhoneNumberIds[i]);
-				}
-			}
-		}
+            set
+            {
+                outboundPhoneNumberIds = value;
+                for (int i = 0; i < outboundPhoneNumberIds.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "OutboundPhoneNumberId." + (i + 1), outboundPhoneNumberIds[i]);
+                }
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public List<string> UserIds
-		{
-			get
-			{
-				return userIds;
-			}
+        public List<string> UserIds
+        {
+            get
+            {
+                return userIds;
+            }
 
-			set
-			{
-				userIds = value;
-				for (int i = 0; i < userIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"UserId." + (i + 1) , userIds[i]);
-				}
-			}
-		}
+            set
+            {
+                userIds = value;
+                for (int i = 0; i < userIds.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "UserId." + (i + 1), userIds[i]);
+                }
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override CreateSkillGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

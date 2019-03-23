@@ -33,80 +33,80 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string contactFlowId;
+        private string contactFlowId;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string usage;
+        private string usage;
 
-		private string phoneNumber;
+        private string phoneNumber;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string ContactFlowId
-		{
-			get
-			{
-				return contactFlowId;
-			}
-			set	
-			{
-				contactFlowId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactFlowId", value);
-			}
-		}
+        public string ContactFlowId
+        {
+            get
+            {
+                return contactFlowId;
+            }
+            set
+            {
+                contactFlowId = value;
+                DictionaryUtil.Add(QueryParameters, "ContactFlowId", value);
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string Usage
-		{
-			get
-			{
-				return usage;
-			}
-			set	
-			{
-				usage = value;
-				DictionaryUtil.Add(QueryParameters, "Usage", value);
-			}
-		}
+        public string Usage
+        {
+            get
+            {
+                return usage;
+            }
+            set
+            {
+                usage = value;
+                DictionaryUtil.Add(QueryParameters, "Usage", value);
+            }
+        }
 
-		public string PhoneNumber
-		{
-			get
-			{
-				return phoneNumber;
-			}
-			set	
-			{
-				phoneNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
-			}
-		}
+        public string PhoneNumber
+        {
+            get
+            {
+                return phoneNumber;
+            }
+            set
+            {
+                phoneNumber = value;
+                DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override AddPhoneNumberResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

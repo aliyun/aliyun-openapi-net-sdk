@@ -28,31 +28,32 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeDomainTrafficDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainTrafficDataResponse describeDomainTrafficDataResponse = new DescribeDomainTrafficDataResponse();
+            DescribeDomainTrafficDataResponse describeDomainTrafficDataResponse = new DescribeDomainTrafficDataResponse();
 
-			describeDomainTrafficDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainTrafficDataResponse.RequestId = context.StringValue("DescribeDomainTrafficData.RequestId");
-			describeDomainTrafficDataResponse.DomainName = context.StringValue("DescribeDomainTrafficData.DomainName");
-			describeDomainTrafficDataResponse.StartTime = context.StringValue("DescribeDomainTrafficData.StartTime");
-			describeDomainTrafficDataResponse.EndTime = context.StringValue("DescribeDomainTrafficData.EndTime");
-			describeDomainTrafficDataResponse.DataInterval = context.StringValue("DescribeDomainTrafficData.DataInterval");
+            describeDomainTrafficDataResponse.HttpResponse = context.HttpResponse;
+            describeDomainTrafficDataResponse.RequestId = context.StringValue("DescribeDomainTrafficData.RequestId");
+            describeDomainTrafficDataResponse.DomainName = context.StringValue("DescribeDomainTrafficData.DomainName");
+            describeDomainTrafficDataResponse.StartTime = context.StringValue("DescribeDomainTrafficData.StartTime");
+            describeDomainTrafficDataResponse.EndTime = context.StringValue("DescribeDomainTrafficData.EndTime");
+            describeDomainTrafficDataResponse.DataInterval = context.StringValue("DescribeDomainTrafficData.DataInterval");
 
-			List<DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule> describeDomainTrafficDataResponse_trafficDataPerInterval = new List<DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDomainTrafficData.TrafficDataPerInterval.Length"); i++) {
-				DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule dataModule = new DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].Value");
-				dataModule.DomesticValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].DomesticValue");
-				dataModule.OverseasValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].OverseasValue");
-				dataModule.HttpsValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsValue");
-				dataModule.HttpsDomesticValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsDomesticValue");
-				dataModule.HttpsOverseasValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsOverseasValue");
+            List<DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule> describeDomainTrafficDataResponse_trafficDataPerInterval = new List<DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule>();
+            for (int i = 0; i < context.Length("DescribeDomainTrafficData.TrafficDataPerInterval.Length"); i++)
+            {
+                DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule dataModule = new DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule();
+                dataModule.TimeStamp = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval[" + i + "].TimeStamp");
+                dataModule._Value = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval[" + i + "].Value");
+                dataModule.DomesticValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval[" + i + "].DomesticValue");
+                dataModule.OverseasValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval[" + i + "].OverseasValue");
+                dataModule.HttpsValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval[" + i + "].HttpsValue");
+                dataModule.HttpsDomesticValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval[" + i + "].HttpsDomesticValue");
+                dataModule.HttpsOverseasValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval[" + i + "].HttpsOverseasValue");
 
-				describeDomainTrafficDataResponse_trafficDataPerInterval.Add(dataModule);
-			}
-			describeDomainTrafficDataResponse.TrafficDataPerInterval = describeDomainTrafficDataResponse_trafficDataPerInterval;
-        
-			return describeDomainTrafficDataResponse;
+                describeDomainTrafficDataResponse_trafficDataPerInterval.Add(dataModule);
+            }
+            describeDomainTrafficDataResponse.TrafficDataPerInterval = describeDomainTrafficDataResponse_trafficDataPerInterval;
+
+            return describeDomainTrafficDataResponse;
         }
     }
 }

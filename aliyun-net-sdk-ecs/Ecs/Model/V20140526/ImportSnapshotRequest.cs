@@ -33,140 +33,140 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string snapshotName;
+        private string snapshotName;
 
-		private string ossObject;
+        private string ossObject;
 
-		private string regionId;
+        private string regionId;
 
-		private string action;
+        private string action;
 
-		private string ossBucket;
+        private string ossBucket;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string roleName;
+        private string roleName;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string SnapshotName
-		{
-			get
-			{
-				return snapshotName;
-			}
-			set	
-			{
-				snapshotName = value;
-				DictionaryUtil.Add(QueryParameters, "SnapshotName", value);
-			}
-		}
+        public string SnapshotName
+        {
+            get
+            {
+                return snapshotName;
+            }
+            set
+            {
+                snapshotName = value;
+                DictionaryUtil.Add(QueryParameters, "SnapshotName", value);
+            }
+        }
 
-		public string OssObject
-		{
-			get
-			{
-				return ossObject;
-			}
-			set	
-			{
-				ossObject = value;
-				DictionaryUtil.Add(QueryParameters, "OssObject", value);
-			}
-		}
+        public string OssObject
+        {
+            get
+            {
+                return ossObject;
+            }
+            set
+            {
+                ossObject = value;
+                DictionaryUtil.Add(QueryParameters, "OssObject", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string OssBucket
-		{
-			get
-			{
-				return ossBucket;
-			}
-			set	
-			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
-			}
-		}
+        public string OssBucket
+        {
+            get
+            {
+                return ossBucket;
+            }
+            set
+            {
+                ossBucket = value;
+                DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string RoleName
-		{
-			get
-			{
-				return roleName;
-			}
-			set	
-			{
-				roleName = value;
-				DictionaryUtil.Add(QueryParameters, "RoleName", value);
-			}
-		}
+        public string RoleName
+        {
+            get
+            {
+                return roleName;
+            }
+            set
+            {
+                roleName = value;
+                DictionaryUtil.Add(QueryParameters, "RoleName", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override ImportSnapshotResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

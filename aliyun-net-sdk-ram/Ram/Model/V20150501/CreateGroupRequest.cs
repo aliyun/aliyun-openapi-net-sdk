@@ -32,38 +32,38 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public CreateGroupRequest()
             : base("Ram", "2015-05-01", "CreateGroup", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string comments;
+        private string comments;
 
-		private string groupName;
+        private string groupName;
 
-		public string Comments
-		{
-			get
-			{
-				return comments;
-			}
-			set	
-			{
-				comments = value;
-				DictionaryUtil.Add(QueryParameters, "Comments", value);
-			}
-		}
+        public string Comments
+        {
+            get
+            {
+                return comments;
+            }
+            set
+            {
+                comments = value;
+                DictionaryUtil.Add(QueryParameters, "Comments", value);
+            }
+        }
 
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
+        public string GroupName
+        {
+            get
+            {
+                return groupName;
+            }
+            set
+            {
+                groupName = value;
+                DictionaryUtil.Add(QueryParameters, "GroupName", value);
+            }
+        }
 
         public override CreateGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

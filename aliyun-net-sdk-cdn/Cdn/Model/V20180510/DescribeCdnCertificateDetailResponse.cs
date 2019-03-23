@@ -22,77 +22,77 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeCdnCertificateDetailResponse : AcsResponse
-	{
+    public class DescribeCdnCertificateDetailResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string cert;
+        private string cert;
 
-		private string key;
+        private string key;
 
-		private long? certId;
+        private long? certId;
 
-		private string certName;
+        private string certName;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string Cert
-		{
-			get
-			{
-				return cert;
-			}
-			set	
-			{
-				cert = value;
-			}
-		}
+        public string Cert
+        {
+            get
+            {
+                return cert;
+            }
+            set
+            {
+                cert = value;
+            }
+        }
 
-		public string Key
-		{
-			get
-			{
-				return key;
-			}
-			set	
-			{
-				key = value;
-			}
-		}
+        public string Key
+        {
+            get
+            {
+                return key;
+            }
+            set
+            {
+                key = value;
+            }
+        }
 
-		public long? CertId
-		{
-			get
-			{
-				return certId;
-			}
-			set	
-			{
-				certId = value;
-			}
-		}
+        public long? CertId
+        {
+            get
+            {
+                return certId;
+            }
+            set
+            {
+                certId = value;
+            }
+        }
 
-		public string CertName
-		{
-			get
-			{
-				return certName;
-			}
-			set	
-			{
-				certName = value;
-			}
-		}
-	}
+        public string CertName
+        {
+            get
+            {
+                return certName;
+            }
+            set
+            {
+                certName = value;
+            }
+        }
+    }
 }

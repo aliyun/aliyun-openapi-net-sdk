@@ -27,34 +27,35 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeVSwitchesResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeVSwitchesResponse describeVSwitchesResponse = new DescribeVSwitchesResponse();
+            DescribeVSwitchesResponse describeVSwitchesResponse = new DescribeVSwitchesResponse();
 
-			describeVSwitchesResponse.HttpResponse = context.HttpResponse;
-			describeVSwitchesResponse.RequestId = context.StringValue("DescribeVSwitches.RequestId");
-			describeVSwitchesResponse.TotalCount = context.IntegerValue("DescribeVSwitches.TotalCount");
-			describeVSwitchesResponse.PageNumber = context.IntegerValue("DescribeVSwitches.PageNumber");
-			describeVSwitchesResponse.PageSize = context.IntegerValue("DescribeVSwitches.PageSize");
+            describeVSwitchesResponse.HttpResponse = context.HttpResponse;
+            describeVSwitchesResponse.RequestId = context.StringValue("DescribeVSwitches.RequestId");
+            describeVSwitchesResponse.TotalCount = context.IntegerValue("DescribeVSwitches.TotalCount");
+            describeVSwitchesResponse.PageNumber = context.IntegerValue("DescribeVSwitches.PageNumber");
+            describeVSwitchesResponse.PageSize = context.IntegerValue("DescribeVSwitches.PageSize");
 
-			List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch> describeVSwitchesResponse_vSwitches = new List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch>();
-			for (int i = 0; i < context.Length("DescribeVSwitches.VSwitches.Length"); i++) {
-				DescribeVSwitchesResponse.DescribeVSwitches_VSwitch vSwitch = new DescribeVSwitchesResponse.DescribeVSwitches_VSwitch();
-				vSwitch.VSwitchId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].VSwitchId");
-				vSwitch.VpcId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].VpcId");
-				vSwitch.Status = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Status");
-				vSwitch.CidrBlock = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].CidrBlock");
-				vSwitch.ZoneId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].ZoneId");
-				vSwitch.AvailableIpAddressCount = context.LongValue("DescribeVSwitches.VSwitches["+ i +"].AvailableIpAddressCount");
-				vSwitch.Description = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Description");
-				vSwitch.VSwitchName = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].VSwitchName");
-				vSwitch.CreationTime = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].CreationTime");
-				vSwitch.IsDefault = context.BooleanValue("DescribeVSwitches.VSwitches["+ i +"].IsDefault");
-				vSwitch.ResourceGroupId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].ResourceGroupId");
+            List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch> describeVSwitchesResponse_vSwitches = new List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch>();
+            for (int i = 0; i < context.Length("DescribeVSwitches.VSwitches.Length"); i++)
+            {
+                DescribeVSwitchesResponse.DescribeVSwitches_VSwitch vSwitch = new DescribeVSwitchesResponse.DescribeVSwitches_VSwitch();
+                vSwitch.VSwitchId = context.StringValue("DescribeVSwitches.VSwitches[" + i + "].VSwitchId");
+                vSwitch.VpcId = context.StringValue("DescribeVSwitches.VSwitches[" + i + "].VpcId");
+                vSwitch.Status = context.StringValue("DescribeVSwitches.VSwitches[" + i + "].Status");
+                vSwitch.CidrBlock = context.StringValue("DescribeVSwitches.VSwitches[" + i + "].CidrBlock");
+                vSwitch.ZoneId = context.StringValue("DescribeVSwitches.VSwitches[" + i + "].ZoneId");
+                vSwitch.AvailableIpAddressCount = context.LongValue("DescribeVSwitches.VSwitches[" + i + "].AvailableIpAddressCount");
+                vSwitch.Description = context.StringValue("DescribeVSwitches.VSwitches[" + i + "].Description");
+                vSwitch.VSwitchName = context.StringValue("DescribeVSwitches.VSwitches[" + i + "].VSwitchName");
+                vSwitch.CreationTime = context.StringValue("DescribeVSwitches.VSwitches[" + i + "].CreationTime");
+                vSwitch.IsDefault = context.BooleanValue("DescribeVSwitches.VSwitches[" + i + "].IsDefault");
+                vSwitch.ResourceGroupId = context.StringValue("DescribeVSwitches.VSwitches[" + i + "].ResourceGroupId");
 
-				describeVSwitchesResponse_vSwitches.Add(vSwitch);
-			}
-			describeVSwitchesResponse.VSwitches = describeVSwitchesResponse_vSwitches;
-        
-			return describeVSwitchesResponse;
+                describeVSwitchesResponse_vSwitches.Add(vSwitch);
+            }
+            describeVSwitchesResponse.VSwitches = describeVSwitchesResponse_vSwitches;
+
+            return describeVSwitchesResponse;
         }
     }
 }

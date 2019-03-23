@@ -28,33 +28,34 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeDomainSlowRatioResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainSlowRatioResponse describeDomainSlowRatioResponse = new DescribeDomainSlowRatioResponse();
+            DescribeDomainSlowRatioResponse describeDomainSlowRatioResponse = new DescribeDomainSlowRatioResponse();
 
-			describeDomainSlowRatioResponse.HttpResponse = context.HttpResponse;
-			describeDomainSlowRatioResponse.EndTime = context.StringValue("DescribeDomainSlowRatio.EndTime");
-			describeDomainSlowRatioResponse.DataInterval = context.IntegerValue("DescribeDomainSlowRatio.DataInterval");
-			describeDomainSlowRatioResponse.PageNumber = context.IntegerValue("DescribeDomainSlowRatio.PageNumber");
-			describeDomainSlowRatioResponse.PageSize = context.IntegerValue("DescribeDomainSlowRatio.PageSize");
-			describeDomainSlowRatioResponse.TotalCount = context.IntegerValue("DescribeDomainSlowRatio.TotalCount");
-			describeDomainSlowRatioResponse.StartTime = context.StringValue("DescribeDomainSlowRatio.StartTime");
+            describeDomainSlowRatioResponse.HttpResponse = context.HttpResponse;
+            describeDomainSlowRatioResponse.EndTime = context.StringValue("DescribeDomainSlowRatio.EndTime");
+            describeDomainSlowRatioResponse.DataInterval = context.IntegerValue("DescribeDomainSlowRatio.DataInterval");
+            describeDomainSlowRatioResponse.PageNumber = context.IntegerValue("DescribeDomainSlowRatio.PageNumber");
+            describeDomainSlowRatioResponse.PageSize = context.IntegerValue("DescribeDomainSlowRatio.PageSize");
+            describeDomainSlowRatioResponse.TotalCount = context.IntegerValue("DescribeDomainSlowRatio.TotalCount");
+            describeDomainSlowRatioResponse.StartTime = context.StringValue("DescribeDomainSlowRatio.StartTime");
 
-			List<DescribeDomainSlowRatioResponse.DescribeDomainSlowRatio_SlowRatioData> describeDomainSlowRatioResponse_slowRatioDataPerInterval = new List<DescribeDomainSlowRatioResponse.DescribeDomainSlowRatio_SlowRatioData>();
-			for (int i = 0; i < context.Length("DescribeDomainSlowRatio.SlowRatioDataPerInterval.Length"); i++) {
-				DescribeDomainSlowRatioResponse.DescribeDomainSlowRatio_SlowRatioData slowRatioData = new DescribeDomainSlowRatioResponse.DescribeDomainSlowRatio_SlowRatioData();
-				slowRatioData.TotalUsers = context.IntegerValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].TotalUsers");
-				slowRatioData.SlowUsers = context.IntegerValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].SlowUsers");
-				slowRatioData.SlowRatio = context.FloatValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].SlowRatio");
-				slowRatioData.RegionNameZh = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].RegionNameZh");
-				slowRatioData.RegionNameEn = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].RegionNameEn");
-				slowRatioData.IspNameZh = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].IspNameZh");
-				slowRatioData.IspNameEn = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].IspNameEn");
-				slowRatioData.Time = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].Time");
+            List<DescribeDomainSlowRatioResponse.DescribeDomainSlowRatio_SlowRatioData> describeDomainSlowRatioResponse_slowRatioDataPerInterval = new List<DescribeDomainSlowRatioResponse.DescribeDomainSlowRatio_SlowRatioData>();
+            for (int i = 0; i < context.Length("DescribeDomainSlowRatio.SlowRatioDataPerInterval.Length"); i++)
+            {
+                DescribeDomainSlowRatioResponse.DescribeDomainSlowRatio_SlowRatioData slowRatioData = new DescribeDomainSlowRatioResponse.DescribeDomainSlowRatio_SlowRatioData();
+                slowRatioData.TotalUsers = context.IntegerValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval[" + i + "].TotalUsers");
+                slowRatioData.SlowUsers = context.IntegerValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval[" + i + "].SlowUsers");
+                slowRatioData.SlowRatio = context.FloatValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval[" + i + "].SlowRatio");
+                slowRatioData.RegionNameZh = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval[" + i + "].RegionNameZh");
+                slowRatioData.RegionNameEn = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval[" + i + "].RegionNameEn");
+                slowRatioData.IspNameZh = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval[" + i + "].IspNameZh");
+                slowRatioData.IspNameEn = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval[" + i + "].IspNameEn");
+                slowRatioData.Time = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval[" + i + "].Time");
 
-				describeDomainSlowRatioResponse_slowRatioDataPerInterval.Add(slowRatioData);
-			}
-			describeDomainSlowRatioResponse.SlowRatioDataPerInterval = describeDomainSlowRatioResponse_slowRatioDataPerInterval;
-        
-			return describeDomainSlowRatioResponse;
+                describeDomainSlowRatioResponse_slowRatioDataPerInterval.Add(slowRatioData);
+            }
+            describeDomainSlowRatioResponse.SlowRatioDataPerInterval = describeDomainSlowRatioResponse_slowRatioDataPerInterval;
+
+            return describeDomainSlowRatioResponse;
         }
     }
 }

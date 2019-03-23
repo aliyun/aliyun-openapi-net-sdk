@@ -34,95 +34,95 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string pageType;
+        private string pageType;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string domainName;
+        private string domainName;
 
-		private string customPageUrl;
+        private string customPageUrl;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string PageType
-		{
-			get
-			{
-				return pageType;
-			}
-			set	
-			{
-				pageType = value;
-				DictionaryUtil.Add(QueryParameters, "PageType", value);
-			}
-		}
+        public string PageType
+        {
+            get
+            {
+                return pageType;
+            }
+            set
+            {
+                pageType = value;
+                DictionaryUtil.Add(QueryParameters, "PageType", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string CustomPageUrl
-		{
-			get
-			{
-				return customPageUrl;
-			}
-			set	
-			{
-				customPageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "CustomPageUrl", value);
-			}
-		}
+        public string CustomPageUrl
+        {
+            get
+            {
+                return customPageUrl;
+            }
+            set
+            {
+                customPageUrl = value;
+                DictionaryUtil.Add(QueryParameters, "CustomPageUrl", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override SetErrorPageConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

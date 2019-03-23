@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class RefreshTokenResponse : AcsResponse
-	{
+    public class RefreshTokenResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? success;
+        private bool? success;
 
-		private string code;
+        private string code;
 
-		private string message;
+        private string message;
 
-		private int? httpStatusCode;
+        private int? httpStatusCode;
 
-		private RefreshToken_Token token;
+        private RefreshToken_Token token;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+        public int? HttpStatusCode
+        {
+            get
+            {
+                return httpStatusCode;
+            }
+            set
+            {
+                httpStatusCode = value;
+            }
+        }
 
-		public RefreshToken_Token Token
-		{
-			get
-			{
-				return token;
-			}
-			set	
-			{
-				token = value;
-			}
-		}
+        public RefreshToken_Token Token
+        {
+            get
+            {
+                return token;
+            }
+            set
+            {
+                token = value;
+            }
+        }
 
-		public class RefreshToken_Token
-		{
+        public class RefreshToken_Token
+        {
 
-			private string signature;
+            private string signature;
 
-			private string signData;
+            private string signData;
 
-			public string Signature
-			{
-				get
-				{
-					return signature;
-				}
-				set	
-				{
-					signature = value;
-				}
-			}
+            public string Signature
+            {
+                get
+                {
+                    return signature;
+                }
+                set
+                {
+                    signature = value;
+                }
+            }
 
-			public string SignData
-			{
-				get
-				{
-					return signData;
-				}
-				set	
-				{
-					signData = value;
-				}
-			}
-		}
-	}
+            public string SignData
+            {
+                get
+                {
+                    return signData;
+                }
+                set
+                {
+                    signData = value;
+                }
+            }
+        }
+    }
 }

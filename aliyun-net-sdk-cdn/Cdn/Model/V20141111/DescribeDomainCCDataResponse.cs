@@ -22,123 +22,123 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainCCDataResponse : AcsResponse
-	{
+    public class DescribeDomainCCDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string dataInterval;
+        private string dataInterval;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private List<DescribeDomainCCData_CCDatas> cCDataList;
+        private List<DescribeDomainCCData_CCDatas> cCDataList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
+        public string DataInterval
+        {
+            get
+            {
+                return dataInterval;
+            }
+            set
+            {
+                dataInterval = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public List<DescribeDomainCCData_CCDatas> CCDataList
-		{
-			get
-			{
-				return cCDataList;
-			}
-			set	
-			{
-				cCDataList = value;
-			}
-		}
+        public List<DescribeDomainCCData_CCDatas> CCDataList
+        {
+            get
+            {
+                return cCDataList;
+            }
+            set
+            {
+                cCDataList = value;
+            }
+        }
 
-		public class DescribeDomainCCData_CCDatas
-		{
+        public class DescribeDomainCCData_CCDatas
+        {
 
-			private string timeStamp;
+            private string timeStamp;
 
-			private string count;
+            private string count;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
 
-			public string Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
-			}
-		}
-	}
+            public string Count
+            {
+                get
+                {
+                    return count;
+                }
+                set
+                {
+                    count = value;
+                }
+            }
+        }
+    }
 }

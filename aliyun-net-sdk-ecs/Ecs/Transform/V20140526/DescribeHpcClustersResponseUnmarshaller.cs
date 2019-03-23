@@ -27,26 +27,27 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeHpcClustersResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeHpcClustersResponse describeHpcClustersResponse = new DescribeHpcClustersResponse();
+            DescribeHpcClustersResponse describeHpcClustersResponse = new DescribeHpcClustersResponse();
 
-			describeHpcClustersResponse.HttpResponse = context.HttpResponse;
-			describeHpcClustersResponse.RequestId = context.StringValue("DescribeHpcClusters.RequestId");
-			describeHpcClustersResponse.TotalCount = context.IntegerValue("DescribeHpcClusters.TotalCount");
-			describeHpcClustersResponse.PageNumber = context.IntegerValue("DescribeHpcClusters.PageNumber");
-			describeHpcClustersResponse.PageSize = context.IntegerValue("DescribeHpcClusters.PageSize");
+            describeHpcClustersResponse.HttpResponse = context.HttpResponse;
+            describeHpcClustersResponse.RequestId = context.StringValue("DescribeHpcClusters.RequestId");
+            describeHpcClustersResponse.TotalCount = context.IntegerValue("DescribeHpcClusters.TotalCount");
+            describeHpcClustersResponse.PageNumber = context.IntegerValue("DescribeHpcClusters.PageNumber");
+            describeHpcClustersResponse.PageSize = context.IntegerValue("DescribeHpcClusters.PageSize");
 
-			List<DescribeHpcClustersResponse.DescribeHpcClusters_HpcCluster> describeHpcClustersResponse_hpcClusters = new List<DescribeHpcClustersResponse.DescribeHpcClusters_HpcCluster>();
-			for (int i = 0; i < context.Length("DescribeHpcClusters.HpcClusters.Length"); i++) {
-				DescribeHpcClustersResponse.DescribeHpcClusters_HpcCluster hpcCluster = new DescribeHpcClustersResponse.DescribeHpcClusters_HpcCluster();
-				hpcCluster.HpcClusterId = context.StringValue("DescribeHpcClusters.HpcClusters["+ i +"].HpcClusterId");
-				hpcCluster.Name = context.StringValue("DescribeHpcClusters.HpcClusters["+ i +"].Name");
-				hpcCluster.Description = context.StringValue("DescribeHpcClusters.HpcClusters["+ i +"].Description");
+            List<DescribeHpcClustersResponse.DescribeHpcClusters_HpcCluster> describeHpcClustersResponse_hpcClusters = new List<DescribeHpcClustersResponse.DescribeHpcClusters_HpcCluster>();
+            for (int i = 0; i < context.Length("DescribeHpcClusters.HpcClusters.Length"); i++)
+            {
+                DescribeHpcClustersResponse.DescribeHpcClusters_HpcCluster hpcCluster = new DescribeHpcClustersResponse.DescribeHpcClusters_HpcCluster();
+                hpcCluster.HpcClusterId = context.StringValue("DescribeHpcClusters.HpcClusters[" + i + "].HpcClusterId");
+                hpcCluster.Name = context.StringValue("DescribeHpcClusters.HpcClusters[" + i + "].Name");
+                hpcCluster.Description = context.StringValue("DescribeHpcClusters.HpcClusters[" + i + "].Description");
 
-				describeHpcClustersResponse_hpcClusters.Add(hpcCluster);
-			}
-			describeHpcClustersResponse.HpcClusters = describeHpcClustersResponse_hpcClusters;
-        
-			return describeHpcClustersResponse;
+                describeHpcClustersResponse_hpcClusters.Add(hpcCluster);
+            }
+            describeHpcClustersResponse.HpcClusters = describeHpcClustersResponse_hpcClusters;
+
+            return describeHpcClustersResponse;
         }
     }
 }

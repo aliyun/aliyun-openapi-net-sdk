@@ -46,7 +46,7 @@ namespace Aliyun.Acs.Core.Auth
                 else
                 {
                     stringBuilder.Append("%").Append(
-                        string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int) c));
+                        string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)c));
                 }
             }
             return stringBuilder.ToString();

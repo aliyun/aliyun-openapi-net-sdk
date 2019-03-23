@@ -22,123 +22,123 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class ListGroupsResponse : AcsResponse
-	{
+    public class ListGroupsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? isTruncated;
+        private bool? isTruncated;
 
-		private string marker;
+        private string marker;
 
-		private List<ListGroups_Group> groups;
+        private List<ListGroups_Group> groups;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? IsTruncated
-		{
-			get
-			{
-				return isTruncated;
-			}
-			set	
-			{
-				isTruncated = value;
-			}
-		}
+        public bool? IsTruncated
+        {
+            get
+            {
+                return isTruncated;
+            }
+            set
+            {
+                isTruncated = value;
+            }
+        }
 
-		public string Marker
-		{
-			get
-			{
-				return marker;
-			}
-			set	
-			{
-				marker = value;
-			}
-		}
+        public string Marker
+        {
+            get
+            {
+                return marker;
+            }
+            set
+            {
+                marker = value;
+            }
+        }
 
-		public List<ListGroups_Group> Groups
-		{
-			get
-			{
-				return groups;
-			}
-			set	
-			{
-				groups = value;
-			}
-		}
+        public List<ListGroups_Group> Groups
+        {
+            get
+            {
+                return groups;
+            }
+            set
+            {
+                groups = value;
+            }
+        }
 
-		public class ListGroups_Group
-		{
+        public class ListGroups_Group
+        {
 
-			private string groupName;
+            private string groupName;
 
-			private string comments;
+            private string comments;
 
-			private string createDate;
+            private string createDate;
 
-			private string updateDate;
+            private string updateDate;
 
-			public string GroupName
-			{
-				get
-				{
-					return groupName;
-				}
-				set	
-				{
-					groupName = value;
-				}
-			}
+            public string GroupName
+            {
+                get
+                {
+                    return groupName;
+                }
+                set
+                {
+                    groupName = value;
+                }
+            }
 
-			public string Comments
-			{
-				get
-				{
-					return comments;
-				}
-				set	
-				{
-					comments = value;
-				}
-			}
+            public string Comments
+            {
+                get
+                {
+                    return comments;
+                }
+                set
+                {
+                    comments = value;
+                }
+            }
 
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
-				}
-			}
+            public string CreateDate
+            {
+                get
+                {
+                    return createDate;
+                }
+                set
+                {
+                    createDate = value;
+                }
+            }
 
-			public string UpdateDate
-			{
-				get
-				{
-					return updateDate;
-				}
-				set	
-				{
-					updateDate = value;
-				}
-			}
-		}
-	}
+            public string UpdateDate
+            {
+                get
+                {
+                    return updateDate;
+                }
+                set
+                {
+                    updateDate = value;
+                }
+            }
+        }
+    }
 }

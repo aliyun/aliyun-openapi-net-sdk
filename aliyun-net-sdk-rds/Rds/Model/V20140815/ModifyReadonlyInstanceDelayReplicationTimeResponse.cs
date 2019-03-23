@@ -21,63 +21,63 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class ModifyReadonlyInstanceDelayReplicationTimeResponse : AcsResponse
-	{
+    public class ModifyReadonlyInstanceDelayReplicationTimeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string readSQLReplicationTime;
+        private string readSQLReplicationTime;
 
-		private string taskId;
+        private string taskId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+            }
+        }
 
-		public string ReadSQLReplicationTime
-		{
-			get
-			{
-				return readSQLReplicationTime;
-			}
-			set	
-			{
-				readSQLReplicationTime = value;
-			}
-		}
+        public string ReadSQLReplicationTime
+        {
+            get
+            {
+                return readSQLReplicationTime;
+            }
+            set
+            {
+                readSQLReplicationTime = value;
+            }
+        }
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
-	}
+        public string TaskId
+        {
+            get
+            {
+                return taskId;
+            }
+            set
+            {
+                taskId = value;
+            }
+        }
+    }
 }

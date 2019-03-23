@@ -27,16 +27,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static EipFillProductResponse Unmarshall(UnmarshallerContext context)
         {
-			EipFillProductResponse eipFillProductResponse = new EipFillProductResponse();
+            EipFillProductResponse eipFillProductResponse = new EipFillProductResponse();
 
-			eipFillProductResponse.HttpResponse = context.HttpResponse;
-			eipFillProductResponse.RequestId = context.StringValue("EipFillProduct.RequestId");
-			eipFillProductResponse.Data = context.StringValue("EipFillProduct.Data");
-			eipFillProductResponse.Code = context.StringValue("EipFillProduct.Code");
-			eipFillProductResponse.Success = context.BooleanValue("EipFillProduct.Success");
-			eipFillProductResponse.Message = context.StringValue("EipFillProduct.Message");
-        
-			return eipFillProductResponse;
+            eipFillProductResponse.HttpResponse = context.HttpResponse;
+            eipFillProductResponse.RequestId = context.StringValue("EipFillProduct.RequestId");
+            eipFillProductResponse.Data = context.StringValue("EipFillProduct.Data");
+            eipFillProductResponse.Code = context.StringValue("EipFillProduct.Code");
+            eipFillProductResponse.Success = context.BooleanValue("EipFillProduct.Success");
+            eipFillProductResponse.Message = context.StringValue("EipFillProduct.Message");
+
+            return eipFillProductResponse;
         }
     }
 }

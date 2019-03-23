@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeHealthStatusResponse : AcsResponse
-	{
+    public class DescribeHealthStatusResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeHealthStatus_BackendServer> backendServers;
+        private List<DescribeHealthStatus_BackendServer> backendServers;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeHealthStatus_BackendServer> BackendServers
-		{
-			get
-			{
-				return backendServers;
-			}
-			set	
-			{
-				backendServers = value;
-			}
-		}
+        public List<DescribeHealthStatus_BackendServer> BackendServers
+        {
+            get
+            {
+                return backendServers;
+            }
+            set
+            {
+                backendServers = value;
+            }
+        }
 
-		public class DescribeHealthStatus_BackendServer
-		{
+        public class DescribeHealthStatus_BackendServer
+        {
 
-			private int? listenerPort;
+            private int? listenerPort;
 
-			private string serverId;
+            private string serverId;
 
-			private int? port;
+            private int? port;
 
-			private string serverHealthStatus;
+            private string serverHealthStatus;
 
-			private string serverIp;
+            private string serverIp;
 
-			private string type;
+            private string type;
 
-			public int? ListenerPort
-			{
-				get
-				{
-					return listenerPort;
-				}
-				set	
-				{
-					listenerPort = value;
-				}
-			}
+            public int? ListenerPort
+            {
+                get
+                {
+                    return listenerPort;
+                }
+                set
+                {
+                    listenerPort = value;
+                }
+            }
 
-			public string ServerId
-			{
-				get
-				{
-					return serverId;
-				}
-				set	
-				{
-					serverId = value;
-				}
-			}
+            public string ServerId
+            {
+                get
+                {
+                    return serverId;
+                }
+                set
+                {
+                    serverId = value;
+                }
+            }
 
-			public int? Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
+            public int? Port
+            {
+                get
+                {
+                    return port;
+                }
+                set
+                {
+                    port = value;
+                }
+            }
 
-			public string ServerHealthStatus
-			{
-				get
-				{
-					return serverHealthStatus;
-				}
-				set	
-				{
-					serverHealthStatus = value;
-				}
-			}
+            public string ServerHealthStatus
+            {
+                get
+                {
+                    return serverHealthStatus;
+                }
+                set
+                {
+                    serverHealthStatus = value;
+                }
+            }
 
-			public string ServerIp
-			{
-				get
-				{
-					return serverIp;
-				}
-				set	
-				{
-					serverIp = value;
-				}
-			}
+            public string ServerIp
+            {
+                get
+                {
+                    return serverIp;
+                }
+                set
+                {
+                    serverIp = value;
+                }
+            }
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-		}
-	}
+            public string Type
+            {
+                get
+                {
+                    return type;
+                }
+                set
+                {
+                    type = value;
+                }
+            }
+        }
+    }
 }

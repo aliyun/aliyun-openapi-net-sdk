@@ -22,295 +22,295 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeCdnDomainDetailResponse : AcsResponse
-	{
+    public class DescribeCdnDomainDetailResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private DescribeCdnDomainDetail_GetDomainDetailModel getDomainDetailModel;
+        private DescribeCdnDomainDetail_GetDomainDetailModel getDomainDetailModel;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public DescribeCdnDomainDetail_GetDomainDetailModel GetDomainDetailModel
-		{
-			get
-			{
-				return getDomainDetailModel;
-			}
-			set	
-			{
-				getDomainDetailModel = value;
-			}
-		}
+        public DescribeCdnDomainDetail_GetDomainDetailModel GetDomainDetailModel
+        {
+            get
+            {
+                return getDomainDetailModel;
+            }
+            set
+            {
+                getDomainDetailModel = value;
+            }
+        }
 
-		public class DescribeCdnDomainDetail_GetDomainDetailModel
-		{
+        public class DescribeCdnDomainDetail_GetDomainDetailModel
+        {
 
-			private string domainName;
+            private string domainName;
 
-			private string cname;
+            private string cname;
 
-			private string httpsCname;
+            private string httpsCname;
 
-			private string domainStatus;
+            private string domainStatus;
 
-			private string cdnType;
+            private string cdnType;
 
-			private string serverCertificateStatus;
+            private string serverCertificateStatus;
 
-			private string gmtCreated;
+            private string gmtCreated;
 
-			private string gmtModified;
+            private string gmtModified;
 
-			private string resourceGroupId;
+            private string resourceGroupId;
 
-			private string description;
+            private string description;
 
-			private string scope;
+            private string scope;
 
-			private List<DescribeCdnDomainDetail_SourceModel> sourceModels;
+            private List<DescribeCdnDomainDetail_SourceModel> sourceModels;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+            public string DomainName
+            {
+                get
+                {
+                    return domainName;
+                }
+                set
+                {
+                    domainName = value;
+                }
+            }
 
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
-				}
-			}
+            public string Cname
+            {
+                get
+                {
+                    return cname;
+                }
+                set
+                {
+                    cname = value;
+                }
+            }
 
-			public string HttpsCname
-			{
-				get
-				{
-					return httpsCname;
-				}
-				set	
-				{
-					httpsCname = value;
-				}
-			}
+            public string HttpsCname
+            {
+                get
+                {
+                    return httpsCname;
+                }
+                set
+                {
+                    httpsCname = value;
+                }
+            }
 
-			public string DomainStatus
-			{
-				get
-				{
-					return domainStatus;
-				}
-				set	
-				{
-					domainStatus = value;
-				}
-			}
+            public string DomainStatus
+            {
+                get
+                {
+                    return domainStatus;
+                }
+                set
+                {
+                    domainStatus = value;
+                }
+            }
 
-			public string CdnType
-			{
-				get
-				{
-					return cdnType;
-				}
-				set	
-				{
-					cdnType = value;
-				}
-			}
+            public string CdnType
+            {
+                get
+                {
+                    return cdnType;
+                }
+                set
+                {
+                    cdnType = value;
+                }
+            }
 
-			public string ServerCertificateStatus
-			{
-				get
-				{
-					return serverCertificateStatus;
-				}
-				set	
-				{
-					serverCertificateStatus = value;
-				}
-			}
+            public string ServerCertificateStatus
+            {
+                get
+                {
+                    return serverCertificateStatus;
+                }
+                set
+                {
+                    serverCertificateStatus = value;
+                }
+            }
 
-			public string GmtCreated
-			{
-				get
-				{
-					return gmtCreated;
-				}
-				set	
-				{
-					gmtCreated = value;
-				}
-			}
+            public string GmtCreated
+            {
+                get
+                {
+                    return gmtCreated;
+                }
+                set
+                {
+                    gmtCreated = value;
+                }
+            }
 
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
+            public string GmtModified
+            {
+                get
+                {
+                    return gmtModified;
+                }
+                set
+                {
+                    gmtModified = value;
+                }
+            }
 
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
+            public string ResourceGroupId
+            {
+                get
+                {
+                    return resourceGroupId;
+                }
+                set
+                {
+                    resourceGroupId = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string Scope
-			{
-				get
-				{
-					return scope;
-				}
-				set	
-				{
-					scope = value;
-				}
-			}
+            public string Scope
+            {
+                get
+                {
+                    return scope;
+                }
+                set
+                {
+                    scope = value;
+                }
+            }
 
-			public List<DescribeCdnDomainDetail_SourceModel> SourceModels
-			{
-				get
-				{
-					return sourceModels;
-				}
-				set	
-				{
-					sourceModels = value;
-				}
-			}
+            public List<DescribeCdnDomainDetail_SourceModel> SourceModels
+            {
+                get
+                {
+                    return sourceModels;
+                }
+                set
+                {
+                    sourceModels = value;
+                }
+            }
 
-			public class DescribeCdnDomainDetail_SourceModel
-			{
+            public class DescribeCdnDomainDetail_SourceModel
+            {
 
-				private string content;
+                private string content;
 
-				private string type;
+                private string type;
 
-				private int? port;
+                private int? port;
 
-				private string enabled;
+                private string enabled;
 
-				private string priority;
+                private string priority;
 
-				private string weight;
+                private string weight;
 
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
-					}
-				}
+                public string Content
+                {
+                    get
+                    {
+                        return content;
+                    }
+                    set
+                    {
+                        content = value;
+                    }
+                }
 
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
+                public string Type
+                {
+                    get
+                    {
+                        return type;
+                    }
+                    set
+                    {
+                        type = value;
+                    }
+                }
 
-				public int? Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
-					}
-				}
+                public int? Port
+                {
+                    get
+                    {
+                        return port;
+                    }
+                    set
+                    {
+                        port = value;
+                    }
+                }
 
-				public string Enabled
-				{
-					get
-					{
-						return enabled;
-					}
-					set	
-					{
-						enabled = value;
-					}
-				}
+                public string Enabled
+                {
+                    get
+                    {
+                        return enabled;
+                    }
+                    set
+                    {
+                        enabled = value;
+                    }
+                }
 
-				public string Priority
-				{
-					get
-					{
-						return priority;
-					}
-					set	
-					{
-						priority = value;
-					}
-				}
+                public string Priority
+                {
+                    get
+                    {
+                        return priority;
+                    }
+                    set
+                    {
+                        priority = value;
+                    }
+                }
 
-				public string Weight
-				{
-					get
-					{
-						return weight;
-					}
-					set	
-					{
-						weight = value;
-					}
-				}
-			}
-		}
-	}
+                public string Weight
+                {
+                    get
+                    {
+                        return weight;
+                    }
+                    set
+                    {
+                        weight = value;
+                    }
+                }
+            }
+        }
+    }
 }

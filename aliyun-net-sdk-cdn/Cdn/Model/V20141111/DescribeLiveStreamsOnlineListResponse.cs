@@ -22,165 +22,165 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLiveStreamsOnlineListResponse : AcsResponse
-	{
+    public class DescribeLiveStreamsOnlineListResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? pageNum;
+        private int? pageNum;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private int? totalNum;
+        private int? totalNum;
 
-		private int? totalPage;
+        private int? totalPage;
 
-		private List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> onlineInfo;
+        private List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> onlineInfo;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-			}
-		}
+        public int? PageNum
+        {
+            get
+            {
+                return pageNum;
+            }
+            set
+            {
+                pageNum = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
+        public int? TotalNum
+        {
+            get
+            {
+                return totalNum;
+            }
+            set
+            {
+                totalNum = value;
+            }
+        }
 
-		public int? TotalPage
-		{
-			get
-			{
-				return totalPage;
-			}
-			set	
-			{
-				totalPage = value;
-			}
-		}
+        public int? TotalPage
+        {
+            get
+            {
+                return totalPage;
+            }
+            set
+            {
+                totalPage = value;
+            }
+        }
 
-		public List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> OnlineInfo
-		{
-			get
-			{
-				return onlineInfo;
-			}
-			set	
-			{
-				onlineInfo = value;
-			}
-		}
+        public List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> OnlineInfo
+        {
+            get
+            {
+                return onlineInfo;
+            }
+            set
+            {
+                onlineInfo = value;
+            }
+        }
 
-		public class DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo
-		{
+        public class DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo
+        {
 
-			private string domainName;
+            private string domainName;
 
-			private string appName;
+            private string appName;
 
-			private string streamName;
+            private string streamName;
 
-			private string publishTime;
+            private string publishTime;
 
-			private string publishUrl;
+            private string publishUrl;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+            public string DomainName
+            {
+                get
+                {
+                    return domainName;
+                }
+                set
+                {
+                    domainName = value;
+                }
+            }
 
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
+            public string AppName
+            {
+                get
+                {
+                    return appName;
+                }
+                set
+                {
+                    appName = value;
+                }
+            }
 
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
+            public string StreamName
+            {
+                get
+                {
+                    return streamName;
+                }
+                set
+                {
+                    streamName = value;
+                }
+            }
 
-			public string PublishTime
-			{
-				get
-				{
-					return publishTime;
-				}
-				set	
-				{
-					publishTime = value;
-				}
-			}
+            public string PublishTime
+            {
+                get
+                {
+                    return publishTime;
+                }
+                set
+                {
+                    publishTime = value;
+                }
+            }
 
-			public string PublishUrl
-			{
-				get
-				{
-					return publishUrl;
-				}
-				set	
-				{
-					publishUrl = value;
-				}
-			}
-		}
-	}
+            public string PublishUrl
+            {
+                get
+                {
+                    return publishUrl;
+                }
+                set
+                {
+                    publishUrl = value;
+                }
+            }
+        }
+    }
 }

@@ -22,67 +22,67 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainRealTimeQpsDataResponse : AcsResponse
-	{
+    public class DescribeDomainRealTimeQpsDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeDomainRealTimeQpsData_QpsModel> data;
+        private List<DescribeDomainRealTimeQpsData_QpsModel> data;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeDomainRealTimeQpsData_QpsModel> Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
+        public List<DescribeDomainRealTimeQpsData_QpsModel> Data
+        {
+            get
+            {
+                return data;
+            }
+            set
+            {
+                data = value;
+            }
+        }
 
-		public class DescribeDomainRealTimeQpsData_QpsModel
-		{
+        public class DescribeDomainRealTimeQpsData_QpsModel
+        {
 
-			private float? qps;
+            private float? qps;
 
-			private string timeStamp;
+            private string timeStamp;
 
-			public float? Qps
-			{
-				get
-				{
-					return qps;
-				}
-				set	
-				{
-					qps = value;
-				}
-			}
+            public float? Qps
+            {
+                get
+                {
+                    return qps;
+                }
+                set
+                {
+                    qps = value;
+                }
+            }
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
-		}
-	}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
+        }
+    }
 }

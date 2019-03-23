@@ -27,22 +27,23 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeInstanceTopologyResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeInstanceTopologyResponse describeInstanceTopologyResponse = new DescribeInstanceTopologyResponse();
+            DescribeInstanceTopologyResponse describeInstanceTopologyResponse = new DescribeInstanceTopologyResponse();
 
-			describeInstanceTopologyResponse.HttpResponse = context.HttpResponse;
-			describeInstanceTopologyResponse.RequestId = context.StringValue("DescribeInstanceTopology.RequestId");
+            describeInstanceTopologyResponse.HttpResponse = context.HttpResponse;
+            describeInstanceTopologyResponse.RequestId = context.StringValue("DescribeInstanceTopology.RequestId");
 
-			List<DescribeInstanceTopologyResponse.DescribeInstanceTopology_Topology> describeInstanceTopologyResponse_topologys = new List<DescribeInstanceTopologyResponse.DescribeInstanceTopology_Topology>();
-			for (int i = 0; i < context.Length("DescribeInstanceTopology.Topologys.Length"); i++) {
-				DescribeInstanceTopologyResponse.DescribeInstanceTopology_Topology topology = new DescribeInstanceTopologyResponse.DescribeInstanceTopology_Topology();
-				topology.InstanceId = context.StringValue("DescribeInstanceTopology.Topologys["+ i +"].InstanceId");
-				topology.HostId = context.StringValue("DescribeInstanceTopology.Topologys["+ i +"].HostId");
+            List<DescribeInstanceTopologyResponse.DescribeInstanceTopology_Topology> describeInstanceTopologyResponse_topologys = new List<DescribeInstanceTopologyResponse.DescribeInstanceTopology_Topology>();
+            for (int i = 0; i < context.Length("DescribeInstanceTopology.Topologys.Length"); i++)
+            {
+                DescribeInstanceTopologyResponse.DescribeInstanceTopology_Topology topology = new DescribeInstanceTopologyResponse.DescribeInstanceTopology_Topology();
+                topology.InstanceId = context.StringValue("DescribeInstanceTopology.Topologys[" + i + "].InstanceId");
+                topology.HostId = context.StringValue("DescribeInstanceTopology.Topologys[" + i + "].HostId");
 
-				describeInstanceTopologyResponse_topologys.Add(topology);
-			}
-			describeInstanceTopologyResponse.Topologys = describeInstanceTopologyResponse_topologys;
-        
-			return describeInstanceTopologyResponse;
+                describeInstanceTopologyResponse_topologys.Add(topology);
+            }
+            describeInstanceTopologyResponse.Topologys = describeInstanceTopologyResponse_topologys;
+
+            return describeInstanceTopologyResponse;
         }
     }
 }

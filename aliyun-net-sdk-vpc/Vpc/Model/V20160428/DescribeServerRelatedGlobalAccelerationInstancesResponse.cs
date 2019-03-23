@@ -21,95 +21,95 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeServerRelatedGlobalAccelerationInstancesResponse : AcsResponse
-	{
+    public class DescribeServerRelatedGlobalAccelerationInstancesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance> globalAccelerationInstances;
+        private List<DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance> globalAccelerationInstances;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance> GlobalAccelerationInstances
-		{
-			get
-			{
-				return globalAccelerationInstances;
-			}
-			set	
-			{
-				globalAccelerationInstances = value;
-			}
-		}
+        public List<DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance> GlobalAccelerationInstances
+        {
+            get
+            {
+                return globalAccelerationInstances;
+            }
+            set
+            {
+                globalAccelerationInstances = value;
+            }
+        }
 
-		public class DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance
-		{
+        public class DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance
+        {
 
-			private string regionId;
+            private string regionId;
 
-			private string globalAccelerationInstanceId;
+            private string globalAccelerationInstanceId;
 
-			private string ipAddress;
+            private string ipAddress;
 
-			private string serverIpAddress;
+            private string serverIpAddress;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string GlobalAccelerationInstanceId
-			{
-				get
-				{
-					return globalAccelerationInstanceId;
-				}
-				set	
-				{
-					globalAccelerationInstanceId = value;
-				}
-			}
+            public string GlobalAccelerationInstanceId
+            {
+                get
+                {
+                    return globalAccelerationInstanceId;
+                }
+                set
+                {
+                    globalAccelerationInstanceId = value;
+                }
+            }
 
-			public string IpAddress
-			{
-				get
-				{
-					return ipAddress;
-				}
-				set	
-				{
-					ipAddress = value;
-				}
-			}
+            public string IpAddress
+            {
+                get
+                {
+                    return ipAddress;
+                }
+                set
+                {
+                    ipAddress = value;
+                }
+            }
 
-			public string ServerIpAddress
-			{
-				get
-				{
-					return serverIpAddress;
-				}
-				set	
-				{
-					serverIpAddress = value;
-				}
-			}
-		}
-	}
+            public string ServerIpAddress
+            {
+                get
+                {
+                    return serverIpAddress;
+                }
+                set
+                {
+                    serverIpAddress = value;
+                }
+            }
+        }
+    }
 }

@@ -22,179 +22,179 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeCdnMonitorDataResponse : AcsResponse
-	{
+    public class DescribeCdnMonitorDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private string monitorInterval;
+        private string monitorInterval;
 
-		private List<DescribeCdnMonitorData_CDNMonitorData> monitorDatas;
+        private List<DescribeCdnMonitorData_CDNMonitorData> monitorDatas;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public string MonitorInterval
-		{
-			get
-			{
-				return monitorInterval;
-			}
-			set	
-			{
-				monitorInterval = value;
-			}
-		}
+        public string MonitorInterval
+        {
+            get
+            {
+                return monitorInterval;
+            }
+            set
+            {
+                monitorInterval = value;
+            }
+        }
 
-		public List<DescribeCdnMonitorData_CDNMonitorData> MonitorDatas
-		{
-			get
-			{
-				return monitorDatas;
-			}
-			set	
-			{
-				monitorDatas = value;
-			}
-		}
+        public List<DescribeCdnMonitorData_CDNMonitorData> MonitorDatas
+        {
+            get
+            {
+                return monitorDatas;
+            }
+            set
+            {
+                monitorDatas = value;
+            }
+        }
 
-		public class DescribeCdnMonitorData_CDNMonitorData
-		{
+        public class DescribeCdnMonitorData_CDNMonitorData
+        {
 
-			private string timeStamp;
+            private string timeStamp;
 
-			private string bytesPerSecond;
+            private string bytesPerSecond;
 
-			private string queryPerSecond;
+            private string queryPerSecond;
 
-			private string requestHitRate;
+            private string requestHitRate;
 
-			private string bytesHitRate;
+            private string bytesHitRate;
 
-			private string averageObjectSize;
+            private string averageObjectSize;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
 
-			public string BytesPerSecond
-			{
-				get
-				{
-					return bytesPerSecond;
-				}
-				set	
-				{
-					bytesPerSecond = value;
-				}
-			}
+            public string BytesPerSecond
+            {
+                get
+                {
+                    return bytesPerSecond;
+                }
+                set
+                {
+                    bytesPerSecond = value;
+                }
+            }
 
-			public string QueryPerSecond
-			{
-				get
-				{
-					return queryPerSecond;
-				}
-				set	
-				{
-					queryPerSecond = value;
-				}
-			}
+            public string QueryPerSecond
+            {
+                get
+                {
+                    return queryPerSecond;
+                }
+                set
+                {
+                    queryPerSecond = value;
+                }
+            }
 
-			public string RequestHitRate
-			{
-				get
-				{
-					return requestHitRate;
-				}
-				set	
-				{
-					requestHitRate = value;
-				}
-			}
+            public string RequestHitRate
+            {
+                get
+                {
+                    return requestHitRate;
+                }
+                set
+                {
+                    requestHitRate = value;
+                }
+            }
 
-			public string BytesHitRate
-			{
-				get
-				{
-					return bytesHitRate;
-				}
-				set	
-				{
-					bytesHitRate = value;
-				}
-			}
+            public string BytesHitRate
+            {
+                get
+                {
+                    return bytesHitRate;
+                }
+                set
+                {
+                    bytesHitRate = value;
+                }
+            }
 
-			public string AverageObjectSize
-			{
-				get
-				{
-					return averageObjectSize;
-				}
-				set	
-				{
-					averageObjectSize = value;
-				}
-			}
-		}
-	}
+            public string AverageObjectSize
+            {
+                get
+                {
+                    return averageObjectSize;
+                }
+                set
+                {
+                    averageObjectSize = value;
+                }
+            }
+        }
+    }
 }

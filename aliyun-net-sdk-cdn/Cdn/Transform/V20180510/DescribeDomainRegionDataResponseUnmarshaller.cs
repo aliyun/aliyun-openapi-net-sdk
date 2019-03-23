@@ -28,36 +28,37 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeDomainRegionDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainRegionDataResponse describeDomainRegionDataResponse = new DescribeDomainRegionDataResponse();
+            DescribeDomainRegionDataResponse describeDomainRegionDataResponse = new DescribeDomainRegionDataResponse();
 
-			describeDomainRegionDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainRegionDataResponse.RequestId = context.StringValue("DescribeDomainRegionData.RequestId");
-			describeDomainRegionDataResponse.DomainName = context.StringValue("DescribeDomainRegionData.DomainName");
-			describeDomainRegionDataResponse.DataInterval = context.StringValue("DescribeDomainRegionData.DataInterval");
-			describeDomainRegionDataResponse.StartTime = context.StringValue("DescribeDomainRegionData.StartTime");
-			describeDomainRegionDataResponse.EndTime = context.StringValue("DescribeDomainRegionData.EndTime");
+            describeDomainRegionDataResponse.HttpResponse = context.HttpResponse;
+            describeDomainRegionDataResponse.RequestId = context.StringValue("DescribeDomainRegionData.RequestId");
+            describeDomainRegionDataResponse.DomainName = context.StringValue("DescribeDomainRegionData.DomainName");
+            describeDomainRegionDataResponse.DataInterval = context.StringValue("DescribeDomainRegionData.DataInterval");
+            describeDomainRegionDataResponse.StartTime = context.StringValue("DescribeDomainRegionData.StartTime");
+            describeDomainRegionDataResponse.EndTime = context.StringValue("DescribeDomainRegionData.EndTime");
 
-			List<DescribeDomainRegionDataResponse.DescribeDomainRegionData_RegionProportionData> describeDomainRegionDataResponse_value = new List<DescribeDomainRegionDataResponse.DescribeDomainRegionData_RegionProportionData>();
-			for (int i = 0; i < context.Length("DescribeDomainRegionData.Value.Length"); i++) {
-				DescribeDomainRegionDataResponse.DescribeDomainRegionData_RegionProportionData regionProportionData = new DescribeDomainRegionDataResponse.DescribeDomainRegionData_RegionProportionData();
-				regionProportionData.Region = context.StringValue("DescribeDomainRegionData.Value["+ i +"].Region");
-				regionProportionData.Proportion = context.StringValue("DescribeDomainRegionData.Value["+ i +"].Proportion");
-				regionProportionData.RegionEname = context.StringValue("DescribeDomainRegionData.Value["+ i +"].RegionEname");
-				regionProportionData.AvgObjectSize = context.StringValue("DescribeDomainRegionData.Value["+ i +"].AvgObjectSize");
-				regionProportionData.AvgResponseTime = context.StringValue("DescribeDomainRegionData.Value["+ i +"].AvgResponseTime");
-				regionProportionData.Bps = context.StringValue("DescribeDomainRegionData.Value["+ i +"].Bps");
-				regionProportionData.Qps = context.StringValue("DescribeDomainRegionData.Value["+ i +"].Qps");
-				regionProportionData.AvgResponseRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].AvgResponseRate");
-				regionProportionData.ReqErrRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].ReqErrRate");
-				regionProportionData.TotalBytes = context.StringValue("DescribeDomainRegionData.Value["+ i +"].TotalBytes");
-				regionProportionData.BytesProportion = context.StringValue("DescribeDomainRegionData.Value["+ i +"].BytesProportion");
-				regionProportionData.TotalQuery = context.StringValue("DescribeDomainRegionData.Value["+ i +"].TotalQuery");
+            List<DescribeDomainRegionDataResponse.DescribeDomainRegionData_RegionProportionData> describeDomainRegionDataResponse_value = new List<DescribeDomainRegionDataResponse.DescribeDomainRegionData_RegionProportionData>();
+            for (int i = 0; i < context.Length("DescribeDomainRegionData.Value.Length"); i++)
+            {
+                DescribeDomainRegionDataResponse.DescribeDomainRegionData_RegionProportionData regionProportionData = new DescribeDomainRegionDataResponse.DescribeDomainRegionData_RegionProportionData();
+                regionProportionData.Region = context.StringValue("DescribeDomainRegionData.Value[" + i + "].Region");
+                regionProportionData.Proportion = context.StringValue("DescribeDomainRegionData.Value[" + i + "].Proportion");
+                regionProportionData.RegionEname = context.StringValue("DescribeDomainRegionData.Value[" + i + "].RegionEname");
+                regionProportionData.AvgObjectSize = context.StringValue("DescribeDomainRegionData.Value[" + i + "].AvgObjectSize");
+                regionProportionData.AvgResponseTime = context.StringValue("DescribeDomainRegionData.Value[" + i + "].AvgResponseTime");
+                regionProportionData.Bps = context.StringValue("DescribeDomainRegionData.Value[" + i + "].Bps");
+                regionProportionData.Qps = context.StringValue("DescribeDomainRegionData.Value[" + i + "].Qps");
+                regionProportionData.AvgResponseRate = context.StringValue("DescribeDomainRegionData.Value[" + i + "].AvgResponseRate");
+                regionProportionData.ReqErrRate = context.StringValue("DescribeDomainRegionData.Value[" + i + "].ReqErrRate");
+                regionProportionData.TotalBytes = context.StringValue("DescribeDomainRegionData.Value[" + i + "].TotalBytes");
+                regionProportionData.BytesProportion = context.StringValue("DescribeDomainRegionData.Value[" + i + "].BytesProportion");
+                regionProportionData.TotalQuery = context.StringValue("DescribeDomainRegionData.Value[" + i + "].TotalQuery");
 
-				describeDomainRegionDataResponse_value.Add(regionProportionData);
-			}
-			describeDomainRegionDataResponse._Value = describeDomainRegionDataResponse_value;
-        
-			return describeDomainRegionDataResponse;
+                describeDomainRegionDataResponse_value.Add(regionProportionData);
+            }
+            describeDomainRegionDataResponse._Value = describeDomainRegionDataResponse_value;
+
+            return describeDomainRegionDataResponse;
         }
     }
 }

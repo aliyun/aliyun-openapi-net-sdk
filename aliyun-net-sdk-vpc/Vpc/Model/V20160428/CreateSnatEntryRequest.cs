@@ -33,170 +33,170 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string sourceVSwitchId;
+        private string sourceVSwitchId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string regionId;
+        private string regionId;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string snatEntryName;
+        private string snatEntryName;
 
-		private string sourceCIDR;
+        private string sourceCIDR;
 
-		private string action;
+        private string action;
 
-		private string snatTableId;
+        private string snatTableId;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string snatIp;
+        private string snatIp;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string SourceVSwitchId
-		{
-			get
-			{
-				return sourceVSwitchId;
-			}
-			set	
-			{
-				sourceVSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "SourceVSwitchId", value);
-			}
-		}
+        public string SourceVSwitchId
+        {
+            get
+            {
+                return sourceVSwitchId;
+            }
+            set
+            {
+                sourceVSwitchId = value;
+                DictionaryUtil.Add(QueryParameters, "SourceVSwitchId", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string SnatEntryName
-		{
-			get
-			{
-				return snatEntryName;
-			}
-			set	
-			{
-				snatEntryName = value;
-				DictionaryUtil.Add(QueryParameters, "SnatEntryName", value);
-			}
-		}
+        public string SnatEntryName
+        {
+            get
+            {
+                return snatEntryName;
+            }
+            set
+            {
+                snatEntryName = value;
+                DictionaryUtil.Add(QueryParameters, "SnatEntryName", value);
+            }
+        }
 
-		public string SourceCIDR
-		{
-			get
-			{
-				return sourceCIDR;
-			}
-			set	
-			{
-				sourceCIDR = value;
-				DictionaryUtil.Add(QueryParameters, "SourceCIDR", value);
-			}
-		}
+        public string SourceCIDR
+        {
+            get
+            {
+                return sourceCIDR;
+            }
+            set
+            {
+                sourceCIDR = value;
+                DictionaryUtil.Add(QueryParameters, "SourceCIDR", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string SnatTableId
-		{
-			get
-			{
-				return snatTableId;
-			}
-			set	
-			{
-				snatTableId = value;
-				DictionaryUtil.Add(QueryParameters, "SnatTableId", value);
-			}
-		}
+        public string SnatTableId
+        {
+            get
+            {
+                return snatTableId;
+            }
+            set
+            {
+                snatTableId = value;
+                DictionaryUtil.Add(QueryParameters, "SnatTableId", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string SnatIp
-		{
-			get
-			{
-				return snatIp;
-			}
-			set	
-			{
-				snatIp = value;
-				DictionaryUtil.Add(QueryParameters, "SnatIp", value);
-			}
-		}
+        public string SnatIp
+        {
+            get
+            {
+                return snatIp;
+            }
+            set
+            {
+                snatIp = value;
+                DictionaryUtil.Add(QueryParameters, "SnatIp", value);
+            }
+        }
 
         public override CreateSnatEntryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

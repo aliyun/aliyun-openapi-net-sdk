@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateNqaResponse : AcsResponse
-	{
+    public class CreateNqaResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string nqaId;
+        private string nqaId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string NqaId
-		{
-			get
-			{
-				return nqaId;
-			}
-			set	
-			{
-				nqaId = value;
-			}
-		}
-	}
+        public string NqaId
+        {
+            get
+            {
+                return nqaId;
+            }
+            set
+            {
+                nqaId = value;
+            }
+        }
+    }
 }

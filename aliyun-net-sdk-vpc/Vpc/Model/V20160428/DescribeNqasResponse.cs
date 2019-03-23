@@ -21,151 +21,151 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeNqasResponse : AcsResponse
-	{
+    public class DescribeNqasResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeNqas_Nqa> nqas;
+        private List<DescribeNqas_Nqa> nqas;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeNqas_Nqa> Nqas
-		{
-			get
-			{
-				return nqas;
-			}
-			set	
-			{
-				nqas = value;
-			}
-		}
+        public List<DescribeNqas_Nqa> Nqas
+        {
+            get
+            {
+                return nqas;
+            }
+            set
+            {
+                nqas = value;
+            }
+        }
 
-		public class DescribeNqas_Nqa
-		{
+        public class DescribeNqas_Nqa
+        {
 
-			private string nqaId;
+            private string nqaId;
 
-			private string regionId;
+            private string regionId;
 
-			private string status;
+            private string status;
 
-			private string routerId;
+            private string routerId;
 
-			private string destinationIp;
+            private string destinationIp;
 
-			public string NqaId
-			{
-				get
-				{
-					return nqaId;
-				}
-				set	
-				{
-					nqaId = value;
-				}
-			}
+            public string NqaId
+            {
+                get
+                {
+                    return nqaId;
+                }
+                set
+                {
+                    nqaId = value;
+                }
+            }
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string RouterId
-			{
-				get
-				{
-					return routerId;
-				}
-				set	
-				{
-					routerId = value;
-				}
-			}
+            public string RouterId
+            {
+                get
+                {
+                    return routerId;
+                }
+                set
+                {
+                    routerId = value;
+                }
+            }
 
-			public string DestinationIp
-			{
-				get
-				{
-					return destinationIp;
-				}
-				set	
-				{
-					destinationIp = value;
-				}
-			}
-		}
-	}
+            public string DestinationIp
+            {
+                get
+                {
+                    return destinationIp;
+                }
+                set
+                {
+                    destinationIp = value;
+                }
+            }
+        }
+    }
 }

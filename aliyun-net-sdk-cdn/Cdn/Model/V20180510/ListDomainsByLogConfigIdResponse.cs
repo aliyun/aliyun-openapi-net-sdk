@@ -22,35 +22,35 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class ListDomainsByLogConfigIdResponse : AcsResponse
-	{
+    public class ListDomainsByLogConfigIdResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<string> domains;
+        private List<string> domains;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<string> Domains
-		{
-			get
-			{
-				return domains;
-			}
-			set	
-			{
-				domains = value;
-			}
-		}
-	}
+        public List<string> Domains
+        {
+            get
+            {
+                return domains;
+            }
+            set
+            {
+                domains = value;
+            }
+        }
+    }
 }

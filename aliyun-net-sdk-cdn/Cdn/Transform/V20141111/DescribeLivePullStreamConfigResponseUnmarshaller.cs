@@ -28,25 +28,26 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeLivePullStreamConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLivePullStreamConfigResponse describeLivePullStreamConfigResponse = new DescribeLivePullStreamConfigResponse();
+            DescribeLivePullStreamConfigResponse describeLivePullStreamConfigResponse = new DescribeLivePullStreamConfigResponse();
 
-			describeLivePullStreamConfigResponse.HttpResponse = context.HttpResponse;
-			describeLivePullStreamConfigResponse.RequestId = context.StringValue("DescribeLivePullStreamConfig.RequestId");
+            describeLivePullStreamConfigResponse.HttpResponse = context.HttpResponse;
+            describeLivePullStreamConfigResponse.RequestId = context.StringValue("DescribeLivePullStreamConfig.RequestId");
 
-			List<DescribeLivePullStreamConfigResponse.DescribeLivePullStreamConfig_LiveAppRecord> describeLivePullStreamConfigResponse_liveAppRecordList = new List<DescribeLivePullStreamConfigResponse.DescribeLivePullStreamConfig_LiveAppRecord>();
-			for (int i = 0; i < context.Length("DescribeLivePullStreamConfig.LiveAppRecordList.Length"); i++) {
-				DescribeLivePullStreamConfigResponse.DescribeLivePullStreamConfig_LiveAppRecord liveAppRecord = new DescribeLivePullStreamConfigResponse.DescribeLivePullStreamConfig_LiveAppRecord();
-				liveAppRecord.DomainName = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].DomainName");
-				liveAppRecord.StreamName = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].StreamName");
-				liveAppRecord.SourceUrl = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].SourceUrl");
-				liveAppRecord.StartTime = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].StartTime");
-				liveAppRecord.EndTime = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].EndTime");
+            List<DescribeLivePullStreamConfigResponse.DescribeLivePullStreamConfig_LiveAppRecord> describeLivePullStreamConfigResponse_liveAppRecordList = new List<DescribeLivePullStreamConfigResponse.DescribeLivePullStreamConfig_LiveAppRecord>();
+            for (int i = 0; i < context.Length("DescribeLivePullStreamConfig.LiveAppRecordList.Length"); i++)
+            {
+                DescribeLivePullStreamConfigResponse.DescribeLivePullStreamConfig_LiveAppRecord liveAppRecord = new DescribeLivePullStreamConfigResponse.DescribeLivePullStreamConfig_LiveAppRecord();
+                liveAppRecord.DomainName = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList[" + i + "].DomainName");
+                liveAppRecord.StreamName = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList[" + i + "].StreamName");
+                liveAppRecord.SourceUrl = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList[" + i + "].SourceUrl");
+                liveAppRecord.StartTime = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList[" + i + "].StartTime");
+                liveAppRecord.EndTime = context.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList[" + i + "].EndTime");
 
-				describeLivePullStreamConfigResponse_liveAppRecordList.Add(liveAppRecord);
-			}
-			describeLivePullStreamConfigResponse.LiveAppRecordList = describeLivePullStreamConfigResponse_liveAppRecordList;
-        
-			return describeLivePullStreamConfigResponse;
+                describeLivePullStreamConfigResponse_liveAppRecordList.Add(liveAppRecord);
+            }
+            describeLivePullStreamConfigResponse.LiveAppRecordList = describeLivePullStreamConfigResponse_liveAppRecordList;
+
+            return describeLivePullStreamConfigResponse;
         }
     }
 }

@@ -21,365 +21,365 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeSnapshotsResponse : AcsResponse
-	{
+    public class DescribeSnapshotsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeSnapshots_Snapshot> snapshots;
+        private List<DescribeSnapshots_Snapshot> snapshots;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeSnapshots_Snapshot> Snapshots
-		{
-			get
-			{
-				return snapshots;
-			}
-			set	
-			{
-				snapshots = value;
-			}
-		}
+        public List<DescribeSnapshots_Snapshot> Snapshots
+        {
+            get
+            {
+                return snapshots;
+            }
+            set
+            {
+                snapshots = value;
+            }
+        }
 
-		public class DescribeSnapshots_Snapshot
-		{
+        public class DescribeSnapshots_Snapshot
+        {
 
-			private string snapshotId;
+            private string snapshotId;
 
-			private string snapshotName;
+            private string snapshotName;
 
-			private string progress;
+            private string progress;
 
-			private string productCode;
+            private string productCode;
 
-			private string sourceDiskId;
+            private string sourceDiskId;
 
-			private string sourceDiskType;
+            private string sourceDiskType;
 
-			private int? retentionDays;
+            private int? retentionDays;
 
-			private bool? encrypted;
+            private bool? encrypted;
 
-			private string sourceDiskSize;
+            private string sourceDiskSize;
 
-			private string description;
+            private string description;
 
-			private string creationTime;
+            private string creationTime;
 
-			private string status;
+            private string status;
 
-			private string usage;
+            private string usage;
 
-			private string sourceStorageType;
+            private string sourceStorageType;
 
-			private int? remainTime;
+            private int? remainTime;
 
-			private string resourceGroupId;
+            private string resourceGroupId;
 
-			private string kMSKeyId;
+            private string kMSKeyId;
 
-			private List<DescribeSnapshots_Tag> tags;
+            private List<DescribeSnapshots_Tag> tags;
 
-			public string SnapshotId
-			{
-				get
-				{
-					return snapshotId;
-				}
-				set	
-				{
-					snapshotId = value;
-				}
-			}
+            public string SnapshotId
+            {
+                get
+                {
+                    return snapshotId;
+                }
+                set
+                {
+                    snapshotId = value;
+                }
+            }
 
-			public string SnapshotName
-			{
-				get
-				{
-					return snapshotName;
-				}
-				set	
-				{
-					snapshotName = value;
-				}
-			}
+            public string SnapshotName
+            {
+                get
+                {
+                    return snapshotName;
+                }
+                set
+                {
+                    snapshotName = value;
+                }
+            }
 
-			public string Progress
-			{
-				get
-				{
-					return progress;
-				}
-				set	
-				{
-					progress = value;
-				}
-			}
+            public string Progress
+            {
+                get
+                {
+                    return progress;
+                }
+                set
+                {
+                    progress = value;
+                }
+            }
 
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
-				}
-			}
+            public string ProductCode
+            {
+                get
+                {
+                    return productCode;
+                }
+                set
+                {
+                    productCode = value;
+                }
+            }
 
-			public string SourceDiskId
-			{
-				get
-				{
-					return sourceDiskId;
-				}
-				set	
-				{
-					sourceDiskId = value;
-				}
-			}
+            public string SourceDiskId
+            {
+                get
+                {
+                    return sourceDiskId;
+                }
+                set
+                {
+                    sourceDiskId = value;
+                }
+            }
 
-			public string SourceDiskType
-			{
-				get
-				{
-					return sourceDiskType;
-				}
-				set	
-				{
-					sourceDiskType = value;
-				}
-			}
+            public string SourceDiskType
+            {
+                get
+                {
+                    return sourceDiskType;
+                }
+                set
+                {
+                    sourceDiskType = value;
+                }
+            }
 
-			public int? RetentionDays
-			{
-				get
-				{
-					return retentionDays;
-				}
-				set	
-				{
-					retentionDays = value;
-				}
-			}
+            public int? RetentionDays
+            {
+                get
+                {
+                    return retentionDays;
+                }
+                set
+                {
+                    retentionDays = value;
+                }
+            }
 
-			public bool? Encrypted
-			{
-				get
-				{
-					return encrypted;
-				}
-				set	
-				{
-					encrypted = value;
-				}
-			}
+            public bool? Encrypted
+            {
+                get
+                {
+                    return encrypted;
+                }
+                set
+                {
+                    encrypted = value;
+                }
+            }
 
-			public string SourceDiskSize
-			{
-				get
-				{
-					return sourceDiskSize;
-				}
-				set	
-				{
-					sourceDiskSize = value;
-				}
-			}
+            public string SourceDiskSize
+            {
+                get
+                {
+                    return sourceDiskSize;
+                }
+                set
+                {
+                    sourceDiskSize = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+            public string CreationTime
+            {
+                get
+                {
+                    return creationTime;
+                }
+                set
+                {
+                    creationTime = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string Usage
-			{
-				get
-				{
-					return usage;
-				}
-				set	
-				{
-					usage = value;
-				}
-			}
+            public string Usage
+            {
+                get
+                {
+                    return usage;
+                }
+                set
+                {
+                    usage = value;
+                }
+            }
 
-			public string SourceStorageType
-			{
-				get
-				{
-					return sourceStorageType;
-				}
-				set	
-				{
-					sourceStorageType = value;
-				}
-			}
+            public string SourceStorageType
+            {
+                get
+                {
+                    return sourceStorageType;
+                }
+                set
+                {
+                    sourceStorageType = value;
+                }
+            }
 
-			public int? RemainTime
-			{
-				get
-				{
-					return remainTime;
-				}
-				set	
-				{
-					remainTime = value;
-				}
-			}
+            public int? RemainTime
+            {
+                get
+                {
+                    return remainTime;
+                }
+                set
+                {
+                    remainTime = value;
+                }
+            }
 
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
+            public string ResourceGroupId
+            {
+                get
+                {
+                    return resourceGroupId;
+                }
+                set
+                {
+                    resourceGroupId = value;
+                }
+            }
 
-			public string KMSKeyId
-			{
-				get
-				{
-					return kMSKeyId;
-				}
-				set	
-				{
-					kMSKeyId = value;
-				}
-			}
+            public string KMSKeyId
+            {
+                get
+                {
+                    return kMSKeyId;
+                }
+                set
+                {
+                    kMSKeyId = value;
+                }
+            }
 
-			public List<DescribeSnapshots_Tag> Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
+            public List<DescribeSnapshots_Tag> Tags
+            {
+                get
+                {
+                    return tags;
+                }
+                set
+                {
+                    tags = value;
+                }
+            }
 
-			public class DescribeSnapshots_Tag
-			{
+            public class DescribeSnapshots_Tag
+            {
 
-				private string tagKey;
+                private string tagKey;
 
-				private string tagValue;
+                private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+                public string TagKey
+                {
+                    get
+                    {
+                        return tagKey;
+                    }
+                    set
+                    {
+                        tagKey = value;
+                    }
+                }
 
-				public string TagValue
-				{
-					get
-					{
-						return tagValue;
-					}
-					set	
-					{
-						tagValue = value;
-					}
-				}
-			}
-		}
-	}
+                public string TagValue
+                {
+                    get
+                    {
+                        return tagValue;
+                    }
+                    set
+                    {
+                        tagValue = value;
+                    }
+                }
+            }
+        }
+    }
 }

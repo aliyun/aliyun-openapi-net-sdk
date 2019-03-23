@@ -22,179 +22,179 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeDomainPathDataResponse : AcsResponse
-	{
+    public class DescribeDomainPathDataResponse : AcsResponse
+    {
 
-		private string domainName;
+        private string domainName;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private string dataInterval;
+        private string dataInterval;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private List<DescribeDomainPathData_UsageData> pathDataPerInterval;
+        private List<DescribeDomainPathData_UsageData> pathDataPerInterval;
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
+        public string DataInterval
+        {
+            get
+            {
+                return dataInterval;
+            }
+            set
+            {
+                dataInterval = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribeDomainPathData_UsageData> PathDataPerInterval
-		{
-			get
-			{
-				return pathDataPerInterval;
-			}
-			set	
-			{
-				pathDataPerInterval = value;
-			}
-		}
+        public List<DescribeDomainPathData_UsageData> PathDataPerInterval
+        {
+            get
+            {
+                return pathDataPerInterval;
+            }
+            set
+            {
+                pathDataPerInterval = value;
+            }
+        }
 
-		public class DescribeDomainPathData_UsageData
-		{
+        public class DescribeDomainPathData_UsageData
+        {
 
-			private int? traffic;
+            private int? traffic;
 
-			private int? acc;
+            private int? acc;
 
-			private string path;
+            private string path;
 
-			private string time;
+            private string time;
 
-			public int? Traffic
-			{
-				get
-				{
-					return traffic;
-				}
-				set	
-				{
-					traffic = value;
-				}
-			}
+            public int? Traffic
+            {
+                get
+                {
+                    return traffic;
+                }
+                set
+                {
+                    traffic = value;
+                }
+            }
 
-			public int? Acc
-			{
-				get
-				{
-					return acc;
-				}
-				set	
-				{
-					acc = value;
-				}
-			}
+            public int? Acc
+            {
+                get
+                {
+                    return acc;
+                }
+                set
+                {
+                    acc = value;
+                }
+            }
 
-			public string Path
-			{
-				get
-				{
-					return path;
-				}
-				set	
-				{
-					path = value;
-				}
-			}
+            public string Path
+            {
+                get
+                {
+                    return path;
+                }
+                set
+                {
+                    path = value;
+                }
+            }
 
-			public string Time
-			{
-				get
-				{
-					return time;
-				}
-				set	
-				{
-					time = value;
-				}
-			}
-		}
-	}
+            public string Time
+            {
+                get
+                {
+                    return time;
+                }
+                set
+                {
+                    time = value;
+                }
+            }
+        }
+    }
 }

@@ -28,22 +28,23 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeCdnTypesResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeCdnTypesResponse describeCdnTypesResponse = new DescribeCdnTypesResponse();
+            DescribeCdnTypesResponse describeCdnTypesResponse = new DescribeCdnTypesResponse();
 
-			describeCdnTypesResponse.HttpResponse = context.HttpResponse;
-			describeCdnTypesResponse.RequestId = context.StringValue("DescribeCdnTypes.RequestId");
+            describeCdnTypesResponse.HttpResponse = context.HttpResponse;
+            describeCdnTypesResponse.RequestId = context.StringValue("DescribeCdnTypes.RequestId");
 
-			List<DescribeCdnTypesResponse.DescribeCdnTypes_CdnType> describeCdnTypesResponse_cdnTypes = new List<DescribeCdnTypesResponse.DescribeCdnTypes_CdnType>();
-			for (int i = 0; i < context.Length("DescribeCdnTypes.CdnTypes.Length"); i++) {
-				DescribeCdnTypesResponse.DescribeCdnTypes_CdnType cdnType = new DescribeCdnTypesResponse.DescribeCdnTypes_CdnType();
-				cdnType.Type = context.StringValue("DescribeCdnTypes.CdnTypes["+ i +"].Type");
-				cdnType.Desc = context.StringValue("DescribeCdnTypes.CdnTypes["+ i +"].Desc");
+            List<DescribeCdnTypesResponse.DescribeCdnTypes_CdnType> describeCdnTypesResponse_cdnTypes = new List<DescribeCdnTypesResponse.DescribeCdnTypes_CdnType>();
+            for (int i = 0; i < context.Length("DescribeCdnTypes.CdnTypes.Length"); i++)
+            {
+                DescribeCdnTypesResponse.DescribeCdnTypes_CdnType cdnType = new DescribeCdnTypesResponse.DescribeCdnTypes_CdnType();
+                cdnType.Type = context.StringValue("DescribeCdnTypes.CdnTypes[" + i + "].Type");
+                cdnType.Desc = context.StringValue("DescribeCdnTypes.CdnTypes[" + i + "].Desc");
 
-				describeCdnTypesResponse_cdnTypes.Add(cdnType);
-			}
-			describeCdnTypesResponse.CdnTypes = describeCdnTypesResponse_cdnTypes;
-        
-			return describeCdnTypesResponse;
+                describeCdnTypesResponse_cdnTypes.Add(cdnType);
+            }
+            describeCdnTypesResponse.CdnTypes = describeCdnTypesResponse_cdnTypes;
+
+            return describeCdnTypesResponse;
         }
     }
 }

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ModifyDedicatedHostAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyDedicatedHostAttributeResponse modifyDedicatedHostAttributeResponse = new ModifyDedicatedHostAttributeResponse();
+            ModifyDedicatedHostAttributeResponse modifyDedicatedHostAttributeResponse = new ModifyDedicatedHostAttributeResponse();
 
-			modifyDedicatedHostAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyDedicatedHostAttributeResponse.RequestId = context.StringValue("ModifyDedicatedHostAttribute.RequestId");
-        
-			return modifyDedicatedHostAttributeResponse;
+            modifyDedicatedHostAttributeResponse.HttpResponse = context.HttpResponse;
+            modifyDedicatedHostAttributeResponse.RequestId = context.StringValue("ModifyDedicatedHostAttribute.RequestId");
+
+            return modifyDedicatedHostAttributeResponse;
         }
     }
 }

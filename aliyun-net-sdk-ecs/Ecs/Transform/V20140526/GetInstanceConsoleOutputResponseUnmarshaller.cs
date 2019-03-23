@@ -27,15 +27,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static GetInstanceConsoleOutputResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstanceConsoleOutputResponse getInstanceConsoleOutputResponse = new GetInstanceConsoleOutputResponse();
+            GetInstanceConsoleOutputResponse getInstanceConsoleOutputResponse = new GetInstanceConsoleOutputResponse();
 
-			getInstanceConsoleOutputResponse.HttpResponse = context.HttpResponse;
-			getInstanceConsoleOutputResponse.RequestId = context.StringValue("GetInstanceConsoleOutput.RequestId");
-			getInstanceConsoleOutputResponse.InstanceId = context.StringValue("GetInstanceConsoleOutput.InstanceId");
-			getInstanceConsoleOutputResponse.ConsoleOutput = context.StringValue("GetInstanceConsoleOutput.ConsoleOutput");
-			getInstanceConsoleOutputResponse.LastUpdateTime = context.StringValue("GetInstanceConsoleOutput.LastUpdateTime");
-        
-			return getInstanceConsoleOutputResponse;
+            getInstanceConsoleOutputResponse.HttpResponse = context.HttpResponse;
+            getInstanceConsoleOutputResponse.RequestId = context.StringValue("GetInstanceConsoleOutput.RequestId");
+            getInstanceConsoleOutputResponse.InstanceId = context.StringValue("GetInstanceConsoleOutput.InstanceId");
+            getInstanceConsoleOutputResponse.ConsoleOutput = context.StringValue("GetInstanceConsoleOutput.ConsoleOutput");
+            getInstanceConsoleOutputResponse.LastUpdateTime = context.StringValue("GetInstanceConsoleOutput.LastUpdateTime");
+
+            return getInstanceConsoleOutputResponse;
         }
     }
 }

@@ -27,69 +27,72 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static GetTaskListResponse Unmarshall(UnmarshallerContext context)
         {
-			GetTaskListResponse getTaskListResponse = new GetTaskListResponse();
+            GetTaskListResponse getTaskListResponse = new GetTaskListResponse();
 
-			getTaskListResponse.HttpResponse = context.HttpResponse;
-			getTaskListResponse.RequestId = context.StringValue("GetTaskList.RequestId");
-			getTaskListResponse.Success = context.BooleanValue("GetTaskList.Success");
-			getTaskListResponse.Code = context.StringValue("GetTaskList.Code");
-			getTaskListResponse.Message = context.StringValue("GetTaskList.Message");
-			getTaskListResponse.HttpStatusCode = context.IntegerValue("GetTaskList.HttpStatusCode");
+            getTaskListResponse.HttpResponse = context.HttpResponse;
+            getTaskListResponse.RequestId = context.StringValue("GetTaskList.RequestId");
+            getTaskListResponse.Success = context.BooleanValue("GetTaskList.Success");
+            getTaskListResponse.Code = context.StringValue("GetTaskList.Code");
+            getTaskListResponse.Message = context.StringValue("GetTaskList.Message");
+            getTaskListResponse.HttpStatusCode = context.IntegerValue("GetTaskList.HttpStatusCode");
 
-			List<GetTaskListResponse.GetTaskList_Task> getTaskListResponse_tasks = new List<GetTaskListResponse.GetTaskList_Task>();
-			for (int i = 0; i < context.Length("GetTaskList.Tasks.Length"); i++) {
-				GetTaskListResponse.GetTaskList_Task task = new GetTaskListResponse.GetTaskList_Task();
-				task.TaskId = context.StringValue("GetTaskList.Tasks["+ i +"].TaskId");
-				task.JobId = context.StringValue("GetTaskList.Tasks["+ i +"].JobId");
-				task.ScenarioId = context.StringValue("GetTaskList.Tasks["+ i +"].ScenarioId");
-				task.ChatbotId = context.StringValue("GetTaskList.Tasks["+ i +"].ChatbotId");
-				task.PlanedTime = context.LongValue("GetTaskList.Tasks["+ i +"].PlanedTime");
-				task.ActualTime = context.LongValue("GetTaskList.Tasks["+ i +"].ActualTime");
-				task.CallingNumber = context.StringValue("GetTaskList.Tasks["+ i +"].CallingNumber");
-				task.CalledNumber = context.StringValue("GetTaskList.Tasks["+ i +"].CalledNumber");
-				task.CallId = context.StringValue("GetTaskList.Tasks["+ i +"].CallId");
-				task.Status = context.StringValue("GetTaskList.Tasks["+ i +"].Status");
-				task.Brief = context.StringValue("GetTaskList.Tasks["+ i +"].Brief");
-				task.Duration = context.IntegerValue("GetTaskList.Tasks["+ i +"].Duration");
+            List<GetTaskListResponse.GetTaskList_Task> getTaskListResponse_tasks = new List<GetTaskListResponse.GetTaskList_Task>();
+            for (int i = 0; i < context.Length("GetTaskList.Tasks.Length"); i++)
+            {
+                GetTaskListResponse.GetTaskList_Task task = new GetTaskListResponse.GetTaskList_Task();
+                task.TaskId = context.StringValue("GetTaskList.Tasks[" + i + "].TaskId");
+                task.JobId = context.StringValue("GetTaskList.Tasks[" + i + "].JobId");
+                task.ScenarioId = context.StringValue("GetTaskList.Tasks[" + i + "].ScenarioId");
+                task.ChatbotId = context.StringValue("GetTaskList.Tasks[" + i + "].ChatbotId");
+                task.PlanedTime = context.LongValue("GetTaskList.Tasks[" + i + "].PlanedTime");
+                task.ActualTime = context.LongValue("GetTaskList.Tasks[" + i + "].ActualTime");
+                task.CallingNumber = context.StringValue("GetTaskList.Tasks[" + i + "].CallingNumber");
+                task.CalledNumber = context.StringValue("GetTaskList.Tasks[" + i + "].CalledNumber");
+                task.CallId = context.StringValue("GetTaskList.Tasks[" + i + "].CallId");
+                task.Status = context.StringValue("GetTaskList.Tasks[" + i + "].Status");
+                task.Brief = context.StringValue("GetTaskList.Tasks[" + i + "].Brief");
+                task.Duration = context.IntegerValue("GetTaskList.Tasks[" + i + "].Duration");
 
-				GetTaskListResponse.GetTaskList_Task.GetTaskList_Contact contact = new GetTaskListResponse.GetTaskList_Task.GetTaskList_Contact();
-				contact.ContactId = context.StringValue("GetTaskList.Tasks["+ i +"].Contact.ContactId");
-				contact.ContactName = context.StringValue("GetTaskList.Tasks["+ i +"].Contact.ContactName");
-				contact.Honorific = context.StringValue("GetTaskList.Tasks["+ i +"].Contact.Honorific");
-				contact.Role = context.StringValue("GetTaskList.Tasks["+ i +"].Contact.Role");
-				contact.PhoneNumber = context.StringValue("GetTaskList.Tasks["+ i +"].Contact.PhoneNumber");
-				contact.State = context.StringValue("GetTaskList.Tasks["+ i +"].Contact.State");
-				contact.ReferenceId = context.StringValue("GetTaskList.Tasks["+ i +"].Contact.ReferenceId");
-				contact.JobId = context.StringValue("GetTaskList.Tasks["+ i +"].Contact.JobId");
-				task.Contact = contact;
+                GetTaskListResponse.GetTaskList_Task.GetTaskList_Contact contact = new GetTaskListResponse.GetTaskList_Task.GetTaskList_Contact();
+                contact.ContactId = context.StringValue("GetTaskList.Tasks[" + i + "].Contact.ContactId");
+                contact.ContactName = context.StringValue("GetTaskList.Tasks[" + i + "].Contact.ContactName");
+                contact.Honorific = context.StringValue("GetTaskList.Tasks[" + i + "].Contact.Honorific");
+                contact.Role = context.StringValue("GetTaskList.Tasks[" + i + "].Contact.Role");
+                contact.PhoneNumber = context.StringValue("GetTaskList.Tasks[" + i + "].Contact.PhoneNumber");
+                contact.State = context.StringValue("GetTaskList.Tasks[" + i + "].Contact.State");
+                contact.ReferenceId = context.StringValue("GetTaskList.Tasks[" + i + "].Contact.ReferenceId");
+                contact.JobId = context.StringValue("GetTaskList.Tasks[" + i + "].Contact.JobId");
+                task.Contact = contact;
 
-				List<GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail> task_conversation = new List<GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail>();
-				for (int j = 0; j < context.Length("GetTaskList.Tasks["+ i +"].Conversation.Length"); j++) {
-					GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail conversationDetail = new GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail();
-					conversationDetail.Timestamp = context.LongValue("GetTaskList.Tasks["+ i +"].Conversation["+ j +"].Timestamp");
-					conversationDetail.Speaker = context.StringValue("GetTaskList.Tasks["+ i +"].Conversation["+ j +"].Speaker");
-					conversationDetail.Script = context.StringValue("GetTaskList.Tasks["+ i +"].Conversation["+ j +"].Script");
+                List<GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail> task_conversation = new List<GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail>();
+                for (int j = 0; j < context.Length("GetTaskList.Tasks[" + i + "].Conversation.Length"); j++)
+                {
+                    GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail conversationDetail = new GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail();
+                    conversationDetail.Timestamp = context.LongValue("GetTaskList.Tasks[" + i + "].Conversation[" + j + "].Timestamp");
+                    conversationDetail.Speaker = context.StringValue("GetTaskList.Tasks[" + i + "].Conversation[" + j + "].Speaker");
+                    conversationDetail.Script = context.StringValue("GetTaskList.Tasks[" + i + "].Conversation[" + j + "].Script");
 
-					List<GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail.GetTaskList_SummaryItem> conversationDetail_summary = new List<GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail.GetTaskList_SummaryItem>();
-					for (int k = 0; k < context.Length("GetTaskList.Tasks["+ i +"].Conversation["+ j +"].Summary.Length"); k++) {
-						GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail.GetTaskList_SummaryItem summaryItem = new GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail.GetTaskList_SummaryItem();
-						summaryItem.Category = context.StringValue("GetTaskList.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Category");
-						summaryItem.SummaryName = context.StringValue("GetTaskList.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].SummaryName");
-						summaryItem.Content = context.StringValue("GetTaskList.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Content");
+                    List<GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail.GetTaskList_SummaryItem> conversationDetail_summary = new List<GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail.GetTaskList_SummaryItem>();
+                    for (int k = 0; k < context.Length("GetTaskList.Tasks[" + i + "].Conversation[" + j + "].Summary.Length"); k++)
+                    {
+                        GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail.GetTaskList_SummaryItem summaryItem = new GetTaskListResponse.GetTaskList_Task.GetTaskList_ConversationDetail.GetTaskList_SummaryItem();
+                        summaryItem.Category = context.StringValue("GetTaskList.Tasks[" + i + "].Conversation[" + j + "].Summary[" + k + "].Category");
+                        summaryItem.SummaryName = context.StringValue("GetTaskList.Tasks[" + i + "].Conversation[" + j + "].Summary[" + k + "].SummaryName");
+                        summaryItem.Content = context.StringValue("GetTaskList.Tasks[" + i + "].Conversation[" + j + "].Summary[" + k + "].Content");
 
-						conversationDetail_summary.Add(summaryItem);
-					}
-					conversationDetail.Summary = conversationDetail_summary;
+                        conversationDetail_summary.Add(summaryItem);
+                    }
+                    conversationDetail.Summary = conversationDetail_summary;
 
-					task_conversation.Add(conversationDetail);
-				}
-				task.Conversation = task_conversation;
+                    task_conversation.Add(conversationDetail);
+                }
+                task.Conversation = task_conversation;
 
-				getTaskListResponse_tasks.Add(task);
-			}
-			getTaskListResponse.Tasks = getTaskListResponse_tasks;
-        
-			return getTaskListResponse;
+                getTaskListResponse_tasks.Add(task);
+            }
+            getTaskListResponse.Tasks = getTaskListResponse_tasks;
+
+            return getTaskListResponse;
         }
     }
 }

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static CancelImportResponse Unmarshall(UnmarshallerContext context)
         {
-			CancelImportResponse cancelImportResponse = new CancelImportResponse();
+            CancelImportResponse cancelImportResponse = new CancelImportResponse();
 
-			cancelImportResponse.HttpResponse = context.HttpResponse;
-			cancelImportResponse.RequestId = context.StringValue("CancelImport.RequestId");
-        
-			return cancelImportResponse;
+            cancelImportResponse.HttpResponse = context.HttpResponse;
+            cancelImportResponse.RequestId = context.StringValue("CancelImport.RequestId");
+
+            return cancelImportResponse;
         }
     }
 }

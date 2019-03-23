@@ -33,190 +33,190 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string surveyId;
+        private string surveyId;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string role;
+        private string role;
 
-		private int? round;
+        private int? round;
 
-		private string flowJson;
+        private string flowJson;
 
-		private string name;
+        private string name;
 
-		private string globalQuestions;
+        private string globalQuestions;
 
-		private string description;
+        private string description;
 
-		private string corpora;
+        private string corpora;
 
-		private string speechOptimizationParam;
+        private string speechOptimizationParam;
 
-		private string scenarioId;
+        private string scenarioId;
 
-		private string flowId;
+        private string flowId;
 
-		public string SurveyId
-		{
-			get
-			{
-				return surveyId;
-			}
-			set	
-			{
-				surveyId = value;
-				DictionaryUtil.Add(QueryParameters, "SurveyId", value);
-			}
-		}
+        public string SurveyId
+        {
+            get
+            {
+                return surveyId;
+            }
+            set
+            {
+                surveyId = value;
+                DictionaryUtil.Add(QueryParameters, "SurveyId", value);
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string Role
-		{
-			get
-			{
-				return role;
-			}
-			set	
-			{
-				role = value;
-				DictionaryUtil.Add(QueryParameters, "Role", value);
-			}
-		}
+        public string Role
+        {
+            get
+            {
+                return role;
+            }
+            set
+            {
+                role = value;
+                DictionaryUtil.Add(QueryParameters, "Role", value);
+            }
+        }
 
-		public int? Round
-		{
-			get
-			{
-				return round;
-			}
-			set	
-			{
-				round = value;
-				DictionaryUtil.Add(QueryParameters, "Round", value.ToString());
-			}
-		}
+        public int? Round
+        {
+            get
+            {
+                return round;
+            }
+            set
+            {
+                round = value;
+                DictionaryUtil.Add(QueryParameters, "Round", value.ToString());
+            }
+        }
 
-		public string FlowJson
-		{
-			get
-			{
-				return flowJson;
-			}
-			set	
-			{
-				flowJson = value;
-				DictionaryUtil.Add(QueryParameters, "FlowJson", value);
-			}
-		}
+        public string FlowJson
+        {
+            get
+            {
+                return flowJson;
+            }
+            set
+            {
+                flowJson = value;
+                DictionaryUtil.Add(QueryParameters, "FlowJson", value);
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public string GlobalQuestions
-		{
-			get
-			{
-				return globalQuestions;
-			}
-			set	
-			{
-				globalQuestions = value;
-				DictionaryUtil.Add(QueryParameters, "GlobalQuestions", value);
-			}
-		}
+        public string GlobalQuestions
+        {
+            get
+            {
+                return globalQuestions;
+            }
+            set
+            {
+                globalQuestions = value;
+                DictionaryUtil.Add(QueryParameters, "GlobalQuestions", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string Corpora
-		{
-			get
-			{
-				return corpora;
-			}
-			set	
-			{
-				corpora = value;
-				DictionaryUtil.Add(QueryParameters, "Corpora", value);
-			}
-		}
+        public string Corpora
+        {
+            get
+            {
+                return corpora;
+            }
+            set
+            {
+                corpora = value;
+                DictionaryUtil.Add(QueryParameters, "Corpora", value);
+            }
+        }
 
-		public string SpeechOptimizationParam
-		{
-			get
-			{
-				return speechOptimizationParam;
-			}
-			set	
-			{
-				speechOptimizationParam = value;
-				DictionaryUtil.Add(QueryParameters, "SpeechOptimizationParam", value);
-			}
-		}
+        public string SpeechOptimizationParam
+        {
+            get
+            {
+                return speechOptimizationParam;
+            }
+            set
+            {
+                speechOptimizationParam = value;
+                DictionaryUtil.Add(QueryParameters, "SpeechOptimizationParam", value);
+            }
+        }
 
-		public string ScenarioId
-		{
-			get
-			{
-				return scenarioId;
-			}
-			set	
-			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
-			}
-		}
+        public string ScenarioId
+        {
+            get
+            {
+                return scenarioId;
+            }
+            set
+            {
+                scenarioId = value;
+                DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+            }
+        }
 
-		public string FlowId
-		{
-			get
-			{
-				return flowId;
-			}
-			set	
-			{
-				flowId = value;
-				DictionaryUtil.Add(QueryParameters, "FlowId", value);
-			}
-		}
+        public string FlowId
+        {
+            get
+            {
+                return flowId;
+            }
+            set
+            {
+                flowId = value;
+                DictionaryUtil.Add(QueryParameters, "FlowId", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override ModifySurveyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

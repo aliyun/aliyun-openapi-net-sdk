@@ -27,30 +27,31 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static DescribeDBInstanceHAConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDBInstanceHAConfigResponse describeDBInstanceHAConfigResponse = new DescribeDBInstanceHAConfigResponse();
+            DescribeDBInstanceHAConfigResponse describeDBInstanceHAConfigResponse = new DescribeDBInstanceHAConfigResponse();
 
-			describeDBInstanceHAConfigResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceHAConfigResponse.RequestId = context.StringValue("DescribeDBInstanceHAConfig.RequestId");
-			describeDBInstanceHAConfigResponse.DBInstanceId = context.StringValue("DescribeDBInstanceHAConfig.DBInstanceId");
-			describeDBInstanceHAConfigResponse.SyncMode = context.StringValue("DescribeDBInstanceHAConfig.SyncMode");
-			describeDBInstanceHAConfigResponse.HAMode = context.StringValue("DescribeDBInstanceHAConfig.HAMode");
+            describeDBInstanceHAConfigResponse.HttpResponse = context.HttpResponse;
+            describeDBInstanceHAConfigResponse.RequestId = context.StringValue("DescribeDBInstanceHAConfig.RequestId");
+            describeDBInstanceHAConfigResponse.DBInstanceId = context.StringValue("DescribeDBInstanceHAConfig.DBInstanceId");
+            describeDBInstanceHAConfigResponse.SyncMode = context.StringValue("DescribeDBInstanceHAConfig.SyncMode");
+            describeDBInstanceHAConfigResponse.HAMode = context.StringValue("DescribeDBInstanceHAConfig.HAMode");
 
-			List<DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo> describeDBInstanceHAConfigResponse_hostInstanceInfos = new List<DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo>();
-			for (int i = 0; i < context.Length("DescribeDBInstanceHAConfig.HostInstanceInfos.Length"); i++) {
-				DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo nodeInfo = new DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo();
-				nodeInfo.NodeId = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].NodeId");
-				nodeInfo.RegionId = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].RegionId");
-				nodeInfo.LogSyncTime = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].LogSyncTime");
-				nodeInfo.DataSyncTime = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].DataSyncTime");
-				nodeInfo.NodeType = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].NodeType");
-				nodeInfo.ZoneId = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].ZoneId");
-				nodeInfo.SyncStatus = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos["+ i +"].SyncStatus");
+            List<DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo> describeDBInstanceHAConfigResponse_hostInstanceInfos = new List<DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo>();
+            for (int i = 0; i < context.Length("DescribeDBInstanceHAConfig.HostInstanceInfos.Length"); i++)
+            {
+                DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo nodeInfo = new DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo();
+                nodeInfo.NodeId = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos[" + i + "].NodeId");
+                nodeInfo.RegionId = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos[" + i + "].RegionId");
+                nodeInfo.LogSyncTime = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos[" + i + "].LogSyncTime");
+                nodeInfo.DataSyncTime = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos[" + i + "].DataSyncTime");
+                nodeInfo.NodeType = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos[" + i + "].NodeType");
+                nodeInfo.ZoneId = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos[" + i + "].ZoneId");
+                nodeInfo.SyncStatus = context.StringValue("DescribeDBInstanceHAConfig.HostInstanceInfos[" + i + "].SyncStatus");
 
-				describeDBInstanceHAConfigResponse_hostInstanceInfos.Add(nodeInfo);
-			}
-			describeDBInstanceHAConfigResponse.HostInstanceInfos = describeDBInstanceHAConfigResponse_hostInstanceInfos;
-        
-			return describeDBInstanceHAConfigResponse;
+                describeDBInstanceHAConfigResponse_hostInstanceInfos.Add(nodeInfo);
+            }
+            describeDBInstanceHAConfigResponse.HostInstanceInfos = describeDBInstanceHAConfigResponse_hostInstanceInfos;
+
+            return describeDBInstanceHAConfigResponse;
         }
     }
 }

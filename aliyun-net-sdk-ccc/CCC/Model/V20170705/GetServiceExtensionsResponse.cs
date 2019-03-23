@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class GetServiceExtensionsResponse : AcsResponse
-	{
+    public class GetServiceExtensionsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? success;
+        private bool? success;
 
-		private string code;
+        private string code;
 
-		private string message;
+        private string message;
 
-		private int? httpStatusCode;
+        private int? httpStatusCode;
 
-		private List<GetServiceExtensions_ServiceExtension> serviceExtensions;
+        private List<GetServiceExtensions_ServiceExtension> serviceExtensions;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+        public int? HttpStatusCode
+        {
+            get
+            {
+                return httpStatusCode;
+            }
+            set
+            {
+                httpStatusCode = value;
+            }
+        }
 
-		public List<GetServiceExtensions_ServiceExtension> ServiceExtensions
-		{
-			get
-			{
-				return serviceExtensions;
-			}
-			set	
-			{
-				serviceExtensions = value;
-			}
-		}
+        public List<GetServiceExtensions_ServiceExtension> ServiceExtensions
+        {
+            get
+            {
+                return serviceExtensions;
+            }
+            set
+            {
+                serviceExtensions = value;
+            }
+        }
 
-		public class GetServiceExtensions_ServiceExtension
-		{
+        public class GetServiceExtensions_ServiceExtension
+        {
 
-			private string name;
+            private string name;
 
-			private string number;
+            private string number;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string Number
-			{
-				get
-				{
-					return number;
-				}
-				set	
-				{
-					number = value;
-				}
-			}
-		}
-	}
+            public string Number
+            {
+                get
+                {
+                    return number;
+                }
+                set
+                {
+                    number = value;
+                }
+            }
+        }
+    }
 }

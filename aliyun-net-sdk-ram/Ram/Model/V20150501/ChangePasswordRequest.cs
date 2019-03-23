@@ -32,38 +32,38 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public ChangePasswordRequest()
             : base("Ram", "2015-05-01", "ChangePassword", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string oldPassword;
+        private string oldPassword;
 
-		private string newPassword;
+        private string newPassword;
 
-		public string OldPassword
-		{
-			get
-			{
-				return oldPassword;
-			}
-			set	
-			{
-				oldPassword = value;
-				DictionaryUtil.Add(QueryParameters, "OldPassword", value);
-			}
-		}
+        public string OldPassword
+        {
+            get
+            {
+                return oldPassword;
+            }
+            set
+            {
+                oldPassword = value;
+                DictionaryUtil.Add(QueryParameters, "OldPassword", value);
+            }
+        }
 
-		public string NewPassword
-		{
-			get
-			{
-				return newPassword;
-			}
-			set	
-			{
-				newPassword = value;
-				DictionaryUtil.Add(QueryParameters, "NewPassword", value);
-			}
-		}
+        public string NewPassword
+        {
+            get
+            {
+                return newPassword;
+            }
+            set
+            {
+                newPassword = value;
+                DictionaryUtil.Add(QueryParameters, "NewPassword", value);
+            }
+        }
 
         public override ChangePasswordResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

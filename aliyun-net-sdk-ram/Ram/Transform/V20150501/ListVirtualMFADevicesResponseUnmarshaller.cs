@@ -28,28 +28,29 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static ListVirtualMFADevicesResponse Unmarshall(UnmarshallerContext context)
         {
-			ListVirtualMFADevicesResponse listVirtualMFADevicesResponse = new ListVirtualMFADevicesResponse();
+            ListVirtualMFADevicesResponse listVirtualMFADevicesResponse = new ListVirtualMFADevicesResponse();
 
-			listVirtualMFADevicesResponse.HttpResponse = context.HttpResponse;
-			listVirtualMFADevicesResponse.RequestId = context.StringValue("ListVirtualMFADevices.RequestId");
+            listVirtualMFADevicesResponse.HttpResponse = context.HttpResponse;
+            listVirtualMFADevicesResponse.RequestId = context.StringValue("ListVirtualMFADevices.RequestId");
 
-			List<ListVirtualMFADevicesResponse.ListVirtualMFADevices_VirtualMFADevice> listVirtualMFADevicesResponse_virtualMFADevices = new List<ListVirtualMFADevicesResponse.ListVirtualMFADevices_VirtualMFADevice>();
-			for (int i = 0; i < context.Length("ListVirtualMFADevices.VirtualMFADevices.Length"); i++) {
-				ListVirtualMFADevicesResponse.ListVirtualMFADevices_VirtualMFADevice virtualMFADevice = new ListVirtualMFADevicesResponse.ListVirtualMFADevices_VirtualMFADevice();
-				virtualMFADevice.SerialNumber = context.StringValue("ListVirtualMFADevices.VirtualMFADevices["+ i +"].SerialNumber");
-				virtualMFADevice.ActivateDate = context.StringValue("ListVirtualMFADevices.VirtualMFADevices["+ i +"].ActivateDate");
+            List<ListVirtualMFADevicesResponse.ListVirtualMFADevices_VirtualMFADevice> listVirtualMFADevicesResponse_virtualMFADevices = new List<ListVirtualMFADevicesResponse.ListVirtualMFADevices_VirtualMFADevice>();
+            for (int i = 0; i < context.Length("ListVirtualMFADevices.VirtualMFADevices.Length"); i++)
+            {
+                ListVirtualMFADevicesResponse.ListVirtualMFADevices_VirtualMFADevice virtualMFADevice = new ListVirtualMFADevicesResponse.ListVirtualMFADevices_VirtualMFADevice();
+                virtualMFADevice.SerialNumber = context.StringValue("ListVirtualMFADevices.VirtualMFADevices[" + i + "].SerialNumber");
+                virtualMFADevice.ActivateDate = context.StringValue("ListVirtualMFADevices.VirtualMFADevices[" + i + "].ActivateDate");
 
-				ListVirtualMFADevicesResponse.ListVirtualMFADevices_VirtualMFADevice.ListVirtualMFADevices_User user = new ListVirtualMFADevicesResponse.ListVirtualMFADevices_VirtualMFADevice.ListVirtualMFADevices_User();
-				user.UserId = context.StringValue("ListVirtualMFADevices.VirtualMFADevices["+ i +"].User.UserId");
-				user.UserName = context.StringValue("ListVirtualMFADevices.VirtualMFADevices["+ i +"].User.UserName");
-				user.DisplayName = context.StringValue("ListVirtualMFADevices.VirtualMFADevices["+ i +"].User.DisplayName");
-				virtualMFADevice.User = user;
+                ListVirtualMFADevicesResponse.ListVirtualMFADevices_VirtualMFADevice.ListVirtualMFADevices_User user = new ListVirtualMFADevicesResponse.ListVirtualMFADevices_VirtualMFADevice.ListVirtualMFADevices_User();
+                user.UserId = context.StringValue("ListVirtualMFADevices.VirtualMFADevices[" + i + "].User.UserId");
+                user.UserName = context.StringValue("ListVirtualMFADevices.VirtualMFADevices[" + i + "].User.UserName");
+                user.DisplayName = context.StringValue("ListVirtualMFADevices.VirtualMFADevices[" + i + "].User.DisplayName");
+                virtualMFADevice.User = user;
 
-				listVirtualMFADevicesResponse_virtualMFADevices.Add(virtualMFADevice);
-			}
-			listVirtualMFADevicesResponse.VirtualMFADevices = listVirtualMFADevicesResponse_virtualMFADevices;
-        
-			return listVirtualMFADevicesResponse;
+                listVirtualMFADevicesResponse_virtualMFADevices.Add(virtualMFADevice);
+            }
+            listVirtualMFADevicesResponse.VirtualMFADevices = listVirtualMFADevicesResponse_virtualMFADevices;
+
+            return listVirtualMFADevicesResponse;
         }
     }
 }

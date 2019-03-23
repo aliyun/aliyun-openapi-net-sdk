@@ -22,81 +22,81 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class ListGroupsForUserResponse : AcsResponse
-	{
+    public class ListGroupsForUserResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<ListGroupsForUser_Group> groups;
+        private List<ListGroupsForUser_Group> groups;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<ListGroupsForUser_Group> Groups
-		{
-			get
-			{
-				return groups;
-			}
-			set	
-			{
-				groups = value;
-			}
-		}
+        public List<ListGroupsForUser_Group> Groups
+        {
+            get
+            {
+                return groups;
+            }
+            set
+            {
+                groups = value;
+            }
+        }
 
-		public class ListGroupsForUser_Group
-		{
+        public class ListGroupsForUser_Group
+        {
 
-			private string groupName;
+            private string groupName;
 
-			private string comments;
+            private string comments;
 
-			private string joinDate;
+            private string joinDate;
 
-			public string GroupName
-			{
-				get
-				{
-					return groupName;
-				}
-				set	
-				{
-					groupName = value;
-				}
-			}
+            public string GroupName
+            {
+                get
+                {
+                    return groupName;
+                }
+                set
+                {
+                    groupName = value;
+                }
+            }
 
-			public string Comments
-			{
-				get
-				{
-					return comments;
-				}
-				set	
-				{
-					comments = value;
-				}
-			}
+            public string Comments
+            {
+                get
+                {
+                    return comments;
+                }
+                set
+                {
+                    comments = value;
+                }
+            }
 
-			public string JoinDate
-			{
-				get
-				{
-					return joinDate;
-				}
-				set	
-				{
-					joinDate = value;
-				}
-			}
-		}
-	}
+            public string JoinDate
+            {
+                get
+                {
+                    return joinDate;
+                }
+                set
+                {
+                    joinDate = value;
+                }
+            }
+        }
+    }
 }

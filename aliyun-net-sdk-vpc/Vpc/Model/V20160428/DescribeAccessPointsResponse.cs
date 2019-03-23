@@ -21,193 +21,193 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeAccessPointsResponse : AcsResponse
-	{
+    public class DescribeAccessPointsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private List<DescribeAccessPoints_AccessPointType> accessPointSet;
+        private List<DescribeAccessPoints_AccessPointType> accessPointSet;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribeAccessPoints_AccessPointType> AccessPointSet
-		{
-			get
-			{
-				return accessPointSet;
-			}
-			set	
-			{
-				accessPointSet = value;
-			}
-		}
+        public List<DescribeAccessPoints_AccessPointType> AccessPointSet
+        {
+            get
+            {
+                return accessPointSet;
+            }
+            set
+            {
+                accessPointSet = value;
+            }
+        }
 
-		public class DescribeAccessPoints_AccessPointType
-		{
+        public class DescribeAccessPoints_AccessPointType
+        {
 
-			private string accessPointId;
+            private string accessPointId;
 
-			private string status;
+            private string status;
 
-			private string type;
+            private string type;
 
-			private string attachedRegionNo;
+            private string attachedRegionNo;
 
-			private string location;
+            private string location;
 
-			private string hostOperator;
+            private string hostOperator;
 
-			private string name;
+            private string name;
 
-			private string description;
+            private string description;
 
-			public string AccessPointId
-			{
-				get
-				{
-					return accessPointId;
-				}
-				set	
-				{
-					accessPointId = value;
-				}
-			}
+            public string AccessPointId
+            {
+                get
+                {
+                    return accessPointId;
+                }
+                set
+                {
+                    accessPointId = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+            public string Type
+            {
+                get
+                {
+                    return type;
+                }
+                set
+                {
+                    type = value;
+                }
+            }
 
-			public string AttachedRegionNo
-			{
-				get
-				{
-					return attachedRegionNo;
-				}
-				set	
-				{
-					attachedRegionNo = value;
-				}
-			}
+            public string AttachedRegionNo
+            {
+                get
+                {
+                    return attachedRegionNo;
+                }
+                set
+                {
+                    attachedRegionNo = value;
+                }
+            }
 
-			public string Location
-			{
-				get
-				{
-					return location;
-				}
-				set	
-				{
-					location = value;
-				}
-			}
+            public string Location
+            {
+                get
+                {
+                    return location;
+                }
+                set
+                {
+                    location = value;
+                }
+            }
 
-			public string HostOperator
-			{
-				get
-				{
-					return hostOperator;
-				}
-				set	
-				{
-					hostOperator = value;
-				}
-			}
+            public string HostOperator
+            {
+                get
+                {
+                    return hostOperator;
+                }
+                set
+                {
+                    hostOperator = value;
+                }
+            }
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-		}
-	}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
+        }
+    }
 }

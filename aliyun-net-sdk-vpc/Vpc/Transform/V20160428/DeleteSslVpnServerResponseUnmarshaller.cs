@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DeleteSslVpnServerResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteSslVpnServerResponse deleteSslVpnServerResponse = new DeleteSslVpnServerResponse();
+            DeleteSslVpnServerResponse deleteSslVpnServerResponse = new DeleteSslVpnServerResponse();
 
-			deleteSslVpnServerResponse.HttpResponse = context.HttpResponse;
-			deleteSslVpnServerResponse.RequestId = context.StringValue("DeleteSslVpnServer.RequestId");
-        
-			return deleteSslVpnServerResponse;
+            deleteSslVpnServerResponse.HttpResponse = context.HttpResponse;
+            deleteSslVpnServerResponse.RequestId = context.StringValue("DeleteSslVpnServer.RequestId");
+
+            return deleteSslVpnServerResponse;
         }
     }
 }

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static AddCommonBandwidthPackageIpResponse Unmarshall(UnmarshallerContext context)
         {
-			AddCommonBandwidthPackageIpResponse addCommonBandwidthPackageIpResponse = new AddCommonBandwidthPackageIpResponse();
+            AddCommonBandwidthPackageIpResponse addCommonBandwidthPackageIpResponse = new AddCommonBandwidthPackageIpResponse();
 
-			addCommonBandwidthPackageIpResponse.HttpResponse = context.HttpResponse;
-			addCommonBandwidthPackageIpResponse.RequestId = context.StringValue("AddCommonBandwidthPackageIp.RequestId");
-        
-			return addCommonBandwidthPackageIpResponse;
+            addCommonBandwidthPackageIpResponse.HttpResponse = context.HttpResponse;
+            addCommonBandwidthPackageIpResponse.RequestId = context.StringValue("AddCommonBandwidthPackageIp.RequestId");
+
+            return addCommonBandwidthPackageIpResponse;
         }
     }
 }

@@ -34,65 +34,65 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string securityToken;
+        private string securityToken;
 
-		private string iP;
+        private string iP;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string IP
-		{
-			get
-			{
-				return iP;
-			}
-			set	
-			{
-				iP = value;
-				DictionaryUtil.Add(QueryParameters, "IP", value);
-			}
-		}
+        public string IP
+        {
+            get
+            {
+                return iP;
+            }
+            set
+            {
+                iP = value;
+                DictionaryUtil.Add(QueryParameters, "IP", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override DescribeIpInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

@@ -28,27 +28,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeLiveStreamRecordIndexFileResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLiveStreamRecordIndexFileResponse describeLiveStreamRecordIndexFileResponse = new DescribeLiveStreamRecordIndexFileResponse();
+            DescribeLiveStreamRecordIndexFileResponse describeLiveStreamRecordIndexFileResponse = new DescribeLiveStreamRecordIndexFileResponse();
 
-			describeLiveStreamRecordIndexFileResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamRecordIndexFileResponse.RequestId = context.StringValue("DescribeLiveStreamRecordIndexFile.RequestId");
+            describeLiveStreamRecordIndexFileResponse.HttpResponse = context.HttpResponse;
+            describeLiveStreamRecordIndexFileResponse.RequestId = context.StringValue("DescribeLiveStreamRecordIndexFile.RequestId");
 
-			DescribeLiveStreamRecordIndexFileResponse.DescribeLiveStreamRecordIndexFile_RecordIndexInfo recordIndexInfo = new DescribeLiveStreamRecordIndexFileResponse.DescribeLiveStreamRecordIndexFile_RecordIndexInfo();
-			recordIndexInfo.RecordId = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.RecordId");
-			recordIndexInfo.RecordUrl = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.RecordUrl");
-			recordIndexInfo.DomainName = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.DomainName");
-			recordIndexInfo.AppName = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.AppName");
-			recordIndexInfo.StreamName = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.StreamName");
-			recordIndexInfo.OssObject = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.OssObject");
-			recordIndexInfo.StartTime = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.StartTime");
-			recordIndexInfo.EndTime = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.EndTime");
-			recordIndexInfo.Duration = context.FloatValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.Duration");
-			recordIndexInfo.Height = context.IntegerValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.Height");
-			recordIndexInfo.Width = context.IntegerValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.Width");
-			recordIndexInfo.CreateTime = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.CreateTime");
-			describeLiveStreamRecordIndexFileResponse.RecordIndexInfo = recordIndexInfo;
-        
-			return describeLiveStreamRecordIndexFileResponse;
+            DescribeLiveStreamRecordIndexFileResponse.DescribeLiveStreamRecordIndexFile_RecordIndexInfo recordIndexInfo = new DescribeLiveStreamRecordIndexFileResponse.DescribeLiveStreamRecordIndexFile_RecordIndexInfo();
+            recordIndexInfo.RecordId = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.RecordId");
+            recordIndexInfo.RecordUrl = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.RecordUrl");
+            recordIndexInfo.DomainName = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.DomainName");
+            recordIndexInfo.AppName = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.AppName");
+            recordIndexInfo.StreamName = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.StreamName");
+            recordIndexInfo.OssObject = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.OssObject");
+            recordIndexInfo.StartTime = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.StartTime");
+            recordIndexInfo.EndTime = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.EndTime");
+            recordIndexInfo.Duration = context.FloatValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.Duration");
+            recordIndexInfo.Height = context.IntegerValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.Height");
+            recordIndexInfo.Width = context.IntegerValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.Width");
+            recordIndexInfo.CreateTime = context.StringValue("DescribeLiveStreamRecordIndexFile.RecordIndexInfo.CreateTime");
+            describeLiveStreamRecordIndexFileResponse.RecordIndexInfo = recordIndexInfo;
+
+            return describeLiveStreamRecordIndexFileResponse;
         }
     }
 }

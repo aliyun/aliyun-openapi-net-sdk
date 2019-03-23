@@ -33,215 +33,215 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private bool? autoPay;
+        private bool? autoPay;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string clientToken;
+        private string clientToken;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private int? internetMaxBandwidthOut;
+        private int? internetMaxBandwidthOut;
 
-		private string endTime;
+        private string endTime;
 
-		private string startTime;
+        private string startTime;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string action;
+        private string action;
 
-		private string networkChargeType;
+        private string networkChargeType;
 
-		private int? internetMaxBandwidthIn;
+        private int? internetMaxBandwidthIn;
 
-		private bool? allocatePublicIp;
+        private bool? allocatePublicIp;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public bool? AutoPay
-		{
-			get
-			{
-				return autoPay;
-			}
-			set	
-			{
-				autoPay = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
-			}
-		}
+        public bool? AutoPay
+        {
+            get
+            {
+                return autoPay;
+            }
+            set
+            {
+                autoPay = value;
+                DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
+        public string ClientToken
+        {
+            get
+            {
+                return clientToken;
+            }
+            set
+            {
+                clientToken = value;
+                DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public int? InternetMaxBandwidthOut
-		{
-			get
-			{
-				return internetMaxBandwidthOut;
-			}
-			set	
-			{
-				internetMaxBandwidthOut = value;
-				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthOut", value.ToString());
-			}
-		}
+        public int? InternetMaxBandwidthOut
+        {
+            get
+            {
+                return internetMaxBandwidthOut;
+            }
+            set
+            {
+                internetMaxBandwidthOut = value;
+                DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthOut", value.ToString());
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+                DictionaryUtil.Add(QueryParameters, "EndTime", value);
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+                DictionaryUtil.Add(QueryParameters, "StartTime", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string NetworkChargeType
-		{
-			get
-			{
-				return networkChargeType;
-			}
-			set	
-			{
-				networkChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkChargeType", value);
-			}
-		}
+        public string NetworkChargeType
+        {
+            get
+            {
+                return networkChargeType;
+            }
+            set
+            {
+                networkChargeType = value;
+                DictionaryUtil.Add(QueryParameters, "NetworkChargeType", value);
+            }
+        }
 
-		public int? InternetMaxBandwidthIn
-		{
-			get
-			{
-				return internetMaxBandwidthIn;
-			}
-			set	
-			{
-				internetMaxBandwidthIn = value;
-				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthIn", value.ToString());
-			}
-		}
+        public int? InternetMaxBandwidthIn
+        {
+            get
+            {
+                return internetMaxBandwidthIn;
+            }
+            set
+            {
+                internetMaxBandwidthIn = value;
+                DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthIn", value.ToString());
+            }
+        }
 
-		public bool? AllocatePublicIp
-		{
-			get
-			{
-				return allocatePublicIp;
-			}
-			set	
-			{
-				allocatePublicIp = value;
-				DictionaryUtil.Add(QueryParameters, "AllocatePublicIp", value.ToString());
-			}
-		}
+        public bool? AllocatePublicIp
+        {
+            get
+            {
+                return allocatePublicIp;
+            }
+            set
+            {
+                allocatePublicIp = value;
+                DictionaryUtil.Add(QueryParameters, "AllocatePublicIp", value.ToString());
+            }
+        }
 
         public override ModifyInstanceNetworkSpecResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

@@ -21,165 +21,165 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeSQLLogFilesResponse : AcsResponse
-	{
+    public class DescribeSQLLogFilesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalRecordCount;
+        private int? totalRecordCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private List<DescribeSQLLogFiles_LogFile> items;
+        private List<DescribeSQLLogFiles_LogFile> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public int? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public List<DescribeSQLLogFiles_LogFile> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeSQLLogFiles_LogFile> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeSQLLogFiles_LogFile
-		{
+        public class DescribeSQLLogFiles_LogFile
+        {
 
-			private string fileID;
+            private string fileID;
 
-			private string logStatus;
+            private string logStatus;
 
-			private string logDownloadURL;
+            private string logDownloadURL;
 
-			private string logSize;
+            private string logSize;
 
-			private string logStartTime;
+            private string logStartTime;
 
-			private string logEndTime;
+            private string logEndTime;
 
-			public string FileID
-			{
-				get
-				{
-					return fileID;
-				}
-				set	
-				{
-					fileID = value;
-				}
-			}
+            public string FileID
+            {
+                get
+                {
+                    return fileID;
+                }
+                set
+                {
+                    fileID = value;
+                }
+            }
 
-			public string LogStatus
-			{
-				get
-				{
-					return logStatus;
-				}
-				set	
-				{
-					logStatus = value;
-				}
-			}
+            public string LogStatus
+            {
+                get
+                {
+                    return logStatus;
+                }
+                set
+                {
+                    logStatus = value;
+                }
+            }
 
-			public string LogDownloadURL
-			{
-				get
-				{
-					return logDownloadURL;
-				}
-				set	
-				{
-					logDownloadURL = value;
-				}
-			}
+            public string LogDownloadURL
+            {
+                get
+                {
+                    return logDownloadURL;
+                }
+                set
+                {
+                    logDownloadURL = value;
+                }
+            }
 
-			public string LogSize
-			{
-				get
-				{
-					return logSize;
-				}
-				set	
-				{
-					logSize = value;
-				}
-			}
+            public string LogSize
+            {
+                get
+                {
+                    return logSize;
+                }
+                set
+                {
+                    logSize = value;
+                }
+            }
 
-			public string LogStartTime
-			{
-				get
-				{
-					return logStartTime;
-				}
-				set	
-				{
-					logStartTime = value;
-				}
-			}
+            public string LogStartTime
+            {
+                get
+                {
+                    return logStartTime;
+                }
+                set
+                {
+                    logStartTime = value;
+                }
+            }
 
-			public string LogEndTime
-			{
-				get
-				{
-					return logEndTime;
-				}
-				set	
-				{
-					logEndTime = value;
-				}
-			}
-		}
-	}
+            public string LogEndTime
+            {
+                get
+                {
+                    return logEndTime;
+                }
+                set
+                {
+                    logEndTime = value;
+                }
+            }
+        }
+    }
 }

@@ -27,22 +27,23 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static DescribeMasterSlaveVServerGroupsResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeMasterSlaveVServerGroupsResponse describeMasterSlaveVServerGroupsResponse = new DescribeMasterSlaveVServerGroupsResponse();
+            DescribeMasterSlaveVServerGroupsResponse describeMasterSlaveVServerGroupsResponse = new DescribeMasterSlaveVServerGroupsResponse();
 
-			describeMasterSlaveVServerGroupsResponse.HttpResponse = context.HttpResponse;
-			describeMasterSlaveVServerGroupsResponse.RequestId = context.StringValue("DescribeMasterSlaveVServerGroups.RequestId");
+            describeMasterSlaveVServerGroupsResponse.HttpResponse = context.HttpResponse;
+            describeMasterSlaveVServerGroupsResponse.RequestId = context.StringValue("DescribeMasterSlaveVServerGroups.RequestId");
 
-			List<DescribeMasterSlaveVServerGroupsResponse.DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup> describeMasterSlaveVServerGroupsResponse_masterSlaveVServerGroups = new List<DescribeMasterSlaveVServerGroupsResponse.DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup>();
-			for (int i = 0; i < context.Length("DescribeMasterSlaveVServerGroups.MasterSlaveVServerGroups.Length"); i++) {
-				DescribeMasterSlaveVServerGroupsResponse.DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup masterSlaveVServerGroup = new DescribeMasterSlaveVServerGroupsResponse.DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup();
-				masterSlaveVServerGroup.MasterSlaveVServerGroupId = context.StringValue("DescribeMasterSlaveVServerGroups.MasterSlaveVServerGroups["+ i +"].MasterSlaveVServerGroupId");
-				masterSlaveVServerGroup.MasterSlaveVServerGroupName = context.StringValue("DescribeMasterSlaveVServerGroups.MasterSlaveVServerGroups["+ i +"].MasterSlaveVServerGroupName");
+            List<DescribeMasterSlaveVServerGroupsResponse.DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup> describeMasterSlaveVServerGroupsResponse_masterSlaveVServerGroups = new List<DescribeMasterSlaveVServerGroupsResponse.DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup>();
+            for (int i = 0; i < context.Length("DescribeMasterSlaveVServerGroups.MasterSlaveVServerGroups.Length"); i++)
+            {
+                DescribeMasterSlaveVServerGroupsResponse.DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup masterSlaveVServerGroup = new DescribeMasterSlaveVServerGroupsResponse.DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup();
+                masterSlaveVServerGroup.MasterSlaveVServerGroupId = context.StringValue("DescribeMasterSlaveVServerGroups.MasterSlaveVServerGroups[" + i + "].MasterSlaveVServerGroupId");
+                masterSlaveVServerGroup.MasterSlaveVServerGroupName = context.StringValue("DescribeMasterSlaveVServerGroups.MasterSlaveVServerGroups[" + i + "].MasterSlaveVServerGroupName");
 
-				describeMasterSlaveVServerGroupsResponse_masterSlaveVServerGroups.Add(masterSlaveVServerGroup);
-			}
-			describeMasterSlaveVServerGroupsResponse.MasterSlaveVServerGroups = describeMasterSlaveVServerGroupsResponse_masterSlaveVServerGroups;
-        
-			return describeMasterSlaveVServerGroupsResponse;
+                describeMasterSlaveVServerGroupsResponse_masterSlaveVServerGroups.Add(masterSlaveVServerGroup);
+            }
+            describeMasterSlaveVServerGroupsResponse.MasterSlaveVServerGroups = describeMasterSlaveVServerGroupsResponse_masterSlaveVServerGroups;
+
+            return describeMasterSlaveVServerGroupsResponse;
         }
     }
 }

@@ -21,291 +21,291 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeVpnGatewaysResponse : AcsResponse
-	{
+    public class DescribeVpnGatewaysResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeVpnGateways_VpnGateway> vpnGateways;
+        private List<DescribeVpnGateways_VpnGateway> vpnGateways;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeVpnGateways_VpnGateway> VpnGateways
-		{
-			get
-			{
-				return vpnGateways;
-			}
-			set	
-			{
-				vpnGateways = value;
-			}
-		}
+        public List<DescribeVpnGateways_VpnGateway> VpnGateways
+        {
+            get
+            {
+                return vpnGateways;
+            }
+            set
+            {
+                vpnGateways = value;
+            }
+        }
 
-		public class DescribeVpnGateways_VpnGateway
-		{
+        public class DescribeVpnGateways_VpnGateway
+        {
 
-			private string vpnGatewayId;
+            private string vpnGatewayId;
 
-			private string vpcId;
+            private string vpcId;
 
-			private string vSwitchId;
+            private string vSwitchId;
 
-			private string internetIp;
+            private string internetIp;
 
-			private long? createTime;
+            private long? createTime;
 
-			private long? endTime;
+            private long? endTime;
 
-			private string spec;
+            private string spec;
 
-			private string name;
+            private string name;
 
-			private string description;
+            private string description;
 
-			private string status;
+            private string status;
 
-			private string businessStatus;
+            private string businessStatus;
 
-			private string chargeType;
+            private string chargeType;
 
-			private string ipsecVpn;
+            private string ipsecVpn;
 
-			private string sslVpn;
+            private string sslVpn;
 
-			private long? sslMaxConnections;
+            private long? sslMaxConnections;
 
-			public string VpnGatewayId
-			{
-				get
-				{
-					return vpnGatewayId;
-				}
-				set	
-				{
-					vpnGatewayId = value;
-				}
-			}
+            public string VpnGatewayId
+            {
+                get
+                {
+                    return vpnGatewayId;
+                }
+                set
+                {
+                    vpnGatewayId = value;
+                }
+            }
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
+            public string VpcId
+            {
+                get
+                {
+                    return vpcId;
+                }
+                set
+                {
+                    vpcId = value;
+                }
+            }
 
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
+            public string VSwitchId
+            {
+                get
+                {
+                    return vSwitchId;
+                }
+                set
+                {
+                    vSwitchId = value;
+                }
+            }
 
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
-				}
-			}
+            public string InternetIp
+            {
+                get
+                {
+                    return internetIp;
+                }
+                set
+                {
+                    internetIp = value;
+                }
+            }
 
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+            public long? CreateTime
+            {
+                get
+                {
+                    return createTime;
+                }
+                set
+                {
+                    createTime = value;
+                }
+            }
 
-			public long? EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
+            public long? EndTime
+            {
+                get
+                {
+                    return endTime;
+                }
+                set
+                {
+                    endTime = value;
+                }
+            }
 
-			public string Spec
-			{
-				get
-				{
-					return spec;
-				}
-				set	
-				{
-					spec = value;
-				}
-			}
+            public string Spec
+            {
+                get
+                {
+                    return spec;
+                }
+                set
+                {
+                    spec = value;
+                }
+            }
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string BusinessStatus
-			{
-				get
-				{
-					return businessStatus;
-				}
-				set	
-				{
-					businessStatus = value;
-				}
-			}
+            public string BusinessStatus
+            {
+                get
+                {
+                    return businessStatus;
+                }
+                set
+                {
+                    businessStatus = value;
+                }
+            }
 
-			public string ChargeType
-			{
-				get
-				{
-					return chargeType;
-				}
-				set	
-				{
-					chargeType = value;
-				}
-			}
+            public string ChargeType
+            {
+                get
+                {
+                    return chargeType;
+                }
+                set
+                {
+                    chargeType = value;
+                }
+            }
 
-			public string IpsecVpn
-			{
-				get
-				{
-					return ipsecVpn;
-				}
-				set	
-				{
-					ipsecVpn = value;
-				}
-			}
+            public string IpsecVpn
+            {
+                get
+                {
+                    return ipsecVpn;
+                }
+                set
+                {
+                    ipsecVpn = value;
+                }
+            }
 
-			public string SslVpn
-			{
-				get
-				{
-					return sslVpn;
-				}
-				set	
-				{
-					sslVpn = value;
-				}
-			}
+            public string SslVpn
+            {
+                get
+                {
+                    return sslVpn;
+                }
+                set
+                {
+                    sslVpn = value;
+                }
+            }
 
-			public long? SslMaxConnections
-			{
-				get
-				{
-					return sslMaxConnections;
-				}
-				set	
-				{
-					sslMaxConnections = value;
-				}
-			}
-		}
-	}
+            public long? SslMaxConnections
+            {
+                get
+                {
+                    return sslMaxConnections;
+                }
+                set
+                {
+                    sslMaxConnections = value;
+                }
+            }
+        }
+    }
 }

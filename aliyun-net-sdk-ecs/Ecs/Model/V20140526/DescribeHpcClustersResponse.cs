@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeHpcClustersResponse : AcsResponse
-	{
+    public class DescribeHpcClustersResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeHpcClusters_HpcCluster> hpcClusters;
+        private List<DescribeHpcClusters_HpcCluster> hpcClusters;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeHpcClusters_HpcCluster> HpcClusters
-		{
-			get
-			{
-				return hpcClusters;
-			}
-			set	
-			{
-				hpcClusters = value;
-			}
-		}
+        public List<DescribeHpcClusters_HpcCluster> HpcClusters
+        {
+            get
+            {
+                return hpcClusters;
+            }
+            set
+            {
+                hpcClusters = value;
+            }
+        }
 
-		public class DescribeHpcClusters_HpcCluster
-		{
+        public class DescribeHpcClusters_HpcCluster
+        {
 
-			private string hpcClusterId;
+            private string hpcClusterId;
 
-			private string name;
+            private string name;
 
-			private string description;
+            private string description;
 
-			public string HpcClusterId
-			{
-				get
-				{
-					return hpcClusterId;
-				}
-				set	
-				{
-					hpcClusterId = value;
-				}
-			}
+            public string HpcClusterId
+            {
+                get
+                {
+                    return hpcClusterId;
+                }
+                set
+                {
+                    hpcClusterId = value;
+                }
+            }
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-		}
-	}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
+        }
+    }
 }

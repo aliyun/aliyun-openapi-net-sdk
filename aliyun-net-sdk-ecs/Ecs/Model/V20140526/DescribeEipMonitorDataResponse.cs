@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeEipMonitorDataResponse : AcsResponse
-	{
+    public class DescribeEipMonitorDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeEipMonitorData_EipMonitorData> eipMonitorDatas;
+        private List<DescribeEipMonitorData_EipMonitorData> eipMonitorDatas;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeEipMonitorData_EipMonitorData> EipMonitorDatas
-		{
-			get
-			{
-				return eipMonitorDatas;
-			}
-			set	
-			{
-				eipMonitorDatas = value;
-			}
-		}
+        public List<DescribeEipMonitorData_EipMonitorData> EipMonitorDatas
+        {
+            get
+            {
+                return eipMonitorDatas;
+            }
+            set
+            {
+                eipMonitorDatas = value;
+            }
+        }
 
-		public class DescribeEipMonitorData_EipMonitorData
-		{
+        public class DescribeEipMonitorData_EipMonitorData
+        {
 
-			private int? eipRX;
+            private int? eipRX;
 
-			private int? eipTX;
+            private int? eipTX;
 
-			private int? eipFlow;
+            private int? eipFlow;
 
-			private int? eipBandwidth;
+            private int? eipBandwidth;
 
-			private int? eipPackets;
+            private int? eipPackets;
 
-			private string timeStamp;
+            private string timeStamp;
 
-			public int? EipRX
-			{
-				get
-				{
-					return eipRX;
-				}
-				set	
-				{
-					eipRX = value;
-				}
-			}
+            public int? EipRX
+            {
+                get
+                {
+                    return eipRX;
+                }
+                set
+                {
+                    eipRX = value;
+                }
+            }
 
-			public int? EipTX
-			{
-				get
-				{
-					return eipTX;
-				}
-				set	
-				{
-					eipTX = value;
-				}
-			}
+            public int? EipTX
+            {
+                get
+                {
+                    return eipTX;
+                }
+                set
+                {
+                    eipTX = value;
+                }
+            }
 
-			public int? EipFlow
-			{
-				get
-				{
-					return eipFlow;
-				}
-				set	
-				{
-					eipFlow = value;
-				}
-			}
+            public int? EipFlow
+            {
+                get
+                {
+                    return eipFlow;
+                }
+                set
+                {
+                    eipFlow = value;
+                }
+            }
 
-			public int? EipBandwidth
-			{
-				get
-				{
-					return eipBandwidth;
-				}
-				set	
-				{
-					eipBandwidth = value;
-				}
-			}
+            public int? EipBandwidth
+            {
+                get
+                {
+                    return eipBandwidth;
+                }
+                set
+                {
+                    eipBandwidth = value;
+                }
+            }
 
-			public int? EipPackets
-			{
-				get
-				{
-					return eipPackets;
-				}
-				set	
-				{
-					eipPackets = value;
-				}
-			}
+            public int? EipPackets
+            {
+                get
+                {
+                    return eipPackets;
+                }
+                set
+                {
+                    eipPackets = value;
+                }
+            }
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
-		}
-	}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
+        }
+    }
 }

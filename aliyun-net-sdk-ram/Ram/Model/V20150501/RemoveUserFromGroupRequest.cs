@@ -32,38 +32,38 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public RemoveUserFromGroupRequest()
             : base("Ram", "2015-05-01", "RemoveUserFromGroup", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string groupName;
+        private string groupName;
 
-		private string userName;
+        private string userName;
 
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
+        public string GroupName
+        {
+            get
+            {
+                return groupName;
+            }
+            set
+            {
+                groupName = value;
+                DictionaryUtil.Add(QueryParameters, "GroupName", value);
+            }
+        }
 
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
-			}
-		}
+        public string UserName
+        {
+            get
+            {
+                return userName;
+            }
+            set
+            {
+                userName = value;
+                DictionaryUtil.Add(QueryParameters, "UserName", value);
+            }
+        }
 
         public override RemoveUserFromGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

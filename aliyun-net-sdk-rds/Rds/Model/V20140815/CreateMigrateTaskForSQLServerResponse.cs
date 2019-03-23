@@ -21,105 +21,105 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateMigrateTaskForSQLServerResponse : AcsResponse
-	{
+    public class CreateMigrateTaskForSQLServerResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string dBInstanceName;
+        private string dBInstanceName;
 
-		private string taskId;
+        private string taskId;
 
-		private string dBName;
+        private string dBName;
 
-		private string migrateIaskId;
+        private string migrateIaskId;
 
-		private string taskType;
+        private string taskType;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+            }
+        }
 
-		public string DBInstanceName
-		{
-			get
-			{
-				return dBInstanceName;
-			}
-			set	
-			{
-				dBInstanceName = value;
-			}
-		}
+        public string DBInstanceName
+        {
+            get
+            {
+                return dBInstanceName;
+            }
+            set
+            {
+                dBInstanceName = value;
+            }
+        }
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
+        public string TaskId
+        {
+            get
+            {
+                return taskId;
+            }
+            set
+            {
+                taskId = value;
+            }
+        }
 
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-			}
-		}
+        public string DBName
+        {
+            get
+            {
+                return dBName;
+            }
+            set
+            {
+                dBName = value;
+            }
+        }
 
-		public string MigrateIaskId
-		{
-			get
-			{
-				return migrateIaskId;
-			}
-			set	
-			{
-				migrateIaskId = value;
-			}
-		}
+        public string MigrateIaskId
+        {
+            get
+            {
+                return migrateIaskId;
+            }
+            set
+            {
+                migrateIaskId = value;
+            }
+        }
 
-		public string TaskType
-		{
-			get
-			{
-				return taskType;
-			}
-			set	
-			{
-				taskType = value;
-			}
-		}
-	}
+        public string TaskType
+        {
+            get
+            {
+                return taskType;
+            }
+            set
+            {
+                taskType = value;
+            }
+        }
+    }
 }

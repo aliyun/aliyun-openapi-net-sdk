@@ -21,257 +21,257 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class ListBasicStatisticsReportSubItemsResponse : AcsResponse
-	{
+    public class ListBasicStatisticsReportSubItemsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? success;
+        private bool? success;
 
-		private string code;
+        private string code;
 
-		private string message;
+        private string message;
 
-		private int? httpStatusCode;
+        private int? httpStatusCode;
 
-		private ListBasicStatisticsReportSubItems_SubItems subItems;
+        private ListBasicStatisticsReportSubItems_SubItems subItems;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+        public bool? Success
+        {
+            get
+            {
+                return success;
+            }
+            set
+            {
+                success = value;
+            }
+        }
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+        public string Code
+        {
+            get
+            {
+                return code;
+            }
+            set
+            {
+                code = value;
+            }
+        }
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
+            set
+            {
+                message = value;
+            }
+        }
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+        public int? HttpStatusCode
+        {
+            get
+            {
+                return httpStatusCode;
+            }
+            set
+            {
+                httpStatusCode = value;
+            }
+        }
 
-		public ListBasicStatisticsReportSubItems_SubItems SubItems
-		{
-			get
-			{
-				return subItems;
-			}
-			set	
-			{
-				subItems = value;
-			}
-		}
+        public ListBasicStatisticsReportSubItems_SubItems SubItems
+        {
+            get
+            {
+                return subItems;
+            }
+            set
+            {
+                subItems = value;
+            }
+        }
 
-		public class ListBasicStatisticsReportSubItems_SubItems
-		{
+        public class ListBasicStatisticsReportSubItems_SubItems
+        {
 
-			private int? totalCount;
+            private int? totalCount;
 
-			private int? pageNumber;
+            private int? pageNumber;
 
-			private int? pageSize;
+            private int? pageSize;
 
-			private List<ListBasicStatisticsReportSubItems_BasicStatisticsReportSubItem> list;
+            private List<ListBasicStatisticsReportSubItems_BasicStatisticsReportSubItem> list;
 
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+            public int? TotalCount
+            {
+                get
+                {
+                    return totalCount;
+                }
+                set
+                {
+                    totalCount = value;
+                }
+            }
 
-			public int? PageNumber
-			{
-				get
-				{
-					return pageNumber;
-				}
-				set	
-				{
-					pageNumber = value;
-				}
-			}
+            public int? PageNumber
+            {
+                get
+                {
+                    return pageNumber;
+                }
+                set
+                {
+                    pageNumber = value;
+                }
+            }
 
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
+            public int? PageSize
+            {
+                get
+                {
+                    return pageSize;
+                }
+                set
+                {
+                    pageSize = value;
+                }
+            }
 
-			public List<ListBasicStatisticsReportSubItems_BasicStatisticsReportSubItem> List
-			{
-				get
-				{
-					return list;
-				}
-				set	
-				{
-					list = value;
-				}
-			}
+            public List<ListBasicStatisticsReportSubItems_BasicStatisticsReportSubItem> List
+            {
+                get
+                {
+                    return list;
+                }
+                set
+                {
+                    list = value;
+                }
+            }
 
-			public class ListBasicStatisticsReportSubItems_BasicStatisticsReportSubItem
-			{
+            public class ListBasicStatisticsReportSubItems_BasicStatisticsReportSubItem
+            {
 
-				private string basicStatisticsReportSubItemName;
+                private string basicStatisticsReportSubItemName;
 
-				private string _value;
+                private string _value;
 
-				private int? count;
+                private int? count;
 
-				private int? percentage;
+                private int? percentage;
 
-				private List<ListBasicStatisticsReportSubItems_KeyValuePair> row;
+                private List<ListBasicStatisticsReportSubItems_KeyValuePair> row;
 
-				public string BasicStatisticsReportSubItemName
-				{
-					get
-					{
-						return basicStatisticsReportSubItemName;
-					}
-					set	
-					{
-						basicStatisticsReportSubItemName = value;
-					}
-				}
+                public string BasicStatisticsReportSubItemName
+                {
+                    get
+                    {
+                        return basicStatisticsReportSubItemName;
+                    }
+                    set
+                    {
+                        basicStatisticsReportSubItemName = value;
+                    }
+                }
 
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
+                public string _Value
+                {
+                    get
+                    {
+                        return _value;
+                    }
+                    set
+                    {
+                        _value = value;
+                    }
+                }
 
-				public int? Count
-				{
-					get
-					{
-						return count;
-					}
-					set	
-					{
-						count = value;
-					}
-				}
+                public int? Count
+                {
+                    get
+                    {
+                        return count;
+                    }
+                    set
+                    {
+                        count = value;
+                    }
+                }
 
-				public int? Percentage
-				{
-					get
-					{
-						return percentage;
-					}
-					set	
-					{
-						percentage = value;
-					}
-				}
+                public int? Percentage
+                {
+                    get
+                    {
+                        return percentage;
+                    }
+                    set
+                    {
+                        percentage = value;
+                    }
+                }
 
-				public List<ListBasicStatisticsReportSubItems_KeyValuePair> Row
-				{
-					get
-					{
-						return row;
-					}
-					set	
-					{
-						row = value;
-					}
-				}
+                public List<ListBasicStatisticsReportSubItems_KeyValuePair> Row
+                {
+                    get
+                    {
+                        return row;
+                    }
+                    set
+                    {
+                        row = value;
+                    }
+                }
 
-				public class ListBasicStatisticsReportSubItems_KeyValuePair
-				{
+                public class ListBasicStatisticsReportSubItems_KeyValuePair
+                {
 
-					private string key;
+                    private string key;
 
-					private string _value;
+                    private string _value;
 
-					public string Key
-					{
-						get
-						{
-							return key;
-						}
-						set	
-						{
-							key = value;
-						}
-					}
+                    public string Key
+                    {
+                        get
+                        {
+                            return key;
+                        }
+                        set
+                        {
+                            key = value;
+                        }
+                    }
 
-					public string _Value
-					{
-						get
-						{
-							return _value;
-						}
-						set	
-						{
-							_value = value;
-						}
-					}
-				}
-			}
-		}
-	}
+                    public string _Value
+                    {
+                        get
+                        {
+                            return _value;
+                        }
+                        set
+                        {
+                            _value = value;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

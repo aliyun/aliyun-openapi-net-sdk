@@ -33,104 +33,104 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		private List<string> surveysJsons;
+        private List<string> surveysJsons;
 
-		private string strategyJson;
+        private string strategyJson;
 
-		private string name;
+        private string name;
 
-		private string description;
+        private string description;
 
-		private string type;
+        private string type;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public List<string> SurveysJsons
-		{
-			get
-			{
-				return surveysJsons;
-			}
+        public List<string> SurveysJsons
+        {
+            get
+            {
+                return surveysJsons;
+            }
 
-			set
-			{
-				surveysJsons = value;
-				for (int i = 0; i < surveysJsons.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SurveysJson." + (i + 1) , surveysJsons[i]);
-				}
-			}
-		}
+            set
+            {
+                surveysJsons = value;
+                for (int i = 0; i < surveysJsons.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "SurveysJson." + (i + 1), surveysJsons[i]);
+                }
+            }
+        }
 
-		public string StrategyJson
-		{
-			get
-			{
-				return strategyJson;
-			}
-			set	
-			{
-				strategyJson = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
-			}
-		}
+        public string StrategyJson
+        {
+            get
+            {
+                return strategyJson;
+            }
+            set
+            {
+                strategyJson = value;
+                DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                DictionaryUtil.Add(QueryParameters, "Name", value);
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
+        public string Type
+        {
+            get
+            {
+                return type;
+            }
+            set
+            {
+                type = value;
+                DictionaryUtil.Add(QueryParameters, "Type", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override CreateScenarioResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

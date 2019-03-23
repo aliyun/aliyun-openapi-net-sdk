@@ -21,95 +21,95 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CheckResourceResponse : AcsResponse
-	{
+    public class CheckResourceResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string specifyCount;
+        private string specifyCount;
 
-		private List<CheckResource_Resource> resources;
+        private List<CheckResource_Resource> resources;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string SpecifyCount
-		{
-			get
-			{
-				return specifyCount;
-			}
-			set	
-			{
-				specifyCount = value;
-			}
-		}
+        public string SpecifyCount
+        {
+            get
+            {
+                return specifyCount;
+            }
+            set
+            {
+                specifyCount = value;
+            }
+        }
 
-		public List<CheckResource_Resource> Resources
-		{
-			get
-			{
-				return resources;
-			}
-			set	
-			{
-				resources = value;
-			}
-		}
+        public List<CheckResource_Resource> Resources
+        {
+            get
+            {
+                return resources;
+            }
+            set
+            {
+                resources = value;
+            }
+        }
 
-		public class CheckResource_Resource
-		{
+        public class CheckResource_Resource
+        {
 
-			private string dBInstanceAvailable;
+            private string dBInstanceAvailable;
 
-			private string engine;
+            private string engine;
 
-			private string engineVersion;
+            private string engineVersion;
 
-			public string DBInstanceAvailable
-			{
-				get
-				{
-					return dBInstanceAvailable;
-				}
-				set	
-				{
-					dBInstanceAvailable = value;
-				}
-			}
+            public string DBInstanceAvailable
+            {
+                get
+                {
+                    return dBInstanceAvailable;
+                }
+                set
+                {
+                    dBInstanceAvailable = value;
+                }
+            }
 
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
+            public string Engine
+            {
+                get
+                {
+                    return engine;
+                }
+                set
+                {
+                    engine = value;
+                }
+            }
 
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
-				}
-			}
-		}
-	}
+            public string EngineVersion
+            {
+                get
+                {
+                    return engineVersion;
+                }
+                set
+                {
+                    engineVersion = value;
+                }
+            }
+        }
+    }
 }

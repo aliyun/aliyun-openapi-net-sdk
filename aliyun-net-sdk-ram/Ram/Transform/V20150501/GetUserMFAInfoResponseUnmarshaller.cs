@@ -28,16 +28,16 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static GetUserMFAInfoResponse Unmarshall(UnmarshallerContext context)
         {
-			GetUserMFAInfoResponse getUserMFAInfoResponse = new GetUserMFAInfoResponse();
+            GetUserMFAInfoResponse getUserMFAInfoResponse = new GetUserMFAInfoResponse();
 
-			getUserMFAInfoResponse.HttpResponse = context.HttpResponse;
-			getUserMFAInfoResponse.RequestId = context.StringValue("GetUserMFAInfo.RequestId");
+            getUserMFAInfoResponse.HttpResponse = context.HttpResponse;
+            getUserMFAInfoResponse.RequestId = context.StringValue("GetUserMFAInfo.RequestId");
 
-			GetUserMFAInfoResponse.GetUserMFAInfo_MFADevice mFADevice = new GetUserMFAInfoResponse.GetUserMFAInfo_MFADevice();
-			mFADevice.SerialNumber = context.StringValue("GetUserMFAInfo.MFADevice.SerialNumber");
-			getUserMFAInfoResponse.MFADevice = mFADevice;
-        
-			return getUserMFAInfoResponse;
+            GetUserMFAInfoResponse.GetUserMFAInfo_MFADevice mFADevice = new GetUserMFAInfoResponse.GetUserMFAInfo_MFADevice();
+            mFADevice.SerialNumber = context.StringValue("GetUserMFAInfo.MFADevice.SerialNumber");
+            getUserMFAInfoResponse.MFADevice = mFADevice;
+
+            return getUserMFAInfoResponse;
         }
     }
 }

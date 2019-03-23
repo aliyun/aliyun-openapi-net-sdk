@@ -140,7 +140,8 @@ namespace Aliyun.Acs.Core.Tests.Units
             String product, String version, String action
         ) : base(
             product, version, action
-        ) { }
+        )
+        { }
 
         public MockRpcAcsRequest(
             String product, String version, String action, String locationProduct

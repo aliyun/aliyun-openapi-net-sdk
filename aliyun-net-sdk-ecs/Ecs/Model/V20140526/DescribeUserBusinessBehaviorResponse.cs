@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeUserBusinessBehaviorResponse : AcsResponse
-	{
+    public class DescribeUserBusinessBehaviorResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string statusValue;
+        private string statusValue;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string StatusValue
-		{
-			get
-			{
-				return statusValue;
-			}
-			set	
-			{
-				statusValue = value;
-			}
-		}
-	}
+        public string StatusValue
+        {
+            get
+            {
+                return statusValue;
+            }
+            set
+            {
+                statusValue = value;
+            }
+        }
+    }
 }

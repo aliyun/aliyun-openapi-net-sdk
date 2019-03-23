@@ -33,40 +33,40 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		private string jobGroupId;
+        private string jobGroupId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string JobGroupId
-		{
-			get
-			{
-				return jobGroupId;
-			}
-			set	
-			{
-				jobGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
-			}
-		}
+        public string JobGroupId
+        {
+            get
+            {
+                return jobGroupId;
+            }
+            set
+            {
+                jobGroupId = value;
+                DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override DownloadOriginalStatisticsReportResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

@@ -33,155 +33,155 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string regionId;
+        private string regionId;
 
-		private string autoSnapshotPolicyId;
+        private string autoSnapshotPolicyId;
 
-		private string action;
+        private string action;
 
-		private string timePoints;
+        private string timePoints;
 
-		private int? retentionDays;
+        private int? retentionDays;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string repeatWeekdays;
+        private string repeatWeekdays;
 
-		private string autoSnapshotPolicyName;
+        private string autoSnapshotPolicyName;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "regionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "regionId", value);
+            }
+        }
 
-		public string AutoSnapshotPolicyId
-		{
-			get
-			{
-				return autoSnapshotPolicyId;
-			}
-			set	
-			{
-				autoSnapshotPolicyId = value;
-				DictionaryUtil.Add(QueryParameters, "autoSnapshotPolicyId", value);
-			}
-		}
+        public string AutoSnapshotPolicyId
+        {
+            get
+            {
+                return autoSnapshotPolicyId;
+            }
+            set
+            {
+                autoSnapshotPolicyId = value;
+                DictionaryUtil.Add(QueryParameters, "autoSnapshotPolicyId", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string TimePoints
-		{
-			get
-			{
-				return timePoints;
-			}
-			set	
-			{
-				timePoints = value;
-				DictionaryUtil.Add(QueryParameters, "timePoints", value);
-			}
-		}
+        public string TimePoints
+        {
+            get
+            {
+                return timePoints;
+            }
+            set
+            {
+                timePoints = value;
+                DictionaryUtil.Add(QueryParameters, "timePoints", value);
+            }
+        }
 
-		public int? RetentionDays
-		{
-			get
-			{
-				return retentionDays;
-			}
-			set	
-			{
-				retentionDays = value;
-				DictionaryUtil.Add(QueryParameters, "retentionDays", value.ToString());
-			}
-		}
+        public int? RetentionDays
+        {
+            get
+            {
+                return retentionDays;
+            }
+            set
+            {
+                retentionDays = value;
+                DictionaryUtil.Add(QueryParameters, "retentionDays", value.ToString());
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string RepeatWeekdays
-		{
-			get
-			{
-				return repeatWeekdays;
-			}
-			set	
-			{
-				repeatWeekdays = value;
-				DictionaryUtil.Add(QueryParameters, "repeatWeekdays", value);
-			}
-		}
+        public string RepeatWeekdays
+        {
+            get
+            {
+                return repeatWeekdays;
+            }
+            set
+            {
+                repeatWeekdays = value;
+                DictionaryUtil.Add(QueryParameters, "repeatWeekdays", value);
+            }
+        }
 
-		public string AutoSnapshotPolicyName
-		{
-			get
-			{
-				return autoSnapshotPolicyName;
-			}
-			set	
-			{
-				autoSnapshotPolicyName = value;
-				DictionaryUtil.Add(QueryParameters, "autoSnapshotPolicyName", value);
-			}
-		}
+        public string AutoSnapshotPolicyName
+        {
+            get
+            {
+                return autoSnapshotPolicyName;
+            }
+            set
+            {
+                autoSnapshotPolicyName = value;
+                DictionaryUtil.Add(QueryParameters, "autoSnapshotPolicyName", value);
+            }
+        }
 
         public override ModifyAutoSnapshotPolicyExResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

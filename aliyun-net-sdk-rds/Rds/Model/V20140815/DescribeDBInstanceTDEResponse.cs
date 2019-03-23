@@ -21,81 +21,81 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeDBInstanceTDEResponse : AcsResponse
-	{
+    public class DescribeDBInstanceTDEResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string tDEStatus;
+        private string tDEStatus;
 
-		private List<DescribeDBInstanceTDE_Database> databases;
+        private List<DescribeDBInstanceTDE_Database> databases;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string TDEStatus
-		{
-			get
-			{
-				return tDEStatus;
-			}
-			set	
-			{
-				tDEStatus = value;
-			}
-		}
+        public string TDEStatus
+        {
+            get
+            {
+                return tDEStatus;
+            }
+            set
+            {
+                tDEStatus = value;
+            }
+        }
 
-		public List<DescribeDBInstanceTDE_Database> Databases
-		{
-			get
-			{
-				return databases;
-			}
-			set	
-			{
-				databases = value;
-			}
-		}
+        public List<DescribeDBInstanceTDE_Database> Databases
+        {
+            get
+            {
+                return databases;
+            }
+            set
+            {
+                databases = value;
+            }
+        }
 
-		public class DescribeDBInstanceTDE_Database
-		{
+        public class DescribeDBInstanceTDE_Database
+        {
 
-			private string dBName;
+            private string dBName;
 
-			private string tDEStatus;
+            private string tDEStatus;
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
+            public string DBName
+            {
+                get
+                {
+                    return dBName;
+                }
+                set
+                {
+                    dBName = value;
+                }
+            }
 
-			public string TDEStatus
-			{
-				get
-				{
-					return tDEStatus;
-				}
-				set	
-				{
-					tDEStatus = value;
-				}
-			}
-		}
-	}
+            public string TDEStatus
+            {
+                get
+                {
+                    return tDEStatus;
+                }
+                set
+                {
+                    tDEStatus = value;
+                }
+            }
+        }
+    }
 }

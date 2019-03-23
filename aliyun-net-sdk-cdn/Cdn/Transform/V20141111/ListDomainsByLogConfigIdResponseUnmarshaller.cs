@@ -28,18 +28,19 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static ListDomainsByLogConfigIdResponse Unmarshall(UnmarshallerContext context)
         {
-			ListDomainsByLogConfigIdResponse listDomainsByLogConfigIdResponse = new ListDomainsByLogConfigIdResponse();
+            ListDomainsByLogConfigIdResponse listDomainsByLogConfigIdResponse = new ListDomainsByLogConfigIdResponse();
 
-			listDomainsByLogConfigIdResponse.HttpResponse = context.HttpResponse;
-			listDomainsByLogConfigIdResponse.RequestId = context.StringValue("ListDomainsByLogConfigId.RequestId");
+            listDomainsByLogConfigIdResponse.HttpResponse = context.HttpResponse;
+            listDomainsByLogConfigIdResponse.RequestId = context.StringValue("ListDomainsByLogConfigId.RequestId");
 
-			List<string> listDomainsByLogConfigIdResponse_domains = new List<string>();
-			for (int i = 0; i < context.Length("ListDomainsByLogConfigId.Domains.Length"); i++) {
-				listDomainsByLogConfigIdResponse_domains.Add(context.StringValue("ListDomainsByLogConfigId.Domains["+ i +"]"));
-			}
-			listDomainsByLogConfigIdResponse.Domains = listDomainsByLogConfigIdResponse_domains;
-        
-			return listDomainsByLogConfigIdResponse;
+            List<string> listDomainsByLogConfigIdResponse_domains = new List<string>();
+            for (int i = 0; i < context.Length("ListDomainsByLogConfigId.Domains.Length"); i++)
+            {
+                listDomainsByLogConfigIdResponse_domains.Add(context.StringValue("ListDomainsByLogConfigId.Domains[" + i + "]"));
+            }
+            listDomainsByLogConfigIdResponse.Domains = listDomainsByLogConfigIdResponse_domains;
+
+            return listDomainsByLogConfigIdResponse;
         }
     }
 }

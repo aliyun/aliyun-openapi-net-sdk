@@ -21,95 +21,95 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeInstanceRamRoleResponse : AcsResponse
-	{
+    public class DescribeInstanceRamRoleResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string regionId;
+        private string regionId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private List<DescribeInstanceRamRole_InstanceRamRoleSet> instanceRamRoleSets;
+        private List<DescribeInstanceRamRole_InstanceRamRoleSet> instanceRamRoleSets;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribeInstanceRamRole_InstanceRamRoleSet> InstanceRamRoleSets
-		{
-			get
-			{
-				return instanceRamRoleSets;
-			}
-			set	
-			{
-				instanceRamRoleSets = value;
-			}
-		}
+        public List<DescribeInstanceRamRole_InstanceRamRoleSet> InstanceRamRoleSets
+        {
+            get
+            {
+                return instanceRamRoleSets;
+            }
+            set
+            {
+                instanceRamRoleSets = value;
+            }
+        }
 
-		public class DescribeInstanceRamRole_InstanceRamRoleSet
-		{
+        public class DescribeInstanceRamRole_InstanceRamRoleSet
+        {
 
-			private string instanceId;
+            private string instanceId;
 
-			private string ramRoleName;
+            private string ramRoleName;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public string RamRoleName
-			{
-				get
-				{
-					return ramRoleName;
-				}
-				set	
-				{
-					ramRoleName = value;
-				}
-			}
-		}
-	}
+            public string RamRoleName
+            {
+                get
+                {
+                    return ramRoleName;
+                }
+                set
+                {
+                    ramRoleName = value;
+                }
+            }
+        }
+    }
 }

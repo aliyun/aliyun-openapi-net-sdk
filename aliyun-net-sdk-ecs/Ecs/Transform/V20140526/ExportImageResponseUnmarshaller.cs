@@ -27,14 +27,14 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ExportImageResponse Unmarshall(UnmarshallerContext context)
         {
-			ExportImageResponse exportImageResponse = new ExportImageResponse();
+            ExportImageResponse exportImageResponse = new ExportImageResponse();
 
-			exportImageResponse.HttpResponse = context.HttpResponse;
-			exportImageResponse.RequestId = context.StringValue("ExportImage.RequestId");
-			exportImageResponse.TaskId = context.StringValue("ExportImage.TaskId");
-			exportImageResponse.RegionId = context.StringValue("ExportImage.RegionId");
-        
-			return exportImageResponse;
+            exportImageResponse.HttpResponse = context.HttpResponse;
+            exportImageResponse.RequestId = context.StringValue("ExportImage.RequestId");
+            exportImageResponse.TaskId = context.StringValue("ExportImage.TaskId");
+            exportImageResponse.RegionId = context.StringValue("ExportImage.RegionId");
+
+            return exportImageResponse;
         }
     }
 }

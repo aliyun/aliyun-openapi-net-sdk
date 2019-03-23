@@ -22,53 +22,53 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class GetAccessKeyLastUsedResponse : AcsResponse
-	{
+    public class GetAccessKeyLastUsedResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private GetAccessKeyLastUsed_AccessKeyLastUsed accessKeyLastUsed;
+        private GetAccessKeyLastUsed_AccessKeyLastUsed accessKeyLastUsed;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public GetAccessKeyLastUsed_AccessKeyLastUsed AccessKeyLastUsed
-		{
-			get
-			{
-				return accessKeyLastUsed;
-			}
-			set	
-			{
-				accessKeyLastUsed = value;
-			}
-		}
+        public GetAccessKeyLastUsed_AccessKeyLastUsed AccessKeyLastUsed
+        {
+            get
+            {
+                return accessKeyLastUsed;
+            }
+            set
+            {
+                accessKeyLastUsed = value;
+            }
+        }
 
-		public class GetAccessKeyLastUsed_AccessKeyLastUsed
-		{
+        public class GetAccessKeyLastUsed_AccessKeyLastUsed
+        {
 
-			private string lastUsedDate;
+            private string lastUsedDate;
 
-			public string LastUsedDate
-			{
-				get
-				{
-					return lastUsedDate;
-				}
-				set	
-				{
-					lastUsedDate = value;
-				}
-			}
-		}
-	}
+            public string LastUsedDate
+            {
+                get
+                {
+                    return lastUsedDate;
+                }
+                set
+                {
+                    lastUsedDate = value;
+                }
+            }
+        }
+    }
 }

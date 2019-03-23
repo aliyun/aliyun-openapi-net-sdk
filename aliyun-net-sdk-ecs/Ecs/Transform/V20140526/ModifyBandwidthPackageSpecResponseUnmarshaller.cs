@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ModifyBandwidthPackageSpecResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyBandwidthPackageSpecResponse modifyBandwidthPackageSpecResponse = new ModifyBandwidthPackageSpecResponse();
+            ModifyBandwidthPackageSpecResponse modifyBandwidthPackageSpecResponse = new ModifyBandwidthPackageSpecResponse();
 
-			modifyBandwidthPackageSpecResponse.HttpResponse = context.HttpResponse;
-			modifyBandwidthPackageSpecResponse.RequestId = context.StringValue("ModifyBandwidthPackageSpec.RequestId");
-        
-			return modifyBandwidthPackageSpecResponse;
+            modifyBandwidthPackageSpecResponse.HttpResponse = context.HttpResponse;
+            modifyBandwidthPackageSpecResponse.RequestId = context.StringValue("ModifyBandwidthPackageSpec.RequestId");
+
+            return modifyBandwidthPackageSpecResponse;
         }
     }
 }

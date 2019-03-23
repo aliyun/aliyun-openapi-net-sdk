@@ -22,179 +22,179 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeRefreshTasksResponse : AcsResponse
-	{
+    public class DescribeRefreshTasksResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private long? pageNumber;
+        private long? pageNumber;
 
-		private long? pageSize;
+        private long? pageSize;
 
-		private long? totalCount;
+        private long? totalCount;
 
-		private List<DescribeRefreshTasks_CDNTask> tasks;
+        private List<DescribeRefreshTasks_CDNTask> tasks;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public long? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public long? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public long? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public List<DescribeRefreshTasks_CDNTask> Tasks
-		{
-			get
-			{
-				return tasks;
-			}
-			set	
-			{
-				tasks = value;
-			}
-		}
+        public List<DescribeRefreshTasks_CDNTask> Tasks
+        {
+            get
+            {
+                return tasks;
+            }
+            set
+            {
+                tasks = value;
+            }
+        }
 
-		public class DescribeRefreshTasks_CDNTask
-		{
+        public class DescribeRefreshTasks_CDNTask
+        {
 
-			private string taskId;
+            private string taskId;
 
-			private string objectPath;
+            private string objectPath;
 
-			private string process;
+            private string process;
 
-			private string status;
+            private string status;
 
-			private string creationTime;
+            private string creationTime;
 
-			private string description;
+            private string description;
 
-			private string objectType;
+            private string objectType;
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+            public string TaskId
+            {
+                get
+                {
+                    return taskId;
+                }
+                set
+                {
+                    taskId = value;
+                }
+            }
 
-			public string ObjectPath
-			{
-				get
-				{
-					return objectPath;
-				}
-				set	
-				{
-					objectPath = value;
-				}
-			}
+            public string ObjectPath
+            {
+                get
+                {
+                    return objectPath;
+                }
+                set
+                {
+                    objectPath = value;
+                }
+            }
 
-			public string Process
-			{
-				get
-				{
-					return process;
-				}
-				set	
-				{
-					process = value;
-				}
-			}
+            public string Process
+            {
+                get
+                {
+                    return process;
+                }
+                set
+                {
+                    process = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+            public string CreationTime
+            {
+                get
+                {
+                    return creationTime;
+                }
+                set
+                {
+                    creationTime = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string ObjectType
-			{
-				get
-				{
-					return objectType;
-				}
-				set	
-				{
-					objectType = value;
-				}
-			}
-		}
-	}
+            public string ObjectType
+            {
+                get
+                {
+                    return objectType;
+                }
+                set
+                {
+                    objectType = value;
+                }
+            }
+        }
+    }
 }

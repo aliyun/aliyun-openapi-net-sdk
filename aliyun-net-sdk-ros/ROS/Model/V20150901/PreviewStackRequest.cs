@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public PreviewStackRequest()
             : base("ROS", "2015-09-01", "PreviewStack")
         {
-			UriPattern = "/stacks/preview";
-			Method = MethodType.POST;
+            UriPattern = "/stacks/preview";
+            Method = MethodType.POST;
         }
 
         public override PreviewStackResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)

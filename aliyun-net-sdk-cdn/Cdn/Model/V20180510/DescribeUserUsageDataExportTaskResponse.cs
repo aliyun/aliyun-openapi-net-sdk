@@ -22,229 +22,229 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeUserUsageDataExportTaskResponse : AcsResponse
-	{
+    public class DescribeUserUsageDataExportTaskResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private DescribeUserUsageDataExportTask_UsageDataPerPage usageDataPerPage;
+        private DescribeUserUsageDataExportTask_UsageDataPerPage usageDataPerPage;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public DescribeUserUsageDataExportTask_UsageDataPerPage UsageDataPerPage
-		{
-			get
-			{
-				return usageDataPerPage;
-			}
-			set	
-			{
-				usageDataPerPage = value;
-			}
-		}
+        public DescribeUserUsageDataExportTask_UsageDataPerPage UsageDataPerPage
+        {
+            get
+            {
+                return usageDataPerPage;
+            }
+            set
+            {
+                usageDataPerPage = value;
+            }
+        }
 
-		public class DescribeUserUsageDataExportTask_UsageDataPerPage
-		{
+        public class DescribeUserUsageDataExportTask_UsageDataPerPage
+        {
 
-			private int? totalCount;
+            private int? totalCount;
 
-			private int? pageSize;
+            private int? pageSize;
 
-			private int? pageNumber;
+            private int? pageNumber;
 
-			private List<DescribeUserUsageDataExportTask_DataItem> data;
+            private List<DescribeUserUsageDataExportTask_DataItem> data;
 
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+            public int? TotalCount
+            {
+                get
+                {
+                    return totalCount;
+                }
+                set
+                {
+                    totalCount = value;
+                }
+            }
 
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
+            public int? PageSize
+            {
+                get
+                {
+                    return pageSize;
+                }
+                set
+                {
+                    pageSize = value;
+                }
+            }
 
-			public int? PageNumber
-			{
-				get
-				{
-					return pageNumber;
-				}
-				set	
-				{
-					pageNumber = value;
-				}
-			}
+            public int? PageNumber
+            {
+                get
+                {
+                    return pageNumber;
+                }
+                set
+                {
+                    pageNumber = value;
+                }
+            }
 
-			public List<DescribeUserUsageDataExportTask_DataItem> Data
-			{
-				get
-				{
-					return data;
-				}
-				set	
-				{
-					data = value;
-				}
-			}
+            public List<DescribeUserUsageDataExportTask_DataItem> Data
+            {
+                get
+                {
+                    return data;
+                }
+                set
+                {
+                    data = value;
+                }
+            }
 
-			public class DescribeUserUsageDataExportTask_DataItem
-			{
+            public class DescribeUserUsageDataExportTask_DataItem
+            {
 
-				private string taskName;
+                private string taskName;
 
-				private string taskId;
+                private string taskId;
 
-				private string createTime;
+                private string createTime;
 
-				private string updateTime;
+                private string updateTime;
 
-				private string status;
+                private string status;
 
-				private string downloadUrl;
+                private string downloadUrl;
 
-				private DescribeUserUsageDataExportTask_TaskConfig taskConfig;
+                private DescribeUserUsageDataExportTask_TaskConfig taskConfig;
 
-				public string TaskName
-				{
-					get
-					{
-						return taskName;
-					}
-					set	
-					{
-						taskName = value;
-					}
-				}
+                public string TaskName
+                {
+                    get
+                    {
+                        return taskName;
+                    }
+                    set
+                    {
+                        taskName = value;
+                    }
+                }
 
-				public string TaskId
-				{
-					get
-					{
-						return taskId;
-					}
-					set	
-					{
-						taskId = value;
-					}
-				}
+                public string TaskId
+                {
+                    get
+                    {
+                        return taskId;
+                    }
+                    set
+                    {
+                        taskId = value;
+                    }
+                }
 
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
+                public string CreateTime
+                {
+                    get
+                    {
+                        return createTime;
+                    }
+                    set
+                    {
+                        createTime = value;
+                    }
+                }
 
-				public string UpdateTime
-				{
-					get
-					{
-						return updateTime;
-					}
-					set	
-					{
-						updateTime = value;
-					}
-				}
+                public string UpdateTime
+                {
+                    get
+                    {
+                        return updateTime;
+                    }
+                    set
+                    {
+                        updateTime = value;
+                    }
+                }
 
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
+                public string Status
+                {
+                    get
+                    {
+                        return status;
+                    }
+                    set
+                    {
+                        status = value;
+                    }
+                }
 
-				public string DownloadUrl
-				{
-					get
-					{
-						return downloadUrl;
-					}
-					set	
-					{
-						downloadUrl = value;
-					}
-				}
+                public string DownloadUrl
+                {
+                    get
+                    {
+                        return downloadUrl;
+                    }
+                    set
+                    {
+                        downloadUrl = value;
+                    }
+                }
 
-				public DescribeUserUsageDataExportTask_TaskConfig TaskConfig
-				{
-					get
-					{
-						return taskConfig;
-					}
-					set	
-					{
-						taskConfig = value;
-					}
-				}
+                public DescribeUserUsageDataExportTask_TaskConfig TaskConfig
+                {
+                    get
+                    {
+                        return taskConfig;
+                    }
+                    set
+                    {
+                        taskConfig = value;
+                    }
+                }
 
-				public class DescribeUserUsageDataExportTask_TaskConfig
-				{
+                public class DescribeUserUsageDataExportTask_TaskConfig
+                {
 
-					private string startTime;
+                    private string startTime;
 
-					private string endTime;
+                    private string endTime;
 
-					public string StartTime
-					{
-						get
-						{
-							return startTime;
-						}
-						set	
-						{
-							startTime = value;
-						}
-					}
+                    public string StartTime
+                    {
+                        get
+                        {
+                            return startTime;
+                        }
+                        set
+                        {
+                            startTime = value;
+                        }
+                    }
 
-					public string EndTime
-					{
-						get
-						{
-							return endTime;
-						}
-						set	
-						{
-							endTime = value;
-						}
-					}
-				}
-			}
-		}
-	}
+                    public string EndTime
+                    {
+                        get
+                        {
+                            return endTime;
+                        }
+                        set
+                        {
+                            endTime = value;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

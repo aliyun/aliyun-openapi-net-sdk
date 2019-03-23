@@ -34,110 +34,110 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string template;
+        private string template;
 
-		private string app;
+        private string app;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string domain;
+        private string domain;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string Template
-		{
-			get
-			{
-				return template;
-			}
-			set	
-			{
-				template = value;
-				DictionaryUtil.Add(QueryParameters, "Template", value);
-			}
-		}
+        public string Template
+        {
+            get
+            {
+                return template;
+            }
+            set
+            {
+                template = value;
+                DictionaryUtil.Add(QueryParameters, "Template", value);
+            }
+        }
 
-		public string App
-		{
-			get
-			{
-				return app;
-			}
-			set	
-			{
-				app = value;
-				DictionaryUtil.Add(QueryParameters, "App", value);
-			}
-		}
+        public string App
+        {
+            get
+            {
+                return app;
+            }
+            set
+            {
+                app = value;
+                DictionaryUtil.Add(QueryParameters, "App", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string Domain
-		{
-			get
-			{
-				return domain;
-			}
-			set	
-			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
-			}
-		}
+        public string Domain
+        {
+            get
+            {
+                return domain;
+            }
+            set
+            {
+                domain = value;
+                DictionaryUtil.Add(QueryParameters, "Domain", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override DeleteLiveStreamTranscodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

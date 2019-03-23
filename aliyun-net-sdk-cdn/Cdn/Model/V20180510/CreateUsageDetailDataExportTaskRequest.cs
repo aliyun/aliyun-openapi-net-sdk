@@ -34,125 +34,125 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string domainNames;
+        private string domainNames;
 
-		private string taskName;
+        private string taskName;
 
-		private string startTime;
+        private string startTime;
 
-		private string type;
+        private string type;
 
-		private string action;
+        private string action;
 
-		private string group;
+        private string group;
 
-		private string endTime;
+        private string endTime;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string DomainNames
-		{
-			get
-			{
-				return domainNames;
-			}
-			set	
-			{
-				domainNames = value;
-				DictionaryUtil.Add(QueryParameters, "DomainNames", value);
-			}
-		}
+        public string DomainNames
+        {
+            get
+            {
+                return domainNames;
+            }
+            set
+            {
+                domainNames = value;
+                DictionaryUtil.Add(QueryParameters, "DomainNames", value);
+            }
+        }
 
-		public string TaskName
-		{
-			get
-			{
-				return taskName;
-			}
-			set	
-			{
-				taskName = value;
-				DictionaryUtil.Add(QueryParameters, "TaskName", value);
-			}
-		}
+        public string TaskName
+        {
+            get
+            {
+                return taskName;
+            }
+            set
+            {
+                taskName = value;
+                DictionaryUtil.Add(QueryParameters, "TaskName", value);
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+                DictionaryUtil.Add(QueryParameters, "StartTime", value);
+            }
+        }
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
+        public string Type
+        {
+            get
+            {
+                return type;
+            }
+            set
+            {
+                type = value;
+                DictionaryUtil.Add(QueryParameters, "Type", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string Group
-		{
-			get
-			{
-				return group;
-			}
-			set	
-			{
-				group = value;
-				DictionaryUtil.Add(QueryParameters, "Group", value);
-			}
-		}
+        public string Group
+        {
+            get
+            {
+                return group;
+            }
+            set
+            {
+                group = value;
+                DictionaryUtil.Add(QueryParameters, "Group", value);
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+                DictionaryUtil.Add(QueryParameters, "EndTime", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override CreateUsageDetailDataExportTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

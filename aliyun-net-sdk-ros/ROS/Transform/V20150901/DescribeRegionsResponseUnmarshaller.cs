@@ -27,11 +27,11 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
     {
         public static DescribeRegionsResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
+            DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
-			describeRegionsResponse.HttpResponse = context.HttpResponse;
-        
-			return describeRegionsResponse;
+            describeRegionsResponse.HttpResponse = context.HttpResponse;
+
+            return describeRegionsResponse;
         }
     }
 }

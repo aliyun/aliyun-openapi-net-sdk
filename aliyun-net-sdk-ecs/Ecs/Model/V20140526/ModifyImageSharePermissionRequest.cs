@@ -33,148 +33,148 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string imageId;
+        private string imageId;
 
-		private List<string> addAccounts;
+        private List<string> addAccounts;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string regionId;
+        private string regionId;
 
-		private List<string> removeAccounts;
+        private List<string> removeAccounts;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
+        public string ImageId
+        {
+            get
+            {
+                return imageId;
+            }
+            set
+            {
+                imageId = value;
+                DictionaryUtil.Add(QueryParameters, "ImageId", value);
+            }
+        }
 
-		public List<string> AddAccounts
-		{
-			get
-			{
-				return addAccounts;
-			}
+        public List<string> AddAccounts
+        {
+            get
+            {
+                return addAccounts;
+            }
 
-			set
-			{
-				addAccounts = value;
-				for (int i = 0; i < addAccounts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AddAccount." + (i + 1) , addAccounts[i]);
-				}
-			}
-		}
+            set
+            {
+                addAccounts = value;
+                for (int i = 0; i < addAccounts.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "AddAccount." + (i + 1), addAccounts[i]);
+                }
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public List<string> RemoveAccounts
-		{
-			get
-			{
-				return removeAccounts;
-			}
+        public List<string> RemoveAccounts
+        {
+            get
+            {
+                return removeAccounts;
+            }
 
-			set
-			{
-				removeAccounts = value;
-				for (int i = 0; i < removeAccounts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RemoveAccount." + (i + 1) , removeAccounts[i]);
-				}
-			}
-		}
+            set
+            {
+                removeAccounts = value;
+                for (int i = 0; i < removeAccounts.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "RemoveAccount." + (i + 1), removeAccounts[i]);
+                }
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override ModifyImageSharePermissionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

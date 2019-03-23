@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DeleteSnatEntryResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteSnatEntryResponse deleteSnatEntryResponse = new DeleteSnatEntryResponse();
+            DeleteSnatEntryResponse deleteSnatEntryResponse = new DeleteSnatEntryResponse();
 
-			deleteSnatEntryResponse.HttpResponse = context.HttpResponse;
-			deleteSnatEntryResponse.RequestId = context.StringValue("DeleteSnatEntry.RequestId");
-        
-			return deleteSnatEntryResponse;
+            deleteSnatEntryResponse.HttpResponse = context.HttpResponse;
+            deleteSnatEntryResponse.RequestId = context.StringValue("DeleteSnatEntry.RequestId");
+
+            return deleteSnatEntryResponse;
         }
     }
 }

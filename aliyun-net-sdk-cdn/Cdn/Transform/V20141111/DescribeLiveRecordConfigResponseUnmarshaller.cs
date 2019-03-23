@@ -28,26 +28,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeLiveRecordConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeLiveRecordConfigResponse describeLiveRecordConfigResponse = new DescribeLiveRecordConfigResponse();
+            DescribeLiveRecordConfigResponse describeLiveRecordConfigResponse = new DescribeLiveRecordConfigResponse();
 
-			describeLiveRecordConfigResponse.HttpResponse = context.HttpResponse;
-			describeLiveRecordConfigResponse.RequestId = context.StringValue("DescribeLiveRecordConfig.RequestId");
+            describeLiveRecordConfigResponse.HttpResponse = context.HttpResponse;
+            describeLiveRecordConfigResponse.RequestId = context.StringValue("DescribeLiveRecordConfig.RequestId");
 
-			List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord> describeLiveRecordConfigResponse_liveAppRecordList = new List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord>();
-			for (int i = 0; i < context.Length("DescribeLiveRecordConfig.LiveAppRecordList.Length"); i++) {
-				DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord liveAppRecord = new DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord();
-				liveAppRecord.DomainName = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].DomainName");
-				liveAppRecord.AppName = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].AppName");
-				liveAppRecord.OssEndpoint = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssEndpoint");
-				liveAppRecord.OssBucket = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssBucket");
-				liveAppRecord.OssObjectPrefix = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OssObjectPrefix");
-				liveAppRecord.CreateTime = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].CreateTime");
+            List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord> describeLiveRecordConfigResponse_liveAppRecordList = new List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord>();
+            for (int i = 0; i < context.Length("DescribeLiveRecordConfig.LiveAppRecordList.Length"); i++)
+            {
+                DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord liveAppRecord = new DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord();
+                liveAppRecord.DomainName = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList[" + i + "].DomainName");
+                liveAppRecord.AppName = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList[" + i + "].AppName");
+                liveAppRecord.OssEndpoint = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList[" + i + "].OssEndpoint");
+                liveAppRecord.OssBucket = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList[" + i + "].OssBucket");
+                liveAppRecord.OssObjectPrefix = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList[" + i + "].OssObjectPrefix");
+                liveAppRecord.CreateTime = context.StringValue("DescribeLiveRecordConfig.LiveAppRecordList[" + i + "].CreateTime");
 
-				describeLiveRecordConfigResponse_liveAppRecordList.Add(liveAppRecord);
-			}
-			describeLiveRecordConfigResponse.LiveAppRecordList = describeLiveRecordConfigResponse_liveAppRecordList;
-        
-			return describeLiveRecordConfigResponse;
+                describeLiveRecordConfigResponse_liveAppRecordList.Add(liveAppRecord);
+            }
+            describeLiveRecordConfigResponse.LiveAppRecordList = describeLiveRecordConfigResponse_liveAppRecordList;
+
+            return describeLiveRecordConfigResponse;
         }
     }
 }

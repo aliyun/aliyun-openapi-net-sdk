@@ -21,179 +21,179 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeLogBackupFilesResponse : AcsResponse
-	{
+    public class DescribeLogBackupFilesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalRecordCount;
+        private int? totalRecordCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private long? totalFileSize;
+        private long? totalFileSize;
 
-		private List<DescribeLogBackupFiles_BinLogFile> items;
+        private List<DescribeLogBackupFiles_BinLogFile> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public int? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public long? TotalFileSize
-		{
-			get
-			{
-				return totalFileSize;
-			}
-			set	
-			{
-				totalFileSize = value;
-			}
-		}
+        public long? TotalFileSize
+        {
+            get
+            {
+                return totalFileSize;
+            }
+            set
+            {
+                totalFileSize = value;
+            }
+        }
 
-		public List<DescribeLogBackupFiles_BinLogFile> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeLogBackupFiles_BinLogFile> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeLogBackupFiles_BinLogFile
-		{
+        public class DescribeLogBackupFiles_BinLogFile
+        {
 
-			private long? fileSize;
+            private long? fileSize;
 
-			private string logBeginTime;
+            private string logBeginTime;
 
-			private string logEndTime;
+            private string logEndTime;
 
-			private string downloadLink;
+            private string downloadLink;
 
-			private string intranetDownloadLink;
+            private string intranetDownloadLink;
 
-			private string linkExpiredTime;
+            private string linkExpiredTime;
 
-			public long? FileSize
-			{
-				get
-				{
-					return fileSize;
-				}
-				set	
-				{
-					fileSize = value;
-				}
-			}
+            public long? FileSize
+            {
+                get
+                {
+                    return fileSize;
+                }
+                set
+                {
+                    fileSize = value;
+                }
+            }
 
-			public string LogBeginTime
-			{
-				get
-				{
-					return logBeginTime;
-				}
-				set	
-				{
-					logBeginTime = value;
-				}
-			}
+            public string LogBeginTime
+            {
+                get
+                {
+                    return logBeginTime;
+                }
+                set
+                {
+                    logBeginTime = value;
+                }
+            }
 
-			public string LogEndTime
-			{
-				get
-				{
-					return logEndTime;
-				}
-				set	
-				{
-					logEndTime = value;
-				}
-			}
+            public string LogEndTime
+            {
+                get
+                {
+                    return logEndTime;
+                }
+                set
+                {
+                    logEndTime = value;
+                }
+            }
 
-			public string DownloadLink
-			{
-				get
-				{
-					return downloadLink;
-				}
-				set	
-				{
-					downloadLink = value;
-				}
-			}
+            public string DownloadLink
+            {
+                get
+                {
+                    return downloadLink;
+                }
+                set
+                {
+                    downloadLink = value;
+                }
+            }
 
-			public string IntranetDownloadLink
-			{
-				get
-				{
-					return intranetDownloadLink;
-				}
-				set	
-				{
-					intranetDownloadLink = value;
-				}
-			}
+            public string IntranetDownloadLink
+            {
+                get
+                {
+                    return intranetDownloadLink;
+                }
+                set
+                {
+                    intranetDownloadLink = value;
+                }
+            }
 
-			public string LinkExpiredTime
-			{
-				get
-				{
-					return linkExpiredTime;
-				}
-				set	
-				{
-					linkExpiredTime = value;
-				}
-			}
-		}
-	}
+            public string LinkExpiredTime
+            {
+                get
+                {
+                    return linkExpiredTime;
+                }
+                set
+                {
+                    linkExpiredTime = value;
+                }
+            }
+        }
+    }
 }

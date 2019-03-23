@@ -28,26 +28,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeDomainUvDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainUvDataResponse describeDomainUvDataResponse = new DescribeDomainUvDataResponse();
+            DescribeDomainUvDataResponse describeDomainUvDataResponse = new DescribeDomainUvDataResponse();
 
-			describeDomainUvDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainUvDataResponse.RequestId = context.StringValue("DescribeDomainUvData.RequestId");
-			describeDomainUvDataResponse.DomainName = context.StringValue("DescribeDomainUvData.DomainName");
-			describeDomainUvDataResponse.DataInterval = context.StringValue("DescribeDomainUvData.DataInterval");
-			describeDomainUvDataResponse.StartTime = context.StringValue("DescribeDomainUvData.StartTime");
-			describeDomainUvDataResponse.EndTime = context.StringValue("DescribeDomainUvData.EndTime");
+            describeDomainUvDataResponse.HttpResponse = context.HttpResponse;
+            describeDomainUvDataResponse.RequestId = context.StringValue("DescribeDomainUvData.RequestId");
+            describeDomainUvDataResponse.DomainName = context.StringValue("DescribeDomainUvData.DomainName");
+            describeDomainUvDataResponse.DataInterval = context.StringValue("DescribeDomainUvData.DataInterval");
+            describeDomainUvDataResponse.StartTime = context.StringValue("DescribeDomainUvData.StartTime");
+            describeDomainUvDataResponse.EndTime = context.StringValue("DescribeDomainUvData.EndTime");
 
-			List<DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData> describeDomainUvDataResponse_uvDataInterval = new List<DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData>();
-			for (int i = 0; i < context.Length("DescribeDomainUvData.UvDataInterval.Length"); i++) {
-				DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData usageData = new DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData();
-				usageData.TimeStamp = context.StringValue("DescribeDomainUvData.UvDataInterval["+ i +"].TimeStamp");
-				usageData._Value = context.StringValue("DescribeDomainUvData.UvDataInterval["+ i +"].Value");
+            List<DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData> describeDomainUvDataResponse_uvDataInterval = new List<DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData>();
+            for (int i = 0; i < context.Length("DescribeDomainUvData.UvDataInterval.Length"); i++)
+            {
+                DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData usageData = new DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData();
+                usageData.TimeStamp = context.StringValue("DescribeDomainUvData.UvDataInterval[" + i + "].TimeStamp");
+                usageData._Value = context.StringValue("DescribeDomainUvData.UvDataInterval[" + i + "].Value");
 
-				describeDomainUvDataResponse_uvDataInterval.Add(usageData);
-			}
-			describeDomainUvDataResponse.UvDataInterval = describeDomainUvDataResponse_uvDataInterval;
-        
-			return describeDomainUvDataResponse;
+                describeDomainUvDataResponse_uvDataInterval.Add(usageData);
+            }
+            describeDomainUvDataResponse.UvDataInterval = describeDomainUvDataResponse_uvDataInterval;
+
+            return describeDomainUvDataResponse;
         }
     }
 }

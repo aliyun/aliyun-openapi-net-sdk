@@ -27,16 +27,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static EipNotifyPaidResponse Unmarshall(UnmarshallerContext context)
         {
-			EipNotifyPaidResponse eipNotifyPaidResponse = new EipNotifyPaidResponse();
+            EipNotifyPaidResponse eipNotifyPaidResponse = new EipNotifyPaidResponse();
 
-			eipNotifyPaidResponse.HttpResponse = context.HttpResponse;
-			eipNotifyPaidResponse.RequestId = context.StringValue("EipNotifyPaid.RequestId");
-			eipNotifyPaidResponse.Data = context.StringValue("EipNotifyPaid.Data");
-			eipNotifyPaidResponse.Code = context.StringValue("EipNotifyPaid.Code");
-			eipNotifyPaidResponse.Message = context.StringValue("EipNotifyPaid.Message");
-			eipNotifyPaidResponse.Success = context.BooleanValue("EipNotifyPaid.Success");
-        
-			return eipNotifyPaidResponse;
+            eipNotifyPaidResponse.HttpResponse = context.HttpResponse;
+            eipNotifyPaidResponse.RequestId = context.StringValue("EipNotifyPaid.RequestId");
+            eipNotifyPaidResponse.Data = context.StringValue("EipNotifyPaid.Data");
+            eipNotifyPaidResponse.Code = context.StringValue("EipNotifyPaid.Code");
+            eipNotifyPaidResponse.Message = context.StringValue("EipNotifyPaid.Message");
+            eipNotifyPaidResponse.Success = context.BooleanValue("EipNotifyPaid.Success");
+
+            return eipNotifyPaidResponse;
         }
     }
 }

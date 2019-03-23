@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static SetDomainGreenManagerConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			SetDomainGreenManagerConfigResponse setDomainGreenManagerConfigResponse = new SetDomainGreenManagerConfigResponse();
+            SetDomainGreenManagerConfigResponse setDomainGreenManagerConfigResponse = new SetDomainGreenManagerConfigResponse();
 
-			setDomainGreenManagerConfigResponse.HttpResponse = context.HttpResponse;
-			setDomainGreenManagerConfigResponse.RequestId = context.StringValue("SetDomainGreenManagerConfig.RequestId");
-        
-			return setDomainGreenManagerConfigResponse;
+            setDomainGreenManagerConfigResponse.HttpResponse = context.HttpResponse;
+            setDomainGreenManagerConfigResponse.RequestId = context.StringValue("SetDomainGreenManagerConfig.RequestId");
+
+            return setDomainGreenManagerConfigResponse;
         }
     }
 }

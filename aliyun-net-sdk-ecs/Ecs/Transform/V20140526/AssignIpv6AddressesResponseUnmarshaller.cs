@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static AssignIpv6AddressesResponse Unmarshall(UnmarshallerContext context)
         {
-			AssignIpv6AddressesResponse assignIpv6AddressesResponse = new AssignIpv6AddressesResponse();
+            AssignIpv6AddressesResponse assignIpv6AddressesResponse = new AssignIpv6AddressesResponse();
 
-			assignIpv6AddressesResponse.HttpResponse = context.HttpResponse;
-			assignIpv6AddressesResponse.RequestId = context.StringValue("AssignIpv6Addresses.RequestId");
-        
-			return assignIpv6AddressesResponse;
+            assignIpv6AddressesResponse.HttpResponse = context.HttpResponse;
+            assignIpv6AddressesResponse.RequestId = context.StringValue("AssignIpv6Addresses.RequestId");
+
+            return assignIpv6AddressesResponse;
         }
     }
 }

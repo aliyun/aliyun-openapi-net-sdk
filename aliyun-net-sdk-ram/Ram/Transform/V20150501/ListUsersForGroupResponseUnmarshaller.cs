@@ -28,25 +28,26 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static ListUsersForGroupResponse Unmarshall(UnmarshallerContext context)
         {
-			ListUsersForGroupResponse listUsersForGroupResponse = new ListUsersForGroupResponse();
+            ListUsersForGroupResponse listUsersForGroupResponse = new ListUsersForGroupResponse();
 
-			listUsersForGroupResponse.HttpResponse = context.HttpResponse;
-			listUsersForGroupResponse.RequestId = context.StringValue("ListUsersForGroup.RequestId");
-			listUsersForGroupResponse.IsTruncated = context.BooleanValue("ListUsersForGroup.IsTruncated");
-			listUsersForGroupResponse.Marker = context.StringValue("ListUsersForGroup.Marker");
+            listUsersForGroupResponse.HttpResponse = context.HttpResponse;
+            listUsersForGroupResponse.RequestId = context.StringValue("ListUsersForGroup.RequestId");
+            listUsersForGroupResponse.IsTruncated = context.BooleanValue("ListUsersForGroup.IsTruncated");
+            listUsersForGroupResponse.Marker = context.StringValue("ListUsersForGroup.Marker");
 
-			List<ListUsersForGroupResponse.ListUsersForGroup_User> listUsersForGroupResponse_users = new List<ListUsersForGroupResponse.ListUsersForGroup_User>();
-			for (int i = 0; i < context.Length("ListUsersForGroup.Users.Length"); i++) {
-				ListUsersForGroupResponse.ListUsersForGroup_User user = new ListUsersForGroupResponse.ListUsersForGroup_User();
-				user.UserName = context.StringValue("ListUsersForGroup.Users["+ i +"].UserName");
-				user.DisplayName = context.StringValue("ListUsersForGroup.Users["+ i +"].DisplayName");
-				user.JoinDate = context.StringValue("ListUsersForGroup.Users["+ i +"].JoinDate");
+            List<ListUsersForGroupResponse.ListUsersForGroup_User> listUsersForGroupResponse_users = new List<ListUsersForGroupResponse.ListUsersForGroup_User>();
+            for (int i = 0; i < context.Length("ListUsersForGroup.Users.Length"); i++)
+            {
+                ListUsersForGroupResponse.ListUsersForGroup_User user = new ListUsersForGroupResponse.ListUsersForGroup_User();
+                user.UserName = context.StringValue("ListUsersForGroup.Users[" + i + "].UserName");
+                user.DisplayName = context.StringValue("ListUsersForGroup.Users[" + i + "].DisplayName");
+                user.JoinDate = context.StringValue("ListUsersForGroup.Users[" + i + "].JoinDate");
 
-				listUsersForGroupResponse_users.Add(user);
-			}
-			listUsersForGroupResponse.Users = listUsersForGroupResponse_users;
-        
-			return listUsersForGroupResponse;
+                listUsersForGroupResponse_users.Add(user);
+            }
+            listUsersForGroupResponse.Users = listUsersForGroupResponse_users;
+
+            return listUsersForGroupResponse;
         }
     }
 }

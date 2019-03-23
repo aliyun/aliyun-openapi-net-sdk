@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static SetIgnoreQueryStringConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			SetIgnoreQueryStringConfigResponse setIgnoreQueryStringConfigResponse = new SetIgnoreQueryStringConfigResponse();
+            SetIgnoreQueryStringConfigResponse setIgnoreQueryStringConfigResponse = new SetIgnoreQueryStringConfigResponse();
 
-			setIgnoreQueryStringConfigResponse.HttpResponse = context.HttpResponse;
-			setIgnoreQueryStringConfigResponse.RequestId = context.StringValue("SetIgnoreQueryStringConfig.RequestId");
-        
-			return setIgnoreQueryStringConfigResponse;
+            setIgnoreQueryStringConfigResponse.HttpResponse = context.HttpResponse;
+            setIgnoreQueryStringConfigResponse.RequestId = context.StringValue("SetIgnoreQueryStringConfig.RequestId");
+
+            return setIgnoreQueryStringConfigResponse;
         }
     }
 }

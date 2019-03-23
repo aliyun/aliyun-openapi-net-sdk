@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeImageSupportInstanceTypesResponse : AcsResponse
-	{
+    public class DescribeImageSupportInstanceTypesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string regionId;
+        private string regionId;
 
-		private string imageId;
+        private string imageId;
 
-		private List<DescribeImageSupportInstanceTypes_InstanceType> instanceTypes;
+        private List<DescribeImageSupportInstanceTypes_InstanceType> instanceTypes;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+            }
+        }
 
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-			}
-		}
+        public string ImageId
+        {
+            get
+            {
+                return imageId;
+            }
+            set
+            {
+                imageId = value;
+            }
+        }
 
-		public List<DescribeImageSupportInstanceTypes_InstanceType> InstanceTypes
-		{
-			get
-			{
-				return instanceTypes;
-			}
-			set	
-			{
-				instanceTypes = value;
-			}
-		}
+        public List<DescribeImageSupportInstanceTypes_InstanceType> InstanceTypes
+        {
+            get
+            {
+                return instanceTypes;
+            }
+            set
+            {
+                instanceTypes = value;
+            }
+        }
 
-		public class DescribeImageSupportInstanceTypes_InstanceType
-		{
+        public class DescribeImageSupportInstanceTypes_InstanceType
+        {
 
-			private string instanceTypeId;
+            private string instanceTypeId;
 
-			private int? cpuCoreCount;
+            private int? cpuCoreCount;
 
-			private float? memorySize;
+            private float? memorySize;
 
-			private string instanceTypeFamily;
+            private string instanceTypeFamily;
 
-			public string InstanceTypeId
-			{
-				get
-				{
-					return instanceTypeId;
-				}
-				set	
-				{
-					instanceTypeId = value;
-				}
-			}
+            public string InstanceTypeId
+            {
+                get
+                {
+                    return instanceTypeId;
+                }
+                set
+                {
+                    instanceTypeId = value;
+                }
+            }
 
-			public int? CpuCoreCount
-			{
-				get
-				{
-					return cpuCoreCount;
-				}
-				set	
-				{
-					cpuCoreCount = value;
-				}
-			}
+            public int? CpuCoreCount
+            {
+                get
+                {
+                    return cpuCoreCount;
+                }
+                set
+                {
+                    cpuCoreCount = value;
+                }
+            }
 
-			public float? MemorySize
-			{
-				get
-				{
-					return memorySize;
-				}
-				set	
-				{
-					memorySize = value;
-				}
-			}
+            public float? MemorySize
+            {
+                get
+                {
+                    return memorySize;
+                }
+                set
+                {
+                    memorySize = value;
+                }
+            }
 
-			public string InstanceTypeFamily
-			{
-				get
-				{
-					return instanceTypeFamily;
-				}
-				set	
-				{
-					instanceTypeFamily = value;
-				}
-			}
-		}
-	}
+            public string InstanceTypeFamily
+            {
+                get
+                {
+                    return instanceTypeFamily;
+                }
+                set
+                {
+                    instanceTypeFamily = value;
+                }
+            }
+        }
+    }
 }

@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class CreateGlobalAccelerationInstanceResponse : AcsResponse
-	{
+    public class CreateGlobalAccelerationInstanceResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string globalAccelerationInstanceId;
+        private string globalAccelerationInstanceId;
 
-		private string ipAddress;
+        private string ipAddress;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string GlobalAccelerationInstanceId
-		{
-			get
-			{
-				return globalAccelerationInstanceId;
-			}
-			set	
-			{
-				globalAccelerationInstanceId = value;
-			}
-		}
+        public string GlobalAccelerationInstanceId
+        {
+            get
+            {
+                return globalAccelerationInstanceId;
+            }
+            set
+            {
+                globalAccelerationInstanceId = value;
+            }
+        }
 
-		public string IpAddress
-		{
-			get
-			{
-				return ipAddress;
-			}
-			set	
-			{
-				ipAddress = value;
-			}
-		}
-	}
+        public string IpAddress
+        {
+            get
+            {
+                return ipAddress;
+            }
+            set
+            {
+                ipAddress = value;
+            }
+        }
+    }
 }

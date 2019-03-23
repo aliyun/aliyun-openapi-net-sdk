@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class ImportDataForSQLServerResponse : AcsResponse
-	{
+    public class ImportDataForSQLServerResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? importID;
+        private int? importID;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? ImportID
-		{
-			get
-			{
-				return importID;
-			}
-			set	
-			{
-				importID = value;
-			}
-		}
-	}
+        public int? ImportID
+        {
+            get
+            {
+                return importID;
+            }
+            set
+            {
+                importID = value;
+            }
+        }
+    }
 }

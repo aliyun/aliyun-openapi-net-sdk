@@ -32,53 +32,53 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public UpdateGroupRequest()
             : base("Ram", "2015-05-01", "UpdateGroup", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string newGroupName;
+        private string newGroupName;
 
-		private string newComments;
+        private string newComments;
 
-		private string groupName;
+        private string groupName;
 
-		public string NewGroupName
-		{
-			get
-			{
-				return newGroupName;
-			}
-			set	
-			{
-				newGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "NewGroupName", value);
-			}
-		}
+        public string NewGroupName
+        {
+            get
+            {
+                return newGroupName;
+            }
+            set
+            {
+                newGroupName = value;
+                DictionaryUtil.Add(QueryParameters, "NewGroupName", value);
+            }
+        }
 
-		public string NewComments
-		{
-			get
-			{
-				return newComments;
-			}
-			set	
-			{
-				newComments = value;
-				DictionaryUtil.Add(QueryParameters, "NewComments", value);
-			}
-		}
+        public string NewComments
+        {
+            get
+            {
+                return newComments;
+            }
+            set
+            {
+                newComments = value;
+                DictionaryUtil.Add(QueryParameters, "NewComments", value);
+            }
+        }
 
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
+        public string GroupName
+        {
+            get
+            {
+                return groupName;
+            }
+            set
+            {
+                groupName = value;
+                DictionaryUtil.Add(QueryParameters, "GroupName", value);
+            }
+        }
 
         public override UpdateGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

@@ -33,54 +33,54 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string publicKey;
+        private string publicKey;
 
-		private List<string> plainTexts;
+        private List<string> plainTexts;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string PublicKey
-		{
-			get
-			{
-				return publicKey;
-			}
-			set	
-			{
-				publicKey = value;
-				DictionaryUtil.Add(QueryParameters, "PublicKey", value);
-			}
-		}
+        public string PublicKey
+        {
+            get
+            {
+                return publicKey;
+            }
+            set
+            {
+                publicKey = value;
+                DictionaryUtil.Add(QueryParameters, "PublicKey", value);
+            }
+        }
 
-		public List<string> PlainTexts
-		{
-			get
-			{
-				return plainTexts;
-			}
+        public List<string> PlainTexts
+        {
+            get
+            {
+                return plainTexts;
+            }
 
-			set
-			{
-				plainTexts = value;
-				for (int i = 0; i < plainTexts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PlainText." + (i + 1) , plainTexts[i]);
-				}
-			}
-		}
+            set
+            {
+                plainTexts = value;
+                for (int i = 0; i < plainTexts.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "PlainText." + (i + 1), plainTexts[i]);
+                }
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override EncryptResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

@@ -21,189 +21,189 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class ModifyVpnGatewayAttributeResponse : AcsResponse
-	{
+    public class ModifyVpnGatewayAttributeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string vpnGatewayId;
+        private string vpnGatewayId;
 
-		private string vpcId;
+        private string vpcId;
 
-		private string vSwitchId;
+        private string vSwitchId;
 
-		private string internetIp;
+        private string internetIp;
 
-		private string intranetIp;
+        private string intranetIp;
 
-		private long? createTime;
+        private long? createTime;
 
-		private long? endTime;
+        private long? endTime;
 
-		private string spec;
+        private string spec;
 
-		private string name;
+        private string name;
 
-		private string description;
+        private string description;
 
-		private string status;
+        private string status;
 
-		private string businessStatus;
+        private string businessStatus;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string VpnGatewayId
-		{
-			get
-			{
-				return vpnGatewayId;
-			}
-			set	
-			{
-				vpnGatewayId = value;
-			}
-		}
+        public string VpnGatewayId
+        {
+            get
+            {
+                return vpnGatewayId;
+            }
+            set
+            {
+                vpnGatewayId = value;
+            }
+        }
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-			}
-		}
+        public string VpcId
+        {
+            get
+            {
+                return vpcId;
+            }
+            set
+            {
+                vpcId = value;
+            }
+        }
 
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-			}
-		}
+        public string VSwitchId
+        {
+            get
+            {
+                return vSwitchId;
+            }
+            set
+            {
+                vSwitchId = value;
+            }
+        }
 
-		public string InternetIp
-		{
-			get
-			{
-				return internetIp;
-			}
-			set	
-			{
-				internetIp = value;
-			}
-		}
+        public string InternetIp
+        {
+            get
+            {
+                return internetIp;
+            }
+            set
+            {
+                internetIp = value;
+            }
+        }
 
-		public string IntranetIp
-		{
-			get
-			{
-				return intranetIp;
-			}
-			set	
-			{
-				intranetIp = value;
-			}
-		}
+        public string IntranetIp
+        {
+            get
+            {
+                return intranetIp;
+            }
+            set
+            {
+                intranetIp = value;
+            }
+        }
 
-		public long? CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
+        public long? CreateTime
+        {
+            get
+            {
+                return createTime;
+            }
+            set
+            {
+                createTime = value;
+            }
+        }
 
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public long? EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public string Spec
-		{
-			get
-			{
-				return spec;
-			}
-			set	
-			{
-				spec = value;
-			}
-		}
+        public string Spec
+        {
+            get
+            {
+                return spec;
+            }
+            set
+            {
+                spec = value;
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+            }
+        }
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
+        public string Status
+        {
+            get
+            {
+                return status;
+            }
+            set
+            {
+                status = value;
+            }
+        }
 
-		public string BusinessStatus
-		{
-			get
-			{
-				return businessStatus;
-			}
-			set	
-			{
-				businessStatus = value;
-			}
-		}
-	}
+        public string BusinessStatus
+        {
+            get
+            {
+                return businessStatus;
+            }
+            set
+            {
+                businessStatus = value;
+            }
+        }
+    }
 }

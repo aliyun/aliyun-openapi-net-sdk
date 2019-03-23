@@ -34,110 +34,110 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string locationNameEn;
+        private string locationNameEn;
 
-		private string ispNameEn;
+        private string ispNameEn;
 
-		private string startTime;
+        private string startTime;
 
-		private string action;
+        private string action;
 
-		private string domainName;
+        private string domainName;
 
-		private string endTime;
+        private string endTime;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string LocationNameEn
-		{
-			get
-			{
-				return locationNameEn;
-			}
-			set	
-			{
-				locationNameEn = value;
-				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
-			}
-		}
+        public string LocationNameEn
+        {
+            get
+            {
+                return locationNameEn;
+            }
+            set
+            {
+                locationNameEn = value;
+                DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
+            }
+        }
 
-		public string IspNameEn
-		{
-			get
-			{
-				return ispNameEn;
-			}
-			set	
-			{
-				ispNameEn = value;
-				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
-			}
-		}
+        public string IspNameEn
+        {
+            get
+            {
+                return ispNameEn;
+            }
+            set
+            {
+                ispNameEn = value;
+                DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+                DictionaryUtil.Add(QueryParameters, "StartTime", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+                DictionaryUtil.Add(QueryParameters, "EndTime", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override DescribeDomainRealTimeQpsDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

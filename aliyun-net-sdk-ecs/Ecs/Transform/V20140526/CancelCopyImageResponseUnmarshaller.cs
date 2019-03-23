@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static CancelCopyImageResponse Unmarshall(UnmarshallerContext context)
         {
-			CancelCopyImageResponse cancelCopyImageResponse = new CancelCopyImageResponse();
+            CancelCopyImageResponse cancelCopyImageResponse = new CancelCopyImageResponse();
 
-			cancelCopyImageResponse.HttpResponse = context.HttpResponse;
-			cancelCopyImageResponse.RequestId = context.StringValue("CancelCopyImage.RequestId");
-        
-			return cancelCopyImageResponse;
+            cancelCopyImageResponse.HttpResponse = context.HttpResponse;
+            cancelCopyImageResponse.RequestId = context.StringValue("CancelCopyImage.RequestId");
+
+            return cancelCopyImageResponse;
         }
     }
 }

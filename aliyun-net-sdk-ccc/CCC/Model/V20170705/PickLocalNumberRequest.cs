@@ -33,69 +33,69 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
+        private string instanceId;
 
-		private List<string> candidateNumbers;
+        private List<string> candidateNumbers;
 
-		private string calleeNumber;
+        private string calleeNumber;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public List<string> CandidateNumbers
-		{
-			get
-			{
-				return candidateNumbers;
-			}
+        public List<string> CandidateNumbers
+        {
+            get
+            {
+                return candidateNumbers;
+            }
 
-			set
-			{
-				candidateNumbers = value;
-				for (int i = 0; i < candidateNumbers.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"CandidateNumber." + (i + 1) , candidateNumbers[i]);
-				}
-			}
-		}
+            set
+            {
+                candidateNumbers = value;
+                for (int i = 0; i < candidateNumbers.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "CandidateNumber." + (i + 1), candidateNumbers[i]);
+                }
+            }
+        }
 
-		public string CalleeNumber
-		{
-			get
-			{
-				return calleeNumber;
-			}
-			set	
-			{
-				calleeNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CalleeNumber", value);
-			}
-		}
+        public string CalleeNumber
+        {
+            get
+            {
+                return calleeNumber;
+            }
+            set
+            {
+                calleeNumber = value;
+                DictionaryUtil.Add(QueryParameters, "CalleeNumber", value);
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override PickLocalNumberResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

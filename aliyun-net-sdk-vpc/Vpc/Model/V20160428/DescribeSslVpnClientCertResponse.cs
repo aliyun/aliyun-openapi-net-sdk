@@ -21,175 +21,175 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeSslVpnClientCertResponse : AcsResponse
-	{
+    public class DescribeSslVpnClientCertResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string regionId;
+        private string regionId;
 
-		private string sslVpnClientCertId;
+        private string sslVpnClientCertId;
 
-		private string name;
+        private string name;
 
-		private string sslVpnServerId;
+        private string sslVpnServerId;
 
-		private string caCert;
+        private string caCert;
 
-		private string clientCert;
+        private string clientCert;
 
-		private string clientKey;
+        private string clientKey;
 
-		private string clientConfig;
+        private string clientConfig;
 
-		private long? createTime;
+        private long? createTime;
 
-		private long? endTime;
+        private long? endTime;
 
-		private string status;
+        private string status;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+            }
+        }
 
-		public string SslVpnClientCertId
-		{
-			get
-			{
-				return sslVpnClientCertId;
-			}
-			set	
-			{
-				sslVpnClientCertId = value;
-			}
-		}
+        public string SslVpnClientCertId
+        {
+            get
+            {
+                return sslVpnClientCertId;
+            }
+            set
+            {
+                sslVpnClientCertId = value;
+            }
+        }
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
 
-		public string SslVpnServerId
-		{
-			get
-			{
-				return sslVpnServerId;
-			}
-			set	
-			{
-				sslVpnServerId = value;
-			}
-		}
+        public string SslVpnServerId
+        {
+            get
+            {
+                return sslVpnServerId;
+            }
+            set
+            {
+                sslVpnServerId = value;
+            }
+        }
 
-		public string CaCert
-		{
-			get
-			{
-				return caCert;
-			}
-			set	
-			{
-				caCert = value;
-			}
-		}
+        public string CaCert
+        {
+            get
+            {
+                return caCert;
+            }
+            set
+            {
+                caCert = value;
+            }
+        }
 
-		public string ClientCert
-		{
-			get
-			{
-				return clientCert;
-			}
-			set	
-			{
-				clientCert = value;
-			}
-		}
+        public string ClientCert
+        {
+            get
+            {
+                return clientCert;
+            }
+            set
+            {
+                clientCert = value;
+            }
+        }
 
-		public string ClientKey
-		{
-			get
-			{
-				return clientKey;
-			}
-			set	
-			{
-				clientKey = value;
-			}
-		}
+        public string ClientKey
+        {
+            get
+            {
+                return clientKey;
+            }
+            set
+            {
+                clientKey = value;
+            }
+        }
 
-		public string ClientConfig
-		{
-			get
-			{
-				return clientConfig;
-			}
-			set	
-			{
-				clientConfig = value;
-			}
-		}
+        public string ClientConfig
+        {
+            get
+            {
+                return clientConfig;
+            }
+            set
+            {
+                clientConfig = value;
+            }
+        }
 
-		public long? CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
+        public long? CreateTime
+        {
+            get
+            {
+                return createTime;
+            }
+            set
+            {
+                createTime = value;
+            }
+        }
 
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public long? EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-	}
+        public string Status
+        {
+            get
+            {
+                return status;
+            }
+            set
+            {
+                status = value;
+            }
+        }
+    }
 }

@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateDeploymentSetResponse : AcsResponse
-	{
+    public class CreateDeploymentSetResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string deploymentSetId;
+        private string deploymentSetId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DeploymentSetId
-		{
-			get
-			{
-				return deploymentSetId;
-			}
-			set	
-			{
-				deploymentSetId = value;
-			}
-		}
-	}
+        public string DeploymentSetId
+        {
+            get
+            {
+                return deploymentSetId;
+            }
+            set
+            {
+                deploymentSetId = value;
+            }
+        }
+    }
 }

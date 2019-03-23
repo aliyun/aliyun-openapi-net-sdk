@@ -21,67 +21,67 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeCloudAssistantStatusResponse : AcsResponse
-	{
+    public class DescribeCloudAssistantStatusResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeCloudAssistantStatus_InstanceCloudAssistantStatus> instanceCloudAssistantStatusSet;
+        private List<DescribeCloudAssistantStatus_InstanceCloudAssistantStatus> instanceCloudAssistantStatusSet;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeCloudAssistantStatus_InstanceCloudAssistantStatus> InstanceCloudAssistantStatusSet
-		{
-			get
-			{
-				return instanceCloudAssistantStatusSet;
-			}
-			set	
-			{
-				instanceCloudAssistantStatusSet = value;
-			}
-		}
+        public List<DescribeCloudAssistantStatus_InstanceCloudAssistantStatus> InstanceCloudAssistantStatusSet
+        {
+            get
+            {
+                return instanceCloudAssistantStatusSet;
+            }
+            set
+            {
+                instanceCloudAssistantStatusSet = value;
+            }
+        }
 
-		public class DescribeCloudAssistantStatus_InstanceCloudAssistantStatus
-		{
+        public class DescribeCloudAssistantStatus_InstanceCloudAssistantStatus
+        {
 
-			private string instanceId;
+            private string instanceId;
 
-			private string cloudAssistantStatus;
+            private string cloudAssistantStatus;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public string CloudAssistantStatus
-			{
-				get
-				{
-					return cloudAssistantStatus;
-				}
-				set	
-				{
-					cloudAssistantStatus = value;
-				}
-			}
-		}
-	}
+            public string CloudAssistantStatus
+            {
+                get
+                {
+                    return cloudAssistantStatus;
+                }
+                set
+                {
+                    cloudAssistantStatus = value;
+                }
+            }
+        }
+    }
 }

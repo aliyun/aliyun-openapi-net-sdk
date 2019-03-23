@@ -33,260 +33,260 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string imageId;
+        private string imageId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string clientToken;
+        private string clientToken;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string securityEnhancementStrategy;
+        private string securityEnhancementStrategy;
 
-		private string keyPairName;
+        private string keyPairName;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string platform;
+        private string platform;
 
-		private string password;
+        private string password;
 
-		private string instanceId;
+        private string instanceId;
 
-		private bool? passwordInherit;
+        private bool? passwordInherit;
 
-		private int? systemDiskSize;
+        private int? systemDiskSize;
 
-		private string action;
+        private string action;
 
-		private string diskId;
+        private string diskId;
 
-		private bool? useAdditionalService;
+        private bool? useAdditionalService;
 
-		private string architecture;
+        private string architecture;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
+        public string ImageId
+        {
+            get
+            {
+                return imageId;
+            }
+            set
+            {
+                imageId = value;
+                DictionaryUtil.Add(QueryParameters, "ImageId", value);
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
+        public string ClientToken
+        {
+            get
+            {
+                return clientToken;
+            }
+            set
+            {
+                clientToken = value;
+                DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string SecurityEnhancementStrategy
-		{
-			get
-			{
-				return securityEnhancementStrategy;
-			}
-			set	
-			{
-				securityEnhancementStrategy = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityEnhancementStrategy", value);
-			}
-		}
+        public string SecurityEnhancementStrategy
+        {
+            get
+            {
+                return securityEnhancementStrategy;
+            }
+            set
+            {
+                securityEnhancementStrategy = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityEnhancementStrategy", value);
+            }
+        }
 
-		public string KeyPairName
-		{
-			get
-			{
-				return keyPairName;
-			}
-			set	
-			{
-				keyPairName = value;
-				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
-			}
-		}
+        public string KeyPairName
+        {
+            get
+            {
+                return keyPairName;
+            }
+            set
+            {
+                keyPairName = value;
+                DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string Platform
-		{
-			get
-			{
-				return platform;
-			}
-			set	
-			{
-				platform = value;
-				DictionaryUtil.Add(QueryParameters, "Platform", value);
-			}
-		}
+        public string Platform
+        {
+            get
+            {
+                return platform;
+            }
+            set
+            {
+                platform = value;
+                DictionaryUtil.Add(QueryParameters, "Platform", value);
+            }
+        }
 
-		public string Password
-		{
-			get
-			{
-				return password;
-			}
-			set	
-			{
-				password = value;
-				DictionaryUtil.Add(QueryParameters, "Password", value);
-			}
-		}
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                password = value;
+                DictionaryUtil.Add(QueryParameters, "Password", value);
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public bool? PasswordInherit
-		{
-			get
-			{
-				return passwordInherit;
-			}
-			set	
-			{
-				passwordInherit = value;
-				DictionaryUtil.Add(QueryParameters, "PasswordInherit", value.ToString());
-			}
-		}
+        public bool? PasswordInherit
+        {
+            get
+            {
+                return passwordInherit;
+            }
+            set
+            {
+                passwordInherit = value;
+                DictionaryUtil.Add(QueryParameters, "PasswordInherit", value.ToString());
+            }
+        }
 
-		public int? SystemDiskSize
-		{
-			get
-			{
-				return systemDiskSize;
-			}
-			set	
-			{
-				systemDiskSize = value;
-				DictionaryUtil.Add(QueryParameters, "SystemDisk.Size", value.ToString());
-			}
-		}
+        public int? SystemDiskSize
+        {
+            get
+            {
+                return systemDiskSize;
+            }
+            set
+            {
+                systemDiskSize = value;
+                DictionaryUtil.Add(QueryParameters, "SystemDisk.Size", value.ToString());
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string DiskId
-		{
-			get
-			{
-				return diskId;
-			}
-			set	
-			{
-				diskId = value;
-				DictionaryUtil.Add(QueryParameters, "DiskId", value);
-			}
-		}
+        public string DiskId
+        {
+            get
+            {
+                return diskId;
+            }
+            set
+            {
+                diskId = value;
+                DictionaryUtil.Add(QueryParameters, "DiskId", value);
+            }
+        }
 
-		public bool? UseAdditionalService
-		{
-			get
-			{
-				return useAdditionalService;
-			}
-			set	
-			{
-				useAdditionalService = value;
-				DictionaryUtil.Add(QueryParameters, "UseAdditionalService", value.ToString());
-			}
-		}
+        public bool? UseAdditionalService
+        {
+            get
+            {
+                return useAdditionalService;
+            }
+            set
+            {
+                useAdditionalService = value;
+                DictionaryUtil.Add(QueryParameters, "UseAdditionalService", value.ToString());
+            }
+        }
 
-		public string Architecture
-		{
-			get
-			{
-				return architecture;
-			}
-			set	
-			{
-				architecture = value;
-				DictionaryUtil.Add(QueryParameters, "Architecture", value);
-			}
-		}
+        public string Architecture
+        {
+            get
+            {
+                return architecture;
+            }
+            set
+            {
+                architecture = value;
+                DictionaryUtil.Add(QueryParameters, "Architecture", value);
+            }
+        }
 
         public override ReplaceSystemDiskResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

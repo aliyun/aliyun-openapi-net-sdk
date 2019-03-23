@@ -27,47 +27,50 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeRecommendInstanceTypeResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeRecommendInstanceTypeResponse describeRecommendInstanceTypeResponse = new DescribeRecommendInstanceTypeResponse();
+            DescribeRecommendInstanceTypeResponse describeRecommendInstanceTypeResponse = new DescribeRecommendInstanceTypeResponse();
 
-			describeRecommendInstanceTypeResponse.HttpResponse = context.HttpResponse;
-			describeRecommendInstanceTypeResponse.RequestId = context.StringValue("DescribeRecommendInstanceType.RequestId");
+            describeRecommendInstanceTypeResponse.HttpResponse = context.HttpResponse;
+            describeRecommendInstanceTypeResponse.RequestId = context.StringValue("DescribeRecommendInstanceType.RequestId");
 
-			List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType> describeRecommendInstanceTypeResponse_data = new List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType>();
-			for (int i = 0; i < context.Length("DescribeRecommendInstanceType.Data.Length"); i++) {
-				DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType recommendInstanceType = new DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType();
-				recommendInstanceType.RegionNo = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].RegionNo");
-				recommendInstanceType.CommodityCode = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].CommodityCode");
-				recommendInstanceType.Scene = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].Scene");
+            List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType> describeRecommendInstanceTypeResponse_data = new List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType>();
+            for (int i = 0; i < context.Length("DescribeRecommendInstanceType.Data.Length"); i++)
+            {
+                DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType recommendInstanceType = new DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType();
+                recommendInstanceType.RegionNo = context.StringValue("DescribeRecommendInstanceType.Data[" + i + "].RegionNo");
+                recommendInstanceType.CommodityCode = context.StringValue("DescribeRecommendInstanceType.Data[" + i + "].CommodityCode");
+                recommendInstanceType.Scene = context.StringValue("DescribeRecommendInstanceType.Data[" + i + "].Scene");
 
-				DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_InstanceType instanceType = new DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_InstanceType();
-				instanceType.Generation = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.Generation");
-				instanceType.InstanceTypeFamily = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.InstanceTypeFamily");
-				instanceType.InstanceType = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.InstanceType");
-				instanceType.SupportIoOptimized = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.SupportIoOptimized");
-				instanceType.Cores = context.IntegerValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.Cores");
-				instanceType.Memory = context.IntegerValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.Memory");
-				recommendInstanceType.InstanceType = instanceType;
+                DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_InstanceType instanceType = new DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_InstanceType();
+                instanceType.Generation = context.StringValue("DescribeRecommendInstanceType.Data[" + i + "].InstanceType.Generation");
+                instanceType.InstanceTypeFamily = context.StringValue("DescribeRecommendInstanceType.Data[" + i + "].InstanceType.InstanceTypeFamily");
+                instanceType.InstanceType = context.StringValue("DescribeRecommendInstanceType.Data[" + i + "].InstanceType.InstanceType");
+                instanceType.SupportIoOptimized = context.StringValue("DescribeRecommendInstanceType.Data[" + i + "].InstanceType.SupportIoOptimized");
+                instanceType.Cores = context.IntegerValue("DescribeRecommendInstanceType.Data[" + i + "].InstanceType.Cores");
+                instanceType.Memory = context.IntegerValue("DescribeRecommendInstanceType.Data[" + i + "].InstanceType.Memory");
+                recommendInstanceType.InstanceType = instanceType;
 
-				List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_Zone> recommendInstanceType_zones = new List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_Zone>();
-				for (int j = 0; j < context.Length("DescribeRecommendInstanceType.Data["+ i +"].Zones.Length"); j++) {
-					DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_Zone zone = new DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_Zone();
-					zone.ZoneNo = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].Zones["+ j +"].ZoneNo");
+                List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_Zone> recommendInstanceType_zones = new List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_Zone>();
+                for (int j = 0; j < context.Length("DescribeRecommendInstanceType.Data[" + i + "].Zones.Length"); j++)
+                {
+                    DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_Zone zone = new DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_Zone();
+                    zone.ZoneNo = context.StringValue("DescribeRecommendInstanceType.Data[" + i + "].Zones[" + j + "].ZoneNo");
 
-					List<string> zone_networkTypes = new List<string>();
-					for (int k = 0; k < context.Length("DescribeRecommendInstanceType.Data["+ i +"].Zones["+ j +"].NetworkTypes.Length"); k++) {
-						zone_networkTypes.Add(context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].Zones["+ j +"].NetworkTypes["+ k +"]"));
-					}
-					zone.NetworkTypes = zone_networkTypes;
+                    List<string> zone_networkTypes = new List<string>();
+                    for (int k = 0; k < context.Length("DescribeRecommendInstanceType.Data[" + i + "].Zones[" + j + "].NetworkTypes.Length"); k++)
+                    {
+                        zone_networkTypes.Add(context.StringValue("DescribeRecommendInstanceType.Data[" + i + "].Zones[" + j + "].NetworkTypes[" + k + "]"));
+                    }
+                    zone.NetworkTypes = zone_networkTypes;
 
-					recommendInstanceType_zones.Add(zone);
-				}
-				recommendInstanceType.Zones = recommendInstanceType_zones;
+                    recommendInstanceType_zones.Add(zone);
+                }
+                recommendInstanceType.Zones = recommendInstanceType_zones;
 
-				describeRecommendInstanceTypeResponse_data.Add(recommendInstanceType);
-			}
-			describeRecommendInstanceTypeResponse.Data = describeRecommendInstanceTypeResponse_data;
-        
-			return describeRecommendInstanceTypeResponse;
+                describeRecommendInstanceTypeResponse_data.Add(recommendInstanceType);
+            }
+            describeRecommendInstanceTypeResponse.Data = describeRecommendInstanceTypeResponse_data;
+
+            return describeRecommendInstanceTypeResponse;
         }
     }
 }

@@ -22,95 +22,95 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class GetPublicKeyResponse : AcsResponse
-	{
+    public class GetPublicKeyResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private GetPublicKey_PublicKey publicKey;
+        private GetPublicKey_PublicKey publicKey;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public GetPublicKey_PublicKey PublicKey
-		{
-			get
-			{
-				return publicKey;
-			}
-			set	
-			{
-				publicKey = value;
-			}
-		}
+        public GetPublicKey_PublicKey PublicKey
+        {
+            get
+            {
+                return publicKey;
+            }
+            set
+            {
+                publicKey = value;
+            }
+        }
 
-		public class GetPublicKey_PublicKey
-		{
+        public class GetPublicKey_PublicKey
+        {
 
-			private string publicKeyId;
+            private string publicKeyId;
 
-			private string publicKeySpec;
+            private string publicKeySpec;
 
-			private string status;
+            private string status;
 
-			private string createDate;
+            private string createDate;
 
-			public string PublicKeyId
-			{
-				get
-				{
-					return publicKeyId;
-				}
-				set	
-				{
-					publicKeyId = value;
-				}
-			}
+            public string PublicKeyId
+            {
+                get
+                {
+                    return publicKeyId;
+                }
+                set
+                {
+                    publicKeyId = value;
+                }
+            }
 
-			public string PublicKeySpec
-			{
-				get
-				{
-					return publicKeySpec;
-				}
-				set	
-				{
-					publicKeySpec = value;
-				}
-			}
+            public string PublicKeySpec
+            {
+                get
+                {
+                    return publicKeySpec;
+                }
+                set
+                {
+                    publicKeySpec = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
-				}
-			}
-		}
-	}
+            public string CreateDate
+            {
+                get
+                {
+                    return createDate;
+                }
+                set
+                {
+                    createDate = value;
+                }
+            }
+        }
+    }
 }

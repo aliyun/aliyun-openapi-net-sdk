@@ -21,109 +21,109 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeIPv6TranslatorAclListsResponse : AcsResponse
-	{
+    public class DescribeIPv6TranslatorAclListsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeIPv6TranslatorAclLists_IPv6TranslatorAcl> ipv6TranslatorAcls;
+        private List<DescribeIPv6TranslatorAclLists_IPv6TranslatorAcl> ipv6TranslatorAcls;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeIPv6TranslatorAclLists_IPv6TranslatorAcl> Ipv6TranslatorAcls
-		{
-			get
-			{
-				return ipv6TranslatorAcls;
-			}
-			set	
-			{
-				ipv6TranslatorAcls = value;
-			}
-		}
+        public List<DescribeIPv6TranslatorAclLists_IPv6TranslatorAcl> Ipv6TranslatorAcls
+        {
+            get
+            {
+                return ipv6TranslatorAcls;
+            }
+            set
+            {
+                ipv6TranslatorAcls = value;
+            }
+        }
 
-		public class DescribeIPv6TranslatorAclLists_IPv6TranslatorAcl
-		{
+        public class DescribeIPv6TranslatorAclLists_IPv6TranslatorAcl
+        {
 
-			private string aclId;
+            private string aclId;
 
-			private string aclName;
+            private string aclName;
 
-			public string AclId
-			{
-				get
-				{
-					return aclId;
-				}
-				set	
-				{
-					aclId = value;
-				}
-			}
+            public string AclId
+            {
+                get
+                {
+                    return aclId;
+                }
+                set
+                {
+                    aclId = value;
+                }
+            }
 
-			public string AclName
-			{
-				get
-				{
-					return aclName;
-				}
-				set	
-				{
-					aclName = value;
-				}
-			}
-		}
-	}
+            public string AclName
+            {
+                get
+                {
+                    return aclName;
+                }
+                set
+                {
+                    aclName = value;
+                }
+            }
+        }
+    }
 }

@@ -22,183 +22,183 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainCCAttackInfoResponse : AcsResponse
-	{
+    public class DescribeDomainCCAttackInfoResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private List<DescribeDomainCCAttackInfo_AttackIpDatas> attackIpDataList;
+        private List<DescribeDomainCCAttackInfo_AttackIpDatas> attackIpDataList;
 
-		private List<DescribeDomainCCAttackInfo_AttackedUrlDatas> attackedUrlDataList;
+        private List<DescribeDomainCCAttackInfo_AttackedUrlDatas> attackedUrlDataList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public List<DescribeDomainCCAttackInfo_AttackIpDatas> AttackIpDataList
-		{
-			get
-			{
-				return attackIpDataList;
-			}
-			set	
-			{
-				attackIpDataList = value;
-			}
-		}
+        public List<DescribeDomainCCAttackInfo_AttackIpDatas> AttackIpDataList
+        {
+            get
+            {
+                return attackIpDataList;
+            }
+            set
+            {
+                attackIpDataList = value;
+            }
+        }
 
-		public List<DescribeDomainCCAttackInfo_AttackedUrlDatas> AttackedUrlDataList
-		{
-			get
-			{
-				return attackedUrlDataList;
-			}
-			set	
-			{
-				attackedUrlDataList = value;
-			}
-		}
+        public List<DescribeDomainCCAttackInfo_AttackedUrlDatas> AttackedUrlDataList
+        {
+            get
+            {
+                return attackedUrlDataList;
+            }
+            set
+            {
+                attackedUrlDataList = value;
+            }
+        }
 
-		public class DescribeDomainCCAttackInfo_AttackIpDatas
-		{
+        public class DescribeDomainCCAttackInfo_AttackIpDatas
+        {
 
-			private string ip;
+            private string ip;
 
-			private string attackCount;
+            private string attackCount;
 
-			private string result;
+            private string result;
 
-			public string Ip
-			{
-				get
-				{
-					return ip;
-				}
-				set	
-				{
-					ip = value;
-				}
-			}
+            public string Ip
+            {
+                get
+                {
+                    return ip;
+                }
+                set
+                {
+                    ip = value;
+                }
+            }
 
-			public string AttackCount
-			{
-				get
-				{
-					return attackCount;
-				}
-				set	
-				{
-					attackCount = value;
-				}
-			}
+            public string AttackCount
+            {
+                get
+                {
+                    return attackCount;
+                }
+                set
+                {
+                    attackCount = value;
+                }
+            }
 
-			public string Result
-			{
-				get
-				{
-					return result;
-				}
-				set	
-				{
-					result = value;
-				}
-			}
-		}
+            public string Result
+            {
+                get
+                {
+                    return result;
+                }
+                set
+                {
+                    result = value;
+                }
+            }
+        }
 
-		public class DescribeDomainCCAttackInfo_AttackedUrlDatas
-		{
+        public class DescribeDomainCCAttackInfo_AttackedUrlDatas
+        {
 
-			private string url;
+            private string url;
 
-			private string attackCount;
+            private string attackCount;
 
-			private string result;
+            private string result;
 
-			public string Url
-			{
-				get
-				{
-					return url;
-				}
-				set	
-				{
-					url = value;
-				}
-			}
+            public string Url
+            {
+                get
+                {
+                    return url;
+                }
+                set
+                {
+                    url = value;
+                }
+            }
 
-			public string AttackCount
-			{
-				get
-				{
-					return attackCount;
-				}
-				set	
-				{
-					attackCount = value;
-				}
-			}
+            public string AttackCount
+            {
+                get
+                {
+                    return attackCount;
+                }
+                set
+                {
+                    attackCount = value;
+                }
+            }
 
-			public string Result
-			{
-				get
-				{
-					return result;
-				}
-				set	
-				{
-					result = value;
-				}
-			}
-		}
-	}
+            public string Result
+            {
+                get
+                {
+                    return result;
+                }
+                set
+                {
+                    result = value;
+                }
+            }
+        }
+    }
 }

@@ -21,385 +21,385 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeInstancesFullStatusResponse : AcsResponse
-	{
+    public class DescribeInstancesFullStatusResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeInstancesFullStatus_InstanceFullStatusType> instanceFullStatusSet;
+        private List<DescribeInstancesFullStatus_InstanceFullStatusType> instanceFullStatusSet;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeInstancesFullStatus_InstanceFullStatusType> InstanceFullStatusSet
-		{
-			get
-			{
-				return instanceFullStatusSet;
-			}
-			set	
-			{
-				instanceFullStatusSet = value;
-			}
-		}
+        public List<DescribeInstancesFullStatus_InstanceFullStatusType> InstanceFullStatusSet
+        {
+            get
+            {
+                return instanceFullStatusSet;
+            }
+            set
+            {
+                instanceFullStatusSet = value;
+            }
+        }
 
-		public class DescribeInstancesFullStatus_InstanceFullStatusType
-		{
+        public class DescribeInstancesFullStatus_InstanceFullStatusType
+        {
 
-			private string instanceId;
+            private string instanceId;
 
-			private List<DescribeInstancesFullStatus_ScheduledSystemEventType> scheduledSystemEventSet;
+            private List<DescribeInstancesFullStatus_ScheduledSystemEventType> scheduledSystemEventSet;
 
-			private DescribeInstancesFullStatus_Status status;
+            private DescribeInstancesFullStatus_Status status;
 
-			private DescribeInstancesFullStatus_HealthStatus healthStatus;
+            private DescribeInstancesFullStatus_HealthStatus healthStatus;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public List<DescribeInstancesFullStatus_ScheduledSystemEventType> ScheduledSystemEventSet
-			{
-				get
-				{
-					return scheduledSystemEventSet;
-				}
-				set	
-				{
-					scheduledSystemEventSet = value;
-				}
-			}
+            public List<DescribeInstancesFullStatus_ScheduledSystemEventType> ScheduledSystemEventSet
+            {
+                get
+                {
+                    return scheduledSystemEventSet;
+                }
+                set
+                {
+                    scheduledSystemEventSet = value;
+                }
+            }
 
-			public DescribeInstancesFullStatus_Status Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public DescribeInstancesFullStatus_Status Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public DescribeInstancesFullStatus_HealthStatus HealthStatus
-			{
-				get
-				{
-					return healthStatus;
-				}
-				set	
-				{
-					healthStatus = value;
-				}
-			}
+            public DescribeInstancesFullStatus_HealthStatus HealthStatus
+            {
+                get
+                {
+                    return healthStatus;
+                }
+                set
+                {
+                    healthStatus = value;
+                }
+            }
 
-			public class DescribeInstancesFullStatus_ScheduledSystemEventType
-			{
+            public class DescribeInstancesFullStatus_ScheduledSystemEventType
+            {
 
-				private string eventId;
+                private string eventId;
 
-				private string eventPublishTime;
+                private string eventPublishTime;
 
-				private string notBefore;
+                private string notBefore;
 
-				private DescribeInstancesFullStatus_EventCycleStatus eventCycleStatus;
+                private DescribeInstancesFullStatus_EventCycleStatus eventCycleStatus;
 
-				private DescribeInstancesFullStatus_EventType eventType;
+                private DescribeInstancesFullStatus_EventType eventType;
 
-				private DescribeInstancesFullStatus_ExtendedAttribute extendedAttribute;
+                private DescribeInstancesFullStatus_ExtendedAttribute extendedAttribute;
 
-				public string EventId
-				{
-					get
-					{
-						return eventId;
-					}
-					set	
-					{
-						eventId = value;
-					}
-				}
+                public string EventId
+                {
+                    get
+                    {
+                        return eventId;
+                    }
+                    set
+                    {
+                        eventId = value;
+                    }
+                }
 
-				public string EventPublishTime
-				{
-					get
-					{
-						return eventPublishTime;
-					}
-					set	
-					{
-						eventPublishTime = value;
-					}
-				}
+                public string EventPublishTime
+                {
+                    get
+                    {
+                        return eventPublishTime;
+                    }
+                    set
+                    {
+                        eventPublishTime = value;
+                    }
+                }
 
-				public string NotBefore
-				{
-					get
-					{
-						return notBefore;
-					}
-					set	
-					{
-						notBefore = value;
-					}
-				}
+                public string NotBefore
+                {
+                    get
+                    {
+                        return notBefore;
+                    }
+                    set
+                    {
+                        notBefore = value;
+                    }
+                }
 
-				public DescribeInstancesFullStatus_EventCycleStatus EventCycleStatus
-				{
-					get
-					{
-						return eventCycleStatus;
-					}
-					set	
-					{
-						eventCycleStatus = value;
-					}
-				}
+                public DescribeInstancesFullStatus_EventCycleStatus EventCycleStatus
+                {
+                    get
+                    {
+                        return eventCycleStatus;
+                    }
+                    set
+                    {
+                        eventCycleStatus = value;
+                    }
+                }
 
-				public DescribeInstancesFullStatus_EventType EventType
-				{
-					get
-					{
-						return eventType;
-					}
-					set	
-					{
-						eventType = value;
-					}
-				}
+                public DescribeInstancesFullStatus_EventType EventType
+                {
+                    get
+                    {
+                        return eventType;
+                    }
+                    set
+                    {
+                        eventType = value;
+                    }
+                }
 
-				public DescribeInstancesFullStatus_ExtendedAttribute ExtendedAttribute
-				{
-					get
-					{
-						return extendedAttribute;
-					}
-					set	
-					{
-						extendedAttribute = value;
-					}
-				}
+                public DescribeInstancesFullStatus_ExtendedAttribute ExtendedAttribute
+                {
+                    get
+                    {
+                        return extendedAttribute;
+                    }
+                    set
+                    {
+                        extendedAttribute = value;
+                    }
+                }
 
-				public class DescribeInstancesFullStatus_EventCycleStatus
-				{
+                public class DescribeInstancesFullStatus_EventCycleStatus
+                {
 
-					private int? code;
+                    private int? code;
 
-					private string name;
+                    private string name;
 
-					public int? Code
-					{
-						get
-						{
-							return code;
-						}
-						set	
-						{
-							code = value;
-						}
-					}
+                    public int? Code
+                    {
+                        get
+                        {
+                            return code;
+                        }
+                        set
+                        {
+                            code = value;
+                        }
+                    }
 
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
-				}
+                    public string Name
+                    {
+                        get
+                        {
+                            return name;
+                        }
+                        set
+                        {
+                            name = value;
+                        }
+                    }
+                }
 
-				public class DescribeInstancesFullStatus_EventType
-				{
+                public class DescribeInstancesFullStatus_EventType
+                {
 
-					private int? code;
+                    private int? code;
 
-					private string name;
+                    private string name;
 
-					public int? Code
-					{
-						get
-						{
-							return code;
-						}
-						set	
-						{
-							code = value;
-						}
-					}
+                    public int? Code
+                    {
+                        get
+                        {
+                            return code;
+                        }
+                        set
+                        {
+                            code = value;
+                        }
+                    }
 
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
-				}
+                    public string Name
+                    {
+                        get
+                        {
+                            return name;
+                        }
+                        set
+                        {
+                            name = value;
+                        }
+                    }
+                }
 
-				public class DescribeInstancesFullStatus_ExtendedAttribute
-				{
+                public class DescribeInstancesFullStatus_ExtendedAttribute
+                {
 
-					private string diskId;
+                    private string diskId;
 
-					private string device;
+                    private string device;
 
-					public string DiskId
-					{
-						get
-						{
-							return diskId;
-						}
-						set	
-						{
-							diskId = value;
-						}
-					}
+                    public string DiskId
+                    {
+                        get
+                        {
+                            return diskId;
+                        }
+                        set
+                        {
+                            diskId = value;
+                        }
+                    }
 
-					public string Device
-					{
-						get
-						{
-							return device;
-						}
-						set	
-						{
-							device = value;
-						}
-					}
-				}
-			}
+                    public string Device
+                    {
+                        get
+                        {
+                            return device;
+                        }
+                        set
+                        {
+                            device = value;
+                        }
+                    }
+                }
+            }
 
-			public class DescribeInstancesFullStatus_Status
-			{
+            public class DescribeInstancesFullStatus_Status
+            {
 
-				private int? code;
+                private int? code;
 
-				private string name;
+                private string name;
 
-				public int? Code
-				{
-					get
-					{
-						return code;
-					}
-					set	
-					{
-						code = value;
-					}
-				}
+                public int? Code
+                {
+                    get
+                    {
+                        return code;
+                    }
+                    set
+                    {
+                        code = value;
+                    }
+                }
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-			}
+                public string Name
+                {
+                    get
+                    {
+                        return name;
+                    }
+                    set
+                    {
+                        name = value;
+                    }
+                }
+            }
 
-			public class DescribeInstancesFullStatus_HealthStatus
-			{
+            public class DescribeInstancesFullStatus_HealthStatus
+            {
 
-				private int? code;
+                private int? code;
 
-				private string name;
+                private string name;
 
-				public int? Code
-				{
-					get
-					{
-						return code;
-					}
-					set	
-					{
-						code = value;
-					}
-				}
+                public int? Code
+                {
+                    get
+                    {
+                        return code;
+                    }
+                    set
+                    {
+                        code = value;
+                    }
+                }
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-			}
-		}
-	}
+                public string Name
+                {
+                    get
+                    {
+                        return name;
+                    }
+                    set
+                    {
+                        name = value;
+                    }
+                }
+            }
+        }
+    }
 }

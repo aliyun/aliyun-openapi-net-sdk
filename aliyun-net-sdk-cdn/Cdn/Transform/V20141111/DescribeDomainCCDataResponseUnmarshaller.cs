@@ -28,26 +28,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
     {
         public static DescribeDomainCCDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainCCDataResponse describeDomainCCDataResponse = new DescribeDomainCCDataResponse();
+            DescribeDomainCCDataResponse describeDomainCCDataResponse = new DescribeDomainCCDataResponse();
 
-			describeDomainCCDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainCCDataResponse.RequestId = context.StringValue("DescribeDomainCCData.RequestId");
-			describeDomainCCDataResponse.DomainName = context.StringValue("DescribeDomainCCData.DomainName");
-			describeDomainCCDataResponse.DataInterval = context.StringValue("DescribeDomainCCData.DataInterval");
-			describeDomainCCDataResponse.StartTime = context.StringValue("DescribeDomainCCData.StartTime");
-			describeDomainCCDataResponse.EndTime = context.StringValue("DescribeDomainCCData.EndTime");
+            describeDomainCCDataResponse.HttpResponse = context.HttpResponse;
+            describeDomainCCDataResponse.RequestId = context.StringValue("DescribeDomainCCData.RequestId");
+            describeDomainCCDataResponse.DomainName = context.StringValue("DescribeDomainCCData.DomainName");
+            describeDomainCCDataResponse.DataInterval = context.StringValue("DescribeDomainCCData.DataInterval");
+            describeDomainCCDataResponse.StartTime = context.StringValue("DescribeDomainCCData.StartTime");
+            describeDomainCCDataResponse.EndTime = context.StringValue("DescribeDomainCCData.EndTime");
 
-			List<DescribeDomainCCDataResponse.DescribeDomainCCData_CCDatas> describeDomainCCDataResponse_cCDataList = new List<DescribeDomainCCDataResponse.DescribeDomainCCData_CCDatas>();
-			for (int i = 0; i < context.Length("DescribeDomainCCData.CCDataList.Length"); i++) {
-				DescribeDomainCCDataResponse.DescribeDomainCCData_CCDatas cCDatas = new DescribeDomainCCDataResponse.DescribeDomainCCData_CCDatas();
-				cCDatas.TimeStamp = context.StringValue("DescribeDomainCCData.CCDataList["+ i +"].TimeStamp");
-				cCDatas.Count = context.StringValue("DescribeDomainCCData.CCDataList["+ i +"].Count");
+            List<DescribeDomainCCDataResponse.DescribeDomainCCData_CCDatas> describeDomainCCDataResponse_cCDataList = new List<DescribeDomainCCDataResponse.DescribeDomainCCData_CCDatas>();
+            for (int i = 0; i < context.Length("DescribeDomainCCData.CCDataList.Length"); i++)
+            {
+                DescribeDomainCCDataResponse.DescribeDomainCCData_CCDatas cCDatas = new DescribeDomainCCDataResponse.DescribeDomainCCData_CCDatas();
+                cCDatas.TimeStamp = context.StringValue("DescribeDomainCCData.CCDataList[" + i + "].TimeStamp");
+                cCDatas.Count = context.StringValue("DescribeDomainCCData.CCDataList[" + i + "].Count");
 
-				describeDomainCCDataResponse_cCDataList.Add(cCDatas);
-			}
-			describeDomainCCDataResponse.CCDataList = describeDomainCCDataResponse_cCDataList;
-        
-			return describeDomainCCDataResponse;
+                describeDomainCCDataResponse_cCDataList.Add(cCDatas);
+            }
+            describeDomainCCDataResponse.CCDataList = describeDomainCCDataResponse_cCDataList;
+
+            return describeDomainCCDataResponse;
         }
     }
 }

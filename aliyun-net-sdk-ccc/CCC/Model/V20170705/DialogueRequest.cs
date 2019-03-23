@@ -33,160 +33,160 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string callId;
+        private string callId;
 
-		private string callingNumber;
+        private string callingNumber;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string calledNumber;
+        private string calledNumber;
 
-		private string actionKey;
+        private string actionKey;
 
-		private string actionParams;
+        private string actionParams;
 
-		private string callType;
+        private string callType;
 
-		private string scenarioId;
+        private string scenarioId;
 
-		private string taskId;
+        private string taskId;
 
-		private string utterance;
+        private string utterance;
 
-		public string CallId
-		{
-			get
-			{
-				return callId;
-			}
-			set	
-			{
-				callId = value;
-				DictionaryUtil.Add(QueryParameters, "CallId", value);
-			}
-		}
+        public string CallId
+        {
+            get
+            {
+                return callId;
+            }
+            set
+            {
+                callId = value;
+                DictionaryUtil.Add(QueryParameters, "CallId", value);
+            }
+        }
 
-		public string CallingNumber
-		{
-			get
-			{
-				return callingNumber;
-			}
-			set	
-			{
-				callingNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
-			}
-		}
+        public string CallingNumber
+        {
+            get
+            {
+                return callingNumber;
+            }
+            set
+            {
+                callingNumber = value;
+                DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string CalledNumber
-		{
-			get
-			{
-				return calledNumber;
-			}
-			set	
-			{
-				calledNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
-			}
-		}
+        public string CalledNumber
+        {
+            get
+            {
+                return calledNumber;
+            }
+            set
+            {
+                calledNumber = value;
+                DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
+            }
+        }
 
-		public string ActionKey
-		{
-			get
-			{
-				return actionKey;
-			}
-			set	
-			{
-				actionKey = value;
-				DictionaryUtil.Add(QueryParameters, "ActionKey", value);
-			}
-		}
+        public string ActionKey
+        {
+            get
+            {
+                return actionKey;
+            }
+            set
+            {
+                actionKey = value;
+                DictionaryUtil.Add(QueryParameters, "ActionKey", value);
+            }
+        }
 
-		public string ActionParams
-		{
-			get
-			{
-				return actionParams;
-			}
-			set	
-			{
-				actionParams = value;
-				DictionaryUtil.Add(QueryParameters, "ActionParams", value);
-			}
-		}
+        public string ActionParams
+        {
+            get
+            {
+                return actionParams;
+            }
+            set
+            {
+                actionParams = value;
+                DictionaryUtil.Add(QueryParameters, "ActionParams", value);
+            }
+        }
 
-		public string CallType
-		{
-			get
-			{
-				return callType;
-			}
-			set	
-			{
-				callType = value;
-				DictionaryUtil.Add(QueryParameters, "CallType", value);
-			}
-		}
+        public string CallType
+        {
+            get
+            {
+                return callType;
+            }
+            set
+            {
+                callType = value;
+                DictionaryUtil.Add(QueryParameters, "CallType", value);
+            }
+        }
 
-		public string ScenarioId
-		{
-			get
-			{
-				return scenarioId;
-			}
-			set	
-			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
-			}
-		}
+        public string ScenarioId
+        {
+            get
+            {
+                return scenarioId;
+            }
+            set
+            {
+                scenarioId = value;
+                DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+            }
+        }
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
-			}
-		}
+        public string TaskId
+        {
+            get
+            {
+                return taskId;
+            }
+            set
+            {
+                taskId = value;
+                DictionaryUtil.Add(QueryParameters, "TaskId", value);
+            }
+        }
 
-		public string Utterance
-		{
-			get
-			{
-				return utterance;
-			}
-			set	
-			{
-				utterance = value;
-				DictionaryUtil.Add(QueryParameters, "Utterance", value);
-			}
-		}
+        public string Utterance
+        {
+            get
+            {
+                return utterance;
+            }
+            set
+            {
+                utterance = value;
+                DictionaryUtil.Add(QueryParameters, "Utterance", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override DialogueResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

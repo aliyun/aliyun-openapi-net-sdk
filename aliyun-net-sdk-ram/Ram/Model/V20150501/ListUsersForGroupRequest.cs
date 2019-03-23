@@ -32,53 +32,53 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public ListUsersForGroupRequest()
             : base("Ram", "2015-05-01", "ListUsersForGroup", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string marker;
+        private string marker;
 
-		private int? maxItems;
+        private int? maxItems;
 
-		private string groupName;
+        private string groupName;
 
-		public string Marker
-		{
-			get
-			{
-				return marker;
-			}
-			set	
-			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
-			}
-		}
+        public string Marker
+        {
+            get
+            {
+                return marker;
+            }
+            set
+            {
+                marker = value;
+                DictionaryUtil.Add(QueryParameters, "Marker", value);
+            }
+        }
 
-		public int? MaxItems
-		{
-			get
-			{
-				return maxItems;
-			}
-			set	
-			{
-				maxItems = value;
-				DictionaryUtil.Add(QueryParameters, "MaxItems", value.ToString());
-			}
-		}
+        public int? MaxItems
+        {
+            get
+            {
+                return maxItems;
+            }
+            set
+            {
+                maxItems = value;
+                DictionaryUtil.Add(QueryParameters, "MaxItems", value.ToString());
+            }
+        }
 
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
+        public string GroupName
+        {
+            get
+            {
+                return groupName;
+            }
+            set
+            {
+                groupName = value;
+                DictionaryUtil.Add(QueryParameters, "GroupName", value);
+            }
+        }
 
         public override ListUsersForGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

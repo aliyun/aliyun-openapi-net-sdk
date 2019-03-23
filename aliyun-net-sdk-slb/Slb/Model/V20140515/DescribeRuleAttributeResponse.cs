@@ -21,105 +21,105 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeRuleAttributeResponse : AcsResponse
-	{
+    public class DescribeRuleAttributeResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string ruleName;
+        private string ruleName;
 
-		private string loadBalancerId;
+        private string loadBalancerId;
 
-		private string listenerPort;
+        private string listenerPort;
 
-		private string domain;
+        private string domain;
 
-		private string url;
+        private string url;
 
-		private string vServerGroupId;
+        private string vServerGroupId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string RuleName
-		{
-			get
-			{
-				return ruleName;
-			}
-			set	
-			{
-				ruleName = value;
-			}
-		}
+        public string RuleName
+        {
+            get
+            {
+                return ruleName;
+            }
+            set
+            {
+                ruleName = value;
+            }
+        }
 
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-			}
-		}
+        public string LoadBalancerId
+        {
+            get
+            {
+                return loadBalancerId;
+            }
+            set
+            {
+                loadBalancerId = value;
+            }
+        }
 
-		public string ListenerPort
-		{
-			get
-			{
-				return listenerPort;
-			}
-			set	
-			{
-				listenerPort = value;
-			}
-		}
+        public string ListenerPort
+        {
+            get
+            {
+                return listenerPort;
+            }
+            set
+            {
+                listenerPort = value;
+            }
+        }
 
-		public string Domain
-		{
-			get
-			{
-				return domain;
-			}
-			set	
-			{
-				domain = value;
-			}
-		}
+        public string Domain
+        {
+            get
+            {
+                return domain;
+            }
+            set
+            {
+                domain = value;
+            }
+        }
 
-		public string Url
-		{
-			get
-			{
-				return url;
-			}
-			set	
-			{
-				url = value;
-			}
-		}
+        public string Url
+        {
+            get
+            {
+                return url;
+            }
+            set
+            {
+                url = value;
+            }
+        }
 
-		public string VServerGroupId
-		{
-			get
-			{
-				return vServerGroupId;
-			}
-			set	
-			{
-				vServerGroupId = value;
-			}
-		}
-	}
+        public string VServerGroupId
+        {
+            get
+            {
+                return vServerGroupId;
+            }
+            set
+            {
+                vServerGroupId = value;
+            }
+        }
+    }
 }

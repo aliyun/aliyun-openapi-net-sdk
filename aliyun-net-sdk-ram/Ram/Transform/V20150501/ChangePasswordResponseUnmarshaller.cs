@@ -28,12 +28,12 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static ChangePasswordResponse Unmarshall(UnmarshallerContext context)
         {
-			ChangePasswordResponse changePasswordResponse = new ChangePasswordResponse();
+            ChangePasswordResponse changePasswordResponse = new ChangePasswordResponse();
 
-			changePasswordResponse.HttpResponse = context.HttpResponse;
-			changePasswordResponse.RequestId = context.StringValue("ChangePassword.RequestId");
-        
-			return changePasswordResponse;
+            changePasswordResponse.HttpResponse = context.HttpResponse;
+            changePasswordResponse.RequestId = context.StringValue("ChangePassword.RequestId");
+
+            return changePasswordResponse;
         }
     }
 }

@@ -33,215 +33,215 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
         }
 
-		private long? resourceOwnerId;
+        private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+        private string resourceOwnerAccount;
 
-		private string ipProtocol;
+        private string ipProtocol;
 
-		private string forwardEntryName;
+        private string forwardEntryName;
 
-		private string ownerAccount;
+        private string ownerAccount;
 
-		private string forwardTableId;
+        private string forwardTableId;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string internalIp;
+        private string internalIp;
 
-		private string regionId;
+        private string regionId;
 
-		private string forwardEntryId;
+        private string forwardEntryId;
 
-		private string internalPort;
+        private string internalPort;
 
-		private string action;
+        private string action;
 
-		private string externalIp;
+        private string externalIp;
 
-		private string externalPort;
+        private string externalPort;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+        public long? ResourceOwnerId
+        {
+            get
+            {
+                return resourceOwnerId;
+            }
+            set
+            {
+                resourceOwnerId = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+            }
+        }
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+        public string ResourceOwnerAccount
+        {
+            get
+            {
+                return resourceOwnerAccount;
+            }
+            set
+            {
+                resourceOwnerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+            }
+        }
 
-		public string IpProtocol
-		{
-			get
-			{
-				return ipProtocol;
-			}
-			set	
-			{
-				ipProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "IpProtocol", value);
-			}
-		}
+        public string IpProtocol
+        {
+            get
+            {
+                return ipProtocol;
+            }
+            set
+            {
+                ipProtocol = value;
+                DictionaryUtil.Add(QueryParameters, "IpProtocol", value);
+            }
+        }
 
-		public string ForwardEntryName
-		{
-			get
-			{
-				return forwardEntryName;
-			}
-			set	
-			{
-				forwardEntryName = value;
-				DictionaryUtil.Add(QueryParameters, "ForwardEntryName", value);
-			}
-		}
+        public string ForwardEntryName
+        {
+            get
+            {
+                return forwardEntryName;
+            }
+            set
+            {
+                forwardEntryName = value;
+                DictionaryUtil.Add(QueryParameters, "ForwardEntryName", value);
+            }
+        }
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
+        public string OwnerAccount
+        {
+            get
+            {
+                return ownerAccount;
+            }
+            set
+            {
+                ownerAccount = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+            }
+        }
 
-		public string ForwardTableId
-		{
-			get
-			{
-				return forwardTableId;
-			}
-			set	
-			{
-				forwardTableId = value;
-				DictionaryUtil.Add(QueryParameters, "ForwardTableId", value);
-			}
-		}
+        public string ForwardTableId
+        {
+            get
+            {
+                return forwardTableId;
+            }
+            set
+            {
+                forwardTableId = value;
+                DictionaryUtil.Add(QueryParameters, "ForwardTableId", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string InternalIp
-		{
-			get
-			{
-				return internalIp;
-			}
-			set	
-			{
-				internalIp = value;
-				DictionaryUtil.Add(QueryParameters, "InternalIp", value);
-			}
-		}
+        public string InternalIp
+        {
+            get
+            {
+                return internalIp;
+            }
+            set
+            {
+                internalIp = value;
+                DictionaryUtil.Add(QueryParameters, "InternalIp", value);
+            }
+        }
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+        public string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                regionId = value;
+                DictionaryUtil.Add(QueryParameters, "RegionId", value);
+            }
+        }
 
-		public string ForwardEntryId
-		{
-			get
-			{
-				return forwardEntryId;
-			}
-			set	
-			{
-				forwardEntryId = value;
-				DictionaryUtil.Add(QueryParameters, "ForwardEntryId", value);
-			}
-		}
+        public string ForwardEntryId
+        {
+            get
+            {
+                return forwardEntryId;
+            }
+            set
+            {
+                forwardEntryId = value;
+                DictionaryUtil.Add(QueryParameters, "ForwardEntryId", value);
+            }
+        }
 
-		public string InternalPort
-		{
-			get
-			{
-				return internalPort;
-			}
-			set	
-			{
-				internalPort = value;
-				DictionaryUtil.Add(QueryParameters, "InternalPort", value);
-			}
-		}
+        public string InternalPort
+        {
+            get
+            {
+                return internalPort;
+            }
+            set
+            {
+                internalPort = value;
+                DictionaryUtil.Add(QueryParameters, "InternalPort", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string ExternalIp
-		{
-			get
-			{
-				return externalIp;
-			}
-			set	
-			{
-				externalIp = value;
-				DictionaryUtil.Add(QueryParameters, "ExternalIp", value);
-			}
-		}
+        public string ExternalIp
+        {
+            get
+            {
+                return externalIp;
+            }
+            set
+            {
+                externalIp = value;
+                DictionaryUtil.Add(QueryParameters, "ExternalIp", value);
+            }
+        }
 
-		public string ExternalPort
-		{
-			get
-			{
-				return externalPort;
-			}
-			set	
-			{
-				externalPort = value;
-				DictionaryUtil.Add(QueryParameters, "ExternalPort", value);
-			}
-		}
+        public string ExternalPort
+        {
+            get
+            {
+                return externalPort;
+            }
+            set
+            {
+                externalPort = value;
+                DictionaryUtil.Add(QueryParameters, "ExternalPort", value);
+            }
+        }
 
         public override ModifyForwardEntryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

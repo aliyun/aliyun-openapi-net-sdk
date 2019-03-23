@@ -27,25 +27,25 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static GetJobDataUploadParamsResponse Unmarshall(UnmarshallerContext context)
         {
-			GetJobDataUploadParamsResponse getJobDataUploadParamsResponse = new GetJobDataUploadParamsResponse();
+            GetJobDataUploadParamsResponse getJobDataUploadParamsResponse = new GetJobDataUploadParamsResponse();
 
-			getJobDataUploadParamsResponse.HttpResponse = context.HttpResponse;
-			getJobDataUploadParamsResponse.RequestId = context.StringValue("GetJobDataUploadParams.RequestId");
-			getJobDataUploadParamsResponse.Success = context.BooleanValue("GetJobDataUploadParams.Success");
-			getJobDataUploadParamsResponse.Code = context.StringValue("GetJobDataUploadParams.Code");
-			getJobDataUploadParamsResponse.Message = context.StringValue("GetJobDataUploadParams.Message");
-			getJobDataUploadParamsResponse.HttpStatusCode = context.IntegerValue("GetJobDataUploadParams.HttpStatusCode");
+            getJobDataUploadParamsResponse.HttpResponse = context.HttpResponse;
+            getJobDataUploadParamsResponse.RequestId = context.StringValue("GetJobDataUploadParams.RequestId");
+            getJobDataUploadParamsResponse.Success = context.BooleanValue("GetJobDataUploadParams.Success");
+            getJobDataUploadParamsResponse.Code = context.StringValue("GetJobDataUploadParams.Code");
+            getJobDataUploadParamsResponse.Message = context.StringValue("GetJobDataUploadParams.Message");
+            getJobDataUploadParamsResponse.HttpStatusCode = context.IntegerValue("GetJobDataUploadParams.HttpStatusCode");
 
-			GetJobDataUploadParamsResponse.GetJobDataUploadParams_UploadParams uploadParams = new GetJobDataUploadParamsResponse.GetJobDataUploadParams_UploadParams();
-			uploadParams.AccessId = context.StringValue("GetJobDataUploadParams.UploadParams.AccessId");
-			uploadParams.Policy = context.StringValue("GetJobDataUploadParams.UploadParams.Policy");
-			uploadParams.Signature = context.StringValue("GetJobDataUploadParams.UploadParams.Signature");
-			uploadParams.Folder = context.StringValue("GetJobDataUploadParams.UploadParams.Folder");
-			uploadParams.Host = context.StringValue("GetJobDataUploadParams.UploadParams.Host");
-			uploadParams.Expire = context.IntegerValue("GetJobDataUploadParams.UploadParams.Expire");
-			getJobDataUploadParamsResponse.UploadParams = uploadParams;
-        
-			return getJobDataUploadParamsResponse;
+            GetJobDataUploadParamsResponse.GetJobDataUploadParams_UploadParams uploadParams = new GetJobDataUploadParamsResponse.GetJobDataUploadParams_UploadParams();
+            uploadParams.AccessId = context.StringValue("GetJobDataUploadParams.UploadParams.AccessId");
+            uploadParams.Policy = context.StringValue("GetJobDataUploadParams.UploadParams.Policy");
+            uploadParams.Signature = context.StringValue("GetJobDataUploadParams.UploadParams.Signature");
+            uploadParams.Folder = context.StringValue("GetJobDataUploadParams.UploadParams.Folder");
+            uploadParams.Host = context.StringValue("GetJobDataUploadParams.UploadParams.Host");
+            uploadParams.Expire = context.IntegerValue("GetJobDataUploadParams.UploadParams.Expire");
+            getJobDataUploadParamsResponse.UploadParams = uploadParams;
+
+            return getJobDataUploadParamsResponse;
         }
     }
 }

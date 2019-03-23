@@ -21,77 +21,77 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateDBInstanceResponse : AcsResponse
-	{
+    public class CreateDBInstanceResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string dBInstanceId;
+        private string dBInstanceId;
 
-		private string orderId;
+        private string orderId;
 
-		private string connectionString;
+        private string connectionString;
 
-		private string port;
+        private string port;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
+        public string DBInstanceId
+        {
+            get
+            {
+                return dBInstanceId;
+            }
+            set
+            {
+                dBInstanceId = value;
+            }
+        }
 
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
+        public string OrderId
+        {
+            get
+            {
+                return orderId;
+            }
+            set
+            {
+                orderId = value;
+            }
+        }
 
-		public string ConnectionString
-		{
-			get
-			{
-				return connectionString;
-			}
-			set	
-			{
-				connectionString = value;
-			}
-		}
+        public string ConnectionString
+        {
+            get
+            {
+                return connectionString;
+            }
+            set
+            {
+                connectionString = value;
+            }
+        }
 
-		public string Port
-		{
-			get
-			{
-				return port;
-			}
-			set	
-			{
-				port = value;
-			}
-		}
-	}
+        public string Port
+        {
+            get
+            {
+                return port;
+            }
+            set
+            {
+                port = value;
+            }
+        }
+    }
 }

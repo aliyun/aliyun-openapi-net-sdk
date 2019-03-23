@@ -27,25 +27,26 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static DescribeDBInstanceIPArrayListResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDBInstanceIPArrayListResponse describeDBInstanceIPArrayListResponse = new DescribeDBInstanceIPArrayListResponse();
+            DescribeDBInstanceIPArrayListResponse describeDBInstanceIPArrayListResponse = new DescribeDBInstanceIPArrayListResponse();
 
-			describeDBInstanceIPArrayListResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceIPArrayListResponse.RequestId = context.StringValue("DescribeDBInstanceIPArrayList.RequestId");
+            describeDBInstanceIPArrayListResponse.HttpResponse = context.HttpResponse;
+            describeDBInstanceIPArrayListResponse.RequestId = context.StringValue("DescribeDBInstanceIPArrayList.RequestId");
 
-			List<DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray> describeDBInstanceIPArrayListResponse_items = new List<DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray>();
-			for (int i = 0; i < context.Length("DescribeDBInstanceIPArrayList.Items.Length"); i++) {
-				DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray dBInstanceIPArray = new DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray();
-				dBInstanceIPArray.DBInstanceIPArrayName = context.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].DBInstanceIPArrayName");
-				dBInstanceIPArray.DBInstanceIPArrayAttribute = context.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].DBInstanceIPArrayAttribute");
-				dBInstanceIPArray.SecurityIPType = context.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].SecurityIPType");
-				dBInstanceIPArray.SecurityIPList = context.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].SecurityIPList");
-				dBInstanceIPArray.WhitelistNetworkType = context.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].WhitelistNetworkType");
+            List<DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray> describeDBInstanceIPArrayListResponse_items = new List<DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray>();
+            for (int i = 0; i < context.Length("DescribeDBInstanceIPArrayList.Items.Length"); i++)
+            {
+                DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray dBInstanceIPArray = new DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray();
+                dBInstanceIPArray.DBInstanceIPArrayName = context.StringValue("DescribeDBInstanceIPArrayList.Items[" + i + "].DBInstanceIPArrayName");
+                dBInstanceIPArray.DBInstanceIPArrayAttribute = context.StringValue("DescribeDBInstanceIPArrayList.Items[" + i + "].DBInstanceIPArrayAttribute");
+                dBInstanceIPArray.SecurityIPType = context.StringValue("DescribeDBInstanceIPArrayList.Items[" + i + "].SecurityIPType");
+                dBInstanceIPArray.SecurityIPList = context.StringValue("DescribeDBInstanceIPArrayList.Items[" + i + "].SecurityIPList");
+                dBInstanceIPArray.WhitelistNetworkType = context.StringValue("DescribeDBInstanceIPArrayList.Items[" + i + "].WhitelistNetworkType");
 
-				describeDBInstanceIPArrayListResponse_items.Add(dBInstanceIPArray);
-			}
-			describeDBInstanceIPArrayListResponse.Items = describeDBInstanceIPArrayListResponse_items;
-        
-			return describeDBInstanceIPArrayListResponse;
+                describeDBInstanceIPArrayListResponse_items.Add(dBInstanceIPArray);
+            }
+            describeDBInstanceIPArrayListResponse.Items = describeDBInstanceIPArrayListResponse_items;
+
+            return describeDBInstanceIPArrayListResponse;
         }
     }
 }

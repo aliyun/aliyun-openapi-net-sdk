@@ -27,20 +27,20 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static DownloadUnreachableContactsResponse Unmarshall(UnmarshallerContext context)
         {
-			DownloadUnreachableContactsResponse downloadUnreachableContactsResponse = new DownloadUnreachableContactsResponse();
+            DownloadUnreachableContactsResponse downloadUnreachableContactsResponse = new DownloadUnreachableContactsResponse();
 
-			downloadUnreachableContactsResponse.HttpResponse = context.HttpResponse;
-			downloadUnreachableContactsResponse.RequestId = context.StringValue("DownloadUnreachableContacts.RequestId");
-			downloadUnreachableContactsResponse.Success = context.BooleanValue("DownloadUnreachableContacts.Success");
-			downloadUnreachableContactsResponse.Code = context.StringValue("DownloadUnreachableContacts.Code");
-			downloadUnreachableContactsResponse.Message = context.StringValue("DownloadUnreachableContacts.Message");
-			downloadUnreachableContactsResponse.HttpStatusCode = context.IntegerValue("DownloadUnreachableContacts.HttpStatusCode");
+            downloadUnreachableContactsResponse.HttpResponse = context.HttpResponse;
+            downloadUnreachableContactsResponse.RequestId = context.StringValue("DownloadUnreachableContacts.RequestId");
+            downloadUnreachableContactsResponse.Success = context.BooleanValue("DownloadUnreachableContacts.Success");
+            downloadUnreachableContactsResponse.Code = context.StringValue("DownloadUnreachableContacts.Code");
+            downloadUnreachableContactsResponse.Message = context.StringValue("DownloadUnreachableContacts.Message");
+            downloadUnreachableContactsResponse.HttpStatusCode = context.IntegerValue("DownloadUnreachableContacts.HttpStatusCode");
 
-			DownloadUnreachableContactsResponse.DownloadUnreachableContacts_DownloadParams downloadParams = new DownloadUnreachableContactsResponse.DownloadUnreachableContacts_DownloadParams();
-			downloadParams.SignatureUrl = context.StringValue("DownloadUnreachableContacts.DownloadParams.SignatureUrl");
-			downloadUnreachableContactsResponse.DownloadParams = downloadParams;
-        
-			return downloadUnreachableContactsResponse;
+            DownloadUnreachableContactsResponse.DownloadUnreachableContacts_DownloadParams downloadParams = new DownloadUnreachableContactsResponse.DownloadUnreachableContacts_DownloadParams();
+            downloadParams.SignatureUrl = context.StringValue("DownloadUnreachableContacts.DownloadParams.SignatureUrl");
+            downloadUnreachableContactsResponse.DownloadParams = downloadParams;
+
+            return downloadUnreachableContactsResponse;
         }
     }
 }

@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class ImportSnapshotResponse : AcsResponse
-	{
+    public class ImportSnapshotResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string taskId;
+        private string taskId;
 
-		private string snapshotId;
+        private string snapshotId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
+        public string TaskId
+        {
+            get
+            {
+                return taskId;
+            }
+            set
+            {
+                taskId = value;
+            }
+        }
 
-		public string SnapshotId
-		{
-			get
-			{
-				return snapshotId;
-			}
-			set	
-			{
-				snapshotId = value;
-			}
-		}
-	}
+        public string SnapshotId
+        {
+            get
+            {
+                return snapshotId;
+            }
+            set
+            {
+                snapshotId = value;
+            }
+        }
+    }
 }

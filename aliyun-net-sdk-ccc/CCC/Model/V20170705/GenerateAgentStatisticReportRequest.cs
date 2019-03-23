@@ -33,110 +33,110 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string agentId;
+        private string agentId;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string endDate;
+        private string endDate;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private string startDate;
+        private string startDate;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string AgentId
-		{
-			get
-			{
-				return agentId;
-			}
-			set	
-			{
-				agentId = value;
-				DictionaryUtil.Add(QueryParameters, "AgentId", value);
-			}
-		}
+        public string AgentId
+        {
+            get
+            {
+                return agentId;
+            }
+            set
+            {
+                agentId = value;
+                DictionaryUtil.Add(QueryParameters, "AgentId", value);
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string EndDate
-		{
-			get
-			{
-				return endDate;
-			}
-			set	
-			{
-				endDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndDate", value);
-			}
-		}
+        public string EndDate
+        {
+            get
+            {
+                return endDate;
+            }
+            set
+            {
+                endDate = value;
+                DictionaryUtil.Add(QueryParameters, "EndDate", value);
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+                DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+            }
+        }
 
-		public string StartDate
-		{
-			get
-			{
-				return startDate;
-			}
-			set	
-			{
-				startDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartDate", value);
-			}
-		}
+        public string StartDate
+        {
+            get
+            {
+                return startDate;
+            }
+            set
+            {
+                startDate = value;
+                DictionaryUtil.Add(QueryParameters, "StartDate", value);
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+                DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override GenerateAgentStatisticReportResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

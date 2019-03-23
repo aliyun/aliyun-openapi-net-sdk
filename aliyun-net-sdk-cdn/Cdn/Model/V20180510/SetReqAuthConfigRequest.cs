@@ -34,140 +34,140 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string key1;
+        private string key1;
 
-		private string key2;
+        private string key2;
 
-		private string authRemoteDesc;
+        private string authRemoteDesc;
 
-		private string securityToken;
+        private string securityToken;
 
-		private string domainName;
+        private string domainName;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string timeOut;
+        private string timeOut;
 
-		private string authType;
+        private string authType;
 
-		public string Key1
-		{
-			get
-			{
-				return key1;
-			}
-			set	
-			{
-				key1 = value;
-				DictionaryUtil.Add(QueryParameters, "Key1", value);
-			}
-		}
+        public string Key1
+        {
+            get
+            {
+                return key1;
+            }
+            set
+            {
+                key1 = value;
+                DictionaryUtil.Add(QueryParameters, "Key1", value);
+            }
+        }
 
-		public string Key2
-		{
-			get
-			{
-				return key2;
-			}
-			set	
-			{
-				key2 = value;
-				DictionaryUtil.Add(QueryParameters, "Key2", value);
-			}
-		}
+        public string Key2
+        {
+            get
+            {
+                return key2;
+            }
+            set
+            {
+                key2 = value;
+                DictionaryUtil.Add(QueryParameters, "Key2", value);
+            }
+        }
 
-		public string AuthRemoteDesc
-		{
-			get
-			{
-				return authRemoteDesc;
-			}
-			set	
-			{
-				authRemoteDesc = value;
-				DictionaryUtil.Add(QueryParameters, "AuthRemoteDesc", value);
-			}
-		}
+        public string AuthRemoteDesc
+        {
+            get
+            {
+                return authRemoteDesc;
+            }
+            set
+            {
+                authRemoteDesc = value;
+                DictionaryUtil.Add(QueryParameters, "AuthRemoteDesc", value);
+            }
+        }
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string TimeOut
-		{
-			get
-			{
-				return timeOut;
-			}
-			set	
-			{
-				timeOut = value;
-				DictionaryUtil.Add(QueryParameters, "TimeOut", value);
-			}
-		}
+        public string TimeOut
+        {
+            get
+            {
+                return timeOut;
+            }
+            set
+            {
+                timeOut = value;
+                DictionaryUtil.Add(QueryParameters, "TimeOut", value);
+            }
+        }
 
-		public string AuthType
-		{
-			get
-			{
-				return authType;
-			}
-			set	
-			{
-				authType = value;
-				DictionaryUtil.Add(QueryParameters, "AuthType", value);
-			}
-		}
+        public string AuthType
+        {
+            get
+            {
+                return authType;
+            }
+            set
+            {
+                authType = value;
+                DictionaryUtil.Add(QueryParameters, "AuthType", value);
+            }
+        }
 
         public override SetReqAuthConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

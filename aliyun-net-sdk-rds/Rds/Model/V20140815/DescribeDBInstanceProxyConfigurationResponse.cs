@@ -21,63 +21,63 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeDBInstanceProxyConfigurationResponse : AcsResponse
-	{
+    public class DescribeDBInstanceProxyConfigurationResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string transparentSwitchConfiguration;
+        private string transparentSwitchConfiguration;
 
-		private string persistentConnectionsConfiguration;
+        private string persistentConnectionsConfiguration;
 
-		private string attacksProtectionConfiguration;
+        private string attacksProtectionConfiguration;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string TransparentSwitchConfiguration
-		{
-			get
-			{
-				return transparentSwitchConfiguration;
-			}
-			set	
-			{
-				transparentSwitchConfiguration = value;
-			}
-		}
+        public string TransparentSwitchConfiguration
+        {
+            get
+            {
+                return transparentSwitchConfiguration;
+            }
+            set
+            {
+                transparentSwitchConfiguration = value;
+            }
+        }
 
-		public string PersistentConnectionsConfiguration
-		{
-			get
-			{
-				return persistentConnectionsConfiguration;
-			}
-			set	
-			{
-				persistentConnectionsConfiguration = value;
-			}
-		}
+        public string PersistentConnectionsConfiguration
+        {
+            get
+            {
+                return persistentConnectionsConfiguration;
+            }
+            set
+            {
+                persistentConnectionsConfiguration = value;
+            }
+        }
 
-		public string AttacksProtectionConfiguration
-		{
-			get
-			{
-				return attacksProtectionConfiguration;
-			}
-			set	
-			{
-				attacksProtectionConfiguration = value;
-			}
-		}
-	}
+        public string AttacksProtectionConfiguration
+        {
+            get
+            {
+                return attacksProtectionConfiguration;
+            }
+            set
+            {
+                attacksProtectionConfiguration = value;
+            }
+        }
+    }
 }

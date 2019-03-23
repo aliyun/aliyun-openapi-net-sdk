@@ -22,151 +22,151 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class GetPolicyResponse : AcsResponse
-	{
+    public class GetPolicyResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private GetPolicy_Policy policy;
+        private GetPolicy_Policy policy;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public GetPolicy_Policy Policy
-		{
-			get
-			{
-				return policy;
-			}
-			set	
-			{
-				policy = value;
-			}
-		}
+        public GetPolicy_Policy Policy
+        {
+            get
+            {
+                return policy;
+            }
+            set
+            {
+                policy = value;
+            }
+        }
 
-		public class GetPolicy_Policy
-		{
+        public class GetPolicy_Policy
+        {
 
-			private string policyName;
+            private string policyName;
 
-			private string policyType;
+            private string policyType;
 
-			private string description;
+            private string description;
 
-			private string defaultVersion;
+            private string defaultVersion;
 
-			private string policyDocument;
+            private string policyDocument;
 
-			private string createDate;
+            private string createDate;
 
-			private string updateDate;
+            private string updateDate;
 
-			private int? attachmentCount;
+            private int? attachmentCount;
 
-			public string PolicyName
-			{
-				get
-				{
-					return policyName;
-				}
-				set	
-				{
-					policyName = value;
-				}
-			}
+            public string PolicyName
+            {
+                get
+                {
+                    return policyName;
+                }
+                set
+                {
+                    policyName = value;
+                }
+            }
 
-			public string PolicyType
-			{
-				get
-				{
-					return policyType;
-				}
-				set	
-				{
-					policyType = value;
-				}
-			}
+            public string PolicyType
+            {
+                get
+                {
+                    return policyType;
+                }
+                set
+                {
+                    policyType = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string DefaultVersion
-			{
-				get
-				{
-					return defaultVersion;
-				}
-				set	
-				{
-					defaultVersion = value;
-				}
-			}
+            public string DefaultVersion
+            {
+                get
+                {
+                    return defaultVersion;
+                }
+                set
+                {
+                    defaultVersion = value;
+                }
+            }
 
-			public string PolicyDocument
-			{
-				get
-				{
-					return policyDocument;
-				}
-				set	
-				{
-					policyDocument = value;
-				}
-			}
+            public string PolicyDocument
+            {
+                get
+                {
+                    return policyDocument;
+                }
+                set
+                {
+                    policyDocument = value;
+                }
+            }
 
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
-				}
-			}
+            public string CreateDate
+            {
+                get
+                {
+                    return createDate;
+                }
+                set
+                {
+                    createDate = value;
+                }
+            }
 
-			public string UpdateDate
-			{
-				get
-				{
-					return updateDate;
-				}
-				set	
-				{
-					updateDate = value;
-				}
-			}
+            public string UpdateDate
+            {
+                get
+                {
+                    return updateDate;
+                }
+                set
+                {
+                    updateDate = value;
+                }
+            }
 
-			public int? AttachmentCount
-			{
-				get
-				{
-					return attachmentCount;
-				}
-				set	
-				{
-					attachmentCount = value;
-				}
-			}
-		}
-	}
+            public int? AttachmentCount
+            {
+                get
+                {
+                    return attachmentCount;
+                }
+                set
+                {
+                    attachmentCount = value;
+                }
+            }
+        }
+    }
 }

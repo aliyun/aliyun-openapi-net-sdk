@@ -28,30 +28,30 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeUserConfigsResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeUserConfigsResponse describeUserConfigsResponse = new DescribeUserConfigsResponse();
+            DescribeUserConfigsResponse describeUserConfigsResponse = new DescribeUserConfigsResponse();
 
-			describeUserConfigsResponse.HttpResponse = context.HttpResponse;
-			describeUserConfigsResponse.RequestId = context.StringValue("DescribeUserConfigs.RequestId");
+            describeUserConfigsResponse.HttpResponse = context.HttpResponse;
+            describeUserConfigsResponse.RequestId = context.StringValue("DescribeUserConfigs.RequestId");
 
-			DescribeUserConfigsResponse.DescribeUserConfigs_Configs configs = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs();
+            DescribeUserConfigsResponse.DescribeUserConfigs_Configs configs = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs();
 
-			DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_OssLogConfig ossLogConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_OssLogConfig();
-			ossLogConfig.Enable = context.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Enable");
-			ossLogConfig.Bucket = context.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Bucket");
-			ossLogConfig.Prefix = context.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Prefix");
-			configs.OssLogConfig = ossLogConfig;
+            DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_OssLogConfig ossLogConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_OssLogConfig();
+            ossLogConfig.Enable = context.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Enable");
+            ossLogConfig.Bucket = context.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Bucket");
+            ossLogConfig.Prefix = context.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Prefix");
+            configs.OssLogConfig = ossLogConfig;
 
-			DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_GreenManagerConfig greenManagerConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_GreenManagerConfig();
-			greenManagerConfig.Quota = context.StringValue("DescribeUserConfigs.Configs.GreenManagerConfig.Quota");
-			greenManagerConfig.Ratio = context.StringValue("DescribeUserConfigs.Configs.GreenManagerConfig.Ratio");
-			configs.GreenManagerConfig = greenManagerConfig;
+            DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_GreenManagerConfig greenManagerConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_GreenManagerConfig();
+            greenManagerConfig.Quota = context.StringValue("DescribeUserConfigs.Configs.GreenManagerConfig.Quota");
+            greenManagerConfig.Ratio = context.StringValue("DescribeUserConfigs.Configs.GreenManagerConfig.Ratio");
+            configs.GreenManagerConfig = greenManagerConfig;
 
-			DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_WafConfig wafConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_WafConfig();
-			wafConfig.Enable = context.StringValue("DescribeUserConfigs.Configs.WafConfig.Enable");
-			configs.WafConfig = wafConfig;
-			describeUserConfigsResponse.Configs = configs;
-        
-			return describeUserConfigsResponse;
+            DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_WafConfig wafConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_WafConfig();
+            wafConfig.Enable = context.StringValue("DescribeUserConfigs.Configs.WafConfig.Enable");
+            configs.WafConfig = wafConfig;
+            describeUserConfigsResponse.Configs = configs;
+
+            return describeUserConfigsResponse;
         }
     }
 }

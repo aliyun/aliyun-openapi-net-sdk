@@ -22,81 +22,81 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class CreateVirtualMFADeviceResponse : AcsResponse
-	{
+    public class CreateVirtualMFADeviceResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private CreateVirtualMFADevice_VirtualMFADevice virtualMFADevice;
+        private CreateVirtualMFADevice_VirtualMFADevice virtualMFADevice;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public CreateVirtualMFADevice_VirtualMFADevice VirtualMFADevice
-		{
-			get
-			{
-				return virtualMFADevice;
-			}
-			set	
-			{
-				virtualMFADevice = value;
-			}
-		}
+        public CreateVirtualMFADevice_VirtualMFADevice VirtualMFADevice
+        {
+            get
+            {
+                return virtualMFADevice;
+            }
+            set
+            {
+                virtualMFADevice = value;
+            }
+        }
 
-		public class CreateVirtualMFADevice_VirtualMFADevice
-		{
+        public class CreateVirtualMFADevice_VirtualMFADevice
+        {
 
-			private string serialNumber;
+            private string serialNumber;
 
-			private string base32StringSeed;
+            private string base32StringSeed;
 
-			private string qRCodePNG;
+            private string qRCodePNG;
 
-			public string SerialNumber
-			{
-				get
-				{
-					return serialNumber;
-				}
-				set	
-				{
-					serialNumber = value;
-				}
-			}
+            public string SerialNumber
+            {
+                get
+                {
+                    return serialNumber;
+                }
+                set
+                {
+                    serialNumber = value;
+                }
+            }
 
-			public string Base32StringSeed
-			{
-				get
-				{
-					return base32StringSeed;
-				}
-				set	
-				{
-					base32StringSeed = value;
-				}
-			}
+            public string Base32StringSeed
+            {
+                get
+                {
+                    return base32StringSeed;
+                }
+                set
+                {
+                    base32StringSeed = value;
+                }
+            }
 
-			public string QRCodePNG
-			{
-				get
-				{
-					return qRCodePNG;
-				}
-				set	
-				{
-					qRCodePNG = value;
-				}
-			}
-		}
-	}
+            public string QRCodePNG
+            {
+                get
+                {
+                    return qRCodePNG;
+                }
+                set
+                {
+                    qRCodePNG = value;
+                }
+            }
+        }
+    }
 }

@@ -22,183 +22,183 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeCdnDomainLogsResponse : AcsResponse
-	{
+    public class DescribeCdnDomainLogsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private long? pageNumber;
+        private long? pageNumber;
 
-		private long? pageSize;
+        private long? pageSize;
 
-		private long? totalCount;
+        private long? totalCount;
 
-		private DescribeCdnDomainLogs_DomainLogModel domainLogModel;
+        private DescribeCdnDomainLogs_DomainLogModel domainLogModel;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public long? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public long? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public long? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public DescribeCdnDomainLogs_DomainLogModel DomainLogModel
-		{
-			get
-			{
-				return domainLogModel;
-			}
-			set	
-			{
-				domainLogModel = value;
-			}
-		}
+        public DescribeCdnDomainLogs_DomainLogModel DomainLogModel
+        {
+            get
+            {
+                return domainLogModel;
+            }
+            set
+            {
+                domainLogModel = value;
+            }
+        }
 
-		public class DescribeCdnDomainLogs_DomainLogModel
-		{
+        public class DescribeCdnDomainLogs_DomainLogModel
+        {
 
-			private string domainName;
+            private string domainName;
 
-			private List<DescribeCdnDomainLogs_DomainLogDetail> domainLogDetails;
+            private List<DescribeCdnDomainLogs_DomainLogDetail> domainLogDetails;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+            public string DomainName
+            {
+                get
+                {
+                    return domainName;
+                }
+                set
+                {
+                    domainName = value;
+                }
+            }
 
-			public List<DescribeCdnDomainLogs_DomainLogDetail> DomainLogDetails
-			{
-				get
-				{
-					return domainLogDetails;
-				}
-				set	
-				{
-					domainLogDetails = value;
-				}
-			}
+            public List<DescribeCdnDomainLogs_DomainLogDetail> DomainLogDetails
+            {
+                get
+                {
+                    return domainLogDetails;
+                }
+                set
+                {
+                    domainLogDetails = value;
+                }
+            }
 
-			public class DescribeCdnDomainLogs_DomainLogDetail
-			{
+            public class DescribeCdnDomainLogs_DomainLogDetail
+            {
 
-				private string logName;
+                private string logName;
 
-				private string logPath;
+                private string logPath;
 
-				private long? logSize;
+                private long? logSize;
 
-				private string startTime;
+                private string startTime;
 
-				private string endTime;
+                private string endTime;
 
-				public string LogName
-				{
-					get
-					{
-						return logName;
-					}
-					set	
-					{
-						logName = value;
-					}
-				}
+                public string LogName
+                {
+                    get
+                    {
+                        return logName;
+                    }
+                    set
+                    {
+                        logName = value;
+                    }
+                }
 
-				public string LogPath
-				{
-					get
-					{
-						return logPath;
-					}
-					set	
-					{
-						logPath = value;
-					}
-				}
+                public string LogPath
+                {
+                    get
+                    {
+                        return logPath;
+                    }
+                    set
+                    {
+                        logPath = value;
+                    }
+                }
 
-				public long? LogSize
-				{
-					get
-					{
-						return logSize;
-					}
-					set	
-					{
-						logSize = value;
-					}
-				}
+                public long? LogSize
+                {
+                    get
+                    {
+                        return logSize;
+                    }
+                    set
+                    {
+                        logSize = value;
+                    }
+                }
 
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
+                public string StartTime
+                {
+                    get
+                    {
+                        return startTime;
+                    }
+                    set
+                    {
+                        startTime = value;
+                    }
+                }
 
-				public string EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
-					}
-				}
-			}
-		}
-	}
+                public string EndTime
+                {
+                    get
+                    {
+                        return endTime;
+                    }
+                    set
+                    {
+                        endTime = value;
+                    }
+                }
+            }
+        }
+    }
 }

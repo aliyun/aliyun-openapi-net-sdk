@@ -22,109 +22,109 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeLiveStreamBitRateDataResponse : AcsResponse
-	{
+    public class DescribeLiveStreamBitRateDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo> frameRateAndBitRateInfos;
+        private List<DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo> frameRateAndBitRateInfos;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo> FrameRateAndBitRateInfos
-		{
-			get
-			{
-				return frameRateAndBitRateInfos;
-			}
-			set	
-			{
-				frameRateAndBitRateInfos = value;
-			}
-		}
+        public List<DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo> FrameRateAndBitRateInfos
+        {
+            get
+            {
+                return frameRateAndBitRateInfos;
+            }
+            set
+            {
+                frameRateAndBitRateInfos = value;
+            }
+        }
 
-		public class DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo
-		{
+        public class DescribeLiveStreamBitRateData_FrameRateAndBitRateInfo
+        {
 
-			private string streamUrl;
+            private string streamUrl;
 
-			private float? videoFrameRate;
+            private float? videoFrameRate;
 
-			private float? audioFrameRate;
+            private float? audioFrameRate;
 
-			private float? bitRate;
+            private float? bitRate;
 
-			private string time;
+            private string time;
 
-			public string StreamUrl
-			{
-				get
-				{
-					return streamUrl;
-				}
-				set	
-				{
-					streamUrl = value;
-				}
-			}
+            public string StreamUrl
+            {
+                get
+                {
+                    return streamUrl;
+                }
+                set
+                {
+                    streamUrl = value;
+                }
+            }
 
-			public float? VideoFrameRate
-			{
-				get
-				{
-					return videoFrameRate;
-				}
-				set	
-				{
-					videoFrameRate = value;
-				}
-			}
+            public float? VideoFrameRate
+            {
+                get
+                {
+                    return videoFrameRate;
+                }
+                set
+                {
+                    videoFrameRate = value;
+                }
+            }
 
-			public float? AudioFrameRate
-			{
-				get
-				{
-					return audioFrameRate;
-				}
-				set	
-				{
-					audioFrameRate = value;
-				}
-			}
+            public float? AudioFrameRate
+            {
+                get
+                {
+                    return audioFrameRate;
+                }
+                set
+                {
+                    audioFrameRate = value;
+                }
+            }
 
-			public float? BitRate
-			{
-				get
-				{
-					return bitRate;
-				}
-				set	
-				{
-					bitRate = value;
-				}
-			}
+            public float? BitRate
+            {
+                get
+                {
+                    return bitRate;
+                }
+                set
+                {
+                    bitRate = value;
+                }
+            }
 
-			public string Time
-			{
-				get
-				{
-					return time;
-				}
-				set	
-				{
-					time = value;
-				}
-			}
-		}
-	}
+            public string Time
+            {
+                get
+                {
+                    return time;
+                }
+                set
+                {
+                    time = value;
+                }
+            }
+        }
+    }
 }

@@ -27,15 +27,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeUserDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeUserDataResponse describeUserDataResponse = new DescribeUserDataResponse();
+            DescribeUserDataResponse describeUserDataResponse = new DescribeUserDataResponse();
 
-			describeUserDataResponse.HttpResponse = context.HttpResponse;
-			describeUserDataResponse.RequestId = context.StringValue("DescribeUserData.RequestId");
-			describeUserDataResponse.RegionId = context.StringValue("DescribeUserData.RegionId");
-			describeUserDataResponse.InstanceId = context.StringValue("DescribeUserData.InstanceId");
-			describeUserDataResponse.UserData = context.StringValue("DescribeUserData.UserData");
-        
-			return describeUserDataResponse;
+            describeUserDataResponse.HttpResponse = context.HttpResponse;
+            describeUserDataResponse.RequestId = context.StringValue("DescribeUserData.RequestId");
+            describeUserDataResponse.RegionId = context.StringValue("DescribeUserData.RegionId");
+            describeUserDataResponse.InstanceId = context.StringValue("DescribeUserData.InstanceId");
+            describeUserDataResponse.UserData = context.StringValue("DescribeUserData.UserData");
+
+            return describeUserDataResponse;
         }
     }
 }

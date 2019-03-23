@@ -125,7 +125,7 @@ namespace Aliyun.Acs.Core
                 var accessSecret = credentials.GetAccessKeySecret();
                 if (credentials is BasicSessionCredentials)
                 {
-                    var sessionToken = ((BasicSessionCredentials) credentials).GetSessionToken();
+                    var sessionToken = ((BasicSessionCredentials)credentials).GetSessionToken();
                     if (null != sessionToken)
                     {
                         QueryParameters.Add("SecurityToken", sessionToken);
@@ -134,7 +134,7 @@ namespace Aliyun.Acs.Core
 
                 if (credentials is BearerTokenCredential)
                 {
-                    var bearerToken = ((BearerTokenCredential) credentials).GetBearerToken();
+                    var bearerToken = ((BearerTokenCredential)credentials).GetBearerToken();
                     if (null != bearerToken)
                     {
                         QueryParameters.Add("BearerToken", bearerToken);

@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DeleteIpv6EgressOnlyRuleResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteIpv6EgressOnlyRuleResponse deleteIpv6EgressOnlyRuleResponse = new DeleteIpv6EgressOnlyRuleResponse();
+            DeleteIpv6EgressOnlyRuleResponse deleteIpv6EgressOnlyRuleResponse = new DeleteIpv6EgressOnlyRuleResponse();
 
-			deleteIpv6EgressOnlyRuleResponse.HttpResponse = context.HttpResponse;
-			deleteIpv6EgressOnlyRuleResponse.RequestId = context.StringValue("DeleteIpv6EgressOnlyRule.RequestId");
-        
-			return deleteIpv6EgressOnlyRuleResponse;
+            deleteIpv6EgressOnlyRuleResponse.HttpResponse = context.HttpResponse;
+            deleteIpv6EgressOnlyRuleResponse.RequestId = context.StringValue("DeleteIpv6EgressOnlyRule.RequestId");
+
+            return deleteIpv6EgressOnlyRuleResponse;
         }
     }
 }

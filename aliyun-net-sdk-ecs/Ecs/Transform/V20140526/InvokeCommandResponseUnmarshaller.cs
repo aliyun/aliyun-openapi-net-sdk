@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static InvokeCommandResponse Unmarshall(UnmarshallerContext context)
         {
-			InvokeCommandResponse invokeCommandResponse = new InvokeCommandResponse();
+            InvokeCommandResponse invokeCommandResponse = new InvokeCommandResponse();
 
-			invokeCommandResponse.HttpResponse = context.HttpResponse;
-			invokeCommandResponse.RequestId = context.StringValue("InvokeCommand.RequestId");
-			invokeCommandResponse.InvokeId = context.StringValue("InvokeCommand.InvokeId");
-        
-			return invokeCommandResponse;
+            invokeCommandResponse.HttpResponse = context.HttpResponse;
+            invokeCommandResponse.RequestId = context.StringValue("InvokeCommand.RequestId");
+            invokeCommandResponse.InvokeId = context.StringValue("InvokeCommand.InvokeId");
+
+            return invokeCommandResponse;
         }
     }
 }

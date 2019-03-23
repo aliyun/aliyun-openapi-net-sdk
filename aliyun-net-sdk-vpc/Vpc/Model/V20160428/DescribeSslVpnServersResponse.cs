@@ -21,277 +21,277 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeSslVpnServersResponse : AcsResponse
-	{
+    public class DescribeSslVpnServersResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeSslVpnServers_SslVpnServer> sslVpnServers;
+        private List<DescribeSslVpnServers_SslVpnServer> sslVpnServers;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeSslVpnServers_SslVpnServer> SslVpnServers
-		{
-			get
-			{
-				return sslVpnServers;
-			}
-			set	
-			{
-				sslVpnServers = value;
-			}
-		}
+        public List<DescribeSslVpnServers_SslVpnServer> SslVpnServers
+        {
+            get
+            {
+                return sslVpnServers;
+            }
+            set
+            {
+                sslVpnServers = value;
+            }
+        }
 
-		public class DescribeSslVpnServers_SslVpnServer
-		{
+        public class DescribeSslVpnServers_SslVpnServer
+        {
 
-			private string regionId;
+            private string regionId;
 
-			private string sslVpnServerId;
+            private string sslVpnServerId;
 
-			private string vpnGatewayId;
+            private string vpnGatewayId;
 
-			private string name;
+            private string name;
 
-			private string localSubnet;
+            private string localSubnet;
 
-			private string clientIpPool;
+            private string clientIpPool;
 
-			private long? createTime;
+            private long? createTime;
 
-			private string cipher;
+            private string cipher;
 
-			private string proto;
+            private string proto;
 
-			private int? port;
+            private int? port;
 
-			private bool? compress;
+            private bool? compress;
 
-			private int? connections;
+            private int? connections;
 
-			private int? maxConnections;
+            private int? maxConnections;
 
-			private string internetIp;
+            private string internetIp;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string SslVpnServerId
-			{
-				get
-				{
-					return sslVpnServerId;
-				}
-				set	
-				{
-					sslVpnServerId = value;
-				}
-			}
+            public string SslVpnServerId
+            {
+                get
+                {
+                    return sslVpnServerId;
+                }
+                set
+                {
+                    sslVpnServerId = value;
+                }
+            }
 
-			public string VpnGatewayId
-			{
-				get
-				{
-					return vpnGatewayId;
-				}
-				set	
-				{
-					vpnGatewayId = value;
-				}
-			}
+            public string VpnGatewayId
+            {
+                get
+                {
+                    return vpnGatewayId;
+                }
+                set
+                {
+                    vpnGatewayId = value;
+                }
+            }
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string LocalSubnet
-			{
-				get
-				{
-					return localSubnet;
-				}
-				set	
-				{
-					localSubnet = value;
-				}
-			}
+            public string LocalSubnet
+            {
+                get
+                {
+                    return localSubnet;
+                }
+                set
+                {
+                    localSubnet = value;
+                }
+            }
 
-			public string ClientIpPool
-			{
-				get
-				{
-					return clientIpPool;
-				}
-				set	
-				{
-					clientIpPool = value;
-				}
-			}
+            public string ClientIpPool
+            {
+                get
+                {
+                    return clientIpPool;
+                }
+                set
+                {
+                    clientIpPool = value;
+                }
+            }
 
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+            public long? CreateTime
+            {
+                get
+                {
+                    return createTime;
+                }
+                set
+                {
+                    createTime = value;
+                }
+            }
 
-			public string Cipher
-			{
-				get
-				{
-					return cipher;
-				}
-				set	
-				{
-					cipher = value;
-				}
-			}
+            public string Cipher
+            {
+                get
+                {
+                    return cipher;
+                }
+                set
+                {
+                    cipher = value;
+                }
+            }
 
-			public string Proto
-			{
-				get
-				{
-					return proto;
-				}
-				set	
-				{
-					proto = value;
-				}
-			}
+            public string Proto
+            {
+                get
+                {
+                    return proto;
+                }
+                set
+                {
+                    proto = value;
+                }
+            }
 
-			public int? Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
+            public int? Port
+            {
+                get
+                {
+                    return port;
+                }
+                set
+                {
+                    port = value;
+                }
+            }
 
-			public bool? Compress
-			{
-				get
-				{
-					return compress;
-				}
-				set	
-				{
-					compress = value;
-				}
-			}
+            public bool? Compress
+            {
+                get
+                {
+                    return compress;
+                }
+                set
+                {
+                    compress = value;
+                }
+            }
 
-			public int? Connections
-			{
-				get
-				{
-					return connections;
-				}
-				set	
-				{
-					connections = value;
-				}
-			}
+            public int? Connections
+            {
+                get
+                {
+                    return connections;
+                }
+                set
+                {
+                    connections = value;
+                }
+            }
 
-			public int? MaxConnections
-			{
-				get
-				{
-					return maxConnections;
-				}
-				set	
-				{
-					maxConnections = value;
-				}
-			}
+            public int? MaxConnections
+            {
+                get
+                {
+                    return maxConnections;
+                }
+                set
+                {
+                    maxConnections = value;
+                }
+            }
 
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
-				}
-			}
-		}
-	}
+            public string InternetIp
+            {
+                get
+                {
+                    return internetIp;
+                }
+                set
+                {
+                    internetIp = value;
+                }
+            }
+        }
+    }
 }

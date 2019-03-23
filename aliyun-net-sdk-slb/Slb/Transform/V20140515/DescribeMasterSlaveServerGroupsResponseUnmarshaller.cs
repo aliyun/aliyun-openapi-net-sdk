@@ -27,22 +27,23 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static DescribeMasterSlaveServerGroupsResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeMasterSlaveServerGroupsResponse describeMasterSlaveServerGroupsResponse = new DescribeMasterSlaveServerGroupsResponse();
+            DescribeMasterSlaveServerGroupsResponse describeMasterSlaveServerGroupsResponse = new DescribeMasterSlaveServerGroupsResponse();
 
-			describeMasterSlaveServerGroupsResponse.HttpResponse = context.HttpResponse;
-			describeMasterSlaveServerGroupsResponse.RequestId = context.StringValue("DescribeMasterSlaveServerGroups.RequestId");
+            describeMasterSlaveServerGroupsResponse.HttpResponse = context.HttpResponse;
+            describeMasterSlaveServerGroupsResponse.RequestId = context.StringValue("DescribeMasterSlaveServerGroups.RequestId");
 
-			List<DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup> describeMasterSlaveServerGroupsResponse_masterSlaveServerGroups = new List<DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup>();
-			for (int i = 0; i < context.Length("DescribeMasterSlaveServerGroups.MasterSlaveServerGroups.Length"); i++) {
-				DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup masterSlaveServerGroup = new DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup();
-				masterSlaveServerGroup.MasterSlaveServerGroupId = context.StringValue("DescribeMasterSlaveServerGroups.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupId");
-				masterSlaveServerGroup.MasterSlaveServerGroupName = context.StringValue("DescribeMasterSlaveServerGroups.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupName");
+            List<DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup> describeMasterSlaveServerGroupsResponse_masterSlaveServerGroups = new List<DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup>();
+            for (int i = 0; i < context.Length("DescribeMasterSlaveServerGroups.MasterSlaveServerGroups.Length"); i++)
+            {
+                DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup masterSlaveServerGroup = new DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup();
+                masterSlaveServerGroup.MasterSlaveServerGroupId = context.StringValue("DescribeMasterSlaveServerGroups.MasterSlaveServerGroups[" + i + "].MasterSlaveServerGroupId");
+                masterSlaveServerGroup.MasterSlaveServerGroupName = context.StringValue("DescribeMasterSlaveServerGroups.MasterSlaveServerGroups[" + i + "].MasterSlaveServerGroupName");
 
-				describeMasterSlaveServerGroupsResponse_masterSlaveServerGroups.Add(masterSlaveServerGroup);
-			}
-			describeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups = describeMasterSlaveServerGroupsResponse_masterSlaveServerGroups;
-        
-			return describeMasterSlaveServerGroupsResponse;
+                describeMasterSlaveServerGroupsResponse_masterSlaveServerGroups.Add(masterSlaveServerGroup);
+            }
+            describeMasterSlaveServerGroupsResponse.MasterSlaveServerGroups = describeMasterSlaveServerGroupsResponse_masterSlaveServerGroups;
+
+            return describeMasterSlaveServerGroupsResponse;
         }
     }
 }

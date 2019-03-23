@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static GrantInstanceToCenResponse Unmarshall(UnmarshallerContext context)
         {
-			GrantInstanceToCenResponse grantInstanceToCenResponse = new GrantInstanceToCenResponse();
+            GrantInstanceToCenResponse grantInstanceToCenResponse = new GrantInstanceToCenResponse();
 
-			grantInstanceToCenResponse.HttpResponse = context.HttpResponse;
-			grantInstanceToCenResponse.RequestId = context.StringValue("GrantInstanceToCen.RequestId");
-        
-			return grantInstanceToCenResponse;
+            grantInstanceToCenResponse.HttpResponse = context.HttpResponse;
+            grantInstanceToCenResponse.RequestId = context.StringValue("GrantInstanceToCen.RequestId");
+
+            return grantInstanceToCenResponse;
         }
     }
 }

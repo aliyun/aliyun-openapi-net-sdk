@@ -21,235 +21,235 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeVSwitchesResponse : AcsResponse
-	{
+    public class DescribeVSwitchesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeVSwitches_VSwitch> vSwitches;
+        private List<DescribeVSwitches_VSwitch> vSwitches;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeVSwitches_VSwitch> VSwitches
-		{
-			get
-			{
-				return vSwitches;
-			}
-			set	
-			{
-				vSwitches = value;
-			}
-		}
+        public List<DescribeVSwitches_VSwitch> VSwitches
+        {
+            get
+            {
+                return vSwitches;
+            }
+            set
+            {
+                vSwitches = value;
+            }
+        }
 
-		public class DescribeVSwitches_VSwitch
-		{
+        public class DescribeVSwitches_VSwitch
+        {
 
-			private string vSwitchId;
+            private string vSwitchId;
 
-			private string vpcId;
+            private string vpcId;
 
-			private string status;
+            private string status;
 
-			private string cidrBlock;
+            private string cidrBlock;
 
-			private string zoneId;
+            private string zoneId;
 
-			private long? availableIpAddressCount;
+            private long? availableIpAddressCount;
 
-			private string description;
+            private string description;
 
-			private string vSwitchName;
+            private string vSwitchName;
 
-			private string creationTime;
+            private string creationTime;
 
-			private bool? isDefault;
+            private bool? isDefault;
 
-			private string resourceGroupId;
+            private string resourceGroupId;
 
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
+            public string VSwitchId
+            {
+                get
+                {
+                    return vSwitchId;
+                }
+                set
+                {
+                    vSwitchId = value;
+                }
+            }
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
+            public string VpcId
+            {
+                get
+                {
+                    return vpcId;
+                }
+                set
+                {
+                    vpcId = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string CidrBlock
-			{
-				get
-				{
-					return cidrBlock;
-				}
-				set	
-				{
-					cidrBlock = value;
-				}
-			}
+            public string CidrBlock
+            {
+                get
+                {
+                    return cidrBlock;
+                }
+                set
+                {
+                    cidrBlock = value;
+                }
+            }
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+            public string ZoneId
+            {
+                get
+                {
+                    return zoneId;
+                }
+                set
+                {
+                    zoneId = value;
+                }
+            }
 
-			public long? AvailableIpAddressCount
-			{
-				get
-				{
-					return availableIpAddressCount;
-				}
-				set	
-				{
-					availableIpAddressCount = value;
-				}
-			}
+            public long? AvailableIpAddressCount
+            {
+                get
+                {
+                    return availableIpAddressCount;
+                }
+                set
+                {
+                    availableIpAddressCount = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string VSwitchName
-			{
-				get
-				{
-					return vSwitchName;
-				}
-				set	
-				{
-					vSwitchName = value;
-				}
-			}
+            public string VSwitchName
+            {
+                get
+                {
+                    return vSwitchName;
+                }
+                set
+                {
+                    vSwitchName = value;
+                }
+            }
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+            public string CreationTime
+            {
+                get
+                {
+                    return creationTime;
+                }
+                set
+                {
+                    creationTime = value;
+                }
+            }
 
-			public bool? IsDefault
-			{
-				get
-				{
-					return isDefault;
-				}
-				set	
-				{
-					isDefault = value;
-				}
-			}
+            public bool? IsDefault
+            {
+                get
+                {
+                    return isDefault;
+                }
+                set
+                {
+                    isDefault = value;
+                }
+            }
 
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
-		}
-	}
+            public string ResourceGroupId
+            {
+                get
+                {
+                    return resourceGroupId;
+                }
+                set
+                {
+                    resourceGroupId = value;
+                }
+            }
+        }
+    }
 }

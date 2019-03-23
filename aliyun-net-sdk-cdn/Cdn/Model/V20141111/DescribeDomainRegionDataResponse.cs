@@ -22,291 +22,291 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeDomainRegionDataResponse : AcsResponse
-	{
+    public class DescribeDomainRegionDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string dataInterval;
+        private string dataInterval;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private List<DescribeDomainRegionData_RegionProportionData> _value;
+        private List<DescribeDomainRegionData_RegionProportionData> _value;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
+        public string DataInterval
+        {
+            get
+            {
+                return dataInterval;
+            }
+            set
+            {
+                dataInterval = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public List<DescribeDomainRegionData_RegionProportionData> _Value
-		{
-			get
-			{
-				return _value;
-			}
-			set	
-			{
-				_value = value;
-			}
-		}
+        public List<DescribeDomainRegionData_RegionProportionData> _Value
+        {
+            get
+            {
+                return _value;
+            }
+            set
+            {
+                _value = value;
+            }
+        }
 
-		public class DescribeDomainRegionData_RegionProportionData
-		{
+        public class DescribeDomainRegionData_RegionProportionData
+        {
 
-			private string region;
+            private string region;
 
-			private string proportion;
+            private string proportion;
 
-			private string regionEname;
+            private string regionEname;
 
-			private string avgObjectSize;
+            private string avgObjectSize;
 
-			private string avgResponseTime;
+            private string avgResponseTime;
 
-			private string bps;
+            private string bps;
 
-			private string qps;
+            private string qps;
 
-			private string avgResponseRate;
+            private string avgResponseRate;
 
-			private string byteHitRate;
+            private string byteHitRate;
 
-			private string reqHitRate;
+            private string reqHitRate;
 
-			private string reqErrRate;
+            private string reqErrRate;
 
-			private string totalBytes;
+            private string totalBytes;
 
-			private string bytesProportion;
+            private string bytesProportion;
 
-			private string totalQuery;
+            private string totalQuery;
 
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
+            public string Region
+            {
+                get
+                {
+                    return region;
+                }
+                set
+                {
+                    region = value;
+                }
+            }
 
-			public string Proportion
-			{
-				get
-				{
-					return proportion;
-				}
-				set	
-				{
-					proportion = value;
-				}
-			}
+            public string Proportion
+            {
+                get
+                {
+                    return proportion;
+                }
+                set
+                {
+                    proportion = value;
+                }
+            }
 
-			public string RegionEname
-			{
-				get
-				{
-					return regionEname;
-				}
-				set	
-				{
-					regionEname = value;
-				}
-			}
+            public string RegionEname
+            {
+                get
+                {
+                    return regionEname;
+                }
+                set
+                {
+                    regionEname = value;
+                }
+            }
 
-			public string AvgObjectSize
-			{
-				get
-				{
-					return avgObjectSize;
-				}
-				set	
-				{
-					avgObjectSize = value;
-				}
-			}
+            public string AvgObjectSize
+            {
+                get
+                {
+                    return avgObjectSize;
+                }
+                set
+                {
+                    avgObjectSize = value;
+                }
+            }
 
-			public string AvgResponseTime
-			{
-				get
-				{
-					return avgResponseTime;
-				}
-				set	
-				{
-					avgResponseTime = value;
-				}
-			}
+            public string AvgResponseTime
+            {
+                get
+                {
+                    return avgResponseTime;
+                }
+                set
+                {
+                    avgResponseTime = value;
+                }
+            }
 
-			public string Bps
-			{
-				get
-				{
-					return bps;
-				}
-				set	
-				{
-					bps = value;
-				}
-			}
+            public string Bps
+            {
+                get
+                {
+                    return bps;
+                }
+                set
+                {
+                    bps = value;
+                }
+            }
 
-			public string Qps
-			{
-				get
-				{
-					return qps;
-				}
-				set	
-				{
-					qps = value;
-				}
-			}
+            public string Qps
+            {
+                get
+                {
+                    return qps;
+                }
+                set
+                {
+                    qps = value;
+                }
+            }
 
-			public string AvgResponseRate
-			{
-				get
-				{
-					return avgResponseRate;
-				}
-				set	
-				{
-					avgResponseRate = value;
-				}
-			}
+            public string AvgResponseRate
+            {
+                get
+                {
+                    return avgResponseRate;
+                }
+                set
+                {
+                    avgResponseRate = value;
+                }
+            }
 
-			public string ByteHitRate
-			{
-				get
-				{
-					return byteHitRate;
-				}
-				set	
-				{
-					byteHitRate = value;
-				}
-			}
+            public string ByteHitRate
+            {
+                get
+                {
+                    return byteHitRate;
+                }
+                set
+                {
+                    byteHitRate = value;
+                }
+            }
 
-			public string ReqHitRate
-			{
-				get
-				{
-					return reqHitRate;
-				}
-				set	
-				{
-					reqHitRate = value;
-				}
-			}
+            public string ReqHitRate
+            {
+                get
+                {
+                    return reqHitRate;
+                }
+                set
+                {
+                    reqHitRate = value;
+                }
+            }
 
-			public string ReqErrRate
-			{
-				get
-				{
-					return reqErrRate;
-				}
-				set	
-				{
-					reqErrRate = value;
-				}
-			}
+            public string ReqErrRate
+            {
+                get
+                {
+                    return reqErrRate;
+                }
+                set
+                {
+                    reqErrRate = value;
+                }
+            }
 
-			public string TotalBytes
-			{
-				get
-				{
-					return totalBytes;
-				}
-				set	
-				{
-					totalBytes = value;
-				}
-			}
+            public string TotalBytes
+            {
+                get
+                {
+                    return totalBytes;
+                }
+                set
+                {
+                    totalBytes = value;
+                }
+            }
 
-			public string BytesProportion
-			{
-				get
-				{
-					return bytesProportion;
-				}
-				set	
-				{
-					bytesProportion = value;
-				}
-			}
+            public string BytesProportion
+            {
+                get
+                {
+                    return bytesProportion;
+                }
+                set
+                {
+                    bytesProportion = value;
+                }
+            }
 
-			public string TotalQuery
-			{
-				get
-				{
-					return totalQuery;
-				}
-				set	
-				{
-					totalQuery = value;
-				}
-			}
-		}
-	}
+            public string TotalQuery
+            {
+                get
+                {
+                    return totalQuery;
+                }
+                set
+                {
+                    totalQuery = value;
+                }
+            }
+        }
+    }
 }

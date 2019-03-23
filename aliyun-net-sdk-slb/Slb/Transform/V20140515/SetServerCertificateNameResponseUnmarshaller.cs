@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
     {
         public static SetServerCertificateNameResponse Unmarshall(UnmarshallerContext context)
         {
-			SetServerCertificateNameResponse setServerCertificateNameResponse = new SetServerCertificateNameResponse();
+            SetServerCertificateNameResponse setServerCertificateNameResponse = new SetServerCertificateNameResponse();
 
-			setServerCertificateNameResponse.HttpResponse = context.HttpResponse;
-			setServerCertificateNameResponse.RequestId = context.StringValue("SetServerCertificateName.RequestId");
-        
-			return setServerCertificateNameResponse;
+            setServerCertificateNameResponse.HttpResponse = context.HttpResponse;
+            setServerCertificateNameResponse.RequestId = context.StringValue("SetServerCertificateName.RequestId");
+
+            return setServerCertificateNameResponse;
         }
     }
 }

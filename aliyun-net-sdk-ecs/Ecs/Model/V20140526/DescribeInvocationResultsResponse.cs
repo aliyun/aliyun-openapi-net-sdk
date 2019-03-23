@@ -21,197 +21,197 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeInvocationResultsResponse : AcsResponse
-	{
+    public class DescribeInvocationResultsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private DescribeInvocationResults_Invocation invocation;
+        private DescribeInvocationResults_Invocation invocation;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public DescribeInvocationResults_Invocation Invocation
-		{
-			get
-			{
-				return invocation;
-			}
-			set	
-			{
-				invocation = value;
-			}
-		}
+        public DescribeInvocationResults_Invocation Invocation
+        {
+            get
+            {
+                return invocation;
+            }
+            set
+            {
+                invocation = value;
+            }
+        }
 
-		public class DescribeInvocationResults_Invocation
-		{
+        public class DescribeInvocationResults_Invocation
+        {
 
-			private long? pageSize;
+            private long? pageSize;
 
-			private long? pageNumber;
+            private long? pageNumber;
 
-			private long? totalCount;
+            private long? totalCount;
 
-			private List<DescribeInvocationResults_InvocationResult> invocationResults;
+            private List<DescribeInvocationResults_InvocationResult> invocationResults;
 
-			public long? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
+            public long? PageSize
+            {
+                get
+                {
+                    return pageSize;
+                }
+                set
+                {
+                    pageSize = value;
+                }
+            }
 
-			public long? PageNumber
-			{
-				get
-				{
-					return pageNumber;
-				}
-				set	
-				{
-					pageNumber = value;
-				}
-			}
+            public long? PageNumber
+            {
+                get
+                {
+                    return pageNumber;
+                }
+                set
+                {
+                    pageNumber = value;
+                }
+            }
 
-			public long? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+            public long? TotalCount
+            {
+                get
+                {
+                    return totalCount;
+                }
+                set
+                {
+                    totalCount = value;
+                }
+            }
 
-			public List<DescribeInvocationResults_InvocationResult> InvocationResults
-			{
-				get
-				{
-					return invocationResults;
-				}
-				set	
-				{
-					invocationResults = value;
-				}
-			}
+            public List<DescribeInvocationResults_InvocationResult> InvocationResults
+            {
+                get
+                {
+                    return invocationResults;
+                }
+                set
+                {
+                    invocationResults = value;
+                }
+            }
 
-			public class DescribeInvocationResults_InvocationResult
-			{
+            public class DescribeInvocationResults_InvocationResult
+            {
 
-				private string commandId;
+                private string commandId;
 
-				private string invokeId;
+                private string invokeId;
 
-				private string instanceId;
+                private string instanceId;
 
-				private string finishedTime;
+                private string finishedTime;
 
-				private string output;
+                private string output;
 
-				private string invokeRecordStatus;
+                private string invokeRecordStatus;
 
-				private long? exitCode;
+                private long? exitCode;
 
-				public string CommandId
-				{
-					get
-					{
-						return commandId;
-					}
-					set	
-					{
-						commandId = value;
-					}
-				}
+                public string CommandId
+                {
+                    get
+                    {
+                        return commandId;
+                    }
+                    set
+                    {
+                        commandId = value;
+                    }
+                }
 
-				public string InvokeId
-				{
-					get
-					{
-						return invokeId;
-					}
-					set	
-					{
-						invokeId = value;
-					}
-				}
+                public string InvokeId
+                {
+                    get
+                    {
+                        return invokeId;
+                    }
+                    set
+                    {
+                        invokeId = value;
+                    }
+                }
 
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
+                public string InstanceId
+                {
+                    get
+                    {
+                        return instanceId;
+                    }
+                    set
+                    {
+                        instanceId = value;
+                    }
+                }
 
-				public string FinishedTime
-				{
-					get
-					{
-						return finishedTime;
-					}
-					set	
-					{
-						finishedTime = value;
-					}
-				}
+                public string FinishedTime
+                {
+                    get
+                    {
+                        return finishedTime;
+                    }
+                    set
+                    {
+                        finishedTime = value;
+                    }
+                }
 
-				public string Output
-				{
-					get
-					{
-						return output;
-					}
-					set	
-					{
-						output = value;
-					}
-				}
+                public string Output
+                {
+                    get
+                    {
+                        return output;
+                    }
+                    set
+                    {
+                        output = value;
+                    }
+                }
 
-				public string InvokeRecordStatus
-				{
-					get
-					{
-						return invokeRecordStatus;
-					}
-					set	
-					{
-						invokeRecordStatus = value;
-					}
-				}
+                public string InvokeRecordStatus
+                {
+                    get
+                    {
+                        return invokeRecordStatus;
+                    }
+                    set
+                    {
+                        invokeRecordStatus = value;
+                    }
+                }
 
-				public long? ExitCode
-				{
-					get
-					{
-						return exitCode;
-					}
-					set	
-					{
-						exitCode = value;
-					}
-				}
-			}
-		}
-	}
+                public long? ExitCode
+                {
+                    get
+                    {
+                        return exitCode;
+                    }
+                    set
+                    {
+                        exitCode = value;
+                    }
+                }
+            }
+        }
+    }
 }

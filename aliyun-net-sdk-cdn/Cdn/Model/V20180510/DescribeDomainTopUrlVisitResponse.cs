@@ -22,193 +22,193 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeDomainTopUrlVisitResponse : AcsResponse
-	{
+    public class DescribeDomainTopUrlVisitResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string startTime;
+        private string startTime;
 
-		private List<DescribeDomainTopUrlVisit_UrlList> allUrlList;
+        private List<DescribeDomainTopUrlVisit_UrlList> allUrlList;
 
-		private List<DescribeDomainTopUrlVisit_UrlList> url200List;
+        private List<DescribeDomainTopUrlVisit_UrlList> url200List;
 
-		private List<DescribeDomainTopUrlVisit_UrlList> url300List;
+        private List<DescribeDomainTopUrlVisit_UrlList> url300List;
 
-		private List<DescribeDomainTopUrlVisit_UrlList> url400List;
+        private List<DescribeDomainTopUrlVisit_UrlList> url400List;
 
-		private List<DescribeDomainTopUrlVisit_UrlList> url500List;
+        private List<DescribeDomainTopUrlVisit_UrlList> url500List;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public List<DescribeDomainTopUrlVisit_UrlList> AllUrlList
-		{
-			get
-			{
-				return allUrlList;
-			}
-			set	
-			{
-				allUrlList = value;
-			}
-		}
+        public List<DescribeDomainTopUrlVisit_UrlList> AllUrlList
+        {
+            get
+            {
+                return allUrlList;
+            }
+            set
+            {
+                allUrlList = value;
+            }
+        }
 
-		public List<DescribeDomainTopUrlVisit_UrlList> Url200List
-		{
-			get
-			{
-				return url200List;
-			}
-			set	
-			{
-				url200List = value;
-			}
-		}
+        public List<DescribeDomainTopUrlVisit_UrlList> Url200List
+        {
+            get
+            {
+                return url200List;
+            }
+            set
+            {
+                url200List = value;
+            }
+        }
 
-		public List<DescribeDomainTopUrlVisit_UrlList> Url300List
-		{
-			get
-			{
-				return url300List;
-			}
-			set	
-			{
-				url300List = value;
-			}
-		}
+        public List<DescribeDomainTopUrlVisit_UrlList> Url300List
+        {
+            get
+            {
+                return url300List;
+            }
+            set
+            {
+                url300List = value;
+            }
+        }
 
-		public List<DescribeDomainTopUrlVisit_UrlList> Url400List
-		{
-			get
-			{
-				return url400List;
-			}
-			set	
-			{
-				url400List = value;
-			}
-		}
+        public List<DescribeDomainTopUrlVisit_UrlList> Url400List
+        {
+            get
+            {
+                return url400List;
+            }
+            set
+            {
+                url400List = value;
+            }
+        }
 
-		public List<DescribeDomainTopUrlVisit_UrlList> Url500List
-		{
-			get
-			{
-				return url500List;
-			}
-			set	
-			{
-				url500List = value;
-			}
-		}
+        public List<DescribeDomainTopUrlVisit_UrlList> Url500List
+        {
+            get
+            {
+                return url500List;
+            }
+            set
+            {
+                url500List = value;
+            }
+        }
 
-		public class DescribeDomainTopUrlVisit_UrlList
-		{
+        public class DescribeDomainTopUrlVisit_UrlList
+        {
 
-			private string urlDetail;
+            private string urlDetail;
 
-			private string visitData;
+            private string visitData;
 
-			private float? visitProportion;
+            private float? visitProportion;
 
-			private string flow;
+            private string flow;
 
-			private float? flowProportion;
+            private float? flowProportion;
 
-			public string UrlDetail
-			{
-				get
-				{
-					return urlDetail;
-				}
-				set	
-				{
-					urlDetail = value;
-				}
-			}
+            public string UrlDetail
+            {
+                get
+                {
+                    return urlDetail;
+                }
+                set
+                {
+                    urlDetail = value;
+                }
+            }
 
-			public string VisitData
-			{
-				get
-				{
-					return visitData;
-				}
-				set	
-				{
-					visitData = value;
-				}
-			}
+            public string VisitData
+            {
+                get
+                {
+                    return visitData;
+                }
+                set
+                {
+                    visitData = value;
+                }
+            }
 
-			public float? VisitProportion
-			{
-				get
-				{
-					return visitProportion;
-				}
-				set	
-				{
-					visitProportion = value;
-				}
-			}
+            public float? VisitProportion
+            {
+                get
+                {
+                    return visitProportion;
+                }
+                set
+                {
+                    visitProportion = value;
+                }
+            }
 
-			public string Flow
-			{
-				get
-				{
-					return flow;
-				}
-				set	
-				{
-					flow = value;
-				}
-			}
+            public string Flow
+            {
+                get
+                {
+                    return flow;
+                }
+                set
+                {
+                    flow = value;
+                }
+            }
 
-			public float? FlowProportion
-			{
-				get
-				{
-					return flowProportion;
-				}
-				set	
-				{
-					flowProportion = value;
-				}
-			}
-		}
-	}
+            public float? FlowProportion
+            {
+                get
+                {
+                    return flowProportion;
+                }
+                set
+                {
+                    flowProportion = value;
+                }
+            }
+        }
+    }
 }

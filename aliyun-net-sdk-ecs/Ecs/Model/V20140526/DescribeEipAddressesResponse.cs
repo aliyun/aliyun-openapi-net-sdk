@@ -21,281 +21,281 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeEipAddressesResponse : AcsResponse
-	{
+    public class DescribeEipAddressesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeEipAddresses_EipAddress> eipAddresses;
+        private List<DescribeEipAddresses_EipAddress> eipAddresses;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeEipAddresses_EipAddress> EipAddresses
-		{
-			get
-			{
-				return eipAddresses;
-			}
-			set	
-			{
-				eipAddresses = value;
-			}
-		}
+        public List<DescribeEipAddresses_EipAddress> EipAddresses
+        {
+            get
+            {
+                return eipAddresses;
+            }
+            set
+            {
+                eipAddresses = value;
+            }
+        }
 
-		public class DescribeEipAddresses_EipAddress
-		{
+        public class DescribeEipAddresses_EipAddress
+        {
 
-			private string regionId;
+            private string regionId;
 
-			private string ipAddress;
+            private string ipAddress;
 
-			private string allocationId;
+            private string allocationId;
 
-			private string status;
+            private string status;
 
-			private string instanceId;
+            private string instanceId;
 
-			private string bandwidth;
+            private string bandwidth;
 
-			private string eipBandwidth;
+            private string eipBandwidth;
 
-			private string internetChargeType;
+            private string internetChargeType;
 
-			private string allocationTime;
+            private string allocationTime;
 
-			private string instanceType;
+            private string instanceType;
 
-			private string chargeType;
+            private string chargeType;
 
-			private string expiredTime;
+            private string expiredTime;
 
-			private List<DescribeEipAddresses_LockReason> operationLocks;
+            private List<DescribeEipAddresses_LockReason> operationLocks;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+            public string RegionId
+            {
+                get
+                {
+                    return regionId;
+                }
+                set
+                {
+                    regionId = value;
+                }
+            }
 
-			public string IpAddress
-			{
-				get
-				{
-					return ipAddress;
-				}
-				set	
-				{
-					ipAddress = value;
-				}
-			}
+            public string IpAddress
+            {
+                get
+                {
+                    return ipAddress;
+                }
+                set
+                {
+                    ipAddress = value;
+                }
+            }
 
-			public string AllocationId
-			{
-				get
-				{
-					return allocationId;
-				}
-				set	
-				{
-					allocationId = value;
-				}
-			}
+            public string AllocationId
+            {
+                get
+                {
+                    return allocationId;
+                }
+                set
+                {
+                    allocationId = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+            public string InstanceId
+            {
+                get
+                {
+                    return instanceId;
+                }
+                set
+                {
+                    instanceId = value;
+                }
+            }
 
-			public string Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
-				}
-			}
+            public string Bandwidth
+            {
+                get
+                {
+                    return bandwidth;
+                }
+                set
+                {
+                    bandwidth = value;
+                }
+            }
 
-			public string EipBandwidth
-			{
-				get
-				{
-					return eipBandwidth;
-				}
-				set	
-				{
-					eipBandwidth = value;
-				}
-			}
+            public string EipBandwidth
+            {
+                get
+                {
+                    return eipBandwidth;
+                }
+                set
+                {
+                    eipBandwidth = value;
+                }
+            }
 
-			public string InternetChargeType
-			{
-				get
-				{
-					return internetChargeType;
-				}
-				set	
-				{
-					internetChargeType = value;
-				}
-			}
+            public string InternetChargeType
+            {
+                get
+                {
+                    return internetChargeType;
+                }
+                set
+                {
+                    internetChargeType = value;
+                }
+            }
 
-			public string AllocationTime
-			{
-				get
-				{
-					return allocationTime;
-				}
-				set	
-				{
-					allocationTime = value;
-				}
-			}
+            public string AllocationTime
+            {
+                get
+                {
+                    return allocationTime;
+                }
+                set
+                {
+                    allocationTime = value;
+                }
+            }
 
-			public string InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
-				}
-			}
+            public string InstanceType
+            {
+                get
+                {
+                    return instanceType;
+                }
+                set
+                {
+                    instanceType = value;
+                }
+            }
 
-			public string ChargeType
-			{
-				get
-				{
-					return chargeType;
-				}
-				set	
-				{
-					chargeType = value;
-				}
-			}
+            public string ChargeType
+            {
+                get
+                {
+                    return chargeType;
+                }
+                set
+                {
+                    chargeType = value;
+                }
+            }
 
-			public string ExpiredTime
-			{
-				get
-				{
-					return expiredTime;
-				}
-				set	
-				{
-					expiredTime = value;
-				}
-			}
+            public string ExpiredTime
+            {
+                get
+                {
+                    return expiredTime;
+                }
+                set
+                {
+                    expiredTime = value;
+                }
+            }
 
-			public List<DescribeEipAddresses_LockReason> OperationLocks
-			{
-				get
-				{
-					return operationLocks;
-				}
-				set	
-				{
-					operationLocks = value;
-				}
-			}
+            public List<DescribeEipAddresses_LockReason> OperationLocks
+            {
+                get
+                {
+                    return operationLocks;
+                }
+                set
+                {
+                    operationLocks = value;
+                }
+            }
 
-			public class DescribeEipAddresses_LockReason
-			{
+            public class DescribeEipAddresses_LockReason
+            {
 
-				private string lockReason;
+                private string lockReason;
 
-				public string LockReason
-				{
-					get
-					{
-						return lockReason;
-					}
-					set	
-					{
-						lockReason = value;
-					}
-				}
-			}
-		}
-	}
+                public string LockReason
+                {
+                    get
+                    {
+                        return lockReason;
+                    }
+                    set
+                    {
+                        lockReason = value;
+                    }
+                }
+            }
+        }
+    }
 }

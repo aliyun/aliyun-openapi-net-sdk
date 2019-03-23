@@ -28,22 +28,23 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeDomainRealTimeByteHitRateDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainRealTimeByteHitRateDataResponse describeDomainRealTimeByteHitRateDataResponse = new DescribeDomainRealTimeByteHitRateDataResponse();
+            DescribeDomainRealTimeByteHitRateDataResponse describeDomainRealTimeByteHitRateDataResponse = new DescribeDomainRealTimeByteHitRateDataResponse();
 
-			describeDomainRealTimeByteHitRateDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainRealTimeByteHitRateDataResponse.RequestId = context.StringValue("DescribeDomainRealTimeByteHitRateData.RequestId");
+            describeDomainRealTimeByteHitRateDataResponse.HttpResponse = context.HttpResponse;
+            describeDomainRealTimeByteHitRateDataResponse.RequestId = context.StringValue("DescribeDomainRealTimeByteHitRateData.RequestId");
 
-			List<DescribeDomainRealTimeByteHitRateDataResponse.DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel> describeDomainRealTimeByteHitRateDataResponse_data = new List<DescribeDomainRealTimeByteHitRateDataResponse.DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel>();
-			for (int i = 0; i < context.Length("DescribeDomainRealTimeByteHitRateData.Data.Length"); i++) {
-				DescribeDomainRealTimeByteHitRateDataResponse.DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel byteHitRateDataModel = new DescribeDomainRealTimeByteHitRateDataResponse.DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel();
-				byteHitRateDataModel.ByteHitRate = context.FloatValue("DescribeDomainRealTimeByteHitRateData.Data["+ i +"].ByteHitRate");
-				byteHitRateDataModel.TimeStamp = context.StringValue("DescribeDomainRealTimeByteHitRateData.Data["+ i +"].TimeStamp");
+            List<DescribeDomainRealTimeByteHitRateDataResponse.DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel> describeDomainRealTimeByteHitRateDataResponse_data = new List<DescribeDomainRealTimeByteHitRateDataResponse.DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel>();
+            for (int i = 0; i < context.Length("DescribeDomainRealTimeByteHitRateData.Data.Length"); i++)
+            {
+                DescribeDomainRealTimeByteHitRateDataResponse.DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel byteHitRateDataModel = new DescribeDomainRealTimeByteHitRateDataResponse.DescribeDomainRealTimeByteHitRateData_ByteHitRateDataModel();
+                byteHitRateDataModel.ByteHitRate = context.FloatValue("DescribeDomainRealTimeByteHitRateData.Data[" + i + "].ByteHitRate");
+                byteHitRateDataModel.TimeStamp = context.StringValue("DescribeDomainRealTimeByteHitRateData.Data[" + i + "].TimeStamp");
 
-				describeDomainRealTimeByteHitRateDataResponse_data.Add(byteHitRateDataModel);
-			}
-			describeDomainRealTimeByteHitRateDataResponse.Data = describeDomainRealTimeByteHitRateDataResponse_data;
-        
-			return describeDomainRealTimeByteHitRateDataResponse;
+                describeDomainRealTimeByteHitRateDataResponse_data.Add(byteHitRateDataModel);
+            }
+            describeDomainRealTimeByteHitRateDataResponse.Data = describeDomainRealTimeByteHitRateDataResponse_data;
+
+            return describeDomainRealTimeByteHitRateDataResponse;
         }
     }
 }

@@ -27,24 +27,25 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static CheckResourceResponse Unmarshall(UnmarshallerContext context)
         {
-			CheckResourceResponse checkResourceResponse = new CheckResourceResponse();
+            CheckResourceResponse checkResourceResponse = new CheckResourceResponse();
 
-			checkResourceResponse.HttpResponse = context.HttpResponse;
-			checkResourceResponse.RequestId = context.StringValue("CheckResource.RequestId");
-			checkResourceResponse.SpecifyCount = context.StringValue("CheckResource.SpecifyCount");
+            checkResourceResponse.HttpResponse = context.HttpResponse;
+            checkResourceResponse.RequestId = context.StringValue("CheckResource.RequestId");
+            checkResourceResponse.SpecifyCount = context.StringValue("CheckResource.SpecifyCount");
 
-			List<CheckResourceResponse.CheckResource_Resource> checkResourceResponse_resources = new List<CheckResourceResponse.CheckResource_Resource>();
-			for (int i = 0; i < context.Length("CheckResource.Resources.Length"); i++) {
-				CheckResourceResponse.CheckResource_Resource resource = new CheckResourceResponse.CheckResource_Resource();
-				resource.DBInstanceAvailable = context.StringValue("CheckResource.Resources["+ i +"].DBInstanceAvailable");
-				resource.Engine = context.StringValue("CheckResource.Resources["+ i +"].Engine");
-				resource.EngineVersion = context.StringValue("CheckResource.Resources["+ i +"].EngineVersion");
+            List<CheckResourceResponse.CheckResource_Resource> checkResourceResponse_resources = new List<CheckResourceResponse.CheckResource_Resource>();
+            for (int i = 0; i < context.Length("CheckResource.Resources.Length"); i++)
+            {
+                CheckResourceResponse.CheckResource_Resource resource = new CheckResourceResponse.CheckResource_Resource();
+                resource.DBInstanceAvailable = context.StringValue("CheckResource.Resources[" + i + "].DBInstanceAvailable");
+                resource.Engine = context.StringValue("CheckResource.Resources[" + i + "].Engine");
+                resource.EngineVersion = context.StringValue("CheckResource.Resources[" + i + "].EngineVersion");
 
-				checkResourceResponse_resources.Add(resource);
-			}
-			checkResourceResponse.Resources = checkResourceResponse_resources;
-        
-			return checkResourceResponse;
+                checkResourceResponse_resources.Add(resource);
+            }
+            checkResourceResponse.Resources = checkResourceResponse_resources;
+
+            return checkResourceResponse;
         }
     }
 }

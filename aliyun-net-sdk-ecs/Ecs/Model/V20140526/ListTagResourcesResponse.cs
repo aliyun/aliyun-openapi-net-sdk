@@ -21,109 +21,109 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class ListTagResourcesResponse : AcsResponse
-	{
+    public class ListTagResourcesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string nextToken;
+        private string nextToken;
 
-		private List<ListTagResources_TagResource> tagResources;
+        private List<ListTagResources_TagResource> tagResources;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
+        public string NextToken
+        {
+            get
+            {
+                return nextToken;
+            }
+            set
+            {
+                nextToken = value;
+            }
+        }
 
-		public List<ListTagResources_TagResource> TagResources
-		{
-			get
-			{
-				return tagResources;
-			}
-			set	
-			{
-				tagResources = value;
-			}
-		}
+        public List<ListTagResources_TagResource> TagResources
+        {
+            get
+            {
+                return tagResources;
+            }
+            set
+            {
+                tagResources = value;
+            }
+        }
 
-		public class ListTagResources_TagResource
-		{
+        public class ListTagResources_TagResource
+        {
 
-			private string resourceType;
+            private string resourceType;
 
-			private string resourceId;
+            private string resourceId;
 
-			private string tagKey;
+            private string tagKey;
 
-			private string tagValue;
+            private string tagValue;
 
-			public string ResourceType
-			{
-				get
-				{
-					return resourceType;
-				}
-				set	
-				{
-					resourceType = value;
-				}
-			}
+            public string ResourceType
+            {
+                get
+                {
+                    return resourceType;
+                }
+                set
+                {
+                    resourceType = value;
+                }
+            }
 
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
-				}
-			}
+            public string ResourceId
+            {
+                get
+                {
+                    return resourceId;
+                }
+                set
+                {
+                    resourceId = value;
+                }
+            }
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
+            public string TagKey
+            {
+                get
+                {
+                    return tagKey;
+                }
+                set
+                {
+                    tagKey = value;
+                }
+            }
 
-			public string TagValue
-			{
-				get
-				{
-					return tagValue;
-				}
-				set	
-				{
-					tagValue = value;
-				}
-			}
-		}
-	}
+            public string TagValue
+            {
+                get
+                {
+                    return tagValue;
+                }
+                set
+                {
+                    tagValue = value;
+                }
+            }
+        }
+    }
 }

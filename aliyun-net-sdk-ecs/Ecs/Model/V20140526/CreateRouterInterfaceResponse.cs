@@ -21,49 +21,49 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateRouterInterfaceResponse : AcsResponse
-	{
+    public class CreateRouterInterfaceResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string routerInterfaceId;
+        private string routerInterfaceId;
 
-		private long? orderId;
+        private long? orderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string RouterInterfaceId
-		{
-			get
-			{
-				return routerInterfaceId;
-			}
-			set	
-			{
-				routerInterfaceId = value;
-			}
-		}
+        public string RouterInterfaceId
+        {
+            get
+            {
+                return routerInterfaceId;
+            }
+            set
+            {
+                routerInterfaceId = value;
+            }
+        }
 
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-	}
+        public long? OrderId
+        {
+            get
+            {
+                return orderId;
+            }
+            set
+            {
+                orderId = value;
+            }
+        }
+    }
 }

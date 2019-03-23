@@ -27,17 +27,17 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static ModifyCustomerGatewayAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyCustomerGatewayAttributeResponse modifyCustomerGatewayAttributeResponse = new ModifyCustomerGatewayAttributeResponse();
+            ModifyCustomerGatewayAttributeResponse modifyCustomerGatewayAttributeResponse = new ModifyCustomerGatewayAttributeResponse();
 
-			modifyCustomerGatewayAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyCustomerGatewayAttributeResponse.RequestId = context.StringValue("ModifyCustomerGatewayAttribute.RequestId");
-			modifyCustomerGatewayAttributeResponse.CustomerGatewayId = context.StringValue("ModifyCustomerGatewayAttribute.CustomerGatewayId");
-			modifyCustomerGatewayAttributeResponse.IpAddress = context.StringValue("ModifyCustomerGatewayAttribute.IpAddress");
-			modifyCustomerGatewayAttributeResponse.Name = context.StringValue("ModifyCustomerGatewayAttribute.Name");
-			modifyCustomerGatewayAttributeResponse.Description = context.StringValue("ModifyCustomerGatewayAttribute.Description");
-			modifyCustomerGatewayAttributeResponse.CreateTime = context.LongValue("ModifyCustomerGatewayAttribute.CreateTime");
-        
-			return modifyCustomerGatewayAttributeResponse;
+            modifyCustomerGatewayAttributeResponse.HttpResponse = context.HttpResponse;
+            modifyCustomerGatewayAttributeResponse.RequestId = context.StringValue("ModifyCustomerGatewayAttribute.RequestId");
+            modifyCustomerGatewayAttributeResponse.CustomerGatewayId = context.StringValue("ModifyCustomerGatewayAttribute.CustomerGatewayId");
+            modifyCustomerGatewayAttributeResponse.IpAddress = context.StringValue("ModifyCustomerGatewayAttribute.IpAddress");
+            modifyCustomerGatewayAttributeResponse.Name = context.StringValue("ModifyCustomerGatewayAttribute.Name");
+            modifyCustomerGatewayAttributeResponse.Description = context.StringValue("ModifyCustomerGatewayAttribute.Description");
+            modifyCustomerGatewayAttributeResponse.CreateTime = context.LongValue("ModifyCustomerGatewayAttribute.CreateTime");
+
+            return modifyCustomerGatewayAttributeResponse;
         }
     }
 }

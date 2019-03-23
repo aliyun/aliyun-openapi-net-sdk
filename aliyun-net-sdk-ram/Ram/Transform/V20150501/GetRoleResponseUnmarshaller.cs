@@ -28,22 +28,22 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static GetRoleResponse Unmarshall(UnmarshallerContext context)
         {
-			GetRoleResponse getRoleResponse = new GetRoleResponse();
+            GetRoleResponse getRoleResponse = new GetRoleResponse();
 
-			getRoleResponse.HttpResponse = context.HttpResponse;
-			getRoleResponse.RequestId = context.StringValue("GetRole.RequestId");
+            getRoleResponse.HttpResponse = context.HttpResponse;
+            getRoleResponse.RequestId = context.StringValue("GetRole.RequestId");
 
-			GetRoleResponse.GetRole_Role role = new GetRoleResponse.GetRole_Role();
-			role.RoleId = context.StringValue("GetRole.Role.RoleId");
-			role.RoleName = context.StringValue("GetRole.Role.RoleName");
-			role.Arn = context.StringValue("GetRole.Role.Arn");
-			role.Description = context.StringValue("GetRole.Role.Description");
-			role.AssumeRolePolicyDocument = context.StringValue("GetRole.Role.AssumeRolePolicyDocument");
-			role.CreateDate = context.StringValue("GetRole.Role.CreateDate");
-			role.UpdateDate = context.StringValue("GetRole.Role.UpdateDate");
-			getRoleResponse.Role = role;
-        
-			return getRoleResponse;
+            GetRoleResponse.GetRole_Role role = new GetRoleResponse.GetRole_Role();
+            role.RoleId = context.StringValue("GetRole.Role.RoleId");
+            role.RoleName = context.StringValue("GetRole.Role.RoleName");
+            role.Arn = context.StringValue("GetRole.Role.Arn");
+            role.Description = context.StringValue("GetRole.Role.Description");
+            role.AssumeRolePolicyDocument = context.StringValue("GetRole.Role.AssumeRolePolicyDocument");
+            role.CreateDate = context.StringValue("GetRole.Role.CreateDate");
+            role.UpdateDate = context.StringValue("GetRole.Role.UpdateDate");
+            getRoleResponse.Role = role;
+
+            return getRoleResponse;
         }
     }
 }

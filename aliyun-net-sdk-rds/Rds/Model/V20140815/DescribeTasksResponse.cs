@@ -21,235 +21,235 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeTasksResponse : AcsResponse
-	{
+    public class DescribeTasksResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalRecordCount;
+        private int? totalRecordCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private List<DescribeTasks_TaskProgressInfo> items;
+        private List<DescribeTasks_TaskProgressInfo> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public int? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public List<DescribeTasks_TaskProgressInfo> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeTasks_TaskProgressInfo> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeTasks_TaskProgressInfo
-		{
+        public class DescribeTasks_TaskProgressInfo
+        {
 
-			private string dBName;
+            private string dBName;
 
-			private string beginTime;
+            private string beginTime;
 
-			private string progressInfo;
+            private string progressInfo;
 
-			private string finishTime;
+            private string finishTime;
 
-			private string taskAction;
+            private string taskAction;
 
-			private string taskId;
+            private string taskId;
 
-			private string progress;
+            private string progress;
 
-			private string expectedFinishTime;
+            private string expectedFinishTime;
 
-			private string status;
+            private string status;
 
-			private string taskErrorCode;
+            private string taskErrorCode;
 
-			private string taskErrorMessage;
+            private string taskErrorMessage;
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
+            public string DBName
+            {
+                get
+                {
+                    return dBName;
+                }
+                set
+                {
+                    dBName = value;
+                }
+            }
 
-			public string BeginTime
-			{
-				get
-				{
-					return beginTime;
-				}
-				set	
-				{
-					beginTime = value;
-				}
-			}
+            public string BeginTime
+            {
+                get
+                {
+                    return beginTime;
+                }
+                set
+                {
+                    beginTime = value;
+                }
+            }
 
-			public string ProgressInfo
-			{
-				get
-				{
-					return progressInfo;
-				}
-				set	
-				{
-					progressInfo = value;
-				}
-			}
+            public string ProgressInfo
+            {
+                get
+                {
+                    return progressInfo;
+                }
+                set
+                {
+                    progressInfo = value;
+                }
+            }
 
-			public string FinishTime
-			{
-				get
-				{
-					return finishTime;
-				}
-				set	
-				{
-					finishTime = value;
-				}
-			}
+            public string FinishTime
+            {
+                get
+                {
+                    return finishTime;
+                }
+                set
+                {
+                    finishTime = value;
+                }
+            }
 
-			public string TaskAction
-			{
-				get
-				{
-					return taskAction;
-				}
-				set	
-				{
-					taskAction = value;
-				}
-			}
+            public string TaskAction
+            {
+                get
+                {
+                    return taskAction;
+                }
+                set
+                {
+                    taskAction = value;
+                }
+            }
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+            public string TaskId
+            {
+                get
+                {
+                    return taskId;
+                }
+                set
+                {
+                    taskId = value;
+                }
+            }
 
-			public string Progress
-			{
-				get
-				{
-					return progress;
-				}
-				set	
-				{
-					progress = value;
-				}
-			}
+            public string Progress
+            {
+                get
+                {
+                    return progress;
+                }
+                set
+                {
+                    progress = value;
+                }
+            }
 
-			public string ExpectedFinishTime
-			{
-				get
-				{
-					return expectedFinishTime;
-				}
-				set	
-				{
-					expectedFinishTime = value;
-				}
-			}
+            public string ExpectedFinishTime
+            {
+                get
+                {
+                    return expectedFinishTime;
+                }
+                set
+                {
+                    expectedFinishTime = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string TaskErrorCode
-			{
-				get
-				{
-					return taskErrorCode;
-				}
-				set	
-				{
-					taskErrorCode = value;
-				}
-			}
+            public string TaskErrorCode
+            {
+                get
+                {
+                    return taskErrorCode;
+                }
+                set
+                {
+                    taskErrorCode = value;
+                }
+            }
 
-			public string TaskErrorMessage
-			{
-				get
-				{
-					return taskErrorMessage;
-				}
-				set	
-				{
-					taskErrorMessage = value;
-				}
-			}
-		}
-	}
+            public string TaskErrorMessage
+            {
+                get
+                {
+                    return taskErrorMessage;
+                }
+                set
+                {
+                    taskErrorMessage = value;
+                }
+            }
+        }
+    }
 }

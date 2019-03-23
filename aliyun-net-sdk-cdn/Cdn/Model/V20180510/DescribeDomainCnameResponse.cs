@@ -22,81 +22,81 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeDomainCnameResponse : AcsResponse
-	{
+    public class DescribeDomainCnameResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeDomainCname_Data> cnameDatas;
+        private List<DescribeDomainCname_Data> cnameDatas;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeDomainCname_Data> CnameDatas
-		{
-			get
-			{
-				return cnameDatas;
-			}
-			set	
-			{
-				cnameDatas = value;
-			}
-		}
+        public List<DescribeDomainCname_Data> CnameDatas
+        {
+            get
+            {
+                return cnameDatas;
+            }
+            set
+            {
+                cnameDatas = value;
+            }
+        }
 
-		public class DescribeDomainCname_Data
-		{
+        public class DescribeDomainCname_Data
+        {
 
-			private string domain;
+            private string domain;
 
-			private string cname;
+            private string cname;
 
-			private int? status;
+            private int? status;
 
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
+            public string Domain
+            {
+                get
+                {
+                    return domain;
+                }
+                set
+                {
+                    domain = value;
+                }
+            }
 
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
-				}
-			}
+            public string Cname
+            {
+                get
+                {
+                    return cname;
+                }
+                set
+                {
+                    cname = value;
+                }
+            }
 
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-		}
-	}
+            public int? Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
+        }
+    }
 }

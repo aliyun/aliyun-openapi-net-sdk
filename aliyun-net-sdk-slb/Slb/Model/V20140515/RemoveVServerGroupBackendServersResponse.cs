@@ -21,137 +21,137 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class RemoveVServerGroupBackendServersResponse : AcsResponse
-	{
+    public class RemoveVServerGroupBackendServersResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string vServerGroupId;
+        private string vServerGroupId;
 
-		private List<RemoveVServerGroupBackendServers_BackendServer> backendServers;
+        private List<RemoveVServerGroupBackendServers_BackendServer> backendServers;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string VServerGroupId
-		{
-			get
-			{
-				return vServerGroupId;
-			}
-			set	
-			{
-				vServerGroupId = value;
-			}
-		}
+        public string VServerGroupId
+        {
+            get
+            {
+                return vServerGroupId;
+            }
+            set
+            {
+                vServerGroupId = value;
+            }
+        }
 
-		public List<RemoveVServerGroupBackendServers_BackendServer> BackendServers
-		{
-			get
-			{
-				return backendServers;
-			}
-			set	
-			{
-				backendServers = value;
-			}
-		}
+        public List<RemoveVServerGroupBackendServers_BackendServer> BackendServers
+        {
+            get
+            {
+                return backendServers;
+            }
+            set
+            {
+                backendServers = value;
+            }
+        }
 
-		public class RemoveVServerGroupBackendServers_BackendServer
-		{
+        public class RemoveVServerGroupBackendServers_BackendServer
+        {
 
-			private string serverId;
+            private string serverId;
 
-			private int? port;
+            private int? port;
 
-			private int? weight;
+            private int? weight;
 
-			private string type;
+            private string type;
 
-			private string serverIp;
+            private string serverIp;
 
-			private string vpcId;
+            private string vpcId;
 
-			public string ServerId
-			{
-				get
-				{
-					return serverId;
-				}
-				set	
-				{
-					serverId = value;
-				}
-			}
+            public string ServerId
+            {
+                get
+                {
+                    return serverId;
+                }
+                set
+                {
+                    serverId = value;
+                }
+            }
 
-			public int? Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
+            public int? Port
+            {
+                get
+                {
+                    return port;
+                }
+                set
+                {
+                    port = value;
+                }
+            }
 
-			public int? Weight
-			{
-				get
-				{
-					return weight;
-				}
-				set	
-				{
-					weight = value;
-				}
-			}
+            public int? Weight
+            {
+                get
+                {
+                    return weight;
+                }
+                set
+                {
+                    weight = value;
+                }
+            }
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+            public string Type
+            {
+                get
+                {
+                    return type;
+                }
+                set
+                {
+                    type = value;
+                }
+            }
 
-			public string ServerIp
-			{
-				get
-				{
-					return serverIp;
-				}
-				set	
-				{
-					serverIp = value;
-				}
-			}
+            public string ServerIp
+            {
+                get
+                {
+                    return serverIp;
+                }
+                set
+                {
+                    serverIp = value;
+                }
+            }
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
-		}
-	}
+            public string VpcId
+            {
+                get
+                {
+                    return vpcId;
+                }
+                set
+                {
+                    vpcId = value;
+                }
+            }
+        }
+    }
 }

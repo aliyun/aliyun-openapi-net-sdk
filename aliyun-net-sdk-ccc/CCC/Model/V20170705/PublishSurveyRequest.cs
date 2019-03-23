@@ -33,55 +33,55 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string surveyId;
+        private string surveyId;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string scenarioId;
+        private string scenarioId;
 
-		public string SurveyId
-		{
-			get
-			{
-				return surveyId;
-			}
-			set	
-			{
-				surveyId = value;
-				DictionaryUtil.Add(QueryParameters, "SurveyId", value);
-			}
-		}
+        public string SurveyId
+        {
+            get
+            {
+                return surveyId;
+            }
+            set
+            {
+                surveyId = value;
+                DictionaryUtil.Add(QueryParameters, "SurveyId", value);
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string ScenarioId
-		{
-			get
-			{
-				return scenarioId;
-			}
-			set	
-			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
-			}
-		}
+        public string ScenarioId
+        {
+            get
+            {
+                return scenarioId;
+            }
+            set
+            {
+                scenarioId = value;
+                DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override PublishSurveyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

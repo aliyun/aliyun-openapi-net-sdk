@@ -22,77 +22,77 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeUserCdnStatusResponse : AcsResponse
-	{
+    public class DescribeUserCdnStatusResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? enabled;
+        private bool? enabled;
 
-		private bool? onService;
+        private bool? onService;
 
-		private bool? inDebt;
+        private bool? inDebt;
 
-		private bool? inDebtOverdue;
+        private bool? inDebtOverdue;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? Enabled
-		{
-			get
-			{
-				return enabled;
-			}
-			set	
-			{
-				enabled = value;
-			}
-		}
+        public bool? Enabled
+        {
+            get
+            {
+                return enabled;
+            }
+            set
+            {
+                enabled = value;
+            }
+        }
 
-		public bool? OnService
-		{
-			get
-			{
-				return onService;
-			}
-			set	
-			{
-				onService = value;
-			}
-		}
+        public bool? OnService
+        {
+            get
+            {
+                return onService;
+            }
+            set
+            {
+                onService = value;
+            }
+        }
 
-		public bool? InDebt
-		{
-			get
-			{
-				return inDebt;
-			}
-			set	
-			{
-				inDebt = value;
-			}
-		}
+        public bool? InDebt
+        {
+            get
+            {
+                return inDebt;
+            }
+            set
+            {
+                inDebt = value;
+            }
+        }
 
-		public bool? InDebtOverdue
-		{
-			get
-			{
-				return inDebtOverdue;
-			}
-			set	
-			{
-				inDebtOverdue = value;
-			}
-		}
-	}
+        public bool? InDebtOverdue
+        {
+            get
+            {
+                return inDebtOverdue;
+            }
+            set
+            {
+                inDebtOverdue = value;
+            }
+        }
+    }
 }

@@ -34,80 +34,80 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         {
         }
 
-		private string securityToken;
+        private string securityToken;
 
-		private string objectPath;
+        private string objectPath;
 
-		private string action;
+        private string action;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		private string objectType;
+        private string objectType;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+        public string SecurityToken
+        {
+            get
+            {
+                return securityToken;
+            }
+            set
+            {
+                securityToken = value;
+                DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+            }
+        }
 
-		public string ObjectPath
-		{
-			get
-			{
-				return objectPath;
-			}
-			set	
-			{
-				objectPath = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
-			}
-		}
+        public string ObjectPath
+        {
+            get
+            {
+                return objectPath;
+            }
+            set
+            {
+                objectPath = value;
+                DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
-		public string ObjectType
-		{
-			get
-			{
-				return objectType;
-			}
-			set	
-			{
-				objectType = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
-			}
-		}
+        public string ObjectType
+        {
+            get
+            {
+                return objectType;
+            }
+            set
+            {
+                objectType = value;
+                DictionaryUtil.Add(QueryParameters, "ObjectType", value);
+            }
+        }
 
         public override RefreshObjectCachesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

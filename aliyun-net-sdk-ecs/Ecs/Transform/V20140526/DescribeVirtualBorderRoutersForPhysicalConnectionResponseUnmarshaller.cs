@@ -27,31 +27,32 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeVirtualBorderRoutersForPhysicalConnectionResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeVirtualBorderRoutersForPhysicalConnectionResponse describeVirtualBorderRoutersForPhysicalConnectionResponse = new DescribeVirtualBorderRoutersForPhysicalConnectionResponse();
+            DescribeVirtualBorderRoutersForPhysicalConnectionResponse describeVirtualBorderRoutersForPhysicalConnectionResponse = new DescribeVirtualBorderRoutersForPhysicalConnectionResponse();
 
-			describeVirtualBorderRoutersForPhysicalConnectionResponse.HttpResponse = context.HttpResponse;
-			describeVirtualBorderRoutersForPhysicalConnectionResponse.RequestId = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.RequestId");
-			describeVirtualBorderRoutersForPhysicalConnectionResponse.PageNumber = context.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.PageNumber");
-			describeVirtualBorderRoutersForPhysicalConnectionResponse.PageSize = context.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.PageSize");
-			describeVirtualBorderRoutersForPhysicalConnectionResponse.TotalCount = context.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.TotalCount");
+            describeVirtualBorderRoutersForPhysicalConnectionResponse.HttpResponse = context.HttpResponse;
+            describeVirtualBorderRoutersForPhysicalConnectionResponse.RequestId = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.RequestId");
+            describeVirtualBorderRoutersForPhysicalConnectionResponse.PageNumber = context.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.PageNumber");
+            describeVirtualBorderRoutersForPhysicalConnectionResponse.PageSize = context.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.PageSize");
+            describeVirtualBorderRoutersForPhysicalConnectionResponse.TotalCount = context.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.TotalCount");
 
-			List<DescribeVirtualBorderRoutersForPhysicalConnectionResponse.DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType> describeVirtualBorderRoutersForPhysicalConnectionResponse_virtualBorderRouterForPhysicalConnectionSet = new List<DescribeVirtualBorderRoutersForPhysicalConnectionResponse.DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType>();
-			for (int i = 0; i < context.Length("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet.Length"); i++) {
-				DescribeVirtualBorderRoutersForPhysicalConnectionResponse.DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType virtualBorderRouterForPhysicalConnectionType = new DescribeVirtualBorderRoutersForPhysicalConnectionResponse.DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType();
-				virtualBorderRouterForPhysicalConnectionType.VbrId = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VbrId");
-				virtualBorderRouterForPhysicalConnectionType.VbrOwnerUid = context.LongValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VbrOwnerUid");
-				virtualBorderRouterForPhysicalConnectionType.CreationTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].CreationTime");
-				virtualBorderRouterForPhysicalConnectionType.ActivationTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].ActivationTime");
-				virtualBorderRouterForPhysicalConnectionType.TerminationTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].TerminationTime");
-				virtualBorderRouterForPhysicalConnectionType.RecoveryTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].RecoveryTime");
-				virtualBorderRouterForPhysicalConnectionType.VlanId = context.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VlanId");
-				virtualBorderRouterForPhysicalConnectionType.CircuitCode = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].CircuitCode");
+            List<DescribeVirtualBorderRoutersForPhysicalConnectionResponse.DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType> describeVirtualBorderRoutersForPhysicalConnectionResponse_virtualBorderRouterForPhysicalConnectionSet = new List<DescribeVirtualBorderRoutersForPhysicalConnectionResponse.DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType>();
+            for (int i = 0; i < context.Length("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet.Length"); i++)
+            {
+                DescribeVirtualBorderRoutersForPhysicalConnectionResponse.DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType virtualBorderRouterForPhysicalConnectionType = new DescribeVirtualBorderRoutersForPhysicalConnectionResponse.DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType();
+                virtualBorderRouterForPhysicalConnectionType.VbrId = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet[" + i + "].VbrId");
+                virtualBorderRouterForPhysicalConnectionType.VbrOwnerUid = context.LongValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet[" + i + "].VbrOwnerUid");
+                virtualBorderRouterForPhysicalConnectionType.CreationTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet[" + i + "].CreationTime");
+                virtualBorderRouterForPhysicalConnectionType.ActivationTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet[" + i + "].ActivationTime");
+                virtualBorderRouterForPhysicalConnectionType.TerminationTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet[" + i + "].TerminationTime");
+                virtualBorderRouterForPhysicalConnectionType.RecoveryTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet[" + i + "].RecoveryTime");
+                virtualBorderRouterForPhysicalConnectionType.VlanId = context.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet[" + i + "].VlanId");
+                virtualBorderRouterForPhysicalConnectionType.CircuitCode = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet[" + i + "].CircuitCode");
 
-				describeVirtualBorderRoutersForPhysicalConnectionResponse_virtualBorderRouterForPhysicalConnectionSet.Add(virtualBorderRouterForPhysicalConnectionType);
-			}
-			describeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet = describeVirtualBorderRoutersForPhysicalConnectionResponse_virtualBorderRouterForPhysicalConnectionSet;
-        
-			return describeVirtualBorderRoutersForPhysicalConnectionResponse;
+                describeVirtualBorderRoutersForPhysicalConnectionResponse_virtualBorderRouterForPhysicalConnectionSet.Add(virtualBorderRouterForPhysicalConnectionType);
+            }
+            describeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet = describeVirtualBorderRoutersForPhysicalConnectionResponse_virtualBorderRouterForPhysicalConnectionSet;
+
+            return describeVirtualBorderRoutersForPhysicalConnectionResponse;
         }
     }
 }

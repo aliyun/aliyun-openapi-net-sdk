@@ -27,27 +27,28 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static ListPrivilegesOfUserResponse Unmarshall(UnmarshallerContext context)
         {
-			ListPrivilegesOfUserResponse listPrivilegesOfUserResponse = new ListPrivilegesOfUserResponse();
+            ListPrivilegesOfUserResponse listPrivilegesOfUserResponse = new ListPrivilegesOfUserResponse();
 
-			listPrivilegesOfUserResponse.HttpResponse = context.HttpResponse;
-			listPrivilegesOfUserResponse.RequestId = context.StringValue("ListPrivilegesOfUser.RequestId");
-			listPrivilegesOfUserResponse.Success = context.BooleanValue("ListPrivilegesOfUser.Success");
-			listPrivilegesOfUserResponse.Code = context.StringValue("ListPrivilegesOfUser.Code");
-			listPrivilegesOfUserResponse.Message = context.StringValue("ListPrivilegesOfUser.Message");
-			listPrivilegesOfUserResponse.HttpStatusCode = context.IntegerValue("ListPrivilegesOfUser.HttpStatusCode");
+            listPrivilegesOfUserResponse.HttpResponse = context.HttpResponse;
+            listPrivilegesOfUserResponse.RequestId = context.StringValue("ListPrivilegesOfUser.RequestId");
+            listPrivilegesOfUserResponse.Success = context.BooleanValue("ListPrivilegesOfUser.Success");
+            listPrivilegesOfUserResponse.Code = context.StringValue("ListPrivilegesOfUser.Code");
+            listPrivilegesOfUserResponse.Message = context.StringValue("ListPrivilegesOfUser.Message");
+            listPrivilegesOfUserResponse.HttpStatusCode = context.IntegerValue("ListPrivilegesOfUser.HttpStatusCode");
 
-			List<ListPrivilegesOfUserResponse.ListPrivilegesOfUser_Privilege> listPrivilegesOfUserResponse_privileges = new List<ListPrivilegesOfUserResponse.ListPrivilegesOfUser_Privilege>();
-			for (int i = 0; i < context.Length("ListPrivilegesOfUser.Privileges.Length"); i++) {
-				ListPrivilegesOfUserResponse.ListPrivilegesOfUser_Privilege privilege = new ListPrivilegesOfUserResponse.ListPrivilegesOfUser_Privilege();
-				privilege.PrivilegeId = context.StringValue("ListPrivilegesOfUser.Privileges["+ i +"].PrivilegeId");
-				privilege.PrivilegeName = context.StringValue("ListPrivilegesOfUser.Privileges["+ i +"].PrivilegeName");
-				privilege.PrivilegeDescription = context.StringValue("ListPrivilegesOfUser.Privileges["+ i +"].PrivilegeDescription");
+            List<ListPrivilegesOfUserResponse.ListPrivilegesOfUser_Privilege> listPrivilegesOfUserResponse_privileges = new List<ListPrivilegesOfUserResponse.ListPrivilegesOfUser_Privilege>();
+            for (int i = 0; i < context.Length("ListPrivilegesOfUser.Privileges.Length"); i++)
+            {
+                ListPrivilegesOfUserResponse.ListPrivilegesOfUser_Privilege privilege = new ListPrivilegesOfUserResponse.ListPrivilegesOfUser_Privilege();
+                privilege.PrivilegeId = context.StringValue("ListPrivilegesOfUser.Privileges[" + i + "].PrivilegeId");
+                privilege.PrivilegeName = context.StringValue("ListPrivilegesOfUser.Privileges[" + i + "].PrivilegeName");
+                privilege.PrivilegeDescription = context.StringValue("ListPrivilegesOfUser.Privileges[" + i + "].PrivilegeDescription");
 
-				listPrivilegesOfUserResponse_privileges.Add(privilege);
-			}
-			listPrivilegesOfUserResponse.Privileges = listPrivilegesOfUserResponse_privileges;
-        
-			return listPrivilegesOfUserResponse;
+                listPrivilegesOfUserResponse_privileges.Add(privilege);
+            }
+            listPrivilegesOfUserResponse.Privileges = listPrivilegesOfUserResponse_privileges;
+
+            return listPrivilegesOfUserResponse;
         }
     }
 }

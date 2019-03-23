@@ -31,24 +31,24 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public DescribeResourceTypesRequest()
             : base("ROS", "2015-09-01", "DescribeResourceTypes")
         {
-			UriPattern = "/resource_types";
-			Method = MethodType.GET;
+            UriPattern = "/resource_types";
+            Method = MethodType.GET;
         }
 
-		private string supportStatus;
+        private string supportStatus;
 
-		public string SupportStatus
-		{
-			get
-			{
-				return supportStatus;
-			}
-			set	
-			{
-				supportStatus = value;
-				DictionaryUtil.Add(QueryParameters, "SupportStatus", value);
-			}
-		}
+        public string SupportStatus
+        {
+            get
+            {
+                return supportStatus;
+            }
+            set
+            {
+                supportStatus = value;
+                DictionaryUtil.Add(QueryParameters, "SupportStatus", value);
+            }
+        }
 
         public override DescribeResourceTypesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

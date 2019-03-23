@@ -21,165 +21,165 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeNetworkInterfacePermissionsResponse : AcsResponse
-	{
+    public class DescribeNetworkInterfacePermissionsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeNetworkInterfacePermissions_NetworkInterfacePermission> networkInterfacePermissions;
+        private List<DescribeNetworkInterfacePermissions_NetworkInterfacePermission> networkInterfacePermissions;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeNetworkInterfacePermissions_NetworkInterfacePermission> NetworkInterfacePermissions
-		{
-			get
-			{
-				return networkInterfacePermissions;
-			}
-			set	
-			{
-				networkInterfacePermissions = value;
-			}
-		}
+        public List<DescribeNetworkInterfacePermissions_NetworkInterfacePermission> NetworkInterfacePermissions
+        {
+            get
+            {
+                return networkInterfacePermissions;
+            }
+            set
+            {
+                networkInterfacePermissions = value;
+            }
+        }
 
-		public class DescribeNetworkInterfacePermissions_NetworkInterfacePermission
-		{
+        public class DescribeNetworkInterfacePermissions_NetworkInterfacePermission
+        {
 
-			private long? accountId;
+            private long? accountId;
 
-			private string serviceName;
+            private string serviceName;
 
-			private string networkInterfaceId;
+            private string networkInterfaceId;
 
-			private string networkInterfacePermissionId;
+            private string networkInterfacePermissionId;
 
-			private string permission;
+            private string permission;
 
-			private string permissionState;
+            private string permissionState;
 
-			public long? AccountId
-			{
-				get
-				{
-					return accountId;
-				}
-				set	
-				{
-					accountId = value;
-				}
-			}
+            public long? AccountId
+            {
+                get
+                {
+                    return accountId;
+                }
+                set
+                {
+                    accountId = value;
+                }
+            }
 
-			public string ServiceName
-			{
-				get
-				{
-					return serviceName;
-				}
-				set	
-				{
-					serviceName = value;
-				}
-			}
+            public string ServiceName
+            {
+                get
+                {
+                    return serviceName;
+                }
+                set
+                {
+                    serviceName = value;
+                }
+            }
 
-			public string NetworkInterfaceId
-			{
-				get
-				{
-					return networkInterfaceId;
-				}
-				set	
-				{
-					networkInterfaceId = value;
-				}
-			}
+            public string NetworkInterfaceId
+            {
+                get
+                {
+                    return networkInterfaceId;
+                }
+                set
+                {
+                    networkInterfaceId = value;
+                }
+            }
 
-			public string NetworkInterfacePermissionId
-			{
-				get
-				{
-					return networkInterfacePermissionId;
-				}
-				set	
-				{
-					networkInterfacePermissionId = value;
-				}
-			}
+            public string NetworkInterfacePermissionId
+            {
+                get
+                {
+                    return networkInterfacePermissionId;
+                }
+                set
+                {
+                    networkInterfacePermissionId = value;
+                }
+            }
 
-			public string Permission
-			{
-				get
-				{
-					return permission;
-				}
-				set	
-				{
-					permission = value;
-				}
-			}
+            public string Permission
+            {
+                get
+                {
+                    return permission;
+                }
+                set
+                {
+                    permission = value;
+                }
+            }
 
-			public string PermissionState
-			{
-				get
-				{
-					return permissionState;
-				}
-				set	
-				{
-					permissionState = value;
-				}
-			}
-		}
-	}
+            public string PermissionState
+            {
+                get
+                {
+                    return permissionState;
+                }
+                set
+                {
+                    permissionState = value;
+                }
+            }
+        }
+    }
 }

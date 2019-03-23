@@ -27,26 +27,27 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
     {
         public static DescribeBgpNetworksResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeBgpNetworksResponse describeBgpNetworksResponse = new DescribeBgpNetworksResponse();
+            DescribeBgpNetworksResponse describeBgpNetworksResponse = new DescribeBgpNetworksResponse();
 
-			describeBgpNetworksResponse.HttpResponse = context.HttpResponse;
-			describeBgpNetworksResponse.RequestId = context.StringValue("DescribeBgpNetworks.RequestId");
-			describeBgpNetworksResponse.TotalCount = context.IntegerValue("DescribeBgpNetworks.TotalCount");
-			describeBgpNetworksResponse.PageNumber = context.IntegerValue("DescribeBgpNetworks.PageNumber");
-			describeBgpNetworksResponse.PageSize = context.IntegerValue("DescribeBgpNetworks.PageSize");
+            describeBgpNetworksResponse.HttpResponse = context.HttpResponse;
+            describeBgpNetworksResponse.RequestId = context.StringValue("DescribeBgpNetworks.RequestId");
+            describeBgpNetworksResponse.TotalCount = context.IntegerValue("DescribeBgpNetworks.TotalCount");
+            describeBgpNetworksResponse.PageNumber = context.IntegerValue("DescribeBgpNetworks.PageNumber");
+            describeBgpNetworksResponse.PageSize = context.IntegerValue("DescribeBgpNetworks.PageSize");
 
-			List<DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork> describeBgpNetworksResponse_bgpNetworks = new List<DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork>();
-			for (int i = 0; i < context.Length("DescribeBgpNetworks.BgpNetworks.Length"); i++) {
-				DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork bgpNetwork = new DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork();
-				bgpNetwork.VpcId = context.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].VpcId");
-				bgpNetwork.DstCidrBlock = context.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].DstCidrBlock");
-				bgpNetwork.RouterId = context.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].RouterId");
+            List<DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork> describeBgpNetworksResponse_bgpNetworks = new List<DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork>();
+            for (int i = 0; i < context.Length("DescribeBgpNetworks.BgpNetworks.Length"); i++)
+            {
+                DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork bgpNetwork = new DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork();
+                bgpNetwork.VpcId = context.StringValue("DescribeBgpNetworks.BgpNetworks[" + i + "].VpcId");
+                bgpNetwork.DstCidrBlock = context.StringValue("DescribeBgpNetworks.BgpNetworks[" + i + "].DstCidrBlock");
+                bgpNetwork.RouterId = context.StringValue("DescribeBgpNetworks.BgpNetworks[" + i + "].RouterId");
 
-				describeBgpNetworksResponse_bgpNetworks.Add(bgpNetwork);
-			}
-			describeBgpNetworksResponse.BgpNetworks = describeBgpNetworksResponse_bgpNetworks;
-        
-			return describeBgpNetworksResponse;
+                describeBgpNetworksResponse_bgpNetworks.Add(bgpNetwork);
+            }
+            describeBgpNetworksResponse.BgpNetworks = describeBgpNetworksResponse_bgpNetworks;
+
+            return describeBgpNetworksResponse;
         }
     }
 }

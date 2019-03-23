@@ -34,125 +34,125 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         {
         }
 
-		private string waitUrl;
+        private string waitUrl;
 
-		private string action;
+        private string action;
 
-		private string waitUri;
+        private string waitUri;
 
-		private int? maxTimeWait;
+        private int? maxTimeWait;
 
-		private string domainName;
+        private string domainName;
 
-		private int? allowPct;
+        private int? allowPct;
 
-		private int? gapTime;
+        private int? gapTime;
 
-		private long? ownerId;
+        private long? ownerId;
 
-		public string WaitUrl
-		{
-			get
-			{
-				return waitUrl;
-			}
-			set	
-			{
-				waitUrl = value;
-				DictionaryUtil.Add(QueryParameters, "WaitUrl", value);
-			}
-		}
+        public string WaitUrl
+        {
+            get
+            {
+                return waitUrl;
+            }
+            set
+            {
+                waitUrl = value;
+                DictionaryUtil.Add(QueryParameters, "WaitUrl", value);
+            }
+        }
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+        public string Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
+                DictionaryUtil.Add(QueryParameters, "Action", value);
+            }
+        }
 
-		public string WaitUri
-		{
-			get
-			{
-				return waitUri;
-			}
-			set	
-			{
-				waitUri = value;
-				DictionaryUtil.Add(QueryParameters, "WaitUri", value);
-			}
-		}
+        public string WaitUri
+        {
+            get
+            {
+                return waitUri;
+            }
+            set
+            {
+                waitUri = value;
+                DictionaryUtil.Add(QueryParameters, "WaitUri", value);
+            }
+        }
 
-		public int? MaxTimeWait
-		{
-			get
-			{
-				return maxTimeWait;
-			}
-			set	
-			{
-				maxTimeWait = value;
-				DictionaryUtil.Add(QueryParameters, "MaxTimeWait", value.ToString());
-			}
-		}
+        public int? MaxTimeWait
+        {
+            get
+            {
+                return maxTimeWait;
+            }
+            set
+            {
+                maxTimeWait = value;
+                DictionaryUtil.Add(QueryParameters, "MaxTimeWait", value.ToString());
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+                DictionaryUtil.Add(QueryParameters, "DomainName", value);
+            }
+        }
 
-		public int? AllowPct
-		{
-			get
-			{
-				return allowPct;
-			}
-			set	
-			{
-				allowPct = value;
-				DictionaryUtil.Add(QueryParameters, "AllowPct", value.ToString());
-			}
-		}
+        public int? AllowPct
+        {
+            get
+            {
+                return allowPct;
+            }
+            set
+            {
+                allowPct = value;
+                DictionaryUtil.Add(QueryParameters, "AllowPct", value.ToString());
+            }
+        }
 
-		public int? GapTime
-		{
-			get
-			{
-				return gapTime;
-			}
-			set	
-			{
-				gapTime = value;
-				DictionaryUtil.Add(QueryParameters, "GapTime", value.ToString());
-			}
-		}
+        public int? GapTime
+        {
+            get
+            {
+                return gapTime;
+            }
+            set
+            {
+                gapTime = value;
+                DictionaryUtil.Add(QueryParameters, "GapTime", value.ToString());
+            }
+        }
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+        public long? OwnerId
+        {
+            get
+            {
+                return ownerId;
+            }
+            set
+            {
+                ownerId = value;
+                DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+            }
+        }
 
         public override SetWaitingRoomConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

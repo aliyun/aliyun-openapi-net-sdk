@@ -21,123 +21,123 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeBgpNetworksResponse : AcsResponse
-	{
+    public class DescribeBgpNetworksResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeBgpNetworks_BgpNetwork> bgpNetworks;
+        private List<DescribeBgpNetworks_BgpNetwork> bgpNetworks;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeBgpNetworks_BgpNetwork> BgpNetworks
-		{
-			get
-			{
-				return bgpNetworks;
-			}
-			set	
-			{
-				bgpNetworks = value;
-			}
-		}
+        public List<DescribeBgpNetworks_BgpNetwork> BgpNetworks
+        {
+            get
+            {
+                return bgpNetworks;
+            }
+            set
+            {
+                bgpNetworks = value;
+            }
+        }
 
-		public class DescribeBgpNetworks_BgpNetwork
-		{
+        public class DescribeBgpNetworks_BgpNetwork
+        {
 
-			private string vpcId;
+            private string vpcId;
 
-			private string dstCidrBlock;
+            private string dstCidrBlock;
 
-			private string routerId;
+            private string routerId;
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
+            public string VpcId
+            {
+                get
+                {
+                    return vpcId;
+                }
+                set
+                {
+                    vpcId = value;
+                }
+            }
 
-			public string DstCidrBlock
-			{
-				get
-				{
-					return dstCidrBlock;
-				}
-				set	
-				{
-					dstCidrBlock = value;
-				}
-			}
+            public string DstCidrBlock
+            {
+                get
+                {
+                    return dstCidrBlock;
+                }
+                set
+                {
+                    dstCidrBlock = value;
+                }
+            }
 
-			public string RouterId
-			{
-				get
-				{
-					return routerId;
-				}
-				set	
-				{
-					routerId = value;
-				}
-			}
-		}
-	}
+            public string RouterId
+            {
+                get
+                {
+                    return routerId;
+                }
+                set
+                {
+                    routerId = value;
+                }
+            }
+        }
+    }
 }

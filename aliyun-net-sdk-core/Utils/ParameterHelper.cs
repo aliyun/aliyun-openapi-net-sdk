@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Core.Utils
             {
                 datetime = DateTime.Now;
             }
-            return datetime.ToUniversalTime().GetDateTimeFormats('r') [0].ToString();
+            return datetime.ToUniversalTime().GetDateTimeFormats('r')[0].ToString();
         }
 
         public static string Md5Sum(byte[] buff)

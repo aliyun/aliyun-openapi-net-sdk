@@ -27,24 +27,25 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static ModifySecurityGroupConfigurationResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifySecurityGroupConfigurationResponse modifySecurityGroupConfigurationResponse = new ModifySecurityGroupConfigurationResponse();
+            ModifySecurityGroupConfigurationResponse modifySecurityGroupConfigurationResponse = new ModifySecurityGroupConfigurationResponse();
 
-			modifySecurityGroupConfigurationResponse.HttpResponse = context.HttpResponse;
-			modifySecurityGroupConfigurationResponse.RequestId = context.StringValue("ModifySecurityGroupConfiguration.RequestId");
-			modifySecurityGroupConfigurationResponse.DBInstanceName = context.StringValue("ModifySecurityGroupConfiguration.DBInstanceName");
+            modifySecurityGroupConfigurationResponse.HttpResponse = context.HttpResponse;
+            modifySecurityGroupConfigurationResponse.RequestId = context.StringValue("ModifySecurityGroupConfiguration.RequestId");
+            modifySecurityGroupConfigurationResponse.DBInstanceName = context.StringValue("ModifySecurityGroupConfiguration.DBInstanceName");
 
-			List<ModifySecurityGroupConfigurationResponse.ModifySecurityGroupConfiguration_EcsSecurityGroupRelation> modifySecurityGroupConfigurationResponse_items = new List<ModifySecurityGroupConfigurationResponse.ModifySecurityGroupConfiguration_EcsSecurityGroupRelation>();
-			for (int i = 0; i < context.Length("ModifySecurityGroupConfiguration.Items.Length"); i++) {
-				ModifySecurityGroupConfigurationResponse.ModifySecurityGroupConfiguration_EcsSecurityGroupRelation ecsSecurityGroupRelation = new ModifySecurityGroupConfigurationResponse.ModifySecurityGroupConfiguration_EcsSecurityGroupRelation();
-				ecsSecurityGroupRelation.RegionId = context.StringValue("ModifySecurityGroupConfiguration.Items["+ i +"].RegionId");
-				ecsSecurityGroupRelation.SecurityGroupId = context.StringValue("ModifySecurityGroupConfiguration.Items["+ i +"].SecurityGroupId");
-				ecsSecurityGroupRelation.NetworkType = context.StringValue("ModifySecurityGroupConfiguration.Items["+ i +"].NetworkType");
+            List<ModifySecurityGroupConfigurationResponse.ModifySecurityGroupConfiguration_EcsSecurityGroupRelation> modifySecurityGroupConfigurationResponse_items = new List<ModifySecurityGroupConfigurationResponse.ModifySecurityGroupConfiguration_EcsSecurityGroupRelation>();
+            for (int i = 0; i < context.Length("ModifySecurityGroupConfiguration.Items.Length"); i++)
+            {
+                ModifySecurityGroupConfigurationResponse.ModifySecurityGroupConfiguration_EcsSecurityGroupRelation ecsSecurityGroupRelation = new ModifySecurityGroupConfigurationResponse.ModifySecurityGroupConfiguration_EcsSecurityGroupRelation();
+                ecsSecurityGroupRelation.RegionId = context.StringValue("ModifySecurityGroupConfiguration.Items[" + i + "].RegionId");
+                ecsSecurityGroupRelation.SecurityGroupId = context.StringValue("ModifySecurityGroupConfiguration.Items[" + i + "].SecurityGroupId");
+                ecsSecurityGroupRelation.NetworkType = context.StringValue("ModifySecurityGroupConfiguration.Items[" + i + "].NetworkType");
 
-				modifySecurityGroupConfigurationResponse_items.Add(ecsSecurityGroupRelation);
-			}
-			modifySecurityGroupConfigurationResponse.Items = modifySecurityGroupConfigurationResponse_items;
-        
-			return modifySecurityGroupConfigurationResponse;
+                modifySecurityGroupConfigurationResponse_items.Add(ecsSecurityGroupRelation);
+            }
+            modifySecurityGroupConfigurationResponse.Items = modifySecurityGroupConfigurationResponse_items;
+
+            return modifySecurityGroupConfigurationResponse;
         }
     }
 }

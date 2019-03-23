@@ -28,36 +28,38 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeDomainHttpCodeDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainHttpCodeDataResponse describeDomainHttpCodeDataResponse = new DescribeDomainHttpCodeDataResponse();
+            DescribeDomainHttpCodeDataResponse describeDomainHttpCodeDataResponse = new DescribeDomainHttpCodeDataResponse();
 
-			describeDomainHttpCodeDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainHttpCodeDataResponse.RequestId = context.StringValue("DescribeDomainHttpCodeData.RequestId");
-			describeDomainHttpCodeDataResponse.DomainName = context.StringValue("DescribeDomainHttpCodeData.DomainName");
-			describeDomainHttpCodeDataResponse.StartTime = context.StringValue("DescribeDomainHttpCodeData.StartTime");
-			describeDomainHttpCodeDataResponse.EndTime = context.StringValue("DescribeDomainHttpCodeData.EndTime");
-			describeDomainHttpCodeDataResponse.DataInterval = context.StringValue("DescribeDomainHttpCodeData.DataInterval");
+            describeDomainHttpCodeDataResponse.HttpResponse = context.HttpResponse;
+            describeDomainHttpCodeDataResponse.RequestId = context.StringValue("DescribeDomainHttpCodeData.RequestId");
+            describeDomainHttpCodeDataResponse.DomainName = context.StringValue("DescribeDomainHttpCodeData.DomainName");
+            describeDomainHttpCodeDataResponse.StartTime = context.StringValue("DescribeDomainHttpCodeData.StartTime");
+            describeDomainHttpCodeDataResponse.EndTime = context.StringValue("DescribeDomainHttpCodeData.EndTime");
+            describeDomainHttpCodeDataResponse.DataInterval = context.StringValue("DescribeDomainHttpCodeData.DataInterval");
 
-			List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData> describeDomainHttpCodeDataResponse_httpCodeData = new List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData>();
-			for (int i = 0; i < context.Length("DescribeDomainHttpCodeData.HttpCodeData.Length"); i++) {
-				DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData usageData = new DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData();
-				usageData.TimeStamp = context.StringValue("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].TimeStamp");
+            List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData> describeDomainHttpCodeDataResponse_httpCodeData = new List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData>();
+            for (int i = 0; i < context.Length("DescribeDomainHttpCodeData.HttpCodeData.Length"); i++)
+            {
+                DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData usageData = new DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData();
+                usageData.TimeStamp = context.StringValue("DescribeDomainHttpCodeData.HttpCodeData[" + i + "].TimeStamp");
 
-				List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData.DescribeDomainHttpCodeData_CodeProportionData> usageData_value = new List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData.DescribeDomainHttpCodeData_CodeProportionData>();
-				for (int j = 0; j < context.Length("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].Value.Length"); j++) {
-					DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData.DescribeDomainHttpCodeData_CodeProportionData codeProportionData = new DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData.DescribeDomainHttpCodeData_CodeProportionData();
-					codeProportionData.Code = context.StringValue("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Code");
-					codeProportionData.Proportion = context.StringValue("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Proportion");
-					codeProportionData.Count = context.StringValue("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Count");
+                List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData.DescribeDomainHttpCodeData_CodeProportionData> usageData_value = new List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData.DescribeDomainHttpCodeData_CodeProportionData>();
+                for (int j = 0; j < context.Length("DescribeDomainHttpCodeData.HttpCodeData[" + i + "].Value.Length"); j++)
+                {
+                    DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData.DescribeDomainHttpCodeData_CodeProportionData codeProportionData = new DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData.DescribeDomainHttpCodeData_CodeProportionData();
+                    codeProportionData.Code = context.StringValue("DescribeDomainHttpCodeData.HttpCodeData[" + i + "].Value[" + j + "].Code");
+                    codeProportionData.Proportion = context.StringValue("DescribeDomainHttpCodeData.HttpCodeData[" + i + "].Value[" + j + "].Proportion");
+                    codeProportionData.Count = context.StringValue("DescribeDomainHttpCodeData.HttpCodeData[" + i + "].Value[" + j + "].Count");
 
-					usageData_value.Add(codeProportionData);
-				}
-				usageData._Value = usageData_value;
+                    usageData_value.Add(codeProportionData);
+                }
+                usageData._Value = usageData_value;
 
-				describeDomainHttpCodeDataResponse_httpCodeData.Add(usageData);
-			}
-			describeDomainHttpCodeDataResponse.HttpCodeData = describeDomainHttpCodeDataResponse_httpCodeData;
-        
-			return describeDomainHttpCodeDataResponse;
+                describeDomainHttpCodeDataResponse_httpCodeData.Add(usageData);
+            }
+            describeDomainHttpCodeDataResponse.HttpCodeData = describeDomainHttpCodeDataResponse_httpCodeData;
+
+            return describeDomainHttpCodeDataResponse;
         }
     }
 }

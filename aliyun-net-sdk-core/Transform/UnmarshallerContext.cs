@@ -91,7 +91,7 @@ namespace Aliyun.Acs.Core.Transform
             {
                 return null;
             }
-            return (T) Enum.Parse(typeof(T), value);
+            return (T)Enum.Parse(typeof(T), value);
         }
 
         public int Length(string key)

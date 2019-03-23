@@ -21,7 +21,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.ROS.Model.V20150901
 {
-	public class GetStackPolicyResponse : AcsResponse
-	{
-	}
+    public class GetStackPolicyResponse : AcsResponse
+    {
+    }
 }

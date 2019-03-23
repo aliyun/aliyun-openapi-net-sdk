@@ -32,53 +32,53 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public ListPoliciesRequest()
             : base("Ram", "2015-05-01", "ListPolicies", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string policyType;
+        private string policyType;
 
-		private string marker;
+        private string marker;
 
-		private int? maxItems;
+        private int? maxItems;
 
-		public string PolicyType
-		{
-			get
-			{
-				return policyType;
-			}
-			set	
-			{
-				policyType = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyType", value);
-			}
-		}
+        public string PolicyType
+        {
+            get
+            {
+                return policyType;
+            }
+            set
+            {
+                policyType = value;
+                DictionaryUtil.Add(QueryParameters, "PolicyType", value);
+            }
+        }
 
-		public string Marker
-		{
-			get
-			{
-				return marker;
-			}
-			set	
-			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
-			}
-		}
+        public string Marker
+        {
+            get
+            {
+                return marker;
+            }
+            set
+            {
+                marker = value;
+                DictionaryUtil.Add(QueryParameters, "Marker", value);
+            }
+        }
 
-		public int? MaxItems
-		{
-			get
-			{
-				return maxItems;
-			}
-			set	
-			{
-				maxItems = value;
-				DictionaryUtil.Add(QueryParameters, "MaxItems", value.ToString());
-			}
-		}
+        public int? MaxItems
+        {
+            get
+            {
+                return maxItems;
+            }
+            set
+            {
+                maxItems = value;
+                DictionaryUtil.Add(QueryParameters, "MaxItems", value.ToString());
+            }
+        }
 
         public override ListPoliciesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

@@ -21,119 +21,119 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeProxyFunctionSupportResponse : AcsResponse
-	{
+    public class DescribeProxyFunctionSupportResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private bool? isProxySwitchEnable;
+        private bool? isProxySwitchEnable;
 
-		private bool? isRwsplitEnable;
+        private bool? isRwsplitEnable;
 
-		private bool? isRwsplitSupportReplicationLag;
+        private bool? isRwsplitSupportReplicationLag;
 
-		private bool? isRwsplitSupportWeight;
+        private bool? isRwsplitSupportWeight;
 
-		private bool? isTransparentSwitchEnable;
+        private bool? isTransparentSwitchEnable;
 
-		private bool? isShortConnectionOptimizeEnable;
+        private bool? isShortConnectionOptimizeEnable;
 
-		private bool? isAntiBruteFroceEnable;
+        private bool? isAntiBruteFroceEnable;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public bool? IsProxySwitchEnable
-		{
-			get
-			{
-				return isProxySwitchEnable;
-			}
-			set	
-			{
-				isProxySwitchEnable = value;
-			}
-		}
+        public bool? IsProxySwitchEnable
+        {
+            get
+            {
+                return isProxySwitchEnable;
+            }
+            set
+            {
+                isProxySwitchEnable = value;
+            }
+        }
 
-		public bool? IsRwsplitEnable
-		{
-			get
-			{
-				return isRwsplitEnable;
-			}
-			set	
-			{
-				isRwsplitEnable = value;
-			}
-		}
+        public bool? IsRwsplitEnable
+        {
+            get
+            {
+                return isRwsplitEnable;
+            }
+            set
+            {
+                isRwsplitEnable = value;
+            }
+        }
 
-		public bool? IsRwsplitSupportReplicationLag
-		{
-			get
-			{
-				return isRwsplitSupportReplicationLag;
-			}
-			set	
-			{
-				isRwsplitSupportReplicationLag = value;
-			}
-		}
+        public bool? IsRwsplitSupportReplicationLag
+        {
+            get
+            {
+                return isRwsplitSupportReplicationLag;
+            }
+            set
+            {
+                isRwsplitSupportReplicationLag = value;
+            }
+        }
 
-		public bool? IsRwsplitSupportWeight
-		{
-			get
-			{
-				return isRwsplitSupportWeight;
-			}
-			set	
-			{
-				isRwsplitSupportWeight = value;
-			}
-		}
+        public bool? IsRwsplitSupportWeight
+        {
+            get
+            {
+                return isRwsplitSupportWeight;
+            }
+            set
+            {
+                isRwsplitSupportWeight = value;
+            }
+        }
 
-		public bool? IsTransparentSwitchEnable
-		{
-			get
-			{
-				return isTransparentSwitchEnable;
-			}
-			set	
-			{
-				isTransparentSwitchEnable = value;
-			}
-		}
+        public bool? IsTransparentSwitchEnable
+        {
+            get
+            {
+                return isTransparentSwitchEnable;
+            }
+            set
+            {
+                isTransparentSwitchEnable = value;
+            }
+        }
 
-		public bool? IsShortConnectionOptimizeEnable
-		{
-			get
-			{
-				return isShortConnectionOptimizeEnable;
-			}
-			set	
-			{
-				isShortConnectionOptimizeEnable = value;
-			}
-		}
+        public bool? IsShortConnectionOptimizeEnable
+        {
+            get
+            {
+                return isShortConnectionOptimizeEnable;
+            }
+            set
+            {
+                isShortConnectionOptimizeEnable = value;
+            }
+        }
 
-		public bool? IsAntiBruteFroceEnable
-		{
-			get
-			{
-				return isAntiBruteFroceEnable;
-			}
-			set	
-			{
-				isAntiBruteFroceEnable = value;
-			}
-		}
-	}
+        public bool? IsAntiBruteFroceEnable
+        {
+            get
+            {
+                return isAntiBruteFroceEnable;
+            }
+            set
+            {
+                isAntiBruteFroceEnable = value;
+            }
+        }
+    }
 }

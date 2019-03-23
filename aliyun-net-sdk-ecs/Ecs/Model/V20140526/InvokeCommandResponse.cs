@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class InvokeCommandResponse : AcsResponse
-	{
+    public class InvokeCommandResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string invokeId;
+        private string invokeId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string InvokeId
-		{
-			get
-			{
-				return invokeId;
-			}
-			set	
-			{
-				invokeId = value;
-			}
-		}
-	}
+        public string InvokeId
+        {
+            get
+            {
+                return invokeId;
+            }
+            set
+            {
+                invokeId = value;
+            }
+        }
+    }
 }

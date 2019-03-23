@@ -32,38 +32,38 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public UpdateRoleRequest()
             : base("Ram", "2015-05-01", "UpdateRole", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string newAssumeRolePolicyDocument;
+        private string newAssumeRolePolicyDocument;
 
-		private string roleName;
+        private string roleName;
 
-		public string NewAssumeRolePolicyDocument
-		{
-			get
-			{
-				return newAssumeRolePolicyDocument;
-			}
-			set	
-			{
-				newAssumeRolePolicyDocument = value;
-				DictionaryUtil.Add(QueryParameters, "NewAssumeRolePolicyDocument", value);
-			}
-		}
+        public string NewAssumeRolePolicyDocument
+        {
+            get
+            {
+                return newAssumeRolePolicyDocument;
+            }
+            set
+            {
+                newAssumeRolePolicyDocument = value;
+                DictionaryUtil.Add(QueryParameters, "NewAssumeRolePolicyDocument", value);
+            }
+        }
 
-		public string RoleName
-		{
-			get
-			{
-				return roleName;
-			}
-			set	
-			{
-				roleName = value;
-				DictionaryUtil.Add(QueryParameters, "RoleName", value);
-			}
-		}
+        public string RoleName
+        {
+            get
+            {
+                return roleName;
+            }
+            set
+            {
+                roleName = value;
+                DictionaryUtil.Add(QueryParameters, "RoleName", value);
+            }
+        }
 
         public override UpdateRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

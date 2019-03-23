@@ -21,35 +21,35 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateVirtualBorderRouterResponse : AcsResponse
-	{
+    public class CreateVirtualBorderRouterResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string vbrId;
+        private string vbrId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string VbrId
-		{
-			get
-			{
-				return vbrId;
-			}
-			set	
-			{
-				vbrId = value;
-			}
-		}
-	}
+        public string VbrId
+        {
+            get
+            {
+                return vbrId;
+            }
+            set
+            {
+                vbrId = value;
+            }
+        }
+    }
 }

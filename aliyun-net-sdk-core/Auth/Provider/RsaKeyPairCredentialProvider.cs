@@ -68,7 +68,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
         {
             GetSessionAccessKeyRequest request = new GetSessionAccessKeyRequest();
             request.PublicKeyId = rsaKeyPairCredential.GetAccessKeyId();
-            request.DurationSeconds = (int) sessionDurationSeconds;
+            request.DurationSeconds = (int)sessionDurationSeconds;
             request.Protocol = ProtocolType.HTTPS;
 
             GetSessionAccessKeyResponse response = this.stsClient.GetAcsResponse(request);

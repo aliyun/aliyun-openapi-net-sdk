@@ -21,249 +21,249 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeMigrateTasksForSQLServerResponse : AcsResponse
-	{
+    public class DescribeMigrateTasksForSQLServerResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string dBInstanceID;
+        private string dBInstanceID;
 
-		private string dBInstanceName;
+        private string dBInstanceName;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private int? totalRecordCount;
+        private int? totalRecordCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageRecordCount;
+        private int? pageRecordCount;
 
-		private List<DescribeMigrateTasksForSQLServer_MigrateTask> items;
+        private List<DescribeMigrateTasksForSQLServer_MigrateTask> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DBInstanceID
-		{
-			get
-			{
-				return dBInstanceID;
-			}
-			set	
-			{
-				dBInstanceID = value;
-			}
-		}
+        public string DBInstanceID
+        {
+            get
+            {
+                return dBInstanceID;
+            }
+            set
+            {
+                dBInstanceID = value;
+            }
+        }
 
-		public string DBInstanceName
-		{
-			get
-			{
-				return dBInstanceName;
-			}
-			set	
-			{
-				dBInstanceName = value;
-			}
-		}
+        public string DBInstanceName
+        {
+            get
+            {
+                return dBInstanceName;
+            }
+            set
+            {
+                dBInstanceName = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
+        public int? TotalRecordCount
+        {
+            get
+            {
+                return totalRecordCount;
+            }
+            set
+            {
+                totalRecordCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
+        public int? PageRecordCount
+        {
+            get
+            {
+                return pageRecordCount;
+            }
+            set
+            {
+                pageRecordCount = value;
+            }
+        }
 
-		public List<DescribeMigrateTasksForSQLServer_MigrateTask> Items
-		{
-			get
-			{
-				return items;
-			}
-			set	
-			{
-				items = value;
-			}
-		}
+        public List<DescribeMigrateTasksForSQLServer_MigrateTask> Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
 
-		public class DescribeMigrateTasksForSQLServer_MigrateTask
-		{
+        public class DescribeMigrateTasksForSQLServer_MigrateTask
+        {
 
-			private string dBName;
+            private string dBName;
 
-			private string migrateIaskId;
+            private string migrateIaskId;
 
-			private string createTime;
+            private string createTime;
 
-			private string endTime;
+            private string endTime;
 
-			private string taskType;
+            private string taskType;
 
-			private string status;
+            private string status;
 
-			private string isDBReplaced;
+            private string isDBReplaced;
 
-			private string desc;
+            private string desc;
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
+            public string DBName
+            {
+                get
+                {
+                    return dBName;
+                }
+                set
+                {
+                    dBName = value;
+                }
+            }
 
-			public string MigrateIaskId
-			{
-				get
-				{
-					return migrateIaskId;
-				}
-				set	
-				{
-					migrateIaskId = value;
-				}
-			}
+            public string MigrateIaskId
+            {
+                get
+                {
+                    return migrateIaskId;
+                }
+                set
+                {
+                    migrateIaskId = value;
+                }
+            }
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+            public string CreateTime
+            {
+                get
+                {
+                    return createTime;
+                }
+                set
+                {
+                    createTime = value;
+                }
+            }
 
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
+            public string EndTime
+            {
+                get
+                {
+                    return endTime;
+                }
+                set
+                {
+                    endTime = value;
+                }
+            }
 
-			public string TaskType
-			{
-				get
-				{
-					return taskType;
-				}
-				set	
-				{
-					taskType = value;
-				}
-			}
+            public string TaskType
+            {
+                get
+                {
+                    return taskType;
+                }
+                set
+                {
+                    taskType = value;
+                }
+            }
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+            public string Status
+            {
+                get
+                {
+                    return status;
+                }
+                set
+                {
+                    status = value;
+                }
+            }
 
-			public string IsDBReplaced
-			{
-				get
-				{
-					return isDBReplaced;
-				}
-				set	
-				{
-					isDBReplaced = value;
-				}
-			}
+            public string IsDBReplaced
+            {
+                get
+                {
+                    return isDBReplaced;
+                }
+                set
+                {
+                    isDBReplaced = value;
+                }
+            }
 
-			public string Desc
-			{
-				get
-				{
-					return desc;
-				}
-				set	
-				{
-					desc = value;
-				}
-			}
-		}
-	}
+            public string Desc
+            {
+                get
+                {
+                    return desc;
+                }
+                set
+                {
+                    desc = value;
+                }
+            }
+        }
+    }
 }

@@ -22,137 +22,137 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeDomainReqHitRateDataResponse : AcsResponse
-	{
+    public class DescribeDomainReqHitRateDataResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private string domainName;
+        private string domainName;
 
-		private string dataInterval;
+        private string dataInterval;
 
-		private string startTime;
+        private string startTime;
 
-		private string endTime;
+        private string endTime;
 
-		private List<DescribeDomainReqHitRateData_DataModule> reqHitRateInterval;
+        private List<DescribeDomainReqHitRateData_DataModule> reqHitRateInterval;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
+        public string DomainName
+        {
+            get
+            {
+                return domainName;
+            }
+            set
+            {
+                domainName = value;
+            }
+        }
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
+        public string DataInterval
+        {
+            get
+            {
+                return dataInterval;
+            }
+            set
+            {
+                dataInterval = value;
+            }
+        }
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
+        public string StartTime
+        {
+            get
+            {
+                return startTime;
+            }
+            set
+            {
+                startTime = value;
+            }
+        }
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+        public string EndTime
+        {
+            get
+            {
+                return endTime;
+            }
+            set
+            {
+                endTime = value;
+            }
+        }
 
-		public List<DescribeDomainReqHitRateData_DataModule> ReqHitRateInterval
-		{
-			get
-			{
-				return reqHitRateInterval;
-			}
-			set	
-			{
-				reqHitRateInterval = value;
-			}
-		}
+        public List<DescribeDomainReqHitRateData_DataModule> ReqHitRateInterval
+        {
+            get
+            {
+                return reqHitRateInterval;
+            }
+            set
+            {
+                reqHitRateInterval = value;
+            }
+        }
 
-		public class DescribeDomainReqHitRateData_DataModule
-		{
+        public class DescribeDomainReqHitRateData_DataModule
+        {
 
-			private string timeStamp;
+            private string timeStamp;
 
-			private string _value;
+            private string _value;
 
-			private string httpsValue;
+            private string httpsValue;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+            public string TimeStamp
+            {
+                get
+                {
+                    return timeStamp;
+                }
+                set
+                {
+                    timeStamp = value;
+                }
+            }
 
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
-			}
+            public string _Value
+            {
+                get
+                {
+                    return _value;
+                }
+                set
+                {
+                    _value = value;
+                }
+            }
 
-			public string HttpsValue
-			{
-				get
-				{
-					return httpsValue;
-				}
-				set	
-				{
-					httpsValue = value;
-				}
-			}
-		}
-	}
+            public string HttpsValue
+            {
+                get
+                {
+                    return httpsValue;
+                }
+                set
+                {
+                    httpsValue = value;
+                }
+            }
+        }
+    }
 }

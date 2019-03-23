@@ -27,44 +27,47 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static DescribeHaVipsResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeHaVipsResponse describeHaVipsResponse = new DescribeHaVipsResponse();
+            DescribeHaVipsResponse describeHaVipsResponse = new DescribeHaVipsResponse();
 
-			describeHaVipsResponse.HttpResponse = context.HttpResponse;
-			describeHaVipsResponse.RequestId = context.StringValue("DescribeHaVips.RequestId");
-			describeHaVipsResponse.TotalCount = context.IntegerValue("DescribeHaVips.TotalCount");
-			describeHaVipsResponse.PageNumber = context.IntegerValue("DescribeHaVips.PageNumber");
-			describeHaVipsResponse.PageSize = context.IntegerValue("DescribeHaVips.PageSize");
+            describeHaVipsResponse.HttpResponse = context.HttpResponse;
+            describeHaVipsResponse.RequestId = context.StringValue("DescribeHaVips.RequestId");
+            describeHaVipsResponse.TotalCount = context.IntegerValue("DescribeHaVips.TotalCount");
+            describeHaVipsResponse.PageNumber = context.IntegerValue("DescribeHaVips.PageNumber");
+            describeHaVipsResponse.PageSize = context.IntegerValue("DescribeHaVips.PageSize");
 
-			List<DescribeHaVipsResponse.DescribeHaVips_HaVip> describeHaVipsResponse_haVips = new List<DescribeHaVipsResponse.DescribeHaVips_HaVip>();
-			for (int i = 0; i < context.Length("DescribeHaVips.HaVips.Length"); i++) {
-				DescribeHaVipsResponse.DescribeHaVips_HaVip haVip = new DescribeHaVipsResponse.DescribeHaVips_HaVip();
-				haVip.HaVipId = context.StringValue("DescribeHaVips.HaVips["+ i +"].HaVipId");
-				haVip.RegionId = context.StringValue("DescribeHaVips.HaVips["+ i +"].RegionId");
-				haVip.VpcId = context.StringValue("DescribeHaVips.HaVips["+ i +"].VpcId");
-				haVip.VSwitchId = context.StringValue("DescribeHaVips.HaVips["+ i +"].VSwitchId");
-				haVip.IpAddress = context.StringValue("DescribeHaVips.HaVips["+ i +"].IpAddress");
-				haVip.Status = context.StringValue("DescribeHaVips.HaVips["+ i +"].Status");
-				haVip.MasterInstanceId = context.StringValue("DescribeHaVips.HaVips["+ i +"].MasterInstanceId");
-				haVip.Description = context.StringValue("DescribeHaVips.HaVips["+ i +"].Description");
-				haVip.CreateTime = context.StringValue("DescribeHaVips.HaVips["+ i +"].CreateTime");
+            List<DescribeHaVipsResponse.DescribeHaVips_HaVip> describeHaVipsResponse_haVips = new List<DescribeHaVipsResponse.DescribeHaVips_HaVip>();
+            for (int i = 0; i < context.Length("DescribeHaVips.HaVips.Length"); i++)
+            {
+                DescribeHaVipsResponse.DescribeHaVips_HaVip haVip = new DescribeHaVipsResponse.DescribeHaVips_HaVip();
+                haVip.HaVipId = context.StringValue("DescribeHaVips.HaVips[" + i + "].HaVipId");
+                haVip.RegionId = context.StringValue("DescribeHaVips.HaVips[" + i + "].RegionId");
+                haVip.VpcId = context.StringValue("DescribeHaVips.HaVips[" + i + "].VpcId");
+                haVip.VSwitchId = context.StringValue("DescribeHaVips.HaVips[" + i + "].VSwitchId");
+                haVip.IpAddress = context.StringValue("DescribeHaVips.HaVips[" + i + "].IpAddress");
+                haVip.Status = context.StringValue("DescribeHaVips.HaVips[" + i + "].Status");
+                haVip.MasterInstanceId = context.StringValue("DescribeHaVips.HaVips[" + i + "].MasterInstanceId");
+                haVip.Description = context.StringValue("DescribeHaVips.HaVips[" + i + "].Description");
+                haVip.CreateTime = context.StringValue("DescribeHaVips.HaVips[" + i + "].CreateTime");
 
-				List<string> haVip_associatedInstances = new List<string>();
-				for (int j = 0; j < context.Length("DescribeHaVips.HaVips["+ i +"].AssociatedInstances.Length"); j++) {
-					haVip_associatedInstances.Add(context.StringValue("DescribeHaVips.HaVips["+ i +"].AssociatedInstances["+ j +"]"));
-				}
-				haVip.AssociatedInstances = haVip_associatedInstances;
+                List<string> haVip_associatedInstances = new List<string>();
+                for (int j = 0; j < context.Length("DescribeHaVips.HaVips[" + i + "].AssociatedInstances.Length"); j++)
+                {
+                    haVip_associatedInstances.Add(context.StringValue("DescribeHaVips.HaVips[" + i + "].AssociatedInstances[" + j + "]"));
+                }
+                haVip.AssociatedInstances = haVip_associatedInstances;
 
-				List<string> haVip_associatedEipAddresses = new List<string>();
-				for (int j = 0; j < context.Length("DescribeHaVips.HaVips["+ i +"].AssociatedEipAddresses.Length"); j++) {
-					haVip_associatedEipAddresses.Add(context.StringValue("DescribeHaVips.HaVips["+ i +"].AssociatedEipAddresses["+ j +"]"));
-				}
-				haVip.AssociatedEipAddresses = haVip_associatedEipAddresses;
+                List<string> haVip_associatedEipAddresses = new List<string>();
+                for (int j = 0; j < context.Length("DescribeHaVips.HaVips[" + i + "].AssociatedEipAddresses.Length"); j++)
+                {
+                    haVip_associatedEipAddresses.Add(context.StringValue("DescribeHaVips.HaVips[" + i + "].AssociatedEipAddresses[" + j + "]"));
+                }
+                haVip.AssociatedEipAddresses = haVip_associatedEipAddresses;
 
-				describeHaVipsResponse_haVips.Add(haVip);
-			}
-			describeHaVipsResponse.HaVips = describeHaVipsResponse_haVips;
-        
-			return describeHaVipsResponse;
+                describeHaVipsResponse_haVips.Add(haVip);
+            }
+            describeHaVipsResponse.HaVips = describeHaVipsResponse_haVips;
+
+            return describeHaVipsResponse;
         }
     }
 }

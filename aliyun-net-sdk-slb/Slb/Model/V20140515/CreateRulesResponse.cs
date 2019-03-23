@@ -21,67 +21,67 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class CreateRulesResponse : AcsResponse
-	{
+    public class CreateRulesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<CreateRules_Rule> rules;
+        private List<CreateRules_Rule> rules;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<CreateRules_Rule> Rules
-		{
-			get
-			{
-				return rules;
-			}
-			set	
-			{
-				rules = value;
-			}
-		}
+        public List<CreateRules_Rule> Rules
+        {
+            get
+            {
+                return rules;
+            }
+            set
+            {
+                rules = value;
+            }
+        }
 
-		public class CreateRules_Rule
-		{
+        public class CreateRules_Rule
+        {
 
-			private string ruleId;
+            private string ruleId;
 
-			private string ruleName;
+            private string ruleName;
 
-			public string RuleId
-			{
-				get
-				{
-					return ruleId;
-				}
-				set	
-				{
-					ruleId = value;
-				}
-			}
+            public string RuleId
+            {
+                get
+                {
+                    return ruleId;
+                }
+                set
+                {
+                    ruleId = value;
+                }
+            }
 
-			public string RuleName
-			{
-				get
-				{
-					return ruleName;
-				}
-				set	
-				{
-					ruleName = value;
-				}
-			}
-		}
-	}
+            public string RuleName
+            {
+                get
+                {
+                    return ruleName;
+                }
+                set
+                {
+                    ruleName = value;
+                }
+            }
+        }
+    }
 }

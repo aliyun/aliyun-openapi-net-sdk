@@ -21,155 +21,155 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeAccountAttributesResponse : AcsResponse
-	{
+    public class DescribeAccountAttributesResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private List<DescribeAccountAttributes_AccountAttributeItem> accountAttributeItems;
+        private List<DescribeAccountAttributes_AccountAttributeItem> accountAttributeItems;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public List<DescribeAccountAttributes_AccountAttributeItem> AccountAttributeItems
-		{
-			get
-			{
-				return accountAttributeItems;
-			}
-			set	
-			{
-				accountAttributeItems = value;
-			}
-		}
+        public List<DescribeAccountAttributes_AccountAttributeItem> AccountAttributeItems
+        {
+            get
+            {
+                return accountAttributeItems;
+            }
+            set
+            {
+                accountAttributeItems = value;
+            }
+        }
 
-		public class DescribeAccountAttributes_AccountAttributeItem
-		{
+        public class DescribeAccountAttributes_AccountAttributeItem
+        {
 
-			private string attributeName;
+            private string attributeName;
 
-			private List<DescribeAccountAttributes_ValueItem> attributeValues;
+            private List<DescribeAccountAttributes_ValueItem> attributeValues;
 
-			public string AttributeName
-			{
-				get
-				{
-					return attributeName;
-				}
-				set	
-				{
-					attributeName = value;
-				}
-			}
+            public string AttributeName
+            {
+                get
+                {
+                    return attributeName;
+                }
+                set
+                {
+                    attributeName = value;
+                }
+            }
 
-			public List<DescribeAccountAttributes_ValueItem> AttributeValues
-			{
-				get
-				{
-					return attributeValues;
-				}
-				set	
-				{
-					attributeValues = value;
-				}
-			}
+            public List<DescribeAccountAttributes_ValueItem> AttributeValues
+            {
+                get
+                {
+                    return attributeValues;
+                }
+                set
+                {
+                    attributeValues = value;
+                }
+            }
 
-			public class DescribeAccountAttributes_ValueItem
-			{
+            public class DescribeAccountAttributes_ValueItem
+            {
 
-				private string _value;
+                private string _value;
 
-				private string expiredTime;
+                private string expiredTime;
 
-				private string zoneId;
+                private string zoneId;
 
-				private string instanceChargeType;
+                private string instanceChargeType;
 
-				private string instanceType;
+                private string instanceType;
 
-				private int? count;
+                private int? count;
 
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
+                public string _Value
+                {
+                    get
+                    {
+                        return _value;
+                    }
+                    set
+                    {
+                        _value = value;
+                    }
+                }
 
-				public string ExpiredTime
-				{
-					get
-					{
-						return expiredTime;
-					}
-					set	
-					{
-						expiredTime = value;
-					}
-				}
+                public string ExpiredTime
+                {
+                    get
+                    {
+                        return expiredTime;
+                    }
+                    set
+                    {
+                        expiredTime = value;
+                    }
+                }
 
-				public string ZoneId
-				{
-					get
-					{
-						return zoneId;
-					}
-					set	
-					{
-						zoneId = value;
-					}
-				}
+                public string ZoneId
+                {
+                    get
+                    {
+                        return zoneId;
+                    }
+                    set
+                    {
+                        zoneId = value;
+                    }
+                }
 
-				public string InstanceChargeType
-				{
-					get
-					{
-						return instanceChargeType;
-					}
-					set	
-					{
-						instanceChargeType = value;
-					}
-				}
+                public string InstanceChargeType
+                {
+                    get
+                    {
+                        return instanceChargeType;
+                    }
+                    set
+                    {
+                        instanceChargeType = value;
+                    }
+                }
 
-				public string InstanceType
-				{
-					get
-					{
-						return instanceType;
-					}
-					set	
-					{
-						instanceType = value;
-					}
-				}
+                public string InstanceType
+                {
+                    get
+                    {
+                        return instanceType;
+                    }
+                    set
+                    {
+                        instanceType = value;
+                    }
+                }
 
-				public int? Count
-				{
-					get
-					{
-						return count;
-					}
-					set	
-					{
-						count = value;
-					}
-				}
-			}
-		}
-	}
+                public int? Count
+                {
+                    get
+                    {
+                        return count;
+                    }
+                    set
+                    {
+                        count = value;
+                    }
+                }
+            }
+        }
+    }
 }

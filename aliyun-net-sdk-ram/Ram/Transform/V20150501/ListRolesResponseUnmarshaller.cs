@@ -28,28 +28,29 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
     {
         public static ListRolesResponse Unmarshall(UnmarshallerContext context)
         {
-			ListRolesResponse listRolesResponse = new ListRolesResponse();
+            ListRolesResponse listRolesResponse = new ListRolesResponse();
 
-			listRolesResponse.HttpResponse = context.HttpResponse;
-			listRolesResponse.RequestId = context.StringValue("ListRoles.RequestId");
-			listRolesResponse.IsTruncated = context.BooleanValue("ListRoles.IsTruncated");
-			listRolesResponse.Marker = context.StringValue("ListRoles.Marker");
+            listRolesResponse.HttpResponse = context.HttpResponse;
+            listRolesResponse.RequestId = context.StringValue("ListRoles.RequestId");
+            listRolesResponse.IsTruncated = context.BooleanValue("ListRoles.IsTruncated");
+            listRolesResponse.Marker = context.StringValue("ListRoles.Marker");
 
-			List<ListRolesResponse.ListRoles_Role> listRolesResponse_roles = new List<ListRolesResponse.ListRoles_Role>();
-			for (int i = 0; i < context.Length("ListRoles.Roles.Length"); i++) {
-				ListRolesResponse.ListRoles_Role role = new ListRolesResponse.ListRoles_Role();
-				role.RoleId = context.StringValue("ListRoles.Roles["+ i +"].RoleId");
-				role.RoleName = context.StringValue("ListRoles.Roles["+ i +"].RoleName");
-				role.Arn = context.StringValue("ListRoles.Roles["+ i +"].Arn");
-				role.Description = context.StringValue("ListRoles.Roles["+ i +"].Description");
-				role.CreateDate = context.StringValue("ListRoles.Roles["+ i +"].CreateDate");
-				role.UpdateDate = context.StringValue("ListRoles.Roles["+ i +"].UpdateDate");
+            List<ListRolesResponse.ListRoles_Role> listRolesResponse_roles = new List<ListRolesResponse.ListRoles_Role>();
+            for (int i = 0; i < context.Length("ListRoles.Roles.Length"); i++)
+            {
+                ListRolesResponse.ListRoles_Role role = new ListRolesResponse.ListRoles_Role();
+                role.RoleId = context.StringValue("ListRoles.Roles[" + i + "].RoleId");
+                role.RoleName = context.StringValue("ListRoles.Roles[" + i + "].RoleName");
+                role.Arn = context.StringValue("ListRoles.Roles[" + i + "].Arn");
+                role.Description = context.StringValue("ListRoles.Roles[" + i + "].Description");
+                role.CreateDate = context.StringValue("ListRoles.Roles[" + i + "].CreateDate");
+                role.UpdateDate = context.StringValue("ListRoles.Roles[" + i + "].UpdateDate");
 
-				listRolesResponse_roles.Add(role);
-			}
-			listRolesResponse.Roles = listRolesResponse_roles;
-        
-			return listRolesResponse;
+                listRolesResponse_roles.Add(role);
+            }
+            listRolesResponse.Roles = listRolesResponse_roles;
+
+            return listRolesResponse;
         }
     }
 }

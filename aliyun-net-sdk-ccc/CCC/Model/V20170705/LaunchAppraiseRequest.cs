@@ -33,50 +33,50 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string acid;
+        private string acid;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string accessKeyId;
+        private string accessKeyId;
 
-		public string Acid
-		{
-			get
-			{
-				return acid;
-			}
-			set	
-			{
-				acid = value;
-				DictionaryUtil.Add(QueryParameters, "Acid", value);
-			}
-		}
+        public string Acid
+        {
+            get
+            {
+                return acid;
+            }
+            set
+            {
+                acid = value;
+                DictionaryUtil.Add(QueryParameters, "Acid", value);
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
+        public string AccessKeyId
+        {
+            get
+            {
+                return accessKeyId;
+            }
+            set
+            {
+                accessKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+            }
+        }
 
         public override LaunchAppraiseResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

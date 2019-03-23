@@ -21,137 +21,137 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeSnapshotPackageResponse : AcsResponse
-	{
+    public class DescribeSnapshotPackageResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeSnapshotPackage_SnapshotPackage> snapshotPackages;
+        private List<DescribeSnapshotPackage_SnapshotPackage> snapshotPackages;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeSnapshotPackage_SnapshotPackage> SnapshotPackages
-		{
-			get
-			{
-				return snapshotPackages;
-			}
-			set	
-			{
-				snapshotPackages = value;
-			}
-		}
+        public List<DescribeSnapshotPackage_SnapshotPackage> SnapshotPackages
+        {
+            get
+            {
+                return snapshotPackages;
+            }
+            set
+            {
+                snapshotPackages = value;
+            }
+        }
 
-		public class DescribeSnapshotPackage_SnapshotPackage
-		{
+        public class DescribeSnapshotPackage_SnapshotPackage
+        {
 
-			private string startTime;
+            private string startTime;
 
-			private string endTime;
+            private string endTime;
 
-			private long? initCapacity;
+            private long? initCapacity;
 
-			private string displayName;
+            private string displayName;
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+            public string StartTime
+            {
+                get
+                {
+                    return startTime;
+                }
+                set
+                {
+                    startTime = value;
+                }
+            }
 
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
+            public string EndTime
+            {
+                get
+                {
+                    return endTime;
+                }
+                set
+                {
+                    endTime = value;
+                }
+            }
 
-			public long? InitCapacity
-			{
-				get
-				{
-					return initCapacity;
-				}
-				set	
-				{
-					initCapacity = value;
-				}
-			}
+            public long? InitCapacity
+            {
+                get
+                {
+                    return initCapacity;
+                }
+                set
+                {
+                    initCapacity = value;
+                }
+            }
 
-			public string DisplayName
-			{
-				get
-				{
-					return displayName;
-				}
-				set	
-				{
-					displayName = value;
-				}
-			}
-		}
-	}
+            public string DisplayName
+            {
+                get
+                {
+                    return displayName;
+                }
+                set
+                {
+                    displayName = value;
+                }
+            }
+        }
+    }
 }

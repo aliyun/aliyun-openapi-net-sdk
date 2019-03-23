@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static ModifySnapshotAttributeResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifySnapshotAttributeResponse modifySnapshotAttributeResponse = new ModifySnapshotAttributeResponse();
+            ModifySnapshotAttributeResponse modifySnapshotAttributeResponse = new ModifySnapshotAttributeResponse();
 
-			modifySnapshotAttributeResponse.HttpResponse = context.HttpResponse;
-			modifySnapshotAttributeResponse.RequestId = context.StringValue("ModifySnapshotAttribute.RequestId");
-        
-			return modifySnapshotAttributeResponse;
+            modifySnapshotAttributeResponse.HttpResponse = context.HttpResponse;
+            modifySnapshotAttributeResponse.RequestId = context.StringValue("ModifySnapshotAttribute.RequestId");
+
+            return modifySnapshotAttributeResponse;
         }
     }
 }

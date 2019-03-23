@@ -33,104 +33,104 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string jobJson;
+        private string jobJson;
 
-		private List<string> callingNumbers;
+        private List<string> callingNumbers;
 
-		private string instanceId;
+        private string instanceId;
 
-		private string groupId;
+        private string groupId;
 
-		private bool? selfHostedCallCenter;
+        private bool? selfHostedCallCenter;
 
-		private string scenarioId;
+        private string scenarioId;
 
-		public string JobJson
-		{
-			get
-			{
-				return jobJson;
-			}
-			set	
-			{
-				jobJson = value;
-				DictionaryUtil.Add(QueryParameters, "JobJson", value);
-			}
-		}
+        public string JobJson
+        {
+            get
+            {
+                return jobJson;
+            }
+            set
+            {
+                jobJson = value;
+                DictionaryUtil.Add(QueryParameters, "JobJson", value);
+            }
+        }
 
-		public List<string> CallingNumbers
-		{
-			get
-			{
-				return callingNumbers;
-			}
+        public List<string> CallingNumbers
+        {
+            get
+            {
+                return callingNumbers;
+            }
 
-			set
-			{
-				callingNumbers = value;
-				for (int i = 0; i < callingNumbers.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
-				}
-			}
-		}
+            set
+            {
+                callingNumbers = value;
+                for (int i = 0; i < callingNumbers.Count; i++)
+                {
+                    DictionaryUtil.Add(QueryParameters, "CallingNumber." + (i + 1), callingNumbers[i]);
+                }
+            }
+        }
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+        public string InstanceId
+        {
+            get
+            {
+                return instanceId;
+            }
+            set
+            {
+                instanceId = value;
+                DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+            }
+        }
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
+        public string GroupId
+        {
+            get
+            {
+                return groupId;
+            }
+            set
+            {
+                groupId = value;
+                DictionaryUtil.Add(QueryParameters, "GroupId", value);
+            }
+        }
 
-		public bool? SelfHostedCallCenter
-		{
-			get
-			{
-				return selfHostedCallCenter;
-			}
-			set	
-			{
-				selfHostedCallCenter = value;
-				DictionaryUtil.Add(QueryParameters, "SelfHostedCallCenter", value.ToString());
-			}
-		}
+        public bool? SelfHostedCallCenter
+        {
+            get
+            {
+                return selfHostedCallCenter;
+            }
+            set
+            {
+                selfHostedCallCenter = value;
+                DictionaryUtil.Add(QueryParameters, "SelfHostedCallCenter", value.ToString());
+            }
+        }
 
-		public string ScenarioId
-		{
-			get
-			{
-				return scenarioId;
-			}
-			set	
-			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
-			}
-		}
+        public string ScenarioId
+        {
+            get
+            {
+                return scenarioId;
+            }
+            set
+            {
+                scenarioId = value;
+                DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+            }
+        }
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
+        public override bool CheckShowJsonItemName()
+        {
+            return false;
+        }
 
         public override StartJobResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
         {

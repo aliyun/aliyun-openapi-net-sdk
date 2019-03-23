@@ -22,123 +22,123 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ram.Model.V20150501
 {
-	public class CreateRoleResponse : AcsResponse
-	{
+    public class CreateRoleResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private CreateRole_Role role;
+        private CreateRole_Role role;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public CreateRole_Role Role
-		{
-			get
-			{
-				return role;
-			}
-			set	
-			{
-				role = value;
-			}
-		}
+        public CreateRole_Role Role
+        {
+            get
+            {
+                return role;
+            }
+            set
+            {
+                role = value;
+            }
+        }
 
-		public class CreateRole_Role
-		{
+        public class CreateRole_Role
+        {
 
-			private string roleId;
+            private string roleId;
 
-			private string roleName;
+            private string roleName;
 
-			private string arn;
+            private string arn;
 
-			private string description;
+            private string description;
 
-			private string assumeRolePolicyDocument;
+            private string assumeRolePolicyDocument;
 
-			private string createDate;
+            private string createDate;
 
-			public string RoleId
-			{
-				get
-				{
-					return roleId;
-				}
-				set	
-				{
-					roleId = value;
-				}
-			}
+            public string RoleId
+            {
+                get
+                {
+                    return roleId;
+                }
+                set
+                {
+                    roleId = value;
+                }
+            }
 
-			public string RoleName
-			{
-				get
-				{
-					return roleName;
-				}
-				set	
-				{
-					roleName = value;
-				}
-			}
+            public string RoleName
+            {
+                get
+                {
+                    return roleName;
+                }
+                set
+                {
+                    roleName = value;
+                }
+            }
 
-			public string Arn
-			{
-				get
-				{
-					return arn;
-				}
-				set	
-				{
-					arn = value;
-				}
-			}
+            public string Arn
+            {
+                get
+                {
+                    return arn;
+                }
+                set
+                {
+                    arn = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string AssumeRolePolicyDocument
-			{
-				get
-				{
-					return assumeRolePolicyDocument;
-				}
-				set	
-				{
-					assumeRolePolicyDocument = value;
-				}
-			}
+            public string AssumeRolePolicyDocument
+            {
+                get
+                {
+                    return assumeRolePolicyDocument;
+                }
+                set
+                {
+                    assumeRolePolicyDocument = value;
+                }
+            }
 
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
-				}
-			}
-		}
-	}
+            public string CreateDate
+            {
+                get
+                {
+                    return createDate;
+                }
+                set
+                {
+                    createDate = value;
+                }
+            }
+        }
+    }
 }

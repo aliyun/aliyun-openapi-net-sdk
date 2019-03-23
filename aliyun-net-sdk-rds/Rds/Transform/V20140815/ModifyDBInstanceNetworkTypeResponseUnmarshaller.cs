@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
     {
         public static ModifyDBInstanceNetworkTypeResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyDBInstanceNetworkTypeResponse modifyDBInstanceNetworkTypeResponse = new ModifyDBInstanceNetworkTypeResponse();
+            ModifyDBInstanceNetworkTypeResponse modifyDBInstanceNetworkTypeResponse = new ModifyDBInstanceNetworkTypeResponse();
 
-			modifyDBInstanceNetworkTypeResponse.HttpResponse = context.HttpResponse;
-			modifyDBInstanceNetworkTypeResponse.RequestId = context.StringValue("ModifyDBInstanceNetworkType.RequestId");
-			modifyDBInstanceNetworkTypeResponse.TaskId = context.StringValue("ModifyDBInstanceNetworkType.TaskId");
-        
-			return modifyDBInstanceNetworkTypeResponse;
+            modifyDBInstanceNetworkTypeResponse.HttpResponse = context.HttpResponse;
+            modifyDBInstanceNetworkTypeResponse.RequestId = context.StringValue("ModifyDBInstanceNetworkType.RequestId");
+            modifyDBInstanceNetworkTypeResponse.TaskId = context.StringValue("ModifyDBInstanceNetworkType.TaskId");
+
+            return modifyDBInstanceNetworkTypeResponse;
         }
     }
 }

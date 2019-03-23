@@ -32,53 +32,53 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public UpdatePublicKeyRequest()
             : base("Ram", "2015-05-01", "UpdatePublicKey", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string userPublicKeyId;
+        private string userPublicKeyId;
 
-		private string userName;
+        private string userName;
 
-		private string status;
+        private string status;
 
-		public string UserPublicKeyId
-		{
-			get
-			{
-				return userPublicKeyId;
-			}
-			set	
-			{
-				userPublicKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "UserPublicKeyId", value);
-			}
-		}
+        public string UserPublicKeyId
+        {
+            get
+            {
+                return userPublicKeyId;
+            }
+            set
+            {
+                userPublicKeyId = value;
+                DictionaryUtil.Add(QueryParameters, "UserPublicKeyId", value);
+            }
+        }
 
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
-			}
-		}
+        public string UserName
+        {
+            get
+            {
+                return userName;
+            }
+            set
+            {
+                userName = value;
+                DictionaryUtil.Add(QueryParameters, "UserName", value);
+            }
+        }
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
+        public string Status
+        {
+            get
+            {
+                return status;
+            }
+            set
+            {
+                status = value;
+                DictionaryUtil.Add(QueryParameters, "Status", value);
+            }
+        }
 
         public override UpdatePublicKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

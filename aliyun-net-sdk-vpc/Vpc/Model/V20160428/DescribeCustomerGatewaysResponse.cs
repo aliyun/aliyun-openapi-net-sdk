@@ -21,151 +21,151 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class DescribeCustomerGatewaysResponse : AcsResponse
-	{
+    public class DescribeCustomerGatewaysResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private int? totalCount;
+        private int? totalCount;
 
-		private int? pageNumber;
+        private int? pageNumber;
 
-		private int? pageSize;
+        private int? pageSize;
 
-		private List<DescribeCustomerGateways_CustomerGateway> customerGateways;
+        private List<DescribeCustomerGateways_CustomerGateway> customerGateways;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public int? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public int? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public int? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeCustomerGateways_CustomerGateway> CustomerGateways
-		{
-			get
-			{
-				return customerGateways;
-			}
-			set	
-			{
-				customerGateways = value;
-			}
-		}
+        public List<DescribeCustomerGateways_CustomerGateway> CustomerGateways
+        {
+            get
+            {
+                return customerGateways;
+            }
+            set
+            {
+                customerGateways = value;
+            }
+        }
 
-		public class DescribeCustomerGateways_CustomerGateway
-		{
+        public class DescribeCustomerGateways_CustomerGateway
+        {
 
-			private string customerGatewayId;
+            private string customerGatewayId;
 
-			private string name;
+            private string name;
 
-			private string ipAddress;
+            private string ipAddress;
 
-			private string description;
+            private string description;
 
-			private long? createTime;
+            private long? createTime;
 
-			public string CustomerGatewayId
-			{
-				get
-				{
-					return customerGatewayId;
-				}
-				set	
-				{
-					customerGatewayId = value;
-				}
-			}
+            public string CustomerGatewayId
+            {
+                get
+                {
+                    return customerGatewayId;
+                }
+                set
+                {
+                    customerGatewayId = value;
+                }
+            }
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string IpAddress
-			{
-				get
-				{
-					return ipAddress;
-				}
-				set	
-				{
-					ipAddress = value;
-				}
-			}
+            public string IpAddress
+            {
+                get
+                {
+                    return ipAddress;
+                }
+                set
+                {
+                    ipAddress = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-		}
-	}
+            public long? CreateTime
+            {
+                get
+                {
+                    return createTime;
+                }
+                set
+                {
+                    createTime = value;
+                }
+            }
+        }
+    }
 }

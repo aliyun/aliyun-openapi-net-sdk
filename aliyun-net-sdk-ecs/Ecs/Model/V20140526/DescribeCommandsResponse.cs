@@ -21,179 +21,179 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeCommandsResponse : AcsResponse
-	{
+    public class DescribeCommandsResponse : AcsResponse
+    {
 
-		private string requestId;
+        private string requestId;
 
-		private long? totalCount;
+        private long? totalCount;
 
-		private long? pageNumber;
+        private long? pageNumber;
 
-		private long? pageSize;
+        private long? pageSize;
 
-		private List<DescribeCommands_Command> commands;
+        private List<DescribeCommands_Command> commands;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+        public string RequestId
+        {
+            get
+            {
+                return requestId;
+            }
+            set
+            {
+                requestId = value;
+            }
+        }
 
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+        public long? TotalCount
+        {
+            get
+            {
+                return totalCount;
+            }
+            set
+            {
+                totalCount = value;
+            }
+        }
 
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
+        public long? PageNumber
+        {
+            get
+            {
+                return pageNumber;
+            }
+            set
+            {
+                pageNumber = value;
+            }
+        }
 
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+        public long? PageSize
+        {
+            get
+            {
+                return pageSize;
+            }
+            set
+            {
+                pageSize = value;
+            }
+        }
 
-		public List<DescribeCommands_Command> Commands
-		{
-			get
-			{
-				return commands;
-			}
-			set	
-			{
-				commands = value;
-			}
-		}
+        public List<DescribeCommands_Command> Commands
+        {
+            get
+            {
+                return commands;
+            }
+            set
+            {
+                commands = value;
+            }
+        }
 
-		public class DescribeCommands_Command
-		{
+        public class DescribeCommands_Command
+        {
 
-			private string commandId;
+            private string commandId;
 
-			private string name;
+            private string name;
 
-			private string type;
+            private string type;
 
-			private string description;
+            private string description;
 
-			private string commandContent;
+            private string commandContent;
 
-			private string workingDir;
+            private string workingDir;
 
-			private long? timeout;
+            private long? timeout;
 
-			public string CommandId
-			{
-				get
-				{
-					return commandId;
-				}
-				set	
-				{
-					commandId = value;
-				}
-			}
+            public string CommandId
+            {
+                get
+                {
+                    return commandId;
+                }
+                set
+                {
+                    commandId = value;
+                }
+            }
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+            public string Name
+            {
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
+            }
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+            public string Type
+            {
+                get
+                {
+                    return type;
+                }
+                set
+                {
+                    type = value;
+                }
+            }
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+            public string Description
+            {
+                get
+                {
+                    return description;
+                }
+                set
+                {
+                    description = value;
+                }
+            }
 
-			public string CommandContent
-			{
-				get
-				{
-					return commandContent;
-				}
-				set	
-				{
-					commandContent = value;
-				}
-			}
+            public string CommandContent
+            {
+                get
+                {
+                    return commandContent;
+                }
+                set
+                {
+                    commandContent = value;
+                }
+            }
 
-			public string WorkingDir
-			{
-				get
-				{
-					return workingDir;
-				}
-				set	
-				{
-					workingDir = value;
-				}
-			}
+            public string WorkingDir
+            {
+                get
+                {
+                    return workingDir;
+                }
+                set
+                {
+                    workingDir = value;
+                }
+            }
 
-			public long? Timeout
-			{
-				get
-				{
-					return timeout;
-				}
-				set	
-				{
-					timeout = value;
-				}
-			}
-		}
-	}
+            public long? Timeout
+            {
+                get
+                {
+                    return timeout;
+                }
+                set
+                {
+                    timeout = value;
+                }
+            }
+        }
+    }
 }

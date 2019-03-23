@@ -27,16 +27,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static DeleteSurveyResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteSurveyResponse deleteSurveyResponse = new DeleteSurveyResponse();
+            DeleteSurveyResponse deleteSurveyResponse = new DeleteSurveyResponse();
 
-			deleteSurveyResponse.HttpResponse = context.HttpResponse;
-			deleteSurveyResponse.RequestId = context.StringValue("DeleteSurvey.RequestId");
-			deleteSurveyResponse.Success = context.BooleanValue("DeleteSurvey.Success");
-			deleteSurveyResponse.Code = context.StringValue("DeleteSurvey.Code");
-			deleteSurveyResponse.Message = context.StringValue("DeleteSurvey.Message");
-			deleteSurveyResponse.HttpStatusCode = context.IntegerValue("DeleteSurvey.HttpStatusCode");
-        
-			return deleteSurveyResponse;
+            deleteSurveyResponse.HttpResponse = context.HttpResponse;
+            deleteSurveyResponse.RequestId = context.StringValue("DeleteSurvey.RequestId");
+            deleteSurveyResponse.Success = context.BooleanValue("DeleteSurvey.Success");
+            deleteSurveyResponse.Code = context.StringValue("DeleteSurvey.Code");
+            deleteSurveyResponse.Message = context.StringValue("DeleteSurvey.Message");
+            deleteSurveyResponse.HttpStatusCode = context.IntegerValue("DeleteSurvey.HttpStatusCode");
+
+            return deleteSurveyResponse;
         }
     }
 }

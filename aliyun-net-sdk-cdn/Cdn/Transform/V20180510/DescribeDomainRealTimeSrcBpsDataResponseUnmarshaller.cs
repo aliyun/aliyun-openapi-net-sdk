@@ -28,26 +28,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeDomainRealTimeSrcBpsDataResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeDomainRealTimeSrcBpsDataResponse describeDomainRealTimeSrcBpsDataResponse = new DescribeDomainRealTimeSrcBpsDataResponse();
+            DescribeDomainRealTimeSrcBpsDataResponse describeDomainRealTimeSrcBpsDataResponse = new DescribeDomainRealTimeSrcBpsDataResponse();
 
-			describeDomainRealTimeSrcBpsDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainRealTimeSrcBpsDataResponse.RequestId = context.StringValue("DescribeDomainRealTimeSrcBpsData.RequestId");
-			describeDomainRealTimeSrcBpsDataResponse.DomainName = context.StringValue("DescribeDomainRealTimeSrcBpsData.DomainName");
-			describeDomainRealTimeSrcBpsDataResponse.StartTime = context.StringValue("DescribeDomainRealTimeSrcBpsData.StartTime");
-			describeDomainRealTimeSrcBpsDataResponse.EndTime = context.StringValue("DescribeDomainRealTimeSrcBpsData.EndTime");
-			describeDomainRealTimeSrcBpsDataResponse.DataInterval = context.StringValue("DescribeDomainRealTimeSrcBpsData.DataInterval");
+            describeDomainRealTimeSrcBpsDataResponse.HttpResponse = context.HttpResponse;
+            describeDomainRealTimeSrcBpsDataResponse.RequestId = context.StringValue("DescribeDomainRealTimeSrcBpsData.RequestId");
+            describeDomainRealTimeSrcBpsDataResponse.DomainName = context.StringValue("DescribeDomainRealTimeSrcBpsData.DomainName");
+            describeDomainRealTimeSrcBpsDataResponse.StartTime = context.StringValue("DescribeDomainRealTimeSrcBpsData.StartTime");
+            describeDomainRealTimeSrcBpsDataResponse.EndTime = context.StringValue("DescribeDomainRealTimeSrcBpsData.EndTime");
+            describeDomainRealTimeSrcBpsDataResponse.DataInterval = context.StringValue("DescribeDomainRealTimeSrcBpsData.DataInterval");
 
-			List<DescribeDomainRealTimeSrcBpsDataResponse.DescribeDomainRealTimeSrcBpsData_DataModule> describeDomainRealTimeSrcBpsDataResponse_realTimeSrcBpsDataPerInterval = new List<DescribeDomainRealTimeSrcBpsDataResponse.DescribeDomainRealTimeSrcBpsData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval.Length"); i++) {
-				DescribeDomainRealTimeSrcBpsDataResponse.DescribeDomainRealTimeSrcBpsData_DataModule dataModule = new DescribeDomainRealTimeSrcBpsDataResponse.DescribeDomainRealTimeSrcBpsData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval["+ i +"].Value");
+            List<DescribeDomainRealTimeSrcBpsDataResponse.DescribeDomainRealTimeSrcBpsData_DataModule> describeDomainRealTimeSrcBpsDataResponse_realTimeSrcBpsDataPerInterval = new List<DescribeDomainRealTimeSrcBpsDataResponse.DescribeDomainRealTimeSrcBpsData_DataModule>();
+            for (int i = 0; i < context.Length("DescribeDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval.Length"); i++)
+            {
+                DescribeDomainRealTimeSrcBpsDataResponse.DescribeDomainRealTimeSrcBpsData_DataModule dataModule = new DescribeDomainRealTimeSrcBpsDataResponse.DescribeDomainRealTimeSrcBpsData_DataModule();
+                dataModule.TimeStamp = context.StringValue("DescribeDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval[" + i + "].TimeStamp");
+                dataModule._Value = context.StringValue("DescribeDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval[" + i + "].Value");
 
-				describeDomainRealTimeSrcBpsDataResponse_realTimeSrcBpsDataPerInterval.Add(dataModule);
-			}
-			describeDomainRealTimeSrcBpsDataResponse.RealTimeSrcBpsDataPerInterval = describeDomainRealTimeSrcBpsDataResponse_realTimeSrcBpsDataPerInterval;
-        
-			return describeDomainRealTimeSrcBpsDataResponse;
+                describeDomainRealTimeSrcBpsDataResponse_realTimeSrcBpsDataPerInterval.Add(dataModule);
+            }
+            describeDomainRealTimeSrcBpsDataResponse.RealTimeSrcBpsDataPerInterval = describeDomainRealTimeSrcBpsDataResponse_realTimeSrcBpsDataPerInterval;
+
+            return describeDomainRealTimeSrcBpsDataResponse;
         }
     }
 }

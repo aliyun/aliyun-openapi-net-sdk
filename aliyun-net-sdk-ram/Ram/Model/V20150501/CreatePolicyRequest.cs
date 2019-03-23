@@ -32,53 +32,53 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public CreatePolicyRequest()
             : base("Ram", "2015-05-01", "CreatePolicy", "ram", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
+            Protocol = ProtocolType.HTTPS;
         }
 
-		private string description;
+        private string description;
 
-		private string policyName;
+        private string policyName;
 
-		private string policyDocument;
+        private string policyDocument;
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                DictionaryUtil.Add(QueryParameters, "Description", value);
+            }
+        }
 
-		public string PolicyName
-		{
-			get
-			{
-				return policyName;
-			}
-			set	
-			{
-				policyName = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyName", value);
-			}
-		}
+        public string PolicyName
+        {
+            get
+            {
+                return policyName;
+            }
+            set
+            {
+                policyName = value;
+                DictionaryUtil.Add(QueryParameters, "PolicyName", value);
+            }
+        }
 
-		public string PolicyDocument
-		{
-			get
-			{
-				return policyDocument;
-			}
-			set	
-			{
-				policyDocument = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyDocument", value);
-			}
-		}
+        public string PolicyDocument
+        {
+            get
+            {
+                return policyDocument;
+            }
+            set
+            {
+                policyDocument = value;
+                DictionaryUtil.Add(QueryParameters, "PolicyDocument", value);
+            }
+        }
 
         public override CreatePolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

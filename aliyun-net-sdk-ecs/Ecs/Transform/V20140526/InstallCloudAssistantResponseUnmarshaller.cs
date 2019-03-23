@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
     {
         public static InstallCloudAssistantResponse Unmarshall(UnmarshallerContext context)
         {
-			InstallCloudAssistantResponse installCloudAssistantResponse = new InstallCloudAssistantResponse();
+            InstallCloudAssistantResponse installCloudAssistantResponse = new InstallCloudAssistantResponse();
 
-			installCloudAssistantResponse.HttpResponse = context.HttpResponse;
-			installCloudAssistantResponse.RequestId = context.StringValue("InstallCloudAssistant.RequestId");
-        
-			return installCloudAssistantResponse;
+            installCloudAssistantResponse.HttpResponse = context.HttpResponse;
+            installCloudAssistantResponse.RequestId = context.StringValue("InstallCloudAssistant.RequestId");
+
+            return installCloudAssistantResponse;
         }
     }
 }

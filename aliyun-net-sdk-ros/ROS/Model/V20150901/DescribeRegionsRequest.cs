@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ROS.Model.V20150901
         public DescribeRegionsRequest()
             : base("ROS", "2015-09-01", "DescribeRegions")
         {
-			UriPattern = "/regions";
-			Method = MethodType.GET;
+            UriPattern = "/regions";
+            Method = MethodType.GET;
         }
 
         public override DescribeRegionsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)

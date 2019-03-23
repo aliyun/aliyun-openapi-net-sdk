@@ -27,16 +27,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
     {
         public static ModifyUserResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyUserResponse modifyUserResponse = new ModifyUserResponse();
+            ModifyUserResponse modifyUserResponse = new ModifyUserResponse();
 
-			modifyUserResponse.HttpResponse = context.HttpResponse;
-			modifyUserResponse.RequestId = context.StringValue("ModifyUser.RequestId");
-			modifyUserResponse.Success = context.BooleanValue("ModifyUser.Success");
-			modifyUserResponse.Code = context.StringValue("ModifyUser.Code");
-			modifyUserResponse.Message = context.StringValue("ModifyUser.Message");
-			modifyUserResponse.HttpStatusCode = context.IntegerValue("ModifyUser.HttpStatusCode");
-        
-			return modifyUserResponse;
+            modifyUserResponse.HttpResponse = context.HttpResponse;
+            modifyUserResponse.RequestId = context.StringValue("ModifyUser.RequestId");
+            modifyUserResponse.Success = context.BooleanValue("ModifyUser.Success");
+            modifyUserResponse.Code = context.StringValue("ModifyUser.Code");
+            modifyUserResponse.Message = context.StringValue("ModifyUser.Message");
+            modifyUserResponse.HttpStatusCode = context.IntegerValue("ModifyUser.HttpStatusCode");
+
+            return modifyUserResponse;
         }
     }
 }

@@ -28,19 +28,20 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
     {
         public static DescribeL2VipsByDomainResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeL2VipsByDomainResponse describeL2VipsByDomainResponse = new DescribeL2VipsByDomainResponse();
+            DescribeL2VipsByDomainResponse describeL2VipsByDomainResponse = new DescribeL2VipsByDomainResponse();
 
-			describeL2VipsByDomainResponse.HttpResponse = context.HttpResponse;
-			describeL2VipsByDomainResponse.RequestId = context.StringValue("DescribeL2VipsByDomain.RequestId");
-			describeL2VipsByDomainResponse.DomainName = context.StringValue("DescribeL2VipsByDomain.DomainName");
+            describeL2VipsByDomainResponse.HttpResponse = context.HttpResponse;
+            describeL2VipsByDomainResponse.RequestId = context.StringValue("DescribeL2VipsByDomain.RequestId");
+            describeL2VipsByDomainResponse.DomainName = context.StringValue("DescribeL2VipsByDomain.DomainName");
 
-			List<string> describeL2VipsByDomainResponse_vips = new List<string>();
-			for (int i = 0; i < context.Length("DescribeL2VipsByDomain.Vips.Length"); i++) {
-				describeL2VipsByDomainResponse_vips.Add(context.StringValue("DescribeL2VipsByDomain.Vips["+ i +"]"));
-			}
-			describeL2VipsByDomainResponse.Vips = describeL2VipsByDomainResponse_vips;
-        
-			return describeL2VipsByDomainResponse;
+            List<string> describeL2VipsByDomainResponse_vips = new List<string>();
+            for (int i = 0; i < context.Length("DescribeL2VipsByDomain.Vips.Length"); i++)
+            {
+                describeL2VipsByDomainResponse_vips.Add(context.StringValue("DescribeL2VipsByDomain.Vips[" + i + "]"));
+            }
+            describeL2VipsByDomainResponse.Vips = describeL2VipsByDomainResponse_vips;
+
+            return describeL2VipsByDomainResponse;
         }
     }
 }
