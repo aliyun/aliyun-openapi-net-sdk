@@ -26,7 +26,7 @@ using System.Xml;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Regions.Location;
 
-[assembly : InternalsVisibleTo("DynamicProxyGenAssembly2")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace Aliyun.Acs.Core.Regions
 {
     class InternalEndpointsParser : IEndpointsProvider
@@ -47,30 +47,33 @@ namespace Aliyun.Acs.Core.Regions
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(stream);
-            XmlNodeList productNodes = doc.GetElementsByTagName("product");
-
-            List<Product> products = new List<Product>();
-            foreach (XmlNode node in productNodes)
+            using (XmlNodeList productNodes = doc.GetElementsByTagName("product"))
             {
-                Product product = new Product();
-                product.Code = node.SelectSingleNode("code").InnerText;
-                product.LocationServiceCode = node.SelectSingleNode("location_service_code").InnerText;
-                product.DocumentId = node.SelectSingleNode("document_id").InnerText;
-
-                product.RegionalEndpoints = new Dictionary<string, string>();
-                XmlNodeList regional_endpoints = node.SelectSingleNode("regional_endpoints").SelectNodes("regional_endpoint");
-                foreach (XmlNode regionalNode in regional_endpoints)
+                List<Product> products = new List<Product>();
+                foreach (XmlNode node in productNodes)
                 {
-                    product.RegionalEndpoints.Add(regionalNode.SelectSingleNode("region_id").InnerText,
-                        regionalNode.SelectSingleNode("endpoint").InnerText);
+                    Product product = new Product();
+                    product.Code = node.SelectSingleNode("code").InnerText;
+                    product.LocationServiceCode = node.SelectSingleNode("location_service_code").InnerText;
+                    product.DocumentId = node.SelectSingleNode("document_id").InnerText;
+
+                    product.RegionalEndpoints = new Dictionary<string, string>();
+                    using (XmlNodeList regional_endpoints = node.SelectSingleNode("regional_endpoints").SelectNodes("regional_endpoint"))
+                    {
+                        foreach (XmlNode regionalNode in regional_endpoints)
+                        {
+                            product.RegionalEndpoints.Add(regionalNode.SelectSingleNode("region_id").InnerText,
+                                regionalNode.SelectSingleNode("endpoint").InnerText);
+                        }
+
+                        product.GlobalEndpoint = node.SelectSingleNode("global_endpoint").InnerText;
+                        product.RegionalEndpointPattern = node.SelectSingleNode("regional_endpoint_pattern").InnerText;
+                        products.Add(product);
+                    }
                 }
 
-                product.GlobalEndpoint = node.SelectSingleNode("global_endpoint").InnerText;
-                product.RegionalEndpointPattern = node.SelectSingleNode("regional_endpoint_pattern").InnerText;
-                products.Add(product);
+                return products;
             }
-
-            return products;
         }
 
         public virtual List<Product> GetProducts()
@@ -79,8 +82,10 @@ namespace Aliyun.Acs.Core.Regions
             string _namespace = type.Namespace;
             Assembly _assembly = Assembly.GetExecutingAssembly();
             string resourceName = _namespace + "." + BUNDLED_ENDPOINTS_RESOURCE_PATH;
-            Stream stream = _assembly.GetManifestResourceStream(resourceName);
-            return ParseProducts(stream);
+            using (Stream stream = _assembly.GetManifestResourceStream(resourceName))
+            {
+                return ParseProducts(stream);
+            }
         }
 
         public Endpoint GetEndpoint(string region, string product)

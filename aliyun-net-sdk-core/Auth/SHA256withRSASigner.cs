@@ -32,13 +32,17 @@ namespace Aliyun.Acs.Core
 
         public override String SignString(String stringToSign, String accessKeySecret)
         {
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
-            SHA256 sha256 = SHA256.Create();
-            byte[] hashValue = sha256.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
-            RSAPKCS1SignatureFormatter RSAFormatter = new RSAPKCS1SignatureFormatter(rsa);
-            RSAFormatter.SetHashAlgorithm("SHA256");
-            byte[] signedHash = RSAFormatter.CreateSignature(hashValue);
-            return Convert.ToBase64String(signedHash);
+            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
+            {
+                using (SHA256 sha256 = SHA256.Create())
+                {
+                    byte[] hashValue = sha256.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
+                    RSAPKCS1SignatureFormatter RSAFormatter = new RSAPKCS1SignatureFormatter(rsa);
+                    RSAFormatter.SetHashAlgorithm("SHA256");
+                    byte[] signedHash = RSAFormatter.CreateSignature(hashValue);
+                    return Convert.ToBase64String(signedHash);
+                }
+            }
         }
 
         public override String SignString(String stringToSign, AlibabaCloudCredentials credentials)
